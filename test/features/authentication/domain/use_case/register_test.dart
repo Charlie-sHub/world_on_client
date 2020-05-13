@@ -3,20 +3,19 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/common/domain/entities/options.dart';
 import 'package:worldon/core/common/domain/entities/user.dart';
-import 'package:worldon/core/common/domain/use_cases/tag_use_cases/get_tag_creator.dart';
+import 'package:worldon/features/authentication/domain/use_case/register.dart';
 
-import '../../repository/mock_tag_repository.dart';
+import '../repository/mock_authentication_repository.dart';
 
 void main() {
-  MockTagRepository mockTagRepository;
-  GetTagCreator useCase;
+  MockAuthenticationRepository mockAuthenticationRepository;
+  Register useCase;
   setUp(
     () {
-      mockTagRepository = MockTagRepository();
-      useCase = GetTagCreator(mockTagRepository);
+      mockAuthenticationRepository = MockAuthenticationRepository();
+      useCase = Register(mockAuthenticationRepository);
     },
   );
-  final id = 1;
   final user = User(
     id: 1,
     name: "Test User",
@@ -37,16 +36,16 @@ void main() {
     options: Options(),
   );
   test(
-    "Should get the User that created a given Tag",
+    "Should send the User to the server to be registered",
     () async {
       // Arrange
-      when(mockTagRepository.getCreator(any)).thenAnswer((_) async => Right(user));
+      when(mockAuthenticationRepository.registerUser(any)).thenAnswer((realInvocation) async => Right(null));
       // Act
-      final result = await useCase(Params(id: id));
+      final result = await useCase(Params(user: user));
       // Assert
-      expect(result, Right(user));
-      verify(mockTagRepository.getCreator(any));
-      verifyNoMoreInteractions(mockTagRepository);
+      expect(result, Right(null));
+      verify(mockAuthenticationRepository.registerUser(any));
+      verifyNoMoreInteractions(mockAuthenticationRepository);
     },
   );
   // TODO Test on Failure

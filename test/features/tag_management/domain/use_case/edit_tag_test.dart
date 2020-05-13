@@ -3,30 +3,30 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/common/domain/entities/tag.dart';
 import 'package:worldon/core/common/domain/entities/user.dart';
-import 'package:worldon/core/common/domain/use_cases/tag_use_cases/create_tag.dart';
+import 'package:worldon/features/tag_management/domain/use_case/edit_tag.dart';
 
-import '../../repository/mock_tag_repository.dart';
+import '../../../../core/common/domain/repository/mock_tag_repository.dart';
 
 void main() {
   MockTagRepository mockTagRepository;
-  CreateTag useCase;
+  EditTag useCase;
   setUp(
     () {
       mockTagRepository = MockTagRepository();
-      useCase = CreateTag(mockTagRepository);
+      useCase = EditTag(mockTagRepository);
     },
   );
   final tag = Tag(creationDate: DateTime.now(), creator: User(), id: 1, modificationDate: DateTime.now(), name: "Sports");
   test(
-    "Should send the Tag to be created",
+    "Should send the Tag to be edited",
     () async {
       // Arrange
-      when(mockTagRepository.createTag(any)).thenAnswer((_) async => Right(null));
+      when(mockTagRepository.editTag(any)).thenAnswer((_) async => Right(null));
       // Act
       final result = await useCase(Params(tag: tag));
       // Assert
       expect(result, Right(null));
-      verify(mockTagRepository.createTag(any));
+      verify(mockTagRepository.editTag(any));
       verifyNoMoreInteractions(mockTagRepository);
     },
   );

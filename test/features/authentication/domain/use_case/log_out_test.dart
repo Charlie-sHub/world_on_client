@@ -1,22 +1,15 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
 import 'package:worldon/core/common/domain/entities/options.dart';
 import 'package:worldon/core/common/domain/entities/user.dart';
-import 'package:worldon/core/common/domain/use_cases/tag_use_cases/get_tag_creator.dart';
-
-import '../../repository/mock_tag_repository.dart';
+import 'package:worldon/features/authentication/domain/use_case/log_out.dart';
 
 void main() {
-  MockTagRepository mockTagRepository;
-  GetTagCreator useCase;
+  LogOut useCase;
   setUp(
     () {
-      mockTagRepository = MockTagRepository();
-      useCase = GetTagCreator(mockTagRepository);
+      useCase = LogOut();
     },
   );
-  final id = 1;
   final user = User(
     id: 1,
     name: "Test User",
@@ -36,17 +29,15 @@ void main() {
     modificationDate: DateTime.now(),
     options: Options(),
   );
+  // TODO Test LogOut
   test(
-    "Should get the User that created a given Tag",
+    "Should ",
     () async {
       // Arrange
-      when(mockTagRepository.getCreator(any)).thenAnswer((_) async => Right(user));
+
       // Act
-      final result = await useCase(Params(id: id));
+
       // Assert
-      expect(result, Right(user));
-      verify(mockTagRepository.getCreator(any));
-      verifyNoMoreInteractions(mockTagRepository);
     },
   );
   // TODO Test on Failure

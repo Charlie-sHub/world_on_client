@@ -3,31 +3,33 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/common/domain/entities/tag.dart';
 import 'package:worldon/core/common/domain/entities/user.dart';
-import 'package:worldon/core/common/domain/use_cases/tag_use_cases/edit_tag.dart';
+import 'package:worldon/features/tag_management/domain/use_case/get_tag.dart';
 
-import '../../repository/mock_tag_repository.dart';
+import '../../../../core/common/domain/repository/mock_tag_repository.dart';
 
 void main() {
   MockTagRepository mockTagRepository;
-  EditTag useCase;
+  GetTag useCase;
   setUp(
     () {
       mockTagRepository = MockTagRepository();
-      useCase = EditTag(mockTagRepository);
+      useCase = GetTag(mockTagRepository);
     },
   );
+  final id = 1;
   final tag = Tag(creationDate: DateTime.now(), creator: User(), id: 1, modificationDate: DateTime.now(), name: "Sports");
   test(
-    "Should send the Tag to be edited",
+    "Should get the Tag with a given id if successful",
     () async {
       // Arrange
-      when(mockTagRepository.editTag(any)).thenAnswer((_) async => Right(null));
+      when(mockTagRepository.getTag(any)).thenAnswer((_) async => Right(tag));
       // Act
-      final result = await useCase(Params(tag: tag));
+      final result = await useCase(Params(id: id));
       // Assert
-      expect(result, Right(null));
-      verify(mockTagRepository.editTag(any));
+      expect(result, Right(tag));
+      verify(mockTagRepository.getTag(any));
       verifyNoMoreInteractions(mockTagRepository);
     },
   );
+  // TODO Test on Failure
 }
