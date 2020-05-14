@@ -4,7 +4,7 @@ import 'package:worldon/core/errors/general_errors/failures.dart';
 import 'package:worldon/core/use_case/use_case.dart';
 import 'package:worldon/features/authentication/domain/repository/authentication_repository.dart';
 
-class Register implements UseCase<void, Params> {
+class Register implements AsyncUseCase<void, Params> {
   final AuthenticationRepository repository;
 
   Register(this.repository);

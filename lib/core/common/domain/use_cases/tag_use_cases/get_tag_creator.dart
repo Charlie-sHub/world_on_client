@@ -4,7 +4,7 @@ import 'package:worldon/core/common/domain/repository/tag_repository.dart';
 import 'package:worldon/core/errors/general_errors/failures.dart';
 import 'package:worldon/core/use_case/use_case.dart';
 
-class GetTagCreator implements UseCase<User, Params> {
+class GetTagCreator implements AsyncUseCase<User, Params> {
   final TagRepository repository;
 
   GetTagCreator(this.repository);

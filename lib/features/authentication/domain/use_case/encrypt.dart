@@ -5,15 +5,17 @@ import 'package:worldon/core/errors/general_errors/failures.dart';
 import 'package:worldon/core/use_case/use_case.dart';
 import 'package:worldon/core/util/cypher.dart';
 
-class Encrypt extends UseCase<String, Params> {
+class Encrypt implements UseCase<String, Params> {
   final Cypher cypher;
 
   Encrypt(this.cypher);
 
   @override
-  Future<Either<Failure, String>> call(Params params) {
-    // TODO: implement call
-    throw UnimplementedError();
+  Either<Failure, String> call(Params params) {
+    return cypher(
+      params.stringToCypher,
+      params.publicKey,
+    );
   }
 }
 

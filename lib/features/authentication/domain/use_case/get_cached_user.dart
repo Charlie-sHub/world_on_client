@@ -4,7 +4,7 @@ import 'package:worldon/core/errors/general_errors/failures.dart';
 import 'package:worldon/core/use_case/use_case.dart';
 import 'package:worldon/features/authentication/domain/repository/cached_user_repository.dart';
 
-class GetCachedUser implements UseCase<User, NoParams> {
+class GetCachedUser implements AsyncUseCase<User, NoParams> {
   final CachedUserRepository repository;
 
   GetCachedUser(this.repository);

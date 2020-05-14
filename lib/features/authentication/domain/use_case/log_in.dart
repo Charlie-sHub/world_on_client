@@ -4,7 +4,7 @@ import 'package:worldon/core/errors/general_errors/failures.dart';
 import 'package:worldon/core/use_case/use_case.dart';
 import 'package:worldon/features/authentication/domain/repository/authentication_repository.dart';
 
-class LogIn implements UseCase<User, Params> {
+class LogIn implements AsyncUseCase<User, Params> {
   final AuthenticationRepository repository;
 
   LogIn(this.repository);
