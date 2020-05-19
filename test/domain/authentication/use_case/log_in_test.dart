@@ -43,12 +43,12 @@ void main() {
     "Should get the logged in User from a given User to log in",
     () async {
       // Arrange
-      when(mockAuthenticationRepository.logInUser(any)).thenAnswer((_) async => Right(userLoggedIn));
+      when(mockAuthenticationRepository.logIn(any)).thenAnswer((_) async => Right(userLoggedIn));
       // Act
       final result = await useCase(Params(user: userToLogIn));
       // Assert
       expect(result, Right(userLoggedIn));
-      verify(mockAuthenticationRepository.logInUser(any));
+      verify(mockAuthenticationRepository.logIn(any));
       verifyNoMoreInteractions(mockAuthenticationRepository);
     },
   );

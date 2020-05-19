@@ -1,3 +1,8 @@
-import 'package:equatable/equatable.dart';
+/// Meant to be implemented by each failure of each layer and feature, it exists to properly implement [UseCase] and [AsyncUseCase]
+abstract class Failure {}
 
-abstract class Failure extends Equatable {}
+// There's probably no good reason for this Failure, manual local encryption is likely unnecessary, plus other Failures will use/are using the freeezed method
+@deprecated
+class EncryptionFailure implements Failure {
+  static const failureMessage = "There's been an error when trying to cypher the given String";
+}

@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:worldon/core/errors/general_errors/failures.dart';
+import 'package:worldon/domain/authentication/failures/authentication_failure.dart';
 import 'package:worldon/domain/authentication/repository/authentication_repository.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
@@ -13,8 +13,8 @@ class Register implements AsyncUseCase<User, Params> {
   Register(this.repository);
 
   @override
-  Future<Either<Failure, User>> call(Params params) async {
-    return await repository.registerUser(params.user);
+  Future<Either<AuthenticationFailure, User>> call(Params params) async {
+    return repository.register(params.user);
   }
 }
 

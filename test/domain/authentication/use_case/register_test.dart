@@ -39,12 +39,12 @@ void main() {
     "Should send the User to the server to be registered",
     () async {
       // Arrange
-      when(mockAuthenticationRepository.registerUser(any)).thenAnswer((_) async => Right(user));
+      when(mockAuthenticationRepository.register(any)).thenAnswer((_) async => Right(user));
       // Act
       final result = await useCase(Params(user: user));
       // Assert
       expect(result, Right(user));
-      verify(mockAuthenticationRepository.registerUser(any));
+      verify(mockAuthenticationRepository.register(any));
       verifyNoMoreInteractions(mockAuthenticationRepository);
     },
   );

@@ -24,17 +24,23 @@ void main() {
     "Should call cypher and get back the encrypted string",
     () async {
       // Arrange
-      when(mockCypher.call(any, any)).thenReturn(Right(encryptedText));
+      when(mockCypher.call(any, any)).thenReturn(right(encryptedText));
       // Act
-      final result = useCase(Params(
-        publicKey: publicKey,
-        stringToCypher: password,
-      ));
+      final result = useCase(
+        Params(
+          publicKey: publicKey,
+          stringToCypher: password,
+        ),
+      );
       // Assert
-      expect(result, Right(encryptedText));
+      expect(result, right(encryptedText));
       verify(mockCypher.call(any, any));
       verifyNoMoreInteractions(mockCypher);
     },
   );
-  // TODO Test on Failure
+  // TODO: Test on failure
+  // Keeps giving me:
+  // Expected: Left<EncryptionFailure, dynamic>:<Left(Instance of 'EncryptionFailure')>
+  // Actual: Left<EncryptionFailure, String>:<Left(Instance of 'EncryptionFailure')>
+  // Is it even necessary to test on failure? in the sense of testing that it returns a failure
 }

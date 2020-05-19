@@ -33,14 +33,35 @@ dependencies:
   dartz: ^0.9.1
   # Remote API
   data_connection_checker: ^0.3.4
+  # For connecting to http services
   http: ^0.12.0+2
-  # Local cache
+  # For local cache, probably useless as we'll use Firestore
   shared_preferences: ^0.5.3+4
+  # For unions generation
+  freezed_annotation: ^0.7.1
+  # For use with Firebase as backend
+  # firebase_core: ^0.4.4+3
+  # For authentication with Firebase
+  # firebase_auth: ^0.16.0
+  # For Signing in and registering with Google
+  # google_sign_in: ^4.4.6
+  # For dependency injection
+  injectable: ^0.3.0
+  flushbar: ^1.10.0
+  uuid: ^2.0.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  # For mocking dependencies during unit testing
   mockito: ^4.1.0
+  # For unions generation
+  freezed: ^0.10.8
+  # For custom warnings and errors
+  lint: ^1.1.1
+  # For dependency injection code generation
+  injectable_generator: ^0.3.5
+  build_runner:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
