@@ -1,8 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/domain/authentication/failures/authentication_failure.dart';
 import 'package:worldon/domain/authentication/use_case/get_cached_user.dart';
 import 'package:worldon/domain/core/entities/user.dart';
+import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
 import '../repository/mock_cached_user_repository.dart';
@@ -20,14 +22,44 @@ void main() {
     "Should get the cached User",
     () async {
       // Arrange
-      when(mockCachedUserRepository.getCachedUser()).thenAnswer((_) async => Right(User()));
+      when(mockCachedUserRepository.getCachedUser()).thenAnswer((_) async => right(User()));
       // Act
       final result = await useCase(NoParams());
       // Assert
-      expect(result, Right(User()));
+      expect(result, right(User()));
       verify(mockCachedUserRepository.getCachedUser());
       verifyNoMoreInteractions(mockCachedUserRepository);
     },
   );
-  // TODO Test on Failure
+  group(
+    "Testing on failure return",
+    () {
+      test(
+        "Should return a CacheError in case there's some problem with the cache",
+        () async {
+          // Arrange
+          when(mockCachedUserRepository.getCachedUser()).thenAnswer((_) async => left(const CoreFailure.cacheError()));
+          // Act
+          final result = await useCase(NoParams());
+          // Assert
+          expect(result, left(const CoreFailure.cacheError()));
+          verify(mockCachedUserRepository.getCachedUser());
+          verifyNoMoreInteractions(mockCachedUserRepository);
+        },
+      );
+      test(
+        "Should return a NoUserInCache in case there's no user in the cache",
+        () async {
+          // Arrange
+          when(mockCachedUserRepository.getCachedUser()).thenAnswer((_) async => left(const AuthenticationFailure.noUserInCache()));
+          // Act
+          final result = await useCase(NoParams());
+          // Assert
+          expect(result, left(const AuthenticationFailure.noUserInCache()));
+          verify(mockCachedUserRepository.getCachedUser());
+          verifyNoMoreInteractions(mockCachedUserRepository);
+        },
+      );
+    },
+  );
 }

@@ -1,7 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:dartz/dartz.dart';
-import 'package:worldon/core/errors/general_errors/failures.dart';
+import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/authentication/repository/public_key_repository.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
@@ -14,6 +14,6 @@ class GetPublicKey implements AsyncUseCase<Uint8List, NoParams> {
   
   @override
   Future<Either<Failure, Uint8List>> call(NoParams params) async {
-    return await repository.getPublicKey();
+    return repository.getPublicKey();
   }
 }

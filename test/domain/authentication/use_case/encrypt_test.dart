@@ -17,9 +17,9 @@ void main() {
       useCase = Encrypt(mockCypher);
     },
   );
-  final password = "1234";
+  const password = "1234";
   final publicKey = Uint8List(2048);
-  final encryptedText = "jhbnujhb";
+  const encryptedText = "jhbnujhb";
   test(
     "Should call cypher and get back the encrypted string",
     () async {

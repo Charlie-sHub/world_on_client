@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:worldon/core/errors/general_errors/failures.dart';
+import 'package:worldon/core/error/failures.dart';
 
 part 'authentication_failure.freezed.dart';
 
@@ -12,5 +12,9 @@ abstract class AuthenticationFailure extends Failure with _$AuthenticationFailur
 
   const factory AuthenticationFailure.emailAlreadyInUse() = EmailAlreadyInUse;
 
+  const factory AuthenticationFailure.usernameAlreadyInUse() = UsernameAlreadyInUse;
+
   const factory AuthenticationFailure.invalidEmailAndPasswordCombination() = InvalidEmailAndPasswordCombination;
+
+  const factory AuthenticationFailure.noUserInCache() = NoUserInCache;
 }

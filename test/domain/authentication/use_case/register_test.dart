@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/domain/authentication/failures/authentication_failure.dart';
 import 'package:worldon/domain/authentication/use_case/register.dart';
 import 'package:worldon/domain/core/entities/options.dart';
 import 'package:worldon/domain/core/entities/user.dart';
@@ -39,14 +40,57 @@ void main() {
     "Should send the User to the server to be registered",
     () async {
       // Arrange
-      when(mockAuthenticationRepository.register(any)).thenAnswer((_) async => Right(user));
+      when(mockAuthenticationRepository.register(any)).thenAnswer((_) async => right(user));
       // Act
       final result = await useCase(Params(user: user));
       // Assert
-      expect(result, Right(user));
+      expect(result, right(user));
       verify(mockAuthenticationRepository.register(any));
       verifyNoMoreInteractions(mockAuthenticationRepository);
     },
   );
-  // TODO Test on Failure
+  group(
+    "Testing on Failure",
+    () {
+      test(
+        "Should return a ServerError if there's an unknown server error",
+        () async {
+          // Arrange
+          when(mockAuthenticationRepository.register(any)).thenAnswer((_) async => left(const AuthenticationFailure.serverError()));
+          // Act
+          final result = await useCase(Params(user: user));
+          // Assert
+          expect(result, left(const AuthenticationFailure.serverError()));
+          verify(mockAuthenticationRepository.register(any));
+          verifyNoMoreInteractions(mockAuthenticationRepository);
+        },
+      );
+      test(
+        "Should return a EmailAlreadyInUse in case the Email used is already in use",
+        () async {
+          // Arrange
+          when(mockAuthenticationRepository.register(any)).thenAnswer((_) async => left(const AuthenticationFailure.emailAlreadyInUse()));
+          // Act
+          final result = await useCase(Params(user: user));
+          // Assert
+          expect(result, left(const AuthenticationFailure.emailAlreadyInUse()));
+          verify(mockAuthenticationRepository.register(any));
+          verifyNoMoreInteractions(mockAuthenticationRepository);
+        },
+      );
+      test(
+        "Should return a UsernameAlreadyInUse in case the Username used is already in use",
+        () async {
+          // Arrange
+          when(mockAuthenticationRepository.register(any)).thenAnswer((_) async => left(const AuthenticationFailure.usernameAlreadyInUse()));
+          // Act
+          final result = await useCase(Params(user: user));
+          // Assert
+          expect(result, left(const AuthenticationFailure.usernameAlreadyInUse()));
+          verify(mockAuthenticationRepository.register(any));
+          verifyNoMoreInteractions(mockAuthenticationRepository);
+        },
+      );
+    },
+  );
 }

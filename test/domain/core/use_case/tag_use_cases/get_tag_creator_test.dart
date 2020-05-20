@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/core/entities/options.dart';
 import 'package:worldon/domain/core/entities/user.dart';
+import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/use_case/tag_use_cases/get_tag_creator.dart';
 
 import '../../repository/mock_tag_repository.dart';
@@ -16,7 +17,7 @@ void main() {
       useCase = GetTagCreator(mockTagRepository);
     },
   );
-  final id = 1;
+  const id = 1;
   final user = User(
     id: 1,
     name: "Test User",
@@ -40,14 +41,57 @@ void main() {
     "Should get the User that created a given Tag",
     () async {
       // Arrange
-      when(mockTagRepository.getCreator(any)).thenAnswer((_) async => Right(user));
+      when(mockTagRepository.getCreator(any)).thenAnswer((_) async => right(user));
       // Act
       final result = await useCase(Params(id: id));
       // Assert
-      expect(result, Right(user));
+      expect(result, right(user));
       verify(mockTagRepository.getCreator(any));
       verifyNoMoreInteractions(mockTagRepository);
     },
   );
-  // TODO Test on Failure
+  group(
+    "testing on failure",
+    () {
+      test(
+        "Should return a CacheError in case there's some problem with the cache",
+        () async {
+          // Arrange
+          when(mockTagRepository.getCreator(any)).thenAnswer((_) async => left(const CoreFailure.cacheError()));
+          // Act
+          final result = await useCase(Params(id: id));
+          // Assert
+          expect(result, left(const CoreFailure.cacheError()));
+          verify(mockTagRepository.getCreator(any));
+          verifyNoMoreInteractions(mockTagRepository);
+        },
+      );
+      test(
+        "Should return a ServerError in case there's some problem with the server",
+        () async {
+          // Arrange
+          when(mockTagRepository.getCreator(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          // Act
+          final result = await useCase(Params(id: id));
+          // Assert
+          expect(result, left(const CoreFailure.serverError()));
+          verify(mockTagRepository.getCreator(any));
+          verifyNoMoreInteractions(mockTagRepository);
+        },
+      );
+      test(
+        "Should return a NotFoundError in case there's no creator",
+        () async {
+          // Arrange
+          when(mockTagRepository.getCreator(any)).thenAnswer((_) async => left(const CoreFailure.notFoundError()));
+          // Act
+          final result = await useCase(Params(id: id));
+          // Assert
+          expect(result, left(const CoreFailure.notFoundError()));
+          verify(mockTagRepository.getCreator(any));
+          verifyNoMoreInteractions(mockTagRepository);
+        },
+      );
+    },
+  );
 }

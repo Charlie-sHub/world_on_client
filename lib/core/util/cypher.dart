@@ -1,7 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:dartz/dartz.dart';
-import 'package:worldon/core/errors/general_errors/failures.dart';
+import 'package:worldon/core/error/failures.dart';
 
 // With the use of Firebase this class will likely be unnecessary
 class Cypher {

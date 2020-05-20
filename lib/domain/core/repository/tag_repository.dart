@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:worldon/core/errors/general_errors/failures.dart';
+import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 

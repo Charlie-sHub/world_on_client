@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:worldon/core/errors/general_errors/failures.dart';
+import 'package:worldon/core/error/failures.dart';
 
 /// Parent class for all  asynchronous Use Cases
 abstract class AsyncUseCase<Type, Params> {

@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:worldon/domain/authentication/failures/authentication_failure.dart';
+import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/authentication/repository/authentication_repository.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
@@ -9,7 +9,7 @@ class LogInGoogle implements AsyncUseCase<Unit, NoParams> {
   LogInGoogle(this.repository);
 
   @override
-  Future<Either<AuthenticationFailure, Unit>> call(NoParams params) {
+  Future<Either<Failure, Unit>> call(NoParams params) {
     return repository.logInGoogle();
   }
 }
