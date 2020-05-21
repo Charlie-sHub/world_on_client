@@ -27,6 +27,10 @@ class _$CoreFailureTearOff {
   CacheError cacheError() {
     return const CacheError();
   }
+
+  NameAlreadyInUse nameAlreadyInUse() {
+    return const NameAlreadyInUse();
+  }
 }
 
 // ignore: unused_element
@@ -39,31 +43,32 @@ mixin _$CoreFailure {
     @required Result serverError(),
     @required Result notFoundError(),
     @required Result cacheError(),
+    @required Result nameAlreadyInUse(),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result unknownDomainLayerError(),
     Result serverError(),
     Result notFoundError(),
     Result cacheError(),
+    Result nameAlreadyInUse(),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result unknownDomainLayerError(UnknownDomainLayerError value),
     @required Result serverError(ServerError value),
     @required Result notFoundError(NotFoundError value),
     @required Result cacheError(CacheError value),
+    @required Result nameAlreadyInUse(NameAlreadyInUse value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result unknownDomainLayerError(UnknownDomainLayerError value),
     Result serverError(ServerError value),
     Result notFoundError(NotFoundError value),
     Result cacheError(CacheError value),
+    Result nameAlreadyInUse(NameAlreadyInUse value),
     @required Result orElse(),
   });
 }
@@ -76,23 +81,29 @@ class _$CoreFailureCopyWithImpl<$Res> implements $CoreFailureCopyWith<$Res> {
   _$CoreFailureCopyWithImpl(this._value, this._then);
 
   final CoreFailure _value;
-
   // ignore: unused_field
   final $Res Function(CoreFailure) _then;
 }
 
 abstract class $UnknownDomainLayerErrorCopyWith<$Res> {
-  factory $UnknownDomainLayerErrorCopyWith(UnknownDomainLayerError value, $Res Function(UnknownDomainLayerError) then) = _$UnknownDomainLayerErrorCopyWithImpl<$Res>;
+  factory $UnknownDomainLayerErrorCopyWith(UnknownDomainLayerError value,
+    $Res Function(UnknownDomainLayerError) then) =
+  _$UnknownDomainLayerErrorCopyWithImpl<$Res>;
 }
 
-class _$UnknownDomainLayerErrorCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res> implements $UnknownDomainLayerErrorCopyWith<$Res> {
-  _$UnknownDomainLayerErrorCopyWithImpl(UnknownDomainLayerError _value, $Res Function(UnknownDomainLayerError) _then) : super(_value, (v) => _then(v as UnknownDomainLayerError));
+class _$UnknownDomainLayerErrorCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
+  implements $UnknownDomainLayerErrorCopyWith<$Res> {
+  _$UnknownDomainLayerErrorCopyWithImpl(UnknownDomainLayerError _value,
+    $Res Function(UnknownDomainLayerError) _then)
+    : super(_value, (v) => _then(v as UnknownDomainLayerError));
 
   @override
   UnknownDomainLayerError get _value => super._value as UnknownDomainLayerError;
 }
 
-class _$UnknownDomainLayerError with DiagnosticableTreeMixin implements UnknownDomainLayerError {
+class _$UnknownDomainLayerError
+  with DiagnosticableTreeMixin
+  implements UnknownDomainLayerError {
   const _$UnknownDomainLayerError();
 
   @override
@@ -103,7 +114,8 @@ class _$UnknownDomainLayerError with DiagnosticableTreeMixin implements UnknownD
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'CoreFailure.unknownDomainLayerError'));
+    properties
+      ..add(DiagnosticsProperty('type', 'CoreFailure.unknownDomainLayerError'));
   }
 
   @override
@@ -121,11 +133,13 @@ class _$UnknownDomainLayerError with DiagnosticableTreeMixin implements UnknownD
     @required Result serverError(),
     @required Result notFoundError(),
     @required Result cacheError(),
+    @required Result nameAlreadyInUse(),
   }) {
     assert(unknownDomainLayerError != null);
     assert(serverError != null);
     assert(notFoundError != null);
     assert(cacheError != null);
+    assert(nameAlreadyInUse != null);
     return unknownDomainLayerError();
   }
 
@@ -136,6 +150,7 @@ class _$UnknownDomainLayerError with DiagnosticableTreeMixin implements UnknownD
     Result serverError(),
     Result notFoundError(),
     Result cacheError(),
+    Result nameAlreadyInUse(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -152,11 +167,13 @@ class _$UnknownDomainLayerError with DiagnosticableTreeMixin implements UnknownD
     @required Result serverError(ServerError value),
     @required Result notFoundError(NotFoundError value),
     @required Result cacheError(CacheError value),
+    @required Result nameAlreadyInUse(NameAlreadyInUse value),
   }) {
     assert(unknownDomainLayerError != null);
     assert(serverError != null);
     assert(notFoundError != null);
     assert(cacheError != null);
+    assert(nameAlreadyInUse != null);
     return unknownDomainLayerError(this);
   }
 
@@ -167,6 +184,7 @@ class _$UnknownDomainLayerError with DiagnosticableTreeMixin implements UnknownD
     Result serverError(ServerError value),
     Result notFoundError(NotFoundError value),
     Result cacheError(CacheError value),
+    Result nameAlreadyInUse(NameAlreadyInUse value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -182,11 +200,14 @@ abstract class UnknownDomainLayerError implements CoreFailure {
 }
 
 abstract class $ServerErrorCopyWith<$Res> {
-  factory $ServerErrorCopyWith(ServerError value, $Res Function(ServerError) then) = _$ServerErrorCopyWithImpl<$Res>;
+  factory $ServerErrorCopyWith(ServerError value, $Res Function(ServerError) then) =
+  _$ServerErrorCopyWithImpl<$Res>;
 }
 
-class _$ServerErrorCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res> implements $ServerErrorCopyWith<$Res> {
-  _$ServerErrorCopyWithImpl(ServerError _value, $Res Function(ServerError) _then) : super(_value, (v) => _then(v as ServerError));
+class _$ServerErrorCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
+  implements $ServerErrorCopyWith<$Res> {
+  _$ServerErrorCopyWithImpl(ServerError _value, $Res Function(ServerError) _then)
+    : super(_value, (v) => _then(v as ServerError));
 
   @override
   ServerError get _value => super._value as ServerError;
@@ -221,11 +242,13 @@ class _$ServerError with DiagnosticableTreeMixin implements ServerError {
     @required Result serverError(),
     @required Result notFoundError(),
     @required Result cacheError(),
+    @required Result nameAlreadyInUse(),
   }) {
     assert(unknownDomainLayerError != null);
     assert(serverError != null);
     assert(notFoundError != null);
     assert(cacheError != null);
+    assert(nameAlreadyInUse != null);
     return serverError();
   }
 
@@ -236,6 +259,7 @@ class _$ServerError with DiagnosticableTreeMixin implements ServerError {
     Result serverError(),
     Result notFoundError(),
     Result cacheError(),
+    Result nameAlreadyInUse(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -252,11 +276,13 @@ class _$ServerError with DiagnosticableTreeMixin implements ServerError {
     @required Result serverError(ServerError value),
     @required Result notFoundError(NotFoundError value),
     @required Result cacheError(CacheError value),
+    @required Result nameAlreadyInUse(NameAlreadyInUse value),
   }) {
     assert(unknownDomainLayerError != null);
     assert(serverError != null);
     assert(notFoundError != null);
     assert(cacheError != null);
+    assert(nameAlreadyInUse != null);
     return serverError(this);
   }
 
@@ -267,6 +293,7 @@ class _$ServerError with DiagnosticableTreeMixin implements ServerError {
     Result serverError(ServerError value),
     Result notFoundError(NotFoundError value),
     Result cacheError(CacheError value),
+    Result nameAlreadyInUse(NameAlreadyInUse value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -282,11 +309,14 @@ abstract class ServerError implements CoreFailure {
 }
 
 abstract class $NotFoundErrorCopyWith<$Res> {
-  factory $NotFoundErrorCopyWith(NotFoundError value, $Res Function(NotFoundError) then) = _$NotFoundErrorCopyWithImpl<$Res>;
+  factory $NotFoundErrorCopyWith(NotFoundError value, $Res Function(NotFoundError) then) =
+  _$NotFoundErrorCopyWithImpl<$Res>;
 }
 
-class _$NotFoundErrorCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res> implements $NotFoundErrorCopyWith<$Res> {
-  _$NotFoundErrorCopyWithImpl(NotFoundError _value, $Res Function(NotFoundError) _then) : super(_value, (v) => _then(v as NotFoundError));
+class _$NotFoundErrorCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
+  implements $NotFoundErrorCopyWith<$Res> {
+  _$NotFoundErrorCopyWithImpl(NotFoundError _value, $Res Function(NotFoundError) _then)
+    : super(_value, (v) => _then(v as NotFoundError));
 
   @override
   NotFoundError get _value => super._value as NotFoundError;
@@ -321,11 +351,13 @@ class _$NotFoundError with DiagnosticableTreeMixin implements NotFoundError {
     @required Result serverError(),
     @required Result notFoundError(),
     @required Result cacheError(),
+    @required Result nameAlreadyInUse(),
   }) {
     assert(unknownDomainLayerError != null);
     assert(serverError != null);
     assert(notFoundError != null);
     assert(cacheError != null);
+    assert(nameAlreadyInUse != null);
     return notFoundError();
   }
 
@@ -336,6 +368,7 @@ class _$NotFoundError with DiagnosticableTreeMixin implements NotFoundError {
     Result serverError(),
     Result notFoundError(),
     Result cacheError(),
+    Result nameAlreadyInUse(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -352,11 +385,13 @@ class _$NotFoundError with DiagnosticableTreeMixin implements NotFoundError {
     @required Result serverError(ServerError value),
     @required Result notFoundError(NotFoundError value),
     @required Result cacheError(CacheError value),
+    @required Result nameAlreadyInUse(NameAlreadyInUse value),
   }) {
     assert(unknownDomainLayerError != null);
     assert(serverError != null);
     assert(notFoundError != null);
     assert(cacheError != null);
+    assert(nameAlreadyInUse != null);
     return notFoundError(this);
   }
 
@@ -367,6 +402,7 @@ class _$NotFoundError with DiagnosticableTreeMixin implements NotFoundError {
     Result serverError(ServerError value),
     Result notFoundError(NotFoundError value),
     Result cacheError(CacheError value),
+    Result nameAlreadyInUse(NameAlreadyInUse value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -382,11 +418,14 @@ abstract class NotFoundError implements CoreFailure {
 }
 
 abstract class $CacheErrorCopyWith<$Res> {
-  factory $CacheErrorCopyWith(CacheError value, $Res Function(CacheError) then) = _$CacheErrorCopyWithImpl<$Res>;
+  factory $CacheErrorCopyWith(CacheError value, $Res Function(CacheError) then) =
+  _$CacheErrorCopyWithImpl<$Res>;
 }
 
-class _$CacheErrorCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res> implements $CacheErrorCopyWith<$Res> {
-  _$CacheErrorCopyWithImpl(CacheError _value, $Res Function(CacheError) _then) : super(_value, (v) => _then(v as CacheError));
+class _$CacheErrorCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
+  implements $CacheErrorCopyWith<$Res> {
+  _$CacheErrorCopyWithImpl(CacheError _value, $Res Function(CacheError) _then)
+    : super(_value, (v) => _then(v as CacheError));
 
   @override
   CacheError get _value => super._value as CacheError;
@@ -421,11 +460,13 @@ class _$CacheError with DiagnosticableTreeMixin implements CacheError {
     @required Result serverError(),
     @required Result notFoundError(),
     @required Result cacheError(),
+    @required Result nameAlreadyInUse(),
   }) {
     assert(unknownDomainLayerError != null);
     assert(serverError != null);
     assert(notFoundError != null);
     assert(cacheError != null);
+    assert(nameAlreadyInUse != null);
     return cacheError();
   }
 
@@ -436,6 +477,7 @@ class _$CacheError with DiagnosticableTreeMixin implements CacheError {
     Result serverError(),
     Result notFoundError(),
     Result cacheError(),
+    Result nameAlreadyInUse(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -452,11 +494,13 @@ class _$CacheError with DiagnosticableTreeMixin implements CacheError {
     @required Result serverError(ServerError value),
     @required Result notFoundError(NotFoundError value),
     @required Result cacheError(CacheError value),
+    @required Result nameAlreadyInUse(NameAlreadyInUse value),
   }) {
     assert(unknownDomainLayerError != null);
     assert(serverError != null);
     assert(notFoundError != null);
     assert(cacheError != null);
+    assert(nameAlreadyInUse != null);
     return cacheError(this);
   }
 
@@ -467,6 +511,7 @@ class _$CacheError with DiagnosticableTreeMixin implements CacheError {
     Result serverError(ServerError value),
     Result notFoundError(NotFoundError value),
     Result cacheError(CacheError value),
+    Result nameAlreadyInUse(NameAlreadyInUse value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -479,4 +524,116 @@ class _$CacheError with DiagnosticableTreeMixin implements CacheError {
 
 abstract class CacheError implements CoreFailure {
   const factory CacheError() = _$CacheError;
+}
+
+abstract class $NameAlreadyInUseCopyWith<$Res> {
+  factory $NameAlreadyInUseCopyWith(NameAlreadyInUse value, $Res Function(NameAlreadyInUse) then) =
+  _$NameAlreadyInUseCopyWithImpl<$Res>;
+}
+
+class _$NameAlreadyInUseCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
+  implements $NameAlreadyInUseCopyWith<$Res> {
+  _$NameAlreadyInUseCopyWithImpl(NameAlreadyInUse _value, $Res Function(NameAlreadyInUse) _then)
+    : super(_value, (v) => _then(v as NameAlreadyInUse));
+  
+  @override
+  NameAlreadyInUse get _value => super._value as NameAlreadyInUse;
+}
+
+class _$NameAlreadyInUse
+  with DiagnosticableTreeMixin
+  implements NameAlreadyInUse {
+  const _$NameAlreadyInUse();
+  
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'CoreFailure.nameAlreadyInUse()';
+  }
+  
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'CoreFailure.nameAlreadyInUse'));
+  }
+  
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is NameAlreadyInUse);
+  }
+  
+  @override
+  int get hashCode => runtimeType.hashCode;
+  
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result unknownDomainLayerError(),
+    @required Result serverError(),
+    @required Result notFoundError(),
+    @required Result cacheError(),
+    @required Result nameAlreadyInUse(),
+  }) {
+    assert(unknownDomainLayerError != null);
+    assert(serverError != null);
+    assert(notFoundError != null);
+    assert(cacheError != null);
+    assert(nameAlreadyInUse != null);
+    return nameAlreadyInUse();
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result unknownDomainLayerError(),
+    Result serverError(),
+    Result notFoundError(),
+    Result cacheError(),
+    Result nameAlreadyInUse(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (nameAlreadyInUse != null) {
+      return nameAlreadyInUse();
+    }
+    return orElse();
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result unknownDomainLayerError(UnknownDomainLayerError value),
+    @required Result serverError(ServerError value),
+    @required Result notFoundError(NotFoundError value),
+    @required Result cacheError(CacheError value),
+    @required Result nameAlreadyInUse(NameAlreadyInUse value),
+  }) {
+    assert(unknownDomainLayerError != null);
+    assert(serverError != null);
+    assert(notFoundError != null);
+    assert(cacheError != null);
+    assert(nameAlreadyInUse != null);
+    return nameAlreadyInUse(this);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result unknownDomainLayerError(UnknownDomainLayerError value),
+    Result serverError(ServerError value),
+    Result notFoundError(NotFoundError value),
+    Result cacheError(CacheError value),
+    Result nameAlreadyInUse(NameAlreadyInUse value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (nameAlreadyInUse != null) {
+      return nameAlreadyInUse(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NameAlreadyInUse implements CoreFailure {
+  const factory NameAlreadyInUse() = _$NameAlreadyInUse;
 }

@@ -69,7 +69,7 @@ void main() {
         },
       );
       test(
-        "Should return a NotFoundError in case there are no tags",
+        "Should return a NotFoundError in case there are no Tags",
         () async {
           // Arrange
           when(mockTagRepository.getAllTags()).thenAnswer((_) async => left(const CoreFailure.notFoundError()));

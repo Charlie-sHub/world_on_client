@@ -13,4 +13,6 @@ abstract class CoreFailure extends Failure with _$CoreFailure {
   const factory CoreFailure.notFoundError() = NotFoundError;
 
   const factory CoreFailure.cacheError() = CacheError;
+
+  const factory CoreFailure.nameAlreadyInUse() = NameAlreadyInUse;
 }

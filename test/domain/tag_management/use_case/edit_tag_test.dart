@@ -47,6 +47,19 @@ void main() {
           verifyNoMoreInteractions(mockTagRepository);
         },
       );
+      test(
+        "Should return NameAlreadyInUse if the name given is already being used by other Tag",
+        () async {
+          // Arrange
+          when(mockTagRepository.editTag(any)).thenAnswer((_) async => left(const CoreFailure.nameAlreadyInUse()));
+          // Act
+          final result = await useCase(Params(tag: tag));
+          // Assert
+          expect(result, left(const CoreFailure.nameAlreadyInUse()));
+          verify(mockTagRepository.editTag(any));
+          verifyNoMoreInteractions(mockTagRepository);
+        },
+      );
     },
   );
 }
