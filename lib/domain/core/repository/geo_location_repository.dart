@@ -1,1 +1,3 @@
-abstract class GeoLocationRepository {}
+abstract class GeoLocationRepository {
+  // TODO: implement this repository
+}
