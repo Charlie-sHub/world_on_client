@@ -20,6 +20,9 @@ abstract class AchievementRepository {
   // Is this really necessary? probably
   Future<Either<Failure, Unit>> awardAchievement({int achievementId, int userId});
 
+  /// Gets all the [Achievement]s of a given [User] by its id
+  Future<Either<Failure, Set<Achievement>>> getUserAchievements(int userId);
+
   /// Gets all the [Achievement]s in the database.
   // TODO: Make it so only a few Achievements are gotten each time it's called
   // Getting all the achievements at once is not scalable, though it's not that bad
