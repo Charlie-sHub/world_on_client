@@ -14,6 +14,8 @@ abstract class CoreFailure extends Failure with _$CoreFailure {
 
   const factory CoreFailure.cacheError() = CacheError;
 
+  const factory CoreFailure.geoLocationError() = GeoLocationError;
+
   /// For all creation/modification use cases of classes que require unique names
   const factory CoreFailure.nameAlreadyInUse() = NameAlreadyInUse;
 }
