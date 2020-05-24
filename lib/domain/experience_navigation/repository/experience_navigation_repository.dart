@@ -18,5 +18,5 @@ abstract class ExperienceNavigationRepository {
   Future<Either<Failure, Unit>> likeExperience({int userId, int experienceId});
 
   /// Sends the IDs of a [User] and an [Experience] so the server adds the [Experience] to the [User]'s done list
-  Future<Either<Failure, Unit>> accomplishExperience({int userId, int experienceId});
+  Future<Either<Failure, Unit>> finishExperience({int userId, int experienceId});
 }
