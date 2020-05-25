@@ -13,7 +13,7 @@ class Location extends Equatable {
   final String postalCode;
   final Set<Experience> experiences;
 
-  Location({
+  const Location({
     @required this.id,
     @required this.city,
     @required this.country,

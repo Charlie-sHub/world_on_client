@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/objective.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
@@ -29,5 +30,5 @@ class FillObjectiveTracker implements UseCase<Map<int, bool>, Params> {
 class Params {
   final Set<Objective> objectiveSet;
 
-  Params({this.objectiveSet});
+  Params({@required this.objectiveSet});
 }

@@ -29,7 +29,7 @@ class Experience extends Equatable {
   final Set<User> likedBy;
   final Set<User> doneBy;
 
-  Experience({
+  const Experience({
     @required this.id,
     @required this.name,
     @required this.description,

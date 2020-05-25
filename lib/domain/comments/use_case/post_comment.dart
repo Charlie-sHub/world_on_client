@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/comments/repository/comment_repository.dart';
 import 'package:worldon/domain/core/entities/comment.dart';
@@ -22,5 +23,5 @@ class Params {
   final Comment comment;
   final int experienceId;
 
-  Params({this.comment, this.experienceId});
+  Params({@required this.comment, @required this.experienceId});
 }

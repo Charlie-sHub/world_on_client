@@ -38,7 +38,7 @@ class User extends Equatable {
   final Set<Experience> experiencesLiked;
   final Set<Experience> experiencesToDo;
 
-  User({
+  const User({
     // Maybe i'll have to make only the username and password be required so facilitate authentication
     @required this.id,
     @required this.name,

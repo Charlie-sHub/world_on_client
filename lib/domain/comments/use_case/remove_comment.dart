@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/comments/repository/comment_repository.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
@@ -17,5 +18,5 @@ class RemoveComment implements AsyncUseCase<Unit, Params> {
 class Params {
   final int id;
 
-  Params({this.id});
+  Params({@required this.id});
 }

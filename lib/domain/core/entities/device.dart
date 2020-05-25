@@ -10,7 +10,7 @@ class Device extends Equatable {
   final String type;
   final String company;
 
-  Device({
+  const Device({
     @required this.id,
     @required this.name,
     @required this.type,

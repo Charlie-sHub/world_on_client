@@ -10,7 +10,7 @@ class Reward extends Equatable {
   final String description;
   final String imageName;
 
-  Reward({
+  const Reward({
     @required this.id,
     @required this.name,
     @required this.description,

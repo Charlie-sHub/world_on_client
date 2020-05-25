@@ -12,7 +12,7 @@ class Tag extends Equatable {
   final DateTime creationDate;
   final DateTime modificationDate;
 
-  Tag({
+  const Tag({
     @required this.id,
     @required this.name,
     @required this.creator,

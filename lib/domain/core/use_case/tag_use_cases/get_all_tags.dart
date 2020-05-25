@@ -10,6 +10,7 @@ class GetAllTags implements AsyncUseCase<List<Tag>, NoParams> {
 
   GetAllTags(this.tagRepository);
 
+  @override
   Future<Either<Failure, List<Tag>>> call(NoParams params) async {
     return tagRepository.getAllTags();
   }

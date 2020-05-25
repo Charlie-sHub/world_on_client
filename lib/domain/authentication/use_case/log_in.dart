@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/authentication/repository/authentication_repository.dart';
 import 'package:worldon/domain/core/entities/user.dart';
@@ -19,5 +20,5 @@ class LogIn implements AsyncUseCase<User, Params> {
 class Params {
   final User user;
 
-  Params({this.user});
+  Params({@required this.user});
 }

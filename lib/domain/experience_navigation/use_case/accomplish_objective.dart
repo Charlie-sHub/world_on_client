@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
@@ -30,5 +31,5 @@ class AccomplishObjective implements UseCase<bool, Params> {
 class Params {
   final int objectiveId;
 
-  Params({this.objectiveId});
+  Params({@required this.objectiveId});
 }

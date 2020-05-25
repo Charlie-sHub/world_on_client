@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/achievement_management/repository/achievement_repository.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
@@ -24,5 +25,5 @@ class Params {
   final int userId;
   final int achievementId;
 
-  Params({this.userId, this.achievementId});
+  Params({@required this.userId, @required this.achievementId});
 }

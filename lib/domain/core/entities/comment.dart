@@ -12,7 +12,7 @@ class Comment extends Equatable {
   final DateTime creationDate;
   final DateTime modificationDate;
 
-  Comment({
+  const Comment({
     @required this.id,
     @required this.user,
     @required this.content,

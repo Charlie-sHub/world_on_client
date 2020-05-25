@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/repository/core_repository.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
@@ -21,5 +22,5 @@ class Params {
   final int userId;
   final int experienceId;
 
-  Params({this.userId, this.experienceId});
+  Params({@required this.userId, @required this.experienceId});
 }

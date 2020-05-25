@@ -12,7 +12,7 @@ class Message extends Equatable {
   final String content;
   final DateTime creationDate;
 
-  Message({
+  const Message({
     @required this.id,
     @required this.sender,
     @required this.receiver,

@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
@@ -15,5 +16,5 @@ class LogOut implements AsyncUseCase<Unit, Params> {
 class Params {
   final User user;
 
-  Params({this.user});
+  Params({@required this.user});
 }

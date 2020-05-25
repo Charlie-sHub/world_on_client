@@ -11,7 +11,7 @@ class Objective extends Equatable {
   final double longitude;
   final String imageName;
 
-  Objective({
+  const Objective({
     @required this.id,
     @required this.description,
     @required this.latitude,

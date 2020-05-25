@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/comments/repository/comment_repository.dart';
 import 'package:worldon/domain/core/entities/comment.dart';
@@ -18,5 +19,5 @@ class GetExperienceComments implements AsyncUseCase<Set<Comment>, Params> {
 class Params {
   final int experienceId;
 
-  Params({this.experienceId});
+  Params({@required this.experienceId});
 }

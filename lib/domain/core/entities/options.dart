@@ -8,7 +8,7 @@ class Options extends Equatable {
   final int id;
   final String languageCode;
 
-  Options({
+  const Options({
     @required this.id,
     @required this.languageCode,
   });

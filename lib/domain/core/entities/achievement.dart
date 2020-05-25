@@ -19,7 +19,7 @@ class Achievement extends Equatable {
   final DateTime modificationDate;
   final Set<Tag> tags;
 
-  Achievement({
+  const Achievement({
     @required this.id,
     @required this.name,
     @required this.description,

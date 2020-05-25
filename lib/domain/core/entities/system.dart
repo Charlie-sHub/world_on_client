@@ -10,7 +10,7 @@ class System extends Equatable {
   final String type;
   final String company;
 
-  System({
+  const System({
     @required this.id,
     @required this.name,
     @required this.type,

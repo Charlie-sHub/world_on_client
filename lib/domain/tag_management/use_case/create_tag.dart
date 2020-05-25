@@ -10,7 +10,7 @@ class CreateTag extends AsyncUseCase<Unit, Params> {
   CreateTag(this.repository);
 
   @override
-  Future<Either<Failure, Unit>> call(params) async {
+  Future<Either<Failure, Unit>> call(Params params) async {
     return repository.createTag(params.tag);
   }
 }

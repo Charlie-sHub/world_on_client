@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/repository/tag_repository.dart';
@@ -19,5 +20,5 @@ class GetTagsByCreator implements AsyncUseCase<List<Tag>, Params> {
 class Params {
   final int creatorId;
 
-  Params({this.creatorId});
+  Params({@required this.creatorId});
 }
