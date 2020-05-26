@@ -11,7 +11,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 class Register implements AsyncUseCase<User, Params> {
   final AuthenticationRepository repository;
 
-  Register(this.repository);
+  const Register(this.repository);
 
   @override
   Future<Either<Failure, User>> call(Params params) async {

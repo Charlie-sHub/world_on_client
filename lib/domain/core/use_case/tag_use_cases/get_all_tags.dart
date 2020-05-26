@@ -8,7 +8,7 @@ import '../use_case.dart';
 class GetAllTags implements AsyncUseCase<List<Tag>, NoParams> {
   final TagRepository tagRepository;
 
-  GetAllTags(this.tagRepository);
+  const GetAllTags(this.tagRepository);
 
   @override
   Future<Either<Failure, List<Tag>>> call(NoParams params) async {

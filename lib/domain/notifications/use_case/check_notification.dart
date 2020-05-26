@@ -1,17 +1,17 @@
 import 'package:dartz/dartz.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failures.dart';
-import 'package:worldon/domain/comments/repository/comment_repository.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/domain/notifications/repository/notification_repository.dart';
 
-class RemoveComment implements AsyncUseCase<Unit, Params> {
-  final CommentRepository repository;
+class CheckNotification implements AsyncUseCase<Unit, Params> {
+  final NotificationRepository repository;
 
-  const RemoveComment(this.repository);
+  const CheckNotification(this.repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    return repository.removeComment(params.id);
+    return repository.checkNotification(params.id);
   }
 }
 

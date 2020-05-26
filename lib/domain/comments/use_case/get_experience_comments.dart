@@ -8,7 +8,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 class GetExperienceComments implements AsyncUseCase<Set<Comment>, Params> {
   final CommentRepository repository;
 
-  GetExperienceComments(this.repository);
+  const GetExperienceComments(this.repository);
 
   @override
   Future<Either<Failure, Set<Comment>>> call(Params params) async {

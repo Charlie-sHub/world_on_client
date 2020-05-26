@@ -7,7 +7,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 class RemoveAchievement implements AsyncUseCase<Unit, Params> {
   final AchievementRepository repository;
 
-  RemoveAchievement(this.repository);
+  const RemoveAchievement(this.repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {

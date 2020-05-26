@@ -8,7 +8,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 class AccomplishObjective implements UseCase<bool, Params> {
   final Map<int, bool> objectiveTracker;
 
-  AccomplishObjective(this.objectiveTracker);
+  const AccomplishObjective(this.objectiveTracker);
 
   /// Takes an objective id and changes to true the corresponding value in the tracker, then checks if there are any false values left and returns that
   @override

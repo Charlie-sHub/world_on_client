@@ -8,7 +8,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 class EditComment implements AsyncUseCase<Unit, Params> {
   final CommentRepository repository;
 
-  EditComment(this.repository);
+  const EditComment(this.repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {

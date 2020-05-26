@@ -10,7 +10,7 @@ import 'package:worldon/domain/experience_navigation/repository/experience_navig
 class FinishExperience implements AsyncUseCase<Unit, Params> {
   final ExperienceNavigationRepository repository;
 
-  FinishExperience(this.repository);
+  const FinishExperience(this.repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {

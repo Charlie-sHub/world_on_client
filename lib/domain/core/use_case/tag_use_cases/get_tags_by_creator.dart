@@ -9,7 +9,7 @@ import '../use_case.dart';
 class GetTagsByCreator implements AsyncUseCase<List<Tag>, Params> {
   final TagRepository repository;
 
-  GetTagsByCreator(this.repository);
+  const GetTagsByCreator(this.repository);
 
   @override
   Future<Either<Failure, List<Tag>>> call(Params params) async {

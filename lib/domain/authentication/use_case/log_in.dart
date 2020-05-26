@@ -9,7 +9,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 class LogIn implements AsyncUseCase<User, Params> {
   final AuthenticationRepository repository;
 
-  LogIn(this.repository);
+  const LogIn(this.repository);
 
   @override
   Future<Either<Failure, User>> call(Params params) async {

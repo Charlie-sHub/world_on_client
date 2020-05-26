@@ -7,7 +7,7 @@ import 'package:worldon/domain/experience_management/repository/experience_manag
 class RemoveExperience implements AsyncUseCase<Unit, Params> {
   final ExperienceManagementRepository repository;
 
-  RemoveExperience(this.repository);
+  const RemoveExperience(this.repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {

@@ -7,7 +7,7 @@ import 'package:worldon/domain/experience_log/repository/experience_log_reposito
 class DismissExperienceFromLog implements AsyncUseCase<Unit, Params> {
   final ExperienceLogRepository repository;
 
-  DismissExperienceFromLog(this.repository);
+  const DismissExperienceFromLog(this.repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {

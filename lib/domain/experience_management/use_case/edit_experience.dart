@@ -8,7 +8,7 @@ import 'package:worldon/domain/experience_management/repository/experience_manag
 class EditExperience implements AsyncUseCase<Unit, Params> {
   final ExperienceManagementRepository repository;
 
-  EditExperience(this.repository);
+  const EditExperience(this.repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) {

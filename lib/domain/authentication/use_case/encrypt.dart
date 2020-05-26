@@ -9,7 +9,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 class Encrypt implements UseCase<String, Params> {
   final Cypher cypher;
 
-  Encrypt(this.cypher);
+  const Encrypt(this.cypher);
 
   @override
   Either<Failure, String> call(Params params) {

@@ -12,8 +12,8 @@ abstract class NotificationRepository {
   Future<Either<Failure, List<Notification>>> loadNotifications(int userId);
 
   /// Requests the server to delete all [Notification]s of a given [User]
-  Future<Either<Failure, Unit>> deleteAllNotifications(int userId);
+  Future<Either<Failure, Unit>> deleteUserNotifications(int userId);
 
   ///	Sends a [Notification] to the server for its "seen" attribute to be updated
-  Future<Either<Failure, Unit>> checkNotification(Notification notification);
+  Future<Either<Failure, Unit>> checkNotification(int id);
 }

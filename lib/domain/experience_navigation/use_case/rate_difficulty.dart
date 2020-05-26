@@ -7,7 +7,7 @@ import 'package:worldon/domain/experience_navigation/repository/experience_navig
 class RateDifficulty implements AsyncUseCase<Unit, Params> {
   final ExperienceNavigationRepository repository;
 
-  RateDifficulty(this.repository);
+  const RateDifficulty(this.repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {

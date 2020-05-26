@@ -8,7 +8,7 @@ import 'package:worldon/domain/experience_management/repository/experience_manag
 class GetExperience implements AsyncUseCase<Experience, Params> {
   final ExperienceManagementRepository repository;
 
-  GetExperience(this.repository);
+  const GetExperience(this.repository);
 
   @override
   Future<Either<Failure, Experience>> call(Params params) async {
