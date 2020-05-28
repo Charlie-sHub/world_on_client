@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/options.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
@@ -18,5 +19,5 @@ class SaveGlobalOptions implements AsyncUseCase<Unit, Params> {
 class Params {
   final Options options;
 
-  Params({this.options});
+  Params({@required this.options});
 }

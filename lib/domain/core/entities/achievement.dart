@@ -7,6 +7,7 @@ import 'package:worldon/domain/core/entities/user.dart';
 ///
 /// Achievements can be earned by Users for doing certain things in the application, getting rewarded for doing so.
 class Achievement extends Equatable {
+  // TODO: Check if it's better for entities to be mutable
   final int id;
   final String name;
   final String description;

@@ -5,6 +5,7 @@ import 'package:worldon/domain/authentication/failures/authentication_failure.da
 import 'package:worldon/domain/authentication/use_case/register.dart';
 import 'package:worldon/domain/core/entities/options.dart';
 import 'package:worldon/domain/core/entities/user.dart';
+import 'package:worldon/domain/core/failures/core_failure.dart';
 
 import '../repository/mock_authentication_repository.dart';
 
@@ -82,11 +83,11 @@ void main() {
         "Should return a UsernameAlreadyInUse in case the Username used is already in use",
         () async {
           // Arrange
-          when(mockAuthenticationRepository.register(any)).thenAnswer((_) async => left(const AuthenticationFailure.usernameAlreadyInUse()));
+          when(mockAuthenticationRepository.register(any)).thenAnswer((_) async => left(const CoreFailure.usernameAlreadyInUse()));
           // Act
           final result = await useCase(Params(user: user));
           // Assert
-          expect(result, left(const AuthenticationFailure.usernameAlreadyInUse()));
+          expect(result, left(const CoreFailure.usernameAlreadyInUse()));
           verify(mockAuthenticationRepository.register(any));
           verifyNoMoreInteractions(mockAuthenticationRepository);
         },

@@ -12,7 +12,8 @@ abstract class AuthenticationFailure extends Failure with _$AuthenticationFailur
 
   const factory AuthenticationFailure.emailAlreadyInUse() = EmailAlreadyInUse;
 
-  const factory AuthenticationFailure.usernameAlreadyInUse() = UsernameAlreadyInUse;
+  // Moved to Core, since editing profiles could also return this failure
+  // const factory AuthenticationFailure.usernameAlreadyInUse() = UsernameAlreadyInUse;
 
   const factory AuthenticationFailure.invalidEmailAndPasswordCombination() = InvalidEmailAndPasswordCombination;
 

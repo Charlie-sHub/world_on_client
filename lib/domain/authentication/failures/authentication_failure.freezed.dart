@@ -24,10 +24,6 @@ class _$AuthenticationFailureTearOff {
     return const EmailAlreadyInUse();
   }
 
-  UsernameAlreadyInUse usernameAlreadyInUse() {
-    return const UsernameAlreadyInUse();
-  }
-
   InvalidEmailAndPasswordCombination invalidEmailAndPasswordCombination() {
     return const InvalidEmailAndPasswordCombination();
   }
@@ -46,38 +42,31 @@ mixin _$AuthenticationFailure {
     @required Result cancelledByUser(),
     @required Result serverError(),
     @required Result emailAlreadyInUse(),
-    @required Result usernameAlreadyInUse(),
     @required Result invalidEmailAndPasswordCombination(),
     @required Result noUserInCache(),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result cancelledByUser(),
     Result serverError(),
     Result emailAlreadyInUse(),
-    Result usernameAlreadyInUse(),
     Result invalidEmailAndPasswordCombination(),
     Result noUserInCache(),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result cancelledByUser(CancelledByUser value),
     @required Result serverError(ServerError value),
     @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     @required Result invalidEmailAndPasswordCombination(InvalidEmailAndPasswordCombination value),
     @required Result noUserInCache(NoUserInCache value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result cancelledByUser(CancelledByUser value),
     Result serverError(ServerError value),
     Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     Result invalidEmailAndPasswordCombination(InvalidEmailAndPasswordCombination value),
     Result noUserInCache(NoUserInCache value),
     @required Result orElse(),
@@ -92,23 +81,27 @@ class _$AuthenticationFailureCopyWithImpl<$Res> implements $AuthenticationFailur
   _$AuthenticationFailureCopyWithImpl(this._value, this._then);
 
   final AuthenticationFailure _value;
-
   // ignore: unused_field
   final $Res Function(AuthenticationFailure) _then;
 }
 
 abstract class $CancelledByUserCopyWith<$Res> {
-  factory $CancelledByUserCopyWith(CancelledByUser value, $Res Function(CancelledByUser) then) = _$CancelledByUserCopyWithImpl<$Res>;
+  factory $CancelledByUserCopyWith(CancelledByUser value, $Res Function(CancelledByUser) then) =
+  _$CancelledByUserCopyWithImpl<$Res>;
 }
 
-class _$CancelledByUserCopyWithImpl<$Res> extends _$AuthenticationFailureCopyWithImpl<$Res> implements $CancelledByUserCopyWith<$Res> {
-  _$CancelledByUserCopyWithImpl(CancelledByUser _value, $Res Function(CancelledByUser) _then) : super(_value, (v) => _then(v as CancelledByUser));
+class _$CancelledByUserCopyWithImpl<$Res> extends _$AuthenticationFailureCopyWithImpl<$Res>
+  implements $CancelledByUserCopyWith<$Res> {
+  _$CancelledByUserCopyWithImpl(CancelledByUser _value, $Res Function(CancelledByUser) _then)
+    : super(_value, (v) => _then(v as CancelledByUser));
 
   @override
   CancelledByUser get _value => super._value as CancelledByUser;
 }
 
-class _$CancelledByUser with DiagnosticableTreeMixin implements CancelledByUser {
+class _$CancelledByUser
+  with DiagnosticableTreeMixin
+  implements CancelledByUser {
   const _$CancelledByUser();
 
   @override
@@ -119,7 +112,9 @@ class _$CancelledByUser with DiagnosticableTreeMixin implements CancelledByUser 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'AuthenticationFailure.cancelledByUser'));
+    properties
+      ..add(
+        DiagnosticsProperty('type', 'AuthenticationFailure.cancelledByUser'));
   }
 
   @override
@@ -136,14 +131,12 @@ class _$CancelledByUser with DiagnosticableTreeMixin implements CancelledByUser 
     @required Result cancelledByUser(),
     @required Result serverError(),
     @required Result emailAlreadyInUse(),
-    @required Result usernameAlreadyInUse(),
     @required Result invalidEmailAndPasswordCombination(),
     @required Result noUserInCache(),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(emailAlreadyInUse != null);
-    assert(usernameAlreadyInUse != null);
     assert(invalidEmailAndPasswordCombination != null);
     assert(noUserInCache != null);
     return cancelledByUser();
@@ -155,7 +148,6 @@ class _$CancelledByUser with DiagnosticableTreeMixin implements CancelledByUser 
     Result cancelledByUser(),
     Result serverError(),
     Result emailAlreadyInUse(),
-    Result usernameAlreadyInUse(),
     Result invalidEmailAndPasswordCombination(),
     Result noUserInCache(),
     @required Result orElse(),
@@ -173,14 +165,12 @@ class _$CancelledByUser with DiagnosticableTreeMixin implements CancelledByUser 
     @required Result cancelledByUser(CancelledByUser value),
     @required Result serverError(ServerError value),
     @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     @required Result invalidEmailAndPasswordCombination(InvalidEmailAndPasswordCombination value),
     @required Result noUserInCache(NoUserInCache value),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(emailAlreadyInUse != null);
-    assert(usernameAlreadyInUse != null);
     assert(invalidEmailAndPasswordCombination != null);
     assert(noUserInCache != null);
     return cancelledByUser(this);
@@ -192,7 +182,6 @@ class _$CancelledByUser with DiagnosticableTreeMixin implements CancelledByUser 
     Result cancelledByUser(CancelledByUser value),
     Result serverError(ServerError value),
     Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     Result invalidEmailAndPasswordCombination(InvalidEmailAndPasswordCombination value),
     Result noUserInCache(NoUserInCache value),
     @required Result orElse(),
@@ -210,11 +199,14 @@ abstract class CancelledByUser implements AuthenticationFailure {
 }
 
 abstract class $ServerErrorCopyWith<$Res> {
-  factory $ServerErrorCopyWith(ServerError value, $Res Function(ServerError) then) = _$ServerErrorCopyWithImpl<$Res>;
+  factory $ServerErrorCopyWith(ServerError value, $Res Function(ServerError) then) =
+  _$ServerErrorCopyWithImpl<$Res>;
 }
 
-class _$ServerErrorCopyWithImpl<$Res> extends _$AuthenticationFailureCopyWithImpl<$Res> implements $ServerErrorCopyWith<$Res> {
-  _$ServerErrorCopyWithImpl(ServerError _value, $Res Function(ServerError) _then) : super(_value, (v) => _then(v as ServerError));
+class _$ServerErrorCopyWithImpl<$Res> extends _$AuthenticationFailureCopyWithImpl<$Res>
+  implements $ServerErrorCopyWith<$Res> {
+  _$ServerErrorCopyWithImpl(ServerError _value, $Res Function(ServerError) _then)
+    : super(_value, (v) => _then(v as ServerError));
 
   @override
   ServerError get _value => super._value as ServerError;
@@ -231,7 +223,8 @@ class _$ServerError with DiagnosticableTreeMixin implements ServerError {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'AuthenticationFailure.serverError'));
+    properties
+      ..add(DiagnosticsProperty('type', 'AuthenticationFailure.serverError'));
   }
 
   @override
@@ -248,14 +241,12 @@ class _$ServerError with DiagnosticableTreeMixin implements ServerError {
     @required Result cancelledByUser(),
     @required Result serverError(),
     @required Result emailAlreadyInUse(),
-    @required Result usernameAlreadyInUse(),
     @required Result invalidEmailAndPasswordCombination(),
     @required Result noUserInCache(),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(emailAlreadyInUse != null);
-    assert(usernameAlreadyInUse != null);
     assert(invalidEmailAndPasswordCombination != null);
     assert(noUserInCache != null);
     return serverError();
@@ -267,7 +258,6 @@ class _$ServerError with DiagnosticableTreeMixin implements ServerError {
     Result cancelledByUser(),
     Result serverError(),
     Result emailAlreadyInUse(),
-    Result usernameAlreadyInUse(),
     Result invalidEmailAndPasswordCombination(),
     Result noUserInCache(),
     @required Result orElse(),
@@ -285,14 +275,12 @@ class _$ServerError with DiagnosticableTreeMixin implements ServerError {
     @required Result cancelledByUser(CancelledByUser value),
     @required Result serverError(ServerError value),
     @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     @required Result invalidEmailAndPasswordCombination(InvalidEmailAndPasswordCombination value),
     @required Result noUserInCache(NoUserInCache value),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(emailAlreadyInUse != null);
-    assert(usernameAlreadyInUse != null);
     assert(invalidEmailAndPasswordCombination != null);
     assert(noUserInCache != null);
     return serverError(this);
@@ -304,7 +292,6 @@ class _$ServerError with DiagnosticableTreeMixin implements ServerError {
     Result cancelledByUser(CancelledByUser value),
     Result serverError(ServerError value),
     Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     Result invalidEmailAndPasswordCombination(InvalidEmailAndPasswordCombination value),
     Result noUserInCache(NoUserInCache value),
     @required Result orElse(),
@@ -322,17 +309,22 @@ abstract class ServerError implements AuthenticationFailure {
 }
 
 abstract class $EmailAlreadyInUseCopyWith<$Res> {
-  factory $EmailAlreadyInUseCopyWith(EmailAlreadyInUse value, $Res Function(EmailAlreadyInUse) then) = _$EmailAlreadyInUseCopyWithImpl<$Res>;
+  factory $EmailAlreadyInUseCopyWith(EmailAlreadyInUse value, $Res Function(EmailAlreadyInUse) then) =
+  _$EmailAlreadyInUseCopyWithImpl<$Res>;
 }
 
-class _$EmailAlreadyInUseCopyWithImpl<$Res> extends _$AuthenticationFailureCopyWithImpl<$Res> implements $EmailAlreadyInUseCopyWith<$Res> {
-  _$EmailAlreadyInUseCopyWithImpl(EmailAlreadyInUse _value, $Res Function(EmailAlreadyInUse) _then) : super(_value, (v) => _then(v as EmailAlreadyInUse));
+class _$EmailAlreadyInUseCopyWithImpl<$Res> extends _$AuthenticationFailureCopyWithImpl<$Res>
+  implements $EmailAlreadyInUseCopyWith<$Res> {
+  _$EmailAlreadyInUseCopyWithImpl(EmailAlreadyInUse _value, $Res Function(EmailAlreadyInUse) _then)
+    : super(_value, (v) => _then(v as EmailAlreadyInUse));
 
   @override
   EmailAlreadyInUse get _value => super._value as EmailAlreadyInUse;
 }
 
-class _$EmailAlreadyInUse with DiagnosticableTreeMixin implements EmailAlreadyInUse {
+class _$EmailAlreadyInUse
+  with DiagnosticableTreeMixin
+  implements EmailAlreadyInUse {
   const _$EmailAlreadyInUse();
 
   @override
@@ -343,7 +335,9 @@ class _$EmailAlreadyInUse with DiagnosticableTreeMixin implements EmailAlreadyIn
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'AuthenticationFailure.emailAlreadyInUse'));
+    properties
+      ..add(DiagnosticsProperty(
+        'type', 'AuthenticationFailure.emailAlreadyInUse'));
   }
 
   @override
@@ -360,14 +354,12 @@ class _$EmailAlreadyInUse with DiagnosticableTreeMixin implements EmailAlreadyIn
     @required Result cancelledByUser(),
     @required Result serverError(),
     @required Result emailAlreadyInUse(),
-    @required Result usernameAlreadyInUse(),
     @required Result invalidEmailAndPasswordCombination(),
     @required Result noUserInCache(),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(emailAlreadyInUse != null);
-    assert(usernameAlreadyInUse != null);
     assert(invalidEmailAndPasswordCombination != null);
     assert(noUserInCache != null);
     return emailAlreadyInUse();
@@ -379,7 +371,6 @@ class _$EmailAlreadyInUse with DiagnosticableTreeMixin implements EmailAlreadyIn
     Result cancelledByUser(),
     Result serverError(),
     Result emailAlreadyInUse(),
-    Result usernameAlreadyInUse(),
     Result invalidEmailAndPasswordCombination(),
     Result noUserInCache(),
     @required Result orElse(),
@@ -397,14 +388,12 @@ class _$EmailAlreadyInUse with DiagnosticableTreeMixin implements EmailAlreadyIn
     @required Result cancelledByUser(CancelledByUser value),
     @required Result serverError(ServerError value),
     @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     @required Result invalidEmailAndPasswordCombination(InvalidEmailAndPasswordCombination value),
     @required Result noUserInCache(NoUserInCache value),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(emailAlreadyInUse != null);
-    assert(usernameAlreadyInUse != null);
     assert(invalidEmailAndPasswordCombination != null);
     assert(noUserInCache != null);
     return emailAlreadyInUse(this);
@@ -416,7 +405,6 @@ class _$EmailAlreadyInUse with DiagnosticableTreeMixin implements EmailAlreadyIn
     Result cancelledByUser(CancelledByUser value),
     Result serverError(ServerError value),
     Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     Result invalidEmailAndPasswordCombination(InvalidEmailAndPasswordCombination value),
     Result noUserInCache(NoUserInCache value),
     @required Result orElse(),
@@ -433,132 +421,26 @@ abstract class EmailAlreadyInUse implements AuthenticationFailure {
   const factory EmailAlreadyInUse() = _$EmailAlreadyInUse;
 }
 
-abstract class $UsernameAlreadyInUseCopyWith<$Res> {
-  factory $UsernameAlreadyInUseCopyWith(UsernameAlreadyInUse value, $Res Function(UsernameAlreadyInUse) then) = _$UsernameAlreadyInUseCopyWithImpl<$Res>;
-}
-
-class _$UsernameAlreadyInUseCopyWithImpl<$Res> extends _$AuthenticationFailureCopyWithImpl<$Res> implements $UsernameAlreadyInUseCopyWith<$Res> {
-  _$UsernameAlreadyInUseCopyWithImpl(UsernameAlreadyInUse _value, $Res Function(UsernameAlreadyInUse) _then) : super(_value, (v) => _then(v as UsernameAlreadyInUse));
-
-  @override
-  UsernameAlreadyInUse get _value => super._value as UsernameAlreadyInUse;
-}
-
-class _$UsernameAlreadyInUse with DiagnosticableTreeMixin implements UsernameAlreadyInUse {
-  const _$UsernameAlreadyInUse();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AuthenticationFailure.usernameAlreadyInUse()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'AuthenticationFailure.usernameAlreadyInUse'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UsernameAlreadyInUse);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result cancelledByUser(),
-    @required Result serverError(),
-    @required Result emailAlreadyInUse(),
-    @required Result usernameAlreadyInUse(),
-    @required Result invalidEmailAndPasswordCombination(),
-    @required Result noUserInCache(),
-  }) {
-    assert(cancelledByUser != null);
-    assert(serverError != null);
-    assert(emailAlreadyInUse != null);
-    assert(usernameAlreadyInUse != null);
-    assert(invalidEmailAndPasswordCombination != null);
-    assert(noUserInCache != null);
-    return usernameAlreadyInUse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result cancelledByUser(),
-    Result serverError(),
-    Result emailAlreadyInUse(),
-    Result usernameAlreadyInUse(),
-    Result invalidEmailAndPasswordCombination(),
-    Result noUserInCache(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (usernameAlreadyInUse != null) {
-      return usernameAlreadyInUse();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result cancelledByUser(CancelledByUser value),
-    @required Result serverError(ServerError value),
-    @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
-    @required Result invalidEmailAndPasswordCombination(InvalidEmailAndPasswordCombination value),
-    @required Result noUserInCache(NoUserInCache value),
-  }) {
-    assert(cancelledByUser != null);
-    assert(serverError != null);
-    assert(emailAlreadyInUse != null);
-    assert(usernameAlreadyInUse != null);
-    assert(invalidEmailAndPasswordCombination != null);
-    assert(noUserInCache != null);
-    return usernameAlreadyInUse(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result cancelledByUser(CancelledByUser value),
-    Result serverError(ServerError value),
-    Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result usernameAlreadyInUse(UsernameAlreadyInUse value),
-    Result invalidEmailAndPasswordCombination(InvalidEmailAndPasswordCombination value),
-    Result noUserInCache(NoUserInCache value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (usernameAlreadyInUse != null) {
-      return usernameAlreadyInUse(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class UsernameAlreadyInUse implements AuthenticationFailure {
-  const factory UsernameAlreadyInUse() = _$UsernameAlreadyInUse;
-}
-
 abstract class $InvalidEmailAndPasswordCombinationCopyWith<$Res> {
-  factory $InvalidEmailAndPasswordCombinationCopyWith(InvalidEmailAndPasswordCombination value, $Res Function(InvalidEmailAndPasswordCombination) then) =
+  factory $InvalidEmailAndPasswordCombinationCopyWith(InvalidEmailAndPasswordCombination value,
+    $Res Function(InvalidEmailAndPasswordCombination) then) =
       _$InvalidEmailAndPasswordCombinationCopyWithImpl<$Res>;
 }
 
-class _$InvalidEmailAndPasswordCombinationCopyWithImpl<$Res> extends _$AuthenticationFailureCopyWithImpl<$Res> implements $InvalidEmailAndPasswordCombinationCopyWith<$Res> {
-  _$InvalidEmailAndPasswordCombinationCopyWithImpl(InvalidEmailAndPasswordCombination _value, $Res Function(InvalidEmailAndPasswordCombination) _then)
+class _$InvalidEmailAndPasswordCombinationCopyWithImpl<$Res> extends _$AuthenticationFailureCopyWithImpl<$Res>
+  implements $InvalidEmailAndPasswordCombinationCopyWith<$Res> {
+  _$InvalidEmailAndPasswordCombinationCopyWithImpl(InvalidEmailAndPasswordCombination _value,
+    $Res Function(InvalidEmailAndPasswordCombination) _then)
       : super(_value, (v) => _then(v as InvalidEmailAndPasswordCombination));
 
   @override
-  InvalidEmailAndPasswordCombination get _value => super._value as InvalidEmailAndPasswordCombination;
+  InvalidEmailAndPasswordCombination get _value =>
+    super._value as InvalidEmailAndPasswordCombination;
 }
 
-class _$InvalidEmailAndPasswordCombination with DiagnosticableTreeMixin implements InvalidEmailAndPasswordCombination {
+class _$InvalidEmailAndPasswordCombination
+  with DiagnosticableTreeMixin
+  implements InvalidEmailAndPasswordCombination {
   const _$InvalidEmailAndPasswordCombination();
 
   @override
@@ -569,12 +451,15 @@ class _$InvalidEmailAndPasswordCombination with DiagnosticableTreeMixin implemen
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'AuthenticationFailure.invalidEmailAndPasswordCombination'));
+    properties
+      ..add(DiagnosticsProperty(
+        'type', 'AuthenticationFailure.invalidEmailAndPasswordCombination'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is InvalidEmailAndPasswordCombination);
+    return identical(this, other) ||
+      (other is InvalidEmailAndPasswordCombination);
   }
 
   @override
@@ -586,14 +471,12 @@ class _$InvalidEmailAndPasswordCombination with DiagnosticableTreeMixin implemen
     @required Result cancelledByUser(),
     @required Result serverError(),
     @required Result emailAlreadyInUse(),
-    @required Result usernameAlreadyInUse(),
     @required Result invalidEmailAndPasswordCombination(),
     @required Result noUserInCache(),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(emailAlreadyInUse != null);
-    assert(usernameAlreadyInUse != null);
     assert(invalidEmailAndPasswordCombination != null);
     assert(noUserInCache != null);
     return invalidEmailAndPasswordCombination();
@@ -605,7 +488,6 @@ class _$InvalidEmailAndPasswordCombination with DiagnosticableTreeMixin implemen
     Result cancelledByUser(),
     Result serverError(),
     Result emailAlreadyInUse(),
-    Result usernameAlreadyInUse(),
     Result invalidEmailAndPasswordCombination(),
     Result noUserInCache(),
     @required Result orElse(),
@@ -623,14 +505,12 @@ class _$InvalidEmailAndPasswordCombination with DiagnosticableTreeMixin implemen
     @required Result cancelledByUser(CancelledByUser value),
     @required Result serverError(ServerError value),
     @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     @required Result invalidEmailAndPasswordCombination(InvalidEmailAndPasswordCombination value),
     @required Result noUserInCache(NoUserInCache value),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(emailAlreadyInUse != null);
-    assert(usernameAlreadyInUse != null);
     assert(invalidEmailAndPasswordCombination != null);
     assert(noUserInCache != null);
     return invalidEmailAndPasswordCombination(this);
@@ -642,7 +522,6 @@ class _$InvalidEmailAndPasswordCombination with DiagnosticableTreeMixin implemen
     Result cancelledByUser(CancelledByUser value),
     Result serverError(ServerError value),
     Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     Result invalidEmailAndPasswordCombination(InvalidEmailAndPasswordCombination value),
     Result noUserInCache(NoUserInCache value),
     @required Result orElse(),
@@ -655,16 +534,21 @@ class _$InvalidEmailAndPasswordCombination with DiagnosticableTreeMixin implemen
   }
 }
 
-abstract class InvalidEmailAndPasswordCombination implements AuthenticationFailure {
-  const factory InvalidEmailAndPasswordCombination() = _$InvalidEmailAndPasswordCombination;
+abstract class InvalidEmailAndPasswordCombination
+  implements AuthenticationFailure {
+  const factory InvalidEmailAndPasswordCombination() =
+  _$InvalidEmailAndPasswordCombination;
 }
 
 abstract class $NoUserInCacheCopyWith<$Res> {
-  factory $NoUserInCacheCopyWith(NoUserInCache value, $Res Function(NoUserInCache) then) = _$NoUserInCacheCopyWithImpl<$Res>;
+  factory $NoUserInCacheCopyWith(NoUserInCache value, $Res Function(NoUserInCache) then) =
+  _$NoUserInCacheCopyWithImpl<$Res>;
 }
 
-class _$NoUserInCacheCopyWithImpl<$Res> extends _$AuthenticationFailureCopyWithImpl<$Res> implements $NoUserInCacheCopyWith<$Res> {
-  _$NoUserInCacheCopyWithImpl(NoUserInCache _value, $Res Function(NoUserInCache) _then) : super(_value, (v) => _then(v as NoUserInCache));
+class _$NoUserInCacheCopyWithImpl<$Res> extends _$AuthenticationFailureCopyWithImpl<$Res>
+  implements $NoUserInCacheCopyWith<$Res> {
+  _$NoUserInCacheCopyWithImpl(NoUserInCache _value, $Res Function(NoUserInCache) _then)
+    : super(_value, (v) => _then(v as NoUserInCache));
 
   @override
   NoUserInCache get _value => super._value as NoUserInCache;
@@ -681,7 +565,8 @@ class _$NoUserInCache with DiagnosticableTreeMixin implements NoUserInCache {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'AuthenticationFailure.noUserInCache'));
+    properties
+      ..add(DiagnosticsProperty('type', 'AuthenticationFailure.noUserInCache'));
   }
 
   @override
@@ -698,14 +583,12 @@ class _$NoUserInCache with DiagnosticableTreeMixin implements NoUserInCache {
     @required Result cancelledByUser(),
     @required Result serverError(),
     @required Result emailAlreadyInUse(),
-    @required Result usernameAlreadyInUse(),
     @required Result invalidEmailAndPasswordCombination(),
     @required Result noUserInCache(),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(emailAlreadyInUse != null);
-    assert(usernameAlreadyInUse != null);
     assert(invalidEmailAndPasswordCombination != null);
     assert(noUserInCache != null);
     return noUserInCache();
@@ -717,7 +600,6 @@ class _$NoUserInCache with DiagnosticableTreeMixin implements NoUserInCache {
     Result cancelledByUser(),
     Result serverError(),
     Result emailAlreadyInUse(),
-    Result usernameAlreadyInUse(),
     Result invalidEmailAndPasswordCombination(),
     Result noUserInCache(),
     @required Result orElse(),
@@ -735,14 +617,12 @@ class _$NoUserInCache with DiagnosticableTreeMixin implements NoUserInCache {
     @required Result cancelledByUser(CancelledByUser value),
     @required Result serverError(ServerError value),
     @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     @required Result invalidEmailAndPasswordCombination(InvalidEmailAndPasswordCombination value),
     @required Result noUserInCache(NoUserInCache value),
   }) {
     assert(cancelledByUser != null);
     assert(serverError != null);
     assert(emailAlreadyInUse != null);
-    assert(usernameAlreadyInUse != null);
     assert(invalidEmailAndPasswordCombination != null);
     assert(noUserInCache != null);
     return noUserInCache(this);
@@ -754,7 +634,6 @@ class _$NoUserInCache with DiagnosticableTreeMixin implements NoUserInCache {
     Result cancelledByUser(CancelledByUser value),
     Result serverError(ServerError value),
     Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     Result invalidEmailAndPasswordCombination(InvalidEmailAndPasswordCombination value),
     Result noUserInCache(NoUserInCache value),
     @required Result orElse(),
