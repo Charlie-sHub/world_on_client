@@ -1,0 +1,70 @@
+import 'package:dartz/dartz.dart';
+import 'package:worldon/core/error/failures.dart';
+import 'package:worldon/domain/core/entities/experience.dart';
+import 'package:worldon/domain/core/entities/tag.dart';
+import 'package:worldon/domain/core/entities/user.dart';
+import 'package:worldon/domain/core/failures/core_failure.dart';
+import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/domain/search/entity/search_results.dart';
+import 'package:worldon/domain/search/repository/search_repository.dart';
+
+class SearchByName implements AsyncUseCase<SearchResults, Params> {
+  final SearchRepository _repository;
+
+  const SearchByName(this._repository);
+
+  @override
+  Future<Either<Failure, SearchResults>> call(Params params) async {
+    final eitherExperiences = await _repository.searchExperiencesByName(params.name);
+    final eitherUsersUsername = await _repository.searchUsersByUserName(params.name);
+    final eitherUsersName = await _repository.searchUsersByName(params.name);
+    final eitherTags = await _repository.searchTagsByName(params.name);
+    if (eitherExperiences is ServerError) {
+      return left(eitherExperiences);
+    } else if (eitherExperiences is CacheError) {
+      return left(eitherExperiences);
+    } else {
+      // TODO: Check if there's a way to refactor this
+      final Set<Experience> experiencesFound = eitherExperiences.fold((failure) {
+        if (failure is NotFoundError) {
+          return <Experience>{};
+        } else {
+          return null;
+        }
+      }, (r) => r);
+      final Set<User> usersFoundByUsername = eitherUsersUsername.fold((failure) {
+        if (failure is NotFoundError) {
+          return <User>{};
+        } else {
+          return null;
+        }
+      }, (r) => r);
+      final Set<User> usersFoundByName = eitherUsersName.fold((failure) {
+        if (failure is NotFoundError) {
+          return <User>{};
+        } else {
+          return null;
+        }
+      }, (r) => r);
+      final Set<Tag> tagsFound = eitherTags.fold((failure) {
+        if (failure is NotFoundError) {
+          return <Tag>{};
+        } else {
+          return null;
+        }
+      }, (r) => r);
+      final searchResults = SearchResults(
+        experiencesFound: experiencesFound,
+        usersFound: usersFoundByUsername.union(usersFoundByName),
+        tagsFound: tagsFound,
+      );
+      return right(searchResults);
+    }
+  }
+}
+
+class Params {
+  final String name;
+
+  Params({this.name});
+}

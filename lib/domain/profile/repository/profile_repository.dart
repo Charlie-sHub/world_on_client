@@ -40,7 +40,7 @@ abstract class ProfileRepository {
   /// Sends the id of an [Experience] to the server so this one can be removed from the liked [Experience]s list of a given [User]
   Future<Either<Failure, Unit>> removeExperienceLiked({int userId, int experienceId});
 
-  /// Sends the id of an [Experience] to the server so this one can be deleted, after making sure the [User] making the request is authorized by being an admin or the creator
+  /// Sends the id of an [Experience] to the server so this one can be deleted
   Future<Either<Failure, Unit>> deleteExperience(int experienceId);
 
   /// Sends a couple of [User] ids so the followed [User] is added to the list of following [User]s of a given [User]

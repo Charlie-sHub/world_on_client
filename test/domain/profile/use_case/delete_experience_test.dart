@@ -25,7 +25,7 @@ void main() {
   final admin = User(id: 3, adminPowers: true);
   final experience = Experience(id: 1, creator: creatorUser);
   group(
-    "Testing that the use case properly authorizes its use",
+    descriptionAuthorization,
     () {
       test(
         "$descriptionReturnNothing, creator deleting the experience",

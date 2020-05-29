@@ -1,4 +1,5 @@
 const String descriptionGroupOnFailure = "Testing on failure";
+const String descriptionAuthorization = "Testing that the use case properly authorizes its use";
 const String descriptionReturnNothing = "Should not return nothing if everything goes well";
 const String descriptionServerError = "Should return ServerError if there's a problem with the server";
 const String descriptionCacheError = "Should return CacheError if there's a problem with the cache";
