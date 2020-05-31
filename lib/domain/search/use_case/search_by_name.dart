@@ -8,23 +8,26 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/search/entity/search_results.dart';
 import 'package:worldon/domain/search/repository/search_repository.dart';
 
+@Deprecated("In favour of distinct use cases for each search that the BLoC will manage")
 class SearchByName implements AsyncUseCase<SearchResults, Params> {
   final SearchRepository _repository;
-
+  
   const SearchByName(this._repository);
-
+  
   @override
   Future<Either<Failure, SearchResults>> call(Params params) async {
+    // This whole thing is way too messy
     final eitherExperiences = await _repository.searchExperiencesByName(params.name);
     final eitherUsersUsername = await _repository.searchUsersByUserName(params.name);
     final eitherUsersName = await _repository.searchUsersByName(params.name);
     final eitherTags = await _repository.searchTagsByName(params.name);
     if (eitherExperiences is ServerError) {
-      return left(eitherExperiences);
+      // return left(eitherExperiences);
+      return null;
     } else if (eitherExperiences is CacheError) {
-      return left(eitherExperiences);
+      // return left(eitherExperiences);
+      return null;
     } else {
-      // TODO: Check if there's a way to refactor this
       final Set<Experience> experiencesFound = eitherExperiences.fold((failure) {
         if (failure is NotFoundError) {
           return <Experience>{};

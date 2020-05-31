@@ -70,6 +70,7 @@ class User extends Equatable {
 
   @override
   List<Object> get props => [
+        // TODO: Change the props so only the important things are checked
         id,
         name,
         username,
