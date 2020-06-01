@@ -29,7 +29,6 @@ void main() {
     modificationDate: DateTime.now(),
     options: Options(),
   );
-  // TODO Test LogOut
   test(
     "Should ",
     () async {
@@ -40,5 +39,4 @@ void main() {
       // Assert
     },
   );
-  // TODO Test on Failure
 }

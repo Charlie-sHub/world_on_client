@@ -762,7 +762,7 @@ class _$UsernameAlreadyInUseCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl
   implements $UsernameAlreadyInUseCopyWith<$Res> {
   _$UsernameAlreadyInUseCopyWithImpl(UsernameAlreadyInUse _value, $Res Function(UsernameAlreadyInUse) _then)
     : super(_value, (v) => _then(v as UsernameAlreadyInUse));
-  
+
   @override
   UsernameAlreadyInUse get _value => super._value as UsernameAlreadyInUse;
 }
@@ -771,27 +771,27 @@ class _$UsernameAlreadyInUse
   with DiagnosticableTreeMixin
   implements UsernameAlreadyInUse {
   const _$UsernameAlreadyInUse();
-  
+
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'CoreFailure.usernameAlreadyInUse()';
   }
-  
+
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'CoreFailure.usernameAlreadyInUse'));
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is UsernameAlreadyInUse);
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode;
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -814,7 +814,7 @@ class _$UsernameAlreadyInUse
     assert(nameAlreadyInUse != null);
     return usernameAlreadyInUse();
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -834,7 +834,7 @@ class _$UsernameAlreadyInUse
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
@@ -857,7 +857,7 @@ class _$UsernameAlreadyInUse
     assert(nameAlreadyInUse != null);
     return usernameAlreadyInUse(this);
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -892,7 +892,7 @@ class _$UnAuthorizedErrorCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$R
   implements $UnAuthorizedErrorCopyWith<$Res> {
   _$UnAuthorizedErrorCopyWithImpl(UnAuthorizedError _value, $Res Function(UnAuthorizedError) _then)
     : super(_value, (v) => _then(v as UnAuthorizedError));
-  
+
   @override
   UnAuthorizedError get _value => super._value as UnAuthorizedError;
 }
@@ -901,27 +901,27 @@ class _$UnAuthorizedError
   with DiagnosticableTreeMixin
   implements UnAuthorizedError {
   const _$UnAuthorizedError();
-  
+
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'CoreFailure.unAuthorizedError()';
   }
-  
+
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'CoreFailure.unAuthorizedError'));
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is UnAuthorizedError);
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode;
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -944,7 +944,7 @@ class _$UnAuthorizedError
     assert(nameAlreadyInUse != null);
     return unAuthorizedError();
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -964,7 +964,7 @@ class _$UnAuthorizedError
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
@@ -987,7 +987,7 @@ class _$UnAuthorizedError
     assert(nameAlreadyInUse != null);
     return unAuthorizedError(this);
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({

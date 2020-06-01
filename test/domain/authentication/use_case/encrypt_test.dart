@@ -38,9 +38,4 @@ void main() {
       verifyNoMoreInteractions(mockCypher);
     },
   );
-  // TODO: Test on failure
-  // Keeps giving me:
-  // Expected: Left<EncryptionFailure, dynamic>:<Left(Instance of 'EncryptionFailure')>
-  // Actual: Left<EncryptionFailure, String>:<Left(Instance of 'EncryptionFailure')>
-  // Is it even necessary to test on failure? in the sense of testing that it returns a failure
 }
