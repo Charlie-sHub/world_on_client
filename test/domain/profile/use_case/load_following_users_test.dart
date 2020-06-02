@@ -35,7 +35,6 @@ void main() {
       verifyNoMoreInteractions(mockProfileRepository);
     },
   );
-  // TODO: use the constant descriptions in the test descriptions
   group(
     "Testing on failure",
     () {

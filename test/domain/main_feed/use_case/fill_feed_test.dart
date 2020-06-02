@@ -5,6 +5,7 @@ import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/main_feed/use_case/fill_feed.dart';
 
+import '../../../constants.dart';
 import '../repository/mock_main_feed_repository.dart';
 
 void main() {
@@ -36,10 +37,10 @@ void main() {
     },
   );
   group(
-    "Testing on failure",
+    descriptionGroupOnFailure,
     () {
       test(
-        "Should return a ServerError if there's a problem with the server",
+        descriptionServerError,
         () async {
           when(mockMainFeedRepository.fillFeed(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
           // Act
@@ -51,7 +52,7 @@ void main() {
         },
       );
       test(
-        "Should return a CacheError if there's a problem with the  cache'",
+        descriptionCacheError,
         () async {
           when(mockMainFeedRepository.fillFeed(any)).thenAnswer((_) async => left(const CoreFailure.cacheError()));
           // Act

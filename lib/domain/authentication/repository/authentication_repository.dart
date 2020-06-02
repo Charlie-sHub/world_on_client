@@ -11,12 +11,11 @@ abstract class AuthenticationRepository {
   Future<Either<Failure, User>> logIn(User user);
 
   /// Calls the Google sign in API to register a new [User].
-  ///
   // TODO: Check if this is necessary
   // Not sure if this is necessary though, maybe it'd be better to use [logInGoogle] and then [register]
   Future<Either<Failure, Unit>> registerGoogle();
 
   /// Calls the Google sign in API to login into the app.
   Future<Either<Failure, Unit>> logInGoogle();
-// TODO: Add login and registration supper with Twitter and Facebook
+// TODO: Add login and registration support with Twitter and Facebook
 }

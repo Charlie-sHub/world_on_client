@@ -4,6 +4,8 @@ import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/experience_navigation/use_case/accomplish_objective.dart';
 
+import '../../../constants.dart';
+
 void main() {
   AccomplishObjective useCase;
   final objectiveTracker = {
@@ -16,7 +18,6 @@ void main() {
       useCase = AccomplishObjective(objectiveTracker);
     },
   );
-
   group(
     "Testing working successfully",
     () {
@@ -51,7 +52,7 @@ void main() {
     },
   );
   test(
-    "Should return UnknownDomainLayerError if there's a problem",
+    descriptionUnknownDomainLayerError,
     () async {
       // Act
       final result = useCase(Params(objectiveId: null));

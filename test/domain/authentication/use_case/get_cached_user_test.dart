@@ -7,6 +7,7 @@ import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
+import '../../../constants.dart';
 import '../repository/mock_cached_user_repository.dart';
 
 void main() {
@@ -32,10 +33,10 @@ void main() {
     },
   );
   group(
-    "Testing on failure return",
+    descriptionGroupOnFailure,
     () {
       test(
-        "Should return a CacheError in case there's some problem with the cache",
+        descriptionCacheError,
         () async {
           // Arrange
           when(mockCachedUserRepository.getCachedUser()).thenAnswer((_) async => left(const CoreFailure.cacheError()));

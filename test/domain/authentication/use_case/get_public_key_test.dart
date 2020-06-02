@@ -7,6 +7,7 @@ import 'package:worldon/domain/authentication/use_case/get_public_key.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
+import '../../../constants.dart';
 import '../repository/mock_public_key_repository.dart';
 
 void main() {
@@ -33,10 +34,10 @@ void main() {
     },
   );
   group(
-    "Testing on Failure",
+    descriptionGroupOnFailure,
     () {
       test(
-        "Should return a ServerError if there's an unknown server error",
+        descriptionServerError,
         () async {
           // Arrange
           when(mockPublicKeyRepository.getPublicKey()).thenAnswer((_) async => left(const CoreFailure.serverError()));
@@ -49,7 +50,7 @@ void main() {
         },
       );
       test(
-        "Should return a NotFoundError in case there's no public key",
+        descriptionNotFoundError,
         () async {
           // Arrange
           when(mockPublicKeyRepository.getPublicKey()).thenAnswer((_) async => left(const CoreFailure.notFoundError()));

@@ -6,13 +6,13 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/experience_management/repository/experience_management_repository.dart';
 
 class CreateExperience implements AsyncUseCase<Unit, Params> {
-  final ExperienceManagementRepository repository;
+  final ExperienceManagementRepository _repository;
 
-  const CreateExperience(this.repository);
+  const CreateExperience(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    return repository.createExperience(params.experience);
+    return _repository.createExperience(params.experience);
   }
 }
 

@@ -19,7 +19,6 @@ void main() {
       useCase = DeleteExperience(mockProfileRepository);
     },
   );
-
   final randomUser = User(id: 1, adminPowers: false);
   final creatorUser = User(id: 2, adminPowers: false);
   final admin = User(id: 3, adminPowers: true);

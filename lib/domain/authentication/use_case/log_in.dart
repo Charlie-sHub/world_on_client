@@ -7,13 +7,13 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 
 /// [UseCase] for direct World On Login
 class LogIn implements AsyncUseCase<User, Params> {
-  final AuthenticationRepository repository;
+  final AuthenticationRepository _repository;
 
-  const LogIn(this.repository);
+  const LogIn(this._repository);
 
   @override
   Future<Either<Failure, User>> call(Params params) async {
-    return repository.logIn(params.user);
+    return _repository.logIn(params.user);
   }
 }
 

@@ -5,13 +5,13 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository.dart';
 
 class LikeExperience implements AsyncUseCase<Unit, Params> {
-  final ExperienceNavigationRepository repository;
+  final ExperienceNavigationRepository _repository;
 
-  const LikeExperience(this.repository);
+  const LikeExperience(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    return repository.likeExperience(
+    return _repository.likeExperience(
       experienceId: params.experienceId,
       userId: params.userId,
     );

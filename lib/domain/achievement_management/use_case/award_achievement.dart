@@ -5,16 +5,16 @@ import 'package:worldon/domain/achievement_management/repository/achievement_rep
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
 class AwardAchievement implements AsyncUseCase<Unit, Params> {
-  final AchievementRepository repository;
+  final AchievementRepository _repository;
 
-  const AwardAchievement(this.repository);
+  const AwardAchievement(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) {
     // TODO: how to keep track and award the Achievements?
     // Right now this use case can't determine when an Achievement should be awarded
     // Will have to come up with something in the future
-    return repository.awardAchievement(
+    return _repository.awardAchievement(
       achievementId: params.achievementId,
       userId: params.userId,
     );

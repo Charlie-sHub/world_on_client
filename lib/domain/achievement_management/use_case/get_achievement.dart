@@ -6,13 +6,13 @@ import 'package:worldon/domain/core/entities/achievement.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
 class GetAchievement implements AsyncUseCase<Achievement, Params> {
-  final AchievementRepository repository;
+  final AchievementRepository _repository;
 
-  const GetAchievement(this.repository);
+  const GetAchievement(this._repository);
 
   @override
   Future<Either<Failure, Achievement>> call(Params params) async {
-    return repository.getAchievement(params.id);
+    return _repository.getAchievement(params.id);
   }
 }
 

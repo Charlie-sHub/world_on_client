@@ -5,6 +5,7 @@ import 'package:worldon/domain/authentication/failures/authentication_failure.da
 import 'package:worldon/domain/authentication/use_case/log_in_google.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
+import '../../../constants.dart';
 import '../repository/mock_authentication_repository.dart';
 
 void main() {
@@ -17,7 +18,7 @@ void main() {
     },
   );
   test(
-    "Should get Unit on a successful log in",
+    descriptionReturnNothing,
     () async {
       // Arrange
       when(mockAuthenticationRepository.logInGoogle()).thenAnswer((_) async => right(null));
@@ -30,7 +31,7 @@ void main() {
     },
   );
   group(
-    "Testing the different failures that the repository can return",
+    descriptionGroupOnFailure,
     () {
       test(
         "Should get a cancelled by user authentication failure",
@@ -46,7 +47,7 @@ void main() {
         },
       );
       test(
-        "Should get a server error authentication failure",
+        descriptionServerError,
         () async {
           // Arrange
           when(mockAuthenticationRepository.logInGoogle()).thenAnswer((_) async => left(const AuthenticationFailure.serverError()));

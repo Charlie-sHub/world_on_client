@@ -9,13 +9,13 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 ///
 /// Will probably change the type to [Unit] instead of [User]
 class Register implements AsyncUseCase<User, Params> {
-  final AuthenticationRepository repository;
+  final AuthenticationRepository _repository;
 
-  const Register(this.repository);
+  const Register(this._repository);
 
   @override
   Future<Either<Failure, User>> call(Params params) async {
-    return repository.register(params.user);
+    return _repository.register(params.user);
   }
 }
 

@@ -17,5 +17,6 @@ abstract class AuthenticationFailure extends Failure with _$AuthenticationFailur
 
   const factory AuthenticationFailure.invalidEmailAndPasswordCombination() = InvalidEmailAndPasswordCombination;
 
+  // Could use NotFoundError instead
   const factory AuthenticationFailure.noUserInCache() = NoUserInCache;
 }

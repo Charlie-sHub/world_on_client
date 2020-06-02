@@ -4,6 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/experience_log/use_case/dismiss_experience_from_log.dart';
 
+import '../../../constants.dart';
 import '../repository/mock_experience_log_repository.dart';
 
 void main() {
@@ -18,7 +19,7 @@ void main() {
   const userId = 1;
   const experienceId = 1;
   test(
-    "Should return nothing if everything goes well",
+    descriptionReturnNothing,
     () async {
       // Arrange
       when(mockExperienceLogRepository.dismissExperienceFromLog(
@@ -40,10 +41,10 @@ void main() {
     },
   );
   group(
-    "Testing on failure",
+    descriptionGroupOnFailure,
     () {
       test(
-        "Should return ServerError if there's a problem with the server",
+        descriptionServerError,
         () async {
           // Arrange
           when(mockExperienceLogRepository.dismissExperienceFromLog(

@@ -7,6 +7,7 @@ import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 
+import '../../../constants.dart';
 import '../repository/mock_achievement_repository.dart';
 
 void main() {
@@ -32,7 +33,7 @@ void main() {
     tags: const <Tag>{},
   );
   test(
-    "Should return nothing if everything goes well",
+    descriptionReturnNothing,
     () async {
       // Arrange
       when(mockAchievementRepository.editAchievement(any)).thenAnswer((_) async => right(null));
@@ -45,10 +46,10 @@ void main() {
     },
   );
   group(
-    "Testing on failure",
+    descriptionGroupOnFailure,
     () {
       test(
-        "Should return ServerError if there's a problem with the server",
+        descriptionServerError,
         () async {
           // Arrange
           when(mockAchievementRepository.editAchievement(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
@@ -61,7 +62,7 @@ void main() {
         },
       );
       test(
-        "Should return NameAlreadyInUse if the name given is already being used by other Achievement",
+        descriptionNameAlreadyInUse,
         () async {
           // Arrange
           when(mockAchievementRepository.editAchievement(any)).thenAnswer((_) async => left(const CoreFailure.nameAlreadyInUse()));

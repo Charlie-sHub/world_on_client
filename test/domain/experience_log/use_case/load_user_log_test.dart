@@ -7,6 +7,7 @@ import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/experience_log/use_case/load_user_log.dart';
 
+import '../../../constants.dart';
 import '../repository/mock_experience_log_repository.dart';
 
 void main() {
@@ -47,10 +48,10 @@ void main() {
     },
   );
   group(
-    "Testing on failure",
+    descriptionGroupOnFailure,
     () {
       test(
-        "Should return a ServerError if there's a problem with the server",
+        descriptionServerError,
         () async {
           // Arrange
           when(mockExperienceLogRepository.loadUserLog(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
@@ -63,7 +64,7 @@ void main() {
         },
       );
       test(
-        "Should return a CacheError is there's a problem with the cache",
+        descriptionCacheError,
         () async {
           // Arrange
           when(mockExperienceLogRepository.loadUserLog(any)).thenAnswer((_) async => left(const CoreFailure.cacheError()));
@@ -76,7 +77,7 @@ void main() {
         },
       );
       test(
-        "Should return a NotFoundError if the User had no Experiences to do",
+        descriptionNotFoundError,
         () async {
           // Arrange
           when(mockExperienceLogRepository.loadUserLog(any)).thenAnswer((_) async => left(const CoreFailure.notFoundError()));

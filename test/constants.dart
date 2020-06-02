@@ -1,4 +1,6 @@
 const String descriptionGroupOnFailure = "Testing on failure";
+const String descriptionNameAlreadyInUse = "Should return NameAlreadyInUse";
+const String descriptionUnknownDomainLayerError = "Should return UnknownDomainLayerError if there's a problem";
 const String descriptionNullInput = "Should return NullInput";
 const String descriptionAuthorization = "Testing that the use case properly authorizes its use";
 const String descriptionReturnNothing = "Should not return nothing if everything goes well";

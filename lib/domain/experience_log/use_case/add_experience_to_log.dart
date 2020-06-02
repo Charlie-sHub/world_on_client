@@ -5,13 +5,13 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/experience_log/repository/experience_log_repository.dart';
 
 class AddExperienceToLog implements AsyncUseCase<Unit, Params> {
-  final ExperienceLogRepository repository;
+  final ExperienceLogRepository _repository;
 
-  const AddExperienceToLog(this.repository);
+  const AddExperienceToLog(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    return repository.addExperienceToLog(
+    return _repository.addExperienceToLog(
       experienceId: params.experienceId,
       userId: params.userId,
     );

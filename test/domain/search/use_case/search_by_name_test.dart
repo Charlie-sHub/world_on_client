@@ -32,7 +32,6 @@ void main() {
         () async {
           // Arrange
           final searchResults = SearchResults(experiencesFound: experiencesFound, usersFound: usersFoundByUsername.union(usersFoundByName), tagsFound: tagsFound);
-          // TODO: Check if there's a way to refactor this
           when(mockSearchRepository.searchExperiencesByName(any)).thenAnswer((_) async => right(experiencesFound));
           when(mockSearchRepository.searchTagsByName(any)).thenAnswer((_) async => right(tagsFound));
           when(mockSearchRepository.searchUsersByName(any)).thenAnswer((_) async => right(usersFoundByName));

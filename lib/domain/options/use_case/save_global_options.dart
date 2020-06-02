@@ -6,13 +6,13 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/options/repository/remote_options_repository.dart';
 
 class SaveGlobalOptions implements AsyncUseCase<Unit, Params> {
-  final RemoteOptionsRepository repository;
+  final RemoteOptionsRepository _repository;
 
-  const SaveGlobalOptions(this.repository);
+  const SaveGlobalOptions(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    return repository.saveGlobalOptions(params.options);
+    return _repository.saveGlobalOptions(params.options);
   }
 }
 

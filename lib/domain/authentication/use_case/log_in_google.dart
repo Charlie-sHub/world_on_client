@@ -4,12 +4,12 @@ import 'package:worldon/domain/authentication/repository/authentication_reposito
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
 class LogInGoogle implements AsyncUseCase<Unit, NoParams> {
-  final AuthenticationRepository repository;
+  final AuthenticationRepository _repository;
 
-  const LogInGoogle(this.repository);
+  const LogInGoogle(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(NoParams params) {
-    return repository.logInGoogle();
+    return _repository.logInGoogle();
   }
 }

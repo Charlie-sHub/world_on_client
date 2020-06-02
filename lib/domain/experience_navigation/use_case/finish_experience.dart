@@ -8,13 +8,13 @@ import 'package:worldon/domain/experience_navigation/repository/experience_navig
 
 /// Sends the ids of a [User] and a [Experience] to the server so the [Experience] is added to the [User]'s list of done [Experience]s
 class FinishExperience implements AsyncUseCase<Unit, Params> {
-  final ExperienceNavigationRepository repository;
+  final ExperienceNavigationRepository _repository;
 
-  const FinishExperience(this.repository);
+  const FinishExperience(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    return repository.finishExperience(
+    return _repository.finishExperience(
       userId: params.userId,
       experienceId: params.experienceId,
     );

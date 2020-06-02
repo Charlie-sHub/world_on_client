@@ -6,13 +6,13 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/notifications/repository/notification_repository.dart';
 
 class SendNotification implements AsyncUseCase<Unit, Params> {
-  final NotificationRepository repository;
+  final NotificationRepository _repository;
 
-  const SendNotification(this.repository);
+  const SendNotification(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    return repository.sendNotification(params.notification);
+    return _repository.sendNotification(params.notification);
   }
 }
 

@@ -5,6 +5,8 @@ import 'package:worldon/domain/core/entities/objective.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/experience_navigation/use_case/fill_objective_tracker.dart';
 
+import '../../../constants.dart';
+
 void main() {
   FillObjectiveTracker useCase;
   setUp(
@@ -33,7 +35,7 @@ void main() {
     },
   );
   test(
-    "Should return UnknownDomainLayerError if there's a problem",
+    descriptionUnknownDomainLayerError,
     () async {
       // Act
       final result = useCase(Params(objectiveSet: badObjectiveSet));

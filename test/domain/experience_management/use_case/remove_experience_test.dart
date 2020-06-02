@@ -4,6 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/experience_management/use_case/remove_experience.dart';
 
+import '../../../constants.dart';
 import '../repository/mock_experience_management_repository.dart';
 
 void main() {
@@ -17,7 +18,7 @@ void main() {
   );
   const id = 1;
   test(
-    "Should return nothing if everything goes well",
+    descriptionReturnNothing,
     () async {
       // Arrange
       when(mockExperienceManagementRepository.removeExperience(any)).thenAnswer((_) async => right(null));
@@ -30,10 +31,10 @@ void main() {
     },
   );
   group(
-    "Testing on failure",
+    descriptionGroupOnFailure,
     () {
       test(
-        "Should return a ServerError if there's a problem with the server",
+        descriptionServerError,
         () async {
           // Arrange
           when(mockExperienceManagementRepository.removeExperience(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
@@ -46,7 +47,7 @@ void main() {
         },
       );
       test(
-        "Should return a NotFoundError if there's no experience with the given id",
+        descriptionNotFoundError,
         () async {
           // Arrange
           when(mockExperienceManagementRepository.removeExperience(any)).thenAnswer((_) async => left(const CoreFailure.notFoundError()));

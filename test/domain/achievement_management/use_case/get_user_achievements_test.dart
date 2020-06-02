@@ -7,6 +7,7 @@ import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 
+import '../../../constants.dart';
 import '../repository/mock_achievement_repository.dart';
 
 void main() {
@@ -47,10 +48,10 @@ void main() {
     },
   );
   group(
-    "Testing on Failure",
+    descriptionGroupOnFailure,
     () {
       test(
-        "Should return a ServerError if there's a problem with the server",
+        descriptionServerError,
         () async {
           // Arrange
           when(mockAchievementRepository.getUserAchievements(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));

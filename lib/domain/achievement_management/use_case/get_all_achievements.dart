@@ -5,12 +5,12 @@ import 'package:worldon/domain/core/entities/achievement.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
 class GetAllAchievements implements AsyncUseCase<List<Achievement>, NoParams> {
-  final AchievementRepository repository;
+  final AchievementRepository _repository;
 
-  const GetAllAchievements(this.repository);
+  const GetAllAchievements(this._repository);
 
   @override
   Future<Either<Failure, List<Achievement>>> call(NoParams params) {
-    return repository.getAllAchievement();
+    return _repository.getAllAchievement();
   }
 }

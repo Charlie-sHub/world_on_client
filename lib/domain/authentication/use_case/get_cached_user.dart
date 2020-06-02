@@ -5,12 +5,12 @@ import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
 class GetCachedUser implements AsyncUseCase<User, NoParams> {
-  final CachedUserRepository repository;
+  final CachedUserRepository _repository;
 
-  const GetCachedUser(this.repository);
+  const GetCachedUser(this._repository);
 
   @override
   Future<Either<Failure, User>> call(NoParams params) async {
-    return repository.getCachedUser();
+    return _repository.getCachedUser();
   }
 }

@@ -6,14 +6,13 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/profile/repository/profile_repository.dart';
 
 class LoadUser implements AsyncUseCase<User, Params> {
-  // TODO: make all repositories private
-  final ProfileRepository repository;
+  final ProfileRepository _repository;
 
-  const LoadUser(this.repository);
+  const LoadUser(this._repository);
 
   @override
   Future<Either<Failure, User>> call(Params params) async {
-    return repository.loadUser(params.id);
+    return _repository.loadUser(params.id);
   }
 }
 

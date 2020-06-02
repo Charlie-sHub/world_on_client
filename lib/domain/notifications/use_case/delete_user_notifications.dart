@@ -5,13 +5,13 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/notifications/repository/notification_repository.dart';
 
 class DeleteUserNotifications implements AsyncUseCase<Unit, Params> {
-  final NotificationRepository repository;
+  final NotificationRepository _repository;
 
-  const DeleteUserNotifications(this.repository);
+  const DeleteUserNotifications(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    return repository.deleteUserNotifications(params.userId);
+    return _repository.deleteUserNotifications(params.userId);
   }
 }
 

@@ -4,6 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/notifications/use_case/delete_user_notifications.dart';
 
+import '../../../constants.dart';
 import '../repository/mock_notification_repository.dart';
 
 void main() {
@@ -17,7 +18,7 @@ void main() {
   );
   const userId = 1;
   test(
-    "Should return nothing if everything goes well",
+    descriptionReturnNothing,
     () async {
       // Arrange
       when(mockNotificationRepository.deleteUserNotifications(any)).thenAnswer((_) async => right(null));
@@ -30,10 +31,10 @@ void main() {
     },
   );
   group(
-    "Testing on failure",
+    descriptionGroupOnFailure,
     () {
       test(
-        "Should return ServerError if there's a problem with the server",
+        descriptionServerError,
         () async {
           // Arrange
           when(mockNotificationRepository.deleteUserNotifications(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));

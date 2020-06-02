@@ -5,6 +5,7 @@ import 'package:worldon/domain/core/entities/options.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/options/use_case/save_global_options.dart';
 
+import '../../../constants.dart';
 import '../repository/mock_remote_options_repository.dart';
 
 void main() {
@@ -21,7 +22,7 @@ void main() {
     languageCode: "es",
   );
   test(
-    "Should return nothing if everything goes well",
+    descriptionReturnNothing,
     () async {
       // Arrange
       when(mockRemoteOptionsRepository.saveGlobalOptions(any)).thenAnswer((_) async => right(null));
@@ -34,10 +35,10 @@ void main() {
     },
   );
   group(
-    "Testing on failure",
+    descriptionGroupOnFailure,
     () {
       test(
-        "Should return ServerError if there's a problem with the server",
+        descriptionServerError,
         () async {
           // Arrange
           when(mockRemoteOptionsRepository.saveGlobalOptions(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));

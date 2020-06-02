@@ -6,12 +6,12 @@ import 'package:worldon/domain/core/repository/tag_repository.dart';
 import '../use_case.dart';
 
 class GetAllTags implements AsyncUseCase<List<Tag>, NoParams> {
-  final TagCoreRepository tagRepository;
+  final TagCoreRepository _repository;
 
-  const GetAllTags(this.tagRepository);
+  const GetAllTags(this._repository);
 
   @override
   Future<Either<Failure, List<Tag>>> call(NoParams params) async {
-    return tagRepository.getAllTags();
+    return _repository.getAllTags();
   }
 }

@@ -7,13 +7,13 @@ import 'package:worldon/domain/core/repository/tag_repository.dart';
 import '../use_case.dart';
 
 class GetTagCreator implements AsyncUseCase<User, Params> {
-  final TagCoreRepository repository;
+  final TagCoreRepository _repository;
 
-  const GetTagCreator(this.repository);
+  const GetTagCreator(this._repository);
 
   @override
   Future<Either<Failure, User>> call(Params params) async {
-    return repository.getCreator(params.id);
+    return _repository.getCreator(params.id);
   }
 }
 

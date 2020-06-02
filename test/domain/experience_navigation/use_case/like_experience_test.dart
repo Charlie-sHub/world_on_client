@@ -4,6 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/experience_navigation/use_case/like_experience.dart';
 
+import '../../../constants.dart';
 import '../repository/mock_experience_navigation_repository.dart';
 
 void main() {
@@ -18,7 +19,7 @@ void main() {
   const userId = 1;
   const experienceId = 1;
   test(
-    "Should return nothing if everything goes well",
+    descriptionReturnNothing,
     () async {
       // Arrange
       when(mockExperienceNavigationRepository.likeExperience(
@@ -40,10 +41,10 @@ void main() {
     },
   );
   group(
-    "Testing on failure",
+    descriptionGroupOnFailure,
     () {
       test(
-        "Should return ServerError if there's a problem with the server",
+        descriptionServerError,
         () async {
           // Arrange
           when(mockExperienceNavigationRepository.likeExperience(
@@ -65,7 +66,7 @@ void main() {
         },
       );
       test(
-        "Should return NotFoundError if there neither were a User or Experience with the given ids",
+        descriptionNotFoundError,
         () async {
           // Arrange
           when(mockExperienceNavigationRepository.likeExperience(

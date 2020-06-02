@@ -6,13 +6,13 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/notifications/repository/notification_repository.dart';
 
 class LoadNotifications implements AsyncUseCase<List<Notification>, Params> {
-  final NotificationRepository repository;
+  final NotificationRepository _repository;
 
-  const LoadNotifications(this.repository);
+  const LoadNotifications(this._repository);
 
   @override
   Future<Either<Failure, List<Notification>>> call(Params params) async {
-    return repository.loadNotifications(params.userId);
+    return _repository.loadNotifications(params.userId);
   }
 }
 

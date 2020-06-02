@@ -7,6 +7,7 @@ import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/use_case/tag_use_cases/get_all_tags.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
+import '../../../../constants.dart';
 import '../../repository/mock_tag_repository.dart';
 
 void main() {
@@ -40,10 +41,10 @@ void main() {
     },
   );
   group(
-    "testing on failure",
+    descriptionGroupOnFailure,
     () {
       test(
-        "Should return a CacheError in case there's some problem with the cache",
+        descriptionCacheError,
         () async {
           // Arrange
           when(mockTagRepository.getAllTags()).thenAnswer((_) async => left(const CoreFailure.cacheError()));
@@ -56,7 +57,7 @@ void main() {
         },
       );
       test(
-        "Should return a ServerError in case there's some problem with the server",
+        descriptionServerError,
         () async {
           // Arrange
           when(mockTagRepository.getAllTags()).thenAnswer((_) async => left(const CoreFailure.serverError()));
@@ -69,7 +70,7 @@ void main() {
         },
       );
       test(
-        "Should return a NotFoundError in case there are no Tags",
+        descriptionNotFoundError,
         () async {
           // Arrange
           when(mockTagRepository.getAllTags()).thenAnswer((_) async => left(const CoreFailure.notFoundError()));

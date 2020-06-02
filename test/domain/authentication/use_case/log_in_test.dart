@@ -6,6 +6,7 @@ import 'package:worldon/domain/authentication/use_case/log_in.dart';
 import 'package:worldon/domain/core/entities/options.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 
+import '../../../constants.dart';
 import '../repository/mock_authentication_repository.dart';
 
 void main() {
@@ -54,10 +55,10 @@ void main() {
     },
   );
   group(
-    "Testing on Failure",
+    descriptionGroupOnFailure,
     () {
       test(
-        "Should return a ServerError if there's an unknown server error",
+        descriptionServerError,
         () async {
           // Arrange
           when(mockAuthenticationRepository.logIn(any)).thenAnswer((_) async => left(const AuthenticationFailure.serverError()));

@@ -4,6 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/achievement_management/use_case/remove_achievement.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 
+import '../../../constants.dart';
 import '../repository/mock_achievement_repository.dart';
 
 void main() {
@@ -30,10 +31,10 @@ void main() {
     },
   );
   group(
-    "Testing on failure",
+    descriptionGroupOnFailure,
     () {
       test(
-        "Should return ServerError if there's a problem with the server",
+        descriptionServerError,
         () async {
           // Arrange
           when(mockAchievementRepository.removeAchievement(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
@@ -46,7 +47,7 @@ void main() {
         },
       );
       test(
-        "Should return a NotFoundError if there's no Achievement with the given id",
+        descriptionNotFoundError,
         () async {
           // Arrange
           when(mockAchievementRepository.removeAchievement(any)).thenAnswer((_) async => left(const CoreFailure.notFoundError()));

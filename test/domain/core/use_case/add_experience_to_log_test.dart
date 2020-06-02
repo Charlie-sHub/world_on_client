@@ -4,6 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/use_case/tag_use_cases/add_experience_to_log.dart';
 
+import '../../../constants.dart';
 import '../repository/mock_core_repository.dart';
 
 void main() {
@@ -40,10 +41,10 @@ void main() {
     },
   );
   group(
-    "Testing on failure",
+    descriptionGroupOnFailure,
     () {
       test(
-        "Should return ServerError if there's a problem with the server",
+        descriptionServerError,
         () async {
           // Arrange
           when(mockCoreRepository.addExperienceToLog(
@@ -65,7 +66,7 @@ void main() {
         },
       );
       test(
-        "Should return NotFoundError if the given ids don't correspond to any User or Experience",
+        descriptionNotFoundError,
         () async {
           // Arrange
           when(mockCoreRepository.addExperienceToLog(

@@ -6,6 +6,7 @@ import 'package:worldon/domain/core/entities/comment.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 
+import '../../../constants.dart';
 import '../repository/mock_comment_repository.dart';
 
 void main() {
@@ -26,7 +27,7 @@ void main() {
     modificationDate: DateTime.now(),
   );
   test(
-    "Should return nothing if everything goes well",
+    descriptionReturnNothing,
     () async {
       // Arrange
       when(mockCommentRepository.postComment(
@@ -48,10 +49,10 @@ void main() {
     },
   );
   group(
-    "Testing on failure",
+    descriptionGroupOnFailure,
     () {
       test(
-        "Should return a ServerError if there's a problem with the server",
+        descriptionServerError,
         () async {
           // Arrange
           when(mockCommentRepository.postComment(

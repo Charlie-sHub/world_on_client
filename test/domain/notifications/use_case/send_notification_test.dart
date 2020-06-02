@@ -6,6 +6,7 @@ import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/notifications/use_case/send_notification.dart';
 
+import '../../../constants.dart';
 import '../repository/mock_notification_repository.dart';
 
 void main() {
@@ -26,7 +27,7 @@ void main() {
     creationDate: DateTime.now(),
   );
   test(
-    "Should return nothing if everything goes well",
+    descriptionReturnNothing,
     () async {
       // Arrange
       when(mockNotificationRepository.sendNotification(any)).thenAnswer((_) async => right(null));
@@ -39,10 +40,10 @@ void main() {
     },
   );
   group(
-    "Testing on failure",
+    descriptionGroupOnFailure,
     () {
       test(
-        "Should return ServerError if there's a problem with the server",
+        descriptionServerError,
         () async {
           // Arrange
           when(mockNotificationRepository.sendNotification(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
