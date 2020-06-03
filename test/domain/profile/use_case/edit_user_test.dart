@@ -5,6 +5,7 @@ import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/profile/use_case/edit_user.dart';
 
+import '../../../constants.dart';
 import '../repository/mock_profile_repository.dart';
 
 void main() {
@@ -16,8 +17,10 @@ void main() {
       useCase = EditUser(mockProfileRepository);
     },
   );
+  final randomUser = User(id: 1, adminPowers: false);
+  final admin = User(id: 3, adminPowers: true);
   final user = User(
-    id: 1,
+    id: 2,
     name: "test",
     username: "test",
     password: "test",
@@ -34,29 +37,56 @@ void main() {
     creationDate: DateTime.now(),
     modificationDate: DateTime.now(),
   );
-  test(
-    "Should return nothing if everything goes well",
-    () async {
-      // Arrange
-      when(mockProfileRepository.editUser(any)).thenAnswer((_) async => right(null));
-      // Act
-      final result = await useCase(Params(user: user));
-      // Assert
-      expect(result, right(null));
-      verify(mockProfileRepository.editUser(any));
-      verifyNoMoreInteractions(mockProfileRepository);
+  group(
+    descriptionAuthorization,
+    () {
+      test(
+        "$descriptionReturnNothing, testing with the admin",
+        () async {
+          // Arrange
+          when(mockProfileRepository.editUser(any)).thenAnswer((_) async => right(null));
+          // Act
+          final result = await useCase(Params(
+            userRequesting: admin,
+            userToEdit: user,
+          ));
+          // Assert
+          expect(result, right(null));
+          verify(mockProfileRepository.editUser(any));
+          verifyNoMoreInteractions(mockProfileRepository);
+        },
+      );
+      test(
+        "$descriptionReturnNothing, testing with the same user",
+        () async {
+          // Arrange
+          when(mockProfileRepository.editUser(any)).thenAnswer((_) async => right(null));
+          // Act
+          final result = await useCase(Params(
+            userRequesting: user,
+            userToEdit: user,
+          ));
+          // Assert
+          expect(result, right(null));
+          verify(mockProfileRepository.editUser(any));
+          verifyNoMoreInteractions(mockProfileRepository);
+        },
+      );
     },
   );
   group(
-    "Testing on failure",
+    descriptionGroupOnFailure,
     () {
       test(
-        "Should return ServerError if there's a problem with the server",
+        descriptionServerError,
         () async {
           // Arrange
           when(mockProfileRepository.editUser(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
           // Act
-          final result = await useCase(Params(user: user));
+          final result = await useCase(Params(
+            userRequesting: admin,
+            userToEdit: user,
+          ));
           // Assert
           expect(result, left(const CoreFailure.serverError()));
           verify(mockProfileRepository.editUser(any));
@@ -64,16 +94,47 @@ void main() {
         },
       );
       test(
-        "Should return UsernameAlreadyInUse if the username sent is already being used by another User",
+        descriptionUsernameAlreadyInUse,
         () async {
           // Arrange
           when(mockProfileRepository.editUser(any)).thenAnswer((_) async => left(const CoreFailure.usernameAlreadyInUse()));
           // Act
-          final result = await useCase(Params(user: user));
+          final result = await useCase(Params(
+            userRequesting: admin,
+            userToEdit: user,
+          ));
           // Assert
           expect(result, left(const CoreFailure.usernameAlreadyInUse()));
           verify(mockProfileRepository.editUser(any));
           verifyNoMoreInteractions(mockProfileRepository);
+        },
+      );
+      test(
+        descriptionEmailAlreadyInUse,
+          () async {
+          // Arrange
+          when(mockProfileRepository.editUser(any)).thenAnswer((_) async => left(const CoreFailure.emailAlreadyInUse()));
+          // Act
+          final result = await useCase(Params(
+            userRequesting: admin,
+            userToEdit: user,
+          ));
+          // Assert
+          expect(result, left(const CoreFailure.emailAlreadyInUse()));
+          verify(mockProfileRepository.editUser(any));
+          verifyNoMoreInteractions(mockProfileRepository);
+        },
+      );
+      test(
+        descriptionUnAuthorized,
+          () async {
+          final result = await useCase(Params(
+            userRequesting: randomUser,
+            userToEdit: user,
+          ));
+          // Assert
+          expect(result, left(const CoreFailure.unAuthorizedError()));
+          verifyZeroInteractions(mockProfileRepository);
         },
       );
     },

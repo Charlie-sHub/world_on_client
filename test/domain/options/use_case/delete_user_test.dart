@@ -25,7 +25,7 @@ void main() {
     descriptionAuthorization,
     () {
       test(
-        "$descriptionReturnNothing, testing with an admin",
+        "$descriptionReturnNothing, testing with the admin",
         () async {
           // Arrange
           when(mockRemoteOptionsRepository.deleteUser(any)).thenAnswer((_) async => right(null));
@@ -64,8 +64,6 @@ void main() {
       test(
         descriptionUnAuthorized,
         () async {
-          // Arrange
-          when(mockRemoteOptionsRepository.deleteUser(any)).thenAnswer((_) async => left(const CoreFailure.unAuthorizedError()));
           // Act
           final result = await useCase(Params(
             userDeleting: userRandom,

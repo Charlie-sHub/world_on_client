@@ -6,6 +6,7 @@ import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/tag_management/use_case/get_tag.dart';
 
+import '../../../constants.dart';
 import '../repository/mock_tag_management_repository.dart';
 
 void main() {
@@ -33,10 +34,10 @@ void main() {
     },
   );
   group(
-    "testing on failure",
+    descriptionGroupOnFailure,
     () {
       test(
-        "Should return a NotFoundError in case there's no Tag with the given id",
+        descriptionNotFoundError,
         () async {
           // Arrange
           when(mockTagManagementRepository.getTag(any)).thenAnswer((_) async => left(const CoreFailure.notFoundError()));
@@ -49,7 +50,7 @@ void main() {
         },
       );
       test(
-        "Should return a ServerError in case there's some problem with the server",
+        descriptionServerError,
         () async {
           // Arrange
           when(mockTagManagementRepository.getTag(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));

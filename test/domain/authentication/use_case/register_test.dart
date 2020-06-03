@@ -68,20 +68,20 @@ void main() {
         },
       );
       test(
-        "Should return a EmailAlreadyInUse in case the Email used is already in use",
+        descriptionEmailAlreadyInUse,
         () async {
           // Arrange
-          when(mockAuthenticationRepository.register(any)).thenAnswer((_) async => left(const AuthenticationFailure.emailAlreadyInUse()));
+          when(mockAuthenticationRepository.register(any)).thenAnswer((_) async => left(const CoreFailure.emailAlreadyInUse()));
           // Act
           final result = await useCase(Params(user: user));
           // Assert
-          expect(result, left(const AuthenticationFailure.emailAlreadyInUse()));
+          expect(result, left(const CoreFailure.emailAlreadyInUse()));
           verify(mockAuthenticationRepository.register(any));
           verifyNoMoreInteractions(mockAuthenticationRepository);
         },
       );
       test(
-        "Should return a UsernameAlreadyInUse in case the Username used is already in use",
+        descriptionUsernameAlreadyInUse,
         () async {
           // Arrange
           when(mockAuthenticationRepository.register(any)).thenAnswer((_) async => left(const CoreFailure.usernameAlreadyInUse()));

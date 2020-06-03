@@ -19,6 +19,9 @@ void main() {
       useCase = EditExperience(mockExperienceManagementRepository);
     },
   );
+  final randomUser = User(id: 1, adminPowers: false);
+  final creatorUser = User(id: 2, adminPowers: false);
+  final admin = User(id: 3, adminPowers: true);
   final experience = Experience(
     id: 1,
     name: "test",
@@ -27,23 +30,46 @@ void main() {
     latitude: 1.1,
     longitude: 1.1,
     location: Location(),
-    creator: User(),
+    creator: creatorUser,
     difficulty: 1,
     creationDate: DateTime.now(),
     modificationDate: DateTime.now(),
   );
-  test(
-    descriptionReturnNothing,
-    () async {
-      // Arrange
-      when(mockExperienceManagementRepository.editExperience(any)).thenAnswer((_) async => right(null));
-      // Act
-      final result = await useCase(Params(experience: experience));
-
-      // Assert
-      expect(result, right(null));
-      verify(mockExperienceManagementRepository.editExperience(any));
-      verifyNoMoreInteractions(mockExperienceManagementRepository);
+  group(
+    descriptionAuthorization,
+    () {
+      test(
+        "$descriptionReturnNothing, testing with the creator",
+        () async {
+          // Arrange
+          when(mockExperienceManagementRepository.editExperience(any)).thenAnswer((_) async => right(null));
+          // Act
+          final result = await useCase(Params(
+            experience: experience,
+            user: creatorUser,
+          ));
+          // Assert
+          expect(result, right(null));
+          verify(mockExperienceManagementRepository.editExperience(any));
+          verifyNoMoreInteractions(mockExperienceManagementRepository);
+        },
+      );
+      test(
+        "$descriptionReturnNothing, testing with the admin",
+        () async {
+          // Arrange
+          when(mockExperienceManagementRepository.editExperience(any)).thenAnswer((_) async => right(null));
+          // Act
+          final result = await useCase(Params(
+            experience: experience,
+            user: admin,
+          ));
+          // Assert
+          expect(result, right(null));
+          verify(mockExperienceManagementRepository.editExperience(any));
+          verifyNoMoreInteractions(mockExperienceManagementRepository);
+        },
+      );
     },
   );
   group(
@@ -55,11 +81,27 @@ void main() {
           // Arrange
           when(mockExperienceManagementRepository.editExperience(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
           // Act
-          final result = await useCase(Params(experience: experience));
+          final result = await useCase(Params(
+            experience: experience,
+            user: creatorUser,
+          ));
           // Assert
           expect(result, left(const CoreFailure.serverError()));
           verify(mockExperienceManagementRepository.editExperience(any));
           verifyNoMoreInteractions(mockExperienceManagementRepository);
+        },
+      );
+      test(
+        descriptionUnAuthorized,
+          () async {
+          // Act
+          final result = await useCase(Params(
+            experience: experience,
+            user: randomUser,
+          ));
+          // Assert
+          expect(result, left(const CoreFailure.unAuthorizedError()));
+          verifyZeroInteractions(mockExperienceManagementRepository);
         },
       );
     },

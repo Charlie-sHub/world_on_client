@@ -19,6 +19,8 @@ abstract class CoreFailure extends Failure with _$CoreFailure {
   // Came from AuthenticationFailure, moved here because of user editing in the profile feature, maybe should create a "user_management" feature in the future
   const factory CoreFailure.usernameAlreadyInUse() = UsernameAlreadyInUse;
 
+  const factory CoreFailure.emailAlreadyInUse() = EmailAlreadyInUse;
+
   const factory CoreFailure.unAuthorizedError() = UnAuthorizedError;
 
   /// For all creation/modification use cases of entities that require unique names

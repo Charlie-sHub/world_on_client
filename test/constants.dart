@@ -8,3 +8,5 @@ const String descriptionServerError = "Should return ServerError if there's a pr
 const String descriptionCacheError = "Should return CacheError if there's a problem with the cache";
 const String descriptionNotFoundError = "Should return NotFoundError if the requested item(s) couldn't be found";
 const String descriptionUnAuthorized = "Should return UnAuthorizedError if the User is not authorized for such request";
+const String descriptionEmailAlreadyInUse = "Should return EmailAlreadyInUse";
+const String descriptionUsernameAlreadyInUse = "Should return UsernameAlreadyInUse";

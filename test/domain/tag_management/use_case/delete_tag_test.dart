@@ -1,33 +1,27 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:worldon/domain/comments/use_case/edit_comment.dart';
-import 'package:worldon/domain/core/entities/comment.dart';
+import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
+import 'package:worldon/domain/tag_management/use_case/delete_tag.dart';
 
 import '../../../constants.dart';
-import '../repository/mock_comment_repository.dart';
+import '../repository/mock_tag_management_repository.dart';
 
 void main() {
-  MockCommentRepository mockCommentRepository;
-  EditComment useCase;
+  MockTagManagementRepository mockTagManagementRepository;
+  DeleteTag useCase;
   setUp(
     () {
-      mockCommentRepository = MockCommentRepository();
-      useCase = EditComment(mockCommentRepository);
+      mockTagManagementRepository = MockTagManagementRepository();
+      useCase = DeleteTag(mockTagManagementRepository);
     },
   );
   final randomUser = User(id: 1, adminPowers: false);
   final creatorUser = User(id: 2, adminPowers: false);
   final admin = User(id: 3, adminPowers: true);
-  final comment = Comment(
-    id: 1,
-    user: creatorUser,
-    content: "This is a test",
-    creationDate: DateTime.now(),
-    modificationDate: DateTime.now(),
-  );
+  final tag = Tag(id: 1, creator: creatorUser);
   group(
     descriptionAuthorization,
     () {
@@ -35,32 +29,32 @@ void main() {
         "$descriptionReturnNothing, testing with the creator",
         () async {
           // Arrange
-          when(mockCommentRepository.editComment(any)).thenAnswer((_) async => right(null));
+          when(mockTagManagementRepository.removeTag(any)).thenAnswer((_) async => right(null));
           // Act
           final result = await useCase(Params(
-            comment: comment,
             user: creatorUser,
+            tag: tag,
           ));
           // Assert
           expect(result, right(null));
-          verify(mockCommentRepository.editComment(any));
-          verifyNoMoreInteractions(mockCommentRepository);
+          verify(mockTagManagementRepository.removeTag(any));
+          verifyNoMoreInteractions(mockTagManagementRepository);
         },
       );
       test(
         "$descriptionReturnNothing, testing with the admin",
         () async {
           // Arrange
-          when(mockCommentRepository.editComment(any)).thenAnswer((_) async => right(null));
+          when(mockTagManagementRepository.removeTag(any)).thenAnswer((_) async => right(null));
           // Act
           final result = await useCase(Params(
-            comment: comment,
             user: admin,
+            tag: tag,
           ));
           // Assert
           expect(result, right(null));
-          verify(mockCommentRepository.editComment(any));
-          verifyNoMoreInteractions(mockCommentRepository);
+          verify(mockTagManagementRepository.removeTag(any));
+          verifyNoMoreInteractions(mockTagManagementRepository);
         },
       );
     },
@@ -72,16 +66,16 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockCommentRepository.editComment(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          when(mockTagManagementRepository.removeTag(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
           // Act
           final result = await useCase(Params(
-            comment: comment,
             user: admin,
+            tag: tag,
           ));
           // Assert
           expect(result, left(const CoreFailure.serverError()));
-          verify(mockCommentRepository.editComment(any));
-          verifyNoMoreInteractions(mockCommentRepository);
+          verify(mockTagManagementRepository.removeTag(any));
+          verifyNoMoreInteractions(mockTagManagementRepository);
         },
       );
       test(
@@ -89,12 +83,12 @@ void main() {
           () async {
           // Act
           final result = await useCase(Params(
-            comment: comment,
             user: randomUser,
+            tag: tag,
           ));
           // Assert
           expect(result, left(const CoreFailure.unAuthorizedError()));
-          verifyZeroInteractions(mockCommentRepository);
+          verifyZeroInteractions(mockTagManagementRepository);
         },
       );
     },

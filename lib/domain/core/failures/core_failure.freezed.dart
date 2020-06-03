@@ -36,6 +36,10 @@ class _$CoreFailureTearOff {
     return const UsernameAlreadyInUse();
   }
 
+  EmailAlreadyInUse emailAlreadyInUse() {
+    return const EmailAlreadyInUse();
+  }
+
   UnAuthorizedError unAuthorizedError() {
     return const UnAuthorizedError();
   }
@@ -57,6 +61,7 @@ mixin _$CoreFailure {
     @required Result cacheError(),
     @required Result geoLocationError(),
     @required Result usernameAlreadyInUse(),
+    @required Result emailAlreadyInUse(),
     @required Result unAuthorizedError(),
     @required Result nameAlreadyInUse(),
   });
@@ -68,6 +73,7 @@ mixin _$CoreFailure {
     Result cacheError(),
     Result geoLocationError(),
     Result usernameAlreadyInUse(),
+    Result emailAlreadyInUse(),
     Result unAuthorizedError(),
     Result nameAlreadyInUse(),
     @required Result orElse(),
@@ -80,6 +86,7 @@ mixin _$CoreFailure {
     @required Result cacheError(CacheError value),
     @required Result geoLocationError(GeoLocationError value),
     @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
+    @required Result emailAlreadyInUse(EmailAlreadyInUse value),
     @required Result unAuthorizedError(UnAuthorizedError value),
     @required Result nameAlreadyInUse(NameAlreadyInUse value),
   });
@@ -91,6 +98,7 @@ mixin _$CoreFailure {
     Result cacheError(CacheError value),
     Result geoLocationError(GeoLocationError value),
     Result usernameAlreadyInUse(UsernameAlreadyInUse value),
+    Result emailAlreadyInUse(EmailAlreadyInUse value),
     Result unAuthorizedError(UnAuthorizedError value),
     Result nameAlreadyInUse(NameAlreadyInUse value),
     @required Result orElse(),
@@ -159,6 +167,7 @@ class _$UnknownDomainLayerError
     @required Result cacheError(),
     @required Result geoLocationError(),
     @required Result usernameAlreadyInUse(),
+    @required Result emailAlreadyInUse(),
     @required Result unAuthorizedError(),
     @required Result nameAlreadyInUse(),
   }) {
@@ -168,6 +177,7 @@ class _$UnknownDomainLayerError
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
+    assert(emailAlreadyInUse != null);
     assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return unknownDomainLayerError();
@@ -182,6 +192,7 @@ class _$UnknownDomainLayerError
     Result cacheError(),
     Result geoLocationError(),
     Result usernameAlreadyInUse(),
+    Result emailAlreadyInUse(),
     Result unAuthorizedError(),
     Result nameAlreadyInUse(),
     @required Result orElse(),
@@ -202,6 +213,7 @@ class _$UnknownDomainLayerError
     @required Result cacheError(CacheError value),
     @required Result geoLocationError(GeoLocationError value),
     @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
+    @required Result emailAlreadyInUse(EmailAlreadyInUse value),
     @required Result unAuthorizedError(UnAuthorizedError value),
     @required Result nameAlreadyInUse(NameAlreadyInUse value),
   }) {
@@ -211,6 +223,7 @@ class _$UnknownDomainLayerError
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
+    assert(emailAlreadyInUse != null);
     assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return unknownDomainLayerError(this);
@@ -225,6 +238,7 @@ class _$UnknownDomainLayerError
     Result cacheError(CacheError value),
     Result geoLocationError(GeoLocationError value),
     Result usernameAlreadyInUse(UsernameAlreadyInUse value),
+    Result emailAlreadyInUse(EmailAlreadyInUse value),
     Result unAuthorizedError(UnAuthorizedError value),
     Result nameAlreadyInUse(NameAlreadyInUse value),
     @required Result orElse(),
@@ -286,6 +300,7 @@ class _$ServerError with DiagnosticableTreeMixin implements ServerError {
     @required Result cacheError(),
     @required Result geoLocationError(),
     @required Result usernameAlreadyInUse(),
+    @required Result emailAlreadyInUse(),
     @required Result unAuthorizedError(),
     @required Result nameAlreadyInUse(),
   }) {
@@ -295,6 +310,7 @@ class _$ServerError with DiagnosticableTreeMixin implements ServerError {
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
+    assert(emailAlreadyInUse != null);
     assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return serverError();
@@ -309,6 +325,7 @@ class _$ServerError with DiagnosticableTreeMixin implements ServerError {
     Result cacheError(),
     Result geoLocationError(),
     Result usernameAlreadyInUse(),
+    Result emailAlreadyInUse(),
     Result unAuthorizedError(),
     Result nameAlreadyInUse(),
     @required Result orElse(),
@@ -329,6 +346,7 @@ class _$ServerError with DiagnosticableTreeMixin implements ServerError {
     @required Result cacheError(CacheError value),
     @required Result geoLocationError(GeoLocationError value),
     @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
+    @required Result emailAlreadyInUse(EmailAlreadyInUse value),
     @required Result unAuthorizedError(UnAuthorizedError value),
     @required Result nameAlreadyInUse(NameAlreadyInUse value),
   }) {
@@ -338,6 +356,7 @@ class _$ServerError with DiagnosticableTreeMixin implements ServerError {
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
+    assert(emailAlreadyInUse != null);
     assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return serverError(this);
@@ -352,6 +371,7 @@ class _$ServerError with DiagnosticableTreeMixin implements ServerError {
     Result cacheError(CacheError value),
     Result geoLocationError(GeoLocationError value),
     Result usernameAlreadyInUse(UsernameAlreadyInUse value),
+    Result emailAlreadyInUse(EmailAlreadyInUse value),
     Result unAuthorizedError(UnAuthorizedError value),
     Result nameAlreadyInUse(NameAlreadyInUse value),
     @required Result orElse(),
@@ -413,6 +433,7 @@ class _$NotFoundError with DiagnosticableTreeMixin implements NotFoundError {
     @required Result cacheError(),
     @required Result geoLocationError(),
     @required Result usernameAlreadyInUse(),
+    @required Result emailAlreadyInUse(),
     @required Result unAuthorizedError(),
     @required Result nameAlreadyInUse(),
   }) {
@@ -422,6 +443,7 @@ class _$NotFoundError with DiagnosticableTreeMixin implements NotFoundError {
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
+    assert(emailAlreadyInUse != null);
     assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return notFoundError();
@@ -436,6 +458,7 @@ class _$NotFoundError with DiagnosticableTreeMixin implements NotFoundError {
     Result cacheError(),
     Result geoLocationError(),
     Result usernameAlreadyInUse(),
+    Result emailAlreadyInUse(),
     Result unAuthorizedError(),
     Result nameAlreadyInUse(),
     @required Result orElse(),
@@ -456,6 +479,7 @@ class _$NotFoundError with DiagnosticableTreeMixin implements NotFoundError {
     @required Result cacheError(CacheError value),
     @required Result geoLocationError(GeoLocationError value),
     @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
+    @required Result emailAlreadyInUse(EmailAlreadyInUse value),
     @required Result unAuthorizedError(UnAuthorizedError value),
     @required Result nameAlreadyInUse(NameAlreadyInUse value),
   }) {
@@ -465,6 +489,7 @@ class _$NotFoundError with DiagnosticableTreeMixin implements NotFoundError {
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
+    assert(emailAlreadyInUse != null);
     assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return notFoundError(this);
@@ -479,6 +504,7 @@ class _$NotFoundError with DiagnosticableTreeMixin implements NotFoundError {
     Result cacheError(CacheError value),
     Result geoLocationError(GeoLocationError value),
     Result usernameAlreadyInUse(UsernameAlreadyInUse value),
+    Result emailAlreadyInUse(EmailAlreadyInUse value),
     Result unAuthorizedError(UnAuthorizedError value),
     Result nameAlreadyInUse(NameAlreadyInUse value),
     @required Result orElse(),
@@ -540,6 +566,7 @@ class _$CacheError with DiagnosticableTreeMixin implements CacheError {
     @required Result cacheError(),
     @required Result geoLocationError(),
     @required Result usernameAlreadyInUse(),
+    @required Result emailAlreadyInUse(),
     @required Result unAuthorizedError(),
     @required Result nameAlreadyInUse(),
   }) {
@@ -549,6 +576,7 @@ class _$CacheError with DiagnosticableTreeMixin implements CacheError {
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
+    assert(emailAlreadyInUse != null);
     assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return cacheError();
@@ -563,6 +591,7 @@ class _$CacheError with DiagnosticableTreeMixin implements CacheError {
     Result cacheError(),
     Result geoLocationError(),
     Result usernameAlreadyInUse(),
+    Result emailAlreadyInUse(),
     Result unAuthorizedError(),
     Result nameAlreadyInUse(),
     @required Result orElse(),
@@ -583,6 +612,7 @@ class _$CacheError with DiagnosticableTreeMixin implements CacheError {
     @required Result cacheError(CacheError value),
     @required Result geoLocationError(GeoLocationError value),
     @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
+    @required Result emailAlreadyInUse(EmailAlreadyInUse value),
     @required Result unAuthorizedError(UnAuthorizedError value),
     @required Result nameAlreadyInUse(NameAlreadyInUse value),
   }) {
@@ -592,6 +622,7 @@ class _$CacheError with DiagnosticableTreeMixin implements CacheError {
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
+    assert(emailAlreadyInUse != null);
     assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return cacheError(this);
@@ -606,6 +637,7 @@ class _$CacheError with DiagnosticableTreeMixin implements CacheError {
     Result cacheError(CacheError value),
     Result geoLocationError(GeoLocationError value),
     Result usernameAlreadyInUse(UsernameAlreadyInUse value),
+    Result emailAlreadyInUse(EmailAlreadyInUse value),
     Result unAuthorizedError(UnAuthorizedError value),
     Result nameAlreadyInUse(NameAlreadyInUse value),
     @required Result orElse(),
@@ -670,6 +702,7 @@ class _$GeoLocationError
     @required Result cacheError(),
     @required Result geoLocationError(),
     @required Result usernameAlreadyInUse(),
+    @required Result emailAlreadyInUse(),
     @required Result unAuthorizedError(),
     @required Result nameAlreadyInUse(),
   }) {
@@ -679,6 +712,7 @@ class _$GeoLocationError
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
+    assert(emailAlreadyInUse != null);
     assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return geoLocationError();
@@ -693,6 +727,7 @@ class _$GeoLocationError
     Result cacheError(),
     Result geoLocationError(),
     Result usernameAlreadyInUse(),
+    Result emailAlreadyInUse(),
     Result unAuthorizedError(),
     Result nameAlreadyInUse(),
     @required Result orElse(),
@@ -713,6 +748,7 @@ class _$GeoLocationError
     @required Result cacheError(CacheError value),
     @required Result geoLocationError(GeoLocationError value),
     @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
+    @required Result emailAlreadyInUse(EmailAlreadyInUse value),
     @required Result unAuthorizedError(UnAuthorizedError value),
     @required Result nameAlreadyInUse(NameAlreadyInUse value),
   }) {
@@ -722,6 +758,7 @@ class _$GeoLocationError
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
+    assert(emailAlreadyInUse != null);
     assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return geoLocationError(this);
@@ -736,6 +773,7 @@ class _$GeoLocationError
     Result cacheError(CacheError value),
     Result geoLocationError(GeoLocationError value),
     Result usernameAlreadyInUse(UsernameAlreadyInUse value),
+    Result emailAlreadyInUse(EmailAlreadyInUse value),
     Result unAuthorizedError(UnAuthorizedError value),
     Result nameAlreadyInUse(NameAlreadyInUse value),
     @required Result orElse(),
@@ -801,6 +839,7 @@ class _$UsernameAlreadyInUse
     @required Result cacheError(),
     @required Result geoLocationError(),
     @required Result usernameAlreadyInUse(),
+    @required Result emailAlreadyInUse(),
     @required Result unAuthorizedError(),
     @required Result nameAlreadyInUse(),
   }) {
@@ -810,6 +849,7 @@ class _$UsernameAlreadyInUse
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
+    assert(emailAlreadyInUse != null);
     assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return usernameAlreadyInUse();
@@ -824,6 +864,7 @@ class _$UsernameAlreadyInUse
     Result cacheError(),
     Result geoLocationError(),
     Result usernameAlreadyInUse(),
+    Result emailAlreadyInUse(),
     Result unAuthorizedError(),
     Result nameAlreadyInUse(),
     @required Result orElse(),
@@ -844,6 +885,7 @@ class _$UsernameAlreadyInUse
     @required Result cacheError(CacheError value),
     @required Result geoLocationError(GeoLocationError value),
     @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
+    @required Result emailAlreadyInUse(EmailAlreadyInUse value),
     @required Result unAuthorizedError(UnAuthorizedError value),
     @required Result nameAlreadyInUse(NameAlreadyInUse value),
   }) {
@@ -853,6 +895,7 @@ class _$UsernameAlreadyInUse
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
+    assert(emailAlreadyInUse != null);
     assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return usernameAlreadyInUse(this);
@@ -867,6 +910,7 @@ class _$UsernameAlreadyInUse
     Result cacheError(CacheError value),
     Result geoLocationError(GeoLocationError value),
     Result usernameAlreadyInUse(UsernameAlreadyInUse value),
+    Result emailAlreadyInUse(EmailAlreadyInUse value),
     Result unAuthorizedError(UnAuthorizedError value),
     Result nameAlreadyInUse(NameAlreadyInUse value),
     @required Result orElse(),
@@ -881,6 +925,142 @@ class _$UsernameAlreadyInUse
 
 abstract class UsernameAlreadyInUse implements CoreFailure {
   const factory UsernameAlreadyInUse() = _$UsernameAlreadyInUse;
+}
+
+abstract class $EmailAlreadyInUseCopyWith<$Res> {
+  factory $EmailAlreadyInUseCopyWith(EmailAlreadyInUse value, $Res Function(EmailAlreadyInUse) then) =
+  _$EmailAlreadyInUseCopyWithImpl<$Res>;
+}
+
+class _$EmailAlreadyInUseCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
+  implements $EmailAlreadyInUseCopyWith<$Res> {
+  _$EmailAlreadyInUseCopyWithImpl(EmailAlreadyInUse _value, $Res Function(EmailAlreadyInUse) _then)
+    : super(_value, (v) => _then(v as EmailAlreadyInUse));
+  
+  @override
+  EmailAlreadyInUse get _value => super._value as EmailAlreadyInUse;
+}
+
+class _$EmailAlreadyInUse
+  with DiagnosticableTreeMixin
+  implements EmailAlreadyInUse {
+  const _$EmailAlreadyInUse();
+  
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'CoreFailure.emailAlreadyInUse()';
+  }
+  
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'CoreFailure.emailAlreadyInUse'));
+  }
+  
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is EmailAlreadyInUse);
+  }
+  
+  @override
+  int get hashCode => runtimeType.hashCode;
+  
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result unknownDomainLayerError(),
+    @required Result serverError(),
+    @required Result notFoundError(),
+    @required Result cacheError(),
+    @required Result geoLocationError(),
+    @required Result usernameAlreadyInUse(),
+    @required Result emailAlreadyInUse(),
+    @required Result unAuthorizedError(),
+    @required Result nameAlreadyInUse(),
+  }) {
+    assert(unknownDomainLayerError != null);
+    assert(serverError != null);
+    assert(notFoundError != null);
+    assert(cacheError != null);
+    assert(geoLocationError != null);
+    assert(usernameAlreadyInUse != null);
+    assert(emailAlreadyInUse != null);
+    assert(unAuthorizedError != null);
+    assert(nameAlreadyInUse != null);
+    return emailAlreadyInUse();
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result unknownDomainLayerError(),
+    Result serverError(),
+    Result notFoundError(),
+    Result cacheError(),
+    Result geoLocationError(),
+    Result usernameAlreadyInUse(),
+    Result emailAlreadyInUse(),
+    Result unAuthorizedError(),
+    Result nameAlreadyInUse(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (emailAlreadyInUse != null) {
+      return emailAlreadyInUse();
+    }
+    return orElse();
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result unknownDomainLayerError(UnknownDomainLayerError value),
+    @required Result serverError(ServerError value),
+    @required Result notFoundError(NotFoundError value),
+    @required Result cacheError(CacheError value),
+    @required Result geoLocationError(GeoLocationError value),
+    @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
+    @required Result emailAlreadyInUse(EmailAlreadyInUse value),
+    @required Result unAuthorizedError(UnAuthorizedError value),
+    @required Result nameAlreadyInUse(NameAlreadyInUse value),
+  }) {
+    assert(unknownDomainLayerError != null);
+    assert(serverError != null);
+    assert(notFoundError != null);
+    assert(cacheError != null);
+    assert(geoLocationError != null);
+    assert(usernameAlreadyInUse != null);
+    assert(emailAlreadyInUse != null);
+    assert(unAuthorizedError != null);
+    assert(nameAlreadyInUse != null);
+    return emailAlreadyInUse(this);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result unknownDomainLayerError(UnknownDomainLayerError value),
+    Result serverError(ServerError value),
+    Result notFoundError(NotFoundError value),
+    Result cacheError(CacheError value),
+    Result geoLocationError(GeoLocationError value),
+    Result usernameAlreadyInUse(UsernameAlreadyInUse value),
+    Result emailAlreadyInUse(EmailAlreadyInUse value),
+    Result unAuthorizedError(UnAuthorizedError value),
+    Result nameAlreadyInUse(NameAlreadyInUse value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (emailAlreadyInUse != null) {
+      return emailAlreadyInUse(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmailAlreadyInUse implements CoreFailure {
+  const factory EmailAlreadyInUse() = _$EmailAlreadyInUse;
 }
 
 abstract class $UnAuthorizedErrorCopyWith<$Res> {
@@ -931,6 +1111,7 @@ class _$UnAuthorizedError
     @required Result cacheError(),
     @required Result geoLocationError(),
     @required Result usernameAlreadyInUse(),
+    @required Result emailAlreadyInUse(),
     @required Result unAuthorizedError(),
     @required Result nameAlreadyInUse(),
   }) {
@@ -940,6 +1121,7 @@ class _$UnAuthorizedError
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
+    assert(emailAlreadyInUse != null);
     assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return unAuthorizedError();
@@ -954,6 +1136,7 @@ class _$UnAuthorizedError
     Result cacheError(),
     Result geoLocationError(),
     Result usernameAlreadyInUse(),
+    Result emailAlreadyInUse(),
     Result unAuthorizedError(),
     Result nameAlreadyInUse(),
     @required Result orElse(),
@@ -974,6 +1157,7 @@ class _$UnAuthorizedError
     @required Result cacheError(CacheError value),
     @required Result geoLocationError(GeoLocationError value),
     @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
+    @required Result emailAlreadyInUse(EmailAlreadyInUse value),
     @required Result unAuthorizedError(UnAuthorizedError value),
     @required Result nameAlreadyInUse(NameAlreadyInUse value),
   }) {
@@ -983,6 +1167,7 @@ class _$UnAuthorizedError
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
+    assert(emailAlreadyInUse != null);
     assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return unAuthorizedError(this);
@@ -997,6 +1182,7 @@ class _$UnAuthorizedError
     Result cacheError(CacheError value),
     Result geoLocationError(GeoLocationError value),
     Result usernameAlreadyInUse(UsernameAlreadyInUse value),
+    Result emailAlreadyInUse(EmailAlreadyInUse value),
     Result unAuthorizedError(UnAuthorizedError value),
     Result nameAlreadyInUse(NameAlreadyInUse value),
     @required Result orElse(),
@@ -1061,6 +1247,7 @@ class _$NameAlreadyInUse
     @required Result cacheError(),
     @required Result geoLocationError(),
     @required Result usernameAlreadyInUse(),
+    @required Result emailAlreadyInUse(),
     @required Result unAuthorizedError(),
     @required Result nameAlreadyInUse(),
   }) {
@@ -1070,6 +1257,7 @@ class _$NameAlreadyInUse
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
+    assert(emailAlreadyInUse != null);
     assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return nameAlreadyInUse();
@@ -1084,6 +1272,7 @@ class _$NameAlreadyInUse
     Result cacheError(),
     Result geoLocationError(),
     Result usernameAlreadyInUse(),
+    Result emailAlreadyInUse(),
     Result unAuthorizedError(),
     Result nameAlreadyInUse(),
     @required Result orElse(),
@@ -1104,6 +1293,7 @@ class _$NameAlreadyInUse
     @required Result cacheError(CacheError value),
     @required Result geoLocationError(GeoLocationError value),
     @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
+    @required Result emailAlreadyInUse(EmailAlreadyInUse value),
     @required Result unAuthorizedError(UnAuthorizedError value),
     @required Result nameAlreadyInUse(NameAlreadyInUse value),
   }) {
@@ -1113,6 +1303,7 @@ class _$NameAlreadyInUse
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
+    assert(emailAlreadyInUse != null);
     assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return nameAlreadyInUse(this);
@@ -1127,6 +1318,7 @@ class _$NameAlreadyInUse
     Result cacheError(CacheError value),
     Result geoLocationError(GeoLocationError value),
     Result usernameAlreadyInUse(UsernameAlreadyInUse value),
+    Result emailAlreadyInUse(EmailAlreadyInUse value),
     Result unAuthorizedError(UnAuthorizedError value),
     Result nameAlreadyInUse(NameAlreadyInUse value),
     @required Result orElse(),

@@ -27,7 +27,7 @@ void main() {
     descriptionAuthorization,
     () {
       test(
-        "$descriptionReturnNothing, creator deleting the experience",
+        "$descriptionReturnNothing, testing with the creator",
         () async {
           // Arrange
           when(mockProfileRepository.deleteExperience(any)).thenAnswer((_) async => right(null));
@@ -43,7 +43,7 @@ void main() {
         },
       );
       test(
-        "$descriptionReturnNothing, admin deleting the experience",
+        "$descriptionReturnNothing, testing with the admin",
         () async {
           // Arrange
           when(mockProfileRepository.deleteExperience(any)).thenAnswer((_) async => right(null));
@@ -66,8 +66,6 @@ void main() {
       test(
         "$descriptionUnAuthorized, random user deleting the experience",
         () async {
-          // Arrange
-          when(mockProfileRepository.deleteExperience(any)).thenAnswer((_) async => right(null));
           // Act
           final result = await useCase(Params(
             user: randomUser,

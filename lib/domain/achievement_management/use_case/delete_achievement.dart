@@ -7,16 +7,16 @@ import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
-class EditAchievement implements AsyncUseCase<Unit, Params> {
+class DeleteAchievement implements AsyncUseCase<Unit, Params> {
   final AchievementRepository _repository;
 
-  const EditAchievement(this._repository);
+  const DeleteAchievement(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
     final isAuthorized = params.user == params.achievement.creator || params.user.adminPowers;
     if (isAuthorized) {
-      return _repository.editAchievement(params.achievement);
+      return _repository.removeAchievement(params.achievement.id);
     } else {
       return left(const CoreFailure.unAuthorizedError());
     }
