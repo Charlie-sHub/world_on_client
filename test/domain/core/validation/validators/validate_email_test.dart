@@ -5,7 +5,7 @@ import 'package:worldon/domain/core/validation/validators/validate_email.dart';
 import '../../../../constants.dart';
 
 void main() {
-  const invalidEmail = "a";
+  const invalidEmail = "test";
   const validEmail = "test@test.com";
   test(
     "Should return back the valid email",

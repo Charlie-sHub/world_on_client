@@ -17,7 +17,7 @@ class User extends Equatable {
   final String password;
   final String email;
   final DateTime birthday;
-  final String biography;
+  final String description;
   final String imageName;
   final int level;
   final int experiencePoints;
@@ -46,7 +46,7 @@ class User extends Equatable {
     @required this.password,
     @required this.email,
     @required this.birthday,
-    @required this.biography,
+    @required this.description,
     @required this.imageName,
     @required this.level,
     @required this.experiencePoints,

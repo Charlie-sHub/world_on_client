@@ -13,7 +13,7 @@ class Achievement extends Equatable {
   final String description;
   final String imageName;
   final String type;
-  final int requisite; //This will probably be reworked in the future to accommodate different kinds of achievements
+  final int requisite; // This will probably be reworked in the future to accommodate different kinds of achievements
   final int experiencePoints;
   final User creator;
   final DateTime creationDate;

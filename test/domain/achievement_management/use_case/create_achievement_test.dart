@@ -19,6 +19,19 @@ void main() {
       useCase = CreateAchievement(mockAchievementRepository);
     },
   );
+  /*
+  For use after the value objects are done
+  final name= "Test Achievement";
+  final description="This is just a test";
+  final imageName= "test.jpg";
+  final type= "test";
+  final requisite= 1;
+  final experiencePoints= 1;
+  final creator= User();
+  final creationDate= DateTime.now();
+  final modificationDate= DateTime.now();
+  final tags = const <Tag>{};
+  */
   final achievementToCreate = Achievement(
     id: 1,
     name: "Test Achievement",

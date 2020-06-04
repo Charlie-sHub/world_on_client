@@ -20,4 +20,29 @@ class Params {
   final Achievement achievement;
 
   Params({@required this.achievement});
+/*
+  final String name;
+  final String description;
+  final String imageName; // TODO: Figure the images out
+  final String type;
+  final int requisite;
+  final int experiencePoints;
+  final User creator;
+  final DateTime creationDate;
+  final DateTime modificationDate;
+  final Set<Tag> tags;
+
+  Params({
+    @required this.name,
+    @required this.description,
+    @required this.imageName,
+    @required this.type,
+    @required this.requisite,
+    @required this.experiencePoints,
+    @required this.creator,
+    @required this.creationDate,
+    @required this.modificationDate,
+    @required this.tags,
+  });
+  */
 }

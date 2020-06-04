@@ -27,6 +27,7 @@ void main() {
         userId: anyNamed("userId"),
       )).thenAnswer((_) async => right(null));
       // Act
+      // TODO: Refactor tests to keep things DRY
       final result = await useCase(Params(
         achievementId: achievementId,
         userId: userId,

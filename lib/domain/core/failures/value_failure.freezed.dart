@@ -46,6 +46,12 @@ class _$ValueFailureTearOff {
     );
   }
 
+  IntegerOutOfBounds<T> integerOutOfBounds<T>({@required int failedValue}) {
+    return IntegerOutOfBounds<T>(
+      failedValue: failedValue,
+    );
+  }
+
   StringWithInvalidCharacters<T> stringWithInvalidCharacters<T>({@required String failedValue}) {
     return StringWithInvalidCharacters<T>(
       failedValue: failedValue,
@@ -65,6 +71,7 @@ mixin _$ValueFailure<T> {
     @required Result invalidPassword(String failedValue),
     @required Result invalidName(String failedValue),
     @required Result stringExceedsLength(String failedValue),
+    @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
   });
   @optionalTypeArgs
@@ -75,6 +82,7 @@ mixin _$ValueFailure<T> {
     Result invalidPassword(String failedValue),
     Result invalidName(String failedValue),
     Result stringExceedsLength(String failedValue),
+    Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
     @required Result orElse(),
   });
@@ -86,6 +94,7 @@ mixin _$ValueFailure<T> {
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidName(InvalidName<T> value),
     @required Result stringExceedsLength(StringExceedsLength<T> value),
+    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
   });
   @optionalTypeArgs
@@ -96,6 +105,7 @@ mixin _$ValueFailure<T> {
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidName(InvalidName<T> value),
     Result stringExceedsLength(StringExceedsLength<T> value),
+    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result orElse(),
   });
@@ -158,6 +168,7 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     @required Result invalidPassword(String failedValue),
     @required Result invalidName(String failedValue),
     @required Result stringExceedsLength(String failedValue),
+    @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
   }) {
     assert(nullInput != null);
@@ -166,6 +177,7 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     assert(invalidPassword != null);
     assert(invalidName != null);
     assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     return nullInput();
   }
@@ -179,6 +191,7 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     Result invalidPassword(String failedValue),
     Result invalidName(String failedValue),
     Result stringExceedsLength(String failedValue),
+    Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
     @required Result orElse(),
   }) {
@@ -198,6 +211,7 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidName(InvalidName<T> value),
     @required Result stringExceedsLength(StringExceedsLength<T> value),
+    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
   }) {
     assert(nullInput != null);
@@ -206,6 +220,7 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     assert(invalidPassword != null);
     assert(invalidName != null);
     assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     return nullInput(this);
   }
@@ -219,6 +234,7 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidName(InvalidName<T> value),
     Result stringExceedsLength(StringExceedsLength<T> value),
+    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result orElse(),
   }) {
@@ -303,6 +319,7 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     @required Result invalidPassword(String failedValue),
     @required Result invalidName(String failedValue),
     @required Result stringExceedsLength(String failedValue),
+    @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
   }) {
     assert(nullInput != null);
@@ -311,6 +328,7 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     assert(invalidPassword != null);
     assert(invalidName != null);
     assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     return invalidDate(failedValue);
   }
@@ -324,6 +342,7 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     Result invalidPassword(String failedValue),
     Result invalidName(String failedValue),
     Result stringExceedsLength(String failedValue),
+    Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
     @required Result orElse(),
   }) {
@@ -343,6 +362,7 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidName(InvalidName<T> value),
     @required Result stringExceedsLength(StringExceedsLength<T> value),
+    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
   }) {
     assert(nullInput != null);
@@ -351,6 +371,7 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     assert(invalidPassword != null);
     assert(invalidName != null);
     assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     return invalidDate(this);
   }
@@ -364,6 +385,7 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidName(InvalidName<T> value),
     Result stringExceedsLength(StringExceedsLength<T> value),
+    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result orElse(),
   }) {
@@ -454,6 +476,7 @@ class _$InvalidEmail<T>
     @required Result invalidPassword(String failedValue),
     @required Result invalidName(String failedValue),
     @required Result stringExceedsLength(String failedValue),
+    @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
   }) {
     assert(nullInput != null);
@@ -462,6 +485,7 @@ class _$InvalidEmail<T>
     assert(invalidPassword != null);
     assert(invalidName != null);
     assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     return invalidEmail(failedValue);
   }
@@ -475,6 +499,7 @@ class _$InvalidEmail<T>
     Result invalidPassword(String failedValue),
     Result invalidName(String failedValue),
     Result stringExceedsLength(String failedValue),
+    Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
     @required Result orElse(),
   }) {
@@ -494,6 +519,7 @@ class _$InvalidEmail<T>
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidName(InvalidName<T> value),
     @required Result stringExceedsLength(StringExceedsLength<T> value),
+    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
   }) {
     assert(nullInput != null);
@@ -502,6 +528,7 @@ class _$InvalidEmail<T>
     assert(invalidPassword != null);
     assert(invalidName != null);
     assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     return invalidEmail(this);
   }
@@ -515,6 +542,7 @@ class _$InvalidEmail<T>
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidName(InvalidName<T> value),
     Result stringExceedsLength(StringExceedsLength<T> value),
+    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result orElse(),
   }) {
@@ -605,6 +633,7 @@ class _$InvalidPassword<T>
     @required Result invalidPassword(String failedValue),
     @required Result invalidName(String failedValue),
     @required Result stringExceedsLength(String failedValue),
+    @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
   }) {
     assert(nullInput != null);
@@ -613,6 +642,7 @@ class _$InvalidPassword<T>
     assert(invalidPassword != null);
     assert(invalidName != null);
     assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     return invalidPassword(failedValue);
   }
@@ -626,6 +656,7 @@ class _$InvalidPassword<T>
     Result invalidPassword(String failedValue),
     Result invalidName(String failedValue),
     Result stringExceedsLength(String failedValue),
+    Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
     @required Result orElse(),
   }) {
@@ -645,6 +676,7 @@ class _$InvalidPassword<T>
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidName(InvalidName<T> value),
     @required Result stringExceedsLength(StringExceedsLength<T> value),
+    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
   }) {
     assert(nullInput != null);
@@ -653,6 +685,7 @@ class _$InvalidPassword<T>
     assert(invalidPassword != null);
     assert(invalidName != null);
     assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     return invalidPassword(this);
   }
@@ -666,6 +699,7 @@ class _$InvalidPassword<T>
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidName(InvalidName<T> value),
     Result stringExceedsLength(StringExceedsLength<T> value),
+    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result orElse(),
   }) {
@@ -754,6 +788,7 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     @required Result invalidPassword(String failedValue),
     @required Result invalidName(String failedValue),
     @required Result stringExceedsLength(String failedValue),
+    @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
   }) {
     assert(nullInput != null);
@@ -762,6 +797,7 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     assert(invalidPassword != null);
     assert(invalidName != null);
     assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     return invalidName(failedValue);
   }
@@ -775,6 +811,7 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     Result invalidPassword(String failedValue),
     Result invalidName(String failedValue),
     Result stringExceedsLength(String failedValue),
+    Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
     @required Result orElse(),
   }) {
@@ -794,6 +831,7 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidName(InvalidName<T> value),
     @required Result stringExceedsLength(StringExceedsLength<T> value),
+    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
   }) {
     assert(nullInput != null);
@@ -802,6 +840,7 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     assert(invalidPassword != null);
     assert(invalidName != null);
     assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     return invalidName(this);
   }
@@ -815,6 +854,7 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidName(InvalidName<T> value),
     Result stringExceedsLength(StringExceedsLength<T> value),
+    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result orElse(),
   }) {
@@ -907,6 +947,7 @@ class _$StringExceedsLength<T>
     @required Result invalidPassword(String failedValue),
     @required Result invalidName(String failedValue),
     @required Result stringExceedsLength(String failedValue),
+    @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
   }) {
     assert(nullInput != null);
@@ -915,6 +956,7 @@ class _$StringExceedsLength<T>
     assert(invalidPassword != null);
     assert(invalidName != null);
     assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     return stringExceedsLength(failedValue);
   }
@@ -928,6 +970,7 @@ class _$StringExceedsLength<T>
     Result invalidPassword(String failedValue),
     Result invalidName(String failedValue),
     Result stringExceedsLength(String failedValue),
+    Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
     @required Result orElse(),
   }) {
@@ -947,6 +990,7 @@ class _$StringExceedsLength<T>
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidName(InvalidName<T> value),
     @required Result stringExceedsLength(StringExceedsLength<T> value),
+    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
   }) {
     assert(nullInput != null);
@@ -955,6 +999,7 @@ class _$StringExceedsLength<T>
     assert(invalidPassword != null);
     assert(invalidName != null);
     assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     return stringExceedsLength(this);
   }
@@ -968,6 +1013,7 @@ class _$StringExceedsLength<T>
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidName(InvalidName<T> value),
     Result stringExceedsLength(StringExceedsLength<T> value),
+    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result orElse(),
   }) {
@@ -985,6 +1031,167 @@ abstract class StringExceedsLength<T> implements ValueFailure<T> {
 
   String get failedValue;
   $StringExceedsLengthCopyWith<T, StringExceedsLength<T>> get copyWith;
+}
+
+abstract class $IntegerOutOfBoundsCopyWith<T, $Res> {
+  factory $IntegerOutOfBoundsCopyWith(IntegerOutOfBounds<T> value,
+    $Res Function(IntegerOutOfBounds<T>) then) =
+  _$IntegerOutOfBoundsCopyWithImpl<T, $Res>;
+  
+  $Res call({int failedValue});
+}
+
+class _$IntegerOutOfBoundsCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
+  implements $IntegerOutOfBoundsCopyWith<T, $Res> {
+  _$IntegerOutOfBoundsCopyWithImpl(IntegerOutOfBounds<T> _value, $Res Function(IntegerOutOfBounds<T>) _then)
+    : super(_value, (v) => _then(v as IntegerOutOfBounds<T>));
+  
+  @override
+  IntegerOutOfBounds<T> get _value => super._value as IntegerOutOfBounds<T>;
+  
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(IntegerOutOfBounds<T>(
+      failedValue:
+      failedValue == freezed ? _value.failedValue : failedValue as int,
+    ));
+  }
+}
+
+class _$IntegerOutOfBounds<T>
+  with DiagnosticableTreeMixin
+  implements IntegerOutOfBounds<T> {
+  const _$IntegerOutOfBounds({@required this.failedValue})
+    : assert(failedValue != null);
+  
+  @override
+  final int failedValue;
+  
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.integerOutOfBounds(failedValue: $failedValue)';
+  }
+  
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.integerOutOfBounds'))..add(DiagnosticsProperty('failedValue', failedValue));
+  }
+  
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+      (other is IntegerOutOfBounds<T> &&
+        (identical(other.failedValue, failedValue) ||
+          const DeepCollectionEquality()
+            .equals(other.failedValue, failedValue)));
+  }
+  
+  @override
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  
+  @override
+  $IntegerOutOfBoundsCopyWith<T, IntegerOutOfBounds<T>> get copyWith =>
+    _$IntegerOutOfBoundsCopyWithImpl<T, IntegerOutOfBounds<T>>(
+      this, _$identity);
+  
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result nullInput(),
+    @required Result invalidDate(DateTime failedValue),
+    @required Result invalidEmail(String failedValue),
+    @required Result invalidPassword(String failedValue),
+    @required Result invalidName(String failedValue),
+    @required Result stringExceedsLength(String failedValue),
+    @required Result integerOutOfBounds(int failedValue),
+    @required Result stringWithInvalidCharacters(String failedValue),
+  }) {
+    assert(nullInput != null);
+    assert(invalidDate != null);
+    assert(invalidEmail != null);
+    assert(invalidPassword != null);
+    assert(invalidName != null);
+    assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
+    assert(stringWithInvalidCharacters != null);
+    return integerOutOfBounds(failedValue);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result nullInput(),
+    Result invalidDate(DateTime failedValue),
+    Result invalidEmail(String failedValue),
+    Result invalidPassword(String failedValue),
+    Result invalidName(String failedValue),
+    Result stringExceedsLength(String failedValue),
+    Result integerOutOfBounds(int failedValue),
+    Result stringWithInvalidCharacters(String failedValue),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (integerOutOfBounds != null) {
+      return integerOutOfBounds(failedValue);
+    }
+    return orElse();
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result nullInput(NullInput<T> value),
+    @required Result invalidDate(InvalidDate<T> value),
+    @required Result invalidEmail(InvalidEmail<T> value),
+    @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result invalidName(InvalidName<T> value),
+    @required Result stringExceedsLength(StringExceedsLength<T> value),
+    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
+    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+  }) {
+    assert(nullInput != null);
+    assert(invalidDate != null);
+    assert(invalidEmail != null);
+    assert(invalidPassword != null);
+    assert(invalidName != null);
+    assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
+    assert(stringWithInvalidCharacters != null);
+    return integerOutOfBounds(this);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result nullInput(NullInput<T> value),
+    Result invalidDate(InvalidDate<T> value),
+    Result invalidEmail(InvalidEmail<T> value),
+    Result invalidPassword(InvalidPassword<T> value),
+    Result invalidName(InvalidName<T> value),
+    Result stringExceedsLength(StringExceedsLength<T> value),
+    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
+    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (integerOutOfBounds != null) {
+      return integerOutOfBounds(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class IntegerOutOfBounds<T> implements ValueFailure<T> {
+  const factory IntegerOutOfBounds({@required int failedValue}) =
+  _$IntegerOutOfBounds<T>;
+  
+  int get failedValue;
+  
+  $IntegerOutOfBoundsCopyWith<T, IntegerOutOfBounds<T>> get copyWith;
 }
 
 abstract class $StringWithInvalidCharactersCopyWith<T, $Res> {
@@ -1064,6 +1271,7 @@ class _$StringWithInvalidCharacters<T>
     @required Result invalidPassword(String failedValue),
     @required Result invalidName(String failedValue),
     @required Result stringExceedsLength(String failedValue),
+    @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
   }) {
     assert(nullInput != null);
@@ -1072,6 +1280,7 @@ class _$StringWithInvalidCharacters<T>
     assert(invalidPassword != null);
     assert(invalidName != null);
     assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     return stringWithInvalidCharacters(failedValue);
   }
@@ -1085,6 +1294,7 @@ class _$StringWithInvalidCharacters<T>
     Result invalidPassword(String failedValue),
     Result invalidName(String failedValue),
     Result stringExceedsLength(String failedValue),
+    Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
     @required Result orElse(),
   }) {
@@ -1104,6 +1314,7 @@ class _$StringWithInvalidCharacters<T>
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidName(InvalidName<T> value),
     @required Result stringExceedsLength(StringExceedsLength<T> value),
+    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
   }) {
     assert(nullInput != null);
@@ -1112,6 +1323,7 @@ class _$StringWithInvalidCharacters<T>
     assert(invalidPassword != null);
     assert(invalidName != null);
     assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     return stringWithInvalidCharacters(this);
   }
@@ -1125,6 +1337,7 @@ class _$StringWithInvalidCharacters<T>
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidName(InvalidName<T> value),
     Result stringExceedsLength(StringExceedsLength<T> value),
+    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result orElse(),
   }) {
@@ -1141,7 +1354,6 @@ abstract class StringWithInvalidCharacters<T> implements ValueFailure<T> {
   _$StringWithInvalidCharacters<T>;
 
   String get failedValue;
-  
   $StringWithInvalidCharactersCopyWith<T, StringWithInvalidCharacters<T>>
   get copyWith;
 }

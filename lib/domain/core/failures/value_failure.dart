@@ -17,5 +17,7 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
 
   const factory ValueFailure.stringExceedsLength({@required String failedValue}) = StringExceedsLength<T>;
 
+  const factory ValueFailure.integerOutOfBounds({@required int failedValue}) = IntegerOutOfBounds<T>;
+
   const factory ValueFailure.stringWithInvalidCharacters({@required String failedValue}) = StringWithInvalidCharacters<T>;
 }

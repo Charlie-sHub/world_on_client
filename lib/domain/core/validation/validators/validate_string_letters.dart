@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 
+// Is this really necessary? it was meant for checking that the names of the Users are real names, but why bother?
 Either<ValueFailure<String>, String> validateStringLetters(String input) {
   // TODO: Add support for non latin alphabets
   const regex = r'^[a-zA-Z]+$';

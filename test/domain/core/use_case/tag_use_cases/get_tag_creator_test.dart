@@ -26,7 +26,7 @@ void main() {
     password: "1234",
     email: "test@test.test",
     birthday: DateTime.now(),
-    biography: "I test",
+    description: "I test",
     imageName: "test.png",
     level: 1,
     experiencePoints: 0,
