@@ -1,24 +1,34 @@
 import 'package:dartz/dartz.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failures.dart';
-import 'package:worldon/domain/authentication/repository/authentication_repository.dart';
+import 'package:worldon/domain/authentication/repository/authentication_repository_interface.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/password.dart';
 
 /// [UseCase] for direct World On Login
 class LogIn implements AsyncUseCase<User, Params> {
-  final AuthenticationRepository _repository;
+  final AuthenticationRepositoryInterface _repository;
 
   const LogIn(this._repository);
 
   @override
   Future<Either<Failure, User>> call(Params params) async {
-    return _repository.logIn(params.user);
+    final user = User(
+      username: params.username,
+      password: params.password,
+    );
+    return _repository.logIn(user);
   }
 }
 
 class Params {
-  final User user;
+  final Name username;
+  final Password password;
 
-  Params({@required this.user});
+  Params({
+    @required this.username,
+    @required this.password,
+  });
 }

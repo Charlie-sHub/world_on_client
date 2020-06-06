@@ -5,15 +5,16 @@ import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/search/entity/search_results.dart';
-import 'package:worldon/domain/search/repository/search_repository.dart';
+import 'package:worldon/domain/search/repository/search_repository_interface.dart';
 
 @Deprecated("In favour of distinct use cases for each search that the BLoC will manage")
 class SearchByName implements AsyncUseCase<SearchResults, Params> {
-  final SearchRepository _repository;
-  
+  final SearchRepositoryInterface _repository;
+
   const SearchByName(this._repository);
-  
+
   @override
   Future<Either<Failure, SearchResults>> call(Params params) async {
     // This whole thing is way too messy
@@ -67,7 +68,7 @@ class SearchByName implements AsyncUseCase<SearchResults, Params> {
 }
 
 class Params {
-  final String name;
+  final Name name;
 
   Params({this.name});
 }

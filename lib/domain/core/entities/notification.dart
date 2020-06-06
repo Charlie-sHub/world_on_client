@@ -1,6 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/domain/core/entities/user.dart';
+import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/past_date.dart';
 
 /// [Notification] entity class.
 ///
@@ -9,9 +11,9 @@ class Notification extends Equatable {
   final int id;
   final User sender; // Maybe change the Users to only the ids
   final User receiver;
-  final String content;
+  final EntityDescription description;
   final bool seen;
-  final DateTime creationDate;
+  final PastDate creationDate;
 
   // An enumerator classifying the type of notification also would be useful: FOLLOW, UNFOLLOW, BLOCKED... for example
 
@@ -19,7 +21,7 @@ class Notification extends Equatable {
     @required this.id,
     @required this.sender,
     @required this.receiver,
-    @required this.content,
+    @required this.description,
     @required this.seen,
     @required this.creationDate,
   });
@@ -29,7 +31,7 @@ class Notification extends Equatable {
         id,
         sender,
         receiver,
-        content,
+        description,
         seen,
         creationDate,
       ];

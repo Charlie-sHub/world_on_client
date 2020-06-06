@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/search/use_case/search_experiences_by_name.dart';
 
 import '../../../constants.dart';
@@ -17,11 +18,11 @@ void main() {
       useCase = SearchExperiencesByName(mockSearchRepository);
     },
   );
-  const name = "test";
+  final name = Name("test");
   final experiencesFound = {
-    Experience(name: "test1"),
-    Experience(name: "test2"),
-    Experience(name: "test3"),
+    Experience(name: Name("Test1")),
+    Experience(name: Name("Test2")),
+    Experience(name: Name("Test3")),
   };
   test(
     "Should return a Set of Experiences",

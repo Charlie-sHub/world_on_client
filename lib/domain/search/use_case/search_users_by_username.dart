@@ -3,10 +3,11 @@ import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
-import 'package:worldon/domain/search/repository/search_repository.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/search/repository/search_repository_interface.dart';
 
 class SearchUsersByUsername implements AsyncUseCase<Set<User>, Params> {
-  final SearchRepository _repository;
+  final SearchRepositoryInterface _repository;
 
   const SearchUsersByUsername(this._repository);
 
@@ -17,7 +18,7 @@ class SearchUsersByUsername implements AsyncUseCase<Set<User>, Params> {
 }
 
 class Params {
-  final String username;
+  final Name username;
 
   Params({@required this.username});
 }

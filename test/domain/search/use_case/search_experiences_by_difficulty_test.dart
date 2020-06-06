@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
+import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/search/use_case/search_experiences_by_difficulty.dart';
 
 import '../../../constants.dart';
@@ -17,8 +18,8 @@ void main() {
       useCase = SearchExperiencesByDifficulty(mockSearchRepository);
     },
   );
-  const difficulty = 1;
-  final experiencesFound = {Experience(difficulty: 1), Experience(difficulty: 1), Experience(difficulty: 1)};
+  final difficulty = Difficulty(1);
+  final experiencesFound = {Experience(difficulty: Difficulty(1)), Experience(difficulty: Difficulty(1)), Experience(difficulty: Difficulty(1))};
   test(
     "Should return a Set of Experiences",
     () async {

@@ -5,10 +5,10 @@ import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
-import 'package:worldon/domain/experience_management/repository/experience_management_repository.dart';
+import 'package:worldon/domain/experience_management/repository/experience_management_repository_interface.dart';
 
 class EditExperience implements AsyncUseCase<Unit, Params> {
-  final ExperienceManagementRepository _repository;
+  final ExperienceManagementRepositoryInterface _repository;
 
   const EditExperience(this._repository);
 

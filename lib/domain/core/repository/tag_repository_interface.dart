@@ -4,7 +4,7 @@ import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 
 /// Abstract class of the [Tag] repository
-abstract class TagCoreRepository {
+abstract class TagCoreRepositoryInterface {
   /// Returns all [Tag]s
   // TODO: Change it for getting a set amount of tags
   Future<Either<Failure, List<Tag>>> getAllTags();

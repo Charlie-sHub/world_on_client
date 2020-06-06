@@ -3,10 +3,10 @@ import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
-import 'package:worldon/domain/main_feed/repository/main_feed_repository.dart';
+import 'package:worldon/domain/main_feed/repository/main_feed_repository_interface.dart';
 
 class FillFeed implements AsyncUseCase<List<Experience>, Params> {
-  final MainFeedRepository _repository;
+  final MainFeedRepositoryInterface _repository;
 
   const FillFeed(this._repository);
 

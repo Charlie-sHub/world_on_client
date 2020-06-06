@@ -5,6 +5,13 @@ import 'package:worldon/domain/core/entities/options.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/use_case/tag_use_cases/get_tag_creator.dart';
+import 'package:worldon/domain/core/validation/objects/email_address.dart';
+import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/experience_points.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/password.dart';
+import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/user_level.dart';
 
 import '../../../../constants.dart';
 import '../../repository/mock_tag_repository.dart';
@@ -20,22 +27,22 @@ void main() {
   );
   const id = 1;
   final user = User(
-    id: 1,
-    name: "Test User",
-    username: "testuser",
-    password: "1234",
-    email: "test@test.test",
-    birthday: DateTime.now(),
-    description: "I test",
+    id: 2,
+    name: Name("Test User"),
+    username: Name("TestUser"),
+    password: Password("abcd*1234"),
+    email: EmailAddress("test@test.test"),
+    birthday: PastDate(DateTime.now()),
+    description: EntityDescription("For testing"),
     imageName: "test.png",
-    level: 1,
-    experiencePoints: 0,
+    level: UserLevel(1),
+    experiencePoints: ExperiencePoints(1),
     privacy: false,
     adminPowers: false,
     enabled: true,
-    lastLogin: DateTime.now(),
-    creationDate: DateTime.now(),
-    modificationDate: DateTime.now(),
+    lastLogin: PastDate(DateTime.now()),
+    creationDate: PastDate(DateTime.now()),
+    modificationDate: PastDate(DateTime.now()),
     options: Options(),
   );
   test(

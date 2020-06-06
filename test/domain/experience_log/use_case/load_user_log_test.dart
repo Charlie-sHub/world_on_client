@@ -5,6 +5,10 @@ import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/core/entities/location.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
+import 'package:worldon/domain/core/validation/objects/difficulty.dart';
+import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/experience_log/use_case/load_user_log.dart';
 
 import '../../../constants.dart';
@@ -22,16 +26,16 @@ void main() {
   const userId = 1;
   final experience = Experience(
     id: 1,
-    name: "test",
-    description: "It's a test",
+    name: Name("test"),
+    description: EntityDescription("It's a test"),
     imageNames: const {"test.jpg"},
     latitude: 1.1,
     longitude: 1.1,
     location: Location(),
     creator: User(),
-    difficulty: 1,
-    creationDate: DateTime.now(),
-    modificationDate: DateTime.now(),
+    difficulty: Difficulty(1),
+    creationDate: PastDate(DateTime.now()),
+    modificationDate: PastDate(DateTime.now()),
   );
   final Set<Experience> experienceSet = {experience};
   test(

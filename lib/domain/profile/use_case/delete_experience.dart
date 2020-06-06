@@ -5,10 +5,10 @@ import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
-import 'package:worldon/domain/profile/repository/profile_repository.dart';
+import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 
 class DeleteExperience implements AsyncUseCase<Unit, Params> {
-  final ProfileRepository _repository;
+  final ProfileRepositoryInterface _repository;
 
   const DeleteExperience(this._repository);
 

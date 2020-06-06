@@ -3,10 +3,10 @@ import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
-import 'package:worldon/domain/profile/repository/profile_repository.dart';
+import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 
 class LoadFollowingUsers implements AsyncUseCase<Set<User>, Params> {
-  final ProfileRepository repository;
+  final ProfileRepositoryInterface repository;
 
   const LoadFollowingUsers(this.repository);
 

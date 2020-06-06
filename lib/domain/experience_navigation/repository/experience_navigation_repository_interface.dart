@@ -7,7 +7,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 /// Repository for the  experience navigation feature
 ///
 /// It has the methods that correspond to the [AsyncUseCase] that require server connection
-abstract class ExperienceNavigationRepository {
+abstract class ExperienceNavigationRepositoryInterface {
   /// Sends the difficulty as rated by an [User] to the server to it updates the [Experience]'s difficulty value
   Future<Either<Failure, Unit>> rateDifficulty({int difficulty, int experienceId});
 

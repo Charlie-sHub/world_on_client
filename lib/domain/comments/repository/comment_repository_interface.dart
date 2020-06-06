@@ -3,7 +3,7 @@ import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/comment.dart';
 
 /// Repository for the management of [Comment]s
-abstract class CommentRepository {
+abstract class CommentRepositoryInterface {
   /// Sends a [Comment] to the server to the associated to the [Experience] with the given id
   Future<Either<Failure, Unit>> postComment({Comment comment, int experienceId});
 

@@ -21,7 +21,7 @@ void main() {
   final randomUser = User(id: 1, adminPowers: false);
   final creatorUser = User(id: 2, adminPowers: false);
   final admin = User(id: 3, adminPowers: true);
-  final comment = Comment(id: 1, user: creatorUser);
+  final comment = Comment(id: 1, poster: creatorUser);
   group(
     descriptionAuthorization,
     () {

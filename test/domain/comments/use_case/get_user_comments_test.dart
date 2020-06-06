@@ -5,6 +5,8 @@ import 'package:worldon/domain/comments/use_case/get_user_comments.dart';
 import 'package:worldon/domain/core/entities/comment.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
+import 'package:worldon/domain/core/validation/objects/comment_content.dart';
+import 'package:worldon/domain/core/validation/objects/past_date.dart';
 
 import '../../../constants.dart';
 import '../repository/mock_comment_repository.dart';
@@ -21,10 +23,10 @@ void main() {
   const userId = 1;
   final comment = Comment(
     id: 1,
-    user: User(),
-    content: "This is a test",
-    creationDate: DateTime.now(),
-    modificationDate: DateTime.now(),
+    poster: User(),
+    content: CommentContent("This is a test"),
+    creationDate: PastDate(DateTime.now()),
+    modificationDate: PastDate(DateTime.now()),
   );
   final Set<Comment> commentSet = {comment};
   test(

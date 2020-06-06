@@ -4,6 +4,8 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/tag_management/use_case/create_tag.dart';
 
 import '../../../constants.dart';
@@ -18,7 +20,13 @@ void main() {
       useCase = CreateTag(mockTagManagementRepository);
     },
   );
-  final tag = Tag(creationDate: DateTime.now(), creator: User(), id: 1, modificationDate: DateTime.now(), name: "Sports");
+  final tag = Tag(
+    id: 1,
+    creationDate: PastDate(DateTime.now()),
+    creator: User(),
+    modificationDate: PastDate(DateTime.now()),
+    name: Name("Sports"),
+  );
   test(
     descriptionReturnNothing,
     () async {

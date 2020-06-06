@@ -9,7 +9,7 @@ import 'experience.dart';
 class Location extends Equatable {
   final int id;
   final String city;
-  final String country;
+  final String country; // TODO: Maybe make a value object and validator for countries
   final String postalCode;
   final Set<Experience> experiences;
 

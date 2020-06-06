@@ -3,7 +3,7 @@ import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 
 /// Repository for the cached [User] credentials.
-abstract class CachedUserRepository {
+abstract class CachedCredentialsRepositoryInterface {
   /// Gets the cached [User] from the local cache source if there's one.
   Future<Either<Failure, User>> getCachedUser();
 }

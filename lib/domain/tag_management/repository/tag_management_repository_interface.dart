@@ -3,7 +3,7 @@ import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
 
 /// Abstract class of the [Tag] repository
-abstract class TagManagementRepository {
+abstract class TagManagementRepositoryInterface {
   /// Gets a [Tag] by a given id
   ///
   /// Probably useless

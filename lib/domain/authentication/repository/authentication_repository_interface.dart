@@ -3,7 +3,7 @@ import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 
 /// Repository for authentication and registration of new [User]s.
-abstract class AuthenticationRepository {
+abstract class AuthenticationRepositoryInterface {
   /// Sends a new [User] to be registered in the database.
   Future<Either<Failure, User>> register(User user);
 

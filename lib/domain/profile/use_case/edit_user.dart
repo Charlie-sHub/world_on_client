@@ -4,10 +4,10 @@ import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
-import 'package:worldon/domain/profile/repository/profile_repository.dart';
+import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 
 class EditUser implements AsyncUseCase<Unit, Params> {
-  final ProfileRepository repository;
+  final ProfileRepositoryInterface repository;
 
   const EditUser(this.repository);
 
@@ -24,7 +24,6 @@ class EditUser implements AsyncUseCase<Unit, Params> {
 
 class Params {
   final User userRequesting;
-
   final User userToEdit;
 
   Params({@required this.userRequesting, @required this.userToEdit});

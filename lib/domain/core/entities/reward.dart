@@ -1,13 +1,15 @@
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
+import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
 
 /// [Reward] entity class.
 ///
 /// Rewards are given to Users for doing Experiences, rewards will be set by the Users creating the Experience.
 class Reward extends Equatable {
   final int id;
-  final String name;
-  final String description;
+  final Name name;
+  final EntityDescription description;
   final String imageName;
 
   const Reward({

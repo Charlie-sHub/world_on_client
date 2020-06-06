@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/search/use_case/search_tags_by_name.dart';
 
 import '../../../constants.dart';
@@ -17,11 +18,11 @@ void main() {
       useCase = SearchTagsByName(mockSearchRepository);
     },
   );
-  const name = "test";
+  final name = Name("test");
   final tagsFound = {
-    Tag(name: "test1"),
-    Tag(name: "test2"),
-    Tag(name: "test3"),
+    Tag(name: Name("test1")),
+    Tag(name: Name("test2")),
+    Tag(name: Name("test3")),
   };
   test(
     "Should return a Set of Tags",

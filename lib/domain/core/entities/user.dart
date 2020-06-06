@@ -6,27 +6,34 @@ import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/core/entities/options.dart';
 import 'package:worldon/domain/core/entities/system.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
+import 'package:worldon/domain/core/validation/objects/email_address.dart';
+import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/experience_points.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/password.dart';
+import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/user_level.dart';
 
 /// [User] entity class
 ///
 /// Users are of course the cornerstone of the application
 class User extends Equatable {
   final int id;
-  final String name;
-  final String username;
-  final String password;
-  final String email;
-  final DateTime birthday;
-  final String description;
+  final Name name;
+  final Name username;
+  final Password password;
+  final EmailAddress email;
+  final PastDate birthday;
+  final EntityDescription description;
   final String imageName;
-  final int level;
-  final int experiencePoints;
+  final UserLevel level;
+  final ExperiencePoints experiencePoints;
   final bool privacy;
   final bool adminPowers;
   final bool enabled;
-  final DateTime lastLogin;
-  final DateTime creationDate;
-  final DateTime modificationDate;
+  final PastDate lastLogin;
+  final PastDate creationDate;
+  final PastDate modificationDate;
   final Options options;
   final Set<User> blockedUsers;
   final Set<User> followedUsers;

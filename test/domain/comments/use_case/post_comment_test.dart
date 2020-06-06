@@ -2,9 +2,9 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/comments/use_case/post_comment.dart';
-import 'package:worldon/domain/core/entities/comment.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
+import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 
 import '../../../constants.dart';
 import '../repository/mock_comment_repository.dart';
@@ -18,13 +18,10 @@ void main() {
       useCase = PostComment(mockCommentRepository);
     },
   );
-  const experienceId = 1;
-  final comment = Comment(
-    id: 1,
+  final params = Params(
+    experienceId: 1,
     user: User(),
-    content: "This is a test",
-    creationDate: DateTime.now(),
-    modificationDate: DateTime.now(),
+    content: CommentContent("This is a test"),
   );
   test(
     descriptionReturnNothing,
@@ -35,10 +32,7 @@ void main() {
         experienceId: anyNamed("experienceId"),
       )).thenAnswer((_) async => right(null));
       // Act
-      final result = await useCase(Params(
-        comment: comment,
-        experienceId: experienceId,
-      ));
+      final result = await useCase(params);
       // Assert
       expect(result, right(null));
       verify(mockCommentRepository.postComment(
@@ -60,10 +54,7 @@ void main() {
             experienceId: anyNamed("experienceId"),
           )).thenAnswer((_) async => left(const CoreFailure.serverError()));
           // Act
-          final result = await useCase(Params(
-            comment: comment,
-            experienceId: experienceId,
-          ));
+          final result = await useCase(params);
           // Assert
           expect(result, left(const CoreFailure.serverError()));
           verify(mockCommentRepository.postComment(

@@ -6,7 +6,7 @@ import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 
 /// Repository for the [User]'s profile feature.
-abstract class ProfileRepository {
+abstract class ProfileRepositoryInterface {
   /// Gets the [User] associated with the given id
   Future<Either<Failure, User>> loadUser(int id);
 

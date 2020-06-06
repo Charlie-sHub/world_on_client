@@ -3,10 +3,10 @@ import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
-import 'package:worldon/domain/experience_log/repository/experience_log_repository.dart';
+import 'package:worldon/domain/experience_log/repository/experience_log_repository_interface.dart';
 
 class LoadUserLog implements AsyncUseCase<Set<Experience>, Params> {
-  final ExperienceLogRepository _repository;
+  final ExperienceLogRepositoryInterface _repository;
 
   const LoadUserLog(this._repository);
 

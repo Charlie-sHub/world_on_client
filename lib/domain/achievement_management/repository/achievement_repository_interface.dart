@@ -3,7 +3,7 @@ import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/achievement.dart';
 
 /// Repository for the management of [Achievement]s.
-abstract class AchievementRepository {
+abstract class AchievementRepositoryInterface {
   /// Sends the given [Achievement] To the server to be saved.
   Future<Either<Failure, Unit>> createAchievement(Achievement achievement);
 

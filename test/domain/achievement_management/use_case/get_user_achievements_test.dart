@@ -6,6 +6,10 @@ import 'package:worldon/domain/core/entities/achievement.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
+import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/experience_points.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/past_date.dart';
 
 import '../../../constants.dart';
 import '../repository/mock_achievement_repository.dart';
@@ -22,15 +26,15 @@ void main() {
   const userId = 1;
   final achievement = Achievement(
     id: 1,
-    name: "Test Achievement",
-    description: "This is just a test",
+    name: Name("Test Achievement"),
+    description: EntityDescription("This is just a test"),
     imageName: "test.jpg",
     type: "test",
     requisite: 1,
-    experiencePoints: 1,
+    experiencePoints: ExperiencePoints(1),
     creator: User(),
-    creationDate: DateTime.now(),
-    modificationDate: DateTime.now(),
+    creationDate: PastDate(DateTime.now()),
+    modificationDate: PastDate(DateTime.now()),
     tags: const <Tag>{},
   );
   final Set<Achievement> achievementSet = {achievement};

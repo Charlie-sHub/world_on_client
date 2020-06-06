@@ -4,6 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/search/use_case/search_experiences_by_tags.dart';
 
 import '../../../constants.dart';
@@ -18,8 +19,12 @@ void main() {
       useCase = SearchExperiencesByTags(mockSearchRepository);
     },
   );
-  final tags = {Tag(id: 1, name: "test")};
-  final experiencesFound = {Experience(name: "test"), Experience(name: "testable"), Experience(name: "testing")};
+  final tags = {Tag(id: 1, name: Name("test"))};
+  final experiencesFound = {
+    Experience(name: Name("test")),
+    Experience(name: Name("testable")),
+    Experience(name: Name("testing")),
+  };
   test(
     "Should return a Set of Experiences",
     () async {

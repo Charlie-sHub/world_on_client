@@ -2,10 +2,13 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/achievement_management/use_case/edit_achievement.dart';
-import 'package:worldon/domain/core/entities/achievement.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
+import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/experience_points.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/past_date.dart';
 
 import '../../../constants.dart';
 import '../repository/mock_achievement_repository.dart';
@@ -22,19 +25,22 @@ void main() {
   final randomUser = User(id: 1, adminPowers: false);
   final creatorUser = User(id: 2, adminPowers: false);
   final admin = User(id: 3, adminPowers: true);
-  final achievementToEdit = Achievement(
-    id: 1,
-    name: "Test Achievement",
-    description: "This is just a test",
-    imageName: "test.jpg",
-    type: "test",
-    requisite: 1,
-    experiencePoints: 1,
-    creator: creatorUser,
-    creationDate: DateTime.now(),
-    modificationDate: DateTime.now(),
-    tags: const <Tag>{},
-  );
+  Params setUpParams(User userRequesting) {
+    return Params(
+      userRequesting: userRequesting,
+      id: 1,
+      name: Name("Test Achievement"),
+      description: EntityDescription("This is just a test"),
+      imageName: "test.jpg",
+      type: "test",
+      requisite: 1,
+      experiencePoints: ExperiencePoints(1),
+      creator: creatorUser,
+      creationDate: PastDate(DateTime.now()),
+      tags: const <Tag>{},
+    );
+  }
+
   group(
     descriptionAuthorization,
     () {
@@ -44,10 +50,7 @@ void main() {
           // Arrange
           when(mockAchievementRepository.editAchievement(any)).thenAnswer((_) async => right(null));
           // Act
-          final result = await useCase(Params(
-            achievement: achievementToEdit,
-            user: creatorUser,
-          ));
+          final result = await useCase(setUpParams(creatorUser));
           // Assert
           expect(result, right(null));
           verify(mockAchievementRepository.editAchievement(any));
@@ -60,10 +63,7 @@ void main() {
           // Arrange
           when(mockAchievementRepository.editAchievement(any)).thenAnswer((_) async => right(null));
           // Act
-          final result = await useCase(Params(
-            achievement: achievementToEdit,
-            user: admin,
-          ));
+          final result = await useCase(setUpParams(admin));
           // Assert
           expect(result, right(null));
           verify(mockAchievementRepository.editAchievement(any));
@@ -81,10 +81,7 @@ void main() {
           // Arrange
           when(mockAchievementRepository.editAchievement(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
           // Act
-          final result = await useCase(Params(
-            achievement: achievementToEdit,
-            user: admin,
-          ));
+          final result = await useCase(setUpParams(admin));
           // Assert
           expect(result, left(const CoreFailure.serverError()));
           verify(mockAchievementRepository.editAchievement(any));
@@ -97,10 +94,7 @@ void main() {
           // Arrange
           when(mockAchievementRepository.editAchievement(any)).thenAnswer((_) async => left(const CoreFailure.nameAlreadyInUse()));
           // Act
-          final result = await useCase(Params(
-            achievement: achievementToEdit,
-            user: admin,
-          ));
+          final result = await useCase(setUpParams(admin));
           // Assert
           expect(result, left(const CoreFailure.nameAlreadyInUse()));
           verify(mockAchievementRepository.editAchievement(any));
@@ -109,11 +103,8 @@ void main() {
       );
       test(
         descriptionUnAuthorized,
-          () async {
-          final result = await useCase(Params(
-            achievement: achievementToEdit,
-            user: randomUser,
-          ));
+        () async {
+          final result = await useCase(setUpParams(randomUser));
           // Assert
           expect(result, left(const CoreFailure.unAuthorizedError()));
           verifyZeroInteractions(mockAchievementRepository);

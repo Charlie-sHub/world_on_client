@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:worldon/core/error/failures.dart';
-import 'package:worldon/domain/authentication/repository/authentication_repository.dart';
+import 'package:worldon/domain/authentication/repository/authentication_repository_interface.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
 class LogInGoogle implements AsyncUseCase<Unit, NoParams> {
-  final AuthenticationRepository _repository;
+  final AuthenticationRepositoryInterface _repository;
 
   const LogInGoogle(this._repository);
 

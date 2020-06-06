@@ -2,10 +2,10 @@ import 'package:dartz/dartz.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
-import 'package:worldon/domain/profile/repository/profile_repository.dart';
+import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 
 class BlockUser implements AsyncUseCase<Unit, Params> {
-  final ProfileRepository _repository;
+  final ProfileRepositoryInterface _repository;
 
   const BlockUser(this._repository);
 

@@ -2,10 +2,12 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/achievement_management/use_case/create_achievement.dart';
-import 'package:worldon/domain/core/entities/achievement.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
+import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/experience_points.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
 
 import '../../../constants.dart';
 import '../repository/mock_achievement_repository.dart';
@@ -19,30 +21,14 @@ void main() {
       useCase = CreateAchievement(mockAchievementRepository);
     },
   );
-  /*
-  For use after the value objects are done
-  final name= "Test Achievement";
-  final description="This is just a test";
-  final imageName= "test.jpg";
-  final type= "test";
-  final requisite= 1;
-  final experiencePoints= 1;
-  final creator= User();
-  final creationDate= DateTime.now();
-  final modificationDate= DateTime.now();
-  final tags = const <Tag>{};
-  */
-  final achievementToCreate = Achievement(
-    id: 1,
-    name: "Test Achievement",
-    description: "This is just a test",
+  final params = Params(
+    name: Name("Test Achievement"),
+    description: EntityDescription("This is just a test"),
     imageName: "test.jpg",
     type: "test",
     requisite: 1,
-    experiencePoints: 1,
+    experiencePoints: ExperiencePoints(1),
     creator: User(),
-    creationDate: DateTime.now(),
-    modificationDate: DateTime.now(),
     tags: const <Tag>{},
   );
   test(
@@ -51,7 +37,7 @@ void main() {
       // Arrange
       when(mockAchievementRepository.createAchievement(any)).thenAnswer((_) async => right(null));
       // Act
-      final result = await useCase(Params(achievement: achievementToCreate));
+      final result = await useCase(params);
       // Assert
       expect(result, right(null));
       verify(mockAchievementRepository.createAchievement(any));
@@ -67,7 +53,7 @@ void main() {
           // Arrange
           when(mockAchievementRepository.createAchievement(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
           // Act
-          final result = await useCase(Params(achievement: achievementToCreate));
+          final result = await useCase(params);
           // Assert
           expect(result, left(const CoreFailure.serverError()));
           verify(mockAchievementRepository.createAchievement(any));
@@ -80,7 +66,7 @@ void main() {
           // Arrange
           when(mockAchievementRepository.createAchievement(any)).thenAnswer((_) async => left(const CoreFailure.nameAlreadyInUse()));
           // Act
-          final result = await useCase(Params(achievement: achievementToCreate));
+          final result = await useCase(params);
           // Assert
           expect(result, left(const CoreFailure.nameAlreadyInUse()));
           verify(mockAchievementRepository.createAchievement(any));

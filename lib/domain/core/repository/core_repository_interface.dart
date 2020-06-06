@@ -4,7 +4,7 @@ import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 
 /// Miscellaneous repository
-abstract class CoreRepository {
+abstract class CoreRepositoryInterface {
   /// Sends an [User] and [Experience] id to the server so it adds the [Experience] to the [User]'s list of [Experience]s to do
   Future<Either<Failure, Unit>> addExperienceToLog({
     int userId,

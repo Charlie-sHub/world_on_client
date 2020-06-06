@@ -2,12 +2,12 @@ import 'package:dartz/dartz.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
-import 'package:worldon/domain/core/repository/tag_repository.dart';
+import 'package:worldon/domain/core/repository/tag_repository_interface.dart';
 
 import '../use_case.dart';
 
 class GetTagsByCreator implements AsyncUseCase<List<Tag>, Params> {
-  final TagCoreRepository _repository;
+  final TagCoreRepositoryInterface _repository;
 
   const GetTagsByCreator(this._repository);
 

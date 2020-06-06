@@ -2,6 +2,10 @@ import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/entities/user.dart';
+import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/experience_points.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/past_date.dart';
 
 /// [Achievement] entity class.
 ///
@@ -9,15 +13,15 @@ import 'package:worldon/domain/core/entities/user.dart';
 class Achievement extends Equatable {
   // TODO: Check if it's better for entities to be mutable
   final int id;
-  final String name;
-  final String description;
-  final String imageName;
+  final Name name;
+  final EntityDescription description;
+  final String imageName; // TODO: Maybe make a value object and validator for image URLs
   final String type;
   final int requisite; // This will probably be reworked in the future to accommodate different kinds of achievements
-  final int experiencePoints;
+  final ExperiencePoints experiencePoints;
   final User creator;
-  final DateTime creationDate;
-  final DateTime modificationDate;
+  final PastDate creationDate;
+  final PastDate modificationDate;
   final Set<Tag> tags;
 
   const Achievement({

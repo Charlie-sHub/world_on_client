@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/search/use_case/search_users_by_name.dart';
 
 import '../../../constants.dart';
@@ -17,11 +18,11 @@ void main() {
       useCase = SearchUsersByName(mockSearchRepository);
     },
   );
-  const name = "test";
+  final name = Name("test");
   final usersFoundByName = {
-    User(name: "test1"),
-    User(name: "test2"),
-    User(name: "test3"),
+    User(name: Name("test1")),
+    User(name: Name("test2")),
+    User(name: Name("test3")),
   };
   test(
     "Should return a Set of Users",

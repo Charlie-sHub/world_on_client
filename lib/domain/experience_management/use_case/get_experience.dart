@@ -3,10 +3,10 @@ import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
-import 'package:worldon/domain/experience_management/repository/experience_management_repository.dart';
+import 'package:worldon/domain/experience_management/repository/experience_management_repository_interface.dart';
 
 class GetExperience implements AsyncUseCase<Experience, Params> {
-  final ExperienceManagementRepository _repository;
+  final ExperienceManagementRepositoryInterface _repository;
 
   const GetExperience(this._repository);
 

@@ -3,7 +3,7 @@ import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/experience.dart';
 
 /// Repository for the management of [Experience]s.
-abstract class ExperienceManagementRepository {
+abstract class ExperienceManagementRepositoryInterface {
   /// Sends an [Experience] to be saved on the server.
   Future<Either<Failure, Unit>> createExperience(Experience experience);
 

@@ -1,8 +1,16 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/domain/core/entities/options.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
+import 'package:worldon/domain/core/validation/objects/email_address.dart';
+import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/experience_points.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/password.dart';
+import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/user_level.dart';
 import 'package:worldon/domain/profile/use_case/edit_user.dart';
 
 import '../../../constants.dart';
@@ -21,21 +29,22 @@ void main() {
   final admin = User(id: 3, adminPowers: true);
   final user = User(
     id: 2,
-    name: "test",
-    username: "test",
-    password: "test",
-    email: "tes@test.test",
-    birthday: DateTime.now(),
-    description: "For testing",
-    imageName: "test.jpg",
-    level: 1,
-    experiencePoints: 0,
+    name: Name("Test User"),
+    username: Name("TestUser"),
+    password: Password("abcd*1234"),
+    email: EmailAddress("test@test.test"),
+    birthday: PastDate(DateTime.now()),
+    description: EntityDescription("For testing"),
+    imageName: "test.png",
+    level: UserLevel(1),
+    experiencePoints: ExperiencePoints(1),
     privacy: false,
     adminPowers: false,
     enabled: true,
-    lastLogin: DateTime.now(),
-    creationDate: DateTime.now(),
-    modificationDate: DateTime.now(),
+    lastLogin: PastDate(DateTime.now()),
+    creationDate: PastDate(DateTime.now()),
+    modificationDate: PastDate(DateTime.now()),
+    options: Options(),
   );
   group(
     descriptionAuthorization,
@@ -111,7 +120,7 @@ void main() {
       );
       test(
         descriptionEmailAlreadyInUse,
-          () async {
+        () async {
           // Arrange
           when(mockProfileRepository.editUser(any)).thenAnswer((_) async => left(const CoreFailure.emailAlreadyInUse()));
           // Act

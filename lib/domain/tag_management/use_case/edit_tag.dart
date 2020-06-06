@@ -5,10 +5,10 @@ import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
-import 'package:worldon/domain/tag_management/repository/tag_management_repository.dart';
+import 'package:worldon/domain/tag_management/repository/tag_management_repository_interface.dart';
 
 class EditTag implements AsyncUseCase<Unit, Params> {
-  final TagManagementRepository _repository;
+  final TagManagementRepositoryInterface _repository;
 
   const EditTag(this._repository);
 

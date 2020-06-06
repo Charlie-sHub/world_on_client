@@ -4,7 +4,7 @@ import 'package:worldon/domain/core/entities/notification.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 
 /// Repository for the [Notification]'s feature
-abstract class NotificationRepository {
+abstract class NotificationRepositoryInterface {
   /// Sends a [Notification] to the server to be saved and related to the corresponding [User]s
   Future<Either<Failure, Unit>> sendNotification(Notification notification);
 
