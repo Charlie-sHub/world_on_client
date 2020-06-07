@@ -12,12 +12,16 @@ class SaveGlobalOptions implements AsyncUseCase<Unit, Params> {
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.saveGlobalOptions(params.options);
+    final options = Options(
+      id: null,
+      languageCode: params.languageCode,
+    );
+    return _repository.saveGlobalOptions(options);
   }
 }
 
 class Params {
-  final Options options;
+  final String languageCode;
 
-  Params({@required this.options});
+  Params({@required this.languageCode});
 }

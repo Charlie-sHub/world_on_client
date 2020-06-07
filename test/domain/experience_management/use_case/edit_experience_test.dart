@@ -1,8 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:worldon/domain/core/entities/experience.dart';
+import 'package:worldon/domain/core/entities/comment.dart';
 import 'package:worldon/domain/core/entities/location.dart';
+import 'package:worldon/domain/core/entities/objective.dart';
+import 'package:worldon/domain/core/entities/reward.dart';
+import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
@@ -26,19 +29,28 @@ void main() {
   final randomUser = User(id: 1, adminPowers: false);
   final creatorUser = User(id: 2, adminPowers: false);
   final admin = User(id: 3, adminPowers: true);
-  final experience = Experience(
-    id: 1,
-    name: Name("test"),
-    description: EntityDescription("It's a test"),
-    imageNames: const {"test.jpg"},
-    latitude: 1.1,
-    longitude: 1.1,
-    location: Location(),
-    creator: creatorUser,
-    difficulty: Difficulty(1),
-    creationDate: PastDate(DateTime.now()),
-    modificationDate: PastDate(DateTime.now()),
-  );
+  Params setUpParams(User userRequesting) {
+    return Params(
+      userRequesting: userRequesting,
+      id: 1,
+      name: Name("test"),
+      description: EntityDescription("It's a test"),
+      imageNames: const {"test.jpg"},
+      latitude: 1.1,
+      longitude: 1.1,
+      location: Location(),
+      creator: creatorUser,
+      difficulty: Difficulty(1),
+      creationDate: PastDate(DateTime.now()),
+      objectives: {Objective()},
+      rewards: {Reward()},
+      tags: {Tag()},
+      comments: {Comment()},
+      doneBy: {User()},
+      likedBy: {User()},
+    );
+  }
+
   group(
     descriptionAuthorization,
     () {
@@ -48,10 +60,7 @@ void main() {
           // Arrange
           when(mockExperienceManagementRepository.editExperience(any)).thenAnswer((_) async => right(null));
           // Act
-          final result = await useCase(Params(
-            experience: experience,
-            user: creatorUser,
-          ));
+          final result = await useCase(setUpParams(creatorUser));
           // Assert
           expect(result, right(null));
           verify(mockExperienceManagementRepository.editExperience(any));
@@ -64,10 +73,7 @@ void main() {
           // Arrange
           when(mockExperienceManagementRepository.editExperience(any)).thenAnswer((_) async => right(null));
           // Act
-          final result = await useCase(Params(
-            experience: experience,
-            user: admin,
-          ));
+          final result = await useCase(setUpParams(admin));
           // Assert
           expect(result, right(null));
           verify(mockExperienceManagementRepository.editExperience(any));
@@ -85,10 +91,7 @@ void main() {
           // Arrange
           when(mockExperienceManagementRepository.editExperience(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
           // Act
-          final result = await useCase(Params(
-            experience: experience,
-            user: creatorUser,
-          ));
+          final result = await useCase(setUpParams(creatorUser));
           // Assert
           expect(result, left(const CoreFailure.serverError()));
           verify(mockExperienceManagementRepository.editExperience(any));
@@ -99,10 +102,7 @@ void main() {
         descriptionUnAuthorized,
         () async {
           // Act
-          final result = await useCase(Params(
-            experience: experience,
-            user: randomUser,
-          ));
+          final result = await useCase(setUpParams(randomUser));
           // Assert
           expect(result, left(const CoreFailure.unAuthorizedError()));
           verifyZeroInteractions(mockExperienceManagementRepository);

@@ -15,7 +15,7 @@ class Notification extends Equatable {
   final bool seen;
   final PastDate creationDate;
 
-  // An enumerator classifying the type of notification also would be useful: FOLLOW, UNFOLLOW, BLOCKED... for example
+  // TODO: An enumerator classifying the type of notification also would be useful: FOLLOW, UNFOLLOW, BLOCKED... for example
 
   const Notification({
     @required this.id,

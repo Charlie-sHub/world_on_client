@@ -1,14 +1,15 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/core/entities/location.dart';
+import 'package:worldon/domain/core/entities/objective.dart';
+import 'package:worldon/domain/core/entities/reward.dart';
+import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
-import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/experience_management/use_case/create_experience.dart';
 
 import '../../../constants.dart';
@@ -23,8 +24,7 @@ void main() {
       useCase = CreateExperience(mockExperienceManagementRepository);
     },
   );
-  final experience = Experience(
-    id: 1,
+  final params = Params(
     name: Name("test"),
     description: EntityDescription("It's a test"),
     imageNames: const {"test.jpg"},
@@ -33,8 +33,9 @@ void main() {
     location: Location(),
     creator: User(),
     difficulty: Difficulty(1),
-    creationDate: PastDate(DateTime.now()),
-    modificationDate: PastDate(DateTime.now()),
+    objectives: {Objective()},
+    rewards: {Reward()},
+    tags: {Tag()},
   );
   test(
     descriptionReturnNothing,
@@ -42,7 +43,7 @@ void main() {
       // Arrange
       when(mockExperienceManagementRepository.createExperience(any)).thenAnswer((_) async => right(null));
       // Act
-      final result = await useCase(Params(experience: experience));
+      final result = await useCase(params);
       // Assert
       expect(result, right(null));
       verify(mockExperienceManagementRepository.createExperience(any));
@@ -58,7 +59,7 @@ void main() {
           // Arrange
           when(mockExperienceManagementRepository.createExperience(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
           // Act
-          final result = await useCase(Params(experience: experience));
+          final result = await useCase(params);
           // Assert
           expect(result, left(const CoreFailure.serverError()));
           verify(mockExperienceManagementRepository.createExperience(any));

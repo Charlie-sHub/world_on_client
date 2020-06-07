@@ -1,11 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
-import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/tag_management/use_case/create_tag.dart';
 
 import '../../../constants.dart';
@@ -20,11 +18,8 @@ void main() {
       useCase = CreateTag(mockTagManagementRepository);
     },
   );
-  final tag = Tag(
-    id: 1,
-    creationDate: PastDate(DateTime.now()),
+  final params = Params(
     creator: User(),
-    modificationDate: PastDate(DateTime.now()),
     name: Name("Sports"),
   );
   test(
@@ -33,7 +28,7 @@ void main() {
       // Arrange
       when(mockTagManagementRepository.createTag(any)).thenAnswer((_) async => right(null));
       // Act
-      final result = await useCase(Params(tag: tag));
+      final result = await useCase(params);
       // Assert
       expect(result, right(null));
       verify(mockTagManagementRepository.createTag(any));
@@ -49,7 +44,7 @@ void main() {
           // Arrange
           when(mockTagManagementRepository.createTag(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
           // Act
-          final result = await useCase(Params(tag: tag));
+          final result = await useCase(params);
           // Assert
           expect(result, left(const CoreFailure.serverError()));
           verify(mockTagManagementRepository.createTag(any));
@@ -62,7 +57,7 @@ void main() {
           // Arrange
           when(mockTagManagementRepository.createTag(any)).thenAnswer((_) async => left(const CoreFailure.nameAlreadyInUse()));
           // Act
-          final result = await useCase(Params(tag: tag));
+          final result = await useCase(params);
           // Assert
           expect(result, left(const CoreFailure.nameAlreadyInUse()));
           verify(mockTagManagementRepository.createTag(any));
