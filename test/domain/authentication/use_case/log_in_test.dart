@@ -4,6 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/authentication/failures/authentication_failure.dart';
 import 'package:worldon/domain/authentication/use_case/log_in.dart';
 import 'package:worldon/domain/core/entities/user.dart';
+import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/experience_points.dart';
@@ -55,8 +56,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(userLoggedIn));
-      verify(mockAuthenticationRepository.logIn(any));
-      verifyNoMoreInteractions(mockAuthenticationRepository);
+      verifyInteractions(mockAuthenticationRepository);
     },
   );
   group(
@@ -66,28 +66,33 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockAuthenticationRepository.logIn(any)).thenAnswer((_) async => left(const AuthenticationFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockAuthenticationRepository.logIn(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(const AuthenticationFailure.serverError()));
-          verify(mockAuthenticationRepository.logIn(any));
-          verifyNoMoreInteractions(mockAuthenticationRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockAuthenticationRepository);
         },
       );
       test(
         "Should return a InvalidEmailAndPasswordCombination in case either credential is wrong",
         () async {
           // Arrange
-          when(mockAuthenticationRepository.logIn(any)).thenAnswer((_) async => left(const AuthenticationFailure.invalidEmailAndPasswordCombination()));
+          const authenticationFailure = AuthenticationFailure.invalidEmailAndPasswordCombination();
+          when(mockAuthenticationRepository.logIn(any)).thenAnswer((_) async => left(authenticationFailure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(const AuthenticationFailure.invalidEmailAndPasswordCombination()));
-          verify(mockAuthenticationRepository.logIn(any));
-          verifyNoMoreInteractions(mockAuthenticationRepository);
+          expect(result, left(authenticationFailure));
+          verifyInteractions(mockAuthenticationRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockAuthenticationRepository mockAuthenticationRepository) {
+  verify(mockAuthenticationRepository.logIn(any));
+  verifyNoMoreInteractions(mockAuthenticationRepository);
 }

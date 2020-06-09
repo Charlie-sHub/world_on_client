@@ -18,6 +18,10 @@ void main() {
   );
   const userId = 1;
   const achievementId = 1;
+  final params = Params(
+    achievementId: achievementId,
+    userId: userId,
+  );
   test(
     descriptionReturnNothing,
     () async {
@@ -27,18 +31,10 @@ void main() {
         userId: anyNamed("userId"),
       )).thenAnswer((_) async => right(null));
       // Act
-      // TODO: Refactor tests to keep things DRY
-      final result = await useCase(Params(
-        achievementId: achievementId,
-        userId: userId,
-      ));
+      final result = await useCase(params);
       // Assert
       expect(result, right(null));
-      verify(mockAchievementRepository.awardAchievement(
-        achievementId: anyNamed("achievementId"),
-        userId: anyNamed("userId"),
-      ));
-      verifyNoMoreInteractions(mockAchievementRepository);
+      verifyInteractions(mockAchievementRepository);
     },
   );
   group(
@@ -48,24 +44,26 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
+          const coreFailure = CoreFailure.serverError();
           when(mockAchievementRepository.awardAchievement(
             achievementId: anyNamed("achievementId"),
             userId: anyNamed("userId"),
-          )).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          )).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(
-            achievementId: achievementId,
-            userId: userId,
-          ));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockAchievementRepository.awardAchievement(
-            achievementId: anyNamed("achievementId"),
-            userId: anyNamed("userId"),
-          ));
-          verifyNoMoreInteractions(mockAchievementRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockAchievementRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockAchievementRepository mockAchievementRepository) {
+  verify(mockAchievementRepository.awardAchievement(
+    achievementId: anyNamed("achievementId"),
+    userId: anyNamed("userId"),
+  ));
+  verifyNoMoreInteractions(mockAchievementRepository);
 }

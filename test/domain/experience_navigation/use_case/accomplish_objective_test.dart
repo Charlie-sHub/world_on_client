@@ -28,7 +28,7 @@ void main() {
           const objectiveId = 1;
           // Act
           final either = useCase(Params(objectiveId: objectiveId));
-          final result = either.fold((failure) => null, (r) => r);
+          final result = either.fold((failure) => failure, (r) => r);
           // Assert
           expect(result, false);
         },
@@ -44,7 +44,7 @@ void main() {
           var either = useCase(Params(objectiveId: objectiveId1));
           either = useCase(Params(objectiveId: objectiveId2));
           either = useCase(Params(objectiveId: objectiveId3));
-          final result = either.fold((failure) => null, (r) => r);
+          final result = either.fold((failure) => failure, (r) => r);
           // Assert
           expect(result, true);
         },

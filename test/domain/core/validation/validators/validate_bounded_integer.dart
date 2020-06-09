@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/validators/validate_bounded_integer.dart';
@@ -11,72 +12,68 @@ void main() {
   const negativeInt = -1;
   test(
     "Should return validInt",
-    () async {
+      () async {
       // Act
       final either = validateBoundedInteger(
         limit: limit,
         input: validInt,
       );
-      final result = either.fold(
-        (valueFailure) => valueFailure,
-        (validInput) => validInput, // TODO: change to id in all the code
-      );
+      final Object result = getResult(either);
       // Assert
       expect(result, validInt);
     },
   );
   group(
     descriptionGroupOnFailure,
-    () {
+      () {
       const description = "Should return IntegerOutOfBounds";
       test(
         "$description, testing with a too big integer",
-        () async {
+          () async {
           // Act
           final either = validateBoundedInteger(
             limit: limit,
             input: tooBigInt,
           );
-          final result = either.fold(
-            (valueFailure) => valueFailure,
-            (validInput) => validInput,
-          );
+          final Object result = getResult(either);
           // Assert
           expect(result, const ValueFailure.integerOutOfBounds(failedValue: tooBigInt));
         },
       );
       test(
         "$description, testing with a negative integer",
-        () async {
+          () async {
           // Act
           final either = validateBoundedInteger(
             limit: limit,
             input: negativeInt,
           );
-          final result = either.fold(
-            (valueFailure) => valueFailure,
-            (validInput) => validInput,
-          );
+          final Object result = getResult(either);
           // Assert
           expect(result, const ValueFailure.integerOutOfBounds(failedValue: negativeInt));
         },
       );
       test(
         descriptionNullInput,
-        () async {
+          () async {
           // Act
           final either = validateBoundedInteger(
             limit: limit,
             input: null,
           );
-          final result = either.fold(
-            (valueFailure) => valueFailure,
-            (validInput) => validInput,
-          );
+          final Object result = getResult(either);
           // Assert
           expect(result, const ValueFailure.nullInput());
         },
       );
     },
   );
+}
+
+Object getResult(Either<ValueFailure<int>, int> either) {
+  final result = either.fold(
+    (valueFailure) => valueFailure,
+    (validInput) => validInput,
+  );
+  return result;
 }

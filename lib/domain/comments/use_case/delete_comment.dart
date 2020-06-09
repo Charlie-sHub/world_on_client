@@ -14,7 +14,7 @@ class DeleteComment implements AsyncUseCase<Unit, Params> {
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    final isAuthorized = params.user == params.comment.poster || params.user.adminPowers;
+    final isAuthorized = params.userRequesting == params.comment.poster || params.userRequesting.adminPowers;
     if (isAuthorized) {
       return _repository.removeComment(params.comment.id);
     } else {
@@ -24,8 +24,8 @@ class DeleteComment implements AsyncUseCase<Unit, Params> {
 }
 
 class Params {
-  final User user;
+  final User userRequesting;
   final Comment comment;
 
-  Params({@required this.user, @required this.comment});
+  Params({@required this.userRequesting, @required this.comment});
 }

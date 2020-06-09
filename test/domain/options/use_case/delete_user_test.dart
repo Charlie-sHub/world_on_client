@@ -18,9 +18,15 @@ void main() {
     },
   );
   final admin = User(id: 1, adminPowers: true);
-  final userDeleting = User(id: 2, adminPowers: false);
+  final userToDelete = User(id: 2, adminPowers: false);
   final userRandom = User(id: 3, adminPowers: false);
-  final userToDelete = userDeleting;
+  Params setUpParams(User userRequesting) {
+    return Params(
+      userRequesting: userRequesting,
+      userToDelete: userToDelete,
+    );
+  }
+
   group(
     descriptionAuthorization,
     () {
@@ -30,14 +36,10 @@ void main() {
           // Arrange
           when(mockRemoteOptionsRepository.deleteUser(any)).thenAnswer((_) async => right(null));
           // Act
-          final result = await useCase(Params(
-            userDeleting: admin,
-            userToDelete: userToDelete,
-          ));
+          final result = await useCase(setUpParams(admin));
           // Assert
           expect(result, right(null));
-          verify(mockRemoteOptionsRepository.deleteUser(any));
-          verifyNoMoreInteractions(mockRemoteOptionsRepository);
+          verifyInteractions(mockRemoteOptionsRepository);
         },
       );
       test(
@@ -46,14 +48,10 @@ void main() {
           // Arrange
           when(mockRemoteOptionsRepository.deleteUser(any)).thenAnswer((_) async => right(null));
           // Act
-          final result = await useCase(Params(
-            userDeleting: userDeleting,
-            userToDelete: userToDelete,
-          ));
+          final result = await useCase(setUpParams(userToDelete));
           // Assert
           expect(result, right(null));
-          verify(mockRemoteOptionsRepository.deleteUser(any));
-          verifyNoMoreInteractions(mockRemoteOptionsRepository);
+          verifyInteractions(mockRemoteOptionsRepository);
         },
       );
     },
@@ -62,34 +60,33 @@ void main() {
     descriptionGroupOnFailure,
     () {
       test(
+        descriptionServerError,
+        () async {
+          // Arrange
+          const coreFailure = CoreFailure.serverError();
+          when(mockRemoteOptionsRepository.deleteUser(any)).thenAnswer((_) async => left(coreFailure));
+          // Act
+          final result = await useCase(setUpParams(userToDelete));
+          // Assert
+          expect(result, left(coreFailure));
+          verifyInteractions(mockRemoteOptionsRepository);
+        },
+      );
+      test(
         descriptionUnAuthorized,
         () async {
           // Act
-          final result = await useCase(Params(
-            userDeleting: userRandom,
-            userToDelete: userToDelete,
-          ));
+          final result = await useCase(setUpParams(userRandom));
           // Assert
           expect(result, left(const CoreFailure.unAuthorizedError()));
           verifyZeroInteractions(mockRemoteOptionsRepository);
         },
       );
-      test(
-        descriptionServerError,
-        () async {
-          // Arrange
-          when(mockRemoteOptionsRepository.deleteUser(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
-          // Act
-          final result = await useCase(Params(
-            userDeleting: userDeleting,
-            userToDelete: userToDelete,
-          ));
-          // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockRemoteOptionsRepository.deleteUser(any));
-          verifyNoMoreInteractions(mockRemoteOptionsRepository);
-        },
-      );
     },
   );
+}
+
+void verifyInteractions(MockRemoteOptionsRepository mockRemoteOptionsRepository) {
+  verify(mockRemoteOptionsRepository.deleteUser(any));
+  verifyNoMoreInteractions(mockRemoteOptionsRepository);
 }

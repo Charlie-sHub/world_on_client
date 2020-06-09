@@ -22,6 +22,7 @@ class SendNotification implements AsyncUseCase<Unit, Params> {
       description: params.description,
       seen: params.seen,
       creationDate: PastDate(DateTime.now()),
+      type: params.type,
     );
     return _repository.sendNotification(notification);
   }
@@ -32,11 +33,13 @@ class Params {
   final User receiver;
   final EntityDescription description;
   final bool seen;
+  final NotificationType type;
 
   Params({
     @required this.sender,
     @required this.receiver,
     @required this.description,
     @required this.seen,
+    @required this.type,
   });
 }

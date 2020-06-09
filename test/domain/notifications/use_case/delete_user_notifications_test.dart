@@ -16,18 +16,17 @@ void main() {
       useCase = DeleteUserNotifications(mockNotificationRepository);
     },
   );
-  const userId = 1;
+  final params = Params(userId: 1);
   test(
     descriptionReturnNothing,
     () async {
       // Arrange
       when(mockNotificationRepository.deleteUserNotifications(any)).thenAnswer((_) async => right(null));
       // Act
-      final result = await useCase(Params(userId: userId));
+      final result = await useCase(params);
       // Assert
       expect(result, right(null));
-      verify(mockNotificationRepository.deleteUserNotifications(any));
-      verifyNoMoreInteractions(mockNotificationRepository);
+      verifyInteractions(mockNotificationRepository);
     },
   );
   group(
@@ -37,15 +36,20 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockNotificationRepository.deleteUserNotifications(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockNotificationRepository.deleteUserNotifications(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(userId: userId));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockNotificationRepository.deleteUserNotifications(any));
-          verifyNoMoreInteractions(mockNotificationRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockNotificationRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockNotificationRepository mockNotificationRepository) {
+  verify(mockNotificationRepository.deleteUserNotifications(any));
+  verifyNoMoreInteractions(mockNotificationRepository);
 }

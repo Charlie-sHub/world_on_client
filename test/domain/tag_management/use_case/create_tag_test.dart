@@ -31,8 +31,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(null));
-      verify(mockTagManagementRepository.createTag(any));
-      verifyNoMoreInteractions(mockTagManagementRepository);
+      verifyInteractions(mockTagManagementRepository);
     },
   );
   group(
@@ -42,28 +41,33 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockTagManagementRepository.createTag(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockTagManagementRepository.createTag(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockTagManagementRepository.createTag(any));
-          verifyNoMoreInteractions(mockTagManagementRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockTagManagementRepository);
         },
       );
       test(
         descriptionNameAlreadyInUse,
         () async {
           // Arrange
-          when(mockTagManagementRepository.createTag(any)).thenAnswer((_) async => left(const CoreFailure.nameAlreadyInUse()));
+          const coreFailure = CoreFailure.nameAlreadyInUse();
+          when(mockTagManagementRepository.createTag(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.nameAlreadyInUse()));
-          verify(mockTagManagementRepository.createTag(any));
-          verifyNoMoreInteractions(mockTagManagementRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockTagManagementRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockTagManagementRepository mockTagManagementRepository) {
+  verify(mockTagManagementRepository.createTag(any));
+  verifyNoMoreInteractions(mockTagManagementRepository);
 }

@@ -16,8 +16,10 @@ void main() {
       useCase = RemoveExperienceLiked(mockProfileRepository);
     },
   );
-  const userId = 1;
-  const experienceId = 2;
+  final params = Params(
+    experienceId: 1,
+    userId: 2,
+  );
   test(
     descriptionReturnNothing,
     () async {
@@ -27,17 +29,10 @@ void main() {
         userId: anyNamed("userId"),
       )).thenAnswer((_) async => right(null));
       // Act
-      final result = await useCase(Params(
-        experienceId: experienceId,
-        userId: userId,
-      ));
+      final result = await useCase(params);
       // Assert
       expect(result, right(null));
-      verify(mockProfileRepository.removeExperienceLiked(
-        experienceId: anyNamed("experienceId"),
-        userId: anyNamed("userId"),
-      ));
-      verifyNoMoreInteractions(mockProfileRepository);
+      verifyInteractions(mockProfileRepository);
     },
   );
   group(
@@ -47,24 +42,26 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
+          const coreFailure = CoreFailure.serverError();
           when(mockProfileRepository.removeExperienceLiked(
             experienceId: anyNamed("experienceId"),
             userId: anyNamed("userId"),
-          )).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          )).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(
-            experienceId: experienceId,
-            userId: userId,
-          ));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockProfileRepository.removeExperienceLiked(
-            experienceId: anyNamed("experienceId"),
-            userId: anyNamed("userId"),
-          ));
-          verifyNoMoreInteractions(mockProfileRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockProfileRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockProfileRepository mockProfileRepository) {
+  verify(mockProfileRepository.removeExperienceLiked(
+    experienceId: anyNamed("experienceId"),
+    userId: anyNamed("userId"),
+  ));
+  verifyNoMoreInteractions(mockProfileRepository);
 }

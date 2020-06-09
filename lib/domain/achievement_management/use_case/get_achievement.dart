@@ -16,7 +16,7 @@ class GetAchievement implements AsyncUseCase<Achievement, Params> {
   }
 }
 
-// TODO: Refactor and "unify" the id Params
+// TODO: Maybe refactor and "unify" the id Params
 class Params {
   final int id;
 

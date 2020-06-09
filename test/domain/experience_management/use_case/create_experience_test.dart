@@ -46,8 +46,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(null));
-      verify(mockExperienceManagementRepository.createExperience(any));
-      verifyNoMoreInteractions(mockExperienceManagementRepository);
+      verifyInteractions(mockExperienceManagementRepository);
     },
   );
   group(
@@ -57,15 +56,20 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockExperienceManagementRepository.createExperience(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockExperienceManagementRepository.createExperience(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockExperienceManagementRepository.createExperience(any));
-          verifyNoMoreInteractions(mockExperienceManagementRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockExperienceManagementRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockExperienceManagementRepository mockExperienceManagementRepository) {
+  verify(mockExperienceManagementRepository.createExperience(any));
+  verifyNoMoreInteractions(mockExperienceManagementRepository);
 }

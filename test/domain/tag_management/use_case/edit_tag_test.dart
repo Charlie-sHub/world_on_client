@@ -44,8 +44,7 @@ void main() {
           final result = await useCase(setUpParams(creatorUser));
           // Assert
           expect(result, right(null));
-          verify(mockTagManagementRepository.editTag(any));
-          verifyNoMoreInteractions(mockTagManagementRepository);
+          verifyInteractions(mockTagManagementRepository);
         },
       );
       test(
@@ -57,8 +56,7 @@ void main() {
           final result = await useCase(setUpParams(admin));
           // Assert
           expect(result, right(null));
-          verify(mockTagManagementRepository.editTag(any));
-          verifyNoMoreInteractions(mockTagManagementRepository);
+          verifyInteractions(mockTagManagementRepository);
         },
       );
     },
@@ -70,26 +68,26 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockTagManagementRepository.editTag(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockTagManagementRepository.editTag(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(setUpParams(creatorUser));
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockTagManagementRepository.editTag(any));
-          verifyNoMoreInteractions(mockTagManagementRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockTagManagementRepository);
         },
       );
       test(
         descriptionNameAlreadyInUse,
         () async {
           // Arrange
-          when(mockTagManagementRepository.editTag(any)).thenAnswer((_) async => left(const CoreFailure.nameAlreadyInUse()));
+          const coreFailure = CoreFailure.nameAlreadyInUse();
+          when(mockTagManagementRepository.editTag(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(setUpParams(creatorUser));
           // Assert
-          expect(result, left(const CoreFailure.nameAlreadyInUse()));
-          verify(mockTagManagementRepository.editTag(any));
-          verifyNoMoreInteractions(mockTagManagementRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockTagManagementRepository);
         },
       );
       test(
@@ -104,4 +102,9 @@ void main() {
       );
     },
   );
+}
+
+void verifyInteractions(MockTagManagementRepository mockTagManagementRepository) {
+  verify(mockTagManagementRepository.editTag(any));
+  verifyNoMoreInteractions(mockTagManagementRepository);
 }

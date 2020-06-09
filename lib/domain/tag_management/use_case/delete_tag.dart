@@ -14,7 +14,7 @@ class DeleteTag implements AsyncUseCase<Unit, Params> {
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    final isAuthorized = params.user == params.tag.creator || params.user.adminPowers;
+    final isAuthorized = params.userRequesting == params.tag.creator || params.userRequesting.adminPowers;
     if (isAuthorized) {
       return _repository.removeTag(params.tag.id);
     } else {
@@ -24,8 +24,8 @@ class DeleteTag implements AsyncUseCase<Unit, Params> {
 }
 
 class Params {
-  final User user;
+  final User userRequesting;
   final Tag tag;
-  
-  Params({@required this.user, @required this.tag});
+
+  Params({@required this.userRequesting, @required this.tag});
 }

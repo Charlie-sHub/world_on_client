@@ -35,11 +35,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(null));
-      verify(mockCommentRepository.postComment(
-        comment: anyNamed("comment"),
-        experienceId: anyNamed("experienceId"),
-      ));
-      verifyNoMoreInteractions(mockCommentRepository);
+      verifyInteractions(mockCommentRepository);
     },
   );
   group(
@@ -57,13 +53,17 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(const CoreFailure.serverError()));
-          verify(mockCommentRepository.postComment(
-            comment: anyNamed("comment"),
-            experienceId: anyNamed("experienceId"),
-          ));
-          verifyNoMoreInteractions(mockCommentRepository);
+          verifyInteractions(mockCommentRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockCommentRepository mockCommentRepository) {
+  verify(mockCommentRepository.postComment(
+    comment: anyNamed("comment"),
+    experienceId: anyNamed("experienceId"),
+  ));
+  verifyNoMoreInteractions(mockCommentRepository);
 }

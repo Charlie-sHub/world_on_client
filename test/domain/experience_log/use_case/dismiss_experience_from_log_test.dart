@@ -16,8 +16,10 @@ void main() {
       useCase = DismissExperienceFromLog(mockExperienceLogRepository);
     },
   );
-  const userId = 1;
-  const experienceId = 1;
+  final params = Params(
+    experienceId: 1,
+    userId: 1,
+  );
   test(
     descriptionReturnNothing,
     () async {
@@ -27,17 +29,10 @@ void main() {
         experienceId: anyNamed("experienceId"),
       )).thenAnswer((_) async => right(null));
       // Act
-      final result = await useCase(Params(
-        userId: userId,
-        experienceId: experienceId,
-      ));
+      final result = await useCase(params);
       // Assert
       expect(result, right(null));
-      verify(mockExperienceLogRepository.dismissExperienceFromLog(
-        userId: anyNamed("userId"),
-        experienceId: anyNamed("experienceId"),
-      ));
-      verifyNoMoreInteractions(mockExperienceLogRepository);
+      verifyInteractions(mockExperienceLogRepository);
     },
   );
   group(
@@ -47,24 +42,26 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
+          const coreFailure = CoreFailure.serverError();
           when(mockExperienceLogRepository.dismissExperienceFromLog(
             userId: anyNamed("userId"),
             experienceId: anyNamed("experienceId"),
-          )).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          )).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(
-            userId: userId,
-            experienceId: experienceId,
-          ));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockExperienceLogRepository.dismissExperienceFromLog(
-            userId: anyNamed("userId"),
-            experienceId: anyNamed("experienceId"),
-          ));
-          verifyNoMoreInteractions(mockExperienceLogRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockExperienceLogRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockExperienceLogRepository mockExperienceLogRepository) {
+  verify(mockExperienceLogRepository.dismissExperienceFromLog(
+    userId: anyNamed("userId"),
+    experienceId: anyNamed("experienceId"),
+  ));
+  verifyNoMoreInteractions(mockExperienceLogRepository);
 }

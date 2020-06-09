@@ -1,6 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 
+import '../../../../constants.dart';
+
 void main() {
   const validComment = "Test Test";
   const invalidComment = """
@@ -17,7 +19,7 @@ void main() {
   TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest
   TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest""";
   test(
-    "Should be valid",
+    descriptionValid,
     () async {
       // Act
       final comment = CommentContent(validComment);
@@ -26,8 +28,9 @@ void main() {
       expect(comment.getOrCrash(), validComment);
     },
   );
+
   test(
-    "Should be invalid",
+    descriptionInvalid,
     () async {
       // Act
       final comment = CommentContent(invalidComment);

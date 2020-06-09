@@ -17,19 +17,22 @@ void main() {
       useCase = LoadNotifications(mockNotificationRepository);
     },
   );
-  const userId = 1;
-  final notificationList = [Notification(), Notification(), Notification()];
+  final params = Params(userId: 1);
+  final notificationList = [
+    Notification(),
+    Notification(),
+    Notification(),
+  ];
   test(
     "Should return a list of Notifications",
     () async {
       // Arrange
       when(mockNotificationRepository.loadNotifications(any)).thenAnswer((_) async => right(notificationList));
       // Act
-      final result = await useCase(Params(userId: userId));
+      final result = await useCase(params);
       // Assert
       expect(result, right(notificationList));
-      verify(mockNotificationRepository.loadNotifications(any));
-      verifyNoMoreInteractions(mockNotificationRepository);
+      verifyInteractions(mockNotificationRepository);
     },
   );
   group(
@@ -39,28 +42,33 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockNotificationRepository.loadNotifications(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockNotificationRepository.loadNotifications(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(userId: userId));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockNotificationRepository.loadNotifications(any));
-          verifyNoMoreInteractions(mockNotificationRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockNotificationRepository);
         },
       );
       test(
         descriptionNotFoundError,
         () async {
           // Arrange
-          when(mockNotificationRepository.loadNotifications(any)).thenAnswer((_) async => left(const CoreFailure.notFoundError()));
+          const coreFailure = CoreFailure.notFoundError();
+          when(mockNotificationRepository.loadNotifications(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(userId: userId));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.notFoundError()));
-          verify(mockNotificationRepository.loadNotifications(any));
-          verifyNoMoreInteractions(mockNotificationRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockNotificationRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockNotificationRepository mockNotificationRepository) {
+  verify(mockNotificationRepository.loadNotifications(any));
+  verifyNoMoreInteractions(mockNotificationRepository);
 }

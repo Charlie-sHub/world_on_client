@@ -47,8 +47,7 @@ void main() {
       final result = await useCase(NoParams());
       // Assert
       expect(result, right(achievementList));
-      verify(mockAchievementRepository.getAllAchievement());
-      verifyNoMoreInteractions(mockAchievementRepository);
+      verifyInteractions(mockAchievementRepository);
     },
   );
   group(
@@ -58,41 +57,46 @@ void main() {
         descriptionCacheError,
         () async {
           // Arrange
-          when(mockAchievementRepository.getAllAchievement()).thenAnswer((_) async => left(const CoreFailure.cacheError()));
+          const coreFailure = CoreFailure.cacheError();
+          when(mockAchievementRepository.getAllAchievement()).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(NoParams());
           // Assert
-          expect(result, left(const CoreFailure.cacheError()));
-          verify(mockAchievementRepository.getAllAchievement());
-          verifyNoMoreInteractions(mockAchievementRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockAchievementRepository);
         },
       );
       test(
         descriptionServerError,
         () async {
           // Arrange
-          when(mockAchievementRepository.getAllAchievement()).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockAchievementRepository.getAllAchievement()).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(NoParams());
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockAchievementRepository.getAllAchievement());
-          verifyNoMoreInteractions(mockAchievementRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockAchievementRepository);
         },
       );
       test(
         descriptionNotFoundError,
         () async {
           // Arrange
-          when(mockAchievementRepository.getAllAchievement()).thenAnswer((_) async => left(const CoreFailure.notFoundError()));
+          const coreFailure = CoreFailure.notFoundError();
+          when(mockAchievementRepository.getAllAchievement()).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(NoParams());
           // Assert
-          expect(result, left(const CoreFailure.notFoundError()));
-          verify(mockAchievementRepository.getAllAchievement());
-          verifyNoMoreInteractions(mockAchievementRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockAchievementRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockAchievementRepository mockAchievementRepository) {
+  verify(mockAchievementRepository.getAllAchievement());
+  verifyNoMoreInteractions(mockAchievementRepository);
 }

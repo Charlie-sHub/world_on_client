@@ -29,8 +29,7 @@ void main() {
       final result = await useCase(NoParams());
       // Assert
       expect(result, right(publicKeyBytes));
-      verify(mockPublicKeyRepository.getPublicKey());
-      verifyNoMoreInteractions(mockPublicKeyRepository);
+      verifyInteractions(mockPublicKeyRepository);
     },
   );
   group(
@@ -40,28 +39,33 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockPublicKeyRepository.getPublicKey()).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockPublicKeyRepository.getPublicKey()).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(NoParams());
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockPublicKeyRepository.getPublicKey());
-          verifyNoMoreInteractions(mockPublicKeyRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockPublicKeyRepository);
         },
       );
       test(
         descriptionNotFoundError,
         () async {
           // Arrange
-          when(mockPublicKeyRepository.getPublicKey()).thenAnswer((_) async => left(const CoreFailure.notFoundError()));
+          const coreFailure = CoreFailure.notFoundError();
+          when(mockPublicKeyRepository.getPublicKey()).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(NoParams());
           // Assert
-          expect(result, left(const CoreFailure.notFoundError()));
-          verify(mockPublicKeyRepository.getPublicKey());
-          verifyNoMoreInteractions(mockPublicKeyRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockPublicKeyRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockPublicKeyRepository mockPublicKeyRepository) {
+  verify(mockPublicKeyRepository.getPublicKey());
+  verifyNoMoreInteractions(mockPublicKeyRepository);
 }

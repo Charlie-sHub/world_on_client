@@ -17,7 +17,7 @@ void main() {
       useCase = FillFeed(mockMainFeedRepository);
     },
   );
-  const userId = 1;
+  final params = Params(userId: 1);
   final experienceList = [
     Experience(),
     Experience(),
@@ -29,11 +29,10 @@ void main() {
       // Arrange
       when(mockMainFeedRepository.fillFeed(any)).thenAnswer((_) async => right(experienceList));
       // Act
-      final result = await useCase(Params(userId: userId));
+      final result = await useCase(params);
       // Assert
       expect(result, right(experienceList));
-      verify(mockMainFeedRepository.fillFeed(any));
-      verifyNoMoreInteractions(mockMainFeedRepository);
+      verifyInteractions(mockMainFeedRepository);
     },
   );
   group(
@@ -42,28 +41,44 @@ void main() {
       test(
         descriptionServerError,
         () async {
-          when(mockMainFeedRepository.fillFeed(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockMainFeedRepository.fillFeed(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(userId: userId));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockMainFeedRepository.fillFeed(any));
-          verifyNoMoreInteractions(mockMainFeedRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockMainFeedRepository);
         },
       );
       test(
         descriptionCacheError,
         () async {
-          when(mockMainFeedRepository.fillFeed(any)).thenAnswer((_) async => left(const CoreFailure.cacheError()));
+          const coreFailure = CoreFailure.cacheError();
+          when(mockMainFeedRepository.fillFeed(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(userId: userId));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.cacheError()));
-          verify(mockMainFeedRepository.fillFeed(any));
-          verifyNoMoreInteractions(mockMainFeedRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockMainFeedRepository);
         },
       );
-      // Testing for NotFoundError will not be necessary, as an empty list is a perfectly fine result
+      test(
+        descriptionNotFoundError,
+        () async {
+          const coreFailure = CoreFailure.notFoundError();
+          when(mockMainFeedRepository.fillFeed(any)).thenAnswer((_) async => left(coreFailure));
+          // Act
+          final result = await useCase(params);
+          // Assert
+          expect(result, left(coreFailure));
+          verifyInteractions(mockMainFeedRepository);
+        },
+      );
     },
   );
+}
+
+void verifyInteractions(MockMainFeedRepository mockMainFeedRepository) {
+  verify(mockMainFeedRepository.fillFeed(any));
+  verifyNoMoreInteractions(mockMainFeedRepository);
 }

@@ -28,8 +28,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(null));
-      verify(mockRemoteOptionsRepository.saveGlobalOptions(any));
-      verifyNoMoreInteractions(mockRemoteOptionsRepository);
+      verifyInteractions(mockRemoteOptionsRepository);
     },
   );
   group(
@@ -39,15 +38,20 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockRemoteOptionsRepository.saveGlobalOptions(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockRemoteOptionsRepository.saveGlobalOptions(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockRemoteOptionsRepository.saveGlobalOptions(any));
-          verifyNoMoreInteractions(mockRemoteOptionsRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockRemoteOptionsRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockRemoteOptionsRepository mockRemoteOptionsRepository) {
+  verify(mockRemoteOptionsRepository.saveGlobalOptions(any));
+  verifyNoMoreInteractions(mockRemoteOptionsRepository);
 }

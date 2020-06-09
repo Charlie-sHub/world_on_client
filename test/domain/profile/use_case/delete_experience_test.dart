@@ -10,7 +10,6 @@ import '../../../constants.dart';
 import '../repository/mock_profile_repository.dart';
 
 void main() {
-  // TODO: Change the rest of the deletion/removing use cases so they ensure the authorization of the user
   MockProfileRepository mockProfileRepository;
   DeleteExperience useCase;
   setUp(
@@ -23,6 +22,13 @@ void main() {
   final creatorUser = User(id: 2, adminPowers: false);
   final admin = User(id: 3, adminPowers: true);
   final experience = Experience(id: 1, creator: creatorUser);
+  Params setUpParams(User userRequesting) {
+    return Params(
+      userRequesting: userRequesting,
+      experience: experience,
+    );
+  }
+
   group(
     descriptionAuthorization,
     () {
@@ -32,14 +38,10 @@ void main() {
           // Arrange
           when(mockProfileRepository.deleteExperience(any)).thenAnswer((_) async => right(null));
           // Act
-          final result = await useCase(Params(
-            user: creatorUser,
-            experience: experience,
-          ));
+          final result = await useCase(setUpParams(creatorUser));
           // Assert
           expect(result, right(null));
-          verify(mockProfileRepository.deleteExperience(any));
-          verifyNoMoreInteractions(mockProfileRepository);
+          verifyInteractions(mockProfileRepository);
         },
       );
       test(
@@ -48,14 +50,10 @@ void main() {
           // Arrange
           when(mockProfileRepository.deleteExperience(any)).thenAnswer((_) async => right(null));
           // Act
-          final result = await useCase(Params(
-            user: admin,
-            experience: experience,
-          ));
+          final result = await useCase(setUpParams(admin));
           // Assert
           expect(result, right(null));
-          verify(mockProfileRepository.deleteExperience(any));
-          verifyNoMoreInteractions(mockProfileRepository);
+          verifyInteractions(mockProfileRepository);
         },
       );
     },
@@ -67,10 +65,7 @@ void main() {
         "$descriptionUnAuthorized, random user deleting the experience",
         () async {
           // Act
-          final result = await useCase(Params(
-            user: randomUser,
-            experience: experience,
-          ));
+          final result = await useCase(setUpParams(randomUser));
           // Assert
           expect(result, left(const CoreFailure.unAuthorizedError()));
           verifyZeroInteractions(mockProfileRepository);
@@ -80,18 +75,20 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockProfileRepository.deleteExperience(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockProfileRepository.deleteExperience(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(
-            user: creatorUser,
-            experience: experience,
-          ));
+          final result = await useCase(setUpParams(creatorUser));
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockProfileRepository.deleteExperience(any));
-          verifyNoMoreInteractions(mockProfileRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockProfileRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockProfileRepository mockProfileRepository) {
+  verify(mockProfileRepository.deleteExperience(any));
+  verifyNoMoreInteractions(mockProfileRepository);
 }

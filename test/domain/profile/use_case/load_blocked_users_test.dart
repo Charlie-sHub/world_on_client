@@ -16,7 +16,7 @@ void main() {
       useCase = LoadBlockedUsers(mockProfileRepository);
     },
   );
-  const id = 1;
+  final params = Params(id: 1);
   final blockedUsers = {
     User(),
     User(),
@@ -28,11 +28,10 @@ void main() {
       // Arrange
       when(mockProfileRepository.loadBlockedUsers(any)).thenAnswer((_) async => right(blockedUsers));
       // Act
-      final result = await useCase(Params(id: id));
+      final result = await useCase(params);
       // Assert
       expect(result, right(blockedUsers));
-      verify(mockProfileRepository.loadBlockedUsers(any));
-      verifyNoMoreInteractions(mockProfileRepository);
+      verifyInteractions(mockProfileRepository);
     },
   );
   group(
@@ -42,41 +41,46 @@ void main() {
         "Should return ServerError if there's a problem with the server",
         () async {
           // Arrange
-          when(mockProfileRepository.loadBlockedUsers(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockProfileRepository.loadBlockedUsers(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(id: id));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockProfileRepository.loadBlockedUsers(any));
-          verifyNoMoreInteractions(mockProfileRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockProfileRepository);
         },
       );
       test(
         "Should return CacheError if there's a problem with the cache",
         () async {
           // Arrange
-          when(mockProfileRepository.loadBlockedUsers(any)).thenAnswer((_) async => left(const CoreFailure.cacheError()));
+          const coreFailure = CoreFailure.cacheError();
+          when(mockProfileRepository.loadBlockedUsers(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(id: id));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.cacheError()));
-          verify(mockProfileRepository.loadBlockedUsers(any));
-          verifyNoMoreInteractions(mockProfileRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockProfileRepository);
         },
       );
       test(
         "Should return NotFoundError if the User has no blocked any User",
         () async {
           // Arrange
-          when(mockProfileRepository.loadBlockedUsers(any)).thenAnswer((_) async => left(const CoreFailure.notFoundError()));
+          const coreFailure = CoreFailure.notFoundError();
+          when(mockProfileRepository.loadBlockedUsers(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(id: id));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.notFoundError()));
-          verify(mockProfileRepository.loadBlockedUsers(any));
-          verifyNoMoreInteractions(mockProfileRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockProfileRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockProfileRepository mockProfileRepository) {
+  verify(mockProfileRepository.loadBlockedUsers(any));
+  verifyNoMoreInteractions(mockProfileRepository);
 }

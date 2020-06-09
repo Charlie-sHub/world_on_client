@@ -1,13 +1,15 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/validation/objects/message_content.dart';
 
+import '../../../../constants.dart';
+
 void main() {
   const validMessage = "Test Test";
   const invalidMessage = """
   TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest
   TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest""";
   test(
-    "Should be valid",
+    descriptionValid,
     () async {
       // Act
       final message = MessageContent(validMessage);
@@ -17,7 +19,7 @@ void main() {
     },
   );
   test(
-    "Should be invalid",
+    descriptionInvalid,
     () async {
       // Act
       final message = MessageContent(invalidMessage);

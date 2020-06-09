@@ -19,18 +19,18 @@ void main() {
     },
   );
   final difficulty = Difficulty(1);
-  final experiencesFound = {Experience(difficulty: Difficulty(1)), Experience(difficulty: Difficulty(1)), Experience(difficulty: Difficulty(1))};
+  final params = Params(difficulty: difficulty);
+  final experiencesFound = {Experience(difficulty: difficulty), Experience(difficulty: difficulty), Experience(difficulty: difficulty)};
   test(
     "Should return a Set of Experiences",
     () async {
       // Arrange
       when(mockSearchRepository.searchExperiencesByDifficulty(any)).thenAnswer((_) async => right(experiencesFound));
       // Act
-      final result = await useCase(Params(difficulty: difficulty));
+      final result = await useCase(params);
       // Assert
       expect(result, right(experiencesFound));
-      verify(mockSearchRepository.searchExperiencesByDifficulty(any));
-      verifyNoMoreInteractions(mockSearchRepository);
+      verifyInteractions(mockSearchRepository);
     },
   );
   group(
@@ -40,41 +40,46 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockSearchRepository.searchExperiencesByDifficulty(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockSearchRepository.searchExperiencesByDifficulty(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(difficulty: difficulty));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockSearchRepository.searchExperiencesByDifficulty(any));
-          verifyNoMoreInteractions(mockSearchRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockSearchRepository);
         },
       );
       test(
         descriptionCacheError,
         () async {
           // Arrange
-          when(mockSearchRepository.searchExperiencesByDifficulty(any)).thenAnswer((_) async => left(const CoreFailure.cacheError()));
+          const coreFailure = CoreFailure.cacheError();
+          when(mockSearchRepository.searchExperiencesByDifficulty(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(difficulty: difficulty));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.cacheError()));
-          verify(mockSearchRepository.searchExperiencesByDifficulty(any));
-          verifyNoMoreInteractions(mockSearchRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockSearchRepository);
         },
       );
       test(
         descriptionNotFoundError,
         () async {
           // Arrange
-          when(mockSearchRepository.searchExperiencesByDifficulty(any)).thenAnswer((_) async => left(const CoreFailure.notFoundError()));
+          const coreFailure = CoreFailure.notFoundError();
+          when(mockSearchRepository.searchExperiencesByDifficulty(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(difficulty: difficulty));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.notFoundError()));
-          verify(mockSearchRepository.searchExperiencesByDifficulty(any));
-          verifyNoMoreInteractions(mockSearchRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockSearchRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockSearchRepository mockSearchRepository) {
+  verify(mockSearchRepository.searchExperiencesByDifficulty(any));
+  verifyNoMoreInteractions(mockSearchRepository);
 }

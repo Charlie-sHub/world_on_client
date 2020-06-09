@@ -28,8 +28,7 @@ void main() {
       final result = await useCase(NoParams());
       // Assert
       expect(result, right(User()));
-      verify(mockCachedUserRepository.getCachedUser());
-      verifyNoMoreInteractions(mockCachedUserRepository);
+      verifyInteractions(mockCachedUserRepository);
     },
   );
   group(
@@ -39,28 +38,33 @@ void main() {
         descriptionCacheError,
         () async {
           // Arrange
-          when(mockCachedUserRepository.getCachedUser()).thenAnswer((_) async => left(const CoreFailure.cacheError()));
+          const coreFailure = CoreFailure.cacheError();
+          when(mockCachedUserRepository.getCachedUser()).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(NoParams());
           // Assert
-          expect(result, left(const CoreFailure.cacheError()));
-          verify(mockCachedUserRepository.getCachedUser());
-          verifyNoMoreInteractions(mockCachedUserRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockCachedUserRepository);
         },
       );
       test(
         "Should return a NoUserInCache in case there's no user in the cache",
         () async {
           // Arrange
-          when(mockCachedUserRepository.getCachedUser()).thenAnswer((_) async => left(const AuthenticationFailure.noUserInCache()));
+          const authenticationFailure = AuthenticationFailure.noUserInCache();
+          when(mockCachedUserRepository.getCachedUser()).thenAnswer((_) async => left(authenticationFailure));
           // Act
           final result = await useCase(NoParams());
           // Assert
-          expect(result, left(const AuthenticationFailure.noUserInCache()));
-          verify(mockCachedUserRepository.getCachedUser());
-          verifyNoMoreInteractions(mockCachedUserRepository);
+          expect(result, left(authenticationFailure));
+          verifyInteractions(mockCachedUserRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockCachedUserRepository mockCachedUserRepository) {
+  verify(mockCachedUserRepository.getCachedUser());
+  verifyNoMoreInteractions(mockCachedUserRepository);
 }

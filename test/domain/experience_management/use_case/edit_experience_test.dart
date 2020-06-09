@@ -63,8 +63,7 @@ void main() {
           final result = await useCase(setUpParams(creatorUser));
           // Assert
           expect(result, right(null));
-          verify(mockExperienceManagementRepository.editExperience(any));
-          verifyNoMoreInteractions(mockExperienceManagementRepository);
+          verifyInteractions(mockExperienceManagementRepository);
         },
       );
       test(
@@ -76,8 +75,7 @@ void main() {
           final result = await useCase(setUpParams(admin));
           // Assert
           expect(result, right(null));
-          verify(mockExperienceManagementRepository.editExperience(any));
-          verifyNoMoreInteractions(mockExperienceManagementRepository);
+          verifyInteractions(mockExperienceManagementRepository);
         },
       );
     },
@@ -89,13 +87,13 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockExperienceManagementRepository.editExperience(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockExperienceManagementRepository.editExperience(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(setUpParams(creatorUser));
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockExperienceManagementRepository.editExperience(any));
-          verifyNoMoreInteractions(mockExperienceManagementRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockExperienceManagementRepository);
         },
       );
       test(
@@ -110,4 +108,9 @@ void main() {
       );
     },
   );
+}
+
+void verifyInteractions(MockExperienceManagementRepository mockExperienceManagementRepository) {
+  verify(mockExperienceManagementRepository.editExperience(any));
+  verifyNoMoreInteractions(mockExperienceManagementRepository);
 }

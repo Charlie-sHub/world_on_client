@@ -12,7 +12,7 @@ abstract class AuthenticationRepositoryInterface {
 
   /// Calls the Google sign in API to register a new [User].
   // TODO: Check if this is necessary
-  // Not sure if this is necessary though, maybe it'd be better to use [logInGoogle] and then [register]
+  // Not sure if this is necessary though, maybe it'd be better to use logInGoogle to get some of the credentials and then normal register
   Future<Either<Failure, Unit>> registerGoogle();
 
   /// Calls the Google sign in API to login into the app.

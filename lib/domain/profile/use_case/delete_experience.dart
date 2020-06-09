@@ -14,7 +14,7 @@ class DeleteExperience implements AsyncUseCase<Unit, Params> {
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    final isAuthorized = params.user == params.experience.creator || params.user.adminPowers;
+    final isAuthorized = params.userRequesting == params.experience.creator || params.userRequesting.adminPowers;
     if (isAuthorized) {
       return _repository.deleteExperience(params.experience.id);
     } else {
@@ -24,8 +24,8 @@ class DeleteExperience implements AsyncUseCase<Unit, Params> {
 }
 
 class Params {
-  final User user;
+  final User userRequesting;
   final Experience experience;
 
-  Params({@required this.user, @required this.experience});
+  Params({@required this.userRequesting, @required this.experience});
 }

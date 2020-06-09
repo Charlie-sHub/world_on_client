@@ -17,7 +17,7 @@ void main() {
       useCase = LoadExperiencesCreated(mockProfileRepository);
     },
   );
-  const id = 1;
+  final params = Params(id: 1);
   final experiencesCreated = {
     Experience(),
     Experience(),
@@ -28,13 +28,11 @@ void main() {
     () async {
       // Arrange
       when(mockProfileRepository.loadExperiencesCreated(any)).thenAnswer((_) async => right(experiencesCreated));
-
       // Act
-      final result = await useCase(Params(id: id));
+      final result = await useCase(params);
       // Assert
       expect(result, right(experiencesCreated));
-      verify(mockProfileRepository.loadExperiencesCreated(any));
-      verifyNoMoreInteractions(mockProfileRepository);
+      verifyInteractions(mockProfileRepository);
     },
   );
   group(
@@ -44,41 +42,46 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockProfileRepository.loadExperiencesCreated(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockProfileRepository.loadExperiencesCreated(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(id: id));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockProfileRepository.loadExperiencesCreated(any));
-          verifyNoMoreInteractions(mockProfileRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockProfileRepository);
         },
       );
       test(
         descriptionCacheError,
         () async {
           // Arrange
-          when(mockProfileRepository.loadExperiencesCreated(any)).thenAnswer((_) async => left(const CoreFailure.cacheError()));
+          const coreFailure = CoreFailure.cacheError();
+          when(mockProfileRepository.loadExperiencesCreated(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(id: id));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.cacheError()));
-          verify(mockProfileRepository.loadExperiencesCreated(any));
-          verifyNoMoreInteractions(mockProfileRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockProfileRepository);
         },
       );
       test(
         descriptionNotFoundError,
         () async {
           // Arrange
-          when(mockProfileRepository.loadExperiencesCreated(any)).thenAnswer((_) async => left(const CoreFailure.notFoundError()));
+          const coreFailure = CoreFailure.notFoundError();
+          when(mockProfileRepository.loadExperiencesCreated(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(id: id));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.notFoundError()));
-          verify(mockProfileRepository.loadExperiencesCreated(any));
-          verifyNoMoreInteractions(mockProfileRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockProfileRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockProfileRepository mockProfileRepository) {
+  verify(mockProfileRepository.loadExperiencesCreated(any));
+  verifyNoMoreInteractions(mockProfileRepository);
 }

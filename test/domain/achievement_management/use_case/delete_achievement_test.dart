@@ -22,6 +22,13 @@ void main() {
   final creatorUser = User(id: 2, adminPowers: false);
   final admin = User(id: 3, adminPowers: true);
   final achievement = Achievement(creator: creatorUser, id: 1);
+  Params setUpParams(User userRequesting) {
+    return Params(
+      achievement: achievement,
+      userRequesting: userRequesting,
+    );
+  }
+
   group(
     descriptionAuthorization,
     () {
@@ -31,14 +38,10 @@ void main() {
           // Arrange
           when(mockAchievementRepository.removeAchievement(any)).thenAnswer((_) async => right(null));
           // Act
-          final result = await useCase(Params(
-            achievement: achievement,
-            user: creatorUser,
-          ));
+          final result = await useCase(setUpParams(creatorUser));
           // Assert
           expect(result, right(null));
-          verify(mockAchievementRepository.removeAchievement(any));
-          verifyNoMoreInteractions(mockAchievementRepository);
+          verifyInteractions(mockAchievementRepository);
         },
       );
       test(
@@ -47,14 +50,10 @@ void main() {
           // Arrange
           when(mockAchievementRepository.removeAchievement(any)).thenAnswer((_) async => right(null));
           // Act
-          final result = await useCase(Params(
-            achievement: achievement,
-            user: admin,
-          ));
+          final result = await useCase(setUpParams(admin));
           // Assert
           expect(result, right(null));
-          verify(mockAchievementRepository.removeAchievement(any));
-          verifyNoMoreInteractions(mockAchievementRepository);
+          verifyInteractions(mockAchievementRepository);
         },
       );
     },
@@ -66,42 +65,33 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockAchievementRepository.removeAchievement(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockAchievementRepository.removeAchievement(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(
-            achievement: achievement,
-            user: creatorUser,
-          ));
+          final result = await useCase(setUpParams(creatorUser));
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockAchievementRepository.removeAchievement(any));
-          verifyNoMoreInteractions(mockAchievementRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockAchievementRepository);
         },
       );
       test(
         descriptionNotFoundError,
         () async {
           // Arrange
-          when(mockAchievementRepository.removeAchievement(any)).thenAnswer((_) async => left(const CoreFailure.notFoundError()));
+          const coreFailure = CoreFailure.notFoundError();
+          when(mockAchievementRepository.removeAchievement(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(
-            achievement: achievement,
-            user: creatorUser,
-          ));
+          final result = await useCase(setUpParams(creatorUser));
           // Assert
-          expect(result, left(const CoreFailure.notFoundError()));
-          verify(mockAchievementRepository.removeAchievement(any));
-          verifyNoMoreInteractions(mockAchievementRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockAchievementRepository);
         },
       );
       test(
         descriptionUnAuthorized,
         () async {
           // Act
-          final result = await useCase(Params(
-            achievement: achievement,
-            user: randomUser,
-          ));
+          final result = await useCase(setUpParams(randomUser));
           // Assert
           expect(result, left(const CoreFailure.unAuthorizedError()));
           verifyZeroInteractions(mockAchievementRepository);
@@ -109,4 +99,9 @@ void main() {
       );
     },
   );
+}
+
+void verifyInteractions(MockAchievementRepository mockAchievementRepository) {
+  verify(mockAchievementRepository.removeAchievement(any));
+  verifyNoMoreInteractions(mockAchievementRepository);
 }

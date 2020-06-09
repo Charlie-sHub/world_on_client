@@ -13,6 +13,7 @@ import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/core/validation/objects/user_level.dart';
 import 'package:worldon/domain/profile/use_case/load_user.dart';
 
+import '../../../constants.dart';
 import '../repository/mock_profile_repository.dart';
 
 void main() {
@@ -53,52 +54,56 @@ void main() {
       final result = await useCase(Params(id: id));
       // Assert
       expect(result, right(user));
-      verify(mockProfileRepository.loadUser(any));
-      verifyNoMoreInteractions(mockProfileRepository);
+      verifyInteractions(mockProfileRepository);
     },
   );
   group(
-    "Testing on failure",
+    descriptionGroupOnFailure,
     () {
       test(
-        "Should return ServerError if there's a problem with the server",
+        descriptionServerError,
         () async {
           // Arrange
-          when(mockProfileRepository.loadUser(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockProfileRepository.loadUser(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(Params(id: id));
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockProfileRepository.loadUser(any));
-          verifyNoMoreInteractions(mockProfileRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockProfileRepository);
         },
       );
       test(
-        "Should return CacheError if there's a problem with the cache",
+        descriptionCacheError,
         () async {
           // Arrange
-          when(mockProfileRepository.loadUser(any)).thenAnswer((_) async => left(const CoreFailure.cacheError()));
+          const coreFailure = CoreFailure.cacheError();
+          when(mockProfileRepository.loadUser(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(Params(id: id));
           // Assert
-          expect(result, left(const CoreFailure.cacheError()));
-          verify(mockProfileRepository.loadUser(any));
-          verifyNoMoreInteractions(mockProfileRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockProfileRepository);
         },
       );
       test(
-        "Should return NotFoundError if there was no USer with the given id",
+        descriptionNotFoundError,
         () async {
           // Arrange
-          when(mockProfileRepository.loadUser(any)).thenAnswer((_) async => left(const CoreFailure.notFoundError()));
+          const coreFailure = CoreFailure.notFoundError();
+          when(mockProfileRepository.loadUser(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(Params(id: id));
           // Assert
-          expect(result, left(const CoreFailure.notFoundError()));
-          verify(mockProfileRepository.loadUser(any));
-          verifyNoMoreInteractions(mockProfileRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockProfileRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockProfileRepository mockProfileRepository) {
+  verify(mockProfileRepository.loadUser(any));
+  verifyNoMoreInteractions(mockProfileRepository);
 }

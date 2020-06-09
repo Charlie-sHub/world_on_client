@@ -22,6 +22,13 @@ void main() {
   final creatorUser = User(id: 2, adminPowers: false);
   final admin = User(id: 3, adminPowers: true);
   final comment = Comment(id: 1, poster: creatorUser);
+  Params setUpParams(User userRequesting) {
+    return Params(
+      comment: comment,
+      userRequesting: userRequesting,
+    );
+  }
+
   group(
     descriptionAuthorization,
     () {
@@ -31,14 +38,10 @@ void main() {
           // Arrange
           when(mockCommentRepository.removeComment(any)).thenAnswer((_) async => right(null));
           // Act
-          final result = await useCase(Params(
-            comment: comment,
-            user: creatorUser,
-          ));
+          final result = await useCase(setUpParams(creatorUser));
           // Assert
           expect(result, right(null));
-          verify(mockCommentRepository.removeComment(any));
-          verifyNoMoreInteractions(mockCommentRepository);
+          verifyInteractions(mockCommentRepository);
         },
       );
       test(
@@ -47,14 +50,10 @@ void main() {
           // Arrange
           when(mockCommentRepository.removeComment(any)).thenAnswer((_) async => right(null));
           // Act
-          final result = await useCase(Params(
-            comment: comment,
-            user: admin,
-          ));
+          final result = await useCase(setUpParams(admin));
           // Assert
           expect(result, right(null));
-          verify(mockCommentRepository.removeComment(any));
-          verifyNoMoreInteractions(mockCommentRepository);
+          verifyInteractions(mockCommentRepository);
         },
       );
     },
@@ -66,42 +65,33 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockCommentRepository.removeComment(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockCommentRepository.removeComment(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(
-            comment: comment,
-            user: admin,
-          ));
+          final result = await useCase(setUpParams(admin));
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockCommentRepository.removeComment(any));
-          verifyNoMoreInteractions(mockCommentRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockCommentRepository);
         },
       );
       test(
         descriptionNotFoundError,
         () async {
           // Arrange
-          when(mockCommentRepository.removeComment(any)).thenAnswer((_) async => left(const CoreFailure.notFoundError()));
+          const coreFailure = CoreFailure.notFoundError();
+          when(mockCommentRepository.removeComment(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(
-            comment: comment,
-            user: admin,
-          ));
+          final result = await useCase(setUpParams(admin));
           // Assert
-          expect(result, left(const CoreFailure.notFoundError()));
-          verify(mockCommentRepository.removeComment(any));
-          verifyNoMoreInteractions(mockCommentRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockCommentRepository);
         },
       );
       test(
         descriptionUnAuthorized,
-          () async {
+        () async {
           // Act
-          final result = await useCase(Params(
-            comment: comment,
-            user: randomUser,
-          ));
+          final result = await useCase(setUpParams(randomUser));
           // Assert
           expect(result, left(const CoreFailure.unAuthorizedError()));
           verifyZeroInteractions(mockCommentRepository);
@@ -109,4 +99,9 @@ void main() {
       );
     },
   );
+}
+
+void verifyInteractions(MockCommentRepository mockCommentRepository) {
+  verify(mockCommentRepository.removeComment(any));
+  verifyNoMoreInteractions(mockCommentRepository);
 }

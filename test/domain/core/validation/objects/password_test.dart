@@ -1,11 +1,13 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
 
+import '../../../../constants.dart';
+
 void main() {
   const validPassword = "abcd*1234";
   const invalidPassword = "a";
   test(
-    "Should be valid",
+    descriptionValid,
     () async {
       // Act
       final password = Password(validPassword);
@@ -15,7 +17,7 @@ void main() {
     },
   );
   test(
-    "Should be invalid",
+    descriptionInvalid,
     () async {
       // Act
       final password = Password(invalidPassword);

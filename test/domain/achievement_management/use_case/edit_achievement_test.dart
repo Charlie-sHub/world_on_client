@@ -53,8 +53,7 @@ void main() {
           final result = await useCase(setUpParams(creatorUser));
           // Assert
           expect(result, right(null));
-          verify(mockAchievementRepository.editAchievement(any));
-          verifyNoMoreInteractions(mockAchievementRepository);
+          verifyInteractions(mockAchievementRepository);
         },
       );
       test(
@@ -66,8 +65,7 @@ void main() {
           final result = await useCase(setUpParams(admin));
           // Assert
           expect(result, right(null));
-          verify(mockAchievementRepository.editAchievement(any));
-          verifyNoMoreInteractions(mockAchievementRepository);
+          verifyInteractions(mockAchievementRepository);
         },
       );
     },
@@ -79,26 +77,26 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockAchievementRepository.editAchievement(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockAchievementRepository.editAchievement(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(setUpParams(admin));
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockAchievementRepository.editAchievement(any));
-          verifyNoMoreInteractions(mockAchievementRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockAchievementRepository);
         },
       );
       test(
         descriptionNameAlreadyInUse,
         () async {
           // Arrange
-          when(mockAchievementRepository.editAchievement(any)).thenAnswer((_) async => left(const CoreFailure.nameAlreadyInUse()));
+          const coreFailure = CoreFailure.nameAlreadyInUse();
+          when(mockAchievementRepository.editAchievement(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(setUpParams(admin));
           // Assert
-          expect(result, left(const CoreFailure.nameAlreadyInUse()));
-          verify(mockAchievementRepository.editAchievement(any));
-          verifyNoMoreInteractions(mockAchievementRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockAchievementRepository);
         },
       );
       test(
@@ -112,4 +110,9 @@ void main() {
       );
     },
   );
+}
+
+void verifyInteractions(MockAchievementRepository mockAchievementRepository) {
+  verify(mockAchievementRepository.editAchievement(any));
+  verifyNoMoreInteractions(mockAchievementRepository);
 }

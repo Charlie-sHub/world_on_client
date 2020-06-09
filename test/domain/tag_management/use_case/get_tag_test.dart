@@ -20,7 +20,7 @@ void main() {
       useCase = GetTag(mockTagManagementRepository);
     },
   );
-  const id = 1;
+  final params = Params(id: 1);
   final tag = Tag(
     id: 1,
     creationDate: PastDate(DateTime.now()),
@@ -34,11 +34,10 @@ void main() {
       // Arrange
       when(mockTagManagementRepository.getTag(any)).thenAnswer((_) async => right(tag));
       // Act
-      final result = await useCase(Params(id: id));
+      final result = await useCase(params);
       // Assert
       expect(result, right(tag));
-      verify(mockTagManagementRepository.getTag(any));
-      verifyNoMoreInteractions(mockTagManagementRepository);
+      verifyInteractions(mockTagManagementRepository);
     },
   );
   group(
@@ -48,28 +47,33 @@ void main() {
         descriptionNotFoundError,
         () async {
           // Arrange
-          when(mockTagManagementRepository.getTag(any)).thenAnswer((_) async => left(const CoreFailure.notFoundError()));
+          const coreFailure = CoreFailure.notFoundError();
+          when(mockTagManagementRepository.getTag(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(id: id));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.notFoundError()));
-          verify(mockTagManagementRepository.getTag(any));
-          verifyNoMoreInteractions(mockTagManagementRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockTagManagementRepository);
         },
       );
       test(
         descriptionServerError,
         () async {
           // Arrange
-          when(mockTagManagementRepository.getTag(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockTagManagementRepository.getTag(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(id: id));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockTagManagementRepository.getTag(any));
-          verifyNoMoreInteractions(mockTagManagementRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockTagManagementRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockTagManagementRepository mockTagManagementRepository) {
+  verify(mockTagManagementRepository.getTag(any));
+  verifyNoMoreInteractions(mockTagManagementRepository);
 }

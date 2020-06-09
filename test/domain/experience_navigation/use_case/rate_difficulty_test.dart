@@ -16,8 +16,10 @@ void main() {
       useCase = RateDifficulty(mockExperienceNavigationRepository);
     },
   );
-  const difficulty = 1;
-  const experienceId = 1;
+  final params = Params(
+    experienceId: 1,
+    difficulty: 1,
+  );
   test(
     descriptionReturnNothing,
     () async {
@@ -27,17 +29,10 @@ void main() {
         difficulty: anyNamed("difficulty"),
       )).thenAnswer((_) async => right(null));
       // Act
-      final result = await useCase(Params(
-        experienceId: experienceId,
-        difficulty: difficulty,
-      ));
+      final result = await useCase(params);
       // Assert
       expect(result, right(null));
-      verify(mockExperienceNavigationRepository.rateDifficulty(
-        experienceId: anyNamed("experienceId"),
-        difficulty: anyNamed("difficulty"),
-      ));
-      verifyNoMoreInteractions(mockExperienceNavigationRepository);
+      verifyInteractions(mockExperienceNavigationRepository);
     },
   );
   group(
@@ -47,46 +42,42 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
+          const coreFailure = CoreFailure.serverError();
           when(mockExperienceNavigationRepository.rateDifficulty(
             experienceId: anyNamed("experienceId"),
             difficulty: anyNamed("difficulty"),
-          )).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          )).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(
-            experienceId: experienceId,
-            difficulty: difficulty,
-          ));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockExperienceNavigationRepository.rateDifficulty(
-            experienceId: anyNamed("experienceId"),
-            difficulty: anyNamed("difficulty"),
-          ));
-          verifyNoMoreInteractions(mockExperienceNavigationRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockExperienceNavigationRepository);
         },
       );
       test(
         descriptionNotFoundError,
         () async {
           // Arrange
+          const coreFailure = CoreFailure.notFoundError();
           when(mockExperienceNavigationRepository.rateDifficulty(
             experienceId: anyNamed("experienceId"),
             difficulty: anyNamed("difficulty"),
-          )).thenAnswer((_) async => left(const CoreFailure.notFoundError()));
+          )).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(
-            experienceId: experienceId,
-            difficulty: difficulty,
-          ));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.notFoundError()));
-          verify(mockExperienceNavigationRepository.rateDifficulty(
-            experienceId: anyNamed("experienceId"),
-            difficulty: anyNamed("difficulty"),
-          ));
-          verifyNoMoreInteractions(mockExperienceNavigationRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockExperienceNavigationRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockExperienceNavigationRepository mockExperienceNavigationRepository) {
+  verify(mockExperienceNavigationRepository.rateDifficulty(
+    experienceId: anyNamed("experienceId"),
+    difficulty: anyNamed("difficulty"),
+  ));
+  verifyNoMoreInteractions(mockExperienceNavigationRepository);
 }

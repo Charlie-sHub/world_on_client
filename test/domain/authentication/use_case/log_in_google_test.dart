@@ -26,8 +26,7 @@ void main() {
       final result = await useCase(NoParams());
       // Assert
       expect(result, right(null));
-      verify(mockAuthenticationRepository.logInGoogle());
-      verifyNoMoreInteractions(mockAuthenticationRepository);
+      verifyInteractions(mockAuthenticationRepository);
     },
   );
   group(
@@ -37,28 +36,33 @@ void main() {
         "Should get a cancelled by user authentication failure",
         () async {
           // Arrange
-          when(mockAuthenticationRepository.logInGoogle()).thenAnswer((_) async => left(const AuthenticationFailure.cancelledByUser()));
+          const authenticationFailure = AuthenticationFailure.cancelledByUser();
+          when(mockAuthenticationRepository.logInGoogle()).thenAnswer((_) async => left(authenticationFailure));
           // Act
           final result = await useCase(NoParams());
           // Assert
-          expect(result, left(const AuthenticationFailure.cancelledByUser()));
-          verify(mockAuthenticationRepository.logInGoogle());
-          verifyNoMoreInteractions(mockAuthenticationRepository);
+          expect(result, left(authenticationFailure));
+          verifyInteractions(mockAuthenticationRepository);
         },
       );
       test(
         descriptionServerError,
         () async {
           // Arrange
-          when(mockAuthenticationRepository.logInGoogle()).thenAnswer((_) async => left(const AuthenticationFailure.serverError()));
+          const authenticationFailure = AuthenticationFailure.serverError();
+          when(mockAuthenticationRepository.logInGoogle()).thenAnswer((_) async => left(authenticationFailure));
           // Act
           final result = await useCase(NoParams());
           // Assert
-          expect(result, left(const AuthenticationFailure.serverError()));
-          verify(mockAuthenticationRepository.logInGoogle());
-          verifyNoMoreInteractions(mockAuthenticationRepository);
+          expect(result, left(authenticationFailure));
+          verifyInteractions(mockAuthenticationRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockAuthenticationRepository mockAuthenticationRepository) {
+  verify(mockAuthenticationRepository.logInGoogle());
+  verifyNoMoreInteractions(mockAuthenticationRepository);
 }

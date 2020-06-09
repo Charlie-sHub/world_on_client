@@ -40,8 +40,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(null));
-      verify(mockAchievementRepository.createAchievement(any));
-      verifyNoMoreInteractions(mockAchievementRepository);
+      verifyInteractions(mockAchievementRepository);
     },
   );
   group(
@@ -51,28 +50,33 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockAchievementRepository.createAchievement(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockAchievementRepository.createAchievement(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockAchievementRepository.createAchievement(any));
-          verifyNoMoreInteractions(mockAchievementRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockAchievementRepository);
         },
       );
       test(
         descriptionNameAlreadyInUse,
         () async {
           // Arrange
-          when(mockAchievementRepository.createAchievement(any)).thenAnswer((_) async => left(const CoreFailure.nameAlreadyInUse()));
+          const coreFailure = CoreFailure.nameAlreadyInUse();
+          when(mockAchievementRepository.createAchievement(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.nameAlreadyInUse()));
-          verify(mockAchievementRepository.createAchievement(any));
-          verifyNoMoreInteractions(mockAchievementRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockAchievementRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockAchievementRepository mockAchievementRepository) {
+  verify(mockAchievementRepository.createAchievement(any));
+  verifyNoMoreInteractions(mockAchievementRepository);
 }

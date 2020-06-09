@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/domain/core/entities/notification.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -23,6 +24,7 @@ void main() {
     receiver: User(id: 2),
     description: EntityDescription("test"),
     seen: false,
+    type: NotificationType.follow,
   );
   test(
     descriptionReturnNothing,
@@ -33,8 +35,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(null));
-      verify(mockNotificationRepository.sendNotification(any));
-      verifyNoMoreInteractions(mockNotificationRepository);
+      verifyInteractions(mockNotificationRepository);
     },
   );
   group(
@@ -44,15 +45,20 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockNotificationRepository.sendNotification(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockNotificationRepository.sendNotification(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockNotificationRepository.sendNotification(any));
-          verifyNoMoreInteractions(mockNotificationRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockNotificationRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockNotificationRepository mockNotificationRepository) {
+  verify(mockNotificationRepository.sendNotification(any));
+  verifyNoMoreInteractions(mockNotificationRepository);
 }

@@ -20,6 +20,7 @@ void main() {
     },
   );
   final tags = {Tag(id: 1, name: Name("test"))};
+  final params = Params(tags: tags);
   final experiencesFound = {
     Experience(name: Name("test")),
     Experience(name: Name("testable")),
@@ -31,11 +32,10 @@ void main() {
       // Arrange
       when(mockSearchRepository.searchExperiencesByTags(any)).thenAnswer((_) async => right(experiencesFound));
       // Act
-      final result = await useCase(Params(tags: tags));
+      final result = await useCase(params);
       // Assert
       expect(result, right(experiencesFound));
-      verify(mockSearchRepository.searchExperiencesByTags(any));
-      verifyNoMoreInteractions(mockSearchRepository);
+      verifyInteractions(mockSearchRepository);
     },
   );
   group(
@@ -45,41 +45,46 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockSearchRepository.searchExperiencesByTags(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockSearchRepository.searchExperiencesByTags(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(tags: tags));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockSearchRepository.searchExperiencesByTags(any));
-          verifyNoMoreInteractions(mockSearchRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockSearchRepository);
         },
       );
       test(
         descriptionCacheError,
         () async {
           // Arrange
-          when(mockSearchRepository.searchExperiencesByTags(any)).thenAnswer((_) async => left(const CoreFailure.cacheError()));
+          const coreFailure = CoreFailure.cacheError();
+          when(mockSearchRepository.searchExperiencesByTags(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(tags: tags));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.cacheError()));
-          verify(mockSearchRepository.searchExperiencesByTags(any));
-          verifyNoMoreInteractions(mockSearchRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockSearchRepository);
         },
       );
       test(
         descriptionNotFoundError,
         () async {
           // Arrange
-          when(mockSearchRepository.searchExperiencesByTags(any)).thenAnswer((_) async => left(const CoreFailure.notFoundError()));
+          const coreFailure = CoreFailure.notFoundError();
+          when(mockSearchRepository.searchExperiencesByTags(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(tags: tags));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.notFoundError()));
-          verify(mockSearchRepository.searchExperiencesByTags(any));
-          verifyNoMoreInteractions(mockSearchRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockSearchRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockSearchRepository mockSearchRepository) {
+  verify(mockSearchRepository.searchExperiencesByTags(any));
+  verifyNoMoreInteractions(mockSearchRepository);
 }

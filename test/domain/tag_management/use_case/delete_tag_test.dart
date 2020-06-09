@@ -22,6 +22,13 @@ void main() {
   final creatorUser = User(id: 2, adminPowers: false);
   final admin = User(id: 3, adminPowers: true);
   final tag = Tag(id: 1, creator: creatorUser);
+  Params setUpParams(User userRequesting) {
+    return Params(
+      userRequesting: userRequesting,
+      tag: tag,
+    );
+  }
+
   group(
     descriptionAuthorization,
     () {
@@ -31,14 +38,10 @@ void main() {
           // Arrange
           when(mockTagManagementRepository.removeTag(any)).thenAnswer((_) async => right(null));
           // Act
-          final result = await useCase(Params(
-            user: creatorUser,
-            tag: tag,
-          ));
+          final result = await useCase(setUpParams(creatorUser));
           // Assert
           expect(result, right(null));
-          verify(mockTagManagementRepository.removeTag(any));
-          verifyNoMoreInteractions(mockTagManagementRepository);
+          verifyInteractions(mockTagManagementRepository);
         },
       );
       test(
@@ -47,14 +50,10 @@ void main() {
           // Arrange
           when(mockTagManagementRepository.removeTag(any)).thenAnswer((_) async => right(null));
           // Act
-          final result = await useCase(Params(
-            user: admin,
-            tag: tag,
-          ));
+          final result = await useCase(setUpParams(admin));
           // Assert
           expect(result, right(null));
-          verify(mockTagManagementRepository.removeTag(any));
-          verifyNoMoreInteractions(mockTagManagementRepository);
+          verifyInteractions(mockTagManagementRepository);
         },
       );
     },
@@ -66,26 +65,20 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockTagManagementRepository.removeTag(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockTagManagementRepository.removeTag(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(
-            user: admin,
-            tag: tag,
-          ));
+          final result = await useCase(setUpParams(admin));
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockTagManagementRepository.removeTag(any));
-          verifyNoMoreInteractions(mockTagManagementRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockTagManagementRepository);
         },
       );
       test(
         descriptionUnAuthorized,
-          () async {
+        () async {
           // Act
-          final result = await useCase(Params(
-            user: randomUser,
-            tag: tag,
-          ));
+          final result = await useCase(setUpParams(randomUser));
           // Assert
           expect(result, left(const CoreFailure.unAuthorizedError()));
           verifyZeroInteractions(mockTagManagementRepository);
@@ -93,4 +86,9 @@ void main() {
       );
     },
   );
+}
+
+void verifyInteractions(MockTagManagementRepository mockTagManagementRepository) {
+  verify(mockTagManagementRepository.removeTag(any));
+  verifyNoMoreInteractions(mockTagManagementRepository);
 }

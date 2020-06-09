@@ -1,11 +1,13 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
 
+import '../../../../constants.dart';
+
 void main() {
   const invalidEmail = "test";
   const validEmail = "test@test.com";
   test(
-    "Should be valid",
+    descriptionValid,
     () async {
       // Act
       final emailAddress = EmailAddress(validEmail);
@@ -15,7 +17,7 @@ void main() {
     },
   );
   test(
-    "Should be invalid",
+    descriptionInvalid,
     () async {
       // Act
       final emailAddress = EmailAddress(invalidEmail);

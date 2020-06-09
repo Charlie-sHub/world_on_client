@@ -46,7 +46,7 @@ class Params {
   final int id;
   final Name name;
   final EntityDescription description;
-  final String imageName; // TODO: Figure the images out
+  final String imageName;
   final String type;
   final int requisite;
   final ExperiencePoints experiencePoints;

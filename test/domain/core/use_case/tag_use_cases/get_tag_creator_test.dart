@@ -25,7 +25,7 @@ void main() {
       useCase = GetTagCreator(mockTagRepository);
     },
   );
-  const id = 1;
+  final params = Params(id: 1);
   final user = User(
     id: 2,
     name: Name("Test User"),
@@ -51,11 +51,10 @@ void main() {
       // Arrange
       when(mockTagRepository.getCreator(any)).thenAnswer((_) async => right(user));
       // Act
-      final result = await useCase(Params(id: id));
+      final result = await useCase(params);
       // Assert
       expect(result, right(user));
-      verify(mockTagRepository.getCreator(any));
-      verifyNoMoreInteractions(mockTagRepository);
+      verifyInteractions(mockTagRepository);
     },
   );
   group(
@@ -65,41 +64,46 @@ void main() {
         descriptionCacheError,
         () async {
           // Arrange
-          when(mockTagRepository.getCreator(any)).thenAnswer((_) async => left(const CoreFailure.cacheError()));
+          const coreFailure = CoreFailure.cacheError();
+          when(mockTagRepository.getCreator(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(id: id));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.cacheError()));
-          verify(mockTagRepository.getCreator(any));
-          verifyNoMoreInteractions(mockTagRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockTagRepository);
         },
       );
       test(
         descriptionServerError,
         () async {
           // Arrange
-          when(mockTagRepository.getCreator(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockTagRepository.getCreator(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(id: id));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockTagRepository.getCreator(any));
-          verifyNoMoreInteractions(mockTagRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockTagRepository);
         },
       );
       test(
         descriptionNotFoundError,
         () async {
           // Arrange
-          when(mockTagRepository.getCreator(any)).thenAnswer((_) async => left(const CoreFailure.notFoundError()));
+          const coreFailure = CoreFailure.notFoundError();
+          when(mockTagRepository.getCreator(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(id: id));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.notFoundError()));
-          verify(mockTagRepository.getCreator(any));
-          verifyNoMoreInteractions(mockTagRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockTagRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockTagRepository mockTagRepository) {
+  verify(mockTagRepository.getCreator(any));
+  verifyNoMoreInteractions(mockTagRepository);
 }

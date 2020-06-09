@@ -63,8 +63,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(user));
-      verify(mockAuthenticationRepository.register(any));
-      verifyNoMoreInteractions(mockAuthenticationRepository);
+      verifyInteractions(mockAuthenticationRepository);
     },
   );
   group(
@@ -74,41 +73,46 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockAuthenticationRepository.register(any)).thenAnswer((_) async => left(const AuthenticationFailure.serverError()));
+          const authenticationFailure = AuthenticationFailure.serverError();
+          when(mockAuthenticationRepository.register(any)).thenAnswer((_) async => left(authenticationFailure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(const AuthenticationFailure.serverError()));
-          verify(mockAuthenticationRepository.register(any));
-          verifyNoMoreInteractions(mockAuthenticationRepository);
+          expect(result, left(authenticationFailure));
+          verifyInteractions(mockAuthenticationRepository);
         },
       );
       test(
         descriptionEmailAlreadyInUse,
         () async {
           // Arrange
-          when(mockAuthenticationRepository.register(any)).thenAnswer((_) async => left(const CoreFailure.emailAlreadyInUse()));
+          const coreFailure = CoreFailure.emailAlreadyInUse();
+          when(mockAuthenticationRepository.register(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.emailAlreadyInUse()));
-          verify(mockAuthenticationRepository.register(any));
-          verifyNoMoreInteractions(mockAuthenticationRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockAuthenticationRepository);
         },
       );
       test(
         descriptionUsernameAlreadyInUse,
         () async {
           // Arrange
-          when(mockAuthenticationRepository.register(any)).thenAnswer((_) async => left(const CoreFailure.usernameAlreadyInUse()));
+          const coreFailure = CoreFailure.usernameAlreadyInUse();
+          when(mockAuthenticationRepository.register(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.usernameAlreadyInUse()));
-          verify(mockAuthenticationRepository.register(any));
-          verifyNoMoreInteractions(mockAuthenticationRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockAuthenticationRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockAuthenticationRepository mockAuthenticationRepository) {
+  verify(mockAuthenticationRepository.register(any));
+  verifyNoMoreInteractions(mockAuthenticationRepository);
 }

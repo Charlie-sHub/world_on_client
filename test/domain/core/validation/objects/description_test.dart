@@ -1,6 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart' as value_object;
 
+import '../../../../constants.dart';
+
 void main() {
   const validDescription = "Test Test";
   const invalidDescription = """
@@ -9,7 +11,7 @@ TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest
 TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest
 TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest""";
   test(
-    "Should be valid",
+    descriptionValid,
     () async {
       // Act
       final description = value_object.EntityDescription(validDescription);
@@ -19,7 +21,7 @@ TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest
     },
   );
   test(
-    "Should be invalid",
+    descriptionInvalid,
     () async {
       // Act
       final description = value_object.EntityDescription(invalidDescription);

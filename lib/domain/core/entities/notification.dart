@@ -14,8 +14,7 @@ class Notification extends Equatable {
   final EntityDescription description;
   final bool seen;
   final PastDate creationDate;
-
-  // TODO: An enumerator classifying the type of notification also would be useful: FOLLOW, UNFOLLOW, BLOCKED... for example
+  final NotificationType type;
 
   const Notification({
     @required this.id,
@@ -24,6 +23,7 @@ class Notification extends Equatable {
     @required this.description,
     @required this.seen,
     @required this.creationDate,
+    @required this.type,
   });
 
   @override
@@ -35,4 +35,11 @@ class Notification extends Equatable {
         seen,
         creationDate,
       ];
+}
+
+enum NotificationType {
+  follow,
+  unfollow,
+  block,
+  unblock,
 }

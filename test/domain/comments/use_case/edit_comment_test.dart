@@ -44,8 +44,7 @@ void main() {
           final result = await useCase(setUpParams(creatorUser));
           // Assert
           expect(result, right(null));
-          verify(mockCommentRepository.editComment(any));
-          verifyNoMoreInteractions(mockCommentRepository);
+          verifyInteractions(mockCommentRepository);
         },
       );
       test(
@@ -57,8 +56,7 @@ void main() {
           final result = await useCase(setUpParams(admin));
           // Assert
           expect(result, right(null));
-          verify(mockCommentRepository.editComment(any));
-          verifyNoMoreInteractions(mockCommentRepository);
+          verifyInteractions(mockCommentRepository);
         },
       );
     },
@@ -70,13 +68,13 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockCommentRepository.editComment(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockCommentRepository.editComment(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(setUpParams(creatorUser));
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockCommentRepository.editComment(any));
-          verifyNoMoreInteractions(mockCommentRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockCommentRepository);
         },
       );
       test(
@@ -91,4 +89,9 @@ void main() {
       );
     },
   );
+}
+
+void verifyInteractions(MockCommentRepository mockCommentRepository) {
+  verify(mockCommentRepository.editComment(any));
+  verifyNoMoreInteractions(mockCommentRepository);
 }

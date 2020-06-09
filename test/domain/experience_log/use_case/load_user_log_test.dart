@@ -23,7 +23,7 @@ void main() {
       useCase = LoadUserLog(mockExperienceLogRepository);
     },
   );
-  const userId = 1;
+  final params = Params(userId: 1);
   final experience = Experience(
     id: 1,
     name: Name("test"),
@@ -44,11 +44,10 @@ void main() {
       // Arrange
       when(mockExperienceLogRepository.loadUserLog(any)).thenAnswer((_) async => right(experienceSet));
       // Act
-      final result = await useCase(Params(userId: userId));
+      final result = await useCase(params);
       // Assert
       expect(result, right(experienceSet));
-      verify(mockExperienceLogRepository.loadUserLog(any));
-      verifyNoMoreInteractions(mockExperienceLogRepository);
+      verifyInteractions(mockExperienceLogRepository);
     },
   );
   group(
@@ -58,41 +57,46 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockExperienceLogRepository.loadUserLog(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockExperienceLogRepository.loadUserLog(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(userId: userId));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockExperienceLogRepository.loadUserLog(any));
-          verifyNoMoreInteractions(mockExperienceLogRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockExperienceLogRepository);
         },
       );
       test(
         descriptionCacheError,
         () async {
           // Arrange
-          when(mockExperienceLogRepository.loadUserLog(any)).thenAnswer((_) async => left(const CoreFailure.cacheError()));
+          const coreFailure = CoreFailure.cacheError();
+          when(mockExperienceLogRepository.loadUserLog(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(userId: userId));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.cacheError()));
-          verify(mockExperienceLogRepository.loadUserLog(any));
-          verifyNoMoreInteractions(mockExperienceLogRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockExperienceLogRepository);
         },
       );
       test(
         descriptionNotFoundError,
         () async {
           // Arrange
-          when(mockExperienceLogRepository.loadUserLog(any)).thenAnswer((_) async => left(const CoreFailure.notFoundError()));
+          const coreFailure = CoreFailure.notFoundError();
+          when(mockExperienceLogRepository.loadUserLog(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(userId: userId));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.notFoundError()));
-          verify(mockExperienceLogRepository.loadUserLog(any));
-          verifyNoMoreInteractions(mockExperienceLogRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockExperienceLogRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockExperienceLogRepository mockExperienceLogRepository) {
+  verify(mockExperienceLogRepository.loadUserLog(any));
+  verifyNoMoreInteractions(mockExperienceLogRepository);
 }

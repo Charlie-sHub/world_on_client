@@ -1,3 +1,5 @@
+import 'package:worldon/domain/core/use_case/use_case.dart';
+
 /// Meant to be implemented by each failure of each layer and feature, it exists to properly implement [UseCase] and [AsyncUseCase]
 abstract class Failure {}
 

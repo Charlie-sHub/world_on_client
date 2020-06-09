@@ -71,8 +71,7 @@ void main() {
           final result = await useCase(setUpParams(admin));
           // Assert
           expect(result, right(null));
-          verify(mockProfileRepository.editUser(any));
-          verifyNoMoreInteractions(mockProfileRepository);
+          verifyInteractions(mockProfileRepository);
         },
       );
       test(
@@ -84,8 +83,7 @@ void main() {
           final result = await useCase(setUpParams(actualUser));
           // Assert
           expect(result, right(null));
-          verify(mockProfileRepository.editUser(any));
-          verifyNoMoreInteractions(mockProfileRepository);
+          verifyInteractions(mockProfileRepository);
         },
       );
     },
@@ -97,39 +95,39 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockProfileRepository.editUser(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockProfileRepository.editUser(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(setUpParams(admin));
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockProfileRepository.editUser(any));
-          verifyNoMoreInteractions(mockProfileRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockProfileRepository);
         },
       );
       test(
         descriptionUsernameAlreadyInUse,
         () async {
           // Arrange
-          when(mockProfileRepository.editUser(any)).thenAnswer((_) async => left(const CoreFailure.usernameAlreadyInUse()));
+          const coreFailure = CoreFailure.usernameAlreadyInUse();
+          when(mockProfileRepository.editUser(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(setUpParams(admin));
           // Assert
-          expect(result, left(const CoreFailure.usernameAlreadyInUse()));
-          verify(mockProfileRepository.editUser(any));
-          verifyNoMoreInteractions(mockProfileRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockProfileRepository);
         },
       );
       test(
         descriptionEmailAlreadyInUse,
         () async {
           // Arrange
-          when(mockProfileRepository.editUser(any)).thenAnswer((_) async => left(const CoreFailure.emailAlreadyInUse()));
+          const coreFailure = CoreFailure.emailAlreadyInUse();
+          when(mockProfileRepository.editUser(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(setUpParams(admin));
           // Assert
-          expect(result, left(const CoreFailure.emailAlreadyInUse()));
-          verify(mockProfileRepository.editUser(any));
-          verifyNoMoreInteractions(mockProfileRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockProfileRepository);
         },
       );
       test(
@@ -143,4 +141,9 @@ void main() {
       );
     },
   );
+}
+
+void verifyInteractions(MockProfileRepository mockProfileRepository) {
+  verify(mockProfileRepository.editUser(any));
+  verifyNoMoreInteractions(mockProfileRepository);
 }

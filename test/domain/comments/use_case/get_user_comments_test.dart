@@ -20,7 +20,7 @@ void main() {
       useCase = GetUserComments(mockCommentRepository);
     },
   );
-  const userId = 1;
+  final params = Params(userId: 1);
   final comment = Comment(
     id: 1,
     poster: User(),
@@ -35,11 +35,10 @@ void main() {
       // Arrange
       when(mockCommentRepository.getUserComments(any)).thenAnswer((_) async => right(commentSet));
       // Act
-      final result = await useCase(Params(userId: userId));
+      final result = await useCase(params);
       // Assert
       expect(result, right(commentSet));
-      verify(mockCommentRepository.getUserComments(any));
-      verifyNoMoreInteractions(mockCommentRepository);
+      verifyInteractions(mockCommentRepository);
     },
   );
   group(
@@ -49,41 +48,46 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          when(mockCommentRepository.getUserComments(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          const coreFailure = CoreFailure.serverError();
+          when(mockCommentRepository.getUserComments(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(userId: userId));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockCommentRepository.getUserComments(any));
-          verifyNoMoreInteractions(mockCommentRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockCommentRepository);
         },
       );
       test(
         descriptionCacheError,
         () async {
           // Arrange
-          when(mockCommentRepository.getUserComments(any)).thenAnswer((_) async => left(const CoreFailure.cacheError()));
+          const coreFailure = CoreFailure.cacheError();
+          when(mockCommentRepository.getUserComments(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(userId: userId));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.cacheError()));
-          verify(mockCommentRepository.getUserComments(any));
-          verifyNoMoreInteractions(mockCommentRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockCommentRepository);
         },
       );
       test(
         descriptionNotFoundError,
         () async {
           // Arrange
-          when(mockCommentRepository.getUserComments(any)).thenAnswer((_) async => left(const CoreFailure.notFoundError()));
+          const coreFailure = CoreFailure.notFoundError();
+          when(mockCommentRepository.getUserComments(any)).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(userId: userId));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.notFoundError()));
-          verify(mockCommentRepository.getUserComments(any));
-          verifyNoMoreInteractions(mockCommentRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockCommentRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockCommentRepository mockCommentRepository) {
+  verify(mockCommentRepository.getUserComments(any));
+  verifyNoMoreInteractions(mockCommentRepository);
 }

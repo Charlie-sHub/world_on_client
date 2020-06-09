@@ -14,7 +14,7 @@ class DeleteAchievement implements AsyncUseCase<Unit, Params> {
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    final isAuthorized = params.user == params.achievement.creator || params.user.adminPowers;
+    final isAuthorized = params.userRequesting == params.achievement.creator || params.userRequesting.adminPowers;
     if (isAuthorized) {
       return _repository.removeAchievement(params.achievement.id);
     } else {
@@ -24,8 +24,8 @@ class DeleteAchievement implements AsyncUseCase<Unit, Params> {
 }
 
 class Params {
-  final User user;
+  final User userRequesting;
   final Achievement achievement;
 
-  Params({@required this.user, @required this.achievement});
+  Params({@required this.userRequesting, @required this.achievement});
 }

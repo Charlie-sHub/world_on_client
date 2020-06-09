@@ -16,8 +16,10 @@ void main() {
       useCase = UnBlockUser(mockProfileRepository);
     },
   );
-  const blockerId = 1;
-  const blockedId = 2;
+  final params = Params(
+    blockedId: 1,
+    blockerId: 2,
+  );
   test(
     descriptionReturnNothing,
     () async {
@@ -27,17 +29,10 @@ void main() {
         blockerId: anyNamed("blockerId"),
       )).thenAnswer((_) async => right(null));
       // Act
-      final result = await useCase(Params(
-        blockedId: blockedId,
-        blockerId: blockerId,
-      ));
+      final result = await useCase(params);
       // Assert
       expect(result, right(null));
-      verify(mockProfileRepository.unBlockUser(
-        blockedId: anyNamed("blockedId"),
-        blockerId: anyNamed("blockerId"),
-      ));
-      verifyNoMoreInteractions(mockProfileRepository);
+      verifyInteractions(mockProfileRepository);
     },
   );
   group(
@@ -47,24 +42,26 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
+          const coreFailure = CoreFailure.serverError();
           when(mockProfileRepository.unBlockUser(
             blockedId: anyNamed("blockedId"),
             blockerId: anyNamed("blockerId"),
-          )).thenAnswer((_) async => left(const CoreFailure.serverError()));
+          )).thenAnswer((_) async => left(coreFailure));
           // Act
-          final result = await useCase(Params(
-            blockedId: blockedId,
-            blockerId: blockerId,
-          ));
+          final result = await useCase(params);
           // Assert
-          expect(result, left(const CoreFailure.serverError()));
-          verify(mockProfileRepository.unBlockUser(
-            blockedId: anyNamed("blockedId"),
-            blockerId: anyNamed("blockerId"),
-          ));
-          verifyNoMoreInteractions(mockProfileRepository);
+          expect(result, left(coreFailure));
+          verifyInteractions(mockProfileRepository);
         },
       );
     },
   );
+}
+
+void verifyInteractions(MockProfileRepository mockProfileRepository) {
+  verify(mockProfileRepository.unBlockUser(
+    blockedId: anyNamed("blockedId"),
+    blockerId: anyNamed("blockerId"),
+  ));
+  verifyNoMoreInteractions(mockProfileRepository);
 }

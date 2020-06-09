@@ -13,7 +13,7 @@ class DeleteUser implements AsyncUseCase<Unit, Params> {
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    final isAuthorized = params.userDeleting.adminPowers || params.userDeleting.id == params.userToDelete.id;
+    final isAuthorized = params.userRequesting.adminPowers || params.userRequesting.id == params.userToDelete.id;
     if (isAuthorized) {
       return _repository.deleteUser(params.userToDelete.id);
     } else {
@@ -23,8 +23,8 @@ class DeleteUser implements AsyncUseCase<Unit, Params> {
 }
 
 class Params {
-  final User userDeleting;
+  final User userRequesting;
   final User userToDelete;
 
-  Params({@required this.userDeleting, @required this.userToDelete});
+  Params({@required this.userRequesting, @required this.userToDelete});
 }

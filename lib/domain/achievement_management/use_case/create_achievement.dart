@@ -38,7 +38,11 @@ class CreateAchievement implements AsyncUseCase<Unit, Params> {
 class Params {
   final Name name;
   final EntityDescription description;
-  final String imageName; // TODO: Figure the images out
+
+  // TODO: Figure the images out
+  // I'm leaning on leaving the URLs of the images in these attributes and using the Flutter Image class with them
+  // though that's pretty much ignoring the architecture, also the current server doesn't support that, but since it'll be abandoned in favor of Firebase that shouldn't be an issue
+  final String imageName;
   final String type;
   final int requisite;
   final ExperiencePoints experiencePoints;
