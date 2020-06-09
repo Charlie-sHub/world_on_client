@@ -1,11 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:worldon/domain/core/entities/comment.dart';
-import 'package:worldon/domain/core/entities/location.dart';
-import 'package:worldon/domain/core/entities/objective.dart';
-import 'package:worldon/domain/core/entities/reward.dart';
-import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
@@ -26,9 +21,9 @@ void main() {
       useCase = EditExperience(mockExperienceManagementRepository);
     },
   );
-  final randomUser = User(id: 1, adminPowers: false);
-  final creatorUser = User(id: 2, adminPowers: false);
-  final admin = User(id: 3, adminPowers: true);
+  final randomUser = setUpUser(id: 1, adminPowers: false);
+  final creatorUser = setUpUser(id: 2, adminPowers: false);
+  final admin = setUpUser(id: 3, adminPowers: true);
   Params setUpParams(User userRequesting) {
     return Params(
       userRequesting: userRequesting,
@@ -38,16 +33,16 @@ void main() {
       imageNames: const {"test.jpg"},
       latitude: 1.1,
       longitude: 1.1,
-      location: Location(),
+      location: null,
       creator: creatorUser,
       difficulty: Difficulty(1),
       creationDate: PastDate(DateTime.now()),
-      objectives: {Objective()},
-      rewards: {Reward()},
-      tags: {Tag()},
-      comments: {Comment()},
-      doneBy: {User()},
-      likedBy: {User()},
+      objectives: null,
+      rewards: null,
+      tags: null,
+      comments: null,
+      doneBy: null,
+      likedBy: null,
     );
   }
 
@@ -107,6 +102,37 @@ void main() {
         },
       );
     },
+  );
+}
+
+User setUpUser({int id, bool adminPowers}) {
+  return User(
+    id: id,
+    name: null,
+    username: null,
+    password: null,
+    email: null,
+    birthday: null,
+    description: null,
+    imageName: null,
+    level: null,
+    experiencePoints: null,
+    privacy: null,
+    adminPowers: adminPowers,
+    enabled: null,
+    lastLogin: null,
+    creationDate: null,
+    modificationDate: null,
+    options: null,
+    blockedUsers: null,
+    followedUsers: null,
+    devices: null,
+    systems: null,
+    interests: null,
+    achievements: null,
+    experiencesDone: null,
+    experiencesLiked: null,
+    experiencesToDo: null,
   );
 }
 

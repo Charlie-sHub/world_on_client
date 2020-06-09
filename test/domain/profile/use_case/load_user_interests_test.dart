@@ -19,9 +19,13 @@ void main() {
   );
   final params = Params(userId: 1);
   final interests = {
-    Tag(),
-    Tag(),
-    Tag(),
+    const Tag(
+      id: null,
+      name: null,
+      creator: null,
+      creationDate: null,
+      modificationDate: null,
+    ),
   };
   test(
     "Should return a Set of Tags",

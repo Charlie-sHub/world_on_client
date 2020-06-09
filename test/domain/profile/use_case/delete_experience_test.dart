@@ -18,10 +18,28 @@ void main() {
       useCase = DeleteExperience(mockProfileRepository);
     },
   );
-  final randomUser = User(id: 1, adminPowers: false);
-  final creatorUser = User(id: 2, adminPowers: false);
-  final admin = User(id: 3, adminPowers: true);
-  final experience = Experience(id: 1, creator: creatorUser);
+  final randomUser = setUpUser(id: 1, adminPowers: false);
+  final creatorUser = setUpUser(id: 2, adminPowers: false);
+  final admin = setUpUser(id: 3, adminPowers: true);
+  final experience = Experience(
+    id: 1,
+    name: null,
+    description: null,
+    imageNames: null,
+    latitude: null,
+    longitude: null,
+    location: null,
+    creator: creatorUser,
+    difficulty: null,
+    creationDate: null,
+    modificationDate: null,
+    comments: null,
+    objectives: null,
+    rewards: null,
+    tags: null,
+    likedBy: null,
+    doneBy: null,
+  );
   Params setUpParams(User userRequesting) {
     return Params(
       userRequesting: userRequesting,
@@ -85,6 +103,37 @@ void main() {
         },
       );
     },
+  );
+}
+
+User setUpUser({int id, bool adminPowers}) {
+  return User(
+    id: id,
+    name: null,
+    username: null,
+    password: null,
+    email: null,
+    birthday: null,
+    description: null,
+    imageName: null,
+    level: null,
+    experiencePoints: null,
+    privacy: null,
+    adminPowers: adminPowers,
+    enabled: null,
+    lastLogin: null,
+    creationDate: null,
+    modificationDate: null,
+    options: null,
+    blockedUsers: null,
+    followedUsers: null,
+    devices: null,
+    systems: null,
+    interests: null,
+    achievements: null,
+    experiencesDone: null,
+    experiencesLiked: null,
+    experiencesToDo: null,
   );
 }
 

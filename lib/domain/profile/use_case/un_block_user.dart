@@ -7,7 +7,7 @@ import 'package:worldon/domain/profile/repository/profile_repository_interface.d
 class UnBlockUser implements AsyncUseCase<Unit, Params> {
   final ProfileRepositoryInterface _repository;
 
-  const UnBlockUser(this._repository);
+  UnBlockUser(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {

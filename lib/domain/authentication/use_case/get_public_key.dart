@@ -9,7 +9,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 class GetPublicKey implements AsyncUseCase<Uint8List, NoParams> {
   final PublicKeyRepositoryInterface _repository;
 
-  const GetPublicKey(this._repository);
+  GetPublicKey(this._repository);
 
   @override
   Future<Either<Failure, Uint8List>> call(NoParams params) async {

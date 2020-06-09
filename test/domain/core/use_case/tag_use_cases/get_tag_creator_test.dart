@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:worldon/domain/core/entities/options.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/use_case/tag_use_cases/get_tag_creator.dart';
@@ -43,7 +42,16 @@ void main() {
     lastLogin: PastDate(DateTime.now()),
     creationDate: PastDate(DateTime.now()),
     modificationDate: PastDate(DateTime.now()),
-    options: Options(),
+    options: null,
+    achievements: null,
+    blockedUsers: null,
+    devices: null,
+    experiencesDone: null,
+    experiencesLiked: null,
+    experiencesToDo: null,
+    followedUsers: null,
+    systems: null,
+    interests: null,
   );
   test(
     "Should get the User that created a given Tag",

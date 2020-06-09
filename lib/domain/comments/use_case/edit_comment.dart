@@ -12,7 +12,7 @@ import 'package:worldon/domain/core/validation/objects/past_date.dart';
 class EditComment implements AsyncUseCase<Unit, Params> {
   final CommentRepositoryInterface _repository;
 
-  const EditComment(this._repository);
+  EditComment(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {

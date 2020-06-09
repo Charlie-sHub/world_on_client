@@ -8,7 +8,7 @@ import 'package:worldon/domain/notifications/repository/notification_repository_
 class LoadNotifications implements AsyncUseCase<List<Notification>, Params> {
   final NotificationRepositoryInterface _repository;
 
-  const LoadNotifications(this._repository);
+  LoadNotifications(this._repository);
 
   @override
   Future<Either<Failure, List<Notification>>> call(Params params) async {

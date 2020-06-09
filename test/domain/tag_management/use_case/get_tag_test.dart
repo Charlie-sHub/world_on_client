@@ -2,7 +2,6 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
-import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
@@ -24,7 +23,7 @@ void main() {
   final tag = Tag(
     id: 1,
     creationDate: PastDate(DateTime.now()),
-    creator: User(),
+    creator: null,
     modificationDate: PastDate(DateTime.now()),
     name: Name("Sports"),
   );

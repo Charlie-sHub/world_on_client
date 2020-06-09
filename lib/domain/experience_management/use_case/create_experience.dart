@@ -17,7 +17,7 @@ import 'package:worldon/domain/experience_management/repository/experience_manag
 class CreateExperience implements AsyncUseCase<Unit, Params> {
   final ExperienceManagementRepositoryInterface _repository;
 
-  const CreateExperience(this._repository);
+  CreateExperience(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {

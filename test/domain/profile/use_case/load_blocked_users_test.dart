@@ -18,9 +18,34 @@ void main() {
   );
   final params = Params(id: 1);
   final blockedUsers = {
-    User(),
-    User(),
-    User(),
+    const User(
+      id: null,
+      name: null,
+      username: null,
+      password: null,
+      email: null,
+      birthday: null,
+      description: null,
+      imageName: null,
+      level: null,
+      experiencePoints: null,
+      privacy: null,
+      adminPowers: null,
+      enabled: null,
+      lastLogin: null,
+      creationDate: null,
+      modificationDate: null,
+      options: null,
+      blockedUsers: null,
+      followedUsers: null,
+      devices: null,
+      systems: null,
+      interests: null,
+      achievements: null,
+      experiencesDone: null,
+      experiencesLiked: null,
+      experiencesToDo: null,
+    ),
   };
   test(
     "Should return a Set of Users if everything goes well",

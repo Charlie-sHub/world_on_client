@@ -7,7 +7,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 class AwardAchievement implements AsyncUseCase<Unit, Params> {
   final AchievementRepositoryInterface _repository;
 
-  const AwardAchievement(this._repository);
+  AwardAchievement(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) {

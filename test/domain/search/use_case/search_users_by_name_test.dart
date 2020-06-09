@@ -18,11 +18,37 @@ void main() {
       useCase = SearchUsersByName(mockSearchRepository);
     },
   );
-  final params = Params(name: Name("test"));
+  final name = Name("test");
+  final params = Params(name: name);
   final usersFoundByName = {
-    User(name: Name("test1")),
-    User(name: Name("test2")),
-    User(name: Name("test3")),
+    User(
+      id: null,
+      name: name,
+      username: null,
+      password: null,
+      email: null,
+      birthday: null,
+      description: null,
+      imageName: null,
+      level: null,
+      experiencePoints: null,
+      privacy: null,
+      adminPowers: null,
+      enabled: null,
+      lastLogin: null,
+      creationDate: null,
+      modificationDate: null,
+      options: null,
+      blockedUsers: null,
+      followedUsers: null,
+      devices: null,
+      systems: null,
+      interests: null,
+      achievements: null,
+      experiencesDone: null,
+      experiencesLiked: null,
+      experiencesToDo: null,
+    ),
   };
   test(
     "Should return a Set of Users",

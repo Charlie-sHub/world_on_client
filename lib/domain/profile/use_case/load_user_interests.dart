@@ -8,7 +8,7 @@ import 'package:worldon/domain/profile/repository/profile_repository_interface.d
 class LoadUserInterests implements AsyncUseCase<Set<Tag>, Params> {
   final ProfileRepositoryInterface _repository;
 
-  const LoadUserInterests(this._repository);
+  LoadUserInterests(this._repository);
 
   @override
   Future<Either<Failure, Set<Tag>>> call(Params params) async {

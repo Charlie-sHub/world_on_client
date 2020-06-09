@@ -19,9 +19,19 @@ void main() {
   );
   final params = Params(userId: 1);
   final achievements = {
-    Achievement(),
-    Achievement(),
-    Achievement(),
+    const Achievement(
+      id: null,
+      name: null,
+      description: null,
+      imageName: null,
+      type: null,
+      requisite: null,
+      experiencePoints: null,
+      creator: null,
+      creationDate: null,
+      modificationDate: null,
+      tags: null,
+    ),
   };
   test(
     "Should return a Set of Achievements",

@@ -2,7 +2,6 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/comments/use_case/post_comment.dart';
-import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 
@@ -20,7 +19,7 @@ void main() {
   );
   final params = Params(
     experienceId: 1,
-    user: User(),
+    user: null,
     content: CommentContent("This is a test"),
   );
   test(

@@ -19,9 +19,15 @@ void main() {
   );
   final params = Params(userId: 1);
   final notificationList = [
-    Notification(),
-    Notification(),
-    Notification(),
+    const Notification(
+      id: null,
+      sender: null,
+      receiver: null,
+      description: null,
+      seen: null,
+      creationDate: null,
+      type: null,
+    ),
   ];
   test(
     "Should return a list of Notifications",

@@ -9,7 +9,7 @@ import 'package:worldon/domain/search/repository/search_repository_interface.dar
 class SearchExperiencesByName implements AsyncUseCase<Set<Experience>, Params> {
   final SearchRepositoryInterface _repository;
 
-  const SearchExperiencesByName(this._repository);
+  SearchExperiencesByName(this._repository);
 
   @override
   Future<Either<Failure, Set<Experience>>> call(Params params) async {

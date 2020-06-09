@@ -7,7 +7,7 @@ import 'package:worldon/domain/notifications/repository/notification_repository_
 class CheckNotification implements AsyncUseCase<Unit, Params> {
   final NotificationRepositoryInterface _repository;
 
-  const CheckNotification(this._repository);
+  CheckNotification(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {

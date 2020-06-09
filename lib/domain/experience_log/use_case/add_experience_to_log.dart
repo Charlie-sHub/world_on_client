@@ -7,7 +7,7 @@ import 'package:worldon/domain/experience_log/repository/experience_log_reposito
 class AddExperienceToLog implements AsyncUseCase<Unit, Params> {
   final ExperienceLogRepositoryInterface _repository;
 
-  const AddExperienceToLog(this._repository);
+  AddExperienceToLog(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {

@@ -19,15 +19,43 @@ void main() {
       useCase = GetCachedUser(mockCachedUserRepository);
     },
   );
+  const user = User(
+    id: null,
+    name: null,
+    username: null,
+    password: null,
+    email: null,
+    birthday: null,
+    description: null,
+    imageName: null,
+    level: null,
+    experiencePoints: null,
+    privacy: null,
+    adminPowers: null,
+    enabled: null,
+    lastLogin: null,
+    creationDate: null,
+    modificationDate: null,
+    options: null,
+    blockedUsers: null,
+    followedUsers: null,
+    devices: null,
+    systems: null,
+    interests: null,
+    achievements: null,
+    experiencesDone: null,
+    experiencesLiked: null,
+    experiencesToDo: null,
+  );
   test(
     "Should get the cached User",
     () async {
       // Arrange
-      when(mockCachedUserRepository.getCachedUser()).thenAnswer((_) async => right(User()));
+      when(mockCachedUserRepository.getCachedUser()).thenAnswer((_) async => right(user));
       // Act
       final result = await useCase(NoParams());
       // Assert
-      expect(result, right(User()));
+      expect(result, right(user));
       verifyInteractions(mockCachedUserRepository);
     },
   );

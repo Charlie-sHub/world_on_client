@@ -9,7 +9,7 @@ import 'package:worldon/domain/search/repository/search_repository_interface.dar
 class SearchTagsByName implements AsyncUseCase<Set<Tag>, Params> {
   final SearchRepositoryInterface _repository;
 
-  const SearchTagsByName(this._repository);
+  SearchTagsByName(this._repository);
 
   @override
   Future<Either<Failure, Set<Tag>>> call(Params params) async {

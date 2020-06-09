@@ -18,11 +18,16 @@ void main() {
       useCase = SearchTagsByName(mockSearchRepository);
     },
   );
-  final params = Params(name: Name("test"));
+  final name = Name("Test");
+  final params = Params(name: name);
   final tagsFound = {
-    Tag(name: Name("test1")),
-    Tag(name: Name("test2")),
-    Tag(name: Name("test3")),
+    Tag(
+      name: name,
+      modificationDate: null,
+      creationDate: null,
+      id: null,
+      creator: null,
+    ),
   };
   test(
     "Should return a Set of Tags",

@@ -18,10 +18,16 @@ void main() {
       useCase = DeleteComment(mockCommentRepository);
     },
   );
-  final randomUser = User(id: 1, adminPowers: false);
-  final creatorUser = User(id: 2, adminPowers: false);
-  final admin = User(id: 3, adminPowers: true);
-  final comment = Comment(id: 1, poster: creatorUser);
+  final randomUser = setUpUser(id: 1, adminPowers: false);
+  final creatorUser = setUpUser(id: 2, adminPowers: false);
+  final admin = setUpUser(id: 3, adminPowers: true);
+  final comment = Comment(
+    id: 1,
+    poster: creatorUser,
+    modificationDate: null,
+    creationDate: null,
+    content: null,
+  );
   Params setUpParams(User userRequesting) {
     return Params(
       comment: comment,
@@ -98,6 +104,37 @@ void main() {
         },
       );
     },
+  );
+}
+
+User setUpUser({int id, bool adminPowers}) {
+  return User(
+    id: id,
+    name: null,
+    username: null,
+    password: null,
+    email: null,
+    birthday: null,
+    description: null,
+    imageName: null,
+    level: null,
+    experiencePoints: null,
+    privacy: null,
+    adminPowers: adminPowers,
+    enabled: null,
+    lastLogin: null,
+    creationDate: null,
+    modificationDate: null,
+    options: null,
+    blockedUsers: null,
+    followedUsers: null,
+    devices: null,
+    systems: null,
+    interests: null,
+    achievements: null,
+    experiencesDone: null,
+    experiencesLiked: null,
+    experiencesToDo: null,
   );
 }
 

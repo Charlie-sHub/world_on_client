@@ -8,7 +8,7 @@ import 'package:worldon/domain/profile/repository/profile_repository_interface.d
 class LoadExperiencesCreated implements AsyncUseCase<Set<Experience>, Params> {
   final ProfileRepositoryInterface repository;
 
-  const LoadExperiencesCreated(this.repository);
+  LoadExperiencesCreated(this.repository);
 
   @override
   Future<Either<Failure, Set<Experience>>> call(Params params) async {

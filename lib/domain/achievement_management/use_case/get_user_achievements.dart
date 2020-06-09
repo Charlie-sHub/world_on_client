@@ -8,7 +8,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 class GetUserAchievements implements AsyncUseCase<Set<Achievement>, Params> {
   final AchievementRepositoryInterface _repository;
 
-  const GetUserAchievements(this._repository);
+  GetUserAchievements(this._repository);
 
   @override
   Future<Either<Failure, Set<Achievement>>> call(Params params) async {

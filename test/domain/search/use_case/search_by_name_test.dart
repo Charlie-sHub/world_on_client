@@ -1,8 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:worldon/domain/core/entities/experience.dart';
-import 'package:worldon/domain/core/entities/tag.dart';
-import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/search/entity/search_results.dart';
 import 'package:worldon/domain/search/use_case/search_by_name.dart';
 
@@ -18,10 +15,10 @@ void main() {
     },
   );
   const name = "test";
-  final experiencesFound = {Experience(), Experience(), Experience()};
-  final usersFoundByUsername = {User(), User(), User()};
-  final usersFoundByName = {User(), User(), User()};
-  final tagsFound = {Tag(), Tag(), Tag()};
+  // final experiencesFound = {Experience(), Experience(), Experience()};
+  // final usersFoundByUsername = {User(), User(), User()};
+  // final usersFoundByName = {User(), User(), User()};
+  // final tagsFound = {Tag(), Tag(), Tag()};
   // Commenting this to be able to test everything without hitches
   // Leaving it because the idea of an unified use case for name searches might be used in the future
   /*group(

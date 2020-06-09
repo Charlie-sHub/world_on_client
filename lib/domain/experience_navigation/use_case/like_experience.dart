@@ -7,7 +7,7 @@ import 'package:worldon/domain/experience_navigation/repository/experience_navig
 class LikeExperience implements AsyncUseCase<Unit, Params> {
   final ExperienceNavigationRepositoryInterface _repository;
 
-  const LikeExperience(this._repository);
+  LikeExperience(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {

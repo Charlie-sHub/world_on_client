@@ -9,7 +9,7 @@ import 'package:worldon/domain/options/repository/remote_options_repository_inte
 class DeleteUser implements AsyncUseCase<Unit, Params> {
   final RemoteOptionsRepositoryInterface _repository;
 
-  const DeleteUser(this._repository);
+  DeleteUser(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {

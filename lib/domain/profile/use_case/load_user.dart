@@ -8,7 +8,7 @@ import 'package:worldon/domain/profile/repository/profile_repository_interface.d
 class LoadUser implements AsyncUseCase<User, Params> {
   final ProfileRepositoryInterface _repository;
 
-  const LoadUser(this._repository);
+  LoadUser(this._repository);
 
   @override
   Future<Either<Failure, User>> call(Params params) async {

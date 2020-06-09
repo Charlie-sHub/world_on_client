@@ -10,7 +10,7 @@ import 'package:worldon/domain/tag_management/repository/tag_management_reposito
 class DeleteTag implements AsyncUseCase<Unit, Params> {
   final TagManagementRepositoryInterface _repository;
 
-  const DeleteTag(this._repository);
+  DeleteTag(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {

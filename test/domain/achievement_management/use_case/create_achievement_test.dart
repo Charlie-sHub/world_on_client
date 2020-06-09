@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/achievement_management/use_case/create_achievement.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
-import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/experience_points.dart';
@@ -28,7 +27,7 @@ void main() {
     type: "test",
     requisite: 1,
     experiencePoints: ExperiencePoints(1),
-    creator: User(),
+    creator: null,
     tags: const <Tag>{},
   );
   test(

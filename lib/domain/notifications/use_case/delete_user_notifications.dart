@@ -7,7 +7,7 @@ import 'package:worldon/domain/notifications/repository/notification_repository_
 class DeleteUserNotifications implements AsyncUseCase<Unit, Params> {
   final NotificationRepositoryInterface _repository;
 
-  const DeleteUserNotifications(this._repository);
+  DeleteUserNotifications(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {

@@ -18,11 +18,28 @@ void main() {
       useCase = SearchExperiencesByName(mockSearchRepository);
     },
   );
-  final params = Params(name: Name("Test"));
+  final name = Name("Test");
+  final params = Params(name: name);
   final experiencesFound = {
-    Experience(name: Name("Test1")),
-    Experience(name: Name("Test2")),
-    Experience(name: Name("Test3")),
+    Experience(
+      id: null,
+      name: name,
+      description: null,
+      imageNames: null,
+      latitude: null,
+      longitude: null,
+      location: null,
+      creator: null,
+      difficulty: null,
+      creationDate: null,
+      modificationDate: null,
+      comments: null,
+      objectives: null,
+      rewards: null,
+      tags: null,
+      likedBy: null,
+      doneBy: null,
+    ),
   };
   test(
     "Should return a Set of Experiences",

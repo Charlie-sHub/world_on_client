@@ -18,13 +18,14 @@ void main() {
   final objective1 = Objective(id: 1, description: EntityDescription("Test"), latitude: 1.1, longitude: 1.1, imageName: "test.jpg");
   final objective2 = Objective(id: 2, description: EntityDescription("Test"), latitude: 1.1, longitude: 1.1, imageName: "test.jpg");
   final objective3 = Objective(id: 3, description: EntityDescription("Test"), latitude: 1.1, longitude: 1.1, imageName: "test.jpg");
+  final objectiveNull = Objective(id: null, description: EntityDescription("Test"), latitude: 1.1, longitude: 1.1, imageName: "test.jpg");
   final objectiveSet = {objective1, objective2, objective3};
   final Map<int, bool> objectiveTracker = {
     1: false,
     2: false,
     3: false,
   };
-  final badObjectiveSet = {objective1, Objective(), objective3};
+  final badObjectiveSet = {objective1, objectiveNull, objective3};
   test(
     "Should return a Map of int (corresponding to each Objective id) and bool",
     () async {

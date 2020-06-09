@@ -46,7 +46,7 @@ class User extends Equatable {
   final Set<Experience> experiencesToDo;
 
   const User({
-    // Maybe i'll have to make only the username and password be required so facilitate authentication
+    // TODO: Maybe i'll have to make only the username and password be required so facilitate authentication
     @required this.id,
     @required this.name,
     @required this.username,

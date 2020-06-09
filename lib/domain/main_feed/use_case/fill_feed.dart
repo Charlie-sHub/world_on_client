@@ -8,7 +8,7 @@ import 'package:worldon/domain/main_feed/repository/main_feed_repository_interfa
 class FillFeed implements AsyncUseCase<List<Experience>, Params> {
   final MainFeedRepositoryInterface _repository;
 
-  const FillFeed(this._repository);
+  FillFeed(this._repository);
 
   @override
   Future<Either<Failure, List<Experience>>> call(Params params) async {

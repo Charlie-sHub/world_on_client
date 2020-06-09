@@ -7,7 +7,7 @@ import 'package:worldon/domain/experience_navigation/repository/experience_navig
 class RewardUser implements AsyncUseCase<Unit, Params> {
   final ExperienceNavigationRepositoryInterface _repository;
 
-  const RewardUser(this._repository);
+  RewardUser(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {

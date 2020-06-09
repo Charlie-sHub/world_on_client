@@ -2,7 +2,6 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
-import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/use_case/tag_use_cases/get_all_tags.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
@@ -21,13 +20,15 @@ void main() {
       useCase = GetAllTags(mockTagRepository);
     },
   );
-  final tag1 = Tag(creationDate: PastDate(DateTime.now()), creator: User(), id: 1, modificationDate: PastDate(DateTime.now()), name: Name("Sports"));
-  final tag2 = Tag(creationDate: PastDate(DateTime.now()), creator: User(), id: 2, modificationDate: PastDate(DateTime.now()), name: Name("Food"));
-  final tag3 = Tag(creationDate: PastDate(DateTime.now()), creator: User(), id: 3, modificationDate: PastDate(DateTime.now()), name: Name("Math"));
+  final tag = Tag(
+    creationDate: PastDate(DateTime.now()),
+    creator: null,
+    id: 1,
+    modificationDate: PastDate(DateTime.now()),
+    name: Name("Sports"),
+  );
   final tagList = [
-    tag1,
-    tag2,
-    tag3,
+    tag,
   ];
   test(
     "Should get the full list of tags",

@@ -11,13 +11,37 @@ import 'package:worldon/domain/core/validation/objects/password.dart';
 class LogIn implements AsyncUseCase<User, Params> {
   final AuthenticationRepositoryInterface _repository;
 
-  const LogIn(this._repository);
+  LogIn(this._repository);
 
   @override
   Future<Either<Failure, User>> call(Params params) async {
     final user = User(
       username: params.username,
       password: params.password,
+      creationDate: null,
+      name: null,
+      id: null,
+      systems: null,
+      interests: null,
+      followedUsers: null,
+      experiencesToDo: null,
+      experiencesLiked: null,
+      experiencesDone: null,
+      devices: null,
+      blockedUsers: null,
+      achievements: null,
+      adminPowers: null,
+      modificationDate: null,
+      birthday: null,
+      description: null,
+      email: null,
+      enabled: null,
+      experiencePoints: null,
+      imageName: null,
+      lastLogin: null,
+      level: null,
+      options: null,
+      privacy: null,
     );
     return _repository.logIn(user);
   }

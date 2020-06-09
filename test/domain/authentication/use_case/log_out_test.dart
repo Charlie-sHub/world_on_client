@@ -1,6 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/authentication/use_case/log_out.dart';
-import 'package:worldon/domain/core/entities/options.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -35,7 +34,16 @@ void main() {
     lastLogin: PastDate(DateTime.now()),
     creationDate: PastDate(DateTime.now()),
     modificationDate: PastDate(DateTime.now()),
-    options: Options(),
+    options: null,
+    achievements: null,
+    blockedUsers: null,
+    devices: null,
+    experiencesDone: null,
+    experiencesLiked: null,
+    experiencesToDo: null,
+    followedUsers: null,
+    interests: null,
+    systems: null,
   );
   test(
     "Should ",

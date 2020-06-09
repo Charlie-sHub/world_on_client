@@ -9,7 +9,7 @@ import 'package:worldon/domain/search/repository/search_repository_interface.dar
 class SearchUsersByUsername implements AsyncUseCase<Set<User>, Params> {
   final SearchRepositoryInterface _repository;
 
-  const SearchUsersByUsername(this._repository);
+  SearchUsersByUsername(this._repository);
 
   @override
   Future<Either<Failure, Set<User>>> call(Params params) async {

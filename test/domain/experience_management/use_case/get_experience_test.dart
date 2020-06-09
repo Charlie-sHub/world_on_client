@@ -2,8 +2,6 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/core/entities/experience.dart';
-import 'package:worldon/domain/core/entities/location.dart';
-import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -31,11 +29,17 @@ void main() {
     imageNames: const {"test.jpg"},
     latitude: 1.1,
     longitude: 1.1,
-    location: Location(),
-    creator: User(),
+    location: null,
+    creator: null,
     difficulty: Difficulty(1),
     creationDate: PastDate(DateTime.now()),
     modificationDate: PastDate(DateTime.now()),
+    rewards: null,
+    tags: null,
+    comments: null,
+    doneBy: null,
+    likedBy: null,
+    objectives: null,
   );
   test(
     "Should return the Experience wanted",

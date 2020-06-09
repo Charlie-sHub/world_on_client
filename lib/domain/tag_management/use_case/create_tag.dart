@@ -11,7 +11,7 @@ import 'package:worldon/domain/tag_management/repository/tag_management_reposito
 class CreateTag implements AsyncUseCase<Unit, Params> {
   final TagManagementRepositoryInterface _repository;
 
-  const CreateTag(this._repository);
+  CreateTag(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {

@@ -20,7 +20,27 @@ void main() {
   );
   final difficulty = Difficulty(1);
   final params = Params(difficulty: difficulty);
-  final experiencesFound = {Experience(difficulty: difficulty), Experience(difficulty: difficulty), Experience(difficulty: difficulty)};
+  final experiencesFound = {
+    Experience(
+      id: null,
+      name: null,
+      description: null,
+      imageNames: null,
+      latitude: null,
+      longitude: null,
+      location: null,
+      creator: null,
+      difficulty: difficulty,
+      creationDate: null,
+      modificationDate: null,
+      comments: null,
+      objectives: null,
+      rewards: null,
+      tags: null,
+      likedBy: null,
+      doneBy: null,
+    ),
+  };
   test(
     "Should return a Set of Experiences",
     () async {

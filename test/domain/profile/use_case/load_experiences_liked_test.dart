@@ -19,9 +19,25 @@ void main() {
   );
   final params = Params(id: 1);
   final experiencesLiked = {
-    Experience(),
-    Experience(),
-    Experience(),
+    const Experience(
+      id: null,
+      name: null,
+      description: null,
+      imageNames: null,
+      latitude: null,
+      longitude: null,
+      location: null,
+      creator: null,
+      difficulty: null,
+      creationDate: null,
+      modificationDate: null,
+      comments: null,
+      objectives: null,
+      rewards: null,
+      tags: null,
+      likedBy: null,
+      doneBy: null,
+    ),
   };
   test(
     "Should return a Set of Experiences if everything goes well",

@@ -11,7 +11,9 @@ import 'package:worldon/domain/core/validation/objects/past_date.dart';
 ///
 /// Achievements can be earned by Users for doing certain things in the application, getting rewarded for doing so.
 class Achievement extends Equatable {
-  // TODO: Check if it's better for entities to be mutable
+  // TODO: Should the entities be created using Freezed?
+  // Freezed will allow JSON conversion to be easy to make but then the JSON conversion logic would be in the domain layer instead of the data layer
+  // also, is there a way with Freezed to tell it to "ignore" certain fields when it comes to value equality?
   final int id;
   final Name name;
   final EntityDescription description;

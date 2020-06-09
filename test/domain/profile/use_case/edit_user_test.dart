@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:worldon/domain/core/entities/options.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
@@ -25,13 +24,13 @@ void main() {
       useCase = EditUser(mockProfileRepository);
     },
   );
-  final randomUser = User(id: 1, adminPowers: false);
-  final admin = User(id: 3, adminPowers: true);
-  final actualUser = User(id: 2, adminPowers: false);
+  final randomUser = setUpUser(id: 1, adminPowers: false);
+  final admin = setUpUser(id: 2, adminPowers: true);
+  final actualUser = setUpUser(id: 3, adminPowers: false);
   Params setUpParams(User userRequesting) {
     return Params(
       userRequesting: userRequesting,
-      id: 2,
+      id: 3,
       name: Name("Test User"),
       username: Name("TestUser"),
       password: Password("abcd*1234"),
@@ -46,16 +45,16 @@ void main() {
       enabled: true,
       lastLogin: PastDate(DateTime.now()),
       creationDate: PastDate(DateTime.now()),
-      options: Options(),
-      achievements: {},
-      blockedUsers: {},
-      devices: {},
-      experiencesDone: {},
-      experiencesLiked: {},
-      experiencesToDo: {},
-      followedUsers: {},
-      interests: {},
-      systems: {},
+      options: null,
+      achievements: null,
+      blockedUsers: null,
+      devices: null,
+      experiencesDone: null,
+      experiencesLiked: null,
+      experiencesToDo: null,
+      followedUsers: null,
+      interests: null,
+      systems: null,
     );
   }
 
@@ -140,6 +139,37 @@ void main() {
         },
       );
     },
+  );
+}
+
+User setUpUser({int id, bool adminPowers}) {
+  return User(
+    id: id,
+    name: null,
+    username: null,
+    password: null,
+    email: null,
+    birthday: null,
+    description: null,
+    imageName: null,
+    level: null,
+    experiencePoints: null,
+    privacy: null,
+    adminPowers: adminPowers,
+    enabled: null,
+    lastLogin: null,
+    creationDate: null,
+    modificationDate: null,
+    options: null,
+    blockedUsers: null,
+    followedUsers: null,
+    devices: null,
+    systems: null,
+    interests: null,
+    achievements: null,
+    experiencesDone: null,
+    experiencesLiked: null,
+    experiencesToDo: null,
   );
 }
 

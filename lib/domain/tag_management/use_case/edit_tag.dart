@@ -12,7 +12,7 @@ import 'package:worldon/domain/tag_management/repository/tag_management_reposito
 class EditTag implements AsyncUseCase<Unit, Params> {
   final TagManagementRepositoryInterface _repository;
 
-  const EditTag(this._repository);
+  EditTag(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {

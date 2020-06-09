@@ -7,7 +7,7 @@ import 'package:worldon/domain/profile/repository/profile_repository_interface.d
 class UnFollowUser implements AsyncUseCase<Unit, Params> {
   final ProfileRepositoryInterface _repository;
 
-  const UnFollowUser(this._repository);
+  UnFollowUser(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {

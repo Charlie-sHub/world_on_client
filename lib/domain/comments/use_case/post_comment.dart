@@ -11,7 +11,7 @@ import 'package:worldon/domain/core/validation/objects/past_date.dart';
 class PostComment implements AsyncUseCase<Unit, Params> {
   final CommentRepositoryInterface _repository;
 
-  const PostComment(this._repository);
+  PostComment(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {

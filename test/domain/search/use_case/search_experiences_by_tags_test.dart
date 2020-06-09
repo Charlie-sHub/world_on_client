@@ -19,12 +19,37 @@ void main() {
       useCase = SearchExperiencesByTags(mockSearchRepository);
     },
   );
-  final tags = {Tag(id: 1, name: Name("test"))};
+  final tag = Tag(
+    id: 1,
+    name: Name("test"),
+    creationDate: null,
+    modificationDate: null,
+    creator: null,
+  );
+  final tags = {
+    tag,
+  };
   final params = Params(tags: tags);
   final experiencesFound = {
-    Experience(name: Name("test")),
-    Experience(name: Name("testable")),
-    Experience(name: Name("testing")),
+    Experience(
+      id: null,
+      name: null,
+      description: null,
+      imageNames: null,
+      latitude: null,
+      longitude: null,
+      location: null,
+      creator: null,
+      difficulty: null,
+      creationDate: null,
+      modificationDate: null,
+      comments: null,
+      objectives: null,
+      rewards: null,
+      tags: {tag},
+      likedBy: null,
+      doneBy: null,
+    ),
   };
   test(
     "Should return a Set of Experiences",

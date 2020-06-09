@@ -15,7 +15,7 @@ import 'package:worldon/domain/core/validation/objects/past_date.dart';
 class EditAchievement implements AsyncUseCase<Unit, Params> {
   final AchievementRepositoryInterface _repository;
 
-  const EditAchievement(this._repository);
+  EditAchievement(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {

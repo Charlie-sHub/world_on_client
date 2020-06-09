@@ -10,7 +10,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 class DeleteComment implements AsyncUseCase<Unit, Params> {
   final CommentRepositoryInterface _repository;
 
-  const DeleteComment(this._repository);
+  DeleteComment(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {

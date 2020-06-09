@@ -8,7 +8,7 @@ import 'package:worldon/domain/profile/repository/profile_repository_interface.d
 class LoadUserAchievements implements AsyncUseCase<Set<Achievement>, Params> {
   final ProfileRepositoryInterface _repository;
 
-  const LoadUserAchievements(this._repository);
+  LoadUserAchievements(this._repository);
 
   @override
   Future<Either<Failure, Set<Achievement>>> call(Params params) async {

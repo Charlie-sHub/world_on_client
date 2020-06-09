@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/authentication/failures/authentication_failure.dart';
 import 'package:worldon/domain/authentication/use_case/register.dart';
-import 'package:worldon/domain/core/entities/options.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
@@ -34,6 +33,7 @@ void main() {
     birthday: PastDate(DateTime.now()),
     description: EntityDescription("For testing"),
     imageName: "test.png",
+    interests: null,
   );
   final user = User(
     id: 2,
@@ -52,7 +52,16 @@ void main() {
     lastLogin: PastDate(DateTime.now()),
     creationDate: PastDate(DateTime.now()),
     modificationDate: PastDate(DateTime.now()),
-    options: Options(),
+    options: null,
+    interests: null,
+    systems: null,
+    followedUsers: null,
+    experiencesToDo: null,
+    experiencesLiked: null,
+    experiencesDone: null,
+    devices: null,
+    blockedUsers: null,
+    achievements: null,
   );
   test(
     "Should send the User to the server to be registered",

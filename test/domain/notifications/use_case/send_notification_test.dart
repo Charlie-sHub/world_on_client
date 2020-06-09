@@ -2,7 +2,6 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/core/entities/notification.dart';
-import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/notifications/use_case/send_notification.dart';
@@ -20,8 +19,8 @@ void main() {
     },
   );
   final params = Params(
-    sender: User(id: 1),
-    receiver: User(id: 2),
+    sender: null,
+    receiver: null,
     description: EntityDescription("test"),
     seen: false,
     type: NotificationType.follow,

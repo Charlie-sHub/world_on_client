@@ -10,7 +10,7 @@ import 'package:worldon/domain/profile/repository/profile_repository_interface.d
 class DeleteExperience implements AsyncUseCase<Unit, Params> {
   final ProfileRepositoryInterface _repository;
 
-  const DeleteExperience(this._repository);
+  DeleteExperience(this._repository);
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {

@@ -1,0 +1,15 @@
+import 'package:dartz/dartz.dart';
+import 'package:worldon/core/error/failures.dart';
+import 'package:worldon/domain/core/repository/core_repository_interface.dart';
+import 'package:worldon/domain/core/use_case/use_case.dart';
+
+class DeleteCache implements AsyncUseCase<Unit, NoParams> {
+  final CoreRepositoryInterface _repository;
+
+  DeleteCache(this._repository);
+
+  @override
+  Future<Either<Failure, Unit>> call(NoParams params) {
+    return _repository.deleteCache();
+  }
+}

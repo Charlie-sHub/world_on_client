@@ -19,7 +19,7 @@ import 'package:worldon/domain/core/validation/objects/user_level.dart';
 class Register implements AsyncUseCase<User, Params> {
   final AuthenticationRepositoryInterface _repository;
 
-  const Register(this._repository);
+  Register(this._repository);
 
   @override
   Future<Either<Failure, User>> call(Params params) async {

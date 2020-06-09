@@ -8,7 +8,7 @@ import 'package:worldon/domain/tag_management/repository/tag_management_reposito
 class GetTag implements AsyncUseCase<Tag, Params> {
   final TagManagementRepositoryInterface _repository;
 
-  const GetTag(this._repository);
+  GetTag(this._repository);
 
   @override
   Future<Either<Failure, Tag>> call(Params params) async {

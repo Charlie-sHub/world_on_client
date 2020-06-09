@@ -46,6 +46,16 @@ void main() {
     lastLogin: PastDate(DateTime.now()),
     creationDate: PastDate(DateTime.now()),
     modificationDate: PastDate(DateTime.now()),
+    options: null,
+    achievements: null,
+    blockedUsers: null,
+    devices: null,
+    experiencesDone: null,
+    experiencesLiked: null,
+    experiencesToDo: null,
+    followedUsers: null,
+    interests: null,
+    systems: null,
   );
   test(
     "Should get the logged in User from a given User to log in",
