@@ -28,7 +28,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(null));
-      verifyInteractions(mockRemoteOptionsRepository);
+      _verifyInteractions(mockRemoteOptionsRepository);
     },
   );
   group(
@@ -44,14 +44,14 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockRemoteOptionsRepository);
+          _verifyInteractions(mockRemoteOptionsRepository);
         },
       );
     },
   );
 }
 
-void verifyInteractions(MockRemoteOptionsRepository mockRemoteOptionsRepository) {
+void _verifyInteractions(MockRemoteOptionsRepository mockRemoteOptionsRepository) {
   verify(mockRemoteOptionsRepository.saveGlobalOptions(any));
   verifyNoMoreInteractions(mockRemoteOptionsRepository);
 }

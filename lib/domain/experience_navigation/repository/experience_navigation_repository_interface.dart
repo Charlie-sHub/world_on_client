@@ -19,4 +19,7 @@ abstract class ExperienceNavigationRepositoryInterface {
 
   /// Sends the IDs of a [User] and an [Experience] so the server adds the [Experience] to the [User]'s done list
   Future<Either<Failure, Unit>> finishExperience({int userId, int experienceId});
+
+  /// Sends a pair of latitude and longitude values and returns a [Set] of [Experience]s located within a certain radius
+  Future<Either<Failure, Set<Experience>>> loadSurroundingExperiences({double latitude, double longitude});
 }

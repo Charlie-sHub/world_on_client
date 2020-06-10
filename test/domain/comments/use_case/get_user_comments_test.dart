@@ -37,7 +37,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(commentSet));
-      verifyInteractions(mockCommentRepository);
+      _verifyInteractions(mockCommentRepository);
     },
   );
   group(
@@ -53,7 +53,7 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockCommentRepository);
+          _verifyInteractions(mockCommentRepository);
         },
       );
       test(
@@ -66,7 +66,7 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockCommentRepository);
+          _verifyInteractions(mockCommentRepository);
         },
       );
       test(
@@ -79,14 +79,14 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockCommentRepository);
+          _verifyInteractions(mockCommentRepository);
         },
       );
     },
   );
 }
 
-void verifyInteractions(MockCommentRepository mockCommentRepository) {
+void _verifyInteractions(MockCommentRepository mockCommentRepository) {
   verify(mockCommentRepository.getUserComments(any));
   verifyNoMoreInteractions(mockCommentRepository);
 }

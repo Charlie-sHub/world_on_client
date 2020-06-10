@@ -24,7 +24,7 @@ abstract class AchievementRepositoryInterface {
   Future<Either<Failure, Set<Achievement>>> getUserAchievements(int userId);
 
   /// Gets all the [Achievement]s in the database.
-  // TODO: Make it so only a few Achievements are gotten each time it's called
+  // TODO: Make it so only a few Achievements are gotten each time it's called, same with other getAll methods
   // Getting all the achievements at once is not scalable, though it's not that bad
   Future<Either<Failure, List<Achievement>>> getAllAchievement();
 }

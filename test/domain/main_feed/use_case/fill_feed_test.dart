@@ -23,7 +23,7 @@ void main() {
       id: null,
       name: null,
       description: null,
-      imageNames: null,
+      imageURLs: null,
       latitude: null,
       longitude: null,
       location: null,
@@ -48,7 +48,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(experienceList));
-      verifyInteractions(mockMainFeedRepository);
+      _verifyInteractions(mockMainFeedRepository);
     },
   );
   group(
@@ -63,7 +63,7 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockMainFeedRepository);
+          _verifyInteractions(mockMainFeedRepository);
         },
       );
       test(
@@ -75,7 +75,7 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockMainFeedRepository);
+          _verifyInteractions(mockMainFeedRepository);
         },
       );
       test(
@@ -87,14 +87,14 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockMainFeedRepository);
+          _verifyInteractions(mockMainFeedRepository);
         },
       );
     },
   );
 }
 
-void verifyInteractions(MockMainFeedRepository mockMainFeedRepository) {
+void _verifyInteractions(MockMainFeedRepository mockMainFeedRepository) {
   verify(mockMainFeedRepository.fillFeed(any));
   verifyNoMoreInteractions(mockMainFeedRepository);
 }

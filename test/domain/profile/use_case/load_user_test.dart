@@ -33,7 +33,7 @@ void main() {
     email: EmailAddress("test@test.test"),
     birthday: PastDate(DateTime.now()),
     description: EntityDescription("For testing"),
-    imageName: "test.png",
+    imageURL: "test.png",
     level: UserLevel(1),
     experiencePoints: ExperiencePoints(1),
     privacy: false,
@@ -62,7 +62,7 @@ void main() {
       final result = await useCase(Params(id: id));
       // Assert
       expect(result, right(user));
-      verifyInteractions(mockProfileRepository);
+      _verifyInteractions(mockProfileRepository);
     },
   );
   group(
@@ -78,7 +78,7 @@ void main() {
           final result = await useCase(Params(id: id));
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockProfileRepository);
+          _verifyInteractions(mockProfileRepository);
         },
       );
       test(
@@ -91,7 +91,7 @@ void main() {
           final result = await useCase(Params(id: id));
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockProfileRepository);
+          _verifyInteractions(mockProfileRepository);
         },
       );
       test(
@@ -104,14 +104,14 @@ void main() {
           final result = await useCase(Params(id: id));
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockProfileRepository);
+          _verifyInteractions(mockProfileRepository);
         },
       );
     },
   );
 }
 
-void verifyInteractions(MockProfileRepository mockProfileRepository) {
+void _verifyInteractions(MockProfileRepository mockProfileRepository) {
   verify(mockProfileRepository.loadUser(any));
   verifyNoMoreInteractions(mockProfileRepository);
 }

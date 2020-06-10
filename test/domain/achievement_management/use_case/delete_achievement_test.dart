@@ -18,14 +18,14 @@ void main() {
       useCase = DeleteAchievement(mockAchievementRepository);
     },
   );
-  final randomUser = setUpUser(id: 1, adminPowers: false);
-  final creatorUser = setUpUser(id: 2, adminPowers: false);
-  final admin = setUpUser(id: 3, adminPowers: true);
+  final randomUser = _setUpUser(id: 1, adminPowers: false);
+  final creatorUser = _setUpUser(id: 2, adminPowers: false);
+  final admin = _setUpUser(id: 3, adminPowers: true);
   final achievement = Achievement(
     id: 1,
     name: null,
     description: null,
-    imageName: null,
+    imageURL: null,
     type: null,
     requisite: null,
     experiencePoints: null,
@@ -53,7 +53,7 @@ void main() {
           final result = await useCase(setUpParams(creatorUser));
           // Assert
           expect(result, right(null));
-          verifyInteractions(mockAchievementRepository);
+          _verifyInteractions(mockAchievementRepository);
         },
       );
       test(
@@ -65,7 +65,7 @@ void main() {
           final result = await useCase(setUpParams(admin));
           // Assert
           expect(result, right(null));
-          verifyInteractions(mockAchievementRepository);
+          _verifyInteractions(mockAchievementRepository);
         },
       );
     },
@@ -83,7 +83,7 @@ void main() {
           final result = await useCase(setUpParams(creatorUser));
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockAchievementRepository);
+          _verifyInteractions(mockAchievementRepository);
         },
       );
       test(
@@ -96,7 +96,7 @@ void main() {
           final result = await useCase(setUpParams(creatorUser));
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockAchievementRepository);
+          _verifyInteractions(mockAchievementRepository);
         },
       );
       test(
@@ -113,7 +113,7 @@ void main() {
   );
 }
 
-User setUpUser({int id, bool adminPowers}) {
+User _setUpUser({int id, bool adminPowers}) {
   return User(
     id: id,
     name: null,
@@ -122,7 +122,7 @@ User setUpUser({int id, bool adminPowers}) {
     email: null,
     birthday: null,
     description: null,
-    imageName: null,
+    imageURL: null,
     level: null,
     experiencePoints: null,
     privacy: null,
@@ -144,7 +144,7 @@ User setUpUser({int id, bool adminPowers}) {
   );
 }
 
-void verifyInteractions(MockAchievementRepository mockAchievementRepository) {
+void _verifyInteractions(MockAchievementRepository mockAchievementRepository) {
   verify(mockAchievementRepository.removeAchievement(any));
   verifyNoMoreInteractions(mockAchievementRepository);
 }

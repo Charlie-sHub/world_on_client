@@ -17,9 +17,9 @@ void main() {
       useCase = DeleteUser(mockRemoteOptionsRepository);
     },
   );
-  final admin = setUpUser(id: 1, adminPowers: true);
-  final userToDelete = setUpUser(id: 2, adminPowers: false);
-  final userRandom = setUpUser(id: 3, adminPowers: false);
+  final admin = _setUpUser(id: 1, adminPowers: true);
+  final userToDelete = _setUpUser(id: 2, adminPowers: false);
+  final userRandom = _setUpUser(id: 3, adminPowers: false);
   Params setUpParams(User userRequesting) {
     return Params(
       userRequesting: userRequesting,
@@ -39,7 +39,7 @@ void main() {
           final result = await useCase(setUpParams(admin));
           // Assert
           expect(result, right(null));
-          verifyInteractions(mockRemoteOptionsRepository);
+          _verifyInteractions(mockRemoteOptionsRepository);
         },
       );
       test(
@@ -51,7 +51,7 @@ void main() {
           final result = await useCase(setUpParams(userToDelete));
           // Assert
           expect(result, right(null));
-          verifyInteractions(mockRemoteOptionsRepository);
+          _verifyInteractions(mockRemoteOptionsRepository);
         },
       );
     },
@@ -69,7 +69,7 @@ void main() {
           final result = await useCase(setUpParams(userToDelete));
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockRemoteOptionsRepository);
+          _verifyInteractions(mockRemoteOptionsRepository);
         },
       );
       test(
@@ -86,7 +86,7 @@ void main() {
   );
 }
 
-User setUpUser({int id, bool adminPowers}) {
+User _setUpUser({int id, bool adminPowers}) {
   return User(
     id: id,
     name: null,
@@ -95,7 +95,7 @@ User setUpUser({int id, bool adminPowers}) {
     email: null,
     birthday: null,
     description: null,
-    imageName: null,
+    imageURL: null,
     level: null,
     experiencePoints: null,
     privacy: null,
@@ -117,7 +117,7 @@ User setUpUser({int id, bool adminPowers}) {
   );
 }
 
-void verifyInteractions(MockRemoteOptionsRepository mockRemoteOptionsRepository) {
+void _verifyInteractions(MockRemoteOptionsRepository mockRemoteOptionsRepository) {
   verify(mockRemoteOptionsRepository.deleteUser(any));
   verifyNoMoreInteractions(mockRemoteOptionsRepository);
 }

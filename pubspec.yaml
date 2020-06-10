@@ -49,6 +49,8 @@ dependencies:
   injectable: ^0.3.0
   # For email validation
   email_validator: ^1.0.4
+  # For mapping
+  google_maps_flutter: ^0.5.27+3
   flushbar: ^1.10.0
   uuid: ^2.0.4
 

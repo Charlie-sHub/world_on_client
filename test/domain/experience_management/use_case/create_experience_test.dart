@@ -41,7 +41,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(null));
-      verifyInteractions(mockExperienceManagementRepository);
+      _verifyInteractions(mockExperienceManagementRepository);
     },
   );
   group(
@@ -57,14 +57,14 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockExperienceManagementRepository);
+          _verifyInteractions(mockExperienceManagementRepository);
         },
       );
     },
   );
 }
 
-void verifyInteractions(MockExperienceManagementRepository mockExperienceManagementRepository) {
+void _verifyInteractions(MockExperienceManagementRepository mockExperienceManagementRepository) {
   verify(mockExperienceManagementRepository.createExperience(any));
   verifyNoMoreInteractions(mockExperienceManagementRepository);
 }

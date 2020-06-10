@@ -26,7 +26,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(null));
-      verifyInteractions(mockNotificationRepository);
+      _verifyInteractions(mockNotificationRepository);
     },
   );
   group(
@@ -42,14 +42,14 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockNotificationRepository);
+          _verifyInteractions(mockNotificationRepository);
         },
       );
     },
   );
 }
 
-void verifyInteractions(MockNotificationRepository mockNotificationRepository) {
+void _verifyInteractions(MockNotificationRepository mockNotificationRepository) {
   verify(mockNotificationRepository.deleteUserNotifications(any));
   verifyNoMoreInteractions(mockNotificationRepository);
 }

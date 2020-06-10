@@ -32,7 +32,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(null));
-      verifyInteractions(mockExperienceLogRepository);
+      _verifyInteractions(mockExperienceLogRepository);
     },
   );
   group(
@@ -51,14 +51,14 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockExperienceLogRepository);
+          _verifyInteractions(mockExperienceLogRepository);
         },
       );
     },
   );
 }
 
-void verifyInteractions(MockExperienceLogRepository mockExperienceLogRepository) {
+void _verifyInteractions(MockExperienceLogRepository mockExperienceLogRepository) {
   verify(mockExperienceLogRepository.dismissExperienceFromLog(
     userId: anyNamed("userId"),
     experienceId: anyNamed("experienceId"),

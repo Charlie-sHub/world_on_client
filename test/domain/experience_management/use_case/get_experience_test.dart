@@ -26,7 +26,7 @@ void main() {
     id: 1,
     name: Name("test"),
     description: EntityDescription("It's a test"),
-    imageNames: const {"test.jpg"},
+    imageURLs: const {"test.jpg"},
     latitude: 1.1,
     longitude: 1.1,
     location: null,
@@ -50,7 +50,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(experience));
-      verifyInteractions(mockExperienceManagementRepository);
+      _verifyInteractions(mockExperienceManagementRepository);
     },
   );
   group(
@@ -66,7 +66,7 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockExperienceManagementRepository);
+          _verifyInteractions(mockExperienceManagementRepository);
         },
       );
       test(
@@ -79,7 +79,7 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockExperienceManagementRepository);
+          _verifyInteractions(mockExperienceManagementRepository);
         },
       );
       test(
@@ -92,14 +92,14 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockExperienceManagementRepository);
+          _verifyInteractions(mockExperienceManagementRepository);
         },
       );
     },
   );
 }
 
-void verifyInteractions(MockExperienceManagementRepository mockExperienceManagementRepository) {
+void _verifyInteractions(MockExperienceManagementRepository mockExperienceManagementRepository) {
   verify(mockExperienceManagementRepository.getExperience(any));
   verifyNoMoreInteractions(mockExperienceManagementRepository);
 }

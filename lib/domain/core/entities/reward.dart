@@ -10,13 +10,13 @@ class Reward extends Equatable {
   final int id;
   final Name name;
   final EntityDescription description;
-  final String imageName;
+  final String imageURL;
 
   const Reward({
     @required this.id,
     @required this.name,
     @required this.description,
-    @required this.imageName,
+    @required this.imageURL,
   });
 
   @override
@@ -24,6 +24,6 @@ class Reward extends Equatable {
         id,
         name,
         description,
-        imageName,
+        imageURL,
       ];
 }

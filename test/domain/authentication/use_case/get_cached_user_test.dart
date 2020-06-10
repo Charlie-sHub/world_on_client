@@ -27,7 +27,7 @@ void main() {
     email: null,
     birthday: null,
     description: null,
-    imageName: null,
+    imageURL: null,
     level: null,
     experiencePoints: null,
     privacy: null,
@@ -56,7 +56,7 @@ void main() {
       final result = await useCase(NoParams());
       // Assert
       expect(result, right(user));
-      verifyInteractions(mockCachedUserRepository);
+      _verifyInteractions(mockCachedUserRepository);
     },
   );
   group(
@@ -72,7 +72,7 @@ void main() {
           final result = await useCase(NoParams());
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockCachedUserRepository);
+          _verifyInteractions(mockCachedUserRepository);
         },
       );
       test(
@@ -85,14 +85,14 @@ void main() {
           final result = await useCase(NoParams());
           // Assert
           expect(result, left(authenticationFailure));
-          verifyInteractions(mockCachedUserRepository);
+          _verifyInteractions(mockCachedUserRepository);
         },
       );
     },
   );
 }
 
-void verifyInteractions(MockCachedUserRepository mockCachedUserRepository) {
+void _verifyInteractions(MockCachedUserRepository mockCachedUserRepository) {
   verify(mockCachedUserRepository.getCachedUser());
   verifyNoMoreInteractions(mockCachedUserRepository);
 }

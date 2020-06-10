@@ -25,7 +25,7 @@ class CreateExperience implements AsyncUseCase<Unit, Params> {
       id: null,
       name: params.name,
       description: params.description,
-      imageNames: params.imageNames,
+      imageURLs: params.imageNames,
       latitude: params.latitude,
       longitude: params.longitude,
       location: params.location,
@@ -55,6 +55,10 @@ class Params {
   final Difficulty difficulty;
 
   // TODO: Determine how to create Objectives
+  // Objectives could be created with use-cases like the other entities, but it doesn't make much sense to have a use-case only construct and object and return it
+  // at the same time i don't like the idea of creating the Objective objects in the BLoC as it kinda defeats the purpose of the use-cases, at the very least it'd
+  // weird to leave the Objectives as the only entities to be instantiated that way. Leaning more on the use-case even if just to keep things similar and following
+  // the architecture as closely as possible.
   final Set<Objective> objectives;
   final Set<Reward> rewards;
   final Set<Tag> tags;

@@ -32,7 +32,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(null));
-      verifyInteractions(mockProfileRepository);
+      _verifyInteractions(mockProfileRepository);
     },
   );
   group(
@@ -51,14 +51,14 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockProfileRepository);
+          _verifyInteractions(mockProfileRepository);
         },
       );
     },
   );
 }
 
-void verifyInteractions(MockProfileRepository mockProfileRepository) {
+void _verifyInteractions(MockProfileRepository mockProfileRepository) {
   verify(mockProfileRepository.unBlockUser(
     blockedId: anyNamed("blockedId"),
     blockerId: anyNamed("blockerId"),

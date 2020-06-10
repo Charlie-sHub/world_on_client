@@ -33,7 +33,7 @@ void main() {
     email: EmailAddress("test@test.test"),
     birthday: PastDate(DateTime.now()),
     description: EntityDescription("For testing"),
-    imageName: "test.png",
+    imageURL: "test.png",
     level: UserLevel(1),
     experiencePoints: ExperiencePoints(1),
     privacy: false,
@@ -62,7 +62,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(user));
-      verifyInteractions(mockTagRepository);
+      _verifyInteractions(mockTagRepository);
     },
   );
   group(
@@ -78,7 +78,7 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockTagRepository);
+          _verifyInteractions(mockTagRepository);
         },
       );
       test(
@@ -91,7 +91,7 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockTagRepository);
+          _verifyInteractions(mockTagRepository);
         },
       );
       test(
@@ -104,14 +104,14 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockTagRepository);
+          _verifyInteractions(mockTagRepository);
         },
       );
     },
   );
 }
 
-void verifyInteractions(MockTagRepository mockTagRepository) {
+void _verifyInteractions(MockTagRepository mockTagRepository) {
   verify(mockTagRepository.getCreator(any));
   verifyNoMoreInteractions(mockTagRepository);
 }

@@ -1,37 +1,40 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/core/failures/core_failure.dart';
-import 'package:worldon/domain/experience_navigation/use_case/like_experience.dart';
+import 'package:worldon/domain/experience_navigation/use_case/load_surrounding_experiences.dart';
 
 import '../../../constants.dart';
 import '../repository/mock_experience_navigation_repository.dart';
 
 void main() {
   MockExperienceNavigationRepository mockExperienceNavigationRepository;
-  LikeExperience useCase;
+  LoadSurroundingExperiences useCase;
   setUp(
     () {
       mockExperienceNavigationRepository = MockExperienceNavigationRepository();
-      useCase = LikeExperience(mockExperienceNavigationRepository);
+      useCase = LoadSurroundingExperiences(mockExperienceNavigationRepository);
     },
   );
   final params = Params(
-    experienceId: 1,
-    userId: 1,
+    latitude: 0.0,
+    longitude: 0.0,
   );
+  // TODO: refactor the other tests so they use empty Sets instead of Sets with null values
+  final experienceSet = <Experience>{};
   test(
-    descriptionReturnNothing,
+    "Should return a Set of Experiences",
     () async {
       // Arrange
-      when(mockExperienceNavigationRepository.likeExperience(
-        experienceId: anyNamed("experienceId"),
-        userId: anyNamed("userId"),
-      )).thenAnswer((_) async => right(null));
+      when(mockExperienceNavigationRepository.loadSurroundingExperiences(
+        latitude: anyNamed("latitude"),
+        longitude: anyNamed("longitude"),
+      )).thenAnswer((_) async => right(experienceSet));
       // Act
       final result = await useCase(params);
       // Assert
-      expect(result, right(null));
+      expect(result, right(experienceSet));
       _verifyInteractions(mockExperienceNavigationRepository);
     },
   );
@@ -43,9 +46,9 @@ void main() {
         () async {
           // Arrange
           const coreFailure = CoreFailure.serverError();
-          when(mockExperienceNavigationRepository.likeExperience(
-            experienceId: anyNamed("experienceId"),
-            userId: anyNamed("userId"),
+          when(mockExperienceNavigationRepository.loadSurroundingExperiences(
+            latitude: anyNamed("latitude"),
+            longitude: anyNamed("longitude"),
           )).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);
@@ -59,9 +62,9 @@ void main() {
         () async {
           // Arrange
           const coreFailure = CoreFailure.notFoundError();
-          when(mockExperienceNavigationRepository.likeExperience(
-            experienceId: anyNamed("experienceId"),
-            userId: anyNamed("userId"),
+          when(mockExperienceNavigationRepository.loadSurroundingExperiences(
+            latitude: anyNamed("latitude"),
+            longitude: anyNamed("longitude"),
           )).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);
@@ -75,9 +78,9 @@ void main() {
 }
 
 void _verifyInteractions(MockExperienceNavigationRepository mockExperienceNavigationRepository) {
-  verify(mockExperienceNavigationRepository.likeExperience(
-    experienceId: anyNamed("experienceId"),
-    userId: anyNamed("userId"),
+  verify(mockExperienceNavigationRepository.loadSurroundingExperiences(
+    latitude: anyNamed("latitude"),
+    longitude: anyNamed("longitude"),
   ));
   verifyNoMoreInteractions(mockExperienceNavigationRepository);
 }

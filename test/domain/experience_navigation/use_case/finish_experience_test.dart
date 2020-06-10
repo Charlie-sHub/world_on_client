@@ -32,7 +32,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(null));
-      verifyInteractions(mockExperienceNavigationRepository);
+      _verifyInteractions(mockExperienceNavigationRepository);
     },
   );
   group(
@@ -51,7 +51,7 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockExperienceNavigationRepository);
+          _verifyInteractions(mockExperienceNavigationRepository);
         },
       );
       test(
@@ -67,14 +67,14 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockExperienceNavigationRepository);
+          _verifyInteractions(mockExperienceNavigationRepository);
         },
       );
     },
   );
 }
 
-void verifyInteractions(MockExperienceNavigationRepository mockExperienceNavigationRepository) {
+void _verifyInteractions(MockExperienceNavigationRepository mockExperienceNavigationRepository) {
   verify(mockExperienceNavigationRepository.finishExperience(
     experienceId: anyNamed("experienceId"),
     userId: anyNamed("userId"),

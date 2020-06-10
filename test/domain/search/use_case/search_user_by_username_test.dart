@@ -29,7 +29,7 @@ void main() {
       email: null,
       birthday: null,
       description: null,
-      imageName: null,
+      imageURL: null,
       level: null,
       experiencePoints: null,
       privacy: null,
@@ -59,7 +59,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(usersFoundByUsername));
-      verifyInteractions(mockSearchRepository);
+      _verifyInteractions(mockSearchRepository);
     },
   );
   group(
@@ -75,7 +75,7 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockSearchRepository);
+          _verifyInteractions(mockSearchRepository);
         },
       );
       test(
@@ -88,7 +88,7 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockSearchRepository);
+          _verifyInteractions(mockSearchRepository);
         },
       );
       test(
@@ -101,14 +101,14 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockSearchRepository);
+          _verifyInteractions(mockSearchRepository);
         },
       );
     },
   );
 }
 
-void verifyInteractions(MockSearchRepository mockSearchRepository) {
+void _verifyInteractions(MockSearchRepository mockSearchRepository) {
   verify(mockSearchRepository.searchUsersByUserName(any));
   verifyNoMoreInteractions(mockSearchRepository);
 }

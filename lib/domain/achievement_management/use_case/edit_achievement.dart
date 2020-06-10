@@ -25,7 +25,7 @@ class EditAchievement implements AsyncUseCase<Unit, Params> {
         id: params.id,
         name: params.name,
         description: params.description,
-        imageName: params.imageName,
+        imageURL: params.imageName,
         type: params.type,
         requisite: params.requisite,
         experiencePoints: params.experiencePoints,

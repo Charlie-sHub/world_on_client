@@ -39,7 +39,7 @@ void main() {
       final result = await useCase(NoParams());
       // Assert
       expect(result, right(tagList));
-      verifyInteractions(mockTagRepository);
+      _verifyInteractions(mockTagRepository);
     },
   );
   group(
@@ -55,7 +55,7 @@ void main() {
           final result = await useCase(NoParams());
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockTagRepository);
+          _verifyInteractions(mockTagRepository);
         },
       );
       test(
@@ -68,7 +68,7 @@ void main() {
           final result = await useCase(NoParams());
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockTagRepository);
+          _verifyInteractions(mockTagRepository);
         },
       );
       test(
@@ -81,14 +81,14 @@ void main() {
           final result = await useCase(NoParams());
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockTagRepository);
+          _verifyInteractions(mockTagRepository);
         },
       );
     },
   );
 }
 
-void verifyInteractions(MockTagRepository mockTagRepository) {
+void _verifyInteractions(MockTagRepository mockTagRepository) {
   verify(mockTagRepository.getAllTags());
   verifyNoMoreInteractions(mockTagRepository);
 }

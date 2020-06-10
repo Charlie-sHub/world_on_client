@@ -18,7 +18,7 @@ class Experience extends Equatable {
   final int id;
   final Name name;
   final EntityDescription description;
-  final Set<String> imageNames;
+  final Set<String> imageURLs;
   final double latitude;
   final double longitude;
   final Location location;
@@ -37,7 +37,7 @@ class Experience extends Equatable {
     @required this.id,
     @required this.name,
     @required this.description,
-    @required this.imageNames,
+    @required this.imageURLs,
     @required this.latitude,
     @required this.longitude,
     @required this.location,
@@ -58,7 +58,7 @@ class Experience extends Equatable {
         id,
         name,
         description,
-        imageNames,
+        imageURLs,
         latitude,
         longitude,
         location,

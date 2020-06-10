@@ -27,7 +27,7 @@ void main() {
       email: null,
       birthday: null,
       description: null,
-      imageName: null,
+      imageURL: null,
       level: null,
       experiencePoints: null,
       privacy: null,
@@ -57,7 +57,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(followedUsers));
-      verifyInteractions(mockProfileRepository);
+      _verifyInteractions(mockProfileRepository);
     },
   );
   group(
@@ -73,7 +73,7 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockProfileRepository);
+          _verifyInteractions(mockProfileRepository);
         },
       );
       test(
@@ -86,7 +86,7 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockProfileRepository);
+          _verifyInteractions(mockProfileRepository);
         },
       );
       test(
@@ -99,14 +99,14 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockProfileRepository);
+          _verifyInteractions(mockProfileRepository);
         },
       );
     },
   );
 }
 
-void verifyInteractions(MockProfileRepository mockProfileRepository) {
+void _verifyInteractions(MockProfileRepository mockProfileRepository) {
   verify(mockProfileRepository.loadFollowedUsers(any));
   verifyNoMoreInteractions(mockProfileRepository);
 }

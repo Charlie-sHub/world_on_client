@@ -23,7 +23,7 @@ void main() {
       id: null,
       name: null,
       description: null,
-      imageNames: null,
+      imageURLs: null,
       latitude: null,
       longitude: null,
       location: null,
@@ -44,12 +44,11 @@ void main() {
     () async {
       // Arrange
       when(mockProfileRepository.loadExperiencesLiked(any)).thenAnswer((_) async => right(experiencesLiked));
-
       // Act
       final result = await useCase(params);
       // Assert
       expect(result, right(experiencesLiked));
-      verifyInteractions(mockProfileRepository);
+      _verifyInteractions(mockProfileRepository);
     },
   );
   group(
@@ -65,7 +64,7 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockProfileRepository);
+          _verifyInteractions(mockProfileRepository);
         },
       );
       test(
@@ -78,7 +77,7 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockProfileRepository);
+          _verifyInteractions(mockProfileRepository);
         },
       );
       test(
@@ -91,14 +90,14 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockProfileRepository);
+          _verifyInteractions(mockProfileRepository);
         },
       );
     },
   );
 }
 
-void verifyInteractions(MockProfileRepository mockProfileRepository) {
+void _verifyInteractions(MockProfileRepository mockProfileRepository) {
   verify(mockProfileRepository.loadExperiencesLiked(any));
   verifyNoMoreInteractions(mockProfileRepository);
 }

@@ -1,5 +1,26 @@
-// TODO: create and test this use case
-// This is a rather advanced use case
-// as it's supposed to communicate with the server to obtain some sort of list of surrounding experiences
-// in a way that the google maps API can show them
-// shouldn't be too difficult but i'll leave it for later as it is hard but not a priority
+import 'package:dartz/dartz.dart';
+import 'package:worldon/core/error/failures.dart';
+import 'package:worldon/domain/core/entities/experience.dart';
+import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_interface.dart';
+
+class LoadSurroundingExperiences implements AsyncUseCase<Set<Experience>, Params> {
+  final ExperienceNavigationRepositoryInterface _repository;
+
+  LoadSurroundingExperiences(this._repository);
+
+  @override
+  Future<Either<Failure, Set<Experience>>> call(Params params) async {
+    return _repository.loadSurroundingExperiences(
+      longitude: params.longitude,
+      latitude: params.latitude,
+    );
+  }
+}
+
+class Params {
+  final double latitude;
+  final double longitude;
+
+  Params({this.latitude, this.longitude});
+}

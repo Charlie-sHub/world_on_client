@@ -24,9 +24,9 @@ void main() {
       useCase = EditUser(mockProfileRepository);
     },
   );
-  final randomUser = setUpUser(id: 1, adminPowers: false);
-  final admin = setUpUser(id: 2, adminPowers: true);
-  final actualUser = setUpUser(id: 3, adminPowers: false);
+  final randomUser = _setUpUser(id: 1, adminPowers: false);
+  final admin = _setUpUser(id: 2, adminPowers: true);
+  final actualUser = _setUpUser(id: 3, adminPowers: false);
   Params setUpParams(User userRequesting) {
     return Params(
       userRequesting: userRequesting,
@@ -70,7 +70,7 @@ void main() {
           final result = await useCase(setUpParams(admin));
           // Assert
           expect(result, right(null));
-          verifyInteractions(mockProfileRepository);
+          _verifyInteractions(mockProfileRepository);
         },
       );
       test(
@@ -82,7 +82,7 @@ void main() {
           final result = await useCase(setUpParams(actualUser));
           // Assert
           expect(result, right(null));
-          verifyInteractions(mockProfileRepository);
+          _verifyInteractions(mockProfileRepository);
         },
       );
     },
@@ -100,7 +100,7 @@ void main() {
           final result = await useCase(setUpParams(admin));
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockProfileRepository);
+          _verifyInteractions(mockProfileRepository);
         },
       );
       test(
@@ -113,7 +113,7 @@ void main() {
           final result = await useCase(setUpParams(admin));
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockProfileRepository);
+          _verifyInteractions(mockProfileRepository);
         },
       );
       test(
@@ -126,7 +126,7 @@ void main() {
           final result = await useCase(setUpParams(admin));
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockProfileRepository);
+          _verifyInteractions(mockProfileRepository);
         },
       );
       test(
@@ -142,7 +142,7 @@ void main() {
   );
 }
 
-User setUpUser({int id, bool adminPowers}) {
+User _setUpUser({int id, bool adminPowers}) {
   return User(
     id: id,
     name: null,
@@ -151,7 +151,7 @@ User setUpUser({int id, bool adminPowers}) {
     email: null,
     birthday: null,
     description: null,
-    imageName: null,
+    imageURL: null,
     level: null,
     experiencePoints: null,
     privacy: null,
@@ -173,7 +173,7 @@ User setUpUser({int id, bool adminPowers}) {
   );
 }
 
-void verifyInteractions(MockProfileRepository mockProfileRepository) {
+void _verifyInteractions(MockProfileRepository mockProfileRepository) {
   verify(mockProfileRepository.editUser(any));
   verifyNoMoreInteractions(mockProfileRepository);
 }

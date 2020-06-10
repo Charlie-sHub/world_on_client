@@ -23,7 +23,7 @@ void main() {
   final params = Params(
     name: Name("Test Achievement"),
     description: EntityDescription("This is just a test"),
-    imageName: "test.jpg",
+    imageUrl: "test.jpg",
     type: "test",
     requisite: 1,
     experiencePoints: ExperiencePoints(1),
@@ -39,7 +39,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(null));
-      verifyInteractions(mockAchievementRepository);
+      _verifyInteractions(mockAchievementRepository);
     },
   );
   group(
@@ -55,7 +55,7 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockAchievementRepository);
+          _verifyInteractions(mockAchievementRepository);
         },
       );
       test(
@@ -68,14 +68,14 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockAchievementRepository);
+          _verifyInteractions(mockAchievementRepository);
         },
       );
     },
   );
 }
 
-void verifyInteractions(MockAchievementRepository mockAchievementRepository) {
+void _verifyInteractions(MockAchievementRepository mockAchievementRepository) {
   verify(mockAchievementRepository.createAchievement(any));
   verifyNoMoreInteractions(mockAchievementRepository);
 }

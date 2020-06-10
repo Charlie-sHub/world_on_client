@@ -25,7 +25,7 @@ void main() {
     email: EmailAddress("test@test.test"),
     birthday: PastDate(DateTime.now()),
     description: EntityDescription("For testing"),
-    imageName: "test.png",
+    imageURL: "test.png",
     level: UserLevel(1),
     experiencePoints: ExperiencePoints(1),
     privacy: false,

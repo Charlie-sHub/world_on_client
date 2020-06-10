@@ -26,7 +26,7 @@ void main() {
       final result = await useCase(NoParams());
       // Assert
       expect(result, right(null));
-      verifyInteractions(mockCoreRepository);
+      _verifyInteractions(mockCoreRepository);
     },
   );
   test(
@@ -39,12 +39,12 @@ void main() {
       final result = await useCase(NoParams());
       // Assert
       expect(result, left(coreFailure));
-      verifyInteractions(mockCoreRepository);
+      _verifyInteractions(mockCoreRepository);
     },
   );
 }
 
-void verifyInteractions(MockCoreRepository mockCoreRepository) {
+void _verifyInteractions(MockCoreRepository mockCoreRepository) {
   verify(mockCoreRepository.deleteCache());
   verifyNoMoreInteractions(mockCoreRepository);
 }

@@ -30,7 +30,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(null));
-      verifyInteractions(mockTagManagementRepository);
+      _verifyInteractions(mockTagManagementRepository);
     },
   );
   group(
@@ -46,7 +46,7 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockTagManagementRepository);
+          _verifyInteractions(mockTagManagementRepository);
         },
       );
       test(
@@ -59,14 +59,14 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockTagManagementRepository);
+          _verifyInteractions(mockTagManagementRepository);
         },
       );
     },
   );
 }
 
-void verifyInteractions(MockTagManagementRepository mockTagManagementRepository) {
+void _verifyInteractions(MockTagManagementRepository mockTagManagementRepository) {
   verify(mockTagManagementRepository.createTag(any));
   verifyNoMoreInteractions(mockTagManagementRepository);
 }

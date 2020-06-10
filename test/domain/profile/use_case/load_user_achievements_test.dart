@@ -23,7 +23,7 @@ void main() {
       id: null,
       name: null,
       description: null,
-      imageName: null,
+      imageURL: null,
       type: null,
       requisite: null,
       experiencePoints: null,
@@ -42,7 +42,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(achievements));
-      verifyInteractions(mockProfileRepository);
+      _verifyInteractions(mockProfileRepository);
     },
   );
   group(
@@ -58,7 +58,7 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockProfileRepository);
+          _verifyInteractions(mockProfileRepository);
         },
       );
       test(
@@ -71,7 +71,7 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockProfileRepository);
+          _verifyInteractions(mockProfileRepository);
         },
       );
       test(
@@ -84,14 +84,14 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockProfileRepository);
+          _verifyInteractions(mockProfileRepository);
         },
       );
     },
   );
 }
 
-void verifyInteractions(MockProfileRepository mockProfileRepository) {
+void _verifyInteractions(MockProfileRepository mockProfileRepository) {
   verify(mockProfileRepository.loadUserAchievements(any));
   verifyNoMoreInteractions(mockProfileRepository);
 }

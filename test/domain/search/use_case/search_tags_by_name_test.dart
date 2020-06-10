@@ -38,7 +38,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(tagsFound));
-      verifyInteractions(mockSearchRepository);
+      _verifyInteractions(mockSearchRepository);
     },
   );
   group(
@@ -54,7 +54,7 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockSearchRepository);
+          _verifyInteractions(mockSearchRepository);
         },
       );
       test(
@@ -67,7 +67,7 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockSearchRepository);
+          _verifyInteractions(mockSearchRepository);
         },
       );
       test(
@@ -80,14 +80,14 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockSearchRepository);
+          _verifyInteractions(mockSearchRepository);
         },
       );
     },
   );
 }
 
-void verifyInteractions(MockSearchRepository mockSearchRepository) {
+void _verifyInteractions(MockSearchRepository mockSearchRepository) {
   verify(mockSearchRepository.searchTagsByName(any));
   verifyNoMoreInteractions(mockSearchRepository);
 }

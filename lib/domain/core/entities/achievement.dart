@@ -17,7 +17,7 @@ class Achievement extends Equatable {
   final int id;
   final Name name;
   final EntityDescription description;
-  final String imageName; // TODO: Maybe make a value object and validator for image URLs
+  final String imageURL; // TODO: Make a value object and validator for image URLs from World On's back-end
   final String type;
   final int requisite; // This will probably be reworked in the future to accommodate different kinds of achievements
   final ExperiencePoints experiencePoints;
@@ -30,7 +30,7 @@ class Achievement extends Equatable {
     @required this.id,
     @required this.name,
     @required this.description,
-    @required this.imageName,
+    @required this.imageURL,
     @required this.type,
     @required this.requisite,
     @required this.experiencePoints,
@@ -45,7 +45,7 @@ class Achievement extends Equatable {
         id,
         name,
         description,
-        imageName,
+        imageURL,
         type,
         requisite,
         experiencePoints,

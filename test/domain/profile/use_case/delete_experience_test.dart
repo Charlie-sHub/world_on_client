@@ -18,14 +18,14 @@ void main() {
       useCase = DeleteExperience(mockProfileRepository);
     },
   );
-  final randomUser = setUpUser(id: 1, adminPowers: false);
-  final creatorUser = setUpUser(id: 2, adminPowers: false);
-  final admin = setUpUser(id: 3, adminPowers: true);
+  final randomUser = _setUpUser(id: 1, adminPowers: false);
+  final creatorUser = _setUpUser(id: 2, adminPowers: false);
+  final admin = _setUpUser(id: 3, adminPowers: true);
   final experience = Experience(
     id: 1,
     name: null,
     description: null,
-    imageNames: null,
+    imageURLs: null,
     latitude: null,
     longitude: null,
     location: null,
@@ -59,7 +59,7 @@ void main() {
           final result = await useCase(setUpParams(creatorUser));
           // Assert
           expect(result, right(null));
-          verifyInteractions(mockProfileRepository);
+          _verifyInteractions(mockProfileRepository);
         },
       );
       test(
@@ -71,7 +71,7 @@ void main() {
           final result = await useCase(setUpParams(admin));
           // Assert
           expect(result, right(null));
-          verifyInteractions(mockProfileRepository);
+          _verifyInteractions(mockProfileRepository);
         },
       );
     },
@@ -99,14 +99,14 @@ void main() {
           final result = await useCase(setUpParams(creatorUser));
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockProfileRepository);
+          _verifyInteractions(mockProfileRepository);
         },
       );
     },
   );
 }
 
-User setUpUser({int id, bool adminPowers}) {
+User _setUpUser({int id, bool adminPowers}) {
   return User(
     id: id,
     name: null,
@@ -115,7 +115,7 @@ User setUpUser({int id, bool adminPowers}) {
     email: null,
     birthday: null,
     description: null,
-    imageName: null,
+    imageURL: null,
     level: null,
     experiencePoints: null,
     privacy: null,
@@ -137,7 +137,7 @@ User setUpUser({int id, bool adminPowers}) {
   );
 }
 
-void verifyInteractions(MockProfileRepository mockProfileRepository) {
+void _verifyInteractions(MockProfileRepository mockProfileRepository) {
   verify(mockProfileRepository.deleteExperience(any));
   verifyNoMoreInteractions(mockProfileRepository);
 }

@@ -26,7 +26,7 @@ void main() {
       final result = await useCase(NoParams());
       // Assert
       expect(result, right(null));
-      verifyInteractions(mockAuthenticationRepository);
+      _verifyInteractions(mockAuthenticationRepository);
     },
   );
   group(
@@ -42,7 +42,7 @@ void main() {
           final result = await useCase(NoParams());
           // Assert
           expect(result, left(authenticationFailure));
-          verifyInteractions(mockAuthenticationRepository);
+          _verifyInteractions(mockAuthenticationRepository);
         },
       );
       test(
@@ -55,14 +55,14 @@ void main() {
           final result = await useCase(NoParams());
           // Assert
           expect(result, left(authenticationFailure));
-          verifyInteractions(mockAuthenticationRepository);
+          _verifyInteractions(mockAuthenticationRepository);
         },
       );
     },
   );
 }
 
-void verifyInteractions(MockAuthenticationRepository mockAuthenticationRepository) {
+void _verifyInteractions(MockAuthenticationRepository mockAuthenticationRepository) {
   verify(mockAuthenticationRepository.logInGoogle());
   verifyNoMoreInteractions(mockAuthenticationRepository);
 }

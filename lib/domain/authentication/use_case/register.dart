@@ -31,7 +31,7 @@ class Register implements AsyncUseCase<User, Params> {
       email: params.email,
       birthday: params.birthday,
       description: params.description,
-      imageName: params.imageName,
+      imageURL: params.imageName,
       level: UserLevel(0),
       experiencePoints: ExperiencePoints(0),
       privacy: false,

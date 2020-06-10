@@ -29,7 +29,7 @@ class EditExperience implements AsyncUseCase<Unit, Params> {
         id: params.id,
         name: params.name,
         description: params.description,
-        imageNames: params.imageNames,
+        imageURLs: params.imageNames,
         latitude: params.latitude,
         longitude: params.longitude,
         location: params.location,
@@ -68,6 +68,7 @@ class Params {
   final Set<Tag> tags;
 
   // TODO: Should these Sets be here?
+  // They can't be changed when editing an Experience yet leaving them null could be problematic as it may nullify the entries in the database
   final Set<Comment> comments;
   final Set<User> likedBy;
   final Set<User> doneBy;

@@ -25,7 +25,7 @@ class User extends Equatable {
   final EmailAddress email;
   final PastDate birthday;
   final EntityDescription description;
-  final String imageName;
+  final String imageURL;
   final UserLevel level;
   final ExperiencePoints experiencePoints;
   final bool privacy;
@@ -54,7 +54,7 @@ class User extends Equatable {
     @required this.email,
     @required this.birthday,
     @required this.description,
-    @required this.imageName,
+    @required this.imageURL,
     @required this.level,
     @required this.experiencePoints,
     @required this.privacy,

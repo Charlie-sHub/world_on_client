@@ -1,1 +1,1 @@
-// TODO: implement the use case to get the gps location of the device being used
+// TODO: implement the use case to get the GPS location of the device being used

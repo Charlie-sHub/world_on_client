@@ -29,7 +29,7 @@ void main() {
       final result = await useCase(NoParams());
       // Assert
       expect(result, right(publicKeyBytes));
-      verifyInteractions(mockPublicKeyRepository);
+      _verifyInteractions(mockPublicKeyRepository);
     },
   );
   group(
@@ -45,7 +45,7 @@ void main() {
           final result = await useCase(NoParams());
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockPublicKeyRepository);
+          _verifyInteractions(mockPublicKeyRepository);
         },
       );
       test(
@@ -58,14 +58,14 @@ void main() {
           final result = await useCase(NoParams());
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockPublicKeyRepository);
+          _verifyInteractions(mockPublicKeyRepository);
         },
       );
     },
   );
 }
 
-void verifyInteractions(MockPublicKeyRepository mockPublicKeyRepository) {
+void _verifyInteractions(MockPublicKeyRepository mockPublicKeyRepository) {
   verify(mockPublicKeyRepository.getPublicKey());
   verifyNoMoreInteractions(mockPublicKeyRepository);
 }

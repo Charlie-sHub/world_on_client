@@ -18,9 +18,9 @@ void main() {
       useCase = DeleteComment(mockCommentRepository);
     },
   );
-  final randomUser = setUpUser(id: 1, adminPowers: false);
-  final creatorUser = setUpUser(id: 2, adminPowers: false);
-  final admin = setUpUser(id: 3, adminPowers: true);
+  final randomUser = _setUpUser(id: 1, adminPowers: false);
+  final creatorUser = _setUpUser(id: 2, adminPowers: false);
+  final admin = _setUpUser(id: 3, adminPowers: true);
   final comment = Comment(
     id: 1,
     poster: creatorUser,
@@ -47,7 +47,7 @@ void main() {
           final result = await useCase(setUpParams(creatorUser));
           // Assert
           expect(result, right(null));
-          verifyInteractions(mockCommentRepository);
+          _verifyInteractions(mockCommentRepository);
         },
       );
       test(
@@ -59,7 +59,7 @@ void main() {
           final result = await useCase(setUpParams(admin));
           // Assert
           expect(result, right(null));
-          verifyInteractions(mockCommentRepository);
+          _verifyInteractions(mockCommentRepository);
         },
       );
     },
@@ -77,7 +77,7 @@ void main() {
           final result = await useCase(setUpParams(admin));
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockCommentRepository);
+          _verifyInteractions(mockCommentRepository);
         },
       );
       test(
@@ -90,7 +90,7 @@ void main() {
           final result = await useCase(setUpParams(admin));
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockCommentRepository);
+          _verifyInteractions(mockCommentRepository);
         },
       );
       test(
@@ -107,7 +107,7 @@ void main() {
   );
 }
 
-User setUpUser({int id, bool adminPowers}) {
+User _setUpUser({int id, bool adminPowers}) {
   return User(
     id: id,
     name: null,
@@ -116,7 +116,7 @@ User setUpUser({int id, bool adminPowers}) {
     email: null,
     birthday: null,
     description: null,
-    imageName: null,
+    imageURL: null,
     level: null,
     experiencePoints: null,
     privacy: null,
@@ -138,7 +138,7 @@ User setUpUser({int id, bool adminPowers}) {
   );
 }
 
-void verifyInteractions(MockCommentRepository mockCommentRepository) {
+void _verifyInteractions(MockCommentRepository mockCommentRepository) {
   verify(mockCommentRepository.removeComment(any));
   verifyNoMoreInteractions(mockCommentRepository);
 }

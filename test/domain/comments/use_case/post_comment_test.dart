@@ -34,7 +34,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(null));
-      verifyInteractions(mockCommentRepository);
+      _verifyInteractions(mockCommentRepository);
     },
   );
   group(
@@ -52,14 +52,14 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(const CoreFailure.serverError()));
-          verifyInteractions(mockCommentRepository);
+          _verifyInteractions(mockCommentRepository);
         },
       );
     },
   );
 }
 
-void verifyInteractions(MockCommentRepository mockCommentRepository) {
+void _verifyInteractions(MockCommentRepository mockCommentRepository) {
   verify(mockCommentRepository.postComment(
     comment: anyNamed("comment"),
     experienceId: anyNamed("experienceId"),

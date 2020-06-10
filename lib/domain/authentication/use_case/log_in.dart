@@ -37,7 +37,7 @@ class LogIn implements AsyncUseCase<User, Params> {
       email: null,
       enabled: null,
       experiencePoints: null,
-      imageName: null,
+      imageURL: null,
       lastLogin: null,
       level: null,
       options: null,

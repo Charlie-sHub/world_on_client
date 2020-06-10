@@ -37,7 +37,7 @@ void main() {
     email: EmailAddress("test@test.test"),
     birthday: PastDate(DateTime.now()),
     description: EntityDescription("For testing"),
-    imageName: "test.png",
+    imageURL: "test.png",
     level: UserLevel(1),
     experiencePoints: ExperiencePoints(1),
     privacy: false,
@@ -66,7 +66,7 @@ void main() {
       final result = await useCase(params);
       // Assert
       expect(result, right(userLoggedIn));
-      verifyInteractions(mockAuthenticationRepository);
+      _verifyInteractions(mockAuthenticationRepository);
     },
   );
   group(
@@ -82,7 +82,7 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(coreFailure));
-          verifyInteractions(mockAuthenticationRepository);
+          _verifyInteractions(mockAuthenticationRepository);
         },
       );
       test(
@@ -95,14 +95,14 @@ void main() {
           final result = await useCase(params);
           // Assert
           expect(result, left(authenticationFailure));
-          verifyInteractions(mockAuthenticationRepository);
+          _verifyInteractions(mockAuthenticationRepository);
         },
       );
     },
   );
 }
 
-void verifyInteractions(MockAuthenticationRepository mockAuthenticationRepository) {
+void _verifyInteractions(MockAuthenticationRepository mockAuthenticationRepository) {
   verify(mockAuthenticationRepository.logIn(any));
   verifyNoMoreInteractions(mockAuthenticationRepository);
 }

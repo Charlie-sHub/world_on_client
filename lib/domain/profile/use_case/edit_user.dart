@@ -36,7 +36,7 @@ class EditUser implements AsyncUseCase<Unit, Params> {
         email: params.email,
         birthday: params.birthday,
         description: params.description,
-        imageName: params.imageName,
+        imageURL: params.imageName,
         level: params.level,
         experiencePoints: params.experiencePoints,
         privacy: params.privacy,
@@ -84,6 +84,7 @@ class Params {
   final Set<Tag> interests;
 
   // TODO: Should these Sets be here?
+  // They can't be changed when editing the User is editing its profile, yet leaving them null could be problematic as it may nullify the entries in the database
   final Set<User> blockedUsers;
   final Set<User> followedUsers;
   final Set<Device> devices;
