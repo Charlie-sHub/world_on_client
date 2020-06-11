@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/core/error/failures.dart';
-import 'package:worldon/domain/core/failures/core_failure.dart';
+import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/experience_navigation/use_case/accomplish_objective.dart';
 
 import '../../../constants.dart';
@@ -57,7 +57,7 @@ void main() {
       // Act
       final result = useCase(Params(objectiveId: null));
       // Assert
-      expect(result, left<Failure, bool>(const CoreFailure.unknownDomainLayerError()));
+      expect(result, left<Failure, bool>(const CoreDomainFailure.unknownDomainLayerError()));
     },
   );
 }

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
 
-part of 'core_failure.dart';
+part of 'core_data_failure.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -9,12 +9,8 @@ part of 'core_failure.dart';
 
 T _$identity<T>(T value) => value;
 
-class _$CoreFailureTearOff {
-  const _$CoreFailureTearOff();
-
-  UnknownDomainLayerError unknownDomainLayerError() {
-    return const UnknownDomainLayerError();
-  }
+class _$CoreDataFailureTearOff {
+  const _$CoreDataFailureTearOff();
 
   ServerError serverError() {
     return const ServerError();
@@ -40,247 +36,92 @@ class _$CoreFailureTearOff {
     return const EmailAlreadyInUse();
   }
 
-  UnAuthorizedError unAuthorizedError() {
-    return const UnAuthorizedError();
-  }
-
   NameAlreadyInUse nameAlreadyInUse() {
     return const NameAlreadyInUse();
   }
 }
 
 // ignore: unused_element
-const $CoreFailure = _$CoreFailureTearOff();
+const $CoreDataFailure = _$CoreDataFailureTearOff();
 
-mixin _$CoreFailure {
+mixin _$CoreDataFailure {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result unknownDomainLayerError(),
     @required Result serverError(),
     @required Result notFoundError(),
     @required Result cacheError(),
     @required Result geoLocationError(),
     @required Result usernameAlreadyInUse(),
     @required Result emailAlreadyInUse(),
-    @required Result unAuthorizedError(),
     @required Result nameAlreadyInUse(),
   });
+
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result unknownDomainLayerError(),
     Result serverError(),
     Result notFoundError(),
     Result cacheError(),
     Result geoLocationError(),
     Result usernameAlreadyInUse(),
     Result emailAlreadyInUse(),
-    Result unAuthorizedError(),
     Result nameAlreadyInUse(),
     @required Result orElse(),
   });
+
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result unknownDomainLayerError(UnknownDomainLayerError value),
     @required Result serverError(ServerError value),
     @required Result notFoundError(NotFoundError value),
     @required Result cacheError(CacheError value),
     @required Result geoLocationError(GeoLocationError value),
     @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result unAuthorizedError(UnAuthorizedError value),
     @required Result nameAlreadyInUse(NameAlreadyInUse value),
   });
+
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result unknownDomainLayerError(UnknownDomainLayerError value),
     Result serverError(ServerError value),
     Result notFoundError(NotFoundError value),
     Result cacheError(CacheError value),
     Result geoLocationError(GeoLocationError value),
     Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result unAuthorizedError(UnAuthorizedError value),
     Result nameAlreadyInUse(NameAlreadyInUse value),
     @required Result orElse(),
   });
 }
 
-abstract class $CoreFailureCopyWith<$Res> {
-  factory $CoreFailureCopyWith(CoreFailure value, $Res Function(CoreFailure) then) = _$CoreFailureCopyWithImpl<$Res>;
+abstract class $CoreDataFailureCopyWith<$Res> {
+  factory $CoreDataFailureCopyWith(CoreDataFailure value, $Res Function(CoreDataFailure) then) = _$CoreDataFailureCopyWithImpl<$Res>;
 }
 
-class _$CoreFailureCopyWithImpl<$Res> implements $CoreFailureCopyWith<$Res> {
-  _$CoreFailureCopyWithImpl(this._value, this._then);
+class _$CoreDataFailureCopyWithImpl<$Res> implements $CoreDataFailureCopyWith<$Res> {
+  _$CoreDataFailureCopyWithImpl(this._value, this._then);
 
-  final CoreFailure _value;
+  final CoreDataFailure _value;
+
   // ignore: unused_field
-  final $Res Function(CoreFailure) _then;
-}
-
-abstract class $UnknownDomainLayerErrorCopyWith<$Res> {
-  factory $UnknownDomainLayerErrorCopyWith(UnknownDomainLayerError value,
-    $Res Function(UnknownDomainLayerError) then) =
-  _$UnknownDomainLayerErrorCopyWithImpl<$Res>;
-}
-
-class _$UnknownDomainLayerErrorCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
-  implements $UnknownDomainLayerErrorCopyWith<$Res> {
-  _$UnknownDomainLayerErrorCopyWithImpl(UnknownDomainLayerError _value,
-    $Res Function(UnknownDomainLayerError) _then)
-    : super(_value, (v) => _then(v as UnknownDomainLayerError));
-
-  @override
-  UnknownDomainLayerError get _value => super._value as UnknownDomainLayerError;
-}
-
-class _$UnknownDomainLayerError
-  with DiagnosticableTreeMixin
-  implements UnknownDomainLayerError {
-  const _$UnknownDomainLayerError();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CoreFailure.unknownDomainLayerError()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CoreFailure.unknownDomainLayerError'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UnknownDomainLayerError);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result unknownDomainLayerError(),
-    @required Result serverError(),
-    @required Result notFoundError(),
-    @required Result cacheError(),
-    @required Result geoLocationError(),
-    @required Result usernameAlreadyInUse(),
-    @required Result emailAlreadyInUse(),
-    @required Result unAuthorizedError(),
-    @required Result nameAlreadyInUse(),
-  }) {
-    assert(unknownDomainLayerError != null);
-    assert(serverError != null);
-    assert(notFoundError != null);
-    assert(cacheError != null);
-    assert(geoLocationError != null);
-    assert(usernameAlreadyInUse != null);
-    assert(emailAlreadyInUse != null);
-    assert(unAuthorizedError != null);
-    assert(nameAlreadyInUse != null);
-    return unknownDomainLayerError();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result unknownDomainLayerError(),
-    Result serverError(),
-    Result notFoundError(),
-    Result cacheError(),
-    Result geoLocationError(),
-    Result usernameAlreadyInUse(),
-    Result emailAlreadyInUse(),
-    Result unAuthorizedError(),
-    Result nameAlreadyInUse(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (unknownDomainLayerError != null) {
-      return unknownDomainLayerError();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result unknownDomainLayerError(UnknownDomainLayerError value),
-    @required Result serverError(ServerError value),
-    @required Result notFoundError(NotFoundError value),
-    @required Result cacheError(CacheError value),
-    @required Result geoLocationError(GeoLocationError value),
-    @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
-    @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result unAuthorizedError(UnAuthorizedError value),
-    @required Result nameAlreadyInUse(NameAlreadyInUse value),
-  }) {
-    assert(unknownDomainLayerError != null);
-    assert(serverError != null);
-    assert(notFoundError != null);
-    assert(cacheError != null);
-    assert(geoLocationError != null);
-    assert(usernameAlreadyInUse != null);
-    assert(emailAlreadyInUse != null);
-    assert(unAuthorizedError != null);
-    assert(nameAlreadyInUse != null);
-    return unknownDomainLayerError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result unknownDomainLayerError(UnknownDomainLayerError value),
-    Result serverError(ServerError value),
-    Result notFoundError(NotFoundError value),
-    Result cacheError(CacheError value),
-    Result geoLocationError(GeoLocationError value),
-    Result usernameAlreadyInUse(UsernameAlreadyInUse value),
-    Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result unAuthorizedError(UnAuthorizedError value),
-    Result nameAlreadyInUse(NameAlreadyInUse value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (unknownDomainLayerError != null) {
-      return unknownDomainLayerError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class UnknownDomainLayerError implements CoreFailure {
-  const factory UnknownDomainLayerError() = _$UnknownDomainLayerError;
+  final $Res Function(CoreDataFailure) _then;
 }
 
 abstract class $ServerErrorCopyWith<$Res> {
-  factory $ServerErrorCopyWith(ServerError value, $Res Function(ServerError) then) =
-  _$ServerErrorCopyWithImpl<$Res>;
+  factory $ServerErrorCopyWith(ServerError value, $Res Function(ServerError) then) = _$ServerErrorCopyWithImpl<$Res>;
 }
 
-class _$ServerErrorCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
-  implements $ServerErrorCopyWith<$Res> {
-  _$ServerErrorCopyWithImpl(ServerError _value, $Res Function(ServerError) _then)
-    : super(_value, (v) => _then(v as ServerError));
+class _$ServerErrorCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res> implements $ServerErrorCopyWith<$Res> {
+  _$ServerErrorCopyWithImpl(ServerError _value, $Res Function(ServerError) _then) : super(_value, (v) => _then(v as ServerError));
 
   @override
   ServerError get _value => super._value as ServerError;
 }
 
-class _$ServerError with DiagnosticableTreeMixin implements ServerError {
+class _$ServerError implements ServerError {
   const _$ServerError();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CoreFailure.serverError()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'CoreFailure.serverError'));
+  String toString() {
+    return 'CoreDataFailure.serverError()';
   }
 
   @override
@@ -294,24 +135,20 @@ class _$ServerError with DiagnosticableTreeMixin implements ServerError {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result unknownDomainLayerError(),
     @required Result serverError(),
     @required Result notFoundError(),
     @required Result cacheError(),
     @required Result geoLocationError(),
     @required Result usernameAlreadyInUse(),
     @required Result emailAlreadyInUse(),
-    @required Result unAuthorizedError(),
     @required Result nameAlreadyInUse(),
   }) {
-    assert(unknownDomainLayerError != null);
     assert(serverError != null);
     assert(notFoundError != null);
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
     assert(emailAlreadyInUse != null);
-    assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return serverError();
   }
@@ -319,14 +156,12 @@ class _$ServerError with DiagnosticableTreeMixin implements ServerError {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result unknownDomainLayerError(),
     Result serverError(),
     Result notFoundError(),
     Result cacheError(),
     Result geoLocationError(),
     Result usernameAlreadyInUse(),
     Result emailAlreadyInUse(),
-    Result unAuthorizedError(),
     Result nameAlreadyInUse(),
     @required Result orElse(),
   }) {
@@ -340,24 +175,20 @@ class _$ServerError with DiagnosticableTreeMixin implements ServerError {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result unknownDomainLayerError(UnknownDomainLayerError value),
     @required Result serverError(ServerError value),
     @required Result notFoundError(NotFoundError value),
     @required Result cacheError(CacheError value),
     @required Result geoLocationError(GeoLocationError value),
     @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result unAuthorizedError(UnAuthorizedError value),
     @required Result nameAlreadyInUse(NameAlreadyInUse value),
   }) {
-    assert(unknownDomainLayerError != null);
     assert(serverError != null);
     assert(notFoundError != null);
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
     assert(emailAlreadyInUse != null);
-    assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return serverError(this);
   }
@@ -365,14 +196,12 @@ class _$ServerError with DiagnosticableTreeMixin implements ServerError {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result unknownDomainLayerError(UnknownDomainLayerError value),
     Result serverError(ServerError value),
     Result notFoundError(NotFoundError value),
     Result cacheError(CacheError value),
     Result geoLocationError(GeoLocationError value),
     Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result unAuthorizedError(UnAuthorizedError value),
     Result nameAlreadyInUse(NameAlreadyInUse value),
     @required Result orElse(),
   }) {
@@ -384,36 +213,27 @@ class _$ServerError with DiagnosticableTreeMixin implements ServerError {
   }
 }
 
-abstract class ServerError implements CoreFailure {
+abstract class ServerError implements CoreDataFailure {
   const factory ServerError() = _$ServerError;
 }
 
 abstract class $NotFoundErrorCopyWith<$Res> {
-  factory $NotFoundErrorCopyWith(NotFoundError value, $Res Function(NotFoundError) then) =
-  _$NotFoundErrorCopyWithImpl<$Res>;
+  factory $NotFoundErrorCopyWith(NotFoundError value, $Res Function(NotFoundError) then) = _$NotFoundErrorCopyWithImpl<$Res>;
 }
 
-class _$NotFoundErrorCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
-  implements $NotFoundErrorCopyWith<$Res> {
-  _$NotFoundErrorCopyWithImpl(NotFoundError _value, $Res Function(NotFoundError) _then)
-    : super(_value, (v) => _then(v as NotFoundError));
+class _$NotFoundErrorCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res> implements $NotFoundErrorCopyWith<$Res> {
+  _$NotFoundErrorCopyWithImpl(NotFoundError _value, $Res Function(NotFoundError) _then) : super(_value, (v) => _then(v as NotFoundError));
 
   @override
   NotFoundError get _value => super._value as NotFoundError;
 }
 
-class _$NotFoundError with DiagnosticableTreeMixin implements NotFoundError {
+class _$NotFoundError implements NotFoundError {
   const _$NotFoundError();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CoreFailure.notFoundError()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'CoreFailure.notFoundError'));
+  String toString() {
+    return 'CoreDataFailure.notFoundError()';
   }
 
   @override
@@ -427,24 +247,20 @@ class _$NotFoundError with DiagnosticableTreeMixin implements NotFoundError {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result unknownDomainLayerError(),
     @required Result serverError(),
     @required Result notFoundError(),
     @required Result cacheError(),
     @required Result geoLocationError(),
     @required Result usernameAlreadyInUse(),
     @required Result emailAlreadyInUse(),
-    @required Result unAuthorizedError(),
     @required Result nameAlreadyInUse(),
   }) {
-    assert(unknownDomainLayerError != null);
     assert(serverError != null);
     assert(notFoundError != null);
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
     assert(emailAlreadyInUse != null);
-    assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return notFoundError();
   }
@@ -452,14 +268,12 @@ class _$NotFoundError with DiagnosticableTreeMixin implements NotFoundError {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result unknownDomainLayerError(),
     Result serverError(),
     Result notFoundError(),
     Result cacheError(),
     Result geoLocationError(),
     Result usernameAlreadyInUse(),
     Result emailAlreadyInUse(),
-    Result unAuthorizedError(),
     Result nameAlreadyInUse(),
     @required Result orElse(),
   }) {
@@ -473,24 +287,20 @@ class _$NotFoundError with DiagnosticableTreeMixin implements NotFoundError {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result unknownDomainLayerError(UnknownDomainLayerError value),
     @required Result serverError(ServerError value),
     @required Result notFoundError(NotFoundError value),
     @required Result cacheError(CacheError value),
     @required Result geoLocationError(GeoLocationError value),
     @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result unAuthorizedError(UnAuthorizedError value),
     @required Result nameAlreadyInUse(NameAlreadyInUse value),
   }) {
-    assert(unknownDomainLayerError != null);
     assert(serverError != null);
     assert(notFoundError != null);
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
     assert(emailAlreadyInUse != null);
-    assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return notFoundError(this);
   }
@@ -498,14 +308,12 @@ class _$NotFoundError with DiagnosticableTreeMixin implements NotFoundError {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result unknownDomainLayerError(UnknownDomainLayerError value),
     Result serverError(ServerError value),
     Result notFoundError(NotFoundError value),
     Result cacheError(CacheError value),
     Result geoLocationError(GeoLocationError value),
     Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result unAuthorizedError(UnAuthorizedError value),
     Result nameAlreadyInUse(NameAlreadyInUse value),
     @required Result orElse(),
   }) {
@@ -517,36 +325,27 @@ class _$NotFoundError with DiagnosticableTreeMixin implements NotFoundError {
   }
 }
 
-abstract class NotFoundError implements CoreFailure {
+abstract class NotFoundError implements CoreDataFailure {
   const factory NotFoundError() = _$NotFoundError;
 }
 
 abstract class $CacheErrorCopyWith<$Res> {
-  factory $CacheErrorCopyWith(CacheError value, $Res Function(CacheError) then) =
-  _$CacheErrorCopyWithImpl<$Res>;
+  factory $CacheErrorCopyWith(CacheError value, $Res Function(CacheError) then) = _$CacheErrorCopyWithImpl<$Res>;
 }
 
-class _$CacheErrorCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
-  implements $CacheErrorCopyWith<$Res> {
-  _$CacheErrorCopyWithImpl(CacheError _value, $Res Function(CacheError) _then)
-    : super(_value, (v) => _then(v as CacheError));
+class _$CacheErrorCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res> implements $CacheErrorCopyWith<$Res> {
+  _$CacheErrorCopyWithImpl(CacheError _value, $Res Function(CacheError) _then) : super(_value, (v) => _then(v as CacheError));
 
   @override
   CacheError get _value => super._value as CacheError;
 }
 
-class _$CacheError with DiagnosticableTreeMixin implements CacheError {
+class _$CacheError implements CacheError {
   const _$CacheError();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CoreFailure.cacheError()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'CoreFailure.cacheError'));
+  String toString() {
+    return 'CoreDataFailure.cacheError()';
   }
 
   @override
@@ -560,24 +359,20 @@ class _$CacheError with DiagnosticableTreeMixin implements CacheError {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result unknownDomainLayerError(),
     @required Result serverError(),
     @required Result notFoundError(),
     @required Result cacheError(),
     @required Result geoLocationError(),
     @required Result usernameAlreadyInUse(),
     @required Result emailAlreadyInUse(),
-    @required Result unAuthorizedError(),
     @required Result nameAlreadyInUse(),
   }) {
-    assert(unknownDomainLayerError != null);
     assert(serverError != null);
     assert(notFoundError != null);
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
     assert(emailAlreadyInUse != null);
-    assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return cacheError();
   }
@@ -585,14 +380,12 @@ class _$CacheError with DiagnosticableTreeMixin implements CacheError {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result unknownDomainLayerError(),
     Result serverError(),
     Result notFoundError(),
     Result cacheError(),
     Result geoLocationError(),
     Result usernameAlreadyInUse(),
     Result emailAlreadyInUse(),
-    Result unAuthorizedError(),
     Result nameAlreadyInUse(),
     @required Result orElse(),
   }) {
@@ -606,24 +399,20 @@ class _$CacheError with DiagnosticableTreeMixin implements CacheError {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result unknownDomainLayerError(UnknownDomainLayerError value),
     @required Result serverError(ServerError value),
     @required Result notFoundError(NotFoundError value),
     @required Result cacheError(CacheError value),
     @required Result geoLocationError(GeoLocationError value),
     @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result unAuthorizedError(UnAuthorizedError value),
     @required Result nameAlreadyInUse(NameAlreadyInUse value),
   }) {
-    assert(unknownDomainLayerError != null);
     assert(serverError != null);
     assert(notFoundError != null);
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
     assert(emailAlreadyInUse != null);
-    assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return cacheError(this);
   }
@@ -631,14 +420,12 @@ class _$CacheError with DiagnosticableTreeMixin implements CacheError {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result unknownDomainLayerError(UnknownDomainLayerError value),
     Result serverError(ServerError value),
     Result notFoundError(NotFoundError value),
     Result cacheError(CacheError value),
     Result geoLocationError(GeoLocationError value),
     Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result unAuthorizedError(UnAuthorizedError value),
     Result nameAlreadyInUse(NameAlreadyInUse value),
     @required Result orElse(),
   }) {
@@ -650,39 +437,27 @@ class _$CacheError with DiagnosticableTreeMixin implements CacheError {
   }
 }
 
-abstract class CacheError implements CoreFailure {
+abstract class CacheError implements CoreDataFailure {
   const factory CacheError() = _$CacheError;
 }
 
 abstract class $GeoLocationErrorCopyWith<$Res> {
-  factory $GeoLocationErrorCopyWith(GeoLocationError value, $Res Function(GeoLocationError) then) =
-  _$GeoLocationErrorCopyWithImpl<$Res>;
+  factory $GeoLocationErrorCopyWith(GeoLocationError value, $Res Function(GeoLocationError) then) = _$GeoLocationErrorCopyWithImpl<$Res>;
 }
 
-class _$GeoLocationErrorCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
-  implements $GeoLocationErrorCopyWith<$Res> {
-  _$GeoLocationErrorCopyWithImpl(GeoLocationError _value, $Res Function(GeoLocationError) _then)
-    : super(_value, (v) => _then(v as GeoLocationError));
+class _$GeoLocationErrorCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res> implements $GeoLocationErrorCopyWith<$Res> {
+  _$GeoLocationErrorCopyWithImpl(GeoLocationError _value, $Res Function(GeoLocationError) _then) : super(_value, (v) => _then(v as GeoLocationError));
 
   @override
   GeoLocationError get _value => super._value as GeoLocationError;
 }
 
-class _$GeoLocationError
-  with DiagnosticableTreeMixin
-  implements GeoLocationError {
+class _$GeoLocationError implements GeoLocationError {
   const _$GeoLocationError();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CoreFailure.geoLocationError()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CoreFailure.geoLocationError'));
+  String toString() {
+    return 'CoreDataFailure.geoLocationError()';
   }
 
   @override
@@ -696,24 +471,20 @@ class _$GeoLocationError
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result unknownDomainLayerError(),
     @required Result serverError(),
     @required Result notFoundError(),
     @required Result cacheError(),
     @required Result geoLocationError(),
     @required Result usernameAlreadyInUse(),
     @required Result emailAlreadyInUse(),
-    @required Result unAuthorizedError(),
     @required Result nameAlreadyInUse(),
   }) {
-    assert(unknownDomainLayerError != null);
     assert(serverError != null);
     assert(notFoundError != null);
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
     assert(emailAlreadyInUse != null);
-    assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return geoLocationError();
   }
@@ -721,14 +492,12 @@ class _$GeoLocationError
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result unknownDomainLayerError(),
     Result serverError(),
     Result notFoundError(),
     Result cacheError(),
     Result geoLocationError(),
     Result usernameAlreadyInUse(),
     Result emailAlreadyInUse(),
-    Result unAuthorizedError(),
     Result nameAlreadyInUse(),
     @required Result orElse(),
   }) {
@@ -742,24 +511,20 @@ class _$GeoLocationError
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result unknownDomainLayerError(UnknownDomainLayerError value),
     @required Result serverError(ServerError value),
     @required Result notFoundError(NotFoundError value),
     @required Result cacheError(CacheError value),
     @required Result geoLocationError(GeoLocationError value),
     @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result unAuthorizedError(UnAuthorizedError value),
     @required Result nameAlreadyInUse(NameAlreadyInUse value),
   }) {
-    assert(unknownDomainLayerError != null);
     assert(serverError != null);
     assert(notFoundError != null);
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
     assert(emailAlreadyInUse != null);
-    assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return geoLocationError(this);
   }
@@ -767,14 +532,12 @@ class _$GeoLocationError
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result unknownDomainLayerError(UnknownDomainLayerError value),
     Result serverError(ServerError value),
     Result notFoundError(NotFoundError value),
     Result cacheError(CacheError value),
     Result geoLocationError(GeoLocationError value),
     Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result unAuthorizedError(UnAuthorizedError value),
     Result nameAlreadyInUse(NameAlreadyInUse value),
     @required Result orElse(),
   }) {
@@ -786,40 +549,27 @@ class _$GeoLocationError
   }
 }
 
-abstract class GeoLocationError implements CoreFailure {
+abstract class GeoLocationError implements CoreDataFailure {
   const factory GeoLocationError() = _$GeoLocationError;
 }
 
 abstract class $UsernameAlreadyInUseCopyWith<$Res> {
-  factory $UsernameAlreadyInUseCopyWith(UsernameAlreadyInUse value,
-    $Res Function(UsernameAlreadyInUse) then) =
-  _$UsernameAlreadyInUseCopyWithImpl<$Res>;
+  factory $UsernameAlreadyInUseCopyWith(UsernameAlreadyInUse value, $Res Function(UsernameAlreadyInUse) then) = _$UsernameAlreadyInUseCopyWithImpl<$Res>;
 }
 
-class _$UsernameAlreadyInUseCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
-  implements $UsernameAlreadyInUseCopyWith<$Res> {
-  _$UsernameAlreadyInUseCopyWithImpl(UsernameAlreadyInUse _value, $Res Function(UsernameAlreadyInUse) _then)
-    : super(_value, (v) => _then(v as UsernameAlreadyInUse));
+class _$UsernameAlreadyInUseCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res> implements $UsernameAlreadyInUseCopyWith<$Res> {
+  _$UsernameAlreadyInUseCopyWithImpl(UsernameAlreadyInUse _value, $Res Function(UsernameAlreadyInUse) _then) : super(_value, (v) => _then(v as UsernameAlreadyInUse));
 
   @override
   UsernameAlreadyInUse get _value => super._value as UsernameAlreadyInUse;
 }
 
-class _$UsernameAlreadyInUse
-  with DiagnosticableTreeMixin
-  implements UsernameAlreadyInUse {
+class _$UsernameAlreadyInUse implements UsernameAlreadyInUse {
   const _$UsernameAlreadyInUse();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CoreFailure.usernameAlreadyInUse()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CoreFailure.usernameAlreadyInUse'));
+  String toString() {
+    return 'CoreDataFailure.usernameAlreadyInUse()';
   }
 
   @override
@@ -833,24 +583,20 @@ class _$UsernameAlreadyInUse
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result unknownDomainLayerError(),
     @required Result serverError(),
     @required Result notFoundError(),
     @required Result cacheError(),
     @required Result geoLocationError(),
     @required Result usernameAlreadyInUse(),
     @required Result emailAlreadyInUse(),
-    @required Result unAuthorizedError(),
     @required Result nameAlreadyInUse(),
   }) {
-    assert(unknownDomainLayerError != null);
     assert(serverError != null);
     assert(notFoundError != null);
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
     assert(emailAlreadyInUse != null);
-    assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return usernameAlreadyInUse();
   }
@@ -858,14 +604,12 @@ class _$UsernameAlreadyInUse
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result unknownDomainLayerError(),
     Result serverError(),
     Result notFoundError(),
     Result cacheError(),
     Result geoLocationError(),
     Result usernameAlreadyInUse(),
     Result emailAlreadyInUse(),
-    Result unAuthorizedError(),
     Result nameAlreadyInUse(),
     @required Result orElse(),
   }) {
@@ -879,24 +623,20 @@ class _$UsernameAlreadyInUse
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result unknownDomainLayerError(UnknownDomainLayerError value),
     @required Result serverError(ServerError value),
     @required Result notFoundError(NotFoundError value),
     @required Result cacheError(CacheError value),
     @required Result geoLocationError(GeoLocationError value),
     @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result unAuthorizedError(UnAuthorizedError value),
     @required Result nameAlreadyInUse(NameAlreadyInUse value),
   }) {
-    assert(unknownDomainLayerError != null);
     assert(serverError != null);
     assert(notFoundError != null);
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
     assert(emailAlreadyInUse != null);
-    assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return usernameAlreadyInUse(this);
   }
@@ -904,14 +644,12 @@ class _$UsernameAlreadyInUse
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result unknownDomainLayerError(UnknownDomainLayerError value),
     Result serverError(ServerError value),
     Result notFoundError(NotFoundError value),
     Result cacheError(CacheError value),
     Result geoLocationError(GeoLocationError value),
     Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result unAuthorizedError(UnAuthorizedError value),
     Result nameAlreadyInUse(NameAlreadyInUse value),
     @required Result orElse(),
   }) {
@@ -923,85 +661,67 @@ class _$UsernameAlreadyInUse
   }
 }
 
-abstract class UsernameAlreadyInUse implements CoreFailure {
+abstract class UsernameAlreadyInUse implements CoreDataFailure {
   const factory UsernameAlreadyInUse() = _$UsernameAlreadyInUse;
 }
 
 abstract class $EmailAlreadyInUseCopyWith<$Res> {
-  factory $EmailAlreadyInUseCopyWith(EmailAlreadyInUse value, $Res Function(EmailAlreadyInUse) then) =
-  _$EmailAlreadyInUseCopyWithImpl<$Res>;
+  factory $EmailAlreadyInUseCopyWith(EmailAlreadyInUse value, $Res Function(EmailAlreadyInUse) then) = _$EmailAlreadyInUseCopyWithImpl<$Res>;
 }
 
-class _$EmailAlreadyInUseCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
-  implements $EmailAlreadyInUseCopyWith<$Res> {
-  _$EmailAlreadyInUseCopyWithImpl(EmailAlreadyInUse _value, $Res Function(EmailAlreadyInUse) _then)
-    : super(_value, (v) => _then(v as EmailAlreadyInUse));
-  
+class _$EmailAlreadyInUseCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res> implements $EmailAlreadyInUseCopyWith<$Res> {
+  _$EmailAlreadyInUseCopyWithImpl(EmailAlreadyInUse _value, $Res Function(EmailAlreadyInUse) _then) : super(_value, (v) => _then(v as EmailAlreadyInUse));
+
   @override
   EmailAlreadyInUse get _value => super._value as EmailAlreadyInUse;
 }
 
-class _$EmailAlreadyInUse
-  with DiagnosticableTreeMixin
-  implements EmailAlreadyInUse {
+class _$EmailAlreadyInUse implements EmailAlreadyInUse {
   const _$EmailAlreadyInUse();
-  
+
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CoreFailure.emailAlreadyInUse()';
+  String toString() {
+    return 'CoreDataFailure.emailAlreadyInUse()';
   }
-  
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CoreFailure.emailAlreadyInUse'));
-  }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is EmailAlreadyInUse);
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode;
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result unknownDomainLayerError(),
     @required Result serverError(),
     @required Result notFoundError(),
     @required Result cacheError(),
     @required Result geoLocationError(),
     @required Result usernameAlreadyInUse(),
     @required Result emailAlreadyInUse(),
-    @required Result unAuthorizedError(),
     @required Result nameAlreadyInUse(),
   }) {
-    assert(unknownDomainLayerError != null);
     assert(serverError != null);
     assert(notFoundError != null);
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
     assert(emailAlreadyInUse != null);
-    assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return emailAlreadyInUse();
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result unknownDomainLayerError(),
     Result serverError(),
     Result notFoundError(),
     Result cacheError(),
     Result geoLocationError(),
     Result usernameAlreadyInUse(),
     Result emailAlreadyInUse(),
-    Result unAuthorizedError(),
     Result nameAlreadyInUse(),
     @required Result orElse(),
   }) {
@@ -1011,43 +731,37 @@ class _$EmailAlreadyInUse
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result unknownDomainLayerError(UnknownDomainLayerError value),
     @required Result serverError(ServerError value),
     @required Result notFoundError(NotFoundError value),
     @required Result cacheError(CacheError value),
     @required Result geoLocationError(GeoLocationError value),
     @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result unAuthorizedError(UnAuthorizedError value),
     @required Result nameAlreadyInUse(NameAlreadyInUse value),
   }) {
-    assert(unknownDomainLayerError != null);
     assert(serverError != null);
     assert(notFoundError != null);
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
     assert(emailAlreadyInUse != null);
-    assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return emailAlreadyInUse(this);
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result unknownDomainLayerError(UnknownDomainLayerError value),
     Result serverError(ServerError value),
     Result notFoundError(NotFoundError value),
     Result cacheError(CacheError value),
     Result geoLocationError(GeoLocationError value),
     Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result unAuthorizedError(UnAuthorizedError value),
     Result nameAlreadyInUse(NameAlreadyInUse value),
     @required Result orElse(),
   }) {
@@ -1059,175 +773,27 @@ class _$EmailAlreadyInUse
   }
 }
 
-abstract class EmailAlreadyInUse implements CoreFailure {
+abstract class EmailAlreadyInUse implements CoreDataFailure {
   const factory EmailAlreadyInUse() = _$EmailAlreadyInUse;
 }
 
-abstract class $UnAuthorizedErrorCopyWith<$Res> {
-  factory $UnAuthorizedErrorCopyWith(UnAuthorizedError value, $Res Function(UnAuthorizedError) then) =
-  _$UnAuthorizedErrorCopyWithImpl<$Res>;
-}
-
-class _$UnAuthorizedErrorCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
-  implements $UnAuthorizedErrorCopyWith<$Res> {
-  _$UnAuthorizedErrorCopyWithImpl(UnAuthorizedError _value, $Res Function(UnAuthorizedError) _then)
-    : super(_value, (v) => _then(v as UnAuthorizedError));
-
-  @override
-  UnAuthorizedError get _value => super._value as UnAuthorizedError;
-}
-
-class _$UnAuthorizedError
-  with DiagnosticableTreeMixin
-  implements UnAuthorizedError {
-  const _$UnAuthorizedError();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CoreFailure.unAuthorizedError()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CoreFailure.unAuthorizedError'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UnAuthorizedError);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result unknownDomainLayerError(),
-    @required Result serverError(),
-    @required Result notFoundError(),
-    @required Result cacheError(),
-    @required Result geoLocationError(),
-    @required Result usernameAlreadyInUse(),
-    @required Result emailAlreadyInUse(),
-    @required Result unAuthorizedError(),
-    @required Result nameAlreadyInUse(),
-  }) {
-    assert(unknownDomainLayerError != null);
-    assert(serverError != null);
-    assert(notFoundError != null);
-    assert(cacheError != null);
-    assert(geoLocationError != null);
-    assert(usernameAlreadyInUse != null);
-    assert(emailAlreadyInUse != null);
-    assert(unAuthorizedError != null);
-    assert(nameAlreadyInUse != null);
-    return unAuthorizedError();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result unknownDomainLayerError(),
-    Result serverError(),
-    Result notFoundError(),
-    Result cacheError(),
-    Result geoLocationError(),
-    Result usernameAlreadyInUse(),
-    Result emailAlreadyInUse(),
-    Result unAuthorizedError(),
-    Result nameAlreadyInUse(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (unAuthorizedError != null) {
-      return unAuthorizedError();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result unknownDomainLayerError(UnknownDomainLayerError value),
-    @required Result serverError(ServerError value),
-    @required Result notFoundError(NotFoundError value),
-    @required Result cacheError(CacheError value),
-    @required Result geoLocationError(GeoLocationError value),
-    @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
-    @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result unAuthorizedError(UnAuthorizedError value),
-    @required Result nameAlreadyInUse(NameAlreadyInUse value),
-  }) {
-    assert(unknownDomainLayerError != null);
-    assert(serverError != null);
-    assert(notFoundError != null);
-    assert(cacheError != null);
-    assert(geoLocationError != null);
-    assert(usernameAlreadyInUse != null);
-    assert(emailAlreadyInUse != null);
-    assert(unAuthorizedError != null);
-    assert(nameAlreadyInUse != null);
-    return unAuthorizedError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result unknownDomainLayerError(UnknownDomainLayerError value),
-    Result serverError(ServerError value),
-    Result notFoundError(NotFoundError value),
-    Result cacheError(CacheError value),
-    Result geoLocationError(GeoLocationError value),
-    Result usernameAlreadyInUse(UsernameAlreadyInUse value),
-    Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result unAuthorizedError(UnAuthorizedError value),
-    Result nameAlreadyInUse(NameAlreadyInUse value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (unAuthorizedError != null) {
-      return unAuthorizedError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class UnAuthorizedError implements CoreFailure {
-  const factory UnAuthorizedError() = _$UnAuthorizedError;
-}
-
 abstract class $NameAlreadyInUseCopyWith<$Res> {
-  factory $NameAlreadyInUseCopyWith(NameAlreadyInUse value, $Res Function(NameAlreadyInUse) then) =
-  _$NameAlreadyInUseCopyWithImpl<$Res>;
+  factory $NameAlreadyInUseCopyWith(NameAlreadyInUse value, $Res Function(NameAlreadyInUse) then) = _$NameAlreadyInUseCopyWithImpl<$Res>;
 }
 
-class _$NameAlreadyInUseCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
-  implements $NameAlreadyInUseCopyWith<$Res> {
-  _$NameAlreadyInUseCopyWithImpl(NameAlreadyInUse _value, $Res Function(NameAlreadyInUse) _then)
-    : super(_value, (v) => _then(v as NameAlreadyInUse));
+class _$NameAlreadyInUseCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res> implements $NameAlreadyInUseCopyWith<$Res> {
+  _$NameAlreadyInUseCopyWithImpl(NameAlreadyInUse _value, $Res Function(NameAlreadyInUse) _then) : super(_value, (v) => _then(v as NameAlreadyInUse));
 
   @override
   NameAlreadyInUse get _value => super._value as NameAlreadyInUse;
 }
 
-class _$NameAlreadyInUse
-  with DiagnosticableTreeMixin
-  implements NameAlreadyInUse {
+class _$NameAlreadyInUse implements NameAlreadyInUse {
   const _$NameAlreadyInUse();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CoreFailure.nameAlreadyInUse()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CoreFailure.nameAlreadyInUse'));
+  String toString() {
+    return 'CoreDataFailure.nameAlreadyInUse()';
   }
 
   @override
@@ -1241,24 +807,20 @@ class _$NameAlreadyInUse
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result unknownDomainLayerError(),
     @required Result serverError(),
     @required Result notFoundError(),
     @required Result cacheError(),
     @required Result geoLocationError(),
     @required Result usernameAlreadyInUse(),
     @required Result emailAlreadyInUse(),
-    @required Result unAuthorizedError(),
     @required Result nameAlreadyInUse(),
   }) {
-    assert(unknownDomainLayerError != null);
     assert(serverError != null);
     assert(notFoundError != null);
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
     assert(emailAlreadyInUse != null);
-    assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return nameAlreadyInUse();
   }
@@ -1266,14 +828,12 @@ class _$NameAlreadyInUse
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result unknownDomainLayerError(),
     Result serverError(),
     Result notFoundError(),
     Result cacheError(),
     Result geoLocationError(),
     Result usernameAlreadyInUse(),
     Result emailAlreadyInUse(),
-    Result unAuthorizedError(),
     Result nameAlreadyInUse(),
     @required Result orElse(),
   }) {
@@ -1287,24 +847,20 @@ class _$NameAlreadyInUse
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result unknownDomainLayerError(UnknownDomainLayerError value),
     @required Result serverError(ServerError value),
     @required Result notFoundError(NotFoundError value),
     @required Result cacheError(CacheError value),
     @required Result geoLocationError(GeoLocationError value),
     @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result unAuthorizedError(UnAuthorizedError value),
     @required Result nameAlreadyInUse(NameAlreadyInUse value),
   }) {
-    assert(unknownDomainLayerError != null);
     assert(serverError != null);
     assert(notFoundError != null);
     assert(cacheError != null);
     assert(geoLocationError != null);
     assert(usernameAlreadyInUse != null);
     assert(emailAlreadyInUse != null);
-    assert(unAuthorizedError != null);
     assert(nameAlreadyInUse != null);
     return nameAlreadyInUse(this);
   }
@@ -1312,14 +868,12 @@ class _$NameAlreadyInUse
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result unknownDomainLayerError(UnknownDomainLayerError value),
     Result serverError(ServerError value),
     Result notFoundError(NotFoundError value),
     Result cacheError(CacheError value),
     Result geoLocationError(GeoLocationError value),
     Result usernameAlreadyInUse(UsernameAlreadyInUse value),
     Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result unAuthorizedError(UnAuthorizedError value),
     Result nameAlreadyInUse(NameAlreadyInUse value),
     @required Result orElse(),
   }) {
@@ -1331,6 +885,6 @@ class _$NameAlreadyInUse
   }
 }
 
-abstract class NameAlreadyInUse implements CoreFailure {
+abstract class NameAlreadyInUse implements CoreDataFailure {
   const factory NameAlreadyInUse() = _$NameAlreadyInUse;
 }

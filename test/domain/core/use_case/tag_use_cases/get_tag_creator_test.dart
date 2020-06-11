@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/user.dart';
-import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/use_case/tag_use_cases/get_tag_creator.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -72,7 +72,7 @@ void main() {
         descriptionCacheError,
         () async {
           // Arrange
-          const coreFailure = CoreFailure.cacheError();
+          const coreFailure = CoreDataFailure.cacheError();
           when(mockTagRepository.getCreator(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);
@@ -85,7 +85,7 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          const coreFailure = CoreFailure.serverError();
+          const coreFailure = CoreDataFailure.serverError();
           when(mockTagRepository.getCreator(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);
@@ -98,7 +98,7 @@ void main() {
         descriptionNotFoundError,
         () async {
           // Arrange
-          const coreFailure = CoreFailure.notFoundError();
+          const coreFailure = CoreDataFailure.notFoundError();
           when(mockTagRepository.getCreator(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);

@@ -5,7 +5,7 @@ import 'package:worldon/domain/achievement_management/repository/achievement_rep
 import 'package:worldon/domain/core/entities/achievement.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/entities/user.dart';
-import 'package:worldon/domain/core/failures/core_failure.dart';
+import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/experience_points.dart';
@@ -36,7 +36,7 @@ class EditAchievement implements AsyncUseCase<Unit, Params> {
       );
       return _repository.editAchievement(achievement);
     } else {
-      return left(const CoreFailure.unAuthorizedError());
+      return left(const CoreDomainFailure.unAuthorizedError());
     }
   }
 }

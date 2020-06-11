@@ -1,10 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/achievement_management/use_case/delete_achievement.dart';
 import 'package:worldon/domain/core/entities/achievement.dart';
 import 'package:worldon/domain/core/entities/user.dart';
-import 'package:worldon/domain/core/failures/core_failure.dart';
+import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 
 import '../../../constants.dart';
 import '../repository/mock_achievement_repository.dart';
@@ -77,7 +78,7 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          const coreFailure = CoreFailure.serverError();
+          const coreFailure = CoreDataFailure.serverError();
           when(mockAchievementRepository.removeAchievement(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(setUpParams(creatorUser));
@@ -90,7 +91,7 @@ void main() {
         descriptionNotFoundError,
         () async {
           // Arrange
-          const coreFailure = CoreFailure.notFoundError();
+          const coreFailure = CoreDataFailure.notFoundError();
           when(mockAchievementRepository.removeAchievement(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(setUpParams(creatorUser));
@@ -105,7 +106,7 @@ void main() {
           // Act
           final result = await useCase(setUpParams(randomUser));
           // Assert
-          expect(result, left(const CoreFailure.unAuthorizedError()));
+          expect(result, left(const CoreDomainFailure.unAuthorizedError()));
           verifyZeroInteractions(mockAchievementRepository);
         },
       );

@@ -1,10 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/user.dart';
-import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/profile/use_case/load_blocked_users.dart';
 
+import '../../../constants.dart';
 import '../repository/mock_profile_repository.dart';
 
 void main() {
@@ -60,13 +61,13 @@ void main() {
     },
   );
   group(
-    "Testing on failure",
+    descriptionGroupOnFailure,
     () {
       test(
-        "Should return ServerError if there's a problem with the server",
+        descriptionServerError,
         () async {
           // Arrange
-          const coreFailure = CoreFailure.serverError();
+          const coreFailure = CoreDataFailure.serverError();
           when(mockProfileRepository.loadBlockedUsers(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);
@@ -76,10 +77,10 @@ void main() {
         },
       );
       test(
-        "Should return CacheError if there's a problem with the cache",
+        descriptionCacheError,
         () async {
           // Arrange
-          const coreFailure = CoreFailure.cacheError();
+          const coreFailure = CoreDataFailure.cacheError();
           when(mockProfileRepository.loadBlockedUsers(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);
@@ -89,10 +90,10 @@ void main() {
         },
       );
       test(
-        "Should return NotFoundError if the User has no blocked any User",
+        descriptionNotFoundError,
         () async {
           // Arrange
-          const coreFailure = CoreFailure.notFoundError();
+          const coreFailure = CoreDataFailure.notFoundError();
           when(mockProfileRepository.loadBlockedUsers(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);

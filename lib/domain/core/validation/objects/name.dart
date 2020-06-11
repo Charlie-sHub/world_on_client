@@ -11,10 +11,12 @@ class Name extends ValueObject<String> {
 
   factory Name(String input) {
     assert(input != null);
-    return Name._(validateStringLength(
-      input: input,
-      length: maxLength,
-    ));
+    return Name._(
+      validateStringLength(
+        input: input,
+        length: maxLength,
+      ),
+    );
   }
 
   const Name._(this.value);

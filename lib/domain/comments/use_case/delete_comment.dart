@@ -4,7 +4,7 @@ import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/comments/repository/comment_repository_interface.dart';
 import 'package:worldon/domain/core/entities/comment.dart';
 import 'package:worldon/domain/core/entities/user.dart';
-import 'package:worldon/domain/core/failures/core_failure.dart';
+import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
 class DeleteComment implements AsyncUseCase<Unit, Params> {
@@ -18,7 +18,7 @@ class DeleteComment implements AsyncUseCase<Unit, Params> {
     if (isAuthorized) {
       return _repository.removeComment(params.comment.id);
     } else {
-      return left(const CoreFailure.unAuthorizedError());
+      return left(const CoreDomainFailure.unAuthorizedError());
     }
   }
 }

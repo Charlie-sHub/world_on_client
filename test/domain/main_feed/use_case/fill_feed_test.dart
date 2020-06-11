@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/experience.dart';
-import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/main_feed/use_case/fill_feed.dart';
 
 import '../../../constants.dart';
@@ -24,8 +24,7 @@ void main() {
       name: null,
       description: null,
       imageURLs: null,
-      latitude: null,
-      longitude: null,
+      coordinates: null,
       location: null,
       creator: null,
       difficulty: null,
@@ -57,7 +56,7 @@ void main() {
       test(
         descriptionServerError,
         () async {
-          const coreFailure = CoreFailure.serverError();
+          const coreFailure = CoreDataFailure.serverError();
           when(mockMainFeedRepository.fillFeed(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);
@@ -69,7 +68,7 @@ void main() {
       test(
         descriptionCacheError,
         () async {
-          const coreFailure = CoreFailure.cacheError();
+          const coreFailure = CoreDataFailure.cacheError();
           when(mockMainFeedRepository.fillFeed(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);
@@ -81,7 +80,7 @@ void main() {
       test(
         descriptionNotFoundError,
         () async {
-          const coreFailure = CoreFailure.notFoundError();
+          const coreFailure = CoreDataFailure.notFoundError();
           when(mockMainFeedRepository.fillFeed(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);

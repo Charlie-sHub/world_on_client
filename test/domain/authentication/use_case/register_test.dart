@@ -1,10 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:worldon/domain/authentication/failures/authentication_failure.dart';
+import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/authentication/use_case/register.dart';
 import 'package:worldon/domain/core/entities/user.dart';
-import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/experience_points.dart';
@@ -82,7 +81,7 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          const authenticationFailure = AuthenticationFailure.serverError();
+          const authenticationFailure = CoreDataFailure.serverError();
           when(mockAuthenticationRepository.register(any)).thenAnswer((_) async => left(authenticationFailure));
           // Act
           final result = await useCase(params);
@@ -95,7 +94,7 @@ void main() {
         descriptionEmailAlreadyInUse,
         () async {
           // Arrange
-          const coreFailure = CoreFailure.emailAlreadyInUse();
+          const coreFailure = CoreDataFailure.emailAlreadyInUse();
           when(mockAuthenticationRepository.register(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);
@@ -108,7 +107,7 @@ void main() {
         descriptionUsernameAlreadyInUse,
         () async {
           // Arrange
-          const coreFailure = CoreFailure.usernameAlreadyInUse();
+          const coreFailure = CoreDataFailure.usernameAlreadyInUse();
           when(mockAuthenticationRepository.register(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);

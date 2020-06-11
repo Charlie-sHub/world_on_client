@@ -11,10 +11,12 @@ class CommentContent extends ValueObject<String> {
 
   factory CommentContent(String input) {
     assert(input != null);
-    return CommentContent._(validateStringLength(
-      input: input,
-      length: maxLength,
-    ));
+    return CommentContent._(
+      validateStringLength(
+        input: input,
+        length: maxLength,
+      ),
+    );
   }
 
   const CommentContent._(this.value);

@@ -8,7 +8,7 @@ import 'package:worldon/domain/core/entities/options.dart';
 import 'package:worldon/domain/core/entities/system.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/entities/user.dart';
-import 'package:worldon/domain/core/failures/core_failure.dart';
+import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -58,7 +58,7 @@ class EditUser implements AsyncUseCase<Unit, Params> {
       );
       return repository.editUser(user);
     } else {
-      return left(const CoreFailure.unAuthorizedError());
+      return left(const CoreDomainFailure.unAuthorizedError());
     }
   }
 }

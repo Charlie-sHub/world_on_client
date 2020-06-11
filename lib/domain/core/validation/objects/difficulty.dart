@@ -11,10 +11,12 @@ class Difficulty extends ValueObject<int> {
 
   factory Difficulty(int input) {
     assert(input != null);
-    return Difficulty._(validateBoundedInteger(
-      input: input,
-      limit: limit,
-    ));
+    return Difficulty._(
+      validateBoundedInteger(
+        input: input,
+        limit: limit,
+      ),
+    );
   }
 
   const Difficulty._(this.value);

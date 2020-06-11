@@ -11,10 +11,12 @@ class EntityDescription extends ValueObject<String> {
 
   factory EntityDescription(String input) {
     assert(input != null);
-    return EntityDescription._(validateStringLength(
-      input: input,
-      length: maxLength,
-    ));
+    return EntityDescription._(
+      validateStringLength(
+        input: input,
+        length: maxLength,
+      ),
+    );
   }
 
   const EntityDescription._(this.value);

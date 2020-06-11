@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/domain/core/entities/comment.dart';
+import 'package:worldon/domain/core/entities/coordinates.dart';
 import 'package:worldon/domain/core/entities/location.dart';
 import 'package:worldon/domain/core/entities/objective.dart';
 import 'package:worldon/domain/core/entities/reward.dart';
@@ -19,8 +20,7 @@ class Experience extends Equatable {
   final Name name;
   final EntityDescription description;
   final Set<String> imageURLs;
-  final double latitude;
-  final double longitude;
+  final Coordinates coordinates;
   final Location location;
   final User creator;
   final Difficulty difficulty;
@@ -38,8 +38,7 @@ class Experience extends Equatable {
     @required this.name,
     @required this.description,
     @required this.imageURLs,
-    @required this.latitude,
-    @required this.longitude,
+    @required this.coordinates,
     @required this.location,
     @required this.creator,
     @required this.difficulty,
@@ -59,8 +58,7 @@ class Experience extends Equatable {
         name,
         description,
         imageURLs,
-        latitude,
-        longitude,
+        coordinates,
         location,
         creator,
         difficulty,

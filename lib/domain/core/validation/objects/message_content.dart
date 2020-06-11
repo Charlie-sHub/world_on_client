@@ -11,10 +11,12 @@ class MessageContent extends ValueObject<String> {
 
   factory MessageContent(String input) {
     assert(input != null);
-    return MessageContent._(validateStringLength(
-      input: input,
-      length: maxLength,
-    ));
+    return MessageContent._(
+      validateStringLength(
+        input: input,
+        length: maxLength,
+      ),
+    );
   }
 
   const MessageContent._(this.value);

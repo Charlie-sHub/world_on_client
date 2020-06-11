@@ -26,10 +26,10 @@ void main() {
   group(
     descriptionGroupOnFailure,
       () {
-      const description = "Should return IntegerOutOfBounds";
+      const _description = "Should return IntegerOutOfBounds";
       test(
-        "$description, testing with a too big integer",
-          () async {
+        "$_description, testing with a too big integer",
+        () async {
           // Act
           final either = validateBoundedInteger(
             limit: limit,
@@ -41,7 +41,7 @@ void main() {
         },
       );
       test(
-        "$description, testing with a negative integer",
+        "$_description, testing with a negative integer",
           () async {
           // Act
           final either = validateBoundedInteger(

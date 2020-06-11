@@ -11,10 +11,12 @@ class UserLevel extends ValueObject<int> {
 
   factory UserLevel(int input) {
     assert(input != null);
-    return UserLevel._(validateBoundedInteger(
-      input: input,
-      limit: limit,
-    ));
+    return UserLevel._(
+      validateBoundedInteger(
+        input: input,
+        limit: limit,
+      ),
+    );
   }
 
   const UserLevel._(this.value);

@@ -11,10 +11,12 @@ class ExperiencePoints extends ValueObject<int> {
 
   factory ExperiencePoints(int input) {
     assert(input != null);
-    return ExperiencePoints._(validateBoundedInteger(
-      input: input,
-      limit: limit,
-    ));
+    return ExperiencePoints._(
+      validateBoundedInteger(
+        input: input,
+        limit: limit,
+      ),
+    );
   }
 
   const ExperiencePoints._(this.value);

@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/user.dart';
-import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/search/use_case/search_users_by_username.dart';
 
@@ -69,7 +69,7 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          const coreFailure = CoreFailure.serverError();
+          const coreFailure = CoreDataFailure.serverError();
           when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);
@@ -82,7 +82,7 @@ void main() {
         descriptionCacheError,
         () async {
           // Arrange
-          const coreFailure = CoreFailure.cacheError();
+          const coreFailure = CoreDataFailure.cacheError();
           when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);
@@ -95,7 +95,7 @@ void main() {
         descriptionNotFoundError,
         () async {
           // Arrange
-          const coreFailure = CoreFailure.notFoundError();
+          const coreFailure = CoreDataFailure.notFoundError();
           when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);

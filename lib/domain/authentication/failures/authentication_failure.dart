@@ -8,14 +8,9 @@ part 'authentication_failure.freezed.dart';
 abstract class AuthenticationFailure extends Failure with _$AuthenticationFailure {
   const factory AuthenticationFailure.cancelledByUser() = CancelledByUser;
 
-  const factory AuthenticationFailure.serverError() = ServerError;
-
+  // TODO: maybe move this failure to the data layer
   const factory AuthenticationFailure.invalidEmailAndPasswordCombination() = InvalidEmailAndPasswordCombination;
 
   // Could use NotFoundError instead
   const factory AuthenticationFailure.noUserInCache() = NoUserInCache;
-
-// Moved to Core, since editing profiles could also return this failure
-// const factory AuthenticationFailure.usernameAlreadyInUse() = UsernameAlreadyInUse;
-// const factory AuthenticationFailure.emailAlreadyInUse() = EmailAlreadyInUse;
 }

@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/objective.dart';
-import 'package:worldon/domain/core/failures/core_failure.dart';
+import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
 /// "Converts" a [Set] of [Objective]s into a [Map].
@@ -22,7 +22,7 @@ class FillObjectiveTracker implements UseCase<Map<int, bool>, Params> {
       }
       return right(objectiveTracker);
     } on Exception catch (e) {
-      return left(const CoreFailure.unknownDomainLayerError());
+      return left(const CoreDomainFailure.unknownDomainLayerError());
     }
   }
 }

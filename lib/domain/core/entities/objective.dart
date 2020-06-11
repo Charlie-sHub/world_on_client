@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
+import 'package:worldon/domain/core/entities/coordinates.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 
 /// [Objective] entity class.
@@ -8,15 +9,13 @@ import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 class Objective extends Equatable {
   final int id;
   final EntityDescription description;
-  final double latitude; // TODO: Maybe create a value object and validator for the longitude and latitude
-  final double longitude;
+  final Coordinates coordinates;
   final String imageName;
 
   const Objective({
     @required this.id,
     @required this.description,
-    @required this.latitude,
-    @required this.longitude,
+    @required this.coordinates,
     @required this.imageName,
   });
 
@@ -24,8 +23,7 @@ class Objective extends Equatable {
   List<Object> get props => [
         id,
         description,
-        latitude,
-        longitude,
+        coordinates,
         imageName,
       ];
 }

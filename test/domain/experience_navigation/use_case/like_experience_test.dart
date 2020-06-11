@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:worldon/domain/core/failures/core_failure.dart';
+import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/experience_navigation/use_case/like_experience.dart';
 
 import '../../../constants.dart';
@@ -42,7 +42,7 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          const coreFailure = CoreFailure.serverError();
+          const coreFailure = CoreDataFailure.serverError();
           when(mockExperienceNavigationRepository.likeExperience(
             experienceId: anyNamed("experienceId"),
             userId: anyNamed("userId"),
@@ -58,7 +58,7 @@ void main() {
         descriptionNotFoundError,
         () async {
           // Arrange
-          const coreFailure = CoreFailure.notFoundError();
+          const coreFailure = CoreDataFailure.notFoundError();
           when(mockExperienceNavigationRepository.likeExperience(
             experienceId: anyNamed("experienceId"),
             userId: anyNamed("userId"),

@@ -51,6 +51,8 @@ dependencies:
   email_validator: ^1.0.4
   # For mapping
   google_maps_flutter: ^0.5.27+3
+  # For getting the geolocation of the user
+  geolocator: ^5.3.2+2
   flushbar: ^1.10.0
   uuid: ^2.0.4
 

@@ -4,7 +4,7 @@ import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/achievement_management/repository/achievement_repository_interface.dart';
 import 'package:worldon/domain/core/entities/achievement.dart';
 import 'package:worldon/domain/core/entities/user.dart';
-import 'package:worldon/domain/core/failures/core_failure.dart';
+import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
 class DeleteAchievement implements AsyncUseCase<Unit, Params> {
@@ -18,7 +18,7 @@ class DeleteAchievement implements AsyncUseCase<Unit, Params> {
     if (isAuthorized) {
       return _repository.removeAchievement(params.achievement.id);
     } else {
-      return left(const CoreFailure.unAuthorizedError());
+      return left(const CoreDomainFailure.unAuthorizedError());
     }
   }
 }

@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/authentication/failures/authentication_failure.dart';
 import 'package:worldon/domain/authentication/use_case/log_in_google.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
@@ -49,7 +50,7 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          const authenticationFailure = AuthenticationFailure.serverError();
+          const authenticationFailure = CoreDataFailure.serverError();
           when(mockAuthenticationRepository.logInGoogle()).thenAnswer((_) async => left(authenticationFailure));
           // Act
           final result = await useCase(NoParams());

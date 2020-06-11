@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/comments/use_case/get_experience_comments.dart';
 import 'package:worldon/domain/core/entities/comment.dart';
-import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 
@@ -47,7 +47,7 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          const coreFailure = CoreFailure.serverError();
+          const coreFailure = CoreDataFailure.serverError();
           when(mockCommentRepository.getExperienceComments(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);
@@ -60,7 +60,7 @@ void main() {
         descriptionCacheError,
         () async {
           // Arrange
-          const coreFailure = CoreFailure.cacheError();
+          const coreFailure = CoreDataFailure.cacheError();
           when(mockCommentRepository.getExperienceComments(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);
@@ -73,7 +73,7 @@ void main() {
         descriptionNotFoundError,
         () async {
           // Arrange
-          const coreFailure = CoreFailure.notFoundError();
+          const coreFailure = CoreDataFailure.notFoundError();
           when(mockCommentRepository.getExperienceComments(any)).thenAnswer((_) async => left(coreFailure));
           // Act
           final result = await useCase(params);

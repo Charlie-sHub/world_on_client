@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/experience.dart';
-import 'package:worldon/domain/core/failures/core_failure.dart';
 import 'package:worldon/domain/experience_navigation/use_case/load_surrounding_experiences.dart';
 
 import '../../../constants.dart';
@@ -21,7 +21,6 @@ void main() {
     latitude: 0.0,
     longitude: 0.0,
   );
-  // TODO: refactor the other tests so they use empty Sets instead of Sets with null values
   final experienceSet = <Experience>{};
   test(
     "Should return a Set of Experiences",
@@ -45,7 +44,7 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          const coreFailure = CoreFailure.serverError();
+          const coreFailure = CoreDataFailure.serverError();
           when(mockExperienceNavigationRepository.loadSurroundingExperiences(
             latitude: anyNamed("latitude"),
             longitude: anyNamed("longitude"),
@@ -61,7 +60,7 @@ void main() {
         descriptionNotFoundError,
         () async {
           // Arrange
-          const coreFailure = CoreFailure.notFoundError();
+          const coreFailure = CoreDataFailure.notFoundError();
           when(mockExperienceNavigationRepository.loadSurroundingExperiences(
             latitude: anyNamed("latitude"),
             longitude: anyNamed("longitude"),

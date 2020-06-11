@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failures.dart';
+import 'package:worldon/domain/core/entities/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/core/entities/location.dart';
 import 'package:worldon/domain/core/entities/objective.dart';
@@ -26,8 +27,7 @@ class CreateExperience implements AsyncUseCase<Unit, Params> {
       name: params.name,
       description: params.description,
       imageURLs: params.imageNames,
-      latitude: params.latitude,
-      longitude: params.longitude,
+      coordinates: params.coordinates,
       location: params.location,
       creator: params.creator,
       difficulty: params.difficulty,
@@ -48,8 +48,7 @@ class Params {
   final Name name;
   final EntityDescription description;
   final Set<String> imageNames;
-  final double latitude;
-  final double longitude;
+  final Coordinates coordinates;
   final Location location;
   final User creator;
   final Difficulty difficulty;
@@ -67,8 +66,7 @@ class Params {
     @required this.name,
     @required this.description,
     @required this.imageNames,
-    @required this.latitude,
-    @required this.longitude,
+    @required this.coordinates,
     @required this.location,
     @required this.creator,
     @required this.difficulty,

@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failures.dart';
-import 'package:worldon/domain/core/failures/core_failure.dart';
+import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
 /// Updates the objective tracker
@@ -23,7 +23,7 @@ class AccomplishObjective implements UseCase<bool, Params> {
       }
       return right(trackerFilled);
     } on Exception catch (e) {
-      return left(const CoreFailure.unknownDomainLayerError());
+      return left(const CoreDomainFailure.unknownDomainLayerError());
     }
   }
 }
