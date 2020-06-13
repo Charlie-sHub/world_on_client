@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
 import 'package:worldon/domain/core/entities/comment.dart';
 import 'package:worldon/domain/core/entities/coordinates.dart';
 import 'package:worldon/domain/core/entities/location.dart';
@@ -27,7 +27,7 @@ class Experience extends Equatable {
   final PastDate creationDate;
   final PastDate modificationDate;
   final Set<Comment> comments;
-  final Set<Objective> objectives;
+  final Set<Objective> objectives; // TODO: Value object and validator to ensure the Objective and Tag Sets are not empty
   final Set<Reward> rewards;
   final Set<Tag> tags;
   final Set<User> likedBy;

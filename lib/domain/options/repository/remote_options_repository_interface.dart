@@ -6,6 +6,7 @@ import 'package:worldon/domain/core/entities/user.dart';
 /// Repository for the [Options] feature's remote connection
 abstract class RemoteOptionsRepositoryInterface {
   /// Sends a [Options] object to the server to be saved
+  // TODO: add user id
   Future<Either<Failure, Unit>> saveGlobalOptions(Options option);
 
   /// Sends a [User] id to the server to delete the associated [User]

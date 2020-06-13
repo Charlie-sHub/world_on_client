@@ -13,7 +13,7 @@ void main() {
   const invalidLongitude = 190.0;
   const validLongitude = 80.0;
   group(
-    "Group of all the successful tests",
+    descriptionGroupOnSuccess,
     () {
       test(
         "Should return validLatitude",

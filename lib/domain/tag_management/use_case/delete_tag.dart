@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/entities/user.dart';
@@ -27,5 +27,8 @@ class Params {
   final User userRequesting;
   final Tag tag;
 
-  Params({@required this.userRequesting, @required this.tag});
+  Params({
+    @required this.userRequesting,
+    @required this.tag,
+  });
 }

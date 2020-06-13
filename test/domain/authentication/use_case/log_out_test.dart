@@ -10,7 +10,6 @@ import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/core/validation/objects/user_level.dart';
 
 void main() {
-  // TODO: Determine the necessity of this UseCase
   LogOut useCase;
   setUp(
     () {

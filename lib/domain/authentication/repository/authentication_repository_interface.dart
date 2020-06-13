@@ -5,10 +5,10 @@ import 'package:worldon/domain/core/entities/user.dart';
 /// Repository for authentication and registration of new [User]s.
 abstract class AuthenticationRepositoryInterface {
   /// Sends a new [User] to be registered in the database.
-  Future<Either<Failure, User>> register(User user);
+  Future<Either<Failure, Unit>> register(User user);
 
   /// Sends a [User] object with only username and password to login in the server.
-  Future<Either<Failure, User>> logIn(User user);
+  Future<Either<Failure, Unit>> logIn(User user);
 
   /// Calls the Google sign in API to register a new [User].
   // TODO: Check if this is necessary

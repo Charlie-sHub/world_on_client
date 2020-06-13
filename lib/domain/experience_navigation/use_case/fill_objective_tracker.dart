@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/objective.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
@@ -11,19 +11,15 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 class FillObjectiveTracker implements UseCase<Map<int, bool>, Params> {
   @override
   Either<Failure, Map<int, bool>> call(Params params) {
-    try {
-      final Map<int, bool> objectiveTracker = {};
-      for (final objective in params.objectiveSet) {
-        if (objective.id != null) {
-          objectiveTracker[objective.id] = false;
-        } else {
-          throw Exception();
-        }
+    final Map<int, bool> objectiveTracker = {};
+    for (final objective in params.objectiveSet) {
+      if (objective.id != null) {
+        objectiveTracker[objective.id] = false;
+      } else {
+        return left(const CoreDomainFailure.unknownDomainLayerError());
       }
-      return right(objectiveTracker);
-    } on Exception catch (e) {
-      return left(const CoreDomainFailure.unknownDomainLayerError());
     }
+    return right(objectiveTracker);
   }
 }
 

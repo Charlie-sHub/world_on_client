@@ -55,7 +55,6 @@ mixin _$CoreDataFailure {
     @required Result emailAlreadyInUse(),
     @required Result nameAlreadyInUse(),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result serverError(),
@@ -67,7 +66,6 @@ mixin _$CoreDataFailure {
     Result nameAlreadyInUse(),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result serverError(ServerError value),
@@ -78,7 +76,6 @@ mixin _$CoreDataFailure {
     @required Result emailAlreadyInUse(EmailAlreadyInUse value),
     @required Result nameAlreadyInUse(NameAlreadyInUse value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result serverError(ServerError value),
@@ -100,17 +97,19 @@ class _$CoreDataFailureCopyWithImpl<$Res> implements $CoreDataFailureCopyWith<$R
   _$CoreDataFailureCopyWithImpl(this._value, this._then);
 
   final CoreDataFailure _value;
-
   // ignore: unused_field
   final $Res Function(CoreDataFailure) _then;
 }
 
 abstract class $ServerErrorCopyWith<$Res> {
-  factory $ServerErrorCopyWith(ServerError value, $Res Function(ServerError) then) = _$ServerErrorCopyWithImpl<$Res>;
+  factory $ServerErrorCopyWith(ServerError value, $Res Function(ServerError) then) =
+  _$ServerErrorCopyWithImpl<$Res>;
 }
 
-class _$ServerErrorCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res> implements $ServerErrorCopyWith<$Res> {
-  _$ServerErrorCopyWithImpl(ServerError _value, $Res Function(ServerError) _then) : super(_value, (v) => _then(v as ServerError));
+class _$ServerErrorCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res>
+  implements $ServerErrorCopyWith<$Res> {
+  _$ServerErrorCopyWithImpl(ServerError _value, $Res Function(ServerError) _then)
+    : super(_value, (v) => _then(v as ServerError));
 
   @override
   ServerError get _value => super._value as ServerError;
@@ -218,11 +217,14 @@ abstract class ServerError implements CoreDataFailure {
 }
 
 abstract class $NotFoundErrorCopyWith<$Res> {
-  factory $NotFoundErrorCopyWith(NotFoundError value, $Res Function(NotFoundError) then) = _$NotFoundErrorCopyWithImpl<$Res>;
+  factory $NotFoundErrorCopyWith(NotFoundError value, $Res Function(NotFoundError) then) =
+  _$NotFoundErrorCopyWithImpl<$Res>;
 }
 
-class _$NotFoundErrorCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res> implements $NotFoundErrorCopyWith<$Res> {
-  _$NotFoundErrorCopyWithImpl(NotFoundError _value, $Res Function(NotFoundError) _then) : super(_value, (v) => _then(v as NotFoundError));
+class _$NotFoundErrorCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res>
+  implements $NotFoundErrorCopyWith<$Res> {
+  _$NotFoundErrorCopyWithImpl(NotFoundError _value, $Res Function(NotFoundError) _then)
+    : super(_value, (v) => _then(v as NotFoundError));
 
   @override
   NotFoundError get _value => super._value as NotFoundError;
@@ -330,11 +332,14 @@ abstract class NotFoundError implements CoreDataFailure {
 }
 
 abstract class $CacheErrorCopyWith<$Res> {
-  factory $CacheErrorCopyWith(CacheError value, $Res Function(CacheError) then) = _$CacheErrorCopyWithImpl<$Res>;
+  factory $CacheErrorCopyWith(CacheError value, $Res Function(CacheError) then) =
+  _$CacheErrorCopyWithImpl<$Res>;
 }
 
-class _$CacheErrorCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res> implements $CacheErrorCopyWith<$Res> {
-  _$CacheErrorCopyWithImpl(CacheError _value, $Res Function(CacheError) _then) : super(_value, (v) => _then(v as CacheError));
+class _$CacheErrorCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res>
+  implements $CacheErrorCopyWith<$Res> {
+  _$CacheErrorCopyWithImpl(CacheError _value, $Res Function(CacheError) _then)
+    : super(_value, (v) => _then(v as CacheError));
 
   @override
   CacheError get _value => super._value as CacheError;
@@ -442,11 +447,14 @@ abstract class CacheError implements CoreDataFailure {
 }
 
 abstract class $GeoLocationErrorCopyWith<$Res> {
-  factory $GeoLocationErrorCopyWith(GeoLocationError value, $Res Function(GeoLocationError) then) = _$GeoLocationErrorCopyWithImpl<$Res>;
+  factory $GeoLocationErrorCopyWith(GeoLocationError value, $Res Function(GeoLocationError) then) =
+  _$GeoLocationErrorCopyWithImpl<$Res>;
 }
 
-class _$GeoLocationErrorCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res> implements $GeoLocationErrorCopyWith<$Res> {
-  _$GeoLocationErrorCopyWithImpl(GeoLocationError _value, $Res Function(GeoLocationError) _then) : super(_value, (v) => _then(v as GeoLocationError));
+class _$GeoLocationErrorCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res>
+  implements $GeoLocationErrorCopyWith<$Res> {
+  _$GeoLocationErrorCopyWithImpl(GeoLocationError _value, $Res Function(GeoLocationError) _then)
+    : super(_value, (v) => _then(v as GeoLocationError));
 
   @override
   GeoLocationError get _value => super._value as GeoLocationError;
@@ -554,11 +562,15 @@ abstract class GeoLocationError implements CoreDataFailure {
 }
 
 abstract class $UsernameAlreadyInUseCopyWith<$Res> {
-  factory $UsernameAlreadyInUseCopyWith(UsernameAlreadyInUse value, $Res Function(UsernameAlreadyInUse) then) = _$UsernameAlreadyInUseCopyWithImpl<$Res>;
+  factory $UsernameAlreadyInUseCopyWith(UsernameAlreadyInUse value,
+    $Res Function(UsernameAlreadyInUse) then) =
+  _$UsernameAlreadyInUseCopyWithImpl<$Res>;
 }
 
-class _$UsernameAlreadyInUseCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res> implements $UsernameAlreadyInUseCopyWith<$Res> {
-  _$UsernameAlreadyInUseCopyWithImpl(UsernameAlreadyInUse _value, $Res Function(UsernameAlreadyInUse) _then) : super(_value, (v) => _then(v as UsernameAlreadyInUse));
+class _$UsernameAlreadyInUseCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res>
+  implements $UsernameAlreadyInUseCopyWith<$Res> {
+  _$UsernameAlreadyInUseCopyWithImpl(UsernameAlreadyInUse _value, $Res Function(UsernameAlreadyInUse) _then)
+    : super(_value, (v) => _then(v as UsernameAlreadyInUse));
 
   @override
   UsernameAlreadyInUse get _value => super._value as UsernameAlreadyInUse;
@@ -666,11 +678,14 @@ abstract class UsernameAlreadyInUse implements CoreDataFailure {
 }
 
 abstract class $EmailAlreadyInUseCopyWith<$Res> {
-  factory $EmailAlreadyInUseCopyWith(EmailAlreadyInUse value, $Res Function(EmailAlreadyInUse) then) = _$EmailAlreadyInUseCopyWithImpl<$Res>;
+  factory $EmailAlreadyInUseCopyWith(EmailAlreadyInUse value, $Res Function(EmailAlreadyInUse) then) =
+  _$EmailAlreadyInUseCopyWithImpl<$Res>;
 }
 
-class _$EmailAlreadyInUseCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res> implements $EmailAlreadyInUseCopyWith<$Res> {
-  _$EmailAlreadyInUseCopyWithImpl(EmailAlreadyInUse _value, $Res Function(EmailAlreadyInUse) _then) : super(_value, (v) => _then(v as EmailAlreadyInUse));
+class _$EmailAlreadyInUseCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res>
+  implements $EmailAlreadyInUseCopyWith<$Res> {
+  _$EmailAlreadyInUseCopyWithImpl(EmailAlreadyInUse _value, $Res Function(EmailAlreadyInUse) _then)
+    : super(_value, (v) => _then(v as EmailAlreadyInUse));
 
   @override
   EmailAlreadyInUse get _value => super._value as EmailAlreadyInUse;
@@ -778,11 +793,14 @@ abstract class EmailAlreadyInUse implements CoreDataFailure {
 }
 
 abstract class $NameAlreadyInUseCopyWith<$Res> {
-  factory $NameAlreadyInUseCopyWith(NameAlreadyInUse value, $Res Function(NameAlreadyInUse) then) = _$NameAlreadyInUseCopyWithImpl<$Res>;
+  factory $NameAlreadyInUseCopyWith(NameAlreadyInUse value, $Res Function(NameAlreadyInUse) then) =
+  _$NameAlreadyInUseCopyWithImpl<$Res>;
 }
 
-class _$NameAlreadyInUseCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res> implements $NameAlreadyInUseCopyWith<$Res> {
-  _$NameAlreadyInUseCopyWithImpl(NameAlreadyInUse _value, $Res Function(NameAlreadyInUse) _then) : super(_value, (v) => _then(v as NameAlreadyInUse));
+class _$NameAlreadyInUseCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res>
+  implements $NameAlreadyInUseCopyWith<$Res> {
+  _$NameAlreadyInUseCopyWithImpl(NameAlreadyInUse _value, $Res Function(NameAlreadyInUse) _then)
+    : super(_value, (v) => _then(v as NameAlreadyInUse));
 
   @override
   NameAlreadyInUse get _value => super._value as NameAlreadyInUse;

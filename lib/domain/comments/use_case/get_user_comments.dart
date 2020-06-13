@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/comments/repository/comment_repository_interface.dart';
 import 'package:worldon/domain/core/entities/comment.dart';

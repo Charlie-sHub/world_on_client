@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:flutter/foundation.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/achievement.dart';
 import 'package:worldon/domain/core/entities/experience.dart';
@@ -32,22 +33,37 @@ abstract class ProfileRepositoryInterface {
   Future<Either<Failure, Set<Experience>>> loadExperiencesCreated(int id);
 
   /// Sends a couple of [User] ids so the blocked [User] is added to the list of blocked [User]s of a given [User]
-  Future<Either<Failure, Unit>> blockUser({int blockerId, int blockedId});
+  Future<Either<Failure, Unit>> blockUser({
+    @required int blockerId,
+    @required int blockedId,
+  });
 
   /// Sends a couple of [User] ids so the blocked [User] is removed from the list of blocked [User]s of a given [User]
-  Future<Either<Failure, Unit>> unBlockUser({int blockerId, int blockedId});
+  Future<Either<Failure, Unit>> unBlockUser({
+    @required int blockerId,
+    @required int blockedId,
+  });
 
   /// Sends the id of an [Experience] to the server so this one can be removed from the liked [Experience]s list of a given [User]
-  Future<Either<Failure, Unit>> removeExperienceLiked({int userId, int experienceId});
+  Future<Either<Failure, Unit>> removeExperienceLiked({
+    @required int userId,
+    @required int experienceId,
+  });
 
   /// Sends the id of an [Experience] to the server so this one can be deleted
   Future<Either<Failure, Unit>> deleteExperience(int experienceId);
 
   /// Sends a couple of [User] ids so the followed [User] is added to the list of following [User]s of a given [User]
-  Future<Either<Failure, Unit>> followUser({int userId, int userToFollowId});
+  Future<Either<Failure, Unit>> followUser({
+    @required int userId,
+    @required int userToFollowId,
+  });
 
   /// Sends a couple of [User] ids so the followed [User] is removed from the list of following [User]s of a given [User]
-  Future<Either<Failure, Unit>> unFollowUser({int userId, int userToUnFollowId});
+  Future<Either<Failure, Unit>> unFollowUser({
+    @required int userId,
+    @required int userToUnFollowId,
+  });
 
   /// Returns a [Set] of [Tag]s of a given [User] interests
   Future<Either<Failure, Set<Tag>>> loadUserInterests(int userId);

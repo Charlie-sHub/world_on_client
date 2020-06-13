@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
@@ -26,5 +26,8 @@ class Params {
   final User userRequesting;
   final User userToDelete;
 
-  Params({@required this.userRequesting, @required this.userToDelete});
+  Params({
+    @required this.userRequesting,
+    @required this.userToDelete,
+  });
 }

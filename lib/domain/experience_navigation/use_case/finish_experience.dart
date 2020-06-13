@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/core/entities/user.dart';
@@ -25,5 +25,8 @@ class Params {
   final int userId;
   final int experienceId;
 
-  Params({@required this.userId, @required this.experienceId});
+  Params({
+    @required this.userId,
+    @required this.experienceId,
+  });
 }

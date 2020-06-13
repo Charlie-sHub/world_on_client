@@ -2,10 +2,10 @@ include: package:lint/analysis_options.yaml
 
 linter:
   rules:
-    - parameter_assigments
+    - parameter_assignments
 
 analyzer:
   errors:
     missing_return: error
     missing_required_param: error
-    parameter_assigments: error
+    parameter_assignments: error

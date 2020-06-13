@@ -63,6 +63,12 @@ class _$ValueFailureTearOff {
       coordinate: coordinate,
     );
   }
+
+  EmptySet<T> emptySet<T>({@required Set<dynamic> set}) {
+    return EmptySet<T>(
+      set: set,
+    );
+  }
 }
 
 // ignore: unused_element
@@ -80,6 +86,7 @@ mixin _$ValueFailure<T> {
     @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
     @required Result invalidCoordinate(double coordinate),
+    @required Result emptySet(Set<dynamic> set),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -92,6 +99,7 @@ mixin _$ValueFailure<T> {
     Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
     Result invalidCoordinate(double coordinate),
+    Result emptySet(Set<dynamic> set),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -105,6 +113,7 @@ mixin _$ValueFailure<T> {
     @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result invalidCoordinate(InvalidCoordinates<T> value),
+    @required Result emptySet(EmptySet<T> value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -117,6 +126,7 @@ mixin _$ValueFailure<T> {
     Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     Result invalidCoordinate(InvalidCoordinates<T> value),
+    Result emptySet(EmptySet<T> value),
     @required Result orElse(),
   });
 }
@@ -181,6 +191,7 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
     @required Result invalidCoordinate(double coordinate),
+    @required Result emptySet(Set<dynamic> set),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -191,6 +202,7 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
+    assert(emptySet != null);
     return nullInput();
   }
 
@@ -206,6 +218,7 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
     Result invalidCoordinate(double coordinate),
+    Result emptySet(Set<dynamic> set),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -227,6 +240,7 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result invalidCoordinate(InvalidCoordinates<T> value),
+    @required Result emptySet(EmptySet<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -237,6 +251,7 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
+    assert(emptySet != null);
     return nullInput(this);
   }
 
@@ -252,6 +267,7 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     Result invalidCoordinate(InvalidCoordinates<T> value),
+    Result emptySet(EmptySet<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -338,6 +354,7 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
     @required Result invalidCoordinate(double coordinate),
+    @required Result emptySet(Set<dynamic> set),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -348,6 +365,7 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
+    assert(emptySet != null);
     return invalidDate(failedValue);
   }
 
@@ -363,6 +381,7 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
     Result invalidCoordinate(double coordinate),
+    Result emptySet(Set<dynamic> set),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -384,6 +403,7 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result invalidCoordinate(InvalidCoordinates<T> value),
+    @required Result emptySet(EmptySet<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -394,6 +414,7 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
+    assert(emptySet != null);
     return invalidDate(this);
   }
 
@@ -409,6 +430,7 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     Result invalidCoordinate(InvalidCoordinates<T> value),
+    Result emptySet(EmptySet<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -501,6 +523,7 @@ class _$InvalidEmail<T>
     @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
     @required Result invalidCoordinate(double coordinate),
+    @required Result emptySet(Set<dynamic> set),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -511,6 +534,7 @@ class _$InvalidEmail<T>
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
+    assert(emptySet != null);
     return invalidEmail(failedValue);
   }
 
@@ -526,6 +550,7 @@ class _$InvalidEmail<T>
     Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
     Result invalidCoordinate(double coordinate),
+    Result emptySet(Set<dynamic> set),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -547,6 +572,7 @@ class _$InvalidEmail<T>
     @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result invalidCoordinate(InvalidCoordinates<T> value),
+    @required Result emptySet(EmptySet<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -557,6 +583,7 @@ class _$InvalidEmail<T>
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
+    assert(emptySet != null);
     return invalidEmail(this);
   }
 
@@ -572,6 +599,7 @@ class _$InvalidEmail<T>
     Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     Result invalidCoordinate(InvalidCoordinates<T> value),
+    Result emptySet(EmptySet<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -664,6 +692,7 @@ class _$InvalidPassword<T>
     @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
     @required Result invalidCoordinate(double coordinate),
+    @required Result emptySet(Set<dynamic> set),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -674,6 +703,7 @@ class _$InvalidPassword<T>
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
+    assert(emptySet != null);
     return invalidPassword(failedValue);
   }
 
@@ -689,6 +719,7 @@ class _$InvalidPassword<T>
     Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
     Result invalidCoordinate(double coordinate),
+    Result emptySet(Set<dynamic> set),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -710,6 +741,7 @@ class _$InvalidPassword<T>
     @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result invalidCoordinate(InvalidCoordinates<T> value),
+    @required Result emptySet(EmptySet<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -720,6 +752,7 @@ class _$InvalidPassword<T>
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
+    assert(emptySet != null);
     return invalidPassword(this);
   }
 
@@ -735,6 +768,7 @@ class _$InvalidPassword<T>
     Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     Result invalidCoordinate(InvalidCoordinates<T> value),
+    Result emptySet(EmptySet<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -825,6 +859,7 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
     @required Result invalidCoordinate(double coordinate),
+    @required Result emptySet(Set<dynamic> set),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -835,6 +870,7 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
+    assert(emptySet != null);
     return invalidName(failedValue);
   }
 
@@ -850,6 +886,7 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
     Result invalidCoordinate(double coordinate),
+    Result emptySet(Set<dynamic> set),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -871,6 +908,7 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result invalidCoordinate(InvalidCoordinates<T> value),
+    @required Result emptySet(EmptySet<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -881,6 +919,7 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
+    assert(emptySet != null);
     return invalidName(this);
   }
 
@@ -896,6 +935,7 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     Result invalidCoordinate(InvalidCoordinates<T> value),
+    Result emptySet(EmptySet<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -990,6 +1030,7 @@ class _$StringExceedsLength<T>
     @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
     @required Result invalidCoordinate(double coordinate),
+    @required Result emptySet(Set<dynamic> set),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1000,6 +1041,7 @@ class _$StringExceedsLength<T>
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
+    assert(emptySet != null);
     return stringExceedsLength(failedValue);
   }
 
@@ -1015,6 +1057,7 @@ class _$StringExceedsLength<T>
     Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
     Result invalidCoordinate(double coordinate),
+    Result emptySet(Set<dynamic> set),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1036,6 +1079,7 @@ class _$StringExceedsLength<T>
     @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result invalidCoordinate(InvalidCoordinates<T> value),
+    @required Result emptySet(EmptySet<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1046,6 +1090,7 @@ class _$StringExceedsLength<T>
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
+    assert(emptySet != null);
     return stringExceedsLength(this);
   }
 
@@ -1061,6 +1106,7 @@ class _$StringExceedsLength<T>
     Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     Result invalidCoordinate(InvalidCoordinates<T> value),
+    Result emptySet(EmptySet<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1155,6 +1201,7 @@ class _$IntegerOutOfBounds<T>
     @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
     @required Result invalidCoordinate(double coordinate),
+    @required Result emptySet(Set<dynamic> set),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1165,6 +1212,7 @@ class _$IntegerOutOfBounds<T>
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
+    assert(emptySet != null);
     return integerOutOfBounds(failedValue);
   }
 
@@ -1180,6 +1228,7 @@ class _$IntegerOutOfBounds<T>
     Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
     Result invalidCoordinate(double coordinate),
+    Result emptySet(Set<dynamic> set),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1201,6 +1250,7 @@ class _$IntegerOutOfBounds<T>
     @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result invalidCoordinate(InvalidCoordinates<T> value),
+    @required Result emptySet(EmptySet<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1211,6 +1261,7 @@ class _$IntegerOutOfBounds<T>
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
+    assert(emptySet != null);
     return integerOutOfBounds(this);
   }
 
@@ -1226,6 +1277,7 @@ class _$IntegerOutOfBounds<T>
     Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     Result invalidCoordinate(InvalidCoordinates<T> value),
+    Result emptySet(EmptySet<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1324,6 +1376,7 @@ class _$StringWithInvalidCharacters<T>
     @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
     @required Result invalidCoordinate(double coordinate),
+    @required Result emptySet(Set<dynamic> set),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1334,6 +1387,7 @@ class _$StringWithInvalidCharacters<T>
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
+    assert(emptySet != null);
     return stringWithInvalidCharacters(failedValue);
   }
 
@@ -1349,6 +1403,7 @@ class _$StringWithInvalidCharacters<T>
     Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
     Result invalidCoordinate(double coordinate),
+    Result emptySet(Set<dynamic> set),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1370,6 +1425,7 @@ class _$StringWithInvalidCharacters<T>
     @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result invalidCoordinate(InvalidCoordinates<T> value),
+    @required Result emptySet(EmptySet<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1380,6 +1436,7 @@ class _$StringWithInvalidCharacters<T>
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
+    assert(emptySet != null);
     return stringWithInvalidCharacters(this);
   }
 
@@ -1395,6 +1452,7 @@ class _$StringWithInvalidCharacters<T>
     Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     Result invalidCoordinate(InvalidCoordinates<T> value),
+    Result emptySet(EmptySet<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1418,7 +1476,6 @@ abstract class $InvalidCoordinatesCopyWith<T, $Res> {
   factory $InvalidCoordinatesCopyWith(InvalidCoordinates<T> value,
     $Res Function(InvalidCoordinates<T>) then) =
   _$InvalidCoordinatesCopyWithImpl<T, $Res>;
-  
   $Res call({double coordinate});
 }
 
@@ -1426,10 +1483,10 @@ class _$InvalidCoordinatesCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithIm
   implements $InvalidCoordinatesCopyWith<T, $Res> {
   _$InvalidCoordinatesCopyWithImpl(InvalidCoordinates<T> _value, $Res Function(InvalidCoordinates<T>) _then)
     : super(_value, (v) => _then(v as InvalidCoordinates<T>));
-  
+
   @override
   InvalidCoordinates<T> get _value => super._value as InvalidCoordinates<T>;
-  
+
   @override
   $Res call({
     Object coordinate = freezed,
@@ -1446,21 +1503,21 @@ class _$InvalidCoordinates<T>
   implements InvalidCoordinates<T> {
   const _$InvalidCoordinates({@required this.coordinate})
     : assert(coordinate != null);
-  
+
   @override
   final double coordinate;
-  
+
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'ValueFailure<$T>.invalidCoordinate(coordinate: $coordinate)';
   }
-  
+
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidCoordinate'))..add(DiagnosticsProperty('coordinate', coordinate));
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -1469,15 +1526,180 @@ class _$InvalidCoordinates<T>
           const DeepCollectionEquality()
             .equals(other.coordinate, coordinate)));
   }
-  
+
   @override
   int get hashCode =>
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(coordinate);
-  
+
   @override
   $InvalidCoordinatesCopyWith<T, InvalidCoordinates<T>> get copyWith =>
     _$InvalidCoordinatesCopyWithImpl<T, InvalidCoordinates<T>>(
       this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result nullInput(),
+    @required Result invalidDate(DateTime failedValue),
+    @required Result invalidEmail(String failedValue),
+    @required Result invalidPassword(String failedValue),
+    @required Result invalidName(String failedValue),
+    @required Result stringExceedsLength(String failedValue),
+    @required Result integerOutOfBounds(int failedValue),
+    @required Result stringWithInvalidCharacters(String failedValue),
+    @required Result invalidCoordinate(double coordinate),
+    @required Result emptySet(Set<dynamic> set),
+  }) {
+    assert(nullInput != null);
+    assert(invalidDate != null);
+    assert(invalidEmail != null);
+    assert(invalidPassword != null);
+    assert(invalidName != null);
+    assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
+    assert(stringWithInvalidCharacters != null);
+    assert(invalidCoordinate != null);
+    assert(emptySet != null);
+    return invalidCoordinate(coordinate);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result nullInput(),
+    Result invalidDate(DateTime failedValue),
+    Result invalidEmail(String failedValue),
+    Result invalidPassword(String failedValue),
+    Result invalidName(String failedValue),
+    Result stringExceedsLength(String failedValue),
+    Result integerOutOfBounds(int failedValue),
+    Result stringWithInvalidCharacters(String failedValue),
+    Result invalidCoordinate(double coordinate),
+    Result emptySet(Set<dynamic> set),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidCoordinate != null) {
+      return invalidCoordinate(coordinate);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result nullInput(NullInput<T> value),
+    @required Result invalidDate(InvalidDate<T> value),
+    @required Result invalidEmail(InvalidEmail<T> value),
+    @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result invalidName(InvalidName<T> value),
+    @required Result stringExceedsLength(StringExceedsLength<T> value),
+    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
+    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    @required Result invalidCoordinate(InvalidCoordinates<T> value),
+    @required Result emptySet(EmptySet<T> value),
+  }) {
+    assert(nullInput != null);
+    assert(invalidDate != null);
+    assert(invalidEmail != null);
+    assert(invalidPassword != null);
+    assert(invalidName != null);
+    assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
+    assert(stringWithInvalidCharacters != null);
+    assert(invalidCoordinate != null);
+    assert(emptySet != null);
+    return invalidCoordinate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result nullInput(NullInput<T> value),
+    Result invalidDate(InvalidDate<T> value),
+    Result invalidEmail(InvalidEmail<T> value),
+    Result invalidPassword(InvalidPassword<T> value),
+    Result invalidName(InvalidName<T> value),
+    Result stringExceedsLength(StringExceedsLength<T> value),
+    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
+    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    Result invalidCoordinate(InvalidCoordinates<T> value),
+    Result emptySet(EmptySet<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidCoordinate != null) {
+      return invalidCoordinate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidCoordinates<T> implements ValueFailure<T> {
+  const factory InvalidCoordinates({@required double coordinate}) =
+  _$InvalidCoordinates<T>;
+
+  double get coordinate;
+  $InvalidCoordinatesCopyWith<T, InvalidCoordinates<T>> get copyWith;
+}
+
+abstract class $EmptySetCopyWith<T, $Res> {
+  factory $EmptySetCopyWith(EmptySet<T> value, $Res Function(EmptySet<T>) then) =
+  _$EmptySetCopyWithImpl<T, $Res>;
+  
+  $Res call({Set<dynamic> set});
+}
+
+class _$EmptySetCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
+  implements $EmptySetCopyWith<T, $Res> {
+  _$EmptySetCopyWithImpl(EmptySet<T> _value, $Res Function(EmptySet<T>) _then)
+    : super(_value, (v) => _then(v as EmptySet<T>));
+  
+  @override
+  EmptySet<T> get _value => super._value as EmptySet<T>;
+  
+  @override
+  $Res call({
+    Object set = freezed,
+  }) {
+    return _then(EmptySet<T>(
+      set: set == freezed ? _value.set : set as Set<dynamic>,
+    ));
+  }
+}
+
+class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
+  const _$EmptySet({@required this.set}) : assert(set != null);
+  
+  @override
+  final Set<dynamic> set;
+  
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.emptySet(set: $set)';
+  }
+  
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.emptySet'))..add(DiagnosticsProperty('set', set));
+  }
+  
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+      (other is EmptySet<T> &&
+        (identical(other.set, set) ||
+          const DeepCollectionEquality().equals(other.set, set)));
+  }
+  
+  @override
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(set);
+  
+  @override
+  $EmptySetCopyWith<T, EmptySet<T>> get copyWith =>
+    _$EmptySetCopyWithImpl<T, EmptySet<T>>(this, _$identity);
   
   @override
   @optionalTypeArgs
@@ -1491,6 +1713,7 @@ class _$InvalidCoordinates<T>
     @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
     @required Result invalidCoordinate(double coordinate),
+    @required Result emptySet(Set<dynamic> set),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1501,7 +1724,8 @@ class _$InvalidCoordinates<T>
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
-    return invalidCoordinate(coordinate);
+    assert(emptySet != null);
+    return emptySet(set);
   }
   
   @override
@@ -1516,11 +1740,12 @@ class _$InvalidCoordinates<T>
     Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
     Result invalidCoordinate(double coordinate),
+    Result emptySet(Set<dynamic> set),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (invalidCoordinate != null) {
-      return invalidCoordinate(coordinate);
+    if (emptySet != null) {
+      return emptySet(set);
     }
     return orElse();
   }
@@ -1537,6 +1762,7 @@ class _$InvalidCoordinates<T>
     @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result invalidCoordinate(InvalidCoordinates<T> value),
+    @required Result emptySet(EmptySet<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1547,7 +1773,8 @@ class _$InvalidCoordinates<T>
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
-    return invalidCoordinate(this);
+    assert(emptySet != null);
+    return emptySet(this);
   }
   
   @override
@@ -1562,21 +1789,21 @@ class _$InvalidCoordinates<T>
     Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     Result invalidCoordinate(InvalidCoordinates<T> value),
+    Result emptySet(EmptySet<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (invalidCoordinate != null) {
-      return invalidCoordinate(this);
+    if (emptySet != null) {
+      return emptySet(this);
     }
     return orElse();
   }
 }
 
-abstract class InvalidCoordinates<T> implements ValueFailure<T> {
-  const factory InvalidCoordinates({@required double coordinate}) =
-  _$InvalidCoordinates<T>;
+abstract class EmptySet<T> implements ValueFailure<T> {
+  const factory EmptySet({@required Set<dynamic> set}) = _$EmptySet<T>;
   
-  double get coordinate;
+  Set<dynamic> get set;
   
-  $InvalidCoordinatesCopyWith<T, InvalidCoordinates<T>> get copyWith;
+  $EmptySetCopyWith<T, EmptySet<T>> get copyWith;
 }

@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/authentication/repository/authentication_repository_interface.dart';
 import 'package:worldon/domain/core/entities/user.dart';
@@ -8,13 +8,13 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
 
 /// [UseCase] for direct World On Login
-class LogIn implements AsyncUseCase<User, Params> {
+class LogIn implements AsyncUseCase<Unit, Params> {
   final AuthenticationRepositoryInterface _repository;
 
   LogIn(this._repository);
 
   @override
-  Future<Either<Failure, User>> call(Params params) async {
+  Future<Either<Failure, Unit>> call(Params params) async {
     final user = User(
       username: params.username,
       password: params.password,

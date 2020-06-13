@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
 import 'package:worldon/domain/core/entities/coordinates.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 

@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/core/entities/user.dart';
@@ -27,5 +27,8 @@ class Params {
   final User userRequesting;
   final Experience experience;
 
-  Params({@required this.userRequesting, @required this.experience});
+  Params({
+    @required this.userRequesting,
+    @required this.experience,
+  });
 }

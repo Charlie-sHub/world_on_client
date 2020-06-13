@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:flutter/foundation.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
@@ -22,5 +23,8 @@ class Params {
   final double latitude;
   final double longitude;
 
-  Params({this.latitude, this.longitude});
+  Params({
+    @required this.latitude,
+    @required this.longitude,
+  });
 }

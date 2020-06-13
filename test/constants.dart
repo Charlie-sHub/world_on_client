@@ -1,4 +1,5 @@
 const descriptionGroupOnFailure = "Testing on failure";
+const descriptionGroupOnSuccess = "Testing on success";
 const descriptionNameAlreadyInUse = "Should return NameAlreadyInUse";
 const descriptionUnknownDomainLayerError = "Should return UnknownDomainLayerError if there's a problem";
 const descriptionNullInput = "Should return NullInput";

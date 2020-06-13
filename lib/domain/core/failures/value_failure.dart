@@ -22,4 +22,6 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.stringWithInvalidCharacters({@required String failedValue}) = StringWithInvalidCharacters<T>;
 
   const factory ValueFailure.invalidCoordinate({@required double coordinate}) = InvalidCoordinates<T>;
+
+  const factory ValueFailure.emptySet({@required Set set}) = EmptySet<T>;
 }

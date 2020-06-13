@@ -4,7 +4,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 abstract class Failure {}
 
 // There's probably no good reason for this Failure, manual local encryption is likely unnecessary, plus other Failures will use/are using the freezed method
-@deprecated
+@Deprecated("Manual encryption is likely unnecessary")
 class EncryptionFailure extends Failure {
   static const failureMessage = "There's been an error when trying to cypher the given String";
 }

@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
 import 'package:worldon/core/error/failures.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
@@ -22,5 +22,8 @@ class Params {
   final int userId;
   final int userToUnFollowId;
 
-  Params({@required this.userId, @required this.userToUnFollowId});
+  Params({
+    @required this.userId,
+    @required this.userToUnFollowId,
+  });
 }

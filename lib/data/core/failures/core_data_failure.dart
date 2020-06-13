@@ -4,7 +4,7 @@ import 'package:worldon/core/error/failures.dart';
 part 'core_data_failure.freezed.dart';
 
 @freezed
-abstract class CoreDataFailure extends Failure implements _$CoreDataFailure {
+abstract class CoreDataFailure extends Failure with _$CoreDataFailure {
   const factory CoreDataFailure.serverError() = ServerError;
 
   const factory CoreDataFailure.notFoundError() = NotFoundError;
