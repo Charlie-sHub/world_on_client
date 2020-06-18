@@ -17,5 +17,11 @@ abstract class AuthenticationRepositoryInterface {
 
   /// Calls the Google sign in API to login into the app.
   Future<Either<Failure, Unit>> logInGoogle();
+
+  /// Gets the [User] currently logged in
+  Future<Either<Failure, Option<User>>> getLoggedInUser();
+
+  /// Logs out of the application
+  Future<Either<Failure, Unit>> logOut();
 // TODO: Add login and registration support with Twitter and Facebook
 }
