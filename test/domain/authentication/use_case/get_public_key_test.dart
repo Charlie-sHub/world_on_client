@@ -3,11 +3,12 @@ import 'dart:typed_data';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/authentication/use_case/get_public_key.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
-import '../../../constants.dart';
+import '../../../constant_descriptions.dart';
 import '../repository/mock_public_key_repository.dart';
 
 void main() {
@@ -39,12 +40,12 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          const coreFailure = CoreDataFailure.serverError();
-          when(mockPublicKeyRepository.getPublicKey()).thenAnswer((_) async => left(coreFailure));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          when(mockPublicKeyRepository.getPublicKey()).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(NoParams());
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockPublicKeyRepository);
         },
       );
@@ -52,12 +53,12 @@ void main() {
         descriptionNotFoundError,
         () async {
           // Arrange
-          const coreFailure = CoreDataFailure.notFoundError();
-          when(mockPublicKeyRepository.getPublicKey()).thenAnswer((_) async => left(coreFailure));
+          const failure = Failure.coreData(CoreDataFailure.notFoundError());
+          when(mockPublicKeyRepository.getPublicKey()).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(NoParams());
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockPublicKeyRepository);
         },
       );

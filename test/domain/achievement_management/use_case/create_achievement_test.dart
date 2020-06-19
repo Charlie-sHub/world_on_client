@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/achievement_management/use_case/create_achievement.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
@@ -8,7 +9,7 @@ import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/experience_points.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 
-import '../../../constants.dart';
+import '../../../constant_descriptions.dart';
 import '../repository/mock_achievement_repository.dart';
 
 void main() {
@@ -20,8 +21,9 @@ void main() {
       useCase = CreateAchievement(mockAchievementRepository);
     },
   );
+  final name = Name("Test Achievement");
   final params = Params(
-    name: Name("Test Achievement"),
+    name: name,
     description: EntityDescription("This is just a test"),
     imageUrl: "test.jpg",
     type: "test",
@@ -49,12 +51,12 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          const coreFailure = CoreDataFailure.serverError();
-          when(mockAchievementRepository.createAchievement(any)).thenAnswer((_) async => left(coreFailure));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          when(mockAchievementRepository.createAchievement(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockAchievementRepository);
         },
       );
@@ -62,12 +64,12 @@ void main() {
         descriptionNameAlreadyInUse,
         () async {
           // Arrange
-          const coreFailure = CoreDataFailure.nameAlreadyInUse();
-          when(mockAchievementRepository.createAchievement(any)).thenAnswer((_) async => left(coreFailure));
+          final failure = Failure.coreData(CoreDataFailure.nameAlreadyInUse(name: name));
+          when(mockAchievementRepository.createAchievement(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockAchievementRepository);
         },
       );

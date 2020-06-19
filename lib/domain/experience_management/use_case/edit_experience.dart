@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
-import 'package:worldon/core/error/failures.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/comment.dart';
 import 'package:worldon/domain/core/entities/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience.dart';
@@ -46,7 +46,7 @@ class EditExperience implements AsyncUseCase<Unit, Params> {
       );
       return _repository.editExperience(experience);
     } else {
-      return left(const CoreDomainFailure.unAuthorizedError());
+      return left(const Failure.coreDomain(CoreDomainFailure.unAuthorizedError()));
     }
   }
 }

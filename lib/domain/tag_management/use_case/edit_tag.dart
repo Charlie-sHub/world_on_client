@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
-import 'package:worldon/core/error/failures.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
@@ -27,7 +27,7 @@ class EditTag implements AsyncUseCase<Unit, Params> {
       );
       return _repository.editTag(tag);
     } else {
-      return left(const CoreDomainFailure.unAuthorizedError());
+      return left(const Failure.coreDomain(CoreDomainFailure.unAuthorizedError()));
     }
   }
 }

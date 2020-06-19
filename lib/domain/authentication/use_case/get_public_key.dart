@@ -1,7 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:dartz/dartz.dart';
-import 'package:worldon/core/error/failures.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/repository/public_key_repository_interface.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 

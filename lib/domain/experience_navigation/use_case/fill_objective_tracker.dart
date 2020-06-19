@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
-import 'package:worldon/core/error/failures.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/objective.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
@@ -16,7 +16,7 @@ class FillObjectiveTracker implements UseCase<Map<int, bool>, Params> {
       if (objective.id != null) {
         objectiveTracker[objective.id] = false;
       } else {
-        return left(const CoreDomainFailure.unknownDomainLayerError());
+        return left(const Failure.coreDomain(CoreDomainFailure.domainLayerError(errorString: "Null id in the objective tracker")));
       }
     }
     return right(objectiveTracker);

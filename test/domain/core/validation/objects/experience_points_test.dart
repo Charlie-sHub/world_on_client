@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/validation/objects/experience_points.dart';
 
-import '../../../../constants.dart';
+import '../../../../constant_descriptions.dart';
 
 void main() {
   const validPoints = 100;

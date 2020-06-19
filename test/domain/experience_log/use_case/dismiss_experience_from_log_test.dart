@@ -1,10 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/experience_log/use_case/dismiss_experience_from_log.dart';
 
-import '../../../constants.dart';
+import '../../../constant_descriptions.dart';
 import '../repository/mock_experience_log_repository.dart';
 
 void main() {
@@ -42,15 +43,15 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          const coreFailure = CoreDataFailure.serverError();
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
           when(mockExperienceLogRepository.dismissExperienceFromLog(
             userId: anyNamed("userId"),
             experienceId: anyNamed("experienceId"),
-          )).thenAnswer((_) async => left(coreFailure));
+          )).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockExperienceLogRepository);
         },
       );

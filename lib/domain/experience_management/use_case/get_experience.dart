@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
-import 'package:worldon/core/error/failures.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/experience_management/repository/experience_management_repository_interface.dart';

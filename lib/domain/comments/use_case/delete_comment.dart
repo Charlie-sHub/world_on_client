@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
-import 'package:worldon/core/error/failures.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/comments/repository/comment_repository_interface.dart';
 import 'package:worldon/domain/core/entities/comment.dart';
 import 'package:worldon/domain/core/entities/user.dart';
@@ -18,7 +18,7 @@ class DeleteComment implements AsyncUseCase<Unit, Params> {
     if (isAuthorized) {
       return _repository.removeComment(params.comment.id);
     } else {
-      return left(const CoreDomainFailure.unAuthorizedError());
+      return left(const Failure.coreDomain(CoreDomainFailure.unAuthorizedError()));
     }
   }
 }

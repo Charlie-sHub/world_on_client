@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:worldon/core/error/failures.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/coordinates.dart';
 import 'package:worldon/domain/core/entities/objective.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
@@ -9,7 +9,7 @@ import 'package:worldon/domain/core/validation/objects/latitude.dart';
 import 'package:worldon/domain/core/validation/objects/longitude.dart';
 import 'package:worldon/domain/experience_navigation/use_case/fill_objective_tracker.dart';
 
-import '../../../constants.dart';
+import '../../../constant_descriptions.dart';
 
 void main() {
   FillObjectiveTracker useCase;
@@ -64,10 +64,16 @@ void main() {
   test(
     descriptionUnknownDomainLayerError,
     () async {
+      // Arrange
+      const failure = Failure.coreDomain(
+        CoreDomainFailure.domainLayerError(
+          errorString: "Null id in the objective tracker",
+        ),
+      );
       // Act
       final result = useCase(Params(objectiveSet: badObjectiveSet));
       // Assert
-      expect(result, left<Failure, Map<int, bool>>(const CoreDomainFailure.unknownDomainLayerError()));
+      expect(result, left<Failure, Map<int, bool>>(failure));
     },
   );
 }

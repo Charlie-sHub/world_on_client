@@ -1,13 +1,14 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/authentication/failures/authentication_data_failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/authentication/use_case/log_in.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
 
-import '../../../constants.dart';
+import '../../../constant_descriptions.dart';
 import '../repository/mock_authentication_repository.dart';
 
 void main() {
@@ -42,12 +43,12 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          const coreFailure = CoreDataFailure.serverError();
-          when(mockAuthenticationRepository.logIn(any)).thenAnswer((_) async => left(coreFailure));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          when(mockAuthenticationRepository.logIn(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockAuthenticationRepository);
         },
       );
@@ -55,12 +56,12 @@ void main() {
         "Should return a InvalidEmailAndPasswordCombination in case either credential is wrong",
         () async {
           // Arrange
-          const authenticationFailure = AuthenticationDataFailure.invalidCredentials();
-          when(mockAuthenticationRepository.logIn(any)).thenAnswer((_) async => left(authenticationFailure));
+          const failure = Failure.authenticationData(AuthenticationDataFailure.invalidCredentials());
+          when(mockAuthenticationRepository.logIn(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(authenticationFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockAuthenticationRepository);
         },
       );

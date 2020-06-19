@@ -50,7 +50,7 @@ void main() {
             () async {
               // Arrange
               final searchResults = SearchResults(experiencesFound: <Experience>{}, usersFound: usersFoundByUsername.union(usersFoundByName), tagsFound: tagsFound);
-              when(mockSearchRepository.searchExperiencesByName(any)).thenAnswer((_) async => left(const CoreFailure.notFoundError()));
+              when(mockSearchRepository.searchExperiencesByName(any)).thenAnswer((_) async => left(const failure.notFoundError()));
               when(mockSearchRepository.searchTagsByName(any)).thenAnswer((_) async => right(tagsFound));
               when(mockSearchRepository.searchUsersByName(any)).thenAnswer((_) async => right(usersFoundByName));
               when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) async => right(usersFoundByUsername));
@@ -69,7 +69,7 @@ void main() {
               // Arrange
               final searchResults = SearchResults(experiencesFound: experiencesFound, usersFound: usersFoundByName.union(usersFoundByName), tagsFound: <Tag>{});
               when(mockSearchRepository.searchExperiencesByName(any)).thenAnswer((_) async => right(experiencesFound));
-              when(mockSearchRepository.searchTagsByName(any)).thenAnswer((_) async => left(const CoreFailure.notFoundError()));
+              when(mockSearchRepository.searchTagsByName(any)).thenAnswer((_) async => left(const failure.notFoundError()));
               when(mockSearchRepository.searchUsersByName(any)).thenAnswer((_) async => right(usersFoundByName));
               when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) async => right(usersFoundByUsername));
               // Act
@@ -88,7 +88,7 @@ void main() {
               final searchResults = SearchResults(experiencesFound: experiencesFound, usersFound: usersFoundByUsername.union(<User>{}), tagsFound: tagsFound);
               when(mockSearchRepository.searchExperiencesByName(any)).thenAnswer((_) async => right(experiencesFound));
               when(mockSearchRepository.searchTagsByName(any)).thenAnswer((_) async => right(tagsFound));
-              when(mockSearchRepository.searchUsersByName(any)).thenAnswer((_) async => left(const CoreFailure.notFoundError()));
+              when(mockSearchRepository.searchUsersByName(any)).thenAnswer((_) async => left(const failure.notFoundError()));
               when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) async => right(usersFoundByUsername));
               // Act
               final either = await useCase(Params(name: name));
@@ -107,7 +107,7 @@ void main() {
               when(mockSearchRepository.searchExperiencesByName(any)).thenAnswer((_) async => right(experiencesFound));
               when(mockSearchRepository.searchTagsByName(any)).thenAnswer((_) async => right(tagsFound));
               when(mockSearchRepository.searchUsersByName(any)).thenAnswer((_) async => right(usersFoundByName));
-              when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) async => left(const CoreFailure.notFoundError()));
+              when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) async => left(const failure.notFoundError()));
               // Act
               final either = await useCase(Params(name: name));
               final result = either.fold((failure) => null, (r) => r);
@@ -131,14 +131,14 @@ void main() {
             "$descriptionServerError after searchExperiencesByName returns a failure",
             () async {
               // Arrange
-              when(mockSearchRepository.searchExperiencesByName(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+              when(mockSearchRepository.searchExperiencesByName(any)).thenAnswer((_) async => left(const failure.serverError()));
               when(mockSearchRepository.searchTagsByName(any)).thenAnswer((_) async => right(tagsFound));
               when(mockSearchRepository.searchUsersByName(any)).thenAnswer((_) async => right(usersFoundByName));
               when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) async => right(usersFoundByUsername));
               // Act
               final result = await useCase(Params(name: name));
               // Assert
-              expect(result, left(const CoreFailure.serverError()));
+              expect(result, left(const failure.serverError()));
               verifyRepositoryMethodsCall(mockSearchRepository);
               verifyNoMoreInteractions(mockSearchRepository);
             },
@@ -148,13 +148,13 @@ void main() {
             () async {
               // Arrange
               when(mockSearchRepository.searchExperiencesByName(any)).thenAnswer((_) async => right(experiencesFound));
-              when(mockSearchRepository.searchTagsByName(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+              when(mockSearchRepository.searchTagsByName(any)).thenAnswer((_) async => left(const failure.serverError()));
               when(mockSearchRepository.searchUsersByName(any)).thenAnswer((_) async => right(usersFoundByName));
               when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) async => right(usersFoundByUsername));
               // Act
               final result = await useCase(Params(name: name));
               // Assert
-              expect(result, left(const CoreFailure.serverError()));
+              expect(result, left(const failure.serverError()));
               verifyRepositoryMethodsCall(mockSearchRepository);
               verifyNoMoreInteractions(mockSearchRepository);
             },
@@ -165,12 +165,12 @@ void main() {
               // Arrange
               when(mockSearchRepository.searchExperiencesByName(any)).thenAnswer((_) async => right(experiencesFound));
               when(mockSearchRepository.searchTagsByName(any)).thenAnswer((_) async => right(tagsFound));
-              when(mockSearchRepository.searchUsersByName(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+              when(mockSearchRepository.searchUsersByName(any)).thenAnswer((_) async => left(const failure.serverError()));
               when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) async => right(usersFoundByUsername));
               // Act
               final result = await useCase(Params(name: name));
               // Assert
-              expect(result, left(const CoreFailure.serverError()));
+              expect(result, left(const failure.serverError()));
               verifyRepositoryMethodsCall(mockSearchRepository);
               verifyNoMoreInteractions(mockSearchRepository);
             },
@@ -182,11 +182,11 @@ void main() {
               when(mockSearchRepository.searchExperiencesByName(any)).thenAnswer((_) async => right(experiencesFound));
               when(mockSearchRepository.searchTagsByName(any)).thenAnswer((_) async => right(tagsFound));
               when(mockSearchRepository.searchUsersByName(any)).thenAnswer((_) async => right(usersFoundByName));
-              when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) async => left(const CoreFailure.serverError()));
+              when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) async => left(const failure.serverError()));
               // Act
               final result = await useCase(Params(name: name));
               // Assert
-              expect(result, left(const CoreFailure.serverError()));
+              expect(result, left(const failure.serverError()));
               verifyRepositoryMethodsCall(mockSearchRepository);
               verifyNoMoreInteractions(mockSearchRepository);
             },
@@ -200,14 +200,14 @@ void main() {
             "$descriptionCacheError after searchExperiencesByName returns a failure",
             () async {
               // Arrange
-              when(mockSearchRepository.searchExperiencesByName(any)).thenAnswer((_) async => left(const CoreFailure.cacheError()));
+              when(mockSearchRepository.searchExperiencesByName(any)).thenAnswer((_) async => left(const failure.cacheError()));
               when(mockSearchRepository.searchTagsByName(any)).thenAnswer((_) async => right(tagsFound));
               when(mockSearchRepository.searchUsersByName(any)).thenAnswer((_) async => right(usersFoundByName));
               when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) async => right(usersFoundByUsername));
               // Act
               final result = await useCase(Params(name: name));
               // Assert
-              expect(result, left(const CoreFailure.cacheError()));
+              expect(result, left(const failure.cacheError()));
               verifyRepositoryMethodsCall(mockSearchRepository);
               verifyNoMoreInteractions(mockSearchRepository);
             },
@@ -217,13 +217,13 @@ void main() {
             () async {
               // Arrange
               when(mockSearchRepository.searchExperiencesByName(any)).thenAnswer((_) async => right(experiencesFound));
-              when(mockSearchRepository.searchTagsByName(any)).thenAnswer((_) async => left(const CoreFailure.cacheError()));
+              when(mockSearchRepository.searchTagsByName(any)).thenAnswer((_) async => left(const failure.cacheError()));
               when(mockSearchRepository.searchUsersByName(any)).thenAnswer((_) async => right(usersFoundByName));
               when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) async => right(usersFoundByUsername));
               // Act
               final result = await useCase(Params(name: name));
               // Assert
-              expect(result, left(const CoreFailure.cacheError()));
+              expect(result, left(const failure.cacheError()));
               verifyRepositoryMethodsCall(mockSearchRepository);
               verifyNoMoreInteractions(mockSearchRepository);
             },
@@ -234,12 +234,12 @@ void main() {
               // Arrange
               when(mockSearchRepository.searchExperiencesByName(any)).thenAnswer((_) async => right(experiencesFound));
               when(mockSearchRepository.searchTagsByName(any)).thenAnswer((_) async => right(tagsFound));
-              when(mockSearchRepository.searchUsersByName(any)).thenAnswer((_) async => left(const CoreFailure.cacheError()));
+              when(mockSearchRepository.searchUsersByName(any)).thenAnswer((_) async => left(const failure.cacheError()));
               when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) async => right(usersFoundByUsername));
               // Act
               final result = await useCase(Params(name: name));
               // Assert
-              expect(result, left(const CoreFailure.cacheError()));
+              expect(result, left(const failure.cacheError()));
               verifyRepositoryMethodsCall(mockSearchRepository);
               verifyNoMoreInteractions(mockSearchRepository);
             },
@@ -251,11 +251,11 @@ void main() {
               when(mockSearchRepository.searchExperiencesByName(any)).thenAnswer((_) async => right(experiencesFound));
               when(mockSearchRepository.searchTagsByName(any)).thenAnswer((_) async => right(tagsFound));
               when(mockSearchRepository.searchUsersByName(any)).thenAnswer((_) async => right(usersFoundByName));
-              when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) async => left(const CoreFailure.cacheError()));
+              when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) async => left(const failure.cacheError()));
               // Act
               final result = await useCase(Params(name: name));
               // Assert
-              expect(result, left(const CoreFailure.cacheError()));
+              expect(result, left(const failure.cacheError()));
               verifyRepositoryMethodsCall(mockSearchRepository);
               verifyNoMoreInteractions(mockSearchRepository);
             },

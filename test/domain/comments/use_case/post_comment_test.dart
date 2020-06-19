@@ -1,11 +1,12 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/comments/use_case/post_comment.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 
-import '../../../constants.dart';
+import '../../../constant_descriptions.dart';
 import '../repository/mock_comment_repository.dart';
 
 void main() {
@@ -44,15 +45,15 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          const coreDataFailure = CoreDataFailure.serverError();
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
           when(mockCommentRepository.postComment(
             comment: anyNamed("comment"),
             experienceId: anyNamed("experienceId"),
-          )).thenAnswer((_) async => left(coreDataFailure));
+          )).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(coreDataFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockCommentRepository);
         },
       );

@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/coordinates.dart';
 import 'package:worldon/domain/core/entities/user.dart';
@@ -13,7 +14,7 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/experience_management/use_case/edit_experience.dart';
 
-import '../../../constants.dart';
+import '../../../constant_descriptions.dart';
 import '../repository/mock_experience_management_repository.dart';
 
 void main() {
@@ -88,12 +89,12 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          const coreFailure = CoreDataFailure.serverError();
-          when(mockExperienceManagementRepository.editExperience(any)).thenAnswer((_) async => left(coreFailure));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          when(mockExperienceManagementRepository.editExperience(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(setUpParams(creatorUser));
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockExperienceManagementRepository);
         },
       );
@@ -103,7 +104,7 @@ void main() {
           // Act
           final result = await useCase(setUpParams(randomUser));
           // Assert
-          expect(result, left(const CoreDomainFailure.unAuthorizedError()));
+          expect(result, left(const Failure.coreDomain(CoreDomainFailure.unAuthorizedError())));
           verifyZeroInteractions(mockExperienceManagementRepository);
         },
       );

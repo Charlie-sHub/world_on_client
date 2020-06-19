@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/validation/objects/latitude.dart';
 
-import '../../../../constants.dart';
+import '../../../../constant_descriptions.dart';
 
 void main() {
   const invalidLatitude = 100.0;

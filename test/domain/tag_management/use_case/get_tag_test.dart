@@ -1,13 +1,14 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/tag_management/use_case/get_tag.dart';
 
-import '../../../constants.dart';
+import '../../../constant_descriptions.dart';
 import '../repository/mock_tag_management_repository.dart';
 
 void main() {
@@ -46,12 +47,12 @@ void main() {
         descriptionNotFoundError,
         () async {
           // Arrange
-          const coreFailure = CoreDataFailure.notFoundError();
-          when(mockTagManagementRepository.getTag(any)).thenAnswer((_) async => left(coreFailure));
+          const failure = Failure.coreData(CoreDataFailure.notFoundError());
+          when(mockTagManagementRepository.getTag(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockTagManagementRepository);
         },
       );
@@ -59,12 +60,12 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          const coreFailure = CoreDataFailure.serverError();
-          when(mockTagManagementRepository.getTag(any)).thenAnswer((_) async => left(coreFailure));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          when(mockTagManagementRepository.getTag(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockTagManagementRepository);
         },
       );

@@ -1,12 +1,13 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/options/use_case/delete_user.dart';
 
-import '../../../constants.dart';
+import '../../../constant_descriptions.dart';
 import '../repository/mock_remote_options_repository.dart';
 
 void main() {
@@ -64,12 +65,12 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          const coreFailure = CoreDataFailure.serverError();
-          when(mockRemoteOptionsRepository.deleteUser(any)).thenAnswer((_) async => left(coreFailure));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          when(mockRemoteOptionsRepository.deleteUser(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(setUpParams(userToDelete));
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockRemoteOptionsRepository);
         },
       );
@@ -79,7 +80,7 @@ void main() {
           // Act
           final result = await useCase(setUpParams(userRandom));
           // Assert
-          expect(result, left(const CoreDomainFailure.unAuthorizedError()));
+          expect(result, left(const Failure.coreDomain(CoreDomainFailure.unAuthorizedError())));
           verifyZeroInteractions(mockRemoteOptionsRepository);
         },
       );

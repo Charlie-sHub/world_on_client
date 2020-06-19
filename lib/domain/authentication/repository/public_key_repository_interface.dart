@@ -1,7 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:dartz/dartz.dart';
-import 'package:worldon/core/error/failures.dart';
+import 'package:worldon/core/error/failure.dart';
 
 abstract class PublicKeyRepositoryInterface {
   /// Gets the public key from the server.

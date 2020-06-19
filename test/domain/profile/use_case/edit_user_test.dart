@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
@@ -13,7 +14,7 @@ import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/core/validation/objects/user_level.dart';
 import 'package:worldon/domain/profile/use_case/edit_user.dart';
 
-import '../../../constants.dart';
+import '../../../constant_descriptions.dart';
 import '../repository/mock_profile_repository.dart';
 
 void main() {
@@ -28,14 +29,16 @@ void main() {
   final randomUser = _setUpUser(id: 1, adminPowers: false);
   final admin = _setUpUser(id: 2, adminPowers: true);
   final actualUser = _setUpUser(id: 3, adminPowers: false);
+  final emailAddress = EmailAddress("test@test.test");
+  final username = Name("TestUser");
   Params setUpParams(User userRequesting) {
     return Params(
       userRequesting: userRequesting,
       id: 3,
       name: Name("Test User"),
-      username: Name("TestUser"),
+      username: username,
       password: Password("abcd*1234"),
-      email: EmailAddress("test@test.test"),
+      email: emailAddress,
       birthday: PastDate(DateTime.now()),
       description: EntityDescription("For testing"),
       imageName: "test.png",
@@ -95,12 +98,12 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          const coreFailure = CoreDataFailure.serverError();
-          when(mockProfileRepository.editUser(any)).thenAnswer((_) async => left(coreFailure));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          when(mockProfileRepository.editUser(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(setUpParams(admin));
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockProfileRepository);
         },
       );
@@ -108,12 +111,12 @@ void main() {
         descriptionUsernameAlreadyInUse,
         () async {
           // Arrange
-          const coreFailure = CoreDataFailure.usernameAlreadyInUse();
-          when(mockProfileRepository.editUser(any)).thenAnswer((_) async => left(coreFailure));
+          final failure = Failure.coreData(CoreDataFailure.usernameAlreadyInUse(username: username));
+          when(mockProfileRepository.editUser(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(setUpParams(admin));
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockProfileRepository);
         },
       );
@@ -121,12 +124,12 @@ void main() {
         descriptionEmailAlreadyInUse,
         () async {
           // Arrange
-          const coreFailure = CoreDataFailure.emailAlreadyInUse();
-          when(mockProfileRepository.editUser(any)).thenAnswer((_) async => left(coreFailure));
+          final failure = Failure.coreData(CoreDataFailure.emailAlreadyInUse(email: emailAddress));
+          when(mockProfileRepository.editUser(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(setUpParams(admin));
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockProfileRepository);
         },
       );
@@ -135,7 +138,7 @@ void main() {
         () async {
           final result = await useCase(setUpParams(randomUser));
           // Assert
-          expect(result, left(const CoreDomainFailure.unAuthorizedError()));
+          expect(result, left(const Failure.coreDomain(CoreDomainFailure.unAuthorizedError())));
           verifyZeroInteractions(mockProfileRepository);
         },
       );

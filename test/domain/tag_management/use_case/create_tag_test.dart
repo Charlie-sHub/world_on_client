@@ -1,11 +1,12 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/tag_management/use_case/create_tag.dart';
 
-import '../../../constants.dart';
+import '../../../constant_descriptions.dart';
 import '../repository/mock_tag_management_repository.dart';
 
 void main() {
@@ -17,9 +18,10 @@ void main() {
       useCase = CreateTag(mockTagManagementRepository);
     },
   );
+  final name = Name("Sports");
   final params = Params(
     creator: null,
-    name: Name("Sports"),
+    name: name,
   );
   test(
     descriptionReturnNothing,
@@ -40,12 +42,12 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          const coreFailure = CoreDataFailure.serverError();
-          when(mockTagManagementRepository.createTag(any)).thenAnswer((_) async => left(coreFailure));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          when(mockTagManagementRepository.createTag(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockTagManagementRepository);
         },
       );
@@ -53,12 +55,12 @@ void main() {
         descriptionNameAlreadyInUse,
         () async {
           // Arrange
-          const coreFailure = CoreDataFailure.nameAlreadyInUse();
-          when(mockTagManagementRepository.createTag(any)).thenAnswer((_) async => left(coreFailure));
+          final failure = Failure.coreData(CoreDataFailure.nameAlreadyInUse(name: name));
+          when(mockTagManagementRepository.createTag(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockTagManagementRepository);
         },
       );

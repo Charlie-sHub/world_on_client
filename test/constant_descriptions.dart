@@ -13,3 +13,4 @@ const descriptionEmailAlreadyInUse = "Should return EmailAlreadyInUse";
 const descriptionUsernameAlreadyInUse = "Should return UsernameAlreadyInUse";
 const descriptionValid = "Should be valid";
 const descriptionInvalid = "Should be invalid";
+const errorString = "Test Error";

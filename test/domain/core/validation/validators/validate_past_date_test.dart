@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/validators/validate_past_date.dart';
 
-import '../../../../constants.dart';
+import '../../../../constant_descriptions.dart';
 
 void main() {
   final validDate = DateTime.now().subtract(const Duration(days: 50));

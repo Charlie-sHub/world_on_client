@@ -1,13 +1,14 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/comments/use_case/get_experience_comments.dart';
 import 'package:worldon/domain/core/entities/comment.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 
-import '../../../constants.dart';
+import '../../../constant_descriptions.dart';
 import '../repository/mock_comment_repository.dart';
 
 void main() {
@@ -47,12 +48,12 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          const coreFailure = CoreDataFailure.serverError();
-          when(mockCommentRepository.getExperienceComments(any)).thenAnswer((_) async => left(coreFailure));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          when(mockCommentRepository.getExperienceComments(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockCommentRepository);
         },
       );
@@ -60,12 +61,12 @@ void main() {
         descriptionCacheError,
         () async {
           // Arrange
-          const coreFailure = CoreDataFailure.cacheError();
-          when(mockCommentRepository.getExperienceComments(any)).thenAnswer((_) async => left(coreFailure));
+          const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: errorString));
+          when(mockCommentRepository.getExperienceComments(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockCommentRepository);
         },
       );
@@ -73,12 +74,12 @@ void main() {
         descriptionNotFoundError,
         () async {
           // Arrange
-          const coreFailure = CoreDataFailure.notFoundError();
-          when(mockCommentRepository.getExperienceComments(any)).thenAnswer((_) async => left(coreFailure));
+          const failure = Failure.coreData(CoreDataFailure.notFoundError());
+          when(mockCommentRepository.getExperienceComments(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockCommentRepository);
         },
       );

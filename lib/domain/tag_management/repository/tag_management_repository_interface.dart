@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:worldon/core/error/failures.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
 
 /// Abstract class of the [Tag] repository

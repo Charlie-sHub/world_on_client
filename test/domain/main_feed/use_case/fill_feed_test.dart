@@ -1,11 +1,12 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/main_feed/use_case/fill_feed.dart';
 
-import '../../../constants.dart';
+import '../../../constant_descriptions.dart';
 import '../repository/mock_main_feed_repository.dart';
 
 void main() {
@@ -56,36 +57,36 @@ void main() {
       test(
         descriptionServerError,
         () async {
-          const coreFailure = CoreDataFailure.serverError();
-          when(mockMainFeedRepository.fillFeed(any)).thenAnswer((_) async => left(coreFailure));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          when(mockMainFeedRepository.fillFeed(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockMainFeedRepository);
         },
       );
       test(
         descriptionCacheError,
         () async {
-          const coreFailure = CoreDataFailure.cacheError();
-          when(mockMainFeedRepository.fillFeed(any)).thenAnswer((_) async => left(coreFailure));
+          const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: errorString));
+          when(mockMainFeedRepository.fillFeed(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockMainFeedRepository);
         },
       );
       test(
         descriptionNotFoundError,
         () async {
-          const coreFailure = CoreDataFailure.notFoundError();
-          when(mockMainFeedRepository.fillFeed(any)).thenAnswer((_) async => left(coreFailure));
+          const failure = Failure.coreData(CoreDataFailure.notFoundError());
+          when(mockMainFeedRepository.fillFeed(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockMainFeedRepository);
         },
       );

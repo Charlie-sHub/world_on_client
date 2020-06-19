@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 
-import '../../../../constants.dart';
+import '../../../../constant_descriptions.dart';
 
 void main() {
   const validComment = "Test Test";

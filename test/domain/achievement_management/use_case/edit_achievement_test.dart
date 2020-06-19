@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/achievement_management/use_case/edit_achievement.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
@@ -11,7 +12,7 @@ import 'package:worldon/domain/core/validation/objects/experience_points.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 
-import '../../../constants.dart';
+import '../../../constant_descriptions.dart';
 import '../repository/mock_achievement_repository.dart';
 
 void main() {
@@ -26,11 +27,12 @@ void main() {
   final randomUser = _setUpUser(id: 1, adminPowers: false);
   final creatorUser = _setUpUser(id: 2, adminPowers: false);
   final admin = _setUpUser(id: 3, adminPowers: true);
+  final name = Name("Test Achievement");
   Params setUpParams(User userRequesting) {
     return Params(
       userRequesting: userRequesting,
       id: 1,
-      name: Name("Test Achievement"),
+      name: name,
       description: EntityDescription("This is just a test"),
       imageName: "test.jpg",
       type: "test",
@@ -78,12 +80,12 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          const coreFailure = CoreDataFailure.serverError();
-          when(mockAchievementRepository.editAchievement(any)).thenAnswer((_) async => left(coreFailure));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          when(mockAchievementRepository.editAchievement(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(setUpParams(admin));
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockAchievementRepository);
         },
       );
@@ -91,12 +93,12 @@ void main() {
         descriptionNameAlreadyInUse,
         () async {
           // Arrange
-          const coreFailure = CoreDataFailure.nameAlreadyInUse();
-          when(mockAchievementRepository.editAchievement(any)).thenAnswer((_) async => left(coreFailure));
+          final failure = Failure.coreData(CoreDataFailure.nameAlreadyInUse(name: name));
+          when(mockAchievementRepository.editAchievement(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(setUpParams(admin));
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockAchievementRepository);
         },
       );
@@ -105,7 +107,7 @@ void main() {
         () async {
           final result = await useCase(setUpParams(randomUser));
           // Assert
-          expect(result, left(const CoreDomainFailure.unAuthorizedError()));
+          expect(result, left(const Failure.coreDomain(CoreDomainFailure.unAuthorizedError())));
           verifyZeroInteractions(mockAchievementRepository);
         },
       );

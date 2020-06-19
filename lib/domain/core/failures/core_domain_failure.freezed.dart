@@ -12,107 +12,151 @@ T _$identity<T>(T value) => value;
 class _$CoreDomainFailureTearOff {
   const _$CoreDomainFailureTearOff();
 
-  UnknownDomainLayerError unknownDomainLayerError() {
-    return const UnknownDomainLayerError();
+  UnknownDomainLayerError<T> unknownDomainLayerError<T>({@required String errorString}) {
+    return UnknownDomainLayerError<T>(
+      errorString: errorString,
+    );
   }
 
-  UnAuthorizedError unAuthorizedError() {
-    return const UnAuthorizedError();
+  DomainLayerError<T> domainLayerError<T>({@required String errorString}) {
+    return DomainLayerError<T>(
+      errorString: errorString,
+    );
+  }
+
+  UnAuthorizedError<T> unAuthorizedError<T>() {
+    return UnAuthorizedError<T>();
   }
 }
 
 // ignore: unused_element
 const $CoreDomainFailure = _$CoreDomainFailureTearOff();
 
-mixin _$CoreDomainFailure {
+mixin _$CoreDomainFailure<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result unknownDomainLayerError(),
+    @required Result unknownDomainLayerError(String errorString),
+    @required Result domainLayerError(String errorString),
     @required Result unAuthorizedError(),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result unknownDomainLayerError(),
+    Result unknownDomainLayerError(String errorString),
+    Result domainLayerError(String errorString),
     Result unAuthorizedError(),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result unknownDomainLayerError(UnknownDomainLayerError value),
-    @required Result unAuthorizedError(UnAuthorizedError value),
+    @required Result unknownDomainLayerError(UnknownDomainLayerError<T> value),
+    @required Result domainLayerError(DomainLayerError<T> value),
+    @required Result unAuthorizedError(UnAuthorizedError<T> value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result unknownDomainLayerError(UnknownDomainLayerError value),
-    Result unAuthorizedError(UnAuthorizedError value),
+    Result unknownDomainLayerError(UnknownDomainLayerError<T> value),
+    Result domainLayerError(DomainLayerError<T> value),
+    Result unAuthorizedError(UnAuthorizedError<T> value),
     @required Result orElse(),
   });
 }
 
-abstract class $CoreDomainFailureCopyWith<$Res> {
-  factory $CoreDomainFailureCopyWith(CoreDomainFailure value, $Res Function(CoreDomainFailure) then) = _$CoreDomainFailureCopyWithImpl<$Res>;
+abstract class $CoreDomainFailureCopyWith<T, $Res> {
+  factory $CoreDomainFailureCopyWith(CoreDomainFailure<T> value, $Res Function(CoreDomainFailure<T>) then) = _$CoreDomainFailureCopyWithImpl<T, $Res>;
 }
 
-class _$CoreDomainFailureCopyWithImpl<$Res> implements $CoreDomainFailureCopyWith<$Res> {
+class _$CoreDomainFailureCopyWithImpl<T, $Res> implements $CoreDomainFailureCopyWith<T, $Res> {
   _$CoreDomainFailureCopyWithImpl(this._value, this._then);
 
-  final CoreDomainFailure _value;
-
+  final CoreDomainFailure<T> _value;
   // ignore: unused_field
-  final $Res Function(CoreDomainFailure) _then;
+  final $Res Function(CoreDomainFailure<T>) _then;
 }
 
-abstract class $UnknownDomainLayerErrorCopyWith<$Res> {
-  factory $UnknownDomainLayerErrorCopyWith(UnknownDomainLayerError value, $Res Function(UnknownDomainLayerError) then) = _$UnknownDomainLayerErrorCopyWithImpl<$Res>;
+abstract class $UnknownDomainLayerErrorCopyWith<T, $Res> {
+  factory $UnknownDomainLayerErrorCopyWith(UnknownDomainLayerError<T> value,
+    $Res Function(UnknownDomainLayerError<T>) then) =
+  _$UnknownDomainLayerErrorCopyWithImpl<T, $Res>;
+  
+  $Res call({String errorString});
 }
 
-class _$UnknownDomainLayerErrorCopyWithImpl<$Res> extends _$CoreDomainFailureCopyWithImpl<$Res> implements $UnknownDomainLayerErrorCopyWith<$Res> {
-  _$UnknownDomainLayerErrorCopyWithImpl(UnknownDomainLayerError _value, $Res Function(UnknownDomainLayerError) _then) : super(_value, (v) => _then(v as UnknownDomainLayerError));
+class _$UnknownDomainLayerErrorCopyWithImpl<T, $Res> extends _$CoreDomainFailureCopyWithImpl<T, $Res>
+  implements $UnknownDomainLayerErrorCopyWith<T, $Res> {
+  _$UnknownDomainLayerErrorCopyWithImpl(UnknownDomainLayerError<T> _value,
+    $Res Function(UnknownDomainLayerError<T>) _then)
+    : super(_value, (v) => _then(v as UnknownDomainLayerError<T>));
+  
+  @override
+  UnknownDomainLayerError<T> get _value =>
+    super._value as UnknownDomainLayerError<T>;
 
   @override
-  UnknownDomainLayerError get _value => super._value as UnknownDomainLayerError;
+  $Res call({
+    Object errorString = freezed,
+  }) {
+    return _then(UnknownDomainLayerError<T>(
+      errorString:
+      errorString == freezed ? _value.errorString : errorString as String,
+    ));
+  }
 }
 
-class _$UnknownDomainLayerError implements UnknownDomainLayerError {
-  const _$UnknownDomainLayerError();
+class _$UnknownDomainLayerError<T> implements UnknownDomainLayerError<T> {
+  const _$UnknownDomainLayerError({@required this.errorString})
+    : assert(errorString != null);
+  
+  @override
+  final String errorString;
 
   @override
   String toString() {
-    return 'CoreDomainFailure.unknownDomainLayerError()';
+    return 'CoreDomainFailure<$T>.unknownDomainLayerError(errorString: $errorString)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UnknownDomainLayerError);
+    return identical(this, other) ||
+      (other is UnknownDomainLayerError<T> &&
+        (identical(other.errorString, errorString) ||
+          const DeepCollectionEquality()
+            .equals(other.errorString, errorString)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
+  
+  @override
+  $UnknownDomainLayerErrorCopyWith<T, UnknownDomainLayerError<T>>
+  get copyWith =>
+    _$UnknownDomainLayerErrorCopyWithImpl<T, UnknownDomainLayerError<T>>(
+      this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result unknownDomainLayerError(),
+    @required Result unknownDomainLayerError(String errorString),
+    @required Result domainLayerError(String errorString),
     @required Result unAuthorizedError(),
   }) {
     assert(unknownDomainLayerError != null);
+    assert(domainLayerError != null);
     assert(unAuthorizedError != null);
-    return unknownDomainLayerError();
+    return unknownDomainLayerError(errorString);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result unknownDomainLayerError(),
+    Result unknownDomainLayerError(String errorString),
+    Result domainLayerError(String errorString),
     Result unAuthorizedError(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (unknownDomainLayerError != null) {
-      return unknownDomainLayerError();
+      return unknownDomainLayerError(errorString);
     }
     return orElse();
   }
@@ -120,10 +164,12 @@ class _$UnknownDomainLayerError implements UnknownDomainLayerError {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result unknownDomainLayerError(UnknownDomainLayerError value),
-    @required Result unAuthorizedError(UnAuthorizedError value),
+    @required Result unknownDomainLayerError(UnknownDomainLayerError<T> value),
+    @required Result domainLayerError(DomainLayerError<T> value),
+    @required Result unAuthorizedError(UnAuthorizedError<T> value),
   }) {
     assert(unknownDomainLayerError != null);
+    assert(domainLayerError != null);
     assert(unAuthorizedError != null);
     return unknownDomainLayerError(this);
   }
@@ -131,8 +177,9 @@ class _$UnknownDomainLayerError implements UnknownDomainLayerError {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result unknownDomainLayerError(UnknownDomainLayerError value),
-    Result unAuthorizedError(UnAuthorizedError value),
+    Result unknownDomainLayerError(UnknownDomainLayerError<T> value),
+    Result domainLayerError(DomainLayerError<T> value),
+    Result unAuthorizedError(UnAuthorizedError<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -143,32 +190,162 @@ class _$UnknownDomainLayerError implements UnknownDomainLayerError {
   }
 }
 
-abstract class UnknownDomainLayerError implements CoreDomainFailure {
-  const factory UnknownDomainLayerError() = _$UnknownDomainLayerError;
+abstract class UnknownDomainLayerError<T> implements CoreDomainFailure<T> {
+  const factory UnknownDomainLayerError({@required String errorString}) =
+  _$UnknownDomainLayerError<T>;
+  
+  String get errorString;
+  
+  $UnknownDomainLayerErrorCopyWith<T, UnknownDomainLayerError<T>> get copyWith;
 }
 
-abstract class $UnAuthorizedErrorCopyWith<$Res> {
-  factory $UnAuthorizedErrorCopyWith(UnAuthorizedError value, $Res Function(UnAuthorizedError) then) = _$UnAuthorizedErrorCopyWithImpl<$Res>;
+abstract class $DomainLayerErrorCopyWith<T, $Res> {
+  factory $DomainLayerErrorCopyWith(DomainLayerError<T> value, $Res Function(DomainLayerError<T>) then) =
+  _$DomainLayerErrorCopyWithImpl<T, $Res>;
+  
+  $Res call({String errorString});
 }
 
-class _$UnAuthorizedErrorCopyWithImpl<$Res> extends _$CoreDomainFailureCopyWithImpl<$Res> implements $UnAuthorizedErrorCopyWith<$Res> {
-  _$UnAuthorizedErrorCopyWithImpl(UnAuthorizedError _value, $Res Function(UnAuthorizedError) _then) : super(_value, (v) => _then(v as UnAuthorizedError));
+class _$DomainLayerErrorCopyWithImpl<T, $Res> extends _$CoreDomainFailureCopyWithImpl<T, $Res>
+  implements $DomainLayerErrorCopyWith<T, $Res> {
+  _$DomainLayerErrorCopyWithImpl(DomainLayerError<T> _value, $Res Function(DomainLayerError<T>) _then)
+    : super(_value, (v) => _then(v as DomainLayerError<T>));
+  
+  @override
+  DomainLayerError<T> get _value => super._value as DomainLayerError<T>;
+  
+  @override
+  $Res call({
+    Object errorString = freezed,
+  }) {
+    return _then(DomainLayerError<T>(
+      errorString:
+      errorString == freezed ? _value.errorString : errorString as String,
+    ));
+  }
+}
+
+class _$DomainLayerError<T> implements DomainLayerError<T> {
+  const _$DomainLayerError({@required this.errorString})
+    : assert(errorString != null);
 
   @override
-  UnAuthorizedError get _value => super._value as UnAuthorizedError;
+  final String errorString;
+  
+  @override
+  String toString() {
+    return 'CoreDomainFailure<$T>.domainLayerError(errorString: $errorString)';
+  }
+  
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+      (other is DomainLayerError<T> &&
+        (identical(other.errorString, errorString) ||
+          const DeepCollectionEquality()
+            .equals(other.errorString, errorString)));
+  }
+  
+  @override
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
+  
+  @override
+  $DomainLayerErrorCopyWith<T, DomainLayerError<T>> get copyWith =>
+    _$DomainLayerErrorCopyWithImpl<T, DomainLayerError<T>>(this, _$identity);
+  
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result unknownDomainLayerError(String errorString),
+    @required Result domainLayerError(String errorString),
+    @required Result unAuthorizedError(),
+  }) {
+    assert(unknownDomainLayerError != null);
+    assert(domainLayerError != null);
+    assert(unAuthorizedError != null);
+    return domainLayerError(errorString);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result unknownDomainLayerError(String errorString),
+    Result domainLayerError(String errorString),
+    Result unAuthorizedError(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (domainLayerError != null) {
+      return domainLayerError(errorString);
+    }
+    return orElse();
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result unknownDomainLayerError(UnknownDomainLayerError<T> value),
+    @required Result domainLayerError(DomainLayerError<T> value),
+    @required Result unAuthorizedError(UnAuthorizedError<T> value),
+  }) {
+    assert(unknownDomainLayerError != null);
+    assert(domainLayerError != null);
+    assert(unAuthorizedError != null);
+    return domainLayerError(this);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result unknownDomainLayerError(UnknownDomainLayerError<T> value),
+    Result domainLayerError(DomainLayerError<T> value),
+    Result unAuthorizedError(UnAuthorizedError<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (domainLayerError != null) {
+      return domainLayerError(this);
+    }
+    return orElse();
+  }
 }
 
-class _$UnAuthorizedError implements UnAuthorizedError {
+abstract class DomainLayerError<T> implements CoreDomainFailure<T> {
+  const factory DomainLayerError({@required String errorString}) =
+  _$DomainLayerError<T>;
+  
+  String get errorString;
+  
+  $DomainLayerErrorCopyWith<T, DomainLayerError<T>> get copyWith;
+}
+
+abstract class $UnAuthorizedErrorCopyWith<T, $Res> {
+  factory $UnAuthorizedErrorCopyWith(UnAuthorizedError<T> value,
+    $Res Function(UnAuthorizedError<T>) then) =
+  _$UnAuthorizedErrorCopyWithImpl<T, $Res>;
+}
+
+class _$UnAuthorizedErrorCopyWithImpl<T, $Res> extends _$CoreDomainFailureCopyWithImpl<T, $Res>
+  implements $UnAuthorizedErrorCopyWith<T, $Res> {
+  _$UnAuthorizedErrorCopyWithImpl(UnAuthorizedError<T> _value, $Res Function(UnAuthorizedError<T>) _then)
+    : super(_value, (v) => _then(v as UnAuthorizedError<T>));
+  
+  @override
+  UnAuthorizedError<T> get _value => super._value as UnAuthorizedError<T>;
+}
+
+class _$UnAuthorizedError<T> implements UnAuthorizedError<T> {
   const _$UnAuthorizedError();
 
   @override
   String toString() {
-    return 'CoreDomainFailure.unAuthorizedError()';
+    return 'CoreDomainFailure<$T>.unAuthorizedError()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UnAuthorizedError);
+    return identical(this, other) || (other is UnAuthorizedError<T>);
   }
 
   @override
@@ -177,10 +354,12 @@ class _$UnAuthorizedError implements UnAuthorizedError {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result unknownDomainLayerError(),
+    @required Result unknownDomainLayerError(String errorString),
+    @required Result domainLayerError(String errorString),
     @required Result unAuthorizedError(),
   }) {
     assert(unknownDomainLayerError != null);
+    assert(domainLayerError != null);
     assert(unAuthorizedError != null);
     return unAuthorizedError();
   }
@@ -188,7 +367,8 @@ class _$UnAuthorizedError implements UnAuthorizedError {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result unknownDomainLayerError(),
+    Result unknownDomainLayerError(String errorString),
+    Result domainLayerError(String errorString),
     Result unAuthorizedError(),
     @required Result orElse(),
   }) {
@@ -202,10 +382,12 @@ class _$UnAuthorizedError implements UnAuthorizedError {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result unknownDomainLayerError(UnknownDomainLayerError value),
-    @required Result unAuthorizedError(UnAuthorizedError value),
+    @required Result unknownDomainLayerError(UnknownDomainLayerError<T> value),
+    @required Result domainLayerError(DomainLayerError<T> value),
+    @required Result unAuthorizedError(UnAuthorizedError<T> value),
   }) {
     assert(unknownDomainLayerError != null);
+    assert(domainLayerError != null);
     assert(unAuthorizedError != null);
     return unAuthorizedError(this);
   }
@@ -213,8 +395,9 @@ class _$UnAuthorizedError implements UnAuthorizedError {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result unknownDomainLayerError(UnknownDomainLayerError value),
-    Result unAuthorizedError(UnAuthorizedError value),
+    Result unknownDomainLayerError(UnknownDomainLayerError<T> value),
+    Result domainLayerError(DomainLayerError<T> value),
+    Result unAuthorizedError(UnAuthorizedError<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -225,6 +408,6 @@ class _$UnAuthorizedError implements UnAuthorizedError {
   }
 }
 
-abstract class UnAuthorizedError implements CoreDomainFailure {
-  const factory UnAuthorizedError() = _$UnAuthorizedError;
+abstract class UnAuthorizedError<T> implements CoreDomainFailure<T> {
+  const factory UnAuthorizedError() = _$UnAuthorizedError<T>;
 }

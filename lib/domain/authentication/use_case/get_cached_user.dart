@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:worldon/core/error/failures.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/repository/cached_credentials_repository_interface.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';

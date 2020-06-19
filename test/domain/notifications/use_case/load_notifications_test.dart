@@ -1,11 +1,12 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/notification.dart';
 import 'package:worldon/domain/notifications/use_case/load_notifications.dart';
 
-import '../../../constants.dart';
+import '../../../constant_descriptions.dart';
 import '../repository/mock_notification_repository.dart';
 
 void main() {
@@ -48,12 +49,12 @@ void main() {
         descriptionServerError,
         () async {
           // Arrange
-          const coreFailure = CoreDataFailure.serverError();
-          when(mockNotificationRepository.loadNotifications(any)).thenAnswer((_) async => left(coreFailure));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          when(mockNotificationRepository.loadNotifications(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockNotificationRepository);
         },
       );
@@ -61,12 +62,12 @@ void main() {
         descriptionNotFoundError,
         () async {
           // Arrange
-          const coreFailure = CoreDataFailure.notFoundError();
-          when(mockNotificationRepository.loadNotifications(any)).thenAnswer((_) async => left(coreFailure));
+          const failure = Failure.coreData(CoreDataFailure.notFoundError());
+          when(mockNotificationRepository.loadNotifications(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
-          expect(result, left(coreFailure));
+          expect(result, left(failure));
           _verifyInteractions(mockNotificationRepository);
         },
       );

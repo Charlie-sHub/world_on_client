@@ -12,135 +12,172 @@ T _$identity<T>(T value) => value;
 class _$CoreDataFailureTearOff {
   const _$CoreDataFailureTearOff();
 
-  ServerError serverError() {
-    return const ServerError();
+  ServerError<T> serverError<T>({@required String errorString}) {
+    return ServerError<T>(
+      errorString: errorString,
+    );
   }
 
-  NotFoundError notFoundError() {
-    return const NotFoundError();
+  NotFoundError<T> notFoundError<T>() {
+    return NotFoundError<T>();
   }
 
-  CacheError cacheError() {
-    return const CacheError();
+  CacheError<T> cacheError<T>({@required String errorString}) {
+    return CacheError<T>(
+      errorString: errorString,
+    );
   }
 
-  GeoLocationError geoLocationError() {
-    return const GeoLocationError();
+  GeoLocationError<T> geoLocationError<T>({@required String errorString}) {
+    return GeoLocationError<T>(
+      errorString: errorString,
+    );
   }
 
-  UsernameAlreadyInUse usernameAlreadyInUse() {
-    return const UsernameAlreadyInUse();
+  UsernameAlreadyInUse<T> usernameAlreadyInUse<T>({@required Name username}) {
+    return UsernameAlreadyInUse<T>(
+      username: username,
+    );
   }
 
-  EmailAlreadyInUse emailAlreadyInUse() {
-    return const EmailAlreadyInUse();
+  EmailAlreadyInUse<T> emailAlreadyInUse<T>({@required EmailAddress email}) {
+    return EmailAlreadyInUse<T>(
+      email: email,
+    );
   }
 
-  NameAlreadyInUse nameAlreadyInUse() {
-    return const NameAlreadyInUse();
+  NameAlreadyInUse<T> nameAlreadyInUse<T>({@required Name name}) {
+    return NameAlreadyInUse<T>(
+      name: name,
+    );
   }
 }
 
 // ignore: unused_element
 const $CoreDataFailure = _$CoreDataFailureTearOff();
 
-mixin _$CoreDataFailure {
+mixin _$CoreDataFailure<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result serverError(),
+    @required Result serverError(String errorString),
     @required Result notFoundError(),
-    @required Result cacheError(),
-    @required Result geoLocationError(),
-    @required Result usernameAlreadyInUse(),
-    @required Result emailAlreadyInUse(),
-    @required Result nameAlreadyInUse(),
+    @required Result cacheError(String errorString),
+    @required Result geoLocationError(String errorString),
+    @required Result usernameAlreadyInUse(Name username),
+    @required Result emailAlreadyInUse(EmailAddress email),
+    @required Result nameAlreadyInUse(Name name),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result serverError(),
+    Result serverError(String errorString),
     Result notFoundError(),
-    Result cacheError(),
-    Result geoLocationError(),
-    Result usernameAlreadyInUse(),
-    Result emailAlreadyInUse(),
-    Result nameAlreadyInUse(),
+    Result cacheError(String errorString),
+    Result geoLocationError(String errorString),
+    Result usernameAlreadyInUse(Name username),
+    Result emailAlreadyInUse(EmailAddress email),
+    Result nameAlreadyInUse(Name name),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result serverError(ServerError value),
-    @required Result notFoundError(NotFoundError value),
-    @required Result cacheError(CacheError value),
-    @required Result geoLocationError(GeoLocationError value),
-    @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
-    @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result nameAlreadyInUse(NameAlreadyInUse value),
+    @required Result serverError(ServerError<T> value),
+    @required Result notFoundError(NotFoundError<T> value),
+    @required Result cacheError(CacheError<T> value),
+    @required Result geoLocationError(GeoLocationError<T> value),
+    @required Result usernameAlreadyInUse(UsernameAlreadyInUse<T> value),
+    @required Result emailAlreadyInUse(EmailAlreadyInUse<T> value),
+    @required Result nameAlreadyInUse(NameAlreadyInUse<T> value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result serverError(ServerError value),
-    Result notFoundError(NotFoundError value),
-    Result cacheError(CacheError value),
-    Result geoLocationError(GeoLocationError value),
-    Result usernameAlreadyInUse(UsernameAlreadyInUse value),
-    Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result nameAlreadyInUse(NameAlreadyInUse value),
+    Result serverError(ServerError<T> value),
+    Result notFoundError(NotFoundError<T> value),
+    Result cacheError(CacheError<T> value),
+    Result geoLocationError(GeoLocationError<T> value),
+    Result usernameAlreadyInUse(UsernameAlreadyInUse<T> value),
+    Result emailAlreadyInUse(EmailAlreadyInUse<T> value),
+    Result nameAlreadyInUse(NameAlreadyInUse<T> value),
     @required Result orElse(),
   });
 }
 
-abstract class $CoreDataFailureCopyWith<$Res> {
-  factory $CoreDataFailureCopyWith(CoreDataFailure value, $Res Function(CoreDataFailure) then) = _$CoreDataFailureCopyWithImpl<$Res>;
+abstract class $CoreDataFailureCopyWith<T, $Res> {
+  factory $CoreDataFailureCopyWith(CoreDataFailure<T> value, $Res Function(CoreDataFailure<T>) then) = _$CoreDataFailureCopyWithImpl<T, $Res>;
 }
 
-class _$CoreDataFailureCopyWithImpl<$Res> implements $CoreDataFailureCopyWith<$Res> {
+class _$CoreDataFailureCopyWithImpl<T, $Res> implements $CoreDataFailureCopyWith<T, $Res> {
   _$CoreDataFailureCopyWithImpl(this._value, this._then);
 
-  final CoreDataFailure _value;
+  final CoreDataFailure<T> _value;
   // ignore: unused_field
-  final $Res Function(CoreDataFailure) _then;
+  final $Res Function(CoreDataFailure<T>) _then;
 }
 
-abstract class $ServerErrorCopyWith<$Res> {
-  factory $ServerErrorCopyWith(ServerError value, $Res Function(ServerError) then) =
-  _$ServerErrorCopyWithImpl<$Res>;
+abstract class $ServerErrorCopyWith<T, $Res> {
+  factory $ServerErrorCopyWith(ServerError<T> value, $Res Function(ServerError<T>) then) =
+  _$ServerErrorCopyWithImpl<T, $Res>;
+  
+  $Res call({String errorString});
 }
 
-class _$ServerErrorCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res>
-  implements $ServerErrorCopyWith<$Res> {
-  _$ServerErrorCopyWithImpl(ServerError _value, $Res Function(ServerError) _then)
-    : super(_value, (v) => _then(v as ServerError));
+class _$ServerErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res>
+  implements $ServerErrorCopyWith<T, $Res> {
+  _$ServerErrorCopyWithImpl(ServerError<T> _value, $Res Function(ServerError<T>) _then)
+    : super(_value, (v) => _then(v as ServerError<T>));
+  
+  @override
+  ServerError<T> get _value => super._value as ServerError<T>;
 
   @override
-  ServerError get _value => super._value as ServerError;
+  $Res call({
+    Object errorString = freezed,
+  }) {
+    return _then(ServerError<T>(
+      errorString:
+      errorString == freezed ? _value.errorString : errorString as String,
+    ));
+  }
 }
 
-class _$ServerError implements ServerError {
-  const _$ServerError();
+class _$ServerError<T> implements ServerError<T> {
+  const _$ServerError({@required this.errorString})
+    : assert(errorString != null);
+  
+  @override
+  final String errorString;
 
   @override
   String toString() {
-    return 'CoreDataFailure.serverError()';
+    return 'CoreDataFailure<$T>.serverError(errorString: $errorString)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ServerError);
+    return identical(this, other) ||
+      (other is ServerError<T> &&
+        (identical(other.errorString, errorString) ||
+          const DeepCollectionEquality()
+            .equals(other.errorString, errorString)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
+  
+  @override
+  $ServerErrorCopyWith<T, ServerError<T>> get copyWith =>
+    _$ServerErrorCopyWithImpl<T, ServerError<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result serverError(),
+    @required Result serverError(String errorString),
     @required Result notFoundError(),
-    @required Result cacheError(),
-    @required Result geoLocationError(),
-    @required Result usernameAlreadyInUse(),
-    @required Result emailAlreadyInUse(),
-    @required Result nameAlreadyInUse(),
+    @required Result cacheError(String errorString),
+    @required Result geoLocationError(String errorString),
+    @required Result usernameAlreadyInUse(Name username),
+    @required Result emailAlreadyInUse(EmailAddress email),
+    @required Result nameAlreadyInUse(Name name),
   }) {
     assert(serverError != null);
     assert(notFoundError != null);
@@ -149,24 +186,24 @@ class _$ServerError implements ServerError {
     assert(usernameAlreadyInUse != null);
     assert(emailAlreadyInUse != null);
     assert(nameAlreadyInUse != null);
-    return serverError();
+    return serverError(errorString);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result serverError(),
+    Result serverError(String errorString),
     Result notFoundError(),
-    Result cacheError(),
-    Result geoLocationError(),
-    Result usernameAlreadyInUse(),
-    Result emailAlreadyInUse(),
-    Result nameAlreadyInUse(),
+    Result cacheError(String errorString),
+    Result geoLocationError(String errorString),
+    Result usernameAlreadyInUse(Name username),
+    Result emailAlreadyInUse(EmailAddress email),
+    Result nameAlreadyInUse(Name name),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (serverError != null) {
-      return serverError();
+      return serverError(errorString);
     }
     return orElse();
   }
@@ -174,13 +211,13 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result serverError(ServerError value),
-    @required Result notFoundError(NotFoundError value),
-    @required Result cacheError(CacheError value),
-    @required Result geoLocationError(GeoLocationError value),
-    @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
-    @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result nameAlreadyInUse(NameAlreadyInUse value),
+    @required Result serverError(ServerError<T> value),
+    @required Result notFoundError(NotFoundError<T> value),
+    @required Result cacheError(CacheError<T> value),
+    @required Result geoLocationError(GeoLocationError<T> value),
+    @required Result usernameAlreadyInUse(UsernameAlreadyInUse<T> value),
+    @required Result emailAlreadyInUse(EmailAlreadyInUse<T> value),
+    @required Result nameAlreadyInUse(NameAlreadyInUse<T> value),
   }) {
     assert(serverError != null);
     assert(notFoundError != null);
@@ -195,13 +232,13 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result serverError(ServerError value),
-    Result notFoundError(NotFoundError value),
-    Result cacheError(CacheError value),
-    Result geoLocationError(GeoLocationError value),
-    Result usernameAlreadyInUse(UsernameAlreadyInUse value),
-    Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result nameAlreadyInUse(NameAlreadyInUse value),
+    Result serverError(ServerError<T> value),
+    Result notFoundError(NotFoundError<T> value),
+    Result cacheError(CacheError<T> value),
+    Result geoLocationError(GeoLocationError<T> value),
+    Result usernameAlreadyInUse(UsernameAlreadyInUse<T> value),
+    Result emailAlreadyInUse(EmailAlreadyInUse<T> value),
+    Result nameAlreadyInUse(NameAlreadyInUse<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -212,35 +249,39 @@ class _$ServerError implements ServerError {
   }
 }
 
-abstract class ServerError implements CoreDataFailure {
-  const factory ServerError() = _$ServerError;
+abstract class ServerError<T> implements CoreDataFailure<T> {
+  const factory ServerError({@required String errorString}) = _$ServerError<T>;
+  
+  String get errorString;
+  
+  $ServerErrorCopyWith<T, ServerError<T>> get copyWith;
 }
 
-abstract class $NotFoundErrorCopyWith<$Res> {
-  factory $NotFoundErrorCopyWith(NotFoundError value, $Res Function(NotFoundError) then) =
-  _$NotFoundErrorCopyWithImpl<$Res>;
+abstract class $NotFoundErrorCopyWith<T, $Res> {
+  factory $NotFoundErrorCopyWith(NotFoundError<T> value, $Res Function(NotFoundError<T>) then) =
+  _$NotFoundErrorCopyWithImpl<T, $Res>;
 }
 
-class _$NotFoundErrorCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res>
-  implements $NotFoundErrorCopyWith<$Res> {
-  _$NotFoundErrorCopyWithImpl(NotFoundError _value, $Res Function(NotFoundError) _then)
-    : super(_value, (v) => _then(v as NotFoundError));
+class _$NotFoundErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res>
+  implements $NotFoundErrorCopyWith<T, $Res> {
+  _$NotFoundErrorCopyWithImpl(NotFoundError<T> _value, $Res Function(NotFoundError<T>) _then)
+    : super(_value, (v) => _then(v as NotFoundError<T>));
 
   @override
-  NotFoundError get _value => super._value as NotFoundError;
+  NotFoundError<T> get _value => super._value as NotFoundError<T>;
 }
 
-class _$NotFoundError implements NotFoundError {
+class _$NotFoundError<T> implements NotFoundError<T> {
   const _$NotFoundError();
 
   @override
   String toString() {
-    return 'CoreDataFailure.notFoundError()';
+    return 'CoreDataFailure<$T>.notFoundError()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is NotFoundError);
+    return identical(this, other) || (other is NotFoundError<T>);
   }
 
   @override
@@ -249,13 +290,13 @@ class _$NotFoundError implements NotFoundError {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result serverError(),
+    @required Result serverError(String errorString),
     @required Result notFoundError(),
-    @required Result cacheError(),
-    @required Result geoLocationError(),
-    @required Result usernameAlreadyInUse(),
-    @required Result emailAlreadyInUse(),
-    @required Result nameAlreadyInUse(),
+    @required Result cacheError(String errorString),
+    @required Result geoLocationError(String errorString),
+    @required Result usernameAlreadyInUse(Name username),
+    @required Result emailAlreadyInUse(EmailAddress email),
+    @required Result nameAlreadyInUse(Name name),
   }) {
     assert(serverError != null);
     assert(notFoundError != null);
@@ -270,13 +311,13 @@ class _$NotFoundError implements NotFoundError {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result serverError(),
+    Result serverError(String errorString),
     Result notFoundError(),
-    Result cacheError(),
-    Result geoLocationError(),
-    Result usernameAlreadyInUse(),
-    Result emailAlreadyInUse(),
-    Result nameAlreadyInUse(),
+    Result cacheError(String errorString),
+    Result geoLocationError(String errorString),
+    Result usernameAlreadyInUse(Name username),
+    Result emailAlreadyInUse(EmailAddress email),
+    Result nameAlreadyInUse(Name name),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -289,13 +330,13 @@ class _$NotFoundError implements NotFoundError {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result serverError(ServerError value),
-    @required Result notFoundError(NotFoundError value),
-    @required Result cacheError(CacheError value),
-    @required Result geoLocationError(GeoLocationError value),
-    @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
-    @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result nameAlreadyInUse(NameAlreadyInUse value),
+    @required Result serverError(ServerError<T> value),
+    @required Result notFoundError(NotFoundError<T> value),
+    @required Result cacheError(CacheError<T> value),
+    @required Result geoLocationError(GeoLocationError<T> value),
+    @required Result usernameAlreadyInUse(UsernameAlreadyInUse<T> value),
+    @required Result emailAlreadyInUse(EmailAlreadyInUse<T> value),
+    @required Result nameAlreadyInUse(NameAlreadyInUse<T> value),
   }) {
     assert(serverError != null);
     assert(notFoundError != null);
@@ -310,13 +351,13 @@ class _$NotFoundError implements NotFoundError {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result serverError(ServerError value),
-    Result notFoundError(NotFoundError value),
-    Result cacheError(CacheError value),
-    Result geoLocationError(GeoLocationError value),
-    Result usernameAlreadyInUse(UsernameAlreadyInUse value),
-    Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result nameAlreadyInUse(NameAlreadyInUse value),
+    Result serverError(ServerError<T> value),
+    Result notFoundError(NotFoundError<T> value),
+    Result cacheError(CacheError<T> value),
+    Result geoLocationError(GeoLocationError<T> value),
+    Result usernameAlreadyInUse(UsernameAlreadyInUse<T> value),
+    Result emailAlreadyInUse(EmailAlreadyInUse<T> value),
+    Result nameAlreadyInUse(NameAlreadyInUse<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -327,50 +368,75 @@ class _$NotFoundError implements NotFoundError {
   }
 }
 
-abstract class NotFoundError implements CoreDataFailure {
-  const factory NotFoundError() = _$NotFoundError;
+abstract class NotFoundError<T> implements CoreDataFailure<T> {
+  const factory NotFoundError() = _$NotFoundError<T>;
 }
 
-abstract class $CacheErrorCopyWith<$Res> {
-  factory $CacheErrorCopyWith(CacheError value, $Res Function(CacheError) then) =
-  _$CacheErrorCopyWithImpl<$Res>;
+abstract class $CacheErrorCopyWith<T, $Res> {
+  factory $CacheErrorCopyWith(CacheError<T> value, $Res Function(CacheError<T>) then) =
+  _$CacheErrorCopyWithImpl<T, $Res>;
+  
+  $Res call({String errorString});
 }
 
-class _$CacheErrorCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res>
-  implements $CacheErrorCopyWith<$Res> {
-  _$CacheErrorCopyWithImpl(CacheError _value, $Res Function(CacheError) _then)
-    : super(_value, (v) => _then(v as CacheError));
+class _$CacheErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res>
+  implements $CacheErrorCopyWith<T, $Res> {
+  _$CacheErrorCopyWithImpl(CacheError<T> _value, $Res Function(CacheError<T>) _then)
+    : super(_value, (v) => _then(v as CacheError<T>));
+  
+  @override
+  CacheError<T> get _value => super._value as CacheError<T>;
+  
+  @override
+  $Res call({
+    Object errorString = freezed,
+  }) {
+    return _then(CacheError<T>(
+      errorString:
+      errorString == freezed ? _value.errorString : errorString as String,
+    ));
+  }
+}
+
+class _$CacheError<T> implements CacheError<T> {
+  const _$CacheError({@required this.errorString})
+    : assert(errorString != null);
 
   @override
-  CacheError get _value => super._value as CacheError;
-}
-
-class _$CacheError implements CacheError {
-  const _$CacheError();
+  final String errorString;
 
   @override
   String toString() {
-    return 'CoreDataFailure.cacheError()';
+    return 'CoreDataFailure<$T>.cacheError(errorString: $errorString)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is CacheError);
+    return identical(this, other) ||
+      (other is CacheError<T> &&
+        (identical(other.errorString, errorString) ||
+          const DeepCollectionEquality()
+            .equals(other.errorString, errorString)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
+  
+  @override
+  $CacheErrorCopyWith<T, CacheError<T>> get copyWith =>
+    _$CacheErrorCopyWithImpl<T, CacheError<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result serverError(),
+    @required Result serverError(String errorString),
     @required Result notFoundError(),
-    @required Result cacheError(),
-    @required Result geoLocationError(),
-    @required Result usernameAlreadyInUse(),
-    @required Result emailAlreadyInUse(),
-    @required Result nameAlreadyInUse(),
+    @required Result cacheError(String errorString),
+    @required Result geoLocationError(String errorString),
+    @required Result usernameAlreadyInUse(Name username),
+    @required Result emailAlreadyInUse(EmailAddress email),
+    @required Result nameAlreadyInUse(Name name),
   }) {
     assert(serverError != null);
     assert(notFoundError != null);
@@ -379,24 +445,24 @@ class _$CacheError implements CacheError {
     assert(usernameAlreadyInUse != null);
     assert(emailAlreadyInUse != null);
     assert(nameAlreadyInUse != null);
-    return cacheError();
+    return cacheError(errorString);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result serverError(),
+    Result serverError(String errorString),
     Result notFoundError(),
-    Result cacheError(),
-    Result geoLocationError(),
-    Result usernameAlreadyInUse(),
-    Result emailAlreadyInUse(),
-    Result nameAlreadyInUse(),
+    Result cacheError(String errorString),
+    Result geoLocationError(String errorString),
+    Result usernameAlreadyInUse(Name username),
+    Result emailAlreadyInUse(EmailAddress email),
+    Result nameAlreadyInUse(Name name),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (cacheError != null) {
-      return cacheError();
+      return cacheError(errorString);
     }
     return orElse();
   }
@@ -404,13 +470,13 @@ class _$CacheError implements CacheError {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result serverError(ServerError value),
-    @required Result notFoundError(NotFoundError value),
-    @required Result cacheError(CacheError value),
-    @required Result geoLocationError(GeoLocationError value),
-    @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
-    @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result nameAlreadyInUse(NameAlreadyInUse value),
+    @required Result serverError(ServerError<T> value),
+    @required Result notFoundError(NotFoundError<T> value),
+    @required Result cacheError(CacheError<T> value),
+    @required Result geoLocationError(GeoLocationError<T> value),
+    @required Result usernameAlreadyInUse(UsernameAlreadyInUse<T> value),
+    @required Result emailAlreadyInUse(EmailAlreadyInUse<T> value),
+    @required Result nameAlreadyInUse(NameAlreadyInUse<T> value),
   }) {
     assert(serverError != null);
     assert(notFoundError != null);
@@ -425,13 +491,13 @@ class _$CacheError implements CacheError {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result serverError(ServerError value),
-    Result notFoundError(NotFoundError value),
-    Result cacheError(CacheError value),
-    Result geoLocationError(GeoLocationError value),
-    Result usernameAlreadyInUse(UsernameAlreadyInUse value),
-    Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result nameAlreadyInUse(NameAlreadyInUse value),
+    Result serverError(ServerError<T> value),
+    Result notFoundError(NotFoundError<T> value),
+    Result cacheError(CacheError<T> value),
+    Result geoLocationError(GeoLocationError<T> value),
+    Result usernameAlreadyInUse(UsernameAlreadyInUse<T> value),
+    Result emailAlreadyInUse(EmailAlreadyInUse<T> value),
+    Result nameAlreadyInUse(NameAlreadyInUse<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -442,50 +508,79 @@ class _$CacheError implements CacheError {
   }
 }
 
-abstract class CacheError implements CoreDataFailure {
-  const factory CacheError() = _$CacheError;
+abstract class CacheError<T> implements CoreDataFailure<T> {
+  const factory CacheError({@required String errorString}) = _$CacheError<T>;
+  
+  String get errorString;
+  
+  $CacheErrorCopyWith<T, CacheError<T>> get copyWith;
 }
 
-abstract class $GeoLocationErrorCopyWith<$Res> {
-  factory $GeoLocationErrorCopyWith(GeoLocationError value, $Res Function(GeoLocationError) then) =
-  _$GeoLocationErrorCopyWithImpl<$Res>;
+abstract class $GeoLocationErrorCopyWith<T, $Res> {
+  factory $GeoLocationErrorCopyWith(GeoLocationError<T> value, $Res Function(GeoLocationError<T>) then) =
+  _$GeoLocationErrorCopyWithImpl<T, $Res>;
+  
+  $Res call({String errorString});
 }
 
-class _$GeoLocationErrorCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res>
-  implements $GeoLocationErrorCopyWith<$Res> {
-  _$GeoLocationErrorCopyWithImpl(GeoLocationError _value, $Res Function(GeoLocationError) _then)
-    : super(_value, (v) => _then(v as GeoLocationError));
+class _$GeoLocationErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res>
+  implements $GeoLocationErrorCopyWith<T, $Res> {
+  _$GeoLocationErrorCopyWithImpl(GeoLocationError<T> _value, $Res Function(GeoLocationError<T>) _then)
+    : super(_value, (v) => _then(v as GeoLocationError<T>));
+  
+  @override
+  GeoLocationError<T> get _value => super._value as GeoLocationError<T>;
+  
+  @override
+  $Res call({
+    Object errorString = freezed,
+  }) {
+    return _then(GeoLocationError<T>(
+      errorString:
+      errorString == freezed ? _value.errorString : errorString as String,
+    ));
+  }
+}
+
+class _$GeoLocationError<T> implements GeoLocationError<T> {
+  const _$GeoLocationError({@required this.errorString})
+    : assert(errorString != null);
 
   @override
-  GeoLocationError get _value => super._value as GeoLocationError;
-}
-
-class _$GeoLocationError implements GeoLocationError {
-  const _$GeoLocationError();
+  final String errorString;
 
   @override
   String toString() {
-    return 'CoreDataFailure.geoLocationError()';
+    return 'CoreDataFailure<$T>.geoLocationError(errorString: $errorString)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is GeoLocationError);
+    return identical(this, other) ||
+      (other is GeoLocationError<T> &&
+        (identical(other.errorString, errorString) ||
+          const DeepCollectionEquality()
+            .equals(other.errorString, errorString)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
+  
+  @override
+  $GeoLocationErrorCopyWith<T, GeoLocationError<T>> get copyWith =>
+    _$GeoLocationErrorCopyWithImpl<T, GeoLocationError<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result serverError(),
+    @required Result serverError(String errorString),
     @required Result notFoundError(),
-    @required Result cacheError(),
-    @required Result geoLocationError(),
-    @required Result usernameAlreadyInUse(),
-    @required Result emailAlreadyInUse(),
-    @required Result nameAlreadyInUse(),
+    @required Result cacheError(String errorString),
+    @required Result geoLocationError(String errorString),
+    @required Result usernameAlreadyInUse(Name username),
+    @required Result emailAlreadyInUse(EmailAddress email),
+    @required Result nameAlreadyInUse(Name name),
   }) {
     assert(serverError != null);
     assert(notFoundError != null);
@@ -494,24 +589,24 @@ class _$GeoLocationError implements GeoLocationError {
     assert(usernameAlreadyInUse != null);
     assert(emailAlreadyInUse != null);
     assert(nameAlreadyInUse != null);
-    return geoLocationError();
+    return geoLocationError(errorString);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result serverError(),
+    Result serverError(String errorString),
     Result notFoundError(),
-    Result cacheError(),
-    Result geoLocationError(),
-    Result usernameAlreadyInUse(),
-    Result emailAlreadyInUse(),
-    Result nameAlreadyInUse(),
+    Result cacheError(String errorString),
+    Result geoLocationError(String errorString),
+    Result usernameAlreadyInUse(Name username),
+    Result emailAlreadyInUse(EmailAddress email),
+    Result nameAlreadyInUse(Name name),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (geoLocationError != null) {
-      return geoLocationError();
+      return geoLocationError(errorString);
     }
     return orElse();
   }
@@ -519,13 +614,13 @@ class _$GeoLocationError implements GeoLocationError {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result serverError(ServerError value),
-    @required Result notFoundError(NotFoundError value),
-    @required Result cacheError(CacheError value),
-    @required Result geoLocationError(GeoLocationError value),
-    @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
-    @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result nameAlreadyInUse(NameAlreadyInUse value),
+    @required Result serverError(ServerError<T> value),
+    @required Result notFoundError(NotFoundError<T> value),
+    @required Result cacheError(CacheError<T> value),
+    @required Result geoLocationError(GeoLocationError<T> value),
+    @required Result usernameAlreadyInUse(UsernameAlreadyInUse<T> value),
+    @required Result emailAlreadyInUse(EmailAlreadyInUse<T> value),
+    @required Result nameAlreadyInUse(NameAlreadyInUse<T> value),
   }) {
     assert(serverError != null);
     assert(notFoundError != null);
@@ -540,13 +635,13 @@ class _$GeoLocationError implements GeoLocationError {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result serverError(ServerError value),
-    Result notFoundError(NotFoundError value),
-    Result cacheError(CacheError value),
-    Result geoLocationError(GeoLocationError value),
-    Result usernameAlreadyInUse(UsernameAlreadyInUse value),
-    Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result nameAlreadyInUse(NameAlreadyInUse value),
+    Result serverError(ServerError<T> value),
+    Result notFoundError(NotFoundError<T> value),
+    Result cacheError(CacheError<T> value),
+    Result geoLocationError(GeoLocationError<T> value),
+    Result usernameAlreadyInUse(UsernameAlreadyInUse<T> value),
+    Result emailAlreadyInUse(EmailAlreadyInUse<T> value),
+    Result nameAlreadyInUse(NameAlreadyInUse<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -557,51 +652,82 @@ class _$GeoLocationError implements GeoLocationError {
   }
 }
 
-abstract class GeoLocationError implements CoreDataFailure {
-  const factory GeoLocationError() = _$GeoLocationError;
+abstract class GeoLocationError<T> implements CoreDataFailure<T> {
+  const factory GeoLocationError({@required String errorString}) =
+  _$GeoLocationError<T>;
+  
+  String get errorString;
+  
+  $GeoLocationErrorCopyWith<T, GeoLocationError<T>> get copyWith;
 }
 
-abstract class $UsernameAlreadyInUseCopyWith<$Res> {
-  factory $UsernameAlreadyInUseCopyWith(UsernameAlreadyInUse value,
-    $Res Function(UsernameAlreadyInUse) then) =
-  _$UsernameAlreadyInUseCopyWithImpl<$Res>;
+abstract class $UsernameAlreadyInUseCopyWith<T, $Res> {
+  factory $UsernameAlreadyInUseCopyWith(UsernameAlreadyInUse<T> value,
+    $Res Function(UsernameAlreadyInUse<T>) then) =
+  _$UsernameAlreadyInUseCopyWithImpl<T, $Res>;
+  
+  $Res call({Name username});
 }
 
-class _$UsernameAlreadyInUseCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res>
-  implements $UsernameAlreadyInUseCopyWith<$Res> {
-  _$UsernameAlreadyInUseCopyWithImpl(UsernameAlreadyInUse _value, $Res Function(UsernameAlreadyInUse) _then)
-    : super(_value, (v) => _then(v as UsernameAlreadyInUse));
+class _$UsernameAlreadyInUseCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res>
+  implements $UsernameAlreadyInUseCopyWith<T, $Res> {
+  _$UsernameAlreadyInUseCopyWithImpl(UsernameAlreadyInUse<T> _value,
+    $Res Function(UsernameAlreadyInUse<T>) _then)
+    : super(_value, (v) => _then(v as UsernameAlreadyInUse<T>));
+  
+  @override
+  UsernameAlreadyInUse<T> get _value => super._value as UsernameAlreadyInUse<T>;
 
   @override
-  UsernameAlreadyInUse get _value => super._value as UsernameAlreadyInUse;
+  $Res call({
+    Object username = freezed,
+  }) {
+    return _then(UsernameAlreadyInUse<T>(
+      username: username == freezed ? _value.username : username as Name,
+    ));
+  }
 }
 
-class _$UsernameAlreadyInUse implements UsernameAlreadyInUse {
-  const _$UsernameAlreadyInUse();
+class _$UsernameAlreadyInUse<T> implements UsernameAlreadyInUse<T> {
+  const _$UsernameAlreadyInUse({@required this.username})
+    : assert(username != null);
+  
+  @override
+  final Name username;
 
   @override
   String toString() {
-    return 'CoreDataFailure.usernameAlreadyInUse()';
+    return 'CoreDataFailure<$T>.usernameAlreadyInUse(username: $username)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UsernameAlreadyInUse);
+    return identical(this, other) ||
+      (other is UsernameAlreadyInUse<T> &&
+        (identical(other.username, username) ||
+          const DeepCollectionEquality()
+            .equals(other.username, username)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
+  
+  @override
+  $UsernameAlreadyInUseCopyWith<T, UsernameAlreadyInUse<T>> get copyWith =>
+    _$UsernameAlreadyInUseCopyWithImpl<T, UsernameAlreadyInUse<T>>(
+      this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result serverError(),
+    @required Result serverError(String errorString),
     @required Result notFoundError(),
-    @required Result cacheError(),
-    @required Result geoLocationError(),
-    @required Result usernameAlreadyInUse(),
-    @required Result emailAlreadyInUse(),
-    @required Result nameAlreadyInUse(),
+    @required Result cacheError(String errorString),
+    @required Result geoLocationError(String errorString),
+    @required Result usernameAlreadyInUse(Name username),
+    @required Result emailAlreadyInUse(EmailAddress email),
+    @required Result nameAlreadyInUse(Name name),
   }) {
     assert(serverError != null);
     assert(notFoundError != null);
@@ -610,24 +736,24 @@ class _$UsernameAlreadyInUse implements UsernameAlreadyInUse {
     assert(usernameAlreadyInUse != null);
     assert(emailAlreadyInUse != null);
     assert(nameAlreadyInUse != null);
-    return usernameAlreadyInUse();
+    return usernameAlreadyInUse(username);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result serverError(),
+    Result serverError(String errorString),
     Result notFoundError(),
-    Result cacheError(),
-    Result geoLocationError(),
-    Result usernameAlreadyInUse(),
-    Result emailAlreadyInUse(),
-    Result nameAlreadyInUse(),
+    Result cacheError(String errorString),
+    Result geoLocationError(String errorString),
+    Result usernameAlreadyInUse(Name username),
+    Result emailAlreadyInUse(EmailAddress email),
+    Result nameAlreadyInUse(Name name),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (usernameAlreadyInUse != null) {
-      return usernameAlreadyInUse();
+      return usernameAlreadyInUse(username);
     }
     return orElse();
   }
@@ -635,13 +761,13 @@ class _$UsernameAlreadyInUse implements UsernameAlreadyInUse {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result serverError(ServerError value),
-    @required Result notFoundError(NotFoundError value),
-    @required Result cacheError(CacheError value),
-    @required Result geoLocationError(GeoLocationError value),
-    @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
-    @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result nameAlreadyInUse(NameAlreadyInUse value),
+    @required Result serverError(ServerError<T> value),
+    @required Result notFoundError(NotFoundError<T> value),
+    @required Result cacheError(CacheError<T> value),
+    @required Result geoLocationError(GeoLocationError<T> value),
+    @required Result usernameAlreadyInUse(UsernameAlreadyInUse<T> value),
+    @required Result emailAlreadyInUse(EmailAlreadyInUse<T> value),
+    @required Result nameAlreadyInUse(NameAlreadyInUse<T> value),
   }) {
     assert(serverError != null);
     assert(notFoundError != null);
@@ -656,13 +782,13 @@ class _$UsernameAlreadyInUse implements UsernameAlreadyInUse {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result serverError(ServerError value),
-    Result notFoundError(NotFoundError value),
-    Result cacheError(CacheError value),
-    Result geoLocationError(GeoLocationError value),
-    Result usernameAlreadyInUse(UsernameAlreadyInUse value),
-    Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result nameAlreadyInUse(NameAlreadyInUse value),
+    Result serverError(ServerError<T> value),
+    Result notFoundError(NotFoundError<T> value),
+    Result cacheError(CacheError<T> value),
+    Result geoLocationError(GeoLocationError<T> value),
+    Result usernameAlreadyInUse(UsernameAlreadyInUse<T> value),
+    Result emailAlreadyInUse(EmailAlreadyInUse<T> value),
+    Result nameAlreadyInUse(NameAlreadyInUse<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -673,50 +799,79 @@ class _$UsernameAlreadyInUse implements UsernameAlreadyInUse {
   }
 }
 
-abstract class UsernameAlreadyInUse implements CoreDataFailure {
-  const factory UsernameAlreadyInUse() = _$UsernameAlreadyInUse;
+abstract class UsernameAlreadyInUse<T> implements CoreDataFailure<T> {
+  const factory UsernameAlreadyInUse({@required Name username}) =
+  _$UsernameAlreadyInUse<T>;
+  
+  Name get username;
+  
+  $UsernameAlreadyInUseCopyWith<T, UsernameAlreadyInUse<T>> get copyWith;
 }
 
-abstract class $EmailAlreadyInUseCopyWith<$Res> {
-  factory $EmailAlreadyInUseCopyWith(EmailAlreadyInUse value, $Res Function(EmailAlreadyInUse) then) =
-  _$EmailAlreadyInUseCopyWithImpl<$Res>;
+abstract class $EmailAlreadyInUseCopyWith<T, $Res> {
+  factory $EmailAlreadyInUseCopyWith(EmailAlreadyInUse<T> value,
+    $Res Function(EmailAlreadyInUse<T>) then) =
+  _$EmailAlreadyInUseCopyWithImpl<T, $Res>;
+  
+  $Res call({EmailAddress email});
 }
 
-class _$EmailAlreadyInUseCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res>
-  implements $EmailAlreadyInUseCopyWith<$Res> {
-  _$EmailAlreadyInUseCopyWithImpl(EmailAlreadyInUse _value, $Res Function(EmailAlreadyInUse) _then)
-    : super(_value, (v) => _then(v as EmailAlreadyInUse));
+class _$EmailAlreadyInUseCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res>
+  implements $EmailAlreadyInUseCopyWith<T, $Res> {
+  _$EmailAlreadyInUseCopyWithImpl(EmailAlreadyInUse<T> _value, $Res Function(EmailAlreadyInUse<T>) _then)
+    : super(_value, (v) => _then(v as EmailAlreadyInUse<T>));
+  
+  @override
+  EmailAlreadyInUse<T> get _value => super._value as EmailAlreadyInUse<T>;
+  
+  @override
+  $Res call({
+    Object email = freezed,
+  }) {
+    return _then(EmailAlreadyInUse<T>(
+      email: email == freezed ? _value.email : email as EmailAddress,
+    ));
+  }
+}
+
+class _$EmailAlreadyInUse<T> implements EmailAlreadyInUse<T> {
+  const _$EmailAlreadyInUse({@required this.email}) : assert(email != null);
 
   @override
-  EmailAlreadyInUse get _value => super._value as EmailAlreadyInUse;
-}
-
-class _$EmailAlreadyInUse implements EmailAlreadyInUse {
-  const _$EmailAlreadyInUse();
+  final EmailAddress email;
 
   @override
   String toString() {
-    return 'CoreDataFailure.emailAlreadyInUse()';
+    return 'CoreDataFailure<$T>.emailAlreadyInUse(email: $email)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is EmailAlreadyInUse);
+    return identical(this, other) ||
+      (other is EmailAlreadyInUse<T> &&
+        (identical(other.email, email) ||
+          const DeepCollectionEquality().equals(other.email, email)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(email);
+  
+  @override
+  $EmailAlreadyInUseCopyWith<T, EmailAlreadyInUse<T>> get copyWith =>
+    _$EmailAlreadyInUseCopyWithImpl<T, EmailAlreadyInUse<T>>(
+      this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result serverError(),
+    @required Result serverError(String errorString),
     @required Result notFoundError(),
-    @required Result cacheError(),
-    @required Result geoLocationError(),
-    @required Result usernameAlreadyInUse(),
-    @required Result emailAlreadyInUse(),
-    @required Result nameAlreadyInUse(),
+    @required Result cacheError(String errorString),
+    @required Result geoLocationError(String errorString),
+    @required Result usernameAlreadyInUse(Name username),
+    @required Result emailAlreadyInUse(EmailAddress email),
+    @required Result nameAlreadyInUse(Name name),
   }) {
     assert(serverError != null);
     assert(notFoundError != null);
@@ -725,24 +880,24 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
     assert(usernameAlreadyInUse != null);
     assert(emailAlreadyInUse != null);
     assert(nameAlreadyInUse != null);
-    return emailAlreadyInUse();
+    return emailAlreadyInUse(email);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result serverError(),
+    Result serverError(String errorString),
     Result notFoundError(),
-    Result cacheError(),
-    Result geoLocationError(),
-    Result usernameAlreadyInUse(),
-    Result emailAlreadyInUse(),
-    Result nameAlreadyInUse(),
+    Result cacheError(String errorString),
+    Result geoLocationError(String errorString),
+    Result usernameAlreadyInUse(Name username),
+    Result emailAlreadyInUse(EmailAddress email),
+    Result nameAlreadyInUse(Name name),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (emailAlreadyInUse != null) {
-      return emailAlreadyInUse();
+      return emailAlreadyInUse(email);
     }
     return orElse();
   }
@@ -750,13 +905,13 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result serverError(ServerError value),
-    @required Result notFoundError(NotFoundError value),
-    @required Result cacheError(CacheError value),
-    @required Result geoLocationError(GeoLocationError value),
-    @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
-    @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result nameAlreadyInUse(NameAlreadyInUse value),
+    @required Result serverError(ServerError<T> value),
+    @required Result notFoundError(NotFoundError<T> value),
+    @required Result cacheError(CacheError<T> value),
+    @required Result geoLocationError(GeoLocationError<T> value),
+    @required Result usernameAlreadyInUse(UsernameAlreadyInUse<T> value),
+    @required Result emailAlreadyInUse(EmailAlreadyInUse<T> value),
+    @required Result nameAlreadyInUse(NameAlreadyInUse<T> value),
   }) {
     assert(serverError != null);
     assert(notFoundError != null);
@@ -771,13 +926,13 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result serverError(ServerError value),
-    Result notFoundError(NotFoundError value),
-    Result cacheError(CacheError value),
-    Result geoLocationError(GeoLocationError value),
-    Result usernameAlreadyInUse(UsernameAlreadyInUse value),
-    Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result nameAlreadyInUse(NameAlreadyInUse value),
+    Result serverError(ServerError<T> value),
+    Result notFoundError(NotFoundError<T> value),
+    Result cacheError(CacheError<T> value),
+    Result geoLocationError(GeoLocationError<T> value),
+    Result usernameAlreadyInUse(UsernameAlreadyInUse<T> value),
+    Result emailAlreadyInUse(EmailAlreadyInUse<T> value),
+    Result nameAlreadyInUse(NameAlreadyInUse<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -788,50 +943,77 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
   }
 }
 
-abstract class EmailAlreadyInUse implements CoreDataFailure {
-  const factory EmailAlreadyInUse() = _$EmailAlreadyInUse;
+abstract class EmailAlreadyInUse<T> implements CoreDataFailure<T> {
+  const factory EmailAlreadyInUse({@required EmailAddress email}) =
+  _$EmailAlreadyInUse<T>;
+  
+  EmailAddress get email;
+  
+  $EmailAlreadyInUseCopyWith<T, EmailAlreadyInUse<T>> get copyWith;
 }
 
-abstract class $NameAlreadyInUseCopyWith<$Res> {
-  factory $NameAlreadyInUseCopyWith(NameAlreadyInUse value, $Res Function(NameAlreadyInUse) then) =
-  _$NameAlreadyInUseCopyWithImpl<$Res>;
+abstract class $NameAlreadyInUseCopyWith<T, $Res> {
+  factory $NameAlreadyInUseCopyWith(NameAlreadyInUse<T> value, $Res Function(NameAlreadyInUse<T>) then) =
+  _$NameAlreadyInUseCopyWithImpl<T, $Res>;
+  
+  $Res call({Name name});
 }
 
-class _$NameAlreadyInUseCopyWithImpl<$Res> extends _$CoreDataFailureCopyWithImpl<$Res>
-  implements $NameAlreadyInUseCopyWith<$Res> {
-  _$NameAlreadyInUseCopyWithImpl(NameAlreadyInUse _value, $Res Function(NameAlreadyInUse) _then)
-    : super(_value, (v) => _then(v as NameAlreadyInUse));
+class _$NameAlreadyInUseCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res>
+  implements $NameAlreadyInUseCopyWith<T, $Res> {
+  _$NameAlreadyInUseCopyWithImpl(NameAlreadyInUse<T> _value, $Res Function(NameAlreadyInUse<T>) _then)
+    : super(_value, (v) => _then(v as NameAlreadyInUse<T>));
+  
+  @override
+  NameAlreadyInUse<T> get _value => super._value as NameAlreadyInUse<T>;
+  
+  @override
+  $Res call({
+    Object name = freezed,
+  }) {
+    return _then(NameAlreadyInUse<T>(
+      name: name == freezed ? _value.name : name as Name,
+    ));
+  }
+}
+
+class _$NameAlreadyInUse<T> implements NameAlreadyInUse<T> {
+  const _$NameAlreadyInUse({@required this.name}) : assert(name != null);
 
   @override
-  NameAlreadyInUse get _value => super._value as NameAlreadyInUse;
-}
-
-class _$NameAlreadyInUse implements NameAlreadyInUse {
-  const _$NameAlreadyInUse();
+  final Name name;
 
   @override
   String toString() {
-    return 'CoreDataFailure.nameAlreadyInUse()';
+    return 'CoreDataFailure<$T>.nameAlreadyInUse(name: $name)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is NameAlreadyInUse);
+    return identical(this, other) ||
+      (other is NameAlreadyInUse<T> &&
+        (identical(other.name, name) ||
+          const DeepCollectionEquality().equals(other.name, name)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
+  
+  @override
+  $NameAlreadyInUseCopyWith<T, NameAlreadyInUse<T>> get copyWith =>
+    _$NameAlreadyInUseCopyWithImpl<T, NameAlreadyInUse<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result serverError(),
+    @required Result serverError(String errorString),
     @required Result notFoundError(),
-    @required Result cacheError(),
-    @required Result geoLocationError(),
-    @required Result usernameAlreadyInUse(),
-    @required Result emailAlreadyInUse(),
-    @required Result nameAlreadyInUse(),
+    @required Result cacheError(String errorString),
+    @required Result geoLocationError(String errorString),
+    @required Result usernameAlreadyInUse(Name username),
+    @required Result emailAlreadyInUse(EmailAddress email),
+    @required Result nameAlreadyInUse(Name name),
   }) {
     assert(serverError != null);
     assert(notFoundError != null);
@@ -840,24 +1022,24 @@ class _$NameAlreadyInUse implements NameAlreadyInUse {
     assert(usernameAlreadyInUse != null);
     assert(emailAlreadyInUse != null);
     assert(nameAlreadyInUse != null);
-    return nameAlreadyInUse();
+    return nameAlreadyInUse(name);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result serverError(),
+    Result serverError(String errorString),
     Result notFoundError(),
-    Result cacheError(),
-    Result geoLocationError(),
-    Result usernameAlreadyInUse(),
-    Result emailAlreadyInUse(),
-    Result nameAlreadyInUse(),
+    Result cacheError(String errorString),
+    Result geoLocationError(String errorString),
+    Result usernameAlreadyInUse(Name username),
+    Result emailAlreadyInUse(EmailAddress email),
+    Result nameAlreadyInUse(Name name),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (nameAlreadyInUse != null) {
-      return nameAlreadyInUse();
+      return nameAlreadyInUse(name);
     }
     return orElse();
   }
@@ -865,13 +1047,13 @@ class _$NameAlreadyInUse implements NameAlreadyInUse {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result serverError(ServerError value),
-    @required Result notFoundError(NotFoundError value),
-    @required Result cacheError(CacheError value),
-    @required Result geoLocationError(GeoLocationError value),
-    @required Result usernameAlreadyInUse(UsernameAlreadyInUse value),
-    @required Result emailAlreadyInUse(EmailAlreadyInUse value),
-    @required Result nameAlreadyInUse(NameAlreadyInUse value),
+    @required Result serverError(ServerError<T> value),
+    @required Result notFoundError(NotFoundError<T> value),
+    @required Result cacheError(CacheError<T> value),
+    @required Result geoLocationError(GeoLocationError<T> value),
+    @required Result usernameAlreadyInUse(UsernameAlreadyInUse<T> value),
+    @required Result emailAlreadyInUse(EmailAlreadyInUse<T> value),
+    @required Result nameAlreadyInUse(NameAlreadyInUse<T> value),
   }) {
     assert(serverError != null);
     assert(notFoundError != null);
@@ -886,13 +1068,13 @@ class _$NameAlreadyInUse implements NameAlreadyInUse {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result serverError(ServerError value),
-    Result notFoundError(NotFoundError value),
-    Result cacheError(CacheError value),
-    Result geoLocationError(GeoLocationError value),
-    Result usernameAlreadyInUse(UsernameAlreadyInUse value),
-    Result emailAlreadyInUse(EmailAlreadyInUse value),
-    Result nameAlreadyInUse(NameAlreadyInUse value),
+    Result serverError(ServerError<T> value),
+    Result notFoundError(NotFoundError<T> value),
+    Result cacheError(CacheError<T> value),
+    Result geoLocationError(GeoLocationError<T> value),
+    Result usernameAlreadyInUse(UsernameAlreadyInUse<T> value),
+    Result emailAlreadyInUse(EmailAlreadyInUse<T> value),
+    Result nameAlreadyInUse(NameAlreadyInUse<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -903,6 +1085,10 @@ class _$NameAlreadyInUse implements NameAlreadyInUse {
   }
 }
 
-abstract class NameAlreadyInUse implements CoreDataFailure {
-  const factory NameAlreadyInUse() = _$NameAlreadyInUse;
+abstract class NameAlreadyInUse<T> implements CoreDataFailure<T> {
+  const factory NameAlreadyInUse({@required Name name}) = _$NameAlreadyInUse<T>;
+  
+  Name get name;
+  
+  $NameAlreadyInUseCopyWith<T, NameAlreadyInUse<T>> get copyWith;
 }

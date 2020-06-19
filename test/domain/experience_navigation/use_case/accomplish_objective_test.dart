@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:worldon/core/error/failures.dart';
+import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/experience_navigation/use_case/accomplish_objective.dart';
 
-import '../../../constants.dart';
+import '../../../constant_descriptions.dart';
 
 void main() {
   AccomplishObjective useCase;
@@ -54,10 +54,16 @@ void main() {
   test(
     descriptionUnknownDomainLayerError,
     () async {
+      // Arrange
+      const failure = Failure.coreDomain(
+        CoreDomainFailure.domainLayerError(
+          errorString: "Null id in the objective tracker",
+        ),
+      );
       // Act
       final result = useCase(Params(objectiveId: null));
       // Assert
-      expect(result, left<Failure, bool>(const CoreDomainFailure.unknownDomainLayerError()));
+      expect(result, left<Failure, bool>(failure));
     },
   );
 }
