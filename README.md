@@ -1,6 +1,6 @@
 # worldon
 
-Front end or client side of the World On project.
+Front end of the World On project.
 
 ## Getting Started
 
