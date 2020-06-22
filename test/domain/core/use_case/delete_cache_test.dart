@@ -22,11 +22,11 @@ void main() {
     descriptionReturnNothing,
     () async {
       // Arrange
-      when(mockCoreRepository.deleteCache()).thenAnswer((_) async => right(null));
+      when(mockCoreRepository.deleteCache()).thenAnswer((_) async => right(unit));
       // Act
       final result = await useCase(NoParams());
       // Assert
-      expect(result, right(null));
+      expect(result, right(unit));
       _verifyInteractions(mockCoreRepository);
     },
   );

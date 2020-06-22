@@ -28,11 +28,11 @@ void main() {
       when(mockExperienceLogRepository.dismissExperienceFromLog(
         userId: anyNamed("userId"),
         experienceId: anyNamed("experienceId"),
-      )).thenAnswer((_) async => right(null));
+      )).thenAnswer((_) async => right(unit));
       // Act
       final result = await useCase(params);
       // Assert
-      expect(result, right(null));
+      expect(result, right(unit));
       _verifyInteractions(mockExperienceLogRepository);
     },
   );

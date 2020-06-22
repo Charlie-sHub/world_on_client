@@ -28,11 +28,11 @@ void main() {
       when(mockExperienceNavigationRepository.likeExperience(
         experienceId: anyNamed("experienceId"),
         userId: anyNamed("userId"),
-      )).thenAnswer((_) async => right(null));
+      )).thenAnswer((_) async => right(unit));
       // Act
       final result = await useCase(params);
       // Assert
-      expect(result, right(null));
+      expect(result, right(unit));
       _verifyInteractions(mockExperienceNavigationRepository);
     },
   );

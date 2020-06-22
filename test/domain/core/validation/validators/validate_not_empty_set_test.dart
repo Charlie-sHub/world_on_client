@@ -1,30 +1,20 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
-import 'package:worldon/domain/core/validation/validators/validate_filled_set.dart';
+import 'package:worldon/domain/core/validation/validators/validate_not_empty_set.dart';
 
 import '../../../../constant_descriptions.dart';
 
 void main() {
   final Set invalidSet = {};
-  final Set validSet = {
-    1,
-    2,
-    3,
-  };
-
-  group(
-    descriptionGroupOnSuccess,
-    () {
-      test(
-        "Should return validSet",
-        () async {
-          // Act
-          final result = _act(validSet);
-          // Assert
-          expect(result, validSet);
-        },
-      );
+  final Set validSet = {1, 2, 3};
+  test(
+    "Should return validSet",
+    () async {
+      // Act
+      final result = _act(validSet);
+      // Assert
+      expect(result, validSet);
     },
   );
   group(
@@ -45,7 +35,7 @@ void main() {
           // Act
           final result = _act(invalidSet);
           // Assert
-          expect(result, ValueFailure.emptySet(set: invalidSet));
+          expect(result, ValueFailure.emptySet(failedValue: invalidSet));
         },
       );
     },
@@ -53,7 +43,7 @@ void main() {
 }
 
 dynamic _act(Set set) {
-  final either = validateFilledSet(set);
+  final either = validateNotEmptySet(set);
   final result = either.fold((valueFailure) => valueFailure, id);
   return result;
 }

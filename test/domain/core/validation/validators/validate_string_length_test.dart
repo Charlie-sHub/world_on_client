@@ -12,7 +12,7 @@ void main() {
     "Should return validString",
     () async {
       // Act
-      final Object result = act(validString, length);
+      final Object result = _act(validString, length);
       // Assert
       expect(result, validString);
     },
@@ -23,17 +23,22 @@ void main() {
       test(
         "Should return StringExceedsLength",
         () async {
+          // Arrange
+          const valueFailure = ValueFailure.stringExceedsLength(
+            failedValue: invalidString,
+            maxLength: length,
+          );
           // Act
-          final Object result = act(invalidString, length);
+          final Object result = _act(invalidString, length);
           // Assert
-          expect(result, const ValueFailure.stringExceedsLength(failedValue: invalidString));
+          expect(result, valueFailure);
         },
       );
       test(
         descriptionNullInput,
         () async {
           // Act
-          final Object result = act(null, length);
+          final Object result = _act(null, length);
           // Assert
           expect(result, const ValueFailure.nullInput());
         },
@@ -42,7 +47,7 @@ void main() {
   );
 }
 
-Object act(String input, int length) {
+Object _act(String input, int length) {
   final either = validateStringLength(
     input: input,
     length: length,

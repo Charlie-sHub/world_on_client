@@ -36,11 +36,11 @@ void main() {
         "$descriptionReturnNothing, testing with the admin",
         () async {
           // Arrange
-          when(mockRemoteOptionsRepository.deleteUser(any)).thenAnswer((_) async => right(null));
+          when(mockRemoteOptionsRepository.deleteUser(any)).thenAnswer((_) async => right(unit));
           // Act
           final result = await useCase(setUpParams(admin));
           // Assert
-          expect(result, right(null));
+          expect(result, right(unit));
           _verifyInteractions(mockRemoteOptionsRepository);
         },
       );
@@ -48,11 +48,11 @@ void main() {
         "$descriptionReturnNothing, testing with the same user",
         () async {
           // Arrange
-          when(mockRemoteOptionsRepository.deleteUser(any)).thenAnswer((_) async => right(null));
+          when(mockRemoteOptionsRepository.deleteUser(any)).thenAnswer((_) async => right(unit));
           // Act
           final result = await useCase(setUpParams(userToDelete));
           // Assert
-          expect(result, right(null));
+          expect(result, right(unit));
           _verifyInteractions(mockRemoteOptionsRepository);
         },
       );

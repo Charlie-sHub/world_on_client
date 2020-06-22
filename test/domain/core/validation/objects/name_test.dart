@@ -5,7 +5,9 @@ import '../../../../constant_descriptions.dart';
 
 void main() {
   const validName = "Test Test";
-  const invalidName = "TestTestTestTestTestTestTestTestTestTestTestTestTestTestTest";
+  const emptyName = "";
+  const multiLineName = "Test \n Test";
+  const tooLongName = "TestTestTestTestTestTestTestTestTestTestTestTestTestTestTest";
   test(
     descriptionValid,
     () async {
@@ -16,13 +18,36 @@ void main() {
       expect(name.getOrCrash(), validName);
     },
   );
-  test(
-    descriptionInvalid,
-    () async {
-      // Act
-      final name = Name(invalidName);
-      // Assert
-      expect(name.isValid(), false);
+  group(
+    descriptionGroupOnFailure,
+    () {
+      test(
+        "$descriptionInvalid with tooLongName",
+        () async {
+          // Act
+          final name = Name(tooLongName);
+          // Assert
+          expect(name.isValid(), false);
+        },
+      );
+      test(
+        "$descriptionInvalid with emptyName",
+        () async {
+          // Act
+          final name = Name(emptyName);
+          // Assert
+          expect(name.isValid(), false);
+        },
+      );
+      test(
+        "$descriptionInvalid with multiLineName",
+        () async {
+          // Act
+          final name = Name(multiLineName);
+          // Assert
+          expect(name.isValid(), false);
+        },
+      );
     },
   );
 }

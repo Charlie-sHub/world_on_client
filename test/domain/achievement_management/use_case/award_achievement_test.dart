@@ -30,11 +30,11 @@ void main() {
       when(mockAchievementRepository.awardAchievement(
         achievementId: anyNamed("achievementId"),
         userId: anyNamed("userId"),
-      )).thenAnswer((_) async => right(null));
+      )).thenAnswer((_) async => right(unit));
       // Act
       final result = await useCase(params);
       // Assert
-      expect(result, right(null));
+      expect(result, right(unit));
       verifyInteractions(mockAchievementRepository);
     },
   );

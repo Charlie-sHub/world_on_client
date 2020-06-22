@@ -55,7 +55,6 @@ mixin _$Failure<T> {
     @required Result coreData(CoreDataFailure<T> f),
     @required Result value(ValueFailure<T> f),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result authenticationDomain(AuthenticationDomainFailure<T> f),
@@ -65,7 +64,6 @@ mixin _$Failure<T> {
     Result value(ValueFailure<T> f),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result authenticationDomain(_AuthenticationDomain<T> value),
@@ -74,7 +72,6 @@ mixin _$Failure<T> {
     @required Result coreData(_CoreData<T> value),
     @required Result value(_Value<T> value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result authenticationDomain(_AuthenticationDomain<T> value),
@@ -94,24 +91,26 @@ class _$FailureCopyWithImpl<T, $Res> implements $FailureCopyWith<T, $Res> {
   _$FailureCopyWithImpl(this._value, this._then);
 
   final Failure<T> _value;
-
   // ignore: unused_field
   final $Res Function(Failure<T>) _then;
 }
 
 abstract class _$AuthenticationDomainCopyWith<T, $Res> {
   factory _$AuthenticationDomainCopyWith(_AuthenticationDomain<T> value, $Res Function(_AuthenticationDomain<T>) then) = __$AuthenticationDomainCopyWithImpl<T, $Res>;
-
   $Res call({AuthenticationDomainFailure<T> f});
 
   $AuthenticationDomainFailureCopyWith<T, $Res> get f;
 }
 
-class __$AuthenticationDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res> implements _$AuthenticationDomainCopyWith<T, $Res> {
-  __$AuthenticationDomainCopyWithImpl(_AuthenticationDomain<T> _value, $Res Function(_AuthenticationDomain<T>) _then) : super(_value, (v) => _then(v as _AuthenticationDomain<T>));
+class __$AuthenticationDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
+  implements _$AuthenticationDomainCopyWith<T, $Res> {
+  __$AuthenticationDomainCopyWithImpl(_AuthenticationDomain<T> _value,
+    $Res Function(_AuthenticationDomain<T>) _then)
+    : super(_value, (v) => _then(v as _AuthenticationDomain<T>));
 
   @override
-  _AuthenticationDomain<T> get _value => super._value as _AuthenticationDomain<T>;
+  _AuthenticationDomain<T> get _value =>
+    super._value as _AuthenticationDomain<T>;
 
   @override
   $Res call({
@@ -146,14 +145,20 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _AuthenticationDomain<T> && (identical(other.f, f) || const DeepCollectionEquality().equals(other.f, f)));
+    return identical(this, other) ||
+      (other is _AuthenticationDomain<T> &&
+        (identical(other.f, f) ||
+          const DeepCollectionEquality().equals(other.f, f)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
 
   @override
-  _$AuthenticationDomainCopyWith<T, _AuthenticationDomain<T>> get copyWith => __$AuthenticationDomainCopyWithImpl<T, _AuthenticationDomain<T>>(this, _$identity);
+  _$AuthenticationDomainCopyWith<T, _AuthenticationDomain<T>> get copyWith =>
+    __$AuthenticationDomainCopyWithImpl<T, _AuthenticationDomain<T>>(
+      this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -225,23 +230,27 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
 }
 
 abstract class _AuthenticationDomain<T> implements Failure<T> {
-  const factory _AuthenticationDomain(AuthenticationDomainFailure<T> f) = _$_AuthenticationDomain<T>;
+  const factory _AuthenticationDomain(AuthenticationDomainFailure<T> f) =
+  _$_AuthenticationDomain<T>;
 
   AuthenticationDomainFailure<T> get f;
-
   _$AuthenticationDomainCopyWith<T, _AuthenticationDomain<T>> get copyWith;
 }
 
 abstract class _$AuthenticationDataCopyWith<T, $Res> {
-  factory _$AuthenticationDataCopyWith(_AuthenticationData<T> value, $Res Function(_AuthenticationData<T>) then) = __$AuthenticationDataCopyWithImpl<T, $Res>;
-
+  factory _$AuthenticationDataCopyWith(_AuthenticationData<T> value,
+    $Res Function(_AuthenticationData<T>) then) =
+  __$AuthenticationDataCopyWithImpl<T, $Res>;
   $Res call({AuthenticationDataFailure<T> f});
 
   $AuthenticationDataFailureCopyWith<T, $Res> get f;
 }
 
-class __$AuthenticationDataCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res> implements _$AuthenticationDataCopyWith<T, $Res> {
-  __$AuthenticationDataCopyWithImpl(_AuthenticationData<T> _value, $Res Function(_AuthenticationData<T>) _then) : super(_value, (v) => _then(v as _AuthenticationData<T>));
+class __$AuthenticationDataCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
+  implements _$AuthenticationDataCopyWith<T, $Res> {
+  __$AuthenticationDataCopyWithImpl(_AuthenticationData<T> _value,
+    $Res Function(_AuthenticationData<T>) _then)
+    : super(_value, (v) => _then(v as _AuthenticationData<T>));
 
   @override
   _AuthenticationData<T> get _value => super._value as _AuthenticationData<T>;
@@ -279,14 +288,20 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _AuthenticationData<T> && (identical(other.f, f) || const DeepCollectionEquality().equals(other.f, f)));
+    return identical(this, other) ||
+      (other is _AuthenticationData<T> &&
+        (identical(other.f, f) ||
+          const DeepCollectionEquality().equals(other.f, f)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
 
   @override
-  _$AuthenticationDataCopyWith<T, _AuthenticationData<T>> get copyWith => __$AuthenticationDataCopyWithImpl<T, _AuthenticationData<T>>(this, _$identity);
+  _$AuthenticationDataCopyWith<T, _AuthenticationData<T>> get copyWith =>
+    __$AuthenticationDataCopyWithImpl<T, _AuthenticationData<T>>(
+      this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -358,23 +373,25 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
 }
 
 abstract class _AuthenticationData<T> implements Failure<T> {
-  const factory _AuthenticationData(AuthenticationDataFailure<T> f) = _$_AuthenticationData<T>;
+  const factory _AuthenticationData(AuthenticationDataFailure<T> f) =
+  _$_AuthenticationData<T>;
 
   AuthenticationDataFailure<T> get f;
-
   _$AuthenticationDataCopyWith<T, _AuthenticationData<T>> get copyWith;
 }
 
 abstract class _$CoreDomainCopyWith<T, $Res> {
-  factory _$CoreDomainCopyWith(_CoreDomain<T> value, $Res Function(_CoreDomain<T>) then) = __$CoreDomainCopyWithImpl<T, $Res>;
-
+  factory _$CoreDomainCopyWith(_CoreDomain<T> value, $Res Function(_CoreDomain<T>) then) =
+  __$CoreDomainCopyWithImpl<T, $Res>;
   $Res call({CoreDomainFailure<T> f});
 
   $CoreDomainFailureCopyWith<T, $Res> get f;
 }
 
-class __$CoreDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res> implements _$CoreDomainCopyWith<T, $Res> {
-  __$CoreDomainCopyWithImpl(_CoreDomain<T> _value, $Res Function(_CoreDomain<T>) _then) : super(_value, (v) => _then(v as _CoreDomain<T>));
+class __$CoreDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
+  implements _$CoreDomainCopyWith<T, $Res> {
+  __$CoreDomainCopyWithImpl(_CoreDomain<T> _value, $Res Function(_CoreDomain<T>) _then)
+    : super(_value, (v) => _then(v as _CoreDomain<T>));
 
   @override
   _CoreDomain<T> get _value => super._value as _CoreDomain<T>;
@@ -412,14 +429,19 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _CoreDomain<T> && (identical(other.f, f) || const DeepCollectionEquality().equals(other.f, f)));
+    return identical(this, other) ||
+      (other is _CoreDomain<T> &&
+        (identical(other.f, f) ||
+          const DeepCollectionEquality().equals(other.f, f)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
 
   @override
-  _$CoreDomainCopyWith<T, _CoreDomain<T>> get copyWith => __$CoreDomainCopyWithImpl<T, _CoreDomain<T>>(this, _$identity);
+  _$CoreDomainCopyWith<T, _CoreDomain<T>> get copyWith =>
+    __$CoreDomainCopyWithImpl<T, _CoreDomain<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -494,20 +516,21 @@ abstract class _CoreDomain<T> implements Failure<T> {
   const factory _CoreDomain(CoreDomainFailure<T> f) = _$_CoreDomain<T>;
 
   CoreDomainFailure<T> get f;
-
   _$CoreDomainCopyWith<T, _CoreDomain<T>> get copyWith;
 }
 
 abstract class _$CoreDataCopyWith<T, $Res> {
-  factory _$CoreDataCopyWith(_CoreData<T> value, $Res Function(_CoreData<T>) then) = __$CoreDataCopyWithImpl<T, $Res>;
-
+  factory _$CoreDataCopyWith(_CoreData<T> value, $Res Function(_CoreData<T>) then) =
+  __$CoreDataCopyWithImpl<T, $Res>;
   $Res call({CoreDataFailure<T> f});
 
   $CoreDataFailureCopyWith<T, $Res> get f;
 }
 
-class __$CoreDataCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res> implements _$CoreDataCopyWith<T, $Res> {
-  __$CoreDataCopyWithImpl(_CoreData<T> _value, $Res Function(_CoreData<T>) _then) : super(_value, (v) => _then(v as _CoreData<T>));
+class __$CoreDataCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
+  implements _$CoreDataCopyWith<T, $Res> {
+  __$CoreDataCopyWithImpl(_CoreData<T> _value, $Res Function(_CoreData<T>) _then)
+    : super(_value, (v) => _then(v as _CoreData<T>));
 
   @override
   _CoreData<T> get _value => super._value as _CoreData<T>;
@@ -545,14 +568,19 @@ class _$_CoreData<T> implements _CoreData<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _CoreData<T> && (identical(other.f, f) || const DeepCollectionEquality().equals(other.f, f)));
+    return identical(this, other) ||
+      (other is _CoreData<T> &&
+        (identical(other.f, f) ||
+          const DeepCollectionEquality().equals(other.f, f)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
 
   @override
-  _$CoreDataCopyWith<T, _CoreData<T>> get copyWith => __$CoreDataCopyWithImpl<T, _CoreData<T>>(this, _$identity);
+  _$CoreDataCopyWith<T, _CoreData<T>> get copyWith =>
+    __$CoreDataCopyWithImpl<T, _CoreData<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -627,20 +655,21 @@ abstract class _CoreData<T> implements Failure<T> {
   const factory _CoreData(CoreDataFailure<T> f) = _$_CoreData<T>;
 
   CoreDataFailure<T> get f;
-
   _$CoreDataCopyWith<T, _CoreData<T>> get copyWith;
 }
 
 abstract class _$ValueCopyWith<T, $Res> {
-  factory _$ValueCopyWith(_Value<T> value, $Res Function(_Value<T>) then) = __$ValueCopyWithImpl<T, $Res>;
-
+  factory _$ValueCopyWith(_Value<T> value, $Res Function(_Value<T>) then) =
+  __$ValueCopyWithImpl<T, $Res>;
   $Res call({ValueFailure<T> f});
 
   $ValueFailureCopyWith<T, $Res> get f;
 }
 
-class __$ValueCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res> implements _$ValueCopyWith<T, $Res> {
-  __$ValueCopyWithImpl(_Value<T> _value, $Res Function(_Value<T>) _then) : super(_value, (v) => _then(v as _Value<T>));
+class __$ValueCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
+  implements _$ValueCopyWith<T, $Res> {
+  __$ValueCopyWithImpl(_Value<T> _value, $Res Function(_Value<T>) _then)
+    : super(_value, (v) => _then(v as _Value<T>));
 
   @override
   _Value<T> get _value => super._value as _Value<T>;
@@ -678,14 +707,19 @@ class _$_Value<T> implements _Value<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Value<T> && (identical(other.f, f) || const DeepCollectionEquality().equals(other.f, f)));
+    return identical(this, other) ||
+      (other is _Value<T> &&
+        (identical(other.f, f) ||
+          const DeepCollectionEquality().equals(other.f, f)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
 
   @override
-  _$ValueCopyWith<T, _Value<T>> get copyWith => __$ValueCopyWithImpl<T, _Value<T>>(this, _$identity);
+  _$ValueCopyWith<T, _Value<T>> get copyWith =>
+    __$ValueCopyWithImpl<T, _Value<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -760,6 +794,5 @@ abstract class _Value<T> implements Failure<T> {
   const factory _Value(ValueFailure<T> f) = _$_Value<T>;
 
   ValueFailure<T> get f;
-
   _$ValueCopyWith<T, _Value<T>> get copyWith;
 }

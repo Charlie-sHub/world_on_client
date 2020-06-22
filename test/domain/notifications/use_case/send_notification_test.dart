@@ -30,11 +30,11 @@ void main() {
     descriptionReturnNothing,
     () async {
       // Arrange
-      when(mockNotificationRepository.sendNotification(any)).thenAnswer((_) async => right(null));
+      when(mockNotificationRepository.sendNotification(any)).thenAnswer((_) async => right(unit));
       // Act
       final result = await useCase(params);
       // Assert
-      expect(result, right(null));
+      expect(result, right(unit));
       _verifyInteractions(mockNotificationRepository);
     },
   );

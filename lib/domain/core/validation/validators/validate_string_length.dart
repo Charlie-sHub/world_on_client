@@ -8,6 +8,9 @@ Either<ValueFailure<String>, String> validateStringLength({@required String inpu
   } else if (input.length <= length) {
     return right(input);
   } else {
-    return left(ValueFailure.stringExceedsLength(failedValue: input));
+    return left(ValueFailure.stringExceedsLength(
+      failedValue: input,
+      maxLength: length,
+    ));
   }
 }

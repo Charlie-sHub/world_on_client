@@ -1,20 +1,20 @@
 import 'package:dartz/dartz.dart';
-import 'package:worldon/domain/core/entities/tag.dart';
+import 'package:worldon/domain/core/entities/Objective.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/value_object.dart';
 import 'package:worldon/domain/core/validation/validators/validate_max_set_length.dart';
 import 'package:worldon/domain/core/validation/validators/validate_not_empty_set.dart';
 
-class TagSet extends ValueObject<Set<Tag>> {
+class ObjectiveSet extends ValueObject<Set<Objective>> {
   @override
-  final Either<ValueFailure<Set<Tag>>, Set<Tag>> value;
+  final Either<ValueFailure<Set<Objective>>, Set<Objective>> value;
 
   // Just a value that made sense at the time
   static const maxLength = 10;
 
-  factory TagSet(Set<Tag> input) {
+  factory ObjectiveSet(Set<Objective> input) {
     assert(input != null);
-    return TagSet._(
+    return ObjectiveSet._(
       validateNotEmptySet(input).flatMap(
         (input) => validateMaxSetLength(
           input: input,
@@ -24,7 +24,7 @@ class TagSet extends ValueObject<Set<Tag>> {
     );
   }
 
-  const TagSet._(this.value);
+  const ObjectiveSet._(this.value);
 
   @override
   List<Object> get props => [value];

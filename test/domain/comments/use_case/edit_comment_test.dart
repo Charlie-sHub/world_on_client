@@ -41,11 +41,11 @@ void main() {
         "$descriptionReturnNothing, testing with the creator",
         () async {
           // Arrange
-          when(mockCommentRepository.editComment(any)).thenAnswer((_) async => right(null));
+          when(mockCommentRepository.editComment(any)).thenAnswer((_) async => right(unit));
           // Act
           final result = await useCase(setUpParams(creatorUser));
           // Assert
-          expect(result, right(null));
+          expect(result, right(unit));
           _verifyInteractions(mockCommentRepository);
         },
       );
@@ -53,11 +53,11 @@ void main() {
         "$descriptionReturnNothing, testing with the admin",
         () async {
           // Arrange
-          when(mockCommentRepository.editComment(any)).thenAnswer((_) async => right(null));
+          when(mockCommentRepository.editComment(any)).thenAnswer((_) async => right(unit));
           // Act
           final result = await useCase(setUpParams(admin));
           // Assert
-          expect(result, right(null));
+          expect(result, right(unit));
           _verifyInteractions(mockCommentRepository);
         },
       );

@@ -11,7 +11,7 @@ void main() {
     "Should return validDate",
     () async {
       // Act
-      final Object result = act(validDate);
+      final Object result = _act(validDate);
       // Assert
       expect(result, validDate);
     },
@@ -23,7 +23,7 @@ void main() {
         "Should return InvalidDate",
         () async {
           // Act
-          final Object result = act(invalidDate);
+          final Object result = _act(invalidDate);
           // Assert
           expect(result, ValueFailure.invalidDate(failedValue: invalidDate));
         },
@@ -32,7 +32,7 @@ void main() {
         descriptionNullInput,
         () async {
           // Act
-          final Object result = act(null);
+          final Object result = _act(null);
           // Assert
           expect(result, const ValueFailure.nullInput());
         },
@@ -41,7 +41,7 @@ void main() {
   );
 }
 
-Object act(DateTime input) {
+Object _act(DateTime input) {
   final either = validatePastDate(input);
   final result = either.fold(
     (valueFailure) => valueFailure,

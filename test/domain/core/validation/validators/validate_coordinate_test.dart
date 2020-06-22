@@ -45,7 +45,7 @@ void main() {
           // Act
           final result = _act(latitudeLimit, invalidLatitude);
           // Assert
-          expect(result, const ValueFailure.invalidCoordinate(coordinate: invalidLatitude));
+          expect(result, const ValueFailure.invalidCoordinate(failedValue: invalidLatitude));
         },
       );
       test(
@@ -54,7 +54,7 @@ void main() {
           // Act
           final result = _act(longitudeLimit, invalidLongitude);
           // Assert
-          expect(result, const ValueFailure.invalidCoordinate(coordinate: invalidLongitude));
+          expect(result, const ValueFailure.invalidCoordinate(failedValue: invalidLongitude));
         },
       );
       test(

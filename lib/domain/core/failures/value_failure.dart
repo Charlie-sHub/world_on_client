@@ -15,13 +15,25 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
 
   const factory ValueFailure.invalidName({@required String failedValue}) = InvalidName<T>;
 
-  const factory ValueFailure.stringExceedsLength({@required String failedValue}) = StringExceedsLength<T>;
+  const factory ValueFailure.emptyString({@required String failedValue}) = EmptyString<T>;
+
+  const factory ValueFailure.multiLineString({@required String failedValue}) = MultiLineString<T>;
+
+  const factory ValueFailure.stringExceedsLength({
+    @required String failedValue,
+    @required int maxLength,
+  }) = StringExceedsLength<T>;
 
   const factory ValueFailure.integerOutOfBounds({@required int failedValue}) = IntegerOutOfBounds<T>;
 
   const factory ValueFailure.stringWithInvalidCharacters({@required String failedValue}) = StringWithInvalidCharacters<T>;
 
-  const factory ValueFailure.invalidCoordinate({@required double coordinate}) = InvalidCoordinates<T>;
+  const factory ValueFailure.invalidCoordinate({@required double failedValue}) = InvalidCoordinates<T>;
 
-  const factory ValueFailure.emptySet({@required Set set}) = EmptySet<T>;
+  const factory ValueFailure.emptySet({@required T failedValue}) = EmptySet<T>;
+
+  const factory ValueFailure.setExceedsLength({
+    @required T failedValue,
+    @required int maxLength,
+  }) = SetExceedsLength<T>;
 }

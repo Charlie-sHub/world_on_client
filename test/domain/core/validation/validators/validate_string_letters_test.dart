@@ -11,7 +11,7 @@ void main() {
     "Should return validString",
     () async {
       // Act
-      final Object result = act(validString);
+      final Object result = _act(validString);
       // Assert
       expect(result, validString);
     },
@@ -23,7 +23,7 @@ void main() {
         "Should return StringWithInvalidCharacters",
         () async {
           // Act
-          final Object result = act(invalidString);
+          final Object result = _act(invalidString);
           // Assert
           expect(result, const ValueFailure<String>.stringWithInvalidCharacters(failedValue: invalidString));
         },
@@ -32,7 +32,7 @@ void main() {
         descriptionNullInput,
         () async {
           // Act
-          final Object result = act(null);
+          final Object result = _act(null);
           // Assert
           expect(result, const ValueFailure.nullInput());
         },
@@ -41,7 +41,7 @@ void main() {
   );
 }
 
-Object act(String input) {
+Object _act(String input) {
   final either = validateStringLetters(input);
   final result = either.fold(
     (valueFailure) => valueFailure,

@@ -50,11 +50,11 @@ void main() {
         "$descriptionReturnNothing, testing with the creator",
         () async {
           // Arrange
-          when(mockAchievementRepository.removeAchievement(any)).thenAnswer((_) async => right(null));
+          when(mockAchievementRepository.removeAchievement(any)).thenAnswer((_) async => right(unit));
           // Act
           final result = await useCase(setUpParams(creatorUser));
           // Assert
-          expect(result, right(null));
+          expect(result, right(unit));
           _verifyInteractions(mockAchievementRepository);
         },
       );
@@ -62,11 +62,11 @@ void main() {
         "$descriptionReturnNothing, testing with the admin",
         () async {
           // Arrange
-          when(mockAchievementRepository.removeAchievement(any)).thenAnswer((_) async => right(null));
+          when(mockAchievementRepository.removeAchievement(any)).thenAnswer((_) async => right(unit));
           // Act
           final result = await useCase(setUpParams(admin));
           // Assert
-          expect(result, right(null));
+          expect(result, right(unit));
           _verifyInteractions(mockAchievementRepository);
         },
       );

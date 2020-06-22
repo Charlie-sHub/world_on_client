@@ -11,7 +11,7 @@ void main() {
     "Should return back the valid email",
     () async {
       // Act
-      final Object result = act(validEmail);
+      final Object result = _act(validEmail);
       // Assert
       expect(result, validEmail);
     },
@@ -23,7 +23,7 @@ void main() {
         "Should return InvalidEmail",
         () async {
           // Act
-          final Object result = act(invalidEmail);
+          final Object result = _act(invalidEmail);
           // Assert
           expect(result, const ValueFailure<String>.invalidEmail(failedValue: invalidEmail));
         },
@@ -32,7 +32,7 @@ void main() {
         descriptionNullInput,
         () async {
           // Act
-          final Object result = act(null);
+          final Object result = _act(null);
           // Assert
           expect(result, const ValueFailure.nullInput());
         },
@@ -41,7 +41,7 @@ void main() {
   );
 }
 
-Object act(String invalidEmail) {
+Object _act(String invalidEmail) {
   final either = validateEmail(invalidEmail);
   final result = either.fold(
     (valueFailure) => valueFailure,

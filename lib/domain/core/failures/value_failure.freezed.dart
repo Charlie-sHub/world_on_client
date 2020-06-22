@@ -40,9 +40,22 @@ class _$ValueFailureTearOff {
     );
   }
 
-  StringExceedsLength<T> stringExceedsLength<T>({@required String failedValue}) {
+  EmptyString<T> emptyString<T>({@required String failedValue}) {
+    return EmptyString<T>(
+      failedValue: failedValue,
+    );
+  }
+
+  MultiLineString<T> multiLineString<T>({@required String failedValue}) {
+    return MultiLineString<T>(
+      failedValue: failedValue,
+    );
+  }
+
+  StringExceedsLength<T> stringExceedsLength<T>({@required String failedValue, @required int maxLength}) {
     return StringExceedsLength<T>(
       failedValue: failedValue,
+      maxLength: maxLength,
     );
   }
 
@@ -58,15 +71,22 @@ class _$ValueFailureTearOff {
     );
   }
 
-  InvalidCoordinates<T> invalidCoordinate<T>({@required double coordinate}) {
+  InvalidCoordinates<T> invalidCoordinate<T>({@required double failedValue}) {
     return InvalidCoordinates<T>(
-      coordinate: coordinate,
+      failedValue: failedValue,
     );
   }
 
-  EmptySet<T> emptySet<T>({@required Set<dynamic> set}) {
+  EmptySet<T> emptySet<T>({@required T failedValue}) {
     return EmptySet<T>(
-      set: set,
+      failedValue: failedValue,
+    );
+  }
+
+  SetExceedsLength<T> setExceedsLength<T>({@required T failedValue, @required int maxLength}) {
+    return SetExceedsLength<T>(
+      failedValue: failedValue,
+      maxLength: maxLength,
     );
   }
 }
@@ -82,11 +102,14 @@ mixin _$ValueFailure<T> {
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
     @required Result invalidName(String failedValue),
-    @required Result stringExceedsLength(String failedValue),
+    @required Result emptyString(String failedValue),
+    @required Result multiLineString(String failedValue),
+    @required Result stringExceedsLength(String failedValue, int maxLength),
     @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double coordinate),
-    @required Result emptySet(Set<dynamic> set),
+    @required Result invalidCoordinate(double failedValue),
+    @required Result emptySet(T failedValue),
+    @required Result setExceedsLength(T failedValue, int maxLength),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -95,11 +118,14 @@ mixin _$ValueFailure<T> {
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
     Result invalidName(String failedValue),
-    Result stringExceedsLength(String failedValue),
+    Result emptyString(String failedValue),
+    Result multiLineString(String failedValue),
+    Result stringExceedsLength(String failedValue, int maxLength),
     Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double coordinate),
-    Result emptySet(Set<dynamic> set),
+    Result invalidCoordinate(double failedValue),
+    Result emptySet(T failedValue),
+    Result setExceedsLength(T failedValue, int maxLength),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -109,11 +135,14 @@ mixin _$ValueFailure<T> {
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidName(InvalidName<T> value),
+    @required Result emptyString(EmptyString<T> value),
+    @required Result multiLineString(MultiLineString<T> value),
     @required Result stringExceedsLength(StringExceedsLength<T> value),
     @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result invalidCoordinate(InvalidCoordinates<T> value),
     @required Result emptySet(EmptySet<T> value),
+    @required Result setExceedsLength(SetExceedsLength<T> value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -122,11 +151,14 @@ mixin _$ValueFailure<T> {
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidName(InvalidName<T> value),
+    Result emptyString(EmptyString<T> value),
+    Result multiLineString(MultiLineString<T> value),
     Result stringExceedsLength(StringExceedsLength<T> value),
     Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     Result invalidCoordinate(InvalidCoordinates<T> value),
     Result emptySet(EmptySet<T> value),
+    Result setExceedsLength(SetExceedsLength<T> value),
     @required Result orElse(),
   });
 }
@@ -187,22 +219,28 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
     @required Result invalidName(String failedValue),
-    @required Result stringExceedsLength(String failedValue),
+    @required Result emptyString(String failedValue),
+    @required Result multiLineString(String failedValue),
+    @required Result stringExceedsLength(String failedValue, int maxLength),
     @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double coordinate),
-    @required Result emptySet(Set<dynamic> set),
+    @required Result invalidCoordinate(double failedValue),
+    @required Result emptySet(T failedValue),
+    @required Result setExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
     assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
     assert(stringExceedsLength != null);
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
+    assert(setExceedsLength != null);
     return nullInput();
   }
 
@@ -214,11 +252,14 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
     Result invalidName(String failedValue),
-    Result stringExceedsLength(String failedValue),
+    Result emptyString(String failedValue),
+    Result multiLineString(String failedValue),
+    Result stringExceedsLength(String failedValue, int maxLength),
     Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double coordinate),
-    Result emptySet(Set<dynamic> set),
+    Result invalidCoordinate(double failedValue),
+    Result emptySet(T failedValue),
+    Result setExceedsLength(T failedValue, int maxLength),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -236,22 +277,28 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidName(InvalidName<T> value),
+    @required Result emptyString(EmptyString<T> value),
+    @required Result multiLineString(MultiLineString<T> value),
     @required Result stringExceedsLength(StringExceedsLength<T> value),
     @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result invalidCoordinate(InvalidCoordinates<T> value),
     @required Result emptySet(EmptySet<T> value),
+    @required Result setExceedsLength(SetExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
     assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
     assert(stringExceedsLength != null);
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
+    assert(setExceedsLength != null);
     return nullInput(this);
   }
 
@@ -263,11 +310,14 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidName(InvalidName<T> value),
+    Result emptyString(EmptyString<T> value),
+    Result multiLineString(MultiLineString<T> value),
     Result stringExceedsLength(StringExceedsLength<T> value),
     Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     Result invalidCoordinate(InvalidCoordinates<T> value),
     Result emptySet(EmptySet<T> value),
+    Result setExceedsLength(SetExceedsLength<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -350,22 +400,28 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
     @required Result invalidName(String failedValue),
-    @required Result stringExceedsLength(String failedValue),
+    @required Result emptyString(String failedValue),
+    @required Result multiLineString(String failedValue),
+    @required Result stringExceedsLength(String failedValue, int maxLength),
     @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double coordinate),
-    @required Result emptySet(Set<dynamic> set),
+    @required Result invalidCoordinate(double failedValue),
+    @required Result emptySet(T failedValue),
+    @required Result setExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
     assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
     assert(stringExceedsLength != null);
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
+    assert(setExceedsLength != null);
     return invalidDate(failedValue);
   }
 
@@ -377,11 +433,14 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
     Result invalidName(String failedValue),
-    Result stringExceedsLength(String failedValue),
+    Result emptyString(String failedValue),
+    Result multiLineString(String failedValue),
+    Result stringExceedsLength(String failedValue, int maxLength),
     Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double coordinate),
-    Result emptySet(Set<dynamic> set),
+    Result invalidCoordinate(double failedValue),
+    Result emptySet(T failedValue),
+    Result setExceedsLength(T failedValue, int maxLength),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -399,22 +458,28 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidName(InvalidName<T> value),
+    @required Result emptyString(EmptyString<T> value),
+    @required Result multiLineString(MultiLineString<T> value),
     @required Result stringExceedsLength(StringExceedsLength<T> value),
     @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result invalidCoordinate(InvalidCoordinates<T> value),
     @required Result emptySet(EmptySet<T> value),
+    @required Result setExceedsLength(SetExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
     assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
     assert(stringExceedsLength != null);
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
+    assert(setExceedsLength != null);
     return invalidDate(this);
   }
 
@@ -426,11 +491,14 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidName(InvalidName<T> value),
+    Result emptyString(EmptyString<T> value),
+    Result multiLineString(MultiLineString<T> value),
     Result stringExceedsLength(StringExceedsLength<T> value),
     Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     Result invalidCoordinate(InvalidCoordinates<T> value),
     Result emptySet(EmptySet<T> value),
+    Result setExceedsLength(SetExceedsLength<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -519,22 +587,28 @@ class _$InvalidEmail<T>
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
     @required Result invalidName(String failedValue),
-    @required Result stringExceedsLength(String failedValue),
+    @required Result emptyString(String failedValue),
+    @required Result multiLineString(String failedValue),
+    @required Result stringExceedsLength(String failedValue, int maxLength),
     @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double coordinate),
-    @required Result emptySet(Set<dynamic> set),
+    @required Result invalidCoordinate(double failedValue),
+    @required Result emptySet(T failedValue),
+    @required Result setExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
     assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
     assert(stringExceedsLength != null);
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
+    assert(setExceedsLength != null);
     return invalidEmail(failedValue);
   }
 
@@ -546,11 +620,14 @@ class _$InvalidEmail<T>
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
     Result invalidName(String failedValue),
-    Result stringExceedsLength(String failedValue),
+    Result emptyString(String failedValue),
+    Result multiLineString(String failedValue),
+    Result stringExceedsLength(String failedValue, int maxLength),
     Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double coordinate),
-    Result emptySet(Set<dynamic> set),
+    Result invalidCoordinate(double failedValue),
+    Result emptySet(T failedValue),
+    Result setExceedsLength(T failedValue, int maxLength),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -568,22 +645,28 @@ class _$InvalidEmail<T>
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidName(InvalidName<T> value),
+    @required Result emptyString(EmptyString<T> value),
+    @required Result multiLineString(MultiLineString<T> value),
     @required Result stringExceedsLength(StringExceedsLength<T> value),
     @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result invalidCoordinate(InvalidCoordinates<T> value),
     @required Result emptySet(EmptySet<T> value),
+    @required Result setExceedsLength(SetExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
     assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
     assert(stringExceedsLength != null);
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
+    assert(setExceedsLength != null);
     return invalidEmail(this);
   }
 
@@ -595,11 +678,14 @@ class _$InvalidEmail<T>
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidName(InvalidName<T> value),
+    Result emptyString(EmptyString<T> value),
+    Result multiLineString(MultiLineString<T> value),
     Result stringExceedsLength(StringExceedsLength<T> value),
     Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     Result invalidCoordinate(InvalidCoordinates<T> value),
     Result emptySet(EmptySet<T> value),
+    Result setExceedsLength(SetExceedsLength<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -688,22 +774,28 @@ class _$InvalidPassword<T>
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
     @required Result invalidName(String failedValue),
-    @required Result stringExceedsLength(String failedValue),
+    @required Result emptyString(String failedValue),
+    @required Result multiLineString(String failedValue),
+    @required Result stringExceedsLength(String failedValue, int maxLength),
     @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double coordinate),
-    @required Result emptySet(Set<dynamic> set),
+    @required Result invalidCoordinate(double failedValue),
+    @required Result emptySet(T failedValue),
+    @required Result setExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
     assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
     assert(stringExceedsLength != null);
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
+    assert(setExceedsLength != null);
     return invalidPassword(failedValue);
   }
 
@@ -715,11 +807,14 @@ class _$InvalidPassword<T>
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
     Result invalidName(String failedValue),
-    Result stringExceedsLength(String failedValue),
+    Result emptyString(String failedValue),
+    Result multiLineString(String failedValue),
+    Result stringExceedsLength(String failedValue, int maxLength),
     Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double coordinate),
-    Result emptySet(Set<dynamic> set),
+    Result invalidCoordinate(double failedValue),
+    Result emptySet(T failedValue),
+    Result setExceedsLength(T failedValue, int maxLength),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -737,22 +832,28 @@ class _$InvalidPassword<T>
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidName(InvalidName<T> value),
+    @required Result emptyString(EmptyString<T> value),
+    @required Result multiLineString(MultiLineString<T> value),
     @required Result stringExceedsLength(StringExceedsLength<T> value),
     @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result invalidCoordinate(InvalidCoordinates<T> value),
     @required Result emptySet(EmptySet<T> value),
+    @required Result setExceedsLength(SetExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
     assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
     assert(stringExceedsLength != null);
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
+    assert(setExceedsLength != null);
     return invalidPassword(this);
   }
 
@@ -764,11 +865,14 @@ class _$InvalidPassword<T>
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidName(InvalidName<T> value),
+    Result emptyString(EmptyString<T> value),
+    Result multiLineString(MultiLineString<T> value),
     Result stringExceedsLength(StringExceedsLength<T> value),
     Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     Result invalidCoordinate(InvalidCoordinates<T> value),
     Result emptySet(EmptySet<T> value),
+    Result setExceedsLength(SetExceedsLength<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -855,22 +959,28 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
     @required Result invalidName(String failedValue),
-    @required Result stringExceedsLength(String failedValue),
+    @required Result emptyString(String failedValue),
+    @required Result multiLineString(String failedValue),
+    @required Result stringExceedsLength(String failedValue, int maxLength),
     @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double coordinate),
-    @required Result emptySet(Set<dynamic> set),
+    @required Result invalidCoordinate(double failedValue),
+    @required Result emptySet(T failedValue),
+    @required Result setExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
     assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
     assert(stringExceedsLength != null);
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
+    assert(setExceedsLength != null);
     return invalidName(failedValue);
   }
 
@@ -882,11 +992,14 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
     Result invalidName(String failedValue),
-    Result stringExceedsLength(String failedValue),
+    Result emptyString(String failedValue),
+    Result multiLineString(String failedValue),
+    Result stringExceedsLength(String failedValue, int maxLength),
     Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double coordinate),
-    Result emptySet(Set<dynamic> set),
+    Result invalidCoordinate(double failedValue),
+    Result emptySet(T failedValue),
+    Result setExceedsLength(T failedValue, int maxLength),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -904,22 +1017,28 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidName(InvalidName<T> value),
+    @required Result emptyString(EmptyString<T> value),
+    @required Result multiLineString(MultiLineString<T> value),
     @required Result stringExceedsLength(StringExceedsLength<T> value),
     @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result invalidCoordinate(InvalidCoordinates<T> value),
     @required Result emptySet(EmptySet<T> value),
+    @required Result setExceedsLength(SetExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
     assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
     assert(stringExceedsLength != null);
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
+    assert(setExceedsLength != null);
     return invalidName(this);
   }
 
@@ -931,11 +1050,14 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidName(InvalidName<T> value),
+    Result emptyString(EmptyString<T> value),
+    Result multiLineString(MultiLineString<T> value),
     Result stringExceedsLength(StringExceedsLength<T> value),
     Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     Result invalidCoordinate(InvalidCoordinates<T> value),
     Result emptySet(EmptySet<T> value),
+    Result setExceedsLength(SetExceedsLength<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -953,11 +1075,362 @@ abstract class InvalidName<T> implements ValueFailure<T> {
   $InvalidNameCopyWith<T, InvalidName<T>> get copyWith;
 }
 
+abstract class $EmptyStringCopyWith<T, $Res> {
+  factory $EmptyStringCopyWith(EmptyString<T> value, $Res Function(EmptyString<T>) then) = _$EmptyStringCopyWithImpl<T, $Res>;
+
+  $Res call({String failedValue});
+}
+
+class _$EmptyStringCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res> implements $EmptyStringCopyWith<T, $Res> {
+  _$EmptyStringCopyWithImpl(EmptyString<T> _value, $Res Function(EmptyString<T>) _then) : super(_value, (v) => _then(v as EmptyString<T>));
+
+  @override
+  EmptyString<T> get _value => super._value as EmptyString<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(EmptyString<T>(
+      failedValue: failedValue == freezed ? _value.failedValue : failedValue as String,
+    ));
+  }
+}
+
+class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
+  const _$EmptyString({@required this.failedValue}) : assert(failedValue != null);
+
+  @override
+  final String failedValue;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.emptyString(failedValue: $failedValue)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.emptyString'))..add(DiagnosticsProperty('failedValue', failedValue));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is EmptyString<T> && (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @override
+  $EmptyStringCopyWith<T, EmptyString<T>> get copyWith => _$EmptyStringCopyWithImpl<T, EmptyString<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result nullInput(),
+    @required Result invalidDate(DateTime failedValue),
+    @required Result invalidEmail(String failedValue),
+    @required Result invalidPassword(String failedValue),
+    @required Result invalidName(String failedValue),
+    @required Result emptyString(String failedValue),
+    @required Result multiLineString(String failedValue),
+    @required Result stringExceedsLength(String failedValue, int maxLength),
+    @required Result integerOutOfBounds(int failedValue),
+    @required Result stringWithInvalidCharacters(String failedValue),
+    @required Result invalidCoordinate(double failedValue),
+    @required Result emptySet(T failedValue),
+    @required Result setExceedsLength(T failedValue, int maxLength),
+  }) {
+    assert(nullInput != null);
+    assert(invalidDate != null);
+    assert(invalidEmail != null);
+    assert(invalidPassword != null);
+    assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
+    assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
+    assert(stringWithInvalidCharacters != null);
+    assert(invalidCoordinate != null);
+    assert(emptySet != null);
+    assert(setExceedsLength != null);
+    return emptyString(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result nullInput(),
+    Result invalidDate(DateTime failedValue),
+    Result invalidEmail(String failedValue),
+    Result invalidPassword(String failedValue),
+    Result invalidName(String failedValue),
+    Result emptyString(String failedValue),
+    Result multiLineString(String failedValue),
+    Result stringExceedsLength(String failedValue, int maxLength),
+    Result integerOutOfBounds(int failedValue),
+    Result stringWithInvalidCharacters(String failedValue),
+    Result invalidCoordinate(double failedValue),
+    Result emptySet(T failedValue),
+    Result setExceedsLength(T failedValue, int maxLength),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (emptyString != null) {
+      return emptyString(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result nullInput(NullInput<T> value),
+    @required Result invalidDate(InvalidDate<T> value),
+    @required Result invalidEmail(InvalidEmail<T> value),
+    @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result invalidName(InvalidName<T> value),
+    @required Result emptyString(EmptyString<T> value),
+    @required Result multiLineString(MultiLineString<T> value),
+    @required Result stringExceedsLength(StringExceedsLength<T> value),
+    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
+    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    @required Result invalidCoordinate(InvalidCoordinates<T> value),
+    @required Result emptySet(EmptySet<T> value),
+    @required Result setExceedsLength(SetExceedsLength<T> value),
+  }) {
+    assert(nullInput != null);
+    assert(invalidDate != null);
+    assert(invalidEmail != null);
+    assert(invalidPassword != null);
+    assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
+    assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
+    assert(stringWithInvalidCharacters != null);
+    assert(invalidCoordinate != null);
+    assert(emptySet != null);
+    assert(setExceedsLength != null);
+    return emptyString(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result nullInput(NullInput<T> value),
+    Result invalidDate(InvalidDate<T> value),
+    Result invalidEmail(InvalidEmail<T> value),
+    Result invalidPassword(InvalidPassword<T> value),
+    Result invalidName(InvalidName<T> value),
+    Result emptyString(EmptyString<T> value),
+    Result multiLineString(MultiLineString<T> value),
+    Result stringExceedsLength(StringExceedsLength<T> value),
+    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
+    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    Result invalidCoordinate(InvalidCoordinates<T> value),
+    Result emptySet(EmptySet<T> value),
+    Result setExceedsLength(SetExceedsLength<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (emptyString != null) {
+      return emptyString(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmptyString<T> implements ValueFailure<T> {
+  const factory EmptyString({@required String failedValue}) = _$EmptyString<T>;
+
+  String get failedValue;
+
+  $EmptyStringCopyWith<T, EmptyString<T>> get copyWith;
+}
+
+abstract class $MultiLineStringCopyWith<T, $Res> {
+  factory $MultiLineStringCopyWith(MultiLineString<T> value, $Res Function(MultiLineString<T>) then) = _$MultiLineStringCopyWithImpl<T, $Res>;
+
+  $Res call({String failedValue});
+}
+
+class _$MultiLineStringCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res> implements $MultiLineStringCopyWith<T, $Res> {
+  _$MultiLineStringCopyWithImpl(MultiLineString<T> _value, $Res Function(MultiLineString<T>) _then) : super(_value, (v) => _then(v as MultiLineString<T>));
+
+  @override
+  MultiLineString<T> get _value => super._value as MultiLineString<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(MultiLineString<T>(
+      failedValue: failedValue == freezed ? _value.failedValue : failedValue as String,
+    ));
+  }
+}
+
+class _$MultiLineString<T> with DiagnosticableTreeMixin implements MultiLineString<T> {
+  const _$MultiLineString({@required this.failedValue}) : assert(failedValue != null);
+
+  @override
+  final String failedValue;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.multiLineString(failedValue: $failedValue)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.multiLineString'))..add(DiagnosticsProperty('failedValue', failedValue));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is MultiLineString<T> && (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @override
+  $MultiLineStringCopyWith<T, MultiLineString<T>> get copyWith => _$MultiLineStringCopyWithImpl<T, MultiLineString<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result nullInput(),
+    @required Result invalidDate(DateTime failedValue),
+    @required Result invalidEmail(String failedValue),
+    @required Result invalidPassword(String failedValue),
+    @required Result invalidName(String failedValue),
+    @required Result emptyString(String failedValue),
+    @required Result multiLineString(String failedValue),
+    @required Result stringExceedsLength(String failedValue, int maxLength),
+    @required Result integerOutOfBounds(int failedValue),
+    @required Result stringWithInvalidCharacters(String failedValue),
+    @required Result invalidCoordinate(double failedValue),
+    @required Result emptySet(T failedValue),
+    @required Result setExceedsLength(T failedValue, int maxLength),
+  }) {
+    assert(nullInput != null);
+    assert(invalidDate != null);
+    assert(invalidEmail != null);
+    assert(invalidPassword != null);
+    assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
+    assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
+    assert(stringWithInvalidCharacters != null);
+    assert(invalidCoordinate != null);
+    assert(emptySet != null);
+    assert(setExceedsLength != null);
+    return multiLineString(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result nullInput(),
+    Result invalidDate(DateTime failedValue),
+    Result invalidEmail(String failedValue),
+    Result invalidPassword(String failedValue),
+    Result invalidName(String failedValue),
+    Result emptyString(String failedValue),
+    Result multiLineString(String failedValue),
+    Result stringExceedsLength(String failedValue, int maxLength),
+    Result integerOutOfBounds(int failedValue),
+    Result stringWithInvalidCharacters(String failedValue),
+    Result invalidCoordinate(double failedValue),
+    Result emptySet(T failedValue),
+    Result setExceedsLength(T failedValue, int maxLength),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (multiLineString != null) {
+      return multiLineString(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result nullInput(NullInput<T> value),
+    @required Result invalidDate(InvalidDate<T> value),
+    @required Result invalidEmail(InvalidEmail<T> value),
+    @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result invalidName(InvalidName<T> value),
+    @required Result emptyString(EmptyString<T> value),
+    @required Result multiLineString(MultiLineString<T> value),
+    @required Result stringExceedsLength(StringExceedsLength<T> value),
+    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
+    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    @required Result invalidCoordinate(InvalidCoordinates<T> value),
+    @required Result emptySet(EmptySet<T> value),
+    @required Result setExceedsLength(SetExceedsLength<T> value),
+  }) {
+    assert(nullInput != null);
+    assert(invalidDate != null);
+    assert(invalidEmail != null);
+    assert(invalidPassword != null);
+    assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
+    assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
+    assert(stringWithInvalidCharacters != null);
+    assert(invalidCoordinate != null);
+    assert(emptySet != null);
+    assert(setExceedsLength != null);
+    return multiLineString(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result nullInput(NullInput<T> value),
+    Result invalidDate(InvalidDate<T> value),
+    Result invalidEmail(InvalidEmail<T> value),
+    Result invalidPassword(InvalidPassword<T> value),
+    Result invalidName(InvalidName<T> value),
+    Result emptyString(EmptyString<T> value),
+    Result multiLineString(MultiLineString<T> value),
+    Result stringExceedsLength(StringExceedsLength<T> value),
+    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
+    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    Result invalidCoordinate(InvalidCoordinates<T> value),
+    Result emptySet(EmptySet<T> value),
+    Result setExceedsLength(SetExceedsLength<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (multiLineString != null) {
+      return multiLineString(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MultiLineString<T> implements ValueFailure<T> {
+  const factory MultiLineString({@required String failedValue}) = _$MultiLineString<T>;
+
+  String get failedValue;
+
+  $MultiLineStringCopyWith<T, MultiLineString<T>> get copyWith;
+}
+
 abstract class $StringExceedsLengthCopyWith<T, $Res> {
   factory $StringExceedsLengthCopyWith(StringExceedsLength<T> value,
     $Res Function(StringExceedsLength<T>) then) =
   _$StringExceedsLengthCopyWithImpl<T, $Res>;
-  $Res call({String failedValue});
+
+  $Res call({String failedValue, int maxLength});
 }
 
 class _$StringExceedsLengthCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
@@ -972,10 +1445,12 @@ class _$StringExceedsLengthCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithI
   @override
   $Res call({
     Object failedValue = freezed,
+    Object maxLength = freezed,
   }) {
     return _then(StringExceedsLength<T>(
       failedValue:
       failedValue == freezed ? _value.failedValue : failedValue as String,
+      maxLength: maxLength == freezed ? _value.maxLength : maxLength as int,
     ));
   }
 }
@@ -983,21 +1458,24 @@ class _$StringExceedsLengthCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithI
 class _$StringExceedsLength<T>
   with DiagnosticableTreeMixin
   implements StringExceedsLength<T> {
-  const _$StringExceedsLength({@required this.failedValue})
-    : assert(failedValue != null);
+  const _$StringExceedsLength({@required this.failedValue, @required this.maxLength})
+    : assert(failedValue != null),
+      assert(maxLength != null);
 
   @override
   final String failedValue;
+  @override
+  final int maxLength;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ValueFailure<$T>.stringExceedsLength(failedValue: $failedValue)';
+    return 'ValueFailure<$T>.stringExceedsLength(failedValue: $failedValue, maxLength: $maxLength)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.stringExceedsLength'))..add(DiagnosticsProperty('failedValue', failedValue));
+    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.stringExceedsLength'))..add(DiagnosticsProperty('failedValue', failedValue))..add(DiagnosticsProperty('maxLength', maxLength));
   }
 
   @override
@@ -1006,12 +1484,17 @@ class _$StringExceedsLength<T>
       (other is StringExceedsLength<T> &&
         (identical(other.failedValue, failedValue) ||
           const DeepCollectionEquality()
-            .equals(other.failedValue, failedValue)));
+            .equals(other.failedValue, failedValue)) &&
+        (identical(other.maxLength, maxLength) ||
+          const DeepCollectionEquality()
+            .equals(other.maxLength, maxLength)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(failedValue) ^
+    const DeepCollectionEquality().hash(maxLength);
 
   @override
   $StringExceedsLengthCopyWith<T, StringExceedsLength<T>> get copyWith =>
@@ -1026,23 +1509,29 @@ class _$StringExceedsLength<T>
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
     @required Result invalidName(String failedValue),
-    @required Result stringExceedsLength(String failedValue),
+    @required Result emptyString(String failedValue),
+    @required Result multiLineString(String failedValue),
+    @required Result stringExceedsLength(String failedValue, int maxLength),
     @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double coordinate),
-    @required Result emptySet(Set<dynamic> set),
+    @required Result invalidCoordinate(double failedValue),
+    @required Result emptySet(T failedValue),
+    @required Result setExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
     assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
     assert(stringExceedsLength != null);
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    return stringExceedsLength(failedValue);
+    assert(setExceedsLength != null);
+    return stringExceedsLength(failedValue, maxLength);
   }
 
   @override
@@ -1053,16 +1542,19 @@ class _$StringExceedsLength<T>
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
     Result invalidName(String failedValue),
-    Result stringExceedsLength(String failedValue),
+    Result emptyString(String failedValue),
+    Result multiLineString(String failedValue),
+    Result stringExceedsLength(String failedValue, int maxLength),
     Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double coordinate),
-    Result emptySet(Set<dynamic> set),
+    Result invalidCoordinate(double failedValue),
+    Result emptySet(T failedValue),
+    Result setExceedsLength(T failedValue, int maxLength),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (stringExceedsLength != null) {
-      return stringExceedsLength(failedValue);
+      return stringExceedsLength(failedValue, maxLength);
     }
     return orElse();
   }
@@ -1075,22 +1567,28 @@ class _$StringExceedsLength<T>
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidName(InvalidName<T> value),
+    @required Result emptyString(EmptyString<T> value),
+    @required Result multiLineString(MultiLineString<T> value),
     @required Result stringExceedsLength(StringExceedsLength<T> value),
     @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result invalidCoordinate(InvalidCoordinates<T> value),
     @required Result emptySet(EmptySet<T> value),
+    @required Result setExceedsLength(SetExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
     assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
     assert(stringExceedsLength != null);
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
+    assert(setExceedsLength != null);
     return stringExceedsLength(this);
   }
 
@@ -1102,11 +1600,14 @@ class _$StringExceedsLength<T>
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidName(InvalidName<T> value),
+    Result emptyString(EmptyString<T> value),
+    Result multiLineString(MultiLineString<T> value),
     Result stringExceedsLength(StringExceedsLength<T> value),
     Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     Result invalidCoordinate(InvalidCoordinates<T> value),
     Result emptySet(EmptySet<T> value),
+    Result setExceedsLength(SetExceedsLength<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1118,10 +1619,12 @@ class _$StringExceedsLength<T>
 }
 
 abstract class StringExceedsLength<T> implements ValueFailure<T> {
-  const factory StringExceedsLength({@required String failedValue}) =
-  _$StringExceedsLength<T>;
+  const factory StringExceedsLength({@required String failedValue,
+    @required int maxLength}) = _$StringExceedsLength<T>;
 
   String get failedValue;
+  
+  int get maxLength;
   $StringExceedsLengthCopyWith<T, StringExceedsLength<T>> get copyWith;
 }
 
@@ -1197,22 +1700,28 @@ class _$IntegerOutOfBounds<T>
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
     @required Result invalidName(String failedValue),
-    @required Result stringExceedsLength(String failedValue),
+    @required Result emptyString(String failedValue),
+    @required Result multiLineString(String failedValue),
+    @required Result stringExceedsLength(String failedValue, int maxLength),
     @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double coordinate),
-    @required Result emptySet(Set<dynamic> set),
+    @required Result invalidCoordinate(double failedValue),
+    @required Result emptySet(T failedValue),
+    @required Result setExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
     assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
     assert(stringExceedsLength != null);
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
+    assert(setExceedsLength != null);
     return integerOutOfBounds(failedValue);
   }
 
@@ -1224,11 +1733,14 @@ class _$IntegerOutOfBounds<T>
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
     Result invalidName(String failedValue),
-    Result stringExceedsLength(String failedValue),
+    Result emptyString(String failedValue),
+    Result multiLineString(String failedValue),
+    Result stringExceedsLength(String failedValue, int maxLength),
     Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double coordinate),
-    Result emptySet(Set<dynamic> set),
+    Result invalidCoordinate(double failedValue),
+    Result emptySet(T failedValue),
+    Result setExceedsLength(T failedValue, int maxLength),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1246,22 +1758,28 @@ class _$IntegerOutOfBounds<T>
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidName(InvalidName<T> value),
+    @required Result emptyString(EmptyString<T> value),
+    @required Result multiLineString(MultiLineString<T> value),
     @required Result stringExceedsLength(StringExceedsLength<T> value),
     @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result invalidCoordinate(InvalidCoordinates<T> value),
     @required Result emptySet(EmptySet<T> value),
+    @required Result setExceedsLength(SetExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
     assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
     assert(stringExceedsLength != null);
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
+    assert(setExceedsLength != null);
     return integerOutOfBounds(this);
   }
 
@@ -1273,11 +1791,14 @@ class _$IntegerOutOfBounds<T>
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidName(InvalidName<T> value),
+    Result emptyString(EmptyString<T> value),
+    Result multiLineString(MultiLineString<T> value),
     Result stringExceedsLength(StringExceedsLength<T> value),
     Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     Result invalidCoordinate(InvalidCoordinates<T> value),
     Result emptySet(EmptySet<T> value),
+    Result setExceedsLength(SetExceedsLength<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1372,22 +1893,28 @@ class _$StringWithInvalidCharacters<T>
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
     @required Result invalidName(String failedValue),
-    @required Result stringExceedsLength(String failedValue),
+    @required Result emptyString(String failedValue),
+    @required Result multiLineString(String failedValue),
+    @required Result stringExceedsLength(String failedValue, int maxLength),
     @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double coordinate),
-    @required Result emptySet(Set<dynamic> set),
+    @required Result invalidCoordinate(double failedValue),
+    @required Result emptySet(T failedValue),
+    @required Result setExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
     assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
     assert(stringExceedsLength != null);
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
+    assert(setExceedsLength != null);
     return stringWithInvalidCharacters(failedValue);
   }
 
@@ -1399,11 +1926,14 @@ class _$StringWithInvalidCharacters<T>
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
     Result invalidName(String failedValue),
-    Result stringExceedsLength(String failedValue),
+    Result emptyString(String failedValue),
+    Result multiLineString(String failedValue),
+    Result stringExceedsLength(String failedValue, int maxLength),
     Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double coordinate),
-    Result emptySet(Set<dynamic> set),
+    Result invalidCoordinate(double failedValue),
+    Result emptySet(T failedValue),
+    Result setExceedsLength(T failedValue, int maxLength),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1421,22 +1951,28 @@ class _$StringWithInvalidCharacters<T>
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidName(InvalidName<T> value),
+    @required Result emptyString(EmptyString<T> value),
+    @required Result multiLineString(MultiLineString<T> value),
     @required Result stringExceedsLength(StringExceedsLength<T> value),
     @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result invalidCoordinate(InvalidCoordinates<T> value),
     @required Result emptySet(EmptySet<T> value),
+    @required Result setExceedsLength(SetExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
     assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
     assert(stringExceedsLength != null);
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
+    assert(setExceedsLength != null);
     return stringWithInvalidCharacters(this);
   }
 
@@ -1448,11 +1984,14 @@ class _$StringWithInvalidCharacters<T>
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidName(InvalidName<T> value),
+    Result emptyString(EmptyString<T> value),
+    Result multiLineString(MultiLineString<T> value),
     Result stringExceedsLength(StringExceedsLength<T> value),
     Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     Result invalidCoordinate(InvalidCoordinates<T> value),
     Result emptySet(EmptySet<T> value),
+    Result setExceedsLength(SetExceedsLength<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1476,7 +2015,8 @@ abstract class $InvalidCoordinatesCopyWith<T, $Res> {
   factory $InvalidCoordinatesCopyWith(InvalidCoordinates<T> value,
     $Res Function(InvalidCoordinates<T>) then) =
   _$InvalidCoordinatesCopyWithImpl<T, $Res>;
-  $Res call({double coordinate});
+
+  $Res call({double failedValue});
 }
 
 class _$InvalidCoordinatesCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
@@ -1489,11 +2029,11 @@ class _$InvalidCoordinatesCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithIm
 
   @override
   $Res call({
-    Object coordinate = freezed,
+    Object failedValue = freezed,
   }) {
     return _then(InvalidCoordinates<T>(
-      coordinate:
-      coordinate == freezed ? _value.coordinate : coordinate as double,
+      failedValue:
+      failedValue == freezed ? _value.failedValue : failedValue as double,
     ));
   }
 }
@@ -1501,35 +2041,35 @@ class _$InvalidCoordinatesCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithIm
 class _$InvalidCoordinates<T>
   with DiagnosticableTreeMixin
   implements InvalidCoordinates<T> {
-  const _$InvalidCoordinates({@required this.coordinate})
-    : assert(coordinate != null);
+  const _$InvalidCoordinates({@required this.failedValue})
+    : assert(failedValue != null);
 
   @override
-  final double coordinate;
+  final double failedValue;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ValueFailure<$T>.invalidCoordinate(coordinate: $coordinate)';
+    return 'ValueFailure<$T>.invalidCoordinate(failedValue: $failedValue)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidCoordinate'))..add(DiagnosticsProperty('coordinate', coordinate));
+    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidCoordinate'))..add(DiagnosticsProperty('failedValue', failedValue));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
       (other is InvalidCoordinates<T> &&
-        (identical(other.coordinate, coordinate) ||
+        (identical(other.failedValue, failedValue) ||
           const DeepCollectionEquality()
-            .equals(other.coordinate, coordinate)));
+            .equals(other.failedValue, failedValue)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(coordinate);
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
   @override
   $InvalidCoordinatesCopyWith<T, InvalidCoordinates<T>> get copyWith =>
@@ -1544,23 +2084,29 @@ class _$InvalidCoordinates<T>
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
     @required Result invalidName(String failedValue),
-    @required Result stringExceedsLength(String failedValue),
+    @required Result emptyString(String failedValue),
+    @required Result multiLineString(String failedValue),
+    @required Result stringExceedsLength(String failedValue, int maxLength),
     @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double coordinate),
-    @required Result emptySet(Set<dynamic> set),
+    @required Result invalidCoordinate(double failedValue),
+    @required Result emptySet(T failedValue),
+    @required Result setExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
     assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
     assert(stringExceedsLength != null);
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    return invalidCoordinate(coordinate);
+    assert(setExceedsLength != null);
+    return invalidCoordinate(failedValue);
   }
 
   @override
@@ -1571,16 +2117,19 @@ class _$InvalidCoordinates<T>
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
     Result invalidName(String failedValue),
-    Result stringExceedsLength(String failedValue),
+    Result emptyString(String failedValue),
+    Result multiLineString(String failedValue),
+    Result stringExceedsLength(String failedValue, int maxLength),
     Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double coordinate),
-    Result emptySet(Set<dynamic> set),
+    Result invalidCoordinate(double failedValue),
+    Result emptySet(T failedValue),
+    Result setExceedsLength(T failedValue, int maxLength),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (invalidCoordinate != null) {
-      return invalidCoordinate(coordinate);
+      return invalidCoordinate(failedValue);
     }
     return orElse();
   }
@@ -1593,22 +2142,28 @@ class _$InvalidCoordinates<T>
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidName(InvalidName<T> value),
+    @required Result emptyString(EmptyString<T> value),
+    @required Result multiLineString(MultiLineString<T> value),
     @required Result stringExceedsLength(StringExceedsLength<T> value),
     @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result invalidCoordinate(InvalidCoordinates<T> value),
     @required Result emptySet(EmptySet<T> value),
+    @required Result setExceedsLength(SetExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
     assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
     assert(stringExceedsLength != null);
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
+    assert(setExceedsLength != null);
     return invalidCoordinate(this);
   }
 
@@ -1620,11 +2175,14 @@ class _$InvalidCoordinates<T>
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidName(InvalidName<T> value),
+    Result emptyString(EmptyString<T> value),
+    Result multiLineString(MultiLineString<T> value),
     Result stringExceedsLength(StringExceedsLength<T> value),
     Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     Result invalidCoordinate(InvalidCoordinates<T> value),
     Result emptySet(EmptySet<T> value),
+    Result setExceedsLength(SetExceedsLength<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1636,70 +2194,269 @@ class _$InvalidCoordinates<T>
 }
 
 abstract class InvalidCoordinates<T> implements ValueFailure<T> {
-  const factory InvalidCoordinates({@required double coordinate}) =
+  const factory InvalidCoordinates({@required double failedValue}) =
   _$InvalidCoordinates<T>;
-
-  double get coordinate;
+  
+  double get failedValue;
   $InvalidCoordinatesCopyWith<T, InvalidCoordinates<T>> get copyWith;
 }
 
 abstract class $EmptySetCopyWith<T, $Res> {
   factory $EmptySetCopyWith(EmptySet<T> value, $Res Function(EmptySet<T>) then) =
   _$EmptySetCopyWithImpl<T, $Res>;
-  
-  $Res call({Set<dynamic> set});
+
+  $Res call({T failedValue});
 }
 
 class _$EmptySetCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
   implements $EmptySetCopyWith<T, $Res> {
   _$EmptySetCopyWithImpl(EmptySet<T> _value, $Res Function(EmptySet<T>) _then)
     : super(_value, (v) => _then(v as EmptySet<T>));
-  
+
   @override
   EmptySet<T> get _value => super._value as EmptySet<T>;
-  
+
   @override
   $Res call({
-    Object set = freezed,
+    Object failedValue = freezed,
   }) {
     return _then(EmptySet<T>(
-      set: set == freezed ? _value.set : set as Set<dynamic>,
+      failedValue:
+      failedValue == freezed ? _value.failedValue : failedValue as T,
     ));
   }
 }
 
 class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
-  const _$EmptySet({@required this.set}) : assert(set != null);
+  const _$EmptySet({@required this.failedValue}) : assert(failedValue != null);
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.emptySet(failedValue: $failedValue)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.emptySet'))..add(DiagnosticsProperty('failedValue', failedValue));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+      (other is EmptySet<T> &&
+        (identical(other.failedValue, failedValue) ||
+          const DeepCollectionEquality()
+            .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @override
+  $EmptySetCopyWith<T, EmptySet<T>> get copyWith =>
+    _$EmptySetCopyWithImpl<T, EmptySet<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result nullInput(),
+    @required Result invalidDate(DateTime failedValue),
+    @required Result invalidEmail(String failedValue),
+    @required Result invalidPassword(String failedValue),
+    @required Result invalidName(String failedValue),
+    @required Result emptyString(String failedValue),
+    @required Result multiLineString(String failedValue),
+    @required Result stringExceedsLength(String failedValue, int maxLength),
+    @required Result integerOutOfBounds(int failedValue),
+    @required Result stringWithInvalidCharacters(String failedValue),
+    @required Result invalidCoordinate(double failedValue),
+    @required Result emptySet(T failedValue),
+    @required Result setExceedsLength(T failedValue, int maxLength),
+  }) {
+    assert(nullInput != null);
+    assert(invalidDate != null);
+    assert(invalidEmail != null);
+    assert(invalidPassword != null);
+    assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
+    assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
+    assert(stringWithInvalidCharacters != null);
+    assert(invalidCoordinate != null);
+    assert(emptySet != null);
+    assert(setExceedsLength != null);
+    return emptySet(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result nullInput(),
+    Result invalidDate(DateTime failedValue),
+    Result invalidEmail(String failedValue),
+    Result invalidPassword(String failedValue),
+    Result invalidName(String failedValue),
+    Result emptyString(String failedValue),
+    Result multiLineString(String failedValue),
+    Result stringExceedsLength(String failedValue, int maxLength),
+    Result integerOutOfBounds(int failedValue),
+    Result stringWithInvalidCharacters(String failedValue),
+    Result invalidCoordinate(double failedValue),
+    Result emptySet(T failedValue),
+    Result setExceedsLength(T failedValue, int maxLength),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (emptySet != null) {
+      return emptySet(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result nullInput(NullInput<T> value),
+    @required Result invalidDate(InvalidDate<T> value),
+    @required Result invalidEmail(InvalidEmail<T> value),
+    @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result invalidName(InvalidName<T> value),
+    @required Result emptyString(EmptyString<T> value),
+    @required Result multiLineString(MultiLineString<T> value),
+    @required Result stringExceedsLength(StringExceedsLength<T> value),
+    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
+    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    @required Result invalidCoordinate(InvalidCoordinates<T> value),
+    @required Result emptySet(EmptySet<T> value),
+    @required Result setExceedsLength(SetExceedsLength<T> value),
+  }) {
+    assert(nullInput != null);
+    assert(invalidDate != null);
+    assert(invalidEmail != null);
+    assert(invalidPassword != null);
+    assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
+    assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
+    assert(stringWithInvalidCharacters != null);
+    assert(invalidCoordinate != null);
+    assert(emptySet != null);
+    assert(setExceedsLength != null);
+    return emptySet(this);
+  }
   
   @override
-  final Set<dynamic> set;
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result nullInput(NullInput<T> value),
+    Result invalidDate(InvalidDate<T> value),
+    Result invalidEmail(InvalidEmail<T> value),
+    Result invalidPassword(InvalidPassword<T> value),
+    Result invalidName(InvalidName<T> value),
+    Result emptyString(EmptyString<T> value),
+    Result multiLineString(MultiLineString<T> value),
+    Result stringExceedsLength(StringExceedsLength<T> value),
+    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
+    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    Result invalidCoordinate(InvalidCoordinates<T> value),
+    Result emptySet(EmptySet<T> value),
+    Result setExceedsLength(SetExceedsLength<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (emptySet != null) {
+      return emptySet(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmptySet<T> implements ValueFailure<T> {
+  const factory EmptySet({@required T failedValue}) = _$EmptySet<T>;
+  
+  T get failedValue;
+  $EmptySetCopyWith<T, EmptySet<T>> get copyWith;
+}
+
+abstract class $SetExceedsLengthCopyWith<T, $Res> {
+  factory $SetExceedsLengthCopyWith(SetExceedsLength<T> value, $Res Function(SetExceedsLength<T>) then) =
+  _$SetExceedsLengthCopyWithImpl<T, $Res>;
+  
+  $Res call({T failedValue, int maxLength});
+}
+
+class _$SetExceedsLengthCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
+  implements $SetExceedsLengthCopyWith<T, $Res> {
+  _$SetExceedsLengthCopyWithImpl(SetExceedsLength<T> _value, $Res Function(SetExceedsLength<T>) _then)
+    : super(_value, (v) => _then(v as SetExceedsLength<T>));
+  
+  @override
+  SetExceedsLength<T> get _value => super._value as SetExceedsLength<T>;
+  
+  @override
+  $Res call({
+    Object failedValue = freezed,
+    Object maxLength = freezed,
+  }) {
+    return _then(SetExceedsLength<T>(
+      failedValue:
+      failedValue == freezed ? _value.failedValue : failedValue as T,
+      maxLength: maxLength == freezed ? _value.maxLength : maxLength as int,
+    ));
+  }
+}
+
+class _$SetExceedsLength<T>
+  with DiagnosticableTreeMixin
+  implements SetExceedsLength<T> {
+  const _$SetExceedsLength({@required this.failedValue, @required this.maxLength})
+    : assert(failedValue != null),
+      assert(maxLength != null);
+  
+  @override
+  final T failedValue;
+  @override
+  final int maxLength;
   
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ValueFailure<$T>.emptySet(set: $set)';
+    return 'ValueFailure<$T>.setExceedsLength(failedValue: $failedValue, maxLength: $maxLength)';
   }
   
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.emptySet'))..add(DiagnosticsProperty('set', set));
+    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.setExceedsLength'))..add(DiagnosticsProperty('failedValue', failedValue))..add(DiagnosticsProperty('maxLength', maxLength));
   }
   
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is EmptySet<T> &&
-        (identical(other.set, set) ||
-          const DeepCollectionEquality().equals(other.set, set)));
+      (other is SetExceedsLength<T> &&
+        (identical(other.failedValue, failedValue) ||
+          const DeepCollectionEquality()
+            .equals(other.failedValue, failedValue)) &&
+        (identical(other.maxLength, maxLength) ||
+          const DeepCollectionEquality()
+            .equals(other.maxLength, maxLength)));
   }
   
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(set);
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(failedValue) ^
+    const DeepCollectionEquality().hash(maxLength);
   
   @override
-  $EmptySetCopyWith<T, EmptySet<T>> get copyWith =>
-    _$EmptySetCopyWithImpl<T, EmptySet<T>>(this, _$identity);
+  $SetExceedsLengthCopyWith<T, SetExceedsLength<T>> get copyWith =>
+    _$SetExceedsLengthCopyWithImpl<T, SetExceedsLength<T>>(this, _$identity);
   
   @override
   @optionalTypeArgs
@@ -1709,23 +2466,29 @@ class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
     @required Result invalidName(String failedValue),
-    @required Result stringExceedsLength(String failedValue),
+    @required Result emptyString(String failedValue),
+    @required Result multiLineString(String failedValue),
+    @required Result stringExceedsLength(String failedValue, int maxLength),
     @required Result integerOutOfBounds(int failedValue),
     @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double coordinate),
-    @required Result emptySet(Set<dynamic> set),
+    @required Result invalidCoordinate(double failedValue),
+    @required Result emptySet(T failedValue),
+    @required Result setExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
     assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
     assert(stringExceedsLength != null);
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    return emptySet(set);
+    assert(setExceedsLength != null);
+    return setExceedsLength(failedValue, maxLength);
   }
   
   @override
@@ -1736,16 +2499,19 @@ class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
     Result invalidName(String failedValue),
-    Result stringExceedsLength(String failedValue),
+    Result emptyString(String failedValue),
+    Result multiLineString(String failedValue),
+    Result stringExceedsLength(String failedValue, int maxLength),
     Result integerOutOfBounds(int failedValue),
     Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double coordinate),
-    Result emptySet(Set<dynamic> set),
+    Result invalidCoordinate(double failedValue),
+    Result emptySet(T failedValue),
+    Result setExceedsLength(T failedValue, int maxLength),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (emptySet != null) {
-      return emptySet(set);
+    if (setExceedsLength != null) {
+      return setExceedsLength(failedValue, maxLength);
     }
     return orElse();
   }
@@ -1758,23 +2524,29 @@ class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidName(InvalidName<T> value),
+    @required Result emptyString(EmptyString<T> value),
+    @required Result multiLineString(MultiLineString<T> value),
     @required Result stringExceedsLength(StringExceedsLength<T> value),
     @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required Result invalidCoordinate(InvalidCoordinates<T> value),
     @required Result emptySet(EmptySet<T> value),
+    @required Result setExceedsLength(SetExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
     assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
     assert(stringExceedsLength != null);
     assert(integerOutOfBounds != null);
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    return emptySet(this);
+    assert(setExceedsLength != null);
+    return setExceedsLength(this);
   }
   
   @override
@@ -1785,25 +2557,31 @@ class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidName(InvalidName<T> value),
+    Result emptyString(EmptyString<T> value),
+    Result multiLineString(MultiLineString<T> value),
     Result stringExceedsLength(StringExceedsLength<T> value),
     Result integerOutOfBounds(IntegerOutOfBounds<T> value),
     Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     Result invalidCoordinate(InvalidCoordinates<T> value),
     Result emptySet(EmptySet<T> value),
+    Result setExceedsLength(SetExceedsLength<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (emptySet != null) {
-      return emptySet(this);
+    if (setExceedsLength != null) {
+      return setExceedsLength(this);
     }
     return orElse();
   }
 }
 
-abstract class EmptySet<T> implements ValueFailure<T> {
-  const factory EmptySet({@required Set<dynamic> set}) = _$EmptySet<T>;
+abstract class SetExceedsLength<T> implements ValueFailure<T> {
+  const factory SetExceedsLength({@required T failedValue,
+    @required int maxLength}) = _$SetExceedsLength<T>;
   
-  Set<dynamic> get set;
+  T get failedValue;
   
-  $EmptySetCopyWith<T, EmptySet<T>> get copyWith;
+  int get maxLength;
+  
+  $SetExceedsLengthCopyWith<T, SetExceedsLength<T>> get copyWith;
 }

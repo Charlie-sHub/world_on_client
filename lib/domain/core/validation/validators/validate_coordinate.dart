@@ -8,6 +8,6 @@ Either<ValueFailure<double>, double> validateCoordinate({@required double limit,
   } else if (input >= -limit && input <= limit) {
     return right(input);
   } else {
-    return left(ValueFailure.invalidCoordinate(coordinate: input));
+    return left(ValueFailure.invalidCoordinate(failedValue: input));
   }
 }

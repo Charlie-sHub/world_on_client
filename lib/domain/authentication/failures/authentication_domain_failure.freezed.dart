@@ -20,13 +20,38 @@ class _$AuthenticationDomainFailureTearOff {
 // ignore: unused_element
 const $AuthenticationDomainFailure = _$AuthenticationDomainFailureTearOff();
 
-mixin _$AuthenticationDomainFailure<T> {}
+mixin _$AuthenticationDomainFailure<T> {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result cancelledByUser(),
+  });
 
-abstract class $AuthenticationDomainFailureCopyWith<T, $Res> {
-  factory $AuthenticationDomainFailureCopyWith(AuthenticationDomainFailure<T> value, $Res Function(AuthenticationDomainFailure<T>) then) = _$AuthenticationDomainFailureCopyWithImpl<T, $Res>;
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result cancelledByUser(),
+    @required Result orElse(),
+  });
+
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result cancelledByUser(CancelledByUser<T> value),
+  });
+
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result cancelledByUser(CancelledByUser<T> value),
+    @required Result orElse(),
+  });
 }
 
-class _$AuthenticationDomainFailureCopyWithImpl<T, $Res> implements $AuthenticationDomainFailureCopyWith<T, $Res> {
+abstract class $AuthenticationDomainFailureCopyWith<T, $Res> {
+  factory $AuthenticationDomainFailureCopyWith(AuthenticationDomainFailure<T> value,
+    $Res Function(AuthenticationDomainFailure<T>) then) =
+  _$AuthenticationDomainFailureCopyWithImpl<T, $Res>;
+}
+
+class _$AuthenticationDomainFailureCopyWithImpl<T, $Res>
+  implements $AuthenticationDomainFailureCopyWith<T, $Res> {
   _$AuthenticationDomainFailureCopyWithImpl(this._value, this._then);
 
   final AuthenticationDomainFailure<T> _value;
@@ -73,6 +98,50 @@ class _$CancelledByUser<T>
 
   @override
   int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result cancelledByUser(),
+  }) {
+    assert(cancelledByUser != null);
+    return cancelledByUser();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result cancelledByUser(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (cancelledByUser != null) {
+      return cancelledByUser();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result cancelledByUser(CancelledByUser<T> value),
+  }) {
+    assert(cancelledByUser != null);
+    return cancelledByUser(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result cancelledByUser(CancelledByUser<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (cancelledByUser != null) {
+      return cancelledByUser(this);
+    }
+    return orElse();
+  }
 }
 
 abstract class CancelledByUser<T> implements AuthenticationDomainFailure<T> {

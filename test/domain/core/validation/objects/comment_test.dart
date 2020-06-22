@@ -5,7 +5,8 @@ import '../../../../constant_descriptions.dart';
 
 void main() {
   const validComment = "Test Test";
-  const invalidComment = """
+  const emptyComment = "";
+  const tooLongComment = """
   TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest
   TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest
   TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest
@@ -28,14 +29,27 @@ void main() {
       expect(comment.getOrCrash(), validComment);
     },
   );
-
-  test(
-    descriptionInvalid,
-    () async {
-      // Act
-      final comment = CommentContent(invalidComment);
-      // Assert
-      expect(comment.isValid(), false);
+  group(
+    descriptionGroupOnFailure,
+    () {
+      test(
+        "$descriptionInvalid with tooLongComment",
+        () async {
+          // Act
+          final comment = CommentContent(tooLongComment);
+          // Assert
+          expect(comment.isValid(), false);
+        },
+      );
+      test(
+        "$descriptionInvalid with emptyComment",
+        () async {
+          // Act
+          final comment = CommentContent(emptyComment);
+          // Assert
+          expect(comment.isValid(), false);
+        },
+      );
     },
   );
 }

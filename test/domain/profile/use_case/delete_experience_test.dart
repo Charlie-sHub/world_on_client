@@ -55,11 +55,11 @@ void main() {
         "$descriptionReturnNothing, testing with the creator",
         () async {
           // Arrange
-          when(mockProfileRepository.deleteExperience(any)).thenAnswer((_) async => right(null));
+          when(mockProfileRepository.deleteExperience(any)).thenAnswer((_) async => right(unit));
           // Act
           final result = await useCase(setUpParams(creatorUser));
           // Assert
-          expect(result, right(null));
+          expect(result, right(unit));
           _verifyInteractions(mockProfileRepository);
         },
       );
@@ -67,11 +67,11 @@ void main() {
         "$descriptionReturnNothing, testing with the admin",
         () async {
           // Arrange
-          when(mockProfileRepository.deleteExperience(any)).thenAnswer((_) async => right(null));
+          when(mockProfileRepository.deleteExperience(any)).thenAnswer((_) async => right(unit));
           // Act
           final result = await useCase(setUpParams(admin));
           // Assert
-          expect(result, right(null));
+          expect(result, right(unit));
           _verifyInteractions(mockProfileRepository);
         },
       );

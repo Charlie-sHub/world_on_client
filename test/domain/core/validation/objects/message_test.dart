@@ -5,7 +5,8 @@ import '../../../../constant_descriptions.dart';
 
 void main() {
   const validMessage = "Test Test";
-  const invalidMessage = """
+  const emptyMessage = "";
+  const tooLongMessage = """
   TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest
   TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest""";
   test(
@@ -18,13 +19,27 @@ void main() {
       expect(message.getOrCrash(), validMessage);
     },
   );
-  test(
-    descriptionInvalid,
-    () async {
-      // Act
-      final message = MessageContent(invalidMessage);
-      // Assert
-      expect(message.isValid(), false);
+  group(
+    descriptionGroupOnFailure,
+    () {
+      test(
+        "$descriptionInvalid with tooLongMessage",
+        () async {
+          // Act
+          final message = MessageContent(tooLongMessage);
+          // Assert
+          expect(message.isValid(), false);
+        },
+      );
+      test(
+        "$descriptionInvalid with emptyMessage",
+        () async {
+          // Act
+          final message = MessageContent(emptyMessage);
+          // Assert
+          expect(message.isValid(), false);
+        },
+      );
     },
   );
 }

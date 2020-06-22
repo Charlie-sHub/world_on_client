@@ -69,11 +69,11 @@ void main() {
         "$descriptionReturnNothing, testing with the admin",
         () async {
           // Arrange
-          when(mockProfileRepository.editUser(any)).thenAnswer((_) async => right(null));
+          when(mockProfileRepository.editUser(any)).thenAnswer((_) async => right(unit));
           // Act
           final result = await useCase(setUpParams(admin));
           // Assert
-          expect(result, right(null));
+          expect(result, right(unit));
           _verifyInteractions(mockProfileRepository);
         },
       );
@@ -81,11 +81,11 @@ void main() {
         "$descriptionReturnNothing, testing with the same user",
         () async {
           // Arrange
-          when(mockProfileRepository.editUser(any)).thenAnswer((_) async => right(null));
+          when(mockProfileRepository.editUser(any)).thenAnswer((_) async => right(unit));
           // Act
           final result = await useCase(setUpParams(actualUser));
           // Assert
-          expect(result, right(null));
+          expect(result, right(unit));
           _verifyInteractions(mockProfileRepository);
         },
       );

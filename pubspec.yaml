@@ -26,19 +26,19 @@ dependencies:
   # Service locator
   get_it: ^4.0.2
   # Bloc for state management
-  flutter_bloc: ^4.0.0
+  flutter_bloc: ^4.0.1
   # Value equality
-  equatable: ^1.1.1
+  equatable: ^1.2.0
   # Functional programming thingies
   dartz: ^0.9.1
   # Remote API
   data_connection_checker: ^0.3.4
   # For connecting to http services
-  http: ^0.12.0+2
+  http: ^0.12.1
   # For local cache, probably useless as we'll use Firestore
-  shared_preferences: ^0.5.3+4
+  shared_preferences: ^0.5.7+3
   # For unions generation
-  freezed_annotation: ^0.7.1
+  freezed_annotation: ^0.11.0
   # For use with Firebase as backend
   # firebase_core: ^0.4.4+3
   # For authentication with Firebase
@@ -46,27 +46,29 @@ dependencies:
   # For Signing in and registering with Google
   # google_sign_in: ^4.4.6
   # For dependency injection
-  injectable: ^0.3.0
+  injectable: ^0.4.0+1
   # For email validation
   email_validator: ^1.0.4
   # For mapping
-  google_maps_flutter: ^0.5.27+3
+  google_maps_flutter: ^0.5.28+1
   # For getting the geolocation of the user
   geolocator: ^5.3.2+2
-  flushbar: ^1.10.0
-  uuid: ^2.0.4
+  # For Kotlin like collections
+  kt_dart: ^0.7.0+1
+  flushbar: ^1.10.4
+  uuid: ^2.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   # For mocking dependencies during unit testing
-  mockito: ^4.1.0
+  mockito: ^4.1.1
   # For unions generation
-  freezed: ^0.10.8
+  freezed: ^0.11.2
   # Collection of lint rules
-  lint: ^1.1.1
+  lint: ^1.2.0
   # For dependency injection code generation
-  injectable_generator: ^0.3.5
+  injectable_generator: ^0.4.1
   build_runner:
 
 # For information on the generic Dart part of this file, see the

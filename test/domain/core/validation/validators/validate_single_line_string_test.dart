@@ -1,31 +1,34 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
-import 'package:worldon/domain/core/validation/validators/validate_password.dart';
+import 'package:worldon/domain/core/validation/validators/validate_single_line_string.dart';
 
 import '../../../../constant_descriptions.dart';
 
 void main() {
-  const validPassword = "abcd*1234";
-  const invalidPassword = "a";
+  const validString = "Test";
+  const invalidString = "Test\n Test";
   test(
-    "Should return the valid password",
+    "Should return validString",
     () async {
       // Act
-      final Object result = _act(validPassword);
+      final result = _act(validString);
       // Assert
-      expect(result, validPassword);
+      expect(result, validString);
     },
   );
   group(
     descriptionGroupOnFailure,
     () {
       test(
-        "Should return InvalidPassword",
+        "Should return MultiLineString",
         () async {
+          // Arrange
+          const valueFailure = ValueFailure.multiLineString(failedValue: invalidString);
           // Act
-          final Object result = _act(invalidPassword);
+          final result = _act(invalidString);
           // Assert
-          expect(result, const ValueFailure<String>.invalidPassword(failedValue: invalidPassword));
+          expect(result, valueFailure);
         },
       );
       test(
@@ -41,11 +44,11 @@ void main() {
   );
 }
 
-Object _act(String input) {
-  final either = validatePassword(input);
+dynamic _act(String validString) {
+  final either = validateSingleLineString(validString);
   final result = either.fold(
     (valueFailure) => valueFailure,
-    (validInput) => validInput,
+    id,
   );
   return result;
 }

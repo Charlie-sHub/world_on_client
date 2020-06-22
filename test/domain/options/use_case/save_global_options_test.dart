@@ -24,11 +24,11 @@ void main() {
     descriptionReturnNothing,
     () async {
       // Arrange
-      when(mockRemoteOptionsRepository.saveGlobalOptions(any)).thenAnswer((_) async => right(null));
+      when(mockRemoteOptionsRepository.saveGlobalOptions(any)).thenAnswer((_) async => right(unit));
       // Act
       final result = await useCase(params);
       // Assert
-      expect(result, right(null));
+      expect(result, right(unit));
       _verifyInteractions(mockRemoteOptionsRepository);
     },
   );

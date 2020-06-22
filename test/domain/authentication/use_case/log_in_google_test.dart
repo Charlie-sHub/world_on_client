@@ -23,11 +23,11 @@ void main() {
     descriptionReturnNothing,
     () async {
       // Arrange
-      when(mockAuthenticationRepository.logInGoogle()).thenAnswer((_) async => right(null));
+      when(mockAuthenticationRepository.logInGoogle()).thenAnswer((_) async => right(unit));
       // Act
       final result = await useCase(NoParams());
       // Assert
-      expect(result, right(null));
+      expect(result, right(unit));
       _verifyInteractions(mockAuthenticationRepository);
     },
   );
