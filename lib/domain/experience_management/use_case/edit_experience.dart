@@ -5,16 +5,16 @@ import 'package:worldon/domain/core/entities/comment.dart';
 import 'package:worldon/domain/core/entities/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/core/entities/location.dart';
-import 'package:worldon/domain/core/entities/objective.dart';
-import 'package:worldon/domain/core/entities/reward.dart';
-import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/objective_set.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/reward_set.dart';
+import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 import 'package:worldon/domain/experience_management/repository/experience_management_repository_interface.dart';
 
 class EditExperience implements AsyncUseCase<Unit, Params> {
@@ -62,9 +62,9 @@ class Params {
   final User creator;
   final Difficulty difficulty;
   final PastDate creationDate;
-  final Set<Objective> objectives;
-  final Set<Reward> rewards;
-  final Set<Tag> tags;
+  final ObjectiveSet objectives;
+  final RewardSet rewards;
+  final TagSet tags;
 
   // TODO: Should these Sets be here?
   // They can't be changed when editing an Experience yet leaving them null could be problematic as it may nullify the entries in the database

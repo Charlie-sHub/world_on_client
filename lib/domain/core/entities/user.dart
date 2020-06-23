@@ -16,7 +16,7 @@ import 'package:worldon/domain/core/validation/objects/user_level.dart';
 
 /// [User] entity class
 ///
-/// Users are of course the cornerstone of the application
+/// [User]s are of course the cornerstone of the application
 class User extends Equatable {
   final int id;
   final Name name;
@@ -39,6 +39,9 @@ class User extends Equatable {
   final Set<User> followedUsers;
   final Set<Device> devices;
   final Set<System> systems;
+
+  // Users shouldn't have a limited amount of interests hence why this is a normal Set instead of a TagSet
+  // Could change in the future though, maybe with a UserTagSet class with a different max size than the Experience one
   final Set<Tag> interests;
   final Set<Achievement> achievements;
   final Set<Experience> experiencesDone;
@@ -75,11 +78,12 @@ class User extends Equatable {
     @required this.experiencesToDo,
   });
 
+  // Probably useless as we'll change to Freezed entities most likely
   @override
   List<Object> get props => [
         // Add props as necessary, though carefully as it might break the use cases with authorization
         id,
-    /*
+        /*
           name,
           username,
           password,

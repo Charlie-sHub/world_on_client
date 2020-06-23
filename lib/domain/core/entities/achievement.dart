@@ -1,11 +1,11 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
-import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/experience_points.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 
 /// [Achievement] entity class.
 ///
@@ -24,9 +24,7 @@ class Achievement extends Equatable {
   final User creator;
   final PastDate creationDate;
   final PastDate modificationDate;
-
-  // TODO: implement the TagSet and ObjectiveSet classes in the entities
-  final Set<Tag> tags;
+  final TagSet tags;
 
   const Achievement({
     @required this.id,

@@ -6,6 +6,7 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 import 'package:worldon/domain/search/use_case/search_experiences_by_tags.dart';
 
 import '../../../constant_descriptions.dart';
@@ -46,7 +47,7 @@ void main() {
       comments: null,
       objectives: null,
       rewards: null,
-      tags: {tag},
+      tags: TagSet(tags),
       likedBy: null,
       doneBy: null,
     ),

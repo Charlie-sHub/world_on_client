@@ -8,6 +8,7 @@ import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/experience_points.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 
 import '../../../constant_descriptions.dart';
 import '../repository/mock_achievement_repository.dart';
@@ -30,7 +31,7 @@ void main() {
     requisite: 1,
     experiencePoints: ExperiencePoints(1),
     creator: null,
-    tags: const <Tag>{},
+    tags: TagSet(const <Tag>{}),
   );
   test(
     descriptionReturnNothing,

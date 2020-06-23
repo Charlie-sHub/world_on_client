@@ -11,6 +11,7 @@ import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/experience_points.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 
 import '../../../constant_descriptions.dart';
 import '../repository/mock_achievement_repository.dart';
@@ -35,7 +36,7 @@ void main() {
     creator: null,
     creationDate: PastDate(DateTime.now()),
     modificationDate: PastDate(DateTime.now()),
-    tags: const <Tag>{},
+    tags: TagSet(const <Tag>{}),
   );
   final List<Achievement> achievementList = [achievement];
   test(

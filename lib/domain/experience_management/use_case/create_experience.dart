@@ -4,15 +4,15 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/core/entities/location.dart';
-import 'package:worldon/domain/core/entities/objective.dart';
-import 'package:worldon/domain/core/entities/reward.dart';
-import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/objective_set.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/reward_set.dart';
+import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 import 'package:worldon/domain/experience_management/repository/experience_management_repository_interface.dart';
 
 class CreateExperience implements AsyncUseCase<Unit, Params> {
@@ -58,9 +58,9 @@ class Params {
   // at the same time i don't like the idea of creating the Objective objects in the BLoC as it kinda defeats the purpose of the use-cases, at the very least it'd
   // weird to leave the Objectives as the only entities to be instantiated that way. Leaning more on the use-case even if just to keep things similar and following
   // the architecture as closely as possible.
-  final Set<Objective> objectives;
-  final Set<Reward> rewards;
-  final Set<Tag> tags;
+  final ObjectiveSet objectives;
+  final RewardSet rewards;
+  final TagSet tags;
 
   Params({
     @required this.name,
