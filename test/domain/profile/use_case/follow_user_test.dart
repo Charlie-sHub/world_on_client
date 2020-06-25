@@ -18,17 +18,13 @@ void main() {
     },
   );
   final params = Params(
-    userId: 1,
     userToFollowId: 2,
   );
   test(
     descriptionReturnNothing,
     () async {
       // Arrange
-      when(mockProfileRepository.followUser(
-        userId: anyNamed("userId"),
-        userToFollowId: anyNamed("userToFollowId"),
-      )).thenAnswer((_) async => right(unit));
+      when(mockProfileRepository.followUser(any)).thenAnswer((_) async => right(unit));
       // Act
       final result = await useCase(params);
       // Assert
@@ -44,10 +40,7 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
-          when(mockProfileRepository.followUser(
-            userId: anyNamed("userId"),
-            userToFollowId: anyNamed("userToFollowId"),
-          )).thenAnswer((_) async => left(failure));
+          when(mockProfileRepository.followUser(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
@@ -60,9 +53,6 @@ void main() {
 }
 
 void _verifyInteractions(MockProfileRepository mockProfileRepository) {
-  verify(mockProfileRepository.followUser(
-    userId: anyNamed("userId"),
-    userToFollowId: anyNamed("userToFollowId"),
-  ));
+  verify(mockProfileRepository.followUser(any));
   verifyNoMoreInteractions(mockProfileRepository);
 }

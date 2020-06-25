@@ -19,17 +19,13 @@ void main() {
   );
   final params = Params(
     languageCode: "es",
-    userId: 1,
   );
   test(
     descriptionReturnNothing,
     () async {
       // Arrange
       when(
-        mockRemoteOptionsRepository.saveGlobalOptions(
-          option: anyNamed("option"),
-          userId: anyNamed("userId"),
-        ),
+        mockRemoteOptionsRepository.saveGlobalOptions(any),
       ).thenAnswer((_) async => right(unit));
       // Act
       final result = await useCase(params);
@@ -47,10 +43,7 @@ void main() {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
           when(
-            mockRemoteOptionsRepository.saveGlobalOptions(
-              option: anyNamed("option"),
-              userId: anyNamed("userId"),
-            ),
+            mockRemoteOptionsRepository.saveGlobalOptions(any),
           ).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
@@ -65,10 +58,7 @@ void main() {
 
 void _verifyInteractions(MockRemoteOptionsRepository mockRemoteOptionsRepository) {
   verify(
-    mockRemoteOptionsRepository.saveGlobalOptions(
-      option: anyNamed("option"),
-      userId: anyNamed("userId"),
-    ),
+    mockRemoteOptionsRepository.saveGlobalOptions(any),
   );
   verifyNoMoreInteractions(mockRemoteOptionsRepository);
 }

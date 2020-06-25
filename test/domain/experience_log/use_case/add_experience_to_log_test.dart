@@ -18,17 +18,13 @@ void main() {
     },
   );
   final params = Params(
-    userId: 1,
     experienceId: 1,
   );
   test(
     descriptionReturnNothing,
     () async {
       // Arrange
-      when(mockExperienceLogRepository.addExperienceToLog(
-        userId: anyNamed("userId"),
-        experienceId: anyNamed("experienceId"),
-      )).thenAnswer((_) async => right(unit));
+      when(mockExperienceLogRepository.addExperienceToLog(any)).thenAnswer((_) async => right(unit));
       // Act
       final result = await useCase(params);
       // Assert
@@ -44,10 +40,7 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
-          when(mockExperienceLogRepository.addExperienceToLog(
-            userId: anyNamed("userId"),
-            experienceId: anyNamed("experienceId"),
-          )).thenAnswer((_) async => left(failure));
+          when(mockExperienceLogRepository.addExperienceToLog(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
@@ -60,9 +53,6 @@ void main() {
 }
 
 void _verifyInteractions(MockExperienceLogRepository mockExperienceLogRepository) {
-  verify(mockExperienceLogRepository.addExperienceToLog(
-    userId: anyNamed("userId"),
-    experienceId: anyNamed("experienceId"),
-  ));
+  verify(mockExperienceLogRepository.addExperienceToLog(any));
   verifyNoMoreInteractions(mockExperienceLogRepository);
 }

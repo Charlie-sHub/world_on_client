@@ -15,23 +15,14 @@ abstract class ExperienceNavigationRepositoryInterface {
     @required int experienceId,
   });
 
-  /// Sends the IDs of a [User] and an [Experience] so the server rewards the [User] with the corresponding experience points
-  Future<Either<Failure, Unit>> rewardUser({
-    @required int userId,
-    @required int experienceId,
-  });
+  /// Sends the IDs of an [Experience] so the server rewards the logged in [User] with the corresponding experience points
+  Future<Either<Failure, Unit>> rewardUser(int experienceId);
 
-  /// Sends the IDs of a [User] and an [Experience] so the server adds the [Experience] to the [User]'s liked list
-  Future<Either<Failure, Unit>> likeExperience({
-    @required int userId,
-    @required int experienceId,
-  });
+  /// Sends the IDs of an [Experience] so the server adds the [Experience] to the logged in [User]'s liked list
+  Future<Either<Failure, Unit>> likeExperience(int experienceId);
 
-  /// Sends the IDs of a [User] and an [Experience] so the server adds the [Experience] to the [User]'s done list
-  Future<Either<Failure, Unit>> finishExperience({
-    @required int userId,
-    @required int experienceId,
-  });
+  /// Sends the IDs of an [Experience] so the server adds the [Experience] to the logged in [User]'s done list
+  Future<Either<Failure, Unit>> finishExperience(int experienceId);
 
   /// Sends a pair of latitude and longitude values and returns a [Set] of [Experience]s located within a certain radius
   Future<Either<Failure, Set<Experience>>> loadSurroundingExperiences({

@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/achievement.dart';
 import 'package:worldon/domain/core/entities/experience.dart';
@@ -13,6 +12,28 @@ abstract class ProfileRepositoryInterface {
 
   /// Sends a edited [User] to the server to be saved on the database
   Future<Either<Failure, Unit>> editUser(User user);
+
+  /// Sends the id of a [User] the logged in [User] wants to block
+  Future<Either<Failure, Unit>> blockUser(int blockedId);
+
+  /// Sends the id of a [User] the logged in [User] wants to un-block
+  Future<Either<Failure, Unit>> unBlockUser(int blockedId);
+
+  /// Sends the id of an [Experience] to the server so this one can be removed from the liked [Experience]s list of the logged in [User]
+  Future<Either<Failure, Unit>> removeExperienceLiked(int experienceId);
+
+  /// Sends the id of an [Experience] to the server so this one can be deleted
+  Future<Either<Failure, Unit>> deleteExperience(int experienceId);
+
+  /// Sends the id of a [User] the logged in [User] wants to follow
+  Future<Either<Failure, Unit>> followUser(int userToFollowId);
+
+  /// Sends the id of a [User] the logged in [User] wants to un-follow
+  Future<Either<Failure, Unit>> unFollowUser(int userToUnFollowId);
+
+  // Speaking about the following methods
+  // TODO: Maybe a different set of methods will be needed for when the user checks its own profile, same with Flutter pages and BLoCs
+  // Basically separate them into two features
 
   /// Sends an [User]'s id to the server so it returns a [Set] of the [User]s it follows
   Future<Either<Failure, Set<User>>> loadFollowedUsers(int id);
@@ -31,39 +52,6 @@ abstract class ProfileRepositoryInterface {
 
   /// Sends an [User]'s id to the server so it returns a [Set] of the [Experience]s it has created
   Future<Either<Failure, Set<Experience>>> loadExperiencesCreated(int id);
-
-  /// Sends a couple of [User] ids so the blocked [User] is added to the list of blocked [User]s of a given [User]
-  Future<Either<Failure, Unit>> blockUser({
-    @required int blockerId,
-    @required int blockedId,
-  });
-
-  /// Sends a couple of [User] ids so the blocked [User] is removed from the list of blocked [User]s of a given [User]
-  Future<Either<Failure, Unit>> unBlockUser({
-    @required int blockerId,
-    @required int blockedId,
-  });
-
-  /// Sends the id of an [Experience] to the server so this one can be removed from the liked [Experience]s list of a given [User]
-  Future<Either<Failure, Unit>> removeExperienceLiked({
-    @required int userId,
-    @required int experienceId,
-  });
-
-  /// Sends the id of an [Experience] to the server so this one can be deleted
-  Future<Either<Failure, Unit>> deleteExperience(int experienceId);
-
-  /// Sends a couple of [User] ids so the followed [User] is added to the list of following [User]s of a given [User]
-  Future<Either<Failure, Unit>> followUser({
-    @required int userId,
-    @required int userToFollowId,
-  });
-
-  /// Sends a couple of [User] ids so the followed [User] is removed from the list of following [User]s of a given [User]
-  Future<Either<Failure, Unit>> unFollowUser({
-    @required int userId,
-    @required int userToUnFollowId,
-  });
 
   /// Returns a [Set] of [Tag]s of a given [User] interests
   Future<Either<Failure, Set<Tag>>> loadUserInterests(int userId);

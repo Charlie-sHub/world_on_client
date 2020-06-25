@@ -5,8 +5,6 @@ import 'package:worldon/domain/core/entities/tag.dart';
 /// Abstract class of the [Tag] repository
 abstract class TagManagementRepositoryInterface {
   /// Gets a [Tag] by a given id
-  ///
-  /// Probably useless
   Future<Either<Failure, Tag>> getTag(int id);
 
   /// Creates a [Tag], in other words takes a [Tag] and attempts to send it to the server to save it on the database

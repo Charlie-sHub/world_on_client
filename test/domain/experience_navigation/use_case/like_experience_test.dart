@@ -19,16 +19,12 @@ void main() {
   );
   final params = Params(
     experienceId: 1,
-    userId: 1,
   );
   test(
     descriptionReturnNothing,
     () async {
       // Arrange
-      when(mockExperienceNavigationRepository.likeExperience(
-        experienceId: anyNamed("experienceId"),
-        userId: anyNamed("userId"),
-      )).thenAnswer((_) async => right(unit));
+      when(mockExperienceNavigationRepository.likeExperience(any)).thenAnswer((_) async => right(unit));
       // Act
       final result = await useCase(params);
       // Assert
@@ -44,10 +40,7 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
-          when(mockExperienceNavigationRepository.likeExperience(
-            experienceId: anyNamed("experienceId"),
-            userId: anyNamed("userId"),
-          )).thenAnswer((_) async => left(failure));
+          when(mockExperienceNavigationRepository.likeExperience(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
@@ -60,10 +53,7 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());
-          when(mockExperienceNavigationRepository.likeExperience(
-            experienceId: anyNamed("experienceId"),
-            userId: anyNamed("userId"),
-          )).thenAnswer((_) async => left(failure));
+          when(mockExperienceNavigationRepository.likeExperience(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
@@ -76,9 +66,6 @@ void main() {
 }
 
 void _verifyInteractions(MockExperienceNavigationRepository mockExperienceNavigationRepository) {
-  verify(mockExperienceNavigationRepository.likeExperience(
-    experienceId: anyNamed("experienceId"),
-    userId: anyNamed("userId"),
-  ));
+  verify(mockExperienceNavigationRepository.likeExperience(any));
   verifyNoMoreInteractions(mockExperienceNavigationRepository);
 }

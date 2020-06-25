@@ -19,16 +19,12 @@ void main() {
   );
   final params = Params(
     blockedId: 1,
-    blockerId: 2,
   );
   test(
     descriptionReturnNothing,
     () async {
       // Arrange
-      when(mockProfileRepository.unBlockUser(
-        blockedId: anyNamed("blockedId"),
-        blockerId: anyNamed("blockerId"),
-      )).thenAnswer((_) async => right(unit));
+      when(mockProfileRepository.unBlockUser(any)).thenAnswer((_) async => right(unit));
       // Act
       final result = await useCase(params);
       // Assert
@@ -44,10 +40,7 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
-          when(mockProfileRepository.unBlockUser(
-            blockedId: anyNamed("blockedId"),
-            blockerId: anyNamed("blockerId"),
-          )).thenAnswer((_) async => left(failure));
+          when(mockProfileRepository.unBlockUser(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
@@ -60,9 +53,6 @@ void main() {
 }
 
 void _verifyInteractions(MockProfileRepository mockProfileRepository) {
-  verify(mockProfileRepository.unBlockUser(
-    blockedId: anyNamed("blockedId"),
-    blockerId: anyNamed("blockerId"),
-  ));
+  verify(mockProfileRepository.unBlockUser(any));
   verifyNoMoreInteractions(mockProfileRepository);
 }

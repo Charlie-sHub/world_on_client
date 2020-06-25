@@ -11,19 +11,12 @@ class FollowUser implements AsyncUseCase<Unit, Params> {
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.followUser(
-      userId: params.userId,
-      userToFollowId: params.userToFollowId,
-    );
+    return _repository.followUser(params.userToFollowId);
   }
 }
 
 class Params {
-  final int userId;
   final int userToFollowId;
 
-  Params({
-    @required this.userId,
-    @required this.userToFollowId,
-  });
+  Params({@required this.userToFollowId});
 }

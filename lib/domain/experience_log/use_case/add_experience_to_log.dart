@@ -11,16 +11,12 @@ class AddExperienceToLog implements AsyncUseCase<Unit, Params> {
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.addExperienceToLog(
-      experienceId: params.experienceId,
-      userId: params.userId,
-    );
+    return _repository.addExperienceToLog(params.experienceId);
   }
 }
 
 class Params {
   final int experienceId;
-  final int userId;
 
-  Params({@required this.experienceId, @required this.userId});
+  Params({@required this.experienceId});
 }

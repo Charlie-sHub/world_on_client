@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/achievement.dart';
+import 'package:worldon/domain/core/entities/user.dart';
 
 /// Repository for the management of [Achievement]s.
 abstract class AchievementRepositoryInterface {
@@ -24,11 +25,14 @@ abstract class AchievementRepositoryInterface {
     @required int userId,
   });
 
-  /// Gets all the [Achievement]s of a given [User] by its id
-  Future<Either<Failure, Set<Achievement>>> getUserAchievements(int userId);
+  /// Gets all the [Achievement]s of the logged in [User]
+  // TODO: Rework the method signatures so they use Stream instead of Future
+  // Likewise with the use-cases probably, though maybe the use-cases could be used to close the streams when enough data is collected, will have to experiment with that
+  Future<Either<Failure, Set<Achievement>>> getUserAchievements();
 
   /// Gets all the [Achievement]s in the database.
   // TODO: Make it so only a few Achievements are gotten each time it's called, same with other getAll methods
-  // Getting all the achievements at once is not scalable, though it's not that bad
+  // Maybe using Streams and Firebase will solve that issue
+  // Getting all the achievements at once is not scalable, though it's not that bad in comparison with getting all Experiences for example, but still
   Future<Either<Failure, List<Achievement>>> getAllAchievement();
 }

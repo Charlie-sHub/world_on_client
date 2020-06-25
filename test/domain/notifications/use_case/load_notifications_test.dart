@@ -4,6 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/notification.dart';
+import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/notifications/use_case/load_notifications.dart';
 
 import '../../../constant_descriptions.dart';
@@ -18,7 +19,7 @@ void main() {
       useCase = LoadNotifications(mockNotificationRepository);
     },
   );
-  final params = Params(userId: 1);
+  final params = NoParams();
   final notificationList = [
     const Notification(
       id: null,
@@ -34,7 +35,7 @@ void main() {
     "Should return a list of Notifications",
     () async {
       // Arrange
-      when(mockNotificationRepository.loadNotifications(any)).thenAnswer((_) async => right(notificationList));
+      when(mockNotificationRepository.loadNotifications()).thenAnswer((_) async => right(notificationList));
       // Act
       final result = await useCase(params);
       // Assert
@@ -50,7 +51,7 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
-          when(mockNotificationRepository.loadNotifications(any)).thenAnswer((_) async => left(failure));
+          when(mockNotificationRepository.loadNotifications()).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
@@ -63,7 +64,7 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());
-          when(mockNotificationRepository.loadNotifications(any)).thenAnswer((_) async => left(failure));
+          when(mockNotificationRepository.loadNotifications()).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
@@ -76,6 +77,6 @@ void main() {
 }
 
 void _verifyInteractions(MockNotificationRepository mockNotificationRepository) {
-  verify(mockNotificationRepository.loadNotifications(any));
+  verify(mockNotificationRepository.loadNotifications());
   verifyNoMoreInteractions(mockNotificationRepository);
 }

@@ -2,6 +2,8 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/comment.dart';
+import 'package:worldon/domain/core/entities/experience.dart';
+import 'package:worldon/domain/core/entities/user.dart';
 
 /// Repository for the management of [Comment]s
 abstract class CommentRepositoryInterface {
@@ -20,6 +22,6 @@ abstract class CommentRepositoryInterface {
   /// Gets the [Comment]s of an [Experience]
   Future<Either<Failure, Set<Comment>>> getExperienceComments(int experienceId);
 
-  /// Gets the [Comment]s of an [User]
+  /// Gets the [Comment]s of a given [User]
   Future<Either<Failure, Set<Comment>>> getUserComments(int userId);
 }

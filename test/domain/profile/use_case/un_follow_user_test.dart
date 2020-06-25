@@ -18,17 +18,13 @@ void main() {
     },
   );
   final params = Params(
-    userId: 1,
     userToUnFollowId: 2,
   );
   test(
     descriptionReturnNothing,
     () async {
       // Arrange
-      when(mockProfileRepository.unFollowUser(
-        userId: anyNamed("userId"),
-        userToUnFollowId: anyNamed("userToUnFollowId"),
-      )).thenAnswer((_) async => right(unit));
+      when(mockProfileRepository.unFollowUser(any)).thenAnswer((_) async => right(unit));
       // Act
       final result = await useCase(params);
       // Assert
@@ -44,10 +40,7 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
-          when(mockProfileRepository.unFollowUser(
-            userId: anyNamed("userId"),
-            userToUnFollowId: anyNamed("userToUnFollowId"),
-          )).thenAnswer((_) async => left(failure));
+          when(mockProfileRepository.unFollowUser(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
@@ -60,9 +53,6 @@ void main() {
 }
 
 void _verifyInteractions(MockProfileRepository mockProfileRepository) {
-  verify(mockProfileRepository.unFollowUser(
-    userId: anyNamed("userId"),
-    userToUnFollowId: anyNamed("userToUnFollowId"),
-  ));
+  verify(mockProfileRepository.unFollowUser(any));
   verifyNoMoreInteractions(mockProfileRepository);
 }

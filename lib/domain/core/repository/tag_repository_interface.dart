@@ -5,8 +5,8 @@ import 'package:worldon/domain/core/entities/user.dart';
 
 /// Abstract class of the [Tag] repository
 abstract class TagCoreRepositoryInterface {
+  // TODO: Figure out if these tag use-cases should be in their own feature
   /// Returns all [Tag]s
-  // TODO: Change it for getting a limited amount of tags
   Future<Either<Failure, List<Tag>>> getAllTags();
 
   /// Returns All the [Tag]s which names contains the given string

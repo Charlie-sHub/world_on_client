@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/notifications/use_case/delete_user_notifications.dart';
 
 import '../../../constant_descriptions.dart';
@@ -17,12 +18,12 @@ void main() {
       useCase = DeleteUserNotifications(mockNotificationRepository);
     },
   );
-  final params = Params(userId: 1);
+  final params = NoParams();
   test(
     descriptionReturnNothing,
     () async {
       // Arrange
-      when(mockNotificationRepository.deleteUserNotifications(any)).thenAnswer((_) async => right(unit));
+      when(mockNotificationRepository.deleteUserNotifications()).thenAnswer((_) async => right(unit));
       // Act
       final result = await useCase(params);
       // Assert
@@ -38,7 +39,7 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
-          when(mockNotificationRepository.deleteUserNotifications(any)).thenAnswer((_) async => left(failure));
+          when(mockNotificationRepository.deleteUserNotifications()).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
@@ -51,6 +52,6 @@ void main() {
 }
 
 void _verifyInteractions(MockNotificationRepository mockNotificationRepository) {
-  verify(mockNotificationRepository.deleteUserNotifications(any));
+  verify(mockNotificationRepository.deleteUserNotifications());
   verifyNoMoreInteractions(mockNotificationRepository);
 }

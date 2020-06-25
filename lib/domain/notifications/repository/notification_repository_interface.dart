@@ -8,11 +8,11 @@ abstract class NotificationRepositoryInterface {
   /// Sends a [Notification] to the server to be saved and related to the corresponding [User]s
   Future<Either<Failure, Unit>> sendNotification(Notification notification);
 
-  /// Loads all the [Notification]s of a given user [User]
-  Future<Either<Failure, List<Notification>>> loadNotifications(int userId);
+  /// Loads all the [Notification]s of the logged in [User]
+  Future<Either<Failure, List<Notification>>> loadNotifications();
 
-  /// Requests the server to delete all [Notification]s of a given [User]
-  Future<Either<Failure, Unit>> deleteUserNotifications(int userId);
+  /// Requests the server to delete all [Notification]s of the logged in [User]
+  Future<Either<Failure, Unit>> deleteUserNotifications();
 
   ///	Sends a [Notification] to the server for its "seen" attribute to be updated
   Future<Either<Failure, Unit>> checkNotification(int id);

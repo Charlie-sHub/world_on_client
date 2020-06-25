@@ -6,6 +6,7 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/achievement_management/use_case/get_user_achievements.dart';
 import 'package:worldon/domain/core/entities/achievement.dart';
 import 'package:worldon/domain/core/entities/tag.dart';
+import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/experience_points.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
@@ -24,7 +25,7 @@ void main() {
       useCase = GetUserAchievements(mockAchievementRepository);
     },
   );
-  final params = Params(userId: 1);
+  final params = NoParams();
   final achievement = Achievement(
     id: 1,
     name: Name("Test Achievement"),
@@ -43,7 +44,7 @@ void main() {
     "Should return a Set of achievements",
     () async {
       // Arrange
-      when(mockAchievementRepository.getUserAchievements(any)).thenAnswer((_) async => right(achievementSet));
+      when(mockAchievementRepository.getUserAchievements()).thenAnswer((_) async => right(achievementSet));
       // Act
       final result = await useCase(params);
       // Assert
@@ -59,7 +60,7 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
-          when(mockAchievementRepository.getUserAchievements(any)).thenAnswer((_) async => left(failure));
+          when(mockAchievementRepository.getUserAchievements()).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
@@ -72,7 +73,7 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());
-          when(mockAchievementRepository.getUserAchievements(any)).thenAnswer((_) async => left(failure));
+          when(mockAchievementRepository.getUserAchievements()).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
@@ -85,6 +86,6 @@ void main() {
 }
 
 void _verifyInteractions(MockAchievementRepository mockAchievementRepository) {
-  verify(mockAchievementRepository.getUserAchievements(any));
+  verify(mockAchievementRepository.getUserAchievements());
   verifyNoMoreInteractions(mockAchievementRepository);
 }

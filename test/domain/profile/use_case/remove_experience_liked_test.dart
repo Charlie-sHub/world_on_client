@@ -19,16 +19,12 @@ void main() {
   );
   final params = Params(
     experienceId: 1,
-    userId: 2,
   );
   test(
     descriptionReturnNothing,
     () async {
       // Arrange
-      when(mockProfileRepository.removeExperienceLiked(
-        experienceId: anyNamed("experienceId"),
-        userId: anyNamed("userId"),
-      )).thenAnswer((_) async => right(unit));
+      when(mockProfileRepository.removeExperienceLiked(any)).thenAnswer((_) async => right(unit));
       // Act
       final result = await useCase(params);
       // Assert
@@ -44,10 +40,7 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
-          when(mockProfileRepository.removeExperienceLiked(
-            experienceId: anyNamed("experienceId"),
-            userId: anyNamed("userId"),
-          )).thenAnswer((_) async => left(failure));
+          when(mockProfileRepository.removeExperienceLiked(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
@@ -60,9 +53,6 @@ void main() {
 }
 
 void _verifyInteractions(MockProfileRepository mockProfileRepository) {
-  verify(mockProfileRepository.removeExperienceLiked(
-    experienceId: anyNamed("experienceId"),
-    userId: anyNamed("userId"),
-  ));
+  verify(mockProfileRepository.removeExperienceLiked(any));
   verifyNoMoreInteractions(mockProfileRepository);
 }

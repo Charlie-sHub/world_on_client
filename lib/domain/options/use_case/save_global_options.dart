@@ -16,19 +16,12 @@ class SaveGlobalOptions implements AsyncUseCase<Unit, Params> {
       id: null,
       languageCode: params.languageCode,
     );
-    return _repository.saveGlobalOptions(
-      userId: params.userId,
-      option: options,
-    );
+    return _repository.saveGlobalOptions(options);
   }
 }
 
 class Params {
   final String languageCode;
-  final int userId;
 
-  Params({
-    @required this.languageCode,
-    @required this.userId,
-  });
+  Params({@required this.languageCode});
 }

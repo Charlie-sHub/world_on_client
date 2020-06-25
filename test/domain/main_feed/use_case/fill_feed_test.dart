@@ -4,6 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/experience.dart';
+import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/main_feed/use_case/fill_feed.dart';
 
 import '../../../constant_descriptions.dart';
@@ -18,7 +19,7 @@ void main() {
       useCase = FillFeed(mockMainFeedRepository);
     },
   );
-  final params = Params(userId: 1);
+  final params = NoParams();
   final experienceList = [
     const Experience(
       id: null,
@@ -43,7 +44,7 @@ void main() {
     "Should return a List of Experiences",
     () async {
       // Arrange
-      when(mockMainFeedRepository.fillFeed(any)).thenAnswer((_) async => right(experienceList));
+      when(mockMainFeedRepository.fillFeed()).thenAnswer((_) async => right(experienceList));
       // Act
       final result = await useCase(params);
       // Assert
@@ -58,7 +59,7 @@ void main() {
         descriptionServerError,
         () async {
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
-          when(mockMainFeedRepository.fillFeed(any)).thenAnswer((_) async => left(failure));
+          when(mockMainFeedRepository.fillFeed()).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
@@ -70,7 +71,7 @@ void main() {
         descriptionCacheError,
         () async {
           const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: errorString));
-          when(mockMainFeedRepository.fillFeed(any)).thenAnswer((_) async => left(failure));
+          when(mockMainFeedRepository.fillFeed()).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
@@ -82,7 +83,7 @@ void main() {
         descriptionNotFoundError,
         () async {
           const failure = Failure.coreData(CoreDataFailure.notFoundError());
-          when(mockMainFeedRepository.fillFeed(any)).thenAnswer((_) async => left(failure));
+          when(mockMainFeedRepository.fillFeed()).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
@@ -95,6 +96,6 @@ void main() {
 }
 
 void _verifyInteractions(MockMainFeedRepository mockMainFeedRepository) {
-  verify(mockMainFeedRepository.fillFeed(any));
+  verify(mockMainFeedRepository.fillFeed());
   verifyNoMoreInteractions(mockMainFeedRepository);
 }
