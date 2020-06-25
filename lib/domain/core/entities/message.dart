@@ -10,13 +10,14 @@ import 'package:worldon/domain/core/validation/objects/past_date.dart';
 // TODO: Implement messaging
 // A chat is not a priority right now so it'll be left on the back burner for the time being
 // I'm also unsure about how to implement it
+@Deprecated("Use the freezed classes")
 class Message extends Equatable {
   final int id;
   final User sender;
   final User receiver;
   final MessageContent content;
   final PastDate creationDate;
-
+  
   const Message({
     @required this.id,
     @required this.sender,
@@ -24,13 +25,13 @@ class Message extends Equatable {
     @required this.content,
     @required this.creationDate,
   });
-
+  
   @override
   List<Object> get props => [
-        id,
-        sender,
-        receiver,
-        content,
-        creationDate,
-      ];
+    id,
+    sender,
+    receiver,
+    content,
+    creationDate,
+  ];
 }

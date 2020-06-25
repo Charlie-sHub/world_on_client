@@ -7,6 +7,7 @@ import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/profile/use_case/load_experiences_done.dart';
 
 import '../../../constant_descriptions.dart';
+import '../../core/methods/create_stream.dart';
 import '../repository/mock_profile_repository.dart';
 
 void main() {
@@ -43,10 +44,9 @@ void main() {
     "Should return a Set of Experiences if everything goes well",
     () async {
       // Arrange
-      when(mockProfileRepository.loadExperiencesDone(any)).thenAnswer((_) async => right(experiencesDone));
-
+      when(mockProfileRepository.loadExperiencesDone(any)).thenAnswer((_) => createStream(right(experiencesDone)));
       // Act
-      final result = await useCase(params);
+      final result = await _act(useCase, params);
       // Assert
       expect(result, right(experiencesDone));
       _verifyInteractions(mockProfileRepository);
@@ -60,9 +60,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
-          when(mockProfileRepository.loadExperiencesDone(any)).thenAnswer((_) async => left(failure));
+          when(mockProfileRepository.loadExperiencesDone(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase, params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockProfileRepository);
@@ -73,9 +73,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: errorString));
-          when(mockProfileRepository.loadExperiencesDone(any)).thenAnswer((_) async => left(failure));
+          when(mockProfileRepository.loadExperiencesDone(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase, params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockProfileRepository);
@@ -86,9 +86,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());
-          when(mockProfileRepository.loadExperiencesDone(any)).thenAnswer((_) async => left(failure));
+          when(mockProfileRepository.loadExperiencesDone(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase, params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockProfileRepository);
@@ -96,6 +96,15 @@ void main() {
       );
     },
   );
+}
+
+Future<Either<Failure, Set<Experience>>> _act(LoadExperiencesDone useCase, Params params) async {
+  final resultStream = useCase(params);
+  Either<Failure, Set<Experience>> result;
+  await for (final either in resultStream) {
+    result = either;
+  }
+  return result;
 }
 
 void _verifyInteractions(MockProfileRepository mockProfileRepository) {

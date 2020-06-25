@@ -36,28 +36,28 @@ abstract class ProfileRepositoryInterface {
   // Basically separate them into two features
 
   /// Sends an [User]'s id to the server so it returns a [Set] of the [User]s it follows
-  Future<Either<Failure, Set<User>>> loadFollowedUsers(int id);
+  Stream<Either<Failure, Set<User>>> loadFollowedUsers(int id);
 
   /// Sends an [User]'s id to the server so it returns a [Set] of the [User]s following it
-  Future<Either<Failure, Set<User>>> loadFollowingUsers(int id);
+  Stream<Either<Failure, Set<User>>> loadFollowingUsers(int id);
 
   /// Sends an [User]'s id to the server so it returns a [Set] of the [User]s it has blocked
-  Future<Either<Failure, Set<User>>> loadBlockedUsers(int id);
+  Stream<Either<Failure, Set<User>>> loadBlockedUsers(int id);
 
   /// Sends an [User]'s id to the server so it returns a [Set] of the [Experience]s it has done
-  Future<Either<Failure, Set<Experience>>> loadExperiencesDone(int id);
+  Stream<Either<Failure, Set<Experience>>> loadExperiencesDone(int id);
 
   /// Sends an [User]'s id to the server so it returns a [Set] of the [Experience]s it has liked
-  Future<Either<Failure, Set<Experience>>> loadExperiencesLiked(int id);
+  Stream<Either<Failure, Set<Experience>>> loadExperiencesLiked(int id);
 
   /// Sends an [User]'s id to the server so it returns a [Set] of the [Experience]s it has created
-  Future<Either<Failure, Set<Experience>>> loadExperiencesCreated(int id);
+  Stream<Either<Failure, Set<Experience>>> loadExperiencesCreated(int id);
 
   /// Returns a [Set] of [Tag]s of a given [User] interests
-  Future<Either<Failure, Set<Tag>>> loadUserInterests(int userId);
+  Stream<Either<Failure, Set<Tag>>> loadUserInterests(int userId);
 
   /// Returns a [Set] of the [Achievement]s accomplished by a [User]
-  Future<Either<Failure, Set<Achievement>>> loadUserAchievements(int userId);
+  Stream<Either<Failure, Set<Achievement>>> loadUserAchievements(int userId);
 
 // TODO: implement Message user
 }

@@ -96,7 +96,9 @@ class _$FailureCopyWithImpl<T, $Res> implements $FailureCopyWith<T, $Res> {
 }
 
 abstract class _$AuthenticationDomainCopyWith<T, $Res> {
-  factory _$AuthenticationDomainCopyWith(_AuthenticationDomain<T> value, $Res Function(_AuthenticationDomain<T>) then) = __$AuthenticationDomainCopyWithImpl<T, $Res>;
+  factory _$AuthenticationDomainCopyWith(_AuthenticationDomain<T> value,
+    $Res Function(_AuthenticationDomain<T>) then) =
+  __$AuthenticationDomainCopyWithImpl<T, $Res>;
   $Res call({AuthenticationDomainFailure<T> f});
 
   $AuthenticationDomainFailureCopyWith<T, $Res> get f;

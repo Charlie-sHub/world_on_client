@@ -6,14 +6,14 @@ import 'package:worldon/domain/core/entities/tag.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/search/repository/search_repository_interface.dart';
 
-class SearchExperiencesByTags implements AsyncUseCase<Set<Experience>, Params> {
+class SearchExperiencesByTags implements StreamUseCase<Set<Experience>, Params> {
   final SearchRepositoryInterface _repository;
 
   SearchExperiencesByTags(this._repository);
 
   @override
-  Future<Either<Failure, Set<Experience>>> call(Params params) async {
-    return _repository.searchExperiencesByTags(params.tags);
+  Stream<Either<Failure, Set<Experience>>> call(Params params) async* {
+    yield* _repository.searchExperiencesByTags(params.tags);
   }
 }
 

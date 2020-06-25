@@ -25,6 +25,7 @@ abstract class ExperienceNavigationRepositoryInterface {
   Future<Either<Failure, Unit>> finishExperience(int experienceId);
 
   /// Sends a pair of latitude and longitude values and returns a [Set] of [Experience]s located within a certain radius
+  // Could Stream be used here?
   Future<Either<Failure, Set<Experience>>> loadSurroundingExperiences({
     @required double latitude,
     @required double longitude,

@@ -6,14 +6,14 @@ import 'package:worldon/domain/core/repository/tag_repository_interface.dart';
 
 import '../use_case.dart';
 
-class GetTagsByCreator implements AsyncUseCase<List<Tag>, Params> {
+class GetTagsByCreator implements StreamUseCase<List<Tag>, Params> {
   final TagCoreRepositoryInterface _repository;
 
   GetTagsByCreator(this._repository);
 
   @override
-  Future<Either<Failure, List<Tag>>> call(Params params) async {
-    return _repository.getTagsByCreator(params.creatorId);
+  Stream<Either<Failure, List<Tag>>> call(Params params) async* {
+    yield* _repository.getTagsByCreator(params.creatorId);
   }
 }
 

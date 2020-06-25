@@ -4,24 +4,25 @@ import 'package:flutter/foundation.dart';
 /// [System] entity class.
 ///
 /// Systems gives the administration a way to consult how the Users are getting to the application, to better focus out efforts in the future.
+@Deprecated("Use the freezed classes")
 class System extends Equatable {
   final int id;
   final String name;
   final String type;
   final String company;
-
+  
   const System({
     @required this.id,
     @required this.name,
     @required this.type,
     @required this.company,
   });
-
+  
   @override
   List<Object> get props => [
-        id,
-        name,
-        type,
-        company,
-      ];
+    id,
+    name,
+    type,
+    company,
+  ];
 }

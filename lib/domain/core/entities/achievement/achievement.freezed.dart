@@ -1,0 +1,353 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+
+part of 'achievement.dart';
+
+// **************************************************************************
+// FreezedGenerator
+// **************************************************************************
+
+T _$identity<T>(T value) => value;
+
+class _$AchievementTearOff {
+  const _$AchievementTearOff();
+
+  _Achievement call(
+      {@required int id,
+      @required Name name,
+      @required EntityDescription description,
+      @required String imageURL,
+      @required String type,
+      @required int requisite,
+      @required ExperiencePoints experiencePoints,
+      @required User creator,
+      @required PastDate creationDate,
+      @required PastDate modificationDate,
+      @required TagSet tags}) {
+    return _Achievement(
+      id: id,
+      name: name,
+      description: description,
+      imageURL: imageURL,
+      type: type,
+      requisite: requisite,
+      experiencePoints: experiencePoints,
+      creator: creator,
+      creationDate: creationDate,
+      modificationDate: modificationDate,
+      tags: tags,
+    );
+  }
+}
+
+// ignore: unused_element
+const $Achievement = _$AchievementTearOff();
+
+mixin _$Achievement {
+  int get id;
+  Name get name;
+  EntityDescription get description;
+  String get imageURL;
+  String get type;
+  int get requisite;
+  ExperiencePoints get experiencePoints;
+  User get creator;
+  PastDate get creationDate;
+  PastDate get modificationDate;
+  TagSet get tags;
+
+  $AchievementCopyWith<Achievement> get copyWith;
+}
+
+abstract class $AchievementCopyWith<$Res> {
+  factory $AchievementCopyWith(
+          Achievement value, $Res Function(Achievement) then) =
+      _$AchievementCopyWithImpl<$Res>;
+  $Res call(
+      {int id,
+      Name name,
+      EntityDescription description,
+      String imageURL,
+      String type,
+      int requisite,
+      ExperiencePoints experiencePoints,
+      User creator,
+      PastDate creationDate,
+      PastDate modificationDate,
+      TagSet tags});
+
+  $UserCopyWith<$Res> get creator;
+}
+
+class _$AchievementCopyWithImpl<$Res> implements $AchievementCopyWith<$Res> {
+  _$AchievementCopyWithImpl(this._value, this._then);
+
+  final Achievement _value;
+  // ignore: unused_field
+  final $Res Function(Achievement) _then;
+
+  @override
+  $Res call({
+    Object id = freezed,
+    Object name = freezed,
+    Object description = freezed,
+    Object imageURL = freezed,
+    Object type = freezed,
+    Object requisite = freezed,
+    Object experiencePoints = freezed,
+    Object creator = freezed,
+    Object creationDate = freezed,
+    Object modificationDate = freezed,
+    Object tags = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: id == freezed ? _value.id : id as int,
+      name: name == freezed ? _value.name : name as Name,
+      description: description == freezed
+          ? _value.description
+          : description as EntityDescription,
+      imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
+      type: type == freezed ? _value.type : type as String,
+      requisite: requisite == freezed ? _value.requisite : requisite as int,
+      experiencePoints: experiencePoints == freezed
+          ? _value.experiencePoints
+          : experiencePoints as ExperiencePoints,
+      creator: creator == freezed ? _value.creator : creator as User,
+      creationDate: creationDate == freezed
+          ? _value.creationDate
+          : creationDate as PastDate,
+      modificationDate: modificationDate == freezed
+          ? _value.modificationDate
+          : modificationDate as PastDate,
+      tags: tags == freezed ? _value.tags : tags as TagSet,
+    ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get creator {
+    if (_value.creator == null) {
+      return null;
+    }
+    return $UserCopyWith<$Res>(_value.creator, (value) {
+      return _then(_value.copyWith(creator: value));
+    });
+  }
+}
+
+abstract class _$AchievementCopyWith<$Res>
+    implements $AchievementCopyWith<$Res> {
+  factory _$AchievementCopyWith(
+          _Achievement value, $Res Function(_Achievement) then) =
+      __$AchievementCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {int id,
+      Name name,
+      EntityDescription description,
+      String imageURL,
+      String type,
+      int requisite,
+      ExperiencePoints experiencePoints,
+      User creator,
+      PastDate creationDate,
+      PastDate modificationDate,
+      TagSet tags});
+
+  @override
+  $UserCopyWith<$Res> get creator;
+}
+
+class __$AchievementCopyWithImpl<$Res> extends _$AchievementCopyWithImpl<$Res>
+    implements _$AchievementCopyWith<$Res> {
+  __$AchievementCopyWithImpl(
+      _Achievement _value, $Res Function(_Achievement) _then)
+      : super(_value, (v) => _then(v as _Achievement));
+
+  @override
+  _Achievement get _value => super._value as _Achievement;
+
+  @override
+  $Res call({
+    Object id = freezed,
+    Object name = freezed,
+    Object description = freezed,
+    Object imageURL = freezed,
+    Object type = freezed,
+    Object requisite = freezed,
+    Object experiencePoints = freezed,
+    Object creator = freezed,
+    Object creationDate = freezed,
+    Object modificationDate = freezed,
+    Object tags = freezed,
+  }) {
+    return _then(_Achievement(
+      id: id == freezed ? _value.id : id as int,
+      name: name == freezed ? _value.name : name as Name,
+      description: description == freezed
+          ? _value.description
+          : description as EntityDescription,
+      imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
+      type: type == freezed ? _value.type : type as String,
+      requisite: requisite == freezed ? _value.requisite : requisite as int,
+      experiencePoints: experiencePoints == freezed
+          ? _value.experiencePoints
+          : experiencePoints as ExperiencePoints,
+      creator: creator == freezed ? _value.creator : creator as User,
+      creationDate: creationDate == freezed
+          ? _value.creationDate
+          : creationDate as PastDate,
+      modificationDate: modificationDate == freezed
+          ? _value.modificationDate
+          : modificationDate as PastDate,
+      tags: tags == freezed ? _value.tags : tags as TagSet,
+    ));
+  }
+}
+
+class _$_Achievement implements _Achievement {
+  const _$_Achievement(
+      {@required this.id,
+      @required this.name,
+      @required this.description,
+      @required this.imageURL,
+      @required this.type,
+      @required this.requisite,
+      @required this.experiencePoints,
+      @required this.creator,
+      @required this.creationDate,
+      @required this.modificationDate,
+      @required this.tags})
+      : assert(id != null),
+        assert(name != null),
+        assert(description != null),
+        assert(imageURL != null),
+        assert(type != null),
+        assert(requisite != null),
+        assert(experiencePoints != null),
+        assert(creator != null),
+        assert(creationDate != null),
+        assert(modificationDate != null),
+        assert(tags != null);
+
+  @override
+  final int id;
+  @override
+  final Name name;
+  @override
+  final EntityDescription description;
+  @override
+  final String imageURL;
+  @override
+  final String type;
+  @override
+  final int requisite;
+  @override
+  final ExperiencePoints experiencePoints;
+  @override
+  final User creator;
+  @override
+  final PastDate creationDate;
+  @override
+  final PastDate modificationDate;
+  @override
+  final TagSet tags;
+
+  @override
+  String toString() {
+    return 'Achievement(id: $id, name: $name, description: $description, imageURL: $imageURL, type: $type, requisite: $requisite, experiencePoints: $experiencePoints, creator: $creator, creationDate: $creationDate, modificationDate: $modificationDate, tags: $tags)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _Achievement &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
+            (identical(other.imageURL, imageURL) ||
+                const DeepCollectionEquality()
+                    .equals(other.imageURL, imageURL)) &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.requisite, requisite) ||
+                const DeepCollectionEquality()
+                    .equals(other.requisite, requisite)) &&
+            (identical(other.experiencePoints, experiencePoints) ||
+                const DeepCollectionEquality()
+                    .equals(other.experiencePoints, experiencePoints)) &&
+            (identical(other.creator, creator) ||
+                const DeepCollectionEquality()
+                    .equals(other.creator, creator)) &&
+            (identical(other.creationDate, creationDate) ||
+                const DeepCollectionEquality()
+                    .equals(other.creationDate, creationDate)) &&
+            (identical(other.modificationDate, modificationDate) ||
+                const DeepCollectionEquality()
+                    .equals(other.modificationDate, modificationDate)) &&
+            (identical(other.tags, tags) ||
+                const DeepCollectionEquality().equals(other.tags, tags)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(description) ^
+      const DeepCollectionEquality().hash(imageURL) ^
+      const DeepCollectionEquality().hash(type) ^
+      const DeepCollectionEquality().hash(requisite) ^
+      const DeepCollectionEquality().hash(experiencePoints) ^
+      const DeepCollectionEquality().hash(creator) ^
+      const DeepCollectionEquality().hash(creationDate) ^
+      const DeepCollectionEquality().hash(modificationDate) ^
+      const DeepCollectionEquality().hash(tags);
+
+  @override
+  _$AchievementCopyWith<_Achievement> get copyWith =>
+      __$AchievementCopyWithImpl<_Achievement>(this, _$identity);
+}
+
+abstract class _Achievement implements Achievement {
+  const factory _Achievement(
+      {@required int id,
+      @required Name name,
+      @required EntityDescription description,
+      @required String imageURL,
+      @required String type,
+      @required int requisite,
+      @required ExperiencePoints experiencePoints,
+      @required User creator,
+      @required PastDate creationDate,
+      @required PastDate modificationDate,
+      @required TagSet tags}) = _$_Achievement;
+
+  @override
+  int get id;
+  @override
+  Name get name;
+  @override
+  EntityDescription get description;
+  @override
+  String get imageURL;
+  @override
+  String get type;
+  @override
+  int get requisite;
+  @override
+  ExperiencePoints get experiencePoints;
+  @override
+  User get creator;
+  @override
+  PastDate get creationDate;
+  @override
+  PastDate get modificationDate;
+  @override
+  TagSet get tags;
+  @override
+  _$AchievementCopyWith<_Achievement> get copyWith;
+}

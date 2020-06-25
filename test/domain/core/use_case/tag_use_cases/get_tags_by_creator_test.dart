@@ -9,6 +9,7 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 
 import '../../../../constant_descriptions.dart';
+import '../../methods/create_stream.dart';
 import '../../repository/mock_tag_repository.dart';
 
 void main() {
@@ -35,9 +36,9 @@ void main() {
     "Should get a List of Tags by a given creator id",
     () async {
       // Arrange
-      when(mockTagRepository.getTagsByCreator(any)).thenAnswer((_) async => right(tagList));
+      when(mockTagRepository.getTagsByCreator(any)).thenAnswer((_) => createStream(right(tagList)));
       // Act
-      final result = await useCase(params);
+      final result = await _act(useCase, params);
       // Assert
       expect(result, right(tagList));
       _verifyInteractions(mockTagRepository);
@@ -51,9 +52,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: errorString));
-          when(mockTagRepository.getTagsByCreator(any)).thenAnswer((_) async => left(failure));
+          when(mockTagRepository.getTagsByCreator(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase, params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockTagRepository);
@@ -64,9 +65,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
-          when(mockTagRepository.getTagsByCreator(any)).thenAnswer((_) async => left(failure));
+          when(mockTagRepository.getTagsByCreator(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase, params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockTagRepository);
@@ -77,9 +78,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());
-          when(mockTagRepository.getTagsByCreator(any)).thenAnswer((_) async => left(failure));
+          when(mockTagRepository.getTagsByCreator(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase, params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockTagRepository);
@@ -87,6 +88,15 @@ void main() {
       );
     },
   );
+}
+
+Future<Either<Failure, List<Tag>>> _act(GetTagsByCreator useCase, Params params) async {
+  final resultStream = useCase(params);
+  Either<Failure, List<Tag>> result;
+  await for (final either in resultStream) {
+    result = either;
+  }
+  return result;
 }
 
 void _verifyInteractions(MockTagRepository mockTagRepository) {

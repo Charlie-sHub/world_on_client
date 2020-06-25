@@ -8,6 +8,7 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/search/use_case/search_users_by_username.dart';
 
 import '../../../constant_descriptions.dart';
+import '../../core/methods/create_stream.dart';
 import '../repository/mock_search_repository.dart';
 
 void main() {
@@ -55,9 +56,9 @@ void main() {
     "Should return a Set of Users",
     () async {
       // Arrange
-      when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) async => right(usersFoundByUsername));
+      when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) => createStream(right(usersFoundByUsername)));
       // Act
-      final result = await useCase(params);
+      final result = await _act(useCase, params);
       // Assert
       expect(result, right(usersFoundByUsername));
       _verifyInteractions(mockSearchRepository);
@@ -71,9 +72,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
-          when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) async => left(failure));
+          when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase, params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockSearchRepository);
@@ -84,9 +85,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: errorString));
-          when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) async => left(failure));
+          when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase, params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockSearchRepository);
@@ -97,9 +98,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());
-          when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) async => left(failure));
+          when(mockSearchRepository.searchUsersByUserName(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase, params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockSearchRepository);
@@ -107,6 +108,15 @@ void main() {
       );
     },
   );
+}
+
+Future<Either<Failure, Set<User>>> _act(SearchUsersByUsername useCase, Params params) async {
+  final resultStream = useCase(params);
+  Either<Failure, Set<User>> result;
+  await for (final either in resultStream) {
+    result = either;
+  }
+  return result;
 }
 
 void _verifyInteractions(MockSearchRepository mockSearchRepository) {

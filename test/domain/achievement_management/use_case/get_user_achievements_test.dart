@@ -14,6 +14,7 @@ import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 
 import '../../../constant_descriptions.dart';
+import '../../core/methods/create_stream.dart';
 import '../repository/mock_achievement_repository.dart';
 
 void main() {
@@ -25,7 +26,6 @@ void main() {
       useCase = GetUserAchievements(mockAchievementRepository);
     },
   );
-  final params = NoParams();
   final achievement = Achievement(
     id: 1,
     name: Name("Test Achievement"),
@@ -44,9 +44,9 @@ void main() {
     "Should return a Set of achievements",
     () async {
       // Arrange
-      when(mockAchievementRepository.getUserAchievements()).thenAnswer((_) async => right(achievementSet));
+      when(mockAchievementRepository.getUserAchievements()).thenAnswer((_) => createStream(right(achievementSet)));
       // Act
-      final result = await useCase(params);
+      final result = await _act(useCase);
       // Assert
       expect(result, right(achievementSet));
       _verifyInteractions(mockAchievementRepository);
@@ -60,9 +60,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
-          when(mockAchievementRepository.getUserAchievements()).thenAnswer((_) async => left(failure));
+          when(mockAchievementRepository.getUserAchievements()).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockAchievementRepository);
@@ -73,9 +73,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());
-          when(mockAchievementRepository.getUserAchievements()).thenAnswer((_) async => left(failure));
+          when(mockAchievementRepository.getUserAchievements()).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockAchievementRepository);
@@ -83,6 +83,15 @@ void main() {
       );
     },
   );
+}
+
+Future<Either<Failure, Set<Achievement>>> _act(GetUserAchievements useCase) async {
+  final resultStream = useCase(NoParams());
+  Either<Failure, Set<Achievement>> result;
+  await for (final either in resultStream) {
+    result = either;
+  }
+  return result;
 }
 
 void _verifyInteractions(MockAchievementRepository mockAchievementRepository) {

@@ -5,14 +5,14 @@ import 'package:worldon/domain/core/entities/experience.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 
-class LoadExperiencesDone implements AsyncUseCase<Set<Experience>, Params> {
+class LoadExperiencesDone implements StreamUseCase<Set<Experience>, Params> {
   final ProfileRepositoryInterface repository;
 
   LoadExperiencesDone(this.repository);
 
   @override
-  Future<Either<Failure, Set<Experience>>> call(Params params) async {
-    return repository.loadExperiencesDone(params.id);
+  Stream<Either<Failure, Set<Experience>>> call(Params params) async* {
+    yield* repository.loadExperiencesDone(params.id);
   }
 }
 

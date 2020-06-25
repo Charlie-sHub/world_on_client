@@ -10,6 +10,7 @@ import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 /// [Achievement] entity class.
 ///
 /// Achievements can be earned by Users for doing certain things in the application, getting rewarded for doing so.
+@Deprecated("Use the freezed classes")
 class Achievement extends Equatable {
   // TODO: rework the entities using freezed
   // Freezed will allow JSON conversion to be easy to make but then the JSON conversion logic would be in the domain layer instead of the data layer
@@ -25,7 +26,7 @@ class Achievement extends Equatable {
   final PastDate creationDate;
   final PastDate modificationDate;
   final TagSet tags;
-
+  
   const Achievement({
     @required this.id,
     @required this.name,
@@ -39,19 +40,19 @@ class Achievement extends Equatable {
     @required this.modificationDate,
     @required this.tags,
   });
-
+  
   @override
   List<Object> get props => [
-        id,
-        name,
-        description,
-        imageURL,
-        type,
-        requisite,
-        experiencePoints,
-        creator,
-        creationDate,
-        modificationDate,
-        tags,
-      ];
+    id,
+    name,
+    description,
+    imageURL,
+    type,
+    requisite,
+    experiencePoints,
+    creator,
+    creationDate,
+    modificationDate,
+    tags,
+  ];
 }

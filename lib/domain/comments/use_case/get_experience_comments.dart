@@ -5,14 +5,14 @@ import 'package:worldon/domain/comments/repository/comment_repository_interface.
 import 'package:worldon/domain/core/entities/comment.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
-class GetExperienceComments implements AsyncUseCase<Set<Comment>, Params> {
+class GetExperienceComments implements StreamUseCase<Set<Comment>, Params> {
   final CommentRepositoryInterface _repository;
 
   GetExperienceComments(this._repository);
 
   @override
-  Future<Either<Failure, Set<Comment>>> call(Params params) async {
-    return _repository.getExperienceComments(params.experienceId);
+  Stream<Either<Failure, Set<Comment>>> call(Params params) async* {
+    yield* _repository.getExperienceComments(params.experienceId);
   }
 }
 

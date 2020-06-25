@@ -6,14 +6,14 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/search/repository/search_repository_interface.dart';
 
-class SearchUsersByUsername implements AsyncUseCase<Set<User>, Params> {
+class SearchUsersByUsername implements StreamUseCase<Set<User>, Params> {
   final SearchRepositoryInterface _repository;
 
   SearchUsersByUsername(this._repository);
 
   @override
-  Future<Either<Failure, Set<User>>> call(Params params) async {
-    return _repository.searchUsersByUserName(params.username);
+  Stream<Either<Failure, Set<User>>> call(Params params) async* {
+    yield* _repository.searchUsersByUserName(params.username);
   }
 }
 

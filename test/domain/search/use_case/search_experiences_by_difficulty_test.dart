@@ -8,6 +8,7 @@ import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/search/use_case/search_experiences_by_difficulty.dart';
 
 import '../../../constant_descriptions.dart';
+import '../../core/methods/create_stream.dart';
 import '../repository/mock_search_repository.dart';
 
 void main() {
@@ -45,9 +46,9 @@ void main() {
     "Should return a Set of Experiences",
     () async {
       // Arrange
-      when(mockSearchRepository.searchExperiencesByDifficulty(any)).thenAnswer((_) async => right(experiencesFound));
+      when(mockSearchRepository.searchExperiencesByDifficulty(any)).thenAnswer((_) => createStream(right(experiencesFound)));
       // Act
-      final result = await useCase(params);
+      final result = await _act(useCase, params);
       // Assert
       expect(result, right(experiencesFound));
       _verifyInteractions(mockSearchRepository);
@@ -61,9 +62,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
-          when(mockSearchRepository.searchExperiencesByDifficulty(any)).thenAnswer((_) async => left(failure));
+          when(mockSearchRepository.searchExperiencesByDifficulty(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase, params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockSearchRepository);
@@ -74,9 +75,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: errorString));
-          when(mockSearchRepository.searchExperiencesByDifficulty(any)).thenAnswer((_) async => left(failure));
+          when(mockSearchRepository.searchExperiencesByDifficulty(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase, params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockSearchRepository);
@@ -87,9 +88,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());
-          when(mockSearchRepository.searchExperiencesByDifficulty(any)).thenAnswer((_) async => left(failure));
+          when(mockSearchRepository.searchExperiencesByDifficulty(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase, params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockSearchRepository);
@@ -97,6 +98,15 @@ void main() {
       );
     },
   );
+}
+
+Future<Either<Failure, Set<Experience>>> _act(SearchExperiencesByDifficulty useCase, Params params) async {
+  final resultStream = useCase(params);
+  Either<Failure, Set<Experience>> result;
+  await for (final either in resultStream) {
+    result = either;
+  }
+  return result;
 }
 
 void _verifyInteractions(MockSearchRepository mockSearchRepository) {

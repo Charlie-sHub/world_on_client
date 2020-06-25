@@ -5,14 +5,14 @@ import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 
-class LoadFollowingUsers implements AsyncUseCase<Set<User>, Params> {
+class LoadFollowingUsers implements StreamUseCase<Set<User>, Params> {
   final ProfileRepositoryInterface repository;
 
   LoadFollowingUsers(this.repository);
 
   @override
-  Future<Either<Failure, Set<User>>> call(Params params) async {
-    return repository.loadFollowingUsers(params.id);
+  Stream<Either<Failure, Set<User>>> call(Params params) async* {
+    yield* repository.loadFollowingUsers(params.id);
   }
 }
 

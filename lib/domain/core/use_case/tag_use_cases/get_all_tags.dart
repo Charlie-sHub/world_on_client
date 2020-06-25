@@ -5,13 +5,13 @@ import 'package:worldon/domain/core/repository/tag_repository_interface.dart';
 
 import '../use_case.dart';
 
-class GetAllTags implements AsyncUseCase<List<Tag>, NoParams> {
+class GetAllTags implements StreamUseCase<List<Tag>, NoParams> {
   final TagCoreRepositoryInterface _repository;
 
   GetAllTags(this._repository);
 
   @override
-  Future<Either<Failure, List<Tag>>> call(NoParams params) async {
-    return _repository.getAllTags();
+  Stream<Either<Failure, List<Tag>>> call(NoParams params) async* {
+    yield* _repository.getAllTags();
   }
 }

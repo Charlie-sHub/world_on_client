@@ -15,6 +15,7 @@ import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/experience_log/use_case/load_user_log.dart';
 
 import '../../../constant_descriptions.dart';
+import '../../core/methods/create_stream.dart';
 import '../repository/mock_experience_log_repository.dart';
 
 void main() {
@@ -53,9 +54,9 @@ void main() {
     "Should return a Set of Experiences",
     () async {
       // Arrange
-      when(mockExperienceLogRepository.loadUserLog()).thenAnswer((_) async => right(experienceSet));
+      when(mockExperienceLogRepository.loadUserLog()).thenAnswer((_) => createStream(right(experienceSet)));
       // Act
-      final result = await useCase(params);
+      final result = await _act(useCase, params);
       // Assert
       expect(result, right(experienceSet));
       _verifyInteractions(mockExperienceLogRepository);
@@ -69,9 +70,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
-          when(mockExperienceLogRepository.loadUserLog()).thenAnswer((_) async => left(failure));
+          when(mockExperienceLogRepository.loadUserLog()).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase, params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockExperienceLogRepository);
@@ -82,9 +83,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: errorString));
-          when(mockExperienceLogRepository.loadUserLog()).thenAnswer((_) async => left(failure));
+          when(mockExperienceLogRepository.loadUserLog()).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase, params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockExperienceLogRepository);
@@ -95,9 +96,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());
-          when(mockExperienceLogRepository.loadUserLog()).thenAnswer((_) async => left(failure));
+          when(mockExperienceLogRepository.loadUserLog()).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase, params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockExperienceLogRepository);
@@ -105,6 +106,15 @@ void main() {
       );
     },
   );
+}
+
+Future<Either<Failure, Set<Experience>>> _act(LoadUserLog useCase, NoParams params) async {
+  final resultStream = useCase(params);
+  Either<Failure, Set<Experience>> result;
+  await for (final either in resultStream) {
+    result = either;
+  }
+  return result;
 }
 
 void _verifyInteractions(MockExperienceLogRepository mockExperienceLogRepository) {

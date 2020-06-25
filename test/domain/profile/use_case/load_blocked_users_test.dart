@@ -7,6 +7,7 @@ import 'package:worldon/domain/core/entities/user.dart';
 import 'package:worldon/domain/profile/use_case/load_blocked_users.dart';
 
 import '../../../constant_descriptions.dart';
+import '../../core/methods/create_stream.dart';
 import '../repository/mock_profile_repository.dart';
 
 void main() {
@@ -53,9 +54,9 @@ void main() {
     "Should return a Set of Users if everything goes well",
     () async {
       // Arrange
-      when(mockProfileRepository.loadBlockedUsers(any)).thenAnswer((_) async => right(blockedUsers));
+      when(mockProfileRepository.loadBlockedUsers(any)).thenAnswer((_) => createStream(right(blockedUsers)));
       // Act
-      final result = await useCase(params);
+      final result = await _act(useCase, params);
       // Assert
       expect(result, right(blockedUsers));
       _verifyInteractions(mockProfileRepository);
@@ -69,9 +70,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
-          when(mockProfileRepository.loadBlockedUsers(any)).thenAnswer((_) async => left(failure));
+          when(mockProfileRepository.loadBlockedUsers(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase, params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockProfileRepository);
@@ -82,9 +83,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: errorString));
-          when(mockProfileRepository.loadBlockedUsers(any)).thenAnswer((_) async => left(failure));
+          when(mockProfileRepository.loadBlockedUsers(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase, params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockProfileRepository);
@@ -95,9 +96,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());
-          when(mockProfileRepository.loadBlockedUsers(any)).thenAnswer((_) async => left(failure));
+          when(mockProfileRepository.loadBlockedUsers(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase, params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockProfileRepository);
@@ -105,6 +106,15 @@ void main() {
       );
     },
   );
+}
+
+Future<Either<Failure, Set<User>>> _act(LoadBlockedUsers useCase, Params params) async {
+  final resultStream = useCase(params);
+  Either<Failure, Set<User>> result;
+  await for (final either in resultStream) {
+    result = either;
+  }
+  return result;
 }
 
 void _verifyInteractions(MockProfileRepository mockProfileRepository) {

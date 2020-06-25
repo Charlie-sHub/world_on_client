@@ -9,6 +9,7 @@ import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 
 import '../../../constant_descriptions.dart';
+import '../../core/methods/create_stream.dart';
 import '../repository/mock_comment_repository.dart';
 
 void main() {
@@ -33,9 +34,9 @@ void main() {
     "Should return a Set of Comments",
     () async {
       // Arrange
-      when(mockCommentRepository.getUserComments(any)).thenAnswer((_) async => right(commentSet));
+      when(mockCommentRepository.getUserComments(any)).thenAnswer((_) => createStream(right(commentSet)));
       // Act
-      final result = await useCase(params);
+      final result = await _act(useCase, params);
       // Assert
       expect(result, right(commentSet));
       _verifyInteractions(mockCommentRepository);
@@ -49,9 +50,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
-          when(mockCommentRepository.getUserComments(any)).thenAnswer((_) async => left(failure));
+          when(mockCommentRepository.getUserComments(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase, params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockCommentRepository);
@@ -62,9 +63,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: errorString));
-          when(mockCommentRepository.getUserComments(any)).thenAnswer((_) async => left(failure));
+          when(mockCommentRepository.getUserComments(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase, params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockCommentRepository);
@@ -75,9 +76,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());
-          when(mockCommentRepository.getUserComments(any)).thenAnswer((_) async => left(failure));
+          when(mockCommentRepository.getUserComments(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase, params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockCommentRepository);
@@ -85,6 +86,15 @@ void main() {
       );
     },
   );
+}
+
+Future<Either<Failure, Set<Comment>>> _act(GetUserComments useCase, Params params) async {
+  final resultStream = useCase(params);
+  Either<Failure, Set<Comment>> result;
+  await for (final either in resultStream) {
+    result = either;
+  }
+  return result;
 }
 
 void _verifyInteractions(MockCommentRepository mockCommentRepository) {

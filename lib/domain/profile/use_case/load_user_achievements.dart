@@ -5,14 +5,14 @@ import 'package:worldon/domain/core/entities/achievement.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 
-class LoadUserAchievements implements AsyncUseCase<Set<Achievement>, Params> {
+class LoadUserAchievements implements StreamUseCase<Set<Achievement>, Params> {
   final ProfileRepositoryInterface _repository;
 
   LoadUserAchievements(this._repository);
 
   @override
-  Future<Either<Failure, Set<Achievement>>> call(Params params) async {
-    return _repository.loadUserAchievements(params.userId);
+  Stream<Either<Failure, Set<Achievement>>> call(Params params) async* {
+    yield* _repository.loadUserAchievements(params.userId);
   }
 }
 

@@ -15,6 +15,7 @@ import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 /// [Experience] entity class.
 ///
 /// [Experience]s are the core of World On, little [User] created adventures for other [User]s to enjoy.
+@Deprecated("Use the freezed classes")
 class Experience extends Equatable {
   final int id;
   final Name name;
@@ -32,7 +33,7 @@ class Experience extends Equatable {
   final Set<Comment> comments;
   final Set<User> likedBy;
   final Set<User> doneBy;
-
+  
   const Experience({
     @required this.id,
     @required this.name,
@@ -51,24 +52,24 @@ class Experience extends Equatable {
     @required this.likedBy,
     @required this.doneBy,
   });
-
+  
   @override
   List<Object> get props => [
-        id,
-        name,
-        description,
-        imageURLs,
-        coordinates,
-        location,
-        creator,
-        difficulty,
-        creationDate,
-        modificationDate,
-        comments,
-        objectives,
-        rewards,
-        tags,
-        likedBy,
-        doneBy,
-      ];
+    id,
+    name,
+    description,
+    imageURLs,
+    coordinates,
+    location,
+    creator,
+    difficulty,
+    creationDate,
+    modificationDate,
+    comments,
+    objectives,
+    rewards,
+    tags,
+    likedBy,
+    doneBy,
+  ];
 }

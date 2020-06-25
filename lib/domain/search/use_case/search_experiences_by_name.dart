@@ -6,14 +6,14 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/search/repository/search_repository_interface.dart';
 
-class SearchExperiencesByName implements AsyncUseCase<Set<Experience>, Params> {
+class SearchExperiencesByName implements StreamUseCase<Set<Experience>, Params> {
   final SearchRepositoryInterface _repository;
 
   SearchExperiencesByName(this._repository);
 
   @override
-  Future<Either<Failure, Set<Experience>>> call(Params params) async {
-    return _repository.searchExperiencesByName(params.name);
+  Stream<Either<Failure, Set<Experience>>> call(Params params) async* {
+    yield* _repository.searchExperiencesByName(params.name);
   }
 }
 

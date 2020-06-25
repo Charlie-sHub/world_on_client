@@ -20,8 +20,8 @@ abstract class CommentRepositoryInterface {
   Future<Either<Failure, Unit>> editComment(Comment comment);
 
   /// Gets the [Comment]s of an [Experience]
-  Future<Either<Failure, Set<Comment>>> getExperienceComments(int experienceId);
+  Stream<Either<Failure, Set<Comment>>> getExperienceComments(int experienceId);
 
   /// Gets the [Comment]s of a given [User]
-  Future<Either<Failure, Set<Comment>>> getUserComments(int userId);
+  Stream<Either<Failure, Set<Comment>>> getUserComments(int userId);
 }

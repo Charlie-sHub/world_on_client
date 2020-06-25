@@ -8,6 +8,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/notifications/use_case/load_notifications.dart';
 
 import '../../../constant_descriptions.dart';
+import '../../core/methods/create_stream.dart';
 import '../repository/mock_notification_repository.dart';
 
 void main() {
@@ -35,9 +36,9 @@ void main() {
     "Should return a list of Notifications",
     () async {
       // Arrange
-      when(mockNotificationRepository.loadNotifications()).thenAnswer((_) async => right(notificationList));
+      when(mockNotificationRepository.loadNotifications()).thenAnswer((_) => createStream(right(notificationList)));
       // Act
-      final result = await useCase(params);
+      final result = await _act(useCase, params);
       // Assert
       expect(result, right(notificationList));
       _verifyInteractions(mockNotificationRepository);
@@ -51,9 +52,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
-          when(mockNotificationRepository.loadNotifications()).thenAnswer((_) async => left(failure));
+          when(mockNotificationRepository.loadNotifications()).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase, params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockNotificationRepository);
@@ -64,9 +65,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());
-          when(mockNotificationRepository.loadNotifications()).thenAnswer((_) async => left(failure));
+          when(mockNotificationRepository.loadNotifications()).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase, params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockNotificationRepository);
@@ -74,6 +75,15 @@ void main() {
       );
     },
   );
+}
+
+Future<Either<Failure, List<Notification>>> _act(LoadNotifications useCase, NoParams params) async {
+  final resultStream = useCase(params);
+  Either<Failure, List<Notification>> result;
+  await for (final either in resultStream) {
+    result = either;
+  }
+  return result;
 }
 
 void _verifyInteractions(MockNotificationRepository mockNotificationRepository) {

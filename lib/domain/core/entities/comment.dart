@@ -7,13 +7,14 @@ import 'package:worldon/domain/core/validation/objects/past_date.dart';
 /// [Comment] entity class
 ///
 /// Comments are messages left by Users in a Experience.
+@Deprecated("Use the freezed classes")
 class Comment extends Equatable {
   final int id;
   final User poster;
   final CommentContent content;
   final PastDate creationDate;
   final PastDate modificationDate;
-
+  
   const Comment({
     @required this.id,
     @required this.poster,
@@ -21,13 +22,13 @@ class Comment extends Equatable {
     @required this.creationDate,
     @required this.modificationDate,
   });
-
+  
   @override
   List<Object> get props => [
-        id,
-        poster,
-        content,
-        creationDate,
-        modificationDate,
-      ];
+    id,
+    poster,
+    content,
+    creationDate,
+    modificationDate,
+  ];
 }

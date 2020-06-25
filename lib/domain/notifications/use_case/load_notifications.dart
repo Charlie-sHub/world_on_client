@@ -4,13 +4,13 @@ import 'package:worldon/domain/core/entities/notification.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/notifications/repository/notification_repository_interface.dart';
 
-class LoadNotifications implements AsyncUseCase<List<Notification>, NoParams> {
+class LoadNotifications implements StreamUseCase<List<Notification>, NoParams> {
   final NotificationRepositoryInterface _repository;
 
   LoadNotifications(this._repository);
 
   @override
-  Future<Either<Failure, List<Notification>>> call(NoParams params) async {
-    return _repository.loadNotifications();
+  Stream<Either<Failure, List<Notification>>> call(NoParams params) async* {
+    yield* _repository.loadNotifications();
   }
 }
