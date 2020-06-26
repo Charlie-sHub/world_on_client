@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/core/entities/user.dart';
+import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/search/use_case/search_users_by_name.dart';
 
@@ -20,38 +20,8 @@ void main() {
       useCase = SearchUsersByName(mockSearchRepository);
     },
   );
-  final name = Name("test");
-  final params = Params(name: name);
-  final usersFoundByName = {
-    User(
-      id: null,
-      name: name,
-      username: null,
-      password: null,
-      email: null,
-      birthday: null,
-      description: null,
-      imageURL: null,
-      level: null,
-      experiencePoints: null,
-      privacy: null,
-      adminPowers: null,
-      enabled: null,
-      lastLogin: null,
-      creationDate: null,
-      modificationDate: null,
-      options: null,
-      blockedUsers: null,
-      followedUsers: null,
-      devices: null,
-      systems: null,
-      interests: null,
-      achievements: null,
-      experiencesDone: null,
-      experiencesLiked: null,
-      experiencesToDo: null,
-    ),
-  };
+  final params = Params(name: Name("test"));
+  final usersFoundByName = {User.empty()};
   test(
     "Should return a Set of Users",
     () async {

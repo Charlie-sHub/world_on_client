@@ -3,9 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/core/entities/tag.dart';
-import 'package:worldon/domain/core/validation/objects/name.dart';
-import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/tag_management/use_case/get_tag.dart';
 
 import '../../../constant_descriptions.dart';
@@ -20,14 +18,9 @@ void main() {
       useCase = GetTag(mockTagManagementRepository);
     },
   );
-  final params = Params(id: 1);
-  final tag = Tag(
-    id: 1,
-    creationDate: PastDate(DateTime.now()),
-    creator: null,
-    modificationDate: PastDate(DateTime.now()),
-    name: Name("Sports"),
-  );
+  const id = 1;
+  final params = Params(id: id);
+  final tag = Tag.empty().copyWith(id: id);
   test(
     "Should get the Tag with a given id if successful",
     () async {

@@ -4,9 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/comments/use_case/get_experience_comments.dart';
-import 'package:worldon/domain/core/entities/comment.dart';
-import 'package:worldon/domain/core/validation/objects/comment_content.dart';
-import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/entities/comment/comment.dart';
 
 import '../../../constant_descriptions.dart';
 import '../../core/methods/create_stream.dart';
@@ -22,14 +20,7 @@ void main() {
     },
   );
   final params = Params(experienceId: 1);
-  final comment = Comment(
-    id: 1,
-    poster: null,
-    content: CommentContent("This is a test"),
-    creationDate: PastDate(DateTime.now()),
-    modificationDate: PastDate(DateTime.now()),
-  );
-  final Set<Comment> commentSet = {comment};
+  final Set<Comment> commentSet = {Comment.empty()};
   test(
     "Should return a Set of Comments",
     () async {

@@ -12,7 +12,7 @@ T _$identity<T>(T value) => value;
 class _$DeviceTearOff {
   const _$DeviceTearOff();
 
-  _Device call({@required int id, @required String name, @required String type, @required String company}) {
+  _Device call({int id, @required String name, @required String type, @required String company}) {
     return _Device(
       id: id,
       name: name,
@@ -27,19 +27,16 @@ const $Device = _$DeviceTearOff();
 
 mixin _$Device {
   int get id;
-
   String get name;
-
   String get type;
-
   String get company;
 
   $DeviceCopyWith<Device> get copyWith;
 }
 
 abstract class $DeviceCopyWith<$Res> {
-  factory $DeviceCopyWith(Device value, $Res Function(Device) then) = _$DeviceCopyWithImpl<$Res>;
-
+  factory $DeviceCopyWith(Device value, $Res Function(Device) then) =
+  _$DeviceCopyWithImpl<$Res>;
   $Res call({int id, String name, String type, String company});
 }
 
@@ -47,7 +44,6 @@ class _$DeviceCopyWithImpl<$Res> implements $DeviceCopyWith<$Res> {
   _$DeviceCopyWithImpl(this._value, this._then);
 
   final Device _value;
-
   // ignore: unused_field
   final $Res Function(Device) _then;
 
@@ -68,14 +64,16 @@ class _$DeviceCopyWithImpl<$Res> implements $DeviceCopyWith<$Res> {
 }
 
 abstract class _$DeviceCopyWith<$Res> implements $DeviceCopyWith<$Res> {
-  factory _$DeviceCopyWith(_Device value, $Res Function(_Device) then) = __$DeviceCopyWithImpl<$Res>;
-
+  factory _$DeviceCopyWith(_Device value, $Res Function(_Device) then) =
+  __$DeviceCopyWithImpl<$Res>;
   @override
   $Res call({int id, String name, String type, String company});
 }
 
-class __$DeviceCopyWithImpl<$Res> extends _$DeviceCopyWithImpl<$Res> implements _$DeviceCopyWith<$Res> {
-  __$DeviceCopyWithImpl(_Device _value, $Res Function(_Device) _then) : super(_value, (v) => _then(v as _Device));
+class __$DeviceCopyWithImpl<$Res> extends _$DeviceCopyWithImpl<$Res>
+  implements _$DeviceCopyWith<$Res> {
+  __$DeviceCopyWithImpl(_Device _value, $Res Function(_Device) _then)
+    : super(_value, (v) => _then(v as _Device));
 
   @override
   _Device get _value => super._value as _Device;
@@ -96,12 +94,15 @@ class __$DeviceCopyWithImpl<$Res> extends _$DeviceCopyWithImpl<$Res> implements 
   }
 }
 
-class _$_Device implements _Device {
-  const _$_Device({@required this.id, @required this.name, @required this.type, @required this.company})
-      : assert(id != null),
-        assert(name != null),
+class _$_Device extends _Device {
+  const _$_Device({this.id,
+    @required this.name,
+    @required this.type,
+    @required this.company})
+    : assert(name != null),
         assert(type != null),
-        assert(company != null);
+      assert(company != null),
+      super._();
 
   @override
   final int id;
@@ -121,10 +122,14 @@ class _$_Device implements _Device {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Device &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.company, company) || const DeepCollectionEquality().equals(other.company, company)));
+          (identical(other.id, id) ||
+            const DeepCollectionEquality().equals(other.id, id)) &&
+          (identical(other.name, name) ||
+            const DeepCollectionEquality().equals(other.name, name)) &&
+          (identical(other.type, type) ||
+            const DeepCollectionEquality().equals(other.type, type)) &&
+          (identical(other.company, company) ||
+            const DeepCollectionEquality().equals(other.company, company)));
   }
 
   @override
@@ -136,24 +141,26 @@ class _$_Device implements _Device {
       const DeepCollectionEquality().hash(company);
 
   @override
-  _$DeviceCopyWith<_Device> get copyWith => __$DeviceCopyWithImpl<_Device>(this, _$identity);
+  _$DeviceCopyWith<_Device> get copyWith =>
+    __$DeviceCopyWithImpl<_Device>(this, _$identity);
 }
 
-abstract class _Device implements Device {
-  const factory _Device({@required int id, @required String name, @required String type, @required String company}) = _$_Device;
+abstract class _Device extends Device {
+  const _Device._() : super._();
+  
+  const factory _Device({int id,
+    @required String name,
+    @required String type,
+    @required String company}) = _$_Device;
 
   @override
   int get id;
-
   @override
   String get name;
-
   @override
   String get type;
-
   @override
   String get company;
-
   @override
   _$DeviceCopyWith<_Device> get copyWith;
 }

@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/core/entities/tag.dart';
+import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/search/use_case/search_tags_by_name.dart';
 
@@ -20,17 +20,8 @@ void main() {
       useCase = SearchTagsByName(mockSearchRepository);
     },
   );
-  final name = Name("Test");
-  final params = Params(name: name);
-  final tagsFound = {
-    Tag(
-      name: name,
-      modificationDate: null,
-      creationDate: null,
-      id: null,
-      creator: null,
-    ),
-  };
+  final params = Params(name: Name("Test"));
+  final tagsFound = {Tag.empty()};
   test(
     "Should return a Set of Tags",
     () async {

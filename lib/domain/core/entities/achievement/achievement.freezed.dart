@@ -12,8 +12,7 @@ T _$identity<T>(T value) => value;
 class _$AchievementTearOff {
   const _$AchievementTearOff();
 
-  _Achievement call(
-      {@required int id,
+  _Achievement call({int id,
       @required Name name,
       @required EntityDescription description,
       @required String imageURL,
@@ -204,9 +203,8 @@ class __$AchievementCopyWithImpl<$Res> extends _$AchievementCopyWithImpl<$Res>
   }
 }
 
-class _$_Achievement implements _Achievement {
-  const _$_Achievement(
-      {@required this.id,
+class _$_Achievement extends _Achievement {
+  const _$_Achievement({this.id,
       @required this.name,
       @required this.description,
       @required this.imageURL,
@@ -217,8 +215,7 @@ class _$_Achievement implements _Achievement {
       @required this.creationDate,
       @required this.modificationDate,
       @required this.tags})
-      : assert(id != null),
-        assert(name != null),
+      : assert(name != null),
         assert(description != null),
         assert(imageURL != null),
         assert(type != null),
@@ -227,7 +224,8 @@ class _$_Achievement implements _Achievement {
         assert(creator != null),
         assert(creationDate != null),
         assert(modificationDate != null),
-        assert(tags != null);
+      assert(tags != null),
+      super._();
 
   @override
   final int id;
@@ -312,9 +310,9 @@ class _$_Achievement implements _Achievement {
       __$AchievementCopyWithImpl<_Achievement>(this, _$identity);
 }
 
-abstract class _Achievement implements Achievement {
-  const factory _Achievement(
-      {@required int id,
+abstract class _Achievement extends Achievement {
+  const _Achievement._() : super._();
+  const factory _Achievement({int id,
       @required Name name,
       @required EntityDescription description,
       @required String imageURL,

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/experience_points.dart';
@@ -12,9 +13,11 @@ part 'achievement.freezed.dart';
 ///
 /// [Achievement]s can be earned by [User]s for doing certain things in the application, getting rewarded for doing so.
 @freezed
-abstract class Achievement with _$Achievement {
+abstract class Achievement implements _$Achievement {
+  const Achievement._();
+
   const factory Achievement({
-    @required int id,
+    int id,
     @required Name name,
     @required EntityDescription description,
     // TODO: Make a value object and validator for image URLs from World On's back-end
@@ -28,5 +31,17 @@ abstract class Achievement with _$Achievement {
     @required PastDate modificationDate,
     @required TagSet tags,
   }) = _Achievement;
-// TODO: create factories for "empty" entities
+
+  factory Achievement.empty() => Achievement(
+        name: Name(""),
+        description: EntityDescription(""),
+        imageURL: "",
+        type: "",
+        requisite: 1,
+        experiencePoints: ExperiencePoints(1),
+        creator: User.empty(),
+        creationDate: PastDate(DateTime.now()),
+        modificationDate: PastDate(DateTime.now()),
+        tags: TagSet(<Tag>{Tag.empty()}),
+      );
 }

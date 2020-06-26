@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:worldon/core/error/failure.dart';
-import 'package:worldon/domain/core/entities/tag.dart';
-import 'package:worldon/domain/core/entities/user.dart';
+import 'package:worldon/domain/core/entities/tag/tag.dart';
+import 'package:worldon/domain/core/entities/user/user.dart';
 
 /// Abstract class of the [Tag] repository
 abstract class TagCoreRepositoryInterface {

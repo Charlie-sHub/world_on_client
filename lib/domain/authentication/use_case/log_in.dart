@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/repository/authentication_repository_interface.dart';
-import 'package:worldon/domain/core/entities/user.dart';
+import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
@@ -15,33 +15,9 @@ class LogIn implements AsyncUseCase<Unit, Params> {
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    final user = User(
+    final user = User.empty().copyWith(
       username: params.username,
       password: params.password,
-      creationDate: null,
-      name: null,
-      id: null,
-      systems: null,
-      interests: null,
-      followedUsers: null,
-      experiencesToDo: null,
-      experiencesLiked: null,
-      experiencesDone: null,
-      devices: null,
-      blockedUsers: null,
-      achievements: null,
-      adminPowers: null,
-      modificationDate: null,
-      birthday: null,
-      description: null,
-      email: null,
-      enabled: null,
-      experiencePoints: null,
-      imageURL: null,
-      lastLogin: null,
-      level: null,
-      options: null,
-      privacy: null,
     );
     return _repository.logIn(user);
   }

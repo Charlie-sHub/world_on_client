@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:worldon/core/error/failure.dart';
-import 'package:worldon/domain/core/entities/achievement.dart';
-import 'package:worldon/domain/core/entities/user.dart';
+import 'package:worldon/domain/core/entities/achievement/achievement.dart';
+import 'package:worldon/domain/core/entities/user/user.dart';
 
 /// Repository for the management of [Achievement]s.
 abstract class AchievementRepositoryInterface {

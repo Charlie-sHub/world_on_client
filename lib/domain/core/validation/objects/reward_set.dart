@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:worldon/domain/core/entities/Reward.dart';
+import 'package:worldon/domain/core/entities/reward/reward.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/value_object.dart';
 import 'package:worldon/domain/core/validation/validators/validate_max_set_length.dart';

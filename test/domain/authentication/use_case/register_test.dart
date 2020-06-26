@@ -4,6 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/authentication/use_case/register.dart';
+import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
@@ -32,7 +33,7 @@ void main() {
     birthday: PastDate(DateTime.now()),
     description: EntityDescription("For testing"),
     imageName: "test.png",
-    interests: null,
+    interests: <Tag>{},
   );
   test(
     descriptionReturnNothing,

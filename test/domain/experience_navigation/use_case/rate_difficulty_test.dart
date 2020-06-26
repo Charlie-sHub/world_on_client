@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/experience_navigation/use_case/rate_difficulty.dart';
 
 import '../../../constant_descriptions.dart';
@@ -19,7 +20,7 @@ void main() {
   );
   final params = Params(
     experienceId: 1,
-    difficulty: 1,
+    difficulty: Difficulty(1),
   );
   test(
     descriptionReturnNothing,

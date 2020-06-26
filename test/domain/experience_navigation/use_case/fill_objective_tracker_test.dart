@@ -1,12 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/core/error/failure.dart';
-import 'package:worldon/domain/core/entities/coordinates.dart';
-import 'package:worldon/domain/core/entities/objective.dart';
+import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
-import 'package:worldon/domain/core/validation/objects/entity_description.dart';
-import 'package:worldon/domain/core/validation/objects/latitude.dart';
-import 'package:worldon/domain/core/validation/objects/longitude.dart';
 import 'package:worldon/domain/experience_navigation/use_case/fill_objective_tracker.dart';
 
 import '../../../constant_descriptions.dart';
@@ -18,39 +14,15 @@ void main() {
       useCase = FillObjectiveTracker();
     },
   );
-  final objective1 = Objective(
-    id: 1,
-    description: EntityDescription("Test"),
-    coordinates: Coordinates(
-      latitude: Latitude(1.1),
-      longitude: Longitude(1.1),
-    ),
-    imageName: "test.jpg",
-  );
-  final objective2 = Objective(
-    id: 2,
-    description: EntityDescription("Test"),
-    coordinates: Coordinates(
-      latitude: Latitude(1.1),
-      longitude: Longitude(1.1),
-    ),
-    imageName: "test.jpg",
-  );
-  final objectiveNull = Objective(
-    id: null,
-    description: EntityDescription("Test"),
-    coordinates: Coordinates(
-      latitude: Latitude(1.1),
-      longitude: Longitude(1.1),
-    ),
-    imageName: "test.jpg",
-  );
+  final objective1 = Objective.empty().copyWith(id: 1);
+  final objective2 = Objective.empty().copyWith(id: 2);
+  final objectiveNull = Objective.empty().copyWith(id: null);
   final objectiveSet = {objective1, objective2};
+  final badObjectiveSet = {objective1, objectiveNull};
   final Map<int, bool> objectiveTracker = {
     1: false,
     2: false,
   };
-  final badObjectiveSet = {objective1, objectiveNull};
   test(
     "Should return a Map of int (corresponding to each Objective id) and bool",
     () async {

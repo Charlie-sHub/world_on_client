@@ -3,15 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/core/entities/coordinates.dart';
-import 'package:worldon/domain/core/entities/experience.dart';
+import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
-import 'package:worldon/domain/core/validation/objects/difficulty.dart';
-import 'package:worldon/domain/core/validation/objects/entity_description.dart';
-import 'package:worldon/domain/core/validation/objects/latitude.dart';
-import 'package:worldon/domain/core/validation/objects/longitude.dart';
-import 'package:worldon/domain/core/validation/objects/name.dart';
-import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/experience_log/use_case/load_user_log.dart';
 
 import '../../../constant_descriptions.dart';
@@ -28,27 +21,7 @@ void main() {
     },
   );
   final params = NoParams();
-  final experience = Experience(
-    id: 1,
-    name: Name("test"),
-    description: EntityDescription("It's a test"),
-    imageURLs: const {"test.jpg"},
-    coordinates: Coordinates(
-      latitude: Latitude(1.1),
-      longitude: Longitude(1.1),
-    ),
-    location: null,
-    creator: null,
-    difficulty: Difficulty(1),
-    creationDate: PastDate(DateTime.now()),
-    modificationDate: PastDate(DateTime.now()),
-    likedBy: null,
-    doneBy: null,
-    comments: null,
-    tags: null,
-    rewards: null,
-    objectives: null,
-  );
+  final experience = Experience.empty();
   final experienceSet = {experience};
   test(
     "Should return a Set of Experiences",

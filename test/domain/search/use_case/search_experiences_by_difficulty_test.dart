@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/core/entities/experience.dart';
+import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/search/use_case/search_experiences_by_difficulty.dart';
 
@@ -20,28 +20,8 @@ void main() {
       useCase = SearchExperiencesByDifficulty(mockSearchRepository);
     },
   );
-  final difficulty = Difficulty(1);
-  final params = Params(difficulty: difficulty);
-  final experiencesFound = {
-    Experience(
-      id: null,
-      name: null,
-      description: null,
-      imageURLs: null,
-      coordinates: null,
-      location: null,
-      creator: null,
-      difficulty: difficulty,
-      creationDate: null,
-      modificationDate: null,
-      comments: null,
-      objectives: null,
-      rewards: null,
-      tags: null,
-      likedBy: null,
-      doneBy: null,
-    ),
-  };
+  final params = Params(difficulty: Difficulty(1));
+  final experiencesFound = {Experience.empty()};
   test(
     "Should return a Set of Experiences",
     () async {

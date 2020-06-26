@@ -7,9 +7,15 @@ part 'options.freezed.dart';
 ///
 /// [Options] are chosen by the [User] to customize his experience in the app.
 @freezed
-abstract class Options with _$Options {
+abstract class Options implements _$Options {
+  const Options._();
+
   const factory Options({
-    @required int id,
+    int id,
     @required String languageCode,
   }) = _Options;
+
+  factory Options.empty() => const Options(
+        languageCode: "",
+      );
 }

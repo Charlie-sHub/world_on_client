@@ -12,8 +12,7 @@ T _$identity<T>(T value) => value;
 class _$ExperienceTearOff {
   const _$ExperienceTearOff();
 
-  _Experience call(
-      {@required int id,
+  _Experience call({int id,
       @required Name name,
       @required EntityDescription description,
       @required Set<String> imageURLs,
@@ -284,9 +283,8 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res>
   }
 }
 
-class _$_Experience implements _Experience {
-  const _$_Experience(
-      {@required this.id,
+class _$_Experience extends _Experience {
+  const _$_Experience({this.id,
       @required this.name,
       @required this.description,
       @required this.imageURLs,
@@ -302,8 +300,7 @@ class _$_Experience implements _Experience {
       @required this.comments,
       @required this.likedBy,
       @required this.doneBy})
-      : assert(id != null),
-        assert(name != null),
+      : assert(name != null),
         assert(description != null),
         assert(imageURLs != null),
         assert(coordinates != null),
@@ -317,7 +314,8 @@ class _$_Experience implements _Experience {
         assert(tags != null),
         assert(comments != null),
         assert(likedBy != null),
-        assert(doneBy != null);
+      assert(doneBy != null),
+      super._();
 
   @override
   final int id;
@@ -432,9 +430,9 @@ class _$_Experience implements _Experience {
       __$ExperienceCopyWithImpl<_Experience>(this, _$identity);
 }
 
-abstract class _Experience implements Experience {
-  const factory _Experience(
-      {@required int id,
+abstract class _Experience extends Experience {
+  const _Experience._() : super._();
+  const factory _Experience({int id,
       @required Name name,
       @required EntityDescription description,
       @required Set<String> imageURLs,

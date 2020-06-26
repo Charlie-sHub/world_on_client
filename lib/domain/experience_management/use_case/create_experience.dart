@@ -1,10 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:worldon/core/error/failure.dart';
-import 'package:worldon/domain/core/entities/coordinates.dart';
-import 'package:worldon/domain/core/entities/experience.dart';
-import 'package:worldon/domain/core/entities/location.dart';
-import 'package:worldon/domain/core/entities/user.dart';
+import 'package:worldon/domain/core/entities/comment/comment.dart';
+import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
+import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/domain/core/entities/location/location.dart';
+import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -33,12 +34,12 @@ class CreateExperience implements AsyncUseCase<Unit, Params> {
       difficulty: params.difficulty,
       creationDate: PastDate(DateTime.now()),
       modificationDate: PastDate(DateTime.now()),
-      comments: null,
+      comments: <Comment>{},
       objectives: params.objectives,
       rewards: params.rewards,
       tags: params.tags,
-      likedBy: null,
-      doneBy: null,
+      likedBy: <User>{},
+      doneBy: <User>{},
     );
     return _repository.createExperience(experience);
   }

@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:worldon/core/error/failure.dart';
-import 'package:worldon/domain/core/entities/coordinates.dart';
+import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/repository/geo_location_repository_interface.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 

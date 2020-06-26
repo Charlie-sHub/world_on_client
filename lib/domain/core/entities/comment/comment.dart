@@ -10,12 +10,21 @@ part 'comment.freezed.dart';
 ///
 /// [Comment]s are messages left by [User]s in a [Experience].
 @freezed
-abstract class Comment with _$Comment {
+abstract class Comment implements _$Comment {
+  const Comment._();
+
   const factory Comment({
-    @required int id,
+    int id,
     @required User poster,
     @required CommentContent content,
     @required PastDate creationDate,
     @required PastDate modificationDate,
   }) = _Comment;
+
+  factory Comment.empty() => Comment(
+        poster: User.empty(),
+        content: CommentContent(""),
+        creationDate: PastDate(DateTime.now()),
+        modificationDate: PastDate(DateTime.now()),
+      );
 }

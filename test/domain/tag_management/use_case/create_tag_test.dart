@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/tag_management/use_case/create_tag.dart';
 
@@ -20,7 +21,7 @@ void main() {
   );
   final name = Name("Sports");
   final params = Params(
-    creator: null,
+    creator: User.empty(),
     name: name,
   );
   test(

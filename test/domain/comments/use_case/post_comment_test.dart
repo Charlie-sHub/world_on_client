@@ -4,6 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/comments/use_case/post_comment.dart';
+import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 
 import '../../../constant_descriptions.dart';
@@ -20,7 +21,7 @@ void main() {
   );
   final params = Params(
     experienceId: 1,
-    user: null,
+    user: User.empty(),
     content: CommentContent("This is a test"),
   );
   test(

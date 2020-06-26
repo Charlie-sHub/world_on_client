@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/core/entities/achievement.dart';
+import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/profile/use_case/load_user_achievements.dart';
 
 import '../../../constant_descriptions.dart';
@@ -20,21 +20,7 @@ void main() {
     },
   );
   final params = Params(userId: 1);
-  final achievements = {
-    const Achievement(
-      id: null,
-      name: null,
-      description: null,
-      imageURL: null,
-      type: null,
-      requisite: null,
-      experiencePoints: null,
-      creator: null,
-      creationDate: null,
-      modificationDate: null,
-      tags: null,
-    ),
-  };
+  final achievements = {Achievement.empty()};
   test(
     "Should return a Set of Achievements",
     () async {

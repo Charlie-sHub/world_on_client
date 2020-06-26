@@ -1,9 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:worldon/core/error/failure.dart';
-import 'package:worldon/domain/core/entities/experience.dart';
-import 'package:worldon/domain/core/entities/user.dart';
+import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
+import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 
 /// Repository for the  experience navigation feature
 ///
@@ -11,7 +13,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 abstract class ExperienceNavigationRepositoryInterface {
   /// Sends the difficulty as rated by an [User] to the server to it updates the [Experience]'s difficulty value
   Future<Either<Failure, Unit>> rateDifficulty({
-    @required int difficulty,
+    @required Difficulty difficulty,
     @required int experienceId,
   });
 
@@ -26,8 +28,5 @@ abstract class ExperienceNavigationRepositoryInterface {
 
   /// Sends a pair of latitude and longitude values and returns a [Set] of [Experience]s located within a certain radius
   // Could Stream be used here?
-  Future<Either<Failure, Set<Experience>>> loadSurroundingExperiences({
-    @required double latitude,
-    @required double longitude,
-  });
+  Future<Either<Failure, Set<Experience>>> loadSurroundingExperiences(Coordinates coordinates);
 }

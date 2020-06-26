@@ -3,10 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/core/entities/experience.dart';
-import 'package:worldon/domain/core/entities/tag.dart';
-import 'package:worldon/domain/core/validation/objects/name.dart';
-import 'package:worldon/domain/core/validation/objects/tag_set.dart';
+import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/search/use_case/search_experiences_by_tags.dart';
 
 import '../../../constant_descriptions.dart';
@@ -22,37 +20,8 @@ void main() {
       useCase = SearchExperiencesByTags(mockSearchRepository);
     },
   );
-  final tag = Tag(
-    id: 1,
-    name: Name("test"),
-    creationDate: null,
-    modificationDate: null,
-    creator: null,
-  );
-  final tags = {
-    tag,
-  };
-  final params = Params(tags: tags);
-  final experiencesFound = {
-    Experience(
-      id: null,
-      name: null,
-      description: null,
-      imageURLs: null,
-      coordinates: null,
-      location: null,
-      creator: null,
-      difficulty: null,
-      creationDate: null,
-      modificationDate: null,
-      comments: null,
-      objectives: null,
-      rewards: null,
-      tags: TagSet(tags),
-      likedBy: null,
-      doneBy: null,
-    ),
-  };
+  final params = Params(tags: {Tag.empty()});
+  final experiencesFound = {Experience.empty()};
   test(
     "Should return a Set of Experiences",
     () async {

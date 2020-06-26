@@ -1,18 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:worldon/domain/core/entities/Reward.dart';
+import 'package:worldon/domain/core/entities/reward/reward.dart';
 import 'package:worldon/domain/core/validation/objects/reward_set.dart';
 
 import '../../../../constant_descriptions.dart';
 
 void main() {
-  final Set<Reward> validSet = {
-    const Reward(
-      id: null,
-      description: null,
-      name: null,
-      imageURL: null,
-    ),
-  };
+  final Set<Reward> validSet = {Reward.empty()};
   final Set<Reward> tooBigSet = _fillSet();
   test(
     descriptionValid,
@@ -43,41 +36,11 @@ void main() {
 // Maybe there's a better way to fill the Set
 Set<Reward> _fillSet() {
   return {
-    const Reward(
-      id: 1,
-      description: null,
-      name: null,
-      imageURL: null,
-    ),
-    const Reward(
-      id: 2,
-      description: null,
-      name: null,
-      imageURL: null,
-    ),
-    const Reward(
-      id: 3,
-      description: null,
-      name: null,
-      imageURL: null,
-    ),
-    const Reward(
-      id: 4,
-      description: null,
-      name: null,
-      imageURL: null,
-    ),
-    const Reward(
-      id: 5,
-      description: null,
-      name: null,
-      imageURL: null,
-    ),
-    const Reward(
-      id: 6,
-      description: null,
-      name: null,
-      imageURL: null,
-    ),
+    Reward.empty().copyWith(id: 1),
+    Reward.empty().copyWith(id: 2),
+    Reward.empty().copyWith(id: 3),
+    Reward.empty().copyWith(id: 4),
+    Reward.empty().copyWith(id: 5),
+    Reward.empty().copyWith(id: 6),
   };
 }

@@ -2,6 +2,9 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/location/location.dart';
+import 'package:worldon/domain/core/entities/objective/objective.dart';
+import 'package:worldon/domain/core/entities/reward/reward.dart';
+import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -17,9 +20,11 @@ part 'experience.freezed.dart';
 ///
 /// [Experience]s are the core of World On, little [User] created adventures for other [User]s to enjoy.
 @freezed
-abstract class Experience with _$Experience {
+abstract class Experience implements _$Experience {
+  const Experience._();
+
   const factory Experience({
-    @required int id,
+    int id,
     @required Name name,
     @required EntityDescription description,
     @required Set<String> imageURLs,
@@ -36,4 +41,22 @@ abstract class Experience with _$Experience {
     @required Set<User> likedBy,
     @required Set<User> doneBy,
   }) = _Experience;
+
+  factory Experience.empty() => Experience(
+        name: Name(""),
+        description: EntityDescription(""),
+        imageURLs: <String>{},
+        coordinates: Coordinates.empty(),
+        location: Location.empty(),
+        creator: User.empty(),
+        difficulty: Difficulty(1),
+        creationDate: PastDate(DateTime.now()),
+        modificationDate: PastDate(DateTime.now()),
+        objectives: ObjectiveSet(<Objective>{Objective.empty()}),
+        rewards: RewardSet(<Reward>{Reward.empty()}),
+        tags: TagSet(<Tag>{Tag.empty()}),
+        comments: <Comment>{},
+        likedBy: <User>{},
+        doneBy: <User>{},
+      );
 }

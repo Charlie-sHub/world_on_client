@@ -1,19 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:worldon/domain/core/entities/tag.dart';
+import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 
 import '../../../../constant_descriptions.dart';
 
 void main() {
-  final Set<Tag> validSet = {
-    const Tag(
-      id: null,
-      name: null,
-      creator: null,
-      creationDate: null,
-      modificationDate: null,
-    ),
-  };
+  final Set<Tag> validSet = {Tag.empty()};
   final Set<Tag> emptySet = {};
   final Set<Tag> tooBigSet = _fillSet();
   test(
@@ -28,7 +20,7 @@ void main() {
   );
   group(
     descriptionGroupOnFailure,
-      () {
+    () {
       test(
         "$descriptionInvalid with emptySet",
           () async {
@@ -54,89 +46,16 @@ void main() {
 // Maybe there's a better way to fill the Set
 Set<Tag> _fillSet() {
   return {
-    const Tag(
-      id: 1,
-      name: null,
-      creator: null,
-      creationDate: null,
-      modificationDate: null,
-    ),
-    const Tag(
-      id: 2,
-      name: null,
-      creator: null,
-      creationDate: null,
-      modificationDate: null,
-    ),
-    const Tag(
-      id: 3,
-      name: null,
-      creator: null,
-      creationDate: null,
-      modificationDate: null,
-    ),
-    const Tag(
-      id: 4,
-      name: null,
-      creator: null,
-      creationDate: null,
-      modificationDate: null,
-    ),
-    const Tag(
-      id: 5,
-      name: null,
-      creator: null,
-      creationDate: null,
-      modificationDate: null,
-    ),
-    const Tag(
-      id: null,
-      name: null,
-      creator: null,
-      creationDate: null,
-      modificationDate: null,
-    ),
-    const Tag(
-      id: 6,
-      name: null,
-      creator: null,
-      creationDate: null,
-      modificationDate: null,
-    ),
-    const Tag(
-      id: 7,
-      name: null,
-      creator: null,
-      creationDate: null,
-      modificationDate: null,
-    ),
-    const Tag(
-      id: 8,
-      name: null,
-      creator: null,
-      creationDate: null,
-      modificationDate: null,
-    ),
-    const Tag(
-      id: 9,
-      name: null,
-      creator: null,
-      creationDate: null,
-      modificationDate: null,
-    ),
-    const Tag(
-      id: 10,
-      name: null,
-      creator: null,
-      creationDate: null,
-      modificationDate: null,
-    ),
-    const Tag(
-      id: 11,
-      name: null,
-      creator: null,
-      creationDate: null,
-      modificationDate: null,
-    ),
+    Tag.empty().copyWith(id: 1),
+    Tag.empty().copyWith(id: 2),
+    Tag.empty().copyWith(id: 3),
+    Tag.empty().copyWith(id: 4),
+    Tag.empty().copyWith(id: 5),
+    Tag.empty().copyWith(id: 6),
+    Tag.empty().copyWith(id: 7),
+    Tag.empty().copyWith(id: 8),
+    Tag.empty().copyWith(id: 9),
+    Tag.empty().copyWith(id: 10),
+    Tag.empty().copyWith(id: 11),
   };
 }

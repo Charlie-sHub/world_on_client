@@ -12,8 +12,7 @@ T _$identity<T>(T value) => value;
 class _$NotificationTearOff {
   const _$NotificationTearOff();
 
-  _Notification call(
-      {@required int id,
+  _Notification call({int id,
       @required User sender,
       @required User receiver,
       @required EntityDescription description,
@@ -173,22 +172,21 @@ class __$NotificationCopyWithImpl<$Res> extends _$NotificationCopyWithImpl<$Res>
   }
 }
 
-class _$_Notification implements _Notification {
-  const _$_Notification(
-      {@required this.id,
+class _$_Notification extends _Notification {
+  const _$_Notification({this.id,
       @required this.sender,
       @required this.receiver,
       @required this.description,
       @required this.seen,
       @required this.creationDate,
       @required this.type})
-      : assert(id != null),
-        assert(sender != null),
+      : assert(sender != null),
         assert(receiver != null),
         assert(description != null),
         assert(seen != null),
         assert(creationDate != null),
-        assert(type != null);
+      assert(type != null),
+      super._();
 
   @override
   final int id;
@@ -249,9 +247,9 @@ class _$_Notification implements _Notification {
       __$NotificationCopyWithImpl<_Notification>(this, _$identity);
 }
 
-abstract class _Notification implements Notification {
-  const factory _Notification(
-      {@required int id,
+abstract class _Notification extends Notification {
+  const _Notification._() : super._();
+  const factory _Notification({int id,
       @required User sender,
       @required User receiver,
       @required EntityDescription description,

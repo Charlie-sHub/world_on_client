@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:worldon/core/error/failure.dart';
-import 'package:worldon/domain/core/entities/experience.dart';
-import 'package:worldon/domain/core/entities/user.dart';
+import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/domain/core/entities/user/user.dart';
 
 /// Repository for the main feed of the application
 abstract class MainFeedRepositoryInterface {

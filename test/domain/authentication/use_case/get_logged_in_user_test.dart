@@ -4,7 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
-import 'package:worldon/domain/core/entities/user.dart';
+import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
 import '../../../constant_descriptions.dart';
@@ -19,34 +19,7 @@ void main() {
       useCase = GetLoggedInUser(mockAuthenticationRepository);
     },
   );
-  const loggedInUser = User(
-    id: null,
-    name: null,
-    username: null,
-    password: null,
-    email: null,
-    birthday: null,
-    description: null,
-    imageURL: null,
-    level: null,
-    experiencePoints: null,
-    privacy: null,
-    adminPowers: null,
-    enabled: null,
-    lastLogin: null,
-    creationDate: null,
-    modificationDate: null,
-    options: null,
-    blockedUsers: null,
-    followedUsers: null,
-    devices: null,
-    systems: null,
-    interests: null,
-    achievements: null,
-    experiencesDone: null,
-    experiencesLiked: null,
-    experiencesToDo: null,
-  );
+  final loggedInUser = User.empty();
   group(
     "There are two correct responses from this use-case either some User or none",
     () {

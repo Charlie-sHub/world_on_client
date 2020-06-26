@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/core/entities/experience.dart';
+import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/profile/use_case/load_experiences_done.dart';
 
 import '../../../constant_descriptions.dart';
@@ -20,26 +20,7 @@ void main() {
     },
   );
   final params = Params(id: 1);
-  final experiencesDone = {
-    const Experience(
-      id: null,
-      name: null,
-      description: null,
-      imageURLs: null,
-      coordinates: null,
-      location: null,
-      creator: null,
-      difficulty: null,
-      creationDate: null,
-      modificationDate: null,
-      comments: null,
-      objectives: null,
-      rewards: null,
-      tags: null,
-      likedBy: null,
-      doneBy: null,
-    ),
-  };
+  final experiencesDone = {Experience.empty()};
   test(
     "Should return a Set of Experiences if everything goes well",
     () async {

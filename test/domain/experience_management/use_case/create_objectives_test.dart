@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:worldon/domain/core/entities/coordinates.dart';
-import 'package:worldon/domain/core/entities/objective.dart';
+import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
+import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/latitude.dart';
 import 'package:worldon/domain/core/validation/objects/longitude.dart';
@@ -21,7 +21,6 @@ void main() {
   );
   const _imageName = "test.jpg";
   final objective = Objective(
-    id: null,
     description: _entityDescription,
     coordinates: _coordinates,
     imageName: _imageName,

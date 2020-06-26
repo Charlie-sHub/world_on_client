@@ -4,14 +4,8 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/achievement_management/use_case/get_all_achievements.dart';
-import 'package:worldon/domain/core/entities/achievement.dart';
-import 'package:worldon/domain/core/entities/tag.dart';
+import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
-import 'package:worldon/domain/core/validation/objects/entity_description.dart';
-import 'package:worldon/domain/core/validation/objects/experience_points.dart';
-import 'package:worldon/domain/core/validation/objects/name.dart';
-import 'package:worldon/domain/core/validation/objects/past_date.dart';
-import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 
 import '../../../constant_descriptions.dart';
 import '../../core/methods/create_stream.dart';
@@ -26,20 +20,7 @@ void main() {
       useCase = GetAllAchievements(mockAchievementRepository);
     },
   );
-  final achievement = Achievement(
-    id: 1,
-    name: Name("Test Achievement"),
-    description: EntityDescription("This is just a test"),
-    imageURL: "test.jpg",
-    type: "test",
-    requisite: 1,
-    experiencePoints: ExperiencePoints(1),
-    creator: null,
-    creationDate: PastDate(DateTime.now()),
-    modificationDate: PastDate(DateTime.now()),
-    tags: TagSet(const <Tag>{}),
-  );
-  final List<Achievement> achievementList = [achievement];
+  final List<Achievement> achievementList = [Achievement.empty()];
   test(
     "Should return the achievementListStream",
     () async {

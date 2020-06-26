@@ -10,11 +10,19 @@ part 'objective.freezed.dart';
 ///
 /// [Objective]s are what's required by the [Experience] of the [User]doing it.
 @freezed
-abstract class Objective with _$Objective {
+abstract class Objective implements _$Objective {
+  const Objective._();
+
   const factory Objective({
-    @required int id,
+    int id,
     @required EntityDescription description,
     @required Coordinates coordinates,
     @required String imageName,
   }) = _Objective;
+
+  factory Objective.empty() => Objective(
+        description: EntityDescription(""),
+        coordinates: Coordinates.empty(),
+        imageName: "",
+      );
 }

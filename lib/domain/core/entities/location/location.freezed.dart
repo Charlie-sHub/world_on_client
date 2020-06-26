@@ -12,8 +12,7 @@ T _$identity<T>(T value) => value;
 class _$LocationTearOff {
   const _$LocationTearOff();
 
-  _Location call(
-      {@required int id,
+  _Location call({int id,
       @required String city,
       @required String country,
       @required String postalCode,
@@ -121,18 +120,17 @@ class __$LocationCopyWithImpl<$Res> extends _$LocationCopyWithImpl<$Res>
   }
 }
 
-class _$_Location implements _Location {
-  const _$_Location(
-      {@required this.id,
+class _$_Location extends _Location {
+  const _$_Location({this.id,
       @required this.city,
       @required this.country,
       @required this.postalCode,
       @required this.experiences})
-      : assert(id != null),
-        assert(city != null),
+      : assert(city != null),
         assert(country != null),
         assert(postalCode != null),
-        assert(experiences != null);
+      assert(experiences != null),
+      super._();
 
   @override
   final int id;
@@ -183,9 +181,9 @@ class _$_Location implements _Location {
       __$LocationCopyWithImpl<_Location>(this, _$identity);
 }
 
-abstract class _Location implements Location {
-  const factory _Location(
-      {@required int id,
+abstract class _Location extends Location {
+  const _Location._() : super._();
+  const factory _Location({int id,
       @required String city,
       @required String country,
       @required String postalCode,

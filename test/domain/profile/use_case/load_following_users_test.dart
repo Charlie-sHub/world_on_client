@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/core/entities/user.dart';
+import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/profile/use_case/load_following_users.dart';
 
 import '../../../constant_descriptions.dart';
@@ -20,36 +20,7 @@ void main() {
     },
   );
   final params = Params(id: 1);
-  final followingUsers = {
-    const User(
-      id: null,
-      name: null,
-      username: null,
-      password: null,
-      email: null,
-      birthday: null,
-      description: null,
-      imageURL: null,
-      level: null,
-      experiencePoints: null,
-      privacy: null,
-      adminPowers: null,
-      enabled: null,
-      lastLogin: null,
-      creationDate: null,
-      modificationDate: null,
-      options: null,
-      blockedUsers: null,
-      followedUsers: null,
-      devices: null,
-      systems: null,
-      interests: null,
-      achievements: null,
-      experiencesDone: null,
-      experiencesLiked: null,
-      experiencesToDo: null,
-    ),
-  };
+  final followingUsers = {User.empty()};
   test(
     "Should return a Set of Users if everything goes well",
     () async {

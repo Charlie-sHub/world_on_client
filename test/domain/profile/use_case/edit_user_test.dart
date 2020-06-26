@@ -3,7 +3,13 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/core/entities/user.dart';
+import 'package:worldon/domain/core/entities/achievement/achievement.dart';
+import 'package:worldon/domain/core/entities/device/device.dart';
+import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/domain/core/entities/options/options.dart';
+import 'package:worldon/domain/core/entities/system/system.dart';
+import 'package:worldon/domain/core/entities/tag/tag.dart';
+import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -49,16 +55,19 @@ void main() {
       enabled: true,
       lastLogin: PastDate(DateTime.now()),
       creationDate: PastDate(DateTime.now()),
-      options: null,
-      achievements: null,
-      blockedUsers: null,
-      devices: null,
-      experiencesDone: null,
-      experiencesLiked: null,
-      experiencesToDo: null,
-      followedUsers: null,
-      interests: null,
-      systems: null,
+      options: const Options(
+        id: 1,
+        languageCode: "test",
+      ),
+      achievements: <Achievement>{},
+      blockedUsers: <User>{},
+      devices: <Device>{},
+      experiencesDone: <Experience>{},
+      experiencesLiked: <Experience>{},
+      experiencesToDo: <Experience>{},
+      followedUsers: <User>{},
+      interests: <Tag>{},
+      systems: <System>{},
     );
   }
 
@@ -147,33 +156,9 @@ void main() {
 }
 
 User _setUpUser({int id, bool adminPowers}) {
-  return User(
+  return User.empty().copyWith(
     id: id,
-    name: null,
-    username: null,
-    password: null,
-    email: null,
-    birthday: null,
-    description: null,
-    imageURL: null,
-    level: null,
-    experiencePoints: null,
-    privacy: null,
     adminPowers: adminPowers,
-    enabled: null,
-    lastLogin: null,
-    creationDate: null,
-    modificationDate: null,
-    options: null,
-    blockedUsers: null,
-    followedUsers: null,
-    devices: null,
-    systems: null,
-    interests: null,
-    achievements: null,
-    experiencesDone: null,
-    experiencesLiked: null,
-    experiencesToDo: null,
   );
 }
 

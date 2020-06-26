@@ -3,15 +3,21 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/core/entities/coordinates.dart';
-import 'package:worldon/domain/core/entities/user.dart';
+import 'package:worldon/domain/core/entities/comment/comment.dart';
+import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
+import 'package:worldon/domain/core/entities/location/location.dart';
+import 'package:worldon/domain/core/entities/objective/objective.dart';
+import 'package:worldon/domain/core/entities/reward/reward.dart';
+import 'package:worldon/domain/core/entities/tag/tag.dart';
+import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
-import 'package:worldon/domain/core/validation/objects/latitude.dart';
-import 'package:worldon/domain/core/validation/objects/longitude.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/objective_set.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/reward_set.dart';
+import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 import 'package:worldon/domain/experience_management/use_case/edit_experience.dart';
 
 import '../../../constant_descriptions.dart';
@@ -36,20 +42,17 @@ void main() {
       name: Name("test"),
       description: EntityDescription("It's a test"),
       imageNames: const {"test.jpg"},
-      coordinates: Coordinates(
-        latitude: Latitude(1.1),
-        longitude: Longitude(1.1),
-      ),
-      location: null,
+      coordinates: Coordinates.empty(),
+      location: Location.empty(),
       creator: creatorUser,
       difficulty: Difficulty(1),
       creationDate: PastDate(DateTime.now()),
-      objectives: null,
-      rewards: null,
-      tags: null,
-      comments: null,
-      doneBy: null,
-      likedBy: null,
+      objectives: ObjectiveSet(const <Objective>{}),
+      rewards: RewardSet(const <Reward>{}),
+      tags: TagSet(const <Tag>{}),
+      comments: <Comment>{},
+      doneBy: <User>{},
+      likedBy: <User>{},
     );
   }
 
@@ -113,33 +116,9 @@ void main() {
 }
 
 User _setUpUser({int id, bool adminPowers}) {
-  return User(
+  return User.empty().copyWith(
     id: id,
-    name: null,
-    username: null,
-    password: null,
-    email: null,
-    birthday: null,
-    description: null,
-    imageURL: null,
-    level: null,
-    experiencePoints: null,
-    privacy: null,
     adminPowers: adminPowers,
-    enabled: null,
-    lastLogin: null,
-    creationDate: null,
-    modificationDate: null,
-    options: null,
-    blockedUsers: null,
-    followedUsers: null,
-    devices: null,
-    systems: null,
-    interests: null,
-    achievements: null,
-    experiencesDone: null,
-    experiencesLiked: null,
-    experiencesToDo: null,
   );
 }
 

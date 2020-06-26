@@ -4,13 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/achievement_management/use_case/get_achievement.dart';
-import 'package:worldon/domain/core/entities/achievement.dart';
-import 'package:worldon/domain/core/entities/tag.dart';
-import 'package:worldon/domain/core/validation/objects/entity_description.dart';
-import 'package:worldon/domain/core/validation/objects/experience_points.dart';
-import 'package:worldon/domain/core/validation/objects/name.dart';
-import 'package:worldon/domain/core/validation/objects/past_date.dart';
-import 'package:worldon/domain/core/validation/objects/tag_set.dart';
+import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 
 import '../../../constant_descriptions.dart';
 import '../repository/mock_achievement_repository.dart';
@@ -24,20 +18,9 @@ void main() {
       useCase = GetAchievement(mockAchievementRepository);
     },
   );
-  final params = Params(id: 1);
-  final achievement = Achievement(
-    id: 1,
-    name: Name("Test Achievement"),
-    description: EntityDescription("This is just a test"),
-    imageURL: "test.jpg",
-    type: "test",
-    requisite: 1,
-    experiencePoints: ExperiencePoints(1),
-    creator: null,
-    creationDate: PastDate(DateTime.now()),
-    modificationDate: PastDate(DateTime.now()),
-    tags: TagSet(const <Tag>{}),
-  );
+  const id = 1;
+  final params = Params(id: id);
+  final achievement = Achievement.empty().copyWith(id: id);
   test(
     "Should return the Achievement wanted",
     () async {

@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/core/entities/experience.dart';
+import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/main_feed/use_case/fill_feed.dart';
 
@@ -21,26 +21,7 @@ void main() {
     },
   );
   final params = NoParams();
-  final experienceList = [
-    const Experience(
-      id: null,
-      name: null,
-      description: null,
-      imageURLs: null,
-      coordinates: null,
-      location: null,
-      creator: null,
-      difficulty: null,
-      creationDate: null,
-      modificationDate: null,
-      comments: null,
-      objectives: null,
-      rewards: null,
-      tags: null,
-      likedBy: null,
-      doneBy: null,
-    ),
-  ];
+  final experienceList = [Experience.empty()];
   test(
     "Should return a List of Experiences",
     () async {

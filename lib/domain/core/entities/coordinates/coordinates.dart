@@ -8,9 +8,16 @@ part 'coordinates.freezed.dart';
 // It's honestly a bit overkill even for me, but i don't think that the core of the application should have classes that belong to external libraries
 // like Position in the geolocator library, hence the creation of this class
 @freezed
-abstract class Coordinates with _$Coordinates {
+abstract class Coordinates implements _$Coordinates {
+  const Coordinates._();
+
   const factory Coordinates({
     @required Latitude latitude,
     @required Longitude longitude,
   }) = _Coordinates;
+
+  factory Coordinates.empty() => Coordinates(
+        latitude: Latitude(0.0),
+        longitude: Longitude(0.0),
+      );
 }

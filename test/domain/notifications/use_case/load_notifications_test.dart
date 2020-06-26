@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/core/entities/notification.dart';
+import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/notifications/use_case/load_notifications.dart';
 
@@ -21,17 +21,7 @@ void main() {
     },
   );
   final params = NoParams();
-  final notificationList = [
-    const Notification(
-      id: null,
-      sender: null,
-      receiver: null,
-      description: null,
-      seen: null,
-      creationDate: null,
-      type: null,
-    ),
-  ];
+  final notificationList = [Notification.empty()];
   test(
     "Should return a list of Notifications",
     () async {

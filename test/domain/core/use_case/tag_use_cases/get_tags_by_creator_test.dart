@@ -3,10 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/core/entities/tag.dart';
+import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/use_case/tag_use_cases/get_tags_by_creator.dart';
-import 'package:worldon/domain/core/validation/objects/name.dart';
-import 'package:worldon/domain/core/validation/objects/past_date.dart';
 
 import '../../../../constant_descriptions.dart';
 import '../../methods/create_stream.dart';
@@ -22,16 +20,7 @@ void main() {
     },
   );
   final params = Params(creatorId: 1);
-  final tag = Tag(
-    creationDate: PastDate(DateTime.now()),
-    creator: null,
-    id: 1,
-    modificationDate: PastDate(DateTime.now()),
-    name: Name("Sports"),
-  );
-  final tagList = [
-    tag,
-  ];
+  final tagList = [Tag.empty()];
   test(
     "Should get a List of Tags by a given creator id",
     () async {

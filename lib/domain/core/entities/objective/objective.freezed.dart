@@ -12,8 +12,7 @@ T _$identity<T>(T value) => value;
 class _$ObjectiveTearOff {
   const _$ObjectiveTearOff();
 
-  _Objective call(
-      {@required int id,
+  _Objective call({int id,
       @required EntityDescription description,
       @required Coordinates coordinates,
       @required String imageName}) {
@@ -130,16 +129,15 @@ class __$ObjectiveCopyWithImpl<$Res> extends _$ObjectiveCopyWithImpl<$Res>
   }
 }
 
-class _$_Objective implements _Objective {
-  const _$_Objective(
-      {@required this.id,
+class _$_Objective extends _Objective {
+  const _$_Objective({this.id,
       @required this.description,
       @required this.coordinates,
       @required this.imageName})
-      : assert(id != null),
-        assert(description != null),
+      : assert(description != null),
         assert(coordinates != null),
-        assert(imageName != null);
+      assert(imageName != null),
+      super._();
 
   @override
   final int id;
@@ -185,9 +183,9 @@ class _$_Objective implements _Objective {
       __$ObjectiveCopyWithImpl<_Objective>(this, _$identity);
 }
 
-abstract class _Objective implements Objective {
-  const factory _Objective(
-      {@required int id,
+abstract class _Objective extends Objective {
+  const _Objective._() : super._();
+  const factory _Objective({int id,
       @required EntityDescription description,
       @required Coordinates coordinates,
       @required String imageName}) = _$_Objective;

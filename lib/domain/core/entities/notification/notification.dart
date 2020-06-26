@@ -10,9 +10,11 @@ part 'notification.freezed.dart';
 ///
 /// [User]s receive these in a variety of situations to notify them of things they might be interested in or what other [User]s want them to be notified of.
 @freezed
-abstract class Notification with _$Notification {
+abstract class Notification implements _$Notification {
+  const Notification._();
+
   const factory Notification({
-    @required int id,
+    int id,
     @required User sender, // Maybe change the Users to only the ids
     @required User receiver,
     @required EntityDescription description,
@@ -20,4 +22,13 @@ abstract class Notification with _$Notification {
     @required PastDate creationDate,
     @required NotificationType type,
   }) = _Notification;
+
+  factory Notification.empty() => Notification(
+        sender: User.empty(),
+        receiver: User.empty(),
+        description: EntityDescription(""),
+        seen: false,
+        creationDate: PastDate(DateTime.now()),
+        type: NotificationType.follow,
+      );
 }

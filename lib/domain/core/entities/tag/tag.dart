@@ -10,12 +10,21 @@ part 'tag.freezed.dart';
 ///
 /// [Tag]s work as a way to classify the different [Experience]s in the application and for [User]s to set their interests.
 @freezed
-abstract class Tag with _$Tag {
+abstract class Tag implements _$Tag {
+  const Tag._();
+
   const factory Tag({
-    @required int id,
+    int id,
     @required Name name,
     @required User creator,
     @required PastDate creationDate,
     @required PastDate modificationDate,
   }) = _Tag;
+
+  factory Tag.empty() => Tag(
+        name: Name(""),
+        creator: User.empty(),
+        creationDate: PastDate(DateTime.now()),
+        modificationDate: PastDate(DateTime.now()),
+      );
 }

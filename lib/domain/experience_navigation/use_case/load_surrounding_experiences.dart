@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:worldon/core/error/failure.dart';
-import 'package:worldon/domain/core/entities/experience.dart';
+import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
+import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_interface.dart';
 
@@ -12,19 +13,14 @@ class LoadSurroundingExperiences implements AsyncUseCase<Set<Experience>, Params
 
   @override
   Future<Either<Failure, Set<Experience>>> call(Params params) async {
-    return _repository.loadSurroundingExperiences(
-      longitude: params.longitude,
-      latitude: params.latitude,
-    );
+    return _repository.loadSurroundingExperiences(params.coordinates);
   }
 }
 
 class Params {
-  final double latitude;
-  final double longitude;
+  final Coordinates coordinates;
 
   Params({
-    @required this.latitude,
-    @required this.longitude,
+    @required this.coordinates,
   });
 }

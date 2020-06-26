@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/core/entities/tag.dart';
+import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/profile/use_case/load_user_interests.dart';
 
 import '../../../constant_descriptions.dart';
@@ -20,15 +20,7 @@ void main() {
     },
   );
   final params = Params(userId: 1);
-  final interests = {
-    const Tag(
-      id: null,
-      name: null,
-      creator: null,
-      creationDate: null,
-      modificationDate: null,
-    ),
-  };
+  final interests = {Tag.empty()};
   test(
     "Should return a Set of Tags",
     () async {

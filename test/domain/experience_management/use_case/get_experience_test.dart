@@ -3,14 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/core/entities/coordinates.dart';
-import 'package:worldon/domain/core/entities/experience.dart';
-import 'package:worldon/domain/core/validation/objects/difficulty.dart';
-import 'package:worldon/domain/core/validation/objects/entity_description.dart';
-import 'package:worldon/domain/core/validation/objects/latitude.dart';
-import 'package:worldon/domain/core/validation/objects/longitude.dart';
-import 'package:worldon/domain/core/validation/objects/name.dart';
-import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/experience_management/use_case/get_experience.dart';
 
 import '../../../constant_descriptions.dart';
@@ -25,28 +18,9 @@ void main() {
       useCase = GetExperience(mockExperienceManagementRepository);
     },
   );
-  final params = Params(id: 1);
-  final experience = Experience(
-    id: 1,
-    name: Name("test"),
-    description: EntityDescription("It's a test"),
-    imageURLs: const {"test.jpg"},
-    coordinates: Coordinates(
-      latitude: Latitude(1.1),
-      longitude: Longitude(1.1),
-    ),
-    location: null,
-    creator: null,
-    difficulty: Difficulty(1),
-    creationDate: PastDate(DateTime.now()),
-    modificationDate: PastDate(DateTime.now()),
-    rewards: null,
-    tags: null,
-    comments: null,
-    doneBy: null,
-    likedBy: null,
-    objectives: null,
-  );
+  const id = 1;
+  final params = Params(id: id);
+  final experience = Experience.empty().copyWith(id: id);
   test(
     "Should return the Experience wanted",
     () async {

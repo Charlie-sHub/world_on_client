@@ -12,8 +12,7 @@ T _$identity<T>(T value) => value;
 class _$TagTearOff {
   const _$TagTearOff();
 
-  _Tag call(
-      {@required int id,
+  _Tag call({int id,
       @required Name name,
       @required User creator,
       @required PastDate creationDate,
@@ -138,18 +137,17 @@ class __$TagCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res>
   }
 }
 
-class _$_Tag implements _Tag {
-  const _$_Tag(
-      {@required this.id,
+class _$_Tag extends _Tag {
+  const _$_Tag({this.id,
       @required this.name,
       @required this.creator,
       @required this.creationDate,
       @required this.modificationDate})
-      : assert(id != null),
-        assert(name != null),
+      : assert(name != null),
         assert(creator != null),
         assert(creationDate != null),
-        assert(modificationDate != null);
+      assert(modificationDate != null),
+      super._();
 
   @override
   final int id;
@@ -200,9 +198,9 @@ class _$_Tag implements _Tag {
       __$TagCopyWithImpl<_Tag>(this, _$identity);
 }
 
-abstract class _Tag implements Tag {
-  const factory _Tag(
-      {@required int id,
+abstract class _Tag extends Tag {
+  const _Tag._() : super._();
+  const factory _Tag({int id,
       @required Name name,
       @required User creator,
       @required PastDate creationDate,

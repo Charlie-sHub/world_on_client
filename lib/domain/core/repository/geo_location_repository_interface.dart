@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:worldon/core/error/failure.dart';
-import 'package:worldon/domain/core/entities/coordinates.dart';
-import 'package:worldon/domain/core/entities/user.dart';
+import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
+import 'package:worldon/domain/core/entities/user/user.dart';
 
 /// Repository for the features and use-cases that require GPS positioning
 abstract class GeoLocationRepositoryInterface {

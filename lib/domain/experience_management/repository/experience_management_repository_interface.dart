@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:worldon/core/error/failure.dart';
-import 'package:worldon/domain/core/entities/experience.dart';
+import 'package:worldon/domain/core/entities/experience/experience.dart';
 
 /// Repository for the management of [Experience]s.
 abstract class ExperienceManagementRepositoryInterface {

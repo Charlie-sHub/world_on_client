@@ -4,8 +4,8 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/achievement_management/use_case/edit_achievement.dart';
-import 'package:worldon/domain/core/entities/tag.dart';
-import 'package:worldon/domain/core/entities/user.dart';
+import 'package:worldon/domain/core/entities/tag/tag.dart';
+import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/experience_points.dart';
@@ -117,33 +117,9 @@ void main() {
 }
 
 User _setUpUser({int id, bool adminPowers}) {
-  return User(
+  return User.empty().copyWith(
     id: id,
-    name: null,
-    username: null,
-    password: null,
-    email: null,
-    birthday: null,
-    description: null,
-    imageURL: null,
-    level: null,
-    experiencePoints: null,
-    privacy: null,
     adminPowers: adminPowers,
-    enabled: null,
-    lastLogin: null,
-    creationDate: null,
-    modificationDate: null,
-    options: null,
-    blockedUsers: null,
-    followedUsers: null,
-    devices: null,
-    systems: null,
-    interests: null,
-    achievements: null,
-    experiencesDone: null,
-    experiencesLiked: null,
-    experiencesToDo: null,
   );
 }
 

@@ -12,8 +12,7 @@ T _$identity<T>(T value) => value;
 class _$RewardTearOff {
   const _$RewardTearOff();
 
-  _Reward call(
-      {@required int id,
+  _Reward call({int id,
       @required Name name,
       @required EntityDescription description,
       @required String imageURL}) {
@@ -104,16 +103,15 @@ class __$RewardCopyWithImpl<$Res> extends _$RewardCopyWithImpl<$Res>
   }
 }
 
-class _$_Reward implements _Reward {
-  const _$_Reward(
-      {@required this.id,
+class _$_Reward extends _Reward {
+  const _$_Reward({this.id,
       @required this.name,
       @required this.description,
       @required this.imageURL})
-      : assert(id != null),
-        assert(name != null),
+      : assert(name != null),
         assert(description != null),
-        assert(imageURL != null);
+      assert(imageURL != null),
+      super._();
 
   @override
   final int id;
@@ -158,9 +156,9 @@ class _$_Reward implements _Reward {
       __$RewardCopyWithImpl<_Reward>(this, _$identity);
 }
 
-abstract class _Reward implements Reward {
-  const factory _Reward(
-      {@required int id,
+abstract class _Reward extends Reward {
+  const _Reward._() : super._();
+  const factory _Reward({int id,
       @required Name name,
       @required EntityDescription description,
       @required String imageURL}) = _$_Reward;

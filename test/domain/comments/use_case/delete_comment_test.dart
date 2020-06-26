@@ -4,8 +4,8 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/comments/use_case/delete_comment.dart';
-import 'package:worldon/domain/core/entities/comment.dart';
-import 'package:worldon/domain/core/entities/user.dart';
+import 'package:worldon/domain/core/entities/comment/comment.dart';
+import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 
 import '../../../constant_descriptions.dart';
@@ -23,13 +23,7 @@ void main() {
   final randomUser = _setUpUser(id: 1, adminPowers: false);
   final creatorUser = _setUpUser(id: 2, adminPowers: false);
   final admin = _setUpUser(id: 3, adminPowers: true);
-  final comment = Comment(
-    id: 1,
-    poster: creatorUser,
-    modificationDate: null,
-    creationDate: null,
-    content: null,
-  );
+  final comment = Comment.empty().copyWith(poster: creatorUser);
   Params setUpParams(User userRequesting) {
     return Params(
       comment: comment,
@@ -110,33 +104,9 @@ void main() {
 }
 
 User _setUpUser({int id, bool adminPowers}) {
-  return User(
+  return User.empty().copyWith(
     id: id,
-    name: null,
-    username: null,
-    password: null,
-    email: null,
-    birthday: null,
-    description: null,
-    imageURL: null,
-    level: null,
-    experiencePoints: null,
-    privacy: null,
     adminPowers: adminPowers,
-    enabled: null,
-    lastLogin: null,
-    creationDate: null,
-    modificationDate: null,
-    options: null,
-    blockedUsers: null,
-    followedUsers: null,
-    devices: null,
-    systems: null,
-    interests: null,
-    achievements: null,
-    experiencesDone: null,
-    experiencesLiked: null,
-    experiencesToDo: null,
   );
 }
 

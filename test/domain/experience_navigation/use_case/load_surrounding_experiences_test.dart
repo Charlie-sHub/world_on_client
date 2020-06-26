@@ -3,7 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/core/entities/experience.dart';
+import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
+import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/experience_navigation/use_case/load_surrounding_experiences.dart';
 
 import '../../../constant_descriptions.dart';
@@ -18,19 +19,13 @@ void main() {
       useCase = LoadSurroundingExperiences(mockExperienceNavigationRepository);
     },
   );
-  final params = Params(
-    latitude: 0.0,
-    longitude: 0.0,
-  );
+  final params = Params(coordinates: Coordinates.empty());
   final experienceSet = <Experience>{};
   test(
     "Should return a Set of Experiences",
     () async {
       // Arrange
-      when(mockExperienceNavigationRepository.loadSurroundingExperiences(
-        latitude: anyNamed("latitude"),
-        longitude: anyNamed("longitude"),
-      )).thenAnswer((_) async => right(experienceSet));
+      when(mockExperienceNavigationRepository.loadSurroundingExperiences(any)).thenAnswer((_) async => right(experienceSet));
       // Act
       final result = await useCase(params);
       // Assert
@@ -46,10 +41,7 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
-          when(mockExperienceNavigationRepository.loadSurroundingExperiences(
-            latitude: anyNamed("latitude"),
-            longitude: anyNamed("longitude"),
-          )).thenAnswer((_) async => left(failure));
+          when(mockExperienceNavigationRepository.loadSurroundingExperiences(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
@@ -62,10 +54,7 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());
-          when(mockExperienceNavigationRepository.loadSurroundingExperiences(
-            latitude: anyNamed("latitude"),
-            longitude: anyNamed("longitude"),
-          )).thenAnswer((_) async => left(failure));
+          when(mockExperienceNavigationRepository.loadSurroundingExperiences(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
@@ -78,9 +67,6 @@ void main() {
 }
 
 void _verifyInteractions(MockExperienceNavigationRepository mockExperienceNavigationRepository) {
-  verify(mockExperienceNavigationRepository.loadSurroundingExperiences(
-    latitude: anyNamed("latitude"),
-    longitude: anyNamed("longitude"),
-  ));
+  verify(mockExperienceNavigationRepository.loadSurroundingExperiences(any));
   verifyNoMoreInteractions(mockExperienceNavigationRepository);
 }
