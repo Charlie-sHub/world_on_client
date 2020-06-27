@@ -1,6 +1,8 @@
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 
@@ -19,10 +21,19 @@ abstract class Reward implements _$Reward {
     @required EntityDescription description,
     @required String imageURL,
   }) = _Reward;
-
+  
   factory Reward.empty() => Reward(
-        name: Name(""),
-        description: EntityDescription(""),
-        imageURL: "",
-      );
+    name: Name(""),
+    description: EntityDescription(""),
+    imageURL: "",
+  );
+  
+  Option<ValueFailure<dynamic>> get failureOption {
+    return name.failureOrUnit.andThen(description.failureOrUnit).fold(
+        (failure) => some(failure),
+        (_) => none(),
+    );
+  }
+  
+  bool get isValid => failureOption.isNone();
 }

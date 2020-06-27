@@ -17,7 +17,7 @@ abstract class System implements _$System {
     @required String company,
   }) = _System;
 
-  factory System.empty() => System(
+  factory System.empty() => const System(
         name: "",
         type: "",
         company: "",

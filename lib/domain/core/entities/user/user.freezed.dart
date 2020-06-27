@@ -12,7 +12,8 @@ T _$identity<T>(T value) => value;
 class _$UserTearOff {
   const _$UserTearOff();
 
-  _User call({int id,
+  _User call(
+      {int id,
       @required Name name,
       @required Name username,
       @required Password password,
@@ -94,15 +95,10 @@ mixin _$User {
   Set<User> get followedUsers;
   Set<Device> get devices;
   Set<System> get systems;
-
   Set<Tag> get interests;
-
   Set<Achievement> get achievements;
-
   Set<Experience> get experiencesDone;
-
   Set<Experience> get experiencesLiked;
-
   Set<Experience> get experiencesToDo;
 
   $UserCopyWith<User> get copyWith;
@@ -110,7 +106,7 @@ mixin _$User {
 
 abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
-  _$UserCopyWithImpl<$Res>;
+      _$UserCopyWithImpl<$Res>;
   $Res call(
       {int id,
       Name name,
@@ -132,12 +128,12 @@ abstract class $UserCopyWith<$Res> {
       Set<User> blockedUsers,
       Set<User> followedUsers,
       Set<Device> devices,
-        Set<System> systems,
-        Set<Tag> interests,
-        Set<Achievement> achievements,
-        Set<Experience> experiencesDone,
-        Set<Experience> experiencesLiked,
-        Set<Experience> experiencesToDo});
+      Set<System> systems,
+      Set<Tag> interests,
+      Set<Achievement> achievements,
+      Set<Experience> experiencesDone,
+      Set<Experience> experiencesLiked,
+      Set<Experience> experiencesToDo});
 
   $OptionsCopyWith<$Res> get options;
 }
@@ -186,48 +182,48 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
       email: email == freezed ? _value.email : email as EmailAddress,
       birthday: birthday == freezed ? _value.birthday : birthday as PastDate,
       description: description == freezed
-        ? _value.description
-        : description as EntityDescription,
+          ? _value.description
+          : description as EntityDescription,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
       level: level == freezed ? _value.level : level as UserLevel,
       experiencePoints: experiencePoints == freezed
-        ? _value.experiencePoints
-        : experiencePoints as ExperiencePoints,
+          ? _value.experiencePoints
+          : experiencePoints as ExperiencePoints,
       privacy: privacy == freezed ? _value.privacy : privacy as bool,
       adminPowers:
-      adminPowers == freezed ? _value.adminPowers : adminPowers as bool,
+          adminPowers == freezed ? _value.adminPowers : adminPowers as bool,
       enabled: enabled == freezed ? _value.enabled : enabled as bool,
       lastLogin:
-      lastLogin == freezed ? _value.lastLogin : lastLogin as PastDate,
+          lastLogin == freezed ? _value.lastLogin : lastLogin as PastDate,
       creationDate: creationDate == freezed
-        ? _value.creationDate
-        : creationDate as PastDate,
+          ? _value.creationDate
+          : creationDate as PastDate,
       modificationDate: modificationDate == freezed
-        ? _value.modificationDate
-        : modificationDate as PastDate,
+          ? _value.modificationDate
+          : modificationDate as PastDate,
       options: options == freezed ? _value.options : options as Options,
       blockedUsers: blockedUsers == freezed
-        ? _value.blockedUsers
-        : blockedUsers as Set<User>,
+          ? _value.blockedUsers
+          : blockedUsers as Set<User>,
       followedUsers: followedUsers == freezed
-        ? _value.followedUsers
-        : followedUsers as Set<User>,
+          ? _value.followedUsers
+          : followedUsers as Set<User>,
       devices: devices == freezed ? _value.devices : devices as Set<Device>,
       systems: systems == freezed ? _value.systems : systems as Set<System>,
       interests:
-      interests == freezed ? _value.interests : interests as Set<Tag>,
+          interests == freezed ? _value.interests : interests as Set<Tag>,
       achievements: achievements == freezed
-        ? _value.achievements
-        : achievements as Set<Achievement>,
+          ? _value.achievements
+          : achievements as Set<Achievement>,
       experiencesDone: experiencesDone == freezed
-        ? _value.experiencesDone
-        : experiencesDone as Set<Experience>,
+          ? _value.experiencesDone
+          : experiencesDone as Set<Experience>,
       experiencesLiked: experiencesLiked == freezed
-        ? _value.experiencesLiked
-        : experiencesLiked as Set<Experience>,
+          ? _value.experiencesLiked
+          : experiencesLiked as Set<Experience>,
       experiencesToDo: experiencesToDo == freezed
-        ? _value.experiencesToDo
-        : experiencesToDo as Set<Experience>,
+          ? _value.experiencesToDo
+          : experiencesToDo as Set<Experience>,
     ));
   }
 
@@ -244,7 +240,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
 
 abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   factory _$UserCopyWith(_User value, $Res Function(_User) then) =
-  __$UserCopyWithImpl<$Res>;
+      __$UserCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
@@ -267,21 +263,21 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       Set<User> blockedUsers,
       Set<User> followedUsers,
       Set<Device> devices,
-        Set<System> systems,
-        Set<Tag> interests,
-        Set<Achievement> achievements,
-        Set<Experience> experiencesDone,
-        Set<Experience> experiencesLiked,
-        Set<Experience> experiencesToDo});
+      Set<System> systems,
+      Set<Tag> interests,
+      Set<Achievement> achievements,
+      Set<Experience> experiencesDone,
+      Set<Experience> experiencesLiked,
+      Set<Experience> experiencesToDo});
 
   @override
   $OptionsCopyWith<$Res> get options;
 }
 
 class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
-  implements _$UserCopyWith<$Res> {
+    implements _$UserCopyWith<$Res> {
   __$UserCopyWithImpl(_User _value, $Res Function(_User) _then)
-    : super(_value, (v) => _then(v as _User));
+      : super(_value, (v) => _then(v as _User));
 
   @override
   _User get _value => super._value as _User;
@@ -323,54 +319,55 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
       email: email == freezed ? _value.email : email as EmailAddress,
       birthday: birthday == freezed ? _value.birthday : birthday as PastDate,
       description: description == freezed
-        ? _value.description
-        : description as EntityDescription,
+          ? _value.description
+          : description as EntityDescription,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
       level: level == freezed ? _value.level : level as UserLevel,
       experiencePoints: experiencePoints == freezed
-        ? _value.experiencePoints
-        : experiencePoints as ExperiencePoints,
+          ? _value.experiencePoints
+          : experiencePoints as ExperiencePoints,
       privacy: privacy == freezed ? _value.privacy : privacy as bool,
       adminPowers:
-      adminPowers == freezed ? _value.adminPowers : adminPowers as bool,
+          adminPowers == freezed ? _value.adminPowers : adminPowers as bool,
       enabled: enabled == freezed ? _value.enabled : enabled as bool,
       lastLogin:
-      lastLogin == freezed ? _value.lastLogin : lastLogin as PastDate,
+          lastLogin == freezed ? _value.lastLogin : lastLogin as PastDate,
       creationDate: creationDate == freezed
-        ? _value.creationDate
-        : creationDate as PastDate,
+          ? _value.creationDate
+          : creationDate as PastDate,
       modificationDate: modificationDate == freezed
-        ? _value.modificationDate
-        : modificationDate as PastDate,
+          ? _value.modificationDate
+          : modificationDate as PastDate,
       options: options == freezed ? _value.options : options as Options,
       blockedUsers: blockedUsers == freezed
-        ? _value.blockedUsers
-        : blockedUsers as Set<User>,
+          ? _value.blockedUsers
+          : blockedUsers as Set<User>,
       followedUsers: followedUsers == freezed
-        ? _value.followedUsers
-        : followedUsers as Set<User>,
+          ? _value.followedUsers
+          : followedUsers as Set<User>,
       devices: devices == freezed ? _value.devices : devices as Set<Device>,
       systems: systems == freezed ? _value.systems : systems as Set<System>,
       interests:
-      interests == freezed ? _value.interests : interests as Set<Tag>,
+          interests == freezed ? _value.interests : interests as Set<Tag>,
       achievements: achievements == freezed
-        ? _value.achievements
-        : achievements as Set<Achievement>,
+          ? _value.achievements
+          : achievements as Set<Achievement>,
       experiencesDone: experiencesDone == freezed
-        ? _value.experiencesDone
-        : experiencesDone as Set<Experience>,
+          ? _value.experiencesDone
+          : experiencesDone as Set<Experience>,
       experiencesLiked: experiencesLiked == freezed
-        ? _value.experiencesLiked
-        : experiencesLiked as Set<Experience>,
+          ? _value.experiencesLiked
+          : experiencesLiked as Set<Experience>,
       experiencesToDo: experiencesToDo == freezed
-        ? _value.experiencesToDo
-        : experiencesToDo as Set<Experience>,
+          ? _value.experiencesToDo
+          : experiencesToDo as Set<Experience>,
     ));
   }
 }
 
 class _$_User extends _User {
-  const _$_User({this.id,
+  const _$_User(
+      {this.id,
       @required this.name,
       @required this.username,
       @required this.password,
@@ -390,13 +387,13 @@ class _$_User extends _User {
       @required this.blockedUsers,
       @required this.followedUsers,
       @required this.devices,
-    @required this.systems,
-    @required this.interests,
-    @required this.achievements,
-    @required this.experiencesDone,
-    @required this.experiencesLiked,
-    @required this.experiencesToDo})
-    : assert(name != null),
+      @required this.systems,
+      @required this.interests,
+      @required this.achievements,
+      @required this.experiencesDone,
+      @required this.experiencesLiked,
+      @required this.experiencesToDo})
+      : assert(name != null),
         assert(username != null),
         assert(password != null),
         assert(email != null),
@@ -415,13 +412,13 @@ class _$_User extends _User {
         assert(blockedUsers != null),
         assert(followedUsers != null),
         assert(devices != null),
-      assert(systems != null),
-      assert(interests != null),
-      assert(achievements != null),
-      assert(experiencesDone != null),
-      assert(experiencesLiked != null),
-      assert(experiencesToDo != null),
-      super._();
+        assert(systems != null),
+        assert(interests != null),
+        assert(achievements != null),
+        assert(experiencesDone != null),
+        assert(experiencesLiked != null),
+        assert(experiencesToDo != null),
+        super._();
 
   @override
   final int id;
@@ -485,75 +482,75 @@ class _$_User extends _User {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _User &&
-          (identical(other.id, id) ||
-            const DeepCollectionEquality().equals(other.id, id)) &&
-          (identical(other.name, name) ||
-            const DeepCollectionEquality().equals(other.name, name)) &&
-          (identical(other.username, username) ||
-            const DeepCollectionEquality()
-              .equals(other.username, username)) &&
-          (identical(other.password, password) ||
-            const DeepCollectionEquality()
-              .equals(other.password, password)) &&
-          (identical(other.email, email) ||
-            const DeepCollectionEquality().equals(other.email, email)) &&
-          (identical(other.birthday, birthday) ||
-            const DeepCollectionEquality()
-              .equals(other.birthday, birthday)) &&
-          (identical(other.description, description) ||
-            const DeepCollectionEquality()
-              .equals(other.description, description)) &&
-          (identical(other.imageURL, imageURL) ||
-            const DeepCollectionEquality()
-              .equals(other.imageURL, imageURL)) &&
-          (identical(other.level, level) ||
-            const DeepCollectionEquality().equals(other.level, level)) &&
-          (identical(other.experiencePoints, experiencePoints) ||
-            const DeepCollectionEquality()
-              .equals(other.experiencePoints, experiencePoints)) &&
-          (identical(other.privacy, privacy) ||
-            const DeepCollectionEquality()
-              .equals(other.privacy, privacy)) &&
-          (identical(other.adminPowers, adminPowers) ||
-            const DeepCollectionEquality()
-              .equals(other.adminPowers, adminPowers)) &&
-          (identical(other.enabled, enabled) ||
-            const DeepCollectionEquality()
-              .equals(other.enabled, enabled)) &&
-          (identical(other.lastLogin, lastLogin) ||
-            const DeepCollectionEquality()
-              .equals(other.lastLogin, lastLogin)) &&
-          (identical(other.creationDate, creationDate) ||
-            const DeepCollectionEquality()
-              .equals(other.creationDate, creationDate)) &&
-          (identical(other.modificationDate, modificationDate) ||
-            const DeepCollectionEquality()
-              .equals(other.modificationDate, modificationDate)) &&
-          (identical(other.options, options) ||
-            const DeepCollectionEquality()
-              .equals(other.options, options)) &&
-          (identical(other.blockedUsers, blockedUsers) ||
-            const DeepCollectionEquality()
-              .equals(other.blockedUsers, blockedUsers)) &&
-          (identical(other.followedUsers, followedUsers) ||
-            const DeepCollectionEquality()
-              .equals(other.followedUsers, followedUsers)) &&
-          (identical(other.devices, devices) ||
-            const DeepCollectionEquality()
-              .equals(other.devices, devices)) &&
-          (identical(other.systems, systems) ||
-            const DeepCollectionEquality()
-              .equals(other.systems, systems)) &&
-          (identical(other.interests, interests) ||
-            const DeepCollectionEquality()
-              .equals(other.interests, interests)) &&
-          (identical(other.achievements, achievements) ||
-            const DeepCollectionEquality()
-              .equals(other.achievements, achievements)) &&
-          (identical(other.experiencesDone, experiencesDone) ||
-            const DeepCollectionEquality().equals(other.experiencesDone, experiencesDone)) &&
-          (identical(other.experiencesLiked, experiencesLiked) || const DeepCollectionEquality().equals(other.experiencesLiked, experiencesLiked)) &&
-          (identical(other.experiencesToDo, experiencesToDo) || const DeepCollectionEquality().equals(other.experiencesToDo, experiencesToDo)));
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.username, username) ||
+                const DeepCollectionEquality()
+                    .equals(other.username, username)) &&
+            (identical(other.password, password) ||
+                const DeepCollectionEquality()
+                    .equals(other.password, password)) &&
+            (identical(other.email, email) ||
+                const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.birthday, birthday) ||
+                const DeepCollectionEquality()
+                    .equals(other.birthday, birthday)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
+            (identical(other.imageURL, imageURL) ||
+                const DeepCollectionEquality()
+                    .equals(other.imageURL, imageURL)) &&
+            (identical(other.level, level) ||
+                const DeepCollectionEquality().equals(other.level, level)) &&
+            (identical(other.experiencePoints, experiencePoints) ||
+                const DeepCollectionEquality()
+                    .equals(other.experiencePoints, experiencePoints)) &&
+            (identical(other.privacy, privacy) ||
+                const DeepCollectionEquality()
+                    .equals(other.privacy, privacy)) &&
+            (identical(other.adminPowers, adminPowers) ||
+                const DeepCollectionEquality()
+                    .equals(other.adminPowers, adminPowers)) &&
+            (identical(other.enabled, enabled) ||
+                const DeepCollectionEquality()
+                    .equals(other.enabled, enabled)) &&
+            (identical(other.lastLogin, lastLogin) ||
+                const DeepCollectionEquality()
+                    .equals(other.lastLogin, lastLogin)) &&
+            (identical(other.creationDate, creationDate) ||
+                const DeepCollectionEquality()
+                    .equals(other.creationDate, creationDate)) &&
+            (identical(other.modificationDate, modificationDate) ||
+                const DeepCollectionEquality()
+                    .equals(other.modificationDate, modificationDate)) &&
+            (identical(other.options, options) ||
+                const DeepCollectionEquality()
+                    .equals(other.options, options)) &&
+            (identical(other.blockedUsers, blockedUsers) ||
+                const DeepCollectionEquality()
+                    .equals(other.blockedUsers, blockedUsers)) &&
+            (identical(other.followedUsers, followedUsers) ||
+                const DeepCollectionEquality()
+                    .equals(other.followedUsers, followedUsers)) &&
+            (identical(other.devices, devices) ||
+                const DeepCollectionEquality()
+                    .equals(other.devices, devices)) &&
+            (identical(other.systems, systems) ||
+                const DeepCollectionEquality()
+                    .equals(other.systems, systems)) &&
+            (identical(other.interests, interests) ||
+                const DeepCollectionEquality()
+                    .equals(other.interests, interests)) &&
+            (identical(other.achievements, achievements) ||
+                const DeepCollectionEquality()
+                    .equals(other.achievements, achievements)) &&
+            (identical(other.experiencesDone, experiencesDone) ||
+                const DeepCollectionEquality().equals(other.experiencesDone, experiencesDone)) &&
+            (identical(other.experiencesLiked, experiencesLiked) || const DeepCollectionEquality().equals(other.experiencesLiked, experiencesLiked)) &&
+            (identical(other.experiencesToDo, experiencesToDo) || const DeepCollectionEquality().equals(other.experiencesToDo, experiencesToDo)));
   }
 
   @override
@@ -588,12 +585,13 @@ class _$_User extends _User {
 
   @override
   _$UserCopyWith<_User> get copyWith =>
-    __$UserCopyWithImpl<_User>(this, _$identity);
+      __$UserCopyWithImpl<_User>(this, _$identity);
 }
 
 abstract class _User extends User {
   const _User._() : super._();
-  const factory _User({int id,
+  const factory _User(
+      {int id,
       @required Name name,
       @required Name username,
       @required Password password,
@@ -613,12 +611,12 @@ abstract class _User extends User {
       @required Set<User> blockedUsers,
       @required Set<User> followedUsers,
       @required Set<Device> devices,
-    @required Set<System> systems,
-    @required Set<Tag> interests,
-    @required Set<Achievement> achievements,
-    @required Set<Experience> experiencesDone,
-    @required Set<Experience> experiencesLiked,
-    @required Set<Experience> experiencesToDo}) = _$_User;
+      @required Set<System> systems,
+      @required Set<Tag> interests,
+      @required Set<Achievement> achievements,
+      @required Set<Experience> experiencesDone,
+      @required Set<Experience> experiencesLiked,
+      @required Set<Experience> experiencesToDo}) = _$_User;
 
   @override
   int get id;
@@ -662,19 +660,14 @@ abstract class _User extends User {
   Set<Device> get devices;
   @override
   Set<System> get systems;
-  
   @override
   Set<Tag> get interests;
-  
   @override
   Set<Achievement> get achievements;
-  
   @override
   Set<Experience> get experiencesDone;
-  
   @override
   Set<Experience> get experiencesLiked;
-  
   @override
   Set<Experience> get experiencesToDo;
   @override

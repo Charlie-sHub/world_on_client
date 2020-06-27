@@ -12,7 +12,8 @@ T _$identity<T>(T value) => value;
 class _$ExperienceTearOff {
   const _$ExperienceTearOff();
 
-  _Experience call({int id,
+  _Experience call(
+      {int id,
       @required Name name,
       @required EntityDescription description,
       @required Set<String> imageURLs,
@@ -284,7 +285,8 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res>
 }
 
 class _$_Experience extends _Experience {
-  const _$_Experience({this.id,
+  const _$_Experience(
+      {this.id,
       @required this.name,
       @required this.description,
       @required this.imageURLs,
@@ -314,8 +316,8 @@ class _$_Experience extends _Experience {
         assert(tags != null),
         assert(comments != null),
         assert(likedBy != null),
-      assert(doneBy != null),
-      super._();
+        assert(doneBy != null),
+        super._();
 
   @override
   final int id;
@@ -432,7 +434,8 @@ class _$_Experience extends _Experience {
 
 abstract class _Experience extends Experience {
   const _Experience._() : super._();
-  const factory _Experience({int id,
+  const factory _Experience(
+      {int id,
       @required Name name,
       @required EntityDescription description,
       @required Set<String> imageURLs,

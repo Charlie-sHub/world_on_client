@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/entities/device/device.dart';
@@ -5,6 +6,7 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/options/options.dart';
 import 'package:worldon/domain/core/entities/system/system.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
+import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/experience_points.dart';
@@ -50,37 +52,62 @@ abstract class User implements _$User {
     @required Set<Experience> experiencesLiked,
     @required Set<Experience> experiencesToDo,
   }) = _User;
-
+  
   factory User.empty() => User(
-        name: Name(""),
-        username: Name(""),
-        password: Password(""),
-        email: EmailAddress(""),
-        birthday: PastDate(DateTime.now()),
-        description: EntityDescription(""),
-        imageURL: "",
-        level: UserLevel(0),
-        experiencePoints: ExperiencePoints(0),
-        privacy: false,
-        adminPowers: false,
-        enabled: true,
-        lastLogin: PastDate(DateTime.now()),
-        creationDate: PastDate(DateTime.now()),
-        modificationDate: PastDate(DateTime.now()),
-        options: const Options(
-          id: 1,
-          languageCode: "",
-        ),
-        blockedUsers: <User>{},
-        followedUsers: <User>{},
-        devices: <Device>{},
-        systems: <System>{},
-        interests: <Tag>{},
-        achievements: <Achievement>{},
-        experiencesDone: <Experience>{},
-        experiencesLiked: <Experience>{},
-        experiencesToDo: <Experience>{},
-      );
-// TODO: User.toLogin
-// TODO: User.toRegister
+    name: Name(""),
+    username: Name(""),
+    password: Password(""),
+    email: EmailAddress(""),
+    birthday: PastDate(DateTime.now().subtract(const Duration(days: 10))),
+    description: EntityDescription(""),
+    imageURL: "",
+    level: UserLevel(0),
+    experiencePoints: ExperiencePoints(0),
+    privacy: false,
+    adminPowers: false,
+    enabled: true,
+    lastLogin: PastDate(DateTime.now()),
+    creationDate: PastDate(DateTime.now()),
+    modificationDate: PastDate(DateTime.now()),
+    options: const Options(
+      id: 1,
+      languageCode: "",
+    ),
+    blockedUsers: <User>{},
+    followedUsers: <User>{},
+    devices: <Device>{},
+    systems: <System>{},
+    interests: <Tag>{},
+    achievements: <Achievement>{},
+    experiencesDone: <Experience>{},
+    experiencesLiked: <Experience>{},
+    experiencesToDo: <Experience>{},
+  );
+  
+  Option<ValueFailure<dynamic>> get failureOption {
+    return name.failureOrUnit
+      .andThen(username.failureOrUnit)
+      .andThen(password.failureOrUnit)
+      .andThen(email.failureOrUnit)
+      .andThen(birthday.failureOrUnit)
+      .andThen(description.failureOrUnit)
+      .andThen(level.failureOrUnit)
+      .andThen(experiencePoints.failureOrUnit)
+      .andThen(lastLogin.failureOrUnit)
+      .andThen(creationDate.failureOrUnit)
+      .andThen(modificationDate.failureOrUnit)
+      .fold(
+        (failure) => some(failure),
+        (_) => none(),
+    );
+  }
+  
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
+    return failureOption.fold(
+        () => right(unit),
+        (failure) => left(failure),
+    );
+  }
+  
+  bool get isValid => failureOption.isNone();
 }

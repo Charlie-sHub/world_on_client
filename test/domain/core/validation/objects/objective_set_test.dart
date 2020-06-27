@@ -1,13 +1,14 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/validation/objects/objective_set.dart';
 
 import '../../../../constant_descriptions.dart';
 
 void main() {
-  final Set<Objective> validSet = {Objective.empty()};
-  final Set<Objective> emptySet = {};
-  final Set<Objective> tooBigSet = _fillSet();
+  final validSet = KtSet.of(Objective.empty());
+  final emptySet = KtSet<Objective>.empty();
+  final tooBigSet = _fillSet();
   test(
     descriptionValid,
     () async {
@@ -44,7 +45,7 @@ void main() {
 }
 
 // Maybe there's a better way to fill the Set
-Set<Objective> _fillSet() {
+KtSet<Objective> _fillSet() {
   return {
     Objective.empty().copyWith(id: 1),
     Objective.empty().copyWith(id: 2),
@@ -57,5 +58,5 @@ Set<Objective> _fillSet() {
     Objective.empty().copyWith(id: 9),
     Objective.empty().copyWith(id: 10),
     Objective.empty().copyWith(id: 11),
-  };
+  }.toImmutableSet();
 }

@@ -1,11 +1,11 @@
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/location/location.dart';
-import 'package:worldon/domain/core/entities/objective/objective.dart';
-import 'package:worldon/domain/core/entities/reward/reward.dart';
-import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
@@ -41,22 +41,42 @@ abstract class Experience implements _$Experience {
     @required Set<User> likedBy,
     @required Set<User> doneBy,
   }) = _Experience;
-
+  
   factory Experience.empty() => Experience(
-        name: Name(""),
-        description: EntityDescription(""),
-        imageURLs: <String>{},
-        coordinates: Coordinates.empty(),
-        location: Location.empty(),
-        creator: User.empty(),
-        difficulty: Difficulty(1),
-        creationDate: PastDate(DateTime.now()),
-        modificationDate: PastDate(DateTime.now()),
-        objectives: ObjectiveSet(<Objective>{Objective.empty()}),
-        rewards: RewardSet(<Reward>{Reward.empty()}),
-        tags: TagSet(<Tag>{Tag.empty()}),
-        comments: <Comment>{},
-        likedBy: <User>{},
-        doneBy: <User>{},
-      );
+    name: Name(""),
+    description: EntityDescription(""),
+    imageURLs: <String>{},
+    coordinates: Coordinates.empty(),
+    location: Location.empty(),
+    creator: User.empty(),
+    difficulty: Difficulty(1),
+    creationDate: PastDate(DateTime.now()),
+    modificationDate: PastDate(DateTime.now()),
+    objectives: ObjectiveSet(KtSet.empty()),
+    rewards: RewardSet(KtSet.empty()),
+    tags: TagSet(KtSet.empty()),
+    comments: <Comment>{},
+    likedBy: <User>{},
+    doneBy: <User>{},
+  );
+  
+  Option<ValueFailure<dynamic>> get failureOption {
+    return name.failureOrUnit
+      .andThen(description.failureOrUnit)
+      .andThen(coordinates.failureOrUnit)
+      .andThen(creator.failureOrUnit)
+      .andThen(difficulty.failureOrUnit)
+      .andThen(creationDate.failureOrUnit)
+      .andThen(modificationDate.failureOrUnit)
+    // Make it so the entities have failureOrOption getters but when an entity has to validate another it simply folds the failureOrOption to Failure or Unit
+      .andThen(objectives.failureOrUnit)
+      .andThen(rewards.failureOrUnit)
+      .andThen(tags.failureOrUnit)
+      .fold(
+        (failure) => some(failure),
+        (_) => none(),
+    );
+  }
+  
+  bool get isValid => failureOption.isNone();
 }

@@ -1,13 +1,14 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/validators/validate_not_empty_set.dart';
 
 import '../../../../constant_descriptions.dart';
 
 void main() {
-  final Set invalidSet = {};
-  final Set validSet = {1, 2, 3};
+  final invalidSet = KtSet.empty();
+  final validSet = KtSet.of(1, 2, 3);
   test(
     "Should return validSet",
     () async {
@@ -42,7 +43,7 @@ void main() {
   );
 }
 
-dynamic _act(Set set) {
+dynamic _act(KtSet set) {
   final either = validateNotEmptySet(set);
   final result = either.fold((valueFailure) => valueFailure, id);
   return result;

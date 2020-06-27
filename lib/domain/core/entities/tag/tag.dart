@@ -1,6 +1,8 @@
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 
@@ -20,11 +22,20 @@ abstract class Tag implements _$Tag {
     @required PastDate creationDate,
     @required PastDate modificationDate,
   }) = _Tag;
-
+  
   factory Tag.empty() => Tag(
-        name: Name(""),
-        creator: User.empty(),
-        creationDate: PastDate(DateTime.now()),
-        modificationDate: PastDate(DateTime.now()),
-      );
+    name: Name(""),
+    creator: User.empty(),
+    creationDate: PastDate(DateTime.now()),
+    modificationDate: PastDate(DateTime.now()),
+  );
+  
+  Option<ValueFailure<dynamic>> get failureOption {
+    return name.failureOrUnit.andThen(creator.failureOrUnit).andThen(creationDate.failureOrUnit).andThen(modificationDate.failureOrUnit).fold(
+        (failure) => some(failure),
+        (_) => none(),
+    );
+  }
+  
+  bool get isValid => failureOption.isNone();
 }

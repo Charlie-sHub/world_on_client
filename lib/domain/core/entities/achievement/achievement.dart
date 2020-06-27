@@ -1,6 +1,8 @@
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:worldon/domain/core/entities/tag/tag.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/experience_points.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
@@ -31,17 +33,33 @@ abstract class Achievement implements _$Achievement {
     @required PastDate modificationDate,
     @required TagSet tags,
   }) = _Achievement;
-
+  
   factory Achievement.empty() => Achievement(
-        name: Name(""),
-        description: EntityDescription(""),
-        imageURL: "",
-        type: "",
-        requisite: 1,
-        experiencePoints: ExperiencePoints(1),
-        creator: User.empty(),
-        creationDate: PastDate(DateTime.now()),
-        modificationDate: PastDate(DateTime.now()),
-        tags: TagSet(<Tag>{Tag.empty()}),
-      );
+    name: Name(""),
+    description: EntityDescription(""),
+    imageURL: "",
+    type: "",
+    requisite: 1,
+    experiencePoints: ExperiencePoints(1),
+    creator: User.empty(),
+    creationDate: PastDate(DateTime.now()),
+    modificationDate: PastDate(DateTime.now()),
+    tags: TagSet(KtSet.empty()),
+  );
+  
+  Option<ValueFailure<dynamic>> get failureOption {
+    return name.failureOrUnit
+      .andThen(description.failureOrUnit)
+      .andThen(experiencePoints.failureOrUnit)
+      .andThen(creator.failureOrUnit)
+      .andThen(creationDate.failureOrUnit)
+      .andThen(modificationDate.failureOrUnit)
+      .andThen(tags.failureOrUnit)
+      .fold(
+        (failure) => some(failure),
+        (_) => none(),
+    );
+  }
+  
+  bool get isValid => failureOption.isNone();
 }

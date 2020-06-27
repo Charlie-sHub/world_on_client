@@ -1,4 +1,6 @@
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/latitude.dart';
 import 'package:worldon/domain/core/validation/objects/longitude.dart';
 
@@ -15,9 +17,18 @@ abstract class Coordinates implements _$Coordinates {
     @required Latitude latitude,
     @required Longitude longitude,
   }) = _Coordinates;
-
+  
   factory Coordinates.empty() => Coordinates(
-        latitude: Latitude(0.0),
-        longitude: Longitude(0.0),
-      );
+    latitude: Latitude(0.0),
+    longitude: Longitude(0.0),
+  );
+  
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
+    return latitude.failureOrUnit.andThen(longitude.failureOrUnit).fold(
+        (failure) => left(failure),
+        (_) => right(unit),
+    );
+  }
+  
+  bool get isValid => failureOrUnit.isRight();
 }

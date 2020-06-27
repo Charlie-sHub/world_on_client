@@ -1,17 +1,18 @@
 import 'package:dartz/dartz.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:worldon/domain/core/entities/reward/reward.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/value_object.dart';
 import 'package:worldon/domain/core/validation/validators/validate_max_set_length.dart';
 
-class RewardSet extends ValueObject<Set<Reward>> {
+class RewardSet extends ValueObject<KtSet<Reward>> {
   @override
-  final Either<ValueFailure<Set<Reward>>, Set<Reward>> value;
+  final Either<ValueFailure<KtSet<Reward>>, KtSet<Reward>> value;
 
   // Just a value that made sense at the time
   static const maxLength = 5;
 
-  factory RewardSet(Set<Reward> input) {
+  factory RewardSet(KtSet<Reward> input) {
     assert(input != null);
     return RewardSet._(
       validateMaxSetLength(
@@ -22,6 +23,36 @@ class RewardSet extends ValueObject<Set<Reward>> {
   }
 
   const RewardSet._(this.value);
+
+  @override
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
+    return value.fold(
+      (failure) => left(failure),
+      (rewardSet) => rewardSet
+          .map(
+            (objective) => objective.failureOption,
+          )
+          .filter(
+            (option) => option.isSome(),
+          )
+          .getOrElse(
+            0,
+            (_) => none(),
+          )
+          .fold(
+            () => right(unit),
+            (failure) => left(failure),
+          ),
+    );
+  }
+
+  int get length {
+    return value.getOrElse(() => KtSet<Reward>.empty()).size;
+  }
+
+  bool get isFull {
+    return length == maxLength;
+  }
 
   @override
   List<Object> get props => [value];

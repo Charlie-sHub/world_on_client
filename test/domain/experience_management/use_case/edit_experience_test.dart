@@ -1,14 +1,12 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kt_dart/collection.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/location/location.dart';
-import 'package:worldon/domain/core/entities/objective/objective.dart';
-import 'package:worldon/domain/core/entities/reward/reward.dart';
-import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
@@ -47,9 +45,9 @@ void main() {
       creator: creatorUser,
       difficulty: Difficulty(1),
       creationDate: PastDate(DateTime.now()),
-      objectives: ObjectiveSet(const <Objective>{}),
-      rewards: RewardSet(const <Reward>{}),
-      tags: TagSet(const <Tag>{}),
+      objectives: ObjectiveSet(KtSet.empty()),
+      rewards: RewardSet(KtSet.empty()),
+      tags: TagSet(KtSet.empty()),
       comments: <Comment>{},
       doneBy: <User>{},
       likedBy: <User>{},

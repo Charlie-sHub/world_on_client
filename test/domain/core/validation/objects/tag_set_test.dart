@@ -1,13 +1,14 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 
 import '../../../../constant_descriptions.dart';
 
 void main() {
-  final Set<Tag> validSet = {Tag.empty()};
-  final Set<Tag> emptySet = {};
-  final Set<Tag> tooBigSet = _fillSet();
+  final validSet = KtSet.of(Tag.empty());
+  final emptySet = KtSet<Tag>.empty();
+  final tooBigSet = _fillSet();
   test(
     descriptionValid,
     () async {
@@ -23,7 +24,7 @@ void main() {
     () {
       test(
         "$descriptionInvalid with emptySet",
-          () async {
+        () async {
           // Act
           final tags = TagSet(emptySet);
           // Assert
@@ -44,7 +45,7 @@ void main() {
 }
 
 // Maybe there's a better way to fill the Set
-Set<Tag> _fillSet() {
+KtSet<Tag> _fillSet() {
   return {
     Tag.empty().copyWith(id: 1),
     Tag.empty().copyWith(id: 2),
@@ -57,5 +58,5 @@ Set<Tag> _fillSet() {
     Tag.empty().copyWith(id: 9),
     Tag.empty().copyWith(id: 10),
     Tag.empty().copyWith(id: 11),
-  };
+  }.toImmutableSet();
 }

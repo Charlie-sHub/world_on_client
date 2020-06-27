@@ -1,10 +1,12 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/latitude.dart';
 import 'package:worldon/domain/core/validation/objects/longitude.dart';
+import 'package:worldon/domain/core/validation/objects/objective_set.dart';
 import 'package:worldon/domain/experience_management/use_case/create_objectives.dart';
 
 void main() {
@@ -25,10 +27,11 @@ void main() {
     coordinates: _coordinates,
     imageName: _imageName,
   );
-  final objectives = {
+  final objectives = KtSet.of(
     objective,
     objective,
-  };
+  );
+  final objectiveSet = ObjectiveSet(objectives);
   final params = Params(
     description: _entityDescription,
     coordinates: _coordinates,
@@ -41,7 +44,7 @@ void main() {
       var result = _act(useCase, params);
       result = _act(useCase, params);
       // Assert
-      expect(result, objectives);
+      expect(result, objectiveSet);
     },
   );
 }

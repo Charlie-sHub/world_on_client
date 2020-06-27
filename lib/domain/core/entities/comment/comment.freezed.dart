@@ -12,7 +12,8 @@ T _$identity<T>(T value) => value;
 class _$CommentTearOff {
   const _$CommentTearOff();
 
-  _Comment call({int id,
+  _Comment call(
+      {int id,
       @required User poster,
       @required CommentContent content,
       @required PastDate creationDate,
@@ -138,7 +139,8 @@ class __$CommentCopyWithImpl<$Res> extends _$CommentCopyWithImpl<$Res>
 }
 
 class _$_Comment extends _Comment {
-  const _$_Comment({this.id,
+  const _$_Comment(
+      {this.id,
       @required this.poster,
       @required this.content,
       @required this.creationDate,
@@ -146,8 +148,8 @@ class _$_Comment extends _Comment {
       : assert(poster != null),
         assert(content != null),
         assert(creationDate != null),
-      assert(modificationDate != null),
-      super._();
+        assert(modificationDate != null),
+        super._();
 
   @override
   final int id;
@@ -200,7 +202,8 @@ class _$_Comment extends _Comment {
 
 abstract class _Comment extends Comment {
   const _Comment._() : super._();
-  const factory _Comment({int id,
+  const factory _Comment(
+      {int id,
       @required User poster,
       @required CommentContent content,
       @required PastDate creationDate,

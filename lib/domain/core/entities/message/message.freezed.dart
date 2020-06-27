@@ -12,7 +12,12 @@ T _$identity<T>(T value) => value;
 class _$MessageTearOff {
   const _$MessageTearOff();
 
-  _Message call({int id, @required User sender, @required User receiver, @required MessageContent content, @required PastDate creationDate}) {
+  _Message call(
+      {int id,
+      @required User sender,
+      @required User receiver,
+      @required MessageContent content,
+      @required PastDate creationDate}) {
     return _Message(
       id: id,
       sender: sender,
@@ -38,13 +43,13 @@ mixin _$Message {
 
 abstract class $MessageCopyWith<$Res> {
   factory $MessageCopyWith(Message value, $Res Function(Message) then) =
-  _$MessageCopyWithImpl<$Res>;
-  
-  $Res call({int id,
-    User sender,
-    User receiver,
-    MessageContent content,
-    PastDate creationDate});
+      _$MessageCopyWithImpl<$Res>;
+  $Res call(
+      {int id,
+      User sender,
+      User receiver,
+      MessageContent content,
+      PastDate creationDate});
 
   $UserCopyWith<$Res> get sender;
   $UserCopyWith<$Res> get receiver;
@@ -71,8 +76,8 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
       receiver: receiver == freezed ? _value.receiver : receiver as User,
       content: content == freezed ? _value.content : content as MessageContent,
       creationDate: creationDate == freezed
-        ? _value.creationDate
-        : creationDate as PastDate,
+          ? _value.creationDate
+          : creationDate as PastDate,
     ));
   }
 
@@ -99,13 +104,14 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
 
 abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
   factory _$MessageCopyWith(_Message value, $Res Function(_Message) then) =
-  __$MessageCopyWithImpl<$Res>;
+      __$MessageCopyWithImpl<$Res>;
   @override
-  $Res call({int id,
-    User sender,
-    User receiver,
-    MessageContent content,
-    PastDate creationDate});
+  $Res call(
+      {int id,
+      User sender,
+      User receiver,
+      MessageContent content,
+      PastDate creationDate});
 
   @override
   $UserCopyWith<$Res> get sender;
@@ -114,9 +120,9 @@ abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
 }
 
 class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
-  implements _$MessageCopyWith<$Res> {
+    implements _$MessageCopyWith<$Res> {
   __$MessageCopyWithImpl(_Message _value, $Res Function(_Message) _then)
-    : super(_value, (v) => _then(v as _Message));
+      : super(_value, (v) => _then(v as _Message));
 
   @override
   _Message get _value => super._value as _Message;
@@ -135,23 +141,24 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
       receiver: receiver == freezed ? _value.receiver : receiver as User,
       content: content == freezed ? _value.content : content as MessageContent,
       creationDate: creationDate == freezed
-        ? _value.creationDate
-        : creationDate as PastDate,
+          ? _value.creationDate
+          : creationDate as PastDate,
     ));
   }
 }
 
 class _$_Message extends _Message {
-  const _$_Message({this.id,
-    @required this.sender,
-    @required this.receiver,
-    @required this.content,
-    @required this.creationDate})
-    : assert(sender != null),
+  const _$_Message(
+      {this.id,
+      @required this.sender,
+      @required this.receiver,
+      @required this.content,
+      @required this.creationDate})
+      : assert(sender != null),
         assert(receiver != null),
         assert(content != null),
-      assert(creationDate != null),
-      super._();
+        assert(creationDate != null),
+        super._();
 
   @override
   final int id;
@@ -173,19 +180,19 @@ class _$_Message extends _Message {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Message &&
-          (identical(other.id, id) ||
-            const DeepCollectionEquality().equals(other.id, id)) &&
-          (identical(other.sender, sender) ||
-            const DeepCollectionEquality().equals(other.sender, sender)) &&
-          (identical(other.receiver, receiver) ||
-            const DeepCollectionEquality()
-              .equals(other.receiver, receiver)) &&
-          (identical(other.content, content) ||
-            const DeepCollectionEquality()
-              .equals(other.content, content)) &&
-          (identical(other.creationDate, creationDate) ||
-            const DeepCollectionEquality()
-              .equals(other.creationDate, creationDate)));
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.sender, sender) ||
+                const DeepCollectionEquality().equals(other.sender, sender)) &&
+            (identical(other.receiver, receiver) ||
+                const DeepCollectionEquality()
+                    .equals(other.receiver, receiver)) &&
+            (identical(other.content, content) ||
+                const DeepCollectionEquality()
+                    .equals(other.content, content)) &&
+            (identical(other.creationDate, creationDate) ||
+                const DeepCollectionEquality()
+                    .equals(other.creationDate, creationDate)));
   }
 
   @override
@@ -199,17 +206,17 @@ class _$_Message extends _Message {
 
   @override
   _$MessageCopyWith<_Message> get copyWith =>
-    __$MessageCopyWithImpl<_Message>(this, _$identity);
+      __$MessageCopyWithImpl<_Message>(this, _$identity);
 }
 
 abstract class _Message extends Message {
   const _Message._() : super._();
-  
-  const factory _Message({int id,
-    @required User sender,
-    @required User receiver,
-    @required MessageContent content,
-    @required PastDate creationDate}) = _$_Message;
+  const factory _Message(
+      {int id,
+      @required User sender,
+      @required User receiver,
+      @required MessageContent content,
+      @required PastDate creationDate}) = _$_Message;
 
   @override
   int get id;

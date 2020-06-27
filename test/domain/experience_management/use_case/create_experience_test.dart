@@ -1,13 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kt_dart/collection.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/location/location.dart';
-import 'package:worldon/domain/core/entities/objective/objective.dart';
-import 'package:worldon/domain/core/entities/reward/reward.dart';
-import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -37,9 +35,9 @@ void main() {
     location: Location.empty(),
     creator: User.empty(),
     difficulty: Difficulty(1),
-    objectives: ObjectiveSet(const <Objective>{}),
-    rewards: RewardSet(const <Reward>{}),
-    tags: TagSet(const <Tag>{}),
+    objectives: ObjectiveSet(KtSet.empty()),
+    rewards: RewardSet(KtSet.empty()),
+    tags: TagSet(KtSet.empty()),
   );
   test(
     descriptionReturnNothing,

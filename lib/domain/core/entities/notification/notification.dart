@@ -1,6 +1,8 @@
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 
@@ -22,13 +24,22 @@ abstract class Notification implements _$Notification {
     @required PastDate creationDate,
     @required NotificationType type,
   }) = _Notification;
-
+  
   factory Notification.empty() => Notification(
-        sender: User.empty(),
-        receiver: User.empty(),
-        description: EntityDescription(""),
-        seen: false,
-        creationDate: PastDate(DateTime.now()),
-        type: NotificationType.follow,
-      );
+    sender: User.empty(),
+    receiver: User.empty(),
+    description: EntityDescription(""),
+    seen: false,
+    creationDate: PastDate(DateTime.now()),
+    type: NotificationType.follow,
+  );
+  
+  Option<ValueFailure<dynamic>> get failureOption {
+    return description.failureOrUnit.andThen(receiver.failureOrUnit).andThen(sender.failureOrUnit).andThen(creationDate.failureOrUnit).fold(
+        (failure) => some(failure),
+        (_) => none(),
+    );
+  }
+  
+  bool get isValid => failureOption.isNone();
 }

@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kt_dart/collection.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/validators/validate_max_set_length.dart';
 
@@ -7,8 +8,8 @@ import '../../../../constant_descriptions.dart';
 
 void main() {
   const maxLength = 4;
-  const validSet = {1, 2, 3};
-  const invalidSet = {1, 2, 3, 4, 5};
+  final validSet = KtSet.of(1, 2, 3);
+  final invalidSet = KtSet.of(1, 2, 3, 4, 5);
   test(
     "Should return validSet",
     () async {
@@ -25,7 +26,7 @@ void main() {
         descriptionInvalid,
         () async {
           // Arrange
-          const valueFailure = ValueFailure.setExceedsLength(
+          final valueFailure = ValueFailure.setExceedsLength(
             failedValue: invalidSet,
             maxLength: maxLength,
           );
@@ -39,9 +40,9 @@ void main() {
   );
 }
 
-dynamic _act(Set<int> validSet, int maxLength) {
+dynamic _act(KtSet<int> set, int maxLength) {
   final either = validateMaxSetLength(
-    input: validSet,
+    input: set,
     maxLength: maxLength,
   );
   final result = either.fold(
