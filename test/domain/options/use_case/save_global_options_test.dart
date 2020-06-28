@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/domain/core/entities/options/options.dart';
 import 'package:worldon/domain/options/use_case/save_global_options.dart';
 
 import '../../../constant_descriptions.dart';
@@ -17,9 +18,7 @@ void main() {
       useCase = SaveGlobalOptions(mockRemoteOptionsRepository);
     },
   );
-  final params = Params(
-    languageCode: "es",
-  );
+  final params = Params(options: Options.empty());
   test(
     descriptionReturnNothing,
     () async {

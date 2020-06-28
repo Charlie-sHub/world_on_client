@@ -102,13 +102,10 @@ mixin _$CoreDataFailure<T> {
 }
 
 abstract class $CoreDataFailureCopyWith<T, $Res> {
-  factory $CoreDataFailureCopyWith(
-          CoreDataFailure<T> value, $Res Function(CoreDataFailure<T>) then) =
-      _$CoreDataFailureCopyWithImpl<T, $Res>;
+  factory $CoreDataFailureCopyWith(CoreDataFailure<T> value, $Res Function(CoreDataFailure<T>) then) = _$CoreDataFailureCopyWithImpl<T, $Res>;
 }
 
-class _$CoreDataFailureCopyWithImpl<T, $Res>
-    implements $CoreDataFailureCopyWith<T, $Res> {
+class _$CoreDataFailureCopyWithImpl<T, $Res> implements $CoreDataFailureCopyWith<T, $Res> {
   _$CoreDataFailureCopyWithImpl(this._value, this._then);
 
   final CoreDataFailure<T> _value;
@@ -117,18 +114,14 @@ class _$CoreDataFailureCopyWithImpl<T, $Res>
 }
 
 abstract class $ServerErrorCopyWith<T, $Res> {
-  factory $ServerErrorCopyWith(
-          ServerError<T> value, $Res Function(ServerError<T>) then) =
-      _$ServerErrorCopyWithImpl<T, $Res>;
+  factory $ServerErrorCopyWith(ServerError<T> value, $Res Function(ServerError<T>) then) = _$ServerErrorCopyWithImpl<T, $Res>;
   $Res call({String errorString});
 }
 
-class _$ServerErrorCopyWithImpl<T, $Res>
-    extends _$CoreDataFailureCopyWithImpl<T, $Res>
-    implements $ServerErrorCopyWith<T, $Res> {
-  _$ServerErrorCopyWithImpl(
-      ServerError<T> _value, $Res Function(ServerError<T>) _then)
-      : super(_value, (v) => _then(v as ServerError<T>));
+class _$ServerErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res>
+  implements $ServerErrorCopyWith<T, $Res> {
+  _$ServerErrorCopyWithImpl(ServerError<T> _value, $Res Function(ServerError<T>) _then)
+    : super(_value, (v) => _then(v as ServerError<T>));
 
   @override
   ServerError<T> get _value => super._value as ServerError<T>;
@@ -139,14 +132,14 @@ class _$ServerErrorCopyWithImpl<T, $Res>
   }) {
     return _then(ServerError<T>(
       errorString:
-          errorString == freezed ? _value.errorString : errorString as String,
+      errorString == freezed ? _value.errorString : errorString as String,
     ));
   }
 }
 
 class _$ServerError<T> implements ServerError<T> {
   const _$ServerError({@required this.errorString})
-      : assert(errorString != null);
+    : assert(errorString != null);
 
   @override
   final String errorString;
@@ -159,19 +152,19 @@ class _$ServerError<T> implements ServerError<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ServerError<T> &&
-            (identical(other.errorString, errorString) ||
-                const DeepCollectionEquality()
-                    .equals(other.errorString, errorString)));
+      (other is ServerError<T> &&
+        (identical(other.errorString, errorString) ||
+          const DeepCollectionEquality()
+            .equals(other.errorString, errorString)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
 
   @override
   $ServerErrorCopyWith<T, ServerError<T>> get copyWith =>
-      _$ServerErrorCopyWithImpl<T, ServerError<T>>(this, _$identity);
+    _$ServerErrorCopyWithImpl<T, ServerError<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -262,17 +255,14 @@ abstract class ServerError<T> implements CoreDataFailure<T> {
 }
 
 abstract class $NotFoundErrorCopyWith<T, $Res> {
-  factory $NotFoundErrorCopyWith(
-          NotFoundError<T> value, $Res Function(NotFoundError<T>) then) =
-      _$NotFoundErrorCopyWithImpl<T, $Res>;
+  factory $NotFoundErrorCopyWith(NotFoundError<T> value, $Res Function(NotFoundError<T>) then) =
+  _$NotFoundErrorCopyWithImpl<T, $Res>;
 }
 
-class _$NotFoundErrorCopyWithImpl<T, $Res>
-    extends _$CoreDataFailureCopyWithImpl<T, $Res>
-    implements $NotFoundErrorCopyWith<T, $Res> {
-  _$NotFoundErrorCopyWithImpl(
-      NotFoundError<T> _value, $Res Function(NotFoundError<T>) _then)
-      : super(_value, (v) => _then(v as NotFoundError<T>));
+class _$NotFoundErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res>
+  implements $NotFoundErrorCopyWith<T, $Res> {
+  _$NotFoundErrorCopyWithImpl(NotFoundError<T> _value, $Res Function(NotFoundError<T>) _then)
+    : super(_value, (v) => _then(v as NotFoundError<T>));
 
   @override
   NotFoundError<T> get _value => super._value as NotFoundError<T>;
@@ -380,18 +370,15 @@ abstract class NotFoundError<T> implements CoreDataFailure<T> {
 }
 
 abstract class $CacheErrorCopyWith<T, $Res> {
-  factory $CacheErrorCopyWith(
-          CacheError<T> value, $Res Function(CacheError<T>) then) =
-      _$CacheErrorCopyWithImpl<T, $Res>;
+  factory $CacheErrorCopyWith(CacheError<T> value, $Res Function(CacheError<T>) then) =
+  _$CacheErrorCopyWithImpl<T, $Res>;
   $Res call({String errorString});
 }
 
-class _$CacheErrorCopyWithImpl<T, $Res>
-    extends _$CoreDataFailureCopyWithImpl<T, $Res>
-    implements $CacheErrorCopyWith<T, $Res> {
-  _$CacheErrorCopyWithImpl(
-      CacheError<T> _value, $Res Function(CacheError<T>) _then)
-      : super(_value, (v) => _then(v as CacheError<T>));
+class _$CacheErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res>
+  implements $CacheErrorCopyWith<T, $Res> {
+  _$CacheErrorCopyWithImpl(CacheError<T> _value, $Res Function(CacheError<T>) _then)
+    : super(_value, (v) => _then(v as CacheError<T>));
 
   @override
   CacheError<T> get _value => super._value as CacheError<T>;
@@ -402,14 +389,14 @@ class _$CacheErrorCopyWithImpl<T, $Res>
   }) {
     return _then(CacheError<T>(
       errorString:
-          errorString == freezed ? _value.errorString : errorString as String,
+      errorString == freezed ? _value.errorString : errorString as String,
     ));
   }
 }
 
 class _$CacheError<T> implements CacheError<T> {
   const _$CacheError({@required this.errorString})
-      : assert(errorString != null);
+    : assert(errorString != null);
 
   @override
   final String errorString;
@@ -422,19 +409,19 @@ class _$CacheError<T> implements CacheError<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is CacheError<T> &&
-            (identical(other.errorString, errorString) ||
-                const DeepCollectionEquality()
-                    .equals(other.errorString, errorString)));
+      (other is CacheError<T> &&
+        (identical(other.errorString, errorString) ||
+          const DeepCollectionEquality()
+            .equals(other.errorString, errorString)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
 
   @override
   $CacheErrorCopyWith<T, CacheError<T>> get copyWith =>
-      _$CacheErrorCopyWithImpl<T, CacheError<T>>(this, _$identity);
+    _$CacheErrorCopyWithImpl<T, CacheError<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -525,18 +512,15 @@ abstract class CacheError<T> implements CoreDataFailure<T> {
 }
 
 abstract class $GeoLocationErrorCopyWith<T, $Res> {
-  factory $GeoLocationErrorCopyWith(
-          GeoLocationError<T> value, $Res Function(GeoLocationError<T>) then) =
-      _$GeoLocationErrorCopyWithImpl<T, $Res>;
+  factory $GeoLocationErrorCopyWith(GeoLocationError<T> value, $Res Function(GeoLocationError<T>) then) =
+  _$GeoLocationErrorCopyWithImpl<T, $Res>;
   $Res call({String errorString});
 }
 
-class _$GeoLocationErrorCopyWithImpl<T, $Res>
-    extends _$CoreDataFailureCopyWithImpl<T, $Res>
-    implements $GeoLocationErrorCopyWith<T, $Res> {
-  _$GeoLocationErrorCopyWithImpl(
-      GeoLocationError<T> _value, $Res Function(GeoLocationError<T>) _then)
-      : super(_value, (v) => _then(v as GeoLocationError<T>));
+class _$GeoLocationErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res>
+  implements $GeoLocationErrorCopyWith<T, $Res> {
+  _$GeoLocationErrorCopyWithImpl(GeoLocationError<T> _value, $Res Function(GeoLocationError<T>) _then)
+    : super(_value, (v) => _then(v as GeoLocationError<T>));
 
   @override
   GeoLocationError<T> get _value => super._value as GeoLocationError<T>;
@@ -547,14 +531,14 @@ class _$GeoLocationErrorCopyWithImpl<T, $Res>
   }) {
     return _then(GeoLocationError<T>(
       errorString:
-          errorString == freezed ? _value.errorString : errorString as String,
+      errorString == freezed ? _value.errorString : errorString as String,
     ));
   }
 }
 
 class _$GeoLocationError<T> implements GeoLocationError<T> {
   const _$GeoLocationError({@required this.errorString})
-      : assert(errorString != null);
+    : assert(errorString != null);
 
   @override
   final String errorString;
@@ -567,19 +551,19 @@ class _$GeoLocationError<T> implements GeoLocationError<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is GeoLocationError<T> &&
-            (identical(other.errorString, errorString) ||
-                const DeepCollectionEquality()
-                    .equals(other.errorString, errorString)));
+      (other is GeoLocationError<T> &&
+        (identical(other.errorString, errorString) ||
+          const DeepCollectionEquality()
+            .equals(other.errorString, errorString)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
 
   @override
   $GeoLocationErrorCopyWith<T, GeoLocationError<T>> get copyWith =>
-      _$GeoLocationErrorCopyWithImpl<T, GeoLocationError<T>>(this, _$identity);
+    _$GeoLocationErrorCopyWithImpl<T, GeoLocationError<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -664,7 +648,7 @@ class _$GeoLocationError<T> implements GeoLocationError<T> {
 
 abstract class GeoLocationError<T> implements CoreDataFailure<T> {
   const factory GeoLocationError({@required String errorString}) =
-      _$GeoLocationError<T>;
+  _$GeoLocationError<T>;
 
   String get errorString;
   $GeoLocationErrorCopyWith<T, GeoLocationError<T>> get copyWith;
@@ -672,17 +656,16 @@ abstract class GeoLocationError<T> implements CoreDataFailure<T> {
 
 abstract class $UsernameAlreadyInUseCopyWith<T, $Res> {
   factory $UsernameAlreadyInUseCopyWith(UsernameAlreadyInUse<T> value,
-          $Res Function(UsernameAlreadyInUse<T>) then) =
-      _$UsernameAlreadyInUseCopyWithImpl<T, $Res>;
+    $Res Function(UsernameAlreadyInUse<T>) then) =
+  _$UsernameAlreadyInUseCopyWithImpl<T, $Res>;
   $Res call({Name username});
 }
 
-class _$UsernameAlreadyInUseCopyWithImpl<T, $Res>
-    extends _$CoreDataFailureCopyWithImpl<T, $Res>
-    implements $UsernameAlreadyInUseCopyWith<T, $Res> {
+class _$UsernameAlreadyInUseCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res>
+  implements $UsernameAlreadyInUseCopyWith<T, $Res> {
   _$UsernameAlreadyInUseCopyWithImpl(UsernameAlreadyInUse<T> _value,
-      $Res Function(UsernameAlreadyInUse<T>) _then)
-      : super(_value, (v) => _then(v as UsernameAlreadyInUse<T>));
+    $Res Function(UsernameAlreadyInUse<T>) _then)
+    : super(_value, (v) => _then(v as UsernameAlreadyInUse<T>));
 
   @override
   UsernameAlreadyInUse<T> get _value => super._value as UsernameAlreadyInUse<T>;
@@ -699,7 +682,7 @@ class _$UsernameAlreadyInUseCopyWithImpl<T, $Res>
 
 class _$UsernameAlreadyInUse<T> implements UsernameAlreadyInUse<T> {
   const _$UsernameAlreadyInUse({@required this.username})
-      : assert(username != null);
+    : assert(username != null);
 
   @override
   final Name username;
@@ -712,20 +695,20 @@ class _$UsernameAlreadyInUse<T> implements UsernameAlreadyInUse<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UsernameAlreadyInUse<T> &&
-            (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)));
+      (other is UsernameAlreadyInUse<T> &&
+        (identical(other.username, username) ||
+          const DeepCollectionEquality()
+            .equals(other.username, username)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
 
   @override
   $UsernameAlreadyInUseCopyWith<T, UsernameAlreadyInUse<T>> get copyWith =>
-      _$UsernameAlreadyInUseCopyWithImpl<T, UsernameAlreadyInUse<T>>(
-          this, _$identity);
+    _$UsernameAlreadyInUseCopyWithImpl<T, UsernameAlreadyInUse<T>>(
+      this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -810,7 +793,7 @@ class _$UsernameAlreadyInUse<T> implements UsernameAlreadyInUse<T> {
 
 abstract class UsernameAlreadyInUse<T> implements CoreDataFailure<T> {
   const factory UsernameAlreadyInUse({@required Name username}) =
-      _$UsernameAlreadyInUse<T>;
+  _$UsernameAlreadyInUse<T>;
 
   Name get username;
   $UsernameAlreadyInUseCopyWith<T, UsernameAlreadyInUse<T>> get copyWith;
@@ -818,17 +801,15 @@ abstract class UsernameAlreadyInUse<T> implements CoreDataFailure<T> {
 
 abstract class $EmailAlreadyInUseCopyWith<T, $Res> {
   factory $EmailAlreadyInUseCopyWith(EmailAlreadyInUse<T> value,
-          $Res Function(EmailAlreadyInUse<T>) then) =
-      _$EmailAlreadyInUseCopyWithImpl<T, $Res>;
+    $Res Function(EmailAlreadyInUse<T>) then) =
+  _$EmailAlreadyInUseCopyWithImpl<T, $Res>;
   $Res call({EmailAddress email});
 }
 
-class _$EmailAlreadyInUseCopyWithImpl<T, $Res>
-    extends _$CoreDataFailureCopyWithImpl<T, $Res>
-    implements $EmailAlreadyInUseCopyWith<T, $Res> {
-  _$EmailAlreadyInUseCopyWithImpl(
-      EmailAlreadyInUse<T> _value, $Res Function(EmailAlreadyInUse<T>) _then)
-      : super(_value, (v) => _then(v as EmailAlreadyInUse<T>));
+class _$EmailAlreadyInUseCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res>
+  implements $EmailAlreadyInUseCopyWith<T, $Res> {
+  _$EmailAlreadyInUseCopyWithImpl(EmailAlreadyInUse<T> _value, $Res Function(EmailAlreadyInUse<T>) _then)
+    : super(_value, (v) => _then(v as EmailAlreadyInUse<T>));
 
   @override
   EmailAlreadyInUse<T> get _value => super._value as EmailAlreadyInUse<T>;
@@ -857,19 +838,19 @@ class _$EmailAlreadyInUse<T> implements EmailAlreadyInUse<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is EmailAlreadyInUse<T> &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)));
+      (other is EmailAlreadyInUse<T> &&
+        (identical(other.email, email) ||
+          const DeepCollectionEquality().equals(other.email, email)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(email);
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(email);
 
   @override
   $EmailAlreadyInUseCopyWith<T, EmailAlreadyInUse<T>> get copyWith =>
-      _$EmailAlreadyInUseCopyWithImpl<T, EmailAlreadyInUse<T>>(
-          this, _$identity);
+    _$EmailAlreadyInUseCopyWithImpl<T, EmailAlreadyInUse<T>>(
+      this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -954,25 +935,22 @@ class _$EmailAlreadyInUse<T> implements EmailAlreadyInUse<T> {
 
 abstract class EmailAlreadyInUse<T> implements CoreDataFailure<T> {
   const factory EmailAlreadyInUse({@required EmailAddress email}) =
-      _$EmailAlreadyInUse<T>;
+  _$EmailAlreadyInUse<T>;
 
   EmailAddress get email;
   $EmailAlreadyInUseCopyWith<T, EmailAlreadyInUse<T>> get copyWith;
 }
 
 abstract class $NameAlreadyInUseCopyWith<T, $Res> {
-  factory $NameAlreadyInUseCopyWith(
-          NameAlreadyInUse<T> value, $Res Function(NameAlreadyInUse<T>) then) =
-      _$NameAlreadyInUseCopyWithImpl<T, $Res>;
+  factory $NameAlreadyInUseCopyWith(NameAlreadyInUse<T> value, $Res Function(NameAlreadyInUse<T>) then) =
+  _$NameAlreadyInUseCopyWithImpl<T, $Res>;
   $Res call({Name name});
 }
 
-class _$NameAlreadyInUseCopyWithImpl<T, $Res>
-    extends _$CoreDataFailureCopyWithImpl<T, $Res>
-    implements $NameAlreadyInUseCopyWith<T, $Res> {
-  _$NameAlreadyInUseCopyWithImpl(
-      NameAlreadyInUse<T> _value, $Res Function(NameAlreadyInUse<T>) _then)
-      : super(_value, (v) => _then(v as NameAlreadyInUse<T>));
+class _$NameAlreadyInUseCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res>
+  implements $NameAlreadyInUseCopyWith<T, $Res> {
+  _$NameAlreadyInUseCopyWithImpl(NameAlreadyInUse<T> _value, $Res Function(NameAlreadyInUse<T>) _then)
+    : super(_value, (v) => _then(v as NameAlreadyInUse<T>));
 
   @override
   NameAlreadyInUse<T> get _value => super._value as NameAlreadyInUse<T>;
@@ -1001,18 +979,18 @@ class _$NameAlreadyInUse<T> implements NameAlreadyInUse<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is NameAlreadyInUse<T> &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)));
+      (other is NameAlreadyInUse<T> &&
+        (identical(other.name, name) ||
+          const DeepCollectionEquality().equals(other.name, name)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
 
   @override
   $NameAlreadyInUseCopyWith<T, NameAlreadyInUse<T>> get copyWith =>
-      _$NameAlreadyInUseCopyWithImpl<T, NameAlreadyInUse<T>>(this, _$identity);
+    _$NameAlreadyInUseCopyWithImpl<T, NameAlreadyInUse<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs

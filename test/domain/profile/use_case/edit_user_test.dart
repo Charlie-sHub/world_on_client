@@ -3,21 +3,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/core/entities/achievement/achievement.dart';
-import 'package:worldon/domain/core/entities/device/device.dart';
-import 'package:worldon/domain/core/entities/experience/experience.dart';
-import 'package:worldon/domain/core/entities/options/options.dart';
-import 'package:worldon/domain/core/entities/system/system.dart';
-import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
-import 'package:worldon/domain/core/validation/objects/entity_description.dart';
-import 'package:worldon/domain/core/validation/objects/experience_points.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
-import 'package:worldon/domain/core/validation/objects/password.dart';
-import 'package:worldon/domain/core/validation/objects/past_date.dart';
-import 'package:worldon/domain/core/validation/objects/user_level.dart';
 import 'package:worldon/domain/profile/use_case/edit_user.dart';
 
 import '../../../constant_descriptions.dart';
@@ -32,42 +21,15 @@ void main() {
       useCase = EditUser(mockProfileRepository);
     },
   );
-  final randomUser = _setUpUser(id: 1, adminPowers: false);
-  final admin = _setUpUser(id: 2, adminPowers: true);
-  final actualUser = _setUpUser(id: 3, adminPowers: false);
+  final randomUser = User.empty().copyWith(id: 1, adminPowers: false);
+  final admin = User.empty().copyWith(id: 2, adminPowers: true);
+  final actualUser = User.empty().copyWith(id: 3, adminPowers: false);
   final emailAddress = EmailAddress("test@test.test");
   final username = Name("TestUser");
   Params setUpParams(User userRequesting) {
     return Params(
       userRequesting: userRequesting,
-      id: 3,
-      name: Name("Test User"),
-      username: username,
-      password: Password("abcd*1234"),
-      email: emailAddress,
-      birthday: PastDate(DateTime.now()),
-      description: EntityDescription("For testing"),
-      imageName: "test.png",
-      level: UserLevel(1),
-      experiencePoints: ExperiencePoints(1),
-      privacy: false,
-      adminPowers: false,
-      enabled: true,
-      lastLogin: PastDate(DateTime.now()),
-      creationDate: PastDate(DateTime.now()),
-      options: const Options(
-        id: 1,
-        languageCode: "test",
-      ),
-      achievements: <Achievement>{},
-      blockedUsers: <User>{},
-      devices: <Device>{},
-      experiencesDone: <Experience>{},
-      experiencesLiked: <Experience>{},
-      experiencesToDo: <Experience>{},
-      followedUsers: <User>{},
-      interests: <Tag>{},
-      systems: <System>{},
+      userToEdit: actualUser,
     );
   }
 
@@ -152,13 +114,6 @@ void main() {
         },
       );
     },
-  );
-}
-
-User _setUpUser({int id, bool adminPowers}) {
-  return User.empty().copyWith(
-    id: id,
-    adminPowers: adminPowers,
   );
 }
 

@@ -4,10 +4,9 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/comments/use_case/edit_comment.dart';
+import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
-import 'package:worldon/domain/core/validation/objects/comment_content.dart';
-import 'package:worldon/domain/core/validation/objects/past_date.dart';
 
 import '../../../constant_descriptions.dart';
 import '../repository/mock_comment_repository.dart';
@@ -21,16 +20,13 @@ void main() {
       useCase = EditComment(mockCommentRepository);
     },
   );
-  final randomUser = _setUpUser(id: 1, adminPowers: false);
-  final creatorUser = _setUpUser(id: 2, adminPowers: false);
-  final admin = _setUpUser(id: 3, adminPowers: true);
+  final randomUser = User.empty().copyWith(id: 1, adminPowers: false);
+  final posterUser = User.empty().copyWith(id: 2, adminPowers: false);
+  final admin = User.empty().copyWith(id: 3, adminPowers: true);
   Params setUpParams(User userRequesting) {
     return Params(
       userRequesting: userRequesting,
-      id: 1,
-      poster: creatorUser,
-      content: CommentContent("Test"),
-      creationDate: PastDate(DateTime.now()),
+      comment: Comment.empty().copyWith(poster: posterUser),
     );
   }
 
@@ -43,7 +39,7 @@ void main() {
           // Arrange
           when(mockCommentRepository.editComment(any)).thenAnswer((_) async => right(unit));
           // Act
-          final result = await useCase(setUpParams(creatorUser));
+          final result = await useCase(setUpParams(posterUser));
           // Assert
           expect(result, right(unit));
           _verifyInteractions(mockCommentRepository);
@@ -73,7 +69,7 @@ void main() {
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
           when(mockCommentRepository.editComment(any)).thenAnswer((_) async => left(failure));
           // Act
-          final result = await useCase(setUpParams(creatorUser));
+          final result = await useCase(setUpParams(posterUser));
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockCommentRepository);
@@ -90,13 +86,6 @@ void main() {
         },
       );
     },
-  );
-}
-
-User _setUpUser({int id, bool adminPowers}) {
-  return User.empty().copyWith(
-    id: id,
-    adminPowers: adminPowers,
   );
 }
 

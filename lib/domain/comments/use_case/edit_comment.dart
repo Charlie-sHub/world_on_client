@@ -6,8 +6,6 @@ import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
-import 'package:worldon/domain/core/validation/objects/comment_content.dart';
-import 'package:worldon/domain/core/validation/objects/past_date.dart';
 
 class EditComment implements AsyncUseCase<Unit, Params> {
   final CommentRepositoryInterface _repository;
@@ -16,16 +14,9 @@ class EditComment implements AsyncUseCase<Unit, Params> {
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    final isAuthorized = params.userRequesting == params.poster || params.userRequesting.adminPowers;
+    final isAuthorized = params.userRequesting == params.comment.poster || params.userRequesting.adminPowers;
     if (isAuthorized) {
-      final comment = Comment(
-        id: params.id,
-        poster: params.poster,
-        content: params.content,
-        creationDate: params.creationDate,
-        modificationDate: PastDate(DateTime.now()),
-      );
-      return _repository.editComment(comment);
+      return _repository.editComment(params.comment);
     } else {
       return left(const Failure.coreDomain(CoreDomainFailure.unAuthorizedError()));
     }
@@ -34,16 +25,10 @@ class EditComment implements AsyncUseCase<Unit, Params> {
 
 class Params {
   final User userRequesting;
-  final int id;
-  final User poster;
-  final CommentContent content;
-  final PastDate creationDate;
+  final Comment comment;
 
   Params({
     @required this.userRequesting,
-    @required this.id,
-    @required this.poster,
-    @required this.content,
-    @required this.creationDate,
+    @required this.comment,
   });
 }

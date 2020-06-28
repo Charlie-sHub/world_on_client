@@ -3,9 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
-import 'package:worldon/domain/core/entities/user/user.dart';
-import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/domain/notifications/use_case/send_notification.dart';
 
 import '../../../constant_descriptions.dart';
@@ -20,13 +18,7 @@ void main() {
       useCase = SendNotification(mockNotificationRepository);
     },
   );
-  final params = Params(
-    sender: User.empty(),
-    receiver: User.empty(),
-    description: EntityDescription("test"),
-    seen: false,
-    type: NotificationType.follow,
-  );
+  final params = Params(notification: Notification.empty());
   test(
     descriptionReturnNothing,
     () async {
