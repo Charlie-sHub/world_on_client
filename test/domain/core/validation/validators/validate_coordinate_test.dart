@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/validators/validate_coordinate.dart';
 
-import '../../../../constant_descriptions.dart';
+import '../../../../test_descriptions.dart';
 
 void main() {
   const latitudeLimit = 90.0;
@@ -13,7 +13,7 @@ void main() {
   const invalidLongitude = 190.0;
   const validLongitude = 80.0;
   group(
-    descriptionGroupOnSuccess,
+    TestDescription.groupOnSuccess,
     () {
       test(
         "Should return validLatitude",
@@ -36,7 +36,7 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       const _description = "Should return InvalidCoordinate";
       test(
@@ -58,7 +58,7 @@ void main() {
         },
       );
       test(
-        descriptionNullInput,
+        TestDescription.nullInput,
         () async {
           // Act
           final result = _act(longitudeLimit, null);

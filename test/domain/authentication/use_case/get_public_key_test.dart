@@ -8,8 +8,8 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/authentication/use_case/get_public_key.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
-import '../../../constant_descriptions.dart';
-import '../repository/mock_public_key_repository.dart';
+import '../../../../lib/domain/authentication/repository/public_key_repository_mock.dart';
+import '../../../test_descriptions.dart';
 
 void main() {
   MockPublicKeyRepository mockPublicKeyRepository;
@@ -34,13 +34,13 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionServerError,
+        TestDescription.serverError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockPublicKeyRepository.getPublicKey()).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(NoParams());
@@ -50,7 +50,7 @@ void main() {
         },
       );
       test(
-        descriptionNotFoundError,
+        TestDescription.notFoundError,
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());

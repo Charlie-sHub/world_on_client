@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 
-import '../../../../constant_descriptions.dart';
+import '../../../../test_descriptions.dart';
 
 void main() {
   const validComment = "Test Test";
@@ -20,7 +20,7 @@ void main() {
   TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest
   TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest""";
   test(
-    descriptionValid,
+    TestDescription.valid,
     () async {
       // Act
       final comment = CommentContent(validComment);
@@ -30,10 +30,10 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        "$descriptionInvalid with tooLongComment",
+        "$TestDescription.invalid with tooLongComment",
         () async {
           // Act
           final comment = CommentContent(tooLongComment);
@@ -42,7 +42,7 @@ void main() {
         },
       );
       test(
-        "$descriptionInvalid with emptyComment",
+        "$TestDescription.invalid with emptyComment",
         () async {
           // Act
           final comment = CommentContent(emptyComment);

@@ -9,6 +9,7 @@ import 'package:worldon/domain/core/validation/objects/objective_set.dart';
 /// "Converts" a [Set] of [Objective]s into a [Map].
 ///
 /// A [Map] where the ids are the keys and a bool keeping track of when they're accomplished.
+// TODO: Can this be injected?
 class FillObjectiveTracker implements UseCase<Map<int, bool>, Params> {
   @override
   Either<Failure, Map<int, bool>> call(Params params) {

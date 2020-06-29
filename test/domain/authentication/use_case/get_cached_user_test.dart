@@ -8,8 +8,8 @@ import 'package:worldon/domain/authentication/use_case/get_cached_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
-import '../../../constant_descriptions.dart';
-import '../repository/mock_cached_user_repository.dart';
+import '../../../../lib/domain/authentication/repository/cached_user_repository_mock.dart';
+import '../../../test_descriptions.dart';
 
 void main() {
   MockCachedUserRepository mockCachedUserRepository;
@@ -34,13 +34,13 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionCacheError,
+        TestDescription.cacheError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: TestDescription.errorString));
           when(mockCachedUserRepository.getCachedUser()).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(NoParams());

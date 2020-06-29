@@ -6,8 +6,8 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/experience_navigation/use_case/rate_difficulty.dart';
 
-import '../../../constant_descriptions.dart';
-import '../repository/mock_experience_navigation_repository.dart';
+import '../../../../lib/domain/experience_navigation/repository/experience_navigation_repository_mock.dart';
+import '../../../test_descriptions.dart';
 
 void main() {
   MockExperienceNavigationRepository mockExperienceNavigationRepository;
@@ -23,7 +23,7 @@ void main() {
     difficulty: Difficulty(1),
   );
   test(
-    descriptionReturnNothing,
+    TestDescription.returnNothing,
     () async {
       // Arrange
       when(mockExperienceNavigationRepository.rateDifficulty(
@@ -38,13 +38,13 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionServerError,
+        TestDescription.serverError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockExperienceNavigationRepository.rateDifficulty(
             experienceId: anyNamed("experienceId"),
             difficulty: anyNamed("difficulty"),
@@ -57,7 +57,7 @@ void main() {
         },
       );
       test(
-        descriptionNotFoundError,
+        TestDescription.notFoundError,
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());

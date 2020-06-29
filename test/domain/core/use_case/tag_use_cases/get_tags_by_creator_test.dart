@@ -6,9 +6,9 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/use_case/tag_use_cases/get_tags_by_creator.dart';
 
-import '../../../../constant_descriptions.dart';
+import '../../../../../lib/domain/core/repository/tag_repository_mock.dart';
+import '../../../../test_descriptions.dart';
 import '../../methods/create_stream.dart';
-import '../../repository/mock_tag_repository.dart';
 
 void main() {
   MockTagRepository mockTagRepository;
@@ -34,13 +34,13 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionCacheError,
+        TestDescription.cacheError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: TestDescription.errorString));
           when(mockTagRepository.getTagsByCreator(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
           final result = await _act(useCase, params);
@@ -50,10 +50,10 @@ void main() {
         },
       );
       test(
-        descriptionServerError,
+        TestDescription.serverError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockTagRepository.getTagsByCreator(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
           final result = await _act(useCase, params);
@@ -63,7 +63,7 @@ void main() {
         },
       );
       test(
-        descriptionNotFoundError,
+        TestDescription.notFoundError,
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());

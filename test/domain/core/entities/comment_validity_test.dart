@@ -4,7 +4,7 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 
-import '../../../constant_descriptions.dart';
+import '../../../test_descriptions.dart';
 import '../methods/get_valid_user.dart';
 
 void main() {
@@ -19,38 +19,38 @@ void main() {
   final invalidCreationDateComment = validComment.copyWith(creationDate: PastDate(DateTime.now()));
   final invalidModificationDateComment = validComment.copyWith(modificationDate: PastDate(DateTime.now()));
   test(
-    descriptionValid,
+    TestDescription.valid,
     () async {
       // Assert
       expect(validComment.isValid, true);
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        "$descriptionInvalid with invalidPosterComment",
+        "$TestDescription.invalid with invalidPosterComment",
         () async {
           // Assert
           expect(invalidPosterComment.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidContentComment",
+        "$TestDescription.invalid with invalidContentComment",
         () async {
           // Assert
           expect(invalidContentComment.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidCreationDateComment",
+        "$TestDescription.invalid with invalidCreationDateComment",
         () async {
           // Assert
           expect(invalidCreationDateComment.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidModificationDateComment",
+        "$TestDescription.invalid with invalidModificationDateComment",
         () async {
           // Assert
           expect(invalidModificationDateComment.isValid, false);

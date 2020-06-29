@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/validation/objects/message_content.dart';
 
-import '../../../../constant_descriptions.dart';
+import '../../../../test_descriptions.dart';
 
 void main() {
   const validMessage = "Test Test";
@@ -10,7 +10,7 @@ void main() {
   TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest
   TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest""";
   test(
-    descriptionValid,
+    TestDescription.valid,
     () async {
       // Act
       final message = MessageContent(validMessage);
@@ -20,10 +20,10 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        "$descriptionInvalid with tooLongMessage",
+        "$TestDescription.invalid with tooLongMessage",
         () async {
           // Act
           final message = MessageContent(tooLongMessage);
@@ -32,7 +32,7 @@ void main() {
         },
       );
       test(
-        "$descriptionInvalid with emptyMessage",
+        "$TestDescription.invalid with emptyMessage",
         () async {
           // Act
           final message = MessageContent(emptyMessage);

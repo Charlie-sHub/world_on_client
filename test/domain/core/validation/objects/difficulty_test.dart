@@ -1,13 +1,13 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 
-import '../../../../constant_descriptions.dart';
+import '../../../../test_descriptions.dart';
 
 void main() {
   const validDifficulty = 9;
   const invalidDifficulty = 11;
   test(
-    descriptionValid,
+    TestDescription.valid,
     () async {
       // Act
       final difficulty = Difficulty(validDifficulty);
@@ -17,7 +17,7 @@ void main() {
     },
   );
   test(
-    descriptionInvalid,
+    TestDescription.invalid,
     () async {
       // Act
       final difficulty = Difficulty(invalidDifficulty);

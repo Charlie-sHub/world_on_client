@@ -1,10 +1,12 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:worldon/core/error/failure.dart';
+import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
-/// Updates the objective tracker
+/// Updates the [Objective] tracker
+// TODO: Can this be injected?
 class AccomplishObjective implements UseCase<bool, Params> {
   final Map<int, bool> objectiveTracker;
 

@@ -9,7 +9,7 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 
-import '../../../constant_descriptions.dart';
+import '../../../test_descriptions.dart';
 import '../methods/get_valid_tag_set.dart';
 import '../methods/get_valid_user.dart';
 
@@ -23,59 +23,59 @@ void main() {
   final invalidModificationDateAchievement = validAchievement.copyWith(modificationDate: PastDate(DateTime.now().add(const Duration(days: 10))));
   final invalidTagsAchievement = validAchievement.copyWith(tags: TagSet(KtSet.of(Tag.empty())));
   test(
-    descriptionValid,
+    TestDescription.valid,
     () async {
       // Assert
       expect(validAchievement.isValid, true);
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        "$descriptionInvalid with invalidNameAchievement",
+        "$TestDescription.invalid with invalidNameAchievement",
         () async {
           // Assert
           expect(invalidNameAchievement.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidDescriptionAchievement",
+        "$TestDescription.invalid with invalidDescriptionAchievement",
         () async {
           // Assert
           expect(invalidDescriptionAchievement.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidExperiencePointsAchievement",
+        "$TestDescription.invalid with invalidExperiencePointsAchievement",
         () async {
           // Assert
           expect(invalidExperiencePointsAchievement.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidCreatorAchievement",
+        "$TestDescription.invalid with invalidCreatorAchievement",
         () async {
           // Assert
           expect(invalidCreatorAchievement.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidCreationDateAchievement",
+        "$TestDescription.invalid with invalidCreationDateAchievement",
         () async {
           // Assert
           expect(invalidCreationDateAchievement.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidModificationDateAchievement",
+        "$TestDescription.invalid with invalidModificationDateAchievement",
         () async {
           // Assert
           expect(invalidModificationDateAchievement.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidTagsAchievement",
+        "$TestDescription.invalid with invalidTagsAchievement",
         () async {
           // Assert
           expect(invalidTagsAchievement.isValid, false);

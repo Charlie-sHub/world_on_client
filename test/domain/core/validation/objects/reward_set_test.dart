@@ -3,13 +3,13 @@ import 'package:kt_dart/kt.dart';
 import 'package:worldon/domain/core/entities/reward/reward.dart';
 import 'package:worldon/domain/core/validation/objects/reward_set.dart';
 
-import '../../../../constant_descriptions.dart';
+import '../../../../test_descriptions.dart';
 
 void main() {
   final validSet = KtSet.of(Reward.empty());
   final tooBigSet = _fillSet();
   test(
-    descriptionValid,
+    TestDescription.valid,
     () async {
       // Act
       final rewards = RewardSet(validSet);
@@ -19,10 +19,10 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        "$descriptionInvalid with tooBigSet",
+        "$TestDescription.invalid with tooBigSet",
         () async {
           // Act
           final rewards = RewardSet(tooBigSet);

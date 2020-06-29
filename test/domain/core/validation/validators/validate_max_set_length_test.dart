@@ -4,7 +4,7 @@ import 'package:kt_dart/collection.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/validators/validate_max_set_length.dart';
 
-import '../../../../constant_descriptions.dart';
+import '../../../../test_descriptions.dart';
 
 void main() {
   const maxLength = 4;
@@ -20,10 +20,10 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionInvalid,
+        TestDescription.invalid,
         () async {
           // Arrange
           final valueFailure = ValueFailure.setExceedsLength(

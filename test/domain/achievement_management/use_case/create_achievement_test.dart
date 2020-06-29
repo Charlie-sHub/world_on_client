@@ -1,26 +1,29 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/domain/achievement_management/repository/achievement_repository_interface.dart';
 import 'package:worldon/domain/achievement_management/use_case/create_achievement.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
+import 'package:worldon/injection.dart';
 
-import '../../../constant_descriptions.dart';
-import '../repository/mock_achievement_repository.dart';
+import '../../../test_descriptions.dart';
 
 void main() {
-  MockAchievementRepository mockAchievementRepository;
+  AchievementRepositoryInterface mockAchievementRepository;
   CreateAchievement useCase;
-  setUp(
+  setUpAll(
     () {
-      mockAchievementRepository = MockAchievementRepository();
-      useCase = CreateAchievement(mockAchievementRepository);
+      configureDependencies(injectable.Environment.test);
+      mockAchievementRepository = getIt<AchievementRepositoryInterface>();
+      useCase = getIt<CreateAchievement>();
     },
   );
   final params = Params(achievement: Achievement.empty());
   test(
-    descriptionReturnNothing,
+    TestDescription.returnNothing,
     () async {
       // Arrange
       when(mockAchievementRepository.createAchievement(any)).thenAnswer((_) async => right(unit));
@@ -32,13 +35,15 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionServerError,
+        TestDescription.serverError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          final mockAchievementRepository = getIt<AchievementRepositoryInterface>();
+          final useCase = getIt<CreateAchievement>();
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockAchievementRepository.createAchievement(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
@@ -48,7 +53,7 @@ void main() {
         },
       );
       test(
-        descriptionNameAlreadyInUse,
+        TestDescription.nameAlreadyInUse,
         () async {
           // Arrange
           final failure = Failure.coreData(CoreDataFailure.nameAlreadyInUse(name: params.achievement.name));
@@ -64,7 +69,7 @@ void main() {
   );
 }
 
-void _verifyInteractions(MockAchievementRepository mockAchievementRepository) {
+void _verifyInteractions(AchievementRepositoryInterface mockAchievementRepository) {
   verify(mockAchievementRepository.createAchievement(any));
   verifyNoMoreInteractions(mockAchievementRepository);
 }

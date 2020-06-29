@@ -1,13 +1,13 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/validation/objects/experience_points.dart';
 
-import '../../../../constant_descriptions.dart';
+import '../../../../test_descriptions.dart';
 
 void main() {
   const validPoints = 100;
   const invalidPoints = 100000000;
   test(
-    descriptionValid,
+    TestDescription.valid,
     () async {
       // Act
       final experiencePoints = ExperiencePoints(validPoints);
@@ -17,7 +17,7 @@ void main() {
     },
   );
   test(
-    descriptionInvalid,
+    TestDescription.invalid,
     () async {
       // Act
       final experiencePoints = ExperiencePoints(invalidPoints);

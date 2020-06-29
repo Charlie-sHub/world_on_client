@@ -15,7 +15,7 @@ import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/core/validation/objects/reward_set.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 
-import '../../../constant_descriptions.dart';
+import '../../../test_descriptions.dart';
 import '../methods/get_valid_tag_set.dart';
 import '../methods/get_valid_user.dart';
 
@@ -40,80 +40,80 @@ void main() {
   )));
   final invalidTagsExperience = validExperience.copyWith(tags: TagSet(KtSet.empty()));
   test(
-    descriptionValid,
+    TestDescription.valid,
     () async {
       // Assert
       expect(validExperience.isValid, true);
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        "$descriptionInvalid with invalidNameExperience",
+        "$TestDescription.invalid with invalidNameExperience",
         () async {
           // Assert
           expect(invalidNameExperience.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidDescriptionExperience",
+        "$TestDescription.invalid with invalidDescriptionExperience",
         () async {
           // Assert
           expect(invalidDescriptionExperience.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidCoordinatesExperience",
+        "$TestDescription.invalid with invalidCoordinatesExperience",
         () async {
           // Assert
           expect(invalidCoordinatesExperience.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidCreatorExperience",
+        "$TestDescription.invalid with invalidCreatorExperience",
         () async {
           // Assert
           expect(invalidCreatorExperience.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidDifficultyExperience",
+        "$TestDescription.invalid with invalidDifficultyExperience",
         () async {
           // Assert
           expect(invalidDifficultyExperience.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidCreationDateExperience",
+        "$TestDescription.invalid with invalidCreationDateExperience",
         () async {
           // Assert
           expect(invalidCreationDateExperience.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidModificationDateExperience",
+        "$TestDescription.invalid with invalidModificationDateExperience",
         () async {
           // Assert
           expect(invalidModificationDateExperience.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidObjectivesExperience",
+        "$TestDescription.invalid with invalidObjectivesExperience",
         () async {
           // Assert
           expect(invalidObjectivesExperience.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidRewardsExperience",
+        "$TestDescription.invalid with invalidRewardsExperience",
         () async {
           // Assert
           expect(invalidRewardsExperience.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidTagsExperience",
+        "$TestDescription.invalid with invalidTagsExperience",
         () async {
           // Assert
           expect(invalidTagsExperience.isValid, false);

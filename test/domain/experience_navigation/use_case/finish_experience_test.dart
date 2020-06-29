@@ -5,8 +5,8 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/experience_navigation/use_case/finish_experience.dart';
 
-import '../../../constant_descriptions.dart';
-import '../repository/mock_experience_navigation_repository.dart';
+import '../../../../lib/domain/experience_navigation/repository/experience_navigation_repository_mock.dart';
+import '../../../test_descriptions.dart';
 
 void main() {
   MockExperienceNavigationRepository mockExperienceNavigationRepository;
@@ -21,7 +21,7 @@ void main() {
     experienceId: 1,
   );
   test(
-    descriptionReturnNothing,
+    TestDescription.returnNothing,
     () async {
       // Arrange
       when(mockExperienceNavigationRepository.finishExperience(any)).thenAnswer((_) async => right(unit));
@@ -33,13 +33,13 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionServerError,
+        TestDescription.serverError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockExperienceNavigationRepository.finishExperience(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
@@ -49,7 +49,7 @@ void main() {
         },
       );
       test(
-        descriptionNotFoundError,
+        TestDescription.notFoundError,
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());

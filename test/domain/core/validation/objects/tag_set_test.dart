@@ -3,14 +3,14 @@ import 'package:kt_dart/kt.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 
-import '../../../../constant_descriptions.dart';
+import '../../../../test_descriptions.dart';
 
 void main() {
   final validSet = KtSet.of(Tag.empty());
   final emptySet = KtSet<Tag>.empty();
   final tooBigSet = _fillSet();
   test(
-    descriptionValid,
+    TestDescription.valid,
     () async {
       // Act
       final tags = TagSet(validSet);
@@ -20,10 +20,10 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        "$descriptionInvalid with emptySet",
+        "$TestDescription.invalid with emptySet",
         () async {
           // Act
           final tags = TagSet(emptySet);
@@ -32,8 +32,8 @@ void main() {
         },
       );
       test(
-        "$descriptionInvalid with tooBigSet",
-          () async {
+        "$TestDescription.invalid with tooBigSet",
+        () async {
           // Act
           final tags = TagSet(tooBigSet);
           // Assert

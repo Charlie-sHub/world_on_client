@@ -4,7 +4,7 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 
-import '../../../constant_descriptions.dart';
+import '../../../test_descriptions.dart';
 import '../methods/get_valid_user.dart';
 
 void main() {
@@ -19,38 +19,38 @@ void main() {
   final invalidDescriptionNotification = validNotification.copyWith(description: EntityDescription(""));
   final invalidCreationDateNotification = validNotification.copyWith(creationDate: PastDate(DateTime.now()));
   test(
-    descriptionValid,
+    TestDescription.valid,
     () async {
       // Assert
       expect(validNotification.isValid, true);
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        "$descriptionInvalid with invalidSenderNotification",
+        "$TestDescription.invalid with invalidSenderNotification",
         () async {
           // Assert
           expect(invalidSenderNotification.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidReceiverNotification",
+        "$TestDescription.invalid with invalidReceiverNotification",
         () async {
           // Assert
           expect(invalidReceiverNotification.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidDescriptionNotification",
+        "$TestDescription.invalid with invalidDescriptionNotification",
         () async {
           // Assert
           expect(invalidDescriptionNotification.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidCreationDateNotification",
+        "$TestDescription.invalid with invalidCreationDateNotification",
         () async {
           // Assert
           expect(invalidCreationDateNotification.isValid, false);

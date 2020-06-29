@@ -4,7 +4,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/experience_navigation/use_case/accomplish_objective.dart';
 
-import '../../../constant_descriptions.dart';
+import '../../../test_descriptions.dart';
 
 void main() {
   AccomplishObjective useCase;
@@ -52,7 +52,7 @@ void main() {
     },
   );
   test(
-    descriptionUnknownDomainLayerError,
+    TestDescription.unknownDomainLayerError,
     () async {
       // Arrange
       const failure = Failure.coreDomain(

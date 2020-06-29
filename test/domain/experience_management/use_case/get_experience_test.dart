@@ -6,8 +6,8 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/experience_management/use_case/get_experience.dart';
 
-import '../../../constant_descriptions.dart';
-import '../repository/mock_experience_management_repository.dart';
+import '../../../../lib/domain/experience_management/repository/experience_management_repository_mock.dart';
+import '../../../test_descriptions.dart';
 
 void main() {
   MockExperienceManagementRepository mockExperienceManagementRepository;
@@ -34,13 +34,13 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionServerError,
+        TestDescription.serverError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockExperienceManagementRepository.getExperience(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
@@ -50,10 +50,10 @@ void main() {
         },
       );
       test(
-        descriptionCacheError,
+        TestDescription.cacheError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: TestDescription.errorString));
           when(mockExperienceManagementRepository.getExperience(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
@@ -63,7 +63,7 @@ void main() {
         },
       );
       test(
-        descriptionNotFoundError,
+        TestDescription.notFoundError,
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());

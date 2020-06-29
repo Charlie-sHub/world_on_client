@@ -1,21 +1,24 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/domain/achievement_management/repository/achievement_repository_interface.dart';
 import 'package:worldon/domain/achievement_management/use_case/get_achievement.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
+import 'package:worldon/injection.dart';
 
-import '../../../constant_descriptions.dart';
-import '../repository/mock_achievement_repository.dart';
+import '../../../test_descriptions.dart';
 
 void main() {
-  MockAchievementRepository mockAchievementRepository;
+  AchievementRepositoryInterface mockAchievementRepository;
   GetAchievement useCase;
-  setUp(
+  setUpAll(
     () {
-      mockAchievementRepository = MockAchievementRepository();
-      useCase = GetAchievement(mockAchievementRepository);
+      configureDependencies(injectable.Environment.test);
+      mockAchievementRepository = getIt<AchievementRepositoryInterface>();
+      useCase = getIt<GetAchievement>();
     },
   );
   const id = 1;
@@ -35,13 +38,13 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionServerError,
+        TestDescription.serverError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockAchievementRepository.getAchievement(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
@@ -51,7 +54,7 @@ void main() {
         },
       );
       test(
-        descriptionNotFoundError,
+        TestDescription.notFoundError,
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());
@@ -67,7 +70,7 @@ void main() {
   );
 }
 
-void _verifyInteractions(MockAchievementRepository mockAchievementRepository) {
+void _verifyInteractions(AchievementRepositoryInterface mockAchievementRepository) {
   verify(mockAchievementRepository.getAchievement(any));
   verifyNoMoreInteractions(mockAchievementRepository);
 }

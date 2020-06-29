@@ -5,8 +5,8 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/experience_log/use_case/add_experience_to_log.dart';
 
-import '../../../constant_descriptions.dart';
-import '../repository/mock_experience_log_repository.dart';
+import '../../../../lib/domain/experience_log/repository/experience_log_repository_mock.dart';
+import '../../../test_descriptions.dart';
 
 void main() {
   MockExperienceLogRepository mockExperienceLogRepository;
@@ -21,7 +21,7 @@ void main() {
     experienceId: 1,
   );
   test(
-    descriptionReturnNothing,
+    TestDescription.returnNothing,
     () async {
       // Arrange
       when(mockExperienceLogRepository.addExperienceToLog(any)).thenAnswer((_) async => right(unit));
@@ -33,13 +33,13 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionServerError,
+        TestDescription.serverError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockExperienceLogRepository.addExperienceToLog(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);

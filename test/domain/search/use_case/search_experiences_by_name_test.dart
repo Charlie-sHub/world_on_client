@@ -7,9 +7,9 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/search/use_case/search_experiences_by_name.dart';
 
-import '../../../constant_descriptions.dart';
+import '../../../../lib/domain/search/repository/search_repository_mock.dart';
+import '../../../test_descriptions.dart';
 import '../../core/methods/create_stream.dart';
-import '../repository/mock_search_repository.dart';
 
 void main() {
   MockSearchRepository mockSearchRepository;
@@ -35,13 +35,13 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionServerError,
+        TestDescription.serverError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockSearchRepository.searchExperiencesByName(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
           final result = await _act(useCase, params);
@@ -51,10 +51,10 @@ void main() {
         },
       );
       test(
-        descriptionCacheError,
+        TestDescription.cacheError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: TestDescription.errorString));
           when(mockSearchRepository.searchExperiencesByName(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
           final result = await _act(useCase, params);
@@ -64,7 +64,7 @@ void main() {
         },
       );
       test(
-        descriptionNotFoundError,
+        TestDescription.notFoundError,
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());

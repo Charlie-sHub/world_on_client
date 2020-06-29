@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 
-import '../../../../constant_descriptions.dart';
+import '../../../../test_descriptions.dart';
 
 void main() {
   const validDescription = "Test Test";
@@ -12,7 +12,7 @@ TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest
 TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest
 TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest""";
   test(
-    descriptionValid,
+    TestDescription.valid,
     () async {
       // Act
       final description = EntityDescription(validDescription);
@@ -22,10 +22,10 @@ TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        "$descriptionInvalid with tooLongDescription",
+        "$TestDescription.invalid with tooLongDescription",
         () async {
           // Act
           final description = EntityDescription(tooLongDescription);
@@ -34,7 +34,7 @@ TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest
         },
       );
       test(
-        "$descriptionInvalid with emptyDescription",
+        "$TestDescription.invalid with emptyDescription",
         () async {
           // Act
           final description = EntityDescription(emptyDescription);

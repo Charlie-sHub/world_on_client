@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
 
-import '../../../../constant_descriptions.dart';
+import '../../../../test_descriptions.dart';
 
 void main() {
   const validPassword = "abcd*1234";
@@ -10,7 +10,7 @@ void main() {
   const tooShortPassword = "a";
   const tooLongPassword = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
   test(
-    descriptionValid,
+    TestDescription.valid,
     () async {
       // Act
       final password = Password(validPassword);
@@ -20,10 +20,10 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        "$descriptionInvalid with tooShortPassword",
+        "$TestDescription.invalid with tooShortPassword",
         () async {
           // Act
           final password = Password(tooShortPassword);
@@ -32,7 +32,7 @@ void main() {
         },
       );
       test(
-        "$descriptionInvalid with tooLongPassword",
+        "$TestDescription.invalid with tooLongPassword",
         () async {
           // Act
           final password = Password(tooLongPassword);
@@ -41,7 +41,7 @@ void main() {
         },
       );
       test(
-        "$descriptionInvalid with emptyPassword",
+        "$TestDescription.invalid with emptyPassword",
         () async {
           // Act
           final password = Password(emptyPassword);
@@ -50,7 +50,7 @@ void main() {
         },
       );
       test(
-        "$descriptionInvalid with multiLinePassword",
+        "$TestDescription.invalid with multiLinePassword",
         () async {
           // Act
           final password = Password(multiLinePassword);

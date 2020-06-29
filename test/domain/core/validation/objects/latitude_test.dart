@@ -1,13 +1,13 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/validation/objects/latitude.dart';
 
-import '../../../../constant_descriptions.dart';
+import '../../../../test_descriptions.dart';
 
 void main() {
   const invalidLatitude = 100.0;
   const validLatitude = 45.0;
   test(
-    descriptionValid,
+    TestDescription.valid,
     () async {
       // Act
       final latitude = Latitude(validLatitude);
@@ -17,7 +17,7 @@ void main() {
     },
   );
   test(
-    descriptionInvalid,
+    TestDescription.invalid,
     () async {
       // Act
       final latitude = Latitude(invalidLatitude);

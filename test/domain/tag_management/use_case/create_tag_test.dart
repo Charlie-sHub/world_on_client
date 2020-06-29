@@ -6,8 +6,8 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/tag_management/use_case/create_tag.dart';
 
-import '../../../constant_descriptions.dart';
-import '../repository/mock_tag_management_repository.dart';
+import '../../../../lib/domain/tag_management/repository/tag_management_repository_mock.dart';
+import '../../../test_descriptions.dart';
 
 void main() {
   MockTagManagementRepository mockTagManagementRepository;
@@ -20,7 +20,7 @@ void main() {
   );
   final params = Params(tag: Tag.empty());
   test(
-    descriptionReturnNothing,
+    TestDescription.returnNothing,
     () async {
       // Arrange
       when(mockTagManagementRepository.createTag(any)).thenAnswer((_) async => right(unit));
@@ -32,13 +32,13 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionServerError,
+        TestDescription.serverError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockTagManagementRepository.createTag(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
@@ -48,7 +48,7 @@ void main() {
         },
       );
       test(
-        descriptionNameAlreadyInUse,
+        TestDescription.nameAlreadyInUse,
         () async {
           // Arrange
           final failure = Failure.coreData(CoreDataFailure.nameAlreadyInUse(name: params.tag.name));

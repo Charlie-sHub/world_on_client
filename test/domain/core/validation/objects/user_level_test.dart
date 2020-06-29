@@ -1,13 +1,13 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/validation/objects/user_level.dart';
 
-import '../../../../constant_descriptions.dart';
+import '../../../../test_descriptions.dart';
 
 void main() {
   const validLevel = 90;
   const invalidLevel = 101;
   test(
-    descriptionValid,
+    TestDescription.valid,
     () async {
       // Act
       final level = UserLevel(validLevel);
@@ -17,7 +17,7 @@ void main() {
     },
   );
   test(
-    descriptionInvalid,
+    TestDescription.invalid,
     () async {
       // Act
       final level = UserLevel(invalidLevel);

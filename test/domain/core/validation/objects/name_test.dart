@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 
-import '../../../../constant_descriptions.dart';
+import '../../../../test_descriptions.dart';
 
 void main() {
   const validName = "Test Test";
@@ -9,7 +9,7 @@ void main() {
   const multiLineName = "Test \n Test";
   const tooLongName = "TestTestTestTestTestTestTestTestTestTestTestTestTestTestTest";
   test(
-    descriptionValid,
+    TestDescription.valid,
     () async {
       // Act
       final name = Name(validName);
@@ -19,10 +19,10 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        "$descriptionInvalid with tooLongName",
+        "$TestDescription.invalid with tooLongName",
         () async {
           // Act
           final name = Name(tooLongName);
@@ -31,7 +31,7 @@ void main() {
         },
       );
       test(
-        "$descriptionInvalid with emptyName",
+        "$TestDescription.invalid with emptyName",
         () async {
           // Act
           final name = Name(emptyName);
@@ -40,7 +40,7 @@ void main() {
         },
       );
       test(
-        "$descriptionInvalid with multiLineName",
+        "$TestDescription.invalid with multiLineName",
         () async {
           // Act
           final name = Name(multiLineName);

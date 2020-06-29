@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/validators/validate_past_date.dart';
 
-import '../../../../constant_descriptions.dart';
+import '../../../../test_descriptions.dart';
 
 void main() {
   final validDate = DateTime.now().subtract(const Duration(days: 50));
@@ -17,7 +17,7 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
         "Should return InvalidDate",
@@ -29,7 +29,7 @@ void main() {
         },
       );
       test(
-        descriptionNullInput,
+        TestDescription.nullInput,
         () async {
           // Act
           final Object result = _act(null);

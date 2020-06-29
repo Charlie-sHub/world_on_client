@@ -7,7 +7,7 @@ import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/validation/objects/objective_set.dart';
 import 'package:worldon/domain/experience_navigation/use_case/fill_objective_tracker.dart';
 
-import '../../../constant_descriptions.dart';
+import '../../../test_descriptions.dart';
 
 void main() {
   FillObjectiveTracker useCase;
@@ -36,7 +36,7 @@ void main() {
     },
   );
   test(
-    descriptionUnknownDomainLayerError,
+    TestDescription.unknownDomainLayerError,
     () async {
       // Arrange
       const failure = Failure.coreDomain(

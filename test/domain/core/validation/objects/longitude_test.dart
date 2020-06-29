@@ -1,13 +1,13 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/validation/objects/longitude.dart';
 
-import '../../../../constant_descriptions.dart';
+import '../../../../test_descriptions.dart';
 
 void main() {
   const invalidLongitude = 200.0;
   const validLongitude = 120.0;
   test(
-    descriptionValid,
+    TestDescription.valid,
     () async {
       // Act
       final longitude = Longitude(validLongitude);
@@ -17,7 +17,7 @@ void main() {
     },
   );
   test(
-    descriptionInvalid,
+    TestDescription.invalid,
     () async {
       // Act
       final longitude = Longitude(invalidLongitude);

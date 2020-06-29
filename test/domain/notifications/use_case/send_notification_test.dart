@@ -6,8 +6,8 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/domain/notifications/use_case/send_notification.dart';
 
-import '../../../constant_descriptions.dart';
-import '../repository/mock_notification_repository.dart';
+import '../../../../lib/domain/notifications/repository/notification_repository_mock.dart';
+import '../../../test_descriptions.dart';
 
 void main() {
   MockNotificationRepository mockNotificationRepository;
@@ -20,7 +20,7 @@ void main() {
   );
   final params = Params(notification: Notification.empty());
   test(
-    descriptionReturnNothing,
+    TestDescription.returnNothing,
     () async {
       // Arrange
       when(mockNotificationRepository.sendNotification(any)).thenAnswer((_) async => right(unit));
@@ -32,13 +32,13 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionServerError,
+        TestDescription.serverError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockNotificationRepository.sendNotification(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);

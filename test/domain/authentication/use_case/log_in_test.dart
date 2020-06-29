@@ -8,8 +8,8 @@ import 'package:worldon/domain/authentication/use_case/log_in.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
 
-import '../../../constant_descriptions.dart';
-import '../repository/mock_authentication_repository.dart';
+import '../../../../lib/domain/authentication/repository/authentication_repository_mock.dart';
+import '../../../test_descriptions.dart';
 
 void main() {
   MockAuthenticationRepository mockAuthenticationRepository;
@@ -25,7 +25,7 @@ void main() {
     password: Password("abcd*1234"),
   );
   test(
-    descriptionReturnNothing,
+    TestDescription.returnNothing,
     () async {
       // Arrange
       when(mockAuthenticationRepository.logIn(any)).thenAnswer((_) async => right(unit));
@@ -37,13 +37,13 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionServerError,
+        TestDescription.serverError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockAuthenticationRepository.logIn(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);

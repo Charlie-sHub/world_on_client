@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/validators/validate_single_line_string.dart';
 
-import '../../../../constant_descriptions.dart';
+import '../../../../test_descriptions.dart';
 
 void main() {
   const validString = "Test";
@@ -18,7 +18,7 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
         "Should return MultiLineString",
@@ -32,7 +32,7 @@ void main() {
         },
       );
       test(
-        descriptionNullInput,
+        TestDescription.nullInput,
         () async {
           // Act
           final Object result = _act(null);

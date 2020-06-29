@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/validators/validate_string_length.dart';
 
-import '../../../../constant_descriptions.dart';
+import '../../../../test_descriptions.dart';
 
 void main() {
   const validString = "TestTest";
@@ -18,7 +18,7 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
         "Should return StringExceedsLength",
@@ -35,7 +35,7 @@ void main() {
         },
       );
       test(
-        descriptionNullInput,
+        TestDescription.nullInput,
         () async {
           // Act
           final Object result = _act(null, length);

@@ -8,8 +8,8 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/profile/use_case/delete_experience.dart';
 
-import '../../../constant_descriptions.dart';
-import '../repository/mock_profile_repository.dart';
+import '../../../../lib/domain/profile/repository/profile_repository_mock.dart';
+import '../../../test_descriptions.dart';
 
 void main() {
   MockProfileRepository mockProfileRepository;
@@ -32,10 +32,10 @@ void main() {
   }
 
   group(
-    descriptionAuthorization,
+    TestDescription.authorization,
     () {
       test(
-        "$descriptionReturnNothing, testing with the creator",
+        "$TestDescription.returnNothing, testing with the creator",
         () async {
           // Arrange
           when(mockProfileRepository.deleteExperience(any)).thenAnswer((_) async => right(unit));
@@ -47,7 +47,7 @@ void main() {
         },
       );
       test(
-        "$descriptionReturnNothing, testing with the admin",
+        "$TestDescription.returnNothing, testing with the admin",
         () async {
           // Arrange
           when(mockProfileRepository.deleteExperience(any)).thenAnswer((_) async => right(unit));
@@ -61,10 +61,10 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        "$descriptionUnAuthorized, random user deleting the experience",
+        "$TestDescription.unAuthorized, random user deleting the experience",
         () async {
           // Act
           final result = await useCase(setUpParams(randomUser));
@@ -74,10 +74,10 @@ void main() {
         },
       );
       test(
-        descriptionServerError,
+        TestDescription.serverError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockProfileRepository.deleteExperience(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(setUpParams(creatorUser));

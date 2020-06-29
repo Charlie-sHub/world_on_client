@@ -7,8 +7,8 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/options/use_case/delete_user.dart';
 
-import '../../../constant_descriptions.dart';
-import '../repository/mock_remote_options_repository.dart';
+import '../../../../lib/domain/options/repository/remote_options_repository_mock.dart';
+import '../../../test_descriptions.dart';
 
 void main() {
   MockRemoteOptionsRepository mockRemoteOptionsRepository;
@@ -30,10 +30,10 @@ void main() {
   }
 
   group(
-    descriptionAuthorization,
+    TestDescription.authorization,
     () {
       test(
-        "$descriptionReturnNothing, testing with the admin",
+        "$TestDescription.returnNothing, testing with the admin",
         () async {
           // Arrange
           when(mockRemoteOptionsRepository.deleteUser(any)).thenAnswer((_) async => right(unit));
@@ -45,7 +45,7 @@ void main() {
         },
       );
       test(
-        "$descriptionReturnNothing, testing with the same user",
+        "$TestDescription.returnNothing, testing with the same user",
         () async {
           // Arrange
           when(mockRemoteOptionsRepository.deleteUser(any)).thenAnswer((_) async => right(unit));
@@ -59,13 +59,13 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionServerError,
+        TestDescription.serverError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockRemoteOptionsRepository.deleteUser(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(setUpParams(userToDelete));
@@ -75,7 +75,7 @@ void main() {
         },
       );
       test(
-        descriptionUnAuthorized,
+        TestDescription.unAuthorized,
         () async {
           // Act
           final result = await useCase(setUpParams(userRandom));

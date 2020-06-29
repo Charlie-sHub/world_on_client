@@ -7,8 +7,8 @@ import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/experience_navigation/use_case/load_surrounding_experiences.dart';
 
-import '../../../constant_descriptions.dart';
-import '../repository/mock_experience_navigation_repository.dart';
+import '../../../../lib/domain/experience_navigation/repository/experience_navigation_repository_mock.dart';
+import '../../../test_descriptions.dart';
 
 void main() {
   MockExperienceNavigationRepository mockExperienceNavigationRepository;
@@ -34,13 +34,13 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionServerError,
+        TestDescription.serverError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockExperienceNavigationRepository.loadSurroundingExperiences(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
@@ -50,7 +50,7 @@ void main() {
         },
       );
       test(
-        descriptionNotFoundError,
+        TestDescription.notFoundError,
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());

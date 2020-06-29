@@ -7,7 +7,7 @@ import 'package:worldon/domain/core/validation/objects/password.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/core/validation/objects/user_level.dart';
 
-import '../../../constant_descriptions.dart';
+import '../../../test_descriptions.dart';
 import '../methods/get_valid_user.dart';
 
 void main() {
@@ -24,87 +24,87 @@ void main() {
   final invalidCreationDateUser = validUser.copyWith(creationDate: PastDate(DateTime.now()));
   final invalidModificationDateUser = validUser.copyWith(modificationDate: PastDate(DateTime.now()));
   test(
-    descriptionValid,
+    TestDescription.valid,
     () async {
       // Assert
       expect(validUser.isValid, true);
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        "$descriptionInvalid with invalidNameUser",
+        "$TestDescription.invalid with invalidNameUser",
         () async {
           // Assert
           expect(invalidNameUser.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidUsernameUser",
+        "$TestDescription.invalid with invalidUsernameUser",
         () async {
           // Assert
           expect(invalidUsernameUser.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidPasswordUser",
+        "$TestDescription.invalid with invalidPasswordUser",
         () async {
           // Assert
           expect(invalidPasswordUser.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidEmailAddressUser",
+        "$TestDescription.invalid with invalidEmailAddressUser",
         () async {
           // Assert
           expect(invalidEmailAddressUser.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidBirthdayUser",
+        "$TestDescription.invalid with invalidBirthdayUser",
         () async {
           // Assert
           expect(invalidBirthdayUser.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidDescriptionUser",
+        "$TestDescription.invalid with invalidDescriptionUser",
         () async {
           // Assert
           expect(invalidDescriptionUser.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidUserLevelUser",
+        "$TestDescription.invalid with invalidUserLevelUser",
         () async {
           // Assert
           expect(invalidUserLevelUser.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidExperiencePointsUser",
+        "$TestDescription.invalid with invalidExperiencePointsUser",
         () async {
           // Assert
           expect(invalidExperiencePointsUser.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidLastLoginUser",
+        "$TestDescription.invalid with invalidLastLoginUser",
         () async {
           // Assert
           expect(invalidLastLoginUser.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidCreationDateUser",
+        "$TestDescription.invalid with invalidCreationDateUser",
         () async {
           // Assert
           expect(invalidCreationDateUser.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidModificationDateUser",
+        "$TestDescription.invalid with invalidModificationDateUser",
         () async {
           // Assert
           expect(invalidModificationDateUser.isValid, false);

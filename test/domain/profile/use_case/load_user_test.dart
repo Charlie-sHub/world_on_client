@@ -6,8 +6,8 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/profile/use_case/load_user.dart';
 
-import '../../../constant_descriptions.dart';
-import '../repository/mock_profile_repository.dart';
+import '../../../../lib/domain/profile/repository/profile_repository_mock.dart';
+import '../../../test_descriptions.dart';
 
 void main() {
   MockProfileRepository mockProfileRepository;
@@ -33,13 +33,13 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionServerError,
+        TestDescription.serverError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockProfileRepository.loadUser(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(Params(id: id));
@@ -49,10 +49,10 @@ void main() {
         },
       );
       test(
-        descriptionCacheError,
+        TestDescription.cacheError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: TestDescription.errorString));
           when(mockProfileRepository.loadUser(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(Params(id: id));
@@ -62,7 +62,7 @@ void main() {
         },
       );
       test(
-        descriptionNotFoundError,
+        TestDescription.notFoundError,
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());

@@ -6,8 +6,8 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/use_case/tag_use_cases/get_tag_creator.dart';
 
-import '../../../../constant_descriptions.dart';
-import '../../repository/mock_tag_repository.dart';
+import '../../../../../lib/domain/core/repository/tag_repository_mock.dart';
+import '../../../../test_descriptions.dart';
 
 void main() {
   MockTagRepository mockTagRepository;
@@ -33,13 +33,13 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionCacheError,
+        TestDescription.cacheError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: TestDescription.errorString));
           when(mockTagRepository.getCreator(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
@@ -49,10 +49,10 @@ void main() {
         },
       );
       test(
-        descriptionServerError,
+        TestDescription.serverError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockTagRepository.getCreator(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
@@ -62,7 +62,7 @@ void main() {
         },
       );
       test(
-        descriptionNotFoundError,
+        TestDescription.notFoundError,
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());

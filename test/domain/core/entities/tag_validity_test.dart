@@ -4,7 +4,7 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 
-import '../../../constant_descriptions.dart';
+import '../../../test_descriptions.dart';
 import '../methods/get_valid_user.dart';
 
 void main() {
@@ -19,38 +19,38 @@ void main() {
   final invalidCreationDateTag = validTag.copyWith(creationDate: PastDate(DateTime.now()));
   final invalidModificationDateTag = validTag.copyWith(modificationDate: PastDate(DateTime.now()));
   test(
-    descriptionValid,
+    TestDescription.valid,
     () async {
       // Assert
       expect(validTag.isValid, true);
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        "$descriptionInvalid with invalidNameTag",
+        "$TestDescription.invalid with invalidNameTag",
         () async {
           // Assert
           expect(invalidNameTag.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidUserTag",
+        "$TestDescription.invalid with invalidUserTag",
         () async {
           // Assert
           expect(invalidUserTag.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidCreationDateTag",
+        "$TestDescription.invalid with invalidCreationDateTag",
         () async {
           // Assert
           expect(invalidCreationDateTag.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidModificationDateTag",
+        "$TestDescription.invalid with invalidModificationDateTag",
         () async {
           // Assert
           expect(invalidModificationDateTag.isValid, false);

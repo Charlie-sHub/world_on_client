@@ -6,9 +6,9 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/profile/use_case/load_following_users.dart';
 
-import '../../../constant_descriptions.dart';
+import '../../../../lib/domain/profile/repository/profile_repository_mock.dart';
+import '../../../test_descriptions.dart';
 import '../../core/methods/create_stream.dart';
-import '../repository/mock_profile_repository.dart';
 
 void main() {
   MockProfileRepository mockProfileRepository;
@@ -34,13 +34,13 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionServerError,
+        TestDescription.serverError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockProfileRepository.loadFollowingUsers(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
           final result = await _act(useCase, params);
@@ -50,10 +50,10 @@ void main() {
         },
       );
       test(
-        descriptionCacheError,
+        TestDescription.cacheError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: TestDescription.errorString));
           when(mockProfileRepository.loadFollowingUsers(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
           final result = await _act(useCase, params);
@@ -63,7 +63,7 @@ void main() {
         },
       );
       test(
-        descriptionNotFoundError,
+        TestDescription.notFoundError,
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());

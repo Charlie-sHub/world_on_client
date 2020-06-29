@@ -6,8 +6,8 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/options/options.dart';
 import 'package:worldon/domain/options/use_case/save_global_options.dart';
 
-import '../../../constant_descriptions.dart';
-import '../repository/mock_remote_options_repository.dart';
+import '../../../../lib/domain/options/repository/remote_options_repository_mock.dart';
+import '../../../test_descriptions.dart';
 
 void main() {
   MockRemoteOptionsRepository mockRemoteOptionsRepository;
@@ -20,7 +20,7 @@ void main() {
   );
   final params = Params(options: Options.empty());
   test(
-    descriptionReturnNothing,
+    TestDescription.returnNothing,
     () async {
       // Arrange
       when(
@@ -34,13 +34,13 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionServerError,
+        TestDescription.serverError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(
             mockRemoteOptionsRepository.saveGlobalOptions(any),
           ).thenAnswer((_) async => left(failure));

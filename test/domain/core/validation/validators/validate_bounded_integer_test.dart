@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/validators/validate_bounded_integer.dart';
 
-import '../../../../constant_descriptions.dart';
+import '../../../../test_descriptions.dart';
 
 void main() {
   const limit = 10;
@@ -12,7 +12,7 @@ void main() {
   const negativeInt = -1;
   test(
     "Should return validInt",
-      () async {
+    () async {
       // Act
       final either = validateBoundedInteger(
         limit: limit,
@@ -24,7 +24,7 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
       () {
       const _description = "Should return IntegerOutOfBounds";
       test(
@@ -54,7 +54,7 @@ void main() {
         },
       );
       test(
-        descriptionNullInput,
+        TestDescription.nullInput,
           () async {
           // Act
           final either = validateBoundedInteger(

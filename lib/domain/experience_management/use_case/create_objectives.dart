@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
@@ -14,9 +15,10 @@ import 'package:worldon/domain/experience_management/use_case/create_experience.
 /// It's supposed to be called right before the [CreateExperience] use-case, once for every [ObjectiveCreationWidget] opened with valid data
 /// that way there's no need to create business logic regarding the deletion or edition of objectives
 // Probably useless, will use Reso's method
+@lazySingleton
 class CreateObjectives implements UseCase<ObjectiveSet, Params> {
   final KtMutableSet<Objective> objectives = KtMutableSet.empty();
-
+  
   @override
   Either<Failure, ObjectiveSet> call(Params params) {
     final objective = Objective(

@@ -1,13 +1,13 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/repository/authentication_repository_interface.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
 /// [UseCase] for direct registration with World On
-///
-/// Will probably change the type to [Unit] instead of [User]
+@lazySingleton
 class Register implements AsyncUseCase<Unit, Params> {
   final AuthenticationRepositoryInterface _repository;
 

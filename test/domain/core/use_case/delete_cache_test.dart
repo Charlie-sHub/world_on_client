@@ -6,8 +6,8 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/use_case/delete_cache.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
-import '../../../constant_descriptions.dart';
-import '../repository/mock_core_repository.dart';
+import '../../../../lib/domain/core/repository/core_repository_mock.dart';
+import '../../../test_descriptions.dart';
 
 void main() {
   MockCoreRepository mockCoreRepository;
@@ -19,7 +19,7 @@ void main() {
     },
   );
   test(
-    descriptionReturnNothing,
+    TestDescription.returnNothing,
     () async {
       // Arrange
       when(mockCoreRepository.deleteCache()).thenAnswer((_) async => right(unit));
@@ -31,10 +31,10 @@ void main() {
     },
   );
   test(
-    descriptionCacheError,
+    TestDescription.cacheError,
     () async {
       // Arrange
-      const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: errorString));
+      const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: TestDescription.errorString));
       when(mockCoreRepository.deleteCache()).thenAnswer((_) async => left(failure));
       // Act
       final result = await useCase(NoParams());

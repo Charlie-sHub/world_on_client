@@ -7,8 +7,8 @@ import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
-import '../../../constant_descriptions.dart';
-import '../repository/mock_authentication_repository.dart';
+import '../../../../lib/domain/authentication/repository/authentication_repository_mock.dart';
+import '../../../test_descriptions.dart';
 
 void main() {
   MockAuthenticationRepository mockAuthenticationRepository;
@@ -52,13 +52,13 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionServerError,
+        TestDescription.serverError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockAuthenticationRepository.getLoggedInUser()).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(NoParams());

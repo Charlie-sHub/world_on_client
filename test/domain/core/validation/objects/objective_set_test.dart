@@ -3,14 +3,14 @@ import 'package:kt_dart/kt.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/validation/objects/objective_set.dart';
 
-import '../../../../constant_descriptions.dart';
+import '../../../../test_descriptions.dart';
 
 void main() {
   final validSet = KtSet.of(Objective.empty());
   final emptySet = KtSet<Objective>.empty();
   final tooBigSet = _fillSet();
   test(
-    descriptionValid,
+    TestDescription.valid,
     () async {
       // Act
       final objectives = ObjectiveSet(validSet);
@@ -20,10 +20,10 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        "$descriptionInvalid with emptySet",
+        "$TestDescription.invalid with emptySet",
         () async {
           // Act
           final objectives = ObjectiveSet(emptySet);
@@ -32,7 +32,7 @@ void main() {
         },
       );
       test(
-        "$descriptionInvalid with tooBigSet",
+        "$TestDescription.invalid with tooBigSet",
         () async {
           // Act
           final objectives = ObjectiveSet(tooBigSet);

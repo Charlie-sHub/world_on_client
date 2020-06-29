@@ -3,7 +3,7 @@ import 'package:worldon/domain/core/entities/reward/reward.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 
-import '../../../constant_descriptions.dart';
+import '../../../test_descriptions.dart';
 
 void main() {
   final validReward = Reward.empty().copyWith(
@@ -13,24 +13,24 @@ void main() {
   final invalidNameReward = validReward.copyWith(name: Name(""));
   final invalidDescriptionReward = validReward.copyWith(description: EntityDescription(""));
   test(
-    descriptionValid,
+    TestDescription.valid,
     () async {
       // Assert
       expect(validReward.isValid, true);
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        "$descriptionInvalid with invalidNameReward",
+        "$TestDescription.invalid with invalidNameReward",
         () async {
           // Assert
           expect(invalidNameReward.isValid, false);
         },
       );
       test(
-        "$descriptionInvalid with invalidDescriptionReward",
+        "$TestDescription.invalid with invalidDescriptionReward",
         () async {
           // Assert
           expect(invalidDescriptionReward.isValid, false);

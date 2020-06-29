@@ -8,8 +8,8 @@ import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 
-import '../../../constant_descriptions.dart';
-import '../repository/mock_comment_repository.dart';
+import '../../../../lib/domain/comments/repository/comment_repository_mock.dart';
+import '../../../test_descriptions.dart';
 
 void main() {
   MockCommentRepository mockCommentRepository;
@@ -31,10 +31,10 @@ void main() {
   }
 
   group(
-    descriptionAuthorization,
+    TestDescription.authorization,
     () {
       test(
-        "$descriptionReturnNothing, testing with the creator",
+        "$TestDescription.returnNothing, testing with the creator",
         () async {
           // Arrange
           when(mockCommentRepository.editComment(any)).thenAnswer((_) async => right(unit));
@@ -46,7 +46,7 @@ void main() {
         },
       );
       test(
-        "$descriptionReturnNothing, testing with the admin",
+        "$TestDescription.returnNothing, testing with the admin",
         () async {
           // Arrange
           when(mockCommentRepository.editComment(any)).thenAnswer((_) async => right(unit));
@@ -60,13 +60,13 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionServerError,
+        TestDescription.serverError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockCommentRepository.editComment(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(setUpParams(posterUser));
@@ -76,7 +76,7 @@ void main() {
         },
       );
       test(
-        descriptionUnAuthorized,
+        TestDescription.unAuthorized,
         () async {
           // Act
           final result = await useCase(setUpParams(randomUser));

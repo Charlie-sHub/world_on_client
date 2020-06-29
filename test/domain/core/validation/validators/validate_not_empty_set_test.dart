@@ -4,7 +4,7 @@ import 'package:kt_dart/kt.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/validators/validate_not_empty_set.dart';
 
-import '../../../../constant_descriptions.dart';
+import '../../../../test_descriptions.dart';
 
 void main() {
   final invalidSet = KtSet.empty();
@@ -19,10 +19,10 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionNullInput,
+        TestDescription.nullInput,
         () async {
           // Act
           final result = _act(null);

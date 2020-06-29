@@ -7,9 +7,9 @@ import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/notifications/use_case/load_notifications.dart';
 
-import '../../../constant_descriptions.dart';
+import '../../../../lib/domain/notifications/repository/notification_repository_mock.dart';
+import '../../../test_descriptions.dart';
 import '../../core/methods/create_stream.dart';
-import '../repository/mock_notification_repository.dart';
 
 void main() {
   MockNotificationRepository mockNotificationRepository;
@@ -35,13 +35,13 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionServerError,
+        TestDescription.serverError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockNotificationRepository.loadNotifications()).thenAnswer((_) => createStream(left(failure)));
           // Act
           final result = await _act(useCase, params);
@@ -51,7 +51,7 @@ void main() {
         },
       );
       test(
-        descriptionNotFoundError,
+        TestDescription.notFoundError,
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());

@@ -1,20 +1,24 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/domain/achievement_management/repository/achievement_repository_interface.dart';
 import 'package:worldon/domain/achievement_management/use_case/award_achievement.dart';
+import 'package:worldon/injection.dart';
 
-import '../../../constant_descriptions.dart';
-import '../repository/mock_achievement_repository.dart';
+import '../../../test_descriptions.dart';
 
 void main() {
-  MockAchievementRepository mockAchievementRepository;
+  // TODO: check if this can be better formatted
+  AchievementRepositoryInterface mockAchievementRepository;
   AwardAchievement useCase;
-  setUp(
+  setUpAll(
     () {
-      mockAchievementRepository = MockAchievementRepository();
-      useCase = AwardAchievement(mockAchievementRepository);
+      configureDependencies(injectable.Environment.test);
+      mockAchievementRepository = getIt<AchievementRepositoryInterface>();
+      useCase = getIt<AwardAchievement>();
     },
   );
   const userId = 1;
@@ -24,7 +28,7 @@ void main() {
     userId: userId,
   );
   test(
-    descriptionReturnNothing,
+    TestDescription.returnNothing,
     () async {
       // Arrange
       when(mockAchievementRepository.awardAchievement(
@@ -39,13 +43,13 @@ void main() {
     },
   );
   group(
-    descriptionGroupOnFailure,
+    TestDescription.groupOnFailure,
     () {
       test(
-        descriptionServerError,
+        TestDescription.serverError,
         () async {
           // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: errorString));
+          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockAchievementRepository.awardAchievement(
             achievementId: anyNamed("achievementId"),
             userId: anyNamed("userId"),
@@ -61,7 +65,7 @@ void main() {
   );
 }
 
-void verifyInteractions(MockAchievementRepository mockAchievementRepository) {
+void verifyInteractions(AchievementRepositoryInterface mockAchievementRepository) {
   verify(mockAchievementRepository.awardAchievement(
     achievementId: anyNamed("achievementId"),
     userId: anyNamed("userId"),

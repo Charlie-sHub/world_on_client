@@ -7,8 +7,8 @@ import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/use_case/get_current_location.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
-import '../../../constant_descriptions.dart';
-import '../repository/mock_geo_location_repository.dart';
+import '../../../../lib/domain/core/repository/geo_location_repository_mock.dart';
+import '../../../test_descriptions.dart';
 
 void main() {
   MockGeoLocationRepository mockGeoLocationRepository;
@@ -35,7 +35,7 @@ void main() {
     "Should return GeoLocationError",
     () async {
       // Arrange
-      const failure = Failure.coreData(CoreDataFailure.geoLocationError(errorString: errorString));
+      const failure = Failure.coreData(CoreDataFailure.geoLocationError(errorString: TestDescription.errorString));
       when(mockGeoLocationRepository.getCurrentLocation()).thenReturn(left(failure));
       // Act
       final result = useCase(NoParams());
