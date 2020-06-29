@@ -1,11 +1,8 @@
 import 'dart:typed_data';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
-import 'package:worldon/core/util/cypher.dart';
+import 'package:worldon/core/util/cypher_mock.dart';
 import 'package:worldon/domain/authentication/use_case/encrypt.dart';
-
-class MockCypher extends Mock implements Cypher {}
 
 void main() {
   MockCypher mockCypher;

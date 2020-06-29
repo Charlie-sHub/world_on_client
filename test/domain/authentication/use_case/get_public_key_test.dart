@@ -2,22 +2,25 @@ import 'dart:typed_data';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/domain/authentication/repository/public_key_repository_interface.dart';
 import 'package:worldon/domain/authentication/use_case/get_public_key.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/injection.dart';
 
-import '../../../../lib/domain/authentication/repository/public_key_repository_mock.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  MockPublicKeyRepository mockPublicKeyRepository;
+  PublicKeyRepositoryInterface mockPublicKeyRepository;
   GetPublicKey useCase;
-  setUp(
+  setUpAll(
     () {
-      mockPublicKeyRepository = MockPublicKeyRepository();
-      useCase = GetPublicKey(mockPublicKeyRepository);
+      configureDependencies(injectable.Environment.test);
+      mockPublicKeyRepository = getIt<PublicKeyRepositoryInterface>();
+      useCase = getIt<GetPublicKey>();
     },
   );
   final publicKeyBytes = Uint8List(2048);
@@ -66,7 +69,7 @@ void main() {
   );
 }
 
-void _verifyInteractions(MockPublicKeyRepository mockPublicKeyRepository) {
+void _verifyInteractions(PublicKeyRepositoryInterface mockPublicKeyRepository) {
   verify(mockPublicKeyRepository.getPublicKey());
   verifyNoMoreInteractions(mockPublicKeyRepository);
 }

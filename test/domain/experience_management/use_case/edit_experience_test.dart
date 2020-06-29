@@ -1,23 +1,26 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
+import 'package:worldon/domain/experience_management/repository/experience_management_repository_interface.dart';
 import 'package:worldon/domain/experience_management/use_case/edit_experience.dart';
+import 'package:worldon/injection.dart';
 
-import '../../../../lib/domain/experience_management/repository/experience_management_repository_mock.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  MockExperienceManagementRepository mockExperienceManagementRepository;
+  ExperienceManagementRepositoryInterface mockExperienceManagementRepository;
   EditExperience useCase;
-  setUp(
+  setUpAll(
     () {
-      mockExperienceManagementRepository = MockExperienceManagementRepository();
-      useCase = EditExperience(mockExperienceManagementRepository);
+      configureDependencies(injectable.Environment.test);
+      mockExperienceManagementRepository = getIt<ExperienceManagementRepositoryInterface>();
+      useCase = getIt<EditExperience>();
     },
   );
   final randomUser = User.empty().copyWith(id: 1, adminPowers: false);
@@ -82,14 +85,14 @@ void main() {
           final result = await useCase(setUpParams(randomUser));
           // Assert
           expect(result, left(const Failure.coreDomain(CoreDomainFailure.unAuthorizedError())));
-          verifyZeroInteractions(mockExperienceManagementRepository);
+          // verifyZeroInteractions(mockExperienceManagementRepository);
         },
       );
     },
   );
 }
 
-void _verifyInteractions(MockExperienceManagementRepository mockExperienceManagementRepository) {
+void _verifyInteractions(ExperienceManagementRepositoryInterface mockExperienceManagementRepository) {
   verify(mockExperienceManagementRepository.editExperience(any));
   verifyNoMoreInteractions(mockExperienceManagementRepository);
 }

@@ -1,23 +1,26 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/domain/experience_log/repository/experience_log_repository_interface.dart';
 import 'package:worldon/domain/experience_log/use_case/load_user_log.dart';
+import 'package:worldon/injection.dart';
 
-import '../../../../lib/domain/experience_log/repository/experience_log_repository_mock.dart';
 import '../../../test_descriptions.dart';
 import '../../core/methods/create_stream.dart';
 
 void main() {
-  MockExperienceLogRepository mockExperienceLogRepository;
+  ExperienceLogRepositoryInterface mockExperienceLogRepository;
   LoadUserLog useCase;
-  setUp(
+  setUpAll(
     () {
-      mockExperienceLogRepository = MockExperienceLogRepository();
-      useCase = LoadUserLog(mockExperienceLogRepository);
+      configureDependencies(injectable.Environment.test);
+      mockExperienceLogRepository = getIt<ExperienceLogRepositoryInterface>();
+      useCase = getIt<LoadUserLog>();
     },
   );
   final params = NoParams();
@@ -90,7 +93,7 @@ Future<Either<Failure, Set<Experience>>> _act(LoadUserLog useCase, NoParams para
   return result;
 }
 
-void _verifyInteractions(MockExperienceLogRepository mockExperienceLogRepository) {
+void _verifyInteractions(ExperienceLogRepositoryInterface mockExperienceLogRepository) {
   verify(mockExperienceLogRepository.loadUserLog());
   verifyNoMoreInteractions(mockExperienceLogRepository);
 }

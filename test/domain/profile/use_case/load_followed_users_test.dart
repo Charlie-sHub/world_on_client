@@ -1,22 +1,25 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 import 'package:worldon/domain/profile/use_case/load_followed_users.dart';
+import 'package:worldon/injection.dart';
 
-import '../../../../lib/domain/profile/repository/profile_repository_mock.dart';
 import '../../../test_descriptions.dart';
 import '../../core/methods/create_stream.dart';
 
 void main() {
-  MockProfileRepository mockProfileRepository;
+  ProfileRepositoryInterface mockProfileRepository;
   LoadFollowedUsers useCase;
-  setUp(
+  setUpAll(
     () {
-      mockProfileRepository = MockProfileRepository();
-      useCase = LoadFollowedUsers(mockProfileRepository);
+      configureDependencies(injectable.Environment.test);
+      mockProfileRepository = getIt<ProfileRepositoryInterface>();
+      useCase = getIt<LoadFollowedUsers>();
     },
   );
   final params = Params(id: 1);
@@ -88,7 +91,7 @@ Future<Either<Failure, Set<User>>> _act(LoadFollowedUsers useCase, Params params
   return result;
 }
 
-void _verifyInteractions(MockProfileRepository mockProfileRepository) {
+void _verifyInteractions(ProfileRepositoryInterface mockProfileRepository) {
   verify(mockProfileRepository.loadFollowedUsers(any));
   verifyNoMoreInteractions(mockProfileRepository);
 }

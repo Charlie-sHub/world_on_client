@@ -1,23 +1,26 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/authentication/failures/authentication_data_failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/domain/authentication/repository/authentication_repository_interface.dart';
 import 'package:worldon/domain/authentication/use_case/log_in.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
+import 'package:worldon/injection.dart';
 
-import '../../../../lib/domain/authentication/repository/authentication_repository_mock.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  MockAuthenticationRepository mockAuthenticationRepository;
+  AuthenticationRepositoryInterface mockAuthenticationRepository;
   LogIn useCase;
-  setUp(
+  setUpAll(
     () {
-      mockAuthenticationRepository = MockAuthenticationRepository();
-      useCase = LogIn(mockAuthenticationRepository);
+      configureDependencies(injectable.Environment.test);
+      mockAuthenticationRepository = getIt<AuthenticationRepositoryInterface>();
+      useCase = getIt<LogIn>();
     },
   );
   final params = Params(
@@ -69,7 +72,7 @@ void main() {
   );
 }
 
-void _verifyInteractions(MockAuthenticationRepository mockAuthenticationRepository) {
+void _verifyInteractions(AuthenticationRepositoryInterface mockAuthenticationRepository) {
   verify(mockAuthenticationRepository.logIn(any));
   verifyNoMoreInteractions(mockAuthenticationRepository);
 }

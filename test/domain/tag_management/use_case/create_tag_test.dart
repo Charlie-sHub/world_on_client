@@ -1,21 +1,24 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
+import 'package:worldon/domain/tag_management/repository/tag_management_repository_interface.dart';
 import 'package:worldon/domain/tag_management/use_case/create_tag.dart';
+import 'package:worldon/injection.dart';
 
-import '../../../../lib/domain/tag_management/repository/tag_management_repository_mock.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  MockTagManagementRepository mockTagManagementRepository;
+  TagManagementRepositoryInterface mockTagManagementRepository;
   CreateTag useCase;
-  setUp(
+  setUpAll(
     () {
-      mockTagManagementRepository = MockTagManagementRepository();
-      useCase = CreateTag(mockTagManagementRepository);
+      configureDependencies(injectable.Environment.test);
+      mockTagManagementRepository = getIt<TagManagementRepositoryInterface>();
+      useCase = getIt<CreateTag>();
     },
   );
   final params = Params(tag: Tag.empty());
@@ -64,7 +67,7 @@ void main() {
   );
 }
 
-void _verifyInteractions(MockTagManagementRepository mockTagManagementRepository) {
+void _verifyInteractions(TagManagementRepositoryInterface mockTagManagementRepository) {
   verify(mockTagManagementRepository.createTag(any));
   verifyNoMoreInteractions(mockTagManagementRepository);
 }

@@ -1,21 +1,24 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart';
+import 'package:worldon/domain/notifications/repository/notification_repository_interface.dart';
 import 'package:worldon/domain/notifications/use_case/send_notification.dart';
+import 'package:worldon/injection.dart';
 
-import '../../../../lib/domain/notifications/repository/notification_repository_mock.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  MockNotificationRepository mockNotificationRepository;
+  NotificationRepositoryInterface mockNotificationRepository;
   SendNotification useCase;
-  setUp(
+  setUpAll(
     () {
-      mockNotificationRepository = MockNotificationRepository();
-      useCase = SendNotification(mockNotificationRepository);
+      configureDependencies(injectable.Environment.test);
+      mockNotificationRepository = getIt<NotificationRepositoryInterface>();
+      useCase = getIt<SendNotification>();
     },
   );
   final params = Params(notification: Notification.empty());
@@ -51,7 +54,7 @@ void main() {
   );
 }
 
-void _verifyInteractions(MockNotificationRepository mockNotificationRepository) {
+void _verifyInteractions(NotificationRepositoryInterface mockNotificationRepository) {
   verify(mockNotificationRepository.sendNotification(any));
   verifyNoMoreInteractions(mockNotificationRepository);
 }

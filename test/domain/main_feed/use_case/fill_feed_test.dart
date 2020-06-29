@@ -1,23 +1,26 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/domain/main_feed/repository/main_feed_repository_interface.dart';
 import 'package:worldon/domain/main_feed/use_case/fill_feed.dart';
+import 'package:worldon/injection.dart';
 
-import '../../../../lib/domain/main_feed/repository/main_feed_repository_mock.dart';
 import '../../../test_descriptions.dart';
 import '../../core/methods/create_stream.dart';
 
 void main() {
-  MockMainFeedRepository mockMainFeedRepository;
+  MainFeedRepositoryInterface mockMainFeedRepository;
   FillFeed useCase;
-  setUp(
+  setUpAll(
     () {
-      mockMainFeedRepository = MockMainFeedRepository();
-      useCase = FillFeed(mockMainFeedRepository);
+      configureDependencies(injectable.Environment.test);
+      mockMainFeedRepository = getIt<MainFeedRepositoryInterface>();
+      useCase = getIt<FillFeed>();
     },
   );
   final params = NoParams();
@@ -86,7 +89,7 @@ Future<Either<Failure, List<Experience>>> _act(FillFeed useCase, NoParams params
   return result;
 }
 
-void _verifyInteractions(MockMainFeedRepository mockMainFeedRepository) {
+void _verifyInteractions(MainFeedRepositoryInterface mockMainFeedRepository) {
   verify(mockMainFeedRepository.fillFeed());
   verifyNoMoreInteractions(mockMainFeedRepository);
 }

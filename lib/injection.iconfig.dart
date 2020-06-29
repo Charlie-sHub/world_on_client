@@ -15,13 +15,13 @@ import 'package:worldon/data/authentication/repository/production_authentication
 import 'package:worldon/domain/achievement_management/use_case/award_achievement.dart';
 import 'package:worldon/domain/authentication/repository/cached_user_repository_mock.dart';
 import 'package:worldon/domain/authentication/repository/cached_credentials_repository_interface.dart';
-import 'package:worldon/domain/comments/repository/comment_repository_mock.dart';
-import 'package:worldon/domain/comments/repository/comment_repository_interface.dart';
 import 'package:worldon/data/comments/repository/development_comment_repository.dart';
+import 'package:worldon/domain/comments/repository/comment_repository_interface.dart';
 import 'package:worldon/data/comments/repository/production_comment_repository.dart';
-import 'package:worldon/data/core/repository/production_core_repository.dart';
-import 'package:worldon/domain/core/repository/core_repository_interface.dart';
+import 'package:worldon/domain/comments/repository/comment_repository_mock.dart';
 import 'package:worldon/data/core/repository/development_core_repository.dart';
+import 'package:worldon/domain/core/repository/core_repository_interface.dart';
+import 'package:worldon/data/core/repository/production_core_repository.dart';
 import 'package:worldon/domain/core/repository/core_repository_mock.dart';
 import 'package:worldon/domain/achievement_management/use_case/create_achievement.dart';
 import 'package:worldon/domain/experience_management/use_case/create_objectives.dart';
@@ -31,26 +31,26 @@ import 'package:worldon/domain/core/use_case/delete_cache.dart';
 import 'package:worldon/domain/comments/use_case/delete_comment.dart';
 import 'package:worldon/domain/achievement_management/use_case/edit_achievement.dart';
 import 'package:worldon/domain/comments/use_case/edit_comment.dart';
-import 'package:worldon/domain/authentication/use_case/encrypt.dart';
 import 'package:worldon/data/experience_log/repository/production_experience_log_repository.dart';
 import 'package:worldon/domain/experience_log/repository/experience_log_repository_interface.dart';
 import 'package:worldon/data/experience_log/repository/development_experience_log_repository.dart';
 import 'package:worldon/domain/experience_log/repository/experience_log_repository_mock.dart';
-import 'package:worldon/data/experience_management/repository/production_experience_management_repository.dart';
-import 'package:worldon/domain/experience_management/repository/experience_management_repository_interface.dart';
 import 'package:worldon/data/experience_management/repository/development_experience_management_repository.dart';
+import 'package:worldon/domain/experience_management/repository/experience_management_repository_interface.dart';
+import 'package:worldon/data/experience_management/repository/production_experience_management_repository.dart';
 import 'package:worldon/domain/experience_management/repository/experience_management_repository_mock.dart';
 import 'package:worldon/data/experience_navigation/repository/production_experience_navigation_repository.dart';
 import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_interface.dart';
 import 'package:worldon/data/experience_navigation/repository/development_experience_navigation_repository.dart';
 import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_mock.dart';
 import 'package:worldon/domain/experience_navigation/use_case/finish_experience.dart';
-import 'package:worldon/domain/core/repository/geo_location_repository_mock.dart';
-import 'package:worldon/domain/core/repository/geo_location_repository_interface.dart';
 import 'package:worldon/data/core/repository/development_geo_location_repository.dart';
+import 'package:worldon/domain/core/repository/geo_location_repository_interface.dart';
 import 'package:worldon/data/core/repository/production_geo_location_repository.dart';
+import 'package:worldon/domain/core/repository/geo_location_repository_mock.dart';
 import 'package:worldon/domain/achievement_management/use_case/get_achievement.dart';
 import 'package:worldon/domain/achievement_management/use_case/get_all_achievements.dart';
+import 'package:worldon/domain/authentication/use_case/get_cached_user.dart';
 import 'package:worldon/domain/core/use_case/get_current_location.dart';
 import 'package:worldon/domain/experience_management/use_case/get_experience.dart';
 import 'package:worldon/domain/comments/use_case/get_experience_comments.dart';
@@ -71,10 +71,10 @@ import 'package:worldon/data/main_feed/repository/development_main_feed_reposito
 import 'package:worldon/domain/main_feed/repository/main_feed_repository_interface.dart';
 import 'package:worldon/data/main_feed/repository/production_main_feed_repository.dart';
 import 'package:worldon/domain/main_feed/repository/main_feed_repository_mock.dart';
-import 'package:worldon/data/notifications/repository/development_notification_repository.dart';
-import 'package:worldon/domain/notifications/repository/notification_repository_interface.dart';
-import 'package:worldon/data/notifications/repository/production_notification_repository.dart';
 import 'package:worldon/domain/notifications/repository/notification_repository_mock.dart';
+import 'package:worldon/domain/notifications/repository/notification_repository_interface.dart';
+import 'package:worldon/data/notifications/repository/development_notification_repository.dart';
+import 'package:worldon/data/notifications/repository/production_notification_repository.dart';
 import 'package:worldon/domain/comments/use_case/post_comment.dart';
 import 'package:worldon/data/profile/repository/development_profile_repository.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
@@ -84,10 +84,10 @@ import 'package:worldon/domain/authentication/repository/public_key_repository_m
 import 'package:worldon/domain/authentication/repository/public_key_repository_interface.dart';
 import 'package:worldon/domain/experience_navigation/use_case/rate_difficulty.dart';
 import 'package:worldon/domain/authentication/use_case/register.dart';
-import 'package:worldon/data/options/repository/development_remote_options_repository.dart';
-import 'package:worldon/domain/options/repository/remote_options_repository_interface.dart';
-import 'package:worldon/data/options/repository/production_remote_options_repository.dart';
 import 'package:worldon/domain/options/repository/remote_options_repository_mock.dart';
+import 'package:worldon/domain/options/repository/remote_options_repository_interface.dart';
+import 'package:worldon/data/options/repository/development_remote_options_repository.dart';
+import 'package:worldon/data/options/repository/production_remote_options_repository.dart';
 import 'package:worldon/domain/profile/use_case/remove_experience_liked.dart';
 import 'package:worldon/domain/experience_navigation/use_case/reward_user.dart';
 import 'package:worldon/domain/options/use_case/save_global_options.dart';
@@ -103,10 +103,10 @@ import 'package:worldon/data/core/repository/production_tag_repository.dart';
 import 'package:worldon/domain/core/repository/tag_repository_interface.dart';
 import 'package:worldon/data/core/repository/development_tag_repository.dart';
 import 'package:worldon/domain/core/repository/tag_repository_mock.dart';
-import 'package:worldon/data/tag_management/repository/production_tag_management_repository.dart';
+import 'package:worldon/domain/tag_management/repository/tag_management_repository_mock.dart';
 import 'package:worldon/domain/tag_management/repository/tag_management_repository_interface.dart';
 import 'package:worldon/data/tag_management/repository/development_tag_management_repository.dart';
-import 'package:worldon/domain/tag_management/repository/tag_management_repository_mock.dart';
+import 'package:worldon/data/tag_management/repository/production_tag_management_repository.dart';
 import 'package:worldon/domain/profile/use_case/un_block_user.dart';
 import 'package:worldon/domain/profile/use_case/un_follow_user.dart';
 import 'package:worldon/domain/experience_log/use_case/add_experience_to_log.dart';
@@ -125,6 +125,7 @@ import 'package:worldon/domain/profile/use_case/edit_user.dart';
 import 'package:worldon/domain/main_feed/use_case/fill_feed.dart';
 import 'package:worldon/domain/profile/use_case/follow_user.dart';
 import 'package:worldon/domain/core/use_case/tag_use_cases/get_all_tags.dart';
+import 'package:worldon/domain/authentication/use_case/get_public_key.dart';
 import 'package:worldon/domain/tag_management/use_case/get_tag.dart';
 import 'package:worldon/domain/core/use_case/tag_use_cases/get_tag_creator.dart';
 import 'package:worldon/domain/core/use_case/tag_use_cases/get_tags_by_creator.dart';
@@ -160,13 +161,14 @@ void $initGetIt(GetIt g, {String environment}) {
       () => EditAchievement(g<AchievementRepositoryInterface>()));
   g.registerLazySingleton<EditComment>(
       () => EditComment(g<CommentRepositoryInterface>()));
-  g.registerLazySingleton<Encrypt>(() => Encrypt(g<Cypher>()));
   g.registerLazySingleton<FinishExperience>(
       () => FinishExperience(g<ExperienceNavigationRepositoryInterface>()));
   g.registerLazySingleton<GetAchievement>(
       () => GetAchievement(g<AchievementRepositoryInterface>()));
   g.registerLazySingleton<GetAllAchievements>(
       () => GetAllAchievements(g<AchievementRepositoryInterface>()));
+  g.registerLazySingleton<GetCachedUser>(
+      () => GetCachedUser(g<CachedCredentialsRepositoryInterface>()));
   g.registerLazySingleton<GetCurrentLocation>(
       () => GetCurrentLocation(g<GeoLocationRepositoryInterface>()));
   g.registerLazySingleton<GetExperience>(
@@ -247,6 +249,8 @@ void $initGetIt(GetIt g, {String environment}) {
       () => FollowUser(g<ProfileRepositoryInterface>()));
   g.registerLazySingleton<GetAllTags>(
       () => GetAllTags(g<TagCoreRepositoryInterface>()));
+  g.registerLazySingleton<GetPublicKey>(
+      () => GetPublicKey(g<PublicKeyRepositoryInterface>()));
   g.registerLazySingleton<GetTag>(
       () => GetTag(g<TagManagementRepositoryInterface>()));
   g.registerLazySingleton<GetTagCreator>(

@@ -1,23 +1,26 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/domain/comments/repository/comment_repository_interface.dart';
 import 'package:worldon/domain/comments/use_case/edit_comment.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
+import 'package:worldon/injection.dart';
 
-import '../../../../lib/domain/comments/repository/comment_repository_mock.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  MockCommentRepository mockCommentRepository;
+  CommentRepositoryInterface mockCommentRepository;
   EditComment useCase;
-  setUp(
+  setUpAll(
     () {
-      mockCommentRepository = MockCommentRepository();
-      useCase = EditComment(mockCommentRepository);
+      configureDependencies(injectable.Environment.test);
+      mockCommentRepository = getIt<CommentRepositoryInterface>();
+      useCase = getIt<EditComment>();
     },
   );
   final randomUser = User.empty().copyWith(id: 1, adminPowers: false);
@@ -82,14 +85,14 @@ void main() {
           final result = await useCase(setUpParams(randomUser));
           // Assert
           expect(result, left(const Failure.coreDomain(CoreDomainFailure.unAuthorizedError())));
-          verifyZeroInteractions(mockCommentRepository);
+          // verifyZeroInteractions(mockCommentRepository);
         },
       );
     },
   );
 }
 
-void _verifyInteractions(MockCommentRepository mockCommentRepository) {
+void _verifyInteractions(CommentRepositoryInterface mockCommentRepository) {
   verify(mockCommentRepository.editComment(any));
   verifyNoMoreInteractions(mockCommentRepository);
 }

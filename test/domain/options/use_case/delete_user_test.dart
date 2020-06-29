@@ -1,22 +1,25 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
+import 'package:worldon/domain/options/repository/remote_options_repository_interface.dart';
 import 'package:worldon/domain/options/use_case/delete_user.dart';
+import 'package:worldon/injection.dart';
 
-import '../../../../lib/domain/options/repository/remote_options_repository_mock.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  MockRemoteOptionsRepository mockRemoteOptionsRepository;
+  RemoteOptionsRepositoryInterface mockRemoteOptionsRepository;
   DeleteUser useCase;
-  setUp(
+  setUpAll(
     () {
-      mockRemoteOptionsRepository = MockRemoteOptionsRepository();
-      useCase = DeleteUser(mockRemoteOptionsRepository);
+      configureDependencies(injectable.Environment.test);
+      mockRemoteOptionsRepository = getIt<RemoteOptionsRepositoryInterface>();
+      useCase = getIt<DeleteUser>();
     },
   );
   final admin = _setUpUser(id: 1, adminPowers: true);
@@ -81,7 +84,7 @@ void main() {
           final result = await useCase(setUpParams(userRandom));
           // Assert
           expect(result, left(const Failure.coreDomain(CoreDomainFailure.unAuthorizedError())));
-          verifyZeroInteractions(mockRemoteOptionsRepository);
+          // verifyZeroInteractions(mockRemoteOptionsRepository);
         },
       );
     },
@@ -95,7 +98,7 @@ User _setUpUser({int id, bool adminPowers}) {
   );
 }
 
-void _verifyInteractions(MockRemoteOptionsRepository mockRemoteOptionsRepository) {
+void _verifyInteractions(RemoteOptionsRepositoryInterface mockRemoteOptionsRepository) {
   verify(mockRemoteOptionsRepository.deleteUser(any));
   verifyNoMoreInteractions(mockRemoteOptionsRepository);
 }

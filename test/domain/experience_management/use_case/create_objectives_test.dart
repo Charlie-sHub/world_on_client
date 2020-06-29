@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:injectable/injectable.dart' as injectable;
 import 'package:kt_dart/kt.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
@@ -8,12 +9,14 @@ import 'package:worldon/domain/core/validation/objects/latitude.dart';
 import 'package:worldon/domain/core/validation/objects/longitude.dart';
 import 'package:worldon/domain/core/validation/objects/objective_set.dart';
 import 'package:worldon/domain/experience_management/use_case/create_objectives.dart';
+import 'package:worldon/injection.dart';
 
 void main() {
   CreateObjectives useCase;
-  setUp(
+  setUpAll(
     () {
-      useCase = CreateObjectives();
+      configureDependencies(injectable.Environment.test);
+      useCase = getIt<CreateObjectives>();
     },
   );
   final _entityDescription = EntityDescription("Test");

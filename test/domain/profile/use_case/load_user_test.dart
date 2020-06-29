@@ -1,21 +1,24 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 import 'package:worldon/domain/profile/use_case/load_user.dart';
+import 'package:worldon/injection.dart';
 
-import '../../../../lib/domain/profile/repository/profile_repository_mock.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  MockProfileRepository mockProfileRepository;
+  ProfileRepositoryInterface mockProfileRepository;
   LoadUser useCase;
-  setUp(
+  setUpAll(
     () {
-      mockProfileRepository = MockProfileRepository();
-      useCase = LoadUser(mockProfileRepository);
+      configureDependencies(injectable.Environment.test);
+      mockProfileRepository = getIt<ProfileRepositoryInterface>();
+      useCase = getIt<LoadUser>();
     },
   );
   const id = 1;
@@ -78,7 +81,7 @@ void main() {
   );
 }
 
-void _verifyInteractions(MockProfileRepository mockProfileRepository) {
+void _verifyInteractions(ProfileRepositoryInterface mockProfileRepository) {
   verify(mockProfileRepository.loadUser(any));
   verifyNoMoreInteractions(mockProfileRepository);
 }

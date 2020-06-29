@@ -2,17 +2,15 @@ import 'dart:typed_data';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
-import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/core/util/cypher.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
-@lazySingleton
 class Encrypt implements UseCase<String, Params> {
   final Cypher cypher;
-  
+
   Encrypt(this.cypher);
-  
+
   @override
   Either<Failure, String> call(Params params) {
     /*

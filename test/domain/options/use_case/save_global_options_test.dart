@@ -1,21 +1,24 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/options/options.dart';
+import 'package:worldon/domain/options/repository/remote_options_repository_interface.dart';
 import 'package:worldon/domain/options/use_case/save_global_options.dart';
+import 'package:worldon/injection.dart';
 
-import '../../../../lib/domain/options/repository/remote_options_repository_mock.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  MockRemoteOptionsRepository mockRemoteOptionsRepository;
+  RemoteOptionsRepositoryInterface mockRemoteOptionsRepository;
   SaveGlobalOptions useCase;
-  setUp(
+  setUpAll(
     () {
-      mockRemoteOptionsRepository = MockRemoteOptionsRepository();
-      useCase = SaveGlobalOptions(mockRemoteOptionsRepository);
+      configureDependencies(injectable.Environment.test);
+      mockRemoteOptionsRepository = getIt<RemoteOptionsRepositoryInterface>();
+      useCase = getIt<SaveGlobalOptions>();
     },
   );
   final params = Params(options: Options.empty());
@@ -55,7 +58,7 @@ void main() {
   );
 }
 
-void _verifyInteractions(MockRemoteOptionsRepository mockRemoteOptionsRepository) {
+void _verifyInteractions(RemoteOptionsRepositoryInterface mockRemoteOptionsRepository) {
   verify(
     mockRemoteOptionsRepository.saveGlobalOptions(any),
   );

@@ -1,20 +1,23 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 import 'package:worldon/domain/profile/use_case/block_user.dart';
+import 'package:worldon/injection.dart';
 
-import '../../../../lib/domain/profile/repository/profile_repository_mock.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  MockProfileRepository mockProfileRepository;
+  ProfileRepositoryInterface mockProfileRepository;
   BlockUser useCase;
-  setUp(
+  setUpAll(
     () {
-      mockProfileRepository = MockProfileRepository();
-      useCase = BlockUser(mockProfileRepository);
+      configureDependencies(injectable.Environment.test);
+      mockProfileRepository = getIt<ProfileRepositoryInterface>();
+      useCase = getIt<BlockUser>();
     },
   );
   final params = Params(
@@ -52,7 +55,7 @@ void main() {
   );
 }
 
-void _verifyInteractions(MockProfileRepository mockProfileRepository) {
+void _verifyInteractions(ProfileRepositoryInterface mockProfileRepository) {
   verify(mockProfileRepository.blockUser(any));
   verifyNoMoreInteractions(mockProfileRepository);
 }

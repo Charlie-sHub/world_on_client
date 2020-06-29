@@ -1,23 +1,26 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/authentication/failures/authentication_data_failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/domain/authentication/repository/cached_credentials_repository_interface.dart';
 import 'package:worldon/domain/authentication/use_case/get_cached_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/injection.dart';
 
-import '../../../../lib/domain/authentication/repository/cached_user_repository_mock.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  MockCachedUserRepository mockCachedUserRepository;
+  CachedCredentialsRepositoryInterface mockCachedUserRepository;
   GetCachedUser useCase;
-  setUp(
+  setUpAll(
     () {
-      mockCachedUserRepository = MockCachedUserRepository();
-      useCase = GetCachedUser(mockCachedUserRepository);
+      configureDependencies(injectable.Environment.test);
+      mockCachedUserRepository = getIt<CachedCredentialsRepositoryInterface>();
+      useCase = getIt<GetCachedUser>();
     },
   );
   final user = User.empty();
@@ -66,7 +69,7 @@ void main() {
   );
 }
 
-void _verifyInteractions(MockCachedUserRepository mockCachedUserRepository) {
+void _verifyInteractions(CachedCredentialsRepositoryInterface mockCachedUserRepository) {
   verify(mockCachedUserRepository.getCachedUser());
   verifyNoMoreInteractions(mockCachedUserRepository);
 }

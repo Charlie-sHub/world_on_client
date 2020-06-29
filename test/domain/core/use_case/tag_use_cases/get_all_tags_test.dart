@@ -1,23 +1,26 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
+import 'package:worldon/domain/core/repository/tag_repository_interface.dart';
 import 'package:worldon/domain/core/use_case/tag_use_cases/get_all_tags.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/injection.dart';
 
-import '../../../../../lib/domain/core/repository/tag_repository_mock.dart';
 import '../../../../test_descriptions.dart';
 import '../../methods/create_stream.dart';
 
 void main() {
-  MockTagRepository mockTagRepository;
+  TagCoreRepositoryInterface mockTagRepository;
   GetAllTags useCase;
-  setUp(
+  setUpAll(
     () {
-      mockTagRepository = MockTagRepository();
-      useCase = GetAllTags(mockTagRepository);
+      configureDependencies(injectable.Environment.test);
+      mockTagRepository = getIt<TagCoreRepositoryInterface>();
+      useCase = getIt<GetAllTags>();
     },
   );
   final tagList = [Tag.empty()];
@@ -88,7 +91,7 @@ Future<Either<Failure, List<Tag>>> _act(GetAllTags useCase) async {
   return result;
 }
 
-void _verifyInteractions(MockTagRepository mockTagRepository) {
+void _verifyInteractions(TagCoreRepositoryInterface mockTagRepository) {
   verify(mockTagRepository.getAllTags());
   verifyNoMoreInteractions(mockTagRepository);
 }

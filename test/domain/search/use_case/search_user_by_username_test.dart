@@ -1,23 +1,26 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/search/repository/search_repository_interface.dart';
 import 'package:worldon/domain/search/use_case/search_users_by_username.dart';
+import 'package:worldon/injection.dart';
 
-import '../../../../lib/domain/search/repository/search_repository_mock.dart';
 import '../../../test_descriptions.dart';
 import '../../core/methods/create_stream.dart';
 
 void main() {
-  MockSearchRepository mockSearchRepository;
+  SearchRepositoryInterface mockSearchRepository;
   SearchUsersByUsername useCase;
-  setUp(
+  setUpAll(
     () {
-      mockSearchRepository = MockSearchRepository();
-      useCase = SearchUsersByUsername(mockSearchRepository);
+      configureDependencies(injectable.Environment.test);
+      mockSearchRepository = getIt<SearchRepositoryInterface>();
+      useCase = getIt<SearchUsersByUsername>();
     },
   );
   final params = Params(username: Name("test"));
@@ -89,7 +92,7 @@ Future<Either<Failure, Set<User>>> _act(SearchUsersByUsername useCase, Params pa
   return result;
 }
 
-void _verifyInteractions(MockSearchRepository mockSearchRepository) {
+void _verifyInteractions(SearchRepositoryInterface mockSearchRepository) {
   verify(mockSearchRepository.searchUsersByUserName(any));
   verifyNoMoreInteractions(mockSearchRepository);
 }

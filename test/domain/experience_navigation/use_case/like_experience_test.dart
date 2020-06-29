@@ -1,20 +1,23 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_interface.dart';
 import 'package:worldon/domain/experience_navigation/use_case/like_experience.dart';
+import 'package:worldon/injection.dart';
 
-import '../../../../lib/domain/experience_navigation/repository/experience_navigation_repository_mock.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  MockExperienceNavigationRepository mockExperienceNavigationRepository;
+  ExperienceNavigationRepositoryInterface mockExperienceNavigationRepository;
   LikeExperience useCase;
-  setUp(
+  setUpAll(
     () {
-      mockExperienceNavigationRepository = MockExperienceNavigationRepository();
-      useCase = LikeExperience(mockExperienceNavigationRepository);
+      configureDependencies(injectable.Environment.test);
+      mockExperienceNavigationRepository = getIt<ExperienceNavigationRepositoryInterface>();
+      useCase = getIt<LikeExperience>();
     },
   );
   final params = Params(
@@ -65,7 +68,7 @@ void main() {
   );
 }
 
-void _verifyInteractions(MockExperienceNavigationRepository mockExperienceNavigationRepository) {
+void _verifyInteractions(ExperienceNavigationRepositoryInterface mockExperienceNavigationRepository) {
   verify(mockExperienceNavigationRepository.likeExperience(any));
   verifyNoMoreInteractions(mockExperienceNavigationRepository);
 }

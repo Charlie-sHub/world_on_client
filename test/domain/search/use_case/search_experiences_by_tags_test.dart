@@ -1,23 +1,26 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
+import 'package:worldon/domain/search/repository/search_repository_interface.dart';
 import 'package:worldon/domain/search/use_case/search_experiences_by_tags.dart';
+import 'package:worldon/injection.dart';
 
-import '../../../../lib/domain/search/repository/search_repository_mock.dart';
 import '../../../test_descriptions.dart';
 import '../../core/methods/create_stream.dart';
 
 void main() {
-  MockSearchRepository mockSearchRepository;
+  SearchRepositoryInterface mockSearchRepository;
   SearchExperiencesByTags useCase;
-  setUp(
+  setUpAll(
     () {
-      mockSearchRepository = MockSearchRepository();
-      useCase = SearchExperiencesByTags(mockSearchRepository);
+      configureDependencies(injectable.Environment.test);
+      mockSearchRepository = getIt<SearchRepositoryInterface>();
+      useCase = getIt<SearchExperiencesByTags>();
     },
   );
   final params = Params(tags: {Tag.empty()});
@@ -89,7 +92,7 @@ Future<Either<Failure, Set<Experience>>> _act(SearchExperiencesByTags useCase, P
   return result;
 }
 
-void _verifyInteractions(MockSearchRepository mockSearchRepository) {
+void _verifyInteractions(SearchRepositoryInterface mockSearchRepository) {
   verify(mockSearchRepository.searchExperiencesByTags(any));
   verifyNoMoreInteractions(mockSearchRepository);
 }
