@@ -20,7 +20,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockAuthenticationRepository = getIt<AuthenticationRepositoryInterface>();
-      useCase = getIt<LogIn>();
+      useCase = LogIn(mockAuthenticationRepository);
     },
   );
   final params = Params(

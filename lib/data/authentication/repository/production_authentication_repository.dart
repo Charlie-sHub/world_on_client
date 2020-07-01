@@ -10,7 +10,7 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 )
 class ProductionAuthenticationRepository implements AuthenticationRepositoryInterface {
   @override
-  Future<Either<Failure, Option<User>>> getLoggedInUser() {
+  Future<Option<User>> getLoggedInUser() {
     // TODO: implement getLoggedInUser
     throw UnimplementedError();
   }

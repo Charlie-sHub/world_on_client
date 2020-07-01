@@ -18,7 +18,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockCoreRepository = getIt<CoreRepositoryInterface>();
-      useCase = getIt<DeleteCache>();
+      useCase = DeleteCache(mockCoreRepository);
     },
   );
   test(

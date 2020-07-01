@@ -19,7 +19,7 @@ abstract class AuthenticationRepositoryInterface {
   Future<Either<Failure, Unit>> logInGoogle();
 
   /// Gets the [User] currently logged in
-  Future<Either<Failure, Option<User>>> getLoggedInUser();
+  Future<Option<User>> getLoggedInUser();
 
   /// Logs out of the application
   Future<Either<Failure, Unit>> logOut();

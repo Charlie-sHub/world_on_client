@@ -18,7 +18,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockNotificationRepository = getIt<NotificationRepositoryInterface>();
-      useCase = getIt<DeleteUserNotifications>();
+      useCase = DeleteUserNotifications(mockNotificationRepository);
     },
   );
   final params = NoParams();

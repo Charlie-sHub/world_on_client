@@ -18,7 +18,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockTagManagementRepository = getIt<TagManagementRepositoryInterface>();
-      useCase = getIt<CreateTag>();
+      useCase = CreateTag(mockTagManagementRepository);
     },
   );
   final params = Params(tag: Tag.empty());

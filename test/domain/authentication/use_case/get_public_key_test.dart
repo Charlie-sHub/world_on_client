@@ -20,7 +20,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockPublicKeyRepository = getIt<PublicKeyRepositoryInterface>();
-      useCase = getIt<GetPublicKey>();
+      useCase = GetPublicKey(mockPublicKeyRepository);
     },
   );
   final publicKeyBytes = Uint8List(2048);

@@ -20,7 +20,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockNotificationRepository = getIt<NotificationRepositoryInterface>();
-      useCase = getIt<LoadNotifications>();
+      useCase = LoadNotifications(mockNotificationRepository);
     },
   );
   final params = NoParams();

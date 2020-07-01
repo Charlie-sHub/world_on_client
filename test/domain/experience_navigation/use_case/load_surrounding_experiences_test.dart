@@ -19,7 +19,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockExperienceNavigationRepository = getIt<ExperienceNavigationRepositoryInterface>();
-      useCase = getIt<LoadSurroundingExperiences>();
+      useCase = LoadSurroundingExperiences(mockExperienceNavigationRepository);
     },
   );
   final params = Params(coordinates: Coordinates.empty());

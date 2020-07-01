@@ -17,7 +17,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockProfileRepository = getIt<ProfileRepositoryInterface>();
-      useCase = getIt<BlockUser>();
+      useCase = BlockUser(mockProfileRepository);
     },
   );
   final params = Params(

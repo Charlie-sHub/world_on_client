@@ -12,11 +12,9 @@ T _$identity<T>(T value) => value;
 class _$AchievementManagementActorEventTearOff {
   const _$AchievementManagementActorEventTearOff();
 
-  _Deleted deleted(
-      {@required User userRequesting, @required Achievement achievement}) {
+  _Deleted delete(Achievement achievement) {
     return _Deleted(
-      userRequesting: userRequesting,
-      achievement: achievement,
+      achievement,
     );
   }
 }
@@ -26,25 +24,24 @@ const $AchievementManagementActorEvent =
     _$AchievementManagementActorEventTearOff();
 
 mixin _$AchievementManagementActorEvent {
-  User get userRequesting;
   Achievement get achievement;
 
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result deleted(User userRequesting, Achievement achievement),
+    @required Result delete(Achievement achievement),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result deleted(User userRequesting, Achievement achievement),
+    Result delete(Achievement achievement),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result deleted(_Deleted value),
+    @required Result delete(_Deleted value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result deleted(_Deleted value),
+    Result delete(_Deleted value),
     @required Result orElse(),
   });
 
@@ -57,9 +54,9 @@ abstract class $AchievementManagementActorEventCopyWith<$Res> {
           AchievementManagementActorEvent value,
           $Res Function(AchievementManagementActorEvent) then) =
       _$AchievementManagementActorEventCopyWithImpl<$Res>;
-  $Res call({User userRequesting, Achievement achievement});
 
-  $UserCopyWith<$Res> get userRequesting;
+  $Res call({Achievement achievement});
+
   $AchievementCopyWith<$Res> get achievement;
 }
 
@@ -73,27 +70,13 @@ class _$AchievementManagementActorEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object userRequesting = freezed,
     Object achievement = freezed,
   }) {
     return _then(_value.copyWith(
-      userRequesting: userRequesting == freezed
-          ? _value.userRequesting
-          : userRequesting as User,
       achievement: achievement == freezed
           ? _value.achievement
           : achievement as Achievement,
     ));
-  }
-
-  @override
-  $UserCopyWith<$Res> get userRequesting {
-    if (_value.userRequesting == null) {
-      return null;
-    }
-    return $UserCopyWith<$Res>(_value.userRequesting, (value) {
-      return _then(_value.copyWith(userRequesting: value));
-    });
   }
 
   @override
@@ -112,10 +95,8 @@ abstract class _$DeletedCopyWith<$Res>
   factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
       __$DeletedCopyWithImpl<$Res>;
   @override
-  $Res call({User userRequesting, Achievement achievement});
+  $Res call({Achievement achievement});
 
-  @override
-  $UserCopyWith<$Res> get userRequesting;
   @override
   $AchievementCopyWith<$Res> get achievement;
 }
@@ -131,52 +112,36 @@ class __$DeletedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object userRequesting = freezed,
     Object achievement = freezed,
   }) {
     return _then(_Deleted(
-      userRequesting: userRequesting == freezed
-          ? _value.userRequesting
-          : userRequesting as User,
-      achievement: achievement == freezed
-          ? _value.achievement
-          : achievement as Achievement,
+      achievement == freezed ? _value.achievement : achievement as Achievement,
     ));
   }
 }
 
 class _$_Deleted implements _Deleted {
-  const _$_Deleted({@required this.userRequesting, @required this.achievement})
-      : assert(userRequesting != null),
-        assert(achievement != null);
+  const _$_Deleted(this.achievement) : assert(achievement != null);
 
-  @override
-  final User userRequesting;
   @override
   final Achievement achievement;
 
   @override
   String toString() {
-    return 'AchievementManagementActorEvent.deleted(userRequesting: $userRequesting, achievement: $achievement)';
+    return 'AchievementManagementActorEvent.delete(achievement: $achievement)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Deleted &&
-            (identical(other.userRequesting, userRequesting) ||
-                const DeepCollectionEquality()
-                    .equals(other.userRequesting, userRequesting)) &&
             (identical(other.achievement, achievement) ||
                 const DeepCollectionEquality()
                     .equals(other.achievement, achievement)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(userRequesting) ^
-      const DeepCollectionEquality().hash(achievement);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(achievement);
 
   @override
   _$DeletedCopyWith<_Deleted> get copyWith =>
@@ -185,21 +150,21 @@ class _$_Deleted implements _Deleted {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result deleted(User userRequesting, Achievement achievement),
+    @required Result delete(Achievement achievement),
   }) {
-    assert(deleted != null);
-    return deleted(userRequesting, achievement);
+    assert(delete != null);
+    return delete(achievement);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result deleted(User userRequesting, Achievement achievement),
+    Result delete(Achievement achievement),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (deleted != null) {
-      return deleted(userRequesting, achievement);
+    if (delete != null) {
+      return delete(achievement);
     }
     return orElse();
   }
@@ -207,33 +172,29 @@ class _$_Deleted implements _Deleted {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result deleted(_Deleted value),
+    @required Result delete(_Deleted value),
   }) {
-    assert(deleted != null);
-    return deleted(this);
+    assert(delete != null);
+    return delete(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result deleted(_Deleted value),
+    Result delete(_Deleted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (deleted != null) {
-      return deleted(this);
+    if (delete != null) {
+      return delete(this);
     }
     return orElse();
   }
 }
 
 abstract class _Deleted implements AchievementManagementActorEvent {
-  const factory _Deleted(
-      {@required User userRequesting,
-      @required Achievement achievement}) = _$_Deleted;
+  const factory _Deleted(Achievement achievement) = _$_Deleted;
 
-  @override
-  User get userRequesting;
   @override
   Achievement get achievement;
   @override

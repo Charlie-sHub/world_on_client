@@ -18,7 +18,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockAuthenticationRepository = getIt<AuthenticationRepositoryInterface>();
-      useCase = getIt<Register>();
+      useCase = Register(mockAuthenticationRepository);
     },
   );
   final params = Params(user: User.empty());

@@ -19,7 +19,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockAuthenticationRepository = getIt<AuthenticationRepositoryInterface>();
-      useCase = getIt<LogInGoogle>();
+      useCase = LogInGoogle(mockAuthenticationRepository);
     },
   );
   test(

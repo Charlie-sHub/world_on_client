@@ -315,7 +315,8 @@ class _$_Achievement extends _Achievement {
 abstract class _Achievement extends Achievement {
   const _Achievement._() : super._();
 
-  const factory _Achievement({int id,
+  const factory _Achievement(
+      {int id,
       @required Name name,
       @required EntityDescription description,
       @required String imageURL,

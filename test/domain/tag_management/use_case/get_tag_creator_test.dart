@@ -5,7 +5,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
-import 'package:worldon/domain/core/repository/tag_repository_interface.dart';
+import 'package:worldon/domain/tag_management/repository/tag_repository_interface.dart';
 import 'package:worldon/domain/tag_management/use_case/get_tag_creator.dart';
 import 'package:worldon/injection.dart';
 
@@ -18,7 +18,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockTagRepository = getIt<TagCoreRepositoryInterface>();
-      useCase = getIt<GetTagCreator>();
+      useCase = GetTagCreator(mockTagRepository);
     },
   );
   final params = Params(id: 1);

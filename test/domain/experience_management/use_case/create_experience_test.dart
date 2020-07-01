@@ -18,7 +18,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockExperienceManagementRepository = getIt<ExperienceManagementRepositoryInterface>();
-      useCase = getIt<CreateExperience>();
+      useCase = CreateExperience(mockExperienceManagementRepository);
     },
   );
   final params = Params(experience: Experience.empty());

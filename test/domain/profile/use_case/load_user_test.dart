@@ -18,7 +18,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockProfileRepository = getIt<ProfileRepositoryInterface>();
-      useCase = getIt<LoadUser>();
+      useCase = LoadUser(mockProfileRepository);
     },
   );
   const id = 1;

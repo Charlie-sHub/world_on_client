@@ -20,7 +20,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockCachedUserRepository = getIt<CachedCredentialsRepositoryInterface>();
-      useCase = getIt<GetCachedUser>();
+      useCase = GetCachedUser(mockCachedUserRepository);
     },
   );
   final user = User.empty();

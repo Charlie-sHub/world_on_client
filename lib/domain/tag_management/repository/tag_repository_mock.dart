@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:mockito/mockito.dart';
-import 'package:worldon/domain/core/repository/tag_repository_interface.dart';
+import 'package:worldon/domain/tag_management/repository/tag_repository_interface.dart';
 
 @LazySingleton(
   as: TagCoreRepositoryInterface,

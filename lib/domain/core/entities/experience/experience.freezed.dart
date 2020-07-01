@@ -435,7 +435,8 @@ class _$_Experience extends _Experience {
 abstract class _Experience extends Experience {
   const _Experience._() : super._();
 
-  const factory _Experience({int id,
+  const factory _Experience(
+      {int id,
       @required Name name,
       @required EntityDescription description,
       @required Set<String> imageURLs,

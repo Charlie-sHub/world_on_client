@@ -52,38 +52,38 @@ abstract class User implements _$User {
     @required Set<Experience> experiencesLiked,
     @required Set<Experience> experiencesToDo,
   }) = _User;
-  
+
   factory User.empty() => User(
-    name: Name(""),
-    username: Name(""),
-    password: Password(""),
-    email: EmailAddress(""),
-    birthday: PastDate(DateTime.now().subtract(const Duration(days: 10))),
-    description: EntityDescription(""),
-    imageURL: "",
-    level: UserLevel(0),
-    experiencePoints: ExperiencePoints(0),
-    privacy: false,
-    adminPowers: false,
-    enabled: true,
-    lastLogin: PastDate(DateTime.now()),
-    creationDate: PastDate(DateTime.now()),
-    modificationDate: PastDate(DateTime.now()),
-    options: const Options(
-      id: 1,
-      languageCode: "",
-    ),
-    blockedUsers: <User>{},
-    followedUsers: <User>{},
-    devices: <Device>{},
-    systems: <System>{},
-    interests: <Tag>{},
-    achievements: <Achievement>{},
-    experiencesDone: <Experience>{},
-    experiencesLiked: <Experience>{},
-    experiencesToDo: <Experience>{},
-  );
-  
+        name: Name(""),
+        username: Name(""),
+        password: Password(""),
+        email: EmailAddress(""),
+        birthday: PastDate(DateTime.now()),
+        description: EntityDescription(""),
+        imageURL: "",
+        level: UserLevel(0),
+        experiencePoints: ExperiencePoints(0),
+        privacy: false,
+        adminPowers: false,
+        enabled: true,
+        lastLogin: PastDate(DateTime.now()),
+        creationDate: PastDate(DateTime.now()),
+        modificationDate: PastDate(DateTime.now()),
+        options: const Options(
+          id: 1,
+          languageCode: "",
+        ),
+        blockedUsers: <User>{},
+        followedUsers: <User>{},
+        devices: <Device>{},
+        systems: <System>{},
+        interests: <Tag>{},
+        achievements: <Achievement>{},
+        experiencesDone: <Experience>{},
+        experiencesLiked: <Experience>{},
+        experiencesToDo: <Experience>{},
+      );
+
   Option<ValueFailure<dynamic>> get failureOption {
     return name.failureOrUnit
       .andThen(username.failureOrUnit)
@@ -101,13 +101,13 @@ abstract class User implements _$User {
         (_) => none(),
     );
   }
-  
+
   Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
     return failureOption.fold(
         () => right(unit),
         (failure) => left(failure),
     );
   }
-  
+
   bool get isValid => failureOption.isNone();
 }

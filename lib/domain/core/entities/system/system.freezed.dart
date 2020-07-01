@@ -35,7 +35,8 @@ mixin _$System {
 }
 
 abstract class $SystemCopyWith<$Res> {
-  factory $SystemCopyWith(System value, $Res Function(System) then) = _$SystemCopyWithImpl<$Res>;
+  factory $SystemCopyWith(System value, $Res Function(System) then) =
+  _$SystemCopyWithImpl<$Res>;
   $Res call({int id, String name, String type, String company});
 }
 

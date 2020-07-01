@@ -4,6 +4,7 @@ import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
@@ -15,24 +16,21 @@ import '../../../test_descriptions.dart';
 
 void main() {
   TagManagementRepositoryInterface mockTagManagementRepository;
+  GetLoggedInUser getLoggedInUser;
   DeleteTag useCase;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
       mockTagManagementRepository = getIt<TagManagementRepositoryInterface>();
-      useCase = getIt<DeleteTag>();
+      getLoggedInUser = getIt<GetLoggedInUser>();
+      useCase = DeleteTag(mockTagManagementRepository);
     },
   );
-  final randomUser = _setUpUser(id: 1, adminPowers: false);
-  final creatorUser = _setUpUser(id: 2, adminPowers: false);
-  final admin = _setUpUser(id: 3, adminPowers: true);
+  final randomUser = User.empty().copyWith(id: 1, adminPowers: false);
+  final creatorUser = User.empty().copyWith(id: 2, adminPowers: false);
+  final admin = User.empty().copyWith(id: 3, adminPowers: true);
   final tag = Tag.empty().copyWith(creator: creatorUser);
-  Params setUpParams(User userRequesting) {
-    return Params(
-      userRequesting: userRequesting,
-      tag: tag,
-    );
-  }
+  final params = Params(tag: tag);
 
   group(
     TestDescription.authorization,
@@ -42,8 +40,9 @@ void main() {
         () async {
           // Arrange
           when(mockTagManagementRepository.removeTag(any)).thenAnswer((_) async => right(unit));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(creatorUser));
           // Act
-          final result = await useCase(setUpParams(creatorUser));
+          final result = await useCase(params);
           // Assert
           expect(result, right(unit));
           _verifyInteractions(mockTagManagementRepository);
@@ -54,8 +53,9 @@ void main() {
         () async {
           // Arrange
           when(mockTagManagementRepository.removeTag(any)).thenAnswer((_) async => right(unit));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(admin));
           // Act
-          final result = await useCase(setUpParams(admin));
+          final result = await useCase(params);
           // Assert
           expect(result, right(unit));
           _verifyInteractions(mockTagManagementRepository);
@@ -72,31 +72,37 @@ void main() {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockTagManagementRepository.removeTag(any)).thenAnswer((_) async => left(failure));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(creatorUser));
           // Act
-          final result = await useCase(setUpParams(admin));
+          final result = await useCase(params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockTagManagementRepository);
         },
       );
       test(
-        TestDescription.unAuthorized,
+        "${TestDescription.unAuthorized}  with no randomUser",
         () async {
+          // Arrange
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(randomUser));
           // Act
-          final result = await useCase(setUpParams(randomUser));
+          final result = await useCase(params);
           // Assert
           expect(result, left(const Failure.coreDomain(CoreDomainFailure.unAuthorizedError())));
-          // verifyZeroInteractions(mockTagManagementRepository);
+        },
+      );
+      test(
+        "${TestDescription.unAuthorized}  with no user",
+        () async {
+          // Arrange
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
+          // Act
+          final result = await useCase(params);
+          // Assert
+          expect(result, left(const Failure.coreDomain(CoreDomainFailure.unAuthorizedError())));
         },
       );
     },
-  );
-}
-
-User _setUpUser({int id, bool adminPowers}) {
-  return User.empty().copyWith(
-    id: id,
-    adminPowers: adminPowers,
   );
 }
 

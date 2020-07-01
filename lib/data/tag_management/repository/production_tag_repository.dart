@@ -3,13 +3,13 @@ import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
-import 'package:worldon/domain/core/repository/tag_repository_interface.dart';
+import 'package:worldon/domain/tag_management/repository/tag_repository_interface.dart';
 
 @LazySingleton(
   as: TagCoreRepositoryInterface,
-  env: Environment.dev,
+  env: Environment.prod,
 )
-class DevelopmentTagRepository implements TagCoreRepositoryInterface {
+class ProductionTagRepository implements TagCoreRepositoryInterface {
   @override
   Stream<Either<Failure, List<Tag>>> getAllTags() {
     // TODO: implement getAllTags

@@ -20,7 +20,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockSearchRepository = getIt<SearchRepositoryInterface>();
-      useCase = getIt<SearchUsersByName>();
+      useCase = SearchUsersByName(mockSearchRepository);
     },
   );
   final params = Params(name: Name("test"));

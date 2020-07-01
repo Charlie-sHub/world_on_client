@@ -35,7 +35,8 @@ mixin _$Device {
 }
 
 abstract class $DeviceCopyWith<$Res> {
-  factory $DeviceCopyWith(Device value, $Res Function(Device) then) = _$DeviceCopyWithImpl<$Res>;
+  factory $DeviceCopyWith(Device value, $Res Function(Device) then) =
+  _$DeviceCopyWithImpl<$Res>;
   $Res call({int id, String name, String type, String company});
 }
 

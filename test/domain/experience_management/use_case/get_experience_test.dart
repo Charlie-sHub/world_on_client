@@ -18,7 +18,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockExperienceManagementRepository = getIt<ExperienceManagementRepositoryInterface>();
-      useCase = getIt<GetExperience>();
+      useCase = GetExperience(mockExperienceManagementRepository);
     },
   );
   const id = 1;

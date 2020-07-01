@@ -18,7 +18,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockRemoteOptionsRepository = getIt<RemoteOptionsRepositoryInterface>();
-      useCase = getIt<SaveGlobalOptions>();
+      useCase = SaveGlobalOptions(mockRemoteOptionsRepository);
     },
   );
   final params = Params(options: Options.empty());

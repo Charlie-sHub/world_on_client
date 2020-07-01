@@ -2,14 +2,17 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
+import 'package:mockito/mockito.dart';
 import 'package:worldon/application/achievement_management/achievement_management_form/achievement_management_form_bloc.dart';
 import 'package:worldon/domain/achievement_management/use_case/create_achievement.dart';
 import 'package:worldon/domain/achievement_management/use_case/edit_achievement.dart';
+import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
-import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/experience_points.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../domain/core/methods/get_valid_tag.dart';
@@ -20,14 +23,14 @@ import '../../../test_descriptions.dart';
 void main() {
   // Not going to bother mocking the value object or validators
   // for now at least
-  AchievementManagementFormBloc bloc;
+  GetLoggedInUser getLoggedInUser;
   EditAchievement editAchievement;
   CreateAchievement createAchievement;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
-      bloc = getIt<AchievementManagementFormBloc>();
       editAchievement = getIt<EditAchievement>();
+      getLoggedInUser = getIt<GetLoggedInUser>();
       createAchievement = getIt<CreateAchievement>();
     },
   );
@@ -38,67 +41,223 @@ void main() {
     creator: getValidUser(),
     tags: getValidTagSet(),
   );
-  const invalidName = "";
-  const invalidDescription = "";
-  const invalidExperiencePoints = 1000000000;
-  final invalidTags = <Tag>{};
-  const validName = "Test";
-  const validDescription = "For testing";
-  const validExperiencePoints = 10;
-  final validTags = {getValidTag()};
-  test(
+  const name = "Test";
+  const description = "For testing";
+  const experiencePoints = 10;
+  final tags = KtSet.of(getValidTag());
+  blocTest(
     TestDescription.shouldEmitInitial,
-    () async {
-      // Assert
-      expect(bloc.initialState, AchievementManagementFormState.initial());
-    },
+    build: () async => getIt<AchievementManagementFormBloc>(),
+    skip: 0,
+    expect: [
+      AchievementManagementFormState.initial(),
+    ],
   );
   group(
     TestDescription.testingInitialization,
     () {
-      test(
+      blocTest(
         TestDescription.initializedState,
-        () async {
-          // Arrange
-          final initializedEvent = AchievementManagementFormEvent.initialized(some(achievementToEdit));
-          // Assert
-          expectLater(bloc.state.achievement, achievementToEdit);
-          expectLater(bloc.state.isEditing, true);
-          // Act
-          bloc.add(initializedEvent);
-        },
+        build: () async => getIt<AchievementManagementFormBloc>(),
+        act: (bloc) async => bloc.add(AchievementManagementFormEvent.initialized(some(achievementToEdit))),
+        expect: [
+          AchievementManagementFormState.initial().copyWith(
+            achievement: achievementToEdit,
+            isEditing: true,
+          ),
+        ],
       );
-      test(
+      blocTest(
         TestDescription.nonInitializedState,
-        () async {
-          // Arrange
-          final initializedEvent = AchievementManagementFormEvent.initialized(none());
-          // Assert
-          expectLater(bloc.state.achievement, Achievement.empty());
-          expectLater(bloc.state.isEditing, false);
-          // Act
-          bloc.add(initializedEvent);
-        },
+        build: () async => getIt<AchievementManagementFormBloc>(),
+        act: (bloc) async => bloc.add(AchievementManagementFormEvent.initialized(none())),
+        skip: 0,
+        expect: [
+          AchievementManagementFormState.initial(),
+        ],
       );
-      blocTest(TestDescription.initializedState,
-          build: () async => bloc, act: (bloc) async => bloc.add(AchievementManagementFormEvent.initialized(some(achievementToEdit))), expect: [bloc.state.achievement]);
     },
   );
   group(
     TestDescription.groupOnSuccess,
     () {
-      test(
-        "${TestDescription.shouldEmitSuccess} with validName",
-        () async {
-          // Arrange
-          const nameChangeEvent = AchievementManagementFormEvent.nameChange(validName);
-          // Assert
-          expectLater(bloc.state.achievement.name.getOrCrash(), validName);
-          expectLater(bloc.state.showErrorMessages, false);
-          // Act
-          bloc.add(nameChangeEvent);
+      blocTest(
+        "${TestDescription.shouldEmitUpdated} with the name",
+        build: () async => getIt<AchievementManagementFormBloc>(),
+        act: (bloc) async {
+          bloc.add(AchievementManagementFormEvent.initialized(none()));
+          bloc.add(const AchievementManagementFormEvent.nameChange(name));
         },
+        expect: [
+          AchievementManagementFormState.initial().copyWith(
+            achievement: Achievement.empty().copyWith(
+              name: Name(name),
+            ),
+          ),
+        ],
       );
+      blocTest(
+        "${TestDescription.shouldEmitUpdated} with the description",
+        build: () async => getIt<AchievementManagementFormBloc>(),
+        act: (bloc) async {
+          bloc.add(AchievementManagementFormEvent.initialized(none()));
+          bloc.add(const AchievementManagementFormEvent.descriptionChange(description));
+        },
+        expect: [
+          AchievementManagementFormState.initial().copyWith(
+            achievement: Achievement.empty().copyWith(
+              description: EntityDescription(description),
+            ),
+          ),
+        ],
+      );
+      blocTest(
+        "${TestDescription.shouldEmitUpdated} with the experience points",
+        build: () async => getIt<AchievementManagementFormBloc>(),
+        act: (bloc) async {
+          bloc.add(AchievementManagementFormEvent.initialized(none()));
+          bloc.add(const AchievementManagementFormEvent.experiencePointsChange(experiencePoints));
+        },
+        expect: [
+          AchievementManagementFormState.initial().copyWith(
+            achievement: Achievement.empty().copyWith(
+              experiencePoints: ExperiencePoints(experiencePoints),
+            ),
+          ),
+        ],
+      );
+      blocTest(
+        "${TestDescription.shouldEmitUpdated} with the tags",
+        build: () async => getIt<AchievementManagementFormBloc>(),
+        act: (bloc) async {
+          bloc.add(AchievementManagementFormEvent.initialized(none()));
+          bloc.add(AchievementManagementFormEvent.tagsChange(tags));
+        },
+        expect: [
+          AchievementManagementFormState.initial().copyWith(
+            achievement: Achievement.empty().copyWith(
+              tags: TagSet(tags),
+            ),
+          ),
+        ],
+      );
+      blocTest(
+        "${TestDescription.shouldEmitSuccess} creating a new Achievement",
+        build: () async {
+          when(createAchievement.call(any)).thenAnswer((_) async => right(unit));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(getValidUser()));
+          return getIt<AchievementManagementFormBloc>();
+        },
+        act: (bloc) async {
+          bloc.add(AchievementManagementFormEvent.initialized(none()));
+          bloc.add(const AchievementManagementFormEvent.nameChange(name));
+          bloc.add(const AchievementManagementFormEvent.descriptionChange(description));
+          bloc.add(const AchievementManagementFormEvent.experiencePointsChange(experiencePoints));
+          bloc.add(AchievementManagementFormEvent.tagsChange(tags));
+          bloc.add(const AchievementManagementFormEvent.submit());
+        },
+        verify: (_) async {
+          verify(createAchievement.call(any));
+          verifyZeroInteractions(editAchievement);
+        },
+        expect: [
+          AchievementManagementFormState.initial().copyWith(
+            achievement: Achievement.empty().copyWith(
+              name: Name(name),
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          AchievementManagementFormState.initial().copyWith(
+            achievement: Achievement.empty().copyWith(
+              name: Name(name),
+              description: EntityDescription(description),
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          AchievementManagementFormState.initial().copyWith(
+            achievement: Achievement.empty().copyWith(
+              name: Name(name),
+              description: EntityDescription(description),
+              experiencePoints: ExperiencePoints(experiencePoints),
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          AchievementManagementFormState.initial().copyWith(
+            achievement: Achievement.empty().copyWith(
+              name: Name(name),
+              description: EntityDescription(description),
+              experiencePoints: ExperiencePoints(experiencePoints),
+              tags: TagSet(tags),
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          AchievementManagementFormState.initial().copyWith(
+            achievement: Achievement.empty().copyWith(
+              name: Name(name),
+              description: EntityDescription(description),
+              experiencePoints: ExperiencePoints(experiencePoints),
+              tags: TagSet(tags),
+            ),
+            isSubmitting: true,
+            failureOrSuccessOption: none(),
+          ),
+          AchievementManagementFormState.initial().copyWith(
+            achievement: Achievement.empty().copyWith(
+              name: Name(name),
+              description: EntityDescription(description),
+              experiencePoints: ExperiencePoints(experiencePoints),
+              tags: TagSet(tags),
+            ),
+            isSubmitting: false,
+            showErrorMessage: true,
+            failureOrSuccessOption: none(),
+          ),
+        ],
+      );
+      blocTest(
+        "${TestDescription.shouldEmitSuccess} editing an Achievement",
+        build: () async {
+          when(editAchievement.call(any)).thenAnswer((_) async => right(unit));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(getValidUser()));
+          return getIt<AchievementManagementFormBloc>();
+        },
+        act: (bloc) async {
+          bloc.add(AchievementManagementFormEvent.initialized(some(achievementToEdit)));
+          bloc.add(const AchievementManagementFormEvent.nameChange(name));
+          bloc.add(const AchievementManagementFormEvent.submit());
+        },
+        verify: (_) async {
+          verify(editAchievement.call(any));
+          verifyZeroInteractions(createAchievement);
+        },
+        expect: [
+          AchievementManagementFormState.initial().copyWith(
+            achievement: achievementToEdit.copyWith(
+              name: Name(name),
+            ),
+            isEditing: true,
+            failureOrSuccessOption: none(),
+          ),
+          AchievementManagementFormState.initial().copyWith(
+            achievement: achievementToEdit.copyWith(
+              name: Name(name),
+            ),
+            isEditing: true,
+            isSubmitting: true,
+            failureOrSuccessOption: none(),
+          ),
+          AchievementManagementFormState.initial().copyWith(
+            achievement: achievementToEdit.copyWith(
+              name: Name(name),
+            ),
+            isEditing: true,
+            isSubmitting: false,
+            showErrorMessage: true,
+            failureOrSuccessOption: some(right(unit)),
+          ),
+        ],
+      );
+      // Test that the error option is reset
     },
   );
   group(

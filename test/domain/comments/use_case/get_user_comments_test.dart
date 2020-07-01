@@ -19,7 +19,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockCommentRepository = getIt<CommentRepositoryInterface>();
-      useCase = getIt<GetUserComments>();
+      useCase = GetUserComments(mockCommentRepository);
     },
   );
   final params = Params(userId: 1);

@@ -4,7 +4,7 @@ import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import '../../../../test_descriptions.dart';
 
 void main() {
-  final validDate = DateTime.now().subtract(const Duration(days: 50));
+  final validDate = DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day).subtract(const Duration(days: 50));
   final invalidDate = DateTime.now().add(const Duration(days: 50));
   test(
     TestDescription.valid,

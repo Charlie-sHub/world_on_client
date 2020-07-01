@@ -19,7 +19,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockGeoLocationRepository = getIt<GeoLocationRepositoryInterface>();
-      useCase = getIt<GetCurrentLocation>();
+      useCase = GetCurrentLocation(mockGeoLocationRepository);
     },
   );
   final currentLocation = Coordinates.empty();

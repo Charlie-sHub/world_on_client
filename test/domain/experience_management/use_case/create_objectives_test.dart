@@ -16,7 +16,7 @@ void main() {
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
-      useCase = getIt<CreateObjectives>();
+      useCase = CreateObjectives();
     },
   );
   final _entityDescription = EntityDescription("Test");

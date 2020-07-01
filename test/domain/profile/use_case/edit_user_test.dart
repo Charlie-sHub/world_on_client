@@ -4,6 +4,7 @@ import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
@@ -16,12 +17,14 @@ import '../../../test_descriptions.dart';
 
 void main() {
   ProfileRepositoryInterface mockProfileRepository;
+  GetLoggedInUser getLoggedInUser;
   EditUser useCase;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
       mockProfileRepository = getIt<ProfileRepositoryInterface>();
-      useCase = getIt<EditUser>();
+      getLoggedInUser = getIt<GetLoggedInUser>();
+      useCase = EditUser(mockProfileRepository);
     },
   );
   final randomUser = User.empty().copyWith(id: 1, adminPowers: false);
@@ -29,12 +32,7 @@ void main() {
   final actualUser = User.empty().copyWith(id: 3, adminPowers: false);
   final emailAddress = EmailAddress("test@test.test");
   final username = Name("TestUser");
-  Params setUpParams(User userRequesting) {
-    return Params(
-      userRequesting: userRequesting,
-      userToEdit: actualUser,
-    );
-  }
+  final params = Params(userToEdit: actualUser);
 
   group(
     TestDescription.authorization,
@@ -44,8 +42,9 @@ void main() {
         () async {
           // Arrange
           when(mockProfileRepository.editUser(any)).thenAnswer((_) async => right(unit));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(admin));
           // Act
-          final result = await useCase(setUpParams(admin));
+          final result = await useCase(params);
           // Assert
           expect(result, right(unit));
           _verifyInteractions(mockProfileRepository);
@@ -56,8 +55,9 @@ void main() {
         () async {
           // Arrange
           when(mockProfileRepository.editUser(any)).thenAnswer((_) async => right(unit));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(actualUser));
           // Act
-          final result = await useCase(setUpParams(actualUser));
+          final result = await useCase(params);
           // Assert
           expect(result, right(unit));
           _verifyInteractions(mockProfileRepository);
@@ -74,8 +74,9 @@ void main() {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockProfileRepository.editUser(any)).thenAnswer((_) async => left(failure));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(actualUser));
           // Act
-          final result = await useCase(setUpParams(admin));
+          final result = await useCase(params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockProfileRepository);
@@ -87,8 +88,9 @@ void main() {
           // Arrange
           final failure = Failure.coreData(CoreDataFailure.usernameAlreadyInUse(username: username));
           when(mockProfileRepository.editUser(any)).thenAnswer((_) async => left(failure));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(actualUser));
           // Act
-          final result = await useCase(setUpParams(admin));
+          final result = await useCase(params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockProfileRepository);
@@ -100,20 +102,34 @@ void main() {
           // Arrange
           final failure = Failure.coreData(CoreDataFailure.emailAlreadyInUse(email: emailAddress));
           when(mockProfileRepository.editUser(any)).thenAnswer((_) async => left(failure));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(actualUser));
           // Act
-          final result = await useCase(setUpParams(admin));
+          final result = await useCase(params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockProfileRepository);
         },
       );
       test(
-        TestDescription.unAuthorized,
+        "${TestDescription.unAuthorized}  with no randomUser",
         () async {
-          final result = await useCase(setUpParams(randomUser));
+          // Arrange
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(randomUser));
+          // Act
+          final result = await useCase(params);
           // Assert
           expect(result, left(const Failure.coreDomain(CoreDomainFailure.unAuthorizedError())));
-          // verifyZeroInteractions(mockProfileRepository);
+        },
+      );
+      test(
+        "${TestDescription.unAuthorized}  with no user",
+        () async {
+          // Arrange
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
+          // Act
+          final result = await useCase(params);
+          // Assert
+          expect(result, left(const Failure.coreDomain(CoreDomainFailure.unAuthorizedError())));
         },
       );
     },

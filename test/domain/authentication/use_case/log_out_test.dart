@@ -18,7 +18,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockAuthenticationRepository = getIt<AuthenticationRepositoryInterface>();
-      useCase = getIt<LogOut>();
+      useCase = LogOut(mockAuthenticationRepository);
     },
   );
   test(

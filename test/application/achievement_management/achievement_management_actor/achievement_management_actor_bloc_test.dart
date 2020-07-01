@@ -8,86 +8,64 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/achievement_management/use_case/delete_achievement.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
-import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../test_descriptions.dart';
 
 void main() {
-  AchievementManagementActorBloc bloc;
   DeleteAchievement useCase;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
       useCase = getIt<DeleteAchievement>();
-      bloc = getIt<AchievementManagementActorBloc>();
     },
   );
-  final deletionEvent = AchievementManagementActorEvent.deleted(
-    userRequesting: User.empty(),
-    achievement: Achievement.empty(),
-  );
-  test(
+  final deletionEvent = AchievementManagementActorEvent.delete(Achievement.empty());
+  blocTest(
     TestDescription.shouldEmitInitial,
-    () async {
-      // Assert
-      expect(bloc.initialState, const AchievementManagementActorState.initial());
+    build: () async {
+      return getIt<AchievementManagementActorBloc>();
     },
+    skip: 0,
+    expect: [
+      const AchievementManagementActorState.initial(),
+    ],
   );
   group(
     "Delete Event Tests",
     () {
+      const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
       blocTest(
         TestDescription.shouldEmitSuccess,
         build: () async {
           when(useCase.call(any)).thenAnswer((_) async => right<Failure, Unit>(unit));
-          return bloc;
+          return getIt<AchievementManagementActorBloc>();
         },
         act: (bloc) async => bloc.add(deletionEvent),
+        verify: (_) async {
+          verify(useCase.call(any));
+          verifyNoMoreInteractions(useCase);
+        },
         expect: [
           const AchievementManagementActorState.actionInProgress(),
           const AchievementManagementActorState.deletionSuccess(),
         ],
       );
-      test(
-        TestDescription.verifyCallToUseCase,
-        () async {
-          // Arrange
-          when(useCase.call(any)).thenAnswer((_) async => right<Failure, Unit>(unit));
-          // Act
-          bloc.add(deletionEvent);
-          await untilCalled(useCase.call(any));
-          // Assert
+      blocTest(
+        TestDescription.shouldEmitFailure,
+        build: () async {
+          when(useCase.call(any)).thenAnswer((_) async => left<Failure, Unit>(failure));
+          return getIt<AchievementManagementActorBloc>();
+        },
+        act: (bloc) async => bloc.add(deletionEvent),
+        verify: (_) async {
           verify(useCase.call(any));
           verifyNoMoreInteractions(useCase);
         },
-      );
-      test(
-        TestDescription.shouldEmitSuccess,
-        () async {
-          // Arrange
-          when(useCase.call(any)).thenAnswer((_) async => right<Failure, Unit>(unit));
-          final states = [
-            const AchievementManagementActorState.actionInProgress(),
-            const AchievementManagementActorState.deletionSuccess(),
-          ];
-          // Assert
-          expectLater(bloc.mapEventToState(deletionEvent), emitsInOrder(states));
-        },
-      );
-      test(
-        TestDescription.shouldEmitFailure,
-        () async {
-          // Arrange
-          const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
-          when(useCase.call(any)).thenAnswer((_) async => left<Failure, Unit>(failure));
-          final states = [
-            const AchievementManagementActorState.actionInProgress(),
-            const AchievementManagementActorState.deletionFailure(failure),
-          ];
-          // Assert
-          expectLater(bloc.mapEventToState(deletionEvent), emitsInOrder(states));
-        },
+        expect: [
+          const AchievementManagementActorState.actionInProgress(),
+          const AchievementManagementActorState.deletionFailure(failure),
+        ],
       );
     },
   );

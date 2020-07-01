@@ -18,7 +18,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockAchievementRepository = getIt<AchievementRepositoryInterface>();
-      useCase = getIt<AwardAchievement>();
+      useCase = AwardAchievement(mockAchievementRepository);
     },
   );
   const userId = 1;

@@ -49,7 +49,9 @@ class _$OptionsCopyWithImpl<$Res> implements $OptionsCopyWith<$Res> {
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as int,
-      languageCode: languageCode == freezed ? _value.languageCode : languageCode as String,
+      languageCode: languageCode == freezed
+        ? _value.languageCode
+        : languageCode as String,
     ));
   }
 }

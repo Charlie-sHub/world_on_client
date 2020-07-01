@@ -19,7 +19,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockProfileRepository = getIt<ProfileRepositoryInterface>();
-      useCase = getIt<LoadExperiencesDone>();
+      useCase = LoadExperiencesDone(mockProfileRepository);
     },
   );
   final params = Params(id: 1);

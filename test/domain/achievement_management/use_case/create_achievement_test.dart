@@ -18,7 +18,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockAchievementRepository = getIt<AchievementRepositoryInterface>();
-      useCase = getIt<CreateAchievement>();
+      useCase = CreateAchievement(mockAchievementRepository);
     },
   );
   final params = Params(achievement: Achievement.empty());
@@ -41,8 +41,6 @@ void main() {
         TestDescription.serverError,
         () async {
           // Arrange
-          final mockAchievementRepository = getIt<AchievementRepositoryInterface>();
-          final useCase = getIt<CreateAchievement>();
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockAchievementRepository.createAchievement(any)).thenAnswer((_) async => left(failure));
           // Act

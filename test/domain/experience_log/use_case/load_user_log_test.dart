@@ -20,7 +20,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockExperienceLogRepository = getIt<ExperienceLogRepositoryInterface>();
-      useCase = getIt<LoadUserLog>();
+      useCase = LoadUserLog(mockExperienceLogRepository);
     },
   );
   final params = NoParams();

@@ -20,7 +20,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockAchievementRepository = getIt<AchievementRepositoryInterface>();
-      useCase = getIt<GetUserAchievements>();
+      useCase = GetUserAchievements(mockAchievementRepository);
     },
   );
   final Set<Achievement> achievementSet = {Achievement.empty()};

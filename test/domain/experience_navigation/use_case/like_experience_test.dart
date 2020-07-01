@@ -17,7 +17,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockExperienceNavigationRepository = getIt<ExperienceNavigationRepositoryInterface>();
-      useCase = getIt<LikeExperience>();
+      useCase = LikeExperience(mockExperienceNavigationRepository);
     },
   );
   final params = Params(

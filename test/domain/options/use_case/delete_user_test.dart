@@ -19,7 +19,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockRemoteOptionsRepository = getIt<RemoteOptionsRepositoryInterface>();
-      useCase = getIt<DeleteUser>();
+      useCase = DeleteUser(mockRemoteOptionsRepository);
     },
   );
   final admin = _setUpUser(id: 1, adminPowers: true);

@@ -18,7 +18,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockNotificationRepository = getIt<NotificationRepositoryInterface>();
-      useCase = getIt<SendNotification>();
+      useCase = SendNotification(mockNotificationRepository);
     },
   );
   final params = Params(notification: Notification.empty());

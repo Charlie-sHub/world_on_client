@@ -33,20 +33,20 @@ abstract class Achievement implements _$Achievement {
     @required PastDate modificationDate,
     @required TagSet tags,
   }) = _Achievement;
-  
+
   factory Achievement.empty() => Achievement(
-    name: Name(""),
-    description: EntityDescription(""),
-    imageURL: "",
-    type: "",
-    requisite: 1,
-    experiencePoints: ExperiencePoints(1),
-    creator: User.empty(),
-    creationDate: PastDate(DateTime.now()),
-    modificationDate: PastDate(DateTime.now()),
-    tags: TagSet(KtSet.empty()),
-  );
-  
+        name: Name(""),
+        description: EntityDescription(""),
+        imageURL: "",
+        type: "",
+        requisite: 1,
+        experiencePoints: ExperiencePoints(1),
+        creator: User.empty(),
+        creationDate: PastDate(DateTime.now()),
+        modificationDate: PastDate(DateTime.now()),
+        tags: TagSet(KtSet.empty()),
+      );
+
   Option<ValueFailure<dynamic>> get failureOption {
     return name.failureOrUnit
       .andThen(description.failureOrUnit)
@@ -60,6 +60,6 @@ abstract class Achievement implements _$Achievement {
         (_) => none(),
     );
   }
-  
+
   bool get isValid => failureOption.isNone();
 }

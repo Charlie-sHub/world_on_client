@@ -7,13 +7,10 @@ import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/achievement_management/use_case/delete_achievement.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
-import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/injection.dart';
 
 part 'achievement_management_actor_bloc.freezed.dart';
-
 part 'achievement_management_actor_event.dart';
-
 part 'achievement_management_actor_state.dart';
 
 @injectable
@@ -23,14 +20,14 @@ class AchievementManagementActorBloc extends Bloc<AchievementManagementActorEven
 
   @override
   Stream<AchievementManagementActorState> mapEventToState(AchievementManagementActorEvent event) async* {
-    yield* event.map(deleted: onDeleted);
+    yield* event.map(delete: onDelete);
   }
 
-  Stream<AchievementManagementActorState> onDeleted(AchievementManagementActorEvent event) async* {
+  Stream<AchievementManagementActorState> onDelete(AchievementManagementActorEvent event) async* {
     yield const AchievementManagementActorState.actionInProgress();
-    final eitherFailureOrSuccess = await getIt<DeleteAchievement>().call(
+    final deleteAchievement = getIt<DeleteAchievement>();
+    final eitherFailureOrSuccess = await deleteAchievement(
       Params(
-        userRequesting: event.userRequesting,
         achievement: event.achievement,
       ),
     );

@@ -20,7 +20,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockMainFeedRepository = getIt<MainFeedRepositoryInterface>();
-      useCase = getIt<FillFeed>();
+      useCase = FillFeed(mockMainFeedRepository);
     },
   );
   final params = NoParams();

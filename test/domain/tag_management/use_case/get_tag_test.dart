@@ -18,7 +18,7 @@ void main() {
     () {
       configureDependencies(injectable.Environment.test);
       mockTagManagementRepository = getIt<TagManagementRepositoryInterface>();
-      useCase = getIt<GetTag>();
+      useCase = GetTag(mockTagManagementRepository);
     },
   );
   const id = 1;

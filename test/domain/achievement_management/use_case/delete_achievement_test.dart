@@ -6,6 +6,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/achievement_management/repository/achievement_repository_interface.dart';
 import 'package:worldon/domain/achievement_management/use_case/delete_achievement.dart';
+import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
@@ -15,25 +16,21 @@ import '../../../test_descriptions.dart';
 
 void main() {
   AchievementRepositoryInterface mockAchievementRepository;
+  GetLoggedInUser getLoggedInUser;
   DeleteAchievement useCase;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
       mockAchievementRepository = getIt<AchievementRepositoryInterface>();
-      useCase = getIt<DeleteAchievement>();
+      getLoggedInUser = getIt<GetLoggedInUser>();
+      useCase = DeleteAchievement(mockAchievementRepository);
     },
   );
   final randomUser = User.empty().copyWith(id: 1, adminPowers: false);
   final creatorUser = User.empty().copyWith(id: 2, adminPowers: false);
   final admin = User.empty().copyWith(id: 3, adminPowers: true);
   final achievement = Achievement.empty().copyWith(creator: creatorUser);
-  Params setUpParams(User userRequesting) {
-    return Params(
-      achievement: achievement,
-      userRequesting: userRequesting,
-    );
-  }
-
+  final params = Params(achievement: achievement);
   group(
     TestDescription.authorization,
     () {
@@ -42,8 +39,9 @@ void main() {
         () async {
           // Arrange
           when(mockAchievementRepository.removeAchievement(any)).thenAnswer((_) async => right(unit));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(creatorUser));
           // Act
-          final result = await useCase(setUpParams(creatorUser));
+          final result = await useCase(params);
           // Assert
           expect(result, right(unit));
           _verifyInteractions(mockAchievementRepository);
@@ -54,8 +52,9 @@ void main() {
         () async {
           // Arrange
           when(mockAchievementRepository.removeAchievement(any)).thenAnswer((_) async => right(unit));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(admin));
           // Act
-          final result = await useCase(setUpParams(admin));
+          final result = await useCase(params);
           // Assert
           expect(result, right(unit));
           _verifyInteractions(mockAchievementRepository);
@@ -72,8 +71,9 @@ void main() {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockAchievementRepository.removeAchievement(any)).thenAnswer((_) async => left(failure));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(creatorUser));
           // Act
-          final result = await useCase(setUpParams(creatorUser));
+          final result = await useCase(params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockAchievementRepository);
@@ -85,22 +85,34 @@ void main() {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());
           when(mockAchievementRepository.removeAchievement(any)).thenAnswer((_) async => left(failure));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(creatorUser));
           // Act
-          final result = await useCase(setUpParams(creatorUser));
+          final result = await useCase(params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockAchievementRepository);
         },
       );
       test(
-        TestDescription.unAuthorized,
+        "${TestDescription.unAuthorized}  with randomUser",
         () async {
+          // Arrange
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(randomUser));
           // Act
-          final result = await useCase(setUpParams(randomUser));
+          final result = await useCase(params);
           // Assert
           expect(result, left(const Failure.coreDomain(CoreDomainFailure.unAuthorizedError())));
-          // TODO: Figure out why it fails this with the code injection
-          // verifyZeroInteractions(mockAchievementRepository);
+        },
+      );
+      test(
+        "${TestDescription.unAuthorized}  with no user",
+        () async {
+          // Arrange
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
+          // Act
+          final result = await useCase(params);
+          // Assert
+          expect(result, left(const Failure.coreDomain(CoreDomainFailure.unAuthorizedError())));
         },
       );
     },

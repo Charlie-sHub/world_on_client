@@ -4,6 +4,7 @@ import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/comments/repository/comment_repository_interface.dart';
 import 'package:worldon/domain/comments/use_case/edit_comment.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
@@ -15,23 +16,20 @@ import '../../../test_descriptions.dart';
 
 void main() {
   CommentRepositoryInterface mockCommentRepository;
+  GetLoggedInUser getLoggedInUser;
   EditComment useCase;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
       mockCommentRepository = getIt<CommentRepositoryInterface>();
-      useCase = getIt<EditComment>();
+      getLoggedInUser = getIt<GetLoggedInUser>();
+      useCase = EditComment(mockCommentRepository);
     },
   );
   final randomUser = User.empty().copyWith(id: 1, adminPowers: false);
   final posterUser = User.empty().copyWith(id: 2, adminPowers: false);
   final admin = User.empty().copyWith(id: 3, adminPowers: true);
-  Params setUpParams(User userRequesting) {
-    return Params(
-      userRequesting: userRequesting,
-      comment: Comment.empty().copyWith(poster: posterUser),
-    );
-  }
+  final params = Params(comment: Comment.empty().copyWith(poster: posterUser));
 
   group(
     TestDescription.authorization,
@@ -41,8 +39,9 @@ void main() {
         () async {
           // Arrange
           when(mockCommentRepository.editComment(any)).thenAnswer((_) async => right(unit));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(posterUser));
           // Act
-          final result = await useCase(setUpParams(posterUser));
+          final result = await useCase(params);
           // Assert
           expect(result, right(unit));
           _verifyInteractions(mockCommentRepository);
@@ -53,8 +52,9 @@ void main() {
         () async {
           // Arrange
           when(mockCommentRepository.editComment(any)).thenAnswer((_) async => right(unit));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(admin));
           // Act
-          final result = await useCase(setUpParams(admin));
+          final result = await useCase(params);
           // Assert
           expect(result, right(unit));
           _verifyInteractions(mockCommentRepository);
@@ -71,21 +71,34 @@ void main() {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockCommentRepository.editComment(any)).thenAnswer((_) async => left(failure));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(posterUser));
           // Act
-          final result = await useCase(setUpParams(posterUser));
+          final result = await useCase(params);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockCommentRepository);
         },
       );
       test(
-        TestDescription.unAuthorized,
+        "${TestDescription.unAuthorized}  with no randomUser",
         () async {
+          // Arrange
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(randomUser));
           // Act
-          final result = await useCase(setUpParams(randomUser));
+          final result = await useCase(params);
           // Assert
           expect(result, left(const Failure.coreDomain(CoreDomainFailure.unAuthorizedError())));
-          // verifyZeroInteractions(mockCommentRepository);
+        },
+      );
+      test(
+        "${TestDescription.unAuthorized}  with no user",
+        () async {
+          // Arrange
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
+          // Act
+          final result = await useCase(params);
+          // Assert
+          expect(result, left(const Failure.coreDomain(CoreDomainFailure.unAuthorizedError())));
         },
       );
     },
