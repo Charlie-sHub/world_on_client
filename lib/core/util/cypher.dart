@@ -5,7 +5,7 @@ import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
 
 // With the use of Firebase this class will likely be unnecessary
-@lazySingleton
+@LazySingleton(env: Environment.prod)
 class Cypher {
   Either<Failure, String> call(String text, Uint8List publicKey) {
     // TODO: Implement cyphering

@@ -15,7 +15,7 @@ void main() {
     },
   );
   test(
-    "$TestDescription.invalid with invalidDescriptionObjective",
+    "${TestDescription.invalid} with invalidDescriptionObjective",
     () async {
       // Assert
       expect(invalidDescriptionObjective.isValid, false);

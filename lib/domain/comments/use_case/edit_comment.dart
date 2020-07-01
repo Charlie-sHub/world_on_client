@@ -8,7 +8,7 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
-@lazySingleton
+@LazySingleton(env: Environment.prod)
 class EditComment implements AsyncUseCase<Unit, Params> {
   final CommentRepositoryInterface _repository;
   

@@ -16,13 +16,13 @@ void main() {
   final invalidUsernameUser = validUser.copyWith(username: Name(""));
   final invalidPasswordUser = validUser.copyWith(password: Password(""));
   final invalidEmailAddressUser = validUser.copyWith(email: EmailAddress(""));
-  final invalidBirthdayUser = validUser.copyWith(birthday: PastDate(DateTime.now()));
+  final invalidBirthdayUser = validUser.copyWith(birthday: PastDate(DateTime.now().add(const Duration(days: 10))));
   final invalidDescriptionUser = validUser.copyWith(description: EntityDescription(""));
   final invalidUserLevelUser = validUser.copyWith(level: UserLevel(1000));
   final invalidExperiencePointsUser = validUser.copyWith(experiencePoints: ExperiencePoints(100000));
-  final invalidLastLoginUser = validUser.copyWith(lastLogin: PastDate(DateTime.now()));
-  final invalidCreationDateUser = validUser.copyWith(creationDate: PastDate(DateTime.now()));
-  final invalidModificationDateUser = validUser.copyWith(modificationDate: PastDate(DateTime.now()));
+  final invalidLastLoginUser = validUser.copyWith(lastLogin: PastDate(DateTime.now().add(const Duration(days: 10))));
+  final invalidCreationDateUser = validUser.copyWith(creationDate: PastDate(DateTime.now().add(const Duration(days: 10))));
+  final invalidModificationDateUser = validUser.copyWith(modificationDate: PastDate(DateTime.now().add(const Duration(days: 10))));
   test(
     TestDescription.valid,
     () async {
@@ -34,77 +34,77 @@ void main() {
     TestDescription.groupOnFailure,
     () {
       test(
-        "$TestDescription.invalid with invalidNameUser",
+        "${TestDescription.invalid} with invalidNameUser",
         () async {
           // Assert
           expect(invalidNameUser.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidUsernameUser",
+        "${TestDescription.invalid} with invalidUsernameUser",
         () async {
           // Assert
           expect(invalidUsernameUser.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidPasswordUser",
+        "${TestDescription.invalid} with invalidPasswordUser",
         () async {
           // Assert
           expect(invalidPasswordUser.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidEmailAddressUser",
+        "${TestDescription.invalid} with invalidEmailAddressUser",
         () async {
           // Assert
           expect(invalidEmailAddressUser.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidBirthdayUser",
+        "${TestDescription.invalid} with invalidBirthdayUser",
         () async {
           // Assert
           expect(invalidBirthdayUser.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidDescriptionUser",
+        "${TestDescription.invalid} with invalidDescriptionUser",
         () async {
           // Assert
           expect(invalidDescriptionUser.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidUserLevelUser",
+        "${TestDescription.invalid} with invalidUserLevelUser",
         () async {
           // Assert
           expect(invalidUserLevelUser.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidExperiencePointsUser",
+        "${TestDescription.invalid} with invalidExperiencePointsUser",
         () async {
           // Assert
           expect(invalidExperiencePointsUser.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidLastLoginUser",
+        "${TestDescription.invalid} with invalidLastLoginUser",
         () async {
           // Assert
           expect(invalidLastLoginUser.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidCreationDateUser",
+        "${TestDescription.invalid} with invalidCreationDateUser",
         () async {
           // Assert
           expect(invalidCreationDateUser.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidModificationDateUser",
+        "${TestDescription.invalid} with invalidModificationDateUser",
         () async {
           // Assert
           expect(invalidModificationDateUser.isValid, false);

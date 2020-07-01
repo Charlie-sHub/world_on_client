@@ -36,7 +36,7 @@ void main() {
     TestDescription.authorization,
     () {
       test(
-        "$TestDescription.returnNothing, testing with the admin",
+        "${TestDescription.returnNothing}, testing with the admin",
         () async {
           // Arrange
           when(mockRemoteOptionsRepository.deleteUser(any)).thenAnswer((_) async => right(unit));
@@ -48,7 +48,7 @@ void main() {
         },
       );
       test(
-        "$TestDescription.returnNothing, testing with the same user",
+        "${TestDescription.returnNothing}, testing with the same user",
         () async {
           // Arrange
           when(mockRemoteOptionsRepository.deleteUser(any)).thenAnswer((_) async => right(unit));

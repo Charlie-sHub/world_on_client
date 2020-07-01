@@ -16,8 +16,8 @@ void main() {
   );
   final invalidPosterComment = validComment.copyWith(poster: User.empty());
   final invalidContentComment = validComment.copyWith(content: CommentContent(""));
-  final invalidCreationDateComment = validComment.copyWith(creationDate: PastDate(DateTime.now()));
-  final invalidModificationDateComment = validComment.copyWith(modificationDate: PastDate(DateTime.now()));
+  final invalidCreationDateComment = validComment.copyWith(creationDate: PastDate(DateTime.now().add(const Duration(days: 10))));
+  final invalidModificationDateComment = validComment.copyWith(modificationDate: PastDate(DateTime.now().add(const Duration(days: 10))));
   test(
     TestDescription.valid,
     () async {
@@ -29,28 +29,28 @@ void main() {
     TestDescription.groupOnFailure,
     () {
       test(
-        "$TestDescription.invalid with invalidPosterComment",
+        "${TestDescription.invalid} with invalidPosterComment",
         () async {
           // Assert
           expect(invalidPosterComment.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidContentComment",
+        "${TestDescription.invalid} with invalidContentComment",
         () async {
           // Assert
           expect(invalidContentComment.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidCreationDateComment",
+        "${TestDescription.invalid} with invalidCreationDateComment",
         () async {
           // Assert
           expect(invalidCreationDateComment.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidModificationDateComment",
+        "${TestDescription.invalid} with invalidModificationDateComment",
         () async {
           // Assert
           expect(invalidModificationDateComment.isValid, false);

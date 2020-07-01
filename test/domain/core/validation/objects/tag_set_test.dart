@@ -23,7 +23,7 @@ void main() {
     TestDescription.groupOnFailure,
     () {
       test(
-        "$TestDescription.invalid with emptySet",
+        "${TestDescription.invalid} with emptySet",
         () async {
           // Act
           final tags = TagSet(emptySet);
@@ -32,7 +32,7 @@ void main() {
         },
       );
       test(
-        "$TestDescription.invalid with tooBigSet",
+        "${TestDescription.invalid} with tooBigSet",
         () async {
           // Act
           final tags = TagSet(tooBigSet);

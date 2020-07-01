@@ -6,7 +6,7 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 
-@lazySingleton
+@LazySingleton(env: Environment.prod)
 class LoadExperiencesDone implements StreamUseCase<Set<Experience>, Params> {
   final ProfileRepositoryInterface repository;
   

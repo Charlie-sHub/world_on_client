@@ -7,7 +7,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/search/repository/search_repository_interface.dart';
 
-@lazySingleton
+@LazySingleton(env: Environment.prod)
 class SearchUsersByName implements StreamUseCase<Set<User>, Params> {
   final SearchRepositoryInterface _repository;
   

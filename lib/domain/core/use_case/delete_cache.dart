@@ -4,7 +4,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/repository/core_repository_interface.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
-@lazySingleton
+@LazySingleton(env: Environment.prod)
 class DeleteCache implements AsyncUseCase<Unit, NoParams> {
   final CoreRepositoryInterface _repository;
   

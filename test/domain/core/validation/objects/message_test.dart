@@ -23,7 +23,7 @@ void main() {
     TestDescription.groupOnFailure,
     () {
       test(
-        "$TestDescription.invalid with tooLongMessage",
+        "${TestDescription.invalid} with tooLongMessage",
         () async {
           // Act
           final message = MessageContent(tooLongMessage);
@@ -32,7 +32,7 @@ void main() {
         },
       );
       test(
-        "$TestDescription.invalid with emptyMessage",
+        "${TestDescription.invalid} with emptyMessage",
         () async {
           // Act
           final message = MessageContent(emptyMessage);

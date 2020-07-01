@@ -6,7 +6,7 @@ import 'package:worldon/domain/comments/repository/comment_repository_interface.
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
-@lazySingleton
+@LazySingleton(env: Environment.prod)
 class GetUserComments implements StreamUseCase<Set<Comment>, Params> {
   final CommentRepositoryInterface _repository;
   

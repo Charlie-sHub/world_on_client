@@ -12,9 +12,7 @@ T _$identity<T>(T value) => value;
 class _$TagTearOff {
   const _$TagTearOff();
 
-  _Tag call({int id, @required Name name, @required User creator,
-      @required PastDate creationDate,
-      @required PastDate modificationDate}) {
+  _Tag call({int id, @required Name name, @required User creator, @required PastDate creationDate, @required PastDate modificationDate}) {
     return _Tag(
       id: id,
       name: name,

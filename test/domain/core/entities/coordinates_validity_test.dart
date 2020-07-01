@@ -20,14 +20,14 @@ void main() {
     TestDescription.groupOnFailure,
     () {
       test(
-        "$TestDescription.invalid with invalidLatitudeCoordinates",
+        "${TestDescription.invalid} with invalidLatitudeCoordinates",
         () async {
           // Assert
           expect(invalidLatitudeCoordinates.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidLatitudeCoordinates",
+        "${TestDescription.invalid} with invalidLatitudeCoordinates",
         () async {
           // Assert
           expect(invalidLongitudeCoordinates.isValid, false);

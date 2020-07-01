@@ -18,4 +18,11 @@ abstract class TestDescription {
   static const valid = "Should be valid";
   static const invalid = "Should be invalid";
   static const errorString = "Test Error";
+  static const shouldEmitInitial = "Should output the initial state";
+  static const verifyCallToUseCase = "Verifies the call to the use case";
+  static const shouldEmitSuccess = "Should emit a successful state";
+  static const shouldEmitFailure = "Should emit a failed state";
+  static const testingInitialization = "Testing initialization";
+  static const initializedState = "Should emit an initialized state";
+  static const nonInitializedState = "Should emit a not Initialized state";
 }

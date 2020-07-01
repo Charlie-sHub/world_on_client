@@ -8,7 +8,8 @@ import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 
-@lazySingleton
+// Maybe move this to Experience management
+@LazySingleton(env: Environment.prod)
 class DeleteExperience implements AsyncUseCase<Unit, Params> {
   final ProfileRepositoryInterface _repository;
   

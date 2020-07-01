@@ -6,11 +6,11 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/repository/tag_repository_interface.dart';
-import 'package:worldon/domain/core/use_case/tag_use_cases/get_tags_by_creator.dart';
+import 'package:worldon/domain/tag_management/use_case/get_tags_by_creator.dart';
 import 'package:worldon/injection.dart';
 
-import '../../../../test_descriptions.dart';
-import '../../methods/create_stream.dart';
+import '../../../test_descriptions.dart';
+import '../../core/methods/create_stream.dart';
 
 void main() {
   TagCoreRepositoryInterface mockTagRepository;

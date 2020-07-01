@@ -7,7 +7,7 @@ import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 
-@lazySingleton
+@LazySingleton(env: Environment.prod)
 class EditUser implements AsyncUseCase<Unit, Params> {
   final ProfileRepositoryInterface repository;
   

@@ -6,7 +6,7 @@ import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/tag_management/repository/tag_management_repository_interface.dart';
 
-@lazySingleton
+@LazySingleton(env: Environment.prod)
 class CreateTag implements AsyncUseCase<Unit, Params> {
   final TagManagementRepositoryInterface _repository;
   

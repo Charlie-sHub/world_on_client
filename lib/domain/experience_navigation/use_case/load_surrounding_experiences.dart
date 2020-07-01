@@ -7,7 +7,7 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_interface.dart';
 
-@lazySingleton
+@LazySingleton(env: Environment.prod)
 class LoadSurroundingExperiences implements AsyncUseCase<Set<Experience>, Params> {
   final ExperienceNavigationRepositoryInterface _repository;
   

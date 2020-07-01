@@ -26,8 +26,8 @@ void main() {
   final invalidCoordinatesExperience = validExperience.copyWith(coordinates: Coordinates.empty().copyWith(latitude: Latitude(10000)));
   final invalidCreatorExperience = validExperience.copyWith(creator: User.empty());
   final invalidDifficultyExperience = validExperience.copyWith(difficulty: Difficulty(12));
-  final invalidCreationDateExperience = validExperience.copyWith(creationDate: PastDate(DateTime.now()));
-  final invalidModificationDateExperience = validExperience.copyWith(modificationDate: PastDate(DateTime.now()));
+  final invalidCreationDateExperience = validExperience.copyWith(creationDate: PastDate(DateTime.now().add(const Duration(days: 10))));
+  final invalidModificationDateExperience = validExperience.copyWith(modificationDate: PastDate(DateTime.now().add(const Duration(days: 10))));
   final invalidObjectivesExperience = validExperience.copyWith(objectives: ObjectiveSet(KtSet.empty()));
   final invalidRewardsExperience = validExperience.copyWith(
       rewards: RewardSet(KtSet.of(
@@ -50,70 +50,70 @@ void main() {
     TestDescription.groupOnFailure,
     () {
       test(
-        "$TestDescription.invalid with invalidNameExperience",
+        "${TestDescription.invalid} with invalidNameExperience",
         () async {
           // Assert
           expect(invalidNameExperience.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidDescriptionExperience",
+        "${TestDescription.invalid} with invalidDescriptionExperience",
         () async {
           // Assert
           expect(invalidDescriptionExperience.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidCoordinatesExperience",
+        "${TestDescription.invalid} with invalidCoordinatesExperience",
         () async {
           // Assert
           expect(invalidCoordinatesExperience.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidCreatorExperience",
+        "${TestDescription.invalid} with invalidCreatorExperience",
         () async {
           // Assert
           expect(invalidCreatorExperience.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidDifficultyExperience",
+        "${TestDescription.invalid} with invalidDifficultyExperience",
         () async {
           // Assert
           expect(invalidDifficultyExperience.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidCreationDateExperience",
+        "${TestDescription.invalid} with invalidCreationDateExperience",
         () async {
           // Assert
           expect(invalidCreationDateExperience.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidModificationDateExperience",
+        "${TestDescription.invalid} with invalidModificationDateExperience",
         () async {
           // Assert
           expect(invalidModificationDateExperience.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidObjectivesExperience",
+        "${TestDescription.invalid} with invalidObjectivesExperience",
         () async {
           // Assert
           expect(invalidObjectivesExperience.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidRewardsExperience",
+        "${TestDescription.invalid} with invalidRewardsExperience",
         () async {
           // Assert
           expect(invalidRewardsExperience.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidTagsExperience",
+        "${TestDescription.invalid} with invalidTagsExperience",
         () async {
           // Assert
           expect(invalidTagsExperience.isValid, false);

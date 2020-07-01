@@ -226,8 +226,8 @@ class _$_Achievement extends _Achievement {
         assert(creator != null),
         assert(creationDate != null),
         assert(modificationDate != null),
-      assert(tags != null),
-      super._();
+        assert(tags != null),
+        super._();
 
   @override
   final int id;

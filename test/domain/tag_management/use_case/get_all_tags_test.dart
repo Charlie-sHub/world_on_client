@@ -4,34 +4,35 @@ import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/repository/tag_repository_interface.dart';
-import 'package:worldon/domain/core/use_case/tag_use_cases/get_tag_creator.dart';
+import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/domain/tag_management/use_case/get_all_tags.dart';
 import 'package:worldon/injection.dart';
 
-import '../../../../test_descriptions.dart';
+import '../../../test_descriptions.dart';
+import '../../core/methods/create_stream.dart';
 
 void main() {
   TagCoreRepositoryInterface mockTagRepository;
-  GetTagCreator useCase;
+  GetAllTags useCase;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
       mockTagRepository = getIt<TagCoreRepositoryInterface>();
-      useCase = getIt<GetTagCreator>();
+      useCase = getIt<GetAllTags>();
     },
   );
-  final params = Params(id: 1);
-  final user = User.empty();
+  final tagList = [Tag.empty()];
   test(
-    "Should get the User that created a given Tag",
+    "Should get the full list of tags",
     () async {
       // Arrange
-      when(mockTagRepository.getCreator(any)).thenAnswer((_) async => right(user));
+      when(mockTagRepository.getAllTags()).thenAnswer((_) => createStream(right(tagList)));
       // Act
-      final result = await useCase(params);
+      final result = await _act(useCase);
       // Assert
-      expect(result, right(user));
+      expect(result, right(tagList));
       _verifyInteractions(mockTagRepository);
     },
   );
@@ -43,9 +44,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: TestDescription.errorString));
-          when(mockTagRepository.getCreator(any)).thenAnswer((_) async => left(failure));
+          when(mockTagRepository.getAllTags()).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockTagRepository);
@@ -56,9 +57,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
-          when(mockTagRepository.getCreator(any)).thenAnswer((_) async => left(failure));
+          when(mockTagRepository.getAllTags()).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockTagRepository);
@@ -69,9 +70,9 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());
-          when(mockTagRepository.getCreator(any)).thenAnswer((_) async => left(failure));
+          when(mockTagRepository.getAllTags()).thenAnswer((_) => createStream(left(failure)));
           // Act
-          final result = await useCase(params);
+          final result = await _act(useCase);
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockTagRepository);
@@ -81,7 +82,16 @@ void main() {
   );
 }
 
+Future<Either<Failure, List<Tag>>> _act(GetAllTags useCase) async {
+  final resultStream = useCase(NoParams());
+  Either<Failure, List<Tag>> result;
+  await for (final either in resultStream) {
+    result = either;
+  }
+  return result;
+}
+
 void _verifyInteractions(TagCoreRepositoryInterface mockTagRepository) {
-  verify(mockTagRepository.getCreator(any));
+  verify(mockTagRepository.getAllTags());
   verifyNoMoreInteractions(mockTagRepository);
 }

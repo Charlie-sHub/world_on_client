@@ -6,7 +6,7 @@ import 'package:worldon/domain/achievement_management/repository/achievement_rep
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
-@lazySingleton
+@LazySingleton(env: Environment.prod)
 class GetAchievement implements AsyncUseCase<Achievement, Params> {
   final AchievementRepositoryInterface _repository;
   

@@ -38,7 +38,7 @@ void main() {
     TestDescription.authorization,
     () {
       test(
-        "$TestDescription.returnNothing, testing with the creator",
+        "${TestDescription.returnNothing}, testing with the creator",
         () async {
           // Arrange
           when(mockProfileRepository.deleteExperience(any)).thenAnswer((_) async => right(unit));
@@ -50,7 +50,7 @@ void main() {
         },
       );
       test(
-        "$TestDescription.returnNothing, testing with the admin",
+        "${TestDescription.returnNothing}, testing with the admin",
         () async {
           // Arrange
           when(mockProfileRepository.deleteExperience(any)).thenAnswer((_) async => right(unit));
@@ -67,7 +67,7 @@ void main() {
     TestDescription.groupOnFailure,
     () {
       test(
-        "$TestDescription.unAuthorized, random user deleting the experience",
+        "${TestDescription.unAuthorized}, random user deleting the experience",
         () async {
           // Act
           final result = await useCase(setUpParams(randomUser));

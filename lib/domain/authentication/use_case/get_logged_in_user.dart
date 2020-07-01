@@ -5,7 +5,7 @@ import 'package:worldon/domain/authentication/repository/authentication_reposito
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
-@lazySingleton
+@LazySingleton(env: Environment.prod)
 class GetLoggedInUser implements AsyncUseCase<Option<User>, NoParams> {
   final AuthenticationRepositoryInterface _repository;
   

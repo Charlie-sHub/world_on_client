@@ -6,7 +6,7 @@ import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 
-@lazySingleton
+@LazySingleton(env: Environment.prod)
 class LoadUserInterests implements StreamUseCase<Set<Tag>, Params> {
   final ProfileRepositoryInterface _repository;
   

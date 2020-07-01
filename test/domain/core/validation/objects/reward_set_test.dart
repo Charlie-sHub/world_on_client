@@ -22,7 +22,7 @@ void main() {
     TestDescription.groupOnFailure,
     () {
       test(
-        "$TestDescription.invalid with tooBigSet",
+        "${TestDescription.invalid} with tooBigSet",
         () async {
           // Act
           final rewards = RewardSet(tooBigSet);

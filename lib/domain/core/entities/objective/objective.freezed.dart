@@ -12,8 +12,7 @@ T _$identity<T>(T value) => value;
 class _$ObjectiveTearOff {
   const _$ObjectiveTearOff();
 
-  _Objective call({int id, @required EntityDescription description, @required Coordinates coordinates,
-      @required String imageName}) {
+  _Objective call({int id, @required EntityDescription description, @required Coordinates coordinates, @required String imageName}) {
     return _Objective(
       id: id,
       description: description,

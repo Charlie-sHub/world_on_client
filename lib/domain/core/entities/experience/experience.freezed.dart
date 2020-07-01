@@ -316,8 +316,8 @@ class _$_Experience extends _Experience {
         assert(tags != null),
         assert(comments != null),
         assert(likedBy != null),
-      assert(doneBy != null),
-      super._();
+        assert(doneBy != null),
+        super._();
 
   @override
   final int id;

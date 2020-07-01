@@ -23,7 +23,7 @@ void main() {
     TestDescription.groupOnFailure,
     () {
       test(
-        "$TestDescription.invalid with tooShortPassword",
+        "${TestDescription.invalid} with tooShortPassword",
         () async {
           // Act
           final password = Password(tooShortPassword);
@@ -32,7 +32,7 @@ void main() {
         },
       );
       test(
-        "$TestDescription.invalid with tooLongPassword",
+        "${TestDescription.invalid} with tooLongPassword",
         () async {
           // Act
           final password = Password(tooLongPassword);
@@ -41,7 +41,7 @@ void main() {
         },
       );
       test(
-        "$TestDescription.invalid with emptyPassword",
+        "${TestDescription.invalid} with emptyPassword",
         () async {
           // Act
           final password = Password(emptyPassword);
@@ -50,7 +50,7 @@ void main() {
         },
       );
       test(
-        "$TestDescription.invalid with multiLinePassword",
+        "${TestDescription.invalid} with multiLinePassword",
         () async {
           // Act
           final password = Password(multiLinePassword);

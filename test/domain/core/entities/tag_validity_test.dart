@@ -16,8 +16,8 @@ void main() {
   );
   final invalidNameTag = validTag.copyWith(name: Name(""));
   final invalidUserTag = validTag.copyWith(creator: User.empty());
-  final invalidCreationDateTag = validTag.copyWith(creationDate: PastDate(DateTime.now()));
-  final invalidModificationDateTag = validTag.copyWith(modificationDate: PastDate(DateTime.now()));
+  final invalidCreationDateTag = validTag.copyWith(creationDate: PastDate(DateTime.now().add(const Duration(days: 10))));
+  final invalidModificationDateTag = validTag.copyWith(modificationDate: PastDate(DateTime.now().add(const Duration(days: 10))));
   test(
     TestDescription.valid,
     () async {
@@ -29,28 +29,28 @@ void main() {
     TestDescription.groupOnFailure,
     () {
       test(
-        "$TestDescription.invalid with invalidNameTag",
+        "${TestDescription.invalid} with invalidNameTag",
         () async {
           // Assert
           expect(invalidNameTag.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidUserTag",
+        "${TestDescription.invalid} with invalidUserTag",
         () async {
           // Assert
           expect(invalidUserTag.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidCreationDateTag",
+        "${TestDescription.invalid} with invalidCreationDateTag",
         () async {
           // Assert
           expect(invalidCreationDateTag.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidModificationDateTag",
+        "${TestDescription.invalid} with invalidModificationDateTag",
         () async {
           // Assert
           expect(invalidModificationDateTag.isValid, false);

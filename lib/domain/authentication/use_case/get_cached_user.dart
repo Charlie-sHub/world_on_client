@@ -5,7 +5,7 @@ import 'package:worldon/domain/authentication/repository/cached_credentials_repo
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
-@lazySingleton
+@LazySingleton(env: Environment.prod)
 class GetCachedUser implements AsyncUseCase<User, NoParams> {
   final CachedCredentialsRepositoryInterface _repository;
   

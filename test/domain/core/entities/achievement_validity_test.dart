@@ -33,49 +33,49 @@ void main() {
     TestDescription.groupOnFailure,
     () {
       test(
-        "$TestDescription.invalid with invalidNameAchievement",
+        "${TestDescription.invalid} with invalidNameAchievement",
         () async {
           // Assert
           expect(invalidNameAchievement.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidDescriptionAchievement",
+        "${TestDescription.invalid} with invalidDescriptionAchievement",
         () async {
           // Assert
           expect(invalidDescriptionAchievement.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidExperiencePointsAchievement",
+        "${TestDescription.invalid} with invalidExperiencePointsAchievement",
         () async {
           // Assert
           expect(invalidExperiencePointsAchievement.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidCreatorAchievement",
+        "${TestDescription.invalid} with invalidCreatorAchievement",
         () async {
           // Assert
           expect(invalidCreatorAchievement.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidCreationDateAchievement",
+        "${TestDescription.invalid} with invalidCreationDateAchievement",
         () async {
           // Assert
           expect(invalidCreationDateAchievement.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidModificationDateAchievement",
+        "${TestDescription.invalid} with invalidModificationDateAchievement",
         () async {
           // Assert
           expect(invalidModificationDateAchievement.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidTagsAchievement",
+        "${TestDescription.invalid} with invalidTagsAchievement",
         () async {
           // Assert
           expect(invalidTagsAchievement.isValid, false);

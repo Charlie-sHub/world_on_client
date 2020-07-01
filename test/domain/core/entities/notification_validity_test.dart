@@ -17,7 +17,7 @@ void main() {
   final invalidSenderNotification = validNotification.copyWith(sender: User.empty());
   final invalidReceiverNotification = validNotification.copyWith(receiver: User.empty());
   final invalidDescriptionNotification = validNotification.copyWith(description: EntityDescription(""));
-  final invalidCreationDateNotification = validNotification.copyWith(creationDate: PastDate(DateTime.now()));
+  final invalidCreationDateNotification = validNotification.copyWith(creationDate: PastDate(DateTime.now().add(const Duration(days: 10))));
   test(
     TestDescription.valid,
     () async {
@@ -29,28 +29,28 @@ void main() {
     TestDescription.groupOnFailure,
     () {
       test(
-        "$TestDescription.invalid with invalidSenderNotification",
+        "${TestDescription.invalid} with invalidSenderNotification",
         () async {
           // Assert
           expect(invalidSenderNotification.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidReceiverNotification",
+        "${TestDescription.invalid} with invalidReceiverNotification",
         () async {
           // Assert
           expect(invalidReceiverNotification.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidDescriptionNotification",
+        "${TestDescription.invalid} with invalidDescriptionNotification",
         () async {
           // Assert
           expect(invalidDescriptionNotification.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidCreationDateNotification",
+        "${TestDescription.invalid} with invalidCreationDateNotification",
         () async {
           // Assert
           expect(invalidCreationDateNotification.isValid, false);

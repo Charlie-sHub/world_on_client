@@ -4,7 +4,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/notifications/repository/notification_repository_interface.dart';
 
-@lazySingleton
+@LazySingleton(env: Environment.prod)
 class DeleteUserNotifications implements AsyncUseCase<Unit, NoParams> {
   final NotificationRepositoryInterface _repository;
   

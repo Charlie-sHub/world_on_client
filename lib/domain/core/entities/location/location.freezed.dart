@@ -12,9 +12,7 @@ T _$identity<T>(T value) => value;
 class _$LocationTearOff {
   const _$LocationTearOff();
 
-  _Location call({int id, @required String city, @required String country,
-      @required String postalCode,
-      @required Set<Experience> experiences}) {
+  _Location call({int id, @required String city, @required String country, @required String postalCode, @required Set<Experience> experiences}) {
     return _Location(
       id: id,
       city: city,

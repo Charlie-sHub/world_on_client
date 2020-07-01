@@ -33,7 +33,7 @@ void main() {
     TestDescription.groupOnFailure,
     () {
       test(
-        "$TestDescription.invalid with tooLongComment",
+        "${TestDescription.invalid} with tooLongComment",
         () async {
           // Act
           final comment = CommentContent(tooLongComment);
@@ -42,7 +42,7 @@ void main() {
         },
       );
       test(
-        "$TestDescription.invalid with emptyComment",
+        "${TestDescription.invalid} with emptyComment",
         () async {
           // Act
           final comment = CommentContent(emptyComment);

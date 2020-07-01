@@ -5,7 +5,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/achievement_management/repository/achievement_repository_interface.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
-@lazySingleton
+@LazySingleton(env: Environment.prod)
 class AwardAchievement implements AsyncUseCase<Unit, Params> {
   final AchievementRepositoryInterface _repository;
   

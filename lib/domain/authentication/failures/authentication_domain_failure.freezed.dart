@@ -25,18 +25,15 @@ mixin _$AuthenticationDomainFailure<T> {
   Result when<Result extends Object>({
     @required Result cancelledByUser(),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result cancelledByUser(),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result cancelledByUser(CancelledByUser<T> value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result cancelledByUser(CancelledByUser<T> value),
@@ -45,9 +42,7 @@ mixin _$AuthenticationDomainFailure<T> {
 }
 
 abstract class $AuthenticationDomainFailureCopyWith<T, $Res> {
-  factory $AuthenticationDomainFailureCopyWith(AuthenticationDomainFailure<T> value,
-    $Res Function(AuthenticationDomainFailure<T>) then) =
-  _$AuthenticationDomainFailureCopyWithImpl<T, $Res>;
+  factory $AuthenticationDomainFailureCopyWith(AuthenticationDomainFailure<T> value, $Res Function(AuthenticationDomainFailure<T>) then) = _$AuthenticationDomainFailureCopyWithImpl<T, $Res>;
 }
 
 class _$AuthenticationDomainFailureCopyWithImpl<T, $Res>

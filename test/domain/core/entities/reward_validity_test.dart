@@ -23,14 +23,14 @@ void main() {
     TestDescription.groupOnFailure,
     () {
       test(
-        "$TestDescription.invalid with invalidNameReward",
+        "${TestDescription.invalid} with invalidNameReward",
         () async {
           // Assert
           expect(invalidNameReward.isValid, false);
         },
       );
       test(
-        "$TestDescription.invalid with invalidDescriptionReward",
+        "${TestDescription.invalid} with invalidDescriptionReward",
         () async {
           // Assert
           expect(invalidDescriptionReward.isValid, false);

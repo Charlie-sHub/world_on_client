@@ -5,7 +5,7 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/experience_log/repository/experience_log_repository_interface.dart';
 
-@lazySingleton
+@LazySingleton(env: Environment.prod)
 class LoadUserLog implements StreamUseCase<Set<Experience>, NoParams> {
   final ExperienceLogRepositoryInterface _repository;
   

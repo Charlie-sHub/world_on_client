@@ -7,7 +7,7 @@ import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/search/repository/search_repository_interface.dart';
 
-@lazySingleton
+@LazySingleton(env: Environment.prod)
 class SearchExperiencesByTags implements StreamUseCase<Set<Experience>, Params> {
   final SearchRepositoryInterface _repository;
   

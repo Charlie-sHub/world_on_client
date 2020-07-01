@@ -4,9 +4,9 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/repository/tag_repository_interface.dart';
 
-import '../use_case.dart';
+import '../../core/use_case/use_case.dart';
 
-@lazySingleton
+@LazySingleton(env: Environment.prod)
 class GetAllTags implements StreamUseCase<List<Tag>, NoParams> {
   final TagCoreRepositoryInterface _repository;
   

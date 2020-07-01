@@ -25,7 +25,7 @@ TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest
     TestDescription.groupOnFailure,
     () {
       test(
-        "$TestDescription.invalid with tooLongDescription",
+        "${TestDescription.invalid} with tooLongDescription",
         () async {
           // Act
           final description = EntityDescription(tooLongDescription);
@@ -34,7 +34,7 @@ TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest
         },
       );
       test(
-        "$TestDescription.invalid with emptyDescription",
+        "${TestDescription.invalid} with emptyDescription",
         () async {
           // Act
           final description = EntityDescription(emptyDescription);

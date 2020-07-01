@@ -22,7 +22,7 @@ void main() {
     TestDescription.groupOnFailure,
     () {
       test(
-        "$TestDescription.invalid with tooLongName",
+        "${TestDescription.invalid} with tooLongName",
         () async {
           // Act
           final name = Name(tooLongName);
@@ -31,7 +31,7 @@ void main() {
         },
       );
       test(
-        "$TestDescription.invalid with emptyName",
+        "${TestDescription.invalid} with emptyName",
         () async {
           // Act
           final name = Name(emptyName);
@@ -40,7 +40,7 @@ void main() {
         },
       );
       test(
-        "$TestDescription.invalid with multiLineName",
+        "${TestDescription.invalid} with multiLineName",
         () async {
           // Act
           final name = Name(multiLineName);

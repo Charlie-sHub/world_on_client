@@ -12,8 +12,7 @@ T _$identity<T>(T value) => value;
 class _$RewardTearOff {
   const _$RewardTearOff();
 
-  _Reward call({int id, @required Name name, @required EntityDescription description,
-      @required String imageURL}) {
+  _Reward call({int id, @required Name name, @required EntityDescription description, @required String imageURL}) {
     return _Reward(
       id: id,
       name: name,

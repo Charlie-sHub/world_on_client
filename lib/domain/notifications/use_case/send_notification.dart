@@ -6,7 +6,7 @@ import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/notifications/repository/notification_repository_interface.dart';
 
-@lazySingleton
+@LazySingleton(env: Environment.prod)
 class SendNotification implements AsyncUseCase<Unit, Params> {
   final NotificationRepositoryInterface _repository;
   

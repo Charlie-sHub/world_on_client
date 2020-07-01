@@ -5,7 +5,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/experience_log/repository/experience_log_repository_interface.dart';
 
-@lazySingleton
+@LazySingleton(env: Environment.prod)
 class DismissExperienceFromLog implements AsyncUseCase<Unit, Params> {
   final ExperienceLogRepositoryInterface _repository;
   

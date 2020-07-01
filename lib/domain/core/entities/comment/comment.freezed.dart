@@ -12,9 +12,7 @@ T _$identity<T>(T value) => value;
 class _$CommentTearOff {
   const _$CommentTearOff();
 
-  _Comment call({int id, @required User poster, @required CommentContent content,
-      @required PastDate creationDate,
-      @required PastDate modificationDate}) {
+  _Comment call({int id, @required User poster, @required CommentContent content, @required PastDate creationDate, @required PastDate modificationDate}) {
     return _Comment(
       id: id,
       poster: poster,

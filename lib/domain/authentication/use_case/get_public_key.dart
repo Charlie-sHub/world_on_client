@@ -7,7 +7,7 @@ import 'package:worldon/domain/authentication/repository/public_key_repository_i
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
 @Deprecated("It's very likely this [UseCase] will be unnecessary as it is the intention to use Firebase")
-@lazySingleton
+@LazySingleton(env: Environment.prod)
 class GetPublicKey implements AsyncUseCase<Uint8List, NoParams> {
   final PublicKeyRepositoryInterface _repository;
 
