@@ -83,7 +83,7 @@ void main() {
 }
 
 Future<Either<Failure, List<Tag>>> _act(GetAllTags useCase) async {
-  final resultStream = useCase(NoParams());
+  final resultStream = useCase(getIt<NoParams>());
   Either<Failure, List<Tag>> result;
   await for (final either in resultStream) {
     result = either;

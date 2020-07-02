@@ -29,7 +29,7 @@ void main() {
       // Arrange
       when(mockGeoLocationRepository.getCurrentLocation()).thenReturn(right(currentLocation));
       // Act
-      final result = useCase(NoParams());
+      final result = useCase(getIt<NoParams>());
       // Assert
       expect(result, right(currentLocation));
     },
@@ -41,7 +41,7 @@ void main() {
       const failure = Failure.coreData(CoreDataFailure.geoLocationError(errorString: TestDescription.errorString));
       when(mockGeoLocationRepository.getCurrentLocation()).thenReturn(left(failure));
       // Act
-      final result = useCase(NoParams());
+      final result = useCase(getIt<NoParams>());
       // Assert
       expect(result, left(failure));
     },

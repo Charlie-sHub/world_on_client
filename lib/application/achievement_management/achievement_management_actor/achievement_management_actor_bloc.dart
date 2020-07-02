@@ -20,10 +20,12 @@ class AchievementManagementActorBloc extends Bloc<AchievementManagementActorEven
 
   @override
   Stream<AchievementManagementActorState> mapEventToState(AchievementManagementActorEvent event) async* {
-    yield* event.map(delete: onDelete);
+    yield* event.map(
+      delete: onDelete,
+    );
   }
 
-  Stream<AchievementManagementActorState> onDelete(AchievementManagementActorEvent event) async* {
+  Stream<AchievementManagementActorState> onDelete(_Deleted event) async* {
     yield const AchievementManagementActorState.actionInProgress();
     final deleteAchievement = getIt<DeleteAchievement>();
     final eitherFailureOrSuccess = await deleteAchievement(

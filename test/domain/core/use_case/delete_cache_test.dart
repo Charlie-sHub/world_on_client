@@ -27,7 +27,7 @@ void main() {
       // Arrange
       when(mockCoreRepository.deleteCache()).thenAnswer((_) async => right(unit));
       // Act
-      final result = await useCase(NoParams());
+      final result = await useCase(getIt<NoParams>());
       // Assert
       expect(result, right(unit));
       _verifyInteractions(mockCoreRepository);
@@ -40,7 +40,7 @@ void main() {
       const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: TestDescription.errorString));
       when(mockCoreRepository.deleteCache()).thenAnswer((_) async => left(failure));
       // Act
-      final result = await useCase(NoParams());
+      final result = await useCase(getIt<NoParams>());
       // Assert
       expect(result, left(failure));
       _verifyInteractions(mockCoreRepository);

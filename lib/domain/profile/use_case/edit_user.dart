@@ -18,7 +18,7 @@ class EditUser implements AsyncUseCase<Unit, Params> {
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    final _userRequestingOption = await getIt<GetLoggedInUser>().call(NoParams());
+    final _userRequestingOption = await getIt<GetLoggedInUser>().call(getIt<NoParams>());
     final _userRequesting = _userRequestingOption.fold(
       () => User.empty(),
       id,

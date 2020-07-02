@@ -13,15 +13,16 @@ import '../../../test_descriptions.dart';
 
 void main() {
   NotificationRepositoryInterface mockNotificationRepository;
+  NoParams params;
   DeleteUserNotifications useCase;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
       mockNotificationRepository = getIt<NotificationRepositoryInterface>();
+      params = getIt<NoParams>();
       useCase = DeleteUserNotifications(mockNotificationRepository);
     },
   );
-  final params = NoParams();
   test(
     TestDescription.returnNothing,
     () async {

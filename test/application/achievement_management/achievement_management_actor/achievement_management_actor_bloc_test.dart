@@ -23,13 +23,9 @@ void main() {
   final deletionEvent = AchievementManagementActorEvent.delete(Achievement.empty());
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async {
-      return getIt<AchievementManagementActorBloc>();
-    },
+    build: () async => getIt<AchievementManagementActorBloc>(),
     skip: 0,
-    expect: [
-      const AchievementManagementActorState.initial(),
-    ],
+    expect: [const AchievementManagementActorState.initial()],
   );
   group(
     "Delete Event Tests",

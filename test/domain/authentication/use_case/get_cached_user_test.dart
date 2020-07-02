@@ -30,7 +30,7 @@ void main() {
       // Arrange
       when(mockCachedUserRepository.getCachedUser()).thenAnswer((_) async => right(user));
       // Act
-      final result = await useCase(NoParams());
+      final result = await useCase(getIt<NoParams>());
       // Assert
       expect(result, right(user));
       _verifyInteractions(mockCachedUserRepository);
@@ -46,7 +46,7 @@ void main() {
           const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: TestDescription.errorString));
           when(mockCachedUserRepository.getCachedUser()).thenAnswer((_) async => left(failure));
           // Act
-          final result = await useCase(NoParams());
+          final result = await useCase(getIt<NoParams>());
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockCachedUserRepository);
@@ -59,7 +59,7 @@ void main() {
           const failure = Failure.authenticationData(AuthenticationDataFailure.noUserInCache());
           when(mockCachedUserRepository.getCachedUser()).thenAnswer((_) async => left(failure));
           // Act
-          final result = await useCase(NoParams());
+          final result = await useCase(getIt<NoParams>());
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockCachedUserRepository);

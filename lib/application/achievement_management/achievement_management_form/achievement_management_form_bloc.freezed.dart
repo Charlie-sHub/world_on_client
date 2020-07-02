@@ -916,13 +916,14 @@ abstract class _Submit implements AchievementManagementFormEvent {
 class _$AchievementManagementFormStateTearOff {
   const _$AchievementManagementFormStateTearOff();
 
-  _AchievementManagementFormState call(
-      {@required Achievement achievement, @required bool showErrorMessage, @required bool isEditing,
+  _AchievementManagementFormState call({@required Achievement achievement,
+    @required bool showErrorMessages,
+    @required bool isEditing,
       @required bool isSubmitting,
       @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _AchievementManagementFormState(
       achievement: achievement,
-      showErrorMessage: showErrorMessage,
+      showErrorMessages: showErrorMessages,
       isEditing: isEditing,
       isSubmitting: isSubmitting,
       failureOrSuccessOption: failureOrSuccessOption,
@@ -937,7 +938,7 @@ const $AchievementManagementFormState =
 mixin _$AchievementManagementFormState {
   Achievement get achievement;
 
-  bool get showErrorMessage;
+  bool get showErrorMessages;
   bool get isEditing;
   bool get isSubmitting;
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
@@ -952,9 +953,7 @@ abstract class $AchievementManagementFormStateCopyWith<$Res> {
           $Res Function(AchievementManagementFormState) then) =
       _$AchievementManagementFormStateCopyWithImpl<$Res>;
   $Res call(
-      {Achievement achievement,
-        bool showErrorMessage,
-      bool isEditing,
+      {Achievement achievement, bool showErrorMessages, bool isEditing,
       bool isSubmitting,
       Option<Either<Failure, Unit>> failureOrSuccessOption});
 
@@ -972,7 +971,7 @@ class _$AchievementManagementFormStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object achievement = freezed,
-    Object showErrorMessage = freezed,
+    Object showErrorMessages = freezed,
     Object isEditing = freezed,
     Object isSubmitting = freezed,
     Object failureOrSuccessOption = freezed,
@@ -981,9 +980,9 @@ class _$AchievementManagementFormStateCopyWithImpl<$Res>
       achievement: achievement == freezed
           ? _value.achievement
           : achievement as Achievement,
-      showErrorMessage: showErrorMessage == freezed
-        ? _value.showErrorMessage
-        : showErrorMessage as bool,
+      showErrorMessages: showErrorMessages == freezed
+        ? _value.showErrorMessages
+        : showErrorMessages as bool,
       isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
       isSubmitting:
           isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
@@ -1013,7 +1012,7 @@ abstract class _$AchievementManagementFormStateCopyWith<$Res>
   @override
   $Res call(
       {Achievement achievement,
-        bool showErrorMessage,
+        bool showErrorMessages,
       bool isEditing,
       bool isSubmitting,
       Option<Either<Failure, Unit>> failureOrSuccessOption});
@@ -1037,7 +1036,7 @@ class __$AchievementManagementFormStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object achievement = freezed,
-    Object showErrorMessage = freezed,
+    Object showErrorMessages = freezed,
     Object isEditing = freezed,
     Object isSubmitting = freezed,
     Object failureOrSuccessOption = freezed,
@@ -1046,9 +1045,9 @@ class __$AchievementManagementFormStateCopyWithImpl<$Res>
       achievement: achievement == freezed
           ? _value.achievement
           : achievement as Achievement,
-      showErrorMessage: showErrorMessage == freezed
-        ? _value.showErrorMessage
-        : showErrorMessage as bool,
+      showErrorMessages: showErrorMessages == freezed
+        ? _value.showErrorMessages
+        : showErrorMessages as bool,
       isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
       isSubmitting:
           isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
@@ -1063,12 +1062,12 @@ class _$_AchievementManagementFormState
     implements _AchievementManagementFormState {
   const _$_AchievementManagementFormState(
       {@required this.achievement,
-        @required this.showErrorMessage,
+        @required this.showErrorMessages,
       @required this.isEditing,
       @required this.isSubmitting,
       @required this.failureOrSuccessOption})
       : assert(achievement != null),
-      assert(showErrorMessage != null),
+      assert(showErrorMessages != null),
         assert(isEditing != null),
         assert(isSubmitting != null),
         assert(failureOrSuccessOption != null);
@@ -1076,7 +1075,7 @@ class _$_AchievementManagementFormState
   @override
   final Achievement achievement;
   @override
-  final bool showErrorMessage;
+  final bool showErrorMessages;
   @override
   final bool isEditing;
   @override
@@ -1086,7 +1085,7 @@ class _$_AchievementManagementFormState
 
   @override
   String toString() {
-    return 'AchievementManagementFormState(achievement: $achievement, showErrorMessage: $showErrorMessage, isEditing: $isEditing, isSubmitting: $isSubmitting, failureOrSuccessOption: $failureOrSuccessOption)';
+    return 'AchievementManagementFormState(achievement: $achievement, showErrorMessages: $showErrorMessages, isEditing: $isEditing, isSubmitting: $isSubmitting, failureOrSuccessOption: $failureOrSuccessOption)';
   }
 
   @override
@@ -1096,9 +1095,9 @@ class _$_AchievementManagementFormState
             (identical(other.achievement, achievement) ||
                 const DeepCollectionEquality()
                     .equals(other.achievement, achievement)) &&
-          (identical(other.showErrorMessage, showErrorMessage) ||
+          (identical(other.showErrorMessages, showErrorMessages) ||
                 const DeepCollectionEquality()
-                  .equals(other.showErrorMessage, showErrorMessage)) &&
+                  .equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isEditing, isEditing) ||
                 const DeepCollectionEquality()
                     .equals(other.isEditing, isEditing)) &&
@@ -1114,7 +1113,7 @@ class _$_AchievementManagementFormState
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(achievement) ^
-      const DeepCollectionEquality().hash(showErrorMessage) ^
+      const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isEditing) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
@@ -1129,7 +1128,7 @@ abstract class _AchievementManagementFormState
     implements AchievementManagementFormState {
   const factory _AchievementManagementFormState(
           {@required Achievement achievement,
-            @required bool showErrorMessage,
+            @required bool showErrorMessages,
           @required bool isEditing,
           @required bool isSubmitting,
           @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
@@ -1138,7 +1137,7 @@ abstract class _AchievementManagementFormState
   @override
   Achievement get achievement;
   @override
-  bool get showErrorMessage;
+  bool get showErrorMessages;
   @override
   bool get isEditing;
   @override

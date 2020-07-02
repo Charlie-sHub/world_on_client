@@ -26,7 +26,7 @@ void main() {
       final someUser = some<User>(loggedInUser);
       when(mockAuthenticationRepository.getLoggedInUser()).thenAnswer((_) async => someUser);
       // Act
-      final result = await useCase(NoParams());
+      final result = await useCase(getIt<NoParams>());
       // Assert
       expect(result, someUser);
       _verifyInteractions(mockAuthenticationRepository);
@@ -39,7 +39,7 @@ void main() {
       final noUser = none<User>();
       when(mockAuthenticationRepository.getLoggedInUser()).thenAnswer((_) async => noUser);
       // Act
-      final result = await useCase(NoParams());
+      final result = await useCase(getIt<NoParams>());
       // Assert
       expect(result, noUser);
       _verifyInteractions(mockAuthenticationRepository);

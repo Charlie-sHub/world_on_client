@@ -4,7 +4,7 @@ part of 'achievement_management_form_bloc.dart';
 abstract class AchievementManagementFormState with _$AchievementManagementFormState {
   const factory AchievementManagementFormState({
     @required Achievement achievement,
-    @required bool showErrorMessage,
+    @required bool showErrorMessages,
     @required bool isEditing,
     @required bool isSubmitting,
     @required Option<Either<Failure, Unit>> failureOrSuccessOption,
@@ -12,7 +12,7 @@ abstract class AchievementManagementFormState with _$AchievementManagementFormSt
 
   factory AchievementManagementFormState.initial() => AchievementManagementFormState(
         achievement: Achievement.empty(),
-        showErrorMessage: false,
+        showErrorMessages: false,
         isEditing: false,
         isSubmitting: false,
         failureOrSuccessOption: none(),

@@ -15,15 +15,16 @@ import '../../core/methods/create_stream.dart';
 
 void main() {
   ExperienceLogRepositoryInterface mockExperienceLogRepository;
+  NoParams params;
   LoadUserLog useCase;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
       mockExperienceLogRepository = getIt<ExperienceLogRepositoryInterface>();
+      params = getIt<NoParams>();
       useCase = LoadUserLog(mockExperienceLogRepository);
     },
   );
-  final params = NoParams();
   final experience = Experience.empty();
   final experienceSet = {experience};
   test(

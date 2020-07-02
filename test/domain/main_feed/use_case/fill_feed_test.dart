@@ -15,15 +15,16 @@ import '../../core/methods/create_stream.dart';
 
 void main() {
   MainFeedRepositoryInterface mockMainFeedRepository;
+  NoParams params;
   FillFeed useCase;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
       mockMainFeedRepository = getIt<MainFeedRepositoryInterface>();
+      params = getIt<NoParams>();
       useCase = FillFeed(mockMainFeedRepository);
     },
   );
-  final params = NoParams();
   final experienceList = [Experience.empty()];
   test(
     "Should return a List of Experiences",

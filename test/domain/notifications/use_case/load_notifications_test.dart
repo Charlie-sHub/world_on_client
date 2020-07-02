@@ -15,15 +15,16 @@ import '../../core/methods/create_stream.dart';
 
 void main() {
   NotificationRepositoryInterface mockNotificationRepository;
+  NoParams params;
   LoadNotifications useCase;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
       mockNotificationRepository = getIt<NotificationRepositoryInterface>();
+      params = getIt<NoParams>();
       useCase = LoadNotifications(mockNotificationRepository);
     },
   );
-  final params = NoParams();
   final notificationList = [Notification.empty()];
   test(
     "Should return a list of Notifications",

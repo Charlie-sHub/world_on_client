@@ -30,7 +30,7 @@ void main() {
       // Arrange
       when(mockPublicKeyRepository.getPublicKey()).thenAnswer((realInvocation) async => right(publicKeyBytes));
       // Act
-      final result = await useCase(NoParams());
+      final result = await useCase(getIt<NoParams>());
       // Assert
       expect(result, right(publicKeyBytes));
       _verifyInteractions(mockPublicKeyRepository);
@@ -46,7 +46,7 @@ void main() {
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockPublicKeyRepository.getPublicKey()).thenAnswer((_) async => left(failure));
           // Act
-          final result = await useCase(NoParams());
+          final result = await useCase(getIt<NoParams>());
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockPublicKeyRepository);
@@ -59,7 +59,7 @@ void main() {
           const failure = Failure.coreData(CoreDataFailure.notFoundError());
           when(mockPublicKeyRepository.getPublicKey()).thenAnswer((_) async => left(failure));
           // Act
-          final result = await useCase(NoParams());
+          final result = await useCase(getIt<NoParams>());
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockPublicKeyRepository);

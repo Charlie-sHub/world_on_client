@@ -39,7 +39,7 @@ mixin _$Message {
 abstract class $MessageCopyWith<$Res> {
   factory $MessageCopyWith(Message value, $Res Function(Message) then) =
   _$MessageCopyWithImpl<$Res>;
-  
+
   $Res call({int id,
     User sender,
     User receiver,

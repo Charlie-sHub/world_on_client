@@ -7,6 +7,10 @@
 import 'package:get_it/get_it.dart';
 import 'package:worldon/application/achievement_management/achievement_management_actor/achievement_management_actor_bloc.dart';
 import 'package:worldon/application/achievement_management/achievement_management_form/achievement_management_form_bloc.dart';
+import 'package:worldon/application/achievement_management/achievement_management_watcher/achievement_management_watcher_bloc.dart';
+import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
+import 'package:worldon/application/authentication/log_in_form/log_in_form_bloc.dart';
+import 'package:worldon/application/authentication/registration_form/registration_form_bloc.dart';
 import 'package:worldon/core/util/cypher.dart';
 import 'package:worldon/data/achievement_management/repository/development_achievement_repository.dart';
 import 'package:worldon/data/achievement_management/repository/production_achievement_repository.dart';
@@ -78,6 +82,7 @@ import 'package:worldon/domain/core/repository/geo_location_repository_interface
 import 'package:worldon/domain/core/repository/geo_location_repository_mock.dart';
 import 'package:worldon/domain/core/use_case/delete_cache.dart';
 import 'package:worldon/domain/core/use_case/get_current_location.dart';
+import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/use_case/use_case_mocks.dart';
 import 'package:worldon/domain/experience_log/repository/experience_log_repository_interface.dart';
 import 'package:worldon/domain/experience_log/repository/experience_log_repository_mock.dart';
@@ -164,6 +169,10 @@ void $initGetIt(GetIt g, {String environment}) {
       () => AchievementManagementActorBloc());
   g.registerFactory<AchievementManagementFormBloc>(
       () => AchievementManagementFormBloc());
+  g.registerFactory<AchievementManagementWatcherBloc>(() => AchievementManagementWatcherBloc());
+  g.registerFactory<AuthenticationBloc>(() => AuthenticationBloc());
+  g.registerFactory<LogInFormBloc>(() => LogInFormBloc());
+  g.registerFactory<RegistrationFormBloc>(() => RegistrationFormBloc());
 
   //Register dev Dependencies --------
   if (environment == 'dev') {
@@ -462,6 +471,7 @@ void $initGetIt(GetIt g, {String environment}) {
     g.registerLazySingleton<LogOut>(() => MockLogOut());
     g.registerLazySingleton<MainFeedRepositoryInterface>(
         () => MockMainFeedRepository());
+    g.registerLazySingleton<NoParams>(() => NoParams());
     g.registerLazySingleton<NotificationRepositoryInterface>(
         () => MockNotificationRepository());
     g.registerLazySingleton<PostComment>(() => MockPostComment());

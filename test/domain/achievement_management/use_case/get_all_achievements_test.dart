@@ -85,7 +85,7 @@ void main() {
 // TODO: Try to create a single act method for all use cases with streams
 // probably unifying the use cases somehow
 Future<Either<Failure, List<Achievement>>> _act(GetAllAchievements useCase) async {
-  final resultStream = useCase(NoParams());
+  final resultStream = useCase(getIt<NoParams>());
   // Is there a better way to do this?
   Either<Failure, List<Achievement>> result;
   await for (final either in resultStream) {

@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
+import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
 
 // TODO: Check if these can be unified with freezed
@@ -19,7 +20,11 @@ abstract class UseCase<Type, Params> {
   Either<Failure, Type> call(Params params);
 }
 
+@LazySingleton(env: Environment.test)
+@LazySingleton(env: Environment.prod)
+@LazySingleton(env: Environment.dev)
 class NoParams extends Equatable {
+  // What's the point of this class extending Equatable?
   @override
   List<Object> get props => [];
 }

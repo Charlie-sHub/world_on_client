@@ -70,7 +70,7 @@ void main() {
 }
 
 Future<Either<Failure, Set<Achievement>>> _act(GetUserAchievements useCase) async {
-  final resultStream = useCase(NoParams());
+  final resultStream = useCase(getIt<NoParams>());
   Either<Failure, Set<Achievement>> result;
   await for (final either in resultStream) {
     result = either;

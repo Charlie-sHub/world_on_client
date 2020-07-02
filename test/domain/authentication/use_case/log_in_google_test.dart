@@ -28,7 +28,7 @@ void main() {
       // Arrange
       when(mockAuthenticationRepository.logInGoogle()).thenAnswer((_) async => right(unit));
       // Act
-      final result = await useCase(NoParams());
+      final result = await useCase(getIt<NoParams>());
       // Assert
       expect(result, right(unit));
       _verifyInteractions(mockAuthenticationRepository);
@@ -44,7 +44,7 @@ void main() {
           const failure = Failure.authenticationDomain(AuthenticationDomainFailure.cancelledByUser());
           when(mockAuthenticationRepository.logInGoogle()).thenAnswer((_) async => left(failure));
           // Act
-          final result = await useCase(NoParams());
+          final result = await useCase(getIt<NoParams>());
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockAuthenticationRepository);
@@ -57,7 +57,7 @@ void main() {
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockAuthenticationRepository.logInGoogle()).thenAnswer((_) async => left(failure));
           // Act
-          final result = await useCase(NoParams());
+          final result = await useCase(getIt<NoParams>());
           // Assert
           expect(result, left(failure));
           _verifyInteractions(mockAuthenticationRepository);

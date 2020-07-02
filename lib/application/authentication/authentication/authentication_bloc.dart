@@ -1,0 +1,49 @@
+import 'dart:async';
+
+import 'package:bloc/bloc.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
+import 'package:meta/meta.dart';
+import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
+import 'package:worldon/domain/authentication/use_case/log_out.dart';
+import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/injection.dart';
+
+part 'authentication_bloc.freezed.dart';
+
+part 'authentication_event.dart';
+
+part 'authentication_state.dart';
+
+@injectable
+class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> {
+  @override
+  AuthenticationState get initialState => const AuthenticationState.initial();
+
+  @override
+  Stream<AuthenticationState> mapEventToState(AuthenticationEvent event) async* {
+    yield* event.map(
+      authenticationCheckRequest: onAuthenticationCheckRequest,
+      logOut: onLogOut,
+    );
+  }
+
+  Stream<AuthenticationState> onLogOut(_LogOut event) async* {
+    final _logOut = getIt<LogOut>();
+    final _failureOrUnit = await _logOut(getIt<NoParams>());
+    // On second thought it's kinda silly the log out doesn't simply return void
+    yield _failureOrUnit.fold(
+      (failure) => const AuthenticationState.authenticated(),
+      (unit) => const AuthenticationState.unAuthenticated(),
+    );
+  }
+
+  Stream<AuthenticationState> onAuthenticationCheckRequest(_AuthenticationCheckRequest event) async* {
+    final _getLoggedInUser = getIt<GetLoggedInUser>();
+    final _userOption = await _getLoggedInUser(getIt<NoParams>());
+    yield _userOption.fold(
+      () => const AuthenticationState.unAuthenticated(),
+      (_) => const AuthenticationState.authenticated(),
+    );
+  }
+}

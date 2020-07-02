@@ -1,4 +1,6 @@
 part of 'achievement_management_watcher_bloc.dart';
 
-@immutable
-abstract class AchievementManagementWatcherEvent {}
+@freezed
+abstract class AchievementManagementWatcherEvent with _$AchievementManagementWatcherEvent {
+  const factory AchievementManagementWatcherEvent.loadAllAchievements() = _LoadAllAchievements;
+}
