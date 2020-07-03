@@ -11,6 +11,14 @@ import 'package:worldon/application/achievement_management/achievement_managemen
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
 import 'package:worldon/application/authentication/log_in_form/log_in_form_bloc.dart';
 import 'package:worldon/application/authentication/registration_form/registration_form_bloc.dart';
+import 'package:worldon/application/comments/comment_actor/comment_actor_bloc.dart';
+import 'package:worldon/application/comments/comment_form/comment_form_bloc.dart';
+import 'package:worldon/application/comments/comment_watcher/comment_watcher_bloc.dart';
+import 'package:worldon/application/core/experience_card_actor/experience_card_actor_bloc.dart';
+import 'package:worldon/application/experience_log/experience_log_actor/experience_log_actor_bloc.dart';
+import 'package:worldon/application/experience_log/experience_log_watcher/experience_log_watcher_bloc.dart';
+import 'package:worldon/application/experience_management/experience_management_actor/experience_management_actor_bloc.dart';
+import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
 import 'package:worldon/core/util/cypher.dart';
 import 'package:worldon/data/achievement_management/repository/development_achievement_repository.dart';
 import 'package:worldon/data/achievement_management/repository/production_achievement_repository.dart';
@@ -171,6 +179,14 @@ void $initGetIt(GetIt g, {String environment}) {
       () => AchievementManagementFormBloc());
   g.registerFactory<AchievementManagementWatcherBloc>(() => AchievementManagementWatcherBloc());
   g.registerFactory<AuthenticationBloc>(() => AuthenticationBloc());
+  g.registerFactory<CommentActorBloc>(() => CommentActorBloc());
+  g.registerFactory<CommentFormBloc>(() => CommentFormBloc());
+  g.registerFactory<CommentWatcherBloc>(() => CommentWatcherBloc());
+  g.registerFactory<ExperienceCardActorBloc>(() => ExperienceCardActorBloc());
+  g.registerFactory<ExperienceLogActorBloc>(() => ExperienceLogActorBloc());
+  g.registerFactory<ExperienceLogWatcherBloc>(() => ExperienceLogWatcherBloc());
+  g.registerFactory<ExperienceManagementActorBloc>(() => ExperienceManagementActorBloc());
+  g.registerFactory<ExperienceManagementFormBloc>(() => ExperienceManagementFormBloc());
   g.registerFactory<LogInFormBloc>(() => LogInFormBloc());
   g.registerFactory<RegistrationFormBloc>(() => RegistrationFormBloc());
 

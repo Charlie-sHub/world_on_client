@@ -44,7 +44,6 @@ mixin _$LogInFormEvent {
     @required Result logIn(),
     @required Result logInGoogle(),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result usernameChange(String username),
@@ -53,7 +52,6 @@ mixin _$LogInFormEvent {
     Result logInGoogle(),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result usernameChange(_UsernameChange value),
@@ -61,7 +59,6 @@ mixin _$LogInFormEvent {
     @required Result logIn(_LogIn value),
     @required Result logInGoogle(_LogInGoogle value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result usernameChange(_UsernameChange value),
@@ -80,19 +77,19 @@ class _$LogInFormEventCopyWithImpl<$Res> implements $LogInFormEventCopyWith<$Res
   _$LogInFormEventCopyWithImpl(this._value, this._then);
 
   final LogInFormEvent _value;
-
   // ignore: unused_field
   final $Res Function(LogInFormEvent) _then;
 }
 
 abstract class _$UsernameChangeCopyWith<$Res> {
   factory _$UsernameChangeCopyWith(_UsernameChange value, $Res Function(_UsernameChange) then) = __$UsernameChangeCopyWithImpl<$Res>;
-
   $Res call({String username});
 }
 
-class __$UsernameChangeCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res> implements _$UsernameChangeCopyWith<$Res> {
-  __$UsernameChangeCopyWithImpl(_UsernameChange _value, $Res Function(_UsernameChange) _then) : super(_value, (v) => _then(v as _UsernameChange));
+class __$UsernameChangeCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res>
+  implements _$UsernameChangeCopyWith<$Res> {
+  __$UsernameChangeCopyWithImpl(_UsernameChange _value, $Res Function(_UsernameChange) _then)
+    : super(_value, (v) => _then(v as _UsernameChange));
 
   @override
   _UsernameChange get _value => super._value as _UsernameChange;
@@ -120,14 +117,20 @@ class _$_UsernameChange implements _UsernameChange {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _UsernameChange && (identical(other.username, username) || const DeepCollectionEquality().equals(other.username, username)));
+    return identical(this, other) ||
+      (other is _UsernameChange &&
+        (identical(other.username, username) ||
+          const DeepCollectionEquality()
+            .equals(other.username, username)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
 
   @override
-  _$UsernameChangeCopyWith<_UsernameChange> get copyWith => __$UsernameChangeCopyWithImpl<_UsernameChange>(this, _$identity);
+  _$UsernameChangeCopyWith<_UsernameChange> get copyWith =>
+    __$UsernameChangeCopyWithImpl<_UsernameChange>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -196,18 +199,19 @@ abstract class _UsernameChange implements LogInFormEvent {
   const factory _UsernameChange(String username) = _$_UsernameChange;
 
   String get username;
-
   _$UsernameChangeCopyWith<_UsernameChange> get copyWith;
 }
 
 abstract class _$PasswordChangeCopyWith<$Res> {
-  factory _$PasswordChangeCopyWith(_PasswordChange value, $Res Function(_PasswordChange) then) = __$PasswordChangeCopyWithImpl<$Res>;
-
+  factory _$PasswordChangeCopyWith(_PasswordChange value, $Res Function(_PasswordChange) then) =
+  __$PasswordChangeCopyWithImpl<$Res>;
   $Res call({String password});
 }
 
-class __$PasswordChangeCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res> implements _$PasswordChangeCopyWith<$Res> {
-  __$PasswordChangeCopyWithImpl(_PasswordChange _value, $Res Function(_PasswordChange) _then) : super(_value, (v) => _then(v as _PasswordChange));
+class __$PasswordChangeCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res>
+  implements _$PasswordChangeCopyWith<$Res> {
+  __$PasswordChangeCopyWithImpl(_PasswordChange _value, $Res Function(_PasswordChange) _then)
+    : super(_value, (v) => _then(v as _PasswordChange));
 
   @override
   _PasswordChange get _value => super._value as _PasswordChange;
@@ -235,14 +239,20 @@ class _$_PasswordChange implements _PasswordChange {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _PasswordChange && (identical(other.password, password) || const DeepCollectionEquality().equals(other.password, password)));
+    return identical(this, other) ||
+      (other is _PasswordChange &&
+        (identical(other.password, password) ||
+          const DeepCollectionEquality()
+            .equals(other.password, password)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(password);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(password);
 
   @override
-  _$PasswordChangeCopyWith<_PasswordChange> get copyWith => __$PasswordChangeCopyWithImpl<_PasswordChange>(this, _$identity);
+  _$PasswordChangeCopyWith<_PasswordChange> get copyWith =>
+    __$PasswordChangeCopyWithImpl<_PasswordChange>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -311,16 +321,18 @@ abstract class _PasswordChange implements LogInFormEvent {
   const factory _PasswordChange(String password) = _$_PasswordChange;
 
   String get password;
-
   _$PasswordChangeCopyWith<_PasswordChange> get copyWith;
 }
 
 abstract class _$LogInCopyWith<$Res> {
-  factory _$LogInCopyWith(_LogIn value, $Res Function(_LogIn) then) = __$LogInCopyWithImpl<$Res>;
+  factory _$LogInCopyWith(_LogIn value, $Res Function(_LogIn) then) =
+  __$LogInCopyWithImpl<$Res>;
 }
 
-class __$LogInCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res> implements _$LogInCopyWith<$Res> {
-  __$LogInCopyWithImpl(_LogIn _value, $Res Function(_LogIn) _then) : super(_value, (v) => _then(v as _LogIn));
+class __$LogInCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res>
+  implements _$LogInCopyWith<$Res> {
+  __$LogInCopyWithImpl(_LogIn _value, $Res Function(_LogIn) _then)
+    : super(_value, (v) => _then(v as _LogIn));
 
   @override
   _LogIn get _value => super._value as _LogIn;
@@ -410,11 +422,14 @@ abstract class _LogIn implements LogInFormEvent {
 }
 
 abstract class _$LogInGoogleCopyWith<$Res> {
-  factory _$LogInGoogleCopyWith(_LogInGoogle value, $Res Function(_LogInGoogle) then) = __$LogInGoogleCopyWithImpl<$Res>;
+  factory _$LogInGoogleCopyWith(_LogInGoogle value, $Res Function(_LogInGoogle) then) =
+  __$LogInGoogleCopyWithImpl<$Res>;
 }
 
-class __$LogInGoogleCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res> implements _$LogInGoogleCopyWith<$Res> {
-  __$LogInGoogleCopyWithImpl(_LogInGoogle _value, $Res Function(_LogInGoogle) _then) : super(_value, (v) => _then(v as _LogInGoogle));
+class __$LogInGoogleCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res>
+  implements _$LogInGoogleCopyWith<$Res> {
+  __$LogInGoogleCopyWithImpl(_LogInGoogle _value, $Res Function(_LogInGoogle) _then)
+    : super(_value, (v) => _then(v as _LogInGoogle));
 
   @override
   _LogInGoogle get _value => super._value as _LogInGoogle;
@@ -506,8 +521,11 @@ abstract class _LogInGoogle implements LogInFormEvent {
 class _$LogInFormStateTearOff {
   const _$LogInFormStateTearOff();
 
-  _LogInFormState call(
-      {@required Name username, @required Password password, @required bool showErrorMessages, @required bool isSubmitting, @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
+  _LogInFormState call({@required Name username,
+    @required Password password,
+    @required bool showErrorMessages,
+    @required bool isSubmitting,
+    @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _LogInFormState(
       username: username,
       password: password,
@@ -523,29 +541,30 @@ const $LogInFormState = _$LogInFormStateTearOff();
 
 mixin _$LogInFormState {
   Name get username;
-
   Password get password;
-
   bool get showErrorMessages;
-
   bool get isSubmitting;
-
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
 
   $LogInFormStateCopyWith<LogInFormState> get copyWith;
 }
 
 abstract class $LogInFormStateCopyWith<$Res> {
-  factory $LogInFormStateCopyWith(LogInFormState value, $Res Function(LogInFormState) then) = _$LogInFormStateCopyWithImpl<$Res>;
-
-  $Res call({Name username, Password password, bool showErrorMessages, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
+  factory $LogInFormStateCopyWith(LogInFormState value, $Res Function(LogInFormState) then) =
+  _$LogInFormStateCopyWithImpl<$Res>;
+  
+  $Res call({Name username,
+    Password password,
+    bool showErrorMessages,
+    bool isSubmitting,
+    Option<Either<Failure, Unit>> failureOrSuccessOption});
 }
 
-class _$LogInFormStateCopyWithImpl<$Res> implements $LogInFormStateCopyWith<$Res> {
+class _$LogInFormStateCopyWithImpl<$Res>
+  implements $LogInFormStateCopyWith<$Res> {
   _$LogInFormStateCopyWithImpl(this._value, this._then);
 
   final LogInFormState _value;
-
   // ignore: unused_field
   final $Res Function(LogInFormState) _then;
 
@@ -560,22 +579,34 @@ class _$LogInFormStateCopyWithImpl<$Res> implements $LogInFormStateCopyWith<$Res
     return _then(_value.copyWith(
       username: username == freezed ? _value.username : username as Name,
       password: password == freezed ? _value.password : password as Password,
-      showErrorMessages: showErrorMessages == freezed ? _value.showErrorMessages : showErrorMessages as bool,
-      isSubmitting: isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
-      failureOrSuccessOption: failureOrSuccessOption == freezed ? _value.failureOrSuccessOption : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+      showErrorMessages: showErrorMessages == freezed
+        ? _value.showErrorMessages
+        : showErrorMessages as bool,
+      isSubmitting:
+      isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      failureOrSuccessOption: failureOrSuccessOption == freezed
+        ? _value.failureOrSuccessOption
+        : failureOrSuccessOption as Option<Either<Failure, Unit>>,
     ));
   }
 }
 
-abstract class _$LogInFormStateCopyWith<$Res> implements $LogInFormStateCopyWith<$Res> {
-  factory _$LogInFormStateCopyWith(_LogInFormState value, $Res Function(_LogInFormState) then) = __$LogInFormStateCopyWithImpl<$Res>;
-
+abstract class _$LogInFormStateCopyWith<$Res>
+  implements $LogInFormStateCopyWith<$Res> {
+  factory _$LogInFormStateCopyWith(_LogInFormState value, $Res Function(_LogInFormState) then) =
+  __$LogInFormStateCopyWithImpl<$Res>;
   @override
-  $Res call({Name username, Password password, bool showErrorMessages, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
+  $Res call({Name username,
+    Password password,
+    bool showErrorMessages,
+    bool isSubmitting,
+    Option<Either<Failure, Unit>> failureOrSuccessOption});
 }
 
-class __$LogInFormStateCopyWithImpl<$Res> extends _$LogInFormStateCopyWithImpl<$Res> implements _$LogInFormStateCopyWith<$Res> {
-  __$LogInFormStateCopyWithImpl(_LogInFormState _value, $Res Function(_LogInFormState) _then) : super(_value, (v) => _then(v as _LogInFormState));
+class __$LogInFormStateCopyWithImpl<$Res> extends _$LogInFormStateCopyWithImpl<$Res>
+  implements _$LogInFormStateCopyWith<$Res> {
+  __$LogInFormStateCopyWithImpl(_LogInFormState _value, $Res Function(_LogInFormState) _then)
+    : super(_value, (v) => _then(v as _LogInFormState));
 
   @override
   _LogInFormState get _value => super._value as _LogInFormState;
@@ -591,15 +622,24 @@ class __$LogInFormStateCopyWithImpl<$Res> extends _$LogInFormStateCopyWithImpl<$
     return _then(_LogInFormState(
       username: username == freezed ? _value.username : username as Name,
       password: password == freezed ? _value.password : password as Password,
-      showErrorMessages: showErrorMessages == freezed ? _value.showErrorMessages : showErrorMessages as bool,
-      isSubmitting: isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
-      failureOrSuccessOption: failureOrSuccessOption == freezed ? _value.failureOrSuccessOption : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+      showErrorMessages: showErrorMessages == freezed
+        ? _value.showErrorMessages
+        : showErrorMessages as bool,
+      isSubmitting:
+      isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      failureOrSuccessOption: failureOrSuccessOption == freezed
+        ? _value.failureOrSuccessOption
+        : failureOrSuccessOption as Option<Either<Failure, Unit>>,
     ));
   }
 }
 
 class _$_LogInFormState implements _LogInFormState {
-  const _$_LogInFormState({@required this.username, @required this.password, @required this.showErrorMessages, @required this.isSubmitting, @required this.failureOrSuccessOption})
+  const _$_LogInFormState({@required this.username,
+    @required this.password,
+    @required this.showErrorMessages,
+    @required this.isSubmitting,
+    @required this.failureOrSuccessOption})
       : assert(username != null),
         assert(password != null),
         assert(showErrorMessages != null),
@@ -626,11 +666,21 @@ class _$_LogInFormState implements _LogInFormState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LogInFormState &&
-            (identical(other.username, username) || const DeepCollectionEquality().equals(other.username, username)) &&
-            (identical(other.password, password) || const DeepCollectionEquality().equals(other.password, password)) &&
-            (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
-            (identical(other.failureOrSuccessOption, failureOrSuccessOption) || const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+          (identical(other.username, username) ||
+            const DeepCollectionEquality()
+              .equals(other.username, username)) &&
+          (identical(other.password, password) ||
+            const DeepCollectionEquality()
+              .equals(other.password, password)) &&
+          (identical(other.showErrorMessages, showErrorMessages) ||
+            const DeepCollectionEquality()
+              .equals(other.showErrorMessages, showErrorMessages)) &&
+          (identical(other.isSubmitting, isSubmitting) ||
+            const DeepCollectionEquality()
+              .equals(other.isSubmitting, isSubmitting)) &&
+          (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
+            const DeepCollectionEquality().equals(
+              other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -643,32 +693,28 @@ class _$_LogInFormState implements _LogInFormState {
       const DeepCollectionEquality().hash(failureOrSuccessOption);
 
   @override
-  _$LogInFormStateCopyWith<_LogInFormState> get copyWith => __$LogInFormStateCopyWithImpl<_LogInFormState>(this, _$identity);
+  _$LogInFormStateCopyWith<_LogInFormState> get copyWith =>
+    __$LogInFormStateCopyWithImpl<_LogInFormState>(this, _$identity);
 }
 
 abstract class _LogInFormState implements LogInFormState {
-  const factory _LogInFormState(
-      {@required Name username,
-      @required Password password,
-      @required bool showErrorMessages,
-      @required bool isSubmitting,
-      @required Option<Either<Failure, Unit>> failureOrSuccessOption}) = _$_LogInFormState;
+  const factory _LogInFormState({@required Name username,
+    @required Password password,
+    @required bool showErrorMessages,
+    @required bool isSubmitting,
+    @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
+  _$_LogInFormState;
 
   @override
   Name get username;
-
   @override
   Password get password;
-
   @override
   bool get showErrorMessages;
-
   @override
   bool get isSubmitting;
-
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
-
   @override
   _$LogInFormStateCopyWith<_LogInFormState> get copyWith;
 }

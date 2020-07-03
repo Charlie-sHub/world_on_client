@@ -25,18 +25,15 @@ mixin _$AchievementManagementWatcherEvent {
   Result when<Result extends Object>({
     @required Result loadAllAchievements(),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result loadAllAchievements(),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result loadAllAchievements(_LoadAllAchievements value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result loadAllAchievements(_LoadAllAchievements value),
@@ -53,17 +50,20 @@ class _$AchievementManagementWatcherEventCopyWithImpl<$Res> implements $Achievem
   _$AchievementManagementWatcherEventCopyWithImpl(this._value, this._then);
 
   final AchievementManagementWatcherEvent _value;
-
   // ignore: unused_field
   final $Res Function(AchievementManagementWatcherEvent) _then;
 }
 
 abstract class _$LoadAllAchievementsCopyWith<$Res> {
-  factory _$LoadAllAchievementsCopyWith(_LoadAllAchievements value, $Res Function(_LoadAllAchievements) then) = __$LoadAllAchievementsCopyWithImpl<$Res>;
+  factory _$LoadAllAchievementsCopyWith(_LoadAllAchievements value,
+    $Res Function(_LoadAllAchievements) then) =
+  __$LoadAllAchievementsCopyWithImpl<$Res>;
 }
 
-class __$LoadAllAchievementsCopyWithImpl<$Res> extends _$AchievementManagementWatcherEventCopyWithImpl<$Res> implements _$LoadAllAchievementsCopyWith<$Res> {
-  __$LoadAllAchievementsCopyWithImpl(_LoadAllAchievements _value, $Res Function(_LoadAllAchievements) _then) : super(_value, (v) => _then(v as _LoadAllAchievements));
+class __$LoadAllAchievementsCopyWithImpl<$Res> extends _$AchievementManagementWatcherEventCopyWithImpl<$Res>
+  implements _$LoadAllAchievementsCopyWith<$Res> {
+  __$LoadAllAchievementsCopyWithImpl(_LoadAllAchievements _value, $Res Function(_LoadAllAchievements) _then)
+    : super(_value, (v) => _then(v as _LoadAllAchievements));
 
   @override
   _LoadAllAchievements get _value => super._value as _LoadAllAchievements;
@@ -130,7 +130,8 @@ class _$_LoadAllAchievements implements _LoadAllAchievements {
   }
 }
 
-abstract class _LoadAllAchievements implements AchievementManagementWatcherEvent {
+abstract class _LoadAllAchievements
+  implements AchievementManagementWatcherEvent {
   const factory _LoadAllAchievements() = _$_LoadAllAchievements;
 }
 
@@ -159,7 +160,8 @@ class _$AchievementManagementWatcherStateTearOff {
 }
 
 // ignore: unused_element
-const $AchievementManagementWatcherState = _$AchievementManagementWatcherStateTearOff();
+const $AchievementManagementWatcherState =
+_$AchievementManagementWatcherStateTearOff();
 
 mixin _$AchievementManagementWatcherState {
   @optionalTypeArgs
@@ -169,7 +171,6 @@ mixin _$AchievementManagementWatcherState {
     @required Result loadSuccess(List<Achievement> achievements),
     @required Result loadFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
@@ -178,7 +179,6 @@ mixin _$AchievementManagementWatcherState {
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
@@ -186,7 +186,6 @@ mixin _$AchievementManagementWatcherState {
     @required Result loadSuccess(_loadSuccess value),
     @required Result loadFailure(_loadFailure value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
@@ -198,25 +197,29 @@ mixin _$AchievementManagementWatcherState {
 }
 
 abstract class $AchievementManagementWatcherStateCopyWith<$Res> {
-  factory $AchievementManagementWatcherStateCopyWith(AchievementManagementWatcherState value, $Res Function(AchievementManagementWatcherState) then) =
+  factory $AchievementManagementWatcherStateCopyWith(AchievementManagementWatcherState value,
+    $Res Function(AchievementManagementWatcherState) then) =
       _$AchievementManagementWatcherStateCopyWithImpl<$Res>;
 }
 
-class _$AchievementManagementWatcherStateCopyWithImpl<$Res> implements $AchievementManagementWatcherStateCopyWith<$Res> {
+class _$AchievementManagementWatcherStateCopyWithImpl<$Res>
+  implements $AchievementManagementWatcherStateCopyWith<$Res> {
   _$AchievementManagementWatcherStateCopyWithImpl(this._value, this._then);
 
   final AchievementManagementWatcherState _value;
-
   // ignore: unused_field
   final $Res Function(AchievementManagementWatcherState) _then;
 }
 
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+  __$InitialCopyWithImpl<$Res>;
 }
 
-class __$InitialCopyWithImpl<$Res> extends _$AchievementManagementWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$AchievementManagementWatcherStateCopyWithImpl<$Res>
+  implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+    : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -306,11 +309,14 @@ abstract class _Initial implements AchievementManagementWatcherState {
 }
 
 abstract class _$LoadingCopyWith<$Res> {
-  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) = __$LoadingCopyWithImpl<$Res>;
+  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
+  __$LoadingCopyWithImpl<$Res>;
 }
 
-class __$LoadingCopyWithImpl<$Res> extends _$AchievementManagementWatcherStateCopyWithImpl<$Res> implements _$LoadingCopyWith<$Res> {
-  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then) : super(_value, (v) => _then(v as _Loading));
+class __$LoadingCopyWithImpl<$Res> extends _$AchievementManagementWatcherStateCopyWithImpl<$Res>
+  implements _$LoadingCopyWith<$Res> {
+  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
+    : super(_value, (v) => _then(v as _Loading));
 
   @override
   _Loading get _value => super._value as _Loading;
@@ -400,13 +406,15 @@ abstract class _Loading implements AchievementManagementWatcherState {
 }
 
 abstract class _$loadSuccessCopyWith<$Res> {
-  factory _$loadSuccessCopyWith(_loadSuccess value, $Res Function(_loadSuccess) then) = __$loadSuccessCopyWithImpl<$Res>;
-
+  factory _$loadSuccessCopyWith(_loadSuccess value, $Res Function(_loadSuccess) then) =
+  __$loadSuccessCopyWithImpl<$Res>;
   $Res call({List<Achievement> achievements});
 }
 
-class __$loadSuccessCopyWithImpl<$Res> extends _$AchievementManagementWatcherStateCopyWithImpl<$Res> implements _$loadSuccessCopyWith<$Res> {
-  __$loadSuccessCopyWithImpl(_loadSuccess _value, $Res Function(_loadSuccess) _then) : super(_value, (v) => _then(v as _loadSuccess));
+class __$loadSuccessCopyWithImpl<$Res> extends _$AchievementManagementWatcherStateCopyWithImpl<$Res>
+  implements _$loadSuccessCopyWith<$Res> {
+  __$loadSuccessCopyWithImpl(_loadSuccess _value, $Res Function(_loadSuccess) _then)
+    : super(_value, (v) => _then(v as _loadSuccess));
 
   @override
   _loadSuccess get _value => super._value as _loadSuccess;
@@ -416,7 +424,9 @@ class __$loadSuccessCopyWithImpl<$Res> extends _$AchievementManagementWatcherSta
     Object achievements = freezed,
   }) {
     return _then(_loadSuccess(
-      achievements == freezed ? _value.achievements : achievements as List<Achievement>,
+      achievements == freezed
+        ? _value.achievements
+        : achievements as List<Achievement>,
     ));
   }
 }
@@ -434,14 +444,20 @@ class _$_loadSuccess implements _loadSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _loadSuccess && (identical(other.achievements, achievements) || const DeepCollectionEquality().equals(other.achievements, achievements)));
+    return identical(this, other) ||
+      (other is _loadSuccess &&
+        (identical(other.achievements, achievements) ||
+          const DeepCollectionEquality()
+            .equals(other.achievements, achievements)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(achievements);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(achievements);
 
   @override
-  _$loadSuccessCopyWith<_loadSuccess> get copyWith => __$loadSuccessCopyWithImpl<_loadSuccess>(this, _$identity);
+  _$loadSuccessCopyWith<_loadSuccess> get copyWith =>
+    __$loadSuccessCopyWithImpl<_loadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -510,20 +526,21 @@ abstract class _loadSuccess implements AchievementManagementWatcherState {
   const factory _loadSuccess(List<Achievement> achievements) = _$_loadSuccess;
 
   List<Achievement> get achievements;
-
   _$loadSuccessCopyWith<_loadSuccess> get copyWith;
 }
 
 abstract class _$loadFailureCopyWith<$Res> {
-  factory _$loadFailureCopyWith(_loadFailure value, $Res Function(_loadFailure) then) = __$loadFailureCopyWithImpl<$Res>;
-
+  factory _$loadFailureCopyWith(_loadFailure value, $Res Function(_loadFailure) then) =
+  __$loadFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
-class __$loadFailureCopyWithImpl<$Res> extends _$AchievementManagementWatcherStateCopyWithImpl<$Res> implements _$loadFailureCopyWith<$Res> {
-  __$loadFailureCopyWithImpl(_loadFailure _value, $Res Function(_loadFailure) _then) : super(_value, (v) => _then(v as _loadFailure));
+class __$loadFailureCopyWithImpl<$Res> extends _$AchievementManagementWatcherStateCopyWithImpl<$Res>
+  implements _$loadFailureCopyWith<$Res> {
+  __$loadFailureCopyWithImpl(_loadFailure _value, $Res Function(_loadFailure) _then)
+    : super(_value, (v) => _then(v as _loadFailure));
 
   @override
   _loadFailure get _value => super._value as _loadFailure;
@@ -561,14 +578,19 @@ class _$_loadFailure implements _loadFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _loadFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) ||
+      (other is _loadFailure &&
+        (identical(other.failure, failure) ||
+          const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
-  _$loadFailureCopyWith<_loadFailure> get copyWith => __$loadFailureCopyWithImpl<_loadFailure>(this, _$identity);
+  _$loadFailureCopyWith<_loadFailure> get copyWith =>
+    __$loadFailureCopyWithImpl<_loadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -637,6 +659,5 @@ abstract class _loadFailure implements AchievementManagementWatcherState {
   const factory _loadFailure(Failure<dynamic> failure) = _$_loadFailure;
 
   Failure<dynamic> get failure;
-
   _$loadFailureCopyWith<_loadFailure> get copyWith;
 }

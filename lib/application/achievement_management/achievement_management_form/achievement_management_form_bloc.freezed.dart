@@ -12,8 +12,8 @@ T _$identity<T>(T value) => value;
 class _$AchievementManagementFormEventTearOff {
   const _$AchievementManagementFormEventTearOff();
 
-  _Initialized initialized(Option<Achievement> achievementOption) {
-    return _Initialized(
+  _Initialize initialize(Option<Achievement> achievementOption) {
+    return _Initialize(
       achievementOption,
     );
   }
@@ -54,7 +54,7 @@ const $AchievementManagementFormEvent =
 mixin _$AchievementManagementFormEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(Option<Achievement> achievementOption),
+    @required Result initialize(Option<Achievement> achievementOption),
     @required Result nameChange(String name),
     @required Result descriptionChange(String description),
     @required Result experiencePointsChange(int experiencePoints),
@@ -63,7 +63,7 @@ mixin _$AchievementManagementFormEvent {
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Achievement> achievementOption),
+    Result initialize(Option<Achievement> achievementOption),
     Result nameChange(String name),
     Result descriptionChange(String description),
     Result experiencePointsChange(int experiencePoints),
@@ -73,7 +73,7 @@ mixin _$AchievementManagementFormEvent {
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
+    @required Result initialize(_Initialize value),
     @required Result nameChange(_NameChange value),
     @required Result descriptionChange(_DescriptionChange value),
     @required Result experiencePointsChange(_ExperiencePointsChange value),
@@ -82,7 +82,7 @@ mixin _$AchievementManagementFormEvent {
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
+    Result initialize(_Initialize value),
     Result nameChange(_NameChange value),
     Result descriptionChange(_DescriptionChange value),
     Result experiencePointsChange(_ExperiencePointsChange value),
@@ -108,28 +108,24 @@ class _$AchievementManagementFormEventCopyWithImpl<$Res>
   final $Res Function(AchievementManagementFormEvent) _then;
 }
 
-abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(
-          _Initialized value, $Res Function(_Initialized) then) =
-      __$InitializedCopyWithImpl<$Res>;
+abstract class _$InitializeCopyWith<$Res> {
+  factory _$InitializeCopyWith(_Initialize value, $Res Function(_Initialize) then) = __$InitializeCopyWithImpl<$Res>;
   $Res call({Option<Achievement> achievementOption});
 }
 
-class __$InitializedCopyWithImpl<$Res>
-    extends _$AchievementManagementFormEventCopyWithImpl<$Res>
-    implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(
-      _Initialized _value, $Res Function(_Initialized) _then)
-      : super(_value, (v) => _then(v as _Initialized));
+class __$InitializeCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res>
+  implements _$InitializeCopyWith<$Res> {
+  __$InitializeCopyWithImpl(_Initialize _value, $Res Function(_Initialize) _then)
+    : super(_value, (v) => _then(v as _Initialize));
 
   @override
-  _Initialized get _value => super._value as _Initialized;
+  _Initialize get _value => super._value as _Initialize;
 
   @override
   $Res call({
     Object achievementOption = freezed,
   }) {
-    return _then(_Initialized(
+    return _then(_Initialize(
       achievementOption == freezed
           ? _value.achievementOption
           : achievementOption as Option<Achievement>,
@@ -137,8 +133,8 @@ class __$InitializedCopyWithImpl<$Res>
   }
 }
 
-class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.achievementOption)
+class _$_Initialize implements _Initialize {
+  const _$_Initialize(this.achievementOption)
       : assert(achievementOption != null);
 
   @override
@@ -146,13 +142,13 @@ class _$_Initialized implements _Initialized {
 
   @override
   String toString() {
-    return 'AchievementManagementFormEvent.initialized(achievementOption: $achievementOption)';
+    return 'AchievementManagementFormEvent.initialize(achievementOption: $achievementOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized &&
+      (other is _Initialize &&
             (identical(other.achievementOption, achievementOption) ||
                 const DeepCollectionEquality()
                     .equals(other.achievementOption, achievementOption)));
@@ -164,32 +160,32 @@ class _$_Initialized implements _Initialized {
       const DeepCollectionEquality().hash(achievementOption);
 
   @override
-  _$InitializedCopyWith<_Initialized> get copyWith =>
-      __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+  _$InitializeCopyWith<_Initialize> get copyWith =>
+    __$InitializeCopyWithImpl<_Initialize>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(Option<Achievement> achievementOption),
+    @required Result initialize(Option<Achievement> achievementOption),
     @required Result nameChange(String name),
     @required Result descriptionChange(String description),
     @required Result experiencePointsChange(int experiencePoints),
     @required Result tagsChange(KtSet<Tag> tags),
     @required Result submit(),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(experiencePointsChange != null);
     assert(tagsChange != null);
     assert(submit != null);
-    return initialized(achievementOption);
+    return initialize(achievementOption);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Achievement> achievementOption),
+    Result initialize(Option<Achievement> achievementOption),
     Result nameChange(String name),
     Result descriptionChange(String description),
     Result experiencePointsChange(int experiencePoints),
@@ -198,8 +194,8 @@ class _$_Initialized implements _Initialized {
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (initialized != null) {
-      return initialized(achievementOption);
+    if (initialize != null) {
+      return initialize(achievementOption);
     }
     return orElse();
   }
@@ -207,26 +203,26 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
+    @required Result initialize(_Initialize value),
     @required Result nameChange(_NameChange value),
     @required Result descriptionChange(_DescriptionChange value),
     @required Result experiencePointsChange(_ExperiencePointsChange value),
     @required Result tagsChange(_TagsChange value),
     @required Result submit(_Submit value),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(experiencePointsChange != null);
     assert(tagsChange != null);
     assert(submit != null);
-    return initialized(this);
+    return initialize(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
+    Result initialize(_Initialize value),
     Result nameChange(_NameChange value),
     Result descriptionChange(_DescriptionChange value),
     Result experiencePointsChange(_ExperiencePointsChange value),
@@ -235,19 +231,20 @@ class _$_Initialized implements _Initialized {
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (initialized != null) {
-      return initialized(this);
+    if (initialize != null) {
+      return initialize(this);
     }
     return orElse();
   }
 }
 
-abstract class _Initialized implements AchievementManagementFormEvent {
-  const factory _Initialized(Option<Achievement> achievementOption) =
-      _$_Initialized;
+abstract class _Initialize implements AchievementManagementFormEvent {
+  const factory _Initialize(Option<Achievement> achievementOption) =
+  _$_Initialize;
 
   Option<Achievement> get achievementOption;
-  _$InitializedCopyWith<_Initialized> get copyWith;
+  
+  _$InitializeCopyWith<_Initialize> get copyWith;
 }
 
 abstract class _$NameChangeCopyWith<$Res> {
@@ -307,14 +304,14 @@ class _$_NameChange implements _NameChange {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(Option<Achievement> achievementOption),
+    @required Result initialize(Option<Achievement> achievementOption),
     @required Result nameChange(String name),
     @required Result descriptionChange(String description),
     @required Result experiencePointsChange(int experiencePoints),
     @required Result tagsChange(KtSet<Tag> tags),
     @required Result submit(),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(experiencePointsChange != null);
@@ -326,7 +323,7 @@ class _$_NameChange implements _NameChange {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Achievement> achievementOption),
+    Result initialize(Option<Achievement> achievementOption),
     Result nameChange(String name),
     Result descriptionChange(String description),
     Result experiencePointsChange(int experiencePoints),
@@ -344,14 +341,14 @@ class _$_NameChange implements _NameChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
+    @required Result initialize(_Initialize value),
     @required Result nameChange(_NameChange value),
     @required Result descriptionChange(_DescriptionChange value),
     @required Result experiencePointsChange(_ExperiencePointsChange value),
     @required Result tagsChange(_TagsChange value),
     @required Result submit(_Submit value),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(experiencePointsChange != null);
@@ -363,7 +360,7 @@ class _$_NameChange implements _NameChange {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
+    Result initialize(_Initialize value),
     Result nameChange(_NameChange value),
     Result descriptionChange(_DescriptionChange value),
     Result experiencePointsChange(_ExperiencePointsChange value),
@@ -444,14 +441,14 @@ class _$_DescriptionChange implements _DescriptionChange {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(Option<Achievement> achievementOption),
+    @required Result initialize(Option<Achievement> achievementOption),
     @required Result nameChange(String name),
     @required Result descriptionChange(String description),
     @required Result experiencePointsChange(int experiencePoints),
     @required Result tagsChange(KtSet<Tag> tags),
     @required Result submit(),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(experiencePointsChange != null);
@@ -463,7 +460,7 @@ class _$_DescriptionChange implements _DescriptionChange {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Achievement> achievementOption),
+    Result initialize(Option<Achievement> achievementOption),
     Result nameChange(String name),
     Result descriptionChange(String description),
     Result experiencePointsChange(int experiencePoints),
@@ -481,14 +478,14 @@ class _$_DescriptionChange implements _DescriptionChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
+    @required Result initialize(_Initialize value),
     @required Result nameChange(_NameChange value),
     @required Result descriptionChange(_DescriptionChange value),
     @required Result experiencePointsChange(_ExperiencePointsChange value),
     @required Result tagsChange(_TagsChange value),
     @required Result submit(_Submit value),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(experiencePointsChange != null);
@@ -500,7 +497,7 @@ class _$_DescriptionChange implements _DescriptionChange {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
+    Result initialize(_Initialize value),
     Result nameChange(_NameChange value),
     Result descriptionChange(_DescriptionChange value),
     Result experiencePointsChange(_ExperiencePointsChange value),
@@ -586,14 +583,14 @@ class _$_ExperiencePointsChange implements _ExperiencePointsChange {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(Option<Achievement> achievementOption),
+    @required Result initialize(Option<Achievement> achievementOption),
     @required Result nameChange(String name),
     @required Result descriptionChange(String description),
     @required Result experiencePointsChange(int experiencePoints),
     @required Result tagsChange(KtSet<Tag> tags),
     @required Result submit(),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(experiencePointsChange != null);
@@ -605,7 +602,7 @@ class _$_ExperiencePointsChange implements _ExperiencePointsChange {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Achievement> achievementOption),
+    Result initialize(Option<Achievement> achievementOption),
     Result nameChange(String name),
     Result descriptionChange(String description),
     Result experiencePointsChange(int experiencePoints),
@@ -623,14 +620,14 @@ class _$_ExperiencePointsChange implements _ExperiencePointsChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
+    @required Result initialize(_Initialize value),
     @required Result nameChange(_NameChange value),
     @required Result descriptionChange(_DescriptionChange value),
     @required Result experiencePointsChange(_ExperiencePointsChange value),
     @required Result tagsChange(_TagsChange value),
     @required Result submit(_Submit value),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(experiencePointsChange != null);
@@ -642,7 +639,7 @@ class _$_ExperiencePointsChange implements _ExperiencePointsChange {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
+    Result initialize(_Initialize value),
     Result nameChange(_NameChange value),
     Result descriptionChange(_DescriptionChange value),
     Result experiencePointsChange(_ExperiencePointsChange value),
@@ -724,14 +721,14 @@ class _$_TagsChange implements _TagsChange {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(Option<Achievement> achievementOption),
+    @required Result initialize(Option<Achievement> achievementOption),
     @required Result nameChange(String name),
     @required Result descriptionChange(String description),
     @required Result experiencePointsChange(int experiencePoints),
     @required Result tagsChange(KtSet<Tag> tags),
     @required Result submit(),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(experiencePointsChange != null);
@@ -743,7 +740,7 @@ class _$_TagsChange implements _TagsChange {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Achievement> achievementOption),
+    Result initialize(Option<Achievement> achievementOption),
     Result nameChange(String name),
     Result descriptionChange(String description),
     Result experiencePointsChange(int experiencePoints),
@@ -761,14 +758,14 @@ class _$_TagsChange implements _TagsChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
+    @required Result initialize(_Initialize value),
     @required Result nameChange(_NameChange value),
     @required Result descriptionChange(_DescriptionChange value),
     @required Result experiencePointsChange(_ExperiencePointsChange value),
     @required Result tagsChange(_TagsChange value),
     @required Result submit(_Submit value),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(experiencePointsChange != null);
@@ -780,7 +777,7 @@ class _$_TagsChange implements _TagsChange {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
+    Result initialize(_Initialize value),
     Result nameChange(_NameChange value),
     Result descriptionChange(_DescriptionChange value),
     Result experiencePointsChange(_ExperiencePointsChange value),
@@ -837,14 +834,14 @@ class _$_Submit implements _Submit {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(Option<Achievement> achievementOption),
+    @required Result initialize(Option<Achievement> achievementOption),
     @required Result nameChange(String name),
     @required Result descriptionChange(String description),
     @required Result experiencePointsChange(int experiencePoints),
     @required Result tagsChange(KtSet<Tag> tags),
     @required Result submit(),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(experiencePointsChange != null);
@@ -856,7 +853,7 @@ class _$_Submit implements _Submit {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Achievement> achievementOption),
+    Result initialize(Option<Achievement> achievementOption),
     Result nameChange(String name),
     Result descriptionChange(String description),
     Result experiencePointsChange(int experiencePoints),
@@ -874,14 +871,14 @@ class _$_Submit implements _Submit {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
+    @required Result initialize(_Initialize value),
     @required Result nameChange(_NameChange value),
     @required Result descriptionChange(_DescriptionChange value),
     @required Result experiencePointsChange(_ExperiencePointsChange value),
     @required Result tagsChange(_TagsChange value),
     @required Result submit(_Submit value),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(experiencePointsChange != null);
@@ -893,7 +890,7 @@ class _$_Submit implements _Submit {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
+    Result initialize(_Initialize value),
     Result nameChange(_NameChange value),
     Result descriptionChange(_DescriptionChange value),
     Result experiencePointsChange(_ExperiencePointsChange value),
@@ -937,7 +934,6 @@ const $AchievementManagementFormState =
 
 mixin _$AchievementManagementFormState {
   Achievement get achievement;
-
   bool get showErrorMessages;
   bool get isEditing;
   bool get isSubmitting;
@@ -952,8 +948,10 @@ abstract class $AchievementManagementFormStateCopyWith<$Res> {
           AchievementManagementFormState value,
           $Res Function(AchievementManagementFormState) then) =
       _$AchievementManagementFormStateCopyWithImpl<$Res>;
-  $Res call(
-      {Achievement achievement, bool showErrorMessages, bool isEditing,
+
+  $Res call({Achievement achievement,
+    bool showErrorMessages,
+    bool isEditing,
       bool isSubmitting,
       Option<Either<Failure, Unit>> failureOrSuccessOption});
 

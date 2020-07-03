@@ -30,20 +30,17 @@ mixin _$AuthenticationEvent {
     @required Result authenticationCheckRequest(),
     @required Result logOut(),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result authenticationCheckRequest(),
     Result logOut(),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result authenticationCheckRequest(_AuthenticationCheckRequest value),
     @required Result logOut(_LogOut value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result authenticationCheckRequest(_AuthenticationCheckRequest value),
@@ -60,7 +57,6 @@ class _$AuthenticationEventCopyWithImpl<$Res> implements $AuthenticationEventCop
   _$AuthenticationEventCopyWithImpl(this._value, this._then);
 
   final AuthenticationEvent _value;
-
   // ignore: unused_field
   final $Res Function(AuthenticationEvent) _then;
 }
@@ -73,7 +69,8 @@ class __$AuthenticationCheckRequestCopyWithImpl<$Res> extends _$AuthenticationEv
   __$AuthenticationCheckRequestCopyWithImpl(_AuthenticationCheckRequest _value, $Res Function(_AuthenticationCheckRequest) _then) : super(_value, (v) => _then(v as _AuthenticationCheckRequest));
 
   @override
-  _AuthenticationCheckRequest get _value => super._value as _AuthenticationCheckRequest;
+  _AuthenticationCheckRequest get _value =>
+    super._value as _AuthenticationCheckRequest;
 }
 
 class _$_AuthenticationCheckRequest implements _AuthenticationCheckRequest {
@@ -148,11 +145,14 @@ abstract class _AuthenticationCheckRequest implements AuthenticationEvent {
 }
 
 abstract class _$LogOutCopyWith<$Res> {
-  factory _$LogOutCopyWith(_LogOut value, $Res Function(_LogOut) then) = __$LogOutCopyWithImpl<$Res>;
+  factory _$LogOutCopyWith(_LogOut value, $Res Function(_LogOut) then) =
+  __$LogOutCopyWithImpl<$Res>;
 }
 
-class __$LogOutCopyWithImpl<$Res> extends _$AuthenticationEventCopyWithImpl<$Res> implements _$LogOutCopyWith<$Res> {
-  __$LogOutCopyWithImpl(_LogOut _value, $Res Function(_LogOut) _then) : super(_value, (v) => _then(v as _LogOut));
+class __$LogOutCopyWithImpl<$Res> extends _$AuthenticationEventCopyWithImpl<$Res>
+  implements _$LogOutCopyWith<$Res> {
+  __$LogOutCopyWithImpl(_LogOut _value, $Res Function(_LogOut) _then)
+    : super(_value, (v) => _then(v as _LogOut));
 
   @override
   _LogOut get _value => super._value as _LogOut;
@@ -255,7 +255,6 @@ mixin _$AuthenticationState {
     @required Result authenticated(),
     @required Result unAuthenticated(),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
@@ -263,14 +262,12 @@ mixin _$AuthenticationState {
     Result unAuthenticated(),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
     @required Result authenticated(_Authenticated value),
     @required Result unAuthenticated(_UnAuthenticated value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
@@ -281,24 +278,28 @@ mixin _$AuthenticationState {
 }
 
 abstract class $AuthenticationStateCopyWith<$Res> {
-  factory $AuthenticationStateCopyWith(AuthenticationState value, $Res Function(AuthenticationState) then) = _$AuthenticationStateCopyWithImpl<$Res>;
+  factory $AuthenticationStateCopyWith(AuthenticationState value, $Res Function(AuthenticationState) then) =
+  _$AuthenticationStateCopyWithImpl<$Res>;
 }
 
-class _$AuthenticationStateCopyWithImpl<$Res> implements $AuthenticationStateCopyWith<$Res> {
+class _$AuthenticationStateCopyWithImpl<$Res>
+  implements $AuthenticationStateCopyWith<$Res> {
   _$AuthenticationStateCopyWithImpl(this._value, this._then);
 
   final AuthenticationState _value;
-
   // ignore: unused_field
   final $Res Function(AuthenticationState) _then;
 }
 
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+  __$InitialCopyWithImpl<$Res>;
 }
 
-class __$InitialCopyWithImpl<$Res> extends _$AuthenticationStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$AuthenticationStateCopyWithImpl<$Res>
+  implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+    : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -382,11 +383,14 @@ abstract class _Initial implements AuthenticationState {
 }
 
 abstract class _$AuthenticatedCopyWith<$Res> {
-  factory _$AuthenticatedCopyWith(_Authenticated value, $Res Function(_Authenticated) then) = __$AuthenticatedCopyWithImpl<$Res>;
+  factory _$AuthenticatedCopyWith(_Authenticated value, $Res Function(_Authenticated) then) =
+  __$AuthenticatedCopyWithImpl<$Res>;
 }
 
-class __$AuthenticatedCopyWithImpl<$Res> extends _$AuthenticationStateCopyWithImpl<$Res> implements _$AuthenticatedCopyWith<$Res> {
-  __$AuthenticatedCopyWithImpl(_Authenticated _value, $Res Function(_Authenticated) _then) : super(_value, (v) => _then(v as _Authenticated));
+class __$AuthenticatedCopyWithImpl<$Res> extends _$AuthenticationStateCopyWithImpl<$Res>
+  implements _$AuthenticatedCopyWith<$Res> {
+  __$AuthenticatedCopyWithImpl(_Authenticated _value, $Res Function(_Authenticated) _then)
+    : super(_value, (v) => _then(v as _Authenticated));
 
   @override
   _Authenticated get _value => super._value as _Authenticated;
@@ -470,11 +474,14 @@ abstract class _Authenticated implements AuthenticationState {
 }
 
 abstract class _$UnAuthenticatedCopyWith<$Res> {
-  factory _$UnAuthenticatedCopyWith(_UnAuthenticated value, $Res Function(_UnAuthenticated) then) = __$UnAuthenticatedCopyWithImpl<$Res>;
+  factory _$UnAuthenticatedCopyWith(_UnAuthenticated value, $Res Function(_UnAuthenticated) then) =
+  __$UnAuthenticatedCopyWithImpl<$Res>;
 }
 
-class __$UnAuthenticatedCopyWithImpl<$Res> extends _$AuthenticationStateCopyWithImpl<$Res> implements _$UnAuthenticatedCopyWith<$Res> {
-  __$UnAuthenticatedCopyWithImpl(_UnAuthenticated _value, $Res Function(_UnAuthenticated) _then) : super(_value, (v) => _then(v as _UnAuthenticated));
+class __$UnAuthenticatedCopyWithImpl<$Res> extends _$AuthenticationStateCopyWithImpl<$Res>
+  implements _$UnAuthenticatedCopyWith<$Res> {
+  __$UnAuthenticatedCopyWithImpl(_UnAuthenticated _value, $Res Function(_UnAuthenticated) _then)
+    : super(_value, (v) => _then(v as _UnAuthenticated));
 
   @override
   _UnAuthenticated get _value => super._value as _UnAuthenticated;

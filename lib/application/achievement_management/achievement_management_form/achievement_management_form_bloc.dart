@@ -26,13 +26,12 @@ part 'achievement_management_form_state.dart';
 
 @injectable
 class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent, AchievementManagementFormState> {
-  @override
-  AchievementManagementFormState get initialState => AchievementManagementFormState.initial();
+  AchievementManagementFormBloc() : super(AchievementManagementFormState.initial());
 
   @override
   Stream<AchievementManagementFormState> mapEventToState(AchievementManagementFormEvent event) async* {
     yield* event.map(
-      initialized: onInitialized,
+      initialize: onInitialize,
       nameChange: onNameChange,
       descriptionChange: onDescriptionChange,
       experiencePointsChange: onExperiencePointsChange,
@@ -42,7 +41,7 @@ class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent,
   }
 
   Stream<AchievementManagementFormState> onSubmit(_Submit event) async* {
-    Either<Failure, Unit> failureOrUnit;
+    Either<Failure, Unit> _failureOrUnit;
     yield state.copyWith(
       isSubmitting: true,
       failureOrSuccessOption: none(),
@@ -50,14 +49,14 @@ class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent,
     if (state.achievement.isValid) {
       if (state.isEditing) {
         final _editAchievement = getIt<edit_achievement.EditAchievement>();
-        failureOrUnit = await _editAchievement(
+        _failureOrUnit = await _editAchievement(
           edit_achievement.Params(
             achievement: state.achievement,
           ),
         );
       } else {
         final _createAchievement = getIt<create_achievement.CreateAchievement>();
-        failureOrUnit = await _createAchievement(
+        _failureOrUnit = await _createAchievement(
           create_achievement.Params(
             achievement: state.achievement,
           ),
@@ -67,7 +66,7 @@ class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent,
     yield state.copyWith(
       isSubmitting: false,
       showErrorMessages: true,
-      failureOrSuccessOption: optionOf(failureOrUnit),
+      failureOrSuccessOption: optionOf(_failureOrUnit),
     );
   }
 
@@ -107,16 +106,19 @@ class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent,
     );
   }
 
-  Stream<AchievementManagementFormState> onInitialized(_Initialized event) async* {
+  Stream<AchievementManagementFormState> onInitialize(_Initialize event) async* {
     yield await event.achievementOption.fold(
       () async {
-        final _currentUserOption = await getIt<GetLoggedInUser>().call(getIt<NoParams>());
+        final _getLoggedInUser = getIt<GetLoggedInUser>();
+        final _currentUserOption = await _getLoggedInUser(getIt<NoParams>());
         final _currentUser = _currentUserOption.fold(
           () => User.empty(),
           id,
         );
         return state.copyWith(
-          achievement: Achievement.empty().copyWith(creator: _currentUser),
+          achievement: Achievement.empty().copyWith(
+            creator: _currentUser,
+          ),
         );
       },
       (achievement) => state.copyWith(

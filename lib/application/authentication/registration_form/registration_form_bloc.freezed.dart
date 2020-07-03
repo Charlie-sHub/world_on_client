@@ -79,7 +79,6 @@ mixin _$RegistrationFormEvent {
     @required Result interestsChange(Set<Tag> interests),
     @required Result submit(),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialize(),
@@ -93,7 +92,6 @@ mixin _$RegistrationFormEvent {
     Result submit(),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialize(_Initialize value),
@@ -106,7 +104,6 @@ mixin _$RegistrationFormEvent {
     @required Result interestsChange(_InterestsChange value),
     @required Result submit(_Submit value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialize(_Initialize value),
@@ -130,7 +127,6 @@ class _$RegistrationFormEventCopyWithImpl<$Res> implements $RegistrationFormEven
   _$RegistrationFormEventCopyWithImpl(this._value, this._then);
 
   final RegistrationFormEvent _value;
-
   // ignore: unused_field
   final $Res Function(RegistrationFormEvent) _then;
 }
@@ -260,13 +256,15 @@ abstract class _Initialize implements RegistrationFormEvent {
 }
 
 abstract class _$NameChangeCopyWith<$Res> {
-  factory _$NameChangeCopyWith(_NameChange value, $Res Function(_NameChange) then) = __$NameChangeCopyWithImpl<$Res>;
-
+  factory _$NameChangeCopyWith(_NameChange value, $Res Function(_NameChange) then) =
+  __$NameChangeCopyWithImpl<$Res>;
   $Res call({String name});
 }
 
-class __$NameChangeCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res> implements _$NameChangeCopyWith<$Res> {
-  __$NameChangeCopyWithImpl(_NameChange _value, $Res Function(_NameChange) _then) : super(_value, (v) => _then(v as _NameChange));
+class __$NameChangeCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+  implements _$NameChangeCopyWith<$Res> {
+  __$NameChangeCopyWithImpl(_NameChange _value, $Res Function(_NameChange) _then)
+    : super(_value, (v) => _then(v as _NameChange));
 
   @override
   _NameChange get _value => super._value as _NameChange;
@@ -294,14 +292,19 @@ class _$_NameChange implements _NameChange {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NameChange && (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)));
+    return identical(this, other) ||
+      (other is _NameChange &&
+        (identical(other.name, name) ||
+          const DeepCollectionEquality().equals(other.name, name)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
 
   @override
-  _$NameChangeCopyWith<_NameChange> get copyWith => __$NameChangeCopyWithImpl<_NameChange>(this, _$identity);
+  _$NameChangeCopyWith<_NameChange> get copyWith =>
+    __$NameChangeCopyWithImpl<_NameChange>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -400,18 +403,19 @@ abstract class _NameChange implements RegistrationFormEvent {
   const factory _NameChange(String name) = _$_NameChange;
 
   String get name;
-
   _$NameChangeCopyWith<_NameChange> get copyWith;
 }
 
 abstract class _$UsernameChangeCopyWith<$Res> {
-  factory _$UsernameChangeCopyWith(_UsernameChange value, $Res Function(_UsernameChange) then) = __$UsernameChangeCopyWithImpl<$Res>;
-
+  factory _$UsernameChangeCopyWith(_UsernameChange value, $Res Function(_UsernameChange) then) =
+  __$UsernameChangeCopyWithImpl<$Res>;
   $Res call({String username});
 }
 
-class __$UsernameChangeCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res> implements _$UsernameChangeCopyWith<$Res> {
-  __$UsernameChangeCopyWithImpl(_UsernameChange _value, $Res Function(_UsernameChange) _then) : super(_value, (v) => _then(v as _UsernameChange));
+class __$UsernameChangeCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+  implements _$UsernameChangeCopyWith<$Res> {
+  __$UsernameChangeCopyWithImpl(_UsernameChange _value, $Res Function(_UsernameChange) _then)
+    : super(_value, (v) => _then(v as _UsernameChange));
 
   @override
   _UsernameChange get _value => super._value as _UsernameChange;
@@ -439,14 +443,20 @@ class _$_UsernameChange implements _UsernameChange {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _UsernameChange && (identical(other.username, username) || const DeepCollectionEquality().equals(other.username, username)));
+    return identical(this, other) ||
+      (other is _UsernameChange &&
+        (identical(other.username, username) ||
+          const DeepCollectionEquality()
+            .equals(other.username, username)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
 
   @override
-  _$UsernameChangeCopyWith<_UsernameChange> get copyWith => __$UsernameChangeCopyWithImpl<_UsernameChange>(this, _$identity);
+  _$UsernameChangeCopyWith<_UsernameChange> get copyWith =>
+    __$UsernameChangeCopyWithImpl<_UsernameChange>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -545,18 +555,19 @@ abstract class _UsernameChange implements RegistrationFormEvent {
   const factory _UsernameChange(String username) = _$_UsernameChange;
 
   String get username;
-
   _$UsernameChangeCopyWith<_UsernameChange> get copyWith;
 }
 
 abstract class _$PasswordChangeCopyWith<$Res> {
-  factory _$PasswordChangeCopyWith(_PasswordChange value, $Res Function(_PasswordChange) then) = __$PasswordChangeCopyWithImpl<$Res>;
-
+  factory _$PasswordChangeCopyWith(_PasswordChange value, $Res Function(_PasswordChange) then) =
+  __$PasswordChangeCopyWithImpl<$Res>;
   $Res call({String password});
 }
 
-class __$PasswordChangeCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res> implements _$PasswordChangeCopyWith<$Res> {
-  __$PasswordChangeCopyWithImpl(_PasswordChange _value, $Res Function(_PasswordChange) _then) : super(_value, (v) => _then(v as _PasswordChange));
+class __$PasswordChangeCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+  implements _$PasswordChangeCopyWith<$Res> {
+  __$PasswordChangeCopyWithImpl(_PasswordChange _value, $Res Function(_PasswordChange) _then)
+    : super(_value, (v) => _then(v as _PasswordChange));
 
   @override
   _PasswordChange get _value => super._value as _PasswordChange;
@@ -584,14 +595,20 @@ class _$_PasswordChange implements _PasswordChange {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _PasswordChange && (identical(other.password, password) || const DeepCollectionEquality().equals(other.password, password)));
+    return identical(this, other) ||
+      (other is _PasswordChange &&
+        (identical(other.password, password) ||
+          const DeepCollectionEquality()
+            .equals(other.password, password)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(password);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(password);
 
   @override
-  _$PasswordChangeCopyWith<_PasswordChange> get copyWith => __$PasswordChangeCopyWithImpl<_PasswordChange>(this, _$identity);
+  _$PasswordChangeCopyWith<_PasswordChange> get copyWith =>
+    __$PasswordChangeCopyWithImpl<_PasswordChange>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -690,18 +707,19 @@ abstract class _PasswordChange implements RegistrationFormEvent {
   const factory _PasswordChange(String password) = _$_PasswordChange;
 
   String get password;
-
   _$PasswordChangeCopyWith<_PasswordChange> get copyWith;
 }
 
 abstract class _$EmailAddressChangeCopyWith<$Res> {
-  factory _$EmailAddressChangeCopyWith(_EmailAddressChange value, $Res Function(_EmailAddressChange) then) = __$EmailAddressChangeCopyWithImpl<$Res>;
-
+  factory _$EmailAddressChangeCopyWith(_EmailAddressChange value, $Res Function(_EmailAddressChange) then) =
+  __$EmailAddressChangeCopyWithImpl<$Res>;
   $Res call({String emailAddress});
 }
 
-class __$EmailAddressChangeCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res> implements _$EmailAddressChangeCopyWith<$Res> {
-  __$EmailAddressChangeCopyWithImpl(_EmailAddressChange _value, $Res Function(_EmailAddressChange) _then) : super(_value, (v) => _then(v as _EmailAddressChange));
+class __$EmailAddressChangeCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+  implements _$EmailAddressChangeCopyWith<$Res> {
+  __$EmailAddressChangeCopyWithImpl(_EmailAddressChange _value, $Res Function(_EmailAddressChange) _then)
+    : super(_value, (v) => _then(v as _EmailAddressChange));
 
   @override
   _EmailAddressChange get _value => super._value as _EmailAddressChange;
@@ -729,14 +747,20 @@ class _$_EmailAddressChange implements _EmailAddressChange {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _EmailAddressChange && (identical(other.emailAddress, emailAddress) || const DeepCollectionEquality().equals(other.emailAddress, emailAddress)));
+    return identical(this, other) ||
+      (other is _EmailAddressChange &&
+        (identical(other.emailAddress, emailAddress) ||
+          const DeepCollectionEquality()
+            .equals(other.emailAddress, emailAddress)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(emailAddress);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(emailAddress);
 
   @override
-  _$EmailAddressChangeCopyWith<_EmailAddressChange> get copyWith => __$EmailAddressChangeCopyWithImpl<_EmailAddressChange>(this, _$identity);
+  _$EmailAddressChangeCopyWith<_EmailAddressChange> get copyWith =>
+    __$EmailAddressChangeCopyWithImpl<_EmailAddressChange>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -832,21 +856,23 @@ class _$_EmailAddressChange implements _EmailAddressChange {
 }
 
 abstract class _EmailAddressChange implements RegistrationFormEvent {
-  const factory _EmailAddressChange(String emailAddress) = _$_EmailAddressChange;
+  const factory _EmailAddressChange(String emailAddress) =
+  _$_EmailAddressChange;
 
   String get emailAddress;
-
   _$EmailAddressChangeCopyWith<_EmailAddressChange> get copyWith;
 }
 
 abstract class _$BirthdayChangeCopyWith<$Res> {
-  factory _$BirthdayChangeCopyWith(_BirthdayChange value, $Res Function(_BirthdayChange) then) = __$BirthdayChangeCopyWithImpl<$Res>;
-
+  factory _$BirthdayChangeCopyWith(_BirthdayChange value, $Res Function(_BirthdayChange) then) =
+  __$BirthdayChangeCopyWithImpl<$Res>;
   $Res call({DateTime birthday});
 }
 
-class __$BirthdayChangeCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res> implements _$BirthdayChangeCopyWith<$Res> {
-  __$BirthdayChangeCopyWithImpl(_BirthdayChange _value, $Res Function(_BirthdayChange) _then) : super(_value, (v) => _then(v as _BirthdayChange));
+class __$BirthdayChangeCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+  implements _$BirthdayChangeCopyWith<$Res> {
+  __$BirthdayChangeCopyWithImpl(_BirthdayChange _value, $Res Function(_BirthdayChange) _then)
+    : super(_value, (v) => _then(v as _BirthdayChange));
 
   @override
   _BirthdayChange get _value => super._value as _BirthdayChange;
@@ -874,14 +900,20 @@ class _$_BirthdayChange implements _BirthdayChange {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _BirthdayChange && (identical(other.birthday, birthday) || const DeepCollectionEquality().equals(other.birthday, birthday)));
+    return identical(this, other) ||
+      (other is _BirthdayChange &&
+        (identical(other.birthday, birthday) ||
+          const DeepCollectionEquality()
+            .equals(other.birthday, birthday)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(birthday);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(birthday);
 
   @override
-  _$BirthdayChangeCopyWith<_BirthdayChange> get copyWith => __$BirthdayChangeCopyWithImpl<_BirthdayChange>(this, _$identity);
+  _$BirthdayChangeCopyWith<_BirthdayChange> get copyWith =>
+    __$BirthdayChangeCopyWithImpl<_BirthdayChange>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -980,18 +1012,19 @@ abstract class _BirthdayChange implements RegistrationFormEvent {
   const factory _BirthdayChange(DateTime birthday) = _$_BirthdayChange;
 
   DateTime get birthday;
-
   _$BirthdayChangeCopyWith<_BirthdayChange> get copyWith;
 }
 
 abstract class _$DescriptionChangeCopyWith<$Res> {
-  factory _$DescriptionChangeCopyWith(_DescriptionChange value, $Res Function(_DescriptionChange) then) = __$DescriptionChangeCopyWithImpl<$Res>;
-
+  factory _$DescriptionChangeCopyWith(_DescriptionChange value, $Res Function(_DescriptionChange) then) =
+  __$DescriptionChangeCopyWithImpl<$Res>;
   $Res call({String description});
 }
 
-class __$DescriptionChangeCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res> implements _$DescriptionChangeCopyWith<$Res> {
-  __$DescriptionChangeCopyWithImpl(_DescriptionChange _value, $Res Function(_DescriptionChange) _then) : super(_value, (v) => _then(v as _DescriptionChange));
+class __$DescriptionChangeCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+  implements _$DescriptionChangeCopyWith<$Res> {
+  __$DescriptionChangeCopyWithImpl(_DescriptionChange _value, $Res Function(_DescriptionChange) _then)
+    : super(_value, (v) => _then(v as _DescriptionChange));
 
   @override
   _DescriptionChange get _value => super._value as _DescriptionChange;
@@ -1019,14 +1052,20 @@ class _$_DescriptionChange implements _DescriptionChange {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DescriptionChange && (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)));
+    return identical(this, other) ||
+      (other is _DescriptionChange &&
+        (identical(other.description, description) ||
+          const DeepCollectionEquality()
+            .equals(other.description, description)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
 
   @override
-  _$DescriptionChangeCopyWith<_DescriptionChange> get copyWith => __$DescriptionChangeCopyWithImpl<_DescriptionChange>(this, _$identity);
+  _$DescriptionChangeCopyWith<_DescriptionChange> get copyWith =>
+    __$DescriptionChangeCopyWithImpl<_DescriptionChange>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1125,18 +1164,19 @@ abstract class _DescriptionChange implements RegistrationFormEvent {
   const factory _DescriptionChange(String description) = _$_DescriptionChange;
 
   String get description;
-
   _$DescriptionChangeCopyWith<_DescriptionChange> get copyWith;
 }
 
 abstract class _$InterestsChangeCopyWith<$Res> {
-  factory _$InterestsChangeCopyWith(_InterestsChange value, $Res Function(_InterestsChange) then) = __$InterestsChangeCopyWithImpl<$Res>;
-
+  factory _$InterestsChangeCopyWith(_InterestsChange value, $Res Function(_InterestsChange) then) =
+  __$InterestsChangeCopyWithImpl<$Res>;
   $Res call({Set<Tag> interests});
 }
 
-class __$InterestsChangeCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res> implements _$InterestsChangeCopyWith<$Res> {
-  __$InterestsChangeCopyWithImpl(_InterestsChange _value, $Res Function(_InterestsChange) _then) : super(_value, (v) => _then(v as _InterestsChange));
+class __$InterestsChangeCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+  implements _$InterestsChangeCopyWith<$Res> {
+  __$InterestsChangeCopyWithImpl(_InterestsChange _value, $Res Function(_InterestsChange) _then)
+    : super(_value, (v) => _then(v as _InterestsChange));
 
   @override
   _InterestsChange get _value => super._value as _InterestsChange;
@@ -1164,14 +1204,20 @@ class _$_InterestsChange implements _InterestsChange {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _InterestsChange && (identical(other.interests, interests) || const DeepCollectionEquality().equals(other.interests, interests)));
+    return identical(this, other) ||
+      (other is _InterestsChange &&
+        (identical(other.interests, interests) ||
+          const DeepCollectionEquality()
+            .equals(other.interests, interests)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(interests);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(interests);
 
   @override
-  _$InterestsChangeCopyWith<_InterestsChange> get copyWith => __$InterestsChangeCopyWithImpl<_InterestsChange>(this, _$identity);
+  _$InterestsChangeCopyWith<_InterestsChange> get copyWith =>
+    __$InterestsChangeCopyWithImpl<_InterestsChange>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1270,16 +1316,18 @@ abstract class _InterestsChange implements RegistrationFormEvent {
   const factory _InterestsChange(Set<Tag> interests) = _$_InterestsChange;
 
   Set<Tag> get interests;
-
   _$InterestsChangeCopyWith<_InterestsChange> get copyWith;
 }
 
 abstract class _$SubmitCopyWith<$Res> {
-  factory _$SubmitCopyWith(_Submit value, $Res Function(_Submit) then) = __$SubmitCopyWithImpl<$Res>;
+  factory _$SubmitCopyWith(_Submit value, $Res Function(_Submit) then) =
+  __$SubmitCopyWithImpl<$Res>;
 }
 
-class __$SubmitCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res> implements _$SubmitCopyWith<$Res> {
-  __$SubmitCopyWithImpl(_Submit _value, $Res Function(_Submit) _then) : super(_value, (v) => _then(v as _Submit));
+class __$SubmitCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+  implements _$SubmitCopyWith<$Res> {
+  __$SubmitCopyWithImpl(_Submit _value, $Res Function(_Submit) _then)
+    : super(_value, (v) => _then(v as _Submit));
 
   @override
   _Submit get _value => super._value as _Submit;
@@ -1401,7 +1449,10 @@ abstract class _Submit implements RegistrationFormEvent {
 class _$RegistrationFormStateTearOff {
   const _$RegistrationFormStateTearOff();
 
-  _RegistrationFormState call({@required User user, @required bool showErrorMessages, @required bool isSubmitting, @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
+  _RegistrationFormState call({@required User user,
+    @required bool showErrorMessages,
+    @required bool isSubmitting,
+    @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _RegistrationFormState(
       user: user,
       showErrorMessages: showErrorMessages,
@@ -1416,29 +1467,31 @@ const $RegistrationFormState = _$RegistrationFormStateTearOff();
 
 mixin _$RegistrationFormState {
   User get user;
-
   bool get showErrorMessages;
-
   bool get isSubmitting;
-
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
 
   $RegistrationFormStateCopyWith<RegistrationFormState> get copyWith;
 }
 
 abstract class $RegistrationFormStateCopyWith<$Res> {
-  factory $RegistrationFormStateCopyWith(RegistrationFormState value, $Res Function(RegistrationFormState) then) = _$RegistrationFormStateCopyWithImpl<$Res>;
-
-  $Res call({User user, bool showErrorMessages, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
+  factory $RegistrationFormStateCopyWith(RegistrationFormState value,
+    $Res Function(RegistrationFormState) then) =
+  _$RegistrationFormStateCopyWithImpl<$Res>;
+  
+  $Res call({User user,
+    bool showErrorMessages,
+    bool isSubmitting,
+    Option<Either<Failure, Unit>> failureOrSuccessOption});
 
   $UserCopyWith<$Res> get user;
 }
 
-class _$RegistrationFormStateCopyWithImpl<$Res> implements $RegistrationFormStateCopyWith<$Res> {
+class _$RegistrationFormStateCopyWithImpl<$Res>
+  implements $RegistrationFormStateCopyWith<$Res> {
   _$RegistrationFormStateCopyWithImpl(this._value, this._then);
 
   final RegistrationFormState _value;
-
   // ignore: unused_field
   final $Res Function(RegistrationFormState) _then;
 
@@ -1451,9 +1504,14 @@ class _$RegistrationFormStateCopyWithImpl<$Res> implements $RegistrationFormStat
   }) {
     return _then(_value.copyWith(
       user: user == freezed ? _value.user : user as User,
-      showErrorMessages: showErrorMessages == freezed ? _value.showErrorMessages : showErrorMessages as bool,
-      isSubmitting: isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
-      failureOrSuccessOption: failureOrSuccessOption == freezed ? _value.failureOrSuccessOption : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+      showErrorMessages: showErrorMessages == freezed
+        ? _value.showErrorMessages
+        : showErrorMessages as bool,
+      isSubmitting:
+      isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      failureOrSuccessOption: failureOrSuccessOption == freezed
+        ? _value.failureOrSuccessOption
+        : failureOrSuccessOption as Option<Either<Failure, Unit>>,
     ));
   }
 
@@ -1468,18 +1526,26 @@ class _$RegistrationFormStateCopyWithImpl<$Res> implements $RegistrationFormStat
   }
 }
 
-abstract class _$RegistrationFormStateCopyWith<$Res> implements $RegistrationFormStateCopyWith<$Res> {
-  factory _$RegistrationFormStateCopyWith(_RegistrationFormState value, $Res Function(_RegistrationFormState) then) = __$RegistrationFormStateCopyWithImpl<$Res>;
-
+abstract class _$RegistrationFormStateCopyWith<$Res>
+  implements $RegistrationFormStateCopyWith<$Res> {
+  factory _$RegistrationFormStateCopyWith(_RegistrationFormState value,
+    $Res Function(_RegistrationFormState) then) =
+  __$RegistrationFormStateCopyWithImpl<$Res>;
   @override
-  $Res call({User user, bool showErrorMessages, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
+  $Res call({User user,
+    bool showErrorMessages,
+    bool isSubmitting,
+    Option<Either<Failure, Unit>> failureOrSuccessOption});
 
   @override
   $UserCopyWith<$Res> get user;
 }
 
-class __$RegistrationFormStateCopyWithImpl<$Res> extends _$RegistrationFormStateCopyWithImpl<$Res> implements _$RegistrationFormStateCopyWith<$Res> {
-  __$RegistrationFormStateCopyWithImpl(_RegistrationFormState _value, $Res Function(_RegistrationFormState) _then) : super(_value, (v) => _then(v as _RegistrationFormState));
+class __$RegistrationFormStateCopyWithImpl<$Res> extends _$RegistrationFormStateCopyWithImpl<$Res>
+  implements _$RegistrationFormStateCopyWith<$Res> {
+  __$RegistrationFormStateCopyWithImpl(_RegistrationFormState _value,
+    $Res Function(_RegistrationFormState) _then)
+    : super(_value, (v) => _then(v as _RegistrationFormState));
 
   @override
   _RegistrationFormState get _value => super._value as _RegistrationFormState;
@@ -1493,15 +1559,23 @@ class __$RegistrationFormStateCopyWithImpl<$Res> extends _$RegistrationFormState
   }) {
     return _then(_RegistrationFormState(
       user: user == freezed ? _value.user : user as User,
-      showErrorMessages: showErrorMessages == freezed ? _value.showErrorMessages : showErrorMessages as bool,
-      isSubmitting: isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
-      failureOrSuccessOption: failureOrSuccessOption == freezed ? _value.failureOrSuccessOption : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+      showErrorMessages: showErrorMessages == freezed
+        ? _value.showErrorMessages
+        : showErrorMessages as bool,
+      isSubmitting:
+      isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      failureOrSuccessOption: failureOrSuccessOption == freezed
+        ? _value.failureOrSuccessOption
+        : failureOrSuccessOption as Option<Either<Failure, Unit>>,
     ));
   }
 }
 
 class _$_RegistrationFormState implements _RegistrationFormState {
-  const _$_RegistrationFormState({@required this.user, @required this.showErrorMessages, @required this.isSubmitting, @required this.failureOrSuccessOption})
+  const _$_RegistrationFormState({@required this.user,
+    @required this.showErrorMessages,
+    @required this.isSubmitting,
+    @required this.failureOrSuccessOption})
       : assert(user != null),
         assert(showErrorMessages != null),
         assert(isSubmitting != null),
@@ -1525,10 +1599,17 @@ class _$_RegistrationFormState implements _RegistrationFormState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _RegistrationFormState &&
-            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)) &&
-            (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
-            (identical(other.failureOrSuccessOption, failureOrSuccessOption) || const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+          (identical(other.user, user) ||
+            const DeepCollectionEquality().equals(other.user, user)) &&
+          (identical(other.showErrorMessages, showErrorMessages) ||
+            const DeepCollectionEquality()
+              .equals(other.showErrorMessages, showErrorMessages)) &&
+          (identical(other.isSubmitting, isSubmitting) ||
+            const DeepCollectionEquality()
+              .equals(other.isSubmitting, isSubmitting)) &&
+          (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
+            const DeepCollectionEquality().equals(
+              other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -1540,25 +1621,26 @@ class _$_RegistrationFormState implements _RegistrationFormState {
       const DeepCollectionEquality().hash(failureOrSuccessOption);
 
   @override
-  _$RegistrationFormStateCopyWith<_RegistrationFormState> get copyWith => __$RegistrationFormStateCopyWithImpl<_RegistrationFormState>(this, _$identity);
+  _$RegistrationFormStateCopyWith<_RegistrationFormState> get copyWith =>
+    __$RegistrationFormStateCopyWithImpl<_RegistrationFormState>(
+      this, _$identity);
 }
 
 abstract class _RegistrationFormState implements RegistrationFormState {
-  const factory _RegistrationFormState({@required User user, @required bool showErrorMessages, @required bool isSubmitting, @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
+  const factory _RegistrationFormState({@required User user,
+    @required bool showErrorMessages,
+    @required bool isSubmitting,
+    @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
       _$_RegistrationFormState;
 
   @override
   User get user;
-
   @override
   bool get showErrorMessages;
-
   @override
   bool get isSubmitting;
-
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
-
   @override
   _$RegistrationFormStateCopyWith<_RegistrationFormState> get copyWith;
 }

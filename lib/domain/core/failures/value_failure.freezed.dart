@@ -2505,7 +2505,7 @@ class _$SetExceedsLength<T>
     assert(setExceedsLength != null);
     return setExceedsLength(failedValue, maxLength);
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -2530,7 +2530,7 @@ class _$SetExceedsLength<T>
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({

@@ -16,8 +16,7 @@ part 'achievement_management_watcher_state.dart';
 
 @injectable
 class AchievementManagementWatcherBloc extends Bloc<AchievementManagementWatcherEvent, AchievementManagementWatcherState> {
-  @override
-  AchievementManagementWatcherState get initialState => const AchievementManagementWatcherState.initial();
+  AchievementManagementWatcherBloc() : super(const AchievementManagementWatcherState.initial());
 
   @override
   Stream<AchievementManagementWatcherState> mapEventToState(AchievementManagementWatcherEvent event) async* {
@@ -25,16 +24,15 @@ class AchievementManagementWatcherBloc extends Bloc<AchievementManagementWatcher
       loadAllAchievements: onLoadAllAchievements,
     );
   }
-  
+
   Stream<AchievementManagementWatcherState> onLoadAllAchievements(_LoadAllAchievements event) async* {
     yield const AchievementManagementWatcherState.loading();
     final _getAllAchievements = getIt<GetAllAchievements>();
     yield* _getAllAchievements(getIt<NoParams>()).map(
-        (failureOrAchievements) =>
-        failureOrAchievements.fold(
-            (failure) => AchievementManagementWatcherState.loadFailure(failure),
-            (achievements) => AchievementManagementWatcherState.loadSuccess(achievements),
-        ),
+      (failureOrAchievements) => failureOrAchievements.fold(
+        (failure) => AchievementManagementWatcherState.loadFailure(failure),
+        (achievements) => AchievementManagementWatcherState.loadSuccess(achievements),
+      ),
     );
   }
 }

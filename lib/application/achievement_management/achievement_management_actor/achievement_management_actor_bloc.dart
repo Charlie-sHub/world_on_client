@@ -15,8 +15,7 @@ part 'achievement_management_actor_state.dart';
 
 @injectable
 class AchievementManagementActorBloc extends Bloc<AchievementManagementActorEvent, AchievementManagementActorState> {
-  @override
-  AchievementManagementActorState get initialState => const AchievementManagementActorState.initial();
+  AchievementManagementActorBloc() : super(const AchievementManagementActorState.initial());
 
   @override
   Stream<AchievementManagementActorState> mapEventToState(AchievementManagementActorEvent event) async* {
@@ -27,13 +26,13 @@ class AchievementManagementActorBloc extends Bloc<AchievementManagementActorEven
 
   Stream<AchievementManagementActorState> onDelete(_Deleted event) async* {
     yield const AchievementManagementActorState.actionInProgress();
-    final deleteAchievement = getIt<DeleteAchievement>();
-    final eitherFailureOrSuccess = await deleteAchievement(
+    final _deleteAchievement = getIt<DeleteAchievement>();
+    final _eitherFailureOrSuccess = await _deleteAchievement(
       Params(
         achievement: event.achievement,
       ),
     );
-    yield eitherFailureOrSuccess.fold(
+    yield _eitherFailureOrSuccess.fold(
       (failure) => AchievementManagementActorState.deletionFailure(failure),
       (_) => const AchievementManagementActorState.deletionSuccess(),
     );

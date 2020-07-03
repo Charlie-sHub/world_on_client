@@ -10,15 +10,12 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/injection.dart';
 
 part 'authentication_bloc.freezed.dart';
-
 part 'authentication_event.dart';
-
 part 'authentication_state.dart';
 
 @injectable
 class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> {
-  @override
-  AuthenticationState get initialState => const AuthenticationState.initial();
+  AuthenticationBloc() : super(const AuthenticationState.initial());
 
   @override
   Stream<AuthenticationState> mapEventToState(AuthenticationEvent event) async* {

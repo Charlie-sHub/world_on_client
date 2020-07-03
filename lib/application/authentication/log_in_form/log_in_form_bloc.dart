@@ -14,15 +14,12 @@ import 'package:worldon/domain/core/validation/objects/password.dart';
 import 'package:worldon/injection.dart';
 
 part 'log_in_form_bloc.freezed.dart';
-
 part 'log_in_form_event.dart';
-
 part 'log_in_form_state.dart';
 
 @injectable
 class LogInFormBloc extends Bloc<LogInFormEvent, LogInFormState> {
-  @override
-  LogInFormState get initialState => LogInFormState.initial();
+  LogInFormBloc() : super(LogInFormState.initial());
 
   @override
   Stream<LogInFormState> mapEventToState(LogInFormEvent event) async* {

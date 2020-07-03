@@ -13,11 +13,11 @@ import 'package:worldon/injection.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  DeleteAchievement useCase;
+  DeleteAchievement deleteAchievement;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
-      useCase = getIt<DeleteAchievement>();
+      deleteAchievement = getIt<DeleteAchievement>();
     },
   );
   final deletionEvent = AchievementManagementActorEvent.delete(Achievement.empty());
@@ -28,19 +28,19 @@ void main() {
     expect: [const AchievementManagementActorState.initial()],
   );
   group(
-    "Delete Event Tests",
+    TestDescription.deleteEventTests,
     () {
       const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
       blocTest(
         TestDescription.shouldEmitSuccess,
         build: () async {
-          when(useCase.call(any)).thenAnswer((_) async => right<Failure, Unit>(unit));
+          when(deleteAchievement.call(any)).thenAnswer((_) async => right(unit));
           return getIt<AchievementManagementActorBloc>();
         },
         act: (bloc) async => bloc.add(deletionEvent),
         verify: (_) async {
-          verify(useCase.call(any));
-          verifyNoMoreInteractions(useCase);
+          verify(deleteAchievement.call(any));
+          verifyNoMoreInteractions(deleteAchievement);
         },
         expect: [
           const AchievementManagementActorState.actionInProgress(),
@@ -50,13 +50,13 @@ void main() {
       blocTest(
         TestDescription.shouldEmitFailure,
         build: () async {
-          when(useCase.call(any)).thenAnswer((_) async => left<Failure, Unit>(failure));
+          when(deleteAchievement.call(any)).thenAnswer((_) async => left(failure));
           return getIt<AchievementManagementActorBloc>();
         },
         act: (bloc) async => bloc.add(deletionEvent),
         verify: (_) async {
-          verify(useCase.call(any));
-          verifyNoMoreInteractions(useCase);
+          verify(deleteAchievement.call(any));
+          verifyNoMoreInteractions(deleteAchievement);
         },
         expect: [
           const AchievementManagementActorState.actionInProgress(),

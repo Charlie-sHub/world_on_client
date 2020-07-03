@@ -21,7 +21,7 @@ void main() {
       getAllAchievements = getIt<GetAllAchievements>();
     },
   );
-  final List<Achievement> achievementList = [Achievement.empty()];
+  final achievementList = [Achievement.empty()];
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,

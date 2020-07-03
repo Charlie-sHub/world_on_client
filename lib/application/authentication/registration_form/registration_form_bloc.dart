@@ -7,6 +7,7 @@ import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
+import 'package:worldon/domain/authentication/use_case/register.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
@@ -18,15 +19,12 @@ import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/injection.dart';
 
 part 'registration_form_bloc.freezed.dart';
-
 part 'registration_form_event.dart';
-
 part 'registration_form_state.dart';
 
 @injectable
 class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormState> {
-  @override
-  RegistrationFormState get initialState => RegistrationFormState.initial();
+  RegistrationFormBloc() : super(RegistrationFormState.initial());
 
   @override
   Stream<RegistrationFormState> mapEventToState(RegistrationFormEvent event) async* {
@@ -39,7 +37,24 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
       birthdayChange: onBirthdayChange,
       descriptionChange: onDescriptionChange,
       interestsChange: onInterestsChange,
-      submit: (event) async* {},
+      submit: onSubmit,
+    );
+  }
+
+  Stream<RegistrationFormState> onSubmit(_Submit event) async* {
+    Either<Failure, Unit> _failureOrUnit;
+    yield state.copyWith(
+      isSubmitting: true,
+      failureOrSuccessOption: none(),
+    );
+    if (state.user.isValid) {
+      final _register = getIt<Register>();
+      _failureOrUnit = await _register(Params(user: state.user));
+    }
+    yield state.copyWith(
+      isSubmitting: false,
+      showErrorMessages: true,
+      failureOrSuccessOption: optionOf(_failureOrUnit),
     );
   }
 
