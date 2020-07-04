@@ -24,6 +24,7 @@ abstract class Experience implements _$Experience {
   const Experience._();
 
   const factory Experience({
+    // TODO: Add like and dislike counters
     int id,
     @required Name name,
     @required EntityDescription description,
@@ -41,25 +42,25 @@ abstract class Experience implements _$Experience {
     @required Set<User> likedBy,
     @required Set<User> doneBy,
   }) = _Experience;
-  
+
   factory Experience.empty() => Experience(
-    name: Name(""),
-    description: EntityDescription(""),
-    imageURLs: <String>{},
-    coordinates: Coordinates.empty(),
-    location: Location.empty(),
-    creator: User.empty(),
-    difficulty: Difficulty(1),
-    creationDate: PastDate(DateTime.now()),
-    modificationDate: PastDate(DateTime.now()),
-    objectives: ObjectiveSet(KtSet.empty()),
-    rewards: RewardSet(KtSet.empty()),
-    tags: TagSet(KtSet.empty()),
-    comments: <Comment>{},
-    likedBy: <User>{},
-    doneBy: <User>{},
-  );
-  
+        name: Name(""),
+        description: EntityDescription(""),
+        imageURLs: <String>{},
+        coordinates: Coordinates.empty(),
+        location: Location.empty(),
+        creator: User.empty(),
+        difficulty: Difficulty(1),
+        creationDate: PastDate(DateTime.now()),
+        modificationDate: PastDate(DateTime.now()),
+        objectives: ObjectiveSet(KtSet.empty()),
+        rewards: RewardSet(KtSet.empty()),
+        tags: TagSet(KtSet.empty()),
+        comments: <Comment>{},
+        likedBy: <User>{},
+        doneBy: <User>{},
+      );
+
   Option<ValueFailure<dynamic>> get failureOption {
     return name.failureOrUnit
       .andThen(description.failureOrUnit)
@@ -77,6 +78,6 @@ abstract class Experience implements _$Experience {
         (_) => none(),
     );
   }
-  
+
   bool get isValid => failureOption.isNone();
 }

@@ -19,6 +19,7 @@ import 'package:worldon/application/experience_log/experience_log_actor/experien
 import 'package:worldon/application/experience_log/experience_log_watcher/experience_log_watcher_bloc.dart';
 import 'package:worldon/application/experience_management/experience_management_actor/experience_management_actor_bloc.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
+import 'package:worldon/application/experience_navigation/experience_navigation_actor/experience_navigation_actor_bloc.dart';
 import 'package:worldon/core/util/cypher.dart';
 import 'package:worldon/data/achievement_management/repository/development_achievement_repository.dart';
 import 'package:worldon/data/achievement_management/repository/production_achievement_repository.dart';
@@ -107,6 +108,8 @@ import 'package:worldon/domain/experience_management/use_case/get_experience.dar
 import 'package:worldon/domain/experience_management/use_case/use_case_mocks.dart';
 import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_interface.dart';
 import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_mock.dart';
+import 'package:worldon/domain/experience_navigation/use_case/accomplish_objective.dart';
+import 'package:worldon/domain/experience_navigation/use_case/fill_objective_tracker.dart';
 import 'package:worldon/domain/experience_navigation/use_case/finish_experience.dart';
 import 'package:worldon/domain/experience_navigation/use_case/like_experience.dart';
 import 'package:worldon/domain/experience_navigation/use_case/load_surrounding_experiences.dart';
@@ -185,10 +188,141 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerFactory<ExperienceCardActorBloc>(() => ExperienceCardActorBloc());
   g.registerFactory<ExperienceLogActorBloc>(() => ExperienceLogActorBloc());
   g.registerFactory<ExperienceLogWatcherBloc>(() => ExperienceLogWatcherBloc());
-  g.registerFactory<ExperienceManagementActorBloc>(() => ExperienceManagementActorBloc());
-  g.registerFactory<ExperienceManagementFormBloc>(() => ExperienceManagementFormBloc());
+  g.registerFactory<ExperienceManagementActorBloc>(
+      () => ExperienceManagementActorBloc());
+  g.registerFactory<ExperienceManagementFormBloc>(
+      () => ExperienceManagementFormBloc());
+  g.registerFactory<ExperienceNavigationActorBloc>(
+      () => ExperienceNavigationActorBloc());
   g.registerFactory<LogInFormBloc>(() => LogInFormBloc());
   g.registerFactory<RegistrationFormBloc>(() => RegistrationFormBloc());
+
+  //Register test Dependencies --------
+  if (environment == 'test') {
+    g.registerLazySingleton<AccomplishObjective>(
+        () => MockAccomplishObjective());
+    g.registerLazySingleton<AchievementRepositoryInterface>(
+        () => MockAchievementRepository());
+    g.registerLazySingleton<AddExperienceToLog>(() => MockAddExperienceToLog());
+    g.registerLazySingleton<AuthenticationRepositoryInterface>(
+        () => MockAuthenticationRepository());
+    g.registerLazySingleton<AwardAchievement>(() => MockAwardAchievement());
+    g.registerLazySingleton<BlockUser>(() => MockBlockUser());
+    g.registerLazySingleton<CachedCredentialsRepositoryInterface>(
+        () => MockCachedUserRepository());
+    g.registerLazySingleton<CheckNotification>(() => MockCheckNotification());
+    g.registerLazySingleton<CommentRepositoryInterface>(
+        () => MockCommentRepository());
+    g.registerLazySingleton<CoreRepositoryInterface>(
+        () => MockCoreRepository());
+    g.registerLazySingleton<CreateAchievement>(() => MockCreateAchievement());
+    g.registerLazySingleton<CreateExperience>(() => MockCreateExperience());
+    g.registerLazySingleton<CreateObjectives>(() => MockCreateObjectives());
+    g.registerLazySingleton<CreateTag>(() => MockCreateTag());
+    g.registerLazySingleton<DeleteAchievement>(() => MockDeleteAchievement());
+    g.registerLazySingleton<DeleteCache>(() => MockDeleteCache());
+    g.registerLazySingleton<DeleteComment>(() => MockDeleteComment());
+    g.registerLazySingleton<DeleteExperience>(() => MockDeleteExperience());
+    g.registerLazySingleton<DeleteTag>(() => MockDeleteTag());
+    g.registerLazySingleton<DeleteUser>(() => MockDeleteUser());
+    g.registerLazySingleton<DeleteUserNotifications>(
+        () => MockDeleteUserNotifications());
+    g.registerLazySingleton<DismissExperienceFromLog>(
+        () => MockDismissExperienceFromLog());
+    g.registerLazySingleton<EditAchievement>(() => MockEditAchievement());
+    g.registerLazySingleton<EditComment>(() => MockEditComment());
+    g.registerLazySingleton<EditExperience>(() => MockEditExperience());
+    g.registerLazySingleton<EditTag>(() => MockEditTag());
+    g.registerLazySingleton<EditUser>(() => MockEditUser());
+    g.registerLazySingleton<ExperienceLogRepositoryInterface>(
+        () => MockExperienceLogRepository());
+    g.registerLazySingleton<ExperienceManagementRepositoryInterface>(
+        () => MockExperienceManagementRepository());
+    g.registerLazySingleton<ExperienceNavigationRepositoryInterface>(
+        () => MockExperienceNavigationRepository());
+    g.registerLazySingleton<FillFeed>(() => MockFillFeed());
+    g.registerLazySingleton<FillObjectiveTracker>(
+        () => MockFillObjectiveTracker());
+    g.registerLazySingleton<FinishExperience>(() => MockFinishExperience());
+    g.registerLazySingleton<FollowUser>(() => MockFollowUser());
+    g.registerLazySingleton<GeoLocationRepositoryInterface>(
+        () => MockGeoLocationRepository());
+    g.registerLazySingleton<GetAchievement>(() => MockGetAchievement());
+    g.registerLazySingleton<GetAllAchievements>(() => MockGetAllAchievements());
+    g.registerLazySingleton<GetAllTags>(() => MockGetAllTags());
+    g.registerLazySingleton<GetCachedUser>(() => MockGetCachedUser());
+    g.registerLazySingleton<GetCurrentLocation>(() => MockGetCurrentLocation());
+    g.registerLazySingleton<GetExperience>(() => MockGetExperience());
+    g.registerLazySingleton<GetExperienceComments>(
+        () => MockGetExperienceComments());
+    g.registerLazySingleton<GetLoggedInUser>(() => MockGetLoggedInUser());
+    g.registerLazySingleton<GetTag>(() => MockGetTag());
+    g.registerLazySingleton<GetTagCreator>(() => MockGetTagCreator());
+    g.registerLazySingleton<GetTagsByCreator>(() => MockGetTagsByCreator());
+    g.registerLazySingleton<GetUserAchievements>(
+        () => MockGetUserAchievements());
+    g.registerLazySingleton<GetUserComments>(() => MockGetUserComments());
+    g.registerLazySingleton<LikeExperience>(() => MockLikeExperience());
+    g.registerLazySingleton<LoadBlockedUsers>(() => MockLoadBlockedUsers());
+    g.registerLazySingleton<LoadExperiencesCreated>(
+        () => MockLoadExperiencesCreated());
+    g.registerLazySingleton<LoadExperiencesDone>(
+        () => MockLoadExperiencesDone());
+    g.registerLazySingleton<LoadExperiencesLiked>(
+        () => MockLoadExperiencesLiked());
+    g.registerLazySingleton<LoadFollowedUsers>(() => MockLoadFollowedUsers());
+    g.registerLazySingleton<LoadFollowingUsers>(() => MockLoadFollowingUsers());
+    g.registerLazySingleton<LoadNotifications>(() => MockLoadNotifications());
+    g.registerLazySingleton<LoadSurroundingExperiences>(
+        () => MockLoadSurroundingExperiences());
+    g.registerLazySingleton<LoadUser>(() => MockLoadUser());
+    g.registerLazySingleton<LoadUserAchievements>(
+        () => MockLoadUserAchievements());
+    g.registerLazySingleton<LoadUserInterests>(() => MockLoadUserInterests());
+    g.registerLazySingleton<LoadUserLog>(() => MockLoadUserLog());
+    g.registerLazySingleton<LocalOptionsRepositoryInterface>(
+        () => MockLocalOptionsRepository());
+    g.registerLazySingleton<LogIn>(() => MockLogIn());
+    g.registerLazySingleton<LogInGoogle>(() => MockLogInGoogle());
+    g.registerLazySingleton<LogOut>(() => MockLogOut());
+    g.registerLazySingleton<MainFeedRepositoryInterface>(
+        () => MockMainFeedRepository());
+    g.registerLazySingleton<NoParams>(() => NoParams());
+    g.registerLazySingleton<NotificationRepositoryInterface>(
+        () => MockNotificationRepository());
+    g.registerLazySingleton<PostComment>(() => MockPostComment());
+    g.registerLazySingleton<ProfileRepositoryInterface>(
+        () => MockProfileRepository());
+    g.registerLazySingleton<PublicKeyRepositoryInterface>(
+        () => MockPublicKeyRepository());
+    g.registerLazySingleton<RateDifficulty>(() => MockRateDifficulty());
+    g.registerLazySingleton<Register>(() => MockRegister());
+    g.registerLazySingleton<RemoteOptionsRepositoryInterface>(
+        () => MockRemoteOptionsRepository());
+    g.registerLazySingleton<RemoveExperienceLiked>(
+        () => MockRemoveExperienceLiked());
+    g.registerLazySingleton<RewardUser>(() => MockRewardUser());
+    g.registerLazySingleton<SaveGlobalOptions>(() => MockSaveGlobalOptions());
+    g.registerLazySingleton<SearchExperiencesByDifficulty>(
+        () => MockSearchExperiencesByDifficulty());
+    g.registerLazySingleton<SearchExperiencesByName>(
+        () => MockSearchExperiencesByName());
+    g.registerLazySingleton<SearchExperiencesByTags>(
+        () => MockSearchExperiencesByTags());
+    g.registerLazySingleton<SearchRepositoryInterface>(
+        () => MockSearchRepository());
+    g.registerLazySingleton<SearchTagsByName>(() => MockSearchTagsByName());
+    g.registerLazySingleton<SearchUsersByName>(() => MockSearchUsersByName());
+    g.registerLazySingleton<SearchUsersByUsername>(
+        () => MockSearchUsersByUsername());
+    g.registerLazySingleton<SendNotification>(() => MockSendNotification());
+    g.registerLazySingleton<TagCoreRepositoryInterface>(
+        () => MockTagRepository());
+    g.registerLazySingleton<TagManagementRepositoryInterface>(
+        () => MockTagManagementRepository());
+    g.registerLazySingleton<UnBlockUser>(() => MockUnBlockUser());
+    g.registerLazySingleton<UnFollowUser>(() => MockUnFollowUser());
+  }
 
   //Register dev Dependencies --------
   if (environment == 'dev') {
@@ -258,6 +392,7 @@ void $initGetIt(GetIt g, {String environment}) {
         () => ProductionExperienceManagementRepository());
     g.registerLazySingleton<ExperienceNavigationRepositoryInterface>(
         () => ProductionExperienceNavigationRepository());
+    g.registerLazySingleton<FillObjectiveTracker>(() => FillObjectiveTracker());
     g.registerLazySingleton<FinishExperience>(
         () => FinishExperience(g<ExperienceNavigationRepositoryInterface>()));
     g.registerLazySingleton<GeoLocationRepositoryInterface>(
@@ -399,128 +534,5 @@ void $initGetIt(GetIt g, {String environment}) {
         () => SearchExperiencesByName(g<SearchRepositoryInterface>()));
     g.registerLazySingleton<SearchExperiencesByTags>(
         () => SearchExperiencesByTags(g<SearchRepositoryInterface>()));
-  }
-
-  //Register test Dependencies --------
-  if (environment == 'test') {
-    g.registerLazySingleton<AchievementRepositoryInterface>(
-        () => MockAchievementRepository());
-    g.registerLazySingleton<AddExperienceToLog>(() => MockAddExperienceToLog());
-    g.registerLazySingleton<AuthenticationRepositoryInterface>(
-        () => MockAuthenticationRepository());
-    g.registerLazySingleton<AwardAchievement>(() => MockAwardAchievement());
-    g.registerLazySingleton<BlockUser>(() => MockBlockUser());
-    g.registerLazySingleton<CachedCredentialsRepositoryInterface>(
-        () => MockCachedUserRepository());
-    g.registerLazySingleton<CheckNotification>(() => MockCheckNotification());
-    g.registerLazySingleton<CommentRepositoryInterface>(
-        () => MockCommentRepository());
-    g.registerLazySingleton<CoreRepositoryInterface>(
-        () => MockCoreRepository());
-    g.registerLazySingleton<CreateAchievement>(() => MockCreateAchievement());
-    g.registerLazySingleton<CreateExperience>(() => MockCreateExperience());
-    g.registerLazySingleton<CreateObjectives>(() => MockCreateObjectives());
-    g.registerLazySingleton<CreateTag>(() => MockCreateTag());
-    g.registerLazySingleton<DeleteAchievement>(() => MockDeleteAchievement());
-    g.registerLazySingleton<DeleteCache>(() => MockDeleteCache());
-    g.registerLazySingleton<DeleteComment>(() => MockDeleteComment());
-    g.registerLazySingleton<DeleteExperience>(() => MockDeleteExperience());
-    g.registerLazySingleton<DeleteTag>(() => MockDeleteTag());
-    g.registerLazySingleton<DeleteUser>(() => MockDeleteUser());
-    g.registerLazySingleton<DeleteUserNotifications>(
-        () => MockDeleteUserNotifications());
-    g.registerLazySingleton<DismissExperienceFromLog>(
-        () => MockDismissExperienceFromLog());
-    g.registerLazySingleton<EditAchievement>(() => MockEditAchievement());
-    g.registerLazySingleton<EditComment>(() => MockEditComment());
-    g.registerLazySingleton<EditExperience>(() => MockEditExperience());
-    g.registerLazySingleton<EditTag>(() => MockEditTag());
-    g.registerLazySingleton<EditUser>(() => MockEditUser());
-    g.registerLazySingleton<ExperienceLogRepositoryInterface>(
-        () => MockExperienceLogRepository());
-    g.registerLazySingleton<ExperienceManagementRepositoryInterface>(
-        () => MockExperienceManagementRepository());
-    g.registerLazySingleton<ExperienceNavigationRepositoryInterface>(
-        () => MockExperienceNavigationRepository());
-    g.registerLazySingleton<FillFeed>(() => MockFillFeed());
-    g.registerLazySingleton<FinishExperience>(() => MockFinishExperience());
-    g.registerLazySingleton<FollowUser>(() => MockFollowUser());
-    g.registerLazySingleton<GeoLocationRepositoryInterface>(
-        () => MockGeoLocationRepository());
-    g.registerLazySingleton<GetAchievement>(() => MockGetAchievement());
-    g.registerLazySingleton<GetAllAchievements>(() => MockGetAllAchievements());
-    g.registerLazySingleton<GetAllTags>(() => MockGetAllTags());
-    g.registerLazySingleton<GetCachedUser>(() => MockGetCachedUser());
-    g.registerLazySingleton<GetCurrentLocation>(() => MockGetCurrentLocation());
-    g.registerLazySingleton<GetExperience>(() => MockGetExperience());
-    g.registerLazySingleton<GetExperienceComments>(
-        () => MockGetExperienceComments());
-    g.registerLazySingleton<GetLoggedInUser>(() => MockGetLoggedInUser());
-    g.registerLazySingleton<GetTag>(() => MockGetTag());
-    g.registerLazySingleton<GetTagCreator>(() => MockGetTagCreator());
-    g.registerLazySingleton<GetTagsByCreator>(() => MockGetTagsByCreator());
-    g.registerLazySingleton<GetUserAchievements>(
-        () => MockGetUserAchievements());
-    g.registerLazySingleton<GetUserComments>(() => MockGetUserComments());
-    g.registerLazySingleton<LikeExperience>(() => MockLikeExperience());
-    g.registerLazySingleton<LoadBlockedUsers>(() => MockLoadBlockedUsers());
-    g.registerLazySingleton<LoadExperiencesCreated>(
-        () => MockLoadExperiencesCreated());
-    g.registerLazySingleton<LoadExperiencesDone>(
-        () => MockLoadExperiencesDone());
-    g.registerLazySingleton<LoadExperiencesLiked>(
-        () => MockLoadExperiencesLiked());
-    g.registerLazySingleton<LoadFollowedUsers>(() => MockLoadFollowedUsers());
-    g.registerLazySingleton<LoadFollowingUsers>(() => MockLoadFollowingUsers());
-    g.registerLazySingleton<LoadNotifications>(() => MockLoadNotifications());
-    g.registerLazySingleton<LoadSurroundingExperiences>(
-        () => MockLoadSurroundingExperiences());
-    g.registerLazySingleton<LoadUser>(() => MockLoadUser());
-    g.registerLazySingleton<LoadUserAchievements>(
-        () => MockLoadUserAchievements());
-    g.registerLazySingleton<LoadUserInterests>(() => MockLoadUserInterests());
-    g.registerLazySingleton<LoadUserLog>(() => MockLoadUserLog());
-    g.registerLazySingleton<LocalOptionsRepositoryInterface>(
-        () => MockLocalOptionsRepository());
-    g.registerLazySingleton<LogIn>(() => MockLogIn());
-    g.registerLazySingleton<LogInGoogle>(() => MockLogInGoogle());
-    g.registerLazySingleton<LogOut>(() => MockLogOut());
-    g.registerLazySingleton<MainFeedRepositoryInterface>(
-        () => MockMainFeedRepository());
-    g.registerLazySingleton<NoParams>(() => NoParams());
-    g.registerLazySingleton<NotificationRepositoryInterface>(
-        () => MockNotificationRepository());
-    g.registerLazySingleton<PostComment>(() => MockPostComment());
-    g.registerLazySingleton<ProfileRepositoryInterface>(
-        () => MockProfileRepository());
-    g.registerLazySingleton<PublicKeyRepositoryInterface>(
-        () => MockPublicKeyRepository());
-    g.registerLazySingleton<RateDifficulty>(() => MockRateDifficulty());
-    g.registerLazySingleton<Register>(() => MockRegister());
-    g.registerLazySingleton<RemoteOptionsRepositoryInterface>(
-        () => MockRemoteOptionsRepository());
-    g.registerLazySingleton<RemoveExperienceLiked>(
-        () => MockRemoveExperienceLiked());
-    g.registerLazySingleton<RewardUser>(() => MockRewardUser());
-    g.registerLazySingleton<SaveGlobalOptions>(() => MockSaveGlobalOptions());
-    g.registerLazySingleton<SearchExperiencesByDifficulty>(
-        () => MockSearchExperiencesByDifficulty());
-    g.registerLazySingleton<SearchExperiencesByName>(
-        () => MockSearchExperiencesByName());
-    g.registerLazySingleton<SearchExperiencesByTags>(
-        () => MockSearchExperiencesByTags());
-    g.registerLazySingleton<SearchRepositoryInterface>(
-        () => MockSearchRepository());
-    g.registerLazySingleton<SearchTagsByName>(() => MockSearchTagsByName());
-    g.registerLazySingleton<SearchUsersByName>(() => MockSearchUsersByName());
-    g.registerLazySingleton<SearchUsersByUsername>(
-        () => MockSearchUsersByUsername());
-    g.registerLazySingleton<SendNotification>(() => MockSendNotification());
-    g.registerLazySingleton<TagCoreRepositoryInterface>(
-        () => MockTagRepository());
-    g.registerLazySingleton<TagManagementRepositoryInterface>(
-        () => MockTagManagementRepository());
-    g.registerLazySingleton<UnBlockUser>(() => MockUnBlockUser());
-    g.registerLazySingleton<UnFollowUser>(() => MockUnFollowUser());
   }
 }

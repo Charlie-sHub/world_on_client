@@ -29,18 +29,15 @@ mixin _$ExperienceLogActorEvent {
   Result when<Result extends Object>({
     @required Result dismissExperience(int experienceId),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result dismissExperience(int experienceId),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result dismissExperience(_DismissExperience value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result dismissExperience(_DismissExperience value),
@@ -52,15 +49,14 @@ mixin _$ExperienceLogActorEvent {
 
 abstract class $ExperienceLogActorEventCopyWith<$Res> {
   factory $ExperienceLogActorEventCopyWith(ExperienceLogActorEvent value, $Res Function(ExperienceLogActorEvent) then) = _$ExperienceLogActorEventCopyWithImpl<$Res>;
-
   $Res call({int experienceId});
 }
 
-class _$ExperienceLogActorEventCopyWithImpl<$Res> implements $ExperienceLogActorEventCopyWith<$Res> {
+class _$ExperienceLogActorEventCopyWithImpl<$Res>
+  implements $ExperienceLogActorEventCopyWith<$Res> {
   _$ExperienceLogActorEventCopyWithImpl(this._value, this._then);
 
   final ExperienceLogActorEvent _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceLogActorEvent) _then;
 
@@ -69,20 +65,24 @@ class _$ExperienceLogActorEventCopyWithImpl<$Res> implements $ExperienceLogActor
     Object experienceId = freezed,
   }) {
     return _then(_value.copyWith(
-      experienceId: experienceId == freezed ? _value.experienceId : experienceId as int,
+      experienceId:
+      experienceId == freezed ? _value.experienceId : experienceId as int,
     ));
   }
 }
 
-abstract class _$DismissExperienceCopyWith<$Res> implements $ExperienceLogActorEventCopyWith<$Res> {
-  factory _$DismissExperienceCopyWith(_DismissExperience value, $Res Function(_DismissExperience) then) = __$DismissExperienceCopyWithImpl<$Res>;
-
+abstract class _$DismissExperienceCopyWith<$Res>
+  implements $ExperienceLogActorEventCopyWith<$Res> {
+  factory _$DismissExperienceCopyWith(_DismissExperience value, $Res Function(_DismissExperience) then) =
+  __$DismissExperienceCopyWithImpl<$Res>;
   @override
   $Res call({int experienceId});
 }
 
-class __$DismissExperienceCopyWithImpl<$Res> extends _$ExperienceLogActorEventCopyWithImpl<$Res> implements _$DismissExperienceCopyWith<$Res> {
-  __$DismissExperienceCopyWithImpl(_DismissExperience _value, $Res Function(_DismissExperience) _then) : super(_value, (v) => _then(v as _DismissExperience));
+class __$DismissExperienceCopyWithImpl<$Res> extends _$ExperienceLogActorEventCopyWithImpl<$Res>
+  implements _$DismissExperienceCopyWith<$Res> {
+  __$DismissExperienceCopyWithImpl(_DismissExperience _value, $Res Function(_DismissExperience) _then)
+    : super(_value, (v) => _then(v as _DismissExperience));
 
   @override
   _DismissExperience get _value => super._value as _DismissExperience;
@@ -110,14 +110,20 @@ class _$_DismissExperience implements _DismissExperience {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DismissExperience && (identical(other.experienceId, experienceId) || const DeepCollectionEquality().equals(other.experienceId, experienceId)));
+    return identical(this, other) ||
+      (other is _DismissExperience &&
+        (identical(other.experienceId, experienceId) ||
+          const DeepCollectionEquality()
+            .equals(other.experienceId, experienceId)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceId);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceId);
 
   @override
-  _$DismissExperienceCopyWith<_DismissExperience> get copyWith => __$DismissExperienceCopyWithImpl<_DismissExperience>(this, _$identity);
+  _$DismissExperienceCopyWith<_DismissExperience> get copyWith =>
+    __$DismissExperienceCopyWithImpl<_DismissExperience>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -169,7 +175,6 @@ abstract class _DismissExperience implements ExperienceLogActorEvent {
 
   @override
   int get experienceId;
-
   @override
   _$DismissExperienceCopyWith<_DismissExperience> get copyWith;
 }
@@ -207,7 +212,6 @@ mixin _$ExperienceLogActorState {
     @required Result dismissalSuccess(),
     @required Result dismissalFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
@@ -216,7 +220,6 @@ mixin _$ExperienceLogActorState {
     Result dismissalFailure(Failure<dynamic> failure),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
@@ -224,7 +227,6 @@ mixin _$ExperienceLogActorState {
     @required Result dismissalSuccess(_DismissalSuccess value),
     @required Result dismissalFailure(_DismissalFailure value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
@@ -236,24 +238,29 @@ mixin _$ExperienceLogActorState {
 }
 
 abstract class $ExperienceLogActorStateCopyWith<$Res> {
-  factory $ExperienceLogActorStateCopyWith(ExperienceLogActorState value, $Res Function(ExperienceLogActorState) then) = _$ExperienceLogActorStateCopyWithImpl<$Res>;
+  factory $ExperienceLogActorStateCopyWith(ExperienceLogActorState value,
+    $Res Function(ExperienceLogActorState) then) =
+  _$ExperienceLogActorStateCopyWithImpl<$Res>;
 }
 
-class _$ExperienceLogActorStateCopyWithImpl<$Res> implements $ExperienceLogActorStateCopyWith<$Res> {
+class _$ExperienceLogActorStateCopyWithImpl<$Res>
+  implements $ExperienceLogActorStateCopyWith<$Res> {
   _$ExperienceLogActorStateCopyWithImpl(this._value, this._then);
 
   final ExperienceLogActorState _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceLogActorState) _then;
 }
 
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+  __$InitialCopyWithImpl<$Res>;
 }
 
-class __$InitialCopyWithImpl<$Res> extends _$ExperienceLogActorStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$ExperienceLogActorStateCopyWithImpl<$Res>
+  implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+    : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -343,11 +350,14 @@ abstract class _Initial implements ExperienceLogActorState {
 }
 
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) = __$ActionInProgressCopyWithImpl<$Res>;
+  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) =
+  __$ActionInProgressCopyWithImpl<$Res>;
 }
 
-class __$ActionInProgressCopyWithImpl<$Res> extends _$ExperienceLogActorStateCopyWithImpl<$Res> implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then) : super(_value, (v) => _then(v as _ActionInProgress));
+class __$ActionInProgressCopyWithImpl<$Res> extends _$ExperienceLogActorStateCopyWithImpl<$Res>
+  implements _$ActionInProgressCopyWith<$Res> {
+  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then)
+    : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
   _ActionInProgress get _value => super._value as _ActionInProgress;
@@ -437,11 +447,14 @@ abstract class _ActionInProgress implements ExperienceLogActorState {
 }
 
 abstract class _$DismissalSuccessCopyWith<$Res> {
-  factory _$DismissalSuccessCopyWith(_DismissalSuccess value, $Res Function(_DismissalSuccess) then) = __$DismissalSuccessCopyWithImpl<$Res>;
+  factory _$DismissalSuccessCopyWith(_DismissalSuccess value, $Res Function(_DismissalSuccess) then) =
+  __$DismissalSuccessCopyWithImpl<$Res>;
 }
 
-class __$DismissalSuccessCopyWithImpl<$Res> extends _$ExperienceLogActorStateCopyWithImpl<$Res> implements _$DismissalSuccessCopyWith<$Res> {
-  __$DismissalSuccessCopyWithImpl(_DismissalSuccess _value, $Res Function(_DismissalSuccess) _then) : super(_value, (v) => _then(v as _DismissalSuccess));
+class __$DismissalSuccessCopyWithImpl<$Res> extends _$ExperienceLogActorStateCopyWithImpl<$Res>
+  implements _$DismissalSuccessCopyWith<$Res> {
+  __$DismissalSuccessCopyWithImpl(_DismissalSuccess _value, $Res Function(_DismissalSuccess) _then)
+    : super(_value, (v) => _then(v as _DismissalSuccess));
 
   @override
   _DismissalSuccess get _value => super._value as _DismissalSuccess;
@@ -531,15 +544,17 @@ abstract class _DismissalSuccess implements ExperienceLogActorState {
 }
 
 abstract class _$DismissalFailureCopyWith<$Res> {
-  factory _$DismissalFailureCopyWith(_DismissalFailure value, $Res Function(_DismissalFailure) then) = __$DismissalFailureCopyWithImpl<$Res>;
-
+  factory _$DismissalFailureCopyWith(_DismissalFailure value, $Res Function(_DismissalFailure) then) =
+  __$DismissalFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
-class __$DismissalFailureCopyWithImpl<$Res> extends _$ExperienceLogActorStateCopyWithImpl<$Res> implements _$DismissalFailureCopyWith<$Res> {
-  __$DismissalFailureCopyWithImpl(_DismissalFailure _value, $Res Function(_DismissalFailure) _then) : super(_value, (v) => _then(v as _DismissalFailure));
+class __$DismissalFailureCopyWithImpl<$Res> extends _$ExperienceLogActorStateCopyWithImpl<$Res>
+  implements _$DismissalFailureCopyWith<$Res> {
+  __$DismissalFailureCopyWithImpl(_DismissalFailure _value, $Res Function(_DismissalFailure) _then)
+    : super(_value, (v) => _then(v as _DismissalFailure));
 
   @override
   _DismissalFailure get _value => super._value as _DismissalFailure;
@@ -577,14 +592,19 @@ class _$_DismissalFailure implements _DismissalFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DismissalFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) ||
+      (other is _DismissalFailure &&
+        (identical(other.failure, failure) ||
+          const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
-  _$DismissalFailureCopyWith<_DismissalFailure> get copyWith => __$DismissalFailureCopyWithImpl<_DismissalFailure>(this, _$identity);
+  _$DismissalFailureCopyWith<_DismissalFailure> get copyWith =>
+    __$DismissalFailureCopyWithImpl<_DismissalFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -650,9 +670,9 @@ class _$_DismissalFailure implements _DismissalFailure {
 }
 
 abstract class _DismissalFailure implements ExperienceLogActorState {
-  const factory _DismissalFailure(Failure<dynamic> failure) = _$_DismissalFailure;
+  const factory _DismissalFailure(Failure<dynamic> failure) =
+  _$_DismissalFailure;
 
   Failure<dynamic> get failure;
-
   _$DismissalFailureCopyWith<_DismissalFailure> get copyWith;
 }

@@ -49,7 +49,8 @@ class _$CoordinatesCopyWithImpl<$Res> implements $CoordinatesCopyWith<$Res> {
   }) {
     return _then(_value.copyWith(
       latitude: latitude == freezed ? _value.latitude : latitude as Latitude,
-      longitude: longitude == freezed ? _value.longitude : longitude as Longitude,
+      longitude:
+      longitude == freezed ? _value.longitude : longitude as Longitude,
     ));
   }
 }

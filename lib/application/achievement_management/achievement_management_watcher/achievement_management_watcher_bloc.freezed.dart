@@ -46,7 +46,8 @@ abstract class $AchievementManagementWatcherEventCopyWith<$Res> {
       _$AchievementManagementWatcherEventCopyWithImpl<$Res>;
 }
 
-class _$AchievementManagementWatcherEventCopyWithImpl<$Res> implements $AchievementManagementWatcherEventCopyWith<$Res> {
+class _$AchievementManagementWatcherEventCopyWithImpl<$Res>
+  implements $AchievementManagementWatcherEventCopyWith<$Res> {
   _$AchievementManagementWatcherEventCopyWithImpl(this._value, this._then);
 
   final AchievementManagementWatcherEvent _value;

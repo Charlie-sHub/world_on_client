@@ -12,8 +12,8 @@ T _$identity<T>(T value) => value;
 class _$ExperienceManagementFormEventTearOff {
   const _$ExperienceManagementFormEventTearOff();
 
-  _Initialized initialized(Option<Experience> experienceOption) {
-    return _Initialized(
+  _Initialize initialize(Option<Experience> experienceOption) {
+    return _Initialize(
       experienceOption,
     );
   }
@@ -43,19 +43,19 @@ class _$ExperienceManagementFormEventTearOff {
     );
   }
 
-  _ObjectivesChange objectivesChange(List<PrimitiveObjective> objectives) {
+  _ObjectivesChange objectivesChange(KtSet<PrimitiveObjective> objectives) {
     return _ObjectivesChange(
       objectives,
     );
   }
 
-  _RewardsChange rewardsChange(List<PrimitiveReward> rewards) {
+  _RewardsChange rewardsChange(KtSet<PrimitiveReward> rewards) {
     return _RewardsChange(
       rewards,
     );
   }
 
-  _TagsChange tagsChange(Set<Tag> tags) {
+  _TagsChange tagsChange(KtSet<Tag> tags) {
     return _TagsChange(
       tags,
     );
@@ -72,34 +72,32 @@ const $ExperienceManagementFormEvent = _$ExperienceManagementFormEventTearOff();
 mixin _$ExperienceManagementFormEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(Option<Experience> experienceOption),
+    @required Result initialize(Option<Experience> experienceOption),
     @required Result nameChange(String name),
     @required Result descriptionChange(String description),
     @required Result coordinatesChange(double latitude, double longitude),
     @required Result difficultyChange(int difficulty),
-    @required Result objectivesChange(List<PrimitiveObjective> objectives),
-    @required Result rewardsChange(List<PrimitiveReward> rewards),
-    @required Result tagsChange(Set<Tag> tags),
+    @required Result objectivesChange(KtSet<PrimitiveObjective> objectives),
+    @required Result rewardsChange(KtSet<PrimitiveReward> rewards),
+    @required Result tagsChange(KtSet<Tag> tags),
     @required Result submit(),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Experience> experienceOption),
+    Result initialize(Option<Experience> experienceOption),
     Result nameChange(String name),
     Result descriptionChange(String description),
     Result coordinatesChange(double latitude, double longitude),
     Result difficultyChange(int difficulty),
-    Result objectivesChange(List<PrimitiveObjective> objectives),
-    Result rewardsChange(List<PrimitiveReward> rewards),
-    Result tagsChange(Set<Tag> tags),
+    Result objectivesChange(KtSet<PrimitiveObjective> objectives),
+    Result rewardsChange(KtSet<PrimitiveReward> rewards),
+    Result tagsChange(KtSet<Tag> tags),
     Result submit(),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
+    @required Result initialize(_Initialize value),
     @required Result nameChange(_NameChange value),
     @required Result descriptionChange(_DescriptionChange value),
     @required Result coordinatesChange(_CoordinatesChange value),
@@ -109,10 +107,9 @@ mixin _$ExperienceManagementFormEvent {
     @required Result tagsChange(_TagsChange value),
     @required Result submit(_Submit value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
+    Result initialize(_Initialize value),
     Result nameChange(_NameChange value),
     Result descriptionChange(_DescriptionChange value),
     Result coordinatesChange(_CoordinatesChange value),
@@ -133,70 +130,79 @@ class _$ExperienceManagementFormEventCopyWithImpl<$Res> implements $ExperienceMa
   _$ExperienceManagementFormEventCopyWithImpl(this._value, this._then);
 
   final ExperienceManagementFormEvent _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceManagementFormEvent) _then;
 }
 
-abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
-
+abstract class _$InitializeCopyWith<$Res> {
+  factory _$InitializeCopyWith(_Initialize value, $Res Function(_Initialize) then) =
+  __$InitializeCopyWithImpl<$Res>;
   $Res call({Option<Experience> experienceOption});
 }
 
-class __$InitializedCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
+class __$InitializeCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res>
+  implements _$InitializeCopyWith<$Res> {
+  __$InitializeCopyWithImpl(_Initialize _value, $Res Function(_Initialize) _then)
+    : super(_value, (v) => _then(v as _Initialize));
 
   @override
-  _Initialized get _value => super._value as _Initialized;
+  _Initialize get _value => super._value as _Initialize;
 
   @override
   $Res call({
     Object experienceOption = freezed,
   }) {
-    return _then(_Initialized(
-      experienceOption == freezed ? _value.experienceOption : experienceOption as Option<Experience>,
+    return _then(_Initialize(
+      experienceOption == freezed
+        ? _value.experienceOption
+        : experienceOption as Option<Experience>,
     ));
   }
 }
 
-class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.experienceOption) : assert(experienceOption != null);
+class _$_Initialize implements _Initialize {
+  const _$_Initialize(this.experienceOption) : assert(experienceOption != null);
 
   @override
   final Option<Experience> experienceOption;
 
   @override
   String toString() {
-    return 'ExperienceManagementFormEvent.initialized(experienceOption: $experienceOption)';
+    return 'ExperienceManagementFormEvent.initialize(experienceOption: $experienceOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized && (identical(other.experienceOption, experienceOption) || const DeepCollectionEquality().equals(other.experienceOption, experienceOption)));
+      (other is _Initialize &&
+        (identical(other.experienceOption, experienceOption) ||
+          const DeepCollectionEquality()
+            .equals(other.experienceOption, experienceOption)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceOption);
+  int get hashCode =>
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(experienceOption);
 
   @override
-  _$InitializedCopyWith<_Initialized> get copyWith => __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+  _$InitializeCopyWith<_Initialize> get copyWith =>
+    __$InitializeCopyWithImpl<_Initialize>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(Option<Experience> experienceOption),
+    @required Result initialize(Option<Experience> experienceOption),
     @required Result nameChange(String name),
     @required Result descriptionChange(String description),
     @required Result coordinatesChange(double latitude, double longitude),
     @required Result difficultyChange(int difficulty),
-    @required Result objectivesChange(List<PrimitiveObjective> objectives),
-    @required Result rewardsChange(List<PrimitiveReward> rewards),
-    @required Result tagsChange(Set<Tag> tags),
+    @required Result objectivesChange(KtSet<PrimitiveObjective> objectives),
+    @required Result rewardsChange(KtSet<PrimitiveReward> rewards),
+    @required Result tagsChange(KtSet<Tag> tags),
     @required Result submit(),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(coordinatesChange != null);
@@ -205,26 +211,26 @@ class _$_Initialized implements _Initialized {
     assert(rewardsChange != null);
     assert(tagsChange != null);
     assert(submit != null);
-    return initialized(experienceOption);
+    return initialize(experienceOption);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Experience> experienceOption),
+    Result initialize(Option<Experience> experienceOption),
     Result nameChange(String name),
     Result descriptionChange(String description),
     Result coordinatesChange(double latitude, double longitude),
     Result difficultyChange(int difficulty),
-    Result objectivesChange(List<PrimitiveObjective> objectives),
-    Result rewardsChange(List<PrimitiveReward> rewards),
-    Result tagsChange(Set<Tag> tags),
+    Result objectivesChange(KtSet<PrimitiveObjective> objectives),
+    Result rewardsChange(KtSet<PrimitiveReward> rewards),
+    Result tagsChange(KtSet<Tag> tags),
     Result submit(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (initialized != null) {
-      return initialized(experienceOption);
+    if (initialize != null) {
+      return initialize(experienceOption);
     }
     return orElse();
   }
@@ -232,7 +238,7 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
+    @required Result initialize(_Initialize value),
     @required Result nameChange(_NameChange value),
     @required Result descriptionChange(_DescriptionChange value),
     @required Result coordinatesChange(_CoordinatesChange value),
@@ -242,7 +248,7 @@ class _$_Initialized implements _Initialized {
     @required Result tagsChange(_TagsChange value),
     @required Result submit(_Submit value),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(coordinatesChange != null);
@@ -251,13 +257,13 @@ class _$_Initialized implements _Initialized {
     assert(rewardsChange != null);
     assert(tagsChange != null);
     assert(submit != null);
-    return initialized(this);
+    return initialize(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
+    Result initialize(_Initialize value),
     Result nameChange(_NameChange value),
     Result descriptionChange(_DescriptionChange value),
     Result coordinatesChange(_CoordinatesChange value),
@@ -269,29 +275,32 @@ class _$_Initialized implements _Initialized {
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (initialized != null) {
-      return initialized(this);
+    if (initialize != null) {
+      return initialize(this);
     }
     return orElse();
   }
 }
 
-abstract class _Initialized implements ExperienceManagementFormEvent {
-  const factory _Initialized(Option<Experience> experienceOption) = _$_Initialized;
+abstract class _Initialize implements ExperienceManagementFormEvent {
+  const factory _Initialize(Option<Experience> experienceOption) =
+  _$_Initialize;
 
   Option<Experience> get experienceOption;
-
-  _$InitializedCopyWith<_Initialized> get copyWith;
+  
+  _$InitializeCopyWith<_Initialize> get copyWith;
 }
 
 abstract class _$NameChangeCopyWith<$Res> {
-  factory _$NameChangeCopyWith(_NameChange value, $Res Function(_NameChange) then) = __$NameChangeCopyWithImpl<$Res>;
-
+  factory _$NameChangeCopyWith(_NameChange value, $Res Function(_NameChange) then) =
+  __$NameChangeCopyWithImpl<$Res>;
   $Res call({String name});
 }
 
-class __$NameChangeCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res> implements _$NameChangeCopyWith<$Res> {
-  __$NameChangeCopyWithImpl(_NameChange _value, $Res Function(_NameChange) _then) : super(_value, (v) => _then(v as _NameChange));
+class __$NameChangeCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res>
+  implements _$NameChangeCopyWith<$Res> {
+  __$NameChangeCopyWithImpl(_NameChange _value, $Res Function(_NameChange) _then)
+    : super(_value, (v) => _then(v as _NameChange));
 
   @override
   _NameChange get _value => super._value as _NameChange;
@@ -319,29 +328,34 @@ class _$_NameChange implements _NameChange {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NameChange && (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)));
+    return identical(this, other) ||
+      (other is _NameChange &&
+        (identical(other.name, name) ||
+          const DeepCollectionEquality().equals(other.name, name)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
 
   @override
-  _$NameChangeCopyWith<_NameChange> get copyWith => __$NameChangeCopyWithImpl<_NameChange>(this, _$identity);
+  _$NameChangeCopyWith<_NameChange> get copyWith =>
+    __$NameChangeCopyWithImpl<_NameChange>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(Option<Experience> experienceOption),
+    @required Result initialize(Option<Experience> experienceOption),
     @required Result nameChange(String name),
     @required Result descriptionChange(String description),
     @required Result coordinatesChange(double latitude, double longitude),
     @required Result difficultyChange(int difficulty),
-    @required Result objectivesChange(List<PrimitiveObjective> objectives),
-    @required Result rewardsChange(List<PrimitiveReward> rewards),
-    @required Result tagsChange(Set<Tag> tags),
+    @required Result objectivesChange(KtSet<PrimitiveObjective> objectives),
+    @required Result rewardsChange(KtSet<PrimitiveReward> rewards),
+    @required Result tagsChange(KtSet<Tag> tags),
     @required Result submit(),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(coordinatesChange != null);
@@ -356,14 +370,14 @@ class _$_NameChange implements _NameChange {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Experience> experienceOption),
+    Result initialize(Option<Experience> experienceOption),
     Result nameChange(String name),
     Result descriptionChange(String description),
     Result coordinatesChange(double latitude, double longitude),
     Result difficultyChange(int difficulty),
-    Result objectivesChange(List<PrimitiveObjective> objectives),
-    Result rewardsChange(List<PrimitiveReward> rewards),
-    Result tagsChange(Set<Tag> tags),
+    Result objectivesChange(KtSet<PrimitiveObjective> objectives),
+    Result rewardsChange(KtSet<PrimitiveReward> rewards),
+    Result tagsChange(KtSet<Tag> tags),
     Result submit(),
     @required Result orElse(),
   }) {
@@ -377,7 +391,7 @@ class _$_NameChange implements _NameChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
+    @required Result initialize(_Initialize value),
     @required Result nameChange(_NameChange value),
     @required Result descriptionChange(_DescriptionChange value),
     @required Result coordinatesChange(_CoordinatesChange value),
@@ -387,7 +401,7 @@ class _$_NameChange implements _NameChange {
     @required Result tagsChange(_TagsChange value),
     @required Result submit(_Submit value),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(coordinatesChange != null);
@@ -402,7 +416,7 @@ class _$_NameChange implements _NameChange {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
+    Result initialize(_Initialize value),
     Result nameChange(_NameChange value),
     Result descriptionChange(_DescriptionChange value),
     Result coordinatesChange(_CoordinatesChange value),
@@ -425,18 +439,19 @@ abstract class _NameChange implements ExperienceManagementFormEvent {
   const factory _NameChange(String name) = _$_NameChange;
 
   String get name;
-
   _$NameChangeCopyWith<_NameChange> get copyWith;
 }
 
 abstract class _$DescriptionChangeCopyWith<$Res> {
-  factory _$DescriptionChangeCopyWith(_DescriptionChange value, $Res Function(_DescriptionChange) then) = __$DescriptionChangeCopyWithImpl<$Res>;
-
+  factory _$DescriptionChangeCopyWith(_DescriptionChange value, $Res Function(_DescriptionChange) then) =
+  __$DescriptionChangeCopyWithImpl<$Res>;
   $Res call({String description});
 }
 
-class __$DescriptionChangeCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res> implements _$DescriptionChangeCopyWith<$Res> {
-  __$DescriptionChangeCopyWithImpl(_DescriptionChange _value, $Res Function(_DescriptionChange) _then) : super(_value, (v) => _then(v as _DescriptionChange));
+class __$DescriptionChangeCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res>
+  implements _$DescriptionChangeCopyWith<$Res> {
+  __$DescriptionChangeCopyWithImpl(_DescriptionChange _value, $Res Function(_DescriptionChange) _then)
+    : super(_value, (v) => _then(v as _DescriptionChange));
 
   @override
   _DescriptionChange get _value => super._value as _DescriptionChange;
@@ -464,29 +479,35 @@ class _$_DescriptionChange implements _DescriptionChange {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DescriptionChange && (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)));
+    return identical(this, other) ||
+      (other is _DescriptionChange &&
+        (identical(other.description, description) ||
+          const DeepCollectionEquality()
+            .equals(other.description, description)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
 
   @override
-  _$DescriptionChangeCopyWith<_DescriptionChange> get copyWith => __$DescriptionChangeCopyWithImpl<_DescriptionChange>(this, _$identity);
+  _$DescriptionChangeCopyWith<_DescriptionChange> get copyWith =>
+    __$DescriptionChangeCopyWithImpl<_DescriptionChange>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(Option<Experience> experienceOption),
+    @required Result initialize(Option<Experience> experienceOption),
     @required Result nameChange(String name),
     @required Result descriptionChange(String description),
     @required Result coordinatesChange(double latitude, double longitude),
     @required Result difficultyChange(int difficulty),
-    @required Result objectivesChange(List<PrimitiveObjective> objectives),
-    @required Result rewardsChange(List<PrimitiveReward> rewards),
-    @required Result tagsChange(Set<Tag> tags),
+    @required Result objectivesChange(KtSet<PrimitiveObjective> objectives),
+    @required Result rewardsChange(KtSet<PrimitiveReward> rewards),
+    @required Result tagsChange(KtSet<Tag> tags),
     @required Result submit(),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(coordinatesChange != null);
@@ -501,14 +522,14 @@ class _$_DescriptionChange implements _DescriptionChange {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Experience> experienceOption),
+    Result initialize(Option<Experience> experienceOption),
     Result nameChange(String name),
     Result descriptionChange(String description),
     Result coordinatesChange(double latitude, double longitude),
     Result difficultyChange(int difficulty),
-    Result objectivesChange(List<PrimitiveObjective> objectives),
-    Result rewardsChange(List<PrimitiveReward> rewards),
-    Result tagsChange(Set<Tag> tags),
+    Result objectivesChange(KtSet<PrimitiveObjective> objectives),
+    Result rewardsChange(KtSet<PrimitiveReward> rewards),
+    Result tagsChange(KtSet<Tag> tags),
     Result submit(),
     @required Result orElse(),
   }) {
@@ -522,7 +543,7 @@ class _$_DescriptionChange implements _DescriptionChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
+    @required Result initialize(_Initialize value),
     @required Result nameChange(_NameChange value),
     @required Result descriptionChange(_DescriptionChange value),
     @required Result coordinatesChange(_CoordinatesChange value),
@@ -532,7 +553,7 @@ class _$_DescriptionChange implements _DescriptionChange {
     @required Result tagsChange(_TagsChange value),
     @required Result submit(_Submit value),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(coordinatesChange != null);
@@ -547,7 +568,7 @@ class _$_DescriptionChange implements _DescriptionChange {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
+    Result initialize(_Initialize value),
     Result nameChange(_NameChange value),
     Result descriptionChange(_DescriptionChange value),
     Result coordinatesChange(_CoordinatesChange value),
@@ -570,18 +591,19 @@ abstract class _DescriptionChange implements ExperienceManagementFormEvent {
   const factory _DescriptionChange(String description) = _$_DescriptionChange;
 
   String get description;
-
   _$DescriptionChangeCopyWith<_DescriptionChange> get copyWith;
 }
 
 abstract class _$CoordinatesChangeCopyWith<$Res> {
-  factory _$CoordinatesChangeCopyWith(_CoordinatesChange value, $Res Function(_CoordinatesChange) then) = __$CoordinatesChangeCopyWithImpl<$Res>;
-
+  factory _$CoordinatesChangeCopyWith(_CoordinatesChange value, $Res Function(_CoordinatesChange) then) =
+  __$CoordinatesChangeCopyWithImpl<$Res>;
   $Res call({double latitude, double longitude});
 }
 
-class __$CoordinatesChangeCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res> implements _$CoordinatesChangeCopyWith<$Res> {
-  __$CoordinatesChangeCopyWithImpl(_CoordinatesChange _value, $Res Function(_CoordinatesChange) _then) : super(_value, (v) => _then(v as _CoordinatesChange));
+class __$CoordinatesChangeCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res>
+  implements _$CoordinatesChangeCopyWith<$Res> {
+  __$CoordinatesChangeCopyWithImpl(_CoordinatesChange _value, $Res Function(_CoordinatesChange) _then)
+    : super(_value, (v) => _then(v as _CoordinatesChange));
 
   @override
   _CoordinatesChange get _value => super._value as _CoordinatesChange;
@@ -617,30 +639,38 @@ class _$_CoordinatesChange implements _CoordinatesChange {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CoordinatesChange &&
-            (identical(other.latitude, latitude) || const DeepCollectionEquality().equals(other.latitude, latitude)) &&
-            (identical(other.longitude, longitude) || const DeepCollectionEquality().equals(other.longitude, longitude)));
+          (identical(other.latitude, latitude) ||
+            const DeepCollectionEquality()
+              .equals(other.latitude, latitude)) &&
+          (identical(other.longitude, longitude) ||
+            const DeepCollectionEquality()
+              .equals(other.longitude, longitude)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(latitude) ^ const DeepCollectionEquality().hash(longitude);
+  int get hashCode =>
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(latitude) ^
+    const DeepCollectionEquality().hash(longitude);
 
   @override
-  _$CoordinatesChangeCopyWith<_CoordinatesChange> get copyWith => __$CoordinatesChangeCopyWithImpl<_CoordinatesChange>(this, _$identity);
+  _$CoordinatesChangeCopyWith<_CoordinatesChange> get copyWith =>
+    __$CoordinatesChangeCopyWithImpl<_CoordinatesChange>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(Option<Experience> experienceOption),
+    @required Result initialize(Option<Experience> experienceOption),
     @required Result nameChange(String name),
     @required Result descriptionChange(String description),
     @required Result coordinatesChange(double latitude, double longitude),
     @required Result difficultyChange(int difficulty),
-    @required Result objectivesChange(List<PrimitiveObjective> objectives),
-    @required Result rewardsChange(List<PrimitiveReward> rewards),
-    @required Result tagsChange(Set<Tag> tags),
+    @required Result objectivesChange(KtSet<PrimitiveObjective> objectives),
+    @required Result rewardsChange(KtSet<PrimitiveReward> rewards),
+    @required Result tagsChange(KtSet<Tag> tags),
     @required Result submit(),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(coordinatesChange != null);
@@ -655,14 +685,14 @@ class _$_CoordinatesChange implements _CoordinatesChange {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Experience> experienceOption),
+    Result initialize(Option<Experience> experienceOption),
     Result nameChange(String name),
     Result descriptionChange(String description),
     Result coordinatesChange(double latitude, double longitude),
     Result difficultyChange(int difficulty),
-    Result objectivesChange(List<PrimitiveObjective> objectives),
-    Result rewardsChange(List<PrimitiveReward> rewards),
-    Result tagsChange(Set<Tag> tags),
+    Result objectivesChange(KtSet<PrimitiveObjective> objectives),
+    Result rewardsChange(KtSet<PrimitiveReward> rewards),
+    Result tagsChange(KtSet<Tag> tags),
     Result submit(),
     @required Result orElse(),
   }) {
@@ -676,7 +706,7 @@ class _$_CoordinatesChange implements _CoordinatesChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
+    @required Result initialize(_Initialize value),
     @required Result nameChange(_NameChange value),
     @required Result descriptionChange(_DescriptionChange value),
     @required Result coordinatesChange(_CoordinatesChange value),
@@ -686,7 +716,7 @@ class _$_CoordinatesChange implements _CoordinatesChange {
     @required Result tagsChange(_TagsChange value),
     @required Result submit(_Submit value),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(coordinatesChange != null);
@@ -701,7 +731,7 @@ class _$_CoordinatesChange implements _CoordinatesChange {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
+    Result initialize(_Initialize value),
     Result nameChange(_NameChange value),
     Result descriptionChange(_DescriptionChange value),
     Result coordinatesChange(_CoordinatesChange value),
@@ -721,23 +751,24 @@ class _$_CoordinatesChange implements _CoordinatesChange {
 }
 
 abstract class _CoordinatesChange implements ExperienceManagementFormEvent {
-  const factory _CoordinatesChange({@required double latitude, @required double longitude}) = _$_CoordinatesChange;
+  const factory _CoordinatesChange({@required double latitude,
+    @required double longitude}) = _$_CoordinatesChange;
 
   double get latitude;
-
   double get longitude;
-
   _$CoordinatesChangeCopyWith<_CoordinatesChange> get copyWith;
 }
 
 abstract class _$DifficultyChangeCopyWith<$Res> {
-  factory _$DifficultyChangeCopyWith(_DifficultyChange value, $Res Function(_DifficultyChange) then) = __$DifficultyChangeCopyWithImpl<$Res>;
-
+  factory _$DifficultyChangeCopyWith(_DifficultyChange value, $Res Function(_DifficultyChange) then) =
+  __$DifficultyChangeCopyWithImpl<$Res>;
   $Res call({int difficulty});
 }
 
-class __$DifficultyChangeCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res> implements _$DifficultyChangeCopyWith<$Res> {
-  __$DifficultyChangeCopyWithImpl(_DifficultyChange _value, $Res Function(_DifficultyChange) _then) : super(_value, (v) => _then(v as _DifficultyChange));
+class __$DifficultyChangeCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res>
+  implements _$DifficultyChangeCopyWith<$Res> {
+  __$DifficultyChangeCopyWithImpl(_DifficultyChange _value, $Res Function(_DifficultyChange) _then)
+    : super(_value, (v) => _then(v as _DifficultyChange));
 
   @override
   _DifficultyChange get _value => super._value as _DifficultyChange;
@@ -765,29 +796,35 @@ class _$_DifficultyChange implements _DifficultyChange {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DifficultyChange && (identical(other.difficulty, difficulty) || const DeepCollectionEquality().equals(other.difficulty, difficulty)));
+    return identical(this, other) ||
+      (other is _DifficultyChange &&
+        (identical(other.difficulty, difficulty) ||
+          const DeepCollectionEquality()
+            .equals(other.difficulty, difficulty)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(difficulty);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(difficulty);
 
   @override
-  _$DifficultyChangeCopyWith<_DifficultyChange> get copyWith => __$DifficultyChangeCopyWithImpl<_DifficultyChange>(this, _$identity);
+  _$DifficultyChangeCopyWith<_DifficultyChange> get copyWith =>
+    __$DifficultyChangeCopyWithImpl<_DifficultyChange>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(Option<Experience> experienceOption),
+    @required Result initialize(Option<Experience> experienceOption),
     @required Result nameChange(String name),
     @required Result descriptionChange(String description),
     @required Result coordinatesChange(double latitude, double longitude),
     @required Result difficultyChange(int difficulty),
-    @required Result objectivesChange(List<PrimitiveObjective> objectives),
-    @required Result rewardsChange(List<PrimitiveReward> rewards),
-    @required Result tagsChange(Set<Tag> tags),
+    @required Result objectivesChange(KtSet<PrimitiveObjective> objectives),
+    @required Result rewardsChange(KtSet<PrimitiveReward> rewards),
+    @required Result tagsChange(KtSet<Tag> tags),
     @required Result submit(),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(coordinatesChange != null);
@@ -802,14 +839,14 @@ class _$_DifficultyChange implements _DifficultyChange {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Experience> experienceOption),
+    Result initialize(Option<Experience> experienceOption),
     Result nameChange(String name),
     Result descriptionChange(String description),
     Result coordinatesChange(double latitude, double longitude),
     Result difficultyChange(int difficulty),
-    Result objectivesChange(List<PrimitiveObjective> objectives),
-    Result rewardsChange(List<PrimitiveReward> rewards),
-    Result tagsChange(Set<Tag> tags),
+    Result objectivesChange(KtSet<PrimitiveObjective> objectives),
+    Result rewardsChange(KtSet<PrimitiveReward> rewards),
+    Result tagsChange(KtSet<Tag> tags),
     Result submit(),
     @required Result orElse(),
   }) {
@@ -823,7 +860,7 @@ class _$_DifficultyChange implements _DifficultyChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
+    @required Result initialize(_Initialize value),
     @required Result nameChange(_NameChange value),
     @required Result descriptionChange(_DescriptionChange value),
     @required Result coordinatesChange(_CoordinatesChange value),
@@ -833,7 +870,7 @@ class _$_DifficultyChange implements _DifficultyChange {
     @required Result tagsChange(_TagsChange value),
     @required Result submit(_Submit value),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(coordinatesChange != null);
@@ -848,7 +885,7 @@ class _$_DifficultyChange implements _DifficultyChange {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
+    Result initialize(_Initialize value),
     Result nameChange(_NameChange value),
     Result descriptionChange(_DescriptionChange value),
     Result coordinatesChange(_CoordinatesChange value),
@@ -871,18 +908,20 @@ abstract class _DifficultyChange implements ExperienceManagementFormEvent {
   const factory _DifficultyChange(int difficulty) = _$_DifficultyChange;
 
   int get difficulty;
-
   _$DifficultyChangeCopyWith<_DifficultyChange> get copyWith;
 }
 
 abstract class _$ObjectivesChangeCopyWith<$Res> {
-  factory _$ObjectivesChangeCopyWith(_ObjectivesChange value, $Res Function(_ObjectivesChange) then) = __$ObjectivesChangeCopyWithImpl<$Res>;
-
-  $Res call({List<PrimitiveObjective> objectives});
+  factory _$ObjectivesChangeCopyWith(_ObjectivesChange value, $Res Function(_ObjectivesChange) then) =
+  __$ObjectivesChangeCopyWithImpl<$Res>;
+  
+  $Res call({KtSet<PrimitiveObjective> objectives});
 }
 
-class __$ObjectivesChangeCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res> implements _$ObjectivesChangeCopyWith<$Res> {
-  __$ObjectivesChangeCopyWithImpl(_ObjectivesChange _value, $Res Function(_ObjectivesChange) _then) : super(_value, (v) => _then(v as _ObjectivesChange));
+class __$ObjectivesChangeCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res>
+  implements _$ObjectivesChangeCopyWith<$Res> {
+  __$ObjectivesChangeCopyWithImpl(_ObjectivesChange _value, $Res Function(_ObjectivesChange) _then)
+    : super(_value, (v) => _then(v as _ObjectivesChange));
 
   @override
   _ObjectivesChange get _value => super._value as _ObjectivesChange;
@@ -892,7 +931,9 @@ class __$ObjectivesChangeCopyWithImpl<$Res> extends _$ExperienceManagementFormEv
     Object objectives = freezed,
   }) {
     return _then(_ObjectivesChange(
-      objectives == freezed ? _value.objectives : objectives as List<PrimitiveObjective>,
+      objectives == freezed
+        ? _value.objectives
+        : objectives as KtSet<PrimitiveObjective>,
     ));
   }
 }
@@ -901,7 +942,7 @@ class _$_ObjectivesChange implements _ObjectivesChange {
   const _$_ObjectivesChange(this.objectives) : assert(objectives != null);
 
   @override
-  final List<PrimitiveObjective> objectives;
+  final KtSet<PrimitiveObjective> objectives;
 
   @override
   String toString() {
@@ -910,29 +951,35 @@ class _$_ObjectivesChange implements _ObjectivesChange {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ObjectivesChange && (identical(other.objectives, objectives) || const DeepCollectionEquality().equals(other.objectives, objectives)));
+    return identical(this, other) ||
+      (other is _ObjectivesChange &&
+        (identical(other.objectives, objectives) ||
+          const DeepCollectionEquality()
+            .equals(other.objectives, objectives)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectives);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectives);
 
   @override
-  _$ObjectivesChangeCopyWith<_ObjectivesChange> get copyWith => __$ObjectivesChangeCopyWithImpl<_ObjectivesChange>(this, _$identity);
+  _$ObjectivesChangeCopyWith<_ObjectivesChange> get copyWith =>
+    __$ObjectivesChangeCopyWithImpl<_ObjectivesChange>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(Option<Experience> experienceOption),
+    @required Result initialize(Option<Experience> experienceOption),
     @required Result nameChange(String name),
     @required Result descriptionChange(String description),
     @required Result coordinatesChange(double latitude, double longitude),
     @required Result difficultyChange(int difficulty),
-    @required Result objectivesChange(List<PrimitiveObjective> objectives),
-    @required Result rewardsChange(List<PrimitiveReward> rewards),
-    @required Result tagsChange(Set<Tag> tags),
+    @required Result objectivesChange(KtSet<PrimitiveObjective> objectives),
+    @required Result rewardsChange(KtSet<PrimitiveReward> rewards),
+    @required Result tagsChange(KtSet<Tag> tags),
     @required Result submit(),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(coordinatesChange != null);
@@ -947,14 +994,14 @@ class _$_ObjectivesChange implements _ObjectivesChange {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Experience> experienceOption),
+    Result initialize(Option<Experience> experienceOption),
     Result nameChange(String name),
     Result descriptionChange(String description),
     Result coordinatesChange(double latitude, double longitude),
     Result difficultyChange(int difficulty),
-    Result objectivesChange(List<PrimitiveObjective> objectives),
-    Result rewardsChange(List<PrimitiveReward> rewards),
-    Result tagsChange(Set<Tag> tags),
+    Result objectivesChange(KtSet<PrimitiveObjective> objectives),
+    Result rewardsChange(KtSet<PrimitiveReward> rewards),
+    Result tagsChange(KtSet<Tag> tags),
     Result submit(),
     @required Result orElse(),
   }) {
@@ -968,7 +1015,7 @@ class _$_ObjectivesChange implements _ObjectivesChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
+    @required Result initialize(_Initialize value),
     @required Result nameChange(_NameChange value),
     @required Result descriptionChange(_DescriptionChange value),
     @required Result coordinatesChange(_CoordinatesChange value),
@@ -978,7 +1025,7 @@ class _$_ObjectivesChange implements _ObjectivesChange {
     @required Result tagsChange(_TagsChange value),
     @required Result submit(_Submit value),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(coordinatesChange != null);
@@ -993,7 +1040,7 @@ class _$_ObjectivesChange implements _ObjectivesChange {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
+    Result initialize(_Initialize value),
     Result nameChange(_NameChange value),
     Result descriptionChange(_DescriptionChange value),
     Result coordinatesChange(_CoordinatesChange value),
@@ -1013,21 +1060,24 @@ class _$_ObjectivesChange implements _ObjectivesChange {
 }
 
 abstract class _ObjectivesChange implements ExperienceManagementFormEvent {
-  const factory _ObjectivesChange(List<PrimitiveObjective> objectives) = _$_ObjectivesChange;
-
-  List<PrimitiveObjective> get objectives;
-
+  const factory _ObjectivesChange(KtSet<PrimitiveObjective> objectives) =
+  _$_ObjectivesChange;
+  
+  KtSet<PrimitiveObjective> get objectives;
   _$ObjectivesChangeCopyWith<_ObjectivesChange> get copyWith;
 }
 
 abstract class _$RewardsChangeCopyWith<$Res> {
-  factory _$RewardsChangeCopyWith(_RewardsChange value, $Res Function(_RewardsChange) then) = __$RewardsChangeCopyWithImpl<$Res>;
-
-  $Res call({List<PrimitiveReward> rewards});
+  factory _$RewardsChangeCopyWith(_RewardsChange value, $Res Function(_RewardsChange) then) =
+  __$RewardsChangeCopyWithImpl<$Res>;
+  
+  $Res call({KtSet<PrimitiveReward> rewards});
 }
 
-class __$RewardsChangeCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res> implements _$RewardsChangeCopyWith<$Res> {
-  __$RewardsChangeCopyWithImpl(_RewardsChange _value, $Res Function(_RewardsChange) _then) : super(_value, (v) => _then(v as _RewardsChange));
+class __$RewardsChangeCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res>
+  implements _$RewardsChangeCopyWith<$Res> {
+  __$RewardsChangeCopyWithImpl(_RewardsChange _value, $Res Function(_RewardsChange) _then)
+    : super(_value, (v) => _then(v as _RewardsChange));
 
   @override
   _RewardsChange get _value => super._value as _RewardsChange;
@@ -1037,7 +1087,7 @@ class __$RewardsChangeCopyWithImpl<$Res> extends _$ExperienceManagementFormEvent
     Object rewards = freezed,
   }) {
     return _then(_RewardsChange(
-      rewards == freezed ? _value.rewards : rewards as List<PrimitiveReward>,
+      rewards == freezed ? _value.rewards : rewards as KtSet<PrimitiveReward>,
     ));
   }
 }
@@ -1046,7 +1096,7 @@ class _$_RewardsChange implements _RewardsChange {
   const _$_RewardsChange(this.rewards) : assert(rewards != null);
 
   @override
-  final List<PrimitiveReward> rewards;
+  final KtSet<PrimitiveReward> rewards;
 
   @override
   String toString() {
@@ -1055,29 +1105,34 @@ class _$_RewardsChange implements _RewardsChange {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _RewardsChange && (identical(other.rewards, rewards) || const DeepCollectionEquality().equals(other.rewards, rewards)));
+    return identical(this, other) ||
+      (other is _RewardsChange &&
+        (identical(other.rewards, rewards) ||
+          const DeepCollectionEquality().equals(other.rewards, rewards)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(rewards);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(rewards);
 
   @override
-  _$RewardsChangeCopyWith<_RewardsChange> get copyWith => __$RewardsChangeCopyWithImpl<_RewardsChange>(this, _$identity);
+  _$RewardsChangeCopyWith<_RewardsChange> get copyWith =>
+    __$RewardsChangeCopyWithImpl<_RewardsChange>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(Option<Experience> experienceOption),
+    @required Result initialize(Option<Experience> experienceOption),
     @required Result nameChange(String name),
     @required Result descriptionChange(String description),
     @required Result coordinatesChange(double latitude, double longitude),
     @required Result difficultyChange(int difficulty),
-    @required Result objectivesChange(List<PrimitiveObjective> objectives),
-    @required Result rewardsChange(List<PrimitiveReward> rewards),
-    @required Result tagsChange(Set<Tag> tags),
+    @required Result objectivesChange(KtSet<PrimitiveObjective> objectives),
+    @required Result rewardsChange(KtSet<PrimitiveReward> rewards),
+    @required Result tagsChange(KtSet<Tag> tags),
     @required Result submit(),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(coordinatesChange != null);
@@ -1092,14 +1147,14 @@ class _$_RewardsChange implements _RewardsChange {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Experience> experienceOption),
+    Result initialize(Option<Experience> experienceOption),
     Result nameChange(String name),
     Result descriptionChange(String description),
     Result coordinatesChange(double latitude, double longitude),
     Result difficultyChange(int difficulty),
-    Result objectivesChange(List<PrimitiveObjective> objectives),
-    Result rewardsChange(List<PrimitiveReward> rewards),
-    Result tagsChange(Set<Tag> tags),
+    Result objectivesChange(KtSet<PrimitiveObjective> objectives),
+    Result rewardsChange(KtSet<PrimitiveReward> rewards),
+    Result tagsChange(KtSet<Tag> tags),
     Result submit(),
     @required Result orElse(),
   }) {
@@ -1113,7 +1168,7 @@ class _$_RewardsChange implements _RewardsChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
+    @required Result initialize(_Initialize value),
     @required Result nameChange(_NameChange value),
     @required Result descriptionChange(_DescriptionChange value),
     @required Result coordinatesChange(_CoordinatesChange value),
@@ -1123,7 +1178,7 @@ class _$_RewardsChange implements _RewardsChange {
     @required Result tagsChange(_TagsChange value),
     @required Result submit(_Submit value),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(coordinatesChange != null);
@@ -1138,7 +1193,7 @@ class _$_RewardsChange implements _RewardsChange {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
+    Result initialize(_Initialize value),
     Result nameChange(_NameChange value),
     Result descriptionChange(_DescriptionChange value),
     Result coordinatesChange(_CoordinatesChange value),
@@ -1158,21 +1213,24 @@ class _$_RewardsChange implements _RewardsChange {
 }
 
 abstract class _RewardsChange implements ExperienceManagementFormEvent {
-  const factory _RewardsChange(List<PrimitiveReward> rewards) = _$_RewardsChange;
-
-  List<PrimitiveReward> get rewards;
-
+  const factory _RewardsChange(KtSet<PrimitiveReward> rewards) =
+  _$_RewardsChange;
+  
+  KtSet<PrimitiveReward> get rewards;
   _$RewardsChangeCopyWith<_RewardsChange> get copyWith;
 }
 
 abstract class _$TagsChangeCopyWith<$Res> {
-  factory _$TagsChangeCopyWith(_TagsChange value, $Res Function(_TagsChange) then) = __$TagsChangeCopyWithImpl<$Res>;
-
-  $Res call({Set<Tag> tags});
+  factory _$TagsChangeCopyWith(_TagsChange value, $Res Function(_TagsChange) then) =
+  __$TagsChangeCopyWithImpl<$Res>;
+  
+  $Res call({KtSet<Tag> tags});
 }
 
-class __$TagsChangeCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res> implements _$TagsChangeCopyWith<$Res> {
-  __$TagsChangeCopyWithImpl(_TagsChange _value, $Res Function(_TagsChange) _then) : super(_value, (v) => _then(v as _TagsChange));
+class __$TagsChangeCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res>
+  implements _$TagsChangeCopyWith<$Res> {
+  __$TagsChangeCopyWithImpl(_TagsChange _value, $Res Function(_TagsChange) _then)
+    : super(_value, (v) => _then(v as _TagsChange));
 
   @override
   _TagsChange get _value => super._value as _TagsChange;
@@ -1182,7 +1240,7 @@ class __$TagsChangeCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCop
     Object tags = freezed,
   }) {
     return _then(_TagsChange(
-      tags == freezed ? _value.tags : tags as Set<Tag>,
+      tags == freezed ? _value.tags : tags as KtSet<Tag>,
     ));
   }
 }
@@ -1191,7 +1249,7 @@ class _$_TagsChange implements _TagsChange {
   const _$_TagsChange(this.tags) : assert(tags != null);
 
   @override
-  final Set<Tag> tags;
+  final KtSet<Tag> tags;
 
   @override
   String toString() {
@@ -1200,29 +1258,34 @@ class _$_TagsChange implements _TagsChange {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _TagsChange && (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)));
+    return identical(this, other) ||
+      (other is _TagsChange &&
+        (identical(other.tags, tags) ||
+          const DeepCollectionEquality().equals(other.tags, tags)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tags);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(tags);
 
   @override
-  _$TagsChangeCopyWith<_TagsChange> get copyWith => __$TagsChangeCopyWithImpl<_TagsChange>(this, _$identity);
+  _$TagsChangeCopyWith<_TagsChange> get copyWith =>
+    __$TagsChangeCopyWithImpl<_TagsChange>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(Option<Experience> experienceOption),
+    @required Result initialize(Option<Experience> experienceOption),
     @required Result nameChange(String name),
     @required Result descriptionChange(String description),
     @required Result coordinatesChange(double latitude, double longitude),
     @required Result difficultyChange(int difficulty),
-    @required Result objectivesChange(List<PrimitiveObjective> objectives),
-    @required Result rewardsChange(List<PrimitiveReward> rewards),
-    @required Result tagsChange(Set<Tag> tags),
+    @required Result objectivesChange(KtSet<PrimitiveObjective> objectives),
+    @required Result rewardsChange(KtSet<PrimitiveReward> rewards),
+    @required Result tagsChange(KtSet<Tag> tags),
     @required Result submit(),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(coordinatesChange != null);
@@ -1237,14 +1300,14 @@ class _$_TagsChange implements _TagsChange {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Experience> experienceOption),
+    Result initialize(Option<Experience> experienceOption),
     Result nameChange(String name),
     Result descriptionChange(String description),
     Result coordinatesChange(double latitude, double longitude),
     Result difficultyChange(int difficulty),
-    Result objectivesChange(List<PrimitiveObjective> objectives),
-    Result rewardsChange(List<PrimitiveReward> rewards),
-    Result tagsChange(Set<Tag> tags),
+    Result objectivesChange(KtSet<PrimitiveObjective> objectives),
+    Result rewardsChange(KtSet<PrimitiveReward> rewards),
+    Result tagsChange(KtSet<Tag> tags),
     Result submit(),
     @required Result orElse(),
   }) {
@@ -1258,7 +1321,7 @@ class _$_TagsChange implements _TagsChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
+    @required Result initialize(_Initialize value),
     @required Result nameChange(_NameChange value),
     @required Result descriptionChange(_DescriptionChange value),
     @required Result coordinatesChange(_CoordinatesChange value),
@@ -1268,7 +1331,7 @@ class _$_TagsChange implements _TagsChange {
     @required Result tagsChange(_TagsChange value),
     @required Result submit(_Submit value),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(coordinatesChange != null);
@@ -1283,7 +1346,7 @@ class _$_TagsChange implements _TagsChange {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
+    Result initialize(_Initialize value),
     Result nameChange(_NameChange value),
     Result descriptionChange(_DescriptionChange value),
     Result coordinatesChange(_CoordinatesChange value),
@@ -1303,19 +1366,21 @@ class _$_TagsChange implements _TagsChange {
 }
 
 abstract class _TagsChange implements ExperienceManagementFormEvent {
-  const factory _TagsChange(Set<Tag> tags) = _$_TagsChange;
-
-  Set<Tag> get tags;
-
+  const factory _TagsChange(KtSet<Tag> tags) = _$_TagsChange;
+  
+  KtSet<Tag> get tags;
   _$TagsChangeCopyWith<_TagsChange> get copyWith;
 }
 
 abstract class _$SubmitCopyWith<$Res> {
-  factory _$SubmitCopyWith(_Submit value, $Res Function(_Submit) then) = __$SubmitCopyWithImpl<$Res>;
+  factory _$SubmitCopyWith(_Submit value, $Res Function(_Submit) then) =
+  __$SubmitCopyWithImpl<$Res>;
 }
 
-class __$SubmitCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res> implements _$SubmitCopyWith<$Res> {
-  __$SubmitCopyWithImpl(_Submit _value, $Res Function(_Submit) _then) : super(_value, (v) => _then(v as _Submit));
+class __$SubmitCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res>
+  implements _$SubmitCopyWith<$Res> {
+  __$SubmitCopyWithImpl(_Submit _value, $Res Function(_Submit) _then)
+    : super(_value, (v) => _then(v as _Submit));
 
   @override
   _Submit get _value => super._value as _Submit;
@@ -1340,17 +1405,17 @@ class _$_Submit implements _Submit {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(Option<Experience> experienceOption),
+    @required Result initialize(Option<Experience> experienceOption),
     @required Result nameChange(String name),
     @required Result descriptionChange(String description),
     @required Result coordinatesChange(double latitude, double longitude),
     @required Result difficultyChange(int difficulty),
-    @required Result objectivesChange(List<PrimitiveObjective> objectives),
-    @required Result rewardsChange(List<PrimitiveReward> rewards),
-    @required Result tagsChange(Set<Tag> tags),
+    @required Result objectivesChange(KtSet<PrimitiveObjective> objectives),
+    @required Result rewardsChange(KtSet<PrimitiveReward> rewards),
+    @required Result tagsChange(KtSet<Tag> tags),
     @required Result submit(),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(coordinatesChange != null);
@@ -1365,14 +1430,14 @@ class _$_Submit implements _Submit {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Experience> experienceOption),
+    Result initialize(Option<Experience> experienceOption),
     Result nameChange(String name),
     Result descriptionChange(String description),
     Result coordinatesChange(double latitude, double longitude),
     Result difficultyChange(int difficulty),
-    Result objectivesChange(List<PrimitiveObjective> objectives),
-    Result rewardsChange(List<PrimitiveReward> rewards),
-    Result tagsChange(Set<Tag> tags),
+    Result objectivesChange(KtSet<PrimitiveObjective> objectives),
+    Result rewardsChange(KtSet<PrimitiveReward> rewards),
+    Result tagsChange(KtSet<Tag> tags),
     Result submit(),
     @required Result orElse(),
   }) {
@@ -1386,7 +1451,7 @@ class _$_Submit implements _Submit {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
+    @required Result initialize(_Initialize value),
     @required Result nameChange(_NameChange value),
     @required Result descriptionChange(_DescriptionChange value),
     @required Result coordinatesChange(_CoordinatesChange value),
@@ -1396,7 +1461,7 @@ class _$_Submit implements _Submit {
     @required Result tagsChange(_TagsChange value),
     @required Result submit(_Submit value),
   }) {
-    assert(initialized != null);
+    assert(initialize != null);
     assert(nameChange != null);
     assert(descriptionChange != null);
     assert(coordinatesChange != null);
@@ -1411,7 +1476,7 @@ class _$_Submit implements _Submit {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
+    Result initialize(_Initialize value),
     Result nameChange(_NameChange value),
     Result descriptionChange(_DescriptionChange value),
     Result coordinatesChange(_CoordinatesChange value),
@@ -1437,8 +1502,11 @@ abstract class _Submit implements ExperienceManagementFormEvent {
 class _$ExperienceManagementFormStateTearOff {
   const _$ExperienceManagementFormStateTearOff();
 
-  _ExperienceManagementFormState call(
-      {@required Experience experience, @required bool showErrorMessages, @required bool isEditing, @required bool isSubmitting, @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
+  _ExperienceManagementFormState call({@required Experience experience,
+    @required bool showErrorMessages,
+    @required bool isEditing,
+    @required bool isSubmitting,
+    @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _ExperienceManagementFormState(
       experience: experience,
       showErrorMessages: showErrorMessages,
@@ -1454,31 +1522,34 @@ const $ExperienceManagementFormState = _$ExperienceManagementFormStateTearOff();
 
 mixin _$ExperienceManagementFormState {
   Experience get experience;
-
   bool get showErrorMessages;
-
   bool get isEditing;
-
   bool get isSubmitting;
-
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
 
-  $ExperienceManagementFormStateCopyWith<ExperienceManagementFormState> get copyWith;
+  $ExperienceManagementFormStateCopyWith<ExperienceManagementFormState>
+  get copyWith;
 }
 
 abstract class $ExperienceManagementFormStateCopyWith<$Res> {
-  factory $ExperienceManagementFormStateCopyWith(ExperienceManagementFormState value, $Res Function(ExperienceManagementFormState) then) = _$ExperienceManagementFormStateCopyWithImpl<$Res>;
-
-  $Res call({Experience experience, bool showErrorMessages, bool isEditing, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
+  factory $ExperienceManagementFormStateCopyWith(ExperienceManagementFormState value,
+    $Res Function(ExperienceManagementFormState) then) =
+  _$ExperienceManagementFormStateCopyWithImpl<$Res>;
+  
+  $Res call({Experience experience,
+    bool showErrorMessages,
+    bool isEditing,
+    bool isSubmitting,
+    Option<Either<Failure, Unit>> failureOrSuccessOption});
 
   $ExperienceCopyWith<$Res> get experience;
 }
 
-class _$ExperienceManagementFormStateCopyWithImpl<$Res> implements $ExperienceManagementFormStateCopyWith<$Res> {
+class _$ExperienceManagementFormStateCopyWithImpl<$Res>
+  implements $ExperienceManagementFormStateCopyWith<$Res> {
   _$ExperienceManagementFormStateCopyWithImpl(this._value, this._then);
 
   final ExperienceManagementFormState _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceManagementFormState) _then;
 
@@ -1491,11 +1562,17 @@ class _$ExperienceManagementFormStateCopyWithImpl<$Res> implements $ExperienceMa
     Object failureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
-      experience: experience == freezed ? _value.experience : experience as Experience,
-      showErrorMessages: showErrorMessages == freezed ? _value.showErrorMessages : showErrorMessages as bool,
+      experience:
+      experience == freezed ? _value.experience : experience as Experience,
+      showErrorMessages: showErrorMessages == freezed
+        ? _value.showErrorMessages
+        : showErrorMessages as bool,
       isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
-      isSubmitting: isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
-      failureOrSuccessOption: failureOrSuccessOption == freezed ? _value.failureOrSuccessOption : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+      isSubmitting:
+      isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      failureOrSuccessOption: failureOrSuccessOption == freezed
+        ? _value.failureOrSuccessOption
+        : failureOrSuccessOption as Option<Either<Failure, Unit>>,
     ));
   }
 
@@ -1510,22 +1587,31 @@ class _$ExperienceManagementFormStateCopyWithImpl<$Res> implements $ExperienceMa
   }
 }
 
-abstract class _$ExperienceManagementFormStateCopyWith<$Res> implements $ExperienceManagementFormStateCopyWith<$Res> {
-  factory _$ExperienceManagementFormStateCopyWith(_ExperienceManagementFormState value, $Res Function(_ExperienceManagementFormState) then) = __$ExperienceManagementFormStateCopyWithImpl<$Res>;
-
+abstract class _$ExperienceManagementFormStateCopyWith<$Res>
+  implements $ExperienceManagementFormStateCopyWith<$Res> {
+  factory _$ExperienceManagementFormStateCopyWith(_ExperienceManagementFormState value,
+    $Res Function(_ExperienceManagementFormState) then) =
+  __$ExperienceManagementFormStateCopyWithImpl<$Res>;
   @override
-  $Res call({Experience experience, bool showErrorMessages, bool isEditing, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
+  $Res call({Experience experience,
+    bool showErrorMessages,
+    bool isEditing,
+    bool isSubmitting,
+    Option<Either<Failure, Unit>> failureOrSuccessOption});
 
   @override
   $ExperienceCopyWith<$Res> get experience;
 }
 
-class __$ExperienceManagementFormStateCopyWithImpl<$Res> extends _$ExperienceManagementFormStateCopyWithImpl<$Res> implements _$ExperienceManagementFormStateCopyWith<$Res> {
-  __$ExperienceManagementFormStateCopyWithImpl(_ExperienceManagementFormState _value, $Res Function(_ExperienceManagementFormState) _then)
+class __$ExperienceManagementFormStateCopyWithImpl<$Res> extends _$ExperienceManagementFormStateCopyWithImpl<$Res>
+  implements _$ExperienceManagementFormStateCopyWith<$Res> {
+  __$ExperienceManagementFormStateCopyWithImpl(_ExperienceManagementFormState _value,
+    $Res Function(_ExperienceManagementFormState) _then)
       : super(_value, (v) => _then(v as _ExperienceManagementFormState));
 
   @override
-  _ExperienceManagementFormState get _value => super._value as _ExperienceManagementFormState;
+  _ExperienceManagementFormState get _value =>
+    super._value as _ExperienceManagementFormState;
 
   @override
   $Res call({
@@ -1536,17 +1622,28 @@ class __$ExperienceManagementFormStateCopyWithImpl<$Res> extends _$ExperienceMan
     Object failureOrSuccessOption = freezed,
   }) {
     return _then(_ExperienceManagementFormState(
-      experience: experience == freezed ? _value.experience : experience as Experience,
-      showErrorMessages: showErrorMessages == freezed ? _value.showErrorMessages : showErrorMessages as bool,
+      experience:
+      experience == freezed ? _value.experience : experience as Experience,
+      showErrorMessages: showErrorMessages == freezed
+        ? _value.showErrorMessages
+        : showErrorMessages as bool,
       isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
-      isSubmitting: isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
-      failureOrSuccessOption: failureOrSuccessOption == freezed ? _value.failureOrSuccessOption : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+      isSubmitting:
+      isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      failureOrSuccessOption: failureOrSuccessOption == freezed
+        ? _value.failureOrSuccessOption
+        : failureOrSuccessOption as Option<Either<Failure, Unit>>,
     ));
   }
 }
 
-class _$_ExperienceManagementFormState implements _ExperienceManagementFormState {
-  const _$_ExperienceManagementFormState({@required this.experience, @required this.showErrorMessages, @required this.isEditing, @required this.isSubmitting, @required this.failureOrSuccessOption})
+class _$_ExperienceManagementFormState
+  implements _ExperienceManagementFormState {
+  const _$_ExperienceManagementFormState({@required this.experience,
+    @required this.showErrorMessages,
+    @required this.isEditing,
+    @required this.isSubmitting,
+    @required this.failureOrSuccessOption})
       : assert(experience != null),
         assert(showErrorMessages != null),
         assert(isEditing != null),
@@ -1573,11 +1670,21 @@ class _$_ExperienceManagementFormState implements _ExperienceManagementFormState
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ExperienceManagementFormState &&
-            (identical(other.experience, experience) || const DeepCollectionEquality().equals(other.experience, experience)) &&
-            (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isEditing, isEditing) || const DeepCollectionEquality().equals(other.isEditing, isEditing)) &&
-            (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
-            (identical(other.failureOrSuccessOption, failureOrSuccessOption) || const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+          (identical(other.experience, experience) ||
+            const DeepCollectionEquality()
+              .equals(other.experience, experience)) &&
+          (identical(other.showErrorMessages, showErrorMessages) ||
+            const DeepCollectionEquality()
+              .equals(other.showErrorMessages, showErrorMessages)) &&
+          (identical(other.isEditing, isEditing) ||
+            const DeepCollectionEquality()
+              .equals(other.isEditing, isEditing)) &&
+          (identical(other.isSubmitting, isSubmitting) ||
+            const DeepCollectionEquality()
+              .equals(other.isSubmitting, isSubmitting)) &&
+          (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
+            const DeepCollectionEquality().equals(
+              other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -1590,32 +1697,32 @@ class _$_ExperienceManagementFormState implements _ExperienceManagementFormState
       const DeepCollectionEquality().hash(failureOrSuccessOption);
 
   @override
-  _$ExperienceManagementFormStateCopyWith<_ExperienceManagementFormState> get copyWith => __$ExperienceManagementFormStateCopyWithImpl<_ExperienceManagementFormState>(this, _$identity);
+  _$ExperienceManagementFormStateCopyWith<_ExperienceManagementFormState>
+  get copyWith =>
+    __$ExperienceManagementFormStateCopyWithImpl<
+      _ExperienceManagementFormState>(this, _$identity);
 }
 
-abstract class _ExperienceManagementFormState implements ExperienceManagementFormState {
-  const factory _ExperienceManagementFormState(
-      {@required Experience experience,
-      @required bool showErrorMessages,
-      @required bool isEditing,
-      @required bool isSubmitting,
-      @required Option<Either<Failure, Unit>> failureOrSuccessOption}) = _$_ExperienceManagementFormState;
+abstract class _ExperienceManagementFormState
+  implements ExperienceManagementFormState {
+  const factory _ExperienceManagementFormState({@required Experience experience,
+    @required bool showErrorMessages,
+    @required bool isEditing,
+    @required bool isSubmitting,
+    @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
+  _$_ExperienceManagementFormState;
 
   @override
   Experience get experience;
-
   @override
   bool get showErrorMessages;
-
   @override
   bool get isEditing;
-
   @override
   bool get isSubmitting;
-
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
-
   @override
-  _$ExperienceManagementFormStateCopyWith<_ExperienceManagementFormState> get copyWith;
+  _$ExperienceManagementFormStateCopyWith<_ExperienceManagementFormState>
+  get copyWith;
 }

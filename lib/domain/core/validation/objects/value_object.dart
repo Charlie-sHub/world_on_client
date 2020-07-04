@@ -19,6 +19,14 @@ abstract class ValueObject<T> extends Equatable {
 
   bool isValid() => value.isRight();
 
+  @override
+  String toString() {
+    return value.fold(
+      (failure) => failure.toString(),
+      (value) => "$value",
+    );
+  }
+
   /// Throws [UnexpectedValueError] containing the [ValueFailure] if it can't get the proper value
   T getOrCrash() {
     return value.fold(

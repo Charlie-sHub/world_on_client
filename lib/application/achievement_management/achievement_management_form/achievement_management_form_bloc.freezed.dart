@@ -243,7 +243,6 @@ abstract class _Initialize implements AchievementManagementFormEvent {
   _$_Initialize;
 
   Option<Achievement> get achievementOption;
-  
   _$InitializeCopyWith<_Initialize> get copyWith;
 }
 

@@ -114,7 +114,8 @@ class _$CoreDataFailureCopyWithImpl<T, $Res> implements $CoreDataFailureCopyWith
 }
 
 abstract class $ServerErrorCopyWith<T, $Res> {
-  factory $ServerErrorCopyWith(ServerError<T> value, $Res Function(ServerError<T>) then) = _$ServerErrorCopyWithImpl<T, $Res>;
+  factory $ServerErrorCopyWith(ServerError<T> value, $Res Function(ServerError<T>) then) =
+  _$ServerErrorCopyWithImpl<T, $Res>;
   $Res call({String errorString});
 }
 

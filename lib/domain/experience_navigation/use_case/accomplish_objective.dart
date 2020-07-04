@@ -7,6 +7,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 
 /// Updates the [Objective] tracker
 // TODO: Can this be injected?
+// TODO: Rename to ObjectivesTracker
 class AccomplishObjective implements UseCase<bool, Params> {
   final Map<int, bool> objectiveTracker;
 

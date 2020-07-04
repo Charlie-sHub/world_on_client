@@ -26,25 +26,23 @@ const $PrimitiveObjective = _$PrimitiveObjectiveTearOff();
 
 mixin _$PrimitiveObjective {
   String get description;
-
   double get latitude;
-
   double get longitude;
 
   $PrimitiveObjectiveCopyWith<PrimitiveObjective> get copyWith;
 }
 
 abstract class $PrimitiveObjectiveCopyWith<$Res> {
-  factory $PrimitiveObjectiveCopyWith(PrimitiveObjective value, $Res Function(PrimitiveObjective) then) = _$PrimitiveObjectiveCopyWithImpl<$Res>;
-
+  factory $PrimitiveObjectiveCopyWith(PrimitiveObjective value, $Res Function(PrimitiveObjective) then) =
+  _$PrimitiveObjectiveCopyWithImpl<$Res>;
   $Res call({String description, double latitude, double longitude});
 }
 
-class _$PrimitiveObjectiveCopyWithImpl<$Res> implements $PrimitiveObjectiveCopyWith<$Res> {
+class _$PrimitiveObjectiveCopyWithImpl<$Res>
+  implements $PrimitiveObjectiveCopyWith<$Res> {
   _$PrimitiveObjectiveCopyWithImpl(this._value, this._then);
 
   final PrimitiveObjective _value;
-
   // ignore: unused_field
   final $Res Function(PrimitiveObjective) _then;
 
@@ -55,22 +53,26 @@ class _$PrimitiveObjectiveCopyWithImpl<$Res> implements $PrimitiveObjectiveCopyW
     Object longitude = freezed,
   }) {
     return _then(_value.copyWith(
-      description: description == freezed ? _value.description : description as String,
+      description:
+      description == freezed ? _value.description : description as String,
       latitude: latitude == freezed ? _value.latitude : latitude as double,
       longitude: longitude == freezed ? _value.longitude : longitude as double,
     ));
   }
 }
 
-abstract class _$PrimitiveObjectiveCopyWith<$Res> implements $PrimitiveObjectiveCopyWith<$Res> {
-  factory _$PrimitiveObjectiveCopyWith(_PrimitiveObjective value, $Res Function(_PrimitiveObjective) then) = __$PrimitiveObjectiveCopyWithImpl<$Res>;
-
+abstract class _$PrimitiveObjectiveCopyWith<$Res>
+  implements $PrimitiveObjectiveCopyWith<$Res> {
+  factory _$PrimitiveObjectiveCopyWith(_PrimitiveObjective value, $Res Function(_PrimitiveObjective) then) =
+  __$PrimitiveObjectiveCopyWithImpl<$Res>;
   @override
   $Res call({String description, double latitude, double longitude});
 }
 
-class __$PrimitiveObjectiveCopyWithImpl<$Res> extends _$PrimitiveObjectiveCopyWithImpl<$Res> implements _$PrimitiveObjectiveCopyWith<$Res> {
-  __$PrimitiveObjectiveCopyWithImpl(_PrimitiveObjective _value, $Res Function(_PrimitiveObjective) _then) : super(_value, (v) => _then(v as _PrimitiveObjective));
+class __$PrimitiveObjectiveCopyWithImpl<$Res> extends _$PrimitiveObjectiveCopyWithImpl<$Res>
+  implements _$PrimitiveObjectiveCopyWith<$Res> {
+  __$PrimitiveObjectiveCopyWithImpl(_PrimitiveObjective _value, $Res Function(_PrimitiveObjective) _then)
+    : super(_value, (v) => _then(v as _PrimitiveObjective));
 
   @override
   _PrimitiveObjective get _value => super._value as _PrimitiveObjective;
@@ -82,7 +84,8 @@ class __$PrimitiveObjectiveCopyWithImpl<$Res> extends _$PrimitiveObjectiveCopyWi
     Object longitude = freezed,
   }) {
     return _then(_PrimitiveObjective(
-      description: description == freezed ? _value.description : description as String,
+      description:
+      description == freezed ? _value.description : description as String,
       latitude: latitude == freezed ? _value.latitude : latitude as double,
       longitude: longitude == freezed ? _value.longitude : longitude as double,
     ));
@@ -90,7 +93,9 @@ class __$PrimitiveObjectiveCopyWithImpl<$Res> extends _$PrimitiveObjectiveCopyWi
 }
 
 class _$_PrimitiveObjective extends _PrimitiveObjective {
-  const _$_PrimitiveObjective({@required this.description, @required this.latitude, @required this.longitude})
+  const _$_PrimitiveObjective({@required this.description,
+    @required this.latitude,
+    @required this.longitude})
       : assert(description != null),
         assert(latitude != null),
         assert(longitude != null),
@@ -112,32 +117,42 @@ class _$_PrimitiveObjective extends _PrimitiveObjective {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _PrimitiveObjective &&
-            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-            (identical(other.latitude, latitude) || const DeepCollectionEquality().equals(other.latitude, latitude)) &&
-            (identical(other.longitude, longitude) || const DeepCollectionEquality().equals(other.longitude, longitude)));
+          (identical(other.description, description) ||
+            const DeepCollectionEquality()
+              .equals(other.description, description)) &&
+          (identical(other.latitude, latitude) ||
+            const DeepCollectionEquality()
+              .equals(other.latitude, latitude)) &&
+          (identical(other.longitude, longitude) ||
+            const DeepCollectionEquality()
+              .equals(other.longitude, longitude)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(description) ^ const DeepCollectionEquality().hash(latitude) ^ const DeepCollectionEquality().hash(longitude);
+  int get hashCode =>
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(description) ^
+    const DeepCollectionEquality().hash(latitude) ^
+    const DeepCollectionEquality().hash(longitude);
 
   @override
-  _$PrimitiveObjectiveCopyWith<_PrimitiveObjective> get copyWith => __$PrimitiveObjectiveCopyWithImpl<_PrimitiveObjective>(this, _$identity);
+  _$PrimitiveObjectiveCopyWith<_PrimitiveObjective> get copyWith =>
+    __$PrimitiveObjectiveCopyWithImpl<_PrimitiveObjective>(this, _$identity);
 }
 
 abstract class _PrimitiveObjective extends PrimitiveObjective {
   const _PrimitiveObjective._() : super._();
 
-  const factory _PrimitiveObjective({@required String description, @required double latitude, @required double longitude}) = _$_PrimitiveObjective;
+  const factory _PrimitiveObjective({@required String description,
+    @required double latitude,
+    @required double longitude}) = _$_PrimitiveObjective;
 
   @override
   String get description;
-
   @override
   double get latitude;
-
   @override
   double get longitude;
-
   @override
   _$PrimitiveObjectiveCopyWith<_PrimitiveObjective> get copyWith;
 }

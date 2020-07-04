@@ -29,18 +29,15 @@ mixin _$ExperienceCardActorEvent {
   Result when<Result extends Object>({
     @required Result addExperienceToLog(int experienceId),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addExperienceToLog(int experienceId),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addExperienceToLog(_AddExperienceToLog value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addExperienceToLog(_AddExperienceToLog value),
@@ -52,15 +49,14 @@ mixin _$ExperienceCardActorEvent {
 
 abstract class $ExperienceCardActorEventCopyWith<$Res> {
   factory $ExperienceCardActorEventCopyWith(ExperienceCardActorEvent value, $Res Function(ExperienceCardActorEvent) then) = _$ExperienceCardActorEventCopyWithImpl<$Res>;
-
   $Res call({int experienceId});
 }
 
-class _$ExperienceCardActorEventCopyWithImpl<$Res> implements $ExperienceCardActorEventCopyWith<$Res> {
+class _$ExperienceCardActorEventCopyWithImpl<$Res>
+  implements $ExperienceCardActorEventCopyWith<$Res> {
   _$ExperienceCardActorEventCopyWithImpl(this._value, this._then);
 
   final ExperienceCardActorEvent _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceCardActorEvent) _then;
 
@@ -69,20 +65,24 @@ class _$ExperienceCardActorEventCopyWithImpl<$Res> implements $ExperienceCardAct
     Object experienceId = freezed,
   }) {
     return _then(_value.copyWith(
-      experienceId: experienceId == freezed ? _value.experienceId : experienceId as int,
+      experienceId:
+      experienceId == freezed ? _value.experienceId : experienceId as int,
     ));
   }
 }
 
-abstract class _$AddExperienceToLogCopyWith<$Res> implements $ExperienceCardActorEventCopyWith<$Res> {
-  factory _$AddExperienceToLogCopyWith(_AddExperienceToLog value, $Res Function(_AddExperienceToLog) then) = __$AddExperienceToLogCopyWithImpl<$Res>;
-
+abstract class _$AddExperienceToLogCopyWith<$Res>
+  implements $ExperienceCardActorEventCopyWith<$Res> {
+  factory _$AddExperienceToLogCopyWith(_AddExperienceToLog value, $Res Function(_AddExperienceToLog) then) =
+  __$AddExperienceToLogCopyWithImpl<$Res>;
   @override
   $Res call({int experienceId});
 }
 
-class __$AddExperienceToLogCopyWithImpl<$Res> extends _$ExperienceCardActorEventCopyWithImpl<$Res> implements _$AddExperienceToLogCopyWith<$Res> {
-  __$AddExperienceToLogCopyWithImpl(_AddExperienceToLog _value, $Res Function(_AddExperienceToLog) _then) : super(_value, (v) => _then(v as _AddExperienceToLog));
+class __$AddExperienceToLogCopyWithImpl<$Res> extends _$ExperienceCardActorEventCopyWithImpl<$Res>
+  implements _$AddExperienceToLogCopyWith<$Res> {
+  __$AddExperienceToLogCopyWithImpl(_AddExperienceToLog _value, $Res Function(_AddExperienceToLog) _then)
+    : super(_value, (v) => _then(v as _AddExperienceToLog));
 
   @override
   _AddExperienceToLog get _value => super._value as _AddExperienceToLog;
@@ -110,14 +110,20 @@ class _$_AddExperienceToLog implements _AddExperienceToLog {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _AddExperienceToLog && (identical(other.experienceId, experienceId) || const DeepCollectionEquality().equals(other.experienceId, experienceId)));
+    return identical(this, other) ||
+      (other is _AddExperienceToLog &&
+        (identical(other.experienceId, experienceId) ||
+          const DeepCollectionEquality()
+            .equals(other.experienceId, experienceId)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceId);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceId);
 
   @override
-  _$AddExperienceToLogCopyWith<_AddExperienceToLog> get copyWith => __$AddExperienceToLogCopyWithImpl<_AddExperienceToLog>(this, _$identity);
+  _$AddExperienceToLogCopyWith<_AddExperienceToLog> get copyWith =>
+    __$AddExperienceToLogCopyWithImpl<_AddExperienceToLog>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -169,7 +175,6 @@ abstract class _AddExperienceToLog implements ExperienceCardActorEvent {
 
   @override
   int get experienceId;
-
   @override
   _$AddExperienceToLogCopyWith<_AddExperienceToLog> get copyWith;
 }
@@ -207,7 +212,6 @@ mixin _$ExperienceCardActorState {
     @required Result additionSuccess(),
     @required Result additionFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
@@ -216,7 +220,6 @@ mixin _$ExperienceCardActorState {
     Result additionFailure(Failure<dynamic> failure),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
@@ -224,7 +227,6 @@ mixin _$ExperienceCardActorState {
     @required Result additionSuccess(_AdditionSuccess value),
     @required Result additionFailure(_AdditionFailure value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
@@ -236,24 +238,29 @@ mixin _$ExperienceCardActorState {
 }
 
 abstract class $ExperienceCardActorStateCopyWith<$Res> {
-  factory $ExperienceCardActorStateCopyWith(ExperienceCardActorState value, $Res Function(ExperienceCardActorState) then) = _$ExperienceCardActorStateCopyWithImpl<$Res>;
+  factory $ExperienceCardActorStateCopyWith(ExperienceCardActorState value,
+    $Res Function(ExperienceCardActorState) then) =
+  _$ExperienceCardActorStateCopyWithImpl<$Res>;
 }
 
-class _$ExperienceCardActorStateCopyWithImpl<$Res> implements $ExperienceCardActorStateCopyWith<$Res> {
+class _$ExperienceCardActorStateCopyWithImpl<$Res>
+  implements $ExperienceCardActorStateCopyWith<$Res> {
   _$ExperienceCardActorStateCopyWithImpl(this._value, this._then);
 
   final ExperienceCardActorState _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceCardActorState) _then;
 }
 
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+  __$InitialCopyWithImpl<$Res>;
 }
 
-class __$InitialCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res>
+  implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+    : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -343,11 +350,14 @@ abstract class _Initial implements ExperienceCardActorState {
 }
 
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) = __$ActionInProgressCopyWithImpl<$Res>;
+  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) =
+  __$ActionInProgressCopyWithImpl<$Res>;
 }
 
-class __$ActionInProgressCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res> implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then) : super(_value, (v) => _then(v as _ActionInProgress));
+class __$ActionInProgressCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res>
+  implements _$ActionInProgressCopyWith<$Res> {
+  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then)
+    : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
   _ActionInProgress get _value => super._value as _ActionInProgress;
@@ -437,11 +447,14 @@ abstract class _ActionInProgress implements ExperienceCardActorState {
 }
 
 abstract class _$AdditionSuccessCopyWith<$Res> {
-  factory _$AdditionSuccessCopyWith(_AdditionSuccess value, $Res Function(_AdditionSuccess) then) = __$AdditionSuccessCopyWithImpl<$Res>;
+  factory _$AdditionSuccessCopyWith(_AdditionSuccess value, $Res Function(_AdditionSuccess) then) =
+  __$AdditionSuccessCopyWithImpl<$Res>;
 }
 
-class __$AdditionSuccessCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res> implements _$AdditionSuccessCopyWith<$Res> {
-  __$AdditionSuccessCopyWithImpl(_AdditionSuccess _value, $Res Function(_AdditionSuccess) _then) : super(_value, (v) => _then(v as _AdditionSuccess));
+class __$AdditionSuccessCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res>
+  implements _$AdditionSuccessCopyWith<$Res> {
+  __$AdditionSuccessCopyWithImpl(_AdditionSuccess _value, $Res Function(_AdditionSuccess) _then)
+    : super(_value, (v) => _then(v as _AdditionSuccess));
 
   @override
   _AdditionSuccess get _value => super._value as _AdditionSuccess;
@@ -531,15 +544,17 @@ abstract class _AdditionSuccess implements ExperienceCardActorState {
 }
 
 abstract class _$AdditionFailureCopyWith<$Res> {
-  factory _$AdditionFailureCopyWith(_AdditionFailure value, $Res Function(_AdditionFailure) then) = __$AdditionFailureCopyWithImpl<$Res>;
-
+  factory _$AdditionFailureCopyWith(_AdditionFailure value, $Res Function(_AdditionFailure) then) =
+  __$AdditionFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
-class __$AdditionFailureCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res> implements _$AdditionFailureCopyWith<$Res> {
-  __$AdditionFailureCopyWithImpl(_AdditionFailure _value, $Res Function(_AdditionFailure) _then) : super(_value, (v) => _then(v as _AdditionFailure));
+class __$AdditionFailureCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res>
+  implements _$AdditionFailureCopyWith<$Res> {
+  __$AdditionFailureCopyWithImpl(_AdditionFailure _value, $Res Function(_AdditionFailure) _then)
+    : super(_value, (v) => _then(v as _AdditionFailure));
 
   @override
   _AdditionFailure get _value => super._value as _AdditionFailure;
@@ -577,14 +592,19 @@ class _$_AdditionFailure implements _AdditionFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _AdditionFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) ||
+      (other is _AdditionFailure &&
+        (identical(other.failure, failure) ||
+          const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
-  _$AdditionFailureCopyWith<_AdditionFailure> get copyWith => __$AdditionFailureCopyWithImpl<_AdditionFailure>(this, _$identity);
+  _$AdditionFailureCopyWith<_AdditionFailure> get copyWith =>
+    __$AdditionFailureCopyWithImpl<_AdditionFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -653,6 +673,5 @@ abstract class _AdditionFailure implements ExperienceCardActorState {
   const factory _AdditionFailure(Failure<dynamic> failure) = _$_AdditionFailure;
 
   Failure<dynamic> get failure;
-
   _$AdditionFailureCopyWith<_AdditionFailure> get copyWith;
 }

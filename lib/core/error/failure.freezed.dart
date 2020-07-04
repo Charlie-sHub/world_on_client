@@ -550,15 +550,18 @@ abstract class _CoreDomain<T> implements Failure<T> {
 }
 
 abstract class _$CoreAppllicationCopyWith<T, $Res> {
-  factory _$CoreAppllicationCopyWith(_CoreAppllication<T> value, $Res Function(_CoreAppllication<T>) then) = __$CoreAppllicationCopyWithImpl<T, $Res>;
-
+  factory _$CoreAppllicationCopyWith(_CoreAppllication<T> value,
+    $Res Function(_CoreAppllication<T>) then) =
+  __$CoreAppllicationCopyWithImpl<T, $Res>;
   $Res call({CoreApplicationFailure<T> f});
 
   $CoreApplicationFailureCopyWith<T, $Res> get f;
 }
 
-class __$CoreAppllicationCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res> implements _$CoreAppllicationCopyWith<T, $Res> {
-  __$CoreAppllicationCopyWithImpl(_CoreAppllication<T> _value, $Res Function(_CoreAppllication<T>) _then) : super(_value, (v) => _then(v as _CoreAppllication<T>));
+class __$CoreAppllicationCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
+  implements _$CoreAppllicationCopyWith<T, $Res> {
+  __$CoreAppllicationCopyWithImpl(_CoreAppllication<T> _value, $Res Function(_CoreAppllication<T>) _then)
+    : super(_value, (v) => _then(v as _CoreAppllication<T>));
 
   @override
   _CoreAppllication<T> get _value => super._value as _CoreAppllication<T>;
@@ -596,14 +599,20 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _CoreAppllication<T> && (identical(other.f, f) || const DeepCollectionEquality().equals(other.f, f)));
+    return identical(this, other) ||
+      (other is _CoreAppllication<T> &&
+        (identical(other.f, f) ||
+          const DeepCollectionEquality().equals(other.f, f)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
 
   @override
-  _$CoreAppllicationCopyWith<T, _CoreAppllication<T>> get copyWith => __$CoreAppllicationCopyWithImpl<T, _CoreAppllication<T>>(this, _$identity);
+  _$CoreAppllicationCopyWith<T, _CoreAppllication<T>> get copyWith =>
+    __$CoreAppllicationCopyWithImpl<T, _CoreAppllication<T>>(
+      this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -681,10 +690,10 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
 }
 
 abstract class _CoreAppllication<T> implements Failure<T> {
-  const factory _CoreAppllication(CoreApplicationFailure<T> f) = _$_CoreAppllication<T>;
+  const factory _CoreAppllication(CoreApplicationFailure<T> f) =
+  _$_CoreAppllication<T>;
 
   CoreApplicationFailure<T> get f;
-
   _$CoreAppllicationCopyWith<T, _CoreAppllication<T>> get copyWith;
 }
 

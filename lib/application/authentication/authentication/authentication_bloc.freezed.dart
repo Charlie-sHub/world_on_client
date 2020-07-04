@@ -62,11 +62,16 @@ class _$AuthenticationEventCopyWithImpl<$Res> implements $AuthenticationEventCop
 }
 
 abstract class _$AuthenticationCheckRequestCopyWith<$Res> {
-  factory _$AuthenticationCheckRequestCopyWith(_AuthenticationCheckRequest value, $Res Function(_AuthenticationCheckRequest) then) = __$AuthenticationCheckRequestCopyWithImpl<$Res>;
+  factory _$AuthenticationCheckRequestCopyWith(_AuthenticationCheckRequest value,
+    $Res Function(_AuthenticationCheckRequest) then) =
+  __$AuthenticationCheckRequestCopyWithImpl<$Res>;
 }
 
-class __$AuthenticationCheckRequestCopyWithImpl<$Res> extends _$AuthenticationEventCopyWithImpl<$Res> implements _$AuthenticationCheckRequestCopyWith<$Res> {
-  __$AuthenticationCheckRequestCopyWithImpl(_AuthenticationCheckRequest _value, $Res Function(_AuthenticationCheckRequest) _then) : super(_value, (v) => _then(v as _AuthenticationCheckRequest));
+class __$AuthenticationCheckRequestCopyWithImpl<$Res> extends _$AuthenticationEventCopyWithImpl<$Res>
+  implements _$AuthenticationCheckRequestCopyWith<$Res> {
+  __$AuthenticationCheckRequestCopyWithImpl(_AuthenticationCheckRequest _value,
+    $Res Function(_AuthenticationCheckRequest) _then)
+    : super(_value, (v) => _then(v as _AuthenticationCheckRequest));
 
   @override
   _AuthenticationCheckRequest get _value =>

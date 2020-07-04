@@ -69,7 +69,7 @@ void main() {
         ],
       );
       blocTest(
-        TestDescription.nonInitializedState,
+        TestDescription.shouldNotEmitInitialized,
         build: () async => getIt<AchievementManagementFormBloc>(),
         act: (bloc) async => bloc.add(AchievementManagementFormEvent.initialize(none())),
         skip: 0,
@@ -159,6 +159,7 @@ void main() {
         },
         verify: (_) async {
           verify(createAchievement.call(any));
+          verify(getLoggedInUser.call(any));
           // verifyZeroInteractions(editAchievement);
         },
         expect: [
@@ -166,14 +167,12 @@ void main() {
             achievement: Achievement.empty().copyWith(
               creator: validUser,
             ),
-            failureOrSuccessOption: none(),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
               creator: validUser,
               name: Name(name),
             ),
-            failureOrSuccessOption: none(),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
@@ -181,7 +180,6 @@ void main() {
               name: Name(name),
               description: EntityDescription(description),
             ),
-            failureOrSuccessOption: none(),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
@@ -190,7 +188,6 @@ void main() {
               description: EntityDescription(description),
               experiencePoints: ExperiencePoints(experiencePoints),
             ),
-            failureOrSuccessOption: none(),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
@@ -200,7 +197,6 @@ void main() {
               experiencePoints: ExperiencePoints(experiencePoints),
               tags: TagSet(tags),
             ),
-            failureOrSuccessOption: none(),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
@@ -211,7 +207,6 @@ void main() {
               tags: TagSet(tags),
             ),
             isSubmitting: true,
-            failureOrSuccessOption: none(),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
@@ -221,7 +216,6 @@ void main() {
               experiencePoints: ExperiencePoints(experiencePoints),
               tags: TagSet(tags),
             ),
-            isSubmitting: false,
             showErrorMessages: true,
             failureOrSuccessOption: some(right(unit)),
           ),
@@ -231,7 +225,6 @@ void main() {
         "${TestDescription.shouldEmitSuccess} editing an Achievement",
         build: () async {
           when(editAchievement.call(any)).thenAnswer((_) async => right(unit));
-          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(validUser));
           return getIt<AchievementManagementFormBloc>();
         },
         act: (bloc) async {
@@ -252,7 +245,6 @@ void main() {
               name: Name(name),
             ),
             isEditing: true,
-            failureOrSuccessOption: none(),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: achievementToEdit.copyWith(
@@ -260,14 +252,12 @@ void main() {
             ),
             isEditing: true,
             isSubmitting: true,
-            failureOrSuccessOption: none(),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: achievementToEdit.copyWith(
               name: Name(name),
             ),
             isEditing: true,
-            isSubmitting: false,
             showErrorMessages: true,
             failureOrSuccessOption: some(right(unit)),
           ),
@@ -298,6 +288,7 @@ void main() {
         },
         verify: (_) async {
           verify(createAchievement.call(any));
+          verify(getLoggedInUser.call(any));
           // verifyZeroInteractions(editAchievement);
         },
         expect: [
@@ -305,14 +296,12 @@ void main() {
             achievement: Achievement.empty().copyWith(
               creator: validUser,
             ),
-            failureOrSuccessOption: none(),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
               creator: validUser,
               name: Name(name),
             ),
-            failureOrSuccessOption: none(),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
@@ -320,7 +309,6 @@ void main() {
               name: Name(name),
               description: EntityDescription(description),
             ),
-            failureOrSuccessOption: none(),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
@@ -329,7 +317,6 @@ void main() {
               description: EntityDescription(description),
               experiencePoints: ExperiencePoints(experiencePoints),
             ),
-            failureOrSuccessOption: none(),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
@@ -339,7 +326,6 @@ void main() {
               experiencePoints: ExperiencePoints(experiencePoints),
               tags: TagSet(tags),
             ),
-            failureOrSuccessOption: none(),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
@@ -350,7 +336,6 @@ void main() {
               tags: TagSet(tags),
             ),
             isSubmitting: true,
-            failureOrSuccessOption: none(),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
@@ -370,7 +355,6 @@ void main() {
         "${TestDescription.shouldEmitFailure} editing an Achievement",
         build: () async {
           when(editAchievement.call(any)).thenAnswer((_) async => left(failure));
-          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(validUser));
           return getIt<AchievementManagementFormBloc>();
         },
         act: (bloc) async {
@@ -388,7 +372,6 @@ void main() {
               name: Name(name),
             ),
             isEditing: true,
-            failureOrSuccessOption: none(),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: achievementToEdit.copyWith(
@@ -396,7 +379,6 @@ void main() {
             ),
             isEditing: true,
             isSubmitting: true,
-            failureOrSuccessOption: none(),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: achievementToEdit.copyWith(
@@ -413,7 +395,6 @@ void main() {
         TestDescription.shouldResetOption,
         build: () async {
           when(editAchievement.call(any)).thenAnswer((_) async => left(failure));
-          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(validUser));
           return getIt<AchievementManagementFormBloc>();
         },
         act: (bloc) async {
@@ -432,7 +413,6 @@ void main() {
               name: Name(name),
             ),
             isEditing: true,
-            failureOrSuccessOption: none(),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: achievementToEdit.copyWith(
@@ -440,7 +420,6 @@ void main() {
             ),
             isEditing: true,
             isSubmitting: true,
-            failureOrSuccessOption: none(),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: achievementToEdit.copyWith(
@@ -456,7 +435,6 @@ void main() {
             ),
             isEditing: true,
             showErrorMessages: true,
-            failureOrSuccessOption: none(),
           ),
         ],
       );

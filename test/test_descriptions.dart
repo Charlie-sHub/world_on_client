@@ -37,7 +37,7 @@ abstract class TestDescription {
   static const shouldEmitFailure = "Should emit a failed state";
   static const testingInitialization = "Testing initialization";
   static const shouldEmitInitialized = "Should emit an initialized state";
-  static const nonInitializedState = "Should emit a not Initialized state";
+  static const shouldNotEmitInitialized = "Should emit a not Initialized state";
   static const shouldEmitUpdated = "Should emit an updated state";
   static const shouldResetOption = "Should reset failureOrSuccessOption to none";
   static const deleteEventTests = "Delete Event Tests";

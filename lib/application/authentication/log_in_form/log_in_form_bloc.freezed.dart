@@ -82,7 +82,8 @@ class _$LogInFormEventCopyWithImpl<$Res> implements $LogInFormEventCopyWith<$Res
 }
 
 abstract class _$UsernameChangeCopyWith<$Res> {
-  factory _$UsernameChangeCopyWith(_UsernameChange value, $Res Function(_UsernameChange) then) = __$UsernameChangeCopyWithImpl<$Res>;
+  factory _$UsernameChangeCopyWith(_UsernameChange value, $Res Function(_UsernameChange) then) =
+  __$UsernameChangeCopyWithImpl<$Res>;
   $Res call({String username});
 }
 

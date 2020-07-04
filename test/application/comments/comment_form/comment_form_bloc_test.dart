@@ -63,7 +63,7 @@ void main() {
         ],
       );
       blocTest(
-        TestDescription.nonInitializedState,
+        TestDescription.shouldNotEmitInitialized,
         build: () async => getIt<CommentFormBloc>(),
         act: (bloc) async => bloc.add(
           CommentFormEvent.initialize(

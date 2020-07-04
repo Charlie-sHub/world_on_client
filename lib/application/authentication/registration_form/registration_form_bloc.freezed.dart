@@ -132,11 +132,14 @@ class _$RegistrationFormEventCopyWithImpl<$Res> implements $RegistrationFormEven
 }
 
 abstract class _$InitializeCopyWith<$Res> {
-  factory _$InitializeCopyWith(_Initialize value, $Res Function(_Initialize) then) = __$InitializeCopyWithImpl<$Res>;
+  factory _$InitializeCopyWith(_Initialize value, $Res Function(_Initialize) then) =
+  __$InitializeCopyWithImpl<$Res>;
 }
 
-class __$InitializeCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res> implements _$InitializeCopyWith<$Res> {
-  __$InitializeCopyWithImpl(_Initialize _value, $Res Function(_Initialize) _then) : super(_value, (v) => _then(v as _Initialize));
+class __$InitializeCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+  implements _$InitializeCopyWith<$Res> {
+  __$InitializeCopyWithImpl(_Initialize _value, $Res Function(_Initialize) _then)
+    : super(_value, (v) => _then(v as _Initialize));
 
   @override
   _Initialize get _value => super._value as _Initialize;
@@ -1478,7 +1481,7 @@ abstract class $RegistrationFormStateCopyWith<$Res> {
   factory $RegistrationFormStateCopyWith(RegistrationFormState value,
     $Res Function(RegistrationFormState) then) =
   _$RegistrationFormStateCopyWithImpl<$Res>;
-  
+
   $Res call({User user,
     bool showErrorMessages,
     bool isSubmitting,

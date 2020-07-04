@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
@@ -9,7 +10,7 @@ import 'package:worldon/domain/core/validation/objects/objective_set.dart';
 /// "Converts" a [Set] of [Objective]s into a [Map].
 ///
 /// A [Map] where the ids are the keys and a bool keeping track of when they're accomplished.
-// TODO: Can this be injected?
+@LazySingleton(env: Environment.prod)
 class FillObjectiveTracker implements UseCase<Map<int, bool>, Params> {
   @override
   Either<Failure, Map<int, bool>> call(Params params) {

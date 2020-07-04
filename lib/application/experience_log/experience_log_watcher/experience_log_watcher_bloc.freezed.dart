@@ -25,18 +25,15 @@ mixin _$ExperienceLogWatcherEvent {
   Result when<Result extends Object>({
     @required Result loadExperiences(),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result loadExperiences(),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result loadExperiences(_LoadExperiences value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result loadExperiences(_LoadExperiences value),
@@ -52,17 +49,19 @@ class _$ExperienceLogWatcherEventCopyWithImpl<$Res> implements $ExperienceLogWat
   _$ExperienceLogWatcherEventCopyWithImpl(this._value, this._then);
 
   final ExperienceLogWatcherEvent _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceLogWatcherEvent) _then;
 }
 
 abstract class _$LoadExperiencesCopyWith<$Res> {
-  factory _$LoadExperiencesCopyWith(_LoadExperiences value, $Res Function(_LoadExperiences) then) = __$LoadExperiencesCopyWithImpl<$Res>;
+  factory _$LoadExperiencesCopyWith(_LoadExperiences value, $Res Function(_LoadExperiences) then) =
+  __$LoadExperiencesCopyWithImpl<$Res>;
 }
 
-class __$LoadExperiencesCopyWithImpl<$Res> extends _$ExperienceLogWatcherEventCopyWithImpl<$Res> implements _$LoadExperiencesCopyWith<$Res> {
-  __$LoadExperiencesCopyWithImpl(_LoadExperiences _value, $Res Function(_LoadExperiences) _then) : super(_value, (v) => _then(v as _LoadExperiences));
+class __$LoadExperiencesCopyWithImpl<$Res> extends _$ExperienceLogWatcherEventCopyWithImpl<$Res>
+  implements _$LoadExperiencesCopyWith<$Res> {
+  __$LoadExperiencesCopyWithImpl(_LoadExperiences _value, $Res Function(_LoadExperiences) _then)
+    : super(_value, (v) => _then(v as _LoadExperiences));
 
   @override
   _LoadExperiences get _value => super._value as _LoadExperiences;
@@ -168,7 +167,6 @@ mixin _$ExperienceLogWatcherState {
     @required Result loadSuccess(Set<Experience> experienceSet),
     @required Result loadFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
@@ -177,7 +175,6 @@ mixin _$ExperienceLogWatcherState {
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
@@ -185,7 +182,6 @@ mixin _$ExperienceLogWatcherState {
     @required Result loadSuccess(_LoadSuccess value),
     @required Result loadFailure(_LoadFailure value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
@@ -197,24 +193,29 @@ mixin _$ExperienceLogWatcherState {
 }
 
 abstract class $ExperienceLogWatcherStateCopyWith<$Res> {
-  factory $ExperienceLogWatcherStateCopyWith(ExperienceLogWatcherState value, $Res Function(ExperienceLogWatcherState) then) = _$ExperienceLogWatcherStateCopyWithImpl<$Res>;
+  factory $ExperienceLogWatcherStateCopyWith(ExperienceLogWatcherState value,
+    $Res Function(ExperienceLogWatcherState) then) =
+  _$ExperienceLogWatcherStateCopyWithImpl<$Res>;
 }
 
-class _$ExperienceLogWatcherStateCopyWithImpl<$Res> implements $ExperienceLogWatcherStateCopyWith<$Res> {
+class _$ExperienceLogWatcherStateCopyWithImpl<$Res>
+  implements $ExperienceLogWatcherStateCopyWith<$Res> {
   _$ExperienceLogWatcherStateCopyWithImpl(this._value, this._then);
 
   final ExperienceLogWatcherState _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceLogWatcherState) _then;
 }
 
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+  __$InitialCopyWithImpl<$Res>;
 }
 
-class __$InitialCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCopyWithImpl<$Res>
+  implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+    : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -304,11 +305,14 @@ abstract class _Initial implements ExperienceLogWatcherState {
 }
 
 abstract class _$LoadingCopyWith<$Res> {
-  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) = __$LoadingCopyWithImpl<$Res>;
+  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
+  __$LoadingCopyWithImpl<$Res>;
 }
 
-class __$LoadingCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCopyWithImpl<$Res> implements _$LoadingCopyWith<$Res> {
-  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then) : super(_value, (v) => _then(v as _Loading));
+class __$LoadingCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCopyWithImpl<$Res>
+  implements _$LoadingCopyWith<$Res> {
+  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
+    : super(_value, (v) => _then(v as _Loading));
 
   @override
   _Loading get _value => super._value as _Loading;
@@ -398,13 +402,15 @@ abstract class _Loading implements ExperienceLogWatcherState {
 }
 
 abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
-
+  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
+  __$LoadSuccessCopyWithImpl<$Res>;
   $Res call({Set<Experience> experienceSet});
 }
 
-class __$LoadSuccessCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCopyWithImpl<$Res> implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then) : super(_value, (v) => _then(v as _LoadSuccess));
+class __$LoadSuccessCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCopyWithImpl<$Res>
+  implements _$LoadSuccessCopyWith<$Res> {
+  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then)
+    : super(_value, (v) => _then(v as _LoadSuccess));
 
   @override
   _LoadSuccess get _value => super._value as _LoadSuccess;
@@ -414,7 +420,9 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCopyWi
     Object experienceSet = freezed,
   }) {
     return _then(_LoadSuccess(
-      experienceSet == freezed ? _value.experienceSet : experienceSet as Set<Experience>,
+      experienceSet == freezed
+        ? _value.experienceSet
+        : experienceSet as Set<Experience>,
     ));
   }
 }
@@ -432,14 +440,20 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadSuccess && (identical(other.experienceSet, experienceSet) || const DeepCollectionEquality().equals(other.experienceSet, experienceSet)));
+    return identical(this, other) ||
+      (other is _LoadSuccess &&
+        (identical(other.experienceSet, experienceSet) ||
+          const DeepCollectionEquality()
+            .equals(other.experienceSet, experienceSet)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceSet);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceSet);
 
   @override
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+    __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -508,20 +522,21 @@ abstract class _LoadSuccess implements ExperienceLogWatcherState {
   const factory _LoadSuccess(Set<Experience> experienceSet) = _$_LoadSuccess;
 
   Set<Experience> get experienceSet;
-
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
 abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
-
+  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) =
+  __$LoadFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
-class __$LoadFailureCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCopyWithImpl<$Res> implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then) : super(_value, (v) => _then(v as _LoadFailure));
+class __$LoadFailureCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCopyWithImpl<$Res>
+  implements _$LoadFailureCopyWith<$Res> {
+  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then)
+    : super(_value, (v) => _then(v as _LoadFailure));
 
   @override
   _LoadFailure get _value => super._value as _LoadFailure;
@@ -559,14 +574,19 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) ||
+      (other is _LoadFailure &&
+        (identical(other.failure, failure) ||
+          const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith => __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+    __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -635,6 +655,5 @@ abstract class _LoadFailure implements ExperienceLogWatcherState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
   Failure<dynamic> get failure;
-
   _$LoadFailureCopyWith<_LoadFailure> get copyWith;
 }
