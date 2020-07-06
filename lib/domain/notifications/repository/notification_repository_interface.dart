@@ -14,6 +14,9 @@ abstract class NotificationRepositoryInterface {
   /// Requests the server to delete all [Notification]s of the logged in [User]
   Future<Either<Failure, Unit>> deleteUserNotifications();
 
-  ///	Sends a [Notification] to the server for its "seen" attribute to be updated
+  ///	Sends a [Notification]'s id to the server for its "seen" attribute to be updated
   Future<Either<Failure, Unit>> checkNotification(int id);
+
+  ///	Sends a [Notification]'s id  to the server to be deleted
+  Future<Either<Failure, Unit>> deleteNotification(int id);
 }

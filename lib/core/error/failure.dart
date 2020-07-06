@@ -5,11 +5,10 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/authentication/failures/authentication_domain_failure.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
-import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/domain/profile/failures/profile_domain_failure.dart';
 
 part 'failure.freezed.dart';
 
-/// Meant to be implemented by each failure of each layer and feature, it exists to properly implement [UseCase] and [AsyncUseCase]
 @freezed
 abstract class Failure<T> with _$Failure<T> {
   const factory Failure.authenticationDomain(AuthenticationDomainFailure<T> f) = _AuthenticationDomain<T>;
@@ -23,4 +22,6 @@ abstract class Failure<T> with _$Failure<T> {
   const factory Failure.coreData(CoreDataFailure<T> f) = _CoreData<T>;
 
   const factory Failure.value(ValueFailure<T> f) = _Value<T>;
+
+  const factory Failure.profileDomain(ProfileDomainFailure<T> f) = _ProfileDomain<T>;
 }

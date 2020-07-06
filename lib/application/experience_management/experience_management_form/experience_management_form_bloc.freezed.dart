@@ -287,7 +287,6 @@ abstract class _Initialize implements ExperienceManagementFormEvent {
   _$_Initialize;
 
   Option<Experience> get experienceOption;
-  
   _$InitializeCopyWith<_Initialize> get copyWith;
 }
 
@@ -914,7 +913,6 @@ abstract class _DifficultyChange implements ExperienceManagementFormEvent {
 abstract class _$ObjectivesChangeCopyWith<$Res> {
   factory _$ObjectivesChangeCopyWith(_ObjectivesChange value, $Res Function(_ObjectivesChange) then) =
   __$ObjectivesChangeCopyWithImpl<$Res>;
-  
   $Res call({KtSet<PrimitiveObjective> objectives});
 }
 
@@ -1062,7 +1060,7 @@ class _$_ObjectivesChange implements _ObjectivesChange {
 abstract class _ObjectivesChange implements ExperienceManagementFormEvent {
   const factory _ObjectivesChange(KtSet<PrimitiveObjective> objectives) =
   _$_ObjectivesChange;
-  
+
   KtSet<PrimitiveObjective> get objectives;
   _$ObjectivesChangeCopyWith<_ObjectivesChange> get copyWith;
 }
@@ -1070,7 +1068,6 @@ abstract class _ObjectivesChange implements ExperienceManagementFormEvent {
 abstract class _$RewardsChangeCopyWith<$Res> {
   factory _$RewardsChangeCopyWith(_RewardsChange value, $Res Function(_RewardsChange) then) =
   __$RewardsChangeCopyWithImpl<$Res>;
-  
   $Res call({KtSet<PrimitiveReward> rewards});
 }
 
@@ -1215,7 +1212,7 @@ class _$_RewardsChange implements _RewardsChange {
 abstract class _RewardsChange implements ExperienceManagementFormEvent {
   const factory _RewardsChange(KtSet<PrimitiveReward> rewards) =
   _$_RewardsChange;
-  
+
   KtSet<PrimitiveReward> get rewards;
   _$RewardsChangeCopyWith<_RewardsChange> get copyWith;
 }
@@ -1223,7 +1220,6 @@ abstract class _RewardsChange implements ExperienceManagementFormEvent {
 abstract class _$TagsChangeCopyWith<$Res> {
   factory _$TagsChangeCopyWith(_TagsChange value, $Res Function(_TagsChange) then) =
   __$TagsChangeCopyWithImpl<$Res>;
-  
   $Res call({KtSet<Tag> tags});
 }
 
@@ -1367,7 +1363,7 @@ class _$_TagsChange implements _TagsChange {
 
 abstract class _TagsChange implements ExperienceManagementFormEvent {
   const factory _TagsChange(KtSet<Tag> tags) = _$_TagsChange;
-  
+
   KtSet<Tag> get tags;
   _$TagsChangeCopyWith<_TagsChange> get copyWith;
 }

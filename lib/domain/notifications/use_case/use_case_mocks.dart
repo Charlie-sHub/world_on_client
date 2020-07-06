@@ -5,8 +5,13 @@ import 'package:worldon/domain/notifications/use_case/delete_user_notifications.
 import 'package:worldon/domain/notifications/use_case/load_notifications.dart';
 import 'package:worldon/domain/notifications/use_case/send_notification.dart';
 
+import 'delete_notification.dart';
+
 @LazySingleton(as: CheckNotification, env: Environment.test)
 class MockCheckNotification extends Mock implements CheckNotification {}
+
+@LazySingleton(as: DeleteNotification, env: Environment.test)
+class MockDeleteNotification extends Mock implements DeleteNotification {}
 
 @LazySingleton(as: DeleteUserNotifications, env: Environment.test)
 class MockDeleteUserNotifications extends Mock implements DeleteUserNotifications {}

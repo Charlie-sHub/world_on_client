@@ -47,6 +47,12 @@ class _$FailureTearOff {
       f,
     );
   }
+
+  _ProfileDomain<T> profileDomain<T>(ProfileDomainFailure<T> f) {
+    return _ProfileDomain<T>(
+      f,
+    );
+  }
 }
 
 // ignore: unused_element
@@ -61,6 +67,7 @@ mixin _$Failure<T> {
     @required Result coreApplication(CoreApplicationFailure<T> f),
     @required Result coreData(CoreDataFailure<T> f),
     @required Result value(ValueFailure<T> f),
+    @required Result profileDomain(ProfileDomainFailure<T> f),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -70,6 +77,7 @@ mixin _$Failure<T> {
     Result coreApplication(CoreApplicationFailure<T> f),
     Result coreData(CoreDataFailure<T> f),
     Result value(ValueFailure<T> f),
+    Result profileDomain(ProfileDomainFailure<T> f),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -80,6 +88,7 @@ mixin _$Failure<T> {
     @required Result coreApplication(_CoreAppllication<T> value),
     @required Result coreData(_CoreData<T> value),
     @required Result value(_Value<T> value),
+    @required Result profileDomain(_ProfileDomain<T> value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -89,6 +98,7 @@ mixin _$Failure<T> {
     Result coreApplication(_CoreAppllication<T> value),
     Result coreData(_CoreData<T> value),
     Result value(_Value<T> value),
+    Result profileDomain(_ProfileDomain<T> value),
     @required Result orElse(),
   });
 }
@@ -181,6 +191,7 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
     @required Result coreApplication(CoreApplicationFailure<T> f),
     @required Result coreData(CoreDataFailure<T> f),
     @required Result value(ValueFailure<T> f),
+    @required Result profileDomain(ProfileDomainFailure<T> f),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
@@ -188,6 +199,7 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
     assert(coreApplication != null);
     assert(coreData != null);
     assert(value != null);
+    assert(profileDomain != null);
     return authenticationDomain(f);
   }
 
@@ -200,6 +212,7 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
     Result coreApplication(CoreApplicationFailure<T> f),
     Result coreData(CoreDataFailure<T> f),
     Result value(ValueFailure<T> f),
+    Result profileDomain(ProfileDomainFailure<T> f),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -218,6 +231,7 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
     @required Result coreApplication(_CoreAppllication<T> value),
     @required Result coreData(_CoreData<T> value),
     @required Result value(_Value<T> value),
+    @required Result profileDomain(_ProfileDomain<T> value),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
@@ -225,6 +239,7 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
     assert(coreApplication != null);
     assert(coreData != null);
     assert(value != null);
+    assert(profileDomain != null);
     return authenticationDomain(this);
   }
 
@@ -237,6 +252,7 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
     Result coreApplication(_CoreAppllication<T> value),
     Result coreData(_CoreData<T> value),
     Result value(_Value<T> value),
+    Result profileDomain(_ProfileDomain<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -330,6 +346,7 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
     @required Result coreApplication(CoreApplicationFailure<T> f),
     @required Result coreData(CoreDataFailure<T> f),
     @required Result value(ValueFailure<T> f),
+    @required Result profileDomain(ProfileDomainFailure<T> f),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
@@ -337,6 +354,7 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
     assert(coreApplication != null);
     assert(coreData != null);
     assert(value != null);
+    assert(profileDomain != null);
     return authenticationData(f);
   }
 
@@ -349,6 +367,7 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
     Result coreApplication(CoreApplicationFailure<T> f),
     Result coreData(CoreDataFailure<T> f),
     Result value(ValueFailure<T> f),
+    Result profileDomain(ProfileDomainFailure<T> f),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -367,6 +386,7 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
     @required Result coreApplication(_CoreAppllication<T> value),
     @required Result coreData(_CoreData<T> value),
     @required Result value(_Value<T> value),
+    @required Result profileDomain(_ProfileDomain<T> value),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
@@ -374,6 +394,7 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
     assert(coreApplication != null);
     assert(coreData != null);
     assert(value != null);
+    assert(profileDomain != null);
     return authenticationData(this);
   }
 
@@ -386,6 +407,7 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
     Result coreApplication(_CoreAppllication<T> value),
     Result coreData(_CoreData<T> value),
     Result value(_Value<T> value),
+    Result profileDomain(_ProfileDomain<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -476,6 +498,7 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
     @required Result coreApplication(CoreApplicationFailure<T> f),
     @required Result coreData(CoreDataFailure<T> f),
     @required Result value(ValueFailure<T> f),
+    @required Result profileDomain(ProfileDomainFailure<T> f),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
@@ -483,6 +506,7 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
     assert(coreApplication != null);
     assert(coreData != null);
     assert(value != null);
+    assert(profileDomain != null);
     return coreDomain(f);
   }
 
@@ -495,6 +519,7 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
     Result coreApplication(CoreApplicationFailure<T> f),
     Result coreData(CoreDataFailure<T> f),
     Result value(ValueFailure<T> f),
+    Result profileDomain(ProfileDomainFailure<T> f),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -513,6 +538,7 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
     @required Result coreApplication(_CoreAppllication<T> value),
     @required Result coreData(_CoreData<T> value),
     @required Result value(_Value<T> value),
+    @required Result profileDomain(_ProfileDomain<T> value),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
@@ -520,6 +546,7 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
     assert(coreApplication != null);
     assert(coreData != null);
     assert(value != null);
+    assert(profileDomain != null);
     return coreDomain(this);
   }
 
@@ -532,6 +559,7 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
     Result coreApplication(_CoreAppllication<T> value),
     Result coreData(_CoreData<T> value),
     Result value(_Value<T> value),
+    Result profileDomain(_ProfileDomain<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -623,6 +651,7 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
     @required Result coreApplication(CoreApplicationFailure<T> f),
     @required Result coreData(CoreDataFailure<T> f),
     @required Result value(ValueFailure<T> f),
+    @required Result profileDomain(ProfileDomainFailure<T> f),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
@@ -630,6 +659,7 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
     assert(coreApplication != null);
     assert(coreData != null);
     assert(value != null);
+    assert(profileDomain != null);
     return coreApplication(f);
   }
 
@@ -642,6 +672,7 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
     Result coreApplication(CoreApplicationFailure<T> f),
     Result coreData(CoreDataFailure<T> f),
     Result value(ValueFailure<T> f),
+    Result profileDomain(ProfileDomainFailure<T> f),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -660,6 +691,7 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
     @required Result coreApplication(_CoreAppllication<T> value),
     @required Result coreData(_CoreData<T> value),
     @required Result value(_Value<T> value),
+    @required Result profileDomain(_ProfileDomain<T> value),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
@@ -667,6 +699,7 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
     assert(coreApplication != null);
     assert(coreData != null);
     assert(value != null);
+    assert(profileDomain != null);
     return coreApplication(this);
   }
 
@@ -679,6 +712,7 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
     Result coreApplication(_CoreAppllication<T> value),
     Result coreData(_CoreData<T> value),
     Result value(_Value<T> value),
+    Result profileDomain(_ProfileDomain<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -769,6 +803,7 @@ class _$_CoreData<T> implements _CoreData<T> {
     @required Result coreApplication(CoreApplicationFailure<T> f),
     @required Result coreData(CoreDataFailure<T> f),
     @required Result value(ValueFailure<T> f),
+    @required Result profileDomain(ProfileDomainFailure<T> f),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
@@ -776,6 +811,7 @@ class _$_CoreData<T> implements _CoreData<T> {
     assert(coreApplication != null);
     assert(coreData != null);
     assert(value != null);
+    assert(profileDomain != null);
     return coreData(f);
   }
 
@@ -788,6 +824,7 @@ class _$_CoreData<T> implements _CoreData<T> {
     Result coreApplication(CoreApplicationFailure<T> f),
     Result coreData(CoreDataFailure<T> f),
     Result value(ValueFailure<T> f),
+    Result profileDomain(ProfileDomainFailure<T> f),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -806,6 +843,7 @@ class _$_CoreData<T> implements _CoreData<T> {
     @required Result coreApplication(_CoreAppllication<T> value),
     @required Result coreData(_CoreData<T> value),
     @required Result value(_Value<T> value),
+    @required Result profileDomain(_ProfileDomain<T> value),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
@@ -813,6 +851,7 @@ class _$_CoreData<T> implements _CoreData<T> {
     assert(coreApplication != null);
     assert(coreData != null);
     assert(value != null);
+    assert(profileDomain != null);
     return coreData(this);
   }
 
@@ -825,6 +864,7 @@ class _$_CoreData<T> implements _CoreData<T> {
     Result coreApplication(_CoreAppllication<T> value),
     Result coreData(_CoreData<T> value),
     Result value(_Value<T> value),
+    Result profileDomain(_ProfileDomain<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -914,6 +954,7 @@ class _$_Value<T> implements _Value<T> {
     @required Result coreApplication(CoreApplicationFailure<T> f),
     @required Result coreData(CoreDataFailure<T> f),
     @required Result value(ValueFailure<T> f),
+    @required Result profileDomain(ProfileDomainFailure<T> f),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
@@ -921,6 +962,7 @@ class _$_Value<T> implements _Value<T> {
     assert(coreApplication != null);
     assert(coreData != null);
     assert(value != null);
+    assert(profileDomain != null);
     return value(f);
   }
 
@@ -933,6 +975,7 @@ class _$_Value<T> implements _Value<T> {
     Result coreApplication(CoreApplicationFailure<T> f),
     Result coreData(CoreDataFailure<T> f),
     Result value(ValueFailure<T> f),
+    Result profileDomain(ProfileDomainFailure<T> f),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -951,6 +994,7 @@ class _$_Value<T> implements _Value<T> {
     @required Result coreApplication(_CoreAppllication<T> value),
     @required Result coreData(_CoreData<T> value),
     @required Result value(_Value<T> value),
+    @required Result profileDomain(_ProfileDomain<T> value),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
@@ -958,6 +1002,7 @@ class _$_Value<T> implements _Value<T> {
     assert(coreApplication != null);
     assert(coreData != null);
     assert(value != null);
+    assert(profileDomain != null);
     return value(this);
   }
 
@@ -970,6 +1015,7 @@ class _$_Value<T> implements _Value<T> {
     Result coreApplication(_CoreAppllication<T> value),
     Result coreData(_CoreData<T> value),
     Result value(_Value<T> value),
+    Result profileDomain(_ProfileDomain<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -985,4 +1031,157 @@ abstract class _Value<T> implements Failure<T> {
 
   ValueFailure<T> get f;
   _$ValueCopyWith<T, _Value<T>> get copyWith;
+}
+
+abstract class _$ProfileDomainCopyWith<T, $Res> {
+  factory _$ProfileDomainCopyWith(_ProfileDomain<T> value, $Res Function(_ProfileDomain<T>) then) =
+  __$ProfileDomainCopyWithImpl<T, $Res>;
+  
+  $Res call({ProfileDomainFailure<T> f});
+  
+  $ProfileDomainFailureCopyWith<T, $Res> get f;
+}
+
+class __$ProfileDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
+  implements _$ProfileDomainCopyWith<T, $Res> {
+  __$ProfileDomainCopyWithImpl(_ProfileDomain<T> _value, $Res Function(_ProfileDomain<T>) _then)
+    : super(_value, (v) => _then(v as _ProfileDomain<T>));
+  
+  @override
+  _ProfileDomain<T> get _value => super._value as _ProfileDomain<T>;
+  
+  @override
+  $Res call({
+    Object f = freezed,
+  }) {
+    return _then(_ProfileDomain<T>(
+      f == freezed ? _value.f : f as ProfileDomainFailure<T>,
+    ));
+  }
+  
+  @override
+  $ProfileDomainFailureCopyWith<T, $Res> get f {
+    if (_value.f == null) {
+      return null;
+    }
+    return $ProfileDomainFailureCopyWith<T, $Res>(_value.f, (value) {
+      return _then(_value.copyWith(f: value));
+    });
+  }
+}
+
+class _$_ProfileDomain<T> implements _ProfileDomain<T> {
+  const _$_ProfileDomain(this.f) : assert(f != null);
+  
+  @override
+  final ProfileDomainFailure<T> f;
+  
+  @override
+  String toString() {
+    return 'Failure<$T>.profileDomain(f: $f)';
+  }
+  
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+      (other is _ProfileDomain<T> &&
+        (identical(other.f, f) ||
+          const DeepCollectionEquality().equals(other.f, f)));
+  }
+  
+  @override
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+  
+  @override
+  _$ProfileDomainCopyWith<T, _ProfileDomain<T>> get copyWith =>
+    __$ProfileDomainCopyWithImpl<T, _ProfileDomain<T>>(this, _$identity);
+  
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result authenticationDomain(AuthenticationDomainFailure<T> f),
+    @required Result authenticationData(AuthenticationDataFailure<T> f),
+    @required Result coreDomain(CoreDomainFailure<T> f),
+    @required Result coreApplication(CoreApplicationFailure<T> f),
+    @required Result coreData(CoreDataFailure<T> f),
+    @required Result value(ValueFailure<T> f),
+    @required Result profileDomain(ProfileDomainFailure<T> f),
+  }) {
+    assert(authenticationDomain != null);
+    assert(authenticationData != null);
+    assert(coreDomain != null);
+    assert(coreApplication != null);
+    assert(coreData != null);
+    assert(value != null);
+    assert(profileDomain != null);
+    return profileDomain(f);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result authenticationDomain(AuthenticationDomainFailure<T> f),
+    Result authenticationData(AuthenticationDataFailure<T> f),
+    Result coreDomain(CoreDomainFailure<T> f),
+    Result coreApplication(CoreApplicationFailure<T> f),
+    Result coreData(CoreDataFailure<T> f),
+    Result value(ValueFailure<T> f),
+    Result profileDomain(ProfileDomainFailure<T> f),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (profileDomain != null) {
+      return profileDomain(f);
+    }
+    return orElse();
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result authenticationDomain(_AuthenticationDomain<T> value),
+    @required Result authenticationData(_AuthenticationData<T> value),
+    @required Result coreDomain(_CoreDomain<T> value),
+    @required Result coreApplication(_CoreAppllication<T> value),
+    @required Result coreData(_CoreData<T> value),
+    @required Result value(_Value<T> value),
+    @required Result profileDomain(_ProfileDomain<T> value),
+  }) {
+    assert(authenticationDomain != null);
+    assert(authenticationData != null);
+    assert(coreDomain != null);
+    assert(coreApplication != null);
+    assert(coreData != null);
+    assert(value != null);
+    assert(profileDomain != null);
+    return profileDomain(this);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result authenticationDomain(_AuthenticationDomain<T> value),
+    Result authenticationData(_AuthenticationData<T> value),
+    Result coreDomain(_CoreDomain<T> value),
+    Result coreApplication(_CoreAppllication<T> value),
+    Result coreData(_CoreData<T> value),
+    Result value(_Value<T> value),
+    Result profileDomain(_ProfileDomain<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (profileDomain != null) {
+      return profileDomain(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ProfileDomain<T> implements Failure<T> {
+  const factory _ProfileDomain(ProfileDomainFailure<T> f) = _$_ProfileDomain<T>;
+  
+  ProfileDomainFailure<T> get f;
+  
+  _$ProfileDomainCopyWith<T, _ProfileDomain<T>> get copyWith;
 }

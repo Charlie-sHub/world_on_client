@@ -20,7 +20,15 @@ import 'package:worldon/application/experience_log/experience_log_watcher/experi
 import 'package:worldon/application/experience_management/experience_management_actor/experience_management_actor_bloc.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
 import 'package:worldon/application/experience_navigation/experience_navigation_actor/experience_navigation_actor_bloc.dart';
-import 'package:worldon/core/util/cypher.dart';
+
+omain/achievement_management/use_case/use_case_mocks.dart';
+import 'package:worldon/domain/achievement_management/use_case/award_achievement.dart';
+import 'package:worldon/domain/profile/use_case/use_case_mocks.dart';
+import 'package:worldon/domain/profile/use_case/block_user.dart';
+import 'package:worldon/domain/authentication/repository/cached_user_repository_mock.dart';
+import 'package:worldon/domain/authentication/repository/cached_credentials_repository_interfaimport '
+
+package:worldon/core/util/cypher.dart';
 import 'package:worldon/data/achievement_management/repository/development_achievement_repository.dart';
 import 'package:worldon/data/achievement_management/repository/production_achievement_repository.dart';
 import 'package:worldon/data/authentication/repository/development_authentication_repository.dart';
@@ -91,6 +99,7 @@ import 'package:worldon/domain/core/repository/geo_location_repository_interface
 import 'package:worldon/domain/core/repository/geo_location_repository_mock.dart';
 import 'package:worldon/domain/core/use_case/delete_cache.dart';
 import 'package:worldon/domain/core/use_case/get_current_location.dart';
+import 'package:worldon/domain/core/use_case/is_logged_in_user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/use_case/use_case_mocks.dart';
 import 'package:worldon/domain/experience_log/repository/experience_log_repository_interface.dart';
@@ -123,6 +132,7 @@ import 'package:worldon/domain/main_feed/use_case/use_case_mocks.dart';
 import 'package:worldon/domain/notifications/repository/notification_repository_interface.dart';
 import 'package:worldon/domain/notifications/repository/notification_repository_mock.dart';
 import 'package:worldon/domain/notifications/use_case/check_notification.dart';
+import 'package:worldon/domain/notifications/use_case/delete_notification.dart';
 import 'package:worldon/domain/notifications/use_case/delete_user_notifications.dart';
 import 'package:worldon/domain/notifications/use_case/load_notifications.dart';
 import 'package:worldon/domain/notifications/use_case/send_notification.dart';
@@ -180,7 +190,8 @@ void $initGetIt(GetIt g, {String environment}) {
       () => AchievementManagementActorBloc());
   g.registerFactory<AchievementManagementFormBloc>(
       () => AchievementManagementFormBloc());
-  g.registerFactory<AchievementManagementWatcherBloc>(() => AchievementManagementWatcherBloc());
+  g.registerFactory<AchievementManagementWatcherBloc>(
+      () => AchievementManagementWatcherBloc());
   g.registerFactory<AuthenticationBloc>(() => AuthenticationBloc());
   g.registerFactory<CommentActorBloc>(() => CommentActorBloc());
   g.registerFactory<CommentFormBloc>(() => CommentFormBloc());
@@ -195,6 +206,11 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerFactory<ExperienceNavigationActorBloc>(
       () => ExperienceNavigationActorBloc());
   g.registerFactory<LogInFormBloc>(() => LogInFormBloc());
+  g.registerFactory<MainFeedWatcherBloc>(() => MainFeedWatcherBloc());
+  g.registerFactory<NotificationActorBloc>(() => NotificationActorBloc());
+  g.registerFactory<NotificationsWatcherBloc>(() => NotificationsWatcherBloc());
+  g.registerFactory<OptionsFormBloc>(() => OptionsFormBloc());
+  g.registerFactory<ProfileWatcherBloc>(() => ProfileWatcherBloc());
   g.registerFactory<RegistrationFormBloc>(() => RegistrationFormBloc());
 
   //Register test Dependencies --------
@@ -223,6 +239,7 @@ void $initGetIt(GetIt g, {String environment}) {
     g.registerLazySingleton<DeleteCache>(() => MockDeleteCache());
     g.registerLazySingleton<DeleteComment>(() => MockDeleteComment());
     g.registerLazySingleton<DeleteExperience>(() => MockDeleteExperience());
+    g.registerLazySingleton<DeleteNotification>(() => MockDeleteNotification());
     g.registerLazySingleton<DeleteTag>(() => MockDeleteTag());
     g.registerLazySingleton<DeleteUser>(() => MockDeleteUser());
     g.registerLazySingleton<DeleteUserNotifications>(
@@ -262,6 +279,7 @@ void $initGetIt(GetIt g, {String environment}) {
     g.registerLazySingleton<GetUserAchievements>(
         () => MockGetUserAchievements());
     g.registerLazySingleton<GetUserComments>(() => MockGetUserComments());
+    g.registerLazySingleton<IsLoggedInUser>(() => MockIsLoggedInUser());
     g.registerLazySingleton<LikeExperience>(() => MockLikeExperience());
     g.registerLazySingleton<LoadBlockedUsers>(() => MockLoadBlockedUsers());
     g.registerLazySingleton<LoadExperiencesCreated>(
@@ -415,6 +433,7 @@ void $initGetIt(GetIt g, {String environment}) {
         () => GetUserAchievements(g<AchievementRepositoryInterface>()));
     g.registerLazySingleton<GetUserComments>(
         () => GetUserComments(g<CommentRepositoryInterface>()));
+    g.registerLazySingleton<IsLoggedInUser>(() => IsLoggedInUser());
     g.registerLazySingleton<LikeExperience>(
         () => LikeExperience(g<ExperienceNavigationRepositoryInterface>()));
     g.registerLazySingleton<LoadSurroundingExperiences>(() =>
@@ -480,6 +499,8 @@ void $initGetIt(GetIt g, {String environment}) {
         () => CreateTag(g<TagManagementRepositoryInterface>()));
     g.registerLazySingleton<DeleteExperience>(
         () => DeleteExperience(g<ProfileRepositoryInterface>()));
+    g.registerLazySingleton<DeleteNotification>(
+        () => DeleteNotification(g<NotificationRepositoryInterface>()));
     g.registerLazySingleton<DeleteTag>(
         () => DeleteTag(g<TagManagementRepositoryInterface>()));
     g.registerLazySingleton<DeleteUser>(

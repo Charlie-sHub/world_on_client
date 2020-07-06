@@ -49,7 +49,13 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     );
     if (state.user.isValid) {
       final _register = getIt<Register>();
-      _failureOrUnit = await _register(Params(user: state.user));
+      // TODO: Create default Options for the user before registering
+      // For now with the languageCode of the phone
+      _failureOrUnit = await _register(
+        Params(
+          user: state.user,
+        ),
+      );
     }
     yield state.copyWith(
       isSubmitting: false,

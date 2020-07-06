@@ -9,11 +9,12 @@ import 'package:worldon/domain/options/repository/remote_options_repository_inte
 @LazySingleton(env: Environment.prod)
 class SaveGlobalOptions implements AsyncUseCase<Unit, Params> {
   final RemoteOptionsRepositoryInterface _repository;
-  
+
   SaveGlobalOptions(this._repository);
-  
+
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
+    // TODO: Don't forget to associate the options to the logged in User
     return _repository.saveGlobalOptions(params.options);
   }
 }

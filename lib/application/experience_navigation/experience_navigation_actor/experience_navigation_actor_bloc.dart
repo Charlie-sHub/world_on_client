@@ -19,9 +19,7 @@ import 'package:worldon/domain/experience_navigation/use_case/reward_user.dart' 
 import 'package:worldon/injection.dart';
 
 part 'experience_navigation_actor_bloc.freezed.dart';
-
 part 'experience_navigation_actor_event.dart';
-
 part 'experience_navigation_actor_state.dart';
 
 @injectable
@@ -133,6 +131,7 @@ class ExperienceNavigationActorBloc extends Bloc<ExperienceNavigationActorEvent,
       failureOrSuccessOption: none(),
     );
     if (_isFinished) {
+      // These Events could be added from the UI
       add(const ExperienceNavigationActorEvent.finishExperience());
       add(const ExperienceNavigationActorEvent.rewardUser());
     }
