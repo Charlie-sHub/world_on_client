@@ -12,8 +12,8 @@ T _$identity<T>(T value) => value;
 class _$NotificationsWatcherEventTearOff {
   const _$NotificationsWatcherEventTearOff();
 
-  _Load load() {
-    return const _Load();
+  _NotificationsLoaded notificationsLoaded() {
+    return const _NotificationsLoaded();
   }
 }
 
@@ -23,20 +23,20 @@ const $NotificationsWatcherEvent = _$NotificationsWatcherEventTearOff();
 mixin _$NotificationsWatcherEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result load(),
+    @required Result notificationsLoaded(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result load(),
+    Result notificationsLoaded(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result load(_Load value),
+    @required Result notificationsLoaded(_NotificationsLoaded value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result load(_Load value),
+    Result notificationsLoaded(_NotificationsLoaded value),
     @required Result orElse(),
   });
 }
@@ -53,31 +53,32 @@ class _$NotificationsWatcherEventCopyWithImpl<$Res> implements $NotificationsWat
   final $Res Function(NotificationsWatcherEvent) _then;
 }
 
-abstract class _$LoadCopyWith<$Res> {
-  factory _$LoadCopyWith(_Load value, $Res Function(_Load) then) =
-  __$LoadCopyWithImpl<$Res>;
+abstract class _$NotificationsLoadedCopyWith<$Res> {
+  factory _$NotificationsLoadedCopyWith(_NotificationsLoaded value,
+    $Res Function(_NotificationsLoaded) then) =
+  __$NotificationsLoadedCopyWithImpl<$Res>;
 }
 
-class __$LoadCopyWithImpl<$Res> extends _$NotificationsWatcherEventCopyWithImpl<$Res>
-  implements _$LoadCopyWith<$Res> {
-  __$LoadCopyWithImpl(_Load _value, $Res Function(_Load) _then)
-    : super(_value, (v) => _then(v as _Load));
+class __$NotificationsLoadedCopyWithImpl<$Res> extends _$NotificationsWatcherEventCopyWithImpl<$Res>
+  implements _$NotificationsLoadedCopyWith<$Res> {
+  __$NotificationsLoadedCopyWithImpl(_NotificationsLoaded _value, $Res Function(_NotificationsLoaded) _then)
+    : super(_value, (v) => _then(v as _NotificationsLoaded));
 
   @override
-  _Load get _value => super._value as _Load;
+  _NotificationsLoaded get _value => super._value as _NotificationsLoaded;
 }
 
-class _$_Load implements _Load {
-  const _$_Load();
+class _$_NotificationsLoaded implements _NotificationsLoaded {
+  const _$_NotificationsLoaded();
 
   @override
   String toString() {
-    return 'NotificationsWatcherEvent.load()';
+    return 'NotificationsWatcherEvent.notificationsLoaded()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Load);
+    return identical(this, other) || (other is _NotificationsLoaded);
   }
 
   @override
@@ -86,21 +87,21 @@ class _$_Load implements _Load {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result load(),
+    @required Result notificationsLoaded(),
   }) {
-    assert(load != null);
-    return load();
+    assert(notificationsLoaded != null);
+    return notificationsLoaded();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result load(),
+    Result notificationsLoaded(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (load != null) {
-      return load();
+    if (notificationsLoaded != null) {
+      return notificationsLoaded();
     }
     return orElse();
   }
@@ -108,28 +109,28 @@ class _$_Load implements _Load {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result load(_Load value),
+    @required Result notificationsLoaded(_NotificationsLoaded value),
   }) {
-    assert(load != null);
-    return load(this);
+    assert(notificationsLoaded != null);
+    return notificationsLoaded(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result load(_Load value),
+    Result notificationsLoaded(_NotificationsLoaded value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (load != null) {
-      return load(this);
+    if (notificationsLoaded != null) {
+      return notificationsLoaded(this);
     }
     return orElse();
   }
 }
 
-abstract class _Load implements NotificationsWatcherEvent {
-  const factory _Load() = _$_Load;
+abstract class _NotificationsLoaded implements NotificationsWatcherEvent {
+  const factory _NotificationsLoaded() = _$_NotificationsLoaded;
 }
 
 class _$NotificationsWatcherStateTearOff {

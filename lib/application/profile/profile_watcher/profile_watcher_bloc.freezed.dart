@@ -195,18 +195,20 @@ class _$ProfileWatcherStateTearOff {
     return const _Loading();
   }
 
-  _Own own() {
-    return const _Own();
-  }
-
-  _Foreign foreign() {
-    return const _Foreign();
-  }
-
-  _LoadFailure loadFailure(Failure<dynamic> failure) {
-    return _LoadFailure(
-      failure,
+  _Own own(User user) {
+    return _Own(
+      user,
     );
+  }
+
+  _Foreign foreign(User user) {
+    return _Foreign(
+      user,
+    );
+  }
+
+  _LoadFailure loadFailure() {
+    return const _LoadFailure();
   }
 }
 
@@ -218,17 +220,17 @@ mixin _$ProfileWatcherState {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loading(),
-    @required Result own(),
-    @required Result foreign(),
-    @required Result loadFailure(Failure<dynamic> failure),
+    @required Result own(User user),
+    @required Result foreign(User user),
+    @required Result loadFailure(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loading(),
-    Result own(),
-    Result foreign(),
-    Result loadFailure(Failure<dynamic> failure),
+    Result own(User user),
+    Result foreign(User user),
+    Result loadFailure(),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -299,9 +301,9 @@ class _$_Initial implements _Initial {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loading(),
-    @required Result own(),
-    @required Result foreign(),
-    @required Result loadFailure(Failure<dynamic> failure),
+    @required Result own(User user),
+    @required Result foreign(User user),
+    @required Result loadFailure(),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -316,9 +318,9 @@ class _$_Initial implements _Initial {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loading(),
-    Result own(),
-    Result foreign(),
-    Result loadFailure(Failure<dynamic> failure),
+    Result own(User user),
+    Result foreign(User user),
+    Result loadFailure(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -402,9 +404,9 @@ class _$_Loading implements _Loading {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loading(),
-    @required Result own(),
-    @required Result foreign(),
-    @required Result loadFailure(Failure<dynamic> failure),
+    @required Result own(User user),
+    @required Result foreign(User user),
+    @required Result loadFailure(),
   }) {
     assert(initial != null);
     assert(loading != null);
@@ -419,9 +421,9 @@ class _$_Loading implements _Loading {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loading(),
-    Result own(),
-    Result foreign(),
-    Result loadFailure(Failure<dynamic> failure),
+    Result own(User user),
+    Result foreign(User user),
+    Result loadFailure(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -473,6 +475,10 @@ abstract class _Loading implements ProfileWatcherState {
 abstract class _$OwnCopyWith<$Res> {
   factory _$OwnCopyWith(_Own value, $Res Function(_Own) then) =
   __$OwnCopyWithImpl<$Res>;
+
+  $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
 }
 
 class __$OwnCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res>
@@ -482,39 +488,69 @@ class __$OwnCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res>
 
   @override
   _Own get _value => super._value as _Own;
+
+  @override
+  $Res call({
+    Object user = freezed,
+  }) {
+    return _then(_Own(
+      user == freezed ? _value.user : user as User,
+    ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get user {
+    if (_value.user == null) {
+      return null;
+    }
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
 }
 
 class _$_Own implements _Own {
-  const _$_Own();
+  const _$_Own(this.user) : assert(user != null);
+  
+  @override
+  final User user;
 
   @override
   String toString() {
-    return 'ProfileWatcherState.own()';
+    return 'ProfileWatcherState.own(user: $user)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Own);
+    return identical(this, other) ||
+      (other is _Own &&
+        (identical(other.user, user) ||
+          const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  
+  @override
+  _$OwnCopyWith<_Own> get copyWith =>
+    __$OwnCopyWithImpl<_Own>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loading(),
-    @required Result own(),
-    @required Result foreign(),
-    @required Result loadFailure(Failure<dynamic> failure),
+    @required Result own(User user),
+    @required Result foreign(User user),
+    @required Result loadFailure(),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(own != null);
     assert(foreign != null);
     assert(loadFailure != null);
-    return own();
+    return own(user);
   }
 
   @override
@@ -522,14 +558,14 @@ class _$_Own implements _Own {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loading(),
-    Result own(),
-    Result foreign(),
-    Result loadFailure(Failure<dynamic> failure),
+    Result own(User user),
+    Result foreign(User user),
+    Result loadFailure(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (own != null) {
-      return own();
+      return own(user);
     }
     return orElse();
   }
@@ -570,12 +606,20 @@ class _$_Own implements _Own {
 }
 
 abstract class _Own implements ProfileWatcherState {
-  const factory _Own() = _$_Own;
+  const factory _Own(User user) = _$_Own;
+  
+  User get user;
+  
+  _$OwnCopyWith<_Own> get copyWith;
 }
 
 abstract class _$ForeignCopyWith<$Res> {
   factory _$ForeignCopyWith(_Foreign value, $Res Function(_Foreign) then) =
   __$ForeignCopyWithImpl<$Res>;
+
+  $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
 }
 
 class __$ForeignCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res>
@@ -585,39 +629,69 @@ class __$ForeignCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Re
 
   @override
   _Foreign get _value => super._value as _Foreign;
+
+  @override
+  $Res call({
+    Object user = freezed,
+  }) {
+    return _then(_Foreign(
+      user == freezed ? _value.user : user as User,
+    ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get user {
+    if (_value.user == null) {
+      return null;
+    }
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
 }
 
 class _$_Foreign implements _Foreign {
-  const _$_Foreign();
+  const _$_Foreign(this.user) : assert(user != null);
+  
+  @override
+  final User user;
 
   @override
   String toString() {
-    return 'ProfileWatcherState.foreign()';
+    return 'ProfileWatcherState.foreign(user: $user)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Foreign);
+    return identical(this, other) ||
+      (other is _Foreign &&
+        (identical(other.user, user) ||
+          const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  
+  @override
+  _$ForeignCopyWith<_Foreign> get copyWith =>
+    __$ForeignCopyWithImpl<_Foreign>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loading(),
-    @required Result own(),
-    @required Result foreign(),
-    @required Result loadFailure(Failure<dynamic> failure),
+    @required Result own(User user),
+    @required Result foreign(User user),
+    @required Result loadFailure(),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(own != null);
     assert(foreign != null);
     assert(loadFailure != null);
-    return foreign();
+    return foreign(user);
   }
 
   @override
@@ -625,14 +699,14 @@ class _$_Foreign implements _Foreign {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loading(),
-    Result own(),
-    Result foreign(),
-    Result loadFailure(Failure<dynamic> failure),
+    Result own(User user),
+    Result foreign(User user),
+    Result loadFailure(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (foreign != null) {
-      return foreign();
+      return foreign(user);
     }
     return orElse();
   }
@@ -673,15 +747,16 @@ class _$_Foreign implements _Foreign {
 }
 
 abstract class _Foreign implements ProfileWatcherState {
-  const factory _Foreign() = _$_Foreign;
+  const factory _Foreign(User user) = _$_Foreign;
+  
+  User get user;
+  
+  _$ForeignCopyWith<_Foreign> get copyWith;
 }
 
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) =
   __$LoadFailureCopyWithImpl<$Res>;
-  $Res call({Failure<dynamic> failure});
-
-  $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 class __$LoadFailureCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res>
@@ -691,69 +766,39 @@ class __$LoadFailureCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl
 
   @override
   _LoadFailure get _value => super._value as _LoadFailure;
-
-  @override
-  $Res call({
-    Object failure = freezed,
-  }) {
-    return _then(_LoadFailure(
-      failure == freezed ? _value.failure : failure as Failure<dynamic>,
-    ));
-  }
-
-  @override
-  $FailureCopyWith<dynamic, $Res> get failure {
-    if (_value.failure == null) {
-      return null;
-    }
-    return $FailureCopyWith<dynamic, $Res>(_value.failure, (value) {
-      return _then(_value.copyWith(failure: value));
-    });
-  }
 }
 
 class _$_LoadFailure implements _LoadFailure {
-  const _$_LoadFailure(this.failure) : assert(failure != null);
-
-  @override
-  final Failure<dynamic> failure;
+  const _$_LoadFailure();
 
   @override
   String toString() {
-    return 'ProfileWatcherState.loadFailure(failure: $failure)';
+    return 'ProfileWatcherState.loadFailure()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-      (other is _LoadFailure &&
-        (identical(other.failure, failure) ||
-          const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) || (other is _LoadFailure);
   }
 
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
-
-  @override
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
-    __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loading(),
-    @required Result own(),
-    @required Result foreign(),
-    @required Result loadFailure(Failure<dynamic> failure),
+    @required Result own(User user),
+    @required Result foreign(User user),
+    @required Result loadFailure(),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(own != null);
     assert(foreign != null);
     assert(loadFailure != null);
-    return loadFailure(failure);
+    return loadFailure();
   }
 
   @override
@@ -761,14 +806,14 @@ class _$_LoadFailure implements _LoadFailure {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loading(),
-    Result own(),
-    Result foreign(),
-    Result loadFailure(Failure<dynamic> failure),
+    Result own(User user),
+    Result foreign(User user),
+    Result loadFailure(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (loadFailure != null) {
-      return loadFailure(failure);
+      return loadFailure();
     }
     return orElse();
   }
@@ -809,8 +854,5 @@ class _$_LoadFailure implements _LoadFailure {
 }
 
 abstract class _LoadFailure implements ProfileWatcherState {
-  const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
-
-  Failure<dynamic> get failure;
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith;
+  const factory _LoadFailure() = _$_LoadFailure;
 }

@@ -39,7 +39,7 @@ void main() {
           when(deleteNotification.call(any)).thenAnswer((_) async => right(unit));
           return getIt<NotificationActorBloc>();
         },
-        act: (bloc) async => bloc.add(NotificationActorEvent.delete(Notification.empty())),
+        act: (bloc) async => bloc.add(NotificationActorEvent.deleted(Notification.empty())),
         verify: (_) async {
           verify(deleteNotification.call(any));
           verifyNoMoreInteractions(deleteNotification);
@@ -55,7 +55,7 @@ void main() {
           when(deleteNotification.call(any)).thenAnswer((_) async => left(failure));
           return getIt<NotificationActorBloc>();
         },
-        act: (bloc) async => bloc.add(NotificationActorEvent.delete(Notification.empty())),
+        act: (bloc) async => bloc.add(NotificationActorEvent.deleted(Notification.empty())),
         verify: (_) async {
           verify(deleteNotification.call(any));
           verifyNoMoreInteractions(deleteNotification);
@@ -76,7 +76,7 @@ void main() {
           when(checkNotification.call(any)).thenAnswer((_) async => right(unit));
           return getIt<NotificationActorBloc>();
         },
-        act: (bloc) async => bloc.add(NotificationActorEvent.check(Notification.empty())),
+        act: (bloc) async => bloc.add(NotificationActorEvent.checked(Notification.empty())),
         verify: (_) async {
           verify(checkNotification.call(any));
           verifyNoMoreInteractions(checkNotification);
@@ -89,7 +89,7 @@ void main() {
           when(checkNotification.call(any)).thenAnswer((_) async => left(failure));
           return getIt<NotificationActorBloc>();
         },
-        act: (bloc) async => bloc.add(NotificationActorEvent.check(Notification.empty())),
+        act: (bloc) async => bloc.add(NotificationActorEvent.checked(Notification.empty())),
         verify: (_) async {
           verify(checkNotification.call(any));
           verifyNoMoreInteractions(checkNotification);

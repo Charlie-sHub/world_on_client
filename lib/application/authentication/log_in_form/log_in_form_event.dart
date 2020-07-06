@@ -2,11 +2,11 @@ part of 'log_in_form_bloc.dart';
 
 @freezed
 abstract class LogInFormEvent with _$LogInFormEvent {
-  const factory LogInFormEvent.usernameChange(String username) = _UsernameChange;
+  const factory LogInFormEvent.usernameChanged(String username) = _UsernameChanged;
 
-  const factory LogInFormEvent.passwordChange(String password) = _PasswordChange;
+  const factory LogInFormEvent.passwordChanged(String password) = _PasswordChanged;
 
-  const factory LogInFormEvent.logIn() = _LogIn;
+  const factory LogInFormEvent.loggedIn() = _LoggedIn;
 
-  const factory LogInFormEvent.logInGoogle() = _LogInGoogle;
+  const factory LogInFormEvent.loggedInGoogle() = _LoggedInGoogle;
 }

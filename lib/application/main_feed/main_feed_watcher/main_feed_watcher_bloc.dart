@@ -12,9 +12,7 @@ import 'package:worldon/domain/main_feed/use_case/fill_feed.dart';
 import '../../../injection.dart';
 
 part 'main_feed_watcher_bloc.freezed.dart';
-
 part 'main_feed_watcher_event.dart';
-
 part 'main_feed_watcher_state.dart';
 
 @injectable
@@ -24,11 +22,11 @@ class MainFeedWatcherBloc extends Bloc<MainFeedWatcherEvent, MainFeedWatcherStat
   @override
   Stream<MainFeedWatcherState> mapEventToState(MainFeedWatcherEvent event) async* {
     yield* event.map(
-      fillFeed: onFillFeed,
+      feedFilled: onFeedFilled,
     );
   }
 
-  Stream<MainFeedWatcherState> onFillFeed(_FillFeed event) async* {
+  Stream<MainFeedWatcherState> onFeedFilled(_FeedFilled event) async* {
     yield const MainFeedWatcherState.loading();
     final _fillFeed = getIt<FillFeed>();
     yield* _fillFeed(getIt<NoParams>()).map(

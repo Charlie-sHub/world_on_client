@@ -12,8 +12,8 @@ T _$identity<T>(T value) => value;
 class _$AchievementManagementWatcherEventTearOff {
   const _$AchievementManagementWatcherEventTearOff();
 
-  _LoadAllAchievements loadAllAchievements() {
-    return const _LoadAllAchievements();
+  _AllAchievementsLoaded allAchievementsLoaded() {
+    return const _AllAchievementsLoaded();
   }
 }
 
@@ -23,20 +23,20 @@ const $AchievementManagementWatcherEvent = _$AchievementManagementWatcherEventTe
 mixin _$AchievementManagementWatcherEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result loadAllAchievements(),
+    @required Result allAchievementsLoaded(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result loadAllAchievements(),
+    Result allAchievementsLoaded(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result loadAllAchievements(_LoadAllAchievements value),
+    @required Result allAchievementsLoaded(_AllAchievementsLoaded value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result loadAllAchievements(_LoadAllAchievements value),
+    Result allAchievementsLoaded(_AllAchievementsLoaded value),
     @required Result orElse(),
   });
 }
@@ -55,32 +55,33 @@ class _$AchievementManagementWatcherEventCopyWithImpl<$Res>
   final $Res Function(AchievementManagementWatcherEvent) _then;
 }
 
-abstract class _$LoadAllAchievementsCopyWith<$Res> {
-  factory _$LoadAllAchievementsCopyWith(_LoadAllAchievements value,
-    $Res Function(_LoadAllAchievements) then) =
-  __$LoadAllAchievementsCopyWithImpl<$Res>;
+abstract class _$AllAchievementsLoadedCopyWith<$Res> {
+  factory _$AllAchievementsLoadedCopyWith(_AllAchievementsLoaded value,
+    $Res Function(_AllAchievementsLoaded) then) =
+  __$AllAchievementsLoadedCopyWithImpl<$Res>;
 }
 
-class __$LoadAllAchievementsCopyWithImpl<$Res> extends _$AchievementManagementWatcherEventCopyWithImpl<$Res>
-  implements _$LoadAllAchievementsCopyWith<$Res> {
-  __$LoadAllAchievementsCopyWithImpl(_LoadAllAchievements _value, $Res Function(_LoadAllAchievements) _then)
-    : super(_value, (v) => _then(v as _LoadAllAchievements));
+class __$AllAchievementsLoadedCopyWithImpl<$Res> extends _$AchievementManagementWatcherEventCopyWithImpl<$Res>
+  implements _$AllAchievementsLoadedCopyWith<$Res> {
+  __$AllAchievementsLoadedCopyWithImpl(_AllAchievementsLoaded _value,
+    $Res Function(_AllAchievementsLoaded) _then)
+    : super(_value, (v) => _then(v as _AllAchievementsLoaded));
 
   @override
-  _LoadAllAchievements get _value => super._value as _LoadAllAchievements;
+  _AllAchievementsLoaded get _value => super._value as _AllAchievementsLoaded;
 }
 
-class _$_LoadAllAchievements implements _LoadAllAchievements {
-  const _$_LoadAllAchievements();
+class _$_AllAchievementsLoaded implements _AllAchievementsLoaded {
+  const _$_AllAchievementsLoaded();
 
   @override
   String toString() {
-    return 'AchievementManagementWatcherEvent.loadAllAchievements()';
+    return 'AchievementManagementWatcherEvent.allAchievementsLoaded()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadAllAchievements);
+    return identical(this, other) || (other is _AllAchievementsLoaded);
   }
 
   @override
@@ -89,21 +90,21 @@ class _$_LoadAllAchievements implements _LoadAllAchievements {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result loadAllAchievements(),
+    @required Result allAchievementsLoaded(),
   }) {
-    assert(loadAllAchievements != null);
-    return loadAllAchievements();
+    assert(allAchievementsLoaded != null);
+    return allAchievementsLoaded();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result loadAllAchievements(),
+    Result allAchievementsLoaded(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (loadAllAchievements != null) {
-      return loadAllAchievements();
+    if (allAchievementsLoaded != null) {
+      return allAchievementsLoaded();
     }
     return orElse();
   }
@@ -111,29 +112,29 @@ class _$_LoadAllAchievements implements _LoadAllAchievements {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result loadAllAchievements(_LoadAllAchievements value),
+    @required Result allAchievementsLoaded(_AllAchievementsLoaded value),
   }) {
-    assert(loadAllAchievements != null);
-    return loadAllAchievements(this);
+    assert(allAchievementsLoaded != null);
+    return allAchievementsLoaded(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result loadAllAchievements(_LoadAllAchievements value),
+    Result allAchievementsLoaded(_AllAchievementsLoaded value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (loadAllAchievements != null) {
-      return loadAllAchievements(this);
+    if (allAchievementsLoaded != null) {
+      return allAchievementsLoaded(this);
     }
     return orElse();
   }
 }
 
-abstract class _LoadAllAchievements
+abstract class _AllAchievementsLoaded
   implements AchievementManagementWatcherEvent {
-  const factory _LoadAllAchievements() = _$_LoadAllAchievements;
+  const factory _AllAchievementsLoaded() = _$_AllAchievementsLoaded;
 }
 
 class _$AchievementManagementWatcherStateTearOff {

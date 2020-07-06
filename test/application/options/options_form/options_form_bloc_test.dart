@@ -37,7 +37,7 @@ void main() {
       blocTest(
         TestDescription.shouldEmitInitialized,
         build: () async => getIt<OptionsFormBloc>(),
-        act: (bloc) async => bloc.add(OptionsFormEvent.initialize(some(options))),
+        act: (bloc) async => bloc.add(OptionsFormEvent.initialized(some(options))),
         expect: [
           OptionsFormState.initial().copyWith(
             options: options,
@@ -47,7 +47,7 @@ void main() {
       blocTest(
         TestDescription.shouldNotEmitInitialized,
         build: () async => getIt<OptionsFormBloc>(),
-        act: (bloc) async => bloc.add(OptionsFormEvent.initialize(none())),
+        act: (bloc) async => bloc.add(OptionsFormEvent.initialized(none())),
         skip: 0,
         expect: [OptionsFormState.initial()],
       );
@@ -60,8 +60,8 @@ void main() {
         "${TestDescription.shouldEmitUpdated} with the languageCode",
         build: () async => getIt<OptionsFormBloc>(),
         act: (bloc) async {
-          bloc.add(OptionsFormEvent.initialize(none()));
-          bloc.add(const OptionsFormEvent.languageCodeChange(languageCode));
+          bloc.add(OptionsFormEvent.initialized(none()));
+          bloc.add(const OptionsFormEvent.languageCodeChanged(languageCode));
         },
         expect: [
           OptionsFormState.initial().copyWith(
@@ -83,8 +83,8 @@ void main() {
           return getIt<OptionsFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(OptionsFormEvent.initialize(some(options)));
-          bloc.add(const OptionsFormEvent.submit());
+          bloc.add(OptionsFormEvent.initialized(some(options)));
+          bloc.add(const OptionsFormEvent.submitted());
         },
         verify: (_) async => verify(saveGlobalOptions.call(any)),
         expect: [
@@ -114,8 +114,8 @@ void main() {
           return getIt<OptionsFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(OptionsFormEvent.initialize(some(options)));
-          bloc.add(const OptionsFormEvent.submit());
+          bloc.add(OptionsFormEvent.initialized(some(options)));
+          bloc.add(const OptionsFormEvent.submitted());
         },
         verify: (_) async => verify(saveGlobalOptions.call(any)),
         expect: [
@@ -140,9 +140,9 @@ void main() {
           return getIt<OptionsFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(OptionsFormEvent.initialize(some(options)));
-          bloc.add(const OptionsFormEvent.submit());
-          bloc.add(const OptionsFormEvent.languageCodeChange(languageCode));
+          bloc.add(OptionsFormEvent.initialized(some(options)));
+          bloc.add(const OptionsFormEvent.submitted());
+          bloc.add(const OptionsFormEvent.languageCodeChanged(languageCode));
         },
         verify: (_) async => verify(saveGlobalOptions.call(any)),
         expect: [

@@ -34,9 +34,9 @@ void main() {
       when(logOut.call(getIt<NoParams>())).thenAnswer((_) async => right(unit));
       return getIt<AuthenticationBloc>();
     },
-    act: (bloc) async => bloc.add(const AuthenticationEvent.logOut()),
+    act: (bloc) async => bloc.add(const AuthenticationEvent.loggedOut()),
     verify: (_) async => verify(logOut.call(any)),
-    expect: [const AuthenticationState.unAuthenticated()],
+    expect: [const AuthenticationState.authenticationFailure()],
   );
   group(
     "Testing the authentication request",
@@ -47,9 +47,9 @@ void main() {
           when(getLoggedInUser.call(getIt<NoParams>())).thenAnswer((_) async => some(getValidUser()));
           return getIt<AuthenticationBloc>();
         },
-        act: (bloc) async => bloc.add(const AuthenticationEvent.authenticationCheckRequest()),
+        act: (bloc) async => bloc.add(const AuthenticationEvent.authenticationCheckRequested()),
         verify: (_) async => verify(getLoggedInUser.call(any)),
-        expect: [const AuthenticationState.authenticated()],
+        expect: [const AuthenticationState.authenticationSuccess()],
       );
       blocTest(
         "Should emit unAuthenticated",
@@ -57,9 +57,9 @@ void main() {
           when(getLoggedInUser.call(getIt<NoParams>())).thenAnswer((_) async => none());
           return getIt<AuthenticationBloc>();
         },
-        act: (bloc) async => bloc.add(const AuthenticationEvent.authenticationCheckRequest()),
+        act: (bloc) async => bloc.add(const AuthenticationEvent.authenticationCheckRequested()),
         verify: (_) async => verify(getLoggedInUser.call(any)),
-        expect: [const AuthenticationState.unAuthenticated()],
+        expect: [const AuthenticationState.authenticationFailure()],
       );
     },
   );

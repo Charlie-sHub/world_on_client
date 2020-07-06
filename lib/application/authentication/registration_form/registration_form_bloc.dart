@@ -29,19 +29,19 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
   @override
   Stream<RegistrationFormState> mapEventToState(RegistrationFormEvent event) async* {
     yield* event.map(
-      initialize: onInitialize,
-      nameChange: onNameChange,
-      usernameChange: onUsernameChange,
-      passwordChange: onPasswordChange,
-      emailAddressChange: onEmailAddressChange,
-      birthdayChange: onBirthdayChange,
-      descriptionChange: onDescriptionChange,
-      interestsChange: onInterestsChange,
-      submit: onSubmit,
+      initialized: onInitialized,
+      nameChanged: onNameChanged,
+      usernameChanged: onUsernameChanged,
+      passwordChanged: onPasswordChanged,
+      emailAddressChanged: onEmailAddressChanged,
+      birthdayChanged: onBirthdayChanged,
+      descriptionChanged: onDescriptionChanged,
+      interestsChanged: onInterestsChanged,
+      submitted: onSubmitted,
     );
   }
 
-  Stream<RegistrationFormState> onSubmit(_Submit event) async* {
+  Stream<RegistrationFormState> onSubmitted(_Submitted event) async* {
     Either<Failure, Unit> _failureOrUnit;
     yield state.copyWith(
       isSubmitting: true,
@@ -64,7 +64,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     );
   }
 
-  Stream<RegistrationFormState> onInterestsChange(_InterestsChange event) async* {
+  Stream<RegistrationFormState> onInterestsChanged(_InterestsChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         interests: event.interests,
@@ -73,7 +73,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     );
   }
 
-  Stream<RegistrationFormState> onDescriptionChange(_DescriptionChange event) async* {
+  Stream<RegistrationFormState> onDescriptionChanged(_DescriptionChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         description: EntityDescription(event.description),
@@ -82,7 +82,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     );
   }
 
-  Stream<RegistrationFormState> onBirthdayChange(_BirthdayChange event) async* {
+  Stream<RegistrationFormState> onBirthdayChanged(_BirthdayChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         birthday: PastDate(event.birthday),
@@ -91,7 +91,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     );
   }
 
-  Stream<RegistrationFormState> onEmailAddressChange(_EmailAddressChange event) async* {
+  Stream<RegistrationFormState> onEmailAddressChanged(_EmailAddressChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         email: EmailAddress(event.emailAddress),
@@ -100,7 +100,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     );
   }
 
-  Stream<RegistrationFormState> onPasswordChange(_PasswordChange event) async* {
+  Stream<RegistrationFormState> onPasswordChanged(_PasswordChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         password: Password(event.password),
@@ -109,7 +109,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     );
   }
 
-  Stream<RegistrationFormState> onUsernameChange(_UsernameChange event) async* {
+  Stream<RegistrationFormState> onUsernameChanged(_UsernameChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         username: Name(event.username),
@@ -118,7 +118,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     );
   }
 
-  Stream<RegistrationFormState> onNameChange(_NameChange event) async* {
+  Stream<RegistrationFormState> onNameChanged(_NameChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         name: Name(event.name),
@@ -127,7 +127,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     );
   }
 
-  Stream<RegistrationFormState> onInitialize(RegistrationFormEvent event) async* {
+  Stream<RegistrationFormState> onInitialized(_Initialized event) async* {
     final _getLoggedInUser = getIt<GetLoggedInUser>();
     final _userOption = await _getLoggedInUser(getIt<NoParams>());
     yield _userOption.fold(

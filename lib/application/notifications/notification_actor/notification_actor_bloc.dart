@@ -12,9 +12,7 @@ import 'package:worldon/domain/notifications/use_case/delete_notification.dart' 
 import '../../../injection.dart';
 
 part 'notification_actor_bloc.freezed.dart';
-
 part 'notification_actor_event.dart';
-
 part 'notification_actor_state.dart';
 
 @injectable
@@ -24,12 +22,12 @@ class NotificationActorBloc extends Bloc<NotificationActorEvent, NotificationAct
   @override
   Stream<NotificationActorState> mapEventToState(NotificationActorEvent event) async* {
     yield* event.map(
-      delete: onDelete,
-      check: onCheck,
+      deleted: onDeleted,
+      checked: onChecked,
     );
   }
 
-  Stream<NotificationActorState> onCheck(_Check event) async* {
+  Stream<NotificationActorState> onChecked(_Checked event) async* {
     final _checkNotification = getIt<check_notification.CheckNotification>();
     final _failureOrUnit = await _checkNotification(
       check_notification.Params(
@@ -42,7 +40,7 @@ class NotificationActorBloc extends Bloc<NotificationActorEvent, NotificationAct
     );
   }
 
-  Stream<NotificationActorState> onDelete(_Delete event) async* {
+  Stream<NotificationActorState> onDeleted(_Deleted event) async* {
     yield const NotificationActorState.actionInProgress();
     final _deleteNotification = getIt<delete_notification.DeleteNotification>();
     final _failureOrUnit = await _deleteNotification(

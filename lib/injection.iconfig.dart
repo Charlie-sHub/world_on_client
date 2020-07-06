@@ -24,6 +24,11 @@ import 'package:worldon/application/main_feed/main_feed_watcher/main_feed_watche
 import 'package:worldon/application/notifications/notification_actor/notification_actor_bloc.dart';
 import 'package:worldon/application/notifications/notifications_watcher/notifications_watcher_bloc.dart';
 import 'package:worldon/application/options/options_form/options_form_bloc.dart';
+import 'package:worldon/application/profile/block_actor/block_actor_bloc.dart';
+import 'package:worldon/application/profile/follow_actor/follow_actor_bloc.dart';
+import 'package:worldon/application/profile/followed_watcher/followed_watcher_bloc.dart';
+import 'package:worldon/application/profile/following_watcher/following_watcher_bloc.dart';
+import 'package:worldon/application/profile/profile_editing_form/profile_editing_form_bloc.dart';
 import 'package:worldon/application/profile/profile_watcher/profile_watcher_bloc.dart';
 import 'package:worldon/core/util/cypher.dart';
 import 'package:worldon/data/achievement_management/repository/development_achievement_repository.dart';
@@ -190,6 +195,7 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerFactory<AchievementManagementWatcherBloc>(
       () => AchievementManagementWatcherBloc());
   g.registerFactory<AuthenticationBloc>(() => AuthenticationBloc());
+  g.registerFactory<BlockActorBloc>(() => BlockActorBloc());
   g.registerFactory<CommentActorBloc>(() => CommentActorBloc());
   g.registerFactory<CommentFormBloc>(() => CommentFormBloc());
   g.registerFactory<CommentWatcherBloc>(() => CommentWatcherBloc());
@@ -202,11 +208,15 @@ void $initGetIt(GetIt g, {String environment}) {
       () => ExperienceManagementFormBloc());
   g.registerFactory<ExperienceNavigationActorBloc>(
       () => ExperienceNavigationActorBloc());
+  g.registerFactory<FollowActorBloc>(() => FollowActorBloc());
+  g.registerFactory<FollowedWatcherBloc>(() => FollowedWatcherBloc());
+  g.registerFactory<FollowingWatcherBloc>(() => FollowingWatcherBloc());
   g.registerFactory<LogInFormBloc>(() => LogInFormBloc());
   g.registerFactory<MainFeedWatcherBloc>(() => MainFeedWatcherBloc());
   g.registerFactory<NotificationActorBloc>(() => NotificationActorBloc());
   g.registerFactory<NotificationsWatcherBloc>(() => NotificationsWatcherBloc());
   g.registerFactory<OptionsFormBloc>(() => OptionsFormBloc());
+  g.registerFactory<ProfileEditingFormBloc>(() => ProfileEditingFormBloc());
   g.registerFactory<ProfileWatcherBloc>(() => ProfileWatcherBloc());
   g.registerFactory<RegistrationFormBloc>(() => RegistrationFormBloc());
 

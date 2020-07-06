@@ -78,7 +78,7 @@ void main() {
       blocTest(
         TestDescription.shouldEmitInitialized,
         build: () async => getIt<ExperienceManagementFormBloc>(),
-        act: (bloc) async => bloc.add(ExperienceManagementFormEvent.initialize(some(experienceToEdit))),
+        act: (bloc) async => bloc.add(ExperienceManagementFormEvent.initialized(some(experienceToEdit))),
         expect: [
           ExperienceManagementFormState.initial().copyWith(
             experience: experienceToEdit,
@@ -89,7 +89,7 @@ void main() {
       blocTest(
         TestDescription.shouldNotEmitInitialized,
         build: () async => getIt<ExperienceManagementFormBloc>(),
-        act: (bloc) async => bloc.add(ExperienceManagementFormEvent.initialize(none())),
+        act: (bloc) async => bloc.add(ExperienceManagementFormEvent.initialized(none())),
         skip: 0,
         expect: [ExperienceManagementFormState.initial()],
       );
@@ -102,8 +102,8 @@ void main() {
         "${TestDescription.shouldEmitUpdated} with the name",
         build: () async => getIt<ExperienceManagementFormBloc>(),
         act: (bloc) async {
-          bloc.add(ExperienceManagementFormEvent.initialize(none()));
-          bloc.add(const ExperienceManagementFormEvent.nameChange(name));
+          bloc.add(ExperienceManagementFormEvent.initialized(none()));
+          bloc.add(const ExperienceManagementFormEvent.nameChanged(name));
         },
         expect: [
           ExperienceManagementFormState.initial().copyWith(
@@ -117,8 +117,8 @@ void main() {
         "${TestDescription.shouldEmitUpdated} with the description",
         build: () async => getIt<ExperienceManagementFormBloc>(),
         act: (bloc) async {
-          bloc.add(ExperienceManagementFormEvent.initialize(none()));
-          bloc.add(const ExperienceManagementFormEvent.descriptionChange(description));
+          bloc.add(ExperienceManagementFormEvent.initialized(none()));
+          bloc.add(const ExperienceManagementFormEvent.descriptionChanged(description));
         },
         expect: [
           ExperienceManagementFormState.initial().copyWith(
@@ -132,8 +132,8 @@ void main() {
         "${TestDescription.shouldEmitUpdated} with the coordinates",
         build: () async => getIt<ExperienceManagementFormBloc>(),
         act: (bloc) async {
-          bloc.add(ExperienceManagementFormEvent.initialize(none()));
-          bloc.add(const ExperienceManagementFormEvent.coordinatesChange(longitude: longitude, latitude: latitude));
+          bloc.add(ExperienceManagementFormEvent.initialized(none()));
+          bloc.add(const ExperienceManagementFormEvent.coordinatesChanged(longitude: longitude, latitude: latitude));
         },
         expect: [
           ExperienceManagementFormState.initial().copyWith(
@@ -150,8 +150,8 @@ void main() {
         "${TestDescription.shouldEmitUpdated} with the difficulty",
         build: () async => getIt<ExperienceManagementFormBloc>(),
         act: (bloc) async {
-          bloc.add(ExperienceManagementFormEvent.initialize(none()));
-          bloc.add(const ExperienceManagementFormEvent.difficultyChange(difficulty));
+          bloc.add(ExperienceManagementFormEvent.initialized(none()));
+          bloc.add(const ExperienceManagementFormEvent.difficultyChanged(difficulty));
         },
         expect: [
           ExperienceManagementFormState.initial().copyWith(
@@ -165,8 +165,8 @@ void main() {
         "${TestDescription.shouldEmitUpdated} with the primitiveObjectives",
         build: () async => getIt<ExperienceManagementFormBloc>(),
         act: (bloc) async {
-          bloc.add(ExperienceManagementFormEvent.initialize(none()));
-          bloc.add(ExperienceManagementFormEvent.objectivesChange(primitiveObjectives));
+          bloc.add(ExperienceManagementFormEvent.initialized(none()));
+          bloc.add(ExperienceManagementFormEvent.objectivesChanged(primitiveObjectives));
         },
         expect: [
           ExperienceManagementFormState.initial().copyWith(
@@ -180,8 +180,8 @@ void main() {
         "${TestDescription.shouldEmitUpdated} with the primitiveRewards",
         build: () async => getIt<ExperienceManagementFormBloc>(),
         act: (bloc) async {
-          bloc.add(ExperienceManagementFormEvent.initialize(none()));
-          bloc.add(ExperienceManagementFormEvent.rewardsChange(primitiveRewards));
+          bloc.add(ExperienceManagementFormEvent.initialized(none()));
+          bloc.add(ExperienceManagementFormEvent.rewardsChanged(primitiveRewards));
         },
         expect: [
           ExperienceManagementFormState.initial().copyWith(
@@ -195,8 +195,8 @@ void main() {
         "${TestDescription.shouldEmitUpdated} with the tags",
         build: () async => getIt<ExperienceManagementFormBloc>(),
         act: (bloc) async {
-          bloc.add(ExperienceManagementFormEvent.initialize(none()));
-          bloc.add(ExperienceManagementFormEvent.tagsChange(tags));
+          bloc.add(ExperienceManagementFormEvent.initialized(none()));
+          bloc.add(ExperienceManagementFormEvent.tagsChanged(tags));
         },
         expect: [
           ExperienceManagementFormState.initial().copyWith(
@@ -219,15 +219,15 @@ void main() {
           return getIt<ExperienceManagementFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(ExperienceManagementFormEvent.initialize(none()));
-          bloc.add(const ExperienceManagementFormEvent.nameChange(name));
-          bloc.add(const ExperienceManagementFormEvent.descriptionChange(description));
-          bloc.add(const ExperienceManagementFormEvent.coordinatesChange(longitude: longitude, latitude: latitude));
-          bloc.add(const ExperienceManagementFormEvent.difficultyChange(difficulty));
-          bloc.add(ExperienceManagementFormEvent.objectivesChange(primitiveObjectives));
-          bloc.add(ExperienceManagementFormEvent.rewardsChange(primitiveRewards));
-          bloc.add(ExperienceManagementFormEvent.tagsChange(tags));
-          bloc.add(const ExperienceManagementFormEvent.submit());
+          bloc.add(ExperienceManagementFormEvent.initialized(none()));
+          bloc.add(const ExperienceManagementFormEvent.nameChanged(name));
+          bloc.add(const ExperienceManagementFormEvent.descriptionChanged(description));
+          bloc.add(const ExperienceManagementFormEvent.coordinatesChanged(longitude: longitude, latitude: latitude));
+          bloc.add(const ExperienceManagementFormEvent.difficultyChanged(difficulty));
+          bloc.add(ExperienceManagementFormEvent.objectivesChanged(primitiveObjectives));
+          bloc.add(ExperienceManagementFormEvent.rewardsChanged(primitiveRewards));
+          bloc.add(ExperienceManagementFormEvent.tagsChanged(tags));
+          bloc.add(const ExperienceManagementFormEvent.submitted());
         },
         verify: (_) async {
           verify(getLoggedInUser.call(any));
@@ -359,9 +359,9 @@ void main() {
           return getIt<ExperienceManagementFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(ExperienceManagementFormEvent.initialize(some(experienceToEdit)));
-          bloc.add(const ExperienceManagementFormEvent.nameChange(name));
-          bloc.add(const ExperienceManagementFormEvent.submit());
+          bloc.add(ExperienceManagementFormEvent.initialized(some(experienceToEdit)));
+          bloc.add(const ExperienceManagementFormEvent.nameChanged(name));
+          bloc.add(const ExperienceManagementFormEvent.submitted());
         },
         verify: (_) async {
           verify(editExperience.call(any));
@@ -403,15 +403,15 @@ void main() {
           return getIt<ExperienceManagementFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(ExperienceManagementFormEvent.initialize(none()));
-          bloc.add(const ExperienceManagementFormEvent.nameChange(name));
-          bloc.add(const ExperienceManagementFormEvent.descriptionChange(description));
-          bloc.add(const ExperienceManagementFormEvent.coordinatesChange(longitude: longitude, latitude: latitude));
-          bloc.add(const ExperienceManagementFormEvent.difficultyChange(difficulty));
-          bloc.add(ExperienceManagementFormEvent.objectivesChange(primitiveObjectives));
-          bloc.add(ExperienceManagementFormEvent.rewardsChange(primitiveRewards));
-          bloc.add(ExperienceManagementFormEvent.tagsChange(tags));
-          bloc.add(const ExperienceManagementFormEvent.submit());
+          bloc.add(ExperienceManagementFormEvent.initialized(none()));
+          bloc.add(const ExperienceManagementFormEvent.nameChanged(name));
+          bloc.add(const ExperienceManagementFormEvent.descriptionChanged(description));
+          bloc.add(const ExperienceManagementFormEvent.coordinatesChanged(longitude: longitude, latitude: latitude));
+          bloc.add(const ExperienceManagementFormEvent.difficultyChanged(difficulty));
+          bloc.add(ExperienceManagementFormEvent.objectivesChanged(primitiveObjectives));
+          bloc.add(ExperienceManagementFormEvent.rewardsChanged(primitiveRewards));
+          bloc.add(ExperienceManagementFormEvent.tagsChanged(tags));
+          bloc.add(const ExperienceManagementFormEvent.submitted());
         },
         verify: (_) async {
           verify(getLoggedInUser.call(any));
@@ -543,9 +543,9 @@ void main() {
           return getIt<ExperienceManagementFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(ExperienceManagementFormEvent.initialize(some(experienceToEdit)));
-          bloc.add(const ExperienceManagementFormEvent.nameChange(name));
-          bloc.add(const ExperienceManagementFormEvent.submit());
+          bloc.add(ExperienceManagementFormEvent.initialized(some(experienceToEdit)));
+          bloc.add(const ExperienceManagementFormEvent.nameChanged(name));
+          bloc.add(const ExperienceManagementFormEvent.submitted());
         },
         verify: (_) async {
           verify(editExperience.call(any));
@@ -581,10 +581,10 @@ void main() {
           return getIt<ExperienceManagementFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(ExperienceManagementFormEvent.initialize(some(experienceToEdit)));
-          bloc.add(const ExperienceManagementFormEvent.nameChange(name));
-          bloc.add(const ExperienceManagementFormEvent.submit());
-          bloc.add(const ExperienceManagementFormEvent.nameChange(name));
+          bloc.add(ExperienceManagementFormEvent.initialized(some(experienceToEdit)));
+          bloc.add(const ExperienceManagementFormEvent.nameChanged(name));
+          bloc.add(const ExperienceManagementFormEvent.submitted());
+          bloc.add(const ExperienceManagementFormEvent.nameChanged(name));
         },
         verify: (_) async {
           verify(editExperience.call(any));

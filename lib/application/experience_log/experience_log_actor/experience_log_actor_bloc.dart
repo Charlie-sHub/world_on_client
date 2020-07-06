@@ -9,9 +9,7 @@ import 'package:worldon/domain/experience_log/use_case/dismiss_experience_from_l
 import 'package:worldon/injection.dart';
 
 part 'experience_log_actor_bloc.freezed.dart';
-
 part 'experience_log_actor_event.dart';
-
 part 'experience_log_actor_state.dart';
 
 @injectable
@@ -21,11 +19,11 @@ class ExperienceLogActorBloc extends Bloc<ExperienceLogActorEvent, ExperienceLog
   @override
   Stream<ExperienceLogActorState> mapEventToState(ExperienceLogActorEvent event) async* {
     yield* event.map(
-      dismissExperience: onDismissExperience,
+      experienceDismissed: onExperienceDismissed,
     );
   }
 
-  Stream<ExperienceLogActorState> onDismissExperience(_DismissExperience event) async* {
+  Stream<ExperienceLogActorState> onExperienceDismissed(_ExperienceDismissed event) async* {
     yield const ExperienceLogActorState.actionInProgress();
     final _dismissExperienceFromLog = getIt<DismissExperienceFromLog>();
     final _failureOrUnit = await _dismissExperienceFromLog(

@@ -73,7 +73,7 @@ void main() {
           when(getCurrentLocation.call(any)).thenAnswer((_) => right(currentLocation));
           return getIt<ExperienceNavigationActorBloc>();
         },
-        act: (bloc) async => bloc.add(ExperienceNavigationActorEvent.initialize(some(experience))),
+        act: (bloc) async => bloc.add(ExperienceNavigationActorEvent.initialized(some(experience))),
         verify: (_) async {
           verify(fillObjectiveTracker.call(any));
           verify(loadSurroundingExperiences.call(any));
@@ -91,7 +91,7 @@ void main() {
       blocTest(
         TestDescription.shouldNotEmitInitialized,
         build: () async => getIt<ExperienceNavigationActorBloc>(),
-        act: (bloc) async => bloc.add(ExperienceNavigationActorEvent.initialize(none())),
+        act: (bloc) async => bloc.add(ExperienceNavigationActorEvent.initialized(none())),
         skip: 0,
         expect: [ExperienceNavigationActorState.initial()],
       );
@@ -111,7 +111,7 @@ void main() {
           return getIt<ExperienceNavigationActorBloc>();
         },
         act: (bloc) async {
-          bloc.add(ExperienceNavigationActorEvent.initialize(some(experience)));
+          bloc.add(ExperienceNavigationActorEvent.initialized(some(experience)));
           bloc.add(ExperienceNavigationActorEvent.objectiveAccomplished(experience.objectives.getOrCrash().asSet().elementAt(0)));
           // bloc.add(ExperienceNavigationActorEvent.objectiveAccomplished(experience.objectives.getOrCrash().asSet().elementAt(1)));
           // bloc.add(ExperienceNavigationActorEvent.objectiveAccomplished(Objective.empty().copyWith(id: 1)));
@@ -169,8 +169,8 @@ void main() {
           return getIt<ExperienceNavigationActorBloc>();
         },
         act: (bloc) async {
-          bloc.add(ExperienceNavigationActorEvent.initialize(some(experience)));
-          bloc.add(const ExperienceNavigationActorEvent.like());
+          bloc.add(ExperienceNavigationActorEvent.initialized(some(experience)));
+          bloc.add(const ExperienceNavigationActorEvent.liked());
         },
         verify: (_) async {
           verify(likeExperience.call(any));
@@ -211,8 +211,8 @@ void main() {
           return getIt<ExperienceNavigationActorBloc>();
         },
         act: (bloc) async {
-          bloc.add(ExperienceNavigationActorEvent.initialize(some(experience)));
-          bloc.add(const ExperienceNavigationActorEvent.getCurrentLocation());
+          bloc.add(ExperienceNavigationActorEvent.initialized(some(experience)));
+          bloc.add(const ExperienceNavigationActorEvent.gotCurrentLocation());
         },
         verify: (_) async {
           verify(likeExperience.call(any));

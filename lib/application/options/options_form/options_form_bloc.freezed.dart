@@ -12,20 +12,20 @@ T _$identity<T>(T value) => value;
 class _$OptionsFormEventTearOff {
   const _$OptionsFormEventTearOff();
 
-  _Initialize initialize(Option<Options> optionsOption) {
-    return _Initialize(
+  _Initialized initialized(Option<Options> optionsOption) {
+    return _Initialized(
       optionsOption,
     );
   }
 
-  _LanguageCodeChange languageCodeChange(String languageCode) {
-    return _LanguageCodeChange(
+  _LanguageCodeChanged languageCodeChanged(String languageCode) {
+    return _LanguageCodeChanged(
       languageCode,
     );
   }
 
-  _Submit submit() {
-    return const _Submit();
+  _Submitted submitted() {
+    return const _Submitted();
   }
 }
 
@@ -35,28 +35,28 @@ const $OptionsFormEvent = _$OptionsFormEventTearOff();
 mixin _$OptionsFormEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(Option<Options> optionsOption),
-    @required Result languageCodeChange(String languageCode),
-    @required Result submit(),
+    @required Result initialized(Option<Options> optionsOption),
+    @required Result languageCodeChanged(String languageCode),
+    @required Result submitted(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(Option<Options> optionsOption),
-    Result languageCodeChange(String languageCode),
-    Result submit(),
+    Result initialized(Option<Options> optionsOption),
+    Result languageCodeChanged(String languageCode),
+    Result submitted(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result languageCodeChange(_LanguageCodeChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result languageCodeChanged(_LanguageCodeChanged value),
+    @required Result submitted(_Submitted value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result languageCodeChange(_LanguageCodeChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result languageCodeChanged(_LanguageCodeChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   });
 }
@@ -73,25 +73,25 @@ class _$OptionsFormEventCopyWithImpl<$Res> implements $OptionsFormEventCopyWith<
   final $Res Function(OptionsFormEvent) _then;
 }
 
-abstract class _$InitializeCopyWith<$Res> {
-  factory _$InitializeCopyWith(_Initialize value, $Res Function(_Initialize) then) =
-  __$InitializeCopyWithImpl<$Res>;
+abstract class _$InitializedCopyWith<$Res> {
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+  __$InitializedCopyWithImpl<$Res>;
   $Res call({Option<Options> optionsOption});
 }
 
-class __$InitializeCopyWithImpl<$Res> extends _$OptionsFormEventCopyWithImpl<$Res>
-  implements _$InitializeCopyWith<$Res> {
-  __$InitializeCopyWithImpl(_Initialize _value, $Res Function(_Initialize) _then)
-    : super(_value, (v) => _then(v as _Initialize));
+class __$InitializedCopyWithImpl<$Res> extends _$OptionsFormEventCopyWithImpl<$Res>
+  implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+    : super(_value, (v) => _then(v as _Initialized));
 
   @override
-  _Initialize get _value => super._value as _Initialize;
+  _Initialized get _value => super._value as _Initialized;
 
   @override
   $Res call({
     Object optionsOption = freezed,
   }) {
-    return _then(_Initialize(
+    return _then(_Initialized(
       optionsOption == freezed
         ? _value.optionsOption
         : optionsOption as Option<Options>,
@@ -99,21 +99,21 @@ class __$InitializeCopyWithImpl<$Res> extends _$OptionsFormEventCopyWithImpl<$Re
   }
 }
 
-class _$_Initialize implements _Initialize {
-  const _$_Initialize(this.optionsOption) : assert(optionsOption != null);
+class _$_Initialized implements _Initialized {
+  const _$_Initialized(this.optionsOption) : assert(optionsOption != null);
 
   @override
   final Option<Options> optionsOption;
 
   @override
   String toString() {
-    return 'OptionsFormEvent.initialize(optionsOption: $optionsOption)';
+    return 'OptionsFormEvent.initialized(optionsOption: $optionsOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Initialize &&
+      (other is _Initialized &&
         (identical(other.optionsOption, optionsOption) ||
           const DeepCollectionEquality()
             .equals(other.optionsOption, optionsOption)));
@@ -124,33 +124,33 @@ class _$_Initialize implements _Initialize {
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(optionsOption);
 
   @override
-  _$InitializeCopyWith<_Initialize> get copyWith =>
-    __$InitializeCopyWithImpl<_Initialize>(this, _$identity);
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+    __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(Option<Options> optionsOption),
-    @required Result languageCodeChange(String languageCode),
-    @required Result submit(),
+    @required Result initialized(Option<Options> optionsOption),
+    @required Result languageCodeChanged(String languageCode),
+    @required Result submitted(),
   }) {
-    assert(initialize != null);
-    assert(languageCodeChange != null);
-    assert(submit != null);
-    return initialize(optionsOption);
+    assert(initialized != null);
+    assert(languageCodeChanged != null);
+    assert(submitted != null);
+    return initialized(optionsOption);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(Option<Options> optionsOption),
-    Result languageCodeChange(String languageCode),
-    Result submit(),
+    Result initialized(Option<Options> optionsOption),
+    Result languageCodeChanged(String languageCode),
+    Result submitted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (initialize != null) {
-      return initialize(optionsOption);
+    if (initialized != null) {
+      return initialized(optionsOption);
     }
     return orElse();
   }
@@ -158,78 +158,81 @@ class _$_Initialize implements _Initialize {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result languageCodeChange(_LanguageCodeChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result languageCodeChanged(_LanguageCodeChanged value),
+    @required Result submitted(_Submitted value),
   }) {
-    assert(initialize != null);
-    assert(languageCodeChange != null);
-    assert(submit != null);
-    return initialize(this);
+    assert(initialized != null);
+    assert(languageCodeChanged != null);
+    assert(submitted != null);
+    return initialized(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result languageCodeChange(_LanguageCodeChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result languageCodeChanged(_LanguageCodeChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (initialize != null) {
-      return initialize(this);
+    if (initialized != null) {
+      return initialized(this);
     }
     return orElse();
   }
 }
 
-abstract class _Initialize implements OptionsFormEvent {
-  const factory _Initialize(Option<Options> optionsOption) = _$_Initialize;
+abstract class _Initialized implements OptionsFormEvent {
+  const factory _Initialized(Option<Options> optionsOption) = _$_Initialized;
 
   Option<Options> get optionsOption;
-  _$InitializeCopyWith<_Initialize> get copyWith;
+  
+  _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
-abstract class _$LanguageCodeChangeCopyWith<$Res> {
-  factory _$LanguageCodeChangeCopyWith(_LanguageCodeChange value, $Res Function(_LanguageCodeChange) then) =
-  __$LanguageCodeChangeCopyWithImpl<$Res>;
+abstract class _$LanguageCodeChangedCopyWith<$Res> {
+  factory _$LanguageCodeChangedCopyWith(_LanguageCodeChanged value,
+    $Res Function(_LanguageCodeChanged) then) =
+  __$LanguageCodeChangedCopyWithImpl<$Res>;
   $Res call({String languageCode});
 }
 
-class __$LanguageCodeChangeCopyWithImpl<$Res> extends _$OptionsFormEventCopyWithImpl<$Res>
-  implements _$LanguageCodeChangeCopyWith<$Res> {
-  __$LanguageCodeChangeCopyWithImpl(_LanguageCodeChange _value, $Res Function(_LanguageCodeChange) _then)
-    : super(_value, (v) => _then(v as _LanguageCodeChange));
+class __$LanguageCodeChangedCopyWithImpl<$Res> extends _$OptionsFormEventCopyWithImpl<$Res>
+  implements _$LanguageCodeChangedCopyWith<$Res> {
+  __$LanguageCodeChangedCopyWithImpl(_LanguageCodeChanged _value, $Res Function(_LanguageCodeChanged) _then)
+    : super(_value, (v) => _then(v as _LanguageCodeChanged));
 
   @override
-  _LanguageCodeChange get _value => super._value as _LanguageCodeChange;
+  _LanguageCodeChanged get _value => super._value as _LanguageCodeChanged;
 
   @override
   $Res call({
     Object languageCode = freezed,
   }) {
-    return _then(_LanguageCodeChange(
+    return _then(_LanguageCodeChanged(
       languageCode == freezed ? _value.languageCode : languageCode as String,
     ));
   }
 }
 
-class _$_LanguageCodeChange implements _LanguageCodeChange {
-  const _$_LanguageCodeChange(this.languageCode) : assert(languageCode != null);
+class _$_LanguageCodeChanged implements _LanguageCodeChanged {
+  const _$_LanguageCodeChanged(this.languageCode)
+    : assert(languageCode != null);
 
   @override
   final String languageCode;
 
   @override
   String toString() {
-    return 'OptionsFormEvent.languageCodeChange(languageCode: $languageCode)';
+    return 'OptionsFormEvent.languageCodeChanged(languageCode: $languageCode)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _LanguageCodeChange &&
+      (other is _LanguageCodeChanged &&
         (identical(other.languageCode, languageCode) ||
           const DeepCollectionEquality()
             .equals(other.languageCode, languageCode)));
@@ -240,33 +243,34 @@ class _$_LanguageCodeChange implements _LanguageCodeChange {
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(languageCode);
 
   @override
-  _$LanguageCodeChangeCopyWith<_LanguageCodeChange> get copyWith =>
-    __$LanguageCodeChangeCopyWithImpl<_LanguageCodeChange>(this, _$identity);
+  _$LanguageCodeChangedCopyWith<_LanguageCodeChanged> get copyWith =>
+    __$LanguageCodeChangedCopyWithImpl<_LanguageCodeChanged>(
+      this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(Option<Options> optionsOption),
-    @required Result languageCodeChange(String languageCode),
-    @required Result submit(),
+    @required Result initialized(Option<Options> optionsOption),
+    @required Result languageCodeChanged(String languageCode),
+    @required Result submitted(),
   }) {
-    assert(initialize != null);
-    assert(languageCodeChange != null);
-    assert(submit != null);
-    return languageCodeChange(languageCode);
+    assert(initialized != null);
+    assert(languageCodeChanged != null);
+    assert(submitted != null);
+    return languageCodeChanged(languageCode);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(Option<Options> optionsOption),
-    Result languageCodeChange(String languageCode),
-    Result submit(),
+    Result initialized(Option<Options> optionsOption),
+    Result languageCodeChanged(String languageCode),
+    Result submitted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (languageCodeChange != null) {
-      return languageCodeChange(languageCode);
+    if (languageCodeChanged != null) {
+      return languageCodeChanged(languageCode);
     }
     return orElse();
   }
@@ -274,65 +278,66 @@ class _$_LanguageCodeChange implements _LanguageCodeChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result languageCodeChange(_LanguageCodeChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result languageCodeChanged(_LanguageCodeChanged value),
+    @required Result submitted(_Submitted value),
   }) {
-    assert(initialize != null);
-    assert(languageCodeChange != null);
-    assert(submit != null);
-    return languageCodeChange(this);
+    assert(initialized != null);
+    assert(languageCodeChanged != null);
+    assert(submitted != null);
+    return languageCodeChanged(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result languageCodeChange(_LanguageCodeChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result languageCodeChanged(_LanguageCodeChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (languageCodeChange != null) {
-      return languageCodeChange(this);
+    if (languageCodeChanged != null) {
+      return languageCodeChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class _LanguageCodeChange implements OptionsFormEvent {
-  const factory _LanguageCodeChange(String languageCode) =
-  _$_LanguageCodeChange;
+abstract class _LanguageCodeChanged implements OptionsFormEvent {
+  const factory _LanguageCodeChanged(String languageCode) =
+  _$_LanguageCodeChanged;
 
   String get languageCode;
-  _$LanguageCodeChangeCopyWith<_LanguageCodeChange> get copyWith;
+  
+  _$LanguageCodeChangedCopyWith<_LanguageCodeChanged> get copyWith;
 }
 
-abstract class _$SubmitCopyWith<$Res> {
-  factory _$SubmitCopyWith(_Submit value, $Res Function(_Submit) then) =
-  __$SubmitCopyWithImpl<$Res>;
+abstract class _$SubmittedCopyWith<$Res> {
+  factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) =
+  __$SubmittedCopyWithImpl<$Res>;
 }
 
-class __$SubmitCopyWithImpl<$Res> extends _$OptionsFormEventCopyWithImpl<$Res>
-  implements _$SubmitCopyWith<$Res> {
-  __$SubmitCopyWithImpl(_Submit _value, $Res Function(_Submit) _then)
-    : super(_value, (v) => _then(v as _Submit));
+class __$SubmittedCopyWithImpl<$Res> extends _$OptionsFormEventCopyWithImpl<$Res>
+  implements _$SubmittedCopyWith<$Res> {
+  __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then)
+    : super(_value, (v) => _then(v as _Submitted));
 
   @override
-  _Submit get _value => super._value as _Submit;
+  _Submitted get _value => super._value as _Submitted;
 }
 
-class _$_Submit implements _Submit {
-  const _$_Submit();
+class _$_Submitted implements _Submitted {
+  const _$_Submitted();
 
   @override
   String toString() {
-    return 'OptionsFormEvent.submit()';
+    return 'OptionsFormEvent.submitted()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Submit);
+    return identical(this, other) || (other is _Submitted);
   }
 
   @override
@@ -341,27 +346,27 @@ class _$_Submit implements _Submit {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(Option<Options> optionsOption),
-    @required Result languageCodeChange(String languageCode),
-    @required Result submit(),
+    @required Result initialized(Option<Options> optionsOption),
+    @required Result languageCodeChanged(String languageCode),
+    @required Result submitted(),
   }) {
-    assert(initialize != null);
-    assert(languageCodeChange != null);
-    assert(submit != null);
-    return submit();
+    assert(initialized != null);
+    assert(languageCodeChanged != null);
+    assert(submitted != null);
+    return submitted();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(Option<Options> optionsOption),
-    Result languageCodeChange(String languageCode),
-    Result submit(),
+    Result initialized(Option<Options> optionsOption),
+    Result languageCodeChanged(String languageCode),
+    Result submitted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (submit != null) {
-      return submit();
+    if (submitted != null) {
+      return submitted();
     }
     return orElse();
   }
@@ -369,34 +374,34 @@ class _$_Submit implements _Submit {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result languageCodeChange(_LanguageCodeChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result languageCodeChanged(_LanguageCodeChanged value),
+    @required Result submitted(_Submitted value),
   }) {
-    assert(initialize != null);
-    assert(languageCodeChange != null);
-    assert(submit != null);
-    return submit(this);
+    assert(initialized != null);
+    assert(languageCodeChanged != null);
+    assert(submitted != null);
+    return submitted(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result languageCodeChange(_LanguageCodeChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result languageCodeChanged(_LanguageCodeChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (submit != null) {
-      return submit(this);
+    if (submitted != null) {
+      return submitted(this);
     }
     return orElse();
   }
 }
 
-abstract class _Submit implements OptionsFormEvent {
-  const factory _Submit() = _$_Submit;
+abstract class _Submitted implements OptionsFormEvent {
+  const factory _Submitted() = _$_Submitted;
 }
 
 class _$OptionsFormStateTearOff {

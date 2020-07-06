@@ -12,9 +12,7 @@ import 'package:worldon/domain/notifications/use_case/load_notifications.dart';
 import '../../../injection.dart';
 
 part 'notifications_watcher_bloc.freezed.dart';
-
 part 'notifications_watcher_event.dart';
-
 part 'notifications_watcher_state.dart';
 
 @injectable
@@ -24,11 +22,11 @@ class NotificationsWatcherBloc extends Bloc<NotificationsWatcherEvent, Notificat
   @override
   Stream<NotificationsWatcherState> mapEventToState(NotificationsWatcherEvent event) async* {
     yield* event.map(
-      load: onLoad,
+      notificationsLoaded: onNotificationsLoaded,
     );
   }
 
-  Stream<NotificationsWatcherState> onLoad(_Load event) async* {
+  Stream<NotificationsWatcherState> onNotificationsLoaded(_NotificationsLoaded event) async* {
     yield const NotificationsWatcherState.loading();
     final _loadNotifications = getIt<LoadNotifications>();
     yield* _loadNotifications(getIt<NoParams>()).map(

@@ -43,9 +43,9 @@ void main() {
           return getIt<LogInFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(const LogInFormEvent.usernameChange(username));
-          bloc.add(const LogInFormEvent.passwordChange(password));
-          bloc.add(const LogInFormEvent.logIn());
+          bloc.add(const LogInFormEvent.usernameChanged(username));
+          bloc.add(const LogInFormEvent.passwordChanged(password));
+          bloc.add(const LogInFormEvent.loggedIn());
         },
         verify: (_) async => verify(logIn.call(any)),
         expect: [
@@ -76,9 +76,9 @@ void main() {
           return getIt<LogInFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(const LogInFormEvent.usernameChange(username));
-          bloc.add(const LogInFormEvent.passwordChange(password));
-          bloc.add(const LogInFormEvent.logInGoogle());
+          bloc.add(const LogInFormEvent.usernameChanged(username));
+          bloc.add(const LogInFormEvent.passwordChanged(password));
+          bloc.add(const LogInFormEvent.loggedInGoogle());
         },
         verify: (_) async => verify(logInGoogle.call(any)),
         expect: [
@@ -111,9 +111,9 @@ void main() {
       return getIt<LogInFormBloc>();
     },
     act: (bloc) async {
-      bloc.add(const LogInFormEvent.usernameChange(username));
-      bloc.add(const LogInFormEvent.passwordChange(password));
-      bloc.add(const LogInFormEvent.logIn());
+      bloc.add(const LogInFormEvent.usernameChanged(username));
+      bloc.add(const LogInFormEvent.passwordChanged(password));
+      bloc.add(const LogInFormEvent.loggedIn());
     },
     verify: (_) async => verify(logIn.call(any)),
     expect: [

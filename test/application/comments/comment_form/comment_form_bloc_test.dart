@@ -49,7 +49,7 @@ void main() {
         TestDescription.shouldEmitInitialized,
         build: () async => getIt<CommentFormBloc>(),
         act: (bloc) async => bloc.add(
-          CommentFormEvent.initialize(
+          CommentFormEvent.initialized(
             experienceId: experienceId,
             commentOption: some(commentToEdit),
           ),
@@ -66,7 +66,7 @@ void main() {
         TestDescription.shouldNotEmitInitialized,
         build: () async => getIt<CommentFormBloc>(),
         act: (bloc) async => bloc.add(
-          CommentFormEvent.initialize(
+          CommentFormEvent.initialized(
             experienceId: experienceId,
             commentOption: none(),
           ),
@@ -81,12 +81,12 @@ void main() {
     build: () async => getIt<CommentFormBloc>(),
     act: (bloc) async {
       bloc.add(
-        CommentFormEvent.initialize(
+        CommentFormEvent.initialized(
           experienceId: experienceId,
           commentOption: none(),
         ),
       );
-      bloc.add(const CommentFormEvent.contentChange(content));
+      bloc.add(const CommentFormEvent.contentChanged(content));
     },
     expect: [
       CommentFormState.initial().copyWith(
@@ -109,13 +109,13 @@ void main() {
         },
         act: (bloc) async {
           bloc.add(
-            CommentFormEvent.initialize(
+            CommentFormEvent.initialized(
               experienceId: experienceId,
               commentOption: none(),
             ),
           );
-          bloc.add(const CommentFormEvent.contentChange(content));
-          bloc.add(const CommentFormEvent.submit());
+          bloc.add(const CommentFormEvent.contentChanged(content));
+          bloc.add(const CommentFormEvent.submitted());
         },
         verify: (_) async {
           verify(postComment.call(any));
@@ -164,13 +164,13 @@ void main() {
         },
         act: (bloc) async {
           bloc.add(
-            CommentFormEvent.initialize(
+            CommentFormEvent.initialized(
               experienceId: experienceId,
               commentOption: some(commentToEdit),
             ),
           );
-          bloc.add(const CommentFormEvent.contentChange(content));
-          bloc.add(const CommentFormEvent.submit());
+          bloc.add(const CommentFormEvent.contentChanged(content));
+          bloc.add(const CommentFormEvent.submitted());
         },
         verify: (_) async {
           verify(editComment.call(any));
@@ -219,13 +219,13 @@ void main() {
         },
         act: (bloc) async {
           bloc.add(
-            CommentFormEvent.initialize(
+            CommentFormEvent.initialized(
               experienceId: experienceId,
               commentOption: none(),
             ),
           );
-          bloc.add(const CommentFormEvent.contentChange(content));
-          bloc.add(const CommentFormEvent.submit());
+          bloc.add(const CommentFormEvent.contentChanged(content));
+          bloc.add(const CommentFormEvent.submitted());
         },
         verify: (_) async {
           verify(postComment.call(any));
@@ -275,13 +275,13 @@ void main() {
         },
         act: (bloc) async {
           bloc.add(
-            CommentFormEvent.initialize(
+            CommentFormEvent.initialized(
               experienceId: experienceId,
               commentOption: some(commentToEdit),
             ),
           );
-          bloc.add(const CommentFormEvent.contentChange(content));
-          bloc.add(const CommentFormEvent.submit());
+          bloc.add(const CommentFormEvent.contentChanged(content));
+          bloc.add(const CommentFormEvent.submitted());
         },
         verify: (_) async {
           verify(editComment.call(any));
@@ -325,14 +325,14 @@ void main() {
     },
     act: (bloc) async {
       bloc.add(
-        CommentFormEvent.initialize(
+        CommentFormEvent.initialized(
           experienceId: experienceId,
           commentOption: some(commentToEdit),
         ),
       );
-      bloc.add(const CommentFormEvent.contentChange(content));
-      bloc.add(const CommentFormEvent.submit());
-      bloc.add(const CommentFormEvent.contentChange(content));
+      bloc.add(const CommentFormEvent.contentChanged(content));
+      bloc.add(const CommentFormEvent.submitted());
+      bloc.add(const CommentFormEvent.contentChanged(content));
     },
     verify: (_) async {
       verify(editComment.call(any));

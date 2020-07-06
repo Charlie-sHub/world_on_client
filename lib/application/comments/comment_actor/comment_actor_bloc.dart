@@ -10,9 +10,7 @@ import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/injection.dart';
 
 part 'comment_actor_bloc.freezed.dart';
-
 part 'comment_actor_event.dart';
-
 part 'comment_actor_state.dart';
 
 @injectable
@@ -22,11 +20,11 @@ class CommentActorBloc extends Bloc<CommentActorEvent, CommentActorState> {
   @override
   Stream<CommentActorState> mapEventToState(CommentActorEvent event) async* {
     yield* event.map(
-      delete: onDelete,
+      deleted: onDeleted,
     );
   }
 
-  Stream<CommentActorState> onDelete(_Delete event) async* {
+  Stream<CommentActorState> onDeleted(_Deleted event) async* {
     yield const CommentActorState.actionInProgress();
     final _deleteComment = getIt<DeleteComment>();
     final _failureOrUnit = await _deleteComment(Params(comment: event.comment));

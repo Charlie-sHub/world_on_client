@@ -12,14 +12,14 @@ T _$identity<T>(T value) => value;
 class _$NotificationActorEventTearOff {
   const _$NotificationActorEventTearOff();
 
-  _Delete delete(Notification notification) {
-    return _Delete(
+  _Deleted deleted(Notification notification) {
+    return _Deleted(
       notification,
     );
   }
 
-  _Check check(Notification notification) {
-    return _Check(
+  _Checked checked(Notification notification) {
+    return _Checked(
       notification,
     );
   }
@@ -33,24 +33,24 @@ mixin _$NotificationActorEvent {
 
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result delete(Notification notification),
-    @required Result check(Notification notification),
+    @required Result deleted(Notification notification),
+    @required Result checked(Notification notification),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result delete(Notification notification),
-    Result check(Notification notification),
+    Result deleted(Notification notification),
+    Result checked(Notification notification),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result delete(_Delete value),
-    @required Result check(_Check value),
+    @required Result deleted(_Deleted value),
+    @required Result checked(_Checked value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result delete(_Delete value),
-    Result check(_Check value),
+    Result deleted(_Deleted value),
+    Result checked(_Checked value),
     @required Result orElse(),
   });
 
@@ -94,10 +94,10 @@ class _$NotificationActorEventCopyWithImpl<$Res>
   }
 }
 
-abstract class _$DeleteCopyWith<$Res>
+abstract class _$DeletedCopyWith<$Res>
   implements $NotificationActorEventCopyWith<$Res> {
-  factory _$DeleteCopyWith(_Delete value, $Res Function(_Delete) then) =
-  __$DeleteCopyWithImpl<$Res>;
+  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
+  __$DeletedCopyWithImpl<$Res>;
   @override
   $Res call({Notification notification});
 
@@ -105,19 +105,19 @@ abstract class _$DeleteCopyWith<$Res>
   $NotificationCopyWith<$Res> get notification;
 }
 
-class __$DeleteCopyWithImpl<$Res> extends _$NotificationActorEventCopyWithImpl<$Res>
-  implements _$DeleteCopyWith<$Res> {
-  __$DeleteCopyWithImpl(_Delete _value, $Res Function(_Delete) _then)
-    : super(_value, (v) => _then(v as _Delete));
+class __$DeletedCopyWithImpl<$Res> extends _$NotificationActorEventCopyWithImpl<$Res>
+  implements _$DeletedCopyWith<$Res> {
+  __$DeletedCopyWithImpl(_Deleted _value, $Res Function(_Deleted) _then)
+    : super(_value, (v) => _then(v as _Deleted));
 
   @override
-  _Delete get _value => super._value as _Delete;
+  _Deleted get _value => super._value as _Deleted;
 
   @override
   $Res call({
     Object notification = freezed,
   }) {
-    return _then(_Delete(
+    return _then(_Deleted(
       notification == freezed
         ? _value.notification
         : notification as Notification,
@@ -125,21 +125,21 @@ class __$DeleteCopyWithImpl<$Res> extends _$NotificationActorEventCopyWithImpl<$
   }
 }
 
-class _$_Delete implements _Delete {
-  const _$_Delete(this.notification) : assert(notification != null);
+class _$_Deleted implements _Deleted {
+  const _$_Deleted(this.notification) : assert(notification != null);
 
   @override
   final Notification notification;
 
   @override
   String toString() {
-    return 'NotificationActorEvent.delete(notification: $notification)';
+    return 'NotificationActorEvent.deleted(notification: $notification)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Delete &&
+      (other is _Deleted &&
         (identical(other.notification, notification) ||
           const DeepCollectionEquality()
             .equals(other.notification, notification)));
@@ -150,30 +150,30 @@ class _$_Delete implements _Delete {
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(notification);
 
   @override
-  _$DeleteCopyWith<_Delete> get copyWith =>
-    __$DeleteCopyWithImpl<_Delete>(this, _$identity);
+  _$DeletedCopyWith<_Deleted> get copyWith =>
+    __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result delete(Notification notification),
-    @required Result check(Notification notification),
+    @required Result deleted(Notification notification),
+    @required Result checked(Notification notification),
   }) {
-    assert(delete != null);
-    assert(check != null);
-    return delete(notification);
+    assert(deleted != null);
+    assert(checked != null);
+    return deleted(notification);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result delete(Notification notification),
-    Result check(Notification notification),
+    Result deleted(Notification notification),
+    Result checked(Notification notification),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (delete != null) {
-      return delete(notification);
+    if (deleted != null) {
+      return deleted(notification);
     }
     return orElse();
   }
@@ -181,42 +181,42 @@ class _$_Delete implements _Delete {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result delete(_Delete value),
-    @required Result check(_Check value),
+    @required Result deleted(_Deleted value),
+    @required Result checked(_Checked value),
   }) {
-    assert(delete != null);
-    assert(check != null);
-    return delete(this);
+    assert(deleted != null);
+    assert(checked != null);
+    return deleted(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result delete(_Delete value),
-    Result check(_Check value),
+    Result deleted(_Deleted value),
+    Result checked(_Checked value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (delete != null) {
-      return delete(this);
+    if (deleted != null) {
+      return deleted(this);
     }
     return orElse();
   }
 }
 
-abstract class _Delete implements NotificationActorEvent {
-  const factory _Delete(Notification notification) = _$_Delete;
+abstract class _Deleted implements NotificationActorEvent {
+  const factory _Deleted(Notification notification) = _$_Deleted;
 
   @override
   Notification get notification;
   @override
-  _$DeleteCopyWith<_Delete> get copyWith;
+  _$DeletedCopyWith<_Deleted> get copyWith;
 }
 
-abstract class _$CheckCopyWith<$Res>
+abstract class _$CheckedCopyWith<$Res>
   implements $NotificationActorEventCopyWith<$Res> {
-  factory _$CheckCopyWith(_Check value, $Res Function(_Check) then) =
-  __$CheckCopyWithImpl<$Res>;
+  factory _$CheckedCopyWith(_Checked value, $Res Function(_Checked) then) =
+  __$CheckedCopyWithImpl<$Res>;
   @override
   $Res call({Notification notification});
 
@@ -224,19 +224,19 @@ abstract class _$CheckCopyWith<$Res>
   $NotificationCopyWith<$Res> get notification;
 }
 
-class __$CheckCopyWithImpl<$Res> extends _$NotificationActorEventCopyWithImpl<$Res>
-  implements _$CheckCopyWith<$Res> {
-  __$CheckCopyWithImpl(_Check _value, $Res Function(_Check) _then)
-    : super(_value, (v) => _then(v as _Check));
+class __$CheckedCopyWithImpl<$Res> extends _$NotificationActorEventCopyWithImpl<$Res>
+  implements _$CheckedCopyWith<$Res> {
+  __$CheckedCopyWithImpl(_Checked _value, $Res Function(_Checked) _then)
+    : super(_value, (v) => _then(v as _Checked));
 
   @override
-  _Check get _value => super._value as _Check;
+  _Checked get _value => super._value as _Checked;
 
   @override
   $Res call({
     Object notification = freezed,
   }) {
-    return _then(_Check(
+    return _then(_Checked(
       notification == freezed
         ? _value.notification
         : notification as Notification,
@@ -244,21 +244,21 @@ class __$CheckCopyWithImpl<$Res> extends _$NotificationActorEventCopyWithImpl<$R
   }
 }
 
-class _$_Check implements _Check {
-  const _$_Check(this.notification) : assert(notification != null);
+class _$_Checked implements _Checked {
+  const _$_Checked(this.notification) : assert(notification != null);
 
   @override
   final Notification notification;
 
   @override
   String toString() {
-    return 'NotificationActorEvent.check(notification: $notification)';
+    return 'NotificationActorEvent.checked(notification: $notification)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Check &&
+      (other is _Checked &&
         (identical(other.notification, notification) ||
           const DeepCollectionEquality()
             .equals(other.notification, notification)));
@@ -269,30 +269,30 @@ class _$_Check implements _Check {
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(notification);
 
   @override
-  _$CheckCopyWith<_Check> get copyWith =>
-    __$CheckCopyWithImpl<_Check>(this, _$identity);
+  _$CheckedCopyWith<_Checked> get copyWith =>
+    __$CheckedCopyWithImpl<_Checked>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result delete(Notification notification),
-    @required Result check(Notification notification),
+    @required Result deleted(Notification notification),
+    @required Result checked(Notification notification),
   }) {
-    assert(delete != null);
-    assert(check != null);
-    return check(notification);
+    assert(deleted != null);
+    assert(checked != null);
+    return checked(notification);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result delete(Notification notification),
-    Result check(Notification notification),
+    Result deleted(Notification notification),
+    Result checked(Notification notification),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (check != null) {
-      return check(notification);
+    if (checked != null) {
+      return checked(notification);
     }
     return orElse();
   }
@@ -300,36 +300,36 @@ class _$_Check implements _Check {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result delete(_Delete value),
-    @required Result check(_Check value),
+    @required Result deleted(_Deleted value),
+    @required Result checked(_Checked value),
   }) {
-    assert(delete != null);
-    assert(check != null);
-    return check(this);
+    assert(deleted != null);
+    assert(checked != null);
+    return checked(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result delete(_Delete value),
-    Result check(_Check value),
+    Result deleted(_Deleted value),
+    Result checked(_Checked value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (check != null) {
-      return check(this);
+    if (checked != null) {
+      return checked(this);
     }
     return orElse();
   }
 }
 
-abstract class _Check implements NotificationActorEvent {
-  const factory _Check(Notification notification) = _$_Check;
+abstract class _Checked implements NotificationActorEvent {
+  const factory _Checked(Notification notification) = _$_Checked;
 
   @override
   Notification get notification;
   @override
-  _$CheckCopyWith<_Check> get copyWith;
+  _$CheckedCopyWith<_Checked> get copyWith;
 }
 
 class _$NotificationActorStateTearOff {

@@ -12,38 +12,38 @@ T _$identity<T>(T value) => value;
 class _$AchievementManagementFormEventTearOff {
   const _$AchievementManagementFormEventTearOff();
 
-  _Initialize initialize(Option<Achievement> achievementOption) {
-    return _Initialize(
+  _Initialized initialized(Option<Achievement> achievementOption) {
+    return _Initialized(
       achievementOption,
     );
   }
 
-  _NameChange nameChange(String name) {
-    return _NameChange(
+  _NameChanged nameChanged(String name) {
+    return _NameChanged(
       name,
     );
   }
 
-  _DescriptionChange descriptionChange(String description) {
-    return _DescriptionChange(
+  _DescriptionChanged descriptionChanged(String description) {
+    return _DescriptionChanged(
       description,
     );
   }
 
-  _ExperiencePointsChange experiencePointsChange(int experiencePoints) {
-    return _ExperiencePointsChange(
+  _ExperiencePointsChanged experiencePointsChanged(int experiencePoints) {
+    return _ExperiencePointsChanged(
       experiencePoints,
     );
   }
 
-  _TagsChange tagsChange(KtSet<Tag> tags) {
-    return _TagsChange(
+  _TagsChanged tagsChanged(KtSet<Tag> tags) {
+    return _TagsChanged(
       tags,
     );
   }
 
-  _Submit submit() {
-    return const _Submit();
+  _Submitted submitted() {
+    return const _Submitted();
   }
 }
 
@@ -54,40 +54,40 @@ const $AchievementManagementFormEvent =
 mixin _$AchievementManagementFormEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(Option<Achievement> achievementOption),
-    @required Result nameChange(String name),
-    @required Result descriptionChange(String description),
-    @required Result experiencePointsChange(int experiencePoints),
-    @required Result tagsChange(KtSet<Tag> tags),
-    @required Result submit(),
+    @required Result initialized(Option<Achievement> achievementOption),
+    @required Result nameChanged(String name),
+    @required Result descriptionChanged(String description),
+    @required Result experiencePointsChanged(int experiencePoints),
+    @required Result tagsChanged(KtSet<Tag> tags),
+    @required Result submitted(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(Option<Achievement> achievementOption),
-    Result nameChange(String name),
-    Result descriptionChange(String description),
-    Result experiencePointsChange(int experiencePoints),
-    Result tagsChange(KtSet<Tag> tags),
-    Result submit(),
+    Result initialized(Option<Achievement> achievementOption),
+    Result nameChanged(String name),
+    Result descriptionChanged(String description),
+    Result experiencePointsChanged(int experiencePoints),
+    Result tagsChanged(KtSet<Tag> tags),
+    Result submitted(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result nameChange(_NameChange value),
-    @required Result descriptionChange(_DescriptionChange value),
-    @required Result experiencePointsChange(_ExperiencePointsChange value),
-    @required Result tagsChange(_TagsChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result nameChanged(_NameChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result experiencePointsChanged(_ExperiencePointsChanged value),
+    @required Result tagsChanged(_TagsChanged value),
+    @required Result submitted(_Submitted value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result nameChange(_NameChange value),
-    Result descriptionChange(_DescriptionChange value),
-    Result experiencePointsChange(_ExperiencePointsChange value),
-    Result tagsChange(_TagsChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result nameChanged(_NameChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result experiencePointsChanged(_ExperiencePointsChanged value),
+    Result tagsChanged(_TagsChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   });
 }
@@ -108,24 +108,24 @@ class _$AchievementManagementFormEventCopyWithImpl<$Res>
   final $Res Function(AchievementManagementFormEvent) _then;
 }
 
-abstract class _$InitializeCopyWith<$Res> {
-  factory _$InitializeCopyWith(_Initialize value, $Res Function(_Initialize) then) = __$InitializeCopyWithImpl<$Res>;
+abstract class _$InitializedCopyWith<$Res> {
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
   $Res call({Option<Achievement> achievementOption});
 }
 
-class __$InitializeCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res>
-  implements _$InitializeCopyWith<$Res> {
-  __$InitializeCopyWithImpl(_Initialize _value, $Res Function(_Initialize) _then)
-    : super(_value, (v) => _then(v as _Initialize));
+class __$InitializedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res>
+  implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+    : super(_value, (v) => _then(v as _Initialized));
 
   @override
-  _Initialize get _value => super._value as _Initialize;
+  _Initialized get _value => super._value as _Initialized;
 
   @override
   $Res call({
     Object achievementOption = freezed,
   }) {
-    return _then(_Initialize(
+    return _then(_Initialized(
       achievementOption == freezed
           ? _value.achievementOption
           : achievementOption as Option<Achievement>,
@@ -133,8 +133,8 @@ class __$InitializeCopyWithImpl<$Res> extends _$AchievementManagementFormEventCo
   }
 }
 
-class _$_Initialize implements _Initialize {
-  const _$_Initialize(this.achievementOption)
+class _$_Initialized implements _Initialized {
+  const _$_Initialized(this.achievementOption)
       : assert(achievementOption != null);
 
   @override
@@ -142,13 +142,13 @@ class _$_Initialize implements _Initialize {
 
   @override
   String toString() {
-    return 'AchievementManagementFormEvent.initialize(achievementOption: $achievementOption)';
+    return 'AchievementManagementFormEvent.initialized(achievementOption: $achievementOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Initialize &&
+      (other is _Initialized &&
             (identical(other.achievementOption, achievementOption) ||
                 const DeepCollectionEquality()
                     .equals(other.achievementOption, achievementOption)));
@@ -160,42 +160,42 @@ class _$_Initialize implements _Initialize {
       const DeepCollectionEquality().hash(achievementOption);
 
   @override
-  _$InitializeCopyWith<_Initialize> get copyWith =>
-    __$InitializeCopyWithImpl<_Initialize>(this, _$identity);
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+    __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(Option<Achievement> achievementOption),
-    @required Result nameChange(String name),
-    @required Result descriptionChange(String description),
-    @required Result experiencePointsChange(int experiencePoints),
-    @required Result tagsChange(KtSet<Tag> tags),
-    @required Result submit(),
+    @required Result initialized(Option<Achievement> achievementOption),
+    @required Result nameChanged(String name),
+    @required Result descriptionChanged(String description),
+    @required Result experiencePointsChanged(int experiencePoints),
+    @required Result tagsChanged(KtSet<Tag> tags),
+    @required Result submitted(),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(descriptionChange != null);
-    assert(experiencePointsChange != null);
-    assert(tagsChange != null);
-    assert(submit != null);
-    return initialize(achievementOption);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(descriptionChanged != null);
+    assert(experiencePointsChanged != null);
+    assert(tagsChanged != null);
+    assert(submitted != null);
+    return initialized(achievementOption);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(Option<Achievement> achievementOption),
-    Result nameChange(String name),
-    Result descriptionChange(String description),
-    Result experiencePointsChange(int experiencePoints),
-    Result tagsChange(KtSet<Tag> tags),
-    Result submit(),
+    Result initialized(Option<Achievement> achievementOption),
+    Result nameChanged(String name),
+    Result descriptionChanged(String description),
+    Result experiencePointsChanged(int experiencePoints),
+    Result tagsChanged(KtSet<Tag> tags),
+    Result submitted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (initialize != null) {
-      return initialize(achievementOption);
+    if (initialized != null) {
+      return initialized(achievementOption);
     }
     return orElse();
   }
@@ -203,91 +203,90 @@ class _$_Initialize implements _Initialize {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result nameChange(_NameChange value),
-    @required Result descriptionChange(_DescriptionChange value),
-    @required Result experiencePointsChange(_ExperiencePointsChange value),
-    @required Result tagsChange(_TagsChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result nameChanged(_NameChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result experiencePointsChanged(_ExperiencePointsChanged value),
+    @required Result tagsChanged(_TagsChanged value),
+    @required Result submitted(_Submitted value),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(descriptionChange != null);
-    assert(experiencePointsChange != null);
-    assert(tagsChange != null);
-    assert(submit != null);
-    return initialize(this);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(descriptionChanged != null);
+    assert(experiencePointsChanged != null);
+    assert(tagsChanged != null);
+    assert(submitted != null);
+    return initialized(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result nameChange(_NameChange value),
-    Result descriptionChange(_DescriptionChange value),
-    Result experiencePointsChange(_ExperiencePointsChange value),
-    Result tagsChange(_TagsChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result nameChanged(_NameChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result experiencePointsChanged(_ExperiencePointsChanged value),
+    Result tagsChanged(_TagsChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (initialize != null) {
-      return initialize(this);
+    if (initialized != null) {
+      return initialized(this);
     }
     return orElse();
   }
 }
 
-abstract class _Initialize implements AchievementManagementFormEvent {
-  const factory _Initialize(Option<Achievement> achievementOption) =
-  _$_Initialize;
+abstract class _Initialized implements AchievementManagementFormEvent {
+  const factory _Initialized(Option<Achievement> achievementOption) =
+  _$_Initialized;
 
   Option<Achievement> get achievementOption;
-  _$InitializeCopyWith<_Initialize> get copyWith;
+  
+  _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
-abstract class _$NameChangeCopyWith<$Res> {
-  factory _$NameChangeCopyWith(
-          _NameChange value, $Res Function(_NameChange) then) =
-      __$NameChangeCopyWithImpl<$Res>;
+abstract class _$NameChangedCopyWith<$Res> {
+  factory _$NameChangedCopyWith(_NameChanged value, $Res Function(_NameChanged) then) =
+  __$NameChangedCopyWithImpl<$Res>;
   $Res call({String name});
 }
 
-class __$NameChangeCopyWithImpl<$Res>
+class __$NameChangedCopyWithImpl<$Res>
     extends _$AchievementManagementFormEventCopyWithImpl<$Res>
-    implements _$NameChangeCopyWith<$Res> {
-  __$NameChangeCopyWithImpl(
-      _NameChange _value, $Res Function(_NameChange) _then)
-      : super(_value, (v) => _then(v as _NameChange));
+  implements _$NameChangedCopyWith<$Res> {
+  __$NameChangedCopyWithImpl(_NameChanged _value, $Res Function(_NameChanged) _then)
+    : super(_value, (v) => _then(v as _NameChanged));
 
   @override
-  _NameChange get _value => super._value as _NameChange;
+  _NameChanged get _value => super._value as _NameChanged;
 
   @override
   $Res call({
     Object name = freezed,
   }) {
-    return _then(_NameChange(
+    return _then(_NameChanged(
       name == freezed ? _value.name : name as String,
     ));
   }
 }
 
-class _$_NameChange implements _NameChange {
-  const _$_NameChange(this.name) : assert(name != null);
+class _$_NameChanged implements _NameChanged {
+  const _$_NameChanged(this.name) : assert(name != null);
 
   @override
   final String name;
 
   @override
   String toString() {
-    return 'AchievementManagementFormEvent.nameChange(name: $name)';
+    return 'AchievementManagementFormEvent.nameChanged(name: $name)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _NameChange &&
+      (other is _NameChanged &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)));
   }
@@ -297,42 +296,42 @@ class _$_NameChange implements _NameChange {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
 
   @override
-  _$NameChangeCopyWith<_NameChange> get copyWith =>
-      __$NameChangeCopyWithImpl<_NameChange>(this, _$identity);
+  _$NameChangedCopyWith<_NameChanged> get copyWith =>
+    __$NameChangedCopyWithImpl<_NameChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(Option<Achievement> achievementOption),
-    @required Result nameChange(String name),
-    @required Result descriptionChange(String description),
-    @required Result experiencePointsChange(int experiencePoints),
-    @required Result tagsChange(KtSet<Tag> tags),
-    @required Result submit(),
+    @required Result initialized(Option<Achievement> achievementOption),
+    @required Result nameChanged(String name),
+    @required Result descriptionChanged(String description),
+    @required Result experiencePointsChanged(int experiencePoints),
+    @required Result tagsChanged(KtSet<Tag> tags),
+    @required Result submitted(),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(descriptionChange != null);
-    assert(experiencePointsChange != null);
-    assert(tagsChange != null);
-    assert(submit != null);
-    return nameChange(name);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(descriptionChanged != null);
+    assert(experiencePointsChanged != null);
+    assert(tagsChanged != null);
+    assert(submitted != null);
+    return nameChanged(name);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(Option<Achievement> achievementOption),
-    Result nameChange(String name),
-    Result descriptionChange(String description),
-    Result experiencePointsChange(int experiencePoints),
-    Result tagsChange(KtSet<Tag> tags),
-    Result submit(),
+    Result initialized(Option<Achievement> achievementOption),
+    Result nameChanged(String name),
+    Result descriptionChanged(String description),
+    Result experiencePointsChanged(int experiencePoints),
+    Result tagsChanged(KtSet<Tag> tags),
+    Result submitted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (nameChange != null) {
-      return nameChange(name);
+    if (nameChanged != null) {
+      return nameChanged(name);
     }
     return orElse();
   }
@@ -340,90 +339,89 @@ class _$_NameChange implements _NameChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result nameChange(_NameChange value),
-    @required Result descriptionChange(_DescriptionChange value),
-    @required Result experiencePointsChange(_ExperiencePointsChange value),
-    @required Result tagsChange(_TagsChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result nameChanged(_NameChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result experiencePointsChanged(_ExperiencePointsChanged value),
+    @required Result tagsChanged(_TagsChanged value),
+    @required Result submitted(_Submitted value),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(descriptionChange != null);
-    assert(experiencePointsChange != null);
-    assert(tagsChange != null);
-    assert(submit != null);
-    return nameChange(this);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(descriptionChanged != null);
+    assert(experiencePointsChanged != null);
+    assert(tagsChanged != null);
+    assert(submitted != null);
+    return nameChanged(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result nameChange(_NameChange value),
-    Result descriptionChange(_DescriptionChange value),
-    Result experiencePointsChange(_ExperiencePointsChange value),
-    Result tagsChange(_TagsChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result nameChanged(_NameChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result experiencePointsChanged(_ExperiencePointsChanged value),
+    Result tagsChanged(_TagsChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (nameChange != null) {
-      return nameChange(this);
+    if (nameChanged != null) {
+      return nameChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class _NameChange implements AchievementManagementFormEvent {
-  const factory _NameChange(String name) = _$_NameChange;
+abstract class _NameChanged implements AchievementManagementFormEvent {
+  const factory _NameChanged(String name) = _$_NameChanged;
 
   String get name;
-  _$NameChangeCopyWith<_NameChange> get copyWith;
+  
+  _$NameChangedCopyWith<_NameChanged> get copyWith;
 }
 
-abstract class _$DescriptionChangeCopyWith<$Res> {
-  factory _$DescriptionChangeCopyWith(
-          _DescriptionChange value, $Res Function(_DescriptionChange) then) =
-      __$DescriptionChangeCopyWithImpl<$Res>;
+abstract class _$DescriptionChangedCopyWith<$Res> {
+  factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
+  __$DescriptionChangedCopyWithImpl<$Res>;
   $Res call({String description});
 }
 
-class __$DescriptionChangeCopyWithImpl<$Res>
+class __$DescriptionChangedCopyWithImpl<$Res>
     extends _$AchievementManagementFormEventCopyWithImpl<$Res>
-    implements _$DescriptionChangeCopyWith<$Res> {
-  __$DescriptionChangeCopyWithImpl(
-      _DescriptionChange _value, $Res Function(_DescriptionChange) _then)
-      : super(_value, (v) => _then(v as _DescriptionChange));
+  implements _$DescriptionChangedCopyWith<$Res> {
+  __$DescriptionChangedCopyWithImpl(_DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
+    : super(_value, (v) => _then(v as _DescriptionChanged));
 
   @override
-  _DescriptionChange get _value => super._value as _DescriptionChange;
+  _DescriptionChanged get _value => super._value as _DescriptionChanged;
 
   @override
   $Res call({
     Object description = freezed,
   }) {
-    return _then(_DescriptionChange(
+    return _then(_DescriptionChanged(
       description == freezed ? _value.description : description as String,
     ));
   }
 }
 
-class _$_DescriptionChange implements _DescriptionChange {
-  const _$_DescriptionChange(this.description) : assert(description != null);
+class _$_DescriptionChanged implements _DescriptionChanged {
+  const _$_DescriptionChanged(this.description) : assert(description != null);
 
   @override
   final String description;
 
   @override
   String toString() {
-    return 'AchievementManagementFormEvent.descriptionChange(description: $description)';
+    return 'AchievementManagementFormEvent.descriptionChanged(description: $description)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DescriptionChange &&
+      (other is _DescriptionChanged &&
             (identical(other.description, description) ||
                 const DeepCollectionEquality()
                     .equals(other.description, description)));
@@ -434,42 +432,42 @@ class _$_DescriptionChange implements _DescriptionChange {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
 
   @override
-  _$DescriptionChangeCopyWith<_DescriptionChange> get copyWith =>
-      __$DescriptionChangeCopyWithImpl<_DescriptionChange>(this, _$identity);
+  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
+    __$DescriptionChangedCopyWithImpl<_DescriptionChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(Option<Achievement> achievementOption),
-    @required Result nameChange(String name),
-    @required Result descriptionChange(String description),
-    @required Result experiencePointsChange(int experiencePoints),
-    @required Result tagsChange(KtSet<Tag> tags),
-    @required Result submit(),
+    @required Result initialized(Option<Achievement> achievementOption),
+    @required Result nameChanged(String name),
+    @required Result descriptionChanged(String description),
+    @required Result experiencePointsChanged(int experiencePoints),
+    @required Result tagsChanged(KtSet<Tag> tags),
+    @required Result submitted(),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(descriptionChange != null);
-    assert(experiencePointsChange != null);
-    assert(tagsChange != null);
-    assert(submit != null);
-    return descriptionChange(description);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(descriptionChanged != null);
+    assert(experiencePointsChanged != null);
+    assert(tagsChanged != null);
+    assert(submitted != null);
+    return descriptionChanged(description);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(Option<Achievement> achievementOption),
-    Result nameChange(String name),
-    Result descriptionChange(String description),
-    Result experiencePointsChange(int experiencePoints),
-    Result tagsChange(KtSet<Tag> tags),
-    Result submit(),
+    Result initialized(Option<Achievement> achievementOption),
+    Result nameChanged(String name),
+    Result descriptionChanged(String description),
+    Result experiencePointsChanged(int experiencePoints),
+    Result tagsChanged(KtSet<Tag> tags),
+    Result submitted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (descriptionChange != null) {
-      return descriptionChange(description);
+    if (descriptionChanged != null) {
+      return descriptionChanged(description);
     }
     return orElse();
   }
@@ -477,70 +475,72 @@ class _$_DescriptionChange implements _DescriptionChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result nameChange(_NameChange value),
-    @required Result descriptionChange(_DescriptionChange value),
-    @required Result experiencePointsChange(_ExperiencePointsChange value),
-    @required Result tagsChange(_TagsChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result nameChanged(_NameChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result experiencePointsChanged(_ExperiencePointsChanged value),
+    @required Result tagsChanged(_TagsChanged value),
+    @required Result submitted(_Submitted value),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(descriptionChange != null);
-    assert(experiencePointsChange != null);
-    assert(tagsChange != null);
-    assert(submit != null);
-    return descriptionChange(this);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(descriptionChanged != null);
+    assert(experiencePointsChanged != null);
+    assert(tagsChanged != null);
+    assert(submitted != null);
+    return descriptionChanged(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result nameChange(_NameChange value),
-    Result descriptionChange(_DescriptionChange value),
-    Result experiencePointsChange(_ExperiencePointsChange value),
-    Result tagsChange(_TagsChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result nameChanged(_NameChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result experiencePointsChanged(_ExperiencePointsChanged value),
+    Result tagsChanged(_TagsChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (descriptionChange != null) {
-      return descriptionChange(this);
+    if (descriptionChanged != null) {
+      return descriptionChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class _DescriptionChange implements AchievementManagementFormEvent {
-  const factory _DescriptionChange(String description) = _$_DescriptionChange;
+abstract class _DescriptionChanged implements AchievementManagementFormEvent {
+  const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description;
-  _$DescriptionChangeCopyWith<_DescriptionChange> get copyWith;
+  
+  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith;
 }
 
-abstract class _$ExperiencePointsChangeCopyWith<$Res> {
-  factory _$ExperiencePointsChangeCopyWith(_ExperiencePointsChange value,
-          $Res Function(_ExperiencePointsChange) then) =
-      __$ExperiencePointsChangeCopyWithImpl<$Res>;
+abstract class _$ExperiencePointsChangedCopyWith<$Res> {
+  factory _$ExperiencePointsChangedCopyWith(_ExperiencePointsChanged value,
+    $Res Function(_ExperiencePointsChanged) then) =
+  __$ExperiencePointsChangedCopyWithImpl<$Res>;
   $Res call({int experiencePoints});
 }
 
-class __$ExperiencePointsChangeCopyWithImpl<$Res>
+class __$ExperiencePointsChangedCopyWithImpl<$Res>
     extends _$AchievementManagementFormEventCopyWithImpl<$Res>
-    implements _$ExperiencePointsChangeCopyWith<$Res> {
-  __$ExperiencePointsChangeCopyWithImpl(_ExperiencePointsChange _value,
-      $Res Function(_ExperiencePointsChange) _then)
-      : super(_value, (v) => _then(v as _ExperiencePointsChange));
+  implements _$ExperiencePointsChangedCopyWith<$Res> {
+  __$ExperiencePointsChangedCopyWithImpl(_ExperiencePointsChanged _value,
+    $Res Function(_ExperiencePointsChanged) _then)
+    : super(_value, (v) => _then(v as _ExperiencePointsChanged));
 
   @override
-  _ExperiencePointsChange get _value => super._value as _ExperiencePointsChange;
+  _ExperiencePointsChanged get _value =>
+    super._value as _ExperiencePointsChanged;
 
   @override
   $Res call({
     Object experiencePoints = freezed,
   }) {
-    return _then(_ExperiencePointsChange(
+    return _then(_ExperiencePointsChanged(
       experiencePoints == freezed
           ? _value.experiencePoints
           : experiencePoints as int,
@@ -548,8 +548,8 @@ class __$ExperiencePointsChangeCopyWithImpl<$Res>
   }
 }
 
-class _$_ExperiencePointsChange implements _ExperiencePointsChange {
-  const _$_ExperiencePointsChange(this.experiencePoints)
+class _$_ExperiencePointsChanged implements _ExperiencePointsChanged {
+  const _$_ExperiencePointsChanged(this.experiencePoints)
       : assert(experiencePoints != null);
 
   @override
@@ -557,13 +557,13 @@ class _$_ExperiencePointsChange implements _ExperiencePointsChange {
 
   @override
   String toString() {
-    return 'AchievementManagementFormEvent.experiencePointsChange(experiencePoints: $experiencePoints)';
+    return 'AchievementManagementFormEvent.experiencePointsChanged(experiencePoints: $experiencePoints)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ExperiencePointsChange &&
+      (other is _ExperiencePointsChanged &&
             (identical(other.experiencePoints, experiencePoints) ||
                 const DeepCollectionEquality()
                     .equals(other.experiencePoints, experiencePoints)));
@@ -575,43 +575,43 @@ class _$_ExperiencePointsChange implements _ExperiencePointsChange {
       const DeepCollectionEquality().hash(experiencePoints);
 
   @override
-  _$ExperiencePointsChangeCopyWith<_ExperiencePointsChange> get copyWith =>
-      __$ExperiencePointsChangeCopyWithImpl<_ExperiencePointsChange>(
+  _$ExperiencePointsChangedCopyWith<_ExperiencePointsChanged> get copyWith =>
+    __$ExperiencePointsChangedCopyWithImpl<_ExperiencePointsChanged>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(Option<Achievement> achievementOption),
-    @required Result nameChange(String name),
-    @required Result descriptionChange(String description),
-    @required Result experiencePointsChange(int experiencePoints),
-    @required Result tagsChange(KtSet<Tag> tags),
-    @required Result submit(),
+    @required Result initialized(Option<Achievement> achievementOption),
+    @required Result nameChanged(String name),
+    @required Result descriptionChanged(String description),
+    @required Result experiencePointsChanged(int experiencePoints),
+    @required Result tagsChanged(KtSet<Tag> tags),
+    @required Result submitted(),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(descriptionChange != null);
-    assert(experiencePointsChange != null);
-    assert(tagsChange != null);
-    assert(submit != null);
-    return experiencePointsChange(experiencePoints);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(descriptionChanged != null);
+    assert(experiencePointsChanged != null);
+    assert(tagsChanged != null);
+    assert(submitted != null);
+    return experiencePointsChanged(experiencePoints);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(Option<Achievement> achievementOption),
-    Result nameChange(String name),
-    Result descriptionChange(String description),
-    Result experiencePointsChange(int experiencePoints),
-    Result tagsChange(KtSet<Tag> tags),
-    Result submit(),
+    Result initialized(Option<Achievement> achievementOption),
+    Result nameChanged(String name),
+    Result descriptionChanged(String description),
+    Result experiencePointsChanged(int experiencePoints),
+    Result tagsChanged(KtSet<Tag> tags),
+    Result submitted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (experiencePointsChange != null) {
-      return experiencePointsChange(experiencePoints);
+    if (experiencePointsChanged != null) {
+      return experiencePointsChanged(experiencePoints);
     }
     return orElse();
   }
@@ -619,92 +619,91 @@ class _$_ExperiencePointsChange implements _ExperiencePointsChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result nameChange(_NameChange value),
-    @required Result descriptionChange(_DescriptionChange value),
-    @required Result experiencePointsChange(_ExperiencePointsChange value),
-    @required Result tagsChange(_TagsChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result nameChanged(_NameChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result experiencePointsChanged(_ExperiencePointsChanged value),
+    @required Result tagsChanged(_TagsChanged value),
+    @required Result submitted(_Submitted value),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(descriptionChange != null);
-    assert(experiencePointsChange != null);
-    assert(tagsChange != null);
-    assert(submit != null);
-    return experiencePointsChange(this);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(descriptionChanged != null);
+    assert(experiencePointsChanged != null);
+    assert(tagsChanged != null);
+    assert(submitted != null);
+    return experiencePointsChanged(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result nameChange(_NameChange value),
-    Result descriptionChange(_DescriptionChange value),
-    Result experiencePointsChange(_ExperiencePointsChange value),
-    Result tagsChange(_TagsChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result nameChanged(_NameChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result experiencePointsChanged(_ExperiencePointsChanged value),
+    Result tagsChanged(_TagsChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (experiencePointsChange != null) {
-      return experiencePointsChange(this);
+    if (experiencePointsChanged != null) {
+      return experiencePointsChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class _ExperiencePointsChange
+abstract class _ExperiencePointsChanged
     implements AchievementManagementFormEvent {
-  const factory _ExperiencePointsChange(int experiencePoints) =
-      _$_ExperiencePointsChange;
+  const factory _ExperiencePointsChanged(int experiencePoints) =
+  _$_ExperiencePointsChanged;
 
   int get experiencePoints;
-  _$ExperiencePointsChangeCopyWith<_ExperiencePointsChange> get copyWith;
+  
+  _$ExperiencePointsChangedCopyWith<_ExperiencePointsChanged> get copyWith;
 }
 
-abstract class _$TagsChangeCopyWith<$Res> {
-  factory _$TagsChangeCopyWith(
-          _TagsChange value, $Res Function(_TagsChange) then) =
-      __$TagsChangeCopyWithImpl<$Res>;
+abstract class _$TagsChangedCopyWith<$Res> {
+  factory _$TagsChangedCopyWith(_TagsChanged value, $Res Function(_TagsChanged) then) =
+  __$TagsChangedCopyWithImpl<$Res>;
   $Res call({KtSet<Tag> tags});
 }
 
-class __$TagsChangeCopyWithImpl<$Res>
+class __$TagsChangedCopyWithImpl<$Res>
     extends _$AchievementManagementFormEventCopyWithImpl<$Res>
-    implements _$TagsChangeCopyWith<$Res> {
-  __$TagsChangeCopyWithImpl(
-      _TagsChange _value, $Res Function(_TagsChange) _then)
-      : super(_value, (v) => _then(v as _TagsChange));
+  implements _$TagsChangedCopyWith<$Res> {
+  __$TagsChangedCopyWithImpl(_TagsChanged _value, $Res Function(_TagsChanged) _then)
+    : super(_value, (v) => _then(v as _TagsChanged));
 
   @override
-  _TagsChange get _value => super._value as _TagsChange;
+  _TagsChanged get _value => super._value as _TagsChanged;
 
   @override
   $Res call({
     Object tags = freezed,
   }) {
-    return _then(_TagsChange(
+    return _then(_TagsChanged(
       tags == freezed ? _value.tags : tags as KtSet<Tag>,
     ));
   }
 }
 
-class _$_TagsChange implements _TagsChange {
-  const _$_TagsChange(this.tags) : assert(tags != null);
+class _$_TagsChanged implements _TagsChanged {
+  const _$_TagsChanged(this.tags) : assert(tags != null);
 
   @override
   final KtSet<Tag> tags;
 
   @override
   String toString() {
-    return 'AchievementManagementFormEvent.tagsChange(tags: $tags)';
+    return 'AchievementManagementFormEvent.tagsChanged(tags: $tags)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TagsChange &&
+      (other is _TagsChanged &&
             (identical(other.tags, tags) ||
                 const DeepCollectionEquality().equals(other.tags, tags)));
   }
@@ -714,42 +713,42 @@ class _$_TagsChange implements _TagsChange {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(tags);
 
   @override
-  _$TagsChangeCopyWith<_TagsChange> get copyWith =>
-      __$TagsChangeCopyWithImpl<_TagsChange>(this, _$identity);
+  _$TagsChangedCopyWith<_TagsChanged> get copyWith =>
+    __$TagsChangedCopyWithImpl<_TagsChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(Option<Achievement> achievementOption),
-    @required Result nameChange(String name),
-    @required Result descriptionChange(String description),
-    @required Result experiencePointsChange(int experiencePoints),
-    @required Result tagsChange(KtSet<Tag> tags),
-    @required Result submit(),
+    @required Result initialized(Option<Achievement> achievementOption),
+    @required Result nameChanged(String name),
+    @required Result descriptionChanged(String description),
+    @required Result experiencePointsChanged(int experiencePoints),
+    @required Result tagsChanged(KtSet<Tag> tags),
+    @required Result submitted(),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(descriptionChange != null);
-    assert(experiencePointsChange != null);
-    assert(tagsChange != null);
-    assert(submit != null);
-    return tagsChange(tags);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(descriptionChanged != null);
+    assert(experiencePointsChanged != null);
+    assert(tagsChanged != null);
+    assert(submitted != null);
+    return tagsChanged(tags);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(Option<Achievement> achievementOption),
-    Result nameChange(String name),
-    Result descriptionChange(String description),
-    Result experiencePointsChange(int experiencePoints),
-    Result tagsChange(KtSet<Tag> tags),
-    Result submit(),
+    Result initialized(Option<Achievement> achievementOption),
+    Result nameChanged(String name),
+    Result descriptionChanged(String description),
+    Result experiencePointsChanged(int experiencePoints),
+    Result tagsChanged(KtSet<Tag> tags),
+    Result submitted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (tagsChange != null) {
-      return tagsChange(tags);
+    if (tagsChanged != null) {
+      return tagsChanged(tags);
     }
     return orElse();
   }
@@ -757,74 +756,75 @@ class _$_TagsChange implements _TagsChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result nameChange(_NameChange value),
-    @required Result descriptionChange(_DescriptionChange value),
-    @required Result experiencePointsChange(_ExperiencePointsChange value),
-    @required Result tagsChange(_TagsChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result nameChanged(_NameChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result experiencePointsChanged(_ExperiencePointsChanged value),
+    @required Result tagsChanged(_TagsChanged value),
+    @required Result submitted(_Submitted value),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(descriptionChange != null);
-    assert(experiencePointsChange != null);
-    assert(tagsChange != null);
-    assert(submit != null);
-    return tagsChange(this);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(descriptionChanged != null);
+    assert(experiencePointsChanged != null);
+    assert(tagsChanged != null);
+    assert(submitted != null);
+    return tagsChanged(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result nameChange(_NameChange value),
-    Result descriptionChange(_DescriptionChange value),
-    Result experiencePointsChange(_ExperiencePointsChange value),
-    Result tagsChange(_TagsChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result nameChanged(_NameChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result experiencePointsChanged(_ExperiencePointsChanged value),
+    Result tagsChanged(_TagsChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (tagsChange != null) {
-      return tagsChange(this);
+    if (tagsChanged != null) {
+      return tagsChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class _TagsChange implements AchievementManagementFormEvent {
-  const factory _TagsChange(KtSet<Tag> tags) = _$_TagsChange;
+abstract class _TagsChanged implements AchievementManagementFormEvent {
+  const factory _TagsChanged(KtSet<Tag> tags) = _$_TagsChanged;
 
   KtSet<Tag> get tags;
-  _$TagsChangeCopyWith<_TagsChange> get copyWith;
+  
+  _$TagsChangedCopyWith<_TagsChanged> get copyWith;
 }
 
-abstract class _$SubmitCopyWith<$Res> {
-  factory _$SubmitCopyWith(_Submit value, $Res Function(_Submit) then) =
-      __$SubmitCopyWithImpl<$Res>;
+abstract class _$SubmittedCopyWith<$Res> {
+  factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) =
+  __$SubmittedCopyWithImpl<$Res>;
 }
 
-class __$SubmitCopyWithImpl<$Res>
+class __$SubmittedCopyWithImpl<$Res>
     extends _$AchievementManagementFormEventCopyWithImpl<$Res>
-    implements _$SubmitCopyWith<$Res> {
-  __$SubmitCopyWithImpl(_Submit _value, $Res Function(_Submit) _then)
-      : super(_value, (v) => _then(v as _Submit));
+  implements _$SubmittedCopyWith<$Res> {
+  __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then)
+    : super(_value, (v) => _then(v as _Submitted));
 
   @override
-  _Submit get _value => super._value as _Submit;
+  _Submitted get _value => super._value as _Submitted;
 }
 
-class _$_Submit implements _Submit {
-  const _$_Submit();
+class _$_Submitted implements _Submitted {
+  const _$_Submitted();
 
   @override
   String toString() {
-    return 'AchievementManagementFormEvent.submit()';
+    return 'AchievementManagementFormEvent.submitted()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Submit);
+    return identical(this, other) || (other is _Submitted);
   }
 
   @override
@@ -833,36 +833,36 @@ class _$_Submit implements _Submit {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(Option<Achievement> achievementOption),
-    @required Result nameChange(String name),
-    @required Result descriptionChange(String description),
-    @required Result experiencePointsChange(int experiencePoints),
-    @required Result tagsChange(KtSet<Tag> tags),
-    @required Result submit(),
+    @required Result initialized(Option<Achievement> achievementOption),
+    @required Result nameChanged(String name),
+    @required Result descriptionChanged(String description),
+    @required Result experiencePointsChanged(int experiencePoints),
+    @required Result tagsChanged(KtSet<Tag> tags),
+    @required Result submitted(),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(descriptionChange != null);
-    assert(experiencePointsChange != null);
-    assert(tagsChange != null);
-    assert(submit != null);
-    return submit();
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(descriptionChanged != null);
+    assert(experiencePointsChanged != null);
+    assert(tagsChanged != null);
+    assert(submitted != null);
+    return submitted();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(Option<Achievement> achievementOption),
-    Result nameChange(String name),
-    Result descriptionChange(String description),
-    Result experiencePointsChange(int experiencePoints),
-    Result tagsChange(KtSet<Tag> tags),
-    Result submit(),
+    Result initialized(Option<Achievement> achievementOption),
+    Result nameChanged(String name),
+    Result descriptionChanged(String description),
+    Result experiencePointsChanged(int experiencePoints),
+    Result tagsChanged(KtSet<Tag> tags),
+    Result submitted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (submit != null) {
-      return submit();
+    if (submitted != null) {
+      return submitted();
     }
     return orElse();
   }
@@ -870,43 +870,43 @@ class _$_Submit implements _Submit {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result nameChange(_NameChange value),
-    @required Result descriptionChange(_DescriptionChange value),
-    @required Result experiencePointsChange(_ExperiencePointsChange value),
-    @required Result tagsChange(_TagsChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result nameChanged(_NameChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result experiencePointsChanged(_ExperiencePointsChanged value),
+    @required Result tagsChanged(_TagsChanged value),
+    @required Result submitted(_Submitted value),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(descriptionChange != null);
-    assert(experiencePointsChange != null);
-    assert(tagsChange != null);
-    assert(submit != null);
-    return submit(this);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(descriptionChanged != null);
+    assert(experiencePointsChanged != null);
+    assert(tagsChanged != null);
+    assert(submitted != null);
+    return submitted(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result nameChange(_NameChange value),
-    Result descriptionChange(_DescriptionChange value),
-    Result experiencePointsChange(_ExperiencePointsChange value),
-    Result tagsChange(_TagsChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result nameChanged(_NameChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result experiencePointsChanged(_ExperiencePointsChanged value),
+    Result tagsChanged(_TagsChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (submit != null) {
-      return submit(this);
+    if (submitted != null) {
+      return submitted(this);
     }
     return orElse();
   }
 }
 
-abstract class _Submit implements AchievementManagementFormEvent {
-  const factory _Submit() = _$_Submit;
+abstract class _Submitted implements AchievementManagementFormEvent {
+  const factory _Submitted() = _$_Submitted;
 }
 
 class _$AchievementManagementFormStateTearOff {

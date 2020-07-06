@@ -36,7 +36,7 @@ void main() {
           when(deleteComment.call(any)).thenAnswer((_) async => right(unit));
           return getIt<CommentActorBloc>();
         },
-        act: (bloc) async => bloc.add(CommentActorEvent.delete(Comment.empty())),
+        act: (bloc) async => bloc.add(CommentActorEvent.deleted(Comment.empty())),
         verify: (_) async {
           verify(deleteComment.call(any));
           verifyNoMoreInteractions(deleteComment);
@@ -53,7 +53,7 @@ void main() {
           when(deleteComment.call(any)).thenAnswer((_) async => left(failure));
           return getIt<CommentActorBloc>();
         },
-        act: (bloc) async => bloc.add(CommentActorEvent.delete(Comment.empty())),
+        act: (bloc) async => bloc.add(CommentActorEvent.deleted(Comment.empty())),
         verify: (_) async {
           verify(deleteComment.call(any));
           verifyNoMoreInteractions(deleteComment);

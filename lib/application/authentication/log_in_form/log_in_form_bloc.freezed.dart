@@ -12,24 +12,24 @@ T _$identity<T>(T value) => value;
 class _$LogInFormEventTearOff {
   const _$LogInFormEventTearOff();
 
-  _UsernameChange usernameChange(String username) {
-    return _UsernameChange(
+  _UsernameChanged usernameChanged(String username) {
+    return _UsernameChanged(
       username,
     );
   }
 
-  _PasswordChange passwordChange(String password) {
-    return _PasswordChange(
+  _PasswordChanged passwordChanged(String password) {
+    return _PasswordChanged(
       password,
     );
   }
 
-  _LogIn logIn() {
-    return const _LogIn();
+  _LoggedIn loggedIn() {
+    return const _LoggedIn();
   }
 
-  _LogInGoogle logInGoogle() {
-    return const _LogInGoogle();
+  _LoggedInGoogle loggedInGoogle() {
+    return const _LoggedInGoogle();
   }
 }
 
@@ -39,32 +39,32 @@ const $LogInFormEvent = _$LogInFormEventTearOff();
 mixin _$LogInFormEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result usernameChange(String username),
-    @required Result passwordChange(String password),
-    @required Result logIn(),
-    @required Result logInGoogle(),
+    @required Result usernameChanged(String username),
+    @required Result passwordChanged(String password),
+    @required Result loggedIn(),
+    @required Result loggedInGoogle(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result usernameChange(String username),
-    Result passwordChange(String password),
-    Result logIn(),
-    Result logInGoogle(),
+    Result usernameChanged(String username),
+    Result passwordChanged(String password),
+    Result loggedIn(),
+    Result loggedInGoogle(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result usernameChange(_UsernameChange value),
-    @required Result passwordChange(_PasswordChange value),
-    @required Result logIn(_LogIn value),
-    @required Result logInGoogle(_LogInGoogle value),
+    @required Result usernameChanged(_UsernameChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result loggedIn(_LoggedIn value),
+    @required Result loggedInGoogle(_LoggedInGoogle value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result usernameChange(_UsernameChange value),
-    Result passwordChange(_PasswordChange value),
-    Result logIn(_LogIn value),
-    Result logInGoogle(_LogInGoogle value),
+    Result usernameChanged(_UsernameChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result loggedIn(_LoggedIn value),
+    Result loggedInGoogle(_LoggedInGoogle value),
     @required Result orElse(),
   });
 }
@@ -81,45 +81,45 @@ class _$LogInFormEventCopyWithImpl<$Res> implements $LogInFormEventCopyWith<$Res
   final $Res Function(LogInFormEvent) _then;
 }
 
-abstract class _$UsernameChangeCopyWith<$Res> {
-  factory _$UsernameChangeCopyWith(_UsernameChange value, $Res Function(_UsernameChange) then) =
-  __$UsernameChangeCopyWithImpl<$Res>;
+abstract class _$UsernameChangedCopyWith<$Res> {
+  factory _$UsernameChangedCopyWith(_UsernameChanged value, $Res Function(_UsernameChanged) then) =
+  __$UsernameChangedCopyWithImpl<$Res>;
   $Res call({String username});
 }
 
-class __$UsernameChangeCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res>
-  implements _$UsernameChangeCopyWith<$Res> {
-  __$UsernameChangeCopyWithImpl(_UsernameChange _value, $Res Function(_UsernameChange) _then)
-    : super(_value, (v) => _then(v as _UsernameChange));
+class __$UsernameChangedCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res>
+  implements _$UsernameChangedCopyWith<$Res> {
+  __$UsernameChangedCopyWithImpl(_UsernameChanged _value, $Res Function(_UsernameChanged) _then)
+    : super(_value, (v) => _then(v as _UsernameChanged));
 
   @override
-  _UsernameChange get _value => super._value as _UsernameChange;
+  _UsernameChanged get _value => super._value as _UsernameChanged;
 
   @override
   $Res call({
     Object username = freezed,
   }) {
-    return _then(_UsernameChange(
+    return _then(_UsernameChanged(
       username == freezed ? _value.username : username as String,
     ));
   }
 }
 
-class _$_UsernameChange implements _UsernameChange {
-  const _$_UsernameChange(this.username) : assert(username != null);
+class _$_UsernameChanged implements _UsernameChanged {
+  const _$_UsernameChanged(this.username) : assert(username != null);
 
   @override
   final String username;
 
   @override
   String toString() {
-    return 'LogInFormEvent.usernameChange(username: $username)';
+    return 'LogInFormEvent.usernameChanged(username: $username)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _UsernameChange &&
+      (other is _UsernameChanged &&
         (identical(other.username, username) ||
           const DeepCollectionEquality()
             .equals(other.username, username)));
@@ -130,36 +130,36 @@ class _$_UsernameChange implements _UsernameChange {
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
 
   @override
-  _$UsernameChangeCopyWith<_UsernameChange> get copyWith =>
-    __$UsernameChangeCopyWithImpl<_UsernameChange>(this, _$identity);
+  _$UsernameChangedCopyWith<_UsernameChanged> get copyWith =>
+    __$UsernameChangedCopyWithImpl<_UsernameChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result usernameChange(String username),
-    @required Result passwordChange(String password),
-    @required Result logIn(),
-    @required Result logInGoogle(),
+    @required Result usernameChanged(String username),
+    @required Result passwordChanged(String password),
+    @required Result loggedIn(),
+    @required Result loggedInGoogle(),
   }) {
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(logIn != null);
-    assert(logInGoogle != null);
-    return usernameChange(username);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(loggedIn != null);
+    assert(loggedInGoogle != null);
+    return usernameChanged(username);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result usernameChange(String username),
-    Result passwordChange(String password),
-    Result logIn(),
-    Result logInGoogle(),
+    Result usernameChanged(String username),
+    Result passwordChanged(String password),
+    Result loggedIn(),
+    Result loggedInGoogle(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (usernameChange != null) {
-      return usernameChange(username);
+    if (usernameChanged != null) {
+      return usernameChanged(username);
     }
     return orElse();
   }
@@ -167,81 +167,82 @@ class _$_UsernameChange implements _UsernameChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result usernameChange(_UsernameChange value),
-    @required Result passwordChange(_PasswordChange value),
-    @required Result logIn(_LogIn value),
-    @required Result logInGoogle(_LogInGoogle value),
+    @required Result usernameChanged(_UsernameChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result loggedIn(_LoggedIn value),
+    @required Result loggedInGoogle(_LoggedInGoogle value),
   }) {
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(logIn != null);
-    assert(logInGoogle != null);
-    return usernameChange(this);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(loggedIn != null);
+    assert(loggedInGoogle != null);
+    return usernameChanged(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result usernameChange(_UsernameChange value),
-    Result passwordChange(_PasswordChange value),
-    Result logIn(_LogIn value),
-    Result logInGoogle(_LogInGoogle value),
+    Result usernameChanged(_UsernameChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result loggedIn(_LoggedIn value),
+    Result loggedInGoogle(_LoggedInGoogle value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (usernameChange != null) {
-      return usernameChange(this);
+    if (usernameChanged != null) {
+      return usernameChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class _UsernameChange implements LogInFormEvent {
-  const factory _UsernameChange(String username) = _$_UsernameChange;
+abstract class _UsernameChanged implements LogInFormEvent {
+  const factory _UsernameChanged(String username) = _$_UsernameChanged;
 
   String get username;
-  _$UsernameChangeCopyWith<_UsernameChange> get copyWith;
+  
+  _$UsernameChangedCopyWith<_UsernameChanged> get copyWith;
 }
 
-abstract class _$PasswordChangeCopyWith<$Res> {
-  factory _$PasswordChangeCopyWith(_PasswordChange value, $Res Function(_PasswordChange) then) =
-  __$PasswordChangeCopyWithImpl<$Res>;
+abstract class _$PasswordChangedCopyWith<$Res> {
+  factory _$PasswordChangedCopyWith(_PasswordChanged value, $Res Function(_PasswordChanged) then) =
+  __$PasswordChangedCopyWithImpl<$Res>;
   $Res call({String password});
 }
 
-class __$PasswordChangeCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res>
-  implements _$PasswordChangeCopyWith<$Res> {
-  __$PasswordChangeCopyWithImpl(_PasswordChange _value, $Res Function(_PasswordChange) _then)
-    : super(_value, (v) => _then(v as _PasswordChange));
+class __$PasswordChangedCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res>
+  implements _$PasswordChangedCopyWith<$Res> {
+  __$PasswordChangedCopyWithImpl(_PasswordChanged _value, $Res Function(_PasswordChanged) _then)
+    : super(_value, (v) => _then(v as _PasswordChanged));
 
   @override
-  _PasswordChange get _value => super._value as _PasswordChange;
+  _PasswordChanged get _value => super._value as _PasswordChanged;
 
   @override
   $Res call({
     Object password = freezed,
   }) {
-    return _then(_PasswordChange(
+    return _then(_PasswordChanged(
       password == freezed ? _value.password : password as String,
     ));
   }
 }
 
-class _$_PasswordChange implements _PasswordChange {
-  const _$_PasswordChange(this.password) : assert(password != null);
+class _$_PasswordChanged implements _PasswordChanged {
+  const _$_PasswordChanged(this.password) : assert(password != null);
 
   @override
   final String password;
 
   @override
   String toString() {
-    return 'LogInFormEvent.passwordChange(password: $password)';
+    return 'LogInFormEvent.passwordChanged(password: $password)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _PasswordChange &&
+      (other is _PasswordChanged &&
         (identical(other.password, password) ||
           const DeepCollectionEquality()
             .equals(other.password, password)));
@@ -252,36 +253,36 @@ class _$_PasswordChange implements _PasswordChange {
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(password);
 
   @override
-  _$PasswordChangeCopyWith<_PasswordChange> get copyWith =>
-    __$PasswordChangeCopyWithImpl<_PasswordChange>(this, _$identity);
+  _$PasswordChangedCopyWith<_PasswordChanged> get copyWith =>
+    __$PasswordChangedCopyWithImpl<_PasswordChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result usernameChange(String username),
-    @required Result passwordChange(String password),
-    @required Result logIn(),
-    @required Result logInGoogle(),
+    @required Result usernameChanged(String username),
+    @required Result passwordChanged(String password),
+    @required Result loggedIn(),
+    @required Result loggedInGoogle(),
   }) {
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(logIn != null);
-    assert(logInGoogle != null);
-    return passwordChange(password);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(loggedIn != null);
+    assert(loggedInGoogle != null);
+    return passwordChanged(password);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result usernameChange(String username),
-    Result passwordChange(String password),
-    Result logIn(),
-    Result logInGoogle(),
+    Result usernameChanged(String username),
+    Result passwordChanged(String password),
+    Result loggedIn(),
+    Result loggedInGoogle(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (passwordChange != null) {
-      return passwordChange(password);
+    if (passwordChanged != null) {
+      return passwordChanged(password);
     }
     return orElse();
   }
@@ -289,67 +290,68 @@ class _$_PasswordChange implements _PasswordChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result usernameChange(_UsernameChange value),
-    @required Result passwordChange(_PasswordChange value),
-    @required Result logIn(_LogIn value),
-    @required Result logInGoogle(_LogInGoogle value),
+    @required Result usernameChanged(_UsernameChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result loggedIn(_LoggedIn value),
+    @required Result loggedInGoogle(_LoggedInGoogle value),
   }) {
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(logIn != null);
-    assert(logInGoogle != null);
-    return passwordChange(this);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(loggedIn != null);
+    assert(loggedInGoogle != null);
+    return passwordChanged(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result usernameChange(_UsernameChange value),
-    Result passwordChange(_PasswordChange value),
-    Result logIn(_LogIn value),
-    Result logInGoogle(_LogInGoogle value),
+    Result usernameChanged(_UsernameChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result loggedIn(_LoggedIn value),
+    Result loggedInGoogle(_LoggedInGoogle value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (passwordChange != null) {
-      return passwordChange(this);
+    if (passwordChanged != null) {
+      return passwordChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class _PasswordChange implements LogInFormEvent {
-  const factory _PasswordChange(String password) = _$_PasswordChange;
+abstract class _PasswordChanged implements LogInFormEvent {
+  const factory _PasswordChanged(String password) = _$_PasswordChanged;
 
   String get password;
-  _$PasswordChangeCopyWith<_PasswordChange> get copyWith;
+  
+  _$PasswordChangedCopyWith<_PasswordChanged> get copyWith;
 }
 
-abstract class _$LogInCopyWith<$Res> {
-  factory _$LogInCopyWith(_LogIn value, $Res Function(_LogIn) then) =
-  __$LogInCopyWithImpl<$Res>;
+abstract class _$LoggedInCopyWith<$Res> {
+  factory _$LoggedInCopyWith(_LoggedIn value, $Res Function(_LoggedIn) then) =
+  __$LoggedInCopyWithImpl<$Res>;
 }
 
-class __$LogInCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res>
-  implements _$LogInCopyWith<$Res> {
-  __$LogInCopyWithImpl(_LogIn _value, $Res Function(_LogIn) _then)
-    : super(_value, (v) => _then(v as _LogIn));
+class __$LoggedInCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res>
+  implements _$LoggedInCopyWith<$Res> {
+  __$LoggedInCopyWithImpl(_LoggedIn _value, $Res Function(_LoggedIn) _then)
+    : super(_value, (v) => _then(v as _LoggedIn));
 
   @override
-  _LogIn get _value => super._value as _LogIn;
+  _LoggedIn get _value => super._value as _LoggedIn;
 }
 
-class _$_LogIn implements _LogIn {
-  const _$_LogIn();
+class _$_LoggedIn implements _LoggedIn {
+  const _$_LoggedIn();
 
   @override
   String toString() {
-    return 'LogInFormEvent.logIn()';
+    return 'LogInFormEvent.loggedIn()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LogIn);
+    return identical(this, other) || (other is _LoggedIn);
   }
 
   @override
@@ -358,30 +360,30 @@ class _$_LogIn implements _LogIn {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result usernameChange(String username),
-    @required Result passwordChange(String password),
-    @required Result logIn(),
-    @required Result logInGoogle(),
+    @required Result usernameChanged(String username),
+    @required Result passwordChanged(String password),
+    @required Result loggedIn(),
+    @required Result loggedInGoogle(),
   }) {
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(logIn != null);
-    assert(logInGoogle != null);
-    return logIn();
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(loggedIn != null);
+    assert(loggedInGoogle != null);
+    return loggedIn();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result usernameChange(String username),
-    Result passwordChange(String password),
-    Result logIn(),
-    Result logInGoogle(),
+    Result usernameChanged(String username),
+    Result passwordChanged(String password),
+    Result loggedIn(),
+    Result loggedInGoogle(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (logIn != null) {
-      return logIn();
+    if (loggedIn != null) {
+      return loggedIn();
     }
     return orElse();
   }
@@ -389,64 +391,64 @@ class _$_LogIn implements _LogIn {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result usernameChange(_UsernameChange value),
-    @required Result passwordChange(_PasswordChange value),
-    @required Result logIn(_LogIn value),
-    @required Result logInGoogle(_LogInGoogle value),
+    @required Result usernameChanged(_UsernameChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result loggedIn(_LoggedIn value),
+    @required Result loggedInGoogle(_LoggedInGoogle value),
   }) {
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(logIn != null);
-    assert(logInGoogle != null);
-    return logIn(this);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(loggedIn != null);
+    assert(loggedInGoogle != null);
+    return loggedIn(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result usernameChange(_UsernameChange value),
-    Result passwordChange(_PasswordChange value),
-    Result logIn(_LogIn value),
-    Result logInGoogle(_LogInGoogle value),
+    Result usernameChanged(_UsernameChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result loggedIn(_LoggedIn value),
+    Result loggedInGoogle(_LoggedInGoogle value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (logIn != null) {
-      return logIn(this);
+    if (loggedIn != null) {
+      return loggedIn(this);
     }
     return orElse();
   }
 }
 
-abstract class _LogIn implements LogInFormEvent {
-  const factory _LogIn() = _$_LogIn;
+abstract class _LoggedIn implements LogInFormEvent {
+  const factory _LoggedIn() = _$_LoggedIn;
 }
 
-abstract class _$LogInGoogleCopyWith<$Res> {
-  factory _$LogInGoogleCopyWith(_LogInGoogle value, $Res Function(_LogInGoogle) then) =
-  __$LogInGoogleCopyWithImpl<$Res>;
+abstract class _$LoggedInGoogleCopyWith<$Res> {
+  factory _$LoggedInGoogleCopyWith(_LoggedInGoogle value, $Res Function(_LoggedInGoogle) then) =
+  __$LoggedInGoogleCopyWithImpl<$Res>;
 }
 
-class __$LogInGoogleCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res>
-  implements _$LogInGoogleCopyWith<$Res> {
-  __$LogInGoogleCopyWithImpl(_LogInGoogle _value, $Res Function(_LogInGoogle) _then)
-    : super(_value, (v) => _then(v as _LogInGoogle));
+class __$LoggedInGoogleCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res>
+  implements _$LoggedInGoogleCopyWith<$Res> {
+  __$LoggedInGoogleCopyWithImpl(_LoggedInGoogle _value, $Res Function(_LoggedInGoogle) _then)
+    : super(_value, (v) => _then(v as _LoggedInGoogle));
 
   @override
-  _LogInGoogle get _value => super._value as _LogInGoogle;
+  _LoggedInGoogle get _value => super._value as _LoggedInGoogle;
 }
 
-class _$_LogInGoogle implements _LogInGoogle {
-  const _$_LogInGoogle();
+class _$_LoggedInGoogle implements _LoggedInGoogle {
+  const _$_LoggedInGoogle();
 
   @override
   String toString() {
-    return 'LogInFormEvent.logInGoogle()';
+    return 'LogInFormEvent.loggedInGoogle()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LogInGoogle);
+    return identical(this, other) || (other is _LoggedInGoogle);
   }
 
   @override
@@ -455,30 +457,30 @@ class _$_LogInGoogle implements _LogInGoogle {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result usernameChange(String username),
-    @required Result passwordChange(String password),
-    @required Result logIn(),
-    @required Result logInGoogle(),
+    @required Result usernameChanged(String username),
+    @required Result passwordChanged(String password),
+    @required Result loggedIn(),
+    @required Result loggedInGoogle(),
   }) {
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(logIn != null);
-    assert(logInGoogle != null);
-    return logInGoogle();
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(loggedIn != null);
+    assert(loggedInGoogle != null);
+    return loggedInGoogle();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result usernameChange(String username),
-    Result passwordChange(String password),
-    Result logIn(),
-    Result logInGoogle(),
+    Result usernameChanged(String username),
+    Result passwordChanged(String password),
+    Result loggedIn(),
+    Result loggedInGoogle(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (logInGoogle != null) {
-      return logInGoogle();
+    if (loggedInGoogle != null) {
+      return loggedInGoogle();
     }
     return orElse();
   }
@@ -486,37 +488,37 @@ class _$_LogInGoogle implements _LogInGoogle {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result usernameChange(_UsernameChange value),
-    @required Result passwordChange(_PasswordChange value),
-    @required Result logIn(_LogIn value),
-    @required Result logInGoogle(_LogInGoogle value),
+    @required Result usernameChanged(_UsernameChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result loggedIn(_LoggedIn value),
+    @required Result loggedInGoogle(_LoggedInGoogle value),
   }) {
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(logIn != null);
-    assert(logInGoogle != null);
-    return logInGoogle(this);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(loggedIn != null);
+    assert(loggedInGoogle != null);
+    return loggedInGoogle(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result usernameChange(_UsernameChange value),
-    Result passwordChange(_PasswordChange value),
-    Result logIn(_LogIn value),
-    Result logInGoogle(_LogInGoogle value),
+    Result usernameChanged(_UsernameChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result loggedIn(_LoggedIn value),
+    Result loggedInGoogle(_LoggedInGoogle value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (logInGoogle != null) {
-      return logInGoogle(this);
+    if (loggedInGoogle != null) {
+      return loggedInGoogle(this);
     }
     return orElse();
   }
 }
 
-abstract class _LogInGoogle implements LogInFormEvent {
-  const factory _LogInGoogle() = _$_LogInGoogle;
+abstract class _LoggedInGoogle implements LogInFormEvent {
+  const factory _LoggedInGoogle() = _$_LoggedInGoogle;
 }
 
 class _$LogInFormStateTearOff {

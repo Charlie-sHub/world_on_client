@@ -10,9 +10,7 @@ import 'package:worldon/domain/profile/use_case/delete_experience.dart';
 import 'package:worldon/injection.dart';
 
 part 'experience_management_actor_bloc.freezed.dart';
-
 part 'experience_management_actor_event.dart';
-
 part 'experience_management_actor_state.dart';
 
 @injectable
@@ -22,11 +20,11 @@ class ExperienceManagementActorBloc extends Bloc<ExperienceManagementActorEvent,
   @override
   Stream<ExperienceManagementActorState> mapEventToState(ExperienceManagementActorEvent event) async* {
     yield* event.map(
-      delete: onDelete,
+      deleted: onDeleted,
     );
   }
 
-  Stream<ExperienceManagementActorState> onDelete(_Delete event) async* {
+  Stream<ExperienceManagementActorState> onDeleted(_Deleted event) async* {
     yield const ExperienceManagementActorState.actionInProgress();
     final _deleteExperience = getIt<DeleteExperience>();
     final _failureOrUnit = await _deleteExperience(

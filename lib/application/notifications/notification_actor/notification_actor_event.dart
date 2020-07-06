@@ -2,8 +2,8 @@ part of 'notification_actor_bloc.dart';
 
 @freezed
 abstract class NotificationActorEvent with _$NotificationActorEvent {
-  const factory NotificationActorEvent.delete(Notification notification) = _Delete;
+  const factory NotificationActorEvent.deleted(Notification notification) = _Deleted;
 
   // Check as in set to seen
-  const factory NotificationActorEvent.check(Notification notification) = _Check;
+  const factory NotificationActorEvent.checked(Notification notification) = _Checked;
 }

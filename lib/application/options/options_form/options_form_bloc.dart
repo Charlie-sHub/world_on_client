@@ -10,9 +10,7 @@ import 'package:worldon/domain/options/use_case/save_global_options.dart';
 import 'package:worldon/injection.dart';
 
 part 'options_form_bloc.freezed.dart';
-
 part 'options_form_event.dart';
-
 part 'options_form_state.dart';
 
 @injectable
@@ -22,13 +20,13 @@ class OptionsFormBloc extends Bloc<OptionsFormEvent, OptionsFormState> {
   @override
   Stream<OptionsFormState> mapEventToState(OptionsFormEvent event) async* {
     yield* event.map(
-      initialize: onInitialize,
-      languageCodeChange: onLanguageCodeChange,
-      submit: onSubmit,
+      initialized: onInitialized,
+      languageCodeChanged: onLanguageCodeChanged,
+      submitted: onSubmitted,
     );
   }
 
-  Stream<OptionsFormState> onSubmit(_Submit event) async* {
+  Stream<OptionsFormState> onSubmitted(_Submitted event) async* {
     Either<Failure, Unit> _failureOrSuccess;
     yield state.copyWith(
       isSubmitting: true,
@@ -47,7 +45,7 @@ class OptionsFormBloc extends Bloc<OptionsFormEvent, OptionsFormState> {
     );
   }
 
-  Stream<OptionsFormState> onLanguageCodeChange(_LanguageCodeChange event) async* {
+  Stream<OptionsFormState> onLanguageCodeChanged(_LanguageCodeChanged event) async* {
     yield state.copyWith(
       options: state.options.copyWith(
         languageCode: event.languageCode,
@@ -56,7 +54,7 @@ class OptionsFormBloc extends Bloc<OptionsFormEvent, OptionsFormState> {
     );
   }
 
-  Stream<OptionsFormState> onInitialize(_Initialize event) async* {
+  Stream<OptionsFormState> onInitialized(_Initialized event) async* {
     yield event.optionsOption.fold(
       () => state,
       (options) => state.copyWith(

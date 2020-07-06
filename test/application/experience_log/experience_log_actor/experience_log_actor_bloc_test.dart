@@ -36,7 +36,7 @@ void main() {
           when(dismissExperience.call(any)).thenAnswer((_) async => right(unit));
           return getIt<ExperienceLogActorBloc>();
         },
-        act: (bloc) async => bloc.add(const ExperienceLogActorEvent.dismissExperience(experienceId)),
+        act: (bloc) async => bloc.add(const ExperienceLogActorEvent.experienceDismissed(experienceId)),
         verify: (_) async {
           verify(dismissExperience.call(any));
           verifyNoMoreInteractions(dismissExperience);
@@ -52,7 +52,7 @@ void main() {
           when(dismissExperience.call(any)).thenAnswer((_) async => left(failure));
           return getIt<ExperienceLogActorBloc>();
         },
-        act: (bloc) async => bloc.add(const ExperienceLogActorEvent.dismissExperience(experienceId)),
+        act: (bloc) async => bloc.add(const ExperienceLogActorEvent.experienceDismissed(experienceId)),
         verify: (_) async {
           verify(dismissExperience.call(any));
           verifyNoMoreInteractions(dismissExperience);

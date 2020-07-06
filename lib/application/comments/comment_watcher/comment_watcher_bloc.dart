@@ -9,9 +9,7 @@ import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/injection.dart';
 
 part 'comment_watcher_bloc.freezed.dart';
-
 part 'comment_watcher_event.dart';
-
 part 'comment_watcher_state.dart';
 
 @injectable
@@ -21,11 +19,11 @@ class CommentWatcherBloc extends Bloc<CommentWatcherEvent, CommentWatcherState> 
   @override
   Stream<CommentWatcherState> mapEventToState(CommentWatcherEvent event) async* {
     yield* event.map(
-      loadExperienceComments: onLoadExperienceComments,
+      experienceCommentsLoaded: onExperienceCommentsLoaded,
     );
   }
 
-  Stream<CommentWatcherState> onLoadExperienceComments(_LoadExperienceComments event) async* {
+  Stream<CommentWatcherState> onExperienceCommentsLoaded(_ExperienceCommentsLoaded event) async* {
     yield const CommentWatcherState.loading();
     final _getExperienceComments = getIt<GetExperienceComments>();
     final _params = Params(

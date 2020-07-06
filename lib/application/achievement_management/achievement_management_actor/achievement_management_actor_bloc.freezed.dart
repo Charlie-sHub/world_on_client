@@ -12,7 +12,7 @@ T _$identity<T>(T value) => value;
 class _$AchievementManagementActorEventTearOff {
   const _$AchievementManagementActorEventTearOff();
 
-  _Deleted delete(Achievement achievement) {
+  _Deleted deleted(Achievement achievement) {
     return _Deleted(
       achievement,
     );
@@ -28,20 +28,20 @@ mixin _$AchievementManagementActorEvent {
 
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result delete(Achievement achievement),
+    @required Result deleted(Achievement achievement),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result delete(Achievement achievement),
+    Result deleted(Achievement achievement),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result delete(_Deleted value),
+    @required Result deleted(_Deleted value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result delete(_Deleted value),
+    Result deleted(_Deleted value),
     @required Result orElse(),
   });
 
@@ -127,7 +127,7 @@ class _$_Deleted implements _Deleted {
 
   @override
   String toString() {
-    return 'AchievementManagementActorEvent.delete(achievement: $achievement)';
+    return 'AchievementManagementActorEvent.deleted(achievement: $achievement)';
   }
 
   @override
@@ -149,21 +149,21 @@ class _$_Deleted implements _Deleted {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result delete(Achievement achievement),
+    @required Result deleted(Achievement achievement),
   }) {
-    assert(delete != null);
-    return delete(achievement);
+    assert(deleted != null);
+    return deleted(achievement);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result delete(Achievement achievement),
+    Result deleted(Achievement achievement),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (delete != null) {
-      return delete(achievement);
+    if (deleted != null) {
+      return deleted(achievement);
     }
     return orElse();
   }
@@ -171,21 +171,21 @@ class _$_Deleted implements _Deleted {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result delete(_Deleted value),
+    @required Result deleted(_Deleted value),
   }) {
-    assert(delete != null);
-    return delete(this);
+    assert(deleted != null);
+    return deleted(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result delete(_Deleted value),
+    Result deleted(_Deleted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (delete != null) {
-      return delete(this);
+    if (deleted != null) {
+      return deleted(this);
     }
     return orElse();
   }

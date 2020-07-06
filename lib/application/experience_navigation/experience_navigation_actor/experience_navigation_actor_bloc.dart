@@ -29,21 +29,21 @@ class ExperienceNavigationActorBloc extends Bloc<ExperienceNavigationActorEvent,
   @override
   Stream<ExperienceNavigationActorState> mapEventToState(ExperienceNavigationActorEvent event) async* {
     yield* event.map(
-      initialize: onInitialize,
+      initialized: onInitialized,
       objectiveAccomplished: onObjectiveAccomplished,
-      like: onLike,
-      getCurrentLocation: onGetCurrentLocation,
+      liked: onLiked,
+      gotCurrentLocation: onGotCurrentLocation,
 
       // Should only be available after finishing the Experience
-      rateDifficulty: (event) async* {},
+      difficultyRated: (event) async* {},
 
       // Should only be added from the bloc itself
-      finishExperience: onFinishExperience,
-      rewardUser: onRewardUser,
+      experienceFinished: onExperienceFinished,
+      userRewarded: onUserRewarded,
     );
   }
 
-  Stream<ExperienceNavigationActorState> onGetCurrentLocation(_GetCurrentLocation event) async* {
+  Stream<ExperienceNavigationActorState> onGotCurrentLocation(_GotCurrentLocation event) async* {
     final _getCurrentLocation = getIt<GetCurrentLocation>();
     final _loadSurroundingExperiences = getIt<load_surrounding_experiences.LoadSurroundingExperiences>();
     final _coordinates = _getCurrentLocation(getIt<NoParams>()).fold(
@@ -65,7 +65,7 @@ class ExperienceNavigationActorBloc extends Bloc<ExperienceNavigationActorEvent,
     );
   }
 
-  Stream<ExperienceNavigationActorState> onLike(_Like event) async* {
+  Stream<ExperienceNavigationActorState> onLiked(_Liked event) async* {
     Either<Failure, Unit> _failureOrUnit;
     yield state.copyWith(
       isSubmitting: true,
@@ -84,7 +84,7 @@ class ExperienceNavigationActorBloc extends Bloc<ExperienceNavigationActorEvent,
     );
   }
 
-  Stream<ExperienceNavigationActorState> onFinishExperience(_FinishExperience event) async* {
+  Stream<ExperienceNavigationActorState> onExperienceFinished(_ExperienceFinished event) async* {
     Either<Failure, Unit> _failureOrUnit;
     yield state.copyWith(
       isSubmitting: true,
@@ -103,7 +103,7 @@ class ExperienceNavigationActorBloc extends Bloc<ExperienceNavigationActorEvent,
     );
   }
 
-  Stream<ExperienceNavigationActorState> onRewardUser(_RewardUser event) async* {
+  Stream<ExperienceNavigationActorState> onUserRewarded(_UserRewarded event) async* {
     Either<Failure, Unit> _failureOrUnit;
     yield state.copyWith(
       isSubmitting: true,
@@ -132,12 +132,12 @@ class ExperienceNavigationActorBloc extends Bloc<ExperienceNavigationActorEvent,
     );
     if (_isFinished) {
       // These Events could be added from the UI
-      add(const ExperienceNavigationActorEvent.finishExperience());
-      add(const ExperienceNavigationActorEvent.rewardUser());
+      add(const ExperienceNavigationActorEvent.experienceFinished());
+      add(const ExperienceNavigationActorEvent.userRewarded());
     }
   }
 
-  Stream<ExperienceNavigationActorState> onInitialize(_Initialize event) async* {
+  Stream<ExperienceNavigationActorState> onInitialized(_Initialized event) async* {
     // Could the declaration of these use cases be moved? they're injected singletons anyway though, so it's not an issues of creating new objects or not.
     final _getCurrentLocation = getIt<GetCurrentLocation>();
     final _loadSurroundingExperiences = getIt<load_surrounding_experiences.LoadSurroundingExperiences>();

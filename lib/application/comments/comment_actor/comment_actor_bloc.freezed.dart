@@ -12,8 +12,8 @@ T _$identity<T>(T value) => value;
 class _$CommentActorEventTearOff {
   const _$CommentActorEventTearOff();
 
-  _Delete delete(Comment comment) {
-    return _Delete(
+  _Deleted deleted(Comment comment) {
+    return _Deleted(
       comment,
     );
   }
@@ -27,20 +27,20 @@ mixin _$CommentActorEvent {
 
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result delete(Comment comment),
+    @required Result deleted(Comment comment),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result delete(Comment comment),
+    Result deleted(Comment comment),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result delete(_Delete value),
+    @required Result deleted(_Deleted value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result delete(_Delete value),
+    Result deleted(_Deleted value),
     @required Result orElse(),
   });
 
@@ -82,10 +82,10 @@ class _$CommentActorEventCopyWithImpl<$Res>
   }
 }
 
-abstract class _$DeleteCopyWith<$Res>
+abstract class _$DeletedCopyWith<$Res>
   implements $CommentActorEventCopyWith<$Res> {
-  factory _$DeleteCopyWith(_Delete value, $Res Function(_Delete) then) =
-  __$DeleteCopyWithImpl<$Res>;
+  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
+  __$DeletedCopyWithImpl<$Res>;
   @override
   $Res call({Comment comment});
 
@@ -93,39 +93,39 @@ abstract class _$DeleteCopyWith<$Res>
   $CommentCopyWith<$Res> get comment;
 }
 
-class __$DeleteCopyWithImpl<$Res> extends _$CommentActorEventCopyWithImpl<$Res>
-  implements _$DeleteCopyWith<$Res> {
-  __$DeleteCopyWithImpl(_Delete _value, $Res Function(_Delete) _then)
-    : super(_value, (v) => _then(v as _Delete));
+class __$DeletedCopyWithImpl<$Res> extends _$CommentActorEventCopyWithImpl<$Res>
+  implements _$DeletedCopyWith<$Res> {
+  __$DeletedCopyWithImpl(_Deleted _value, $Res Function(_Deleted) _then)
+    : super(_value, (v) => _then(v as _Deleted));
 
   @override
-  _Delete get _value => super._value as _Delete;
+  _Deleted get _value => super._value as _Deleted;
 
   @override
   $Res call({
     Object comment = freezed,
   }) {
-    return _then(_Delete(
+    return _then(_Deleted(
       comment == freezed ? _value.comment : comment as Comment,
     ));
   }
 }
 
-class _$_Delete implements _Delete {
-  const _$_Delete(this.comment) : assert(comment != null);
+class _$_Deleted implements _Deleted {
+  const _$_Deleted(this.comment) : assert(comment != null);
 
   @override
   final Comment comment;
 
   @override
   String toString() {
-    return 'CommentActorEvent.delete(comment: $comment)';
+    return 'CommentActorEvent.deleted(comment: $comment)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Delete &&
+      (other is _Deleted &&
         (identical(other.comment, comment) ||
           const DeepCollectionEquality().equals(other.comment, comment)));
   }
@@ -135,27 +135,27 @@ class _$_Delete implements _Delete {
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(comment);
 
   @override
-  _$DeleteCopyWith<_Delete> get copyWith =>
-    __$DeleteCopyWithImpl<_Delete>(this, _$identity);
+  _$DeletedCopyWith<_Deleted> get copyWith =>
+    __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result delete(Comment comment),
+    @required Result deleted(Comment comment),
   }) {
-    assert(delete != null);
-    return delete(comment);
+    assert(deleted != null);
+    return deleted(comment);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result delete(Comment comment),
+    Result deleted(Comment comment),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (delete != null) {
-      return delete(comment);
+    if (deleted != null) {
+      return deleted(comment);
     }
     return orElse();
   }
@@ -163,33 +163,33 @@ class _$_Delete implements _Delete {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result delete(_Delete value),
+    @required Result deleted(_Deleted value),
   }) {
-    assert(delete != null);
-    return delete(this);
+    assert(deleted != null);
+    return deleted(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result delete(_Delete value),
+    Result deleted(_Deleted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (delete != null) {
-      return delete(this);
+    if (deleted != null) {
+      return deleted(this);
     }
     return orElse();
   }
 }
 
-abstract class _Delete implements CommentActorEvent {
-  const factory _Delete(Comment comment) = _$_Delete;
+abstract class _Deleted implements CommentActorEvent {
+  const factory _Deleted(Comment comment) = _$_Deleted;
 
   @override
   Comment get comment;
   @override
-  _$DeleteCopyWith<_Delete> get copyWith;
+  _$DeletedCopyWith<_Deleted> get copyWith;
 }
 
 class _$CommentActorStateTearOff {

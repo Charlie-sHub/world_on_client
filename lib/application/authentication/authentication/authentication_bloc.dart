@@ -20,27 +20,27 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
   @override
   Stream<AuthenticationState> mapEventToState(AuthenticationEvent event) async* {
     yield* event.map(
-      authenticationCheckRequest: onAuthenticationCheckRequest,
-      logOut: onLogOut,
+      authenticationCheckRequested: onAuthenticationCheckRequested,
+      loggedOut: onLoggedOut,
     );
   }
 
-  Stream<AuthenticationState> onLogOut(_LogOut event) async* {
+  Stream<AuthenticationState> onLoggedOut(_LoggedOut event) async* {
     final _logOut = getIt<LogOut>();
     final _failureOrUnit = await _logOut(getIt<NoParams>());
     // On second thought it's kinda silly the log out doesn't simply return void
     yield _failureOrUnit.fold(
-      (failure) => const AuthenticationState.authenticated(),
-      (unit) => const AuthenticationState.unAuthenticated(),
+      (failure) => const AuthenticationState.authenticationSuccess(),
+      (unit) => const AuthenticationState.authenticationFailure(),
     );
   }
 
-  Stream<AuthenticationState> onAuthenticationCheckRequest(_AuthenticationCheckRequest event) async* {
+  Stream<AuthenticationState> onAuthenticationCheckRequested(_AuthenticationCheckRequested event) async* {
     final _getLoggedInUser = getIt<GetLoggedInUser>();
     final _userOption = await _getLoggedInUser(getIt<NoParams>());
     yield _userOption.fold(
-      () => const AuthenticationState.unAuthenticated(),
-      (_) => const AuthenticationState.authenticated(),
+        () => const AuthenticationState.authenticationFailure(),
+        (_) => const AuthenticationState.authenticationSuccess(),
     );
   }
 }

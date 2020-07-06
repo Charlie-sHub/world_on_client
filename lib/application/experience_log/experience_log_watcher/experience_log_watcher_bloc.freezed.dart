@@ -12,8 +12,8 @@ T _$identity<T>(T value) => value;
 class _$ExperienceLogWatcherEventTearOff {
   const _$ExperienceLogWatcherEventTearOff();
 
-  _LoadExperiences loadExperiences() {
-    return const _LoadExperiences();
+  _ExperiencesLoaded experiencesLoaded() {
+    return const _ExperiencesLoaded();
   }
 }
 
@@ -23,20 +23,20 @@ const $ExperienceLogWatcherEvent = _$ExperienceLogWatcherEventTearOff();
 mixin _$ExperienceLogWatcherEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result loadExperiences(),
+    @required Result experiencesLoaded(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result loadExperiences(),
+    Result experiencesLoaded(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result loadExperiences(_LoadExperiences value),
+    @required Result experiencesLoaded(_ExperiencesLoaded value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result loadExperiences(_LoadExperiences value),
+    Result experiencesLoaded(_ExperiencesLoaded value),
     @required Result orElse(),
   });
 }
@@ -53,31 +53,31 @@ class _$ExperienceLogWatcherEventCopyWithImpl<$Res> implements $ExperienceLogWat
   final $Res Function(ExperienceLogWatcherEvent) _then;
 }
 
-abstract class _$LoadExperiencesCopyWith<$Res> {
-  factory _$LoadExperiencesCopyWith(_LoadExperiences value, $Res Function(_LoadExperiences) then) =
-  __$LoadExperiencesCopyWithImpl<$Res>;
+abstract class _$ExperiencesLoadedCopyWith<$Res> {
+  factory _$ExperiencesLoadedCopyWith(_ExperiencesLoaded value, $Res Function(_ExperiencesLoaded) then) =
+  __$ExperiencesLoadedCopyWithImpl<$Res>;
 }
 
-class __$LoadExperiencesCopyWithImpl<$Res> extends _$ExperienceLogWatcherEventCopyWithImpl<$Res>
-  implements _$LoadExperiencesCopyWith<$Res> {
-  __$LoadExperiencesCopyWithImpl(_LoadExperiences _value, $Res Function(_LoadExperiences) _then)
-    : super(_value, (v) => _then(v as _LoadExperiences));
+class __$ExperiencesLoadedCopyWithImpl<$Res> extends _$ExperienceLogWatcherEventCopyWithImpl<$Res>
+  implements _$ExperiencesLoadedCopyWith<$Res> {
+  __$ExperiencesLoadedCopyWithImpl(_ExperiencesLoaded _value, $Res Function(_ExperiencesLoaded) _then)
+    : super(_value, (v) => _then(v as _ExperiencesLoaded));
 
   @override
-  _LoadExperiences get _value => super._value as _LoadExperiences;
+  _ExperiencesLoaded get _value => super._value as _ExperiencesLoaded;
 }
 
-class _$_LoadExperiences implements _LoadExperiences {
-  const _$_LoadExperiences();
+class _$_ExperiencesLoaded implements _ExperiencesLoaded {
+  const _$_ExperiencesLoaded();
 
   @override
   String toString() {
-    return 'ExperienceLogWatcherEvent.loadExperiences()';
+    return 'ExperienceLogWatcherEvent.experiencesLoaded()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadExperiences);
+    return identical(this, other) || (other is _ExperiencesLoaded);
   }
 
   @override
@@ -86,21 +86,21 @@ class _$_LoadExperiences implements _LoadExperiences {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result loadExperiences(),
+    @required Result experiencesLoaded(),
   }) {
-    assert(loadExperiences != null);
-    return loadExperiences();
+    assert(experiencesLoaded != null);
+    return experiencesLoaded();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result loadExperiences(),
+    Result experiencesLoaded(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (loadExperiences != null) {
-      return loadExperiences();
+    if (experiencesLoaded != null) {
+      return experiencesLoaded();
     }
     return orElse();
   }
@@ -108,28 +108,28 @@ class _$_LoadExperiences implements _LoadExperiences {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result loadExperiences(_LoadExperiences value),
+    @required Result experiencesLoaded(_ExperiencesLoaded value),
   }) {
-    assert(loadExperiences != null);
-    return loadExperiences(this);
+    assert(experiencesLoaded != null);
+    return experiencesLoaded(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result loadExperiences(_LoadExperiences value),
+    Result experiencesLoaded(_ExperiencesLoaded value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (loadExperiences != null) {
-      return loadExperiences(this);
+    if (experiencesLoaded != null) {
+      return experiencesLoaded(this);
     }
     return orElse();
   }
 }
 
-abstract class _LoadExperiences implements ExperienceLogWatcherEvent {
-  const factory _LoadExperiences() = _$_LoadExperiences;
+abstract class _ExperiencesLoaded implements ExperienceLogWatcherEvent {
+  const factory _ExperiencesLoaded() = _$_ExperiencesLoaded;
 }
 
 class _$ExperienceLogWatcherStateTearOff {

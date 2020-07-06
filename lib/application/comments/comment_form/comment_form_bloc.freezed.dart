@@ -12,21 +12,21 @@ T _$identity<T>(T value) => value;
 class _$CommentFormEventTearOff {
   const _$CommentFormEventTearOff();
 
-  _Initialize initialize({@required Option<Comment> commentOption, @required int experienceId}) {
-    return _Initialize(
+  _Initialized initialized({@required Option<Comment> commentOption, @required int experienceId}) {
+    return _Initialized(
       commentOption: commentOption,
       experienceId: experienceId,
     );
   }
 
-  _ContentChange contentChange(String content) {
-    return _ContentChange(
+  _ContentChanged contentChanged(String content) {
+    return _ContentChanged(
       content,
     );
   }
 
-  _Submit submit() {
-    return const _Submit();
+  _Submitted submitted() {
+    return const _Submitted();
   }
 }
 
@@ -36,28 +36,28 @@ const $CommentFormEvent = _$CommentFormEventTearOff();
 mixin _$CommentFormEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(Option<Comment> commentOption, int experienceId),
-    @required Result contentChange(String content),
-    @required Result submit(),
+    @required Result initialized(Option<Comment> commentOption, int experienceId),
+    @required Result contentChanged(String content),
+    @required Result submitted(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(Option<Comment> commentOption, int experienceId),
-    Result contentChange(String content),
-    Result submit(),
+    Result initialized(Option<Comment> commentOption, int experienceId),
+    Result contentChanged(String content),
+    Result submitted(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result contentChange(_ContentChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result contentChanged(_ContentChanged value),
+    @required Result submitted(_Submitted value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result contentChange(_ContentChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result contentChanged(_ContentChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   });
 }
@@ -74,26 +74,26 @@ class _$CommentFormEventCopyWithImpl<$Res> implements $CommentFormEventCopyWith<
   final $Res Function(CommentFormEvent) _then;
 }
 
-abstract class _$InitializeCopyWith<$Res> {
-  factory _$InitializeCopyWith(_Initialize value, $Res Function(_Initialize) then) =
-  __$InitializeCopyWithImpl<$Res>;
+abstract class _$InitializedCopyWith<$Res> {
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+  __$InitializedCopyWithImpl<$Res>;
   $Res call({Option<Comment> commentOption, int experienceId});
 }
 
-class __$InitializeCopyWithImpl<$Res> extends _$CommentFormEventCopyWithImpl<$Res>
-  implements _$InitializeCopyWith<$Res> {
-  __$InitializeCopyWithImpl(_Initialize _value, $Res Function(_Initialize) _then)
-    : super(_value, (v) => _then(v as _Initialize));
+class __$InitializedCopyWithImpl<$Res> extends _$CommentFormEventCopyWithImpl<$Res>
+  implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+    : super(_value, (v) => _then(v as _Initialized));
 
   @override
-  _Initialize get _value => super._value as _Initialize;
+  _Initialized get _value => super._value as _Initialized;
 
   @override
   $Res call({
     Object commentOption = freezed,
     Object experienceId = freezed,
   }) {
-    return _then(_Initialize(
+    return _then(_Initialized(
       commentOption: commentOption == freezed
         ? _value.commentOption
         : commentOption as Option<Comment>,
@@ -103,8 +103,8 @@ class __$InitializeCopyWithImpl<$Res> extends _$CommentFormEventCopyWithImpl<$Re
   }
 }
 
-class _$_Initialize implements _Initialize {
-  const _$_Initialize({@required this.commentOption, @required this.experienceId})
+class _$_Initialized implements _Initialized {
+  const _$_Initialized({@required this.commentOption, @required this.experienceId})
       : assert(commentOption != null),
         assert(experienceId != null);
 
@@ -115,19 +115,19 @@ class _$_Initialize implements _Initialize {
 
   @override
   String toString() {
-    return 'CommentFormEvent.initialize(commentOption: $commentOption, experienceId: $experienceId)';
+    return 'CommentFormEvent.initialized(commentOption: $commentOption, experienceId: $experienceId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialize &&
-          (identical(other.commentOption, commentOption) ||
-            const DeepCollectionEquality()
-              .equals(other.commentOption, commentOption)) &&
-          (identical(other.experienceId, experienceId) ||
-            const DeepCollectionEquality()
-              .equals(other.experienceId, experienceId)));
+      (other is _Initialized &&
+        (identical(other.commentOption, commentOption) ||
+          const DeepCollectionEquality()
+            .equals(other.commentOption, commentOption)) &&
+        (identical(other.experienceId, experienceId) ||
+          const DeepCollectionEquality()
+            .equals(other.experienceId, experienceId)));
   }
 
   @override
@@ -137,33 +137,33 @@ class _$_Initialize implements _Initialize {
     const DeepCollectionEquality().hash(experienceId);
 
   @override
-  _$InitializeCopyWith<_Initialize> get copyWith =>
-    __$InitializeCopyWithImpl<_Initialize>(this, _$identity);
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+    __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(Option<Comment> commentOption, int experienceId),
-    @required Result contentChange(String content),
-    @required Result submit(),
+    @required Result initialized(Option<Comment> commentOption, int experienceId),
+    @required Result contentChanged(String content),
+    @required Result submitted(),
   }) {
-    assert(initialize != null);
-    assert(contentChange != null);
-    assert(submit != null);
-    return initialize(commentOption, experienceId);
+    assert(initialized != null);
+    assert(contentChanged != null);
+    assert(submitted != null);
+    return initialized(commentOption, experienceId);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(Option<Comment> commentOption, int experienceId),
-    Result contentChange(String content),
-    Result submit(),
+    Result initialized(Option<Comment> commentOption, int experienceId),
+    Result contentChanged(String content),
+    Result submitted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (initialize != null) {
-      return initialize(commentOption, experienceId);
+    if (initialized != null) {
+      return initialized(commentOption, experienceId);
     }
     return orElse();
   }
@@ -171,80 +171,81 @@ class _$_Initialize implements _Initialize {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result contentChange(_ContentChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result contentChanged(_ContentChanged value),
+    @required Result submitted(_Submitted value),
   }) {
-    assert(initialize != null);
-    assert(contentChange != null);
-    assert(submit != null);
-    return initialize(this);
+    assert(initialized != null);
+    assert(contentChanged != null);
+    assert(submitted != null);
+    return initialized(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result contentChange(_ContentChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result contentChanged(_ContentChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (initialize != null) {
-      return initialize(this);
+    if (initialized != null) {
+      return initialized(this);
     }
     return orElse();
   }
 }
 
-abstract class _Initialize implements CommentFormEvent {
-  const factory _Initialize({@required Option<Comment> commentOption,
-    @required int experienceId}) = _$_Initialize;
+abstract class _Initialized implements CommentFormEvent {
+  const factory _Initialized({@required Option<Comment> commentOption,
+    @required int experienceId}) = _$_Initialized;
 
   Option<Comment> get commentOption;
   int get experienceId;
-  _$InitializeCopyWith<_Initialize> get copyWith;
+  
+  _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
-abstract class _$ContentChangeCopyWith<$Res> {
-  factory _$ContentChangeCopyWith(_ContentChange value, $Res Function(_ContentChange) then) =
-  __$ContentChangeCopyWithImpl<$Res>;
+abstract class _$ContentChangedCopyWith<$Res> {
+  factory _$ContentChangedCopyWith(_ContentChanged value, $Res Function(_ContentChanged) then) =
+  __$ContentChangedCopyWithImpl<$Res>;
   $Res call({String content});
 }
 
-class __$ContentChangeCopyWithImpl<$Res> extends _$CommentFormEventCopyWithImpl<$Res>
-  implements _$ContentChangeCopyWith<$Res> {
-  __$ContentChangeCopyWithImpl(_ContentChange _value, $Res Function(_ContentChange) _then)
-    : super(_value, (v) => _then(v as _ContentChange));
+class __$ContentChangedCopyWithImpl<$Res> extends _$CommentFormEventCopyWithImpl<$Res>
+  implements _$ContentChangedCopyWith<$Res> {
+  __$ContentChangedCopyWithImpl(_ContentChanged _value, $Res Function(_ContentChanged) _then)
+    : super(_value, (v) => _then(v as _ContentChanged));
 
   @override
-  _ContentChange get _value => super._value as _ContentChange;
+  _ContentChanged get _value => super._value as _ContentChanged;
 
   @override
   $Res call({
     Object content = freezed,
   }) {
-    return _then(_ContentChange(
+    return _then(_ContentChanged(
       content == freezed ? _value.content : content as String,
     ));
   }
 }
 
-class _$_ContentChange implements _ContentChange {
-  const _$_ContentChange(this.content) : assert(content != null);
+class _$_ContentChanged implements _ContentChanged {
+  const _$_ContentChanged(this.content) : assert(content != null);
 
   @override
   final String content;
 
   @override
   String toString() {
-    return 'CommentFormEvent.contentChange(content: $content)';
+    return 'CommentFormEvent.contentChanged(content: $content)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _ContentChange &&
+      (other is _ContentChanged &&
         (identical(other.content, content) ||
           const DeepCollectionEquality().equals(other.content, content)));
   }
@@ -254,33 +255,33 @@ class _$_ContentChange implements _ContentChange {
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(content);
 
   @override
-  _$ContentChangeCopyWith<_ContentChange> get copyWith =>
-    __$ContentChangeCopyWithImpl<_ContentChange>(this, _$identity);
+  _$ContentChangedCopyWith<_ContentChanged> get copyWith =>
+    __$ContentChangedCopyWithImpl<_ContentChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(Option<Comment> commentOption, int experienceId),
-    @required Result contentChange(String content),
-    @required Result submit(),
+    @required Result initialized(Option<Comment> commentOption, int experienceId),
+    @required Result contentChanged(String content),
+    @required Result submitted(),
   }) {
-    assert(initialize != null);
-    assert(contentChange != null);
-    assert(submit != null);
-    return contentChange(content);
+    assert(initialized != null);
+    assert(contentChanged != null);
+    assert(submitted != null);
+    return contentChanged(content);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(Option<Comment> commentOption, int experienceId),
-    Result contentChange(String content),
-    Result submit(),
+    Result initialized(Option<Comment> commentOption, int experienceId),
+    Result contentChanged(String content),
+    Result submitted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (contentChange != null) {
-      return contentChange(content);
+    if (contentChanged != null) {
+      return contentChanged(content);
     }
     return orElse();
   }
@@ -288,64 +289,65 @@ class _$_ContentChange implements _ContentChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result contentChange(_ContentChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result contentChanged(_ContentChanged value),
+    @required Result submitted(_Submitted value),
   }) {
-    assert(initialize != null);
-    assert(contentChange != null);
-    assert(submit != null);
-    return contentChange(this);
+    assert(initialized != null);
+    assert(contentChanged != null);
+    assert(submitted != null);
+    return contentChanged(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result contentChange(_ContentChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result contentChanged(_ContentChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (contentChange != null) {
-      return contentChange(this);
+    if (contentChanged != null) {
+      return contentChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class _ContentChange implements CommentFormEvent {
-  const factory _ContentChange(String content) = _$_ContentChange;
+abstract class _ContentChanged implements CommentFormEvent {
+  const factory _ContentChanged(String content) = _$_ContentChanged;
 
   String get content;
-  _$ContentChangeCopyWith<_ContentChange> get copyWith;
+  
+  _$ContentChangedCopyWith<_ContentChanged> get copyWith;
 }
 
-abstract class _$SubmitCopyWith<$Res> {
-  factory _$SubmitCopyWith(_Submit value, $Res Function(_Submit) then) =
-  __$SubmitCopyWithImpl<$Res>;
+abstract class _$SubmittedCopyWith<$Res> {
+  factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) =
+  __$SubmittedCopyWithImpl<$Res>;
 }
 
-class __$SubmitCopyWithImpl<$Res> extends _$CommentFormEventCopyWithImpl<$Res>
-  implements _$SubmitCopyWith<$Res> {
-  __$SubmitCopyWithImpl(_Submit _value, $Res Function(_Submit) _then)
-    : super(_value, (v) => _then(v as _Submit));
+class __$SubmittedCopyWithImpl<$Res> extends _$CommentFormEventCopyWithImpl<$Res>
+  implements _$SubmittedCopyWith<$Res> {
+  __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then)
+    : super(_value, (v) => _then(v as _Submitted));
 
   @override
-  _Submit get _value => super._value as _Submit;
+  _Submitted get _value => super._value as _Submitted;
 }
 
-class _$_Submit implements _Submit {
-  const _$_Submit();
+class _$_Submitted implements _Submitted {
+  const _$_Submitted();
 
   @override
   String toString() {
-    return 'CommentFormEvent.submit()';
+    return 'CommentFormEvent.submitted()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Submit);
+    return identical(this, other) || (other is _Submitted);
   }
 
   @override
@@ -354,27 +356,27 @@ class _$_Submit implements _Submit {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(Option<Comment> commentOption, int experienceId),
-    @required Result contentChange(String content),
-    @required Result submit(),
+    @required Result initialized(Option<Comment> commentOption, int experienceId),
+    @required Result contentChanged(String content),
+    @required Result submitted(),
   }) {
-    assert(initialize != null);
-    assert(contentChange != null);
-    assert(submit != null);
-    return submit();
+    assert(initialized != null);
+    assert(contentChanged != null);
+    assert(submitted != null);
+    return submitted();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(Option<Comment> commentOption, int experienceId),
-    Result contentChange(String content),
-    Result submit(),
+    Result initialized(Option<Comment> commentOption, int experienceId),
+    Result contentChanged(String content),
+    Result submitted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (submit != null) {
-      return submit();
+    if (submitted != null) {
+      return submitted();
     }
     return orElse();
   }
@@ -382,34 +384,34 @@ class _$_Submit implements _Submit {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result contentChange(_ContentChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result contentChanged(_ContentChanged value),
+    @required Result submitted(_Submitted value),
   }) {
-    assert(initialize != null);
-    assert(contentChange != null);
-    assert(submit != null);
-    return submit(this);
+    assert(initialized != null);
+    assert(contentChanged != null);
+    assert(submitted != null);
+    return submitted(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result contentChange(_ContentChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result contentChanged(_ContentChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (submit != null) {
-      return submit(this);
+    if (submitted != null) {
+      return submitted(this);
     }
     return orElse();
   }
 }
 
-abstract class _Submit implements CommentFormEvent {
-  const factory _Submit() = _$_Submit;
+abstract class _Submitted implements CommentFormEvent {
+  const factory _Submitted() = _$_Submitted;
 }
 
 class _$CommentFormStateTearOff {

@@ -36,7 +36,7 @@ void main() {
       when(getExperienceComments.call(any)).thenAnswer((realInvocation) => createStream(right(commentSet)));
       return getIt<CommentWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(const CommentWatcherEvent.loadExperienceComments(experienceId)),
+    act: (bloc) async => bloc.add(const CommentWatcherEvent.experienceCommentsLoaded(experienceId)),
     verify: (_) async {
       verify(getExperienceComments.call(any));
       verifyNoMoreInteractions(getExperienceComments);
@@ -52,7 +52,7 @@ void main() {
       when(getExperienceComments.call(any)).thenAnswer((realInvocation) => createStream(left(failure)));
       return getIt<CommentWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(const CommentWatcherEvent.loadExperienceComments(experienceId)),
+    act: (bloc) async => bloc.add(const CommentWatcherEvent.experienceCommentsLoaded(experienceId)),
     verify: (_) async {
       verify(getExperienceComments.call(any));
       verifyNoMoreInteractions(getExperienceComments);

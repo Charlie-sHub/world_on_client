@@ -12,8 +12,8 @@ T _$identity<T>(T value) => value;
 class _$ExperienceNavigationActorEventTearOff {
   const _$ExperienceNavigationActorEventTearOff();
 
-  _Initialize initialize(Option<Experience> experienceOption) {
-    return _Initialize(
+  _Initialized initialized(Option<Experience> experienceOption) {
+    return _Initialized(
       experienceOption,
     );
   }
@@ -24,26 +24,26 @@ class _$ExperienceNavigationActorEventTearOff {
     );
   }
 
-  _Like like() {
-    return const _Like();
+  _Liked liked() {
+    return const _Liked();
   }
 
-  _GetCurrentLocation getCurrentLocation() {
-    return const _GetCurrentLocation();
+  _GotCurrentLocation gotCurrentLocation() {
+    return const _GotCurrentLocation();
   }
 
-  _RateDifficulty rateDifficulty(int difficulty) {
-    return _RateDifficulty(
+  _DifficultyRated difficultyRated(int difficulty) {
+    return _DifficultyRated(
       difficulty,
     );
   }
 
-  _FinishExperience finishExperience() {
-    return const _FinishExperience();
+  _ExperienceFinished experienceFinished() {
+    return const _ExperienceFinished();
   }
 
-  _RewardUser rewardUser() {
-    return const _RewardUser();
+  _UserRewarded userRewarded() {
+    return const _UserRewarded();
   }
 }
 
@@ -53,44 +53,44 @@ const $ExperienceNavigationActorEvent = _$ExperienceNavigationActorEventTearOff(
 mixin _$ExperienceNavigationActorEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(Option<Experience> experienceOption),
+    @required Result initialized(Option<Experience> experienceOption),
     @required Result objectiveAccomplished(Objective objective),
-    @required Result like(),
-    @required Result getCurrentLocation(),
-    @required Result rateDifficulty(int difficulty),
-    @required Result finishExperience(),
-    @required Result rewardUser(),
+    @required Result liked(),
+    @required Result gotCurrentLocation(),
+    @required Result difficultyRated(int difficulty),
+    @required Result experienceFinished(),
+    @required Result userRewarded(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(Option<Experience> experienceOption),
+    Result initialized(Option<Experience> experienceOption),
     Result objectiveAccomplished(Objective objective),
-    Result like(),
-    Result getCurrentLocation(),
-    Result rateDifficulty(int difficulty),
-    Result finishExperience(),
-    Result rewardUser(),
+    Result liked(),
+    Result gotCurrentLocation(),
+    Result difficultyRated(int difficulty),
+    Result experienceFinished(),
+    Result userRewarded(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
+    @required Result initialized(_Initialized value),
     @required Result objectiveAccomplished(_ObjectiveAccomplished value),
-    @required Result like(_Like value),
-    @required Result getCurrentLocation(_GetCurrentLocation value),
-    @required Result rateDifficulty(_RateDifficulty value),
-    @required Result finishExperience(_FinishExperience value),
-    @required Result rewardUser(_RewardUser value),
+    @required Result liked(_Liked value),
+    @required Result gotCurrentLocation(_GotCurrentLocation value),
+    @required Result difficultyRated(_DifficultyRated value),
+    @required Result experienceFinished(_ExperienceFinished value),
+    @required Result userRewarded(_UserRewarded value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
+    Result initialized(_Initialized value),
     Result objectiveAccomplished(_ObjectiveAccomplished value),
-    Result like(_Like value),
-    Result getCurrentLocation(_GetCurrentLocation value),
-    Result rateDifficulty(_RateDifficulty value),
-    Result finishExperience(_FinishExperience value),
-    Result rewardUser(_RewardUser value),
+    Result liked(_Liked value),
+    Result gotCurrentLocation(_GotCurrentLocation value),
+    Result difficultyRated(_DifficultyRated value),
+    Result experienceFinished(_ExperienceFinished value),
+    Result userRewarded(_UserRewarded value),
     @required Result orElse(),
   });
 }
@@ -107,25 +107,25 @@ class _$ExperienceNavigationActorEventCopyWithImpl<$Res> implements $ExperienceN
   final $Res Function(ExperienceNavigationActorEvent) _then;
 }
 
-abstract class _$InitializeCopyWith<$Res> {
-  factory _$InitializeCopyWith(_Initialize value, $Res Function(_Initialize) then) =
-  __$InitializeCopyWithImpl<$Res>;
+abstract class _$InitializedCopyWith<$Res> {
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+  __$InitializedCopyWithImpl<$Res>;
   $Res call({Option<Experience> experienceOption});
 }
 
-class __$InitializeCopyWithImpl<$Res> extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
-  implements _$InitializeCopyWith<$Res> {
-  __$InitializeCopyWithImpl(_Initialize _value, $Res Function(_Initialize) _then)
-    : super(_value, (v) => _then(v as _Initialize));
+class __$InitializedCopyWithImpl<$Res> extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
+  implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+    : super(_value, (v) => _then(v as _Initialized));
 
   @override
-  _Initialize get _value => super._value as _Initialize;
+  _Initialized get _value => super._value as _Initialized;
 
   @override
   $Res call({
     Object experienceOption = freezed,
   }) {
-    return _then(_Initialize(
+    return _then(_Initialized(
       experienceOption == freezed
         ? _value.experienceOption
         : experienceOption as Option<Experience>,
@@ -133,21 +133,22 @@ class __$InitializeCopyWithImpl<$Res> extends _$ExperienceNavigationActorEventCo
   }
 }
 
-class _$_Initialize implements _Initialize {
-  const _$_Initialize(this.experienceOption) : assert(experienceOption != null);
+class _$_Initialized implements _Initialized {
+  const _$_Initialized(this.experienceOption)
+    : assert(experienceOption != null);
 
   @override
   final Option<Experience> experienceOption;
 
   @override
   String toString() {
-    return 'ExperienceNavigationActorEvent.initialize(experienceOption: $experienceOption)';
+    return 'ExperienceNavigationActorEvent.initialized(experienceOption: $experienceOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Initialize &&
+      (other is _Initialized &&
         (identical(other.experienceOption, experienceOption) ||
           const DeepCollectionEquality()
             .equals(other.experienceOption, experienceOption)));
@@ -159,45 +160,45 @@ class _$_Initialize implements _Initialize {
     const DeepCollectionEquality().hash(experienceOption);
 
   @override
-  _$InitializeCopyWith<_Initialize> get copyWith =>
-    __$InitializeCopyWithImpl<_Initialize>(this, _$identity);
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+    __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(Option<Experience> experienceOption),
+    @required Result initialized(Option<Experience> experienceOption),
     @required Result objectiveAccomplished(Objective objective),
-    @required Result like(),
-    @required Result getCurrentLocation(),
-    @required Result rateDifficulty(int difficulty),
-    @required Result finishExperience(),
-    @required Result rewardUser(),
+    @required Result liked(),
+    @required Result gotCurrentLocation(),
+    @required Result difficultyRated(int difficulty),
+    @required Result experienceFinished(),
+    @required Result userRewarded(),
   }) {
-    assert(initialize != null);
+    assert(initialized != null);
     assert(objectiveAccomplished != null);
-    assert(like != null);
-    assert(getCurrentLocation != null);
-    assert(rateDifficulty != null);
-    assert(finishExperience != null);
-    assert(rewardUser != null);
-    return initialize(experienceOption);
+    assert(liked != null);
+    assert(gotCurrentLocation != null);
+    assert(difficultyRated != null);
+    assert(experienceFinished != null);
+    assert(userRewarded != null);
+    return initialized(experienceOption);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(Option<Experience> experienceOption),
+    Result initialized(Option<Experience> experienceOption),
     Result objectiveAccomplished(Objective objective),
-    Result like(),
-    Result getCurrentLocation(),
-    Result rateDifficulty(int difficulty),
-    Result finishExperience(),
-    Result rewardUser(),
+    Result liked(),
+    Result gotCurrentLocation(),
+    Result difficultyRated(int difficulty),
+    Result experienceFinished(),
+    Result userRewarded(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (initialize != null) {
-      return initialize(experienceOption);
+    if (initialized != null) {
+      return initialized(experienceOption);
     }
     return orElse();
   }
@@ -205,50 +206,51 @@ class _$_Initialize implements _Initialize {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
+    @required Result initialized(_Initialized value),
     @required Result objectiveAccomplished(_ObjectiveAccomplished value),
-    @required Result like(_Like value),
-    @required Result getCurrentLocation(_GetCurrentLocation value),
-    @required Result rateDifficulty(_RateDifficulty value),
-    @required Result finishExperience(_FinishExperience value),
-    @required Result rewardUser(_RewardUser value),
+    @required Result liked(_Liked value),
+    @required Result gotCurrentLocation(_GotCurrentLocation value),
+    @required Result difficultyRated(_DifficultyRated value),
+    @required Result experienceFinished(_ExperienceFinished value),
+    @required Result userRewarded(_UserRewarded value),
   }) {
-    assert(initialize != null);
+    assert(initialized != null);
     assert(objectiveAccomplished != null);
-    assert(like != null);
-    assert(getCurrentLocation != null);
-    assert(rateDifficulty != null);
-    assert(finishExperience != null);
-    assert(rewardUser != null);
-    return initialize(this);
+    assert(liked != null);
+    assert(gotCurrentLocation != null);
+    assert(difficultyRated != null);
+    assert(experienceFinished != null);
+    assert(userRewarded != null);
+    return initialized(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
+    Result initialized(_Initialized value),
     Result objectiveAccomplished(_ObjectiveAccomplished value),
-    Result like(_Like value),
-    Result getCurrentLocation(_GetCurrentLocation value),
-    Result rateDifficulty(_RateDifficulty value),
-    Result finishExperience(_FinishExperience value),
-    Result rewardUser(_RewardUser value),
+    Result liked(_Liked value),
+    Result gotCurrentLocation(_GotCurrentLocation value),
+    Result difficultyRated(_DifficultyRated value),
+    Result experienceFinished(_ExperienceFinished value),
+    Result userRewarded(_UserRewarded value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (initialize != null) {
-      return initialize(this);
+    if (initialized != null) {
+      return initialized(this);
     }
     return orElse();
   }
 }
 
-abstract class _Initialize implements ExperienceNavigationActorEvent {
-  const factory _Initialize(Option<Experience> experienceOption) =
-  _$_Initialize;
+abstract class _Initialized implements ExperienceNavigationActorEvent {
+  const factory _Initialized(Option<Experience> experienceOption) =
+  _$_Initialized;
 
   Option<Experience> get experienceOption;
-  _$InitializeCopyWith<_Initialize> get copyWith;
+  
+  _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
 abstract class _$ObjectiveAccomplishedCopyWith<$Res> {
@@ -321,34 +323,34 @@ class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(Option<Experience> experienceOption),
+    @required Result initialized(Option<Experience> experienceOption),
     @required Result objectiveAccomplished(Objective objective),
-    @required Result like(),
-    @required Result getCurrentLocation(),
-    @required Result rateDifficulty(int difficulty),
-    @required Result finishExperience(),
-    @required Result rewardUser(),
+    @required Result liked(),
+    @required Result gotCurrentLocation(),
+    @required Result difficultyRated(int difficulty),
+    @required Result experienceFinished(),
+    @required Result userRewarded(),
   }) {
-    assert(initialize != null);
+    assert(initialized != null);
     assert(objectiveAccomplished != null);
-    assert(like != null);
-    assert(getCurrentLocation != null);
-    assert(rateDifficulty != null);
-    assert(finishExperience != null);
-    assert(rewardUser != null);
+    assert(liked != null);
+    assert(gotCurrentLocation != null);
+    assert(difficultyRated != null);
+    assert(experienceFinished != null);
+    assert(userRewarded != null);
     return objectiveAccomplished(objective);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(Option<Experience> experienceOption),
+    Result initialized(Option<Experience> experienceOption),
     Result objectiveAccomplished(Objective objective),
-    Result like(),
-    Result getCurrentLocation(),
-    Result rateDifficulty(int difficulty),
-    Result finishExperience(),
-    Result rewardUser(),
+    Result liked(),
+    Result gotCurrentLocation(),
+    Result difficultyRated(int difficulty),
+    Result experienceFinished(),
+    Result userRewarded(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -361,34 +363,34 @@ class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
+    @required Result initialized(_Initialized value),
     @required Result objectiveAccomplished(_ObjectiveAccomplished value),
-    @required Result like(_Like value),
-    @required Result getCurrentLocation(_GetCurrentLocation value),
-    @required Result rateDifficulty(_RateDifficulty value),
-    @required Result finishExperience(_FinishExperience value),
-    @required Result rewardUser(_RewardUser value),
+    @required Result liked(_Liked value),
+    @required Result gotCurrentLocation(_GotCurrentLocation value),
+    @required Result difficultyRated(_DifficultyRated value),
+    @required Result experienceFinished(_ExperienceFinished value),
+    @required Result userRewarded(_UserRewarded value),
   }) {
-    assert(initialize != null);
+    assert(initialized != null);
     assert(objectiveAccomplished != null);
-    assert(like != null);
-    assert(getCurrentLocation != null);
-    assert(rateDifficulty != null);
-    assert(finishExperience != null);
-    assert(rewardUser != null);
+    assert(liked != null);
+    assert(gotCurrentLocation != null);
+    assert(difficultyRated != null);
+    assert(experienceFinished != null);
+    assert(userRewarded != null);
     return objectiveAccomplished(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
+    Result initialized(_Initialized value),
     Result objectiveAccomplished(_ObjectiveAccomplished value),
-    Result like(_Like value),
-    Result getCurrentLocation(_GetCurrentLocation value),
-    Result rateDifficulty(_RateDifficulty value),
-    Result finishExperience(_FinishExperience value),
-    Result rewardUser(_RewardUser value),
+    Result liked(_Liked value),
+    Result gotCurrentLocation(_GotCurrentLocation value),
+    Result difficultyRated(_DifficultyRated value),
+    Result experienceFinished(_ExperienceFinished value),
+    Result userRewarded(_UserRewarded value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -408,31 +410,31 @@ abstract class _ObjectiveAccomplished
   _$ObjectiveAccomplishedCopyWith<_ObjectiveAccomplished> get copyWith;
 }
 
-abstract class _$LikeCopyWith<$Res> {
-  factory _$LikeCopyWith(_Like value, $Res Function(_Like) then) =
-  __$LikeCopyWithImpl<$Res>;
+abstract class _$LikedCopyWith<$Res> {
+  factory _$LikedCopyWith(_Liked value, $Res Function(_Liked) then) =
+  __$LikedCopyWithImpl<$Res>;
 }
 
-class __$LikeCopyWithImpl<$Res> extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
-  implements _$LikeCopyWith<$Res> {
-  __$LikeCopyWithImpl(_Like _value, $Res Function(_Like) _then)
-    : super(_value, (v) => _then(v as _Like));
+class __$LikedCopyWithImpl<$Res> extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
+  implements _$LikedCopyWith<$Res> {
+  __$LikedCopyWithImpl(_Liked _value, $Res Function(_Liked) _then)
+    : super(_value, (v) => _then(v as _Liked));
 
   @override
-  _Like get _value => super._value as _Like;
+  _Liked get _value => super._value as _Liked;
 }
 
-class _$_Like implements _Like {
-  const _$_Like();
+class _$_Liked implements _Liked {
+  const _$_Liked();
 
   @override
   String toString() {
-    return 'ExperienceNavigationActorEvent.like()';
+    return 'ExperienceNavigationActorEvent.liked()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Like);
+    return identical(this, other) || (other is _Liked);
   }
 
   @override
@@ -441,39 +443,39 @@ class _$_Like implements _Like {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(Option<Experience> experienceOption),
+    @required Result initialized(Option<Experience> experienceOption),
     @required Result objectiveAccomplished(Objective objective),
-    @required Result like(),
-    @required Result getCurrentLocation(),
-    @required Result rateDifficulty(int difficulty),
-    @required Result finishExperience(),
-    @required Result rewardUser(),
+    @required Result liked(),
+    @required Result gotCurrentLocation(),
+    @required Result difficultyRated(int difficulty),
+    @required Result experienceFinished(),
+    @required Result userRewarded(),
   }) {
-    assert(initialize != null);
+    assert(initialized != null);
     assert(objectiveAccomplished != null);
-    assert(like != null);
-    assert(getCurrentLocation != null);
-    assert(rateDifficulty != null);
-    assert(finishExperience != null);
-    assert(rewardUser != null);
-    return like();
+    assert(liked != null);
+    assert(gotCurrentLocation != null);
+    assert(difficultyRated != null);
+    assert(experienceFinished != null);
+    assert(userRewarded != null);
+    return liked();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(Option<Experience> experienceOption),
+    Result initialized(Option<Experience> experienceOption),
     Result objectiveAccomplished(Objective objective),
-    Result like(),
-    Result getCurrentLocation(),
-    Result rateDifficulty(int difficulty),
-    Result finishExperience(),
-    Result rewardUser(),
+    Result liked(),
+    Result gotCurrentLocation(),
+    Result difficultyRated(int difficulty),
+    Result experienceFinished(),
+    Result userRewarded(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (like != null) {
-      return like();
+    if (liked != null) {
+      return liked();
     }
     return orElse();
   }
@@ -481,73 +483,73 @@ class _$_Like implements _Like {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
+    @required Result initialized(_Initialized value),
     @required Result objectiveAccomplished(_ObjectiveAccomplished value),
-    @required Result like(_Like value),
-    @required Result getCurrentLocation(_GetCurrentLocation value),
-    @required Result rateDifficulty(_RateDifficulty value),
-    @required Result finishExperience(_FinishExperience value),
-    @required Result rewardUser(_RewardUser value),
+    @required Result liked(_Liked value),
+    @required Result gotCurrentLocation(_GotCurrentLocation value),
+    @required Result difficultyRated(_DifficultyRated value),
+    @required Result experienceFinished(_ExperienceFinished value),
+    @required Result userRewarded(_UserRewarded value),
   }) {
-    assert(initialize != null);
+    assert(initialized != null);
     assert(objectiveAccomplished != null);
-    assert(like != null);
-    assert(getCurrentLocation != null);
-    assert(rateDifficulty != null);
-    assert(finishExperience != null);
-    assert(rewardUser != null);
-    return like(this);
+    assert(liked != null);
+    assert(gotCurrentLocation != null);
+    assert(difficultyRated != null);
+    assert(experienceFinished != null);
+    assert(userRewarded != null);
+    return liked(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
+    Result initialized(_Initialized value),
     Result objectiveAccomplished(_ObjectiveAccomplished value),
-    Result like(_Like value),
-    Result getCurrentLocation(_GetCurrentLocation value),
-    Result rateDifficulty(_RateDifficulty value),
-    Result finishExperience(_FinishExperience value),
-    Result rewardUser(_RewardUser value),
+    Result liked(_Liked value),
+    Result gotCurrentLocation(_GotCurrentLocation value),
+    Result difficultyRated(_DifficultyRated value),
+    Result experienceFinished(_ExperienceFinished value),
+    Result userRewarded(_UserRewarded value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (like != null) {
-      return like(this);
+    if (liked != null) {
+      return liked(this);
     }
     return orElse();
   }
 }
 
-abstract class _Like implements ExperienceNavigationActorEvent {
-  const factory _Like() = _$_Like;
+abstract class _Liked implements ExperienceNavigationActorEvent {
+  const factory _Liked() = _$_Liked;
 }
 
-abstract class _$GetCurrentLocationCopyWith<$Res> {
-  factory _$GetCurrentLocationCopyWith(_GetCurrentLocation value, $Res Function(_GetCurrentLocation) then) =
-  __$GetCurrentLocationCopyWithImpl<$Res>;
+abstract class _$GotCurrentLocationCopyWith<$Res> {
+  factory _$GotCurrentLocationCopyWith(_GotCurrentLocation value, $Res Function(_GotCurrentLocation) then) =
+  __$GotCurrentLocationCopyWithImpl<$Res>;
 }
 
-class __$GetCurrentLocationCopyWithImpl<$Res> extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
-  implements _$GetCurrentLocationCopyWith<$Res> {
-  __$GetCurrentLocationCopyWithImpl(_GetCurrentLocation _value, $Res Function(_GetCurrentLocation) _then)
-    : super(_value, (v) => _then(v as _GetCurrentLocation));
+class __$GotCurrentLocationCopyWithImpl<$Res> extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
+  implements _$GotCurrentLocationCopyWith<$Res> {
+  __$GotCurrentLocationCopyWithImpl(_GotCurrentLocation _value, $Res Function(_GotCurrentLocation) _then)
+    : super(_value, (v) => _then(v as _GotCurrentLocation));
 
   @override
-  _GetCurrentLocation get _value => super._value as _GetCurrentLocation;
+  _GotCurrentLocation get _value => super._value as _GotCurrentLocation;
 }
 
-class _$_GetCurrentLocation implements _GetCurrentLocation {
-  const _$_GetCurrentLocation();
+class _$_GotCurrentLocation implements _GotCurrentLocation {
+  const _$_GotCurrentLocation();
 
   @override
   String toString() {
-    return 'ExperienceNavigationActorEvent.getCurrentLocation()';
+    return 'ExperienceNavigationActorEvent.gotCurrentLocation()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _GetCurrentLocation);
+    return identical(this, other) || (other is _GotCurrentLocation);
   }
 
   @override
@@ -556,39 +558,39 @@ class _$_GetCurrentLocation implements _GetCurrentLocation {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(Option<Experience> experienceOption),
+    @required Result initialized(Option<Experience> experienceOption),
     @required Result objectiveAccomplished(Objective objective),
-    @required Result like(),
-    @required Result getCurrentLocation(),
-    @required Result rateDifficulty(int difficulty),
-    @required Result finishExperience(),
-    @required Result rewardUser(),
+    @required Result liked(),
+    @required Result gotCurrentLocation(),
+    @required Result difficultyRated(int difficulty),
+    @required Result experienceFinished(),
+    @required Result userRewarded(),
   }) {
-    assert(initialize != null);
+    assert(initialized != null);
     assert(objectiveAccomplished != null);
-    assert(like != null);
-    assert(getCurrentLocation != null);
-    assert(rateDifficulty != null);
-    assert(finishExperience != null);
-    assert(rewardUser != null);
-    return getCurrentLocation();
+    assert(liked != null);
+    assert(gotCurrentLocation != null);
+    assert(difficultyRated != null);
+    assert(experienceFinished != null);
+    assert(userRewarded != null);
+    return gotCurrentLocation();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(Option<Experience> experienceOption),
+    Result initialized(Option<Experience> experienceOption),
     Result objectiveAccomplished(Objective objective),
-    Result like(),
-    Result getCurrentLocation(),
-    Result rateDifficulty(int difficulty),
-    Result finishExperience(),
-    Result rewardUser(),
+    Result liked(),
+    Result gotCurrentLocation(),
+    Result difficultyRated(int difficulty),
+    Result experienceFinished(),
+    Result userRewarded(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (getCurrentLocation != null) {
-      return getCurrentLocation();
+    if (gotCurrentLocation != null) {
+      return gotCurrentLocation();
     }
     return orElse();
   }
@@ -596,87 +598,87 @@ class _$_GetCurrentLocation implements _GetCurrentLocation {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
+    @required Result initialized(_Initialized value),
     @required Result objectiveAccomplished(_ObjectiveAccomplished value),
-    @required Result like(_Like value),
-    @required Result getCurrentLocation(_GetCurrentLocation value),
-    @required Result rateDifficulty(_RateDifficulty value),
-    @required Result finishExperience(_FinishExperience value),
-    @required Result rewardUser(_RewardUser value),
+    @required Result liked(_Liked value),
+    @required Result gotCurrentLocation(_GotCurrentLocation value),
+    @required Result difficultyRated(_DifficultyRated value),
+    @required Result experienceFinished(_ExperienceFinished value),
+    @required Result userRewarded(_UserRewarded value),
   }) {
-    assert(initialize != null);
+    assert(initialized != null);
     assert(objectiveAccomplished != null);
-    assert(like != null);
-    assert(getCurrentLocation != null);
-    assert(rateDifficulty != null);
-    assert(finishExperience != null);
-    assert(rewardUser != null);
-    return getCurrentLocation(this);
+    assert(liked != null);
+    assert(gotCurrentLocation != null);
+    assert(difficultyRated != null);
+    assert(experienceFinished != null);
+    assert(userRewarded != null);
+    return gotCurrentLocation(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
+    Result initialized(_Initialized value),
     Result objectiveAccomplished(_ObjectiveAccomplished value),
-    Result like(_Like value),
-    Result getCurrentLocation(_GetCurrentLocation value),
-    Result rateDifficulty(_RateDifficulty value),
-    Result finishExperience(_FinishExperience value),
-    Result rewardUser(_RewardUser value),
+    Result liked(_Liked value),
+    Result gotCurrentLocation(_GotCurrentLocation value),
+    Result difficultyRated(_DifficultyRated value),
+    Result experienceFinished(_ExperienceFinished value),
+    Result userRewarded(_UserRewarded value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (getCurrentLocation != null) {
-      return getCurrentLocation(this);
+    if (gotCurrentLocation != null) {
+      return gotCurrentLocation(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetCurrentLocation implements ExperienceNavigationActorEvent {
-  const factory _GetCurrentLocation() = _$_GetCurrentLocation;
+abstract class _GotCurrentLocation implements ExperienceNavigationActorEvent {
+  const factory _GotCurrentLocation() = _$_GotCurrentLocation;
 }
 
-abstract class _$RateDifficultyCopyWith<$Res> {
-  factory _$RateDifficultyCopyWith(_RateDifficulty value, $Res Function(_RateDifficulty) then) =
-  __$RateDifficultyCopyWithImpl<$Res>;
+abstract class _$DifficultyRatedCopyWith<$Res> {
+  factory _$DifficultyRatedCopyWith(_DifficultyRated value, $Res Function(_DifficultyRated) then) =
+  __$DifficultyRatedCopyWithImpl<$Res>;
   $Res call({int difficulty});
 }
 
-class __$RateDifficultyCopyWithImpl<$Res> extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
-  implements _$RateDifficultyCopyWith<$Res> {
-  __$RateDifficultyCopyWithImpl(_RateDifficulty _value, $Res Function(_RateDifficulty) _then)
-    : super(_value, (v) => _then(v as _RateDifficulty));
+class __$DifficultyRatedCopyWithImpl<$Res> extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
+  implements _$DifficultyRatedCopyWith<$Res> {
+  __$DifficultyRatedCopyWithImpl(_DifficultyRated _value, $Res Function(_DifficultyRated) _then)
+    : super(_value, (v) => _then(v as _DifficultyRated));
 
   @override
-  _RateDifficulty get _value => super._value as _RateDifficulty;
+  _DifficultyRated get _value => super._value as _DifficultyRated;
 
   @override
   $Res call({
     Object difficulty = freezed,
   }) {
-    return _then(_RateDifficulty(
+    return _then(_DifficultyRated(
       difficulty == freezed ? _value.difficulty : difficulty as int,
     ));
   }
 }
 
-class _$_RateDifficulty implements _RateDifficulty {
-  const _$_RateDifficulty(this.difficulty) : assert(difficulty != null);
+class _$_DifficultyRated implements _DifficultyRated {
+  const _$_DifficultyRated(this.difficulty) : assert(difficulty != null);
 
   @override
   final int difficulty;
 
   @override
   String toString() {
-    return 'ExperienceNavigationActorEvent.rateDifficulty(difficulty: $difficulty)';
+    return 'ExperienceNavigationActorEvent.difficultyRated(difficulty: $difficulty)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _RateDifficulty &&
+      (other is _DifficultyRated &&
         (identical(other.difficulty, difficulty) ||
           const DeepCollectionEquality()
             .equals(other.difficulty, difficulty)));
@@ -687,45 +689,45 @@ class _$_RateDifficulty implements _RateDifficulty {
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(difficulty);
 
   @override
-  _$RateDifficultyCopyWith<_RateDifficulty> get copyWith =>
-    __$RateDifficultyCopyWithImpl<_RateDifficulty>(this, _$identity);
+  _$DifficultyRatedCopyWith<_DifficultyRated> get copyWith =>
+    __$DifficultyRatedCopyWithImpl<_DifficultyRated>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(Option<Experience> experienceOption),
+    @required Result initialized(Option<Experience> experienceOption),
     @required Result objectiveAccomplished(Objective objective),
-    @required Result like(),
-    @required Result getCurrentLocation(),
-    @required Result rateDifficulty(int difficulty),
-    @required Result finishExperience(),
-    @required Result rewardUser(),
+    @required Result liked(),
+    @required Result gotCurrentLocation(),
+    @required Result difficultyRated(int difficulty),
+    @required Result experienceFinished(),
+    @required Result userRewarded(),
   }) {
-    assert(initialize != null);
+    assert(initialized != null);
     assert(objectiveAccomplished != null);
-    assert(like != null);
-    assert(getCurrentLocation != null);
-    assert(rateDifficulty != null);
-    assert(finishExperience != null);
-    assert(rewardUser != null);
-    return rateDifficulty(difficulty);
+    assert(liked != null);
+    assert(gotCurrentLocation != null);
+    assert(difficultyRated != null);
+    assert(experienceFinished != null);
+    assert(userRewarded != null);
+    return difficultyRated(difficulty);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(Option<Experience> experienceOption),
+    Result initialized(Option<Experience> experienceOption),
     Result objectiveAccomplished(Objective objective),
-    Result like(),
-    Result getCurrentLocation(),
-    Result rateDifficulty(int difficulty),
-    Result finishExperience(),
-    Result rewardUser(),
+    Result liked(),
+    Result gotCurrentLocation(),
+    Result difficultyRated(int difficulty),
+    Result experienceFinished(),
+    Result userRewarded(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (rateDifficulty != null) {
-      return rateDifficulty(difficulty);
+    if (difficultyRated != null) {
+      return difficultyRated(difficulty);
     }
     return orElse();
   }
@@ -733,76 +735,77 @@ class _$_RateDifficulty implements _RateDifficulty {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
+    @required Result initialized(_Initialized value),
     @required Result objectiveAccomplished(_ObjectiveAccomplished value),
-    @required Result like(_Like value),
-    @required Result getCurrentLocation(_GetCurrentLocation value),
-    @required Result rateDifficulty(_RateDifficulty value),
-    @required Result finishExperience(_FinishExperience value),
-    @required Result rewardUser(_RewardUser value),
+    @required Result liked(_Liked value),
+    @required Result gotCurrentLocation(_GotCurrentLocation value),
+    @required Result difficultyRated(_DifficultyRated value),
+    @required Result experienceFinished(_ExperienceFinished value),
+    @required Result userRewarded(_UserRewarded value),
   }) {
-    assert(initialize != null);
+    assert(initialized != null);
     assert(objectiveAccomplished != null);
-    assert(like != null);
-    assert(getCurrentLocation != null);
-    assert(rateDifficulty != null);
-    assert(finishExperience != null);
-    assert(rewardUser != null);
-    return rateDifficulty(this);
+    assert(liked != null);
+    assert(gotCurrentLocation != null);
+    assert(difficultyRated != null);
+    assert(experienceFinished != null);
+    assert(userRewarded != null);
+    return difficultyRated(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
+    Result initialized(_Initialized value),
     Result objectiveAccomplished(_ObjectiveAccomplished value),
-    Result like(_Like value),
-    Result getCurrentLocation(_GetCurrentLocation value),
-    Result rateDifficulty(_RateDifficulty value),
-    Result finishExperience(_FinishExperience value),
-    Result rewardUser(_RewardUser value),
+    Result liked(_Liked value),
+    Result gotCurrentLocation(_GotCurrentLocation value),
+    Result difficultyRated(_DifficultyRated value),
+    Result experienceFinished(_ExperienceFinished value),
+    Result userRewarded(_UserRewarded value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (rateDifficulty != null) {
-      return rateDifficulty(this);
+    if (difficultyRated != null) {
+      return difficultyRated(this);
     }
     return orElse();
   }
 }
 
-abstract class _RateDifficulty implements ExperienceNavigationActorEvent {
-  const factory _RateDifficulty(int difficulty) = _$_RateDifficulty;
+abstract class _DifficultyRated implements ExperienceNavigationActorEvent {
+  const factory _DifficultyRated(int difficulty) = _$_DifficultyRated;
 
   int get difficulty;
-  _$RateDifficultyCopyWith<_RateDifficulty> get copyWith;
+  
+  _$DifficultyRatedCopyWith<_DifficultyRated> get copyWith;
 }
 
-abstract class _$FinishExperienceCopyWith<$Res> {
-  factory _$FinishExperienceCopyWith(_FinishExperience value, $Res Function(_FinishExperience) then) =
-  __$FinishExperienceCopyWithImpl<$Res>;
+abstract class _$ExperienceFinishedCopyWith<$Res> {
+  factory _$ExperienceFinishedCopyWith(_ExperienceFinished value, $Res Function(_ExperienceFinished) then) =
+  __$ExperienceFinishedCopyWithImpl<$Res>;
 }
 
-class __$FinishExperienceCopyWithImpl<$Res> extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
-  implements _$FinishExperienceCopyWith<$Res> {
-  __$FinishExperienceCopyWithImpl(_FinishExperience _value, $Res Function(_FinishExperience) _then)
-    : super(_value, (v) => _then(v as _FinishExperience));
+class __$ExperienceFinishedCopyWithImpl<$Res> extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
+  implements _$ExperienceFinishedCopyWith<$Res> {
+  __$ExperienceFinishedCopyWithImpl(_ExperienceFinished _value, $Res Function(_ExperienceFinished) _then)
+    : super(_value, (v) => _then(v as _ExperienceFinished));
 
   @override
-  _FinishExperience get _value => super._value as _FinishExperience;
+  _ExperienceFinished get _value => super._value as _ExperienceFinished;
 }
 
-class _$_FinishExperience implements _FinishExperience {
-  const _$_FinishExperience();
+class _$_ExperienceFinished implements _ExperienceFinished {
+  const _$_ExperienceFinished();
 
   @override
   String toString() {
-    return 'ExperienceNavigationActorEvent.finishExperience()';
+    return 'ExperienceNavigationActorEvent.experienceFinished()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _FinishExperience);
+    return identical(this, other) || (other is _ExperienceFinished);
   }
 
   @override
@@ -811,39 +814,39 @@ class _$_FinishExperience implements _FinishExperience {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(Option<Experience> experienceOption),
+    @required Result initialized(Option<Experience> experienceOption),
     @required Result objectiveAccomplished(Objective objective),
-    @required Result like(),
-    @required Result getCurrentLocation(),
-    @required Result rateDifficulty(int difficulty),
-    @required Result finishExperience(),
-    @required Result rewardUser(),
+    @required Result liked(),
+    @required Result gotCurrentLocation(),
+    @required Result difficultyRated(int difficulty),
+    @required Result experienceFinished(),
+    @required Result userRewarded(),
   }) {
-    assert(initialize != null);
+    assert(initialized != null);
     assert(objectiveAccomplished != null);
-    assert(like != null);
-    assert(getCurrentLocation != null);
-    assert(rateDifficulty != null);
-    assert(finishExperience != null);
-    assert(rewardUser != null);
-    return finishExperience();
+    assert(liked != null);
+    assert(gotCurrentLocation != null);
+    assert(difficultyRated != null);
+    assert(experienceFinished != null);
+    assert(userRewarded != null);
+    return experienceFinished();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(Option<Experience> experienceOption),
+    Result initialized(Option<Experience> experienceOption),
     Result objectiveAccomplished(Objective objective),
-    Result like(),
-    Result getCurrentLocation(),
-    Result rateDifficulty(int difficulty),
-    Result finishExperience(),
-    Result rewardUser(),
+    Result liked(),
+    Result gotCurrentLocation(),
+    Result difficultyRated(int difficulty),
+    Result experienceFinished(),
+    Result userRewarded(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (finishExperience != null) {
-      return finishExperience();
+    if (experienceFinished != null) {
+      return experienceFinished();
     }
     return orElse();
   }
@@ -851,73 +854,73 @@ class _$_FinishExperience implements _FinishExperience {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
+    @required Result initialized(_Initialized value),
     @required Result objectiveAccomplished(_ObjectiveAccomplished value),
-    @required Result like(_Like value),
-    @required Result getCurrentLocation(_GetCurrentLocation value),
-    @required Result rateDifficulty(_RateDifficulty value),
-    @required Result finishExperience(_FinishExperience value),
-    @required Result rewardUser(_RewardUser value),
+    @required Result liked(_Liked value),
+    @required Result gotCurrentLocation(_GotCurrentLocation value),
+    @required Result difficultyRated(_DifficultyRated value),
+    @required Result experienceFinished(_ExperienceFinished value),
+    @required Result userRewarded(_UserRewarded value),
   }) {
-    assert(initialize != null);
+    assert(initialized != null);
     assert(objectiveAccomplished != null);
-    assert(like != null);
-    assert(getCurrentLocation != null);
-    assert(rateDifficulty != null);
-    assert(finishExperience != null);
-    assert(rewardUser != null);
-    return finishExperience(this);
+    assert(liked != null);
+    assert(gotCurrentLocation != null);
+    assert(difficultyRated != null);
+    assert(experienceFinished != null);
+    assert(userRewarded != null);
+    return experienceFinished(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
+    Result initialized(_Initialized value),
     Result objectiveAccomplished(_ObjectiveAccomplished value),
-    Result like(_Like value),
-    Result getCurrentLocation(_GetCurrentLocation value),
-    Result rateDifficulty(_RateDifficulty value),
-    Result finishExperience(_FinishExperience value),
-    Result rewardUser(_RewardUser value),
+    Result liked(_Liked value),
+    Result gotCurrentLocation(_GotCurrentLocation value),
+    Result difficultyRated(_DifficultyRated value),
+    Result experienceFinished(_ExperienceFinished value),
+    Result userRewarded(_UserRewarded value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (finishExperience != null) {
-      return finishExperience(this);
+    if (experienceFinished != null) {
+      return experienceFinished(this);
     }
     return orElse();
   }
 }
 
-abstract class _FinishExperience implements ExperienceNavigationActorEvent {
-  const factory _FinishExperience() = _$_FinishExperience;
+abstract class _ExperienceFinished implements ExperienceNavigationActorEvent {
+  const factory _ExperienceFinished() = _$_ExperienceFinished;
 }
 
-abstract class _$RewardUserCopyWith<$Res> {
-  factory _$RewardUserCopyWith(_RewardUser value, $Res Function(_RewardUser) then) =
-  __$RewardUserCopyWithImpl<$Res>;
+abstract class _$UserRewardedCopyWith<$Res> {
+  factory _$UserRewardedCopyWith(_UserRewarded value, $Res Function(_UserRewarded) then) =
+  __$UserRewardedCopyWithImpl<$Res>;
 }
 
-class __$RewardUserCopyWithImpl<$Res> extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
-  implements _$RewardUserCopyWith<$Res> {
-  __$RewardUserCopyWithImpl(_RewardUser _value, $Res Function(_RewardUser) _then)
-    : super(_value, (v) => _then(v as _RewardUser));
+class __$UserRewardedCopyWithImpl<$Res> extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
+  implements _$UserRewardedCopyWith<$Res> {
+  __$UserRewardedCopyWithImpl(_UserRewarded _value, $Res Function(_UserRewarded) _then)
+    : super(_value, (v) => _then(v as _UserRewarded));
 
   @override
-  _RewardUser get _value => super._value as _RewardUser;
+  _UserRewarded get _value => super._value as _UserRewarded;
 }
 
-class _$_RewardUser implements _RewardUser {
-  const _$_RewardUser();
+class _$_UserRewarded implements _UserRewarded {
+  const _$_UserRewarded();
 
   @override
   String toString() {
-    return 'ExperienceNavigationActorEvent.rewardUser()';
+    return 'ExperienceNavigationActorEvent.userRewarded()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _RewardUser);
+    return identical(this, other) || (other is _UserRewarded);
   }
 
   @override
@@ -926,39 +929,39 @@ class _$_RewardUser implements _RewardUser {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(Option<Experience> experienceOption),
+    @required Result initialized(Option<Experience> experienceOption),
     @required Result objectiveAccomplished(Objective objective),
-    @required Result like(),
-    @required Result getCurrentLocation(),
-    @required Result rateDifficulty(int difficulty),
-    @required Result finishExperience(),
-    @required Result rewardUser(),
+    @required Result liked(),
+    @required Result gotCurrentLocation(),
+    @required Result difficultyRated(int difficulty),
+    @required Result experienceFinished(),
+    @required Result userRewarded(),
   }) {
-    assert(initialize != null);
+    assert(initialized != null);
     assert(objectiveAccomplished != null);
-    assert(like != null);
-    assert(getCurrentLocation != null);
-    assert(rateDifficulty != null);
-    assert(finishExperience != null);
-    assert(rewardUser != null);
-    return rewardUser();
+    assert(liked != null);
+    assert(gotCurrentLocation != null);
+    assert(difficultyRated != null);
+    assert(experienceFinished != null);
+    assert(userRewarded != null);
+    return userRewarded();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(Option<Experience> experienceOption),
+    Result initialized(Option<Experience> experienceOption),
     Result objectiveAccomplished(Objective objective),
-    Result like(),
-    Result getCurrentLocation(),
-    Result rateDifficulty(int difficulty),
-    Result finishExperience(),
-    Result rewardUser(),
+    Result liked(),
+    Result gotCurrentLocation(),
+    Result difficultyRated(int difficulty),
+    Result experienceFinished(),
+    Result userRewarded(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (rewardUser != null) {
-      return rewardUser();
+    if (userRewarded != null) {
+      return userRewarded();
     }
     return orElse();
   }
@@ -966,46 +969,46 @@ class _$_RewardUser implements _RewardUser {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
+    @required Result initialized(_Initialized value),
     @required Result objectiveAccomplished(_ObjectiveAccomplished value),
-    @required Result like(_Like value),
-    @required Result getCurrentLocation(_GetCurrentLocation value),
-    @required Result rateDifficulty(_RateDifficulty value),
-    @required Result finishExperience(_FinishExperience value),
-    @required Result rewardUser(_RewardUser value),
+    @required Result liked(_Liked value),
+    @required Result gotCurrentLocation(_GotCurrentLocation value),
+    @required Result difficultyRated(_DifficultyRated value),
+    @required Result experienceFinished(_ExperienceFinished value),
+    @required Result userRewarded(_UserRewarded value),
   }) {
-    assert(initialize != null);
+    assert(initialized != null);
     assert(objectiveAccomplished != null);
-    assert(like != null);
-    assert(getCurrentLocation != null);
-    assert(rateDifficulty != null);
-    assert(finishExperience != null);
-    assert(rewardUser != null);
-    return rewardUser(this);
+    assert(liked != null);
+    assert(gotCurrentLocation != null);
+    assert(difficultyRated != null);
+    assert(experienceFinished != null);
+    assert(userRewarded != null);
+    return userRewarded(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
+    Result initialized(_Initialized value),
     Result objectiveAccomplished(_ObjectiveAccomplished value),
-    Result like(_Like value),
-    Result getCurrentLocation(_GetCurrentLocation value),
-    Result rateDifficulty(_RateDifficulty value),
-    Result finishExperience(_FinishExperience value),
-    Result rewardUser(_RewardUser value),
+    Result liked(_Liked value),
+    Result gotCurrentLocation(_GotCurrentLocation value),
+    Result difficultyRated(_DifficultyRated value),
+    Result experienceFinished(_ExperienceFinished value),
+    Result userRewarded(_UserRewarded value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (rewardUser != null) {
-      return rewardUser(this);
+    if (userRewarded != null) {
+      return userRewarded(this);
     }
     return orElse();
   }
 }
 
-abstract class _RewardUser implements ExperienceNavigationActorEvent {
-  const factory _RewardUser() = _$_RewardUser;
+abstract class _UserRewarded implements ExperienceNavigationActorEvent {
+  const factory _UserRewarded() = _$_UserRewarded;
 }
 
 class _$ExperienceNavigationActorStateTearOff {

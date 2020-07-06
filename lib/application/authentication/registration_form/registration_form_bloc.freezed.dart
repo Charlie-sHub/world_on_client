@@ -12,54 +12,54 @@ T _$identity<T>(T value) => value;
 class _$RegistrationFormEventTearOff {
   const _$RegistrationFormEventTearOff();
 
-  _Initialize initialize() {
-    return const _Initialize();
+  _Initialized initialized() {
+    return const _Initialized();
   }
 
-  _NameChange nameChange(String name) {
-    return _NameChange(
+  _NameChanged nameChanged(String name) {
+    return _NameChanged(
       name,
     );
   }
 
-  _UsernameChange usernameChange(String username) {
-    return _UsernameChange(
+  _UsernameChanged usernameChanged(String username) {
+    return _UsernameChanged(
       username,
     );
   }
 
-  _PasswordChange passwordChange(String password) {
-    return _PasswordChange(
+  _PasswordChanged passwordChanged(String password) {
+    return _PasswordChanged(
       password,
     );
   }
 
-  _EmailAddressChange emailAddressChange(String emailAddress) {
-    return _EmailAddressChange(
+  _EmailAddressChanged emailAddressChanged(String emailAddress) {
+    return _EmailAddressChanged(
       emailAddress,
     );
   }
 
-  _BirthdayChange birthdayChange(DateTime birthday) {
-    return _BirthdayChange(
+  _BirthdayChanged birthdayChanged(DateTime birthday) {
+    return _BirthdayChanged(
       birthday,
     );
   }
 
-  _DescriptionChange descriptionChange(String description) {
-    return _DescriptionChange(
+  _DescriptionChanged descriptionChanged(String description) {
+    return _DescriptionChanged(
       description,
     );
   }
 
-  _InterestsChange interestsChange(Set<Tag> interests) {
-    return _InterestsChange(
+  _InterestsChanged interestsChanged(Set<Tag> interests) {
+    return _InterestsChanged(
       interests,
     );
   }
 
-  _Submit submit() {
-    return const _Submit();
+  _Submitted submitted() {
+    return const _Submitted();
   }
 }
 
@@ -69,52 +69,52 @@ const $RegistrationFormEvent = _$RegistrationFormEventTearOff();
 mixin _$RegistrationFormEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(),
-    @required Result nameChange(String name),
-    @required Result usernameChange(String username),
-    @required Result passwordChange(String password),
-    @required Result emailAddressChange(String emailAddress),
-    @required Result birthdayChange(DateTime birthday),
-    @required Result descriptionChange(String description),
-    @required Result interestsChange(Set<Tag> interests),
-    @required Result submit(),
+    @required Result initialized(),
+    @required Result nameChanged(String name),
+    @required Result usernameChanged(String username),
+    @required Result passwordChanged(String password),
+    @required Result emailAddressChanged(String emailAddress),
+    @required Result birthdayChanged(DateTime birthday),
+    @required Result descriptionChanged(String description),
+    @required Result interestsChanged(Set<Tag> interests),
+    @required Result submitted(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(),
-    Result nameChange(String name),
-    Result usernameChange(String username),
-    Result passwordChange(String password),
-    Result emailAddressChange(String emailAddress),
-    Result birthdayChange(DateTime birthday),
-    Result descriptionChange(String description),
-    Result interestsChange(Set<Tag> interests),
-    Result submit(),
+    Result initialized(),
+    Result nameChanged(String name),
+    Result usernameChanged(String username),
+    Result passwordChanged(String password),
+    Result emailAddressChanged(String emailAddress),
+    Result birthdayChanged(DateTime birthday),
+    Result descriptionChanged(String description),
+    Result interestsChanged(Set<Tag> interests),
+    Result submitted(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result nameChange(_NameChange value),
-    @required Result usernameChange(_UsernameChange value),
-    @required Result passwordChange(_PasswordChange value),
-    @required Result emailAddressChange(_EmailAddressChange value),
-    @required Result birthdayChange(_BirthdayChange value),
-    @required Result descriptionChange(_DescriptionChange value),
-    @required Result interestsChange(_InterestsChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result nameChanged(_NameChanged value),
+    @required Result usernameChanged(_UsernameChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result emailAddressChanged(_EmailAddressChanged value),
+    @required Result birthdayChanged(_BirthdayChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result interestsChanged(_InterestsChanged value),
+    @required Result submitted(_Submitted value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result nameChange(_NameChange value),
-    Result usernameChange(_UsernameChange value),
-    Result passwordChange(_PasswordChange value),
-    Result emailAddressChange(_EmailAddressChange value),
-    Result birthdayChange(_BirthdayChange value),
-    Result descriptionChange(_DescriptionChange value),
-    Result interestsChange(_InterestsChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result nameChanged(_NameChanged value),
+    Result usernameChanged(_UsernameChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result emailAddressChanged(_EmailAddressChanged value),
+    Result birthdayChanged(_BirthdayChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result interestsChanged(_InterestsChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   });
 }
@@ -131,31 +131,31 @@ class _$RegistrationFormEventCopyWithImpl<$Res> implements $RegistrationFormEven
   final $Res Function(RegistrationFormEvent) _then;
 }
 
-abstract class _$InitializeCopyWith<$Res> {
-  factory _$InitializeCopyWith(_Initialize value, $Res Function(_Initialize) then) =
-  __$InitializeCopyWithImpl<$Res>;
+abstract class _$InitializedCopyWith<$Res> {
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+  __$InitializedCopyWithImpl<$Res>;
 }
 
-class __$InitializeCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
-  implements _$InitializeCopyWith<$Res> {
-  __$InitializeCopyWithImpl(_Initialize _value, $Res Function(_Initialize) _then)
-    : super(_value, (v) => _then(v as _Initialize));
+class __$InitializedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+  implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+    : super(_value, (v) => _then(v as _Initialized));
 
   @override
-  _Initialize get _value => super._value as _Initialize;
+  _Initialized get _value => super._value as _Initialized;
 }
 
-class _$_Initialize implements _Initialize {
-  const _$_Initialize();
+class _$_Initialized implements _Initialized {
+  const _$_Initialized();
 
   @override
   String toString() {
-    return 'RegistrationFormEvent.initialize()';
+    return 'RegistrationFormEvent.initialized()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initialize);
+    return identical(this, other) || (other is _Initialized);
   }
 
   @override
@@ -164,45 +164,45 @@ class _$_Initialize implements _Initialize {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(),
-    @required Result nameChange(String name),
-    @required Result usernameChange(String username),
-    @required Result passwordChange(String password),
-    @required Result emailAddressChange(String emailAddress),
-    @required Result birthdayChange(DateTime birthday),
-    @required Result descriptionChange(String description),
-    @required Result interestsChange(Set<Tag> interests),
-    @required Result submit(),
+    @required Result initialized(),
+    @required Result nameChanged(String name),
+    @required Result usernameChanged(String username),
+    @required Result passwordChanged(String password),
+    @required Result emailAddressChanged(String emailAddress),
+    @required Result birthdayChanged(DateTime birthday),
+    @required Result descriptionChanged(String description),
+    @required Result interestsChanged(Set<Tag> interests),
+    @required Result submitted(),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(emailAddressChange != null);
-    assert(birthdayChange != null);
-    assert(descriptionChange != null);
-    assert(interestsChange != null);
-    assert(submit != null);
-    return initialize();
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(emailAddressChanged != null);
+    assert(birthdayChanged != null);
+    assert(descriptionChanged != null);
+    assert(interestsChanged != null);
+    assert(submitted != null);
+    return initialized();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(),
-    Result nameChange(String name),
-    Result usernameChange(String username),
-    Result passwordChange(String password),
-    Result emailAddressChange(String emailAddress),
-    Result birthdayChange(DateTime birthday),
-    Result descriptionChange(String description),
-    Result interestsChange(Set<Tag> interests),
-    Result submit(),
+    Result initialized(),
+    Result nameChanged(String name),
+    Result usernameChanged(String username),
+    Result passwordChanged(String password),
+    Result emailAddressChanged(String emailAddress),
+    Result birthdayChanged(DateTime birthday),
+    Result descriptionChanged(String description),
+    Result interestsChanged(Set<Tag> interests),
+    Result submitted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (initialize != null) {
-      return initialize();
+    if (initialized != null) {
+      return initialized();
     }
     return orElse();
   }
@@ -210,93 +210,93 @@ class _$_Initialize implements _Initialize {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result nameChange(_NameChange value),
-    @required Result usernameChange(_UsernameChange value),
-    @required Result passwordChange(_PasswordChange value),
-    @required Result emailAddressChange(_EmailAddressChange value),
-    @required Result birthdayChange(_BirthdayChange value),
-    @required Result descriptionChange(_DescriptionChange value),
-    @required Result interestsChange(_InterestsChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result nameChanged(_NameChanged value),
+    @required Result usernameChanged(_UsernameChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result emailAddressChanged(_EmailAddressChanged value),
+    @required Result birthdayChanged(_BirthdayChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result interestsChanged(_InterestsChanged value),
+    @required Result submitted(_Submitted value),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(emailAddressChange != null);
-    assert(birthdayChange != null);
-    assert(descriptionChange != null);
-    assert(interestsChange != null);
-    assert(submit != null);
-    return initialize(this);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(emailAddressChanged != null);
+    assert(birthdayChanged != null);
+    assert(descriptionChanged != null);
+    assert(interestsChanged != null);
+    assert(submitted != null);
+    return initialized(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result nameChange(_NameChange value),
-    Result usernameChange(_UsernameChange value),
-    Result passwordChange(_PasswordChange value),
-    Result emailAddressChange(_EmailAddressChange value),
-    Result birthdayChange(_BirthdayChange value),
-    Result descriptionChange(_DescriptionChange value),
-    Result interestsChange(_InterestsChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result nameChanged(_NameChanged value),
+    Result usernameChanged(_UsernameChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result emailAddressChanged(_EmailAddressChanged value),
+    Result birthdayChanged(_BirthdayChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result interestsChanged(_InterestsChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (initialize != null) {
-      return initialize(this);
+    if (initialized != null) {
+      return initialized(this);
     }
     return orElse();
   }
 }
 
-abstract class _Initialize implements RegistrationFormEvent {
-  const factory _Initialize() = _$_Initialize;
+abstract class _Initialized implements RegistrationFormEvent {
+  const factory _Initialized() = _$_Initialized;
 }
 
-abstract class _$NameChangeCopyWith<$Res> {
-  factory _$NameChangeCopyWith(_NameChange value, $Res Function(_NameChange) then) =
-  __$NameChangeCopyWithImpl<$Res>;
+abstract class _$NameChangedCopyWith<$Res> {
+  factory _$NameChangedCopyWith(_NameChanged value, $Res Function(_NameChanged) then) =
+  __$NameChangedCopyWithImpl<$Res>;
   $Res call({String name});
 }
 
-class __$NameChangeCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
-  implements _$NameChangeCopyWith<$Res> {
-  __$NameChangeCopyWithImpl(_NameChange _value, $Res Function(_NameChange) _then)
-    : super(_value, (v) => _then(v as _NameChange));
+class __$NameChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+  implements _$NameChangedCopyWith<$Res> {
+  __$NameChangedCopyWithImpl(_NameChanged _value, $Res Function(_NameChanged) _then)
+    : super(_value, (v) => _then(v as _NameChanged));
 
   @override
-  _NameChange get _value => super._value as _NameChange;
+  _NameChanged get _value => super._value as _NameChanged;
 
   @override
   $Res call({
     Object name = freezed,
   }) {
-    return _then(_NameChange(
+    return _then(_NameChanged(
       name == freezed ? _value.name : name as String,
     ));
   }
 }
 
-class _$_NameChange implements _NameChange {
-  const _$_NameChange(this.name) : assert(name != null);
+class _$_NameChanged implements _NameChanged {
+  const _$_NameChanged(this.name) : assert(name != null);
 
   @override
   final String name;
 
   @override
   String toString() {
-    return 'RegistrationFormEvent.nameChange(name: $name)';
+    return 'RegistrationFormEvent.nameChanged(name: $name)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _NameChange &&
+      (other is _NameChanged &&
         (identical(other.name, name) ||
           const DeepCollectionEquality().equals(other.name, name)));
   }
@@ -306,51 +306,51 @@ class _$_NameChange implements _NameChange {
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
 
   @override
-  _$NameChangeCopyWith<_NameChange> get copyWith =>
-    __$NameChangeCopyWithImpl<_NameChange>(this, _$identity);
+  _$NameChangedCopyWith<_NameChanged> get copyWith =>
+    __$NameChangedCopyWithImpl<_NameChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(),
-    @required Result nameChange(String name),
-    @required Result usernameChange(String username),
-    @required Result passwordChange(String password),
-    @required Result emailAddressChange(String emailAddress),
-    @required Result birthdayChange(DateTime birthday),
-    @required Result descriptionChange(String description),
-    @required Result interestsChange(Set<Tag> interests),
-    @required Result submit(),
+    @required Result initialized(),
+    @required Result nameChanged(String name),
+    @required Result usernameChanged(String username),
+    @required Result passwordChanged(String password),
+    @required Result emailAddressChanged(String emailAddress),
+    @required Result birthdayChanged(DateTime birthday),
+    @required Result descriptionChanged(String description),
+    @required Result interestsChanged(Set<Tag> interests),
+    @required Result submitted(),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(emailAddressChange != null);
-    assert(birthdayChange != null);
-    assert(descriptionChange != null);
-    assert(interestsChange != null);
-    assert(submit != null);
-    return nameChange(name);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(emailAddressChanged != null);
+    assert(birthdayChanged != null);
+    assert(descriptionChanged != null);
+    assert(interestsChanged != null);
+    assert(submitted != null);
+    return nameChanged(name);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(),
-    Result nameChange(String name),
-    Result usernameChange(String username),
-    Result passwordChange(String password),
-    Result emailAddressChange(String emailAddress),
-    Result birthdayChange(DateTime birthday),
-    Result descriptionChange(String description),
-    Result interestsChange(Set<Tag> interests),
-    Result submit(),
+    Result initialized(),
+    Result nameChanged(String name),
+    Result usernameChanged(String username),
+    Result passwordChanged(String password),
+    Result emailAddressChanged(String emailAddress),
+    Result birthdayChanged(DateTime birthday),
+    Result descriptionChanged(String description),
+    Result interestsChanged(Set<Tag> interests),
+    Result submitted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (nameChange != null) {
-      return nameChange(name);
+    if (nameChanged != null) {
+      return nameChanged(name);
     }
     return orElse();
   }
@@ -358,96 +358,97 @@ class _$_NameChange implements _NameChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result nameChange(_NameChange value),
-    @required Result usernameChange(_UsernameChange value),
-    @required Result passwordChange(_PasswordChange value),
-    @required Result emailAddressChange(_EmailAddressChange value),
-    @required Result birthdayChange(_BirthdayChange value),
-    @required Result descriptionChange(_DescriptionChange value),
-    @required Result interestsChange(_InterestsChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result nameChanged(_NameChanged value),
+    @required Result usernameChanged(_UsernameChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result emailAddressChanged(_EmailAddressChanged value),
+    @required Result birthdayChanged(_BirthdayChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result interestsChanged(_InterestsChanged value),
+    @required Result submitted(_Submitted value),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(emailAddressChange != null);
-    assert(birthdayChange != null);
-    assert(descriptionChange != null);
-    assert(interestsChange != null);
-    assert(submit != null);
-    return nameChange(this);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(emailAddressChanged != null);
+    assert(birthdayChanged != null);
+    assert(descriptionChanged != null);
+    assert(interestsChanged != null);
+    assert(submitted != null);
+    return nameChanged(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result nameChange(_NameChange value),
-    Result usernameChange(_UsernameChange value),
-    Result passwordChange(_PasswordChange value),
-    Result emailAddressChange(_EmailAddressChange value),
-    Result birthdayChange(_BirthdayChange value),
-    Result descriptionChange(_DescriptionChange value),
-    Result interestsChange(_InterestsChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result nameChanged(_NameChanged value),
+    Result usernameChanged(_UsernameChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result emailAddressChanged(_EmailAddressChanged value),
+    Result birthdayChanged(_BirthdayChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result interestsChanged(_InterestsChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (nameChange != null) {
-      return nameChange(this);
+    if (nameChanged != null) {
+      return nameChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class _NameChange implements RegistrationFormEvent {
-  const factory _NameChange(String name) = _$_NameChange;
+abstract class _NameChanged implements RegistrationFormEvent {
+  const factory _NameChanged(String name) = _$_NameChanged;
 
   String get name;
-  _$NameChangeCopyWith<_NameChange> get copyWith;
+  
+  _$NameChangedCopyWith<_NameChanged> get copyWith;
 }
 
-abstract class _$UsernameChangeCopyWith<$Res> {
-  factory _$UsernameChangeCopyWith(_UsernameChange value, $Res Function(_UsernameChange) then) =
-  __$UsernameChangeCopyWithImpl<$Res>;
+abstract class _$UsernameChangedCopyWith<$Res> {
+  factory _$UsernameChangedCopyWith(_UsernameChanged value, $Res Function(_UsernameChanged) then) =
+  __$UsernameChangedCopyWithImpl<$Res>;
   $Res call({String username});
 }
 
-class __$UsernameChangeCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
-  implements _$UsernameChangeCopyWith<$Res> {
-  __$UsernameChangeCopyWithImpl(_UsernameChange _value, $Res Function(_UsernameChange) _then)
-    : super(_value, (v) => _then(v as _UsernameChange));
+class __$UsernameChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+  implements _$UsernameChangedCopyWith<$Res> {
+  __$UsernameChangedCopyWithImpl(_UsernameChanged _value, $Res Function(_UsernameChanged) _then)
+    : super(_value, (v) => _then(v as _UsernameChanged));
 
   @override
-  _UsernameChange get _value => super._value as _UsernameChange;
+  _UsernameChanged get _value => super._value as _UsernameChanged;
 
   @override
   $Res call({
     Object username = freezed,
   }) {
-    return _then(_UsernameChange(
+    return _then(_UsernameChanged(
       username == freezed ? _value.username : username as String,
     ));
   }
 }
 
-class _$_UsernameChange implements _UsernameChange {
-  const _$_UsernameChange(this.username) : assert(username != null);
+class _$_UsernameChanged implements _UsernameChanged {
+  const _$_UsernameChanged(this.username) : assert(username != null);
 
   @override
   final String username;
 
   @override
   String toString() {
-    return 'RegistrationFormEvent.usernameChange(username: $username)';
+    return 'RegistrationFormEvent.usernameChanged(username: $username)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _UsernameChange &&
+      (other is _UsernameChanged &&
         (identical(other.username, username) ||
           const DeepCollectionEquality()
             .equals(other.username, username)));
@@ -458,51 +459,51 @@ class _$_UsernameChange implements _UsernameChange {
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
 
   @override
-  _$UsernameChangeCopyWith<_UsernameChange> get copyWith =>
-    __$UsernameChangeCopyWithImpl<_UsernameChange>(this, _$identity);
+  _$UsernameChangedCopyWith<_UsernameChanged> get copyWith =>
+    __$UsernameChangedCopyWithImpl<_UsernameChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(),
-    @required Result nameChange(String name),
-    @required Result usernameChange(String username),
-    @required Result passwordChange(String password),
-    @required Result emailAddressChange(String emailAddress),
-    @required Result birthdayChange(DateTime birthday),
-    @required Result descriptionChange(String description),
-    @required Result interestsChange(Set<Tag> interests),
-    @required Result submit(),
+    @required Result initialized(),
+    @required Result nameChanged(String name),
+    @required Result usernameChanged(String username),
+    @required Result passwordChanged(String password),
+    @required Result emailAddressChanged(String emailAddress),
+    @required Result birthdayChanged(DateTime birthday),
+    @required Result descriptionChanged(String description),
+    @required Result interestsChanged(Set<Tag> interests),
+    @required Result submitted(),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(emailAddressChange != null);
-    assert(birthdayChange != null);
-    assert(descriptionChange != null);
-    assert(interestsChange != null);
-    assert(submit != null);
-    return usernameChange(username);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(emailAddressChanged != null);
+    assert(birthdayChanged != null);
+    assert(descriptionChanged != null);
+    assert(interestsChanged != null);
+    assert(submitted != null);
+    return usernameChanged(username);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(),
-    Result nameChange(String name),
-    Result usernameChange(String username),
-    Result passwordChange(String password),
-    Result emailAddressChange(String emailAddress),
-    Result birthdayChange(DateTime birthday),
-    Result descriptionChange(String description),
-    Result interestsChange(Set<Tag> interests),
-    Result submit(),
+    Result initialized(),
+    Result nameChanged(String name),
+    Result usernameChanged(String username),
+    Result passwordChanged(String password),
+    Result emailAddressChanged(String emailAddress),
+    Result birthdayChanged(DateTime birthday),
+    Result descriptionChanged(String description),
+    Result interestsChanged(Set<Tag> interests),
+    Result submitted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (usernameChange != null) {
-      return usernameChange(username);
+    if (usernameChanged != null) {
+      return usernameChanged(username);
     }
     return orElse();
   }
@@ -510,96 +511,97 @@ class _$_UsernameChange implements _UsernameChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result nameChange(_NameChange value),
-    @required Result usernameChange(_UsernameChange value),
-    @required Result passwordChange(_PasswordChange value),
-    @required Result emailAddressChange(_EmailAddressChange value),
-    @required Result birthdayChange(_BirthdayChange value),
-    @required Result descriptionChange(_DescriptionChange value),
-    @required Result interestsChange(_InterestsChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result nameChanged(_NameChanged value),
+    @required Result usernameChanged(_UsernameChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result emailAddressChanged(_EmailAddressChanged value),
+    @required Result birthdayChanged(_BirthdayChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result interestsChanged(_InterestsChanged value),
+    @required Result submitted(_Submitted value),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(emailAddressChange != null);
-    assert(birthdayChange != null);
-    assert(descriptionChange != null);
-    assert(interestsChange != null);
-    assert(submit != null);
-    return usernameChange(this);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(emailAddressChanged != null);
+    assert(birthdayChanged != null);
+    assert(descriptionChanged != null);
+    assert(interestsChanged != null);
+    assert(submitted != null);
+    return usernameChanged(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result nameChange(_NameChange value),
-    Result usernameChange(_UsernameChange value),
-    Result passwordChange(_PasswordChange value),
-    Result emailAddressChange(_EmailAddressChange value),
-    Result birthdayChange(_BirthdayChange value),
-    Result descriptionChange(_DescriptionChange value),
-    Result interestsChange(_InterestsChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result nameChanged(_NameChanged value),
+    Result usernameChanged(_UsernameChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result emailAddressChanged(_EmailAddressChanged value),
+    Result birthdayChanged(_BirthdayChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result interestsChanged(_InterestsChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (usernameChange != null) {
-      return usernameChange(this);
+    if (usernameChanged != null) {
+      return usernameChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class _UsernameChange implements RegistrationFormEvent {
-  const factory _UsernameChange(String username) = _$_UsernameChange;
+abstract class _UsernameChanged implements RegistrationFormEvent {
+  const factory _UsernameChanged(String username) = _$_UsernameChanged;
 
   String get username;
-  _$UsernameChangeCopyWith<_UsernameChange> get copyWith;
+  
+  _$UsernameChangedCopyWith<_UsernameChanged> get copyWith;
 }
 
-abstract class _$PasswordChangeCopyWith<$Res> {
-  factory _$PasswordChangeCopyWith(_PasswordChange value, $Res Function(_PasswordChange) then) =
-  __$PasswordChangeCopyWithImpl<$Res>;
+abstract class _$PasswordChangedCopyWith<$Res> {
+  factory _$PasswordChangedCopyWith(_PasswordChanged value, $Res Function(_PasswordChanged) then) =
+  __$PasswordChangedCopyWithImpl<$Res>;
   $Res call({String password});
 }
 
-class __$PasswordChangeCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
-  implements _$PasswordChangeCopyWith<$Res> {
-  __$PasswordChangeCopyWithImpl(_PasswordChange _value, $Res Function(_PasswordChange) _then)
-    : super(_value, (v) => _then(v as _PasswordChange));
+class __$PasswordChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+  implements _$PasswordChangedCopyWith<$Res> {
+  __$PasswordChangedCopyWithImpl(_PasswordChanged _value, $Res Function(_PasswordChanged) _then)
+    : super(_value, (v) => _then(v as _PasswordChanged));
 
   @override
-  _PasswordChange get _value => super._value as _PasswordChange;
+  _PasswordChanged get _value => super._value as _PasswordChanged;
 
   @override
   $Res call({
     Object password = freezed,
   }) {
-    return _then(_PasswordChange(
+    return _then(_PasswordChanged(
       password == freezed ? _value.password : password as String,
     ));
   }
 }
 
-class _$_PasswordChange implements _PasswordChange {
-  const _$_PasswordChange(this.password) : assert(password != null);
+class _$_PasswordChanged implements _PasswordChanged {
+  const _$_PasswordChanged(this.password) : assert(password != null);
 
   @override
   final String password;
 
   @override
   String toString() {
-    return 'RegistrationFormEvent.passwordChange(password: $password)';
+    return 'RegistrationFormEvent.passwordChanged(password: $password)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _PasswordChange &&
+      (other is _PasswordChanged &&
         (identical(other.password, password) ||
           const DeepCollectionEquality()
             .equals(other.password, password)));
@@ -610,51 +612,51 @@ class _$_PasswordChange implements _PasswordChange {
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(password);
 
   @override
-  _$PasswordChangeCopyWith<_PasswordChange> get copyWith =>
-    __$PasswordChangeCopyWithImpl<_PasswordChange>(this, _$identity);
+  _$PasswordChangedCopyWith<_PasswordChanged> get copyWith =>
+    __$PasswordChangedCopyWithImpl<_PasswordChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(),
-    @required Result nameChange(String name),
-    @required Result usernameChange(String username),
-    @required Result passwordChange(String password),
-    @required Result emailAddressChange(String emailAddress),
-    @required Result birthdayChange(DateTime birthday),
-    @required Result descriptionChange(String description),
-    @required Result interestsChange(Set<Tag> interests),
-    @required Result submit(),
+    @required Result initialized(),
+    @required Result nameChanged(String name),
+    @required Result usernameChanged(String username),
+    @required Result passwordChanged(String password),
+    @required Result emailAddressChanged(String emailAddress),
+    @required Result birthdayChanged(DateTime birthday),
+    @required Result descriptionChanged(String description),
+    @required Result interestsChanged(Set<Tag> interests),
+    @required Result submitted(),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(emailAddressChange != null);
-    assert(birthdayChange != null);
-    assert(descriptionChange != null);
-    assert(interestsChange != null);
-    assert(submit != null);
-    return passwordChange(password);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(emailAddressChanged != null);
+    assert(birthdayChanged != null);
+    assert(descriptionChanged != null);
+    assert(interestsChanged != null);
+    assert(submitted != null);
+    return passwordChanged(password);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(),
-    Result nameChange(String name),
-    Result usernameChange(String username),
-    Result passwordChange(String password),
-    Result emailAddressChange(String emailAddress),
-    Result birthdayChange(DateTime birthday),
-    Result descriptionChange(String description),
-    Result interestsChange(Set<Tag> interests),
-    Result submit(),
+    Result initialized(),
+    Result nameChanged(String name),
+    Result usernameChanged(String username),
+    Result passwordChanged(String password),
+    Result emailAddressChanged(String emailAddress),
+    Result birthdayChanged(DateTime birthday),
+    Result descriptionChanged(String description),
+    Result interestsChanged(Set<Tag> interests),
+    Result submitted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (passwordChange != null) {
-      return passwordChange(password);
+    if (passwordChanged != null) {
+      return passwordChanged(password);
     }
     return orElse();
   }
@@ -662,96 +664,99 @@ class _$_PasswordChange implements _PasswordChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result nameChange(_NameChange value),
-    @required Result usernameChange(_UsernameChange value),
-    @required Result passwordChange(_PasswordChange value),
-    @required Result emailAddressChange(_EmailAddressChange value),
-    @required Result birthdayChange(_BirthdayChange value),
-    @required Result descriptionChange(_DescriptionChange value),
-    @required Result interestsChange(_InterestsChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result nameChanged(_NameChanged value),
+    @required Result usernameChanged(_UsernameChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result emailAddressChanged(_EmailAddressChanged value),
+    @required Result birthdayChanged(_BirthdayChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result interestsChanged(_InterestsChanged value),
+    @required Result submitted(_Submitted value),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(emailAddressChange != null);
-    assert(birthdayChange != null);
-    assert(descriptionChange != null);
-    assert(interestsChange != null);
-    assert(submit != null);
-    return passwordChange(this);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(emailAddressChanged != null);
+    assert(birthdayChanged != null);
+    assert(descriptionChanged != null);
+    assert(interestsChanged != null);
+    assert(submitted != null);
+    return passwordChanged(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result nameChange(_NameChange value),
-    Result usernameChange(_UsernameChange value),
-    Result passwordChange(_PasswordChange value),
-    Result emailAddressChange(_EmailAddressChange value),
-    Result birthdayChange(_BirthdayChange value),
-    Result descriptionChange(_DescriptionChange value),
-    Result interestsChange(_InterestsChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result nameChanged(_NameChanged value),
+    Result usernameChanged(_UsernameChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result emailAddressChanged(_EmailAddressChanged value),
+    Result birthdayChanged(_BirthdayChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result interestsChanged(_InterestsChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (passwordChange != null) {
-      return passwordChange(this);
+    if (passwordChanged != null) {
+      return passwordChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class _PasswordChange implements RegistrationFormEvent {
-  const factory _PasswordChange(String password) = _$_PasswordChange;
+abstract class _PasswordChanged implements RegistrationFormEvent {
+  const factory _PasswordChanged(String password) = _$_PasswordChanged;
 
   String get password;
-  _$PasswordChangeCopyWith<_PasswordChange> get copyWith;
+  
+  _$PasswordChangedCopyWith<_PasswordChanged> get copyWith;
 }
 
-abstract class _$EmailAddressChangeCopyWith<$Res> {
-  factory _$EmailAddressChangeCopyWith(_EmailAddressChange value, $Res Function(_EmailAddressChange) then) =
-  __$EmailAddressChangeCopyWithImpl<$Res>;
+abstract class _$EmailAddressChangedCopyWith<$Res> {
+  factory _$EmailAddressChangedCopyWith(_EmailAddressChanged value,
+    $Res Function(_EmailAddressChanged) then) =
+  __$EmailAddressChangedCopyWithImpl<$Res>;
   $Res call({String emailAddress});
 }
 
-class __$EmailAddressChangeCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
-  implements _$EmailAddressChangeCopyWith<$Res> {
-  __$EmailAddressChangeCopyWithImpl(_EmailAddressChange _value, $Res Function(_EmailAddressChange) _then)
-    : super(_value, (v) => _then(v as _EmailAddressChange));
+class __$EmailAddressChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+  implements _$EmailAddressChangedCopyWith<$Res> {
+  __$EmailAddressChangedCopyWithImpl(_EmailAddressChanged _value, $Res Function(_EmailAddressChanged) _then)
+    : super(_value, (v) => _then(v as _EmailAddressChanged));
 
   @override
-  _EmailAddressChange get _value => super._value as _EmailAddressChange;
+  _EmailAddressChanged get _value => super._value as _EmailAddressChanged;
 
   @override
   $Res call({
     Object emailAddress = freezed,
   }) {
-    return _then(_EmailAddressChange(
+    return _then(_EmailAddressChanged(
       emailAddress == freezed ? _value.emailAddress : emailAddress as String,
     ));
   }
 }
 
-class _$_EmailAddressChange implements _EmailAddressChange {
-  const _$_EmailAddressChange(this.emailAddress) : assert(emailAddress != null);
+class _$_EmailAddressChanged implements _EmailAddressChanged {
+  const _$_EmailAddressChanged(this.emailAddress)
+    : assert(emailAddress != null);
 
   @override
   final String emailAddress;
 
   @override
   String toString() {
-    return 'RegistrationFormEvent.emailAddressChange(emailAddress: $emailAddress)';
+    return 'RegistrationFormEvent.emailAddressChanged(emailAddress: $emailAddress)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _EmailAddressChange &&
+      (other is _EmailAddressChanged &&
         (identical(other.emailAddress, emailAddress) ||
           const DeepCollectionEquality()
             .equals(other.emailAddress, emailAddress)));
@@ -762,51 +767,52 @@ class _$_EmailAddressChange implements _EmailAddressChange {
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(emailAddress);
 
   @override
-  _$EmailAddressChangeCopyWith<_EmailAddressChange> get copyWith =>
-    __$EmailAddressChangeCopyWithImpl<_EmailAddressChange>(this, _$identity);
+  _$EmailAddressChangedCopyWith<_EmailAddressChanged> get copyWith =>
+    __$EmailAddressChangedCopyWithImpl<_EmailAddressChanged>(
+      this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(),
-    @required Result nameChange(String name),
-    @required Result usernameChange(String username),
-    @required Result passwordChange(String password),
-    @required Result emailAddressChange(String emailAddress),
-    @required Result birthdayChange(DateTime birthday),
-    @required Result descriptionChange(String description),
-    @required Result interestsChange(Set<Tag> interests),
-    @required Result submit(),
+    @required Result initialized(),
+    @required Result nameChanged(String name),
+    @required Result usernameChanged(String username),
+    @required Result passwordChanged(String password),
+    @required Result emailAddressChanged(String emailAddress),
+    @required Result birthdayChanged(DateTime birthday),
+    @required Result descriptionChanged(String description),
+    @required Result interestsChanged(Set<Tag> interests),
+    @required Result submitted(),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(emailAddressChange != null);
-    assert(birthdayChange != null);
-    assert(descriptionChange != null);
-    assert(interestsChange != null);
-    assert(submit != null);
-    return emailAddressChange(emailAddress);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(emailAddressChanged != null);
+    assert(birthdayChanged != null);
+    assert(descriptionChanged != null);
+    assert(interestsChanged != null);
+    assert(submitted != null);
+    return emailAddressChanged(emailAddress);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(),
-    Result nameChange(String name),
-    Result usernameChange(String username),
-    Result passwordChange(String password),
-    Result emailAddressChange(String emailAddress),
-    Result birthdayChange(DateTime birthday),
-    Result descriptionChange(String description),
-    Result interestsChange(Set<Tag> interests),
-    Result submit(),
+    Result initialized(),
+    Result nameChanged(String name),
+    Result usernameChanged(String username),
+    Result passwordChanged(String password),
+    Result emailAddressChanged(String emailAddress),
+    Result birthdayChanged(DateTime birthday),
+    Result descriptionChanged(String description),
+    Result interestsChanged(Set<Tag> interests),
+    Result submitted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (emailAddressChange != null) {
-      return emailAddressChange(emailAddress);
+    if (emailAddressChanged != null) {
+      return emailAddressChanged(emailAddress);
     }
     return orElse();
   }
@@ -814,97 +820,98 @@ class _$_EmailAddressChange implements _EmailAddressChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result nameChange(_NameChange value),
-    @required Result usernameChange(_UsernameChange value),
-    @required Result passwordChange(_PasswordChange value),
-    @required Result emailAddressChange(_EmailAddressChange value),
-    @required Result birthdayChange(_BirthdayChange value),
-    @required Result descriptionChange(_DescriptionChange value),
-    @required Result interestsChange(_InterestsChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result nameChanged(_NameChanged value),
+    @required Result usernameChanged(_UsernameChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result emailAddressChanged(_EmailAddressChanged value),
+    @required Result birthdayChanged(_BirthdayChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result interestsChanged(_InterestsChanged value),
+    @required Result submitted(_Submitted value),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(emailAddressChange != null);
-    assert(birthdayChange != null);
-    assert(descriptionChange != null);
-    assert(interestsChange != null);
-    assert(submit != null);
-    return emailAddressChange(this);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(emailAddressChanged != null);
+    assert(birthdayChanged != null);
+    assert(descriptionChanged != null);
+    assert(interestsChanged != null);
+    assert(submitted != null);
+    return emailAddressChanged(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result nameChange(_NameChange value),
-    Result usernameChange(_UsernameChange value),
-    Result passwordChange(_PasswordChange value),
-    Result emailAddressChange(_EmailAddressChange value),
-    Result birthdayChange(_BirthdayChange value),
-    Result descriptionChange(_DescriptionChange value),
-    Result interestsChange(_InterestsChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result nameChanged(_NameChanged value),
+    Result usernameChanged(_UsernameChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result emailAddressChanged(_EmailAddressChanged value),
+    Result birthdayChanged(_BirthdayChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result interestsChanged(_InterestsChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (emailAddressChange != null) {
-      return emailAddressChange(this);
+    if (emailAddressChanged != null) {
+      return emailAddressChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class _EmailAddressChange implements RegistrationFormEvent {
-  const factory _EmailAddressChange(String emailAddress) =
-  _$_EmailAddressChange;
+abstract class _EmailAddressChanged implements RegistrationFormEvent {
+  const factory _EmailAddressChanged(String emailAddress) =
+  _$_EmailAddressChanged;
 
   String get emailAddress;
-  _$EmailAddressChangeCopyWith<_EmailAddressChange> get copyWith;
+  
+  _$EmailAddressChangedCopyWith<_EmailAddressChanged> get copyWith;
 }
 
-abstract class _$BirthdayChangeCopyWith<$Res> {
-  factory _$BirthdayChangeCopyWith(_BirthdayChange value, $Res Function(_BirthdayChange) then) =
-  __$BirthdayChangeCopyWithImpl<$Res>;
+abstract class _$BirthdayChangedCopyWith<$Res> {
+  factory _$BirthdayChangedCopyWith(_BirthdayChanged value, $Res Function(_BirthdayChanged) then) =
+  __$BirthdayChangedCopyWithImpl<$Res>;
   $Res call({DateTime birthday});
 }
 
-class __$BirthdayChangeCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
-  implements _$BirthdayChangeCopyWith<$Res> {
-  __$BirthdayChangeCopyWithImpl(_BirthdayChange _value, $Res Function(_BirthdayChange) _then)
-    : super(_value, (v) => _then(v as _BirthdayChange));
+class __$BirthdayChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+  implements _$BirthdayChangedCopyWith<$Res> {
+  __$BirthdayChangedCopyWithImpl(_BirthdayChanged _value, $Res Function(_BirthdayChanged) _then)
+    : super(_value, (v) => _then(v as _BirthdayChanged));
 
   @override
-  _BirthdayChange get _value => super._value as _BirthdayChange;
+  _BirthdayChanged get _value => super._value as _BirthdayChanged;
 
   @override
   $Res call({
     Object birthday = freezed,
   }) {
-    return _then(_BirthdayChange(
+    return _then(_BirthdayChanged(
       birthday == freezed ? _value.birthday : birthday as DateTime,
     ));
   }
 }
 
-class _$_BirthdayChange implements _BirthdayChange {
-  const _$_BirthdayChange(this.birthday) : assert(birthday != null);
+class _$_BirthdayChanged implements _BirthdayChanged {
+  const _$_BirthdayChanged(this.birthday) : assert(birthday != null);
 
   @override
   final DateTime birthday;
 
   @override
   String toString() {
-    return 'RegistrationFormEvent.birthdayChange(birthday: $birthday)';
+    return 'RegistrationFormEvent.birthdayChanged(birthday: $birthday)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _BirthdayChange &&
+      (other is _BirthdayChanged &&
         (identical(other.birthday, birthday) ||
           const DeepCollectionEquality()
             .equals(other.birthday, birthday)));
@@ -915,51 +922,51 @@ class _$_BirthdayChange implements _BirthdayChange {
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(birthday);
 
   @override
-  _$BirthdayChangeCopyWith<_BirthdayChange> get copyWith =>
-    __$BirthdayChangeCopyWithImpl<_BirthdayChange>(this, _$identity);
+  _$BirthdayChangedCopyWith<_BirthdayChanged> get copyWith =>
+    __$BirthdayChangedCopyWithImpl<_BirthdayChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(),
-    @required Result nameChange(String name),
-    @required Result usernameChange(String username),
-    @required Result passwordChange(String password),
-    @required Result emailAddressChange(String emailAddress),
-    @required Result birthdayChange(DateTime birthday),
-    @required Result descriptionChange(String description),
-    @required Result interestsChange(Set<Tag> interests),
-    @required Result submit(),
+    @required Result initialized(),
+    @required Result nameChanged(String name),
+    @required Result usernameChanged(String username),
+    @required Result passwordChanged(String password),
+    @required Result emailAddressChanged(String emailAddress),
+    @required Result birthdayChanged(DateTime birthday),
+    @required Result descriptionChanged(String description),
+    @required Result interestsChanged(Set<Tag> interests),
+    @required Result submitted(),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(emailAddressChange != null);
-    assert(birthdayChange != null);
-    assert(descriptionChange != null);
-    assert(interestsChange != null);
-    assert(submit != null);
-    return birthdayChange(birthday);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(emailAddressChanged != null);
+    assert(birthdayChanged != null);
+    assert(descriptionChanged != null);
+    assert(interestsChanged != null);
+    assert(submitted != null);
+    return birthdayChanged(birthday);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(),
-    Result nameChange(String name),
-    Result usernameChange(String username),
-    Result passwordChange(String password),
-    Result emailAddressChange(String emailAddress),
-    Result birthdayChange(DateTime birthday),
-    Result descriptionChange(String description),
-    Result interestsChange(Set<Tag> interests),
-    Result submit(),
+    Result initialized(),
+    Result nameChanged(String name),
+    Result usernameChanged(String username),
+    Result passwordChanged(String password),
+    Result emailAddressChanged(String emailAddress),
+    Result birthdayChanged(DateTime birthday),
+    Result descriptionChanged(String description),
+    Result interestsChanged(Set<Tag> interests),
+    Result submitted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (birthdayChange != null) {
-      return birthdayChange(birthday);
+    if (birthdayChanged != null) {
+      return birthdayChanged(birthday);
     }
     return orElse();
   }
@@ -967,96 +974,97 @@ class _$_BirthdayChange implements _BirthdayChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result nameChange(_NameChange value),
-    @required Result usernameChange(_UsernameChange value),
-    @required Result passwordChange(_PasswordChange value),
-    @required Result emailAddressChange(_EmailAddressChange value),
-    @required Result birthdayChange(_BirthdayChange value),
-    @required Result descriptionChange(_DescriptionChange value),
-    @required Result interestsChange(_InterestsChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result nameChanged(_NameChanged value),
+    @required Result usernameChanged(_UsernameChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result emailAddressChanged(_EmailAddressChanged value),
+    @required Result birthdayChanged(_BirthdayChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result interestsChanged(_InterestsChanged value),
+    @required Result submitted(_Submitted value),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(emailAddressChange != null);
-    assert(birthdayChange != null);
-    assert(descriptionChange != null);
-    assert(interestsChange != null);
-    assert(submit != null);
-    return birthdayChange(this);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(emailAddressChanged != null);
+    assert(birthdayChanged != null);
+    assert(descriptionChanged != null);
+    assert(interestsChanged != null);
+    assert(submitted != null);
+    return birthdayChanged(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result nameChange(_NameChange value),
-    Result usernameChange(_UsernameChange value),
-    Result passwordChange(_PasswordChange value),
-    Result emailAddressChange(_EmailAddressChange value),
-    Result birthdayChange(_BirthdayChange value),
-    Result descriptionChange(_DescriptionChange value),
-    Result interestsChange(_InterestsChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result nameChanged(_NameChanged value),
+    Result usernameChanged(_UsernameChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result emailAddressChanged(_EmailAddressChanged value),
+    Result birthdayChanged(_BirthdayChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result interestsChanged(_InterestsChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (birthdayChange != null) {
-      return birthdayChange(this);
+    if (birthdayChanged != null) {
+      return birthdayChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class _BirthdayChange implements RegistrationFormEvent {
-  const factory _BirthdayChange(DateTime birthday) = _$_BirthdayChange;
+abstract class _BirthdayChanged implements RegistrationFormEvent {
+  const factory _BirthdayChanged(DateTime birthday) = _$_BirthdayChanged;
 
   DateTime get birthday;
-  _$BirthdayChangeCopyWith<_BirthdayChange> get copyWith;
+  
+  _$BirthdayChangedCopyWith<_BirthdayChanged> get copyWith;
 }
 
-abstract class _$DescriptionChangeCopyWith<$Res> {
-  factory _$DescriptionChangeCopyWith(_DescriptionChange value, $Res Function(_DescriptionChange) then) =
-  __$DescriptionChangeCopyWithImpl<$Res>;
+abstract class _$DescriptionChangedCopyWith<$Res> {
+  factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) =
+  __$DescriptionChangedCopyWithImpl<$Res>;
   $Res call({String description});
 }
 
-class __$DescriptionChangeCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
-  implements _$DescriptionChangeCopyWith<$Res> {
-  __$DescriptionChangeCopyWithImpl(_DescriptionChange _value, $Res Function(_DescriptionChange) _then)
-    : super(_value, (v) => _then(v as _DescriptionChange));
+class __$DescriptionChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+  implements _$DescriptionChangedCopyWith<$Res> {
+  __$DescriptionChangedCopyWithImpl(_DescriptionChanged _value, $Res Function(_DescriptionChanged) _then)
+    : super(_value, (v) => _then(v as _DescriptionChanged));
 
   @override
-  _DescriptionChange get _value => super._value as _DescriptionChange;
+  _DescriptionChanged get _value => super._value as _DescriptionChanged;
 
   @override
   $Res call({
     Object description = freezed,
   }) {
-    return _then(_DescriptionChange(
+    return _then(_DescriptionChanged(
       description == freezed ? _value.description : description as String,
     ));
   }
 }
 
-class _$_DescriptionChange implements _DescriptionChange {
-  const _$_DescriptionChange(this.description) : assert(description != null);
+class _$_DescriptionChanged implements _DescriptionChanged {
+  const _$_DescriptionChanged(this.description) : assert(description != null);
 
   @override
   final String description;
 
   @override
   String toString() {
-    return 'RegistrationFormEvent.descriptionChange(description: $description)';
+    return 'RegistrationFormEvent.descriptionChanged(description: $description)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _DescriptionChange &&
+      (other is _DescriptionChanged &&
         (identical(other.description, description) ||
           const DeepCollectionEquality()
             .equals(other.description, description)));
@@ -1067,51 +1075,51 @@ class _$_DescriptionChange implements _DescriptionChange {
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
 
   @override
-  _$DescriptionChangeCopyWith<_DescriptionChange> get copyWith =>
-    __$DescriptionChangeCopyWithImpl<_DescriptionChange>(this, _$identity);
+  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
+    __$DescriptionChangedCopyWithImpl<_DescriptionChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(),
-    @required Result nameChange(String name),
-    @required Result usernameChange(String username),
-    @required Result passwordChange(String password),
-    @required Result emailAddressChange(String emailAddress),
-    @required Result birthdayChange(DateTime birthday),
-    @required Result descriptionChange(String description),
-    @required Result interestsChange(Set<Tag> interests),
-    @required Result submit(),
+    @required Result initialized(),
+    @required Result nameChanged(String name),
+    @required Result usernameChanged(String username),
+    @required Result passwordChanged(String password),
+    @required Result emailAddressChanged(String emailAddress),
+    @required Result birthdayChanged(DateTime birthday),
+    @required Result descriptionChanged(String description),
+    @required Result interestsChanged(Set<Tag> interests),
+    @required Result submitted(),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(emailAddressChange != null);
-    assert(birthdayChange != null);
-    assert(descriptionChange != null);
-    assert(interestsChange != null);
-    assert(submit != null);
-    return descriptionChange(description);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(emailAddressChanged != null);
+    assert(birthdayChanged != null);
+    assert(descriptionChanged != null);
+    assert(interestsChanged != null);
+    assert(submitted != null);
+    return descriptionChanged(description);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(),
-    Result nameChange(String name),
-    Result usernameChange(String username),
-    Result passwordChange(String password),
-    Result emailAddressChange(String emailAddress),
-    Result birthdayChange(DateTime birthday),
-    Result descriptionChange(String description),
-    Result interestsChange(Set<Tag> interests),
-    Result submit(),
+    Result initialized(),
+    Result nameChanged(String name),
+    Result usernameChanged(String username),
+    Result passwordChanged(String password),
+    Result emailAddressChanged(String emailAddress),
+    Result birthdayChanged(DateTime birthday),
+    Result descriptionChanged(String description),
+    Result interestsChanged(Set<Tag> interests),
+    Result submitted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (descriptionChange != null) {
-      return descriptionChange(description);
+    if (descriptionChanged != null) {
+      return descriptionChanged(description);
     }
     return orElse();
   }
@@ -1119,96 +1127,97 @@ class _$_DescriptionChange implements _DescriptionChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result nameChange(_NameChange value),
-    @required Result usernameChange(_UsernameChange value),
-    @required Result passwordChange(_PasswordChange value),
-    @required Result emailAddressChange(_EmailAddressChange value),
-    @required Result birthdayChange(_BirthdayChange value),
-    @required Result descriptionChange(_DescriptionChange value),
-    @required Result interestsChange(_InterestsChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result nameChanged(_NameChanged value),
+    @required Result usernameChanged(_UsernameChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result emailAddressChanged(_EmailAddressChanged value),
+    @required Result birthdayChanged(_BirthdayChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result interestsChanged(_InterestsChanged value),
+    @required Result submitted(_Submitted value),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(emailAddressChange != null);
-    assert(birthdayChange != null);
-    assert(descriptionChange != null);
-    assert(interestsChange != null);
-    assert(submit != null);
-    return descriptionChange(this);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(emailAddressChanged != null);
+    assert(birthdayChanged != null);
+    assert(descriptionChanged != null);
+    assert(interestsChanged != null);
+    assert(submitted != null);
+    return descriptionChanged(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result nameChange(_NameChange value),
-    Result usernameChange(_UsernameChange value),
-    Result passwordChange(_PasswordChange value),
-    Result emailAddressChange(_EmailAddressChange value),
-    Result birthdayChange(_BirthdayChange value),
-    Result descriptionChange(_DescriptionChange value),
-    Result interestsChange(_InterestsChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result nameChanged(_NameChanged value),
+    Result usernameChanged(_UsernameChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result emailAddressChanged(_EmailAddressChanged value),
+    Result birthdayChanged(_BirthdayChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result interestsChanged(_InterestsChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (descriptionChange != null) {
-      return descriptionChange(this);
+    if (descriptionChanged != null) {
+      return descriptionChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class _DescriptionChange implements RegistrationFormEvent {
-  const factory _DescriptionChange(String description) = _$_DescriptionChange;
+abstract class _DescriptionChanged implements RegistrationFormEvent {
+  const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description;
-  _$DescriptionChangeCopyWith<_DescriptionChange> get copyWith;
+  
+  _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith;
 }
 
-abstract class _$InterestsChangeCopyWith<$Res> {
-  factory _$InterestsChangeCopyWith(_InterestsChange value, $Res Function(_InterestsChange) then) =
-  __$InterestsChangeCopyWithImpl<$Res>;
+abstract class _$InterestsChangedCopyWith<$Res> {
+  factory _$InterestsChangedCopyWith(_InterestsChanged value, $Res Function(_InterestsChanged) then) =
+  __$InterestsChangedCopyWithImpl<$Res>;
   $Res call({Set<Tag> interests});
 }
 
-class __$InterestsChangeCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
-  implements _$InterestsChangeCopyWith<$Res> {
-  __$InterestsChangeCopyWithImpl(_InterestsChange _value, $Res Function(_InterestsChange) _then)
-    : super(_value, (v) => _then(v as _InterestsChange));
+class __$InterestsChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+  implements _$InterestsChangedCopyWith<$Res> {
+  __$InterestsChangedCopyWithImpl(_InterestsChanged _value, $Res Function(_InterestsChanged) _then)
+    : super(_value, (v) => _then(v as _InterestsChanged));
 
   @override
-  _InterestsChange get _value => super._value as _InterestsChange;
+  _InterestsChanged get _value => super._value as _InterestsChanged;
 
   @override
   $Res call({
     Object interests = freezed,
   }) {
-    return _then(_InterestsChange(
+    return _then(_InterestsChanged(
       interests == freezed ? _value.interests : interests as Set<Tag>,
     ));
   }
 }
 
-class _$_InterestsChange implements _InterestsChange {
-  const _$_InterestsChange(this.interests) : assert(interests != null);
+class _$_InterestsChanged implements _InterestsChanged {
+  const _$_InterestsChanged(this.interests) : assert(interests != null);
 
   @override
   final Set<Tag> interests;
 
   @override
   String toString() {
-    return 'RegistrationFormEvent.interestsChange(interests: $interests)';
+    return 'RegistrationFormEvent.interestsChanged(interests: $interests)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _InterestsChange &&
+      (other is _InterestsChanged &&
         (identical(other.interests, interests) ||
           const DeepCollectionEquality()
             .equals(other.interests, interests)));
@@ -1219,51 +1228,51 @@ class _$_InterestsChange implements _InterestsChange {
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(interests);
 
   @override
-  _$InterestsChangeCopyWith<_InterestsChange> get copyWith =>
-    __$InterestsChangeCopyWithImpl<_InterestsChange>(this, _$identity);
+  _$InterestsChangedCopyWith<_InterestsChanged> get copyWith =>
+    __$InterestsChangedCopyWithImpl<_InterestsChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(),
-    @required Result nameChange(String name),
-    @required Result usernameChange(String username),
-    @required Result passwordChange(String password),
-    @required Result emailAddressChange(String emailAddress),
-    @required Result birthdayChange(DateTime birthday),
-    @required Result descriptionChange(String description),
-    @required Result interestsChange(Set<Tag> interests),
-    @required Result submit(),
+    @required Result initialized(),
+    @required Result nameChanged(String name),
+    @required Result usernameChanged(String username),
+    @required Result passwordChanged(String password),
+    @required Result emailAddressChanged(String emailAddress),
+    @required Result birthdayChanged(DateTime birthday),
+    @required Result descriptionChanged(String description),
+    @required Result interestsChanged(Set<Tag> interests),
+    @required Result submitted(),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(emailAddressChange != null);
-    assert(birthdayChange != null);
-    assert(descriptionChange != null);
-    assert(interestsChange != null);
-    assert(submit != null);
-    return interestsChange(interests);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(emailAddressChanged != null);
+    assert(birthdayChanged != null);
+    assert(descriptionChanged != null);
+    assert(interestsChanged != null);
+    assert(submitted != null);
+    return interestsChanged(interests);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(),
-    Result nameChange(String name),
-    Result usernameChange(String username),
-    Result passwordChange(String password),
-    Result emailAddressChange(String emailAddress),
-    Result birthdayChange(DateTime birthday),
-    Result descriptionChange(String description),
-    Result interestsChange(Set<Tag> interests),
-    Result submit(),
+    Result initialized(),
+    Result nameChanged(String name),
+    Result usernameChanged(String username),
+    Result passwordChanged(String password),
+    Result emailAddressChanged(String emailAddress),
+    Result birthdayChanged(DateTime birthday),
+    Result descriptionChanged(String description),
+    Result interestsChanged(Set<Tag> interests),
+    Result submitted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (interestsChange != null) {
-      return interestsChange(interests);
+    if (interestsChanged != null) {
+      return interestsChanged(interests);
     }
     return orElse();
   }
@@ -1271,82 +1280,83 @@ class _$_InterestsChange implements _InterestsChange {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result nameChange(_NameChange value),
-    @required Result usernameChange(_UsernameChange value),
-    @required Result passwordChange(_PasswordChange value),
-    @required Result emailAddressChange(_EmailAddressChange value),
-    @required Result birthdayChange(_BirthdayChange value),
-    @required Result descriptionChange(_DescriptionChange value),
-    @required Result interestsChange(_InterestsChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result nameChanged(_NameChanged value),
+    @required Result usernameChanged(_UsernameChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result emailAddressChanged(_EmailAddressChanged value),
+    @required Result birthdayChanged(_BirthdayChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result interestsChanged(_InterestsChanged value),
+    @required Result submitted(_Submitted value),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(emailAddressChange != null);
-    assert(birthdayChange != null);
-    assert(descriptionChange != null);
-    assert(interestsChange != null);
-    assert(submit != null);
-    return interestsChange(this);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(emailAddressChanged != null);
+    assert(birthdayChanged != null);
+    assert(descriptionChanged != null);
+    assert(interestsChanged != null);
+    assert(submitted != null);
+    return interestsChanged(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result nameChange(_NameChange value),
-    Result usernameChange(_UsernameChange value),
-    Result passwordChange(_PasswordChange value),
-    Result emailAddressChange(_EmailAddressChange value),
-    Result birthdayChange(_BirthdayChange value),
-    Result descriptionChange(_DescriptionChange value),
-    Result interestsChange(_InterestsChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result nameChanged(_NameChanged value),
+    Result usernameChanged(_UsernameChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result emailAddressChanged(_EmailAddressChanged value),
+    Result birthdayChanged(_BirthdayChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result interestsChanged(_InterestsChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (interestsChange != null) {
-      return interestsChange(this);
+    if (interestsChanged != null) {
+      return interestsChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class _InterestsChange implements RegistrationFormEvent {
-  const factory _InterestsChange(Set<Tag> interests) = _$_InterestsChange;
+abstract class _InterestsChanged implements RegistrationFormEvent {
+  const factory _InterestsChanged(Set<Tag> interests) = _$_InterestsChanged;
 
   Set<Tag> get interests;
-  _$InterestsChangeCopyWith<_InterestsChange> get copyWith;
+  
+  _$InterestsChangedCopyWith<_InterestsChanged> get copyWith;
 }
 
-abstract class _$SubmitCopyWith<$Res> {
-  factory _$SubmitCopyWith(_Submit value, $Res Function(_Submit) then) =
-  __$SubmitCopyWithImpl<$Res>;
+abstract class _$SubmittedCopyWith<$Res> {
+  factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) =
+  __$SubmittedCopyWithImpl<$Res>;
 }
 
-class __$SubmitCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
-  implements _$SubmitCopyWith<$Res> {
-  __$SubmitCopyWithImpl(_Submit _value, $Res Function(_Submit) _then)
-    : super(_value, (v) => _then(v as _Submit));
+class __$SubmittedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+  implements _$SubmittedCopyWith<$Res> {
+  __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then)
+    : super(_value, (v) => _then(v as _Submitted));
 
   @override
-  _Submit get _value => super._value as _Submit;
+  _Submitted get _value => super._value as _Submitted;
 }
 
-class _$_Submit implements _Submit {
-  const _$_Submit();
+class _$_Submitted implements _Submitted {
+  const _$_Submitted();
 
   @override
   String toString() {
-    return 'RegistrationFormEvent.submit()';
+    return 'RegistrationFormEvent.submitted()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Submit);
+    return identical(this, other) || (other is _Submitted);
   }
 
   @override
@@ -1355,45 +1365,45 @@ class _$_Submit implements _Submit {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialize(),
-    @required Result nameChange(String name),
-    @required Result usernameChange(String username),
-    @required Result passwordChange(String password),
-    @required Result emailAddressChange(String emailAddress),
-    @required Result birthdayChange(DateTime birthday),
-    @required Result descriptionChange(String description),
-    @required Result interestsChange(Set<Tag> interests),
-    @required Result submit(),
+    @required Result initialized(),
+    @required Result nameChanged(String name),
+    @required Result usernameChanged(String username),
+    @required Result passwordChanged(String password),
+    @required Result emailAddressChanged(String emailAddress),
+    @required Result birthdayChanged(DateTime birthday),
+    @required Result descriptionChanged(String description),
+    @required Result interestsChanged(Set<Tag> interests),
+    @required Result submitted(),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(emailAddressChange != null);
-    assert(birthdayChange != null);
-    assert(descriptionChange != null);
-    assert(interestsChange != null);
-    assert(submit != null);
-    return submit();
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(emailAddressChanged != null);
+    assert(birthdayChanged != null);
+    assert(descriptionChanged != null);
+    assert(interestsChanged != null);
+    assert(submitted != null);
+    return submitted();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialize(),
-    Result nameChange(String name),
-    Result usernameChange(String username),
-    Result passwordChange(String password),
-    Result emailAddressChange(String emailAddress),
-    Result birthdayChange(DateTime birthday),
-    Result descriptionChange(String description),
-    Result interestsChange(Set<Tag> interests),
-    Result submit(),
+    Result initialized(),
+    Result nameChanged(String name),
+    Result usernameChanged(String username),
+    Result passwordChanged(String password),
+    Result emailAddressChanged(String emailAddress),
+    Result birthdayChanged(DateTime birthday),
+    Result descriptionChanged(String description),
+    Result interestsChanged(Set<Tag> interests),
+    Result submitted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (submit != null) {
-      return submit();
+    if (submitted != null) {
+      return submitted();
     }
     return orElse();
   }
@@ -1401,52 +1411,52 @@ class _$_Submit implements _Submit {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initialize(_Initialize value),
-    @required Result nameChange(_NameChange value),
-    @required Result usernameChange(_UsernameChange value),
-    @required Result passwordChange(_PasswordChange value),
-    @required Result emailAddressChange(_EmailAddressChange value),
-    @required Result birthdayChange(_BirthdayChange value),
-    @required Result descriptionChange(_DescriptionChange value),
-    @required Result interestsChange(_InterestsChange value),
-    @required Result submit(_Submit value),
+    @required Result initialized(_Initialized value),
+    @required Result nameChanged(_NameChanged value),
+    @required Result usernameChanged(_UsernameChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result emailAddressChanged(_EmailAddressChanged value),
+    @required Result birthdayChanged(_BirthdayChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result interestsChanged(_InterestsChanged value),
+    @required Result submitted(_Submitted value),
   }) {
-    assert(initialize != null);
-    assert(nameChange != null);
-    assert(usernameChange != null);
-    assert(passwordChange != null);
-    assert(emailAddressChange != null);
-    assert(birthdayChange != null);
-    assert(descriptionChange != null);
-    assert(interestsChange != null);
-    assert(submit != null);
-    return submit(this);
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(emailAddressChanged != null);
+    assert(birthdayChanged != null);
+    assert(descriptionChanged != null);
+    assert(interestsChanged != null);
+    assert(submitted != null);
+    return submitted(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initialize(_Initialize value),
-    Result nameChange(_NameChange value),
-    Result usernameChange(_UsernameChange value),
-    Result passwordChange(_PasswordChange value),
-    Result emailAddressChange(_EmailAddressChange value),
-    Result birthdayChange(_BirthdayChange value),
-    Result descriptionChange(_DescriptionChange value),
-    Result interestsChange(_InterestsChange value),
-    Result submit(_Submit value),
+    Result initialized(_Initialized value),
+    Result nameChanged(_NameChanged value),
+    Result usernameChanged(_UsernameChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result emailAddressChanged(_EmailAddressChanged value),
+    Result birthdayChanged(_BirthdayChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result interestsChanged(_InterestsChanged value),
+    Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (submit != null) {
-      return submit(this);
+    if (submitted != null) {
+      return submitted(this);
     }
     return orElse();
   }
 }
 
-abstract class _Submit implements RegistrationFormEvent {
-  const factory _Submit() = _$_Submit;
+abstract class _Submitted implements RegistrationFormEvent {
+  const factory _Submitted() = _$_Submitted;
 }
 
 class _$RegistrationFormStateTearOff {

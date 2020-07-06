@@ -10,9 +10,7 @@ import 'package:worldon/domain/experience_log/use_case/load_user_log.dart';
 import 'package:worldon/injection.dart';
 
 part 'experience_log_watcher_bloc.freezed.dart';
-
 part 'experience_log_watcher_event.dart';
-
 part 'experience_log_watcher_state.dart';
 
 @injectable
@@ -22,11 +20,11 @@ class ExperienceLogWatcherBloc extends Bloc<ExperienceLogWatcherEvent, Experienc
   @override
   Stream<ExperienceLogWatcherState> mapEventToState(ExperienceLogWatcherEvent event) async* {
     yield* event.map(
-      loadExperiences: onLoadExperiences,
+      experiencesLoaded: onExperiencesLoaded,
     );
   }
 
-  Stream<ExperienceLogWatcherState> onLoadExperiences(_LoadExperiences event) async* {
+  Stream<ExperienceLogWatcherState> onExperiencesLoaded(_ExperiencesLoaded event) async* {
     yield const ExperienceLogWatcherState.loading();
     final _loadUserLog = getIt<LoadUserLog>();
     yield* _loadUserLog(getIt<NoParams>()).map(

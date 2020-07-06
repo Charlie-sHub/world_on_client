@@ -12,8 +12,8 @@ T _$identity<T>(T value) => value;
 class _$ExperienceManagementActorEventTearOff {
   const _$ExperienceManagementActorEventTearOff();
 
-  _Delete delete(Experience experience) {
-    return _Delete(
+  _Deleted deleted(Experience experience) {
+    return _Deleted(
       experience,
     );
   }
@@ -27,20 +27,20 @@ mixin _$ExperienceManagementActorEvent {
 
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result delete(Experience experience),
+    @required Result deleted(Experience experience),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result delete(Experience experience),
+    Result deleted(Experience experience),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result delete(_Delete value),
+    @required Result deleted(_Deleted value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result delete(_Delete value),
+    Result deleted(_Deleted value),
     @required Result orElse(),
   });
 
@@ -85,10 +85,10 @@ class _$ExperienceManagementActorEventCopyWithImpl<$Res>
   }
 }
 
-abstract class _$DeleteCopyWith<$Res>
+abstract class _$DeletedCopyWith<$Res>
   implements $ExperienceManagementActorEventCopyWith<$Res> {
-  factory _$DeleteCopyWith(_Delete value, $Res Function(_Delete) then) =
-  __$DeleteCopyWithImpl<$Res>;
+  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
+  __$DeletedCopyWithImpl<$Res>;
   @override
   $Res call({Experience experience});
 
@@ -96,39 +96,39 @@ abstract class _$DeleteCopyWith<$Res>
   $ExperienceCopyWith<$Res> get experience;
 }
 
-class __$DeleteCopyWithImpl<$Res> extends _$ExperienceManagementActorEventCopyWithImpl<$Res>
-  implements _$DeleteCopyWith<$Res> {
-  __$DeleteCopyWithImpl(_Delete _value, $Res Function(_Delete) _then)
-    : super(_value, (v) => _then(v as _Delete));
+class __$DeletedCopyWithImpl<$Res> extends _$ExperienceManagementActorEventCopyWithImpl<$Res>
+  implements _$DeletedCopyWith<$Res> {
+  __$DeletedCopyWithImpl(_Deleted _value, $Res Function(_Deleted) _then)
+    : super(_value, (v) => _then(v as _Deleted));
 
   @override
-  _Delete get _value => super._value as _Delete;
+  _Deleted get _value => super._value as _Deleted;
 
   @override
   $Res call({
     Object experience = freezed,
   }) {
-    return _then(_Delete(
+    return _then(_Deleted(
       experience == freezed ? _value.experience : experience as Experience,
     ));
   }
 }
 
-class _$_Delete implements _Delete {
-  const _$_Delete(this.experience) : assert(experience != null);
+class _$_Deleted implements _Deleted {
+  const _$_Deleted(this.experience) : assert(experience != null);
 
   @override
   final Experience experience;
 
   @override
   String toString() {
-    return 'ExperienceManagementActorEvent.delete(experience: $experience)';
+    return 'ExperienceManagementActorEvent.deleted(experience: $experience)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Delete &&
+      (other is _Deleted &&
         (identical(other.experience, experience) ||
           const DeepCollectionEquality()
             .equals(other.experience, experience)));
@@ -139,27 +139,27 @@ class _$_Delete implements _Delete {
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
   @override
-  _$DeleteCopyWith<_Delete> get copyWith =>
-    __$DeleteCopyWithImpl<_Delete>(this, _$identity);
+  _$DeletedCopyWith<_Deleted> get copyWith =>
+    __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result delete(Experience experience),
+    @required Result deleted(Experience experience),
   }) {
-    assert(delete != null);
-    return delete(experience);
+    assert(deleted != null);
+    return deleted(experience);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result delete(Experience experience),
+    Result deleted(Experience experience),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (delete != null) {
-      return delete(experience);
+    if (deleted != null) {
+      return deleted(experience);
     }
     return orElse();
   }
@@ -167,33 +167,33 @@ class _$_Delete implements _Delete {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result delete(_Delete value),
+    @required Result deleted(_Deleted value),
   }) {
-    assert(delete != null);
-    return delete(this);
+    assert(deleted != null);
+    return deleted(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result delete(_Delete value),
+    Result deleted(_Deleted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (delete != null) {
-      return delete(this);
+    if (deleted != null) {
+      return deleted(this);
     }
     return orElse();
   }
 }
 
-abstract class _Delete implements ExperienceManagementActorEvent {
-  const factory _Delete(Experience experience) = _$_Delete;
+abstract class _Deleted implements ExperienceManagementActorEvent {
+  const factory _Deleted(Experience experience) = _$_Deleted;
 
   @override
   Experience get experience;
   @override
-  _$DeleteCopyWith<_Delete> get copyWith;
+  _$DeletedCopyWith<_Deleted> get copyWith;
 }
 
 class _$ExperienceManagementActorStateTearOff {

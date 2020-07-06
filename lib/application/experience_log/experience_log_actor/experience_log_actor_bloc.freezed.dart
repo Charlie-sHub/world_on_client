@@ -12,8 +12,8 @@ T _$identity<T>(T value) => value;
 class _$ExperienceLogActorEventTearOff {
   const _$ExperienceLogActorEventTearOff();
 
-  _DismissExperience dismissExperience(int experienceId) {
-    return _DismissExperience(
+  _ExperienceDismissed experienceDismissed(int experienceId) {
+    return _ExperienceDismissed(
       experienceId,
     );
   }
@@ -27,20 +27,20 @@ mixin _$ExperienceLogActorEvent {
 
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dismissExperience(int experienceId),
+    @required Result experienceDismissed(int experienceId),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dismissExperience(int experienceId),
+    Result experienceDismissed(int experienceId),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result dismissExperience(_DismissExperience value),
+    @required Result experienceDismissed(_ExperienceDismissed value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result dismissExperience(_DismissExperience value),
+    Result experienceDismissed(_ExperienceDismissed value),
     @required Result orElse(),
   });
 
@@ -71,47 +71,49 @@ class _$ExperienceLogActorEventCopyWithImpl<$Res>
   }
 }
 
-abstract class _$DismissExperienceCopyWith<$Res>
+abstract class _$ExperienceDismissedCopyWith<$Res>
   implements $ExperienceLogActorEventCopyWith<$Res> {
-  factory _$DismissExperienceCopyWith(_DismissExperience value, $Res Function(_DismissExperience) then) =
-  __$DismissExperienceCopyWithImpl<$Res>;
+  factory _$ExperienceDismissedCopyWith(_ExperienceDismissed value,
+    $Res Function(_ExperienceDismissed) then) =
+  __$ExperienceDismissedCopyWithImpl<$Res>;
   @override
   $Res call({int experienceId});
 }
 
-class __$DismissExperienceCopyWithImpl<$Res> extends _$ExperienceLogActorEventCopyWithImpl<$Res>
-  implements _$DismissExperienceCopyWith<$Res> {
-  __$DismissExperienceCopyWithImpl(_DismissExperience _value, $Res Function(_DismissExperience) _then)
-    : super(_value, (v) => _then(v as _DismissExperience));
+class __$ExperienceDismissedCopyWithImpl<$Res> extends _$ExperienceLogActorEventCopyWithImpl<$Res>
+  implements _$ExperienceDismissedCopyWith<$Res> {
+  __$ExperienceDismissedCopyWithImpl(_ExperienceDismissed _value, $Res Function(_ExperienceDismissed) _then)
+    : super(_value, (v) => _then(v as _ExperienceDismissed));
 
   @override
-  _DismissExperience get _value => super._value as _DismissExperience;
+  _ExperienceDismissed get _value => super._value as _ExperienceDismissed;
 
   @override
   $Res call({
     Object experienceId = freezed,
   }) {
-    return _then(_DismissExperience(
+    return _then(_ExperienceDismissed(
       experienceId == freezed ? _value.experienceId : experienceId as int,
     ));
   }
 }
 
-class _$_DismissExperience implements _DismissExperience {
-  const _$_DismissExperience(this.experienceId) : assert(experienceId != null);
+class _$_ExperienceDismissed implements _ExperienceDismissed {
+  const _$_ExperienceDismissed(this.experienceId)
+    : assert(experienceId != null);
 
   @override
   final int experienceId;
 
   @override
   String toString() {
-    return 'ExperienceLogActorEvent.dismissExperience(experienceId: $experienceId)';
+    return 'ExperienceLogActorEvent.experienceDismissed(experienceId: $experienceId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _DismissExperience &&
+      (other is _ExperienceDismissed &&
         (identical(other.experienceId, experienceId) ||
           const DeepCollectionEquality()
             .equals(other.experienceId, experienceId)));
@@ -122,27 +124,28 @@ class _$_DismissExperience implements _DismissExperience {
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceId);
 
   @override
-  _$DismissExperienceCopyWith<_DismissExperience> get copyWith =>
-    __$DismissExperienceCopyWithImpl<_DismissExperience>(this, _$identity);
+  _$ExperienceDismissedCopyWith<_ExperienceDismissed> get copyWith =>
+    __$ExperienceDismissedCopyWithImpl<_ExperienceDismissed>(
+      this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dismissExperience(int experienceId),
+    @required Result experienceDismissed(int experienceId),
   }) {
-    assert(dismissExperience != null);
-    return dismissExperience(experienceId);
+    assert(experienceDismissed != null);
+    return experienceDismissed(experienceId);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dismissExperience(int experienceId),
+    Result experienceDismissed(int experienceId),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (dismissExperience != null) {
-      return dismissExperience(experienceId);
+    if (experienceDismissed != null) {
+      return experienceDismissed(experienceId);
     }
     return orElse();
   }
@@ -150,33 +153,33 @@ class _$_DismissExperience implements _DismissExperience {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result dismissExperience(_DismissExperience value),
+    @required Result experienceDismissed(_ExperienceDismissed value),
   }) {
-    assert(dismissExperience != null);
-    return dismissExperience(this);
+    assert(experienceDismissed != null);
+    return experienceDismissed(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result dismissExperience(_DismissExperience value),
+    Result experienceDismissed(_ExperienceDismissed value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (dismissExperience != null) {
-      return dismissExperience(this);
+    if (experienceDismissed != null) {
+      return experienceDismissed(this);
     }
     return orElse();
   }
 }
 
-abstract class _DismissExperience implements ExperienceLogActorEvent {
-  const factory _DismissExperience(int experienceId) = _$_DismissExperience;
+abstract class _ExperienceDismissed implements ExperienceLogActorEvent {
+  const factory _ExperienceDismissed(int experienceId) = _$_ExperienceDismissed;
 
   @override
   int get experienceId;
   @override
-  _$DismissExperienceCopyWith<_DismissExperience> get copyWith;
+  _$ExperienceDismissedCopyWith<_ExperienceDismissed> get copyWith;
 }
 
 class _$ExperienceLogActorStateTearOff {

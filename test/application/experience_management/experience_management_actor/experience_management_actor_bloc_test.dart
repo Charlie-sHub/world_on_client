@@ -36,7 +36,7 @@ void main() {
           when(deleteExperience.call(any)).thenAnswer((_) async => right(unit));
           return getIt<ExperienceManagementActorBloc>();
         },
-        act: (bloc) async => bloc.add(ExperienceManagementActorEvent.delete(Experience.empty())),
+        act: (bloc) async => bloc.add(ExperienceManagementActorEvent.deleted(Experience.empty())),
         verify: (_) async {
           verify(deleteExperience.call(any));
           verifyNoMoreInteractions(deleteExperience);
@@ -53,7 +53,7 @@ void main() {
           when(deleteExperience.call(any)).thenAnswer((_) async => left(failure));
           return getIt<ExperienceManagementActorBloc>();
         },
-        act: (bloc) async => bloc.add(ExperienceManagementActorEvent.delete(Experience.empty())),
+        act: (bloc) async => bloc.add(ExperienceManagementActorEvent.deleted(Experience.empty())),
         verify: (_) async {
           verify(deleteExperience.call(any));
           verifyNoMoreInteractions(deleteExperience);

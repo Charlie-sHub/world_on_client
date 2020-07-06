@@ -35,7 +35,7 @@ void main() {
       when(loadNotifications.call(any)).thenAnswer((realInvocation) => createStream(right(notifications)));
       return getIt<NotificationsWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(const NotificationsWatcherEvent.load()),
+    act: (bloc) async => bloc.add(const NotificationsWatcherEvent.notificationsLoaded()),
     verify: (_) async {
       verify(loadNotifications.call(any));
       verifyNoMoreInteractions(loadNotifications);
@@ -51,7 +51,7 @@ void main() {
       when(loadNotifications.call(any)).thenAnswer((realInvocation) => createStream(left(failure)));
       return getIt<NotificationsWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(const NotificationsWatcherEvent.load()),
+    act: (bloc) async => bloc.add(const NotificationsWatcherEvent.notificationsLoaded()),
     verify: (_) async {
       verify(loadNotifications.call(any));
       verifyNoMoreInteractions(loadNotifications);

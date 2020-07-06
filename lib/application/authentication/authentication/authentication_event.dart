@@ -2,7 +2,7 @@ part of 'authentication_bloc.dart';
 
 @freezed
 abstract class AuthenticationEvent with _$AuthenticationEvent {
-  const factory AuthenticationEvent.authenticationCheckRequest() = _AuthenticationCheckRequest;
+  const factory AuthenticationEvent.authenticationCheckRequested() = _AuthenticationCheckRequested;
 
-  const factory AuthenticationEvent.logOut() = _LogOut;
+  const factory AuthenticationEvent.loggedOut() = _LoggedOut;
 }

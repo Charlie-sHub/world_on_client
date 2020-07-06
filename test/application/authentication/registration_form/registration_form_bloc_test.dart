@@ -62,7 +62,7 @@ void main() {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(thirdPartyUser));
           return getIt<RegistrationFormBloc>();
         },
-        act: (bloc) async => bloc.add(const RegistrationFormEvent.initialize()),
+        act: (bloc) async => bloc.add(const RegistrationFormEvent.initialized()),
         verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
           RegistrationFormState.initial().copyWith(
@@ -76,7 +76,7 @@ void main() {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
           return getIt<RegistrationFormBloc>();
         },
-        act: (bloc) async => bloc.add(const RegistrationFormEvent.initialize()),
+        act: (bloc) async => bloc.add(const RegistrationFormEvent.initialized()),
         verify: (_) async => verify(getLoggedInUser.call(any)),
         skip: 0,
         expect: [RegistrationFormState.initial()],
@@ -93,8 +93,8 @@ void main() {
           return getIt<RegistrationFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(const RegistrationFormEvent.initialize());
-          bloc.add(const RegistrationFormEvent.nameChange(name));
+          bloc.add(const RegistrationFormEvent.initialized());
+          bloc.add(const RegistrationFormEvent.nameChanged(name));
         },
         verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
@@ -112,8 +112,8 @@ void main() {
           return getIt<RegistrationFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(const RegistrationFormEvent.initialize());
-          bloc.add(const RegistrationFormEvent.usernameChange(username));
+          bloc.add(const RegistrationFormEvent.initialized());
+          bloc.add(const RegistrationFormEvent.usernameChanged(username));
         },
         verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
@@ -131,8 +131,8 @@ void main() {
           return getIt<RegistrationFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(const RegistrationFormEvent.initialize());
-          bloc.add(const RegistrationFormEvent.passwordChange(password));
+          bloc.add(const RegistrationFormEvent.initialized());
+          bloc.add(const RegistrationFormEvent.passwordChanged(password));
         },
         verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
@@ -150,8 +150,8 @@ void main() {
           return getIt<RegistrationFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(const RegistrationFormEvent.initialize());
-          bloc.add(const RegistrationFormEvent.emailAddressChange(emailAddress));
+          bloc.add(const RegistrationFormEvent.initialized());
+          bloc.add(const RegistrationFormEvent.emailAddressChanged(emailAddress));
         },
         verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
@@ -169,8 +169,8 @@ void main() {
           return getIt<RegistrationFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(const RegistrationFormEvent.initialize());
-          bloc.add(RegistrationFormEvent.birthdayChange(birthday));
+          bloc.add(const RegistrationFormEvent.initialized());
+          bloc.add(RegistrationFormEvent.birthdayChanged(birthday));
         },
         verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
@@ -188,8 +188,8 @@ void main() {
           return getIt<RegistrationFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(const RegistrationFormEvent.initialize());
-          bloc.add(const RegistrationFormEvent.descriptionChange(description));
+          bloc.add(const RegistrationFormEvent.initialized());
+          bloc.add(const RegistrationFormEvent.descriptionChanged(description));
         },
         verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
@@ -207,8 +207,8 @@ void main() {
           return getIt<RegistrationFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(const RegistrationFormEvent.initialize());
-          bloc.add(RegistrationFormEvent.interestsChange(interests));
+          bloc.add(const RegistrationFormEvent.initialized());
+          bloc.add(RegistrationFormEvent.interestsChanged(interests));
         },
         verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
@@ -232,15 +232,15 @@ void main() {
           return getIt<RegistrationFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(const RegistrationFormEvent.initialize());
-          bloc.add(const RegistrationFormEvent.nameChange(name));
-          bloc.add(const RegistrationFormEvent.usernameChange(username));
-          bloc.add(const RegistrationFormEvent.passwordChange(password));
-          bloc.add(const RegistrationFormEvent.emailAddressChange(emailAddress));
-          bloc.add(RegistrationFormEvent.birthdayChange(birthday));
-          bloc.add(const RegistrationFormEvent.descriptionChange(description));
-          bloc.add(RegistrationFormEvent.interestsChange(interests));
-          bloc.add(const RegistrationFormEvent.submit());
+          bloc.add(const RegistrationFormEvent.initialized());
+          bloc.add(const RegistrationFormEvent.nameChanged(name));
+          bloc.add(const RegistrationFormEvent.usernameChanged(username));
+          bloc.add(const RegistrationFormEvent.passwordChanged(password));
+          bloc.add(const RegistrationFormEvent.emailAddressChanged(emailAddress));
+          bloc.add(RegistrationFormEvent.birthdayChanged(birthday));
+          bloc.add(const RegistrationFormEvent.descriptionChanged(description));
+          bloc.add(RegistrationFormEvent.interestsChanged(interests));
+          bloc.add(const RegistrationFormEvent.submitted());
         },
         verify: (_) async {
           verify(getLoggedInUser.call(any));
@@ -347,13 +347,13 @@ void main() {
           return getIt<RegistrationFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(const RegistrationFormEvent.initialize());
-          bloc.add(const RegistrationFormEvent.nameChange(name));
-          bloc.add(const RegistrationFormEvent.usernameChange(username));
-          bloc.add(RegistrationFormEvent.birthdayChange(birthday));
-          bloc.add(const RegistrationFormEvent.descriptionChange(description));
-          bloc.add(RegistrationFormEvent.interestsChange(interests));
-          bloc.add(const RegistrationFormEvent.submit());
+          bloc.add(const RegistrationFormEvent.initialized());
+          bloc.add(const RegistrationFormEvent.nameChanged(name));
+          bloc.add(const RegistrationFormEvent.usernameChanged(username));
+          bloc.add(RegistrationFormEvent.birthdayChanged(birthday));
+          bloc.add(const RegistrationFormEvent.descriptionChanged(description));
+          bloc.add(RegistrationFormEvent.interestsChanged(interests));
+          bloc.add(const RegistrationFormEvent.submitted());
         },
         verify: (_) async {
           verify(getLoggedInUser.call(any));
@@ -404,7 +404,7 @@ void main() {
             failureOrSuccessOption: none(),
           ),
           RegistrationFormState.initial().copyWith(
-            user: User.empty().copyWith(
+            user: thirdPartyUser.copyWith(
               name: Name(name),
               username: Name(username),
               password: Password(password),
@@ -432,198 +432,203 @@ void main() {
       );
     },
   );
-  blocTest(
-    "${TestDescription.shouldEmitFailure} when submitting with a third party User",
-    build: () async {
-      when(register.call(any)).thenAnswer((_) async => left(failure));
-      when(getLoggedInUser.call(any)).thenAnswer((_) async => some(thirdPartyUser));
-      return getIt<RegistrationFormBloc>();
+  group(
+    TestDescription.groupOnFailure,
+    () {
+      blocTest(
+        "${TestDescription.shouldEmitFailure} when submitting with a third party User",
+        build: () async {
+          when(register.call(any)).thenAnswer((_) async => left(failure));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(thirdPartyUser));
+          return getIt<RegistrationFormBloc>();
+        },
+        act: (bloc) async {
+          bloc.add(const RegistrationFormEvent.initialized());
+          bloc.add(const RegistrationFormEvent.nameChanged(name));
+          bloc.add(const RegistrationFormEvent.usernameChanged(username));
+          bloc.add(RegistrationFormEvent.birthdayChanged(birthday));
+          bloc.add(const RegistrationFormEvent.descriptionChanged(description));
+          bloc.add(RegistrationFormEvent.interestsChanged(interests));
+          bloc.add(const RegistrationFormEvent.submitted());
+        },
+        verify: (_) async {
+          verify(getLoggedInUser.call(any));
+          verify(register.call(any));
+        },
+        expect: [
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser,
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser.copyWith(
+              name: Name(name),
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser.copyWith(
+              name: Name(name),
+              username: Name(username),
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser.copyWith(
+              name: Name(name),
+              username: Name(username),
+              birthday: PastDate(birthday),
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser.copyWith(
+              name: Name(name),
+              username: Name(username),
+              birthday: PastDate(birthday),
+              description: EntityDescription(description),
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser.copyWith(
+              name: Name(name),
+              username: Name(username),
+              birthday: PastDate(birthday),
+              description: EntityDescription(description),
+              interests: interests,
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser.copyWith(
+              name: Name(name),
+              username: Name(username),
+              password: Password(password),
+              email: EmailAddress(emailAddress),
+              birthday: PastDate(birthday),
+              description: EntityDescription(description),
+              interests: interests,
+            ),
+            isSubmitting: true,
+            failureOrSuccessOption: none(),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser.copyWith(
+              name: Name(name),
+              username: Name(username),
+              birthday: PastDate(birthday),
+              description: EntityDescription(description),
+              interests: interests,
+            ),
+            isSubmitting: false,
+            showErrorMessages: true,
+            failureOrSuccessOption: some(left(failure)),
+          ),
+        ],
+      );
+      blocTest(
+        TestDescription.shouldResetOption,
+        build: () async {
+          when(register.call(any)).thenAnswer((_) async => left(failure));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(thirdPartyUser));
+          return getIt<RegistrationFormBloc>();
+        },
+        act: (bloc) async {
+          bloc.add(const RegistrationFormEvent.initialized());
+          bloc.add(const RegistrationFormEvent.nameChanged(name));
+          bloc.add(const RegistrationFormEvent.usernameChanged(username));
+          bloc.add(RegistrationFormEvent.birthdayChanged(birthday));
+          bloc.add(const RegistrationFormEvent.descriptionChanged(description));
+          bloc.add(RegistrationFormEvent.interestsChanged(interests));
+          bloc.add(const RegistrationFormEvent.submitted());
+          bloc.add(const RegistrationFormEvent.nameChanged(name));
+        },
+        verify: (_) async {
+          verify(getLoggedInUser.call(any));
+          verify(register.call(any));
+        },
+        expect: [
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser,
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser.copyWith(
+              name: Name(name),
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser.copyWith(
+              name: Name(name),
+              username: Name(username),
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser.copyWith(
+              name: Name(name),
+              username: Name(username),
+              birthday: PastDate(birthday),
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser.copyWith(
+              name: Name(name),
+              username: Name(username),
+              birthday: PastDate(birthday),
+              description: EntityDescription(description),
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser.copyWith(
+              name: Name(name),
+              username: Name(username),
+              birthday: PastDate(birthday),
+              description: EntityDescription(description),
+              interests: interests,
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser.copyWith(
+              name: Name(name),
+              username: Name(username),
+              password: Password(password),
+              email: EmailAddress(emailAddress),
+              birthday: PastDate(birthday),
+              description: EntityDescription(description),
+              interests: interests,
+            ),
+            isSubmitting: true,
+            failureOrSuccessOption: none(),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser.copyWith(
+              name: Name(name),
+              username: Name(username),
+              birthday: PastDate(birthday),
+              description: EntityDescription(description),
+              interests: interests,
+            ),
+            isSubmitting: false,
+            showErrorMessages: true,
+            failureOrSuccessOption: some(left(failure)),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser.copyWith(
+              name: Name(name),
+              username: Name(username),
+              birthday: PastDate(birthday),
+              description: EntityDescription(description),
+              interests: interests,
+            ),
+            showErrorMessages: true,
+            failureOrSuccessOption: none(),
+          ),
+        ],
+      );
     },
-    act: (bloc) async {
-      bloc.add(const RegistrationFormEvent.initialize());
-      bloc.add(const RegistrationFormEvent.nameChange(name));
-      bloc.add(const RegistrationFormEvent.usernameChange(username));
-      bloc.add(RegistrationFormEvent.birthdayChange(birthday));
-      bloc.add(const RegistrationFormEvent.descriptionChange(description));
-      bloc.add(RegistrationFormEvent.interestsChange(interests));
-      bloc.add(const RegistrationFormEvent.submit());
-    },
-    verify: (_) async {
-      verify(getLoggedInUser.call(any));
-      verify(register.call(any));
-    },
-    expect: [
-      RegistrationFormState.initial().copyWith(
-        user: thirdPartyUser,
-      ),
-      RegistrationFormState.initial().copyWith(
-        user: thirdPartyUser.copyWith(
-          name: Name(name),
-        ),
-        failureOrSuccessOption: none(),
-      ),
-      RegistrationFormState.initial().copyWith(
-        user: thirdPartyUser.copyWith(
-          name: Name(name),
-          username: Name(username),
-        ),
-        failureOrSuccessOption: none(),
-      ),
-      RegistrationFormState.initial().copyWith(
-        user: thirdPartyUser.copyWith(
-          name: Name(name),
-          username: Name(username),
-          birthday: PastDate(birthday),
-        ),
-        failureOrSuccessOption: none(),
-      ),
-      RegistrationFormState.initial().copyWith(
-        user: thirdPartyUser.copyWith(
-          name: Name(name),
-          username: Name(username),
-          birthday: PastDate(birthday),
-          description: EntityDescription(description),
-        ),
-        failureOrSuccessOption: none(),
-      ),
-      RegistrationFormState.initial().copyWith(
-        user: thirdPartyUser.copyWith(
-          name: Name(name),
-          username: Name(username),
-          birthday: PastDate(birthday),
-          description: EntityDescription(description),
-          interests: interests,
-        ),
-        failureOrSuccessOption: none(),
-      ),
-      RegistrationFormState.initial().copyWith(
-        user: User.empty().copyWith(
-          name: Name(name),
-          username: Name(username),
-          password: Password(password),
-          email: EmailAddress(emailAddress),
-          birthday: PastDate(birthday),
-          description: EntityDescription(description),
-          interests: interests,
-        ),
-        isSubmitting: true,
-        failureOrSuccessOption: none(),
-      ),
-      RegistrationFormState.initial().copyWith(
-        user: thirdPartyUser.copyWith(
-          name: Name(name),
-          username: Name(username),
-          birthday: PastDate(birthday),
-          description: EntityDescription(description),
-          interests: interests,
-        ),
-        isSubmitting: false,
-        showErrorMessages: true,
-        failureOrSuccessOption: some(left(failure)),
-      ),
-    ],
-  );
-  blocTest(
-    "${TestDescription.shouldEmitFailure} when submitting with a third party User",
-    build: () async {
-      when(register.call(any)).thenAnswer((_) async => left(failure));
-      when(getLoggedInUser.call(any)).thenAnswer((_) async => some(thirdPartyUser));
-      return getIt<RegistrationFormBloc>();
-    },
-    act: (bloc) async {
-      bloc.add(const RegistrationFormEvent.initialize());
-      bloc.add(const RegistrationFormEvent.nameChange(name));
-      bloc.add(const RegistrationFormEvent.usernameChange(username));
-      bloc.add(RegistrationFormEvent.birthdayChange(birthday));
-      bloc.add(const RegistrationFormEvent.descriptionChange(description));
-      bloc.add(RegistrationFormEvent.interestsChange(interests));
-      bloc.add(const RegistrationFormEvent.submit());
-      bloc.add(const RegistrationFormEvent.nameChange(name));
-    },
-    verify: (_) async {
-      verify(getLoggedInUser.call(any));
-      verify(register.call(any));
-    },
-    expect: [
-      RegistrationFormState.initial().copyWith(
-        user: thirdPartyUser,
-      ),
-      RegistrationFormState.initial().copyWith(
-        user: thirdPartyUser.copyWith(
-          name: Name(name),
-        ),
-        failureOrSuccessOption: none(),
-      ),
-      RegistrationFormState.initial().copyWith(
-        user: thirdPartyUser.copyWith(
-          name: Name(name),
-          username: Name(username),
-        ),
-        failureOrSuccessOption: none(),
-      ),
-      RegistrationFormState.initial().copyWith(
-        user: thirdPartyUser.copyWith(
-          name: Name(name),
-          username: Name(username),
-          birthday: PastDate(birthday),
-        ),
-        failureOrSuccessOption: none(),
-      ),
-      RegistrationFormState.initial().copyWith(
-        user: thirdPartyUser.copyWith(
-          name: Name(name),
-          username: Name(username),
-          birthday: PastDate(birthday),
-          description: EntityDescription(description),
-        ),
-        failureOrSuccessOption: none(),
-      ),
-      RegistrationFormState.initial().copyWith(
-        user: thirdPartyUser.copyWith(
-          name: Name(name),
-          username: Name(username),
-          birthday: PastDate(birthday),
-          description: EntityDescription(description),
-          interests: interests,
-        ),
-        failureOrSuccessOption: none(),
-      ),
-      RegistrationFormState.initial().copyWith(
-        user: User.empty().copyWith(
-          name: Name(name),
-          username: Name(username),
-          password: Password(password),
-          email: EmailAddress(emailAddress),
-          birthday: PastDate(birthday),
-          description: EntityDescription(description),
-          interests: interests,
-        ),
-        isSubmitting: true,
-        failureOrSuccessOption: none(),
-      ),
-      RegistrationFormState.initial().copyWith(
-        user: thirdPartyUser.copyWith(
-          name: Name(name),
-          username: Name(username),
-          birthday: PastDate(birthday),
-          description: EntityDescription(description),
-          interests: interests,
-        ),
-        isSubmitting: false,
-        showErrorMessages: true,
-        failureOrSuccessOption: some(left(failure)),
-      ),
-      RegistrationFormState.initial().copyWith(
-        user: thirdPartyUser.copyWith(
-          name: Name(name),
-          username: Name(username),
-          birthday: PastDate(birthday),
-          description: EntityDescription(description),
-          interests: interests,
-        ),
-        showErrorMessages: true,
-        failureOrSuccessOption: none(),
-      ),
-    ],
   );
 }

@@ -2,21 +2,21 @@ part of 'registration_form_bloc.dart';
 
 @freezed
 abstract class RegistrationFormEvent with _$RegistrationFormEvent {
-  const factory RegistrationFormEvent.initialize() = _Initialize;
+  const factory RegistrationFormEvent.initialized() = _Initialized;
 
-  const factory RegistrationFormEvent.nameChange(String name) = _NameChange;
+  const factory RegistrationFormEvent.nameChanged(String name) = _NameChanged;
 
-  const factory RegistrationFormEvent.usernameChange(String username) = _UsernameChange;
+  const factory RegistrationFormEvent.usernameChanged(String username) = _UsernameChanged;
 
-  const factory RegistrationFormEvent.passwordChange(String password) = _PasswordChange;
+  const factory RegistrationFormEvent.passwordChanged(String password) = _PasswordChanged;
 
-  const factory RegistrationFormEvent.emailAddressChange(String emailAddress) = _EmailAddressChange;
+  const factory RegistrationFormEvent.emailAddressChanged(String emailAddress) = _EmailAddressChanged;
 
-  const factory RegistrationFormEvent.birthdayChange(DateTime birthday) = _BirthdayChange;
+  const factory RegistrationFormEvent.birthdayChanged(DateTime birthday) = _BirthdayChanged;
 
-  const factory RegistrationFormEvent.descriptionChange(String description) = _DescriptionChange;
+  const factory RegistrationFormEvent.descriptionChanged(String description) = _DescriptionChanged;
 
-  const factory RegistrationFormEvent.interestsChange(Set<Tag> interests) = _InterestsChange;
+  const factory RegistrationFormEvent.interestsChanged(Set<Tag> interests) = _InterestsChanged;
 
-  const factory RegistrationFormEvent.submit() = _Submit;
+  const factory RegistrationFormEvent.submitted() = _Submitted;
 }

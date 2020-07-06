@@ -12,8 +12,8 @@ T _$identity<T>(T value) => value;
 class _$CommentWatcherEventTearOff {
   const _$CommentWatcherEventTearOff();
 
-  _LoadExperienceComments loadExperienceComments(int experienceId) {
-    return _LoadExperienceComments(
+  _ExperienceCommentsLoaded experienceCommentsLoaded(int experienceId) {
+    return _ExperienceCommentsLoaded(
       experienceId,
     );
   }
@@ -27,20 +27,20 @@ mixin _$CommentWatcherEvent {
 
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result loadExperienceComments(int experienceId),
+    @required Result experienceCommentsLoaded(int experienceId),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result loadExperienceComments(int experienceId),
+    Result experienceCommentsLoaded(int experienceId),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result loadExperienceComments(_LoadExperienceComments value),
+    @required Result experienceCommentsLoaded(_ExperienceCommentsLoaded value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result loadExperienceComments(_LoadExperienceComments value),
+    Result experienceCommentsLoaded(_ExperienceCommentsLoaded value),
     @required Result orElse(),
   });
 
@@ -71,36 +71,37 @@ class _$CommentWatcherEventCopyWithImpl<$Res>
   }
 }
 
-abstract class _$LoadExperienceCommentsCopyWith<$Res>
+abstract class _$ExperienceCommentsLoadedCopyWith<$Res>
   implements $CommentWatcherEventCopyWith<$Res> {
-  factory _$LoadExperienceCommentsCopyWith(_LoadExperienceComments value,
-    $Res Function(_LoadExperienceComments) then) =
-  __$LoadExperienceCommentsCopyWithImpl<$Res>;
+  factory _$ExperienceCommentsLoadedCopyWith(_ExperienceCommentsLoaded value,
+    $Res Function(_ExperienceCommentsLoaded) then) =
+  __$ExperienceCommentsLoadedCopyWithImpl<$Res>;
   @override
   $Res call({int experienceId});
 }
 
-class __$LoadExperienceCommentsCopyWithImpl<$Res> extends _$CommentWatcherEventCopyWithImpl<$Res>
-  implements _$LoadExperienceCommentsCopyWith<$Res> {
-  __$LoadExperienceCommentsCopyWithImpl(_LoadExperienceComments _value,
-    $Res Function(_LoadExperienceComments) _then)
-    : super(_value, (v) => _then(v as _LoadExperienceComments));
+class __$ExperienceCommentsLoadedCopyWithImpl<$Res> extends _$CommentWatcherEventCopyWithImpl<$Res>
+  implements _$ExperienceCommentsLoadedCopyWith<$Res> {
+  __$ExperienceCommentsLoadedCopyWithImpl(_ExperienceCommentsLoaded _value,
+    $Res Function(_ExperienceCommentsLoaded) _then)
+    : super(_value, (v) => _then(v as _ExperienceCommentsLoaded));
 
   @override
-  _LoadExperienceComments get _value => super._value as _LoadExperienceComments;
+  _ExperienceCommentsLoaded get _value =>
+    super._value as _ExperienceCommentsLoaded;
 
   @override
   $Res call({
     Object experienceId = freezed,
   }) {
-    return _then(_LoadExperienceComments(
+    return _then(_ExperienceCommentsLoaded(
       experienceId == freezed ? _value.experienceId : experienceId as int,
     ));
   }
 }
 
-class _$_LoadExperienceComments implements _LoadExperienceComments {
-  const _$_LoadExperienceComments(this.experienceId)
+class _$_ExperienceCommentsLoaded implements _ExperienceCommentsLoaded {
+  const _$_ExperienceCommentsLoaded(this.experienceId)
     : assert(experienceId != null);
 
   @override
@@ -108,13 +109,13 @@ class _$_LoadExperienceComments implements _LoadExperienceComments {
 
   @override
   String toString() {
-    return 'CommentWatcherEvent.loadExperienceComments(experienceId: $experienceId)';
+    return 'CommentWatcherEvent.experienceCommentsLoaded(experienceId: $experienceId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _LoadExperienceComments &&
+      (other is _ExperienceCommentsLoaded &&
         (identical(other.experienceId, experienceId) ||
           const DeepCollectionEquality()
             .equals(other.experienceId, experienceId)));
@@ -125,28 +126,28 @@ class _$_LoadExperienceComments implements _LoadExperienceComments {
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceId);
 
   @override
-  _$LoadExperienceCommentsCopyWith<_LoadExperienceComments> get copyWith =>
-    __$LoadExperienceCommentsCopyWithImpl<_LoadExperienceComments>(
+  _$ExperienceCommentsLoadedCopyWith<_ExperienceCommentsLoaded> get copyWith =>
+    __$ExperienceCommentsLoadedCopyWithImpl<_ExperienceCommentsLoaded>(
       this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result loadExperienceComments(int experienceId),
+    @required Result experienceCommentsLoaded(int experienceId),
   }) {
-    assert(loadExperienceComments != null);
-    return loadExperienceComments(experienceId);
+    assert(experienceCommentsLoaded != null);
+    return experienceCommentsLoaded(experienceId);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result loadExperienceComments(int experienceId),
+    Result experienceCommentsLoaded(int experienceId),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (loadExperienceComments != null) {
-      return loadExperienceComments(experienceId);
+    if (experienceCommentsLoaded != null) {
+      return experienceCommentsLoaded(experienceId);
     }
     return orElse();
   }
@@ -154,34 +155,34 @@ class _$_LoadExperienceComments implements _LoadExperienceComments {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result loadExperienceComments(_LoadExperienceComments value),
+    @required Result experienceCommentsLoaded(_ExperienceCommentsLoaded value),
   }) {
-    assert(loadExperienceComments != null);
-    return loadExperienceComments(this);
+    assert(experienceCommentsLoaded != null);
+    return experienceCommentsLoaded(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result loadExperienceComments(_LoadExperienceComments value),
+    Result experienceCommentsLoaded(_ExperienceCommentsLoaded value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (loadExperienceComments != null) {
-      return loadExperienceComments(this);
+    if (experienceCommentsLoaded != null) {
+      return experienceCommentsLoaded(this);
     }
     return orElse();
   }
 }
 
-abstract class _LoadExperienceComments implements CommentWatcherEvent {
-  const factory _LoadExperienceComments(int experienceId) =
-  _$_LoadExperienceComments;
+abstract class _ExperienceCommentsLoaded implements CommentWatcherEvent {
+  const factory _ExperienceCommentsLoaded(int experienceId) =
+  _$_ExperienceCommentsLoaded;
 
   @override
   int get experienceId;
   @override
-  _$LoadExperienceCommentsCopyWith<_LoadExperienceComments> get copyWith;
+  _$ExperienceCommentsLoadedCopyWith<_ExperienceCommentsLoaded> get copyWith;
 }
 
 class _$CommentWatcherStateTearOff {

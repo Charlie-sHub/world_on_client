@@ -2,12 +2,12 @@ part of 'comment_form_bloc.dart';
 
 @freezed
 abstract class CommentFormEvent with _$CommentFormEvent {
-  const factory CommentFormEvent.initialize({
+  const factory CommentFormEvent.initialized({
     @required Option<Comment> commentOption,
     @required int experienceId,
-  }) = _Initialize;
+  }) = _Initialized;
 
-  const factory CommentFormEvent.contentChange(String content) = _ContentChange;
+  const factory CommentFormEvent.contentChanged(String content) = _ContentChanged;
 
-  const factory CommentFormEvent.submit() = _Submit;
+  const factory CommentFormEvent.submitted() = _Submitted;
 }

@@ -39,19 +39,19 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
   @override
   Stream<ExperienceManagementFormState> mapEventToState(ExperienceManagementFormEvent event) async* {
     yield* event.map(
-      initialize: onInitialize,
-      nameChange: onNameChange,
-      descriptionChange: onDescriptionChange,
-      coordinatesChange: onCoordinatesChange,
-      difficultyChange: onDifficultyChange,
-      objectivesChange: onObjectivesChange,
-      rewardsChange: onRewardsChange,
-      tagsChange: onTagsChange,
-      submit: onSubmit,
+      initialized: onInitialized,
+      nameChanged: onNameChanged,
+      descriptionChanged: onDescriptionChanged,
+      coordinatesChanged: onCoordinatesChanged,
+      difficultyChanged: onDifficultyChanged,
+      objectivesChanged: onObjectivesChanged,
+      rewardsChanged: onRewardsChanged,
+      tagsChanged: onTagsChanged,
+      submitted: onSubmitted,
     );
   }
 
-  Stream<ExperienceManagementFormState> onSubmit(_Submit event) async* {
+  Stream<ExperienceManagementFormState> onSubmitted(_Submitted event) async* {
     Either<Failure, Unit> _failureOrUnit;
     yield state.copyWith(
       isSubmitting: true,
@@ -81,7 +81,7 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
     );
   }
 
-  Stream<ExperienceManagementFormState> onTagsChange(_TagsChange event) async* {
+  Stream<ExperienceManagementFormState> onTagsChanged(_TagsChanged event) async* {
     yield state.copyWith(
       experience: state.experience.copyWith(
         tags: TagSet(event.tags),
@@ -90,7 +90,7 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
     );
   }
 
-  Stream<ExperienceManagementFormState> onRewardsChange(_RewardsChange event) async* {
+  Stream<ExperienceManagementFormState> onRewardsChanged(_RewardsChanged event) async* {
     yield state.copyWith(
       experience: state.experience.copyWith(
         rewards: RewardSet(event.rewards.map((primitiveRewards) => primitiveRewards.toDomain()).toSet()),
@@ -99,7 +99,7 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
     );
   }
 
-  Stream<ExperienceManagementFormState> onObjectivesChange(_ObjectivesChange event) async* {
+  Stream<ExperienceManagementFormState> onObjectivesChanged(_ObjectivesChanged event) async* {
     yield state.copyWith(
       experience: state.experience.copyWith(
         objectives: ObjectiveSet(event.objectives.map((primitiveObjective) => primitiveObjective.toDomain()).toSet()),
@@ -108,7 +108,7 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
     );
   }
 
-  Stream<ExperienceManagementFormState> onDifficultyChange(_DifficultyChange event) async* {
+  Stream<ExperienceManagementFormState> onDifficultyChanged(_DifficultyChanged event) async* {
     yield state.copyWith(
       experience: state.experience.copyWith(
         difficulty: Difficulty(event.difficulty),
@@ -117,7 +117,7 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
     );
   }
 
-  Stream<ExperienceManagementFormState> onCoordinatesChange(_CoordinatesChange event) async* {
+  Stream<ExperienceManagementFormState> onCoordinatesChanged(_CoordinatesChanged event) async* {
     yield state.copyWith(
       experience: state.experience.copyWith(
         coordinates: Coordinates(
@@ -129,7 +129,7 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
     );
   }
 
-  Stream<ExperienceManagementFormState> onDescriptionChange(_DescriptionChange event) async* {
+  Stream<ExperienceManagementFormState> onDescriptionChanged(_DescriptionChanged event) async* {
     yield state.copyWith(
       experience: state.experience.copyWith(
         description: EntityDescription(event.description),
@@ -138,7 +138,7 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
     );
   }
 
-  Stream<ExperienceManagementFormState> onNameChange(_NameChange event) async* {
+  Stream<ExperienceManagementFormState> onNameChanged(_NameChanged event) async* {
     yield state.copyWith(
       experience: state.experience.copyWith(
         name: Name(event.name),
@@ -147,7 +147,7 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
     );
   }
 
-  Stream<ExperienceManagementFormState> onInitialize(_Initialize event) async* {
+  Stream<ExperienceManagementFormState> onInitialized(_Initialized event) async* {
     yield await event.experienceOption.fold(
       () async {
         final _getLoggedInUser = getIt<GetLoggedInUser>();

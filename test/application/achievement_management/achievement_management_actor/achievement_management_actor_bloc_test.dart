@@ -20,7 +20,7 @@ void main() {
       deleteAchievement = getIt<DeleteAchievement>();
     },
   );
-  final deletionEvent = AchievementManagementActorEvent.delete(Achievement.empty());
+  final deletionEvent = AchievementManagementActorEvent.deleted(Achievement.empty());
   blocTest(
     TestDescription.shouldEmitInitial,
     build: () async => getIt<AchievementManagementActorBloc>(),

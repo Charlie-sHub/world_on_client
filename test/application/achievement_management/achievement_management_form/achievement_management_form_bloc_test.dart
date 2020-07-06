@@ -60,7 +60,7 @@ void main() {
       blocTest(
         TestDescription.shouldEmitInitialized,
         build: () async => getIt<AchievementManagementFormBloc>(),
-        act: (bloc) async => bloc.add(AchievementManagementFormEvent.initialize(some(achievementToEdit))),
+        act: (bloc) async => bloc.add(AchievementManagementFormEvent.initialized(some(achievementToEdit))),
         expect: [
           AchievementManagementFormState.initial().copyWith(
             achievement: achievementToEdit,
@@ -71,7 +71,7 @@ void main() {
       blocTest(
         TestDescription.shouldNotEmitInitialized,
         build: () async => getIt<AchievementManagementFormBloc>(),
-        act: (bloc) async => bloc.add(AchievementManagementFormEvent.initialize(none())),
+        act: (bloc) async => bloc.add(AchievementManagementFormEvent.initialized(none())),
         skip: 0,
         expect: [
           AchievementManagementFormState.initial(),
@@ -86,8 +86,8 @@ void main() {
         "${TestDescription.shouldEmitUpdated} with the name",
         build: () async => getIt<AchievementManagementFormBloc>(),
         act: (bloc) async {
-          bloc.add(AchievementManagementFormEvent.initialize(none()));
-          bloc.add(const AchievementManagementFormEvent.nameChange(name));
+          bloc.add(AchievementManagementFormEvent.initialized(none()));
+          bloc.add(const AchievementManagementFormEvent.nameChanged(name));
         },
         expect: [
           AchievementManagementFormState.initial().copyWith(
@@ -101,8 +101,8 @@ void main() {
         "${TestDescription.shouldEmitUpdated} with the description",
         build: () async => getIt<AchievementManagementFormBloc>(),
         act: (bloc) async {
-          bloc.add(AchievementManagementFormEvent.initialize(none()));
-          bloc.add(const AchievementManagementFormEvent.descriptionChange(description));
+          bloc.add(AchievementManagementFormEvent.initialized(none()));
+          bloc.add(const AchievementManagementFormEvent.descriptionChanged(description));
         },
         expect: [
           AchievementManagementFormState.initial().copyWith(
@@ -116,8 +116,8 @@ void main() {
         "${TestDescription.shouldEmitUpdated} with the experience points",
         build: () async => getIt<AchievementManagementFormBloc>(),
         act: (bloc) async {
-          bloc.add(AchievementManagementFormEvent.initialize(none()));
-          bloc.add(const AchievementManagementFormEvent.experiencePointsChange(experiencePoints));
+          bloc.add(AchievementManagementFormEvent.initialized(none()));
+          bloc.add(const AchievementManagementFormEvent.experiencePointsChanged(experiencePoints));
         },
         expect: [
           AchievementManagementFormState.initial().copyWith(
@@ -131,8 +131,8 @@ void main() {
         "${TestDescription.shouldEmitUpdated} with the tags",
         build: () async => getIt<AchievementManagementFormBloc>(),
         act: (bloc) async {
-          bloc.add(AchievementManagementFormEvent.initialize(none()));
-          bloc.add(AchievementManagementFormEvent.tagsChange(tags));
+          bloc.add(AchievementManagementFormEvent.initialized(none()));
+          bloc.add(AchievementManagementFormEvent.tagsChanged(tags));
         },
         expect: [
           AchievementManagementFormState.initial().copyWith(
@@ -150,12 +150,12 @@ void main() {
           return getIt<AchievementManagementFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(AchievementManagementFormEvent.initialize(none()));
-          bloc.add(const AchievementManagementFormEvent.nameChange(name));
-          bloc.add(const AchievementManagementFormEvent.descriptionChange(description));
-          bloc.add(const AchievementManagementFormEvent.experiencePointsChange(experiencePoints));
-          bloc.add(AchievementManagementFormEvent.tagsChange(tags));
-          bloc.add(const AchievementManagementFormEvent.submit());
+          bloc.add(AchievementManagementFormEvent.initialized(none()));
+          bloc.add(const AchievementManagementFormEvent.nameChanged(name));
+          bloc.add(const AchievementManagementFormEvent.descriptionChanged(description));
+          bloc.add(const AchievementManagementFormEvent.experiencePointsChanged(experiencePoints));
+          bloc.add(AchievementManagementFormEvent.tagsChanged(tags));
+          bloc.add(const AchievementManagementFormEvent.submitted());
         },
         verify: (_) async {
           verify(createAchievement.call(any));
@@ -228,9 +228,9 @@ void main() {
           return getIt<AchievementManagementFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(AchievementManagementFormEvent.initialize(some(achievementToEdit)));
-          bloc.add(const AchievementManagementFormEvent.nameChange(name));
-          bloc.add(const AchievementManagementFormEvent.submit());
+          bloc.add(AchievementManagementFormEvent.initialized(some(achievementToEdit)));
+          bloc.add(const AchievementManagementFormEvent.nameChanged(name));
+          bloc.add(const AchievementManagementFormEvent.submitted());
         },
         verify: (_) async {
           verify(editAchievement.call(any));
@@ -279,12 +279,12 @@ void main() {
           return getIt<AchievementManagementFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(AchievementManagementFormEvent.initialize(none()));
-          bloc.add(const AchievementManagementFormEvent.nameChange(name));
-          bloc.add(const AchievementManagementFormEvent.descriptionChange(description));
-          bloc.add(const AchievementManagementFormEvent.experiencePointsChange(experiencePoints));
-          bloc.add(AchievementManagementFormEvent.tagsChange(tags));
-          bloc.add(const AchievementManagementFormEvent.submit());
+          bloc.add(AchievementManagementFormEvent.initialized(none()));
+          bloc.add(const AchievementManagementFormEvent.nameChanged(name));
+          bloc.add(const AchievementManagementFormEvent.descriptionChanged(description));
+          bloc.add(const AchievementManagementFormEvent.experiencePointsChanged(experiencePoints));
+          bloc.add(AchievementManagementFormEvent.tagsChanged(tags));
+          bloc.add(const AchievementManagementFormEvent.submitted());
         },
         verify: (_) async {
           verify(createAchievement.call(any));
@@ -358,9 +358,9 @@ void main() {
           return getIt<AchievementManagementFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(AchievementManagementFormEvent.initialize(some(achievementToEdit)));
-          bloc.add(const AchievementManagementFormEvent.nameChange(name));
-          bloc.add(const AchievementManagementFormEvent.submit());
+          bloc.add(AchievementManagementFormEvent.initialized(some(achievementToEdit)));
+          bloc.add(const AchievementManagementFormEvent.nameChanged(name));
+          bloc.add(const AchievementManagementFormEvent.submitted());
         },
         verify: (_) async {
           verify(editAchievement.call(any));
@@ -398,10 +398,10 @@ void main() {
           return getIt<AchievementManagementFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(AchievementManagementFormEvent.initialize(some(achievementToEdit)));
-          bloc.add(const AchievementManagementFormEvent.nameChange(name));
-          bloc.add(const AchievementManagementFormEvent.submit());
-          bloc.add(const AchievementManagementFormEvent.nameChange(name));
+          bloc.add(AchievementManagementFormEvent.initialized(some(achievementToEdit)));
+          bloc.add(const AchievementManagementFormEvent.nameChanged(name));
+          bloc.add(const AchievementManagementFormEvent.submitted());
+          bloc.add(const AchievementManagementFormEvent.nameChanged(name));
         },
         verify: (_) async {
           verify(editAchievement.call(any));

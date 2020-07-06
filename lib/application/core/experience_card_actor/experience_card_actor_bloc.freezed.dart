@@ -12,8 +12,8 @@ T _$identity<T>(T value) => value;
 class _$ExperienceCardActorEventTearOff {
   const _$ExperienceCardActorEventTearOff();
 
-  _AddExperienceToLog addExperienceToLog(int experienceId) {
-    return _AddExperienceToLog(
+  _AddedExperienceToLog addedExperienceToLog(int experienceId) {
+    return _AddedExperienceToLog(
       experienceId,
     );
   }
@@ -27,20 +27,20 @@ mixin _$ExperienceCardActorEvent {
 
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result addExperienceToLog(int experienceId),
+    @required Result addedExperienceToLog(int experienceId),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result addExperienceToLog(int experienceId),
+    Result addedExperienceToLog(int experienceId),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result addExperienceToLog(_AddExperienceToLog value),
+    @required Result addedExperienceToLog(_AddedExperienceToLog value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result addExperienceToLog(_AddExperienceToLog value),
+    Result addedExperienceToLog(_AddedExperienceToLog value),
     @required Result orElse(),
   });
 
@@ -71,47 +71,49 @@ class _$ExperienceCardActorEventCopyWithImpl<$Res>
   }
 }
 
-abstract class _$AddExperienceToLogCopyWith<$Res>
+abstract class _$AddedExperienceToLogCopyWith<$Res>
   implements $ExperienceCardActorEventCopyWith<$Res> {
-  factory _$AddExperienceToLogCopyWith(_AddExperienceToLog value, $Res Function(_AddExperienceToLog) then) =
-  __$AddExperienceToLogCopyWithImpl<$Res>;
+  factory _$AddedExperienceToLogCopyWith(_AddedExperienceToLog value,
+    $Res Function(_AddedExperienceToLog) then) =
+  __$AddedExperienceToLogCopyWithImpl<$Res>;
   @override
   $Res call({int experienceId});
 }
 
-class __$AddExperienceToLogCopyWithImpl<$Res> extends _$ExperienceCardActorEventCopyWithImpl<$Res>
-  implements _$AddExperienceToLogCopyWith<$Res> {
-  __$AddExperienceToLogCopyWithImpl(_AddExperienceToLog _value, $Res Function(_AddExperienceToLog) _then)
-    : super(_value, (v) => _then(v as _AddExperienceToLog));
+class __$AddedExperienceToLogCopyWithImpl<$Res> extends _$ExperienceCardActorEventCopyWithImpl<$Res>
+  implements _$AddedExperienceToLogCopyWith<$Res> {
+  __$AddedExperienceToLogCopyWithImpl(_AddedExperienceToLog _value, $Res Function(_AddedExperienceToLog) _then)
+    : super(_value, (v) => _then(v as _AddedExperienceToLog));
 
   @override
-  _AddExperienceToLog get _value => super._value as _AddExperienceToLog;
+  _AddedExperienceToLog get _value => super._value as _AddedExperienceToLog;
 
   @override
   $Res call({
     Object experienceId = freezed,
   }) {
-    return _then(_AddExperienceToLog(
+    return _then(_AddedExperienceToLog(
       experienceId == freezed ? _value.experienceId : experienceId as int,
     ));
   }
 }
 
-class _$_AddExperienceToLog implements _AddExperienceToLog {
-  const _$_AddExperienceToLog(this.experienceId) : assert(experienceId != null);
+class _$_AddedExperienceToLog implements _AddedExperienceToLog {
+  const _$_AddedExperienceToLog(this.experienceId)
+    : assert(experienceId != null);
 
   @override
   final int experienceId;
 
   @override
   String toString() {
-    return 'ExperienceCardActorEvent.addExperienceToLog(experienceId: $experienceId)';
+    return 'ExperienceCardActorEvent.addedExperienceToLog(experienceId: $experienceId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _AddExperienceToLog &&
+      (other is _AddedExperienceToLog &&
         (identical(other.experienceId, experienceId) ||
           const DeepCollectionEquality()
             .equals(other.experienceId, experienceId)));
@@ -122,27 +124,28 @@ class _$_AddExperienceToLog implements _AddExperienceToLog {
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceId);
 
   @override
-  _$AddExperienceToLogCopyWith<_AddExperienceToLog> get copyWith =>
-    __$AddExperienceToLogCopyWithImpl<_AddExperienceToLog>(this, _$identity);
+  _$AddedExperienceToLogCopyWith<_AddedExperienceToLog> get copyWith =>
+    __$AddedExperienceToLogCopyWithImpl<_AddedExperienceToLog>(
+      this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result addExperienceToLog(int experienceId),
+    @required Result addedExperienceToLog(int experienceId),
   }) {
-    assert(addExperienceToLog != null);
-    return addExperienceToLog(experienceId);
+    assert(addedExperienceToLog != null);
+    return addedExperienceToLog(experienceId);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result addExperienceToLog(int experienceId),
+    Result addedExperienceToLog(int experienceId),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (addExperienceToLog != null) {
-      return addExperienceToLog(experienceId);
+    if (addedExperienceToLog != null) {
+      return addedExperienceToLog(experienceId);
     }
     return orElse();
   }
@@ -150,33 +153,34 @@ class _$_AddExperienceToLog implements _AddExperienceToLog {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result addExperienceToLog(_AddExperienceToLog value),
+    @required Result addedExperienceToLog(_AddedExperienceToLog value),
   }) {
-    assert(addExperienceToLog != null);
-    return addExperienceToLog(this);
+    assert(addedExperienceToLog != null);
+    return addedExperienceToLog(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result addExperienceToLog(_AddExperienceToLog value),
+    Result addedExperienceToLog(_AddedExperienceToLog value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (addExperienceToLog != null) {
-      return addExperienceToLog(this);
+    if (addedExperienceToLog != null) {
+      return addedExperienceToLog(this);
     }
     return orElse();
   }
 }
 
-abstract class _AddExperienceToLog implements ExperienceCardActorEvent {
-  const factory _AddExperienceToLog(int experienceId) = _$_AddExperienceToLog;
+abstract class _AddedExperienceToLog implements ExperienceCardActorEvent {
+  const factory _AddedExperienceToLog(int experienceId) =
+  _$_AddedExperienceToLog;
 
   @override
   int get experienceId;
   @override
-  _$AddExperienceToLogCopyWith<_AddExperienceToLog> get copyWith;
+  _$AddedExperienceToLogCopyWith<_AddedExperienceToLog> get copyWith;
 }
 
 class _$ExperienceCardActorStateTearOff {

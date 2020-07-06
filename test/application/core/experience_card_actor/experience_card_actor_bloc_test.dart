@@ -36,7 +36,7 @@ void main() {
           when(addExperienceToLog.call(any)).thenAnswer((_) async => right(unit));
           return getIt<ExperienceCardActorBloc>();
         },
-        act: (bloc) async => bloc.add(const ExperienceCardActorEvent.addExperienceToLog(experienceId)),
+        act: (bloc) async => bloc.add(const ExperienceCardActorEvent.addedExperienceToLog(experienceId)),
         verify: (_) async {
           verify(addExperienceToLog.call(any));
           verifyNoMoreInteractions(addExperienceToLog);
@@ -52,7 +52,7 @@ void main() {
           when(addExperienceToLog.call(any)).thenAnswer((_) async => left(failure));
           return getIt<ExperienceCardActorBloc>();
         },
-        act: (bloc) async => bloc.add(const ExperienceCardActorEvent.addExperienceToLog(experienceId)),
+        act: (bloc) async => bloc.add(const ExperienceCardActorEvent.addedExperienceToLog(experienceId)),
         verify: (_) async {
           verify(addExperienceToLog.call(any));
           verifyNoMoreInteractions(addExperienceToLog);

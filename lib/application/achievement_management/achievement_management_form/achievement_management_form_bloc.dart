@@ -31,16 +31,16 @@ class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent,
   @override
   Stream<AchievementManagementFormState> mapEventToState(AchievementManagementFormEvent event) async* {
     yield* event.map(
-      initialize: onInitialize,
-      nameChange: onNameChange,
-      descriptionChange: onDescriptionChange,
-      experiencePointsChange: onExperiencePointsChange,
-      tagsChange: onTagsChange,
-      submit: onSubmit,
+      initialized: onInitialized,
+      nameChanged: onNameChanged,
+      descriptionChanged: onDescriptionChanged,
+      experiencePointsChanged: onExperiencePointsChanged,
+      tagsChanged: onTagsChanged,
+      submitted: onSubmitted,
     );
   }
 
-  Stream<AchievementManagementFormState> onSubmit(_Submit event) async* {
+  Stream<AchievementManagementFormState> onSubmitted(_Submitted event) async* {
     Either<Failure, Unit> _failureOrUnit;
     yield state.copyWith(
       isSubmitting: true,
@@ -70,7 +70,7 @@ class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent,
     );
   }
 
-  Stream<AchievementManagementFormState> onTagsChange(_TagsChange event) async* {
+  Stream<AchievementManagementFormState> onTagsChanged(_TagsChanged event) async* {
     yield state.copyWith(
       achievement: state.achievement.copyWith(
         tags: TagSet(event.tags),
@@ -79,7 +79,7 @@ class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent,
     );
   }
 
-  Stream<AchievementManagementFormState> onExperiencePointsChange(_ExperiencePointsChange event) async* {
+  Stream<AchievementManagementFormState> onExperiencePointsChanged(_ExperiencePointsChanged event) async* {
     yield state.copyWith(
       achievement: state.achievement.copyWith(
         experiencePoints: ExperiencePoints(event.experiencePoints),
@@ -88,7 +88,7 @@ class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent,
     );
   }
 
-  Stream<AchievementManagementFormState> onDescriptionChange(_DescriptionChange event) async* {
+  Stream<AchievementManagementFormState> onDescriptionChanged(_DescriptionChanged event) async* {
     yield state.copyWith(
       achievement: state.achievement.copyWith(
         description: EntityDescription(event.description),
@@ -97,7 +97,7 @@ class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent,
     );
   }
 
-  Stream<AchievementManagementFormState> onNameChange(_NameChange event) async* {
+  Stream<AchievementManagementFormState> onNameChanged(_NameChanged event) async* {
     yield state.copyWith(
       achievement: state.achievement.copyWith(
         name: Name(event.name),
@@ -106,7 +106,7 @@ class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent,
     );
   }
 
-  Stream<AchievementManagementFormState> onInitialize(_Initialize event) async* {
+  Stream<AchievementManagementFormState> onInitialized(_Initialized event) async* {
     yield await event.achievementOption.fold(
       () async {
         final _getLoggedInUser = getIt<GetLoggedInUser>();

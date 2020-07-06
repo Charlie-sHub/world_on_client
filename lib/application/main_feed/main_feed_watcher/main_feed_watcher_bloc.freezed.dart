@@ -12,8 +12,8 @@ T _$identity<T>(T value) => value;
 class _$MainFeedWatcherEventTearOff {
   const _$MainFeedWatcherEventTearOff();
 
-  _FillFeed fillFeed() {
-    return const _FillFeed();
+  _FeedFilled feedFilled() {
+    return const _FeedFilled();
   }
 }
 
@@ -23,20 +23,20 @@ const $MainFeedWatcherEvent = _$MainFeedWatcherEventTearOff();
 mixin _$MainFeedWatcherEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result fillFeed(),
+    @required Result feedFilled(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result fillFeed(),
+    Result feedFilled(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result fillFeed(_FillFeed value),
+    @required Result feedFilled(_FeedFilled value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result fillFeed(_FillFeed value),
+    Result feedFilled(_FeedFilled value),
     @required Result orElse(),
   });
 }
@@ -53,31 +53,31 @@ class _$MainFeedWatcherEventCopyWithImpl<$Res> implements $MainFeedWatcherEventC
   final $Res Function(MainFeedWatcherEvent) _then;
 }
 
-abstract class _$FillFeedCopyWith<$Res> {
-  factory _$FillFeedCopyWith(_FillFeed value, $Res Function(_FillFeed) then) =
-  __$FillFeedCopyWithImpl<$Res>;
+abstract class _$FeedFilledCopyWith<$Res> {
+  factory _$FeedFilledCopyWith(_FeedFilled value, $Res Function(_FeedFilled) then) =
+  __$FeedFilledCopyWithImpl<$Res>;
 }
 
-class __$FillFeedCopyWithImpl<$Res> extends _$MainFeedWatcherEventCopyWithImpl<$Res>
-  implements _$FillFeedCopyWith<$Res> {
-  __$FillFeedCopyWithImpl(_FillFeed _value, $Res Function(_FillFeed) _then)
-    : super(_value, (v) => _then(v as _FillFeed));
+class __$FeedFilledCopyWithImpl<$Res> extends _$MainFeedWatcherEventCopyWithImpl<$Res>
+  implements _$FeedFilledCopyWith<$Res> {
+  __$FeedFilledCopyWithImpl(_FeedFilled _value, $Res Function(_FeedFilled) _then)
+    : super(_value, (v) => _then(v as _FeedFilled));
 
   @override
-  _FillFeed get _value => super._value as _FillFeed;
+  _FeedFilled get _value => super._value as _FeedFilled;
 }
 
-class _$_FillFeed implements _FillFeed {
-  const _$_FillFeed();
+class _$_FeedFilled implements _FeedFilled {
+  const _$_FeedFilled();
 
   @override
   String toString() {
-    return 'MainFeedWatcherEvent.fillFeed()';
+    return 'MainFeedWatcherEvent.feedFilled()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _FillFeed);
+    return identical(this, other) || (other is _FeedFilled);
   }
 
   @override
@@ -86,21 +86,21 @@ class _$_FillFeed implements _FillFeed {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result fillFeed(),
+    @required Result feedFilled(),
   }) {
-    assert(fillFeed != null);
-    return fillFeed();
+    assert(feedFilled != null);
+    return feedFilled();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result fillFeed(),
+    Result feedFilled(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (fillFeed != null) {
-      return fillFeed();
+    if (feedFilled != null) {
+      return feedFilled();
     }
     return orElse();
   }
@@ -108,28 +108,28 @@ class _$_FillFeed implements _FillFeed {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result fillFeed(_FillFeed value),
+    @required Result feedFilled(_FeedFilled value),
   }) {
-    assert(fillFeed != null);
-    return fillFeed(this);
+    assert(feedFilled != null);
+    return feedFilled(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result fillFeed(_FillFeed value),
+    Result feedFilled(_FeedFilled value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (fillFeed != null) {
-      return fillFeed(this);
+    if (feedFilled != null) {
+      return feedFilled(this);
     }
     return orElse();
   }
 }
 
-abstract class _FillFeed implements MainFeedWatcherEvent {
-  const factory _FillFeed() = _$_FillFeed;
+abstract class _FeedFilled implements MainFeedWatcherEvent {
+  const factory _FeedFilled() = _$_FeedFilled;
 }
 
 class _$MainFeedWatcherStateTearOff {

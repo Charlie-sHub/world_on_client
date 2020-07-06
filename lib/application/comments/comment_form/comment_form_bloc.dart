@@ -16,9 +16,7 @@ import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 import 'package:worldon/injection.dart';
 
 part 'comment_form_bloc.freezed.dart';
-
 part 'comment_form_event.dart';
-
 part 'comment_form_state.dart';
 
 @injectable
@@ -28,13 +26,13 @@ class CommentFormBloc extends Bloc<CommentFormEvent, CommentFormState> {
   @override
   Stream<CommentFormState> mapEventToState(CommentFormEvent event) async* {
     yield* event.map(
-      initialize: onInitialize,
-      contentChange: onContentChange,
-      submit: onSubmit,
+      initialized: onInitialized,
+      contentChanged: onContentChanged,
+      submitted: onSubmitted,
     );
   }
 
-  Stream<CommentFormState> onSubmit(_Submit event) async* {
+  Stream<CommentFormState> onSubmitted(_Submitted event) async* {
     Either<Failure, Unit> _failureOrUnit;
     yield state.copyWith(
       isSubmitting: true,
@@ -65,7 +63,7 @@ class CommentFormBloc extends Bloc<CommentFormEvent, CommentFormState> {
     );
   }
 
-  Stream<CommentFormState> onContentChange(_ContentChange event) async* {
+  Stream<CommentFormState> onContentChanged(_ContentChanged event) async* {
     yield state.copyWith(
       comment: state.comment.copyWith(
         content: CommentContent(event.content),
@@ -74,7 +72,7 @@ class CommentFormBloc extends Bloc<CommentFormEvent, CommentFormState> {
     );
   }
 
-  Stream<CommentFormState> onInitialize(_Initialize event) async* {
+  Stream<CommentFormState> onInitialized(_Initialized event) async* {
     yield await event.commentOption.fold(
       () async {
         final _getLoggedInUser = getIt<GetLoggedInUser>();
