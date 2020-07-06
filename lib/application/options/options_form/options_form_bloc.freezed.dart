@@ -39,7 +39,6 @@ mixin _$OptionsFormEvent {
     @required Result languageCodeChange(String languageCode),
     @required Result submit(),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialize(Option<Options> optionsOption),
@@ -47,14 +46,12 @@ mixin _$OptionsFormEvent {
     Result submit(),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialize(_Initialize value),
     @required Result languageCodeChange(_LanguageCodeChange value),
     @required Result submit(_Submit value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialize(_Initialize value),
@@ -72,19 +69,20 @@ class _$OptionsFormEventCopyWithImpl<$Res> implements $OptionsFormEventCopyWith<
   _$OptionsFormEventCopyWithImpl(this._value, this._then);
 
   final OptionsFormEvent _value;
-
   // ignore: unused_field
   final $Res Function(OptionsFormEvent) _then;
 }
 
 abstract class _$InitializeCopyWith<$Res> {
-  factory _$InitializeCopyWith(_Initialize value, $Res Function(_Initialize) then) = __$InitializeCopyWithImpl<$Res>;
-
+  factory _$InitializeCopyWith(_Initialize value, $Res Function(_Initialize) then) =
+  __$InitializeCopyWithImpl<$Res>;
   $Res call({Option<Options> optionsOption});
 }
 
-class __$InitializeCopyWithImpl<$Res> extends _$OptionsFormEventCopyWithImpl<$Res> implements _$InitializeCopyWith<$Res> {
-  __$InitializeCopyWithImpl(_Initialize _value, $Res Function(_Initialize) _then) : super(_value, (v) => _then(v as _Initialize));
+class __$InitializeCopyWithImpl<$Res> extends _$OptionsFormEventCopyWithImpl<$Res>
+  implements _$InitializeCopyWith<$Res> {
+  __$InitializeCopyWithImpl(_Initialize _value, $Res Function(_Initialize) _then)
+    : super(_value, (v) => _then(v as _Initialize));
 
   @override
   _Initialize get _value => super._value as _Initialize;
@@ -94,7 +92,9 @@ class __$InitializeCopyWithImpl<$Res> extends _$OptionsFormEventCopyWithImpl<$Re
     Object optionsOption = freezed,
   }) {
     return _then(_Initialize(
-      optionsOption == freezed ? _value.optionsOption : optionsOption as Option<Options>,
+      optionsOption == freezed
+        ? _value.optionsOption
+        : optionsOption as Option<Options>,
     ));
   }
 }
@@ -112,14 +112,20 @@ class _$_Initialize implements _Initialize {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initialize && (identical(other.optionsOption, optionsOption) || const DeepCollectionEquality().equals(other.optionsOption, optionsOption)));
+    return identical(this, other) ||
+      (other is _Initialize &&
+        (identical(other.optionsOption, optionsOption) ||
+          const DeepCollectionEquality()
+            .equals(other.optionsOption, optionsOption)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(optionsOption);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(optionsOption);
 
   @override
-  _$InitializeCopyWith<_Initialize> get copyWith => __$InitializeCopyWithImpl<_Initialize>(this, _$identity);
+  _$InitializeCopyWith<_Initialize> get copyWith =>
+    __$InitializeCopyWithImpl<_Initialize>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -182,18 +188,19 @@ abstract class _Initialize implements OptionsFormEvent {
   const factory _Initialize(Option<Options> optionsOption) = _$_Initialize;
 
   Option<Options> get optionsOption;
-
   _$InitializeCopyWith<_Initialize> get copyWith;
 }
 
 abstract class _$LanguageCodeChangeCopyWith<$Res> {
-  factory _$LanguageCodeChangeCopyWith(_LanguageCodeChange value, $Res Function(_LanguageCodeChange) then) = __$LanguageCodeChangeCopyWithImpl<$Res>;
-
+  factory _$LanguageCodeChangeCopyWith(_LanguageCodeChange value, $Res Function(_LanguageCodeChange) then) =
+  __$LanguageCodeChangeCopyWithImpl<$Res>;
   $Res call({String languageCode});
 }
 
-class __$LanguageCodeChangeCopyWithImpl<$Res> extends _$OptionsFormEventCopyWithImpl<$Res> implements _$LanguageCodeChangeCopyWith<$Res> {
-  __$LanguageCodeChangeCopyWithImpl(_LanguageCodeChange _value, $Res Function(_LanguageCodeChange) _then) : super(_value, (v) => _then(v as _LanguageCodeChange));
+class __$LanguageCodeChangeCopyWithImpl<$Res> extends _$OptionsFormEventCopyWithImpl<$Res>
+  implements _$LanguageCodeChangeCopyWith<$Res> {
+  __$LanguageCodeChangeCopyWithImpl(_LanguageCodeChange _value, $Res Function(_LanguageCodeChange) _then)
+    : super(_value, (v) => _then(v as _LanguageCodeChange));
 
   @override
   _LanguageCodeChange get _value => super._value as _LanguageCodeChange;
@@ -221,14 +228,20 @@ class _$_LanguageCodeChange implements _LanguageCodeChange {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LanguageCodeChange && (identical(other.languageCode, languageCode) || const DeepCollectionEquality().equals(other.languageCode, languageCode)));
+    return identical(this, other) ||
+      (other is _LanguageCodeChange &&
+        (identical(other.languageCode, languageCode) ||
+          const DeepCollectionEquality()
+            .equals(other.languageCode, languageCode)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(languageCode);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(languageCode);
 
   @override
-  _$LanguageCodeChangeCopyWith<_LanguageCodeChange> get copyWith => __$LanguageCodeChangeCopyWithImpl<_LanguageCodeChange>(this, _$identity);
+  _$LanguageCodeChangeCopyWith<_LanguageCodeChange> get copyWith =>
+    __$LanguageCodeChangeCopyWithImpl<_LanguageCodeChange>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -288,19 +301,22 @@ class _$_LanguageCodeChange implements _LanguageCodeChange {
 }
 
 abstract class _LanguageCodeChange implements OptionsFormEvent {
-  const factory _LanguageCodeChange(String languageCode) = _$_LanguageCodeChange;
+  const factory _LanguageCodeChange(String languageCode) =
+  _$_LanguageCodeChange;
 
   String get languageCode;
-
   _$LanguageCodeChangeCopyWith<_LanguageCodeChange> get copyWith;
 }
 
 abstract class _$SubmitCopyWith<$Res> {
-  factory _$SubmitCopyWith(_Submit value, $Res Function(_Submit) then) = __$SubmitCopyWithImpl<$Res>;
+  factory _$SubmitCopyWith(_Submit value, $Res Function(_Submit) then) =
+  __$SubmitCopyWithImpl<$Res>;
 }
 
-class __$SubmitCopyWithImpl<$Res> extends _$OptionsFormEventCopyWithImpl<$Res> implements _$SubmitCopyWith<$Res> {
-  __$SubmitCopyWithImpl(_Submit _value, $Res Function(_Submit) _then) : super(_value, (v) => _then(v as _Submit));
+class __$SubmitCopyWithImpl<$Res> extends _$OptionsFormEventCopyWithImpl<$Res>
+  implements _$SubmitCopyWith<$Res> {
+  __$SubmitCopyWithImpl(_Submit _value, $Res Function(_Submit) _then)
+    : super(_value, (v) => _then(v as _Submit));
 
   @override
   _Submit get _value => super._value as _Submit;
@@ -386,7 +402,10 @@ abstract class _Submit implements OptionsFormEvent {
 class _$OptionsFormStateTearOff {
   const _$OptionsFormStateTearOff();
 
-  _OptionsFormState call({@required Options options, @required bool showErrorMessages, @required bool isSubmitting, @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
+  _OptionsFormState call({@required Options options,
+    @required bool showErrorMessages,
+    @required bool isSubmitting,
+    @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _OptionsFormState(
       options: options,
       showErrorMessages: showErrorMessages,
@@ -401,29 +420,30 @@ const $OptionsFormState = _$OptionsFormStateTearOff();
 
 mixin _$OptionsFormState {
   Options get options;
-
   bool get showErrorMessages;
-
   bool get isSubmitting;
-
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
 
   $OptionsFormStateCopyWith<OptionsFormState> get copyWith;
 }
 
 abstract class $OptionsFormStateCopyWith<$Res> {
-  factory $OptionsFormStateCopyWith(OptionsFormState value, $Res Function(OptionsFormState) then) = _$OptionsFormStateCopyWithImpl<$Res>;
-
-  $Res call({Options options, bool showErrorMessages, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
+  factory $OptionsFormStateCopyWith(OptionsFormState value, $Res Function(OptionsFormState) then) =
+  _$OptionsFormStateCopyWithImpl<$Res>;
+  
+  $Res call({Options options,
+    bool showErrorMessages,
+    bool isSubmitting,
+    Option<Either<Failure, Unit>> failureOrSuccessOption});
 
   $OptionsCopyWith<$Res> get options;
 }
 
-class _$OptionsFormStateCopyWithImpl<$Res> implements $OptionsFormStateCopyWith<$Res> {
+class _$OptionsFormStateCopyWithImpl<$Res>
+  implements $OptionsFormStateCopyWith<$Res> {
   _$OptionsFormStateCopyWithImpl(this._value, this._then);
 
   final OptionsFormState _value;
-
   // ignore: unused_field
   final $Res Function(OptionsFormState) _then;
 
@@ -436,9 +456,14 @@ class _$OptionsFormStateCopyWithImpl<$Res> implements $OptionsFormStateCopyWith<
   }) {
     return _then(_value.copyWith(
       options: options == freezed ? _value.options : options as Options,
-      showErrorMessages: showErrorMessages == freezed ? _value.showErrorMessages : showErrorMessages as bool,
-      isSubmitting: isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
-      failureOrSuccessOption: failureOrSuccessOption == freezed ? _value.failureOrSuccessOption : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+      showErrorMessages: showErrorMessages == freezed
+        ? _value.showErrorMessages
+        : showErrorMessages as bool,
+      isSubmitting:
+      isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      failureOrSuccessOption: failureOrSuccessOption == freezed
+        ? _value.failureOrSuccessOption
+        : failureOrSuccessOption as Option<Either<Failure, Unit>>,
     ));
   }
 
@@ -453,18 +478,24 @@ class _$OptionsFormStateCopyWithImpl<$Res> implements $OptionsFormStateCopyWith<
   }
 }
 
-abstract class _$OptionsFormStateCopyWith<$Res> implements $OptionsFormStateCopyWith<$Res> {
-  factory _$OptionsFormStateCopyWith(_OptionsFormState value, $Res Function(_OptionsFormState) then) = __$OptionsFormStateCopyWithImpl<$Res>;
-
+abstract class _$OptionsFormStateCopyWith<$Res>
+  implements $OptionsFormStateCopyWith<$Res> {
+  factory _$OptionsFormStateCopyWith(_OptionsFormState value, $Res Function(_OptionsFormState) then) =
+  __$OptionsFormStateCopyWithImpl<$Res>;
   @override
-  $Res call({Options options, bool showErrorMessages, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
+  $Res call({Options options,
+    bool showErrorMessages,
+    bool isSubmitting,
+    Option<Either<Failure, Unit>> failureOrSuccessOption});
 
   @override
   $OptionsCopyWith<$Res> get options;
 }
 
-class __$OptionsFormStateCopyWithImpl<$Res> extends _$OptionsFormStateCopyWithImpl<$Res> implements _$OptionsFormStateCopyWith<$Res> {
-  __$OptionsFormStateCopyWithImpl(_OptionsFormState _value, $Res Function(_OptionsFormState) _then) : super(_value, (v) => _then(v as _OptionsFormState));
+class __$OptionsFormStateCopyWithImpl<$Res> extends _$OptionsFormStateCopyWithImpl<$Res>
+  implements _$OptionsFormStateCopyWith<$Res> {
+  __$OptionsFormStateCopyWithImpl(_OptionsFormState _value, $Res Function(_OptionsFormState) _then)
+    : super(_value, (v) => _then(v as _OptionsFormState));
 
   @override
   _OptionsFormState get _value => super._value as _OptionsFormState;
@@ -478,15 +509,23 @@ class __$OptionsFormStateCopyWithImpl<$Res> extends _$OptionsFormStateCopyWithIm
   }) {
     return _then(_OptionsFormState(
       options: options == freezed ? _value.options : options as Options,
-      showErrorMessages: showErrorMessages == freezed ? _value.showErrorMessages : showErrorMessages as bool,
-      isSubmitting: isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
-      failureOrSuccessOption: failureOrSuccessOption == freezed ? _value.failureOrSuccessOption : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+      showErrorMessages: showErrorMessages == freezed
+        ? _value.showErrorMessages
+        : showErrorMessages as bool,
+      isSubmitting:
+      isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      failureOrSuccessOption: failureOrSuccessOption == freezed
+        ? _value.failureOrSuccessOption
+        : failureOrSuccessOption as Option<Either<Failure, Unit>>,
     ));
   }
 }
 
 class _$_OptionsFormState implements _OptionsFormState {
-  const _$_OptionsFormState({@required this.options, @required this.showErrorMessages, @required this.isSubmitting, @required this.failureOrSuccessOption})
+  const _$_OptionsFormState({@required this.options,
+    @required this.showErrorMessages,
+    @required this.isSubmitting,
+    @required this.failureOrSuccessOption})
       : assert(options != null),
         assert(showErrorMessages != null),
         assert(isSubmitting != null),
@@ -510,10 +549,18 @@ class _$_OptionsFormState implements _OptionsFormState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _OptionsFormState &&
-            (identical(other.options, options) || const DeepCollectionEquality().equals(other.options, options)) &&
-            (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
-            (identical(other.failureOrSuccessOption, failureOrSuccessOption) || const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+          (identical(other.options, options) ||
+            const DeepCollectionEquality()
+              .equals(other.options, options)) &&
+          (identical(other.showErrorMessages, showErrorMessages) ||
+            const DeepCollectionEquality()
+              .equals(other.showErrorMessages, showErrorMessages)) &&
+          (identical(other.isSubmitting, isSubmitting) ||
+            const DeepCollectionEquality()
+              .equals(other.isSubmitting, isSubmitting)) &&
+          (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
+            const DeepCollectionEquality().equals(
+              other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -525,25 +572,25 @@ class _$_OptionsFormState implements _OptionsFormState {
       const DeepCollectionEquality().hash(failureOrSuccessOption);
 
   @override
-  _$OptionsFormStateCopyWith<_OptionsFormState> get copyWith => __$OptionsFormStateCopyWithImpl<_OptionsFormState>(this, _$identity);
+  _$OptionsFormStateCopyWith<_OptionsFormState> get copyWith =>
+    __$OptionsFormStateCopyWithImpl<_OptionsFormState>(this, _$identity);
 }
 
 abstract class _OptionsFormState implements OptionsFormState {
-  const factory _OptionsFormState({@required Options options, @required bool showErrorMessages, @required bool isSubmitting, @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
+  const factory _OptionsFormState({@required Options options,
+    @required bool showErrorMessages,
+    @required bool isSubmitting,
+    @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
       _$_OptionsFormState;
 
   @override
   Options get options;
-
   @override
   bool get showErrorMessages;
-
   @override
   bool get isSubmitting;
-
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
-
   @override
   _$OptionsFormStateCopyWith<_OptionsFormState> get copyWith;
 }

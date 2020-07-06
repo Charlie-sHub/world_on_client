@@ -29,18 +29,15 @@ mixin _$ProfileWatcherEvent {
   Result when<Result extends Object>({
     @required Result initializeForeignOrOwn(Option<User> userOption),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initializeForeignOrOwn(Option<User> userOption),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initializeForeignOrOwn(_InitializeForeignOrOwn value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initializeForeignOrOwn(_InitializeForeignOrOwn value),
@@ -52,15 +49,14 @@ mixin _$ProfileWatcherEvent {
 
 abstract class $ProfileWatcherEventCopyWith<$Res> {
   factory $ProfileWatcherEventCopyWith(ProfileWatcherEvent value, $Res Function(ProfileWatcherEvent) then) = _$ProfileWatcherEventCopyWithImpl<$Res>;
-
   $Res call({Option<User> userOption});
 }
 
-class _$ProfileWatcherEventCopyWithImpl<$Res> implements $ProfileWatcherEventCopyWith<$Res> {
+class _$ProfileWatcherEventCopyWithImpl<$Res>
+  implements $ProfileWatcherEventCopyWith<$Res> {
   _$ProfileWatcherEventCopyWithImpl(this._value, this._then);
 
   final ProfileWatcherEvent _value;
-
   // ignore: unused_field
   final $Res Function(ProfileWatcherEvent) _then;
 
@@ -69,20 +65,27 @@ class _$ProfileWatcherEventCopyWithImpl<$Res> implements $ProfileWatcherEventCop
     Object userOption = freezed,
   }) {
     return _then(_value.copyWith(
-      userOption: userOption == freezed ? _value.userOption : userOption as Option<User>,
+      userOption: userOption == freezed
+        ? _value.userOption
+        : userOption as Option<User>,
     ));
   }
 }
 
-abstract class _$InitializeForeignOrOwnCopyWith<$Res> implements $ProfileWatcherEventCopyWith<$Res> {
-  factory _$InitializeForeignOrOwnCopyWith(_InitializeForeignOrOwn value, $Res Function(_InitializeForeignOrOwn) then) = __$InitializeForeignOrOwnCopyWithImpl<$Res>;
-
+abstract class _$InitializeForeignOrOwnCopyWith<$Res>
+  implements $ProfileWatcherEventCopyWith<$Res> {
+  factory _$InitializeForeignOrOwnCopyWith(_InitializeForeignOrOwn value,
+    $Res Function(_InitializeForeignOrOwn) then) =
+  __$InitializeForeignOrOwnCopyWithImpl<$Res>;
   @override
   $Res call({Option<User> userOption});
 }
 
-class __$InitializeForeignOrOwnCopyWithImpl<$Res> extends _$ProfileWatcherEventCopyWithImpl<$Res> implements _$InitializeForeignOrOwnCopyWith<$Res> {
-  __$InitializeForeignOrOwnCopyWithImpl(_InitializeForeignOrOwn _value, $Res Function(_InitializeForeignOrOwn) _then) : super(_value, (v) => _then(v as _InitializeForeignOrOwn));
+class __$InitializeForeignOrOwnCopyWithImpl<$Res> extends _$ProfileWatcherEventCopyWithImpl<$Res>
+  implements _$InitializeForeignOrOwnCopyWith<$Res> {
+  __$InitializeForeignOrOwnCopyWithImpl(_InitializeForeignOrOwn _value,
+    $Res Function(_InitializeForeignOrOwn) _then)
+    : super(_value, (v) => _then(v as _InitializeForeignOrOwn));
 
   @override
   _InitializeForeignOrOwn get _value => super._value as _InitializeForeignOrOwn;
@@ -110,14 +113,21 @@ class _$_InitializeForeignOrOwn implements _InitializeForeignOrOwn {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _InitializeForeignOrOwn && (identical(other.userOption, userOption) || const DeepCollectionEquality().equals(other.userOption, userOption)));
+    return identical(this, other) ||
+      (other is _InitializeForeignOrOwn &&
+        (identical(other.userOption, userOption) ||
+          const DeepCollectionEquality()
+            .equals(other.userOption, userOption)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(userOption);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(userOption);
 
   @override
-  _$InitializeForeignOrOwnCopyWith<_InitializeForeignOrOwn> get copyWith => __$InitializeForeignOrOwnCopyWithImpl<_InitializeForeignOrOwn>(this, _$identity);
+  _$InitializeForeignOrOwnCopyWith<_InitializeForeignOrOwn> get copyWith =>
+    __$InitializeForeignOrOwnCopyWithImpl<_InitializeForeignOrOwn>(
+      this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -165,11 +175,11 @@ class _$_InitializeForeignOrOwn implements _InitializeForeignOrOwn {
 }
 
 abstract class _InitializeForeignOrOwn implements ProfileWatcherEvent {
-  const factory _InitializeForeignOrOwn(Option<User> userOption) = _$_InitializeForeignOrOwn;
+  const factory _InitializeForeignOrOwn(Option<User> userOption) =
+  _$_InitializeForeignOrOwn;
 
   @override
   Option<User> get userOption;
-
   @override
   _$InitializeForeignOrOwnCopyWith<_InitializeForeignOrOwn> get copyWith;
 }
@@ -212,7 +222,6 @@ mixin _$ProfileWatcherState {
     @required Result foreign(),
     @required Result loadFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
@@ -222,7 +231,6 @@ mixin _$ProfileWatcherState {
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
@@ -231,7 +239,6 @@ mixin _$ProfileWatcherState {
     @required Result foreign(_Foreign value),
     @required Result loadFailure(_LoadFailure value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
@@ -244,24 +251,28 @@ mixin _$ProfileWatcherState {
 }
 
 abstract class $ProfileWatcherStateCopyWith<$Res> {
-  factory $ProfileWatcherStateCopyWith(ProfileWatcherState value, $Res Function(ProfileWatcherState) then) = _$ProfileWatcherStateCopyWithImpl<$Res>;
+  factory $ProfileWatcherStateCopyWith(ProfileWatcherState value, $Res Function(ProfileWatcherState) then) =
+  _$ProfileWatcherStateCopyWithImpl<$Res>;
 }
 
-class _$ProfileWatcherStateCopyWithImpl<$Res> implements $ProfileWatcherStateCopyWith<$Res> {
+class _$ProfileWatcherStateCopyWithImpl<$Res>
+  implements $ProfileWatcherStateCopyWith<$Res> {
   _$ProfileWatcherStateCopyWithImpl(this._value, this._then);
 
   final ProfileWatcherState _value;
-
   // ignore: unused_field
   final $Res Function(ProfileWatcherState) _then;
 }
 
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+  __$InitialCopyWithImpl<$Res>;
 }
 
-class __$InitialCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res>
+  implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+    : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -357,11 +368,14 @@ abstract class _Initial implements ProfileWatcherState {
 }
 
 abstract class _$LoadingCopyWith<$Res> {
-  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) = __$LoadingCopyWithImpl<$Res>;
+  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
+  __$LoadingCopyWithImpl<$Res>;
 }
 
-class __$LoadingCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res> implements _$LoadingCopyWith<$Res> {
-  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then) : super(_value, (v) => _then(v as _Loading));
+class __$LoadingCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res>
+  implements _$LoadingCopyWith<$Res> {
+  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
+    : super(_value, (v) => _then(v as _Loading));
 
   @override
   _Loading get _value => super._value as _Loading;
@@ -457,11 +471,14 @@ abstract class _Loading implements ProfileWatcherState {
 }
 
 abstract class _$OwnCopyWith<$Res> {
-  factory _$OwnCopyWith(_Own value, $Res Function(_Own) then) = __$OwnCopyWithImpl<$Res>;
+  factory _$OwnCopyWith(_Own value, $Res Function(_Own) then) =
+  __$OwnCopyWithImpl<$Res>;
 }
 
-class __$OwnCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res> implements _$OwnCopyWith<$Res> {
-  __$OwnCopyWithImpl(_Own _value, $Res Function(_Own) _then) : super(_value, (v) => _then(v as _Own));
+class __$OwnCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res>
+  implements _$OwnCopyWith<$Res> {
+  __$OwnCopyWithImpl(_Own _value, $Res Function(_Own) _then)
+    : super(_value, (v) => _then(v as _Own));
 
   @override
   _Own get _value => super._value as _Own;
@@ -557,11 +574,14 @@ abstract class _Own implements ProfileWatcherState {
 }
 
 abstract class _$ForeignCopyWith<$Res> {
-  factory _$ForeignCopyWith(_Foreign value, $Res Function(_Foreign) then) = __$ForeignCopyWithImpl<$Res>;
+  factory _$ForeignCopyWith(_Foreign value, $Res Function(_Foreign) then) =
+  __$ForeignCopyWithImpl<$Res>;
 }
 
-class __$ForeignCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res> implements _$ForeignCopyWith<$Res> {
-  __$ForeignCopyWithImpl(_Foreign _value, $Res Function(_Foreign) _then) : super(_value, (v) => _then(v as _Foreign));
+class __$ForeignCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res>
+  implements _$ForeignCopyWith<$Res> {
+  __$ForeignCopyWithImpl(_Foreign _value, $Res Function(_Foreign) _then)
+    : super(_value, (v) => _then(v as _Foreign));
 
   @override
   _Foreign get _value => super._value as _Foreign;
@@ -657,15 +677,17 @@ abstract class _Foreign implements ProfileWatcherState {
 }
 
 abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
-
+  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) =
+  __$LoadFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
-class __$LoadFailureCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res> implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then) : super(_value, (v) => _then(v as _LoadFailure));
+class __$LoadFailureCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res>
+  implements _$LoadFailureCopyWith<$Res> {
+  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then)
+    : super(_value, (v) => _then(v as _LoadFailure));
 
   @override
   _LoadFailure get _value => super._value as _LoadFailure;
@@ -703,14 +725,19 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) ||
+      (other is _LoadFailure &&
+        (identical(other.failure, failure) ||
+          const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith => __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+    __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -785,6 +812,5 @@ abstract class _LoadFailure implements ProfileWatcherState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
   Failure<dynamic> get failure;
-
   _$LoadFailureCopyWith<_LoadFailure> get copyWith;
 }

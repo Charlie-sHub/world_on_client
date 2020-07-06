@@ -25,18 +25,15 @@ mixin _$NotificationsWatcherEvent {
   Result when<Result extends Object>({
     @required Result load(),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result load(_Load value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result load(_Load value),
@@ -52,17 +49,19 @@ class _$NotificationsWatcherEventCopyWithImpl<$Res> implements $NotificationsWat
   _$NotificationsWatcherEventCopyWithImpl(this._value, this._then);
 
   final NotificationsWatcherEvent _value;
-
   // ignore: unused_field
   final $Res Function(NotificationsWatcherEvent) _then;
 }
 
 abstract class _$LoadCopyWith<$Res> {
-  factory _$LoadCopyWith(_Load value, $Res Function(_Load) then) = __$LoadCopyWithImpl<$Res>;
+  factory _$LoadCopyWith(_Load value, $Res Function(_Load) then) =
+  __$LoadCopyWithImpl<$Res>;
 }
 
-class __$LoadCopyWithImpl<$Res> extends _$NotificationsWatcherEventCopyWithImpl<$Res> implements _$LoadCopyWith<$Res> {
-  __$LoadCopyWithImpl(_Load _value, $Res Function(_Load) _then) : super(_value, (v) => _then(v as _Load));
+class __$LoadCopyWithImpl<$Res> extends _$NotificationsWatcherEventCopyWithImpl<$Res>
+  implements _$LoadCopyWith<$Res> {
+  __$LoadCopyWithImpl(_Load _value, $Res Function(_Load) _then)
+    : super(_value, (v) => _then(v as _Load));
 
   @override
   _Load get _value => super._value as _Load;
@@ -168,7 +167,6 @@ mixin _$NotificationsWatcherState {
     @required Result loadSuccess(List<Notification> notifications),
     @required Result loadFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
@@ -177,7 +175,6 @@ mixin _$NotificationsWatcherState {
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
@@ -185,7 +182,6 @@ mixin _$NotificationsWatcherState {
     @required Result loadSuccess(_LoadSuccess value),
     @required Result loadFailure(_LoadFailure value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
@@ -197,24 +193,29 @@ mixin _$NotificationsWatcherState {
 }
 
 abstract class $NotificationsWatcherStateCopyWith<$Res> {
-  factory $NotificationsWatcherStateCopyWith(NotificationsWatcherState value, $Res Function(NotificationsWatcherState) then) = _$NotificationsWatcherStateCopyWithImpl<$Res>;
+  factory $NotificationsWatcherStateCopyWith(NotificationsWatcherState value,
+    $Res Function(NotificationsWatcherState) then) =
+  _$NotificationsWatcherStateCopyWithImpl<$Res>;
 }
 
-class _$NotificationsWatcherStateCopyWithImpl<$Res> implements $NotificationsWatcherStateCopyWith<$Res> {
+class _$NotificationsWatcherStateCopyWithImpl<$Res>
+  implements $NotificationsWatcherStateCopyWith<$Res> {
   _$NotificationsWatcherStateCopyWithImpl(this._value, this._then);
 
   final NotificationsWatcherState _value;
-
   // ignore: unused_field
   final $Res Function(NotificationsWatcherState) _then;
 }
 
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+  __$InitialCopyWithImpl<$Res>;
 }
 
-class __$InitialCopyWithImpl<$Res> extends _$NotificationsWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$NotificationsWatcherStateCopyWithImpl<$Res>
+  implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+    : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -304,11 +305,14 @@ abstract class _Initial implements NotificationsWatcherState {
 }
 
 abstract class _$LoadingCopyWith<$Res> {
-  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) = __$LoadingCopyWithImpl<$Res>;
+  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
+  __$LoadingCopyWithImpl<$Res>;
 }
 
-class __$LoadingCopyWithImpl<$Res> extends _$NotificationsWatcherStateCopyWithImpl<$Res> implements _$LoadingCopyWith<$Res> {
-  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then) : super(_value, (v) => _then(v as _Loading));
+class __$LoadingCopyWithImpl<$Res> extends _$NotificationsWatcherStateCopyWithImpl<$Res>
+  implements _$LoadingCopyWith<$Res> {
+  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
+    : super(_value, (v) => _then(v as _Loading));
 
   @override
   _Loading get _value => super._value as _Loading;
@@ -398,13 +402,15 @@ abstract class _Loading implements NotificationsWatcherState {
 }
 
 abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
-
+  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
+  __$LoadSuccessCopyWithImpl<$Res>;
   $Res call({List<Notification> notifications});
 }
 
-class __$LoadSuccessCopyWithImpl<$Res> extends _$NotificationsWatcherStateCopyWithImpl<$Res> implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then) : super(_value, (v) => _then(v as _LoadSuccess));
+class __$LoadSuccessCopyWithImpl<$Res> extends _$NotificationsWatcherStateCopyWithImpl<$Res>
+  implements _$LoadSuccessCopyWith<$Res> {
+  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then)
+    : super(_value, (v) => _then(v as _LoadSuccess));
 
   @override
   _LoadSuccess get _value => super._value as _LoadSuccess;
@@ -414,7 +420,9 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$NotificationsWatcherStateCopyWi
     Object notifications = freezed,
   }) {
     return _then(_LoadSuccess(
-      notifications == freezed ? _value.notifications : notifications as List<Notification>,
+      notifications == freezed
+        ? _value.notifications
+        : notifications as List<Notification>,
     ));
   }
 }
@@ -432,14 +440,20 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadSuccess && (identical(other.notifications, notifications) || const DeepCollectionEquality().equals(other.notifications, notifications)));
+    return identical(this, other) ||
+      (other is _LoadSuccess &&
+        (identical(other.notifications, notifications) ||
+          const DeepCollectionEquality()
+            .equals(other.notifications, notifications)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(notifications);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(notifications);
 
   @override
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+    __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -508,20 +522,21 @@ abstract class _LoadSuccess implements NotificationsWatcherState {
   const factory _LoadSuccess(List<Notification> notifications) = _$_LoadSuccess;
 
   List<Notification> get notifications;
-
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
 abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
-
+  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) =
+  __$LoadFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
-class __$LoadFailureCopyWithImpl<$Res> extends _$NotificationsWatcherStateCopyWithImpl<$Res> implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then) : super(_value, (v) => _then(v as _LoadFailure));
+class __$LoadFailureCopyWithImpl<$Res> extends _$NotificationsWatcherStateCopyWithImpl<$Res>
+  implements _$LoadFailureCopyWith<$Res> {
+  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then)
+    : super(_value, (v) => _then(v as _LoadFailure));
 
   @override
   _LoadFailure get _value => super._value as _LoadFailure;
@@ -559,14 +574,19 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) ||
+      (other is _LoadFailure &&
+        (identical(other.failure, failure) ||
+          const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith => __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+    __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -635,6 +655,5 @@ abstract class _LoadFailure implements NotificationsWatcherState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
   Failure<dynamic> get failure;
-
   _$LoadFailureCopyWith<_LoadFailure> get copyWith;
 }

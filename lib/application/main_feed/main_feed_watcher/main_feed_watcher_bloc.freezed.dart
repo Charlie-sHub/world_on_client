@@ -25,18 +25,15 @@ mixin _$MainFeedWatcherEvent {
   Result when<Result extends Object>({
     @required Result fillFeed(),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result fillFeed(),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result fillFeed(_FillFeed value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result fillFeed(_FillFeed value),
@@ -52,17 +49,19 @@ class _$MainFeedWatcherEventCopyWithImpl<$Res> implements $MainFeedWatcherEventC
   _$MainFeedWatcherEventCopyWithImpl(this._value, this._then);
 
   final MainFeedWatcherEvent _value;
-
   // ignore: unused_field
   final $Res Function(MainFeedWatcherEvent) _then;
 }
 
 abstract class _$FillFeedCopyWith<$Res> {
-  factory _$FillFeedCopyWith(_FillFeed value, $Res Function(_FillFeed) then) = __$FillFeedCopyWithImpl<$Res>;
+  factory _$FillFeedCopyWith(_FillFeed value, $Res Function(_FillFeed) then) =
+  __$FillFeedCopyWithImpl<$Res>;
 }
 
-class __$FillFeedCopyWithImpl<$Res> extends _$MainFeedWatcherEventCopyWithImpl<$Res> implements _$FillFeedCopyWith<$Res> {
-  __$FillFeedCopyWithImpl(_FillFeed _value, $Res Function(_FillFeed) _then) : super(_value, (v) => _then(v as _FillFeed));
+class __$FillFeedCopyWithImpl<$Res> extends _$MainFeedWatcherEventCopyWithImpl<$Res>
+  implements _$FillFeedCopyWith<$Res> {
+  __$FillFeedCopyWithImpl(_FillFeed _value, $Res Function(_FillFeed) _then)
+    : super(_value, (v) => _then(v as _FillFeed));
 
   @override
   _FillFeed get _value => super._value as _FillFeed;
@@ -168,7 +167,6 @@ mixin _$MainFeedWatcherState {
     @required Result loadSuccess(List<Experience> experiences),
     @required Result loadFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
@@ -177,7 +175,6 @@ mixin _$MainFeedWatcherState {
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
@@ -185,7 +182,6 @@ mixin _$MainFeedWatcherState {
     @required Result loadSuccess(_LoadSuccess value),
     @required Result loadFailure(_LoadFailure value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
@@ -197,24 +193,29 @@ mixin _$MainFeedWatcherState {
 }
 
 abstract class $MainFeedWatcherStateCopyWith<$Res> {
-  factory $MainFeedWatcherStateCopyWith(MainFeedWatcherState value, $Res Function(MainFeedWatcherState) then) = _$MainFeedWatcherStateCopyWithImpl<$Res>;
+  factory $MainFeedWatcherStateCopyWith(MainFeedWatcherState value,
+    $Res Function(MainFeedWatcherState) then) =
+  _$MainFeedWatcherStateCopyWithImpl<$Res>;
 }
 
-class _$MainFeedWatcherStateCopyWithImpl<$Res> implements $MainFeedWatcherStateCopyWith<$Res> {
+class _$MainFeedWatcherStateCopyWithImpl<$Res>
+  implements $MainFeedWatcherStateCopyWith<$Res> {
   _$MainFeedWatcherStateCopyWithImpl(this._value, this._then);
 
   final MainFeedWatcherState _value;
-
   // ignore: unused_field
   final $Res Function(MainFeedWatcherState) _then;
 }
 
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+  __$InitialCopyWithImpl<$Res>;
 }
 
-class __$InitialCopyWithImpl<$Res> extends _$MainFeedWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$MainFeedWatcherStateCopyWithImpl<$Res>
+  implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+    : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -304,11 +305,14 @@ abstract class _Initial implements MainFeedWatcherState {
 }
 
 abstract class _$LoadingCopyWith<$Res> {
-  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) = __$LoadingCopyWithImpl<$Res>;
+  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
+  __$LoadingCopyWithImpl<$Res>;
 }
 
-class __$LoadingCopyWithImpl<$Res> extends _$MainFeedWatcherStateCopyWithImpl<$Res> implements _$LoadingCopyWith<$Res> {
-  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then) : super(_value, (v) => _then(v as _Loading));
+class __$LoadingCopyWithImpl<$Res> extends _$MainFeedWatcherStateCopyWithImpl<$Res>
+  implements _$LoadingCopyWith<$Res> {
+  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
+    : super(_value, (v) => _then(v as _Loading));
 
   @override
   _Loading get _value => super._value as _Loading;
@@ -398,13 +402,15 @@ abstract class _Loading implements MainFeedWatcherState {
 }
 
 abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
-
+  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
+  __$LoadSuccessCopyWithImpl<$Res>;
   $Res call({List<Experience> experiences});
 }
 
-class __$LoadSuccessCopyWithImpl<$Res> extends _$MainFeedWatcherStateCopyWithImpl<$Res> implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then) : super(_value, (v) => _then(v as _LoadSuccess));
+class __$LoadSuccessCopyWithImpl<$Res> extends _$MainFeedWatcherStateCopyWithImpl<$Res>
+  implements _$LoadSuccessCopyWith<$Res> {
+  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then)
+    : super(_value, (v) => _then(v as _LoadSuccess));
 
   @override
   _LoadSuccess get _value => super._value as _LoadSuccess;
@@ -414,7 +420,9 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$MainFeedWatcherStateCopyWithImp
     Object experiences = freezed,
   }) {
     return _then(_LoadSuccess(
-      experiences == freezed ? _value.experiences : experiences as List<Experience>,
+      experiences == freezed
+        ? _value.experiences
+        : experiences as List<Experience>,
     ));
   }
 }
@@ -432,14 +440,20 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadSuccess && (identical(other.experiences, experiences) || const DeepCollectionEquality().equals(other.experiences, experiences)));
+    return identical(this, other) ||
+      (other is _LoadSuccess &&
+        (identical(other.experiences, experiences) ||
+          const DeepCollectionEquality()
+            .equals(other.experiences, experiences)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experiences);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(experiences);
 
   @override
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+    __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -508,20 +522,21 @@ abstract class _LoadSuccess implements MainFeedWatcherState {
   const factory _LoadSuccess(List<Experience> experiences) = _$_LoadSuccess;
 
   List<Experience> get experiences;
-
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
 abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
-
+  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) =
+  __$LoadFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
-class __$LoadFailureCopyWithImpl<$Res> extends _$MainFeedWatcherStateCopyWithImpl<$Res> implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then) : super(_value, (v) => _then(v as _LoadFailure));
+class __$LoadFailureCopyWithImpl<$Res> extends _$MainFeedWatcherStateCopyWithImpl<$Res>
+  implements _$LoadFailureCopyWith<$Res> {
+  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then)
+    : super(_value, (v) => _then(v as _LoadFailure));
 
   @override
   _LoadFailure get _value => super._value as _LoadFailure;
@@ -559,14 +574,19 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) ||
+      (other is _LoadFailure &&
+        (identical(other.failure, failure) ||
+          const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith => __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+    __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -635,6 +655,5 @@ abstract class _LoadFailure implements MainFeedWatcherState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
   Failure<dynamic> get failure;
-
   _$LoadFailureCopyWith<_LoadFailure> get copyWith;
 }

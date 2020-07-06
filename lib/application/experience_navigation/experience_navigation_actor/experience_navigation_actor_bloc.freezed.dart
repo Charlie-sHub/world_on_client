@@ -108,7 +108,8 @@ class _$ExperienceNavigationActorEventCopyWithImpl<$Res> implements $ExperienceN
 }
 
 abstract class _$InitializeCopyWith<$Res> {
-  factory _$InitializeCopyWith(_Initialize value, $Res Function(_Initialize) then) = __$InitializeCopyWithImpl<$Res>;
+  factory _$InitializeCopyWith(_Initialize value, $Res Function(_Initialize) then) =
+  __$InitializeCopyWithImpl<$Res>;
   $Res call({Option<Experience> experienceOption});
 }
 
