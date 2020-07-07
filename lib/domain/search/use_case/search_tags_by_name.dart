@@ -4,15 +4,15 @@ import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
-import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/search_term.dart';
 import 'package:worldon/domain/search/repository/search_repository_interface.dart';
 
 @LazySingleton(env: Environment.prod)
 class SearchTagsByName implements StreamUseCase<Set<Tag>, Params> {
   final SearchRepositoryInterface _repository;
-  
+
   SearchTagsByName(this._repository);
-  
+
   @override
   Stream<Either<Failure, Set<Tag>>> call(Params params) async* {
     yield* _repository.searchTagsByName(params.name);
@@ -20,7 +20,7 @@ class SearchTagsByName implements StreamUseCase<Set<Tag>, Params> {
 }
 
 class Params {
-  final Name name;
+  final SearchTerm name;
 
   Params({@required this.name});
 }

@@ -35,13 +35,13 @@ void main() {
       when(fillFeed.call(any)).thenAnswer((realInvocation) => createStream(right(experienceFeed)));
       return getIt<MainFeedWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(const MainFeedWatcherEvent.feedFilled()),
+    act: (bloc) async => bloc.add(const MainFeedWatcherEvent.watchMainFeedStarted()),
     verify: (_) async {
       verify(fillFeed.call(any));
       verifyNoMoreInteractions(fillFeed);
     },
     expect: [
-      const MainFeedWatcherState.loading(),
+      const MainFeedWatcherState.loadInProgress(),
       MainFeedWatcherState.loadSuccess(experienceFeed),
     ],
   );
@@ -51,13 +51,13 @@ void main() {
       when(fillFeed.call(any)).thenAnswer((realInvocation) => createStream(left(failure)));
       return getIt<MainFeedWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(const MainFeedWatcherEvent.feedFilled()),
+    act: (bloc) async => bloc.add(const MainFeedWatcherEvent.watchMainFeedStarted()),
     verify: (_) async {
       verify(fillFeed.call(any));
       verifyNoMoreInteractions(fillFeed);
     },
     expect: [
-      const MainFeedWatcherState.loading(),
+      const MainFeedWatcherState.loadInProgress(),
       const MainFeedWatcherState.loadFailure(failure),
     ],
   );

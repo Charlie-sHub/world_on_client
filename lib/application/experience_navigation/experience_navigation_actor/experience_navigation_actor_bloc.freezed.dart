@@ -249,7 +249,6 @@ abstract class _Initialized implements ExperienceNavigationActorEvent {
   _$_Initialized;
 
   Option<Experience> get experienceOption;
-  
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
@@ -777,7 +776,6 @@ abstract class _DifficultyRated implements ExperienceNavigationActorEvent {
   const factory _DifficultyRated(int difficulty) = _$_DifficultyRated;
 
   int get difficulty;
-  
   _$DifficultyRatedCopyWith<_DifficultyRated> get copyWith;
 }
 

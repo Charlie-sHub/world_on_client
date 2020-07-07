@@ -4,7 +4,7 @@ part of 'achievement_management_watcher_bloc.dart';
 abstract class AchievementManagementWatcherState with _$AchievementManagementWatcherState {
   const factory AchievementManagementWatcherState.initial() = _Initial;
 
-  const factory AchievementManagementWatcherState.loading() = _Loading;
+  const factory AchievementManagementWatcherState.loadInProgress() = _LoadInProgress;
 
   const factory AchievementManagementWatcherState.loadSuccess(List<Achievement> achievements) = _loadSuccess;
 

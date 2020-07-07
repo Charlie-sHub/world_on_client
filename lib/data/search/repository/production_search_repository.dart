@@ -5,7 +5,7 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
-import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/search_term.dart';
 import 'package:worldon/domain/search/repository/search_repository_interface.dart';
 
 @LazySingleton(
@@ -26,25 +26,25 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, Set<Experience>>> searchExperiencesByName(Name name) {
+  Stream<Either<Failure, Set<Experience>>> searchExperiencesByName(SearchTerm name) {
     // TODO: implement searchExperiencesByName
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, Set<Tag>>> searchTagsByName(Name name) {
+  Stream<Either<Failure, Set<Tag>>> searchTagsByName(SearchTerm name) {
     // TODO: implement searchTagsByName
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, Set<User>>> searchUsersByName(Name name) {
+  Stream<Either<Failure, Set<User>>> searchUsersByName(SearchTerm name) {
     // TODO: implement searchUsersByName
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, Set<User>>> searchUsersByUserName(Name username) {
+  Stream<Either<Failure, Set<User>>> searchUsersByUserName(SearchTerm username) {
     // TODO: implement searchUsersByUserName
     throw UnimplementedError();
   }

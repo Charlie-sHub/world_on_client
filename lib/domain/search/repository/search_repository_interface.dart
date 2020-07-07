@@ -4,21 +4,21 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
-import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/search_term.dart';
 
 /// Repository for the search feature
 abstract class SearchRepositoryInterface {
   /// Sends a given [String] to the server and it returns the [User]s with said [String] in their names
-  Stream<Either<Failure, Set<User>>> searchUsersByName(Name name);
+  Stream<Either<Failure, Set<User>>> searchUsersByName(SearchTerm name);
 
   /// Sends a given [String] to the server and it returns the [User]s with said [String] in their usernames
-  Stream<Either<Failure, Set<User>>> searchUsersByUserName(Name username);
+  Stream<Either<Failure, Set<User>>> searchUsersByUserName(SearchTerm username);
 
   /// Sends a given [String] to the server and it returns the [Experience]s with said [String] in their names
-  Stream<Either<Failure, Set<Experience>>> searchExperiencesByName(Name name);
+  Stream<Either<Failure, Set<Experience>>> searchExperiencesByName(SearchTerm name);
 
   /// Sends a given [String] to the server and it returns the [Tag]s with said [String] in their names
-  Stream<Either<Failure, Set<Tag>>> searchTagsByName(Name name);
+  Stream<Either<Failure, Set<Tag>>> searchTagsByName(SearchTerm name);
 
   /// Sends a [Set] of [Tag]s and it returns the [Experience]s with at least  all the given [Tag]s
   Stream<Either<Failure, Set<Experience>>> searchExperiencesByTags(Set<Tag> tags);

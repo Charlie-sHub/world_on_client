@@ -5,7 +5,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
-import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/search_term.dart';
 import 'package:worldon/domain/search/repository/search_repository_interface.dart';
 import 'package:worldon/domain/search/use_case/search_tags_by_name.dart';
 import 'package:worldon/injection.dart';
@@ -23,7 +23,7 @@ void main() {
       useCase = SearchTagsByName(mockSearchRepository);
     },
   );
-  final params = Params(name: Name("Test"));
+  final params = Params(name: SearchTerm("Test"));
   final tagsFound = {Tag.empty()};
   test(
     "Should return a Set of Tags",

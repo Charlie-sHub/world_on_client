@@ -14,12 +14,12 @@ class LoadExperiencesCreated implements StreamUseCase<Set<Experience>, Params> {
   
   @override
   Stream<Either<Failure, Set<Experience>>> call(Params params) async* {
-    yield* repository.loadExperiencesCreated(params.id);
+    yield* repository.loadExperiencesCreated(params.userId);
   }
 }
 
 class Params {
-  final int id;
+  final int userId;
 
-  Params({@required this.id});
+  Params({@required this.userId});
 }

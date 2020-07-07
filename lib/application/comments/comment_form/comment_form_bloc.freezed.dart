@@ -203,7 +203,6 @@ abstract class _Initialized implements CommentFormEvent {
 
   Option<Comment> get commentOption;
   int get experienceId;
-  
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
@@ -319,7 +318,6 @@ abstract class _ContentChanged implements CommentFormEvent {
   const factory _ContentChanged(String content) = _$_ContentChanged;
 
   String get content;
-  
   _$ContentChangedCopyWith<_ContentChanged> get copyWith;
 }
 

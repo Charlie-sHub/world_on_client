@@ -40,13 +40,13 @@ void main() {
       when(loadFollowingUsers.call(any)).thenAnswer((realInvocation) => createStream(right(usersFollowing)));
       return getIt<FollowingWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(FollowingWatcherEvent.followingUsersLoaded(user)),
+    act: (bloc) async => bloc.add(FollowingWatcherEvent.watchFollowingUsersStarted(user)),
     verify: (_) async {
       verify(loadFollowingUsers.call(any));
       verifyNoMoreInteractions(loadFollowingUsers);
     },
     expect: [
-      const FollowingWatcherState.loading(),
+      const FollowingWatcherState.loadInProgress(),
       FollowingWatcherState.loadSuccess(usersFollowing),
     ],
   );
@@ -56,13 +56,13 @@ void main() {
       when(loadFollowingUsers.call(any)).thenAnswer((realInvocation) => createStream(left(failure)));
       return getIt<FollowingWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(FollowingWatcherEvent.followingUsersLoaded(user)),
+    act: (bloc) async => bloc.add(FollowingWatcherEvent.watchFollowingUsersStarted(user)),
     verify: (_) async {
       verify(loadFollowingUsers.call(any));
       verifyNoMoreInteractions(loadFollowingUsers);
     },
     expect: [
-      const FollowingWatcherState.loading(),
+      const FollowingWatcherState.loadInProgress(),
       const FollowingWatcherState.loadFailure(failure),
     ],
   );

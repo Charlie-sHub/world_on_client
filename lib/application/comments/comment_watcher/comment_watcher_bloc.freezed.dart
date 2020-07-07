@@ -12,8 +12,8 @@ T _$identity<T>(T value) => value;
 class _$CommentWatcherEventTearOff {
   const _$CommentWatcherEventTearOff();
 
-  _ExperienceCommentsLoaded experienceCommentsLoaded(int experienceId) {
-    return _ExperienceCommentsLoaded(
+  _WatchExperienceCommentsStarted watchExperienceCommentsStarted(int experienceId) {
+    return _WatchExperienceCommentsStarted(
       experienceId,
     );
   }
@@ -27,20 +27,20 @@ mixin _$CommentWatcherEvent {
 
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result experienceCommentsLoaded(int experienceId),
+    @required Result watchExperienceCommentsStarted(int experienceId),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result experienceCommentsLoaded(int experienceId),
+    Result watchExperienceCommentsStarted(int experienceId),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result experienceCommentsLoaded(_ExperienceCommentsLoaded value),
+    @required Result watchExperienceCommentsStarted(_WatchExperienceCommentsStarted value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result experienceCommentsLoaded(_ExperienceCommentsLoaded value),
+    Result watchExperienceCommentsStarted(_WatchExperienceCommentsStarted value),
     @required Result orElse(),
   });
 
@@ -71,37 +71,38 @@ class _$CommentWatcherEventCopyWithImpl<$Res>
   }
 }
 
-abstract class _$ExperienceCommentsLoadedCopyWith<$Res>
+abstract class _$WatchExperienceCommentsStartedCopyWith<$Res>
   implements $CommentWatcherEventCopyWith<$Res> {
-  factory _$ExperienceCommentsLoadedCopyWith(_ExperienceCommentsLoaded value,
-    $Res Function(_ExperienceCommentsLoaded) then) =
-  __$ExperienceCommentsLoadedCopyWithImpl<$Res>;
+  factory _$WatchExperienceCommentsStartedCopyWith(_WatchExperienceCommentsStarted value,
+    $Res Function(_WatchExperienceCommentsStarted) then) =
+  __$WatchExperienceCommentsStartedCopyWithImpl<$Res>;
   @override
   $Res call({int experienceId});
 }
 
-class __$ExperienceCommentsLoadedCopyWithImpl<$Res> extends _$CommentWatcherEventCopyWithImpl<$Res>
-  implements _$ExperienceCommentsLoadedCopyWith<$Res> {
-  __$ExperienceCommentsLoadedCopyWithImpl(_ExperienceCommentsLoaded _value,
-    $Res Function(_ExperienceCommentsLoaded) _then)
-    : super(_value, (v) => _then(v as _ExperienceCommentsLoaded));
+class __$WatchExperienceCommentsStartedCopyWithImpl<$Res> extends _$CommentWatcherEventCopyWithImpl<$Res>
+  implements _$WatchExperienceCommentsStartedCopyWith<$Res> {
+  __$WatchExperienceCommentsStartedCopyWithImpl(_WatchExperienceCommentsStarted _value,
+    $Res Function(_WatchExperienceCommentsStarted) _then)
+    : super(_value, (v) => _then(v as _WatchExperienceCommentsStarted));
 
   @override
-  _ExperienceCommentsLoaded get _value =>
-    super._value as _ExperienceCommentsLoaded;
+  _WatchExperienceCommentsStarted get _value =>
+    super._value as _WatchExperienceCommentsStarted;
 
   @override
   $Res call({
     Object experienceId = freezed,
   }) {
-    return _then(_ExperienceCommentsLoaded(
+    return _then(_WatchExperienceCommentsStarted(
       experienceId == freezed ? _value.experienceId : experienceId as int,
     ));
   }
 }
 
-class _$_ExperienceCommentsLoaded implements _ExperienceCommentsLoaded {
-  const _$_ExperienceCommentsLoaded(this.experienceId)
+class _$_WatchExperienceCommentsStarted
+  implements _WatchExperienceCommentsStarted {
+  const _$_WatchExperienceCommentsStarted(this.experienceId)
     : assert(experienceId != null);
 
   @override
@@ -109,13 +110,13 @@ class _$_ExperienceCommentsLoaded implements _ExperienceCommentsLoaded {
 
   @override
   String toString() {
-    return 'CommentWatcherEvent.experienceCommentsLoaded(experienceId: $experienceId)';
+    return 'CommentWatcherEvent.watchExperienceCommentsStarted(experienceId: $experienceId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _ExperienceCommentsLoaded &&
+      (other is _WatchExperienceCommentsStarted &&
         (identical(other.experienceId, experienceId) ||
           const DeepCollectionEquality()
             .equals(other.experienceId, experienceId)));
@@ -126,28 +127,29 @@ class _$_ExperienceCommentsLoaded implements _ExperienceCommentsLoaded {
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceId);
 
   @override
-  _$ExperienceCommentsLoadedCopyWith<_ExperienceCommentsLoaded> get copyWith =>
-    __$ExperienceCommentsLoadedCopyWithImpl<_ExperienceCommentsLoaded>(
-      this, _$identity);
+  _$WatchExperienceCommentsStartedCopyWith<_WatchExperienceCommentsStarted>
+  get copyWith =>
+    __$WatchExperienceCommentsStartedCopyWithImpl<
+      _WatchExperienceCommentsStarted>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result experienceCommentsLoaded(int experienceId),
+    @required Result watchExperienceCommentsStarted(int experienceId),
   }) {
-    assert(experienceCommentsLoaded != null);
-    return experienceCommentsLoaded(experienceId);
+    assert(watchExperienceCommentsStarted != null);
+    return watchExperienceCommentsStarted(experienceId);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result experienceCommentsLoaded(int experienceId),
+    Result watchExperienceCommentsStarted(int experienceId),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (experienceCommentsLoaded != null) {
-      return experienceCommentsLoaded(experienceId);
+    if (watchExperienceCommentsStarted != null) {
+      return watchExperienceCommentsStarted(experienceId);
     }
     return orElse();
   }
@@ -155,34 +157,35 @@ class _$_ExperienceCommentsLoaded implements _ExperienceCommentsLoaded {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result experienceCommentsLoaded(_ExperienceCommentsLoaded value),
+    @required Result watchExperienceCommentsStarted(_WatchExperienceCommentsStarted value),
   }) {
-    assert(experienceCommentsLoaded != null);
-    return experienceCommentsLoaded(this);
+    assert(watchExperienceCommentsStarted != null);
+    return watchExperienceCommentsStarted(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result experienceCommentsLoaded(_ExperienceCommentsLoaded value),
+    Result watchExperienceCommentsStarted(_WatchExperienceCommentsStarted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (experienceCommentsLoaded != null) {
-      return experienceCommentsLoaded(this);
+    if (watchExperienceCommentsStarted != null) {
+      return watchExperienceCommentsStarted(this);
     }
     return orElse();
   }
 }
 
-abstract class _ExperienceCommentsLoaded implements CommentWatcherEvent {
-  const factory _ExperienceCommentsLoaded(int experienceId) =
-  _$_ExperienceCommentsLoaded;
+abstract class _WatchExperienceCommentsStarted implements CommentWatcherEvent {
+  const factory _WatchExperienceCommentsStarted(int experienceId) =
+  _$_WatchExperienceCommentsStarted;
 
   @override
   int get experienceId;
   @override
-  _$ExperienceCommentsLoadedCopyWith<_ExperienceCommentsLoaded> get copyWith;
+  _$WatchExperienceCommentsStartedCopyWith<_WatchExperienceCommentsStarted>
+  get copyWith;
 }
 
 class _$CommentWatcherStateTearOff {
@@ -192,8 +195,8 @@ class _$CommentWatcherStateTearOff {
     return const _Initial();
   }
 
-  _Loading loading() {
-    return const _Loading();
+  _LoadInProgress loadInProgress() {
+    return const _LoadInProgress();
   }
 
   _LoadSuccess loadSuccess(Set<Comment> comments) {
@@ -216,14 +219,14 @@ mixin _$CommentWatcherState {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result loadSuccess(Set<Comment> comments),
     @required Result loadFailure(Failure<dynamic> failure),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result loadSuccess(Set<Comment> comments),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
@@ -231,14 +234,14 @@ mixin _$CommentWatcherState {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result loadSuccess(_LoadSuccess value),
     @required Result loadFailure(_LoadFailure value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result loadSuccess(_LoadSuccess value),
     Result loadFailure(_LoadFailure value),
     @required Result orElse(),
@@ -293,12 +296,12 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result loadSuccess(Set<Comment> comments),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
     return initial();
@@ -308,7 +311,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result loadSuccess(Set<Comment> comments),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
@@ -324,12 +327,12 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result loadSuccess(_LoadSuccess value),
     @required Result loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
     return initial(this);
@@ -339,7 +342,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result loadSuccess(_LoadSuccess value),
     Result loadFailure(_LoadFailure value),
     @required Result orElse(),
@@ -356,31 +359,31 @@ abstract class _Initial implements CommentWatcherState {
   const factory _Initial() = _$_Initial;
 }
 
-abstract class _$LoadingCopyWith<$Res> {
-  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
-  __$LoadingCopyWithImpl<$Res>;
+abstract class _$LoadInProgressCopyWith<$Res> {
+  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) =
+  __$LoadInProgressCopyWithImpl<$Res>;
 }
 
-class __$LoadingCopyWithImpl<$Res> extends _$CommentWatcherStateCopyWithImpl<$Res>
-  implements _$LoadingCopyWith<$Res> {
-  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
-    : super(_value, (v) => _then(v as _Loading));
+class __$LoadInProgressCopyWithImpl<$Res> extends _$CommentWatcherStateCopyWithImpl<$Res>
+  implements _$LoadInProgressCopyWith<$Res> {
+  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then)
+    : super(_value, (v) => _then(v as _LoadInProgress));
 
   @override
-  _Loading get _value => super._value as _Loading;
+  _LoadInProgress get _value => super._value as _LoadInProgress;
 }
 
-class _$_Loading implements _Loading {
-  const _$_Loading();
+class _$_LoadInProgress implements _LoadInProgress {
+  const _$_LoadInProgress();
 
   @override
   String toString() {
-    return 'CommentWatcherState.loading()';
+    return 'CommentWatcherState.loadInProgress()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Loading);
+    return identical(this, other) || (other is _LoadInProgress);
   }
 
   @override
@@ -390,29 +393,29 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result loadSuccess(Set<Comment> comments),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
-    return loading();
+    return loadInProgress();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result loadSuccess(Set<Comment> comments),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (loading != null) {
-      return loading();
+    if (loadInProgress != null) {
+      return loadInProgress();
     }
     return orElse();
   }
@@ -421,36 +424,36 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result loadSuccess(_LoadSuccess value),
     @required Result loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
-    return loading(this);
+    return loadInProgress(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result loadSuccess(_LoadSuccess value),
     Result loadFailure(_LoadFailure value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (loading != null) {
-      return loading(this);
+    if (loadInProgress != null) {
+      return loadInProgress(this);
     }
     return orElse();
   }
 }
 
-abstract class _Loading implements CommentWatcherState {
-  const factory _Loading() = _$_Loading;
+abstract class _LoadInProgress implements CommentWatcherState {
+  const factory _LoadInProgress() = _$_LoadInProgress;
 }
 
 abstract class _$LoadSuccessCopyWith<$Res> {
@@ -509,12 +512,12 @@ class _$_LoadSuccess implements _LoadSuccess {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result loadSuccess(Set<Comment> comments),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
     return loadSuccess(comments);
@@ -524,7 +527,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result loadSuccess(Set<Comment> comments),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
@@ -540,12 +543,12 @@ class _$_LoadSuccess implements _LoadSuccess {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result loadSuccess(_LoadSuccess value),
     @required Result loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
     return loadSuccess(this);
@@ -555,7 +558,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result loadSuccess(_LoadSuccess value),
     Result loadFailure(_LoadFailure value),
     @required Result orElse(),
@@ -642,12 +645,12 @@ class _$_LoadFailure implements _LoadFailure {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result loadSuccess(Set<Comment> comments),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
     return loadFailure(failure);
@@ -657,7 +660,7 @@ class _$_LoadFailure implements _LoadFailure {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result loadSuccess(Set<Comment> comments),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
@@ -673,12 +676,12 @@ class _$_LoadFailure implements _LoadFailure {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result loadSuccess(_LoadSuccess value),
     @required Result loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
     return loadFailure(this);
@@ -688,7 +691,7 @@ class _$_LoadFailure implements _LoadFailure {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result loadSuccess(_LoadSuccess value),
     Result loadFailure(_LoadFailure value),
     @required Result orElse(),

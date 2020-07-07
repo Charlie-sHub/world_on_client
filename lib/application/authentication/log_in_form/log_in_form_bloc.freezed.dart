@@ -200,7 +200,6 @@ abstract class _UsernameChanged implements LogInFormEvent {
   const factory _UsernameChanged(String username) = _$_UsernameChanged;
 
   String get username;
-  
   _$UsernameChangedCopyWith<_UsernameChanged> get copyWith;
 }
 
@@ -323,7 +322,6 @@ abstract class _PasswordChanged implements LogInFormEvent {
   const factory _PasswordChanged(String password) = _$_PasswordChanged;
 
   String get password;
-  
   _$PasswordChangedCopyWith<_PasswordChanged> get copyWith;
 }
 

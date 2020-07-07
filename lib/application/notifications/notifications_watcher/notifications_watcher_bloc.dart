@@ -22,12 +22,12 @@ class NotificationsWatcherBloc extends Bloc<NotificationsWatcherEvent, Notificat
   @override
   Stream<NotificationsWatcherState> mapEventToState(NotificationsWatcherEvent event) async* {
     yield* event.map(
-      notificationsLoaded: onNotificationsLoaded,
+      watchNotificationsStarted: onWatchNotificationsStarted,
     );
   }
 
-  Stream<NotificationsWatcherState> onNotificationsLoaded(_NotificationsLoaded event) async* {
-    yield const NotificationsWatcherState.loading();
+  Stream<NotificationsWatcherState> onWatchNotificationsStarted(_WatchNotificationsStarted event) async* {
+    yield const NotificationsWatcherState.loadInProgress();
     final _loadNotifications = getIt<LoadNotifications>();
     yield* _loadNotifications(getIt<NoParams>()).map(
       (failureOrNotifications) => failureOrNotifications.fold(

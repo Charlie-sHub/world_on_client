@@ -20,12 +20,12 @@ class ExperienceLogWatcherBloc extends Bloc<ExperienceLogWatcherEvent, Experienc
   @override
   Stream<ExperienceLogWatcherState> mapEventToState(ExperienceLogWatcherEvent event) async* {
     yield* event.map(
-      experiencesLoaded: onExperiencesLoaded,
+      watchExperiencesLogStarted: onWatchExperiencesLogStarted,
     );
   }
 
-  Stream<ExperienceLogWatcherState> onExperiencesLoaded(_ExperiencesLoaded event) async* {
-    yield const ExperienceLogWatcherState.loading();
+  Stream<ExperienceLogWatcherState> onWatchExperiencesLogStarted(_WatchExperiencesLogStarted event) async* {
+    yield const ExperienceLogWatcherState.loadInProgress();
     final _loadUserLog = getIt<LoadUserLog>();
     yield* _loadUserLog(getIt<NoParams>()).map(
       (failureOrExperiences) => failureOrExperiences.fold(

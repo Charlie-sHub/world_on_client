@@ -188,7 +188,6 @@ abstract class _Initialized implements OptionsFormEvent {
   const factory _Initialized(Option<Options> optionsOption) = _$_Initialized;
 
   Option<Options> get optionsOption;
-  
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
@@ -309,7 +308,6 @@ abstract class _LanguageCodeChanged implements OptionsFormEvent {
   _$_LanguageCodeChanged;
 
   String get languageCode;
-  
   _$LanguageCodeChangedCopyWith<_LanguageCodeChanged> get copyWith;
 }
 

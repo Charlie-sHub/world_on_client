@@ -35,13 +35,13 @@ void main() {
       when(loadNotifications.call(any)).thenAnswer((realInvocation) => createStream(right(notifications)));
       return getIt<NotificationsWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(const NotificationsWatcherEvent.notificationsLoaded()),
+    act: (bloc) async => bloc.add(const NotificationsWatcherEvent.watchNotificationsStarted()),
     verify: (_) async {
       verify(loadNotifications.call(any));
       verifyNoMoreInteractions(loadNotifications);
     },
     expect: [
-      const NotificationsWatcherState.loading(),
+      const NotificationsWatcherState.loadInProgress(),
       NotificationsWatcherState.loadSuccess(notifications),
     ],
   );
@@ -51,13 +51,13 @@ void main() {
       when(loadNotifications.call(any)).thenAnswer((realInvocation) => createStream(left(failure)));
       return getIt<NotificationsWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(const NotificationsWatcherEvent.notificationsLoaded()),
+    act: (bloc) async => bloc.add(const NotificationsWatcherEvent.watchNotificationsStarted()),
     verify: (_) async {
       verify(loadNotifications.call(any));
       verifyNoMoreInteractions(loadNotifications);
     },
     expect: [
-      const NotificationsWatcherState.loading(),
+      const NotificationsWatcherState.loadInProgress(),
       const NotificationsWatcherState.loadFailure(failure),
     ],
   );

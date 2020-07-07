@@ -4,7 +4,7 @@ part of 'main_feed_watcher_bloc.dart';
 abstract class MainFeedWatcherState with _$MainFeedWatcherState {
   const factory MainFeedWatcherState.initial() = _Initial;
 
-  const factory MainFeedWatcherState.loading() = _Loading;
+  const factory MainFeedWatcherState.loadInProgress() = _LoadInProgress;
 
   const factory MainFeedWatcherState.loadSuccess(List<Experience> experiences) = _LoadSuccess;
 

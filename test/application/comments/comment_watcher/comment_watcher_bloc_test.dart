@@ -36,13 +36,13 @@ void main() {
       when(getExperienceComments.call(any)).thenAnswer((realInvocation) => createStream(right(commentSet)));
       return getIt<CommentWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(const CommentWatcherEvent.experienceCommentsLoaded(experienceId)),
+    act: (bloc) async => bloc.add(const CommentWatcherEvent.watchExperienceCommentsStarted(experienceId)),
     verify: (_) async {
       verify(getExperienceComments.call(any));
       verifyNoMoreInteractions(getExperienceComments);
     },
     expect: [
-      const CommentWatcherState.loading(),
+      const CommentWatcherState.loadInProgress(),
       CommentWatcherState.loadSuccess(commentSet),
     ],
   );
@@ -52,13 +52,13 @@ void main() {
       when(getExperienceComments.call(any)).thenAnswer((realInvocation) => createStream(left(failure)));
       return getIt<CommentWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(const CommentWatcherEvent.experienceCommentsLoaded(experienceId)),
+    act: (bloc) async => bloc.add(const CommentWatcherEvent.watchExperienceCommentsStarted(experienceId)),
     verify: (_) async {
       verify(getExperienceComments.call(any));
       verifyNoMoreInteractions(getExperienceComments);
     },
     expect: [
-      const CommentWatcherState.loading(),
+      const CommentWatcherState.loadInProgress(),
       const CommentWatcherState.loadFailure(failure),
     ],
   );

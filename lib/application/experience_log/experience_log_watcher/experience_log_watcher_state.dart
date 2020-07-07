@@ -4,7 +4,7 @@ part of 'experience_log_watcher_bloc.dart';
 abstract class ExperienceLogWatcherState with _$ExperienceLogWatcherState {
   const factory ExperienceLogWatcherState.initial() = _Initial;
 
-  const factory ExperienceLogWatcherState.loading() = _Loading;
+  const factory ExperienceLogWatcherState.loadInProgress() = _LoadInProgress;
 
   const factory ExperienceLogWatcherState.loadSuccess(Set<Experience> experienceSet) = _LoadSuccess;
 

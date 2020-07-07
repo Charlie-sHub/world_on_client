@@ -43,7 +43,6 @@ mixin _$FollowActorEvent {
     @required Result followed(User user),
     @required Result unFollowed(User user),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(User user),
@@ -51,14 +50,12 @@ mixin _$FollowActorEvent {
     Result unFollowed(User user),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
     @required Result followed(_Followed value),
     @required Result unFollowed(_UnFollowed value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
@@ -72,17 +69,16 @@ mixin _$FollowActorEvent {
 
 abstract class $FollowActorEventCopyWith<$Res> {
   factory $FollowActorEventCopyWith(FollowActorEvent value, $Res Function(FollowActorEvent) then) = _$FollowActorEventCopyWithImpl<$Res>;
-
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
 }
 
-class _$FollowActorEventCopyWithImpl<$Res> implements $FollowActorEventCopyWith<$Res> {
+class _$FollowActorEventCopyWithImpl<$Res>
+  implements $FollowActorEventCopyWith<$Res> {
   _$FollowActorEventCopyWithImpl(this._value, this._then);
 
   final FollowActorEvent _value;
-
   // ignore: unused_field
   final $Res Function(FollowActorEvent) _then;
 
@@ -106,9 +102,10 @@ class _$FollowActorEventCopyWithImpl<$Res> implements $FollowActorEventCopyWith<
   }
 }
 
-abstract class _$InitializedCopyWith<$Res> implements $FollowActorEventCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
-
+abstract class _$InitializedCopyWith<$Res>
+  implements $FollowActorEventCopyWith<$Res> {
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+  __$InitializedCopyWithImpl<$Res>;
   @override
   $Res call({User user});
 
@@ -116,8 +113,10 @@ abstract class _$InitializedCopyWith<$Res> implements $FollowActorEventCopyWith<
   $UserCopyWith<$Res> get user;
 }
 
-class __$InitializedCopyWithImpl<$Res> extends _$FollowActorEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
+class __$InitializedCopyWithImpl<$Res> extends _$FollowActorEventCopyWithImpl<$Res>
+  implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+    : super(_value, (v) => _then(v as _Initialized));
 
   @override
   _Initialized get _value => super._value as _Initialized;
@@ -145,14 +144,19 @@ class _$_Initialized implements _Initialized {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initialized && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
+    return identical(this, other) ||
+      (other is _Initialized &&
+        (identical(other.user, user) ||
+          const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @override
-  _$InitializedCopyWith<_Initialized> get copyWith => __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+    __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -216,14 +220,14 @@ abstract class _Initialized implements FollowActorEvent {
 
   @override
   User get user;
-
   @override
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
-abstract class _$FollowedCopyWith<$Res> implements $FollowActorEventCopyWith<$Res> {
-  factory _$FollowedCopyWith(_Followed value, $Res Function(_Followed) then) = __$FollowedCopyWithImpl<$Res>;
-
+abstract class _$FollowedCopyWith<$Res>
+  implements $FollowActorEventCopyWith<$Res> {
+  factory _$FollowedCopyWith(_Followed value, $Res Function(_Followed) then) =
+  __$FollowedCopyWithImpl<$Res>;
   @override
   $Res call({User user});
 
@@ -231,8 +235,10 @@ abstract class _$FollowedCopyWith<$Res> implements $FollowActorEventCopyWith<$Re
   $UserCopyWith<$Res> get user;
 }
 
-class __$FollowedCopyWithImpl<$Res> extends _$FollowActorEventCopyWithImpl<$Res> implements _$FollowedCopyWith<$Res> {
-  __$FollowedCopyWithImpl(_Followed _value, $Res Function(_Followed) _then) : super(_value, (v) => _then(v as _Followed));
+class __$FollowedCopyWithImpl<$Res> extends _$FollowActorEventCopyWithImpl<$Res>
+  implements _$FollowedCopyWith<$Res> {
+  __$FollowedCopyWithImpl(_Followed _value, $Res Function(_Followed) _then)
+    : super(_value, (v) => _then(v as _Followed));
 
   @override
   _Followed get _value => super._value as _Followed;
@@ -260,14 +266,19 @@ class _$_Followed implements _Followed {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Followed && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
+    return identical(this, other) ||
+      (other is _Followed &&
+        (identical(other.user, user) ||
+          const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @override
-  _$FollowedCopyWith<_Followed> get copyWith => __$FollowedCopyWithImpl<_Followed>(this, _$identity);
+  _$FollowedCopyWith<_Followed> get copyWith =>
+    __$FollowedCopyWithImpl<_Followed>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -331,14 +342,14 @@ abstract class _Followed implements FollowActorEvent {
 
   @override
   User get user;
-
   @override
   _$FollowedCopyWith<_Followed> get copyWith;
 }
 
-abstract class _$UnFollowedCopyWith<$Res> implements $FollowActorEventCopyWith<$Res> {
-  factory _$UnFollowedCopyWith(_UnFollowed value, $Res Function(_UnFollowed) then) = __$UnFollowedCopyWithImpl<$Res>;
-
+abstract class _$UnFollowedCopyWith<$Res>
+  implements $FollowActorEventCopyWith<$Res> {
+  factory _$UnFollowedCopyWith(_UnFollowed value, $Res Function(_UnFollowed) then) =
+  __$UnFollowedCopyWithImpl<$Res>;
   @override
   $Res call({User user});
 
@@ -346,8 +357,10 @@ abstract class _$UnFollowedCopyWith<$Res> implements $FollowActorEventCopyWith<$
   $UserCopyWith<$Res> get user;
 }
 
-class __$UnFollowedCopyWithImpl<$Res> extends _$FollowActorEventCopyWithImpl<$Res> implements _$UnFollowedCopyWith<$Res> {
-  __$UnFollowedCopyWithImpl(_UnFollowed _value, $Res Function(_UnFollowed) _then) : super(_value, (v) => _then(v as _UnFollowed));
+class __$UnFollowedCopyWithImpl<$Res> extends _$FollowActorEventCopyWithImpl<$Res>
+  implements _$UnFollowedCopyWith<$Res> {
+  __$UnFollowedCopyWithImpl(_UnFollowed _value, $Res Function(_UnFollowed) _then)
+    : super(_value, (v) => _then(v as _UnFollowed));
 
   @override
   _UnFollowed get _value => super._value as _UnFollowed;
@@ -375,14 +388,19 @@ class _$_UnFollowed implements _UnFollowed {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _UnFollowed && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
+    return identical(this, other) ||
+      (other is _UnFollowed &&
+        (identical(other.user, user) ||
+          const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @override
-  _$UnFollowedCopyWith<_UnFollowed> get copyWith => __$UnFollowedCopyWithImpl<_UnFollowed>(this, _$identity);
+  _$UnFollowedCopyWith<_UnFollowed> get copyWith =>
+    __$UnFollowedCopyWithImpl<_UnFollowed>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -446,7 +464,6 @@ abstract class _UnFollowed implements FollowActorEvent {
 
   @override
   User get user;
-
   @override
   _$UnFollowedCopyWith<_UnFollowed> get copyWith;
 }
@@ -506,7 +523,6 @@ mixin _$FollowActorState {
     @required Result unFollowSuccess(),
     @required Result unFollowFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
@@ -519,7 +535,6 @@ mixin _$FollowActorState {
     Result unFollowFailure(Failure<dynamic> failure),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
@@ -531,7 +546,6 @@ mixin _$FollowActorState {
     @required Result unFollowSuccess(_UnFollowSuccess value),
     @required Result unFollowFailure(_UnFollowFailure value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
@@ -547,24 +561,28 @@ mixin _$FollowActorState {
 }
 
 abstract class $FollowActorStateCopyWith<$Res> {
-  factory $FollowActorStateCopyWith(FollowActorState value, $Res Function(FollowActorState) then) = _$FollowActorStateCopyWithImpl<$Res>;
+  factory $FollowActorStateCopyWith(FollowActorState value, $Res Function(FollowActorState) then) =
+  _$FollowActorStateCopyWithImpl<$Res>;
 }
 
-class _$FollowActorStateCopyWithImpl<$Res> implements $FollowActorStateCopyWith<$Res> {
+class _$FollowActorStateCopyWithImpl<$Res>
+  implements $FollowActorStateCopyWith<$Res> {
   _$FollowActorStateCopyWithImpl(this._value, this._then);
 
   final FollowActorState _value;
-
   // ignore: unused_field
   final $Res Function(FollowActorState) _then;
 }
 
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+  __$InitialCopyWithImpl<$Res>;
 }
 
-class __$InitialCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Res>
+  implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+    : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -678,11 +696,14 @@ abstract class _Initial implements FollowActorState {
 }
 
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) = __$ActionInProgressCopyWithImpl<$Res>;
+  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) =
+  __$ActionInProgressCopyWithImpl<$Res>;
 }
 
-class __$ActionInProgressCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Res> implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then) : super(_value, (v) => _then(v as _ActionInProgress));
+class __$ActionInProgressCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Res>
+  implements _$ActionInProgressCopyWith<$Res> {
+  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then)
+    : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
   _ActionInProgress get _value => super._value as _ActionInProgress;
@@ -796,11 +817,14 @@ abstract class _ActionInProgress implements FollowActorState {
 }
 
 abstract class _$FollowsCopyWith<$Res> {
-  factory _$FollowsCopyWith(_Follows value, $Res Function(_Follows) then) = __$FollowsCopyWithImpl<$Res>;
+  factory _$FollowsCopyWith(_Follows value, $Res Function(_Follows) then) =
+  __$FollowsCopyWithImpl<$Res>;
 }
 
-class __$FollowsCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Res> implements _$FollowsCopyWith<$Res> {
-  __$FollowsCopyWithImpl(_Follows _value, $Res Function(_Follows) _then) : super(_value, (v) => _then(v as _Follows));
+class __$FollowsCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Res>
+  implements _$FollowsCopyWith<$Res> {
+  __$FollowsCopyWithImpl(_Follows _value, $Res Function(_Follows) _then)
+    : super(_value, (v) => _then(v as _Follows));
 
   @override
   _Follows get _value => super._value as _Follows;
@@ -914,11 +938,14 @@ abstract class _Follows implements FollowActorState {
 }
 
 abstract class _$FollowsNotCopyWith<$Res> {
-  factory _$FollowsNotCopyWith(_FollowsNot value, $Res Function(_FollowsNot) then) = __$FollowsNotCopyWithImpl<$Res>;
+  factory _$FollowsNotCopyWith(_FollowsNot value, $Res Function(_FollowsNot) then) =
+  __$FollowsNotCopyWithImpl<$Res>;
 }
 
-class __$FollowsNotCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Res> implements _$FollowsNotCopyWith<$Res> {
-  __$FollowsNotCopyWithImpl(_FollowsNot _value, $Res Function(_FollowsNot) _then) : super(_value, (v) => _then(v as _FollowsNot));
+class __$FollowsNotCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Res>
+  implements _$FollowsNotCopyWith<$Res> {
+  __$FollowsNotCopyWithImpl(_FollowsNot _value, $Res Function(_FollowsNot) _then)
+    : super(_value, (v) => _then(v as _FollowsNot));
 
   @override
   _FollowsNot get _value => super._value as _FollowsNot;
@@ -1032,11 +1059,14 @@ abstract class _FollowsNot implements FollowActorState {
 }
 
 abstract class _$FollowSuccessCopyWith<$Res> {
-  factory _$FollowSuccessCopyWith(_FollowSuccess value, $Res Function(_FollowSuccess) then) = __$FollowSuccessCopyWithImpl<$Res>;
+  factory _$FollowSuccessCopyWith(_FollowSuccess value, $Res Function(_FollowSuccess) then) =
+  __$FollowSuccessCopyWithImpl<$Res>;
 }
 
-class __$FollowSuccessCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Res> implements _$FollowSuccessCopyWith<$Res> {
-  __$FollowSuccessCopyWithImpl(_FollowSuccess _value, $Res Function(_FollowSuccess) _then) : super(_value, (v) => _then(v as _FollowSuccess));
+class __$FollowSuccessCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Res>
+  implements _$FollowSuccessCopyWith<$Res> {
+  __$FollowSuccessCopyWithImpl(_FollowSuccess _value, $Res Function(_FollowSuccess) _then)
+    : super(_value, (v) => _then(v as _FollowSuccess));
 
   @override
   _FollowSuccess get _value => super._value as _FollowSuccess;
@@ -1150,15 +1180,17 @@ abstract class _FollowSuccess implements FollowActorState {
 }
 
 abstract class _$FollowFailureCopyWith<$Res> {
-  factory _$FollowFailureCopyWith(_FollowFailure value, $Res Function(_FollowFailure) then) = __$FollowFailureCopyWithImpl<$Res>;
-
+  factory _$FollowFailureCopyWith(_FollowFailure value, $Res Function(_FollowFailure) then) =
+  __$FollowFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
-class __$FollowFailureCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Res> implements _$FollowFailureCopyWith<$Res> {
-  __$FollowFailureCopyWithImpl(_FollowFailure _value, $Res Function(_FollowFailure) _then) : super(_value, (v) => _then(v as _FollowFailure));
+class __$FollowFailureCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Res>
+  implements _$FollowFailureCopyWith<$Res> {
+  __$FollowFailureCopyWithImpl(_FollowFailure _value, $Res Function(_FollowFailure) _then)
+    : super(_value, (v) => _then(v as _FollowFailure));
 
   @override
   _FollowFailure get _value => super._value as _FollowFailure;
@@ -1196,14 +1228,19 @@ class _$_FollowFailure implements _FollowFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _FollowFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) ||
+      (other is _FollowFailure &&
+        (identical(other.failure, failure) ||
+          const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
-  _$FollowFailureCopyWith<_FollowFailure> get copyWith => __$FollowFailureCopyWithImpl<_FollowFailure>(this, _$identity);
+  _$FollowFailureCopyWith<_FollowFailure> get copyWith =>
+    __$FollowFailureCopyWithImpl<_FollowFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1296,16 +1333,18 @@ abstract class _FollowFailure implements FollowActorState {
   const factory _FollowFailure(Failure<dynamic> failure) = _$_FollowFailure;
 
   Failure<dynamic> get failure;
-
   _$FollowFailureCopyWith<_FollowFailure> get copyWith;
 }
 
 abstract class _$UnFollowSuccessCopyWith<$Res> {
-  factory _$UnFollowSuccessCopyWith(_UnFollowSuccess value, $Res Function(_UnFollowSuccess) then) = __$UnFollowSuccessCopyWithImpl<$Res>;
+  factory _$UnFollowSuccessCopyWith(_UnFollowSuccess value, $Res Function(_UnFollowSuccess) then) =
+  __$UnFollowSuccessCopyWithImpl<$Res>;
 }
 
-class __$UnFollowSuccessCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Res> implements _$UnFollowSuccessCopyWith<$Res> {
-  __$UnFollowSuccessCopyWithImpl(_UnFollowSuccess _value, $Res Function(_UnFollowSuccess) _then) : super(_value, (v) => _then(v as _UnFollowSuccess));
+class __$UnFollowSuccessCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Res>
+  implements _$UnFollowSuccessCopyWith<$Res> {
+  __$UnFollowSuccessCopyWithImpl(_UnFollowSuccess _value, $Res Function(_UnFollowSuccess) _then)
+    : super(_value, (v) => _then(v as _UnFollowSuccess));
 
   @override
   _UnFollowSuccess get _value => super._value as _UnFollowSuccess;
@@ -1419,15 +1458,17 @@ abstract class _UnFollowSuccess implements FollowActorState {
 }
 
 abstract class _$UnFollowFailureCopyWith<$Res> {
-  factory _$UnFollowFailureCopyWith(_UnFollowFailure value, $Res Function(_UnFollowFailure) then) = __$UnFollowFailureCopyWithImpl<$Res>;
-
+  factory _$UnFollowFailureCopyWith(_UnFollowFailure value, $Res Function(_UnFollowFailure) then) =
+  __$UnFollowFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
-class __$UnFollowFailureCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Res> implements _$UnFollowFailureCopyWith<$Res> {
-  __$UnFollowFailureCopyWithImpl(_UnFollowFailure _value, $Res Function(_UnFollowFailure) _then) : super(_value, (v) => _then(v as _UnFollowFailure));
+class __$UnFollowFailureCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Res>
+  implements _$UnFollowFailureCopyWith<$Res> {
+  __$UnFollowFailureCopyWithImpl(_UnFollowFailure _value, $Res Function(_UnFollowFailure) _then)
+    : super(_value, (v) => _then(v as _UnFollowFailure));
 
   @override
   _UnFollowFailure get _value => super._value as _UnFollowFailure;
@@ -1465,14 +1506,19 @@ class _$_UnFollowFailure implements _UnFollowFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _UnFollowFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) ||
+      (other is _UnFollowFailure &&
+        (identical(other.failure, failure) ||
+          const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
-  _$UnFollowFailureCopyWith<_UnFollowFailure> get copyWith => __$UnFollowFailureCopyWithImpl<_UnFollowFailure>(this, _$identity);
+  _$UnFollowFailureCopyWith<_UnFollowFailure> get copyWith =>
+    __$UnFollowFailureCopyWithImpl<_UnFollowFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1565,6 +1611,5 @@ abstract class _UnFollowFailure implements FollowActorState {
   const factory _UnFollowFailure(Failure<dynamic> failure) = _$_UnFollowFailure;
 
   Failure<dynamic> get failure;
-
   _$UnFollowFailureCopyWith<_UnFollowFailure> get copyWith;
 }

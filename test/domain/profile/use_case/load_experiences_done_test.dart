@@ -22,7 +22,7 @@ void main() {
       useCase = LoadExperiencesDone(mockProfileRepository);
     },
   );
-  final params = Params(id: 1);
+  final params = Params(userId: 1);
   final experiencesDone = {Experience.empty()};
   test(
     "Should return a Set of Experiences if everything goes well",

@@ -12,8 +12,8 @@ T _$identity<T>(T value) => value;
 class _$ExperienceLogWatcherEventTearOff {
   const _$ExperienceLogWatcherEventTearOff();
 
-  _ExperiencesLoaded experiencesLoaded() {
-    return const _ExperiencesLoaded();
+  _WatchExperiencesLogStarted watchExperiencesLogStarted() {
+    return const _WatchExperiencesLogStarted();
   }
 }
 
@@ -23,20 +23,20 @@ const $ExperienceLogWatcherEvent = _$ExperienceLogWatcherEventTearOff();
 mixin _$ExperienceLogWatcherEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result experiencesLoaded(),
+    @required Result watchExperiencesLogStarted(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result experiencesLoaded(),
+    Result watchExperiencesLogStarted(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result experiencesLoaded(_ExperiencesLoaded value),
+    @required Result watchExperiencesLogStarted(_WatchExperiencesLogStarted value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result experiencesLoaded(_ExperiencesLoaded value),
+    Result watchExperiencesLogStarted(_WatchExperiencesLogStarted value),
     @required Result orElse(),
   });
 }
@@ -53,31 +53,34 @@ class _$ExperienceLogWatcherEventCopyWithImpl<$Res> implements $ExperienceLogWat
   final $Res Function(ExperienceLogWatcherEvent) _then;
 }
 
-abstract class _$ExperiencesLoadedCopyWith<$Res> {
-  factory _$ExperiencesLoadedCopyWith(_ExperiencesLoaded value, $Res Function(_ExperiencesLoaded) then) =
-  __$ExperiencesLoadedCopyWithImpl<$Res>;
+abstract class _$WatchExperiencesLogStartedCopyWith<$Res> {
+  factory _$WatchExperiencesLogStartedCopyWith(_WatchExperiencesLogStarted value,
+    $Res Function(_WatchExperiencesLogStarted) then) =
+  __$WatchExperiencesLogStartedCopyWithImpl<$Res>;
 }
 
-class __$ExperiencesLoadedCopyWithImpl<$Res> extends _$ExperienceLogWatcherEventCopyWithImpl<$Res>
-  implements _$ExperiencesLoadedCopyWith<$Res> {
-  __$ExperiencesLoadedCopyWithImpl(_ExperiencesLoaded _value, $Res Function(_ExperiencesLoaded) _then)
-    : super(_value, (v) => _then(v as _ExperiencesLoaded));
+class __$WatchExperiencesLogStartedCopyWithImpl<$Res> extends _$ExperienceLogWatcherEventCopyWithImpl<$Res>
+  implements _$WatchExperiencesLogStartedCopyWith<$Res> {
+  __$WatchExperiencesLogStartedCopyWithImpl(_WatchExperiencesLogStarted _value,
+    $Res Function(_WatchExperiencesLogStarted) _then)
+    : super(_value, (v) => _then(v as _WatchExperiencesLogStarted));
 
   @override
-  _ExperiencesLoaded get _value => super._value as _ExperiencesLoaded;
+  _WatchExperiencesLogStarted get _value =>
+    super._value as _WatchExperiencesLogStarted;
 }
 
-class _$_ExperiencesLoaded implements _ExperiencesLoaded {
-  const _$_ExperiencesLoaded();
+class _$_WatchExperiencesLogStarted implements _WatchExperiencesLogStarted {
+  const _$_WatchExperiencesLogStarted();
 
   @override
   String toString() {
-    return 'ExperienceLogWatcherEvent.experiencesLoaded()';
+    return 'ExperienceLogWatcherEvent.watchExperiencesLogStarted()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ExperiencesLoaded);
+    return identical(this, other) || (other is _WatchExperiencesLogStarted);
   }
 
   @override
@@ -86,21 +89,21 @@ class _$_ExperiencesLoaded implements _ExperiencesLoaded {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result experiencesLoaded(),
+    @required Result watchExperiencesLogStarted(),
   }) {
-    assert(experiencesLoaded != null);
-    return experiencesLoaded();
+    assert(watchExperiencesLogStarted != null);
+    return watchExperiencesLogStarted();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result experiencesLoaded(),
+    Result watchExperiencesLogStarted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (experiencesLoaded != null) {
-      return experiencesLoaded();
+    if (watchExperiencesLogStarted != null) {
+      return watchExperiencesLogStarted();
     }
     return orElse();
   }
@@ -108,28 +111,29 @@ class _$_ExperiencesLoaded implements _ExperiencesLoaded {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result experiencesLoaded(_ExperiencesLoaded value),
+    @required Result watchExperiencesLogStarted(_WatchExperiencesLogStarted value),
   }) {
-    assert(experiencesLoaded != null);
-    return experiencesLoaded(this);
+    assert(watchExperiencesLogStarted != null);
+    return watchExperiencesLogStarted(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result experiencesLoaded(_ExperiencesLoaded value),
+    Result watchExperiencesLogStarted(_WatchExperiencesLogStarted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (experiencesLoaded != null) {
-      return experiencesLoaded(this);
+    if (watchExperiencesLogStarted != null) {
+      return watchExperiencesLogStarted(this);
     }
     return orElse();
   }
 }
 
-abstract class _ExperiencesLoaded implements ExperienceLogWatcherEvent {
-  const factory _ExperiencesLoaded() = _$_ExperiencesLoaded;
+abstract class _WatchExperiencesLogStarted
+  implements ExperienceLogWatcherEvent {
+  const factory _WatchExperiencesLogStarted() = _$_WatchExperiencesLogStarted;
 }
 
 class _$ExperienceLogWatcherStateTearOff {
@@ -139,8 +143,8 @@ class _$ExperienceLogWatcherStateTearOff {
     return const _Initial();
   }
 
-  _Loading loading() {
-    return const _Loading();
+  _LoadInProgress loadInProgress() {
+    return const _LoadInProgress();
   }
 
   _LoadSuccess loadSuccess(Set<Experience> experienceSet) {
@@ -163,14 +167,14 @@ mixin _$ExperienceLogWatcherState {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result loadSuccess(Set<Experience> experienceSet),
     @required Result loadFailure(Failure<dynamic> failure),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result loadSuccess(Set<Experience> experienceSet),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
@@ -178,14 +182,14 @@ mixin _$ExperienceLogWatcherState {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result loadSuccess(_LoadSuccess value),
     @required Result loadFailure(_LoadFailure value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result loadSuccess(_LoadSuccess value),
     Result loadFailure(_LoadFailure value),
     @required Result orElse(),
@@ -241,12 +245,12 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result loadSuccess(Set<Experience> experienceSet),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
     return initial();
@@ -256,7 +260,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result loadSuccess(Set<Experience> experienceSet),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
@@ -272,12 +276,12 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result loadSuccess(_LoadSuccess value),
     @required Result loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
     return initial(this);
@@ -287,7 +291,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result loadSuccess(_LoadSuccess value),
     Result loadFailure(_LoadFailure value),
     @required Result orElse(),
@@ -304,31 +308,31 @@ abstract class _Initial implements ExperienceLogWatcherState {
   const factory _Initial() = _$_Initial;
 }
 
-abstract class _$LoadingCopyWith<$Res> {
-  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
-  __$LoadingCopyWithImpl<$Res>;
+abstract class _$LoadInProgressCopyWith<$Res> {
+  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) =
+  __$LoadInProgressCopyWithImpl<$Res>;
 }
 
-class __$LoadingCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCopyWithImpl<$Res>
-  implements _$LoadingCopyWith<$Res> {
-  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
-    : super(_value, (v) => _then(v as _Loading));
+class __$LoadInProgressCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCopyWithImpl<$Res>
+  implements _$LoadInProgressCopyWith<$Res> {
+  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then)
+    : super(_value, (v) => _then(v as _LoadInProgress));
 
   @override
-  _Loading get _value => super._value as _Loading;
+  _LoadInProgress get _value => super._value as _LoadInProgress;
 }
 
-class _$_Loading implements _Loading {
-  const _$_Loading();
+class _$_LoadInProgress implements _LoadInProgress {
+  const _$_LoadInProgress();
 
   @override
   String toString() {
-    return 'ExperienceLogWatcherState.loading()';
+    return 'ExperienceLogWatcherState.loadInProgress()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Loading);
+    return identical(this, other) || (other is _LoadInProgress);
   }
 
   @override
@@ -338,29 +342,29 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result loadSuccess(Set<Experience> experienceSet),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
-    return loading();
+    return loadInProgress();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result loadSuccess(Set<Experience> experienceSet),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (loading != null) {
-      return loading();
+    if (loadInProgress != null) {
+      return loadInProgress();
     }
     return orElse();
   }
@@ -369,36 +373,36 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result loadSuccess(_LoadSuccess value),
     @required Result loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
-    return loading(this);
+    return loadInProgress(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result loadSuccess(_LoadSuccess value),
     Result loadFailure(_LoadFailure value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (loading != null) {
-      return loading(this);
+    if (loadInProgress != null) {
+      return loadInProgress(this);
     }
     return orElse();
   }
 }
 
-abstract class _Loading implements ExperienceLogWatcherState {
-  const factory _Loading() = _$_Loading;
+abstract class _LoadInProgress implements ExperienceLogWatcherState {
+  const factory _LoadInProgress() = _$_LoadInProgress;
 }
 
 abstract class _$LoadSuccessCopyWith<$Res> {
@@ -459,12 +463,12 @@ class _$_LoadSuccess implements _LoadSuccess {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result loadSuccess(Set<Experience> experienceSet),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
     return loadSuccess(experienceSet);
@@ -474,7 +478,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result loadSuccess(Set<Experience> experienceSet),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
@@ -490,12 +494,12 @@ class _$_LoadSuccess implements _LoadSuccess {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result loadSuccess(_LoadSuccess value),
     @required Result loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
     return loadSuccess(this);
@@ -505,7 +509,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result loadSuccess(_LoadSuccess value),
     Result loadFailure(_LoadFailure value),
     @required Result orElse(),
@@ -592,12 +596,12 @@ class _$_LoadFailure implements _LoadFailure {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result loadSuccess(Set<Experience> experienceSet),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
     return loadFailure(failure);
@@ -607,7 +611,7 @@ class _$_LoadFailure implements _LoadFailure {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result loadSuccess(Set<Experience> experienceSet),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
@@ -623,12 +627,12 @@ class _$_LoadFailure implements _LoadFailure {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result loadSuccess(_LoadSuccess value),
     @required Result loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
     return loadFailure(this);
@@ -638,7 +642,7 @@ class _$_LoadFailure implements _LoadFailure {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result loadSuccess(_LoadSuccess value),
     Result loadFailure(_LoadFailure value),
     @required Result orElse(),

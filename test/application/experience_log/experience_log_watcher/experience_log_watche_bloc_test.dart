@@ -35,13 +35,13 @@ void main() {
       when(loadUserLog.call(any)).thenAnswer((realInvocation) => createStream(right(experienceSet)));
       return getIt<ExperienceLogWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(const ExperienceLogWatcherEvent.experiencesLoaded()),
+    act: (bloc) async => bloc.add(const ExperienceLogWatcherEvent.watchExperiencesLogStarted()),
     verify: (_) async {
       verify(loadUserLog.call(any));
       verifyNoMoreInteractions(loadUserLog);
     },
     expect: [
-      const ExperienceLogWatcherState.loading(),
+      const ExperienceLogWatcherState.loadInProgress(),
       ExperienceLogWatcherState.loadSuccess(experienceSet),
     ],
   );
@@ -51,13 +51,13 @@ void main() {
       when(loadUserLog.call(any)).thenAnswer((realInvocation) => createStream(left(failure)));
       return getIt<ExperienceLogWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(const ExperienceLogWatcherEvent.experiencesLoaded()),
+    act: (bloc) async => bloc.add(const ExperienceLogWatcherEvent.watchExperiencesLogStarted()),
     verify: (_) async {
       verify(loadUserLog.call(any));
       verifyNoMoreInteractions(loadUserLog);
     },
     expect: [
-      const ExperienceLogWatcherState.loading(),
+      const ExperienceLogWatcherState.loadInProgress(),
       const ExperienceLogWatcherState.loadFailure(failure),
     ],
   );

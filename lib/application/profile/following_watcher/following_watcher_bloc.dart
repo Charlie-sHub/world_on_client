@@ -10,9 +10,7 @@ import 'package:worldon/domain/profile/use_case/load_following_users.dart';
 import 'package:worldon/injection.dart';
 
 part 'following_watcher_bloc.freezed.dart';
-
 part 'following_watcher_event.dart';
-
 part 'following_watcher_state.dart';
 
 /// Loads the [User]s following the given [User]
@@ -23,16 +21,18 @@ class FollowingWatcherBloc extends Bloc<FollowingWatcherEvent, FollowingWatcherS
   @override
   Stream<FollowingWatcherState> mapEventToState(FollowingWatcherEvent event) async* {
     yield* event.map(
-      followingUsersLoaded: onFollowingUsersLoaded,
+      watchFollowingUsersStarted: onFollowingUsersLoaded,
     );
   }
 
-  Stream<FollowingWatcherState> onFollowingUsersLoaded(_FollowingUsersLoaded event) async* {
-    yield const FollowingWatcherState.loading();
+  Stream<FollowingWatcherState> onFollowingUsersLoaded(_WatchFollowingUsersStarted event) async* {
+    yield const FollowingWatcherState.loadInProgress();
     final _loadFollowingUsers = getIt<LoadFollowingUsers>();
-    yield* _loadFollowingUsers(Params(
-      id: event.user.id,
-    )).map(
+    yield* _loadFollowingUsers(
+      Params(
+        id: event.user.id,
+      ),
+    ).map(
       (failureOrFollowingUsers) => failureOrFollowingUsers.fold(
         (failure) => FollowingWatcherState.loadFailure(failure),
         (followingUsers) => FollowingWatcherState.loadSuccess(followingUsers),

@@ -4,7 +4,7 @@ part of 'comment_watcher_bloc.dart';
 abstract class CommentWatcherState with _$CommentWatcherState {
   const factory CommentWatcherState.initial() = _Initial;
 
-  const factory CommentWatcherState.loading() = _Loading;
+  const factory CommentWatcherState.loadInProgress() = _LoadInProgress;
 
   const factory CommentWatcherState.loadSuccess(Set<Comment> comments) = _LoadSuccess;
 

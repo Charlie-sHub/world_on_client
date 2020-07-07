@@ -38,13 +38,13 @@ void main() {
           when(isLoggedInUser.call(any)).thenAnswer((_) async => true);
           return getIt<ProfileWatcherBloc>();
         },
-        act: (bloc) async => bloc.add(ProfileWatcherEvent.initializeForeignOrOwn(some(ownUser))),
+        act: (bloc) async => bloc.add(ProfileWatcherEvent.initializedForeignOrOwn(some(ownUser))),
         verify: (_) async {
           verify(isLoggedInUser.call(any));
           verifyNoMoreInteractions(isLoggedInUser);
         },
         expect: [
-          const ProfileWatcherState.loading(),
+          const ProfileWatcherState.loadInProgress(),
           ProfileWatcherState.own(ownUser),
         ],
       );
@@ -54,13 +54,13 @@ void main() {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(ownUser));
           return getIt<ProfileWatcherBloc>();
         },
-        act: (bloc) async => bloc.add(ProfileWatcherEvent.initializeForeignOrOwn(none())),
+        act: (bloc) async => bloc.add(ProfileWatcherEvent.initializedForeignOrOwn(none())),
         verify: (_) async {
           verify(getLoggedInUser.call(any));
           verifyNoMoreInteractions(getLoggedInUser);
         },
         expect: [
-          const ProfileWatcherState.loading(),
+          const ProfileWatcherState.loadInProgress(),
           ProfileWatcherState.own(ownUser),
         ],
       );
@@ -70,13 +70,13 @@ void main() {
           when(isLoggedInUser.call(any)).thenAnswer((_) async => false);
           return getIt<ProfileWatcherBloc>();
         },
-        act: (bloc) async => bloc.add(ProfileWatcherEvent.initializeForeignOrOwn(some(foreignUser))),
+        act: (bloc) async => bloc.add(ProfileWatcherEvent.initializedForeignOrOwn(some(foreignUser))),
         verify: (_) async {
           verify(isLoggedInUser.call(any));
           verifyNoMoreInteractions(isLoggedInUser);
         },
         expect: [
-          const ProfileWatcherState.loading(),
+          const ProfileWatcherState.loadInProgress(),
           ProfileWatcherState.foreign(foreignUser),
         ],
       );
@@ -91,13 +91,13 @@ void main() {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
           return getIt<ProfileWatcherBloc>();
         },
-        act: (bloc) async => bloc.add(ProfileWatcherEvent.initializeForeignOrOwn(none())),
+        act: (bloc) async => bloc.add(ProfileWatcherEvent.initializedForeignOrOwn(none())),
         verify: (_) async {
           verify(getLoggedInUser.call(any));
           verifyNoMoreInteractions(getLoggedInUser);
         },
         expect: [
-          const ProfileWatcherState.loading(),
+          const ProfileWatcherState.loadInProgress(),
           const ProfileWatcherState.loadFailure(),
         ],
       );

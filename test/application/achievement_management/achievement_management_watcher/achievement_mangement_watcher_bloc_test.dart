@@ -35,13 +35,13 @@ void main() {
       when(getAllAchievements.call(any)).thenAnswer((_) => createStream(right(achievementList)));
       return getIt<AchievementManagementWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(const AchievementManagementWatcherEvent.allAchievementsLoaded()),
+    act: (bloc) async => bloc.add(const AchievementManagementWatcherEvent.watchAllAchievementsStarted()),
     verify: (_) async {
       verify(getAllAchievements.call(any));
       verifyNoMoreInteractions(getAllAchievements);
     },
     expect: [
-      const AchievementManagementWatcherState.loading(),
+      const AchievementManagementWatcherState.loadInProgress(),
       AchievementManagementWatcherState.loadSuccess(achievementList),
     ],
   );
@@ -51,13 +51,13 @@ void main() {
       when(getAllAchievements.call(any)).thenAnswer((_) => createStream(left(failure)));
       return getIt<AchievementManagementWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(const AchievementManagementWatcherEvent.allAchievementsLoaded()),
+    act: (bloc) async => bloc.add(const AchievementManagementWatcherEvent.watchAllAchievementsStarted()),
     verify: (_) async {
       verify(getAllAchievements.call(any));
       verifyNoMoreInteractions(getAllAchievements);
     },
     expect: [
-      const AchievementManagementWatcherState.loading(),
+      const AchievementManagementWatcherState.loadInProgress(),
       const AchievementManagementWatcherState.loadFailure(failure),
     ],
   );

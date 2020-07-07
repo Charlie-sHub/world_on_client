@@ -12,6 +12,7 @@ part 'search_results.freezed.dart';
 /// Meant to hold the results of a search by [Name]
 // Maybe add value objects in the future and support for the other kinds of searches
 @freezed
+@Deprecated("The different blocs for the different searches and results makes this class obsolete")
 abstract class SearchResults implements _$SearchResults {
   const SearchResults._();
 

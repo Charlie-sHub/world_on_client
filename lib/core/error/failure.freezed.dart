@@ -1036,9 +1036,8 @@ abstract class _Value<T> implements Failure<T> {
 abstract class _$ProfileDomainCopyWith<T, $Res> {
   factory _$ProfileDomainCopyWith(_ProfileDomain<T> value, $Res Function(_ProfileDomain<T>) then) =
   __$ProfileDomainCopyWithImpl<T, $Res>;
-  
   $Res call({ProfileDomainFailure<T> f});
-  
+
   $ProfileDomainFailureCopyWith<T, $Res> get f;
 }
 
@@ -1046,10 +1045,10 @@ class __$ProfileDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Re
   implements _$ProfileDomainCopyWith<T, $Res> {
   __$ProfileDomainCopyWithImpl(_ProfileDomain<T> _value, $Res Function(_ProfileDomain<T>) _then)
     : super(_value, (v) => _then(v as _ProfileDomain<T>));
-  
+
   @override
   _ProfileDomain<T> get _value => super._value as _ProfileDomain<T>;
-  
+
   @override
   $Res call({
     Object f = freezed,
@@ -1058,7 +1057,7 @@ class __$ProfileDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Re
       f == freezed ? _value.f : f as ProfileDomainFailure<T>,
     ));
   }
-  
+
   @override
   $ProfileDomainFailureCopyWith<T, $Res> get f {
     if (_value.f == null) {
@@ -1072,15 +1071,15 @@ class __$ProfileDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Re
 
 class _$_ProfileDomain<T> implements _ProfileDomain<T> {
   const _$_ProfileDomain(this.f) : assert(f != null);
-  
+
   @override
   final ProfileDomainFailure<T> f;
-  
+
   @override
   String toString() {
     return 'Failure<$T>.profileDomain(f: $f)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -1088,15 +1087,15 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
         (identical(other.f, f) ||
           const DeepCollectionEquality().equals(other.f, f)));
   }
-  
+
   @override
   int get hashCode =>
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
-  
+
   @override
   _$ProfileDomainCopyWith<T, _ProfileDomain<T>> get copyWith =>
     __$ProfileDomainCopyWithImpl<T, _ProfileDomain<T>>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -1117,7 +1116,7 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
     assert(profileDomain != null);
     return profileDomain(f);
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -1136,7 +1135,7 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
@@ -1157,7 +1156,7 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
     assert(profileDomain != null);
     return profileDomain(this);
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -1180,8 +1179,7 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
 
 abstract class _ProfileDomain<T> implements Failure<T> {
   const factory _ProfileDomain(ProfileDomainFailure<T> f) = _$_ProfileDomain<T>;
-  
+
   ProfileDomainFailure<T> get f;
-  
   _$ProfileDomainCopyWith<T, _ProfileDomain<T>> get copyWith;
 }

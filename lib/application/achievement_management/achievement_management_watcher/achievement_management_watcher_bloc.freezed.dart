@@ -12,8 +12,8 @@ T _$identity<T>(T value) => value;
 class _$AchievementManagementWatcherEventTearOff {
   const _$AchievementManagementWatcherEventTearOff();
 
-  _AllAchievementsLoaded allAchievementsLoaded() {
-    return const _AllAchievementsLoaded();
+  _WatchAllAchievementsStarted watchAllAchievementsStarted() {
+    return const _WatchAllAchievementsStarted();
   }
 }
 
@@ -23,20 +23,20 @@ const $AchievementManagementWatcherEvent = _$AchievementManagementWatcherEventTe
 mixin _$AchievementManagementWatcherEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result allAchievementsLoaded(),
+    @required Result watchAllAchievementsStarted(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result allAchievementsLoaded(),
+    Result watchAllAchievementsStarted(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result allAchievementsLoaded(_AllAchievementsLoaded value),
+    @required Result watchAllAchievementsStarted(_WatchAllAchievementsStarted value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result allAchievementsLoaded(_AllAchievementsLoaded value),
+    Result watchAllAchievementsStarted(_WatchAllAchievementsStarted value),
     @required Result orElse(),
   });
 }
@@ -55,33 +55,34 @@ class _$AchievementManagementWatcherEventCopyWithImpl<$Res>
   final $Res Function(AchievementManagementWatcherEvent) _then;
 }
 
-abstract class _$AllAchievementsLoadedCopyWith<$Res> {
-  factory _$AllAchievementsLoadedCopyWith(_AllAchievementsLoaded value,
-    $Res Function(_AllAchievementsLoaded) then) =
-  __$AllAchievementsLoadedCopyWithImpl<$Res>;
+abstract class _$WatchAllAchievementsStartedCopyWith<$Res> {
+  factory _$WatchAllAchievementsStartedCopyWith(_WatchAllAchievementsStarted value,
+    $Res Function(_WatchAllAchievementsStarted) then) =
+  __$WatchAllAchievementsStartedCopyWithImpl<$Res>;
 }
 
-class __$AllAchievementsLoadedCopyWithImpl<$Res> extends _$AchievementManagementWatcherEventCopyWithImpl<$Res>
-  implements _$AllAchievementsLoadedCopyWith<$Res> {
-  __$AllAchievementsLoadedCopyWithImpl(_AllAchievementsLoaded _value,
-    $Res Function(_AllAchievementsLoaded) _then)
-    : super(_value, (v) => _then(v as _AllAchievementsLoaded));
+class __$WatchAllAchievementsStartedCopyWithImpl<$Res> extends _$AchievementManagementWatcherEventCopyWithImpl<$Res>
+  implements _$WatchAllAchievementsStartedCopyWith<$Res> {
+  __$WatchAllAchievementsStartedCopyWithImpl(_WatchAllAchievementsStarted _value,
+    $Res Function(_WatchAllAchievementsStarted) _then)
+    : super(_value, (v) => _then(v as _WatchAllAchievementsStarted));
 
   @override
-  _AllAchievementsLoaded get _value => super._value as _AllAchievementsLoaded;
+  _WatchAllAchievementsStarted get _value =>
+    super._value as _WatchAllAchievementsStarted;
 }
 
-class _$_AllAchievementsLoaded implements _AllAchievementsLoaded {
-  const _$_AllAchievementsLoaded();
+class _$_WatchAllAchievementsStarted implements _WatchAllAchievementsStarted {
+  const _$_WatchAllAchievementsStarted();
 
   @override
   String toString() {
-    return 'AchievementManagementWatcherEvent.allAchievementsLoaded()';
+    return 'AchievementManagementWatcherEvent.watchAllAchievementsStarted()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _AllAchievementsLoaded);
+    return identical(this, other) || (other is _WatchAllAchievementsStarted);
   }
 
   @override
@@ -90,21 +91,21 @@ class _$_AllAchievementsLoaded implements _AllAchievementsLoaded {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result allAchievementsLoaded(),
+    @required Result watchAllAchievementsStarted(),
   }) {
-    assert(allAchievementsLoaded != null);
-    return allAchievementsLoaded();
+    assert(watchAllAchievementsStarted != null);
+    return watchAllAchievementsStarted();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result allAchievementsLoaded(),
+    Result watchAllAchievementsStarted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (allAchievementsLoaded != null) {
-      return allAchievementsLoaded();
+    if (watchAllAchievementsStarted != null) {
+      return watchAllAchievementsStarted();
     }
     return orElse();
   }
@@ -112,29 +113,29 @@ class _$_AllAchievementsLoaded implements _AllAchievementsLoaded {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result allAchievementsLoaded(_AllAchievementsLoaded value),
+    @required Result watchAllAchievementsStarted(_WatchAllAchievementsStarted value),
   }) {
-    assert(allAchievementsLoaded != null);
-    return allAchievementsLoaded(this);
+    assert(watchAllAchievementsStarted != null);
+    return watchAllAchievementsStarted(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result allAchievementsLoaded(_AllAchievementsLoaded value),
+    Result watchAllAchievementsStarted(_WatchAllAchievementsStarted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (allAchievementsLoaded != null) {
-      return allAchievementsLoaded(this);
+    if (watchAllAchievementsStarted != null) {
+      return watchAllAchievementsStarted(this);
     }
     return orElse();
   }
 }
 
-abstract class _AllAchievementsLoaded
+abstract class _WatchAllAchievementsStarted
   implements AchievementManagementWatcherEvent {
-  const factory _AllAchievementsLoaded() = _$_AllAchievementsLoaded;
+  const factory _WatchAllAchievementsStarted() = _$_WatchAllAchievementsStarted;
 }
 
 class _$AchievementManagementWatcherStateTearOff {
@@ -144,8 +145,8 @@ class _$AchievementManagementWatcherStateTearOff {
     return const _Initial();
   }
 
-  _Loading loading() {
-    return const _Loading();
+  _LoadInProgress loadInProgress() {
+    return const _LoadInProgress();
   }
 
   _loadSuccess loadSuccess(List<Achievement> achievements) {
@@ -169,14 +170,14 @@ mixin _$AchievementManagementWatcherState {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result loadSuccess(List<Achievement> achievements),
     @required Result loadFailure(Failure<dynamic> failure),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result loadSuccess(List<Achievement> achievements),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
@@ -184,14 +185,14 @@ mixin _$AchievementManagementWatcherState {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result loadSuccess(_loadSuccess value),
     @required Result loadFailure(_loadFailure value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result loadSuccess(_loadSuccess value),
     Result loadFailure(_loadFailure value),
     @required Result orElse(),
@@ -247,12 +248,12 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result loadSuccess(List<Achievement> achievements),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
     return initial();
@@ -262,7 +263,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result loadSuccess(List<Achievement> achievements),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
@@ -278,12 +279,12 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result loadSuccess(_loadSuccess value),
     @required Result loadFailure(_loadFailure value),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
     return initial(this);
@@ -293,7 +294,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result loadSuccess(_loadSuccess value),
     Result loadFailure(_loadFailure value),
     @required Result orElse(),
@@ -310,31 +311,31 @@ abstract class _Initial implements AchievementManagementWatcherState {
   const factory _Initial() = _$_Initial;
 }
 
-abstract class _$LoadingCopyWith<$Res> {
-  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
-  __$LoadingCopyWithImpl<$Res>;
+abstract class _$LoadInProgressCopyWith<$Res> {
+  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) =
+  __$LoadInProgressCopyWithImpl<$Res>;
 }
 
-class __$LoadingCopyWithImpl<$Res> extends _$AchievementManagementWatcherStateCopyWithImpl<$Res>
-  implements _$LoadingCopyWith<$Res> {
-  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
-    : super(_value, (v) => _then(v as _Loading));
+class __$LoadInProgressCopyWithImpl<$Res> extends _$AchievementManagementWatcherStateCopyWithImpl<$Res>
+  implements _$LoadInProgressCopyWith<$Res> {
+  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then)
+    : super(_value, (v) => _then(v as _LoadInProgress));
 
   @override
-  _Loading get _value => super._value as _Loading;
+  _LoadInProgress get _value => super._value as _LoadInProgress;
 }
 
-class _$_Loading implements _Loading {
-  const _$_Loading();
+class _$_LoadInProgress implements _LoadInProgress {
+  const _$_LoadInProgress();
 
   @override
   String toString() {
-    return 'AchievementManagementWatcherState.loading()';
+    return 'AchievementManagementWatcherState.loadInProgress()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Loading);
+    return identical(this, other) || (other is _LoadInProgress);
   }
 
   @override
@@ -344,29 +345,29 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result loadSuccess(List<Achievement> achievements),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
-    return loading();
+    return loadInProgress();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result loadSuccess(List<Achievement> achievements),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (loading != null) {
-      return loading();
+    if (loadInProgress != null) {
+      return loadInProgress();
     }
     return orElse();
   }
@@ -375,36 +376,36 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result loadSuccess(_loadSuccess value),
     @required Result loadFailure(_loadFailure value),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
-    return loading(this);
+    return loadInProgress(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result loadSuccess(_loadSuccess value),
     Result loadFailure(_loadFailure value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (loading != null) {
-      return loading(this);
+    if (loadInProgress != null) {
+      return loadInProgress(this);
     }
     return orElse();
   }
 }
 
-abstract class _Loading implements AchievementManagementWatcherState {
-  const factory _Loading() = _$_Loading;
+abstract class _LoadInProgress implements AchievementManagementWatcherState {
+  const factory _LoadInProgress() = _$_LoadInProgress;
 }
 
 abstract class _$loadSuccessCopyWith<$Res> {
@@ -465,12 +466,12 @@ class _$_loadSuccess implements _loadSuccess {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result loadSuccess(List<Achievement> achievements),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
     return loadSuccess(achievements);
@@ -480,7 +481,7 @@ class _$_loadSuccess implements _loadSuccess {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result loadSuccess(List<Achievement> achievements),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
@@ -496,12 +497,12 @@ class _$_loadSuccess implements _loadSuccess {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result loadSuccess(_loadSuccess value),
     @required Result loadFailure(_loadFailure value),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
     return loadSuccess(this);
@@ -511,7 +512,7 @@ class _$_loadSuccess implements _loadSuccess {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result loadSuccess(_loadSuccess value),
     Result loadFailure(_loadFailure value),
     @required Result orElse(),
@@ -598,12 +599,12 @@ class _$_loadFailure implements _loadFailure {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result loadSuccess(List<Achievement> achievements),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
     return loadFailure(failure);
@@ -613,7 +614,7 @@ class _$_loadFailure implements _loadFailure {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result loadSuccess(List<Achievement> achievements),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
@@ -629,12 +630,12 @@ class _$_loadFailure implements _loadFailure {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result loadSuccess(_loadSuccess value),
     @required Result loadFailure(_loadFailure value),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
     return loadFailure(this);
@@ -644,7 +645,7 @@ class _$_loadFailure implements _loadFailure {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result loadSuccess(_loadSuccess value),
     Result loadFailure(_loadFailure value),
     @required Result orElse(),

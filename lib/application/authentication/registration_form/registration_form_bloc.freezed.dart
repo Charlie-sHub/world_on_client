@@ -406,7 +406,6 @@ abstract class _NameChanged implements RegistrationFormEvent {
   const factory _NameChanged(String name) = _$_NameChanged;
 
   String get name;
-  
   _$NameChangedCopyWith<_NameChanged> get copyWith;
 }
 
@@ -559,7 +558,6 @@ abstract class _UsernameChanged implements RegistrationFormEvent {
   const factory _UsernameChanged(String username) = _$_UsernameChanged;
 
   String get username;
-  
   _$UsernameChangedCopyWith<_UsernameChanged> get copyWith;
 }
 
@@ -712,7 +710,6 @@ abstract class _PasswordChanged implements RegistrationFormEvent {
   const factory _PasswordChanged(String password) = _$_PasswordChanged;
 
   String get password;
-  
   _$PasswordChangedCopyWith<_PasswordChanged> get copyWith;
 }
 
@@ -869,7 +866,6 @@ abstract class _EmailAddressChanged implements RegistrationFormEvent {
   _$_EmailAddressChanged;
 
   String get emailAddress;
-  
   _$EmailAddressChangedCopyWith<_EmailAddressChanged> get copyWith;
 }
 
@@ -1022,7 +1018,6 @@ abstract class _BirthdayChanged implements RegistrationFormEvent {
   const factory _BirthdayChanged(DateTime birthday) = _$_BirthdayChanged;
 
   DateTime get birthday;
-  
   _$BirthdayChangedCopyWith<_BirthdayChanged> get copyWith;
 }
 
@@ -1175,7 +1170,6 @@ abstract class _DescriptionChanged implements RegistrationFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description;
-  
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith;
 }
 
@@ -1328,7 +1322,6 @@ abstract class _InterestsChanged implements RegistrationFormEvent {
   const factory _InterestsChanged(Set<Tag> interests) = _$_InterestsChanged;
 
   Set<Tag> get interests;
-  
   _$InterestsChangedCopyWith<_InterestsChanged> get copyWith;
 }
 

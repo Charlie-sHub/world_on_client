@@ -22,12 +22,12 @@ class MainFeedWatcherBloc extends Bloc<MainFeedWatcherEvent, MainFeedWatcherStat
   @override
   Stream<MainFeedWatcherState> mapEventToState(MainFeedWatcherEvent event) async* {
     yield* event.map(
-      feedFilled: onFeedFilled,
+      watchMainFeedStarted: onWatchMainFeedStarted,
     );
   }
 
-  Stream<MainFeedWatcherState> onFeedFilled(_FeedFilled event) async* {
-    yield const MainFeedWatcherState.loading();
+  Stream<MainFeedWatcherState> onWatchMainFeedStarted(_WatchMainFeedStarted event) async* {
+    yield const MainFeedWatcherState.loadInProgress();
     final _fillFeed = getIt<FillFeed>();
     yield* _fillFeed(getIt<NoParams>()).map(
       (failureOrExperiences) => failureOrExperiences.fold(

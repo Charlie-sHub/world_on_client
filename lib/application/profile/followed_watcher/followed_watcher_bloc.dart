@@ -23,16 +23,18 @@ class FollowedWatcherBloc extends Bloc<FollowedWatcherEvent, FollowedWatcherStat
   @override
   Stream<FollowedWatcherState> mapEventToState(FollowedWatcherEvent event) async* {
     yield* event.map(
-      followedUsersLoaded: onFollowedUsersLoaded,
+      watchFollowedUsersStarted: onWatchFollowedUsersStarted,
     );
   }
 
-  Stream<FollowedWatcherState> onFollowedUsersLoaded(_FollowedUsersLoaded event) async* {
-    yield const FollowedWatcherState.loading();
+  Stream<FollowedWatcherState> onWatchFollowedUsersStarted(_WatchFollowedUsersStarted event) async* {
+    yield const FollowedWatcherState.loadInProgress();
     final _loadFollowedUsers = getIt<LoadFollowedUsers>();
-    yield* _loadFollowedUsers(Params(
-      id: event.user.id,
-    )).map(
+    yield* _loadFollowedUsers(
+      Params(
+        id: event.user.id,
+      ),
+    ).map(
       (failureOrFollowedUsers) => failureOrFollowedUsers.fold(
         (failure) => FollowedWatcherState.loadFailure(failure),
         (followedUsers) => FollowedWatcherState.loadSuccess(followedUsers),

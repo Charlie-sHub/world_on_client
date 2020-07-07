@@ -18,7 +18,6 @@ class Name extends ValueObject<String> {
         input: input,
         length: maxLength,
       ).flatMap(validateStringNotEmpty).flatMap(validateSingleLineString),
-      // Is there a good way to format the flatMap chains?
     );
   }
 

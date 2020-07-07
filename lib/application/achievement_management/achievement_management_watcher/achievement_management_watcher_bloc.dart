@@ -21,13 +21,13 @@ class AchievementManagementWatcherBloc extends Bloc<AchievementManagementWatcher
   @override
   Stream<AchievementManagementWatcherState> mapEventToState(AchievementManagementWatcherEvent event) async* {
     yield* event.map(
-      allAchievementsLoaded: onAllAchievementsLoaded,
+      watchAllAchievementsStarted: onWatchAllAchievementsStarted,
     );
   }
 
-  Stream<AchievementManagementWatcherState> onAllAchievementsLoaded(_AllAchievementsLoaded event) async* {
+  Stream<AchievementManagementWatcherState> onWatchAllAchievementsStarted(_WatchAllAchievementsStarted event) async* {
     // TODO: Check https://bloclibrary.dev/#/flutterinfinitelisttutorial
-    yield const AchievementManagementWatcherState.loading();
+    yield const AchievementManagementWatcherState.loadInProgress();
     final _getAllAchievements = getIt<GetAllAchievements>();
     yield* _getAllAchievements(getIt<NoParams>()).map(
       (failureOrAchievements) => failureOrAchievements.fold(

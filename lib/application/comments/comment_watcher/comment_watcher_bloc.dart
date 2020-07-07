@@ -19,12 +19,12 @@ class CommentWatcherBloc extends Bloc<CommentWatcherEvent, CommentWatcherState> 
   @override
   Stream<CommentWatcherState> mapEventToState(CommentWatcherEvent event) async* {
     yield* event.map(
-      experienceCommentsLoaded: onExperienceCommentsLoaded,
+      watchExperienceCommentsStarted: onWatchExperienceCommentsStarted,
     );
   }
 
-  Stream<CommentWatcherState> onExperienceCommentsLoaded(_ExperienceCommentsLoaded event) async* {
-    yield const CommentWatcherState.loading();
+  Stream<CommentWatcherState> onWatchExperienceCommentsStarted(_WatchExperienceCommentsStarted event) async* {
+    yield const CommentWatcherState.loadInProgress();
     final _getExperienceComments = getIt<GetExperienceComments>();
     final _params = Params(
       experienceId: event.experienceId,

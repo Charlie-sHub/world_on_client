@@ -11,7 +11,9 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/injection.dart';
 
 part 'profile_watcher_bloc.freezed.dart';
+
 part 'profile_watcher_event.dart';
+
 part 'profile_watcher_state.dart';
 
 @injectable
@@ -21,12 +23,12 @@ class ProfileWatcherBloc extends Bloc<ProfileWatcherEvent, ProfileWatcherState> 
   @override
   Stream<ProfileWatcherState> mapEventToState(ProfileWatcherEvent event) async* {
     yield* event.map(
-      initializeForeignOrOwn: onInitializeForeignOrOwn,
+      initializedForeignOrOwn: onInitializedForeignOrOwn,
     );
   }
 
-  Stream<ProfileWatcherState> onInitializeForeignOrOwn(_InitializeForeignOrOwn event) async* {
-    yield const ProfileWatcherState.loading();
+  Stream<ProfileWatcherState> onInitializedForeignOrOwn(_InitializedForeignOrOwn event) async* {
+    yield const ProfileWatcherState.loadInProgress();
     yield* event.userOption.fold(
       () async* {
         final _getLoggedInUser = getIt<GetLoggedInUser>();

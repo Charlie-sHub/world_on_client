@@ -4,7 +4,7 @@ part of 'following_watcher_bloc.dart';
 abstract class FollowingWatcherState with _$FollowingWatcherState {
   const factory FollowingWatcherState.initial() = _Initial;
 
-  const factory FollowingWatcherState.loading() = _Loading;
+  const factory FollowingWatcherState.loadInProgress() = _LoadInProgress;
 
   const factory FollowingWatcherState.loadSuccess(Set<User> followingUsers) = _LoadSuccess;
 

@@ -12,8 +12,8 @@ T _$identity<T>(T value) => value;
 class _$NotificationsWatcherEventTearOff {
   const _$NotificationsWatcherEventTearOff();
 
-  _NotificationsLoaded notificationsLoaded() {
-    return const _NotificationsLoaded();
+  _WatchNotificationsStarted watchNotificationsStarted() {
+    return const _WatchNotificationsStarted();
   }
 }
 
@@ -23,20 +23,20 @@ const $NotificationsWatcherEvent = _$NotificationsWatcherEventTearOff();
 mixin _$NotificationsWatcherEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result notificationsLoaded(),
+    @required Result watchNotificationsStarted(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result notificationsLoaded(),
+    Result watchNotificationsStarted(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result notificationsLoaded(_NotificationsLoaded value),
+    @required Result watchNotificationsStarted(_WatchNotificationsStarted value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result notificationsLoaded(_NotificationsLoaded value),
+    Result watchNotificationsStarted(_WatchNotificationsStarted value),
     @required Result orElse(),
   });
 }
@@ -53,32 +53,34 @@ class _$NotificationsWatcherEventCopyWithImpl<$Res> implements $NotificationsWat
   final $Res Function(NotificationsWatcherEvent) _then;
 }
 
-abstract class _$NotificationsLoadedCopyWith<$Res> {
-  factory _$NotificationsLoadedCopyWith(_NotificationsLoaded value,
-    $Res Function(_NotificationsLoaded) then) =
-  __$NotificationsLoadedCopyWithImpl<$Res>;
+abstract class _$WatchNotificationsStartedCopyWith<$Res> {
+  factory _$WatchNotificationsStartedCopyWith(_WatchNotificationsStarted value,
+    $Res Function(_WatchNotificationsStarted) then) =
+  __$WatchNotificationsStartedCopyWithImpl<$Res>;
 }
 
-class __$NotificationsLoadedCopyWithImpl<$Res> extends _$NotificationsWatcherEventCopyWithImpl<$Res>
-  implements _$NotificationsLoadedCopyWith<$Res> {
-  __$NotificationsLoadedCopyWithImpl(_NotificationsLoaded _value, $Res Function(_NotificationsLoaded) _then)
-    : super(_value, (v) => _then(v as _NotificationsLoaded));
+class __$WatchNotificationsStartedCopyWithImpl<$Res> extends _$NotificationsWatcherEventCopyWithImpl<$Res>
+  implements _$WatchNotificationsStartedCopyWith<$Res> {
+  __$WatchNotificationsStartedCopyWithImpl(_WatchNotificationsStarted _value,
+    $Res Function(_WatchNotificationsStarted) _then)
+    : super(_value, (v) => _then(v as _WatchNotificationsStarted));
 
   @override
-  _NotificationsLoaded get _value => super._value as _NotificationsLoaded;
+  _WatchNotificationsStarted get _value =>
+    super._value as _WatchNotificationsStarted;
 }
 
-class _$_NotificationsLoaded implements _NotificationsLoaded {
-  const _$_NotificationsLoaded();
+class _$_WatchNotificationsStarted implements _WatchNotificationsStarted {
+  const _$_WatchNotificationsStarted();
 
   @override
   String toString() {
-    return 'NotificationsWatcherEvent.notificationsLoaded()';
+    return 'NotificationsWatcherEvent.watchNotificationsStarted()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NotificationsLoaded);
+    return identical(this, other) || (other is _WatchNotificationsStarted);
   }
 
   @override
@@ -87,21 +89,21 @@ class _$_NotificationsLoaded implements _NotificationsLoaded {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result notificationsLoaded(),
+    @required Result watchNotificationsStarted(),
   }) {
-    assert(notificationsLoaded != null);
-    return notificationsLoaded();
+    assert(watchNotificationsStarted != null);
+    return watchNotificationsStarted();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result notificationsLoaded(),
+    Result watchNotificationsStarted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (notificationsLoaded != null) {
-      return notificationsLoaded();
+    if (watchNotificationsStarted != null) {
+      return watchNotificationsStarted();
     }
     return orElse();
   }
@@ -109,28 +111,28 @@ class _$_NotificationsLoaded implements _NotificationsLoaded {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result notificationsLoaded(_NotificationsLoaded value),
+    @required Result watchNotificationsStarted(_WatchNotificationsStarted value),
   }) {
-    assert(notificationsLoaded != null);
-    return notificationsLoaded(this);
+    assert(watchNotificationsStarted != null);
+    return watchNotificationsStarted(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result notificationsLoaded(_NotificationsLoaded value),
+    Result watchNotificationsStarted(_WatchNotificationsStarted value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (notificationsLoaded != null) {
-      return notificationsLoaded(this);
+    if (watchNotificationsStarted != null) {
+      return watchNotificationsStarted(this);
     }
     return orElse();
   }
 }
 
-abstract class _NotificationsLoaded implements NotificationsWatcherEvent {
-  const factory _NotificationsLoaded() = _$_NotificationsLoaded;
+abstract class _WatchNotificationsStarted implements NotificationsWatcherEvent {
+  const factory _WatchNotificationsStarted() = _$_WatchNotificationsStarted;
 }
 
 class _$NotificationsWatcherStateTearOff {
@@ -140,8 +142,8 @@ class _$NotificationsWatcherStateTearOff {
     return const _Initial();
   }
 
-  _Loading loading() {
-    return const _Loading();
+  _LoadInProgress loadInProgress() {
+    return const _LoadInProgress();
   }
 
   _LoadSuccess loadSuccess(List<Notification> notifications) {
@@ -164,14 +166,14 @@ mixin _$NotificationsWatcherState {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result loadSuccess(List<Notification> notifications),
     @required Result loadFailure(Failure<dynamic> failure),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result loadSuccess(List<Notification> notifications),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
@@ -179,14 +181,14 @@ mixin _$NotificationsWatcherState {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result loadSuccess(_LoadSuccess value),
     @required Result loadFailure(_LoadFailure value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result loadSuccess(_LoadSuccess value),
     Result loadFailure(_LoadFailure value),
     @required Result orElse(),
@@ -242,12 +244,12 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result loadSuccess(List<Notification> notifications),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
     return initial();
@@ -257,7 +259,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result loadSuccess(List<Notification> notifications),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
@@ -273,12 +275,12 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result loadSuccess(_LoadSuccess value),
     @required Result loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
     return initial(this);
@@ -288,7 +290,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result loadSuccess(_LoadSuccess value),
     Result loadFailure(_LoadFailure value),
     @required Result orElse(),
@@ -305,31 +307,31 @@ abstract class _Initial implements NotificationsWatcherState {
   const factory _Initial() = _$_Initial;
 }
 
-abstract class _$LoadingCopyWith<$Res> {
-  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
-  __$LoadingCopyWithImpl<$Res>;
+abstract class _$LoadInProgressCopyWith<$Res> {
+  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) =
+  __$LoadInProgressCopyWithImpl<$Res>;
 }
 
-class __$LoadingCopyWithImpl<$Res> extends _$NotificationsWatcherStateCopyWithImpl<$Res>
-  implements _$LoadingCopyWith<$Res> {
-  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
-    : super(_value, (v) => _then(v as _Loading));
+class __$LoadInProgressCopyWithImpl<$Res> extends _$NotificationsWatcherStateCopyWithImpl<$Res>
+  implements _$LoadInProgressCopyWith<$Res> {
+  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then)
+    : super(_value, (v) => _then(v as _LoadInProgress));
 
   @override
-  _Loading get _value => super._value as _Loading;
+  _LoadInProgress get _value => super._value as _LoadInProgress;
 }
 
-class _$_Loading implements _Loading {
-  const _$_Loading();
+class _$_LoadInProgress implements _LoadInProgress {
+  const _$_LoadInProgress();
 
   @override
   String toString() {
-    return 'NotificationsWatcherState.loading()';
+    return 'NotificationsWatcherState.loadInProgress()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Loading);
+    return identical(this, other) || (other is _LoadInProgress);
   }
 
   @override
@@ -339,29 +341,29 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result loadSuccess(List<Notification> notifications),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
-    return loading();
+    return loadInProgress();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result loadSuccess(List<Notification> notifications),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (loading != null) {
-      return loading();
+    if (loadInProgress != null) {
+      return loadInProgress();
     }
     return orElse();
   }
@@ -370,36 +372,36 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result loadSuccess(_LoadSuccess value),
     @required Result loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
-    return loading(this);
+    return loadInProgress(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result loadSuccess(_LoadSuccess value),
     Result loadFailure(_LoadFailure value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (loading != null) {
-      return loading(this);
+    if (loadInProgress != null) {
+      return loadInProgress(this);
     }
     return orElse();
   }
 }
 
-abstract class _Loading implements NotificationsWatcherState {
-  const factory _Loading() = _$_Loading;
+abstract class _LoadInProgress implements NotificationsWatcherState {
+  const factory _LoadInProgress() = _$_LoadInProgress;
 }
 
 abstract class _$LoadSuccessCopyWith<$Res> {
@@ -460,12 +462,12 @@ class _$_LoadSuccess implements _LoadSuccess {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result loadSuccess(List<Notification> notifications),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
     return loadSuccess(notifications);
@@ -475,7 +477,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result loadSuccess(List<Notification> notifications),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
@@ -491,12 +493,12 @@ class _$_LoadSuccess implements _LoadSuccess {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result loadSuccess(_LoadSuccess value),
     @required Result loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
     return loadSuccess(this);
@@ -506,7 +508,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result loadSuccess(_LoadSuccess value),
     Result loadFailure(_LoadFailure value),
     @required Result orElse(),
@@ -593,12 +595,12 @@ class _$_LoadFailure implements _LoadFailure {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result loadSuccess(List<Notification> notifications),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
     return loadFailure(failure);
@@ -608,7 +610,7 @@ class _$_LoadFailure implements _LoadFailure {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result loadSuccess(List<Notification> notifications),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
@@ -624,12 +626,12 @@ class _$_LoadFailure implements _LoadFailure {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result loadSuccess(_LoadSuccess value),
     @required Result loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
     return loadFailure(this);
@@ -639,7 +641,7 @@ class _$_LoadFailure implements _LoadFailure {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result loadSuccess(_LoadSuccess value),
     Result loadFailure(_LoadFailure value),
     @required Result orElse(),

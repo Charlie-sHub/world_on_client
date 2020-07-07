@@ -288,7 +288,6 @@ abstract class _Initialized implements ExperienceManagementFormEvent {
   _$_Initialized;
 
   Option<Experience> get experienceOption;
-  
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
@@ -440,7 +439,6 @@ abstract class _NameChanged implements ExperienceManagementFormEvent {
   const factory _NameChanged(String name) = _$_NameChanged;
 
   String get name;
-  
   _$NameChangedCopyWith<_NameChanged> get copyWith;
 }
 
@@ -593,7 +591,6 @@ abstract class _DescriptionChanged implements ExperienceManagementFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description;
-  
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith;
 }
 
@@ -759,7 +756,6 @@ abstract class _CoordinatesChanged implements ExperienceManagementFormEvent {
 
   double get latitude;
   double get longitude;
-  
   _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith;
 }
 
@@ -912,7 +908,6 @@ abstract class _DifficultyChanged implements ExperienceManagementFormEvent {
   const factory _DifficultyChanged(int difficulty) = _$_DifficultyChanged;
 
   int get difficulty;
-  
   _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith;
 }
 
@@ -1068,7 +1063,6 @@ abstract class _ObjectivesChanged implements ExperienceManagementFormEvent {
   _$_ObjectivesChanged;
 
   KtSet<PrimitiveObjective> get objectives;
-  
   _$ObjectivesChangedCopyWith<_ObjectivesChanged> get copyWith;
 }
 
@@ -1221,7 +1215,6 @@ abstract class _RewardsChanged implements ExperienceManagementFormEvent {
   _$_RewardsChanged;
 
   KtSet<PrimitiveReward> get rewards;
-  
   _$RewardsChangedCopyWith<_RewardsChanged> get copyWith;
 }
 
@@ -1373,7 +1366,6 @@ abstract class _TagsChanged implements ExperienceManagementFormEvent {
   const factory _TagsChanged(KtSet<Tag> tags) = _$_TagsChanged;
 
   KtSet<Tag> get tags;
-  
   _$TagsChangedCopyWith<_TagsChanged> get copyWith;
 }
 

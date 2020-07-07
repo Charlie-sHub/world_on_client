@@ -12,8 +12,8 @@ T _$identity<T>(T value) => value;
 class _$ProfileWatcherEventTearOff {
   const _$ProfileWatcherEventTearOff();
 
-  _InitializeForeignOrOwn initializeForeignOrOwn(Option<User> userOption) {
-    return _InitializeForeignOrOwn(
+  _InitializedForeignOrOwn initializedForeignOrOwn(Option<User> userOption) {
+    return _InitializedForeignOrOwn(
       userOption,
     );
   }
@@ -27,20 +27,20 @@ mixin _$ProfileWatcherEvent {
 
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initializeForeignOrOwn(Option<User> userOption),
+    @required Result initializedForeignOrOwn(Option<User> userOption),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initializeForeignOrOwn(Option<User> userOption),
+    Result initializedForeignOrOwn(Option<User> userOption),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initializeForeignOrOwn(_InitializeForeignOrOwn value),
+    @required Result initializedForeignOrOwn(_InitializedForeignOrOwn value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initializeForeignOrOwn(_InitializeForeignOrOwn value),
+    Result initializedForeignOrOwn(_InitializedForeignOrOwn value),
     @required Result orElse(),
   });
 
@@ -72,49 +72,51 @@ class _$ProfileWatcherEventCopyWithImpl<$Res>
   }
 }
 
-abstract class _$InitializeForeignOrOwnCopyWith<$Res>
+abstract class _$InitializedForeignOrOwnCopyWith<$Res>
   implements $ProfileWatcherEventCopyWith<$Res> {
-  factory _$InitializeForeignOrOwnCopyWith(_InitializeForeignOrOwn value,
-    $Res Function(_InitializeForeignOrOwn) then) =
-  __$InitializeForeignOrOwnCopyWithImpl<$Res>;
+  factory _$InitializedForeignOrOwnCopyWith(_InitializedForeignOrOwn value,
+    $Res Function(_InitializedForeignOrOwn) then) =
+  __$InitializedForeignOrOwnCopyWithImpl<$Res>;
   @override
   $Res call({Option<User> userOption});
 }
 
-class __$InitializeForeignOrOwnCopyWithImpl<$Res> extends _$ProfileWatcherEventCopyWithImpl<$Res>
-  implements _$InitializeForeignOrOwnCopyWith<$Res> {
-  __$InitializeForeignOrOwnCopyWithImpl(_InitializeForeignOrOwn _value,
-    $Res Function(_InitializeForeignOrOwn) _then)
-    : super(_value, (v) => _then(v as _InitializeForeignOrOwn));
+class __$InitializedForeignOrOwnCopyWithImpl<$Res> extends _$ProfileWatcherEventCopyWithImpl<$Res>
+  implements _$InitializedForeignOrOwnCopyWith<$Res> {
+  __$InitializedForeignOrOwnCopyWithImpl(_InitializedForeignOrOwn _value,
+    $Res Function(_InitializedForeignOrOwn) _then)
+    : super(_value, (v) => _then(v as _InitializedForeignOrOwn));
 
   @override
-  _InitializeForeignOrOwn get _value => super._value as _InitializeForeignOrOwn;
+  _InitializedForeignOrOwn get _value =>
+    super._value as _InitializedForeignOrOwn;
 
   @override
   $Res call({
     Object userOption = freezed,
   }) {
-    return _then(_InitializeForeignOrOwn(
+    return _then(_InitializedForeignOrOwn(
       userOption == freezed ? _value.userOption : userOption as Option<User>,
     ));
   }
 }
 
-class _$_InitializeForeignOrOwn implements _InitializeForeignOrOwn {
-  const _$_InitializeForeignOrOwn(this.userOption) : assert(userOption != null);
+class _$_InitializedForeignOrOwn implements _InitializedForeignOrOwn {
+  const _$_InitializedForeignOrOwn(this.userOption)
+    : assert(userOption != null);
 
   @override
   final Option<User> userOption;
 
   @override
   String toString() {
-    return 'ProfileWatcherEvent.initializeForeignOrOwn(userOption: $userOption)';
+    return 'ProfileWatcherEvent.initializedForeignOrOwn(userOption: $userOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _InitializeForeignOrOwn &&
+      (other is _InitializedForeignOrOwn &&
         (identical(other.userOption, userOption) ||
           const DeepCollectionEquality()
             .equals(other.userOption, userOption)));
@@ -125,28 +127,28 @@ class _$_InitializeForeignOrOwn implements _InitializeForeignOrOwn {
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(userOption);
 
   @override
-  _$InitializeForeignOrOwnCopyWith<_InitializeForeignOrOwn> get copyWith =>
-    __$InitializeForeignOrOwnCopyWithImpl<_InitializeForeignOrOwn>(
+  _$InitializedForeignOrOwnCopyWith<_InitializedForeignOrOwn> get copyWith =>
+    __$InitializedForeignOrOwnCopyWithImpl<_InitializedForeignOrOwn>(
       this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initializeForeignOrOwn(Option<User> userOption),
+    @required Result initializedForeignOrOwn(Option<User> userOption),
   }) {
-    assert(initializeForeignOrOwn != null);
-    return initializeForeignOrOwn(userOption);
+    assert(initializedForeignOrOwn != null);
+    return initializedForeignOrOwn(userOption);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initializeForeignOrOwn(Option<User> userOption),
+    Result initializedForeignOrOwn(Option<User> userOption),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (initializeForeignOrOwn != null) {
-      return initializeForeignOrOwn(userOption);
+    if (initializedForeignOrOwn != null) {
+      return initializedForeignOrOwn(userOption);
     }
     return orElse();
   }
@@ -154,34 +156,34 @@ class _$_InitializeForeignOrOwn implements _InitializeForeignOrOwn {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result initializeForeignOrOwn(_InitializeForeignOrOwn value),
+    @required Result initializedForeignOrOwn(_InitializedForeignOrOwn value),
   }) {
-    assert(initializeForeignOrOwn != null);
-    return initializeForeignOrOwn(this);
+    assert(initializedForeignOrOwn != null);
+    return initializedForeignOrOwn(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result initializeForeignOrOwn(_InitializeForeignOrOwn value),
+    Result initializedForeignOrOwn(_InitializedForeignOrOwn value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (initializeForeignOrOwn != null) {
-      return initializeForeignOrOwn(this);
+    if (initializedForeignOrOwn != null) {
+      return initializedForeignOrOwn(this);
     }
     return orElse();
   }
 }
 
-abstract class _InitializeForeignOrOwn implements ProfileWatcherEvent {
-  const factory _InitializeForeignOrOwn(Option<User> userOption) =
-  _$_InitializeForeignOrOwn;
+abstract class _InitializedForeignOrOwn implements ProfileWatcherEvent {
+  const factory _InitializedForeignOrOwn(Option<User> userOption) =
+  _$_InitializedForeignOrOwn;
 
   @override
   Option<User> get userOption;
   @override
-  _$InitializeForeignOrOwnCopyWith<_InitializeForeignOrOwn> get copyWith;
+  _$InitializedForeignOrOwnCopyWith<_InitializedForeignOrOwn> get copyWith;
 }
 
 class _$ProfileWatcherStateTearOff {
@@ -191,8 +193,8 @@ class _$ProfileWatcherStateTearOff {
     return const _Initial();
   }
 
-  _Loading loading() {
-    return const _Loading();
+  _LoadInProgress loadInProgress() {
+    return const _LoadInProgress();
   }
 
   _Own own(User user) {
@@ -219,7 +221,7 @@ mixin _$ProfileWatcherState {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result own(User user),
     @required Result foreign(User user),
     @required Result loadFailure(),
@@ -227,7 +229,7 @@ mixin _$ProfileWatcherState {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result own(User user),
     Result foreign(User user),
     Result loadFailure(),
@@ -236,7 +238,7 @@ mixin _$ProfileWatcherState {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result own(_Own value),
     @required Result foreign(_Foreign value),
     @required Result loadFailure(_LoadFailure value),
@@ -244,7 +246,7 @@ mixin _$ProfileWatcherState {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result own(_Own value),
     Result foreign(_Foreign value),
     Result loadFailure(_LoadFailure value),
@@ -300,13 +302,13 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result own(User user),
     @required Result foreign(User user),
     @required Result loadFailure(),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(own != null);
     assert(foreign != null);
     assert(loadFailure != null);
@@ -317,7 +319,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result own(User user),
     Result foreign(User user),
     Result loadFailure(),
@@ -334,13 +336,13 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result own(_Own value),
     @required Result foreign(_Foreign value),
     @required Result loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(own != null);
     assert(foreign != null);
     assert(loadFailure != null);
@@ -351,7 +353,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result own(_Own value),
     Result foreign(_Foreign value),
     Result loadFailure(_LoadFailure value),
@@ -369,31 +371,31 @@ abstract class _Initial implements ProfileWatcherState {
   const factory _Initial() = _$_Initial;
 }
 
-abstract class _$LoadingCopyWith<$Res> {
-  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
-  __$LoadingCopyWithImpl<$Res>;
+abstract class _$LoadInProgressCopyWith<$Res> {
+  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) =
+  __$LoadInProgressCopyWithImpl<$Res>;
 }
 
-class __$LoadingCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res>
-  implements _$LoadingCopyWith<$Res> {
-  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
-    : super(_value, (v) => _then(v as _Loading));
+class __$LoadInProgressCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res>
+  implements _$LoadInProgressCopyWith<$Res> {
+  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then)
+    : super(_value, (v) => _then(v as _LoadInProgress));
 
   @override
-  _Loading get _value => super._value as _Loading;
+  _LoadInProgress get _value => super._value as _LoadInProgress;
 }
 
-class _$_Loading implements _Loading {
-  const _$_Loading();
+class _$_LoadInProgress implements _LoadInProgress {
+  const _$_LoadInProgress();
 
   @override
   String toString() {
-    return 'ProfileWatcherState.loading()';
+    return 'ProfileWatcherState.loadInProgress()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Loading);
+    return identical(this, other) || (other is _LoadInProgress);
   }
 
   @override
@@ -403,32 +405,32 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result own(User user),
     @required Result foreign(User user),
     @required Result loadFailure(),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(own != null);
     assert(foreign != null);
     assert(loadFailure != null);
-    return loading();
+    return loadInProgress();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result own(User user),
     Result foreign(User user),
     Result loadFailure(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (loading != null) {
-      return loading();
+    if (loadInProgress != null) {
+      return loadInProgress();
     }
     return orElse();
   }
@@ -437,45 +439,44 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result own(_Own value),
     @required Result foreign(_Foreign value),
     @required Result loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(own != null);
     assert(foreign != null);
     assert(loadFailure != null);
-    return loading(this);
+    return loadInProgress(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result own(_Own value),
     Result foreign(_Foreign value),
     Result loadFailure(_LoadFailure value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (loading != null) {
-      return loading(this);
+    if (loadInProgress != null) {
+      return loadInProgress(this);
     }
     return orElse();
   }
 }
 
-abstract class _Loading implements ProfileWatcherState {
-  const factory _Loading() = _$_Loading;
+abstract class _LoadInProgress implements ProfileWatcherState {
+  const factory _LoadInProgress() = _$_LoadInProgress;
 }
 
 abstract class _$OwnCopyWith<$Res> {
   factory _$OwnCopyWith(_Own value, $Res Function(_Own) then) =
   __$OwnCopyWithImpl<$Res>;
-
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -511,7 +512,7 @@ class __$OwnCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res>
 
 class _$_Own implements _Own {
   const _$_Own(this.user) : assert(user != null);
-  
+
   @override
   final User user;
 
@@ -531,7 +532,7 @@ class _$_Own implements _Own {
   @override
   int get hashCode =>
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
-  
+
   @override
   _$OwnCopyWith<_Own> get copyWith =>
     __$OwnCopyWithImpl<_Own>(this, _$identity);
@@ -540,13 +541,13 @@ class _$_Own implements _Own {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result own(User user),
     @required Result foreign(User user),
     @required Result loadFailure(),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(own != null);
     assert(foreign != null);
     assert(loadFailure != null);
@@ -557,7 +558,7 @@ class _$_Own implements _Own {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result own(User user),
     Result foreign(User user),
     Result loadFailure(),
@@ -574,13 +575,13 @@ class _$_Own implements _Own {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result own(_Own value),
     @required Result foreign(_Foreign value),
     @required Result loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(own != null);
     assert(foreign != null);
     assert(loadFailure != null);
@@ -591,7 +592,7 @@ class _$_Own implements _Own {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result own(_Own value),
     Result foreign(_Foreign value),
     Result loadFailure(_LoadFailure value),
@@ -607,16 +608,14 @@ class _$_Own implements _Own {
 
 abstract class _Own implements ProfileWatcherState {
   const factory _Own(User user) = _$_Own;
-  
+
   User get user;
-  
   _$OwnCopyWith<_Own> get copyWith;
 }
 
 abstract class _$ForeignCopyWith<$Res> {
   factory _$ForeignCopyWith(_Foreign value, $Res Function(_Foreign) then) =
   __$ForeignCopyWithImpl<$Res>;
-
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -652,7 +651,7 @@ class __$ForeignCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Re
 
 class _$_Foreign implements _Foreign {
   const _$_Foreign(this.user) : assert(user != null);
-  
+
   @override
   final User user;
 
@@ -672,7 +671,7 @@ class _$_Foreign implements _Foreign {
   @override
   int get hashCode =>
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
-  
+
   @override
   _$ForeignCopyWith<_Foreign> get copyWith =>
     __$ForeignCopyWithImpl<_Foreign>(this, _$identity);
@@ -681,13 +680,13 @@ class _$_Foreign implements _Foreign {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result own(User user),
     @required Result foreign(User user),
     @required Result loadFailure(),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(own != null);
     assert(foreign != null);
     assert(loadFailure != null);
@@ -698,7 +697,7 @@ class _$_Foreign implements _Foreign {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result own(User user),
     Result foreign(User user),
     Result loadFailure(),
@@ -715,13 +714,13 @@ class _$_Foreign implements _Foreign {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result own(_Own value),
     @required Result foreign(_Foreign value),
     @required Result loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(own != null);
     assert(foreign != null);
     assert(loadFailure != null);
@@ -732,7 +731,7 @@ class _$_Foreign implements _Foreign {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result own(_Own value),
     Result foreign(_Foreign value),
     Result loadFailure(_LoadFailure value),
@@ -748,9 +747,8 @@ class _$_Foreign implements _Foreign {
 
 abstract class _Foreign implements ProfileWatcherState {
   const factory _Foreign(User user) = _$_Foreign;
-  
+
   User get user;
-  
   _$ForeignCopyWith<_Foreign> get copyWith;
 }
 
@@ -788,13 +786,13 @@ class _$_LoadFailure implements _LoadFailure {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result loading(),
+    @required Result loadInProgress(),
     @required Result own(User user),
     @required Result foreign(User user),
     @required Result loadFailure(),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(own != null);
     assert(foreign != null);
     assert(loadFailure != null);
@@ -805,7 +803,7 @@ class _$_LoadFailure implements _LoadFailure {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result loading(),
+    Result loadInProgress(),
     Result own(User user),
     Result foreign(User user),
     Result loadFailure(),
@@ -822,13 +820,13 @@ class _$_LoadFailure implements _LoadFailure {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
+    @required Result loadInProgress(_LoadInProgress value),
     @required Result own(_Own value),
     @required Result foreign(_Foreign value),
     @required Result loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
-    assert(loading != null);
+    assert(loadInProgress != null);
     assert(own != null);
     assert(foreign != null);
     assert(loadFailure != null);
@@ -839,7 +837,7 @@ class _$_LoadFailure implements _LoadFailure {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result loading(_Loading value),
+    Result loadInProgress(_LoadInProgress value),
     Result own(_Own value),
     Result foreign(_Foreign value),
     Result loadFailure(_LoadFailure value),

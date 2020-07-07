@@ -243,7 +243,6 @@ abstract class _Initialized implements AchievementManagementFormEvent {
   _$_Initialized;
 
   Option<Achievement> get achievementOption;
-  
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
@@ -378,7 +377,6 @@ abstract class _NameChanged implements AchievementManagementFormEvent {
   const factory _NameChanged(String name) = _$_NameChanged;
 
   String get name;
-  
   _$NameChangedCopyWith<_NameChanged> get copyWith;
 }
 
@@ -514,7 +512,6 @@ abstract class _DescriptionChanged implements AchievementManagementFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description;
-  
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith;
 }
 
@@ -660,7 +657,6 @@ abstract class _ExperiencePointsChanged
   _$_ExperiencePointsChanged;
 
   int get experiencePoints;
-  
   _$ExperiencePointsChangedCopyWith<_ExperiencePointsChanged> get copyWith;
 }
 
@@ -795,7 +791,6 @@ abstract class _TagsChanged implements AchievementManagementFormEvent {
   const factory _TagsChanged(KtSet<Tag> tags) = _$_TagsChanged;
 
   KtSet<Tag> get tags;
-  
   _$TagsChangedCopyWith<_TagsChanged> get copyWith;
 }
 
