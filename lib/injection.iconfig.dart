@@ -35,6 +35,9 @@ import 'package:worldon/application/profile/profile_experiences_watcher/profile_
 import 'package:worldon/application/profile/profile_interests_watcher/profile_interests_watcher_bloc.dart';
 import 'package:worldon/application/profile/profile_watcher/profile_watcher_bloc.dart';
 import 'package:worldon/application/search/search_by_name_form/search_by_name_form_bloc.dart';
+import 'package:worldon/application/search/search_experiences_by_difficulty/search_experiences_by_difficulty_bloc.dart';
+import 'package:worldon/application/search/search_experiences_by_name_watcher/search_experiences_by_name_watcher_bloc.dart';
+import 'package:worldon/application/search/search_tags_by_name_watcher/search_tags_by_name_watcher_bloc.dart';
 import 'package:worldon/application/search/search_users_by_name_watcher/search_users_by_name_watcher_bloc.dart';
 import 'package:worldon/core/util/cypher.dart';
 import 'package:worldon/data/achievement_management/repository/development_achievement_repository.dart';
@@ -232,6 +235,12 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerFactory<ProfileWatcherBloc>(() => ProfileWatcherBloc());
   g.registerFactory<RegistrationFormBloc>(() => RegistrationFormBloc());
   g.registerFactory<SearchByNameFormBloc>(() => SearchByNameFormBloc());
+  g.registerFactory<SearchExperiencesByDifficultyBloc>(
+      () => SearchExperiencesByDifficultyBloc());
+  g.registerFactory<SearchExperiencesByNameWatcherBloc>(
+      () => SearchExperiencesByNameWatcherBloc());
+  g.registerFactory<SearchTagsByNameWatcherBloc>(
+      () => SearchTagsByNameWatcherBloc());
   g.registerFactory<SearchUsersByNameWatcherBloc>(
       () => SearchUsersByNameWatcherBloc());
 

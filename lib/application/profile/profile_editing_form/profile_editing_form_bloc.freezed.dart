@@ -1484,7 +1484,7 @@ abstract class $ProfileEditingFormStateCopyWith<$Res> {
   factory $ProfileEditingFormStateCopyWith(ProfileEditingFormState value,
     $Res Function(ProfileEditingFormState) then) =
   _$ProfileEditingFormStateCopyWithImpl<$Res>;
-  
+
   $Res call({User user,
     bool showErrorMessages,
     bool isSubmitting,
