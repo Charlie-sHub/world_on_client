@@ -194,7 +194,6 @@ abstract class _WatchUsersFoundByNameStarted
   _$_WatchUsersFoundByNameStarted;
 
   SearchTerm get name;
-  
   _$WatchUsersFoundByNameStartedCopyWith<_WatchUsersFoundByNameStarted>
   get copyWith;
 }
@@ -321,7 +320,6 @@ abstract class _WatchUsersFoundByUsernameStarted
   _$_WatchUsersFoundByUsernameStarted;
 
   SearchTerm get username;
-  
   _$WatchUsersFoundByUsernameStartedCopyWith<_WatchUsersFoundByUsernameStarted>
   get copyWith;
 }

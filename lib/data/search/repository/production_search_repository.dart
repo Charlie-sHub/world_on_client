@@ -6,6 +6,7 @@ import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/search_term.dart';
+import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 import 'package:worldon/domain/search/repository/search_repository_interface.dart';
 
 @LazySingleton(
@@ -20,7 +21,7 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, Set<Experience>>> searchExperiencesByTags(Set<Tag> tags) {
+  Stream<Either<Failure, Set<Experience>>> searchExperiencesByTags(TagSet tags) {
     // TODO: implement searchExperiencesByTags
     throw UnimplementedError();
   }

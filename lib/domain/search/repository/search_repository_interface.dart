@@ -5,6 +5,7 @@ import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/search_term.dart';
+import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 
 /// Repository for the search feature
 abstract class SearchRepositoryInterface {
@@ -21,7 +22,7 @@ abstract class SearchRepositoryInterface {
   Stream<Either<Failure, Set<Tag>>> searchTagsByName(SearchTerm name);
 
   /// Sends a [Set] of [Tag]s and it returns the [Experience]s with at least  all the given [Tag]s
-  Stream<Either<Failure, Set<Experience>>> searchExperiencesByTags(Set<Tag> tags);
+  Stream<Either<Failure, Set<Experience>>> searchExperiencesByTags(TagSet tags);
 
   /// Sends a given [int] to the server and it returns the [Experience]s with a difficulty around the given [Difficulty]
   // TODO: make it so only Experiences within a certain distance are returned

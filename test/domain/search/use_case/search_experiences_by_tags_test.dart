@@ -1,11 +1,13 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/collection.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
+import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 import 'package:worldon/domain/search/repository/search_repository_interface.dart';
 import 'package:worldon/domain/search/use_case/search_experiences_by_tags.dart';
 import 'package:worldon/injection.dart';
@@ -23,7 +25,7 @@ void main() {
       useCase = SearchExperiencesByTags(mockSearchRepository);
     },
   );
-  final params = Params(tags: {Tag.empty()});
+  final params = Params(tags: TagSet(KtSet.of(Tag.empty())));
   final experiencesFound = {Experience.empty()};
   test(
     "Should return a Set of Experiences",

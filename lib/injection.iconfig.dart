@@ -37,8 +37,14 @@ import 'package:worldon/application/profile/profile_watcher/profile_watcher_bloc
 import 'package:worldon/application/search/search_by_name_form/search_by_name_form_bloc.dart';
 import 'package:worldon/application/search/search_experiences_by_difficulty/search_experiences_by_difficulty_bloc.dart';
 import 'package:worldon/application/search/search_experiences_by_name_watcher/search_experiences_by_name_watcher_bloc.dart';
+import 'package:worldon/application/search/search_experiences_by_tags/search_experiences_by_tags_bloc.dart';
 import 'package:worldon/application/search/search_tags_by_name_watcher/search_tags_by_name_watcher_bloc.dart';
 import 'package:worldon/application/search/search_users_by_name_watcher/search_users_by_name_watcher_bloc.dart';
+import 'package:worldon/application/search/tag_search_form/tag_search_form_bloc.dart';
+import 'package:worldon/application/tag_management/tag_card_actor/tag_card_actor_bloc.dart';
+import 'package:worldon/application/tag_management/tag_management_actor/tag_management_actor_bloc.dart';
+import 'package:worldon/application/tag_management/tag_management_form/tag_management_form_bloc.dart';
+import 'package:worldon/application/tag_management/tag_management_watcher/tag_management_watcher_bloc.dart';
 import 'package:worldon/core/util/cypher.dart';
 import 'package:worldon/data/achievement_management/repository/development_achievement_repository.dart';
 import 'package:worldon/data/achievement_management/repository/production_achievement_repository.dart';
@@ -239,10 +245,17 @@ void $initGetIt(GetIt g, {String environment}) {
       () => SearchExperiencesByDifficultyBloc());
   g.registerFactory<SearchExperiencesByNameWatcherBloc>(
       () => SearchExperiencesByNameWatcherBloc());
+  g.registerFactory<SearchExperiencesByTagsBloc>(
+      () => SearchExperiencesByTagsBloc());
   g.registerFactory<SearchTagsByNameWatcherBloc>(
       () => SearchTagsByNameWatcherBloc());
   g.registerFactory<SearchUsersByNameWatcherBloc>(
       () => SearchUsersByNameWatcherBloc());
+  g.registerFactory<TagCardActorBloc>(() => TagCardActorBloc());
+  g.registerFactory<TagManagementActorBloc>(() => TagManagementActorBloc());
+  g.registerFactory<TagManagementFormBloc>(() => TagManagementFormBloc());
+  g.registerFactory<TagManagementWatcherBloc>(() => TagManagementWatcherBloc());
+  g.registerFactory<TagSearchFormBloc>(() => TagSearchFormBloc());
 
   //Register test Dependencies --------
   if (environment == 'test') {

@@ -49,30 +49,35 @@ void main() {
       SearchExperiencesByDifficultyState.searchSuccess(experiencesFound),
     ],
   );
-  blocTest(
-    "${TestDescription.shouldEmitFailure} with serverFailure",
-    build: () async {
-      when(searchExperiencesByDifficulty.call(any)).thenAnswer((_) => createStream(left(serverFailure)));
-      return getIt<SearchExperiencesByDifficultyBloc>();
+  group(
+    TestDescription.groupOnFailure,
+    () {
+      blocTest(
+        "${TestDescription.shouldEmitFailure} with serverFailure",
+        build: () async {
+          when(searchExperiencesByDifficulty.call(any)).thenAnswer((_) => createStream(left(serverFailure)));
+          return getIt<SearchExperiencesByDifficultyBloc>();
+        },
+        act: (bloc) async => bloc.add(const SearchExperiencesByDifficultyEvent.submitted(validDifficulty)),
+        verify: (_) async {
+          verify(searchExperiencesByDifficulty.call(any));
+          verifyNoMoreInteractions(searchExperiencesByDifficulty);
+        },
+        expect: [
+          const SearchExperiencesByDifficultyState.searchInProgress(),
+          const SearchExperiencesByDifficultyState.searchFailure(serverFailure),
+        ],
+      );
+      blocTest(
+        "${TestDescription.shouldEmitFailure} with valueFailure",
+        build: () async => getIt<SearchExperiencesByDifficultyBloc>(),
+        act: (bloc) async => bloc.add(const SearchExperiencesByDifficultyEvent.submitted(invalidDifficulty)),
+        verify: (_) async => verifyNoMoreInteractions(searchExperiencesByDifficulty),
+        expect: [
+          const SearchExperiencesByDifficultyState.searchInProgress(),
+          const SearchExperiencesByDifficultyState.valueFailure(valueFailure),
+        ],
+      );
     },
-    act: (bloc) async => bloc.add(const SearchExperiencesByDifficultyEvent.submitted(validDifficulty)),
-    verify: (_) async {
-      verify(searchExperiencesByDifficulty.call(any));
-      verifyNoMoreInteractions(searchExperiencesByDifficulty);
-    },
-    expect: [
-      const SearchExperiencesByDifficultyState.searchInProgress(),
-      const SearchExperiencesByDifficultyState.searchFailure(serverFailure),
-    ],
-  );
-  blocTest(
-    "${TestDescription.shouldEmitFailure} with valueFailure",
-    build: () async => getIt<SearchExperiencesByDifficultyBloc>(),
-    act: (bloc) async => bloc.add(const SearchExperiencesByDifficultyEvent.submitted(invalidDifficulty)),
-    verify: (_) async => verifyNoMoreInteractions(searchExperiencesByDifficulty),
-    expect: [
-      const SearchExperiencesByDifficultyState.searchInProgress(),
-      const SearchExperiencesByDifficultyState.valueFailure(valueFailure),
-    ],
   );
 }

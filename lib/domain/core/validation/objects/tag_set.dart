@@ -11,6 +11,7 @@ class TagSet extends ValueObject<KtSet<Tag>> {
   final Either<ValueFailure<KtSet<Tag>>, KtSet<Tag>> value;
 
   // Just a value that made sense at the time
+  // Maybe there shouldn't even be a maximum amount of tags
   static const maxLength = 10;
 
   factory TagSet(KtSet<Tag> input) {

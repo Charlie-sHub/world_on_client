@@ -12,9 +12,7 @@ import 'package:worldon/domain/search/use_case/search_experiences_by_difficulty.
 import 'package:worldon/injection.dart';
 
 part 'search_experiences_by_difficulty_bloc.freezed.dart';
-
 part 'search_experiences_by_difficulty_event.dart';
-
 part 'search_experiences_by_difficulty_state.dart';
 
 @injectable
@@ -42,7 +40,7 @@ class SearchExperiencesByDifficultyBloc extends Bloc<SearchExperiencesByDifficul
         ),
       );
     } else {
-      final _failure = ValueFailure<int>.integerOutOfBounds(failedValue: event.difficulty);
+      final _failure = _difficulty.failureOrCrash();
       yield SearchExperiencesByDifficultyState.valueFailure(_failure);
     }
   }

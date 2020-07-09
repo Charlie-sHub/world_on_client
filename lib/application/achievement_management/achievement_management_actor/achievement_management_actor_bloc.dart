@@ -28,9 +28,7 @@ class AchievementManagementActorBloc extends Bloc<AchievementManagementActorEven
     yield const AchievementManagementActorState.actionInProgress();
     final _deleteAchievement = getIt<DeleteAchievement>();
     final _eitherFailureOrSuccess = await _deleteAchievement(
-      Params(
-        achievement: event.achievement,
-      ),
+      Params(achievement: event.achievement),
     );
     yield _eitherFailureOrSuccess.fold(
       (failure) => AchievementManagementActorState.deletionFailure(failure),

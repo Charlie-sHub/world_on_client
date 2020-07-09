@@ -30,8 +30,16 @@ abstract class ValueObject<T> extends Equatable {
   /// Throws [UnexpectedValueError] containing the [ValueFailure] if it can't get the proper value
   T getOrCrash() {
     return value.fold(
-        (valueFailure) => throw UnexpectedValueError(valueFailure),
+      (valueFailure) => throw UnexpectedValueError(valueFailure),
       id,
+    );
+  }
+
+  ValueFailure<T> failureOrCrash() {
+    return value.fold(
+      id,
+      // TODO: Create an specific Error
+        (value) => throw Error(),
     );
   }
 }

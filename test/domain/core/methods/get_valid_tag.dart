@@ -3,4 +3,8 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 
 import 'get_valid_user.dart';
 
-Tag getValidTag() => Tag.empty().copyWith(name: Name("Test"), creator: getValidUser());
+Tag getValidTag() => Tag.empty().copyWith(
+      id: 1,
+      name: Name("Test"),
+      creator: getValidUser(),
+    );

@@ -10,6 +10,7 @@ import 'package:worldon/domain/core/validation/objects/user_level.dart';
 /// For all the tests that require a valid [User] entity
 User getValidUser() {
   return User.empty().copyWith(
+    id: 1,
     name: Name("Test"),
     username: Name("Test"),
     password: Password("abcd*1234"),
