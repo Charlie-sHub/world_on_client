@@ -449,7 +449,6 @@ abstract class _RemovedTag implements TagSearchFormEvent {
   const factory _RemovedTag(Tag tag) = _$_RemovedTag;
 
   Tag get tag;
-  
   _$RemovedTagCopyWith<_RemovedTag> get copyWith;
 }
 

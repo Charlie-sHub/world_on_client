@@ -43,7 +43,6 @@ mixin _$TagCardActorEvent {
     @required Result dismissedFromInterests(Tag tag),
     @required Result addedToInterests(Tag tag),
   });
-  
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(Tag tag),
@@ -51,14 +50,12 @@ mixin _$TagCardActorEvent {
     Result addedToInterests(Tag tag),
     @required Result orElse(),
   });
-  
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
     @required Result dismissedFromInterests(_DismissedFromInterests value),
     @required Result addedToInterests(_AddedToInterests value),
   });
-  
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
@@ -66,16 +63,14 @@ mixin _$TagCardActorEvent {
     Result addedToInterests(_AddedToInterests value),
     @required Result orElse(),
   });
-  
+
   $TagCardActorEventCopyWith<TagCardActorEvent> get copyWith;
 }
 
 abstract class $TagCardActorEventCopyWith<$Res> {
-  factory $TagCardActorEventCopyWith(TagCardActorEvent value, $Res Function(TagCardActorEvent) then) =
-  _$TagCardActorEventCopyWithImpl<$Res>;
-  
+  factory $TagCardActorEventCopyWith(TagCardActorEvent value, $Res Function(TagCardActorEvent) then) = _$TagCardActorEventCopyWithImpl<$Res>;
   $Res call({Tag tag});
-  
+
   $TagCopyWith<$Res> get tag;
 }
 
@@ -111,10 +106,9 @@ abstract class _$InitializedCopyWith<$Res>
   implements $TagCardActorEventCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
   __$InitializedCopyWithImpl<$Res>;
-  
   @override
   $Res call({Tag tag});
-  
+
   @override
   $TagCopyWith<$Res> get tag;
 }
@@ -126,7 +120,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$TagCardActorEventCopyWithImpl<$
 
   @override
   _Initialized get _value => super._value as _Initialized;
-  
+
   @override
   $Res call({
     Object tag = freezed,
@@ -139,7 +133,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$TagCardActorEventCopyWithImpl<$
 
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.tag) : assert(tag != null);
-  
+
   @override
   final Tag tag;
 
@@ -159,7 +153,7 @@ class _$_Initialized implements _Initialized {
   @override
   int get hashCode =>
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
-  
+
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
     __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
@@ -223,10 +217,9 @@ class _$_Initialized implements _Initialized {
 
 abstract class _Initialized implements TagCardActorEvent {
   const factory _Initialized(Tag tag) = _$_Initialized;
-  
+
   @override
   Tag get tag;
-  
   @override
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
@@ -236,10 +229,9 @@ abstract class _$DismissedFromInterestsCopyWith<$Res>
   factory _$DismissedFromInterestsCopyWith(_DismissedFromInterests value,
     $Res Function(_DismissedFromInterests) then) =
   __$DismissedFromInterestsCopyWithImpl<$Res>;
-  
   @override
   $Res call({Tag tag});
-  
+
   @override
   $TagCopyWith<$Res> get tag;
 }
@@ -353,7 +345,6 @@ abstract class _DismissedFromInterests implements TagCardActorEvent {
 
   @override
   Tag get tag;
-
   @override
   _$DismissedFromInterestsCopyWith<_DismissedFromInterests> get copyWith;
 }
@@ -362,10 +353,9 @@ abstract class _$AddedToInterestsCopyWith<$Res>
   implements $TagCardActorEventCopyWith<$Res> {
   factory _$AddedToInterestsCopyWith(_AddedToInterests value, $Res Function(_AddedToInterests) then) =
   __$AddedToInterestsCopyWithImpl<$Res>;
-  
   @override
   $Res call({Tag tag});
-  
+
   @override
   $TagCopyWith<$Res> get tag;
 }
@@ -477,7 +467,6 @@ abstract class _AddedToInterests implements TagCardActorEvent {
 
   @override
   Tag get tag;
-
   @override
   _$AddedToInterestsCopyWith<_AddedToInterests> get copyWith;
 }

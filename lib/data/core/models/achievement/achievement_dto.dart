@@ -1,8 +1,15 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:kt_dart/kt.dart';
+import 'package:worldon/data/core/models/tag/tag_dto.dart';
+import 'package:worldon/data/core/models/user/user_dto.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
+import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/experience_points.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 
 part 'achievement_dto.freezed.dart';
-
 part 'achievement_dto.g.dart';
 
 @freezed
@@ -15,12 +22,12 @@ abstract class AchievementDto implements _$AchievementDto {
     @required String description,
     @required String imageURL,
     @required String type,
-    @required int requisite, // This will probably be reworked in the future to accommodate different kinds of achievements
+    @required int requisite,
     @required int experiencePoints,
     @required UserDto creator,
     @required String creationDate,
     @required String modificationDate,
-    @required List<TagDto> tags,
+    @required Set<TagDto> tags,
   }) = _AchievementDto;
 
   factory AchievementDto.fromDomain(Achievement achievement) => AchievementDto(
@@ -34,6 +41,27 @@ abstract class AchievementDto implements _$AchievementDto {
         creator: UserDto.fromDomain(achievement.creator),
         creationDate: achievement.creationDate.getOrCrash().toIso8601String(),
         modificationDate: achievement.modificationDate.getOrCrash().toIso8601String(),
-        tags: achievement.tags.getOrCrash().map((tag) => TagDto.fromDomain(tag)).asList(),
+        tags: achievement.tags.getOrCrash().asSet().map((tag) => TagDto.fromDomain(tag)).toSet(),
       );
+
+  Achievement toDomain() =>
+    Achievement(
+      name: Name(name),
+      description: EntityDescription(description),
+      imageURL: imageURL,
+      type: type,
+      requisite: requisite,
+      experiencePoints: ExperiencePoints(experiencePoints),
+      creator: creator.toDomain(),
+      creationDate: PastDate(DateTime.parse(creationDate)),
+      modificationDate: PastDate(DateTime.parse(modificationDate)),
+      tags: TagSet(tags.map((tagDto) => tagDto.toDomain()).toImmutableSet()),
+    );
+
+  factory AchievementDto.fromJson(Map<String, dynamic> json) => _$AchievementDtoFromJson(json);
+
+// TODO: Implement fromFirestore methods in the DTOs
+//factory AchievementDto.fromFirestore(DocumentSnapshot document) {
+//  return AchievementDto.fromJson(document.data);
+//}
 }

@@ -430,7 +430,7 @@ abstract class $TagManagementFormStateCopyWith<$Res> {
   factory $TagManagementFormStateCopyWith(TagManagementFormState value,
     $Res Function(TagManagementFormState) then) =
   _$TagManagementFormStateCopyWithImpl<$Res>;
-  
+
   $Res call({Tag tag,
     bool showErrorMessages,
     bool isEditing,
