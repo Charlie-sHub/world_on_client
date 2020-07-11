@@ -6,7 +6,7 @@ abstract class TagCardActorState with _$TagCardActorState {
 
   const factory TagCardActorState.inInterests() = _InInterests;
 
-  const factory TagCardActorState.noInInterests() = _NotInInterests;
+  const factory TagCardActorState.notInInterests() = _NotInInterests;
 
   const factory TagCardActorState.actionInProgress() = _ActionInProgress;
 

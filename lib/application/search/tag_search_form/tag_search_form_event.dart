@@ -8,5 +8,5 @@ abstract class TagSearchFormEvent with _$TagSearchFormEvent {
   const factory TagSearchFormEvent.addedTag(Tag tag) = _AddedTag;
 
   // Added from the Tag card of the current list of Tags
-  const factory TagSearchFormEvent.subtractedTag(Tag tag) = _SubtractedTag;
+  const factory TagSearchFormEvent.removedTag(Tag tag) = _RemovedTag;
 }

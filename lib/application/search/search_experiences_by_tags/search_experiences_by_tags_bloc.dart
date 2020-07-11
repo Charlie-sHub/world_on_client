@@ -14,9 +14,7 @@ import 'package:worldon/domain/search/use_case/search_experiences_by_tags.dart';
 import 'package:worldon/injection.dart';
 
 part 'search_experiences_by_tags_bloc.freezed.dart';
-
 part 'search_experiences_by_tags_event.dart';
-
 part 'search_experiences_by_tags_state.dart';
 
 @injectable
@@ -44,7 +42,6 @@ class SearchExperiencesByTagsBloc extends Bloc<SearchExperiencesByTagsEvent, Sea
         ),
       );
     } else {
-      // TODO: check the code to see if there's code that can be replaced by failureOrCrash
       final _valueFailure = _tagSet.failureOrCrash();
       yield SearchExperiencesByTagsState.valueFailure(_valueFailure);
     }

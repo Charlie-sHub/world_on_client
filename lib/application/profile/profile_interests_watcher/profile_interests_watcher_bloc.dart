@@ -32,9 +32,7 @@ class ProfileInterestsWatcherBloc extends Bloc<ProfileInterestsWatcherEvent, Pro
     yield const ProfileInterestsWatcherState.loadInProgress();
     final _loadInterests = getIt<LoadUserInterests>();
     yield* _loadInterests(
-      Params(
-        userId: event.user.id,
-      ),
+      Params(userId: event.user.id),
     ).map(
       (failureOrTags) => failureOrTags.fold(
         (failure) => ProfileInterestsWatcherState.loadFailure(failure),

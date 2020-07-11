@@ -9,7 +9,9 @@ import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/search_term.dart';
 
 part 'search_by_name_form_bloc.freezed.dart';
+
 part 'search_by_name_form_event.dart';
+
 part 'search_by_name_form_state.dart';
 
 /// This BLoC is to be used as the "father" of the other searches by name [Bloc]s

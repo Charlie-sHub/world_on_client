@@ -29,9 +29,7 @@ class FollowingWatcherBloc extends Bloc<FollowingWatcherEvent, FollowingWatcherS
     yield const FollowingWatcherState.loadInProgress();
     final _loadFollowingUsers = getIt<LoadFollowingUsers>();
     yield* _loadFollowingUsers(
-      Params(
-        id: event.user.id,
-      ),
+      Params(id: event.user.id),
     ).map(
       (failureOrFollowingUsers) => failureOrFollowingUsers.fold(
         (failure) => FollowingWatcherState.loadFailure(failure),

@@ -1,44 +1,85 @@
+import 'dart:math';
+
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/create_stream_of_either.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_left_server_error.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_right_future.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_server_error_failure.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_comment.dart';
 import 'package:worldon/domain/comments/repository/comment_repository_interface.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
+import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 
 @LazySingleton(
   as: CommentRepositoryInterface,
   env: Environment.dev,
 )
 class DevelopmentCommentRepository implements CommentRepositoryInterface {
+  final _random = Random();
+
   @override
   Future<Either<Failure, Unit>> editComment(Comment comment) {
-    // TODO: implement editComment
-    throw UnimplementedError();
+    if (_random.nextBool()) {
+      return getRightFuture(unit);
+    } else {
+      return getLeftServerErrorFuture();
+    }
   }
-
+  
   @override
   Stream<Either<Failure, Set<Comment>>> getExperienceComments(int experienceId) {
-    // TODO: implement getExperienceComments
-    throw UnimplementedError();
+    Either<Failure, Set<Comment>> _either;
+    if (_random.nextBool()) {
+      _either = right({
+        getValidComment(),
+        getValidComment().copyWith(
+          id: 2,
+          content: CommentContent("Phasellus elementum mollis ipsum non auctor."),
+        ),
+      });
+    } else {
+      _either = left(getServerErrorFailure());
+    }
+    return createStreamOfEither(_either);
   }
-
+  
   @override
   Stream<Either<Failure, Set<Comment>>> getUserComments(int userId) {
-    // TODO: implement getUserComments
-    throw UnimplementedError();
+    Either<Failure, Set<Comment>> _either;
+    if (_random.nextBool()) {
+      _either = right({
+        getValidComment(),
+        getValidComment().copyWith(
+          id: 2,
+          content: CommentContent("Phasellus elementum mollis ipsum non auctor."),
+        ),
+      });
+    } else {
+      _either = left(getServerErrorFailure());
+    }
+    return createStreamOfEither(_either);
   }
-
+  
   @override
   Future<Either<Failure, Unit>> postComment({
     Comment comment,
     int experienceId,
   }) {
-    // TODO: implement postComment
-    throw UnimplementedError();
+    if (_random.nextBool()) {
+      return getRightFuture(unit);
+    } else {
+      return getLeftServerErrorFuture();
+    }
   }
-
+  
   @override
   Future<Either<Failure, Unit>> removeComment(int id) {
-    // TODO: implement removeComment
-    throw UnimplementedError();
+    if (_random.nextBool()) {
+      return getRightFuture(unit);
+    } else {
+      return getLeftServerErrorFuture();
+    }
   }
 }

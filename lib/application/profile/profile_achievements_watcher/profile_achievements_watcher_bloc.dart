@@ -12,9 +12,7 @@ import 'package:worldon/domain/profile/use_case/load_user_achievements.dart';
 import '../../../injection.dart';
 
 part 'profile_achievements_watcher_bloc.freezed.dart';
-
 part 'profile_achievements_watcher_event.dart';
-
 part 'profile_achievements_watcher_state.dart';
 
 @injectable
@@ -32,9 +30,7 @@ class ProfileAchievementsWatcherBloc extends Bloc<ProfileAchievementsWatcherEven
     yield const ProfileAchievementsWatcherState.loadInProgress();
     final _loadAchievements = getIt<LoadUserAchievements>();
     yield* _loadAchievements(
-      Params(
-        userId: event.user.id,
-      ),
+      Params(userId: event.user.id),
     ).map(
       (failureOrTags) => failureOrTags.fold(
         (failure) => ProfileAchievementsWatcherState.loadFailure(failure),

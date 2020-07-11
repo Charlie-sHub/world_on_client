@@ -12,9 +12,7 @@ import 'package:worldon/domain/search/use_case/search_tags_by_name.dart';
 import 'package:worldon/injection.dart';
 
 part 'tag_search_form_bloc.freezed.dart';
-
 part 'tag_search_form_event.dart';
-
 part 'tag_search_form_state.dart';
 
 @injectable
@@ -26,18 +24,25 @@ class TagSearchFormBloc extends Bloc<TagSearchFormEvent, TagSearchFormState> {
     yield* event.map(
       submittedSearchTerm: onSubmittedSearchTerm,
       addedTag: onAddedTag,
-      subtractedTag: onSubtractedTag,
+      removedTag: onSubtractedTag,
     );
   }
 
-  Stream<TagSearchFormState> onSubtractedTag(_SubtractedTag event) async* {
+  Stream<TagSearchFormState> onSubtractedTag(_RemovedTag event) async* {
+    // None of the two work like i want them to
     state.tagsSelected.remove(event.tag);
-    yield state;
+    yield state.copyWith(
+      failureOption: none(),
+    );
   }
 
   Stream<TagSearchFormState> onAddedTag(_AddedTag event) async* {
-    state.tagsSelected.add(event.tag);
-    yield state;
+    final _auxTags = state.tagsSelected;
+    _auxTags.add(event.tag);
+    yield state.copyWith(
+      tagsSelected: _auxTags,
+      failureOption: none(),
+    );
   }
 
   Stream<TagSearchFormState> onSubmittedSearchTerm(_SubmittedSearchTerm event) async* {

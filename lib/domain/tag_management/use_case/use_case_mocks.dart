@@ -8,6 +8,9 @@ import 'package:worldon/domain/tag_management/use_case/get_tag.dart';
 import 'package:worldon/domain/tag_management/use_case/get_tag_creator.dart';
 import 'package:worldon/domain/tag_management/use_case/get_tags_by_creator.dart';
 
+import 'add_tag_to_interests.dart';
+import 'dismiss_tag_from_interests.dart';
+
 @LazySingleton(as: CreateTag, env: Environment.test)
 class MockCreateTag extends Mock implements CreateTag {}
 
@@ -28,3 +31,9 @@ class MockGetTagCreator extends Mock implements GetTagCreator {}
 
 @LazySingleton(as: GetTagsByCreator, env: Environment.test)
 class MockGetTagsByCreator extends Mock implements GetTagsByCreator {}
+
+@LazySingleton(as: AddTagToInterests, env: Environment.test)
+class MockAddTagToInterests extends Mock implements AddTagToInterests {}
+
+@LazySingleton(as: DismissTagFromInterests, env: Environment.test)
+class MockDismissTagFromInterests extends Mock implements DismissTagFromInterests {}

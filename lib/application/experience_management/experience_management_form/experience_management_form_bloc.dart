@@ -61,16 +61,12 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
       if (state.isEditing) {
         final _editExperience = getIt<edit_experience.EditExperience>();
         _failureOrUnit = await _editExperience(
-          edit_experience.Params(
-            experience: state.experience,
-          ),
+          edit_experience.Params(experience: state.experience),
         );
       } else {
         final _createExperience = getIt<create_experience.CreateExperience>();
         _failureOrUnit = await _createExperience(
-          create_experience.Params(
-            experience: state.experience,
-          ),
+          create_experience.Params(experience: state.experience),
         );
       }
     }

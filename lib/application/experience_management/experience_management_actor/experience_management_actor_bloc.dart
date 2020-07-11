@@ -28,9 +28,7 @@ class ExperienceManagementActorBloc extends Bloc<ExperienceManagementActorEvent,
     yield const ExperienceManagementActorState.actionInProgress();
     final _deleteExperience = getIt<DeleteExperience>();
     final _failureOrUnit = await _deleteExperience(
-      Params(
-        experience: event.experience,
-      ),
+      Params(experience: event.experience),
     );
     yield _failureOrUnit.fold(
       (failure) => ExperienceManagementActorState.deletionFailure(failure),

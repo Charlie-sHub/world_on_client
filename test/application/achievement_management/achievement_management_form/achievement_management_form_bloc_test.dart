@@ -225,6 +225,7 @@ void main() {
         "${TestDescription.shouldEmitSuccess} editing an Achievement",
         build: () async {
           when(editAchievement.call(any)).thenAnswer((_) async => right(unit));
+
           return getIt<AchievementManagementFormBloc>();
         },
         act: (bloc) async {
@@ -234,9 +235,11 @@ void main() {
         },
         verify: (_) async {
           verify(editAchievement.call(any));
+          // mockito reset
           // TODO: How to verify that this use case is not called?
           // Seems to me this verification fails due to the use case being a singleton, hence the creation test calls the use case from the same bloc as this test
           // Apply to the other bloc tests if a solution is found
+          // resetMockitoState() doesn't seem to work no mater where i put it, maybe it's an issue with the way blocTest verifies
           // verifyZeroInteractions(createAchievement);
         },
         expect: [

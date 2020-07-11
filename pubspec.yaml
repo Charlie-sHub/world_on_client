@@ -28,9 +28,9 @@ dependencies:
   # For dependency injection
   injectable: ^0.4.0+1
   # Bloc for state management
-  flutter_bloc: ^5.0.0
+  flutter_bloc: ^5.0.1
   # Value equality
-  equatable: ^1.2.0
+  equatable: ^1.2.2
   # Functional programming thingies
   dartz: ^0.9.1
   # Remote API
@@ -38,7 +38,7 @@ dependencies:
   # For connecting to http services
   http: ^0.12.1
   # For local cache, probably useless as we'll use Firestore
-  shared_preferences: ^0.5.7+3
+  shared_preferences: ^0.5.8
   # For unions generation
   freezed_annotation: ^0.11.0
   # For use with Firebase as backend
@@ -48,7 +48,7 @@ dependencies:
   # For Signing in and registering with Google
   # google_sign_in: ^4.4.6
   # For email validation
-  email_validator: ^1.0.4
+  email_validator: ^1.0.5
   # For mapping
   google_maps_flutter: ^0.5.28+1
   # For getting the geolocation of the user
@@ -56,7 +56,7 @@ dependencies:
   # For Kotlin like collections
   kt_dart: ^0.7.0+1
   # For easier bloc testing
-  bloc_test: ^6.0.0
+  bloc_test: ^6.0.1
   flushbar: ^1.10.4
   uuid: ^2.2.0
 

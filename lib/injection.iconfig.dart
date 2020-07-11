@@ -193,8 +193,10 @@ import 'package:worldon/domain/tag_management/repository/tag_management_reposito
 import 'package:worldon/domain/tag_management/repository/tag_management_repository_mock.dart';
 import 'package:worldon/domain/tag_management/repository/tag_repository_interface.dart';
 import 'package:worldon/domain/tag_management/repository/tag_repository_mock.dart';
+import 'package:worldon/domain/tag_management/use_case/add_tag_to_interests.dart';
 import 'package:worldon/domain/tag_management/use_case/create_tag.dart';
 import 'package:worldon/domain/tag_management/use_case/delete_tag.dart';
+import 'package:worldon/domain/tag_management/use_case/dismiss_tag_from_interests.dart';
 import 'package:worldon/domain/tag_management/use_case/edit_tag.dart';
 import 'package:worldon/domain/tag_management/use_case/get_all_tags.dart';
 import 'package:worldon/domain/tag_management/use_case/get_tag.dart';
@@ -264,6 +266,7 @@ void $initGetIt(GetIt g, {String environment}) {
     g.registerLazySingleton<AchievementRepositoryInterface>(
         () => MockAchievementRepository());
     g.registerLazySingleton<AddExperienceToLog>(() => MockAddExperienceToLog());
+    g.registerLazySingleton<AddTagToInterests>(() => MockAddTagToInterests());
     g.registerLazySingleton<AuthenticationRepositoryInterface>(
         () => MockAuthenticationRepository());
     g.registerLazySingleton<AwardAchievement>(() => MockAwardAchievement());
@@ -290,6 +293,8 @@ void $initGetIt(GetIt g, {String environment}) {
         () => MockDeleteUserNotifications());
     g.registerLazySingleton<DismissExperienceFromLog>(
         () => MockDismissExperienceFromLog());
+    g.registerLazySingleton<DismissTagFromInterests>(
+        () => MockDismissTagFromInterests());
     g.registerLazySingleton<EditAchievement>(() => MockEditAchievement());
     g.registerLazySingleton<EditComment>(() => MockEditComment());
     g.registerLazySingleton<EditExperience>(() => MockEditExperience());
@@ -533,6 +538,8 @@ void $initGetIt(GetIt g, {String environment}) {
         () => UnFollowUser(g<ProfileRepositoryInterface>()));
     g.registerLazySingleton<AddExperienceToLog>(
         () => AddExperienceToLog(g<ExperienceLogRepositoryInterface>()));
+    g.registerLazySingleton<AddTagToInterests>(
+        () => AddTagToInterests(g<TagCoreRepositoryInterface>()));
     g.registerLazySingleton<BlockUser>(
         () => BlockUser(g<ProfileRepositoryInterface>()));
     g.registerLazySingleton<CheckNotification>(
@@ -553,6 +560,8 @@ void $initGetIt(GetIt g, {String environment}) {
         () => DeleteUserNotifications(g<NotificationRepositoryInterface>()));
     g.registerLazySingleton<DismissExperienceFromLog>(
         () => DismissExperienceFromLog(g<ExperienceLogRepositoryInterface>()));
+    g.registerLazySingleton<DismissTagFromInterests>(
+        () => DismissTagFromInterests(g<TagCoreRepositoryInterface>()));
     g.registerLazySingleton<EditExperience>(
         () => EditExperience(g<ExperienceManagementRepositoryInterface>()));
     g.registerLazySingleton<EditTag>(

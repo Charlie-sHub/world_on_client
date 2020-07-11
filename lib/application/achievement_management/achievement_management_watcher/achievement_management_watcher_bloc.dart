@@ -26,7 +26,7 @@ class AchievementManagementWatcherBloc extends Bloc<AchievementManagementWatcher
   }
 
   Stream<AchievementManagementWatcherState> onWatchAllAchievementsStarted(_WatchAllAchievementsStarted event) async* {
-    // TODO: Check https://bloclibrary.dev/#/flutterinfinitelisttutorial
+    // TODO: Check https://bloclibrary.dev/#/flutterinfinitelisttutorial for this and other infinite list blocs
     yield const AchievementManagementWatcherState.loadInProgress();
     final _getAllAchievements = getIt<GetAllAchievements>();
     yield* _getAllAchievements(getIt<NoParams>()).map(

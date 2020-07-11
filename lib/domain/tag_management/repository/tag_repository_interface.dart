@@ -14,4 +14,10 @@ abstract class TagCoreRepositoryInterface {
 
   /// Gets the [User] that created a given [Tag]
   Future<Either<Failure, User>> getCreator(int id);
+
+  /// Adds the given [Tag] to the logged in [User]'s interests
+  Future<Either<Failure, Unit>> addTagToInterests(Tag tag);
+
+  /// Dismisses the given [Tag] from the logged in [User]'s interests
+  Future<Either<Failure, Unit>> dismissTagFromInterests(Tag tag);
 }

@@ -1,7 +1,17 @@
+import 'dart:math';
+
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/create_stream_of_either.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_left_server_error.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_right_future.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_server_error_failure.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_notification.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart';
+import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
+import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/notifications/repository/notification_repository_interface.dart';
 
 @LazySingleton(
@@ -9,33 +19,59 @@ import 'package:worldon/domain/notifications/repository/notification_repository_
   env: Environment.dev,
 )
 class DevelopmentNotificationRepository implements NotificationRepositoryInterface {
+  final _random = Random();
+
   @override
   Future<Either<Failure, Unit>> checkNotification(int id) {
-    // TODO: implement checkNotification
-    throw UnimplementedError();
+    if (_random.nextBool()) {
+      return getRightFuture(unit);
+    } else {
+      return getLeftServerErrorFuture();
+    }
   }
-
+  
   @override
   Future<Either<Failure, Unit>> deleteUserNotifications() {
-    // TODO: implement deleteUserNotifications
-    throw UnimplementedError();
+    if (_random.nextBool()) {
+      return getRightFuture(unit);
+    } else {
+      return getLeftServerErrorFuture();
+    }
   }
-
+  
   @override
   Stream<Either<Failure, List<Notification>>> loadNotifications() {
-    // TODO: implement loadNotifications
-    throw UnimplementedError();
+    Either<Failure, List<Notification>> _either;
+    if (_random.nextBool()) {
+      _either = right([
+        getValidNotification(),
+        getValidNotification().copyWith(
+          id: 2,
+          description: EntityDescription("${getValidUser().name.getOrCrash()} unfollowed you"),
+          type: NotificationType.unfollow,
+        ),
+      ]);
+    } else {
+      _either = left(getServerErrorFailure());
+    }
+    return createStreamOfEither(_either);
   }
-
+  
   @override
   Future<Either<Failure, Unit>> sendNotification(Notification notification) {
-    // TODO: implement sendNotification
-    throw UnimplementedError();
+    if (_random.nextBool()) {
+      return getRightFuture(unit);
+    } else {
+      return getLeftServerErrorFuture();
+    }
   }
-
+  
   @override
   Future<Either<Failure, Unit>> deleteNotification(int id) {
-    // TODO: implement deleteNotification
-    throw UnimplementedError();
+    if (_random.nextBool()) {
+      return getRightFuture(unit);
+    } else {
+      return getLeftServerErrorFuture();
+    }
   }
 }

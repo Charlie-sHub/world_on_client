@@ -1,8 +1,17 @@
+import 'dart:math';
+
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/create_stream_of_either.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_left_server_error.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_right_future.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_server_error_failure.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_tag.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/tag_management/repository/tag_repository_interface.dart';
 
 @LazySingleton(
@@ -10,21 +19,66 @@ import 'package:worldon/domain/tag_management/repository/tag_repository_interfac
   env: Environment.dev,
 )
 class DevelopmentTagRepository implements TagCoreRepositoryInterface {
+  final _random = Random();
+
   @override
   Stream<Either<Failure, List<Tag>>> getAllTags() {
-    // TODO: implement getAllTags
-    throw UnimplementedError();
+    Either<Failure, List<Tag>> _either;
+    if (_random.nextBool()) {
+      _either = right([
+        getValidTag(),
+        getValidTag().copyWith(
+          id: 2,
+          name: Name("Nullam quam"),
+        ),
+      ]);
+    } else {
+      _either = left(getServerErrorFailure());
+    }
+    return createStreamOfEither(_either);
   }
-
+  
   @override
   Future<Either<Failure, User>> getCreator(int id) {
-    // TODO: implement getCreator
-    throw UnimplementedError();
+    if (_random.nextBool()) {
+      return getRightFuture(getValidUser());
+    } else {
+      return getLeftServerErrorFuture();
+    }
   }
-
+  
   @override
   Stream<Either<Failure, List<Tag>>> getTagsByCreator(int id) {
-    // TODO: implement getTagsByCreator
-    throw UnimplementedError();
+    Either<Failure, List<Tag>> _either;
+    if (_random.nextBool()) {
+      _either = right([
+        getValidTag(),
+        getValidTag().copyWith(
+          id: 2,
+          name: Name("Nullam quam"),
+        ),
+      ]);
+    } else {
+      _either = left(getServerErrorFailure());
+    }
+    return createStreamOfEither(_either);
+  }
+  
+  @override
+  Future<Either<Failure, Unit>> addTagToInterests(Tag tag) {
+    if (_random.nextBool()) {
+      return getRightFuture(unit);
+    } else {
+      return getLeftServerErrorFuture();
+    }
+  }
+  
+  @override
+  Future<Either<Failure, Unit>> dismissTagFromInterests(Tag tag) {
+    if (_random.nextBool()) {
+      return getRightFuture(unit);
+    } else {
+      return getLeftServerErrorFuture();
+    }
   }
 }

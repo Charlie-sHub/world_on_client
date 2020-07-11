@@ -4,7 +4,6 @@ part of 'profile_experiences_watcher_bloc.dart';
 abstract class ProfileExperiencesWatcherState with _$ProfileExperiencesWatcherState {
   const factory ProfileExperiencesWatcherState.initial() = _Initial;
 
-  // TODO: change the name of loading to loadInProgress
   const factory ProfileExperiencesWatcherState.loadInProgress() = _LoadInProgress;
 
   const factory ProfileExperiencesWatcherState.loadSuccess(Set<Experience> experiences) = _LoadSuccess;

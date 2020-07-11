@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -12,11 +13,9 @@ import 'package:worldon/domain/profile/use_case/load_experiences_done.dart' as l
 import 'package:worldon/domain/profile/use_case/load_experiences_liked.dart' as load_experiences_liked;
 import 'package:worldon/injection.dart';
 
-part 'profile_experiences_watcher_event.dart';
-
-part 'profile_experiences_watcher_state.dart';
-
 part 'profile_experiences_watcher_bloc.freezed.dart';
+part 'profile_experiences_watcher_event.dart';
+part 'profile_experiences_watcher_state.dart';
 
 @injectable
 class ProfileExperiencesWatcherBloc extends Bloc<ProfileExperiencesWatcherEvent, ProfileExperiencesWatcherState> {
@@ -39,9 +38,7 @@ class ProfileExperiencesWatcherBloc extends Bloc<ProfileExperiencesWatcherEvent,
     await _experienceStreamSubscription?.cancel();
     final _loadExperiencesDone = getIt<load_experiences_done.LoadExperiencesDone>();
     _experienceStreamSubscription = _loadExperiencesDone(
-      load_experiences_done.Params(
-        userId: event.user.id,
-      ),
+      load_experiences_done.Params(userId: event.user.id),
     ).listen(
       (failureOrExperiences) => add(ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences)),
     );
@@ -52,9 +49,7 @@ class ProfileExperiencesWatcherBloc extends Bloc<ProfileExperiencesWatcherEvent,
     await _experienceStreamSubscription?.cancel();
     final _loadExperiencesLiked = getIt<load_experiences_liked.LoadExperiencesLiked>();
     _experienceStreamSubscription = _loadExperiencesLiked(
-      load_experiences_liked.Params(
-        userId: event.user.id,
-      ),
+      load_experiences_liked.Params(userId: event.user.id),
     ).listen(
       (failureOrExperiences) => add(ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences)),
     );

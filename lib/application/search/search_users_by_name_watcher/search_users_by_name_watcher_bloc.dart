@@ -13,9 +13,7 @@ import 'package:worldon/domain/search/use_case/search_users_by_username.dart' as
 import 'package:worldon/injection.dart';
 
 part 'search_users_by_name_watcher_bloc.freezed.dart';
-
 part 'search_users_by_name_watcher_event.dart';
-
 part 'search_users_by_name_watcher_state.dart';
 
 @injectable
@@ -44,9 +42,7 @@ class SearchUsersByNameWatcherBloc extends Bloc<SearchUsersByNameWatcherEvent, S
     await _usersSearchStreamSubscription?.cancel();
     final _searchUsersByUsername = getIt<search_users_by_username.SearchUsersByUsername>();
     _usersSearchStreamSubscription = _searchUsersByUsername(
-      search_users_by_username.Params(
-        username: event.username,
-      ),
+      search_users_by_username.Params(username: event.username),
     ).listen(
       (failureOrUsers) => add(SearchUsersByNameWatcherEvent.searchResultsReceived(failureOrUsers)),
     );
@@ -57,9 +53,7 @@ class SearchUsersByNameWatcherBloc extends Bloc<SearchUsersByNameWatcherEvent, S
     await _usersSearchStreamSubscription?.cancel();
     final _searchUsersByName = getIt<search_users_by_name.SearchUsersByName>();
     _usersSearchStreamSubscription = _searchUsersByName(
-      search_users_by_name.Params(
-        name: event.name,
-      ),
+      search_users_by_name.Params(name: event.name),
     ).listen(
       (failureOrUsers) => add(SearchUsersByNameWatcherEvent.searchResultsReceived(failureOrUsers)),
     );

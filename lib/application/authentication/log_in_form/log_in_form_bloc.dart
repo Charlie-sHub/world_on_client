@@ -27,11 +27,11 @@ class LogInFormBloc extends Bloc<LogInFormEvent, LogInFormState> {
       usernameChanged: onUsernameChanged,
       passwordChanged: onPasswordChanged,
       loggedIn: onLoggeIn,
-      loggedInGoogle: onLoggeInGoogle,
+      loggedInGoogle: onLoggedInGoogle,
     );
   }
 
-  Stream<LogInFormState> onLoggeInGoogle(_LoggedInGoogle event) async* {
+  Stream<LogInFormState> onLoggedInGoogle(_LoggedInGoogle event) async* {
     final _logInGoogle = getIt<LogInGoogle>();
     yield state.copyWith(
       isSubmitting: true,

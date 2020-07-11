@@ -11,9 +11,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/injection.dart';
 
 part 'profile_watcher_bloc.freezed.dart';
-
 part 'profile_watcher_event.dart';
-
 part 'profile_watcher_state.dart';
 
 @injectable
@@ -42,9 +40,7 @@ class ProfileWatcherBloc extends Bloc<ProfileWatcherEvent, ProfileWatcherState> 
       (user) async* {
         final _isLoggedInUser = getIt<IsLoggedInUser>();
         final _isOwn = await _isLoggedInUser(
-          Params(
-            userToCompareWith: user,
-          ),
+          Params(userToCompareWith: user),
         );
         if (_isOwn) {
           yield ProfileWatcherState.own(user);

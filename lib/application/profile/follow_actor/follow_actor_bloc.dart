@@ -14,9 +14,7 @@ import 'package:worldon/domain/profile/use_case/un_follow_user.dart' as un_follo
 import 'package:worldon/injection.dart';
 
 part 'follow_actor_bloc.freezed.dart';
-
 part 'follow_actor_event.dart';
-
 part 'follow_actor_state.dart';
 
 @injectable
@@ -36,9 +34,7 @@ class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
     yield const FollowActorState.actionInProgress();
     final _unFollowUser = getIt<un_follow_user.UnFollowUser>();
     final _failureOrUnit = await _unFollowUser(
-      un_follow_user.Params(
-        userToUnFollowId: event.user.id,
-      ),
+      un_follow_user.Params(userToUnFollowId: event.user.id),
     );
     yield* _failureOrUnit.fold(
       (failure) async* {
@@ -55,9 +51,7 @@ class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
     yield const FollowActorState.actionInProgress();
     final _followUser = getIt<follow_user.FollowUser>();
     final _failureOrUnit = await _followUser(
-      follow_user.Params(
-        userToFollowId: event.user.id,
-      ),
+      follow_user.Params(userToFollowId: event.user.id),
     );
     yield* _failureOrUnit.fold(
       (failure) async* {

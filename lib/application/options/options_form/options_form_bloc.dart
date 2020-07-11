@@ -34,9 +34,7 @@ class OptionsFormBloc extends Bloc<OptionsFormEvent, OptionsFormState> {
     // If state.options.isValid when validity check is added to the Options
     final _saveGlobalOptions = getIt<SaveGlobalOptions>();
     _failureOrSuccess = await _saveGlobalOptions(
-      Params(
-        options: state.options,
-      ),
+      Params(options: state.options),
     );
     yield state.copyWith(
       isSubmitting: false,

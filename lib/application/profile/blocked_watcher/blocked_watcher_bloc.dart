@@ -11,9 +11,7 @@ import 'package:worldon/domain/profile/use_case/load_blocked_users.dart';
 import '../../../injection.dart';
 
 part 'blocked_watcher_bloc.freezed.dart';
-
 part 'blocked_watcher_event.dart';
-
 part 'blocked_watcher_state.dart';
 
 @injectable
@@ -31,9 +29,7 @@ class BlockedWatcherBloc extends Bloc<BlockedWatcherEvent, BlockedWatcherState> 
     yield const BlockedWatcherState.loadInProgress();
     final _loadBlockedUsers = getIt<LoadBlockedUsers>();
     yield* _loadBlockedUsers(
-      Params(
-        id: event.user.id,
-      ),
+      Params(id: event.user.id),
     ).map(
       (failureOrBlockedUsers) => failureOrBlockedUsers.fold(
         (failure) => BlockedWatcherState.loadFailure(failure),

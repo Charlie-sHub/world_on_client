@@ -27,9 +27,7 @@ class ExperienceCardActorBloc extends Bloc<ExperienceCardActorEvent, ExperienceC
     yield const ExperienceCardActorState.actionInProgress();
     final _addExperienceToLog = getIt<AddExperienceToLog>();
     final _failureOrUnit = await _addExperienceToLog(
-      Params(
-        experienceId: event.experienceId,
-      ),
+      Params(experienceId: event.experienceId),
     );
     yield _failureOrUnit.fold(
       (failure) => ExperienceCardActorState.additionFailure(failure),

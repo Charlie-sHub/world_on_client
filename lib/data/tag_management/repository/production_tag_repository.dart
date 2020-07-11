@@ -27,4 +27,16 @@ class ProductionTagRepository implements TagCoreRepositoryInterface {
     // TODO: implement getTagsByCreator
     throw UnimplementedError();
   }
+
+  @override
+  Future<Either<Failure, Unit>> addTagToInterests(Tag tag) {
+    // TODO: implement addTagToInterests
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Either<Failure, Unit>> dismissTagFromInterests(Tag tag) {
+    // TODO: implement dismissTagFromInterests
+    throw UnimplementedError();
+  }
 }

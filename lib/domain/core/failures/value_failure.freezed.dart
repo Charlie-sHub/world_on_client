@@ -1076,7 +1076,8 @@ abstract class InvalidName<T> implements ValueFailure<T> {
 }
 
 abstract class $EmptyStringCopyWith<T, $Res> {
-  factory $EmptyStringCopyWith(EmptyString<T> value, $Res Function(EmptyString<T>) then) = _$EmptyStringCopyWithImpl<T, $Res>;
+  factory $EmptyStringCopyWith(EmptyString<T> value, $Res Function(EmptyString<T>) then) =
+  _$EmptyStringCopyWithImpl<T, $Res>;
   $Res call({String failedValue});
 }
 
@@ -2563,7 +2564,7 @@ class _$SetExceedsLength<T>
     assert(setExceedsLength != null);
     return setExceedsLength(this);
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({

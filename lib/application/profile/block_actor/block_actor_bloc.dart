@@ -14,9 +14,7 @@ import 'package:worldon/domain/profile/use_case/un_block_user.dart' as un_block_
 import 'package:worldon/injection.dart';
 
 part 'block_actor_bloc.freezed.dart';
-
 part 'block_actor_event.dart';
-
 part 'block_actor_state.dart';
 
 @injectable
@@ -36,9 +34,7 @@ class BlockActorBloc extends Bloc<BlockActorEvent, BlockActorState> {
     yield const BlockActorState.actionInProgress();
     final _unBlockUser = getIt<un_block_user.UnBlockUser>();
     final _failureOrUnit = await _unBlockUser(
-      un_block_user.Params(
-        blockedId: event.user.id,
-      ),
+      un_block_user.Params(blockedId: event.user.id),
     );
     yield* _failureOrUnit.fold(
       (failure) async* {
@@ -55,9 +51,7 @@ class BlockActorBloc extends Bloc<BlockActorEvent, BlockActorState> {
     yield const BlockActorState.actionInProgress();
     final _blockUser = getIt<block_user.BlockUser>();
     final _failureOrUnit = await _blockUser(
-      block_user.Params(
-        blockedId: event.user.id,
-      ),
+      block_user.Params(blockedId: event.user.id),
     );
     yield* _failureOrUnit.fold(
       (failure) async* {

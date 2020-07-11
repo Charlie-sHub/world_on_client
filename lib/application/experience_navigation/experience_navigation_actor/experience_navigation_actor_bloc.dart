@@ -148,18 +148,14 @@ class ExperienceNavigationActorBloc extends Bloc<ExperienceNavigationActorEvent,
       id,
     );
     final _failureOrExperiences = await _loadSurroundingExperiences(
-      load_surrounding_experiences.Params(
-        coordinates: _coordinates,
-      ),
+      load_surrounding_experiences.Params(coordinates: _coordinates),
     );
     yield event.experienceOption.fold(
       () => state,
       (experience) => state.copyWith(
         experience: experience,
         objectiveTracker: _fillObjectiveTracker(
-          fill_objective_tracker.Params(
-            objectiveSet: experience.objectives,
-          ),
+          fill_objective_tracker.Params(objectiveSet: experience.objectives),
         ).fold(
           // TODO: Find a better way to handle failures
           // Maybe make the use case return the map itself and ignore possible nulls

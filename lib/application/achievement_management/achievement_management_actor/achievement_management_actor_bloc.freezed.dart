@@ -140,8 +140,7 @@ class _$_Deleted implements _Deleted {
   }
 
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(achievement);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(achievement);
 
   @override
   _$DeletedCopyWith<_Deleted> get copyWith =>

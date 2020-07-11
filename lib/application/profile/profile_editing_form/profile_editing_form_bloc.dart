@@ -19,9 +19,7 @@ import 'package:worldon/domain/profile/use_case/edit_user.dart';
 import 'package:worldon/injection.dart';
 
 part 'profile_editing_form_bloc.freezed.dart';
-
 part 'profile_editing_form_event.dart';
-
 part 'profile_editing_form_state.dart';
 
 @injectable
@@ -52,9 +50,7 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
     if (state.user.isValid) {
       final _register = getIt<EditUser>();
       _failureOrUnit = await _register(
-        Params(
-          userToEdit: state.user,
-        ),
+        Params(userToEdit: state.user),
       );
     }
     yield state.copyWith(
