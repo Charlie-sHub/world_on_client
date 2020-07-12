@@ -63,20 +63,19 @@ abstract class Experience implements _$Experience {
 
   Option<ValueFailure<dynamic>> get failureOption {
     return name.failureOrUnit
-      .andThen(description.failureOrUnit)
-      .andThen(coordinates.failureOrUnit)
-      .andThen(creator.failureOrUnit)
-      .andThen(difficulty.failureOrUnit)
-      .andThen(creationDate.failureOrUnit)
-      .andThen(modificationDate.failureOrUnit)
-    // Make it so the entities have failureOrOption getters but when an entity has to validate another it simply folds the failureOrOption to Failure or Unit
-      .andThen(objectives.failureOrUnit)
-      .andThen(rewards.failureOrUnit)
-      .andThen(tags.failureOrUnit)
-      .fold(
-        (failure) => some(failure),
-        (_) => none(),
-    );
+        .andThen(description.failureOrUnit)
+        .andThen(coordinates.failureOrUnit)
+        .andThen(creator.failureOrUnit)
+        .andThen(difficulty.failureOrUnit)
+        .andThen(creationDate.failureOrUnit)
+        .andThen(modificationDate.failureOrUnit)
+        .andThen(objectives.failureOrUnit)
+        .andThen(rewards.failureOrUnit)
+        .andThen(tags.failureOrUnit)
+        .fold(
+          (failure) => some(failure),
+          (_) => none(),
+        );
   }
 
   bool get isValid => failureOption.isNone();

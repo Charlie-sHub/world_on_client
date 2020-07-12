@@ -41,4 +41,7 @@ abstract class TestDescription {
   static const shouldEmitUpdated = "Should emit an updated state";
   static const shouldResetOption = "Should reset failureOrSuccessOption to none";
   static const deleteEventTests = "Delete Event Tests";
+
+  // Data Layer
+  static const shouldEqualEntity = "the result of converting to and from the dto should equal the original entity";
 }

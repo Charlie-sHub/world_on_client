@@ -8,6 +8,7 @@ import 'get_valid_user.dart';
 
 Notification getValidNotification() {
   return Notification(
+    id: 1,
     sender: getValidUser(),
     receiver: getValidUser().copyWith(
       id: 2,

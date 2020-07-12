@@ -4,6 +4,7 @@ import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 
 Objective getValidObjective() {
   return Objective(
+    id: 1,
     description: EntityDescription("Sed tristique est nibh, ut imperdiet ligula dapibus accumsan."),
     coordinates: getValidCoordinates(),
     imageName: "testObjective.jpg",

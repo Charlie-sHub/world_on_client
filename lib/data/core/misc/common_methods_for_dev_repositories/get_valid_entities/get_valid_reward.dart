@@ -4,6 +4,7 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 
 Reward getValidReward() {
   return Reward(
+    id: 1,
     name: Name("Curabitur lectus"),
     description: EntityDescription("Ut fermentum libero id nisi rhoncus."),
     imageURL: "testReward.jpg",

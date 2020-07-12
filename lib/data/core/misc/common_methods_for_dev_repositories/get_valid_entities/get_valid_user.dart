@@ -1,16 +1,24 @@
-import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_achievement.dart';
-import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_experience.dart';
+import 'package:kt_dart/kt.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_coordinates.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_objective.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_options.dart';
-import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_tag.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_reward.dart';
+import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/entities/device/device.dart';
+import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/domain/core/entities/location/location.dart';
 import 'package:worldon/domain/core/entities/system/system.dart';
+import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/experience_points.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/objective_set.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/reward_set.dart';
+import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 import 'package:worldon/domain/core/validation/objects/user_level.dart';
 
 User getValidUser() {
@@ -33,42 +41,122 @@ User getValidUser() {
     modificationDate: PastDate(DateTime.now()),
     options: getValidOptions(),
     blockedUsers: {
-      getValidUser(),
-      getValidUser().copyWith(
-        id: 2,
-        name: Name("Carlos"),
-        username: Name("carlos"),
-      ),
-      getValidUser().copyWith(
-        id: 3,
-        name: Name("Juan"),
-        username: Name("juan"),
-      ),
+      _getUserCarlod(),
+      _getUserJuan(),
     },
     followedUsers: {
-      getValidUser(),
-      getValidUser().copyWith(
-        id: 2,
-        name: Name("Benjamin"),
-        username: Name("BenjaminXxX"),
-      ),
-      getValidUser().copyWith(
-        id: 3,
-        name: Name("Koji"),
-        username: Name("itoKoji"),
-      ),
+      _getUserBenjamin(),
+      _getUserKoji(),
     },
     devices: <Device>{},
     systems: <System>{},
-    interests: {getValidTag()},
-    achievements: {getValidAchievement()},
-    experiencesDone: {getValidExperience()},
-    experiencesLiked: {getValidExperience()},
-    experiencesToDo: {
-      getValidExperience().copyWith(
-        id: 2,
-        name: Name("Pellentesque porta"),
+    interests: {
+      _getTagFood(),
+    },
+    achievements: {
+      Achievement.empty().copyWith(
+        id: 3,
+        name: Name("Excepteur sint"),
+        description: EntityDescription("Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris"),
+        creator: _getUserKoji(),
+        tags: TagSet(KtSet.of(_getTagFood())),
       ),
     },
+    experiencesDone: {
+      Experience.empty().copyWith(
+        id: 4,
+        name: Name("Leverage agile"),
+        description: EntityDescription("""
+Capitalize on low hanging fruit to identify a ballpark value added activity to beta test.
+ Override the digital divide with additional clickthroughs from DevOps."""),
+        creator: _getUserBenjamin(),
+        location: Location.empty().copyWith(id: 1),
+        coordinates: getValidCoordinates(),
+        objectives: ObjectiveSet(KtSet.of(getValidObjective())),
+        rewards: RewardSet(KtSet.of(getValidReward())),
+        tags: TagSet(KtSet.of(_getTagFood())),
+      ),
+    },
+    experiencesLiked: {
+      Experience.empty().copyWith(
+        id: 3,
+        name: Name("Joyce neocapitalist"),
+        description: EntityDescription("""
+If the patriarchialist paradigm of narrative holds,
+we have to choose between neocapitalist libertarianism and neodialectic capitalist theory.
+But the main theme of the works of Joyce is the collapse, and some would say the futility, of subdialectic truth."""),
+        creator: _getUserJuan(),
+        location: Location.empty().copyWith(id: 1),
+        coordinates: getValidCoordinates(),
+        objectives: ObjectiveSet(KtSet.of(getValidObjective())),
+        rewards: RewardSet(KtSet.of(getValidReward())),
+        tags: TagSet(KtSet.of(_getTagFood())),
+      ),
+    },
+    experiencesToDo: {
+      Experience.empty().copyWith(
+        id: 2,
+        name: Name("Corduroy"),
+        description: EntityDescription("Bro ipsum dolor sit amet bail flow method 360 euro 360 betty Whistler brain bucket gapers line saddle shreddin laps hammerhead."),
+        creator: _getUserCarlod(),
+        location: Location.empty().copyWith(id: 1),
+        coordinates: getValidCoordinates(),
+        objectives: ObjectiveSet(KtSet.of(getValidObjective())),
+        rewards: RewardSet(KtSet.of(getValidReward())),
+        tags: TagSet(KtSet.of(_getTagFood())),
+      ),
+    },
+  );
+}
+
+Tag _getTagFood() {
+  return Tag.empty().copyWith(
+    id: 5,
+    name: Name("Food"),
+    creator: _getUserKoji(),
+  );
+}
+
+User _getUserKoji() {
+  return User.empty().copyWith(
+    id: 3,
+    name: Name("Koji"),
+    username: Name("itoKoji"),
+    password: Password("wow fizzle"),
+    email: EmailAddress("test@test.test"),
+    description: EntityDescription("Bring to the table win-win survival strategies to ensure proactive domination."),
+  );
+}
+
+User _getUserBenjamin() {
+  return User.empty().copyWith(
+    id: 2,
+    name: Name("Benjamin"),
+    username: Name("BenjaminXxX"),
+    password: Password("Shine humanitarian"),
+    email: EmailAddress("test@test.test"),
+    description: EntityDescription("Moguls taco jib, park rat huckfest taco glove bro"),
+  );
+}
+
+User _getUserJuan() {
+  return User.empty().copyWith(
+    id: 3,
+    name: Name("Juan"),
+    username: Name("juan"),
+    password: Password("Aenizzle daahng"),
+    email: EmailAddress("test@test.test"),
+    description: EntityDescription("Seitan live-edge austin, drinking vinegar gentrify vape vegan"),
+  );
+}
+
+User _getUserCarlod() {
+  return User.empty().copyWith(
+    id: 2,
+    name: Name("Carlos"),
+    username: Name("carlos"),
+    password: Password("cultivate milestones"),
+    email: EmailAddress("test@test.test"),
+    description: EntityDescription("My shizz nizzle things egizzle cool consectetuer sure."),
   );
 }
