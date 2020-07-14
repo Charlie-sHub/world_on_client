@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/create_stream_of_either.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_server_error_failure.dart';
@@ -25,10 +26,10 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
   final _random = Random();
 
   @override
-  Stream<Either<Failure, Set<Experience>>> searchExperiencesByDifficulty(Difficulty difficulty) {
-    Either<Failure, Set<Experience>> _either;
+  Stream<Either<Failure, KtSet<Experience>>> searchExperiencesByDifficulty(Difficulty difficulty) {
+    Either<Failure, KtSet<Experience>> _either;
     if (_random.nextBool()) {
-      _either = right({
+      _either = right(KtSet.of(
         getValidExperience().copyWith(
           difficulty: difficulty,
         ),
@@ -42,18 +43,18 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
           name: Name("Itaque"),
           difficulty: difficulty,
         ),
-      });
+      ));
     } else {
       _either = left(getServerErrorFailure());
     }
     return createStreamOfEither(_either);
   }
-  
+
   @override
-  Stream<Either<Failure, Set<Experience>>> searchExperiencesByTags(TagSet tags) {
-    Either<Failure, Set<Experience>> _either;
+  Stream<Either<Failure, KtSet<Experience>>> searchExperiencesByTags(TagSet tags) {
+    Either<Failure, KtSet<Experience>> _either;
     if (_random.nextBool()) {
-      _either = right({
+      _either = right(KtSet.of(
         getValidExperience().copyWith(
           tags: tags,
         ),
@@ -67,18 +68,18 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
           name: Name("Itaque"),
           tags: tags,
         ),
-      });
+      ));
     } else {
       _either = left(getServerErrorFailure());
     }
     return createStreamOfEither(_either);
   }
-  
+
   @override
-  Stream<Either<Failure, Set<Experience>>> searchExperiencesByName(SearchTerm name) {
-    Either<Failure, Set<Experience>> _either;
+  Stream<Either<Failure, KtSet<Experience>>> searchExperiencesByName(SearchTerm name) {
+    Either<Failure, KtSet<Experience>> _either;
     if (_random.nextBool()) {
-      _either = right({
+      _either = right(KtSet.of(
         getValidExperience().copyWith(
           name: Name("Ut ${name.getOrCrash()}"),
         ),
@@ -90,18 +91,18 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
           id: 3,
           name: Name("Orci ${name.getOrCrash()} suscipit"),
         ),
-      });
+      ));
     } else {
       _either = left(getServerErrorFailure());
     }
     return createStreamOfEither(_either);
   }
-  
+
   @override
-  Stream<Either<Failure, Set<Tag>>> searchTagsByName(SearchTerm name) {
-    Either<Failure, Set<Tag>> _either;
+  Stream<Either<Failure, KtSet<Tag>>> searchTagsByName(SearchTerm name) {
+    Either<Failure, KtSet<Tag>> _either;
     if (_random.nextBool()) {
-      _either = right({
+      _either = right(KtSet.of(
         getValidTag().copyWith(
           name: Name("Eat ${name.getOrCrash()}"),
         ),
@@ -113,18 +114,18 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
           id: 3,
           name: Name("Play with ${name.getOrCrash()}"),
         ),
-      });
+      ));
     } else {
       _either = left(getServerErrorFailure());
     }
     return createStreamOfEither(_either);
   }
-  
+
   @override
-  Stream<Either<Failure, Set<User>>> searchUsersByName(SearchTerm name) {
-    Either<Failure, Set<User>> _either;
+  Stream<Either<Failure, KtSet<User>>> searchUsersByName(SearchTerm name) {
+    Either<Failure, KtSet<User>> _either;
     if (_random.nextBool()) {
-      _either = right({
+      _either = right(KtSet.of(
         getValidUser(),
         getValidUser().copyWith(
           id: 2,
@@ -136,18 +137,18 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
           name: Name("${name.getOrCrash()} Smith"),
           username: Name("smithy"),
         ),
-      });
+      ));
     } else {
       _either = left(getServerErrorFailure());
     }
     return createStreamOfEither(_either);
   }
-  
+
   @override
-  Stream<Either<Failure, Set<User>>> searchUsersByUserName(SearchTerm username) {
-    Either<Failure, Set<User>> _either;
+  Stream<Either<Failure, KtSet<User>>> searchUsersByUserName(SearchTerm username) {
+    Either<Failure, KtSet<User>> _either;
     if (_random.nextBool()) {
-      _either = right({
+      _either = right(KtSet.of(
         getValidUser(),
         getValidUser().copyWith(
           id: 2,
@@ -159,7 +160,7 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
           name: Name("Ben"),
           username: Name("The ${username.getOrCrash()} master"),
         ),
-      });
+      ));
     } else {
       _either = left(getServerErrorFailure());
     }

@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/experience_log/repository/experience_log_repository_interface.dart';
@@ -22,7 +23,7 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
   }
 
   @override
-  Stream<Either<Failure, Set<Experience>>> loadUserLog() {
+  Stream<Either<Failure, KtSet<Experience>>> loadUserLog() {
     // TODO: implement loadUserLog
     throw UnimplementedError();
   }

@@ -24,7 +24,7 @@ class _$SearchUsersByNameWatcherEventTearOff {
     );
   }
 
-  _SearchResultsReceived searchResultsReceived(Either<Failure, Set<User>> failureOrUsers) {
+  _SearchResultsReceived searchResultsReceived(Either<Failure, KtSet<User>> failureOrUsers) {
     return _SearchResultsReceived(
       failureOrUsers,
     );
@@ -39,13 +39,13 @@ mixin _$SearchUsersByNameWatcherEvent {
   Result when<Result extends Object>({
     @required Result watchUsersFoundByNameStarted(SearchTerm name),
     @required Result watchUsersFoundByUsernameStarted(SearchTerm username),
-    @required Result searchResultsReceived(Either<Failure, Set<User>> failureOrUsers),
+    @required Result searchResultsReceived(Either<Failure, KtSet<User>> failureOrUsers),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result watchUsersFoundByNameStarted(SearchTerm name),
     Result watchUsersFoundByUsernameStarted(SearchTerm username),
-    Result searchResultsReceived(Either<Failure, Set<User>> failureOrUsers),
+    Result searchResultsReceived(Either<Failure, KtSet<User>> failureOrUsers),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -136,7 +136,7 @@ class _$_WatchUsersFoundByNameStarted implements _WatchUsersFoundByNameStarted {
   Result when<Result extends Object>({
     @required Result watchUsersFoundByNameStarted(SearchTerm name),
     @required Result watchUsersFoundByUsernameStarted(SearchTerm username),
-    @required Result searchResultsReceived(Either<Failure, Set<User>> failureOrUsers),
+    @required Result searchResultsReceived(Either<Failure, KtSet<User>> failureOrUsers),
   }) {
     assert(watchUsersFoundByNameStarted != null);
     assert(watchUsersFoundByUsernameStarted != null);
@@ -149,7 +149,7 @@ class _$_WatchUsersFoundByNameStarted implements _WatchUsersFoundByNameStarted {
   Result maybeWhen<Result extends Object>({
     Result watchUsersFoundByNameStarted(SearchTerm name),
     Result watchUsersFoundByUsernameStarted(SearchTerm username),
-    Result searchResultsReceived(Either<Failure, Set<User>> failureOrUsers),
+    Result searchResultsReceived(Either<Failure, KtSet<User>> failureOrUsers),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -262,7 +262,7 @@ class _$_WatchUsersFoundByUsernameStarted
   Result when<Result extends Object>({
     @required Result watchUsersFoundByNameStarted(SearchTerm name),
     @required Result watchUsersFoundByUsernameStarted(SearchTerm username),
-    @required Result searchResultsReceived(Either<Failure, Set<User>> failureOrUsers),
+    @required Result searchResultsReceived(Either<Failure, KtSet<User>> failureOrUsers),
   }) {
     assert(watchUsersFoundByNameStarted != null);
     assert(watchUsersFoundByUsernameStarted != null);
@@ -275,7 +275,7 @@ class _$_WatchUsersFoundByUsernameStarted
   Result maybeWhen<Result extends Object>({
     Result watchUsersFoundByNameStarted(SearchTerm name),
     Result watchUsersFoundByUsernameStarted(SearchTerm username),
-    Result searchResultsReceived(Either<Failure, Set<User>> failureOrUsers),
+    Result searchResultsReceived(Either<Failure, KtSet<User>> failureOrUsers),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -328,7 +328,8 @@ abstract class _$SearchResultsReceivedCopyWith<$Res> {
   factory _$SearchResultsReceivedCopyWith(_SearchResultsReceived value,
     $Res Function(_SearchResultsReceived) then) =
   __$SearchResultsReceivedCopyWithImpl<$Res>;
-  $Res call({Either<Failure, Set<User>> failureOrUsers});
+
+  $Res call({Either<Failure, KtSet<User>> failureOrUsers});
 }
 
 class __$SearchResultsReceivedCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherEventCopyWithImpl<$Res>
@@ -347,7 +348,7 @@ class __$SearchResultsReceivedCopyWithImpl<$Res> extends _$SearchUsersByNameWatc
     return _then(_SearchResultsReceived(
       failureOrUsers == freezed
         ? _value.failureOrUsers
-        : failureOrUsers as Either<Failure, Set<User>>,
+        : failureOrUsers as Either<Failure, KtSet<User>>,
     ));
   }
 }
@@ -357,7 +358,7 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
     : assert(failureOrUsers != null);
 
   @override
-  final Either<Failure, Set<User>> failureOrUsers;
+  final Either<Failure, KtSet<User>> failureOrUsers;
 
   @override
   String toString() {
@@ -388,7 +389,7 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
   Result when<Result extends Object>({
     @required Result watchUsersFoundByNameStarted(SearchTerm name),
     @required Result watchUsersFoundByUsernameStarted(SearchTerm username),
-    @required Result searchResultsReceived(Either<Failure, Set<User>> failureOrUsers),
+    @required Result searchResultsReceived(Either<Failure, KtSet<User>> failureOrUsers),
   }) {
     assert(watchUsersFoundByNameStarted != null);
     assert(watchUsersFoundByUsernameStarted != null);
@@ -401,7 +402,7 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
   Result maybeWhen<Result extends Object>({
     Result watchUsersFoundByNameStarted(SearchTerm name),
     Result watchUsersFoundByUsernameStarted(SearchTerm username),
-    Result searchResultsReceived(Either<Failure, Set<User>> failureOrUsers),
+    Result searchResultsReceived(Either<Failure, KtSet<User>> failureOrUsers),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -441,9 +442,9 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
 }
 
 abstract class _SearchResultsReceived implements SearchUsersByNameWatcherEvent {
-  const factory _SearchResultsReceived(Either<Failure, Set<User>> failureOrUsers) = _$_SearchResultsReceived;
-
-  Either<Failure, Set<User>> get failureOrUsers;
+  const factory _SearchResultsReceived(Either<Failure, KtSet<User>> failureOrUsers) = _$_SearchResultsReceived;
+  
+  Either<Failure, KtSet<User>> get failureOrUsers;
   _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith;
 }
 
@@ -458,7 +459,7 @@ class _$SearchUsersByNameWatcherStateTearOff {
     return const _SearchInPorgress();
   }
 
-  _SearchSuccess searchSuccess(Set<User> usersFound) {
+  _SearchSuccess searchSuccess(KtSet<User> usersFound) {
     return _SearchSuccess(
       usersFound,
     );
@@ -479,14 +480,14 @@ mixin _$SearchUsersByNameWatcherState {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result searchInProgress(),
-    @required Result searchSuccess(Set<User> usersFound),
+    @required Result searchSuccess(KtSet<User> usersFound),
     @required Result searchFailure(Failure<dynamic> failure),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result searchInProgress(),
-    Result searchSuccess(Set<User> usersFound),
+    Result searchSuccess(KtSet<User> usersFound),
     Result searchFailure(Failure<dynamic> failure),
     @required Result orElse(),
   });
@@ -557,7 +558,7 @@ class _$_Initial implements _Initial {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result searchInProgress(),
-    @required Result searchSuccess(Set<User> usersFound),
+    @required Result searchSuccess(KtSet<User> usersFound),
     @required Result searchFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -572,7 +573,7 @@ class _$_Initial implements _Initial {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result searchInProgress(),
-    Result searchSuccess(Set<User> usersFound),
+    Result searchSuccess(KtSet<User> usersFound),
     Result searchFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -654,7 +655,7 @@ class _$_SearchInPorgress implements _SearchInPorgress {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result searchInProgress(),
-    @required Result searchSuccess(Set<User> usersFound),
+    @required Result searchSuccess(KtSet<User> usersFound),
     @required Result searchFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -669,7 +670,7 @@ class _$_SearchInPorgress implements _SearchInPorgress {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result searchInProgress(),
-    Result searchSuccess(Set<User> usersFound),
+    Result searchSuccess(KtSet<User> usersFound),
     Result searchFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -719,7 +720,8 @@ abstract class _SearchInPorgress implements SearchUsersByNameWatcherState {
 abstract class _$SearchSuccessCopyWith<$Res> {
   factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) =
   __$SearchSuccessCopyWithImpl<$Res>;
-  $Res call({Set<User> usersFound});
+  
+  $Res call({KtSet<User> usersFound});
 }
 
 class __$SearchSuccessCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherStateCopyWithImpl<$Res>
@@ -735,7 +737,7 @@ class __$SearchSuccessCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherState
     Object usersFound = freezed,
   }) {
     return _then(_SearchSuccess(
-      usersFound == freezed ? _value.usersFound : usersFound as Set<User>,
+      usersFound == freezed ? _value.usersFound : usersFound as KtSet<User>,
     ));
   }
 }
@@ -744,7 +746,7 @@ class _$_SearchSuccess implements _SearchSuccess {
   const _$_SearchSuccess(this.usersFound) : assert(usersFound != null);
 
   @override
-  final Set<User> usersFound;
+  final KtSet<User> usersFound;
 
   @override
   String toString() {
@@ -773,7 +775,7 @@ class _$_SearchSuccess implements _SearchSuccess {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result searchInProgress(),
-    @required Result searchSuccess(Set<User> usersFound),
+    @required Result searchSuccess(KtSet<User> usersFound),
     @required Result searchFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -788,7 +790,7 @@ class _$_SearchSuccess implements _SearchSuccess {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result searchInProgress(),
-    Result searchSuccess(Set<User> usersFound),
+    Result searchSuccess(KtSet<User> usersFound),
     Result searchFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -832,9 +834,9 @@ class _$_SearchSuccess implements _SearchSuccess {
 }
 
 abstract class _SearchSuccess implements SearchUsersByNameWatcherState {
-  const factory _SearchSuccess(Set<User> usersFound) = _$_SearchSuccess;
-
-  Set<User> get usersFound;
+  const factory _SearchSuccess(KtSet<User> usersFound) = _$_SearchSuccess;
+  
+  KtSet<User> get usersFound;
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith;
 }
 
@@ -906,7 +908,7 @@ class _$_SearchFailure implements _SearchFailure {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result searchInProgress(),
-    @required Result searchSuccess(Set<User> usersFound),
+    @required Result searchSuccess(KtSet<User> usersFound),
     @required Result searchFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -921,7 +923,7 @@ class _$_SearchFailure implements _SearchFailure {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result searchInProgress(),
-    Result searchSuccess(Set<User> usersFound),
+    Result searchSuccess(KtSet<User> usersFound),
     Result searchFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {

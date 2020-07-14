@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
@@ -11,7 +12,7 @@ import 'package:worldon/domain/tag_management/repository/tag_repository_interfac
 )
 class ProductionTagRepository implements TagCoreRepositoryInterface {
   @override
-  Stream<Either<Failure, List<Tag>>> getAllTags() {
+  Stream<Either<Failure, KtSet<Tag>>> getAllTags() {
     // TODO: implement getAllTags
     throw UnimplementedError();
   }
@@ -23,7 +24,7 @@ class ProductionTagRepository implements TagCoreRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, List<Tag>>> getTagsByCreator(int id) {
+  Stream<Either<Failure, KtSet<Tag>>> getTagsByCreator(int id) {
     // TODO: implement getTagsByCreator
     throw UnimplementedError();
   }

@@ -2,6 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/application/achievement_management/achievement_management_watcher/achievement_management_watcher_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
@@ -21,7 +22,7 @@ void main() {
       getAllAchievements = getIt<GetAllAchievements>();
     },
   );
-  final achievementList = [Achievement.empty()];
+  final achievementSet = KtSet.of(Achievement.empty());
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
@@ -32,7 +33,7 @@ void main() {
   blocTest(
     TestDescription.shouldEmitSuccess,
     build: () async {
-      when(getAllAchievements.call(any)).thenAnswer((_) => createStream(right(achievementList)));
+      when(getAllAchievements.call(any)).thenAnswer((_) => createStream(right(achievementSet)));
       return getIt<AchievementManagementWatcherBloc>();
     },
     act: (bloc) async => bloc.add(const AchievementManagementWatcherEvent.watchAllAchievementsStarted()),
@@ -42,7 +43,7 @@ void main() {
     },
     expect: [
       const AchievementManagementWatcherState.loadInProgress(),
-      AchievementManagementWatcherState.loadSuccess(achievementList),
+      AchievementManagementWatcherState.loadSuccess(achievementSet),
     ],
   );
   blocTest(

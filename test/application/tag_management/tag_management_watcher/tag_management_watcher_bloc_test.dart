@@ -2,12 +2,13 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/application/tag_management/tag_management_watcher/tag_management_watcher_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/tag_management/use_case/get_all_tags.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
+import 'package:worldon/domain/tag_management/use_case/get_all_tags.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../domain/core/methods/create_stream.dart';
@@ -21,7 +22,7 @@ void main() {
       getAllTags = getIt<GetAllTags>();
     },
   );
-  final tagList = [Tag.empty()];
+  final tagList = KtSet.of(Tag.empty());
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,

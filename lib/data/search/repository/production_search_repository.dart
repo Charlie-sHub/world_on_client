@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
@@ -15,37 +16,37 @@ import 'package:worldon/domain/search/repository/search_repository_interface.dar
 )
 class ProductionSearchRepository implements SearchRepositoryInterface {
   @override
-  Stream<Either<Failure, Set<Experience>>> searchExperiencesByDifficulty(Difficulty difficulty) {
+  Stream<Either<Failure, KtSet<Experience>>> searchExperiencesByDifficulty(Difficulty difficulty) {
     // TODO: implement searchExperiencesByDifficulty
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, Set<Experience>>> searchExperiencesByTags(TagSet tags) {
+  Stream<Either<Failure, KtSet<Experience>>> searchExperiencesByTags(TagSet tags) {
     // TODO: implement searchExperiencesByTags
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, Set<Experience>>> searchExperiencesByName(SearchTerm name) {
+  Stream<Either<Failure, KtSet<Experience>>> searchExperiencesByName(SearchTerm name) {
     // TODO: implement searchExperiencesByName
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, Set<Tag>>> searchTagsByName(SearchTerm name) {
+  Stream<Either<Failure, KtSet<Tag>>> searchTagsByName(SearchTerm name) {
     // TODO: implement searchTagsByName
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, Set<User>>> searchUsersByName(SearchTerm name) {
+  Stream<Either<Failure, KtSet<User>>> searchUsersByName(SearchTerm name) {
     // TODO: implement searchUsersByName
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, Set<User>>> searchUsersByUserName(SearchTerm username) {
+  Stream<Either<Failure, KtSet<User>>> searchUsersByUserName(SearchTerm username) {
     // TODO: implement searchUsersByUserName
     throw UnimplementedError();
   }

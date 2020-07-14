@@ -199,7 +199,7 @@ class _$CommentWatcherStateTearOff {
     return const _LoadInProgress();
   }
 
-  _LoadSuccess loadSuccess(Set<Comment> comments) {
+  _LoadSuccess loadSuccess(KtSet<Comment> comments) {
     return _LoadSuccess(
       comments,
     );
@@ -220,14 +220,14 @@ mixin _$CommentWatcherState {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<Comment> comments),
+    @required Result loadSuccess(KtSet<Comment> comments),
     @required Result loadFailure(Failure<dynamic> failure),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<Comment> comments),
+    Result loadSuccess(KtSet<Comment> comments),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   });
@@ -297,7 +297,7 @@ class _$_Initial implements _Initial {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<Comment> comments),
+    @required Result loadSuccess(KtSet<Comment> comments),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -312,7 +312,7 @@ class _$_Initial implements _Initial {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<Comment> comments),
+    Result loadSuccess(KtSet<Comment> comments),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -394,7 +394,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<Comment> comments),
+    @required Result loadSuccess(KtSet<Comment> comments),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -409,7 +409,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<Comment> comments),
+    Result loadSuccess(KtSet<Comment> comments),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -459,7 +459,8 @@ abstract class _LoadInProgress implements CommentWatcherState {
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
   __$LoadSuccessCopyWithImpl<$Res>;
-  $Res call({Set<Comment> comments});
+  
+  $Res call({KtSet<Comment> comments});
 }
 
 class __$LoadSuccessCopyWithImpl<$Res> extends _$CommentWatcherStateCopyWithImpl<$Res>
@@ -475,7 +476,7 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$CommentWatcherStateCopyWithImpl
     Object comments = freezed,
   }) {
     return _then(_LoadSuccess(
-      comments == freezed ? _value.comments : comments as Set<Comment>,
+      comments == freezed ? _value.comments : comments as KtSet<Comment>,
     ));
   }
 }
@@ -484,7 +485,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(this.comments) : assert(comments != null);
 
   @override
-  final Set<Comment> comments;
+  final KtSet<Comment> comments;
 
   @override
   String toString() {
@@ -513,7 +514,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<Comment> comments),
+    @required Result loadSuccess(KtSet<Comment> comments),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -528,7 +529,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<Comment> comments),
+    Result loadSuccess(KtSet<Comment> comments),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -572,9 +573,9 @@ class _$_LoadSuccess implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements CommentWatcherState {
-  const factory _LoadSuccess(Set<Comment> comments) = _$_LoadSuccess;
-
-  Set<Comment> get comments;
+  const factory _LoadSuccess(KtSet<Comment> comments) = _$_LoadSuccess;
+  
+  KtSet<Comment> get comments;
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
@@ -646,7 +647,7 @@ class _$_LoadFailure implements _LoadFailure {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<Comment> comments),
+    @required Result loadSuccess(KtSet<Comment> comments),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -661,7 +662,7 @@ class _$_LoadFailure implements _LoadFailure {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<Comment> comments),
+    Result loadSuccess(KtSet<Comment> comments),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {

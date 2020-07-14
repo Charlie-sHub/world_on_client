@@ -2,6 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/application/profile/blocked_watcher/blocked_watcher_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
@@ -21,13 +22,14 @@ void main() {
       loadBlockedUsers = getIt<LoadBlockedUsers>();
     },
   );
-  final usersBlocked = {
+  final usersBlocked = KtSet.of(
     getValidUser(),
     getValidUser().copyWith(id: 2),
-  };
+  );
   final user = getValidUser().copyWith(
     id: 3,
-    blockedUsers: usersBlocked,
+    // TODO: Change the Sets in the entities to KtSet
+    blockedUsers: usersBlocked.asSet(),
   );
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(

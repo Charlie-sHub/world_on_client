@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
@@ -23,7 +24,7 @@ void main() {
     },
   );
   final params = Params(creatorId: 1);
-  final tagList = [Tag.empty()];
+  final tagList = KtSet.of(Tag.empty());
   test(
     "Should get a List of Tags by a given creator id",
     () async {
@@ -82,9 +83,9 @@ void main() {
   );
 }
 
-Future<Either<Failure, List<Tag>>> _act(GetTagsByCreator useCase, Params params) async {
+Future<Either<Failure, KtSet<Tag>>> _act(GetTagsByCreator useCase, Params params) async {
   final resultStream = useCase(params);
-  Either<Failure, List<Tag>> result;
+  Either<Failure, KtSet<Tag>> result;
   await for (final either in resultStream) {
     result = either;
   }

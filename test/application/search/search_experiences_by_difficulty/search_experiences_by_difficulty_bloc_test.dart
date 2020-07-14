@@ -2,6 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/application/search/search_experiences_by_difficulty/search_experiences_by_difficulty_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
@@ -22,7 +23,7 @@ void main() {
       searchExperiencesByDifficulty = getIt<SearchExperiencesByDifficulty>();
     },
   );
-  final experiencesFound = {Experience.empty()};
+  final experiencesFound = KtSet.of(Experience.empty());
   const validDifficulty = 5;
   const invalidDifficulty = 50;
   const valueFailure = ValueFailure<int>.integerOutOfBounds(failedValue: invalidDifficulty);

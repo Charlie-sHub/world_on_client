@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
@@ -23,16 +24,16 @@ void main() {
       useCase = GetAllAchievements(mockAchievementRepository);
     },
   );
-  final List<Achievement> achievementList = [Achievement.empty()];
+  final achievementSet = KtSet.of(Achievement.empty());
   test(
     "Should return the achievementListStream",
     () async {
       // Arrange
-      when(mockAchievementRepository.getAllAchievement()).thenAnswer((_) => createStream(right(achievementList)));
+      when(mockAchievementRepository.getAllAchievement()).thenAnswer((_) => createStream(right(achievementSet)));
       // Act
       final result = await _act(useCase);
       // Assert
-      expect(result, right(achievementList));
+      expect(result, right(achievementSet));
       _verifyInteractions(mockAchievementRepository);
     },
   );
@@ -82,12 +83,9 @@ void main() {
   );
 }
 
-// TODO: Try to create a single act method for all use cases with streams
-// probably unifying the use cases somehow
-Future<Either<Failure, List<Achievement>>> _act(GetAllAchievements useCase) async {
+Future<Either<Failure, KtSet<Achievement>>> _act(GetAllAchievements useCase) async {
   final resultStream = useCase(getIt<NoParams>());
-  // Is there a better way to do this?
-  Either<Failure, List<Achievement>> result;
+  Either<Failure, KtSet<Achievement>> result;
   await for (final either in resultStream) {
     result = either;
   }

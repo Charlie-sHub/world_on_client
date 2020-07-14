@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
@@ -23,7 +24,7 @@ void main() {
     },
   );
   final params = Params(experienceId: 1);
-  final Set<Comment> commentSet = {Comment.empty()};
+  final commentSet = KtSet.of(Comment.empty());
   test(
     "Should return a Set of Comments",
     () async {
@@ -82,9 +83,9 @@ void main() {
   );
 }
 
-Future<Either<Failure, Set<Comment>>> _act(GetExperienceComments useCase, Params params) async {
+Future<Either<Failure, KtSet<Comment>>> _act(GetExperienceComments useCase, Params params) async {
   final resultStream = useCase(params);
-  Either<Failure, Set<Comment>> result;
+  Either<Failure, KtSet<Comment>> result;
   await for (final either in resultStream) {
     result = either;
   }

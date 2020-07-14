@@ -1,15 +1,16 @@
-import 'package:worldon/domain/core/entities/user/user.dart';
-import 'package:worldon/domain/core/validation/objects/search_term.dart';
-import 'package:worldon/domain/search/use_case/search_users_by_name.dart';
-import 'package:worldon/domain/search/use_case/search_users_by_username.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/application/search/search_users_by_name_watcher/search_users_by_name_watcher_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/validation/objects/search_term.dart';
+import 'package:worldon/domain/search/use_case/search_users_by_name.dart';
+import 'package:worldon/domain/search/use_case/search_users_by_username.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../domain/core/methods/create_stream.dart';
@@ -26,7 +27,7 @@ void main() {
     },
   );
   final searchTerm = SearchTerm("Test");
-  final usersFound = {User.empty()};
+  final usersFound = KtSet.of(User.empty());
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,

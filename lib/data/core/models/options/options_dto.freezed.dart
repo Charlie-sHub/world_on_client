@@ -8,7 +8,6 @@ part of 'options_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
-
 OptionsDto _$OptionsDtoFromJson(Map<String, dynamic> json) {
   return _OptionsDto.fromJson(json);
 }
@@ -29,17 +28,14 @@ const $OptionsDto = _$OptionsDtoTearOff();
 
 mixin _$OptionsDto {
   int get id;
-
   String get languageCode;
 
   Map<String, dynamic> toJson();
-
   $OptionsDtoCopyWith<OptionsDto> get copyWith;
 }
 
 abstract class $OptionsDtoCopyWith<$Res> {
   factory $OptionsDtoCopyWith(OptionsDto value, $Res Function(OptionsDto) then) = _$OptionsDtoCopyWithImpl<$Res>;
-
   $Res call({int id, String languageCode});
 }
 
@@ -47,7 +43,6 @@ class _$OptionsDtoCopyWithImpl<$Res> implements $OptionsDtoCopyWith<$Res> {
   _$OptionsDtoCopyWithImpl(this._value, this._then);
 
   final OptionsDto _value;
-
   // ignore: unused_field
   final $Res Function(OptionsDto) _then;
 
@@ -58,20 +53,24 @@ class _$OptionsDtoCopyWithImpl<$Res> implements $OptionsDtoCopyWith<$Res> {
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as int,
-      languageCode: languageCode == freezed ? _value.languageCode : languageCode as String,
+      languageCode: languageCode == freezed
+        ? _value.languageCode
+        : languageCode as String,
     ));
   }
 }
 
 abstract class _$OptionsDtoCopyWith<$Res> implements $OptionsDtoCopyWith<$Res> {
-  factory _$OptionsDtoCopyWith(_OptionsDto value, $Res Function(_OptionsDto) then) = __$OptionsDtoCopyWithImpl<$Res>;
-
+  factory _$OptionsDtoCopyWith(_OptionsDto value, $Res Function(_OptionsDto) then) =
+  __$OptionsDtoCopyWithImpl<$Res>;
   @override
   $Res call({int id, String languageCode});
 }
 
-class __$OptionsDtoCopyWithImpl<$Res> extends _$OptionsDtoCopyWithImpl<$Res> implements _$OptionsDtoCopyWith<$Res> {
-  __$OptionsDtoCopyWithImpl(_OptionsDto _value, $Res Function(_OptionsDto) _then) : super(_value, (v) => _then(v as _OptionsDto));
+class __$OptionsDtoCopyWithImpl<$Res> extends _$OptionsDtoCopyWithImpl<$Res>
+  implements _$OptionsDtoCopyWith<$Res> {
+  __$OptionsDtoCopyWithImpl(_OptionsDto _value, $Res Function(_OptionsDto) _then)
+    : super(_value, (v) => _then(v as _OptionsDto));
 
   @override
   _OptionsDto get _value => super._value as _OptionsDto;
@@ -83,7 +82,9 @@ class __$OptionsDtoCopyWithImpl<$Res> extends _$OptionsDtoCopyWithImpl<$Res> imp
   }) {
     return _then(_OptionsDto(
       id: id == freezed ? _value.id : id as int,
-      languageCode: languageCode == freezed ? _value.languageCode : languageCode as String,
+      languageCode: languageCode == freezed
+        ? _value.languageCode
+        : languageCode as String,
     ));
   }
 }
@@ -95,7 +96,8 @@ class _$_OptionsDto extends _OptionsDto {
         assert(languageCode != null),
         super._();
 
-  factory _$_OptionsDto.fromJson(Map<String, dynamic> json) => _$_$_OptionsDtoFromJson(json);
+  factory _$_OptionsDto.fromJson(Map<String, dynamic> json) =>
+    _$_$_OptionsDtoFromJson(json);
 
   @override
   final int id;
@@ -111,15 +113,22 @@ class _$_OptionsDto extends _OptionsDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _OptionsDto &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.languageCode, languageCode) || const DeepCollectionEquality().equals(other.languageCode, languageCode)));
+          (identical(other.id, id) ||
+            const DeepCollectionEquality().equals(other.id, id)) &&
+          (identical(other.languageCode, languageCode) ||
+            const DeepCollectionEquality()
+              .equals(other.languageCode, languageCode)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(id) ^ const DeepCollectionEquality().hash(languageCode);
+  int get hashCode =>
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(id) ^
+    const DeepCollectionEquality().hash(languageCode);
 
   @override
-  _$OptionsDtoCopyWith<_OptionsDto> get copyWith => __$OptionsDtoCopyWithImpl<_OptionsDto>(this, _$identity);
+  _$OptionsDtoCopyWith<_OptionsDto> get copyWith =>
+    __$OptionsDtoCopyWithImpl<_OptionsDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -130,16 +139,16 @@ class _$_OptionsDto extends _OptionsDto {
 abstract class _OptionsDto extends OptionsDto {
   const _OptionsDto._() : super._();
 
-  const factory _OptionsDto({@required int id, @required String languageCode}) = _$_OptionsDto;
+  const factory _OptionsDto({@required int id, @required String languageCode}) =
+  _$_OptionsDto;
 
-  factory _OptionsDto.fromJson(Map<String, dynamic> json) = _$_OptionsDto.fromJson;
+  factory _OptionsDto.fromJson(Map<String, dynamic> json) =
+  _$_OptionsDto.fromJson;
 
   @override
   int get id;
-
   @override
   String get languageCode;
-
   @override
   _$OptionsDtoCopyWith<_OptionsDto> get copyWith;
 }

@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/domain/notifications/repository/notification_repository_interface.dart';
@@ -22,7 +23,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
   }
 
   @override
-  Stream<Either<Failure, List<Notification>>> loadNotifications() {
+  Stream<Either<Failure, KtSet<Notification>>> loadNotifications() {
     // TODO: implement loadNotifications
     throw UnimplementedError();
   }

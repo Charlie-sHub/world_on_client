@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/create_stream_of_either.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_left_server_error.dart';
@@ -30,7 +31,7 @@ class DevelopmentAchievementRepository implements AchievementRepositoryInterface
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> createAchievement(Achievement achievement) {
     if (_random.nextBool()) {
@@ -39,7 +40,7 @@ class DevelopmentAchievementRepository implements AchievementRepositoryInterface
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> editAchievement(Achievement achievement) {
     if (_random.nextBool()) {
@@ -48,7 +49,7 @@ class DevelopmentAchievementRepository implements AchievementRepositoryInterface
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
   Future<Either<Failure, Achievement>> getAchievement(int ac) {
     if (_random.nextBool()) {
@@ -57,12 +58,12 @@ class DevelopmentAchievementRepository implements AchievementRepositoryInterface
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
-  Stream<Either<Failure, List<Achievement>>> getAllAchievement() {
-    Either<Failure, List<Achievement>> _either;
+  Stream<Either<Failure, KtSet<Achievement>>> getAllAchievement() {
+    Either<Failure, KtSet<Achievement>> _either;
     if (_random.nextBool()) {
-      _either = right([
+      _either = right(KtSet.of(
         getValidAchievement(),
         getValidAchievement().copyWith(
           id: 2,
@@ -72,30 +73,30 @@ class DevelopmentAchievementRepository implements AchievementRepositoryInterface
           id: 3,
           name: Name("Curabitur"),
         ),
-      ]);
+      ));
     } else {
       _either = left(getServerErrorFailure());
     }
     return createStreamOfEither(_either);
   }
-  
+
   @override
-  Stream<Either<Failure, Set<Achievement>>> getUserAchievements() {
-    Either<Failure, Set<Achievement>> _either;
+  Stream<Either<Failure, KtSet<Achievement>>> getUserAchievements() {
+    Either<Failure, KtSet<Achievement>> _either;
     if (_random.nextBool()) {
-      _either = right({
+      _either = right(KtSet.of(
         getValidAchievement(),
         getValidAchievement().copyWith(
           id: 2,
           name: Name("Nullam quam"),
         ),
-      });
+      ));
     } else {
       _either = left(getServerErrorFailure());
     }
     return createStreamOfEither(_either);
   }
-  
+
   @override
   Future<Either<Failure, Unit>> removeAchievement(int ac) {
     if (_random.nextBool()) {

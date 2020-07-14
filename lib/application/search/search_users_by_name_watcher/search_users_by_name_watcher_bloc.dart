@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
@@ -19,7 +20,7 @@ part 'search_users_by_name_watcher_state.dart';
 @injectable
 class SearchUsersByNameWatcherBloc extends Bloc<SearchUsersByNameWatcherEvent, SearchUsersByNameWatcherState> {
   SearchUsersByNameWatcherBloc() : super(const SearchUsersByNameWatcherState.initial());
-  StreamSubscription<Either<Failure, Set<User>>> _usersSearchStreamSubscription;
+  StreamSubscription<Either<Failure, KtSet<User>>> _usersSearchStreamSubscription;
 
   @override
   Stream<SearchUsersByNameWatcherState> mapEventToState(SearchUsersByNameWatcherEvent event) async* {

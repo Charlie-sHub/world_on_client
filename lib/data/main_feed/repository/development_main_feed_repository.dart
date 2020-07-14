@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/create_stream_of_either.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_server_error_failure.dart';
@@ -19,10 +20,10 @@ class DevelopmentMainFeedRepository implements MainFeedRepositoryInterface {
 
   // TODO: Change all Lists to KtSet
   @override
-  Stream<Either<Failure, List<Experience>>> fillFeed() {
-    Either<Failure, List<Experience>> _either;
+  Stream<Either<Failure, KtSet<Experience>>> fillFeed() {
+    Either<Failure, KtSet<Experience>> _either;
     if (_random.nextBool()) {
-      _either = right([
+      _either = right(KtSet.of(
         getValidExperience(),
         getValidExperience().copyWith(
           id: 2,
@@ -32,7 +33,7 @@ class DevelopmentMainFeedRepository implements MainFeedRepositoryInterface {
           id: 3,
           name: Name("Itaque"),
         ),
-      ]);
+      ));
     } else {
       _either = left(getServerErrorFailure());
     }

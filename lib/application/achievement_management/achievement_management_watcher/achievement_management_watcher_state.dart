@@ -6,7 +6,7 @@ abstract class AchievementManagementWatcherState with _$AchievementManagementWat
 
   const factory AchievementManagementWatcherState.loadInProgress() = _LoadInProgress;
 
-  const factory AchievementManagementWatcherState.loadSuccess(List<Achievement> achievements) = _loadSuccess;
+  const factory AchievementManagementWatcherState.loadSuccess(KtSet<Achievement> achievements) = _loadSuccess;
 
   const factory AchievementManagementWatcherState.loadFailure(Failure<dynamic> failure) = _loadFailure;
 }

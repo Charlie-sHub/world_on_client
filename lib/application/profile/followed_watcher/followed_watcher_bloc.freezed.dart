@@ -209,7 +209,7 @@ class _$FollowedWatcherStateTearOff {
     return const _LoadInProgress();
   }
 
-  _LoadSuccess loadSuccess(Set<User> followedUsers) {
+  _LoadSuccess loadSuccess(KtSet<User> followedUsers) {
     return _LoadSuccess(
       followedUsers,
     );
@@ -230,14 +230,14 @@ mixin _$FollowedWatcherState {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<User> followedUsers),
+    @required Result loadSuccess(KtSet<User> followedUsers),
     @required Result loadFailure(Failure<dynamic> failure),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<User> followedUsers),
+    Result loadSuccess(KtSet<User> followedUsers),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   });
@@ -308,7 +308,7 @@ class _$_Initial implements _Initial {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<User> followedUsers),
+    @required Result loadSuccess(KtSet<User> followedUsers),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -323,7 +323,7 @@ class _$_Initial implements _Initial {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<User> followedUsers),
+    Result loadSuccess(KtSet<User> followedUsers),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -405,7 +405,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<User> followedUsers),
+    @required Result loadSuccess(KtSet<User> followedUsers),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -420,7 +420,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<User> followedUsers),
+    Result loadSuccess(KtSet<User> followedUsers),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -470,7 +470,8 @@ abstract class _LoadInProgress implements FollowedWatcherState {
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
   __$LoadSuccessCopyWithImpl<$Res>;
-  $Res call({Set<User> followedUsers});
+  
+  $Res call({KtSet<User> followedUsers});
 }
 
 class __$LoadSuccessCopyWithImpl<$Res> extends _$FollowedWatcherStateCopyWithImpl<$Res>
@@ -488,7 +489,7 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$FollowedWatcherStateCopyWithImp
     return _then(_LoadSuccess(
       followedUsers == freezed
         ? _value.followedUsers
-        : followedUsers as Set<User>,
+        : followedUsers as KtSet<User>,
     ));
   }
 }
@@ -497,7 +498,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(this.followedUsers) : assert(followedUsers != null);
 
   @override
-  final Set<User> followedUsers;
+  final KtSet<User> followedUsers;
 
   @override
   String toString() {
@@ -526,7 +527,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<User> followedUsers),
+    @required Result loadSuccess(KtSet<User> followedUsers),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -541,7 +542,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<User> followedUsers),
+    Result loadSuccess(KtSet<User> followedUsers),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -585,9 +586,9 @@ class _$_LoadSuccess implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements FollowedWatcherState {
-  const factory _LoadSuccess(Set<User> followedUsers) = _$_LoadSuccess;
-
-  Set<User> get followedUsers;
+  const factory _LoadSuccess(KtSet<User> followedUsers) = _$_LoadSuccess;
+  
+  KtSet<User> get followedUsers;
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
@@ -659,7 +660,7 @@ class _$_LoadFailure implements _LoadFailure {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<User> followedUsers),
+    @required Result loadSuccess(KtSet<User> followedUsers),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -674,7 +675,7 @@ class _$_LoadFailure implements _LoadFailure {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<User> followedUsers),
+    Result loadSuccess(KtSet<User> followedUsers),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {

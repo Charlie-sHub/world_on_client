@@ -8,7 +8,6 @@ part of 'comment_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
-
 CommentDto _$CommentDtoFromJson(Map<String, dynamic> json) {
   return _CommentDto.fromJson(json);
 }
@@ -32,24 +31,24 @@ const $CommentDto = _$CommentDtoTearOff();
 
 mixin _$CommentDto {
   int get id;
-
   UserDto get poster;
-
   String get content;
-
   String get creationDate;
-
   String get modificationDate;
 
   Map<String, dynamic> toJson();
-
   $CommentDtoCopyWith<CommentDto> get copyWith;
 }
 
 abstract class $CommentDtoCopyWith<$Res> {
-  factory $CommentDtoCopyWith(CommentDto value, $Res Function(CommentDto) then) = _$CommentDtoCopyWithImpl<$Res>;
-
-  $Res call({int id, UserDto poster, String content, String creationDate, String modificationDate});
+  factory $CommentDtoCopyWith(CommentDto value, $Res Function(CommentDto) then) =
+  _$CommentDtoCopyWithImpl<$Res>;
+  
+  $Res call({int id,
+    UserDto poster,
+    String content,
+    String creationDate,
+    String modificationDate});
 
   $UserDtoCopyWith<$Res> get poster;
 }
@@ -58,7 +57,6 @@ class _$CommentDtoCopyWithImpl<$Res> implements $CommentDtoCopyWith<$Res> {
   _$CommentDtoCopyWithImpl(this._value, this._then);
 
   final CommentDto _value;
-
   // ignore: unused_field
   final $Res Function(CommentDto) _then;
 
@@ -74,8 +72,12 @@ class _$CommentDtoCopyWithImpl<$Res> implements $CommentDtoCopyWith<$Res> {
       id: id == freezed ? _value.id : id as int,
       poster: poster == freezed ? _value.poster : poster as UserDto,
       content: content == freezed ? _value.content : content as String,
-      creationDate: creationDate == freezed ? _value.creationDate : creationDate as String,
-      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as String,
+      creationDate: creationDate == freezed
+        ? _value.creationDate
+        : creationDate as String,
+      modificationDate: modificationDate == freezed
+        ? _value.modificationDate
+        : modificationDate as String,
     ));
   }
 
@@ -91,17 +93,23 @@ class _$CommentDtoCopyWithImpl<$Res> implements $CommentDtoCopyWith<$Res> {
 }
 
 abstract class _$CommentDtoCopyWith<$Res> implements $CommentDtoCopyWith<$Res> {
-  factory _$CommentDtoCopyWith(_CommentDto value, $Res Function(_CommentDto) then) = __$CommentDtoCopyWithImpl<$Res>;
-
+  factory _$CommentDtoCopyWith(_CommentDto value, $Res Function(_CommentDto) then) =
+  __$CommentDtoCopyWithImpl<$Res>;
   @override
-  $Res call({int id, UserDto poster, String content, String creationDate, String modificationDate});
+  $Res call({int id,
+    UserDto poster,
+    String content,
+    String creationDate,
+    String modificationDate});
 
   @override
   $UserDtoCopyWith<$Res> get poster;
 }
 
-class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res> implements _$CommentDtoCopyWith<$Res> {
-  __$CommentDtoCopyWithImpl(_CommentDto _value, $Res Function(_CommentDto) _then) : super(_value, (v) => _then(v as _CommentDto));
+class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res>
+  implements _$CommentDtoCopyWith<$Res> {
+  __$CommentDtoCopyWithImpl(_CommentDto _value, $Res Function(_CommentDto) _then)
+    : super(_value, (v) => _then(v as _CommentDto));
 
   @override
   _CommentDto get _value => super._value as _CommentDto;
@@ -118,23 +126,32 @@ class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res> imp
       id: id == freezed ? _value.id : id as int,
       poster: poster == freezed ? _value.poster : poster as UserDto,
       content: content == freezed ? _value.content : content as String,
-      creationDate: creationDate == freezed ? _value.creationDate : creationDate as String,
-      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as String,
+      creationDate: creationDate == freezed
+        ? _value.creationDate
+        : creationDate as String,
+      modificationDate: modificationDate == freezed
+        ? _value.modificationDate
+        : modificationDate as String,
     ));
   }
 }
 
 @JsonSerializable()
 class _$_CommentDto extends _CommentDto {
-  const _$_CommentDto({@required this.id, @required this.poster, @required this.content, @required this.creationDate, @required this.modificationDate})
+  const _$_CommentDto({@required this.id,
+    @required this.poster,
+    @required this.content,
+    @required this.creationDate,
+    @required this.modificationDate})
       : assert(id != null),
         assert(poster != null),
         assert(content != null),
         assert(creationDate != null),
         assert(modificationDate != null),
         super._();
-
-  factory _$_CommentDto.fromJson(Map<String, dynamic> json) => _$_$_CommentDtoFromJson(json);
+  
+  factory _$_CommentDto.fromJson(Map<String, dynamic> json) =>
+    _$_$_CommentDtoFromJson(json);
 
   @override
   final int id;
@@ -156,11 +173,19 @@ class _$_CommentDto extends _CommentDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CommentDto &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.poster, poster) || const DeepCollectionEquality().equals(other.poster, poster)) &&
-            (identical(other.content, content) || const DeepCollectionEquality().equals(other.content, content)) &&
-            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
-            (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)));
+          (identical(other.id, id) ||
+            const DeepCollectionEquality().equals(other.id, id)) &&
+          (identical(other.poster, poster) ||
+            const DeepCollectionEquality().equals(other.poster, poster)) &&
+          (identical(other.content, content) ||
+            const DeepCollectionEquality()
+              .equals(other.content, content)) &&
+          (identical(other.creationDate, creationDate) ||
+            const DeepCollectionEquality()
+              .equals(other.creationDate, creationDate)) &&
+          (identical(other.modificationDate, modificationDate) ||
+            const DeepCollectionEquality()
+              .equals(other.modificationDate, modificationDate)));
   }
 
   @override
@@ -173,7 +198,8 @@ class _$_CommentDto extends _CommentDto {
       const DeepCollectionEquality().hash(modificationDate);
 
   @override
-  _$CommentDtoCopyWith<_CommentDto> get copyWith => __$CommentDtoCopyWithImpl<_CommentDto>(this, _$identity);
+  _$CommentDtoCopyWith<_CommentDto> get copyWith =>
+    __$CommentDtoCopyWithImpl<_CommentDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -184,25 +210,25 @@ class _$_CommentDto extends _CommentDto {
 abstract class _CommentDto extends CommentDto {
   const _CommentDto._() : super._();
 
-  const factory _CommentDto({@required int id, @required UserDto poster, @required String content, @required String creationDate, @required String modificationDate}) = _$_CommentDto;
+  const factory _CommentDto({@required int id,
+    @required UserDto poster,
+    @required String content,
+    @required String creationDate,
+    @required String modificationDate}) = _$_CommentDto;
 
-  factory _CommentDto.fromJson(Map<String, dynamic> json) = _$_CommentDto.fromJson;
+  factory _CommentDto.fromJson(Map<String, dynamic> json) =
+  _$_CommentDto.fromJson;
 
   @override
   int get id;
-
   @override
   UserDto get poster;
-
   @override
   String get content;
-
   @override
   String get creationDate;
-
   @override
   String get modificationDate;
-
   @override
   _$CommentDtoCopyWith<_CommentDto> get copyWith;
 }

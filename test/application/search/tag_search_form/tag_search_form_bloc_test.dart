@@ -2,6 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/application/search/tag_search_form/tag_search_form_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
@@ -29,11 +30,11 @@ void main() {
   final tag = getValidTag();
   final anotherTag = tag.copyWith(id: 2);
   final yetAnotherTag = tag.copyWith(id: 3);
-  final tagsFound = {
+  final tagsFound = KtSet.of(
     tag,
     anotherTag,
     yetAnotherTag,
-  };
+  );
   const serverFailure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   const valueFailure = Failure<dynamic>.value(ValueFailure<String>.emptyString(failedValue: invalidSearchTerm));
   blocTest(

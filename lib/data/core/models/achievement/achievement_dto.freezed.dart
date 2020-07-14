@@ -8,7 +8,6 @@ part of 'achievement_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
-
 AchievementDto _$AchievementDtoFromJson(Map<String, dynamic> json) {
   return _AchievementDto.fromJson(json);
 }
@@ -58,7 +57,6 @@ mixin _$AchievementDto {
   UserDto get creator;
   String get creationDate;
   String get modificationDate;
-
   Set<TagDto> get tags;
 
   Map<String, dynamic> toJson();
@@ -66,20 +64,11 @@ mixin _$AchievementDto {
 }
 
 abstract class $AchievementDtoCopyWith<$Res> {
-  factory $AchievementDtoCopyWith(AchievementDto value, $Res Function(AchievementDto) then) =
-  _$AchievementDtoCopyWithImpl<$Res>;
-  $Res call({int id,
-    String name,
-    String description,
-    String imageURL,
-    String type,
-    int requisite,
-    int experiencePoints,
-    UserDto creator,
-    String creationDate,
-    String modificationDate,
-    Set<TagDto> tags});
-  
+  factory $AchievementDtoCopyWith(AchievementDto value, $Res Function(AchievementDto) then) = _$AchievementDtoCopyWithImpl<$Res>;
+
+  $Res call(
+      {int id, String name, String description, String imageURL, String type, int requisite, int experiencePoints, UserDto creator, String creationDate, String modificationDate, Set<TagDto> tags});
+
   $UserDtoCopyWith<$Res> get creator;
 }
 
@@ -142,7 +131,6 @@ abstract class _$AchievementDtoCopyWith<$Res>
   implements $AchievementDtoCopyWith<$Res> {
   factory _$AchievementDtoCopyWith(_AchievementDto value, $Res Function(_AchievementDto) then) =
   __$AchievementDtoCopyWithImpl<$Res>;
-  
   @override
   $Res call({int id,
     String name,
@@ -155,7 +143,7 @@ abstract class _$AchievementDtoCopyWith<$Res>
     String creationDate,
     String modificationDate,
     Set<TagDto> tags});
-  
+
   @override
   $UserDtoCopyWith<$Res> get creator;
 }
@@ -230,10 +218,10 @@ class _$_AchievementDto extends _AchievementDto {
       assert(modificationDate != null),
       assert(tags != null),
       super._();
-  
+
   factory _$_AchievementDto.fromJson(Map<String, dynamic> json) =>
     _$_$_AchievementDtoFromJson(json);
-  
+
   @override
   final int id;
   @override
@@ -256,12 +244,12 @@ class _$_AchievementDto extends _AchievementDto {
   final String modificationDate;
   @override
   final Set<TagDto> tags;
-  
+
   @override
   String toString() {
     return 'AchievementDto(id: $id, name: $name, description: $description, imageURL: $imageURL, type: $type, requisite: $requisite, experiencePoints: $experiencePoints, creator: $creator, creationDate: $creationDate, modificationDate: $modificationDate, tags: $tags)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -296,7 +284,7 @@ class _$_AchievementDto extends _AchievementDto {
         (identical(other.tags, tags) ||
           const DeepCollectionEquality().equals(other.tags, tags)));
   }
-  
+
   @override
   int get hashCode =>
     runtimeType.hashCode ^
@@ -311,11 +299,11 @@ class _$_AchievementDto extends _AchievementDto {
     const DeepCollectionEquality().hash(creationDate) ^
     const DeepCollectionEquality().hash(modificationDate) ^
     const DeepCollectionEquality().hash(tags);
-  
+
   @override
   _$AchievementDtoCopyWith<_AchievementDto> get copyWith =>
     __$AchievementDtoCopyWithImpl<_AchievementDto>(this, _$identity);
-  
+
   @override
   Map<String, dynamic> toJson() {
     return _$_$_AchievementDtoToJson(this);

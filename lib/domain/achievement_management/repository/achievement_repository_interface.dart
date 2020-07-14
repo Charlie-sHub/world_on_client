@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
@@ -26,11 +27,8 @@ abstract class AchievementRepositoryInterface {
   });
 
   /// Gets all the [Achievement]s of the logged in [User]
-  Stream<Either<Failure, Set<Achievement>>> getUserAchievements();
+  Stream<Either<Failure, KtSet<Achievement>>> getUserAchievements();
 
   /// Gets all the [Achievement]s in the database.
-  // TODO: Make it so only a few Achievements are gotten each time it's called, same with other getAll methods
-  // Maybe using Streams and Firebase will solve that issue
-  // Getting all the achievements at once is not scalable, though it's not that bad in comparison with getting all Experiences for example, but still
-  Stream<Either<Failure, List<Achievement>>> getAllAchievement();
+  Stream<Either<Failure, KtSet<Achievement>>> getAllAchievement();
 }

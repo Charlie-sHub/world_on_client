@@ -147,7 +147,7 @@ class _$ExperienceLogWatcherStateTearOff {
     return const _LoadInProgress();
   }
 
-  _LoadSuccess loadSuccess(Set<Experience> experienceSet) {
+  _LoadSuccess loadSuccess(KtSet<Experience> experienceSet) {
     return _LoadSuccess(
       experienceSet,
     );
@@ -168,14 +168,14 @@ mixin _$ExperienceLogWatcherState {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<Experience> experienceSet),
+    @required Result loadSuccess(KtSet<Experience> experienceSet),
     @required Result loadFailure(Failure<dynamic> failure),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<Experience> experienceSet),
+    Result loadSuccess(KtSet<Experience> experienceSet),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   });
@@ -246,7 +246,7 @@ class _$_Initial implements _Initial {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<Experience> experienceSet),
+    @required Result loadSuccess(KtSet<Experience> experienceSet),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -261,7 +261,7 @@ class _$_Initial implements _Initial {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<Experience> experienceSet),
+    Result loadSuccess(KtSet<Experience> experienceSet),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -343,7 +343,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<Experience> experienceSet),
+    @required Result loadSuccess(KtSet<Experience> experienceSet),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -358,7 +358,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<Experience> experienceSet),
+    Result loadSuccess(KtSet<Experience> experienceSet),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -408,7 +408,8 @@ abstract class _LoadInProgress implements ExperienceLogWatcherState {
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
   __$LoadSuccessCopyWithImpl<$Res>;
-  $Res call({Set<Experience> experienceSet});
+  
+  $Res call({KtSet<Experience> experienceSet});
 }
 
 class __$LoadSuccessCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCopyWithImpl<$Res>
@@ -426,7 +427,7 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$ExperienceLogWatcherStateCopyWi
     return _then(_LoadSuccess(
       experienceSet == freezed
         ? _value.experienceSet
-        : experienceSet as Set<Experience>,
+        : experienceSet as KtSet<Experience>,
     ));
   }
 }
@@ -435,7 +436,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(this.experienceSet) : assert(experienceSet != null);
 
   @override
-  final Set<Experience> experienceSet;
+  final KtSet<Experience> experienceSet;
 
   @override
   String toString() {
@@ -464,7 +465,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<Experience> experienceSet),
+    @required Result loadSuccess(KtSet<Experience> experienceSet),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -479,7 +480,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<Experience> experienceSet),
+    Result loadSuccess(KtSet<Experience> experienceSet),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -523,9 +524,9 @@ class _$_LoadSuccess implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements ExperienceLogWatcherState {
-  const factory _LoadSuccess(Set<Experience> experienceSet) = _$_LoadSuccess;
-
-  Set<Experience> get experienceSet;
+  const factory _LoadSuccess(KtSet<Experience> experienceSet) = _$_LoadSuccess;
+  
+  KtSet<Experience> get experienceSet;
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
@@ -597,7 +598,7 @@ class _$_LoadFailure implements _LoadFailure {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<Experience> experienceSet),
+    @required Result loadSuccess(KtSet<Experience> experienceSet),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -612,7 +613,7 @@ class _$_LoadFailure implements _LoadFailure {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<Experience> experienceSet),
+    Result loadSuccess(KtSet<Experience> experienceSet),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {

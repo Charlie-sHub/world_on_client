@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
@@ -19,7 +20,7 @@ part 'profile_experiences_watcher_state.dart';
 
 @injectable
 class ProfileExperiencesWatcherBloc extends Bloc<ProfileExperiencesWatcherEvent, ProfileExperiencesWatcherState> {
-  StreamSubscription<Either<Failure, Set<Experience>>> _experienceStreamSubscription;
+  StreamSubscription<Either<Failure, KtSet<Experience>>> _experienceStreamSubscription;
 
   ProfileExperiencesWatcherBloc() : super(const ProfileExperiencesWatcherState.initial());
 

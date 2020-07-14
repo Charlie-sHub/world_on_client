@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/create_stream_of_either.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_left_server_error.dart';
@@ -29,7 +30,7 @@ class DevelopmentNotificationRepository implements NotificationRepositoryInterfa
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> deleteUserNotifications() {
     if (_random.nextBool()) {
@@ -38,25 +39,25 @@ class DevelopmentNotificationRepository implements NotificationRepositoryInterfa
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
-  Stream<Either<Failure, List<Notification>>> loadNotifications() {
-    Either<Failure, List<Notification>> _either;
+  Stream<Either<Failure, KtSet<Notification>>> loadNotifications() {
+    Either<Failure, KtSet<Notification>> _either;
     if (_random.nextBool()) {
-      _either = right([
+      _either = right(KtSet.of(
         getValidNotification(),
         getValidNotification().copyWith(
           id: 2,
           description: EntityDescription("${getValidUser().name.getOrCrash()} unfollowed you"),
           type: NotificationType.unfollow,
         ),
-      ]);
+      ));
     } else {
       _either = left(getServerErrorFailure());
     }
     return createStreamOfEither(_either);
   }
-  
+
   @override
   Future<Either<Failure, Unit>> sendNotification(Notification notification) {
     if (_random.nextBool()) {
@@ -65,7 +66,7 @@ class DevelopmentNotificationRepository implements NotificationRepositoryInterfa
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> deleteNotification(int id) {
     if (_random.nextBool()) {

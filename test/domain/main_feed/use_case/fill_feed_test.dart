@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
@@ -25,7 +26,7 @@ void main() {
       useCase = FillFeed(mockMainFeedRepository);
     },
   );
-  final experienceList = [Experience.empty()];
+  final experienceList = KtSet.of(Experience.empty());
   test(
     "Should return a List of Experiences",
     () async {
@@ -81,9 +82,9 @@ void main() {
   );
 }
 
-Future<Either<Failure, List<Experience>>> _act(FillFeed useCase, NoParams params) async {
+Future<Either<Failure, KtSet<Experience>>> _act(FillFeed useCase, NoParams params) async {
   final resultStream = useCase(params);
-  Either<Failure, List<Experience>> result;
+  Either<Failure, KtSet<Experience>> result;
   await for (final either in resultStream) {
     result = either;
   }

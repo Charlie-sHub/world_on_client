@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/create_stream_of_either.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_left_server_error.dart';
@@ -27,7 +28,7 @@ class DevelopmentExperienceLogRepository implements ExperienceLogRepositoryInter
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> dismissExperienceFromLog(int experienceId) {
     if (_random.nextBool()) {
@@ -36,12 +37,12 @@ class DevelopmentExperienceLogRepository implements ExperienceLogRepositoryInter
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
-  Stream<Either<Failure, Set<Experience>>> loadUserLog() {
-    Either<Failure, Set<Experience>> _either;
+  Stream<Either<Failure, KtSet<Experience>>> loadUserLog() {
+    Either<Failure, KtSet<Experience>> _either;
     if (_random.nextBool()) {
-      _either = right({
+      _either = right(KtSet.of(
         getValidExperience(),
         getValidExperience().copyWith(
           id: 2,
@@ -51,7 +52,7 @@ class DevelopmentExperienceLogRepository implements ExperienceLogRepositoryInter
           id: 3,
           name: Name("Itaque"),
         ),
-      });
+      ));
     } else {
       _either = left(getServerErrorFailure());
     }

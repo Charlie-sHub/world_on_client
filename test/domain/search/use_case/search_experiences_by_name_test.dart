@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
@@ -24,9 +25,9 @@ void main() {
     },
   );
   final params = Params(name: SearchTerm("Test"));
-  final experiencesFound = {Experience.empty()};
+  final experiencesFound = KtSet.of(Experience.empty());
   test(
-    "Should return a Set of Experiences",
+    "Should return a KtSet of Experiences",
     () async {
       // Arrange
       when(mockSearchRepository.searchExperiencesByName(any)).thenAnswer((_) => createStream(right(experiencesFound)));
@@ -83,9 +84,9 @@ void main() {
   );
 }
 
-Future<Either<Failure, Set<Experience>>> _act(SearchExperiencesByName useCase, Params params) async {
+Future<Either<Failure, KtSet<Experience>>> _act(SearchExperiencesByName useCase, Params params) async {
   final resultStream = useCase(params);
-  Either<Failure, Set<Experience>> result;
+  Either<Failure, KtSet<Experience>> result;
   await for (final either in resultStream) {
     result = either;
   }

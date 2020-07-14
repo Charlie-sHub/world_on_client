@@ -1015,7 +1015,7 @@ class _$ExperienceNavigationActorStateTearOff {
   _ExperienceNavigationActorState call(
       {@required Experience experience,
       @required Map<int, bool> objectiveTracker,
-      @required Option<Set<Experience>> surroundingExperiences,
+        @required Option<KtSet<Experience>> surroundingExperiences,
       @required Coordinates currentLocation,
       @required bool isFinished,
       @required bool isSubmitting,
@@ -1041,7 +1041,8 @@ _$ExperienceNavigationActorStateTearOff();
 mixin _$ExperienceNavigationActorState {
   Experience get experience;
   Map<int, bool> get objectiveTracker;
-  Option<Set<Experience>> get surroundingExperiences;
+
+  Option<KtSet<Experience>> get surroundingExperiences;
   Coordinates get currentLocation;
   bool get isFinished;
   bool get isSubmitting;
@@ -1059,7 +1060,7 @@ abstract class $ExperienceNavigationActorStateCopyWith<$Res> {
   $Res call(
       {Experience experience,
       Map<int, bool> objectiveTracker,
-      Option<Set<Experience>> surroundingExperiences,
+        Option<KtSet<Experience>> surroundingExperiences,
       Coordinates currentLocation,
       bool isFinished,
       bool isSubmitting,
@@ -1097,7 +1098,7 @@ class _$ExperienceNavigationActorStateCopyWithImpl<$Res>
         : objectiveTracker as Map<int, bool>,
       surroundingExperiences: surroundingExperiences == freezed
         ? _value.surroundingExperiences
-        : surroundingExperiences as Option<Set<Experience>>,
+        : surroundingExperiences as Option<KtSet<Experience>>,
       currentLocation: currentLocation == freezed
         ? _value.currentLocation
         : currentLocation as Coordinates,
@@ -1144,7 +1145,7 @@ abstract class _$ExperienceNavigationActorStateCopyWith<$Res>
   $Res call(
       {Experience experience,
       Map<int, bool> objectiveTracker,
-      Option<Set<Experience>> surroundingExperiences,
+        Option<KtSet<Experience>> surroundingExperiences,
       Coordinates currentLocation,
       bool isFinished,
       bool isSubmitting,
@@ -1186,7 +1187,7 @@ class __$ExperienceNavigationActorStateCopyWithImpl<$Res> extends _$ExperienceNa
         : objectiveTracker as Map<int, bool>,
       surroundingExperiences: surroundingExperiences == freezed
         ? _value.surroundingExperiences
-        : surroundingExperiences as Option<Set<Experience>>,
+        : surroundingExperiences as Option<KtSet<Experience>>,
       currentLocation: currentLocation == freezed
         ? _value.currentLocation
         : currentLocation as Coordinates,
@@ -1229,7 +1230,7 @@ class _$_ExperienceNavigationActorState
   @override
   final Map<int, bool> objectiveTracker;
   @override
-  final Option<Set<Experience>> surroundingExperiences;
+  final Option<KtSet<Experience>> surroundingExperiences;
   @override
   final Coordinates currentLocation;
   @override
@@ -1299,7 +1300,7 @@ abstract class _ExperienceNavigationActorState
   implements ExperienceNavigationActorState {
   const factory _ExperienceNavigationActorState({@required Experience experience,
     @required Map<int, bool> objectiveTracker,
-    @required Option<Set<Experience>> surroundingExperiences,
+    @required Option<KtSet<Experience>> surroundingExperiences,
     @required Coordinates currentLocation,
     @required bool isFinished,
     @required bool isSubmitting,
@@ -1312,7 +1313,7 @@ abstract class _ExperienceNavigationActorState
   @override
   Map<int, bool> get objectiveTracker;
   @override
-  Option<Set<Experience>> get surroundingExperiences;
+  Option<KtSet<Experience>> get surroundingExperiences;
   @override
   Coordinates get currentLocation;
   @override

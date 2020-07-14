@@ -456,7 +456,7 @@ class _$TagSearchFormStateTearOff {
   const _$TagSearchFormStateTearOff();
 
   _TagSearchFormState call({@required Set<Tag> tagsSelected,
-    @required Set<Tag> tagsFound,
+    @required KtSet<Tag> tagsFound,
     @required bool isSubmitting,
     @required bool showErrorMessages,
     @required Option<Failure> failureOption}) {
@@ -475,7 +475,8 @@ const $TagSearchFormState = _$TagSearchFormStateTearOff();
 
 mixin _$TagSearchFormState {
   Set<Tag> get tagsSelected;
-  Set<Tag> get tagsFound;
+
+  KtSet<Tag> get tagsFound;
   bool get isSubmitting;
   bool get showErrorMessages;
   Option<Failure> get failureOption;
@@ -488,7 +489,7 @@ abstract class $TagSearchFormStateCopyWith<$Res> {
   _$TagSearchFormStateCopyWithImpl<$Res>;
   
   $Res call({Set<Tag> tagsSelected,
-    Set<Tag> tagsFound,
+    KtSet<Tag> tagsFound,
     bool isSubmitting,
     bool showErrorMessages,
     Option<Failure> failureOption});
@@ -515,7 +516,7 @@ class _$TagSearchFormStateCopyWithImpl<$Res>
         ? _value.tagsSelected
         : tagsSelected as Set<Tag>,
       tagsFound:
-      tagsFound == freezed ? _value.tagsFound : tagsFound as Set<Tag>,
+      tagsFound == freezed ? _value.tagsFound : tagsFound as KtSet<Tag>,
       isSubmitting:
       isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
       showErrorMessages: showErrorMessages == freezed
@@ -534,7 +535,7 @@ abstract class _$TagSearchFormStateCopyWith<$Res>
   __$TagSearchFormStateCopyWithImpl<$Res>;
   @override
   $Res call({Set<Tag> tagsSelected,
-    Set<Tag> tagsFound,
+    KtSet<Tag> tagsFound,
     bool isSubmitting,
     bool showErrorMessages,
     Option<Failure> failureOption});
@@ -561,7 +562,7 @@ class __$TagSearchFormStateCopyWithImpl<$Res> extends _$TagSearchFormStateCopyWi
         ? _value.tagsSelected
         : tagsSelected as Set<Tag>,
       tagsFound:
-      tagsFound == freezed ? _value.tagsFound : tagsFound as Set<Tag>,
+      tagsFound == freezed ? _value.tagsFound : tagsFound as KtSet<Tag>,
       isSubmitting:
       isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
       showErrorMessages: showErrorMessages == freezed
@@ -589,7 +590,7 @@ class _$_TagSearchFormState implements _TagSearchFormState {
   @override
   final Set<Tag> tagsSelected;
   @override
-  final Set<Tag> tagsFound;
+  final KtSet<Tag> tagsFound;
   @override
   final bool isSubmitting;
   @override
@@ -639,7 +640,7 @@ class _$_TagSearchFormState implements _TagSearchFormState {
 
 abstract class _TagSearchFormState implements TagSearchFormState {
   const factory _TagSearchFormState({@required Set<Tag> tagsSelected,
-    @required Set<Tag> tagsFound,
+    @required KtSet<Tag> tagsFound,
     @required bool isSubmitting,
     @required bool showErrorMessages,
     @required Option<Failure> failureOption}) = _$_TagSearchFormState;
@@ -647,7 +648,7 @@ abstract class _TagSearchFormState implements TagSearchFormState {
   @override
   Set<Tag> get tagsSelected;
   @override
-  Set<Tag> get tagsFound;
+  KtSet<Tag> get tagsFound;
   @override
   bool get isSubmitting;
   @override

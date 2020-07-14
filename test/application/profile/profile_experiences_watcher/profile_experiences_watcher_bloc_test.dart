@@ -2,6 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/application/profile/profile_experiences_watcher/profile_experiences_watcher_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
@@ -29,7 +30,7 @@ void main() {
     },
   );
   final user = getValidUser();
-  final experiences = {Experience.empty()};
+  final experiences = KtSet.of(Experience.empty());
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,

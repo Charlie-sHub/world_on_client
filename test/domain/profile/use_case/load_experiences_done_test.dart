@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
@@ -23,9 +24,9 @@ void main() {
     },
   );
   final params = Params(userId: 1);
-  final experiencesDone = {Experience.empty()};
+  final experiencesDone = KtSet.of(Experience.empty());
   test(
-    "Should return a Set of Experiences if everything goes well",
+    "Should return a KtSet of Experiences if everything goes well",
     () async {
       // Arrange
       when(mockProfileRepository.loadExperiencesDone(any)).thenAnswer((_) => createStream(right(experiencesDone)));
@@ -82,9 +83,9 @@ void main() {
   );
 }
 
-Future<Either<Failure, Set<Experience>>> _act(LoadExperiencesDone useCase, Params params) async {
+Future<Either<Failure, KtSet<Experience>>> _act(LoadExperiencesDone useCase, Params params) async {
   final resultStream = useCase(params);
-  Either<Failure, Set<Experience>> result;
+  Either<Failure, KtSet<Experience>> result;
   await for (final either in resultStream) {
     result = either;
   }

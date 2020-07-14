@@ -8,5 +8,5 @@ abstract class ProfileExperiencesWatcherEvent with _$ProfileExperiencesWatcherEv
 
   const factory ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(User user) = _WatchExperiencesCreatedStarted;
 
-  const factory ProfileExperiencesWatcherEvent.experiencesReceived(Either<Failure, Set<Experience>> failureOrExperiences) = _ExperiencesReceived;
+  const factory ProfileExperiencesWatcherEvent.experiencesReceived(Either<Failure, KtSet<Experience>> failureOrExperiences) = _ExperiencesReceived;
 }

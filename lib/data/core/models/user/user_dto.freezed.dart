@@ -8,7 +8,6 @@ part of 'user_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
-
 UserDto _$UserDtoFromJson(Map<String, dynamic> json) {
   return _UserDto.fromJson(json);
 }
@@ -79,65 +78,38 @@ const $UserDto = _$UserDtoTearOff();
 
 mixin _$UserDto {
   int get id;
-
   String get name;
-
   String get username;
-
   String get password;
-
   String get email;
-
   String get birthday;
-
   String get description;
-
   String get imageURL;
-
   int get level;
-
   int get experiencePoints;
-
   bool get privacy;
-
   bool get adminPowers;
-
   bool get enabled;
-
   String get lastLogin;
-
   String get creationDate;
-
   String get modificationDate;
-
   OptionsDto get options;
-
   Set<UserDto> get blockedUsers;
-
   Set<UserDto> get followedUsers;
-
   Set<DeviceDto> get devices;
-
   Set<SystemDto> get systems;
-
   Set<TagDto> get interests;
-
   Set<AchievementDto> get achievements;
-
   Set<ExperienceDto> get experiencesDone;
-
   Set<ExperienceDto> get experiencesLiked;
-
   Set<ExperienceDto> get experiencesToDo;
 
   Map<String, dynamic> toJson();
-
   $UserDtoCopyWith<UserDto> get copyWith;
 }
 
 abstract class $UserDtoCopyWith<$Res> {
   factory $UserDtoCopyWith(UserDto value, $Res Function(UserDto) then) = _$UserDtoCopyWithImpl<$Res>;
-
   $Res call(
       {int id,
       String name,
@@ -173,7 +145,6 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
   _$UserDtoCopyWithImpl(this._value, this._then);
 
   final UserDto _value;
-
   // ignore: unused_field
   final $Res Function(UserDto) _then;
 
@@ -213,26 +184,47 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
       password: password == freezed ? _value.password : password as String,
       email: email == freezed ? _value.email : email as String,
       birthday: birthday == freezed ? _value.birthday : birthday as String,
-      description: description == freezed ? _value.description : description as String,
+      description:
+      description == freezed ? _value.description : description as String,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
       level: level == freezed ? _value.level : level as int,
-      experiencePoints: experiencePoints == freezed ? _value.experiencePoints : experiencePoints as int,
+      experiencePoints: experiencePoints == freezed
+        ? _value.experiencePoints
+        : experiencePoints as int,
       privacy: privacy == freezed ? _value.privacy : privacy as bool,
-      adminPowers: adminPowers == freezed ? _value.adminPowers : adminPowers as bool,
+      adminPowers:
+      adminPowers == freezed ? _value.adminPowers : adminPowers as bool,
       enabled: enabled == freezed ? _value.enabled : enabled as bool,
       lastLogin: lastLogin == freezed ? _value.lastLogin : lastLogin as String,
-      creationDate: creationDate == freezed ? _value.creationDate : creationDate as String,
-      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as String,
+      creationDate: creationDate == freezed
+        ? _value.creationDate
+        : creationDate as String,
+      modificationDate: modificationDate == freezed
+        ? _value.modificationDate
+        : modificationDate as String,
       options: options == freezed ? _value.options : options as OptionsDto,
-      blockedUsers: blockedUsers == freezed ? _value.blockedUsers : blockedUsers as Set<UserDto>,
-      followedUsers: followedUsers == freezed ? _value.followedUsers : followedUsers as Set<UserDto>,
+      blockedUsers: blockedUsers == freezed
+        ? _value.blockedUsers
+        : blockedUsers as Set<UserDto>,
+      followedUsers: followedUsers == freezed
+        ? _value.followedUsers
+        : followedUsers as Set<UserDto>,
       devices: devices == freezed ? _value.devices : devices as Set<DeviceDto>,
       systems: systems == freezed ? _value.systems : systems as Set<SystemDto>,
-      interests: interests == freezed ? _value.interests : interests as Set<TagDto>,
-      achievements: achievements == freezed ? _value.achievements : achievements as Set<AchievementDto>,
-      experiencesDone: experiencesDone == freezed ? _value.experiencesDone : experiencesDone as Set<ExperienceDto>,
-      experiencesLiked: experiencesLiked == freezed ? _value.experiencesLiked : experiencesLiked as Set<ExperienceDto>,
-      experiencesToDo: experiencesToDo == freezed ? _value.experiencesToDo : experiencesToDo as Set<ExperienceDto>,
+      interests:
+      interests == freezed ? _value.interests : interests as Set<TagDto>,
+      achievements: achievements == freezed
+        ? _value.achievements
+        : achievements as Set<AchievementDto>,
+      experiencesDone: experiencesDone == freezed
+        ? _value.experiencesDone
+        : experiencesDone as Set<ExperienceDto>,
+      experiencesLiked: experiencesLiked == freezed
+        ? _value.experiencesLiked
+        : experiencesLiked as Set<ExperienceDto>,
+      experiencesToDo: experiencesToDo == freezed
+        ? _value.experiencesToDo
+        : experiencesToDo as Set<ExperienceDto>,
     ));
   }
 
@@ -248,8 +240,8 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
 }
 
 abstract class _$UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
-  factory _$UserDtoCopyWith(_UserDto value, $Res Function(_UserDto) then) = __$UserDtoCopyWithImpl<$Res>;
-
+  factory _$UserDtoCopyWith(_UserDto value, $Res Function(_UserDto) then) =
+  __$UserDtoCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
@@ -283,8 +275,10 @@ abstract class _$UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
   $OptionsDtoCopyWith<$Res> get options;
 }
 
-class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res> implements _$UserDtoCopyWith<$Res> {
-  __$UserDtoCopyWithImpl(_UserDto _value, $Res Function(_UserDto) _then) : super(_value, (v) => _then(v as _UserDto));
+class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
+  implements _$UserDtoCopyWith<$Res> {
+  __$UserDtoCopyWithImpl(_UserDto _value, $Res Function(_UserDto) _then)
+    : super(_value, (v) => _then(v as _UserDto));
 
   @override
   _UserDto get _value => super._value as _UserDto;
@@ -325,26 +319,47 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res> implement
       password: password == freezed ? _value.password : password as String,
       email: email == freezed ? _value.email : email as String,
       birthday: birthday == freezed ? _value.birthday : birthday as String,
-      description: description == freezed ? _value.description : description as String,
+      description:
+      description == freezed ? _value.description : description as String,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
       level: level == freezed ? _value.level : level as int,
-      experiencePoints: experiencePoints == freezed ? _value.experiencePoints : experiencePoints as int,
+      experiencePoints: experiencePoints == freezed
+        ? _value.experiencePoints
+        : experiencePoints as int,
       privacy: privacy == freezed ? _value.privacy : privacy as bool,
-      adminPowers: adminPowers == freezed ? _value.adminPowers : adminPowers as bool,
+      adminPowers:
+      adminPowers == freezed ? _value.adminPowers : adminPowers as bool,
       enabled: enabled == freezed ? _value.enabled : enabled as bool,
       lastLogin: lastLogin == freezed ? _value.lastLogin : lastLogin as String,
-      creationDate: creationDate == freezed ? _value.creationDate : creationDate as String,
-      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as String,
+      creationDate: creationDate == freezed
+        ? _value.creationDate
+        : creationDate as String,
+      modificationDate: modificationDate == freezed
+        ? _value.modificationDate
+        : modificationDate as String,
       options: options == freezed ? _value.options : options as OptionsDto,
-      blockedUsers: blockedUsers == freezed ? _value.blockedUsers : blockedUsers as Set<UserDto>,
-      followedUsers: followedUsers == freezed ? _value.followedUsers : followedUsers as Set<UserDto>,
+      blockedUsers: blockedUsers == freezed
+        ? _value.blockedUsers
+        : blockedUsers as Set<UserDto>,
+      followedUsers: followedUsers == freezed
+        ? _value.followedUsers
+        : followedUsers as Set<UserDto>,
       devices: devices == freezed ? _value.devices : devices as Set<DeviceDto>,
       systems: systems == freezed ? _value.systems : systems as Set<SystemDto>,
-      interests: interests == freezed ? _value.interests : interests as Set<TagDto>,
-      achievements: achievements == freezed ? _value.achievements : achievements as Set<AchievementDto>,
-      experiencesDone: experiencesDone == freezed ? _value.experiencesDone : experiencesDone as Set<ExperienceDto>,
-      experiencesLiked: experiencesLiked == freezed ? _value.experiencesLiked : experiencesLiked as Set<ExperienceDto>,
-      experiencesToDo: experiencesToDo == freezed ? _value.experiencesToDo : experiencesToDo as Set<ExperienceDto>,
+      interests:
+      interests == freezed ? _value.interests : interests as Set<TagDto>,
+      achievements: achievements == freezed
+        ? _value.achievements
+        : achievements as Set<AchievementDto>,
+      experiencesDone: experiencesDone == freezed
+        ? _value.experiencesDone
+        : experiencesDone as Set<ExperienceDto>,
+      experiencesLiked: experiencesLiked == freezed
+        ? _value.experiencesLiked
+        : experiencesLiked as Set<ExperienceDto>,
+      experiencesToDo: experiencesToDo == freezed
+        ? _value.experiencesToDo
+        : experiencesToDo as Set<ExperienceDto>,
     ));
   }
 }
@@ -406,7 +421,8 @@ class _$_UserDto extends _UserDto {
         assert(experiencesToDo != null),
         super._();
 
-  factory _$_UserDto.fromJson(Map<String, dynamic> json) => _$_$_UserDtoFromJson(json);
+  factory _$_UserDto.fromJson(Map<String, dynamic> json) =>
+    _$_$_UserDtoFromJson(json);
 
   @override
   final int id;
@@ -470,30 +486,73 @@ class _$_UserDto extends _UserDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _UserDto &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.username, username) || const DeepCollectionEquality().equals(other.username, username)) &&
-            (identical(other.password, password) || const DeepCollectionEquality().equals(other.password, password)) &&
-            (identical(other.email, email) || const DeepCollectionEquality().equals(other.email, email)) &&
-            (identical(other.birthday, birthday) || const DeepCollectionEquality().equals(other.birthday, birthday)) &&
-            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-            (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
-            (identical(other.level, level) || const DeepCollectionEquality().equals(other.level, level)) &&
-            (identical(other.experiencePoints, experiencePoints) || const DeepCollectionEquality().equals(other.experiencePoints, experiencePoints)) &&
-            (identical(other.privacy, privacy) || const DeepCollectionEquality().equals(other.privacy, privacy)) &&
-            (identical(other.adminPowers, adminPowers) || const DeepCollectionEquality().equals(other.adminPowers, adminPowers)) &&
-            (identical(other.enabled, enabled) || const DeepCollectionEquality().equals(other.enabled, enabled)) &&
-            (identical(other.lastLogin, lastLogin) || const DeepCollectionEquality().equals(other.lastLogin, lastLogin)) &&
-            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
-            (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)) &&
-            (identical(other.options, options) || const DeepCollectionEquality().equals(other.options, options)) &&
-            (identical(other.blockedUsers, blockedUsers) || const DeepCollectionEquality().equals(other.blockedUsers, blockedUsers)) &&
-            (identical(other.followedUsers, followedUsers) || const DeepCollectionEquality().equals(other.followedUsers, followedUsers)) &&
-            (identical(other.devices, devices) || const DeepCollectionEquality().equals(other.devices, devices)) &&
-            (identical(other.systems, systems) || const DeepCollectionEquality().equals(other.systems, systems)) &&
-            (identical(other.interests, interests) || const DeepCollectionEquality().equals(other.interests, interests)) &&
-            (identical(other.achievements, achievements) || const DeepCollectionEquality().equals(other.achievements, achievements)) &&
-            (identical(other.experiencesDone, experiencesDone) || const DeepCollectionEquality().equals(other.experiencesDone, experiencesDone)) &&
+          (identical(other.id, id) ||
+            const DeepCollectionEquality().equals(other.id, id)) &&
+          (identical(other.name, name) ||
+            const DeepCollectionEquality().equals(other.name, name)) &&
+          (identical(other.username, username) ||
+            const DeepCollectionEquality()
+              .equals(other.username, username)) &&
+          (identical(other.password, password) ||
+            const DeepCollectionEquality()
+              .equals(other.password, password)) &&
+          (identical(other.email, email) ||
+            const DeepCollectionEquality().equals(other.email, email)) &&
+          (identical(other.birthday, birthday) ||
+            const DeepCollectionEquality()
+              .equals(other.birthday, birthday)) &&
+          (identical(other.description, description) ||
+            const DeepCollectionEquality()
+              .equals(other.description, description)) &&
+          (identical(other.imageURL, imageURL) ||
+            const DeepCollectionEquality()
+              .equals(other.imageURL, imageURL)) &&
+          (identical(other.level, level) ||
+            const DeepCollectionEquality().equals(other.level, level)) &&
+          (identical(other.experiencePoints, experiencePoints) ||
+            const DeepCollectionEquality()
+              .equals(other.experiencePoints, experiencePoints)) &&
+          (identical(other.privacy, privacy) ||
+            const DeepCollectionEquality()
+              .equals(other.privacy, privacy)) &&
+          (identical(other.adminPowers, adminPowers) ||
+            const DeepCollectionEquality()
+              .equals(other.adminPowers, adminPowers)) &&
+          (identical(other.enabled, enabled) ||
+            const DeepCollectionEquality()
+              .equals(other.enabled, enabled)) &&
+          (identical(other.lastLogin, lastLogin) ||
+            const DeepCollectionEquality()
+              .equals(other.lastLogin, lastLogin)) &&
+          (identical(other.creationDate, creationDate) ||
+            const DeepCollectionEquality()
+              .equals(other.creationDate, creationDate)) &&
+          (identical(other.modificationDate, modificationDate) ||
+            const DeepCollectionEquality()
+              .equals(other.modificationDate, modificationDate)) &&
+          (identical(other.options, options) ||
+            const DeepCollectionEquality()
+              .equals(other.options, options)) &&
+          (identical(other.blockedUsers, blockedUsers) ||
+            const DeepCollectionEquality()
+              .equals(other.blockedUsers, blockedUsers)) &&
+          (identical(other.followedUsers, followedUsers) ||
+            const DeepCollectionEquality()
+              .equals(other.followedUsers, followedUsers)) &&
+          (identical(other.devices, devices) ||
+            const DeepCollectionEquality()
+              .equals(other.devices, devices)) &&
+          (identical(other.systems, systems) ||
+            const DeepCollectionEquality()
+              .equals(other.systems, systems)) &&
+          (identical(other.interests, interests) ||
+            const DeepCollectionEquality()
+              .equals(other.interests, interests)) &&
+          (identical(other.achievements, achievements) ||
+            const DeepCollectionEquality()
+              .equals(other.achievements, achievements)) &&
+          (identical(other.experiencesDone, experiencesDone) ||
+            const DeepCollectionEquality().equals(other.experiencesDone, experiencesDone)) &&
             (identical(other.experiencesLiked, experiencesLiked) || const DeepCollectionEquality().equals(other.experiencesLiked, experiencesLiked)) &&
             (identical(other.experiencesToDo, experiencesToDo) || const DeepCollectionEquality().equals(other.experiencesToDo, experiencesToDo)));
   }
@@ -529,7 +588,8 @@ class _$_UserDto extends _UserDto {
       const DeepCollectionEquality().hash(experiencesToDo);
 
   @override
-  _$UserDtoCopyWith<_UserDto> get copyWith => __$UserDtoCopyWithImpl<_UserDto>(this, _$identity);
+  _$UserDtoCopyWith<_UserDto> get copyWith =>
+    __$UserDtoCopyWithImpl<_UserDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -539,7 +599,6 @@ class _$_UserDto extends _UserDto {
 
 abstract class _UserDto extends UserDto {
   const _UserDto._() : super._();
-
   const factory _UserDto(
       {@required int id,
       @required String name,
@@ -572,82 +631,56 @@ abstract class _UserDto extends UserDto {
 
   @override
   int get id;
-
   @override
   String get name;
-
   @override
   String get username;
-
   @override
   String get password;
-
   @override
   String get email;
-
   @override
   String get birthday;
-
   @override
   String get description;
-
   @override
   String get imageURL;
-
   @override
   int get level;
-
   @override
   int get experiencePoints;
-
   @override
   bool get privacy;
-
   @override
   bool get adminPowers;
-
   @override
   bool get enabled;
-
   @override
   String get lastLogin;
-
   @override
   String get creationDate;
-
   @override
   String get modificationDate;
-
   @override
   OptionsDto get options;
-
   @override
   Set<UserDto> get blockedUsers;
-
   @override
   Set<UserDto> get followedUsers;
-
   @override
   Set<DeviceDto> get devices;
-
   @override
   Set<SystemDto> get systems;
-
   @override
   Set<TagDto> get interests;
-
   @override
   Set<AchievementDto> get achievements;
-
   @override
   Set<ExperienceDto> get experiencesDone;
-
   @override
   Set<ExperienceDto> get experiencesLiked;
-
   @override
   Set<ExperienceDto> get experiencesToDo;
-
   @override
   _$UserDtoCopyWith<_UserDto> get copyWith;
 }

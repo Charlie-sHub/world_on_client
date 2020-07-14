@@ -2,6 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/application/profile/profile_achievements_watcher/profile_achievements_watcher_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
@@ -22,8 +23,8 @@ void main() {
       loadUserAchievements = getIt<LoadUserAchievements>();
     },
   );
-  final achievements = {Achievement.empty()};
-  final user = getValidUser().copyWith(achievements: achievements);
+  final achievements = KtSet.of(Achievement.empty());
+  final user = getValidUser().copyWith(achievements: achievements.asSet());
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,

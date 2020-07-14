@@ -5,7 +5,7 @@ abstract class ExperienceNavigationActorState with _$ExperienceNavigationActorSt
   const factory ExperienceNavigationActorState({
     @required Experience experience,
     @required Map<int, bool> objectiveTracker,
-    @required Option<Set<Experience>> surroundingExperiences,
+    @required Option<KtSet<Experience>> surroundingExperiences,
     @required Coordinates currentLocation,
     @required bool isFinished,
     // Maybe add a isLoading boolean value for when it's initializing

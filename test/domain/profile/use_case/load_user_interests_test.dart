@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
@@ -23,9 +24,9 @@ void main() {
     },
   );
   final params = Params(userId: 1);
-  final interests = {Tag.empty()};
+  final interests = KtSet.of(Tag.empty());
   test(
-    "Should return a Set of Tags",
+    "Should return a KtSet of Tags",
     () async {
       // Arrange
       when(mockProfileRepository.loadUserInterests(any)).thenAnswer((_) => createStream(right(interests)));
@@ -82,9 +83,9 @@ void main() {
   );
 }
 
-Future<Either<Failure, Set<Tag>>> _act(LoadUserInterests useCase, Params params) async {
+Future<Either<Failure, KtSet<Tag>>> _act(LoadUserInterests useCase, Params params) async {
   final resultStream = useCase(params);
-  Either<Failure, Set<Tag>> result;
+  Either<Failure, KtSet<Tag>> result;
   await for (final either in resultStream) {
     result = either;
   }

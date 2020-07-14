@@ -144,7 +144,7 @@ class _$TagManagementWatcherStateTearOff {
     return const _LoadInProgress();
   }
 
-  _loadSuccess loadSuccess(List<Tag> tags) {
+  _loadSuccess loadSuccess(KtSet<Tag> tags) {
     return _loadSuccess(
       tags,
     );
@@ -165,14 +165,14 @@ mixin _$TagManagementWatcherState {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(List<Tag> tags),
+    @required Result loadSuccess(KtSet<Tag> tags),
     @required Result loadFailure(Failure<dynamic> failure),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(List<Tag> tags),
+    Result loadSuccess(KtSet<Tag> tags),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   });
@@ -243,7 +243,7 @@ class _$_Initial implements _Initial {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(List<Tag> tags),
+    @required Result loadSuccess(KtSet<Tag> tags),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -258,7 +258,7 @@ class _$_Initial implements _Initial {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(List<Tag> tags),
+    Result loadSuccess(KtSet<Tag> tags),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -340,7 +340,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(List<Tag> tags),
+    @required Result loadSuccess(KtSet<Tag> tags),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -355,7 +355,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(List<Tag> tags),
+    Result loadSuccess(KtSet<Tag> tags),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -405,7 +405,8 @@ abstract class _LoadInProgress implements TagManagementWatcherState {
 abstract class _$loadSuccessCopyWith<$Res> {
   factory _$loadSuccessCopyWith(_loadSuccess value, $Res Function(_loadSuccess) then) =
   __$loadSuccessCopyWithImpl<$Res>;
-  $Res call({List<Tag> tags});
+  
+  $Res call({KtSet<Tag> tags});
 }
 
 class __$loadSuccessCopyWithImpl<$Res> extends _$TagManagementWatcherStateCopyWithImpl<$Res>
@@ -421,7 +422,7 @@ class __$loadSuccessCopyWithImpl<$Res> extends _$TagManagementWatcherStateCopyWi
     Object tags = freezed,
   }) {
     return _then(_loadSuccess(
-      tags == freezed ? _value.tags : tags as List<Tag>,
+      tags == freezed ? _value.tags : tags as KtSet<Tag>,
     ));
   }
 }
@@ -430,7 +431,7 @@ class _$_loadSuccess implements _loadSuccess {
   const _$_loadSuccess(this.tags) : assert(tags != null);
 
   @override
-  final List<Tag> tags;
+  final KtSet<Tag> tags;
 
   @override
   String toString() {
@@ -458,7 +459,7 @@ class _$_loadSuccess implements _loadSuccess {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(List<Tag> tags),
+    @required Result loadSuccess(KtSet<Tag> tags),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -473,7 +474,7 @@ class _$_loadSuccess implements _loadSuccess {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(List<Tag> tags),
+    Result loadSuccess(KtSet<Tag> tags),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -517,9 +518,9 @@ class _$_loadSuccess implements _loadSuccess {
 }
 
 abstract class _loadSuccess implements TagManagementWatcherState {
-  const factory _loadSuccess(List<Tag> tags) = _$_loadSuccess;
-
-  List<Tag> get tags;
+  const factory _loadSuccess(KtSet<Tag> tags) = _$_loadSuccess;
+  
+  KtSet<Tag> get tags;
   _$loadSuccessCopyWith<_loadSuccess> get copyWith;
 }
 
@@ -591,7 +592,7 @@ class _$_loadFailure implements _loadFailure {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(List<Tag> tags),
+    @required Result loadSuccess(KtSet<Tag> tags),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -606,7 +607,7 @@ class _$_loadFailure implements _loadFailure {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(List<Tag> tags),
+    Result loadSuccess(KtSet<Tag> tags),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {

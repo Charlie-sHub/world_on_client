@@ -6,7 +6,7 @@ abstract class ProfileAchievementsWatcherState with _$ProfileAchievementsWatcher
 
   const factory ProfileAchievementsWatcherState.loadInProgress() = _LoadInProgress;
 
-  const factory ProfileAchievementsWatcherState.loadSuccess(Set<Achievement> achievements) = _LoadSuccess;
+  const factory ProfileAchievementsWatcherState.loadSuccess(KtSet<Achievement> achievements) = _LoadSuccess;
 
   const factory ProfileAchievementsWatcherState.loadFailure(Failure<dynamic> failure) = _LoadFailure;
 }

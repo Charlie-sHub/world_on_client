@@ -211,7 +211,7 @@ class _$ProfileAchievementsWatcherStateTearOff {
     return const _LoadInProgress();
   }
 
-  _LoadSuccess loadSuccess(Set<Achievement> achievements) {
+  _LoadSuccess loadSuccess(KtSet<Achievement> achievements) {
     return _LoadSuccess(
       achievements,
     );
@@ -233,14 +233,14 @@ mixin _$ProfileAchievementsWatcherState {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<Achievement> achievements),
+    @required Result loadSuccess(KtSet<Achievement> achievements),
     @required Result loadFailure(Failure<dynamic> failure),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<Achievement> achievements),
+    Result loadSuccess(KtSet<Achievement> achievements),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   });
@@ -311,7 +311,7 @@ class _$_Initial implements _Initial {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<Achievement> achievements),
+    @required Result loadSuccess(KtSet<Achievement> achievements),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -326,7 +326,7 @@ class _$_Initial implements _Initial {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<Achievement> achievements),
+    Result loadSuccess(KtSet<Achievement> achievements),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -408,7 +408,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<Achievement> achievements),
+    @required Result loadSuccess(KtSet<Achievement> achievements),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -423,7 +423,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<Achievement> achievements),
+    Result loadSuccess(KtSet<Achievement> achievements),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -473,7 +473,8 @@ abstract class _LoadInProgress implements ProfileAchievementsWatcherState {
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
   __$LoadSuccessCopyWithImpl<$Res>;
-  $Res call({Set<Achievement> achievements});
+  
+  $Res call({KtSet<Achievement> achievements});
 }
 
 class __$LoadSuccessCopyWithImpl<$Res> extends _$ProfileAchievementsWatcherStateCopyWithImpl<$Res>
@@ -491,7 +492,7 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$ProfileAchievementsWatcherState
     return _then(_LoadSuccess(
       achievements == freezed
         ? _value.achievements
-        : achievements as Set<Achievement>,
+        : achievements as KtSet<Achievement>,
     ));
   }
 }
@@ -500,7 +501,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(this.achievements) : assert(achievements != null);
 
   @override
-  final Set<Achievement> achievements;
+  final KtSet<Achievement> achievements;
 
   @override
   String toString() {
@@ -529,7 +530,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<Achievement> achievements),
+    @required Result loadSuccess(KtSet<Achievement> achievements),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -544,7 +545,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<Achievement> achievements),
+    Result loadSuccess(KtSet<Achievement> achievements),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -588,9 +589,9 @@ class _$_LoadSuccess implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements ProfileAchievementsWatcherState {
-  const factory _LoadSuccess(Set<Achievement> achievements) = _$_LoadSuccess;
-
-  Set<Achievement> get achievements;
+  const factory _LoadSuccess(KtSet<Achievement> achievements) = _$_LoadSuccess;
+  
+  KtSet<Achievement> get achievements;
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
@@ -662,7 +663,7 @@ class _$_LoadFailure implements _LoadFailure {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<Achievement> achievements),
+    @required Result loadSuccess(KtSet<Achievement> achievements),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -677,7 +678,7 @@ class _$_LoadFailure implements _LoadFailure {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<Achievement> achievements),
+    Result loadSuccess(KtSet<Achievement> achievements),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {

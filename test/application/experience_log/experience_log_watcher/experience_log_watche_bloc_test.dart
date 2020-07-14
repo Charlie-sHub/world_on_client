@@ -2,6 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/application/experience_log/experience_log_watcher/experience_log_watcher_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
@@ -21,7 +22,7 @@ void main() {
       loadUserLog = getIt<LoadUserLog>();
     },
   );
-  final experienceSet = {Experience.empty()};
+  final experienceSet = KtSet.of(Experience.empty());
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,

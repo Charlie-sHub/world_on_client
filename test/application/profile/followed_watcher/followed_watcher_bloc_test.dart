@@ -2,6 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/application/profile/followed_watcher/followed_watcher_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
@@ -22,13 +23,13 @@ void main() {
     },
   );
 
-  final usersFollowed = {
+  final usersFollowed = KtSet.of(
     getValidUser(),
     getValidUser().copyWith(id: 2),
-  };
+  );
   final user = getValidUser().copyWith(
     id: 3,
-    followedUsers: usersFollowed,
+    followedUsers: usersFollowed.asSet(),
   );
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(

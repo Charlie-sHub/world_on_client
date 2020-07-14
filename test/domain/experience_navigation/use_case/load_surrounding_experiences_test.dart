@@ -1,16 +1,17 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
-import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_interface.dart';
 import 'package:worldon/domain/experience_navigation/use_case/load_surrounding_experiences.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../test_descriptions.dart';
+import '../../core/methods/get_valid_experience.dart';
 
 void main() {
   ExperienceNavigationRepositoryInterface mockExperienceNavigationRepository;
@@ -23,7 +24,7 @@ void main() {
     },
   );
   final params = Params(coordinates: Coordinates.empty());
-  final experienceSet = <Experience>{};
+  final experienceSet = KtSet.of(getValidExperience());
   test(
     "Should return a Set of Experiences",
     () async {

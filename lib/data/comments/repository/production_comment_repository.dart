@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/comments/repository/comment_repository_interface.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
@@ -16,13 +17,13 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, Set<Comment>>> getExperienceComments(int experienceId) {
+  Stream<Either<Failure, KtSet<Comment>>> getExperienceComments(int experienceId) {
     // TODO: implement getExperienceComments
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, Set<Comment>>> getUserComments(int userId) {
+  Stream<Either<Failure, KtSet<Comment>>> getUserComments(int userId) {
     // TODO: implement getUserComments
     throw UnimplementedError();
   }

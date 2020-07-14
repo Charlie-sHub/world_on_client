@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
@@ -25,16 +26,16 @@ void main() {
       useCase = LoadNotifications(mockNotificationRepository);
     },
   );
-  final notificationList = [Notification.empty()];
+  final notificationSet = KtSet.of(Notification.empty());
   test(
     "Should return a list of Notifications",
     () async {
       // Arrange
-      when(mockNotificationRepository.loadNotifications()).thenAnswer((_) => createStream(right(notificationList)));
+      when(mockNotificationRepository.loadNotifications()).thenAnswer((_) => createStream(right(notificationSet)));
       // Act
       final result = await _act(useCase, params);
       // Assert
-      expect(result, right(notificationList));
+      expect(result, right(notificationSet));
       _verifyInteractions(mockNotificationRepository);
     },
   );
@@ -71,9 +72,9 @@ void main() {
   );
 }
 
-Future<Either<Failure, List<Notification>>> _act(LoadNotifications useCase, NoParams params) async {
+Future<Either<Failure, KtSet<Notification>>> _act(LoadNotifications useCase, NoParams params) async {
   final resultStream = useCase(params);
-  Either<Failure, List<Notification>> result;
+  Either<Failure, KtSet<Notification>> result;
   await for (final either in resultStream) {
     result = either;
   }

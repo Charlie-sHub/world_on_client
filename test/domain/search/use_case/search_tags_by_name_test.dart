@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
@@ -24,7 +25,7 @@ void main() {
     },
   );
   final params = Params(name: SearchTerm("Test"));
-  final tagsFound = {Tag.empty()};
+  final tagsFound = KtSet.of(Tag.empty());
   test(
     "Should return a Set of Tags",
     () async {
@@ -83,9 +84,9 @@ void main() {
   );
 }
 
-Future<Either<Failure, Set<Tag>>> _act(SearchTagsByName useCase, Params params) async {
+Future<Either<Failure, KtSet<Tag>>> _act(SearchTagsByName useCase, Params params) async {
   final resultStream = useCase(params);
-  Either<Failure, Set<Tag>> result;
+  Either<Failure, KtSet<Tag>> result;
   await for (final either in resultStream) {
     result = either;
   }

@@ -6,7 +6,7 @@ abstract class SearchTagsByNameWatcherState with _$SearchTagsByNameWatcherState 
 
   const factory SearchTagsByNameWatcherState.searchInProgress() = _SearchInProgress;
 
-  const factory SearchTagsByNameWatcherState.searchSuccess(Set<Tag> tagsFound) = _SearchSuccess;
+  const factory SearchTagsByNameWatcherState.searchSuccess(KtSet<Tag> tagsFound) = _SearchSuccess;
 
   const factory SearchTagsByNameWatcherState.searchFailure(Failure<dynamic> failure) = _SearchFailure;
 }

@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
@@ -24,7 +25,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   }
 
   @override
-  Future<Either<Failure, Set<Experience>>> loadSurroundingExperiences(Coordinates coordinates) {
+  Future<Either<Failure, KtSet<Experience>>> loadSurroundingExperiences(Coordinates coordinates) {
     // TODO: implement loadSurroundingExperiences
     throw UnimplementedError();
   }

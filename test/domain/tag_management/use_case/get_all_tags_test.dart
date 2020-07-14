@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
@@ -23,7 +24,7 @@ void main() {
       useCase = GetAllTags(mockTagRepository);
     },
   );
-  final tagList = [Tag.empty()];
+  final tagList = KtSet.of(Tag.empty());
   test(
     "Should get the full list of tags",
     () async {
@@ -82,9 +83,9 @@ void main() {
   );
 }
 
-Future<Either<Failure, List<Tag>>> _act(GetAllTags useCase) async {
+Future<Either<Failure, KtSet<Tag>>> _act(GetAllTags useCase) async {
   final resultStream = useCase(getIt<NoParams>());
-  Either<Failure, List<Tag>> result;
+  Either<Failure, KtSet<Tag>> result;
   await for (final either in resultStream) {
     result = either;
   }

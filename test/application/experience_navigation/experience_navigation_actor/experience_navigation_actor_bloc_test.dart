@@ -2,6 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/application/experience_navigation/experience_navigation_actor/experience_navigation_actor_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
@@ -49,7 +50,7 @@ void main() {
   final halfFinishedObjectiveTracker = {1: true, 2: false};
   final finishedObjectiveTracker = {1: true, 2: true};
   final tag = getValidTag();
-  final surroundingExperiences = {getValidExperience()};
+  final surroundingExperiences = KtSet.of(getValidExperience());
   final experience = getValidExperience();
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   final currentLocation = Coordinates(

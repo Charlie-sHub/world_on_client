@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
@@ -23,9 +24,9 @@ void main() {
     },
   );
   final params = Params(userId: 1);
-  final achievements = {Achievement.empty()};
+  final achievements = KtSet.of(Achievement.empty());
   test(
-    "Should return a Set of Achievements",
+    "Should return a KtSet of Achievements",
     () async {
       // Arrange
       when(mockProfileRepository.loadUserAchievements(any)).thenAnswer((_) => createStream(right(achievements)));
@@ -82,9 +83,9 @@ void main() {
   );
 }
 
-Future<Either<Failure, Set<Achievement>>> _act(LoadUserAchievements useCase, Params params) async {
+Future<Either<Failure, KtSet<Achievement>>> _act(LoadUserAchievements useCase, Params params) async {
   final resultStream = useCase(params);
-  Either<Failure, Set<Achievement>> result;
+  Either<Failure, KtSet<Achievement>> result;
   await for (final either in resultStream) {
     result = either;
   }

@@ -6,7 +6,7 @@ abstract class SearchExperiencesByDifficultyState with _$SearchExperiencesByDiff
 
   const factory SearchExperiencesByDifficultyState.searchInProgress() = _SearchInProgress;
 
-  const factory SearchExperiencesByDifficultyState.searchSuccess(Set<Experience> experiencesFound) = _SearchSuccess;
+  const factory SearchExperiencesByDifficultyState.searchSuccess(KtSet<Experience> experiencesFound) = _SearchSuccess;
 
   const factory SearchExperiencesByDifficultyState.searchFailure(Failure<dynamic> failure) = _SearchFailure;
 

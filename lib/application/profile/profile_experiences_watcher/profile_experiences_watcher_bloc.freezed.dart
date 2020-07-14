@@ -30,7 +30,7 @@ class _$ProfileExperiencesWatcherEventTearOff {
     );
   }
 
-  _ExperiencesReceived experiencesReceived(Either<Failure, Set<Experience>> failureOrExperiences) {
+  _ExperiencesReceived experiencesReceived(Either<Failure, KtSet<Experience>> failureOrExperiences) {
     return _ExperiencesReceived(
       failureOrExperiences,
     );
@@ -46,14 +46,14 @@ mixin _$ProfileExperiencesWatcherEvent {
     @required Result watchExperiencesDoneStarted(User user),
     @required Result watchExperiencesLikedStarted(User user),
     @required Result watchExperiencesCreatedStarted(User user),
-    @required Result experiencesReceived(Either<Failure, Set<Experience>> failureOrExperiences),
+    @required Result experiencesReceived(Either<Failure, KtSet<Experience>> failureOrExperiences),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result watchExperiencesDoneStarted(User user),
     Result watchExperiencesLikedStarted(User user),
     Result watchExperiencesCreatedStarted(User user),
-    Result experiencesReceived(Either<Failure, Set<Experience>> failureOrExperiences),
+    Result experiencesReceived(Either<Failure, KtSet<Experience>> failureOrExperiences),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -159,7 +159,7 @@ class _$_WatchExperiencesDoneStarted implements _WatchExperiencesDoneStarted {
     @required Result watchExperiencesDoneStarted(User user),
     @required Result watchExperiencesLikedStarted(User user),
     @required Result watchExperiencesCreatedStarted(User user),
-    @required Result experiencesReceived(Either<Failure, Set<Experience>> failureOrExperiences),
+    @required Result experiencesReceived(Either<Failure, KtSet<Experience>> failureOrExperiences),
   }) {
     assert(watchExperiencesDoneStarted != null);
     assert(watchExperiencesLikedStarted != null);
@@ -174,7 +174,7 @@ class _$_WatchExperiencesDoneStarted implements _WatchExperiencesDoneStarted {
     Result watchExperiencesDoneStarted(User user),
     Result watchExperiencesLikedStarted(User user),
     Result watchExperiencesCreatedStarted(User user),
-    Result experiencesReceived(Either<Failure, Set<Experience>> failureOrExperiences),
+    Result experiencesReceived(Either<Failure, KtSet<Experience>> failureOrExperiences),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -300,7 +300,7 @@ class _$_WatchExperiencesLikedStarted implements _WatchExperiencesLikedStarted {
     @required Result watchExperiencesDoneStarted(User user),
     @required Result watchExperiencesLikedStarted(User user),
     @required Result watchExperiencesCreatedStarted(User user),
-    @required Result experiencesReceived(Either<Failure, Set<Experience>> failureOrExperiences),
+    @required Result experiencesReceived(Either<Failure, KtSet<Experience>> failureOrExperiences),
   }) {
     assert(watchExperiencesDoneStarted != null);
     assert(watchExperiencesLikedStarted != null);
@@ -315,7 +315,7 @@ class _$_WatchExperiencesLikedStarted implements _WatchExperiencesLikedStarted {
     Result watchExperiencesDoneStarted(User user),
     Result watchExperiencesLikedStarted(User user),
     Result watchExperiencesCreatedStarted(User user),
-    Result experiencesReceived(Either<Failure, Set<Experience>> failureOrExperiences),
+    Result experiencesReceived(Either<Failure, KtSet<Experience>> failureOrExperiences),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -442,7 +442,7 @@ class _$_WatchExperiencesCreatedStarted
     @required Result watchExperiencesDoneStarted(User user),
     @required Result watchExperiencesLikedStarted(User user),
     @required Result watchExperiencesCreatedStarted(User user),
-    @required Result experiencesReceived(Either<Failure, Set<Experience>> failureOrExperiences),
+    @required Result experiencesReceived(Either<Failure, KtSet<Experience>> failureOrExperiences),
   }) {
     assert(watchExperiencesDoneStarted != null);
     assert(watchExperiencesLikedStarted != null);
@@ -457,7 +457,7 @@ class _$_WatchExperiencesCreatedStarted
     Result watchExperiencesDoneStarted(User user),
     Result watchExperiencesLikedStarted(User user),
     Result watchExperiencesCreatedStarted(User user),
-    Result experiencesReceived(Either<Failure, Set<Experience>> failureOrExperiences),
+    Result experiencesReceived(Either<Failure, KtSet<Experience>> failureOrExperiences),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -513,7 +513,8 @@ abstract class _$ExperiencesReceivedCopyWith<$Res> {
   factory _$ExperiencesReceivedCopyWith(_ExperiencesReceived value,
     $Res Function(_ExperiencesReceived) then) =
   __$ExperiencesReceivedCopyWithImpl<$Res>;
-  $Res call({Either<Failure, Set<Experience>> failureOrExperiences});
+
+  $Res call({Either<Failure, KtSet<Experience>> failureOrExperiences});
 }
 
 class __$ExperiencesReceivedCopyWithImpl<$Res> extends _$ProfileExperiencesWatcherEventCopyWithImpl<$Res>
@@ -531,7 +532,7 @@ class __$ExperiencesReceivedCopyWithImpl<$Res> extends _$ProfileExperiencesWatch
     return _then(_ExperiencesReceived(
       failureOrExperiences == freezed
         ? _value.failureOrExperiences
-        : failureOrExperiences as Either<Failure, Set<Experience>>,
+        : failureOrExperiences as Either<Failure, KtSet<Experience>>,
     ));
   }
 }
@@ -541,7 +542,7 @@ class _$_ExperiencesReceived implements _ExperiencesReceived {
     : assert(failureOrExperiences != null);
 
   @override
-  final Either<Failure, Set<Experience>> failureOrExperiences;
+  final Either<Failure, KtSet<Experience>> failureOrExperiences;
 
   @override
   String toString() {
@@ -573,7 +574,7 @@ class _$_ExperiencesReceived implements _ExperiencesReceived {
     @required Result watchExperiencesDoneStarted(User user),
     @required Result watchExperiencesLikedStarted(User user),
     @required Result watchExperiencesCreatedStarted(User user),
-    @required Result experiencesReceived(Either<Failure, Set<Experience>> failureOrExperiences),
+    @required Result experiencesReceived(Either<Failure, KtSet<Experience>> failureOrExperiences),
   }) {
     assert(watchExperiencesDoneStarted != null);
     assert(watchExperiencesLikedStarted != null);
@@ -588,7 +589,7 @@ class _$_ExperiencesReceived implements _ExperiencesReceived {
     Result watchExperiencesDoneStarted(User user),
     Result watchExperiencesLikedStarted(User user),
     Result watchExperiencesCreatedStarted(User user),
-    Result experiencesReceived(Either<Failure, Set<Experience>> failureOrExperiences),
+    Result experiencesReceived(Either<Failure, KtSet<Experience>> failureOrExperiences),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -631,10 +632,10 @@ class _$_ExperiencesReceived implements _ExperiencesReceived {
 }
 
 abstract class _ExperiencesReceived implements ProfileExperiencesWatcherEvent {
-  const factory _ExperiencesReceived(Either<Failure, Set<Experience>> failureOrExperiences) =
+  const factory _ExperiencesReceived(Either<Failure, KtSet<Experience>> failureOrExperiences) =
   _$_ExperiencesReceived;
-
-  Either<Failure, Set<Experience>> get failureOrExperiences;
+  
+  Either<Failure, KtSet<Experience>> get failureOrExperiences;
   _$ExperiencesReceivedCopyWith<_ExperiencesReceived> get copyWith;
 }
 
@@ -649,7 +650,7 @@ class _$ProfileExperiencesWatcherStateTearOff {
     return const _LoadInProgress();
   }
 
-  _LoadSuccess loadSuccess(Set<Experience> experiences) {
+  _LoadSuccess loadSuccess(KtSet<Experience> experiences) {
     return _LoadSuccess(
       experiences,
     );
@@ -671,14 +672,14 @@ mixin _$ProfileExperiencesWatcherState {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<Experience> experiences),
+    @required Result loadSuccess(KtSet<Experience> experiences),
     @required Result loadFailure(Failure<dynamic> failure),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<Experience> experiences),
+    Result loadSuccess(KtSet<Experience> experiences),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   });
@@ -749,7 +750,7 @@ class _$_Initial implements _Initial {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<Experience> experiences),
+    @required Result loadSuccess(KtSet<Experience> experiences),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -764,7 +765,7 @@ class _$_Initial implements _Initial {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<Experience> experiences),
+    Result loadSuccess(KtSet<Experience> experiences),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -846,7 +847,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<Experience> experiences),
+    @required Result loadSuccess(KtSet<Experience> experiences),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -861,7 +862,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<Experience> experiences),
+    Result loadSuccess(KtSet<Experience> experiences),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -911,7 +912,8 @@ abstract class _LoadInProgress implements ProfileExperiencesWatcherState {
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
   __$LoadSuccessCopyWithImpl<$Res>;
-  $Res call({Set<Experience> experiences});
+  
+  $Res call({KtSet<Experience> experiences});
 }
 
 class __$LoadSuccessCopyWithImpl<$Res> extends _$ProfileExperiencesWatcherStateCopyWithImpl<$Res>
@@ -929,7 +931,7 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$ProfileExperiencesWatcherStateC
     return _then(_LoadSuccess(
       experiences == freezed
         ? _value.experiences
-        : experiences as Set<Experience>,
+        : experiences as KtSet<Experience>,
     ));
   }
 }
@@ -938,7 +940,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(this.experiences) : assert(experiences != null);
 
   @override
-  final Set<Experience> experiences;
+  final KtSet<Experience> experiences;
 
   @override
   String toString() {
@@ -967,7 +969,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<Experience> experiences),
+    @required Result loadSuccess(KtSet<Experience> experiences),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -982,7 +984,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<Experience> experiences),
+    Result loadSuccess(KtSet<Experience> experiences),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -1026,9 +1028,9 @@ class _$_LoadSuccess implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements ProfileExperiencesWatcherState {
-  const factory _LoadSuccess(Set<Experience> experiences) = _$_LoadSuccess;
-
-  Set<Experience> get experiences;
+  const factory _LoadSuccess(KtSet<Experience> experiences) = _$_LoadSuccess;
+  
+  KtSet<Experience> get experiences;
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
@@ -1100,7 +1102,7 @@ class _$_LoadFailure implements _LoadFailure {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(Set<Experience> experiences),
+    @required Result loadSuccess(KtSet<Experience> experiences),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -1115,7 +1117,7 @@ class _$_LoadFailure implements _LoadFailure {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(Set<Experience> experiences),
+    Result loadSuccess(KtSet<Experience> experiences),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {

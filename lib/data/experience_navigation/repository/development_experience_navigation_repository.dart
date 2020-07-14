@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_left_server_error.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_right_future.dart';
@@ -27,7 +28,7 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> likeExperience(int experienceId) {
     if (_random.nextBool()) {
@@ -36,12 +37,12 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
-  Future<Either<Failure, Set<Experience>>> loadSurroundingExperiences(Coordinates coordinates) {
-    Either<Failure, Set<Experience>> _either;
+  Future<Either<Failure, KtSet<Experience>>> loadSurroundingExperiences(Coordinates coordinates) {
+    Either<Failure, KtSet<Experience>> _either;
     if (_random.nextBool()) {
-      final _experienceSet = {
+      final _experienceSet = KtSet.of(
         getValidExperience(),
         getValidExperience().copyWith(
           id: 2,
@@ -51,13 +52,13 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
           id: 3,
           name: Name("Itaque"),
         ),
-      };
+      );
       return getRightFuture(_experienceSet);
     } else {
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> rateDifficulty({
     Difficulty difficulty,
@@ -69,7 +70,7 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> rewardUser(int experienceId) {
     if (_random.nextBool()) {

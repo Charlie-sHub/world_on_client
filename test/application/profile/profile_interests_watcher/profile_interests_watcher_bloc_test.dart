@@ -2,6 +2,7 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/application/profile/profile_interests_watcher/profile_interests_watcher_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
@@ -22,8 +23,8 @@ void main() {
       loadUserInterests = getIt<LoadUserInterests>();
     },
   );
-  final interests = {Tag.empty()};
-  final user = getValidUser().copyWith(interests: interests);
+  final interests = KtSet.of(Tag.empty());
+  final user = getValidUser().copyWith(interests: interests.asSet());
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,

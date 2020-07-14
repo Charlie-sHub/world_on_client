@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/create_stream_of_either.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_left_server_error.dart';
@@ -22,22 +23,22 @@ class DevelopmentTagRepository implements TagCoreRepositoryInterface {
   final _random = Random();
 
   @override
-  Stream<Either<Failure, List<Tag>>> getAllTags() {
-    Either<Failure, List<Tag>> _either;
+  Stream<Either<Failure, KtSet<Tag>>> getAllTags() {
+    Either<Failure, KtSet<Tag>> _either;
     if (_random.nextBool()) {
-      _either = right([
+      _either = right(KtSet.of(
         getValidTag(),
         getValidTag().copyWith(
           id: 2,
           name: Name("Nullam quam"),
         ),
-      ]);
+      ));
     } else {
       _either = left(getServerErrorFailure());
     }
     return createStreamOfEither(_either);
   }
-  
+
   @override
   Future<Either<Failure, User>> getCreator(int id) {
     if (_random.nextBool()) {
@@ -46,24 +47,24 @@ class DevelopmentTagRepository implements TagCoreRepositoryInterface {
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
-  Stream<Either<Failure, List<Tag>>> getTagsByCreator(int id) {
-    Either<Failure, List<Tag>> _either;
+  Stream<Either<Failure, KtSet<Tag>>> getTagsByCreator(int id) {
+    Either<Failure, KtSet<Tag>> _either;
     if (_random.nextBool()) {
-      _either = right([
+      _either = right(KtSet.of(
         getValidTag(),
         getValidTag().copyWith(
           id: 2,
           name: Name("Nullam quam"),
         ),
-      ]);
+      ));
     } else {
       _either = left(getServerErrorFailure());
     }
     return createStreamOfEither(_either);
   }
-  
+
   @override
   Future<Either<Failure, Unit>> addTagToInterests(Tag tag) {
     if (_random.nextBool()) {
@@ -72,7 +73,7 @@ class DevelopmentTagRepository implements TagCoreRepositoryInterface {
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> dismissTagFromInterests(Tag tag) {
     if (_random.nextBool()) {
