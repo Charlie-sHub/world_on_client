@@ -6,7 +6,7 @@ import 'package:worldon/domain/comments/repository/comment_repository_interface.
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
-@LazySingleton(env: Environment.prod)
+@LazySingleton(env: Environment.dev)
 class PostComment implements AsyncUseCase<Unit, Params> {
   final CommentRepositoryInterface _repository;
   

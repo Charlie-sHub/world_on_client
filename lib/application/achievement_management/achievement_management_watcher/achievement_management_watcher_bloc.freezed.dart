@@ -411,7 +411,6 @@ abstract class _LoadInProgress implements AchievementManagementWatcherState {
 abstract class _$loadSuccessCopyWith<$Res> {
   factory _$loadSuccessCopyWith(_loadSuccess value, $Res Function(_loadSuccess) then) =
   __$loadSuccessCopyWithImpl<$Res>;
-  
   $Res call({KtSet<Achievement> achievements});
 }
 
@@ -528,7 +527,7 @@ class _$_loadSuccess implements _loadSuccess {
 
 abstract class _loadSuccess implements AchievementManagementWatcherState {
   const factory _loadSuccess(KtSet<Achievement> achievements) = _$_loadSuccess;
-  
+
   KtSet<Achievement> get achievements;
   _$loadSuccessCopyWith<_loadSuccess> get copyWith;
 }

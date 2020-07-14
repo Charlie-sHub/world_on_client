@@ -7,6 +7,7 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
+import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
@@ -111,7 +112,7 @@ void main() {
         },
       );
       test(
-        "${TestDescription.unAuthorized}  with no randomUser",
+        "${TestDescription.unAuthorized} with randomUser",
         () async {
           // Arrange
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(randomUser));
@@ -122,14 +123,18 @@ void main() {
         },
       );
       test(
-        "${TestDescription.unAuthorized}  with no user",
+        TestDescription.throwUnAuthenticated,
         () async {
           // Arrange
           when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
           // Act
-          final result = await useCase(params);
-          // Assert
-          expect(result, left(const Failure.coreDomain(CoreDomainFailure.unAuthorizedError())));
+          try {
+            await useCase(params);
+            fail(TestDescription.notThrown);
+          } catch (error) {
+            // Assert
+            expect(error, isInstanceOf<UnAuthenticatedError>());
+          }
         },
       );
     },

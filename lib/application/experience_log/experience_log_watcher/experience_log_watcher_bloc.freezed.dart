@@ -408,7 +408,6 @@ abstract class _LoadInProgress implements ExperienceLogWatcherState {
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
   __$LoadSuccessCopyWithImpl<$Res>;
-  
   $Res call({KtSet<Experience> experienceSet});
 }
 
@@ -525,7 +524,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 
 abstract class _LoadSuccess implements ExperienceLogWatcherState {
   const factory _LoadSuccess(KtSet<Experience> experienceSet) = _$_LoadSuccess;
-  
+
   KtSet<Experience> get experienceSet;
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }

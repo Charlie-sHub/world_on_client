@@ -6,7 +6,7 @@ import 'package:worldon/domain/core/entities/options/options.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/options/repository/remote_options_repository_interface.dart';
 
-@LazySingleton(env: Environment.prod)
+@LazySingleton(env: Environment.dev)
 class SaveGlobalOptions implements AsyncUseCase<Unit, Params> {
   final RemoteOptionsRepositoryInterface _repository;
 

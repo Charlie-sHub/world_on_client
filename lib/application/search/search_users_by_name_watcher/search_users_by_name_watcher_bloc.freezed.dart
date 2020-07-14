@@ -328,7 +328,6 @@ abstract class _$SearchResultsReceivedCopyWith<$Res> {
   factory _$SearchResultsReceivedCopyWith(_SearchResultsReceived value,
     $Res Function(_SearchResultsReceived) then) =
   __$SearchResultsReceivedCopyWithImpl<$Res>;
-
   $Res call({Either<Failure, KtSet<User>> failureOrUsers});
 }
 
@@ -443,7 +442,7 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
 
 abstract class _SearchResultsReceived implements SearchUsersByNameWatcherEvent {
   const factory _SearchResultsReceived(Either<Failure, KtSet<User>> failureOrUsers) = _$_SearchResultsReceived;
-  
+
   Either<Failure, KtSet<User>> get failureOrUsers;
   _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith;
 }
@@ -720,7 +719,6 @@ abstract class _SearchInPorgress implements SearchUsersByNameWatcherState {
 abstract class _$SearchSuccessCopyWith<$Res> {
   factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) =
   __$SearchSuccessCopyWithImpl<$Res>;
-  
   $Res call({KtSet<User> usersFound});
 }
 
@@ -835,7 +833,7 @@ class _$_SearchSuccess implements _SearchSuccess {
 
 abstract class _SearchSuccess implements SearchUsersByNameWatcherState {
   const factory _SearchSuccess(KtSet<User> usersFound) = _$_SearchSuccess;
-  
+
   KtSet<User> get usersFound;
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith;
 }

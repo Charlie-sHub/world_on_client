@@ -459,7 +459,6 @@ abstract class _LoadInProgress implements CommentWatcherState {
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
   __$LoadSuccessCopyWithImpl<$Res>;
-  
   $Res call({KtSet<Comment> comments});
 }
 
@@ -574,7 +573,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 
 abstract class _LoadSuccess implements CommentWatcherState {
   const factory _LoadSuccess(KtSet<Comment> comments) = _$_LoadSuccess;
-  
+
   KtSet<Comment> get comments;
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }

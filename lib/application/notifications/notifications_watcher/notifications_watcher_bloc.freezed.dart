@@ -407,7 +407,6 @@ abstract class _LoadInProgress implements NotificationsWatcherState {
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
   __$LoadSuccessCopyWithImpl<$Res>;
-  
   $Res call({KtSet<Notification> notifications});
 }
 
@@ -525,7 +524,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements NotificationsWatcherState {
   const factory _LoadSuccess(KtSet<Notification> notifications) =
   _$_LoadSuccess;
-  
+
   KtSet<Notification> get notifications;
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }

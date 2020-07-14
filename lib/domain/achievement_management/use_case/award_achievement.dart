@@ -5,12 +5,14 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/achievement_management/repository/achievement_repository_interface.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
-@LazySingleton(env: Environment.prod)
+// TODO: Check if it's possible to inject into more than one environment
+// Or in all environments except for a specific one
+@LazySingleton(env: Environment.dev)
 class AwardAchievement implements AsyncUseCase<Unit, Params> {
   final AchievementRepositoryInterface _repository;
-  
+
   AwardAchievement(this._repository);
-  
+
   @override
   Future<Either<Failure, Unit>> call(Params params) {
     // TODO: how to keep track and award the Achievements?

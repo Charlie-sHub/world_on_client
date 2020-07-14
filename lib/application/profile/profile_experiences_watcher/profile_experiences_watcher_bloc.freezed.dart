@@ -513,7 +513,6 @@ abstract class _$ExperiencesReceivedCopyWith<$Res> {
   factory _$ExperiencesReceivedCopyWith(_ExperiencesReceived value,
     $Res Function(_ExperiencesReceived) then) =
   __$ExperiencesReceivedCopyWithImpl<$Res>;
-
   $Res call({Either<Failure, KtSet<Experience>> failureOrExperiences});
 }
 
@@ -634,7 +633,7 @@ class _$_ExperiencesReceived implements _ExperiencesReceived {
 abstract class _ExperiencesReceived implements ProfileExperiencesWatcherEvent {
   const factory _ExperiencesReceived(Either<Failure, KtSet<Experience>> failureOrExperiences) =
   _$_ExperiencesReceived;
-  
+
   Either<Failure, KtSet<Experience>> get failureOrExperiences;
   _$ExperiencesReceivedCopyWith<_ExperiencesReceived> get copyWith;
 }
@@ -912,7 +911,6 @@ abstract class _LoadInProgress implements ProfileExperiencesWatcherState {
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
   __$LoadSuccessCopyWithImpl<$Res>;
-  
   $Res call({KtSet<Experience> experiences});
 }
 
@@ -1029,7 +1027,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 
 abstract class _LoadSuccess implements ProfileExperiencesWatcherState {
   const factory _LoadSuccess(KtSet<Experience> experiences) = _$_LoadSuccess;
-  
+
   KtSet<Experience> get experiences;
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }

@@ -7,6 +7,7 @@ import 'package:worldon/application/profile/follow_actor/follow_actor_bloc.dart'
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
+import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/profile/use_case/follow_user.dart';
 import 'package:worldon/domain/profile/use_case/un_follow_user.dart';
 import 'package:worldon/injection.dart';
@@ -61,19 +62,6 @@ void main() {
         "Should emit notFollowed",
         build: () async {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(loggedInUser));
-          return getIt<FollowActorBloc>();
-        },
-        act: (bloc) async => bloc.add(FollowActorEvent.initialized(notFollowedUser)),
-        verify: (_) async {
-          verify(getLoggedInUser.call(any));
-          verifyNoMoreInteractions(getLoggedInUser);
-        },
-        expect: [const FollowActorState.followsNot()],
-      );
-      blocTest(
-        "Should emit notFollowed",
-        build: () async {
-          when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
           return getIt<FollowActorBloc>();
         },
         act: (bloc) async => bloc.add(FollowActorEvent.initialized(notFollowedUser)),
@@ -186,6 +174,19 @@ void main() {
           const FollowActorState.actionInProgress(),
           const FollowActorState.followFailure(failure),
         ],
+      );
+      blocTest(
+        TestDescription.throwUnAuthenticated,
+        build: () async {
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
+          return getIt<FollowActorBloc>();
+        },
+        act: (bloc) async => bloc.add(FollowActorEvent.initialized(notFollowedUser)),
+        verify: (_) async {
+          verify(getLoggedInUser.call(any));
+          verifyNoMoreInteractions(getLoggedInUser);
+        },
+        errors: [isA<UnAuthenticatedError>()],
       );
     },
   );

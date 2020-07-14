@@ -462,7 +462,6 @@ abstract class _SearchInProgress implements SearchTagsByNameWatcherState {
 abstract class _$SearchSuccessCopyWith<$Res> {
   factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) =
   __$SearchSuccessCopyWithImpl<$Res>;
-  
   $Res call({KtSet<Tag> tagsFound});
 }
 
@@ -577,7 +576,7 @@ class _$_SearchSuccess implements _SearchSuccess {
 
 abstract class _SearchSuccess implements SearchTagsByNameWatcherState {
   const factory _SearchSuccess(KtSet<Tag> tagsFound) = _$_SearchSuccess;
-  
+
   KtSet<Tag> get tagsFound;
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith;
 }

@@ -111,7 +111,7 @@ class _$_RewardDto extends _RewardDto {
         assert(description != null),
         assert(imageURL != null),
         super._();
-  
+
   factory _$_RewardDto.fromJson(Map<String, dynamic> json) =>
     _$_$_RewardDtoFromJson(json);
 

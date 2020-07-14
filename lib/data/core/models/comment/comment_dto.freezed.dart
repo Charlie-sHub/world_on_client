@@ -149,7 +149,7 @@ class _$_CommentDto extends _CommentDto {
         assert(creationDate != null),
         assert(modificationDate != null),
         super._();
-  
+
   factory _$_CommentDto.fromJson(Map<String, dynamic> json) =>
     _$_$_CommentDtoFromJson(json);
 

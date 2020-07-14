@@ -9,7 +9,7 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
 
 /// [UseCase] for direct World On Login
-@LazySingleton(env: Environment.prod)
+@LazySingleton(env: Environment.dev)
 class LogIn implements AsyncUseCase<Unit, Params> {
   final AuthenticationRepositoryInterface _repository;
   

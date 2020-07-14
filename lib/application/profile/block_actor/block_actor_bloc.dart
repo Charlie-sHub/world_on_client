@@ -8,6 +8,7 @@ import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/profile/use_case/block_user.dart' as block_user;
 import 'package:worldon/domain/profile/use_case/un_block_user.dart' as un_block_user;
@@ -68,7 +69,7 @@ class BlockActorBloc extends Bloc<BlockActorEvent, BlockActorState> {
     final _getLoggedInUser = getIt<GetLoggedInUser>();
     final _loggedInUserOption = await _getLoggedInUser(getIt<NoParams>());
     final _loggedInUser = _loggedInUserOption.fold(
-      () => User.empty(),
+      () => throw UnAuthenticatedError(),
       id,
     );
     if (_loggedInUser.blockedUsers.contains(event.user)) {

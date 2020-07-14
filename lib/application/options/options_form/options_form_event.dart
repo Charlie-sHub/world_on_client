@@ -7,6 +7,4 @@ abstract class OptionsFormEvent with _$OptionsFormEvent {
   const factory OptionsFormEvent.languageCodeChanged(String languageCode) = _LanguageCodeChanged;
 
   const factory OptionsFormEvent.submitted() = _Submitted;
-// TODO: Implement this event
-// const factory OptionsFormEvent.deleteUser(User user) = _DeleteUser;
 }

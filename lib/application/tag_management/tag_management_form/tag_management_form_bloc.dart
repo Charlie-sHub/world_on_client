@@ -8,7 +8,7 @@ import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
-import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/tag_management/use_case/create_tag.dart' as create_tag;
@@ -17,9 +17,7 @@ import 'package:worldon/domain/tag_management/use_case/edit_tag.dart' as edit_ta
 import '../../../injection.dart';
 
 part 'tag_management_form_bloc.freezed.dart';
-
 part 'tag_management_form_event.dart';
-
 part 'tag_management_form_state.dart';
 
 @injectable
@@ -80,8 +78,7 @@ class TagManagementFormBloc extends Bloc<TagManagementFormEvent, TagManagementFo
         final _getLoggedInUser = getIt<GetLoggedInUser>();
         final _currentUserOption = await _getLoggedInUser(getIt<NoParams>());
         final _currentUser = _currentUserOption.fold(
-          // TODO: Perhaps this should throw an error and crash the app
-          () => User.empty(),
+          () => throw UnAuthenticatedError(),
           id,
         );
         return state.copyWith(

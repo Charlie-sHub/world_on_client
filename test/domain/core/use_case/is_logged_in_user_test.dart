@@ -4,8 +4,11 @@ import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart' as get_logged_in_user;
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/is_logged_in_user.dart';
 import 'package:worldon/injection.dart';
+
+import '../../../test_descriptions.dart';
 
 void main() {
   get_logged_in_user.GetLoggedInUser getLoggedInUser;
@@ -42,14 +45,18 @@ void main() {
     },
   );
   test(
-    "Should return false",
+    TestDescription.throwUnAuthenticated,
     () async {
       // Arrange
       when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
       // Act
-      final result = await useCase(Params(userToCompareWith: user));
-      // Assert
-      expect(result, false);
+      try {
+        await useCase(Params(userToCompareWith: user));
+        fail(TestDescription.notThrown);
+      } catch (error) {
+        // Assert
+        expect(error, isInstanceOf<UnAuthenticatedError>());
+      }
     },
   );
 }

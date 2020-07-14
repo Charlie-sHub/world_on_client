@@ -7,6 +7,7 @@ import 'package:worldon/application/profile/block_actor/block_actor_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
+import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/profile/use_case/block_user.dart';
 import 'package:worldon/domain/profile/use_case/un_block_user.dart';
 import 'package:worldon/injection.dart';
@@ -61,19 +62,6 @@ void main() {
         "Should emit notBlocked",
         build: () async {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(loggedInUser));
-          return getIt<BlockActorBloc>();
-        },
-        act: (bloc) async => bloc.add(BlockActorEvent.initialized(notBlockedUser)),
-        verify: (_) async {
-          verify(getLoggedInUser.call(any));
-          verifyNoMoreInteractions(getLoggedInUser);
-        },
-        expect: [const BlockActorState.blocksNot()],
-      );
-      blocTest(
-        "Should emit notBlocked",
-        build: () async {
-          when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
           return getIt<BlockActorBloc>();
         },
         act: (bloc) async => bloc.add(BlockActorEvent.initialized(notBlockedUser)),
@@ -186,6 +174,19 @@ void main() {
           const BlockActorState.actionInProgress(),
           const BlockActorState.blockFailure(failure),
         ],
+      );
+      blocTest(
+        TestDescription.throwUnAuthenticated,
+        build: () async {
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
+          return getIt<BlockActorBloc>();
+        },
+        act: (bloc) async => bloc.add(BlockActorEvent.initialized(notBlockedUser)),
+        verify: (_) async {
+          verify(getLoggedInUser.call(any));
+          verifyNoMoreInteractions(getLoggedInUser);
+        },
+        errors: [isA<UnAuthenticatedError>()],
       );
     },
   );

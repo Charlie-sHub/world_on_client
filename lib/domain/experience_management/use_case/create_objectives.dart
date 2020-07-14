@@ -15,7 +15,7 @@ import 'package:worldon/domain/experience_management/use_case/create_experience.
 /// It's supposed to be called right before the [CreateExperience] use-case, once for every [ObjectiveCreationWidget] opened with valid data
 /// that way there's no need to create business logic regarding the deletion or edition of objectives
 // Probably useless, will use Reso's method
-@LazySingleton(env: Environment.prod)
+@LazySingleton(env: Environment.dev)
 class CreateObjectives implements UseCase<ObjectiveSet, Params> {
   final KtMutableSet<Objective> objectives = KtMutableSet.empty();
   

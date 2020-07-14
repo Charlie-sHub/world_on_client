@@ -469,7 +469,6 @@ abstract class _LoadInProgress implements ProfileInterestsWatcherState {
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
   __$LoadSuccessCopyWithImpl<$Res>;
-  
   $Res call({KtSet<Tag> interests});
 }
 
@@ -584,7 +583,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 
 abstract class _LoadSuccess implements ProfileInterestsWatcherState {
   const factory _LoadSuccess(KtSet<Tag> interests) = _$_LoadSuccess;
-  
+
   KtSet<Tag> get interests;
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }

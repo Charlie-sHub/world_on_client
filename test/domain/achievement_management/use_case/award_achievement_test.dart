@@ -11,7 +11,6 @@ import 'package:worldon/injection.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  // TODO: check if this can be better formatted
   AchievementRepositoryInterface mockAchievementRepository;
   AwardAchievement useCase;
   setUpAll(

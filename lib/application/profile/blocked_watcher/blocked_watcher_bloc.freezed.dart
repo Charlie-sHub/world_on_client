@@ -468,7 +468,6 @@ abstract class _LoadInProgress implements BlockedWatcherState {
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
   __$LoadSuccessCopyWithImpl<$Res>;
-  
   $Res call({KtSet<User> blockedUsers});
 }
 
@@ -585,7 +584,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 
 abstract class _LoadSuccess implements BlockedWatcherState {
   const factory _LoadSuccess(KtSet<User> blockedUsers) = _$_LoadSuccess;
-  
+
   KtSet<User> get blockedUsers;
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }

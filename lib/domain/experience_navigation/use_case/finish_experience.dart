@@ -8,7 +8,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_interface.dart';
 
 /// Sends the id of a [Experience] to the server so the [Experience] is added to the logged in [User]'s list of done [Experience]s
-@LazySingleton(env: Environment.prod)
+@LazySingleton(env: Environment.dev)
 class FinishExperience implements AsyncUseCase<Unit, Params> {
   final ExperienceNavigationRepositoryInterface _repository;
 

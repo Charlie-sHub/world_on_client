@@ -7,7 +7,7 @@ import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 
-@LazySingleton(env: Environment.prod)
+@LazySingleton(env: Environment.dev)
 class LoadUserAchievements implements StreamUseCase<KtSet<Achievement>, Params> {
   final ProfileRepositoryInterface _repository;
   

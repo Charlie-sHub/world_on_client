@@ -15,13 +15,8 @@ NotificationDto _$NotificationDtoFromJson(Map<String, dynamic> json) {
 class _$NotificationDtoTearOff {
   const _$NotificationDtoTearOff();
 
-  _NotificationDto call({@required int id,
-    @required UserDto sender,
-    @required UserDto receiver,
-    @required String description,
-    @required bool seen,
-    @required String creationDate,
-    @required NotificationType type}) {
+  _NotificationDto call(
+      {@required int id, @required UserDto sender, @required UserDto receiver, @required String description, @required bool seen, @required String creationDate, @required NotificationType type}) {
     return _NotificationDto(
       id: id,
       sender: sender,
@@ -51,9 +46,16 @@ mixin _$NotificationDto {
 }
 
 abstract class $NotificationDtoCopyWith<$Res> {
-  factory $NotificationDtoCopyWith(NotificationDto value, $Res Function(NotificationDto) then) = _$NotificationDtoCopyWithImpl<$Res>;
-
-  $Res call({int id, UserDto sender, UserDto receiver, String description, bool seen, String creationDate, NotificationType type});
+  factory $NotificationDtoCopyWith(NotificationDto value, $Res Function(NotificationDto) then) =
+  _$NotificationDtoCopyWithImpl<$Res>;
+  
+  $Res call({int id,
+    UserDto sender,
+    UserDto receiver,
+    String description,
+    bool seen,
+    String creationDate,
+    NotificationType type});
 
   $UserDtoCopyWith<$Res> get sender;
   $UserDtoCopyWith<$Res> get receiver;
@@ -181,7 +183,7 @@ class _$_NotificationDto extends _NotificationDto {
         assert(creationDate != null),
         assert(type != null),
         super._();
-  
+
   factory _$_NotificationDto.fromJson(Map<String, dynamic> json) =>
     _$_$_NotificationDtoFromJson(json);
 

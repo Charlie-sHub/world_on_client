@@ -405,7 +405,6 @@ abstract class _LoadInProgress implements TagManagementWatcherState {
 abstract class _$loadSuccessCopyWith<$Res> {
   factory _$loadSuccessCopyWith(_loadSuccess value, $Res Function(_loadSuccess) then) =
   __$loadSuccessCopyWithImpl<$Res>;
-  
   $Res call({KtSet<Tag> tags});
 }
 
@@ -519,7 +518,7 @@ class _$_loadSuccess implements _loadSuccess {
 
 abstract class _loadSuccess implements TagManagementWatcherState {
   const factory _loadSuccess(KtSet<Tag> tags) = _$_loadSuccess;
-  
+
   KtSet<Tag> get tags;
   _$loadSuccessCopyWith<_loadSuccess> get copyWith;
 }

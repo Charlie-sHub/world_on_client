@@ -405,7 +405,6 @@ abstract class _LoadInProgress implements MainFeedWatcherState {
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
   __$LoadSuccessCopyWithImpl<$Res>;
-  
   $Res call({KtSet<Experience> experiences});
 }
 
@@ -522,7 +521,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 
 abstract class _LoadSuccess implements MainFeedWatcherState {
   const factory _LoadSuccess(KtSet<Experience> experiences) = _$_LoadSuccess;
-  
+
   KtSet<Experience> get experiences;
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }

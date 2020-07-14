@@ -23,8 +23,6 @@ import '../../../domain/core/methods/get_valid_user.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  // Not going to bother mocking the value object or validators
-  // for now at least
   GetLoggedInUser getLoggedInUser;
   EditAchievement editAchievement;
   CreateAchievement createAchievement;
@@ -235,8 +233,7 @@ void main() {
         },
         verify: (_) async {
           verify(editAchievement.call(any));
-          // mockito reset
-          // TODO: How to verify that this use case is not called?
+          // TODO: How to verify that createAchievement is not called?
           // Seems to me this verification fails due to the use case being a singleton, hence the creation test calls the use case from the same bloc as this test
           // Apply to the other bloc tests if a solution is found
           // resetMockitoState() doesn't seem to work no mater where i put it, maybe it's an issue with the way blocTest verifies

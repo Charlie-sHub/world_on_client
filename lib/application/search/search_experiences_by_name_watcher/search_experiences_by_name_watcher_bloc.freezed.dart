@@ -466,7 +466,6 @@ abstract class _SearchInProgress
 abstract class _$SearchSuccessCopyWith<$Res> {
   factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) =
   __$SearchSuccessCopyWithImpl<$Res>;
-  
   $Res call({KtSet<Experience> experiencesFound});
 }
 
@@ -586,7 +585,7 @@ class _$_SearchSuccess implements _SearchSuccess {
 abstract class _SearchSuccess implements SearchExperiencesByNameWatcherState {
   const factory _SearchSuccess(KtSet<Experience> experiencesFound) =
   _$_SearchSuccess;
-  
+
   KtSet<Experience> get experiencesFound;
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith;
 }

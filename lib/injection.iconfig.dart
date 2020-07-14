@@ -231,6 +231,7 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerFactory<FollowingWatcherBloc>(() => FollowingWatcherBloc());
   g.registerFactory<LogInFormBloc>(() => LogInFormBloc());
   g.registerFactory<MainFeedWatcherBloc>(() => MainFeedWatcherBloc());
+  g.registerLazySingleton<NoParams>(() => NoParams());
   g.registerFactory<NotificationActorBloc>(() => NotificationActorBloc());
   g.registerFactory<NotificationsWatcherBloc>(() => NotificationsWatcherBloc());
   g.registerFactory<OptionsFormBloc>(() => OptionsFormBloc());
@@ -354,7 +355,6 @@ void $initGetIt(GetIt g, {String environment}) {
     g.registerLazySingleton<LogOut>(() => MockLogOut());
     g.registerLazySingleton<MainFeedRepositoryInterface>(
         () => MockMainFeedRepository());
-    g.registerLazySingleton<NoParams>(() => NoParams());
     g.registerLazySingleton<NotificationRepositoryInterface>(
         () => MockNotificationRepository());
     g.registerLazySingleton<PostComment>(() => MockPostComment());
@@ -397,52 +397,15 @@ void $initGetIt(GetIt g, {String environment}) {
         () => DevelopmentAchievementRepository());
     g.registerLazySingleton<AuthenticationRepositoryInterface>(
         () => DevelopmentAuthenticationRepository());
+    g.registerLazySingleton<AwardAchievement>(
+        () => AwardAchievement(g<AchievementRepositoryInterface>()));
     g.registerLazySingleton<CommentRepositoryInterface>(
         () => DevelopmentCommentRepository());
     g.registerLazySingleton<CoreRepositoryInterface>(
         () => DevelopmentCoreRepository());
-    g.registerLazySingleton<ExperienceLogRepositoryInterface>(
-        () => DevelopmentExperienceLogRepository());
-    g.registerLazySingleton<ExperienceManagementRepositoryInterface>(
-        () => DevelopmentExperienceManagementRepository());
-    g.registerLazySingleton<ExperienceNavigationRepositoryInterface>(
-        () => DevelopmentExperienceNavigationRepository());
-    g.registerLazySingleton<GeoLocationRepositoryInterface>(
-        () => DevelopmentGeoLocationRepository());
-    g.registerLazySingleton<LocalOptionsRepositoryInterface>(
-        () => DevelopmentLocalOptionsRepository());
-    g.registerLazySingleton<MainFeedRepositoryInterface>(
-        () => DevelopmentMainFeedRepository());
-    g.registerLazySingleton<NotificationRepositoryInterface>(
-        () => DevelopmentNotificationRepository());
-    g.registerLazySingleton<ProfileRepositoryInterface>(
-        () => DevelopmentProfileRepository());
-    g.registerLazySingleton<RemoteOptionsRepositoryInterface>(
-        () => DevelopmentRemoteOptionsRepository());
-    g.registerLazySingleton<SearchRepositoryInterface>(
-        () => DevelopmentSearchRepository());
-    g.registerLazySingleton<TagCoreRepositoryInterface>(
-        () => DevelopmentTagRepository());
-    g.registerLazySingleton<TagManagementRepositoryInterface>(
-        () => DevelopmentTagManagementRepository());
-  }
-
-  //Register prod Dependencies --------
-  if (environment == 'prod') {
-    g.registerLazySingleton<AchievementRepositoryInterface>(
-        () => ProductionAchievementRepository());
-    g.registerLazySingleton<AuthenticationRepositoryInterface>(
-        () => ProductionAuthenticationRepository());
-    g.registerLazySingleton<AwardAchievement>(
-        () => AwardAchievement(g<AchievementRepositoryInterface>()));
-    g.registerLazySingleton<CommentRepositoryInterface>(
-        () => ProductionCommentRepository());
-    g.registerLazySingleton<CoreRepositoryInterface>(
-        () => ProductionCoreRepository());
     g.registerLazySingleton<CreateAchievement>(
         () => CreateAchievement(g<AchievementRepositoryInterface>()));
     g.registerLazySingleton<CreateObjectives>(() => CreateObjectives());
-    g.registerLazySingleton<Cypher>(() => Cypher());
     g.registerLazySingleton<DeleteAchievement>(
         () => DeleteAchievement(g<AchievementRepositoryInterface>()));
     g.registerLazySingleton<DeleteCache>(
@@ -454,16 +417,16 @@ void $initGetIt(GetIt g, {String environment}) {
     g.registerLazySingleton<EditComment>(
         () => EditComment(g<CommentRepositoryInterface>()));
     g.registerLazySingleton<ExperienceLogRepositoryInterface>(
-        () => ProductionExperienceLogRepository());
+        () => DevelopmentExperienceLogRepository());
     g.registerLazySingleton<ExperienceManagementRepositoryInterface>(
-        () => ProductionExperienceManagementRepository());
+        () => DevelopmentExperienceManagementRepository());
     g.registerLazySingleton<ExperienceNavigationRepositoryInterface>(
-        () => ProductionExperienceNavigationRepository());
+        () => DevelopmentExperienceNavigationRepository());
     g.registerLazySingleton<FillObjectiveTracker>(() => FillObjectiveTracker());
     g.registerLazySingleton<FinishExperience>(
         () => FinishExperience(g<ExperienceNavigationRepositoryInterface>()));
     g.registerLazySingleton<GeoLocationRepositoryInterface>(
-        () => ProductionGeoLocationRepository());
+        () => DevelopmentGeoLocationRepository());
     g.registerLazySingleton<GetAchievement>(
         () => GetAchievement(g<AchievementRepositoryInterface>()));
     g.registerLazySingleton<GetAllAchievements>(
@@ -491,7 +454,7 @@ void $initGetIt(GetIt g, {String environment}) {
     g.registerLazySingleton<LoadUserLog>(
         () => LoadUserLog(g<ExperienceLogRepositoryInterface>()));
     g.registerLazySingleton<LocalOptionsRepositoryInterface>(
-        () => ProductionLocalOptionsRepository());
+        () => DevelopmentLocalOptionsRepository());
     g.registerLazySingleton<LogIn>(
         () => LogIn(g<AuthenticationRepositoryInterface>()));
     g.registerLazySingleton<LogInGoogle>(
@@ -499,19 +462,19 @@ void $initGetIt(GetIt g, {String environment}) {
     g.registerLazySingleton<LogOut>(
         () => LogOut(g<AuthenticationRepositoryInterface>()));
     g.registerLazySingleton<MainFeedRepositoryInterface>(
-        () => ProductionMainFeedRepository());
+        () => DevelopmentMainFeedRepository());
     g.registerLazySingleton<NotificationRepositoryInterface>(
-        () => ProductionNotificationRepository());
+        () => DevelopmentNotificationRepository());
     g.registerLazySingleton<PostComment>(
         () => PostComment(g<CommentRepositoryInterface>()));
     g.registerLazySingleton<ProfileRepositoryInterface>(
-        () => ProductionProfileRepository());
+        () => DevelopmentProfileRepository());
     g.registerLazySingleton<RateDifficulty>(
         () => RateDifficulty(g<ExperienceNavigationRepositoryInterface>()));
     g.registerLazySingleton<Register>(
         () => Register(g<AuthenticationRepositoryInterface>()));
     g.registerLazySingleton<RemoteOptionsRepositoryInterface>(
-        () => ProductionRemoteOptionsRepository());
+        () => DevelopmentRemoteOptionsRepository());
     g.registerLazySingleton<RemoveExperienceLiked>(
         () => RemoveExperienceLiked(g<ProfileRepositoryInterface>()));
     g.registerLazySingleton<RewardUser>(
@@ -519,7 +482,7 @@ void $initGetIt(GetIt g, {String environment}) {
     g.registerLazySingleton<SaveGlobalOptions>(
         () => SaveGlobalOptions(g<RemoteOptionsRepositoryInterface>()));
     g.registerLazySingleton<SearchRepositoryInterface>(
-        () => ProductionSearchRepository());
+        () => DevelopmentSearchRepository());
     g.registerLazySingleton<SearchTagsByName>(
         () => SearchTagsByName(g<SearchRepositoryInterface>()));
     g.registerLazySingleton<SearchUsersByName>(
@@ -529,9 +492,9 @@ void $initGetIt(GetIt g, {String environment}) {
     g.registerLazySingleton<SendNotification>(
         () => SendNotification(g<NotificationRepositoryInterface>()));
     g.registerLazySingleton<TagCoreRepositoryInterface>(
-        () => ProductionTagRepository());
+        () => DevelopmentTagRepository());
     g.registerLazySingleton<TagManagementRepositoryInterface>(
-        () => ProductionTagManagementRepository());
+        () => DevelopmentTagManagementRepository());
     g.registerLazySingleton<UnBlockUser>(
         () => UnBlockUser(g<ProfileRepositoryInterface>()));
     g.registerLazySingleton<UnFollowUser>(
@@ -608,5 +571,42 @@ void $initGetIt(GetIt g, {String environment}) {
         () => SearchExperiencesByName(g<SearchRepositoryInterface>()));
     g.registerLazySingleton<SearchExperiencesByTags>(
         () => SearchExperiencesByTags(g<SearchRepositoryInterface>()));
+  }
+
+  //Register prod Dependencies --------
+  if (environment == 'prod') {
+    g.registerLazySingleton<AchievementRepositoryInterface>(
+        () => ProductionAchievementRepository());
+    g.registerLazySingleton<AuthenticationRepositoryInterface>(
+        () => ProductionAuthenticationRepository());
+    g.registerLazySingleton<CommentRepositoryInterface>(
+        () => ProductionCommentRepository());
+    g.registerLazySingleton<CoreRepositoryInterface>(
+        () => ProductionCoreRepository());
+    g.registerLazySingleton<Cypher>(() => Cypher());
+    g.registerLazySingleton<ExperienceLogRepositoryInterface>(
+        () => ProductionExperienceLogRepository());
+    g.registerLazySingleton<ExperienceManagementRepositoryInterface>(
+        () => ProductionExperienceManagementRepository());
+    g.registerLazySingleton<ExperienceNavigationRepositoryInterface>(
+        () => ProductionExperienceNavigationRepository());
+    g.registerLazySingleton<GeoLocationRepositoryInterface>(
+        () => ProductionGeoLocationRepository());
+    g.registerLazySingleton<LocalOptionsRepositoryInterface>(
+        () => ProductionLocalOptionsRepository());
+    g.registerLazySingleton<MainFeedRepositoryInterface>(
+        () => ProductionMainFeedRepository());
+    g.registerLazySingleton<NotificationRepositoryInterface>(
+        () => ProductionNotificationRepository());
+    g.registerLazySingleton<ProfileRepositoryInterface>(
+        () => ProductionProfileRepository());
+    g.registerLazySingleton<RemoteOptionsRepositoryInterface>(
+        () => ProductionRemoteOptionsRepository());
+    g.registerLazySingleton<SearchRepositoryInterface>(
+        () => ProductionSearchRepository());
+    g.registerLazySingleton<TagCoreRepositoryInterface>(
+        () => ProductionTagRepository());
+    g.registerLazySingleton<TagManagementRepositoryInterface>(
+        () => ProductionTagManagementRepository());
   }
 }

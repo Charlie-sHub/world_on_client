@@ -13,7 +13,7 @@ import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
-import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -149,7 +149,7 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
         final _getLoggedInUser = getIt<GetLoggedInUser>();
         final _currentUserOption = await _getLoggedInUser(getIt<NoParams>());
         final _currentUser = _currentUserOption.fold(
-          () => User.empty(),
+          () => throw UnAuthenticatedError(),
           id,
         );
         return state.copyWith(

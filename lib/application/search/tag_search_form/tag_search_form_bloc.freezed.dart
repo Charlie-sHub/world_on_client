@@ -475,7 +475,6 @@ const $TagSearchFormState = _$TagSearchFormStateTearOff();
 
 mixin _$TagSearchFormState {
   Set<Tag> get tagsSelected;
-
   KtSet<Tag> get tagsFound;
   bool get isSubmitting;
   bool get showErrorMessages;

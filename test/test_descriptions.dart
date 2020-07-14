@@ -29,6 +29,8 @@ abstract class TestDescription {
 
   // Miscellaneous
   static const errorString = "Test Error";
+  static const throwUnAuthenticated = "Should throw UnAuthenticatedError";
+  static const notThrown = "Error wasn't thrown";
 
   // Bloc testing
   static const shouldEmitInitial = "Should emit the initial state";

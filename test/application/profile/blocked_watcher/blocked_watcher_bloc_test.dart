@@ -29,6 +29,7 @@ void main() {
   final user = getValidUser().copyWith(
     id: 3,
     // TODO: Change the Sets in the entities to KtSet
+    // Are those even necessary? if anything they might give problems in the future in the way of chains and loops
     blockedUsers: usersBlocked.asSet(),
   );
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));

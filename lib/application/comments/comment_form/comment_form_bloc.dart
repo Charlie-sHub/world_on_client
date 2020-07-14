@@ -11,6 +11,7 @@ import 'package:worldon/domain/comments/use_case/edit_comment.dart' as edit_comm
 import 'package:worldon/domain/comments/use_case/post_comment.dart' as post_comment;
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 import 'package:worldon/injection.dart';
@@ -78,7 +79,7 @@ class CommentFormBloc extends Bloc<CommentFormEvent, CommentFormState> {
         final _getLoggedInUser = getIt<GetLoggedInUser>();
         final _currentUserOption = await _getLoggedInUser(getIt<NoParams>());
         final _currentUser = _currentUserOption.fold(
-          () => User.empty(),
+          () => throw UnAuthenticatedError(),
           id,
         );
         return state.copyWith(

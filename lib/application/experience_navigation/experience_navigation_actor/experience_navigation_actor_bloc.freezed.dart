@@ -1041,7 +1041,6 @@ _$ExperienceNavigationActorStateTearOff();
 mixin _$ExperienceNavigationActorState {
   Experience get experience;
   Map<int, bool> get objectiveTracker;
-
   Option<KtSet<Experience>> get surroundingExperiences;
   Coordinates get currentLocation;
   bool get isFinished;

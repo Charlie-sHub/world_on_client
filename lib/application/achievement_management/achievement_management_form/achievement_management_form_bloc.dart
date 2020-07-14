@@ -12,7 +12,7 @@ import 'package:worldon/domain/achievement_management/use_case/edit_achievement.
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
-import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/experience_points.dart';
@@ -112,7 +112,7 @@ class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent,
         final _getLoggedInUser = getIt<GetLoggedInUser>();
         final _currentUserOption = await _getLoggedInUser(getIt<NoParams>());
         final _currentUser = _currentUserOption.fold(
-          () => User.empty(),
+          () => throw UnAuthenticatedError(),
           id,
         );
         return state.copyWith(

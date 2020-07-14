@@ -18,7 +18,6 @@ import 'package:worldon/domain/main_feed/repository/main_feed_repository_interfa
 class DevelopmentMainFeedRepository implements MainFeedRepositoryInterface {
   final _random = Random();
 
-  // TODO: Change all Lists to KtSet
   @override
   Stream<Either<Failure, KtSet<Experience>>> fillFeed() {
     Either<Failure, KtSet<Experience>> _either;

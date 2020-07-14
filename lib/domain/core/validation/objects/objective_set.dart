@@ -27,7 +27,6 @@ class ObjectiveSet extends ValueObject<KtSet<Objective>> {
 
   const ObjectiveSet._(this.value);
 
-// TODO: Create a superclass for the Collection value objects containing the following methods
   @override
   Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
     return value.fold(

@@ -11,3 +11,11 @@ class UnexpectedValueError extends Error {
     return Error.safeToString("$explanation: $valueFailure");
   }
 }
+
+class UnAuthenticatedError extends Error {
+  @override
+  String toString() {
+    const explanation = "Couldn't get the authenticated User at a point where only authenticated Users should be";
+    return Error.safeToString(explanation);
+  }
+}

@@ -144,7 +144,6 @@ class ExperienceNavigationActorBloc extends Bloc<ExperienceNavigationActorEvent,
     final _loadSurroundingExperiences = getIt<load_surrounding_experiences.LoadSurroundingExperiences>();
     final _fillObjectiveTracker = getIt<fill_objective_tracker.FillObjectiveTracker>();
     final _coordinates = _getCurrentLocation(getIt<NoParams>()).fold(
-      // TODO: Doesn't seem like a good solution
       (failure) => Coordinates.empty(),
       id,
     );
@@ -158,7 +157,7 @@ class ExperienceNavigationActorBloc extends Bloc<ExperienceNavigationActorEvent,
         objectiveTracker: _fillObjectiveTracker(
           fill_objective_tracker.Params(objectiveSet: experience.objectives),
         ).fold(
-          // TODO: Find a better way to handle failures
+          // TODO: Find a better way to handle failures in this case
           // Maybe make the use case return the map itself and ignore possible nulls
           (failure) => {},
           id,

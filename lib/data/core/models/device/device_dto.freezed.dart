@@ -109,7 +109,7 @@ class _$_DeviceDto extends _DeviceDto {
         assert(type != null),
         assert(company != null),
         super._();
-  
+
   factory _$_DeviceDto.fromJson(Map<String, dynamic> json) =>
     _$_$_DeviceDtoFromJson(json);
 

@@ -8,10 +8,11 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/tag_management/repository/tag_management_repository_interface.dart';
+import 'package:worldon/domain/core/failures/error.dart';
 
 import '../../../injection.dart';
 
-@LazySingleton(env: Environment.prod)
+@LazySingleton(env: Environment.dev)
 class DeleteTag implements AsyncUseCase<Unit, Params> {
   final TagManagementRepositoryInterface _repository;
 
@@ -21,7 +22,7 @@ class DeleteTag implements AsyncUseCase<Unit, Params> {
   Future<Either<Failure, Unit>> call(Params params) async {
     final _userRequestingOption = await getIt<GetLoggedInUser>().call(getIt<NoParams>());
     final _userRequesting = _userRequestingOption.fold(
-      () => User.empty(),
+      () => throw UnAuthenticatedError(),
       id,
     );
     final _isAuthorized = _userRequesting == params.tag.creator || _userRequesting.adminPowers;

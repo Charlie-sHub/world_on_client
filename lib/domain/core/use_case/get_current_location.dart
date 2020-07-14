@@ -5,7 +5,7 @@ import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/repository/geo_location_repository_interface.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
-@LazySingleton(env: Environment.prod)
+@LazySingleton(env: Environment.dev)
 class GetCurrentLocation implements UseCase<Coordinates, NoParams> {
   final GeoLocationRepositoryInterface _repository;
   

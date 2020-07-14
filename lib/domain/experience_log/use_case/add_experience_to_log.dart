@@ -6,7 +6,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/experience_log/repository/experience_log_repository_interface.dart';
 
 // This use case should maybe be moved to core as it will likely be used in a few different blocs
-@LazySingleton(env: Environment.prod)
+@LazySingleton(env: Environment.dev)
 class AddExperienceToLog implements AsyncUseCase<Unit, Params> {
   final ExperienceLogRepositoryInterface _repository;
 

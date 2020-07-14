@@ -5,7 +5,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/notifications/repository/notification_repository_interface.dart';
 
-@LazySingleton(env: Environment.prod)
+@LazySingleton(env: Environment.dev)
 class CheckNotification implements AsyncUseCase<Unit, Params> {
   final NotificationRepositoryInterface _repository;
   

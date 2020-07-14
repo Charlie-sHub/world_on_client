@@ -8,7 +8,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/search_term.dart';
 import 'package:worldon/domain/search/repository/search_repository_interface.dart';
 
-@LazySingleton(env: Environment.prod)
+@LazySingleton(env: Environment.dev)
 class SearchTagsByName implements StreamUseCase<KtSet<Tag>, Params> {
   final SearchRepositoryInterface _repository;
 

@@ -471,7 +471,6 @@ abstract class _LoadInProgress implements FollowingWatcherState {
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
   __$LoadSuccessCopyWithImpl<$Res>;
-  
   $Res call({KtSet<User> followingUsers});
 }
 
@@ -589,7 +588,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 
 abstract class _LoadSuccess implements FollowingWatcherState {
   const factory _LoadSuccess(KtSet<User> followingUsers) = _$_LoadSuccess;
-  
+
   KtSet<User> get followingUsers;
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
