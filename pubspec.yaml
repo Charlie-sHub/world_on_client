@@ -83,7 +83,16 @@ dev_dependencies:
   json_serializable: ^3.3.0
   # For auto generating the routes
   auto_route_generator: ^0.6.0
+  # For ease of setting the app icon
+  flutter_launcher_icons: ^0.7.5
+  # For extra icons
+  font_awesome_flutter: ^8.8.1
   build_runner:
+
+flutter_icons:
+  image_path: "assets/world_on_logo.jpg"
+  android: true
+  ios: true
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

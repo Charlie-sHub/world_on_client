@@ -39,6 +39,13 @@ class _$ValueFailureTearOff {
   }
 
 // ignore: unused_element
+  StringMismatch<T> stringMismatch<T>({@required String failedValue}) {
+    return StringMismatch<T>(
+      failedValue: failedValue,
+    );
+  }
+
+// ignore: unused_element
   InvalidName<T> invalidName<T>({@required String failedValue}) {
     return InvalidName<T>(
       failedValue: failedValue,
@@ -114,6 +121,7 @@ mixin _$ValueFailure<T> {
     @required Result invalidDate(DateTime failedValue),
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
+    @required Result stringMismatch(String failedValue),
     @required Result invalidName(String failedValue),
     @required Result emptyString(String failedValue),
     @required Result multiLineString(String failedValue),
@@ -130,6 +138,7 @@ mixin _$ValueFailure<T> {
     Result invalidDate(DateTime failedValue),
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
+    Result stringMismatch(String failedValue),
     Result invalidName(String failedValue),
     Result emptyString(String failedValue),
     Result multiLineString(String failedValue),
@@ -147,6 +156,7 @@ mixin _$ValueFailure<T> {
     @required Result invalidDate(InvalidDate<T> value),
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result stringMismatch(StringMismatch<T> value),
     @required Result invalidName(InvalidName<T> value),
     @required Result emptyString(EmptyString<T> value),
     @required Result multiLineString(MultiLineString<T> value),
@@ -163,6 +173,7 @@ mixin _$ValueFailure<T> {
     Result invalidDate(InvalidDate<T> value),
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
+    Result stringMismatch(StringMismatch<T> value),
     Result invalidName(InvalidName<T> value),
     Result emptyString(EmptyString<T> value),
     Result multiLineString(MultiLineString<T> value),
@@ -231,6 +242,7 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     @required Result invalidDate(DateTime failedValue),
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
+    @required Result stringMismatch(String failedValue),
     @required Result invalidName(String failedValue),
     @required Result emptyString(String failedValue),
     @required Result multiLineString(String failedValue),
@@ -245,6 +257,7 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -264,6 +277,7 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     Result invalidDate(DateTime failedValue),
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
+    Result stringMismatch(String failedValue),
     Result invalidName(String failedValue),
     Result emptyString(String failedValue),
     Result multiLineString(String failedValue),
@@ -289,6 +303,7 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     @required Result invalidDate(InvalidDate<T> value),
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result stringMismatch(StringMismatch<T> value),
     @required Result invalidName(InvalidName<T> value),
     @required Result emptyString(EmptyString<T> value),
     @required Result multiLineString(MultiLineString<T> value),
@@ -303,6 +318,7 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -322,6 +338,7 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     Result invalidDate(InvalidDate<T> value),
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
+    Result stringMismatch(StringMismatch<T> value),
     Result invalidName(InvalidName<T> value),
     Result emptyString(EmptyString<T> value),
     Result multiLineString(MultiLineString<T> value),
@@ -412,6 +429,7 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     @required Result invalidDate(DateTime failedValue),
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
+    @required Result stringMismatch(String failedValue),
     @required Result invalidName(String failedValue),
     @required Result emptyString(String failedValue),
     @required Result multiLineString(String failedValue),
@@ -426,6 +444,7 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -445,6 +464,7 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     Result invalidDate(DateTime failedValue),
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
+    Result stringMismatch(String failedValue),
     Result invalidName(String failedValue),
     Result emptyString(String failedValue),
     Result multiLineString(String failedValue),
@@ -470,6 +490,7 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     @required Result invalidDate(InvalidDate<T> value),
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result stringMismatch(StringMismatch<T> value),
     @required Result invalidName(InvalidName<T> value),
     @required Result emptyString(EmptyString<T> value),
     @required Result multiLineString(MultiLineString<T> value),
@@ -484,6 +505,7 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -503,6 +525,7 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     Result invalidDate(InvalidDate<T> value),
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
+    Result stringMismatch(StringMismatch<T> value),
     Result invalidName(InvalidName<T> value),
     Result emptyString(EmptyString<T> value),
     Result multiLineString(MultiLineString<T> value),
@@ -599,6 +622,7 @@ class _$InvalidEmail<T>
     @required Result invalidDate(DateTime failedValue),
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
+    @required Result stringMismatch(String failedValue),
     @required Result invalidName(String failedValue),
     @required Result emptyString(String failedValue),
     @required Result multiLineString(String failedValue),
@@ -613,6 +637,7 @@ class _$InvalidEmail<T>
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -632,6 +657,7 @@ class _$InvalidEmail<T>
     Result invalidDate(DateTime failedValue),
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
+    Result stringMismatch(String failedValue),
     Result invalidName(String failedValue),
     Result emptyString(String failedValue),
     Result multiLineString(String failedValue),
@@ -657,6 +683,7 @@ class _$InvalidEmail<T>
     @required Result invalidDate(InvalidDate<T> value),
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result stringMismatch(StringMismatch<T> value),
     @required Result invalidName(InvalidName<T> value),
     @required Result emptyString(EmptyString<T> value),
     @required Result multiLineString(MultiLineString<T> value),
@@ -671,6 +698,7 @@ class _$InvalidEmail<T>
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -690,6 +718,7 @@ class _$InvalidEmail<T>
     Result invalidDate(InvalidDate<T> value),
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
+    Result stringMismatch(StringMismatch<T> value),
     Result invalidName(InvalidName<T> value),
     Result emptyString(EmptyString<T> value),
     Result multiLineString(MultiLineString<T> value),
@@ -786,6 +815,7 @@ class _$InvalidPassword<T>
     @required Result invalidDate(DateTime failedValue),
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
+    @required Result stringMismatch(String failedValue),
     @required Result invalidName(String failedValue),
     @required Result emptyString(String failedValue),
     @required Result multiLineString(String failedValue),
@@ -800,6 +830,7 @@ class _$InvalidPassword<T>
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -819,6 +850,7 @@ class _$InvalidPassword<T>
     Result invalidDate(DateTime failedValue),
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
+    Result stringMismatch(String failedValue),
     Result invalidName(String failedValue),
     Result emptyString(String failedValue),
     Result multiLineString(String failedValue),
@@ -844,6 +876,7 @@ class _$InvalidPassword<T>
     @required Result invalidDate(InvalidDate<T> value),
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result stringMismatch(StringMismatch<T> value),
     @required Result invalidName(InvalidName<T> value),
     @required Result emptyString(EmptyString<T> value),
     @required Result multiLineString(MultiLineString<T> value),
@@ -858,6 +891,7 @@ class _$InvalidPassword<T>
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -877,6 +911,7 @@ class _$InvalidPassword<T>
     Result invalidDate(InvalidDate<T> value),
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
+    Result stringMismatch(StringMismatch<T> value),
     Result invalidName(InvalidName<T> value),
     Result emptyString(EmptyString<T> value),
     Result multiLineString(MultiLineString<T> value),
@@ -902,6 +937,201 @@ abstract class InvalidPassword<T> implements ValueFailure<T> {
 
   String get failedValue;
   $InvalidPasswordCopyWith<T, InvalidPassword<T>> get copyWith;
+}
+
+abstract class $StringMismatchCopyWith<T, $Res> {
+  factory $StringMismatchCopyWith(StringMismatch<T> value, $Res Function(StringMismatch<T>) then) =
+  _$StringMismatchCopyWithImpl<T, $Res>;
+  
+  $Res call({String failedValue});
+}
+
+class _$StringMismatchCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
+  implements $StringMismatchCopyWith<T, $Res> {
+  _$StringMismatchCopyWithImpl(StringMismatch<T> _value, $Res Function(StringMismatch<T>) _then)
+    : super(_value, (v) => _then(v as StringMismatch<T>));
+  
+  @override
+  StringMismatch<T> get _value => super._value as StringMismatch<T>;
+  
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(StringMismatch<T>(
+      failedValue:
+      failedValue == freezed ? _value.failedValue : failedValue as String,
+    ));
+  }
+}
+
+class _$StringMismatch<T>
+  with DiagnosticableTreeMixin
+  implements StringMismatch<T> {
+  const _$StringMismatch({@required this.failedValue})
+    : assert(failedValue != null);
+  
+  @override
+  final String failedValue;
+  
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.stringMismatch(failedValue: $failedValue)';
+  }
+  
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.stringMismatch'))..add(DiagnosticsProperty('failedValue', failedValue));
+  }
+  
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+      (other is StringMismatch<T> &&
+        (identical(other.failedValue, failedValue) ||
+          const DeepCollectionEquality()
+            .equals(other.failedValue, failedValue)));
+  }
+  
+  @override
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  
+  @override
+  $StringMismatchCopyWith<T, StringMismatch<T>> get copyWith =>
+    _$StringMismatchCopyWithImpl<T, StringMismatch<T>>(this, _$identity);
+  
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result nullInput(),
+    @required Result invalidDate(DateTime failedValue),
+    @required Result invalidEmail(String failedValue),
+    @required Result invalidPassword(String failedValue),
+    @required Result stringMismatch(String failedValue),
+    @required Result invalidName(String failedValue),
+    @required Result emptyString(String failedValue),
+    @required Result multiLineString(String failedValue),
+    @required Result stringExceedsLength(String failedValue, int maxLength),
+    @required Result integerOutOfBounds(int failedValue),
+    @required Result stringWithInvalidCharacters(String failedValue),
+    @required Result invalidCoordinate(double failedValue),
+    @required Result emptySet(T failedValue),
+    @required Result setExceedsLength(T failedValue, int maxLength),
+  }) {
+    assert(nullInput != null);
+    assert(invalidDate != null);
+    assert(invalidEmail != null);
+    assert(invalidPassword != null);
+    assert(stringMismatch != null);
+    assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
+    assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
+    assert(stringWithInvalidCharacters != null);
+    assert(invalidCoordinate != null);
+    assert(emptySet != null);
+    assert(setExceedsLength != null);
+    return stringMismatch(failedValue);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result nullInput(),
+    Result invalidDate(DateTime failedValue),
+    Result invalidEmail(String failedValue),
+    Result invalidPassword(String failedValue),
+    Result stringMismatch(String failedValue),
+    Result invalidName(String failedValue),
+    Result emptyString(String failedValue),
+    Result multiLineString(String failedValue),
+    Result stringExceedsLength(String failedValue, int maxLength),
+    Result integerOutOfBounds(int failedValue),
+    Result stringWithInvalidCharacters(String failedValue),
+    Result invalidCoordinate(double failedValue),
+    Result emptySet(T failedValue),
+    Result setExceedsLength(T failedValue, int maxLength),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (stringMismatch != null) {
+      return stringMismatch(failedValue);
+    }
+    return orElse();
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result nullInput(NullInput<T> value),
+    @required Result invalidDate(InvalidDate<T> value),
+    @required Result invalidEmail(InvalidEmail<T> value),
+    @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result stringMismatch(StringMismatch<T> value),
+    @required Result invalidName(InvalidName<T> value),
+    @required Result emptyString(EmptyString<T> value),
+    @required Result multiLineString(MultiLineString<T> value),
+    @required Result stringExceedsLength(StringExceedsLength<T> value),
+    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
+    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    @required Result invalidCoordinate(InvalidCoordinates<T> value),
+    @required Result emptySet(EmptySet<T> value),
+    @required Result setExceedsLength(SetExceedsLength<T> value),
+  }) {
+    assert(nullInput != null);
+    assert(invalidDate != null);
+    assert(invalidEmail != null);
+    assert(invalidPassword != null);
+    assert(stringMismatch != null);
+    assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
+    assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
+    assert(stringWithInvalidCharacters != null);
+    assert(invalidCoordinate != null);
+    assert(emptySet != null);
+    assert(setExceedsLength != null);
+    return stringMismatch(this);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result nullInput(NullInput<T> value),
+    Result invalidDate(InvalidDate<T> value),
+    Result invalidEmail(InvalidEmail<T> value),
+    Result invalidPassword(InvalidPassword<T> value),
+    Result stringMismatch(StringMismatch<T> value),
+    Result invalidName(InvalidName<T> value),
+    Result emptyString(EmptyString<T> value),
+    Result multiLineString(MultiLineString<T> value),
+    Result stringExceedsLength(StringExceedsLength<T> value),
+    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
+    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    Result invalidCoordinate(InvalidCoordinates<T> value),
+    Result emptySet(EmptySet<T> value),
+    Result setExceedsLength(SetExceedsLength<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (stringMismatch != null) {
+      return stringMismatch(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class StringMismatch<T> implements ValueFailure<T> {
+  const factory StringMismatch({@required String failedValue}) =
+  _$StringMismatch<T>;
+  
+  String get failedValue;
+  
+  $StringMismatchCopyWith<T, StringMismatch<T>> get copyWith;
 }
 
 abstract class $InvalidNameCopyWith<T, $Res> {
@@ -971,6 +1201,7 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     @required Result invalidDate(DateTime failedValue),
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
+    @required Result stringMismatch(String failedValue),
     @required Result invalidName(String failedValue),
     @required Result emptyString(String failedValue),
     @required Result multiLineString(String failedValue),
@@ -985,6 +1216,7 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -1004,6 +1236,7 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     Result invalidDate(DateTime failedValue),
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
+    Result stringMismatch(String failedValue),
     Result invalidName(String failedValue),
     Result emptyString(String failedValue),
     Result multiLineString(String failedValue),
@@ -1029,6 +1262,7 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     @required Result invalidDate(InvalidDate<T> value),
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result stringMismatch(StringMismatch<T> value),
     @required Result invalidName(InvalidName<T> value),
     @required Result emptyString(EmptyString<T> value),
     @required Result multiLineString(MultiLineString<T> value),
@@ -1043,6 +1277,7 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -1062,6 +1297,7 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     Result invalidDate(InvalidDate<T> value),
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
+    Result stringMismatch(StringMismatch<T> value),
     Result invalidName(InvalidName<T> value),
     Result emptyString(EmptyString<T> value),
     Result multiLineString(MultiLineString<T> value),
@@ -1155,6 +1391,7 @@ class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
     @required Result invalidDate(DateTime failedValue),
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
+    @required Result stringMismatch(String failedValue),
     @required Result invalidName(String failedValue),
     @required Result emptyString(String failedValue),
     @required Result multiLineString(String failedValue),
@@ -1169,6 +1406,7 @@ class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -1188,6 +1426,7 @@ class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
     Result invalidDate(DateTime failedValue),
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
+    Result stringMismatch(String failedValue),
     Result invalidName(String failedValue),
     Result emptyString(String failedValue),
     Result multiLineString(String failedValue),
@@ -1213,6 +1452,7 @@ class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
     @required Result invalidDate(InvalidDate<T> value),
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result stringMismatch(StringMismatch<T> value),
     @required Result invalidName(InvalidName<T> value),
     @required Result emptyString(EmptyString<T> value),
     @required Result multiLineString(MultiLineString<T> value),
@@ -1227,6 +1467,7 @@ class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -1246,6 +1487,7 @@ class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
     Result invalidDate(InvalidDate<T> value),
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
+    Result stringMismatch(StringMismatch<T> value),
     Result invalidName(InvalidName<T> value),
     Result emptyString(EmptyString<T> value),
     Result multiLineString(MultiLineString<T> value),
@@ -1341,6 +1583,7 @@ class _$MultiLineString<T>
     @required Result invalidDate(DateTime failedValue),
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
+    @required Result stringMismatch(String failedValue),
     @required Result invalidName(String failedValue),
     @required Result emptyString(String failedValue),
     @required Result multiLineString(String failedValue),
@@ -1355,6 +1598,7 @@ class _$MultiLineString<T>
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -1374,6 +1618,7 @@ class _$MultiLineString<T>
     Result invalidDate(DateTime failedValue),
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
+    Result stringMismatch(String failedValue),
     Result invalidName(String failedValue),
     Result emptyString(String failedValue),
     Result multiLineString(String failedValue),
@@ -1399,6 +1644,7 @@ class _$MultiLineString<T>
     @required Result invalidDate(InvalidDate<T> value),
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result stringMismatch(StringMismatch<T> value),
     @required Result invalidName(InvalidName<T> value),
     @required Result emptyString(EmptyString<T> value),
     @required Result multiLineString(MultiLineString<T> value),
@@ -1413,6 +1659,7 @@ class _$MultiLineString<T>
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -1432,6 +1679,7 @@ class _$MultiLineString<T>
     Result invalidDate(InvalidDate<T> value),
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
+    Result stringMismatch(StringMismatch<T> value),
     Result invalidName(InvalidName<T> value),
     Result emptyString(EmptyString<T> value),
     Result multiLineString(MultiLineString<T> value),
@@ -1541,6 +1789,7 @@ class _$StringExceedsLength<T>
     @required Result invalidDate(DateTime failedValue),
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
+    @required Result stringMismatch(String failedValue),
     @required Result invalidName(String failedValue),
     @required Result emptyString(String failedValue),
     @required Result multiLineString(String failedValue),
@@ -1555,6 +1804,7 @@ class _$StringExceedsLength<T>
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -1574,6 +1824,7 @@ class _$StringExceedsLength<T>
     Result invalidDate(DateTime failedValue),
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
+    Result stringMismatch(String failedValue),
     Result invalidName(String failedValue),
     Result emptyString(String failedValue),
     Result multiLineString(String failedValue),
@@ -1599,6 +1850,7 @@ class _$StringExceedsLength<T>
     @required Result invalidDate(InvalidDate<T> value),
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result stringMismatch(StringMismatch<T> value),
     @required Result invalidName(InvalidName<T> value),
     @required Result emptyString(EmptyString<T> value),
     @required Result multiLineString(MultiLineString<T> value),
@@ -1613,6 +1865,7 @@ class _$StringExceedsLength<T>
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -1632,6 +1885,7 @@ class _$StringExceedsLength<T>
     Result invalidDate(InvalidDate<T> value),
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
+    Result stringMismatch(StringMismatch<T> value),
     Result invalidName(InvalidName<T> value),
     Result emptyString(EmptyString<T> value),
     Result multiLineString(MultiLineString<T> value),
@@ -1731,6 +1985,7 @@ class _$IntegerOutOfBounds<T>
     @required Result invalidDate(DateTime failedValue),
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
+    @required Result stringMismatch(String failedValue),
     @required Result invalidName(String failedValue),
     @required Result emptyString(String failedValue),
     @required Result multiLineString(String failedValue),
@@ -1745,6 +2000,7 @@ class _$IntegerOutOfBounds<T>
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -1764,6 +2020,7 @@ class _$IntegerOutOfBounds<T>
     Result invalidDate(DateTime failedValue),
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
+    Result stringMismatch(String failedValue),
     Result invalidName(String failedValue),
     Result emptyString(String failedValue),
     Result multiLineString(String failedValue),
@@ -1789,6 +2046,7 @@ class _$IntegerOutOfBounds<T>
     @required Result invalidDate(InvalidDate<T> value),
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result stringMismatch(StringMismatch<T> value),
     @required Result invalidName(InvalidName<T> value),
     @required Result emptyString(EmptyString<T> value),
     @required Result multiLineString(MultiLineString<T> value),
@@ -1803,6 +2061,7 @@ class _$IntegerOutOfBounds<T>
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -1822,6 +2081,7 @@ class _$IntegerOutOfBounds<T>
     Result invalidDate(InvalidDate<T> value),
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
+    Result stringMismatch(StringMismatch<T> value),
     Result invalidName(InvalidName<T> value),
     Result emptyString(EmptyString<T> value),
     Result multiLineString(MultiLineString<T> value),
@@ -1924,6 +2184,7 @@ class _$StringWithInvalidCharacters<T>
     @required Result invalidDate(DateTime failedValue),
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
+    @required Result stringMismatch(String failedValue),
     @required Result invalidName(String failedValue),
     @required Result emptyString(String failedValue),
     @required Result multiLineString(String failedValue),
@@ -1938,6 +2199,7 @@ class _$StringWithInvalidCharacters<T>
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -1957,6 +2219,7 @@ class _$StringWithInvalidCharacters<T>
     Result invalidDate(DateTime failedValue),
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
+    Result stringMismatch(String failedValue),
     Result invalidName(String failedValue),
     Result emptyString(String failedValue),
     Result multiLineString(String failedValue),
@@ -1982,6 +2245,7 @@ class _$StringWithInvalidCharacters<T>
     @required Result invalidDate(InvalidDate<T> value),
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result stringMismatch(StringMismatch<T> value),
     @required Result invalidName(InvalidName<T> value),
     @required Result emptyString(EmptyString<T> value),
     @required Result multiLineString(MultiLineString<T> value),
@@ -1996,6 +2260,7 @@ class _$StringWithInvalidCharacters<T>
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -2015,6 +2280,7 @@ class _$StringWithInvalidCharacters<T>
     Result invalidDate(InvalidDate<T> value),
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
+    Result stringMismatch(StringMismatch<T> value),
     Result invalidName(InvalidName<T> value),
     Result emptyString(EmptyString<T> value),
     Result multiLineString(MultiLineString<T> value),
@@ -2114,6 +2380,7 @@ class _$InvalidCoordinates<T>
     @required Result invalidDate(DateTime failedValue),
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
+    @required Result stringMismatch(String failedValue),
     @required Result invalidName(String failedValue),
     @required Result emptyString(String failedValue),
     @required Result multiLineString(String failedValue),
@@ -2128,6 +2395,7 @@ class _$InvalidCoordinates<T>
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -2147,6 +2415,7 @@ class _$InvalidCoordinates<T>
     Result invalidDate(DateTime failedValue),
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
+    Result stringMismatch(String failedValue),
     Result invalidName(String failedValue),
     Result emptyString(String failedValue),
     Result multiLineString(String failedValue),
@@ -2172,6 +2441,7 @@ class _$InvalidCoordinates<T>
     @required Result invalidDate(InvalidDate<T> value),
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result stringMismatch(StringMismatch<T> value),
     @required Result invalidName(InvalidName<T> value),
     @required Result emptyString(EmptyString<T> value),
     @required Result multiLineString(MultiLineString<T> value),
@@ -2186,6 +2456,7 @@ class _$InvalidCoordinates<T>
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -2205,6 +2476,7 @@ class _$InvalidCoordinates<T>
     Result invalidDate(InvalidDate<T> value),
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
+    Result stringMismatch(StringMismatch<T> value),
     Result invalidName(InvalidName<T> value),
     Result emptyString(EmptyString<T> value),
     Result multiLineString(MultiLineString<T> value),
@@ -2298,6 +2570,7 @@ class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
     @required Result invalidDate(DateTime failedValue),
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
+    @required Result stringMismatch(String failedValue),
     @required Result invalidName(String failedValue),
     @required Result emptyString(String failedValue),
     @required Result multiLineString(String failedValue),
@@ -2312,6 +2585,7 @@ class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -2331,6 +2605,7 @@ class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
     Result invalidDate(DateTime failedValue),
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
+    Result stringMismatch(String failedValue),
     Result invalidName(String failedValue),
     Result emptyString(String failedValue),
     Result multiLineString(String failedValue),
@@ -2356,6 +2631,7 @@ class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
     @required Result invalidDate(InvalidDate<T> value),
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result stringMismatch(StringMismatch<T> value),
     @required Result invalidName(InvalidName<T> value),
     @required Result emptyString(EmptyString<T> value),
     @required Result multiLineString(MultiLineString<T> value),
@@ -2370,6 +2646,7 @@ class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -2389,6 +2666,7 @@ class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
     Result invalidDate(InvalidDate<T> value),
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
+    Result stringMismatch(StringMismatch<T> value),
     Result invalidName(InvalidName<T> value),
     Result emptyString(EmptyString<T> value),
     Result multiLineString(MultiLineString<T> value),
@@ -2494,6 +2772,7 @@ class _$SetExceedsLength<T>
     @required Result invalidDate(DateTime failedValue),
     @required Result invalidEmail(String failedValue),
     @required Result invalidPassword(String failedValue),
+    @required Result stringMismatch(String failedValue),
     @required Result invalidName(String failedValue),
     @required Result emptyString(String failedValue),
     @required Result multiLineString(String failedValue),
@@ -2508,6 +2787,7 @@ class _$SetExceedsLength<T>
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -2527,6 +2807,7 @@ class _$SetExceedsLength<T>
     Result invalidDate(DateTime failedValue),
     Result invalidEmail(String failedValue),
     Result invalidPassword(String failedValue),
+    Result stringMismatch(String failedValue),
     Result invalidName(String failedValue),
     Result emptyString(String failedValue),
     Result multiLineString(String failedValue),
@@ -2552,6 +2833,7 @@ class _$SetExceedsLength<T>
     @required Result invalidDate(InvalidDate<T> value),
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result stringMismatch(StringMismatch<T> value),
     @required Result invalidName(InvalidName<T> value),
     @required Result emptyString(EmptyString<T> value),
     @required Result multiLineString(MultiLineString<T> value),
@@ -2566,6 +2848,7 @@ class _$SetExceedsLength<T>
     assert(invalidDate != null);
     assert(invalidEmail != null);
     assert(invalidPassword != null);
+    assert(stringMismatch != null);
     assert(invalidName != null);
     assert(emptyString != null);
     assert(multiLineString != null);
@@ -2585,6 +2868,7 @@ class _$SetExceedsLength<T>
     Result invalidDate(InvalidDate<T> value),
     Result invalidEmail(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
+    Result stringMismatch(StringMismatch<T> value),
     Result invalidName(InvalidName<T> value),
     Result emptyString(EmptyString<T> value),
     Result multiLineString(MultiLineString<T> value),

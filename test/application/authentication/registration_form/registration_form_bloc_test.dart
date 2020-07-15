@@ -14,6 +14,7 @@ import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
+import 'package:worldon/domain/core/validation/objects/password_confirmator.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/injection.dart';
 
@@ -33,6 +34,7 @@ void main() {
   const name = "test";
   const username = "test";
   const password = "abcd*1234";
+  const differentPassword = "abcd*123";
   const emailAddress = "test@test.test";
   final birthday = DateTime.now().subtract(const Duration(days: 100000));
   const description = "For testing";
@@ -144,6 +146,35 @@ void main() {
         ],
       );
       blocTest(
+        "${TestDescription.shouldEmitUpdated} with the passwordConfirmation",
+        build: () async {
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
+          return getIt<RegistrationFormBloc>();
+        },
+        act: (bloc) async {
+          bloc.add(const RegistrationFormEvent.initialized());
+          bloc.add(const RegistrationFormEvent.passwordChanged(password));
+          bloc.add(const RegistrationFormEvent.passwordConfirmationChanged(password));
+        },
+        verify: (_) async => verify(getLoggedInUser.call(any)),
+        expect: [
+          RegistrationFormState.initial().copyWith(
+            user: User.empty().copyWith(
+              password: Password(password),
+            ),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: User.empty().copyWith(
+              password: Password(password),
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
+            ),
+          ),
+        ],
+      );
+      blocTest(
         "${TestDescription.shouldEmitUpdated} with the email",
         build: () async {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
@@ -236,6 +267,7 @@ void main() {
           bloc.add(const RegistrationFormEvent.nameChanged(name));
           bloc.add(const RegistrationFormEvent.usernameChanged(username));
           bloc.add(const RegistrationFormEvent.passwordChanged(password));
+          bloc.add(const RegistrationFormEvent.passwordConfirmationChanged(password));
           bloc.add(const RegistrationFormEvent.emailAddressChanged(emailAddress));
           bloc.add(RegistrationFormEvent.birthdayChanged(birthday));
           bloc.add(const RegistrationFormEvent.descriptionChanged(description));
@@ -273,7 +305,23 @@ void main() {
               name: Name(name),
               username: Name(username),
               password: Password(password),
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: User.empty().copyWith(
+              name: Name(name),
+              username: Name(username),
+              password: Password(password),
               email: EmailAddress(emailAddress),
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
             ),
             failureOrSuccessOption: none(),
           ),
@@ -284,6 +332,10 @@ void main() {
               password: Password(password),
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
             ),
             failureOrSuccessOption: none(),
           ),
@@ -295,6 +347,10 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
             ),
             failureOrSuccessOption: none(),
           ),
@@ -308,6 +364,10 @@ void main() {
               description: EntityDescription(description),
               interests: interests,
             ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
+            ),
             failureOrSuccessOption: none(),
           ),
           RegistrationFormState.initial().copyWith(
@@ -319,6 +379,10 @@ void main() {
               birthday: PastDate(birthday),
               description: EntityDescription(description),
               interests: interests,
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
             ),
             isSubmitting: true,
             failureOrSuccessOption: none(),
@@ -332,6 +396,10 @@ void main() {
               birthday: PastDate(birthday),
               description: EntityDescription(description),
               interests: interests,
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
             ),
             isSubmitting: false,
             showErrorMessages: true,
@@ -523,6 +591,158 @@ void main() {
             isSubmitting: false,
             showErrorMessages: true,
             failureOrSuccessOption: some(left(failure)),
+          ),
+        ],
+      );
+      blocTest(
+        "Shouldn't call register if the User has invalid fields",
+        build: () async {
+          when(register.call(any)).thenAnswer((_) async => right(unit));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
+          return getIt<RegistrationFormBloc>();
+        },
+        act: (bloc) async {
+          bloc.add(const RegistrationFormEvent.initialized());
+          bloc.add(const RegistrationFormEvent.nameChanged(name));
+          bloc.add(const RegistrationFormEvent.usernameChanged(username));
+          bloc.add(const RegistrationFormEvent.passwordChanged(password));
+          bloc.add(const RegistrationFormEvent.passwordConfirmationChanged(differentPassword));
+          bloc.add(const RegistrationFormEvent.emailAddressChanged(emailAddress));
+          bloc.add(RegistrationFormEvent.birthdayChanged(birthday));
+          bloc.add(const RegistrationFormEvent.descriptionChanged(description));
+          bloc.add(RegistrationFormEvent.interestsChanged(interests));
+          bloc.add(const RegistrationFormEvent.submitted());
+        },
+        verify: (_) async {
+          verify(getLoggedInUser.call(any));
+          verifyNoMoreInteractions(register);
+        },
+        expect: [
+          RegistrationFormState.initial().copyWith(
+            user: User.empty().copyWith(
+              name: Name(name),
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: User.empty().copyWith(
+              name: Name(name),
+              username: Name(username),
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: User.empty().copyWith(
+              name: Name(name),
+              username: Name(username),
+              password: Password(password),
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: User.empty().copyWith(
+              name: Name(name),
+              username: Name(username),
+              password: Password(password),
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: differentPassword,
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: User.empty().copyWith(
+              name: Name(name),
+              username: Name(username),
+              password: Password(password),
+              email: EmailAddress(emailAddress),
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: differentPassword,
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: User.empty().copyWith(
+              name: Name(name),
+              username: Name(username),
+              password: Password(password),
+              email: EmailAddress(emailAddress),
+              birthday: PastDate(birthday),
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: differentPassword,
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: User.empty().copyWith(
+              name: Name(name),
+              username: Name(username),
+              password: Password(password),
+              email: EmailAddress(emailAddress),
+              birthday: PastDate(birthday),
+              description: EntityDescription(description),
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: differentPassword,
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: User.empty().copyWith(
+              name: Name(name),
+              username: Name(username),
+              password: Password(password),
+              email: EmailAddress(emailAddress),
+              birthday: PastDate(birthday),
+              description: EntityDescription(description),
+              interests: interests,
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: differentPassword,
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: User.empty().copyWith(
+              name: Name(name),
+              username: Name(username),
+              password: Password(password),
+              email: EmailAddress(emailAddress),
+              birthday: PastDate(birthday),
+              description: EntityDescription(description),
+              interests: interests,
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: differentPassword,
+            ),
+            isSubmitting: true,
+            failureOrSuccessOption: none(),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: User.empty().copyWith(
+              name: Name(name),
+              username: Name(username),
+              password: Password(password),
+              email: EmailAddress(emailAddress),
+              birthday: PastDate(birthday),
+              description: EntityDescription(description),
+              interests: interests,
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: differentPassword,
+            ),
+            isSubmitting: false,
+            showErrorMessages: true,
+            failureOrSuccessOption: none(),
           ),
         ],
       );

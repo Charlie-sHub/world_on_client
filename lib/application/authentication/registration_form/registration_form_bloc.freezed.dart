@@ -39,6 +39,13 @@ class _$RegistrationFormEventTearOff {
   }
 
 // ignore: unused_element
+  _PasswordConfirmationChanged passwordConfirmationChanged(String passwordConfirmation) {
+    return _PasswordConfirmationChanged(
+      passwordConfirmation,
+    );
+  }
+
+// ignore: unused_element
   _EmailAddressChanged emailAddressChanged(String emailAddress) {
     return _EmailAddressChanged(
       emailAddress,
@@ -82,6 +89,7 @@ mixin _$RegistrationFormEvent {
     @required Result nameChanged(String name),
     @required Result usernameChanged(String username),
     @required Result passwordChanged(String password),
+    @required Result passwordConfirmationChanged(String passwordConfirmation),
     @required Result emailAddressChanged(String emailAddress),
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
@@ -94,6 +102,7 @@ mixin _$RegistrationFormEvent {
     Result nameChanged(String name),
     Result usernameChanged(String username),
     Result passwordChanged(String password),
+    Result passwordConfirmationChanged(String passwordConfirmation),
     Result emailAddressChanged(String emailAddress),
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
@@ -107,6 +116,7 @@ mixin _$RegistrationFormEvent {
     @required Result nameChanged(_NameChanged value),
     @required Result usernameChanged(_UsernameChanged value),
     @required Result passwordChanged(_PasswordChanged value),
+    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
     @required Result emailAddressChanged(_EmailAddressChanged value),
     @required Result birthdayChanged(_BirthdayChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
@@ -119,6 +129,7 @@ mixin _$RegistrationFormEvent {
     Result nameChanged(_NameChanged value),
     Result usernameChanged(_UsernameChanged value),
     Result passwordChanged(_PasswordChanged value),
+    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
     Result emailAddressChanged(_EmailAddressChanged value),
     Result birthdayChanged(_BirthdayChanged value),
     Result descriptionChanged(_DescriptionChanged value),
@@ -177,6 +188,7 @@ class _$_Initialized implements _Initialized {
     @required Result nameChanged(String name),
     @required Result usernameChanged(String username),
     @required Result passwordChanged(String password),
+    @required Result passwordConfirmationChanged(String passwordConfirmation),
     @required Result emailAddressChanged(String emailAddress),
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
@@ -187,6 +199,7 @@ class _$_Initialized implements _Initialized {
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
+    assert(passwordConfirmationChanged != null);
     assert(emailAddressChanged != null);
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
@@ -202,6 +215,7 @@ class _$_Initialized implements _Initialized {
     Result nameChanged(String name),
     Result usernameChanged(String username),
     Result passwordChanged(String password),
+    Result passwordConfirmationChanged(String passwordConfirmation),
     Result emailAddressChanged(String emailAddress),
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
@@ -223,6 +237,7 @@ class _$_Initialized implements _Initialized {
     @required Result nameChanged(_NameChanged value),
     @required Result usernameChanged(_UsernameChanged value),
     @required Result passwordChanged(_PasswordChanged value),
+    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
     @required Result emailAddressChanged(_EmailAddressChanged value),
     @required Result birthdayChanged(_BirthdayChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
@@ -233,6 +248,7 @@ class _$_Initialized implements _Initialized {
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
+    assert(passwordConfirmationChanged != null);
     assert(emailAddressChanged != null);
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
@@ -248,6 +264,7 @@ class _$_Initialized implements _Initialized {
     Result nameChanged(_NameChanged value),
     Result usernameChanged(_UsernameChanged value),
     Result passwordChanged(_PasswordChanged value),
+    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
     Result emailAddressChanged(_EmailAddressChanged value),
     Result birthdayChanged(_BirthdayChanged value),
     Result descriptionChanged(_DescriptionChanged value),
@@ -325,6 +342,7 @@ class _$_NameChanged implements _NameChanged {
     @required Result nameChanged(String name),
     @required Result usernameChanged(String username),
     @required Result passwordChanged(String password),
+    @required Result passwordConfirmationChanged(String passwordConfirmation),
     @required Result emailAddressChanged(String emailAddress),
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
@@ -335,6 +353,7 @@ class _$_NameChanged implements _NameChanged {
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
+    assert(passwordConfirmationChanged != null);
     assert(emailAddressChanged != null);
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
@@ -350,6 +369,7 @@ class _$_NameChanged implements _NameChanged {
     Result nameChanged(String name),
     Result usernameChanged(String username),
     Result passwordChanged(String password),
+    Result passwordConfirmationChanged(String passwordConfirmation),
     Result emailAddressChanged(String emailAddress),
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
@@ -371,6 +391,7 @@ class _$_NameChanged implements _NameChanged {
     @required Result nameChanged(_NameChanged value),
     @required Result usernameChanged(_UsernameChanged value),
     @required Result passwordChanged(_PasswordChanged value),
+    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
     @required Result emailAddressChanged(_EmailAddressChanged value),
     @required Result birthdayChanged(_BirthdayChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
@@ -381,6 +402,7 @@ class _$_NameChanged implements _NameChanged {
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
+    assert(passwordConfirmationChanged != null);
     assert(emailAddressChanged != null);
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
@@ -396,6 +418,7 @@ class _$_NameChanged implements _NameChanged {
     Result nameChanged(_NameChanged value),
     Result usernameChanged(_UsernameChanged value),
     Result passwordChanged(_PasswordChanged value),
+    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
     Result emailAddressChanged(_EmailAddressChanged value),
     Result birthdayChanged(_BirthdayChanged value),
     Result descriptionChanged(_DescriptionChanged value),
@@ -477,6 +500,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     @required Result nameChanged(String name),
     @required Result usernameChanged(String username),
     @required Result passwordChanged(String password),
+    @required Result passwordConfirmationChanged(String passwordConfirmation),
     @required Result emailAddressChanged(String emailAddress),
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
@@ -487,6 +511,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
+    assert(passwordConfirmationChanged != null);
     assert(emailAddressChanged != null);
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
@@ -502,6 +527,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     Result nameChanged(String name),
     Result usernameChanged(String username),
     Result passwordChanged(String password),
+    Result passwordConfirmationChanged(String passwordConfirmation),
     Result emailAddressChanged(String emailAddress),
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
@@ -523,6 +549,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     @required Result nameChanged(_NameChanged value),
     @required Result usernameChanged(_UsernameChanged value),
     @required Result passwordChanged(_PasswordChanged value),
+    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
     @required Result emailAddressChanged(_EmailAddressChanged value),
     @required Result birthdayChanged(_BirthdayChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
@@ -533,6 +560,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
+    assert(passwordConfirmationChanged != null);
     assert(emailAddressChanged != null);
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
@@ -548,6 +576,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     Result nameChanged(_NameChanged value),
     Result usernameChanged(_UsernameChanged value),
     Result passwordChanged(_PasswordChanged value),
+    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
     Result emailAddressChanged(_EmailAddressChanged value),
     Result birthdayChanged(_BirthdayChanged value),
     Result descriptionChanged(_DescriptionChanged value),
@@ -629,6 +658,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     @required Result nameChanged(String name),
     @required Result usernameChanged(String username),
     @required Result passwordChanged(String password),
+    @required Result passwordConfirmationChanged(String passwordConfirmation),
     @required Result emailAddressChanged(String emailAddress),
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
@@ -639,6 +669,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
+    assert(passwordConfirmationChanged != null);
     assert(emailAddressChanged != null);
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
@@ -654,6 +685,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     Result nameChanged(String name),
     Result usernameChanged(String username),
     Result passwordChanged(String password),
+    Result passwordConfirmationChanged(String passwordConfirmation),
     Result emailAddressChanged(String emailAddress),
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
@@ -675,6 +707,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     @required Result nameChanged(_NameChanged value),
     @required Result usernameChanged(_UsernameChanged value),
     @required Result passwordChanged(_PasswordChanged value),
+    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
     @required Result emailAddressChanged(_EmailAddressChanged value),
     @required Result birthdayChanged(_BirthdayChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
@@ -685,6 +718,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
+    assert(passwordConfirmationChanged != null);
     assert(emailAddressChanged != null);
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
@@ -700,6 +734,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     Result nameChanged(_NameChanged value),
     Result usernameChanged(_UsernameChanged value),
     Result passwordChanged(_PasswordChanged value),
+    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
     Result emailAddressChanged(_EmailAddressChanged value),
     Result birthdayChanged(_BirthdayChanged value),
     Result descriptionChanged(_DescriptionChanged value),
@@ -720,6 +755,177 @@ abstract class _PasswordChanged implements RegistrationFormEvent {
 
   String get password;
   _$PasswordChangedCopyWith<_PasswordChanged> get copyWith;
+}
+
+abstract class _$PasswordConfirmationChangedCopyWith<$Res> {
+  factory _$PasswordConfirmationChangedCopyWith(_PasswordConfirmationChanged value,
+    $Res Function(_PasswordConfirmationChanged) then) =
+  __$PasswordConfirmationChangedCopyWithImpl<$Res>;
+  
+  $Res call({String passwordConfirmation});
+}
+
+class __$PasswordConfirmationChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+  implements _$PasswordConfirmationChangedCopyWith<$Res> {
+  __$PasswordConfirmationChangedCopyWithImpl(_PasswordConfirmationChanged _value,
+    $Res Function(_PasswordConfirmationChanged) _then)
+    : super(_value, (v) => _then(v as _PasswordConfirmationChanged));
+  
+  @override
+  _PasswordConfirmationChanged get _value =>
+    super._value as _PasswordConfirmationChanged;
+  
+  @override
+  $Res call({
+    Object passwordConfirmation = freezed,
+  }) {
+    return _then(_PasswordConfirmationChanged(
+      passwordConfirmation == freezed
+        ? _value.passwordConfirmation
+        : passwordConfirmation as String,
+    ));
+  }
+}
+
+class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
+  const _$_PasswordConfirmationChanged(this.passwordConfirmation)
+    : assert(passwordConfirmation != null);
+  
+  @override
+  final String passwordConfirmation;
+  
+  @override
+  String toString() {
+    return 'RegistrationFormEvent.passwordConfirmationChanged(passwordConfirmation: $passwordConfirmation)';
+  }
+  
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+      (other is _PasswordConfirmationChanged &&
+        (identical(other.passwordConfirmation, passwordConfirmation) ||
+          const DeepCollectionEquality()
+            .equals(other.passwordConfirmation, passwordConfirmation)));
+  }
+  
+  @override
+  int get hashCode =>
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(passwordConfirmation);
+  
+  @override
+  _$PasswordConfirmationChangedCopyWith<_PasswordConfirmationChanged>
+  get copyWith =>
+    __$PasswordConfirmationChangedCopyWithImpl<
+      _PasswordConfirmationChanged>(this, _$identity);
+  
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result initialized(),
+    @required Result nameChanged(String name),
+    @required Result usernameChanged(String username),
+    @required Result passwordChanged(String password),
+    @required Result passwordConfirmationChanged(String passwordConfirmation),
+    @required Result emailAddressChanged(String emailAddress),
+    @required Result birthdayChanged(DateTime birthday),
+    @required Result descriptionChanged(String description),
+    @required Result interestsChanged(Set<Tag> interests),
+    @required Result submitted(),
+  }) {
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(passwordConfirmationChanged != null);
+    assert(emailAddressChanged != null);
+    assert(birthdayChanged != null);
+    assert(descriptionChanged != null);
+    assert(interestsChanged != null);
+    assert(submitted != null);
+    return passwordConfirmationChanged(passwordConfirmation);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result initialized(),
+    Result nameChanged(String name),
+    Result usernameChanged(String username),
+    Result passwordChanged(String password),
+    Result passwordConfirmationChanged(String passwordConfirmation),
+    Result emailAddressChanged(String emailAddress),
+    Result birthdayChanged(DateTime birthday),
+    Result descriptionChanged(String description),
+    Result interestsChanged(Set<Tag> interests),
+    Result submitted(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (passwordConfirmationChanged != null) {
+      return passwordConfirmationChanged(passwordConfirmation);
+    }
+    return orElse();
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result initialized(_Initialized value),
+    @required Result nameChanged(_NameChanged value),
+    @required Result usernameChanged(_UsernameChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
+    @required Result emailAddressChanged(_EmailAddressChanged value),
+    @required Result birthdayChanged(_BirthdayChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result interestsChanged(_InterestsChanged value),
+    @required Result submitted(_Submitted value),
+  }) {
+    assert(initialized != null);
+    assert(nameChanged != null);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(passwordConfirmationChanged != null);
+    assert(emailAddressChanged != null);
+    assert(birthdayChanged != null);
+    assert(descriptionChanged != null);
+    assert(interestsChanged != null);
+    assert(submitted != null);
+    return passwordConfirmationChanged(this);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result initialized(_Initialized value),
+    Result nameChanged(_NameChanged value),
+    Result usernameChanged(_UsernameChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
+    Result emailAddressChanged(_EmailAddressChanged value),
+    Result birthdayChanged(_BirthdayChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result interestsChanged(_InterestsChanged value),
+    Result submitted(_Submitted value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (passwordConfirmationChanged != null) {
+      return passwordConfirmationChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PasswordConfirmationChanged implements RegistrationFormEvent {
+  const factory _PasswordConfirmationChanged(String passwordConfirmation) =
+  _$_PasswordConfirmationChanged;
+  
+  String get passwordConfirmation;
+  
+  _$PasswordConfirmationChangedCopyWith<_PasswordConfirmationChanged>
+  get copyWith;
 }
 
 abstract class _$EmailAddressChangedCopyWith<$Res> {
@@ -784,6 +990,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     @required Result nameChanged(String name),
     @required Result usernameChanged(String username),
     @required Result passwordChanged(String password),
+    @required Result passwordConfirmationChanged(String passwordConfirmation),
     @required Result emailAddressChanged(String emailAddress),
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
@@ -794,6 +1001,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
+    assert(passwordConfirmationChanged != null);
     assert(emailAddressChanged != null);
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
@@ -809,6 +1017,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     Result nameChanged(String name),
     Result usernameChanged(String username),
     Result passwordChanged(String password),
+    Result passwordConfirmationChanged(String passwordConfirmation),
     Result emailAddressChanged(String emailAddress),
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
@@ -830,6 +1039,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     @required Result nameChanged(_NameChanged value),
     @required Result usernameChanged(_UsernameChanged value),
     @required Result passwordChanged(_PasswordChanged value),
+    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
     @required Result emailAddressChanged(_EmailAddressChanged value),
     @required Result birthdayChanged(_BirthdayChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
@@ -840,6 +1050,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
+    assert(passwordConfirmationChanged != null);
     assert(emailAddressChanged != null);
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
@@ -855,6 +1066,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     Result nameChanged(_NameChanged value),
     Result usernameChanged(_UsernameChanged value),
     Result passwordChanged(_PasswordChanged value),
+    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
     Result emailAddressChanged(_EmailAddressChanged value),
     Result birthdayChanged(_BirthdayChanged value),
     Result descriptionChanged(_DescriptionChanged value),
@@ -937,6 +1149,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     @required Result nameChanged(String name),
     @required Result usernameChanged(String username),
     @required Result passwordChanged(String password),
+    @required Result passwordConfirmationChanged(String passwordConfirmation),
     @required Result emailAddressChanged(String emailAddress),
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
@@ -947,6 +1160,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
+    assert(passwordConfirmationChanged != null);
     assert(emailAddressChanged != null);
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
@@ -962,6 +1176,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     Result nameChanged(String name),
     Result usernameChanged(String username),
     Result passwordChanged(String password),
+    Result passwordConfirmationChanged(String passwordConfirmation),
     Result emailAddressChanged(String emailAddress),
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
@@ -983,6 +1198,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     @required Result nameChanged(_NameChanged value),
     @required Result usernameChanged(_UsernameChanged value),
     @required Result passwordChanged(_PasswordChanged value),
+    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
     @required Result emailAddressChanged(_EmailAddressChanged value),
     @required Result birthdayChanged(_BirthdayChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
@@ -993,6 +1209,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
+    assert(passwordConfirmationChanged != null);
     assert(emailAddressChanged != null);
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
@@ -1008,6 +1225,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     Result nameChanged(_NameChanged value),
     Result usernameChanged(_UsernameChanged value),
     Result passwordChanged(_PasswordChanged value),
+    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
     Result emailAddressChanged(_EmailAddressChanged value),
     Result birthdayChanged(_BirthdayChanged value),
     Result descriptionChanged(_DescriptionChanged value),
@@ -1089,6 +1307,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     @required Result nameChanged(String name),
     @required Result usernameChanged(String username),
     @required Result passwordChanged(String password),
+    @required Result passwordConfirmationChanged(String passwordConfirmation),
     @required Result emailAddressChanged(String emailAddress),
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
@@ -1099,6 +1318,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
+    assert(passwordConfirmationChanged != null);
     assert(emailAddressChanged != null);
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
@@ -1114,6 +1334,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     Result nameChanged(String name),
     Result usernameChanged(String username),
     Result passwordChanged(String password),
+    Result passwordConfirmationChanged(String passwordConfirmation),
     Result emailAddressChanged(String emailAddress),
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
@@ -1135,6 +1356,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     @required Result nameChanged(_NameChanged value),
     @required Result usernameChanged(_UsernameChanged value),
     @required Result passwordChanged(_PasswordChanged value),
+    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
     @required Result emailAddressChanged(_EmailAddressChanged value),
     @required Result birthdayChanged(_BirthdayChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
@@ -1145,6 +1367,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
+    assert(passwordConfirmationChanged != null);
     assert(emailAddressChanged != null);
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
@@ -1160,6 +1383,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     Result nameChanged(_NameChanged value),
     Result usernameChanged(_UsernameChanged value),
     Result passwordChanged(_PasswordChanged value),
+    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
     Result emailAddressChanged(_EmailAddressChanged value),
     Result birthdayChanged(_BirthdayChanged value),
     Result descriptionChanged(_DescriptionChanged value),
@@ -1241,6 +1465,7 @@ class _$_InterestsChanged implements _InterestsChanged {
     @required Result nameChanged(String name),
     @required Result usernameChanged(String username),
     @required Result passwordChanged(String password),
+    @required Result passwordConfirmationChanged(String passwordConfirmation),
     @required Result emailAddressChanged(String emailAddress),
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
@@ -1251,6 +1476,7 @@ class _$_InterestsChanged implements _InterestsChanged {
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
+    assert(passwordConfirmationChanged != null);
     assert(emailAddressChanged != null);
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
@@ -1266,6 +1492,7 @@ class _$_InterestsChanged implements _InterestsChanged {
     Result nameChanged(String name),
     Result usernameChanged(String username),
     Result passwordChanged(String password),
+    Result passwordConfirmationChanged(String passwordConfirmation),
     Result emailAddressChanged(String emailAddress),
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
@@ -1287,6 +1514,7 @@ class _$_InterestsChanged implements _InterestsChanged {
     @required Result nameChanged(_NameChanged value),
     @required Result usernameChanged(_UsernameChanged value),
     @required Result passwordChanged(_PasswordChanged value),
+    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
     @required Result emailAddressChanged(_EmailAddressChanged value),
     @required Result birthdayChanged(_BirthdayChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
@@ -1297,6 +1525,7 @@ class _$_InterestsChanged implements _InterestsChanged {
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
+    assert(passwordConfirmationChanged != null);
     assert(emailAddressChanged != null);
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
@@ -1312,6 +1541,7 @@ class _$_InterestsChanged implements _InterestsChanged {
     Result nameChanged(_NameChanged value),
     Result usernameChanged(_UsernameChanged value),
     Result passwordChanged(_PasswordChanged value),
+    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
     Result emailAddressChanged(_EmailAddressChanged value),
     Result birthdayChanged(_BirthdayChanged value),
     Result descriptionChanged(_DescriptionChanged value),
@@ -1371,6 +1601,7 @@ class _$_Submitted implements _Submitted {
     @required Result nameChanged(String name),
     @required Result usernameChanged(String username),
     @required Result passwordChanged(String password),
+    @required Result passwordConfirmationChanged(String passwordConfirmation),
     @required Result emailAddressChanged(String emailAddress),
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
@@ -1381,6 +1612,7 @@ class _$_Submitted implements _Submitted {
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
+    assert(passwordConfirmationChanged != null);
     assert(emailAddressChanged != null);
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
@@ -1396,6 +1628,7 @@ class _$_Submitted implements _Submitted {
     Result nameChanged(String name),
     Result usernameChanged(String username),
     Result passwordChanged(String password),
+    Result passwordConfirmationChanged(String passwordConfirmation),
     Result emailAddressChanged(String emailAddress),
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
@@ -1417,6 +1650,7 @@ class _$_Submitted implements _Submitted {
     @required Result nameChanged(_NameChanged value),
     @required Result usernameChanged(_UsernameChanged value),
     @required Result passwordChanged(_PasswordChanged value),
+    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
     @required Result emailAddressChanged(_EmailAddressChanged value),
     @required Result birthdayChanged(_BirthdayChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
@@ -1427,6 +1661,7 @@ class _$_Submitted implements _Submitted {
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
+    assert(passwordConfirmationChanged != null);
     assert(emailAddressChanged != null);
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
@@ -1442,6 +1677,7 @@ class _$_Submitted implements _Submitted {
     Result nameChanged(_NameChanged value),
     Result usernameChanged(_UsernameChanged value),
     Result passwordChanged(_PasswordChanged value),
+    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
     Result emailAddressChanged(_EmailAddressChanged value),
     Result birthdayChanged(_BirthdayChanged value),
     Result descriptionChanged(_DescriptionChanged value),
@@ -1466,11 +1702,13 @@ class _$RegistrationFormStateTearOff {
 
 // ignore: unused_element
   _RegistrationFormState call({@required User user,
+    @required PasswordConfirmator passwordConfirmator,
     @required bool showErrorMessages,
     @required bool isSubmitting,
     @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _RegistrationFormState(
       user: user,
+      passwordConfirmator: passwordConfirmator,
       showErrorMessages: showErrorMessages,
       isSubmitting: isSubmitting,
       failureOrSuccessOption: failureOrSuccessOption,
@@ -1483,6 +1721,8 @@ const $RegistrationFormState = _$RegistrationFormStateTearOff();
 
 mixin _$RegistrationFormState {
   User get user;
+
+  PasswordConfirmator get passwordConfirmator;
   bool get showErrorMessages;
   bool get isSubmitting;
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
@@ -1496,6 +1736,7 @@ abstract class $RegistrationFormStateCopyWith<$Res> {
   _$RegistrationFormStateCopyWithImpl<$Res>;
 
   $Res call({User user,
+    PasswordConfirmator passwordConfirmator,
     bool showErrorMessages,
     bool isSubmitting,
     Option<Either<Failure, Unit>> failureOrSuccessOption});
@@ -1514,12 +1755,16 @@ class _$RegistrationFormStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object user = freezed,
+    Object passwordConfirmator = freezed,
     Object showErrorMessages = freezed,
     Object isSubmitting = freezed,
     Object failureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
       user: user == freezed ? _value.user : user as User,
+      passwordConfirmator: passwordConfirmator == freezed
+        ? _value.passwordConfirmator
+        : passwordConfirmator as PasswordConfirmator,
       showErrorMessages: showErrorMessages == freezed
         ? _value.showErrorMessages
         : showErrorMessages as bool,
@@ -1549,6 +1794,7 @@ abstract class _$RegistrationFormStateCopyWith<$Res>
   __$RegistrationFormStateCopyWithImpl<$Res>;
   @override
   $Res call({User user,
+    PasswordConfirmator passwordConfirmator,
     bool showErrorMessages,
     bool isSubmitting,
     Option<Either<Failure, Unit>> failureOrSuccessOption});
@@ -1569,12 +1815,16 @@ class __$RegistrationFormStateCopyWithImpl<$Res> extends _$RegistrationFormState
   @override
   $Res call({
     Object user = freezed,
+    Object passwordConfirmator = freezed,
     Object showErrorMessages = freezed,
     Object isSubmitting = freezed,
     Object failureOrSuccessOption = freezed,
   }) {
     return _then(_RegistrationFormState(
       user: user == freezed ? _value.user : user as User,
+      passwordConfirmator: passwordConfirmator == freezed
+        ? _value.passwordConfirmator
+        : passwordConfirmator as PasswordConfirmator,
       showErrorMessages: showErrorMessages == freezed
         ? _value.showErrorMessages
         : showErrorMessages as bool,
@@ -1589,16 +1839,20 @@ class __$RegistrationFormStateCopyWithImpl<$Res> extends _$RegistrationFormState
 
 class _$_RegistrationFormState implements _RegistrationFormState {
   const _$_RegistrationFormState({@required this.user,
+    @required this.passwordConfirmator,
     @required this.showErrorMessages,
     @required this.isSubmitting,
     @required this.failureOrSuccessOption})
       : assert(user != null),
+      assert(passwordConfirmator != null),
         assert(showErrorMessages != null),
         assert(isSubmitting != null),
         assert(failureOrSuccessOption != null);
 
   @override
   final User user;
+  @override
+  final PasswordConfirmator passwordConfirmator;
   @override
   final bool showErrorMessages;
   @override
@@ -1608,7 +1862,7 @@ class _$_RegistrationFormState implements _RegistrationFormState {
 
   @override
   String toString() {
-    return 'RegistrationFormState(user: $user, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, failureOrSuccessOption: $failureOrSuccessOption)';
+    return 'RegistrationFormState(user: $user, passwordConfirmator: $passwordConfirmator, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, failureOrSuccessOption: $failureOrSuccessOption)';
   }
 
   @override
@@ -1617,6 +1871,9 @@ class _$_RegistrationFormState implements _RegistrationFormState {
         (other is _RegistrationFormState &&
           (identical(other.user, user) ||
             const DeepCollectionEquality().equals(other.user, user)) &&
+          (identical(other.passwordConfirmator, passwordConfirmator) ||
+            const DeepCollectionEquality()
+              .equals(other.passwordConfirmator, passwordConfirmator)) &&
           (identical(other.showErrorMessages, showErrorMessages) ||
             const DeepCollectionEquality()
               .equals(other.showErrorMessages, showErrorMessages)) &&
@@ -1632,6 +1889,7 @@ class _$_RegistrationFormState implements _RegistrationFormState {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(user) ^
+      const DeepCollectionEquality().hash(passwordConfirmator) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
@@ -1644,6 +1902,7 @@ class _$_RegistrationFormState implements _RegistrationFormState {
 
 abstract class _RegistrationFormState implements RegistrationFormState {
   const factory _RegistrationFormState({@required User user,
+    @required PasswordConfirmator passwordConfirmator,
     @required bool showErrorMessages,
     @required bool isSubmitting,
     @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
@@ -1651,6 +1910,9 @@ abstract class _RegistrationFormState implements RegistrationFormState {
 
   @override
   User get user;
+  
+  @override
+  PasswordConfirmator get passwordConfirmator;
   @override
   bool get showErrorMessages;
   @override

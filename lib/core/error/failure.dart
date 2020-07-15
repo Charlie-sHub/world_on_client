@@ -11,17 +11,18 @@ part 'failure.freezed.dart';
 
 @freezed
 abstract class Failure<T> with _$Failure<T> {
-  const factory Failure.authenticationDomain(AuthenticationDomainFailure<T> f) = _AuthenticationDomain<T>;
+  const factory Failure.authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure) = _AuthenticationDomain<T>;
 
-  const factory Failure.authenticationData(AuthenticationDataFailure<T> f) = _AuthenticationData<T>;
+  const factory Failure.authenticationData(AuthenticationDataFailure<T> authenticationDataFailure) = _AuthenticationData<T>;
 
-  const factory Failure.coreDomain(CoreDomainFailure<T> f) = _CoreDomain<T>;
+  const factory Failure.coreDomain(CoreDomainFailure<T> coreDomainFailure) = _CoreDomain<T>;
 
-  const factory Failure.coreApplication(CoreApplicationFailure<T> f) = _CoreAppllication<T>;
+  const factory Failure.coreApplication(CoreApplicationFailure<T> coreApplicationFailure) = _CoreAppllication<T>;
 
-  const factory Failure.coreData(CoreDataFailure<T> f) = _CoreData<T>;
+  const factory Failure.coreData(CoreDataFailure<T> coreDataFailure) = _CoreData<T>;
 
-  const factory Failure.value(ValueFailure<T> f) = _Value<T>;
+  const factory Failure.value(ValueFailure<T> valueFailure) = _Value<T>;
 
-  const factory Failure.profileDomain(ProfileDomainFailure<T> f) = _ProfileDomain<T>;
+  const factory Failure.profileDomain(ProfileDomainFailure<T> profileDomainFailure) = _ProfileDomain<T>;
+// TODO: Create ProfileDataFailure
 }

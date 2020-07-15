@@ -13,51 +13,51 @@ class _$FailureTearOff {
   const _$FailureTearOff();
 
 // ignore: unused_element
-  _AuthenticationDomain<T> authenticationDomain<T>(AuthenticationDomainFailure<T> f) {
+  _AuthenticationDomain<T> authenticationDomain<T>(AuthenticationDomainFailure<T> authenticationDomainFailure) {
     return _AuthenticationDomain<T>(
-      f,
+      authenticationDomainFailure,
     );
   }
 
 // ignore: unused_element
-  _AuthenticationData<T> authenticationData<T>(AuthenticationDataFailure<T> f) {
+  _AuthenticationData<T> authenticationData<T>(AuthenticationDataFailure<T> authenticationDataFailure) {
     return _AuthenticationData<T>(
-      f,
+      authenticationDataFailure,
     );
   }
 
 // ignore: unused_element
-  _CoreDomain<T> coreDomain<T>(CoreDomainFailure<T> f) {
+  _CoreDomain<T> coreDomain<T>(CoreDomainFailure<T> coreDomainFailure) {
     return _CoreDomain<T>(
-      f,
+      coreDomainFailure,
     );
   }
 
 // ignore: unused_element
-  _CoreAppllication<T> coreApplication<T>(CoreApplicationFailure<T> f) {
+  _CoreAppllication<T> coreApplication<T>(CoreApplicationFailure<T> coreApplicationFailure) {
     return _CoreAppllication<T>(
-      f,
+      coreApplicationFailure,
     );
   }
 
 // ignore: unused_element
-  _CoreData<T> coreData<T>(CoreDataFailure<T> f) {
+  _CoreData<T> coreData<T>(CoreDataFailure<T> coreDataFailure) {
     return _CoreData<T>(
-      f,
+      coreDataFailure,
     );
   }
 
 // ignore: unused_element
-  _Value<T> value<T>(ValueFailure<T> f) {
+  _Value<T> value<T>(ValueFailure<T> valueFailure) {
     return _Value<T>(
-      f,
+      valueFailure,
     );
   }
 
 // ignore: unused_element
-  _ProfileDomain<T> profileDomain<T>(ProfileDomainFailure<T> f) {
+  _ProfileDomain<T> profileDomain<T>(ProfileDomainFailure<T> profileDomainFailure) {
     return _ProfileDomain<T>(
-      f,
+      profileDomainFailure,
     );
   }
 }
@@ -68,23 +68,23 @@ const $Failure = _$FailureTearOff();
 mixin _$Failure<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result authenticationDomain(AuthenticationDomainFailure<T> f),
-    @required Result authenticationData(AuthenticationDataFailure<T> f),
-    @required Result coreDomain(CoreDomainFailure<T> f),
-    @required Result coreApplication(CoreApplicationFailure<T> f),
-    @required Result coreData(CoreDataFailure<T> f),
-    @required Result value(ValueFailure<T> f),
-    @required Result profileDomain(ProfileDomainFailure<T> f),
+    @required Result authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    @required Result authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
+    @required Result coreDomain(CoreDomainFailure<T> coreDomainFailure),
+    @required Result coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    @required Result coreData(CoreDataFailure<T> coreDataFailure),
+    @required Result value(ValueFailure<T> valueFailure),
+    @required Result profileDomain(ProfileDomainFailure<T> profileDomainFailure),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result authenticationDomain(AuthenticationDomainFailure<T> f),
-    Result authenticationData(AuthenticationDataFailure<T> f),
-    Result coreDomain(CoreDomainFailure<T> f),
-    Result coreApplication(CoreApplicationFailure<T> f),
-    Result coreData(CoreDataFailure<T> f),
-    Result value(ValueFailure<T> f),
-    Result profileDomain(ProfileDomainFailure<T> f),
+    Result authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    Result authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
+    Result coreDomain(CoreDomainFailure<T> coreDomainFailure),
+    Result coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    Result coreData(CoreDataFailure<T> coreDataFailure),
+    Result value(ValueFailure<T> valueFailure),
+    Result profileDomain(ProfileDomainFailure<T> profileDomainFailure),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -126,9 +126,10 @@ abstract class _$AuthenticationDomainCopyWith<T, $Res> {
   factory _$AuthenticationDomainCopyWith(_AuthenticationDomain<T> value,
     $Res Function(_AuthenticationDomain<T>) then) =
   __$AuthenticationDomainCopyWithImpl<T, $Res>;
-  $Res call({AuthenticationDomainFailure<T> f});
 
-  $AuthenticationDomainFailureCopyWith<T, $Res> get f;
+  $Res call({AuthenticationDomainFailure<T> authenticationDomainFailure});
+
+  $AuthenticationDomainFailureCopyWith<T, $Res> get authenticationDomainFailure;
 }
 
 class __$AuthenticationDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
@@ -143,46 +144,55 @@ class __$AuthenticationDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl
 
   @override
   $Res call({
-    Object f = freezed,
+    Object authenticationDomainFailure = freezed,
   }) {
     return _then(_AuthenticationDomain<T>(
-      f == freezed ? _value.f : f as AuthenticationDomainFailure<T>,
+      authenticationDomainFailure == freezed
+        ? _value.authenticationDomainFailure
+        : authenticationDomainFailure as AuthenticationDomainFailure<T>,
     ));
   }
 
   @override
-  $AuthenticationDomainFailureCopyWith<T, $Res> get f {
-    if (_value.f == null) {
+  $AuthenticationDomainFailureCopyWith<T, $Res>
+  get authenticationDomainFailure {
+    if (_value.authenticationDomainFailure == null) {
       return null;
     }
-    return $AuthenticationDomainFailureCopyWith<T, $Res>(_value.f, (value) {
-      return _then(_value.copyWith(f: value));
+    return $AuthenticationDomainFailureCopyWith<T, $Res>(
+      _value.authenticationDomainFailure, (value) {
+      return _then(_value.copyWith(authenticationDomainFailure: value));
     });
   }
 }
 
 class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
-  const _$_AuthenticationDomain(this.f) : assert(f != null);
+  const _$_AuthenticationDomain(this.authenticationDomainFailure)
+    : assert(authenticationDomainFailure != null);
 
   @override
-  final AuthenticationDomainFailure<T> f;
+  final AuthenticationDomainFailure<T> authenticationDomainFailure;
 
   @override
   String toString() {
-    return 'Failure<$T>.authenticationDomain(f: $f)';
+    return 'Failure<$T>.authenticationDomain(authenticationDomainFailure: $authenticationDomainFailure)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
       (other is _AuthenticationDomain<T> &&
-        (identical(other.f, f) ||
-          const DeepCollectionEquality().equals(other.f, f)));
+        (identical(other.authenticationDomainFailure,
+          authenticationDomainFailure) ||
+          const DeepCollectionEquality().equals(
+            other.authenticationDomainFailure,
+            authenticationDomainFailure)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(authenticationDomainFailure);
 
   @override
   _$AuthenticationDomainCopyWith<T, _AuthenticationDomain<T>> get copyWith =>
@@ -192,13 +202,13 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result authenticationDomain(AuthenticationDomainFailure<T> f),
-    @required Result authenticationData(AuthenticationDataFailure<T> f),
-    @required Result coreDomain(CoreDomainFailure<T> f),
-    @required Result coreApplication(CoreApplicationFailure<T> f),
-    @required Result coreData(CoreDataFailure<T> f),
-    @required Result value(ValueFailure<T> f),
-    @required Result profileDomain(ProfileDomainFailure<T> f),
+    @required Result authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    @required Result authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
+    @required Result coreDomain(CoreDomainFailure<T> coreDomainFailure),
+    @required Result coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    @required Result coreData(CoreDataFailure<T> coreDataFailure),
+    @required Result value(ValueFailure<T> valueFailure),
+    @required Result profileDomain(ProfileDomainFailure<T> profileDomainFailure),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
@@ -207,24 +217,24 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
     assert(coreData != null);
     assert(value != null);
     assert(profileDomain != null);
-    return authenticationDomain(f);
+    return authenticationDomain(authenticationDomainFailure);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result authenticationDomain(AuthenticationDomainFailure<T> f),
-    Result authenticationData(AuthenticationDataFailure<T> f),
-    Result coreDomain(CoreDomainFailure<T> f),
-    Result coreApplication(CoreApplicationFailure<T> f),
-    Result coreData(CoreDataFailure<T> f),
-    Result value(ValueFailure<T> f),
-    Result profileDomain(ProfileDomainFailure<T> f),
+    Result authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    Result authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
+    Result coreDomain(CoreDomainFailure<T> coreDomainFailure),
+    Result coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    Result coreData(CoreDataFailure<T> coreDataFailure),
+    Result value(ValueFailure<T> valueFailure),
+    Result profileDomain(ProfileDomainFailure<T> profileDomainFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (authenticationDomain != null) {
-      return authenticationDomain(f);
+      return authenticationDomain(authenticationDomainFailure);
     }
     return orElse();
   }
@@ -271,10 +281,10 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
 }
 
 abstract class _AuthenticationDomain<T> implements Failure<T> {
-  const factory _AuthenticationDomain(AuthenticationDomainFailure<T> f) =
+  const factory _AuthenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure) =
   _$_AuthenticationDomain<T>;
-
-  AuthenticationDomainFailure<T> get f;
+  
+  AuthenticationDomainFailure<T> get authenticationDomainFailure;
   _$AuthenticationDomainCopyWith<T, _AuthenticationDomain<T>> get copyWith;
 }
 
@@ -282,9 +292,10 @@ abstract class _$AuthenticationDataCopyWith<T, $Res> {
   factory _$AuthenticationDataCopyWith(_AuthenticationData<T> value,
     $Res Function(_AuthenticationData<T>) then) =
   __$AuthenticationDataCopyWithImpl<T, $Res>;
-  $Res call({AuthenticationDataFailure<T> f});
 
-  $AuthenticationDataFailureCopyWith<T, $Res> get f;
+  $Res call({AuthenticationDataFailure<T> authenticationDataFailure});
+
+  $AuthenticationDataFailureCopyWith<T, $Res> get authenticationDataFailure;
 }
 
 class __$AuthenticationDataCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
@@ -298,46 +309,54 @@ class __$AuthenticationDataCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T
 
   @override
   $Res call({
-    Object f = freezed,
+    Object authenticationDataFailure = freezed,
   }) {
     return _then(_AuthenticationData<T>(
-      f == freezed ? _value.f : f as AuthenticationDataFailure<T>,
+      authenticationDataFailure == freezed
+        ? _value.authenticationDataFailure
+        : authenticationDataFailure as AuthenticationDataFailure<T>,
     ));
   }
 
   @override
-  $AuthenticationDataFailureCopyWith<T, $Res> get f {
-    if (_value.f == null) {
+  $AuthenticationDataFailureCopyWith<T, $Res> get authenticationDataFailure {
+    if (_value.authenticationDataFailure == null) {
       return null;
     }
-    return $AuthenticationDataFailureCopyWith<T, $Res>(_value.f, (value) {
-      return _then(_value.copyWith(f: value));
+    return $AuthenticationDataFailureCopyWith<T, $Res>(
+      _value.authenticationDataFailure, (value) {
+      return _then(_value.copyWith(authenticationDataFailure: value));
     });
   }
 }
 
 class _$_AuthenticationData<T> implements _AuthenticationData<T> {
-  const _$_AuthenticationData(this.f) : assert(f != null);
+  const _$_AuthenticationData(this.authenticationDataFailure)
+    : assert(authenticationDataFailure != null);
 
   @override
-  final AuthenticationDataFailure<T> f;
+  final AuthenticationDataFailure<T> authenticationDataFailure;
 
   @override
   String toString() {
-    return 'Failure<$T>.authenticationData(f: $f)';
+    return 'Failure<$T>.authenticationData(authenticationDataFailure: $authenticationDataFailure)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
       (other is _AuthenticationData<T> &&
-        (identical(other.f, f) ||
-          const DeepCollectionEquality().equals(other.f, f)));
+        (identical(other.authenticationDataFailure,
+          authenticationDataFailure) ||
+          const DeepCollectionEquality().equals(
+            other.authenticationDataFailure,
+            authenticationDataFailure)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(authenticationDataFailure);
 
   @override
   _$AuthenticationDataCopyWith<T, _AuthenticationData<T>> get copyWith =>
@@ -347,13 +366,13 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result authenticationDomain(AuthenticationDomainFailure<T> f),
-    @required Result authenticationData(AuthenticationDataFailure<T> f),
-    @required Result coreDomain(CoreDomainFailure<T> f),
-    @required Result coreApplication(CoreApplicationFailure<T> f),
-    @required Result coreData(CoreDataFailure<T> f),
-    @required Result value(ValueFailure<T> f),
-    @required Result profileDomain(ProfileDomainFailure<T> f),
+    @required Result authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    @required Result authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
+    @required Result coreDomain(CoreDomainFailure<T> coreDomainFailure),
+    @required Result coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    @required Result coreData(CoreDataFailure<T> coreDataFailure),
+    @required Result value(ValueFailure<T> valueFailure),
+    @required Result profileDomain(ProfileDomainFailure<T> profileDomainFailure),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
@@ -362,24 +381,24 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
     assert(coreData != null);
     assert(value != null);
     assert(profileDomain != null);
-    return authenticationData(f);
+    return authenticationData(authenticationDataFailure);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result authenticationDomain(AuthenticationDomainFailure<T> f),
-    Result authenticationData(AuthenticationDataFailure<T> f),
-    Result coreDomain(CoreDomainFailure<T> f),
-    Result coreApplication(CoreApplicationFailure<T> f),
-    Result coreData(CoreDataFailure<T> f),
-    Result value(ValueFailure<T> f),
-    Result profileDomain(ProfileDomainFailure<T> f),
+    Result authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    Result authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
+    Result coreDomain(CoreDomainFailure<T> coreDomainFailure),
+    Result coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    Result coreData(CoreDataFailure<T> coreDataFailure),
+    Result value(ValueFailure<T> valueFailure),
+    Result profileDomain(ProfileDomainFailure<T> profileDomainFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (authenticationData != null) {
-      return authenticationData(f);
+      return authenticationData(authenticationDataFailure);
     }
     return orElse();
   }
@@ -426,19 +445,20 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
 }
 
 abstract class _AuthenticationData<T> implements Failure<T> {
-  const factory _AuthenticationData(AuthenticationDataFailure<T> f) =
+  const factory _AuthenticationData(AuthenticationDataFailure<T> authenticationDataFailure) =
   _$_AuthenticationData<T>;
-
-  AuthenticationDataFailure<T> get f;
+  
+  AuthenticationDataFailure<T> get authenticationDataFailure;
   _$AuthenticationDataCopyWith<T, _AuthenticationData<T>> get copyWith;
 }
 
 abstract class _$CoreDomainCopyWith<T, $Res> {
   factory _$CoreDomainCopyWith(_CoreDomain<T> value, $Res Function(_CoreDomain<T>) then) =
   __$CoreDomainCopyWithImpl<T, $Res>;
-  $Res call({CoreDomainFailure<T> f});
-
-  $CoreDomainFailureCopyWith<T, $Res> get f;
+  
+  $Res call({CoreDomainFailure<T> coreDomainFailure});
+  
+  $CoreDomainFailureCopyWith<T, $Res> get coreDomainFailure;
 }
 
 class __$CoreDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
@@ -451,46 +471,52 @@ class __$CoreDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object f = freezed,
+    Object coreDomainFailure = freezed,
   }) {
     return _then(_CoreDomain<T>(
-      f == freezed ? _value.f : f as CoreDomainFailure<T>,
+      coreDomainFailure == freezed
+        ? _value.coreDomainFailure
+        : coreDomainFailure as CoreDomainFailure<T>,
     ));
   }
 
   @override
-  $CoreDomainFailureCopyWith<T, $Res> get f {
-    if (_value.f == null) {
+  $CoreDomainFailureCopyWith<T, $Res> get coreDomainFailure {
+    if (_value.coreDomainFailure == null) {
       return null;
     }
-    return $CoreDomainFailureCopyWith<T, $Res>(_value.f, (value) {
-      return _then(_value.copyWith(f: value));
+    return $CoreDomainFailureCopyWith<T, $Res>(_value.coreDomainFailure,
+        (value) {
+        return _then(_value.copyWith(coreDomainFailure: value));
     });
   }
 }
 
 class _$_CoreDomain<T> implements _CoreDomain<T> {
-  const _$_CoreDomain(this.f) : assert(f != null);
+  const _$_CoreDomain(this.coreDomainFailure)
+    : assert(coreDomainFailure != null);
 
   @override
-  final CoreDomainFailure<T> f;
+  final CoreDomainFailure<T> coreDomainFailure;
 
   @override
   String toString() {
-    return 'Failure<$T>.coreDomain(f: $f)';
+    return 'Failure<$T>.coreDomain(coreDomainFailure: $coreDomainFailure)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
       (other is _CoreDomain<T> &&
-        (identical(other.f, f) ||
-          const DeepCollectionEquality().equals(other.f, f)));
+        (identical(other.coreDomainFailure, coreDomainFailure) ||
+          const DeepCollectionEquality()
+            .equals(other.coreDomainFailure, coreDomainFailure)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(coreDomainFailure);
 
   @override
   _$CoreDomainCopyWith<T, _CoreDomain<T>> get copyWith =>
@@ -499,13 +525,13 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result authenticationDomain(AuthenticationDomainFailure<T> f),
-    @required Result authenticationData(AuthenticationDataFailure<T> f),
-    @required Result coreDomain(CoreDomainFailure<T> f),
-    @required Result coreApplication(CoreApplicationFailure<T> f),
-    @required Result coreData(CoreDataFailure<T> f),
-    @required Result value(ValueFailure<T> f),
-    @required Result profileDomain(ProfileDomainFailure<T> f),
+    @required Result authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    @required Result authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
+    @required Result coreDomain(CoreDomainFailure<T> coreDomainFailure),
+    @required Result coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    @required Result coreData(CoreDataFailure<T> coreDataFailure),
+    @required Result value(ValueFailure<T> valueFailure),
+    @required Result profileDomain(ProfileDomainFailure<T> profileDomainFailure),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
@@ -514,24 +540,24 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
     assert(coreData != null);
     assert(value != null);
     assert(profileDomain != null);
-    return coreDomain(f);
+    return coreDomain(coreDomainFailure);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result authenticationDomain(AuthenticationDomainFailure<T> f),
-    Result authenticationData(AuthenticationDataFailure<T> f),
-    Result coreDomain(CoreDomainFailure<T> f),
-    Result coreApplication(CoreApplicationFailure<T> f),
-    Result coreData(CoreDataFailure<T> f),
-    Result value(ValueFailure<T> f),
-    Result profileDomain(ProfileDomainFailure<T> f),
+    Result authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    Result authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
+    Result coreDomain(CoreDomainFailure<T> coreDomainFailure),
+    Result coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    Result coreData(CoreDataFailure<T> coreDataFailure),
+    Result value(ValueFailure<T> valueFailure),
+    Result profileDomain(ProfileDomainFailure<T> profileDomainFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (coreDomain != null) {
-      return coreDomain(f);
+      return coreDomain(coreDomainFailure);
     }
     return orElse();
   }
@@ -578,9 +604,10 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
 }
 
 abstract class _CoreDomain<T> implements Failure<T> {
-  const factory _CoreDomain(CoreDomainFailure<T> f) = _$_CoreDomain<T>;
-
-  CoreDomainFailure<T> get f;
+  const factory _CoreDomain(CoreDomainFailure<T> coreDomainFailure) =
+  _$_CoreDomain<T>;
+  
+  CoreDomainFailure<T> get coreDomainFailure;
   _$CoreDomainCopyWith<T, _CoreDomain<T>> get copyWith;
 }
 
@@ -588,9 +615,10 @@ abstract class _$CoreAppllicationCopyWith<T, $Res> {
   factory _$CoreAppllicationCopyWith(_CoreAppllication<T> value,
     $Res Function(_CoreAppllication<T>) then) =
   __$CoreAppllicationCopyWithImpl<T, $Res>;
-  $Res call({CoreApplicationFailure<T> f});
 
-  $CoreApplicationFailureCopyWith<T, $Res> get f;
+  $Res call({CoreApplicationFailure<T> coreApplicationFailure});
+
+  $CoreApplicationFailureCopyWith<T, $Res> get coreApplicationFailure;
 }
 
 class __$CoreAppllicationCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
@@ -603,46 +631,52 @@ class __$CoreAppllicationCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, 
 
   @override
   $Res call({
-    Object f = freezed,
+    Object coreApplicationFailure = freezed,
   }) {
     return _then(_CoreAppllication<T>(
-      f == freezed ? _value.f : f as CoreApplicationFailure<T>,
+      coreApplicationFailure == freezed
+        ? _value.coreApplicationFailure
+        : coreApplicationFailure as CoreApplicationFailure<T>,
     ));
   }
 
   @override
-  $CoreApplicationFailureCopyWith<T, $Res> get f {
-    if (_value.f == null) {
+  $CoreApplicationFailureCopyWith<T, $Res> get coreApplicationFailure {
+    if (_value.coreApplicationFailure == null) {
       return null;
     }
-    return $CoreApplicationFailureCopyWith<T, $Res>(_value.f, (value) {
-      return _then(_value.copyWith(f: value));
+    return $CoreApplicationFailureCopyWith<T, $Res>(
+      _value.coreApplicationFailure, (value) {
+      return _then(_value.copyWith(coreApplicationFailure: value));
     });
   }
 }
 
 class _$_CoreAppllication<T> implements _CoreAppllication<T> {
-  const _$_CoreAppllication(this.f) : assert(f != null);
+  const _$_CoreAppllication(this.coreApplicationFailure)
+    : assert(coreApplicationFailure != null);
 
   @override
-  final CoreApplicationFailure<T> f;
+  final CoreApplicationFailure<T> coreApplicationFailure;
 
   @override
   String toString() {
-    return 'Failure<$T>.coreApplication(f: $f)';
+    return 'Failure<$T>.coreApplication(coreApplicationFailure: $coreApplicationFailure)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
       (other is _CoreAppllication<T> &&
-        (identical(other.f, f) ||
-          const DeepCollectionEquality().equals(other.f, f)));
+        (identical(other.coreApplicationFailure, coreApplicationFailure) ||
+          const DeepCollectionEquality().equals(
+            other.coreApplicationFailure, coreApplicationFailure)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(coreApplicationFailure);
 
   @override
   _$CoreAppllicationCopyWith<T, _CoreAppllication<T>> get copyWith =>
@@ -652,13 +686,13 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result authenticationDomain(AuthenticationDomainFailure<T> f),
-    @required Result authenticationData(AuthenticationDataFailure<T> f),
-    @required Result coreDomain(CoreDomainFailure<T> f),
-    @required Result coreApplication(CoreApplicationFailure<T> f),
-    @required Result coreData(CoreDataFailure<T> f),
-    @required Result value(ValueFailure<T> f),
-    @required Result profileDomain(ProfileDomainFailure<T> f),
+    @required Result authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    @required Result authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
+    @required Result coreDomain(CoreDomainFailure<T> coreDomainFailure),
+    @required Result coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    @required Result coreData(CoreDataFailure<T> coreDataFailure),
+    @required Result value(ValueFailure<T> valueFailure),
+    @required Result profileDomain(ProfileDomainFailure<T> profileDomainFailure),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
@@ -667,24 +701,24 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
     assert(coreData != null);
     assert(value != null);
     assert(profileDomain != null);
-    return coreApplication(f);
+    return coreApplication(coreApplicationFailure);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result authenticationDomain(AuthenticationDomainFailure<T> f),
-    Result authenticationData(AuthenticationDataFailure<T> f),
-    Result coreDomain(CoreDomainFailure<T> f),
-    Result coreApplication(CoreApplicationFailure<T> f),
-    Result coreData(CoreDataFailure<T> f),
-    Result value(ValueFailure<T> f),
-    Result profileDomain(ProfileDomainFailure<T> f),
+    Result authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    Result authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
+    Result coreDomain(CoreDomainFailure<T> coreDomainFailure),
+    Result coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    Result coreData(CoreDataFailure<T> coreDataFailure),
+    Result value(ValueFailure<T> valueFailure),
+    Result profileDomain(ProfileDomainFailure<T> profileDomainFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (coreApplication != null) {
-      return coreApplication(f);
+      return coreApplication(coreApplicationFailure);
     }
     return orElse();
   }
@@ -731,19 +765,20 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
 }
 
 abstract class _CoreAppllication<T> implements Failure<T> {
-  const factory _CoreAppllication(CoreApplicationFailure<T> f) =
+  const factory _CoreAppllication(CoreApplicationFailure<T> coreApplicationFailure) =
   _$_CoreAppllication<T>;
-
-  CoreApplicationFailure<T> get f;
+  
+  CoreApplicationFailure<T> get coreApplicationFailure;
   _$CoreAppllicationCopyWith<T, _CoreAppllication<T>> get copyWith;
 }
 
 abstract class _$CoreDataCopyWith<T, $Res> {
   factory _$CoreDataCopyWith(_CoreData<T> value, $Res Function(_CoreData<T>) then) =
   __$CoreDataCopyWithImpl<T, $Res>;
-  $Res call({CoreDataFailure<T> f});
-
-  $CoreDataFailureCopyWith<T, $Res> get f;
+  
+  $Res call({CoreDataFailure<T> coreDataFailure});
+  
+  $CoreDataFailureCopyWith<T, $Res> get coreDataFailure;
 }
 
 class __$CoreDataCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
@@ -756,46 +791,50 @@ class __$CoreDataCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object f = freezed,
+    Object coreDataFailure = freezed,
   }) {
     return _then(_CoreData<T>(
-      f == freezed ? _value.f : f as CoreDataFailure<T>,
+      coreDataFailure == freezed
+        ? _value.coreDataFailure
+        : coreDataFailure as CoreDataFailure<T>,
     ));
   }
 
   @override
-  $CoreDataFailureCopyWith<T, $Res> get f {
-    if (_value.f == null) {
+  $CoreDataFailureCopyWith<T, $Res> get coreDataFailure {
+    if (_value.coreDataFailure == null) {
       return null;
     }
-    return $CoreDataFailureCopyWith<T, $Res>(_value.f, (value) {
-      return _then(_value.copyWith(f: value));
+    return $CoreDataFailureCopyWith<T, $Res>(_value.coreDataFailure, (value) {
+      return _then(_value.copyWith(coreDataFailure: value));
     });
   }
 }
 
 class _$_CoreData<T> implements _CoreData<T> {
-  const _$_CoreData(this.f) : assert(f != null);
+  const _$_CoreData(this.coreDataFailure) : assert(coreDataFailure != null);
 
   @override
-  final CoreDataFailure<T> f;
+  final CoreDataFailure<T> coreDataFailure;
 
   @override
   String toString() {
-    return 'Failure<$T>.coreData(f: $f)';
+    return 'Failure<$T>.coreData(coreDataFailure: $coreDataFailure)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
       (other is _CoreData<T> &&
-        (identical(other.f, f) ||
-          const DeepCollectionEquality().equals(other.f, f)));
+        (identical(other.coreDataFailure, coreDataFailure) ||
+          const DeepCollectionEquality()
+            .equals(other.coreDataFailure, coreDataFailure)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(coreDataFailure);
 
   @override
   _$CoreDataCopyWith<T, _CoreData<T>> get copyWith =>
@@ -804,13 +843,13 @@ class _$_CoreData<T> implements _CoreData<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result authenticationDomain(AuthenticationDomainFailure<T> f),
-    @required Result authenticationData(AuthenticationDataFailure<T> f),
-    @required Result coreDomain(CoreDomainFailure<T> f),
-    @required Result coreApplication(CoreApplicationFailure<T> f),
-    @required Result coreData(CoreDataFailure<T> f),
-    @required Result value(ValueFailure<T> f),
-    @required Result profileDomain(ProfileDomainFailure<T> f),
+    @required Result authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    @required Result authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
+    @required Result coreDomain(CoreDomainFailure<T> coreDomainFailure),
+    @required Result coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    @required Result coreData(CoreDataFailure<T> coreDataFailure),
+    @required Result value(ValueFailure<T> valueFailure),
+    @required Result profileDomain(ProfileDomainFailure<T> profileDomainFailure),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
@@ -819,24 +858,24 @@ class _$_CoreData<T> implements _CoreData<T> {
     assert(coreData != null);
     assert(value != null);
     assert(profileDomain != null);
-    return coreData(f);
+    return coreData(coreDataFailure);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result authenticationDomain(AuthenticationDomainFailure<T> f),
-    Result authenticationData(AuthenticationDataFailure<T> f),
-    Result coreDomain(CoreDomainFailure<T> f),
-    Result coreApplication(CoreApplicationFailure<T> f),
-    Result coreData(CoreDataFailure<T> f),
-    Result value(ValueFailure<T> f),
-    Result profileDomain(ProfileDomainFailure<T> f),
+    Result authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    Result authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
+    Result coreDomain(CoreDomainFailure<T> coreDomainFailure),
+    Result coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    Result coreData(CoreDataFailure<T> coreDataFailure),
+    Result value(ValueFailure<T> valueFailure),
+    Result profileDomain(ProfileDomainFailure<T> profileDomainFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (coreData != null) {
-      return coreData(f);
+      return coreData(coreDataFailure);
     }
     return orElse();
   }
@@ -883,18 +922,19 @@ class _$_CoreData<T> implements _CoreData<T> {
 }
 
 abstract class _CoreData<T> implements Failure<T> {
-  const factory _CoreData(CoreDataFailure<T> f) = _$_CoreData<T>;
-
-  CoreDataFailure<T> get f;
+  const factory _CoreData(CoreDataFailure<T> coreDataFailure) = _$_CoreData<T>;
+  
+  CoreDataFailure<T> get coreDataFailure;
   _$CoreDataCopyWith<T, _CoreData<T>> get copyWith;
 }
 
 abstract class _$ValueCopyWith<T, $Res> {
   factory _$ValueCopyWith(_Value<T> value, $Res Function(_Value<T>) then) =
   __$ValueCopyWithImpl<T, $Res>;
-  $Res call({ValueFailure<T> f});
 
-  $ValueFailureCopyWith<T, $Res> get f;
+  $Res call({ValueFailure<T> valueFailure});
+
+  $ValueFailureCopyWith<T, $Res> get valueFailure;
 }
 
 class __$ValueCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
@@ -907,46 +947,49 @@ class __$ValueCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object f = freezed,
+    Object valueFailure = freezed,
   }) {
     return _then(_Value<T>(
-      f == freezed ? _value.f : f as ValueFailure<T>,
+      valueFailure == freezed
+        ? _value.valueFailure
+        : valueFailure as ValueFailure<T>,
     ));
   }
 
   @override
-  $ValueFailureCopyWith<T, $Res> get f {
-    if (_value.f == null) {
+  $ValueFailureCopyWith<T, $Res> get valueFailure {
+    if (_value.valueFailure == null) {
       return null;
     }
-    return $ValueFailureCopyWith<T, $Res>(_value.f, (value) {
-      return _then(_value.copyWith(f: value));
+    return $ValueFailureCopyWith<T, $Res>(_value.valueFailure, (value) {
+      return _then(_value.copyWith(valueFailure: value));
     });
   }
 }
 
 class _$_Value<T> implements _Value<T> {
-  const _$_Value(this.f) : assert(f != null);
+  const _$_Value(this.valueFailure) : assert(valueFailure != null);
 
   @override
-  final ValueFailure<T> f;
+  final ValueFailure<T> valueFailure;
 
   @override
   String toString() {
-    return 'Failure<$T>.value(f: $f)';
+    return 'Failure<$T>.value(valueFailure: $valueFailure)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
       (other is _Value<T> &&
-        (identical(other.f, f) ||
-          const DeepCollectionEquality().equals(other.f, f)));
+        (identical(other.valueFailure, valueFailure) ||
+          const DeepCollectionEquality()
+            .equals(other.valueFailure, valueFailure)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(valueFailure);
 
   @override
   _$ValueCopyWith<T, _Value<T>> get copyWith =>
@@ -955,13 +998,13 @@ class _$_Value<T> implements _Value<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result authenticationDomain(AuthenticationDomainFailure<T> f),
-    @required Result authenticationData(AuthenticationDataFailure<T> f),
-    @required Result coreDomain(CoreDomainFailure<T> f),
-    @required Result coreApplication(CoreApplicationFailure<T> f),
-    @required Result coreData(CoreDataFailure<T> f),
-    @required Result value(ValueFailure<T> f),
-    @required Result profileDomain(ProfileDomainFailure<T> f),
+    @required Result authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    @required Result authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
+    @required Result coreDomain(CoreDomainFailure<T> coreDomainFailure),
+    @required Result coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    @required Result coreData(CoreDataFailure<T> coreDataFailure),
+    @required Result value(ValueFailure<T> valueFailure),
+    @required Result profileDomain(ProfileDomainFailure<T> profileDomainFailure),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
@@ -970,24 +1013,24 @@ class _$_Value<T> implements _Value<T> {
     assert(coreData != null);
     assert(value != null);
     assert(profileDomain != null);
-    return value(f);
+    return value(valueFailure);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result authenticationDomain(AuthenticationDomainFailure<T> f),
-    Result authenticationData(AuthenticationDataFailure<T> f),
-    Result coreDomain(CoreDomainFailure<T> f),
-    Result coreApplication(CoreApplicationFailure<T> f),
-    Result coreData(CoreDataFailure<T> f),
-    Result value(ValueFailure<T> f),
-    Result profileDomain(ProfileDomainFailure<T> f),
+    Result authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    Result authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
+    Result coreDomain(CoreDomainFailure<T> coreDomainFailure),
+    Result coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    Result coreData(CoreDataFailure<T> coreDataFailure),
+    Result value(ValueFailure<T> valueFailure),
+    Result profileDomain(ProfileDomainFailure<T> profileDomainFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (value != null) {
-      return value(f);
+      return value(valueFailure);
     }
     return orElse();
   }
@@ -1034,18 +1077,19 @@ class _$_Value<T> implements _Value<T> {
 }
 
 abstract class _Value<T> implements Failure<T> {
-  const factory _Value(ValueFailure<T> f) = _$_Value<T>;
-
-  ValueFailure<T> get f;
+  const factory _Value(ValueFailure<T> valueFailure) = _$_Value<T>;
+  
+  ValueFailure<T> get valueFailure;
   _$ValueCopyWith<T, _Value<T>> get copyWith;
 }
 
 abstract class _$ProfileDomainCopyWith<T, $Res> {
   factory _$ProfileDomainCopyWith(_ProfileDomain<T> value, $Res Function(_ProfileDomain<T>) then) =
   __$ProfileDomainCopyWithImpl<T, $Res>;
-  $Res call({ProfileDomainFailure<T> f});
-
-  $ProfileDomainFailureCopyWith<T, $Res> get f;
+  
+  $Res call({ProfileDomainFailure<T> profileDomainFailure});
+  
+  $ProfileDomainFailureCopyWith<T, $Res> get profileDomainFailure;
 }
 
 class __$ProfileDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res>
@@ -1058,46 +1102,52 @@ class __$ProfileDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Re
 
   @override
   $Res call({
-    Object f = freezed,
+    Object profileDomainFailure = freezed,
   }) {
     return _then(_ProfileDomain<T>(
-      f == freezed ? _value.f : f as ProfileDomainFailure<T>,
+      profileDomainFailure == freezed
+        ? _value.profileDomainFailure
+        : profileDomainFailure as ProfileDomainFailure<T>,
     ));
   }
 
   @override
-  $ProfileDomainFailureCopyWith<T, $Res> get f {
-    if (_value.f == null) {
+  $ProfileDomainFailureCopyWith<T, $Res> get profileDomainFailure {
+    if (_value.profileDomainFailure == null) {
       return null;
     }
-    return $ProfileDomainFailureCopyWith<T, $Res>(_value.f, (value) {
-      return _then(_value.copyWith(f: value));
+    return $ProfileDomainFailureCopyWith<T, $Res>(_value.profileDomainFailure,
+        (value) {
+        return _then(_value.copyWith(profileDomainFailure: value));
     });
   }
 }
 
 class _$_ProfileDomain<T> implements _ProfileDomain<T> {
-  const _$_ProfileDomain(this.f) : assert(f != null);
+  const _$_ProfileDomain(this.profileDomainFailure)
+    : assert(profileDomainFailure != null);
 
   @override
-  final ProfileDomainFailure<T> f;
+  final ProfileDomainFailure<T> profileDomainFailure;
 
   @override
   String toString() {
-    return 'Failure<$T>.profileDomain(f: $f)';
+    return 'Failure<$T>.profileDomain(profileDomainFailure: $profileDomainFailure)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
       (other is _ProfileDomain<T> &&
-        (identical(other.f, f) ||
-          const DeepCollectionEquality().equals(other.f, f)));
+        (identical(other.profileDomainFailure, profileDomainFailure) ||
+          const DeepCollectionEquality()
+            .equals(other.profileDomainFailure, profileDomainFailure)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(profileDomainFailure);
 
   @override
   _$ProfileDomainCopyWith<T, _ProfileDomain<T>> get copyWith =>
@@ -1106,13 +1156,13 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result authenticationDomain(AuthenticationDomainFailure<T> f),
-    @required Result authenticationData(AuthenticationDataFailure<T> f),
-    @required Result coreDomain(CoreDomainFailure<T> f),
-    @required Result coreApplication(CoreApplicationFailure<T> f),
-    @required Result coreData(CoreDataFailure<T> f),
-    @required Result value(ValueFailure<T> f),
-    @required Result profileDomain(ProfileDomainFailure<T> f),
+    @required Result authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    @required Result authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
+    @required Result coreDomain(CoreDomainFailure<T> coreDomainFailure),
+    @required Result coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    @required Result coreData(CoreDataFailure<T> coreDataFailure),
+    @required Result value(ValueFailure<T> valueFailure),
+    @required Result profileDomain(ProfileDomainFailure<T> profileDomainFailure),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
@@ -1121,24 +1171,24 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
     assert(coreData != null);
     assert(value != null);
     assert(profileDomain != null);
-    return profileDomain(f);
+    return profileDomain(profileDomainFailure);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result authenticationDomain(AuthenticationDomainFailure<T> f),
-    Result authenticationData(AuthenticationDataFailure<T> f),
-    Result coreDomain(CoreDomainFailure<T> f),
-    Result coreApplication(CoreApplicationFailure<T> f),
-    Result coreData(CoreDataFailure<T> f),
-    Result value(ValueFailure<T> f),
-    Result profileDomain(ProfileDomainFailure<T> f),
+    Result authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    Result authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
+    Result coreDomain(CoreDomainFailure<T> coreDomainFailure),
+    Result coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    Result coreData(CoreDataFailure<T> coreDataFailure),
+    Result value(ValueFailure<T> valueFailure),
+    Result profileDomain(ProfileDomainFailure<T> profileDomainFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (profileDomain != null) {
-      return profileDomain(f);
+      return profileDomain(profileDomainFailure);
     }
     return orElse();
   }
@@ -1185,8 +1235,9 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
 }
 
 abstract class _ProfileDomain<T> implements Failure<T> {
-  const factory _ProfileDomain(ProfileDomainFailure<T> f) = _$_ProfileDomain<T>;
-
-  ProfileDomainFailure<T> get f;
+  const factory _ProfileDomain(ProfileDomainFailure<T> profileDomainFailure) =
+  _$_ProfileDomain<T>;
+  
+  ProfileDomainFailure<T> get profileDomainFailure;
   _$ProfileDomainCopyWith<T, _ProfileDomain<T>> get copyWith;
 }

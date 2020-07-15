@@ -4,6 +4,7 @@ part of 'registration_form_bloc.dart';
 abstract class RegistrationFormState with _$RegistrationFormState {
   const factory RegistrationFormState({
     @required User user,
+    @required PasswordConfirmator passwordConfirmator,
     @required bool showErrorMessages,
     @required bool isSubmitting,
     @required Option<Either<Failure, Unit>> failureOrSuccessOption,
@@ -11,6 +12,10 @@ abstract class RegistrationFormState with _$RegistrationFormState {
 
   factory RegistrationFormState.initial() => RegistrationFormState(
         user: User.empty(),
+        passwordConfirmator: PasswordConfirmator(
+          password: "",
+          confirmation: "",
+        ),
         showErrorMessages: false,
         isSubmitting: false,
         failureOrSuccessOption: none(),

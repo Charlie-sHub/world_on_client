@@ -26,7 +26,7 @@ class LogInFormBloc extends Bloc<LogInFormEvent, LogInFormState> {
     yield* event.map(
       usernameChanged: onUsernameChanged,
       passwordChanged: onPasswordChanged,
-      loggedIn: onLoggeIn,
+      loggedIn: onLoggedIn,
       loggedInGoogle: onLoggedInGoogle,
     );
   }
@@ -44,7 +44,7 @@ class LogInFormBloc extends Bloc<LogInFormEvent, LogInFormState> {
     );
   }
 
-  Stream<LogInFormState> onLoggeIn(_LoggedIn event) async* {
+  Stream<LogInFormState> onLoggedIn(_LoggedIn event) async* {
     Either<Failure, Unit> _failureOrSuccess;
     if (state.username.isValid() && state.password.isValid()) {
       final _logIn = getIt<LogIn>();
@@ -72,18 +72,14 @@ class LogInFormBloc extends Bloc<LogInFormEvent, LogInFormState> {
 
   Stream<LogInFormState> onPasswordChanged(_PasswordChanged event) async* {
     yield state.copyWith(
-      password: Password(
-        event.password,
-      ),
+      password: Password(event.password),
       failureOrSuccessOption: none(),
     );
   }
 
   Stream<LogInFormState> onUsernameChanged(_UsernameChanged event) async* {
     yield state.copyWith(
-      username: Name(
-        event.username,
-      ),
+      username: Name(event.username),
       failureOrSuccessOption: none(),
     );
   }

@@ -13,6 +13,8 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
 
   const factory ValueFailure.invalidPassword({@required String failedValue}) = InvalidPassword<T>;
 
+  const factory ValueFailure.stringMismatch({@required String failedValue}) = StringMismatch<T>;
+
   const factory ValueFailure.invalidName({@required String failedValue}) = InvalidName<T>;
 
   const factory ValueFailure.emptyString({@required String failedValue}) = EmptyString<T>;

@@ -10,6 +10,8 @@ abstract class RegistrationFormEvent with _$RegistrationFormEvent {
 
   const factory RegistrationFormEvent.passwordChanged(String password) = _PasswordChanged;
 
+  const factory RegistrationFormEvent.passwordConfirmationChanged(String passwordConfirmation) = _PasswordConfirmationChanged;
+
   const factory RegistrationFormEvent.emailAddressChanged(String emailAddress) = _EmailAddressChanged;
 
   const factory RegistrationFormEvent.birthdayChanged(DateTime birthday) = _BirthdayChanged;

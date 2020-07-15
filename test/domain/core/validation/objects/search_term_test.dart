@@ -10,19 +10,19 @@ void main() {
     TestDescription.valid,
     () async {
       // Act
-      final name = SearchTerm(validSearchTerm);
+      final searchTerm = SearchTerm(validSearchTerm);
       // Assert
-      expect(name.isValid(), true);
-      expect(name.getOrCrash(), validSearchTerm);
+      expect(searchTerm.isValid(), true);
+      expect(searchTerm.getOrCrash(), validSearchTerm);
     },
   );
   test(
     TestDescription.invalid,
     () async {
       // Act
-      final name = SearchTerm(invalidSearchTerm);
+      final searchTerm = SearchTerm(invalidSearchTerm);
       // Assert
-      expect(name.isValid(), false);
+      expect(searchTerm.isValid(), false);
     },
   );
 }

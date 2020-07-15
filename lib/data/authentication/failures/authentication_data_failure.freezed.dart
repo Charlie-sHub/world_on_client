@@ -16,11 +16,6 @@ class _$AuthenticationDataFailureTearOff {
   InvalidCredentials<T> invalidCredentials<T>() {
     return InvalidCredentials<T>();
   }
-
-// ignore: unused_element
-  NoUserInCache<T> noUserInCache<T>() {
-    return NoUserInCache<T>();
-  }
 }
 
 // ignore: unused_element
@@ -30,23 +25,19 @@ mixin _$AuthenticationDataFailure<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result invalidCredentials(),
-    @required Result noUserInCache(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result invalidCredentials(),
-    Result noUserInCache(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result invalidCredentials(InvalidCredentials<T> value),
-    @required Result noUserInCache(NoUserInCache<T> value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result invalidCredentials(InvalidCredentials<T> value),
-    Result noUserInCache(NoUserInCache<T> value),
     @required Result orElse(),
   });
 }
@@ -98,10 +89,8 @@ class _$InvalidCredentials<T> implements InvalidCredentials<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result invalidCredentials(),
-    @required Result noUserInCache(),
   }) {
     assert(invalidCredentials != null);
-    assert(noUserInCache != null);
     return invalidCredentials();
   }
 
@@ -109,7 +98,6 @@ class _$InvalidCredentials<T> implements InvalidCredentials<T> {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result invalidCredentials(),
-    Result noUserInCache(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -123,10 +111,8 @@ class _$InvalidCredentials<T> implements InvalidCredentials<T> {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result invalidCredentials(InvalidCredentials<T> value),
-    @required Result noUserInCache(NoUserInCache<T> value),
   }) {
     assert(invalidCredentials != null);
-    assert(noUserInCache != null);
     return invalidCredentials(this);
   }
 
@@ -134,7 +120,6 @@ class _$InvalidCredentials<T> implements InvalidCredentials<T> {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result invalidCredentials(InvalidCredentials<T> value),
-    Result noUserInCache(NoUserInCache<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -147,89 +132,4 @@ class _$InvalidCredentials<T> implements InvalidCredentials<T> {
 
 abstract class InvalidCredentials<T> implements AuthenticationDataFailure<T> {
   const factory InvalidCredentials() = _$InvalidCredentials<T>;
-}
-
-abstract class $NoUserInCacheCopyWith<T, $Res> {
-  factory $NoUserInCacheCopyWith(NoUserInCache<T> value, $Res Function(NoUserInCache<T>) then) =
-  _$NoUserInCacheCopyWithImpl<T, $Res>;
-}
-
-class _$NoUserInCacheCopyWithImpl<T, $Res> extends _$AuthenticationDataFailureCopyWithImpl<T, $Res>
-  implements $NoUserInCacheCopyWith<T, $Res> {
-  _$NoUserInCacheCopyWithImpl(NoUserInCache<T> _value, $Res Function(NoUserInCache<T>) _then)
-    : super(_value, (v) => _then(v as NoUserInCache<T>));
-
-  @override
-  NoUserInCache<T> get _value => super._value as NoUserInCache<T>;
-}
-
-class _$NoUserInCache<T> implements NoUserInCache<T> {
-  const _$NoUserInCache();
-
-  @override
-  String toString() {
-    return 'AuthenticationDataFailure<$T>.noUserInCache()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is NoUserInCache<T>);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result invalidCredentials(),
-    @required Result noUserInCache(),
-  }) {
-    assert(invalidCredentials != null);
-    assert(noUserInCache != null);
-    return noUserInCache();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidCredentials(),
-    Result noUserInCache(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (noUserInCache != null) {
-      return noUserInCache();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidCredentials(InvalidCredentials<T> value),
-    @required Result noUserInCache(NoUserInCache<T> value),
-  }) {
-    assert(invalidCredentials != null);
-    assert(noUserInCache != null);
-    return noUserInCache(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidCredentials(InvalidCredentials<T> value),
-    Result noUserInCache(NoUserInCache<T> value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (noUserInCache != null) {
-      return noUserInCache(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class NoUserInCache<T> implements AuthenticationDataFailure<T> {
-  const factory NoUserInCache() = _$NoUserInCache<T>;
 }
