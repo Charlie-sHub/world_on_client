@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'tag_card_actor_bloc.dart';
 
@@ -12,18 +12,21 @@ T _$identity<T>(T value) => value;
 class _$TagCardActorEventTearOff {
   const _$TagCardActorEventTearOff();
 
+// ignore: unused_element
   _Initialized initialized(Tag tag) {
     return _Initialized(
       tag,
     );
   }
 
+// ignore: unused_element
   _DismissedFromInterests dismissedFromInterests(Tag tag) {
     return _DismissedFromInterests(
       tag,
     );
   }
 
+// ignore: unused_element
   _AddedToInterests addedToInterests(Tag tag) {
     return _AddedToInterests(
       tag,
@@ -474,36 +477,44 @@ abstract class _AddedToInterests implements TagCardActorEvent {
 class _$TagCardActorStateTearOff {
   const _$TagCardActorStateTearOff();
 
+// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
+// ignore: unused_element
   _InInterests inInterests() {
     return const _InInterests();
   }
 
+// ignore: unused_element
   _NotInInterests notInInterests() {
     return const _NotInInterests();
   }
 
+// ignore: unused_element
   _ActionInProgress actionInProgress() {
     return const _ActionInProgress();
   }
 
+// ignore: unused_element
   _AdditionSuccess additionSuccess() {
     return const _AdditionSuccess();
   }
 
+// ignore: unused_element
   _AdditionFailure additionFailure(Failure<dynamic> failure) {
     return _AdditionFailure(
       failure,
     );
   }
 
+// ignore: unused_element
   _DismissalSuccess dismissalSuccess() {
     return const _DismissalSuccess();
   }
 
+// ignore: unused_element
   _DismissalFailure dismissalFailure(Failure<dynamic> failure) {
     return _DismissalFailure(
       failure,

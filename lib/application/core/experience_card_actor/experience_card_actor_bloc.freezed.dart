@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'experience_card_actor_bloc.dart';
 
@@ -12,6 +12,7 @@ T _$identity<T>(T value) => value;
 class _$ExperienceCardActorEventTearOff {
   const _$ExperienceCardActorEventTearOff();
 
+// ignore: unused_element
   _AddedExperienceToLog addedExperienceToLog(int experienceId) {
     return _AddedExperienceToLog(
       experienceId,
@@ -186,18 +187,22 @@ abstract class _AddedExperienceToLog implements ExperienceCardActorEvent {
 class _$ExperienceCardActorStateTearOff {
   const _$ExperienceCardActorStateTearOff();
 
+// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
+// ignore: unused_element
   _ActionInProgress actionInProgress() {
     return const _ActionInProgress();
   }
 
+// ignore: unused_element
   _AdditionSuccess additionSuccess() {
     return const _AdditionSuccess();
   }
 
+// ignore: unused_element
   _AdditionFailure additionFailure(Failure<dynamic> failure) {
     return _AdditionFailure(
       failure,

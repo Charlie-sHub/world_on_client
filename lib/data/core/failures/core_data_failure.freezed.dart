@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'core_data_failure.dart';
 
@@ -12,40 +12,47 @@ T _$identity<T>(T value) => value;
 class _$CoreDataFailureTearOff {
   const _$CoreDataFailureTearOff();
 
+// ignore: unused_element
   ServerError<T> serverError<T>({@required String errorString}) {
     return ServerError<T>(
       errorString: errorString,
     );
   }
 
+// ignore: unused_element
   NotFoundError<T> notFoundError<T>() {
     return NotFoundError<T>();
   }
 
+// ignore: unused_element
   CacheError<T> cacheError<T>({@required String errorString}) {
     return CacheError<T>(
       errorString: errorString,
     );
   }
 
+// ignore: unused_element
   GeoLocationError<T> geoLocationError<T>({@required String errorString}) {
     return GeoLocationError<T>(
       errorString: errorString,
     );
   }
 
+// ignore: unused_element
   UsernameAlreadyInUse<T> usernameAlreadyInUse<T>({@required Name username}) {
     return UsernameAlreadyInUse<T>(
       username: username,
     );
   }
 
+// ignore: unused_element
   EmailAlreadyInUse<T> emailAlreadyInUse<T>({@required EmailAddress email}) {
     return EmailAlreadyInUse<T>(
       email: email,
     );
   }
 
+// ignore: unused_element
   NameAlreadyInUse<T> nameAlreadyInUse<T>({@required Name name}) {
     return NameAlreadyInUse<T>(
       name: name,

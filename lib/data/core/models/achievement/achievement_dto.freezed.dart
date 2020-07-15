@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'achievement_dto.dart';
 
@@ -15,6 +15,7 @@ AchievementDto _$AchievementDtoFromJson(Map<String, dynamic> json) {
 class _$AchievementDtoTearOff {
   const _$AchievementDtoTearOff();
 
+// ignore: unused_element
   _AchievementDto call(
       {@required int id,
       @required String name,
@@ -65,17 +66,9 @@ mixin _$AchievementDto {
 
 abstract class $AchievementDtoCopyWith<$Res> {
   factory $AchievementDtoCopyWith(AchievementDto value, $Res Function(AchievementDto) then) = _$AchievementDtoCopyWithImpl<$Res>;
-  $Res call({int id,
-    String name,
-    String description,
-    String imageURL,
-    String type,
-    int requisite,
-    int experiencePoints,
-    UserDto creator,
-    String creationDate,
-    String modificationDate,
-    Set<TagDto> tags});
+
+  $Res call(
+      {int id, String name, String description, String imageURL, String type, int requisite, int experiencePoints, UserDto creator, String creationDate, String modificationDate, Set<TagDto> tags});
 
   $UserDtoCopyWith<$Res> get creator;
 }

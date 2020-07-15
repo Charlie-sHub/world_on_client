@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'tag_dto.dart';
 
@@ -15,6 +15,7 @@ TagDto _$TagDtoFromJson(Map<String, dynamic> json) {
 class _$TagDtoTearOff {
   const _$TagDtoTearOff();
 
+// ignore: unused_element
   _TagDto call({@required int id, @required String name, @required UserDto creator, @required String creationDate, @required String modificationDate}) {
     return _TagDto(
       id: id,

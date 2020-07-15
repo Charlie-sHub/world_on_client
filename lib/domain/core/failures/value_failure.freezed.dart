@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'value_failure.dart';
 
@@ -12,46 +12,54 @@ T _$identity<T>(T value) => value;
 class _$ValueFailureTearOff {
   const _$ValueFailureTearOff();
 
+// ignore: unused_element
   NullInput<T> nullInput<T>() {
     return NullInput<T>();
   }
 
+// ignore: unused_element
   InvalidDate<T> invalidDate<T>({@required DateTime failedValue}) {
     return InvalidDate<T>(
       failedValue: failedValue,
     );
   }
 
+// ignore: unused_element
   InvalidEmail<T> invalidEmail<T>({@required String failedValue}) {
     return InvalidEmail<T>(
       failedValue: failedValue,
     );
   }
 
+// ignore: unused_element
   InvalidPassword<T> invalidPassword<T>({@required String failedValue}) {
     return InvalidPassword<T>(
       failedValue: failedValue,
     );
   }
 
+// ignore: unused_element
   InvalidName<T> invalidName<T>({@required String failedValue}) {
     return InvalidName<T>(
       failedValue: failedValue,
     );
   }
 
+// ignore: unused_element
   EmptyString<T> emptyString<T>({@required String failedValue}) {
     return EmptyString<T>(
       failedValue: failedValue,
     );
   }
 
+// ignore: unused_element
   MultiLineString<T> multiLineString<T>({@required String failedValue}) {
     return MultiLineString<T>(
       failedValue: failedValue,
     );
   }
 
+// ignore: unused_element
   StringExceedsLength<T> stringExceedsLength<T>({@required String failedValue, @required int maxLength}) {
     return StringExceedsLength<T>(
       failedValue: failedValue,
@@ -59,30 +67,35 @@ class _$ValueFailureTearOff {
     );
   }
 
+// ignore: unused_element
   IntegerOutOfBounds<T> integerOutOfBounds<T>({@required int failedValue}) {
     return IntegerOutOfBounds<T>(
       failedValue: failedValue,
     );
   }
 
+// ignore: unused_element
   StringWithInvalidCharacters<T> stringWithInvalidCharacters<T>({@required String failedValue}) {
     return StringWithInvalidCharacters<T>(
       failedValue: failedValue,
     );
   }
 
+// ignore: unused_element
   InvalidCoordinates<T> invalidCoordinate<T>({@required double failedValue}) {
     return InvalidCoordinates<T>(
       failedValue: failedValue,
     );
   }
 
+// ignore: unused_element
   EmptySet<T> emptySet<T>({@required T failedValue}) {
     return EmptySet<T>(
       failedValue: failedValue,
     );
   }
 
+// ignore: unused_element
   SetExceedsLength<T> setExceedsLength<T>({@required T failedValue, @required int maxLength}) {
     return SetExceedsLength<T>(
       failedValue: failedValue,

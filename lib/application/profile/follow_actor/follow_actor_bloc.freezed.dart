@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'follow_actor_bloc.dart';
 
@@ -12,18 +12,21 @@ T _$identity<T>(T value) => value;
 class _$FollowActorEventTearOff {
   const _$FollowActorEventTearOff();
 
+// ignore: unused_element
   _Initialized initialized(User user) {
     return _Initialized(
       user,
     );
   }
 
+// ignore: unused_element
   _Followed followed(User user) {
     return _Followed(
       user,
     );
   }
 
+// ignore: unused_element
   _UnFollowed unFollowed(User user) {
     return _UnFollowed(
       user,
@@ -471,36 +474,44 @@ abstract class _UnFollowed implements FollowActorEvent {
 class _$FollowActorStateTearOff {
   const _$FollowActorStateTearOff();
 
+// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
+// ignore: unused_element
   _ActionInProgress actionInProgress() {
     return const _ActionInProgress();
   }
 
+// ignore: unused_element
   _Follows follows() {
     return const _Follows();
   }
 
+// ignore: unused_element
   _FollowsNot followsNot() {
     return const _FollowsNot();
   }
 
+// ignore: unused_element
   _FollowSuccess followSuccess() {
     return const _FollowSuccess();
   }
 
+// ignore: unused_element
   _FollowFailure followFailure(Failure<dynamic> failure) {
     return _FollowFailure(
       failure,
     );
   }
 
+// ignore: unused_element
   _UnFollowSuccess unFollowSuccess() {
     return const _UnFollowSuccess();
   }
 
+// ignore: unused_element
   _UnFollowFailure unFollowFailure(Failure<dynamic> failure) {
     return _UnFollowFailure(
       failure,

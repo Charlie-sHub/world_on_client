@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'block_actor_bloc.dart';
 
@@ -12,18 +12,21 @@ T _$identity<T>(T value) => value;
 class _$BlockActorEventTearOff {
   const _$BlockActorEventTearOff();
 
+// ignore: unused_element
   _Initialized initialized(User user) {
     return _Initialized(
       user,
     );
   }
 
+// ignore: unused_element
   _Blocked blocked(User user) {
     return _Blocked(
       user,
     );
   }
 
+// ignore: unused_element
   _UnBlocked unBlocked(User user) {
     return _UnBlocked(
       user,
@@ -471,36 +474,44 @@ abstract class _UnBlocked implements BlockActorEvent {
 class _$BlockActorStateTearOff {
   const _$BlockActorStateTearOff();
 
+// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
+// ignore: unused_element
   _ActionInProgress actionInProgress() {
     return const _ActionInProgress();
   }
 
+// ignore: unused_element
   _Blocks blocks() {
     return const _Blocks();
   }
 
+// ignore: unused_element
   _BlocksNot blocksNot() {
     return const _BlocksNot();
   }
 
+// ignore: unused_element
   _BlockSuccess blockSuccess() {
     return const _BlockSuccess();
   }
 
+// ignore: unused_element
   _BlockFailure blockFailure(Failure<dynamic> failure) {
     return _BlockFailure(
       failure,
     );
   }
 
+// ignore: unused_element
   _UnBlockSuccess unBlockSuccess() {
     return const _UnBlockSuccess();
   }
 
+// ignore: unused_element
   _UnBlockFailure unBlockFailure(Failure<dynamic> failure) {
     return _UnBlockFailure(
       failure,

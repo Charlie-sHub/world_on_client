@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'tag_management_actor_bloc.dart';
 
@@ -12,6 +12,7 @@ T _$identity<T>(T value) => value;
 class _$TagManagementActorEventTearOff {
   const _$TagManagementActorEventTearOff();
 
+// ignore: unused_element
   _Deleted deleted(Tag tag) {
     return _Deleted(
       tag,
@@ -195,20 +196,24 @@ abstract class _Deleted implements TagManagementActorEvent {
 class _$TagManagementActorStateTearOff {
   const _$TagManagementActorStateTearOff();
 
+// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
+// ignore: unused_element
   _ActionInProgress actionInProgress() {
     return const _ActionInProgress();
   }
 
+// ignore: unused_element
   _DeletionFailure deletionFailure(Failure<dynamic> failure) {
     return _DeletionFailure(
       failure,
     );
   }
 
+// ignore: unused_element
   _DeletionSuccess deletionSuccess() {
     return const _DeletionSuccess();
   }

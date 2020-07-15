@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'registration_form_bloc.dart';
 
@@ -12,52 +12,61 @@ T _$identity<T>(T value) => value;
 class _$RegistrationFormEventTearOff {
   const _$RegistrationFormEventTearOff();
 
+// ignore: unused_element
   _Initialized initialized() {
     return const _Initialized();
   }
 
+// ignore: unused_element
   _NameChanged nameChanged(String name) {
     return _NameChanged(
       name,
     );
   }
 
+// ignore: unused_element
   _UsernameChanged usernameChanged(String username) {
     return _UsernameChanged(
       username,
     );
   }
 
+// ignore: unused_element
   _PasswordChanged passwordChanged(String password) {
     return _PasswordChanged(
       password,
     );
   }
 
+// ignore: unused_element
   _EmailAddressChanged emailAddressChanged(String emailAddress) {
     return _EmailAddressChanged(
       emailAddress,
     );
   }
 
+// ignore: unused_element
   _BirthdayChanged birthdayChanged(DateTime birthday) {
     return _BirthdayChanged(
       birthday,
     );
   }
 
+// ignore: unused_element
   _DescriptionChanged descriptionChanged(String description) {
     return _DescriptionChanged(
       description,
     );
   }
 
+// ignore: unused_element
   _InterestsChanged interestsChanged(Set<Tag> interests) {
     return _InterestsChanged(
       interests,
     );
   }
 
+// ignore: unused_element
   _Submitted submitted() {
     return const _Submitted();
   }
@@ -1455,6 +1464,7 @@ abstract class _Submitted implements RegistrationFormEvent {
 class _$RegistrationFormStateTearOff {
   const _$RegistrationFormStateTearOff();
 
+// ignore: unused_element
   _RegistrationFormState call({@required User user,
     @required bool showErrorMessages,
     @required bool isSubmitting,

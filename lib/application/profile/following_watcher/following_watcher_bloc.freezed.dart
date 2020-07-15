@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'following_watcher_bloc.dart';
 
@@ -12,6 +12,7 @@ T _$identity<T>(T value) => value;
 class _$FollowingWatcherEventTearOff {
   const _$FollowingWatcherEventTearOff();
 
+// ignore: unused_element
   _WatchFollowingUsersStarted watchFollowingUsersStarted(User user) {
     return _WatchFollowingUsersStarted(
       user,
@@ -202,20 +203,24 @@ abstract class _WatchFollowingUsersStarted implements FollowingWatcherEvent {
 class _$FollowingWatcherStateTearOff {
   const _$FollowingWatcherStateTearOff();
 
+// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
+// ignore: unused_element
   _LoadInProgress loadInProgress() {
     return const _LoadInProgress();
   }
 
+// ignore: unused_element
   _LoadSuccess loadSuccess(KtSet<User> followingUsers) {
     return _LoadSuccess(
       followingUsers,
     );
   }
 
+// ignore: unused_element
   _LoadFailure loadFailure(Failure<dynamic> failure) {
     return _LoadFailure(
       failure,

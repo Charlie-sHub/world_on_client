@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'achievement_management_watcher_bloc.dart';
 
@@ -12,6 +12,7 @@ T _$identity<T>(T value) => value;
 class _$AchievementManagementWatcherEventTearOff {
   const _$AchievementManagementWatcherEventTearOff();
 
+// ignore: unused_element
   _WatchAllAchievementsStarted watchAllAchievementsStarted() {
     return const _WatchAllAchievementsStarted();
   }
@@ -141,20 +142,24 @@ abstract class _WatchAllAchievementsStarted
 class _$AchievementManagementWatcherStateTearOff {
   const _$AchievementManagementWatcherStateTearOff();
 
+// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
+// ignore: unused_element
   _LoadInProgress loadInProgress() {
     return const _LoadInProgress();
   }
 
+// ignore: unused_element
   _loadSuccess loadSuccess(KtSet<Achievement> achievements) {
     return _loadSuccess(
       achievements,
     );
   }
 
+// ignore: unused_element
   _loadFailure loadFailure(Failure<dynamic> failure) {
     return _loadFailure(
       failure,

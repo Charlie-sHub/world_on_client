@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'tag_search_form_bloc.dart';
 
@@ -12,18 +12,21 @@ T _$identity<T>(T value) => value;
 class _$TagSearchFormEventTearOff {
   const _$TagSearchFormEventTearOff();
 
+// ignore: unused_element
   _SubmittedSearchTerm submittedSearchTerm(String searchTermString) {
     return _SubmittedSearchTerm(
       searchTermString,
     );
   }
 
+// ignore: unused_element
   _AddedTag addedTag(Tag tag) {
     return _AddedTag(
       tag,
     );
   }
 
+// ignore: unused_element
   _RemovedTag removedTag(Tag tag) {
     return _RemovedTag(
       tag,
@@ -455,6 +458,7 @@ abstract class _RemovedTag implements TagSearchFormEvent {
 class _$TagSearchFormStateTearOff {
   const _$TagSearchFormStateTearOff();
 
+// ignore: unused_element
   _TagSearchFormState call({@required Set<Tag> tagsSelected,
     @required KtSet<Tag> tagsFound,
     @required bool isSubmitting,

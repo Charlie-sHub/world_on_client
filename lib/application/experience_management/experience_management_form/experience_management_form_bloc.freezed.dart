@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'experience_management_form_bloc.dart';
 
@@ -12,24 +12,28 @@ T _$identity<T>(T value) => value;
 class _$ExperienceManagementFormEventTearOff {
   const _$ExperienceManagementFormEventTearOff();
 
+// ignore: unused_element
   _Initialized initialized(Option<Experience> experienceOption) {
     return _Initialized(
       experienceOption,
     );
   }
 
+// ignore: unused_element
   _NameChanged nameChanged(String name) {
     return _NameChanged(
       name,
     );
   }
 
+// ignore: unused_element
   _DescriptionChanged descriptionChanged(String description) {
     return _DescriptionChanged(
       description,
     );
   }
 
+// ignore: unused_element
   _CoordinatesChanged coordinatesChanged({@required double latitude, @required double longitude}) {
     return _CoordinatesChanged(
       latitude: latitude,
@@ -37,30 +41,35 @@ class _$ExperienceManagementFormEventTearOff {
     );
   }
 
+// ignore: unused_element
   _DifficultyChanged difficultyChanged(int difficulty) {
     return _DifficultyChanged(
       difficulty,
     );
   }
 
+// ignore: unused_element
   _ObjectivesChanged objectivesChanged(KtSet<PrimitiveObjective> objectives) {
     return _ObjectivesChanged(
       objectives,
     );
   }
 
+// ignore: unused_element
   _RewardsChanged rewardsChanged(KtSet<PrimitiveReward> rewards) {
     return _RewardsChanged(
       rewards,
     );
   }
 
+// ignore: unused_element
   _TagsChanged tagsChanged(KtSet<Tag> tags) {
     return _TagsChanged(
       tags,
     );
   }
 
+// ignore: unused_element
   _Submitted submitted() {
     return const _Submitted();
   }
@@ -1499,6 +1508,7 @@ abstract class _Submitted implements ExperienceManagementFormEvent {
 class _$ExperienceManagementFormStateTearOff {
   const _$ExperienceManagementFormStateTearOff();
 
+// ignore: unused_element
   _ExperienceManagementFormState call({@required Experience experience,
     @required bool showErrorMessages,
     @required bool isEditing,

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'profile_experiences_watcher_bloc.dart';
 
@@ -12,24 +12,28 @@ T _$identity<T>(T value) => value;
 class _$ProfileExperiencesWatcherEventTearOff {
   const _$ProfileExperiencesWatcherEventTearOff();
 
+// ignore: unused_element
   _WatchExperiencesDoneStarted watchExperiencesDoneStarted(User user) {
     return _WatchExperiencesDoneStarted(
       user,
     );
   }
 
+// ignore: unused_element
   _WatchExperiencesLikedStarted watchExperiencesLikedStarted(User user) {
     return _WatchExperiencesLikedStarted(
       user,
     );
   }
 
+// ignore: unused_element
   _WatchExperiencesCreatedStarted watchExperiencesCreatedStarted(User user) {
     return _WatchExperiencesCreatedStarted(
       user,
     );
   }
 
+// ignore: unused_element
   _ExperiencesReceived experiencesReceived(Either<Failure, KtSet<Experience>> failureOrExperiences) {
     return _ExperiencesReceived(
       failureOrExperiences,
@@ -641,20 +645,24 @@ abstract class _ExperiencesReceived implements ProfileExperiencesWatcherEvent {
 class _$ProfileExperiencesWatcherStateTearOff {
   const _$ProfileExperiencesWatcherStateTearOff();
 
+// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
+// ignore: unused_element
   _LoadInProgress loadInProgress() {
     return const _LoadInProgress();
   }
 
+// ignore: unused_element
   _LoadSuccess loadSuccess(KtSet<Experience> experiences) {
     return _LoadSuccess(
       experiences,
     );
   }
 
+// ignore: unused_element
   _LoadFailure loadFailure(Failure<dynamic> failure) {
     return _LoadFailure(
       failure,

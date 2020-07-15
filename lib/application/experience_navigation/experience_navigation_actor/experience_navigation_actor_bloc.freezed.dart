@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'experience_navigation_actor_bloc.dart';
 
@@ -12,36 +12,43 @@ T _$identity<T>(T value) => value;
 class _$ExperienceNavigationActorEventTearOff {
   const _$ExperienceNavigationActorEventTearOff();
 
+// ignore: unused_element
   _Initialized initialized(Option<Experience> experienceOption) {
     return _Initialized(
       experienceOption,
     );
   }
 
+// ignore: unused_element
   _ObjectiveAccomplished objectiveAccomplished(Objective objective) {
     return _ObjectiveAccomplished(
       objective,
     );
   }
 
+// ignore: unused_element
   _Liked liked() {
     return const _Liked();
   }
 
+// ignore: unused_element
   _GotCurrentLocation gotCurrentLocation() {
     return const _GotCurrentLocation();
   }
 
+// ignore: unused_element
   _DifficultyRated difficultyRated(int difficulty) {
     return _DifficultyRated(
       difficulty,
     );
   }
 
+// ignore: unused_element
   _ExperienceFinished experienceFinished() {
     return const _ExperienceFinished();
   }
 
+// ignore: unused_element
   _UserRewarded userRewarded() {
     return const _UserRewarded();
   }
@@ -1012,6 +1019,7 @@ abstract class _UserRewarded implements ExperienceNavigationActorEvent {
 class _$ExperienceNavigationActorStateTearOff {
   const _$ExperienceNavigationActorStateTearOff();
 
+// ignore: unused_element
   _ExperienceNavigationActorState call(
       {@required Experience experience,
       @required Map<int, bool> objectiveTracker,

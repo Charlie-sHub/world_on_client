@@ -24,6 +24,7 @@ import 'package:worldon/application/main_feed/main_feed_watcher/main_feed_watche
 import 'package:worldon/application/notifications/notification_actor/notification_actor_bloc.dart';
 import 'package:worldon/application/notifications/notifications_watcher/notifications_watcher_bloc.dart';
 import 'package:worldon/application/options/options_form/options_form_bloc.dart';
+import 'package:worldon/application/options/user_actor/user_actor_bloc.dart';
 import 'package:worldon/application/profile/block_actor/block_actor_bloc.dart';
 import 'package:worldon/application/profile/blocked_watcher/blocked_watcher_bloc.dart';
 import 'package:worldon/application/profile/follow_actor/follow_actor_bloc.dart';
@@ -259,6 +260,7 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerFactory<TagManagementFormBloc>(() => TagManagementFormBloc());
   g.registerFactory<TagManagementWatcherBloc>(() => TagManagementWatcherBloc());
   g.registerFactory<TagSearchFormBloc>(() => TagSearchFormBloc());
+  g.registerFactory<UserActorBloc>(() => UserActorBloc());
 
   //Register test Dependencies --------
   if (environment == 'test') {

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'experience_log_actor_bloc.dart';
 
@@ -12,6 +12,7 @@ T _$identity<T>(T value) => value;
 class _$ExperienceLogActorEventTearOff {
   const _$ExperienceLogActorEventTearOff();
 
+// ignore: unused_element
   _ExperienceDismissed experienceDismissed(int experienceId) {
     return _ExperienceDismissed(
       experienceId,
@@ -185,18 +186,22 @@ abstract class _ExperienceDismissed implements ExperienceLogActorEvent {
 class _$ExperienceLogActorStateTearOff {
   const _$ExperienceLogActorStateTearOff();
 
+// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
+// ignore: unused_element
   _ActionInProgress actionInProgress() {
     return const _ActionInProgress();
   }
 
+// ignore: unused_element
   _DismissalSuccess dismissalSuccess() {
     return const _DismissalSuccess();
   }
 
+// ignore: unused_element
   _DismissalFailure dismissalFailure(Failure<dynamic> failure) {
     return _DismissalFailure(
       failure,

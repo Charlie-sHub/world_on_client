@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'notification_dto.dart';
 
@@ -15,8 +15,14 @@ NotificationDto _$NotificationDtoFromJson(Map<String, dynamic> json) {
 class _$NotificationDtoTearOff {
   const _$NotificationDtoTearOff();
 
-  _NotificationDto call(
-      {@required int id, @required UserDto sender, @required UserDto receiver, @required String description, @required bool seen, @required String creationDate, @required NotificationType type}) {
+// ignore: unused_element
+  _NotificationDto call({@required int id,
+    @required UserDto sender,
+    @required UserDto receiver,
+    @required String description,
+    @required bool seen,
+    @required String creationDate,
+    @required NotificationType type}) {
     return _NotificationDto(
       id: id,
       sender: sender,
@@ -46,16 +52,9 @@ mixin _$NotificationDto {
 }
 
 abstract class $NotificationDtoCopyWith<$Res> {
-  factory $NotificationDtoCopyWith(NotificationDto value, $Res Function(NotificationDto) then) =
-  _$NotificationDtoCopyWithImpl<$Res>;
-  
-  $Res call({int id,
-    UserDto sender,
-    UserDto receiver,
-    String description,
-    bool seen,
-    String creationDate,
-    NotificationType type});
+  factory $NotificationDtoCopyWith(NotificationDto value, $Res Function(NotificationDto) then) = _$NotificationDtoCopyWithImpl<$Res>;
+
+  $Res call({int id, UserDto sender, UserDto receiver, String description, bool seen, String creationDate, NotificationType type});
 
   $UserDtoCopyWith<$Res> get sender;
   $UserDtoCopyWith<$Res> get receiver;

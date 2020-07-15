@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'search_experiences_by_name_watcher_bloc.dart';
 
@@ -12,6 +12,7 @@ T _$identity<T>(T value) => value;
 class _$SearchExperiencesByNameWatcherEventTearOff {
   const _$SearchExperiencesByNameWatcherEventTearOff();
 
+// ignore: unused_element
   _WatchExperiencesFoundByNameStarted watchExperiencesFoundByNameStarted(SearchTerm searchTerm) {
     return _WatchExperiencesFoundByNameStarted(
       searchTerm,
@@ -195,20 +196,24 @@ abstract class _WatchExperiencesFoundByNameStarted
 class _$SearchExperiencesByNameWatcherStateTearOff {
   const _$SearchExperiencesByNameWatcherStateTearOff();
 
+// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
+// ignore: unused_element
   _SearchInProgress searchInProgress() {
     return const _SearchInProgress();
   }
 
+// ignore: unused_element
   _SearchSuccess searchSuccess(KtSet<Experience> experiencesFound) {
     return _SearchSuccess(
       experiencesFound,
     );
   }
 
+// ignore: unused_element
   _SearchFailure searchFailure(Failure<dynamic> failure) {
     return _SearchFailure(
       failure,
