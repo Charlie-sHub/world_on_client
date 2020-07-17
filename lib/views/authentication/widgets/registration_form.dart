@@ -14,10 +14,10 @@ class RegistrationForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<RegistrationFormBloc, RegistrationFormState>(
       listener: (context, state) => state.failureOrSuccessOption.fold(
-          () => null,
-          (either) => either.fold(
-            (failure) => onFailure(failure, context),
-            (_) => onSuccess(context),
+        () => null,
+        (either) => either.fold(
+          (failure) => onFailure(failure, context),
+          (_) => onSuccess(context),
         ),
       ),
       // TODO: Check how to initialize this form with a google user or similar
@@ -58,7 +58,7 @@ class RegistrationForm extends StatelessWidget {
       ),
     );
   }
-  
+
   Future onFailure(Failure failure, BuildContext context) {
     return FlushbarHelper.createError(
       message: failure.maybeMap(
@@ -84,7 +84,7 @@ class WorldOnTitle extends StatelessWidget {
   const WorldOnTitle({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return const Text(
@@ -102,7 +102,7 @@ class PhotoPlaceholder extends StatelessWidget {
   const PhotoPlaceholder({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -118,7 +118,7 @@ class UsernameTextField extends StatelessWidget {
   const UsernameTextField({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -126,13 +126,14 @@ class UsernameTextField extends StatelessWidget {
         RegistrationFormEvent.usernameChanged(value),
       ),
       validator: (_) => context.bloc<RegistrationFormBloc>().state.user.username.value.fold(
-          (failure) => failure.maybeMap(
-          emptyString: (_) => "The username can't be empty",
-          multiLineString: (_) => "The username can't be more than one line",
-          stringExceedsLength: (_) => "The username is too long",
-          stringWithInvalidCharacters: (_) => "The username has invalid characters",
-          orElse: () => StringConst.unknownError,
-        ),
+          (failure) =>
+          failure.maybeMap(
+            emptyString: (_) => "The username can't be empty",
+            multiLineString: (_) => "The username can't be more than one line",
+            stringExceedsLength: (_) => "The username is too long",
+            stringWithInvalidCharacters: (_) => "The username has invalid characters",
+            orElse: () => StringConst.unknownError,
+          ),
           (_) => null,
       ),
       autocorrect: false,
@@ -148,7 +149,7 @@ class NameTextField extends StatelessWidget {
   const NameTextField({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -156,13 +157,14 @@ class NameTextField extends StatelessWidget {
         RegistrationFormEvent.nameChanged(value),
       ),
       validator: (_) => context.bloc<RegistrationFormBloc>().state.user.name.value.fold(
-          (failure) => failure.maybeMap(
-          emptyString: (_) => "The name can't be empty",
-          multiLineString: (_) => "The name can't be more than one line",
-          stringExceedsLength: (_) => "The name is too long",
-          stringWithInvalidCharacters: (_) => "The name has invalid characters",
-          orElse: () => StringConst.unknownError,
-        ),
+          (failure) =>
+          failure.maybeMap(
+            emptyString: (_) => "The name can't be empty",
+            multiLineString: (_) => "The name can't be more than one line",
+            stringExceedsLength: (_) => "The name is too long",
+            stringWithInvalidCharacters: (_) => "The name has invalid characters",
+            orElse: () => StringConst.unknownError,
+          ),
           (_) => null,
       ),
       autocorrect: false,
@@ -178,7 +180,7 @@ class EmailTextField extends StatelessWidget {
   const EmailTextField({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -186,10 +188,11 @@ class EmailTextField extends StatelessWidget {
         RegistrationFormEvent.emailAddressChanged(value),
       ),
       validator: (_) => context.bloc<RegistrationFormBloc>().state.user.email.value.fold(
-          (failure) => failure.maybeMap(
-          invalidEmail: (_) => "Invalid email",
-          orElse: () => StringConst.unknownError,
-        ),
+          (failure) =>
+          failure.maybeMap(
+            invalidEmail: (_) => "Invalid email",
+            orElse: () => StringConst.unknownError,
+          ),
           (_) => null,
       ),
       autocorrect: false,
@@ -205,7 +208,7 @@ class DescriptionTextField extends StatelessWidget {
   const DescriptionTextField({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -213,11 +216,12 @@ class DescriptionTextField extends StatelessWidget {
         RegistrationFormEvent.descriptionChanged(value),
       ),
       validator: (_) => context.bloc<RegistrationFormBloc>().state.user.description.value.fold(
-          (failure) => failure.maybeMap(
-          emptyString: (_) => "The description can't be empty",
-          stringExceedsLength: (_) => "The description is too long",
-          orElse: () => StringConst.unknownError,
-        ),
+          (failure) =>
+          failure.maybeMap(
+            emptyString: (_) => "The description can't be empty",
+            stringExceedsLength: (_) => "The description is too long",
+            orElse: () => StringConst.unknownError,
+          ),
           (_) => null,
       ),
       autocorrect: false,
@@ -234,7 +238,7 @@ class BirthdayButton extends StatelessWidget {
   const BirthdayButton({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
@@ -259,7 +263,7 @@ class PasswordTextField extends StatelessWidget {
   const PasswordTextField({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -267,14 +271,15 @@ class PasswordTextField extends StatelessWidget {
         RegistrationFormEvent.passwordChanged(value),
       ),
       validator: (_) => context.bloc<RegistrationFormBloc>().state.user.password.value.fold(
-          (failure) => failure.maybeMap(
-          emptyString: (_) => "The password can't be empty",
-          multiLineString: (_) => "The password can't be more than one line",
-          stringExceedsLength: (_) => "The password is too long",
-          // Rather superfluous
-          invalidPassword: (_) => "The password is invalid",
-          orElse: () => StringConst.unknownError,
-        ),
+          (failure) =>
+          failure.maybeMap(
+            emptyString: (_) => "The password can't be empty",
+            multiLineString: (_) => "The password can't be more than one line",
+            stringExceedsLength: (_) => "The password is too long",
+            // Rather superfluous
+            invalidPassword: (_) => "The password is invalid",
+            orElse: () => StringConst.unknownError,
+          ),
           (_) => null,
       ),
       autocorrect: false,
@@ -291,7 +296,7 @@ class PasswordConfirmationTextField extends StatelessWidget {
   const PasswordConfirmationTextField({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -299,10 +304,11 @@ class PasswordConfirmationTextField extends StatelessWidget {
         RegistrationFormEvent.passwordConfirmationChanged(value),
       ),
       validator: (_) => context.bloc<RegistrationFormBloc>().state.passwordConfirmator.value.fold(
-          (failure) => failure.maybeMap(
-          stringMismatch: (_) => "The passwords are different",
-          orElse: () => StringConst.unknownError,
-        ),
+          (failure) =>
+          failure.maybeMap(
+            stringMismatch: (_) => "The passwords are different",
+            orElse: () => StringConst.unknownError,
+          ),
           (_) => null,
       ),
       autocorrect: false,
@@ -319,7 +325,7 @@ class EULACheckBox extends StatelessWidget {
   const EULACheckBox({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return CheckboxListTile(
@@ -336,7 +342,7 @@ class RegisterButton extends StatelessWidget {
   const RegisterButton({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return RaisedButton(

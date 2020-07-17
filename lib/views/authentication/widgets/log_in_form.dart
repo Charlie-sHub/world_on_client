@@ -106,7 +106,9 @@ class LogInGoogleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlatButton(
-      onPressed: () {},
+      onPressed: () => context.bloc<LogInFormBloc>().add(
+            const LogInFormEvent.loggedInGoogle(),
+          ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -128,9 +130,7 @@ class LogInTroubleButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlatButton(
       // TODO: Add functionality for recovering account
-      onPressed: () => context.bloc<LogInFormBloc>().add(
-            const LogInFormEvent.loggedInGoogle(),
-          ),
+      onPressed: () => null,
       child: const Text("Having trouble logging in? tap here"),
     );
   }

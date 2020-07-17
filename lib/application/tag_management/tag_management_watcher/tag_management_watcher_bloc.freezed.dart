@@ -43,10 +43,13 @@ mixin _$TagManagementWatcherEvent {
 }
 
 abstract class $TagManagementWatcherEventCopyWith<$Res> {
-  factory $TagManagementWatcherEventCopyWith(TagManagementWatcherEvent value, $Res Function(TagManagementWatcherEvent) then) = _$TagManagementWatcherEventCopyWithImpl<$Res>;
+  factory $TagManagementWatcherEventCopyWith(TagManagementWatcherEvent value,
+          $Res Function(TagManagementWatcherEvent) then) =
+      _$TagManagementWatcherEventCopyWithImpl<$Res>;
 }
 
-class _$TagManagementWatcherEventCopyWithImpl<$Res> implements $TagManagementWatcherEventCopyWith<$Res> {
+class _$TagManagementWatcherEventCopyWithImpl<$Res>
+    implements $TagManagementWatcherEventCopyWith<$Res> {
   _$TagManagementWatcherEventCopyWithImpl(this._value, this._then);
 
   final TagManagementWatcherEvent _value;
@@ -56,14 +59,16 @@ class _$TagManagementWatcherEventCopyWithImpl<$Res> implements $TagManagementWat
 
 abstract class _$WatchAllTagsStartedCopyWith<$Res> {
   factory _$WatchAllTagsStartedCopyWith(_WatchAllTagsStarted value,
-    $Res Function(_WatchAllTagsStarted) then) =
-  __$WatchAllTagsStartedCopyWithImpl<$Res>;
+          $Res Function(_WatchAllTagsStarted) then) =
+      __$WatchAllTagsStartedCopyWithImpl<$Res>;
 }
 
-class __$WatchAllTagsStartedCopyWithImpl<$Res> extends _$TagManagementWatcherEventCopyWithImpl<$Res>
-  implements _$WatchAllTagsStartedCopyWith<$Res> {
-  __$WatchAllTagsStartedCopyWithImpl(_WatchAllTagsStarted _value, $Res Function(_WatchAllTagsStarted) _then)
-    : super(_value, (v) => _then(v as _WatchAllTagsStarted));
+class __$WatchAllTagsStartedCopyWithImpl<$Res>
+    extends _$TagManagementWatcherEventCopyWithImpl<$Res>
+    implements _$WatchAllTagsStartedCopyWith<$Res> {
+  __$WatchAllTagsStartedCopyWithImpl(
+      _WatchAllTagsStarted _value, $Res Function(_WatchAllTagsStarted) _then)
+      : super(_value, (v) => _then(v as _WatchAllTagsStarted));
 
   @override
   _WatchAllTagsStarted get _value => super._value as _WatchAllTagsStarted;
@@ -200,12 +205,12 @@ mixin _$TagManagementWatcherState {
 
 abstract class $TagManagementWatcherStateCopyWith<$Res> {
   factory $TagManagementWatcherStateCopyWith(TagManagementWatcherState value,
-    $Res Function(TagManagementWatcherState) then) =
-  _$TagManagementWatcherStateCopyWithImpl<$Res>;
+          $Res Function(TagManagementWatcherState) then) =
+      _$TagManagementWatcherStateCopyWithImpl<$Res>;
 }
 
 class _$TagManagementWatcherStateCopyWithImpl<$Res>
-  implements $TagManagementWatcherStateCopyWith<$Res> {
+    implements $TagManagementWatcherStateCopyWith<$Res> {
   _$TagManagementWatcherStateCopyWithImpl(this._value, this._then);
 
   final TagManagementWatcherState _value;
@@ -215,13 +220,14 @@ class _$TagManagementWatcherStateCopyWithImpl<$Res>
 
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-  __$InitialCopyWithImpl<$Res>;
+      __$InitialCopyWithImpl<$Res>;
 }
 
-class __$InitialCopyWithImpl<$Res> extends _$TagManagementWatcherStateCopyWithImpl<$Res>
-  implements _$InitialCopyWith<$Res> {
+class __$InitialCopyWithImpl<$Res>
+    extends _$TagManagementWatcherStateCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-    : super(_value, (v) => _then(v as _Initial));
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -311,14 +317,17 @@ abstract class _Initial implements TagManagementWatcherState {
 }
 
 abstract class _$LoadInProgressCopyWith<$Res> {
-  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) =
-  __$LoadInProgressCopyWithImpl<$Res>;
+  factory _$LoadInProgressCopyWith(
+          _LoadInProgress value, $Res Function(_LoadInProgress) then) =
+      __$LoadInProgressCopyWithImpl<$Res>;
 }
 
-class __$LoadInProgressCopyWithImpl<$Res> extends _$TagManagementWatcherStateCopyWithImpl<$Res>
-  implements _$LoadInProgressCopyWith<$Res> {
-  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then)
-    : super(_value, (v) => _then(v as _LoadInProgress));
+class __$LoadInProgressCopyWithImpl<$Res>
+    extends _$TagManagementWatcherStateCopyWithImpl<$Res>
+    implements _$LoadInProgressCopyWith<$Res> {
+  __$LoadInProgressCopyWithImpl(
+      _LoadInProgress _value, $Res Function(_LoadInProgress) _then)
+      : super(_value, (v) => _then(v as _LoadInProgress));
 
   @override
   _LoadInProgress get _value => super._value as _LoadInProgress;
@@ -408,15 +417,18 @@ abstract class _LoadInProgress implements TagManagementWatcherState {
 }
 
 abstract class _$loadSuccessCopyWith<$Res> {
-  factory _$loadSuccessCopyWith(_loadSuccess value, $Res Function(_loadSuccess) then) =
-  __$loadSuccessCopyWithImpl<$Res>;
+  factory _$loadSuccessCopyWith(
+          _loadSuccess value, $Res Function(_loadSuccess) then) =
+      __$loadSuccessCopyWithImpl<$Res>;
   $Res call({KtSet<Tag> tags});
 }
 
-class __$loadSuccessCopyWithImpl<$Res> extends _$TagManagementWatcherStateCopyWithImpl<$Res>
-  implements _$loadSuccessCopyWith<$Res> {
-  __$loadSuccessCopyWithImpl(_loadSuccess _value, $Res Function(_loadSuccess) _then)
-    : super(_value, (v) => _then(v as _loadSuccess));
+class __$loadSuccessCopyWithImpl<$Res>
+    extends _$TagManagementWatcherStateCopyWithImpl<$Res>
+    implements _$loadSuccessCopyWith<$Res> {
+  __$loadSuccessCopyWithImpl(
+      _loadSuccess _value, $Res Function(_loadSuccess) _then)
+      : super(_value, (v) => _then(v as _loadSuccess));
 
   @override
   _loadSuccess get _value => super._value as _loadSuccess;
@@ -445,18 +457,18 @@ class _$_loadSuccess implements _loadSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _loadSuccess &&
-        (identical(other.tags, tags) ||
-          const DeepCollectionEquality().equals(other.tags, tags)));
+        (other is _loadSuccess &&
+            (identical(other.tags, tags) ||
+                const DeepCollectionEquality().equals(other.tags, tags)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(tags);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tags);
 
   @override
   _$loadSuccessCopyWith<_loadSuccess> get copyWith =>
-    __$loadSuccessCopyWithImpl<_loadSuccess>(this, _$identity);
+      __$loadSuccessCopyWithImpl<_loadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -529,17 +541,20 @@ abstract class _loadSuccess implements TagManagementWatcherState {
 }
 
 abstract class _$loadFailureCopyWith<$Res> {
-  factory _$loadFailureCopyWith(_loadFailure value, $Res Function(_loadFailure) then) =
-  __$loadFailureCopyWithImpl<$Res>;
+  factory _$loadFailureCopyWith(
+          _loadFailure value, $Res Function(_loadFailure) then) =
+      __$loadFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
-class __$loadFailureCopyWithImpl<$Res> extends _$TagManagementWatcherStateCopyWithImpl<$Res>
-  implements _$loadFailureCopyWith<$Res> {
-  __$loadFailureCopyWithImpl(_loadFailure _value, $Res Function(_loadFailure) _then)
-    : super(_value, (v) => _then(v as _loadFailure));
+class __$loadFailureCopyWithImpl<$Res>
+    extends _$TagManagementWatcherStateCopyWithImpl<$Res>
+    implements _$loadFailureCopyWith<$Res> {
+  __$loadFailureCopyWithImpl(
+      _loadFailure _value, $Res Function(_loadFailure) _then)
+      : super(_value, (v) => _then(v as _loadFailure));
 
   @override
   _loadFailure get _value => super._value as _loadFailure;
@@ -578,18 +593,18 @@ class _$_loadFailure implements _loadFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _loadFailure &&
-        (identical(other.failure, failure) ||
-          const DeepCollectionEquality().equals(other.failure, failure)));
+        (other is _loadFailure &&
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
   _$loadFailureCopyWith<_loadFailure> get copyWith =>
-    __$loadFailureCopyWithImpl<_loadFailure>(this, _$identity);
+      __$loadFailureCopyWithImpl<_loadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs

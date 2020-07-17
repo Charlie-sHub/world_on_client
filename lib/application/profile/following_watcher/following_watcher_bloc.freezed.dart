@@ -37,7 +37,8 @@ mixin _$FollowingWatcherEvent {
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result watchFollowingUsersStarted(_WatchFollowingUsersStarted value),
+    @required
+        Result watchFollowingUsersStarted(_WatchFollowingUsersStarted value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -49,14 +50,16 @@ mixin _$FollowingWatcherEvent {
 }
 
 abstract class $FollowingWatcherEventCopyWith<$Res> {
-  factory $FollowingWatcherEventCopyWith(FollowingWatcherEvent value, $Res Function(FollowingWatcherEvent) then) = _$FollowingWatcherEventCopyWithImpl<$Res>;
+  factory $FollowingWatcherEventCopyWith(FollowingWatcherEvent value,
+          $Res Function(FollowingWatcherEvent) then) =
+      _$FollowingWatcherEventCopyWithImpl<$Res>;
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
 }
 
 class _$FollowingWatcherEventCopyWithImpl<$Res>
-  implements $FollowingWatcherEventCopyWith<$Res> {
+    implements $FollowingWatcherEventCopyWith<$Res> {
   _$FollowingWatcherEventCopyWithImpl(this._value, this._then);
 
   final FollowingWatcherEvent _value;
@@ -84,10 +87,11 @@ class _$FollowingWatcherEventCopyWithImpl<$Res>
 }
 
 abstract class _$WatchFollowingUsersStartedCopyWith<$Res>
-  implements $FollowingWatcherEventCopyWith<$Res> {
-  factory _$WatchFollowingUsersStartedCopyWith(_WatchFollowingUsersStarted value,
-    $Res Function(_WatchFollowingUsersStarted) then) =
-  __$WatchFollowingUsersStartedCopyWithImpl<$Res>;
+    implements $FollowingWatcherEventCopyWith<$Res> {
+  factory _$WatchFollowingUsersStartedCopyWith(
+          _WatchFollowingUsersStarted value,
+          $Res Function(_WatchFollowingUsersStarted) then) =
+      __$WatchFollowingUsersStartedCopyWithImpl<$Res>;
   @override
   $Res call({User user});
 
@@ -95,15 +99,16 @@ abstract class _$WatchFollowingUsersStartedCopyWith<$Res>
   $UserCopyWith<$Res> get user;
 }
 
-class __$WatchFollowingUsersStartedCopyWithImpl<$Res> extends _$FollowingWatcherEventCopyWithImpl<$Res>
-  implements _$WatchFollowingUsersStartedCopyWith<$Res> {
+class __$WatchFollowingUsersStartedCopyWithImpl<$Res>
+    extends _$FollowingWatcherEventCopyWithImpl<$Res>
+    implements _$WatchFollowingUsersStartedCopyWith<$Res> {
   __$WatchFollowingUsersStartedCopyWithImpl(_WatchFollowingUsersStarted _value,
-    $Res Function(_WatchFollowingUsersStarted) _then)
-    : super(_value, (v) => _then(v as _WatchFollowingUsersStarted));
+      $Res Function(_WatchFollowingUsersStarted) _then)
+      : super(_value, (v) => _then(v as _WatchFollowingUsersStarted));
 
   @override
   _WatchFollowingUsersStarted get _value =>
-    super._value as _WatchFollowingUsersStarted;
+      super._value as _WatchFollowingUsersStarted;
 
   @override
   $Res call({
@@ -129,20 +134,19 @@ class _$_WatchFollowingUsersStarted implements _WatchFollowingUsersStarted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _WatchFollowingUsersStarted &&
-        (identical(other.user, user) ||
-          const DeepCollectionEquality().equals(other.user, user)));
+        (other is _WatchFollowingUsersStarted &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @override
   _$WatchFollowingUsersStartedCopyWith<_WatchFollowingUsersStarted>
-  get copyWith =>
-    __$WatchFollowingUsersStartedCopyWithImpl<
-      _WatchFollowingUsersStarted>(this, _$identity);
+      get copyWith => __$WatchFollowingUsersStartedCopyWithImpl<
+          _WatchFollowingUsersStarted>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -169,7 +173,8 @@ class _$_WatchFollowingUsersStarted implements _WatchFollowingUsersStarted {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result watchFollowingUsersStarted(_WatchFollowingUsersStarted value),
+    @required
+        Result watchFollowingUsersStarted(_WatchFollowingUsersStarted value),
   }) {
     assert(watchFollowingUsersStarted != null);
     return watchFollowingUsersStarted(this);
@@ -191,13 +196,13 @@ class _$_WatchFollowingUsersStarted implements _WatchFollowingUsersStarted {
 
 abstract class _WatchFollowingUsersStarted implements FollowingWatcherEvent {
   const factory _WatchFollowingUsersStarted(User user) =
-  _$_WatchFollowingUsersStarted;
+      _$_WatchFollowingUsersStarted;
 
   @override
   User get user;
   @override
   _$WatchFollowingUsersStartedCopyWith<_WatchFollowingUsersStarted>
-  get copyWith;
+      get copyWith;
 }
 
 class _$FollowingWatcherStateTearOff {
@@ -266,12 +271,12 @@ mixin _$FollowingWatcherState {
 
 abstract class $FollowingWatcherStateCopyWith<$Res> {
   factory $FollowingWatcherStateCopyWith(FollowingWatcherState value,
-    $Res Function(FollowingWatcherState) then) =
-  _$FollowingWatcherStateCopyWithImpl<$Res>;
+          $Res Function(FollowingWatcherState) then) =
+      _$FollowingWatcherStateCopyWithImpl<$Res>;
 }
 
 class _$FollowingWatcherStateCopyWithImpl<$Res>
-  implements $FollowingWatcherStateCopyWith<$Res> {
+    implements $FollowingWatcherStateCopyWith<$Res> {
   _$FollowingWatcherStateCopyWithImpl(this._value, this._then);
 
   final FollowingWatcherState _value;
@@ -281,13 +286,14 @@ class _$FollowingWatcherStateCopyWithImpl<$Res>
 
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-  __$InitialCopyWithImpl<$Res>;
+      __$InitialCopyWithImpl<$Res>;
 }
 
-class __$InitialCopyWithImpl<$Res> extends _$FollowingWatcherStateCopyWithImpl<$Res>
-  implements _$InitialCopyWith<$Res> {
+class __$InitialCopyWithImpl<$Res>
+    extends _$FollowingWatcherStateCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-    : super(_value, (v) => _then(v as _Initial));
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -377,14 +383,17 @@ abstract class _Initial implements FollowingWatcherState {
 }
 
 abstract class _$LoadInProgressCopyWith<$Res> {
-  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) =
-  __$LoadInProgressCopyWithImpl<$Res>;
+  factory _$LoadInProgressCopyWith(
+          _LoadInProgress value, $Res Function(_LoadInProgress) then) =
+      __$LoadInProgressCopyWithImpl<$Res>;
 }
 
-class __$LoadInProgressCopyWithImpl<$Res> extends _$FollowingWatcherStateCopyWithImpl<$Res>
-  implements _$LoadInProgressCopyWith<$Res> {
-  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then)
-    : super(_value, (v) => _then(v as _LoadInProgress));
+class __$LoadInProgressCopyWithImpl<$Res>
+    extends _$FollowingWatcherStateCopyWithImpl<$Res>
+    implements _$LoadInProgressCopyWith<$Res> {
+  __$LoadInProgressCopyWithImpl(
+      _LoadInProgress _value, $Res Function(_LoadInProgress) _then)
+      : super(_value, (v) => _then(v as _LoadInProgress));
 
   @override
   _LoadInProgress get _value => super._value as _LoadInProgress;
@@ -474,15 +483,18 @@ abstract class _LoadInProgress implements FollowingWatcherState {
 }
 
 abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
-  __$LoadSuccessCopyWithImpl<$Res>;
+  factory _$LoadSuccessCopyWith(
+          _LoadSuccess value, $Res Function(_LoadSuccess) then) =
+      __$LoadSuccessCopyWithImpl<$Res>;
   $Res call({KtSet<User> followingUsers});
 }
 
-class __$LoadSuccessCopyWithImpl<$Res> extends _$FollowingWatcherStateCopyWithImpl<$Res>
-  implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then)
-    : super(_value, (v) => _then(v as _LoadSuccess));
+class __$LoadSuccessCopyWithImpl<$Res>
+    extends _$FollowingWatcherStateCopyWithImpl<$Res>
+    implements _$LoadSuccessCopyWith<$Res> {
+  __$LoadSuccessCopyWithImpl(
+      _LoadSuccess _value, $Res Function(_LoadSuccess) _then)
+      : super(_value, (v) => _then(v as _LoadSuccess));
 
   @override
   _LoadSuccess get _value => super._value as _LoadSuccess;
@@ -493,8 +505,8 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$FollowingWatcherStateCopyWithIm
   }) {
     return _then(_LoadSuccess(
       followingUsers == freezed
-        ? _value.followingUsers
-        : followingUsers as KtSet<User>,
+          ? _value.followingUsers
+          : followingUsers as KtSet<User>,
     ));
   }
 }
@@ -513,20 +525,20 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _LoadSuccess &&
-        (identical(other.followingUsers, followingUsers) ||
-          const DeepCollectionEquality()
-            .equals(other.followingUsers, followingUsers)));
+        (other is _LoadSuccess &&
+            (identical(other.followingUsers, followingUsers) ||
+                const DeepCollectionEquality()
+                    .equals(other.followingUsers, followingUsers)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(followingUsers);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(followingUsers);
 
   @override
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
-    __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
+      __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -599,17 +611,20 @@ abstract class _LoadSuccess implements FollowingWatcherState {
 }
 
 abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) =
-  __$LoadFailureCopyWithImpl<$Res>;
+  factory _$LoadFailureCopyWith(
+          _LoadFailure value, $Res Function(_LoadFailure) then) =
+      __$LoadFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
-class __$LoadFailureCopyWithImpl<$Res> extends _$FollowingWatcherStateCopyWithImpl<$Res>
-  implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then)
-    : super(_value, (v) => _then(v as _LoadFailure));
+class __$LoadFailureCopyWithImpl<$Res>
+    extends _$FollowingWatcherStateCopyWithImpl<$Res>
+    implements _$LoadFailureCopyWith<$Res> {
+  __$LoadFailureCopyWithImpl(
+      _LoadFailure _value, $Res Function(_LoadFailure) _then)
+      : super(_value, (v) => _then(v as _LoadFailure));
 
   @override
   _LoadFailure get _value => super._value as _LoadFailure;
@@ -648,18 +663,18 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _LoadFailure &&
-        (identical(other.failure, failure) ||
-          const DeepCollectionEquality().equals(other.failure, failure)));
+        (other is _LoadFailure &&
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
-    __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
+      __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs

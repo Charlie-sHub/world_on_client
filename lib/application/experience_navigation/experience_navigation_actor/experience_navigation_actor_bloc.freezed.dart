@@ -55,7 +55,8 @@ class _$ExperienceNavigationActorEventTearOff {
 }
 
 // ignore: unused_element
-const $ExperienceNavigationActorEvent = _$ExperienceNavigationActorEventTearOff();
+const $ExperienceNavigationActorEvent =
+    _$ExperienceNavigationActorEventTearOff();
 
 mixin _$ExperienceNavigationActorEvent {
   @optionalTypeArgs
@@ -103,10 +104,14 @@ mixin _$ExperienceNavigationActorEvent {
 }
 
 abstract class $ExperienceNavigationActorEventCopyWith<$Res> {
-  factory $ExperienceNavigationActorEventCopyWith(ExperienceNavigationActorEvent value, $Res Function(ExperienceNavigationActorEvent) then) = _$ExperienceNavigationActorEventCopyWithImpl<$Res>;
+  factory $ExperienceNavigationActorEventCopyWith(
+          ExperienceNavigationActorEvent value,
+          $Res Function(ExperienceNavigationActorEvent) then) =
+      _$ExperienceNavigationActorEventCopyWithImpl<$Res>;
 }
 
-class _$ExperienceNavigationActorEventCopyWithImpl<$Res> implements $ExperienceNavigationActorEventCopyWith<$Res> {
+class _$ExperienceNavigationActorEventCopyWithImpl<$Res>
+    implements $ExperienceNavigationActorEventCopyWith<$Res> {
   _$ExperienceNavigationActorEventCopyWithImpl(this._value, this._then);
 
   final ExperienceNavigationActorEvent _value;
@@ -115,15 +120,18 @@ class _$ExperienceNavigationActorEventCopyWithImpl<$Res> implements $ExperienceN
 }
 
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
-  __$InitializedCopyWithImpl<$Res>;
+  factory _$InitializedCopyWith(
+          _Initialized value, $Res Function(_Initialized) then) =
+      __$InitializedCopyWithImpl<$Res>;
   $Res call({Option<Experience> experienceOption});
 }
 
-class __$InitializedCopyWithImpl<$Res> extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
-  implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
-    : super(_value, (v) => _then(v as _Initialized));
+class __$InitializedCopyWithImpl<$Res>
+    extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
+    implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(
+      _Initialized _value, $Res Function(_Initialized) _then)
+      : super(_value, (v) => _then(v as _Initialized));
 
   @override
   _Initialized get _value => super._value as _Initialized;
@@ -134,15 +142,15 @@ class __$InitializedCopyWithImpl<$Res> extends _$ExperienceNavigationActorEventC
   }) {
     return _then(_Initialized(
       experienceOption == freezed
-        ? _value.experienceOption
-        : experienceOption as Option<Experience>,
+          ? _value.experienceOption
+          : experienceOption as Option<Experience>,
     ));
   }
 }
 
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.experienceOption)
-    : assert(experienceOption != null);
+      : assert(experienceOption != null);
 
   @override
   final Option<Experience> experienceOption;
@@ -155,20 +163,20 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Initialized &&
-        (identical(other.experienceOption, experienceOption) ||
-          const DeepCollectionEquality()
-            .equals(other.experienceOption, experienceOption)));
+        (other is _Initialized &&
+            (identical(other.experienceOption, experienceOption) ||
+                const DeepCollectionEquality()
+                    .equals(other.experienceOption, experienceOption)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(experienceOption);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(experienceOption);
 
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
-    __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+      __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -253,7 +261,7 @@ class _$_Initialized implements _Initialized {
 
 abstract class _Initialized implements ExperienceNavigationActorEvent {
   const factory _Initialized(Option<Experience> experienceOption) =
-  _$_Initialized;
+      _$_Initialized;
 
   Option<Experience> get experienceOption;
   _$InitializedCopyWith<_Initialized> get copyWith;
@@ -261,18 +269,19 @@ abstract class _Initialized implements ExperienceNavigationActorEvent {
 
 abstract class _$ObjectiveAccomplishedCopyWith<$Res> {
   factory _$ObjectiveAccomplishedCopyWith(_ObjectiveAccomplished value,
-    $Res Function(_ObjectiveAccomplished) then) =
-  __$ObjectiveAccomplishedCopyWithImpl<$Res>;
+          $Res Function(_ObjectiveAccomplished) then) =
+      __$ObjectiveAccomplishedCopyWithImpl<$Res>;
   $Res call({Objective objective});
 
   $ObjectiveCopyWith<$Res> get objective;
 }
 
-class __$ObjectiveAccomplishedCopyWithImpl<$Res> extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
-  implements _$ObjectiveAccomplishedCopyWith<$Res> {
+class __$ObjectiveAccomplishedCopyWithImpl<$Res>
+    extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
+    implements _$ObjectiveAccomplishedCopyWith<$Res> {
   __$ObjectiveAccomplishedCopyWithImpl(_ObjectiveAccomplished _value,
-    $Res Function(_ObjectiveAccomplished) _then)
-    : super(_value, (v) => _then(v as _ObjectiveAccomplished));
+      $Res Function(_ObjectiveAccomplished) _then)
+      : super(_value, (v) => _then(v as _ObjectiveAccomplished));
 
   @override
   _ObjectiveAccomplished get _value => super._value as _ObjectiveAccomplished;
@@ -311,20 +320,20 @@ class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _ObjectiveAccomplished &&
-        (identical(other.objective, objective) ||
-          const DeepCollectionEquality()
-            .equals(other.objective, objective)));
+        (other is _ObjectiveAccomplished &&
+            (identical(other.objective, objective) ||
+                const DeepCollectionEquality()
+                    .equals(other.objective, objective)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective);
 
   @override
   _$ObjectiveAccomplishedCopyWith<_ObjectiveAccomplished> get copyWith =>
-    __$ObjectiveAccomplishedCopyWithImpl<_ObjectiveAccomplished>(
-      this, _$identity);
+      __$ObjectiveAccomplishedCopyWithImpl<_ObjectiveAccomplished>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -408,9 +417,9 @@ class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
 }
 
 abstract class _ObjectiveAccomplished
-  implements ExperienceNavigationActorEvent {
+    implements ExperienceNavigationActorEvent {
   const factory _ObjectiveAccomplished(Objective objective) =
-  _$_ObjectiveAccomplished;
+      _$_ObjectiveAccomplished;
 
   Objective get objective;
   _$ObjectiveAccomplishedCopyWith<_ObjectiveAccomplished> get copyWith;
@@ -418,13 +427,14 @@ abstract class _ObjectiveAccomplished
 
 abstract class _$LikedCopyWith<$Res> {
   factory _$LikedCopyWith(_Liked value, $Res Function(_Liked) then) =
-  __$LikedCopyWithImpl<$Res>;
+      __$LikedCopyWithImpl<$Res>;
 }
 
-class __$LikedCopyWithImpl<$Res> extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
-  implements _$LikedCopyWith<$Res> {
+class __$LikedCopyWithImpl<$Res>
+    extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
+    implements _$LikedCopyWith<$Res> {
   __$LikedCopyWithImpl(_Liked _value, $Res Function(_Liked) _then)
-    : super(_value, (v) => _then(v as _Liked));
+      : super(_value, (v) => _then(v as _Liked));
 
   @override
   _Liked get _value => super._value as _Liked;
@@ -532,14 +542,17 @@ abstract class _Liked implements ExperienceNavigationActorEvent {
 }
 
 abstract class _$GotCurrentLocationCopyWith<$Res> {
-  factory _$GotCurrentLocationCopyWith(_GotCurrentLocation value, $Res Function(_GotCurrentLocation) then) =
-  __$GotCurrentLocationCopyWithImpl<$Res>;
+  factory _$GotCurrentLocationCopyWith(
+          _GotCurrentLocation value, $Res Function(_GotCurrentLocation) then) =
+      __$GotCurrentLocationCopyWithImpl<$Res>;
 }
 
-class __$GotCurrentLocationCopyWithImpl<$Res> extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
-  implements _$GotCurrentLocationCopyWith<$Res> {
-  __$GotCurrentLocationCopyWithImpl(_GotCurrentLocation _value, $Res Function(_GotCurrentLocation) _then)
-    : super(_value, (v) => _then(v as _GotCurrentLocation));
+class __$GotCurrentLocationCopyWithImpl<$Res>
+    extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
+    implements _$GotCurrentLocationCopyWith<$Res> {
+  __$GotCurrentLocationCopyWithImpl(
+      _GotCurrentLocation _value, $Res Function(_GotCurrentLocation) _then)
+      : super(_value, (v) => _then(v as _GotCurrentLocation));
 
   @override
   _GotCurrentLocation get _value => super._value as _GotCurrentLocation;
@@ -647,15 +660,18 @@ abstract class _GotCurrentLocation implements ExperienceNavigationActorEvent {
 }
 
 abstract class _$DifficultyRatedCopyWith<$Res> {
-  factory _$DifficultyRatedCopyWith(_DifficultyRated value, $Res Function(_DifficultyRated) then) =
-  __$DifficultyRatedCopyWithImpl<$Res>;
+  factory _$DifficultyRatedCopyWith(
+          _DifficultyRated value, $Res Function(_DifficultyRated) then) =
+      __$DifficultyRatedCopyWithImpl<$Res>;
   $Res call({int difficulty});
 }
 
-class __$DifficultyRatedCopyWithImpl<$Res> extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
-  implements _$DifficultyRatedCopyWith<$Res> {
-  __$DifficultyRatedCopyWithImpl(_DifficultyRated _value, $Res Function(_DifficultyRated) _then)
-    : super(_value, (v) => _then(v as _DifficultyRated));
+class __$DifficultyRatedCopyWithImpl<$Res>
+    extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
+    implements _$DifficultyRatedCopyWith<$Res> {
+  __$DifficultyRatedCopyWithImpl(
+      _DifficultyRated _value, $Res Function(_DifficultyRated) _then)
+      : super(_value, (v) => _then(v as _DifficultyRated));
 
   @override
   _DifficultyRated get _value => super._value as _DifficultyRated;
@@ -684,19 +700,19 @@ class _$_DifficultyRated implements _DifficultyRated {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _DifficultyRated &&
-        (identical(other.difficulty, difficulty) ||
-          const DeepCollectionEquality()
-            .equals(other.difficulty, difficulty)));
+        (other is _DifficultyRated &&
+            (identical(other.difficulty, difficulty) ||
+                const DeepCollectionEquality()
+                    .equals(other.difficulty, difficulty)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(difficulty);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(difficulty);
 
   @override
   _$DifficultyRatedCopyWith<_DifficultyRated> get copyWith =>
-    __$DifficultyRatedCopyWithImpl<_DifficultyRated>(this, _$identity);
+      __$DifficultyRatedCopyWithImpl<_DifficultyRated>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -787,14 +803,17 @@ abstract class _DifficultyRated implements ExperienceNavigationActorEvent {
 }
 
 abstract class _$ExperienceFinishedCopyWith<$Res> {
-  factory _$ExperienceFinishedCopyWith(_ExperienceFinished value, $Res Function(_ExperienceFinished) then) =
-  __$ExperienceFinishedCopyWithImpl<$Res>;
+  factory _$ExperienceFinishedCopyWith(
+          _ExperienceFinished value, $Res Function(_ExperienceFinished) then) =
+      __$ExperienceFinishedCopyWithImpl<$Res>;
 }
 
-class __$ExperienceFinishedCopyWithImpl<$Res> extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
-  implements _$ExperienceFinishedCopyWith<$Res> {
-  __$ExperienceFinishedCopyWithImpl(_ExperienceFinished _value, $Res Function(_ExperienceFinished) _then)
-    : super(_value, (v) => _then(v as _ExperienceFinished));
+class __$ExperienceFinishedCopyWithImpl<$Res>
+    extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
+    implements _$ExperienceFinishedCopyWith<$Res> {
+  __$ExperienceFinishedCopyWithImpl(
+      _ExperienceFinished _value, $Res Function(_ExperienceFinished) _then)
+      : super(_value, (v) => _then(v as _ExperienceFinished));
 
   @override
   _ExperienceFinished get _value => super._value as _ExperienceFinished;
@@ -902,14 +921,17 @@ abstract class _ExperienceFinished implements ExperienceNavigationActorEvent {
 }
 
 abstract class _$UserRewardedCopyWith<$Res> {
-  factory _$UserRewardedCopyWith(_UserRewarded value, $Res Function(_UserRewarded) then) =
-  __$UserRewardedCopyWithImpl<$Res>;
+  factory _$UserRewardedCopyWith(
+          _UserRewarded value, $Res Function(_UserRewarded) then) =
+      __$UserRewardedCopyWithImpl<$Res>;
 }
 
-class __$UserRewardedCopyWithImpl<$Res> extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
-  implements _$UserRewardedCopyWith<$Res> {
-  __$UserRewardedCopyWithImpl(_UserRewarded _value, $Res Function(_UserRewarded) _then)
-    : super(_value, (v) => _then(v as _UserRewarded));
+class __$UserRewardedCopyWithImpl<$Res>
+    extends _$ExperienceNavigationActorEventCopyWithImpl<$Res>
+    implements _$UserRewardedCopyWith<$Res> {
+  __$UserRewardedCopyWithImpl(
+      _UserRewarded _value, $Res Function(_UserRewarded) _then)
+      : super(_value, (v) => _then(v as _UserRewarded));
 
   @override
   _UserRewarded get _value => super._value as _UserRewarded;
@@ -1023,7 +1045,7 @@ class _$ExperienceNavigationActorStateTearOff {
   _ExperienceNavigationActorState call(
       {@required Experience experience,
       @required Map<int, bool> objectiveTracker,
-        @required Option<KtSet<Experience>> surroundingExperiences,
+      @required Option<KtSet<Experience>> surroundingExperiences,
       @required Coordinates currentLocation,
       @required bool isFinished,
       @required bool isSubmitting,
@@ -1044,7 +1066,7 @@ class _$ExperienceNavigationActorStateTearOff {
 
 // ignore: unused_element
 const $ExperienceNavigationActorState =
-_$ExperienceNavigationActorStateTearOff();
+    _$ExperienceNavigationActorStateTearOff();
 
 mixin _$ExperienceNavigationActorState {
   Experience get experience;
@@ -1057,17 +1079,18 @@ mixin _$ExperienceNavigationActorState {
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
 
   $ExperienceNavigationActorStateCopyWith<ExperienceNavigationActorState>
-  get copyWith;
+      get copyWith;
 }
 
 abstract class $ExperienceNavigationActorStateCopyWith<$Res> {
-  factory $ExperienceNavigationActorStateCopyWith(ExperienceNavigationActorState value,
-    $Res Function(ExperienceNavigationActorState) then) =
-  _$ExperienceNavigationActorStateCopyWithImpl<$Res>;
+  factory $ExperienceNavigationActorStateCopyWith(
+          ExperienceNavigationActorState value,
+          $Res Function(ExperienceNavigationActorState) then) =
+      _$ExperienceNavigationActorStateCopyWithImpl<$Res>;
   $Res call(
       {Experience experience,
       Map<int, bool> objectiveTracker,
-        Option<KtSet<Experience>> surroundingExperiences,
+      Option<KtSet<Experience>> surroundingExperiences,
       Coordinates currentLocation,
       bool isFinished,
       bool isSubmitting,
@@ -1079,7 +1102,7 @@ abstract class $ExperienceNavigationActorStateCopyWith<$Res> {
 }
 
 class _$ExperienceNavigationActorStateCopyWithImpl<$Res>
-  implements $ExperienceNavigationActorStateCopyWith<$Res> {
+    implements $ExperienceNavigationActorStateCopyWith<$Res> {
   _$ExperienceNavigationActorStateCopyWithImpl(this._value, this._then);
 
   final ExperienceNavigationActorState _value;
@@ -1099,26 +1122,26 @@ class _$ExperienceNavigationActorStateCopyWithImpl<$Res>
   }) {
     return _then(_value.copyWith(
       experience:
-      experience == freezed ? _value.experience : experience as Experience,
+          experience == freezed ? _value.experience : experience as Experience,
       objectiveTracker: objectiveTracker == freezed
-        ? _value.objectiveTracker
-        : objectiveTracker as Map<int, bool>,
+          ? _value.objectiveTracker
+          : objectiveTracker as Map<int, bool>,
       surroundingExperiences: surroundingExperiences == freezed
-        ? _value.surroundingExperiences
-        : surroundingExperiences as Option<KtSet<Experience>>,
+          ? _value.surroundingExperiences
+          : surroundingExperiences as Option<KtSet<Experience>>,
       currentLocation: currentLocation == freezed
-        ? _value.currentLocation
-        : currentLocation as Coordinates,
+          ? _value.currentLocation
+          : currentLocation as Coordinates,
       isFinished:
-      isFinished == freezed ? _value.isFinished : isFinished as bool,
+          isFinished == freezed ? _value.isFinished : isFinished as bool,
       isSubmitting:
-      isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
       showErrorMessages: showErrorMessages == freezed
-        ? _value.showErrorMessages
-        : showErrorMessages as bool,
+          ? _value.showErrorMessages
+          : showErrorMessages as bool,
       failureOrSuccessOption: failureOrSuccessOption == freezed
-        ? _value.failureOrSuccessOption
-        : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+          ? _value.failureOrSuccessOption
+          : failureOrSuccessOption as Option<Either<Failure, Unit>>,
     ));
   }
 
@@ -1144,15 +1167,16 @@ class _$ExperienceNavigationActorStateCopyWithImpl<$Res>
 }
 
 abstract class _$ExperienceNavigationActorStateCopyWith<$Res>
-  implements $ExperienceNavigationActorStateCopyWith<$Res> {
-  factory _$ExperienceNavigationActorStateCopyWith(_ExperienceNavigationActorState value,
-    $Res Function(_ExperienceNavigationActorState) then) =
-  __$ExperienceNavigationActorStateCopyWithImpl<$Res>;
+    implements $ExperienceNavigationActorStateCopyWith<$Res> {
+  factory _$ExperienceNavigationActorStateCopyWith(
+          _ExperienceNavigationActorState value,
+          $Res Function(_ExperienceNavigationActorState) then) =
+      __$ExperienceNavigationActorStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {Experience experience,
       Map<int, bool> objectiveTracker,
-        Option<KtSet<Experience>> surroundingExperiences,
+      Option<KtSet<Experience>> surroundingExperiences,
       Coordinates currentLocation,
       bool isFinished,
       bool isSubmitting,
@@ -1165,15 +1189,17 @@ abstract class _$ExperienceNavigationActorStateCopyWith<$Res>
   $CoordinatesCopyWith<$Res> get currentLocation;
 }
 
-class __$ExperienceNavigationActorStateCopyWithImpl<$Res> extends _$ExperienceNavigationActorStateCopyWithImpl<$Res>
-  implements _$ExperienceNavigationActorStateCopyWith<$Res> {
-  __$ExperienceNavigationActorStateCopyWithImpl(_ExperienceNavigationActorState _value,
-    $Res Function(_ExperienceNavigationActorState) _then)
+class __$ExperienceNavigationActorStateCopyWithImpl<$Res>
+    extends _$ExperienceNavigationActorStateCopyWithImpl<$Res>
+    implements _$ExperienceNavigationActorStateCopyWith<$Res> {
+  __$ExperienceNavigationActorStateCopyWithImpl(
+      _ExperienceNavigationActorState _value,
+      $Res Function(_ExperienceNavigationActorState) _then)
       : super(_value, (v) => _then(v as _ExperienceNavigationActorState));
 
   @override
   _ExperienceNavigationActorState get _value =>
-    super._value as _ExperienceNavigationActorState;
+      super._value as _ExperienceNavigationActorState;
 
   @override
   $Res call({
@@ -1188,32 +1214,32 @@ class __$ExperienceNavigationActorStateCopyWithImpl<$Res> extends _$ExperienceNa
   }) {
     return _then(_ExperienceNavigationActorState(
       experience:
-      experience == freezed ? _value.experience : experience as Experience,
+          experience == freezed ? _value.experience : experience as Experience,
       objectiveTracker: objectiveTracker == freezed
-        ? _value.objectiveTracker
-        : objectiveTracker as Map<int, bool>,
+          ? _value.objectiveTracker
+          : objectiveTracker as Map<int, bool>,
       surroundingExperiences: surroundingExperiences == freezed
-        ? _value.surroundingExperiences
-        : surroundingExperiences as Option<KtSet<Experience>>,
+          ? _value.surroundingExperiences
+          : surroundingExperiences as Option<KtSet<Experience>>,
       currentLocation: currentLocation == freezed
-        ? _value.currentLocation
-        : currentLocation as Coordinates,
+          ? _value.currentLocation
+          : currentLocation as Coordinates,
       isFinished:
-      isFinished == freezed ? _value.isFinished : isFinished as bool,
+          isFinished == freezed ? _value.isFinished : isFinished as bool,
       isSubmitting:
-      isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
       showErrorMessages: showErrorMessages == freezed
-        ? _value.showErrorMessages
-        : showErrorMessages as bool,
+          ? _value.showErrorMessages
+          : showErrorMessages as bool,
       failureOrSuccessOption: failureOrSuccessOption == freezed
-        ? _value.failureOrSuccessOption
-        : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+          ? _value.failureOrSuccessOption
+          : failureOrSuccessOption as Option<Either<Failure, Unit>>,
     ));
   }
 }
 
 class _$_ExperienceNavigationActorState
-  implements _ExperienceNavigationActorState {
+    implements _ExperienceNavigationActorState {
   const _$_ExperienceNavigationActorState(
       {@required this.experience,
       @required this.objectiveTracker,
@@ -1258,30 +1284,30 @@ class _$_ExperienceNavigationActorState
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ExperienceNavigationActorState &&
-          (identical(other.experience, experience) ||
-            const DeepCollectionEquality()
-              .equals(other.experience, experience)) &&
-          (identical(other.objectiveTracker, objectiveTracker) ||
-            const DeepCollectionEquality()
-              .equals(other.objectiveTracker, objectiveTracker)) &&
-          (identical(other.surroundingExperiences, surroundingExperiences) ||
-            const DeepCollectionEquality().equals(
-              other.surroundingExperiences, surroundingExperiences)) &&
-          (identical(other.currentLocation, currentLocation) ||
-            const DeepCollectionEquality()
-              .equals(other.currentLocation, currentLocation)) &&
-          (identical(other.isFinished, isFinished) ||
-            const DeepCollectionEquality()
-              .equals(other.isFinished, isFinished)) &&
-          (identical(other.isSubmitting, isSubmitting) ||
-            const DeepCollectionEquality()
-              .equals(other.isSubmitting, isSubmitting)) &&
-          (identical(other.showErrorMessages, showErrorMessages) ||
-            const DeepCollectionEquality()
-              .equals(other.showErrorMessages, showErrorMessages)) &&
-          (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-            const DeepCollectionEquality().equals(
-              other.failureOrSuccessOption, failureOrSuccessOption)));
+            (identical(other.experience, experience) ||
+                const DeepCollectionEquality()
+                    .equals(other.experience, experience)) &&
+            (identical(other.objectiveTracker, objectiveTracker) ||
+                const DeepCollectionEquality()
+                    .equals(other.objectiveTracker, objectiveTracker)) &&
+            (identical(other.surroundingExperiences, surroundingExperiences) ||
+                const DeepCollectionEquality().equals(
+                    other.surroundingExperiences, surroundingExperiences)) &&
+            (identical(other.currentLocation, currentLocation) ||
+                const DeepCollectionEquality()
+                    .equals(other.currentLocation, currentLocation)) &&
+            (identical(other.isFinished, isFinished) ||
+                const DeepCollectionEquality()
+                    .equals(other.isFinished, isFinished)) &&
+            (identical(other.isSubmitting, isSubmitting) ||
+                const DeepCollectionEquality()
+                    .equals(other.isSubmitting, isSubmitting)) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                const DeepCollectionEquality()
+                    .equals(other.showErrorMessages, showErrorMessages)) &&
+            (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
+                const DeepCollectionEquality().equals(
+                    other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -1298,22 +1324,22 @@ class _$_ExperienceNavigationActorState
 
   @override
   _$ExperienceNavigationActorStateCopyWith<_ExperienceNavigationActorState>
-  get copyWith =>
-    __$ExperienceNavigationActorStateCopyWithImpl<
-      _ExperienceNavigationActorState>(this, _$identity);
+      get copyWith => __$ExperienceNavigationActorStateCopyWithImpl<
+          _ExperienceNavigationActorState>(this, _$identity);
 }
 
 abstract class _ExperienceNavigationActorState
-  implements ExperienceNavigationActorState {
-  const factory _ExperienceNavigationActorState({@required Experience experience,
-    @required Map<int, bool> objectiveTracker,
-    @required Option<KtSet<Experience>> surroundingExperiences,
-    @required Coordinates currentLocation,
-    @required bool isFinished,
-    @required bool isSubmitting,
-    @required bool showErrorMessages,
-    @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
-  _$_ExperienceNavigationActorState;
+    implements ExperienceNavigationActorState {
+  const factory _ExperienceNavigationActorState(
+          {@required Experience experience,
+          @required Map<int, bool> objectiveTracker,
+          @required Option<KtSet<Experience>> surroundingExperiences,
+          @required Coordinates currentLocation,
+          @required bool isFinished,
+          @required bool isSubmitting,
+          @required bool showErrorMessages,
+          @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
+      _$_ExperienceNavigationActorState;
 
   @override
   Experience get experience;
@@ -1333,5 +1359,5 @@ abstract class _ExperienceNavigationActorState
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
   @override
   _$ExperienceNavigationActorStateCopyWith<_ExperienceNavigationActorState>
-  get copyWith;
+      get copyWith;
 }

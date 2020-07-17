@@ -30,18 +30,15 @@ mixin _$BottomNavigationActorEvent {
   Result when<Result extends Object>({
     @required Result itemTapped(int index),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result itemTapped(int index),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result itemTapped(_ItemTapped value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result itemTapped(_ItemTapped value),
@@ -53,15 +50,14 @@ mixin _$BottomNavigationActorEvent {
 
 abstract class $BottomNavigationActorEventCopyWith<$Res> {
   factory $BottomNavigationActorEventCopyWith(BottomNavigationActorEvent value, $Res Function(BottomNavigationActorEvent) then) = _$BottomNavigationActorEventCopyWithImpl<$Res>;
-
   $Res call({int index});
 }
 
-class _$BottomNavigationActorEventCopyWithImpl<$Res> implements $BottomNavigationActorEventCopyWith<$Res> {
+class _$BottomNavigationActorEventCopyWithImpl<$Res>
+  implements $BottomNavigationActorEventCopyWith<$Res> {
   _$BottomNavigationActorEventCopyWithImpl(this._value, this._then);
 
   final BottomNavigationActorEvent _value;
-
   // ignore: unused_field
   final $Res Function(BottomNavigationActorEvent) _then;
 
@@ -75,15 +71,18 @@ class _$BottomNavigationActorEventCopyWithImpl<$Res> implements $BottomNavigatio
   }
 }
 
-abstract class _$ItemTappedCopyWith<$Res> implements $BottomNavigationActorEventCopyWith<$Res> {
-  factory _$ItemTappedCopyWith(_ItemTapped value, $Res Function(_ItemTapped) then) = __$ItemTappedCopyWithImpl<$Res>;
-
+abstract class _$ItemTappedCopyWith<$Res>
+  implements $BottomNavigationActorEventCopyWith<$Res> {
+  factory _$ItemTappedCopyWith(_ItemTapped value, $Res Function(_ItemTapped) then) =
+  __$ItemTappedCopyWithImpl<$Res>;
   @override
   $Res call({int index});
 }
 
-class __$ItemTappedCopyWithImpl<$Res> extends _$BottomNavigationActorEventCopyWithImpl<$Res> implements _$ItemTappedCopyWith<$Res> {
-  __$ItemTappedCopyWithImpl(_ItemTapped _value, $Res Function(_ItemTapped) _then) : super(_value, (v) => _then(v as _ItemTapped));
+class __$ItemTappedCopyWithImpl<$Res> extends _$BottomNavigationActorEventCopyWithImpl<$Res>
+  implements _$ItemTappedCopyWith<$Res> {
+  __$ItemTappedCopyWithImpl(_ItemTapped _value, $Res Function(_ItemTapped) _then)
+    : super(_value, (v) => _then(v as _ItemTapped));
 
   @override
   _ItemTapped get _value => super._value as _ItemTapped;
@@ -111,14 +110,19 @@ class _$_ItemTapped implements _ItemTapped {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ItemTapped && (identical(other.index, index) || const DeepCollectionEquality().equals(other.index, index)));
+    return identical(this, other) ||
+      (other is _ItemTapped &&
+        (identical(other.index, index) ||
+          const DeepCollectionEquality().equals(other.index, index)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(index);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(index);
 
   @override
-  _$ItemTappedCopyWith<_ItemTapped> get copyWith => __$ItemTappedCopyWithImpl<_ItemTapped>(this, _$identity);
+  _$ItemTappedCopyWith<_ItemTapped> get copyWith =>
+    __$ItemTappedCopyWithImpl<_ItemTapped>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -170,7 +174,6 @@ abstract class _ItemTapped implements BottomNavigationActorEvent {
 
   @override
   int get index;
-
   @override
   _$ItemTappedCopyWith<_ItemTapped> get copyWith;
 }
@@ -222,7 +225,6 @@ mixin _$BottomNavigationActorState {
     @required Result profileView(),
     @required Result errorView(),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result mainFeedView(),
@@ -233,7 +235,6 @@ mixin _$BottomNavigationActorState {
     Result errorView(),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result mainFeedView(_MainFeedView value),
@@ -243,7 +244,6 @@ mixin _$BottomNavigationActorState {
     @required Result profileView(_ProfileView value),
     @required Result errorView(_ErrorView value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result mainFeedView(_MainFeedView value),
@@ -257,24 +257,29 @@ mixin _$BottomNavigationActorState {
 }
 
 abstract class $BottomNavigationActorStateCopyWith<$Res> {
-  factory $BottomNavigationActorStateCopyWith(BottomNavigationActorState value, $Res Function(BottomNavigationActorState) then) = _$BottomNavigationActorStateCopyWithImpl<$Res>;
+  factory $BottomNavigationActorStateCopyWith(BottomNavigationActorState value,
+    $Res Function(BottomNavigationActorState) then) =
+  _$BottomNavigationActorStateCopyWithImpl<$Res>;
 }
 
-class _$BottomNavigationActorStateCopyWithImpl<$Res> implements $BottomNavigationActorStateCopyWith<$Res> {
+class _$BottomNavigationActorStateCopyWithImpl<$Res>
+  implements $BottomNavigationActorStateCopyWith<$Res> {
   _$BottomNavigationActorStateCopyWithImpl(this._value, this._then);
 
   final BottomNavigationActorState _value;
-
   // ignore: unused_field
   final $Res Function(BottomNavigationActorState) _then;
 }
 
 abstract class _$MainFeedViewCopyWith<$Res> {
-  factory _$MainFeedViewCopyWith(_MainFeedView value, $Res Function(_MainFeedView) then) = __$MainFeedViewCopyWithImpl<$Res>;
+  factory _$MainFeedViewCopyWith(_MainFeedView value, $Res Function(_MainFeedView) then) =
+  __$MainFeedViewCopyWithImpl<$Res>;
 }
 
-class __$MainFeedViewCopyWithImpl<$Res> extends _$BottomNavigationActorStateCopyWithImpl<$Res> implements _$MainFeedViewCopyWith<$Res> {
-  __$MainFeedViewCopyWithImpl(_MainFeedView _value, $Res Function(_MainFeedView) _then) : super(_value, (v) => _then(v as _MainFeedView));
+class __$MainFeedViewCopyWithImpl<$Res> extends _$BottomNavigationActorStateCopyWithImpl<$Res>
+  implements _$MainFeedViewCopyWith<$Res> {
+  __$MainFeedViewCopyWithImpl(_MainFeedView _value, $Res Function(_MainFeedView) _then)
+    : super(_value, (v) => _then(v as _MainFeedView));
 
   @override
   _MainFeedView get _value => super._value as _MainFeedView;
@@ -376,11 +381,14 @@ abstract class _MainFeedView implements BottomNavigationActorState {
 }
 
 abstract class _$SearchViewCopyWith<$Res> {
-  factory _$SearchViewCopyWith(_SearchView value, $Res Function(_SearchView) then) = __$SearchViewCopyWithImpl<$Res>;
+  factory _$SearchViewCopyWith(_SearchView value, $Res Function(_SearchView) then) =
+  __$SearchViewCopyWithImpl<$Res>;
 }
 
-class __$SearchViewCopyWithImpl<$Res> extends _$BottomNavigationActorStateCopyWithImpl<$Res> implements _$SearchViewCopyWith<$Res> {
-  __$SearchViewCopyWithImpl(_SearchView _value, $Res Function(_SearchView) _then) : super(_value, (v) => _then(v as _SearchView));
+class __$SearchViewCopyWithImpl<$Res> extends _$BottomNavigationActorStateCopyWithImpl<$Res>
+  implements _$SearchViewCopyWith<$Res> {
+  __$SearchViewCopyWithImpl(_SearchView _value, $Res Function(_SearchView) _then)
+    : super(_value, (v) => _then(v as _SearchView));
 
   @override
   _SearchView get _value => super._value as _SearchView;
@@ -482,11 +490,15 @@ abstract class _SearchView implements BottomNavigationActorState {
 }
 
 abstract class _$CreateExperienceViewCopyWith<$Res> {
-  factory _$CreateExperienceViewCopyWith(_CreateExperienceView value, $Res Function(_CreateExperienceView) then) = __$CreateExperienceViewCopyWithImpl<$Res>;
+  factory _$CreateExperienceViewCopyWith(_CreateExperienceView value,
+    $Res Function(_CreateExperienceView) then) =
+  __$CreateExperienceViewCopyWithImpl<$Res>;
 }
 
-class __$CreateExperienceViewCopyWithImpl<$Res> extends _$BottomNavigationActorStateCopyWithImpl<$Res> implements _$CreateExperienceViewCopyWith<$Res> {
-  __$CreateExperienceViewCopyWithImpl(_CreateExperienceView _value, $Res Function(_CreateExperienceView) _then) : super(_value, (v) => _then(v as _CreateExperienceView));
+class __$CreateExperienceViewCopyWithImpl<$Res> extends _$BottomNavigationActorStateCopyWithImpl<$Res>
+  implements _$CreateExperienceViewCopyWith<$Res> {
+  __$CreateExperienceViewCopyWithImpl(_CreateExperienceView _value, $Res Function(_CreateExperienceView) _then)
+    : super(_value, (v) => _then(v as _CreateExperienceView));
 
   @override
   _CreateExperienceView get _value => super._value as _CreateExperienceView;
@@ -588,11 +600,16 @@ abstract class _CreateExperienceView implements BottomNavigationActorState {
 }
 
 abstract class _$NavigateExperienceViewCopyWith<$Res> {
-  factory _$NavigateExperienceViewCopyWith(_NavigateExperienceView value, $Res Function(_NavigateExperienceView) then) = __$NavigateExperienceViewCopyWithImpl<$Res>;
+  factory _$NavigateExperienceViewCopyWith(_NavigateExperienceView value,
+    $Res Function(_NavigateExperienceView) then) =
+  __$NavigateExperienceViewCopyWithImpl<$Res>;
 }
 
-class __$NavigateExperienceViewCopyWithImpl<$Res> extends _$BottomNavigationActorStateCopyWithImpl<$Res> implements _$NavigateExperienceViewCopyWith<$Res> {
-  __$NavigateExperienceViewCopyWithImpl(_NavigateExperienceView _value, $Res Function(_NavigateExperienceView) _then) : super(_value, (v) => _then(v as _NavigateExperienceView));
+class __$NavigateExperienceViewCopyWithImpl<$Res> extends _$BottomNavigationActorStateCopyWithImpl<$Res>
+  implements _$NavigateExperienceViewCopyWith<$Res> {
+  __$NavigateExperienceViewCopyWithImpl(_NavigateExperienceView _value,
+    $Res Function(_NavigateExperienceView) _then)
+    : super(_value, (v) => _then(v as _NavigateExperienceView));
 
   @override
   _NavigateExperienceView get _value => super._value as _NavigateExperienceView;
@@ -694,11 +711,14 @@ abstract class _NavigateExperienceView implements BottomNavigationActorState {
 }
 
 abstract class _$ProfileViewCopyWith<$Res> {
-  factory _$ProfileViewCopyWith(_ProfileView value, $Res Function(_ProfileView) then) = __$ProfileViewCopyWithImpl<$Res>;
+  factory _$ProfileViewCopyWith(_ProfileView value, $Res Function(_ProfileView) then) =
+  __$ProfileViewCopyWithImpl<$Res>;
 }
 
-class __$ProfileViewCopyWithImpl<$Res> extends _$BottomNavigationActorStateCopyWithImpl<$Res> implements _$ProfileViewCopyWith<$Res> {
-  __$ProfileViewCopyWithImpl(_ProfileView _value, $Res Function(_ProfileView) _then) : super(_value, (v) => _then(v as _ProfileView));
+class __$ProfileViewCopyWithImpl<$Res> extends _$BottomNavigationActorStateCopyWithImpl<$Res>
+  implements _$ProfileViewCopyWith<$Res> {
+  __$ProfileViewCopyWithImpl(_ProfileView _value, $Res Function(_ProfileView) _then)
+    : super(_value, (v) => _then(v as _ProfileView));
 
   @override
   _ProfileView get _value => super._value as _ProfileView;
@@ -800,11 +820,14 @@ abstract class _ProfileView implements BottomNavigationActorState {
 }
 
 abstract class _$ErrorViewCopyWith<$Res> {
-  factory _$ErrorViewCopyWith(_ErrorView value, $Res Function(_ErrorView) then) = __$ErrorViewCopyWithImpl<$Res>;
+  factory _$ErrorViewCopyWith(_ErrorView value, $Res Function(_ErrorView) then) =
+  __$ErrorViewCopyWithImpl<$Res>;
 }
 
-class __$ErrorViewCopyWithImpl<$Res> extends _$BottomNavigationActorStateCopyWithImpl<$Res> implements _$ErrorViewCopyWith<$Res> {
-  __$ErrorViewCopyWithImpl(_ErrorView _value, $Res Function(_ErrorView) _then) : super(_value, (v) => _then(v as _ErrorView));
+class __$ErrorViewCopyWithImpl<$Res> extends _$BottomNavigationActorStateCopyWithImpl<$Res>
+  implements _$ErrorViewCopyWith<$Res> {
+  __$ErrorViewCopyWithImpl(_ErrorView _value, $Res Function(_ErrorView) _then)
+    : super(_value, (v) => _then(v as _ErrorView));
 
   @override
   _ErrorView get _value => super._value as _ErrorView;

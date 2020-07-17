@@ -6,9 +6,7 @@ import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
 part 'bottom_navigation_actor_bloc.freezed.dart';
-
 part 'bottom_navigation_actor_event.dart';
-
 part 'bottom_navigation_actor_state.dart';
 
 @injectable

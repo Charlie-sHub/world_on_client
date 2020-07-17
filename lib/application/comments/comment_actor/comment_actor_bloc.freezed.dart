@@ -49,14 +49,16 @@ mixin _$CommentActorEvent {
 }
 
 abstract class $CommentActorEventCopyWith<$Res> {
-  factory $CommentActorEventCopyWith(CommentActorEvent value, $Res Function(CommentActorEvent) then) = _$CommentActorEventCopyWithImpl<$Res>;
+  factory $CommentActorEventCopyWith(
+          CommentActorEvent value, $Res Function(CommentActorEvent) then) =
+      _$CommentActorEventCopyWithImpl<$Res>;
   $Res call({Comment comment});
 
   $CommentCopyWith<$Res> get comment;
 }
 
 class _$CommentActorEventCopyWithImpl<$Res>
-  implements $CommentActorEventCopyWith<$Res> {
+    implements $CommentActorEventCopyWith<$Res> {
   _$CommentActorEventCopyWithImpl(this._value, this._then);
 
   final CommentActorEvent _value;
@@ -84,9 +86,9 @@ class _$CommentActorEventCopyWithImpl<$Res>
 }
 
 abstract class _$DeletedCopyWith<$Res>
-  implements $CommentActorEventCopyWith<$Res> {
+    implements $CommentActorEventCopyWith<$Res> {
   factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
-  __$DeletedCopyWithImpl<$Res>;
+      __$DeletedCopyWithImpl<$Res>;
   @override
   $Res call({Comment comment});
 
@@ -95,9 +97,9 @@ abstract class _$DeletedCopyWith<$Res>
 }
 
 class __$DeletedCopyWithImpl<$Res> extends _$CommentActorEventCopyWithImpl<$Res>
-  implements _$DeletedCopyWith<$Res> {
+    implements _$DeletedCopyWith<$Res> {
   __$DeletedCopyWithImpl(_Deleted _value, $Res Function(_Deleted) _then)
-    : super(_value, (v) => _then(v as _Deleted));
+      : super(_value, (v) => _then(v as _Deleted));
 
   @override
   _Deleted get _value => super._value as _Deleted;
@@ -126,18 +128,18 @@ class _$_Deleted implements _Deleted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Deleted &&
-        (identical(other.comment, comment) ||
-          const DeepCollectionEquality().equals(other.comment, comment)));
+        (other is _Deleted &&
+            (identical(other.comment, comment) ||
+                const DeepCollectionEquality().equals(other.comment, comment)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(comment);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(comment);
 
   @override
   _$DeletedCopyWith<_Deleted> get copyWith =>
-    __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
+      __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -256,12 +258,13 @@ mixin _$CommentActorState {
 }
 
 abstract class $CommentActorStateCopyWith<$Res> {
-  factory $CommentActorStateCopyWith(CommentActorState value, $Res Function(CommentActorState) then) =
-  _$CommentActorStateCopyWithImpl<$Res>;
+  factory $CommentActorStateCopyWith(
+          CommentActorState value, $Res Function(CommentActorState) then) =
+      _$CommentActorStateCopyWithImpl<$Res>;
 }
 
 class _$CommentActorStateCopyWithImpl<$Res>
-  implements $CommentActorStateCopyWith<$Res> {
+    implements $CommentActorStateCopyWith<$Res> {
   _$CommentActorStateCopyWithImpl(this._value, this._then);
 
   final CommentActorState _value;
@@ -271,13 +274,13 @@ class _$CommentActorStateCopyWithImpl<$Res>
 
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-  __$InitialCopyWithImpl<$Res>;
+      __$InitialCopyWithImpl<$Res>;
 }
 
 class __$InitialCopyWithImpl<$Res> extends _$CommentActorStateCopyWithImpl<$Res>
-  implements _$InitialCopyWith<$Res> {
+    implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-    : super(_value, (v) => _then(v as _Initial));
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -367,14 +370,17 @@ abstract class _Initial implements CommentActorState {
 }
 
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) =
-  __$ActionInProgressCopyWithImpl<$Res>;
+  factory _$ActionInProgressCopyWith(
+          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
+      __$ActionInProgressCopyWithImpl<$Res>;
 }
 
-class __$ActionInProgressCopyWithImpl<$Res> extends _$CommentActorStateCopyWithImpl<$Res>
-  implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then)
-    : super(_value, (v) => _then(v as _ActionInProgress));
+class __$ActionInProgressCopyWithImpl<$Res>
+    extends _$CommentActorStateCopyWithImpl<$Res>
+    implements _$ActionInProgressCopyWith<$Res> {
+  __$ActionInProgressCopyWithImpl(
+      _ActionInProgress _value, $Res Function(_ActionInProgress) _then)
+      : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
   _ActionInProgress get _value => super._value as _ActionInProgress;
@@ -464,14 +470,17 @@ abstract class _ActionInProgress implements CommentActorState {
 }
 
 abstract class _$DeletionSuccessCopyWith<$Res> {
-  factory _$DeletionSuccessCopyWith(_DeletionSuccess value, $Res Function(_DeletionSuccess) then) =
-  __$DeletionSuccessCopyWithImpl<$Res>;
+  factory _$DeletionSuccessCopyWith(
+          _DeletionSuccess value, $Res Function(_DeletionSuccess) then) =
+      __$DeletionSuccessCopyWithImpl<$Res>;
 }
 
-class __$DeletionSuccessCopyWithImpl<$Res> extends _$CommentActorStateCopyWithImpl<$Res>
-  implements _$DeletionSuccessCopyWith<$Res> {
-  __$DeletionSuccessCopyWithImpl(_DeletionSuccess _value, $Res Function(_DeletionSuccess) _then)
-    : super(_value, (v) => _then(v as _DeletionSuccess));
+class __$DeletionSuccessCopyWithImpl<$Res>
+    extends _$CommentActorStateCopyWithImpl<$Res>
+    implements _$DeletionSuccessCopyWith<$Res> {
+  __$DeletionSuccessCopyWithImpl(
+      _DeletionSuccess _value, $Res Function(_DeletionSuccess) _then)
+      : super(_value, (v) => _then(v as _DeletionSuccess));
 
   @override
   _DeletionSuccess get _value => super._value as _DeletionSuccess;
@@ -561,17 +570,20 @@ abstract class _DeletionSuccess implements CommentActorState {
 }
 
 abstract class _$DeletionFailureCopyWith<$Res> {
-  factory _$DeletionFailureCopyWith(_DeletionFailure value, $Res Function(_DeletionFailure) then) =
-  __$DeletionFailureCopyWithImpl<$Res>;
+  factory _$DeletionFailureCopyWith(
+          _DeletionFailure value, $Res Function(_DeletionFailure) then) =
+      __$DeletionFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
-class __$DeletionFailureCopyWithImpl<$Res> extends _$CommentActorStateCopyWithImpl<$Res>
-  implements _$DeletionFailureCopyWith<$Res> {
-  __$DeletionFailureCopyWithImpl(_DeletionFailure _value, $Res Function(_DeletionFailure) _then)
-    : super(_value, (v) => _then(v as _DeletionFailure));
+class __$DeletionFailureCopyWithImpl<$Res>
+    extends _$CommentActorStateCopyWithImpl<$Res>
+    implements _$DeletionFailureCopyWith<$Res> {
+  __$DeletionFailureCopyWithImpl(
+      _DeletionFailure _value, $Res Function(_DeletionFailure) _then)
+      : super(_value, (v) => _then(v as _DeletionFailure));
 
   @override
   _DeletionFailure get _value => super._value as _DeletionFailure;
@@ -610,18 +622,18 @@ class _$_DeletionFailure implements _DeletionFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _DeletionFailure &&
-        (identical(other.failure, failure) ||
-          const DeepCollectionEquality().equals(other.failure, failure)));
+        (other is _DeletionFailure &&
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
   _$DeletionFailureCopyWith<_DeletionFailure> get copyWith =>
-    __$DeletionFailureCopyWithImpl<_DeletionFailure>(this, _$identity);
+      __$DeletionFailureCopyWithImpl<_DeletionFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs

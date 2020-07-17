@@ -21,7 +21,8 @@ class _$SearchExperiencesByDifficultyEventTearOff {
 }
 
 // ignore: unused_element
-const $SearchExperiencesByDifficultyEvent = _$SearchExperiencesByDifficultyEventTearOff();
+const $SearchExperiencesByDifficultyEvent =
+    _$SearchExperiencesByDifficultyEventTearOff();
 
 mixin _$SearchExperiencesByDifficultyEvent {
   int get difficulty;
@@ -45,18 +46,20 @@ mixin _$SearchExperiencesByDifficultyEvent {
     @required Result orElse(),
   });
 
-  $SearchExperiencesByDifficultyEventCopyWith<SearchExperiencesByDifficultyEvent> get copyWith;
+  $SearchExperiencesByDifficultyEventCopyWith<
+      SearchExperiencesByDifficultyEvent> get copyWith;
 }
 
 abstract class $SearchExperiencesByDifficultyEventCopyWith<$Res> {
-  factory $SearchExperiencesByDifficultyEventCopyWith(SearchExperiencesByDifficultyEvent value,
-    $Res Function(SearchExperiencesByDifficultyEvent) then) =
+  factory $SearchExperiencesByDifficultyEventCopyWith(
+          SearchExperiencesByDifficultyEvent value,
+          $Res Function(SearchExperiencesByDifficultyEvent) then) =
       _$SearchExperiencesByDifficultyEventCopyWithImpl<$Res>;
   $Res call({int difficulty});
 }
 
 class _$SearchExperiencesByDifficultyEventCopyWithImpl<$Res>
-  implements $SearchExperiencesByDifficultyEventCopyWith<$Res> {
+    implements $SearchExperiencesByDifficultyEventCopyWith<$Res> {
   _$SearchExperiencesByDifficultyEventCopyWithImpl(this._value, this._then);
 
   final SearchExperiencesByDifficultyEvent _value;
@@ -74,17 +77,19 @@ class _$SearchExperiencesByDifficultyEventCopyWithImpl<$Res>
 }
 
 abstract class _$SubmittedCopyWith<$Res>
-  implements $SearchExperiencesByDifficultyEventCopyWith<$Res> {
-  factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) =
-  __$SubmittedCopyWithImpl<$Res>;
+    implements $SearchExperiencesByDifficultyEventCopyWith<$Res> {
+  factory _$SubmittedCopyWith(
+          _Submitted value, $Res Function(_Submitted) then) =
+      __$SubmittedCopyWithImpl<$Res>;
   @override
   $Res call({int difficulty});
 }
 
-class __$SubmittedCopyWithImpl<$Res> extends _$SearchExperiencesByDifficultyEventCopyWithImpl<$Res>
-  implements _$SubmittedCopyWith<$Res> {
+class __$SubmittedCopyWithImpl<$Res>
+    extends _$SearchExperiencesByDifficultyEventCopyWithImpl<$Res>
+    implements _$SubmittedCopyWith<$Res> {
   __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then)
-    : super(_value, (v) => _then(v as _Submitted));
+      : super(_value, (v) => _then(v as _Submitted));
 
   @override
   _Submitted get _value => super._value as _Submitted;
@@ -113,19 +118,19 @@ class _$_Submitted implements _Submitted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Submitted &&
-        (identical(other.difficulty, difficulty) ||
-          const DeepCollectionEquality()
-            .equals(other.difficulty, difficulty)));
+        (other is _Submitted &&
+            (identical(other.difficulty, difficulty) ||
+                const DeepCollectionEquality()
+                    .equals(other.difficulty, difficulty)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(difficulty);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(difficulty);
 
   @override
   _$SubmittedCopyWith<_Submitted> get copyWith =>
-    __$SubmittedCopyWithImpl<_Submitted>(this, _$identity);
+      __$SubmittedCopyWithImpl<_Submitted>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -218,7 +223,7 @@ class _$SearchExperiencesByDifficultyStateTearOff {
 
 // ignore: unused_element
 const $SearchExperiencesByDifficultyState =
-_$SearchExperiencesByDifficultyStateTearOff();
+    _$SearchExperiencesByDifficultyStateTearOff();
 
 mixin _$SearchExperiencesByDifficultyState {
   @optionalTypeArgs
@@ -258,13 +263,14 @@ mixin _$SearchExperiencesByDifficultyState {
 }
 
 abstract class $SearchExperiencesByDifficultyStateCopyWith<$Res> {
-  factory $SearchExperiencesByDifficultyStateCopyWith(SearchExperiencesByDifficultyState value,
-    $Res Function(SearchExperiencesByDifficultyState) then) =
+  factory $SearchExperiencesByDifficultyStateCopyWith(
+          SearchExperiencesByDifficultyState value,
+          $Res Function(SearchExperiencesByDifficultyState) then) =
       _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>;
 }
 
 class _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
-  implements $SearchExperiencesByDifficultyStateCopyWith<$Res> {
+    implements $SearchExperiencesByDifficultyStateCopyWith<$Res> {
   _$SearchExperiencesByDifficultyStateCopyWithImpl(this._value, this._then);
 
   final SearchExperiencesByDifficultyState _value;
@@ -274,13 +280,14 @@ class _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
 
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-  __$InitialCopyWithImpl<$Res>;
+      __$InitialCopyWithImpl<$Res>;
 }
 
-class __$InitialCopyWithImpl<$Res> extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
-  implements _$InitialCopyWith<$Res> {
+class __$InitialCopyWithImpl<$Res>
+    extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-    : super(_value, (v) => _then(v as _Initial));
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -376,14 +383,17 @@ abstract class _Initial implements SearchExperiencesByDifficultyState {
 }
 
 abstract class _$SearchInProgressCopyWith<$Res> {
-  factory _$SearchInProgressCopyWith(_SearchInProgress value, $Res Function(_SearchInProgress) then) =
-  __$SearchInProgressCopyWithImpl<$Res>;
+  factory _$SearchInProgressCopyWith(
+          _SearchInProgress value, $Res Function(_SearchInProgress) then) =
+      __$SearchInProgressCopyWithImpl<$Res>;
 }
 
-class __$SearchInProgressCopyWithImpl<$Res> extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
-  implements _$SearchInProgressCopyWith<$Res> {
-  __$SearchInProgressCopyWithImpl(_SearchInProgress _value, $Res Function(_SearchInProgress) _then)
-    : super(_value, (v) => _then(v as _SearchInProgress));
+class __$SearchInProgressCopyWithImpl<$Res>
+    extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
+    implements _$SearchInProgressCopyWith<$Res> {
+  __$SearchInProgressCopyWithImpl(
+      _SearchInProgress _value, $Res Function(_SearchInProgress) _then)
+      : super(_value, (v) => _then(v as _SearchInProgress));
 
   @override
   _SearchInProgress get _value => super._value as _SearchInProgress;
@@ -479,15 +489,18 @@ abstract class _SearchInProgress implements SearchExperiencesByDifficultyState {
 }
 
 abstract class _$SearchSuccessCopyWith<$Res> {
-  factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) =
-  __$SearchSuccessCopyWithImpl<$Res>;
+  factory _$SearchSuccessCopyWith(
+          _SearchSuccess value, $Res Function(_SearchSuccess) then) =
+      __$SearchSuccessCopyWithImpl<$Res>;
   $Res call({KtSet<Experience> experiencesFound});
 }
 
-class __$SearchSuccessCopyWithImpl<$Res> extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
-  implements _$SearchSuccessCopyWith<$Res> {
-  __$SearchSuccessCopyWithImpl(_SearchSuccess _value, $Res Function(_SearchSuccess) _then)
-    : super(_value, (v) => _then(v as _SearchSuccess));
+class __$SearchSuccessCopyWithImpl<$Res>
+    extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
+    implements _$SearchSuccessCopyWith<$Res> {
+  __$SearchSuccessCopyWithImpl(
+      _SearchSuccess _value, $Res Function(_SearchSuccess) _then)
+      : super(_value, (v) => _then(v as _SearchSuccess));
 
   @override
   _SearchSuccess get _value => super._value as _SearchSuccess;
@@ -498,15 +511,15 @@ class __$SearchSuccessCopyWithImpl<$Res> extends _$SearchExperiencesByDifficulty
   }) {
     return _then(_SearchSuccess(
       experiencesFound == freezed
-        ? _value.experiencesFound
-        : experiencesFound as KtSet<Experience>,
+          ? _value.experiencesFound
+          : experiencesFound as KtSet<Experience>,
     ));
   }
 }
 
 class _$_SearchSuccess implements _SearchSuccess {
   const _$_SearchSuccess(this.experiencesFound)
-    : assert(experiencesFound != null);
+      : assert(experiencesFound != null);
 
   @override
   final KtSet<Experience> experiencesFound;
@@ -519,20 +532,20 @@ class _$_SearchSuccess implements _SearchSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _SearchSuccess &&
-        (identical(other.experiencesFound, experiencesFound) ||
-          const DeepCollectionEquality()
-            .equals(other.experiencesFound, experiencesFound)));
+        (other is _SearchSuccess &&
+            (identical(other.experiencesFound, experiencesFound) ||
+                const DeepCollectionEquality()
+                    .equals(other.experiencesFound, experiencesFound)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(experiencesFound);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(experiencesFound);
 
   @override
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith =>
-    __$SearchSuccessCopyWithImpl<_SearchSuccess>(this, _$identity);
+      __$SearchSuccessCopyWithImpl<_SearchSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -605,24 +618,27 @@ class _$_SearchSuccess implements _SearchSuccess {
 
 abstract class _SearchSuccess implements SearchExperiencesByDifficultyState {
   const factory _SearchSuccess(KtSet<Experience> experiencesFound) =
-  _$_SearchSuccess;
+      _$_SearchSuccess;
 
   KtSet<Experience> get experiencesFound;
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith;
 }
 
 abstract class _$SearchFailureCopyWith<$Res> {
-  factory _$SearchFailureCopyWith(_SearchFailure value, $Res Function(_SearchFailure) then) =
-  __$SearchFailureCopyWithImpl<$Res>;
+  factory _$SearchFailureCopyWith(
+          _SearchFailure value, $Res Function(_SearchFailure) then) =
+      __$SearchFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
-class __$SearchFailureCopyWithImpl<$Res> extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
-  implements _$SearchFailureCopyWith<$Res> {
-  __$SearchFailureCopyWithImpl(_SearchFailure _value, $Res Function(_SearchFailure) _then)
-    : super(_value, (v) => _then(v as _SearchFailure));
+class __$SearchFailureCopyWithImpl<$Res>
+    extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
+    implements _$SearchFailureCopyWith<$Res> {
+  __$SearchFailureCopyWithImpl(
+      _SearchFailure _value, $Res Function(_SearchFailure) _then)
+      : super(_value, (v) => _then(v as _SearchFailure));
 
   @override
   _SearchFailure get _value => super._value as _SearchFailure;
@@ -661,18 +677,18 @@ class _$_SearchFailure implements _SearchFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _SearchFailure &&
-        (identical(other.failure, failure) ||
-          const DeepCollectionEquality().equals(other.failure, failure)));
+        (other is _SearchFailure &&
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
   _$SearchFailureCopyWith<_SearchFailure> get copyWith =>
-    __$SearchFailureCopyWithImpl<_SearchFailure>(this, _$identity);
+      __$SearchFailureCopyWithImpl<_SearchFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -751,17 +767,20 @@ abstract class _SearchFailure implements SearchExperiencesByDifficultyState {
 }
 
 abstract class _$ValueFailureCopyWith<$Res> {
-  factory _$ValueFailureCopyWith(_ValueFailure value, $Res Function(_ValueFailure) then) =
-  __$ValueFailureCopyWithImpl<$Res>;
+  factory _$ValueFailureCopyWith(
+          _ValueFailure value, $Res Function(_ValueFailure) then) =
+      __$ValueFailureCopyWithImpl<$Res>;
   $Res call({ValueFailure<int> failure});
 
   $ValueFailureCopyWith<int, $Res> get failure;
 }
 
-class __$ValueFailureCopyWithImpl<$Res> extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
-  implements _$ValueFailureCopyWith<$Res> {
-  __$ValueFailureCopyWithImpl(_ValueFailure _value, $Res Function(_ValueFailure) _then)
-    : super(_value, (v) => _then(v as _ValueFailure));
+class __$ValueFailureCopyWithImpl<$Res>
+    extends _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res>
+    implements _$ValueFailureCopyWith<$Res> {
+  __$ValueFailureCopyWithImpl(
+      _ValueFailure _value, $Res Function(_ValueFailure) _then)
+      : super(_value, (v) => _then(v as _ValueFailure));
 
   @override
   _ValueFailure get _value => super._value as _ValueFailure;
@@ -800,18 +819,18 @@ class _$_ValueFailure implements _ValueFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _ValueFailure &&
-        (identical(other.failure, failure) ||
-          const DeepCollectionEquality().equals(other.failure, failure)));
+        (other is _ValueFailure &&
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
   _$ValueFailureCopyWith<_ValueFailure> get copyWith =>
-    __$ValueFailureCopyWithImpl<_ValueFailure>(this, _$identity);
+      __$ValueFailureCopyWithImpl<_ValueFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs

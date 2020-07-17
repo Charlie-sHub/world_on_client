@@ -4,9 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
 import 'package:worldon/application/bottom_navigation/bottom_navigation_actor/bottom_navigation_actor_bloc.dart';
-import 'package:worldon/application/main_feed/main_feed_watcher/main_feed_watcher_bloc.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/routes/router.gr.dart';
+import 'package:worldon/views/main_feed/widget/main_feed_body.dart';
 
 class MainPage extends StatelessWidget {
   @override
@@ -22,20 +22,7 @@ class MainPage extends StatelessWidget {
           builder: (context, state) => Scaffold(
             appBar: const WorldOnAppBar(),
             body: context.bloc<BottomNavigationActorBloc>().state.map(
-                  mainFeedView: (context) => BlocProvider<MainFeedWatcherBloc>(
-                    create: (context) => getIt<MainFeedWatcherBloc>()
-                      ..add(
-                        const MainFeedWatcherEvent.watchMainFeedStarted(),
-                      ),
-                    child: BlocBuilder<MainFeedWatcherBloc, MainFeedWatcherState>(
-                      builder: (context, state) => const Scaffold(
-                        // Have the BlocProvider and BlocConsumer of the ExperienceCardActor wrapping the list
-                        body: Center(
-                          child: Text("Main Feed"),
-                        ),
-                      ),
-                    ),
-                  ),
+                  mainFeedView: (context) => MainFeedBody(),
                   searchView: (context) => const Center(
                     // Use a Bloc to navigate between the tabs, each tab change event receiving the search term as a parameter
                     child: Text("Search"),
@@ -53,49 +40,60 @@ class MainPage extends StatelessWidget {
                     child: Text("Error"),
                   ),
                 ),
-            bottomNavigationBar: BottomNavigationBar(
-              onTap: (index) => context.bloc<BottomNavigationActorBloc>().add(
-                    BottomNavigationActorEvent.itemTapped(index),
-                  ),
-              currentIndex: context.bloc<BottomNavigationActorBloc>().state.map(
-                    mainFeedView: (context) => 0,
-                    searchView: (context) => 1,
-                    createExperienceView: (context) => 2,
-                    navigateExperienceView: (context) => 3,
-                    profileView: (context) => 4,
-                    errorView: (context) => 0,
-                  ),
-              items: [
-                BottomNavigationBarItem(
-                  icon: FaIcon(FontAwesomeIcons.home),
-                  title: const Text("Feed"),
-                  backgroundColor: Colors.blue,
-                ),
-                BottomNavigationBarItem(
-                  icon: FaIcon(FontAwesomeIcons.search),
-                  title: const Text("Search"),
-                  backgroundColor: Colors.green,
-                ),
-                BottomNavigationBarItem(
-                  icon: FaIcon(FontAwesomeIcons.plusCircle),
-                  title: const Text("Create"),
-                  backgroundColor: Colors.yellow,
-                ),
-                BottomNavigationBarItem(
-                  icon: FaIcon(FontAwesomeIcons.compass),
-                  title: const Text("Explore"),
-                  backgroundColor: Colors.red,
-                ),
-                BottomNavigationBarItem(
-                  icon: FaIcon(FontAwesomeIcons.userCircle),
-                  title: const Text("Profile"),
-                  backgroundColor: Colors.purple,
-                ),
-              ],
-            ),
+            bottomNavigationBar: WorldOnBottomNavigationBar(),
           ),
         ),
       ),
+    );
+  }
+}
+
+class WorldOnBottomNavigationBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return BottomNavigationBar(
+      onTap: (index) =>
+        context.bloc<BottomNavigationActorBloc>().add(
+          BottomNavigationActorEvent.itemTapped(index),
+        ),
+      currentIndex: context
+        .bloc<BottomNavigationActorBloc>()
+        .state
+        .map(
+        mainFeedView: (context) => 0,
+        searchView: (context) => 1,
+        createExperienceView: (context) => 2,
+        navigateExperienceView: (context) => 3,
+        profileView: (context) => 4,
+        errorView: (context) => 0,
+      ),
+      items: [
+        BottomNavigationBarItem(
+          icon: FaIcon(FontAwesomeIcons.home),
+          title: const Text("Feed"),
+          backgroundColor: Colors.blue,
+        ),
+        BottomNavigationBarItem(
+          icon: FaIcon(FontAwesomeIcons.search),
+          title: const Text("Search"),
+          backgroundColor: Colors.green,
+        ),
+        BottomNavigationBarItem(
+          icon: FaIcon(FontAwesomeIcons.plusCircle),
+          title: const Text("Create"),
+          backgroundColor: Colors.yellow,
+        ),
+        BottomNavigationBarItem(
+          icon: FaIcon(FontAwesomeIcons.compass),
+          title: const Text("Explore"),
+          backgroundColor: Colors.red,
+        ),
+        BottomNavigationBarItem(
+          icon: FaIcon(FontAwesomeIcons.userCircle),
+          title: const Text("Profile"),
+          backgroundColor: Colors.purple,
+        ),
+      ],
     );
   }
 }

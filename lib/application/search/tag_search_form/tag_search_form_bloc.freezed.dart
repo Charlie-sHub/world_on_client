@@ -67,10 +67,13 @@ mixin _$TagSearchFormEvent {
 }
 
 abstract class $TagSearchFormEventCopyWith<$Res> {
-  factory $TagSearchFormEventCopyWith(TagSearchFormEvent value, $Res Function(TagSearchFormEvent) then) = _$TagSearchFormEventCopyWithImpl<$Res>;
+  factory $TagSearchFormEventCopyWith(
+          TagSearchFormEvent value, $Res Function(TagSearchFormEvent) then) =
+      _$TagSearchFormEventCopyWithImpl<$Res>;
 }
 
-class _$TagSearchFormEventCopyWithImpl<$Res> implements $TagSearchFormEventCopyWith<$Res> {
+class _$TagSearchFormEventCopyWithImpl<$Res>
+    implements $TagSearchFormEventCopyWith<$Res> {
   _$TagSearchFormEventCopyWithImpl(this._value, this._then);
 
   final TagSearchFormEvent _value;
@@ -80,15 +83,17 @@ class _$TagSearchFormEventCopyWithImpl<$Res> implements $TagSearchFormEventCopyW
 
 abstract class _$SubmittedSearchTermCopyWith<$Res> {
   factory _$SubmittedSearchTermCopyWith(_SubmittedSearchTerm value,
-    $Res Function(_SubmittedSearchTerm) then) =
-  __$SubmittedSearchTermCopyWithImpl<$Res>;
+          $Res Function(_SubmittedSearchTerm) then) =
+      __$SubmittedSearchTermCopyWithImpl<$Res>;
   $Res call({String searchTermString});
 }
 
-class __$SubmittedSearchTermCopyWithImpl<$Res> extends _$TagSearchFormEventCopyWithImpl<$Res>
-  implements _$SubmittedSearchTermCopyWith<$Res> {
-  __$SubmittedSearchTermCopyWithImpl(_SubmittedSearchTerm _value, $Res Function(_SubmittedSearchTerm) _then)
-    : super(_value, (v) => _then(v as _SubmittedSearchTerm));
+class __$SubmittedSearchTermCopyWithImpl<$Res>
+    extends _$TagSearchFormEventCopyWithImpl<$Res>
+    implements _$SubmittedSearchTermCopyWith<$Res> {
+  __$SubmittedSearchTermCopyWithImpl(
+      _SubmittedSearchTerm _value, $Res Function(_SubmittedSearchTerm) _then)
+      : super(_value, (v) => _then(v as _SubmittedSearchTerm));
 
   @override
   _SubmittedSearchTerm get _value => super._value as _SubmittedSearchTerm;
@@ -99,15 +104,15 @@ class __$SubmittedSearchTermCopyWithImpl<$Res> extends _$TagSearchFormEventCopyW
   }) {
     return _then(_SubmittedSearchTerm(
       searchTermString == freezed
-        ? _value.searchTermString
-        : searchTermString as String,
+          ? _value.searchTermString
+          : searchTermString as String,
     ));
   }
 }
 
 class _$_SubmittedSearchTerm implements _SubmittedSearchTerm {
   const _$_SubmittedSearchTerm(this.searchTermString)
-    : assert(searchTermString != null);
+      : assert(searchTermString != null);
 
   @override
   final String searchTermString;
@@ -120,21 +125,21 @@ class _$_SubmittedSearchTerm implements _SubmittedSearchTerm {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _SubmittedSearchTerm &&
-        (identical(other.searchTermString, searchTermString) ||
-          const DeepCollectionEquality()
-            .equals(other.searchTermString, searchTermString)));
+        (other is _SubmittedSearchTerm &&
+            (identical(other.searchTermString, searchTermString) ||
+                const DeepCollectionEquality()
+                    .equals(other.searchTermString, searchTermString)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(searchTermString);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(searchTermString);
 
   @override
   _$SubmittedSearchTermCopyWith<_SubmittedSearchTerm> get copyWith =>
-    __$SubmittedSearchTermCopyWithImpl<_SubmittedSearchTerm>(
-      this, _$identity);
+      __$SubmittedSearchTermCopyWithImpl<_SubmittedSearchTerm>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -195,7 +200,7 @@ class _$_SubmittedSearchTerm implements _SubmittedSearchTerm {
 
 abstract class _SubmittedSearchTerm implements TagSearchFormEvent {
   const factory _SubmittedSearchTerm(String searchTermString) =
-  _$_SubmittedSearchTerm;
+      _$_SubmittedSearchTerm;
 
   String get searchTermString;
   _$SubmittedSearchTermCopyWith<_SubmittedSearchTerm> get copyWith;
@@ -203,16 +208,17 @@ abstract class _SubmittedSearchTerm implements TagSearchFormEvent {
 
 abstract class _$AddedTagCopyWith<$Res> {
   factory _$AddedTagCopyWith(_AddedTag value, $Res Function(_AddedTag) then) =
-  __$AddedTagCopyWithImpl<$Res>;
+      __$AddedTagCopyWithImpl<$Res>;
   $Res call({Tag tag});
 
   $TagCopyWith<$Res> get tag;
 }
 
-class __$AddedTagCopyWithImpl<$Res> extends _$TagSearchFormEventCopyWithImpl<$Res>
-  implements _$AddedTagCopyWith<$Res> {
+class __$AddedTagCopyWithImpl<$Res>
+    extends _$TagSearchFormEventCopyWithImpl<$Res>
+    implements _$AddedTagCopyWith<$Res> {
   __$AddedTagCopyWithImpl(_AddedTag _value, $Res Function(_AddedTag) _then)
-    : super(_value, (v) => _then(v as _AddedTag));
+      : super(_value, (v) => _then(v as _AddedTag));
 
   @override
   _AddedTag get _value => super._value as _AddedTag;
@@ -251,18 +257,18 @@ class _$_AddedTag implements _AddedTag {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _AddedTag &&
-        (identical(other.tag, tag) ||
-          const DeepCollectionEquality().equals(other.tag, tag)));
+        (other is _AddedTag &&
+            (identical(other.tag, tag) ||
+                const DeepCollectionEquality().equals(other.tag, tag)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
 
   @override
   _$AddedTagCopyWith<_AddedTag> get copyWith =>
-    __$AddedTagCopyWithImpl<_AddedTag>(this, _$identity);
+      __$AddedTagCopyWithImpl<_AddedTag>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -329,17 +335,20 @@ abstract class _AddedTag implements TagSearchFormEvent {
 }
 
 abstract class _$RemovedTagCopyWith<$Res> {
-  factory _$RemovedTagCopyWith(_RemovedTag value, $Res Function(_RemovedTag) then) =
-  __$RemovedTagCopyWithImpl<$Res>;
+  factory _$RemovedTagCopyWith(
+          _RemovedTag value, $Res Function(_RemovedTag) then) =
+      __$RemovedTagCopyWithImpl<$Res>;
   $Res call({Tag tag});
 
   $TagCopyWith<$Res> get tag;
 }
 
-class __$RemovedTagCopyWithImpl<$Res> extends _$TagSearchFormEventCopyWithImpl<$Res>
-  implements _$RemovedTagCopyWith<$Res> {
-  __$RemovedTagCopyWithImpl(_RemovedTag _value, $Res Function(_RemovedTag) _then)
-    : super(_value, (v) => _then(v as _RemovedTag));
+class __$RemovedTagCopyWithImpl<$Res>
+    extends _$TagSearchFormEventCopyWithImpl<$Res>
+    implements _$RemovedTagCopyWith<$Res> {
+  __$RemovedTagCopyWithImpl(
+      _RemovedTag _value, $Res Function(_RemovedTag) _then)
+      : super(_value, (v) => _then(v as _RemovedTag));
 
   @override
   _RemovedTag get _value => super._value as _RemovedTag;
@@ -378,18 +387,18 @@ class _$_RemovedTag implements _RemovedTag {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _RemovedTag &&
-        (identical(other.tag, tag) ||
-          const DeepCollectionEquality().equals(other.tag, tag)));
+        (other is _RemovedTag &&
+            (identical(other.tag, tag) ||
+                const DeepCollectionEquality().equals(other.tag, tag)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
 
   @override
   _$RemovedTagCopyWith<_RemovedTag> get copyWith =>
-    __$RemovedTagCopyWithImpl<_RemovedTag>(this, _$identity);
+      __$RemovedTagCopyWithImpl<_RemovedTag>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -459,11 +468,12 @@ class _$TagSearchFormStateTearOff {
   const _$TagSearchFormStateTearOff();
 
 // ignore: unused_element
-  _TagSearchFormState call({@required Set<Tag> tagsSelected,
-    @required KtSet<Tag> tagsFound,
-    @required bool isSubmitting,
-    @required bool showErrorMessages,
-    @required Option<Failure> failureOption}) {
+  _TagSearchFormState call(
+      {@required Set<Tag> tagsSelected,
+      @required KtSet<Tag> tagsFound,
+      @required bool isSubmitting,
+      @required bool showErrorMessages,
+      @required Option<Failure> failureOption}) {
     return _TagSearchFormState(
       tagsSelected: tagsSelected,
       tagsFound: tagsFound,
@@ -488,18 +498,19 @@ mixin _$TagSearchFormState {
 }
 
 abstract class $TagSearchFormStateCopyWith<$Res> {
-  factory $TagSearchFormStateCopyWith(TagSearchFormState value, $Res Function(TagSearchFormState) then) =
-  _$TagSearchFormStateCopyWithImpl<$Res>;
-  
-  $Res call({Set<Tag> tagsSelected,
-    KtSet<Tag> tagsFound,
-    bool isSubmitting,
-    bool showErrorMessages,
-    Option<Failure> failureOption});
+  factory $TagSearchFormStateCopyWith(
+          TagSearchFormState value, $Res Function(TagSearchFormState) then) =
+      _$TagSearchFormStateCopyWithImpl<$Res>;
+  $Res call(
+      {Set<Tag> tagsSelected,
+      KtSet<Tag> tagsFound,
+      bool isSubmitting,
+      bool showErrorMessages,
+      Option<Failure> failureOption});
 }
 
 class _$TagSearchFormStateCopyWithImpl<$Res>
-  implements $TagSearchFormStateCopyWith<$Res> {
+    implements $TagSearchFormStateCopyWith<$Res> {
   _$TagSearchFormStateCopyWithImpl(this._value, this._then);
 
   final TagSearchFormState _value;
@@ -516,38 +527,42 @@ class _$TagSearchFormStateCopyWithImpl<$Res>
   }) {
     return _then(_value.copyWith(
       tagsSelected: tagsSelected == freezed
-        ? _value.tagsSelected
-        : tagsSelected as Set<Tag>,
+          ? _value.tagsSelected
+          : tagsSelected as Set<Tag>,
       tagsFound:
-      tagsFound == freezed ? _value.tagsFound : tagsFound as KtSet<Tag>,
+          tagsFound == freezed ? _value.tagsFound : tagsFound as KtSet<Tag>,
       isSubmitting:
-      isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
       showErrorMessages: showErrorMessages == freezed
-        ? _value.showErrorMessages
-        : showErrorMessages as bool,
+          ? _value.showErrorMessages
+          : showErrorMessages as bool,
       failureOption: failureOption == freezed
-        ? _value.failureOption
-        : failureOption as Option<Failure>,
+          ? _value.failureOption
+          : failureOption as Option<Failure>,
     ));
   }
 }
 
 abstract class _$TagSearchFormStateCopyWith<$Res>
-  implements $TagSearchFormStateCopyWith<$Res> {
-  factory _$TagSearchFormStateCopyWith(_TagSearchFormState value, $Res Function(_TagSearchFormState) then) =
-  __$TagSearchFormStateCopyWithImpl<$Res>;
+    implements $TagSearchFormStateCopyWith<$Res> {
+  factory _$TagSearchFormStateCopyWith(
+          _TagSearchFormState value, $Res Function(_TagSearchFormState) then) =
+      __$TagSearchFormStateCopyWithImpl<$Res>;
   @override
-  $Res call({Set<Tag> tagsSelected,
-    KtSet<Tag> tagsFound,
-    bool isSubmitting,
-    bool showErrorMessages,
-    Option<Failure> failureOption});
+  $Res call(
+      {Set<Tag> tagsSelected,
+      KtSet<Tag> tagsFound,
+      bool isSubmitting,
+      bool showErrorMessages,
+      Option<Failure> failureOption});
 }
 
-class __$TagSearchFormStateCopyWithImpl<$Res> extends _$TagSearchFormStateCopyWithImpl<$Res>
-  implements _$TagSearchFormStateCopyWith<$Res> {
-  __$TagSearchFormStateCopyWithImpl(_TagSearchFormState _value, $Res Function(_TagSearchFormState) _then)
-    : super(_value, (v) => _then(v as _TagSearchFormState));
+class __$TagSearchFormStateCopyWithImpl<$Res>
+    extends _$TagSearchFormStateCopyWithImpl<$Res>
+    implements _$TagSearchFormStateCopyWith<$Res> {
+  __$TagSearchFormStateCopyWithImpl(
+      _TagSearchFormState _value, $Res Function(_TagSearchFormState) _then)
+      : super(_value, (v) => _then(v as _TagSearchFormState));
 
   @override
   _TagSearchFormState get _value => super._value as _TagSearchFormState;
@@ -562,28 +577,29 @@ class __$TagSearchFormStateCopyWithImpl<$Res> extends _$TagSearchFormStateCopyWi
   }) {
     return _then(_TagSearchFormState(
       tagsSelected: tagsSelected == freezed
-        ? _value.tagsSelected
-        : tagsSelected as Set<Tag>,
+          ? _value.tagsSelected
+          : tagsSelected as Set<Tag>,
       tagsFound:
-      tagsFound == freezed ? _value.tagsFound : tagsFound as KtSet<Tag>,
+          tagsFound == freezed ? _value.tagsFound : tagsFound as KtSet<Tag>,
       isSubmitting:
-      isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
       showErrorMessages: showErrorMessages == freezed
-        ? _value.showErrorMessages
-        : showErrorMessages as bool,
+          ? _value.showErrorMessages
+          : showErrorMessages as bool,
       failureOption: failureOption == freezed
-        ? _value.failureOption
-        : failureOption as Option<Failure>,
+          ? _value.failureOption
+          : failureOption as Option<Failure>,
     ));
   }
 }
 
 class _$_TagSearchFormState implements _TagSearchFormState {
-  const _$_TagSearchFormState({@required this.tagsSelected,
-    @required this.tagsFound,
-    @required this.isSubmitting,
-    @required this.showErrorMessages,
-    @required this.failureOption})
+  const _$_TagSearchFormState(
+      {@required this.tagsSelected,
+      @required this.tagsFound,
+      @required this.isSubmitting,
+      @required this.showErrorMessages,
+      @required this.failureOption})
       : assert(tagsSelected != null),
         assert(tagsFound != null),
         assert(isSubmitting != null),
@@ -610,21 +626,21 @@ class _$_TagSearchFormState implements _TagSearchFormState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _TagSearchFormState &&
-          (identical(other.tagsSelected, tagsSelected) ||
-            const DeepCollectionEquality()
-              .equals(other.tagsSelected, tagsSelected)) &&
-          (identical(other.tagsFound, tagsFound) ||
-            const DeepCollectionEquality()
-              .equals(other.tagsFound, tagsFound)) &&
-          (identical(other.isSubmitting, isSubmitting) ||
-            const DeepCollectionEquality()
-              .equals(other.isSubmitting, isSubmitting)) &&
-          (identical(other.showErrorMessages, showErrorMessages) ||
-            const DeepCollectionEquality()
-              .equals(other.showErrorMessages, showErrorMessages)) &&
-          (identical(other.failureOption, failureOption) ||
-            const DeepCollectionEquality()
-              .equals(other.failureOption, failureOption)));
+            (identical(other.tagsSelected, tagsSelected) ||
+                const DeepCollectionEquality()
+                    .equals(other.tagsSelected, tagsSelected)) &&
+            (identical(other.tagsFound, tagsFound) ||
+                const DeepCollectionEquality()
+                    .equals(other.tagsFound, tagsFound)) &&
+            (identical(other.isSubmitting, isSubmitting) ||
+                const DeepCollectionEquality()
+                    .equals(other.isSubmitting, isSubmitting)) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                const DeepCollectionEquality()
+                    .equals(other.showErrorMessages, showErrorMessages)) &&
+            (identical(other.failureOption, failureOption) ||
+                const DeepCollectionEquality()
+                    .equals(other.failureOption, failureOption)));
   }
 
   @override
@@ -638,15 +654,16 @@ class _$_TagSearchFormState implements _TagSearchFormState {
 
   @override
   _$TagSearchFormStateCopyWith<_TagSearchFormState> get copyWith =>
-    __$TagSearchFormStateCopyWithImpl<_TagSearchFormState>(this, _$identity);
+      __$TagSearchFormStateCopyWithImpl<_TagSearchFormState>(this, _$identity);
 }
 
 abstract class _TagSearchFormState implements TagSearchFormState {
-  const factory _TagSearchFormState({@required Set<Tag> tagsSelected,
-    @required KtSet<Tag> tagsFound,
-    @required bool isSubmitting,
-    @required bool showErrorMessages,
-    @required Option<Failure> failureOption}) = _$_TagSearchFormState;
+  const factory _TagSearchFormState(
+      {@required Set<Tag> tagsSelected,
+      @required KtSet<Tag> tagsFound,
+      @required bool isSubmitting,
+      @required bool showErrorMessages,
+      @required Option<Failure> failureOption}) = _$_TagSearchFormState;
 
   @override
   Set<Tag> get tagsSelected;
