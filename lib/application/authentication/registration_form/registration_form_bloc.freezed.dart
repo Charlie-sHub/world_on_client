@@ -761,7 +761,6 @@ abstract class _$PasswordConfirmationChangedCopyWith<$Res> {
   factory _$PasswordConfirmationChangedCopyWith(_PasswordConfirmationChanged value,
     $Res Function(_PasswordConfirmationChanged) then) =
   __$PasswordConfirmationChangedCopyWithImpl<$Res>;
-  
   $Res call({String passwordConfirmation});
 }
 
@@ -770,11 +769,11 @@ class __$PasswordConfirmationChangedCopyWithImpl<$Res> extends _$RegistrationFor
   __$PasswordConfirmationChangedCopyWithImpl(_PasswordConfirmationChanged _value,
     $Res Function(_PasswordConfirmationChanged) _then)
     : super(_value, (v) => _then(v as _PasswordConfirmationChanged));
-  
+
   @override
   _PasswordConfirmationChanged get _value =>
     super._value as _PasswordConfirmationChanged;
-  
+
   @override
   $Res call({
     Object passwordConfirmation = freezed,
@@ -790,15 +789,15 @@ class __$PasswordConfirmationChangedCopyWithImpl<$Res> extends _$RegistrationFor
 class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
   const _$_PasswordConfirmationChanged(this.passwordConfirmation)
     : assert(passwordConfirmation != null);
-  
+
   @override
   final String passwordConfirmation;
-  
+
   @override
   String toString() {
     return 'RegistrationFormEvent.passwordConfirmationChanged(passwordConfirmation: $passwordConfirmation)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -807,18 +806,18 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
           const DeepCollectionEquality()
             .equals(other.passwordConfirmation, passwordConfirmation)));
   }
-  
+
   @override
   int get hashCode =>
     runtimeType.hashCode ^
     const DeepCollectionEquality().hash(passwordConfirmation);
-  
+
   @override
   _$PasswordConfirmationChangedCopyWith<_PasswordConfirmationChanged>
   get copyWith =>
     __$PasswordConfirmationChangedCopyWithImpl<
       _PasswordConfirmationChanged>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -845,7 +844,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
     assert(submitted != null);
     return passwordConfirmationChanged(passwordConfirmation);
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -867,7 +866,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
@@ -894,7 +893,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
     assert(submitted != null);
     return passwordConfirmationChanged(this);
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -921,9 +920,8 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
 abstract class _PasswordConfirmationChanged implements RegistrationFormEvent {
   const factory _PasswordConfirmationChanged(String passwordConfirmation) =
   _$_PasswordConfirmationChanged;
-  
+
   String get passwordConfirmation;
-  
   _$PasswordConfirmationChangedCopyWith<_PasswordConfirmationChanged>
   get copyWith;
 }
@@ -1721,7 +1719,6 @@ const $RegistrationFormState = _$RegistrationFormStateTearOff();
 
 mixin _$RegistrationFormState {
   User get user;
-
   PasswordConfirmator get passwordConfirmator;
   bool get showErrorMessages;
   bool get isSubmitting;
@@ -1910,7 +1907,6 @@ abstract class _RegistrationFormState implements RegistrationFormState {
 
   @override
   User get user;
-  
   @override
   PasswordConfirmator get passwordConfirmator;
   @override

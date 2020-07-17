@@ -11,6 +11,7 @@ import 'package:worldon/application/achievement_management/achievement_managemen
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
 import 'package:worldon/application/authentication/log_in_form/log_in_form_bloc.dart';
 import 'package:worldon/application/authentication/registration_form/registration_form_bloc.dart';
+import 'package:worldon/application/bottom_navigation/bottom_navigation_actor/bottom_navigation_actor_bloc.dart';
 import 'package:worldon/application/comments/comment_actor/comment_actor_bloc.dart';
 import 'package:worldon/application/comments/comment_form/comment_form_bloc.dart';
 import 'package:worldon/application/comments/comment_watcher/comment_watcher_bloc.dart';
@@ -215,6 +216,7 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerFactory<AuthenticationBloc>(() => AuthenticationBloc());
   g.registerFactory<BlockActorBloc>(() => BlockActorBloc());
   g.registerFactory<BlockedWatcherBloc>(() => BlockedWatcherBloc());
+  g.registerFactory<BottomNavigationActorBloc>(() => BottomNavigationActorBloc());
   g.registerFactory<CommentActorBloc>(() => CommentActorBloc());
   g.registerFactory<CommentFormBloc>(() => CommentFormBloc());
   g.registerFactory<CommentWatcherBloc>(() => CommentWatcherBloc());
@@ -236,7 +238,8 @@ void $initGetIt(GetIt g, {String environment}) {
   g.registerFactory<NotificationActorBloc>(() => NotificationActorBloc());
   g.registerFactory<NotificationsWatcherBloc>(() => NotificationsWatcherBloc());
   g.registerFactory<OptionsFormBloc>(() => OptionsFormBloc());
-  g.registerFactory<ProfileAchievementsWatcherBloc>(() => ProfileAchievementsWatcherBloc());
+  g.registerFactory<ProfileAchievementsWatcherBloc>(
+      () => ProfileAchievementsWatcherBloc());
   g.registerFactory<ProfileEditingFormBloc>(() => ProfileEditingFormBloc());
   g.registerFactory<ProfileExperiencesWatcherBloc>(
       () => ProfileExperiencesWatcherBloc());

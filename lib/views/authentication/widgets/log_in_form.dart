@@ -3,6 +3,7 @@ import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
 import 'package:worldon/application/authentication/log_in_form/log_in_form_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/views/core/misc/string_constants.dart';
@@ -66,11 +67,9 @@ class LogInForm extends StatelessWidget {
     ).show(context);
   }
 
-  Future onSuccess(BuildContext context) {
-    return FlushbarHelper.createSuccess(
-      message: "Success",
-      duration: const Duration(seconds: 5),
-    ).show(context);
+  void onSuccess(BuildContext context) {
+    ExtendedNavigator.of(context).pushReplacementNamed(Routes.mainPage);
+    context.bloc<AuthenticationBloc>().add(const AuthenticationEvent.authenticationCheckRequested());
   }
 }
 
@@ -82,7 +81,7 @@ class RegisterButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
-      onPressed: () => ExtendedNavigator.of(context).pushReplacementNamed(Routes.registrationPage),
+      onPressed: () => ExtendedNavigator.of(context).pushNamed(Routes.registrationPage),
       color: WorldOnColors.background,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(0.0),

@@ -21,8 +21,7 @@ class _$AchievementManagementActorEventTearOff {
 }
 
 // ignore: unused_element
-const $AchievementManagementActorEvent =
-    _$AchievementManagementActorEventTearOff();
+const $AchievementManagementActorEvent = _$AchievementManagementActorEventTearOff();
 
 mixin _$AchievementManagementActorEvent {
   Achievement get achievement;
@@ -46,22 +45,17 @@ mixin _$AchievementManagementActorEvent {
     @required Result orElse(),
   });
 
-  $AchievementManagementActorEventCopyWith<AchievementManagementActorEvent>
-      get copyWith;
+  $AchievementManagementActorEventCopyWith<AchievementManagementActorEvent> get copyWith;
 }
 
 abstract class $AchievementManagementActorEventCopyWith<$Res> {
-  factory $AchievementManagementActorEventCopyWith(
-          AchievementManagementActorEvent value,
-          $Res Function(AchievementManagementActorEvent) then) =
-      _$AchievementManagementActorEventCopyWithImpl<$Res>;
+  factory $AchievementManagementActorEventCopyWith(AchievementManagementActorEvent value, $Res Function(AchievementManagementActorEvent) then) = _$AchievementManagementActorEventCopyWithImpl<$Res>;
   $Res call({Achievement achievement});
 
   $AchievementCopyWith<$Res> get achievement;
 }
 
-class _$AchievementManagementActorEventCopyWithImpl<$Res>
-    implements $AchievementManagementActorEventCopyWith<$Res> {
+class _$AchievementManagementActorEventCopyWithImpl<$Res> implements $AchievementManagementActorEventCopyWith<$Res> {
   _$AchievementManagementActorEventCopyWithImpl(this._value, this._then);
 
   final AchievementManagementActorEvent _value;
@@ -73,9 +67,7 @@ class _$AchievementManagementActorEventCopyWithImpl<$Res>
     Object achievement = freezed,
   }) {
     return _then(_value.copyWith(
-      achievement: achievement == freezed
-          ? _value.achievement
-          : achievement as Achievement,
+      achievement: achievement == freezed ? _value.achievement : achievement as Achievement,
     ));
   }
 
@@ -90,10 +82,8 @@ class _$AchievementManagementActorEventCopyWithImpl<$Res>
   }
 }
 
-abstract class _$DeletedCopyWith<$Res>
-    implements $AchievementManagementActorEventCopyWith<$Res> {
-  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
-      __$DeletedCopyWithImpl<$Res>;
+abstract class _$DeletedCopyWith<$Res> implements $AchievementManagementActorEventCopyWith<$Res> {
+  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) = __$DeletedCopyWithImpl<$Res>;
   @override
   $Res call({Achievement achievement});
 
@@ -101,11 +91,8 @@ abstract class _$DeletedCopyWith<$Res>
   $AchievementCopyWith<$Res> get achievement;
 }
 
-class __$DeletedCopyWithImpl<$Res>
-    extends _$AchievementManagementActorEventCopyWithImpl<$Res>
-    implements _$DeletedCopyWith<$Res> {
-  __$DeletedCopyWithImpl(_Deleted _value, $Res Function(_Deleted) _then)
-      : super(_value, (v) => _then(v as _Deleted));
+class __$DeletedCopyWithImpl<$Res> extends _$AchievementManagementActorEventCopyWithImpl<$Res> implements _$DeletedCopyWith<$Res> {
+  __$DeletedCopyWithImpl(_Deleted _value, $Res Function(_Deleted) _then) : super(_value, (v) => _then(v as _Deleted));
 
   @override
   _Deleted get _value => super._value as _Deleted;
@@ -133,19 +120,14 @@ class _$_Deleted implements _Deleted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _Deleted &&
-            (identical(other.achievement, achievement) ||
-                const DeepCollectionEquality()
-                    .equals(other.achievement, achievement)));
+    return identical(this, other) || (other is _Deleted && (identical(other.achievement, achievement) || const DeepCollectionEquality().equals(other.achievement, achievement)));
   }
 
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(achievement);
 
   @override
-  _$DeletedCopyWith<_Deleted> get copyWith =>
-      __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
+  _$DeletedCopyWith<_Deleted> get copyWith => __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -228,8 +210,7 @@ class _$AchievementManagementActorStateTearOff {
 }
 
 // ignore: unused_element
-const $AchievementManagementActorState =
-    _$AchievementManagementActorStateTearOff();
+const $AchievementManagementActorState = _$AchievementManagementActorStateTearOff();
 
 mixin _$AchievementManagementActorState {
   @optionalTypeArgs
@@ -265,14 +246,10 @@ mixin _$AchievementManagementActorState {
 }
 
 abstract class $AchievementManagementActorStateCopyWith<$Res> {
-  factory $AchievementManagementActorStateCopyWith(
-          AchievementManagementActorState value,
-          $Res Function(AchievementManagementActorState) then) =
-      _$AchievementManagementActorStateCopyWithImpl<$Res>;
+  factory $AchievementManagementActorStateCopyWith(AchievementManagementActorState value, $Res Function(AchievementManagementActorState) then) = _$AchievementManagementActorStateCopyWithImpl<$Res>;
 }
 
-class _$AchievementManagementActorStateCopyWithImpl<$Res>
-    implements $AchievementManagementActorStateCopyWith<$Res> {
+class _$AchievementManagementActorStateCopyWithImpl<$Res> implements $AchievementManagementActorStateCopyWith<$Res> {
   _$AchievementManagementActorStateCopyWithImpl(this._value, this._then);
 
   final AchievementManagementActorState _value;
@@ -281,15 +258,11 @@ class _$AchievementManagementActorStateCopyWithImpl<$Res>
 }
 
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
-class __$InitialCopyWithImpl<$Res>
-    extends _$AchievementManagementActorStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$AchievementManagementActorStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -379,17 +352,11 @@ abstract class _Initial implements AchievementManagementActorState {
 }
 
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(
-          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
-      __$ActionInProgressCopyWithImpl<$Res>;
+  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) = __$ActionInProgressCopyWithImpl<$Res>;
 }
 
-class __$ActionInProgressCopyWithImpl<$Res>
-    extends _$AchievementManagementActorStateCopyWithImpl<$Res>
-    implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(
-      _ActionInProgress _value, $Res Function(_ActionInProgress) _then)
-      : super(_value, (v) => _then(v as _ActionInProgress));
+class __$ActionInProgressCopyWithImpl<$Res> extends _$AchievementManagementActorStateCopyWithImpl<$Res> implements _$ActionInProgressCopyWith<$Res> {
+  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then) : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
   _ActionInProgress get _value => super._value as _ActionInProgress;
@@ -479,20 +446,14 @@ abstract class _ActionInProgress implements AchievementManagementActorState {
 }
 
 abstract class _$DeletionFailureCopyWith<$Res> {
-  factory _$DeletionFailureCopyWith(
-          _DeletionFailure value, $Res Function(_DeletionFailure) then) =
-      __$DeletionFailureCopyWithImpl<$Res>;
+  factory _$DeletionFailureCopyWith(_DeletionFailure value, $Res Function(_DeletionFailure) then) = __$DeletionFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
-class __$DeletionFailureCopyWithImpl<$Res>
-    extends _$AchievementManagementActorStateCopyWithImpl<$Res>
-    implements _$DeletionFailureCopyWith<$Res> {
-  __$DeletionFailureCopyWithImpl(
-      _DeletionFailure _value, $Res Function(_DeletionFailure) _then)
-      : super(_value, (v) => _then(v as _DeletionFailure));
+class __$DeletionFailureCopyWithImpl<$Res> extends _$AchievementManagementActorStateCopyWithImpl<$Res> implements _$DeletionFailureCopyWith<$Res> {
+  __$DeletionFailureCopyWithImpl(_DeletionFailure _value, $Res Function(_DeletionFailure) _then) : super(_value, (v) => _then(v as _DeletionFailure));
 
   @override
   _DeletionFailure get _value => super._value as _DeletionFailure;
@@ -530,19 +491,14 @@ class _$_DeletionFailure implements _DeletionFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _DeletionFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) || (other is _DeletionFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
-  _$DeletionFailureCopyWith<_DeletionFailure> get copyWith =>
-      __$DeletionFailureCopyWithImpl<_DeletionFailure>(this, _$identity);
+  _$DeletionFailureCopyWith<_DeletionFailure> get copyWith => __$DeletionFailureCopyWithImpl<_DeletionFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -615,17 +571,11 @@ abstract class _DeletionFailure implements AchievementManagementActorState {
 }
 
 abstract class _$DeletionSuccessCopyWith<$Res> {
-  factory _$DeletionSuccessCopyWith(
-          _DeletionSuccess value, $Res Function(_DeletionSuccess) then) =
-      __$DeletionSuccessCopyWithImpl<$Res>;
+  factory _$DeletionSuccessCopyWith(_DeletionSuccess value, $Res Function(_DeletionSuccess) then) = __$DeletionSuccessCopyWithImpl<$Res>;
 }
 
-class __$DeletionSuccessCopyWithImpl<$Res>
-    extends _$AchievementManagementActorStateCopyWithImpl<$Res>
-    implements _$DeletionSuccessCopyWith<$Res> {
-  __$DeletionSuccessCopyWithImpl(
-      _DeletionSuccess _value, $Res Function(_DeletionSuccess) _then)
-      : super(_value, (v) => _then(v as _DeletionSuccess));
+class __$DeletionSuccessCopyWithImpl<$Res> extends _$AchievementManagementActorStateCopyWithImpl<$Res> implements _$DeletionSuccessCopyWith<$Res> {
+  __$DeletionSuccessCopyWithImpl(_DeletionSuccess _value, $Res Function(_DeletionSuccess) _then) : super(_value, (v) => _then(v as _DeletionSuccess));
 
   @override
   _DeletionSuccess get _value => super._value as _DeletionSuccess;
