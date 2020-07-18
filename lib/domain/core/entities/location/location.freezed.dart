@@ -38,14 +38,9 @@ mixin _$Location {
 }
 
 abstract class $LocationCopyWith<$Res> {
-  factory $LocationCopyWith(Location value, $Res Function(Location) then) =
-      _$LocationCopyWithImpl<$Res>;
-  $Res call(
-      {int id,
-      String city,
-      String country,
-      String postalCode,
-      Set<Experience> experiences});
+  factory $LocationCopyWith(Location value, $Res Function(Location) then) = _$LocationCopyWithImpl<$Res>;
+
+  $Res call({int id, String city, String country, String postalCode, Set<Experience> experiences});
 }
 
 class _$LocationCopyWithImpl<$Res> implements $LocationCopyWith<$Res> {
@@ -67,31 +62,20 @@ class _$LocationCopyWithImpl<$Res> implements $LocationCopyWith<$Res> {
       id: id == freezed ? _value.id : id as int,
       city: city == freezed ? _value.city : city as String,
       country: country == freezed ? _value.country : country as String,
-      postalCode:
-          postalCode == freezed ? _value.postalCode : postalCode as String,
-      experiences: experiences == freezed
-          ? _value.experiences
-          : experiences as Set<Experience>,
+      postalCode: postalCode == freezed ? _value.postalCode : postalCode as String,
+      experiences: experiences == freezed ? _value.experiences : experiences as Set<Experience>,
     ));
   }
 }
 
 abstract class _$LocationCopyWith<$Res> implements $LocationCopyWith<$Res> {
-  factory _$LocationCopyWith(_Location value, $Res Function(_Location) then) =
-      __$LocationCopyWithImpl<$Res>;
+  factory _$LocationCopyWith(_Location value, $Res Function(_Location) then) = __$LocationCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {int id,
-      String city,
-      String country,
-      String postalCode,
-      Set<Experience> experiences});
+  $Res call({int id, String city, String country, String postalCode, Set<Experience> experiences});
 }
 
-class __$LocationCopyWithImpl<$Res> extends _$LocationCopyWithImpl<$Res>
-    implements _$LocationCopyWith<$Res> {
-  __$LocationCopyWithImpl(_Location _value, $Res Function(_Location) _then)
-      : super(_value, (v) => _then(v as _Location));
+class __$LocationCopyWithImpl<$Res> extends _$LocationCopyWithImpl<$Res> implements _$LocationCopyWith<$Res> {
+  __$LocationCopyWithImpl(_Location _value, $Res Function(_Location) _then) : super(_value, (v) => _then(v as _Location));
 
   @override
   _Location get _value => super._value as _Location;
@@ -108,21 +92,14 @@ class __$LocationCopyWithImpl<$Res> extends _$LocationCopyWithImpl<$Res>
       id: id == freezed ? _value.id : id as int,
       city: city == freezed ? _value.city : city as String,
       country: country == freezed ? _value.country : country as String,
-      postalCode:
-          postalCode == freezed ? _value.postalCode : postalCode as String,
-      experiences: experiences == freezed
-          ? _value.experiences
-          : experiences as Set<Experience>,
+      postalCode: postalCode == freezed ? _value.postalCode : postalCode as String,
+      experiences: experiences == freezed ? _value.experiences : experiences as Set<Experience>,
     ));
   }
 }
 
 class _$_Location extends _Location {
-  const _$_Location({this.id,
-      @required this.city,
-      @required this.country,
-      @required this.postalCode,
-      @required this.experiences})
+  const _$_Location({this.id, @required this.city, @required this.country, @required this.postalCode, @required this.experiences})
       : assert(city != null),
         assert(country != null),
         assert(postalCode != null),
@@ -149,19 +126,11 @@ class _$_Location extends _Location {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Location &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.city, city) ||
-                const DeepCollectionEquality().equals(other.city, city)) &&
-            (identical(other.country, country) ||
-                const DeepCollectionEquality()
-                    .equals(other.country, country)) &&
-            (identical(other.postalCode, postalCode) ||
-                const DeepCollectionEquality()
-                    .equals(other.postalCode, postalCode)) &&
-            (identical(other.experiences, experiences) ||
-                const DeepCollectionEquality()
-                    .equals(other.experiences, experiences)));
+          (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+          (identical(other.city, city) || const DeepCollectionEquality().equals(other.city, city)) &&
+          (identical(other.country, country) || const DeepCollectionEquality().equals(other.country, country)) &&
+          (identical(other.postalCode, postalCode) || const DeepCollectionEquality().equals(other.postalCode, postalCode)) &&
+          (identical(other.experiences, experiences) || const DeepCollectionEquality().equals(other.experiences, experiences)));
   }
 
   @override
@@ -174,18 +143,13 @@ class _$_Location extends _Location {
       const DeepCollectionEquality().hash(experiences);
 
   @override
-  _$LocationCopyWith<_Location> get copyWith =>
-      __$LocationCopyWithImpl<_Location>(this, _$identity);
+  _$LocationCopyWith<_Location> get copyWith => __$LocationCopyWithImpl<_Location>(this, _$identity);
 }
 
 abstract class _Location extends Location {
   const _Location._() : super._();
 
-  const factory _Location({int id,
-      @required String city,
-      @required String country,
-      @required String postalCode,
-      @required Set<Experience> experiences}) = _$_Location;
+  const factory _Location({int id, @required String city, @required String country, @required String postalCode, @required Set<Experience> experiences}) = _$_Location;
 
   @override
   int get id;

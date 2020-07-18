@@ -15,8 +15,7 @@ _$_ObjectiveDto _$_$_ObjectiveDtoFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_ObjectiveDtoToJson(_$_ObjectiveDto instance) =>
-  <String, dynamic>{
+Map<String, dynamic> _$_$_ObjectiveDtoToJson(_$_ObjectiveDto instance) => <String, dynamic>{
       'id': instance.id,
       'description': instance.description,
       'coordinates': instance.coordinates,

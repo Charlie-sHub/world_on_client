@@ -18,35 +18,16 @@ _$_ExperienceDto _$_$_ExperienceDtoFromJson(Map<String, dynamic> json) {
     difficulty: json['difficulty'] as int,
     creationDate: json['creationDate'] as String,
     modificationDate: json['modificationDate'] as String,
-    objectives: (json['objectives'] as List)
-      ?.map((e) =>
-    e == null ? null : ObjectiveDto.fromJson(e as Map<String, dynamic>))
-      ?.toSet(),
-    rewards: (json['rewards'] as List)
-      ?.map((e) =>
-    e == null ? null : RewardDto.fromJson(e as Map<String, dynamic>))
-      ?.toSet(),
-    tags: (json['tags'] as List)
-      ?.map((e) =>
-    e == null ? null : TagDto.fromJson(e as Map<String, dynamic>))
-      ?.toSet(),
-    comments: (json['comments'] as List)
-      ?.map((e) =>
-    e == null ? null : CommentDto.fromJson(e as Map<String, dynamic>))
-      ?.toSet(),
-    likedBy: (json['likedBy'] as List)
-      ?.map((e) =>
-    e == null ? null : UserDto.fromJson(e as Map<String, dynamic>))
-      ?.toSet(),
-    doneBy: (json['doneBy'] as List)
-      ?.map((e) =>
-    e == null ? null : UserDto.fromJson(e as Map<String, dynamic>))
-      ?.toSet(),
+    objectives: (json['objectives'] as List)?.map((e) => e == null ? null : ObjectiveDto.fromJson(e as Map<String, dynamic>))?.toSet(),
+    rewards: (json['rewards'] as List)?.map((e) => e == null ? null : RewardDto.fromJson(e as Map<String, dynamic>))?.toSet(),
+    tags: (json['tags'] as List)?.map((e) => e == null ? null : TagDto.fromJson(e as Map<String, dynamic>))?.toSet(),
+    comments: (json['comments'] as List)?.map((e) => e == null ? null : CommentDto.fromJson(e as Map<String, dynamic>))?.toSet(),
+    likedBy: (json['likedBy'] as List)?.map((e) => e == null ? null : UserDto.fromJson(e as Map<String, dynamic>))?.toSet(),
+    doneBy: (json['doneBy'] as List)?.map((e) => e == null ? null : UserDto.fromJson(e as Map<String, dynamic>))?.toSet(),
   );
 }
 
-Map<String, dynamic> _$_$_ExperienceDtoToJson(_$_ExperienceDto instance) =>
-  <String, dynamic>{
+Map<String, dynamic> _$_$_ExperienceDtoToJson(_$_ExperienceDto instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'description': instance.description,

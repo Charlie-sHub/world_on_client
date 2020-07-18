@@ -420,7 +420,6 @@ abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(
           _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-
   $Res call({KtList<Experience> experiences});
 }
 
@@ -440,7 +439,8 @@ class __$LoadSuccessCopyWithImpl<$Res>
   }) {
     return _then(_LoadSuccess(
       experiences == freezed
-          ? _value.experiences : experiences as KtList<Experience>,
+          ? _value.experiences
+          : experiences as KtList<Experience>,
     ));
   }
 }
@@ -538,7 +538,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 
 abstract class _LoadSuccess implements MainFeedWatcherState {
   const factory _LoadSuccess(KtList<Experience> experiences) = _$_LoadSuccess;
-  
+
   KtList<Experience> get experiences;
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }

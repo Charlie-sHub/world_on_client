@@ -25,7 +25,7 @@ Experience getValidExperience() {
     coordinates: getValidCoordinates(),
     location: getValidLocation(),
     creator: getValidUser(),
-    difficulty: Difficulty(8),
+    difficulty: Difficulty(2),
     creationDate: PastDate(DateTime.now().subtract(const Duration(days: 100))),
     modificationDate: PastDate(DateTime.now()),
     objectives: ObjectiveSet(KtSet.of(getValidObjective())),

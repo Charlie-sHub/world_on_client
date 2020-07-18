@@ -1,9 +1,10 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
-import 'package:worldon/application/bottom_navigation/bottom_navigation_actor/bottom_navigation_actor_bloc.dart';
+import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/routes/router.gr.dart';
 import 'package:worldon/views/main_feed/widget/main_feed_body.dart';
@@ -17,17 +18,18 @@ class MainPage extends StatelessWidget {
         orElse: () => null,
       ),
       child: BlocProvider(
-        create: (context) => getIt<BottomNavigationActorBloc>(),
-        child: BlocBuilder<BottomNavigationActorBloc, BottomNavigationActorState>(
+        create: (context) => getIt<NavigationActorBloc>(),
+        child: BlocBuilder<NavigationActorBloc, NavigationActorState>(
           builder: (context, state) => Scaffold(
             appBar: const WorldOnAppBar(),
-            body: context.bloc<BottomNavigationActorBloc>().state.map(
+            body: context.bloc<NavigationActorBloc>().state.map(
                   mainFeedView: (context) => MainFeedBody(),
                   searchView: (context) => const Center(
                     // Use a Bloc to navigate between the tabs, each tab change event receiving the search term as a parameter
                     child: Text("Search"),
                   ),
-                  createExperienceView: (context) => const Center(
+              experienceFormView: (context) =>
+              const Center(
                     child: Text("Create Experience"),
                   ),
                   navigateExperienceView: (context) => const Center(
@@ -39,6 +41,10 @@ class MainPage extends StatelessWidget {
                   errorView: (context) => const Center(
                     child: Text("Error"),
                   ),
+              notificationsView: (context) =>
+              const Center(
+                child: Text("Notifications"),
+              ),
                 ),
             bottomNavigationBar: WorldOnBottomNavigationBar(),
           ),
@@ -52,20 +58,41 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      onTap: (index) =>
-        context.bloc<BottomNavigationActorBloc>().add(
-          BottomNavigationActorEvent.itemTapped(index),
-        ),
+      onTap: (index) {
+        switch (index) {
+          case 0:
+            context.bloc<NavigationActorBloc>().add(const NavigationActorEvent.mainFeedTapped());
+            break;
+          case 1:
+            context.bloc<NavigationActorBloc>().add(const NavigationActorEvent.searchTapped());
+            break;
+          case 2:
+            context.bloc<NavigationActorBloc>().add(NavigationActorEvent.experienceFormTapped(none()));
+            break;
+          case 3:
+            context.bloc<NavigationActorBloc>().add(NavigationActorEvent.experienceNavigationTapped(none()));
+            break;
+          case 4:
+            context.bloc<NavigationActorBloc>().add(NavigationActorEvent.profileTapped(none()));
+            break;
+          default:
+          // Perhaps this should go to an error page
+            context.bloc<NavigationActorBloc>().add(const NavigationActorEvent.mainFeedTapped());
+            break;
+        }
+      },
       currentIndex: context
-        .bloc<BottomNavigationActorBloc>()
+        .bloc<NavigationActorBloc>()
         .state
         .map(
         mainFeedView: (context) => 0,
         searchView: (context) => 1,
-        createExperienceView: (context) => 2,
+        experienceFormView: (context) => 2,
         navigateExperienceView: (context) => 3,
         profileView: (context) => 4,
+        // These shouldn't change the selected index though
         errorView: (context) => 0,
+        notificationsView: (context) => 4,
       ),
       items: [
         BottomNavigationBarItem(
@@ -81,7 +108,7 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
         BottomNavigationBarItem(
           icon: FaIcon(FontAwesomeIcons.plusCircle),
           title: const Text("Create"),
-          backgroundColor: Colors.yellow,
+          backgroundColor: Colors.orange,
         ),
         BottomNavigationBarItem(
           icon: FaIcon(FontAwesomeIcons.compass),
@@ -168,9 +195,10 @@ class NotificationsButton extends StatelessWidget {
         Icons.notifications_none,
         size: 35,
       ),
-      onPressed: () {
-        // TODO: Navigate to NotificationsPage
-      },
+      onPressed: () =>
+        context.bloc<NavigationActorBloc>().add(
+          const NavigationActorEvent.notificationsTapped(),
+        ),
     );
   }
 }

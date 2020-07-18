@@ -18,8 +18,7 @@ _$_NotificationDto _$_$_NotificationDtoFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_NotificationDtoToJson(_$_NotificationDto instance) =>
-  <String, dynamic>{
+Map<String, dynamic> _$_$_NotificationDtoToJson(_$_NotificationDto instance) => <String, dynamic>{
       'id': instance.id,
       'sender': instance.sender,
       'receiver': instance.receiver,
