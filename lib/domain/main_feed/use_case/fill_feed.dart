@@ -7,13 +7,13 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/main_feed/repository/main_feed_repository_interface.dart';
 
 @LazySingleton(env: Environment.dev)
-class FillFeed implements StreamUseCase<KtSet<Experience>, NoParams> {
+class FillFeed implements StreamUseCase<KtList<Experience>, NoParams> {
   final MainFeedRepositoryInterface _repository;
 
   FillFeed(this._repository);
 
   @override
-  Stream<Either<Failure, KtSet<Experience>>> call(NoParams params) async* {
+  Stream<Either<Failure, KtList<Experience>>> call(NoParams params) async* {
     yield* _repository.fillFeed();
   }
 }

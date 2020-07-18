@@ -11,7 +11,7 @@ import 'package:worldon/domain/main_feed/repository/main_feed_repository_interfa
 )
 class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
   @override
-  Stream<Either<Failure, KtSet<Experience>>> fillFeed() {
+  Stream<Either<Failure, KtList<Experience>>> fillFeed() {
     // TODO: implement fillFeed
     throw UnimplementedError();
   }

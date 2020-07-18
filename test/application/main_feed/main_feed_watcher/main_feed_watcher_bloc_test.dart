@@ -22,7 +22,7 @@ void main() {
       fillFeed = getIt<FillFeed>();
     },
   );
-  final experienceFeed = KtSet.of(getValidExperience());
+  final experienceFeed = KtList.of(getValidExperience());
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,

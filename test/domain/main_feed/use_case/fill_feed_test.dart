@@ -26,7 +26,7 @@ void main() {
       useCase = FillFeed(mockMainFeedRepository);
     },
   );
-  final experienceList = KtSet.of(Experience.empty());
+  final experienceList = KtList.of(Experience.empty());
   test(
     "Should return a List of Experiences",
     () async {
@@ -82,9 +82,9 @@ void main() {
   );
 }
 
-Future<Either<Failure, KtSet<Experience>>> _act(FillFeed useCase, NoParams params) async {
+Future<Either<Failure, KtList<Experience>>> _act(FillFeed useCase, NoParams params) async {
   final resultStream = useCase(params);
-  Either<Failure, KtSet<Experience>> result;
+  Either<Failure, KtList<Experience>> result;
   await for (final either in resultStream) {
     result = either;
   }

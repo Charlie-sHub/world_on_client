@@ -23,6 +23,7 @@ class AppWidget extends StatelessWidget {
         title: "World On",
         // debugShowCheckedModeBanner: false,
         theme: ThemeData.dark().copyWith(
+          cardColor: WorldOnColors.white,
           primaryColor: WorldOnColors.primary,
           accentColor: WorldOnColors.accent,
           scaffoldBackgroundColor: WorldOnColors.background,

@@ -396,6 +396,43 @@ void $initGetIt(GetIt g, {String environment}) {
     g.registerLazySingleton<UnFollowUser>(() => MockUnFollowUser());
   }
 
+  //Register prod Dependencies --------
+  if (environment == 'prod') {
+    g.registerLazySingleton<AchievementRepositoryInterface>(
+        () => ProductionAchievementRepository());
+    g.registerLazySingleton<AuthenticationRepositoryInterface>(
+        () => ProductionAuthenticationRepository());
+    g.registerLazySingleton<CommentRepositoryInterface>(
+        () => ProductionCommentRepository());
+    g.registerLazySingleton<CoreRepositoryInterface>(
+        () => ProductionCoreRepository());
+    g.registerLazySingleton<Cypher>(() => Cypher());
+    g.registerLazySingleton<ExperienceLogRepositoryInterface>(
+        () => ProductionExperienceLogRepository());
+    g.registerLazySingleton<ExperienceManagementRepositoryInterface>(
+        () => ProductionExperienceManagementRepository());
+    g.registerLazySingleton<ExperienceNavigationRepositoryInterface>(
+        () => ProductionExperienceNavigationRepository());
+    g.registerLazySingleton<GeoLocationRepositoryInterface>(
+        () => ProductionGeoLocationRepository());
+    g.registerLazySingleton<LocalOptionsRepositoryInterface>(
+        () => ProductionLocalOptionsRepository());
+    g.registerLazySingleton<MainFeedRepositoryInterface>(
+        () => ProductionMainFeedRepository());
+    g.registerLazySingleton<NotificationRepositoryInterface>(
+        () => ProductionNotificationRepository());
+    g.registerLazySingleton<ProfileRepositoryInterface>(
+        () => ProductionProfileRepository());
+    g.registerLazySingleton<RemoteOptionsRepositoryInterface>(
+        () => ProductionRemoteOptionsRepository());
+    g.registerLazySingleton<SearchRepositoryInterface>(
+        () => ProductionSearchRepository());
+    g.registerLazySingleton<TagCoreRepositoryInterface>(
+        () => ProductionTagRepository());
+    g.registerLazySingleton<TagManagementRepositoryInterface>(
+        () => ProductionTagManagementRepository());
+  }
+
   //Register dev Dependencies --------
   if (environment == 'dev') {
     g.registerLazySingleton<AchievementRepositoryInterface>(
@@ -576,42 +613,5 @@ void $initGetIt(GetIt g, {String environment}) {
         () => SearchExperiencesByName(g<SearchRepositoryInterface>()));
     g.registerLazySingleton<SearchExperiencesByTags>(
         () => SearchExperiencesByTags(g<SearchRepositoryInterface>()));
-  }
-
-  //Register prod Dependencies --------
-  if (environment == 'prod') {
-    g.registerLazySingleton<AchievementRepositoryInterface>(
-        () => ProductionAchievementRepository());
-    g.registerLazySingleton<AuthenticationRepositoryInterface>(
-        () => ProductionAuthenticationRepository());
-    g.registerLazySingleton<CommentRepositoryInterface>(
-        () => ProductionCommentRepository());
-    g.registerLazySingleton<CoreRepositoryInterface>(
-        () => ProductionCoreRepository());
-    g.registerLazySingleton<Cypher>(() => Cypher());
-    g.registerLazySingleton<ExperienceLogRepositoryInterface>(
-        () => ProductionExperienceLogRepository());
-    g.registerLazySingleton<ExperienceManagementRepositoryInterface>(
-        () => ProductionExperienceManagementRepository());
-    g.registerLazySingleton<ExperienceNavigationRepositoryInterface>(
-        () => ProductionExperienceNavigationRepository());
-    g.registerLazySingleton<GeoLocationRepositoryInterface>(
-        () => ProductionGeoLocationRepository());
-    g.registerLazySingleton<LocalOptionsRepositoryInterface>(
-        () => ProductionLocalOptionsRepository());
-    g.registerLazySingleton<MainFeedRepositoryInterface>(
-        () => ProductionMainFeedRepository());
-    g.registerLazySingleton<NotificationRepositoryInterface>(
-        () => ProductionNotificationRepository());
-    g.registerLazySingleton<ProfileRepositoryInterface>(
-        () => ProductionProfileRepository());
-    g.registerLazySingleton<RemoteOptionsRepositoryInterface>(
-        () => ProductionRemoteOptionsRepository());
-    g.registerLazySingleton<SearchRepositoryInterface>(
-        () => ProductionSearchRepository());
-    g.registerLazySingleton<TagCoreRepositoryInterface>(
-        () => ProductionTagRepository());
-    g.registerLazySingleton<TagManagementRepositoryInterface>(
-        () => ProductionTagManagementRepository());
   }
 }
