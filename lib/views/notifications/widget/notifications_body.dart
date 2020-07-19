@@ -1,3 +1,4 @@
+import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/notifications/notification_actor/notification_actor_bloc.dart';
@@ -24,7 +25,20 @@ class NotificationsBody extends StatelessWidget {
         ),
       ],
       child: BlocListener<NotificationActorBloc, NotificationActorState>(
-        listener: (context, state) => null,
+        listener: (context, state) => state.maybeMap(
+          // Maybe the action in progress and success are not necessary to map
+          actionInProgress: (_) => FlushbarHelper.createLoading(
+            message: "Action in progress",
+            linearProgressIndicator: const LinearProgressIndicator(),
+          ).show(context),
+          deletionSuccess: (_) => FlushbarHelper.createSuccess(
+            message: "Success",
+          ).show(context),
+          deletionFailure: (state) => FlushbarHelper.createError(
+            message: state.failure.toString(),
+          ).show(context),
+          orElse: () => null,
+        ),
         child: BlocBuilder<NotificationsWatcherBloc, NotificationsWatcherState>(
           builder: (context, state) => state.map(
             initial: (_) => Container(),
@@ -35,6 +49,7 @@ class NotificationsBody extends StatelessWidget {
               itemBuilder: (context, index) {
                 final _notification = state.notifications[index];
                 if (_notification.isValid) {
+                  context.bloc<NotificationActorBloc>().add(NotificationActorEvent.checked(_notification));
                   return NotificationCard(notification: _notification);
                 } else {
                   return NotificationErrorCard(notification: _notification);

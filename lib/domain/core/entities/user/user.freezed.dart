@@ -317,7 +317,8 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res> implements _$Us
 }
 
 class _$_User extends _User {
-  const _$_User({this.id,
+  const _$_User(
+      {this.id,
       @required this.name,
       @required this.username,
       @required this.password,

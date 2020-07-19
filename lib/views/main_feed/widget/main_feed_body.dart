@@ -26,32 +26,27 @@ class MainFeedBody extends StatelessWidget {
         ),
       ],
       child: BlocListener<ExperienceCardActorBloc, ExperienceCardActorState>(
-        listener: (context, state) =>
-          state.map(
-            initial: (_) => null,
-            actionInProgress: (_) =>
-              FlushbarHelper.createLoading(
-                message: "Action in progress",
-                linearProgressIndicator: const LinearProgressIndicator(),
-              ).show(context),
-            additionSuccess: (_) =>
-              FlushbarHelper.createSuccess(
-                message: "Success",
-              ).show(context),
-            additionFailure: (state) =>
-              FlushbarHelper.createError(
-                message: state.failure.maybeMap(
-                  coreData: (failure) =>
-                    failure.coreDataFailure.maybeMap(
-                      serverError: (failure) => failure.errorString,
-                      notFoundError: (failure) => "Nothing was found",
-                      cacheError: (failure) => "Unknown Cache Error",
-                      orElse: () => "Unknown Error",
-                    ),
-                  orElse: () => "Unknown Error",
-                ),
-              ).show(context),
-          ),
+        listener: (context, state) => state.map(
+          initial: (_) => null,
+          actionInProgress: (_) => FlushbarHelper.createLoading(
+            message: "Action in progress",
+            linearProgressIndicator: const LinearProgressIndicator(),
+          ).show(context),
+          additionSuccess: (_) => FlushbarHelper.createSuccess(
+            message: "Success",
+          ).show(context),
+          additionFailure: (state) => FlushbarHelper.createError(
+            message: state.failure.maybeMap(
+              coreData: (failure) => failure.coreDataFailure.maybeMap(
+                serverError: (failure) => failure.errorString,
+                notFoundError: (failure) => "Nothing was found",
+                cacheError: (failure) => "Unknown Cache Error",
+                orElse: () => "Unknown Error",
+              ),
+              orElse: () => "Unknown Error",
+            ),
+          ).show(context),
+        ),
         child: BlocBuilder<MainFeedWatcherBloc, MainFeedWatcherState>(
           builder: (context, state) =>
             state.map(

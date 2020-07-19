@@ -65,7 +65,10 @@ dependencies:
   # firebase_auth: ^0.16.0
   # For Signing in and registering with Google
   # google_sign_in: ^4.4.6
+  # For ease of showing status bars
   flushbar: ^1.10.4
+  # For dynamically resizing text
+  auto_size_text: ^2.1.0
   uuid: ^2.2.0
 
 dev_dependencies:

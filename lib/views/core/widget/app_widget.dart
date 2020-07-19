@@ -27,7 +27,7 @@ class AppWidget extends StatelessWidget {
           primaryColor: WorldOnColors.primary,
           accentColor: WorldOnColors.accent,
           scaffoldBackgroundColor: WorldOnColors.background,
-          appBarTheme: AppBarTheme(color: WorldOnColors.primary),
+          appBarTheme: const AppBarTheme(color: WorldOnColors.primary),
           inputDecorationTheme: InputDecorationTheme(
             border: OutlineInputBorder(
               borderSide: BorderSide(

@@ -131,8 +131,8 @@ class _$_Message extends _Message {
       : assert(sender != null),
         assert(receiver != null),
         assert(content != null),
-      assert(creationDate != null),
-      super._();
+        assert(creationDate != null),
+        super._();
 
   @override
   final int id;

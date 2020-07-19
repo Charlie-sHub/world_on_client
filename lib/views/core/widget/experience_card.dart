@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
@@ -10,44 +11,60 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ExperienceCard extends StatelessWidget {
   final Experience experience;
-
+  
   const ExperienceCard({Key key, @required this.experience}) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: const RoundedRectangleBorder(),
       child: Padding(
         padding: const EdgeInsets.all(5),
         child: Column(
           children: <Widget>[
-            Center(
+            Container(
+              height: 250,
               child: Stack(
-                children: const <Widget>[
-                  Image(
+                children: <Widget>[
+                  const Image(
                     // TODO: Change to the real image from the experience
                     image: AssetImage('assets/experience_placeholder_image.jpg'),
                     fit: BoxFit.fill,
                   ),
-                  Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Align(
-                      alignment: Alignment.topLeft,
-                      child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Row(
+                        children: const <Widget>[
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child: CircleAvatar(
+                              backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(10, 10, 40, 10),
-                    child: Align(
-                      // Why doesn't it align properly?
-                      alignment: Alignment.bottomRight,
-                      child: Icon(
-                        Icons.place,
-                        size: 30,
+                      Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: <Widget>[
+                            Icon(
+                              Icons.place,
+                              size: 30,
+                            ),
+                            const AutoSizeText(
+                              "500m",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: WorldOnColors.white,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                      // TODO: Implement distanceFrom
-                    ),
+                    ],
                   ),
                 ],
               ),
@@ -55,7 +72,7 @@ class ExperienceCard extends StatelessWidget {
             Column(
               children: <Widget>[
                 const SizedBox(height: 10),
-                Text(
+                AutoSizeText(
                   experience.name.getOrCrash(),
                   textAlign: TextAlign.center,
                   style: const TextStyle(
@@ -65,7 +82,7 @@ class ExperienceCard extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 10),
-                Text(
+                AutoSizeText(
                   experience.description.getOrCrash(),
                   textAlign: TextAlign.justify,
                   style: const TextStyle(
@@ -80,8 +97,8 @@ class ExperienceCard extends StatelessWidget {
                     RaisedButton(
                       color: WorldOnColors.primary,
                       onPressed: () => context.bloc<NavigationActorBloc>().add(
-                            NavigationActorEvent.experienceNavigationTapped(some(experience)),
-                          ),
+                        NavigationActorEvent.experienceNavigationTapped(some(experience)),
+                      ),
                       child: const Text(
                         "Participate",
                         style: TextStyle(
@@ -95,8 +112,8 @@ class ExperienceCard extends StatelessWidget {
                       // Perhaps also add the functionality to dismiss from the same button, just as with following or unfollowing users
                       color: WorldOnColors.background,
                       onPressed: () => context.bloc<ExperienceCardActorBloc>().add(
-                            ExperienceCardActorEvent.addedExperienceToLog(experience.id),
-                          ),
+                        ExperienceCardActorEvent.addedExperienceToLog(experience.id),
+                      ),
                       child: const Text(
                         "Add to Log",
                         style: TextStyle(
