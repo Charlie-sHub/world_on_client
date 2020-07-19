@@ -126,7 +126,7 @@ class _$_CommentDto extends _CommentDto {
         assert(creationDate != null),
         assert(modificationDate != null),
         super._();
-  
+
   factory _$_CommentDto.fromJson(Map<String, dynamic> json) => _$_$_CommentDtoFromJson(json);
 
   @override
@@ -149,11 +149,11 @@ class _$_CommentDto extends _CommentDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CommentDto &&
-          (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-          (identical(other.poster, poster) || const DeepCollectionEquality().equals(other.poster, poster)) &&
-          (identical(other.content, content) || const DeepCollectionEquality().equals(other.content, content)) &&
-          (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
-          (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.poster, poster) || const DeepCollectionEquality().equals(other.poster, poster)) &&
+            (identical(other.content, content) || const DeepCollectionEquality().equals(other.content, content)) &&
+            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+            (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)));
   }
 
   @override

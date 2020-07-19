@@ -41,15 +41,26 @@ class DevelopmentNotificationRepository implements NotificationRepositoryInterfa
   }
 
   @override
-  Stream<Either<Failure, KtSet<Notification>>> loadNotifications() {
-    Either<Failure, KtSet<Notification>> _either;
+  Stream<Either<Failure, KtList<Notification>>> loadNotifications() {
+    Either<Failure, KtList<Notification>> _either;
     if (_random.nextBool()) {
-      _either = right(KtSet.of(
+      _either = right(KtList.of(
         getValidNotification(),
+        Notification.empty(),
         getValidNotification().copyWith(
           id: 2,
           description: EntityDescription("${getValidUser().name.getOrCrash()} unfollowed you"),
           type: NotificationType.unfollow,
+        ),
+        getValidNotification().copyWith(
+          id: 3,
+          description: EntityDescription("${getValidUser().name.getOrCrash()} blocked you"),
+          type: NotificationType.block,
+        ),
+        getValidNotification().copyWith(
+          id: 4,
+          description: EntityDescription("${getValidUser().name.getOrCrash()} unblocked you"),
+          type: NotificationType.unblock,
         ),
       ));
     } else {

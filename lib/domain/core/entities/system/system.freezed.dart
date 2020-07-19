@@ -95,8 +95,8 @@ class _$_System extends _System {
   const _$_System({this.id, @required this.name, @required this.type, @required this.company})
       : assert(name != null),
         assert(type != null),
-      assert(company != null),
-      super._();
+        assert(company != null),
+        super._();
 
   @override
   final int id;

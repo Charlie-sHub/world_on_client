@@ -111,8 +111,8 @@ class _$_Objective extends _Objective {
   const _$_Objective({this.id, @required this.description, @required this.coordinates, @required this.imageName})
       : assert(description != null),
         assert(coordinates != null),
-      assert(imageName != null),
-      super._();
+        assert(imageName != null),
+        super._();
 
   @override
   final int id;

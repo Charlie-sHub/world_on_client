@@ -156,7 +156,7 @@ class _$NotificationsWatcherStateTearOff {
   }
 
 // ignore: unused_element
-  _LoadSuccess loadSuccess(KtSet<Notification> notifications) {
+  _LoadSuccess loadSuccess(KtList<Notification> notifications) {
     return _LoadSuccess(
       notifications,
     );
@@ -178,14 +178,14 @@ mixin _$NotificationsWatcherState {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(KtSet<Notification> notifications),
+    @required Result loadSuccess(KtList<Notification> notifications),
     @required Result loadFailure(Failure<dynamic> failure),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(KtSet<Notification> notifications),
+    Result loadSuccess(KtList<Notification> notifications),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   });
@@ -257,7 +257,7 @@ class _$_Initial implements _Initial {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(KtSet<Notification> notifications),
+    @required Result loadSuccess(KtList<Notification> notifications),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -272,7 +272,7 @@ class _$_Initial implements _Initial {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(KtSet<Notification> notifications),
+    Result loadSuccess(KtList<Notification> notifications),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -357,7 +357,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(KtSet<Notification> notifications),
+    @required Result loadSuccess(KtList<Notification> notifications),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -372,7 +372,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(KtSet<Notification> notifications),
+    Result loadSuccess(KtList<Notification> notifications),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -423,7 +423,8 @@ abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(
           _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-  $Res call({KtSet<Notification> notifications});
+
+  $Res call({KtList<Notification> notifications});
 }
 
 class __$LoadSuccessCopyWithImpl<$Res>
@@ -442,8 +443,7 @@ class __$LoadSuccessCopyWithImpl<$Res>
   }) {
     return _then(_LoadSuccess(
       notifications == freezed
-          ? _value.notifications
-          : notifications as KtSet<Notification>,
+          ? _value.notifications : notifications as KtList<Notification>,
     ));
   }
 }
@@ -452,7 +452,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(this.notifications) : assert(notifications != null);
 
   @override
-  final KtSet<Notification> notifications;
+  final KtList<Notification> notifications;
 
   @override
   String toString() {
@@ -481,7 +481,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(KtSet<Notification> notifications),
+    @required Result loadSuccess(KtList<Notification> notifications),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -496,7 +496,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(KtSet<Notification> notifications),
+    Result loadSuccess(KtList<Notification> notifications),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -540,10 +540,10 @@ class _$_LoadSuccess implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements NotificationsWatcherState {
-  const factory _LoadSuccess(KtSet<Notification> notifications) =
+  const factory _LoadSuccess(KtList<Notification> notifications) =
       _$_LoadSuccess;
-
-  KtSet<Notification> get notifications;
+  
+  KtList<Notification> get notifications;
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
@@ -618,7 +618,7 @@ class _$_LoadFailure implements _LoadFailure {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(KtSet<Notification> notifications),
+    @required Result loadSuccess(KtList<Notification> notifications),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -633,7 +633,7 @@ class _$_LoadFailure implements _LoadFailure {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(KtSet<Notification> notifications),
+    Result loadSuccess(KtList<Notification> notifications),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {

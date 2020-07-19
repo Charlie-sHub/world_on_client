@@ -103,8 +103,8 @@ class _$_Location extends _Location {
       : assert(city != null),
         assert(country != null),
         assert(postalCode != null),
-      assert(experiences != null),
-      super._();
+        assert(experiences != null),
+        super._();
 
   @override
   final int id;

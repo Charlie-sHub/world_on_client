@@ -124,10 +124,10 @@ class _$_RewardDto extends _RewardDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _RewardDto &&
-          (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-          (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-          (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-          (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)));
   }
 
   @override

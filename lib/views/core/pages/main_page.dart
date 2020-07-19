@@ -8,6 +8,7 @@ import 'package:worldon/application/navigation/navigation_actor/navigation_actor
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/routes/router.gr.dart';
 import 'package:worldon/views/main_feed/widget/main_feed_body.dart';
+import 'package:worldon/views/notifications/widget/notifications_body.dart';
 
 class MainPage extends StatelessWidget {
   @override
@@ -28,8 +29,7 @@ class MainPage extends StatelessWidget {
                     // Use a Bloc to navigate between the tabs, each tab change event receiving the search term as a parameter
                     child: Text("Search"),
                   ),
-              experienceFormView: (context) =>
-              const Center(
+                  experienceFormView: (context) => const Center(
                     child: Text("Create Experience"),
                   ),
                   navigateExperienceView: (context) => const Center(
@@ -41,10 +41,7 @@ class MainPage extends StatelessWidget {
                   errorView: (context) => const Center(
                     child: Text("Error"),
                   ),
-              notificationsView: (context) =>
-              const Center(
-                child: Text("Notifications"),
-              ),
+              notificationsView: (context) => NotificationsBody(),
                 ),
             bottomNavigationBar: WorldOnBottomNavigationBar(),
           ),

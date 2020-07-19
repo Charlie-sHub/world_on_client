@@ -118,8 +118,8 @@ class _$_Comment extends _Comment {
       : assert(poster != null),
         assert(content != null),
         assert(creationDate != null),
-      assert(modificationDate != null),
-      super._();
+        assert(modificationDate != null),
+        super._();
 
   @override
   final int id;

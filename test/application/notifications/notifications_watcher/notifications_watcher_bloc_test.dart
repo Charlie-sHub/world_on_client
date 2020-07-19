@@ -22,7 +22,7 @@ void main() {
       loadNotifications = getIt<LoadNotifications>();
     },
   );
-  final notifications = KtSet.of(Notification.empty());
+  final notifications = KtList.of(Notification.empty());
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,

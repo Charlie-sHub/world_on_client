@@ -126,7 +126,7 @@ class _$_TagDto extends _TagDto {
         assert(creationDate != null),
         assert(modificationDate != null),
         super._();
-  
+
   factory _$_TagDto.fromJson(Map<String, dynamic> json) => _$_$_TagDtoFromJson(json);
 
   @override
@@ -149,11 +149,11 @@ class _$_TagDto extends _TagDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _TagDto &&
-          (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-          (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-          (identical(other.creator, creator) || const DeepCollectionEquality().equals(other.creator, creator)) &&
-          (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
-          (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.creator, creator) || const DeepCollectionEquality().equals(other.creator, creator)) &&
+            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+            (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)));
   }
 
   @override

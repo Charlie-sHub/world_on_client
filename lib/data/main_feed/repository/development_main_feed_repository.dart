@@ -24,25 +24,28 @@ class DevelopmentMainFeedRepository implements MainFeedRepositoryInterface {
   Stream<Either<Failure, KtList<Experience>>> fillFeed() {
     Either<Failure, KtList<Experience>> _either;
     if (_random.nextBool()) {
-      _either = right(KtList.of(
-        getValidExperience(),
-        getValidExperience().copyWith(
-          id: 2,
-          name: Name("Ski bum huck"),
-          description: EntityDescription(
-            "Ride scream backside brain bucket presta pow north shore pipe spin glades Snowboard steed DH face shots. Lid moguls wheels glades greasy death cookies, booter berm huckfest drop huck gnar rail.",
+      _either = right(
+        KtList.of(
+          getValidExperience(),
+          Experience.empty(),
+          getValidExperience().copyWith(
+            id: 2,
+            name: Name("Ski bum huck"),
+            description: EntityDescription(
+              "Ride scream backside brain bucket presta pow north shore pipe spin glades Snowboard steed DH face shots. Lid moguls wheels glades greasy death cookies, booter berm huckfest drop huck gnar rail.",
+            ),
+            difficulty: Difficulty(6),
           ),
-          difficulty: Difficulty(6),
-        ),
-        getValidExperience().copyWith(
-          id: 3,
-          name: Name("Kombucha fashion"),
-          description: EntityDescription(
-            "Before they sold out blog letterpress semiotics 8-bit. Activated charcoal craft beer sartorial, taxidermy sriracha williamsburg pop-up chicharrones microdosing iPhone hashtag man bun tofu selfies.",
+          getValidExperience().copyWith(
+            id: 3,
+            name: Name("Kombucha fashion"),
+            description: EntityDescription(
+              "Before they sold out blog letterpress semiotics 8-bit. Activated charcoal craft beer sartorial, taxidermy sriracha williamsburg pop-up chicharrones microdosing iPhone hashtag man bun tofu selfies.",
+            ),
+            difficulty: Difficulty(9),
           ),
-          difficulty: Difficulty(9),
         ),
-      ));
+      );
     } else {
       _either = left(getServerErrorFailure());
     }

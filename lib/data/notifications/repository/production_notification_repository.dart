@@ -23,7 +23,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
   }
 
   @override
-  Stream<Either<Failure, KtSet<Notification>>> loadNotifications() {
+  Stream<Either<Failure, KtList<Notification>>> loadNotifications() {
     // TODO: implement loadNotifications
     throw UnimplementedError();
   }

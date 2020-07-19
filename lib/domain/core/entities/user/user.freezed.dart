@@ -239,12 +239,12 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       Set<User> blockedUsers,
       Set<User> followedUsers,
       Set<Device> devices,
-        Set<System> systems,
-        Set<Tag> interests,
-        Set<Achievement> achievements,
-        Set<Experience> experiencesDone,
-        Set<Experience> experiencesLiked,
-        Set<Experience> experiencesToDo});
+      Set<System> systems,
+      Set<Tag> interests,
+      Set<Achievement> achievements,
+      Set<Experience> experiencesDone,
+      Set<Experience> experiencesLiked,
+      Set<Experience> experiencesToDo});
 
   @override
   $OptionsCopyWith<$Res> get options;

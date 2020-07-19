@@ -128,7 +128,7 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res> implement
 
 class _$_Message extends _Message {
   const _$_Message({this.id, @required this.sender, @required this.receiver, @required this.content, @required this.creationDate})
-    : assert(sender != null),
+      : assert(sender != null),
         assert(receiver != null),
         assert(content != null),
       assert(creationDate != null),

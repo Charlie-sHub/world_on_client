@@ -96,8 +96,8 @@ class _$_Reward extends _Reward {
   const _$_Reward({this.id, @required this.name, @required this.description, @required this.imageURL})
       : assert(name != null),
         assert(description != null),
-      assert(imageURL != null),
-      super._();
+        assert(imageURL != null),
+        super._();
 
   @override
   final int id;

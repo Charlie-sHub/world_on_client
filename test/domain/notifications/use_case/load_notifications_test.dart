@@ -26,7 +26,7 @@ void main() {
       useCase = LoadNotifications(mockNotificationRepository);
     },
   );
-  final notificationSet = KtSet.of(Notification.empty());
+  final notificationSet = KtList.of(Notification.empty());
   test(
     "Should return a list of Notifications",
     () async {
@@ -72,9 +72,9 @@ void main() {
   );
 }
 
-Future<Either<Failure, KtSet<Notification>>> _act(LoadNotifications useCase, NoParams params) async {
+Future<Either<Failure, KtList<Notification>>> _act(LoadNotifications useCase, NoParams params) async {
   final resultStream = useCase(params);
-  Either<Failure, KtSet<Notification>> result;
+  Either<Failure, KtList<Notification>> result;
   await for (final either in resultStream) {
     result = either;
   }
