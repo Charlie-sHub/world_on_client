@@ -26,13 +26,14 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
   final _random = Random();
 
   @override
-  Stream<Either<Failure, KtSet<Experience>>> searchExperiencesByDifficulty(Difficulty difficulty) {
-    Either<Failure, KtSet<Experience>> _either;
+  Stream<Either<Failure, KtList<Experience>>> searchExperiencesByDifficulty(Difficulty difficulty) {
+    Either<Failure, KtList<Experience>> _either;
     if (_random.nextBool()) {
-      _either = right(KtSet.of(
+      _either = right(KtList.of(
         getValidExperience().copyWith(
           difficulty: difficulty,
         ),
+        Experience.empty(),
         getValidExperience().copyWith(
           id: 2,
           name: Name("Phasellus"),
@@ -51,13 +52,14 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtSet<Experience>>> searchExperiencesByTags(TagSet tags) {
-    Either<Failure, KtSet<Experience>> _either;
+  Stream<Either<Failure, KtList<Experience>>> searchExperiencesByTags(TagSet tags) {
+    Either<Failure, KtList<Experience>> _either;
     if (_random.nextBool()) {
-      _either = right(KtSet.of(
+      _either = right(KtList.of(
         getValidExperience().copyWith(
           tags: tags,
         ),
+        Experience.empty(),
         getValidExperience().copyWith(
           id: 2,
           name: Name("Phasellus"),
@@ -76,13 +78,14 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtSet<Experience>>> searchExperiencesByName(SearchTerm name) {
-    Either<Failure, KtSet<Experience>> _either;
+  Stream<Either<Failure, KtList<Experience>>> searchExperiencesByName(SearchTerm name) {
+    Either<Failure, KtList<Experience>> _either;
     if (_random.nextBool()) {
-      _either = right(KtSet.of(
+      _either = right(KtList.of(
         getValidExperience().copyWith(
           name: Name("Ut ${name.getOrCrash()}"),
         ),
+        Experience.empty(),
         getValidExperience().copyWith(
           id: 2,
           name: Name("${name.getOrCrash()} mi"),
@@ -99,13 +102,14 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtSet<Tag>>> searchTagsByName(SearchTerm name) {
-    Either<Failure, KtSet<Tag>> _either;
+  Stream<Either<Failure, KtList<Tag>>> searchTagsByName(SearchTerm name) {
+    Either<Failure, KtList<Tag>> _either;
     if (_random.nextBool()) {
-      _either = right(KtSet.of(
+      _either = right(KtList.of(
         getValidTag().copyWith(
           name: Name("Eat ${name.getOrCrash()}"),
         ),
+        Tag.empty(),
         getValidTag().copyWith(
           id: 2,
           name: Name("${name.getOrCrash()} at noon"),
@@ -122,11 +126,12 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtSet<User>>> searchUsersByName(SearchTerm name) {
-    Either<Failure, KtSet<User>> _either;
+  Stream<Either<Failure, KtList<User>>> searchUsersByName(SearchTerm name) {
+    Either<Failure, KtList<User>> _either;
     if (_random.nextBool()) {
-      _either = right(KtSet.of(
+      _either = right(KtList.of(
         getValidUser(),
+        User.empty(),
         getValidUser().copyWith(
           id: 2,
           name: Name("Charles ${name.getOrCrash()}"),
@@ -145,11 +150,12 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtSet<User>>> searchUsersByUserName(SearchTerm username) {
-    Either<Failure, KtSet<User>> _either;
+  Stream<Either<Failure, KtList<User>>> searchUsersByUserName(SearchTerm username) {
+    Either<Failure, KtList<User>> _either;
     if (_random.nextBool()) {
-      _either = right(KtSet.of(
+      _either = right(KtList.of(
         getValidUser(),
+        User.empty(),
         getValidUser().copyWith(
           id: 2,
           name: Name("Mauricio"),

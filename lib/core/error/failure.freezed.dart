@@ -126,7 +126,6 @@ abstract class _$AuthenticationDomainCopyWith<T, $Res> {
   factory _$AuthenticationDomainCopyWith(_AuthenticationDomain<T> value,
     $Res Function(_AuthenticationDomain<T>) then) =
   __$AuthenticationDomainCopyWithImpl<T, $Res>;
-
   $Res call({AuthenticationDomainFailure<T> authenticationDomainFailure});
 
   $AuthenticationDomainFailureCopyWith<T, $Res> get authenticationDomainFailure;
@@ -283,7 +282,7 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
 abstract class _AuthenticationDomain<T> implements Failure<T> {
   const factory _AuthenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure) =
   _$_AuthenticationDomain<T>;
-  
+
   AuthenticationDomainFailure<T> get authenticationDomainFailure;
   _$AuthenticationDomainCopyWith<T, _AuthenticationDomain<T>> get copyWith;
 }
@@ -292,7 +291,6 @@ abstract class _$AuthenticationDataCopyWith<T, $Res> {
   factory _$AuthenticationDataCopyWith(_AuthenticationData<T> value,
     $Res Function(_AuthenticationData<T>) then) =
   __$AuthenticationDataCopyWithImpl<T, $Res>;
-
   $Res call({AuthenticationDataFailure<T> authenticationDataFailure});
 
   $AuthenticationDataFailureCopyWith<T, $Res> get authenticationDataFailure;
@@ -447,7 +445,7 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
 abstract class _AuthenticationData<T> implements Failure<T> {
   const factory _AuthenticationData(AuthenticationDataFailure<T> authenticationDataFailure) =
   _$_AuthenticationData<T>;
-  
+
   AuthenticationDataFailure<T> get authenticationDataFailure;
   _$AuthenticationDataCopyWith<T, _AuthenticationData<T>> get copyWith;
 }
@@ -455,9 +453,8 @@ abstract class _AuthenticationData<T> implements Failure<T> {
 abstract class _$CoreDomainCopyWith<T, $Res> {
   factory _$CoreDomainCopyWith(_CoreDomain<T> value, $Res Function(_CoreDomain<T>) then) =
   __$CoreDomainCopyWithImpl<T, $Res>;
-  
   $Res call({CoreDomainFailure<T> coreDomainFailure});
-  
+
   $CoreDomainFailureCopyWith<T, $Res> get coreDomainFailure;
 }
 
@@ -606,7 +603,7 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
 abstract class _CoreDomain<T> implements Failure<T> {
   const factory _CoreDomain(CoreDomainFailure<T> coreDomainFailure) =
   _$_CoreDomain<T>;
-  
+
   CoreDomainFailure<T> get coreDomainFailure;
   _$CoreDomainCopyWith<T, _CoreDomain<T>> get copyWith;
 }
@@ -615,7 +612,6 @@ abstract class _$CoreAppllicationCopyWith<T, $Res> {
   factory _$CoreAppllicationCopyWith(_CoreAppllication<T> value,
     $Res Function(_CoreAppllication<T>) then) =
   __$CoreAppllicationCopyWithImpl<T, $Res>;
-
   $Res call({CoreApplicationFailure<T> coreApplicationFailure});
 
   $CoreApplicationFailureCopyWith<T, $Res> get coreApplicationFailure;
@@ -767,7 +763,7 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
 abstract class _CoreAppllication<T> implements Failure<T> {
   const factory _CoreAppllication(CoreApplicationFailure<T> coreApplicationFailure) =
   _$_CoreAppllication<T>;
-  
+
   CoreApplicationFailure<T> get coreApplicationFailure;
   _$CoreAppllicationCopyWith<T, _CoreAppllication<T>> get copyWith;
 }
@@ -775,9 +771,8 @@ abstract class _CoreAppllication<T> implements Failure<T> {
 abstract class _$CoreDataCopyWith<T, $Res> {
   factory _$CoreDataCopyWith(_CoreData<T> value, $Res Function(_CoreData<T>) then) =
   __$CoreDataCopyWithImpl<T, $Res>;
-  
   $Res call({CoreDataFailure<T> coreDataFailure});
-  
+
   $CoreDataFailureCopyWith<T, $Res> get coreDataFailure;
 }
 
@@ -923,7 +918,7 @@ class _$_CoreData<T> implements _CoreData<T> {
 
 abstract class _CoreData<T> implements Failure<T> {
   const factory _CoreData(CoreDataFailure<T> coreDataFailure) = _$_CoreData<T>;
-  
+
   CoreDataFailure<T> get coreDataFailure;
   _$CoreDataCopyWith<T, _CoreData<T>> get copyWith;
 }
@@ -931,7 +926,6 @@ abstract class _CoreData<T> implements Failure<T> {
 abstract class _$ValueCopyWith<T, $Res> {
   factory _$ValueCopyWith(_Value<T> value, $Res Function(_Value<T>) then) =
   __$ValueCopyWithImpl<T, $Res>;
-
   $Res call({ValueFailure<T> valueFailure});
 
   $ValueFailureCopyWith<T, $Res> get valueFailure;
@@ -1078,7 +1072,7 @@ class _$_Value<T> implements _Value<T> {
 
 abstract class _Value<T> implements Failure<T> {
   const factory _Value(ValueFailure<T> valueFailure) = _$_Value<T>;
-  
+
   ValueFailure<T> get valueFailure;
   _$ValueCopyWith<T, _Value<T>> get copyWith;
 }
@@ -1086,9 +1080,8 @@ abstract class _Value<T> implements Failure<T> {
 abstract class _$ProfileDomainCopyWith<T, $Res> {
   factory _$ProfileDomainCopyWith(_ProfileDomain<T> value, $Res Function(_ProfileDomain<T>) then) =
   __$ProfileDomainCopyWithImpl<T, $Res>;
-  
   $Res call({ProfileDomainFailure<T> profileDomainFailure});
-  
+
   $ProfileDomainFailureCopyWith<T, $Res> get profileDomainFailure;
 }
 
@@ -1237,7 +1230,7 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
 abstract class _ProfileDomain<T> implements Failure<T> {
   const factory _ProfileDomain(ProfileDomainFailure<T> profileDomainFailure) =
   _$_ProfileDomain<T>;
-  
+
   ProfileDomainFailure<T> get profileDomainFailure;
   _$ProfileDomainCopyWith<T, _ProfileDomain<T>> get copyWith;
 }

@@ -1,12 +1,12 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter/material.dart' hide Notification;
-import 'package:worldon/domain/core/entities/notification/notification.dart';
+import 'package:flutter/material.dart';
+import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
-class NotificationErrorCard extends StatelessWidget {
-  final Notification notification;
+class TagErrorCard extends StatelessWidget {
+  final Tag tag;
 
-  const NotificationErrorCard({Key key, @required this.notification}) : super(key: key);
+  const TagErrorCard({Key key, this.tag}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +18,10 @@ class NotificationErrorCard extends StatelessWidget {
         child: Column(
           children: <Widget>[
             const Text(
-              "Invalid Notification",
+              "Invalid Tag",
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 13,
+                fontSize: 15,
                 color: WorldOnColors.white,
               ),
             ),
@@ -36,7 +36,7 @@ class NotificationErrorCard extends StatelessWidget {
             ),
             const SizedBox(height: 5),
             AutoSizeText(
-              notification.failureOption.fold(
+              tag.failureOption.fold(
                 () => "",
                 (failure) => failure.toString(),
               ),

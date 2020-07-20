@@ -36,7 +36,8 @@ abstract class $PrimitiveRewardCopyWith<$Res> {
   $Res call({String name, String description});
 }
 
-class _$PrimitiveRewardCopyWithImpl<$Res> implements $PrimitiveRewardCopyWith<$Res> {
+class _$PrimitiveRewardCopyWithImpl<$Res>
+  implements $PrimitiveRewardCopyWith<$Res> {
   _$PrimitiveRewardCopyWithImpl(this._value, this._then);
 
   final PrimitiveReward _value;
@@ -50,19 +51,24 @@ class _$PrimitiveRewardCopyWithImpl<$Res> implements $PrimitiveRewardCopyWith<$R
   }) {
     return _then(_value.copyWith(
       name: name == freezed ? _value.name : name as String,
-      description: description == freezed ? _value.description : description as String,
+      description:
+      description == freezed ? _value.description : description as String,
     ));
   }
 }
 
-abstract class _$PrimitiveRewardCopyWith<$Res> implements $PrimitiveRewardCopyWith<$Res> {
-  factory _$PrimitiveRewardCopyWith(_PrimitiveReward value, $Res Function(_PrimitiveReward) then) = __$PrimitiveRewardCopyWithImpl<$Res>;
+abstract class _$PrimitiveRewardCopyWith<$Res>
+  implements $PrimitiveRewardCopyWith<$Res> {
+  factory _$PrimitiveRewardCopyWith(_PrimitiveReward value, $Res Function(_PrimitiveReward) then) =
+  __$PrimitiveRewardCopyWithImpl<$Res>;
   @override
   $Res call({String name, String description});
 }
 
-class __$PrimitiveRewardCopyWithImpl<$Res> extends _$PrimitiveRewardCopyWithImpl<$Res> implements _$PrimitiveRewardCopyWith<$Res> {
-  __$PrimitiveRewardCopyWithImpl(_PrimitiveReward _value, $Res Function(_PrimitiveReward) _then) : super(_value, (v) => _then(v as _PrimitiveReward));
+class __$PrimitiveRewardCopyWithImpl<$Res> extends _$PrimitiveRewardCopyWithImpl<$Res>
+  implements _$PrimitiveRewardCopyWith<$Res> {
+  __$PrimitiveRewardCopyWithImpl(_PrimitiveReward _value, $Res Function(_PrimitiveReward) _then)
+    : super(_value, (v) => _then(v as _PrimitiveReward));
 
   @override
   _PrimitiveReward get _value => super._value as _PrimitiveReward;
@@ -74,7 +80,8 @@ class __$PrimitiveRewardCopyWithImpl<$Res> extends _$PrimitiveRewardCopyWithImpl
   }) {
     return _then(_PrimitiveReward(
       name: name == freezed ? _value.name : name as String,
-      description: description == freezed ? _value.description : description as String,
+      description:
+      description == freezed ? _value.description : description as String,
     ));
   }
 }
@@ -99,21 +106,29 @@ class _$_PrimitiveReward extends _PrimitiveReward {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _PrimitiveReward &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)));
+          (identical(other.name, name) ||
+            const DeepCollectionEquality().equals(other.name, name)) &&
+          (identical(other.description, description) ||
+            const DeepCollectionEquality()
+              .equals(other.description, description)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(name) ^ const DeepCollectionEquality().hash(description);
+  int get hashCode =>
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(name) ^
+    const DeepCollectionEquality().hash(description);
 
   @override
-  _$PrimitiveRewardCopyWith<_PrimitiveReward> get copyWith => __$PrimitiveRewardCopyWithImpl<_PrimitiveReward>(this, _$identity);
+  _$PrimitiveRewardCopyWith<_PrimitiveReward> get copyWith =>
+    __$PrimitiveRewardCopyWithImpl<_PrimitiveReward>(this, _$identity);
 }
 
 abstract class _PrimitiveReward extends PrimitiveReward {
   const _PrimitiveReward._() : super._();
 
-  const factory _PrimitiveReward({@required String name, @required String description}) = _$_PrimitiveReward;
+  const factory _PrimitiveReward({@required String name,
+    @required String description}) = _$_PrimitiveReward;
 
   @override
   String get name;

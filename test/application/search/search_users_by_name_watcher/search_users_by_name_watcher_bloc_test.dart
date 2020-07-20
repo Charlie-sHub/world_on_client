@@ -27,7 +27,7 @@ void main() {
     },
   );
   final searchTerm = SearchTerm("Test");
-  final usersFound = KtSet.of(User.empty());
+  final usersFound = KtList.of(User.empty());
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,

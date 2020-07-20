@@ -25,7 +25,7 @@ void main() {
     },
   );
   final tags = {Tag.empty()};
-  final experiencesFound = KtSet.of(Experience.empty());
+  final experiencesFound = KtList.of(Experience.empty());
   final emptyTagSet = <Tag>{};
   final valueFailure = ValueFailure.emptySet(failedValue: KtSet<Tag>.empty());
   const serverFailure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));

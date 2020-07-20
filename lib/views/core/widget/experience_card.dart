@@ -11,9 +11,9 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ExperienceCard extends StatelessWidget {
   final Experience experience;
-  
+
   const ExperienceCard({Key key, @required this.experience}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -97,8 +97,8 @@ class ExperienceCard extends StatelessWidget {
                     RaisedButton(
                       color: WorldOnColors.primary,
                       onPressed: () => context.bloc<NavigationActorBloc>().add(
-                        NavigationActorEvent.experienceNavigationTapped(some(experience)),
-                      ),
+                            NavigationActorEvent.experienceNavigationTapped(some(experience)),
+                          ),
                       child: const Text(
                         "Participate",
                         style: TextStyle(

@@ -26,7 +26,7 @@ void main() {
     },
   );
   final params = Params(tags: TagSet(KtSet.of(Tag.empty())));
-  final experiencesFound = KtSet.of(Experience.empty());
+  final experiencesFound = KtList.of(Experience.empty());
   test(
     "Should return a Set of Experiences",
     () async {
@@ -85,9 +85,9 @@ void main() {
   );
 }
 
-Future<Either<Failure, KtSet<Experience>>> _act(SearchExperiencesByTags useCase, Params params) async {
+Future<Either<Failure, KtList<Experience>>> _act(SearchExperiencesByTags useCase, Params params) async {
   final resultStream = useCase(params);
-  Either<Failure, KtSet<Experience>> result;
+  Either<Failure, KtList<Experience>> result;
   await for (final either in resultStream) {
     result = either;
   }

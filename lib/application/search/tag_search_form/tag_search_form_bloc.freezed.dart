@@ -469,9 +469,7 @@ class _$TagSearchFormStateTearOff {
 
 // ignore: unused_element
   _TagSearchFormState call(
-      {@required Set<Tag> tagsSelected,
-      @required KtSet<Tag> tagsFound,
-      @required bool isSubmitting,
+      {@required Set<Tag> tagsSelected, @required KtList<Tag> tagsFound, @required bool isSubmitting,
       @required bool showErrorMessages,
       @required Option<Failure> failureOption}) {
     return _TagSearchFormState(
@@ -489,7 +487,8 @@ const $TagSearchFormState = _$TagSearchFormStateTearOff();
 
 mixin _$TagSearchFormState {
   Set<Tag> get tagsSelected;
-  KtSet<Tag> get tagsFound;
+
+  KtList<Tag> get tagsFound;
   bool get isSubmitting;
   bool get showErrorMessages;
   Option<Failure> get failureOption;
@@ -503,7 +502,7 @@ abstract class $TagSearchFormStateCopyWith<$Res> {
       _$TagSearchFormStateCopyWithImpl<$Res>;
   $Res call(
       {Set<Tag> tagsSelected,
-      KtSet<Tag> tagsFound,
+        KtList<Tag> tagsFound,
       bool isSubmitting,
       bool showErrorMessages,
       Option<Failure> failureOption});
@@ -530,7 +529,7 @@ class _$TagSearchFormStateCopyWithImpl<$Res>
           ? _value.tagsSelected
           : tagsSelected as Set<Tag>,
       tagsFound:
-          tagsFound == freezed ? _value.tagsFound : tagsFound as KtSet<Tag>,
+      tagsFound == freezed ? _value.tagsFound : tagsFound as KtList<Tag>,
       isSubmitting:
           isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
       showErrorMessages: showErrorMessages == freezed
@@ -551,7 +550,7 @@ abstract class _$TagSearchFormStateCopyWith<$Res>
   @override
   $Res call(
       {Set<Tag> tagsSelected,
-      KtSet<Tag> tagsFound,
+        KtList<Tag> tagsFound,
       bool isSubmitting,
       bool showErrorMessages,
       Option<Failure> failureOption});
@@ -580,7 +579,7 @@ class __$TagSearchFormStateCopyWithImpl<$Res>
           ? _value.tagsSelected
           : tagsSelected as Set<Tag>,
       tagsFound:
-          tagsFound == freezed ? _value.tagsFound : tagsFound as KtSet<Tag>,
+      tagsFound == freezed ? _value.tagsFound : tagsFound as KtList<Tag>,
       isSubmitting:
           isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
       showErrorMessages: showErrorMessages == freezed
@@ -609,7 +608,7 @@ class _$_TagSearchFormState implements _TagSearchFormState {
   @override
   final Set<Tag> tagsSelected;
   @override
-  final KtSet<Tag> tagsFound;
+  final KtList<Tag> tagsFound;
   @override
   final bool isSubmitting;
   @override
@@ -660,7 +659,7 @@ class _$_TagSearchFormState implements _TagSearchFormState {
 abstract class _TagSearchFormState implements TagSearchFormState {
   const factory _TagSearchFormState(
       {@required Set<Tag> tagsSelected,
-      @required KtSet<Tag> tagsFound,
+        @required KtList<Tag> tagsFound,
       @required bool isSubmitting,
       @required bool showErrorMessages,
       @required Option<Failure> failureOption}) = _$_TagSearchFormState;
@@ -668,7 +667,7 @@ abstract class _TagSearchFormState implements TagSearchFormState {
   @override
   Set<Tag> get tagsSelected;
   @override
-  KtSet<Tag> get tagsFound;
+  KtList<Tag> get tagsFound;
   @override
   bool get isSubmitting;
   @override

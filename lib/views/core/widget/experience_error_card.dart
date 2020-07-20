@@ -5,9 +5,9 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ExperienceErrorCard extends StatelessWidget {
   final Experience experience;
-  
+
   const ExperienceErrorCard({Key key, @required this.experience}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -37,8 +37,8 @@ class ExperienceErrorCard extends StatelessWidget {
             const SizedBox(height: 5),
             AutoSizeText(
               experience.failureOption.fold(
-                  () => "",
-                  (failure) => failure.toString(),
+                () => "",
+                (failure) => failure.toString(),
               ),
               textAlign: TextAlign.justify,
               style: const TextStyle(

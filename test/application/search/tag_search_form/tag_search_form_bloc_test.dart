@@ -30,7 +30,7 @@ void main() {
   final tag = getValidTag();
   final anotherTag = tag.copyWith(id: 2);
   final yetAnotherTag = tag.copyWith(id: 3);
-  final tagsFound = KtSet.of(
+  final tagsFound = KtList.of(
     tag,
     anotherTag,
     yetAnotherTag,

@@ -6,7 +6,7 @@ abstract class TagSearchFormState with _$TagSearchFormState {
     @required Set<Tag> tagsSelected,
     // Ideally this should be an Either of Failure or Set of Tags
     // But for some reason that makes the tests fail even if the value equality should the true
-    @required KtSet<Tag> tagsFound,
+    @required KtList<Tag> tagsFound,
     @required bool isSubmitting,
     @required bool showErrorMessages,
     @required Option<Failure> failureOption,
@@ -14,7 +14,7 @@ abstract class TagSearchFormState with _$TagSearchFormState {
 
   factory TagSearchFormState.initial() => TagSearchFormState(
         tagsSelected: {},
-        tagsFound: KtSet.empty(),
+        tagsFound: KtList.empty(),
         isSubmitting: false,
         showErrorMessages: false,
         failureOption: none(),

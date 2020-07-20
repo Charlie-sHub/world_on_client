@@ -6,7 +6,7 @@ abstract class SearchExperiencesByTagsState with _$SearchExperiencesByTagsState 
 
   const factory SearchExperiencesByTagsState.searchInProgress() = _SearchInProgress;
 
-  const factory SearchExperiencesByTagsState.searchSuccess(KtSet<Experience> experiencesFound) = _SearchSuccess;
+  const factory SearchExperiencesByTagsState.searchSuccess(KtList<Experience> experiencesFound) = _SearchSuccess;
 
   const factory SearchExperiencesByTagsState.searchFailure(Failure<dynamic> failure) = _SearchFailure;
 

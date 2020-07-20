@@ -39,7 +39,7 @@ class MainPage extends StatelessWidget {
                   errorView: (context) => const Center(
                     child: Text("Error"),
                   ),
-              notificationsView: (context) => NotificationsBody(),
+                  notificationsView: (context) => NotificationsBody(),
                 ),
             bottomNavigationBar: WorldOnBottomNavigationBar(),
           ),

@@ -6,7 +6,7 @@ abstract class SearchExperiencesByNameWatcherState with _$SearchExperiencesByNam
 
   const factory SearchExperiencesByNameWatcherState.searchInProgress() = _SearchInProgress;
 
-  const factory SearchExperiencesByNameWatcherState.searchSuccess(KtSet<Experience> experiencesFound) = _SearchSuccess;
+  const factory SearchExperiencesByNameWatcherState.searchSuccess(KtList<Experience> experiencesFound) = _SearchSuccess;
 
   const factory SearchExperiencesByNameWatcherState.searchFailure(Failure<dynamic> failure) = _SearchFailure;
 }

@@ -6,7 +6,7 @@ abstract class SearchUsersByNameWatcherState with _$SearchUsersByNameWatcherStat
 
   const factory SearchUsersByNameWatcherState.searchInProgress() = _SearchInPorgress;
 
-  const factory SearchUsersByNameWatcherState.searchSuccess(KtSet<User> usersFound) = _SearchSuccess;
+  const factory SearchUsersByNameWatcherState.searchSuccess(KtList<User> usersFound) = _SearchSuccess;
 
   const factory SearchUsersByNameWatcherState.searchFailure(Failure<dynamic> failure) = _SearchFailure;
 }

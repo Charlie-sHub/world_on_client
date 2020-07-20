@@ -25,7 +25,7 @@ void main() {
     },
   );
   final params = Params(name: SearchTerm("Test"));
-  final tagsFound = KtSet.of(Tag.empty());
+  final tagsFound = KtList.of(Tag.empty());
   test(
     "Should return a Set of Tags",
     () async {
@@ -84,9 +84,9 @@ void main() {
   );
 }
 
-Future<Either<Failure, KtSet<Tag>>> _act(SearchTagsByName useCase, Params params) async {
+Future<Either<Failure, KtList<Tag>>> _act(SearchTagsByName useCase, Params params) async {
   final resultStream = useCase(params);
-  Either<Failure, KtSet<Tag>> result;
+  Either<Failure, KtList<Tag>> result;
   await for (final either in resultStream) {
     result = either;
   }

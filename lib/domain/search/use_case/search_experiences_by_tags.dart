@@ -9,13 +9,13 @@ import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 import 'package:worldon/domain/search/repository/search_repository_interface.dart';
 
 @LazySingleton(env: Environment.dev)
-class SearchExperiencesByTags implements StreamUseCase<KtSet<Experience>, Params> {
+class SearchExperiencesByTags implements StreamUseCase<KtList<Experience>, Params> {
   final SearchRepositoryInterface _repository;
 
   SearchExperiencesByTags(this._repository);
 
   @override
-  Stream<Either<Failure, KtSet<Experience>>> call(Params params) async* {
+  Stream<Either<Failure, KtList<Experience>>> call(Params params) async* {
     yield* _repository.searchExperiencesByTags(params.tags);
   }
 }

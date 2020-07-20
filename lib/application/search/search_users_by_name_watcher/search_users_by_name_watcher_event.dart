@@ -6,5 +6,5 @@ abstract class SearchUsersByNameWatcherEvent with _$SearchUsersByNameWatcherEven
 
   const factory SearchUsersByNameWatcherEvent.watchUsersFoundByUsernameStarted(SearchTerm username) = _WatchUsersFoundByUsernameStarted;
 
-  const factory SearchUsersByNameWatcherEvent.searchResultsReceived(Either<Failure, KtSet<User>> failureOrUsers) = _SearchResultsReceived;
+  const factory SearchUsersByNameWatcherEvent.searchResultsReceived(Either<Failure, KtList<User>> failureOrUsers) = _SearchResultsReceived;
 }

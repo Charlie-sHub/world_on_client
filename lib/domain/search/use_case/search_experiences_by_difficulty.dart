@@ -9,13 +9,13 @@ import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/search/repository/search_repository_interface.dart';
 
 @LazySingleton(env: Environment.dev)
-class SearchExperiencesByDifficulty implements StreamUseCase<KtSet<Experience>, Params> {
+class SearchExperiencesByDifficulty implements StreamUseCase<KtList<Experience>, Params> {
   final SearchRepositoryInterface _repository;
-  
+
   SearchExperiencesByDifficulty(this._repository);
-  
+
   @override
-  Stream<Either<Failure, KtSet<Experience>>> call(Params params) async* {
+  Stream<Either<Failure, KtList<Experience>>> call(Params params) async* {
     yield* _repository.searchExperiencesByDifficulty(params.difficulty);
   }
 }

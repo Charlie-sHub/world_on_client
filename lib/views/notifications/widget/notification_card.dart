@@ -8,9 +8,9 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class NotificationCard extends StatelessWidget {
   final Notification notification;
-  
+
   const NotificationCard({Key key, @required this.notification}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return Card(

@@ -24,7 +24,7 @@ void main() {
     },
   );
   final name = SearchTerm("Test");
-  final tagsFound = KtSet.of(Tag.empty());
+  final tagsFound = KtList.of(Tag.empty());
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,

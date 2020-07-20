@@ -36,9 +36,13 @@ mixin _$Objective {
 }
 
 abstract class $ObjectiveCopyWith<$Res> {
-  factory $ObjectiveCopyWith(Objective value, $Res Function(Objective) then) = _$ObjectiveCopyWithImpl<$Res>;
-
-  $Res call({int id, EntityDescription description, Coordinates coordinates, String imageName});
+  factory $ObjectiveCopyWith(Objective value, $Res Function(Objective) then) =
+  _$ObjectiveCopyWithImpl<$Res>;
+  
+  $Res call({int id,
+    EntityDescription description,
+    Coordinates coordinates,
+    String imageName});
 
   $CoordinatesCopyWith<$Res> get coordinates;
 }
@@ -59,8 +63,12 @@ class _$ObjectiveCopyWithImpl<$Res> implements $ObjectiveCopyWith<$Res> {
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as int,
-      description: description == freezed ? _value.description : description as EntityDescription,
-      coordinates: coordinates == freezed ? _value.coordinates : coordinates as Coordinates,
+      description: description == freezed
+        ? _value.description
+        : description as EntityDescription,
+      coordinates: coordinates == freezed
+        ? _value.coordinates
+        : coordinates as Coordinates,
       imageName: imageName == freezed ? _value.imageName : imageName as String,
     ));
   }
@@ -77,16 +85,22 @@ class _$ObjectiveCopyWithImpl<$Res> implements $ObjectiveCopyWith<$Res> {
 }
 
 abstract class _$ObjectiveCopyWith<$Res> implements $ObjectiveCopyWith<$Res> {
-  factory _$ObjectiveCopyWith(_Objective value, $Res Function(_Objective) then) = __$ObjectiveCopyWithImpl<$Res>;
+  factory _$ObjectiveCopyWith(_Objective value, $Res Function(_Objective) then) =
+  __$ObjectiveCopyWithImpl<$Res>;
   @override
-  $Res call({int id, EntityDescription description, Coordinates coordinates, String imageName});
+  $Res call({int id,
+    EntityDescription description,
+    Coordinates coordinates,
+    String imageName});
 
   @override
   $CoordinatesCopyWith<$Res> get coordinates;
 }
 
-class __$ObjectiveCopyWithImpl<$Res> extends _$ObjectiveCopyWithImpl<$Res> implements _$ObjectiveCopyWith<$Res> {
-  __$ObjectiveCopyWithImpl(_Objective _value, $Res Function(_Objective) _then) : super(_value, (v) => _then(v as _Objective));
+class __$ObjectiveCopyWithImpl<$Res> extends _$ObjectiveCopyWithImpl<$Res>
+  implements _$ObjectiveCopyWith<$Res> {
+  __$ObjectiveCopyWithImpl(_Objective _value, $Res Function(_Objective) _then)
+    : super(_value, (v) => _then(v as _Objective));
 
   @override
   _Objective get _value => super._value as _Objective;
@@ -100,15 +114,22 @@ class __$ObjectiveCopyWithImpl<$Res> extends _$ObjectiveCopyWithImpl<$Res> imple
   }) {
     return _then(_Objective(
       id: id == freezed ? _value.id : id as int,
-      description: description == freezed ? _value.description : description as EntityDescription,
-      coordinates: coordinates == freezed ? _value.coordinates : coordinates as Coordinates,
+      description: description == freezed
+        ? _value.description
+        : description as EntityDescription,
+      coordinates: coordinates == freezed
+        ? _value.coordinates
+        : coordinates as Coordinates,
       imageName: imageName == freezed ? _value.imageName : imageName as String,
     ));
   }
 }
 
 class _$_Objective extends _Objective {
-  const _$_Objective({this.id, @required this.description, @required this.coordinates, @required this.imageName})
+  const _$_Objective({this.id,
+    @required this.description,
+    @required this.coordinates,
+    @required this.imageName})
       : assert(description != null),
         assert(coordinates != null),
         assert(imageName != null),
@@ -132,10 +153,17 @@ class _$_Objective extends _Objective {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Objective &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-            (identical(other.coordinates, coordinates) || const DeepCollectionEquality().equals(other.coordinates, coordinates)) &&
-            (identical(other.imageName, imageName) || const DeepCollectionEquality().equals(other.imageName, imageName)));
+          (identical(other.id, id) ||
+            const DeepCollectionEquality().equals(other.id, id)) &&
+          (identical(other.description, description) ||
+            const DeepCollectionEquality()
+              .equals(other.description, description)) &&
+          (identical(other.coordinates, coordinates) ||
+            const DeepCollectionEquality()
+              .equals(other.coordinates, coordinates)) &&
+          (identical(other.imageName, imageName) ||
+            const DeepCollectionEquality()
+              .equals(other.imageName, imageName)));
   }
 
   @override
@@ -147,13 +175,17 @@ class _$_Objective extends _Objective {
       const DeepCollectionEquality().hash(imageName);
 
   @override
-  _$ObjectiveCopyWith<_Objective> get copyWith => __$ObjectiveCopyWithImpl<_Objective>(this, _$identity);
+  _$ObjectiveCopyWith<_Objective> get copyWith =>
+    __$ObjectiveCopyWithImpl<_Objective>(this, _$identity);
 }
 
 abstract class _Objective extends Objective {
   const _Objective._() : super._();
 
-  const factory _Objective({int id, @required EntityDescription description, @required Coordinates coordinates, @required String imageName}) = _$_Objective;
+  const factory _Objective({int id,
+    @required EntityDescription description,
+    @required Coordinates coordinates,
+    @required String imageName}) = _$_Objective;
 
   @override
   int get id;

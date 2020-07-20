@@ -23,7 +23,7 @@ void main() {
       searchExperiencesByDifficulty = getIt<SearchExperiencesByDifficulty>();
     },
   );
-  final experiencesFound = KtSet.of(Experience.empty());
+  final experiencesFound = KtList.of(Experience.empty());
   const validDifficulty = 5;
   const invalidDifficulty = 50;
   const valueFailure = ValueFailure<int>.integerOutOfBounds(failedValue: invalidDifficulty);

@@ -942,7 +942,6 @@ abstract class InvalidPassword<T> implements ValueFailure<T> {
 abstract class $StringMismatchCopyWith<T, $Res> {
   factory $StringMismatchCopyWith(StringMismatch<T> value, $Res Function(StringMismatch<T>) then) =
   _$StringMismatchCopyWithImpl<T, $Res>;
-  
   $Res call({String failedValue});
 }
 
@@ -950,10 +949,10 @@ class _$StringMismatchCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T
   implements $StringMismatchCopyWith<T, $Res> {
   _$StringMismatchCopyWithImpl(StringMismatch<T> _value, $Res Function(StringMismatch<T>) _then)
     : super(_value, (v) => _then(v as StringMismatch<T>));
-  
+
   @override
   StringMismatch<T> get _value => super._value as StringMismatch<T>;
-  
+
   @override
   $Res call({
     Object failedValue = freezed,
@@ -970,21 +969,21 @@ class _$StringMismatch<T>
   implements StringMismatch<T> {
   const _$StringMismatch({@required this.failedValue})
     : assert(failedValue != null);
-  
+
   @override
   final String failedValue;
-  
+
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'ValueFailure<$T>.stringMismatch(failedValue: $failedValue)';
   }
-  
+
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.stringMismatch'))..add(DiagnosticsProperty('failedValue', failedValue));
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -993,15 +992,15 @@ class _$StringMismatch<T>
           const DeepCollectionEquality()
             .equals(other.failedValue, failedValue)));
   }
-  
+
   @override
   int get hashCode =>
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
-  
+
   @override
   $StringMismatchCopyWith<T, StringMismatch<T>> get copyWith =>
     _$StringMismatchCopyWithImpl<T, StringMismatch<T>>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -1036,7 +1035,7 @@ class _$StringMismatch<T>
     assert(setExceedsLength != null);
     return stringMismatch(failedValue);
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -1062,7 +1061,7 @@ class _$StringMismatch<T>
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
@@ -1097,7 +1096,7 @@ class _$StringMismatch<T>
     assert(setExceedsLength != null);
     return stringMismatch(this);
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -1128,9 +1127,8 @@ class _$StringMismatch<T>
 abstract class StringMismatch<T> implements ValueFailure<T> {
   const factory StringMismatch({@required String failedValue}) =
   _$StringMismatch<T>;
-  
+
   String get failedValue;
-  
   $StringMismatchCopyWith<T, StringMismatch<T>> get copyWith;
 }
 

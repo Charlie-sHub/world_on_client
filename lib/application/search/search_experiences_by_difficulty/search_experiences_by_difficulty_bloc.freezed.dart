@@ -200,7 +200,7 @@ class _$SearchExperiencesByDifficultyStateTearOff {
   }
 
 // ignore: unused_element
-  _SearchSuccess searchSuccess(KtSet<Experience> experiencesFound) {
+  _SearchSuccess searchSuccess(KtList<Experience> experiencesFound) {
     return _SearchSuccess(
       experiencesFound,
     );
@@ -230,7 +230,7 @@ mixin _$SearchExperiencesByDifficultyState {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result searchInProgress(),
-    @required Result searchSuccess(KtSet<Experience> experiencesFound),
+    @required Result searchSuccess(KtList<Experience> experiencesFound),
     @required Result searchFailure(Failure<dynamic> failure),
     @required Result valueFailure(ValueFailure<int> failure),
   });
@@ -238,7 +238,7 @@ mixin _$SearchExperiencesByDifficultyState {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result searchInProgress(),
-    Result searchSuccess(KtSet<Experience> experiencesFound),
+    Result searchSuccess(KtList<Experience> experiencesFound),
     Result searchFailure(Failure<dynamic> failure),
     Result valueFailure(ValueFailure<int> failure),
     @required Result orElse(),
@@ -314,7 +314,7 @@ class _$_Initial implements _Initial {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result searchInProgress(),
-    @required Result searchSuccess(KtSet<Experience> experiencesFound),
+    @required Result searchSuccess(KtList<Experience> experiencesFound),
     @required Result searchFailure(Failure<dynamic> failure),
     @required Result valueFailure(ValueFailure<int> failure),
   }) {
@@ -331,7 +331,7 @@ class _$_Initial implements _Initial {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result searchInProgress(),
-    Result searchSuccess(KtSet<Experience> experiencesFound),
+    Result searchSuccess(KtList<Experience> experiencesFound),
     Result searchFailure(Failure<dynamic> failure),
     Result valueFailure(ValueFailure<int> failure),
     @required Result orElse(),
@@ -420,7 +420,7 @@ class _$_SearchInProgress implements _SearchInProgress {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result searchInProgress(),
-    @required Result searchSuccess(KtSet<Experience> experiencesFound),
+    @required Result searchSuccess(KtList<Experience> experiencesFound),
     @required Result searchFailure(Failure<dynamic> failure),
     @required Result valueFailure(ValueFailure<int> failure),
   }) {
@@ -437,7 +437,7 @@ class _$_SearchInProgress implements _SearchInProgress {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result searchInProgress(),
-    Result searchSuccess(KtSet<Experience> experiencesFound),
+    Result searchSuccess(KtList<Experience> experiencesFound),
     Result searchFailure(Failure<dynamic> failure),
     Result valueFailure(ValueFailure<int> failure),
     @required Result orElse(),
@@ -492,7 +492,8 @@ abstract class _$SearchSuccessCopyWith<$Res> {
   factory _$SearchSuccessCopyWith(
           _SearchSuccess value, $Res Function(_SearchSuccess) then) =
       __$SearchSuccessCopyWithImpl<$Res>;
-  $Res call({KtSet<Experience> experiencesFound});
+
+  $Res call({KtList<Experience> experiencesFound});
 }
 
 class __$SearchSuccessCopyWithImpl<$Res>
@@ -511,8 +512,7 @@ class __$SearchSuccessCopyWithImpl<$Res>
   }) {
     return _then(_SearchSuccess(
       experiencesFound == freezed
-          ? _value.experiencesFound
-          : experiencesFound as KtSet<Experience>,
+          ? _value.experiencesFound : experiencesFound as KtList<Experience>,
     ));
   }
 }
@@ -522,7 +522,7 @@ class _$_SearchSuccess implements _SearchSuccess {
       : assert(experiencesFound != null);
 
   @override
-  final KtSet<Experience> experiencesFound;
+  final KtList<Experience> experiencesFound;
 
   @override
   String toString() {
@@ -552,7 +552,7 @@ class _$_SearchSuccess implements _SearchSuccess {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result searchInProgress(),
-    @required Result searchSuccess(KtSet<Experience> experiencesFound),
+    @required Result searchSuccess(KtList<Experience> experiencesFound),
     @required Result searchFailure(Failure<dynamic> failure),
     @required Result valueFailure(ValueFailure<int> failure),
   }) {
@@ -569,7 +569,7 @@ class _$_SearchSuccess implements _SearchSuccess {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result searchInProgress(),
-    Result searchSuccess(KtSet<Experience> experiencesFound),
+    Result searchSuccess(KtList<Experience> experiencesFound),
     Result searchFailure(Failure<dynamic> failure),
     Result valueFailure(ValueFailure<int> failure),
     @required Result orElse(),
@@ -617,10 +617,10 @@ class _$_SearchSuccess implements _SearchSuccess {
 }
 
 abstract class _SearchSuccess implements SearchExperiencesByDifficultyState {
-  const factory _SearchSuccess(KtSet<Experience> experiencesFound) =
+  const factory _SearchSuccess(KtList<Experience> experiencesFound) =
       _$_SearchSuccess;
-
-  KtSet<Experience> get experiencesFound;
+  
+  KtList<Experience> get experiencesFound;
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith;
 }
 
@@ -695,7 +695,7 @@ class _$_SearchFailure implements _SearchFailure {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result searchInProgress(),
-    @required Result searchSuccess(KtSet<Experience> experiencesFound),
+    @required Result searchSuccess(KtList<Experience> experiencesFound),
     @required Result searchFailure(Failure<dynamic> failure),
     @required Result valueFailure(ValueFailure<int> failure),
   }) {
@@ -712,7 +712,7 @@ class _$_SearchFailure implements _SearchFailure {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result searchInProgress(),
-    Result searchSuccess(KtSet<Experience> experiencesFound),
+    Result searchSuccess(KtList<Experience> experiencesFound),
     Result searchFailure(Failure<dynamic> failure),
     Result valueFailure(ValueFailure<int> failure),
     @required Result orElse(),
@@ -837,7 +837,7 @@ class _$_ValueFailure implements _ValueFailure {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result searchInProgress(),
-    @required Result searchSuccess(KtSet<Experience> experiencesFound),
+    @required Result searchSuccess(KtList<Experience> experiencesFound),
     @required Result searchFailure(Failure<dynamic> failure),
     @required Result valueFailure(ValueFailure<int> failure),
   }) {
@@ -854,7 +854,7 @@ class _$_ValueFailure implements _ValueFailure {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result searchInProgress(),
-    Result searchSuccess(KtSet<Experience> experiencesFound),
+    Result searchSuccess(KtList<Experience> experiencesFound),
     Result searchFailure(Failure<dynamic> failure),
     Result valueFailure(ValueFailure<int> failure),
     @required Result orElse(),

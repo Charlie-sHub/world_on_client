@@ -24,7 +24,7 @@ void main() {
     },
   );
   final name = SearchTerm("Test");
-  final experiencesFound = KtSet.of(Experience.empty());
+  final experiencesFound = KtList.of(Experience.empty());
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,

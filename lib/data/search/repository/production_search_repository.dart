@@ -16,37 +16,37 @@ import 'package:worldon/domain/search/repository/search_repository_interface.dar
 )
 class ProductionSearchRepository implements SearchRepositoryInterface {
   @override
-  Stream<Either<Failure, KtSet<Experience>>> searchExperiencesByDifficulty(Difficulty difficulty) {
+  Stream<Either<Failure, KtList<Experience>>> searchExperiencesByDifficulty(Difficulty difficulty) {
     // TODO: implement searchExperiencesByDifficulty
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtSet<Experience>>> searchExperiencesByTags(TagSet tags) {
+  Stream<Either<Failure, KtList<Experience>>> searchExperiencesByTags(TagSet tags) {
     // TODO: implement searchExperiencesByTags
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtSet<Experience>>> searchExperiencesByName(SearchTerm name) {
+  Stream<Either<Failure, KtList<Experience>>> searchExperiencesByName(SearchTerm name) {
     // TODO: implement searchExperiencesByName
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtSet<Tag>>> searchTagsByName(SearchTerm name) {
+  Stream<Either<Failure, KtList<Tag>>> searchTagsByName(SearchTerm name) {
     // TODO: implement searchTagsByName
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtSet<User>>> searchUsersByName(SearchTerm name) {
+  Stream<Either<Failure, KtList<User>>> searchUsersByName(SearchTerm name) {
     // TODO: implement searchUsersByName
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtSet<User>>> searchUsersByUserName(SearchTerm username) {
+  Stream<Either<Failure, KtList<User>>> searchUsersByUserName(SearchTerm username) {
     // TODO: implement searchUsersByUserName
     throw UnimplementedError();
   }

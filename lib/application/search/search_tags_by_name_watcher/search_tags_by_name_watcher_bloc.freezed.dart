@@ -212,7 +212,7 @@ class _$SearchTagsByNameWatcherStateTearOff {
   }
 
 // ignore: unused_element
-  _SearchSuccess searchSuccess(KtSet<Tag> tagsFound) {
+  _SearchSuccess searchSuccess(KtList<Tag> tagsFound) {
     return _SearchSuccess(
       tagsFound,
     );
@@ -234,14 +234,14 @@ mixin _$SearchTagsByNameWatcherState {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result searchInProgress(),
-    @required Result searchSuccess(KtSet<Tag> tagsFound),
+    @required Result searchSuccess(KtList<Tag> tagsFound),
     @required Result searchFailure(Failure<dynamic> failure),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result searchInProgress(),
-    Result searchSuccess(KtSet<Tag> tagsFound),
+    Result searchSuccess(KtList<Tag> tagsFound),
     Result searchFailure(Failure<dynamic> failure),
     @required Result orElse(),
   });
@@ -314,7 +314,7 @@ class _$_Initial implements _Initial {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result searchInProgress(),
-    @required Result searchSuccess(KtSet<Tag> tagsFound),
+    @required Result searchSuccess(KtList<Tag> tagsFound),
     @required Result searchFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -329,7 +329,7 @@ class _$_Initial implements _Initial {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result searchInProgress(),
-    Result searchSuccess(KtSet<Tag> tagsFound),
+    Result searchSuccess(KtList<Tag> tagsFound),
     Result searchFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -414,7 +414,7 @@ class _$_SearchInProgress implements _SearchInProgress {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result searchInProgress(),
-    @required Result searchSuccess(KtSet<Tag> tagsFound),
+    @required Result searchSuccess(KtList<Tag> tagsFound),
     @required Result searchFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -429,7 +429,7 @@ class _$_SearchInProgress implements _SearchInProgress {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result searchInProgress(),
-    Result searchSuccess(KtSet<Tag> tagsFound),
+    Result searchSuccess(KtList<Tag> tagsFound),
     Result searchFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -480,7 +480,8 @@ abstract class _$SearchSuccessCopyWith<$Res> {
   factory _$SearchSuccessCopyWith(
           _SearchSuccess value, $Res Function(_SearchSuccess) then) =
       __$SearchSuccessCopyWithImpl<$Res>;
-  $Res call({KtSet<Tag> tagsFound});
+
+  $Res call({KtList<Tag> tagsFound});
 }
 
 class __$SearchSuccessCopyWithImpl<$Res>
@@ -498,7 +499,7 @@ class __$SearchSuccessCopyWithImpl<$Res>
     Object tagsFound = freezed,
   }) {
     return _then(_SearchSuccess(
-      tagsFound == freezed ? _value.tagsFound : tagsFound as KtSet<Tag>,
+      tagsFound == freezed ? _value.tagsFound : tagsFound as KtList<Tag>,
     ));
   }
 }
@@ -507,7 +508,7 @@ class _$_SearchSuccess implements _SearchSuccess {
   const _$_SearchSuccess(this.tagsFound) : assert(tagsFound != null);
 
   @override
-  final KtSet<Tag> tagsFound;
+  final KtList<Tag> tagsFound;
 
   @override
   String toString() {
@@ -536,7 +537,7 @@ class _$_SearchSuccess implements _SearchSuccess {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result searchInProgress(),
-    @required Result searchSuccess(KtSet<Tag> tagsFound),
+    @required Result searchSuccess(KtList<Tag> tagsFound),
     @required Result searchFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -551,7 +552,7 @@ class _$_SearchSuccess implements _SearchSuccess {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result searchInProgress(),
-    Result searchSuccess(KtSet<Tag> tagsFound),
+    Result searchSuccess(KtList<Tag> tagsFound),
     Result searchFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -595,9 +596,9 @@ class _$_SearchSuccess implements _SearchSuccess {
 }
 
 abstract class _SearchSuccess implements SearchTagsByNameWatcherState {
-  const factory _SearchSuccess(KtSet<Tag> tagsFound) = _$_SearchSuccess;
+  const factory _SearchSuccess(KtList<Tag> tagsFound) = _$_SearchSuccess;
 
-  KtSet<Tag> get tagsFound;
+  KtList<Tag> get tagsFound;
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith;
 }
 
@@ -672,7 +673,7 @@ class _$_SearchFailure implements _SearchFailure {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result searchInProgress(),
-    @required Result searchSuccess(KtSet<Tag> tagsFound),
+    @required Result searchSuccess(KtList<Tag> tagsFound),
     @required Result searchFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -687,7 +688,7 @@ class _$_SearchFailure implements _SearchFailure {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result searchInProgress(),
-    Result searchSuccess(KtSet<Tag> tagsFound),
+    Result searchSuccess(KtList<Tag> tagsFound),
     Result searchFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {

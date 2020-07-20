@@ -9,13 +9,13 @@ import 'package:worldon/domain/core/validation/objects/search_term.dart';
 import 'package:worldon/domain/search/repository/search_repository_interface.dart';
 
 @LazySingleton(env: Environment.dev)
-class SearchTagsByName implements StreamUseCase<KtSet<Tag>, Params> {
+class SearchTagsByName implements StreamUseCase<KtList<Tag>, Params> {
   final SearchRepositoryInterface _repository;
 
   SearchTagsByName(this._repository);
 
   @override
-  Stream<Either<Failure, KtSet<Tag>>> call(Params params) async* {
+  Stream<Either<Failure, KtList<Tag>>> call(Params params) async* {
     yield* _repository.searchTagsByName(params.name);
   }
 }

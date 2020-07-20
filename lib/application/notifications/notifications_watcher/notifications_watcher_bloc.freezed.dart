@@ -55,14 +55,20 @@ class _$NotificationsWatcherEventCopyWithImpl<$Res> implements $NotificationsWat
 }
 
 abstract class _$WatchNotificationsStartedCopyWith<$Res> {
-  factory _$WatchNotificationsStartedCopyWith(_WatchNotificationsStarted value, $Res Function(_WatchNotificationsStarted) then) = __$WatchNotificationsStartedCopyWithImpl<$Res>;
+  factory _$WatchNotificationsStartedCopyWith(_WatchNotificationsStarted value,
+    $Res Function(_WatchNotificationsStarted) then) =
+  __$WatchNotificationsStartedCopyWithImpl<$Res>;
 }
 
-class __$WatchNotificationsStartedCopyWithImpl<$Res> extends _$NotificationsWatcherEventCopyWithImpl<$Res> implements _$WatchNotificationsStartedCopyWith<$Res> {
-  __$WatchNotificationsStartedCopyWithImpl(_WatchNotificationsStarted _value, $Res Function(_WatchNotificationsStarted) _then) : super(_value, (v) => _then(v as _WatchNotificationsStarted));
+class __$WatchNotificationsStartedCopyWithImpl<$Res> extends _$NotificationsWatcherEventCopyWithImpl<$Res>
+  implements _$WatchNotificationsStartedCopyWith<$Res> {
+  __$WatchNotificationsStartedCopyWithImpl(_WatchNotificationsStarted _value,
+    $Res Function(_WatchNotificationsStarted) _then)
+    : super(_value, (v) => _then(v as _WatchNotificationsStarted));
 
   @override
-  _WatchNotificationsStarted get _value => super._value as _WatchNotificationsStarted;
+  _WatchNotificationsStarted get _value =>
+    super._value as _WatchNotificationsStarted;
 }
 
 class _$_WatchNotificationsStarted implements _WatchNotificationsStarted {
@@ -195,10 +201,13 @@ mixin _$NotificationsWatcherState {
 }
 
 abstract class $NotificationsWatcherStateCopyWith<$Res> {
-  factory $NotificationsWatcherStateCopyWith(NotificationsWatcherState value, $Res Function(NotificationsWatcherState) then) = _$NotificationsWatcherStateCopyWithImpl<$Res>;
+  factory $NotificationsWatcherStateCopyWith(NotificationsWatcherState value,
+    $Res Function(NotificationsWatcherState) then) =
+  _$NotificationsWatcherStateCopyWithImpl<$Res>;
 }
 
-class _$NotificationsWatcherStateCopyWithImpl<$Res> implements $NotificationsWatcherStateCopyWith<$Res> {
+class _$NotificationsWatcherStateCopyWithImpl<$Res>
+  implements $NotificationsWatcherStateCopyWith<$Res> {
   _$NotificationsWatcherStateCopyWithImpl(this._value, this._then);
 
   final NotificationsWatcherState _value;
@@ -207,11 +216,14 @@ class _$NotificationsWatcherStateCopyWithImpl<$Res> implements $NotificationsWat
 }
 
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+  __$InitialCopyWithImpl<$Res>;
 }
 
-class __$InitialCopyWithImpl<$Res> extends _$NotificationsWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$NotificationsWatcherStateCopyWithImpl<$Res>
+  implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+    : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -301,11 +313,14 @@ abstract class _Initial implements NotificationsWatcherState {
 }
 
 abstract class _$LoadInProgressCopyWith<$Res> {
-  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) = __$LoadInProgressCopyWithImpl<$Res>;
+  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) =
+  __$LoadInProgressCopyWithImpl<$Res>;
 }
 
-class __$LoadInProgressCopyWithImpl<$Res> extends _$NotificationsWatcherStateCopyWithImpl<$Res> implements _$LoadInProgressCopyWith<$Res> {
-  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then) : super(_value, (v) => _then(v as _LoadInProgress));
+class __$LoadInProgressCopyWithImpl<$Res> extends _$NotificationsWatcherStateCopyWithImpl<$Res>
+  implements _$LoadInProgressCopyWith<$Res> {
+  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then)
+    : super(_value, (v) => _then(v as _LoadInProgress));
 
   @override
   _LoadInProgress get _value => super._value as _LoadInProgress;
@@ -395,13 +410,15 @@ abstract class _LoadInProgress implements NotificationsWatcherState {
 }
 
 abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
-
+  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
+  __$LoadSuccessCopyWithImpl<$Res>;
   $Res call({KtList<Notification> notifications});
 }
 
-class __$LoadSuccessCopyWithImpl<$Res> extends _$NotificationsWatcherStateCopyWithImpl<$Res> implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then) : super(_value, (v) => _then(v as _LoadSuccess));
+class __$LoadSuccessCopyWithImpl<$Res> extends _$NotificationsWatcherStateCopyWithImpl<$Res>
+  implements _$LoadSuccessCopyWith<$Res> {
+  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then)
+    : super(_value, (v) => _then(v as _LoadSuccess));
 
   @override
   _LoadSuccess get _value => super._value as _LoadSuccess;
@@ -411,7 +428,9 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$NotificationsWatcherStateCopyWi
     Object notifications = freezed,
   }) {
     return _then(_LoadSuccess(
-      notifications == freezed ? _value.notifications : notifications as KtList<Notification>,
+      notifications == freezed
+        ? _value.notifications
+        : notifications as KtList<Notification>,
     ));
   }
 }
@@ -429,14 +448,20 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadSuccess && (identical(other.notifications, notifications) || const DeepCollectionEquality().equals(other.notifications, notifications)));
+    return identical(this, other) ||
+      (other is _LoadSuccess &&
+        (identical(other.notifications, notifications) ||
+          const DeepCollectionEquality()
+            .equals(other.notifications, notifications)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(notifications);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(notifications);
 
   @override
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+    __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -502,21 +527,25 @@ class _$_LoadSuccess implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements NotificationsWatcherState {
-  const factory _LoadSuccess(KtList<Notification> notifications) = _$_LoadSuccess;
+  const factory _LoadSuccess(KtList<Notification> notifications) =
+  _$_LoadSuccess;
 
   KtList<Notification> get notifications;
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
 abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) =
+  __$LoadFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
-class __$LoadFailureCopyWithImpl<$Res> extends _$NotificationsWatcherStateCopyWithImpl<$Res> implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then) : super(_value, (v) => _then(v as _LoadFailure));
+class __$LoadFailureCopyWithImpl<$Res> extends _$NotificationsWatcherStateCopyWithImpl<$Res>
+  implements _$LoadFailureCopyWith<$Res> {
+  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then)
+    : super(_value, (v) => _then(v as _LoadFailure));
 
   @override
   _LoadFailure get _value => super._value as _LoadFailure;
@@ -554,14 +583,19 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) ||
+      (other is _LoadFailure &&
+        (identical(other.failure, failure) ||
+          const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith => __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+    __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
