@@ -4,10 +4,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/tag_management/repository/tag_management_repository_interface.dart';
 
-@LazySingleton(
-  as: TagManagementRepositoryInterface,
-  env: Environment.prod,
-)
+@LazySingleton(as: TagManagementRepositoryInterface, env: [Environment.prod])
 class ProductionTagManagementRepository implements TagManagementRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> createTag(Tag tag) {

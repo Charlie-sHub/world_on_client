@@ -10,7 +10,7 @@ import 'package:worldon/domain/options/repository/remote_options_repository_inte
 
 @LazySingleton(
   as: RemoteOptionsRepositoryInterface,
-  env: Environment.dev,
+  env: [Environment.dev],
 )
 class DevelopmentRemoteOptionsRepository implements RemoteOptionsRepositoryInterface {
   final _random = Random();
@@ -23,7 +23,7 @@ class DevelopmentRemoteOptionsRepository implements RemoteOptionsRepositoryInter
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> saveGlobalOptions(Options option) {
     if (_random.nextBool()) {

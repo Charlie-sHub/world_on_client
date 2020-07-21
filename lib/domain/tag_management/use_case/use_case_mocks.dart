@@ -11,29 +11,29 @@ import 'package:worldon/domain/tag_management/use_case/get_tags_by_creator.dart'
 import 'add_tag_to_interests.dart';
 import 'dismiss_tag_from_interests.dart';
 
-@LazySingleton(as: CreateTag, env: Environment.test)
+@LazySingleton(as: CreateTag, env: [Environment.test])
 class MockCreateTag extends Mock implements CreateTag {}
 
-@LazySingleton(as: DeleteTag, env: Environment.test)
+@LazySingleton(as: DeleteTag, env: [Environment.test])
 class MockDeleteTag extends Mock implements DeleteTag {}
 
-@LazySingleton(as: EditTag, env: Environment.test)
+@LazySingleton(as: EditTag, env: [Environment.test])
 class MockEditTag extends Mock implements EditTag {}
 
-@LazySingleton(as: GetAllTags, env: Environment.test)
+@LazySingleton(as: GetAllTags, env: [Environment.test])
 class MockGetAllTags extends Mock implements GetAllTags {}
 
-@LazySingleton(as: GetTag, env: Environment.test)
+@LazySingleton(as: GetTag, env: [Environment.test])
 class MockGetTag extends Mock implements GetTag {}
 
-@LazySingleton(as: GetTagCreator, env: Environment.test)
+@LazySingleton(as: GetTagCreator, env: [Environment.test])
 class MockGetTagCreator extends Mock implements GetTagCreator {}
 
-@LazySingleton(as: GetTagsByCreator, env: Environment.test)
+@LazySingleton(as: GetTagsByCreator, env: [Environment.test])
 class MockGetTagsByCreator extends Mock implements GetTagsByCreator {}
 
-@LazySingleton(as: AddTagToInterests, env: Environment.test)
+@LazySingleton(as: AddTagToInterests, env: [Environment.test])
 class MockAddTagToInterests extends Mock implements AddTagToInterests {}
 
-@LazySingleton(as: DismissTagFromInterests, env: Environment.test)
+@LazySingleton(as: DismissTagFromInterests, env: [Environment.test])
 class MockDismissTagFromInterests extends Mock implements DismissTagFromInterests {}

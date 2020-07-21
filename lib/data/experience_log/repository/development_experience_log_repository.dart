@@ -15,7 +15,7 @@ import 'package:worldon/domain/experience_log/repository/experience_log_reposito
 
 @LazySingleton(
   as: ExperienceLogRepositoryInterface,
-  env: Environment.dev,
+  env: [Environment.dev],
 )
 class DevelopmentExperienceLogRepository implements ExperienceLogRepositoryInterface {
   final _random = Random();

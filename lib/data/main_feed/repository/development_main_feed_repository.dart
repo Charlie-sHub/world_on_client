@@ -15,7 +15,7 @@ import 'package:worldon/domain/main_feed/repository/main_feed_repository_interfa
 
 @LazySingleton(
   as: MainFeedRepositoryInterface,
-  env: Environment.dev,
+  env: [Environment.dev],
 )
 class DevelopmentMainFeedRepository implements MainFeedRepositoryInterface {
   final _random = Random();

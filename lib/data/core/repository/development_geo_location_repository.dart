@@ -10,7 +10,7 @@ import 'package:worldon/domain/core/repository/geo_location_repository_interface
 
 @LazySingleton(
   as: GeoLocationRepositoryInterface,
-  env: Environment.dev,
+  env: [Environment.dev],
 )
 class DevelopmentGeoLocationRepository implements GeoLocationRepositoryInterface {
   final _random = Random();

@@ -10,7 +10,7 @@ import 'package:worldon/domain/options/repository/local_options_repository_inter
 
 @LazySingleton(
   as: LocalOptionsRepositoryInterface,
-  env: Environment.dev,
+  env: [Environment.dev],
 )
 class DevelopmentLocalOptionsRepository implements LocalOptionsRepositoryInterface {
   final _random = Random();

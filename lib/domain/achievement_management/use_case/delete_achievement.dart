@@ -11,7 +11,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 
 import '../../../injection.dart';
 
-@LazySingleton(env: Environment.dev)
+@LazySingleton(env: [Environment.dev, Environment.prod])
 class DeleteAchievement implements AsyncUseCase<Unit, Params> {
   final AchievementRepositoryInterface _repository;
 

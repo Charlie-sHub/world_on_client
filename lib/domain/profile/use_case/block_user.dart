@@ -10,7 +10,7 @@ import 'package:worldon/domain/profile/failures/profile_domain_failure.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 import 'package:worldon/injection.dart';
 
-@LazySingleton(env: Environment.dev)
+@LazySingleton(env: [Environment.dev, Environment.prod])
 class BlockUser implements AsyncUseCase<Unit, Params> {
   final ProfileRepositoryInterface _repository;
 

@@ -11,7 +11,7 @@ import 'package:worldon/domain/options/repository/remote_options_repository_inte
 
 import '../../../injection.dart';
 
-@LazySingleton(env: Environment.dev)
+@LazySingleton(env: [Environment.dev, Environment.prod])
 class DeleteUser implements AsyncUseCase<Unit, Params> {
   final RemoteOptionsRepositoryInterface _repository;
 

@@ -480,7 +480,6 @@ abstract class _$SearchSuccessCopyWith<$Res> {
   factory _$SearchSuccessCopyWith(
           _SearchSuccess value, $Res Function(_SearchSuccess) then) =
       __$SearchSuccessCopyWithImpl<$Res>;
-
   $Res call({KtList<Tag> tagsFound});
 }
 

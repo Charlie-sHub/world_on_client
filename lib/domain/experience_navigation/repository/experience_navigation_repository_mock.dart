@@ -4,6 +4,6 @@ import 'package:worldon/domain/experience_navigation/repository/experience_navig
 
 @LazySingleton(
   as: ExperienceNavigationRepositoryInterface,
-  env: Environment.test,
+  env: [Environment.test],
 )
 class MockExperienceNavigationRepository extends Mock implements ExperienceNavigationRepositoryInterface {}

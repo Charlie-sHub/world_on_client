@@ -8,23 +8,23 @@ import 'package:worldon/domain/achievement_management/use_case/get_achievement.d
 import 'package:worldon/domain/achievement_management/use_case/get_all_achievements.dart';
 import 'package:worldon/domain/achievement_management/use_case/get_user_achievements.dart';
 
-@LazySingleton(as: AwardAchievement, env: Environment.test)
+@LazySingleton(as: AwardAchievement, env: [Environment.test])
 class MockAwardAchievement extends Mock implements AwardAchievement {}
 
-@LazySingleton(as: CreateAchievement, env: Environment.test)
+@LazySingleton(as: CreateAchievement, env: [Environment.test])
 class MockCreateAchievement extends Mock implements CreateAchievement {}
 
-@LazySingleton(as: DeleteAchievement, env: Environment.test)
+@LazySingleton(as: DeleteAchievement, env: [Environment.test])
 class MockDeleteAchievement extends Mock implements DeleteAchievement {}
 
-@LazySingleton(as: EditAchievement, env: Environment.test)
+@LazySingleton(as: EditAchievement, env: [Environment.test])
 class MockEditAchievement extends Mock implements EditAchievement {}
 
-@LazySingleton(as: GetAchievement, env: Environment.test)
+@LazySingleton(as: GetAchievement, env: [Environment.test])
 class MockGetAchievement extends Mock implements GetAchievement {}
 
-@LazySingleton(as: GetAllAchievements, env: Environment.test)
+@LazySingleton(as: GetAllAchievements, env: [Environment.test])
 class MockGetAllAchievements extends Mock implements GetAllAchievements {}
 
-@LazySingleton(as: GetUserAchievements, env: Environment.test)
+@LazySingleton(as: GetUserAchievements, env: [Environment.test])
 class MockGetUserAchievements extends Mock implements GetUserAchievements {}

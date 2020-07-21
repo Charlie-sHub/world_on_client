@@ -4,6 +4,6 @@ import 'package:worldon/domain/authentication/repository/authentication_reposito
 
 @LazySingleton(
   as: AuthenticationRepositoryInterface,
-  env: Environment.test,
+  env: [Environment.test],
 )
 class MockAuthenticationRepository extends Mock implements AuthenticationRepositoryInterface {}

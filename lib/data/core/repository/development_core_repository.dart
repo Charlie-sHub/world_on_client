@@ -9,7 +9,7 @@ import 'package:worldon/domain/core/repository/core_repository_interface.dart';
 
 @LazySingleton(
   as: CoreRepositoryInterface,
-  env: Environment.dev,
+  env: [Environment.dev],
 )
 class DevelopmentCoreRepository implements CoreRepositoryInterface {
   final _random = Random();
@@ -22,7 +22,7 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> deleteCache() {
     if (_random.nextBool()) {

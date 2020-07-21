@@ -20,7 +20,7 @@ import 'package:worldon/domain/search/repository/search_repository_interface.dar
 
 @LazySingleton(
   as: SearchRepositoryInterface,
-  env: Environment.dev,
+  env: [Environment.dev],
 )
 class DevelopmentSearchRepository implements SearchRepositoryInterface {
   final _random = Random();

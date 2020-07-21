@@ -492,7 +492,6 @@ abstract class _$SearchSuccessCopyWith<$Res> {
   factory _$SearchSuccessCopyWith(
           _SearchSuccess value, $Res Function(_SearchSuccess) then) =
       __$SearchSuccessCopyWithImpl<$Res>;
-
   $Res call({KtList<Experience> experiencesFound});
 }
 
@@ -512,7 +511,8 @@ class __$SearchSuccessCopyWithImpl<$Res>
   }) {
     return _then(_SearchSuccess(
       experiencesFound == freezed
-          ? _value.experiencesFound : experiencesFound as KtList<Experience>,
+          ? _value.experiencesFound
+          : experiencesFound as KtList<Experience>,
     ));
   }
 }
@@ -619,7 +619,7 @@ class _$_SearchSuccess implements _SearchSuccess {
 abstract class _SearchSuccess implements SearchExperiencesByDifficultyState {
   const factory _SearchSuccess(KtList<Experience> experiencesFound) =
       _$_SearchSuccess;
-  
+
   KtList<Experience> get experiencesFound;
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith;
 }

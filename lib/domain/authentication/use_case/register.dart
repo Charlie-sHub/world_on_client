@@ -7,7 +7,7 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
 /// [UseCase] for direct registration with World On
-@LazySingleton(env: Environment.dev)
+@LazySingleton(env: [Environment.dev, Environment.prod])
 class Register implements AsyncUseCase<Unit, Params> {
   final AuthenticationRepositoryInterface _repository;
 

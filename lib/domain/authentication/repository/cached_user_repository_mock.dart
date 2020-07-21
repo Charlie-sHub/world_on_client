@@ -4,6 +4,6 @@ import 'package:worldon/domain/authentication/repository/cached_credentials_repo
 
 @LazySingleton(
   as: CachedCredentialsRepositoryInterface,
-  env: Environment.test,
+  env: [Environment.test],
 )
 class MockCachedUserRepository extends Mock implements CachedCredentialsRepositoryInterface {}

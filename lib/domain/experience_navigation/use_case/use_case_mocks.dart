@@ -8,23 +8,23 @@ import 'package:worldon/domain/experience_navigation/use_case/load_surrounding_e
 import 'package:worldon/domain/experience_navigation/use_case/rate_difficulty.dart';
 import 'package:worldon/domain/experience_navigation/use_case/reward_user.dart';
 
-@LazySingleton(as: AccomplishObjective, env: Environment.test)
+@LazySingleton(as: AccomplishObjective, env: [Environment.test])
 class MockAccomplishObjective extends Mock implements AccomplishObjective {}
 
-@LazySingleton(as: FillObjectiveTracker, env: Environment.test)
+@LazySingleton(as: FillObjectiveTracker, env: [Environment.test])
 class MockFillObjectiveTracker extends Mock implements FillObjectiveTracker {}
 
-@LazySingleton(as: FinishExperience, env: Environment.test)
+@LazySingleton(as: FinishExperience, env: [Environment.test])
 class MockFinishExperience extends Mock implements FinishExperience {}
 
-@LazySingleton(as: LikeExperience, env: Environment.test)
+@LazySingleton(as: LikeExperience, env: [Environment.test])
 class MockLikeExperience extends Mock implements LikeExperience {}
 
-@LazySingleton(as: LoadSurroundingExperiences, env: Environment.test)
+@LazySingleton(as: LoadSurroundingExperiences, env: [Environment.test])
 class MockLoadSurroundingExperiences extends Mock implements LoadSurroundingExperiences {}
 
-@LazySingleton(as: RateDifficulty, env: Environment.test)
+@LazySingleton(as: RateDifficulty, env: [Environment.test])
 class MockRateDifficulty extends Mock implements RateDifficulty {}
 
-@LazySingleton(as: RewardUser, env: Environment.test)
+@LazySingleton(as: RewardUser, env: [Environment.test])
 class MockRewardUser extends Mock implements RewardUser {}

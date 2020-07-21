@@ -5,10 +5,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/experience_log/repository/experience_log_repository_interface.dart';
 
-@LazySingleton(
-  as: ExperienceLogRepositoryInterface,
-  env: Environment.prod,
-)
+@LazySingleton(as: ExperienceLogRepositoryInterface, env: [Environment.prod])
 class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> addExperienceToLog(int experienceId) {

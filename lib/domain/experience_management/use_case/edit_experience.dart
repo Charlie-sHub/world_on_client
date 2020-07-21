@@ -11,7 +11,7 @@ import 'package:worldon/domain/experience_management/repository/experience_manag
 
 import '../../../injection.dart';
 
-@LazySingleton(env: Environment.dev)
+@LazySingleton(env: [Environment.dev, Environment.prod])
 class EditExperience implements AsyncUseCase<Unit, Params> {
   final ExperienceManagementRepositoryInterface _repository;
 

@@ -7,7 +7,7 @@ import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/injection.dart';
 
-@LazySingleton(env: Environment.dev)
+@LazySingleton(env: [Environment.dev, Environment.prod])
 class IsLoggedInUser {
   // Should this implement AsyncUseCase? it did, but the Failure was lost on GetLoggedInUser anyway
   // so i changed it to this

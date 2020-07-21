@@ -6,10 +6,7 @@ import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/tag_management/repository/tag_repository_interface.dart';
 
-@LazySingleton(
-  as: TagCoreRepositoryInterface,
-  env: Environment.prod,
-)
+@LazySingleton(as: TagCoreRepositoryInterface, env: [Environment.prod])
 class ProductionTagRepository implements TagCoreRepositoryInterface {
   @override
   Stream<Either<Failure, KtSet<Tag>>> getAllTags() {

@@ -15,7 +15,7 @@ import 'package:worldon/domain/experience_navigation/repository/experience_navig
 
 @LazySingleton(
   as: ExperienceNavigationRepositoryInterface,
-  env: Environment.dev,
+  env: [Environment.dev],
 )
 class DevelopmentExperienceNavigationRepository implements ExperienceNavigationRepositoryInterface {
   final _random = Random();

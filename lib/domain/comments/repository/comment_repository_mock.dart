@@ -4,6 +4,6 @@ import 'package:worldon/domain/comments/repository/comment_repository_interface.
 
 @LazySingleton(
   as: CommentRepositoryInterface,
-  env: Environment.test,
+  env: [Environment.test],
 )
 class MockCommentRepository extends Mock implements CommentRepositoryInterface {}

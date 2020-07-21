@@ -15,7 +15,7 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 
 @LazySingleton(
   as: AchievementRepositoryInterface,
-  env: Environment.dev,
+  env: [Environment.dev],
 )
 class DevelopmentAchievementRepository implements AchievementRepositoryInterface {
   final _random = Random();

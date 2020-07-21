@@ -17,7 +17,7 @@ import 'package:worldon/domain/tag_management/repository/tag_repository_interfac
 
 @LazySingleton(
   as: TagCoreRepositoryInterface,
-  env: Environment.dev,
+  env: [Environment.dev],
 )
 class DevelopmentTagRepository implements TagCoreRepositoryInterface {
   final _random = Random();

@@ -5,10 +5,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/domain/notifications/repository/notification_repository_interface.dart';
 
-@LazySingleton(
-  as: NotificationRepositoryInterface,
-  env: Environment.prod,
-)
+@LazySingleton(as: NotificationRepositoryInterface, env: [Environment.prod])
 class ProductionNotificationRepository implements NotificationRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> checkNotification(int id) {

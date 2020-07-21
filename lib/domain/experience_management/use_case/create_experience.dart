@@ -6,7 +6,7 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/experience_management/repository/experience_management_repository_interface.dart';
 
-@LazySingleton(env: Environment.dev)
+@LazySingleton(env: [Environment.dev, Environment.prod])
 class CreateExperience implements AsyncUseCase<Unit, Params> {
   final ExperienceManagementRepositoryInterface _repository;
 

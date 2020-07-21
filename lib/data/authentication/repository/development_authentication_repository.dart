@@ -11,7 +11,7 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 
 @LazySingleton(
   as: AuthenticationRepositoryInterface,
-  env: Environment.dev,
+  env: [Environment.dev],
 )
 class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInterface {
   final _random = Random();
@@ -21,7 +21,7 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
     if (_random.nextBool()) {
       return Future.delayed(
         const Duration(milliseconds: 10),
-          () => some(getValidUser()),
+        () => some(getValidUser()),
       );
     } else {
       return Future.delayed(
@@ -30,7 +30,7 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
       );
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> logIn(User user) {
     if (_random.nextBool()) {
@@ -39,7 +39,7 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> logInGoogle() {
     if (_random.nextBool()) {
@@ -48,7 +48,7 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> logOut() {
     if (_random.nextBool()) {
@@ -57,7 +57,7 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> register(User user) {
     if (_random.nextBool()) {
@@ -66,7 +66,7 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> registerGoogle() {
     if (_random.nextBool()) {

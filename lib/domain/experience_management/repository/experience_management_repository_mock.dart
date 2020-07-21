@@ -4,6 +4,6 @@ import 'package:worldon/domain/experience_management/repository/experience_manag
 
 @LazySingleton(
   as: ExperienceManagementRepositoryInterface,
-  env: Environment.test,
+  env: [Environment.test],
 )
 class MockExperienceManagementRepository extends Mock implements ExperienceManagementRepositoryInterface {}

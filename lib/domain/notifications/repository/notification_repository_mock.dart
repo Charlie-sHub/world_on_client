@@ -4,6 +4,6 @@ import 'package:worldon/domain/notifications/repository/notification_repository_
 
 @LazySingleton(
   as: NotificationRepositoryInterface,
-  env: Environment.test,
+  env: [Environment.test],
 )
 class MockNotificationRepository extends Mock implements NotificationRepositoryInterface {}

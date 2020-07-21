@@ -17,50 +17,50 @@ import 'package:worldon/domain/profile/use_case/remove_experience_liked.dart';
 import 'package:worldon/domain/profile/use_case/un_block_user.dart';
 import 'package:worldon/domain/profile/use_case/un_follow_user.dart';
 
-@LazySingleton(as: BlockUser, env: Environment.test)
+@LazySingleton(as: BlockUser, env: [Environment.test])
 class MockBlockUser extends Mock implements BlockUser {}
 
-@LazySingleton(as: DeleteExperience, env: Environment.test)
+@LazySingleton(as: DeleteExperience, env: [Environment.test])
 class MockDeleteExperience extends Mock implements DeleteExperience {}
 
-@LazySingleton(as: EditUser, env: Environment.test)
+@LazySingleton(as: EditUser, env: [Environment.test])
 class MockEditUser extends Mock implements EditUser {}
 
-@LazySingleton(as: FollowUser, env: Environment.test)
+@LazySingleton(as: FollowUser, env: [Environment.test])
 class MockFollowUser extends Mock implements FollowUser {}
 
-@LazySingleton(as: LoadBlockedUsers, env: Environment.test)
+@LazySingleton(as: LoadBlockedUsers, env: [Environment.test])
 class MockLoadBlockedUsers extends Mock implements LoadBlockedUsers {}
 
-@LazySingleton(as: LoadExperiencesCreated, env: Environment.test)
+@LazySingleton(as: LoadExperiencesCreated, env: [Environment.test])
 class MockLoadExperiencesCreated extends Mock implements LoadExperiencesCreated {}
 
-@LazySingleton(as: LoadExperiencesDone, env: Environment.test)
+@LazySingleton(as: LoadExperiencesDone, env: [Environment.test])
 class MockLoadExperiencesDone extends Mock implements LoadExperiencesDone {}
 
-@LazySingleton(as: LoadExperiencesLiked, env: Environment.test)
+@LazySingleton(as: LoadExperiencesLiked, env: [Environment.test])
 class MockLoadExperiencesLiked extends Mock implements LoadExperiencesLiked {}
 
-@LazySingleton(as: LoadFollowedUsers, env: Environment.test)
+@LazySingleton(as: LoadFollowedUsers, env: [Environment.test])
 class MockLoadFollowedUsers extends Mock implements LoadFollowedUsers {}
 
-@LazySingleton(as: LoadFollowingUsers, env: Environment.test)
+@LazySingleton(as: LoadFollowingUsers, env: [Environment.test])
 class MockLoadFollowingUsers extends Mock implements LoadFollowingUsers {}
 
-@LazySingleton(as: LoadUser, env: Environment.test)
+@LazySingleton(as: LoadUser, env: [Environment.test])
 class MockLoadUser extends Mock implements LoadUser {}
 
-@LazySingleton(as: LoadUserAchievements, env: Environment.test)
+@LazySingleton(as: LoadUserAchievements, env: [Environment.test])
 class MockLoadUserAchievements extends Mock implements LoadUserAchievements {}
 
-@LazySingleton(as: LoadUserInterests, env: Environment.test)
+@LazySingleton(as: LoadUserInterests, env: [Environment.test])
 class MockLoadUserInterests extends Mock implements LoadUserInterests {}
 
-@LazySingleton(as: RemoveExperienceLiked, env: Environment.test)
+@LazySingleton(as: RemoveExperienceLiked, env: [Environment.test])
 class MockRemoveExperienceLiked extends Mock implements RemoveExperienceLiked {}
 
-@LazySingleton(as: UnBlockUser, env: Environment.test)
+@LazySingleton(as: UnBlockUser, env: [Environment.test])
 class MockUnBlockUser extends Mock implements UnBlockUser {}
 
-@LazySingleton(as: UnFollowUser, env: Environment.test)
+@LazySingleton(as: UnFollowUser, env: [Environment.test])
 class MockUnFollowUser extends Mock implements UnFollowUser {}

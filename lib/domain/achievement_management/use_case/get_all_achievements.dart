@@ -6,12 +6,12 @@ import 'package:worldon/domain/achievement_management/repository/achievement_rep
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
-@LazySingleton(env: Environment.dev)
+@LazySingleton(env: [Environment.dev, Environment.prod])
 class GetAllAchievements implements StreamUseCase<KtSet<Achievement>, NoParams> {
   final AchievementRepositoryInterface _repository;
-  
+
   GetAllAchievements(this._repository);
-  
+
   @override
   Stream<Either<Failure, KtSet<Achievement>>> call(NoParams params) {
     return _repository.getAllAchievement();

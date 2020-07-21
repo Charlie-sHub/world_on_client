@@ -4,6 +4,6 @@ import 'package:worldon/domain/tag_management/repository/tag_management_reposito
 
 @LazySingleton(
   as: TagManagementRepositoryInterface,
-  env: Environment.test,
+  env: [Environment.test],
 )
 class MockTagManagementRepository extends Mock implements TagManagementRepositoryInterface {}

@@ -71,7 +71,7 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
             context.bloc<NavigationActorBloc>().add(NavigationActorEvent.profileTapped(none()));
             break;
           default:
-          // Perhaps this should go to an error page
+            // Perhaps this should go to an error page
             context.bloc<NavigationActorBloc>().add(const NavigationActorEvent.mainFeedTapped());
             break;
         }

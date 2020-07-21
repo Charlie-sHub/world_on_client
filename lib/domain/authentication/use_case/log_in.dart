@@ -9,12 +9,13 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
 
 /// [UseCase] for direct World On Login
-@LazySingleton(env: Environment.dev)
+
+@LazySingleton(env: [Environment.dev, Environment.prod])
 class LogIn implements AsyncUseCase<Unit, Params> {
   final AuthenticationRepositoryInterface _repository;
-  
+
   LogIn(this._repository);
-  
+
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
     final user = User.empty().copyWith(

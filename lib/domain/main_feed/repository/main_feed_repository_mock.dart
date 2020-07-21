@@ -4,6 +4,6 @@ import 'package:worldon/domain/main_feed/repository/main_feed_repository_interfa
 
 @LazySingleton(
   as: MainFeedRepositoryInterface,
-  env: Environment.test,
+  env: [Environment.test],
 )
 class MockMainFeedRepository extends Mock implements MainFeedRepositoryInterface {}

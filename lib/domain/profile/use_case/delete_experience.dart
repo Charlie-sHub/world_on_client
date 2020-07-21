@@ -12,7 +12,7 @@ import 'package:worldon/domain/profile/repository/profile_repository_interface.d
 import '../../../injection.dart';
 
 // Maybe move this to Experience management
-@LazySingleton(env: Environment.dev)
+@LazySingleton(env: [Environment.dev, Environment.prod])
 class DeleteExperience implements AsyncUseCase<Unit, Params> {
   final ProfileRepositoryInterface _repository;
 

@@ -8,10 +8,7 @@ import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 
-@LazySingleton(
-  as: ProfileRepositoryInterface,
-  env: Environment.prod,
-)
+@LazySingleton(as: ProfileRepositoryInterface, env: [Environment.prod])
 class ProductionProfileRepository implements ProfileRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> blockUser(int blockedId) {

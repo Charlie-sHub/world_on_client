@@ -8,7 +8,7 @@ import 'package:worldon/domain/tag_management/repository/tag_repository_interfac
 
 import '../../core/use_case/use_case.dart';
 
-@LazySingleton(env: Environment.dev)
+@LazySingleton(env: [Environment.dev, Environment.prod])
 class GetTagsByCreator implements StreamUseCase<KtSet<Tag>, Params> {
   final TagCoreRepositoryInterface _repository;
 

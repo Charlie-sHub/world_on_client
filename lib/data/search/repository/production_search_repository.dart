@@ -10,10 +10,7 @@ import 'package:worldon/domain/core/validation/objects/search_term.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 import 'package:worldon/domain/search/repository/search_repository_interface.dart';
 
-@LazySingleton(
-  as: SearchRepositoryInterface,
-  env: Environment.prod,
-)
+@LazySingleton(as: SearchRepositoryInterface, env: [Environment.prod])
 class ProductionSearchRepository implements SearchRepositoryInterface {
   @override
   Stream<Either<Failure, KtList<Experience>>> searchExperiencesByDifficulty(Difficulty difficulty) {

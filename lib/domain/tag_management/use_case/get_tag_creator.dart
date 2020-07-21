@@ -7,12 +7,12 @@ import 'package:worldon/domain/tag_management/repository/tag_repository_interfac
 
 import '../../core/use_case/use_case.dart';
 
-@LazySingleton(env: Environment.dev)
+@LazySingleton(env: [Environment.dev, Environment.prod])
 class GetTagCreator implements AsyncUseCase<User, Params> {
   final TagCoreRepositoryInterface _repository;
-  
+
   GetTagCreator(this._repository);
-  
+
   @override
   Future<Either<Failure, User>> call(Params params) async {
     return _repository.getCreator(params.id);

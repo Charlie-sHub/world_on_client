@@ -5,10 +5,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/achievement_management/repository/achievement_repository_interface.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 
-@LazySingleton(
-  as: AchievementRepositoryInterface,
-  env: Environment.prod,
-)
+@LazySingleton(as: AchievementRepositoryInterface, env: [Environment.prod])
 class ProductionAchievementRepository implements AchievementRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> awardAchievement({

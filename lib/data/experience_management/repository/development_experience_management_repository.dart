@@ -11,7 +11,7 @@ import 'package:worldon/domain/experience_management/repository/experience_manag
 
 @LazySingleton(
   as: ExperienceManagementRepositoryInterface,
-  env: Environment.dev,
+  env: [Environment.dev],
 )
 class DevelopmentExperienceManagementRepository implements ExperienceManagementRepositoryInterface {
   final _random = Random();
@@ -24,7 +24,7 @@ class DevelopmentExperienceManagementRepository implements ExperienceManagementR
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> editExperience(Experience experience) {
     if (_random.nextBool()) {
@@ -33,7 +33,7 @@ class DevelopmentExperienceManagementRepository implements ExperienceManagementR
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
   Future<Either<Failure, Experience>> getExperience(int id) {
     if (_random.nextBool()) {
@@ -42,7 +42,7 @@ class DevelopmentExperienceManagementRepository implements ExperienceManagementR
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> removeExperience(int id) {
     if (_random.nextBool()) {

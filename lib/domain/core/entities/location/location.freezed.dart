@@ -40,7 +40,7 @@ mixin _$Location {
 abstract class $LocationCopyWith<$Res> {
   factory $LocationCopyWith(Location value, $Res Function(Location) then) =
   _$LocationCopyWithImpl<$Res>;
-  
+
   $Res call({int id,
     String city,
     String country,

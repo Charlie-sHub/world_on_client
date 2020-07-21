@@ -4,10 +4,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/repository/geo_location_repository_interface.dart';
 
-@LazySingleton(
-  as: GeoLocationRepositoryInterface,
-  env: Environment.prod,
-)
+@LazySingleton(as: GeoLocationRepositoryInterface, env: [Environment.prod])
 class ProductionGeoLocationRepository implements GeoLocationRepositoryInterface {
   @override
   Either<Failure, Coordinates> getCurrentLocation() {

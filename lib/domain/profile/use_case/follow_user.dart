@@ -11,7 +11,7 @@ import 'package:worldon/domain/profile/repository/profile_repository_interface.d
 
 import '../../../injection.dart';
 
-@LazySingleton(env: Environment.dev)
+@LazySingleton(env: [Environment.dev, Environment.prod])
 class FollowUser implements AsyncUseCase<Unit, Params> {
   final ProfileRepositoryInterface _repository;
 

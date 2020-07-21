@@ -11,7 +11,7 @@ import 'package:worldon/domain/tag_management/repository/tag_management_reposito
 
 @LazySingleton(
   as: TagManagementRepositoryInterface,
-  env: Environment.dev,
+  env: [Environment.dev],
 )
 class DevelopmentTagManagementRepository implements TagManagementRepositoryInterface {
   final _random = Random();
@@ -24,7 +24,7 @@ class DevelopmentTagManagementRepository implements TagManagementRepositoryInter
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> editTag(Tag tag) {
     if (_random.nextBool()) {
@@ -33,7 +33,7 @@ class DevelopmentTagManagementRepository implements TagManagementRepositoryInter
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
   Future<Either<Failure, Tag>> getTag(int id) {
     if (_random.nextBool()) {
@@ -46,7 +46,7 @@ class DevelopmentTagManagementRepository implements TagManagementRepositoryInter
       return getLeftServerErrorFuture();
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> removeTag(int id) {
     if (_random.nextBool()) {

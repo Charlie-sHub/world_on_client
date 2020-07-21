@@ -112,8 +112,8 @@ class ExperienceCard extends StatelessWidget {
                       // Perhaps also add the functionality to dismiss from the same button, just as with following or unfollowing users
                       color: WorldOnColors.background,
                       onPressed: () => context.bloc<ExperienceCardActorBloc>().add(
-                        ExperienceCardActorEvent.addedExperienceToLog(experience.id),
-                      ),
+                            ExperienceCardActorEvent.addedExperienceToLog(experience.id),
+                          ),
                       child: const Text(
                         "Add to Log",
                         style: TextStyle(

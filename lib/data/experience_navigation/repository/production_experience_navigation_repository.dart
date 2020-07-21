@@ -7,10 +7,7 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_interface.dart';
 
-@LazySingleton(
-  as: ExperienceNavigationRepositoryInterface,
-  env: Environment.prod,
-)
+@LazySingleton(as: ExperienceNavigationRepositoryInterface, env: [Environment.prod])
 class ProductionExperienceNavigationRepository implements ExperienceNavigationRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> finishExperience(int experienceId) {

@@ -4,6 +4,6 @@ import 'package:worldon/domain/achievement_management/repository/achievement_rep
 
 @LazySingleton(
   as: AchievementRepositoryInterface,
-  env: Environment.test,
+  env: [Environment.test],
 )
 class MockAchievementRepository extends Mock implements AchievementRepositoryInterface {}

@@ -4,6 +4,6 @@ import 'package:worldon/domain/profile/repository/profile_repository_interface.d
 
 @LazySingleton(
   as: ProfileRepositoryInterface,
-  env: Environment.test,
+  env: [Environment.test],
 )
 class MockProfileRepository extends Mock implements ProfileRepositoryInterface {}

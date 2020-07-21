@@ -4,6 +4,6 @@ import 'package:worldon/domain/options/repository/local_options_repository_inter
 
 @LazySingleton(
   as: LocalOptionsRepositoryInterface,
-  env: Environment.test,
+  env: [Environment.test],
 )
 class MockLocalOptionsRepository extends Mock implements LocalOptionsRepositoryInterface {}

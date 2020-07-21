@@ -4,6 +4,6 @@ import 'package:worldon/domain/experience_log/repository/experience_log_reposito
 
 @LazySingleton(
   as: ExperienceLogRepositoryInterface,
-  env: Environment.test,
+  env: [Environment.test],
 )
 class MockExperienceLogRepository extends Mock implements ExperienceLogRepositoryInterface {}

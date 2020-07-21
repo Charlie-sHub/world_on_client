@@ -66,17 +66,9 @@ mixin _$AchievementDto {
 
 abstract class $AchievementDtoCopyWith<$Res> {
   factory $AchievementDtoCopyWith(AchievementDto value, $Res Function(AchievementDto) then) = _$AchievementDtoCopyWithImpl<$Res>;
-  $Res call({int id,
-    String name,
-    String description,
-    String imageURL,
-    String type,
-    int requisite,
-    int experiencePoints,
-    UserDto creator,
-    String creationDate,
-    String modificationDate,
-    Set<TagDto> tags});
+
+  $Res call(
+      {int id, String name, String description, String imageURL, String type, int requisite, int experiencePoints, UserDto creator, String creationDate, String modificationDate, Set<TagDto> tags});
 
   $UserDtoCopyWith<$Res> get creator;
 }
@@ -227,7 +219,7 @@ class _$_AchievementDto extends _AchievementDto {
       assert(modificationDate != null),
       assert(tags != null),
       super._();
-  
+
   factory _$_AchievementDto.fromJson(Map<String, dynamic> json) =>
     _$_$_AchievementDtoFromJson(json);
 

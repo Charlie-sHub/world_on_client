@@ -4,6 +4,6 @@ import 'package:worldon/domain/core/repository/geo_location_repository_interface
 
 @LazySingleton(
   as: GeoLocationRepositoryInterface,
-  env: Environment.test,
+  env: [Environment.test],
 )
 class MockGeoLocationRepository extends Mock implements GeoLocationRepositoryInterface {}

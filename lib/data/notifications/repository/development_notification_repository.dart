@@ -17,7 +17,7 @@ import 'package:worldon/domain/notifications/repository/notification_repository_
 
 @LazySingleton(
   as: NotificationRepositoryInterface,
-  env: Environment.dev,
+  env: [Environment.dev],
 )
 class DevelopmentNotificationRepository implements NotificationRepositoryInterface {
   final _random = Random();

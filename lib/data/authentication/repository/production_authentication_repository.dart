@@ -4,10 +4,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/repository/authentication_repository_interface.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 
-@LazySingleton(
-  as: AuthenticationRepositoryInterface,
-  env: Environment.prod,
-)
+@LazySingleton(as: AuthenticationRepositoryInterface, env: [Environment.prod])
 class ProductionAuthenticationRepository implements AuthenticationRepositoryInterface {
   @override
   Future<Option<User>> getLoggedInUser() {

@@ -4,6 +4,6 @@ import 'package:worldon/domain/core/repository/core_repository_interface.dart';
 
 @LazySingleton(
   as: CoreRepositoryInterface,
-  env: Environment.test,
+  env: [Environment.test],
 )
 class MockCoreRepository extends Mock implements CoreRepositoryInterface {}

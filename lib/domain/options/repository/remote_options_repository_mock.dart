@@ -4,6 +4,6 @@ import 'package:worldon/domain/options/repository/remote_options_repository_inte
 
 @LazySingleton(
   as: RemoteOptionsRepositoryInterface,
-  env: Environment.test,
+  env: [Environment.test],
 )
 class MockRemoteOptionsRepository extends Mock implements RemoteOptionsRepositoryInterface {}

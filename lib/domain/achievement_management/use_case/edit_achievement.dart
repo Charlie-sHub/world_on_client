@@ -10,7 +10,7 @@ import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/injection.dart';
 
-@LazySingleton(env: Environment.dev)
+@LazySingleton(env: [Environment.dev, Environment.prod])
 class EditAchievement implements AsyncUseCase<Unit, Params> {
   final AchievementRepositoryInterface _repository;
 

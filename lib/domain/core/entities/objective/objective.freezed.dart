@@ -38,7 +38,7 @@ mixin _$Objective {
 abstract class $ObjectiveCopyWith<$Res> {
   factory $ObjectiveCopyWith(Objective value, $Res Function(Objective) then) =
   _$ObjectiveCopyWithImpl<$Res>;
-  
+
   $Res call({int id,
     EntityDescription description,
     Coordinates coordinates,

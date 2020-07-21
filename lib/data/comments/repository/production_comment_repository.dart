@@ -5,10 +5,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/comments/repository/comment_repository_interface.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 
-@LazySingleton(
-  as: CommentRepositoryInterface,
-  env: Environment.prod,
-)
+@LazySingleton(as: CommentRepositoryInterface, env: [Environment.prod])
 class ProductionCommentRepository implements CommentRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> editComment(Comment comment) {

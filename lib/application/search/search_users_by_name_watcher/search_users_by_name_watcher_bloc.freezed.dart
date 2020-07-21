@@ -28,7 +28,8 @@ class _$SearchUsersByNameWatcherEventTearOff {
   }
 
 // ignore: unused_element
-  _SearchResultsReceived searchResultsReceived(Either<Failure, KtList<User>> failureOrUsers) {
+  _SearchResultsReceived searchResultsReceived(
+      Either<Failure, KtList<User>> failureOrUsers) {
     return _SearchResultsReceived(
       failureOrUsers,
     );
@@ -44,7 +45,8 @@ mixin _$SearchUsersByNameWatcherEvent {
     @required Result watchUsersFoundByNameStarted(SearchTerm name),
     @required Result watchUsersFoundByUsernameStarted(SearchTerm username),
     @required
-        Result searchResultsReceived(Either<Failure, KtList<User>> failureOrUsers),
+        Result searchResultsReceived(
+            Either<Failure, KtList<User>> failureOrUsers),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -153,7 +155,8 @@ class _$_WatchUsersFoundByNameStarted implements _WatchUsersFoundByNameStarted {
     @required Result watchUsersFoundByNameStarted(SearchTerm name),
     @required Result watchUsersFoundByUsernameStarted(SearchTerm username),
     @required
-        Result searchResultsReceived(Either<Failure, KtList<User>> failureOrUsers),
+        Result searchResultsReceived(
+            Either<Failure, KtList<User>> failureOrUsers),
   }) {
     assert(watchUsersFoundByNameStarted != null);
     assert(watchUsersFoundByUsernameStarted != null);
@@ -287,7 +290,8 @@ class _$_WatchUsersFoundByUsernameStarted
     @required Result watchUsersFoundByNameStarted(SearchTerm name),
     @required Result watchUsersFoundByUsernameStarted(SearchTerm username),
     @required
-        Result searchResultsReceived(Either<Failure, KtList<User>> failureOrUsers),
+        Result searchResultsReceived(
+            Either<Failure, KtList<User>> failureOrUsers),
   }) {
     assert(watchUsersFoundByNameStarted != null);
     assert(watchUsersFoundByUsernameStarted != null);
@@ -358,7 +362,6 @@ abstract class _$SearchResultsReceivedCopyWith<$Res> {
   factory _$SearchResultsReceivedCopyWith(_SearchResultsReceived value,
           $Res Function(_SearchResultsReceived) then) =
       __$SearchResultsReceivedCopyWithImpl<$Res>;
-
   $Res call({Either<Failure, KtList<User>> failureOrUsers});
 }
 
@@ -378,7 +381,8 @@ class __$SearchResultsReceivedCopyWithImpl<$Res>
   }) {
     return _then(_SearchResultsReceived(
       failureOrUsers == freezed
-          ? _value.failureOrUsers : failureOrUsers as Either<Failure, KtList<User>>,
+          ? _value.failureOrUsers
+          : failureOrUsers as Either<Failure, KtList<User>>,
     ));
   }
 }
@@ -420,7 +424,8 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
     @required Result watchUsersFoundByNameStarted(SearchTerm name),
     @required Result watchUsersFoundByUsernameStarted(SearchTerm username),
     @required
-        Result searchResultsReceived(Either<Failure, KtList<User>> failureOrUsers),
+        Result searchResultsReceived(
+            Either<Failure, KtList<User>> failureOrUsers),
   }) {
     assert(watchUsersFoundByNameStarted != null);
     assert(watchUsersFoundByUsernameStarted != null);
@@ -478,7 +483,8 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
 }
 
 abstract class _SearchResultsReceived implements SearchUsersByNameWatcherEvent {
-  const factory _SearchResultsReceived(Either<Failure, KtList<User>> failureOrUsers) = _$_SearchResultsReceived;
+  const factory _SearchResultsReceived(
+      Either<Failure, KtList<User>> failureOrUsers) = _$_SearchResultsReceived;
 
   Either<Failure, KtList<User>> get failureOrUsers;
   _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith;
@@ -766,7 +772,6 @@ abstract class _$SearchSuccessCopyWith<$Res> {
   factory _$SearchSuccessCopyWith(
           _SearchSuccess value, $Res Function(_SearchSuccess) then) =
       __$SearchSuccessCopyWithImpl<$Res>;
-
   $Res call({KtList<User> usersFound});
 }
 
@@ -883,7 +888,7 @@ class _$_SearchSuccess implements _SearchSuccess {
 
 abstract class _SearchSuccess implements SearchUsersByNameWatcherState {
   const factory _SearchSuccess(KtList<User> usersFound) = _$_SearchSuccess;
-  
+
   KtList<User> get usersFound;
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith;
 }

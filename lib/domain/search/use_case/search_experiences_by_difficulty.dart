@@ -8,7 +8,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/search/repository/search_repository_interface.dart';
 
-@LazySingleton(env: Environment.dev)
+@LazySingleton(env: [Environment.dev, Environment.prod])
 class SearchExperiencesByDifficulty implements StreamUseCase<KtList<Experience>, Params> {
   final SearchRepositoryInterface _repository;
 
