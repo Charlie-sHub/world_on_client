@@ -1,9 +1,9 @@
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
-import 'package:worldon/application/tag_management/tag_card_actor/tag_card_actor_bloc.dart';
+import 'package:worldon/application/profile/block_actor/block_actor_bloc.dart';
 
-void tagCardListener(BuildContext context, TagCardActorState state) => state.maybeMap(
-      additionFailure: (state) => FlushbarHelper.createError(
+void userCardBlockListener(BuildContext context, BlockActorState state) => state.maybeMap(
+      blockFailure: (state) => FlushbarHelper.createError(
         message: state.failure.maybeMap(
           coreData: (failure) => failure.coreDataFailure.maybeMap(
             serverError: (failure) => failure.errorString,
@@ -12,7 +12,7 @@ void tagCardListener(BuildContext context, TagCardActorState state) => state.may
           orElse: () => "Unknown Error",
         ),
       ).show(context),
-      dismissalFailure: (state) => FlushbarHelper.createError(
+      unBlockFailure: (state) => FlushbarHelper.createError(
         message: state.failure.maybeMap(
           coreData: (failure) => failure.coreDataFailure.maybeMap(
             serverError: (failure) => failure.errorString,

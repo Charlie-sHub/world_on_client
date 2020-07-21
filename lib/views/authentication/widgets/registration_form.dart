@@ -75,7 +75,7 @@ class RegistrationForm extends StatelessWidget {
   }
 
   void onSuccess(BuildContext context) {
-    ExtendedNavigator.of(context).pushReplacementNamed(Routes.mainPage);
+    context.navigator.popAndPush(Routes.mainPage);
     context.bloc<AuthenticationBloc>().add(const AuthenticationEvent.authenticationCheckRequested());
   }
 }
@@ -123,8 +123,8 @@ class UsernameTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       onChanged: (value) => context.bloc<RegistrationFormBloc>().add(
-        RegistrationFormEvent.usernameChanged(value),
-      ),
+            RegistrationFormEvent.usernameChanged(value),
+          ),
       validator: (_) => context.bloc<RegistrationFormBloc>().state.user.username.value.fold(
           (failure) =>
           failure.maybeMap(

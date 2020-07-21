@@ -16,7 +16,7 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<AuthenticationBloc, AuthenticationState>(
       listener: (context, state) => state.maybeMap(
-        authenticationFailure: (_) => ExtendedNavigator.of(context).pushReplacementNamed(Routes.logInPage),
+        authenticationFailure: (_) => context.navigator.popAndPush(Routes.logInPage),
         orElse: () => null,
       ),
       child: BlocProvider(
@@ -76,19 +76,16 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
             break;
         }
       },
-      currentIndex: context
-        .bloc<NavigationActorBloc>()
-        .state
-        .map(
-        mainFeedView: (context) => 0,
-        searchView: (context) => 1,
-        experienceFormView: (context) => 2,
-        navigateExperienceView: (context) => 3,
-        profileView: (context) => 4,
-        // These shouldn't change the selected index though
-        errorView: (context) => 0,
-        notificationsView: (context) => 4,
-      ),
+      currentIndex: context.bloc<NavigationActorBloc>().state.map(
+            mainFeedView: (context) => 0,
+            searchView: (context) => 1,
+            experienceFormView: (context) => 2,
+            navigateExperienceView: (context) => 3,
+            profileView: (context) => 4,
+            // These shouldn't change the selected index though
+            errorView: (context) => 0,
+            notificationsView: (context) => 4,
+          ),
       items: [
         BottomNavigationBarItem(
           icon: FaIcon(FontAwesomeIcons.home),

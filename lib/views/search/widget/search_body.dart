@@ -7,20 +7,21 @@ import 'package:worldon/application/search/search_experiences_by_name_watcher/se
 import 'package:worldon/application/search/search_experiences_by_tags/search_experiences_by_tags_bloc.dart';
 import 'package:worldon/application/search/search_tags_by_name_watcher/search_tags_by_name_watcher_bloc.dart';
 import 'package:worldon/application/search/search_users_by_name_watcher/search_users_by_name_watcher_bloc.dart';
-import 'package:worldon/application/tag_management/tag_card_actor/tag_card_actor_bloc.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/common_functions/experience_card_listener.dart';
-import 'package:worldon/views/core/misc/common_functions/tag_card_listener.dart';
 import 'package:worldon/views/core/misc/string_constants.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
+import 'package:worldon/views/core/widget/cards/experience_card.dart';
+import 'package:worldon/views/core/widget/cards/experience_error_card.dart';
+import 'package:worldon/views/core/widget/cards/tag_card.dart';
+import 'package:worldon/views/core/widget/cards/tag_error_card.dart';
+import 'package:worldon/views/core/widget/cards/user_card.dart';
+import 'package:worldon/views/core/widget/cards/user_error_card.dart';
 import 'package:worldon/views/core/widget/critical_error_display.dart';
-import 'package:worldon/views/core/widget/experience_card.dart';
-import 'package:worldon/views/core/widget/experience_error_card.dart';
-import 'package:worldon/views/core/widget/tag_card.dart';
-import 'package:worldon/views/core/widget/tag_error_card.dart';
 import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
 import 'package:worldon/views/search/widget/search_something.dart';
 
+// TODO: Implement search experiences by difficulty and by tags
 class SearchBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,6 @@ class SearchBody extends StatelessWidget {
         BlocProvider(create: (context) => getIt<SearchExperiencesByDifficultyBloc>()),
         BlocProvider(create: (context) => getIt<SearchExperiencesByTagsBloc>()),
         BlocProvider(create: (context) => getIt<ExperienceCardActorBloc>()),
-        BlocProvider(create: (context) => getIt<TagCardActorBloc>()),
       ],
       child: MultiBlocListener(
         listeners: [
@@ -42,9 +42,6 @@ class SearchBody extends StatelessWidget {
           ),
           const BlocListener<ExperienceCardActorBloc, ExperienceCardActorState>(
             listener: experienceCardListener,
-          ),
-          const BlocListener<TagCardActorBloc, TagCardActorState>(
-            listener: tagCardListener,
           ),
         ],
         child: BlocBuilder<SearchByNameFormBloc, SearchByNameFormState>(
@@ -95,52 +92,12 @@ class SearchBody extends StatelessWidget {
                       height: 52,
                       child: const SearchTabBar(),
                     ),
-                    Expanded(
+                    const Expanded(
                       child: TabBarView(
                         children: [
-                          BlocBuilder<SearchExperiencesByNameWatcherBloc, SearchExperiencesByNameWatcherState>(
-                            builder: (context, state) => state.map(
-                              initial: (_) => SearchSomething(),
-                              searchInProgress: (_) => WorldOnProgressIndicator(),
-                              searchSuccess: (state) => ListView.builder(
-                                padding: const EdgeInsets.all(10),
-                                itemCount: state.experiencesFound.size,
-                                itemBuilder: (context, index) {
-                                  final _experience = state.experiencesFound[index];
-                                  if (_experience.isValid) {
-                                    return ExperienceCard(experience: _experience);
-                                  } else {
-                                    return ExperienceErrorCard(experience: _experience);
-                                  }
-                                },
-                              ),
-                              searchFailure: (state) => CriticalErrorDisplay(failure: state.failure),
-                            ),
-                          ),
-                          Icon(Icons.directions_transit),
-                          BlocBuilder<SearchTagsByNameWatcherBloc, SearchTagsByNameWatcherState>(
-                            builder: (context, state) => state.map(
-                              initial: (_) => SearchSomething(),
-                              searchInProgress: (_) => WorldOnProgressIndicator(),
-                              searchSuccess: (state) => BlocProvider(
-                                create: (context) => getIt<TagCardActorBloc>(),
-                                child: ListView.builder(
-                                  padding: const EdgeInsets.all(10),
-                                  itemCount: state.tagsFound.size,
-                                  itemBuilder: (context, index) {
-                                    final _tag = state.tagsFound[index];
-                                    if (_tag.isValid) {
-                                      return TagCard(tag: _tag);
-                                    } else {
-                                      // Maybe the error cards should be unified into one
-                                      return TagErrorCard(tag: _tag);
-                                    }
-                                  },
-                                ),
-                              ),
-                              searchFailure: (state) => CriticalErrorDisplay(failure: state.failure),
-                            ),
-                          ),
+                          ExperiencesTabView(),
+                          UsersTabView(),
+                          TagsTabView(),
                         ],
                       ),
                     )
@@ -167,6 +124,96 @@ class SearchBody extends StatelessWidget {
             SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(state.searchTerm),
           );
     }
+  }
+}
+
+class UsersTabView extends StatelessWidget {
+  const UsersTabView({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<SearchUsersByNameWatcherBloc, SearchUsersByNameWatcherState>(
+      builder: (context, state) => state.map(
+        initial: (_) => SearchSomething(),
+        searchInProgress: (_) => WorldOnProgressIndicator(),
+        searchSuccess: (state) => ListView.builder(
+          padding: const EdgeInsets.all(10),
+          itemCount: state.usersFound.size,
+          itemBuilder: (context, index) {
+            final _user = state.usersFound[index];
+            if (_user.isValid) {
+              return UserCard(user: _user);
+            } else {
+              return UserErrorCard(user: _user);
+            }
+          },
+        ),
+        searchFailure: (state) => CriticalErrorDisplay(failure: state.failure),
+      ),
+    );
+  }
+}
+
+class TagsTabView extends StatelessWidget {
+  const TagsTabView({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<SearchTagsByNameWatcherBloc, SearchTagsByNameWatcherState>(
+      builder: (context, state) => state.map(
+        initial: (_) => SearchSomething(),
+        searchInProgress: (_) => WorldOnProgressIndicator(),
+        searchSuccess: (state) => ListView.builder(
+          padding: const EdgeInsets.all(10),
+          itemCount: state.tagsFound.size,
+          itemBuilder: (context, index) {
+            final _tag = state.tagsFound[index];
+            if (_tag.isValid) {
+              return TagCard(tag: _tag);
+            } else {
+              // Maybe the error cards should be unified into one
+              return TagErrorCard(tag: _tag);
+            }
+          },
+        ),
+        searchFailure: (state) => CriticalErrorDisplay(failure: state.failure),
+      ),
+    );
+  }
+}
+
+class ExperiencesTabView extends StatelessWidget {
+  const ExperiencesTabView({
+    Key key,
+  }) : super(key: key);
+  
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<SearchExperiencesByNameWatcherBloc, SearchExperiencesByNameWatcherState>(
+      builder: (context, state) =>
+        state.map(
+          initial: (_) => SearchSomething(),
+          searchInProgress: (_) => WorldOnProgressIndicator(),
+          searchSuccess: (state) =>
+            ListView.builder(
+              padding: const EdgeInsets.all(10),
+              itemCount: state.experiencesFound.size,
+              itemBuilder: (context, index) {
+                final _experience = state.experiencesFound[index];
+                if (_experience.isValid) {
+                  return ExperienceCard(experience: _experience);
+                } else {
+                  return ExperienceErrorCard(experience: _experience);
+                }
+              },
+            ),
+          searchFailure: (state) => CriticalErrorDisplay(failure: state.failure),
+        ),
+    );
   }
 }
 

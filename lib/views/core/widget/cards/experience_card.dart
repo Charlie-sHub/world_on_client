@@ -16,6 +16,9 @@ class ExperienceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // TODO: Make the experience card like the Tag card
+    // Meaning a consumer of the ExperienceCardActorBloc and add initialization events and states
+    // To check if the user already has the Experience in its log, if it likes it, etc.
     return Card(
       shape: const RoundedRectangleBorder(),
       child: Padding(

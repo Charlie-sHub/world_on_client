@@ -65,6 +65,8 @@ class BlockActorBloc extends Bloc<BlockActorEvent, BlockActorState> {
     );
   }
 
+  // TODO: check if the user in the card is the logged in user and have a state to show that
+  // So the user can't even attempt to block itself
   Stream<BlockActorState> onInitialized(_Initialized event) async* {
     final _getLoggedInUser = getIt<GetLoggedInUser>();
     final _loggedInUserOption = await _getLoggedInUser(getIt<NoParams>());

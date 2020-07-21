@@ -18,6 +18,7 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
 
   @override
   Future<Option<User>> getLoggedInUser() {
+    /*
     if (_random.nextBool()) {
       return Future.delayed(
         const Duration(milliseconds: 10),
@@ -26,9 +27,14 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
     } else {
       return Future.delayed(
         const Duration(milliseconds: 10),
-          () => none(),
+        () => none(),
       );
     }
+     */
+    return Future.delayed(
+      const Duration(milliseconds: 10),
+      () => some(getValidUser()),
+    );
   }
 
   @override

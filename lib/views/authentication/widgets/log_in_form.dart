@@ -68,7 +68,8 @@ class LogInForm extends StatelessWidget {
   }
 
   void onSuccess(BuildContext context) {
-    ExtendedNavigator.of(context).pushReplacementNamed(Routes.mainPage);
+    // WHy doesn't it replace the login page?
+    context.navigator.popAndPush(Routes.mainPage);
     context.bloc<AuthenticationBloc>().add(const AuthenticationEvent.authenticationCheckRequested());
   }
 }
@@ -81,7 +82,7 @@ class RegisterButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
-      onPressed: () => ExtendedNavigator.of(context).pushNamed(Routes.registrationPage),
+      onPressed: () => context.navigator.push(Routes.registrationPage),
       color: WorldOnColors.background,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(0.0),

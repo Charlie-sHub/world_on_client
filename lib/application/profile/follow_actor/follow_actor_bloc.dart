@@ -6,9 +6,9 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
-import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/profile/use_case/follow_user.dart' as follow_user;
 import 'package:worldon/domain/profile/use_case/un_follow_user.dart' as un_follow_user;
@@ -65,6 +65,8 @@ class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
     );
   }
 
+  // TODO: check if the user in the card is the logged in user and have a state to show that
+  // So the user can't even attempt to follow itself
   Stream<FollowActorState> onInitialized(_Initialized event) async* {
     final _getLoggedInUser = getIt<GetLoggedInUser>();
     final _loggedInUserOption = await _getLoggedInUser(getIt<NoParams>());

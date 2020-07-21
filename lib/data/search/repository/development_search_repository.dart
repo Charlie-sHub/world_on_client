@@ -130,7 +130,9 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
     Either<Failure, KtList<User>> _either;
     if (_random.nextBool()) {
       _either = right(KtList.of(
-        getValidUser(),
+        getValidUser().copyWith(
+          name: Name("Ricardo ${name.getOrCrash()}"),
+        ),
         User.empty(),
         getValidUser().copyWith(
           id: 2,
@@ -154,7 +156,9 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
     Either<Failure, KtList<User>> _either;
     if (_random.nextBool()) {
       _either = right(KtList.of(
-        getValidUser(),
+        getValidUser().copyWith(
+          username: Name("ricky_${username.getOrCrash()}"),
+        ),
         User.empty(),
         getValidUser().copyWith(
           id: 2,

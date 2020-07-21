@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/core/experience_card_actor/experience_card_actor_bloc.dart';
 import 'package:worldon/application/main_feed/main_feed_watcher/main_feed_watcher_bloc.dart';
 import 'package:worldon/views/core/misc/common_functions/experience_card_listener.dart';
+import 'package:worldon/views/core/widget/cards/experience_card.dart';
+import 'package:worldon/views/core/widget/cards/experience_error_card.dart';
 import 'package:worldon/views/core/widget/critical_error_display.dart';
-import 'package:worldon/views/core/widget/experience_card.dart';
-import 'package:worldon/views/core/widget/experience_error_card.dart';
 import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
 
 import '../../../injection.dart';

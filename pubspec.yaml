@@ -58,7 +58,7 @@ dependencies:
   # For ease of serialization
   json_annotation: ^3.0.1
   # For ease of routing
-  auto_route: ^0.6.1
+  auto_route: ^0.6.6
   # For use with Firebase as backend
   # firebase_core: ^0.4.4+3
   # For authentication with Firebase
@@ -69,6 +69,8 @@ dependencies:
   flushbar: ^1.10.4
   # For dynamically resizing text
   auto_size_text: ^2.1.0
+  # For showing the user's experience progression
+  percent_indicator: ^2.1.5
   uuid: ^2.2.0
 
 dev_dependencies:
@@ -85,7 +87,7 @@ dev_dependencies:
   # For Serializing entities to JSON
   json_serializable: ^3.3.0
   # For auto generating the routes
-  auto_route_generator: ^0.6.0
+  auto_route_generator: ^0.6.6
   # For ease of setting the app icon
   flutter_launcher_icons: ^0.7.5
   # For extra icons
