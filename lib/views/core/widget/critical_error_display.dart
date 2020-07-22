@@ -42,6 +42,12 @@ class CriticalErrorDisplay extends StatelessWidget {
               style: const TextStyle(fontSize: 15),
               textAlign: TextAlign.justify,
             ),
+            const SizedBox(height: 50),
+            const Text(
+              "Tap to try again",
+              style: TextStyle(fontSize: 16),
+              textAlign: TextAlign.justify,
+            ),
           ],
         ),
       ),

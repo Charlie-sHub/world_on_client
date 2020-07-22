@@ -12,9 +12,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import '../../../injection.dart';
 
 part 'tag_card_check_bloc.freezed.dart';
-
 part 'tag_card_check_event.dart';
-
 part 'tag_card_check_state.dart';
 
 @Deprecated("The functionality of this bloc has been added back to the TagCardActorBloc")

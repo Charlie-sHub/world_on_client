@@ -7,6 +7,7 @@ import 'package:worldon/application/authentication/authentication/authentication
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/routes/router.gr.dart';
+import 'package:worldon/views/experience_management/widget/experience_creation_form.dart';
 import 'package:worldon/views/main_feed/widget/main_feed_body.dart';
 import 'package:worldon/views/notifications/widget/notifications_body.dart';
 import 'package:worldon/views/search/widget/search_body.dart';
@@ -25,11 +26,10 @@ class MainPage extends StatelessWidget {
           builder: (context, state) => Scaffold(
             appBar: const WorldOnAppBar(),
             body: context.bloc<NavigationActorBloc>().state.map(
-                  mainFeedView: (context) => MainFeedBody(),
-                  searchView: (context) => SearchBody(),
-                  experienceFormView: (context) => const Center(
-                    child: Text("Create Experience"),
-                  ),
+                  // Maybe the MainFeedBody can be a page but still the body of the scaffold
+                  mainFeedView: (context) => const MainFeedBody(),
+                  searchView: (context) => const SearchBody(),
+                  experienceFormView: (context) => ExperienceManagementForm(),
                   navigateExperienceView: (context) => const Center(
                     child: Text("Navigate Experience"),
                   ),
@@ -39,7 +39,7 @@ class MainPage extends StatelessWidget {
                   errorView: (context) => const Center(
                     child: Text("Error"),
                   ),
-                  notificationsView: (context) => NotificationsBody(),
+              notificationsView: (context) => const NotificationsBody(),
                 ),
             bottomNavigationBar: WorldOnBottomNavigationBar(),
           ),
@@ -140,7 +140,7 @@ class WorldOnAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: const <Widget>[
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 5),
-          // TODO: Wrap in bloc that checks if there are new notifications
+          // TODO: Wrap in bloc that checks if there are unseen notifications
           child: NotificationsButton(),
         ),
         Padding(

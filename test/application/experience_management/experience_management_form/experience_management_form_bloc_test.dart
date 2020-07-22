@@ -68,16 +68,15 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<ExperienceManagementFormBloc>(),
-    skip: 0,
-    expect: [ExperienceManagementFormState.initial()],
+    build: () => getIt<ExperienceManagementFormBloc>(),
+    expect: [],
   );
   group(
     TestDescription.testingInitialization,
     () {
       blocTest(
         TestDescription.shouldEmitInitialized,
-        build: () async => getIt<ExperienceManagementFormBloc>(),
+        build: () => getIt<ExperienceManagementFormBloc>(),
         act: (bloc) async => bloc.add(ExperienceManagementFormEvent.initialized(some(experienceToEdit))),
         expect: [
           ExperienceManagementFormState.initial().copyWith(
@@ -88,10 +87,9 @@ void main() {
       );
       blocTest(
         TestDescription.shouldNotEmitInitialized,
-        build: () async => getIt<ExperienceManagementFormBloc>(),
+        build: () => getIt<ExperienceManagementFormBloc>(),
         act: (bloc) async => bloc.add(ExperienceManagementFormEvent.initialized(none())),
-        skip: 0,
-        expect: [ExperienceManagementFormState.initial()],
+        expect: [],
       );
     },
   );
@@ -100,7 +98,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the name",
-        build: () async => getIt<ExperienceManagementFormBloc>(),
+        build: () => getIt<ExperienceManagementFormBloc>(),
         act: (bloc) async {
           bloc.add(ExperienceManagementFormEvent.initialized(none()));
           bloc.add(const ExperienceManagementFormEvent.nameChanged(name));
@@ -115,7 +113,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the description",
-        build: () async => getIt<ExperienceManagementFormBloc>(),
+        build: () => getIt<ExperienceManagementFormBloc>(),
         act: (bloc) async {
           bloc.add(ExperienceManagementFormEvent.initialized(none()));
           bloc.add(const ExperienceManagementFormEvent.descriptionChanged(description));
@@ -130,7 +128,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the coordinates",
-        build: () async => getIt<ExperienceManagementFormBloc>(),
+        build: () => getIt<ExperienceManagementFormBloc>(),
         act: (bloc) async {
           bloc.add(ExperienceManagementFormEvent.initialized(none()));
           bloc.add(const ExperienceManagementFormEvent.coordinatesChanged(longitude: longitude, latitude: latitude));
@@ -148,7 +146,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the difficulty",
-        build: () async => getIt<ExperienceManagementFormBloc>(),
+        build: () => getIt<ExperienceManagementFormBloc>(),
         act: (bloc) async {
           bloc.add(ExperienceManagementFormEvent.initialized(none()));
           bloc.add(const ExperienceManagementFormEvent.difficultyChanged(difficulty));
@@ -163,7 +161,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the primitiveObjectives",
-        build: () async => getIt<ExperienceManagementFormBloc>(),
+        build: () => getIt<ExperienceManagementFormBloc>(),
         act: (bloc) async {
           bloc.add(ExperienceManagementFormEvent.initialized(none()));
           bloc.add(ExperienceManagementFormEvent.objectivesChanged(primitiveObjectives));
@@ -178,7 +176,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the primitiveRewards",
-        build: () async => getIt<ExperienceManagementFormBloc>(),
+        build: () => getIt<ExperienceManagementFormBloc>(),
         act: (bloc) async {
           bloc.add(ExperienceManagementFormEvent.initialized(none()));
           bloc.add(ExperienceManagementFormEvent.rewardsChanged(primitiveRewards));
@@ -193,7 +191,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the tags",
-        build: () async => getIt<ExperienceManagementFormBloc>(),
+        build: () => getIt<ExperienceManagementFormBloc>(),
         act: (bloc) async {
           bloc.add(ExperienceManagementFormEvent.initialized(none()));
           bloc.add(ExperienceManagementFormEvent.tagsChanged(tags));
@@ -213,7 +211,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitSuccess} creating a new Experience",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(getValidUser()));
           when(createExperience.call(any)).thenAnswer((_) async => right(unit));
           return getIt<ExperienceManagementFormBloc>();
@@ -354,7 +352,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitSuccess} editing an Experience",
-        build: () async {
+        build: () {
           when(editExperience.call(any)).thenAnswer((_) async => right(unit));
           return getIt<ExperienceManagementFormBloc>();
         },
@@ -397,7 +395,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitSuccess} creating a new Experience",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(getValidUser()));
           when(createExperience.call(any)).thenAnswer((_) async => left(failure));
           return getIt<ExperienceManagementFormBloc>();
@@ -538,7 +536,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitSuccess} editing an Experience",
-        build: () async {
+        build: () {
           when(editExperience.call(any)).thenAnswer((_) async => left(failure));
           return getIt<ExperienceManagementFormBloc>();
         },
@@ -576,7 +574,7 @@ void main() {
       );
       blocTest(
         TestDescription.shouldResetOption,
-        build: () async {
+        build: () {
           when(editExperience.call(any)).thenAnswer((_) async => left(failure));
           return getIt<ExperienceManagementFormBloc>();
         },

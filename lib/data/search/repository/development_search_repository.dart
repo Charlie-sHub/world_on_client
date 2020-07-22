@@ -16,6 +16,7 @@ import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/search_term.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
+import 'package:worldon/domain/core/validation/objects/user_level.dart';
 import 'package:worldon/domain/search/repository/search_repository_interface.dart';
 
 @LazySingleton(
@@ -136,11 +137,13 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
         User.empty(),
         getValidUser().copyWith(
           id: 2,
+          level: UserLevel(40),
           name: Name("Charles ${name.getOrCrash()}"),
           username: Name("charles"),
         ),
         getValidUser().copyWith(
           id: 3,
+          level: UserLevel(25),
           name: Name("${name.getOrCrash()} Smith"),
           username: Name("smithy"),
         ),
@@ -162,11 +165,13 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
         User.empty(),
         getValidUser().copyWith(
           id: 2,
+          level: UserLevel(60),
           name: Name("Mauricio"),
           username: Name("${username.getOrCrash()}69"),
         ),
         getValidUser().copyWith(
           id: 3,
+          level: UserLevel(70),
           name: Name("Ben"),
           username: Name("The ${username.getOrCrash()} master"),
         ),

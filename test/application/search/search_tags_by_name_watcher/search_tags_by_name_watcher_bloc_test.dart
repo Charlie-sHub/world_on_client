@@ -28,13 +28,12 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<SearchTagsByNameWatcherBloc>(),
-    skip: 0,
-    expect: [const SearchTagsByNameWatcherState.initial()],
+    build: () => getIt<SearchTagsByNameWatcherBloc>(),
+    expect: [],
   );
   blocTest(
     TestDescription.shouldEmitSuccess,
-    build: () async {
+    build: () {
       when(searchTagsByName.call(any)).thenAnswer((_) => createStream(right(tagsFound)));
       return getIt<SearchTagsByNameWatcherBloc>();
     },
@@ -50,7 +49,7 @@ void main() {
   );
   blocTest(
     TestDescription.shouldEmitFailure,
-    build: () async {
+    build: () {
       when(searchTagsByName.call(any)).thenAnswer((_) => createStream(left(failure)));
       return getIt<SearchTagsByNameWatcherBloc>();
     },

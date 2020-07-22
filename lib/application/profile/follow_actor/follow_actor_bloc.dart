@@ -18,6 +18,7 @@ part 'follow_actor_bloc.freezed.dart';
 part 'follow_actor_event.dart';
 part 'follow_actor_state.dart';
 
+// TODO: Move to core
 @injectable
 class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
   FollowActorBloc() : super(const FollowActorState.initial());

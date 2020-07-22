@@ -13,9 +13,23 @@ class _$ExperienceCardActorEventTearOff {
   const _$ExperienceCardActorEventTearOff();
 
 // ignore: unused_element
-  _AddedExperienceToLog addedExperienceToLog(int experienceId) {
+  _Initialized initialized(Experience experience) {
+    return _Initialized(
+      experience,
+    );
+  }
+
+// ignore: unused_element
+  _AddedExperienceToLog addedExperienceToLog(Experience experience) {
     return _AddedExperienceToLog(
-      experienceId,
+      experience,
+    );
+  }
+
+// ignore: unused_element
+  _DismissedExperienceFromLog dismissedExperienceFromLog(Experience experience) {
+    return _DismissedExperienceFromLog(
+      experience,
     );
   }
 }
@@ -24,24 +38,32 @@ class _$ExperienceCardActorEventTearOff {
 const $ExperienceCardActorEvent = _$ExperienceCardActorEventTearOff();
 
 mixin _$ExperienceCardActorEvent {
-  int get experienceId;
+  Experience get experience;
 
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result addedExperienceToLog(int experienceId),
+    @required Result initialized(Experience experience),
+    @required Result addedExperienceToLog(Experience experience),
+    @required Result dismissedExperienceFromLog(Experience experience),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result addedExperienceToLog(int experienceId),
+    Result initialized(Experience experience),
+    Result addedExperienceToLog(Experience experience),
+    Result dismissedExperienceFromLog(Experience experience),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result initialized(_Initialized value),
     @required Result addedExperienceToLog(_AddedExperienceToLog value),
+    @required Result dismissedExperienceFromLog(_DismissedExperienceFromLog value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result initialized(_Initialized value),
     Result addedExperienceToLog(_AddedExperienceToLog value),
+    Result dismissedExperienceFromLog(_DismissedExperienceFromLog value),
     @required Result orElse(),
   });
 
@@ -52,7 +74,10 @@ abstract class $ExperienceCardActorEventCopyWith<$Res> {
   factory $ExperienceCardActorEventCopyWith(ExperienceCardActorEvent value,
           $Res Function(ExperienceCardActorEvent) then) =
       _$ExperienceCardActorEventCopyWithImpl<$Res>;
-  $Res call({int experienceId});
+
+  $Res call({Experience experience});
+
+  $ExperienceCopyWith<$Res> get experience;
 }
 
 class _$ExperienceCardActorEventCopyWithImpl<$Res>
@@ -65,13 +90,143 @@ class _$ExperienceCardActorEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object experienceId = freezed,
+    Object experience = freezed,
   }) {
     return _then(_value.copyWith(
-      experienceId:
-          experienceId == freezed ? _value.experienceId : experienceId as int,
+      experience: experience == freezed ? _value.experience : experience as Experience,
     ));
   }
+
+  @override
+  $ExperienceCopyWith<$Res> get experience {
+    if (_value.experience == null) {
+      return null;
+    }
+    return $ExperienceCopyWith<$Res>(_value.experience, (value) {
+      return _then(_value.copyWith(experience: value));
+    });
+  }
+}
+
+abstract class _$InitializedCopyWith<$Res> implements $ExperienceCardActorEventCopyWith<$Res> {
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+
+  @override
+  $Res call({Experience experience});
+
+  @override
+  $ExperienceCopyWith<$Res> get experience;
+}
+
+class __$InitializedCopyWithImpl<$Res> extends _$ExperienceCardActorEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
+
+  @override
+  _Initialized get _value => super._value as _Initialized;
+
+  @override
+  $Res call({
+    Object experience = freezed,
+  }) {
+    return _then(_Initialized(
+      experience == freezed ? _value.experience : experience as Experience,
+    ));
+  }
+}
+
+class _$_Initialized implements _Initialized {
+  const _$_Initialized(this.experience) : assert(experience != null);
+  
+  @override
+  final Experience experience;
+  
+  @override
+  String toString() {
+    return 'ExperienceCardActorEvent.initialized(experience: $experience)';
+  }
+  
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+      (other is _Initialized &&
+        (identical(other.experience, experience) ||
+          const DeepCollectionEquality()
+            .equals(other.experience, experience)));
+  }
+  
+  @override
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  
+  @override
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+    __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+  
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result initialized(Experience experience),
+    @required Result addedExperienceToLog(Experience experience),
+    @required Result dismissedExperienceFromLog(Experience experience),
+  }) {
+    assert(initialized != null);
+    assert(addedExperienceToLog != null);
+    assert(dismissedExperienceFromLog != null);
+    return initialized(experience);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result initialized(Experience experience),
+    Result addedExperienceToLog(Experience experience),
+    Result dismissedExperienceFromLog(Experience experience),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (initialized != null) {
+      return initialized(experience);
+    }
+    return orElse();
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result initialized(_Initialized value),
+    @required Result addedExperienceToLog(_AddedExperienceToLog value),
+    @required Result dismissedExperienceFromLog(_DismissedExperienceFromLog value),
+  }) {
+    assert(initialized != null);
+    assert(addedExperienceToLog != null);
+    assert(dismissedExperienceFromLog != null);
+    return initialized(this);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result initialized(_Initialized value),
+    Result addedExperienceToLog(_AddedExperienceToLog value),
+    Result dismissedExperienceFromLog(_DismissedExperienceFromLog value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (initialized != null) {
+      return initialized(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Initialized implements ExperienceCardActorEvent {
+  const factory _Initialized(Experience experience) = _$_Initialized;
+  
+  @override
+  Experience get experience;
+  
+  @override
+  _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
 abstract class _$AddedExperienceToLogCopyWith<$Res>
@@ -80,7 +235,10 @@ abstract class _$AddedExperienceToLogCopyWith<$Res>
           $Res Function(_AddedExperienceToLog) then) =
       __$AddedExperienceToLogCopyWithImpl<$Res>;
   @override
-  $Res call({int experienceId});
+  $Res call({Experience experience});
+
+  @override
+  $ExperienceCopyWith<$Res> get experience;
 }
 
 class __$AddedExperienceToLogCopyWithImpl<$Res>
@@ -95,38 +253,37 @@ class __$AddedExperienceToLogCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object experienceId = freezed,
+    Object experience = freezed,
   }) {
     return _then(_AddedExperienceToLog(
-      experienceId == freezed ? _value.experienceId : experienceId as int,
+      experience == freezed ? _value.experience : experience as Experience,
     ));
   }
 }
 
 class _$_AddedExperienceToLog implements _AddedExperienceToLog {
-  const _$_AddedExperienceToLog(this.experienceId)
-      : assert(experienceId != null);
+  const _$_AddedExperienceToLog(this.experience) : assert(experience != null);
 
   @override
-  final int experienceId;
+  final Experience experience;
 
   @override
   String toString() {
-    return 'ExperienceCardActorEvent.addedExperienceToLog(experienceId: $experienceId)';
+    return 'ExperienceCardActorEvent.addedExperienceToLog(experience: $experience)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AddedExperienceToLog &&
-            (identical(other.experienceId, experienceId) ||
+          (identical(other.experience, experience) ||
                 const DeepCollectionEquality()
-                    .equals(other.experienceId, experienceId)));
+                  .equals(other.experience, experience)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceId);
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
   @override
   _$AddedExperienceToLogCopyWith<_AddedExperienceToLog> get copyWith =>
@@ -136,21 +293,27 @@ class _$_AddedExperienceToLog implements _AddedExperienceToLog {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result addedExperienceToLog(int experienceId),
+    @required Result initialized(Experience experience),
+    @required Result addedExperienceToLog(Experience experience),
+    @required Result dismissedExperienceFromLog(Experience experience),
   }) {
+    assert(initialized != null);
     assert(addedExperienceToLog != null);
-    return addedExperienceToLog(experienceId);
+    assert(dismissedExperienceFromLog != null);
+    return addedExperienceToLog(experience);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result addedExperienceToLog(int experienceId),
+    Result initialized(Experience experience),
+    Result addedExperienceToLog(Experience experience),
+    Result dismissedExperienceFromLog(Experience experience),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (addedExperienceToLog != null) {
-      return addedExperienceToLog(experienceId);
+      return addedExperienceToLog(experience);
     }
     return orElse();
   }
@@ -158,16 +321,22 @@ class _$_AddedExperienceToLog implements _AddedExperienceToLog {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result initialized(_Initialized value),
     @required Result addedExperienceToLog(_AddedExperienceToLog value),
+    @required Result dismissedExperienceFromLog(_DismissedExperienceFromLog value),
   }) {
+    assert(initialized != null);
     assert(addedExperienceToLog != null);
+    assert(dismissedExperienceFromLog != null);
     return addedExperienceToLog(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result initialized(_Initialized value),
     Result addedExperienceToLog(_AddedExperienceToLog value),
+    Result dismissedExperienceFromLog(_DismissedExperienceFromLog value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -179,13 +348,146 @@ class _$_AddedExperienceToLog implements _AddedExperienceToLog {
 }
 
 abstract class _AddedExperienceToLog implements ExperienceCardActorEvent {
-  const factory _AddedExperienceToLog(int experienceId) =
+  const factory _AddedExperienceToLog(Experience experience) =
       _$_AddedExperienceToLog;
 
   @override
-  int get experienceId;
+  Experience get experience;
   @override
   _$AddedExperienceToLogCopyWith<_AddedExperienceToLog> get copyWith;
+}
+
+abstract class _$DismissedExperienceFromLogCopyWith<$Res>
+  implements $ExperienceCardActorEventCopyWith<$Res> {
+  factory _$DismissedExperienceFromLogCopyWith(_DismissedExperienceFromLog value,
+    $Res Function(_DismissedExperienceFromLog) then) =
+  __$DismissedExperienceFromLogCopyWithImpl<$Res>;
+  
+  @override
+  $Res call({Experience experience});
+  
+  @override
+  $ExperienceCopyWith<$Res> get experience;
+}
+
+class __$DismissedExperienceFromLogCopyWithImpl<$Res> extends _$ExperienceCardActorEventCopyWithImpl<$Res>
+  implements _$DismissedExperienceFromLogCopyWith<$Res> {
+  __$DismissedExperienceFromLogCopyWithImpl(_DismissedExperienceFromLog _value,
+    $Res Function(_DismissedExperienceFromLog) _then)
+    : super(_value, (v) => _then(v as _DismissedExperienceFromLog));
+  
+  @override
+  _DismissedExperienceFromLog get _value =>
+    super._value as _DismissedExperienceFromLog;
+  
+  @override
+  $Res call({
+    Object experience = freezed,
+  }) {
+    return _then(_DismissedExperienceFromLog(
+      experience == freezed ? _value.experience : experience as Experience,
+    ));
+  }
+}
+
+class _$_DismissedExperienceFromLog implements _DismissedExperienceFromLog {
+  const _$_DismissedExperienceFromLog(this.experience)
+    : assert(experience != null);
+  
+  @override
+  final Experience experience;
+  
+  @override
+  String toString() {
+    return 'ExperienceCardActorEvent.dismissedExperienceFromLog(experience: $experience)';
+  }
+  
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+      (other is _DismissedExperienceFromLog &&
+        (identical(other.experience, experience) ||
+          const DeepCollectionEquality()
+            .equals(other.experience, experience)));
+  }
+  
+  @override
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  
+  @override
+  _$DismissedExperienceFromLogCopyWith<_DismissedExperienceFromLog>
+  get copyWith =>
+    __$DismissedExperienceFromLogCopyWithImpl<
+      _DismissedExperienceFromLog>(this, _$identity);
+  
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result initialized(Experience experience),
+    @required Result addedExperienceToLog(Experience experience),
+    @required Result dismissedExperienceFromLog(Experience experience),
+  }) {
+    assert(initialized != null);
+    assert(addedExperienceToLog != null);
+    assert(dismissedExperienceFromLog != null);
+    return dismissedExperienceFromLog(experience);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result initialized(Experience experience),
+    Result addedExperienceToLog(Experience experience),
+    Result dismissedExperienceFromLog(Experience experience),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dismissedExperienceFromLog != null) {
+      return dismissedExperienceFromLog(experience);
+    }
+    return orElse();
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result initialized(_Initialized value),
+    @required Result addedExperienceToLog(_AddedExperienceToLog value),
+    @required Result dismissedExperienceFromLog(_DismissedExperienceFromLog value),
+  }) {
+    assert(initialized != null);
+    assert(addedExperienceToLog != null);
+    assert(dismissedExperienceFromLog != null);
+    return dismissedExperienceFromLog(this);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result initialized(_Initialized value),
+    Result addedExperienceToLog(_AddedExperienceToLog value),
+    Result dismissedExperienceFromLog(_DismissedExperienceFromLog value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dismissedExperienceFromLog != null) {
+      return dismissedExperienceFromLog(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DismissedExperienceFromLog implements ExperienceCardActorEvent {
+  const factory _DismissedExperienceFromLog(Experience experience) =
+  _$_DismissedExperienceFromLog;
+  
+  @override
+  Experience get experience;
+  
+  @override
+  _$DismissedExperienceFromLogCopyWith<_DismissedExperienceFromLog>
+  get copyWith;
 }
 
 class _$ExperienceCardActorStateTearOff {
@@ -202,6 +504,16 @@ class _$ExperienceCardActorStateTearOff {
   }
 
 // ignore: unused_element
+  _InLog inLog() {
+    return const _InLog();
+  }
+
+// ignore: unused_element
+  _NotInLog notInLog() {
+    return const _NotInLog();
+  }
+
+// ignore: unused_element
   _AdditionSuccess additionSuccess() {
     return const _AdditionSuccess();
   }
@@ -209,6 +521,18 @@ class _$ExperienceCardActorStateTearOff {
 // ignore: unused_element
   _AdditionFailure additionFailure(Failure<dynamic> failure) {
     return _AdditionFailure(
+      failure,
+    );
+  }
+
+// ignore: unused_element
+  _DismissalSuccess dismissalSuccess() {
+    return const _DismissalSuccess();
+  }
+
+// ignore: unused_element
+  _DismissalFailure dismissalFailure(Failure<dynamic> failure) {
+    return _DismissalFailure(
       failure,
     );
   }
@@ -222,30 +546,46 @@ mixin _$ExperienceCardActorState {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result actionInProgress(),
+    @required Result inLog(),
+    @required Result notInLog(),
     @required Result additionSuccess(),
     @required Result additionFailure(Failure<dynamic> failure),
+    @required Result dismissalSuccess(),
+    @required Result dismissalFailure(Failure<dynamic> failure),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result actionInProgress(),
+    Result inLog(),
+    Result notInLog(),
     Result additionSuccess(),
     Result additionFailure(Failure<dynamic> failure),
+    Result dismissalSuccess(),
+    Result dismissalFailure(Failure<dynamic> failure),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
     @required Result actionInProgress(_ActionInProgress value),
+    @required Result inLog(_InLog value),
+    @required Result notInLog(_NotInLog value),
     @required Result additionSuccess(_AdditionSuccess value),
     @required Result additionFailure(_AdditionFailure value),
+    @required Result dismissalSuccess(_DismissalSuccess value),
+    @required Result dismissalFailure(_DismissalFailure value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
     Result actionInProgress(_ActionInProgress value),
+    Result inLog(_InLog value),
+    Result notInLog(_NotInLog value),
     Result additionSuccess(_AdditionSuccess value),
     Result additionFailure(_AdditionFailure value),
+    Result dismissalSuccess(_DismissalSuccess value),
+    Result dismissalFailure(_DismissalFailure value),
     @required Result orElse(),
   });
 }
@@ -301,13 +641,21 @@ class _$_Initial implements _Initial {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result actionInProgress(),
+    @required Result inLog(),
+    @required Result notInLog(),
     @required Result additionSuccess(),
     @required Result additionFailure(Failure<dynamic> failure),
+    @required Result dismissalSuccess(),
+    @required Result dismissalFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
+    assert(inLog != null);
+    assert(notInLog != null);
     assert(additionSuccess != null);
     assert(additionFailure != null);
+    assert(dismissalSuccess != null);
+    assert(dismissalFailure != null);
     return initial();
   }
 
@@ -316,8 +664,12 @@ class _$_Initial implements _Initial {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result actionInProgress(),
+    Result inLog(),
+    Result notInLog(),
     Result additionSuccess(),
     Result additionFailure(Failure<dynamic> failure),
+    Result dismissalSuccess(),
+    Result dismissalFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -332,13 +684,21 @@ class _$_Initial implements _Initial {
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
     @required Result actionInProgress(_ActionInProgress value),
+    @required Result inLog(_InLog value),
+    @required Result notInLog(_NotInLog value),
     @required Result additionSuccess(_AdditionSuccess value),
     @required Result additionFailure(_AdditionFailure value),
+    @required Result dismissalSuccess(_DismissalSuccess value),
+    @required Result dismissalFailure(_DismissalFailure value),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
+    assert(inLog != null);
+    assert(notInLog != null);
     assert(additionSuccess != null);
     assert(additionFailure != null);
+    assert(dismissalSuccess != null);
+    assert(dismissalFailure != null);
     return initial(this);
   }
 
@@ -347,8 +707,12 @@ class _$_Initial implements _Initial {
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
     Result actionInProgress(_ActionInProgress value),
+    Result inLog(_InLog value),
+    Result notInLog(_NotInLog value),
     Result additionSuccess(_AdditionSuccess value),
     Result additionFailure(_AdditionFailure value),
+    Result dismissalSuccess(_DismissalSuccess value),
+    Result dismissalFailure(_DismissalFailure value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -401,13 +765,21 @@ class _$_ActionInProgress implements _ActionInProgress {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result actionInProgress(),
+    @required Result inLog(),
+    @required Result notInLog(),
     @required Result additionSuccess(),
     @required Result additionFailure(Failure<dynamic> failure),
+    @required Result dismissalSuccess(),
+    @required Result dismissalFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
+    assert(inLog != null);
+    assert(notInLog != null);
     assert(additionSuccess != null);
     assert(additionFailure != null);
+    assert(dismissalSuccess != null);
+    assert(dismissalFailure != null);
     return actionInProgress();
   }
 
@@ -416,8 +788,12 @@ class _$_ActionInProgress implements _ActionInProgress {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result actionInProgress(),
+    Result inLog(),
+    Result notInLog(),
     Result additionSuccess(),
     Result additionFailure(Failure<dynamic> failure),
+    Result dismissalSuccess(),
+    Result dismissalFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -432,13 +808,21 @@ class _$_ActionInProgress implements _ActionInProgress {
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
     @required Result actionInProgress(_ActionInProgress value),
+    @required Result inLog(_InLog value),
+    @required Result notInLog(_NotInLog value),
     @required Result additionSuccess(_AdditionSuccess value),
     @required Result additionFailure(_AdditionFailure value),
+    @required Result dismissalSuccess(_DismissalSuccess value),
+    @required Result dismissalFailure(_DismissalFailure value),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
+    assert(inLog != null);
+    assert(notInLog != null);
     assert(additionSuccess != null);
     assert(additionFailure != null);
+    assert(dismissalSuccess != null);
+    assert(dismissalFailure != null);
     return actionInProgress(this);
   }
 
@@ -447,8 +831,12 @@ class _$_ActionInProgress implements _ActionInProgress {
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
     Result actionInProgress(_ActionInProgress value),
+    Result inLog(_InLog value),
+    Result notInLog(_NotInLog value),
     Result additionSuccess(_AdditionSuccess value),
     Result additionFailure(_AdditionFailure value),
+    Result dismissalSuccess(_DismissalSuccess value),
+    Result dismissalFailure(_DismissalFailure value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -461,6 +849,248 @@ class _$_ActionInProgress implements _ActionInProgress {
 
 abstract class _ActionInProgress implements ExperienceCardActorState {
   const factory _ActionInProgress() = _$_ActionInProgress;
+}
+
+abstract class _$InLogCopyWith<$Res> {
+  factory _$InLogCopyWith(_InLog value, $Res Function(_InLog) then) =
+  __$InLogCopyWithImpl<$Res>;
+}
+
+class __$InLogCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res>
+  implements _$InLogCopyWith<$Res> {
+  __$InLogCopyWithImpl(_InLog _value, $Res Function(_InLog) _then)
+    : super(_value, (v) => _then(v as _InLog));
+  
+  @override
+  _InLog get _value => super._value as _InLog;
+}
+
+class _$_InLog implements _InLog {
+  const _$_InLog();
+  
+  @override
+  String toString() {
+    return 'ExperienceCardActorState.inLog()';
+  }
+  
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _InLog);
+  }
+  
+  @override
+  int get hashCode => runtimeType.hashCode;
+  
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result initial(),
+    @required Result actionInProgress(),
+    @required Result inLog(),
+    @required Result notInLog(),
+    @required Result additionSuccess(),
+    @required Result additionFailure(Failure<dynamic> failure),
+    @required Result dismissalSuccess(),
+    @required Result dismissalFailure(Failure<dynamic> failure),
+  }) {
+    assert(initial != null);
+    assert(actionInProgress != null);
+    assert(inLog != null);
+    assert(notInLog != null);
+    assert(additionSuccess != null);
+    assert(additionFailure != null);
+    assert(dismissalSuccess != null);
+    assert(dismissalFailure != null);
+    return inLog();
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result initial(),
+    Result actionInProgress(),
+    Result inLog(),
+    Result notInLog(),
+    Result additionSuccess(),
+    Result additionFailure(Failure<dynamic> failure),
+    Result dismissalSuccess(),
+    Result dismissalFailure(Failure<dynamic> failure),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (inLog != null) {
+      return inLog();
+    }
+    return orElse();
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result initial(_Initial value),
+    @required Result actionInProgress(_ActionInProgress value),
+    @required Result inLog(_InLog value),
+    @required Result notInLog(_NotInLog value),
+    @required Result additionSuccess(_AdditionSuccess value),
+    @required Result additionFailure(_AdditionFailure value),
+    @required Result dismissalSuccess(_DismissalSuccess value),
+    @required Result dismissalFailure(_DismissalFailure value),
+  }) {
+    assert(initial != null);
+    assert(actionInProgress != null);
+    assert(inLog != null);
+    assert(notInLog != null);
+    assert(additionSuccess != null);
+    assert(additionFailure != null);
+    assert(dismissalSuccess != null);
+    assert(dismissalFailure != null);
+    return inLog(this);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result initial(_Initial value),
+    Result actionInProgress(_ActionInProgress value),
+    Result inLog(_InLog value),
+    Result notInLog(_NotInLog value),
+    Result additionSuccess(_AdditionSuccess value),
+    Result additionFailure(_AdditionFailure value),
+    Result dismissalSuccess(_DismissalSuccess value),
+    Result dismissalFailure(_DismissalFailure value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (inLog != null) {
+      return inLog(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InLog implements ExperienceCardActorState {
+  const factory _InLog() = _$_InLog;
+}
+
+abstract class _$NotInLogCopyWith<$Res> {
+  factory _$NotInLogCopyWith(_NotInLog value, $Res Function(_NotInLog) then) =
+  __$NotInLogCopyWithImpl<$Res>;
+}
+
+class __$NotInLogCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res>
+  implements _$NotInLogCopyWith<$Res> {
+  __$NotInLogCopyWithImpl(_NotInLog _value, $Res Function(_NotInLog) _then)
+    : super(_value, (v) => _then(v as _NotInLog));
+  
+  @override
+  _NotInLog get _value => super._value as _NotInLog;
+}
+
+class _$_NotInLog implements _NotInLog {
+  const _$_NotInLog();
+  
+  @override
+  String toString() {
+    return 'ExperienceCardActorState.notInLog()';
+  }
+  
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _NotInLog);
+  }
+  
+  @override
+  int get hashCode => runtimeType.hashCode;
+  
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result initial(),
+    @required Result actionInProgress(),
+    @required Result inLog(),
+    @required Result notInLog(),
+    @required Result additionSuccess(),
+    @required Result additionFailure(Failure<dynamic> failure),
+    @required Result dismissalSuccess(),
+    @required Result dismissalFailure(Failure<dynamic> failure),
+  }) {
+    assert(initial != null);
+    assert(actionInProgress != null);
+    assert(inLog != null);
+    assert(notInLog != null);
+    assert(additionSuccess != null);
+    assert(additionFailure != null);
+    assert(dismissalSuccess != null);
+    assert(dismissalFailure != null);
+    return notInLog();
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result initial(),
+    Result actionInProgress(),
+    Result inLog(),
+    Result notInLog(),
+    Result additionSuccess(),
+    Result additionFailure(Failure<dynamic> failure),
+    Result dismissalSuccess(),
+    Result dismissalFailure(Failure<dynamic> failure),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (notInLog != null) {
+      return notInLog();
+    }
+    return orElse();
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result initial(_Initial value),
+    @required Result actionInProgress(_ActionInProgress value),
+    @required Result inLog(_InLog value),
+    @required Result notInLog(_NotInLog value),
+    @required Result additionSuccess(_AdditionSuccess value),
+    @required Result additionFailure(_AdditionFailure value),
+    @required Result dismissalSuccess(_DismissalSuccess value),
+    @required Result dismissalFailure(_DismissalFailure value),
+  }) {
+    assert(initial != null);
+    assert(actionInProgress != null);
+    assert(inLog != null);
+    assert(notInLog != null);
+    assert(additionSuccess != null);
+    assert(additionFailure != null);
+    assert(dismissalSuccess != null);
+    assert(dismissalFailure != null);
+    return notInLog(this);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result initial(_Initial value),
+    Result actionInProgress(_ActionInProgress value),
+    Result inLog(_InLog value),
+    Result notInLog(_NotInLog value),
+    Result additionSuccess(_AdditionSuccess value),
+    Result additionFailure(_AdditionFailure value),
+    Result dismissalSuccess(_DismissalSuccess value),
+    Result dismissalFailure(_DismissalFailure value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (notInLog != null) {
+      return notInLog(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NotInLog implements ExperienceCardActorState {
+  const factory _NotInLog() = _$_NotInLog;
 }
 
 abstract class _$AdditionSuccessCopyWith<$Res> {
@@ -501,13 +1131,21 @@ class _$_AdditionSuccess implements _AdditionSuccess {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result actionInProgress(),
+    @required Result inLog(),
+    @required Result notInLog(),
     @required Result additionSuccess(),
     @required Result additionFailure(Failure<dynamic> failure),
+    @required Result dismissalSuccess(),
+    @required Result dismissalFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
+    assert(inLog != null);
+    assert(notInLog != null);
     assert(additionSuccess != null);
     assert(additionFailure != null);
+    assert(dismissalSuccess != null);
+    assert(dismissalFailure != null);
     return additionSuccess();
   }
 
@@ -516,8 +1154,12 @@ class _$_AdditionSuccess implements _AdditionSuccess {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result actionInProgress(),
+    Result inLog(),
+    Result notInLog(),
     Result additionSuccess(),
     Result additionFailure(Failure<dynamic> failure),
+    Result dismissalSuccess(),
+    Result dismissalFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -532,13 +1174,21 @@ class _$_AdditionSuccess implements _AdditionSuccess {
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
     @required Result actionInProgress(_ActionInProgress value),
+    @required Result inLog(_InLog value),
+    @required Result notInLog(_NotInLog value),
     @required Result additionSuccess(_AdditionSuccess value),
     @required Result additionFailure(_AdditionFailure value),
+    @required Result dismissalSuccess(_DismissalSuccess value),
+    @required Result dismissalFailure(_DismissalFailure value),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
+    assert(inLog != null);
+    assert(notInLog != null);
     assert(additionSuccess != null);
     assert(additionFailure != null);
+    assert(dismissalSuccess != null);
+    assert(dismissalFailure != null);
     return additionSuccess(this);
   }
 
@@ -547,8 +1197,12 @@ class _$_AdditionSuccess implements _AdditionSuccess {
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
     Result actionInProgress(_ActionInProgress value),
+    Result inLog(_InLog value),
+    Result notInLog(_NotInLog value),
     Result additionSuccess(_AdditionSuccess value),
     Result additionFailure(_AdditionFailure value),
+    Result dismissalSuccess(_DismissalSuccess value),
+    Result dismissalFailure(_DismissalFailure value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -634,13 +1288,21 @@ class _$_AdditionFailure implements _AdditionFailure {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result actionInProgress(),
+    @required Result inLog(),
+    @required Result notInLog(),
     @required Result additionSuccess(),
     @required Result additionFailure(Failure<dynamic> failure),
+    @required Result dismissalSuccess(),
+    @required Result dismissalFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
+    assert(inLog != null);
+    assert(notInLog != null);
     assert(additionSuccess != null);
     assert(additionFailure != null);
+    assert(dismissalSuccess != null);
+    assert(dismissalFailure != null);
     return additionFailure(failure);
   }
 
@@ -649,8 +1311,12 @@ class _$_AdditionFailure implements _AdditionFailure {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result actionInProgress(),
+    Result inLog(),
+    Result notInLog(),
     Result additionSuccess(),
     Result additionFailure(Failure<dynamic> failure),
+    Result dismissalSuccess(),
+    Result dismissalFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -665,13 +1331,21 @@ class _$_AdditionFailure implements _AdditionFailure {
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
     @required Result actionInProgress(_ActionInProgress value),
+    @required Result inLog(_InLog value),
+    @required Result notInLog(_NotInLog value),
     @required Result additionSuccess(_AdditionSuccess value),
     @required Result additionFailure(_AdditionFailure value),
+    @required Result dismissalSuccess(_DismissalSuccess value),
+    @required Result dismissalFailure(_DismissalFailure value),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
+    assert(inLog != null);
+    assert(notInLog != null);
     assert(additionSuccess != null);
     assert(additionFailure != null);
+    assert(dismissalSuccess != null);
+    assert(dismissalFailure != null);
     return additionFailure(this);
   }
 
@@ -680,8 +1354,12 @@ class _$_AdditionFailure implements _AdditionFailure {
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
     Result actionInProgress(_ActionInProgress value),
+    Result inLog(_InLog value),
+    Result notInLog(_NotInLog value),
     Result additionSuccess(_AdditionSuccess value),
     Result additionFailure(_AdditionFailure value),
+    Result dismissalSuccess(_DismissalSuccess value),
+    Result dismissalFailure(_DismissalFailure value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -697,4 +1375,285 @@ abstract class _AdditionFailure implements ExperienceCardActorState {
 
   Failure<dynamic> get failure;
   _$AdditionFailureCopyWith<_AdditionFailure> get copyWith;
+}
+
+abstract class _$DismissalSuccessCopyWith<$Res> {
+  factory _$DismissalSuccessCopyWith(_DismissalSuccess value, $Res Function(_DismissalSuccess) then) =
+  __$DismissalSuccessCopyWithImpl<$Res>;
+}
+
+class __$DismissalSuccessCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res>
+  implements _$DismissalSuccessCopyWith<$Res> {
+  __$DismissalSuccessCopyWithImpl(_DismissalSuccess _value, $Res Function(_DismissalSuccess) _then)
+    : super(_value, (v) => _then(v as _DismissalSuccess));
+  
+  @override
+  _DismissalSuccess get _value => super._value as _DismissalSuccess;
+}
+
+class _$_DismissalSuccess implements _DismissalSuccess {
+  const _$_DismissalSuccess();
+  
+  @override
+  String toString() {
+    return 'ExperienceCardActorState.dismissalSuccess()';
+  }
+  
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _DismissalSuccess);
+  }
+  
+  @override
+  int get hashCode => runtimeType.hashCode;
+  
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result initial(),
+    @required Result actionInProgress(),
+    @required Result inLog(),
+    @required Result notInLog(),
+    @required Result additionSuccess(),
+    @required Result additionFailure(Failure<dynamic> failure),
+    @required Result dismissalSuccess(),
+    @required Result dismissalFailure(Failure<dynamic> failure),
+  }) {
+    assert(initial != null);
+    assert(actionInProgress != null);
+    assert(inLog != null);
+    assert(notInLog != null);
+    assert(additionSuccess != null);
+    assert(additionFailure != null);
+    assert(dismissalSuccess != null);
+    assert(dismissalFailure != null);
+    return dismissalSuccess();
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result initial(),
+    Result actionInProgress(),
+    Result inLog(),
+    Result notInLog(),
+    Result additionSuccess(),
+    Result additionFailure(Failure<dynamic> failure),
+    Result dismissalSuccess(),
+    Result dismissalFailure(Failure<dynamic> failure),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dismissalSuccess != null) {
+      return dismissalSuccess();
+    }
+    return orElse();
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result initial(_Initial value),
+    @required Result actionInProgress(_ActionInProgress value),
+    @required Result inLog(_InLog value),
+    @required Result notInLog(_NotInLog value),
+    @required Result additionSuccess(_AdditionSuccess value),
+    @required Result additionFailure(_AdditionFailure value),
+    @required Result dismissalSuccess(_DismissalSuccess value),
+    @required Result dismissalFailure(_DismissalFailure value),
+  }) {
+    assert(initial != null);
+    assert(actionInProgress != null);
+    assert(inLog != null);
+    assert(notInLog != null);
+    assert(additionSuccess != null);
+    assert(additionFailure != null);
+    assert(dismissalSuccess != null);
+    assert(dismissalFailure != null);
+    return dismissalSuccess(this);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result initial(_Initial value),
+    Result actionInProgress(_ActionInProgress value),
+    Result inLog(_InLog value),
+    Result notInLog(_NotInLog value),
+    Result additionSuccess(_AdditionSuccess value),
+    Result additionFailure(_AdditionFailure value),
+    Result dismissalSuccess(_DismissalSuccess value),
+    Result dismissalFailure(_DismissalFailure value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dismissalSuccess != null) {
+      return dismissalSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DismissalSuccess implements ExperienceCardActorState {
+  const factory _DismissalSuccess() = _$_DismissalSuccess;
+}
+
+abstract class _$DismissalFailureCopyWith<$Res> {
+  factory _$DismissalFailureCopyWith(_DismissalFailure value, $Res Function(_DismissalFailure) then) =
+  __$DismissalFailureCopyWithImpl<$Res>;
+  
+  $Res call({Failure<dynamic> failure});
+  
+  $FailureCopyWith<dynamic, $Res> get failure;
+}
+
+class __$DismissalFailureCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res>
+  implements _$DismissalFailureCopyWith<$Res> {
+  __$DismissalFailureCopyWithImpl(_DismissalFailure _value, $Res Function(_DismissalFailure) _then)
+    : super(_value, (v) => _then(v as _DismissalFailure));
+  
+  @override
+  _DismissalFailure get _value => super._value as _DismissalFailure;
+  
+  @override
+  $Res call({
+    Object failure = freezed,
+  }) {
+    return _then(_DismissalFailure(
+      failure == freezed ? _value.failure : failure as Failure<dynamic>,
+    ));
+  }
+  
+  @override
+  $FailureCopyWith<dynamic, $Res> get failure {
+    if (_value.failure == null) {
+      return null;
+    }
+    return $FailureCopyWith<dynamic, $Res>(_value.failure, (value) {
+      return _then(_value.copyWith(failure: value));
+    });
+  }
+}
+
+class _$_DismissalFailure implements _DismissalFailure {
+  const _$_DismissalFailure(this.failure) : assert(failure != null);
+  
+  @override
+  final Failure<dynamic> failure;
+  
+  @override
+  String toString() {
+    return 'ExperienceCardActorState.dismissalFailure(failure: $failure)';
+  }
+  
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+      (other is _DismissalFailure &&
+        (identical(other.failure, failure) ||
+          const DeepCollectionEquality().equals(other.failure, failure)));
+  }
+  
+  @override
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  
+  @override
+  _$DismissalFailureCopyWith<_DismissalFailure> get copyWith =>
+    __$DismissalFailureCopyWithImpl<_DismissalFailure>(this, _$identity);
+  
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result initial(),
+    @required Result actionInProgress(),
+    @required Result inLog(),
+    @required Result notInLog(),
+    @required Result additionSuccess(),
+    @required Result additionFailure(Failure<dynamic> failure),
+    @required Result dismissalSuccess(),
+    @required Result dismissalFailure(Failure<dynamic> failure),
+  }) {
+    assert(initial != null);
+    assert(actionInProgress != null);
+    assert(inLog != null);
+    assert(notInLog != null);
+    assert(additionSuccess != null);
+    assert(additionFailure != null);
+    assert(dismissalSuccess != null);
+    assert(dismissalFailure != null);
+    return dismissalFailure(failure);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result initial(),
+    Result actionInProgress(),
+    Result inLog(),
+    Result notInLog(),
+    Result additionSuccess(),
+    Result additionFailure(Failure<dynamic> failure),
+    Result dismissalSuccess(),
+    Result dismissalFailure(Failure<dynamic> failure),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dismissalFailure != null) {
+      return dismissalFailure(failure);
+    }
+    return orElse();
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result initial(_Initial value),
+    @required Result actionInProgress(_ActionInProgress value),
+    @required Result inLog(_InLog value),
+    @required Result notInLog(_NotInLog value),
+    @required Result additionSuccess(_AdditionSuccess value),
+    @required Result additionFailure(_AdditionFailure value),
+    @required Result dismissalSuccess(_DismissalSuccess value),
+    @required Result dismissalFailure(_DismissalFailure value),
+  }) {
+    assert(initial != null);
+    assert(actionInProgress != null);
+    assert(inLog != null);
+    assert(notInLog != null);
+    assert(additionSuccess != null);
+    assert(additionFailure != null);
+    assert(dismissalSuccess != null);
+    assert(dismissalFailure != null);
+    return dismissalFailure(this);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result initial(_Initial value),
+    Result actionInProgress(_ActionInProgress value),
+    Result inLog(_InLog value),
+    Result notInLog(_NotInLog value),
+    Result additionSuccess(_AdditionSuccess value),
+    Result additionFailure(_AdditionFailure value),
+    Result dismissalSuccess(_DismissalSuccess value),
+    Result dismissalFailure(_DismissalFailure value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dismissalFailure != null) {
+      return dismissalFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DismissalFailure implements ExperienceCardActorState {
+  const factory _DismissalFailure(Failure<dynamic> failure) =
+  _$_DismissalFailure;
+  
+  Failure<dynamic> get failure;
+  
+  _$DismissalFailureCopyWith<_DismissalFailure> get copyWith;
 }

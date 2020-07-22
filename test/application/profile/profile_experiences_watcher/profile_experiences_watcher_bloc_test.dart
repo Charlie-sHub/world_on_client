@@ -34,16 +34,15 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<ProfileExperiencesWatcherBloc>(),
-    skip: 0,
-    expect: [const ProfileExperiencesWatcherState.initial()],
+    build: () => getIt<ProfileExperiencesWatcherBloc>(),
+    expect: [],
   );
   group(
     "Testing watchExperiencesDoneStarted event",
     () {
       blocTest(
         TestDescription.shouldEmitSuccess,
-        build: () async {
+        build: () {
           when(loadExperiencesDone.call(any)).thenAnswer((_) => createStream(right(experiences)));
           return getIt<ProfileExperiencesWatcherBloc>();
         },
@@ -63,7 +62,7 @@ void main() {
       );
       blocTest(
         TestDescription.shouldEmitFailure,
-        build: () async {
+        build: () {
           when(loadExperiencesDone.call(any)).thenAnswer((_) => createStream(left(failure)));
           return getIt<ProfileExperiencesWatcherBloc>();
         },
@@ -88,7 +87,7 @@ void main() {
     () {
       blocTest(
         TestDescription.shouldEmitSuccess,
-        build: () async {
+        build: () {
           when(loadExperiencesLiked.call(any)).thenAnswer((_) => createStream(right(experiences)));
           return getIt<ProfileExperiencesWatcherBloc>();
         },
@@ -108,7 +107,7 @@ void main() {
       );
       blocTest(
         TestDescription.shouldEmitFailure,
-        build: () async {
+        build: () {
           when(loadExperiencesLiked.call(any)).thenAnswer((_) => createStream(left(failure)));
           return getIt<ProfileExperiencesWatcherBloc>();
         },
@@ -133,7 +132,7 @@ void main() {
     () {
       blocTest(
         TestDescription.shouldEmitSuccess,
-        build: () async {
+        build: () {
           when(loadExperiencesCreated.call(any)).thenAnswer((_) => createStream(right(experiences)));
           return getIt<ProfileExperiencesWatcherBloc>();
         },
@@ -153,7 +152,7 @@ void main() {
       );
       blocTest(
         TestDescription.shouldEmitFailure,
-        build: () async {
+        build: () {
           when(loadExperiencesCreated.call(any)).thenAnswer((_) => createStream(left(failure)));
           return getIt<ProfileExperiencesWatcherBloc>();
         },

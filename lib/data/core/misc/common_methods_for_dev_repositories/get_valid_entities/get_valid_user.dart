@@ -41,25 +41,25 @@ User getValidUser() {
     modificationDate: PastDate(DateTime.now()),
     options: getValidOptions(),
     blockedUsers: {
-      _getUserCarlod(),
+      _getUserCarlos(),
       _getUserJuan(),
     },
     followedUsers: {
       _getUserBenjamin(),
-      _getUserKoji(),
+      getUserKoji(),
     },
     devices: <Device>{},
     systems: <System>{},
     interests: {
-      _getTagFood(),
+      getTagFood(),
     },
     achievements: {
       Achievement.empty().copyWith(
         id: 3,
         name: Name("Excepteur sint"),
         description: EntityDescription("Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris"),
-        creator: _getUserKoji(),
-        tags: TagSet(KtSet.of(_getTagFood())),
+        creator: getUserKoji(),
+        tags: TagSet(KtSet.of(getTagFood())),
       ),
     },
     experiencesDone: {
@@ -74,7 +74,7 @@ Capitalize on low hanging fruit to identify a ballpark value added activity to b
         coordinates: getValidCoordinates(),
         objectives: ObjectiveSet(KtSet.of(getValidObjective())),
         rewards: RewardSet(KtSet.of(getValidReward())),
-        tags: TagSet(KtSet.of(_getTagFood())),
+        tags: TagSet(KtSet.of(getTagFood())),
       ),
     },
     experiencesLiked: {
@@ -85,12 +85,12 @@ Capitalize on low hanging fruit to identify a ballpark value added activity to b
 If the patriarchialist paradigm of narrative holds,
 we have to choose between neocapitalist libertarianism and neodialectic capitalist theory.
 But the main theme of the works of Joyce is the collapse, and some would say the futility, of subdialectic truth."""),
-        creator: _getUserJuan(),
+        creator: getUserKoji(),
         location: Location.empty().copyWith(id: 1),
         coordinates: getValidCoordinates(),
         objectives: ObjectiveSet(KtSet.of(getValidObjective())),
         rewards: RewardSet(KtSet.of(getValidReward())),
-        tags: TagSet(KtSet.of(_getTagFood())),
+        tags: TagSet(KtSet.of(getTagFood())),
       ),
     },
     experiencesToDo: {
@@ -98,26 +98,26 @@ But the main theme of the works of Joyce is the collapse, and some would say the
         id: 2,
         name: Name("Corduroy"),
         description: EntityDescription("Bro ipsum dolor sit amet bail flow method 360 euro 360 betty Whistler brain bucket gapers line saddle shreddin laps hammerhead."),
-        creator: _getUserCarlod(),
+        creator: _getUserCarlos(),
         location: Location.empty().copyWith(id: 1),
         coordinates: getValidCoordinates(),
         objectives: ObjectiveSet(KtSet.of(getValidObjective())),
         rewards: RewardSet(KtSet.of(getValidReward())),
-        tags: TagSet(KtSet.of(_getTagFood())),
+        tags: TagSet(KtSet.of(getTagFood())),
       ),
     },
   );
 }
 
-Tag _getTagFood() {
+Tag getTagFood() {
   return Tag.empty().copyWith(
     id: 5,
     name: Name("Food"),
-    creator: _getUserKoji(),
+    creator: getUserKoji(),
   );
 }
 
-User _getUserKoji() {
+User getUserKoji() {
   return User.empty().copyWith(
     id: 3,
     name: Name("Koji"),
@@ -150,7 +150,7 @@ User _getUserJuan() {
   );
 }
 
-User _getUserCarlod() {
+User _getUserCarlos() {
   return User.empty().copyWith(
     id: 2,
     name: Name("Carlos"),

@@ -28,13 +28,12 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<SearchExperiencesByNameWatcherBloc>(),
-    skip: 0,
-    expect: [const SearchExperiencesByNameWatcherState.initial()],
+    build: () => getIt<SearchExperiencesByNameWatcherBloc>(),
+    expect: [],
   );
   blocTest(
     TestDescription.shouldEmitSuccess,
-    build: () async {
+    build: () {
       when(searchExperiencesByName.call(any)).thenAnswer((_) => createStream(right(experiencesFound)));
       return getIt<SearchExperiencesByNameWatcherBloc>();
     },
@@ -50,7 +49,7 @@ void main() {
   );
   blocTest(
     TestDescription.shouldEmitFailure,
-    build: () async {
+    build: () {
       when(searchExperiencesByName.call(any)).thenAnswer((_) => createStream(left(failure)));
       return getIt<SearchExperiencesByNameWatcherBloc>();
     },

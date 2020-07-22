@@ -35,16 +35,15 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<TagManagementFormBloc>(),
-    skip: 0,
-    expect: [TagManagementFormState.initial()],
+    build: () => getIt<TagManagementFormBloc>(),
+    expect: [],
   );
   group(
     TestDescription.testingInitialization,
     () {
       blocTest(
         TestDescription.shouldEmitInitialized,
-        build: () async => getIt<TagManagementFormBloc>(),
+        build: () => getIt<TagManagementFormBloc>(),
         act: (bloc) async => bloc.add(
           TagManagementFormEvent.initialized(some(tagToEdit)),
         ),
@@ -57,16 +56,15 @@ void main() {
       );
       blocTest(
         TestDescription.shouldNotEmitInitialized,
-        build: () async => getIt<TagManagementFormBloc>(),
+        build: () => getIt<TagManagementFormBloc>(),
         act: (bloc) async => bloc.add(TagManagementFormEvent.initialized(none())),
-        skip: 0,
-        expect: [TagManagementFormState.initial()],
+        expect: [],
       );
     },
   );
   blocTest(
     "${TestDescription.shouldEmitUpdated} with the name",
-    build: () async => getIt<TagManagementFormBloc>(),
+    build: () => getIt<TagManagementFormBloc>(),
     act: (bloc) async {
       bloc.add(TagManagementFormEvent.initialized(none()));
       bloc.add(const TagManagementFormEvent.nameChanged(name));
@@ -85,7 +83,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitSuccess} creating a new Tag",
-        build: () async {
+        build: () {
           when(createTag.call(any)).thenAnswer((_) async => right(unit));
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(creator));
           return getIt<TagManagementFormBloc>();
@@ -132,7 +130,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitSuccess} editing a Tag",
-        build: () async {
+        build: () {
           when(editTag.call(any)).thenAnswer((_) async => right(unit));
           return getIt<TagManagementFormBloc>();
         },
@@ -180,7 +178,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitFailure} creating a new Tag",
-        build: () async {
+        build: () {
           when(createTag.call(any)).thenAnswer((_) async => left(failure));
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(creator));
           return getIt<TagManagementFormBloc>();
@@ -230,7 +228,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitFailure} editing a Tag",
-        build: () async {
+        build: () {
           when(editTag.call(any)).thenAnswer((_) async => left(failure));
           return getIt<TagManagementFormBloc>();
         },

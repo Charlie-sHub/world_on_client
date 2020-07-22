@@ -33,6 +33,9 @@ abstract class User implements _$User {
     @required PastDate birthday,
     @required EntityDescription description,
     @required String imageURL,
+    // TODO: Make levels entities
+    // To hold the points between levels
+    // Or investigate how leveling systems are usually implemented.
     @required UserLevel level,
     @required ExperiencePoints experiencePoints,
     @required bool privacy,
@@ -86,20 +89,20 @@ abstract class User implements _$User {
 
   Option<ValueFailure<dynamic>> get failureOption {
     return name.failureOrUnit
-      .andThen(username.failureOrUnit)
-      .andThen(password.failureOrUnit)
-      .andThen(email.failureOrUnit)
-      .andThen(birthday.failureOrUnit)
-      .andThen(description.failureOrUnit)
-      .andThen(level.failureOrUnit)
-      .andThen(experiencePoints.failureOrUnit)
-      .andThen(lastLogin.failureOrUnit)
-      .andThen(creationDate.failureOrUnit)
-      .andThen(modificationDate.failureOrUnit)
-      .fold(
-        (failure) => some(failure),
-        (_) => none(),
-    );
+        .andThen(username.failureOrUnit)
+        .andThen(password.failureOrUnit)
+        .andThen(email.failureOrUnit)
+        .andThen(birthday.failureOrUnit)
+        .andThen(description.failureOrUnit)
+        .andThen(level.failureOrUnit)
+        .andThen(experiencePoints.failureOrUnit)
+        .andThen(lastLogin.failureOrUnit)
+        .andThen(creationDate.failureOrUnit)
+        .andThen(modificationDate.failureOrUnit)
+        .fold(
+          (failure) => some(failure),
+          (_) => none(),
+        );
   }
 
   Either<ValueFailure<dynamic>, Unit> get failureOrUnit {

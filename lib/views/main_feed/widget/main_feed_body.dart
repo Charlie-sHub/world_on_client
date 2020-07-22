@@ -11,6 +11,8 @@ import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
 import '../../../injection.dart';
 
 class MainFeedBody extends StatelessWidget {
+  const MainFeedBody({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -33,29 +35,34 @@ class MainFeedBody extends StatelessWidget {
       ),
     );
   }
-
+  
   Widget onBuild(BuildContext context, MainFeedWatcherState state) => state.map(
-        initial: (_) => Container(),
-        loadInProgress: (_) => WorldOnProgressIndicator(),
-        loadSuccess: (state) => RefreshIndicator(
-          onRefresh: () async => context.bloc<MainFeedWatcherBloc>().add(
-                const MainFeedWatcherEvent.watchMainFeedStarted(),
-              ),
-          child: ListView.builder(
-            padding: const EdgeInsets.all(10),
-            itemCount: state.experiences.size,
-            itemBuilder: (context, index) {
-              final _experience = state.experiences[index];
-              if (_experience.isValid) {
-                return ExperienceCard(experience: _experience);
-              } else {
-                return ExperienceErrorCard(experience: _experience);
-              }
-            },
+    initial: (_) => Container(),
+    loadInProgress: (_) => WorldOnProgressIndicator(),
+    loadSuccess: (state) => RefreshIndicator(
+      onRefresh: () async => context.bloc<MainFeedWatcherBloc>().add(
+        const MainFeedWatcherEvent.watchMainFeedStarted(),
+      ),
+      child: ListView.builder(
+        padding: const EdgeInsets.all(10),
+        itemCount: state.experiences.size,
+        itemBuilder: (context, index) {
+          final _experience = state.experiences[index];
+          if (_experience.isValid) {
+            return ExperienceCard(experience: _experience);
+          } else {
+            return ExperienceErrorCard(experience: _experience);
+          }
+        },
+      ),
+    ),
+    loadFailure: (state) =>
+      InkWell(
+        onTap: () async =>
+          context.bloc<MainFeedWatcherBloc>().add(
+            const MainFeedWatcherEvent.watchMainFeedStarted(),
           ),
-        ),
-        // TODO: figure a way to make it refresh the state
-        // So the main feed tries again or the search searches again, etc.
-        loadFailure: (state) => CriticalErrorDisplay(failure: state.failure),
-      );
+        child: CriticalErrorDisplay(failure: state.failure),
+      ),
+  );
 }

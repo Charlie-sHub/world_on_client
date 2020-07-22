@@ -24,9 +24,8 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<UserActorBloc>(),
-    skip: 0,
-    expect: [const UserActorState.initial()],
+    build: () => getIt<UserActorBloc>(),
+    expect: [],
   );
   group(
     TestDescription.deleteEventTests,
@@ -34,7 +33,7 @@ void main() {
       const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
       blocTest(
         TestDescription.shouldEmitSuccess,
-        build: () async {
+        build: () {
           when(deleteUser.call(any)).thenAnswer((_) async => right(unit));
           return getIt<UserActorBloc>();
         },
@@ -50,7 +49,7 @@ void main() {
       );
       blocTest(
         TestDescription.shouldEmitFailure,
-        build: () async {
+        build: () {
           when(deleteUser.call(any)).thenAnswer((_) async => left(failure));
           return getIt<UserActorBloc>();
         },

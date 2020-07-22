@@ -26,13 +26,12 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<ExperienceLogWatcherBloc>(),
-    skip: 0,
-    expect: [const ExperienceLogWatcherState.initial()],
+    build: () => getIt<ExperienceLogWatcherBloc>(),
+    expect: [],
   );
   blocTest(
     TestDescription.shouldEmitSuccess,
-    build: () async {
+    build: () {
       when(loadUserLog.call(any)).thenAnswer((realInvocation) => createStream(right(experienceSet)));
       return getIt<ExperienceLogWatcherBloc>();
     },
@@ -48,7 +47,7 @@ void main() {
   );
   blocTest(
     TestDescription.shouldEmitFailure,
-    build: () async {
+    build: () {
       when(loadUserLog.call(any)).thenAnswer((realInvocation) => createStream(left(failure)));
       return getIt<ExperienceLogWatcherBloc>();
     },

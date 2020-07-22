@@ -75,8 +75,7 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
 
   Future<dynamic> pushLogInPage() => push<dynamic>(Routes.logInPage);
 
-  Future<dynamic> pushRegistrationPage() =>
-    push<dynamic>(Routes.registrationPage);
-  
+  Future<dynamic> pushRegistrationPage() => push<dynamic>(Routes.registrationPage);
+
   Future<dynamic> pushMainPage() => push<dynamic>(Routes.mainPage);
 }

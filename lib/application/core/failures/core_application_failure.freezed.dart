@@ -49,13 +49,12 @@ mixin _$CoreApplicationFailure<T> {
 }
 
 abstract class $CoreApplicationFailureCopyWith<T, $Res> {
-  factory $CoreApplicationFailureCopyWith(CoreApplicationFailure<T> value,
-    $Res Function(CoreApplicationFailure<T>) then) =
-  _$CoreApplicationFailureCopyWithImpl<T, $Res>;
+  factory $CoreApplicationFailureCopyWith(CoreApplicationFailure<T> value, $Res Function(CoreApplicationFailure<T>) then) = _$CoreApplicationFailureCopyWithImpl<T, $Res>;
   $Res call({String errorString});
 }
 
-class _$CoreApplicationFailureCopyWithImpl<T, $Res> implements $CoreApplicationFailureCopyWith<T, $Res> {
+class _$CoreApplicationFailureCopyWithImpl<T, $Res>
+  implements $CoreApplicationFailureCopyWith<T, $Res> {
   _$CoreApplicationFailureCopyWithImpl(this._value, this._then);
 
   final CoreApplicationFailure<T> _value;

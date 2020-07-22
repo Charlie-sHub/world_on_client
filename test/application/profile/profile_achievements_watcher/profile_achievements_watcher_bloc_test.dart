@@ -28,13 +28,12 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<ProfileAchievementsWatcherBloc>(),
-    skip: 0,
-    expect: [const ProfileAchievementsWatcherState.initial()],
+    build: () => getIt<ProfileAchievementsWatcherBloc>(),
+    expect: [],
   );
   blocTest(
     TestDescription.shouldEmitSuccess,
-    build: () async {
+    build: () {
       when(loadUserAchievements.call(any)).thenAnswer((realInvocation) => createStream(right(achievements)));
       return getIt<ProfileAchievementsWatcherBloc>();
     },
@@ -50,7 +49,7 @@ void main() {
   );
   blocTest(
     TestDescription.shouldEmitFailure,
-    build: () async {
+    build: () {
       when(loadUserAchievements.call(any)).thenAnswer((realInvocation) => createStream(left(failure)));
       return getIt<ProfileAchievementsWatcherBloc>();
     },

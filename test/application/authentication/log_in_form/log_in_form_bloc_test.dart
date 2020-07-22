@@ -29,16 +29,15 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<LogInFormBloc>(),
-    skip: 0,
-    expect: [LogInFormState.initial()],
+    build: () => getIt<LogInFormBloc>(),
+    expect: [],
   );
   group(
     TestDescription.groupOnSuccess,
     () {
       blocTest(
         "${TestDescription.shouldEmitSuccess} Logging in normally",
-        build: () async {
+        build: () {
           when(logIn.call(any)).thenAnswer((_) async => right(unit));
           return getIt<LogInFormBloc>();
         },
@@ -71,7 +70,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitSuccess} Logging in with Google",
-        build: () async {
+        build: () {
           when(logInGoogle.call(any)).thenAnswer((_) async => right(unit));
           return getIt<LogInFormBloc>();
         },
@@ -106,7 +105,7 @@ void main() {
   );
   blocTest(
     "${TestDescription.shouldEmitFailure} Logging in normally",
-    build: () async {
+    build: () {
       when(logIn.call(any)).thenAnswer((_) async => left(failure));
       return getIt<LogInFormBloc>();
     },

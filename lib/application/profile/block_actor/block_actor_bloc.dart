@@ -18,6 +18,7 @@ part 'block_actor_bloc.freezed.dart';
 part 'block_actor_event.dart';
 part 'block_actor_state.dart';
 
+// TODO: Move to core
 @injectable
 class BlockActorBloc extends Bloc<BlockActorEvent, BlockActorState> {
   BlockActorBloc() : super(const BlockActorState.initial());

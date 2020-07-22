@@ -35,13 +35,12 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<BlockedWatcherBloc>(),
-    skip: 0,
-    expect: [const BlockedWatcherState.initial()],
+    build: () => getIt<BlockedWatcherBloc>(),
+    expect: [],
   );
   blocTest(
     TestDescription.shouldEmitSuccess,
-    build: () async {
+    build: () {
       when(loadBlockedUsers.call(any)).thenAnswer((realInvocation) => createStream(right(usersBlocked)));
       return getIt<BlockedWatcherBloc>();
     },
@@ -57,7 +56,7 @@ void main() {
   );
   blocTest(
     TestDescription.shouldEmitFailure,
-    build: () async {
+    build: () {
       when(loadBlockedUsers.call(any)).thenAnswer((realInvocation) => createStream(left(failure)));
       return getIt<BlockedWatcherBloc>();
     },

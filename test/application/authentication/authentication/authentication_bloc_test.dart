@@ -24,13 +24,12 @@ void main() {
   );
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<AuthenticationBloc>(),
-    skip: 0,
-    expect: [const AuthenticationState.initial()],
+    build: () => getIt<AuthenticationBloc>(),
+    expect: [],
   );
   blocTest(
     "Should emit unAuthenticated",
-    build: () async {
+    build: () {
       when(logOut.call(getIt<NoParams>())).thenAnswer((_) async => right(unit));
       return getIt<AuthenticationBloc>();
     },
@@ -43,7 +42,7 @@ void main() {
     () {
       blocTest(
         "Should emit authenticated",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(getIt<NoParams>())).thenAnswer((_) async => some(getValidUser()));
           return getIt<AuthenticationBloc>();
         },
@@ -53,7 +52,7 @@ void main() {
       );
       blocTest(
         "Should emit unAuthenticated",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(getIt<NoParams>())).thenAnswer((_) async => none());
           return getIt<AuthenticationBloc>();
         },

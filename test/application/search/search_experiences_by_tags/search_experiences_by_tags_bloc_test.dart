@@ -31,13 +31,12 @@ void main() {
   const serverFailure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<SearchExperiencesByTagsBloc>(),
-    skip: 0,
-    expect: [const SearchExperiencesByTagsState.initial()],
+    build: () => getIt<SearchExperiencesByTagsBloc>(),
+    expect: [],
   );
   blocTest(
     TestDescription.shouldEmitSuccess,
-    build: () async {
+    build: () {
       when(searchExperiencesByTags.call(any)).thenAnswer((_) => createStream(right(experiencesFound)));
       return getIt<SearchExperiencesByTagsBloc>();
     },
@@ -56,7 +55,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitFailure} with serverFailure",
-        build: () async {
+        build: () {
           when(searchExperiencesByTags.call(any)).thenAnswer((_) => createStream(left(serverFailure)));
           return getIt<SearchExperiencesByTagsBloc>();
         },
@@ -72,7 +71,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitFailure} with valueFailure",
-        build: () async => getIt<SearchExperiencesByTagsBloc>(),
+        build: () => getIt<SearchExperiencesByTagsBloc>(),
         act: (bloc) async => bloc.add(SearchExperiencesByTagsEvent.submitted(emptyTagSet)),
         verify: (_) async => verifyNoMoreInteractions(searchExperiencesByTags),
         expect: [

@@ -23,16 +23,15 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<ExperienceManagementActorBloc>(),
-    skip: 0,
-    expect: [const ExperienceManagementActorState.initial()],
+    build: () => getIt<ExperienceManagementActorBloc>(),
+    expect: [],
   );
   group(
     TestDescription.deleteEventTests,
     () {
       blocTest(
         TestDescription.shouldEmitSuccess,
-        build: () async {
+        build: () {
           when(deleteExperience.call(any)).thenAnswer((_) async => right(unit));
           return getIt<ExperienceManagementActorBloc>();
         },
@@ -49,7 +48,7 @@ void main() {
 
       blocTest(
         TestDescription.shouldEmitFailure,
-        build: () async {
+        build: () {
           when(deleteExperience.call(any)).thenAnswer((_) async => left(failure));
           return getIt<ExperienceManagementActorBloc>();
         },

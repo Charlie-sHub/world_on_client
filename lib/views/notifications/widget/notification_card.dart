@@ -41,7 +41,7 @@ class NotificationCard extends StatelessWidget {
               ),
             ),
           ),
-          // Ideally this would be a detected gesture and not a button, but that's not a priority right now
+          // Ideally this would be a detected gesture such as swipe left and not a button, but that's not a priority right now
           Padding(
             padding: const EdgeInsets.all(7),
             child: IconButton(
@@ -50,6 +50,7 @@ class NotificationCard extends StatelessWidget {
                 size: 30,
               ),
               color: WorldOnColors.red,
+              // TODO: Make the card destroy itself
               onPressed: () => context.bloc<NotificationActorBloc>().add(NotificationActorEvent.deleted(notification)),
             ),
           ),

@@ -126,16 +126,15 @@ class UsernameTextField extends StatelessWidget {
             RegistrationFormEvent.usernameChanged(value),
           ),
       validator: (_) => context.bloc<RegistrationFormBloc>().state.user.username.value.fold(
-          (failure) =>
-          failure.maybeMap(
-            emptyString: (_) => "The username can't be empty",
-            multiLineString: (_) => "The username can't be more than one line",
-            stringExceedsLength: (_) => "The username is too long",
-            stringWithInvalidCharacters: (_) => "The username has invalid characters",
-            orElse: () => StringConst.unknownError,
+            (failure) => failure.maybeMap(
+              emptyString: (_) => "The username can't be empty",
+              multiLineString: (_) => "The username can't be more than one line",
+              stringExceedsLength: (_) => "The username is too long",
+              stringWithInvalidCharacters: (_) => "The username has invalid characters",
+              orElse: () => StringConst.unknownError,
+            ),
+            (_) => null,
           ),
-          (_) => null,
-      ),
       autocorrect: false,
       decoration: InputDecoration(
         labelText: "Username",
@@ -351,7 +350,7 @@ class RegisterButton extends StatelessWidget {
       ),
       color: WorldOnColors.primary,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(0.0),
+        borderRadius: BorderRadius.circular(0),
         side: const BorderSide(color: WorldOnColors.primary),
       ),
       child: const Text(

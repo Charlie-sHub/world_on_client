@@ -26,6 +26,7 @@ abstract class Experience implements _$Experience {
   const factory Experience({
     // TODO: Add like and dislike counters
     int id,
+    // TODO: Refactor name to title
     @required Name name,
     @required EntityDescription description,
     @required Set<String> imageURLs,

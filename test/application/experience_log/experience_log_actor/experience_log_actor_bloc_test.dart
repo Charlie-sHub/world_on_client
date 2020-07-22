@@ -23,16 +23,15 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<ExperienceLogActorBloc>(),
-    skip: 0,
-    expect: [const ExperienceLogActorState.initial()],
+    build: () => getIt<ExperienceLogActorBloc>(),
+    expect: [],
   );
   group(
     "Dismiss experience from log event tests",
     () {
       blocTest(
         TestDescription.shouldEmitSuccess,
-        build: () async {
+        build: () {
           when(dismissExperience.call(any)).thenAnswer((_) async => right(unit));
           return getIt<ExperienceLogActorBloc>();
         },
@@ -48,7 +47,7 @@ void main() {
       );
       blocTest(
         TestDescription.shouldEmitFailure,
-        build: () async {
+        build: () {
           when(dismissExperience.call(any)).thenAnswer((_) async => left(failure));
           return getIt<ExperienceLogActorBloc>();
         },

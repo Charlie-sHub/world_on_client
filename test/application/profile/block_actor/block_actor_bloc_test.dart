@@ -38,16 +38,15 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<BlockActorBloc>(),
-    skip: 0,
-    expect: [const BlockActorState.initial()],
+    build: () => getIt<BlockActorBloc>(),
+    expect: [],
   );
   group(
     TestDescription.testingInitialization,
     () {
       blocTest(
         "Should emit blocked",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(loggedInUser));
           return getIt<BlockActorBloc>();
         },
@@ -60,7 +59,7 @@ void main() {
       );
       blocTest(
         "Should emit notBlocked",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(loggedInUser));
           return getIt<BlockActorBloc>();
         },
@@ -78,7 +77,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitSuccess} by un-blocking",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(loggedInUser));
           when(unBlockUser.call(any)).thenAnswer((_) async => right(unit));
           return getIt<BlockActorBloc>();
@@ -102,7 +101,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitSuccess} by blocking",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(loggedInUser));
           when(blockUser.call(any)).thenAnswer((_) async => right(unit));
           return getIt<BlockActorBloc>();
@@ -131,7 +130,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitFailure} by un-blocking",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(loggedInUser));
           when(unBlockUser.call(any)).thenAnswer((_) async => left(failure));
           return getIt<BlockActorBloc>();
@@ -154,7 +153,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitFailure} by blocking",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(loggedInUser));
           when(blockUser.call(any)).thenAnswer((_) async => left(failure));
           return getIt<BlockActorBloc>();
@@ -177,7 +176,7 @@ void main() {
       );
       blocTest(
         TestDescription.throwUnAuthenticated,
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
           return getIt<BlockActorBloc>();
         },

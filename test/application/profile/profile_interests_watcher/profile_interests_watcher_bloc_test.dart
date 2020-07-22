@@ -28,13 +28,12 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<ProfileInterestsWatcherBloc>(),
-    skip: 0,
-    expect: [const ProfileInterestsWatcherState.initial()],
+    build: () => getIt<ProfileInterestsWatcherBloc>(),
+    expect: [],
   );
   blocTest(
     TestDescription.shouldEmitSuccess,
-    build: () async {
+    build: () {
       when(loadUserInterests.call(any)).thenAnswer((realInvocation) => createStream(right(interests)));
       return getIt<ProfileInterestsWatcherBloc>();
     },
@@ -50,7 +49,7 @@ void main() {
   );
   blocTest(
     TestDescription.shouldEmitFailure,
-    build: () async {
+    build: () {
       when(loadUserInterests.call(any)).thenAnswer((realInvocation) => createStream(left(failure)));
       return getIt<ProfileInterestsWatcherBloc>();
     },

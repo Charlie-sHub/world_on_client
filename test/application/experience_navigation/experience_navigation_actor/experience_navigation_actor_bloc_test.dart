@@ -59,16 +59,15 @@ void main() {
   );
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<ExperienceNavigationActorBloc>(),
-    skip: 0,
-    expect: [ExperienceNavigationActorState.initial()],
+    build: () => getIt<ExperienceNavigationActorBloc>(),
+    expect: [],
   );
   group(
     TestDescription.testingInitialization,
     () {
       blocTest(
         TestDescription.shouldEmitInitialized,
-        build: () async {
+        build: () {
           when(fillObjectiveTracker.call(any)).thenAnswer((_) => right(unFinishedObjectiveTracker));
           when(loadSurroundingExperiences.call(any)).thenAnswer((_) async => right(surroundingExperiences));
           when(getCurrentLocation.call(any)).thenAnswer((_) => right(currentLocation));
@@ -91,7 +90,7 @@ void main() {
       );
       blocTest(
         TestDescription.shouldNotEmitInitialized,
-        build: () async => getIt<ExperienceNavigationActorBloc>(),
+        build: () => getIt<ExperienceNavigationActorBloc>(),
         act: (bloc) async => bloc.add(ExperienceNavigationActorEvent.initialized(none())),
         skip: 0,
         expect: [ExperienceNavigationActorState.initial()],
@@ -104,7 +103,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitUpdated} with an objective accomplished and the Experience finished",
-        build: () async {
+        build: () {
           // when(accomplishObjective.call(any)).thenAnswer((_) => right(true));
           when(fillObjectiveTracker.call(any)).thenAnswer((_) => right(unFinishedObjectiveTracker));
           when(getCurrentLocation.call(any)).thenAnswer((_) => right(currentLocation));
@@ -164,7 +163,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} when liking an experience",
-        build: () async {
+        build: () {
           when(likeExperience.call(any)).thenAnswer((_) async => right(unit));
           when(fillObjectiveTracker.call(any)).thenAnswer((_) => right(unFinishedObjectiveTracker));
           when(getCurrentLocation.call(any)).thenAnswer((_) => right(currentLocation));
@@ -205,7 +204,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} when changing location",
-        build: () async {
+        build: () {
           when(likeExperience.call(any)).thenAnswer((_) async => right(unit));
           when(fillObjectiveTracker.call(any)).thenAnswer((_) => right(unFinishedObjectiveTracker));
           when(loadSurroundingExperiences.call(any)).thenAnswer((_) async => right(surroundingExperiences));

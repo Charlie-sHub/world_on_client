@@ -26,13 +26,12 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<TagManagementWatcherBloc>(),
-    skip: 0,
-    expect: [const TagManagementWatcherState.initial()],
+    build: () => getIt<TagManagementWatcherBloc>(),
+    expect: [],
   );
   blocTest(
     TestDescription.shouldEmitSuccess,
-    build: () async {
+    build: () {
       when(getAllTags.call(any)).thenAnswer((_) => createStream(right(tagList)));
       return getIt<TagManagementWatcherBloc>();
     },
@@ -48,7 +47,7 @@ void main() {
   );
   blocTest(
     TestDescription.shouldEmitFailure,
-    build: () async {
+    build: () {
       when(getAllTags.call(any)).thenAnswer((_) => createStream(left(failure)));
       return getIt<TagManagementWatcherBloc>();
     },

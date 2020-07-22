@@ -45,13 +45,12 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<ProfileEditingFormBloc>(),
-    skip: 0,
-    expect: [ProfileEditingFormState.initial()],
+    build: () => getIt<ProfileEditingFormBloc>(),
+    expect: [],
   );
   blocTest(
     TestDescription.shouldEmitInitialized,
-    build: () async {
+    build: () {
       when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
       return getIt<ProfileEditingFormBloc>();
     },
@@ -71,7 +70,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the name",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
           return getIt<ProfileEditingFormBloc>();
         },
@@ -93,7 +92,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the username",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
           return getIt<ProfileEditingFormBloc>();
         },
@@ -115,7 +114,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the password",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
           return getIt<ProfileEditingFormBloc>();
         },
@@ -137,7 +136,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the email",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
           return getIt<ProfileEditingFormBloc>();
         },
@@ -159,7 +158,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the birthday",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
           return getIt<ProfileEditingFormBloc>();
         },
@@ -181,7 +180,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the description",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
           return getIt<ProfileEditingFormBloc>();
         },
@@ -203,7 +202,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the interests",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
           return getIt<ProfileEditingFormBloc>();
         },
@@ -227,7 +226,7 @@ void main() {
   );
   blocTest(
     TestDescription.shouldEmitSuccess,
-    build: () async {
+    build: () {
       when(editUser.call(any)).thenAnswer((_) async => right(unit));
       when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
       return getIt<ProfileEditingFormBloc>();
@@ -348,7 +347,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitFailure} when submitting",
-        build: () async {
+        build: () {
           when(editUser.call(any)).thenAnswer((_) async => left(failure));
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
           return getIt<ProfileEditingFormBloc>();
@@ -466,7 +465,7 @@ void main() {
       );
       blocTest(
         TestDescription.shouldResetOption,
-        build: () async {
+        build: () {
           when(editUser.call(any)).thenAnswer((_) async => left(failure));
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
           return getIt<ProfileEditingFormBloc>();

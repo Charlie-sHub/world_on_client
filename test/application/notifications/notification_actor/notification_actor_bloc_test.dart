@@ -26,16 +26,15 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<NotificationActorBloc>(),
-    skip: 0,
-    expect: [const NotificationActorState.initial()],
+    build: () => getIt<NotificationActorBloc>(),
+    expect: [],
   );
   group(
     TestDescription.deleteEventTests,
     () {
       blocTest(
         TestDescription.shouldEmitSuccess,
-        build: () async {
+        build: () {
           when(deleteNotification.call(any)).thenAnswer((_) async => right(unit));
           return getIt<NotificationActorBloc>();
         },
@@ -51,7 +50,7 @@ void main() {
       );
       blocTest(
         TestDescription.shouldEmitFailure,
-        build: () async {
+        build: () {
           when(deleteNotification.call(any)).thenAnswer((_) async => left(failure));
           return getIt<NotificationActorBloc>();
         },
@@ -72,7 +71,7 @@ void main() {
     () {
       blocTest(
         TestDescription.shouldEmitSuccess,
-        build: () async {
+        build: () {
           when(checkNotification.call(any)).thenAnswer((_) async => right(unit));
           return getIt<NotificationActorBloc>();
         },
@@ -85,7 +84,7 @@ void main() {
       );
       blocTest(
         "Shouldn't emit anything",
-        build: () async {
+        build: () {
           when(checkNotification.call(any)).thenAnswer((_) async => left(failure));
           return getIt<NotificationActorBloc>();
         },
@@ -94,7 +93,7 @@ void main() {
           verify(checkNotification.call(any));
           verifyNoMoreInteractions(checkNotification);
         },
-        expect: [],
+        expect: [const NotificationActorState.initial()],
       );
     },
   );

@@ -31,16 +31,15 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<SearchUsersByNameWatcherBloc>(),
-    skip: 0,
-    expect: [const SearchUsersByNameWatcherState.initial()],
+    build: () => getIt<SearchUsersByNameWatcherBloc>(),
+    expect: [],
   );
   group(
     "Testing watchUsersFoundByUsernameStarted event",
     () {
       blocTest(
         TestDescription.shouldEmitSuccess,
-        build: () async {
+        build: () {
           when(searchUsersByUsername.call(any)).thenAnswer((_) => createStream(right(usersFound)));
           return getIt<SearchUsersByNameWatcherBloc>();
         },
@@ -60,7 +59,7 @@ void main() {
       );
       blocTest(
         TestDescription.shouldEmitFailure,
-        build: () async {
+        build: () {
           when(searchUsersByUsername.call(any)).thenAnswer((_) => createStream(left(failure)));
           return getIt<SearchUsersByNameWatcherBloc>();
         },
@@ -85,7 +84,7 @@ void main() {
     () {
       blocTest(
         TestDescription.shouldEmitSuccess,
-        build: () async {
+        build: () {
           when(searchUsersByName.call(any)).thenAnswer((_) => createStream(right(usersFound)));
           return getIt<SearchUsersByNameWatcherBloc>();
         },
@@ -105,7 +104,7 @@ void main() {
       );
       blocTest(
         TestDescription.shouldEmitFailure,
-        build: () async {
+        build: () {
           when(searchUsersByName.call(any)).thenAnswer((_) => createStream(left(failure)));
           return getIt<SearchUsersByNameWatcherBloc>();
         },

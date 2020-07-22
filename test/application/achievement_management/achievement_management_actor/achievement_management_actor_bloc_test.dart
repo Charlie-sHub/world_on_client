@@ -23,9 +23,8 @@ void main() {
   final deletionEvent = AchievementManagementActorEvent.deleted(Achievement.empty());
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<AchievementManagementActorBloc>(),
-    skip: 0,
-    expect: [const AchievementManagementActorState.initial()],
+    build: () => getIt<AchievementManagementActorBloc>(),
+    expect: [],
   );
   group(
     TestDescription.deleteEventTests,
@@ -33,7 +32,7 @@ void main() {
       const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
       blocTest(
         TestDescription.shouldEmitSuccess,
-        build: () async {
+        build: () {
           when(deleteAchievement.call(any)).thenAnswer((_) async => right(unit));
           return getIt<AchievementManagementActorBloc>();
         },
@@ -49,7 +48,7 @@ void main() {
       );
       blocTest(
         TestDescription.shouldEmitFailure,
-        build: () async {
+        build: () {
           when(deleteAchievement.call(any)).thenAnswer((_) async => left(failure));
           return getIt<AchievementManagementActorBloc>();
         },

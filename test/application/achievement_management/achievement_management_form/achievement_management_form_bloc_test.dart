@@ -48,16 +48,15 @@ void main() {
   final tags = KtSet.of(getValidTag());
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<AchievementManagementFormBloc>(),
-    skip: 0,
-    expect: [AchievementManagementFormState.initial()],
+    build: () => getIt<AchievementManagementFormBloc>(),
+    expect: [],
   );
   group(
     TestDescription.testingInitialization,
     () {
       blocTest(
         TestDescription.shouldEmitInitialized,
-        build: () async => getIt<AchievementManagementFormBloc>(),
+        build: () => getIt<AchievementManagementFormBloc>(),
         act: (bloc) async => bloc.add(AchievementManagementFormEvent.initialized(some(achievementToEdit))),
         expect: [
           AchievementManagementFormState.initial().copyWith(
@@ -68,12 +67,9 @@ void main() {
       );
       blocTest(
         TestDescription.shouldNotEmitInitialized,
-        build: () async => getIt<AchievementManagementFormBloc>(),
+        build: () => getIt<AchievementManagementFormBloc>(),
         act: (bloc) async => bloc.add(AchievementManagementFormEvent.initialized(none())),
-        skip: 0,
-        expect: [
-          AchievementManagementFormState.initial(),
-        ],
+        expect: [],
       );
     },
   );
@@ -82,7 +78,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the name",
-        build: () async => getIt<AchievementManagementFormBloc>(),
+        build: () => getIt<AchievementManagementFormBloc>(),
         act: (bloc) async {
           bloc.add(AchievementManagementFormEvent.initialized(none()));
           bloc.add(const AchievementManagementFormEvent.nameChanged(name));
@@ -97,7 +93,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the description",
-        build: () async => getIt<AchievementManagementFormBloc>(),
+        build: () => getIt<AchievementManagementFormBloc>(),
         act: (bloc) async {
           bloc.add(AchievementManagementFormEvent.initialized(none()));
           bloc.add(const AchievementManagementFormEvent.descriptionChanged(description));
@@ -112,7 +108,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the experience points",
-        build: () async => getIt<AchievementManagementFormBloc>(),
+        build: () => getIt<AchievementManagementFormBloc>(),
         act: (bloc) async {
           bloc.add(AchievementManagementFormEvent.initialized(none()));
           bloc.add(const AchievementManagementFormEvent.experiencePointsChanged(experiencePoints));
@@ -127,7 +123,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the tags",
-        build: () async => getIt<AchievementManagementFormBloc>(),
+        build: () => getIt<AchievementManagementFormBloc>(),
         act: (bloc) async {
           bloc.add(AchievementManagementFormEvent.initialized(none()));
           bloc.add(AchievementManagementFormEvent.tagsChanged(tags));
@@ -142,7 +138,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitSuccess} creating a new Achievement",
-        build: () async {
+        build: () {
           when(createAchievement.call(any)).thenAnswer((_) async => right(unit));
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(validUser));
           return getIt<AchievementManagementFormBloc>();
@@ -221,7 +217,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitSuccess} editing an Achievement",
-        build: () async {
+        build: () {
           when(editAchievement.call(any)).thenAnswer((_) async => right(unit));
 
           return getIt<AchievementManagementFormBloc>();
@@ -273,7 +269,7 @@ void main() {
       const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
       blocTest(
         "${TestDescription.shouldEmitFailure} creating a new Achievement",
-        build: () async {
+        build: () {
           when(createAchievement.call(any)).thenAnswer((_) async => left(failure));
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(validUser));
           return getIt<AchievementManagementFormBloc>();
@@ -353,7 +349,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitFailure} editing an Achievement",
-        build: () async {
+        build: () {
           when(editAchievement.call(any)).thenAnswer((_) async => left(failure));
           return getIt<AchievementManagementFormBloc>();
         },
@@ -393,7 +389,7 @@ void main() {
       );
       blocTest(
         TestDescription.shouldResetOption,
-        build: () async {
+        build: () {
           when(editAchievement.call(any)).thenAnswer((_) async => left(failure));
           return getIt<AchievementManagementFormBloc>();
         },

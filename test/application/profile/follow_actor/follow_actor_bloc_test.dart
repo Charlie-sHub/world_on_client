@@ -38,16 +38,15 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<FollowActorBloc>(),
-    skip: 0,
-    expect: [const FollowActorState.initial()],
+    build: () => getIt<FollowActorBloc>(),
+    expect: [],
   );
   group(
     TestDescription.testingInitialization,
     () {
       blocTest(
         "Should emit followed",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(loggedInUser));
           return getIt<FollowActorBloc>();
         },
@@ -60,7 +59,7 @@ void main() {
       );
       blocTest(
         "Should emit notFollowed",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(loggedInUser));
           return getIt<FollowActorBloc>();
         },
@@ -78,7 +77,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitSuccess} by un-following",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(loggedInUser));
           when(unFollowUser.call(any)).thenAnswer((_) async => right(unit));
           return getIt<FollowActorBloc>();
@@ -102,7 +101,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitSuccess} by following",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(loggedInUser));
           when(followUser.call(any)).thenAnswer((_) async => right(unit));
           return getIt<FollowActorBloc>();
@@ -131,7 +130,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitFailure} by un-following",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(loggedInUser));
           when(unFollowUser.call(any)).thenAnswer((_) async => left(failure));
           return getIt<FollowActorBloc>();
@@ -154,7 +153,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitFailure} by following",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(loggedInUser));
           when(followUser.call(any)).thenAnswer((_) async => left(failure));
           return getIt<FollowActorBloc>();
@@ -177,7 +176,7 @@ void main() {
       );
       blocTest(
         TestDescription.throwUnAuthenticated,
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
           return getIt<FollowActorBloc>();
         },

@@ -25,16 +25,15 @@ void main() {
   final foreignUser = getValidUser().copyWith(id: 2);
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<ProfileWatcherBloc>(),
-    skip: 0,
-    expect: [const ProfileWatcherState.initial()],
+    build: () => getIt<ProfileWatcherBloc>(),
+    expect: [],
   );
   group(
     TestDescription.groupOnSuccess,
     () {
       blocTest(
         "Should emit Own with a given User",
-        build: () async {
+        build: () {
           when(isLoggedInUser.call(any)).thenAnswer((_) async => true);
           return getIt<ProfileWatcherBloc>();
         },
@@ -50,7 +49,7 @@ void main() {
       );
       blocTest(
         "Should emit Own with no given User",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(ownUser));
           return getIt<ProfileWatcherBloc>();
         },
@@ -66,7 +65,7 @@ void main() {
       );
       blocTest(
         "Should emit Foreign",
-        build: () async {
+        build: () {
           when(isLoggedInUser.call(any)).thenAnswer((_) async => false);
           return getIt<ProfileWatcherBloc>();
         },
@@ -87,7 +86,7 @@ void main() {
     () {
       blocTest(
         "Should emit loadFailure",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
           return getIt<ProfileWatcherBloc>();
         },

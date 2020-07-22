@@ -10,6 +10,8 @@ import 'package:worldon/views/notifications/widget/notification_card.dart';
 import 'package:worldon/views/notifications/widget/notification_error_card.dart';
 
 class NotificationsBody extends StatelessWidget {
+  const NotificationsBody({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -56,7 +58,14 @@ class NotificationsBody extends StatelessWidget {
                 }
               },
             ),
-            loadFailure: (state) => CriticalErrorDisplay(failure: state.failure),
+            loadFailure: (state) =>
+              InkWell(
+                onTap: () async =>
+                  context.bloc<NotificationsWatcherBloc>().add(
+                    const NotificationsWatcherEvent.watchNotificationsStarted(),
+                  ),
+                child: CriticalErrorDisplay(failure: state.failure),
+              ),
           ),
         ),
       ),

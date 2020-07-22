@@ -1,8 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/application/profile/block_actor/block_actor_bloc.dart';
 import 'package:worldon/application/profile/follow_actor/follow_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
@@ -12,7 +14,6 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 import '../../../../injection.dart';
 
-// TODO: Implement navigation to ProfileView with the user
 class UserCard extends StatelessWidget {
   final User user;
 
@@ -51,12 +52,17 @@ class UserCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  const Padding(
-                    padding: EdgeInsets.all(5),
-                    child: CircleAvatar(
-                      radius: 25,
-                      // TODO: Implement User image
-                      backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
+                  Padding(
+                    padding: const EdgeInsets.all(5),
+                    child: FlatButton(
+                      onPressed: () => context.bloc<NavigationActorBloc>().add(
+                            NavigationActorEvent.profileTapped(some(user)),
+                          ),
+                      child: const CircleAvatar(
+                        radius: 25,
+                        // TODO: Implement User image
+                        backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
+                      ),
                     ),
                   ),
                   Expanded(
@@ -126,16 +132,19 @@ class UserCard extends StatelessWidget {
                   children: <Widget>[
                     AutoSizeText(
                       "Level: ${user.level.getOrCrash().toString()}",
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: WorldOnColors.primary,
+                        color: _getColor(user.level.getOrCrash()),
                       ),
                     ),
-                    LinearPercentIndicator(
-                      width: 100.0,
-                      lineHeight: 8.0,
-                      percent: 0.9,
-                      progressColor: Colors.blue,
+                    Expanded(
+                      child: LinearPercentIndicator(
+                        lineHeight: 10,
+                        // TODO: Implement a way to measure what percentage to the next level the user is in based on its experience points
+                        percent: 0.7,
+                        backgroundColor: WorldOnColors.background,
+                        progressColor: WorldOnColors.primary,
+                      ),
                     ),
                   ],
                 ),
@@ -233,5 +242,15 @@ class UnFollowButton extends StatelessWidget {
             FollowActorEvent.unFollowed(user),
           ),
     );
+  }
+}
+
+Color _getColor(int level) {
+  if (level < 30) {
+    return Colors.blue;
+  } else if (level >= 30 && level < 70) {
+    return Colors.purple;
+  } else {
+    return Colors.red;
   }
 }

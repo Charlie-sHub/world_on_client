@@ -30,16 +30,15 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<TagCardActorBloc>(),
-    skip: 0,
-    expect: [const TagCardActorState.initial()],
+    build: () => getIt<TagCardActorBloc>(),
+    expect: [],
   );
   group(
     TestDescription.groupOnSuccess,
     () {
       blocTest(
         "${TestDescription.shouldEmitSuccess} after dismissing a Tag",
-        build: () async {
+        build: () {
           when(dismissTagFromInterests.call(any)).thenAnswer((_) async => right(unit));
           return getIt<TagCardActorBloc>();
         },
@@ -55,7 +54,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitSuccess} after adding a Tag",
-        build: () async {
+        build: () {
           when(addTagToInterests.call(any)).thenAnswer((_) async => right(unit));
           return getIt<TagCardActorBloc>();
         },
@@ -76,7 +75,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitFailure} after dismissing a Tag",
-        build: () async {
+        build: () {
           when(dismissTagFromInterests.call(any)).thenAnswer((_) async => left(failure));
           return getIt<TagCardActorBloc>();
         },
@@ -92,7 +91,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitFailure} after adding a Tag",
-        build: () async {
+        build: () {
           when(addTagToInterests.call(any)).thenAnswer((_) async => left(failure));
           return getIt<TagCardActorBloc>();
         },

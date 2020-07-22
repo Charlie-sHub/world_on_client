@@ -34,13 +34,12 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<FollowedWatcherBloc>(),
-    skip: 0,
-    expect: [const FollowedWatcherState.initial()],
+    build: () => getIt<FollowedWatcherBloc>(),
+    expect: [],
   );
   blocTest(
     TestDescription.shouldEmitSuccess,
-    build: () async {
+    build: () {
       when(loadFollowedUsers.call(any)).thenAnswer((realInvocation) => createStream(right(usersFollowed)));
       return getIt<FollowedWatcherBloc>();
     },
@@ -56,7 +55,7 @@ void main() {
   );
   blocTest(
     TestDescription.shouldEmitFailure,
-    build: () async {
+    build: () {
       when(loadFollowedUsers.call(any)).thenAnswer((realInvocation) => createStream(left(failure)));
       return getIt<FollowedWatcherBloc>();
     },

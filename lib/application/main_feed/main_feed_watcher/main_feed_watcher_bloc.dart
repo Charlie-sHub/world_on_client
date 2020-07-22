@@ -16,6 +16,8 @@ part 'main_feed_watcher_bloc.freezed.dart';
 part 'main_feed_watcher_event.dart';
 part 'main_feed_watcher_state.dart';
 
+// TODO: Debug as lazySingleton
+// Add as many prints as necessary
 @injectable
 class MainFeedWatcherBloc extends Bloc<MainFeedWatcherEvent, MainFeedWatcherState> {
   MainFeedWatcherBloc() : super(const MainFeedWatcherState.initial());

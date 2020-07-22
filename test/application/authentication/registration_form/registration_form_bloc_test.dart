@@ -51,16 +51,15 @@ void main() {
   );
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<RegistrationFormBloc>(),
-    skip: 0,
-    expect: [RegistrationFormState.initial()],
+    build: () => getIt<RegistrationFormBloc>(),
+    expect: [],
   );
   group(
     "Testing initialization with a third party user",
     () {
       blocTest(
         TestDescription.shouldEmitInitialized,
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(thirdPartyUser));
           return getIt<RegistrationFormBloc>();
         },
@@ -74,7 +73,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitInitial} since there's no third party user",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
           return getIt<RegistrationFormBloc>();
         },
@@ -90,7 +89,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the name",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
           return getIt<RegistrationFormBloc>();
         },
@@ -100,6 +99,7 @@ void main() {
         },
         verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
+          RegistrationFormState.initial(),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
               name: Name(name),
@@ -109,7 +109,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the username",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
           return getIt<RegistrationFormBloc>();
         },
@@ -119,6 +119,7 @@ void main() {
         },
         verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
+          RegistrationFormState.initial(),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
               username: Name(username),
@@ -128,7 +129,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the password",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
           return getIt<RegistrationFormBloc>();
         },
@@ -138,6 +139,7 @@ void main() {
         },
         verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
+          RegistrationFormState.initial(),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
               password: Password(password),
@@ -147,7 +149,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the passwordConfirmation",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
           return getIt<RegistrationFormBloc>();
         },
@@ -158,6 +160,7 @@ void main() {
         },
         verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
+          RegistrationFormState.initial(),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
               password: Password(password),
@@ -176,7 +179,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the email",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
           return getIt<RegistrationFormBloc>();
         },
@@ -186,6 +189,7 @@ void main() {
         },
         verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
+          RegistrationFormState.initial(),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
               email: EmailAddress(emailAddress),
@@ -195,7 +199,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the birthday",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
           return getIt<RegistrationFormBloc>();
         },
@@ -205,6 +209,7 @@ void main() {
         },
         verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
+          RegistrationFormState.initial(),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
               birthday: PastDate(birthday),
@@ -214,7 +219,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the description",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
           return getIt<RegistrationFormBloc>();
         },
@@ -224,6 +229,7 @@ void main() {
         },
         verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
+          RegistrationFormState.initial(),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
               description: EntityDescription(description),
@@ -233,7 +239,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the interests",
-        build: () async {
+        build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
           return getIt<RegistrationFormBloc>();
         },
@@ -243,6 +249,7 @@ void main() {
         },
         verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
+          RegistrationFormState.initial(),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
               interests: interests,
@@ -257,7 +264,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitSuccess} when submitting with a new User",
-        build: () async {
+        build: () {
           when(register.call(any)).thenAnswer((_) async => right(unit));
           when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
           return getIt<RegistrationFormBloc>();
@@ -279,6 +286,7 @@ void main() {
           verify(register.call(any));
         },
         expect: [
+          RegistrationFormState.initial(),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
               name: Name(name),
@@ -409,7 +417,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitSuccess} when submitting with a third party User",
-        build: () async {
+        build: () {
           when(register.call(any)).thenAnswer((_) async => right(unit));
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(thirdPartyUser));
           return getIt<RegistrationFormBloc>();
@@ -505,7 +513,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitFailure} when submitting with a third party User",
-        build: () async {
+        build: () {
           when(register.call(any)).thenAnswer((_) async => left(failure));
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(thirdPartyUser));
           return getIt<RegistrationFormBloc>();
@@ -596,7 +604,7 @@ void main() {
       );
       blocTest(
         "Shouldn't call register if the User has invalid fields",
-        build: () async {
+        build: () {
           when(register.call(any)).thenAnswer((_) async => right(unit));
           when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
           return getIt<RegistrationFormBloc>();
@@ -618,6 +626,7 @@ void main() {
           verifyNoMoreInteractions(register);
         },
         expect: [
+          RegistrationFormState.initial(),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
               name: Name(name),
@@ -748,7 +757,7 @@ void main() {
       );
       blocTest(
         TestDescription.shouldResetOption,
-        build: () async {
+        build: () {
           when(register.call(any)).thenAnswer((_) async => left(failure));
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(thirdPartyUser));
           return getIt<RegistrationFormBloc>();

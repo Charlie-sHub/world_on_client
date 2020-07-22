@@ -30,13 +30,12 @@ void main() {
   const serverFailure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<SearchExperiencesByDifficultyBloc>(),
-    skip: 0,
-    expect: [const SearchExperiencesByDifficultyState.initial()],
+    build: () => getIt<SearchExperiencesByDifficultyBloc>(),
+    expect: [],
   );
   blocTest(
     TestDescription.shouldEmitSuccess,
-    build: () async {
+    build: () {
       when(searchExperiencesByDifficulty.call(any)).thenAnswer((_) => createStream(right(experiencesFound)));
       return getIt<SearchExperiencesByDifficultyBloc>();
     },
@@ -55,7 +54,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitFailure} with serverFailure",
-        build: () async {
+        build: () {
           when(searchExperiencesByDifficulty.call(any)).thenAnswer((_) => createStream(left(serverFailure)));
           return getIt<SearchExperiencesByDifficultyBloc>();
         },
@@ -71,7 +70,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitFailure} with valueFailure",
-        build: () async => getIt<SearchExperiencesByDifficultyBloc>(),
+        build: () => getIt<SearchExperiencesByDifficultyBloc>(),
         act: (bloc) async => bloc.add(const SearchExperiencesByDifficultyEvent.submitted(invalidDifficulty)),
         verify: (_) async => verifyNoMoreInteractions(searchExperiencesByDifficulty),
         expect: [

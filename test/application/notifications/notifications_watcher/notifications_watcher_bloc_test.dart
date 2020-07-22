@@ -26,13 +26,12 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<NotificationsWatcherBloc>(),
-    skip: 0,
-    expect: [const NotificationsWatcherState.initial()],
+    build: () => getIt<NotificationsWatcherBloc>(),
+    expect: [],
   );
   blocTest(
     TestDescription.shouldEmitSuccess,
-    build: () async {
+    build: () {
       when(loadNotifications.call(any)).thenAnswer((realInvocation) => createStream(right(notifications)));
       return getIt<NotificationsWatcherBloc>();
     },
@@ -48,7 +47,7 @@ void main() {
   );
   blocTest(
     TestDescription.shouldEmitFailure,
-    build: () async {
+    build: () {
       when(loadNotifications.call(any)).thenAnswer((realInvocation) => createStream(left(failure)));
       return getIt<NotificationsWatcherBloc>();
     },

@@ -27,16 +27,15 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<OptionsFormBloc>(),
-    skip: 0,
-    expect: [OptionsFormState.initial()],
+    build: () => getIt<OptionsFormBloc>(),
+    expect: [],
   );
   group(
     TestDescription.testingInitialization,
     () {
       blocTest(
         TestDescription.shouldEmitInitialized,
-        build: () async => getIt<OptionsFormBloc>(),
+        build: () => getIt<OptionsFormBloc>(),
         act: (bloc) async => bloc.add(OptionsFormEvent.initialized(some(options))),
         expect: [
           OptionsFormState.initial().copyWith(
@@ -46,7 +45,7 @@ void main() {
       );
       blocTest(
         TestDescription.shouldNotEmitInitialized,
-        build: () async => getIt<OptionsFormBloc>(),
+        build: () => getIt<OptionsFormBloc>(),
         act: (bloc) async => bloc.add(OptionsFormEvent.initialized(none())),
         skip: 0,
         expect: [OptionsFormState.initial()],
@@ -58,12 +57,13 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the languageCode",
-        build: () async => getIt<OptionsFormBloc>(),
+        build: () => getIt<OptionsFormBloc>(),
         act: (bloc) async {
           bloc.add(OptionsFormEvent.initialized(none()));
           bloc.add(const OptionsFormEvent.languageCodeChanged(languageCode));
         },
         expect: [
+          OptionsFormState.initial(),
           OptionsFormState.initial().copyWith(
             options: Options.empty().copyWith(
               languageCode: languageCode,
@@ -78,7 +78,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitSuccess} saving the options",
-        build: () async {
+        build: () {
           when(saveGlobalOptions.call(any)).thenAnswer((_) async => right(unit));
           return getIt<OptionsFormBloc>();
         },
@@ -109,7 +109,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitFailure} saving the options",
-        build: () async {
+        build: () {
           when(saveGlobalOptions.call(any)).thenAnswer((_) async => left(failure));
           return getIt<OptionsFormBloc>();
         },
@@ -135,7 +135,7 @@ void main() {
       );
       blocTest(
         TestDescription.shouldResetOption,
-        build: () async {
+        build: () {
           when(saveGlobalOptions.call(any)).thenAnswer((_) async => left(failure));
           return getIt<OptionsFormBloc>();
         },

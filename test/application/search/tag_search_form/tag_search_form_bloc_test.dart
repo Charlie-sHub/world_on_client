@@ -39,13 +39,12 @@ void main() {
   const valueFailure = Failure<dynamic>.value(ValueFailure<String>.emptyString(failedValue: invalidSearchTerm));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<TagSearchFormBloc>(),
-    skip: 0,
-    expect: [TagSearchFormState.initial()],
+    build: () => getIt<TagSearchFormBloc>(),
+    expect: [],
   );
   blocTest(
     "${TestDescription.shouldEmitFailure} with the invalidSearchTerm",
-    build: () async => getIt<TagSearchFormBloc>(),
+    build: () => getIt<TagSearchFormBloc>(),
     act: (bloc) async => bloc.add(const TagSearchFormEvent.submittedSearchTerm(invalidSearchTerm)),
     verify: (_) async => verifyZeroInteractions(searchTagsByName),
     expect: [
@@ -63,7 +62,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitSuccess} with the tagsFound",
-        build: () async {
+        build: () {
           when(searchTagsByName.call(any)).thenAnswer((_) => createStream(right(tagsFound)));
           return getIt<TagSearchFormBloc>();
         },
@@ -84,7 +83,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitSuccess} with the tagsFound even after adding a tag",
-        build: () async {
+        build: () {
           when(searchTagsByName.call(any)).thenAnswer((_) => createStream(right(tagsFound)));
           return getIt<TagSearchFormBloc>();
         },
@@ -133,7 +132,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitFailure} with serverFailure",
-        build: () async {
+        build: () {
           when(searchTagsByName.call(any)).thenAnswer((_) => createStream(left(serverFailure)));
           return getIt<TagSearchFormBloc>();
         },
@@ -160,7 +159,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitUpdated} with tag added",
-        build: () async {
+        build: () {
           when(searchTagsByName.call(any)).thenAnswer((_) => createStream(right(tagsFound)));
           return getIt<TagSearchFormBloc>();
         },
@@ -191,7 +190,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with tag and anotherTag added",
-        build: () async {
+        build: () {
           when(searchTagsByName.call(any)).thenAnswer((_) => createStream(right(tagsFound)));
           return getIt<TagSearchFormBloc>();
         },
@@ -231,7 +230,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with tag, anotherTag and yetAnotherTag added but then tag subtracted",
-        build: () async {
+        build: () {
           when(searchTagsByName.call(any)).thenAnswer((_) => createStream(right(tagsFound)));
           return getIt<TagSearchFormBloc>();
         },

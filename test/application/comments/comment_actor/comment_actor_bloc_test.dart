@@ -23,16 +23,15 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<CommentActorBloc>(),
-    skip: 0,
-    expect: [const CommentActorState.initial()],
+    build: () => getIt<CommentActorBloc>(),
+    expect: [],
   );
   group(
     TestDescription.deleteEventTests,
     () {
       blocTest(
         TestDescription.shouldEmitSuccess,
-        build: () async {
+        build: () {
           when(deleteComment.call(any)).thenAnswer((_) async => right(unit));
           return getIt<CommentActorBloc>();
         },
@@ -49,7 +48,7 @@ void main() {
 
       blocTest(
         TestDescription.shouldEmitFailure,
-        build: () async {
+        build: () {
           when(deleteComment.call(any)).thenAnswer((_) async => left(failure));
           return getIt<CommentActorBloc>();
         },

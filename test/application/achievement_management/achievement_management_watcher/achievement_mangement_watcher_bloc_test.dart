@@ -26,13 +26,12 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<AchievementManagementWatcherBloc>(),
-    skip: 0,
-    expect: [const AchievementManagementWatcherState.initial()],
+    build: () => getIt<AchievementManagementWatcherBloc>(),
+    expect: [],
   );
   blocTest(
     TestDescription.shouldEmitSuccess,
-    build: () async {
+    build: () {
       when(getAllAchievements.call(any)).thenAnswer((_) => createStream(right(achievementSet)));
       return getIt<AchievementManagementWatcherBloc>();
     },
@@ -48,7 +47,7 @@ void main() {
   );
   blocTest(
     TestDescription.shouldEmitFailure,
-    build: () async {
+    build: () {
       when(getAllAchievements.call(any)).thenAnswer((_) => createStream(left(failure)));
       return getIt<AchievementManagementWatcherBloc>();
     },

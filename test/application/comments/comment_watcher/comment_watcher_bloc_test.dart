@@ -27,13 +27,12 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<CommentWatcherBloc>(),
-    skip: 0,
-    expect: [const CommentWatcherState.initial()],
+    build: () => getIt<CommentWatcherBloc>(),
+    expect: [],
   );
   blocTest(
     TestDescription.shouldEmitSuccess,
-    build: () async {
+    build: () {
       when(getExperienceComments.call(any)).thenAnswer((realInvocation) => createStream(right(commentSet)));
       return getIt<CommentWatcherBloc>();
     },
@@ -49,7 +48,7 @@ void main() {
   );
   blocTest(
     TestDescription.shouldEmitFailure,
-    build: () async {
+    build: () {
       when(getExperienceComments.call(any)).thenAnswer((realInvocation) => createStream(left(failure)));
       return getIt<CommentWatcherBloc>();
     },

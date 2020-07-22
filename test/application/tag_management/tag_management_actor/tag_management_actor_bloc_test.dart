@@ -23,9 +23,8 @@ void main() {
   final deletionEvent = TagManagementActorEvent.deleted(Tag.empty());
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<TagManagementActorBloc>(),
-    skip: 0,
-    expect: [const TagManagementActorState.initial()],
+    build: () => getIt<TagManagementActorBloc>(),
+    expect: [],
   );
   group(
     TestDescription.deleteEventTests,
@@ -33,7 +32,7 @@ void main() {
       const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
       blocTest(
         TestDescription.shouldEmitSuccess,
-        build: () async {
+        build: () {
           when(deleteTag.call(any)).thenAnswer((_) async => right(unit));
           return getIt<TagManagementActorBloc>();
         },
@@ -49,7 +48,7 @@ void main() {
       );
       blocTest(
         TestDescription.shouldEmitFailure,
-        build: () async {
+        build: () {
           when(deleteTag.call(any)).thenAnswer((_) async => left(failure));
           return getIt<TagManagementActorBloc>();
         },

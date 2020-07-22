@@ -38,16 +38,15 @@ void main() {
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<CommentFormBloc>(),
-    skip: 0,
-    expect: [CommentFormState.initial()],
+    build: () => getIt<CommentFormBloc>(),
+    expect: [],
   );
   group(
     TestDescription.testingInitialization,
     () {
       blocTest(
         TestDescription.shouldEmitInitialized,
-        build: () async => getIt<CommentFormBloc>(),
+        build: () => getIt<CommentFormBloc>(),
         act: (bloc) async => bloc.add(
           CommentFormEvent.initialized(
             experienceId: experienceId,
@@ -64,21 +63,20 @@ void main() {
       );
       blocTest(
         TestDescription.shouldNotEmitInitialized,
-        build: () async => getIt<CommentFormBloc>(),
+        build: () => getIt<CommentFormBloc>(),
         act: (bloc) async => bloc.add(
           CommentFormEvent.initialized(
             experienceId: experienceId,
             commentOption: none(),
           ),
         ),
-        skip: 0,
-        expect: [CommentFormState.initial()],
+        expect: [],
       );
     },
   );
   blocTest(
     "${TestDescription.shouldEmitUpdated} with the content",
-    build: () async => getIt<CommentFormBloc>(),
+    build: () => getIt<CommentFormBloc>(),
     act: (bloc) async {
       bloc.add(
         CommentFormEvent.initialized(
@@ -102,7 +100,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitSuccess} creating a new Comment",
-        build: () async {
+        build: () {
           when(postComment.call(any)).thenAnswer((_) async => right(unit));
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(_validPoster));
           return getIt<CommentFormBloc>();
@@ -158,7 +156,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitSuccess} editing a Comment",
-        build: () async {
+        build: () {
           when(editComment.call(any)).thenAnswer((_) async => right(unit));
           return getIt<CommentFormBloc>();
         },
@@ -212,7 +210,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitFailure} creating a new Comment",
-        build: () async {
+        build: () {
           when(postComment.call(any)).thenAnswer((_) async => left(failure));
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(_validPoster));
           return getIt<CommentFormBloc>();
@@ -269,7 +267,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitFailure} editing a Comment",
-        build: () async {
+        build: () {
           when(editComment.call(any)).thenAnswer((_) async => left(failure));
           return getIt<CommentFormBloc>();
         },
@@ -319,7 +317,7 @@ void main() {
   );
   blocTest(
     TestDescription.shouldResetOption,
-    build: () async {
+    build: () {
       when(editComment.call(any)).thenAnswer((_) async => left(failure));
       return getIt<CommentFormBloc>();
     },

@@ -2,10 +2,11 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
+import 'package:worldon/application/search/search_by_name_form/search_by_name_form_bloc.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/search_term.dart';
 import 'package:worldon/injection.dart';
-import 'package:worldon/application/search/search_by_name_form/search_by_name_form_bloc.dart';
+
 import '../../../test_descriptions.dart';
 
 void main() {
@@ -18,9 +19,8 @@ void main() {
   );
   blocTest(
     TestDescription.shouldEmitInitial,
-    build: () async => getIt<SearchByNameFormBloc>(),
-    skip: 0,
-    expect: [SearchByNameFormState.initial()],
+    build: () => getIt<SearchByNameFormBloc>(),
+    expect: [],
   );
   const failure = ValueFailure.emptyString(failedValue: invalidSearchTerm);
   group(
@@ -28,7 +28,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the validSearchTerm",
-        build: () async => getIt<SearchByNameFormBloc>(),
+        build: () => getIt<SearchByNameFormBloc>(),
         act: (bloc) async => bloc.add(const SearchByNameFormEvent.searchTermChanged(validSearchTerm)),
         expect: [
           SearchByNameFormState.initial().copyWith(
@@ -38,9 +38,9 @@ void main() {
       );
       blocTest(
         "Should not update with the invalidSearchTerm",
-        build: () async => getIt<SearchByNameFormBloc>(),
+        build: () => getIt<SearchByNameFormBloc>(),
         act: (bloc) async => bloc.add(const SearchByNameFormEvent.searchTermChanged(invalidSearchTerm)),
-        expect: [],
+        expect: [SearchByNameFormState.initial()],
       );
     },
   );
@@ -49,7 +49,7 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitSuccess} with the validSearchTerm",
-        build: () async => getIt<SearchByNameFormBloc>(),
+        build: () => getIt<SearchByNameFormBloc>(),
         act: (bloc) async {
           bloc.add(const SearchByNameFormEvent.searchTermChanged(validSearchTerm));
           bloc.add(const SearchByNameFormEvent.submitted());
@@ -67,7 +67,7 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitSuccess} with the validSearchTerm but reset when the term is changed again",
-        build: () async => getIt<SearchByNameFormBloc>(),
+        build: () => getIt<SearchByNameFormBloc>(),
         act: (bloc) async {
           bloc.add(const SearchByNameFormEvent.searchTermChanged(validSearchTerm));
           bloc.add(const SearchByNameFormEvent.submitted());
@@ -90,12 +90,13 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitFailure} with the invalidSearchTerm",
-        build: () async => getIt<SearchByNameFormBloc>(),
+        build: () => getIt<SearchByNameFormBloc>(),
         act: (bloc) async {
           bloc.add(const SearchByNameFormEvent.searchTermChanged(invalidSearchTerm));
           bloc.add(const SearchByNameFormEvent.submitted());
         },
         expect: [
+          SearchByNameFormState.initial(),
           SearchByNameFormState.initial().copyWith(
             searchTerm: SearchTerm(invalidSearchTerm),
             showErrorMessages: true,
@@ -105,13 +106,14 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitFailure} with the invalidSearchTerm but reset when the term is changed again",
-        build: () async => getIt<SearchByNameFormBloc>(),
+        build: () => getIt<SearchByNameFormBloc>(),
         act: (bloc) async {
           bloc.add(const SearchByNameFormEvent.searchTermChanged(invalidSearchTerm));
           bloc.add(const SearchByNameFormEvent.submitted());
           bloc.add(const SearchByNameFormEvent.searchTermChanged(invalidSearchTerm));
         },
         expect: [
+          SearchByNameFormState.initial(),
           SearchByNameFormState.initial().copyWith(
             searchTerm: SearchTerm(invalidSearchTerm),
             showErrorMessages: true,
