@@ -6,7 +6,7 @@ abstract class BlockedWatcherState with _$BlockedWatcherState {
 
   const factory BlockedWatcherState.loadInProgress() = _LoadInProgress;
 
-  const factory BlockedWatcherState.loadSuccess(KtSet<User> blockedUsers) = _LoadSuccess;
+  const factory BlockedWatcherState.loadSuccess(KtList<User> blockedUsers) = _LoadSuccess;
 
   const factory BlockedWatcherState.loadFailure(Failure<dynamic> failure) = _LoadFailure;
 }

@@ -22,15 +22,15 @@ void main() {
       loadBlockedUsers = getIt<LoadBlockedUsers>();
     },
   );
-  final usersBlocked = KtSet.of(
+  final usersBlocked = KtList.of(
     getValidUser(),
     getValidUser().copyWith(id: 2),
   );
   final user = getValidUser().copyWith(
     id: 3,
-    // TODO: Change the Sets in the entities to KtSet
+    // TODO: Change the Sets in the entities to KtList
     // Are those even necessary? if anything they might give problems in the future in the way of chains and loops
-    blockedUsers: usersBlocked.asSet(),
+    blockedUsers: usersBlocked.toSet().dart,
   );
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(

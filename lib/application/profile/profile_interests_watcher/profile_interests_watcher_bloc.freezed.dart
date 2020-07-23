@@ -215,7 +215,7 @@ class _$ProfileInterestsWatcherStateTearOff {
   }
 
 // ignore: unused_element
-  _LoadSuccess loadSuccess(KtSet<Tag> interests) {
+  _LoadSuccess loadSuccess(KtList<Tag> interests) {
     return _LoadSuccess(
       interests,
     );
@@ -237,14 +237,14 @@ mixin _$ProfileInterestsWatcherState {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(KtSet<Tag> interests),
+    @required Result loadSuccess(KtList<Tag> interests),
     @required Result loadFailure(Failure<dynamic> failure),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(KtSet<Tag> interests),
+    Result loadSuccess(KtList<Tag> interests),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   });
@@ -317,7 +317,7 @@ class _$_Initial implements _Initial {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(KtSet<Tag> interests),
+    @required Result loadSuccess(KtList<Tag> interests),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -332,7 +332,7 @@ class _$_Initial implements _Initial {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(KtSet<Tag> interests),
+    Result loadSuccess(KtList<Tag> interests),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -417,7 +417,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(KtSet<Tag> interests),
+    @required Result loadSuccess(KtList<Tag> interests),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -432,7 +432,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(KtSet<Tag> interests),
+    Result loadSuccess(KtList<Tag> interests),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -483,7 +483,8 @@ abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(
           _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-  $Res call({KtSet<Tag> interests});
+
+  $Res call({KtList<Tag> interests});
 }
 
 class __$LoadSuccessCopyWithImpl<$Res>
@@ -501,7 +502,7 @@ class __$LoadSuccessCopyWithImpl<$Res>
     Object interests = freezed,
   }) {
     return _then(_LoadSuccess(
-      interests == freezed ? _value.interests : interests as KtSet<Tag>,
+      interests == freezed ? _value.interests : interests as KtList<Tag>,
     ));
   }
 }
@@ -510,7 +511,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(this.interests) : assert(interests != null);
 
   @override
-  final KtSet<Tag> interests;
+  final KtList<Tag> interests;
 
   @override
   String toString() {
@@ -539,7 +540,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(KtSet<Tag> interests),
+    @required Result loadSuccess(KtList<Tag> interests),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -554,7 +555,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(KtSet<Tag> interests),
+    Result loadSuccess(KtList<Tag> interests),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -598,9 +599,9 @@ class _$_LoadSuccess implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements ProfileInterestsWatcherState {
-  const factory _LoadSuccess(KtSet<Tag> interests) = _$_LoadSuccess;
+  const factory _LoadSuccess(KtList<Tag> interests) = _$_LoadSuccess;
 
-  KtSet<Tag> get interests;
+  KtList<Tag> get interests;
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
@@ -675,7 +676,7 @@ class _$_LoadFailure implements _LoadFailure {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(KtSet<Tag> interests),
+    @required Result loadSuccess(KtList<Tag> interests),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -690,7 +691,7 @@ class _$_LoadFailure implements _LoadFailure {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(KtSet<Tag> interests),
+    Result loadSuccess(KtList<Tag> interests),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {

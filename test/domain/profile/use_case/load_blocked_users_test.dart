@@ -24,7 +24,7 @@ void main() {
     },
   );
   final params = Params(id: 1);
-  final blockedUsers = KtSet.of(User.empty());
+  final blockedUsers = KtList.of(User.empty());
   test(
     "Should return a Set of Users if everything goes well",
     () async {
@@ -83,9 +83,9 @@ void main() {
   );
 }
 
-Future<Either<Failure, KtSet<User>>> _act(LoadBlockedUsers useCase, Params params) async {
+Future<Either<Failure, KtList<User>>> _act(LoadBlockedUsers useCase, Params params) async {
   final resultStream = useCase(params);
-  Either<Failure, KtSet<User>> result;
+  Either<Failure, KtList<User>> result;
   await for (final either in resultStream) {
     result = either;
   }

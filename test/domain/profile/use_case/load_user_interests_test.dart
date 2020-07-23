@@ -24,9 +24,9 @@ void main() {
     },
   );
   final params = Params(userId: 1);
-  final interests = KtSet.of(Tag.empty());
+  final interests = KtList.of(Tag.empty());
   test(
-    "Should return a KtSet of Tags",
+    "Should return a KtList of Tags",
     () async {
       // Arrange
       when(mockProfileRepository.loadUserInterests(any)).thenAnswer((_) => createStream(right(interests)));
@@ -83,9 +83,9 @@ void main() {
   );
 }
 
-Future<Either<Failure, KtSet<Tag>>> _act(LoadUserInterests useCase, Params params) async {
+Future<Either<Failure, KtList<Tag>>> _act(LoadUserInterests useCase, Params params) async {
   final resultStream = useCase(params);
-  Either<Failure, KtSet<Tag>> result;
+  Either<Failure, KtList<Tag>> result;
   await for (final either in resultStream) {
     result = either;
   }

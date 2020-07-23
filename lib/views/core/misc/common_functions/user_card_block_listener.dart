@@ -2,7 +2,7 @@ import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/application/profile/block_actor/block_actor_bloc.dart';
 
-void userCardBlockListener(BuildContext context, BlockActorState state) => state.maybeMap(
+void userBlockListener(BuildContext context, BlockActorState state) => state.maybeMap(
       blockFailure: (state) => FlushbarHelper.createError(
         message: state.failure.maybeMap(
           coreData: (failure) => failure.coreDataFailure.maybeMap(

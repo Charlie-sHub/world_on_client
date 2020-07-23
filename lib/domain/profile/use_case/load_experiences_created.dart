@@ -8,13 +8,13 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 
 @LazySingleton(env: [Environment.dev, Environment.prod])
-class LoadExperiencesCreated implements StreamUseCase<KtSet<Experience>, Params> {
+class LoadExperiencesCreated implements StreamUseCase<KtList<Experience>, Params> {
   final ProfileRepositoryInterface repository;
 
   LoadExperiencesCreated(this.repository);
 
   @override
-  Stream<Either<Failure, KtSet<Experience>>> call(Params params) async* {
+  Stream<Either<Failure, KtList<Experience>>> call(Params params) async* {
     yield* repository.loadExperiencesCreated(params.userId);
   }
 }

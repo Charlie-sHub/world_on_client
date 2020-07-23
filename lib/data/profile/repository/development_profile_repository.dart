@@ -63,11 +63,12 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtSet<User>>> loadBlockedUsers(int id) {
-    Either<Failure, KtSet<User>> _either;
+  Stream<Either<Failure, KtList<User>>> loadBlockedUsers(int id) {
+    Either<Failure, KtList<User>> _either;
     if (_random.nextBool()) {
-      _either = right(KtSet.of(
+      _either = right(KtList.of(
         getValidUser(),
+        User.empty(),
         getValidUser().copyWith(
           id: 2,
           name: Name("Carlos"),
@@ -86,11 +87,12 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtSet<Experience>>> loadExperiencesCreated(int id) {
-    Either<Failure, KtSet<Experience>> _either;
+  Stream<Either<Failure, KtList<Experience>>> loadExperiencesCreated(int id) {
+    Either<Failure, KtList<Experience>> _either;
     if (_random.nextBool()) {
-      _either = right(KtSet.of(
+      _either = right(KtList.of(
         getValidExperience(),
+        Experience.empty(),
         getValidExperience().copyWith(
           id: 2,
           name: Name("Phasellus"),
@@ -107,11 +109,12 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtSet<Experience>>> loadExperiencesDone(int id) {
-    Either<Failure, KtSet<Experience>> _either;
+  Stream<Either<Failure, KtList<Experience>>> loadExperiencesDone(int id) {
+    Either<Failure, KtList<Experience>> _either;
     if (_random.nextBool()) {
-      _either = right(KtSet.of(
+      _either = right(KtList.of(
         getValidExperience(),
+        Experience.empty(),
         getValidExperience().copyWith(
           id: 2,
           name: Name("Phasellus"),
@@ -128,11 +131,12 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtSet<Experience>>> loadExperiencesLiked(int id) {
-    Either<Failure, KtSet<Experience>> _either;
+  Stream<Either<Failure, KtList<Experience>>> loadExperiencesLiked(int id) {
+    Either<Failure, KtList<Experience>> _either;
     if (_random.nextBool()) {
-      _either = right(KtSet.of(
+      _either = right(KtList.of(
         getValidExperience(),
+        Experience.empty(),
         getValidExperience().copyWith(
           id: 2,
           name: Name("Phasellus"),
@@ -149,11 +153,12 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtSet<User>>> loadFollowedUsers(int id) {
-    Either<Failure, KtSet<User>> _either;
+  Stream<Either<Failure, KtList<User>>> loadFollowedUsers(int id) {
+    Either<Failure, KtList<User>> _either;
     if (_random.nextBool()) {
-      _either = right(KtSet.of(
+      _either = right(KtList.of(
         getValidUser(),
+        User.empty(),
         getValidUser().copyWith(
           id: 2,
           name: Name("Carlos"),
@@ -172,11 +177,12 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtSet<User>>> loadFollowingUsers(int id) {
-    Either<Failure, KtSet<User>> _either;
+  Stream<Either<Failure, KtList<User>>> loadFollowingUsers(int id) {
+    Either<Failure, KtList<User>> _either;
     if (_random.nextBool()) {
-      _either = right(KtSet.of(
+      _either = right(KtList.of(
         getValidUser(),
+        User.empty(),
         getValidUser().copyWith(
           id: 2,
           name: Name("Carlos"),
@@ -204,11 +210,12 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtSet<Achievement>>> loadUserAchievements(int userId) {
-    Either<Failure, KtSet<Achievement>> _either;
+  Stream<Either<Failure, KtList<Achievement>>> loadUserAchievements(int userId) {
+    Either<Failure, KtList<Achievement>> _either;
     if (_random.nextBool()) {
-      _either = right(KtSet.of(
+      _either = right(KtList.of(
         getValidAchievement(),
+        Achievement.empty(),
         getValidAchievement().copyWith(
           id: 2,
           name: Name("Nullam quam"),
@@ -221,11 +228,12 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtSet<Tag>>> loadUserInterests(int userId) {
-    Either<Failure, KtSet<Tag>> _either;
+  Stream<Either<Failure, KtList<Tag>>> loadUserInterests(int userId) {
+    Either<Failure, KtList<Tag>> _either;
     if (_random.nextBool()) {
-      _either = right(KtSet.of(
+      _either = right(KtList.of(
         getValidTag(),
+        Tag.empty(),
         getValidTag().copyWith(
           id: 2,
           name: Name("Mountains"),

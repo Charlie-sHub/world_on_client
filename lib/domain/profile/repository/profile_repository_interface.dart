@@ -36,29 +36,29 @@ abstract class ProfileRepositoryInterface {
   // TODO: Maybe a different set of methods will be needed for when the user checks its own profile, same with Flutter pages and BLoCs
   // Basically separate them into two features
 
-  /// Sends an [User]'s id to the server so it returns a [KtSet] of the [User]s it follows
-  Stream<Either<Failure, KtSet<User>>> loadFollowedUsers(int id);
+  /// Sends an [User]'s id to the server so it returns a [KtList] of the [User]s it follows
+  Stream<Either<Failure, KtList<User>>> loadFollowedUsers(int id);
 
-  /// Sends an [User]'s id to the server so it returns a [KtSet] of the [User]s following it
-  Stream<Either<Failure, KtSet<User>>> loadFollowingUsers(int id);
+  /// Sends an [User]'s id to the server so it returns a [KtList] of the [User]s following it
+  Stream<Either<Failure, KtList<User>>> loadFollowingUsers(int id);
 
-  /// Sends an [User]'s id to the server so it returns a [KtSet] of the [User]s it has blocked
-  Stream<Either<Failure, KtSet<User>>> loadBlockedUsers(int id);
+  /// Sends an [User]'s id to the server so it returns a [KtList] of the [User]s it has blocked
+  Stream<Either<Failure, KtList<User>>> loadBlockedUsers(int id);
 
-  /// Sends an [User]'s id to the server so it returns a [KtSet] of the [Experience]s it has done
-  Stream<Either<Failure, KtSet<Experience>>> loadExperiencesDone(int id);
+  /// Sends an [User]'s id to the server so it returns a [KtList] of the [Experience]s it has done
+  Stream<Either<Failure, KtList<Experience>>> loadExperiencesDone(int id);
 
-  /// Sends an [User]'s id to the server so it returns a [KtSet] of the [Experience]s it has liked
-  Stream<Either<Failure, KtSet<Experience>>> loadExperiencesLiked(int id);
+  /// Sends an [User]'s id to the server so it returns a [KtList] of the [Experience]s it has liked
+  Stream<Either<Failure, KtList<Experience>>> loadExperiencesLiked(int id);
 
-  /// Sends an [User]'s id to the server so it returns a [KtSet] of the [Experience]s it has created
-  Stream<Either<Failure, KtSet<Experience>>> loadExperiencesCreated(int id);
+  /// Sends an [User]'s id to the server so it returns a [KtList] of the [Experience]s it has created
+  Stream<Either<Failure, KtList<Experience>>> loadExperiencesCreated(int id);
 
-  /// Returns a [KtSet] of [Tag]s of a given [User] interests
-  Stream<Either<Failure, KtSet<Tag>>> loadUserInterests(int userId);
+  /// Returns a [KtList] of [Tag]s of a given [User] interests
+  Stream<Either<Failure, KtList<Tag>>> loadUserInterests(int userId);
 
-  /// Returns a [KtSet] of the [Achievement]s accomplished by a [User]
-  Stream<Either<Failure, KtSet<Achievement>>> loadUserAchievements(int userId);
+  /// Returns a [KtList] of the [Achievement]s accomplished by a [User]
+  Stream<Either<Failure, KtList<Achievement>>> loadUserAchievements(int userId);
 
 // TODO: implement Message user
 }

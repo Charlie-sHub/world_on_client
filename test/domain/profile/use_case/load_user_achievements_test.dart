@@ -24,9 +24,9 @@ void main() {
     },
   );
   final params = Params(userId: 1);
-  final achievements = KtSet.of(Achievement.empty());
+  final achievements = KtList.of(Achievement.empty());
   test(
-    "Should return a KtSet of Achievements",
+    "Should return a KtList of Achievements",
     () async {
       // Arrange
       when(mockProfileRepository.loadUserAchievements(any)).thenAnswer((_) => createStream(right(achievements)));
@@ -83,9 +83,9 @@ void main() {
   );
 }
 
-Future<Either<Failure, KtSet<Achievement>>> _act(LoadUserAchievements useCase, Params params) async {
+Future<Either<Failure, KtList<Achievement>>> _act(LoadUserAchievements useCase, Params params) async {
   final resultStream = useCase(params);
-  Either<Failure, KtSet<Achievement>> result;
+  Either<Failure, KtList<Achievement>> result;
   await for (final either in resultStream) {
     result = either;
   }

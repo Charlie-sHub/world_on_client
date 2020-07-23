@@ -915,9 +915,9 @@ class _$NavigationActorStateTearOff {
   }
 
 // ignore: unused_element
-  _ProfileView profileView(Option<User> user) {
+  _ProfileView profileView(Option<User> userOption) {
     return _ProfileView(
-      user,
+      userOption,
     );
   }
 
@@ -942,7 +942,7 @@ mixin _$NavigationActorState {
     @required Result searchView(),
     @required Result experienceFormView(Option<Experience> experience),
     @required Result navigateExperienceView(Option<Experience> experience),
-    @required Result profileView(Option<User> user),
+    @required Result profileView(Option<User> userOption),
     @required Result errorView(),
     @required Result notificationsView(),
   });
@@ -952,7 +952,7 @@ mixin _$NavigationActorState {
     Result searchView(),
     Result experienceFormView(Option<Experience> experience),
     Result navigateExperienceView(Option<Experience> experience),
-    Result profileView(Option<User> user),
+    Result profileView(Option<User> userOption),
     Result errorView(),
     Result notificationsView(),
     @required Result orElse(),
@@ -1035,7 +1035,7 @@ class _$_MainFeedView implements _MainFeedView {
     @required Result searchView(),
     @required Result experienceFormView(Option<Experience> experience),
     @required Result navigateExperienceView(Option<Experience> experience),
-    @required Result profileView(Option<User> user),
+    @required Result profileView(Option<User> userOption),
     @required Result errorView(),
     @required Result notificationsView(),
   }) {
@@ -1056,7 +1056,7 @@ class _$_MainFeedView implements _MainFeedView {
     Result searchView(),
     Result experienceFormView(Option<Experience> experience),
     Result navigateExperienceView(Option<Experience> experience),
-    Result profileView(Option<User> user),
+    Result profileView(Option<User> userOption),
     Result errorView(),
     Result notificationsView(),
     @required Result orElse(),
@@ -1153,7 +1153,7 @@ class _$_SearchView implements _SearchView {
     @required Result searchView(),
     @required Result experienceFormView(Option<Experience> experience),
     @required Result navigateExperienceView(Option<Experience> experience),
-    @required Result profileView(Option<User> user),
+    @required Result profileView(Option<User> userOption),
     @required Result errorView(),
     @required Result notificationsView(),
   }) {
@@ -1174,7 +1174,7 @@ class _$_SearchView implements _SearchView {
     Result searchView(),
     Result experienceFormView(Option<Experience> experience),
     Result navigateExperienceView(Option<Experience> experience),
-    Result profileView(Option<User> user),
+    Result profileView(Option<User> userOption),
     Result errorView(),
     Result notificationsView(),
     @required Result orElse(),
@@ -1295,7 +1295,7 @@ class _$_ExperienceFormView implements _ExperienceFormView {
     @required Result searchView(),
     @required Result experienceFormView(Option<Experience> experience),
     @required Result navigateExperienceView(Option<Experience> experience),
-    @required Result profileView(Option<User> user),
+    @required Result profileView(Option<User> userOption),
     @required Result errorView(),
     @required Result notificationsView(),
   }) {
@@ -1316,7 +1316,7 @@ class _$_ExperienceFormView implements _ExperienceFormView {
     Result searchView(),
     Result experienceFormView(Option<Experience> experience),
     Result navigateExperienceView(Option<Experience> experience),
-    Result profileView(Option<User> user),
+    Result profileView(Option<User> userOption),
     Result errorView(),
     Result notificationsView(),
     @required Result orElse(),
@@ -1442,7 +1442,7 @@ class _$_NavigateExperienceView implements _NavigateExperienceView {
     @required Result searchView(),
     @required Result experienceFormView(Option<Experience> experience),
     @required Result navigateExperienceView(Option<Experience> experience),
-    @required Result profileView(Option<User> user),
+    @required Result profileView(Option<User> userOption),
     @required Result errorView(),
     @required Result notificationsView(),
   }) {
@@ -1463,7 +1463,7 @@ class _$_NavigateExperienceView implements _NavigateExperienceView {
     Result searchView(),
     Result experienceFormView(Option<Experience> experience),
     Result navigateExperienceView(Option<Experience> experience),
-    Result profileView(Option<User> user),
+    Result profileView(Option<User> userOption),
     Result errorView(),
     Result notificationsView(),
     @required Result orElse(),
@@ -1528,7 +1528,8 @@ abstract class _$ProfileViewCopyWith<$Res> {
   factory _$ProfileViewCopyWith(
           _ProfileView value, $Res Function(_ProfileView) then) =
       __$ProfileViewCopyWithImpl<$Res>;
-  $Res call({Option<User> user});
+
+  $Res call({Option<User> userOption});
 }
 
 class __$ProfileViewCopyWithImpl<$Res>
@@ -1543,36 +1544,34 @@ class __$ProfileViewCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object user = freezed,
+    Object userOption = freezed,
   }) {
     return _then(_ProfileView(
-      user == freezed ? _value.user : user as Option<User>,
+      userOption == freezed ? _value.userOption : userOption as Option<User>,
     ));
   }
 }
 
 class _$_ProfileView implements _ProfileView {
-  const _$_ProfileView(this.user) : assert(user != null);
+  const _$_ProfileView(this.userOption) : assert(userOption != null);
 
   @override
-  final Option<User> user;
+  final Option<User> userOption;
 
   @override
   String toString() {
-    return 'NavigationActorState.profileView(user: $user)';
+    return 'NavigationActorState.profileView(userOption: $userOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ProfileView &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other is _ProfileView && (identical(other.userOption, userOption) || const DeepCollectionEquality().equals(other.userOption, userOption)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(userOption);
 
   @override
   _$ProfileViewCopyWith<_ProfileView> get copyWith =>
@@ -1585,7 +1584,7 @@ class _$_ProfileView implements _ProfileView {
     @required Result searchView(),
     @required Result experienceFormView(Option<Experience> experience),
     @required Result navigateExperienceView(Option<Experience> experience),
-    @required Result profileView(Option<User> user),
+    @required Result profileView(Option<User> userOption),
     @required Result errorView(),
     @required Result notificationsView(),
   }) {
@@ -1596,7 +1595,7 @@ class _$_ProfileView implements _ProfileView {
     assert(profileView != null);
     assert(errorView != null);
     assert(notificationsView != null);
-    return profileView(user);
+    return profileView(userOption);
   }
 
   @override
@@ -1606,14 +1605,14 @@ class _$_ProfileView implements _ProfileView {
     Result searchView(),
     Result experienceFormView(Option<Experience> experience),
     Result navigateExperienceView(Option<Experience> experience),
-    Result profileView(Option<User> user),
+    Result profileView(Option<User> userOption),
     Result errorView(),
     Result notificationsView(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (profileView != null) {
-      return profileView(user);
+      return profileView(userOption);
     }
     return orElse();
   }
@@ -1660,9 +1659,9 @@ class _$_ProfileView implements _ProfileView {
 }
 
 abstract class _ProfileView implements NavigationActorState {
-  const factory _ProfileView(Option<User> user) = _$_ProfileView;
-
-  Option<User> get user;
+  const factory _ProfileView(Option<User> userOption) = _$_ProfileView;
+  
+  Option<User> get userOption;
   _$ProfileViewCopyWith<_ProfileView> get copyWith;
 }
 
@@ -1705,7 +1704,7 @@ class _$_ErrorView implements _ErrorView {
     @required Result searchView(),
     @required Result experienceFormView(Option<Experience> experience),
     @required Result navigateExperienceView(Option<Experience> experience),
-    @required Result profileView(Option<User> user),
+    @required Result profileView(Option<User> userOption),
     @required Result errorView(),
     @required Result notificationsView(),
   }) {
@@ -1726,7 +1725,7 @@ class _$_ErrorView implements _ErrorView {
     Result searchView(),
     Result experienceFormView(Option<Experience> experience),
     Result navigateExperienceView(Option<Experience> experience),
-    Result profileView(Option<User> user),
+    Result profileView(Option<User> userOption),
     Result errorView(),
     Result notificationsView(),
     @required Result orElse(),
@@ -1823,7 +1822,7 @@ class _$_NotificationsView implements _NotificationsView {
     @required Result searchView(),
     @required Result experienceFormView(Option<Experience> experience),
     @required Result navigateExperienceView(Option<Experience> experience),
-    @required Result profileView(Option<User> user),
+    @required Result profileView(Option<User> userOption),
     @required Result errorView(),
     @required Result notificationsView(),
   }) {
@@ -1844,7 +1843,7 @@ class _$_NotificationsView implements _NotificationsView {
     Result searchView(),
     Result experienceFormView(Option<Experience> experience),
     Result navigateExperienceView(Option<Experience> experience),
-    Result profileView(Option<User> user),
+    Result profileView(Option<User> userOption),
     Result errorView(),
     Result notificationsView(),
     @required Result orElse(),

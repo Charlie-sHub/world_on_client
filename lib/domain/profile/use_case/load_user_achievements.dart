@@ -8,13 +8,13 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 
 @LazySingleton(env: [Environment.dev, Environment.prod])
-class LoadUserAchievements implements StreamUseCase<KtSet<Achievement>, Params> {
+class LoadUserAchievements implements StreamUseCase<KtList<Achievement>, Params> {
   final ProfileRepositoryInterface _repository;
 
   LoadUserAchievements(this._repository);
 
   @override
-  Stream<Either<Failure, KtSet<Achievement>>> call(Params params) async* {
+  Stream<Either<Failure, KtList<Achievement>>> call(Params params) async* {
     yield* _repository.loadUserAchievements(params.userId);
   }
 }

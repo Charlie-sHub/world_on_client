@@ -23,8 +23,8 @@ void main() {
       loadUserInterests = getIt<LoadUserInterests>();
     },
   );
-  final interests = KtSet.of(Tag.empty());
-  final user = getValidUser().copyWith(interests: interests.asSet());
+  final interests = KtList.of(Tag.empty());
+  final user = getValidUser().copyWith(interests: interests.toSet().dart);
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,

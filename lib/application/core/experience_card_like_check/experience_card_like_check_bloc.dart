@@ -13,9 +13,7 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import '../../../injection.dart';
 
 part 'experience_card_like_check_bloc.freezed.dart';
-
 part 'experience_card_like_check_event.dart';
-
 part 'experience_card_like_check_state.dart';
 
 @injectable

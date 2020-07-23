@@ -105,7 +105,7 @@ void main() {
   );
   group(
     "Dismiss experience from log event tests",
-      () {
+    () {
       blocTest(
         TestDescription.shouldEmitSuccess,
         build: () {

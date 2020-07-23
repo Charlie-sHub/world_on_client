@@ -23,8 +23,8 @@ void main() {
       loadUserAchievements = getIt<LoadUserAchievements>();
     },
   );
-  final achievements = KtSet.of(Achievement.empty());
-  final user = getValidUser().copyWith(achievements: achievements.asSet());
+  final achievements = KtList.of(Achievement.empty());
+  final user = getValidUser().copyWith(achievements: achievements.toSet().dart);
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,

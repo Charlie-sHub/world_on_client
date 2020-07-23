@@ -35,37 +35,37 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtSet<User>>> loadBlockedUsers(int id) {
+  Stream<Either<Failure, KtList<User>>> loadBlockedUsers(int id) {
     // TODO: implement loadBlockedUsers
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtSet<Experience>>> loadExperiencesCreated(int id) {
+  Stream<Either<Failure, KtList<Experience>>> loadExperiencesCreated(int id) {
     // TODO: implement loadExperiencesCreated
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtSet<Experience>>> loadExperiencesDone(int id) {
+  Stream<Either<Failure, KtList<Experience>>> loadExperiencesDone(int id) {
     // TODO: implement loadExperiencesDone
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtSet<Experience>>> loadExperiencesLiked(int id) {
+  Stream<Either<Failure, KtList<Experience>>> loadExperiencesLiked(int id) {
     // TODO: implement loadExperiencesLiked
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtSet<User>>> loadFollowedUsers(int id) {
+  Stream<Either<Failure, KtList<User>>> loadFollowedUsers(int id) {
     // TODO: implement loadFollowedUsers
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtSet<User>>> loadFollowingUsers(int id) {
+  Stream<Either<Failure, KtList<User>>> loadFollowingUsers(int id) {
     // TODO: implement loadFollowingUsers
     throw UnimplementedError();
   }
@@ -77,13 +77,13 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtSet<Achievement>>> loadUserAchievements(int userId) {
+  Stream<Either<Failure, KtList<Achievement>>> loadUserAchievements(int userId) {
     // TODO: implement loadUserAchievements
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtSet<Tag>>> loadUserInterests(int userId) {
+  Stream<Either<Failure, KtList<Tag>>> loadUserInterests(int userId) {
     // TODO: implement loadUserInterests
     throw UnimplementedError();
   }

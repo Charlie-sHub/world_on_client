@@ -23,7 +23,7 @@ void main() {
     },
   );
 
-  final usersFollowing = KtSet.of(
+  final usersFollowing = KtList.of(
     getValidUser(),
     getValidUser().copyWith(id: 2),
   );

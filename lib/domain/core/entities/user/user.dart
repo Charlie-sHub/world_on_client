@@ -107,8 +107,8 @@ abstract class User implements _$User {
 
   Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
     return failureOption.fold(
-        () => right(unit),
-        (failure) => left(failure),
+      () => right(unit),
+      (failure) => left(failure),
     );
   }
 

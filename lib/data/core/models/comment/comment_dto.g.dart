@@ -16,8 +16,7 @@ _$_CommentDto _$_$_CommentDtoFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_CommentDtoToJson(_$_CommentDto instance) =>
-  <String, dynamic>{
+Map<String, dynamic> _$_$_CommentDtoToJson(_$_CommentDto instance) => <String, dynamic>{
       'id': instance.id,
       'poster': instance.poster,
       'content': instance.content,

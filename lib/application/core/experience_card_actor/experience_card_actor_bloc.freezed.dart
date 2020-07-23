@@ -74,7 +74,6 @@ abstract class $ExperienceCardActorEventCopyWith<$Res> {
   factory $ExperienceCardActorEventCopyWith(ExperienceCardActorEvent value,
           $Res Function(ExperienceCardActorEvent) then) =
       _$ExperienceCardActorEventCopyWithImpl<$Res>;
-
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
@@ -108,9 +107,10 @@ class _$ExperienceCardActorEventCopyWithImpl<$Res>
   }
 }
 
-abstract class _$InitializedCopyWith<$Res> implements $ExperienceCardActorEventCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
-
+abstract class _$InitializedCopyWith<$Res>
+  implements $ExperienceCardActorEventCopyWith<$Res> {
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+  __$InitializedCopyWithImpl<$Res>;
   @override
   $Res call({Experience experience});
 
@@ -118,8 +118,10 @@ abstract class _$InitializedCopyWith<$Res> implements $ExperienceCardActorEventC
   $ExperienceCopyWith<$Res> get experience;
 }
 
-class __$InitializedCopyWithImpl<$Res> extends _$ExperienceCardActorEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
+class __$InitializedCopyWithImpl<$Res> extends _$ExperienceCardActorEventCopyWithImpl<$Res>
+  implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+    : super(_value, (v) => _then(v as _Initialized));
 
   @override
   _Initialized get _value => super._value as _Initialized;
@@ -136,15 +138,15 @@ class __$InitializedCopyWithImpl<$Res> extends _$ExperienceCardActorEventCopyWit
 
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.experience) : assert(experience != null);
-  
+
   @override
   final Experience experience;
-  
+
   @override
   String toString() {
     return 'ExperienceCardActorEvent.initialized(experience: $experience)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -153,15 +155,15 @@ class _$_Initialized implements _Initialized {
           const DeepCollectionEquality()
             .equals(other.experience, experience)));
   }
-  
+
   @override
   int get hashCode =>
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
-  
+
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
     __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -174,7 +176,7 @@ class _$_Initialized implements _Initialized {
     assert(dismissedExperienceFromLog != null);
     return initialized(experience);
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -189,7 +191,7 @@ class _$_Initialized implements _Initialized {
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
@@ -202,7 +204,7 @@ class _$_Initialized implements _Initialized {
     assert(dismissedExperienceFromLog != null);
     return initialized(this);
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -221,10 +223,9 @@ class _$_Initialized implements _Initialized {
 
 abstract class _Initialized implements ExperienceCardActorEvent {
   const factory _Initialized(Experience experience) = _$_Initialized;
-  
+
   @override
   Experience get experience;
-  
   @override
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
@@ -362,10 +363,9 @@ abstract class _$DismissedExperienceFromLogCopyWith<$Res>
   factory _$DismissedExperienceFromLogCopyWith(_DismissedExperienceFromLog value,
     $Res Function(_DismissedExperienceFromLog) then) =
   __$DismissedExperienceFromLogCopyWithImpl<$Res>;
-  
   @override
   $Res call({Experience experience});
-  
+
   @override
   $ExperienceCopyWith<$Res> get experience;
 }
@@ -375,11 +375,11 @@ class __$DismissedExperienceFromLogCopyWithImpl<$Res> extends _$ExperienceCardAc
   __$DismissedExperienceFromLogCopyWithImpl(_DismissedExperienceFromLog _value,
     $Res Function(_DismissedExperienceFromLog) _then)
     : super(_value, (v) => _then(v as _DismissedExperienceFromLog));
-  
+
   @override
   _DismissedExperienceFromLog get _value =>
     super._value as _DismissedExperienceFromLog;
-  
+
   @override
   $Res call({
     Object experience = freezed,
@@ -393,15 +393,15 @@ class __$DismissedExperienceFromLogCopyWithImpl<$Res> extends _$ExperienceCardAc
 class _$_DismissedExperienceFromLog implements _DismissedExperienceFromLog {
   const _$_DismissedExperienceFromLog(this.experience)
     : assert(experience != null);
-  
+
   @override
   final Experience experience;
-  
+
   @override
   String toString() {
     return 'ExperienceCardActorEvent.dismissedExperienceFromLog(experience: $experience)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -410,17 +410,17 @@ class _$_DismissedExperienceFromLog implements _DismissedExperienceFromLog {
           const DeepCollectionEquality()
             .equals(other.experience, experience)));
   }
-  
+
   @override
   int get hashCode =>
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
-  
+
   @override
   _$DismissedExperienceFromLogCopyWith<_DismissedExperienceFromLog>
   get copyWith =>
     __$DismissedExperienceFromLogCopyWithImpl<
       _DismissedExperienceFromLog>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -433,7 +433,7 @@ class _$_DismissedExperienceFromLog implements _DismissedExperienceFromLog {
     assert(dismissedExperienceFromLog != null);
     return dismissedExperienceFromLog(experience);
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -448,7 +448,7 @@ class _$_DismissedExperienceFromLog implements _DismissedExperienceFromLog {
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
@@ -461,7 +461,7 @@ class _$_DismissedExperienceFromLog implements _DismissedExperienceFromLog {
     assert(dismissedExperienceFromLog != null);
     return dismissedExperienceFromLog(this);
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -481,10 +481,9 @@ class _$_DismissedExperienceFromLog implements _DismissedExperienceFromLog {
 abstract class _DismissedExperienceFromLog implements ExperienceCardActorEvent {
   const factory _DismissedExperienceFromLog(Experience experience) =
   _$_DismissedExperienceFromLog;
-  
+
   @override
   Experience get experience;
-  
   @override
   _$DismissedExperienceFromLogCopyWith<_DismissedExperienceFromLog>
   get copyWith;
@@ -860,27 +859,27 @@ class __$InLogCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<
   implements _$InLogCopyWith<$Res> {
   __$InLogCopyWithImpl(_InLog _value, $Res Function(_InLog) _then)
     : super(_value, (v) => _then(v as _InLog));
-  
+
   @override
   _InLog get _value => super._value as _InLog;
 }
 
 class _$_InLog implements _InLog {
   const _$_InLog();
-  
+
   @override
   String toString() {
     return 'ExperienceCardActorState.inLog()';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is _InLog);
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode;
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -903,7 +902,7 @@ class _$_InLog implements _InLog {
     assert(dismissalFailure != null);
     return inLog();
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -923,7 +922,7 @@ class _$_InLog implements _InLog {
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
@@ -946,7 +945,7 @@ class _$_InLog implements _InLog {
     assert(dismissalFailure != null);
     return inLog(this);
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -981,27 +980,27 @@ class __$NotInLogCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithIm
   implements _$NotInLogCopyWith<$Res> {
   __$NotInLogCopyWithImpl(_NotInLog _value, $Res Function(_NotInLog) _then)
     : super(_value, (v) => _then(v as _NotInLog));
-  
+
   @override
   _NotInLog get _value => super._value as _NotInLog;
 }
 
 class _$_NotInLog implements _NotInLog {
   const _$_NotInLog();
-  
+
   @override
   String toString() {
     return 'ExperienceCardActorState.notInLog()';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is _NotInLog);
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode;
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -1024,7 +1023,7 @@ class _$_NotInLog implements _NotInLog {
     assert(dismissalFailure != null);
     return notInLog();
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -1044,7 +1043,7 @@ class _$_NotInLog implements _NotInLog {
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
@@ -1067,7 +1066,7 @@ class _$_NotInLog implements _NotInLog {
     assert(dismissalFailure != null);
     return notInLog(this);
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -1386,27 +1385,27 @@ class __$DismissalSuccessCopyWithImpl<$Res> extends _$ExperienceCardActorStateCo
   implements _$DismissalSuccessCopyWith<$Res> {
   __$DismissalSuccessCopyWithImpl(_DismissalSuccess _value, $Res Function(_DismissalSuccess) _then)
     : super(_value, (v) => _then(v as _DismissalSuccess));
-  
+
   @override
   _DismissalSuccess get _value => super._value as _DismissalSuccess;
 }
 
 class _$_DismissalSuccess implements _DismissalSuccess {
   const _$_DismissalSuccess();
-  
+
   @override
   String toString() {
     return 'ExperienceCardActorState.dismissalSuccess()';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is _DismissalSuccess);
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode;
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -1429,7 +1428,7 @@ class _$_DismissalSuccess implements _DismissalSuccess {
     assert(dismissalFailure != null);
     return dismissalSuccess();
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -1449,7 +1448,7 @@ class _$_DismissalSuccess implements _DismissalSuccess {
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
@@ -1472,7 +1471,7 @@ class _$_DismissalSuccess implements _DismissalSuccess {
     assert(dismissalFailure != null);
     return dismissalSuccess(this);
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -1501,7 +1500,6 @@ abstract class _DismissalSuccess implements ExperienceCardActorState {
 abstract class _$DismissalFailureCopyWith<$Res> {
   factory _$DismissalFailureCopyWith(_DismissalFailure value, $Res Function(_DismissalFailure) then) =
   __$DismissalFailureCopyWithImpl<$Res>;
-  
   $Res call({Failure<dynamic> failure});
   
   $FailureCopyWith<dynamic, $Res> get failure;
@@ -1511,7 +1509,7 @@ class __$DismissalFailureCopyWithImpl<$Res> extends _$ExperienceCardActorStateCo
   implements _$DismissalFailureCopyWith<$Res> {
   __$DismissalFailureCopyWithImpl(_DismissalFailure _value, $Res Function(_DismissalFailure) _then)
     : super(_value, (v) => _then(v as _DismissalFailure));
-  
+
   @override
   _DismissalFailure get _value => super._value as _DismissalFailure;
   
@@ -1537,15 +1535,15 @@ class __$DismissalFailureCopyWithImpl<$Res> extends _$ExperienceCardActorStateCo
 
 class _$_DismissalFailure implements _DismissalFailure {
   const _$_DismissalFailure(this.failure) : assert(failure != null);
-  
+
   @override
   final Failure<dynamic> failure;
-  
+
   @override
   String toString() {
     return 'ExperienceCardActorState.dismissalFailure(failure: $failure)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -1553,15 +1551,15 @@ class _$_DismissalFailure implements _DismissalFailure {
         (identical(other.failure, failure) ||
           const DeepCollectionEquality().equals(other.failure, failure)));
   }
-  
+
   @override
   int get hashCode =>
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
-  
+
   @override
   _$DismissalFailureCopyWith<_DismissalFailure> get copyWith =>
     __$DismissalFailureCopyWithImpl<_DismissalFailure>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -1584,7 +1582,7 @@ class _$_DismissalFailure implements _DismissalFailure {
     assert(dismissalFailure != null);
     return dismissalFailure(failure);
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -1604,7 +1602,7 @@ class _$_DismissalFailure implements _DismissalFailure {
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
@@ -1627,7 +1625,7 @@ class _$_DismissalFailure implements _DismissalFailure {
     assert(dismissalFailure != null);
     return dismissalFailure(this);
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -1652,8 +1650,7 @@ class _$_DismissalFailure implements _DismissalFailure {
 abstract class _DismissalFailure implements ExperienceCardActorState {
   const factory _DismissalFailure(Failure<dynamic> failure) =
   _$_DismissalFailure;
-  
+
   Failure<dynamic> get failure;
-  
   _$DismissalFailureCopyWith<_DismissalFailure> get copyWith;
 }

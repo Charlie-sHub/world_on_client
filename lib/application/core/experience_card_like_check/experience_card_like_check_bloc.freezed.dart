@@ -30,18 +30,15 @@ mixin _$ExperienceCardLikeCheckEvent {
   Result when<Result extends Object>({
     @required Result initialized(Experience experience),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(Experience experience),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
@@ -52,18 +49,19 @@ mixin _$ExperienceCardLikeCheckEvent {
 }
 
 abstract class $ExperienceCardLikeCheckEventCopyWith<$Res> {
-  factory $ExperienceCardLikeCheckEventCopyWith(ExperienceCardLikeCheckEvent value, $Res Function(ExperienceCardLikeCheckEvent) then) = _$ExperienceCardLikeCheckEventCopyWithImpl<$Res>;
-
+  factory $ExperienceCardLikeCheckEventCopyWith(ExperienceCardLikeCheckEvent value,
+    $Res Function(ExperienceCardLikeCheckEvent) then) =
+  _$ExperienceCardLikeCheckEventCopyWithImpl<$Res>;
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
 }
 
-class _$ExperienceCardLikeCheckEventCopyWithImpl<$Res> implements $ExperienceCardLikeCheckEventCopyWith<$Res> {
+class _$ExperienceCardLikeCheckEventCopyWithImpl<$Res>
+  implements $ExperienceCardLikeCheckEventCopyWith<$Res> {
   _$ExperienceCardLikeCheckEventCopyWithImpl(this._value, this._then);
 
   final ExperienceCardLikeCheckEvent _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceCardLikeCheckEvent) _then;
 
@@ -72,7 +70,8 @@ class _$ExperienceCardLikeCheckEventCopyWithImpl<$Res> implements $ExperienceCar
     Object experience = freezed,
   }) {
     return _then(_value.copyWith(
-      experience: experience == freezed ? _value.experience : experience as Experience,
+      experience:
+      experience == freezed ? _value.experience : experience as Experience,
     ));
   }
 
@@ -87,9 +86,10 @@ class _$ExperienceCardLikeCheckEventCopyWithImpl<$Res> implements $ExperienceCar
   }
 }
 
-abstract class _$InitializedCopyWith<$Res> implements $ExperienceCardLikeCheckEventCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
-
+abstract class _$InitializedCopyWith<$Res>
+  implements $ExperienceCardLikeCheckEventCopyWith<$Res> {
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
+  __$InitializedCopyWithImpl<$Res>;
   @override
   $Res call({Experience experience});
 
@@ -97,8 +97,10 @@ abstract class _$InitializedCopyWith<$Res> implements $ExperienceCardLikeCheckEv
   $ExperienceCopyWith<$Res> get experience;
 }
 
-class __$InitializedCopyWithImpl<$Res> extends _$ExperienceCardLikeCheckEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
+class __$InitializedCopyWithImpl<$Res> extends _$ExperienceCardLikeCheckEventCopyWithImpl<$Res>
+  implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
+    : super(_value, (v) => _then(v as _Initialized));
 
   @override
   _Initialized get _value => super._value as _Initialized;
@@ -126,14 +128,20 @@ class _$_Initialized implements _Initialized {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initialized && (identical(other.experience, experience) || const DeepCollectionEquality().equals(other.experience, experience)));
+    return identical(this, other) ||
+      (other is _Initialized &&
+        (identical(other.experience, experience) ||
+          const DeepCollectionEquality()
+            .equals(other.experience, experience)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
   @override
-  _$InitializedCopyWith<_Initialized> get copyWith => __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+    __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -185,7 +193,6 @@ abstract class _Initialized implements ExperienceCardLikeCheckEvent {
 
   @override
   Experience get experience;
-
   @override
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
@@ -219,7 +226,6 @@ mixin _$ExperienceCardLikeCheckState {
     @required Result likes(),
     @required Result neutral(),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
@@ -227,14 +233,12 @@ mixin _$ExperienceCardLikeCheckState {
     Result neutral(),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
     @required Result likes(_Likes value),
     @required Result neutral(_Neutral value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
@@ -245,24 +249,29 @@ mixin _$ExperienceCardLikeCheckState {
 }
 
 abstract class $ExperienceCardLikeCheckStateCopyWith<$Res> {
-  factory $ExperienceCardLikeCheckStateCopyWith(ExperienceCardLikeCheckState value, $Res Function(ExperienceCardLikeCheckState) then) = _$ExperienceCardLikeCheckStateCopyWithImpl<$Res>;
+  factory $ExperienceCardLikeCheckStateCopyWith(ExperienceCardLikeCheckState value,
+    $Res Function(ExperienceCardLikeCheckState) then) =
+  _$ExperienceCardLikeCheckStateCopyWithImpl<$Res>;
 }
 
-class _$ExperienceCardLikeCheckStateCopyWithImpl<$Res> implements $ExperienceCardLikeCheckStateCopyWith<$Res> {
+class _$ExperienceCardLikeCheckStateCopyWithImpl<$Res>
+  implements $ExperienceCardLikeCheckStateCopyWith<$Res> {
   _$ExperienceCardLikeCheckStateCopyWithImpl(this._value, this._then);
 
   final ExperienceCardLikeCheckState _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceCardLikeCheckState) _then;
 }
 
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+  __$InitialCopyWithImpl<$Res>;
 }
 
-class __$InitialCopyWithImpl<$Res> extends _$ExperienceCardLikeCheckStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$ExperienceCardLikeCheckStateCopyWithImpl<$Res>
+  implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+    : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -346,11 +355,14 @@ abstract class _Initial implements ExperienceCardLikeCheckState {
 }
 
 abstract class _$LikesCopyWith<$Res> {
-  factory _$LikesCopyWith(_Likes value, $Res Function(_Likes) then) = __$LikesCopyWithImpl<$Res>;
+  factory _$LikesCopyWith(_Likes value, $Res Function(_Likes) then) =
+  __$LikesCopyWithImpl<$Res>;
 }
 
-class __$LikesCopyWithImpl<$Res> extends _$ExperienceCardLikeCheckStateCopyWithImpl<$Res> implements _$LikesCopyWith<$Res> {
-  __$LikesCopyWithImpl(_Likes _value, $Res Function(_Likes) _then) : super(_value, (v) => _then(v as _Likes));
+class __$LikesCopyWithImpl<$Res> extends _$ExperienceCardLikeCheckStateCopyWithImpl<$Res>
+  implements _$LikesCopyWith<$Res> {
+  __$LikesCopyWithImpl(_Likes _value, $Res Function(_Likes) _then)
+    : super(_value, (v) => _then(v as _Likes));
 
   @override
   _Likes get _value => super._value as _Likes;
@@ -434,11 +446,14 @@ abstract class _Likes implements ExperienceCardLikeCheckState {
 }
 
 abstract class _$NeutralCopyWith<$Res> {
-  factory _$NeutralCopyWith(_Neutral value, $Res Function(_Neutral) then) = __$NeutralCopyWithImpl<$Res>;
+  factory _$NeutralCopyWith(_Neutral value, $Res Function(_Neutral) then) =
+  __$NeutralCopyWithImpl<$Res>;
 }
 
-class __$NeutralCopyWithImpl<$Res> extends _$ExperienceCardLikeCheckStateCopyWithImpl<$Res> implements _$NeutralCopyWith<$Res> {
-  __$NeutralCopyWithImpl(_Neutral _value, $Res Function(_Neutral) _then) : super(_value, (v) => _then(v as _Neutral));
+class __$NeutralCopyWithImpl<$Res> extends _$ExperienceCardLikeCheckStateCopyWithImpl<$Res>
+  implements _$NeutralCopyWith<$Res> {
+  __$NeutralCopyWithImpl(_Neutral _value, $Res Function(_Neutral) _then)
+    : super(_value, (v) => _then(v as _Neutral));
 
   @override
   _Neutral get _value => super._value as _Neutral;

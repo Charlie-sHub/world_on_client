@@ -30,7 +30,7 @@ void main() {
     },
   );
   final user = getValidUser();
-  final experiences = KtSet.of(Experience.empty());
+  final experiences = KtList.of(Experience.empty());
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,

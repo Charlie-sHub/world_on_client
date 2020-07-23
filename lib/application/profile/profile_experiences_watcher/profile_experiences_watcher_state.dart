@@ -6,7 +6,7 @@ abstract class ProfileExperiencesWatcherState with _$ProfileExperiencesWatcherSt
 
   const factory ProfileExperiencesWatcherState.loadInProgress() = _LoadInProgress;
 
-  const factory ProfileExperiencesWatcherState.loadSuccess(KtSet<Experience> experiences) = _LoadSuccess;
+  const factory ProfileExperiencesWatcherState.loadSuccess(KtList<Experience> experiences) = _LoadSuccess;
 
   const factory ProfileExperiencesWatcherState.loadFailure(Failure<dynamic> failure) = _LoadFailure;
 }

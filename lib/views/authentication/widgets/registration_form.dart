@@ -153,8 +153,8 @@ class NameTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       onChanged: (value) => context.bloc<RegistrationFormBloc>().add(
-        RegistrationFormEvent.nameChanged(value),
-      ),
+            RegistrationFormEvent.nameChanged(value),
+          ),
       validator: (_) => context.bloc<RegistrationFormBloc>().state.user.name.value.fold(
           (failure) =>
           failure.maybeMap(

@@ -20,7 +20,7 @@ part 'profile_experiences_watcher_state.dart';
 
 @injectable
 class ProfileExperiencesWatcherBloc extends Bloc<ProfileExperiencesWatcherEvent, ProfileExperiencesWatcherState> {
-  StreamSubscription<Either<Failure, KtSet<Experience>>> _experienceStreamSubscription;
+  StreamSubscription<Either<Failure, KtList<Experience>>> _experienceStreamSubscription;
 
   ProfileExperiencesWatcherBloc() : super(const ProfileExperiencesWatcherState.initial());
 
@@ -41,7 +41,9 @@ class ProfileExperiencesWatcherBloc extends Bloc<ProfileExperiencesWatcherEvent,
     _experienceStreamSubscription = _loadExperiencesDone(
       load_experiences_done.Params(userId: event.user.id),
     ).listen(
-      (failureOrExperiences) => add(ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences)),
+      (failureOrExperiences) => add(
+        ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences),
+      ),
     );
   }
 
@@ -52,7 +54,10 @@ class ProfileExperiencesWatcherBloc extends Bloc<ProfileExperiencesWatcherEvent,
     _experienceStreamSubscription = _loadExperiencesLiked(
       load_experiences_liked.Params(userId: event.user.id),
     ).listen(
-      (failureOrExperiences) => add(ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences)),
+        (failureOrExperiences) =>
+        add(
+          ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences),
+        ),
     );
   }
 
@@ -65,7 +70,10 @@ class ProfileExperiencesWatcherBloc extends Bloc<ProfileExperiencesWatcherEvent,
         userId: event.user.id,
       ),
     ).listen(
-      (failureOrExperiences) => add(ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences)),
+        (failureOrExperiences) =>
+        add(
+          ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences),
+        ),
     );
   }
 

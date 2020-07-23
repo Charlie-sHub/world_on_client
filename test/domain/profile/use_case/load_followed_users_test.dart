@@ -24,9 +24,9 @@ void main() {
     },
   );
   final params = Params(id: 1);
-  final followedUsers = KtSet.of(User.empty());
+  final followedUsers = KtList.of(User.empty());
   test(
-    "Should return a KtSet of Users",
+    "Should return a KtList of Users",
     () async {
       // Arrange
       when(mockProfileRepository.loadFollowedUsers(any)).thenAnswer((_) => createStream(right(followedUsers)));
@@ -83,9 +83,9 @@ void main() {
   );
 }
 
-Future<Either<Failure, KtSet<User>>> _act(LoadFollowedUsers useCase, Params params) async {
+Future<Either<Failure, KtList<User>>> _act(LoadFollowedUsers useCase, Params params) async {
   final resultStream = useCase(params);
-  Either<Failure, KtSet<User>> result;
+  Either<Failure, KtList<User>> result;
   await for (final either in resultStream) {
     result = either;
   }

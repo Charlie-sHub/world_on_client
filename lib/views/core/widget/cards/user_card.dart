@@ -2,7 +2,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/application/profile/block_actor/block_actor_bloc.dart';
@@ -11,6 +10,10 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/misc/common_functions/user_card_block_listener.dart';
 import 'package:worldon/views/core/misc/common_functions/user_card_follow_listener.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
+import 'package:worldon/views/core/widget/misc/block_button.dart';
+import 'package:worldon/views/core/widget/misc/follow_button.dart';
+import 'package:worldon/views/core/widget/misc/unblock_button.dart';
+import 'package:worldon/views/core/widget/misc/unfollow_button.dart';
 
 import '../../../../injection.dart';
 
@@ -39,10 +42,10 @@ class UserCard extends StatelessWidget {
       child: MultiBlocListener(
         listeners: const [
           BlocListener<FollowActorBloc, FollowActorState>(
-            listener: userCardFollowListener,
+            listener: userFollowListener,
           ),
           BlocListener<BlockActorBloc, BlockActorState>(
-            listener: userCardBlockListener,
+            listener: userBlockListener,
           ),
         ],
         child: Card(
@@ -153,94 +156,6 @@ class UserCard extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class BlockButton extends StatelessWidget {
-  const BlockButton({
-    Key key,
-    @required this.user,
-  }) : super(key: key);
-
-  final User user;
-
-  @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      icon: FaIcon(
-        FontAwesomeIcons.userSlash,
-        color: WorldOnColors.red,
-      ),
-      onPressed: () => context.bloc<BlockActorBloc>().add(
-            BlockActorEvent.blocked(user),
-          ),
-    );
-  }
-}
-
-class UnBlockButton extends StatelessWidget {
-  const UnBlockButton({
-    Key key,
-    @required this.user,
-  }) : super(key: key);
-
-  final User user;
-
-  @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      icon: FaIcon(
-        FontAwesomeIcons.user,
-        color: Colors.green,
-      ),
-      onPressed: () => context.bloc<BlockActorBloc>().add(
-            BlockActorEvent.unBlocked(user),
-          ),
-    );
-  }
-}
-
-class FollowButton extends StatelessWidget {
-  const FollowButton({
-    Key key,
-    @required this.user,
-  }) : super(key: key);
-
-  final User user;
-
-  @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      icon: FaIcon(
-        FontAwesomeIcons.userPlus,
-        color: WorldOnColors.accent,
-      ),
-      onPressed: () => context.bloc<FollowActorBloc>().add(
-            FollowActorEvent.followed(user),
-          ),
-    );
-  }
-}
-
-class UnFollowButton extends StatelessWidget {
-  const UnFollowButton({
-    Key key,
-    @required this.user,
-  }) : super(key: key);
-
-  final User user;
-
-  @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      icon: FaIcon(
-        FontAwesomeIcons.userMinus,
-        color: WorldOnColors.red,
-      ),
-      onPressed: () => context.bloc<FollowActorBloc>().add(
-            FollowActorEvent.unFollowed(user),
-          ),
     );
   }
 }

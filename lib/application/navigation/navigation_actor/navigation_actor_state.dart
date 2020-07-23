@@ -10,7 +10,7 @@ abstract class NavigationActorState with _$NavigationActorState {
 
   const factory NavigationActorState.navigateExperienceView(Option<Experience> experience) = _NavigateExperienceView;
 
-  const factory NavigationActorState.profileView(Option<User> user) = _ProfileView;
+  const factory NavigationActorState.profileView(Option<User> userOption) = _ProfileView;
 
   const factory NavigationActorState.errorView() = _ErrorView;
 

@@ -6,7 +6,7 @@ abstract class ProfileInterestsWatcherState with _$ProfileInterestsWatcherState 
 
   const factory ProfileInterestsWatcherState.loadInProgress() = _LoadInProgress;
 
-  const factory ProfileInterestsWatcherState.loadSuccess(KtSet<Tag> interests) = _LoadSuccess;
+  const factory ProfileInterestsWatcherState.loadSuccess(KtList<Tag> interests) = _LoadSuccess;
 
   const factory ProfileInterestsWatcherState.loadFailure(Failure<dynamic> failure) = _LoadFailure;
 }

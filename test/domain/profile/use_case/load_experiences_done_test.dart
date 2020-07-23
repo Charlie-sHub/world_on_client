@@ -24,9 +24,9 @@ void main() {
     },
   );
   final params = Params(userId: 1);
-  final experiencesDone = KtSet.of(Experience.empty());
+  final experiencesDone = KtList.of(Experience.empty());
   test(
-    "Should return a KtSet of Experiences if everything goes well",
+    "Should return a KtList of Experiences if everything goes well",
     () async {
       // Arrange
       when(mockProfileRepository.loadExperiencesDone(any)).thenAnswer((_) => createStream(right(experiencesDone)));
@@ -83,9 +83,9 @@ void main() {
   );
 }
 
-Future<Either<Failure, KtSet<Experience>>> _act(LoadExperiencesDone useCase, Params params) async {
+Future<Either<Failure, KtList<Experience>>> _act(LoadExperiencesDone useCase, Params params) async {
   final resultStream = useCase(params);
-  Either<Failure, KtSet<Experience>> result;
+  Either<Failure, KtList<Experience>> result;
   await for (final either in resultStream) {
     result = either;
   }

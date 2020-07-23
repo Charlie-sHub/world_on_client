@@ -10,6 +10,7 @@ import 'package:worldon/views/core/routes/router.gr.dart';
 import 'package:worldon/views/experience_management/widget/experience_creation_form.dart';
 import 'package:worldon/views/main_feed/widget/main_feed_body.dart';
 import 'package:worldon/views/notifications/widget/notifications_body.dart';
+import 'package:worldon/views/profile/widget/profile_body.dart';
 import 'package:worldon/views/search/widget/search_body.dart';
 
 class MainPage extends StatelessWidget {
@@ -25,22 +26,39 @@ class MainPage extends StatelessWidget {
         child: BlocBuilder<NavigationActorBloc, NavigationActorState>(
           builder: (context, state) => Scaffold(
             appBar: const WorldOnAppBar(),
-            body: context.bloc<NavigationActorBloc>().state.map(
-                  // Maybe the MainFeedBody can be a page but still the body of the scaffold
-                  mainFeedView: (context) => const MainFeedBody(),
-                  searchView: (context) => const SearchBody(),
-                  experienceFormView: (context) => ExperienceManagementForm(),
-                  navigateExperienceView: (context) => const Center(
-                    child: Text("Navigate Experience"),
+            body: IndexedStack(
+              // Feels rather duct tape-ish to return the index this way
+              // but changing the state would mess with the rest of the navigation, such as when "participating" in a experience
+              index: context.bloc<NavigationActorBloc>().state.map(
+                    mainFeedView: (_) => 0,
+                    searchView: (_) => 1,
+                    experienceFormView: (_) => 2,
+                    navigateExperienceView: (_) => 3,
+                    profileView: (_) => 4,
+                    errorView: (_) => 5,
+                    notificationsView: (_) => 6,
                   ),
-                  profileView: (context) => const Center(
-                    child: Text("Profile"),
-                  ),
-                  errorView: (context) => const Center(
-                    child: Text("Error"),
-                  ),
-              notificationsView: (context) => const NotificationsBody(),
+              children: <Widget>[
+                // TODO: Turn these into pages
+                const MainFeedBody(),
+                const SearchBody(),
+                ExperienceManagementForm(),
+                const Center(
+                  child: Text("Navigate Experience"),
                 ),
+                ProfileBody(
+                  // Not sure about this solution, but it'll work for now
+                  userOption: context.bloc<NavigationActorBloc>().state.maybeMap(
+                        profileView: (state) => state.userOption,
+                        orElse: () => none(),
+                      ),
+                ),
+                const Center(
+                  child: Text("Error"),
+                ),
+                const NotificationsBody(),
+              ],
+            ),
             bottomNavigationBar: WorldOnBottomNavigationBar(),
           ),
         ),

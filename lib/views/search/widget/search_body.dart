@@ -50,60 +50,18 @@ class SearchBody extends StatelessWidget {
                 autovalidate: state.showErrorMessages,
                 child: Column(
                   children: <Widget>[
-                    Container(
-                      height: 50,
-                      child: Row(
-                        children: <Widget>[
-                          Expanded(
-                            child: TextFormField(
-                              onChanged: (value) => context.bloc<SearchByNameFormBloc>().add(
-                                SearchByNameFormEvent.searchTermChanged(value),
-                              ),
-                              decoration: const InputDecoration(
-                                labelText: "Search",
-                              ),
-                              validator: (_) => context.bloc<SearchByNameFormBloc>().state.searchTerm.value.fold(
-                                  (failure) => failure.maybeMap(
-                                  emptyString: (_) => "The search term can't be empty",
-                                  orElse: () => StringConst.unknownError,
-                                ),
-                                  (_) => null,
-                              ),
-                            ),
-                          ),
-                          IconButton(
-                            icon: Icon(
-                              Icons.search,
-                              size: 35,
-                            ),
-                            onPressed: () => context.bloc<SearchByNameFormBloc>().add(
-                              const SearchByNameFormEvent.submitted(),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    const SearchHeader(),
                     const SizedBox(height: 5),
-                    Container(
-                      // Don't like the idea of having this hardcoded, but i can't find any other way to thing out the tabBar
-                      height: 52,
-                      child: const SearchTabBar(),
-                    ),
+                    const SearchTabBar(),
                     Expanded(
                       child: TabBarView(
                         children: [
-                          ExperiencesTabView(
-                            searchTerm: state.searchTerm,
-                          ),
-                          UsersTabView(
-                            searchTerm: state.searchTerm,
-                          ),
-                          TagsTabView(
-                            searchTerm: state.searchTerm,
-                          ),
+                          SearchExperiencesTabView(searchTerm: state.searchTerm),
+                          SearchUsersTabView(searchTerm: state.searchTerm),
+                          SearchTagsTabView(searchTerm: state.searchTerm),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -113,31 +71,74 @@ class SearchBody extends StatelessWidget {
       ),
     );
   }
-  
+
   void searchFormListener(BuildContext context, SearchByNameFormState state) {
     if (state.isSubmitting) {
       context.bloc<SearchUsersByNameWatcherBloc>().add(
-        // What to do with the users found by name?
-        SearchUsersByNameWatcherEvent.watchUsersFoundByUsernameStarted(state.searchTerm),
-      );
+            // What to do with the users found by name?
+            SearchUsersByNameWatcherEvent.watchUsersFoundByUsernameStarted(state.searchTerm),
+          );
       context.bloc<SearchExperiencesByNameWatcherBloc>().add(
-        SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(state.searchTerm),
-      );
+            SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(state.searchTerm),
+          );
       context.bloc<SearchTagsByNameWatcherBloc>().add(
-        SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(state.searchTerm),
-      );
+            SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(state.searchTerm),
+          );
     }
   }
 }
 
-class UsersTabView extends StatelessWidget {
+class SearchHeader extends StatelessWidget {
+  const SearchHeader({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 50,
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: TextFormField(
+              onChanged: (value) => context.bloc<SearchByNameFormBloc>().add(
+                    SearchByNameFormEvent.searchTermChanged(value),
+                  ),
+              decoration: const InputDecoration(
+                labelText: "Search",
+              ),
+              validator: (_) => context.bloc<SearchByNameFormBloc>().state.searchTerm.value.fold(
+                    (failure) => failure.maybeMap(
+                      emptyString: (_) => "The search term can't be empty",
+                      orElse: () => StringConst.unknownError,
+                    ),
+                    (_) => null,
+                  ),
+            ),
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.search,
+              size: 35,
+            ),
+            onPressed: () => context.bloc<SearchByNameFormBloc>().add(
+                  const SearchByNameFormEvent.submitted(),
+                ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class SearchUsersTabView extends StatelessWidget {
   final SearchTerm searchTerm;
-  
-  const UsersTabView({
+
+  const SearchUsersTabView({
     Key key,
     @required this.searchTerm,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SearchUsersByNameWatcherBloc, SearchUsersByNameWatcherState>(
@@ -163,20 +164,21 @@ class UsersTabView extends StatelessWidget {
               context.bloc<SearchUsersByNameWatcherBloc>().add(
                 SearchUsersByNameWatcherEvent.watchUsersFoundByNameStarted(searchTerm),
               ),
-            child: CriticalErrorDisplay(failure: state.failure)),
+            child: CriticalErrorDisplay(failure: state.failure),
+          ),
       ),
     );
   }
 }
 
-class TagsTabView extends StatelessWidget {
+class SearchTagsTabView extends StatelessWidget {
   final SearchTerm searchTerm;
-  
-  const TagsTabView({
+
+  const SearchTagsTabView({
     Key key,
     @required this.searchTerm,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SearchTagsByNameWatcherBloc, SearchTagsByNameWatcherState>(
@@ -202,20 +204,21 @@ class TagsTabView extends StatelessWidget {
               context.bloc<SearchTagsByNameWatcherBloc>().add(
                 SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(searchTerm),
               ),
-            child: CriticalErrorDisplay(failure: state.failure)),
+            child: CriticalErrorDisplay(failure: state.failure),
+          ),
       ),
     );
   }
 }
 
-class ExperiencesTabView extends StatelessWidget {
+class SearchExperiencesTabView extends StatelessWidget {
   final SearchTerm searchTerm;
-  
-  const ExperiencesTabView({
+
+  const SearchExperiencesTabView({
     Key key,
     @required this.searchTerm,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SearchExperiencesByNameWatcherBloc, SearchExperiencesByNameWatcherState>(
@@ -242,7 +245,8 @@ class ExperiencesTabView extends StatelessWidget {
                 context.bloc<SearchExperiencesByNameWatcherBloc>().add(
                   SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(searchTerm),
                 ),
-              child: CriticalErrorDisplay(failure: state.failure)),
+              child: CriticalErrorDisplay(failure: state.failure),
+            ),
         ),
     );
   }
@@ -255,26 +259,30 @@ class SearchTabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TabBar(
-      labelPadding: const EdgeInsets.all(2),
-      indicatorColor: WorldOnColors.primary,
-      tabs: [
-        Tab(
-          iconMargin: const EdgeInsets.all(2),
-          icon: Icon(Icons.explore),
-          text: "Experiences",
-        ),
-        Tab(
-          iconMargin: const EdgeInsets.all(2),
-          icon: Icon(Icons.account_circle),
-          text: "Users",
-        ),
-        Tab(
-          iconMargin: const EdgeInsets.all(2),
-          icon: Icon(Icons.local_offer),
-          text: "Tags",
-        ),
-      ],
+    return Container(
+      // Don't like the idea of having this hardcoded, but i can't find any other way to thing out the tabBar
+      height: 52,
+      child: const TabBar(
+        labelPadding: EdgeInsets.all(2),
+        indicatorColor: WorldOnColors.primary,
+        tabs: [
+          Tab(
+            iconMargin: EdgeInsets.all(2),
+            icon: Icon(Icons.explore),
+            text: "Experiences",
+          ),
+          Tab(
+            iconMargin: EdgeInsets.all(2),
+            icon: Icon(Icons.account_circle),
+            text: "Users",
+          ),
+          Tab(
+            iconMargin: EdgeInsets.all(2),
+            icon: Icon(Icons.local_offer),
+            text: "Tags",
+          ),
+        ],
+      ),
     );
   }
 }

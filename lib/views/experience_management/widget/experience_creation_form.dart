@@ -47,16 +47,93 @@ class ExperienceManagementForm extends StatelessWidget {
               const Map(),
               const SizedBox(height: 10),
               const DifficultyTitle(),
-              const SizedBox(height: 5),
               // Ideally the DifficultySlider would also be const
               DifficultySlider(),
-              // TODO: implement objectives creation
-              // TODO: implement rewards creation
-              // TODO: implement tag addition
+              const ObjectiveCreationCard(),
+              const RewardCreationCard(),
+              const TagAdditionCard(),
               const FinishButton(),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class TagAdditionCard extends StatelessWidget {
+  const TagAdditionCard({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Column(
+        children: const <Widget>[
+          Text(
+            "Tags",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: WorldOnColors.background,
+              fontSize: 15,
+            ),
+          ),
+          // TODO: implement tag addition
+        ],
+      ),
+    );
+  }
+}
+
+class RewardCreationCard extends StatelessWidget {
+  const RewardCreationCard({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Column(
+        children: const <Widget>[
+          Text(
+            "Rewards",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: WorldOnColors.background,
+              fontSize: 15,
+            ),
+          ),
+          // TODO: implement rewards creation
+        ],
+      ),
+    );
+  }
+}
+
+class ObjectiveCreationCard extends StatelessWidget {
+  const ObjectiveCreationCard({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Column(
+        children: const <Widget>[
+          Text(
+            "Objectives",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: WorldOnColors.background,
+              fontSize: 15,
+            ),
+          ),
+          // TODO: implement objectives creation
+        ],
       ),
     );
   }
@@ -186,10 +263,11 @@ class DifficultyTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
+    return const Text(
       "Set the initial difficulty",
       textAlign: TextAlign.center,
       style: TextStyle(
+        fontWeight: FontWeight.bold,
         color: WorldOnColors.primary,
         fontSize: 15,
       ),

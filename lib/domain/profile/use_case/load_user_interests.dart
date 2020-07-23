@@ -8,13 +8,13 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 
 @LazySingleton(env: [Environment.dev, Environment.prod])
-class LoadUserInterests implements StreamUseCase<KtSet<Tag>, Params> {
+class LoadUserInterests implements StreamUseCase<KtList<Tag>, Params> {
   final ProfileRepositoryInterface _repository;
 
   LoadUserInterests(this._repository);
 
   @override
-  Stream<Either<Failure, KtSet<Tag>>> call(Params params) async* {
+  Stream<Either<Failure, KtList<Tag>>> call(Params params) async* {
     yield* _repository.loadUserInterests(params.userId);
   }
 }

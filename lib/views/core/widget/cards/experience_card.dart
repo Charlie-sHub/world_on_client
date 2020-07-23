@@ -55,11 +55,17 @@ class ExperienceCard extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           Row(
-                            children: const <Widget>[
+                            children: <Widget>[
                               Padding(
-                                padding: EdgeInsets.all(10),
-                                child: CircleAvatar(
-                                  backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
+                                padding: const EdgeInsets.all(10),
+                                child: FlatButton(
+                                  onPressed: () => context.bloc<NavigationActorBloc>().add(
+                                        NavigationActorEvent.profileTapped(some(experience.creator)),
+                                      ),
+                                  child: const CircleAvatar(
+                                    radius: 25,
+                                    backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
+                                  ),
                                 ),
                               ),
                             ],
