@@ -1,9 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/application/profile/block_actor/block_actor_bloc.dart';
 import 'package:worldon/application/profile/follow_actor/follow_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
@@ -14,6 +12,7 @@ import 'package:worldon/views/core/widget/misc/block_button.dart';
 import 'package:worldon/views/core/widget/misc/follow_button.dart';
 import 'package:worldon/views/core/widget/misc/unblock_button.dart';
 import 'package:worldon/views/core/widget/misc/unfollow_button.dart';
+import 'package:worldon/views/core/widget/misc/user_image.dart';
 
 import '../../../../injection.dart';
 
@@ -55,44 +54,8 @@ class UserCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(5),
-                    child: FlatButton(
-                      onPressed: () => context.bloc<NavigationActorBloc>().add(
-                            NavigationActorEvent.profileTapped(some(user)),
-                          ),
-                      child: const CircleAvatar(
-                        radius: 25,
-                        // TODO: Implement User image
-                        backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(5),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          AutoSizeText(
-                            user.name.getOrCrash(),
-                            style: const TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.bold,
-                              color: WorldOnColors.background,
-                            ),
-                          ),
-                          AutoSizeText(
-                            user.username.getOrCrash(),
-                            style: const TextStyle(
-                              fontSize: 15,
-                              color: WorldOnColors.background,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  UserImage(user: user),
+                  NameUsernameDisplay(user: user),
                   BlocBuilder<FollowActorBloc, FollowActorState>(
                     builder: (context, state) => state.map(
                       initial: (_) => Container(),
@@ -119,41 +82,107 @@ class UserCard extends StatelessWidget {
                   ),
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.all(5),
-                child: AutoSizeText(
-                  user.description.getOrCrash(),
-                  style: const TextStyle(
-                    color: WorldOnColors.background,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    AutoSizeText(
-                      "Level: ${user.level.getOrCrash().toString()}",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: _getColor(user.level.getOrCrash()),
-                      ),
-                    ),
-                    Expanded(
-                      child: LinearPercentIndicator(
-                        lineHeight: 10,
-                        // TODO: Implement a way to measure what percentage to the next level the user is in based on its experience points
-                        percent: 0.7,
-                        backgroundColor: WorldOnColors.background,
-                        progressColor: WorldOnColors.primary,
-                      ),
-                    ),
-                  ],
-                ),
-              )
+              UserBio(user: user),
+              UserExperienceInfo(user: user),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class UserExperienceInfo extends StatelessWidget {
+  const UserExperienceInfo({
+    Key key,
+    @required this.user,
+  }) : super(key: key);
+
+  final User user;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(5),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          AutoSizeText(
+            "Level: ${user.level.getOrCrash().toString()}",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: _getColor(user.level.getOrCrash()),
+            ),
+          ),
+          Expanded(
+            child: LinearPercentIndicator(
+              lineHeight: 10,
+              // TODO: Implement a way to measure what percentage to the next level the user is in based on its experience points
+              percent: 0.7,
+              backgroundColor: WorldOnColors.background,
+              progressColor: WorldOnColors.primary,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class UserBio extends StatelessWidget {
+  const UserBio({
+    Key key,
+    @required this.user,
+  }) : super(key: key);
+
+  final User user;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(5),
+      child: AutoSizeText(
+        user.description.getOrCrash(),
+        style: const TextStyle(
+          color: WorldOnColors.background,
+        ),
+      ),
+    );
+  }
+}
+
+class NameUsernameDisplay extends StatelessWidget {
+  const NameUsernameDisplay({
+    Key key,
+    @required this.user,
+  }) : super(key: key);
+
+  final User user;
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.all(5),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            AutoSizeText(
+              user.name.getOrCrash(),
+              style: const TextStyle(
+                fontSize: 17,
+                fontWeight: FontWeight.bold,
+                color: WorldOnColors.background,
+              ),
+            ),
+            AutoSizeText(
+              user.username.getOrCrash(),
+              style: const TextStyle(
+                fontSize: 15,
+                color: WorldOnColors.background,
+              ),
+            ),
+          ],
         ),
       ),
     );

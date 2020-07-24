@@ -5,6 +5,7 @@ import 'package:worldon/application/notifications/notification_actor/notificatio
 import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
+import 'package:worldon/views/core/widget/misc/user_image.dart';
 
 class NotificationCard extends StatelessWidget {
   final Notification notification;
@@ -23,12 +24,7 @@ class NotificationCard extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          const Padding(
-            padding: EdgeInsets.all(7),
-            child: CircleAvatar(
-              backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
-            ),
-          ),
+          UserImage(user: notification.sender),
           Expanded(
             child: Center(
               child: AutoSizeText(

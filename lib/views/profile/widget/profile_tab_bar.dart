@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
-class ProfileTabBar extends StatelessWidget {
+class ProfileTabBar extends StatelessWidget implements PreferredSizeWidget {
   const ProfileTabBar({
     Key key,
   }) : super(key: key);
@@ -36,4 +36,7 @@ class ProfileTabBar extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

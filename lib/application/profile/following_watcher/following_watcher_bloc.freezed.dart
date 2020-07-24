@@ -486,7 +486,6 @@ abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(
           _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-
   $Res call({KtList<User> followingUsers});
 }
 
@@ -505,8 +504,7 @@ class __$LoadSuccessCopyWithImpl<$Res>
     Object followingUsers = freezed,
   }) {
     return _then(_LoadSuccess(
-      followingUsers == freezed
-          ? _value.followingUsers : followingUsers as KtList<User>,
+      followingUsers == freezed ? _value.followingUsers : followingUsers as KtList<User>,
     ));
   }
 }
@@ -605,7 +603,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 
 abstract class _LoadSuccess implements FollowingWatcherState {
   const factory _LoadSuccess(KtList<User> followingUsers) = _$_LoadSuccess;
-  
+
   KtList<User> get followingUsers;
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }

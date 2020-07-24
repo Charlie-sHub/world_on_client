@@ -488,7 +488,6 @@ abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(
           _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-
   $Res call({KtList<Achievement> achievements});
 }
 
@@ -507,8 +506,7 @@ class __$LoadSuccessCopyWithImpl<$Res>
     Object achievements = freezed,
   }) {
     return _then(_LoadSuccess(
-      achievements == freezed
-          ? _value.achievements : achievements as KtList<Achievement>,
+      achievements == freezed ? _value.achievements : achievements as KtList<Achievement>,
     ));
   }
 }
@@ -606,7 +604,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 
 abstract class _LoadSuccess implements ProfileAchievementsWatcherState {
   const factory _LoadSuccess(KtList<Achievement> achievements) = _$_LoadSuccess;
-  
+
   KtList<Achievement> get achievements;
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }

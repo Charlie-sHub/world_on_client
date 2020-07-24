@@ -9,6 +9,7 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/use_case/is_logged_in_user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/injection.dart';
+import 'package:worldon/views/profile/widget/profile_body.dart';
 
 part 'profile_watcher_bloc.freezed.dart';
 part 'profile_watcher_event.dart';

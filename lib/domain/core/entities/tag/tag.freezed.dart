@@ -118,8 +118,8 @@ class _$_Tag extends _Tag {
       : assert(name != null),
         assert(creator != null),
         assert(creationDate != null),
-      assert(modificationDate != null),
-      super._();
+        assert(modificationDate != null),
+        super._();
 
   @override
   final int id;

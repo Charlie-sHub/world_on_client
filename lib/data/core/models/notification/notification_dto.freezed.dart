@@ -154,7 +154,7 @@ class _$_NotificationDto extends _NotificationDto {
         assert(creationDate != null),
         assert(type != null),
         super._();
-  
+
   factory _$_NotificationDto.fromJson(Map<String, dynamic> json) => _$_$_NotificationDtoFromJson(json);
 
   @override
@@ -181,13 +181,13 @@ class _$_NotificationDto extends _NotificationDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _NotificationDto &&
-          (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-          (identical(other.sender, sender) || const DeepCollectionEquality().equals(other.sender, sender)) &&
-          (identical(other.receiver, receiver) || const DeepCollectionEquality().equals(other.receiver, receiver)) &&
-          (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-          (identical(other.seen, seen) || const DeepCollectionEquality().equals(other.seen, seen)) &&
-          (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
-          (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.sender, sender) || const DeepCollectionEquality().equals(other.sender, sender)) &&
+            (identical(other.receiver, receiver) || const DeepCollectionEquality().equals(other.receiver, receiver)) &&
+            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.seen, seen) || const DeepCollectionEquality().equals(other.seen, seen)) &&
+            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)));
   }
 
   @override

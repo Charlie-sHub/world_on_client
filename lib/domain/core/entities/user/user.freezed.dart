@@ -363,13 +363,13 @@ class _$_User extends _User {
         assert(blockedUsers != null),
         assert(followedUsers != null),
         assert(devices != null),
-      assert(systems != null),
-      assert(interests != null),
-      assert(achievements != null),
-      assert(experiencesDone != null),
-      assert(experiencesLiked != null),
-      assert(experiencesToDo != null),
-      super._();
+        assert(systems != null),
+        assert(interests != null),
+        assert(achievements != null),
+        assert(experiencesDone != null),
+        assert(experiencesLiked != null),
+        assert(experiencesToDo != null),
+        super._();
 
   @override
   final int id;

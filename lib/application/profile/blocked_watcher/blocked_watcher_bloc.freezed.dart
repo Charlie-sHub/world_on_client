@@ -482,7 +482,6 @@ abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(
           _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-
   $Res call({KtList<User> blockedUsers});
 }
 
@@ -501,8 +500,7 @@ class __$LoadSuccessCopyWithImpl<$Res>
     Object blockedUsers = freezed,
   }) {
     return _then(_LoadSuccess(
-      blockedUsers == freezed
-          ? _value.blockedUsers : blockedUsers as KtList<User>,
+      blockedUsers == freezed ? _value.blockedUsers : blockedUsers as KtList<User>,
     ));
   }
 }
@@ -600,7 +598,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 
 abstract class _LoadSuccess implements BlockedWatcherState {
   const factory _LoadSuccess(KtList<User> blockedUsers) = _$_LoadSuccess;
-  
+
   KtList<User> get blockedUsers;
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }

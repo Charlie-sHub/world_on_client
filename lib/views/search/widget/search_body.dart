@@ -158,10 +158,8 @@ class SearchUsersTabView extends StatelessWidget {
             }
           },
         ),
-        searchFailure: (state) =>
-          InkWell(
-            onTap: () async =>
-              context.bloc<SearchUsersByNameWatcherBloc>().add(
+        searchFailure: (state) => InkWell(
+          onTap: () async => context.bloc<SearchUsersByNameWatcherBloc>().add(
                 SearchUsersByNameWatcherEvent.watchUsersFoundByNameStarted(searchTerm),
               ),
             child: CriticalErrorDisplay(failure: state.failure),

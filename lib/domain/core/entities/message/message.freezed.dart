@@ -154,11 +154,11 @@ class _$_Message extends _Message {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Message &&
-          (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-          (identical(other.sender, sender) || const DeepCollectionEquality().equals(other.sender, sender)) &&
-          (identical(other.receiver, receiver) || const DeepCollectionEquality().equals(other.receiver, receiver)) &&
-          (identical(other.content, content) || const DeepCollectionEquality().equals(other.content, content)) &&
-          (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.sender, sender) || const DeepCollectionEquality().equals(other.sender, sender)) &&
+            (identical(other.receiver, receiver) || const DeepCollectionEquality().equals(other.receiver, receiver)) &&
+            (identical(other.content, content) || const DeepCollectionEquality().equals(other.content, content)) &&
+            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)));
   }
 
   @override

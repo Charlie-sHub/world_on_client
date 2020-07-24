@@ -54,10 +54,9 @@ class ProfileExperiencesWatcherBloc extends Bloc<ProfileExperiencesWatcherEvent,
     _experienceStreamSubscription = _loadExperiencesLiked(
       load_experiences_liked.Params(userId: event.user.id),
     ).listen(
-        (failureOrExperiences) =>
-        add(
-          ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences),
-        ),
+      (failureOrExperiences) => add(
+        ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences),
+      ),
     );
   }
 

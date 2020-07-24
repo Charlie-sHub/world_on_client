@@ -25,24 +25,27 @@ class ForeignProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: DefaultTabController(
-        length: 3,
-        child: Column(
-          children: <Widget>[
-            ForeignProfileHeader(user: user),
-            const ProfileTabBar(),
-            Expanded(
-              child: TabBarView(
-                children: [
-                  ProfileExperiencesTabView(user: user),
-                  ProfileUsersTabView(user: user),
-                  ProfileAchievementsTabView(user: user),
-                ],
-              ),
+    return DefaultTabController(
+      // Maybe this shouldn't be hardcoded
+      // But how to get the value from the length of ProfileTabBar lists of tabs?
+      length: 3,
+      child: Column(
+        children: <Widget>[
+          // TODO: Rework into Sliver classes
+          // So the Header and TabBar hide when scrolling down the lists
+          // Same for the OwnProfile
+          ForeignProfileHeader(user: user),
+          const ProfileTabBar(),
+          Expanded(
+            child: TabBarView(
+              children: [
+                ProfileExperiencesTabView(user: user),
+                ProfileUsersTabView(user: user),
+                ProfileAchievementsTabView(user: user),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

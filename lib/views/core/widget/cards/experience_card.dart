@@ -11,6 +11,8 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/common_functions/experience_card_listener.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
+import 'package:worldon/views/core/widget/cards/simple_tag_display.dart';
+import 'package:worldon/views/core/widget/misc/user_image.dart';
 
 class ExperienceCard extends StatelessWidget {
   final Experience experience;
@@ -42,59 +44,7 @@ class ExperienceCard extends StatelessWidget {
             padding: const EdgeInsets.all(5),
             child: Column(
               children: <Widget>[
-                Container(
-                  height: 250,
-                  child: Stack(
-                    children: <Widget>[
-                      const Image(
-                        // TODO: Change to the real image from the experience
-                        image: AssetImage('assets/experience_placeholder_image.jpg'),
-                        fit: BoxFit.fill,
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Row(
-                            children: <Widget>[
-                              Padding(
-                                padding: const EdgeInsets.all(10),
-                                child: FlatButton(
-                                  onPressed: () => context.bloc<NavigationActorBloc>().add(
-                                        NavigationActorEvent.profileTapped(some(experience.creator)),
-                                      ),
-                                  child: const CircleAvatar(
-                                    radius: 25,
-                                    backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: <Widget>[
-                                Icon(
-                                  Icons.place,
-                                  size: 30,
-                                ),
-                                const AutoSizeText(
-                                  "500m",
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: WorldOnColors.white,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
+                ImageStack(experience: experience),
                 Column(
                   children: <Widget>[
                     const SizedBox(height: 10),
@@ -120,127 +70,27 @@ class ExperienceCard extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        RaisedButton(
-                          color: WorldOnColors.primary,
-                          onPressed: () => context.bloc<NavigationActorBloc>().add(
-                                NavigationActorEvent.experienceNavigationTapped(some(experience)),
-                              ),
-                          child: const Text(
-                            "Participate",
-                            style: TextStyle(
-                              color: WorldOnColors.white,
-                            ),
-                          ),
-                        ),
-                        BlocBuilder<ExperienceCardActorBloc, ExperienceCardActorState>(
-                          builder: (context, state) => state.map(
-                            initial: (_) => Container(),
-                            actionInProgress: (_) => const CircularProgressIndicator(),
-                            inLog: (_) => DismissFromLogButton(experience: experience),
-                            notInLog: (_) => AddToLogButton(experience: experience),
-                            additionSuccess: (_) => DismissFromLogButton(experience: experience),
-                            additionFailure: (_) => AddToLogButton(experience: experience),
-                            dismissalSuccess: (_) => AddToLogButton(experience: experience),
-                            dismissalFailure: (_) => DismissFromLogButton(experience: experience),
-                          ),
-                        ),
-                        IconButton(
-                          icon: Icon(
-                            Icons.error_outline,
-                            size: 30,
-                            color: WorldOnColors.background,
-                          ),
-                          onPressed: () => FlushbarHelper.createInformation(
-                            message: "This is just a placeholder",
-                          ).show(context),
-                        ),
+                        ParticipateButton(experience: experience),
+                        LogButton(experience: experience),
+                        const ReportButton(),
                       ],
                     ),
                     const SizedBox(height: 15),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            BlocBuilder<ExperienceCardLikeCheckBloc, ExperienceCardLikeCheckState>(
-                              builder: (context, state) => state.map(
-                                initial: (_) => const CircularProgressIndicator(),
-                                likes: (_) => FaIcon(
-                                  FontAwesomeIcons.solidHeart,
-                                  color: WorldOnColors.red,
-                                ),
-                                neutral: (_) => FaIcon(
-                                  FontAwesomeIcons.heart,
-                                  color: WorldOnColors.red,
-                                ),
-                              ),
+                        LikesCounter(experience: experience),
+                        DoneCounter(experience: experience),
+                        DifficultyDisplay(experience: experience),
+                      ],
+                    ),
+                    const SizedBox(height: 5),
+                    Wrap(
+                      spacing: 5,
+                      children: <Widget>[
+                        ...experience.tags.getOrCrash().asSet().map(
+                              (tag) => SimpleTagDisplay(tag: tag),
                             ),
-                            const SizedBox(width: 5),
-                            Text(
-                              // Perhaps this isn't the best way to show this
-                              // perhaps the experience should just have an int with the amount of likes it has (and dislikes too)
-                              experience.likedBy.length.toString(),
-                              style: const TextStyle(color: WorldOnColors.background),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            // TODO: Implement the user pictures
-                            // The avatars of the last 3 users to have done the experience should appear here
-                            Container(
-                              // I don't like the idea of hard coding this, but it will work for now
-                              width: 80,
-                              child: Stack(
-                                children: const <Widget>[
-                                  CircleAvatar(
-                                    backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
-                                  ),
-                                  Positioned(
-                                    left: 20,
-                                    child: CircleAvatar(
-                                      backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
-                                    ),
-                                  ),
-                                  Positioned(
-                                    left: 40,
-                                    child: CircleAvatar(
-                                      backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                            const SizedBox(width: 5),
-                            Text(
-                              experience.doneBy.length.toString(),
-                              style: const TextStyle(color: WorldOnColors.background),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            const Text(
-                              "Difficulty: ",
-                              style: TextStyle(color: WorldOnColors.background),
-                            ),
-                            const SizedBox(width: 5),
-                            Text(
-                              experience.difficulty.getOrCrash().toString(),
-                              style: TextStyle(
-                                color: _getColor(experience.difficulty.getOrCrash()),
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        )
                       ],
                     ),
                   ],
@@ -249,6 +99,251 @@ class ExperienceCard extends StatelessWidget {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class DifficultyDisplay extends StatelessWidget {
+  const DifficultyDisplay({
+    Key key,
+    @required this.experience,
+  }) : super(key: key);
+
+  final Experience experience;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        const Text(
+          "Difficulty: ",
+          style: TextStyle(color: WorldOnColors.background),
+        ),
+        const SizedBox(width: 5),
+        Text(
+          experience.difficulty.getOrCrash().toString(),
+          style: TextStyle(
+            color: _getColor(experience.difficulty.getOrCrash()),
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class DoneCounter extends StatelessWidget {
+  const DoneCounter({
+    Key key,
+    @required this.experience,
+  }) : super(key: key);
+
+  final Experience experience;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        // TODO: Implement the user pictures
+        // The avatars of the last 3 users to have done the experience should appear here
+        Container(
+          // I don't like the idea of hard coding this, but it will work for now
+          width: 80,
+          child: Stack(
+            children: const <Widget>[
+              CircleAvatar(
+                backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
+              ),
+              Positioned(
+                left: 20,
+                child: CircleAvatar(
+                  backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
+                ),
+              ),
+              Positioned(
+                left: 40,
+                child: CircleAvatar(
+                  backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
+                ),
+              )
+            ],
+          ),
+        ),
+        const SizedBox(width: 5),
+        Text(
+          experience.doneBy.length.toString(),
+          style: const TextStyle(color: WorldOnColors.background),
+        ),
+      ],
+    );
+  }
+}
+
+class LikesCounter extends StatelessWidget {
+  const LikesCounter({
+    Key key,
+    @required this.experience,
+  }) : super(key: key);
+
+  final Experience experience;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        BlocBuilder<ExperienceCardLikeCheckBloc, ExperienceCardLikeCheckState>(
+          builder: (context, state) => state.map(
+            initial: (_) => const CircularProgressIndicator(),
+            likes: (_) => FaIcon(
+              FontAwesomeIcons.solidHeart,
+              color: WorldOnColors.red,
+            ),
+            neutral: (_) => FaIcon(
+              FontAwesomeIcons.heart,
+              color: WorldOnColors.red,
+            ),
+          ),
+        ),
+        const SizedBox(width: 5),
+        Text(
+          // Perhaps this isn't the best way to show this
+          // perhaps the experience should just have an int with the amount of likes it has (and dislikes too)
+          experience.likedBy.length.toString(),
+          style: const TextStyle(color: WorldOnColors.background),
+        ),
+      ],
+    );
+  }
+}
+
+class ReportButton extends StatelessWidget {
+  const ReportButton({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: Icon(
+        Icons.error_outline,
+        size: 30,
+        color: WorldOnColors.background,
+      ),
+      onPressed: () => FlushbarHelper.createInformation(
+        message: "This is just a placeholder",
+      ).show(context),
+    );
+  }
+}
+
+class LogButton extends StatelessWidget {
+  const LogButton({
+    Key key,
+    @required this.experience,
+  }) : super(key: key);
+
+  final Experience experience;
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<ExperienceCardActorBloc, ExperienceCardActorState>(
+      builder: (context, state) => state.map(
+        initial: (_) => Container(),
+        actionInProgress: (_) => const CircularProgressIndicator(),
+        inLog: (_) => DismissFromLogButton(experience: experience),
+        notInLog: (_) => AddToLogButton(experience: experience),
+        additionSuccess: (_) => DismissFromLogButton(experience: experience),
+        additionFailure: (_) => AddToLogButton(experience: experience),
+        dismissalSuccess: (_) => AddToLogButton(experience: experience),
+        dismissalFailure: (_) => DismissFromLogButton(experience: experience),
+      ),
+    );
+  }
+}
+
+class ParticipateButton extends StatelessWidget {
+  const ParticipateButton({
+    Key key,
+    @required this.experience,
+  }) : super(key: key);
+
+  final Experience experience;
+
+  @override
+  Widget build(BuildContext context) {
+    return RaisedButton(
+      color: WorldOnColors.primary,
+      onPressed: () => context.bloc<NavigationActorBloc>().add(
+            NavigationActorEvent.experienceNavigationTapped(some(experience)),
+          ),
+      child: const Text(
+        "Participate",
+        style: TextStyle(
+          color: WorldOnColors.white,
+        ),
+      ),
+    );
+  }
+}
+
+class ImageStack extends StatelessWidget {
+  const ImageStack({
+    Key key,
+    @required this.experience,
+  }) : super(key: key);
+
+  final Experience experience;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 250,
+      child: Stack(
+        children: <Widget>[
+          const Image(
+            // TODO: Change to the real image from the experience
+            image: AssetImage('assets/experience_placeholder_image.jpg'),
+            fit: BoxFit.fill,
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  UserImage(user: experience.creator),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    Icon(
+                      Icons.place,
+                      size: 30,
+                    ),
+                    const AutoSizeText(
+                      "500m",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: WorldOnColors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

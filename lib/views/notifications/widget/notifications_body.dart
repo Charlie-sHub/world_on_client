@@ -62,8 +62,8 @@ class NotificationsBody extends StatelessWidget {
               onTap: () async => context.bloc<NotificationsWatcherBloc>().add(
                     const NotificationsWatcherEvent.watchNotificationsStarted(),
                   ),
-                child: CriticalErrorDisplay(failure: state.failure),
-              ),
+              child: CriticalErrorDisplay(failure: state.failure),
+            ),
           ),
         ),
       ),

@@ -1501,7 +1501,7 @@ abstract class _$DismissalFailureCopyWith<$Res> {
   factory _$DismissalFailureCopyWith(_DismissalFailure value, $Res Function(_DismissalFailure) then) =
   __$DismissalFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
-  
+
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
@@ -1512,7 +1512,7 @@ class __$DismissalFailureCopyWithImpl<$Res> extends _$ExperienceCardActorStateCo
 
   @override
   _DismissalFailure get _value => super._value as _DismissalFailure;
-  
+
   @override
   $Res call({
     Object failure = freezed,
@@ -1521,7 +1521,7 @@ class __$DismissalFailureCopyWithImpl<$Res> extends _$ExperienceCardActorStateCo
       failure == freezed ? _value.failure : failure as Failure<dynamic>,
     ));
   }
-  
+
   @override
   $FailureCopyWith<dynamic, $Res> get failure {
     if (_value.failure == null) {

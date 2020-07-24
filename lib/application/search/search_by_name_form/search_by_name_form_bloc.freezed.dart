@@ -277,7 +277,7 @@ mixin _$SearchByNameFormState {
 
 abstract class $SearchByNameFormStateCopyWith<$Res> {
   factory $SearchByNameFormStateCopyWith(SearchByNameFormState value, $Res Function(SearchByNameFormState) then) = _$SearchByNameFormStateCopyWithImpl<$Res>;
-  
+
   $Res call({SearchTerm searchTerm, bool showErrorMessages, bool isSubmitting, Option<ValueFailure> failureOrSuccessOption});
 }
 
@@ -357,10 +357,10 @@ class _$_SearchByNameFormState implements _SearchByNameFormState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SearchByNameFormState &&
-          (identical(other.searchTerm, searchTerm) || const DeepCollectionEquality().equals(other.searchTerm, searchTerm)) &&
-          (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
-          (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
-          (identical(other.failureOrSuccessOption, failureOrSuccessOption) || const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+            (identical(other.searchTerm, searchTerm) || const DeepCollectionEquality().equals(other.searchTerm, searchTerm)) &&
+            (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
+            (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
+            (identical(other.failureOrSuccessOption, failureOrSuccessOption) || const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override

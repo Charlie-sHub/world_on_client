@@ -1659,9 +1659,9 @@ class _$StringExceedsLength<T> with DiagnosticableTreeMixin implements StringExc
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is StringExceedsLength<T> &&
-        (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)) &&
-        (identical(other.maxLength, maxLength) || const DeepCollectionEquality().equals(other.maxLength, maxLength)));
+        (other is StringExceedsLength<T> &&
+            (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)) &&
+            (identical(other.maxLength, maxLength) || const DeepCollectionEquality().equals(other.maxLength, maxLength)));
   }
 
   @override
@@ -2157,7 +2157,7 @@ abstract class StringWithInvalidCharacters<T> implements ValueFailure<T> {
   const factory StringWithInvalidCharacters({@required String failedValue}) = _$StringWithInvalidCharacters<T>;
 
   String get failedValue;
-  
+
   $StringWithInvalidCharactersCopyWith<T, StringWithInvalidCharacters<T>> get copyWith;
 }
 

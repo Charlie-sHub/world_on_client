@@ -99,8 +99,8 @@ class _$_Coordinates extends _Coordinates {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Coordinates &&
-          (identical(other.latitude, latitude) || const DeepCollectionEquality().equals(other.latitude, latitude)) &&
-          (identical(other.longitude, longitude) || const DeepCollectionEquality().equals(other.longitude, longitude)));
+            (identical(other.latitude, latitude) || const DeepCollectionEquality().equals(other.latitude, latitude)) &&
+            (identical(other.longitude, longitude) || const DeepCollectionEquality().equals(other.longitude, longitude)));
   }
 
   @override

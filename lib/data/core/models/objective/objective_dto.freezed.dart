@@ -119,7 +119,7 @@ class _$_ObjectiveDto extends _ObjectiveDto {
         assert(coordinates != null),
         assert(imageName != null),
         super._();
-  
+
   factory _$_ObjectiveDto.fromJson(Map<String, dynamic> json) => _$_$_ObjectiveDtoFromJson(json);
 
   @override
@@ -140,10 +140,10 @@ class _$_ObjectiveDto extends _ObjectiveDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ObjectiveDto &&
-          (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-          (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-          (identical(other.coordinates, coordinates) || const DeepCollectionEquality().equals(other.coordinates, coordinates)) &&
-          (identical(other.imageName, imageName) || const DeepCollectionEquality().equals(other.imageName, imageName)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.coordinates, coordinates) || const DeepCollectionEquality().equals(other.coordinates, coordinates)) &&
+            (identical(other.imageName, imageName) || const DeepCollectionEquality().equals(other.imageName, imageName)));
   }
 
   @override

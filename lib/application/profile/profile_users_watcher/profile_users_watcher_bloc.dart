@@ -13,9 +13,7 @@ import 'package:worldon/domain/profile/use_case/load_following_users.dart' as lo
 import 'package:worldon/injection.dart';
 
 part 'profile_users_watcher_bloc.freezed.dart';
-
 part 'profile_users_watcher_event.dart';
-
 part 'profile_users_watcher_state.dart';
 
 /// Loads the [User]s followed by the given [User]
@@ -33,7 +31,7 @@ class ProfileUsersWatcherBloc extends Bloc<ProfileUsersWatcherEvent, ProfileUser
       usersReceived: onUsersReceived,
     );
   }
-  
+
   Stream<ProfileUsersWatcherState> onWatchFollowingUsersStarted(_WatchFollowingUsersStarted event) async* {
     yield const ProfileUsersWatcherState.loadInProgress();
     await _userStreamSubscription?.cancel();
@@ -41,10 +39,10 @@ class ProfileUsersWatcherBloc extends Bloc<ProfileUsersWatcherEvent, ProfileUser
     _userStreamSubscription = _loadFollowingUsers(
       load_following_users.Params(id: event.user.id),
     ).listen(
-        (failureOrUsers) => add(ProfileUsersWatcherEvent.usersReceived(failureOrUsers)),
+      (failureOrUsers) => add(ProfileUsersWatcherEvent.usersReceived(failureOrUsers)),
     );
   }
-  
+
   Stream<ProfileUsersWatcherState> onWatchFollowedUsersStarted(_WatchFollowedUsersStarted event) async* {
     yield const ProfileUsersWatcherState.loadInProgress();
     await _userStreamSubscription?.cancel();
@@ -55,14 +53,14 @@ class ProfileUsersWatcherBloc extends Bloc<ProfileUsersWatcherEvent, ProfileUser
         (failureOrUsers) => add(ProfileUsersWatcherEvent.usersReceived(failureOrUsers)),
     );
   }
-  
+
   Stream<ProfileUsersWatcherState> onUsersReceived(_UsersReceived event) async* {
     yield event.failureOrUsers.fold(
         (failure) => ProfileUsersWatcherState.loadFailure(failure),
         (users) => ProfileUsersWatcherState.loadSuccess(users),
     );
   }
-  
+
   @override
   Future<void> close() async {
     await _userStreamSubscription?.cancel();

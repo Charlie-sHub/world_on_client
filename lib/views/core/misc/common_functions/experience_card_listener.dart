@@ -16,8 +16,7 @@ void experienceCardListener(BuildContext context, ExperienceCardActorState state
           orElse: () => "Unknown Error",
         ),
       ).show(context),
-  dismissalFailure: (state) =>
-    FlushbarHelper.createError(
+      dismissalFailure: (state) => FlushbarHelper.createError(
         message: state.failure.maybeMap(
           coreData: (failure) => failure.coreDataFailure.maybeMap(
             serverError: (failure) => failure.errorString,
@@ -26,5 +25,5 @@ void experienceCardListener(BuildContext context, ExperienceCardActorState state
           orElse: () => "Unknown Error",
         ),
       ).show(context),
-  orElse: () => null,
+      orElse: () => null,
     );

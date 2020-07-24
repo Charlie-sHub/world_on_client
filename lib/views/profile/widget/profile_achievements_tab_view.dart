@@ -20,7 +20,10 @@ class ProfileAchievementsTabView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt<ProfileAchievementsWatcherBloc>(),
+      create: (context) => getIt<ProfileAchievementsWatcherBloc>()
+        ..add(
+          ProfileAchievementsWatcherEvent.watchAchievementsStarted(user),
+        ),
       child: BlocConsumer<ProfileAchievementsWatcherBloc, ProfileAchievementsWatcherState>(
         listener: (context, state) {},
         builder: (context, state) => state.map(

@@ -156,16 +156,15 @@ class NameTextField extends StatelessWidget {
             RegistrationFormEvent.nameChanged(value),
           ),
       validator: (_) => context.bloc<RegistrationFormBloc>().state.user.name.value.fold(
-          (failure) =>
-          failure.maybeMap(
-            emptyString: (_) => "The name can't be empty",
-            multiLineString: (_) => "The name can't be more than one line",
-            stringExceedsLength: (_) => "The name is too long",
-            stringWithInvalidCharacters: (_) => "The name has invalid characters",
-            orElse: () => StringConst.unknownError,
+            (failure) => failure.maybeMap(
+              emptyString: (_) => "The name can't be empty",
+              multiLineString: (_) => "The name can't be more than one line",
+              stringExceedsLength: (_) => "The name is too long",
+              stringWithInvalidCharacters: (_) => "The name has invalid characters",
+              orElse: () => StringConst.unknownError,
+            ),
+            (_) => null,
           ),
-          (_) => null,
-      ),
       autocorrect: false,
       decoration: InputDecoration(
         labelText: "Name",

@@ -51,8 +51,7 @@ mixin _$ProfileExperiencesWatcherEvent {
     @required Result watchExperiencesDoneStarted(User user),
     @required Result watchExperiencesLikedStarted(User user),
     @required Result watchExperiencesCreatedStarted(User user),
-    @required
-        Result experiencesReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
+    @required Result experiencesReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -177,8 +176,7 @@ class _$_WatchExperiencesDoneStarted implements _WatchExperiencesDoneStarted {
     @required Result watchExperiencesDoneStarted(User user),
     @required Result watchExperiencesLikedStarted(User user),
     @required Result watchExperiencesCreatedStarted(User user),
-    @required
-        Result experiencesReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
+    @required Result experiencesReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
   }) {
     assert(watchExperiencesDoneStarted != null);
     assert(watchExperiencesLikedStarted != null);
@@ -327,8 +325,7 @@ class _$_WatchExperiencesLikedStarted implements _WatchExperiencesLikedStarted {
     @required Result watchExperiencesDoneStarted(User user),
     @required Result watchExperiencesLikedStarted(User user),
     @required Result watchExperiencesCreatedStarted(User user),
-    @required
-        Result experiencesReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
+    @required Result experiencesReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
   }) {
     assert(watchExperiencesDoneStarted != null);
     assert(watchExperiencesLikedStarted != null);
@@ -478,8 +475,7 @@ class _$_WatchExperiencesCreatedStarted
     @required Result watchExperiencesDoneStarted(User user),
     @required Result watchExperiencesLikedStarted(User user),
     @required Result watchExperiencesCreatedStarted(User user),
-    @required
-        Result experiencesReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
+    @required Result experiencesReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
   }) {
     assert(watchExperiencesDoneStarted != null);
     assert(watchExperiencesLikedStarted != null);
@@ -556,7 +552,6 @@ abstract class _$ExperiencesReceivedCopyWith<$Res> {
   factory _$ExperiencesReceivedCopyWith(_ExperiencesReceived value,
           $Res Function(_ExperiencesReceived) then) =
       __$ExperiencesReceivedCopyWithImpl<$Res>;
-
   $Res call({Either<Failure, KtList<Experience>> failureOrExperiences});
 }
 
@@ -575,8 +570,7 @@ class __$ExperiencesReceivedCopyWithImpl<$Res>
     Object failureOrExperiences = freezed,
   }) {
     return _then(_ExperiencesReceived(
-      failureOrExperiences == freezed
-          ? _value.failureOrExperiences : failureOrExperiences as Either<Failure, KtList<Experience>>,
+      failureOrExperiences == freezed ? _value.failureOrExperiences : failureOrExperiences as Either<Failure, KtList<Experience>>,
     ));
   }
 }
@@ -618,8 +612,7 @@ class _$_ExperiencesReceived implements _ExperiencesReceived {
     @required Result watchExperiencesDoneStarted(User user),
     @required Result watchExperiencesLikedStarted(User user),
     @required Result watchExperiencesCreatedStarted(User user),
-    @required
-        Result experiencesReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
+    @required Result experiencesReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
   }) {
     assert(watchExperiencesDoneStarted != null);
     assert(watchExperiencesLikedStarted != null);
@@ -973,7 +966,6 @@ abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(
           _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-
   $Res call({KtList<Experience> experiences});
 }
 
@@ -1092,7 +1084,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 
 abstract class _LoadSuccess implements ProfileExperiencesWatcherState {
   const factory _LoadSuccess(KtList<Experience> experiences) = _$_LoadSuccess;
-  
+
   KtList<Experience> get experiences;
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
