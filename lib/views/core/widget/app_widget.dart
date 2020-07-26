@@ -23,6 +23,9 @@ class AppWidget extends StatelessWidget {
         title: "World On",
         // debugShowCheckedModeBanner: false,
         theme: ThemeData.dark().copyWith(
+          floatingActionButtonTheme: const FloatingActionButtonThemeData(
+            backgroundColor: WorldOnColors.primary,
+          ),
           cardColor: WorldOnColors.white,
           primaryColor: WorldOnColors.primary,
           accentColor: WorldOnColors.accent,

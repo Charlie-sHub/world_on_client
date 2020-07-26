@@ -50,7 +50,7 @@ class ProfileUsersWatcherBloc extends Bloc<ProfileUsersWatcherEvent, ProfileUser
     _userStreamSubscription = _loadFollowedUsers(
       load_followed_users.Params(id: event.user.id),
     ).listen(
-        (failureOrUsers) => add(ProfileUsersWatcherEvent.usersReceived(failureOrUsers)),
+      (failureOrUsers) => add(ProfileUsersWatcherEvent.usersReceived(failureOrUsers)),
     );
   }
 

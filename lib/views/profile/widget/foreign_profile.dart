@@ -7,10 +7,8 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/misc/common_functions/user_card_block_listener.dart';
 import 'package:worldon/views/core/misc/common_functions/user_card_follow_listener.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
-import 'package:worldon/views/core/widget/misc/block_button.dart';
-import 'package:worldon/views/core/widget/misc/follow_button.dart';
-import 'package:worldon/views/core/widget/misc/unblock_button.dart';
-import 'package:worldon/views/core/widget/misc/unfollow_button.dart';
+import 'package:worldon/views/core/widget/misc/block_unblock_button_builder.dart';
+import 'package:worldon/views/core/widget/misc/follow_unfollow_button_builder.dart';
 import 'package:worldon/views/profile/widget/profile_achievements_tab_view.dart';
 import 'package:worldon/views/profile/widget/profile_experiences_tab_view.dart';
 import 'package:worldon/views/profile/widget/profile_tab_bar.dart';
@@ -92,15 +90,15 @@ class ForeignProfileHeader extends StatelessWidget {
               Row(
                 children: <Widget>[
                   const Padding(
-                    padding: EdgeInsets.all(10),
+                    padding: EdgeInsets.all(5),
                     child: CircleAvatar(
-                      radius: 45,
+                      radius: 40,
                       backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
                     ),
                   ),
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(5),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
@@ -123,30 +121,8 @@ class ForeignProfileHeader extends StatelessWidget {
                       ),
                     ),
                   ),
-                  BlocBuilder<FollowActorBloc, FollowActorState>(
-                    builder: (context, state) => state.map(
-                      initial: (_) => Container(),
-                      actionInProgress: (_) => const CircularProgressIndicator(),
-                      follows: (_) => UnFollowButton(user: user),
-                      followsNot: (_) => FollowButton(user: user),
-                      followSuccess: (_) => UnFollowButton(user: user),
-                      followFailure: (_) => FollowButton(user: user),
-                      unFollowSuccess: (_) => FollowButton(user: user),
-                      unFollowFailure: (_) => UnFollowButton(user: user),
-                    ),
-                  ),
-                  BlocBuilder<BlockActorBloc, BlockActorState>(
-                    builder: (context, state) => state.map(
-                      initial: (_) => Container(),
-                      actionInProgress: (_) => const CircularProgressIndicator(),
-                      blocks: (_) => UnBlockButton(user: user),
-                      blocksNot: (_) => BlockButton(user: user),
-                      blockSuccess: (_) => UnBlockButton(user: user),
-                      blockFailure: (_) => BlockButton(user: user),
-                      unBlockSuccess: (_) => BlockButton(user: user),
-                      unBlockFailure: (_) => UnBlockButton(user: user),
-                    ),
-                  ),
+                  FollowUnfollowButtonBuilder(user: user),
+                  BlockUnblockButtonBuilder(user: user),
                 ],
               ),
               Padding(

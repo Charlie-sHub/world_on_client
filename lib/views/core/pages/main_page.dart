@@ -7,11 +7,13 @@ import 'package:worldon/application/authentication/authentication/authentication
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/routes/router.gr.dart';
-import 'package:worldon/views/experience_management/widget/experience_creation_form.dart';
+import 'package:worldon/views/experience_management/widget/experience_management_form.dart';
 import 'package:worldon/views/main_feed/widget/main_feed_body.dart';
 import 'package:worldon/views/notifications/widget/notifications_body.dart';
 import 'package:worldon/views/profile/widget/profile_body.dart';
 import 'package:worldon/views/search/widget/search_body.dart';
+
+import '../../experience_navigation/widget/experience_navigation.dart';
 
 class MainPage extends StatelessWidget {
   @override
@@ -39,15 +41,18 @@ class MainPage extends StatelessWidget {
                     notificationsView: (_) => 6,
                   ),
               children: <Widget>[
-                // TODO: Turn these into pages
                 const MainFeedBody(),
                 const SearchBody(),
+                // TODO: Create creation selection view
+                // So the Users can select between creating experiences or Tags or even achievements
                 ExperienceManagementForm(),
-                const Center(
-                  child: Text("Navigate Experience"),
+                ExperienceNavigation(
+                  experienceOption: context.bloc<NavigationActorBloc>().state.maybeMap(
+                        navigateExperienceView: (state) => state.experienceOption,
+                        orElse: () => none(),
+                      ),
                 ),
                 ProfileBody(
-                  // Not sure about this solution, but it'll work for now
                   userOption: context.bloc<NavigationActorBloc>().state.maybeMap(
                         profileView: (state) => state.userOption,
                         orElse: () => none(),
@@ -71,29 +76,7 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      onTap: (index) {
-        switch (index) {
-          case 0:
-            context.bloc<NavigationActorBloc>().add(const NavigationActorEvent.mainFeedTapped());
-            break;
-          case 1:
-            context.bloc<NavigationActorBloc>().add(const NavigationActorEvent.searchTapped());
-            break;
-          case 2:
-            context.bloc<NavigationActorBloc>().add(NavigationActorEvent.experienceFormTapped(none()));
-            break;
-          case 3:
-            context.bloc<NavigationActorBloc>().add(NavigationActorEvent.experienceNavigationTapped(none()));
-            break;
-          case 4:
-            context.bloc<NavigationActorBloc>().add(NavigationActorEvent.profileTapped(none()));
-            break;
-          default:
-            // Perhaps this should go to an error page
-            context.bloc<NavigationActorBloc>().add(const NavigationActorEvent.mainFeedTapped());
-            break;
-        }
-      },
+      onTap: (index) => onTap(index, context),
       currentIndex: context.bloc<NavigationActorBloc>().state.map(
             mainFeedView: (context) => 0,
             searchView: (context) => 1,
@@ -132,6 +115,30 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  void onTap(int index, BuildContext context) {
+    switch (index) {
+      case 0:
+        context.bloc<NavigationActorBloc>().add(const NavigationActorEvent.mainFeedTapped());
+        break;
+      case 1:
+        context.bloc<NavigationActorBloc>().add(const NavigationActorEvent.searchTapped());
+        break;
+      case 2:
+        context.bloc<NavigationActorBloc>().add(NavigationActorEvent.experienceFormTapped(none()));
+        break;
+      case 3:
+        context.bloc<NavigationActorBloc>().add(NavigationActorEvent.experienceNavigationTapped(none()));
+        break;
+      case 4:
+        context.bloc<NavigationActorBloc>().add(NavigationActorEvent.profileTapped(none()));
+        break;
+      default:
+      // Perhaps this should go to an error page
+        context.bloc<NavigationActorBloc>().add(const NavigationActorEvent.mainFeedTapped());
+        break;
+    }
   }
 }
 

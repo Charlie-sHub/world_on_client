@@ -161,13 +161,13 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
         User.empty(),
         getValidUser().copyWith(
           id: 2,
-          name: Name("Carlos"),
-          username: Name("carlos"),
+          name: Name("Mike"),
+          username: Name("micky"),
         ),
         getValidUser().copyWith(
           id: 3,
-          name: Name("Juan"),
-          username: Name("juan"),
+          name: Name("Some"),
+          username: Name("Guy"),
         ),
       ));
     } else {
@@ -185,8 +185,8 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
         User.empty(),
         getValidUser().copyWith(
           id: 2,
-          name: Name("Carlos"),
-          username: Name("carlos"),
+          name: Name("Ivan"),
+          username: Name("ivanovich456345"),
         ),
         getValidUser().copyWith(
           id: 3,

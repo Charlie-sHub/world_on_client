@@ -29,6 +29,7 @@ class ProfileExperiencesTabView extends StatelessWidget {
         builder: (context, state) => state.map(
           initial: (_) => Container(),
           loadInProgress: (_) => WorldOnProgressIndicator(),
+          // TODO: Implement the switch between experiences lists
           loadSuccess: (state) => ListView.builder(
             padding: const EdgeInsets.all(10),
             itemCount: state.experiences.size,

@@ -8,10 +8,8 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/misc/common_functions/user_card_block_listener.dart';
 import 'package:worldon/views/core/misc/common_functions/user_card_follow_listener.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
-import 'package:worldon/views/core/widget/misc/block_button.dart';
-import 'package:worldon/views/core/widget/misc/follow_button.dart';
-import 'package:worldon/views/core/widget/misc/unblock_button.dart';
-import 'package:worldon/views/core/widget/misc/unfollow_button.dart';
+import 'package:worldon/views/core/widget/misc/block_unblock_button_builder.dart';
+import 'package:worldon/views/core/widget/misc/follow_unfollow_button_builder.dart';
 import 'package:worldon/views/core/widget/misc/user_image.dart';
 
 import '../../../../injection.dart';
@@ -56,30 +54,8 @@ class UserCard extends StatelessWidget {
                 children: <Widget>[
                   UserImage(user: user),
                   NameUsernameDisplay(user: user),
-                  BlocBuilder<FollowActorBloc, FollowActorState>(
-                    builder: (context, state) => state.map(
-                      initial: (_) => Container(),
-                      actionInProgress: (_) => const CircularProgressIndicator(),
-                      follows: (_) => UnFollowButton(user: user),
-                      followsNot: (_) => FollowButton(user: user),
-                      followSuccess: (_) => UnFollowButton(user: user),
-                      followFailure: (_) => FollowButton(user: user),
-                      unFollowSuccess: (_) => FollowButton(user: user),
-                      unFollowFailure: (_) => UnFollowButton(user: user),
-                    ),
-                  ),
-                  BlocBuilder<BlockActorBloc, BlockActorState>(
-                    builder: (context, state) => state.map(
-                      initial: (_) => Container(),
-                      actionInProgress: (_) => const CircularProgressIndicator(),
-                      blocks: (_) => UnBlockButton(user: user),
-                      blocksNot: (_) => BlockButton(user: user),
-                      blockSuccess: (_) => UnBlockButton(user: user),
-                      blockFailure: (_) => BlockButton(user: user),
-                      unBlockSuccess: (_) => BlockButton(user: user),
-                      unBlockFailure: (_) => UnBlockButton(user: user),
-                    ),
-                  ),
+                  FollowUnfollowButtonBuilder(user: user),
+                  BlockUnblockButtonBuilder(user: user),
                 ],
               ),
               UserBio(user: user),

@@ -9,6 +9,10 @@ void userBlockListener(BuildContext context, BlockActorState state) => state.may
             serverError: (failure) => failure.errorString,
             orElse: () => "Unknown Error",
           ),
+          profileDomain: (failure) => failure.profileDomainFailure.maybeMap(
+            blockItself: (_) => "You can't block yourself",
+            orElse: () => "Unknown Error",
+          ),
           orElse: () => "Unknown Error",
         ),
       ).show(context),

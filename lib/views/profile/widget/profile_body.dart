@@ -1,7 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/application/profile/profile_watcher/profile_watcher_bloc.dart';
+import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
@@ -10,6 +12,7 @@ import 'package:worldon/views/profile/widget/own_profile.dart';
 
 import '../../../injection.dart';
 
+// TODO: Implement some way to always go to the own profile
 class ProfileBody extends StatelessWidget {
   final Option<User> userOption;
 
@@ -20,21 +23,30 @@ class ProfileBody extends StatelessWidget {
     return BlocProvider(
       create: (context) => getIt<ProfileWatcherBloc>()
         ..add(
-          ProfileWatcherEvent.initializedForeignOrOwn(userOption),
+          ProfileWatcherEvent.initializedForeignOrOwn(none()),
         ),
-      // TODO: Change the where and when the initializedForeignOrOwn event is added
-      // As it is now the profile only initializes once and so it doesn't change
-      child: BlocBuilder<ProfileWatcherBloc, ProfileWatcherState>(
-        builder: (context, state) => state.map(
-          initial: (_) => Container(),
-          loadInProgress: (_) => WorldOnProgressIndicator(),
-          own: (state) => OwnProfile(user: state.user),
-          foreign: (state) => ForeignProfile(user: state.user),
-          loadFailure: (state) => InkWell(
-            onTap: () async => context.bloc<ProfileWatcherBloc>().add(
-                  ProfileWatcherEvent.initializedForeignOrOwn(userOption),
+      child: BlocListener<NavigationActorBloc, NavigationActorState>(
+        listener: (context, navigationState) => navigationState.maybeMap(
+          profileView: (profileViewState) => profileViewState.userOption.fold(
+            () => null,
+            (user) => context.bloc<ProfileWatcherBloc>().add(
+                  ProfileWatcherEvent.initializedForeignOrOwn(some(user)),
                 ),
-            child: const ProfileCriticalFailure(),
+          ),
+          orElse: () => null,
+        ),
+        child: BlocBuilder<ProfileWatcherBloc, ProfileWatcherState>(
+          builder: (context, state) => state.map(
+            initial: (_) => Container(),
+            loadInProgress: (_) => WorldOnProgressIndicator(),
+            own: (state) => OwnProfile(user: state.user),
+            foreign: (state) => ForeignProfile(user: state.user),
+            loadFailure: (state) => InkWell(
+              onTap: () async => context.bloc<ProfileWatcherBloc>().add(
+                    ProfileWatcherEvent.initializedForeignOrOwn(userOption),
+                  ),
+              child: const ProfileCriticalFailure(),
+            ),
           ),
         ),
       ),
@@ -42,7 +54,7 @@ class ProfileBody extends StatelessWidget {
   }
 }
 
-/// This class only exists because the GetLoggedInUser use case doesn't give back possible failures
+/// This class only exists because the [GetLoggedInUser] use case doesn't give back possible failures
 /// Something to rework in the future for sure
 class ProfileCriticalFailure extends StatelessWidget {
   const ProfileCriticalFailure({

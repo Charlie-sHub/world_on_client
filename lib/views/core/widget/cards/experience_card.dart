@@ -70,18 +70,18 @@ class ExperienceCard extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        ParticipateButton(experience: experience),
-                        LogButton(experience: experience),
-                        const ReportButton(),
-                      ],
-                    ),
-                    const SizedBox(height: 15),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
                         LikesCounter(experience: experience),
                         DoneCounter(experience: experience),
                         DifficultyDisplay(experience: experience),
+                      ],
+                    ),
+                    const SizedBox(height: 5),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        ParticipateButton(experience: experience),
+                        LogButton(experience: experience),
+                        const ReportButton(),
                       ],
                     ),
                     const SizedBox(height: 5),
@@ -255,15 +255,22 @@ class LogButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ExperienceCardActorBloc, ExperienceCardActorState>(
-      builder: (context, state) => state.map(
-        initial: (_) => Container(),
-        actionInProgress: (_) => const CircularProgressIndicator(),
-        inLog: (_) => DismissFromLogButton(experience: experience),
-        notInLog: (_) => AddToLogButton(experience: experience),
-        additionSuccess: (_) => DismissFromLogButton(experience: experience),
-        additionFailure: (_) => AddToLogButton(experience: experience),
-        dismissalSuccess: (_) => AddToLogButton(experience: experience),
-        dismissalFailure: (_) => DismissFromLogButton(experience: experience),
+      builder: (context, state) => AnimatedSwitcher(
+        duration: const Duration(milliseconds: 300),
+        transitionBuilder: (child, animation) => ScaleTransition(
+          scale: animation,
+          child: child,
+        ),
+        child: state.map(
+          initial: (_) => Container(),
+          actionInProgress: (_) => const CircularProgressIndicator(),
+          inLog: (_) => DismissFromLogButton(experience: experience),
+          notInLog: (_) => AddToLogButton(experience: experience),
+          additionSuccess: (_) => DismissFromLogButton(experience: experience),
+          additionFailure: (_) => AddToLogButton(experience: experience),
+          dismissalSuccess: (_) => AddToLogButton(experience: experience),
+          dismissalFailure: (_) => DismissFromLogButton(experience: experience),
+        ),
       ),
     );
   }

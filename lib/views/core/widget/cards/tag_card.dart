@@ -37,16 +37,22 @@ class TagCard extends StatelessWidget {
                     color: WorldOnColors.background,
                   ),
                 ),
-                // Mapping every state seems a tad too much for me but it's the best solution from the UI point of view, maybe not from the performance one though
-                state.map(
-                  initial: (_) => Container(),
-                  actionInProgress: (_) => const CircularProgressIndicator(),
-                  notInInterests: (_) => LikeTagButton(tag: tag),
-                  additionSuccess: (_) => DislikeTagButton(tag: tag),
-                  additionFailure: (_) => LikeTagButton(tag: tag),
-                  inInterests: (_) => DislikeTagButton(tag: tag),
-                  dismissalSuccess: (_) => LikeTagButton(tag: tag),
-                  dismissalFailure: (_) => DislikeTagButton(tag: tag),
+                AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 100),
+                  transitionBuilder: (child, animation) => ScaleTransition(
+                    scale: animation,
+                    child: child,
+                  ), // Mapping every state seems a tad too much for me but it's the best solution from the UI point of view, maybe not from the performance one though
+                  child: state.map(
+                    initial: (_) => Container(),
+                    actionInProgress: (_) => const CircularProgressIndicator(),
+                    notInInterests: (_) => LikeTagButton(tag: tag),
+                    additionSuccess: (_) => DislikeTagButton(tag: tag),
+                    additionFailure: (_) => LikeTagButton(tag: tag),
+                    inInterests: (_) => DislikeTagButton(tag: tag),
+                    dismissalSuccess: (_) => LikeTagButton(tag: tag),
+                    dismissalFailure: (_) => DislikeTagButton(tag: tag),
+                  ),
                 ),
               ],
             ),
@@ -69,7 +75,7 @@ class DislikeTagButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       icon: FaIcon(
-        FontAwesomeIcons.solidHeart,
+        FontAwesomeIcons.heart,
         color: Colors.grey,
       ),
       onPressed: () => context.bloc<TagCardActorBloc>().add(
@@ -91,7 +97,7 @@ class LikeTagButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       icon: FaIcon(
-        FontAwesomeIcons.heart,
+        FontAwesomeIcons.solidHeart,
         color: WorldOnColors.red,
       ),
       onPressed: () => context.bloc<TagCardActorBloc>().add(
