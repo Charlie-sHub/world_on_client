@@ -8,9 +8,7 @@ import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/validation/objects/objective_set.dart';
 
 part 'objectives_tracker_bloc.freezed.dart';
-
 part 'objectives_tracker_event.dart';
-
 part 'objectives_tracker_state.dart';
 
 @injectable

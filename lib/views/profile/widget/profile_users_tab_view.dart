@@ -78,10 +78,9 @@ class ProfileUsersUnicornDialer extends StatelessWidget {
           labelText: "Followed",
           currentButton: FloatingActionButton(
             mini: true,
-            onPressed: () =>
-              context.bloc<ProfileUsersWatcherBloc>().add(
-                ProfileUsersWatcherEvent.watchFollowedUsersStarted(user),
-              ),
+            onPressed: () => context.bloc<ProfileUsersWatcherBloc>().add(
+                  ProfileUsersWatcherEvent.watchFollowedUsersStarted(user),
+                ),
             child: Icon(Icons.arrow_right),
           ),
         ),

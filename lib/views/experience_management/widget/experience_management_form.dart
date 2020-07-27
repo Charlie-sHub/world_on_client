@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
 import 'package:worldon/injection.dart';
+import 'package:worldon/views/core/misc/common_functions/get_color_by_difficulty.dart';
 import 'package:worldon/views/core/misc/string_constants.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
@@ -290,7 +291,7 @@ class DifficultySlider extends StatelessWidget {
         min: 1,
         max: 10,
         label: context.bloc<ExperienceManagementFormBloc>().state.experience.difficulty.getOrCrash().toString(),
-        activeColor: _getColor(context.bloc<ExperienceManagementFormBloc>().state.experience.difficulty.getOrCrash()),
+        activeColor: getColorByDifficulty(context.bloc<ExperienceManagementFormBloc>().state.experience.difficulty.getOrCrash()),
         onChanged: (value) => context.bloc<ExperienceManagementFormBloc>().add(
               ExperienceManagementFormEvent.difficultyChanged(value.round()),
             ),
@@ -307,7 +308,7 @@ class ExperienceCreationTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
+    return const Text(
       "Create a new Experience!",
       textAlign: TextAlign.center,
       style: TextStyle(
@@ -315,15 +316,5 @@ class ExperienceCreationTitle extends StatelessWidget {
         fontSize: 20,
       ),
     );
-  }
-}
-
-Color _getColor(int difficulty) {
-  if (difficulty < 4) {
-    return Colors.blue;
-  } else if (difficulty >= 4 && difficulty < 7) {
-    return Colors.purple;
-  } else {
-    return Colors.red;
   }
 }

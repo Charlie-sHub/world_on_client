@@ -13,7 +13,7 @@ import 'package:worldon/views/notifications/widget/notifications_body.dart';
 import 'package:worldon/views/profile/widget/profile_body.dart';
 import 'package:worldon/views/search/widget/search_body.dart';
 
-import '../../experience_navigation/widget/experience_navigation.dart';
+import '../../experience_navigation/widget/experience_navigation_body.dart';
 
 class MainPage extends StatelessWidget {
   @override
@@ -46,7 +46,7 @@ class MainPage extends StatelessWidget {
                 // TODO: Create creation selection view
                 // So the Users can select between creating experiences or Tags or even achievements
                 ExperienceManagementForm(),
-                ExperienceNavigation(
+                ExperienceNavigationBody(
                   experienceOption: context.bloc<NavigationActorBloc>().state.maybeMap(
                         navigateExperienceView: (state) => state.experienceOption,
                         orElse: () => none(),

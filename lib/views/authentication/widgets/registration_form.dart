@@ -210,8 +210,8 @@ class DescriptionTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       onChanged: (value) => context.bloc<RegistrationFormBloc>().add(
-        RegistrationFormEvent.descriptionChanged(value),
-      ),
+            RegistrationFormEvent.descriptionChanged(value),
+          ),
       validator: (_) => context.bloc<RegistrationFormBloc>().state.user.description.value.fold(
           (failure) =>
           failure.maybeMap(

@@ -17,7 +17,7 @@ class NotificationCard extends StatelessWidget {
     return Card(
       shape: Border(
         bottom: BorderSide(
-          color: getColor(notification.type),
+          color: _getColorByNotificationType(notification.type),
           width: 6,
         ),
       ),
@@ -56,7 +56,7 @@ class NotificationCard extends StatelessWidget {
   }
 }
 
-Color getColor(NotificationType type) {
+Color _getColorByNotificationType(NotificationType type) {
   switch (type) {
     case NotificationType.follow:
       return Colors.green;

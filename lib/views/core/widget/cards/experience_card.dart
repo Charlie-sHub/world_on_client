@@ -10,6 +10,7 @@ import 'package:worldon/application/navigation/navigation_actor/navigation_actor
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/common_functions/experience_card_listener.dart';
+import 'package:worldon/views/core/misc/common_functions/get_color_by_difficulty.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widget/cards/simple_tag_display.dart';
 import 'package:worldon/views/core/widget/misc/user_image.dart';
@@ -126,7 +127,7 @@ class DifficultyDisplay extends StatelessWidget {
         Text(
           experience.difficulty.getOrCrash().toString(),
           style: TextStyle(
-            color: _getColor(experience.difficulty.getOrCrash()),
+            color: getColorByDifficulty(experience.difficulty.getOrCrash()),
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
@@ -403,15 +404,5 @@ class DismissFromLogButton extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-Color _getColor(int difficulty) {
-  if (difficulty < 4) {
-    return Colors.blue;
-  } else if (difficulty >= 4 && difficulty < 7) {
-    return Colors.purple;
-  } else {
-    return Colors.red;
   }
 }

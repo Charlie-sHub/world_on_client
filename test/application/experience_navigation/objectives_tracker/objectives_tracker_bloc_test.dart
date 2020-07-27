@@ -23,7 +23,6 @@ void main() {
       secondObjective,
     ),
   );
-
   blocTest(
     TestDescription.shouldEmitInitial,
     build: () => getIt<ObjectivesTrackerBloc>(),
@@ -42,44 +41,65 @@ void main() {
       ),
     ],
   );
-  blocTest(
-    "Should update the map with the accomplishment of an objective",
-    build: () => getIt<ObjectivesTrackerBloc>(),
-    act: (bloc) async {
-      bloc.add(ObjectivesTrackerEvent.initialized(objectiveSet));
-      bloc.add(ObjectivesTrackerEvent.objectiveAccomplished(firstObjective));
+  group(
+    "Testing on accomplishment",
+    () {
+      blocTest(
+        "Should update the map with the accomplishment of the first objective",
+        build: () => getIt<ObjectivesTrackerBloc>(),
+        act: (bloc) async {
+          bloc.add(ObjectivesTrackerEvent.initialized(objectiveSet));
+          bloc.add(ObjectivesTrackerEvent.objectiveAccomplished(firstObjective));
+        },
+        expect: [
+          ObjectivesTrackerState.initial().copyWith(
+            objectiveTracker: {
+              firstObjective: true,
+              secondObjective: false,
+            },
+          ),
+        ],
+      );
+      blocTest(
+        "Should update the map with the accomplishment of the second objective",
+        build: () => getIt<ObjectivesTrackerBloc>(),
+        act: (bloc) async {
+          bloc.add(ObjectivesTrackerEvent.initialized(objectiveSet));
+          bloc.add(ObjectivesTrackerEvent.objectiveAccomplished(secondObjective));
+        },
+        expect: [
+          ObjectivesTrackerState.initial().copyWith(
+            objectiveTracker: {
+              firstObjective: false,
+              secondObjective: true,
+            },
+          ),
+        ],
+      );
+      blocTest(
+        "Should update the map with the accomplishment of an objective",
+        build: () => getIt<ObjectivesTrackerBloc>(),
+        act: (bloc) async {
+          bloc.add(ObjectivesTrackerEvent.initialized(objectiveSet));
+          bloc.add(ObjectivesTrackerEvent.objectiveAccomplished(firstObjective));
+          bloc.add(ObjectivesTrackerEvent.objectiveAccomplished(secondObjective));
+        },
+        expect: [
+          ObjectivesTrackerState.initial().copyWith(
+            objectiveTracker: {
+              firstObjective: true,
+              secondObjective: true,
+            },
+          ),
+          ObjectivesTrackerState.initial().copyWith(
+            objectiveTracker: {
+              firstObjective: true,
+              secondObjective: true,
+            },
+            isFinished: true,
+          ),
+        ],
+      );
     },
-    expect: [
-      ObjectivesTrackerState.initial().copyWith(
-        objectiveTracker: {
-          firstObjective: true,
-          secondObjective: false,
-        },
-      ),
-    ],
-  );
-  blocTest(
-    "Should update the map with the accomplishment of an objective",
-    build: () => getIt<ObjectivesTrackerBloc>(),
-    act: (bloc) async {
-      bloc.add(ObjectivesTrackerEvent.initialized(objectiveSet));
-      bloc.add(ObjectivesTrackerEvent.objectiveAccomplished(firstObjective));
-      bloc.add(ObjectivesTrackerEvent.objectiveAccomplished(secondObjective));
-    },
-    expect: [
-      ObjectivesTrackerState.initial().copyWith(
-        objectiveTracker: {
-          firstObjective: true,
-          secondObjective: true,
-        },
-      ),
-      ObjectivesTrackerState.initial().copyWith(
-        objectiveTracker: {
-          firstObjective: true,
-          secondObjective: true,
-        },
-        isFinished: true,
-      ),
-    ],
   );
 }

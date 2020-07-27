@@ -67,9 +67,9 @@ class ProfileExperiencesUnicornDialer extends StatelessWidget {
     Key key,
     @required this.user,
   }) : super(key: key);
-  
+
   final User user;
-  
+
   @override
   Widget build(BuildContext context) {
     return UnicornDialer(
@@ -81,10 +81,9 @@ class ProfileExperiencesUnicornDialer extends StatelessWidget {
         UnicornButton(
           currentButton: FloatingActionButton(
             mini: true,
-            onPressed: () =>
-              context.bloc<ProfileExperiencesWatcherBloc>().add(
-                ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(user),
-              ),
+            onPressed: () => context.bloc<ProfileExperiencesWatcherBloc>().add(
+                  ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(user),
+                ),
             child: Icon(Icons.create),
           ),
         ),
