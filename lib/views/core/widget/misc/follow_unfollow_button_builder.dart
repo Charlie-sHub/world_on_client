@@ -17,7 +17,7 @@ class FollowUnfollowButtonBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<FollowActorBloc, FollowActorState>(
       builder: (context, state) => AnimatedSwitcher(
-        duration: const Duration(milliseconds: 100),
+        duration: const Duration(milliseconds: 250),
         transitionBuilder: (child, animation) => FadeTransition(
           opacity: animation,
           child: child,

@@ -2303,7 +2303,6 @@ abstract class StringWithInvalidCharacters<T> implements ValueFailure<T> {
   _$StringWithInvalidCharacters<T>;
 
   String get failedValue;
-  
   $StringWithInvalidCharactersCopyWith<T, StringWithInvalidCharacters<T>>
   get copyWith;
 }

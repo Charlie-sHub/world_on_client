@@ -604,7 +604,6 @@ abstract class _ExperienceNavigationTapped implements NavigationActorEvent {
   const factory _ExperienceNavigationTapped(Option<Experience> experienceOption) = _$_ExperienceNavigationTapped;
 
   Option<Experience> get experienceOption;
-  
   _$ExperienceNavigationTappedCopyWith<_ExperienceNavigationTapped>
   get copyWith;
 }
@@ -1194,7 +1193,6 @@ abstract class _SearchView implements NavigationActorState {
 abstract class _$ExperienceFormViewCopyWith<$Res> {
   factory _$ExperienceFormViewCopyWith(_ExperienceFormView value, $Res Function(_ExperienceFormView) then) =
   __$ExperienceFormViewCopyWithImpl<$Res>;
-  
   $Res call({Option<Experience> experienceOption});
 }
 
@@ -1332,7 +1330,7 @@ class _$_ExperienceFormView implements _ExperienceFormView {
 abstract class _ExperienceFormView implements NavigationActorState {
   const factory _ExperienceFormView(Option<Experience> experienceOption) =
   _$_ExperienceFormView;
-  
+
   Option<Experience> get experienceOption;
   _$ExperienceFormViewCopyWith<_ExperienceFormView> get copyWith;
 }
@@ -1341,7 +1339,6 @@ abstract class _$NavigateExperienceViewCopyWith<$Res> {
   factory _$NavigateExperienceViewCopyWith(_NavigateExperienceView value,
     $Res Function(_NavigateExperienceView) then) =
   __$NavigateExperienceViewCopyWithImpl<$Res>;
-  
   $Res call({Option<Experience> experienceOption});
 }
 
@@ -1481,7 +1478,7 @@ class _$_NavigateExperienceView implements _NavigateExperienceView {
 abstract class _NavigateExperienceView implements NavigationActorState {
   const factory _NavigateExperienceView(Option<Experience> experienceOption) =
   _$_NavigateExperienceView;
-  
+
   Option<Experience> get experienceOption;
   _$NavigateExperienceViewCopyWith<_NavigateExperienceView> get copyWith;
 }

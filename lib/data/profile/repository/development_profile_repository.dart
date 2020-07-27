@@ -113,15 +113,17 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
     Either<Failure, KtList<Experience>> _either;
     if (_random.nextBool()) {
       _either = right(KtList.of(
-        getValidExperience(),
+        getValidExperience().copyWith(
+          name: Name("Biodiesel edison"),
+        ),
         Experience.empty(),
         getValidExperience().copyWith(
           id: 2,
-          name: Name("Phasellus"),
+          name: Name("Affogato letterpress"),
         ),
         getValidExperience().copyWith(
           id: 3,
-          name: Name("Itaque"),
+          name: Name("Copper mug"),
         ),
       ));
     } else {
@@ -135,15 +137,17 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
     Either<Failure, KtList<Experience>> _either;
     if (_random.nextBool()) {
       _either = right(KtList.of(
-        getValidExperience(),
+        getValidExperience().copyWith(
+          name: Name("Pillow popping"),
+        ),
         Experience.empty(),
         getValidExperience().copyWith(
           id: 2,
-          name: Name("Phasellus"),
+          name: Name("Death cookies"),
         ),
         getValidExperience().copyWith(
           id: 3,
-          name: Name("Itaque"),
+          name: Name("Sucker hole"),
         ),
       ));
     } else {

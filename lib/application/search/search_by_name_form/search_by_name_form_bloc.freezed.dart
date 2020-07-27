@@ -298,7 +298,7 @@ abstract class $SearchByNameFormStateCopyWith<$Res> {
   factory $SearchByNameFormStateCopyWith(SearchByNameFormState value,
     $Res Function(SearchByNameFormState) then) =
   _$SearchByNameFormStateCopyWithImpl<$Res>;
-  
+
   $Res call({SearchTerm searchTerm,
     bool showErrorMessages,
     bool isSubmitting,

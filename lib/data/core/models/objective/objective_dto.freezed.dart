@@ -139,7 +139,7 @@ class _$_ObjectiveDto extends _ObjectiveDto {
         assert(coordinates != null),
         assert(imageName != null),
         super._();
-  
+
   factory _$_ObjectiveDto.fromJson(Map<String, dynamic> json) =>
     _$_$_ObjectiveDtoFromJson(json);
 

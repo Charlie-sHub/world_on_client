@@ -186,13 +186,12 @@ class EmailTextField extends StatelessWidget {
             RegistrationFormEvent.emailAddressChanged(value),
           ),
       validator: (_) => context.bloc<RegistrationFormBloc>().state.user.email.value.fold(
-          (failure) =>
-          failure.maybeMap(
-            invalidEmail: (_) => "Invalid email",
-            orElse: () => StringConst.unknownError,
+            (failure) => failure.maybeMap(
+              invalidEmail: (_) => "Invalid email",
+              orElse: () => StringConst.unknownError,
+            ),
+            (_) => null,
           ),
-          (_) => null,
-      ),
       autocorrect: false,
       decoration: InputDecoration(
         labelText: "Email Address",

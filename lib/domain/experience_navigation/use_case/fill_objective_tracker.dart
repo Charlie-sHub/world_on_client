@@ -10,6 +10,7 @@ import 'package:worldon/domain/core/validation/objects/objective_set.dart';
 /// "Converts" a [Set] of [Objective]s into a [Map].
 ///
 /// A [Map] where the ids are the keys and a bool keeping track of when they're accomplished.
+@Deprecated("Unnecessarily bulky, just use the ObjectivesTrackerBloc")
 @LazySingleton(env: [Environment.dev, Environment.prod])
 class FillObjectiveTracker implements UseCase<Map<int, bool>, Params> {
   @override

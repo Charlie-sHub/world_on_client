@@ -17,7 +17,7 @@ class BlockUnblockButtonBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<BlockActorBloc, BlockActorState>(
       builder: (context, state) => AnimatedSwitcher(
-        duration: const Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 250),
         transitionBuilder: (child, animation) => FadeTransition(
           opacity: animation,
           child: child,

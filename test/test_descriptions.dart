@@ -33,7 +33,7 @@ abstract class TestDescription {
   static const notThrown = "Error wasn't thrown";
 
   // Bloc testing
-  static const shouldEmitInitial = "Should emit the initial state";
+  static const shouldEmitInitial = "Should emit the initial state, so nothing is expected";
   static const verifyCallToUseCase = "Verifies the call to the use case";
   static const shouldEmitSuccess = "Should emit a successful state";
   static const shouldEmitFailure = "Should emit a failed state";

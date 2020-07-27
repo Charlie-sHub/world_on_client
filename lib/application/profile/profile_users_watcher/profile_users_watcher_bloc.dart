@@ -56,8 +56,8 @@ class ProfileUsersWatcherBloc extends Bloc<ProfileUsersWatcherEvent, ProfileUser
 
   Stream<ProfileUsersWatcherState> onUsersReceived(_UsersReceived event) async* {
     yield event.failureOrUsers.fold(
-        (failure) => ProfileUsersWatcherState.loadFailure(failure),
-        (users) => ProfileUsersWatcherState.loadSuccess(users),
+      (failure) => ProfileUsersWatcherState.loadFailure(failure),
+      (users) => ProfileUsersWatcherState.loadSuccess(users),
     );
   }
 

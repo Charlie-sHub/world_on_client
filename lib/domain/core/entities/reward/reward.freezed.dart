@@ -38,7 +38,7 @@ mixin _$Reward {
 abstract class $RewardCopyWith<$Res> {
   factory $RewardCopyWith(Reward value, $Res Function(Reward) then) =
   _$RewardCopyWithImpl<$Res>;
-  
+
   $Res call({int id, Name name, EntityDescription description, String imageURL});
 }
 
