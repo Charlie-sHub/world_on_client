@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:worldon/application/core/experience_card_actor/experience_card_actor_bloc.dart';
 import 'package:worldon/application/main_feed/main_feed_watcher/main_feed_watcher_bloc.dart';
-import 'package:worldon/views/core/misc/common_functions/experience_card_listener.dart';
 import 'package:worldon/views/core/widget/cards/experience_card.dart';
 import 'package:worldon/views/core/widget/cards/experience_error_card.dart';
 import 'package:worldon/views/core/widget/critical_error_display.dart';
@@ -15,23 +13,13 @@ class MainFeedBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider<MainFeedWatcherBloc>(
-          create: (context) => getIt<MainFeedWatcherBloc>()
-            ..add(
-              const MainFeedWatcherEvent.watchMainFeedStarted(),
-            ),
+    return BlocProvider(
+      create: (context) => getIt<MainFeedWatcherBloc>()
+        ..add(
+          const MainFeedWatcherEvent.watchMainFeedStarted(),
         ),
-        BlocProvider<ExperienceCardActorBloc>(
-          create: (context) => getIt<ExperienceCardActorBloc>(),
-        ),
-      ],
-      child: BlocListener<ExperienceCardActorBloc, ExperienceCardActorState>(
-        listener: experienceCardListener,
-        child: BlocBuilder<MainFeedWatcherBloc, MainFeedWatcherState>(
-          builder: onBuild,
-        ),
+      child: BlocBuilder<MainFeedWatcherBloc, MainFeedWatcherState>(
+        builder: onBuild,
       ),
     );
   }

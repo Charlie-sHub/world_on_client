@@ -3,16 +3,15 @@ import 'package:dartz/dartz.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:worldon/application/core/experience_card_actor/experience_card_actor_bloc.dart';
-import 'package:worldon/application/core/experience_card_like_check/experience_card_like_check_bloc.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/injection.dart';
-import 'package:worldon/views/core/misc/common_functions/experience_card_listener.dart';
 import 'package:worldon/views/core/misc/common_functions/get_color_by_difficulty.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widget/cards/simple_tag_display.dart';
+import 'package:worldon/views/core/widget/misc/experience_done_counter.dart';
+import 'package:worldon/views/core/widget/misc/experience_likes_counter.dart';
 import 'package:worldon/views/core/widget/misc/user_image.dart';
 
 class ExperienceCard extends StatelessWidget {
@@ -22,21 +21,11 @@ class ExperienceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => getIt<ExperienceCardActorBloc>()
-            ..add(
-              ExperienceCardActorEvent.initialized(experience),
-            ),
+    return BlocProvider(
+      create: (context) => getIt<ExperienceCardActorBloc>()
+        ..add(
+          ExperienceCardActorEvent.initialized(experience),
         ),
-        BlocProvider(
-          create: (context) => getIt<ExperienceCardLikeCheckBloc>()
-            ..add(
-              ExperienceCardLikeCheckEvent.initialized(experience),
-            ),
-        ),
-      ],
       child: BlocListener<ExperienceCardActorBloc, ExperienceCardActorState>(
         listener: experienceCardListener,
         child: Card(
@@ -71,8 +60,8 @@ class ExperienceCard extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        LikesCounter(experience: experience),
-                        DoneCounter(experience: experience),
+                        ExperienceLikesCounter(experience: experience),
+                        ExperienceDoneCounter(experience: experience),
                         DifficultyDisplay(experience: experience),
                       ],
                     ),
@@ -87,11 +76,12 @@ class ExperienceCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 5),
                     Wrap(
+                      alignment: WrapAlignment.center,
                       spacing: 5,
                       children: <Widget>[
                         ...experience.tags.getOrCrash().asSet().map(
-                              (tag) => SimpleTagDisplay(tag: tag),
-                            ),
+                            (tag) => SimpleTagDisplay(tag: tag),
+                        ),
                       ],
                     ),
                   ],
@@ -131,94 +121,6 @@ class DifficultyDisplay extends StatelessWidget {
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
-        ),
-      ],
-    );
-  }
-}
-
-class DoneCounter extends StatelessWidget {
-  const DoneCounter({
-    Key key,
-    @required this.experience,
-  }) : super(key: key);
-
-  final Experience experience;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        // TODO: Implement the user pictures
-        // The avatars of the last 3 users to have done the experience should appear here
-        Container(
-          // I don't like the idea of hard coding this, but it will work for now
-          width: 80,
-          child: Stack(
-            children: const <Widget>[
-              CircleAvatar(
-                backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
-              ),
-              Positioned(
-                left: 20,
-                child: CircleAvatar(
-                  backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
-                ),
-              ),
-              Positioned(
-                left: 40,
-                child: CircleAvatar(
-                  backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
-                ),
-              )
-            ],
-          ),
-        ),
-        const SizedBox(width: 5),
-        Text(
-          experience.doneBy.length.toString(),
-          style: const TextStyle(color: WorldOnColors.background),
-        ),
-      ],
-    );
-  }
-}
-
-class LikesCounter extends StatelessWidget {
-  const LikesCounter({
-    Key key,
-    @required this.experience,
-  }) : super(key: key);
-
-  final Experience experience;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        BlocBuilder<ExperienceCardLikeCheckBloc, ExperienceCardLikeCheckState>(
-          builder: (context, state) => state.map(
-            initial: (_) => const CircularProgressIndicator(),
-            likes: (_) => FaIcon(
-              FontAwesomeIcons.solidHeart,
-              color: WorldOnColors.red,
-            ),
-            neutral: (_) => FaIcon(
-              FontAwesomeIcons.heart,
-              color: WorldOnColors.red,
-            ),
-          ),
-        ),
-        const SizedBox(width: 5),
-        Text(
-          // Perhaps this isn't the best way to show this
-          // perhaps the experience should just have an int with the amount of likes it has (and dislikes too)
-          experience.likedBy.length.toString(),
-          style: const TextStyle(color: WorldOnColors.background),
         ),
       ],
     );
@@ -406,3 +308,37 @@ class DismissFromLogButton extends StatelessWidget {
     );
   }
 }
+
+// TODO: Customize snackbars
+// And ensure they show above the navigation bar
+void experienceCardListener(BuildContext context, ExperienceCardActorState state) =>
+  state.maybeMap(
+    actionInProgress: (_) =>
+      FlushbarHelper.createLoading(
+        message: "Action in progress",
+        linearProgressIndicator: const LinearProgressIndicator(),
+      ).show(context),
+    additionFailure: (state) =>
+      FlushbarHelper.createError(
+        message: state.failure.maybeMap(
+          coreData: (failure) =>
+            failure.coreDataFailure.maybeMap(
+              serverError: (failure) => failure.errorString,
+              orElse: () => "Unknown Error",
+            ),
+          orElse: () => "Unknown Error",
+        ),
+      ).show(context),
+    dismissalFailure: (state) =>
+      FlushbarHelper.createError(
+        message: state.failure.maybeMap(
+          coreData: (failure) =>
+            failure.coreDataFailure.maybeMap(
+              serverError: (failure) => failure.errorString,
+              orElse: () => "Unknown Error",
+            ),
+          orElse: () => "Unknown Error",
+        ),
+      ).show(context),
+    orElse: () => null,
+  );

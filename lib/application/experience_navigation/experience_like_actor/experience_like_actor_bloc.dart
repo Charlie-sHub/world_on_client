@@ -15,9 +15,7 @@ import 'package:worldon/domain/experience_navigation/use_case/like_experience.da
 import '../../../injection.dart';
 
 part 'experience_like_actor_bloc.freezed.dart';
-
 part 'experience_like_actor_event.dart';
-
 part 'experience_like_actor_state.dart';
 
 @injectable

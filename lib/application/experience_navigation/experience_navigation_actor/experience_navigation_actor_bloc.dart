@@ -60,8 +60,8 @@ class ExperienceNavigationActorBloc extends Bloc<ExperienceNavigationActorEvent,
     );
     yield state.copyWith(
       surroundingExperiences: _failureOrExperiences.fold(
-          (failure) => none(),
-          (experienceSet) => some(experienceSet),
+        (failure) => none(),
+        (experienceSet) => some(experienceSet),
       ),
       currentLocation: _coordinates,
     );

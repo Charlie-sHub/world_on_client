@@ -8,9 +8,7 @@ import 'package:meta/meta.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 
 part 'experience_navigation_watcher_bloc.freezed.dart';
-
 part 'experience_navigation_watcher_event.dart';
-
 part 'experience_navigation_watcher_state.dart';
 
 @injectable

@@ -24,7 +24,9 @@ class AppWidget extends StatelessWidget {
         // debugShowCheckedModeBanner: false,
         theme: ThemeData.dark().copyWith(
           floatingActionButtonTheme: const FloatingActionButtonThemeData(
-            backgroundColor: WorldOnColors.primary,
+            elevation: 10,
+            backgroundColor: WorldOnColors.white,
+            foregroundColor: WorldOnColors.background,
           ),
           cardColor: WorldOnColors.white,
           primaryColor: WorldOnColors.primary,
@@ -33,7 +35,7 @@ class AppWidget extends StatelessWidget {
           appBarTheme: const AppBarTheme(
             color: WorldOnColors.background,
           ),
-          inputDecorationTheme: InputDecorationTheme(
+          inputDecorationTheme: const InputDecorationTheme(
             border: OutlineInputBorder(
               borderSide: BorderSide(
                 color: WorldOnColors.accent,

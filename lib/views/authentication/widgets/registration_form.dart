@@ -213,14 +213,13 @@ class DescriptionTextField extends StatelessWidget {
             RegistrationFormEvent.descriptionChanged(value),
           ),
       validator: (_) => context.bloc<RegistrationFormBloc>().state.user.description.value.fold(
-          (failure) =>
-          failure.maybeMap(
-            emptyString: (_) => "The description can't be empty",
-            stringExceedsLength: (_) => "The description is too long",
-            orElse: () => StringConst.unknownError,
+            (failure) => failure.maybeMap(
+              emptyString: (_) => "The description can't be empty",
+              stringExceedsLength: (_) => "The description is too long",
+              orElse: () => StringConst.unknownError,
+            ),
+            (_) => null,
           ),
-          (_) => null,
-      ),
       autocorrect: false,
       maxLines: 5,
       decoration: InputDecoration(

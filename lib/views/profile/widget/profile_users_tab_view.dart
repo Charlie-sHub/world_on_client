@@ -69,7 +69,6 @@ class ProfileUsersUnicornDialer extends StatelessWidget {
   Widget build(BuildContext context) {
     return UnicornDialer(
       hasBackground: false,
-      parentButtonBackground: WorldOnColors.primary,
       orientation: UnicornOrientation.VERTICAL,
       parentButton: Icon(Icons.format_list_bulleted),
       childButtons: [
@@ -81,7 +80,8 @@ class ProfileUsersUnicornDialer extends StatelessWidget {
             onPressed: () => context.bloc<ProfileUsersWatcherBloc>().add(
                   ProfileUsersWatcherEvent.watchFollowedUsersStarted(user),
                 ),
-            child: Icon(Icons.arrow_right),
+            foregroundColor: WorldOnColors.accent,
+            child: Icon(Icons.arrow_back),
           ),
         ),
         UnicornButton(
@@ -89,11 +89,11 @@ class ProfileUsersUnicornDialer extends StatelessWidget {
           labelText: "Following",
           currentButton: FloatingActionButton(
             mini: true,
-            onPressed: () =>
-              context.bloc<ProfileUsersWatcherBloc>().add(
-                ProfileUsersWatcherEvent.watchFollowingUsersStarted(user),
-              ),
-            child: Icon(Icons.arrow_left),
+            onPressed: () => context.bloc<ProfileUsersWatcherBloc>().add(
+                  ProfileUsersWatcherEvent.watchFollowingUsersStarted(user),
+                ),
+            foregroundColor: WorldOnColors.red,
+            child: Icon(Icons.arrow_forward),
           ),
         ),
       ],

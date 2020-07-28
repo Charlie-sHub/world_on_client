@@ -50,24 +50,19 @@ class _$OptionsCopyWithImpl<$Res> implements $OptionsCopyWith<$Res> {
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as int,
-      languageCode: languageCode == freezed
-        ? _value.languageCode
-        : languageCode as String,
+      languageCode: languageCode == freezed ? _value.languageCode : languageCode as String,
     ));
   }
 }
 
 abstract class _$OptionsCopyWith<$Res> implements $OptionsCopyWith<$Res> {
-  factory _$OptionsCopyWith(_Options value, $Res Function(_Options) then) =
-  __$OptionsCopyWithImpl<$Res>;
+  factory _$OptionsCopyWith(_Options value, $Res Function(_Options) then) = __$OptionsCopyWithImpl<$Res>;
   @override
   $Res call({int id, String languageCode});
 }
 
-class __$OptionsCopyWithImpl<$Res> extends _$OptionsCopyWithImpl<$Res>
-  implements _$OptionsCopyWith<$Res> {
-  __$OptionsCopyWithImpl(_Options _value, $Res Function(_Options) _then)
-    : super(_value, (v) => _then(v as _Options));
+class __$OptionsCopyWithImpl<$Res> extends _$OptionsCopyWithImpl<$Res> implements _$OptionsCopyWith<$Res> {
+  __$OptionsCopyWithImpl(_Options _value, $Res Function(_Options) _then) : super(_value, (v) => _then(v as _Options));
 
   @override
   _Options get _value => super._value as _Options;
@@ -79,9 +74,7 @@ class __$OptionsCopyWithImpl<$Res> extends _$OptionsCopyWithImpl<$Res>
   }) {
     return _then(_Options(
       id: id == freezed ? _value.id : id as int,
-      languageCode: languageCode == freezed
-        ? _value.languageCode
-        : languageCode as String,
+      languageCode: languageCode == freezed ? _value.languageCode : languageCode as String,
     ));
   }
 }
@@ -105,22 +98,15 @@ class _$_Options extends _Options {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Options &&
-          (identical(other.id, id) ||
-            const DeepCollectionEquality().equals(other.id, id)) &&
-          (identical(other.languageCode, languageCode) ||
-            const DeepCollectionEquality()
-              .equals(other.languageCode, languageCode)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.languageCode, languageCode) || const DeepCollectionEquality().equals(other.languageCode, languageCode)));
   }
 
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(id) ^
-    const DeepCollectionEquality().hash(languageCode);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(id) ^ const DeepCollectionEquality().hash(languageCode);
 
   @override
-  _$OptionsCopyWith<_Options> get copyWith =>
-    __$OptionsCopyWithImpl<_Options>(this, _$identity);
+  _$OptionsCopyWith<_Options> get copyWith => __$OptionsCopyWithImpl<_Options>(this, _$identity);
 }
 
 abstract class _Options extends Options {

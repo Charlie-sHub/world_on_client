@@ -11,9 +11,7 @@ import 'package:worldon/domain/experience_navigation/use_case/rate_difficulty.da
 import 'package:worldon/injection.dart';
 
 part 'rate_experience_difficulty_actor_bloc.freezed.dart';
-
 part 'rate_experience_difficulty_actor_event.dart';
-
 part 'rate_experience_difficulty_actor_state.dart';
 
 @injectable

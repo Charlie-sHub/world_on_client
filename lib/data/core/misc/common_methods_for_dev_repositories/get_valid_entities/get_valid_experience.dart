@@ -3,7 +3,9 @@ import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_v
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_coordinates.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_tag.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
+import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
@@ -28,10 +30,81 @@ Experience getValidExperience() {
     difficulty: Difficulty(2),
     creationDate: PastDate(DateTime.now().subtract(const Duration(days: 100))),
     modificationDate: PastDate(DateTime.now()),
-    objectives: ObjectiveSet(KtSet.of(getValidObjective())),
-    rewards: RewardSet(KtSet.of(getValidReward())),
-    tags: TagSet(KtSet.of(getValidTag())),
-    comments: {getValidComment()},
+    objectives: ObjectiveSet(
+      KtSet.of(
+        getValidObjective(),
+        getValidObjective().copyWith(
+          id: 2,
+          description: EntityDescription("Poaching Whistler cruiser white room, carbon chowder dirtbag death cookies steeps."),
+        ),
+        getValidObjective().copyWith(
+          id: 3,
+          description: EntityDescription("Vaporware post-ironic listicle."),
+        ),
+        getValidObjective().copyWith(
+          id: 4,
+          description: EntityDescription("Yard sale poaching cork afterbang giblets stomp saddle.."),
+        ),
+        getValidObjective().copyWith(
+          id: 5,
+          description: EntityDescription("""
+Stoked wheelie cork jib roadie. Pow pow twin tip bomb hole north shore, spread eagle misty pow clipless wheelie.
+Chillax gapers Whistler skid."""),
+        ),
+        getValidObjective().copyWith(
+          id: 6,
+          description: EntityDescription("Disrupt selvage blue bottle whatever, synth craft beer messenger bag."),
+        ),
+      ),
+    ),
+    rewards: RewardSet(
+      KtSet.of(
+        getValidReward(),
+        getValidReward().copyWith(
+          id: 2,
+          name: Name("Park rat"),
+          description: EntityDescription("Pow pow rip flow piste line."),
+        ),
+        getValidReward().copyWith(
+          id: 2,
+          name: Name("Snackwave"),
+          description: EntityDescription("Copper mug narwhal."),
+        ),
+      ),
+    ),
+    tags: TagSet(
+      KtSet.of(
+        getValidTag(),
+        getValidTag().copyWith(
+          id: 2,
+          name: Name("Food"),
+        ),
+        getValidTag().copyWith(
+          id: 3,
+          name: Name("Outdoors"),
+        ),
+        getValidTag().copyWith(
+          id: 4,
+          name: Name("Fashion"),
+        ),
+      ),
+    ),
+    comments: {
+      getValidComment(),
+      Comment.empty(),
+      getValidComment().copyWith(
+        id: 2,
+        content: CommentContent("Vinyl retro keytar biodiesel."),
+      ),
+      getValidComment().copyWith(
+        id: 3,
+        content: CommentContent("Af paleo tacos, pinterest bespoke yuccie VHS messenger bag small batch."),
+      ),
+      getValidComment().copyWith(
+        id: 4,
+        content: CommentContent("Typewriter plaid fam squid yuccie cloud bread street art."),
+      ),
+    },
     likedBy: {getValidUser()},
     doneBy: {getValidUser()},
   );

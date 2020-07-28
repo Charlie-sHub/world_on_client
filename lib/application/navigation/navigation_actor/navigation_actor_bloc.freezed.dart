@@ -106,14 +106,11 @@ class _$NavigationActorEventCopyWithImpl<$Res> implements $NavigationActorEventC
 }
 
 abstract class _$MainFeedTappedCopyWith<$Res> {
-  factory _$MainFeedTappedCopyWith(_MainFeedTapped value, $Res Function(_MainFeedTapped) then) =
-  __$MainFeedTappedCopyWithImpl<$Res>;
+  factory _$MainFeedTappedCopyWith(_MainFeedTapped value, $Res Function(_MainFeedTapped) then) = __$MainFeedTappedCopyWithImpl<$Res>;
 }
 
-class __$MainFeedTappedCopyWithImpl<$Res> extends _$NavigationActorEventCopyWithImpl<$Res>
-  implements _$MainFeedTappedCopyWith<$Res> {
-  __$MainFeedTappedCopyWithImpl(_MainFeedTapped _value, $Res Function(_MainFeedTapped) _then)
-    : super(_value, (v) => _then(v as _MainFeedTapped));
+class __$MainFeedTappedCopyWithImpl<$Res> extends _$NavigationActorEventCopyWithImpl<$Res> implements _$MainFeedTappedCopyWith<$Res> {
+  __$MainFeedTappedCopyWithImpl(_MainFeedTapped _value, $Res Function(_MainFeedTapped) _then) : super(_value, (v) => _then(v as _MainFeedTapped));
 
   @override
   _MainFeedTapped get _value => super._value as _MainFeedTapped;
@@ -215,14 +212,11 @@ abstract class _MainFeedTapped implements NavigationActorEvent {
 }
 
 abstract class _$SearchTappedCopyWith<$Res> {
-  factory _$SearchTappedCopyWith(_SearchTapped value, $Res Function(_SearchTapped) then) =
-  __$SearchTappedCopyWithImpl<$Res>;
+  factory _$SearchTappedCopyWith(_SearchTapped value, $Res Function(_SearchTapped) then) = __$SearchTappedCopyWithImpl<$Res>;
 }
 
-class __$SearchTappedCopyWithImpl<$Res> extends _$NavigationActorEventCopyWithImpl<$Res>
-  implements _$SearchTappedCopyWith<$Res> {
-  __$SearchTappedCopyWithImpl(_SearchTapped _value, $Res Function(_SearchTapped) _then)
-    : super(_value, (v) => _then(v as _SearchTapped));
+class __$SearchTappedCopyWithImpl<$Res> extends _$NavigationActorEventCopyWithImpl<$Res> implements _$SearchTappedCopyWith<$Res> {
+  __$SearchTappedCopyWithImpl(_SearchTapped _value, $Res Function(_SearchTapped) _then) : super(_value, (v) => _then(v as _SearchTapped));
 
   @override
   _SearchTapped get _value => super._value as _SearchTapped;
@@ -324,16 +318,12 @@ abstract class _SearchTapped implements NavigationActorEvent {
 }
 
 abstract class _$ExperienceFormTappedCopyWith<$Res> {
-  factory _$ExperienceFormTappedCopyWith(_ExperienceFormTapped value,
-    $Res Function(_ExperienceFormTapped) then) =
-  __$ExperienceFormTappedCopyWithImpl<$Res>;
+  factory _$ExperienceFormTappedCopyWith(_ExperienceFormTapped value, $Res Function(_ExperienceFormTapped) then) = __$ExperienceFormTappedCopyWithImpl<$Res>;
   $Res call({Option<Experience> experienceOption});
 }
 
-class __$ExperienceFormTappedCopyWithImpl<$Res> extends _$NavigationActorEventCopyWithImpl<$Res>
-  implements _$ExperienceFormTappedCopyWith<$Res> {
-  __$ExperienceFormTappedCopyWithImpl(_ExperienceFormTapped _value, $Res Function(_ExperienceFormTapped) _then)
-    : super(_value, (v) => _then(v as _ExperienceFormTapped));
+class __$ExperienceFormTappedCopyWithImpl<$Res> extends _$NavigationActorEventCopyWithImpl<$Res> implements _$ExperienceFormTappedCopyWith<$Res> {
+  __$ExperienceFormTappedCopyWithImpl(_ExperienceFormTapped _value, $Res Function(_ExperienceFormTapped) _then) : super(_value, (v) => _then(v as _ExperienceFormTapped));
 
   @override
   _ExperienceFormTapped get _value => super._value as _ExperienceFormTapped;
@@ -343,16 +333,13 @@ class __$ExperienceFormTappedCopyWithImpl<$Res> extends _$NavigationActorEventCo
     Object experienceOption = freezed,
   }) {
     return _then(_ExperienceFormTapped(
-      experienceOption == freezed
-        ? _value.experienceOption
-        : experienceOption as Option<Experience>,
+      experienceOption == freezed ? _value.experienceOption : experienceOption as Option<Experience>,
     ));
   }
 }
 
 class _$_ExperienceFormTapped implements _ExperienceFormTapped {
-  const _$_ExperienceFormTapped(this.experienceOption)
-    : assert(experienceOption != null);
+  const _$_ExperienceFormTapped(this.experienceOption) : assert(experienceOption != null);
 
   @override
   final Option<Experience> experienceOption;
@@ -365,21 +352,14 @@ class _$_ExperienceFormTapped implements _ExperienceFormTapped {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _ExperienceFormTapped &&
-        (identical(other.experienceOption, experienceOption) ||
-          const DeepCollectionEquality()
-            .equals(other.experienceOption, experienceOption)));
+        (other is _ExperienceFormTapped && (identical(other.experienceOption, experienceOption) || const DeepCollectionEquality().equals(other.experienceOption, experienceOption)));
   }
 
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(experienceOption);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceOption);
 
   @override
-  _$ExperienceFormTappedCopyWith<_ExperienceFormTapped> get copyWith =>
-    __$ExperienceFormTappedCopyWithImpl<_ExperienceFormTapped>(
-      this, _$identity);
+  _$ExperienceFormTappedCopyWith<_ExperienceFormTapped> get copyWith => __$ExperienceFormTappedCopyWithImpl<_ExperienceFormTapped>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -457,45 +437,35 @@ class _$_ExperienceFormTapped implements _ExperienceFormTapped {
 }
 
 abstract class _ExperienceFormTapped implements NavigationActorEvent {
-  const factory _ExperienceFormTapped(Option<Experience> experienceOption) =
-  _$_ExperienceFormTapped;
+  const factory _ExperienceFormTapped(Option<Experience> experienceOption) = _$_ExperienceFormTapped;
 
   Option<Experience> get experienceOption;
   _$ExperienceFormTappedCopyWith<_ExperienceFormTapped> get copyWith;
 }
 
 abstract class _$ExperienceNavigationTappedCopyWith<$Res> {
-  factory _$ExperienceNavigationTappedCopyWith(_ExperienceNavigationTapped value,
-    $Res Function(_ExperienceNavigationTapped) then) =
-  __$ExperienceNavigationTappedCopyWithImpl<$Res>;
+  factory _$ExperienceNavigationTappedCopyWith(_ExperienceNavigationTapped value, $Res Function(_ExperienceNavigationTapped) then) = __$ExperienceNavigationTappedCopyWithImpl<$Res>;
   $Res call({Option<Experience> experienceOption});
 }
 
-class __$ExperienceNavigationTappedCopyWithImpl<$Res> extends _$NavigationActorEventCopyWithImpl<$Res>
-  implements _$ExperienceNavigationTappedCopyWith<$Res> {
-  __$ExperienceNavigationTappedCopyWithImpl(_ExperienceNavigationTapped _value,
-    $Res Function(_ExperienceNavigationTapped) _then)
-    : super(_value, (v) => _then(v as _ExperienceNavigationTapped));
+class __$ExperienceNavigationTappedCopyWithImpl<$Res> extends _$NavigationActorEventCopyWithImpl<$Res> implements _$ExperienceNavigationTappedCopyWith<$Res> {
+  __$ExperienceNavigationTappedCopyWithImpl(_ExperienceNavigationTapped _value, $Res Function(_ExperienceNavigationTapped) _then) : super(_value, (v) => _then(v as _ExperienceNavigationTapped));
 
   @override
-  _ExperienceNavigationTapped get _value =>
-    super._value as _ExperienceNavigationTapped;
+  _ExperienceNavigationTapped get _value => super._value as _ExperienceNavigationTapped;
 
   @override
   $Res call({
     Object experienceOption = freezed,
   }) {
     return _then(_ExperienceNavigationTapped(
-      experienceOption == freezed
-        ? _value.experienceOption
-        : experienceOption as Option<Experience>,
+      experienceOption == freezed ? _value.experienceOption : experienceOption as Option<Experience>,
     ));
   }
 }
 
 class _$_ExperienceNavigationTapped implements _ExperienceNavigationTapped {
-  const _$_ExperienceNavigationTapped(this.experienceOption)
-    : assert(experienceOption != null);
+  const _$_ExperienceNavigationTapped(this.experienceOption) : assert(experienceOption != null);
 
   @override
   final Option<Experience> experienceOption;
@@ -508,22 +478,14 @@ class _$_ExperienceNavigationTapped implements _ExperienceNavigationTapped {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _ExperienceNavigationTapped &&
-        (identical(other.experienceOption, experienceOption) ||
-          const DeepCollectionEquality()
-            .equals(other.experienceOption, experienceOption)));
+      (other is _ExperienceNavigationTapped && (identical(other.experienceOption, experienceOption) || const DeepCollectionEquality().equals(other.experienceOption, experienceOption)));
   }
 
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(experienceOption);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceOption);
 
   @override
-  _$ExperienceNavigationTappedCopyWith<_ExperienceNavigationTapped>
-  get copyWith =>
-    __$ExperienceNavigationTappedCopyWithImpl<
-      _ExperienceNavigationTapped>(this, _$identity);
+  _$ExperienceNavigationTappedCopyWith<_ExperienceNavigationTapped> get copyWith => __$ExperienceNavigationTappedCopyWithImpl<_ExperienceNavigationTapped>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -604,20 +566,17 @@ abstract class _ExperienceNavigationTapped implements NavigationActorEvent {
   const factory _ExperienceNavigationTapped(Option<Experience> experienceOption) = _$_ExperienceNavigationTapped;
 
   Option<Experience> get experienceOption;
-  _$ExperienceNavigationTappedCopyWith<_ExperienceNavigationTapped>
-  get copyWith;
+
+  _$ExperienceNavigationTappedCopyWith<_ExperienceNavigationTapped> get copyWith;
 }
 
 abstract class _$ProfileTappedCopyWith<$Res> {
-  factory _$ProfileTappedCopyWith(_ProfileTapped value, $Res Function(_ProfileTapped) then) =
-  __$ProfileTappedCopyWithImpl<$Res>;
+  factory _$ProfileTappedCopyWith(_ProfileTapped value, $Res Function(_ProfileTapped) then) = __$ProfileTappedCopyWithImpl<$Res>;
   $Res call({Option<User> userOption});
 }
 
-class __$ProfileTappedCopyWithImpl<$Res> extends _$NavigationActorEventCopyWithImpl<$Res>
-  implements _$ProfileTappedCopyWith<$Res> {
-  __$ProfileTappedCopyWithImpl(_ProfileTapped _value, $Res Function(_ProfileTapped) _then)
-    : super(_value, (v) => _then(v as _ProfileTapped));
+class __$ProfileTappedCopyWithImpl<$Res> extends _$NavigationActorEventCopyWithImpl<$Res> implements _$ProfileTappedCopyWith<$Res> {
+  __$ProfileTappedCopyWithImpl(_ProfileTapped _value, $Res Function(_ProfileTapped) _then) : super(_value, (v) => _then(v as _ProfileTapped));
 
   @override
   _ProfileTapped get _value => super._value as _ProfileTapped;
@@ -645,20 +604,14 @@ class _$_ProfileTapped implements _ProfileTapped {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-      (other is _ProfileTapped &&
-        (identical(other.userOption, userOption) ||
-          const DeepCollectionEquality()
-            .equals(other.userOption, userOption)));
+    return identical(this, other) || (other is _ProfileTapped && (identical(other.userOption, userOption) || const DeepCollectionEquality().equals(other.userOption, userOption)));
   }
 
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(userOption);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(userOption);
 
   @override
-  _$ProfileTappedCopyWith<_ProfileTapped> get copyWith =>
-    __$ProfileTappedCopyWithImpl<_ProfileTapped>(this, _$identity);
+  _$ProfileTappedCopyWith<_ProfileTapped> get copyWith => __$ProfileTappedCopyWithImpl<_ProfileTapped>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -743,15 +696,11 @@ abstract class _ProfileTapped implements NavigationActorEvent {
 }
 
 abstract class _$NotificationsTappedCopyWith<$Res> {
-  factory _$NotificationsTappedCopyWith(_NotificationsTapped value,
-    $Res Function(_NotificationsTapped) then) =
-  __$NotificationsTappedCopyWithImpl<$Res>;
+  factory _$NotificationsTappedCopyWith(_NotificationsTapped value, $Res Function(_NotificationsTapped) then) = __$NotificationsTappedCopyWithImpl<$Res>;
 }
 
-class __$NotificationsTappedCopyWithImpl<$Res> extends _$NavigationActorEventCopyWithImpl<$Res>
-  implements _$NotificationsTappedCopyWith<$Res> {
-  __$NotificationsTappedCopyWithImpl(_NotificationsTapped _value, $Res Function(_NotificationsTapped) _then)
-    : super(_value, (v) => _then(v as _NotificationsTapped));
+class __$NotificationsTappedCopyWithImpl<$Res> extends _$NavigationActorEventCopyWithImpl<$Res> implements _$NotificationsTappedCopyWith<$Res> {
+  __$NotificationsTappedCopyWithImpl(_NotificationsTapped _value, $Res Function(_NotificationsTapped) _then) : super(_value, (v) => _then(v as _NotificationsTapped));
 
   @override
   _NotificationsTapped get _value => super._value as _NotificationsTapped;
@@ -946,13 +895,10 @@ mixin _$NavigationActorState {
 }
 
 abstract class $NavigationActorStateCopyWith<$Res> {
-  factory $NavigationActorStateCopyWith(NavigationActorState value,
-    $Res Function(NavigationActorState) then) =
-  _$NavigationActorStateCopyWithImpl<$Res>;
+  factory $NavigationActorStateCopyWith(NavigationActorState value, $Res Function(NavigationActorState) then) = _$NavigationActorStateCopyWithImpl<$Res>;
 }
 
-class _$NavigationActorStateCopyWithImpl<$Res>
-  implements $NavigationActorStateCopyWith<$Res> {
+class _$NavigationActorStateCopyWithImpl<$Res> implements $NavigationActorStateCopyWith<$Res> {
   _$NavigationActorStateCopyWithImpl(this._value, this._then);
 
   final NavigationActorState _value;
@@ -961,14 +907,11 @@ class _$NavigationActorStateCopyWithImpl<$Res>
 }
 
 abstract class _$MainFeedViewCopyWith<$Res> {
-  factory _$MainFeedViewCopyWith(_MainFeedView value, $Res Function(_MainFeedView) then) =
-  __$MainFeedViewCopyWithImpl<$Res>;
+  factory _$MainFeedViewCopyWith(_MainFeedView value, $Res Function(_MainFeedView) then) = __$MainFeedViewCopyWithImpl<$Res>;
 }
 
-class __$MainFeedViewCopyWithImpl<$Res> extends _$NavigationActorStateCopyWithImpl<$Res>
-  implements _$MainFeedViewCopyWith<$Res> {
-  __$MainFeedViewCopyWithImpl(_MainFeedView _value, $Res Function(_MainFeedView) _then)
-    : super(_value, (v) => _then(v as _MainFeedView));
+class __$MainFeedViewCopyWithImpl<$Res> extends _$NavigationActorStateCopyWithImpl<$Res> implements _$MainFeedViewCopyWith<$Res> {
+  __$MainFeedViewCopyWithImpl(_MainFeedView _value, $Res Function(_MainFeedView) _then) : super(_value, (v) => _then(v as _MainFeedView));
 
   @override
   _MainFeedView get _value => super._value as _MainFeedView;
@@ -1076,14 +1019,11 @@ abstract class _MainFeedView implements NavigationActorState {
 }
 
 abstract class _$SearchViewCopyWith<$Res> {
-  factory _$SearchViewCopyWith(_SearchView value, $Res Function(_SearchView) then) =
-  __$SearchViewCopyWithImpl<$Res>;
+  factory _$SearchViewCopyWith(_SearchView value, $Res Function(_SearchView) then) = __$SearchViewCopyWithImpl<$Res>;
 }
 
-class __$SearchViewCopyWithImpl<$Res> extends _$NavigationActorStateCopyWithImpl<$Res>
-  implements _$SearchViewCopyWith<$Res> {
-  __$SearchViewCopyWithImpl(_SearchView _value, $Res Function(_SearchView) _then)
-    : super(_value, (v) => _then(v as _SearchView));
+class __$SearchViewCopyWithImpl<$Res> extends _$NavigationActorStateCopyWithImpl<$Res> implements _$SearchViewCopyWith<$Res> {
+  __$SearchViewCopyWithImpl(_SearchView _value, $Res Function(_SearchView) _then) : super(_value, (v) => _then(v as _SearchView));
 
   @override
   _SearchView get _value => super._value as _SearchView;
@@ -1191,15 +1131,12 @@ abstract class _SearchView implements NavigationActorState {
 }
 
 abstract class _$ExperienceFormViewCopyWith<$Res> {
-  factory _$ExperienceFormViewCopyWith(_ExperienceFormView value, $Res Function(_ExperienceFormView) then) =
-  __$ExperienceFormViewCopyWithImpl<$Res>;
+  factory _$ExperienceFormViewCopyWith(_ExperienceFormView value, $Res Function(_ExperienceFormView) then) = __$ExperienceFormViewCopyWithImpl<$Res>;
   $Res call({Option<Experience> experienceOption});
 }
 
-class __$ExperienceFormViewCopyWithImpl<$Res> extends _$NavigationActorStateCopyWithImpl<$Res>
-  implements _$ExperienceFormViewCopyWith<$Res> {
-  __$ExperienceFormViewCopyWithImpl(_ExperienceFormView _value, $Res Function(_ExperienceFormView) _then)
-    : super(_value, (v) => _then(v as _ExperienceFormView));
+class __$ExperienceFormViewCopyWithImpl<$Res> extends _$NavigationActorStateCopyWithImpl<$Res> implements _$ExperienceFormViewCopyWith<$Res> {
+  __$ExperienceFormViewCopyWithImpl(_ExperienceFormView _value, $Res Function(_ExperienceFormView) _then) : super(_value, (v) => _then(v as _ExperienceFormView));
 
   @override
   _ExperienceFormView get _value => super._value as _ExperienceFormView;
@@ -1209,16 +1146,13 @@ class __$ExperienceFormViewCopyWithImpl<$Res> extends _$NavigationActorStateCopy
     Object experienceOption = freezed,
   }) {
     return _then(_ExperienceFormView(
-      experienceOption == freezed
-        ? _value.experienceOption
-        : experienceOption as Option<Experience>,
+      experienceOption == freezed ? _value.experienceOption : experienceOption as Option<Experience>,
     ));
   }
 }
 
 class _$_ExperienceFormView implements _ExperienceFormView {
-  const _$_ExperienceFormView(this.experienceOption)
-    : assert(experienceOption != null);
+  const _$_ExperienceFormView(this.experienceOption) : assert(experienceOption != null);
 
   @override
   final Option<Experience> experienceOption;
@@ -1231,20 +1165,14 @@ class _$_ExperienceFormView implements _ExperienceFormView {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _ExperienceFormView &&
-        (identical(other.experienceOption, experienceOption) ||
-          const DeepCollectionEquality()
-            .equals(other.experienceOption, experienceOption)));
+      (other is _ExperienceFormView && (identical(other.experienceOption, experienceOption) || const DeepCollectionEquality().equals(other.experienceOption, experienceOption)));
   }
 
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(experienceOption);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceOption);
 
   @override
-  _$ExperienceFormViewCopyWith<_ExperienceFormView> get copyWith =>
-    __$ExperienceFormViewCopyWithImpl<_ExperienceFormView>(this, _$identity);
+  _$ExperienceFormViewCopyWith<_ExperienceFormView> get copyWith => __$ExperienceFormViewCopyWithImpl<_ExperienceFormView>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1328,25 +1256,19 @@ class _$_ExperienceFormView implements _ExperienceFormView {
 }
 
 abstract class _ExperienceFormView implements NavigationActorState {
-  const factory _ExperienceFormView(Option<Experience> experienceOption) =
-  _$_ExperienceFormView;
+  const factory _ExperienceFormView(Option<Experience> experienceOption) = _$_ExperienceFormView;
 
   Option<Experience> get experienceOption;
   _$ExperienceFormViewCopyWith<_ExperienceFormView> get copyWith;
 }
 
 abstract class _$NavigateExperienceViewCopyWith<$Res> {
-  factory _$NavigateExperienceViewCopyWith(_NavigateExperienceView value,
-    $Res Function(_NavigateExperienceView) then) =
-  __$NavigateExperienceViewCopyWithImpl<$Res>;
+  factory _$NavigateExperienceViewCopyWith(_NavigateExperienceView value, $Res Function(_NavigateExperienceView) then) = __$NavigateExperienceViewCopyWithImpl<$Res>;
   $Res call({Option<Experience> experienceOption});
 }
 
-class __$NavigateExperienceViewCopyWithImpl<$Res> extends _$NavigationActorStateCopyWithImpl<$Res>
-  implements _$NavigateExperienceViewCopyWith<$Res> {
-  __$NavigateExperienceViewCopyWithImpl(_NavigateExperienceView _value,
-    $Res Function(_NavigateExperienceView) _then)
-    : super(_value, (v) => _then(v as _NavigateExperienceView));
+class __$NavigateExperienceViewCopyWithImpl<$Res> extends _$NavigationActorStateCopyWithImpl<$Res> implements _$NavigateExperienceViewCopyWith<$Res> {
+  __$NavigateExperienceViewCopyWithImpl(_NavigateExperienceView _value, $Res Function(_NavigateExperienceView) _then) : super(_value, (v) => _then(v as _NavigateExperienceView));
 
   @override
   _NavigateExperienceView get _value => super._value as _NavigateExperienceView;
@@ -1356,16 +1278,13 @@ class __$NavigateExperienceViewCopyWithImpl<$Res> extends _$NavigationActorState
     Object experienceOption = freezed,
   }) {
     return _then(_NavigateExperienceView(
-      experienceOption == freezed
-        ? _value.experienceOption
-        : experienceOption as Option<Experience>,
+      experienceOption == freezed ? _value.experienceOption : experienceOption as Option<Experience>,
     ));
   }
 }
 
 class _$_NavigateExperienceView implements _NavigateExperienceView {
-  const _$_NavigateExperienceView(this.experienceOption)
-    : assert(experienceOption != null);
+  const _$_NavigateExperienceView(this.experienceOption) : assert(experienceOption != null);
 
   @override
   final Option<Experience> experienceOption;
@@ -1378,21 +1297,14 @@ class _$_NavigateExperienceView implements _NavigateExperienceView {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _NavigateExperienceView &&
-        (identical(other.experienceOption, experienceOption) ||
-          const DeepCollectionEquality()
-            .equals(other.experienceOption, experienceOption)));
+      (other is _NavigateExperienceView && (identical(other.experienceOption, experienceOption) || const DeepCollectionEquality().equals(other.experienceOption, experienceOption)));
   }
 
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(experienceOption);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceOption);
 
   @override
-  _$NavigateExperienceViewCopyWith<_NavigateExperienceView> get copyWith =>
-    __$NavigateExperienceViewCopyWithImpl<_NavigateExperienceView>(
-      this, _$identity);
+  _$NavigateExperienceViewCopyWith<_NavigateExperienceView> get copyWith => __$NavigateExperienceViewCopyWithImpl<_NavigateExperienceView>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1476,23 +1388,19 @@ class _$_NavigateExperienceView implements _NavigateExperienceView {
 }
 
 abstract class _NavigateExperienceView implements NavigationActorState {
-  const factory _NavigateExperienceView(Option<Experience> experienceOption) =
-  _$_NavigateExperienceView;
+  const factory _NavigateExperienceView(Option<Experience> experienceOption) = _$_NavigateExperienceView;
 
   Option<Experience> get experienceOption;
   _$NavigateExperienceViewCopyWith<_NavigateExperienceView> get copyWith;
 }
 
 abstract class _$ProfileViewCopyWith<$Res> {
-  factory _$ProfileViewCopyWith(_ProfileView value, $Res Function(_ProfileView) then) =
-  __$ProfileViewCopyWithImpl<$Res>;
+  factory _$ProfileViewCopyWith(_ProfileView value, $Res Function(_ProfileView) then) = __$ProfileViewCopyWithImpl<$Res>;
   $Res call({Option<User> userOption});
 }
 
-class __$ProfileViewCopyWithImpl<$Res> extends _$NavigationActorStateCopyWithImpl<$Res>
-  implements _$ProfileViewCopyWith<$Res> {
-  __$ProfileViewCopyWithImpl(_ProfileView _value, $Res Function(_ProfileView) _then)
-    : super(_value, (v) => _then(v as _ProfileView));
+class __$ProfileViewCopyWithImpl<$Res> extends _$NavigationActorStateCopyWithImpl<$Res> implements _$ProfileViewCopyWith<$Res> {
+  __$ProfileViewCopyWithImpl(_ProfileView _value, $Res Function(_ProfileView) _then) : super(_value, (v) => _then(v as _ProfileView));
 
   @override
   _ProfileView get _value => super._value as _ProfileView;
@@ -1520,20 +1428,14 @@ class _$_ProfileView implements _ProfileView {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-      (other is _ProfileView &&
-        (identical(other.userOption, userOption) ||
-          const DeepCollectionEquality()
-            .equals(other.userOption, userOption)));
+    return identical(this, other) || (other is _ProfileView && (identical(other.userOption, userOption) || const DeepCollectionEquality().equals(other.userOption, userOption)));
   }
 
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(userOption);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(userOption);
 
   @override
-  _$ProfileViewCopyWith<_ProfileView> get copyWith =>
-    __$ProfileViewCopyWithImpl<_ProfileView>(this, _$identity);
+  _$ProfileViewCopyWith<_ProfileView> get copyWith => __$ProfileViewCopyWithImpl<_ProfileView>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1624,14 +1526,11 @@ abstract class _ProfileView implements NavigationActorState {
 }
 
 abstract class _$ErrorViewCopyWith<$Res> {
-  factory _$ErrorViewCopyWith(_ErrorView value, $Res Function(_ErrorView) then) =
-  __$ErrorViewCopyWithImpl<$Res>;
+  factory _$ErrorViewCopyWith(_ErrorView value, $Res Function(_ErrorView) then) = __$ErrorViewCopyWithImpl<$Res>;
 }
 
-class __$ErrorViewCopyWithImpl<$Res> extends _$NavigationActorStateCopyWithImpl<$Res>
-  implements _$ErrorViewCopyWith<$Res> {
-  __$ErrorViewCopyWithImpl(_ErrorView _value, $Res Function(_ErrorView) _then)
-    : super(_value, (v) => _then(v as _ErrorView));
+class __$ErrorViewCopyWithImpl<$Res> extends _$NavigationActorStateCopyWithImpl<$Res> implements _$ErrorViewCopyWith<$Res> {
+  __$ErrorViewCopyWithImpl(_ErrorView _value, $Res Function(_ErrorView) _then) : super(_value, (v) => _then(v as _ErrorView));
 
   @override
   _ErrorView get _value => super._value as _ErrorView;
@@ -1739,14 +1638,11 @@ abstract class _ErrorView implements NavigationActorState {
 }
 
 abstract class _$NotificationsViewCopyWith<$Res> {
-  factory _$NotificationsViewCopyWith(_NotificationsView value, $Res Function(_NotificationsView) then) =
-  __$NotificationsViewCopyWithImpl<$Res>;
+  factory _$NotificationsViewCopyWith(_NotificationsView value, $Res Function(_NotificationsView) then) = __$NotificationsViewCopyWithImpl<$Res>;
 }
 
-class __$NotificationsViewCopyWithImpl<$Res> extends _$NavigationActorStateCopyWithImpl<$Res>
-  implements _$NotificationsViewCopyWith<$Res> {
-  __$NotificationsViewCopyWithImpl(_NotificationsView _value, $Res Function(_NotificationsView) _then)
-    : super(_value, (v) => _then(v as _NotificationsView));
+class __$NotificationsViewCopyWithImpl<$Res> extends _$NavigationActorStateCopyWithImpl<$Res> implements _$NotificationsViewCopyWith<$Res> {
+  __$NotificationsViewCopyWithImpl(_NotificationsView _value, $Res Function(_NotificationsView) _then) : super(_value, (v) => _then(v as _NotificationsView));
 
   @override
   _NotificationsView get _value => super._value as _NotificationsView;

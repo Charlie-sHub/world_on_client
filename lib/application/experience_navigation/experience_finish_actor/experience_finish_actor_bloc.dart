@@ -10,9 +10,7 @@ import 'package:worldon/domain/experience_navigation/use_case/reward_user.dart' 
 import 'package:worldon/injection.dart';
 
 part 'experience_finish_actor_bloc.freezed.dart';
-
 part 'experience_finish_actor_event.dart';
-
 part 'experience_finish_actor_state.dart';
 
 @injectable

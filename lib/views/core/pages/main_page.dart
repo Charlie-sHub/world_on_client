@@ -104,12 +104,12 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
           backgroundColor: Colors.orange,
         ),
         BottomNavigationBarItem(
-          icon: FaIcon(FontAwesomeIcons.compass),
+          icon: FaIcon(FontAwesomeIcons.solidCompass),
           title: const Text("Explore"),
           backgroundColor: Colors.red,
         ),
         BottomNavigationBarItem(
-          icon: FaIcon(FontAwesomeIcons.userCircle),
+          icon: FaIcon(FontAwesomeIcons.userAlt),
           title: const Text("Profile"),
           backgroundColor: Colors.purple,
         ),

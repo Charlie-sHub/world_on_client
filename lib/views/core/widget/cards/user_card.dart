@@ -1,18 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:worldon/application/profile/block_actor/block_actor_bloc.dart';
-import 'package:worldon/application/profile/follow_actor/follow_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
-import 'package:worldon/views/core/misc/common_functions/user_card_block_listener.dart';
-import 'package:worldon/views/core/misc/common_functions/user_card_follow_listener.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widget/misc/block_unblock_button_builder.dart';
 import 'package:worldon/views/core/widget/misc/follow_unfollow_button_builder.dart';
 import 'package:worldon/views/core/widget/misc/user_image.dart';
-
-import '../../../../injection.dart';
 
 class UserCard extends StatelessWidget {
   final User user;
@@ -21,48 +14,22 @@ class UserCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => getIt<FollowActorBloc>()
-            ..add(
-              FollowActorEvent.initialized(user),
-            ),
-        ),
-        BlocProvider(
-          create: (context) => getIt<BlockActorBloc>()
-            ..add(
-              BlockActorEvent.initialized(user),
-            ),
-        ),
-      ],
-      child: MultiBlocListener(
-        listeners: const [
-          BlocListener<FollowActorBloc, FollowActorState>(
-            listener: userFollowListener,
-          ),
-          BlocListener<BlockActorBloc, BlockActorState>(
-            listener: userBlockListener,
-          ),
-        ],
-        child: Card(
-          shape: const RoundedRectangleBorder(),
-          child: Column(
+    return Card(
+      shape: const RoundedRectangleBorder(),
+      child: Column(
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  UserImage(user: user),
-                  NameUsernameDisplay(user: user),
-                  FollowUnfollowButtonBuilder(user: user),
-                  BlockUnblockButtonBuilder(user: user),
-                ],
-              ),
-              UserBio(user: user),
-              UserExperienceInfo(user: user),
+              UserImage(user: user),
+              NameUsernameDisplay(user: user),
+              FollowUnfollowButtonBuilder(user: user),
+              BlockUnblockButtonBuilder(user: user),
             ],
           ),
-        ),
+          UserBio(user: user),
+          UserExperienceInfo(user: user),
+        ],
       ),
     );
   }

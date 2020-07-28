@@ -4,7 +4,6 @@ import 'package:unicorndial/unicorndial.dart';
 import 'package:worldon/application/search/search_by_name_form/search_by_name_form_bloc.dart';
 import 'package:worldon/application/search/search_users_by_name_watcher/search_users_by_name_watcher_bloc.dart';
 import 'package:worldon/domain/core/validation/objects/search_term.dart';
-import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widget/cards/user_card.dart';
 import 'package:worldon/views/core/widget/cards/user_error_card.dart';
 import 'package:worldon/views/core/widget/critical_error_display.dart';
@@ -65,7 +64,6 @@ class SearchUsersUnicornDialer extends StatelessWidget {
   Widget build(BuildContext context) {
     return UnicornDialer(
       hasBackground: false,
-      parentButtonBackground: WorldOnColors.primary,
       orientation: UnicornOrientation.VERTICAL,
       parentButton: Icon(Icons.format_list_bulleted),
       childButtons: [

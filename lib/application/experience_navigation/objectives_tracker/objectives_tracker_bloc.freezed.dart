@@ -68,15 +68,12 @@ class _$ObjectivesTrackerEventCopyWithImpl<$Res> implements $ObjectivesTrackerEv
 }
 
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
-  __$InitializedCopyWithImpl<$Res>;
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
   $Res call({ObjectiveSet objectiveSet});
 }
 
-class __$InitializedCopyWithImpl<$Res> extends _$ObjectivesTrackerEventCopyWithImpl<$Res>
-  implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
-    : super(_value, (v) => _then(v as _Initialized));
+class __$InitializedCopyWithImpl<$Res> extends _$ObjectivesTrackerEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
 
   @override
   _Initialized get _value => super._value as _Initialized;
@@ -86,9 +83,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$ObjectivesTrackerEventCopyWithI
     Object objectiveSet = freezed,
   }) {
     return _then(_Initialized(
-      objectiveSet == freezed
-        ? _value.objectiveSet
-        : objectiveSet as ObjectiveSet,
+      objectiveSet == freezed ? _value.objectiveSet : objectiveSet as ObjectiveSet,
     ));
   }
 }
@@ -106,20 +101,14 @@ class _$_Initialized implements _Initialized {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-      (other is _Initialized &&
-        (identical(other.objectiveSet, objectiveSet) ||
-          const DeepCollectionEquality()
-            .equals(other.objectiveSet, objectiveSet)));
+    return identical(this, other) || (other is _Initialized && (identical(other.objectiveSet, objectiveSet) || const DeepCollectionEquality().equals(other.objectiveSet, objectiveSet)));
   }
 
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectiveSet);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectiveSet);
 
   @override
-  _$InitializedCopyWith<_Initialized> get copyWith =>
-    __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+  _$InitializedCopyWith<_Initialized> get copyWith => __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -180,19 +169,14 @@ abstract class _Initialized implements ObjectivesTrackerEvent {
 }
 
 abstract class _$ObjectiveAccomplishedCopyWith<$Res> {
-  factory _$ObjectiveAccomplishedCopyWith(_ObjectiveAccomplished value,
-    $Res Function(_ObjectiveAccomplished) then) =
-  __$ObjectiveAccomplishedCopyWithImpl<$Res>;
+  factory _$ObjectiveAccomplishedCopyWith(_ObjectiveAccomplished value, $Res Function(_ObjectiveAccomplished) then) = __$ObjectiveAccomplishedCopyWithImpl<$Res>;
   $Res call({Objective objective});
 
   $ObjectiveCopyWith<$Res> get objective;
 }
 
-class __$ObjectiveAccomplishedCopyWithImpl<$Res> extends _$ObjectivesTrackerEventCopyWithImpl<$Res>
-  implements _$ObjectiveAccomplishedCopyWith<$Res> {
-  __$ObjectiveAccomplishedCopyWithImpl(_ObjectiveAccomplished _value,
-    $Res Function(_ObjectiveAccomplished) _then)
-    : super(_value, (v) => _then(v as _ObjectiveAccomplished));
+class __$ObjectiveAccomplishedCopyWithImpl<$Res> extends _$ObjectivesTrackerEventCopyWithImpl<$Res> implements _$ObjectiveAccomplishedCopyWith<$Res> {
+  __$ObjectiveAccomplishedCopyWithImpl(_ObjectiveAccomplished _value, $Res Function(_ObjectiveAccomplished) _then) : super(_value, (v) => _then(v as _ObjectiveAccomplished));
 
   @override
   _ObjectiveAccomplished get _value => super._value as _ObjectiveAccomplished;
@@ -230,21 +214,14 @@ class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-      (other is _ObjectiveAccomplished &&
-        (identical(other.objective, objective) ||
-          const DeepCollectionEquality()
-            .equals(other.objective, objective)));
+    return identical(this, other) || (other is _ObjectiveAccomplished && (identical(other.objective, objective) || const DeepCollectionEquality().equals(other.objective, objective)));
   }
 
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective);
 
   @override
-  _$ObjectiveAccomplishedCopyWith<_ObjectiveAccomplished> get copyWith =>
-    __$ObjectiveAccomplishedCopyWithImpl<_ObjectiveAccomplished>(
-      this, _$identity);
+  _$ObjectiveAccomplishedCopyWith<_ObjectiveAccomplished> get copyWith => __$ObjectiveAccomplishedCopyWithImpl<_ObjectiveAccomplished>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -298,8 +275,7 @@ class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
 }
 
 abstract class _ObjectiveAccomplished implements ObjectivesTrackerEvent {
-  const factory _ObjectiveAccomplished(Objective objective) =
-  _$_ObjectiveAccomplished;
+  const factory _ObjectiveAccomplished(Objective objective) = _$_ObjectiveAccomplished;
 
   Objective get objective;
   _$ObjectiveAccomplishedCopyWith<_ObjectiveAccomplished> get copyWith;
@@ -309,8 +285,7 @@ class _$ObjectivesTrackerStateTearOff {
   const _$ObjectivesTrackerStateTearOff();
 
 // ignore: unused_element
-  _ObjectivesTrackerState call({@required Map<Objective, bool> objectiveTracker,
-    @required bool isFinished}) {
+  _ObjectivesTrackerState call({@required Map<Objective, bool> objectiveTracker, @required bool isFinished}) {
     return _ObjectivesTrackerState(
       objectiveTracker: objectiveTracker,
       isFinished: isFinished,
@@ -329,14 +304,11 @@ mixin _$ObjectivesTrackerState {
 }
 
 abstract class $ObjectivesTrackerStateCopyWith<$Res> {
-  factory $ObjectivesTrackerStateCopyWith(ObjectivesTrackerState value,
-    $Res Function(ObjectivesTrackerState) then) =
-  _$ObjectivesTrackerStateCopyWithImpl<$Res>;
+  factory $ObjectivesTrackerStateCopyWith(ObjectivesTrackerState value, $Res Function(ObjectivesTrackerState) then) = _$ObjectivesTrackerStateCopyWithImpl<$Res>;
   $Res call({Map<Objective, bool> objectiveTracker, bool isFinished});
 }
 
-class _$ObjectivesTrackerStateCopyWithImpl<$Res>
-  implements $ObjectivesTrackerStateCopyWith<$Res> {
+class _$ObjectivesTrackerStateCopyWithImpl<$Res> implements $ObjectivesTrackerStateCopyWith<$Res> {
   _$ObjectivesTrackerStateCopyWithImpl(this._value, this._then);
 
   final ObjectivesTrackerState _value;
@@ -349,29 +321,20 @@ class _$ObjectivesTrackerStateCopyWithImpl<$Res>
     Object isFinished = freezed,
   }) {
     return _then(_value.copyWith(
-      objectiveTracker: objectiveTracker == freezed
-        ? _value.objectiveTracker
-        : objectiveTracker as Map<Objective, bool>,
-      isFinished:
-      isFinished == freezed ? _value.isFinished : isFinished as bool,
+      objectiveTracker: objectiveTracker == freezed ? _value.objectiveTracker : objectiveTracker as Map<Objective, bool>,
+      isFinished: isFinished == freezed ? _value.isFinished : isFinished as bool,
     ));
   }
 }
 
-abstract class _$ObjectivesTrackerStateCopyWith<$Res>
-  implements $ObjectivesTrackerStateCopyWith<$Res> {
-  factory _$ObjectivesTrackerStateCopyWith(_ObjectivesTrackerState value,
-    $Res Function(_ObjectivesTrackerState) then) =
-  __$ObjectivesTrackerStateCopyWithImpl<$Res>;
+abstract class _$ObjectivesTrackerStateCopyWith<$Res> implements $ObjectivesTrackerStateCopyWith<$Res> {
+  factory _$ObjectivesTrackerStateCopyWith(_ObjectivesTrackerState value, $Res Function(_ObjectivesTrackerState) then) = __$ObjectivesTrackerStateCopyWithImpl<$Res>;
   @override
   $Res call({Map<Objective, bool> objectiveTracker, bool isFinished});
 }
 
-class __$ObjectivesTrackerStateCopyWithImpl<$Res> extends _$ObjectivesTrackerStateCopyWithImpl<$Res>
-  implements _$ObjectivesTrackerStateCopyWith<$Res> {
-  __$ObjectivesTrackerStateCopyWithImpl(_ObjectivesTrackerState _value,
-    $Res Function(_ObjectivesTrackerState) _then)
-    : super(_value, (v) => _then(v as _ObjectivesTrackerState));
+class __$ObjectivesTrackerStateCopyWithImpl<$Res> extends _$ObjectivesTrackerStateCopyWithImpl<$Res> implements _$ObjectivesTrackerStateCopyWith<$Res> {
+  __$ObjectivesTrackerStateCopyWithImpl(_ObjectivesTrackerState _value, $Res Function(_ObjectivesTrackerState) _then) : super(_value, (v) => _then(v as _ObjectivesTrackerState));
 
   @override
   _ObjectivesTrackerState get _value => super._value as _ObjectivesTrackerState;
@@ -382,11 +345,8 @@ class __$ObjectivesTrackerStateCopyWithImpl<$Res> extends _$ObjectivesTrackerSta
     Object isFinished = freezed,
   }) {
     return _then(_ObjectivesTrackerState(
-      objectiveTracker: objectiveTracker == freezed
-        ? _value.objectiveTracker
-        : objectiveTracker as Map<Objective, bool>,
-      isFinished:
-      isFinished == freezed ? _value.isFinished : isFinished as bool,
+      objectiveTracker: objectiveTracker == freezed ? _value.objectiveTracker : objectiveTracker as Map<Objective, bool>,
+      isFinished: isFinished == freezed ? _value.isFinished : isFinished as bool,
     ));
   }
 }
@@ -410,29 +370,19 @@ class _$_ObjectivesTrackerState implements _ObjectivesTrackerState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ObjectivesTrackerState &&
-          (identical(other.objectiveTracker, objectiveTracker) ||
-            const DeepCollectionEquality()
-              .equals(other.objectiveTracker, objectiveTracker)) &&
-          (identical(other.isFinished, isFinished) ||
-            const DeepCollectionEquality()
-              .equals(other.isFinished, isFinished)));
+            (identical(other.objectiveTracker, objectiveTracker) || const DeepCollectionEquality().equals(other.objectiveTracker, objectiveTracker)) &&
+            (identical(other.isFinished, isFinished) || const DeepCollectionEquality().equals(other.isFinished, isFinished)));
   }
 
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(objectiveTracker) ^
-    const DeepCollectionEquality().hash(isFinished);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectiveTracker) ^ const DeepCollectionEquality().hash(isFinished);
 
   @override
-  _$ObjectivesTrackerStateCopyWith<_ObjectivesTrackerState> get copyWith =>
-    __$ObjectivesTrackerStateCopyWithImpl<_ObjectivesTrackerState>(
-      this, _$identity);
+  _$ObjectivesTrackerStateCopyWith<_ObjectivesTrackerState> get copyWith => __$ObjectivesTrackerStateCopyWithImpl<_ObjectivesTrackerState>(this, _$identity);
 }
 
 abstract class _ObjectivesTrackerState implements ObjectivesTrackerState {
-  const factory _ObjectivesTrackerState({@required Map<Objective, bool> objectiveTracker,
-    @required bool isFinished}) = _$_ObjectivesTrackerState;
+  const factory _ObjectivesTrackerState({@required Map<Objective, bool> objectiveTracker, @required bool isFinished}) = _$_ObjectivesTrackerState;
 
   @override
   Map<Objective, bool> get objectiveTracker;
