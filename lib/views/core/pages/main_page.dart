@@ -155,12 +155,24 @@ class WorldOnAppBar extends StatelessWidget implements PreferredSizeWidget {
         onPressed: () => context.bloc<AuthenticationBloc>().add(const AuthenticationEvent.loggedOut()),
       ),
       centerTitle: true,
-      title: const Text(
-        "WORLD ON",
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 30,
-        ),
+      title: Row(
+        children: const <Widget>[
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.all(10),
+              child: Image(
+                image: AssetImage('assets/world_on_logo.jpg'),
+              ),
+            ),
+          ),
+          Text(
+            "WORLD ON",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 27,
+            ),
+          ),
+        ],
       ),
       actions: const <Widget>[
         Padding(

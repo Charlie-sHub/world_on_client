@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:kt_dart/kt.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_coordinates.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_objective.dart';
@@ -31,6 +33,7 @@ User getValidUser() {
     birthday: PastDate(DateTime.now().subtract(const Duration(days: 10000))),
     description: EntityDescription("Quisque vitae enim cursus mauris elementum tincidunt sed sodales felis."),
     imageURL: "testUser.jpg",
+    imageFile: File(""),
     level: UserLevel(10),
     experiencePoints: ExperiencePoints(100),
     privacy: false,
@@ -65,7 +68,7 @@ User getValidUser() {
     experiencesDone: {
       Experience.empty().copyWith(
         id: 4,
-        name: Name("Leverage agile"),
+        title: Name("Leverage agile"),
         description: EntityDescription("""
 Capitalize on low hanging fruit to identify a ballpark value added activity to beta test.
  Override the digital divide with additional clickthroughs from DevOps."""),
@@ -80,7 +83,7 @@ Capitalize on low hanging fruit to identify a ballpark value added activity to b
     experiencesLiked: {
       Experience.empty().copyWith(
         id: 3,
-        name: Name("Joyce neocapitalist"),
+        title: Name("Joyce neocapitalist"),
         description: EntityDescription("""
 If the patriarchialist paradigm of narrative holds,
 we have to choose between neocapitalist libertarianism and neodialectic capitalist theory.
@@ -96,7 +99,7 @@ But the main theme of the works of Joyce is the collapse, and some would say the
     experiencesToDo: {
       Experience.empty().copyWith(
         id: 2,
-        name: Name("Corduroy"),
+        title: Name("Corduroy"),
         description: EntityDescription("Bro ipsum dolor sit amet bail flow method 360 euro 360 betty Whistler brain bucket gapers line saddle shreddin laps hammerhead."),
         creator: _getUserCarlos(),
         location: Location.empty().copyWith(id: 1),

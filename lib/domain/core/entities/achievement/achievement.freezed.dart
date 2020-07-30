@@ -18,6 +18,7 @@ class _$AchievementTearOff {
       @required Name name,
       @required EntityDescription description,
       @required String imageURL,
+      @required File imageFile,
       @required String type,
       @required int requisite,
       @required ExperiencePoints experiencePoints,
@@ -30,6 +31,7 @@ class _$AchievementTearOff {
       name: name,
       description: description,
       imageURL: imageURL,
+      imageFile: imageFile,
       type: type,
       requisite: requisite,
       experiencePoints: experiencePoints,
@@ -49,6 +51,8 @@ mixin _$Achievement {
   Name get name;
   EntityDescription get description;
   String get imageURL;
+
+  File get imageFile;
   String get type;
   int get requisite;
   ExperiencePoints get experiencePoints;
@@ -69,6 +73,7 @@ abstract class $AchievementCopyWith<$Res> {
       Name name,
       EntityDescription description,
       String imageURL,
+        File imageFile,
       String type,
       int requisite,
       ExperiencePoints experiencePoints,
@@ -93,6 +98,7 @@ class _$AchievementCopyWithImpl<$Res> implements $AchievementCopyWith<$Res> {
     Object name = freezed,
     Object description = freezed,
     Object imageURL = freezed,
+    Object imageFile = freezed,
     Object type = freezed,
     Object requisite = freezed,
     Object experiencePoints = freezed,
@@ -108,6 +114,7 @@ class _$AchievementCopyWithImpl<$Res> implements $AchievementCopyWith<$Res> {
           ? _value.description
           : description as EntityDescription,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
+      imageFile: imageFile == freezed ? _value.imageFile : imageFile as File,
       type: type == freezed ? _value.type : type as String,
       requisite: requisite == freezed ? _value.requisite : requisite as int,
       experiencePoints: experiencePoints == freezed
@@ -146,6 +153,7 @@ abstract class _$AchievementCopyWith<$Res>
       Name name,
       EntityDescription description,
       String imageURL,
+        File imageFile,
       String type,
       int requisite,
       ExperiencePoints experiencePoints,
@@ -173,6 +181,7 @@ class __$AchievementCopyWithImpl<$Res> extends _$AchievementCopyWithImpl<$Res>
     Object name = freezed,
     Object description = freezed,
     Object imageURL = freezed,
+    Object imageFile = freezed,
     Object type = freezed,
     Object requisite = freezed,
     Object experiencePoints = freezed,
@@ -188,6 +197,7 @@ class __$AchievementCopyWithImpl<$Res> extends _$AchievementCopyWithImpl<$Res>
           ? _value.description
           : description as EntityDescription,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
+      imageFile: imageFile == freezed ? _value.imageFile : imageFile as File,
       type: type == freezed ? _value.type : type as String,
       requisite: requisite == freezed ? _value.requisite : requisite as int,
       experiencePoints: experiencePoints == freezed
@@ -211,6 +221,7 @@ class _$_Achievement extends _Achievement {
       @required this.name,
       @required this.description,
       @required this.imageURL,
+        @required this.imageFile,
       @required this.type,
       @required this.requisite,
       @required this.experiencePoints,
@@ -221,6 +232,7 @@ class _$_Achievement extends _Achievement {
       : assert(name != null),
         assert(description != null),
         assert(imageURL != null),
+      assert(imageFile != null),
         assert(type != null),
         assert(requisite != null),
         assert(experiencePoints != null),
@@ -239,6 +251,8 @@ class _$_Achievement extends _Achievement {
   @override
   final String imageURL;
   @override
+  final File imageFile;
+  @override
   final String type;
   @override
   final int requisite;
@@ -255,7 +269,7 @@ class _$_Achievement extends _Achievement {
 
   @override
   String toString() {
-    return 'Achievement(id: $id, name: $name, description: $description, imageURL: $imageURL, type: $type, requisite: $requisite, experiencePoints: $experiencePoints, creator: $creator, creationDate: $creationDate, modificationDate: $modificationDate, tags: $tags)';
+    return 'Achievement(id: $id, name: $name, description: $description, imageURL: $imageURL, imageFile: $imageFile, type: $type, requisite: $requisite, experiencePoints: $experiencePoints, creator: $creator, creationDate: $creationDate, modificationDate: $modificationDate, tags: $tags)';
   }
 
   @override
@@ -272,6 +286,9 @@ class _$_Achievement extends _Achievement {
             (identical(other.imageURL, imageURL) ||
                 const DeepCollectionEquality()
                     .equals(other.imageURL, imageURL)) &&
+          (identical(other.imageFile, imageFile) ||
+            const DeepCollectionEquality()
+              .equals(other.imageFile, imageFile)) &&
             (identical(other.type, type) ||
                 const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.requisite, requisite) ||
@@ -300,6 +317,7 @@ class _$_Achievement extends _Achievement {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(imageURL) ^
+      const DeepCollectionEquality().hash(imageFile) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(requisite) ^
       const DeepCollectionEquality().hash(experiencePoints) ^
@@ -320,6 +338,7 @@ abstract class _Achievement extends Achievement {
       @required Name name,
       @required EntityDescription description,
       @required String imageURL,
+        @required File imageFile,
       @required String type,
       @required int requisite,
       @required ExperiencePoints experiencePoints,
@@ -336,6 +355,9 @@ abstract class _Achievement extends Achievement {
   EntityDescription get description;
   @override
   String get imageURL;
+
+  @override
+  File get imageFile;
   @override
   String get type;
   @override

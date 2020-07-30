@@ -11,6 +11,8 @@ import 'package:worldon/views/core/widget/misc/experience_likes_counter.dart';
 import 'package:worldon/views/core/widget/misc/follow_unfollow_button_builder.dart';
 import 'package:worldon/views/core/widget/misc/user_image.dart';
 
+import 'comment_card.dart';
+import 'comment_error_card.dart';
 import 'rewards_list_view.dart';
 
 class ExperienceInformationTabView extends StatelessWidget {
@@ -87,7 +89,7 @@ class ExperienceInformationTabView extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.all(5),
             child: Text(
-              "Rewards:",
+              "Rewards",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 20,
@@ -96,20 +98,9 @@ class ExperienceInformationTabView extends StatelessWidget {
               ),
             ),
           ),
-          RewardsListView(experience: experience),
           Padding(
-            padding: const EdgeInsets.all(5),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                ExperienceLikesCounter(experience: experience),
-                ExperienceDoneCounter(experience: experience),
-              ],
-            ),
-          ),
-          const Divider(
-            height: 1,
-            color: WorldOnColors.background,
+            padding: const EdgeInsets.symmetric(horizontal: 5),
+            child: RewardsListView(experience: experience),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -120,8 +111,64 @@ class ExperienceInformationTabView extends StatelessWidget {
               BlockUnblockButtonBuilder(user: experience.creator),
             ],
           ),
+          const Divider(
+            height: 1,
+            color: WorldOnColors.background,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                ExperienceLikesCounter(experience: experience),
+                ExperienceDoneCounter(experience: experience),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(5),
+            child: Text(
+              "${experience.comments.length} comments",
+              style: const TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+                color: WorldOnColors.background,
+              ),
+            ),
+          ),
+          ExperienceCommentsListView(experience: experience),
         ],
-        //TODO: Implement comments view
+      ),
+    );
+  }
+}
+
+class ExperienceCommentsListView extends StatelessWidget {
+  const ExperienceCommentsListView({
+    Key key,
+    @required this.experience,
+  }) : super(key: key);
+
+  final Experience experience;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: MediaQuery.of(context).size.height * 0.4,
+      color: WorldOnColors.background,
+      child: ListView.builder(
+        padding: const EdgeInsets.all(5),
+        itemCount: experience.comments.length,
+        shrinkWrap: true,
+        physics: const ClampingScrollPhysics(),
+        itemBuilder: (context, index) {
+          final _comment = experience.comments.elementAt(index);
+          if (_comment.isValid) {
+            return CommentCard(comment: _comment);
+          } else {
+            return CommentErrorCard(comment: _comment);
+          }
+        },
       ),
     );
   }
@@ -166,7 +213,7 @@ class ExperienceHeader extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(5),
         child: AutoSizeText(
-          experience.name.getOrCrash(),
+          experience.title.getOrCrash(),
           textAlign: TextAlign.center,
           style: const TextStyle(
             color: WorldOnColors.white,

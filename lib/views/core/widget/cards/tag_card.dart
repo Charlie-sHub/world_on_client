@@ -38,7 +38,7 @@ class TagCard extends StatelessWidget {
                   ),
                 ),
                 AnimatedSwitcher(
-                  duration: const Duration(milliseconds: 100),
+                  duration: const Duration(milliseconds: 200),
                   transitionBuilder: (child, animation) => ScaleTransition(
                     scale: animation,
                     child: child,

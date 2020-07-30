@@ -72,7 +72,6 @@ class _$RateExperienceDifficultyActorEventCopyWithImpl<$Res>
 abstract class _$DifficultyChangedCopyWith<$Res> {
   factory _$DifficultyChangedCopyWith(_DifficultyChanged value, $Res Function(_DifficultyChanged) then) =
   __$DifficultyChangedCopyWithImpl<$Res>;
-  
   $Res call({int difficultyRating});
 }
 
@@ -80,10 +79,10 @@ class __$DifficultyChangedCopyWithImpl<$Res> extends _$RateExperienceDifficultyA
   implements _$DifficultyChangedCopyWith<$Res> {
   __$DifficultyChangedCopyWithImpl(_DifficultyChanged _value, $Res Function(_DifficultyChanged) _then)
     : super(_value, (v) => _then(v as _DifficultyChanged));
-  
+
   @override
   _DifficultyChanged get _value => super._value as _DifficultyChanged;
-  
+
   @override
   $Res call({
     Object difficultyRating = freezed,
@@ -99,15 +98,15 @@ class __$DifficultyChangedCopyWithImpl<$Res> extends _$RateExperienceDifficultyA
 class _$_DifficultyChanged implements _DifficultyChanged {
   const _$_DifficultyChanged(this.difficultyRating)
     : assert(difficultyRating != null);
-  
+
   @override
   final int difficultyRating;
-  
+
   @override
   String toString() {
     return 'RateExperienceDifficultyActorEvent.difficultyChanged(difficultyRating: $difficultyRating)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -116,16 +115,16 @@ class _$_DifficultyChanged implements _DifficultyChanged {
           const DeepCollectionEquality()
             .equals(other.difficultyRating, difficultyRating)));
   }
-  
+
   @override
   int get hashCode =>
     runtimeType.hashCode ^
     const DeepCollectionEquality().hash(difficultyRating);
-  
+
   @override
   _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith =>
     __$DifficultyChangedCopyWithImpl<_DifficultyChanged>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -136,7 +135,7 @@ class _$_DifficultyChanged implements _DifficultyChanged {
     assert(difficultyRated != null);
     return difficultyChanged(difficultyRating);
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -150,7 +149,7 @@ class _$_DifficultyChanged implements _DifficultyChanged {
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
@@ -161,7 +160,7 @@ class _$_DifficultyChanged implements _DifficultyChanged {
     assert(difficultyRated != null);
     return difficultyChanged(this);
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -180,18 +179,16 @@ class _$_DifficultyChanged implements _DifficultyChanged {
 abstract class _DifficultyChanged
   implements RateExperienceDifficultyActorEvent {
   const factory _DifficultyChanged(int difficultyRating) = _$_DifficultyChanged;
-  
+
   int get difficultyRating;
-  
   _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith;
 }
 
 abstract class _$DifficultyRatedCopyWith<$Res> {
   factory _$DifficultyRatedCopyWith(_DifficultyRated value, $Res Function(_DifficultyRated) then) =
   __$DifficultyRatedCopyWithImpl<$Res>;
-  
   $Res call({Experience experience});
-  
+
   $ExperienceCopyWith<$Res> get experience;
 }
 
@@ -211,7 +208,7 @@ class __$DifficultyRatedCopyWithImpl<$Res> extends _$RateExperienceDifficultyAct
       experience == freezed ? _value.experience : experience as Experience,
     ));
   }
-  
+
   @override
   $ExperienceCopyWith<$Res> get experience {
     if (_value.experience == null) {
@@ -330,11 +327,9 @@ _$RateExperienceDifficultyActorStateTearOff();
 
 mixin _$RateExperienceDifficultyActorState {
   int get difficulty;
-  
   bool get isSubmitting;
-  
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
-  
+
   $RateExperienceDifficultyActorStateCopyWith<
     RateExperienceDifficultyActorState> get copyWith;
 }
@@ -379,7 +374,6 @@ abstract class _$RateExperienceDifficultyActorStateCopyWith<$Res>
   factory _$RateExperienceDifficultyActorStateCopyWith(_RateExperienceDifficultyActorState value,
     $Res Function(_RateExperienceDifficultyActorState) then) =
   __$RateExperienceDifficultyActorStateCopyWithImpl<$Res>;
-  
   @override
   $Res call({int difficulty,
     bool isSubmitting,

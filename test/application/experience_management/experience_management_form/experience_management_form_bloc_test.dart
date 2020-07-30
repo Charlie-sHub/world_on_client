@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -5,6 +7,7 @@ import 'package:injectable/injectable.dart' as injectable;
 import 'package:kt_dart/collection.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
+import 'package:multi_image_picker/multi_image_picker.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
 import 'package:worldon/application/experience_management/primitives/primitive_objective.dart';
 import 'package:worldon/application/experience_management/primitives/primitive_reward.dart';
@@ -35,30 +38,40 @@ void main() {
   EditExperience editExperience;
   GetLoggedInUser getLoggedInUser;
   setUpAll(
-    () {
+      () {
       configureDependencies(injectable.Environment.test);
       createExperience = getIt<CreateExperience>();
       editExperience = getIt<EditExperience>();
       getLoggedInUser = getIt<GetLoggedInUser>();
     },
   );
-  const name = "Test";
+  const title = "Test";
   const description = "For testing";
   const latitude = 10.0;
   const longitude = 10.0;
   const difficulty = 9;
+  final imageAssets = [
+    Asset(
+      "1",
+      "assets/experience_placeholder_image.jpg",
+      100,
+      100,
+    ),
+  ];
   final primitiveObjectives = KtSet.of(
-    const PrimitiveObjective(
+    PrimitiveObjective(
       description: description,
       latitude: latitude,
       longitude: longitude,
+      imageFile: File("assets/objective_placeholder.jpg"),
     ),
   );
   final objectiveSet = primitiveObjectives.map((primitiveObjective) => primitiveObjective.toDomain()).toSet();
   final primitiveRewards = KtSet.of(
-    const PrimitiveReward(
-      name: name,
+    PrimitiveReward(
+      name: title,
       description: description,
+      imageFile: File("assets/reward_placeholder.jpg"),
     ),
   );
   final rewardSet = primitiveRewards.map((primitiveReward) => primitiveReward.toDomain()).toSet();
@@ -73,7 +86,7 @@ void main() {
   );
   group(
     TestDescription.testingInitialization,
-    () {
+      () {
       blocTest(
         TestDescription.shouldEmitInitialized,
         build: () => getIt<ExperienceManagementFormBloc>(),
@@ -95,18 +108,18 @@ void main() {
   );
   group(
     "${TestDescription.groupOnSuccess} with updating values",
-    () {
+      () {
       blocTest(
-        "${TestDescription.shouldEmitUpdated} with the name",
+        "${TestDescription.shouldEmitUpdated} with the title",
         build: () => getIt<ExperienceManagementFormBloc>(),
         act: (bloc) async {
           bloc.add(ExperienceManagementFormEvent.initialized(none()));
-          bloc.add(const ExperienceManagementFormEvent.nameChanged(name));
+          bloc.add(const ExperienceManagementFormEvent.titleChanged(title));
         },
         expect: [
           ExperienceManagementFormState.initial().copyWith(
             experience: Experience.empty().copyWith(
-              name: Name(name),
+              title: Name(title),
             ),
           ),
         ],
@@ -122,6 +135,21 @@ void main() {
           ExperienceManagementFormState.initial().copyWith(
             experience: Experience.empty().copyWith(
               description: EntityDescription(description),
+            ),
+          ),
+        ],
+      );
+      blocTest(
+        "${TestDescription.shouldEmitUpdated} with the description",
+        build: () => getIt<ExperienceManagementFormBloc>(),
+        act: (bloc) async {
+          bloc.add(ExperienceManagementFormEvent.initialized(none()));
+          bloc.add(ExperienceManagementFormEvent.imagesChanged(imageAssets));
+        },
+        expect: [
+          ExperienceManagementFormState.initial().copyWith(
+            experience: Experience.empty().copyWith(
+              imageAssets: imageAssets,
             ),
           ),
         ],
@@ -208,7 +236,7 @@ void main() {
   );
   group(
     "${TestDescription.groupOnSuccess} with submitting",
-    () {
+      () {
       blocTest(
         "${TestDescription.shouldEmitSuccess} creating a new Experience",
         build: () {
@@ -218,8 +246,9 @@ void main() {
         },
         act: (bloc) async {
           bloc.add(ExperienceManagementFormEvent.initialized(none()));
-          bloc.add(const ExperienceManagementFormEvent.nameChanged(name));
+          bloc.add(const ExperienceManagementFormEvent.titleChanged(title));
           bloc.add(const ExperienceManagementFormEvent.descriptionChanged(description));
+          bloc.add(ExperienceManagementFormEvent.imagesChanged(imageAssets));
           bloc.add(const ExperienceManagementFormEvent.coordinatesChanged(longitude: longitude, latitude: latitude));
           bloc.add(const ExperienceManagementFormEvent.difficultyChanged(difficulty));
           bloc.add(ExperienceManagementFormEvent.objectivesChanged(primitiveObjectives));
@@ -240,21 +269,30 @@ void main() {
           ExperienceManagementFormState.initial().copyWith(
             experience: Experience.empty().copyWith(
               creator: validUser,
-              name: Name(name),
+              title: Name(title),
             ),
           ),
           ExperienceManagementFormState.initial().copyWith(
             experience: Experience.empty().copyWith(
               creator: validUser,
-              name: Name(name),
+              title: Name(title),
               description: EntityDescription(description),
             ),
           ),
           ExperienceManagementFormState.initial().copyWith(
             experience: Experience.empty().copyWith(
               creator: validUser,
-              name: Name(name),
+              title: Name(title),
               description: EntityDescription(description),
+              imageAssets: imageAssets,
+            ),
+          ),
+          ExperienceManagementFormState.initial().copyWith(
+            experience: Experience.empty().copyWith(
+              creator: validUser,
+              title: Name(title),
+              description: EntityDescription(description),
+              imageAssets: imageAssets,
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -264,8 +302,9 @@ void main() {
           ExperienceManagementFormState.initial().copyWith(
             experience: Experience.empty().copyWith(
               creator: validUser,
-              name: Name(name),
+              title: Name(title),
               description: EntityDescription(description),
+              imageAssets: imageAssets,
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -276,8 +315,9 @@ void main() {
           ExperienceManagementFormState.initial().copyWith(
             experience: Experience.empty().copyWith(
               creator: validUser,
-              name: Name(name),
+              title: Name(title),
               description: EntityDescription(description),
+              imageAssets: imageAssets,
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -289,8 +329,9 @@ void main() {
           ExperienceManagementFormState.initial().copyWith(
             experience: Experience.empty().copyWith(
               creator: validUser,
-              name: Name(name),
+              title: Name(title),
               description: EntityDescription(description),
+              imageAssets: imageAssets,
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -303,8 +344,9 @@ void main() {
           ExperienceManagementFormState.initial().copyWith(
             experience: Experience.empty().copyWith(
               creator: validUser,
-              name: Name(name),
+              title: Name(title),
               description: EntityDescription(description),
+              imageAssets: imageAssets,
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -318,8 +360,9 @@ void main() {
           ExperienceManagementFormState.initial().copyWith(
             experience: Experience.empty().copyWith(
               creator: validUser,
-              name: Name(name),
+              title: Name(title),
               description: EntityDescription(description),
+              imageAssets: imageAssets,
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -334,8 +377,9 @@ void main() {
           ExperienceManagementFormState.initial().copyWith(
             experience: Experience.empty().copyWith(
               creator: validUser,
-              name: Name(name),
+              title: Name(title),
               description: EntityDescription(description),
+              imageAssets: imageAssets,
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -358,7 +402,7 @@ void main() {
         },
         act: (bloc) async {
           bloc.add(ExperienceManagementFormEvent.initialized(some(experienceToEdit)));
-          bloc.add(const ExperienceManagementFormEvent.nameChanged(name));
+          bloc.add(const ExperienceManagementFormEvent.titleChanged(title));
           bloc.add(const ExperienceManagementFormEvent.submitted());
         },
         verify: (_) async {
@@ -367,20 +411,20 @@ void main() {
         expect: [
           ExperienceManagementFormState.initial().copyWith(
             experience: experienceToEdit.copyWith(
-              name: Name(name),
+              title: Name(title),
             ),
             isEditing: true,
           ),
           ExperienceManagementFormState.initial().copyWith(
             experience: experienceToEdit.copyWith(
-              name: Name(name),
+              title: Name(title),
             ),
             isEditing: true,
             isSubmitting: true,
           ),
           ExperienceManagementFormState.initial().copyWith(
             experience: experienceToEdit.copyWith(
-              name: Name(name),
+              title: Name(title),
             ),
             isEditing: true,
             showErrorMessages: true,
@@ -392,7 +436,7 @@ void main() {
   );
   group(
     "${TestDescription.groupOnFailure} with submitting",
-    () {
+      () {
       blocTest(
         "${TestDescription.shouldEmitSuccess} creating a new Experience",
         build: () {
@@ -402,8 +446,9 @@ void main() {
         },
         act: (bloc) async {
           bloc.add(ExperienceManagementFormEvent.initialized(none()));
-          bloc.add(const ExperienceManagementFormEvent.nameChanged(name));
+          bloc.add(const ExperienceManagementFormEvent.titleChanged(title));
           bloc.add(const ExperienceManagementFormEvent.descriptionChanged(description));
+          bloc.add(ExperienceManagementFormEvent.imagesChanged(imageAssets));
           bloc.add(const ExperienceManagementFormEvent.coordinatesChanged(longitude: longitude, latitude: latitude));
           bloc.add(const ExperienceManagementFormEvent.difficultyChanged(difficulty));
           bloc.add(ExperienceManagementFormEvent.objectivesChanged(primitiveObjectives));
@@ -424,21 +469,30 @@ void main() {
           ExperienceManagementFormState.initial().copyWith(
             experience: Experience.empty().copyWith(
               creator: validUser,
-              name: Name(name),
+              title: Name(title),
             ),
           ),
           ExperienceManagementFormState.initial().copyWith(
             experience: Experience.empty().copyWith(
               creator: validUser,
-              name: Name(name),
+              title: Name(title),
               description: EntityDescription(description),
             ),
           ),
           ExperienceManagementFormState.initial().copyWith(
             experience: Experience.empty().copyWith(
               creator: validUser,
-              name: Name(name),
+              title: Name(title),
               description: EntityDescription(description),
+              imageAssets: imageAssets,
+            ),
+          ),
+          ExperienceManagementFormState.initial().copyWith(
+            experience: Experience.empty().copyWith(
+              creator: validUser,
+              title: Name(title),
+              description: EntityDescription(description),
+              imageAssets: imageAssets,
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -448,8 +502,9 @@ void main() {
           ExperienceManagementFormState.initial().copyWith(
             experience: Experience.empty().copyWith(
               creator: validUser,
-              name: Name(name),
+              title: Name(title),
               description: EntityDescription(description),
+              imageAssets: imageAssets,
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -460,8 +515,9 @@ void main() {
           ExperienceManagementFormState.initial().copyWith(
             experience: Experience.empty().copyWith(
               creator: validUser,
-              name: Name(name),
+              title: Name(title),
               description: EntityDescription(description),
+              imageAssets: imageAssets,
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -473,8 +529,9 @@ void main() {
           ExperienceManagementFormState.initial().copyWith(
             experience: Experience.empty().copyWith(
               creator: validUser,
-              name: Name(name),
+              title: Name(title),
               description: EntityDescription(description),
+              imageAssets: imageAssets,
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -487,8 +544,9 @@ void main() {
           ExperienceManagementFormState.initial().copyWith(
             experience: Experience.empty().copyWith(
               creator: validUser,
-              name: Name(name),
+              title: Name(title),
               description: EntityDescription(description),
+              imageAssets: imageAssets,
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -502,8 +560,9 @@ void main() {
           ExperienceManagementFormState.initial().copyWith(
             experience: Experience.empty().copyWith(
               creator: validUser,
-              name: Name(name),
+              title: Name(title),
               description: EntityDescription(description),
+              imageAssets: imageAssets,
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -518,8 +577,9 @@ void main() {
           ExperienceManagementFormState.initial().copyWith(
             experience: Experience.empty().copyWith(
               creator: validUser,
-              name: Name(name),
+              title: Name(title),
               description: EntityDescription(description),
+              imageAssets: imageAssets,
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -542,7 +602,7 @@ void main() {
         },
         act: (bloc) async {
           bloc.add(ExperienceManagementFormEvent.initialized(some(experienceToEdit)));
-          bloc.add(const ExperienceManagementFormEvent.nameChanged(name));
+          bloc.add(const ExperienceManagementFormEvent.titleChanged(title));
           bloc.add(const ExperienceManagementFormEvent.submitted());
         },
         verify: (_) async {
@@ -551,20 +611,20 @@ void main() {
         expect: [
           ExperienceManagementFormState.initial().copyWith(
             experience: experienceToEdit.copyWith(
-              name: Name(name),
+              title: Name(title),
             ),
             isEditing: true,
           ),
           ExperienceManagementFormState.initial().copyWith(
             experience: experienceToEdit.copyWith(
-              name: Name(name),
+              title: Name(title),
             ),
             isEditing: true,
             isSubmitting: true,
           ),
           ExperienceManagementFormState.initial().copyWith(
             experience: experienceToEdit.copyWith(
-              name: Name(name),
+              title: Name(title),
             ),
             isEditing: true,
             showErrorMessages: true,
@@ -580,9 +640,9 @@ void main() {
         },
         act: (bloc) async {
           bloc.add(ExperienceManagementFormEvent.initialized(some(experienceToEdit)));
-          bloc.add(const ExperienceManagementFormEvent.nameChanged(name));
+          bloc.add(const ExperienceManagementFormEvent.titleChanged(title));
           bloc.add(const ExperienceManagementFormEvent.submitted());
-          bloc.add(const ExperienceManagementFormEvent.nameChanged(name));
+          bloc.add(const ExperienceManagementFormEvent.titleChanged(title));
         },
         verify: (_) async {
           verify(editExperience.call(any));
@@ -590,20 +650,20 @@ void main() {
         expect: [
           ExperienceManagementFormState.initial().copyWith(
             experience: experienceToEdit.copyWith(
-              name: Name(name),
+              title: Name(title),
             ),
             isEditing: true,
           ),
           ExperienceManagementFormState.initial().copyWith(
             experience: experienceToEdit.copyWith(
-              name: Name(name),
+              title: Name(title),
             ),
             isEditing: true,
             isSubmitting: true,
           ),
           ExperienceManagementFormState.initial().copyWith(
             experience: experienceToEdit.copyWith(
-              name: Name(name),
+              title: Name(title),
             ),
             isEditing: true,
             showErrorMessages: true,
@@ -611,7 +671,7 @@ void main() {
           ),
           ExperienceManagementFormState.initial().copyWith(
             experience: experienceToEdit.copyWith(
-              name: Name(name),
+              title: Name(title),
             ),
             isEditing: true,
             showErrorMessages: true,

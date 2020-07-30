@@ -39,7 +39,7 @@ class ExperienceCard extends StatelessWidget {
                   children: <Widget>[
                     const SizedBox(height: 10),
                     AutoSizeText(
-                      experience.name.getOrCrash(),
+                      experience.title.getOrCrash(),
                       textAlign: TextAlign.center,
                       style: const TextStyle(
                         fontSize: 30,
@@ -141,6 +141,7 @@ class ReportButton extends StatelessWidget {
         color: WorldOnColors.background,
       ),
       onPressed: () => FlushbarHelper.createInformation(
+        duration: const Duration(seconds: 2),
         message: "This is just a placeholder",
       ).show(context),
     );
@@ -311,15 +312,15 @@ class DismissFromLogButton extends StatelessWidget {
 
 // TODO: Customize snackbars
 // And ensure they show above the navigation bar
-void experienceCardListener(BuildContext context, ExperienceCardActorState state) =>
-  state.maybeMap(
-    actionInProgress: (_) =>
-      FlushbarHelper.createLoading(
+void experienceCardListener(BuildContext context, ExperienceCardActorState state) => state.maybeMap(
+      actionInProgress: (_) => FlushbarHelper.createLoading(
+        duration: const Duration(seconds: 2),
         message: "Action in progress",
         linearProgressIndicator: const LinearProgressIndicator(),
       ).show(context),
     additionFailure: (state) =>
       FlushbarHelper.createError(
+        duration: const Duration(seconds: 2),
         message: state.failure.maybeMap(
           coreData: (failure) =>
             failure.coreDataFailure.maybeMap(
@@ -331,6 +332,7 @@ void experienceCardListener(BuildContext context, ExperienceCardActorState state
       ).show(context),
     dismissalFailure: (state) =>
       FlushbarHelper.createError(
+        duration: const Duration(seconds: 2),
         message: state.failure.maybeMap(
           coreData: (failure) =>
             failure.coreDataFailure.maybeMap(

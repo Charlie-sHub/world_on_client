@@ -40,7 +40,8 @@ abstract class $CoordinatesDtoCopyWith<$Res> {
   $Res call({double latitude, double longitude});
 }
 
-class _$CoordinatesDtoCopyWithImpl<$Res> implements $CoordinatesDtoCopyWith<$Res> {
+class _$CoordinatesDtoCopyWithImpl<$Res>
+  implements $CoordinatesDtoCopyWith<$Res> {
   _$CoordinatesDtoCopyWithImpl(this._value, this._then);
 
   final CoordinatesDto _value;

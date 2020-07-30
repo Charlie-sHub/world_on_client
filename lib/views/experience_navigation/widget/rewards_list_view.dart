@@ -15,7 +15,7 @@ class RewardsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 250,
+      height: MediaQuery.of(context).size.height * 0.3,
       color: WorldOnColors.background,
       child: ListView.builder(
         padding: const EdgeInsets.all(10),

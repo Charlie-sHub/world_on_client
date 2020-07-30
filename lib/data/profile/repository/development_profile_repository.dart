@@ -17,6 +17,7 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/user_level.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 
 @LazySingleton(as: ProfileRepositoryInterface, env: [Environment.dev])
@@ -92,11 +93,11 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
         Experience.empty(),
         getValidExperience().copyWith(
           id: 2,
-          name: Name("Phasellus"),
+          title: Name("Phasellus"),
         ),
         getValidExperience().copyWith(
           id: 3,
-          name: Name("Itaque"),
+          title: Name("Itaque"),
         ),
       ));
     } else {
@@ -111,16 +112,16 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
     if (_random.nextBool()) {
       _either = right(KtList.of(
         getValidExperience().copyWith(
-          name: Name("Biodiesel edison"),
+          title: Name("Biodiesel edison"),
         ),
         Experience.empty(),
         getValidExperience().copyWith(
           id: 2,
-          name: Name("Affogato letterpress"),
+          title: Name("Affogato letterpress"),
         ),
         getValidExperience().copyWith(
           id: 3,
-          name: Name("Copper mug"),
+          title: Name("Copper mug"),
         ),
       ));
     } else {
@@ -135,16 +136,16 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
     if (_random.nextBool()) {
       _either = right(KtList.of(
         getValidExperience().copyWith(
-          name: Name("Pillow popping"),
+          title: Name("Pillow popping"),
         ),
         Experience.empty(),
         getValidExperience().copyWith(
           id: 2,
-          name: Name("Death cookies"),
+          title: Name("Death cookies"),
         ),
         getValidExperience().copyWith(
           id: 3,
-          name: Name("Sucker hole"),
+          title: Name("Sucker hole"),
         ),
       ));
     } else {
@@ -164,11 +165,13 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
           id: 2,
           name: Name("Mike"),
           username: Name("micky"),
+          level: UserLevel(70),
         ),
         getValidUser().copyWith(
           id: 3,
           name: Name("Some"),
           username: Name("Guy"),
+          level: UserLevel(33),
         ),
       ));
     } else {
@@ -188,11 +191,13 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
           id: 2,
           name: Name("Ivan"),
           username: Name("ivanovich456345"),
+          level: UserLevel(99),
         ),
         getValidUser().copyWith(
           id: 3,
           name: Name("Juan"),
           username: Name("juan"),
+          level: UserLevel(5),
         ),
       ));
     } else {

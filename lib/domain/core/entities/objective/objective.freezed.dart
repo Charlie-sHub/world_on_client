@@ -13,12 +13,13 @@ class _$ObjectiveTearOff {
   const _$ObjectiveTearOff();
 
 // ignore: unused_element
-  _Objective call({int id, @required EntityDescription description, @required Coordinates coordinates, @required String imageName}) {
+  _Objective call({int id, @required EntityDescription description, @required Coordinates coordinates, @required String imageURL, @required File imageFile}) {
     return _Objective(
       id: id,
       description: description,
       coordinates: coordinates,
-      imageName: imageName,
+      imageURL: imageURL,
+      imageFile: imageFile,
     );
   }
 }
@@ -30,15 +31,23 @@ mixin _$Objective {
   int get id;
   EntityDescription get description;
   Coordinates get coordinates;
-  String get imageName;
+
+  String get imageURL;
+
+  File get imageFile;
 
   $ObjectiveCopyWith<Objective> get copyWith;
 }
 
 abstract class $ObjectiveCopyWith<$Res> {
-  factory $ObjectiveCopyWith(Objective value, $Res Function(Objective) then) = _$ObjectiveCopyWithImpl<$Res>;
-
-  $Res call({int id, EntityDescription description, Coordinates coordinates, String imageName});
+  factory $ObjectiveCopyWith(Objective value, $Res Function(Objective) then) =
+  _$ObjectiveCopyWithImpl<$Res>;
+  
+  $Res call({int id,
+    EntityDescription description,
+    Coordinates coordinates,
+    String imageURL,
+    File imageFile});
 
   $CoordinatesCopyWith<$Res> get coordinates;
 }
@@ -55,13 +64,19 @@ class _$ObjectiveCopyWithImpl<$Res> implements $ObjectiveCopyWith<$Res> {
     Object id = freezed,
     Object description = freezed,
     Object coordinates = freezed,
-    Object imageName = freezed,
+    Object imageURL = freezed,
+    Object imageFile = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as int,
-      description: description == freezed ? _value.description : description as EntityDescription,
-      coordinates: coordinates == freezed ? _value.coordinates : coordinates as Coordinates,
-      imageName: imageName == freezed ? _value.imageName : imageName as String,
+      description: description == freezed
+        ? _value.description
+        : description as EntityDescription,
+      coordinates: coordinates == freezed
+        ? _value.coordinates
+        : coordinates as Coordinates,
+      imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
+      imageFile: imageFile == freezed ? _value.imageFile : imageFile as File,
     ));
   }
 
@@ -77,16 +92,23 @@ class _$ObjectiveCopyWithImpl<$Res> implements $ObjectiveCopyWith<$Res> {
 }
 
 abstract class _$ObjectiveCopyWith<$Res> implements $ObjectiveCopyWith<$Res> {
-  factory _$ObjectiveCopyWith(_Objective value, $Res Function(_Objective) then) = __$ObjectiveCopyWithImpl<$Res>;
+  factory _$ObjectiveCopyWith(_Objective value, $Res Function(_Objective) then) =
+  __$ObjectiveCopyWithImpl<$Res>;
   @override
-  $Res call({int id, EntityDescription description, Coordinates coordinates, String imageName});
+  $Res call({int id,
+    EntityDescription description,
+    Coordinates coordinates,
+    String imageURL,
+    File imageFile});
 
   @override
   $CoordinatesCopyWith<$Res> get coordinates;
 }
 
-class __$ObjectiveCopyWithImpl<$Res> extends _$ObjectiveCopyWithImpl<$Res> implements _$ObjectiveCopyWith<$Res> {
-  __$ObjectiveCopyWithImpl(_Objective _value, $Res Function(_Objective) _then) : super(_value, (v) => _then(v as _Objective));
+class __$ObjectiveCopyWithImpl<$Res> extends _$ObjectiveCopyWithImpl<$Res>
+  implements _$ObjectiveCopyWith<$Res> {
+  __$ObjectiveCopyWithImpl(_Objective _value, $Res Function(_Objective) _then)
+    : super(_value, (v) => _then(v as _Objective));
 
   @override
   _Objective get _value => super._value as _Objective;
@@ -96,22 +118,33 @@ class __$ObjectiveCopyWithImpl<$Res> extends _$ObjectiveCopyWithImpl<$Res> imple
     Object id = freezed,
     Object description = freezed,
     Object coordinates = freezed,
-    Object imageName = freezed,
+    Object imageURL = freezed,
+    Object imageFile = freezed,
   }) {
     return _then(_Objective(
       id: id == freezed ? _value.id : id as int,
-      description: description == freezed ? _value.description : description as EntityDescription,
-      coordinates: coordinates == freezed ? _value.coordinates : coordinates as Coordinates,
-      imageName: imageName == freezed ? _value.imageName : imageName as String,
+      description: description == freezed
+        ? _value.description
+        : description as EntityDescription,
+      coordinates: coordinates == freezed
+        ? _value.coordinates
+        : coordinates as Coordinates,
+      imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
+      imageFile: imageFile == freezed ? _value.imageFile : imageFile as File,
     ));
   }
 }
 
 class _$_Objective extends _Objective {
-  const _$_Objective({this.id, @required this.description, @required this.coordinates, @required this.imageName})
+  const _$_Objective({this.id,
+    @required this.description,
+    @required this.coordinates,
+    @required this.imageURL,
+    @required this.imageFile})
       : assert(description != null),
         assert(coordinates != null),
-        assert(imageName != null),
+      assert(imageURL != null),
+      assert(imageFile != null),
         super._();
 
   @override
@@ -121,21 +154,33 @@ class _$_Objective extends _Objective {
   @override
   final Coordinates coordinates;
   @override
-  final String imageName;
+  final String imageURL;
+  @override
+  final File imageFile;
 
   @override
   String toString() {
-    return 'Objective(id: $id, description: $description, coordinates: $coordinates, imageName: $imageName)';
+    return 'Objective(id: $id, description: $description, coordinates: $coordinates, imageURL: $imageURL, imageFile: $imageFile)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Objective &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-            (identical(other.coordinates, coordinates) || const DeepCollectionEquality().equals(other.coordinates, coordinates)) &&
-            (identical(other.imageName, imageName) || const DeepCollectionEquality().equals(other.imageName, imageName)));
+          (identical(other.id, id) ||
+            const DeepCollectionEquality().equals(other.id, id)) &&
+          (identical(other.description, description) ||
+            const DeepCollectionEquality()
+              .equals(other.description, description)) &&
+          (identical(other.coordinates, coordinates) ||
+            const DeepCollectionEquality()
+              .equals(other.coordinates, coordinates)) &&
+          (identical(other.imageURL, imageURL) ||
+            const DeepCollectionEquality()
+              .equals(other.imageURL, imageURL)) &&
+          (identical(other.imageFile, imageFile) ||
+            const DeepCollectionEquality()
+              .equals(other.imageFile, imageFile)));
   }
 
   @override
@@ -144,16 +189,22 @@ class _$_Objective extends _Objective {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(coordinates) ^
-      const DeepCollectionEquality().hash(imageName);
+      const DeepCollectionEquality().hash(imageURL) ^
+      const DeepCollectionEquality().hash(imageFile);
 
   @override
-  _$ObjectiveCopyWith<_Objective> get copyWith => __$ObjectiveCopyWithImpl<_Objective>(this, _$identity);
+  _$ObjectiveCopyWith<_Objective> get copyWith =>
+    __$ObjectiveCopyWithImpl<_Objective>(this, _$identity);
 }
 
 abstract class _Objective extends Objective {
   const _Objective._() : super._();
 
-  const factory _Objective({int id, @required EntityDescription description, @required Coordinates coordinates, @required String imageName}) = _$_Objective;
+  const factory _Objective({int id,
+    @required EntityDescription description,
+    @required Coordinates coordinates,
+    @required String imageURL,
+    @required File imageFile}) = _$_Objective;
 
   @override
   int get id;
@@ -162,7 +213,10 @@ abstract class _Objective extends Objective {
   @override
   Coordinates get coordinates;
   @override
-  String get imageName;
+  String get imageURL;
+
+  @override
+  File get imageFile;
   @override
   _$ObjectiveCopyWith<_Objective> get copyWith;
 }

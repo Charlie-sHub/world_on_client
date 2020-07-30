@@ -20,9 +20,9 @@ class _$ExperienceManagementFormEventTearOff {
   }
 
 // ignore: unused_element
-  _NameChanged nameChanged(String name) {
-    return _NameChanged(
-      name,
+  _TitleChanged titleChanged(String title) {
+    return _TitleChanged(
+      title,
     );
   }
 
@@ -30,6 +30,13 @@ class _$ExperienceManagementFormEventTearOff {
   _DescriptionChanged descriptionChanged(String description) {
     return _DescriptionChanged(
       description,
+    );
+  }
+
+// ignore: unused_element
+  _ImagesChanged imagesChanged(List<Asset> imageAssets) {
+    return _ImagesChanged(
+      imageAssets,
     );
   }
 
@@ -83,8 +90,9 @@ mixin _$ExperienceManagementFormEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initialized(Option<Experience> experienceOption),
-    @required Result nameChanged(String name),
+    @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
+    @required Result imagesChanged(List<Asset> imageAssets),
     @required Result coordinatesChanged(double latitude, double longitude),
     @required Result difficultyChanged(int difficulty),
     @required Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
@@ -95,8 +103,9 @@ mixin _$ExperienceManagementFormEvent {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(Option<Experience> experienceOption),
-    Result nameChanged(String name),
+    Result titleChanged(String title),
     Result descriptionChanged(String description),
+    Result imagesChanged(List<Asset> imageAssets),
     Result coordinatesChanged(double latitude, double longitude),
     Result difficultyChanged(int difficulty),
     Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
@@ -108,8 +117,9 @@ mixin _$ExperienceManagementFormEvent {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
+    @required Result titleChanged(_TitleChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result imagesChanged(_ImagesChanged value),
     @required Result coordinatesChanged(_CoordinatesChanged value),
     @required Result difficultyChanged(_DifficultyChanged value),
     @required Result objectivesChanged(_ObjectivesChanged value),
@@ -120,8 +130,9 @@ mixin _$ExperienceManagementFormEvent {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
+    Result titleChanged(_TitleChanged value),
     Result descriptionChanged(_DescriptionChanged value),
+    Result imagesChanged(_ImagesChanged value),
     Result coordinatesChanged(_CoordinatesChanged value),
     Result difficultyChanged(_DifficultyChanged value),
     Result objectivesChanged(_ObjectivesChanged value),
@@ -211,8 +222,9 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initialized(Option<Experience> experienceOption),
-    @required Result nameChanged(String name),
+    @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
+    @required Result imagesChanged(List<Asset> imageAssets),
     @required Result coordinatesChanged(double latitude, double longitude),
     @required Result difficultyChanged(int difficulty),
     @required Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
@@ -221,8 +233,9 @@ class _$_Initialized implements _Initialized {
     @required Result submitted(),
   }) {
     assert(initialized != null);
-    assert(nameChanged != null);
+    assert(titleChanged != null);
     assert(descriptionChanged != null);
+    assert(imagesChanged != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -236,8 +249,9 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(Option<Experience> experienceOption),
-    Result nameChanged(String name),
+    Result titleChanged(String title),
     Result descriptionChanged(String description),
+    Result imagesChanged(List<Asset> imageAssets),
     Result coordinatesChanged(double latitude, double longitude),
     Result difficultyChanged(int difficulty),
     Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
@@ -257,8 +271,9 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
+    @required Result titleChanged(_TitleChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result imagesChanged(_ImagesChanged value),
     @required Result coordinatesChanged(_CoordinatesChanged value),
     @required Result difficultyChanged(_DifficultyChanged value),
     @required Result objectivesChanged(_ObjectivesChanged value),
@@ -267,8 +282,9 @@ class _$_Initialized implements _Initialized {
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
-    assert(nameChanged != null);
+    assert(titleChanged != null);
     assert(descriptionChanged != null);
+    assert(imagesChanged != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -282,8 +298,9 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
+    Result titleChanged(_TitleChanged value),
     Result descriptionChanged(_DescriptionChanged value),
+    Result imagesChanged(_ImagesChanged value),
     Result coordinatesChanged(_CoordinatesChanged value),
     Result difficultyChanged(_DifficultyChanged value),
     Result objectivesChanged(_ObjectivesChanged value),
@@ -308,66 +325,64 @@ abstract class _Initialized implements ExperienceManagementFormEvent {
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
-abstract class _$NameChangedCopyWith<$Res> {
-  factory _$NameChangedCopyWith(
-          _NameChanged value, $Res Function(_NameChanged) then) =
-      __$NameChangedCopyWithImpl<$Res>;
-  $Res call({String name});
+abstract class _$TitleChangedCopyWith<$Res> {
+  factory _$TitleChangedCopyWith(_TitleChanged value, $Res Function(_TitleChanged) then) = __$TitleChangedCopyWithImpl<$Res>;
+
+  $Res call({String title});
 }
 
-class __$NameChangedCopyWithImpl<$Res>
-    extends _$ExperienceManagementFormEventCopyWithImpl<$Res>
-    implements _$NameChangedCopyWith<$Res> {
-  __$NameChangedCopyWithImpl(
-      _NameChanged _value, $Res Function(_NameChanged) _then)
-      : super(_value, (v) => _then(v as _NameChanged));
+class __$TitleChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res>
+  implements _$TitleChangedCopyWith<$Res> {
+  __$TitleChangedCopyWithImpl(_TitleChanged _value, $Res Function(_TitleChanged) _then)
+    : super(_value, (v) => _then(v as _TitleChanged));
 
   @override
-  _NameChanged get _value => super._value as _NameChanged;
+  _TitleChanged get _value => super._value as _TitleChanged;
 
   @override
   $Res call({
-    Object name = freezed,
+    Object title = freezed,
   }) {
-    return _then(_NameChanged(
-      name == freezed ? _value.name : name as String,
+    return _then(_TitleChanged(
+      title == freezed ? _value.title : title as String,
     ));
   }
 }
 
-class _$_NameChanged implements _NameChanged {
-  const _$_NameChanged(this.name) : assert(name != null);
+class _$_TitleChanged implements _TitleChanged {
+  const _$_TitleChanged(this.title) : assert(title != null);
 
   @override
-  final String name;
+  final String title;
 
   @override
   String toString() {
-    return 'ExperienceManagementFormEvent.nameChanged(name: $name)';
+    return 'ExperienceManagementFormEvent.titleChanged(title: $title)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _NameChanged &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)));
+      (other is _TitleChanged &&
+        (identical(other.title, title) ||
+          const DeepCollectionEquality().equals(other.title, title)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(title);
 
   @override
-  _$NameChangedCopyWith<_NameChanged> get copyWith =>
-      __$NameChangedCopyWithImpl<_NameChanged>(this, _$identity);
+  _$TitleChangedCopyWith<_TitleChanged> get copyWith =>
+    __$TitleChangedCopyWithImpl<_TitleChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initialized(Option<Experience> experienceOption),
-    @required Result nameChanged(String name),
+    @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
+    @required Result imagesChanged(List<Asset> imageAssets),
     @required Result coordinatesChanged(double latitude, double longitude),
     @required Result difficultyChanged(int difficulty),
     @required Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
@@ -376,23 +391,25 @@ class _$_NameChanged implements _NameChanged {
     @required Result submitted(),
   }) {
     assert(initialized != null);
-    assert(nameChanged != null);
+    assert(titleChanged != null);
     assert(descriptionChanged != null);
+    assert(imagesChanged != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
     assert(rewardsChanged != null);
     assert(tagsChanged != null);
     assert(submitted != null);
-    return nameChanged(name);
+    return titleChanged(title);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(Option<Experience> experienceOption),
-    Result nameChanged(String name),
+    Result titleChanged(String title),
     Result descriptionChanged(String description),
+    Result imagesChanged(List<Asset> imageAssets),
     Result coordinatesChanged(double latitude, double longitude),
     Result difficultyChanged(int difficulty),
     Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
@@ -402,8 +419,8 @@ class _$_NameChanged implements _NameChanged {
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (nameChanged != null) {
-      return nameChanged(name);
+    if (titleChanged != null) {
+      return titleChanged(title);
     }
     return orElse();
   }
@@ -412,8 +429,9 @@ class _$_NameChanged implements _NameChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
+    @required Result titleChanged(_TitleChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result imagesChanged(_ImagesChanged value),
     @required Result coordinatesChanged(_CoordinatesChanged value),
     @required Result difficultyChanged(_DifficultyChanged value),
     @required Result objectivesChanged(_ObjectivesChanged value),
@@ -422,23 +440,25 @@ class _$_NameChanged implements _NameChanged {
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
-    assert(nameChanged != null);
+    assert(titleChanged != null);
     assert(descriptionChanged != null);
+    assert(imagesChanged != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
     assert(rewardsChanged != null);
     assert(tagsChanged != null);
     assert(submitted != null);
-    return nameChanged(this);
+    return titleChanged(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
+    Result titleChanged(_TitleChanged value),
     Result descriptionChanged(_DescriptionChanged value),
+    Result imagesChanged(_ImagesChanged value),
     Result coordinatesChanged(_CoordinatesChanged value),
     Result difficultyChanged(_DifficultyChanged value),
     Result objectivesChanged(_ObjectivesChanged value),
@@ -448,18 +468,19 @@ class _$_NameChanged implements _NameChanged {
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (nameChanged != null) {
-      return nameChanged(this);
+    if (titleChanged != null) {
+      return titleChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class _NameChanged implements ExperienceManagementFormEvent {
-  const factory _NameChanged(String name) = _$_NameChanged;
-
-  String get name;
-  _$NameChangedCopyWith<_NameChanged> get copyWith;
+abstract class _TitleChanged implements ExperienceManagementFormEvent {
+  const factory _TitleChanged(String title) = _$_TitleChanged;
+  
+  String get title;
+  
+  _$TitleChangedCopyWith<_TitleChanged> get copyWith;
 }
 
 abstract class _$DescriptionChangedCopyWith<$Res> {
@@ -521,8 +542,9 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initialized(Option<Experience> experienceOption),
-    @required Result nameChanged(String name),
+    @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
+    @required Result imagesChanged(List<Asset> imageAssets),
     @required Result coordinatesChanged(double latitude, double longitude),
     @required Result difficultyChanged(int difficulty),
     @required Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
@@ -531,8 +553,9 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     @required Result submitted(),
   }) {
     assert(initialized != null);
-    assert(nameChanged != null);
+    assert(titleChanged != null);
     assert(descriptionChanged != null);
+    assert(imagesChanged != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -546,8 +569,9 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(Option<Experience> experienceOption),
-    Result nameChanged(String name),
+    Result titleChanged(String title),
     Result descriptionChanged(String description),
+    Result imagesChanged(List<Asset> imageAssets),
     Result coordinatesChanged(double latitude, double longitude),
     Result difficultyChanged(int difficulty),
     Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
@@ -567,8 +591,9 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
+    @required Result titleChanged(_TitleChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result imagesChanged(_ImagesChanged value),
     @required Result coordinatesChanged(_CoordinatesChanged value),
     @required Result difficultyChanged(_DifficultyChanged value),
     @required Result objectivesChanged(_ObjectivesChanged value),
@@ -577,8 +602,9 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
-    assert(nameChanged != null);
+    assert(titleChanged != null);
     assert(descriptionChanged != null);
+    assert(imagesChanged != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -592,8 +618,9 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
+    Result titleChanged(_TitleChanged value),
     Result descriptionChanged(_DescriptionChanged value),
+    Result imagesChanged(_ImagesChanged value),
     Result coordinatesChanged(_CoordinatesChanged value),
     Result difficultyChanged(_DifficultyChanged value),
     Result objectivesChanged(_ObjectivesChanged value),
@@ -615,6 +642,166 @@ abstract class _DescriptionChanged implements ExperienceManagementFormEvent {
 
   String get description;
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith;
+}
+
+abstract class _$ImagesChangedCopyWith<$Res> {
+  factory _$ImagesChangedCopyWith(_ImagesChanged value, $Res Function(_ImagesChanged) then) =
+  __$ImagesChangedCopyWithImpl<$Res>;
+  
+  $Res call({List<Asset> imageAssets});
+}
+
+class __$ImagesChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res>
+  implements _$ImagesChangedCopyWith<$Res> {
+  __$ImagesChangedCopyWithImpl(_ImagesChanged _value, $Res Function(_ImagesChanged) _then)
+    : super(_value, (v) => _then(v as _ImagesChanged));
+  
+  @override
+  _ImagesChanged get _value => super._value as _ImagesChanged;
+  
+  @override
+  $Res call({
+    Object imageAssets = freezed,
+  }) {
+    return _then(_ImagesChanged(
+      imageAssets == freezed ? _value.imageAssets : imageAssets as List<Asset>,
+    ));
+  }
+}
+
+class _$_ImagesChanged implements _ImagesChanged {
+  const _$_ImagesChanged(this.imageAssets) : assert(imageAssets != null);
+  
+  @override
+  final List<Asset> imageAssets;
+  
+  @override
+  String toString() {
+    return 'ExperienceManagementFormEvent.imagesChanged(imageAssets: $imageAssets)';
+  }
+  
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+      (other is _ImagesChanged &&
+        (identical(other.imageAssets, imageAssets) ||
+          const DeepCollectionEquality()
+            .equals(other.imageAssets, imageAssets)));
+  }
+  
+  @override
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageAssets);
+  
+  @override
+  _$ImagesChangedCopyWith<_ImagesChanged> get copyWith =>
+    __$ImagesChangedCopyWithImpl<_ImagesChanged>(this, _$identity);
+  
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result initialized(Option<Experience> experienceOption),
+    @required Result titleChanged(String title),
+    @required Result descriptionChanged(String description),
+    @required Result imagesChanged(List<Asset> imageAssets),
+    @required Result coordinatesChanged(double latitude, double longitude),
+    @required Result difficultyChanged(int difficulty),
+    @required Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
+    @required Result rewardsChanged(KtSet<PrimitiveReward> rewards),
+    @required Result tagsChanged(KtSet<Tag> tags),
+    @required Result submitted(),
+  }) {
+    assert(initialized != null);
+    assert(titleChanged != null);
+    assert(descriptionChanged != null);
+    assert(imagesChanged != null);
+    assert(coordinatesChanged != null);
+    assert(difficultyChanged != null);
+    assert(objectivesChanged != null);
+    assert(rewardsChanged != null);
+    assert(tagsChanged != null);
+    assert(submitted != null);
+    return imagesChanged(imageAssets);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result initialized(Option<Experience> experienceOption),
+    Result titleChanged(String title),
+    Result descriptionChanged(String description),
+    Result imagesChanged(List<Asset> imageAssets),
+    Result coordinatesChanged(double latitude, double longitude),
+    Result difficultyChanged(int difficulty),
+    Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
+    Result rewardsChanged(KtSet<PrimitiveReward> rewards),
+    Result tagsChanged(KtSet<Tag> tags),
+    Result submitted(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (imagesChanged != null) {
+      return imagesChanged(imageAssets);
+    }
+    return orElse();
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result initialized(_Initialized value),
+    @required Result titleChanged(_TitleChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result imagesChanged(_ImagesChanged value),
+    @required Result coordinatesChanged(_CoordinatesChanged value),
+    @required Result difficultyChanged(_DifficultyChanged value),
+    @required Result objectivesChanged(_ObjectivesChanged value),
+    @required Result rewardsChanged(_RewardsChanged value),
+    @required Result tagsChanged(_TagsChanged value),
+    @required Result submitted(_Submitted value),
+  }) {
+    assert(initialized != null);
+    assert(titleChanged != null);
+    assert(descriptionChanged != null);
+    assert(imagesChanged != null);
+    assert(coordinatesChanged != null);
+    assert(difficultyChanged != null);
+    assert(objectivesChanged != null);
+    assert(rewardsChanged != null);
+    assert(tagsChanged != null);
+    assert(submitted != null);
+    return imagesChanged(this);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result initialized(_Initialized value),
+    Result titleChanged(_TitleChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result imagesChanged(_ImagesChanged value),
+    Result coordinatesChanged(_CoordinatesChanged value),
+    Result difficultyChanged(_DifficultyChanged value),
+    Result objectivesChanged(_ObjectivesChanged value),
+    Result rewardsChanged(_RewardsChanged value),
+    Result tagsChanged(_TagsChanged value),
+    Result submitted(_Submitted value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (imagesChanged != null) {
+      return imagesChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ImagesChanged implements ExperienceManagementFormEvent {
+  const factory _ImagesChanged(List<Asset> imageAssets) = _$_ImagesChanged;
+  
+  List<Asset> get imageAssets;
+  
+  _$ImagesChangedCopyWith<_ImagesChanged> get copyWith;
 }
 
 abstract class _$CoordinatesChangedCopyWith<$Res> {
@@ -688,8 +875,9 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initialized(Option<Experience> experienceOption),
-    @required Result nameChanged(String name),
+    @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
+    @required Result imagesChanged(List<Asset> imageAssets),
     @required Result coordinatesChanged(double latitude, double longitude),
     @required Result difficultyChanged(int difficulty),
     @required Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
@@ -698,8 +886,9 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
     @required Result submitted(),
   }) {
     assert(initialized != null);
-    assert(nameChanged != null);
+    assert(titleChanged != null);
     assert(descriptionChanged != null);
+    assert(imagesChanged != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -713,8 +902,9 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(Option<Experience> experienceOption),
-    Result nameChanged(String name),
+    Result titleChanged(String title),
     Result descriptionChanged(String description),
+    Result imagesChanged(List<Asset> imageAssets),
     Result coordinatesChanged(double latitude, double longitude),
     Result difficultyChanged(int difficulty),
     Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
@@ -734,8 +924,9 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
+    @required Result titleChanged(_TitleChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result imagesChanged(_ImagesChanged value),
     @required Result coordinatesChanged(_CoordinatesChanged value),
     @required Result difficultyChanged(_DifficultyChanged value),
     @required Result objectivesChanged(_ObjectivesChanged value),
@@ -744,8 +935,9 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
-    assert(nameChanged != null);
+    assert(titleChanged != null);
     assert(descriptionChanged != null);
+    assert(imagesChanged != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -759,8 +951,9 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
+    Result titleChanged(_TitleChanged value),
     Result descriptionChanged(_DescriptionChanged value),
+    Result imagesChanged(_ImagesChanged value),
     Result coordinatesChanged(_CoordinatesChanged value),
     Result difficultyChanged(_DifficultyChanged value),
     Result objectivesChanged(_ObjectivesChanged value),
@@ -846,8 +1039,9 @@ class _$_DifficultyChanged implements _DifficultyChanged {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initialized(Option<Experience> experienceOption),
-    @required Result nameChanged(String name),
+    @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
+    @required Result imagesChanged(List<Asset> imageAssets),
     @required Result coordinatesChanged(double latitude, double longitude),
     @required Result difficultyChanged(int difficulty),
     @required Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
@@ -856,8 +1050,9 @@ class _$_DifficultyChanged implements _DifficultyChanged {
     @required Result submitted(),
   }) {
     assert(initialized != null);
-    assert(nameChanged != null);
+    assert(titleChanged != null);
     assert(descriptionChanged != null);
+    assert(imagesChanged != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -871,8 +1066,9 @@ class _$_DifficultyChanged implements _DifficultyChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(Option<Experience> experienceOption),
-    Result nameChanged(String name),
+    Result titleChanged(String title),
     Result descriptionChanged(String description),
+    Result imagesChanged(List<Asset> imageAssets),
     Result coordinatesChanged(double latitude, double longitude),
     Result difficultyChanged(int difficulty),
     Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
@@ -892,8 +1088,9 @@ class _$_DifficultyChanged implements _DifficultyChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
+    @required Result titleChanged(_TitleChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result imagesChanged(_ImagesChanged value),
     @required Result coordinatesChanged(_CoordinatesChanged value),
     @required Result difficultyChanged(_DifficultyChanged value),
     @required Result objectivesChanged(_ObjectivesChanged value),
@@ -902,8 +1099,9 @@ class _$_DifficultyChanged implements _DifficultyChanged {
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
-    assert(nameChanged != null);
+    assert(titleChanged != null);
     assert(descriptionChanged != null);
+    assert(imagesChanged != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -917,8 +1115,9 @@ class _$_DifficultyChanged implements _DifficultyChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
+    Result titleChanged(_TitleChanged value),
     Result descriptionChanged(_DescriptionChanged value),
+    Result imagesChanged(_ImagesChanged value),
     Result coordinatesChanged(_CoordinatesChanged value),
     Result difficultyChanged(_DifficultyChanged value),
     Result objectivesChanged(_ObjectivesChanged value),
@@ -1003,8 +1202,9 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initialized(Option<Experience> experienceOption),
-    @required Result nameChanged(String name),
+    @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
+    @required Result imagesChanged(List<Asset> imageAssets),
     @required Result coordinatesChanged(double latitude, double longitude),
     @required Result difficultyChanged(int difficulty),
     @required Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
@@ -1013,8 +1213,9 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
     @required Result submitted(),
   }) {
     assert(initialized != null);
-    assert(nameChanged != null);
+    assert(titleChanged != null);
     assert(descriptionChanged != null);
+    assert(imagesChanged != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -1028,8 +1229,9 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(Option<Experience> experienceOption),
-    Result nameChanged(String name),
+    Result titleChanged(String title),
     Result descriptionChanged(String description),
+    Result imagesChanged(List<Asset> imageAssets),
     Result coordinatesChanged(double latitude, double longitude),
     Result difficultyChanged(int difficulty),
     Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
@@ -1049,8 +1251,9 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
+    @required Result titleChanged(_TitleChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result imagesChanged(_ImagesChanged value),
     @required Result coordinatesChanged(_CoordinatesChanged value),
     @required Result difficultyChanged(_DifficultyChanged value),
     @required Result objectivesChanged(_ObjectivesChanged value),
@@ -1059,8 +1262,9 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
-    assert(nameChanged != null);
+    assert(titleChanged != null);
     assert(descriptionChanged != null);
+    assert(imagesChanged != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -1074,8 +1278,9 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
+    Result titleChanged(_TitleChanged value),
     Result descriptionChanged(_DescriptionChanged value),
+    Result imagesChanged(_ImagesChanged value),
     Result coordinatesChanged(_CoordinatesChanged value),
     Result difficultyChanged(_DifficultyChanged value),
     Result objectivesChanged(_ObjectivesChanged value),
@@ -1158,8 +1363,9 @@ class _$_RewardsChanged implements _RewardsChanged {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initialized(Option<Experience> experienceOption),
-    @required Result nameChanged(String name),
+    @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
+    @required Result imagesChanged(List<Asset> imageAssets),
     @required Result coordinatesChanged(double latitude, double longitude),
     @required Result difficultyChanged(int difficulty),
     @required Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
@@ -1168,8 +1374,9 @@ class _$_RewardsChanged implements _RewardsChanged {
     @required Result submitted(),
   }) {
     assert(initialized != null);
-    assert(nameChanged != null);
+    assert(titleChanged != null);
     assert(descriptionChanged != null);
+    assert(imagesChanged != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -1183,8 +1390,9 @@ class _$_RewardsChanged implements _RewardsChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(Option<Experience> experienceOption),
-    Result nameChanged(String name),
+    Result titleChanged(String title),
     Result descriptionChanged(String description),
+    Result imagesChanged(List<Asset> imageAssets),
     Result coordinatesChanged(double latitude, double longitude),
     Result difficultyChanged(int difficulty),
     Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
@@ -1204,8 +1412,9 @@ class _$_RewardsChanged implements _RewardsChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
+    @required Result titleChanged(_TitleChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result imagesChanged(_ImagesChanged value),
     @required Result coordinatesChanged(_CoordinatesChanged value),
     @required Result difficultyChanged(_DifficultyChanged value),
     @required Result objectivesChanged(_ObjectivesChanged value),
@@ -1214,8 +1423,9 @@ class _$_RewardsChanged implements _RewardsChanged {
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
-    assert(nameChanged != null);
+    assert(titleChanged != null);
     assert(descriptionChanged != null);
+    assert(imagesChanged != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -1229,8 +1439,9 @@ class _$_RewardsChanged implements _RewardsChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
+    Result titleChanged(_TitleChanged value),
     Result descriptionChanged(_DescriptionChanged value),
+    Result imagesChanged(_ImagesChanged value),
     Result coordinatesChanged(_CoordinatesChanged value),
     Result difficultyChanged(_DifficultyChanged value),
     Result objectivesChanged(_ObjectivesChanged value),
@@ -1313,8 +1524,9 @@ class _$_TagsChanged implements _TagsChanged {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initialized(Option<Experience> experienceOption),
-    @required Result nameChanged(String name),
+    @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
+    @required Result imagesChanged(List<Asset> imageAssets),
     @required Result coordinatesChanged(double latitude, double longitude),
     @required Result difficultyChanged(int difficulty),
     @required Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
@@ -1323,8 +1535,9 @@ class _$_TagsChanged implements _TagsChanged {
     @required Result submitted(),
   }) {
     assert(initialized != null);
-    assert(nameChanged != null);
+    assert(titleChanged != null);
     assert(descriptionChanged != null);
+    assert(imagesChanged != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -1338,8 +1551,9 @@ class _$_TagsChanged implements _TagsChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(Option<Experience> experienceOption),
-    Result nameChanged(String name),
+    Result titleChanged(String title),
     Result descriptionChanged(String description),
+    Result imagesChanged(List<Asset> imageAssets),
     Result coordinatesChanged(double latitude, double longitude),
     Result difficultyChanged(int difficulty),
     Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
@@ -1359,8 +1573,9 @@ class _$_TagsChanged implements _TagsChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
+    @required Result titleChanged(_TitleChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result imagesChanged(_ImagesChanged value),
     @required Result coordinatesChanged(_CoordinatesChanged value),
     @required Result difficultyChanged(_DifficultyChanged value),
     @required Result objectivesChanged(_ObjectivesChanged value),
@@ -1369,8 +1584,9 @@ class _$_TagsChanged implements _TagsChanged {
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
-    assert(nameChanged != null);
+    assert(titleChanged != null);
     assert(descriptionChanged != null);
+    assert(imagesChanged != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -1384,8 +1600,9 @@ class _$_TagsChanged implements _TagsChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
+    Result titleChanged(_TitleChanged value),
     Result descriptionChanged(_DescriptionChanged value),
+    Result imagesChanged(_ImagesChanged value),
     Result coordinatesChanged(_CoordinatesChanged value),
     Result difficultyChanged(_DifficultyChanged value),
     Result objectivesChanged(_ObjectivesChanged value),
@@ -1445,8 +1662,9 @@ class _$_Submitted implements _Submitted {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initialized(Option<Experience> experienceOption),
-    @required Result nameChanged(String name),
+    @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
+    @required Result imagesChanged(List<Asset> imageAssets),
     @required Result coordinatesChanged(double latitude, double longitude),
     @required Result difficultyChanged(int difficulty),
     @required Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
@@ -1455,8 +1673,9 @@ class _$_Submitted implements _Submitted {
     @required Result submitted(),
   }) {
     assert(initialized != null);
-    assert(nameChanged != null);
+    assert(titleChanged != null);
     assert(descriptionChanged != null);
+    assert(imagesChanged != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -1470,8 +1689,9 @@ class _$_Submitted implements _Submitted {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(Option<Experience> experienceOption),
-    Result nameChanged(String name),
+    Result titleChanged(String title),
     Result descriptionChanged(String description),
+    Result imagesChanged(List<Asset> imageAssets),
     Result coordinatesChanged(double latitude, double longitude),
     Result difficultyChanged(int difficulty),
     Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
@@ -1491,8 +1711,9 @@ class _$_Submitted implements _Submitted {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
+    @required Result titleChanged(_TitleChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result imagesChanged(_ImagesChanged value),
     @required Result coordinatesChanged(_CoordinatesChanged value),
     @required Result difficultyChanged(_DifficultyChanged value),
     @required Result objectivesChanged(_ObjectivesChanged value),
@@ -1501,8 +1722,9 @@ class _$_Submitted implements _Submitted {
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
-    assert(nameChanged != null);
+    assert(titleChanged != null);
     assert(descriptionChanged != null);
+    assert(imagesChanged != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -1516,8 +1738,9 @@ class _$_Submitted implements _Submitted {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
+    Result titleChanged(_TitleChanged value),
     Result descriptionChanged(_DescriptionChanged value),
+    Result imagesChanged(_ImagesChanged value),
     Result coordinatesChanged(_CoordinatesChanged value),
     Result difficultyChanged(_DifficultyChanged value),
     Result objectivesChanged(_ObjectivesChanged value),

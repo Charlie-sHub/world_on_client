@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
+import 'package:worldon/views/core/widget/misc/user_experience_info.dart';
 import 'package:worldon/views/profile/widget/profile_achievements_tab_view.dart';
 import 'package:worldon/views/profile/widget/profile_experiences_tab_view.dart';
 import 'package:worldon/views/profile/widget/profile_tab_bar.dart';
@@ -85,6 +86,14 @@ class OwnProfileHeader extends StatelessWidget {
                   ),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.all(5),
+                child: RaisedButton(
+                  // TODO: Navigate to profile editing page
+                  onPressed: () => null,
+                  child: const Text("Edit"),
+                ),
+              )
             ],
           ),
           Padding(
@@ -97,6 +106,7 @@ class OwnProfileHeader extends StatelessWidget {
               ),
             ),
           ),
+          UserExperienceInfo(user: user),
         ],
       ),
     );

@@ -75,10 +75,12 @@ dependencies:
   flutter_hooks: ^0.12.0
   # For FloatingActionButton menus
   unicorndial: ^1.1.5
-  # For Ease of detecting swipes
-  swipedetector: ^1.2.0
   # To add shadow to icons with less boiler plate
   icon_shadow: ^1.0.1
+  # For getting images from the device
+  image_picker: ^0.6.7+4
+  # For getting multiple images from the device
+  multi_image_picker: ^4.6.9
   uuid: ^2.2.0
 
 dev_dependencies:

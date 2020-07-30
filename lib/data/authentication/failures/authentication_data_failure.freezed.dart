@@ -55,11 +55,15 @@ class _$AuthenticationDataFailureCopyWithImpl<T, $Res> implements $Authenticatio
 }
 
 abstract class $InvalidCredentialsCopyWith<T, $Res> {
-  factory $InvalidCredentialsCopyWith(InvalidCredentials<T> value, $Res Function(InvalidCredentials<T>) then) = _$InvalidCredentialsCopyWithImpl<T, $Res>;
+  factory $InvalidCredentialsCopyWith(InvalidCredentials<T> value,
+    $Res Function(InvalidCredentials<T>) then) =
+  _$InvalidCredentialsCopyWithImpl<T, $Res>;
 }
 
-class _$InvalidCredentialsCopyWithImpl<T, $Res> extends _$AuthenticationDataFailureCopyWithImpl<T, $Res> implements $InvalidCredentialsCopyWith<T, $Res> {
-  _$InvalidCredentialsCopyWithImpl(InvalidCredentials<T> _value, $Res Function(InvalidCredentials<T>) _then) : super(_value, (v) => _then(v as InvalidCredentials<T>));
+class _$InvalidCredentialsCopyWithImpl<T, $Res> extends _$AuthenticationDataFailureCopyWithImpl<T, $Res>
+  implements $InvalidCredentialsCopyWith<T, $Res> {
+  _$InvalidCredentialsCopyWithImpl(InvalidCredentials<T> _value, $Res Function(InvalidCredentials<T>) _then)
+    : super(_value, (v) => _then(v as InvalidCredentials<T>));
 
   @override
   InvalidCredentials<T> get _value => super._value as InvalidCredentials<T>;

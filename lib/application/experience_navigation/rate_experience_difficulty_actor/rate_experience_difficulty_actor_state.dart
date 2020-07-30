@@ -9,7 +9,7 @@ abstract class RateExperienceDifficultyActorState with _$RateExperienceDifficult
   }) = _RateExperienceDifficultyActorState;
 
   factory RateExperienceDifficultyActorState.initial() => RateExperienceDifficultyActorState(
-        difficulty: 0,
+        difficulty: 1,
         isSubmitting: false,
         failureOrSuccessOption: none(),
       );

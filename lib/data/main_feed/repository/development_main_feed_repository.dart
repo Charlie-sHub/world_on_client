@@ -35,7 +35,7 @@ class DevelopmentMainFeedRepository implements MainFeedRepositoryInterface {
           Experience.empty(),
           Experience.empty().copyWith(
             id: 3,
-            name: Name("Joyce neocapitalist"),
+            title: Name("Joyce neocapitalist"),
             description: EntityDescription("""
 If the patriarchialist paradigm of narrative holds,
 we have to choose between neocapitalist libertarianism and neodialectic capitalist theory.
@@ -50,7 +50,7 @@ But the main theme of the works of Joyce is the collapse, and some would say the
           ),
           getValidExperience().copyWith(
             id: 2,
-            name: Name("Ski bum huck"),
+            title: Name("Ski bum huck"),
             description: EntityDescription(
               "Ride scream backside brain bucket presta pow north shore pipe spin glades Snowboard steed DH face shots. Lid moguls wheels glades greasy death cookies, booter berm huckfest drop huck gnar rail.",
             ),
@@ -58,7 +58,7 @@ But the main theme of the works of Joyce is the collapse, and some would say the
           ),
           getValidExperience().copyWith(
             id: 3,
-            name: Name("Kombucha fashion"),
+            title: Name("Kombucha fashion"),
             description: EntityDescription(
               "Before they sold out blog letterpress semiotics 8-bit. Activated charcoal craft beer sartorial, taxidermy sriracha williamsburg pop-up chicharrones microdosing iPhone hashtag man bun tofu selfies.",
             ),

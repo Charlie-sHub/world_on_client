@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
@@ -14,18 +16,20 @@ part 'reward.freezed.dart';
 @freezed
 abstract class Reward implements _$Reward {
   const Reward._();
-
+  
   const factory Reward({
     int id,
     @required Name name,
     @required EntityDescription description,
     @required String imageURL,
+    @required File imageFile,
   }) = _Reward;
-  
+
   factory Reward.empty() => Reward(
     name: Name(""),
     description: EntityDescription(""),
     imageURL: "",
+    imageFile: File(""),
   );
   
   Option<ValueFailure<dynamic>> get failureOption {

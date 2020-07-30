@@ -50,6 +50,7 @@ class LogInForm extends StatelessWidget {
 
   Future onFailure(Failure failure, BuildContext context) {
     return FlushbarHelper.createError(
+      duration: const Duration(seconds: 2),
       message: failure.maybeMap(
         authenticationDomain: (failure) => failure.authenticationDomainFailure.map(
           cancelledByUser: (_) => "Cancelled",
@@ -63,7 +64,6 @@ class LogInForm extends StatelessWidget {
         ),
         orElse: () => StringConst.unknownError,
       ),
-      duration: const Duration(seconds: 5),
     ).show(context);
   }
 

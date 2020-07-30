@@ -20,8 +20,8 @@ class ExperienceManagementForm extends StatelessWidget {
           (either) => either.fold(
             (failure) => failure.maybeMap(
               coreData: (failure) => failure.coreDataFailure.maybeMap(
-                nameAlreadyInUse: (_) => FlushbarHelper.createError(message: "The title is already in use").show(context),
-                serverError: (failure) => FlushbarHelper.createError(message: failure.errorString).show(context),
+                nameAlreadyInUse: (_) => FlushbarHelper.createError(duration: const Duration(seconds: 2), message: "The title is already in use").show(context),
+                serverError: (failure) => FlushbarHelper.createError(duration: const Duration(seconds: 2), message: failure.errorString).show(context),
                 orElse: () => null,
               ),
               orElse: () => null,
@@ -177,9 +177,16 @@ class TitleFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       onChanged: (value) => context.bloc<ExperienceManagementFormBloc>().add(
-            ExperienceManagementFormEvent.nameChanged(value),
+            ExperienceManagementFormEvent.titleChanged(value),
           ),
-      validator: (_) => context.bloc<ExperienceManagementFormBloc>().state.experience.name.value.fold(
+      validator: (_) =>
+        context
+          .bloc<ExperienceManagementFormBloc>()
+          .state
+          .experience
+          .title
+          .value
+          .fold(
             (failure) => failure.maybeMap(
               emptyString: (_) => "The title can't be empty",
               multiLineString: (_) => "The title can't be more than one line",

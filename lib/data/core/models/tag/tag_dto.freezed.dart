@@ -42,9 +42,14 @@ mixin _$TagDto {
 }
 
 abstract class $TagDtoCopyWith<$Res> {
-  factory $TagDtoCopyWith(TagDto value, $Res Function(TagDto) then) = _$TagDtoCopyWithImpl<$Res>;
-
-  $Res call({int id, String name, UserDto creator, String creationDate, String modificationDate});
+  factory $TagDtoCopyWith(TagDto value, $Res Function(TagDto) then) =
+  _$TagDtoCopyWithImpl<$Res>;
+  
+  $Res call({int id,
+    String name,
+    UserDto creator,
+    String creationDate,
+    String modificationDate});
 
   $UserDtoCopyWith<$Res> get creator;
 }
@@ -145,7 +150,7 @@ class _$_TagDto extends _TagDto {
         assert(creationDate != null),
         assert(modificationDate != null),
         super._();
-  
+
   factory _$_TagDto.fromJson(Map<String, dynamic> json) =>
     _$_$_TagDtoFromJson(json);
 

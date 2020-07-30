@@ -16,6 +16,7 @@ _$_UserDto _$_$_UserDtoFromJson(Map<String, dynamic> json) {
     birthday: json['birthday'] as String,
     description: json['description'] as String,
     imageURL: json['imageURL'] as String,
+    imageFile: json['imageFile'] as String,
     level: json['level'] as int,
     experiencePoints: json['experiencePoints'] as int,
     privacy: json['privacy'] as bool,
@@ -37,7 +38,8 @@ _$_UserDto _$_$_UserDtoFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_UserDtoToJson(_$_UserDto instance) => <String, dynamic>{
+Map<String, dynamic> _$_$_UserDtoToJson(_$_UserDto instance) =>
+  <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'username': instance.username,
@@ -46,6 +48,7 @@ Map<String, dynamic> _$_$_UserDtoToJson(_$_UserDto instance) => <String, dynamic
       'birthday': instance.birthday,
       'description': instance.description,
       'imageURL': instance.imageURL,
+    'imageFile': instance.imageFile,
       'level': instance.level,
       'experiencePoints': instance.experiencePoints,
       'privacy': instance.privacy,

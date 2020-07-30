@@ -43,11 +43,11 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
         getValidExperience(),
         getValidExperience().copyWith(
           id: 2,
-          name: Name("Phasellus"),
+          title: Name("Phasellus"),
         ),
         getValidExperience().copyWith(
           id: 3,
-          name: Name("Itaque"),
+          title: Name("Itaque"),
         ),
       );
       return getRightFuture(_experienceSet);

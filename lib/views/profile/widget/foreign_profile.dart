@@ -4,6 +4,7 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widget/misc/block_unblock_button_builder.dart';
 import 'package:worldon/views/core/widget/misc/follow_unfollow_button_builder.dart';
+import 'package:worldon/views/core/widget/misc/user_experience_info.dart';
 import 'package:worldon/views/profile/widget/profile_achievements_tab_view.dart';
 import 'package:worldon/views/profile/widget/profile_experiences_tab_view.dart';
 import 'package:worldon/views/profile/widget/profile_tab_bar.dart';
@@ -104,6 +105,7 @@ class ForeignProfileHeader extends StatelessWidget {
               ),
             ),
           ),
+          UserExperienceInfo(user: user),
         ],
       ),
     );

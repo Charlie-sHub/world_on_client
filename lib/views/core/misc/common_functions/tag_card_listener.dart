@@ -4,6 +4,7 @@ import 'package:worldon/application/tag_management/tag_card_actor/tag_card_actor
 
 void tagCardListener(BuildContext context, TagCardActorState state) => state.maybeMap(
       additionFailure: (state) => FlushbarHelper.createError(
+        duration: const Duration(seconds: 2),
         message: state.failure.maybeMap(
           coreData: (failure) => failure.coreDataFailure.maybeMap(
             serverError: (failure) => failure.errorString,
@@ -13,6 +14,7 @@ void tagCardListener(BuildContext context, TagCardActorState state) => state.may
         ),
       ).show(context),
       dismissalFailure: (state) => FlushbarHelper.createError(
+        duration: const Duration(seconds: 2),
         message: state.failure.maybeMap(
           coreData: (failure) => failure.coreDataFailure.maybeMap(
             serverError: (failure) => failure.errorString,

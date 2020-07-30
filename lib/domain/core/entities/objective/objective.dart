@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
@@ -14,19 +16,21 @@ part 'objective.freezed.dart';
 @freezed
 abstract class Objective implements _$Objective {
   const Objective._();
-
+  
   const factory Objective({
     int id,
     @required EntityDescription description,
     @required Coordinates coordinates,
-    @required String imageName,
+    @required String imageURL,
+    @required File imageFile,
   }) = _Objective;
   
   factory Objective.empty() => Objective(
     description: EntityDescription(""),
     coordinates: Coordinates.empty(),
-    imageName: "",
-  );
+        imageURL: "",
+        imageFile: File(""),
+      );
   
   Option<ValueFailure<dynamic>> get failureOption {
     return description.failureOrUnit.andThen(coordinates.failureOrUnit).fold(

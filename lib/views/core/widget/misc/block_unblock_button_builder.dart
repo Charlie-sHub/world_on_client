@@ -87,8 +87,8 @@ class UnBlockButton extends StatelessWidget {
         color: Colors.green,
       ),
       onPressed: () => context.bloc<BlockActorBloc>().add(
-        BlockActorEvent.unBlocked(user),
-      ),
+            BlockActorEvent.unBlocked(user),
+          ),
     );
   }
 }
@@ -97,6 +97,7 @@ void userBlockListener(BuildContext context, BlockActorState state) =>
   state.maybeMap(
     blockFailure: (state) =>
       FlushbarHelper.createError(
+        duration: const Duration(seconds: 2),
         message: state.failure.maybeMap(
           coreData: (failure) =>
             failure.coreDataFailure.maybeMap(
@@ -113,6 +114,7 @@ void userBlockListener(BuildContext context, BlockActorState state) =>
       ).show(context),
     unBlockFailure: (state) =>
       FlushbarHelper.createError(
+        duration: const Duration(seconds: 2),
         message: state.failure.maybeMap(
           coreData: (failure) =>
             failure.coreDataFailure.maybeMap(

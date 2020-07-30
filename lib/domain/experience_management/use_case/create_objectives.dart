@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
@@ -14,19 +16,19 @@ import 'package:worldon/domain/experience_management/use_case/create_experience.
 ///
 /// It's supposed to be called right before the [CreateExperience] use-case, once for every [ObjectiveCreationWidget] opened with valid data
 /// that way there's no need to create business logic regarding the deletion or edition of objectives
-// Probably useless, will use Reso's method
-
+@Deprecated("Probably useless, will use Reso's method")
 @LazySingleton(env: [Environment.dev, Environment.prod])
 class CreateObjectives implements UseCase<ObjectiveSet, Params> {
   final KtMutableSet<Objective> objectives = KtMutableSet.empty();
-
+  
   @override
   Either<Failure, ObjectiveSet> call(Params params) {
-    final objective = Objective(
+    final objective = Objective.empty().copyWith(
       id: null,
       description: params.description,
       coordinates: params.coordinates,
-      imageName: params.imageName,
+      imageURL: params.imageURL,
+      imageFile: params.imageFile,
     );
     objectives.add(objective);
     return right(ObjectiveSet(objectives));
@@ -36,11 +38,13 @@ class CreateObjectives implements UseCase<ObjectiveSet, Params> {
 class Params {
   final EntityDescription description;
   final Coordinates coordinates;
-  final String imageName;
+  final String imageURL;
+  final File imageFile;
 
   Params({
     @required this.description,
     @required this.coordinates,
-    @required this.imageName,
+    @required this.imageURL,
+    @required this.imageFile,
   });
 }

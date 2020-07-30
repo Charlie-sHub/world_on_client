@@ -15,9 +15,10 @@ class _$ExperienceTearOff {
 // ignore: unused_element
   _Experience call(
       {int id,
-      @required Name name,
+      @required Name title,
       @required EntityDescription description,
       @required Set<String> imageURLs,
+        @required List<Asset> imageAssets,
       @required Coordinates coordinates,
       @required Location location,
       @required User creator,
@@ -32,9 +33,10 @@ class _$ExperienceTearOff {
       @required Set<User> doneBy}) {
     return _Experience(
       id: id,
-      name: name,
+      title: title,
       description: description,
       imageURLs: imageURLs,
+      imageAssets: imageAssets,
       coordinates: coordinates,
       location: location,
       creator: creator,
@@ -56,9 +58,12 @@ const $Experience = _$ExperienceTearOff();
 
 mixin _$Experience {
   int get id;
-  Name get name;
+
+  Name get title;
   EntityDescription get description;
   Set<String> get imageURLs;
+
+  List<Asset> get imageAssets;
   Coordinates get coordinates;
   Location get location;
   User get creator;
@@ -81,9 +86,10 @@ abstract class $ExperienceCopyWith<$Res> {
       _$ExperienceCopyWithImpl<$Res>;
   $Res call(
       {int id,
-      Name name,
+        Name title,
       EntityDescription description,
       Set<String> imageURLs,
+        List<Asset> imageAssets,
       Coordinates coordinates,
       Location location,
       User creator,
@@ -112,9 +118,10 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
   @override
   $Res call({
     Object id = freezed,
-    Object name = freezed,
+    Object title = freezed,
     Object description = freezed,
     Object imageURLs = freezed,
+    Object imageAssets = freezed,
     Object coordinates = freezed,
     Object location = freezed,
     Object creator = freezed,
@@ -130,12 +137,15 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as int,
-      name: name == freezed ? _value.name : name as Name,
+      title: title == freezed ? _value.title : title as Name,
       description: description == freezed
           ? _value.description
           : description as EntityDescription,
       imageURLs:
           imageURLs == freezed ? _value.imageURLs : imageURLs as Set<String>,
+      imageAssets: imageAssets == freezed
+        ? _value.imageAssets
+        : imageAssets as List<Asset>,
       coordinates: coordinates == freezed
           ? _value.coordinates
           : coordinates as Coordinates,
@@ -199,9 +209,10 @@ abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
   @override
   $Res call(
       {int id,
-      Name name,
+        Name title,
       EntityDescription description,
       Set<String> imageURLs,
+        List<Asset> imageAssets,
       Coordinates coordinates,
       Location location,
       User creator,
@@ -235,9 +246,10 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res>
   @override
   $Res call({
     Object id = freezed,
-    Object name = freezed,
+    Object title = freezed,
     Object description = freezed,
     Object imageURLs = freezed,
+    Object imageAssets = freezed,
     Object coordinates = freezed,
     Object location = freezed,
     Object creator = freezed,
@@ -253,12 +265,15 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res>
   }) {
     return _then(_Experience(
       id: id == freezed ? _value.id : id as int,
-      name: name == freezed ? _value.name : name as Name,
+      title: title == freezed ? _value.title : title as Name,
       description: description == freezed
           ? _value.description
           : description as EntityDescription,
       imageURLs:
           imageURLs == freezed ? _value.imageURLs : imageURLs as Set<String>,
+      imageAssets: imageAssets == freezed
+        ? _value.imageAssets
+        : imageAssets as List<Asset>,
       coordinates: coordinates == freezed
           ? _value.coordinates
           : coordinates as Coordinates,
@@ -288,9 +303,10 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res>
 class _$_Experience extends _Experience {
   const _$_Experience(
       {this.id,
-      @required this.name,
+        @required this.title,
       @required this.description,
       @required this.imageURLs,
+        @required this.imageAssets,
       @required this.coordinates,
       @required this.location,
       @required this.creator,
@@ -303,9 +319,10 @@ class _$_Experience extends _Experience {
       @required this.comments,
       @required this.likedBy,
       @required this.doneBy})
-      : assert(name != null),
+    : assert(title != null),
         assert(description != null),
         assert(imageURLs != null),
+      assert(imageAssets != null),
         assert(coordinates != null),
         assert(location != null),
         assert(creator != null),
@@ -323,11 +340,13 @@ class _$_Experience extends _Experience {
   @override
   final int id;
   @override
-  final Name name;
+  final Name title;
   @override
   final EntityDescription description;
   @override
   final Set<String> imageURLs;
+  @override
+  final List<Asset> imageAssets;
   @override
   final Coordinates coordinates;
   @override
@@ -355,7 +374,7 @@ class _$_Experience extends _Experience {
 
   @override
   String toString() {
-    return 'Experience(id: $id, name: $name, description: $description, imageURLs: $imageURLs, coordinates: $coordinates, location: $location, creator: $creator, difficulty: $difficulty, creationDate: $creationDate, modificationDate: $modificationDate, objectives: $objectives, rewards: $rewards, tags: $tags, comments: $comments, likedBy: $likedBy, doneBy: $doneBy)';
+    return 'Experience(id: $id, title: $title, description: $description, imageURLs: $imageURLs, imageAssets: $imageAssets, coordinates: $coordinates, location: $location, creator: $creator, difficulty: $difficulty, creationDate: $creationDate, modificationDate: $modificationDate, objectives: $objectives, rewards: $rewards, tags: $tags, comments: $comments, likedBy: $likedBy, doneBy: $doneBy)';
   }
 
   @override
@@ -364,14 +383,17 @@ class _$_Experience extends _Experience {
         (other is _Experience &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+          (identical(other.title, title) ||
+            const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.description, description) ||
                 const DeepCollectionEquality()
                     .equals(other.description, description)) &&
             (identical(other.imageURLs, imageURLs) ||
                 const DeepCollectionEquality()
                     .equals(other.imageURLs, imageURLs)) &&
+          (identical(other.imageAssets, imageAssets) ||
+            const DeepCollectionEquality()
+              .equals(other.imageAssets, imageAssets)) &&
             (identical(other.coordinates, coordinates) ||
                 const DeepCollectionEquality()
                     .equals(other.coordinates, coordinates)) &&
@@ -412,9 +434,10 @@ class _$_Experience extends _Experience {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(imageURLs) ^
+      const DeepCollectionEquality().hash(imageAssets) ^
       const DeepCollectionEquality().hash(coordinates) ^
       const DeepCollectionEquality().hash(location) ^
       const DeepCollectionEquality().hash(creator) ^
@@ -437,9 +460,10 @@ abstract class _Experience extends Experience {
   const _Experience._() : super._();
   const factory _Experience(
       {int id,
-      @required Name name,
+        @required Name title,
       @required EntityDescription description,
       @required Set<String> imageURLs,
+        @required List<Asset> imageAssets,
       @required Coordinates coordinates,
       @required Location location,
       @required User creator,
@@ -456,11 +480,14 @@ abstract class _Experience extends Experience {
   @override
   int get id;
   @override
-  Name get name;
+  Name get title;
   @override
   EntityDescription get description;
   @override
   Set<String> get imageURLs;
+
+  @override
+  List<Asset> get imageAssets;
   @override
   Coordinates get coordinates;
   @override

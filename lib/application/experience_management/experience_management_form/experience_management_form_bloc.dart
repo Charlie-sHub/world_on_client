@@ -6,6 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:meta/meta.dart';
+import 'package:multi_image_picker/multi_image_picker.dart';
 import 'package:worldon/application/experience_management/primitives/primitive_objective.dart';
 import 'package:worldon/application/experience_management/primitives/primitive_reward.dart';
 import 'package:worldon/core/error/failure.dart';
@@ -40,8 +41,9 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
   Stream<ExperienceManagementFormState> mapEventToState(ExperienceManagementFormEvent event) async* {
     yield* event.map(
       initialized: onInitialized,
-      nameChanged: onNameChanged,
+      titleChanged: onTitleChanged,
       descriptionChanged: onDescriptionChanged,
+      imagesChanged: onImagesChanged,
       coordinatesChanged: onCoordinatesChanged,
       difficultyChanged: onDifficultyChanged,
       objectivesChanged: onObjectivesChanged,
@@ -125,6 +127,15 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
     );
   }
 
+  Stream<ExperienceManagementFormState> onImagesChanged(_ImagesChanged event) async* {
+    yield state.copyWith(
+      experience: state.experience.copyWith(
+        imageAssets: event.imageAssets,
+      ),
+      failureOrSuccessOption: none(),
+    );
+  }
+
   Stream<ExperienceManagementFormState> onDescriptionChanged(_DescriptionChanged event) async* {
     yield state.copyWith(
       experience: state.experience.copyWith(
@@ -134,10 +145,10 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
     );
   }
 
-  Stream<ExperienceManagementFormState> onNameChanged(_NameChanged event) async* {
+  Stream<ExperienceManagementFormState> onTitleChanged(_TitleChanged event) async* {
     yield state.copyWith(
       experience: state.experience.copyWith(
-        name: Name(event.name),
+        title: Name(event.title),
       ),
       failureOrSuccessOption: none(),
     );

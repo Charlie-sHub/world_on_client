@@ -30,13 +30,16 @@ class NotificationsBody extends StatelessWidget {
         listener: (context, state) => state.maybeMap(
           // Maybe the action in progress and success are not necessary to map
           actionInProgress: (_) => FlushbarHelper.createLoading(
+            duration: const Duration(seconds: 2),
             message: "Action in progress",
             linearProgressIndicator: const LinearProgressIndicator(),
           ).show(context),
           deletionSuccess: (_) => FlushbarHelper.createSuccess(
+            duration: const Duration(seconds: 2),
             message: "Success",
           ).show(context),
           deletionFailure: (state) => FlushbarHelper.createError(
+            duration: const Duration(seconds: 2),
             message: state.failure.toString(),
           ).show(context),
           orElse: () => null,

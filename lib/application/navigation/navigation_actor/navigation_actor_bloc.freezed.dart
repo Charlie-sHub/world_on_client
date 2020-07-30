@@ -106,11 +106,14 @@ class _$NavigationActorEventCopyWithImpl<$Res> implements $NavigationActorEventC
 }
 
 abstract class _$MainFeedTappedCopyWith<$Res> {
-  factory _$MainFeedTappedCopyWith(_MainFeedTapped value, $Res Function(_MainFeedTapped) then) = __$MainFeedTappedCopyWithImpl<$Res>;
+  factory _$MainFeedTappedCopyWith(_MainFeedTapped value, $Res Function(_MainFeedTapped) then) =
+  __$MainFeedTappedCopyWithImpl<$Res>;
 }
 
-class __$MainFeedTappedCopyWithImpl<$Res> extends _$NavigationActorEventCopyWithImpl<$Res> implements _$MainFeedTappedCopyWith<$Res> {
-  __$MainFeedTappedCopyWithImpl(_MainFeedTapped _value, $Res Function(_MainFeedTapped) _then) : super(_value, (v) => _then(v as _MainFeedTapped));
+class __$MainFeedTappedCopyWithImpl<$Res> extends _$NavigationActorEventCopyWithImpl<$Res>
+  implements _$MainFeedTappedCopyWith<$Res> {
+  __$MainFeedTappedCopyWithImpl(_MainFeedTapped _value, $Res Function(_MainFeedTapped) _then)
+    : super(_value, (v) => _then(v as _MainFeedTapped));
 
   @override
   _MainFeedTapped get _value => super._value as _MainFeedTapped;
@@ -601,7 +604,6 @@ abstract class _ExperienceNavigationTapped implements NavigationActorEvent {
   const factory _ExperienceNavigationTapped(Option<Experience> experienceOption) = _$_ExperienceNavigationTapped;
 
   Option<Experience> get experienceOption;
-
   _$ExperienceNavigationTappedCopyWith<_ExperienceNavigationTapped>
   get copyWith;
 }

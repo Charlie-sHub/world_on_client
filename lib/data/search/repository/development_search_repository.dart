@@ -34,12 +34,12 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
         Experience.empty(),
         getValidExperience().copyWith(
           id: 2,
-          name: Name("Phasellus"),
+          title: Name("Phasellus"),
           difficulty: difficulty,
         ),
         getValidExperience().copyWith(
           id: 3,
-          name: Name("Itaque"),
+          title: Name("Itaque"),
           difficulty: difficulty,
         ),
       ));
@@ -60,12 +60,12 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
         Experience.empty(),
         getValidExperience().copyWith(
           id: 2,
-          name: Name("Phasellus"),
+          title: Name("Phasellus"),
           tags: tags,
         ),
         getValidExperience().copyWith(
           id: 3,
-          name: Name("Itaque"),
+          title: Name("Itaque"),
           tags: tags,
         ),
       ));
@@ -81,16 +81,16 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
     if (_random.nextBool()) {
       _either = right(KtList.of(
         getValidExperience().copyWith(
-          name: Name("Ut ${name.getOrCrash()}"),
+          title: Name("Ut ${name.getOrCrash()}"),
         ),
         Experience.empty(),
         getValidExperience().copyWith(
           id: 2,
-          name: Name("${name.getOrCrash()} mi"),
+          title: Name("${name.getOrCrash()} mi"),
         ),
         getValidExperience().copyWith(
           id: 3,
-          name: Name("Orci ${name.getOrCrash()} suscipit"),
+          title: Name("Orci ${name.getOrCrash()} suscipit"),
         ),
       ));
     } else {

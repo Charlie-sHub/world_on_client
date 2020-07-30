@@ -21,7 +21,7 @@ import '../methods/get_valid_user.dart';
 
 void main() {
   final validExperience = _getValidExperience();
-  final invalidNameExperience = validExperience.copyWith(name: Name(""));
+  final invalidNameExperience = validExperience.copyWith(title: Name(""));
   final invalidDescriptionExperience = validExperience.copyWith(description: EntityDescription(""));
   final invalidCoordinatesExperience = validExperience.copyWith(coordinates: Coordinates.empty().copyWith(latitude: Latitude(10000)));
   final invalidCreatorExperience = validExperience.copyWith(creator: User.empty());
@@ -30,14 +30,17 @@ void main() {
   final invalidModificationDateExperience = validExperience.copyWith(modificationDate: PastDate(DateTime.now().add(const Duration(days: 10))));
   final invalidObjectivesExperience = validExperience.copyWith(objectives: ObjectiveSet(KtSet.empty()));
   final invalidRewardsExperience = validExperience.copyWith(
-      rewards: RewardSet(KtSet.of(
-    Reward.empty(),
-    Reward.empty(),
-    Reward.empty(),
-    Reward.empty(),
-    Reward.empty(),
-    Reward.empty(),
-  )));
+    rewards: RewardSet(
+      KtSet.of(
+        Reward.empty(),
+        Reward.empty(),
+        Reward.empty(),
+        Reward.empty(),
+        Reward.empty(),
+        Reward.empty(),
+      ),
+    ),
+  );
   final invalidTagsExperience = validExperience.copyWith(tags: TagSet(KtSet.empty()));
   test(
     TestDescription.valid,
@@ -125,7 +128,7 @@ void main() {
 
 Experience _getValidExperience() {
   return Experience.empty().copyWith(
-    name: Name("Test"),
+    title: Name("Test"),
     description: EntityDescription("Test"),
     coordinates: Coordinates.empty(),
     location: Location.empty(),

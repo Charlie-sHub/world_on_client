@@ -61,6 +61,7 @@ class RegistrationForm extends StatelessWidget {
 
   Future onFailure(Failure failure, BuildContext context) {
     return FlushbarHelper.createError(
+      duration: const Duration(seconds: 2),
       message: failure.maybeMap(
         coreData: (failure) => failure.coreDataFailure.maybeMap(
           serverError: (failure) => failure.errorString,
@@ -70,7 +71,6 @@ class RegistrationForm extends StatelessWidget {
         ),
         orElse: () => StringConst.unknownError,
       ),
-      duration: const Duration(seconds: 5),
     ).show(context);
   }
 
@@ -264,8 +264,8 @@ class PasswordTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       onChanged: (value) => context.bloc<RegistrationFormBloc>().add(
-        RegistrationFormEvent.passwordChanged(value),
-      ),
+            RegistrationFormEvent.passwordChanged(value),
+          ),
       validator: (_) => context.bloc<RegistrationFormBloc>().state.user.password.value.fold(
           (failure) =>
           failure.maybeMap(

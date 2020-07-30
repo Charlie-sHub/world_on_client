@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:kt_dart/kt.dart';
@@ -17,7 +19,7 @@ part 'achievement.freezed.dart';
 @freezed
 abstract class Achievement implements _$Achievement {
   const Achievement._();
-
+  
   const factory Achievement({
     int id,
     @required Name name,
@@ -25,6 +27,7 @@ abstract class Achievement implements _$Achievement {
     // TODO: Make a value object and validator for image URLs from World On's back-end
     // Maybe Firestore will make that unnecessary
     @required String imageURL,
+    @required File imageFile,
     @required String type,
     @required int requisite, // This will probably be reworked in the future to accommodate different kinds of achievements
     @required ExperiencePoints experiencePoints,
@@ -33,20 +36,21 @@ abstract class Achievement implements _$Achievement {
     @required PastDate modificationDate,
     @required TagSet tags,
   }) = _Achievement;
-
+  
   factory Achievement.empty() => Achievement(
-        name: Name(""),
-        description: EntityDescription(""),
-        imageURL: "",
+    name: Name(""),
+    description: EntityDescription(""),
+    imageURL: "",
+        imageFile: File(""),
         type: "",
-        requisite: 1,
-        experiencePoints: ExperiencePoints(1),
-        creator: User.empty(),
-        creationDate: PastDate(DateTime.now()),
-        modificationDate: PastDate(DateTime.now()),
-        tags: TagSet(KtSet.empty()),
-      );
-
+    requisite: 1,
+    experiencePoints: ExperiencePoints(1),
+    creator: User.empty(),
+    creationDate: PastDate(DateTime.now()),
+    modificationDate: PastDate(DateTime.now()),
+    tags: TagSet(KtSet.empty()),
+  );
+  
   Option<ValueFailure<dynamic>> get failureOption {
     return name.failureOrUnit
       .andThen(description.failureOrUnit)
@@ -60,6 +64,6 @@ abstract class Achievement implements _$Achievement {
         (_) => none(),
     );
   }
-
+  
   bool get isValid => failureOption.isNone();
 }

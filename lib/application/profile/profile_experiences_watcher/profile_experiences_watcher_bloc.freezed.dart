@@ -226,7 +226,6 @@ abstract class _WatchExperiencesDoneStarted
   _$_WatchExperiencesDoneStarted;
 
   User get user;
-  
   _$WatchExperiencesDoneStartedCopyWith<_WatchExperiencesDoneStarted>
   get copyWith;
 }
@@ -368,7 +367,6 @@ abstract class _WatchExperiencesLikedStarted
   _$_WatchExperiencesLikedStarted;
 
   User get user;
-  
   _$WatchExperiencesLikedStartedCopyWith<_WatchExperiencesLikedStarted>
   get copyWith;
 }
@@ -511,7 +509,6 @@ abstract class _WatchExperiencesCreatedStarted
   _$_WatchExperiencesCreatedStarted;
 
   User get user;
-  
   _$WatchExperiencesCreatedStartedCopyWith<_WatchExperiencesCreatedStarted>
   get copyWith;
 }

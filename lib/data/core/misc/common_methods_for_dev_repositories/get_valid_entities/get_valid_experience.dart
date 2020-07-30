@@ -3,7 +3,6 @@ import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_v
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_coordinates.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_tag.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
-import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
@@ -21,7 +20,7 @@ import 'get_valid_reward.dart';
 Experience getValidExperience() {
   return Experience.empty().copyWith(
     id: 1,
-    name: Name("Malesuada fames ac ante"),
+    title: Name("Malesuada fames ac ante"),
     description: EntityDescription("Donec bibendum congue libero nec viverra. Cras eget placerat libero. Maecenas cursus turpis vitae ultricies tempus. In suscipit orci id dapibus molestie."),
     imageURLs: {"somePic.jpg"},
     coordinates: getValidCoordinates(),
@@ -91,7 +90,6 @@ Chillax gapers Whistler skid."""),
     ),
     comments: {
       getValidComment(),
-      Comment.empty(),
       getValidComment().copyWith(
         id: 2,
         content: CommentContent("Vinyl retro keytar biodiesel."),

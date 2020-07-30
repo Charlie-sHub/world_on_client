@@ -341,7 +341,6 @@ abstract class _WatchFollowingUsersStarted implements ProfileUsersWatcherEvent {
   _$_WatchFollowingUsersStarted;
 
   User get user;
-  
   _$WatchFollowingUsersStartedCopyWith<_WatchFollowingUsersStarted>
   get copyWith;
 }

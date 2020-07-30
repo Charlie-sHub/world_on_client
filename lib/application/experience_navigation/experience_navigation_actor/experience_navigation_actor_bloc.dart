@@ -152,9 +152,8 @@ class ExperienceNavigationActorBloc extends Bloc<ExperienceNavigationActorEvent,
       load_surrounding_experiences.Params(coordinates: _coordinates),
     );
     yield event.experienceOption.fold(
-        () => state,
-        (experience) =>
-        state.copyWith(
+      () => state,
+      (experience) => state.copyWith(
         experience: experience,
         objectiveTracker: _fillObjectiveTracker(
           fill_objective_tracker.Params(objectiveSet: experience.objectives),

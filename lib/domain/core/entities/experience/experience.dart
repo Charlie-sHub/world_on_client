@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:kt_dart/kt.dart';
+import 'package:multi_image_picker/multi_image_picker.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/location/location.dart';
@@ -26,10 +27,10 @@ abstract class Experience implements _$Experience {
   const factory Experience({
     // TODO: Add like and dislike counters
     int id,
-    // TODO: Refactor name to title
-    @required Name name,
+    @required Name title,
     @required EntityDescription description,
     @required Set<String> imageURLs,
+    @required List<Asset> imageAssets,
     @required Coordinates coordinates,
     @required Location location,
     @required User creator,
@@ -45,9 +46,10 @@ abstract class Experience implements _$Experience {
   }) = _Experience;
 
   factory Experience.empty() => Experience(
-        name: Name(""),
+        title: Name(""),
         description: EntityDescription(""),
         imageURLs: <String>{},
+    imageAssets: <Asset>[],
         coordinates: Coordinates.empty(),
         location: Location.empty(),
         creator: User.empty(),
@@ -63,7 +65,7 @@ abstract class Experience implements _$Experience {
       );
 
   Option<ValueFailure<dynamic>> get failureOption {
-    return name.failureOrUnit
+    return title.failureOrUnit
         .andThen(description.failureOrUnit)
         .andThen(coordinates.failureOrUnit)
         .andThen(creator.failureOrUnit)

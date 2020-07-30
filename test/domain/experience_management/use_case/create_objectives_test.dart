@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
@@ -14,7 +16,7 @@ import 'package:worldon/injection.dart';
 void main() {
   CreateObjectives useCase;
   setUpAll(
-    () {
+      () {
       configureDependencies(injectable.Environment.test);
       useCase = CreateObjectives();
     },
@@ -24,11 +26,13 @@ void main() {
     latitude: Latitude(0.0),
     longitude: Longitude(0.0),
   );
-  const _imageName = "test.jpg";
+  const _imageURL = "test.jpg";
+  final _imageFile = File("assets/experience_placeholder_image");
   final objective = Objective(
     description: _entityDescription,
     coordinates: _coordinates,
-    imageName: _imageName,
+    imageURL: _imageURL,
+    imageFile: _imageFile,
   );
   final objectives = KtSet.of(
     objective,
@@ -38,11 +42,12 @@ void main() {
   final params = Params(
     description: _entityDescription,
     coordinates: _coordinates,
-    imageName: _imageName,
+    imageURL: _imageURL,
+    imageFile: _imageFile,
   );
   test(
     "Should return a Set equivalent to objectives",
-    () async {
+      () async {
       // Act
       var result = _act(useCase, params);
       result = _act(useCase, params);

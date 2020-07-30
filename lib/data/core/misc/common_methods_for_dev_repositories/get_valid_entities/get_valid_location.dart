@@ -23,7 +23,7 @@ Location getValidLocation() {
     experiences: {
       Experience.empty().copyWith(
         id: 3,
-        name: Name("Joyce neocapitalist"),
+        title: Name("Joyce neocapitalist"),
         description: EntityDescription("""
 If the patriarchialist paradigm of narrative holds,
 we have to choose between neocapitalist libertarianism and neodialectic capitalist theory.

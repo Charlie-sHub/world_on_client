@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
@@ -23,7 +25,7 @@ part 'user.freezed.dart';
 @freezed
 abstract class User implements _$User {
   const User._();
-
+  
   const factory User({
     int id,
     @required Name name,
@@ -33,6 +35,7 @@ abstract class User implements _$User {
     @required PastDate birthday,
     @required EntityDescription description,
     @required String imageURL,
+    @required File imageFile,
     // TODO: Make levels entities
     // To hold the points between levels
     // Or investigate how leveling systems are usually implemented.
@@ -55,62 +58,63 @@ abstract class User implements _$User {
     @required Set<Experience> experiencesLiked,
     @required Set<Experience> experiencesToDo,
   }) = _User;
-
+  
   factory User.empty() => User(
-        name: Name(""),
-        username: Name(""),
-        password: Password(""),
-        email: EmailAddress(""),
-        birthday: PastDate(DateTime.now()),
-        description: EntityDescription(""),
-        imageURL: "",
+    name: Name(""),
+    username: Name(""),
+    password: Password(""),
+    email: EmailAddress(""),
+    birthday: PastDate(DateTime.now()),
+    description: EntityDescription(""),
+    imageURL: "",
+        imageFile: File(""),
         level: UserLevel(0),
-        experiencePoints: ExperiencePoints(0),
-        privacy: false,
-        adminPowers: false,
-        enabled: true,
-        lastLogin: PastDate(DateTime.now()),
-        creationDate: PastDate(DateTime.now()),
-        modificationDate: PastDate(DateTime.now()),
-        options: const Options(
-          id: 1,
-          languageCode: "",
-        ),
-        blockedUsers: <User>{},
-        followedUsers: <User>{},
-        devices: <Device>{},
-        systems: <System>{},
-        interests: <Tag>{},
-        achievements: <Achievement>{},
-        experiencesDone: <Experience>{},
-        experiencesLiked: <Experience>{},
-        experiencesToDo: <Experience>{},
-      );
-
+    experiencePoints: ExperiencePoints(0),
+    privacy: false,
+    adminPowers: false,
+    enabled: true,
+    lastLogin: PastDate(DateTime.now()),
+    creationDate: PastDate(DateTime.now()),
+    modificationDate: PastDate(DateTime.now()),
+    options: const Options(
+      id: 1,
+      languageCode: "",
+    ),
+    blockedUsers: <User>{},
+    followedUsers: <User>{},
+    devices: <Device>{},
+    systems: <System>{},
+    interests: <Tag>{},
+    achievements: <Achievement>{},
+    experiencesDone: <Experience>{},
+    experiencesLiked: <Experience>{},
+    experiencesToDo: <Experience>{},
+  );
+  
   Option<ValueFailure<dynamic>> get failureOption {
     return name.failureOrUnit
-        .andThen(username.failureOrUnit)
-        .andThen(password.failureOrUnit)
-        .andThen(email.failureOrUnit)
-        .andThen(birthday.failureOrUnit)
-        .andThen(description.failureOrUnit)
-        .andThen(level.failureOrUnit)
-        .andThen(experiencePoints.failureOrUnit)
-        .andThen(lastLogin.failureOrUnit)
-        .andThen(creationDate.failureOrUnit)
-        .andThen(modificationDate.failureOrUnit)
-        .fold(
-          (failure) => some(failure),
-          (_) => none(),
-        );
-  }
-
-  Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
-    return failureOption.fold(
-      () => right(unit),
-      (failure) => left(failure),
+      .andThen(username.failureOrUnit)
+      .andThen(password.failureOrUnit)
+      .andThen(email.failureOrUnit)
+      .andThen(birthday.failureOrUnit)
+      .andThen(description.failureOrUnit)
+      .andThen(level.failureOrUnit)
+      .andThen(experiencePoints.failureOrUnit)
+      .andThen(lastLogin.failureOrUnit)
+      .andThen(creationDate.failureOrUnit)
+      .andThen(modificationDate.failureOrUnit)
+      .fold(
+        (failure) => some(failure),
+        (_) => none(),
     );
   }
-
+  
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
+    return failureOption.fold(
+        () => right(unit),
+        (failure) => left(failure),
+    );
+  }
+  
   bool get isValid => failureOption.isNone();
 }

@@ -87,8 +87,8 @@ class UnFollowButton extends StatelessWidget {
         color: WorldOnColors.red,
       ),
       onPressed: () => context.bloc<FollowActorBloc>().add(
-        FollowActorEvent.unFollowed(user),
-      ),
+            FollowActorEvent.unFollowed(user),
+          ),
     );
   }
 }
@@ -97,6 +97,7 @@ void userFollowListener(BuildContext context, FollowActorState state) =>
   state.maybeMap(
     followFailure: (state) =>
       FlushbarHelper.createError(
+        duration: const Duration(seconds: 2),
         message: state.failure.maybeMap(
           coreData: (failure) =>
             failure.coreDataFailure.maybeMap(
@@ -113,6 +114,7 @@ void userFollowListener(BuildContext context, FollowActorState state) =>
       ).show(context),
     unFollowFailure: (state) =>
       FlushbarHelper.createError(
+        duration: const Duration(seconds: 2),
         message: state.failure.maybeMap(
           coreData: (failure) =>
             failure.coreDataFailure.maybeMap(
