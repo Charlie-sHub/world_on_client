@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
@@ -16,26 +17,37 @@ part 'rate_experience_difficulty_actor_state.dart';
 
 @injectable
 class RateExperienceDifficultyActorBloc extends Bloc<RateExperienceDifficultyActorEvent, RateExperienceDifficultyActorState> {
-  RateExperienceDifficultyActorBloc() : super(const RateExperienceDifficultyActorState.initial());
+  RateExperienceDifficultyActorBloc() : super(RateExperienceDifficultyActorState.initial());
 
   @override
   Stream<RateExperienceDifficultyActorState> mapEventToState(RateExperienceDifficultyActorEvent event) async* {
     yield* event.map(
-      difficultyRated: (event) async* {
-        yield const RateExperienceDifficultyActorState.actionInProgress();
-        final _difficulty = Difficulty(event.difficultyRating);
-        final _rateDifficulty = getIt<RateDifficulty>();
-        final _failureOrUnit = await _rateDifficulty(
-          Params(
-            difficulty: _difficulty,
-            experienceId: event.experience.id,
-          ),
-        );
-        yield _failureOrUnit.fold(
-          (failure) => RateExperienceDifficultyActorState.ratingFailure(failure),
-          (_) => const RateExperienceDifficultyActorState.ratingSuccess(),
+      difficultyChanged: (event) async* {
+        yield state.copyWith(
+          difficulty: event.difficultyRating,
+          failureOrSuccessOption: none(),
         );
       },
+      difficultyRated: onDifficultyRated,
+    );
+  }
+
+  Stream<RateExperienceDifficultyActorState> onDifficultyRated(_DifficultyRated event) async* {
+    yield state.copyWith(
+      isSubmitting: true,
+      failureOrSuccessOption: none(),
+    );
+    final _difficulty = Difficulty(state.difficulty);
+    final _rateDifficulty = getIt<RateDifficulty>();
+    final _failureOrUnit = await _rateDifficulty(
+      Params(
+        difficulty: _difficulty,
+        experienceId: event.experience.id,
+      ),
+    );
+    yield state.copyWith(
+      isSubmitting: false,
+      failureOrSuccessOption: optionOf(_failureOrUnit),
     );
   }
 }

@@ -9,10 +9,7 @@ import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_v
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/tag_management/repository/tag_management_repository_interface.dart';
 
-@LazySingleton(
-  as: TagManagementRepositoryInterface,
-  env: [Environment.dev],
-)
+@LazySingleton(as: TagManagementRepositoryInterface, env: [Environment.dev])
 class DevelopmentTagManagementRepository implements TagManagementRepositoryInterface {
   final _random = Random();
 

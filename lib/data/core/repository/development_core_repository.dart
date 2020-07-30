@@ -7,10 +7,7 @@ import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_l
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_right_future.dart';
 import 'package:worldon/domain/core/repository/core_repository_interface.dart';
 
-@LazySingleton(
-  as: CoreRepositoryInterface,
-  env: [Environment.dev],
-)
+@LazySingleton(as: CoreRepositoryInterface, env: [Environment.dev])
 class DevelopmentCoreRepository implements CoreRepositoryInterface {
   final _random = Random();
 

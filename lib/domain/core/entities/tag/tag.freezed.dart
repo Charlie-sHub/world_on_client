@@ -141,11 +141,11 @@ class _$_Tag extends _Tag {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Tag &&
-          (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-          (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-          (identical(other.creator, creator) || const DeepCollectionEquality().equals(other.creator, creator)) &&
-          (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
-          (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.creator, creator) || const DeepCollectionEquality().equals(other.creator, creator)) &&
+            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+            (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)));
   }
 
   @override

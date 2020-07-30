@@ -5,10 +5,10 @@ import 'package:worldon/application/experience_navigation/experience_navigation_
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
-import 'package:worldon/views/experience_navigation/widget/experience_finish.dart';
 import 'package:worldon/views/experience_navigation/widget/experience_navigation.dart';
 
 import '../../../injection.dart';
+import 'experience_finish.dart';
 
 class ExperienceNavigationBody extends StatelessWidget {
   final Option<Experience> experienceOption;
@@ -60,7 +60,7 @@ class NoExperienceText extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: const <Widget>[
             Text(
               "No Experience chosen",
               style: TextStyle(
@@ -69,7 +69,7 @@ class NoExperienceText extends StatelessWidget {
                 fontSize: 25,
               ),
             ),
-            const SizedBox(height: 5),
+            SizedBox(height: 5),
             Text(
               "Please select an Experience to start the adventure of your life!",
               style: TextStyle(

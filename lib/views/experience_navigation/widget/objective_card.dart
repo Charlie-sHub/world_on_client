@@ -12,33 +12,37 @@ class ObjectiveCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () => context.bloc<ObjectivesTrackerBloc>().add(
-            ObjectivesTrackerEvent.objectiveAccomplished(objective),
-          ),
-      child: Card(
-        shape: const RoundedRectangleBorder(),
-        child: Row(
-          children: <Widget>[
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(5),
-                child: AutoSizeText(
-                  objective.description.getOrCrash(),
-                  style: const TextStyle(
-                    fontSize: 12,
-                    color: WorldOnColors.background,
+    return BlocBuilder<ObjectivesTrackerBloc, ObjectivesTrackerState>(
+      builder: (context, state) => InkWell(
+        // TODO: Change to a button
+        onTap: () => context.bloc<ObjectivesTrackerBloc>().add(
+              ObjectivesTrackerEvent.objectiveAccomplished(objective),
+            ),
+        child: Card(
+          color: state.objectivesToDo.contains(objective) ? WorldOnColors.white : Colors.green,
+          shape: const RoundedRectangleBorder(),
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(5),
+                  child: AutoSizeText(
+                    objective.description.getOrCrash(),
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: WorldOnColors.background,
+                    ),
                   ),
                 ),
               ),
-            ),
-            const Expanded(
-              child: Image(
-                image: AssetImage('assets/objective_placeholder.jpg'),
-                fit: BoxFit.fill,
+              const Expanded(
+                child: Image(
+                  image: AssetImage('assets/objective_placeholder.jpg'),
+                  fit: BoxFit.fill,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

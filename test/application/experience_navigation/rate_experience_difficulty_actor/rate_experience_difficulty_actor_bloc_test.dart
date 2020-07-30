@@ -20,9 +20,9 @@ void main() {
       rateDifficulty = getIt<RateDifficulty>();
     },
   );
-  const difficultyRating = 5;
-  final experience = getValidExperience();
-  const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
+  const _difficultyRating = 5;
+  final _experience = getValidExperience();
+  const _failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
     build: () => getIt<RateExperienceDifficultyActorBloc>(),
@@ -30,38 +30,67 @@ void main() {
   );
   blocTest(
     TestDescription.shouldEmitSuccess,
-    build: () {
-      when(rateDifficulty.call(any)).thenAnswer((_) async => right(unit));
-      return getIt<RateExperienceDifficultyActorBloc>();
-    },
+    build: () => getIt<RateExperienceDifficultyActorBloc>(),
     act: (bloc) async => bloc.add(
-      RateExperienceDifficultyActorEvent.difficultyRated(
-        experience: experience,
-        difficultyRating: difficultyRating,
-      ),
+      const RateExperienceDifficultyActorEvent.difficultyChanged(_difficultyRating),
     ),
-    verify: (_) async => verify(rateDifficulty.call(any)),
     expect: [
-      const RateExperienceDifficultyActorState.actionInProgress(),
-      const RateExperienceDifficultyActorState.ratingSuccess(),
+      RateExperienceDifficultyActorState.initial().copyWith(difficulty: _difficultyRating),
     ],
   );
-  blocTest(
-    TestDescription.shouldEmitFailure,
-    build: () {
-      when(rateDifficulty.call(any)).thenAnswer((_) async => left(failure));
-      return getIt<RateExperienceDifficultyActorBloc>();
+  group(
+    "Testing rating",
+    () {
+      blocTest(
+        TestDescription.shouldEmitSuccess,
+        build: () {
+          when(rateDifficulty.call(any)).thenAnswer((_) async => right(unit));
+          return getIt<RateExperienceDifficultyActorBloc>();
+        },
+        act: (bloc) async {
+          bloc.add(const RateExperienceDifficultyActorEvent.difficultyChanged(_difficultyRating));
+          bloc.add(RateExperienceDifficultyActorEvent.difficultyRated(_experience));
+        },
+        verify: (_) async => verify(rateDifficulty.call(any)),
+        expect: [
+          RateExperienceDifficultyActorState.initial().copyWith(
+            difficulty: _difficultyRating,
+          ),
+          RateExperienceDifficultyActorState.initial().copyWith(
+            difficulty: _difficultyRating,
+            isSubmitting: true,
+          ),
+          RateExperienceDifficultyActorState.initial().copyWith(
+            difficulty: _difficultyRating,
+            failureOrSuccessOption: some(right(unit)),
+          ),
+        ],
+      );
+      blocTest(
+        TestDescription.shouldEmitFailure,
+        build: () {
+          when(rateDifficulty.call(any)).thenAnswer((_) async => left(_failure));
+          return getIt<RateExperienceDifficultyActorBloc>();
+        },
+        act: (bloc) async {
+          bloc.add(const RateExperienceDifficultyActorEvent.difficultyChanged(_difficultyRating));
+          bloc.add(RateExperienceDifficultyActorEvent.difficultyRated(_experience));
+        },
+        verify: (_) async => verify(rateDifficulty.call(any)),
+        expect: [
+          RateExperienceDifficultyActorState.initial().copyWith(
+            difficulty: _difficultyRating,
+          ),
+          RateExperienceDifficultyActorState.initial().copyWith(
+            difficulty: _difficultyRating,
+            isSubmitting: true,
+          ),
+          RateExperienceDifficultyActorState.initial().copyWith(
+            difficulty: _difficultyRating,
+            failureOrSuccessOption: some(left(_failure)),
+          ),
+        ],
+      );
     },
-    act: (bloc) async => bloc.add(
-      RateExperienceDifficultyActorEvent.difficultyRated(
-        experience: experience,
-        difficultyRating: difficultyRating,
-      ),
-    ),
-    verify: (_) async => verify(rateDifficulty.call(any)),
-    expect: [
-      const RateExperienceDifficultyActorState.actionInProgress(),
-      const RateExperienceDifficultyActorState.ratingFailure(failure),
-    ],
   );
 }

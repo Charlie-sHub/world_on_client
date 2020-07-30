@@ -9,10 +9,7 @@ import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_v
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/experience_management/repository/experience_management_repository_interface.dart';
 
-@LazySingleton(
-  as: ExperienceManagementRepositoryInterface,
-  env: [Environment.dev],
-)
+@LazySingleton(as: ExperienceManagementRepositoryInterface, env: [Environment.dev])
 class DevelopmentExperienceManagementRepository implements ExperienceManagementRepositoryInterface {
   final _random = Random();
 

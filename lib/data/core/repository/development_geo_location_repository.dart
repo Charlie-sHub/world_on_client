@@ -8,10 +8,7 @@ import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_v
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/repository/geo_location_repository_interface.dart';
 
-@LazySingleton(
-  as: GeoLocationRepositoryInterface,
-  env: [Environment.dev],
-)
+@LazySingleton(as: GeoLocationRepositoryInterface, env: [Environment.dev])
 class DevelopmentGeoLocationRepository implements GeoLocationRepositoryInterface {
   final _random = Random();
 

@@ -13,10 +13,7 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/experience_log/repository/experience_log_repository_interface.dart';
 
-@LazySingleton(
-  as: ExperienceLogRepositoryInterface,
-  env: [Environment.dev],
-)
+@LazySingleton(as: ExperienceLogRepositoryInterface, env: [Environment.dev])
 class DevelopmentExperienceLogRepository implements ExperienceLogRepositoryInterface {
   final _random = Random();
 

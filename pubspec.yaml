@@ -77,6 +77,8 @@ dependencies:
   unicorndial: ^1.1.5
   # For Ease of detecting swipes
   swipedetector: ^1.2.0
+  # To add shadow to icons with less boiler plate
+  icon_shadow: ^1.0.1
   uuid: ^2.2.0
 
 dev_dependencies:

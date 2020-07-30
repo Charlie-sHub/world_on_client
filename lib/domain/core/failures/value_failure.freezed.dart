@@ -2157,7 +2157,7 @@ abstract class StringWithInvalidCharacters<T> implements ValueFailure<T> {
   const factory StringWithInvalidCharacters({@required String failedValue}) = _$StringWithInvalidCharacters<T>;
 
   String get failedValue;
-  
+
   $StringWithInvalidCharactersCopyWith<T, StringWithInvalidCharacters<T>> get copyWith;
 }
 
@@ -2544,8 +2544,8 @@ class _$SetExceedsLengthCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl
 
 class _$SetExceedsLength<T> with DiagnosticableTreeMixin implements SetExceedsLength<T> {
   const _$SetExceedsLength({@required this.failedValue, @required this.maxLength})
-    : assert(failedValue != null),
-      assert(maxLength != null);
+      : assert(failedValue != null),
+        assert(maxLength != null);
 
   @override
   final T failedValue;

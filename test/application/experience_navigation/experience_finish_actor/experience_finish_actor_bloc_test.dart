@@ -46,7 +46,6 @@ void main() {
     expect: [
       const ExperienceFinishActorState.actionInProgress(),
       const ExperienceFinishActorState.finishSuccess(),
-      const ExperienceFinishActorState.rewardSuccess(),
     ],
   );
   blocTest(
@@ -65,7 +64,6 @@ void main() {
     expect: [
       const ExperienceFinishActorState.actionInProgress(),
       const ExperienceFinishActorState.finishFailure(failure),
-      const ExperienceFinishActorState.rewardSuccess(),
     ],
   );
   blocTest(
@@ -83,8 +81,7 @@ void main() {
     },
     expect: [
       const ExperienceFinishActorState.actionInProgress(),
-      const ExperienceFinishActorState.finishSuccess(),
-      const ExperienceFinishActorState.rewardFailure(failure),
+      const ExperienceFinishActorState.finishFailure(failure),
     ],
   );
   blocTest(
@@ -103,7 +100,6 @@ void main() {
     expect: [
       const ExperienceFinishActorState.actionInProgress(),
       const ExperienceFinishActorState.finishFailure(failure),
-      const ExperienceFinishActorState.rewardFailure(failure),
     ],
   );
 }

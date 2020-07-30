@@ -498,7 +498,8 @@ class _$_User extends _User {
 abstract class _User extends User {
   const _User._() : super._();
 
-  const factory _User({int id,
+  const factory _User(
+      {int id,
       @required Name name,
       @required Name username,
       @required Password password,

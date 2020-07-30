@@ -9,10 +9,7 @@ import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_v
 import 'package:worldon/domain/authentication/repository/authentication_repository_interface.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 
-@LazySingleton(
-  as: AuthenticationRepositoryInterface,
-  env: [Environment.dev],
-)
+@LazySingleton(as: AuthenticationRepositoryInterface, env: [Environment.dev])
 class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInterface {
   final _random = Random();
 

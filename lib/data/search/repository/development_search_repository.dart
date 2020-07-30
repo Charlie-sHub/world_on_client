@@ -19,10 +19,7 @@ import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 import 'package:worldon/domain/core/validation/objects/user_level.dart';
 import 'package:worldon/domain/search/repository/search_repository_interface.dart';
 
-@LazySingleton(
-  as: SearchRepositoryInterface,
-  env: [Environment.dev],
-)
+@LazySingleton(as: SearchRepositoryInterface, env: [Environment.dev])
 class DevelopmentSearchRepository implements SearchRepositoryInterface {
   final _random = Random();
 

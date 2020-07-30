@@ -13,9 +13,9 @@ class FollowUnfollowButtonBuilder extends StatelessWidget {
     Key key,
     @required this.user,
   }) : super(key: key);
-  
+
   final User user;
-  
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -54,9 +54,9 @@ class FollowButton extends StatelessWidget {
     Key key,
     @required this.user,
   }) : super(key: key);
-  
+
   final User user;
-  
+
   @override
   Widget build(BuildContext context) {
     return IconButton(
@@ -65,8 +65,8 @@ class FollowButton extends StatelessWidget {
         color: WorldOnColors.accent,
       ),
       onPressed: () => context.bloc<FollowActorBloc>().add(
-        FollowActorEvent.followed(user),
-      ),
+            FollowActorEvent.followed(user),
+          ),
     );
   }
 }
@@ -76,9 +76,9 @@ class UnFollowButton extends StatelessWidget {
     Key key,
     @required this.user,
   }) : super(key: key);
-  
+
   final User user;
-  
+
   @override
   Widget build(BuildContext context) {
     return IconButton(

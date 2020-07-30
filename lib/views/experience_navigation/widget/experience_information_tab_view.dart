@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/views/core/misc/common_functions/get_color_by_difficulty.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
-import 'package:worldon/views/core/widget/cards/reward_card.dart';
-import 'package:worldon/views/core/widget/cards/reward_error_card.dart';
 import 'package:worldon/views/core/widget/cards/simple_tag_display.dart';
 import 'package:worldon/views/core/widget/cards/user_card.dart';
 import 'package:worldon/views/core/widget/misc/block_unblock_button_builder.dart';
@@ -12,6 +10,8 @@ import 'package:worldon/views/core/widget/misc/experience_done_counter.dart';
 import 'package:worldon/views/core/widget/misc/experience_likes_counter.dart';
 import 'package:worldon/views/core/widget/misc/follow_unfollow_button_builder.dart';
 import 'package:worldon/views/core/widget/misc/user_image.dart';
+
+import 'rewards_list_view.dart';
 
 class ExperienceInformationTabView extends StatelessWidget {
   const ExperienceInformationTabView({
@@ -174,39 +174,6 @@ class ExperienceHeader extends StatelessWidget {
             fontSize: 25,
           ),
         ),
-      ),
-    );
-  }
-}
-
-class RewardsListView extends StatelessWidget {
-  const RewardsListView({
-    Key key,
-    @required this.experience,
-  }) : super(key: key);
-
-  final Experience experience;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 280,
-      color: WorldOnColors.background,
-      child: ListView.builder(
-        padding: const EdgeInsets.all(10),
-        itemCount: experience.rewards.getOrCrash().size,
-        shrinkWrap: true,
-        physics: const ClampingScrollPhysics(),
-        itemBuilder: (context, index) {
-          // Damn this is convoluted
-          // TODO: Change the KtSets in the Set value objects to KtLists
-          final _reward = experience.rewards.getOrCrash().asSet().elementAt(index);
-          if (_reward.isValid) {
-            return RewardCard(reward: _reward);
-          } else {
-            return RewardErrorCard(reward: _reward);
-          }
-        },
       ),
     );
   }

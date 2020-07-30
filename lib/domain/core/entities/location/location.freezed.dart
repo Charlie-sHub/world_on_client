@@ -126,11 +126,11 @@ class _$_Location extends _Location {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Location &&
-          (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-          (identical(other.city, city) || const DeepCollectionEquality().equals(other.city, city)) &&
-          (identical(other.country, country) || const DeepCollectionEquality().equals(other.country, country)) &&
-          (identical(other.postalCode, postalCode) || const DeepCollectionEquality().equals(other.postalCode, postalCode)) &&
-          (identical(other.experiences, experiences) || const DeepCollectionEquality().equals(other.experiences, experiences)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.city, city) || const DeepCollectionEquality().equals(other.city, city)) &&
+            (identical(other.country, country) || const DeepCollectionEquality().equals(other.country, country)) &&
+            (identical(other.postalCode, postalCode) || const DeepCollectionEquality().equals(other.postalCode, postalCode)) &&
+            (identical(other.experiences, experiences) || const DeepCollectionEquality().equals(other.experiences, experiences)));
   }
 
   @override

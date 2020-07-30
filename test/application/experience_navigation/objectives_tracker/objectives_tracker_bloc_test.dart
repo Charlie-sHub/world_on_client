@@ -29,15 +29,15 @@ void main() {
     expect: [],
   );
   blocTest(
-    "Should Initialize with a map of Objectives and false bool values",
+    "Should Initialize with a KtList with the objectives yet to complete",
     build: () => getIt<ObjectivesTrackerBloc>(),
     act: (bloc) async => bloc.add(ObjectivesTrackerEvent.initialized(objectiveSet)),
     expect: [
       ObjectivesTrackerState.initial().copyWith(
-        objectiveTracker: {
-          firstObjective: false,
-          secondObjective: false,
-        },
+        objectivesToDo: KtList.of(
+          firstObjective,
+          secondObjective,
+        ),
       ),
     ],
   );
@@ -45,7 +45,7 @@ void main() {
     "Testing on accomplishment",
     () {
       blocTest(
-        "Should update the map with the accomplishment of the first objective",
+        "Should update the KtList removing the firstObjective",
         build: () => getIt<ObjectivesTrackerBloc>(),
         act: (bloc) async {
           bloc.add(ObjectivesTrackerEvent.initialized(objectiveSet));
@@ -53,15 +53,18 @@ void main() {
         },
         expect: [
           ObjectivesTrackerState.initial().copyWith(
-            objectiveTracker: {
-              firstObjective: true,
-              secondObjective: false,
-            },
+            objectivesToDo: KtList.of(
+              firstObjective,
+              secondObjective,
+            ),
+          ),
+          ObjectivesTrackerState.initial().copyWith(
+            objectivesToDo: KtList.of(secondObjective),
           ),
         ],
       );
       blocTest(
-        "Should update the map with the accomplishment of the second objective",
+        "Should update the KtList removing the secondObjective",
         build: () => getIt<ObjectivesTrackerBloc>(),
         act: (bloc) async {
           bloc.add(ObjectivesTrackerEvent.initialized(objectiveSet));
@@ -69,15 +72,18 @@ void main() {
         },
         expect: [
           ObjectivesTrackerState.initial().copyWith(
-            objectiveTracker: {
-              firstObjective: false,
-              secondObjective: true,
-            },
+            objectivesToDo: KtList.of(
+              firstObjective,
+              secondObjective,
+            ),
+          ),
+          ObjectivesTrackerState.initial().copyWith(
+            objectivesToDo: KtList.of(firstObjective),
           ),
         ],
       );
       blocTest(
-        "Should update the map with the accomplishment of an objective",
+        "Should update the KtList removing both objectives and isFinished to true",
         build: () => getIt<ObjectivesTrackerBloc>(),
         act: (bloc) async {
           bloc.add(ObjectivesTrackerEvent.initialized(objectiveSet));
@@ -86,16 +92,15 @@ void main() {
         },
         expect: [
           ObjectivesTrackerState.initial().copyWith(
-            objectiveTracker: {
-              firstObjective: true,
-              secondObjective: true,
-            },
+            objectivesToDo: KtList.of(
+              firstObjective,
+              secondObjective,
+            ),
           ),
           ObjectivesTrackerState.initial().copyWith(
-            objectiveTracker: {
-              firstObjective: true,
-              secondObjective: true,
-            },
+            objectivesToDo: KtList.of(secondObjective),
+          ),
+          ObjectivesTrackerState.initial().copyWith(
             isFinished: true,
           ),
         ],

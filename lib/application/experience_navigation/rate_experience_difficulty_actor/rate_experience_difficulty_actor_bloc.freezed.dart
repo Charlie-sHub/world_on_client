@@ -13,10 +13,16 @@ class _$RateExperienceDifficultyActorEventTearOff {
   const _$RateExperienceDifficultyActorEventTearOff();
 
 // ignore: unused_element
-  _DifficultyRated difficultyRated({@required Experience experience, @required int difficultyRating}) {
+  _DifficultyChanged difficultyChanged(int difficultyRating) {
+    return _DifficultyChanged(
+      difficultyRating,
+    );
+  }
+
+// ignore: unused_element
+  _DifficultyRated difficultyRated(Experience experience) {
     return _DifficultyRated(
-      experience: experience,
-      difficultyRating: difficultyRating,
+      experience,
     );
   }
 }
@@ -25,63 +31,187 @@ class _$RateExperienceDifficultyActorEventTearOff {
 const $RateExperienceDifficultyActorEvent = _$RateExperienceDifficultyActorEventTearOff();
 
 mixin _$RateExperienceDifficultyActorEvent {
-  Experience get experience;
-
-  int get difficultyRating;
-
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result difficultyRated(Experience experience, int difficultyRating),
+    @required Result difficultyChanged(int difficultyRating),
+    @required Result difficultyRated(Experience experience),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result difficultyRated(Experience experience, int difficultyRating),
+    Result difficultyChanged(int difficultyRating),
+    Result difficultyRated(Experience experience),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result difficultyChanged(_DifficultyChanged value),
     @required Result difficultyRated(_DifficultyRated value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result difficultyChanged(_DifficultyChanged value),
     Result difficultyRated(_DifficultyRated value),
     @required Result orElse(),
   });
-
-  $RateExperienceDifficultyActorEventCopyWith<RateExperienceDifficultyActorEvent> get copyWith;
 }
 
 abstract class $RateExperienceDifficultyActorEventCopyWith<$Res> {
   factory $RateExperienceDifficultyActorEventCopyWith(RateExperienceDifficultyActorEvent value, $Res Function(RateExperienceDifficultyActorEvent) then) =
       _$RateExperienceDifficultyActorEventCopyWithImpl<$Res>;
-
-  $Res call({Experience experience, int difficultyRating});
-
-  $ExperienceCopyWith<$Res> get experience;
 }
 
-class _$RateExperienceDifficultyActorEventCopyWithImpl<$Res> implements $RateExperienceDifficultyActorEventCopyWith<$Res> {
+class _$RateExperienceDifficultyActorEventCopyWithImpl<$Res>
+  implements $RateExperienceDifficultyActorEventCopyWith<$Res> {
   _$RateExperienceDifficultyActorEventCopyWithImpl(this._value, this._then);
 
   final RateExperienceDifficultyActorEvent _value;
-
   // ignore: unused_field
   final $Res Function(RateExperienceDifficultyActorEvent) _then;
+}
+
+abstract class _$DifficultyChangedCopyWith<$Res> {
+  factory _$DifficultyChangedCopyWith(_DifficultyChanged value, $Res Function(_DifficultyChanged) then) =
+  __$DifficultyChangedCopyWithImpl<$Res>;
+  
+  $Res call({int difficultyRating});
+}
+
+class __$DifficultyChangedCopyWithImpl<$Res> extends _$RateExperienceDifficultyActorEventCopyWithImpl<$Res>
+  implements _$DifficultyChangedCopyWith<$Res> {
+  __$DifficultyChangedCopyWithImpl(_DifficultyChanged _value, $Res Function(_DifficultyChanged) _then)
+    : super(_value, (v) => _then(v as _DifficultyChanged));
+  
+  @override
+  _DifficultyChanged get _value => super._value as _DifficultyChanged;
+  
+  @override
+  $Res call({
+    Object difficultyRating = freezed,
+  }) {
+    return _then(_DifficultyChanged(
+      difficultyRating == freezed
+        ? _value.difficultyRating
+        : difficultyRating as int,
+    ));
+  }
+}
+
+class _$_DifficultyChanged implements _DifficultyChanged {
+  const _$_DifficultyChanged(this.difficultyRating)
+    : assert(difficultyRating != null);
+  
+  @override
+  final int difficultyRating;
+  
+  @override
+  String toString() {
+    return 'RateExperienceDifficultyActorEvent.difficultyChanged(difficultyRating: $difficultyRating)';
+  }
+  
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+      (other is _DifficultyChanged &&
+        (identical(other.difficultyRating, difficultyRating) ||
+          const DeepCollectionEquality()
+            .equals(other.difficultyRating, difficultyRating)));
+  }
+  
+  @override
+  int get hashCode =>
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(difficultyRating);
+  
+  @override
+  _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith =>
+    __$DifficultyChangedCopyWithImpl<_DifficultyChanged>(this, _$identity);
+  
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result difficultyChanged(int difficultyRating),
+    @required Result difficultyRated(Experience experience),
+  }) {
+    assert(difficultyChanged != null);
+    assert(difficultyRated != null);
+    return difficultyChanged(difficultyRating);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result difficultyChanged(int difficultyRating),
+    Result difficultyRated(Experience experience),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (difficultyChanged != null) {
+      return difficultyChanged(difficultyRating);
+    }
+    return orElse();
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result difficultyChanged(_DifficultyChanged value),
+    @required Result difficultyRated(_DifficultyRated value),
+  }) {
+    assert(difficultyChanged != null);
+    assert(difficultyRated != null);
+    return difficultyChanged(this);
+  }
+  
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result difficultyChanged(_DifficultyChanged value),
+    Result difficultyRated(_DifficultyRated value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (difficultyChanged != null) {
+      return difficultyChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DifficultyChanged
+  implements RateExperienceDifficultyActorEvent {
+  const factory _DifficultyChanged(int difficultyRating) = _$_DifficultyChanged;
+  
+  int get difficultyRating;
+  
+  _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith;
+}
+
+abstract class _$DifficultyRatedCopyWith<$Res> {
+  factory _$DifficultyRatedCopyWith(_DifficultyRated value, $Res Function(_DifficultyRated) then) =
+  __$DifficultyRatedCopyWithImpl<$Res>;
+  
+  $Res call({Experience experience});
+  
+  $ExperienceCopyWith<$Res> get experience;
+}
+
+class __$DifficultyRatedCopyWithImpl<$Res> extends _$RateExperienceDifficultyActorEventCopyWithImpl<$Res>
+  implements _$DifficultyRatedCopyWith<$Res> {
+  __$DifficultyRatedCopyWithImpl(_DifficultyRated _value, $Res Function(_DifficultyRated) _then)
+    : super(_value, (v) => _then(v as _DifficultyRated));
+
+  @override
+  _DifficultyRated get _value => super._value as _DifficultyRated;
 
   @override
   $Res call({
     Object experience = freezed,
-    Object difficultyRating = freezed,
   }) {
-    return _then(_value.copyWith(
-      experience: experience == freezed ? _value.experience : experience as Experience,
-      difficultyRating: difficultyRating == freezed ? _value.difficultyRating : difficultyRating as int,
+    return _then(_DifficultyRated(
+      experience == freezed ? _value.experience : experience as Experience,
     ));
   }
-
+  
   @override
   $ExperienceCopyWith<$Res> get experience {
     if (_value.experience == null) {
@@ -93,81 +223,55 @@ class _$RateExperienceDifficultyActorEventCopyWithImpl<$Res> implements $RateExp
   }
 }
 
-abstract class _$DifficultyRatedCopyWith<$Res> implements $RateExperienceDifficultyActorEventCopyWith<$Res> {
-  factory _$DifficultyRatedCopyWith(_DifficultyRated value, $Res Function(_DifficultyRated) then) = __$DifficultyRatedCopyWithImpl<$Res>;
-
-  @override
-  $Res call({Experience experience, int difficultyRating});
-
-  @override
-  $ExperienceCopyWith<$Res> get experience;
-}
-
-class __$DifficultyRatedCopyWithImpl<$Res> extends _$RateExperienceDifficultyActorEventCopyWithImpl<$Res> implements _$DifficultyRatedCopyWith<$Res> {
-  __$DifficultyRatedCopyWithImpl(_DifficultyRated _value, $Res Function(_DifficultyRated) _then) : super(_value, (v) => _then(v as _DifficultyRated));
-
-  @override
-  _DifficultyRated get _value => super._value as _DifficultyRated;
-
-  @override
-  $Res call({
-    Object experience = freezed,
-    Object difficultyRating = freezed,
-  }) {
-    return _then(_DifficultyRated(
-      experience: experience == freezed ? _value.experience : experience as Experience,
-      difficultyRating: difficultyRating == freezed ? _value.difficultyRating : difficultyRating as int,
-    ));
-  }
-}
-
 class _$_DifficultyRated implements _DifficultyRated {
-  const _$_DifficultyRated({@required this.experience, @required this.difficultyRating})
-      : assert(experience != null),
-        assert(difficultyRating != null);
+  const _$_DifficultyRated(this.experience) : assert(experience != null);
 
   @override
   final Experience experience;
-  @override
-  final int difficultyRating;
 
   @override
   String toString() {
-    return 'RateExperienceDifficultyActorEvent.difficultyRated(experience: $experience, difficultyRating: $difficultyRating)';
+    return 'RateExperienceDifficultyActorEvent.difficultyRated(experience: $experience)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _DifficultyRated &&
-            (identical(other.experience, experience) || const DeepCollectionEquality().equals(other.experience, experience)) &&
-            (identical(other.difficultyRating, difficultyRating) || const DeepCollectionEquality().equals(other.difficultyRating, difficultyRating)));
+          (identical(other.experience, experience) ||
+            const DeepCollectionEquality()
+              .equals(other.experience, experience)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience) ^ const DeepCollectionEquality().hash(difficultyRating);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
   @override
-  _$DifficultyRatedCopyWith<_DifficultyRated> get copyWith => __$DifficultyRatedCopyWithImpl<_DifficultyRated>(this, _$identity);
+  _$DifficultyRatedCopyWith<_DifficultyRated> get copyWith =>
+    __$DifficultyRatedCopyWithImpl<_DifficultyRated>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result difficultyRated(Experience experience, int difficultyRating),
+    @required Result difficultyChanged(int difficultyRating),
+    @required Result difficultyRated(Experience experience),
   }) {
+    assert(difficultyChanged != null);
     assert(difficultyRated != null);
-    return difficultyRated(experience, difficultyRating);
+    return difficultyRated(experience);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result difficultyRated(Experience experience, int difficultyRating),
+    Result difficultyChanged(int difficultyRating),
+    Result difficultyRated(Experience experience),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (difficultyRated != null) {
-      return difficultyRated(experience, difficultyRating);
+      return difficultyRated(experience);
     }
     return orElse();
   }
@@ -175,8 +279,10 @@ class _$_DifficultyRated implements _DifficultyRated {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result difficultyChanged(_DifficultyChanged value),
     @required Result difficultyRated(_DifficultyRated value),
   }) {
+    assert(difficultyChanged != null);
     assert(difficultyRated != null);
     return difficultyRated(this);
   }
@@ -184,6 +290,7 @@ class _$_DifficultyRated implements _DifficultyRated {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result difficultyChanged(_DifficultyChanged value),
     Result difficultyRated(_DifficultyRated value),
     @required Result orElse(),
   }) {
@@ -196,15 +303,9 @@ class _$_DifficultyRated implements _DifficultyRated {
 }
 
 abstract class _DifficultyRated implements RateExperienceDifficultyActorEvent {
-  const factory _DifficultyRated({@required Experience experience, @required int difficultyRating}) = _$_DifficultyRated;
+  const factory _DifficultyRated(Experience experience) = _$_DifficultyRated;
 
-  @override
   Experience get experience;
-
-  @override
-  int get difficultyRating;
-
-  @override
   _$DifficultyRatedCopyWith<_DifficultyRated> get copyWith;
 }
 
@@ -212,486 +313,171 @@ class _$RateExperienceDifficultyActorStateTearOff {
   const _$RateExperienceDifficultyActorStateTearOff();
 
 // ignore: unused_element
-  _Initial initial() {
-    return const _Initial();
-  }
-
-// ignore: unused_element
-  _ActionInProgress actionInProgress() {
-    return const _ActionInProgress();
-  }
-
-// ignore: unused_element
-  _RatingSuccess ratingSuccess() {
-    return const _RatingSuccess();
-  }
-
-// ignore: unused_element
-  _RatingFailure ratingFailure(Failure<dynamic> failure) {
-    return _RatingFailure(
-      failure,
+  _RateExperienceDifficultyActorState call({@required int difficulty,
+    @required bool isSubmitting,
+    @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
+    return _RateExperienceDifficultyActorState(
+      difficulty: difficulty,
+      isSubmitting: isSubmitting,
+      failureOrSuccessOption: failureOrSuccessOption,
     );
   }
 }
 
 // ignore: unused_element
-const $RateExperienceDifficultyActorState = _$RateExperienceDifficultyActorStateTearOff();
+const $RateExperienceDifficultyActorState =
+_$RateExperienceDifficultyActorStateTearOff();
 
 mixin _$RateExperienceDifficultyActorState {
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result ratingSuccess(),
-    @required Result ratingFailure(Failure<dynamic> failure),
-  });
-
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result ratingSuccess(),
-    Result ratingFailure(Failure<dynamic> failure),
-    @required Result orElse(),
-  });
-
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result ratingSuccess(_RatingSuccess value),
-    @required Result ratingFailure(_RatingFailure value),
-  });
-
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result ratingSuccess(_RatingSuccess value),
-    Result ratingFailure(_RatingFailure value),
-    @required Result orElse(),
-  });
+  int get difficulty;
+  
+  bool get isSubmitting;
+  
+  Option<Either<Failure, Unit>> get failureOrSuccessOption;
+  
+  $RateExperienceDifficultyActorStateCopyWith<
+    RateExperienceDifficultyActorState> get copyWith;
 }
 
 abstract class $RateExperienceDifficultyActorStateCopyWith<$Res> {
-  factory $RateExperienceDifficultyActorStateCopyWith(RateExperienceDifficultyActorState value, $Res Function(RateExperienceDifficultyActorState) then) =
+  factory $RateExperienceDifficultyActorStateCopyWith(RateExperienceDifficultyActorState value,
+    $Res Function(RateExperienceDifficultyActorState) then) =
       _$RateExperienceDifficultyActorStateCopyWithImpl<$Res>;
+  
+  $Res call({int difficulty,
+    bool isSubmitting,
+    Option<Either<Failure, Unit>> failureOrSuccessOption});
 }
 
-class _$RateExperienceDifficultyActorStateCopyWithImpl<$Res> implements $RateExperienceDifficultyActorStateCopyWith<$Res> {
+class _$RateExperienceDifficultyActorStateCopyWithImpl<$Res>
+  implements $RateExperienceDifficultyActorStateCopyWith<$Res> {
   _$RateExperienceDifficultyActorStateCopyWithImpl(this._value, this._then);
 
   final RateExperienceDifficultyActorState _value;
-
   // ignore: unused_field
   final $Res Function(RateExperienceDifficultyActorState) _then;
-}
-
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
-}
-
-class __$InitialCopyWithImpl<$Res> extends _$RateExperienceDifficultyActorStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
-}
-
-class _$_Initial implements _Initial {
-  const _$_Initial();
-
-  @override
-  String toString() {
-    return 'RateExperienceDifficultyActorState.initial()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result ratingSuccess(),
-    @required Result ratingFailure(Failure<dynamic> failure),
-  }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(ratingSuccess != null);
-    assert(ratingFailure != null);
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result ratingSuccess(),
-    Result ratingFailure(Failure<dynamic> failure),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result ratingSuccess(_RatingSuccess value),
-    @required Result ratingFailure(_RatingFailure value),
-  }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(ratingSuccess != null);
-    assert(ratingFailure != null);
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result ratingSuccess(_RatingSuccess value),
-    Result ratingFailure(_RatingFailure value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements RateExperienceDifficultyActorState {
-  const factory _Initial() = _$_Initial;
-}
-
-abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) = __$ActionInProgressCopyWithImpl<$Res>;
-}
-
-class __$ActionInProgressCopyWithImpl<$Res> extends _$RateExperienceDifficultyActorStateCopyWithImpl<$Res> implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then) : super(_value, (v) => _then(v as _ActionInProgress));
-
-  @override
-  _ActionInProgress get _value => super._value as _ActionInProgress;
-}
-
-class _$_ActionInProgress implements _ActionInProgress {
-  const _$_ActionInProgress();
-
-  @override
-  String toString() {
-    return 'RateExperienceDifficultyActorState.actionInProgress()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ActionInProgress);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result ratingSuccess(),
-    @required Result ratingFailure(Failure<dynamic> failure),
-  }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(ratingSuccess != null);
-    assert(ratingFailure != null);
-    return actionInProgress();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result ratingSuccess(),
-    Result ratingFailure(Failure<dynamic> failure),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (actionInProgress != null) {
-      return actionInProgress();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result ratingSuccess(_RatingSuccess value),
-    @required Result ratingFailure(_RatingFailure value),
-  }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(ratingSuccess != null);
-    assert(ratingFailure != null);
-    return actionInProgress(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result ratingSuccess(_RatingSuccess value),
-    Result ratingFailure(_RatingFailure value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (actionInProgress != null) {
-      return actionInProgress(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ActionInProgress implements RateExperienceDifficultyActorState {
-  const factory _ActionInProgress() = _$_ActionInProgress;
-}
-
-abstract class _$RatingSuccessCopyWith<$Res> {
-  factory _$RatingSuccessCopyWith(_RatingSuccess value, $Res Function(_RatingSuccess) then) = __$RatingSuccessCopyWithImpl<$Res>;
-}
-
-class __$RatingSuccessCopyWithImpl<$Res> extends _$RateExperienceDifficultyActorStateCopyWithImpl<$Res> implements _$RatingSuccessCopyWith<$Res> {
-  __$RatingSuccessCopyWithImpl(_RatingSuccess _value, $Res Function(_RatingSuccess) _then) : super(_value, (v) => _then(v as _RatingSuccess));
-
-  @override
-  _RatingSuccess get _value => super._value as _RatingSuccess;
-}
-
-class _$_RatingSuccess implements _RatingSuccess {
-  const _$_RatingSuccess();
-
-  @override
-  String toString() {
-    return 'RateExperienceDifficultyActorState.ratingSuccess()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _RatingSuccess);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result ratingSuccess(),
-    @required Result ratingFailure(Failure<dynamic> failure),
-  }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(ratingSuccess != null);
-    assert(ratingFailure != null);
-    return ratingSuccess();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result ratingSuccess(),
-    Result ratingFailure(Failure<dynamic> failure),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (ratingSuccess != null) {
-      return ratingSuccess();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result ratingSuccess(_RatingSuccess value),
-    @required Result ratingFailure(_RatingFailure value),
-  }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(ratingSuccess != null);
-    assert(ratingFailure != null);
-    return ratingSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result ratingSuccess(_RatingSuccess value),
-    Result ratingFailure(_RatingFailure value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (ratingSuccess != null) {
-      return ratingSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _RatingSuccess implements RateExperienceDifficultyActorState {
-  const factory _RatingSuccess() = _$_RatingSuccess;
-}
-
-abstract class _$RatingFailureCopyWith<$Res> {
-  factory _$RatingFailureCopyWith(_RatingFailure value, $Res Function(_RatingFailure) then) = __$RatingFailureCopyWithImpl<$Res>;
-
-  $Res call({Failure<dynamic> failure});
-
-  $FailureCopyWith<dynamic, $Res> get failure;
-}
-
-class __$RatingFailureCopyWithImpl<$Res> extends _$RateExperienceDifficultyActorStateCopyWithImpl<$Res> implements _$RatingFailureCopyWith<$Res> {
-  __$RatingFailureCopyWithImpl(_RatingFailure _value, $Res Function(_RatingFailure) _then) : super(_value, (v) => _then(v as _RatingFailure));
-
-  @override
-  _RatingFailure get _value => super._value as _RatingFailure;
 
   @override
   $Res call({
-    Object failure = freezed,
+    Object difficulty = freezed,
+    Object isSubmitting = freezed,
+    Object failureOrSuccessOption = freezed,
   }) {
-    return _then(_RatingFailure(
-      failure == freezed ? _value.failure : failure as Failure<dynamic>,
+    return _then(_value.copyWith(
+      difficulty: difficulty == freezed ? _value.difficulty : difficulty as int,
+      isSubmitting:
+      isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      failureOrSuccessOption: failureOrSuccessOption == freezed
+        ? _value.failureOrSuccessOption
+        : failureOrSuccessOption as Option<Either<Failure, Unit>>,
     ));
-  }
-
-  @override
-  $FailureCopyWith<dynamic, $Res> get failure {
-    if (_value.failure == null) {
-      return null;
-    }
-    return $FailureCopyWith<dynamic, $Res>(_value.failure, (value) {
-      return _then(_value.copyWith(failure: value));
-    });
   }
 }
 
-class _$_RatingFailure implements _RatingFailure {
-  const _$_RatingFailure(this.failure) : assert(failure != null);
+abstract class _$RateExperienceDifficultyActorStateCopyWith<$Res>
+  implements $RateExperienceDifficultyActorStateCopyWith<$Res> {
+  factory _$RateExperienceDifficultyActorStateCopyWith(_RateExperienceDifficultyActorState value,
+    $Res Function(_RateExperienceDifficultyActorState) then) =
+  __$RateExperienceDifficultyActorStateCopyWithImpl<$Res>;
+  
+  @override
+  $Res call({int difficulty,
+    bool isSubmitting,
+    Option<Either<Failure, Unit>> failureOrSuccessOption});
+}
+
+class __$RateExperienceDifficultyActorStateCopyWithImpl<$Res> extends _$RateExperienceDifficultyActorStateCopyWithImpl<$Res>
+  implements _$RateExperienceDifficultyActorStateCopyWith<$Res> {
+  __$RateExperienceDifficultyActorStateCopyWithImpl(_RateExperienceDifficultyActorState _value,
+    $Res Function(_RateExperienceDifficultyActorState) _then)
+    : super(_value, (v) => _then(v as _RateExperienceDifficultyActorState));
 
   @override
-  final Failure<dynamic> failure;
+  _RateExperienceDifficultyActorState get _value =>
+    super._value as _RateExperienceDifficultyActorState;
+
+  @override
+  $Res call({
+    Object difficulty = freezed,
+    Object isSubmitting = freezed,
+    Object failureOrSuccessOption = freezed,
+  }) {
+    return _then(_RateExperienceDifficultyActorState(
+      difficulty: difficulty == freezed ? _value.difficulty : difficulty as int,
+      isSubmitting:
+      isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      failureOrSuccessOption: failureOrSuccessOption == freezed
+        ? _value.failureOrSuccessOption
+        : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+    ));
+  }
+}
+
+class _$_RateExperienceDifficultyActorState
+  implements _RateExperienceDifficultyActorState {
+  const _$_RateExperienceDifficultyActorState({@required this.difficulty,
+    @required this.isSubmitting,
+    @required this.failureOrSuccessOption})
+    : assert(difficulty != null),
+      assert(isSubmitting != null),
+      assert(failureOrSuccessOption != null);
+
+  @override
+  final int difficulty;
+  @override
+  final bool isSubmitting;
+  @override
+  final Option<Either<Failure, Unit>> failureOrSuccessOption;
 
   @override
   String toString() {
-    return 'RateExperienceDifficultyActorState.ratingFailure(failure: $failure)';
+    return 'RateExperienceDifficultyActorState(difficulty: $difficulty, isSubmitting: $isSubmitting, failureOrSuccessOption: $failureOrSuccessOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _RatingFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) ||
+      (other is _RateExperienceDifficultyActorState &&
+        (identical(other.difficulty, difficulty) ||
+          const DeepCollectionEquality()
+            .equals(other.difficulty, difficulty)) &&
+        (identical(other.isSubmitting, isSubmitting) ||
+          const DeepCollectionEquality()
+            .equals(other.isSubmitting, isSubmitting)) &&
+        (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
+          const DeepCollectionEquality().equals(
+            other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(difficulty) ^
+    const DeepCollectionEquality().hash(isSubmitting) ^
+    const DeepCollectionEquality().hash(failureOrSuccessOption);
 
   @override
-  _$RatingFailureCopyWith<_RatingFailure> get copyWith => __$RatingFailureCopyWithImpl<_RatingFailure>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result ratingSuccess(),
-    @required Result ratingFailure(Failure<dynamic> failure),
-  }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(ratingSuccess != null);
-    assert(ratingFailure != null);
-    return ratingFailure(failure);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result ratingSuccess(),
-    Result ratingFailure(Failure<dynamic> failure),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (ratingFailure != null) {
-      return ratingFailure(failure);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result ratingSuccess(_RatingSuccess value),
-    @required Result ratingFailure(_RatingFailure value),
-  }) {
-    assert(initial != null);
-    assert(actionInProgress != null);
-    assert(ratingSuccess != null);
-    assert(ratingFailure != null);
-    return ratingFailure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result ratingSuccess(_RatingSuccess value),
-    Result ratingFailure(_RatingFailure value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (ratingFailure != null) {
-      return ratingFailure(this);
-    }
-    return orElse();
-  }
+  _$RateExperienceDifficultyActorStateCopyWith<
+    _RateExperienceDifficultyActorState>
+  get copyWith =>
+    __$RateExperienceDifficultyActorStateCopyWithImpl<
+      _RateExperienceDifficultyActorState>(this, _$identity);
 }
 
-abstract class _RatingFailure implements RateExperienceDifficultyActorState {
-  const factory _RatingFailure(Failure<dynamic> failure) = _$_RatingFailure;
+abstract class _RateExperienceDifficultyActorState
+  implements RateExperienceDifficultyActorState {
+  const factory _RateExperienceDifficultyActorState({@required int difficulty,
+    @required bool isSubmitting,
+    @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
+  _$_RateExperienceDifficultyActorState;
 
-  Failure<dynamic> get failure;
-
-  _$RatingFailureCopyWith<_RatingFailure> get copyWith;
+  @override
+  int get difficulty;
+  @override
+  bool get isSubmitting;
+  @override
+  Option<Either<Failure, Unit>> get failureOrSuccessOption;
+  @override
+  _$RateExperienceDifficultyActorStateCopyWith<
+    _RateExperienceDifficultyActorState> get copyWith;
 }

@@ -315,7 +315,7 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AuthenticationData<T> &&
-          (identical(other.authenticationDataFailure, authenticationDataFailure) || const DeepCollectionEquality().equals(other.authenticationDataFailure, authenticationDataFailure)));
+            (identical(other.authenticationDataFailure, authenticationDataFailure) || const DeepCollectionEquality().equals(other.authenticationDataFailure, authenticationDataFailure)));
   }
 
   @override

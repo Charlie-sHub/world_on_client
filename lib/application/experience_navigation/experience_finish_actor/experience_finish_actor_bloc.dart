@@ -24,24 +24,22 @@ class ExperienceFinishActorBloc extends Bloc<ExperienceFinishActorEvent, Experie
     );
   }
 
-  // Maybe these should be separate events
   Stream<ExperienceFinishActorState> onFinishedExperience(_FinishedExperience event) async* {
     yield const ExperienceFinishActorState.actionInProgress();
     final _finishExperience = getIt<finish_experience.FinishExperience>();
     final _finishFailureOrUnit = await _finishExperience(
       finish_experience.Params(experienceId: event.experience.id),
     );
-    yield _finishFailureOrUnit.fold(
-      (failure) => ExperienceFinishActorState.finishFailure(failure),
-      (_) => const ExperienceFinishActorState.finishSuccess(),
-    );
     final _rewardUser = getIt<reward_user.RewardUser>();
     final _rewardFailureOrUnit = await _rewardUser(
       reward_user.Params(experienceId: event.experience.id),
     );
-    yield _rewardFailureOrUnit.fold(
-      (failure) => ExperienceFinishActorState.rewardFailure(failure),
-      (_) => const ExperienceFinishActorState.rewardSuccess(),
+    yield _finishFailureOrUnit.fold(
+      (failure) => ExperienceFinishActorState.finishFailure(failure),
+      (_) => _rewardFailureOrUnit.fold(
+        (failure) => ExperienceFinishActorState.finishFailure(failure),
+        (_) => const ExperienceFinishActorState.finishSuccess(),
+      ),
     );
   }
 }

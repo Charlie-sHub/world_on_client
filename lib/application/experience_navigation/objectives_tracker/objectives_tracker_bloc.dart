@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/validation/objects/objective_set.dart';
@@ -24,17 +25,16 @@ class ObjectivesTrackerBloc extends Bloc<ObjectivesTrackerEvent, ObjectivesTrack
   }
 
   Stream<ObjectivesTrackerState> onObjectiveAccomplished(_ObjectiveAccomplished event) async* {
-    state.objectiveTracker[event.objective] = true;
+    // Maybe it's unnecessary, but this way i make sure the list can only change where i want it to change
+    final mutableKtList = state.objectivesToDo.toMutableList();
+    mutableKtList.remove(event.objective);
     yield state.copyWith(
-      isFinished: !state.objectiveTracker.containsValue(false),
+      objectivesToDo: mutableKtList.toList(),
+      isFinished: mutableKtList.isEmpty(),
     );
   }
 
   Stream<ObjectivesTrackerState> onInitialized(_Initialized event) async* {
-    final objectiveMap = <Objective, bool>{};
-    event.objectiveSet.getOrCrash().asSet().forEach(
-          (objective) => objectiveMap[objective] = false,
-        );
-    yield state.copyWith(objectiveTracker: objectiveMap);
+    yield state.copyWith(objectivesToDo: event.objectiveSet.getOrCrash().toList());
   }
 }

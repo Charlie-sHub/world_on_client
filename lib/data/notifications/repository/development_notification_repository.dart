@@ -15,10 +15,7 @@ import 'package:worldon/domain/core/entities/notification/notification_type_enum
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/notifications/repository/notification_repository_interface.dart';
 
-@LazySingleton(
-  as: NotificationRepositoryInterface,
-  env: [Environment.dev],
-)
+@LazySingleton(as: NotificationRepositoryInterface, env: [Environment.dev])
 class DevelopmentNotificationRepository implements NotificationRepositoryInterface {
   final _random = Random();
 

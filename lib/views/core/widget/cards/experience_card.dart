@@ -80,8 +80,8 @@ class ExperienceCard extends StatelessWidget {
                       spacing: 5,
                       children: <Widget>[
                         ...experience.tags.getOrCrash().asSet().map(
-                            (tag) => SimpleTagDisplay(tag: tag),
-                        ),
+                              (tag) => SimpleTagDisplay(tag: tag),
+                            ),
                       ],
                     ),
                   ],

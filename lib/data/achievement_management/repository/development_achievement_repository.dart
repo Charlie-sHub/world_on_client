@@ -13,10 +13,8 @@ import 'package:worldon/domain/achievement_management/repository/achievement_rep
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 
-@LazySingleton(
-  as: AchievementRepositoryInterface,
-  env: [Environment.dev],
-)
+// TODO: Maybe rework the dev repositories so they use Hive or some phone database
+@LazySingleton(as: AchievementRepositoryInterface, env: [Environment.dev])
 class DevelopmentAchievementRepository implements AchievementRepositoryInterface {
   final _random = Random();
 

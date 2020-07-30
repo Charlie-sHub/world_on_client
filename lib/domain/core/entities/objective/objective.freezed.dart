@@ -132,10 +132,10 @@ class _$_Objective extends _Objective {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Objective &&
-          (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-          (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-          (identical(other.coordinates, coordinates) || const DeepCollectionEquality().equals(other.coordinates, coordinates)) &&
-          (identical(other.imageName, imageName) || const DeepCollectionEquality().equals(other.imageName, imageName)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.coordinates, coordinates) || const DeepCollectionEquality().equals(other.coordinates, coordinates)) &&
+            (identical(other.imageName, imageName) || const DeepCollectionEquality().equals(other.imageName, imageName)));
   }
 
   @override

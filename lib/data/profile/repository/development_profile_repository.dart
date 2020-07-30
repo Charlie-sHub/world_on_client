@@ -19,10 +19,7 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 
-@LazySingleton(
-  as: ProfileRepositoryInterface,
-  env: [Environment.dev],
-)
+@LazySingleton(as: ProfileRepositoryInterface, env: [Environment.dev])
 class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   final _random = Random();
 

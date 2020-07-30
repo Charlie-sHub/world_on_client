@@ -13,10 +13,7 @@ import 'package:worldon/domain/comments/repository/comment_repository_interface.
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 
-@LazySingleton(
-  as: CommentRepositoryInterface,
-  env: [Environment.dev],
-)
+@LazySingleton(as: CommentRepositoryInterface, env: [Environment.dev])
 class DevelopmentCommentRepository implements CommentRepositoryInterface {
   final _random = Random();
 

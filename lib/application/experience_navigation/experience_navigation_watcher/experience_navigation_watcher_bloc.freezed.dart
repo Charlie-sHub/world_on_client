@@ -36,20 +36,17 @@ mixin _$ExperienceNavigationWatcherEvent {
     @required Result initialized(Option<Experience> experienceOption),
     @required Result allObjectivesAccomplished(Experience experience),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(Option<Experience> experienceOption),
     Result allObjectivesAccomplished(Experience experience),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
     @required Result allObjectivesAccomplished(_AllObjectivesAccomplished value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
@@ -67,14 +64,12 @@ class _$ExperienceNavigationWatcherEventCopyWithImpl<$Res> implements $Experienc
   _$ExperienceNavigationWatcherEventCopyWithImpl(this._value, this._then);
 
   final ExperienceNavigationWatcherEvent _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceNavigationWatcherEvent) _then;
 }
 
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
-
   $Res call({Option<Experience> experienceOption});
 }
 
@@ -172,13 +167,11 @@ abstract class _Initialized implements ExperienceNavigationWatcherEvent {
   const factory _Initialized(Option<Experience> experienceOption) = _$_Initialized;
 
   Option<Experience> get experienceOption;
-
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
 abstract class _$AllObjectivesAccomplishedCopyWith<$Res> {
   factory _$AllObjectivesAccomplishedCopyWith(_AllObjectivesAccomplished value, $Res Function(_AllObjectivesAccomplished) then) = __$AllObjectivesAccomplishedCopyWithImpl<$Res>;
-
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
@@ -287,7 +280,6 @@ abstract class _AllObjectivesAccomplished implements ExperienceNavigationWatcher
   const factory _AllObjectivesAccomplished(Experience experience) = _$_AllObjectivesAccomplished;
 
   Experience get experience;
-
   _$AllObjectivesAccomplishedCopyWith<_AllObjectivesAccomplished> get copyWith;
 }
 
@@ -330,7 +322,6 @@ mixin _$ExperienceNavigationWatcherState {
     @required Result navigatingExperience(Experience experience),
     @required Result finishExperience(Experience experience),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
@@ -339,7 +330,6 @@ mixin _$ExperienceNavigationWatcherState {
     Result finishExperience(Experience experience),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
@@ -347,7 +337,6 @@ mixin _$ExperienceNavigationWatcherState {
     @required Result navigatingExperience(_NavigatingExperience value),
     @required Result finishExperience(_FinishExperience value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
@@ -367,7 +356,6 @@ class _$ExperienceNavigationWatcherStateCopyWithImpl<$Res> implements $Experienc
   _$ExperienceNavigationWatcherStateCopyWithImpl(this._value, this._then);
 
   final ExperienceNavigationWatcherState _value;
-
   // ignore: unused_field
   final $Res Function(ExperienceNavigationWatcherState) _then;
 }
@@ -562,7 +550,6 @@ abstract class _NoExperience implements ExperienceNavigationWatcherState {
 
 abstract class _$NavigatingExperienceCopyWith<$Res> {
   factory _$NavigatingExperienceCopyWith(_NavigatingExperience value, $Res Function(_NavigatingExperience) then) = __$NavigatingExperienceCopyWithImpl<$Res>;
-
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
@@ -683,13 +670,11 @@ abstract class _NavigatingExperience implements ExperienceNavigationWatcherState
   const factory _NavigatingExperience(Experience experience) = _$_NavigatingExperience;
 
   Experience get experience;
-
   _$NavigatingExperienceCopyWith<_NavigatingExperience> get copyWith;
 }
 
 abstract class _$FinishExperienceCopyWith<$Res> {
   factory _$FinishExperienceCopyWith(_FinishExperience value, $Res Function(_FinishExperience) then) = __$FinishExperienceCopyWithImpl<$Res>;
-
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
@@ -810,6 +795,5 @@ abstract class _FinishExperience implements ExperienceNavigationWatcherState {
   const factory _FinishExperience(Experience experience) = _$_FinishExperience;
 
   Experience get experience;
-
   _$FinishExperienceCopyWith<_FinishExperience> get copyWith;
 }

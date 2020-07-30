@@ -15,10 +15,7 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/tag_management/repository/tag_repository_interface.dart';
 
-@LazySingleton(
-  as: TagCoreRepositoryInterface,
-  env: [Environment.dev],
-)
+@LazySingleton(as: TagCoreRepositoryInterface, env: [Environment.dev])
 class DevelopmentTagRepository implements TagCoreRepositoryInterface {
   final _random = Random();
 

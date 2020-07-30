@@ -145,7 +145,7 @@ class ExperienceNavigationActorBloc extends Bloc<ExperienceNavigationActorEvent,
     final _loadSurroundingExperiences = getIt<load_surrounding_experiences.LoadSurroundingExperiences>();
     final _fillObjectiveTracker = getIt<fill_objective_tracker.FillObjectiveTracker>();
     final _coordinates = _getCurrentLocation(getIt<NoParams>()).fold(
-        (failure) => Coordinates.empty(),
+      (failure) => Coordinates.empty(),
       id,
     );
     final _failureOrExperiences = await _loadSurroundingExperiences(

@@ -13,9 +13,9 @@ class BlockUnblockButtonBuilder extends StatelessWidget {
     Key key,
     @required this.user,
   }) : super(key: key);
-  
+
   final User user;
-  
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -54,9 +54,9 @@ class BlockButton extends StatelessWidget {
     Key key,
     @required this.user,
   }) : super(key: key);
-  
+
   final User user;
-  
+
   @override
   Widget build(BuildContext context) {
     return IconButton(
@@ -65,8 +65,8 @@ class BlockButton extends StatelessWidget {
         color: WorldOnColors.red,
       ),
       onPressed: () => context.bloc<BlockActorBloc>().add(
-        BlockActorEvent.blocked(user),
-      ),
+            BlockActorEvent.blocked(user),
+          ),
     );
   }
 }
@@ -76,9 +76,9 @@ class UnBlockButton extends StatelessWidget {
     Key key,
     @required this.user,
   }) : super(key: key);
-  
+
   final User user;
-  
+
   @override
   Widget build(BuildContext context) {
     return IconButton(

@@ -13,10 +13,7 @@ import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_interface.dart';
 
-@LazySingleton(
-  as: ExperienceNavigationRepositoryInterface,
-  env: [Environment.dev],
-)
+@LazySingleton(as: ExperienceNavigationRepositoryInterface, env: [Environment.dev])
 class DevelopmentExperienceNavigationRepository implements ExperienceNavigationRepositoryInterface {
   final _random = Random();
 

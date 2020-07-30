@@ -8,10 +8,7 @@ import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_r
 import 'package:worldon/domain/core/entities/options/options.dart';
 import 'package:worldon/domain/options/repository/remote_options_repository_interface.dart';
 
-@LazySingleton(
-  as: RemoteOptionsRepositoryInterface,
-  env: [Environment.dev],
-)
+@LazySingleton(as: RemoteOptionsRepositoryInterface, env: [Environment.dev])
 class DevelopmentRemoteOptionsRepository implements RemoteOptionsRepositoryInterface {
   final _random = Random();
 
