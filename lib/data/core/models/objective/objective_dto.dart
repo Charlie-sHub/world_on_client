@@ -11,30 +11,31 @@ part 'objective_dto.g.dart';
 @freezed
 abstract class ObjectiveDto implements _$ObjectiveDto {
   const ObjectiveDto._();
-  
+
   const factory ObjectiveDto({
     @required int id,
     @required String description,
     @required CoordinatesDto coordinates,
     @required String imageURL,
-    @required String imageFile,
+    @required List<int> imageFile,
   }) = _ObjectiveDto;
-  
+
   factory ObjectiveDto.fromDomain(Objective objective) => ObjectiveDto(
-    id: objective.id,
-    description: objective.description.getOrCrash(),
-    coordinates: CoordinatesDto.fromDomain(objective.coordinates),
+        id: objective.id,
+        description: objective.description.getOrCrash(),
+        coordinates: CoordinatesDto.fromDomain(objective.coordinates),
         imageURL: objective.imageURL,
-        imageFile: objective.imageFile.readAsStringSync(),
+    imageFile: objective.imageFile.readAsBytesSync(),
       );
-  
+
   Objective toDomain() => Objective(
     id: id,
     description: EntityDescription(description),
     coordinates: coordinates.toDomain(),
     imageURL: imageURL,
-    imageFile: File(""),
+    imageFile: File("test.jpg")
+      ..openWrite().write(imageFile),
   );
-  
+
   factory ObjectiveDto.fromJson(Map<String, dynamic> json) => _$ObjectiveDtoFromJson(json);
 }

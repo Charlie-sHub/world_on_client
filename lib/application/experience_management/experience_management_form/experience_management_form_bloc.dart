@@ -130,7 +130,7 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
   Stream<ExperienceManagementFormState> onImagesChanged(_ImagesChanged event) async* {
     yield state.copyWith(
       experience: state.experience.copyWith(
-        imageAssets: event.imageAssets,
+        imageAssetsOption: some(event.imageAssets),
       ),
       failureOrSuccessOption: none(),
     );

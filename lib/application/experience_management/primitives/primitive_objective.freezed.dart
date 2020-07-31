@@ -30,7 +30,6 @@ mixin _$PrimitiveObjective {
   String get description;
   double get latitude;
   double get longitude;
-
   File get imageFile;
 
   $PrimitiveObjectiveCopyWith<PrimitiveObjective> get copyWith;
@@ -171,7 +170,6 @@ abstract class _PrimitiveObjective extends PrimitiveObjective {
   double get latitude;
   @override
   double get longitude;
-
   @override
   File get imageFile;
   @override

@@ -25,7 +25,7 @@ part 'user.freezed.dart';
 @freezed
 abstract class User implements _$User {
   const User._();
-  
+
   const factory User({
     int id,
     @required Name name,
@@ -35,7 +35,7 @@ abstract class User implements _$User {
     @required PastDate birthday,
     @required EntityDescription description,
     @required String imageURL,
-    @required File imageFile,
+    @required Option<File> imageFileOption,
     // TODO: Make levels entities
     // To hold the points between levels
     // Or investigate how leveling systems are usually implemented.
@@ -58,16 +58,16 @@ abstract class User implements _$User {
     @required Set<Experience> experiencesLiked,
     @required Set<Experience> experiencesToDo,
   }) = _User;
-  
+
   factory User.empty() => User(
-    name: Name(""),
-    username: Name(""),
-    password: Password(""),
-    email: EmailAddress(""),
-    birthday: PastDate(DateTime.now()),
-    description: EntityDescription(""),
-    imageURL: "",
-        imageFile: File(""),
+        name: Name(""),
+        username: Name(""),
+        password: Password(""),
+        email: EmailAddress(""),
+        birthday: PastDate(DateTime.now()),
+        description: EntityDescription(""),
+        imageURL: "",
+        imageFileOption: none(),
         level: UserLevel(0),
     experiencePoints: ExperiencePoints(0),
     privacy: false,
@@ -90,7 +90,7 @@ abstract class User implements _$User {
     experiencesLiked: <Experience>{},
     experiencesToDo: <Experience>{},
   );
-  
+
   Option<ValueFailure<dynamic>> get failureOption {
     return name.failureOrUnit
       .andThen(username.failureOrUnit)
@@ -108,13 +108,13 @@ abstract class User implements _$User {
         (_) => none(),
     );
   }
-  
+
   Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
     return failureOption.fold(
         () => right(unit),
         (failure) => left(failure),
     );
   }
-  
+
   bool get isValid => failureOption.isNone();
 }

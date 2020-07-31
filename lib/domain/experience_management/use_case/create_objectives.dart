@@ -20,7 +20,7 @@ import 'package:worldon/domain/experience_management/use_case/create_experience.
 @LazySingleton(env: [Environment.dev, Environment.prod])
 class CreateObjectives implements UseCase<ObjectiveSet, Params> {
   final KtMutableSet<Objective> objectives = KtMutableSet.empty();
-  
+
   @override
   Either<Failure, ObjectiveSet> call(Params params) {
     final objective = Objective.empty().copyWith(

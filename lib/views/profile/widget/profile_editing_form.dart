@@ -6,8 +6,23 @@ class ProfileEditingForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("Profile Editing Form"),
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text(
+          "Editing Profile",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+          ),
+          textAlign: TextAlign.center,
+        ),
+      ),
+      body: const Center(
+        child: Text(
+          "Profile Editing Form",
+        ),
+      ),
     );
   }
 }

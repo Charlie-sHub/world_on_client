@@ -12,7 +12,7 @@ _$_AchievementDto _$_$_AchievementDtoFromJson(Map<String, dynamic> json) {
     name: json['name'] as String,
     description: json['description'] as String,
     imageURL: json['imageURL'] as String,
-    imageFile: json['imageFile'] as String,
+    imageFile: (json['imageFile'] as List)?.map((e) => e as int)?.toList(),
     type: json['type'] as String,
     requisite: json['requisite'] as int,
     experiencePoints: json['experiencePoints'] as int,

@@ -12,7 +12,7 @@ _$_ObjectiveDto _$_$_ObjectiveDtoFromJson(Map<String, dynamic> json) {
     description: json['description'] as String,
     coordinates: json['coordinates'] == null ? null : CoordinatesDto.fromJson(json['coordinates'] as Map<String, dynamic>),
     imageURL: json['imageURL'] as String,
-    imageFile: json['imageFile'] as String,
+    imageFile: (json['imageFile'] as List)?.map((e) => e as int)?.toList(),
   );
 }
 

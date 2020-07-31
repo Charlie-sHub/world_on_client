@@ -16,7 +16,7 @@ import 'package:worldon/injection.dart';
 void main() {
   CreateObjectives useCase;
   setUpAll(
-      () {
+    () {
       configureDependencies(injectable.Environment.test);
       useCase = CreateObjectives();
     },

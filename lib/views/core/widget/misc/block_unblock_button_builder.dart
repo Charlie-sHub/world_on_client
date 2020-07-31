@@ -93,10 +93,8 @@ class UnBlockButton extends StatelessWidget {
   }
 }
 
-void userBlockListener(BuildContext context, BlockActorState state) =>
-  state.maybeMap(
-    blockFailure: (state) =>
-      FlushbarHelper.createError(
+void userBlockListener(BuildContext context, BlockActorState state) => state.maybeMap(
+      blockFailure: (state) => FlushbarHelper.createError(
         duration: const Duration(seconds: 2),
         message: state.failure.maybeMap(
           coreData: (failure) =>

@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:multi_image_picker/multi_image_picker.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
@@ -17,14 +18,16 @@ Experience getValidExperience() {
   return Experience.empty().copyWith(
     title: Name("Test"),
     description: EntityDescription("For testing"),
-    imageAssets: [
-      Asset(
-        "1",
-        "assets/experience_placeholder_image.jpg",
-        100,
-        100,
-      ),
-    ],
+    imageAssetsOption: some(
+      [
+        Asset(
+          "1",
+          "assets/experience_placeholder_image.jpg",
+          100,
+          100,
+        ),
+      ],
+    ),
     coordinates: Coordinates(
       latitude: Latitude(10),
       longitude: Longitude(10),

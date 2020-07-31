@@ -318,8 +318,18 @@ void experienceCardListener(BuildContext context, ExperienceCardActorState state
         message: "Action in progress",
         linearProgressIndicator: const LinearProgressIndicator(),
       ).show(context),
-    additionFailure: (state) =>
-      FlushbarHelper.createError(
+      additionFailure: (state) => FlushbarHelper.createError(
+        duration: const Duration(seconds: 2),
+        message: state.failure.maybeMap(
+          coreData: (failure) => failure.coreDataFailure.maybeMap(
+            serverError: (failure) => failure.errorString,
+            orElse: () => "Unknown Error",
+          ),
+          orElse: () => "Unknown Error",
+        ),
+      ).show(context),
+  dismissalFailure: (state) =>
+    FlushbarHelper.createError(
         duration: const Duration(seconds: 2),
         message: state.failure.maybeMap(
           coreData: (failure) =>
@@ -330,17 +340,5 @@ void experienceCardListener(BuildContext context, ExperienceCardActorState state
           orElse: () => "Unknown Error",
         ),
       ).show(context),
-    dismissalFailure: (state) =>
-      FlushbarHelper.createError(
-        duration: const Duration(seconds: 2),
-        message: state.failure.maybeMap(
-          coreData: (failure) =>
-            failure.coreDataFailure.maybeMap(
-              serverError: (failure) => failure.errorString,
-              orElse: () => "Unknown Error",
-            ),
-          orElse: () => "Unknown Error",
-        ),
-      ).show(context),
-    orElse: () => null,
-  );
+  orElse: () => null,
+);

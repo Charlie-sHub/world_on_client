@@ -1,7 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
+import 'package:worldon/views/core/routes/router.gr.dart';
 import 'package:worldon/views/core/widget/misc/user_experience_info.dart';
 import 'package:worldon/views/profile/widget/profile_achievements_tab_view.dart';
 import 'package:worldon/views/profile/widget/profile_experiences_tab_view.dart';
@@ -10,9 +12,9 @@ import 'package:worldon/views/profile/widget/profile_users_tab_view.dart';
 
 class OwnProfile extends StatelessWidget {
   final User user;
-
+  
   const OwnProfile({Key key, @required this.user}) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -43,9 +45,9 @@ class OwnProfileHeader extends StatelessWidget {
     Key key,
     @required this.user,
   }) : super(key: key);
-
+  
   final User user;
-
+  
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -89,8 +91,7 @@ class OwnProfileHeader extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(5),
                 child: RaisedButton(
-                  // TODO: Navigate to profile editing page
-                  onPressed: () => null,
+                  onPressed: () => context.navigator.push(Routes.profileEditingPage),
                   child: const Text("Edit"),
                 ),
               )

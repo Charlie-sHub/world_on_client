@@ -24,7 +24,7 @@ class AchievementCard extends StatelessWidget {
                     children: <Widget>[
                       AutoSizeText(
                         achievement.name.getOrCrash(),
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
                           color: WorldOnColors.background,
@@ -33,7 +33,7 @@ class AchievementCard extends StatelessWidget {
                       const SizedBox(height: 5),
                       AutoSizeText(
                         achievement.description.getOrCrash(),
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: WorldOnColors.background,
                         ),
                       )

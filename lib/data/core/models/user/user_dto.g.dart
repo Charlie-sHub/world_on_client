@@ -16,7 +16,7 @@ _$_UserDto _$_$_UserDtoFromJson(Map<String, dynamic> json) {
     birthday: json['birthday'] as String,
     description: json['description'] as String,
     imageURL: json['imageURL'] as String,
-    imageFile: json['imageFile'] as String,
+    imageFile: (json['imageFile'] as List)?.map((e) => e as int)?.toList(),
     level: json['level'] as int,
     experiencePoints: json['experiencePoints'] as int,
     privacy: json['privacy'] as bool,

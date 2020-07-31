@@ -19,7 +19,7 @@ part 'achievement.freezed.dart';
 @freezed
 abstract class Achievement implements _$Achievement {
   const Achievement._();
-  
+
   const factory Achievement({
     int id,
     @required Name name,
@@ -36,12 +36,12 @@ abstract class Achievement implements _$Achievement {
     @required PastDate modificationDate,
     @required TagSet tags,
   }) = _Achievement;
-  
+
   factory Achievement.empty() => Achievement(
-    name: Name(""),
-    description: EntityDescription(""),
-    imageURL: "",
-        imageFile: File(""),
+        name: Name(""),
+        description: EntityDescription(""),
+        imageURL: "",
+        imageFile: File("assets/world_on_logo.jpg"),
         type: "",
     requisite: 1,
     experiencePoints: ExperiencePoints(1),
@@ -50,7 +50,7 @@ abstract class Achievement implements _$Achievement {
     modificationDate: PastDate(DateTime.now()),
     tags: TagSet(KtSet.empty()),
   );
-  
+
   Option<ValueFailure<dynamic>> get failureOption {
     return name.failureOrUnit
       .andThen(description.failureOrUnit)
@@ -64,6 +64,6 @@ abstract class Achievement implements _$Achievement {
         (_) => none(),
     );
   }
-  
+
   bool get isValid => failureOption.isNone();
 }

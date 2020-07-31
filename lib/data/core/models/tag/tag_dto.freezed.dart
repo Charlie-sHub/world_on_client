@@ -44,7 +44,7 @@ mixin _$TagDto {
 abstract class $TagDtoCopyWith<$Res> {
   factory $TagDtoCopyWith(TagDto value, $Res Function(TagDto) then) =
   _$TagDtoCopyWithImpl<$Res>;
-  
+
   $Res call({int id,
     String name,
     UserDto creator,

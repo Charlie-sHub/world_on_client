@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:dartz/dartz.dart' as dartz;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/data/core/models/achievement/achievement_dto.dart';
 import 'package:worldon/data/core/models/device/device_dto.dart';
@@ -22,7 +23,7 @@ part 'user_dto.g.dart';
 @freezed
 abstract class UserDto implements _$UserDto {
   const UserDto._();
-  
+
   const factory UserDto({
     @required int id,
     @required String name,
@@ -33,7 +34,7 @@ abstract class UserDto implements _$UserDto {
     @required String birthday,
     @required String description,
     @required String imageURL,
-    @required String imageFile,
+    @required List<int> imageFile,
     @required int level,
     @required int experiencePoints,
     @required bool privacy,
@@ -53,17 +54,20 @@ abstract class UserDto implements _$UserDto {
     @required Set<ExperienceDto> experiencesLiked,
     @required Set<ExperienceDto> experiencesToDo,
   }) = _UserDto;
-  
+
   factory UserDto.fromDomain(User user) => UserDto(
-    id: user.id,
-    name: user.name.getOrCrash(),
-    username: user.username.getOrCrash(),
-    password: user.password.getOrCrash(),
-    email: user.email.getOrCrash(),
-    birthday: user.birthday.getOrCrash().toIso8601String(),
-    description: user.description.getOrCrash(),
-    imageURL: user.imageURL,
-        imageFile: user.imageFile.readAsStringSync(),
+        id: user.id,
+        name: user.name.getOrCrash(),
+        username: user.username.getOrCrash(),
+        password: user.password.getOrCrash(),
+        email: user.email.getOrCrash(),
+        birthday: user.birthday.getOrCrash().toIso8601String(),
+        description: user.description.getOrCrash(),
+        imageURL: user.imageURL,
+        imageFile: user.imageFileOption.fold(
+          () => [],
+          (imageFile) => imageFile.readAsBytesSync(),
+        ),
         level: user.level.getOrCrash(),
     experiencePoints: user.experiencePoints.getOrCrash(),
     privacy: user.privacy,
@@ -83,7 +87,7 @@ abstract class UserDto implements _$UserDto {
     experiencesLiked: user.experiencesLiked.map((experience) => ExperienceDto.fromDomain(experience)).toSet(),
     experiencesToDo: user.experiencesToDo.map((experience) => ExperienceDto.fromDomain(experience)).toSet(),
   );
-  
+
   User toDomain() => User(
     id: id,
     name: Name(name),
@@ -93,7 +97,8 @@ abstract class UserDto implements _$UserDto {
     birthday: PastDate(DateTime.parse(birthday)),
     description: EntityDescription(description),
     imageURL: imageURL,
-    imageFile: File(""),
+    imageFileOption: dartz.some(File("test.jpg")
+      ..openWrite().write(imageFile)),
     level: UserLevel(level),
     experiencePoints: ExperiencePoints(experiencePoints),
     privacy: privacy,
@@ -113,6 +118,6 @@ abstract class UserDto implements _$UserDto {
     experiencesLiked: experiencesLiked.map((experiencesDto) => experiencesDto.toDomain()).toSet(),
     experiencesToDo: experiencesToDo.map((experiencesDto) => experiencesDto.toDomain()).toSet(),
   );
-  
+
   factory UserDto.fromJson(Map<String, dynamic> json) => _$UserDtoFromJson(json);
 }

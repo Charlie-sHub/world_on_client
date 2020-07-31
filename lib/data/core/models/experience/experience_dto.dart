@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart' as dartz;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:multi_image_picker/multi_image_picker.dart';
@@ -23,7 +24,7 @@ part 'experience_dto.g.dart';
 @freezed
 abstract class ExperienceDto implements _$ExperienceDto {
   const ExperienceDto._();
-
+  
   const factory ExperienceDto({
     @required int id,
     @required String title,
@@ -43,47 +44,52 @@ abstract class ExperienceDto implements _$ExperienceDto {
     @required Set<UserDto> likedBy,
     @required Set<UserDto> doneBy,
   }) = _ExperienceDto;
-
+  
   factory ExperienceDto.fromDomain(Experience experience) => ExperienceDto(
-        id: experience.id,
-        title: experience.title.getOrCrash(),
-        description: experience.description.getOrCrash(),
-        imageURLs: experience.imageURLs,
-    // Does this make any sense?
-    imageAssets: experience.imageAssets.map((asset) => asset.toString()).toList(),
+    id: experience.id,
+    title: experience.title.getOrCrash(),
+    description: experience.description.getOrCrash(),
+    imageURLs: experience.imageURLs,
+        // Does this make any sense?
+        // Probably not
+        // this will be a headache
+        imageAssets: experience.imageAssetsOption.fold(
+          () => [],
+          (imageAssets) => imageAssets.map((asset) => asset.toString()).toList(),
+        ),
         coordinates: CoordinatesDto.fromDomain(experience.coordinates),
-        location: LocationDto.fromDomain(experience.location),
-        creator: UserDto.fromDomain(experience.creator),
-        difficulty: experience.difficulty.getOrCrash(),
-        creationDate: experience.creationDate.getOrCrash().toIso8601String(),
-        modificationDate: experience.modificationDate.getOrCrash().toIso8601String(),
-        objectives: experience.objectives.getOrCrash().asSet().map((objective) => ObjectiveDto.fromDomain(objective)).toSet(),
-        rewards: experience.rewards.getOrCrash().asSet().map((reward) => RewardDto.fromDomain(reward)).toSet(),
-        tags: experience.tags.getOrCrash().asSet().map((tag) => TagDto.fromDomain(tag)).toSet(),
-        comments: experience.comments.map((comment) => CommentDto.fromDomain(comment)).toSet(),
-        likedBy: experience.likedBy.map((user) => UserDto.fromDomain(user)).toSet(),
-        doneBy: experience.doneBy.map((user) => UserDto.fromDomain(user)).toSet(),
-      );
-
+    location: LocationDto.fromDomain(experience.location),
+    creator: UserDto.fromDomain(experience.creator),
+    difficulty: experience.difficulty.getOrCrash(),
+    creationDate: experience.creationDate.getOrCrash().toIso8601String(),
+    modificationDate: experience.modificationDate.getOrCrash().toIso8601String(),
+    objectives: experience.objectives.getOrCrash().asSet().map((objective) => ObjectiveDto.fromDomain(objective)).toSet(),
+    rewards: experience.rewards.getOrCrash().asSet().map((reward) => RewardDto.fromDomain(reward)).toSet(),
+    tags: experience.tags.getOrCrash().asSet().map((tag) => TagDto.fromDomain(tag)).toSet(),
+    comments: experience.comments.map((comment) => CommentDto.fromDomain(comment)).toSet(),
+    likedBy: experience.likedBy.map((user) => UserDto.fromDomain(user)).toSet(),
+    doneBy: experience.doneBy.map((user) => UserDto.fromDomain(user)).toSet(),
+  );
+  
   Experience toDomain() => Experience(
-        id: id,
+    id: id,
     title: Name(title),
-        description: EntityDescription(description),
-        imageURLs: imageURLs,
-    imageAssets: <Asset>[],
-        coordinates: coordinates.toDomain(),
-        location: location.toDomain(),
-        creator: creator.toDomain(),
-        difficulty: Difficulty(difficulty),
-        creationDate: PastDate(DateTime.parse(creationDate)),
-        modificationDate: PastDate(DateTime.parse(modificationDate)),
-        objectives: ObjectiveSet(objectives.map((objectiveDto) => objectiveDto.toDomain()).toImmutableSet()),
-        rewards: RewardSet(rewards.map((rewardDto) => rewardDto.toDomain()).toImmutableSet()),
-        tags: TagSet(tags.map((tagDto) => tagDto.toDomain()).toImmutableSet()),
-        comments: comments.map((commentDto) => commentDto.toDomain()).toSet(),
-        likedBy: likedBy.map((userDto) => userDto.toDomain()).toSet(),
-        doneBy: doneBy.map((userDto) => userDto.toDomain()).toSet(),
-      );
-
+    description: EntityDescription(description),
+    imageURLs: imageURLs,
+    imageAssetsOption: dartz.some(<Asset>[]),
+    coordinates: coordinates.toDomain(),
+    location: location.toDomain(),
+    creator: creator.toDomain(),
+    difficulty: Difficulty(difficulty),
+    creationDate: PastDate(DateTime.parse(creationDate)),
+    modificationDate: PastDate(DateTime.parse(modificationDate)),
+    objectives: ObjectiveSet(objectives.map((objectiveDto) => objectiveDto.toDomain()).toImmutableSet()),
+    rewards: RewardSet(rewards.map((rewardDto) => rewardDto.toDomain()).toImmutableSet()),
+    tags: TagSet(tags.map((tagDto) => tagDto.toDomain()).toImmutableSet()),
+    comments: comments.map((commentDto) => commentDto.toDomain()).toSet(),
+    likedBy: likedBy.map((userDto) => userDto.toDomain()).toSet(),
+    doneBy: doneBy.map((userDto) => userDto.toDomain()).toSet(),
+  );
+  
   factory ExperienceDto.fromJson(Map<String, dynamic> json) => _$ExperienceDtoFromJson(json);
 }

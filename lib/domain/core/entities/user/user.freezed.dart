@@ -22,7 +22,7 @@ class _$UserTearOff {
       @required PastDate birthday,
       @required EntityDescription description,
       @required String imageURL,
-      @required File imageFile,
+      @required Option<File> imageFileOption,
       @required UserLevel level,
       @required ExperiencePoints experiencePoints,
       @required bool privacy,
@@ -50,7 +50,7 @@ class _$UserTearOff {
       birthday: birthday,
       description: description,
       imageURL: imageURL,
-      imageFile: imageFile,
+      imageFileOption: imageFileOption,
       level: level,
       experiencePoints: experiencePoints,
       privacy: privacy,
@@ -86,7 +86,7 @@ mixin _$User {
   EntityDescription get description;
   String get imageURL;
 
-  File get imageFile;
+  Option<File> get imageFileOption;
   UserLevel get level;
   ExperiencePoints get experiencePoints;
   bool get privacy;
@@ -121,7 +121,7 @@ abstract class $UserCopyWith<$Res> {
       PastDate birthday,
       EntityDescription description,
       String imageURL,
-        File imageFile,
+        Option<File> imageFileOption,
       UserLevel level,
       ExperiencePoints experiencePoints,
       bool privacy,
@@ -161,7 +161,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
     Object birthday = freezed,
     Object description = freezed,
     Object imageURL = freezed,
-    Object imageFile = freezed,
+    Object imageFileOption = freezed,
     Object level = freezed,
     Object experiencePoints = freezed,
     Object privacy = freezed,
@@ -192,7 +192,9 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
         ? _value.description
         : description as EntityDescription,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile: imageFile == freezed ? _value.imageFile : imageFile as File,
+      imageFileOption: imageFileOption == freezed
+        ? _value.imageFileOption
+        : imageFileOption as Option<File>,
       level: level == freezed ? _value.level : level as UserLevel,
       experiencePoints: experiencePoints == freezed
         ? _value.experiencePoints
@@ -259,7 +261,7 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       PastDate birthday,
       EntityDescription description,
       String imageURL,
-        File imageFile,
+        Option<File> imageFileOption,
       UserLevel level,
       ExperiencePoints experiencePoints,
       bool privacy,
@@ -301,7 +303,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
     Object birthday = freezed,
     Object description = freezed,
     Object imageURL = freezed,
-    Object imageFile = freezed,
+    Object imageFileOption = freezed,
     Object level = freezed,
     Object experiencePoints = freezed,
     Object privacy = freezed,
@@ -332,7 +334,9 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
         ? _value.description
         : description as EntityDescription,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile: imageFile == freezed ? _value.imageFile : imageFile as File,
+      imageFileOption: imageFileOption == freezed
+        ? _value.imageFileOption
+        : imageFileOption as Option<File>,
       level: level == freezed ? _value.level : level as UserLevel,
       experiencePoints: experiencePoints == freezed
         ? _value.experiencePoints
@@ -386,7 +390,7 @@ class _$_User extends _User {
       @required this.birthday,
       @required this.description,
       @required this.imageURL,
-        @required this.imageFile,
+        @required this.imageFileOption,
       @required this.level,
       @required this.experiencePoints,
       @required this.privacy,
@@ -412,7 +416,7 @@ class _$_User extends _User {
         assert(birthday != null),
         assert(description != null),
         assert(imageURL != null),
-      assert(imageFile != null),
+      assert(imageFileOption != null),
         assert(level != null),
         assert(experiencePoints != null),
         assert(privacy != null),
@@ -450,7 +454,7 @@ class _$_User extends _User {
   @override
   final String imageURL;
   @override
-  final File imageFile;
+  final Option<File> imageFileOption;
   @override
   final UserLevel level;
   @override
@@ -490,7 +494,7 @@ class _$_User extends _User {
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, username: $username, password: $password, email: $email, birthday: $birthday, description: $description, imageURL: $imageURL, imageFile: $imageFile, level: $level, experiencePoints: $experiencePoints, privacy: $privacy, adminPowers: $adminPowers, enabled: $enabled, lastLogin: $lastLogin, creationDate: $creationDate, modificationDate: $modificationDate, options: $options, blockedUsers: $blockedUsers, followedUsers: $followedUsers, devices: $devices, systems: $systems, interests: $interests, achievements: $achievements, experiencesDone: $experiencesDone, experiencesLiked: $experiencesLiked, experiencesToDo: $experiencesToDo)';
+    return 'User(id: $id, name: $name, username: $username, password: $password, email: $email, birthday: $birthday, description: $description, imageURL: $imageURL, imageFileOption: $imageFileOption, level: $level, experiencePoints: $experiencePoints, privacy: $privacy, adminPowers: $adminPowers, enabled: $enabled, lastLogin: $lastLogin, creationDate: $creationDate, modificationDate: $modificationDate, options: $options, blockedUsers: $blockedUsers, followedUsers: $followedUsers, devices: $devices, systems: $systems, interests: $interests, achievements: $achievements, experiencesDone: $experiencesDone, experiencesLiked: $experiencesLiked, experiencesToDo: $experiencesToDo)';
   }
 
   @override
@@ -518,9 +522,9 @@ class _$_User extends _User {
           (identical(other.imageURL, imageURL) ||
             const DeepCollectionEquality()
               .equals(other.imageURL, imageURL)) &&
-          (identical(other.imageFile, imageFile) ||
+          (identical(other.imageFileOption, imageFileOption) ||
             const DeepCollectionEquality()
-              .equals(other.imageFile, imageFile)) &&
+              .equals(other.imageFileOption, imageFileOption)) &&
           (identical(other.level, level) ||
             const DeepCollectionEquality().equals(other.level, level)) &&
           (identical(other.experiencePoints, experiencePoints) ||
@@ -580,7 +584,7 @@ class _$_User extends _User {
       const DeepCollectionEquality().hash(birthday) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(imageURL) ^
-      const DeepCollectionEquality().hash(imageFile) ^
+      const DeepCollectionEquality().hash(imageFileOption) ^
       const DeepCollectionEquality().hash(level) ^
       const DeepCollectionEquality().hash(experiencePoints) ^
       const DeepCollectionEquality().hash(privacy) ^
@@ -616,7 +620,7 @@ abstract class _User extends User {
       @required PastDate birthday,
       @required EntityDescription description,
       @required String imageURL,
-        @required File imageFile,
+        @required Option<File> imageFileOption,
       @required UserLevel level,
       @required ExperiencePoints experiencePoints,
       @required bool privacy,
@@ -652,9 +656,8 @@ abstract class _User extends User {
   EntityDescription get description;
   @override
   String get imageURL;
-
   @override
-  File get imageFile;
+  Option<File> get imageFileOption;
   @override
   UserLevel get level;
   @override

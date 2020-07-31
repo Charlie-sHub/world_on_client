@@ -327,7 +327,6 @@ abstract class _Initialized implements ExperienceManagementFormEvent {
 
 abstract class _$TitleChangedCopyWith<$Res> {
   factory _$TitleChangedCopyWith(_TitleChanged value, $Res Function(_TitleChanged) then) = __$TitleChangedCopyWithImpl<$Res>;
-
   $Res call({String title});
 }
 
@@ -477,9 +476,8 @@ class _$_TitleChanged implements _TitleChanged {
 
 abstract class _TitleChanged implements ExperienceManagementFormEvent {
   const factory _TitleChanged(String title) = _$_TitleChanged;
-  
+
   String get title;
-  
   _$TitleChangedCopyWith<_TitleChanged> get copyWith;
 }
 
@@ -647,7 +645,6 @@ abstract class _DescriptionChanged implements ExperienceManagementFormEvent {
 abstract class _$ImagesChangedCopyWith<$Res> {
   factory _$ImagesChangedCopyWith(_ImagesChanged value, $Res Function(_ImagesChanged) then) =
   __$ImagesChangedCopyWithImpl<$Res>;
-  
   $Res call({List<Asset> imageAssets});
 }
 
@@ -655,10 +652,10 @@ class __$ImagesChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormEvent
   implements _$ImagesChangedCopyWith<$Res> {
   __$ImagesChangedCopyWithImpl(_ImagesChanged _value, $Res Function(_ImagesChanged) _then)
     : super(_value, (v) => _then(v as _ImagesChanged));
-  
+
   @override
   _ImagesChanged get _value => super._value as _ImagesChanged;
-  
+
   @override
   $Res call({
     Object imageAssets = freezed,
@@ -671,15 +668,15 @@ class __$ImagesChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormEvent
 
 class _$_ImagesChanged implements _ImagesChanged {
   const _$_ImagesChanged(this.imageAssets) : assert(imageAssets != null);
-  
+
   @override
   final List<Asset> imageAssets;
-  
+
   @override
   String toString() {
     return 'ExperienceManagementFormEvent.imagesChanged(imageAssets: $imageAssets)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -688,15 +685,15 @@ class _$_ImagesChanged implements _ImagesChanged {
           const DeepCollectionEquality()
             .equals(other.imageAssets, imageAssets)));
   }
-  
+
   @override
   int get hashCode =>
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageAssets);
-  
+
   @override
   _$ImagesChangedCopyWith<_ImagesChanged> get copyWith =>
     __$ImagesChangedCopyWithImpl<_ImagesChanged>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -723,7 +720,7 @@ class _$_ImagesChanged implements _ImagesChanged {
     assert(submitted != null);
     return imagesChanged(imageAssets);
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -745,7 +742,7 @@ class _$_ImagesChanged implements _ImagesChanged {
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
@@ -772,7 +769,7 @@ class _$_ImagesChanged implements _ImagesChanged {
     assert(submitted != null);
     return imagesChanged(this);
   }
-  
+
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -798,9 +795,8 @@ class _$_ImagesChanged implements _ImagesChanged {
 
 abstract class _ImagesChanged implements ExperienceManagementFormEvent {
   const factory _ImagesChanged(List<Asset> imageAssets) = _$_ImagesChanged;
-  
+
   List<Asset> get imageAssets;
-  
   _$ImagesChangedCopyWith<_ImagesChanged> get copyWith;
 }
 

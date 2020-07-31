@@ -4,6 +4,8 @@ part of 'registration_form_bloc.dart';
 abstract class RegistrationFormEvent with _$RegistrationFormEvent {
   const factory RegistrationFormEvent.initialized() = _Initialized;
 
+  const factory RegistrationFormEvent.imageChanged(File imageFile) = _ImageChanged;
+
   const factory RegistrationFormEvent.nameChanged(String name) = _NameChanged;
 
   const factory RegistrationFormEvent.usernameChanged(String username) = _UsernameChanged;

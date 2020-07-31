@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
@@ -31,6 +32,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
   Stream<RegistrationFormState> mapEventToState(RegistrationFormEvent event) async* {
     yield* event.map(
       initialized: onInitialized,
+      imageChanged: onImageChanged,
       nameChanged: onNameChanged,
       usernameChanged: onUsernameChanged,
       passwordChanged: onPasswordChanged,
@@ -137,6 +139,15 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     yield state.copyWith(
       user: state.user.copyWith(
         name: Name(event.name),
+      ),
+      failureOrSuccessOption: none(),
+    );
+  }
+
+  Stream<RegistrationFormState> onImageChanged(_ImageChanged event) async* {
+    yield state.copyWith(
+      user: state.user.copyWith(
+        imageFileOption: some(event.imageFile),
       ),
       failureOrSuccessOption: none(),
     );

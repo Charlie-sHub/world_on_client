@@ -51,7 +51,6 @@ mixin _$Achievement {
   Name get name;
   EntityDescription get description;
   String get imageURL;
-
   File get imageFile;
   String get type;
   int get requisite;
@@ -73,7 +72,7 @@ abstract class $AchievementCopyWith<$Res> {
       Name name,
       EntityDescription description,
       String imageURL,
-        File imageFile,
+      File imageFile,
       String type,
       int requisite,
       ExperiencePoints experiencePoints,
@@ -355,7 +354,6 @@ abstract class _Achievement extends Achievement {
   EntityDescription get description;
   @override
   String get imageURL;
-
   @override
   File get imageFile;
   @override

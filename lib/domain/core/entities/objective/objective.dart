@@ -16,7 +16,7 @@ part 'objective.freezed.dart';
 @freezed
 abstract class Objective implements _$Objective {
   const Objective._();
-  
+
   const factory Objective({
     int id,
     @required EntityDescription description,
@@ -24,20 +24,15 @@ abstract class Objective implements _$Objective {
     @required String imageURL,
     @required File imageFile,
   }) = _Objective;
-  
-  factory Objective.empty() => Objective(
-    description: EntityDescription(""),
-    coordinates: Coordinates.empty(),
-        imageURL: "",
-        imageFile: File(""),
-      );
-  
+
+  factory Objective.empty() => Objective(description: EntityDescription(""), coordinates: Coordinates.empty(), imageURL: "", imageFile: File("assets/objective_placeholder.jpg"));
+
   Option<ValueFailure<dynamic>> get failureOption {
     return description.failureOrUnit.andThen(coordinates.failureOrUnit).fold(
-        (failure) => some(failure),
-        (_) => none(),
-    );
+          (failure) => some(failure),
+          (_) => none(),
+        );
   }
-  
+
   bool get isValid => failureOption.isNone();
 }

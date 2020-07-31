@@ -28,7 +28,6 @@ const $PrimitiveReward = _$PrimitiveRewardTearOff();
 mixin _$PrimitiveReward {
   String get name;
   String get description;
-
   File get imageFile;
 
   $PrimitiveRewardCopyWith<PrimitiveReward> get copyWith;
@@ -37,7 +36,6 @@ mixin _$PrimitiveReward {
 abstract class $PrimitiveRewardCopyWith<$Res> {
   factory $PrimitiveRewardCopyWith(PrimitiveReward value, $Res Function(PrimitiveReward) then) =
   _$PrimitiveRewardCopyWithImpl<$Res>;
-  
   $Res call({String name, String description, File imageFile});
 }
 
@@ -153,7 +151,6 @@ abstract class _PrimitiveReward extends PrimitiveReward {
   String get name;
   @override
   String get description;
-
   @override
   File get imageFile;
   @override

@@ -12,7 +12,7 @@ _$_RewardDto _$_$_RewardDtoFromJson(Map<String, dynamic> json) {
     name: json['name'] as String,
     description: json['description'] as String,
     imageURL: json['imageURL'] as String,
-    imageFile: json['imageFile'] as String,
+    imageFile: (json['imageFile'] as List)?.map((e) => e as int)?.toList(),
   );
 }
 

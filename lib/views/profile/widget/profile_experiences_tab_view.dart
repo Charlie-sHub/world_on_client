@@ -79,30 +79,33 @@ class ProfileExperiencesUnicornDialer extends StatelessWidget {
       childButtons: [
         UnicornButton(
           currentButton: FloatingActionButton(
+            heroTag: "created",
             mini: true,
             onPressed: () => context.bloc<ProfileExperiencesWatcherBloc>().add(
-                  ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(user),
-                ),
+              ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(user),
+            ),
             foregroundColor: WorldOnColors.primary,
             child: Icon(Icons.create),
           ),
         ),
         UnicornButton(
           currentButton: FloatingActionButton(
+            heroTag: "done",
             mini: true,
             onPressed: () => context.bloc<ProfileExperiencesWatcherBloc>().add(
-                  ProfileExperiencesWatcherEvent.watchExperiencesDoneStarted(user),
-                ),
+              ProfileExperiencesWatcherEvent.watchExperiencesDoneStarted(user),
+            ),
             foregroundColor: Colors.green,
             child: Icon(Icons.done),
           ),
         ),
         UnicornButton(
           currentButton: FloatingActionButton(
+            heroTag: "liked",
             mini: true,
             onPressed: () => context.bloc<ProfileExperiencesWatcherBloc>().add(
-                  ProfileExperiencesWatcherEvent.watchExperiencesLikedStarted(user),
-                ),
+              ProfileExperiencesWatcherEvent.watchExperiencesLikedStarted(user),
+            ),
             foregroundColor: WorldOnColors.red,
             child: FaIcon(FontAwesomeIcons.solidHeart),
           ),

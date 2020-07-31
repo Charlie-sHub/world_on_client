@@ -25,7 +25,7 @@ class _$UserDtoTearOff {
       @required String birthday,
       @required String description,
       @required String imageURL,
-      @required String imageFile,
+      @required List<int> imageFile,
       @required int level,
       @required int experiencePoints,
       @required bool privacy,
@@ -89,7 +89,7 @@ mixin _$UserDto {
   String get description;
   String get imageURL;
 
-  String get imageFile;
+  List<int> get imageFile;
   int get level;
   int get experiencePoints;
   bool get privacy;
@@ -125,7 +125,7 @@ abstract class $UserDtoCopyWith<$Res> {
       String birthday,
       String description,
       String imageURL,
-        String imageFile,
+        List<int> imageFile,
       int level,
       int experiencePoints,
       bool privacy,
@@ -195,7 +195,8 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
       description:
       description == freezed ? _value.description : description as String,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile: imageFile == freezed ? _value.imageFile : imageFile as String,
+      imageFile:
+      imageFile == freezed ? _value.imageFile : imageFile as List<int>,
       level: level == freezed ? _value.level : level as int,
       experiencePoints: experiencePoints == freezed
         ? _value.experiencePoints
@@ -261,7 +262,7 @@ abstract class _$UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
       String birthday,
       String description,
       String imageURL,
-        String imageFile,
+        List<int> imageFile,
       int level,
       int experiencePoints,
       bool privacy,
@@ -333,7 +334,8 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
       description:
       description == freezed ? _value.description : description as String,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile: imageFile == freezed ? _value.imageFile : imageFile as String,
+      imageFile:
+      imageFile == freezed ? _value.imageFile : imageFile as List<int>,
       level: level == freezed ? _value.level : level as int,
       experiencePoints: experiencePoints == freezed
         ? _value.experiencePoints
@@ -455,7 +457,7 @@ class _$_UserDto extends _UserDto {
   @override
   final String imageURL;
   @override
-  final String imageFile;
+  final List<int> imageFile;
   @override
   final int level;
   @override
@@ -626,7 +628,7 @@ abstract class _UserDto extends UserDto {
       @required String birthday,
       @required String description,
       @required String imageURL,
-        @required String imageFile,
+        @required List<int> imageFile,
       @required int level,
       @required int experiencePoints,
       @required bool privacy,
@@ -664,9 +666,8 @@ abstract class _UserDto extends UserDto {
   String get description;
   @override
   String get imageURL;
-
   @override
-  String get imageFile;
+  List<int> get imageFile;
   @override
   int get level;
   @override

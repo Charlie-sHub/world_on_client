@@ -10,6 +10,6 @@ Objective getValidObjective() {
     description: EntityDescription("Sed tristique est nibh, ut imperdiet ligula dapibus accumsan."),
     coordinates: getValidCoordinates(),
     imageURL: "testObjective.jpg",
-    imageFile: File(""),
+    imageFile: File("assets/objective_placeholder.jpg"),
   );
 }

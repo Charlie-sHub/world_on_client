@@ -16,7 +16,7 @@ class _$RewardDtoTearOff {
   const _$RewardDtoTearOff();
 
 // ignore: unused_element
-  _RewardDto call({@required int id, @required String name, @required String description, @required String imageURL, @required String imageFile}) {
+  _RewardDto call({@required int id, @required String name, @required String description, @required String imageURL, @required List<int> imageFile}) {
     return _RewardDto(
       id: id,
       name: name,
@@ -36,7 +36,7 @@ mixin _$RewardDto {
   String get description;
   String get imageURL;
 
-  String get imageFile;
+  List<int> get imageFile;
 
   Map<String, dynamic> toJson();
   $RewardDtoCopyWith<RewardDto> get copyWith;
@@ -45,12 +45,12 @@ mixin _$RewardDto {
 abstract class $RewardDtoCopyWith<$Res> {
   factory $RewardDtoCopyWith(RewardDto value, $Res Function(RewardDto) then) =
   _$RewardDtoCopyWithImpl<$Res>;
-  
+
   $Res call({int id,
     String name,
     String description,
     String imageURL,
-    String imageFile});
+    List<int> imageFile});
 }
 
 class _$RewardDtoCopyWithImpl<$Res> implements $RewardDtoCopyWith<$Res> {
@@ -74,7 +74,8 @@ class _$RewardDtoCopyWithImpl<$Res> implements $RewardDtoCopyWith<$Res> {
       description:
       description == freezed ? _value.description : description as String,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile: imageFile == freezed ? _value.imageFile : imageFile as String,
+      imageFile:
+      imageFile == freezed ? _value.imageFile : imageFile as List<int>,
     ));
   }
 }
@@ -87,7 +88,7 @@ abstract class _$RewardDtoCopyWith<$Res> implements $RewardDtoCopyWith<$Res> {
     String name,
     String description,
     String imageURL,
-    String imageFile});
+    List<int> imageFile});
 }
 
 class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res>
@@ -112,7 +113,8 @@ class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res>
       description:
       description == freezed ? _value.description : description as String,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile: imageFile == freezed ? _value.imageFile : imageFile as String,
+      imageFile:
+      imageFile == freezed ? _value.imageFile : imageFile as List<int>,
     ));
   }
 }
@@ -130,7 +132,7 @@ class _$_RewardDto extends _RewardDto {
         assert(imageURL != null),
       assert(imageFile != null),
         super._();
-  
+
   factory _$_RewardDto.fromJson(Map<String, dynamic> json) =>
     _$_$_RewardDtoFromJson(json);
 
@@ -143,7 +145,7 @@ class _$_RewardDto extends _RewardDto {
   @override
   final String imageURL;
   @override
-  final String imageFile;
+  final List<int> imageFile;
 
   @override
   String toString() {
@@ -195,7 +197,7 @@ abstract class _RewardDto extends RewardDto {
     @required String name,
     @required String description,
     @required String imageURL,
-    @required String imageFile}) = _$_RewardDto;
+    @required List<int> imageFile}) = _$_RewardDto;
 
   factory _RewardDto.fromJson(Map<String, dynamic> json) =
   _$_RewardDto.fromJson;
@@ -208,9 +210,8 @@ abstract class _RewardDto extends RewardDto {
   String get description;
   @override
   String get imageURL;
-
   @override
-  String get imageFile;
+  List<int> get imageFile;
   @override
   _$RewardDtoCopyWith<_RewardDto> get copyWith;
 }

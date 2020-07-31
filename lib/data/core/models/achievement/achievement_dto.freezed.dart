@@ -21,7 +21,7 @@ class _$AchievementDtoTearOff {
       @required String name,
       @required String description,
       @required String imageURL,
-      @required String imageFile,
+      @required List<int> imageFile,
       @required String type,
       @required int requisite,
       @required int experiencePoints,
@@ -55,7 +55,7 @@ mixin _$AchievementDto {
   String get description;
   String get imageURL;
 
-  String get imageFile;
+  List<int> get imageFile;
   String get type;
   int get requisite;
   int get experiencePoints;
@@ -71,11 +71,12 @@ mixin _$AchievementDto {
 abstract class $AchievementDtoCopyWith<$Res> {
   factory $AchievementDtoCopyWith(AchievementDto value, $Res Function(AchievementDto) then) =
   _$AchievementDtoCopyWithImpl<$Res>;
+  
   $Res call({int id,
     String name,
     String description,
     String imageURL,
-    String imageFile,
+    List<int> imageFile,
     String type,
     int requisite,
     int experiencePoints,
@@ -116,7 +117,8 @@ class _$AchievementDtoCopyWithImpl<$Res>
       description:
       description == freezed ? _value.description : description as String,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile: imageFile == freezed ? _value.imageFile : imageFile as String,
+      imageFile:
+      imageFile == freezed ? _value.imageFile : imageFile as List<int>,
       type: type == freezed ? _value.type : type as String,
       requisite: requisite == freezed ? _value.requisite : requisite as int,
       experiencePoints: experiencePoints == freezed
@@ -153,7 +155,7 @@ abstract class _$AchievementDtoCopyWith<$Res>
     String name,
     String description,
     String imageURL,
-    String imageFile,
+    List<int> imageFile,
     String type,
     int requisite,
     int experiencePoints,
@@ -195,7 +197,8 @@ class __$AchievementDtoCopyWithImpl<$Res> extends _$AchievementDtoCopyWithImpl<$
       description:
       description == freezed ? _value.description : description as String,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile: imageFile == freezed ? _value.imageFile : imageFile as String,
+      imageFile:
+      imageFile == freezed ? _value.imageFile : imageFile as List<int>,
       type: type == freezed ? _value.type : type as String,
       requisite: requisite == freezed ? _value.requisite : requisite as int,
       experiencePoints: experiencePoints == freezed
@@ -254,7 +257,7 @@ class _$_AchievementDto extends _AchievementDto {
   @override
   final String imageURL;
   @override
-  final String imageFile;
+  final List<int> imageFile;
   @override
   final String type;
   @override
@@ -346,7 +349,7 @@ abstract class _AchievementDto extends AchievementDto {
       @required String name,
       @required String description,
       @required String imageURL,
-        @required String imageFile,
+        @required List<int> imageFile,
       @required String type,
       @required int requisite,
       @required int experiencePoints,
@@ -366,9 +369,8 @@ abstract class _AchievementDto extends AchievementDto {
   String get description;
   @override
   String get imageURL;
-
   @override
-  String get imageFile;
+  List<int> get imageFile;
   @override
   String get type;
   @override

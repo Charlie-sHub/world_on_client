@@ -10,6 +10,6 @@ Reward getValidReward() {
     name: Name("Curabitur lectus"),
     description: EntityDescription("Ut fermentum libero id nisi rhoncus."),
     imageURL: "testReward.jpg",
-    imageFile: File(""),
+    imageFile: File("assets/reward_placeholder.jpg"),
   );
 }

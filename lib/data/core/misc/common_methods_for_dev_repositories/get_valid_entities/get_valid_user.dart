@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:dartz/dartz.dart' as dartz;
 import 'package:kt_dart/kt.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_coordinates.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_objective.dart';
@@ -33,7 +34,7 @@ User getValidUser() {
     birthday: PastDate(DateTime.now().subtract(const Duration(days: 10000))),
     description: EntityDescription("Quisque vitae enim cursus mauris elementum tincidunt sed sodales felis."),
     imageURL: "testUser.jpg",
-    imageFile: File(""),
+    imageFileOption: dartz.some(File("assets/non_existing_person_placeholder.jpg")),
     level: UserLevel(10),
     experiencePoints: ExperiencePoints(100),
     privacy: false,

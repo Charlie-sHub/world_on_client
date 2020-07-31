@@ -93,10 +93,8 @@ class UnFollowButton extends StatelessWidget {
   }
 }
 
-void userFollowListener(BuildContext context, FollowActorState state) =>
-  state.maybeMap(
-    followFailure: (state) =>
-      FlushbarHelper.createError(
+void userFollowListener(BuildContext context, FollowActorState state) => state.maybeMap(
+      followFailure: (state) => FlushbarHelper.createError(
         duration: const Duration(seconds: 2),
         message: state.failure.maybeMap(
           coreData: (failure) =>

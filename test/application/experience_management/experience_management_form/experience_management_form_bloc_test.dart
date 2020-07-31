@@ -38,7 +38,7 @@ void main() {
   EditExperience editExperience;
   GetLoggedInUser getLoggedInUser;
   setUpAll(
-      () {
+    () {
       configureDependencies(injectable.Environment.test);
       createExperience = getIt<CreateExperience>();
       editExperience = getIt<EditExperience>();
@@ -149,7 +149,7 @@ void main() {
         expect: [
           ExperienceManagementFormState.initial().copyWith(
             experience: Experience.empty().copyWith(
-              imageAssets: imageAssets,
+              imageAssetsOption: some(imageAssets),
             ),
           ),
         ],
@@ -284,7 +284,7 @@ void main() {
               creator: validUser,
               title: Name(title),
               description: EntityDescription(description),
-              imageAssets: imageAssets,
+              imageAssetsOption: some(imageAssets),
             ),
           ),
           ExperienceManagementFormState.initial().copyWith(
@@ -292,7 +292,7 @@ void main() {
               creator: validUser,
               title: Name(title),
               description: EntityDescription(description),
-              imageAssets: imageAssets,
+              imageAssetsOption: some(imageAssets),
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -304,7 +304,7 @@ void main() {
               creator: validUser,
               title: Name(title),
               description: EntityDescription(description),
-              imageAssets: imageAssets,
+              imageAssetsOption: some(imageAssets),
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -317,7 +317,7 @@ void main() {
               creator: validUser,
               title: Name(title),
               description: EntityDescription(description),
-              imageAssets: imageAssets,
+              imageAssetsOption: some(imageAssets),
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -331,7 +331,7 @@ void main() {
               creator: validUser,
               title: Name(title),
               description: EntityDescription(description),
-              imageAssets: imageAssets,
+              imageAssetsOption: some(imageAssets),
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -346,7 +346,7 @@ void main() {
               creator: validUser,
               title: Name(title),
               description: EntityDescription(description),
-              imageAssets: imageAssets,
+              imageAssetsOption: some(imageAssets),
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -362,7 +362,7 @@ void main() {
               creator: validUser,
               title: Name(title),
               description: EntityDescription(description),
-              imageAssets: imageAssets,
+              imageAssetsOption: some(imageAssets),
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -379,7 +379,7 @@ void main() {
               creator: validUser,
               title: Name(title),
               description: EntityDescription(description),
-              imageAssets: imageAssets,
+              imageAssetsOption: some(imageAssets),
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -484,7 +484,7 @@ void main() {
               creator: validUser,
               title: Name(title),
               description: EntityDescription(description),
-              imageAssets: imageAssets,
+              imageAssetsOption: some(imageAssets),
             ),
           ),
           ExperienceManagementFormState.initial().copyWith(
@@ -492,7 +492,7 @@ void main() {
               creator: validUser,
               title: Name(title),
               description: EntityDescription(description),
-              imageAssets: imageAssets,
+              imageAssetsOption: some(imageAssets),
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -504,7 +504,7 @@ void main() {
               creator: validUser,
               title: Name(title),
               description: EntityDescription(description),
-              imageAssets: imageAssets,
+              imageAssetsOption: some(imageAssets),
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -517,7 +517,7 @@ void main() {
               creator: validUser,
               title: Name(title),
               description: EntityDescription(description),
-              imageAssets: imageAssets,
+              imageAssetsOption: some(imageAssets),
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -531,7 +531,7 @@ void main() {
               creator: validUser,
               title: Name(title),
               description: EntityDescription(description),
-              imageAssets: imageAssets,
+              imageAssetsOption: some(imageAssets),
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -546,7 +546,7 @@ void main() {
               creator: validUser,
               title: Name(title),
               description: EntityDescription(description),
-              imageAssets: imageAssets,
+              imageAssetsOption: some(imageAssets),
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -562,7 +562,7 @@ void main() {
               creator: validUser,
               title: Name(title),
               description: EntityDescription(description),
-              imageAssets: imageAssets,
+              imageAssetsOption: some(imageAssets),
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),
@@ -579,7 +579,7 @@ void main() {
               creator: validUser,
               title: Name(title),
               description: EntityDescription(description),
-              imageAssets: imageAssets,
+              imageAssetsOption: some(imageAssets),
               coordinates: Coordinates(
                 latitude: Latitude(latitude),
                 longitude: Longitude(longitude),

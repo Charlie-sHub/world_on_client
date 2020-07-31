@@ -16,7 +16,7 @@ class _$ObjectiveDtoTearOff {
   const _$ObjectiveDtoTearOff();
 
 // ignore: unused_element
-  _ObjectiveDto call({@required int id, @required String description, @required CoordinatesDto coordinates, @required String imageURL, @required String imageFile}) {
+  _ObjectiveDto call({@required int id, @required String description, @required CoordinatesDto coordinates, @required String imageURL, @required List<int> imageFile}) {
     return _ObjectiveDto(
       id: id,
       description: description,
@@ -34,10 +34,9 @@ mixin _$ObjectiveDto {
   int get id;
   String get description;
   CoordinatesDto get coordinates;
-
   String get imageURL;
 
-  String get imageFile;
+  List<int> get imageFile;
 
   Map<String, dynamic> toJson();
   $ObjectiveDtoCopyWith<ObjectiveDto> get copyWith;
@@ -51,7 +50,7 @@ abstract class $ObjectiveDtoCopyWith<$Res> {
     String description,
     CoordinatesDto coordinates,
     String imageURL,
-    String imageFile});
+    List<int> imageFile});
 
   $CoordinatesDtoCopyWith<$Res> get coordinates;
 }
@@ -79,7 +78,8 @@ class _$ObjectiveDtoCopyWithImpl<$Res> implements $ObjectiveDtoCopyWith<$Res> {
         ? _value.coordinates
         : coordinates as CoordinatesDto,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile: imageFile == freezed ? _value.imageFile : imageFile as String,
+      imageFile:
+      imageFile == freezed ? _value.imageFile : imageFile as List<int>,
     ));
   }
 
@@ -103,7 +103,7 @@ abstract class _$ObjectiveDtoCopyWith<$Res>
     String description,
     CoordinatesDto coordinates,
     String imageURL,
-    String imageFile});
+    List<int> imageFile});
 
   @override
   $CoordinatesDtoCopyWith<$Res> get coordinates;
@@ -133,7 +133,8 @@ class __$ObjectiveDtoCopyWithImpl<$Res> extends _$ObjectiveDtoCopyWithImpl<$Res>
         ? _value.coordinates
         : coordinates as CoordinatesDto,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile: imageFile == freezed ? _value.imageFile : imageFile as String,
+      imageFile:
+      imageFile == freezed ? _value.imageFile : imageFile as List<int>,
     ));
   }
 }
@@ -151,7 +152,7 @@ class _$_ObjectiveDto extends _ObjectiveDto {
       assert(imageURL != null),
       assert(imageFile != null),
         super._();
-  
+
   factory _$_ObjectiveDto.fromJson(Map<String, dynamic> json) =>
     _$_$_ObjectiveDtoFromJson(json);
 
@@ -164,7 +165,7 @@ class _$_ObjectiveDto extends _ObjectiveDto {
   @override
   final String imageURL;
   @override
-  final String imageFile;
+  final List<int> imageFile;
 
   @override
   String toString() {
@@ -217,7 +218,7 @@ abstract class _ObjectiveDto extends ObjectiveDto {
     @required String description,
     @required CoordinatesDto coordinates,
     @required String imageURL,
-    @required String imageFile}) = _$_ObjectiveDto;
+    @required List<int> imageFile}) = _$_ObjectiveDto;
 
   factory _ObjectiveDto.fromJson(Map<String, dynamic> json) =
   _$_ObjectiveDto.fromJson;
@@ -230,9 +231,8 @@ abstract class _ObjectiveDto extends ObjectiveDto {
   CoordinatesDto get coordinates;
   @override
   String get imageURL;
-
   @override
-  String get imageFile;
+  List<int> get imageFile;
   @override
   _$ObjectiveDtoCopyWith<_ObjectiveDto> get copyWith;
 }

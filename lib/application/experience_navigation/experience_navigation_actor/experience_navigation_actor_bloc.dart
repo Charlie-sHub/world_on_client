@@ -160,7 +160,7 @@ class ExperienceNavigationActorBloc extends Bloc<ExperienceNavigationActorEvent,
         ).fold(
           // TODO: Find a better way to handle failures in this case
           // Maybe make the use case return the map itself and ignore possible nulls
-            (failure) => {},
+          (failure) => {},
           id,
         ),
         surroundingExperiences: _failureOrExperiences.fold(

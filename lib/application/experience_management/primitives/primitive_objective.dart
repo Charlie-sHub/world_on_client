@@ -12,7 +12,7 @@ part 'primitive_objective.freezed.dart';
 @freezed
 abstract class PrimitiveObjective implements _$PrimitiveObjective {
   const PrimitiveObjective._();
-  
+
   const factory PrimitiveObjective({
     @required String description,
     @required double latitude,
@@ -22,18 +22,18 @@ abstract class PrimitiveObjective implements _$PrimitiveObjective {
 
   factory PrimitiveObjective.empty() => PrimitiveObjective(
         description: "",
-      latitude: 0,
-      longitude: 0,
-      imageFile: File(""),
-    );
-  
+        latitude: 0,
+        longitude: 0,
+        imageFile: null,
+      );
+
   factory PrimitiveObjective.fromDomain(Objective objective) => PrimitiveObjective(
     description: objective.description.getOrCrash(),
     latitude: objective.coordinates.latitude.getOrCrash(),
     longitude: objective.coordinates.longitude.getOrCrash(),
     imageFile: objective.imageFile,
   );
-  
+
   Objective toDomain() => Objective(
     description: EntityDescription(description),
     coordinates: Coordinates(

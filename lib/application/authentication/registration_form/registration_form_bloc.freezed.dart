@@ -18,6 +18,13 @@ class _$RegistrationFormEventTearOff {
   }
 
 // ignore: unused_element
+  _ImageChanged imageChanged(File imageFile) {
+    return _ImageChanged(
+      imageFile,
+    );
+  }
+
+// ignore: unused_element
   _NameChanged nameChanged(String name) {
     return _NameChanged(
       name,
@@ -87,6 +94,7 @@ mixin _$RegistrationFormEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initialized(),
+    @required Result imageChanged(File imageFile),
     @required Result nameChanged(String name),
     @required Result usernameChanged(String username),
     @required Result passwordChanged(String password),
@@ -100,6 +108,7 @@ mixin _$RegistrationFormEvent {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(),
+    Result imageChanged(File imageFile),
     Result nameChanged(String name),
     Result usernameChanged(String username),
     Result passwordChanged(String password),
@@ -114,6 +123,7 @@ mixin _$RegistrationFormEvent {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
+    @required Result imageChanged(_ImageChanged value),
     @required Result nameChanged(_NameChanged value),
     @required Result usernameChanged(_UsernameChanged value),
     @required Result passwordChanged(_PasswordChanged value),
@@ -128,6 +138,7 @@ mixin _$RegistrationFormEvent {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
+    Result imageChanged(_ImageChanged value),
     Result nameChanged(_NameChanged value),
     Result usernameChanged(_UsernameChanged value),
     Result passwordChanged(_PasswordChanged value),
@@ -193,6 +204,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initialized(),
+    @required Result imageChanged(File imageFile),
     @required Result nameChanged(String name),
     @required Result usernameChanged(String username),
     @required Result passwordChanged(String password),
@@ -204,6 +216,7 @@ class _$_Initialized implements _Initialized {
     @required Result submitted(),
   }) {
     assert(initialized != null);
+    assert(imageChanged != null);
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
@@ -220,6 +233,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(),
+    Result imageChanged(File imageFile),
     Result nameChanged(String name),
     Result usernameChanged(String username),
     Result passwordChanged(String password),
@@ -242,6 +256,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
+    @required Result imageChanged(_ImageChanged value),
     @required Result nameChanged(_NameChanged value),
     @required Result usernameChanged(_UsernameChanged value),
     @required Result passwordChanged(_PasswordChanged value),
@@ -254,6 +269,7 @@ class _$_Initialized implements _Initialized {
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
+    assert(imageChanged != null);
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
@@ -270,6 +286,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
+    Result imageChanged(_ImageChanged value),
     Result nameChanged(_NameChanged value),
     Result usernameChanged(_UsernameChanged value),
     Result passwordChanged(_PasswordChanged value),
@@ -291,6 +308,163 @@ class _$_Initialized implements _Initialized {
 
 abstract class _Initialized implements RegistrationFormEvent {
   const factory _Initialized() = _$_Initialized;
+}
+
+abstract class _$ImageChangedCopyWith<$Res> {
+  factory _$ImageChangedCopyWith(_ImageChanged value, $Res Function(_ImageChanged) then) = __$ImageChangedCopyWithImpl<$Res>;
+
+  $Res call({File imageFile});
+}
+
+class __$ImageChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res> implements _$ImageChangedCopyWith<$Res> {
+  __$ImageChangedCopyWithImpl(_ImageChanged _value, $Res Function(_ImageChanged) _then) : super(_value, (v) => _then(v as _ImageChanged));
+
+  @override
+  _ImageChanged get _value => super._value as _ImageChanged;
+
+  @override
+  $Res call({
+    Object imageFile = freezed,
+  }) {
+    return _then(_ImageChanged(
+      imageFile == freezed ? _value.imageFile : imageFile as File,
+    ));
+  }
+}
+
+class _$_ImageChanged implements _ImageChanged {
+  const _$_ImageChanged(this.imageFile) : assert(imageFile != null);
+
+  @override
+  final File imageFile;
+
+  @override
+  String toString() {
+    return 'RegistrationFormEvent.imageChanged(imageFile: $imageFile)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _ImageChanged && (identical(other.imageFile, imageFile) || const DeepCollectionEquality().equals(other.imageFile, imageFile)));
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageFile);
+
+  @override
+  _$ImageChangedCopyWith<_ImageChanged> get copyWith => __$ImageChangedCopyWithImpl<_ImageChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result initialized(),
+    @required Result imageChanged(File imageFile),
+    @required Result nameChanged(String name),
+    @required Result usernameChanged(String username),
+    @required Result passwordChanged(String password),
+    @required Result passwordConfirmationChanged(String passwordConfirmation),
+    @required Result emailAddressChanged(String emailAddress),
+    @required Result birthdayChanged(DateTime birthday),
+    @required Result descriptionChanged(String description),
+    @required Result interestsChanged(Set<Tag> interests),
+    @required Result submitted(),
+  }) {
+    assert(initialized != null);
+    assert(imageChanged != null);
+    assert(nameChanged != null);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(passwordConfirmationChanged != null);
+    assert(emailAddressChanged != null);
+    assert(birthdayChanged != null);
+    assert(descriptionChanged != null);
+    assert(interestsChanged != null);
+    assert(submitted != null);
+    return imageChanged(imageFile);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result initialized(),
+    Result imageChanged(File imageFile),
+    Result nameChanged(String name),
+    Result usernameChanged(String username),
+    Result passwordChanged(String password),
+    Result passwordConfirmationChanged(String passwordConfirmation),
+    Result emailAddressChanged(String emailAddress),
+    Result birthdayChanged(DateTime birthday),
+    Result descriptionChanged(String description),
+    Result interestsChanged(Set<Tag> interests),
+    Result submitted(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (imageChanged != null) {
+      return imageChanged(imageFile);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result initialized(_Initialized value),
+    @required Result imageChanged(_ImageChanged value),
+    @required Result nameChanged(_NameChanged value),
+    @required Result usernameChanged(_UsernameChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
+    @required Result emailAddressChanged(_EmailAddressChanged value),
+    @required Result birthdayChanged(_BirthdayChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result interestsChanged(_InterestsChanged value),
+    @required Result submitted(_Submitted value),
+  }) {
+    assert(initialized != null);
+    assert(imageChanged != null);
+    assert(nameChanged != null);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(passwordConfirmationChanged != null);
+    assert(emailAddressChanged != null);
+    assert(birthdayChanged != null);
+    assert(descriptionChanged != null);
+    assert(interestsChanged != null);
+    assert(submitted != null);
+    return imageChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result initialized(_Initialized value),
+    Result imageChanged(_ImageChanged value),
+    Result nameChanged(_NameChanged value),
+    Result usernameChanged(_UsernameChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
+    Result emailAddressChanged(_EmailAddressChanged value),
+    Result birthdayChanged(_BirthdayChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result interestsChanged(_InterestsChanged value),
+    Result submitted(_Submitted value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (imageChanged != null) {
+      return imageChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ImageChanged implements RegistrationFormEvent {
+  const factory _ImageChanged(File imageFile) = _$_ImageChanged;
+
+  File get imageFile;
+
+  _$ImageChangedCopyWith<_ImageChanged> get copyWith;
 }
 
 abstract class _$NameChangedCopyWith<$Res> {
@@ -351,6 +525,7 @@ class _$_NameChanged implements _NameChanged {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initialized(),
+    @required Result imageChanged(File imageFile),
     @required Result nameChanged(String name),
     @required Result usernameChanged(String username),
     @required Result passwordChanged(String password),
@@ -362,6 +537,7 @@ class _$_NameChanged implements _NameChanged {
     @required Result submitted(),
   }) {
     assert(initialized != null);
+    assert(imageChanged != null);
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
@@ -378,6 +554,7 @@ class _$_NameChanged implements _NameChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(),
+    Result imageChanged(File imageFile),
     Result nameChanged(String name),
     Result usernameChanged(String username),
     Result passwordChanged(String password),
@@ -400,6 +577,7 @@ class _$_NameChanged implements _NameChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
+    @required Result imageChanged(_ImageChanged value),
     @required Result nameChanged(_NameChanged value),
     @required Result usernameChanged(_UsernameChanged value),
     @required Result passwordChanged(_PasswordChanged value),
@@ -412,6 +590,7 @@ class _$_NameChanged implements _NameChanged {
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
+    assert(imageChanged != null);
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
@@ -428,6 +607,7 @@ class _$_NameChanged implements _NameChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
+    Result imageChanged(_ImageChanged value),
     Result nameChanged(_NameChanged value),
     Result usernameChanged(_UsernameChanged value),
     Result passwordChanged(_PasswordChanged value),
@@ -513,6 +693,7 @@ class _$_UsernameChanged implements _UsernameChanged {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initialized(),
+    @required Result imageChanged(File imageFile),
     @required Result nameChanged(String name),
     @required Result usernameChanged(String username),
     @required Result passwordChanged(String password),
@@ -524,6 +705,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     @required Result submitted(),
   }) {
     assert(initialized != null);
+    assert(imageChanged != null);
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
@@ -540,6 +722,7 @@ class _$_UsernameChanged implements _UsernameChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(),
+    Result imageChanged(File imageFile),
     Result nameChanged(String name),
     Result usernameChanged(String username),
     Result passwordChanged(String password),
@@ -562,6 +745,7 @@ class _$_UsernameChanged implements _UsernameChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
+    @required Result imageChanged(_ImageChanged value),
     @required Result nameChanged(_NameChanged value),
     @required Result usernameChanged(_UsernameChanged value),
     @required Result passwordChanged(_PasswordChanged value),
@@ -574,6 +758,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
+    assert(imageChanged != null);
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
@@ -590,6 +775,7 @@ class _$_UsernameChanged implements _UsernameChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
+    Result imageChanged(_ImageChanged value),
     Result nameChanged(_NameChanged value),
     Result usernameChanged(_UsernameChanged value),
     Result passwordChanged(_PasswordChanged value),
@@ -675,6 +861,7 @@ class _$_PasswordChanged implements _PasswordChanged {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initialized(),
+    @required Result imageChanged(File imageFile),
     @required Result nameChanged(String name),
     @required Result usernameChanged(String username),
     @required Result passwordChanged(String password),
@@ -686,6 +873,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     @required Result submitted(),
   }) {
     assert(initialized != null);
+    assert(imageChanged != null);
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
@@ -702,6 +890,7 @@ class _$_PasswordChanged implements _PasswordChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(),
+    Result imageChanged(File imageFile),
     Result nameChanged(String name),
     Result usernameChanged(String username),
     Result passwordChanged(String password),
@@ -724,6 +913,7 @@ class _$_PasswordChanged implements _PasswordChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
+    @required Result imageChanged(_ImageChanged value),
     @required Result nameChanged(_NameChanged value),
     @required Result usernameChanged(_UsernameChanged value),
     @required Result passwordChanged(_PasswordChanged value),
@@ -736,6 +926,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
+    assert(imageChanged != null);
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
@@ -752,6 +943,7 @@ class _$_PasswordChanged implements _PasswordChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
+    Result imageChanged(_ImageChanged value),
     Result nameChanged(_NameChanged value),
     Result usernameChanged(_UsernameChanged value),
     Result passwordChanged(_PasswordChanged value),
@@ -845,6 +1037,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initialized(),
+    @required Result imageChanged(File imageFile),
     @required Result nameChanged(String name),
     @required Result usernameChanged(String username),
     @required Result passwordChanged(String password),
@@ -856,6 +1049,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
     @required Result submitted(),
   }) {
     assert(initialized != null);
+    assert(imageChanged != null);
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
@@ -872,6 +1066,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(),
+    Result imageChanged(File imageFile),
     Result nameChanged(String name),
     Result usernameChanged(String username),
     Result passwordChanged(String password),
@@ -894,6 +1089,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
+    @required Result imageChanged(_ImageChanged value),
     @required Result nameChanged(_NameChanged value),
     @required Result usernameChanged(_UsernameChanged value),
     @required Result passwordChanged(_PasswordChanged value),
@@ -906,6 +1102,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
+    assert(imageChanged != null);
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
@@ -922,6 +1119,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
+    Result imageChanged(_ImageChanged value),
     Result nameChanged(_NameChanged value),
     Result usernameChanged(_UsernameChanged value),
     Result passwordChanged(_PasswordChanged value),
@@ -1011,6 +1209,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initialized(),
+    @required Result imageChanged(File imageFile),
     @required Result nameChanged(String name),
     @required Result usernameChanged(String username),
     @required Result passwordChanged(String password),
@@ -1022,6 +1221,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     @required Result submitted(),
   }) {
     assert(initialized != null);
+    assert(imageChanged != null);
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
@@ -1038,6 +1238,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(),
+    Result imageChanged(File imageFile),
     Result nameChanged(String name),
     Result usernameChanged(String username),
     Result passwordChanged(String password),
@@ -1060,6 +1261,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
+    @required Result imageChanged(_ImageChanged value),
     @required Result nameChanged(_NameChanged value),
     @required Result usernameChanged(_UsernameChanged value),
     @required Result passwordChanged(_PasswordChanged value),
@@ -1072,6 +1274,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
+    assert(imageChanged != null);
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
@@ -1088,6 +1291,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
+    Result imageChanged(_ImageChanged value),
     Result nameChanged(_NameChanged value),
     Result usernameChanged(_UsernameChanged value),
     Result passwordChanged(_PasswordChanged value),
@@ -1174,6 +1378,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initialized(),
+    @required Result imageChanged(File imageFile),
     @required Result nameChanged(String name),
     @required Result usernameChanged(String username),
     @required Result passwordChanged(String password),
@@ -1185,6 +1390,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     @required Result submitted(),
   }) {
     assert(initialized != null);
+    assert(imageChanged != null);
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
@@ -1201,6 +1407,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(),
+    Result imageChanged(File imageFile),
     Result nameChanged(String name),
     Result usernameChanged(String username),
     Result passwordChanged(String password),
@@ -1223,6 +1430,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
+    @required Result imageChanged(_ImageChanged value),
     @required Result nameChanged(_NameChanged value),
     @required Result usernameChanged(_UsernameChanged value),
     @required Result passwordChanged(_PasswordChanged value),
@@ -1235,6 +1443,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
+    assert(imageChanged != null);
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
@@ -1251,6 +1460,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
+    Result imageChanged(_ImageChanged value),
     Result nameChanged(_NameChanged value),
     Result usernameChanged(_UsernameChanged value),
     Result passwordChanged(_PasswordChanged value),
@@ -1336,6 +1546,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initialized(),
+    @required Result imageChanged(File imageFile),
     @required Result nameChanged(String name),
     @required Result usernameChanged(String username),
     @required Result passwordChanged(String password),
@@ -1347,6 +1558,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     @required Result submitted(),
   }) {
     assert(initialized != null);
+    assert(imageChanged != null);
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
@@ -1363,6 +1575,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(),
+    Result imageChanged(File imageFile),
     Result nameChanged(String name),
     Result usernameChanged(String username),
     Result passwordChanged(String password),
@@ -1385,6 +1598,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
+    @required Result imageChanged(_ImageChanged value),
     @required Result nameChanged(_NameChanged value),
     @required Result usernameChanged(_UsernameChanged value),
     @required Result passwordChanged(_PasswordChanged value),
@@ -1397,6 +1611,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
+    assert(imageChanged != null);
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
@@ -1413,6 +1628,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
+    Result imageChanged(_ImageChanged value),
     Result nameChanged(_NameChanged value),
     Result usernameChanged(_UsernameChanged value),
     Result passwordChanged(_PasswordChanged value),
@@ -1498,6 +1714,7 @@ class _$_InterestsChanged implements _InterestsChanged {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initialized(),
+    @required Result imageChanged(File imageFile),
     @required Result nameChanged(String name),
     @required Result usernameChanged(String username),
     @required Result passwordChanged(String password),
@@ -1509,6 +1726,7 @@ class _$_InterestsChanged implements _InterestsChanged {
     @required Result submitted(),
   }) {
     assert(initialized != null);
+    assert(imageChanged != null);
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
@@ -1525,6 +1743,7 @@ class _$_InterestsChanged implements _InterestsChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(),
+    Result imageChanged(File imageFile),
     Result nameChanged(String name),
     Result usernameChanged(String username),
     Result passwordChanged(String password),
@@ -1547,6 +1766,7 @@ class _$_InterestsChanged implements _InterestsChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
+    @required Result imageChanged(_ImageChanged value),
     @required Result nameChanged(_NameChanged value),
     @required Result usernameChanged(_UsernameChanged value),
     @required Result passwordChanged(_PasswordChanged value),
@@ -1559,6 +1779,7 @@ class _$_InterestsChanged implements _InterestsChanged {
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
+    assert(imageChanged != null);
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
@@ -1575,6 +1796,7 @@ class _$_InterestsChanged implements _InterestsChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
+    Result imageChanged(_ImageChanged value),
     Result nameChanged(_NameChanged value),
     Result usernameChanged(_UsernameChanged value),
     Result passwordChanged(_PasswordChanged value),
@@ -1637,6 +1859,7 @@ class _$_Submitted implements _Submitted {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initialized(),
+    @required Result imageChanged(File imageFile),
     @required Result nameChanged(String name),
     @required Result usernameChanged(String username),
     @required Result passwordChanged(String password),
@@ -1648,6 +1871,7 @@ class _$_Submitted implements _Submitted {
     @required Result submitted(),
   }) {
     assert(initialized != null);
+    assert(imageChanged != null);
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
@@ -1664,6 +1888,7 @@ class _$_Submitted implements _Submitted {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(),
+    Result imageChanged(File imageFile),
     Result nameChanged(String name),
     Result usernameChanged(String username),
     Result passwordChanged(String password),
@@ -1686,6 +1911,7 @@ class _$_Submitted implements _Submitted {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initialized(_Initialized value),
+    @required Result imageChanged(_ImageChanged value),
     @required Result nameChanged(_NameChanged value),
     @required Result usernameChanged(_UsernameChanged value),
     @required Result passwordChanged(_PasswordChanged value),
@@ -1698,6 +1924,7 @@ class _$_Submitted implements _Submitted {
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
+    assert(imageChanged != null);
     assert(nameChanged != null);
     assert(usernameChanged != null);
     assert(passwordChanged != null);
@@ -1714,6 +1941,7 @@ class _$_Submitted implements _Submitted {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initialized(_Initialized value),
+    Result imageChanged(_ImageChanged value),
     Result nameChanged(_NameChanged value),
     Result usernameChanged(_UsernameChanged value),
     Result passwordChanged(_PasswordChanged value),

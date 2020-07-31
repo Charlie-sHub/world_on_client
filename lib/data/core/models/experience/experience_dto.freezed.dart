@@ -21,7 +21,7 @@ class _$ExperienceDtoTearOff {
       @required String title,
       @required String description,
       @required Set<String> imageURLs,
-        @required List<String> imageAssets,
+      @required List<String> imageAssets,
       @required CoordinatesDto coordinates,
       @required LocationDto location,
       @required UserDto creator,
@@ -61,11 +61,9 @@ const $ExperienceDto = _$ExperienceDtoTearOff();
 
 mixin _$ExperienceDto {
   int get id;
-
   String get title;
   String get description;
   Set<String> get imageURLs;
-
   List<String> get imageAssets;
   CoordinatesDto get coordinates;
   LocationDto get location;
@@ -497,7 +495,6 @@ abstract class _ExperienceDto extends ExperienceDto {
   String get description;
   @override
   Set<String> get imageURLs;
-
   @override
   List<String> get imageAssets;
   @override

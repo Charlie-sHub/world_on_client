@@ -16,7 +16,7 @@ part 'reward.freezed.dart';
 @freezed
 abstract class Reward implements _$Reward {
   const Reward._();
-  
+
   const factory Reward({
     int id,
     @required Name name,
@@ -26,18 +26,19 @@ abstract class Reward implements _$Reward {
   }) = _Reward;
 
   factory Reward.empty() => Reward(
-    name: Name(""),
-    description: EntityDescription(""),
-    imageURL: "",
-    imageFile: File(""),
-  );
-  
+        name: Name(""),
+        description: EntityDescription(""),
+        // TODO: Change to const strings
+        imageURL: "",
+        imageFile: File("assets/reward_placeholder.jpg"),
+      );
+
   Option<ValueFailure<dynamic>> get failureOption {
     return name.failureOrUnit.andThen(description.failureOrUnit).fold(
         (failure) => some(failure),
         (_) => none(),
     );
   }
-  
+
   bool get isValid => failureOption.isNone();
 }

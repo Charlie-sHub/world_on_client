@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:kt_dart/kt.dart';
@@ -17,7 +18,7 @@ part 'achievement_dto.g.dart';
 @freezed
 abstract class AchievementDto implements _$AchievementDto {
   const AchievementDto._();
-  
+
   const factory AchievementDto({
     @required int id,
     @required String name,
@@ -25,7 +26,7 @@ abstract class AchievementDto implements _$AchievementDto {
     @required String imageURL,
     // TODO: Figure out how to serialize Files to JSON
     // IS it even necessary?
-    @required String imageFile,
+    @required List<int> imageFile,
     @required String type,
     @required int requisite,
     @required int experiencePoints,
@@ -34,13 +35,13 @@ abstract class AchievementDto implements _$AchievementDto {
     @required String modificationDate,
     @required Set<TagDto> tags,
   }) = _AchievementDto;
-  
+
   factory AchievementDto.fromDomain(Achievement achievement) => AchievementDto(
-    id: achievement.id,
-    name: achievement.name.getOrCrash(),
-    description: achievement.description.getOrCrash(),
-    imageURL: achievement.imageURL,
-        imageFile: achievement.imageFile.readAsStringSync(),
+        id: achievement.id,
+        name: achievement.name.getOrCrash(),
+        description: achievement.description.getOrCrash(),
+        imageURL: achievement.imageURL,
+        imageFile: achievement.imageFile.readAsBytesSync(),
         type: achievement.type,
     requisite: achievement.requisite,
     experiencePoints: achievement.experiencePoints.getOrCrash(),
@@ -49,13 +50,14 @@ abstract class AchievementDto implements _$AchievementDto {
     modificationDate: achievement.modificationDate.getOrCrash().toIso8601String(),
     tags: achievement.tags.getOrCrash().asSet().map((tag) => TagDto.fromDomain(tag)).toSet(),
   );
-  
+
   Achievement toDomain() => Achievement(
     id: id,
     name: Name(name),
     description: EntityDescription(description),
     imageURL: imageURL,
-    imageFile: File(""),
+    // TODO: How should the files be named?
+    imageFile: File.fromRawPath(Uint8List.fromList(imageFile)),
     type: type,
     requisite: requisite,
     experiencePoints: ExperiencePoints(experiencePoints),
@@ -64,7 +66,7 @@ abstract class AchievementDto implements _$AchievementDto {
     modificationDate: PastDate(DateTime.parse(modificationDate)),
     tags: TagSet(tags.map((tagDto) => tagDto.toDomain()).toImmutableSet()),
   );
-  
+
   factory AchievementDto.fromJson(Map<String, dynamic> json) => _$AchievementDtoFromJson(json);
 
 // TODO: Implement fromFirestore methods in the DTOs

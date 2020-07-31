@@ -17,7 +17,7 @@ Achievement getValidAchievement() {
     name: Name("Cras scelerisque"),
     description: EntityDescription("Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce vel mauris et sapien finibus congue."),
     imageURL: "testAchievement.jpg",
-    imageFile: File(""),
+    imageFile: File("assets/world_on_logo.jpg"),
     type: "Meta achievement",
     requisite: 1,
     experiencePoints: ExperiencePoints(100),

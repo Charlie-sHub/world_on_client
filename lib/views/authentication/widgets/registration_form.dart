@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
 import 'package:worldon/application/authentication/registration_form/registration_form_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
@@ -14,10 +17,10 @@ class RegistrationForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<RegistrationFormBloc, RegistrationFormState>(
       listener: (context, state) => state.failureOrSuccessOption.fold(
-        () => null,
-        (either) => either.fold(
-          (failure) => onFailure(failure, context),
-          (_) => onSuccess(context),
+          () => null,
+          (either) => either.fold(
+            (failure) => onFailure(failure, context),
+            (_) => onSuccess(context),
         ),
       ),
       // TODO: Check how to initialize this form with a google user or similar
@@ -27,38 +30,37 @@ class RegistrationForm extends StatelessWidget {
         autovalidate: state.showErrorMessages,
         child: ListView(
           padding: const EdgeInsets.all(40),
-          children: const <Widget>[
-            WorldOnTitle(),
-            SizedBox(height: 10),
-            Divider(color: Colors.grey),
-            SizedBox(height: 10),
-            // TODO: Implement images
-            PhotoPlaceholder(),
-            SizedBox(height: 10),
-            UsernameTextField(),
-            SizedBox(height: 8),
-            NameTextField(),
-            SizedBox(height: 8),
-            EmailTextField(),
-            SizedBox(height: 8),
-            DescriptionTextField(),
-            SizedBox(height: 8),
-            BirthdayButton(),
-            SizedBox(height: 8),
-            PasswordTextField(),
-            SizedBox(height: 8),
-            PasswordConfirmationTextField(),
-            SizedBox(height: 8),
-            EULACheckBox(),
-            SizedBox(height: 8),
+          children: <Widget>[
+            const WorldOnTitle(),
+            const SizedBox(height: 10),
+            const Divider(color: Colors.grey),
+            const SizedBox(height: 10),
+            UserImagePicker(),
+            const SizedBox(height: 10),
+            const UsernameTextField(),
+            const SizedBox(height: 8),
+            const NameTextField(),
+            const SizedBox(height: 8),
+            const EmailTextField(),
+            const SizedBox(height: 8),
+            const DescriptionTextField(),
+            const SizedBox(height: 8),
+            const BirthdayButton(),
+            const SizedBox(height: 8),
+            const PasswordTextField(),
+            const SizedBox(height: 8),
+            const PasswordConfirmationTextField(),
+            const SizedBox(height: 8),
+            const EULACheckBox(),
+            const SizedBox(height: 8),
             // TODO: Add the interest selection, at least a placeholder
-            RegisterButton(),
+            const RegisterButton(),
           ],
         ),
       ),
     );
   }
-
+  
   Future onFailure(Failure failure, BuildContext context) {
     return FlushbarHelper.createError(
       duration: const Duration(seconds: 2),
@@ -73,10 +75,40 @@ class RegistrationForm extends StatelessWidget {
       ),
     ).show(context);
   }
-
+  
   void onSuccess(BuildContext context) {
     context.navigator.popAndPush(Routes.mainPage);
     context.bloc<AuthenticationBloc>().add(const AuthenticationEvent.authenticationCheckRequested());
+  }
+}
+
+class UserImagePicker extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: context.bloc<RegistrationFormBloc>().state.user.imageFileOption.fold(
+            () => IconButton(
+              iconSize: 80,
+              icon: Icon(
+                Icons.photo_camera,
+              ),
+              onPressed: () async => pickImage(context),
+            ),
+            (imageFile) => FlatButton(
+              onPressed: () async => pickImage(context),
+              child: CircleAvatar(
+                radius: 80,
+                backgroundImage: FileImage(imageFile),
+              ),
+            ),
+          ),
+    );
+  }
+
+  Future pickImage(BuildContext context) async {
+    final imagePicked = await ImagePicker().getImage(source: ImageSource.gallery);
+    final imageFile = File(imagePicked.path);
+    context.bloc<RegistrationFormBloc>().add(RegistrationFormEvent.imageChanged(imageFile));
   }
 }
 
@@ -84,7 +116,7 @@ class WorldOnTitle extends StatelessWidget {
   const WorldOnTitle({
     Key key,
   }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return const Text(
@@ -98,43 +130,27 @@ class WorldOnTitle extends StatelessWidget {
   }
 }
 
-class PhotoPlaceholder extends StatelessWidget {
-  const PhotoPlaceholder({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      child: Icon(
-        Icons.photo_camera,
-        size: 80,
-      ),
-    );
-  }
-}
-
 class UsernameTextField extends StatelessWidget {
   const UsernameTextField({
     Key key,
   }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       onChanged: (value) => context.bloc<RegistrationFormBloc>().add(
-            RegistrationFormEvent.usernameChanged(value),
-          ),
+        RegistrationFormEvent.usernameChanged(value),
+      ),
       validator: (_) => context.bloc<RegistrationFormBloc>().state.user.username.value.fold(
-            (failure) => failure.maybeMap(
-              emptyString: (_) => "The username can't be empty",
-              multiLineString: (_) => "The username can't be more than one line",
-              stringExceedsLength: (_) => "The username is too long",
-              stringWithInvalidCharacters: (_) => "The username has invalid characters",
-              orElse: () => StringConst.unknownError,
-            ),
-            (_) => null,
-          ),
+          (failure) => failure.maybeMap(
+          emptyString: (_) => "The username can't be empty",
+          multiLineString: (_) => "The username can't be more than one line",
+          stringExceedsLength: (_) => "The username is too long",
+          stringWithInvalidCharacters: (_) => "The username has invalid characters",
+          orElse: () => StringConst.unknownError,
+        ),
+          (_) => null,
+      ),
       autocorrect: false,
       decoration: InputDecoration(
         labelText: "Username",
@@ -148,23 +164,23 @@ class NameTextField extends StatelessWidget {
   const NameTextField({
     Key key,
   }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       onChanged: (value) => context.bloc<RegistrationFormBloc>().add(
-            RegistrationFormEvent.nameChanged(value),
-          ),
+        RegistrationFormEvent.nameChanged(value),
+      ),
       validator: (_) => context.bloc<RegistrationFormBloc>().state.user.name.value.fold(
-            (failure) => failure.maybeMap(
-              emptyString: (_) => "The name can't be empty",
-              multiLineString: (_) => "The name can't be more than one line",
-              stringExceedsLength: (_) => "The name is too long",
-              stringWithInvalidCharacters: (_) => "The name has invalid characters",
-              orElse: () => StringConst.unknownError,
-            ),
-            (_) => null,
-          ),
+          (failure) => failure.maybeMap(
+          emptyString: (_) => "The name can't be empty",
+          multiLineString: (_) => "The name can't be more than one line",
+          stringExceedsLength: (_) => "The name is too long",
+          stringWithInvalidCharacters: (_) => "The name has invalid characters",
+          orElse: () => StringConst.unknownError,
+        ),
+          (_) => null,
+      ),
       autocorrect: false,
       decoration: InputDecoration(
         labelText: "Name",
@@ -178,20 +194,20 @@ class EmailTextField extends StatelessWidget {
   const EmailTextField({
     Key key,
   }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       onChanged: (value) => context.bloc<RegistrationFormBloc>().add(
-            RegistrationFormEvent.emailAddressChanged(value),
-          ),
+        RegistrationFormEvent.emailAddressChanged(value),
+      ),
       validator: (_) => context.bloc<RegistrationFormBloc>().state.user.email.value.fold(
-            (failure) => failure.maybeMap(
-              invalidEmail: (_) => "Invalid email",
-              orElse: () => StringConst.unknownError,
-            ),
-            (_) => null,
-          ),
+          (failure) => failure.maybeMap(
+          invalidEmail: (_) => "Invalid email",
+          orElse: () => StringConst.unknownError,
+        ),
+          (_) => null,
+      ),
       autocorrect: false,
       decoration: InputDecoration(
         labelText: "Email Address",
@@ -205,21 +221,21 @@ class DescriptionTextField extends StatelessWidget {
   const DescriptionTextField({
     Key key,
   }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       onChanged: (value) => context.bloc<RegistrationFormBloc>().add(
-            RegistrationFormEvent.descriptionChanged(value),
-          ),
+        RegistrationFormEvent.descriptionChanged(value),
+      ),
       validator: (_) => context.bloc<RegistrationFormBloc>().state.user.description.value.fold(
-            (failure) => failure.maybeMap(
-              emptyString: (_) => "The description can't be empty",
-              stringExceedsLength: (_) => "The description is too long",
-              orElse: () => StringConst.unknownError,
-            ),
-            (_) => null,
-          ),
+          (failure) => failure.maybeMap(
+          emptyString: (_) => "The description can't be empty",
+          stringExceedsLength: (_) => "The description is too long",
+          orElse: () => StringConst.unknownError,
+        ),
+          (_) => null,
+      ),
       autocorrect: false,
       maxLines: 5,
       decoration: InputDecoration(
@@ -234,7 +250,7 @@ class BirthdayButton extends StatelessWidget {
   const BirthdayButton({
     Key key,
   }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
@@ -246,8 +262,8 @@ class BirthdayButton extends StatelessWidget {
           lastDate: DateTime.now(),
         );
         context.bloc<RegistrationFormBloc>().add(
-              RegistrationFormEvent.birthdayChanged(_birthDate),
-            );
+          RegistrationFormEvent.birthdayChanged(_birthDate),
+        );
       },
       // TODO: Make it so the text changes to the selected date after selection or the failure
       child: const Text("Select your birthday"),
@@ -259,13 +275,13 @@ class PasswordTextField extends StatelessWidget {
   const PasswordTextField({
     Key key,
   }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       onChanged: (value) => context.bloc<RegistrationFormBloc>().add(
-            RegistrationFormEvent.passwordChanged(value),
-          ),
+        RegistrationFormEvent.passwordChanged(value),
+      ),
       validator: (_) => context.bloc<RegistrationFormBloc>().state.user.password.value.fold(
           (failure) =>
           failure.maybeMap(
@@ -292,7 +308,7 @@ class PasswordConfirmationTextField extends StatelessWidget {
   const PasswordConfirmationTextField({
     Key key,
   }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -321,7 +337,7 @@ class EULACheckBox extends StatelessWidget {
   const EULACheckBox({
     Key key,
   }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return CheckboxListTile(
@@ -338,7 +354,7 @@ class RegisterButton extends StatelessWidget {
   const RegisterButton({
     Key key,
   }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
