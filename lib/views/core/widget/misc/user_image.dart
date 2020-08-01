@@ -20,29 +20,10 @@ class UserImage extends StatelessWidget {
         onPressed: () => context.bloc<NavigationActorBloc>().add(
               NavigationActorEvent.profileTapped(some(user)),
             ),
-        // TODO: Figure out how to implement the user image
-        // For some reason when building an image from a File the asset image can't be found
-        /*
-        child: user.imageFileOption.fold(
-            () => const CircleAvatar(
-            radius: 22,
-            backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
-          ),
-            (imageFile) => CircleAvatar(
-            radius: 22,
-            backgroundImage: FileImage(File("../world_on/assets/non_existing_person_placeholder.jpg")),
-          ),
-        ),
-         */
-        child: user.imageFileOption.fold(
-          () => const CircleAvatar(
-            radius: 22,
-            backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
-          ),
-          (imageFile) => const CircleAvatar(
-            radius: 22,
-            backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
-          ),
+        // TODO: Change to NetworkImage
+        child: const CircleAvatar(
+          radius: 22,
+          backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
         ),
       ),
     );

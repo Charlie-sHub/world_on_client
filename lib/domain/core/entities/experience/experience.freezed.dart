@@ -61,7 +61,6 @@ mixin _$Experience {
   Name get title;
   EntityDescription get description;
   Set<String> get imageURLs;
-
   Option<List<Asset>> get imageAssetsOption;
   Coordinates get coordinates;
   Location get location;
@@ -85,7 +84,7 @@ abstract class $ExperienceCopyWith<$Res> {
       _$ExperienceCopyWithImpl<$Res>;
   $Res call(
       {int id,
-        Name title,
+      Name title,
       EntityDescription description,
       Set<String> imageURLs,
         Option<List<Asset>> imageAssetsOption,

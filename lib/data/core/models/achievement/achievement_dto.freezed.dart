@@ -21,7 +21,6 @@ class _$AchievementDtoTearOff {
       @required String name,
       @required String description,
       @required String imageURL,
-      @required List<int> imageFile,
       @required String type,
       @required int requisite,
       @required int experiencePoints,
@@ -34,7 +33,6 @@ class _$AchievementDtoTearOff {
       name: name,
       description: description,
       imageURL: imageURL,
-      imageFile: imageFile,
       type: type,
       requisite: requisite,
       experiencePoints: experiencePoints,
@@ -54,8 +52,6 @@ mixin _$AchievementDto {
   String get name;
   String get description;
   String get imageURL;
-
-  List<int> get imageFile;
   String get type;
   int get requisite;
   int get experiencePoints;
@@ -69,21 +65,10 @@ mixin _$AchievementDto {
 }
 
 abstract class $AchievementDtoCopyWith<$Res> {
-  factory $AchievementDtoCopyWith(AchievementDto value, $Res Function(AchievementDto) then) =
-  _$AchievementDtoCopyWithImpl<$Res>;
-  
-  $Res call({int id,
-    String name,
-    String description,
-    String imageURL,
-    List<int> imageFile,
-    String type,
-    int requisite,
-    int experiencePoints,
-    UserDto creator,
-    String creationDate,
-    String modificationDate,
-    Set<TagDto> tags});
+  factory $AchievementDtoCopyWith(AchievementDto value, $Res Function(AchievementDto) then) = _$AchievementDtoCopyWithImpl<$Res>;
+
+  $Res call(
+      {int id, String name, String description, String imageURL, String type, int requisite, int experiencePoints, UserDto creator, String creationDate, String modificationDate, Set<TagDto> tags});
 
   $UserDtoCopyWith<$Res> get creator;
 }
@@ -102,7 +87,6 @@ class _$AchievementDtoCopyWithImpl<$Res>
     Object name = freezed,
     Object description = freezed,
     Object imageURL = freezed,
-    Object imageFile = freezed,
     Object type = freezed,
     Object requisite = freezed,
     Object experiencePoints = freezed,
@@ -117,8 +101,6 @@ class _$AchievementDtoCopyWithImpl<$Res>
       description:
       description == freezed ? _value.description : description as String,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile:
-      imageFile == freezed ? _value.imageFile : imageFile as List<int>,
       type: type == freezed ? _value.type : type as String,
       requisite: requisite == freezed ? _value.requisite : requisite as int,
       experiencePoints: experiencePoints == freezed
@@ -155,7 +137,6 @@ abstract class _$AchievementDtoCopyWith<$Res>
     String name,
     String description,
     String imageURL,
-    List<int> imageFile,
     String type,
     int requisite,
     int experiencePoints,
@@ -182,7 +163,6 @@ class __$AchievementDtoCopyWithImpl<$Res> extends _$AchievementDtoCopyWithImpl<$
     Object name = freezed,
     Object description = freezed,
     Object imageURL = freezed,
-    Object imageFile = freezed,
     Object type = freezed,
     Object requisite = freezed,
     Object experiencePoints = freezed,
@@ -197,8 +177,6 @@ class __$AchievementDtoCopyWithImpl<$Res> extends _$AchievementDtoCopyWithImpl<$
       description:
       description == freezed ? _value.description : description as String,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile:
-      imageFile == freezed ? _value.imageFile : imageFile as List<int>,
       type: type == freezed ? _value.type : type as String,
       requisite: requisite == freezed ? _value.requisite : requisite as int,
       experiencePoints: experiencePoints == freezed
@@ -223,7 +201,6 @@ class _$_AchievementDto extends _AchievementDto {
       @required this.name,
       @required this.description,
       @required this.imageURL,
-        @required this.imageFile,
       @required this.type,
       @required this.requisite,
       @required this.experiencePoints,
@@ -235,7 +212,6 @@ class _$_AchievementDto extends _AchievementDto {
         assert(name != null),
         assert(description != null),
         assert(imageURL != null),
-      assert(imageFile != null),
         assert(type != null),
         assert(requisite != null),
         assert(experiencePoints != null),
@@ -257,8 +233,6 @@ class _$_AchievementDto extends _AchievementDto {
   @override
   final String imageURL;
   @override
-  final List<int> imageFile;
-  @override
   final String type;
   @override
   final int requisite;
@@ -275,7 +249,7 @@ class _$_AchievementDto extends _AchievementDto {
 
   @override
   String toString() {
-    return 'AchievementDto(id: $id, name: $name, description: $description, imageURL: $imageURL, imageFile: $imageFile, type: $type, requisite: $requisite, experiencePoints: $experiencePoints, creator: $creator, creationDate: $creationDate, modificationDate: $modificationDate, tags: $tags)';
+    return 'AchievementDto(id: $id, name: $name, description: $description, imageURL: $imageURL, type: $type, requisite: $requisite, experiencePoints: $experiencePoints, creator: $creator, creationDate: $creationDate, modificationDate: $modificationDate, tags: $tags)';
   }
 
   @override
@@ -292,9 +266,6 @@ class _$_AchievementDto extends _AchievementDto {
         (identical(other.imageURL, imageURL) ||
           const DeepCollectionEquality()
             .equals(other.imageURL, imageURL)) &&
-        (identical(other.imageFile, imageFile) ||
-          const DeepCollectionEquality()
-            .equals(other.imageFile, imageFile)) &&
         (identical(other.type, type) ||
           const DeepCollectionEquality().equals(other.type, type)) &&
         (identical(other.requisite, requisite) ||
@@ -323,7 +294,6 @@ class _$_AchievementDto extends _AchievementDto {
     const DeepCollectionEquality().hash(name) ^
     const DeepCollectionEquality().hash(description) ^
     const DeepCollectionEquality().hash(imageURL) ^
-    const DeepCollectionEquality().hash(imageFile) ^
     const DeepCollectionEquality().hash(type) ^
     const DeepCollectionEquality().hash(requisite) ^
     const DeepCollectionEquality().hash(experiencePoints) ^
@@ -349,7 +319,6 @@ abstract class _AchievementDto extends AchievementDto {
       @required String name,
       @required String description,
       @required String imageURL,
-        @required List<int> imageFile,
       @required String type,
       @required int requisite,
       @required int experiencePoints,
@@ -369,8 +338,6 @@ abstract class _AchievementDto extends AchievementDto {
   String get description;
   @override
   String get imageURL;
-  @override
-  List<int> get imageFile;
   @override
   String get type;
   @override

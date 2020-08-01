@@ -13,7 +13,7 @@ class _$ObjectiveTearOff {
   const _$ObjectiveTearOff();
 
 // ignore: unused_element
-  _Objective call({int id, @required EntityDescription description, @required Coordinates coordinates, @required String imageURL, @required File imageFile}) {
+  _Objective call({int id, @required EntityDescription description, @required Coordinates coordinates, @required String imageURL, @required Option<File> imageFile}) {
     return _Objective(
       id: id,
       description: description,
@@ -32,7 +32,8 @@ mixin _$Objective {
   EntityDescription get description;
   Coordinates get coordinates;
   String get imageURL;
-  File get imageFile;
+
+  Option<File> get imageFile;
 
   $ObjectiveCopyWith<Objective> get copyWith;
 }
@@ -45,7 +46,7 @@ abstract class $ObjectiveCopyWith<$Res> {
     EntityDescription description,
     Coordinates coordinates,
     String imageURL,
-    File imageFile});
+    Option<File> imageFile});
 
   $CoordinatesCopyWith<$Res> get coordinates;
 }
@@ -74,7 +75,8 @@ class _$ObjectiveCopyWithImpl<$Res> implements $ObjectiveCopyWith<$Res> {
         ? _value.coordinates
         : coordinates as Coordinates,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile: imageFile == freezed ? _value.imageFile : imageFile as File,
+      imageFile:
+      imageFile == freezed ? _value.imageFile : imageFile as Option<File>,
     ));
   }
 
@@ -97,7 +99,7 @@ abstract class _$ObjectiveCopyWith<$Res> implements $ObjectiveCopyWith<$Res> {
     EntityDescription description,
     Coordinates coordinates,
     String imageURL,
-    File imageFile});
+    Option<File> imageFile});
 
   @override
   $CoordinatesCopyWith<$Res> get coordinates;
@@ -128,7 +130,8 @@ class __$ObjectiveCopyWithImpl<$Res> extends _$ObjectiveCopyWithImpl<$Res>
         ? _value.coordinates
         : coordinates as Coordinates,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile: imageFile == freezed ? _value.imageFile : imageFile as File,
+      imageFile:
+      imageFile == freezed ? _value.imageFile : imageFile as Option<File>,
     ));
   }
 }
@@ -154,7 +157,7 @@ class _$_Objective extends _Objective {
   @override
   final String imageURL;
   @override
-  final File imageFile;
+  final Option<File> imageFile;
 
   @override
   String toString() {
@@ -202,7 +205,7 @@ abstract class _Objective extends Objective {
     @required EntityDescription description,
     @required Coordinates coordinates,
     @required String imageURL,
-    @required File imageFile}) = _$_Objective;
+    @required Option<File> imageFile}) = _$_Objective;
 
   @override
   int get id;
@@ -213,7 +216,7 @@ abstract class _Objective extends Objective {
   @override
   String get imageURL;
   @override
-  File get imageFile;
+  Option<File> get imageFile;
   @override
   _$ObjectiveCopyWith<_Objective> get copyWith;
 }

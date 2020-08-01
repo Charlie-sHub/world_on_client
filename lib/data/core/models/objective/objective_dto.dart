@@ -1,5 +1,4 @@
-import 'dart:io';
-
+import 'package:dartz/dartz.dart' as dartz;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/data/core/models/coordinates/coordinates_dto.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
@@ -17,7 +16,6 @@ abstract class ObjectiveDto implements _$ObjectiveDto {
     @required String description,
     @required CoordinatesDto coordinates,
     @required String imageURL,
-    @required List<int> imageFile,
   }) = _ObjectiveDto;
 
   factory ObjectiveDto.fromDomain(Objective objective) => ObjectiveDto(
@@ -25,17 +23,15 @@ abstract class ObjectiveDto implements _$ObjectiveDto {
         description: objective.description.getOrCrash(),
         coordinates: CoordinatesDto.fromDomain(objective.coordinates),
         imageURL: objective.imageURL,
-    imageFile: objective.imageFile.readAsBytesSync(),
       );
 
   Objective toDomain() => Objective(
-    id: id,
-    description: EntityDescription(description),
-    coordinates: coordinates.toDomain(),
-    imageURL: imageURL,
-    imageFile: File("test.jpg")
-      ..openWrite().write(imageFile),
-  );
+        id: id,
+        description: EntityDescription(description),
+        coordinates: coordinates.toDomain(),
+        imageURL: imageURL,
+        imageFile: dartz.none(),
+      );
 
   factory ObjectiveDto.fromJson(Map<String, dynamic> json) => _$ObjectiveDtoFromJson(json);
 }

@@ -10,6 +10,7 @@ import 'package:worldon/views/core/misc/string_constants.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 // TODO: How to initialize this for editing?
+// The same way the profiles are, with Option<Experience> experience
 // Maybe this Form should be its own page
 class ExperienceManagementForm extends StatelessWidget {
   @override
@@ -18,9 +19,9 @@ class ExperienceManagementForm extends StatelessWidget {
       create: (context) => getIt<ExperienceManagementFormBloc>(),
       child: BlocConsumer<ExperienceManagementFormBloc, ExperienceManagementFormState>(
         listener: (context, state) => state.failureOrSuccessOption.fold(
-            () => null,
-            (either) => either.fold(
-              (failure) => failure.maybeMap(
+          () => null,
+          (either) => either.fold(
+            (failure) => failure.maybeMap(
               coreData: (failure) => failure.coreDataFailure.maybeMap(
                 nameAlreadyInUse: (_) => FlushbarHelper.createError(duration: const Duration(seconds: 2), message: "The title is already in use").show(context),
                 serverError: (failure) => FlushbarHelper.createError(duration: const Duration(seconds: 2), message: failure.errorString).show(context),
@@ -30,7 +31,7 @@ class ExperienceManagementForm extends StatelessWidget {
             ),
             // TODO: What to do when an Experience is successfully created?
             // reinitialize the form for starters
-              (_) => null,
+                (_) => null,
           ),
         ),
         builder: (context, state) => Form(
@@ -68,11 +69,10 @@ class TagAdditionCard extends StatelessWidget {
   const TagAdditionCard({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: const RoundedRectangleBorder(),
       child: Column(
         children: const <Widget>[
           Text(
@@ -95,11 +95,10 @@ class RewardCreationCard extends StatelessWidget {
   const RewardCreationCard({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: const RoundedRectangleBorder(),
       child: Column(
         children: const <Widget>[
           Text(
@@ -122,11 +121,10 @@ class ObjectiveCreationCard extends StatelessWidget {
   const ObjectiveCreationCard({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: const RoundedRectangleBorder(),
       child: Column(
         children: const <Widget>[
           Text(
@@ -149,7 +147,7 @@ class FinishButton extends StatelessWidget {
   const FinishButton({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
@@ -176,7 +174,7 @@ class TitleFormField extends StatelessWidget {
   const TitleFormField({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -185,14 +183,14 @@ class TitleFormField extends StatelessWidget {
       ),
       validator: (_) => context.bloc<ExperienceManagementFormBloc>().state.experience.title.value.fold(
             (failure) => failure.maybeMap(
-            emptyString: (_) => "The title can't be empty",
-            multiLineString: (_) => "The title can't be more than one line",
-            stringExceedsLength: (_) => "The title is too long",
-            stringWithInvalidCharacters: (_) => "The title has invalid characters",
-            orElse: () => StringConst.unknownError,
-          ),
-            (_) => null,
+          emptyString: (_) => "The title can't be empty",
+          multiLineString: (_) => "The title can't be more than one line",
+          stringExceedsLength: (_) => "The title is too long",
+          stringWithInvalidCharacters: (_) => "The title has invalid characters",
+          orElse: () => StringConst.unknownError,
         ),
+            (_) => null,
+      ),
       decoration: InputDecoration(
         labelText: "Title",
         prefixIcon: Icon(Icons.title),
@@ -205,7 +203,7 @@ class DescriptionFormField extends StatelessWidget {
   const DescriptionFormField({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -213,12 +211,13 @@ class DescriptionFormField extends StatelessWidget {
         ExperienceManagementFormEvent.descriptionChanged(value),
       ),
       validator: (_) => context.bloc<ExperienceManagementFormBloc>().state.experience.description.value.fold(
-          (failure) => failure.maybeMap(
-          emptyString: (_) => "The description can't be empty",
-          stringExceedsLength: (_) => "The description is too long",
-          stringWithInvalidCharacters: (_) => "The description has invalid characters",
-          orElse: () => StringConst.unknownError,
-        ),
+          (failure) =>
+          failure.maybeMap(
+            emptyString: (_) => "The description can't be empty",
+            stringExceedsLength: (_) => "The description is too long",
+            stringWithInvalidCharacters: (_) => "The description has invalid characters",
+            orElse: () => StringConst.unknownError,
+          ),
           (_) => null,
       ),
       maxLines: 5,
@@ -290,7 +289,7 @@ class PicturesSelector extends StatelessWidget {
         ),
     );
   }
-  
+
   Future pickImages(BuildContext context) async {
     final imagesPicked = await MultiImagePicker.pickImages(
       maxImages: 15,
@@ -318,7 +317,7 @@ class Map extends StatelessWidget {
   const Map({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -334,7 +333,7 @@ class DifficultyTitle extends StatelessWidget {
   const DifficultyTitle({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return const Text(
@@ -377,15 +376,16 @@ class ExperienceCreationTitle extends StatelessWidget {
   const ExperienceCreationTitle({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return const Text(
       "Create a new Experience!",
       textAlign: TextAlign.center,
       style: TextStyle(
+        fontWeight: FontWeight.bold,
         color: WorldOnColors.primary,
-        fontSize: 20,
+        fontSize: 25,
       ),
     );
   }

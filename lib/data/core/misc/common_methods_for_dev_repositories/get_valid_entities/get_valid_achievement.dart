@@ -1,5 +1,4 @@
-import 'dart:io';
-
+import 'package:dartz/dartz.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -17,7 +16,7 @@ Achievement getValidAchievement() {
     name: Name("Cras scelerisque"),
     description: EntityDescription("Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce vel mauris et sapien finibus congue."),
     imageURL: "testAchievement.jpg",
-    imageFile: File("assets/world_on_logo.jpg"),
+    imageFile: none(),
     type: "Meta achievement",
     requisite: 1,
     experiencePoints: ExperiencePoints(100),

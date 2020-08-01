@@ -13,7 +13,7 @@ class _$RewardTearOff {
   const _$RewardTearOff();
 
 // ignore: unused_element
-  _Reward call({int id, @required Name name, @required EntityDescription description, @required String imageURL, @required File imageFile}) {
+  _Reward call({int id, @required Name name, @required EntityDescription description, @required String imageURL, @required Option<File> imageFile}) {
     return _Reward(
       id: id,
       name: name,
@@ -32,7 +32,8 @@ mixin _$Reward {
   Name get name;
   EntityDescription get description;
   String get imageURL;
-  File get imageFile;
+
+  Option<File> get imageFile;
 
   $RewardCopyWith<Reward> get copyWith;
 }
@@ -45,7 +46,7 @@ abstract class $RewardCopyWith<$Res> {
     Name name,
     EntityDescription description,
     String imageURL,
-    File imageFile});
+    Option<File> imageFile});
 }
 
 class _$RewardCopyWithImpl<$Res> implements $RewardCopyWith<$Res> {
@@ -70,7 +71,8 @@ class _$RewardCopyWithImpl<$Res> implements $RewardCopyWith<$Res> {
         ? _value.description
         : description as EntityDescription,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile: imageFile == freezed ? _value.imageFile : imageFile as File,
+      imageFile:
+      imageFile == freezed ? _value.imageFile : imageFile as Option<File>,
     ));
   }
 }
@@ -83,7 +85,7 @@ abstract class _$RewardCopyWith<$Res> implements $RewardCopyWith<$Res> {
     Name name,
     EntityDescription description,
     String imageURL,
-    File imageFile});
+    Option<File> imageFile});
 }
 
 class __$RewardCopyWithImpl<$Res> extends _$RewardCopyWithImpl<$Res>
@@ -109,7 +111,8 @@ class __$RewardCopyWithImpl<$Res> extends _$RewardCopyWithImpl<$Res>
         ? _value.description
         : description as EntityDescription,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile: imageFile == freezed ? _value.imageFile : imageFile as File,
+      imageFile:
+      imageFile == freezed ? _value.imageFile : imageFile as Option<File>,
     ));
   }
 }
@@ -135,7 +138,7 @@ class _$_Reward extends _Reward {
   @override
   final String imageURL;
   @override
-  final File imageFile;
+  final Option<File> imageFile;
 
   @override
   String toString() {
@@ -182,7 +185,7 @@ abstract class _Reward extends Reward {
     @required Name name,
     @required EntityDescription description,
     @required String imageURL,
-    @required File imageFile}) = _$_Reward;
+    @required Option<File> imageFile}) = _$_Reward;
 
   @override
   int get id;
@@ -193,7 +196,7 @@ abstract class _Reward extends Reward {
   @override
   String get imageURL;
   @override
-  File get imageFile;
+  Option<File> get imageFile;
   @override
   _$RewardCopyWith<_Reward> get copyWith;
 }

@@ -27,7 +27,7 @@ abstract class Achievement implements _$Achievement {
     // TODO: Make a value object and validator for image URLs from World On's back-end
     // Maybe Firestore will make that unnecessary
     @required String imageURL,
-    @required File imageFile,
+    @required Option<File> imageFile,
     @required String type,
     @required int requisite, // This will probably be reworked in the future to accommodate different kinds of achievements
     @required ExperiencePoints experiencePoints,
@@ -41,7 +41,7 @@ abstract class Achievement implements _$Achievement {
         name: Name(""),
         description: EntityDescription(""),
         imageURL: "",
-        imageFile: File("assets/world_on_logo.jpg"),
+        imageFile: none(),
         type: "",
     requisite: 1,
     experiencePoints: ExperiencePoints(1),

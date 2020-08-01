@@ -16,13 +16,12 @@ class _$RewardDtoTearOff {
   const _$RewardDtoTearOff();
 
 // ignore: unused_element
-  _RewardDto call({@required int id, @required String name, @required String description, @required String imageURL, @required List<int> imageFile}) {
+  _RewardDto call({@required int id, @required String name, @required String description, @required String imageURL}) {
     return _RewardDto(
       id: id,
       name: name,
       description: description,
       imageURL: imageURL,
-      imageFile: imageFile,
     );
   }
 }
@@ -36,8 +35,6 @@ mixin _$RewardDto {
   String get description;
   String get imageURL;
 
-  List<int> get imageFile;
-
   Map<String, dynamic> toJson();
   $RewardDtoCopyWith<RewardDto> get copyWith;
 }
@@ -46,11 +43,7 @@ abstract class $RewardDtoCopyWith<$Res> {
   factory $RewardDtoCopyWith(RewardDto value, $Res Function(RewardDto) then) =
   _$RewardDtoCopyWithImpl<$Res>;
 
-  $Res call({int id,
-    String name,
-    String description,
-    String imageURL,
-    List<int> imageFile});
+  $Res call({int id, String name, String description, String imageURL});
 }
 
 class _$RewardDtoCopyWithImpl<$Res> implements $RewardDtoCopyWith<$Res> {
@@ -66,7 +59,6 @@ class _$RewardDtoCopyWithImpl<$Res> implements $RewardDtoCopyWith<$Res> {
     Object name = freezed,
     Object description = freezed,
     Object imageURL = freezed,
-    Object imageFile = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as int,
@@ -74,8 +66,6 @@ class _$RewardDtoCopyWithImpl<$Res> implements $RewardDtoCopyWith<$Res> {
       description:
       description == freezed ? _value.description : description as String,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile:
-      imageFile == freezed ? _value.imageFile : imageFile as List<int>,
     ));
   }
 }
@@ -84,11 +74,7 @@ abstract class _$RewardDtoCopyWith<$Res> implements $RewardDtoCopyWith<$Res> {
   factory _$RewardDtoCopyWith(_RewardDto value, $Res Function(_RewardDto) then) =
   __$RewardDtoCopyWithImpl<$Res>;
   @override
-  $Res call({int id,
-    String name,
-    String description,
-    String imageURL,
-    List<int> imageFile});
+  $Res call({int id, String name, String description, String imageURL});
 }
 
 class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res>
@@ -105,7 +91,6 @@ class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res>
     Object name = freezed,
     Object description = freezed,
     Object imageURL = freezed,
-    Object imageFile = freezed,
   }) {
     return _then(_RewardDto(
       id: id == freezed ? _value.id : id as int,
@@ -113,8 +98,6 @@ class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res>
       description:
       description == freezed ? _value.description : description as String,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile:
-      imageFile == freezed ? _value.imageFile : imageFile as List<int>,
     ));
   }
 }
@@ -124,13 +107,11 @@ class _$_RewardDto extends _RewardDto {
   const _$_RewardDto({@required this.id,
     @required this.name,
     @required this.description,
-    @required this.imageURL,
-    @required this.imageFile})
+    @required this.imageURL})
       : assert(id != null),
         assert(name != null),
         assert(description != null),
         assert(imageURL != null),
-      assert(imageFile != null),
         super._();
 
   factory _$_RewardDto.fromJson(Map<String, dynamic> json) =>
@@ -144,12 +125,10 @@ class _$_RewardDto extends _RewardDto {
   final String description;
   @override
   final String imageURL;
-  @override
-  final List<int> imageFile;
 
   @override
   String toString() {
-    return 'RewardDto(id: $id, name: $name, description: $description, imageURL: $imageURL, imageFile: $imageFile)';
+    return 'RewardDto(id: $id, name: $name, description: $description, imageURL: $imageURL)';
   }
 
   @override
@@ -165,10 +144,7 @@ class _$_RewardDto extends _RewardDto {
               .equals(other.description, description)) &&
           (identical(other.imageURL, imageURL) ||
             const DeepCollectionEquality()
-              .equals(other.imageURL, imageURL)) &&
-          (identical(other.imageFile, imageFile) ||
-            const DeepCollectionEquality()
-              .equals(other.imageFile, imageFile)));
+              .equals(other.imageURL, imageURL)));
   }
 
   @override
@@ -177,8 +153,7 @@ class _$_RewardDto extends _RewardDto {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(imageURL) ^
-      const DeepCollectionEquality().hash(imageFile);
+      const DeepCollectionEquality().hash(imageURL);
 
   @override
   _$RewardDtoCopyWith<_RewardDto> get copyWith =>
@@ -196,8 +171,7 @@ abstract class _RewardDto extends RewardDto {
   const factory _RewardDto({@required int id,
     @required String name,
     @required String description,
-    @required String imageURL,
-    @required List<int> imageFile}) = _$_RewardDto;
+    @required String imageURL}) = _$_RewardDto;
 
   factory _RewardDto.fromJson(Map<String, dynamic> json) =
   _$_RewardDto.fromJson;
@@ -210,8 +184,6 @@ abstract class _RewardDto extends RewardDto {
   String get description;
   @override
   String get imageURL;
-  @override
-  List<int> get imageFile;
   @override
   _$RewardDtoCopyWith<_RewardDto> get copyWith;
 }

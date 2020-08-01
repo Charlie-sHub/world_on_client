@@ -22,7 +22,7 @@ abstract class Reward implements _$Reward {
     @required Name name,
     @required EntityDescription description,
     @required String imageURL,
-    @required File imageFile,
+    @required Option<File> imageFile,
   }) = _Reward;
 
   factory Reward.empty() => Reward(
@@ -30,7 +30,7 @@ abstract class Reward implements _$Reward {
         description: EntityDescription(""),
         // TODO: Change to const strings
         imageURL: "",
-        imageFile: File("assets/reward_placeholder.jpg"),
+        imageFile: none(),
       );
 
   Option<ValueFailure<dynamic>> get failureOption {

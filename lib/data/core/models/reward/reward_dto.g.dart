@@ -12,7 +12,6 @@ _$_RewardDto _$_$_RewardDtoFromJson(Map<String, dynamic> json) {
     name: json['name'] as String,
     description: json['description'] as String,
     imageURL: json['imageURL'] as String,
-    imageFile: (json['imageFile'] as List)?.map((e) => e as int)?.toList(),
   );
 }
 
@@ -21,5 +20,4 @@ Map<String, dynamic> _$_$_RewardDtoToJson(_$_RewardDto instance) => <String, dyn
       'name': instance.name,
       'description': instance.description,
       'imageURL': instance.imageURL,
-    'imageFile': instance.imageFile,
     };

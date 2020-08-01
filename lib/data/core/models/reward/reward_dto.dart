@@ -1,5 +1,4 @@
-import 'dart:io';
-
+import 'package:dartz/dartz.dart' as dartz;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/reward/reward.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -17,7 +16,6 @@ abstract class RewardDto implements _$RewardDto {
     @required String name,
     @required String description,
     @required String imageURL,
-    @required List<int> imageFile,
   }) = _RewardDto;
 
   factory RewardDto.fromDomain(Reward reward) => RewardDto(
@@ -25,17 +23,15 @@ abstract class RewardDto implements _$RewardDto {
         name: reward.name.getOrCrash(),
         description: reward.description.getOrCrash(),
         imageURL: reward.imageURL,
-        imageFile: reward.imageFile.readAsBytesSync(),
       );
 
   Reward toDomain() => Reward(
-    id: id,
-    name: Name(name),
-    description: EntityDescription(description),
-    imageURL: imageURL,
-    imageFile: File("test.jpg")
-      ..openWrite().write(imageFile),
-  );
+        id: id,
+        name: Name(name),
+        description: EntityDescription(description),
+        imageURL: imageURL,
+        imageFile: dartz.none(),
+      );
 
   factory RewardDto.fromJson(Map<String, dynamic> json) => _$RewardDtoFromJson(json);
 }

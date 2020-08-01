@@ -1,6 +1,4 @@
-import 'dart:io';
-import 'dart:typed_data';
-
+import 'package:dartz/dartz.dart' as dartz;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:worldon/data/core/models/tag/tag_dto.dart';
@@ -24,9 +22,6 @@ abstract class AchievementDto implements _$AchievementDto {
     @required String name,
     @required String description,
     @required String imageURL,
-    // TODO: Figure out how to serialize Files to JSON
-    // IS it even necessary?
-    @required List<int> imageFile,
     @required String type,
     @required int requisite,
     @required int experiencePoints,
@@ -41,23 +36,21 @@ abstract class AchievementDto implements _$AchievementDto {
         name: achievement.name.getOrCrash(),
         description: achievement.description.getOrCrash(),
         imageURL: achievement.imageURL,
-        imageFile: achievement.imageFile.readAsBytesSync(),
         type: achievement.type,
-    requisite: achievement.requisite,
-    experiencePoints: achievement.experiencePoints.getOrCrash(),
-    creator: UserDto.fromDomain(achievement.creator),
-    creationDate: achievement.creationDate.getOrCrash().toIso8601String(),
-    modificationDate: achievement.modificationDate.getOrCrash().toIso8601String(),
-    tags: achievement.tags.getOrCrash().asSet().map((tag) => TagDto.fromDomain(tag)).toSet(),
-  );
+        requisite: achievement.requisite,
+        experiencePoints: achievement.experiencePoints.getOrCrash(),
+        creator: UserDto.fromDomain(achievement.creator),
+        creationDate: achievement.creationDate.getOrCrash().toIso8601String(),
+        modificationDate: achievement.modificationDate.getOrCrash().toIso8601String(),
+        tags: achievement.tags.getOrCrash().asSet().map((tag) => TagDto.fromDomain(tag)).toSet(),
+      );
 
   Achievement toDomain() => Achievement(
     id: id,
     name: Name(name),
     description: EntityDescription(description),
     imageURL: imageURL,
-    // TODO: How should the files be named?
-    imageFile: File.fromRawPath(Uint8List.fromList(imageFile)),
+    imageFile: dartz.none(),
     type: type,
     requisite: requisite,
     experiencePoints: ExperiencePoints(experiencePoints),

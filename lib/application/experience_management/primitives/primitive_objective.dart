@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
@@ -28,11 +29,14 @@ abstract class PrimitiveObjective implements _$PrimitiveObjective {
       );
 
   factory PrimitiveObjective.fromDomain(Objective objective) => PrimitiveObjective(
-    description: objective.description.getOrCrash(),
-    latitude: objective.coordinates.latitude.getOrCrash(),
-    longitude: objective.coordinates.longitude.getOrCrash(),
-    imageFile: objective.imageFile,
-  );
+        description: objective.description.getOrCrash(),
+        latitude: objective.coordinates.latitude.getOrCrash(),
+        longitude: objective.coordinates.longitude.getOrCrash(),
+        imageFile: objective.imageFile.fold(
+          () => null,
+          id,
+        ),
+      );
 
   Objective toDomain() => Objective(
     description: EntityDescription(description),
@@ -41,6 +45,6 @@ abstract class PrimitiveObjective implements _$PrimitiveObjective {
       longitude: Longitude(longitude),
     ),
     imageURL: "",
-    imageFile: imageFile,
+    imageFile: some(imageFile),
   );
 }

@@ -85,7 +85,6 @@ mixin _$User {
   PastDate get birthday;
   EntityDescription get description;
   String get imageURL;
-
   Option<File> get imageFileOption;
   UserLevel get level;
   ExperiencePoints get experiencePoints;
@@ -110,8 +109,7 @@ mixin _$User {
 }
 
 abstract class $UserCopyWith<$Res> {
-  factory $UserCopyWith(User value, $Res Function(User) then) =
-  _$UserCopyWithImpl<$Res>;
+  factory $UserCopyWith(User value, $Res Function(User) then) = _$UserCopyWithImpl<$Res>;
   $Res call(
       {int id,
       Name name,

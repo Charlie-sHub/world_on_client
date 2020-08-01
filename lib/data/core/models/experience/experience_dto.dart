@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart' as dartz;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:kt_dart/kt.dart';
-import 'package:multi_image_picker/multi_image_picker.dart';
 import 'package:worldon/data/core/models/comment/comment_dto.dart';
 import 'package:worldon/data/core/models/coordinates/coordinates_dto.dart';
 import 'package:worldon/data/core/models/location/location_dto.dart';
@@ -24,13 +23,12 @@ part 'experience_dto.g.dart';
 @freezed
 abstract class ExperienceDto implements _$ExperienceDto {
   const ExperienceDto._();
-  
+
   const factory ExperienceDto({
     @required int id,
     @required String title,
     @required String description,
     @required Set<String> imageURLs,
-    @required List<String> imageAssets,
     @required CoordinatesDto coordinates,
     @required LocationDto location,
     @required UserDto creator,
@@ -44,19 +42,12 @@ abstract class ExperienceDto implements _$ExperienceDto {
     @required Set<UserDto> likedBy,
     @required Set<UserDto> doneBy,
   }) = _ExperienceDto;
-  
+
   factory ExperienceDto.fromDomain(Experience experience) => ExperienceDto(
-    id: experience.id,
-    title: experience.title.getOrCrash(),
-    description: experience.description.getOrCrash(),
-    imageURLs: experience.imageURLs,
-        // Does this make any sense?
-        // Probably not
-        // this will be a headache
-        imageAssets: experience.imageAssetsOption.fold(
-          () => [],
-          (imageAssets) => imageAssets.map((asset) => asset.toString()).toList(),
-        ),
+        id: experience.id,
+        title: experience.title.getOrCrash(),
+        description: experience.description.getOrCrash(),
+        imageURLs: experience.imageURLs,
         coordinates: CoordinatesDto.fromDomain(experience.coordinates),
     location: LocationDto.fromDomain(experience.location),
     creator: UserDto.fromDomain(experience.creator),
@@ -70,13 +61,13 @@ abstract class ExperienceDto implements _$ExperienceDto {
     likedBy: experience.likedBy.map((user) => UserDto.fromDomain(user)).toSet(),
     doneBy: experience.doneBy.map((user) => UserDto.fromDomain(user)).toSet(),
   );
-  
+
   Experience toDomain() => Experience(
     id: id,
     title: Name(title),
     description: EntityDescription(description),
     imageURLs: imageURLs,
-    imageAssetsOption: dartz.some(<Asset>[]),
+    imageAssetsOption: dartz.none(),
     coordinates: coordinates.toDomain(),
     location: location.toDomain(),
     creator: creator.toDomain(),
@@ -90,6 +81,6 @@ abstract class ExperienceDto implements _$ExperienceDto {
     likedBy: likedBy.map((userDto) => userDto.toDomain()).toSet(),
     doneBy: doneBy.map((userDto) => userDto.toDomain()).toSet(),
   );
-  
+
   factory ExperienceDto.fromJson(Map<String, dynamic> json) => _$ExperienceDtoFromJson(json);
 }

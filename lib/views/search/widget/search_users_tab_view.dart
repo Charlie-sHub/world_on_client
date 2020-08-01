@@ -71,10 +71,11 @@ class SearchUsersUnicornDialer extends StatelessWidget {
           hasLabel: true,
           labelText: "Username",
           currentButton: FloatingActionButton(
+            heroTag: "username",
             mini: true,
             onPressed: () => context.bloc<SearchUsersByNameWatcherBloc>().add(
-                  SearchUsersByNameWatcherEvent.watchUsersFoundByUsernameStarted(searchTerm),
-                ),
+              SearchUsersByNameWatcherEvent.watchUsersFoundByUsernameStarted(searchTerm),
+            ),
             child: Icon(Icons.account_box),
           ),
         ),
@@ -82,10 +83,11 @@ class SearchUsersUnicornDialer extends StatelessWidget {
           hasLabel: true,
           labelText: "Name",
           currentButton: FloatingActionButton(
+            heroTag: "name",
             mini: true,
             onPressed: () => context.bloc<SearchUsersByNameWatcherBloc>().add(
-                  SearchUsersByNameWatcherEvent.watchUsersFoundByNameStarted(searchTerm),
-                ),
+              SearchUsersByNameWatcherEvent.watchUsersFoundByNameStarted(searchTerm),
+            ),
             child: Icon(Icons.assignment_ind),
           ),
         ),

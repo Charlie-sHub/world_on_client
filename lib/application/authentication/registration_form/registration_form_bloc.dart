@@ -68,6 +68,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
       final _register = getIt<Register>();
       // TODO: Create default Options for the user before registering
       // For now with the languageCode of the phone
+      // TODO: Control that an image is required to register
       _failureOrUnit = await _register(
         Params(
           user: state.user,

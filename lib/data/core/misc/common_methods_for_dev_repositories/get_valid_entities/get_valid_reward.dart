@@ -1,5 +1,4 @@
-import 'dart:io';
-
+import 'package:dartz/dartz.dart';
 import 'package:worldon/domain/core/entities/reward/reward.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
@@ -10,6 +9,6 @@ Reward getValidReward() {
     name: Name("Curabitur lectus"),
     description: EntityDescription("Ut fermentum libero id nisi rhoncus."),
     imageURL: "testReward.jpg",
-    imageFile: File("assets/reward_placeholder.jpg"),
+    imageFile: none(),
   );
 }

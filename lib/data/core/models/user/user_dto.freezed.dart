@@ -25,7 +25,6 @@ class _$UserDtoTearOff {
       @required String birthday,
       @required String description,
       @required String imageURL,
-      @required List<int> imageFile,
       @required int level,
       @required int experiencePoints,
       @required bool privacy,
@@ -53,7 +52,6 @@ class _$UserDtoTearOff {
       birthday: birthday,
       description: description,
       imageURL: imageURL,
-      imageFile: imageFile,
       level: level,
       experiencePoints: experiencePoints,
       privacy: privacy,
@@ -88,8 +86,6 @@ mixin _$UserDto {
   String get birthday;
   String get description;
   String get imageURL;
-
-  List<int> get imageFile;
   int get level;
   int get experiencePoints;
   bool get privacy;
@@ -114,8 +110,7 @@ mixin _$UserDto {
 }
 
 abstract class $UserDtoCopyWith<$Res> {
-  factory $UserDtoCopyWith(UserDto value, $Res Function(UserDto) then) =
-  _$UserDtoCopyWithImpl<$Res>;
+  factory $UserDtoCopyWith(UserDto value, $Res Function(UserDto) then) = _$UserDtoCopyWithImpl<$Res>;
   $Res call(
       {int id,
       String name,
@@ -125,7 +120,6 @@ abstract class $UserDtoCopyWith<$Res> {
       String birthday,
       String description,
       String imageURL,
-        List<int> imageFile,
       int level,
       int experiencePoints,
       bool privacy,
@@ -165,7 +159,6 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
     Object birthday = freezed,
     Object description = freezed,
     Object imageURL = freezed,
-    Object imageFile = freezed,
     Object level = freezed,
     Object experiencePoints = freezed,
     Object privacy = freezed,
@@ -195,8 +188,6 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
       description:
       description == freezed ? _value.description : description as String,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile:
-      imageFile == freezed ? _value.imageFile : imageFile as List<int>,
       level: level == freezed ? _value.level : level as int,
       experiencePoints: experiencePoints == freezed
         ? _value.experiencePoints
@@ -262,7 +253,6 @@ abstract class _$UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
       String birthday,
       String description,
       String imageURL,
-        List<int> imageFile,
       int level,
       int experiencePoints,
       bool privacy,
@@ -304,7 +294,6 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
     Object birthday = freezed,
     Object description = freezed,
     Object imageURL = freezed,
-    Object imageFile = freezed,
     Object level = freezed,
     Object experiencePoints = freezed,
     Object privacy = freezed,
@@ -334,8 +323,6 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
       description:
       description == freezed ? _value.description : description as String,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile:
-      imageFile == freezed ? _value.imageFile : imageFile as List<int>,
       level: level == freezed ? _value.level : level as int,
       experiencePoints: experiencePoints == freezed
         ? _value.experiencePoints
@@ -389,7 +376,6 @@ class _$_UserDto extends _UserDto {
       @required this.birthday,
       @required this.description,
       @required this.imageURL,
-        @required this.imageFile,
       @required this.level,
       @required this.experiencePoints,
       @required this.privacy,
@@ -416,7 +402,6 @@ class _$_UserDto extends _UserDto {
         assert(birthday != null),
         assert(description != null),
         assert(imageURL != null),
-      assert(imageFile != null),
         assert(level != null),
         assert(experiencePoints != null),
         assert(privacy != null),
@@ -457,8 +442,6 @@ class _$_UserDto extends _UserDto {
   @override
   final String imageURL;
   @override
-  final List<int> imageFile;
-  @override
   final int level;
   @override
   final int experiencePoints;
@@ -497,7 +480,7 @@ class _$_UserDto extends _UserDto {
 
   @override
   String toString() {
-    return 'UserDto(id: $id, name: $name, username: $username, password: $password, email: $email, birthday: $birthday, description: $description, imageURL: $imageURL, imageFile: $imageFile, level: $level, experiencePoints: $experiencePoints, privacy: $privacy, adminPowers: $adminPowers, enabled: $enabled, lastLogin: $lastLogin, creationDate: $creationDate, modificationDate: $modificationDate, options: $options, blockedUsers: $blockedUsers, followedUsers: $followedUsers, devices: $devices, systems: $systems, interests: $interests, achievements: $achievements, experiencesDone: $experiencesDone, experiencesLiked: $experiencesLiked, experiencesToDo: $experiencesToDo)';
+    return 'UserDto(id: $id, name: $name, username: $username, password: $password, email: $email, birthday: $birthday, description: $description, imageURL: $imageURL, level: $level, experiencePoints: $experiencePoints, privacy: $privacy, adminPowers: $adminPowers, enabled: $enabled, lastLogin: $lastLogin, creationDate: $creationDate, modificationDate: $modificationDate, options: $options, blockedUsers: $blockedUsers, followedUsers: $followedUsers, devices: $devices, systems: $systems, interests: $interests, achievements: $achievements, experiencesDone: $experiencesDone, experiencesLiked: $experiencesLiked, experiencesToDo: $experiencesToDo)';
   }
 
   @override
@@ -525,9 +508,6 @@ class _$_UserDto extends _UserDto {
           (identical(other.imageURL, imageURL) ||
             const DeepCollectionEquality()
               .equals(other.imageURL, imageURL)) &&
-          (identical(other.imageFile, imageFile) ||
-            const DeepCollectionEquality()
-              .equals(other.imageFile, imageFile)) &&
           (identical(other.level, level) ||
             const DeepCollectionEquality().equals(other.level, level)) &&
           (identical(other.experiencePoints, experiencePoints) ||
@@ -570,8 +550,10 @@ class _$_UserDto extends _UserDto {
             const DeepCollectionEquality()
               .equals(other.interests, interests)) &&
           (identical(other.achievements, achievements) ||
-            const DeepCollectionEquality().equals(other.achievements, achievements)) &&
-            (identical(other.experiencesDone, experiencesDone) || const DeepCollectionEquality().equals(other.experiencesDone, experiencesDone)) &&
+            const DeepCollectionEquality()
+              .equals(other.achievements, achievements)) &&
+          (identical(other.experiencesDone, experiencesDone) ||
+            const DeepCollectionEquality().equals(other.experiencesDone, experiencesDone)) &&
             (identical(other.experiencesLiked, experiencesLiked) || const DeepCollectionEquality().equals(other.experiencesLiked, experiencesLiked)) &&
             (identical(other.experiencesToDo, experiencesToDo) || const DeepCollectionEquality().equals(other.experiencesToDo, experiencesToDo)));
   }
@@ -587,7 +569,6 @@ class _$_UserDto extends _UserDto {
       const DeepCollectionEquality().hash(birthday) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(imageURL) ^
-      const DeepCollectionEquality().hash(imageFile) ^
       const DeepCollectionEquality().hash(level) ^
       const DeepCollectionEquality().hash(experiencePoints) ^
       const DeepCollectionEquality().hash(privacy) ^
@@ -628,7 +609,6 @@ abstract class _UserDto extends UserDto {
       @required String birthday,
       @required String description,
       @required String imageURL,
-        @required List<int> imageFile,
       @required int level,
       @required int experiencePoints,
       @required bool privacy,
@@ -666,8 +646,6 @@ abstract class _UserDto extends UserDto {
   String get description;
   @override
   String get imageURL;
-  @override
-  List<int> get imageFile;
   @override
   int get level;
   @override

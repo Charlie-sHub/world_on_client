@@ -16,13 +16,12 @@ class _$ObjectiveDtoTearOff {
   const _$ObjectiveDtoTearOff();
 
 // ignore: unused_element
-  _ObjectiveDto call({@required int id, @required String description, @required CoordinatesDto coordinates, @required String imageURL, @required List<int> imageFile}) {
+  _ObjectiveDto call({@required int id, @required String description, @required CoordinatesDto coordinates, @required String imageURL}) {
     return _ObjectiveDto(
       id: id,
       description: description,
       coordinates: coordinates,
       imageURL: imageURL,
-      imageFile: imageFile,
     );
   }
 }
@@ -36,8 +35,6 @@ mixin _$ObjectiveDto {
   CoordinatesDto get coordinates;
   String get imageURL;
 
-  List<int> get imageFile;
-
   Map<String, dynamic> toJson();
   $ObjectiveDtoCopyWith<ObjectiveDto> get copyWith;
 }
@@ -49,8 +46,7 @@ abstract class $ObjectiveDtoCopyWith<$Res> {
   $Res call({int id,
     String description,
     CoordinatesDto coordinates,
-    String imageURL,
-    List<int> imageFile});
+    String imageURL});
 
   $CoordinatesDtoCopyWith<$Res> get coordinates;
 }
@@ -68,7 +64,6 @@ class _$ObjectiveDtoCopyWithImpl<$Res> implements $ObjectiveDtoCopyWith<$Res> {
     Object description = freezed,
     Object coordinates = freezed,
     Object imageURL = freezed,
-    Object imageFile = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as int,
@@ -78,8 +73,6 @@ class _$ObjectiveDtoCopyWithImpl<$Res> implements $ObjectiveDtoCopyWith<$Res> {
         ? _value.coordinates
         : coordinates as CoordinatesDto,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile:
-      imageFile == freezed ? _value.imageFile : imageFile as List<int>,
     ));
   }
 
@@ -102,8 +95,7 @@ abstract class _$ObjectiveDtoCopyWith<$Res>
   $Res call({int id,
     String description,
     CoordinatesDto coordinates,
-    String imageURL,
-    List<int> imageFile});
+    String imageURL});
 
   @override
   $CoordinatesDtoCopyWith<$Res> get coordinates;
@@ -123,7 +115,6 @@ class __$ObjectiveDtoCopyWithImpl<$Res> extends _$ObjectiveDtoCopyWithImpl<$Res>
     Object description = freezed,
     Object coordinates = freezed,
     Object imageURL = freezed,
-    Object imageFile = freezed,
   }) {
     return _then(_ObjectiveDto(
       id: id == freezed ? _value.id : id as int,
@@ -133,8 +124,6 @@ class __$ObjectiveDtoCopyWithImpl<$Res> extends _$ObjectiveDtoCopyWithImpl<$Res>
         ? _value.coordinates
         : coordinates as CoordinatesDto,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile:
-      imageFile == freezed ? _value.imageFile : imageFile as List<int>,
     ));
   }
 }
@@ -144,13 +133,11 @@ class _$_ObjectiveDto extends _ObjectiveDto {
   const _$_ObjectiveDto({@required this.id,
     @required this.description,
     @required this.coordinates,
-    @required this.imageURL,
-    @required this.imageFile})
+    @required this.imageURL})
       : assert(id != null),
         assert(description != null),
         assert(coordinates != null),
       assert(imageURL != null),
-      assert(imageFile != null),
         super._();
 
   factory _$_ObjectiveDto.fromJson(Map<String, dynamic> json) =>
@@ -164,12 +151,10 @@ class _$_ObjectiveDto extends _ObjectiveDto {
   final CoordinatesDto coordinates;
   @override
   final String imageURL;
-  @override
-  final List<int> imageFile;
 
   @override
   String toString() {
-    return 'ObjectiveDto(id: $id, description: $description, coordinates: $coordinates, imageURL: $imageURL, imageFile: $imageFile)';
+    return 'ObjectiveDto(id: $id, description: $description, coordinates: $coordinates, imageURL: $imageURL)';
   }
 
   @override
@@ -186,10 +171,7 @@ class _$_ObjectiveDto extends _ObjectiveDto {
               .equals(other.coordinates, coordinates)) &&
           (identical(other.imageURL, imageURL) ||
             const DeepCollectionEquality()
-              .equals(other.imageURL, imageURL)) &&
-          (identical(other.imageFile, imageFile) ||
-            const DeepCollectionEquality()
-              .equals(other.imageFile, imageFile)));
+              .equals(other.imageURL, imageURL)));
   }
 
   @override
@@ -198,8 +180,7 @@ class _$_ObjectiveDto extends _ObjectiveDto {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(coordinates) ^
-      const DeepCollectionEquality().hash(imageURL) ^
-      const DeepCollectionEquality().hash(imageFile);
+      const DeepCollectionEquality().hash(imageURL);
 
   @override
   _$ObjectiveDtoCopyWith<_ObjectiveDto> get copyWith =>
@@ -217,8 +198,7 @@ abstract class _ObjectiveDto extends ObjectiveDto {
   const factory _ObjectiveDto({@required int id,
     @required String description,
     @required CoordinatesDto coordinates,
-    @required String imageURL,
-    @required List<int> imageFile}) = _$_ObjectiveDto;
+    @required String imageURL}) = _$_ObjectiveDto;
 
   factory _ObjectiveDto.fromJson(Map<String, dynamic> json) =
   _$_ObjectiveDto.fromJson;
@@ -231,8 +211,6 @@ abstract class _ObjectiveDto extends ObjectiveDto {
   CoordinatesDto get coordinates;
   @override
   String get imageURL;
-  @override
-  List<int> get imageFile;
   @override
   _$ObjectiveDtoCopyWith<_ObjectiveDto> get copyWith;
 }

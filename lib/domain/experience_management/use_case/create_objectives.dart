@@ -28,7 +28,7 @@ class CreateObjectives implements UseCase<ObjectiveSet, Params> {
       description: params.description,
       coordinates: params.coordinates,
       imageURL: params.imageURL,
-      imageFile: params.imageFile,
+      imageFile: some(params.imageFile),
     );
     objectives.add(objective);
     return right(ObjectiveSet(objectives));

@@ -32,7 +32,7 @@ void main() {
     description: _entityDescription,
     coordinates: _coordinates,
     imageURL: _imageURL,
-    imageFile: _imageFile,
+    imageFile: some(_imageFile),
   );
   final objectives = KtSet.of(
     objective,
@@ -47,7 +47,7 @@ void main() {
   );
   test(
     "Should return a Set equivalent to objectives",
-      () async {
+    () async {
       // Act
       var result = _act(useCase, params);
       result = _act(useCase, params);

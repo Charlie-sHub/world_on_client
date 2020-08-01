@@ -21,7 +21,6 @@ class _$ExperienceDtoTearOff {
       @required String title,
       @required String description,
       @required Set<String> imageURLs,
-      @required List<String> imageAssets,
       @required CoordinatesDto coordinates,
       @required LocationDto location,
       @required UserDto creator,
@@ -39,7 +38,6 @@ class _$ExperienceDtoTearOff {
       title: title,
       description: description,
       imageURLs: imageURLs,
-      imageAssets: imageAssets,
       coordinates: coordinates,
       location: location,
       creator: creator,
@@ -64,7 +62,6 @@ mixin _$ExperienceDto {
   String get title;
   String get description;
   Set<String> get imageURLs;
-  List<String> get imageAssets;
   CoordinatesDto get coordinates;
   LocationDto get location;
   UserDto get creator;
@@ -83,14 +80,12 @@ mixin _$ExperienceDto {
 }
 
 abstract class $ExperienceDtoCopyWith<$Res> {
-  factory $ExperienceDtoCopyWith(ExperienceDto value, $Res Function(ExperienceDto) then) =
-  _$ExperienceDtoCopyWithImpl<$Res>;
+  factory $ExperienceDtoCopyWith(ExperienceDto value, $Res Function(ExperienceDto) then) = _$ExperienceDtoCopyWithImpl<$Res>;
   $Res call(
       {int id,
         String title,
       String description,
       Set<String> imageURLs,
-        List<String> imageAssets,
       CoordinatesDto coordinates,
       LocationDto location,
       UserDto creator,
@@ -123,7 +118,6 @@ class _$ExperienceDtoCopyWithImpl<$Res>
     Object title = freezed,
     Object description = freezed,
     Object imageURLs = freezed,
-    Object imageAssets = freezed,
     Object coordinates = freezed,
     Object location = freezed,
     Object creator = freezed,
@@ -144,9 +138,6 @@ class _$ExperienceDtoCopyWithImpl<$Res>
       description == freezed ? _value.description : description as String,
       imageURLs:
       imageURLs == freezed ? _value.imageURLs : imageURLs as Set<String>,
-      imageAssets: imageAssets == freezed
-        ? _value.imageAssets
-        : imageAssets as List<String>,
       coordinates: coordinates == freezed
         ? _value.coordinates
         : coordinates as CoordinatesDto,
@@ -212,7 +203,6 @@ abstract class _$ExperienceDtoCopyWith<$Res>
         String title,
       String description,
       Set<String> imageURLs,
-        List<String> imageAssets,
       CoordinatesDto coordinates,
       LocationDto location,
       UserDto creator,
@@ -248,7 +238,6 @@ class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Re
     Object title = freezed,
     Object description = freezed,
     Object imageURLs = freezed,
-    Object imageAssets = freezed,
     Object coordinates = freezed,
     Object location = freezed,
     Object creator = freezed,
@@ -269,9 +258,6 @@ class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Re
       description == freezed ? _value.description : description as String,
       imageURLs:
       imageURLs == freezed ? _value.imageURLs : imageURLs as Set<String>,
-      imageAssets: imageAssets == freezed
-        ? _value.imageAssets
-        : imageAssets as List<String>,
       coordinates: coordinates == freezed
         ? _value.coordinates
         : coordinates as CoordinatesDto,
@@ -304,7 +290,6 @@ class _$_ExperienceDto extends _ExperienceDto {
         @required this.title,
       @required this.description,
       @required this.imageURLs,
-        @required this.imageAssets,
       @required this.coordinates,
       @required this.location,
       @required this.creator,
@@ -321,7 +306,6 @@ class _$_ExperienceDto extends _ExperienceDto {
       assert(title != null),
         assert(description != null),
         assert(imageURLs != null),
-      assert(imageAssets != null),
         assert(coordinates != null),
         assert(location != null),
         assert(creator != null),
@@ -347,8 +331,6 @@ class _$_ExperienceDto extends _ExperienceDto {
   final String description;
   @override
   final Set<String> imageURLs;
-  @override
-  final List<String> imageAssets;
   @override
   final CoordinatesDto coordinates;
   @override
@@ -376,7 +358,7 @@ class _$_ExperienceDto extends _ExperienceDto {
 
   @override
   String toString() {
-    return 'ExperienceDto(id: $id, title: $title, description: $description, imageURLs: $imageURLs, imageAssets: $imageAssets, coordinates: $coordinates, location: $location, creator: $creator, difficulty: $difficulty, creationDate: $creationDate, modificationDate: $modificationDate, objectives: $objectives, rewards: $rewards, tags: $tags, comments: $comments, likedBy: $likedBy, doneBy: $doneBy)';
+    return 'ExperienceDto(id: $id, title: $title, description: $description, imageURLs: $imageURLs, coordinates: $coordinates, location: $location, creator: $creator, difficulty: $difficulty, creationDate: $creationDate, modificationDate: $modificationDate, objectives: $objectives, rewards: $rewards, tags: $tags, comments: $comments, likedBy: $likedBy, doneBy: $doneBy)';
   }
 
   @override
@@ -393,9 +375,6 @@ class _$_ExperienceDto extends _ExperienceDto {
           (identical(other.imageURLs, imageURLs) ||
             const DeepCollectionEquality()
               .equals(other.imageURLs, imageURLs)) &&
-          (identical(other.imageAssets, imageAssets) ||
-            const DeepCollectionEquality()
-              .equals(other.imageAssets, imageAssets)) &&
           (identical(other.coordinates, coordinates) ||
             const DeepCollectionEquality()
               .equals(other.coordinates, coordinates)) &&
@@ -439,7 +418,6 @@ class _$_ExperienceDto extends _ExperienceDto {
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(imageURLs) ^
-      const DeepCollectionEquality().hash(imageAssets) ^
       const DeepCollectionEquality().hash(coordinates) ^
       const DeepCollectionEquality().hash(location) ^
       const DeepCollectionEquality().hash(creator) ^
@@ -470,7 +448,6 @@ abstract class _ExperienceDto extends ExperienceDto {
         @required String title,
       @required String description,
       @required Set<String> imageURLs,
-        @required List<String> imageAssets,
       @required CoordinatesDto coordinates,
       @required LocationDto location,
       @required UserDto creator,
@@ -495,8 +472,6 @@ abstract class _ExperienceDto extends ExperienceDto {
   String get description;
   @override
   Set<String> get imageURLs;
-  @override
-  List<String> get imageAssets;
   @override
   CoordinatesDto get coordinates;
   @override

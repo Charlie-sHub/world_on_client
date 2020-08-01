@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/value_object.dart';
 import 'package:worldon/domain/core/validation/validators/validate_same_string.dart';
+import 'package:worldon/domain/core/validation/validators/validate_string_not_empty.dart';
 
 class PasswordConfirmator extends ValueObject<String> {
   @override
@@ -18,7 +19,7 @@ class PasswordConfirmator extends ValueObject<String> {
       validateSameString(
         password,
         confirmation,
-      ),
+      ).flatMap(validateStringNotEmpty),
     );
   }
 

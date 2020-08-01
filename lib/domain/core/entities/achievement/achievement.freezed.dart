@@ -18,7 +18,7 @@ class _$AchievementTearOff {
       @required Name name,
       @required EntityDescription description,
       @required String imageURL,
-      @required File imageFile,
+      @required Option<File> imageFile,
       @required String type,
       @required int requisite,
       @required ExperiencePoints experiencePoints,
@@ -51,7 +51,8 @@ mixin _$Achievement {
   Name get name;
   EntityDescription get description;
   String get imageURL;
-  File get imageFile;
+
+  Option<File> get imageFile;
   String get type;
   int get requisite;
   ExperiencePoints get experiencePoints;
@@ -72,7 +73,7 @@ abstract class $AchievementCopyWith<$Res> {
       Name name,
       EntityDescription description,
       String imageURL,
-      File imageFile,
+        Option<File> imageFile,
       String type,
       int requisite,
       ExperiencePoints experiencePoints,
@@ -113,7 +114,8 @@ class _$AchievementCopyWithImpl<$Res> implements $AchievementCopyWith<$Res> {
           ? _value.description
           : description as EntityDescription,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile: imageFile == freezed ? _value.imageFile : imageFile as File,
+      imageFile:
+      imageFile == freezed ? _value.imageFile : imageFile as Option<File>,
       type: type == freezed ? _value.type : type as String,
       requisite: requisite == freezed ? _value.requisite : requisite as int,
       experiencePoints: experiencePoints == freezed
@@ -152,7 +154,7 @@ abstract class _$AchievementCopyWith<$Res>
       Name name,
       EntityDescription description,
       String imageURL,
-        File imageFile,
+        Option<File> imageFile,
       String type,
       int requisite,
       ExperiencePoints experiencePoints,
@@ -196,7 +198,8 @@ class __$AchievementCopyWithImpl<$Res> extends _$AchievementCopyWithImpl<$Res>
           ? _value.description
           : description as EntityDescription,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile: imageFile == freezed ? _value.imageFile : imageFile as File,
+      imageFile:
+      imageFile == freezed ? _value.imageFile : imageFile as Option<File>,
       type: type == freezed ? _value.type : type as String,
       requisite: requisite == freezed ? _value.requisite : requisite as int,
       experiencePoints: experiencePoints == freezed
@@ -250,7 +253,7 @@ class _$_Achievement extends _Achievement {
   @override
   final String imageURL;
   @override
-  final File imageFile;
+  final Option<File> imageFile;
   @override
   final String type;
   @override
@@ -337,7 +340,7 @@ abstract class _Achievement extends Achievement {
       @required Name name,
       @required EntityDescription description,
       @required String imageURL,
-        @required File imageFile,
+        @required Option<File> imageFile,
       @required String type,
       @required int requisite,
       @required ExperiencePoints experiencePoints,
@@ -355,7 +358,7 @@ abstract class _Achievement extends Achievement {
   @override
   String get imageURL;
   @override
-  File get imageFile;
+  Option<File> get imageFile;
   @override
   String get type;
   @override

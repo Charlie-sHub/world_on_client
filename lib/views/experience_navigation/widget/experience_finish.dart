@@ -256,33 +256,31 @@ class RateDifficulty extends StatelessWidget {
           RateExperienceDifficultyActorEvent.difficultyChanged(experience.difficulty.getOrCrash()),
         ),
       child: BlocListener<RateExperienceDifficultyActorBloc, RateExperienceDifficultyActorState>(
-        listener: (context, state) => difficultyRatingListener,
+        listener: submittingRatingListener,
         child: BlocBuilder<RateExperienceDifficultyActorBloc, RateExperienceDifficultyActorState>(
-          builder: (context, state) =>
-            Column(
-              children: <Widget>[
-                const Text(
-                  "How difficult was the experience?",
-                  style: TextStyle(color: WorldOnColors.background),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    Expanded(
-                      child: SliderTheme(
-                        data: SliderTheme.of(context).copyWith(
-                          trackHeight: 5,
-                          thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 12),
-                          overlayShape: const RoundSliderOverlayShape(),
-                          showValueIndicator: ShowValueIndicator.always,
-                        ),
-                        child: Slider(
-                          min: 1,
-                          max: 10,
-                          label: state.difficulty.toString(),
-                          activeColor: getColorByDifficulty(state.difficulty),
-                          onChanged: (value) =>
-                            context.bloc<RateExperienceDifficultyActorBloc>().add(
+          builder: (context, state) => Column(
+            children: <Widget>[
+              const Text(
+                "How difficult was the experience?",
+                style: TextStyle(color: WorldOnColors.background),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Expanded(
+                    child: SliderTheme(
+                      data: SliderTheme.of(context).copyWith(
+                        trackHeight: 5,
+                        thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 12),
+                        overlayShape: const RoundSliderOverlayShape(),
+                        showValueIndicator: ShowValueIndicator.always,
+                      ),
+                      child: Slider(
+                        min: 1,
+                        max: 10,
+                        label: state.difficulty.toString(),
+                        activeColor: getColorByDifficulty(state.difficulty),
+                        onChanged: (value) => context.bloc<RateExperienceDifficultyActorBloc>().add(
                               RateExperienceDifficultyActorEvent.difficultyChanged(value.round()),
                             ),
                           value: state.difficulty.ceilToDouble(),
@@ -316,7 +314,7 @@ class RateDifficulty extends StatelessWidget {
     );
   }
 
-  void difficultyRatingListener(RateExperienceDifficultyActorState state, BuildContext context) {
+  void submittingRatingListener(BuildContext context, RateExperienceDifficultyActorState state) {
     if (state.isSubmitting) {
       FlushbarHelper.createLoading(
         duration: const Duration(seconds: 2),

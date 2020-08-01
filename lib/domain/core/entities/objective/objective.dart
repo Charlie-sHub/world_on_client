@@ -22,10 +22,15 @@ abstract class Objective implements _$Objective {
     @required EntityDescription description,
     @required Coordinates coordinates,
     @required String imageURL,
-    @required File imageFile,
+    @required Option<File> imageFile,
   }) = _Objective;
 
-  factory Objective.empty() => Objective(description: EntityDescription(""), coordinates: Coordinates.empty(), imageURL: "", imageFile: File("assets/objective_placeholder.jpg"));
+  factory Objective.empty() => Objective(
+        description: EntityDescription(""),
+        coordinates: Coordinates.empty(),
+        imageURL: "",
+        imageFile: none(),
+      );
 
   Option<ValueFailure<dynamic>> get failureOption {
     return description.failureOrUnit.andThen(coordinates.failureOrUnit).fold(

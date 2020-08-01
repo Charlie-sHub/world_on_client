@@ -12,9 +12,9 @@ import 'package:worldon/views/profile/widget/profile_users_tab_view.dart';
 
 class OwnProfile extends StatelessWidget {
   final User user;
-  
+
   const OwnProfile({Key key, @required this.user}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -45,9 +45,9 @@ class OwnProfileHeader extends StatelessWidget {
     Key key,
     @required this.user,
   }) : super(key: key);
-  
+
   final User user;
-  
+
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -86,7 +86,7 @@ void main() {
   );
   group(
     TestDescription.testingInitialization,
-      () {
+    () {
       blocTest(
         TestDescription.shouldEmitInitialized,
         build: () => getIt<ExperienceManagementFormBloc>(),

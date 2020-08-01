@@ -40,7 +40,8 @@ abstract class $CoordinatesDtoCopyWith<$Res> {
   $Res call({double latitude, double longitude});
 }
 
-class _$CoordinatesDtoCopyWithImpl<$Res> implements $CoordinatesDtoCopyWith<$Res> {
+class _$CoordinatesDtoCopyWithImpl<$Res>
+  implements $CoordinatesDtoCopyWith<$Res> {
   _$CoordinatesDtoCopyWithImpl(this._value, this._then);
 
   final CoordinatesDto _value;
@@ -59,14 +60,18 @@ class _$CoordinatesDtoCopyWithImpl<$Res> implements $CoordinatesDtoCopyWith<$Res
   }
 }
 
-abstract class _$CoordinatesDtoCopyWith<$Res> implements $CoordinatesDtoCopyWith<$Res> {
-  factory _$CoordinatesDtoCopyWith(_CoordinatesDto value, $Res Function(_CoordinatesDto) then) = __$CoordinatesDtoCopyWithImpl<$Res>;
+abstract class _$CoordinatesDtoCopyWith<$Res>
+  implements $CoordinatesDtoCopyWith<$Res> {
+  factory _$CoordinatesDtoCopyWith(_CoordinatesDto value, $Res Function(_CoordinatesDto) then) =
+  __$CoordinatesDtoCopyWithImpl<$Res>;
   @override
   $Res call({double latitude, double longitude});
 }
 
-class __$CoordinatesDtoCopyWithImpl<$Res> extends _$CoordinatesDtoCopyWithImpl<$Res> implements _$CoordinatesDtoCopyWith<$Res> {
-  __$CoordinatesDtoCopyWithImpl(_CoordinatesDto _value, $Res Function(_CoordinatesDto) _then) : super(_value, (v) => _then(v as _CoordinatesDto));
+class __$CoordinatesDtoCopyWithImpl<$Res> extends _$CoordinatesDtoCopyWithImpl<$Res>
+  implements _$CoordinatesDtoCopyWith<$Res> {
+  __$CoordinatesDtoCopyWithImpl(_CoordinatesDto _value, $Res Function(_CoordinatesDto) _then)
+    : super(_value, (v) => _then(v as _CoordinatesDto));
 
   @override
   _CoordinatesDto get _value => super._value as _CoordinatesDto;
@@ -90,7 +95,8 @@ class _$_CoordinatesDto extends _CoordinatesDto {
         assert(longitude != null),
         super._();
 
-  factory _$_CoordinatesDto.fromJson(Map<String, dynamic> json) => _$_$_CoordinatesDtoFromJson(json);
+  factory _$_CoordinatesDto.fromJson(Map<String, dynamic> json) =>
+    _$_$_CoordinatesDtoFromJson(json);
 
   @override
   final double latitude;
@@ -106,15 +112,23 @@ class _$_CoordinatesDto extends _CoordinatesDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CoordinatesDto &&
-            (identical(other.latitude, latitude) || const DeepCollectionEquality().equals(other.latitude, latitude)) &&
-            (identical(other.longitude, longitude) || const DeepCollectionEquality().equals(other.longitude, longitude)));
+          (identical(other.latitude, latitude) ||
+            const DeepCollectionEquality()
+              .equals(other.latitude, latitude)) &&
+          (identical(other.longitude, longitude) ||
+            const DeepCollectionEquality()
+              .equals(other.longitude, longitude)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(latitude) ^ const DeepCollectionEquality().hash(longitude);
+  int get hashCode =>
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(latitude) ^
+    const DeepCollectionEquality().hash(longitude);
 
   @override
-  _$CoordinatesDtoCopyWith<_CoordinatesDto> get copyWith => __$CoordinatesDtoCopyWithImpl<_CoordinatesDto>(this, _$identity);
+  _$CoordinatesDtoCopyWith<_CoordinatesDto> get copyWith =>
+    __$CoordinatesDtoCopyWithImpl<_CoordinatesDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -125,9 +139,11 @@ class _$_CoordinatesDto extends _CoordinatesDto {
 abstract class _CoordinatesDto extends CoordinatesDto {
   const _CoordinatesDto._() : super._();
 
-  const factory _CoordinatesDto({@required double latitude, @required double longitude}) = _$_CoordinatesDto;
+  const factory _CoordinatesDto({@required double latitude,
+    @required double longitude}) = _$_CoordinatesDto;
 
-  factory _CoordinatesDto.fromJson(Map<String, dynamic> json) = _$_CoordinatesDto.fromJson;
+  factory _CoordinatesDto.fromJson(Map<String, dynamic> json) =
+  _$_CoordinatesDto.fromJson;
 
   @override
   double get latitude;

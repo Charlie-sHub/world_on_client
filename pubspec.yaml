@@ -58,7 +58,7 @@ dependencies:
   # For ease of serialization
   json_annotation: ^3.0.1
   # For ease of routing
-  auto_route: ^0.6.6
+  auto_route: ^0.6.7
   # For use with Firebase as backend
   # firebase_core: ^0.4.4+3
   # For authentication with Firebase
@@ -80,7 +80,8 @@ dependencies:
   # For getting images from the device
   image_picker: ^0.6.7+4
   # For getting multiple images from the device
-  multi_image_picker: ^4.6.9
+  multi_image_picker: ^4.7.10
+  cached_network_image: ^2.2.0+1
   uuid: ^2.2.0
 
 dev_dependencies:
@@ -93,11 +94,11 @@ dev_dependencies:
   # Collection of lint rules
   lint: ^1.2.0
   # For dependency injection code generation
-  injectable_generator: ^1.0.2
+  injectable_generator: ^1.0.3
   # For Serializing entities to JSON
   json_serializable: ^3.3.0
   # For auto generating the routes
-  auto_route_generator: ^0.6.6
+  auto_route_generator: ^0.6.7
   # For ease of setting the app icon
   flutter_launcher_icons: ^0.7.5
   # For extra icons
