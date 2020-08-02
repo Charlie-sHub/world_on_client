@@ -32,7 +32,6 @@ mixin _$Objective {
   EntityDescription get description;
   Coordinates get coordinates;
   String get imageURL;
-
   Option<File> get imageFile;
 
   $ObjectiveCopyWith<Objective> get copyWith;
@@ -41,7 +40,7 @@ mixin _$Objective {
 abstract class $ObjectiveCopyWith<$Res> {
   factory $ObjectiveCopyWith(Objective value, $Res Function(Objective) then) =
   _$ObjectiveCopyWithImpl<$Res>;
-
+  
   $Res call({int id,
     EntityDescription description,
     Coordinates coordinates,

@@ -119,7 +119,7 @@ abstract class $UserCopyWith<$Res> {
       PastDate birthday,
       EntityDescription description,
       String imageURL,
-        Option<File> imageFileOption,
+      Option<File> imageFileOption,
       UserLevel level,
       ExperiencePoints experiencePoints,
       bool privacy,

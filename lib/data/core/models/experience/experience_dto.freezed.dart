@@ -83,7 +83,7 @@ abstract class $ExperienceDtoCopyWith<$Res> {
   factory $ExperienceDtoCopyWith(ExperienceDto value, $Res Function(ExperienceDto) then) = _$ExperienceDtoCopyWithImpl<$Res>;
   $Res call(
       {int id,
-        String title,
+      String title,
       String description,
       Set<String> imageURLs,
       CoordinatesDto coordinates,

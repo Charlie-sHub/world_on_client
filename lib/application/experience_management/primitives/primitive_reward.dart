@@ -34,9 +34,9 @@ abstract class PrimitiveReward implements _$PrimitiveReward {
       );
 
   Reward toDomain() => Reward(
-    name: Name(name),
-    description: EntityDescription(description),
-    imageURL: "",
-    imageFile: some(imageFile),
-  );
+        name: Name(name),
+        description: EntityDescription(description),
+        imageURL: "",
+        imageFile: some(imageFile),
+      );
 }

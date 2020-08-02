@@ -108,15 +108,13 @@ void userFollowListener(BuildContext context, FollowActorState state) => state.m
           orElse: () => "Unknown Error",
         ),
       ).show(context),
-  unFollowFailure: (state) =>
-    FlushbarHelper.createError(
+      unFollowFailure: (state) => FlushbarHelper.createError(
         duration: const Duration(seconds: 2),
         message: state.failure.maybeMap(
-          coreData: (failure) =>
-            failure.coreDataFailure.maybeMap(
-              serverError: (failure) => failure.errorString,
-              orElse: () => "Unknown Error",
-            ),
+          coreData: (failure) => failure.coreDataFailure.maybeMap(
+            serverError: (failure) => failure.errorString,
+            orElse: () => "Unknown Error",
+          ),
           orElse: () => "Unknown Error",
         ),
       ).show(context),

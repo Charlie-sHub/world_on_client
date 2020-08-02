@@ -74,8 +74,8 @@ class SearchUsersUnicornDialer extends StatelessWidget {
             heroTag: "username",
             mini: true,
             onPressed: () => context.bloc<SearchUsersByNameWatcherBloc>().add(
-              SearchUsersByNameWatcherEvent.watchUsersFoundByUsernameStarted(searchTerm),
-            ),
+                  SearchUsersByNameWatcherEvent.watchUsersFoundByUsernameStarted(searchTerm),
+                ),
             child: Icon(Icons.account_box),
           ),
         ),

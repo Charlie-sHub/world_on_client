@@ -182,7 +182,7 @@ class _$_NotificationDto extends _NotificationDto {
         assert(creationDate != null),
         assert(type != null),
         super._();
-
+  
   factory _$_NotificationDto.fromJson(Map<String, dynamic> json) =>
     _$_$_NotificationDtoFromJson(json);
 

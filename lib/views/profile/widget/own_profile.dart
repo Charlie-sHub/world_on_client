@@ -91,7 +91,10 @@ class OwnProfileHeader extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(5),
                 child: RaisedButton(
-                  onPressed: () => context.navigator.push(Routes.profileEditingPage),
+                  onPressed: () => context.navigator.push(
+                    Routes.profileEditingPage,
+                    arguments: ProfileEditingPageArguments(user: user),
+                  ),
                   child: const Text("Edit"),
                 ),
               )

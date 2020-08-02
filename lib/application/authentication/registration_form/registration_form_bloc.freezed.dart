@@ -311,14 +311,18 @@ abstract class _Initialized implements RegistrationFormEvent {
 }
 
 abstract class _$ImageChangedCopyWith<$Res> {
-  factory _$ImageChangedCopyWith(_ImageChanged value, $Res Function(_ImageChanged) then) = __$ImageChangedCopyWithImpl<$Res>;
+  factory _$ImageChangedCopyWith(
+          _ImageChanged value, $Res Function(_ImageChanged) then) =
+      __$ImageChangedCopyWithImpl<$Res>;
   $Res call({File imageFile});
 }
 
-class __$ImageChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
-  implements _$ImageChangedCopyWith<$Res> {
-  __$ImageChangedCopyWithImpl(_ImageChanged _value, $Res Function(_ImageChanged) _then)
-    : super(_value, (v) => _then(v as _ImageChanged));
+class __$ImageChangedCopyWithImpl<$Res>
+    extends _$RegistrationFormEventCopyWithImpl<$Res>
+    implements _$ImageChangedCopyWith<$Res> {
+  __$ImageChangedCopyWithImpl(
+      _ImageChanged _value, $Res Function(_ImageChanged) _then)
+      : super(_value, (v) => _then(v as _ImageChanged));
 
   @override
   _ImageChanged get _value => super._value as _ImageChanged;
@@ -347,19 +351,19 @@ class _$_ImageChanged implements _ImageChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _ImageChanged &&
-        (identical(other.imageFile, imageFile) ||
-          const DeepCollectionEquality()
-            .equals(other.imageFile, imageFile)));
+        (other is _ImageChanged &&
+            (identical(other.imageFile, imageFile) ||
+                const DeepCollectionEquality()
+                    .equals(other.imageFile, imageFile)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageFile);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageFile);
 
   @override
   _$ImageChangedCopyWith<_ImageChanged> get copyWith =>
-    __$ImageChangedCopyWithImpl<_ImageChanged>(this, _$identity);
+      __$ImageChangedCopyWithImpl<_ImageChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -421,7 +425,8 @@ class _$_ImageChanged implements _ImageChanged {
     @required Result nameChanged(_NameChanged value),
     @required Result usernameChanged(_UsernameChanged value),
     @required Result passwordChanged(_PasswordChanged value),
-    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
+    @required
+        Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
     @required Result emailAddressChanged(_EmailAddressChanged value),
     @required Result birthdayChanged(_BirthdayChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),

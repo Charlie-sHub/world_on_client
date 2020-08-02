@@ -110,7 +110,7 @@ class _$_SystemDto extends _SystemDto {
         assert(type != null),
         assert(company != null),
         super._();
-
+  
   factory _$_SystemDto.fromJson(Map<String, dynamic> json) =>
     _$_$_SystemDtoFromJson(json);
 

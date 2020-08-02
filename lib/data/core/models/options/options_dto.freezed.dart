@@ -139,6 +139,7 @@ class _$_OptionsDto extends _OptionsDto {
 
 abstract class _OptionsDto extends OptionsDto {
   const _OptionsDto._() : super._();
+
   const factory _OptionsDto({@required int id, @required String languageCode}) =
   _$_OptionsDto;
 

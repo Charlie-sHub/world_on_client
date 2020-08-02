@@ -40,7 +40,7 @@ mixin _$Comment {
 abstract class $CommentCopyWith<$Res> {
   factory $CommentCopyWith(Comment value, $Res Function(Comment) then) =
   _$CommentCopyWithImpl<$Res>;
-
+  
   $Res call({int id,
     User poster,
     CommentContent content,

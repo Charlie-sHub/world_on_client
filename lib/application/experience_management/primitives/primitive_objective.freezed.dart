@@ -108,7 +108,7 @@ class _$_PrimitiveObjective extends _PrimitiveObjective {
       : assert(description != null),
         assert(latitude != null),
         assert(longitude != null),
-      assert(imageFile != null),
+        assert(imageFile != null),
         super._();
 
   @override

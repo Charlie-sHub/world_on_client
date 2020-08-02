@@ -42,7 +42,6 @@ mixin _$RewardDto {
 abstract class $RewardDtoCopyWith<$Res> {
   factory $RewardDtoCopyWith(RewardDto value, $Res Function(RewardDto) then) =
   _$RewardDtoCopyWithImpl<$Res>;
-
   $Res call({int id, String name, String description, String imageURL});
 }
 
@@ -113,7 +112,7 @@ class _$_RewardDto extends _RewardDto {
         assert(description != null),
         assert(imageURL != null),
         super._();
-
+  
   factory _$_RewardDto.fromJson(Map<String, dynamic> json) =>
     _$_$_RewardDtoFromJson(json);
 

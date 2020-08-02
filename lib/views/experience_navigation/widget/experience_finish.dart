@@ -283,32 +283,31 @@ class RateDifficulty extends StatelessWidget {
                         onChanged: (value) => context.bloc<RateExperienceDifficultyActorBloc>().add(
                               RateExperienceDifficultyActorEvent.difficultyChanged(value.round()),
                             ),
-                          value: state.difficulty.ceilToDouble(),
-                        ),
+                        value: state.difficulty.ceilToDouble(),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 5),
-                      child: RaisedButton(
-                        color: WorldOnColors.background,
-                        onPressed: () =>
-                          context.bloc<RateExperienceDifficultyActorBloc>().add(
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                    child: RaisedButton(
+                      color: WorldOnColors.background,
+                      onPressed: () => context.bloc<RateExperienceDifficultyActorBloc>().add(
                             RateExperienceDifficultyActorEvent.difficultyRated(experience),
                           ),
-                        child: const Text(
-                          "Submit rating",
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                            color: WorldOnColors.white,
-                          ),
+                      child: const Text(
+                        "Submit rating",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: WorldOnColors.white,
                         ),
                       ),
                     ),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -323,27 +322,23 @@ class RateDifficulty extends StatelessWidget {
       ).show(context);
     }
     state.failureOrSuccessOption.fold(
-        () => null,
-        (either) =>
-        either.fold(
-            (failure) =>
-            FlushbarHelper.createError(
-              duration: const Duration(seconds: 2),
-              message: failure.maybeMap(
-                value: (failure) =>
-                  failure.valueFailure.maybeMap(
-                    integerOutOfBounds: (failure) => "Invalid difficulty value: ${failure.failedValue}",
-                    orElse: () => StringConst.unknownError,
-                  ),
-                coreData: (failure) =>
-                  failure.coreDataFailure.maybeMap(
-                    serverError: (failure) => failure.errorString,
-                    orElse: () => StringConst.unknownError,
-                  ),
-                orElse: () => StringConst.unknownError,
-              ),
-            ).show(context),
-            (_) => null,
+      () => null,
+      (either) => either.fold(
+        (failure) => FlushbarHelper.createError(
+          duration: const Duration(seconds: 2),
+          message: failure.maybeMap(
+            value: (failure) => failure.valueFailure.maybeMap(
+              integerOutOfBounds: (failure) => "Invalid difficulty value: ${failure.failedValue}",
+              orElse: () => StringConst.unknownError,
+            ),
+            coreData: (failure) => failure.coreDataFailure.maybeMap(
+              serverError: (failure) => failure.errorString,
+              orElse: () => StringConst.unknownError,
+            ),
+            orElse: () => StringConst.unknownError,
+          ),
+        ).show(context),
+        (_) => null,
       ),
     );
   }

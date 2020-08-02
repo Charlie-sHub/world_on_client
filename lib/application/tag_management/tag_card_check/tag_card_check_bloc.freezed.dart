@@ -49,14 +49,16 @@ mixin _$TagCardCheckEvent {
 }
 
 abstract class $TagCardCheckEventCopyWith<$Res> {
-  factory $TagCardCheckEventCopyWith(TagCardCheckEvent value, $Res Function(TagCardCheckEvent) then) = _$TagCardCheckEventCopyWithImpl<$Res>;
+  factory $TagCardCheckEventCopyWith(
+          TagCardCheckEvent value, $Res Function(TagCardCheckEvent) then) =
+      _$TagCardCheckEventCopyWithImpl<$Res>;
   $Res call({Tag tag});
 
   $TagCopyWith<$Res> get tag;
 }
 
 class _$TagCardCheckEventCopyWithImpl<$Res>
-  implements $TagCardCheckEventCopyWith<$Res> {
+    implements $TagCardCheckEventCopyWith<$Res> {
   _$TagCardCheckEventCopyWithImpl(this._value, this._then);
 
   final TagCardCheckEvent _value;
@@ -84,9 +86,10 @@ class _$TagCardCheckEventCopyWithImpl<$Res>
 }
 
 abstract class _$InitializedCopyWith<$Res>
-  implements $TagCardCheckEventCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
-  __$InitializedCopyWithImpl<$Res>;
+    implements $TagCardCheckEventCopyWith<$Res> {
+  factory _$InitializedCopyWith(
+          _Initialized value, $Res Function(_Initialized) then) =
+      __$InitializedCopyWithImpl<$Res>;
   @override
   $Res call({Tag tag});
 
@@ -94,10 +97,12 @@ abstract class _$InitializedCopyWith<$Res>
   $TagCopyWith<$Res> get tag;
 }
 
-class __$InitializedCopyWithImpl<$Res> extends _$TagCardCheckEventCopyWithImpl<$Res>
-  implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
-    : super(_value, (v) => _then(v as _Initialized));
+class __$InitializedCopyWithImpl<$Res>
+    extends _$TagCardCheckEventCopyWithImpl<$Res>
+    implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(
+      _Initialized _value, $Res Function(_Initialized) _then)
+      : super(_value, (v) => _then(v as _Initialized));
 
   @override
   _Initialized get _value => super._value as _Initialized;
@@ -126,18 +131,18 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Initialized &&
-        (identical(other.tag, tag) ||
-          const DeepCollectionEquality().equals(other.tag, tag)));
+        (other is _Initialized &&
+            (identical(other.tag, tag) ||
+                const DeepCollectionEquality().equals(other.tag, tag)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
 
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
-    __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+      __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -245,12 +250,13 @@ mixin _$TagCardCheckState {
 }
 
 abstract class $TagCardCheckStateCopyWith<$Res> {
-  factory $TagCardCheckStateCopyWith(TagCardCheckState value, $Res Function(TagCardCheckState) then) =
-  _$TagCardCheckStateCopyWithImpl<$Res>;
+  factory $TagCardCheckStateCopyWith(
+          TagCardCheckState value, $Res Function(TagCardCheckState) then) =
+      _$TagCardCheckStateCopyWithImpl<$Res>;
 }
 
 class _$TagCardCheckStateCopyWithImpl<$Res>
-  implements $TagCardCheckStateCopyWith<$Res> {
+    implements $TagCardCheckStateCopyWith<$Res> {
   _$TagCardCheckStateCopyWithImpl(this._value, this._then);
 
   final TagCardCheckState _value;
@@ -260,13 +266,13 @@ class _$TagCardCheckStateCopyWithImpl<$Res>
 
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-  __$InitialCopyWithImpl<$Res>;
+      __$InitialCopyWithImpl<$Res>;
 }
 
 class __$InitialCopyWithImpl<$Res> extends _$TagCardCheckStateCopyWithImpl<$Res>
-  implements _$InitialCopyWith<$Res> {
+    implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-    : super(_value, (v) => _then(v as _Initial));
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -350,14 +356,17 @@ abstract class _Initial implements TagCardCheckState {
 }
 
 abstract class _$InInterestsCopyWith<$Res> {
-  factory _$InInterestsCopyWith(_InInterests value, $Res Function(_InInterests) then) =
-  __$InInterestsCopyWithImpl<$Res>;
+  factory _$InInterestsCopyWith(
+          _InInterests value, $Res Function(_InInterests) then) =
+      __$InInterestsCopyWithImpl<$Res>;
 }
 
-class __$InInterestsCopyWithImpl<$Res> extends _$TagCardCheckStateCopyWithImpl<$Res>
-  implements _$InInterestsCopyWith<$Res> {
-  __$InInterestsCopyWithImpl(_InInterests _value, $Res Function(_InInterests) _then)
-    : super(_value, (v) => _then(v as _InInterests));
+class __$InInterestsCopyWithImpl<$Res>
+    extends _$TagCardCheckStateCopyWithImpl<$Res>
+    implements _$InInterestsCopyWith<$Res> {
+  __$InInterestsCopyWithImpl(
+      _InInterests _value, $Res Function(_InInterests) _then)
+      : super(_value, (v) => _then(v as _InInterests));
 
   @override
   _InInterests get _value => super._value as _InInterests;
@@ -441,14 +450,17 @@ abstract class _InInterests implements TagCardCheckState {
 }
 
 abstract class _$NotInInterestsCopyWith<$Res> {
-  factory _$NotInInterestsCopyWith(_NotInInterests value, $Res Function(_NotInInterests) then) =
-  __$NotInInterestsCopyWithImpl<$Res>;
+  factory _$NotInInterestsCopyWith(
+          _NotInInterests value, $Res Function(_NotInInterests) then) =
+      __$NotInInterestsCopyWithImpl<$Res>;
 }
 
-class __$NotInInterestsCopyWithImpl<$Res> extends _$TagCardCheckStateCopyWithImpl<$Res>
-  implements _$NotInInterestsCopyWith<$Res> {
-  __$NotInInterestsCopyWithImpl(_NotInInterests _value, $Res Function(_NotInInterests) _then)
-    : super(_value, (v) => _then(v as _NotInInterests));
+class __$NotInInterestsCopyWithImpl<$Res>
+    extends _$TagCardCheckStateCopyWithImpl<$Res>
+    implements _$NotInInterestsCopyWith<$Res> {
+  __$NotInInterestsCopyWithImpl(
+      _NotInInterests _value, $Res Function(_NotInInterests) _then)
+      : super(_value, (v) => _then(v as _NotInInterests));
 
   @override
   _NotInInterests get _value => super._value as _NotInInterests;

@@ -43,26 +43,26 @@ abstract class Achievement implements _$Achievement {
         imageURL: "",
         imageFile: none(),
         type: "",
-    requisite: 1,
-    experiencePoints: ExperiencePoints(1),
-    creator: User.empty(),
-    creationDate: PastDate(DateTime.now()),
-    modificationDate: PastDate(DateTime.now()),
-    tags: TagSet(KtSet.empty()),
-  );
+        requisite: 1,
+        experiencePoints: ExperiencePoints(1),
+        creator: User.empty(),
+        creationDate: PastDate(DateTime.now()),
+        modificationDate: PastDate(DateTime.now()),
+        tags: TagSet(KtSet.empty()),
+      );
 
   Option<ValueFailure<dynamic>> get failureOption {
     return name.failureOrUnit
-      .andThen(description.failureOrUnit)
-      .andThen(experiencePoints.failureOrUnit)
-      .andThen(creator.failureOrUnit)
-      .andThen(creationDate.failureOrUnit)
-      .andThen(modificationDate.failureOrUnit)
-      .andThen(tags.failureOrUnit)
-      .fold(
-        (failure) => some(failure),
-        (_) => none(),
-    );
+        .andThen(description.failureOrUnit)
+        .andThen(experiencePoints.failureOrUnit)
+        .andThen(creator.failureOrUnit)
+        .andThen(creationDate.failureOrUnit)
+        .andThen(modificationDate.failureOrUnit)
+        .andThen(tags.failureOrUnit)
+        .fold(
+          (failure) => some(failure),
+          (_) => none(),
+        );
   }
 
   bool get isValid => failureOption.isNone();

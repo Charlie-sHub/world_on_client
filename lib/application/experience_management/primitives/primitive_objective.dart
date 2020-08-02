@@ -39,12 +39,12 @@ abstract class PrimitiveObjective implements _$PrimitiveObjective {
       );
 
   Objective toDomain() => Objective(
-    description: EntityDescription(description),
-    coordinates: Coordinates(
-      latitude: Latitude(latitude),
-      longitude: Longitude(longitude),
-    ),
-    imageURL: "",
-    imageFile: some(imageFile),
-  );
+        description: EntityDescription(description),
+        coordinates: Coordinates(
+          latitude: Latitude(latitude),
+          longitude: Longitude(longitude),
+        ),
+        imageURL: "",
+        imageFile: some(imageFile),
+      );
 }

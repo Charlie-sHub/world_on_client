@@ -139,8 +139,8 @@ class UsernameTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       onChanged: (value) => context.bloc<RegistrationFormBloc>().add(
-        RegistrationFormEvent.usernameChanged(value),
-      ),
+            RegistrationFormEvent.usernameChanged(value),
+          ),
       validator: (_) => context.bloc<RegistrationFormBloc>().state.user.username.value.fold(
           (failure) =>
           failure.maybeMap(
@@ -153,7 +153,7 @@ class UsernameTextField extends StatelessWidget {
           (_) => null,
       ),
       autocorrect: false,
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         labelText: "Username",
         prefixIcon: Icon(Icons.account_box),
       ),
@@ -184,7 +184,7 @@ class NameTextField extends StatelessWidget {
           (_) => null,
       ),
       autocorrect: false,
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         labelText: "Name",
         prefixIcon: Icon(Icons.assignment_ind),
       ),

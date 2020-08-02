@@ -31,7 +31,7 @@ class ExperienceManagementForm extends StatelessWidget {
             ),
             // TODO: What to do when an Experience is successfully created?
             // reinitialize the form for starters
-                (_) => null,
+            (_) => null,
           ),
         ),
         builder: (context, state) => Form(
@@ -152,8 +152,8 @@ class FinishButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return RaisedButton(
       onPressed: () => context.bloc<ExperienceManagementFormBloc>().add(
-        const ExperienceManagementFormEvent.submitted(),
-      ),
+            const ExperienceManagementFormEvent.submitted(),
+          ),
       color: WorldOnColors.primary,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(0),

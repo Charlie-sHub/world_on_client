@@ -64,14 +64,11 @@ class _$ProfileDomainFailureCopyWithImpl<T, $Res> implements $ProfileDomainFailu
 }
 
 abstract class $FollowItselfCopyWith<T, $Res> {
-  factory $FollowItselfCopyWith(FollowItself<T> value, $Res Function(FollowItself<T>) then) =
-  _$FollowItselfCopyWithImpl<T, $Res>;
+  factory $FollowItselfCopyWith(FollowItself<T> value, $Res Function(FollowItself<T>) then) = _$FollowItselfCopyWithImpl<T, $Res>;
 }
 
-class _$FollowItselfCopyWithImpl<T, $Res> extends _$ProfileDomainFailureCopyWithImpl<T, $Res>
-  implements $FollowItselfCopyWith<T, $Res> {
-  _$FollowItselfCopyWithImpl(FollowItself<T> _value, $Res Function(FollowItself<T>) _then)
-    : super(_value, (v) => _then(v as FollowItself<T>));
+class _$FollowItselfCopyWithImpl<T, $Res> extends _$ProfileDomainFailureCopyWithImpl<T, $Res> implements $FollowItselfCopyWith<T, $Res> {
+  _$FollowItselfCopyWithImpl(FollowItself<T> _value, $Res Function(FollowItself<T>) _then) : super(_value, (v) => _then(v as FollowItself<T>));
 
   @override
   FollowItself<T> get _value => super._value as FollowItself<T>;
@@ -149,14 +146,11 @@ abstract class FollowItself<T> implements ProfileDomainFailure<T> {
 }
 
 abstract class $BlockItselfCopyWith<T, $Res> {
-  factory $BlockItselfCopyWith(BlockItself<T> value, $Res Function(BlockItself<T>) then) =
-  _$BlockItselfCopyWithImpl<T, $Res>;
+  factory $BlockItselfCopyWith(BlockItself<T> value, $Res Function(BlockItself<T>) then) = _$BlockItselfCopyWithImpl<T, $Res>;
 }
 
-class _$BlockItselfCopyWithImpl<T, $Res> extends _$ProfileDomainFailureCopyWithImpl<T, $Res>
-  implements $BlockItselfCopyWith<T, $Res> {
-  _$BlockItselfCopyWithImpl(BlockItself<T> _value, $Res Function(BlockItself<T>) _then)
-    : super(_value, (v) => _then(v as BlockItself<T>));
+class _$BlockItselfCopyWithImpl<T, $Res> extends _$ProfileDomainFailureCopyWithImpl<T, $Res> implements $BlockItselfCopyWith<T, $Res> {
+  _$BlockItselfCopyWithImpl(BlockItself<T> _value, $Res Function(BlockItself<T>) _then) : super(_value, (v) => _then(v as BlockItself<T>));
 
   @override
   BlockItself<T> get _value => super._value as BlockItself<T>;

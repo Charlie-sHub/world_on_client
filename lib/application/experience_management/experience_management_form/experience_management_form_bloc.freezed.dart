@@ -326,14 +326,18 @@ abstract class _Initialized implements ExperienceManagementFormEvent {
 }
 
 abstract class _$TitleChangedCopyWith<$Res> {
-  factory _$TitleChangedCopyWith(_TitleChanged value, $Res Function(_TitleChanged) then) = __$TitleChangedCopyWithImpl<$Res>;
+  factory _$TitleChangedCopyWith(
+          _TitleChanged value, $Res Function(_TitleChanged) then) =
+      __$TitleChangedCopyWithImpl<$Res>;
   $Res call({String title});
 }
 
-class __$TitleChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res>
-  implements _$TitleChangedCopyWith<$Res> {
-  __$TitleChangedCopyWithImpl(_TitleChanged _value, $Res Function(_TitleChanged) _then)
-    : super(_value, (v) => _then(v as _TitleChanged));
+class __$TitleChangedCopyWithImpl<$Res>
+    extends _$ExperienceManagementFormEventCopyWithImpl<$Res>
+    implements _$TitleChangedCopyWith<$Res> {
+  __$TitleChangedCopyWithImpl(
+      _TitleChanged _value, $Res Function(_TitleChanged) _then)
+      : super(_value, (v) => _then(v as _TitleChanged));
 
   @override
   _TitleChanged get _value => super._value as _TitleChanged;
@@ -362,18 +366,18 @@ class _$_TitleChanged implements _TitleChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _TitleChanged &&
-        (identical(other.title, title) ||
-          const DeepCollectionEquality().equals(other.title, title)));
+        (other is _TitleChanged &&
+            (identical(other.title, title) ||
+                const DeepCollectionEquality().equals(other.title, title)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(title);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(title);
 
   @override
   _$TitleChangedCopyWith<_TitleChanged> get copyWith =>
-    __$TitleChangedCopyWithImpl<_TitleChanged>(this, _$identity);
+      __$TitleChangedCopyWithImpl<_TitleChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -643,15 +647,18 @@ abstract class _DescriptionChanged implements ExperienceManagementFormEvent {
 }
 
 abstract class _$ImagesChangedCopyWith<$Res> {
-  factory _$ImagesChangedCopyWith(_ImagesChanged value, $Res Function(_ImagesChanged) then) =
-  __$ImagesChangedCopyWithImpl<$Res>;
+  factory _$ImagesChangedCopyWith(
+          _ImagesChanged value, $Res Function(_ImagesChanged) then) =
+      __$ImagesChangedCopyWithImpl<$Res>;
   $Res call({List<Asset> imageAssets});
 }
 
-class __$ImagesChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res>
-  implements _$ImagesChangedCopyWith<$Res> {
-  __$ImagesChangedCopyWithImpl(_ImagesChanged _value, $Res Function(_ImagesChanged) _then)
-    : super(_value, (v) => _then(v as _ImagesChanged));
+class __$ImagesChangedCopyWithImpl<$Res>
+    extends _$ExperienceManagementFormEventCopyWithImpl<$Res>
+    implements _$ImagesChangedCopyWith<$Res> {
+  __$ImagesChangedCopyWithImpl(
+      _ImagesChanged _value, $Res Function(_ImagesChanged) _then)
+      : super(_value, (v) => _then(v as _ImagesChanged));
 
   @override
   _ImagesChanged get _value => super._value as _ImagesChanged;
@@ -680,19 +687,19 @@ class _$_ImagesChanged implements _ImagesChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _ImagesChanged &&
-        (identical(other.imageAssets, imageAssets) ||
-          const DeepCollectionEquality()
-            .equals(other.imageAssets, imageAssets)));
+        (other is _ImagesChanged &&
+            (identical(other.imageAssets, imageAssets) ||
+                const DeepCollectionEquality()
+                    .equals(other.imageAssets, imageAssets)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageAssets);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageAssets);
 
   @override
   _$ImagesChangedCopyWith<_ImagesChanged> get copyWith =>
-    __$ImagesChangedCopyWithImpl<_ImagesChanged>(this, _$identity);
+      __$ImagesChangedCopyWithImpl<_ImagesChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs

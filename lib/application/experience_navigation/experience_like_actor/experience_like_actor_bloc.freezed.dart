@@ -60,14 +60,16 @@ mixin _$ExperienceLikeActorEvent {
 }
 
 abstract class $ExperienceLikeActorEventCopyWith<$Res> {
-  factory $ExperienceLikeActorEventCopyWith(ExperienceLikeActorEvent value, $Res Function(ExperienceLikeActorEvent) then) = _$ExperienceLikeActorEventCopyWithImpl<$Res>;
+  factory $ExperienceLikeActorEventCopyWith(ExperienceLikeActorEvent value,
+          $Res Function(ExperienceLikeActorEvent) then) =
+      _$ExperienceLikeActorEventCopyWithImpl<$Res>;
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
 }
 
 class _$ExperienceLikeActorEventCopyWithImpl<$Res>
-  implements $ExperienceLikeActorEventCopyWith<$Res> {
+    implements $ExperienceLikeActorEventCopyWith<$Res> {
   _$ExperienceLikeActorEventCopyWithImpl(this._value, this._then);
 
   final ExperienceLikeActorEvent _value;
@@ -80,7 +82,7 @@ class _$ExperienceLikeActorEventCopyWithImpl<$Res>
   }) {
     return _then(_value.copyWith(
       experience:
-      experience == freezed ? _value.experience : experience as Experience,
+          experience == freezed ? _value.experience : experience as Experience,
     ));
   }
 
@@ -96,9 +98,10 @@ class _$ExperienceLikeActorEventCopyWithImpl<$Res>
 }
 
 abstract class _$InitializedCopyWith<$Res>
-  implements $ExperienceLikeActorEventCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
-  __$InitializedCopyWithImpl<$Res>;
+    implements $ExperienceLikeActorEventCopyWith<$Res> {
+  factory _$InitializedCopyWith(
+          _Initialized value, $Res Function(_Initialized) then) =
+      __$InitializedCopyWithImpl<$Res>;
   @override
   $Res call({Experience experience});
 
@@ -106,10 +109,12 @@ abstract class _$InitializedCopyWith<$Res>
   $ExperienceCopyWith<$Res> get experience;
 }
 
-class __$InitializedCopyWithImpl<$Res> extends _$ExperienceLikeActorEventCopyWithImpl<$Res>
-  implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
-    : super(_value, (v) => _then(v as _Initialized));
+class __$InitializedCopyWithImpl<$Res>
+    extends _$ExperienceLikeActorEventCopyWithImpl<$Res>
+    implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(
+      _Initialized _value, $Res Function(_Initialized) _then)
+      : super(_value, (v) => _then(v as _Initialized));
 
   @override
   _Initialized get _value => super._value as _Initialized;
@@ -138,19 +143,19 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Initialized &&
-        (identical(other.experience, experience) ||
-          const DeepCollectionEquality()
-            .equals(other.experience, experience)));
+        (other is _Initialized &&
+            (identical(other.experience, experience) ||
+                const DeepCollectionEquality()
+                    .equals(other.experience, experience)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
-    __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+      __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -213,9 +218,9 @@ abstract class _Initialized implements ExperienceLikeActorEvent {
 }
 
 abstract class _$LikedCopyWith<$Res>
-  implements $ExperienceLikeActorEventCopyWith<$Res> {
+    implements $ExperienceLikeActorEventCopyWith<$Res> {
   factory _$LikedCopyWith(_Liked value, $Res Function(_Liked) then) =
-  __$LikedCopyWithImpl<$Res>;
+      __$LikedCopyWithImpl<$Res>;
   @override
   $Res call({Experience experience});
 
@@ -223,10 +228,11 @@ abstract class _$LikedCopyWith<$Res>
   $ExperienceCopyWith<$Res> get experience;
 }
 
-class __$LikedCopyWithImpl<$Res> extends _$ExperienceLikeActorEventCopyWithImpl<$Res>
-  implements _$LikedCopyWith<$Res> {
+class __$LikedCopyWithImpl<$Res>
+    extends _$ExperienceLikeActorEventCopyWithImpl<$Res>
+    implements _$LikedCopyWith<$Res> {
   __$LikedCopyWithImpl(_Liked _value, $Res Function(_Liked) _then)
-    : super(_value, (v) => _then(v as _Liked));
+      : super(_value, (v) => _then(v as _Liked));
 
   @override
   _Liked get _value => super._value as _Liked;
@@ -255,19 +261,19 @@ class _$_Liked implements _Liked {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Liked &&
-        (identical(other.experience, experience) ||
-          const DeepCollectionEquality()
-            .equals(other.experience, experience)));
+        (other is _Liked &&
+            (identical(other.experience, experience) ||
+                const DeepCollectionEquality()
+                    .equals(other.experience, experience)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
   @override
   _$LikedCopyWith<_Liked> get copyWith =>
-    __$LikedCopyWithImpl<_Liked>(this, _$identity);
+      __$LikedCopyWithImpl<_Liked>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -411,12 +417,12 @@ mixin _$ExperienceLikeActorState {
 
 abstract class $ExperienceLikeActorStateCopyWith<$Res> {
   factory $ExperienceLikeActorStateCopyWith(ExperienceLikeActorState value,
-    $Res Function(ExperienceLikeActorState) then) =
-  _$ExperienceLikeActorStateCopyWithImpl<$Res>;
+          $Res Function(ExperienceLikeActorState) then) =
+      _$ExperienceLikeActorStateCopyWithImpl<$Res>;
 }
 
 class _$ExperienceLikeActorStateCopyWithImpl<$Res>
-  implements $ExperienceLikeActorStateCopyWith<$Res> {
+    implements $ExperienceLikeActorStateCopyWith<$Res> {
   _$ExperienceLikeActorStateCopyWithImpl(this._value, this._then);
 
   final ExperienceLikeActorState _value;
@@ -426,13 +432,14 @@ class _$ExperienceLikeActorStateCopyWithImpl<$Res>
 
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-  __$InitialCopyWithImpl<$Res>;
+      __$InitialCopyWithImpl<$Res>;
 }
 
-class __$InitialCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImpl<$Res>
-  implements _$InitialCopyWith<$Res> {
+class __$InitialCopyWithImpl<$Res>
+    extends _$ExperienceLikeActorStateCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-    : super(_value, (v) => _then(v as _Initial));
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -534,14 +541,17 @@ abstract class _Initial implements ExperienceLikeActorState {
 }
 
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) =
-  __$ActionInProgressCopyWithImpl<$Res>;
+  factory _$ActionInProgressCopyWith(
+          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
+      __$ActionInProgressCopyWithImpl<$Res>;
 }
 
-class __$ActionInProgressCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImpl<$Res>
-  implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then)
-    : super(_value, (v) => _then(v as _ActionInProgress));
+class __$ActionInProgressCopyWithImpl<$Res>
+    extends _$ExperienceLikeActorStateCopyWithImpl<$Res>
+    implements _$ActionInProgressCopyWith<$Res> {
+  __$ActionInProgressCopyWithImpl(
+      _ActionInProgress _value, $Res Function(_ActionInProgress) _then)
+      : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
   _ActionInProgress get _value => super._value as _ActionInProgress;
@@ -644,13 +654,14 @@ abstract class _ActionInProgress implements ExperienceLikeActorState {
 
 abstract class _$LikesCopyWith<$Res> {
   factory _$LikesCopyWith(_Likes value, $Res Function(_Likes) then) =
-  __$LikesCopyWithImpl<$Res>;
+      __$LikesCopyWithImpl<$Res>;
 }
 
-class __$LikesCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImpl<$Res>
-  implements _$LikesCopyWith<$Res> {
+class __$LikesCopyWithImpl<$Res>
+    extends _$ExperienceLikeActorStateCopyWithImpl<$Res>
+    implements _$LikesCopyWith<$Res> {
   __$LikesCopyWithImpl(_Likes _value, $Res Function(_Likes) _then)
-    : super(_value, (v) => _then(v as _Likes));
+      : super(_value, (v) => _then(v as _Likes));
 
   @override
   _Likes get _value => super._value as _Likes;
@@ -753,13 +764,14 @@ abstract class _Likes implements ExperienceLikeActorState {
 
 abstract class _$NeutralCopyWith<$Res> {
   factory _$NeutralCopyWith(_Neutral value, $Res Function(_Neutral) then) =
-  __$NeutralCopyWithImpl<$Res>;
+      __$NeutralCopyWithImpl<$Res>;
 }
 
-class __$NeutralCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImpl<$Res>
-  implements _$NeutralCopyWith<$Res> {
+class __$NeutralCopyWithImpl<$Res>
+    extends _$ExperienceLikeActorStateCopyWithImpl<$Res>
+    implements _$NeutralCopyWith<$Res> {
   __$NeutralCopyWithImpl(_Neutral _value, $Res Function(_Neutral) _then)
-    : super(_value, (v) => _then(v as _Neutral));
+      : super(_value, (v) => _then(v as _Neutral));
 
   @override
   _Neutral get _value => super._value as _Neutral;
@@ -861,14 +873,17 @@ abstract class _Neutral implements ExperienceLikeActorState {
 }
 
 abstract class _$LikeSuccessCopyWith<$Res> {
-  factory _$LikeSuccessCopyWith(_LikeSuccess value, $Res Function(_LikeSuccess) then) =
-  __$LikeSuccessCopyWithImpl<$Res>;
+  factory _$LikeSuccessCopyWith(
+          _LikeSuccess value, $Res Function(_LikeSuccess) then) =
+      __$LikeSuccessCopyWithImpl<$Res>;
 }
 
-class __$LikeSuccessCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImpl<$Res>
-  implements _$LikeSuccessCopyWith<$Res> {
-  __$LikeSuccessCopyWithImpl(_LikeSuccess _value, $Res Function(_LikeSuccess) _then)
-    : super(_value, (v) => _then(v as _LikeSuccess));
+class __$LikeSuccessCopyWithImpl<$Res>
+    extends _$ExperienceLikeActorStateCopyWithImpl<$Res>
+    implements _$LikeSuccessCopyWith<$Res> {
+  __$LikeSuccessCopyWithImpl(
+      _LikeSuccess _value, $Res Function(_LikeSuccess) _then)
+      : super(_value, (v) => _then(v as _LikeSuccess));
 
   @override
   _LikeSuccess get _value => super._value as _LikeSuccess;
@@ -970,17 +985,20 @@ abstract class _LikeSuccess implements ExperienceLikeActorState {
 }
 
 abstract class _$LikeFailureCopyWith<$Res> {
-  factory _$LikeFailureCopyWith(_LikeFailure value, $Res Function(_LikeFailure) then) =
-  __$LikeFailureCopyWithImpl<$Res>;
+  factory _$LikeFailureCopyWith(
+          _LikeFailure value, $Res Function(_LikeFailure) then) =
+      __$LikeFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
-class __$LikeFailureCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImpl<$Res>
-  implements _$LikeFailureCopyWith<$Res> {
-  __$LikeFailureCopyWithImpl(_LikeFailure _value, $Res Function(_LikeFailure) _then)
-    : super(_value, (v) => _then(v as _LikeFailure));
+class __$LikeFailureCopyWithImpl<$Res>
+    extends _$ExperienceLikeActorStateCopyWithImpl<$Res>
+    implements _$LikeFailureCopyWith<$Res> {
+  __$LikeFailureCopyWithImpl(
+      _LikeFailure _value, $Res Function(_LikeFailure) _then)
+      : super(_value, (v) => _then(v as _LikeFailure));
 
   @override
   _LikeFailure get _value => super._value as _LikeFailure;
@@ -1019,18 +1037,18 @@ class _$_LikeFailure implements _LikeFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _LikeFailure &&
-        (identical(other.failure, failure) ||
-          const DeepCollectionEquality().equals(other.failure, failure)));
+        (other is _LikeFailure &&
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
   _$LikeFailureCopyWith<_LikeFailure> get copyWith =>
-    __$LikeFailureCopyWithImpl<_LikeFailure>(this, _$identity);
+      __$LikeFailureCopyWithImpl<_LikeFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs

@@ -46,19 +46,19 @@ abstract class AchievementDto implements _$AchievementDto {
       );
 
   Achievement toDomain() => Achievement(
-    id: id,
-    name: Name(name),
-    description: EntityDescription(description),
-    imageURL: imageURL,
-    imageFile: dartz.none(),
-    type: type,
-    requisite: requisite,
-    experiencePoints: ExperiencePoints(experiencePoints),
-    creator: creator.toDomain(),
-    creationDate: PastDate(DateTime.parse(creationDate)),
-    modificationDate: PastDate(DateTime.parse(modificationDate)),
-    tags: TagSet(tags.map((tagDto) => tagDto.toDomain()).toImmutableSet()),
-  );
+        id: id,
+        name: Name(name),
+        description: EntityDescription(description),
+        imageURL: imageURL,
+        imageFile: dartz.none(),
+        type: type,
+        requisite: requisite,
+        experiencePoints: ExperiencePoints(experiencePoints),
+        creator: creator.toDomain(),
+        creationDate: PastDate(DateTime.parse(creationDate)),
+        modificationDate: PastDate(DateTime.parse(modificationDate)),
+        tags: TagSet(tags.map((tagDto) => tagDto.toDomain()).toImmutableSet()),
+      );
 
   factory AchievementDto.fromJson(Map<String, dynamic> json) => _$AchievementDtoFromJson(json);
 

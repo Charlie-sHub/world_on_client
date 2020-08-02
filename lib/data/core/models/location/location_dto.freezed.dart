@@ -134,7 +134,7 @@ class _$_LocationDto extends _LocationDto {
         assert(postalCode != null),
         assert(experiences != null),
         super._();
-
+  
   factory _$_LocationDto.fromJson(Map<String, dynamic> json) =>
     _$_$_LocationDtoFromJson(json);
 

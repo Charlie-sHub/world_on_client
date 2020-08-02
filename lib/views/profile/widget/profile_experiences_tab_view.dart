@@ -93,8 +93,8 @@ class ProfileExperiencesUnicornDialer extends StatelessWidget {
             heroTag: "done",
             mini: true,
             onPressed: () => context.bloc<ProfileExperiencesWatcherBloc>().add(
-              ProfileExperiencesWatcherEvent.watchExperiencesDoneStarted(user),
-            ),
+                  ProfileExperiencesWatcherEvent.watchExperiencesDoneStarted(user),
+                ),
             foregroundColor: Colors.green,
             child: Icon(Icons.done),
           ),
@@ -104,8 +104,8 @@ class ProfileExperiencesUnicornDialer extends StatelessWidget {
             heroTag: "liked",
             mini: true,
             onPressed: () => context.bloc<ProfileExperiencesWatcherBloc>().add(
-              ProfileExperiencesWatcherEvent.watchExperiencesLikedStarted(user),
-            ),
+                  ProfileExperiencesWatcherEvent.watchExperiencesLikedStarted(user),
+                ),
             foregroundColor: WorldOnColors.red,
             child: FaIcon(FontAwesomeIcons.solidHeart),
           ),

@@ -79,8 +79,8 @@ class ProfileUsersUnicornDialer extends StatelessWidget {
             heroTag: "followed",
             mini: true,
             onPressed: () => context.bloc<ProfileUsersWatcherBloc>().add(
-              ProfileUsersWatcherEvent.watchFollowedUsersStarted(user),
-            ),
+                  ProfileUsersWatcherEvent.watchFollowedUsersStarted(user),
+                ),
             foregroundColor: WorldOnColors.accent,
             child: Icon(Icons.arrow_back),
           ),
@@ -92,8 +92,8 @@ class ProfileUsersUnicornDialer extends StatelessWidget {
             heroTag: "following",
             mini: true,
             onPressed: () => context.bloc<ProfileUsersWatcherBloc>().add(
-              ProfileUsersWatcherEvent.watchFollowingUsersStarted(user),
-            ),
+                  ProfileUsersWatcherEvent.watchFollowingUsersStarted(user),
+                ),
             foregroundColor: WorldOnColors.red,
             child: Icon(Icons.arrow_forward),
           ),

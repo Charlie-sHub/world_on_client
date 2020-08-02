@@ -9,6 +9,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../../domain/core/entities/user/user.dart';
 import '../../authentication/pages/log_in_page.dart';
 import '../../authentication/pages/registration_page.dart';
 import '../../profile/pages/profile_editing_page.dart';
@@ -68,8 +69,12 @@ class Router extends RouterBase {
       );
     },
     ProfileEditingPage: (data) {
+      final args = data.getArgs<ProfileEditingPageArguments>(nullOk: false);
       return MaterialPageRoute<dynamic>(
-        builder: (context) => ProfileEditingPage(),
+        builder: (context) => ProfileEditingPage(
+          key: args.key,
+          user: args.user,
+        ),
         settings: data,
       );
     },
@@ -85,10 +90,28 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
 
   Future<dynamic> pushLogInPage() => push<dynamic>(Routes.logInPage);
 
-  Future<dynamic> pushRegistrationPage() => push<dynamic>(Routes.registrationPage);
+  Future<dynamic> pushRegistrationPage() =>
+      push<dynamic>(Routes.registrationPage);
 
   Future<dynamic> pushMainPage() => push<dynamic>(Routes.mainPage);
 
-  Future<dynamic> pushProfileEditingPage() =>
-    push<dynamic>(Routes.profileEditingPage);
+  Future<dynamic> pushProfileEditingPage({
+    Key key,
+    @required User user,
+  }) =>
+      push<dynamic>(
+        Routes.profileEditingPage,
+        arguments: ProfileEditingPageArguments(key: key, user: user),
+      );
+}
+
+/// ************************************************************************
+/// Arguments holder classes
+/// *************************************************************************
+
+/// ProfileEditingPage arguments holder class
+class ProfileEditingPageArguments {
+  final Key key;
+  final User user;
+  ProfileEditingPageArguments({this.key, @required this.user});
 }

@@ -108,7 +108,7 @@ void main() {
   );
   group(
     "${TestDescription.groupOnSuccess} with updating values",
-      () {
+    () {
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the title",
         build: () => getIt<ExperienceManagementFormBloc>(),

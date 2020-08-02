@@ -93,26 +93,26 @@ abstract class User implements _$User {
 
   Option<ValueFailure<dynamic>> get failureOption {
     return name.failureOrUnit
-      .andThen(username.failureOrUnit)
-      .andThen(password.failureOrUnit)
-      .andThen(email.failureOrUnit)
-      .andThen(birthday.failureOrUnit)
-      .andThen(description.failureOrUnit)
-      .andThen(level.failureOrUnit)
-      .andThen(experiencePoints.failureOrUnit)
-      .andThen(lastLogin.failureOrUnit)
-      .andThen(creationDate.failureOrUnit)
-      .andThen(modificationDate.failureOrUnit)
-      .fold(
-        (failure) => some(failure),
-        (_) => none(),
-    );
+        .andThen(username.failureOrUnit)
+        .andThen(password.failureOrUnit)
+        .andThen(email.failureOrUnit)
+        .andThen(birthday.failureOrUnit)
+        .andThen(description.failureOrUnit)
+        .andThen(level.failureOrUnit)
+        .andThen(experiencePoints.failureOrUnit)
+        .andThen(lastLogin.failureOrUnit)
+        .andThen(creationDate.failureOrUnit)
+        .andThen(modificationDate.failureOrUnit)
+        .fold(
+          (failure) => some(failure),
+          (_) => none(),
+        );
   }
 
   Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
     return failureOption.fold(
-        () => right(unit),
-        (failure) => left(failure),
+      () => right(unit),
+      (failure) => left(failure),
     );
   }
 

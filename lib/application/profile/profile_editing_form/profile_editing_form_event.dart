@@ -6,6 +6,8 @@ abstract class ProfileEditingFormEvent with _$ProfileEditingFormEvent {
 
   const factory ProfileEditingFormEvent.nameChanged(String name) = _NameChanged;
 
+  const factory ProfileEditingFormEvent.imageChanged(File imageFile) = _ImageChanged;
+
   const factory ProfileEditingFormEvent.usernameChanged(String username) = _UsernameChanged;
 
   const factory ProfileEditingFormEvent.passwordChanged(String password) = _PasswordChanged;

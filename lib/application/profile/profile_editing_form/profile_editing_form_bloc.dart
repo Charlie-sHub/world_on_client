@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
@@ -30,6 +31,7 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
   Stream<ProfileEditingFormState> mapEventToState(ProfileEditingFormEvent event) async* {
     yield* event.map(
       initialized: onInitialized,
+      imageChanged: onImageChanged,
       nameChanged: onNameChanged,
       usernameChanged: onUsernameChanged,
       passwordChanged: onPasswordChanged,
@@ -118,6 +120,15 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
     yield state.copyWith(
       user: state.user.copyWith(
         name: Name(event.name),
+      ),
+      failureOrSuccessOption: none(),
+    );
+  }
+
+  Stream<ProfileEditingFormState> onImageChanged(_ImageChanged event) async* {
+    yield state.copyWith(
+      user: state.user.copyWith(
+        imageFileOption: some(event.imageFile),
       ),
       failureOrSuccessOption: none(),
     );

@@ -338,5 +338,5 @@ void experienceCardListener(BuildContext context, ExperienceCardActorState state
           orElse: () => "Unknown Error",
         ),
       ).show(context),
-  orElse: () => null,
-);
+      orElse: () => null,
+    );
