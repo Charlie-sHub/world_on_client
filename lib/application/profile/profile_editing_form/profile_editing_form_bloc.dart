@@ -15,6 +15,7 @@ import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
+import 'package:worldon/domain/core/validation/objects/password_confirmator.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/profile/use_case/edit_user.dart';
 import 'package:worldon/injection.dart';
@@ -35,11 +36,25 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
       nameChanged: onNameChanged,
       usernameChanged: onUsernameChanged,
       passwordChanged: onPasswordChanged,
+      passwordConfirmationChanged: onPasswordConfirmationChanged,
       emailAddressChanged: onEmailAddressChanged,
       birthdayChanged: onBirthdayChanged,
       descriptionChanged: onDescriptionChanged,
       interestsChanged: onInterestsChanged,
       submitted: onSubmitted,
+    );
+  }
+
+  Stream<ProfileEditingFormState> onPasswordConfirmationChanged(_PasswordConfirmationChanged event) async* {
+    yield state.copyWith(
+      passwordConfirmator: PasswordConfirmator(
+        password: state.user.password.value.fold(
+          (failure) => "",
+          id,
+        ),
+        confirmation: event.passwordConfirmation,
+      ),
+      failureOrSuccessOption: none(),
     );
   }
 

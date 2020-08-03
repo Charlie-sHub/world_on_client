@@ -604,7 +604,6 @@ abstract class _ExperienceNavigationTapped implements NavigationActorEvent {
   const factory _ExperienceNavigationTapped(Option<Experience> experienceOption) = _$_ExperienceNavigationTapped;
 
   Option<Experience> get experienceOption;
-  
   _$ExperienceNavigationTappedCopyWith<_ExperienceNavigationTapped>
   get copyWith;
 }

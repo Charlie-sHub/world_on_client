@@ -179,8 +179,8 @@ class TitleFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       onChanged: (value) => context.bloc<ExperienceManagementFormBloc>().add(
-        ExperienceManagementFormEvent.titleChanged(value),
-      ),
+            ExperienceManagementFormEvent.titleChanged(value),
+          ),
       validator: (_) => context.bloc<ExperienceManagementFormBloc>().state.experience.title.value.fold(
             (failure) => failure.maybeMap(
           emptyString: (_) => "The title can't be empty",

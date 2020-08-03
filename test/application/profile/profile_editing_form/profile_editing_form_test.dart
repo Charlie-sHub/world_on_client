@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -19,12 +21,11 @@ import 'package:worldon/injection.dart';
 import '../../../domain/core/methods/get_valid_user.dart';
 import '../../../test_descriptions.dart';
 
-// TODO: Test image change
 void main() {
   EditUser editUser;
   GetLoggedInUser getLoggedInUser;
   setUpAll(
-    () {
+      () {
       configureDependencies(injectable.Environment.test);
       editUser = getIt<EditUser>();
       getLoggedInUser = getIt<GetLoggedInUser>();
@@ -42,6 +43,7 @@ void main() {
       creator: getValidUser(),
     ),
   };
+  final imageFile = File("assets/non_existing_person_placeholder.jpg");
   final user = getValidUser();
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
@@ -68,7 +70,30 @@ void main() {
   );
   group(
     "${TestDescription.groupOnSuccess} updating the user fields",
-    () {
+      () {
+      // TODO: Test password confirmation
+      blocTest(
+        "${TestDescription.shouldEmitUpdated} with the imageFile",
+        build: () {
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
+          return getIt<ProfileEditingFormBloc>();
+        },
+        act: (bloc) async {
+          bloc.add(const ProfileEditingFormEvent.initialized());
+          bloc.add(ProfileEditingFormEvent.imageChanged(imageFile));
+        },
+        verify: (_) async => verify(getLoggedInUser.call(any)),
+        expect: [
+          ProfileEditingFormState.initial().copyWith(
+            user: user,
+          ),
+          ProfileEditingFormState.initial().copyWith(
+            user: user.copyWith(
+              imageFileOption: some(imageFile),
+            ),
+          ),
+        ],
+      );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the name",
         build: () {
@@ -241,6 +266,7 @@ void main() {
       bloc.add(ProfileEditingFormEvent.birthdayChanged(birthday));
       bloc.add(const ProfileEditingFormEvent.descriptionChanged(description));
       bloc.add(ProfileEditingFormEvent.interestsChanged(interests));
+      bloc.add(ProfileEditingFormEvent.imageChanged(imageFile));
       bloc.add(const ProfileEditingFormEvent.submitted());
     },
     verify: (_) async {
@@ -323,6 +349,20 @@ void main() {
           email: EmailAddress(emailAddress),
           description: EntityDescription(description),
           interests: interests,
+          imageFileOption: some(imageFile),
+        ),
+        failureOrSuccessOption: none(),
+      ),
+      ProfileEditingFormState.initial().copyWith(
+        user: user.copyWith(
+          name: Name(name),
+          username: Name(username),
+          birthday: PastDate(birthday),
+          password: Password(password),
+          email: EmailAddress(emailAddress),
+          description: EntityDescription(description),
+          interests: interests,
+          imageFileOption: some(imageFile),
         ),
         isSubmitting: true,
         failureOrSuccessOption: none(),
@@ -336,6 +376,7 @@ void main() {
           email: EmailAddress(emailAddress),
           description: EntityDescription(description),
           interests: interests,
+          imageFileOption: some(imageFile),
         ),
         isSubmitting: false,
         showErrorMessages: true,
@@ -345,7 +386,7 @@ void main() {
   );
   group(
     TestDescription.groupOnFailure,
-    () {
+      () {
       blocTest(
         "${TestDescription.shouldEmitFailure} when submitting",
         build: () {
@@ -362,6 +403,7 @@ void main() {
           bloc.add(ProfileEditingFormEvent.birthdayChanged(birthday));
           bloc.add(const ProfileEditingFormEvent.descriptionChanged(description));
           bloc.add(ProfileEditingFormEvent.interestsChanged(interests));
+          bloc.add(ProfileEditingFormEvent.imageChanged(imageFile));
           bloc.add(const ProfileEditingFormEvent.submitted());
         },
         verify: (_) async {
@@ -444,6 +486,20 @@ void main() {
               email: EmailAddress(emailAddress),
               description: EntityDescription(description),
               interests: interests,
+              imageFileOption: some(imageFile),
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          ProfileEditingFormState.initial().copyWith(
+            user: user.copyWith(
+              name: Name(name),
+              username: Name(username),
+              birthday: PastDate(birthday),
+              password: Password(password),
+              email: EmailAddress(emailAddress),
+              description: EntityDescription(description),
+              interests: interests,
+              imageFileOption: some(imageFile),
             ),
             isSubmitting: true,
             failureOrSuccessOption: none(),
@@ -457,6 +513,7 @@ void main() {
               birthday: PastDate(birthday),
               description: EntityDescription(description),
               interests: interests,
+              imageFileOption: some(imageFile),
             ),
             isSubmitting: false,
             showErrorMessages: true,
@@ -480,6 +537,7 @@ void main() {
           bloc.add(ProfileEditingFormEvent.birthdayChanged(birthday));
           bloc.add(const ProfileEditingFormEvent.descriptionChanged(description));
           bloc.add(ProfileEditingFormEvent.interestsChanged(interests));
+          bloc.add(ProfileEditingFormEvent.imageChanged(imageFile));
           bloc.add(const ProfileEditingFormEvent.submitted());
           bloc.add(const ProfileEditingFormEvent.nameChanged(name));
         },
@@ -563,6 +621,20 @@ void main() {
               email: EmailAddress(emailAddress),
               description: EntityDescription(description),
               interests: interests,
+              imageFileOption: some(imageFile),
+            ),
+            failureOrSuccessOption: none(),
+          ),
+          ProfileEditingFormState.initial().copyWith(
+            user: user.copyWith(
+              name: Name(name),
+              username: Name(username),
+              birthday: PastDate(birthday),
+              password: Password(password),
+              email: EmailAddress(emailAddress),
+              description: EntityDescription(description),
+              interests: interests,
+              imageFileOption: some(imageFile),
             ),
             isSubmitting: true,
             failureOrSuccessOption: none(),
@@ -576,6 +648,7 @@ void main() {
               birthday: PastDate(birthday),
               description: EntityDescription(description),
               interests: interests,
+              imageFileOption: some(imageFile),
             ),
             isSubmitting: false,
             showErrorMessages: true,
@@ -590,6 +663,7 @@ void main() {
               birthday: PastDate(birthday),
               description: EntityDescription(description),
               interests: interests,
+              imageFileOption: some(imageFile),
             ),
             showErrorMessages: true,
             failureOrSuccessOption: none(),

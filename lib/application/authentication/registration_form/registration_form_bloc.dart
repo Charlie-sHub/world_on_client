@@ -41,7 +41,15 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
       birthdayChanged: onBirthdayChanged,
       descriptionChanged: onDescriptionChanged,
       interestsChanged: onInterestsChanged,
+      tappedEULA: onTappedEULA,
       submitted: onSubmitted,
+    );
+  }
+
+  Stream<RegistrationFormState> onTappedEULA(_TappedEULA event) async* {
+    yield state.copyWith(
+      acceptedEULA: !state.acceptedEULA,
+      failureOrSuccessOption: none(),
     );
   }
 
@@ -64,11 +72,11 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
       isSubmitting: true,
       failureOrSuccessOption: none(),
     );
-    if (state.user.isValid && state.passwordConfirmator.isValid()) {
+    final canRegister = state.user.isValid && state.passwordConfirmator.isValid() && state.acceptedEULA && state.user.imageFileOption.isSome();
+    if (canRegister) {
       final _register = getIt<Register>();
       // TODO: Create default Options for the user before registering
       // For now with the languageCode of the phone
-      // TODO: Control that an image is required to register
       _failureOrUnit = await _register(
         Params(
           user: state.user,
@@ -159,7 +167,13 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     final _userOption = await _getLoggedInUser(getIt<NoParams>());
     yield _userOption.fold(
       () => state,
-      (user) => state.copyWith(user: user),
+      (user) => state.copyWith(
+        user: user,
+        passwordConfirmator: PasswordConfirmator(
+          password: user.password.getOrCrash(),
+          confirmation: user.password.getOrCrash(),
+        ),
+      ),
     );
   }
 }

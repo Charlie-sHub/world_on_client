@@ -12,6 +12,8 @@ abstract class ProfileEditingFormEvent with _$ProfileEditingFormEvent {
 
   const factory ProfileEditingFormEvent.passwordChanged(String password) = _PasswordChanged;
 
+  const factory ProfileEditingFormEvent.passwordConfirmationChanged(String passwordConfirmation) = _PasswordConfirmationChanged;
+
   const factory ProfileEditingFormEvent.emailAddressChanged(String emailAddress) = _EmailAddressChanged;
 
   const factory ProfileEditingFormEvent.birthdayChanged(DateTime birthday) = _BirthdayChanged;

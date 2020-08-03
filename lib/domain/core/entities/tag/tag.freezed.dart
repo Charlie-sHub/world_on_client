@@ -40,7 +40,7 @@ mixin _$Tag {
 abstract class $TagCopyWith<$Res> {
   factory $TagCopyWith(Tag value, $Res Function(Tag) then) =
   _$TagCopyWithImpl<$Res>;
-  
+
   $Res call({int id,
     Name name,
     User creator,

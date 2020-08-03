@@ -44,7 +44,7 @@ dependencies:
   # Probably useless now
   shared_preferences: ^0.5.8
   # For unions generation
-  freezed_annotation: ^0.11.0
+  freezed_annotation: ^0.11.0+1
   # For email validation
   email_validator: ^1.0.5
   # For mapping
@@ -72,7 +72,7 @@ dependencies:
   # For showing the user's experience progression
   percent_indicator: ^2.1.5
   # Takes out some boilerplate
-  flutter_hooks: ^0.12.0
+  flutter_hooks: ^0.13.0
   # For FloatingActionButton menus
   unicorndial: ^1.1.5
   # To add shadow to icons with less boiler plate

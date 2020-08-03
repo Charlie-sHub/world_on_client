@@ -82,6 +82,11 @@ class _$RegistrationFormEventTearOff {
   }
 
 // ignore: unused_element
+  _TappedEULA tappedEULA() {
+    return const _TappedEULA();
+  }
+
+// ignore: unused_element
   _Submitted submitted() {
     return const _Submitted();
   }
@@ -103,6 +108,7 @@ mixin _$RegistrationFormEvent {
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
     @required Result interestsChanged(Set<Tag> interests),
+    @required Result tappedEULA(),
     @required Result submitted(),
   });
   @optionalTypeArgs
@@ -117,6 +123,7 @@ mixin _$RegistrationFormEvent {
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
     Result interestsChanged(Set<Tag> interests),
+    Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
   });
@@ -133,6 +140,7 @@ mixin _$RegistrationFormEvent {
     @required Result birthdayChanged(_BirthdayChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
     @required Result interestsChanged(_InterestsChanged value),
+    @required Result tappedEULA(_TappedEULA value),
     @required Result submitted(_Submitted value),
   });
   @optionalTypeArgs
@@ -147,6 +155,7 @@ mixin _$RegistrationFormEvent {
     Result birthdayChanged(_BirthdayChanged value),
     Result descriptionChanged(_DescriptionChanged value),
     Result interestsChanged(_InterestsChanged value),
+    Result tappedEULA(_TappedEULA value),
     Result submitted(_Submitted value),
     @required Result orElse(),
   });
@@ -213,6 +222,7 @@ class _$_Initialized implements _Initialized {
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
     @required Result interestsChanged(Set<Tag> interests),
+    @required Result tappedEULA(),
     @required Result submitted(),
   }) {
     assert(initialized != null);
@@ -225,6 +235,7 @@ class _$_Initialized implements _Initialized {
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
     assert(interestsChanged != null);
+    assert(tappedEULA != null);
     assert(submitted != null);
     return initialized();
   }
@@ -242,6 +253,7 @@ class _$_Initialized implements _Initialized {
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
     Result interestsChanged(Set<Tag> interests),
+    Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
   }) {
@@ -266,6 +278,7 @@ class _$_Initialized implements _Initialized {
     @required Result birthdayChanged(_BirthdayChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
     @required Result interestsChanged(_InterestsChanged value),
+    @required Result tappedEULA(_TappedEULA value),
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
@@ -278,6 +291,7 @@ class _$_Initialized implements _Initialized {
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
     assert(interestsChanged != null);
+    assert(tappedEULA != null);
     assert(submitted != null);
     return initialized(this);
   }
@@ -295,6 +309,7 @@ class _$_Initialized implements _Initialized {
     Result birthdayChanged(_BirthdayChanged value),
     Result descriptionChanged(_DescriptionChanged value),
     Result interestsChanged(_InterestsChanged value),
+    Result tappedEULA(_TappedEULA value),
     Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
@@ -378,6 +393,7 @@ class _$_ImageChanged implements _ImageChanged {
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
     @required Result interestsChanged(Set<Tag> interests),
+    @required Result tappedEULA(),
     @required Result submitted(),
   }) {
     assert(initialized != null);
@@ -390,6 +406,7 @@ class _$_ImageChanged implements _ImageChanged {
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
     assert(interestsChanged != null);
+    assert(tappedEULA != null);
     assert(submitted != null);
     return imageChanged(imageFile);
   }
@@ -407,6 +424,7 @@ class _$_ImageChanged implements _ImageChanged {
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
     Result interestsChanged(Set<Tag> interests),
+    Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
   }) {
@@ -431,6 +449,7 @@ class _$_ImageChanged implements _ImageChanged {
     @required Result birthdayChanged(_BirthdayChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
     @required Result interestsChanged(_InterestsChanged value),
+    @required Result tappedEULA(_TappedEULA value),
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
@@ -443,6 +462,7 @@ class _$_ImageChanged implements _ImageChanged {
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
     assert(interestsChanged != null);
+    assert(tappedEULA != null);
     assert(submitted != null);
     return imageChanged(this);
   }
@@ -460,6 +480,7 @@ class _$_ImageChanged implements _ImageChanged {
     Result birthdayChanged(_BirthdayChanged value),
     Result descriptionChanged(_DescriptionChanged value),
     Result interestsChanged(_InterestsChanged value),
+    Result tappedEULA(_TappedEULA value),
     Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
@@ -545,6 +566,7 @@ class _$_NameChanged implements _NameChanged {
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
     @required Result interestsChanged(Set<Tag> interests),
+    @required Result tappedEULA(),
     @required Result submitted(),
   }) {
     assert(initialized != null);
@@ -557,6 +579,7 @@ class _$_NameChanged implements _NameChanged {
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
     assert(interestsChanged != null);
+    assert(tappedEULA != null);
     assert(submitted != null);
     return nameChanged(name);
   }
@@ -574,6 +597,7 @@ class _$_NameChanged implements _NameChanged {
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
     Result interestsChanged(Set<Tag> interests),
+    Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
   }) {
@@ -598,6 +622,7 @@ class _$_NameChanged implements _NameChanged {
     @required Result birthdayChanged(_BirthdayChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
     @required Result interestsChanged(_InterestsChanged value),
+    @required Result tappedEULA(_TappedEULA value),
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
@@ -610,6 +635,7 @@ class _$_NameChanged implements _NameChanged {
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
     assert(interestsChanged != null);
+    assert(tappedEULA != null);
     assert(submitted != null);
     return nameChanged(this);
   }
@@ -627,6 +653,7 @@ class _$_NameChanged implements _NameChanged {
     Result birthdayChanged(_BirthdayChanged value),
     Result descriptionChanged(_DescriptionChanged value),
     Result interestsChanged(_InterestsChanged value),
+    Result tappedEULA(_TappedEULA value),
     Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
@@ -713,6 +740,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
     @required Result interestsChanged(Set<Tag> interests),
+    @required Result tappedEULA(),
     @required Result submitted(),
   }) {
     assert(initialized != null);
@@ -725,6 +753,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
     assert(interestsChanged != null);
+    assert(tappedEULA != null);
     assert(submitted != null);
     return usernameChanged(username);
   }
@@ -742,6 +771,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
     Result interestsChanged(Set<Tag> interests),
+    Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
   }) {
@@ -766,6 +796,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     @required Result birthdayChanged(_BirthdayChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
     @required Result interestsChanged(_InterestsChanged value),
+    @required Result tappedEULA(_TappedEULA value),
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
@@ -778,6 +809,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
     assert(interestsChanged != null);
+    assert(tappedEULA != null);
     assert(submitted != null);
     return usernameChanged(this);
   }
@@ -795,6 +827,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     Result birthdayChanged(_BirthdayChanged value),
     Result descriptionChanged(_DescriptionChanged value),
     Result interestsChanged(_InterestsChanged value),
+    Result tappedEULA(_TappedEULA value),
     Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
@@ -881,6 +914,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
     @required Result interestsChanged(Set<Tag> interests),
+    @required Result tappedEULA(),
     @required Result submitted(),
   }) {
     assert(initialized != null);
@@ -893,6 +927,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
     assert(interestsChanged != null);
+    assert(tappedEULA != null);
     assert(submitted != null);
     return passwordChanged(password);
   }
@@ -910,6 +945,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
     Result interestsChanged(Set<Tag> interests),
+    Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
   }) {
@@ -934,6 +970,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     @required Result birthdayChanged(_BirthdayChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
     @required Result interestsChanged(_InterestsChanged value),
+    @required Result tappedEULA(_TappedEULA value),
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
@@ -946,6 +983,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
     assert(interestsChanged != null);
+    assert(tappedEULA != null);
     assert(submitted != null);
     return passwordChanged(this);
   }
@@ -963,6 +1001,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     Result birthdayChanged(_BirthdayChanged value),
     Result descriptionChanged(_DescriptionChanged value),
     Result interestsChanged(_InterestsChanged value),
+    Result tappedEULA(_TappedEULA value),
     Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
@@ -1057,6 +1096,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
     @required Result interestsChanged(Set<Tag> interests),
+    @required Result tappedEULA(),
     @required Result submitted(),
   }) {
     assert(initialized != null);
@@ -1069,6 +1109,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
     assert(interestsChanged != null);
+    assert(tappedEULA != null);
     assert(submitted != null);
     return passwordConfirmationChanged(passwordConfirmation);
   }
@@ -1086,6 +1127,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
     Result interestsChanged(Set<Tag> interests),
+    Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
   }) {
@@ -1110,6 +1152,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
     @required Result birthdayChanged(_BirthdayChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
     @required Result interestsChanged(_InterestsChanged value),
+    @required Result tappedEULA(_TappedEULA value),
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
@@ -1122,6 +1165,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
     assert(interestsChanged != null);
+    assert(tappedEULA != null);
     assert(submitted != null);
     return passwordConfirmationChanged(this);
   }
@@ -1139,6 +1183,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
     Result birthdayChanged(_BirthdayChanged value),
     Result descriptionChanged(_DescriptionChanged value),
     Result interestsChanged(_InterestsChanged value),
+    Result tappedEULA(_TappedEULA value),
     Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
@@ -1229,6 +1274,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
     @required Result interestsChanged(Set<Tag> interests),
+    @required Result tappedEULA(),
     @required Result submitted(),
   }) {
     assert(initialized != null);
@@ -1241,6 +1287,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
     assert(interestsChanged != null);
+    assert(tappedEULA != null);
     assert(submitted != null);
     return emailAddressChanged(emailAddress);
   }
@@ -1258,6 +1305,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
     Result interestsChanged(Set<Tag> interests),
+    Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
   }) {
@@ -1282,6 +1330,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     @required Result birthdayChanged(_BirthdayChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
     @required Result interestsChanged(_InterestsChanged value),
+    @required Result tappedEULA(_TappedEULA value),
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
@@ -1294,6 +1343,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
     assert(interestsChanged != null);
+    assert(tappedEULA != null);
     assert(submitted != null);
     return emailAddressChanged(this);
   }
@@ -1311,6 +1361,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     Result birthdayChanged(_BirthdayChanged value),
     Result descriptionChanged(_DescriptionChanged value),
     Result interestsChanged(_InterestsChanged value),
+    Result tappedEULA(_TappedEULA value),
     Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
@@ -1398,6 +1449,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
     @required Result interestsChanged(Set<Tag> interests),
+    @required Result tappedEULA(),
     @required Result submitted(),
   }) {
     assert(initialized != null);
@@ -1410,6 +1462,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
     assert(interestsChanged != null);
+    assert(tappedEULA != null);
     assert(submitted != null);
     return birthdayChanged(birthday);
   }
@@ -1427,6 +1480,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
     Result interestsChanged(Set<Tag> interests),
+    Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
   }) {
@@ -1451,6 +1505,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     @required Result birthdayChanged(_BirthdayChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
     @required Result interestsChanged(_InterestsChanged value),
+    @required Result tappedEULA(_TappedEULA value),
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
@@ -1463,6 +1518,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
     assert(interestsChanged != null);
+    assert(tappedEULA != null);
     assert(submitted != null);
     return birthdayChanged(this);
   }
@@ -1480,6 +1536,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     Result birthdayChanged(_BirthdayChanged value),
     Result descriptionChanged(_DescriptionChanged value),
     Result interestsChanged(_InterestsChanged value),
+    Result tappedEULA(_TappedEULA value),
     Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
@@ -1566,6 +1623,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
     @required Result interestsChanged(Set<Tag> interests),
+    @required Result tappedEULA(),
     @required Result submitted(),
   }) {
     assert(initialized != null);
@@ -1578,6 +1636,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
     assert(interestsChanged != null);
+    assert(tappedEULA != null);
     assert(submitted != null);
     return descriptionChanged(description);
   }
@@ -1595,6 +1654,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
     Result interestsChanged(Set<Tag> interests),
+    Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
   }) {
@@ -1619,6 +1679,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     @required Result birthdayChanged(_BirthdayChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
     @required Result interestsChanged(_InterestsChanged value),
+    @required Result tappedEULA(_TappedEULA value),
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
@@ -1631,6 +1692,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
     assert(interestsChanged != null);
+    assert(tappedEULA != null);
     assert(submitted != null);
     return descriptionChanged(this);
   }
@@ -1648,6 +1710,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     Result birthdayChanged(_BirthdayChanged value),
     Result descriptionChanged(_DescriptionChanged value),
     Result interestsChanged(_InterestsChanged value),
+    Result tappedEULA(_TappedEULA value),
     Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
@@ -1734,6 +1797,7 @@ class _$_InterestsChanged implements _InterestsChanged {
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
     @required Result interestsChanged(Set<Tag> interests),
+    @required Result tappedEULA(),
     @required Result submitted(),
   }) {
     assert(initialized != null);
@@ -1746,6 +1810,7 @@ class _$_InterestsChanged implements _InterestsChanged {
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
     assert(interestsChanged != null);
+    assert(tappedEULA != null);
     assert(submitted != null);
     return interestsChanged(interests);
   }
@@ -1763,6 +1828,7 @@ class _$_InterestsChanged implements _InterestsChanged {
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
     Result interestsChanged(Set<Tag> interests),
+    Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
   }) {
@@ -1787,6 +1853,7 @@ class _$_InterestsChanged implements _InterestsChanged {
     @required Result birthdayChanged(_BirthdayChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
     @required Result interestsChanged(_InterestsChanged value),
+    @required Result tappedEULA(_TappedEULA value),
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
@@ -1799,6 +1866,7 @@ class _$_InterestsChanged implements _InterestsChanged {
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
     assert(interestsChanged != null);
+    assert(tappedEULA != null);
     assert(submitted != null);
     return interestsChanged(this);
   }
@@ -1816,6 +1884,7 @@ class _$_InterestsChanged implements _InterestsChanged {
     Result birthdayChanged(_BirthdayChanged value),
     Result descriptionChanged(_DescriptionChanged value),
     Result interestsChanged(_InterestsChanged value),
+    Result tappedEULA(_TappedEULA value),
     Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
@@ -1832,6 +1901,148 @@ abstract class _InterestsChanged implements RegistrationFormEvent {
 
   Set<Tag> get interests;
   _$InterestsChangedCopyWith<_InterestsChanged> get copyWith;
+}
+
+abstract class _$TappedEULACopyWith<$Res> {
+  factory _$TappedEULACopyWith(_TappedEULA value, $Res Function(_TappedEULA) then) = __$TappedEULACopyWithImpl<$Res>;
+}
+
+class __$TappedEULACopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res> implements _$TappedEULACopyWith<$Res> {
+  __$TappedEULACopyWithImpl(_TappedEULA _value, $Res Function(_TappedEULA) _then) : super(_value, (v) => _then(v as _TappedEULA));
+
+  @override
+  _TappedEULA get _value => super._value as _TappedEULA;
+}
+
+class _$_TappedEULA implements _TappedEULA {
+  const _$_TappedEULA();
+
+  @override
+  String toString() {
+    return 'RegistrationFormEvent.tappedEULA()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _TappedEULA);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result initialized(),
+    @required Result imageChanged(File imageFile),
+    @required Result nameChanged(String name),
+    @required Result usernameChanged(String username),
+    @required Result passwordChanged(String password),
+    @required Result passwordConfirmationChanged(String passwordConfirmation),
+    @required Result emailAddressChanged(String emailAddress),
+    @required Result birthdayChanged(DateTime birthday),
+    @required Result descriptionChanged(String description),
+    @required Result interestsChanged(Set<Tag> interests),
+    @required Result tappedEULA(),
+    @required Result submitted(),
+  }) {
+    assert(initialized != null);
+    assert(imageChanged != null);
+    assert(nameChanged != null);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(passwordConfirmationChanged != null);
+    assert(emailAddressChanged != null);
+    assert(birthdayChanged != null);
+    assert(descriptionChanged != null);
+    assert(interestsChanged != null);
+    assert(tappedEULA != null);
+    assert(submitted != null);
+    return tappedEULA();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result initialized(),
+    Result imageChanged(File imageFile),
+    Result nameChanged(String name),
+    Result usernameChanged(String username),
+    Result passwordChanged(String password),
+    Result passwordConfirmationChanged(String passwordConfirmation),
+    Result emailAddressChanged(String emailAddress),
+    Result birthdayChanged(DateTime birthday),
+    Result descriptionChanged(String description),
+    Result interestsChanged(Set<Tag> interests),
+    Result tappedEULA(),
+    Result submitted(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (tappedEULA != null) {
+      return tappedEULA();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result initialized(_Initialized value),
+    @required Result imageChanged(_ImageChanged value),
+    @required Result nameChanged(_NameChanged value),
+    @required Result usernameChanged(_UsernameChanged value),
+    @required Result passwordChanged(_PasswordChanged value),
+    @required Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
+    @required Result emailAddressChanged(_EmailAddressChanged value),
+    @required Result birthdayChanged(_BirthdayChanged value),
+    @required Result descriptionChanged(_DescriptionChanged value),
+    @required Result interestsChanged(_InterestsChanged value),
+    @required Result tappedEULA(_TappedEULA value),
+    @required Result submitted(_Submitted value),
+  }) {
+    assert(initialized != null);
+    assert(imageChanged != null);
+    assert(nameChanged != null);
+    assert(usernameChanged != null);
+    assert(passwordChanged != null);
+    assert(passwordConfirmationChanged != null);
+    assert(emailAddressChanged != null);
+    assert(birthdayChanged != null);
+    assert(descriptionChanged != null);
+    assert(interestsChanged != null);
+    assert(tappedEULA != null);
+    assert(submitted != null);
+    return tappedEULA(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result initialized(_Initialized value),
+    Result imageChanged(_ImageChanged value),
+    Result nameChanged(_NameChanged value),
+    Result usernameChanged(_UsernameChanged value),
+    Result passwordChanged(_PasswordChanged value),
+    Result passwordConfirmationChanged(_PasswordConfirmationChanged value),
+    Result emailAddressChanged(_EmailAddressChanged value),
+    Result birthdayChanged(_BirthdayChanged value),
+    Result descriptionChanged(_DescriptionChanged value),
+    Result interestsChanged(_InterestsChanged value),
+    Result tappedEULA(_TappedEULA value),
+    Result submitted(_Submitted value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (tappedEULA != null) {
+      return tappedEULA(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _TappedEULA implements RegistrationFormEvent {
+  const factory _TappedEULA() = _$_TappedEULA;
 }
 
 abstract class _$SubmittedCopyWith<$Res> {
@@ -1879,6 +2090,7 @@ class _$_Submitted implements _Submitted {
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
     @required Result interestsChanged(Set<Tag> interests),
+    @required Result tappedEULA(),
     @required Result submitted(),
   }) {
     assert(initialized != null);
@@ -1891,6 +2103,7 @@ class _$_Submitted implements _Submitted {
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
     assert(interestsChanged != null);
+    assert(tappedEULA != null);
     assert(submitted != null);
     return submitted();
   }
@@ -1908,6 +2121,7 @@ class _$_Submitted implements _Submitted {
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
     Result interestsChanged(Set<Tag> interests),
+    Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
   }) {
@@ -1932,6 +2146,7 @@ class _$_Submitted implements _Submitted {
     @required Result birthdayChanged(_BirthdayChanged value),
     @required Result descriptionChanged(_DescriptionChanged value),
     @required Result interestsChanged(_InterestsChanged value),
+    @required Result tappedEULA(_TappedEULA value),
     @required Result submitted(_Submitted value),
   }) {
     assert(initialized != null);
@@ -1944,6 +2159,7 @@ class _$_Submitted implements _Submitted {
     assert(birthdayChanged != null);
     assert(descriptionChanged != null);
     assert(interestsChanged != null);
+    assert(tappedEULA != null);
     assert(submitted != null);
     return submitted(this);
   }
@@ -1961,6 +2177,7 @@ class _$_Submitted implements _Submitted {
     Result birthdayChanged(_BirthdayChanged value),
     Result descriptionChanged(_DescriptionChanged value),
     Result interestsChanged(_InterestsChanged value),
+    Result tappedEULA(_TappedEULA value),
     Result submitted(_Submitted value),
     @required Result orElse(),
   }) {
@@ -1985,12 +2202,14 @@ class _$RegistrationFormStateTearOff {
       @required PasswordConfirmator passwordConfirmator,
       @required bool showErrorMessages,
       @required bool isSubmitting,
+        @required bool acceptedEULA,
       @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _RegistrationFormState(
       user: user,
       passwordConfirmator: passwordConfirmator,
       showErrorMessages: showErrorMessages,
       isSubmitting: isSubmitting,
+      acceptedEULA: acceptedEULA,
       failureOrSuccessOption: failureOrSuccessOption,
     );
   }
@@ -2004,6 +2223,8 @@ mixin _$RegistrationFormState {
   PasswordConfirmator get passwordConfirmator;
   bool get showErrorMessages;
   bool get isSubmitting;
+
+  bool get acceptedEULA;
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
 
   $RegistrationFormStateCopyWith<RegistrationFormState> get copyWith;
@@ -2018,6 +2239,7 @@ abstract class $RegistrationFormStateCopyWith<$Res> {
       PasswordConfirmator passwordConfirmator,
       bool showErrorMessages,
       bool isSubmitting,
+        bool acceptedEULA,
       Option<Either<Failure, Unit>> failureOrSuccessOption});
 
   $UserCopyWith<$Res> get user;
@@ -2037,6 +2259,7 @@ class _$RegistrationFormStateCopyWithImpl<$Res>
     Object passwordConfirmator = freezed,
     Object showErrorMessages = freezed,
     Object isSubmitting = freezed,
+    Object acceptedEULA = freezed,
     Object failureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
@@ -2049,6 +2272,8 @@ class _$RegistrationFormStateCopyWithImpl<$Res>
           : showErrorMessages as bool,
       isSubmitting:
           isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      acceptedEULA:
+      acceptedEULA == freezed ? _value.acceptedEULA : acceptedEULA as bool,
       failureOrSuccessOption: failureOrSuccessOption == freezed
           ? _value.failureOrSuccessOption
           : failureOrSuccessOption as Option<Either<Failure, Unit>>,
@@ -2077,6 +2302,7 @@ abstract class _$RegistrationFormStateCopyWith<$Res>
       PasswordConfirmator passwordConfirmator,
       bool showErrorMessages,
       bool isSubmitting,
+        bool acceptedEULA,
       Option<Either<Failure, Unit>> failureOrSuccessOption});
 
   @override
@@ -2099,6 +2325,7 @@ class __$RegistrationFormStateCopyWithImpl<$Res>
     Object passwordConfirmator = freezed,
     Object showErrorMessages = freezed,
     Object isSubmitting = freezed,
+    Object acceptedEULA = freezed,
     Object failureOrSuccessOption = freezed,
   }) {
     return _then(_RegistrationFormState(
@@ -2111,6 +2338,8 @@ class __$RegistrationFormStateCopyWithImpl<$Res>
           : showErrorMessages as bool,
       isSubmitting:
           isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      acceptedEULA:
+      acceptedEULA == freezed ? _value.acceptedEULA : acceptedEULA as bool,
       failureOrSuccessOption: failureOrSuccessOption == freezed
           ? _value.failureOrSuccessOption
           : failureOrSuccessOption as Option<Either<Failure, Unit>>,
@@ -2124,11 +2353,13 @@ class _$_RegistrationFormState implements _RegistrationFormState {
       @required this.passwordConfirmator,
       @required this.showErrorMessages,
       @required this.isSubmitting,
+        @required this.acceptedEULA,
       @required this.failureOrSuccessOption})
       : assert(user != null),
         assert(passwordConfirmator != null),
         assert(showErrorMessages != null),
         assert(isSubmitting != null),
+      assert(acceptedEULA != null),
         assert(failureOrSuccessOption != null);
 
   @override
@@ -2140,11 +2371,13 @@ class _$_RegistrationFormState implements _RegistrationFormState {
   @override
   final bool isSubmitting;
   @override
+  final bool acceptedEULA;
+  @override
   final Option<Either<Failure, Unit>> failureOrSuccessOption;
 
   @override
   String toString() {
-    return 'RegistrationFormState(user: $user, passwordConfirmator: $passwordConfirmator, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, failureOrSuccessOption: $failureOrSuccessOption)';
+    return 'RegistrationFormState(user: $user, passwordConfirmator: $passwordConfirmator, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, acceptedEULA: $acceptedEULA, failureOrSuccessOption: $failureOrSuccessOption)';
   }
 
   @override
@@ -2162,6 +2395,9 @@ class _$_RegistrationFormState implements _RegistrationFormState {
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality()
                     .equals(other.isSubmitting, isSubmitting)) &&
+          (identical(other.acceptedEULA, acceptedEULA) ||
+            const DeepCollectionEquality()
+              .equals(other.acceptedEULA, acceptedEULA)) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
                     other.failureOrSuccessOption, failureOrSuccessOption)));
@@ -2174,6 +2410,7 @@ class _$_RegistrationFormState implements _RegistrationFormState {
       const DeepCollectionEquality().hash(passwordConfirmator) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
+      const DeepCollectionEquality().hash(acceptedEULA) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
 
   @override
@@ -2188,6 +2425,7 @@ abstract class _RegistrationFormState implements RegistrationFormState {
           @required PasswordConfirmator passwordConfirmator,
           @required bool showErrorMessages,
           @required bool isSubmitting,
+            @required bool acceptedEULA,
           @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
       _$_RegistrationFormState;
 
@@ -2199,6 +2437,9 @@ abstract class _RegistrationFormState implements RegistrationFormState {
   bool get showErrorMessages;
   @override
   bool get isSubmitting;
+
+  @override
+  bool get acceptedEULA;
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
   @override

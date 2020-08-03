@@ -85,6 +85,7 @@ class RegistrationForm extends StatelessWidget {
 class UserImagePicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // TODO: Tell the user that he needs to add a picture if he hasn't done so
     return Container(
       child: context.bloc<RegistrationFormBloc>().state.user.imageFileOption.fold(
             () => IconButton(
@@ -142,16 +143,15 @@ class UsernameTextField extends StatelessWidget {
             RegistrationFormEvent.usernameChanged(value),
           ),
       validator: (_) => context.bloc<RegistrationFormBloc>().state.user.username.value.fold(
-          (failure) =>
-          failure.maybeMap(
-            emptyString: (_) => "The username can't be empty",
-            multiLineString: (_) => "The username can't be more than one line",
-            stringExceedsLength: (_) => "The username is too long",
-            stringWithInvalidCharacters: (_) => "The username has invalid characters",
-            orElse: () => StringConst.unknownError,
+            (failure) => failure.maybeMap(
+              emptyString: (_) => "The username can't be empty",
+              multiLineString: (_) => "The username can't be more than one line",
+              stringExceedsLength: (_) => "The username is too long",
+              stringWithInvalidCharacters: (_) => "The username has invalid characters",
+              orElse: () => StringConst.unknownError,
+            ),
+            (_) => null,
           ),
-          (_) => null,
-      ),
       autocorrect: false,
       decoration: const InputDecoration(
         labelText: "Username",
@@ -346,11 +346,23 @@ class EULACheckBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CheckboxListTile(
-      // TODO: Implement this
-      // This is the EULA agreement
+      // TODO: Check that the value changes
       title: const Text("Do you agree with blah blah blah"),
-      value: true,
-      onChanged: (value) {},
+      value: context
+        .bloc<RegistrationFormBloc>()
+        .state
+        .acceptedEULA,
+      subtitle: context
+        .bloc<RegistrationFormBloc>()
+        .state
+        .acceptedEULA && context
+        .bloc<RegistrationFormBloc>()
+        .state
+        .showErrorMessages ? const Text("Please check the EULA") : null,
+      onChanged: (_) =>
+        context.bloc<RegistrationFormBloc>().add(
+          const RegistrationFormEvent.tappedEULA(),
+        ),
     );
   }
 }

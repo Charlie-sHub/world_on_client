@@ -7,6 +7,7 @@ abstract class RegistrationFormState with _$RegistrationFormState {
     @required PasswordConfirmator passwordConfirmator,
     @required bool showErrorMessages,
     @required bool isSubmitting,
+    @required bool acceptedEULA,
     @required Option<Either<Failure, Unit>> failureOrSuccessOption,
   }) = _RegistrationFormState;
 
@@ -18,6 +19,7 @@ abstract class RegistrationFormState with _$RegistrationFormState {
         ),
         showErrorMessages: false,
         isSubmitting: false,
+        acceptedEULA: false,
         failureOrSuccessOption: none(),
       );
 }
