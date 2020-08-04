@@ -80,6 +80,7 @@ mixin _$Experience {
 
 abstract class $ExperienceCopyWith<$Res> {
   factory $ExperienceCopyWith(Experience value, $Res Function(Experience) then) = _$ExperienceCopyWithImpl<$Res>;
+
   $Res call(
       {int id,
       Name title,
@@ -201,23 +202,23 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
 abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
   factory _$ExperienceCopyWith(_Experience value, $Res Function(_Experience) then) =
   __$ExperienceCopyWithImpl<$Res>;
+  
   @override
-  $Res call(
-      {int id,
-        Name title,
-      EntityDescription description,
-      Set<String> imageURLs,
-        Option<List<Asset>> imageAssetsOption,
-      Coordinates coordinates,
-      Location location,
-      User creator,
-      Difficulty difficulty,
-      PastDate creationDate,
-      PastDate modificationDate,
-      ObjectiveSet objectives,
-      RewardSet rewards,
-      TagSet tags,
-      Set<Comment> comments,
+  $Res call({int id,
+    Name title,
+    EntityDescription description,
+    Set<String> imageURLs,
+    Option<List<Asset>> imageAssetsOption,
+    Coordinates coordinates,
+    Location location,
+    User creator,
+    Difficulty difficulty,
+    PastDate creationDate,
+    PastDate modificationDate,
+    ObjectiveSet objectives,
+    RewardSet rewards,
+    TagSet tags,
+    Set<Comment> comments,
       Set<User> likedBy,
       Set<User> doneBy});
 
@@ -233,10 +234,10 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res>
   implements _$ExperienceCopyWith<$Res> {
   __$ExperienceCopyWithImpl(_Experience _value, $Res Function(_Experience) _then)
     : super(_value, (v) => _then(v as _Experience));
-
+  
   @override
   _Experience get _value => super._value as _Experience;
-
+  
   @override
   $Res call({
     Object id = freezed,
@@ -295,38 +296,37 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res>
 }
 
 class _$_Experience extends _Experience {
-  const _$_Experience(
-      {this.id,
-        @required this.title,
-      @required this.description,
-      @required this.imageURLs,
-        @required this.imageAssetsOption,
-      @required this.coordinates,
-      @required this.location,
-      @required this.creator,
-      @required this.difficulty,
-      @required this.creationDate,
-      @required this.modificationDate,
-      @required this.objectives,
-      @required this.rewards,
-      @required this.tags,
-      @required this.comments,
+  const _$_Experience({this.id,
+    @required this.title,
+    @required this.description,
+    @required this.imageURLs,
+    @required this.imageAssetsOption,
+    @required this.coordinates,
+    @required this.location,
+    @required this.creator,
+    @required this.difficulty,
+    @required this.creationDate,
+    @required this.modificationDate,
+    @required this.objectives,
+    @required this.rewards,
+    @required this.tags,
+    @required this.comments,
       @required this.likedBy,
       @required this.doneBy})
     : assert(title != null),
-        assert(description != null),
-        assert(imageURLs != null),
+      assert(description != null),
+      assert(imageURLs != null),
       assert(imageAssetsOption != null),
-        assert(coordinates != null),
-        assert(location != null),
-        assert(creator != null),
-        assert(difficulty != null),
-        assert(creationDate != null),
-        assert(modificationDate != null),
-        assert(objectives != null),
-        assert(rewards != null),
-        assert(tags != null),
-        assert(comments != null),
+      assert(coordinates != null),
+      assert(location != null),
+      assert(creator != null),
+      assert(difficulty != null),
+      assert(creationDate != null),
+      assert(modificationDate != null),
+      assert(objectives != null),
+      assert(rewards != null),
+      assert(tags != null),
+      assert(comments != null),
         assert(likedBy != null),
         assert(doneBy != null),
         super._();
@@ -374,54 +374,54 @@ class _$_Experience extends _Experience {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Experience &&
-          (identical(other.id, id) ||
-            const DeepCollectionEquality().equals(other.id, id)) &&
-          (identical(other.title, title) ||
-            const DeepCollectionEquality().equals(other.title, title)) &&
-          (identical(other.description, description) ||
-            const DeepCollectionEquality()
-              .equals(other.description, description)) &&
-          (identical(other.imageURLs, imageURLs) ||
-            const DeepCollectionEquality()
-              .equals(other.imageURLs, imageURLs)) &&
-          (identical(other.imageAssetsOption, imageAssetsOption) ||
-            const DeepCollectionEquality()
-              .equals(other.imageAssetsOption, imageAssetsOption)) &&
-          (identical(other.coordinates, coordinates) ||
-            const DeepCollectionEquality()
-              .equals(other.coordinates, coordinates)) &&
-          (identical(other.location, location) ||
-            const DeepCollectionEquality()
-              .equals(other.location, location)) &&
-          (identical(other.creator, creator) ||
-            const DeepCollectionEquality()
-              .equals(other.creator, creator)) &&
-          (identical(other.difficulty, difficulty) ||
-            const DeepCollectionEquality()
-              .equals(other.difficulty, difficulty)) &&
-          (identical(other.creationDate, creationDate) ||
-            const DeepCollectionEquality()
-              .equals(other.creationDate, creationDate)) &&
-          (identical(other.modificationDate, modificationDate) ||
-            const DeepCollectionEquality()
-              .equals(other.modificationDate, modificationDate)) &&
-          (identical(other.objectives, objectives) ||
-            const DeepCollectionEquality()
-              .equals(other.objectives, objectives)) &&
-          (identical(other.rewards, rewards) ||
-            const DeepCollectionEquality()
-              .equals(other.rewards, rewards)) &&
-          (identical(other.tags, tags) ||
-            const DeepCollectionEquality().equals(other.tags, tags)) &&
-          (identical(other.comments, comments) ||
-            const DeepCollectionEquality()
-              .equals(other.comments, comments)) &&
-          (identical(other.likedBy, likedBy) ||
-            const DeepCollectionEquality()
-              .equals(other.likedBy, likedBy)) &&
-          (identical(other.doneBy, doneBy) ||
-            const DeepCollectionEquality().equals(other.doneBy, doneBy)));
+      (other is _Experience &&
+        (identical(other.id, id) ||
+          const DeepCollectionEquality().equals(other.id, id)) &&
+        (identical(other.title, title) ||
+          const DeepCollectionEquality().equals(other.title, title)) &&
+        (identical(other.description, description) ||
+          const DeepCollectionEquality()
+            .equals(other.description, description)) &&
+        (identical(other.imageURLs, imageURLs) ||
+          const DeepCollectionEquality()
+            .equals(other.imageURLs, imageURLs)) &&
+        (identical(other.imageAssetsOption, imageAssetsOption) ||
+          const DeepCollectionEquality()
+            .equals(other.imageAssetsOption, imageAssetsOption)) &&
+        (identical(other.coordinates, coordinates) ||
+          const DeepCollectionEquality()
+            .equals(other.coordinates, coordinates)) &&
+        (identical(other.location, location) ||
+          const DeepCollectionEquality()
+            .equals(other.location, location)) &&
+        (identical(other.creator, creator) ||
+          const DeepCollectionEquality()
+            .equals(other.creator, creator)) &&
+        (identical(other.difficulty, difficulty) ||
+          const DeepCollectionEquality()
+            .equals(other.difficulty, difficulty)) &&
+        (identical(other.creationDate, creationDate) ||
+          const DeepCollectionEquality()
+            .equals(other.creationDate, creationDate)) &&
+        (identical(other.modificationDate, modificationDate) ||
+          const DeepCollectionEquality()
+            .equals(other.modificationDate, modificationDate)) &&
+        (identical(other.objectives, objectives) ||
+          const DeepCollectionEquality()
+            .equals(other.objectives, objectives)) &&
+        (identical(other.rewards, rewards) ||
+          const DeepCollectionEquality()
+            .equals(other.rewards, rewards)) &&
+        (identical(other.tags, tags) ||
+          const DeepCollectionEquality().equals(other.tags, tags)) &&
+        (identical(other.comments, comments) ||
+          const DeepCollectionEquality()
+            .equals(other.comments, comments)) &&
+        (identical(other.likedBy, likedBy) ||
+          const DeepCollectionEquality()
+            .equals(other.likedBy, likedBy)) &&
+        (identical(other.doneBy, doneBy) ||
+          const DeepCollectionEquality().equals(other.doneBy, doneBy)));
   }
 
   @override
@@ -452,22 +452,21 @@ class _$_Experience extends _Experience {
 
 abstract class _Experience extends Experience {
   const _Experience._() : super._();
-  const factory _Experience(
-      {int id,
-        @required Name title,
-      @required EntityDescription description,
-      @required Set<String> imageURLs,
-        @required Option<List<Asset>> imageAssetsOption,
-      @required Coordinates coordinates,
-      @required Location location,
-      @required User creator,
-      @required Difficulty difficulty,
-      @required PastDate creationDate,
-      @required PastDate modificationDate,
-      @required ObjectiveSet objectives,
-      @required RewardSet rewards,
-      @required TagSet tags,
-      @required Set<Comment> comments,
+  const factory _Experience({int id,
+    @required Name title,
+    @required EntityDescription description,
+    @required Set<String> imageURLs,
+    @required Option<List<Asset>> imageAssetsOption,
+    @required Coordinates coordinates,
+    @required Location location,
+    @required User creator,
+    @required Difficulty difficulty,
+    @required PastDate creationDate,
+    @required PastDate modificationDate,
+    @required ObjectiveSet objectives,
+    @required RewardSet rewards,
+    @required TagSet tags,
+    @required Set<Comment> comments,
       @required Set<User> likedBy,
       @required Set<User> doneBy}) = _$_Experience;
 

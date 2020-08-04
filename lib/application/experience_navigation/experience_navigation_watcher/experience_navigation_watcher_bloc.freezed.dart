@@ -36,6 +36,7 @@ mixin _$ExperienceNavigationWatcherEvent {
     @required Result initialized(Option<Experience> experienceOption),
     @required Result allObjectivesAccomplished(Experience experience),
   });
+
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initialized(Option<Experience> experienceOption),
@@ -56,15 +57,17 @@ mixin _$ExperienceNavigationWatcherEvent {
 }
 
 abstract class $ExperienceNavigationWatcherEventCopyWith<$Res> {
-  factory $ExperienceNavigationWatcherEventCopyWith(ExperienceNavigationWatcherEvent value, $Res Function(ExperienceNavigationWatcherEvent) then) =
-      _$ExperienceNavigationWatcherEventCopyWithImpl<$Res>;
+  factory $ExperienceNavigationWatcherEventCopyWith(ExperienceNavigationWatcherEvent value,
+    $Res Function(ExperienceNavigationWatcherEvent) then) =
+  _$ExperienceNavigationWatcherEventCopyWithImpl<$Res>;
 }
 
 class _$ExperienceNavigationWatcherEventCopyWithImpl<$Res>
   implements $ExperienceNavigationWatcherEventCopyWith<$Res> {
   _$ExperienceNavigationWatcherEventCopyWithImpl(this._value, this._then);
-
+  
   final ExperienceNavigationWatcherEvent _value;
+  
   // ignore: unused_field
   final $Res Function(ExperienceNavigationWatcherEvent) _then;
 }
@@ -72,6 +75,7 @@ class _$ExperienceNavigationWatcherEventCopyWithImpl<$Res>
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
   __$InitializedCopyWithImpl<$Res>;
+  
   $Res call({Option<Experience> experienceOption});
 }
 
@@ -79,10 +83,10 @@ class __$InitializedCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherEven
   implements _$InitializedCopyWith<$Res> {
   __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
     : super(_value, (v) => _then(v as _Initialized));
-
+  
   @override
   _Initialized get _value => super._value as _Initialized;
-
+  
   @override
   $Res call({
     Object experienceOption = freezed,
@@ -198,11 +202,11 @@ class __$AllObjectivesAccomplishedCopyWithImpl<$Res> extends _$ExperienceNavigat
   __$AllObjectivesAccomplishedCopyWithImpl(_AllObjectivesAccomplished _value,
     $Res Function(_AllObjectivesAccomplished) _then)
     : super(_value, (v) => _then(v as _AllObjectivesAccomplished));
-
+  
   @override
   _AllObjectivesAccomplished get _value =>
     super._value as _AllObjectivesAccomplished;
-
+  
   @override
   $Res call({
     Object experience = freezed,
@@ -247,7 +251,7 @@ class _$_AllObjectivesAccomplished implements _AllObjectivesAccomplished {
   @override
   int get hashCode =>
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
-
+  
   @override
   _$AllObjectivesAccomplishedCopyWith<_AllObjectivesAccomplished>
   get copyWith =>
@@ -309,8 +313,9 @@ abstract class _AllObjectivesAccomplished
   implements ExperienceNavigationWatcherEvent {
   const factory _AllObjectivesAccomplished(Experience experience) =
   _$_AllObjectivesAccomplished;
-
+  
   Experience get experience;
+  
   _$AllObjectivesAccomplishedCopyWith<_AllObjectivesAccomplished> get copyWith;
 }
 
@@ -354,6 +359,7 @@ mixin _$ExperienceNavigationWatcherState {
     @required Result navigatingExperience(Experience experience),
     @required Result finishExperience(Experience experience),
   });
+  
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
@@ -382,14 +388,15 @@ mixin _$ExperienceNavigationWatcherState {
 abstract class $ExperienceNavigationWatcherStateCopyWith<$Res> {
   factory $ExperienceNavigationWatcherStateCopyWith(ExperienceNavigationWatcherState value,
     $Res Function(ExperienceNavigationWatcherState) then) =
-      _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>;
+  _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>;
 }
 
 class _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>
   implements $ExperienceNavigationWatcherStateCopyWith<$Res> {
   _$ExperienceNavigationWatcherStateCopyWithImpl(this._value, this._then);
-
+  
   final ExperienceNavigationWatcherState _value;
+  
   // ignore: unused_field
   final $Res Function(ExperienceNavigationWatcherState) _then;
 }
@@ -403,7 +410,7 @@ class __$InitialCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherStateCop
   implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
     : super(_value, (v) => _then(v as _Initial));
-
+  
   @override
   _Initial get _value => super._value as _Initial;
 }
@@ -500,7 +507,7 @@ class __$NoExperienceCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherSta
   implements _$NoExperienceCopyWith<$Res> {
   __$NoExperienceCopyWithImpl(_NoExperience _value, $Res Function(_NoExperience) _then)
     : super(_value, (v) => _then(v as _NoExperience));
-
+  
   @override
   _NoExperience get _value => super._value as _NoExperience;
 }
@@ -601,10 +608,10 @@ class __$NavigatingExperienceCopyWithImpl<$Res> extends _$ExperienceNavigationWa
   implements _$NavigatingExperienceCopyWith<$Res> {
   __$NavigatingExperienceCopyWithImpl(_NavigatingExperience _value, $Res Function(_NavigatingExperience) _then)
     : super(_value, (v) => _then(v as _NavigatingExperience));
-
+  
   @override
   _NavigatingExperience get _value => super._value as _NavigatingExperience;
-
+  
   @override
   $Res call({
     Object experience = freezed,
@@ -721,16 +728,18 @@ abstract class _NavigatingExperience
   implements ExperienceNavigationWatcherState {
   const factory _NavigatingExperience(Experience experience) =
   _$_NavigatingExperience;
-
+  
   Experience get experience;
+  
   _$NavigatingExperienceCopyWith<_NavigatingExperience> get copyWith;
 }
 
 abstract class _$FinishExperienceCopyWith<$Res> {
   factory _$FinishExperienceCopyWith(_FinishExperience value, $Res Function(_FinishExperience) then) =
   __$FinishExperienceCopyWithImpl<$Res>;
+  
   $Res call({Experience experience});
-
+  
   $ExperienceCopyWith<$Res> get experience;
 }
 
@@ -738,10 +747,10 @@ class __$FinishExperienceCopyWithImpl<$Res> extends _$ExperienceNavigationWatche
   implements _$FinishExperienceCopyWith<$Res> {
   __$FinishExperienceCopyWithImpl(_FinishExperience _value, $Res Function(_FinishExperience) _then)
     : super(_value, (v) => _then(v as _FinishExperience));
-
+  
   @override
   _FinishExperience get _value => super._value as _FinishExperience;
-
+  
   @override
   $Res call({
     Object experience = freezed,

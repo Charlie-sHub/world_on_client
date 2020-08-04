@@ -5,7 +5,7 @@ import 'package:worldon/domain/core/validation/validators/validate_string_length
 import 'package:worldon/domain/core/validation/validators/validate_string_not_empty.dart';
 
 class EntityDescription extends ValueObject<String> {
-  static const maxLength = 300;
+  static const maxLength = 301;
 
   @override
   final Either<ValueFailure<String>, String> value;

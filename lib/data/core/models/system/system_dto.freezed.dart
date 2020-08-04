@@ -71,6 +71,7 @@ class _$SystemDtoCopyWithImpl<$Res> implements $SystemDtoCopyWith<$Res> {
 abstract class _$SystemDtoCopyWith<$Res> implements $SystemDtoCopyWith<$Res> {
   factory _$SystemDtoCopyWith(_SystemDto value, $Res Function(_SystemDto) then) =
   __$SystemDtoCopyWithImpl<$Res>;
+  
   @override
   $Res call({int id, String name, String type, String company});
 }
@@ -79,10 +80,10 @@ class __$SystemDtoCopyWithImpl<$Res> extends _$SystemDtoCopyWithImpl<$Res>
   implements _$SystemDtoCopyWith<$Res> {
   __$SystemDtoCopyWithImpl(_SystemDto _value, $Res Function(_SystemDto) _then)
     : super(_value, (v) => _then(v as _SystemDto));
-
+  
   @override
   _SystemDto get _value => super._value as _SystemDto;
-
+  
   @override
   $Res call({
     Object id = freezed,
@@ -105,15 +106,15 @@ class _$_SystemDto extends _SystemDto {
     @required this.name,
     @required this.type,
     @required this.company})
-      : assert(id != null),
-        assert(name != null),
-        assert(type != null),
-        assert(company != null),
-        super._();
-
+    : assert(id != null),
+      assert(name != null),
+      assert(type != null),
+      assert(company != null),
+      super._();
+  
   factory _$_SystemDto.fromJson(Map<String, dynamic> json) =>
     _$_$_SystemDtoFromJson(json);
-
+  
   @override
   final int id;
   @override
@@ -131,15 +132,15 @@ class _$_SystemDto extends _SystemDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SystemDto &&
-          (identical(other.id, id) ||
-            const DeepCollectionEquality().equals(other.id, id)) &&
-          (identical(other.name, name) ||
-            const DeepCollectionEquality().equals(other.name, name)) &&
-          (identical(other.type, type) ||
-            const DeepCollectionEquality().equals(other.type, type)) &&
-          (identical(other.company, company) ||
-            const DeepCollectionEquality().equals(other.company, company)));
+      (other is _SystemDto &&
+        (identical(other.id, id) ||
+          const DeepCollectionEquality().equals(other.id, id)) &&
+        (identical(other.name, name) ||
+          const DeepCollectionEquality().equals(other.name, name)) &&
+        (identical(other.type, type) ||
+          const DeepCollectionEquality().equals(other.type, type)) &&
+        (identical(other.company, company) ||
+          const DeepCollectionEquality().equals(other.company, company)));
   }
 
   @override
@@ -162,19 +163,21 @@ class _$_SystemDto extends _SystemDto {
 
 abstract class _SystemDto extends SystemDto {
   const _SystemDto._() : super._();
-
+  
   const factory _SystemDto({@required int id,
     @required String name,
     @required String type,
     @required String company}) = _$_SystemDto;
-
+  
   factory _SystemDto.fromJson(Map<String, dynamic> json) =
   _$_SystemDto.fromJson;
-
+  
   @override
   int get id;
+  
   @override
   String get name;
+  
   @override
   String get type;
   @override

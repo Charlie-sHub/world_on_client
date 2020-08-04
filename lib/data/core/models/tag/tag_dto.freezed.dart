@@ -44,13 +44,13 @@ mixin _$TagDto {
 abstract class $TagDtoCopyWith<$Res> {
   factory $TagDtoCopyWith(TagDto value, $Res Function(TagDto) then) =
   _$TagDtoCopyWithImpl<$Res>;
-
+  
   $Res call({int id,
     String name,
     UserDto creator,
     String creationDate,
     String modificationDate});
-
+  
   $UserDtoCopyWith<$Res> get creator;
 }
 
@@ -96,6 +96,7 @@ class _$TagDtoCopyWithImpl<$Res> implements $TagDtoCopyWith<$Res> {
 abstract class _$TagDtoCopyWith<$Res> implements $TagDtoCopyWith<$Res> {
   factory _$TagDtoCopyWith(_TagDto value, $Res Function(_TagDto) then) =
   __$TagDtoCopyWithImpl<$Res>;
+  
   @override
   $Res call({int id,
     String name,
@@ -111,10 +112,10 @@ class __$TagDtoCopyWithImpl<$Res> extends _$TagDtoCopyWithImpl<$Res>
   implements _$TagDtoCopyWith<$Res> {
   __$TagDtoCopyWithImpl(_TagDto _value, $Res Function(_TagDto) _then)
     : super(_value, (v) => _then(v as _TagDto));
-
+  
   @override
   _TagDto get _value => super._value as _TagDto;
-
+  
   @override
   $Res call({
     Object id = freezed,
@@ -144,13 +145,13 @@ class _$_TagDto extends _TagDto {
     @required this.creator,
     @required this.creationDate,
     @required this.modificationDate})
-      : assert(id != null),
-        assert(name != null),
-        assert(creator != null),
-        assert(creationDate != null),
-        assert(modificationDate != null),
-        super._();
-
+    : assert(id != null),
+      assert(name != null),
+      assert(creator != null),
+      assert(creationDate != null),
+      assert(modificationDate != null),
+      super._();
+  
   factory _$_TagDto.fromJson(Map<String, dynamic> json) =>
     _$_$_TagDtoFromJson(json);
 
@@ -173,20 +174,20 @@ class _$_TagDto extends _TagDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TagDto &&
-          (identical(other.id, id) ||
-            const DeepCollectionEquality().equals(other.id, id)) &&
-          (identical(other.name, name) ||
-            const DeepCollectionEquality().equals(other.name, name)) &&
-          (identical(other.creator, creator) ||
-            const DeepCollectionEquality()
-              .equals(other.creator, creator)) &&
-          (identical(other.creationDate, creationDate) ||
-            const DeepCollectionEquality()
-              .equals(other.creationDate, creationDate)) &&
-          (identical(other.modificationDate, modificationDate) ||
-            const DeepCollectionEquality()
-              .equals(other.modificationDate, modificationDate)));
+      (other is _TagDto &&
+        (identical(other.id, id) ||
+          const DeepCollectionEquality().equals(other.id, id)) &&
+        (identical(other.name, name) ||
+          const DeepCollectionEquality().equals(other.name, name)) &&
+        (identical(other.creator, creator) ||
+          const DeepCollectionEquality()
+            .equals(other.creator, creator)) &&
+        (identical(other.creationDate, creationDate) ||
+          const DeepCollectionEquality()
+            .equals(other.creationDate, creationDate)) &&
+        (identical(other.modificationDate, modificationDate) ||
+          const DeepCollectionEquality()
+            .equals(other.modificationDate, modificationDate)));
   }
 
   @override
@@ -210,21 +211,24 @@ class _$_TagDto extends _TagDto {
 
 abstract class _TagDto extends TagDto {
   const _TagDto._() : super._();
-
+  
   const factory _TagDto({@required int id,
     @required String name,
     @required UserDto creator,
     @required String creationDate,
     @required String modificationDate}) = _$_TagDto;
-
+  
   factory _TagDto.fromJson(Map<String, dynamic> json) = _$_TagDto.fromJson;
-
+  
   @override
   int get id;
+  
   @override
   String get name;
+  
   @override
   UserDto get creator;
+  
   @override
   String get creationDate;
   @override

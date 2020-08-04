@@ -110,6 +110,7 @@ mixin _$User {
 
 abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) = _$UserCopyWithImpl<$Res>;
+
   $Res call(
       {int id,
       Name name,
@@ -250,26 +251,25 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   factory _$UserCopyWith(_User value, $Res Function(_User) then) =
   __$UserCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {int id,
-      Name name,
-      Name username,
-      Password password,
-      EmailAddress email,
-      PastDate birthday,
-      EntityDescription description,
-      String imageURL,
-        Option<File> imageFileOption,
-      UserLevel level,
-      ExperiencePoints experiencePoints,
-      bool privacy,
-      bool adminPowers,
-      bool enabled,
-      PastDate lastLogin,
-      PastDate creationDate,
-      PastDate modificationDate,
-      Options options,
-      Set<User> blockedUsers,
+  $Res call({int id,
+    Name name,
+    Name username,
+    Password password,
+    EmailAddress email,
+    PastDate birthday,
+    EntityDescription description,
+    String imageURL,
+    Option<File> imageFileOption,
+    UserLevel level,
+    ExperiencePoints experiencePoints,
+    bool privacy,
+    bool adminPowers,
+    bool enabled,
+    PastDate lastLogin,
+    PastDate creationDate,
+    PastDate modificationDate,
+    Options options,
+    Set<User> blockedUsers,
       Set<User> followedUsers,
       Set<Device> devices,
       Set<System> systems,
@@ -287,10 +287,10 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
   implements _$UserCopyWith<$Res> {
   __$UserCopyWithImpl(_User _value, $Res Function(_User) _then)
     : super(_value, (v) => _then(v as _User));
-
+  
   @override
   _User get _value => super._value as _User;
-
+  
   @override
   $Res call({
     Object id = freezed,
@@ -379,26 +379,25 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 }
 
 class _$_User extends _User {
-  const _$_User(
-      {this.id,
-      @required this.name,
-      @required this.username,
-      @required this.password,
-      @required this.email,
-      @required this.birthday,
-      @required this.description,
-      @required this.imageURL,
-        @required this.imageFileOption,
-      @required this.level,
-      @required this.experiencePoints,
-      @required this.privacy,
-      @required this.adminPowers,
-      @required this.enabled,
-      @required this.lastLogin,
-      @required this.creationDate,
-      @required this.modificationDate,
-      @required this.options,
-      @required this.blockedUsers,
+  const _$_User({this.id,
+    @required this.name,
+    @required this.username,
+    @required this.password,
+    @required this.email,
+    @required this.birthday,
+    @required this.description,
+    @required this.imageURL,
+    @required this.imageFileOption,
+    @required this.level,
+    @required this.experiencePoints,
+    @required this.privacy,
+    @required this.adminPowers,
+    @required this.enabled,
+    @required this.lastLogin,
+    @required this.creationDate,
+    @required this.modificationDate,
+    @required this.options,
+    @required this.blockedUsers,
       @required this.followedUsers,
       @required this.devices,
       @required this.systems,
@@ -407,24 +406,24 @@ class _$_User extends _User {
       @required this.experiencesDone,
       @required this.experiencesLiked,
       @required this.experiencesToDo})
-      : assert(name != null),
-        assert(username != null),
-        assert(password != null),
-        assert(email != null),
-        assert(birthday != null),
-        assert(description != null),
-        assert(imageURL != null),
+    : assert(name != null),
+      assert(username != null),
+      assert(password != null),
+      assert(email != null),
+      assert(birthday != null),
+      assert(description != null),
+      assert(imageURL != null),
       assert(imageFileOption != null),
-        assert(level != null),
-        assert(experiencePoints != null),
-        assert(privacy != null),
-        assert(adminPowers != null),
-        assert(enabled != null),
-        assert(lastLogin != null),
-        assert(creationDate != null),
-        assert(modificationDate != null),
-        assert(options != null),
-        assert(blockedUsers != null),
+      assert(level != null),
+      assert(experiencePoints != null),
+      assert(privacy != null),
+      assert(adminPowers != null),
+      assert(enabled != null),
+      assert(lastLogin != null),
+      assert(creationDate != null),
+      assert(modificationDate != null),
+      assert(options != null),
+      assert(blockedUsers != null),
         assert(followedUsers != null),
         assert(devices != null),
         assert(systems != null),
@@ -566,7 +565,7 @@ class _$_User extends _User {
               .equals(other.interests, interests)) &&
           (identical(other.achievements, achievements) ||
             const DeepCollectionEquality().equals(other.achievements, achievements)) &&
-            (identical(other.experiencesDone, experiencesDone) || const DeepCollectionEquality().equals(other.experiencesDone, experiencesDone)) &&
+          (identical(other.experiencesDone, experiencesDone) || const DeepCollectionEquality().equals(other.experiencesDone, experiencesDone)) &&
             (identical(other.experiencesLiked, experiencesLiked) || const DeepCollectionEquality().equals(other.experiencesLiked, experiencesLiked)) &&
             (identical(other.experiencesToDo, experiencesToDo) || const DeepCollectionEquality().equals(other.experiencesToDo, experiencesToDo)));
   }
@@ -609,34 +608,33 @@ class _$_User extends _User {
 
 abstract class _User extends User {
   const _User._() : super._();
-  const factory _User(
-      {int id,
-      @required Name name,
-      @required Name username,
-      @required Password password,
-      @required EmailAddress email,
-      @required PastDate birthday,
-      @required EntityDescription description,
-      @required String imageURL,
-        @required Option<File> imageFileOption,
-      @required UserLevel level,
-      @required ExperiencePoints experiencePoints,
-      @required bool privacy,
-      @required bool adminPowers,
-      @required bool enabled,
-      @required PastDate lastLogin,
-      @required PastDate creationDate,
-      @required PastDate modificationDate,
-      @required Options options,
-      @required Set<User> blockedUsers,
-      @required Set<User> followedUsers,
-      @required Set<Device> devices,
-        @required Set<System> systems,
-        @required Set<Tag> interests,
-        @required Set<Achievement> achievements,
-        @required Set<Experience> experiencesDone,
-        @required Set<Experience> experiencesLiked,
-        @required Set<Experience> experiencesToDo}) = _$_User;
+  const factory _User({int id,
+    @required Name name,
+    @required Name username,
+    @required Password password,
+    @required EmailAddress email,
+    @required PastDate birthday,
+    @required EntityDescription description,
+    @required String imageURL,
+    @required Option<File> imageFileOption,
+    @required UserLevel level,
+    @required ExperiencePoints experiencePoints,
+    @required bool privacy,
+    @required bool adminPowers,
+    @required bool enabled,
+    @required PastDate lastLogin,
+    @required PastDate creationDate,
+    @required PastDate modificationDate,
+    @required Options options,
+    @required Set<User> blockedUsers,
+    @required Set<User> followedUsers,
+    @required Set<Device> devices,
+    @required Set<System> systems,
+    @required Set<Tag> interests,
+    @required Set<Achievement> achievements,
+    @required Set<Experience> experiencesDone,
+    @required Set<Experience> experiencesLiked,
+    @required Set<Experience> experiencesToDo}) = _$_User;
 
   @override
   int get id;

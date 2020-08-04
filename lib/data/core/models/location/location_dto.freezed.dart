@@ -84,6 +84,7 @@ abstract class _$LocationDtoCopyWith<$Res>
   implements $LocationDtoCopyWith<$Res> {
   factory _$LocationDtoCopyWith(_LocationDto value, $Res Function(_LocationDto) then) =
   __$LocationDtoCopyWithImpl<$Res>;
+  
   @override
   $Res call({int id,
     String city,
@@ -96,10 +97,10 @@ class __$LocationDtoCopyWithImpl<$Res> extends _$LocationDtoCopyWithImpl<$Res>
   implements _$LocationDtoCopyWith<$Res> {
   __$LocationDtoCopyWithImpl(_LocationDto _value, $Res Function(_LocationDto) _then)
     : super(_value, (v) => _then(v as _LocationDto));
-
+  
   @override
   _LocationDto get _value => super._value as _LocationDto;
-
+  
   @override
   $Res call({
     Object id = freezed,
@@ -128,13 +129,13 @@ class _$_LocationDto extends _LocationDto {
     @required this.country,
     @required this.postalCode,
     @required this.experiences})
-      : assert(id != null),
-        assert(city != null),
-        assert(country != null),
-        assert(postalCode != null),
-        assert(experiences != null),
-        super._();
-
+    : assert(id != null),
+      assert(city != null),
+      assert(country != null),
+      assert(postalCode != null),
+      assert(experiences != null),
+      super._();
+  
   factory _$_LocationDto.fromJson(Map<String, dynamic> json) =>
     _$_$_LocationDtoFromJson(json);
 
@@ -157,20 +158,20 @@ class _$_LocationDto extends _LocationDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LocationDto &&
-          (identical(other.id, id) ||
-            const DeepCollectionEquality().equals(other.id, id)) &&
-          (identical(other.city, city) ||
-            const DeepCollectionEquality().equals(other.city, city)) &&
-          (identical(other.country, country) ||
-            const DeepCollectionEquality()
-              .equals(other.country, country)) &&
-          (identical(other.postalCode, postalCode) ||
-            const DeepCollectionEquality()
-              .equals(other.postalCode, postalCode)) &&
-          (identical(other.experiences, experiences) ||
-            const DeepCollectionEquality()
-              .equals(other.experiences, experiences)));
+      (other is _LocationDto &&
+        (identical(other.id, id) ||
+          const DeepCollectionEquality().equals(other.id, id)) &&
+        (identical(other.city, city) ||
+          const DeepCollectionEquality().equals(other.city, city)) &&
+        (identical(other.country, country) ||
+          const DeepCollectionEquality()
+            .equals(other.country, country)) &&
+        (identical(other.postalCode, postalCode) ||
+          const DeepCollectionEquality()
+            .equals(other.postalCode, postalCode)) &&
+        (identical(other.experiences, experiences) ||
+          const DeepCollectionEquality()
+            .equals(other.experiences, experiences)));
   }
 
   @override
@@ -194,20 +195,22 @@ class _$_LocationDto extends _LocationDto {
 
 abstract class _LocationDto extends LocationDto {
   const _LocationDto._() : super._();
-
+  
   const factory _LocationDto({@required int id,
     @required String city,
     @required String country,
     @required String postalCode,
     @required Set<ExperienceDto> experiences}) = _$_LocationDto;
-
+  
   factory _LocationDto.fromJson(Map<String, dynamic> json) =
   _$_LocationDto.fromJson;
-
+  
   @override
   int get id;
+  
   @override
   String get city;
+  
   @override
   String get country;
   @override

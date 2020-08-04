@@ -76,11 +76,12 @@ abstract class $AchievementDtoCopyWith<$Res> {
 class _$AchievementDtoCopyWithImpl<$Res>
   implements $AchievementDtoCopyWith<$Res> {
   _$AchievementDtoCopyWithImpl(this._value, this._then);
-
+  
   final AchievementDto _value;
+  
   // ignore: unused_field
   final $Res Function(AchievementDto) _then;
-
+  
   @override
   $Res call({
     Object id = freezed,
@@ -132,6 +133,7 @@ abstract class _$AchievementDtoCopyWith<$Res>
   implements $AchievementDtoCopyWith<$Res> {
   factory _$AchievementDtoCopyWith(_AchievementDto value, $Res Function(_AchievementDto) then) =
   __$AchievementDtoCopyWithImpl<$Res>;
+  
   @override
   $Res call({int id,
     String name,
@@ -153,10 +155,10 @@ class __$AchievementDtoCopyWithImpl<$Res> extends _$AchievementDtoCopyWithImpl<$
   implements _$AchievementDtoCopyWith<$Res> {
   __$AchievementDtoCopyWithImpl(_AchievementDto _value, $Res Function(_AchievementDto) _then)
     : super(_value, (v) => _then(v as _AchievementDto));
-
+  
   @override
   _AchievementDto get _value => super._value as _AchievementDto;
-
+  
   @override
   $Res call({
     Object id = freezed,
@@ -314,18 +316,17 @@ class _$_AchievementDto extends _AchievementDto {
 
 abstract class _AchievementDto extends AchievementDto {
   const _AchievementDto._() : super._();
-  const factory _AchievementDto(
-      {@required int id,
-      @required String name,
-      @required String description,
-      @required String imageURL,
-      @required String type,
-      @required int requisite,
-      @required int experiencePoints,
-      @required UserDto creator,
-      @required String creationDate,
-      @required String modificationDate,
-        @required Set<TagDto> tags}) = _$_AchievementDto;
+  const factory _AchievementDto({@required int id,
+    @required String name,
+    @required String description,
+    @required String imageURL,
+    @required String type,
+    @required int requisite,
+    @required int experiencePoints,
+    @required UserDto creator,
+    @required String creationDate,
+    @required String modificationDate,
+    @required Set<TagDto> tags}) = _$_AchievementDto;
 
   factory _AchievementDto.fromJson(Map<String, dynamic> json) =
   _$_AchievementDto.fromJson;

@@ -6,7 +6,7 @@ import 'package:worldon/domain/core/validation/validators/validate_string_length
 import 'package:worldon/domain/core/validation/validators/validate_string_not_empty.dart';
 
 class Name extends ValueObject<String> {
-  static const maxLength = 50;
+  static const maxLength = 51;
 
   @override
   final Either<ValueFailure<String>, String> value;

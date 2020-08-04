@@ -14,6 +14,7 @@ import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
+import 'package:worldon/domain/core/validation/objects/password_confirmator.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/profile/use_case/edit_user.dart';
 import 'package:worldon/injection.dart';
@@ -65,13 +66,16 @@ void main() {
     expect: [
       ProfileEditingFormState.initial().copyWith(
         user: user,
+        passwordConfirmator: PasswordConfirmator(
+          password: password,
+          confirmation: password,
+        ),
       ),
     ],
   );
   group(
     "${TestDescription.groupOnSuccess} updating the user fields",
       () {
-      // TODO: Test password confirmation
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the imageFile",
         build: () {
@@ -86,10 +90,18 @@ void main() {
         expect: [
           ProfileEditingFormState.initial().copyWith(
             user: user,
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
+            ),
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
               imageFileOption: some(imageFile),
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
             ),
           ),
         ],
@@ -108,10 +120,18 @@ void main() {
         expect: [
           ProfileEditingFormState.initial().copyWith(
             user: user,
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
+            ),
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
               name: Name(name),
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
             ),
           ),
         ],
@@ -130,10 +150,18 @@ void main() {
         expect: [
           ProfileEditingFormState.initial().copyWith(
             user: user,
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
+            ),
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
               username: Name(username),
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
             ),
           ),
         ],
@@ -152,11 +180,47 @@ void main() {
         expect: [
           ProfileEditingFormState.initial().copyWith(
             user: user,
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
+            ),
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
               password: Password(password),
             ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
+            ),
+          ),
+        ],
+      );
+      blocTest(
+        "${TestDescription.shouldEmitUpdated} with the password confirmation",
+        build: () {
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
+          return getIt<ProfileEditingFormBloc>();
+        },
+        act: (bloc) async {
+          bloc.add(const ProfileEditingFormEvent.initialized());
+          bloc.add(const ProfileEditingFormEvent.passwordChanged(password));
+        },
+        verify: (_) async => verify(getLoggedInUser.call(any)),
+        expect: [
+          ProfileEditingFormState.initial().copyWith(
+            user: user,
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
+            ),
+          ),
+          ProfileEditingFormState.initial().copyWith(
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
+            ),
+            passwordToCompare: password,
           ),
         ],
       );
@@ -174,10 +238,18 @@ void main() {
         expect: [
           ProfileEditingFormState.initial().copyWith(
             user: user,
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
+            ),
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
               email: EmailAddress(emailAddress),
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
             ),
           ),
         ],
@@ -196,10 +268,18 @@ void main() {
         expect: [
           ProfileEditingFormState.initial().copyWith(
             user: user,
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
+            ),
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
               birthday: PastDate(birthday),
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
             ),
           ),
         ],
@@ -218,10 +298,18 @@ void main() {
         expect: [
           ProfileEditingFormState.initial().copyWith(
             user: user,
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
+            ),
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
               description: EntityDescription(description),
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
             ),
           ),
         ],
@@ -240,10 +328,18 @@ void main() {
         expect: [
           ProfileEditingFormState.initial().copyWith(
             user: user,
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
+            ),
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
               interests: interests,
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
             ),
           ),
         ],

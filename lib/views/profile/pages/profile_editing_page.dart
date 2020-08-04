@@ -13,9 +13,19 @@ class ProfileEditingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text(
+          "Editing Account",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+          ),
+          textAlign: TextAlign.center,
+        ),
+      ),
       body: BlocProvider(
-        create: (context) =>
-        getIt<ProfileEditingFormBloc>()
+        create: (context) => getIt<ProfileEditingFormBloc>()
           ..add(
             const ProfileEditingFormEvent.initialized(),
           ),

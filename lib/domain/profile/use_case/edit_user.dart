@@ -24,7 +24,7 @@ class EditUser implements AsyncUseCase<Unit, Params> {
       () => throw UnAuthenticatedError(),
       id,
     );
-    final _isAuthorized = _userRequesting == params.userToEdit || _userRequesting.adminPowers;
+    final _isAuthorized = _userRequesting.id == params.userToEdit.id || _userRequesting.adminPowers;
     if (_isAuthorized) {
       return repository.editUser(params.userToEdit);
     } else {

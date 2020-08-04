@@ -40,7 +40,7 @@ mixin _$Location {
 abstract class $LocationCopyWith<$Res> {
   factory $LocationCopyWith(Location value, $Res Function(Location) then) =
   _$LocationCopyWithImpl<$Res>;
-
+  
   $Res call({int id,
     String city,
     String country,
@@ -79,6 +79,7 @@ class _$LocationCopyWithImpl<$Res> implements $LocationCopyWith<$Res> {
 abstract class _$LocationCopyWith<$Res> implements $LocationCopyWith<$Res> {
   factory _$LocationCopyWith(_Location value, $Res Function(_Location) then) =
   __$LocationCopyWithImpl<$Res>;
+  
   @override
   $Res call({int id,
     String city,
@@ -91,10 +92,10 @@ class __$LocationCopyWithImpl<$Res> extends _$LocationCopyWithImpl<$Res>
   implements _$LocationCopyWith<$Res> {
   __$LocationCopyWithImpl(_Location _value, $Res Function(_Location) _then)
     : super(_value, (v) => _then(v as _Location));
-
+  
   @override
   _Location get _value => super._value as _Location;
-
+  
   @override
   $Res call({
     Object id = freezed,
@@ -122,12 +123,12 @@ class _$_Location extends _Location {
     @required this.country,
     @required this.postalCode,
     @required this.experiences})
-      : assert(city != null),
-        assert(country != null),
-        assert(postalCode != null),
-        assert(experiences != null),
-        super._();
-
+    : assert(city != null),
+      assert(country != null),
+      assert(postalCode != null),
+      assert(experiences != null),
+      super._();
+  
   @override
   final int id;
   @override
@@ -147,20 +148,20 @@ class _$_Location extends _Location {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Location &&
-          (identical(other.id, id) ||
-            const DeepCollectionEquality().equals(other.id, id)) &&
-          (identical(other.city, city) ||
-            const DeepCollectionEquality().equals(other.city, city)) &&
-          (identical(other.country, country) ||
-            const DeepCollectionEquality()
-              .equals(other.country, country)) &&
-          (identical(other.postalCode, postalCode) ||
-            const DeepCollectionEquality()
-              .equals(other.postalCode, postalCode)) &&
-          (identical(other.experiences, experiences) ||
-            const DeepCollectionEquality()
-              .equals(other.experiences, experiences)));
+      (other is _Location &&
+        (identical(other.id, id) ||
+          const DeepCollectionEquality().equals(other.id, id)) &&
+        (identical(other.city, city) ||
+          const DeepCollectionEquality().equals(other.city, city)) &&
+        (identical(other.country, country) ||
+          const DeepCollectionEquality()
+            .equals(other.country, country)) &&
+        (identical(other.postalCode, postalCode) ||
+          const DeepCollectionEquality()
+            .equals(other.postalCode, postalCode)) &&
+        (identical(other.experiences, experiences) ||
+          const DeepCollectionEquality()
+            .equals(other.experiences, experiences)));
   }
 
   @override
@@ -179,21 +180,25 @@ class _$_Location extends _Location {
 
 abstract class _Location extends Location {
   const _Location._() : super._();
-
+  
   const factory _Location({int id,
     @required String city,
     @required String country,
     @required String postalCode,
     @required Set<Experience> experiences}) = _$_Location;
-
+  
   @override
   int get id;
+  
   @override
   String get city;
+  
   @override
   String get country;
+  
   @override
   String get postalCode;
+  
   @override
   Set<Experience> get experiences;
   @override

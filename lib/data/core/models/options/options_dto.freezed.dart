@@ -37,6 +37,7 @@ mixin _$OptionsDto {
 
 abstract class $OptionsDtoCopyWith<$Res> {
   factory $OptionsDtoCopyWith(OptionsDto value, $Res Function(OptionsDto) then) = _$OptionsDtoCopyWithImpl<$Res>;
+
   $Res call({int id, String languageCode});
 }
 
@@ -64,6 +65,7 @@ class _$OptionsDtoCopyWithImpl<$Res> implements $OptionsDtoCopyWith<$Res> {
 abstract class _$OptionsDtoCopyWith<$Res> implements $OptionsDtoCopyWith<$Res> {
   factory _$OptionsDtoCopyWith(_OptionsDto value, $Res Function(_OptionsDto) then) =
   __$OptionsDtoCopyWithImpl<$Res>;
+  
   @override
   $Res call({int id, String languageCode});
 }
@@ -72,10 +74,10 @@ class __$OptionsDtoCopyWithImpl<$Res> extends _$OptionsDtoCopyWithImpl<$Res>
   implements _$OptionsDtoCopyWith<$Res> {
   __$OptionsDtoCopyWithImpl(_OptionsDto _value, $Res Function(_OptionsDto) _then)
     : super(_value, (v) => _then(v as _OptionsDto));
-
+  
   @override
   _OptionsDto get _value => super._value as _OptionsDto;
-
+  
   @override
   $Res call({
     Object id = freezed,
@@ -113,12 +115,12 @@ class _$_OptionsDto extends _OptionsDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _OptionsDto &&
-          (identical(other.id, id) ||
-            const DeepCollectionEquality().equals(other.id, id)) &&
-          (identical(other.languageCode, languageCode) ||
-            const DeepCollectionEquality()
-              .equals(other.languageCode, languageCode)));
+      (other is _OptionsDto &&
+        (identical(other.id, id) ||
+          const DeepCollectionEquality().equals(other.id, id)) &&
+        (identical(other.languageCode, languageCode) ||
+          const DeepCollectionEquality()
+            .equals(other.languageCode, languageCode)));
   }
 
   @override
@@ -139,6 +141,7 @@ class _$_OptionsDto extends _OptionsDto {
 
 abstract class _OptionsDto extends OptionsDto {
   const _OptionsDto._() : super._();
+
   const factory _OptionsDto({@required int id, @required String languageCode}) =
   _$_OptionsDto;
 

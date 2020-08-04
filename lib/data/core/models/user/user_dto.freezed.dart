@@ -111,6 +111,7 @@ mixin _$UserDto {
 
 abstract class $UserDtoCopyWith<$Res> {
   factory $UserDtoCopyWith(UserDto value, $Res Function(UserDto) then) = _$UserDtoCopyWithImpl<$Res>;
+
   $Res call(
       {int id,
       String name,
@@ -280,10 +281,10 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
   implements _$UserDtoCopyWith<$Res> {
   __$UserDtoCopyWithImpl(_UserDto _value, $Res Function(_UserDto) _then)
     : super(_value, (v) => _then(v as _UserDto));
-
+  
   @override
   _UserDto get _value => super._value as _UserDto;
-
+  
   @override
   $Res call({
     Object id = freezed,
@@ -554,7 +555,7 @@ class _$_UserDto extends _UserDto {
               .equals(other.achievements, achievements)) &&
           (identical(other.experiencesDone, experiencesDone) ||
             const DeepCollectionEquality().equals(other.experiencesDone, experiencesDone)) &&
-            (identical(other.experiencesLiked, experiencesLiked) || const DeepCollectionEquality().equals(other.experiencesLiked, experiencesLiked)) &&
+          (identical(other.experiencesLiked, experiencesLiked) || const DeepCollectionEquality().equals(other.experiencesLiked, experiencesLiked)) &&
             (identical(other.experiencesToDo, experiencesToDo) || const DeepCollectionEquality().equals(other.experiencesToDo, experiencesToDo)));
   }
 

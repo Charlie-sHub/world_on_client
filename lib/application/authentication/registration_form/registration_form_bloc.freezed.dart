@@ -1907,9 +1907,11 @@ abstract class _$TappedEULACopyWith<$Res> {
   factory _$TappedEULACopyWith(_TappedEULA value, $Res Function(_TappedEULA) then) = __$TappedEULACopyWithImpl<$Res>;
 }
 
-class __$TappedEULACopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res> implements _$TappedEULACopyWith<$Res> {
-  __$TappedEULACopyWithImpl(_TappedEULA _value, $Res Function(_TappedEULA) _then) : super(_value, (v) => _then(v as _TappedEULA));
-
+class __$TappedEULACopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res>
+  implements _$TappedEULACopyWith<$Res> {
+  __$TappedEULACopyWithImpl(_TappedEULA _value, $Res Function(_TappedEULA) _then)
+    : super(_value, (v) => _then(v as _TappedEULA));
+  
   @override
   _TappedEULA get _value => super._value as _TappedEULA;
 }
@@ -2197,16 +2199,17 @@ class _$RegistrationFormStateTearOff {
   const _$RegistrationFormStateTearOff();
 
 // ignore: unused_element
-  _RegistrationFormState call(
-      {@required User user,
-      @required PasswordConfirmator passwordConfirmator,
-      @required bool showErrorMessages,
-      @required bool isSubmitting,
-        @required bool acceptedEULA,
-      @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
+  _RegistrationFormState call({@required User user,
+    @required PasswordConfirmator passwordConfirmator,
+    @required String passwordToCompare,
+    @required bool showErrorMessages,
+    @required bool isSubmitting,
+    @required bool acceptedEULA,
+    @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _RegistrationFormState(
       user: user,
       passwordConfirmator: passwordConfirmator,
+      passwordToCompare: passwordToCompare,
       showErrorMessages: showErrorMessages,
       isSubmitting: isSubmitting,
       acceptedEULA: acceptedEULA,
@@ -2220,10 +2223,13 @@ const $RegistrationFormState = _$RegistrationFormStateTearOff();
 
 mixin _$RegistrationFormState {
   User get user;
+
   PasswordConfirmator get passwordConfirmator;
+
+  String get passwordToCompare;
+
   bool get showErrorMessages;
   bool get isSubmitting;
-
   bool get acceptedEULA;
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
 
@@ -2234,13 +2240,13 @@ abstract class $RegistrationFormStateCopyWith<$Res> {
   factory $RegistrationFormStateCopyWith(RegistrationFormState value,
           $Res Function(RegistrationFormState) then) =
       _$RegistrationFormStateCopyWithImpl<$Res>;
-  $Res call(
-      {User user,
-      PasswordConfirmator passwordConfirmator,
-      bool showErrorMessages,
-      bool isSubmitting,
-        bool acceptedEULA,
-      Option<Either<Failure, Unit>> failureOrSuccessOption});
+  $Res call({User user,
+    PasswordConfirmator passwordConfirmator,
+    String passwordToCompare,
+    bool showErrorMessages,
+    bool isSubmitting,
+    bool acceptedEULA,
+    Option<Either<Failure, Unit>> failureOrSuccessOption});
 
   $UserCopyWith<$Res> get user;
 }
@@ -2257,6 +2263,7 @@ class _$RegistrationFormStateCopyWithImpl<$Res>
   $Res call({
     Object user = freezed,
     Object passwordConfirmator = freezed,
+    Object passwordToCompare = freezed,
     Object showErrorMessages = freezed,
     Object isSubmitting = freezed,
     Object acceptedEULA = freezed,
@@ -2265,18 +2272,21 @@ class _$RegistrationFormStateCopyWithImpl<$Res>
     return _then(_value.copyWith(
       user: user == freezed ? _value.user : user as User,
       passwordConfirmator: passwordConfirmator == freezed
-          ? _value.passwordConfirmator
-          : passwordConfirmator as PasswordConfirmator,
+        ? _value.passwordConfirmator
+        : passwordConfirmator as PasswordConfirmator,
+      passwordToCompare: passwordToCompare == freezed
+        ? _value.passwordToCompare
+        : passwordToCompare as String,
       showErrorMessages: showErrorMessages == freezed
-          ? _value.showErrorMessages
-          : showErrorMessages as bool,
+        ? _value.showErrorMessages
+        : showErrorMessages as bool,
       isSubmitting:
-          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
       acceptedEULA:
       acceptedEULA == freezed ? _value.acceptedEULA : acceptedEULA as bool,
       failureOrSuccessOption: failureOrSuccessOption == freezed
-          ? _value.failureOrSuccessOption
-          : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+        ? _value.failureOrSuccessOption
+        : failureOrSuccessOption as Option<Either<Failure, Unit>>,
     ));
   }
 
@@ -2297,13 +2307,13 @@ abstract class _$RegistrationFormStateCopyWith<$Res>
           $Res Function(_RegistrationFormState) then) =
       __$RegistrationFormStateCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {User user,
-      PasswordConfirmator passwordConfirmator,
-      bool showErrorMessages,
-      bool isSubmitting,
-        bool acceptedEULA,
-      Option<Either<Failure, Unit>> failureOrSuccessOption});
+  $Res call({User user,
+    PasswordConfirmator passwordConfirmator,
+    String passwordToCompare,
+    bool showErrorMessages,
+    bool isSubmitting,
+    bool acceptedEULA,
+    Option<Either<Failure, Unit>> failureOrSuccessOption});
 
   @override
   $UserCopyWith<$Res> get user;
@@ -2323,6 +2333,7 @@ class __$RegistrationFormStateCopyWithImpl<$Res>
   $Res call({
     Object user = freezed,
     Object passwordConfirmator = freezed,
+    Object passwordToCompare = freezed,
     Object showErrorMessages = freezed,
     Object isSubmitting = freezed,
     Object acceptedEULA = freezed,
@@ -2331,41 +2342,47 @@ class __$RegistrationFormStateCopyWithImpl<$Res>
     return _then(_RegistrationFormState(
       user: user == freezed ? _value.user : user as User,
       passwordConfirmator: passwordConfirmator == freezed
-          ? _value.passwordConfirmator
-          : passwordConfirmator as PasswordConfirmator,
+        ? _value.passwordConfirmator
+        : passwordConfirmator as PasswordConfirmator,
+      passwordToCompare: passwordToCompare == freezed
+        ? _value.passwordToCompare
+        : passwordToCompare as String,
       showErrorMessages: showErrorMessages == freezed
-          ? _value.showErrorMessages
-          : showErrorMessages as bool,
+        ? _value.showErrorMessages
+        : showErrorMessages as bool,
       isSubmitting:
-          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
       acceptedEULA:
       acceptedEULA == freezed ? _value.acceptedEULA : acceptedEULA as bool,
       failureOrSuccessOption: failureOrSuccessOption == freezed
-          ? _value.failureOrSuccessOption
-          : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+        ? _value.failureOrSuccessOption
+        : failureOrSuccessOption as Option<Either<Failure, Unit>>,
     ));
   }
 }
 
 class _$_RegistrationFormState implements _RegistrationFormState {
-  const _$_RegistrationFormState(
-      {@required this.user,
-      @required this.passwordConfirmator,
-      @required this.showErrorMessages,
-      @required this.isSubmitting,
-        @required this.acceptedEULA,
-      @required this.failureOrSuccessOption})
-      : assert(user != null),
-        assert(passwordConfirmator != null),
-        assert(showErrorMessages != null),
-        assert(isSubmitting != null),
+  const _$_RegistrationFormState({@required this.user,
+    @required this.passwordConfirmator,
+    @required this.passwordToCompare,
+    @required this.showErrorMessages,
+    @required this.isSubmitting,
+    @required this.acceptedEULA,
+    @required this.failureOrSuccessOption})
+    : assert(user != null),
+      assert(passwordConfirmator != null),
+      assert(passwordToCompare != null),
+      assert(showErrorMessages != null),
+      assert(isSubmitting != null),
       assert(acceptedEULA != null),
-        assert(failureOrSuccessOption != null);
+      assert(failureOrSuccessOption != null);
 
   @override
   final User user;
   @override
   final PasswordConfirmator passwordConfirmator;
+  @override
+  final String passwordToCompare;
   @override
   final bool showErrorMessages;
   @override
@@ -2377,38 +2394,42 @@ class _$_RegistrationFormState implements _RegistrationFormState {
 
   @override
   String toString() {
-    return 'RegistrationFormState(user: $user, passwordConfirmator: $passwordConfirmator, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, acceptedEULA: $acceptedEULA, failureOrSuccessOption: $failureOrSuccessOption)';
+    return 'RegistrationFormState(user: $user, passwordConfirmator: $passwordConfirmator, passwordToCompare: $passwordToCompare, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, acceptedEULA: $acceptedEULA, failureOrSuccessOption: $failureOrSuccessOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _RegistrationFormState &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)) &&
-            (identical(other.passwordConfirmator, passwordConfirmator) ||
-                const DeepCollectionEquality()
-                    .equals(other.passwordConfirmator, passwordConfirmator)) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)) &&
+          (identical(other.user, user) ||
+            const DeepCollectionEquality().equals(other.user, user)) &&
+          (identical(other.passwordConfirmator, passwordConfirmator) ||
+            const DeepCollectionEquality()
+              .equals(other.passwordConfirmator, passwordConfirmator)) &&
+          (identical(other.passwordToCompare, passwordToCompare) ||
+            const DeepCollectionEquality()
+              .equals(other.passwordToCompare, passwordToCompare)) &&
+          (identical(other.showErrorMessages, showErrorMessages) ||
+            const DeepCollectionEquality()
+              .equals(other.showErrorMessages, showErrorMessages)) &&
+          (identical(other.isSubmitting, isSubmitting) ||
+            const DeepCollectionEquality()
+              .equals(other.isSubmitting, isSubmitting)) &&
           (identical(other.acceptedEULA, acceptedEULA) ||
             const DeepCollectionEquality()
               .equals(other.acceptedEULA, acceptedEULA)) &&
-            (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.failureOrSuccessOption, failureOrSuccessOption)));
+          (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
+            const DeepCollectionEquality().equals(
+              other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(user) ^
-      const DeepCollectionEquality().hash(passwordConfirmator) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(user) ^
+    const DeepCollectionEquality().hash(passwordConfirmator) ^
+    const DeepCollectionEquality().hash(passwordToCompare) ^
+    const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(acceptedEULA) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
@@ -2420,28 +2441,36 @@ class _$_RegistrationFormState implements _RegistrationFormState {
 }
 
 abstract class _RegistrationFormState implements RegistrationFormState {
-  const factory _RegistrationFormState(
-          {@required User user,
-          @required PasswordConfirmator passwordConfirmator,
-          @required bool showErrorMessages,
-          @required bool isSubmitting,
-            @required bool acceptedEULA,
-          @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
-      _$_RegistrationFormState;
+  const factory _RegistrationFormState({@required User user,
+    @required PasswordConfirmator passwordConfirmator,
+    @required String passwordToCompare,
+    @required bool showErrorMessages,
+    @required bool isSubmitting,
+    @required bool acceptedEULA,
+    @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
+  _$_RegistrationFormState;
 
   @override
   User get user;
+
   @override
   PasswordConfirmator get passwordConfirmator;
+
+  @override
+  String get passwordToCompare;
+
   @override
   bool get showErrorMessages;
+
   @override
   bool get isSubmitting;
 
   @override
   bool get acceptedEULA;
+
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
+
   @override
   _$RegistrationFormStateCopyWith<_RegistrationFormState> get copyWith;
 }

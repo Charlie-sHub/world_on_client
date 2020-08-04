@@ -17,8 +17,8 @@ class PasswordConfirmator extends ValueObject<String> {
     assert(confirmation != null);
     return PasswordConfirmator._(
       validateSameString(
-        password,
         confirmation,
+        password,
       ).flatMap(validateStringNotEmpty),
     );
   }

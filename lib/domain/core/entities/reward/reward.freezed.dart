@@ -40,7 +40,7 @@ mixin _$Reward {
 abstract class $RewardCopyWith<$Res> {
   factory $RewardCopyWith(Reward value, $Res Function(Reward) then) =
   _$RewardCopyWithImpl<$Res>;
-
+  
   $Res call({int id,
     Name name,
     EntityDescription description,
@@ -79,6 +79,7 @@ class _$RewardCopyWithImpl<$Res> implements $RewardCopyWith<$Res> {
 abstract class _$RewardCopyWith<$Res> implements $RewardCopyWith<$Res> {
   factory _$RewardCopyWith(_Reward value, $Res Function(_Reward) then) =
   __$RewardCopyWithImpl<$Res>;
+  
   @override
   $Res call({int id,
     Name name,
@@ -91,10 +92,10 @@ class __$RewardCopyWithImpl<$Res> extends _$RewardCopyWithImpl<$Res>
   implements _$RewardCopyWith<$Res> {
   __$RewardCopyWithImpl(_Reward _value, $Res Function(_Reward) _then)
     : super(_value, (v) => _then(v as _Reward));
-
+  
   @override
   _Reward get _value => super._value as _Reward;
-
+  
   @override
   $Res call({
     Object id = freezed,
@@ -122,12 +123,12 @@ class _$_Reward extends _Reward {
     @required this.description,
     @required this.imageURL,
     @required this.imageFile})
-      : assert(name != null),
-        assert(description != null),
-        assert(imageURL != null),
+    : assert(name != null),
+      assert(description != null),
+      assert(imageURL != null),
       assert(imageFile != null),
-        super._();
-
+      super._();
+  
   @override
   final int id;
   @override
@@ -147,20 +148,20 @@ class _$_Reward extends _Reward {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Reward &&
-          (identical(other.id, id) ||
-            const DeepCollectionEquality().equals(other.id, id)) &&
-          (identical(other.name, name) ||
-            const DeepCollectionEquality().equals(other.name, name)) &&
-          (identical(other.description, description) ||
-            const DeepCollectionEquality()
-              .equals(other.description, description)) &&
-          (identical(other.imageURL, imageURL) ||
-            const DeepCollectionEquality()
-              .equals(other.imageURL, imageURL)) &&
-          (identical(other.imageFile, imageFile) ||
-            const DeepCollectionEquality()
-              .equals(other.imageFile, imageFile)));
+      (other is _Reward &&
+        (identical(other.id, id) ||
+          const DeepCollectionEquality().equals(other.id, id)) &&
+        (identical(other.name, name) ||
+          const DeepCollectionEquality().equals(other.name, name)) &&
+        (identical(other.description, description) ||
+          const DeepCollectionEquality()
+            .equals(other.description, description)) &&
+        (identical(other.imageURL, imageURL) ||
+          const DeepCollectionEquality()
+            .equals(other.imageURL, imageURL)) &&
+        (identical(other.imageFile, imageFile) ||
+          const DeepCollectionEquality()
+            .equals(other.imageFile, imageFile)));
   }
 
   @override
@@ -179,21 +180,25 @@ class _$_Reward extends _Reward {
 
 abstract class _Reward extends Reward {
   const _Reward._() : super._();
-
+  
   const factory _Reward({int id,
     @required Name name,
     @required EntityDescription description,
     @required String imageURL,
     @required Option<File> imageFile}) = _$_Reward;
-
+  
   @override
   int get id;
+  
   @override
   Name get name;
+  
   @override
   EntityDescription get description;
+  
   @override
   String get imageURL;
+  
   @override
   Option<File> get imageFile;
   @override

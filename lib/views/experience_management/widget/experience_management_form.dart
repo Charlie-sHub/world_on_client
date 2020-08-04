@@ -178,19 +178,21 @@ class TitleFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLengthEnforced: true,
+      maxLength: 50,
       onChanged: (value) => context.bloc<ExperienceManagementFormBloc>().add(
             ExperienceManagementFormEvent.titleChanged(value),
           ),
       validator: (_) => context.bloc<ExperienceManagementFormBloc>().state.experience.title.value.fold(
             (failure) => failure.maybeMap(
-          emptyString: (_) => "The title can't be empty",
-          multiLineString: (_) => "The title can't be more than one line",
-          stringExceedsLength: (_) => "The title is too long",
-          stringWithInvalidCharacters: (_) => "The title has invalid characters",
-          orElse: () => StringConst.unknownError,
-        ),
+              emptyString: (_) => "The title can't be empty",
+              multiLineString: (_) => "The title can't be more than one line",
+              stringExceedsLength: (_) => "The title is too long",
+              stringWithInvalidCharacters: (_) => "The title has invalid characters",
+              orElse: () => StringConst.unknownError,
+            ),
             (_) => null,
-      ),
+          ),
       decoration: InputDecoration(
         labelText: "Title",
         prefixIcon: Icon(Icons.title),
@@ -207,19 +209,29 @@ class DescriptionFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onChanged: (value) => context.bloc<ExperienceManagementFormBloc>().add(
-        ExperienceManagementFormEvent.descriptionChanged(value),
-      ),
-      validator: (_) => context.bloc<ExperienceManagementFormBloc>().state.experience.description.value.fold(
-          (failure) =>
-          failure.maybeMap(
-            emptyString: (_) => "The description can't be empty",
-            stringExceedsLength: (_) => "The description is too long",
-            stringWithInvalidCharacters: (_) => "The description has invalid characters",
-            orElse: () => StringConst.unknownError,
-          ),
-          (_) => null,
-      ),
+      maxLengthEnforced: true,
+      maxLength: 300,
+      onChanged: (value) =>
+        context.bloc<ExperienceManagementFormBloc>().add(
+          ExperienceManagementFormEvent.descriptionChanged(value),
+        ),
+      validator: (_) =>
+        context
+          .bloc<ExperienceManagementFormBloc>()
+          .state
+          .experience
+          .description
+          .value
+          .fold(
+            (failure) =>
+            failure.maybeMap(
+              emptyString: (_) => "The description can't be empty",
+              stringExceedsLength: (_) => "The description is too long",
+              stringWithInvalidCharacters: (_) => "The description has invalid characters",
+              orElse: () => StringConst.unknownError,
+            ),
+            (_) => null,
+        ),
       maxLines: 5,
       decoration: InputDecoration(
         labelText: "Description",
@@ -361,12 +373,30 @@ class DifficultySlider extends StatelessWidget {
       child: Slider(
         min: 1,
         max: 10,
-        label: context.bloc<ExperienceManagementFormBloc>().state.experience.difficulty.getOrCrash().toString(),
-        activeColor: getColorByDifficulty(context.bloc<ExperienceManagementFormBloc>().state.experience.difficulty.getOrCrash()),
-        onChanged: (value) => context.bloc<ExperienceManagementFormBloc>().add(
-          ExperienceManagementFormEvent.difficultyChanged(value.round()),
-        ),
-        value: context.bloc<ExperienceManagementFormBloc>().state.experience.difficulty.getOrCrash().ceilToDouble(),
+        label: context
+          .bloc<ExperienceManagementFormBloc>()
+          .state
+          .experience
+          .difficulty
+          .getOrCrash()
+          .toString(),
+        activeColor: getColorByDifficulty(context
+          .bloc<ExperienceManagementFormBloc>()
+          .state
+          .experience
+          .difficulty
+          .getOrCrash()),
+        onChanged: (value) =>
+          context.bloc<ExperienceManagementFormBloc>().add(
+            ExperienceManagementFormEvent.difficultyChanged(value.round()),
+          ),
+        value: context
+          .bloc<ExperienceManagementFormBloc>()
+          .state
+          .experience
+          .difficulty
+          .getOrCrash()
+          .ceilToDouble(),
       ),
     );
   }

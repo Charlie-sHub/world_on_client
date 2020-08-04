@@ -18,47 +18,29 @@ _$_ExperienceDto _$_$_ExperienceDtoFromJson(Map<String, dynamic> json) {
     difficulty: json['difficulty'] as int,
     creationDate: json['creationDate'] as String,
     modificationDate: json['modificationDate'] as String,
-    objectives: (json['objectives'] as List)
-      ?.map((e) =>
-    e == null ? null : ObjectiveDto.fromJson(e as Map<String, dynamic>))
-      ?.toSet(),
-    rewards: (json['rewards'] as List)
-      ?.map((e) =>
-    e == null ? null : RewardDto.fromJson(e as Map<String, dynamic>))
-      ?.toSet(),
-    tags: (json['tags'] as List)
-      ?.map((e) =>
-    e == null ? null : TagDto.fromJson(e as Map<String, dynamic>))
-      ?.toSet(),
-    comments: (json['comments'] as List)
-      ?.map((e) =>
-    e == null ? null : CommentDto.fromJson(e as Map<String, dynamic>))
-      ?.toSet(),
-    likedBy: (json['likedBy'] as List)
-      ?.map((e) =>
-    e == null ? null : UserDto.fromJson(e as Map<String, dynamic>))
-      ?.toSet(),
-    doneBy: (json['doneBy'] as List)
-      ?.map((e) =>
-    e == null ? null : UserDto.fromJson(e as Map<String, dynamic>))
-      ?.toSet(),
+    objectives: (json['objectives'] as List)?.map((e) => e == null ? null : ObjectiveDto.fromJson(e as Map<String, dynamic>))?.toSet(),
+    rewards: (json['rewards'] as List)?.map((e) => e == null ? null : RewardDto.fromJson(e as Map<String, dynamic>))?.toSet(),
+    tags: (json['tags'] as List)?.map((e) => e == null ? null : TagDto.fromJson(e as Map<String, dynamic>))?.toSet(),
+    comments: (json['comments'] as List)?.map((e) => e == null ? null : CommentDto.fromJson(e as Map<String, dynamic>))?.toSet(),
+    likedBy: (json['likedBy'] as List)?.map((e) => e == null ? null : UserDto.fromJson(e as Map<String, dynamic>))?.toSet(),
+    doneBy: (json['doneBy'] as List)?.map((e) => e == null ? null : UserDto.fromJson(e as Map<String, dynamic>))?.toSet(),
   );
 }
 
 Map<String, dynamic> _$_$_ExperienceDtoToJson(_$_ExperienceDto instance) =>
   <String, dynamic>{
-      'id': instance.id,
+    'id': instance.id,
     'title': instance.title,
-      'description': instance.description,
-      'imageURLs': instance.imageURLs?.toList(),
-      'coordinates': instance.coordinates,
-      'location': instance.location,
-      'creator': instance.creator,
-      'difficulty': instance.difficulty,
-      'creationDate': instance.creationDate,
-      'modificationDate': instance.modificationDate,
-      'objectives': instance.objectives?.toList(),
-      'rewards': instance.rewards?.toList(),
+    'description': instance.description,
+    'imageURLs': instance.imageURLs?.toList(),
+    'coordinates': instance.coordinates,
+    'location': instance.location,
+    'creator': instance.creator,
+    'difficulty': instance.difficulty,
+    'creationDate': instance.creationDate,
+    'modificationDate': instance.modificationDate,
+    'objectives': instance.objectives?.toList(),
+    'rewards': instance.rewards?.toList(),
       'tags': instance.tags?.toList(),
       'comments': instance.comments?.toList(),
       'likedBy': instance.likedBy?.toList(),

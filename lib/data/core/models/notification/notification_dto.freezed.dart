@@ -57,19 +57,21 @@ abstract class $NotificationDtoCopyWith<$Res> {
     bool seen,
     String creationDate,
     NotificationType type});
-
+  
   $UserDtoCopyWith<$Res> get sender;
+  
   $UserDtoCopyWith<$Res> get receiver;
 }
 
 class _$NotificationDtoCopyWithImpl<$Res>
   implements $NotificationDtoCopyWith<$Res> {
   _$NotificationDtoCopyWithImpl(this._value, this._then);
-
+  
   final NotificationDto _value;
+  
   // ignore: unused_field
   final $Res Function(NotificationDto) _then;
-
+  
   @override
   $Res call({
     Object id = freezed,
@@ -119,6 +121,7 @@ abstract class _$NotificationDtoCopyWith<$Res>
   implements $NotificationDtoCopyWith<$Res> {
   factory _$NotificationDtoCopyWith(_NotificationDto value, $Res Function(_NotificationDto) then) =
   __$NotificationDtoCopyWithImpl<$Res>;
+  
   @override
   $Res call({int id,
     UserDto sender,
@@ -138,10 +141,10 @@ class __$NotificationDtoCopyWithImpl<$Res> extends _$NotificationDtoCopyWithImpl
   implements _$NotificationDtoCopyWith<$Res> {
   __$NotificationDtoCopyWithImpl(_NotificationDto _value, $Res Function(_NotificationDto) _then)
     : super(_value, (v) => _then(v as _NotificationDto));
-
+  
   @override
   _NotificationDto get _value => super._value as _NotificationDto;
-
+  
   @override
   $Res call({
     Object id = freezed,
@@ -176,15 +179,15 @@ class _$_NotificationDto extends _NotificationDto {
     @required this.seen,
     @required this.creationDate,
     @required this.type})
-      : assert(id != null),
-        assert(sender != null),
-        assert(receiver != null),
-        assert(description != null),
-        assert(seen != null),
-        assert(creationDate != null),
-        assert(type != null),
-        super._();
-
+    : assert(id != null),
+      assert(sender != null),
+      assert(receiver != null),
+      assert(description != null),
+      assert(seen != null),
+      assert(creationDate != null),
+      assert(type != null),
+      super._();
+  
   factory _$_NotificationDto.fromJson(Map<String, dynamic> json) =>
     _$_$_NotificationDtoFromJson(json);
 
@@ -211,24 +214,24 @@ class _$_NotificationDto extends _NotificationDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _NotificationDto &&
-          (identical(other.id, id) ||
-            const DeepCollectionEquality().equals(other.id, id)) &&
-          (identical(other.sender, sender) ||
-            const DeepCollectionEquality().equals(other.sender, sender)) &&
-          (identical(other.receiver, receiver) ||
-            const DeepCollectionEquality()
-              .equals(other.receiver, receiver)) &&
-          (identical(other.description, description) ||
-            const DeepCollectionEquality()
-              .equals(other.description, description)) &&
-          (identical(other.seen, seen) ||
-            const DeepCollectionEquality().equals(other.seen, seen)) &&
-          (identical(other.creationDate, creationDate) ||
-            const DeepCollectionEquality()
-              .equals(other.creationDate, creationDate)) &&
-          (identical(other.type, type) ||
-            const DeepCollectionEquality().equals(other.type, type)));
+      (other is _NotificationDto &&
+        (identical(other.id, id) ||
+          const DeepCollectionEquality().equals(other.id, id)) &&
+        (identical(other.sender, sender) ||
+          const DeepCollectionEquality().equals(other.sender, sender)) &&
+        (identical(other.receiver, receiver) ||
+          const DeepCollectionEquality()
+            .equals(other.receiver, receiver)) &&
+        (identical(other.description, description) ||
+          const DeepCollectionEquality()
+            .equals(other.description, description)) &&
+        (identical(other.seen, seen) ||
+          const DeepCollectionEquality().equals(other.seen, seen)) &&
+        (identical(other.creationDate, creationDate) ||
+          const DeepCollectionEquality()
+            .equals(other.creationDate, creationDate)) &&
+        (identical(other.type, type) ||
+          const DeepCollectionEquality().equals(other.type, type)));
   }
 
   @override

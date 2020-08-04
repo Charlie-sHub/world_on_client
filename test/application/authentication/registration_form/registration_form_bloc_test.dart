@@ -27,7 +27,7 @@ void main() {
   Register register;
   GetLoggedInUser getLoggedInUser;
   setUpAll(
-      () {
+    () {
       configureDependencies(injectable.Environment.test);
       register = getIt<Register>();
       getLoggedInUser = getIt<GetLoggedInUser>();

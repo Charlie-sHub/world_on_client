@@ -22,6 +22,10 @@ class AppWidget extends StatelessWidget {
       child: MaterialApp(
         title: "World On",
         // debugShowCheckedModeBanner: false,
+        // TODO: Improve the theme
+        // Accent and primary being the same color doesn't make much sense
+        // The difference is not really noticed as many widgets have set colors, but that should be changed
+        // Most if not all widget colors should depend of the theme
         theme: ThemeData.dark().copyWith(
           floatingActionButtonTheme: const FloatingActionButtonThemeData(
             elevation: 10,
@@ -30,7 +34,7 @@ class AppWidget extends StatelessWidget {
           ),
           cardColor: WorldOnColors.white,
           primaryColor: WorldOnColors.primary,
-          accentColor: WorldOnColors.accent,
+          accentColor: WorldOnColors.primary,
           scaffoldBackgroundColor: WorldOnColors.background,
           appBarTheme: const AppBarTheme(
             color: WorldOnColors.background,

@@ -81,6 +81,7 @@ mixin _$ExperienceDto {
 
 abstract class $ExperienceDtoCopyWith<$Res> {
   factory $ExperienceDtoCopyWith(ExperienceDto value, $Res Function(ExperienceDto) then) = _$ExperienceDtoCopyWithImpl<$Res>;
+
   $Res call(
       {int id,
       String title,
@@ -107,11 +108,12 @@ abstract class $ExperienceDtoCopyWith<$Res> {
 class _$ExperienceDtoCopyWithImpl<$Res>
   implements $ExperienceDtoCopyWith<$Res> {
   _$ExperienceDtoCopyWithImpl(this._value, this._then);
-
+  
   final ExperienceDto _value;
+  
   // ignore: unused_field
   final $Res Function(ExperienceDto) _then;
-
+  
   @override
   $Res call({
     Object id = freezed,
@@ -197,20 +199,20 @@ abstract class _$ExperienceDtoCopyWith<$Res>
   implements $ExperienceDtoCopyWith<$Res> {
   factory _$ExperienceDtoCopyWith(_ExperienceDto value, $Res Function(_ExperienceDto) then) =
   __$ExperienceDtoCopyWithImpl<$Res>;
+  
   @override
-  $Res call(
-      {int id,
-        String title,
-      String description,
-      Set<String> imageURLs,
-      CoordinatesDto coordinates,
-      LocationDto location,
-      UserDto creator,
-      int difficulty,
-      String creationDate,
-      String modificationDate,
-      Set<ObjectiveDto> objectives,
-      Set<RewardDto> rewards,
+  $Res call({int id,
+    String title,
+    String description,
+    Set<String> imageURLs,
+    CoordinatesDto coordinates,
+    LocationDto location,
+    UserDto creator,
+    int difficulty,
+    String creationDate,
+    String modificationDate,
+    Set<ObjectiveDto> objectives,
+    Set<RewardDto> rewards,
       Set<TagDto> tags,
       Set<CommentDto> comments,
       Set<UserDto> likedBy,
@@ -228,10 +230,10 @@ class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Re
   implements _$ExperienceDtoCopyWith<$Res> {
   __$ExperienceDtoCopyWithImpl(_ExperienceDto _value, $Res Function(_ExperienceDto) _then)
     : super(_value, (v) => _then(v as _ExperienceDto));
-
+  
   @override
   _ExperienceDto get _value => super._value as _ExperienceDto;
-
+  
   @override
   $Res call({
     Object id = freezed,
@@ -285,35 +287,34 @@ class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Re
 
 @JsonSerializable()
 class _$_ExperienceDto extends _ExperienceDto {
-  const _$_ExperienceDto(
-      {@required this.id,
-        @required this.title,
-      @required this.description,
-      @required this.imageURLs,
-      @required this.coordinates,
-      @required this.location,
-      @required this.creator,
-      @required this.difficulty,
-      @required this.creationDate,
-      @required this.modificationDate,
-      @required this.objectives,
-      @required this.rewards,
+  const _$_ExperienceDto({@required this.id,
+    @required this.title,
+    @required this.description,
+    @required this.imageURLs,
+    @required this.coordinates,
+    @required this.location,
+    @required this.creator,
+    @required this.difficulty,
+    @required this.creationDate,
+    @required this.modificationDate,
+    @required this.objectives,
+    @required this.rewards,
       @required this.tags,
       @required this.comments,
       @required this.likedBy,
       @required this.doneBy})
-      : assert(id != null),
+    : assert(id != null),
       assert(title != null),
-        assert(description != null),
-        assert(imageURLs != null),
-        assert(coordinates != null),
-        assert(location != null),
-        assert(creator != null),
-        assert(difficulty != null),
-        assert(creationDate != null),
-        assert(modificationDate != null),
-        assert(objectives != null),
-        assert(rewards != null),
+      assert(description != null),
+      assert(imageURLs != null),
+      assert(coordinates != null),
+      assert(location != null),
+      assert(creator != null),
+      assert(difficulty != null),
+      assert(creationDate != null),
+      assert(modificationDate != null),
+      assert(objectives != null),
+      assert(rewards != null),
         assert(tags != null),
         assert(comments != null),
         assert(likedBy != null),
@@ -364,51 +365,51 @@ class _$_ExperienceDto extends _ExperienceDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ExperienceDto &&
-          (identical(other.id, id) ||
-            const DeepCollectionEquality().equals(other.id, id)) &&
-          (identical(other.title, title) ||
-            const DeepCollectionEquality().equals(other.title, title)) &&
-          (identical(other.description, description) ||
-            const DeepCollectionEquality()
-              .equals(other.description, description)) &&
-          (identical(other.imageURLs, imageURLs) ||
-            const DeepCollectionEquality()
-              .equals(other.imageURLs, imageURLs)) &&
-          (identical(other.coordinates, coordinates) ||
-            const DeepCollectionEquality()
-              .equals(other.coordinates, coordinates)) &&
-          (identical(other.location, location) ||
-            const DeepCollectionEquality()
-              .equals(other.location, location)) &&
-          (identical(other.creator, creator) ||
-            const DeepCollectionEquality()
-              .equals(other.creator, creator)) &&
-          (identical(other.difficulty, difficulty) ||
-            const DeepCollectionEquality()
-              .equals(other.difficulty, difficulty)) &&
-          (identical(other.creationDate, creationDate) ||
-            const DeepCollectionEquality()
-              .equals(other.creationDate, creationDate)) &&
-          (identical(other.modificationDate, modificationDate) ||
-            const DeepCollectionEquality()
-              .equals(other.modificationDate, modificationDate)) &&
-          (identical(other.objectives, objectives) ||
-            const DeepCollectionEquality()
-              .equals(other.objectives, objectives)) &&
-          (identical(other.rewards, rewards) ||
-            const DeepCollectionEquality()
-              .equals(other.rewards, rewards)) &&
-          (identical(other.tags, tags) ||
-            const DeepCollectionEquality().equals(other.tags, tags)) &&
-          (identical(other.comments, comments) ||
-            const DeepCollectionEquality()
-              .equals(other.comments, comments)) &&
-          (identical(other.likedBy, likedBy) ||
-            const DeepCollectionEquality()
-              .equals(other.likedBy, likedBy)) &&
-          (identical(other.doneBy, doneBy) ||
-            const DeepCollectionEquality().equals(other.doneBy, doneBy)));
+      (other is _ExperienceDto &&
+        (identical(other.id, id) ||
+          const DeepCollectionEquality().equals(other.id, id)) &&
+        (identical(other.title, title) ||
+          const DeepCollectionEquality().equals(other.title, title)) &&
+        (identical(other.description, description) ||
+          const DeepCollectionEquality()
+            .equals(other.description, description)) &&
+        (identical(other.imageURLs, imageURLs) ||
+          const DeepCollectionEquality()
+            .equals(other.imageURLs, imageURLs)) &&
+        (identical(other.coordinates, coordinates) ||
+          const DeepCollectionEquality()
+            .equals(other.coordinates, coordinates)) &&
+        (identical(other.location, location) ||
+          const DeepCollectionEquality()
+            .equals(other.location, location)) &&
+        (identical(other.creator, creator) ||
+          const DeepCollectionEquality()
+            .equals(other.creator, creator)) &&
+        (identical(other.difficulty, difficulty) ||
+          const DeepCollectionEquality()
+            .equals(other.difficulty, difficulty)) &&
+        (identical(other.creationDate, creationDate) ||
+          const DeepCollectionEquality()
+            .equals(other.creationDate, creationDate)) &&
+        (identical(other.modificationDate, modificationDate) ||
+          const DeepCollectionEquality()
+            .equals(other.modificationDate, modificationDate)) &&
+        (identical(other.objectives, objectives) ||
+          const DeepCollectionEquality()
+            .equals(other.objectives, objectives)) &&
+        (identical(other.rewards, rewards) ||
+          const DeepCollectionEquality()
+            .equals(other.rewards, rewards)) &&
+        (identical(other.tags, tags) ||
+          const DeepCollectionEquality().equals(other.tags, tags)) &&
+        (identical(other.comments, comments) ||
+          const DeepCollectionEquality()
+            .equals(other.comments, comments)) &&
+        (identical(other.likedBy, likedBy) ||
+          const DeepCollectionEquality()
+            .equals(other.likedBy, likedBy)) &&
+        (identical(other.doneBy, doneBy) ||
+          const DeepCollectionEquality().equals(other.doneBy, doneBy)));
   }
 
   @override
@@ -443,19 +444,18 @@ class _$_ExperienceDto extends _ExperienceDto {
 
 abstract class _ExperienceDto extends ExperienceDto {
   const _ExperienceDto._() : super._();
-  const factory _ExperienceDto(
-      {@required int id,
-        @required String title,
-      @required String description,
-      @required Set<String> imageURLs,
-      @required CoordinatesDto coordinates,
-      @required LocationDto location,
-      @required UserDto creator,
-      @required int difficulty,
-      @required String creationDate,
-      @required String modificationDate,
-      @required Set<ObjectiveDto> objectives,
-      @required Set<RewardDto> rewards,
+  const factory _ExperienceDto({@required int id,
+    @required String title,
+    @required String description,
+    @required Set<String> imageURLs,
+    @required CoordinatesDto coordinates,
+    @required LocationDto location,
+    @required UserDto creator,
+    @required int difficulty,
+    @required String creationDate,
+    @required String modificationDate,
+    @required Set<ObjectiveDto> objectives,
+    @required Set<RewardDto> rewards,
       @required Set<TagDto> tags,
       @required Set<CommentDto> comments,
       @required Set<UserDto> likedBy,

@@ -45,29 +45,19 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
     );
   }
 
-  Stream<ProfileEditingFormState> onPasswordConfirmationChanged(_PasswordConfirmationChanged event) async* {
-    yield state.copyWith(
-      passwordConfirmator: PasswordConfirmator(
-        password: state.user.password.value.fold(
-          (failure) => "",
-          id,
-        ),
-        confirmation: event.passwordConfirmation,
-      ),
-      failureOrSuccessOption: none(),
-    );
-  }
-
   Stream<ProfileEditingFormState> onSubmitted(_Submitted event) async* {
     Either<Failure, Unit> _failureOrUnit;
     yield state.copyWith(
       isSubmitting: true,
       failureOrSuccessOption: none(),
     );
-    if (state.user.isValid) {
-      final _register = getIt<EditUser>();
-      _failureOrUnit = await _register(
-        Params(userToEdit: state.user),
+    if (state.user.isValid && state.passwordConfirmator.isValid()) {
+      final _userToEdit = state.user.copyWith(
+        modificationDate: PastDate(DateTime.now()),
+      );
+      final _editUser = getIt<EditUser>();
+      _failureOrUnit = await _editUser(
+        Params(userToEdit: _userToEdit),
       );
     }
     yield state.copyWith(
@@ -113,10 +103,28 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
     );
   }
 
+  Stream<ProfileEditingFormState> onPasswordConfirmationChanged(_PasswordConfirmationChanged event) async* {
+    yield state.copyWith(
+      passwordConfirmator: PasswordConfirmator(
+        password: state.user.password.value.fold(
+          (failure) => "",
+          id,
+        ),
+        confirmation: event.passwordConfirmation,
+      ),
+      passwordToCompare: event.passwordConfirmation,
+      failureOrSuccessOption: none(),
+    );
+  }
+
   Stream<ProfileEditingFormState> onPasswordChanged(_PasswordChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         password: Password(event.password),
+      ),
+      passwordConfirmator: PasswordConfirmator(
+        password: event.password,
+        confirmation: state.passwordToCompare,
       ),
       failureOrSuccessOption: none(),
     );
@@ -153,8 +161,15 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
     final _getLoggedInUser = getIt<GetLoggedInUser>();
     final _userOption = await _getLoggedInUser(getIt<NoParams>());
     yield _userOption.fold(
-      () => state,
-      (user) => state.copyWith(user: user),
+        () => state,
+        (user) =>
+        state.copyWith(
+          user: user,
+          passwordConfirmator: PasswordConfirmator(
+            password: user.password.getOrCrash(),
+            confirmation: user.password.getOrCrash(),
+          ),
+        ),
     );
   }
 }

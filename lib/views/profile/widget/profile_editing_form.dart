@@ -10,6 +10,7 @@ import 'package:worldon/application/profile/profile_editing_form/profile_editing
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/views/core/misc/string_constants.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
+import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
 
 class ProfileEditingForm extends StatelessWidget {
   const ProfileEditingForm({
@@ -18,34 +19,19 @@ class ProfileEditingForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text(
-          "Editing Profile",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 25,
-          ),
-          textAlign: TextAlign.center,
+    return BlocConsumer<ProfileEditingFormBloc, ProfileEditingFormState>(
+      listener: (context, state) => state.failureOrSuccessOption.fold(
+        () => null,
+        (either) => either.fold(
+          (failure) => onFailure(failure, context),
+          (_) => onSuccess(context),
         ),
       ),
-      body: BlocConsumer<ProfileEditingFormBloc, ProfileEditingFormState>(
-        listener: (context, state) =>
-          state.failureOrSuccessOption.fold(
-              () => null,
-              (either) =>
-              either.fold(
-                  (failure) => onFailure(failure, context),
-                  (_) => onSuccess(context),
-              ),
-          ),
-        builder: (context, state) =>
-          Form(
-            autovalidate: state.showErrorMessages,
-            child: Container(
-              color: WorldOnColors.white,
-              child: Column(
+      builder: (context, state) => state.user.isValid
+          ? Form(
+              autovalidate: state.showErrorMessages,
+              child: ListView(
+                padding: const EdgeInsets.all(10),
                 children: <Widget>[
                   Row(
                     children: <Widget>[
@@ -57,6 +43,7 @@ class ProfileEditingForm extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: const <Widget>[
                               NameTextFormField(),
+                              SizedBox(height: 10),
                               UsernameTextFormField(),
                             ],
                           ),
@@ -65,15 +52,20 @@ class ProfileEditingForm extends StatelessWidget {
                     ],
                   ),
                   const DescriptionTextFormField(),
+                  const EmailTextField(),
+                  const BirthdayPicker(), // Maybe the password should be changed in Option or in some more special way
+                  const PasswordTextField(),
+                  const PasswordConfirmationTextField(),
                   const SubmitButton(),
                 ],
               ),
-            ),
-          ),
-      ),
+            )
+          // TODO: Control for errors
+          // in case the User gotten is not valid but at the same time is not the empty user of the initial state
+          : WorldOnProgressIndicator(),
     );
   }
-  
+
   Future onFailure(Failure failure, BuildContext context) {
     return FlushbarHelper.createError(
       duration: const Duration(seconds: 2),
@@ -85,14 +77,179 @@ class ProfileEditingForm extends StatelessWidget {
             usernameAlreadyInUse: (_) => "The username is already in use",
             orElse: () => StringConst.unknownError,
           ),
+        coreDomain: (failure) =>
+          failure.coreDomainFailure.maybeMap(
+            unAuthorizedError: (_) => StringConst.unauthorizedError,
+            orElse: () => StringConst.unknownError,
+          ),
         orElse: () => StringConst.unknownError,
       ),
     ).show(context);
   }
-  
+
   void onSuccess(BuildContext context) {
     context.navigator.pop();
     context.bloc<AuthenticationBloc>().add(const AuthenticationEvent.authenticationCheckRequested());
+  }
+}
+
+class PasswordConfirmationTextField extends StatelessWidget {
+  const PasswordConfirmationTextField({
+    Key key,
+  }) : super(key: key);
+  
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      maxLengthEnforced: true,
+      maxLength: 40,
+      onChanged: (value) =>
+        context.bloc<ProfileEditingFormBloc>().add(
+          ProfileEditingFormEvent.passwordConfirmationChanged(value),
+        ),
+      initialValue: context
+        .bloc<ProfileEditingFormBloc>()
+        .state
+        .passwordConfirmator
+        .getOrCrash(),
+      validator: (_) =>
+        context
+          .bloc<ProfileEditingFormBloc>()
+          .state
+          .passwordConfirmator
+          .value
+          .fold(
+            (failure) =>
+            failure.maybeMap(
+              stringMismatch: (_) => "The passwords are different",
+              emptyString: (_) => "Please confirm the password",
+              orElse: () => StringConst.unknownError,
+            ),
+            (_) => null,
+        ),
+      autocorrect: false,
+      obscureText: true,
+      decoration: InputDecoration(
+        labelText: "Password Confirmation",
+        prefixIcon: Icon(Icons.lock_outline),
+      ),
+    );
+  }
+}
+
+class PasswordTextField extends StatelessWidget {
+  const PasswordTextField({
+    Key key,
+  }) : super(key: key);
+  
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      maxLengthEnforced: true,
+      maxLength: 40,
+      onChanged: (value) =>
+        context.bloc<ProfileEditingFormBloc>().add(
+          ProfileEditingFormEvent.passwordChanged(value),
+        ),
+      initialValue: context
+        .bloc<ProfileEditingFormBloc>()
+        .state
+        .user
+        .password
+        .getOrCrash(),
+      validator: (_) =>
+        context
+          .bloc<ProfileEditingFormBloc>()
+          .state
+          .user
+          .password
+          .value
+          .fold(
+            (failure) =>
+            failure.maybeMap(
+              emptyString: (_) => "The password can't be empty",
+              multiLineString: (_) => "The password can't be more than one line",
+              stringExceedsLength: (_) => "The password is too long",
+              // Rather superfluous
+              invalidPassword: (_) => "The password is invalid",
+              orElse: () => StringConst.unknownError,
+            ),
+            (_) => null,
+        ),
+      autocorrect: false,
+      obscureText: true,
+      decoration: InputDecoration(
+        labelText: "Password",
+        prefixIcon: Icon(Icons.lock),
+      ),
+    );
+  }
+}
+
+class BirthdayPicker extends StatelessWidget {
+  const BirthdayPicker({
+    Key key,
+  }) : super(key: key);
+  
+  @override
+  Widget build(BuildContext context) {
+    return RaisedButton(
+      onPressed: () async {
+        final _birthDate = await showDatePicker(
+          context: context,
+          initialDate: DateTime.now(),
+          firstDate: DateTime(1900),
+          lastDate: DateTime.now(),
+        );
+        context.bloc<ProfileEditingFormBloc>().add(
+          ProfileEditingFormEvent.birthdayChanged(_birthDate),
+        );
+      },
+      // TODO: Make it so the text changes to the selected date after selection or the failure
+      child: const Text("Select your birthday"),
+    );
+  }
+}
+
+class EmailTextField extends StatelessWidget {
+  const EmailTextField({
+    Key key,
+  }) : super(key: key);
+  
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      onChanged: (value) =>
+        context.bloc<ProfileEditingFormBloc>().add(
+          ProfileEditingFormEvent.emailAddressChanged(value),
+        ),
+      initialValue: context
+        .bloc<ProfileEditingFormBloc>()
+        .state
+        .user
+        .email
+        .getOrCrash(),
+      validator: (_) =>
+        context
+          .bloc<ProfileEditingFormBloc>()
+          .state
+          .user
+          .email
+          .value
+          .fold(
+            (failure) =>
+            failure.maybeMap(
+              invalidEmail: (_) => "Invalid email",
+              orElse: () => StringConst.unknownError,
+            ),
+            (_) => null,
+        ),
+      autocorrect: false,
+      decoration: InputDecoration(
+        labelText: "Email Address",
+        prefixIcon: Icon(Icons.email),
+      ),
+    );
   }
 }
 
@@ -128,10 +285,12 @@ class DescriptionTextFormField extends StatelessWidget {
   const DescriptionTextFormField({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLengthEnforced: true,
+      maxLength: 300,
       initialValue: context
         .bloc<ProfileEditingFormBloc>()
         .state
@@ -161,6 +320,7 @@ class DescriptionTextFormField extends StatelessWidget {
             (_) => null,
         ),
       autocorrect: false,
+      maxLines: 5,
       decoration: InputDecoration(
         labelText: "Description",
         prefixIcon: Icon(Icons.description),
@@ -173,10 +333,12 @@ class UsernameTextFormField extends StatelessWidget {
   const UsernameTextFormField({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLengthEnforced: true,
+      maxLength: 50,
       initialValue: context
         .bloc<ProfileEditingFormBloc>()
         .state
@@ -218,10 +380,12 @@ class NameTextFormField extends StatelessWidget {
   const NameTextFormField({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLengthEnforced: true,
+      maxLength: 50,
       initialValue: context
         .bloc<ProfileEditingFormBloc>()
         .state
@@ -262,7 +426,8 @@ class NameTextFormField extends StatelessWidget {
 class UserImagePicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Padding(
+      padding: const EdgeInsets.all(5),
       child: context
         .bloc<ProfileEditingFormBloc>()
         .state
@@ -272,13 +437,10 @@ class UserImagePicker extends StatelessWidget {
           () =>
           FlatButton(
             onPressed: () async => pickImage(context),
-            child: const Padding(
-              padding: EdgeInsets.all(5),
-              child: CircleAvatar(
-                radius: 80,
-                // TODO: Change to user's image
-                backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
-              ),
+            child: const CircleAvatar(
+              radius: 80,
+              // TODO: Change to user's network image
+              backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
             ),
           ),
           (imageFile) =>
@@ -292,7 +454,7 @@ class UserImagePicker extends StatelessWidget {
       ),
     );
   }
-  
+
   Future pickImage(BuildContext context) async {
     final imagePicked = await ImagePicker().getImage(source: ImageSource.gallery);
     final imageFile = File(imagePicked.path);

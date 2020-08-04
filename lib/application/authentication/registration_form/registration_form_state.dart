@@ -5,6 +5,7 @@ abstract class RegistrationFormState with _$RegistrationFormState {
   const factory RegistrationFormState({
     @required User user,
     @required PasswordConfirmator passwordConfirmator,
+    @required String passwordToCompare,
     @required bool showErrorMessages,
     @required bool isSubmitting,
     @required bool acceptedEULA,
@@ -12,11 +13,12 @@ abstract class RegistrationFormState with _$RegistrationFormState {
   }) = _RegistrationFormState;
 
   factory RegistrationFormState.initial() => RegistrationFormState(
-        user: User.empty(),
+    user: User.empty(),
         passwordConfirmator: PasswordConfirmator(
           password: "",
           confirmation: "",
         ),
+        passwordToCompare: "",
         showErrorMessages: false,
         isSubmitting: false,
         acceptedEULA: false,

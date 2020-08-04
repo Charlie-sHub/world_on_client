@@ -59,10 +59,12 @@ abstract class $ObjectivesTrackerEventCopyWith<$Res> {
   factory $ObjectivesTrackerEventCopyWith(ObjectivesTrackerEvent value, $Res Function(ObjectivesTrackerEvent) then) = _$ObjectivesTrackerEventCopyWithImpl<$Res>;
 }
 
-class _$ObjectivesTrackerEventCopyWithImpl<$Res> implements $ObjectivesTrackerEventCopyWith<$Res> {
+class _$ObjectivesTrackerEventCopyWithImpl<$Res>
+  implements $ObjectivesTrackerEventCopyWith<$Res> {
   _$ObjectivesTrackerEventCopyWithImpl(this._value, this._then);
-
+  
   final ObjectivesTrackerEvent _value;
+  
   // ignore: unused_field
   final $Res Function(ObjectivesTrackerEvent) _then;
 }
@@ -70,6 +72,7 @@ class _$ObjectivesTrackerEventCopyWithImpl<$Res> implements $ObjectivesTrackerEv
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
   __$InitializedCopyWithImpl<$Res>;
+  
   $Res call({ObjectiveSet objectiveSet});
 }
 
@@ -77,10 +80,10 @@ class __$InitializedCopyWithImpl<$Res> extends _$ObjectivesTrackerEventCopyWithI
   implements _$InitializedCopyWith<$Res> {
   __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then)
     : super(_value, (v) => _then(v as _Initialized));
-
+  
   @override
   _Initialized get _value => super._value as _Initialized;
-
+  
   @override
   $Res call({
     Object objectiveSet = freezed,
@@ -193,10 +196,10 @@ class __$ObjectiveAccomplishedCopyWithImpl<$Res> extends _$ObjectivesTrackerEven
   __$ObjectiveAccomplishedCopyWithImpl(_ObjectiveAccomplished _value,
     $Res Function(_ObjectiveAccomplished) _then)
     : super(_value, (v) => _then(v as _ObjectiveAccomplished));
-
+  
   @override
   _ObjectiveAccomplished get _value => super._value as _ObjectiveAccomplished;
-
+  
   @override
   $Res call({
     Object objective = freezed,
@@ -337,11 +340,12 @@ abstract class $ObjectivesTrackerStateCopyWith<$Res> {
 class _$ObjectivesTrackerStateCopyWithImpl<$Res>
   implements $ObjectivesTrackerStateCopyWith<$Res> {
   _$ObjectivesTrackerStateCopyWithImpl(this._value, this._then);
-
+  
   final ObjectivesTrackerState _value;
+  
   // ignore: unused_field
   final $Res Function(ObjectivesTrackerState) _then;
-
+  
   @override
   $Res call({
     Object objectivesToDo = freezed,
@@ -362,6 +366,7 @@ abstract class _$ObjectivesTrackerStateCopyWith<$Res>
   factory _$ObjectivesTrackerStateCopyWith(_ObjectivesTrackerState value,
     $Res Function(_ObjectivesTrackerState) then) =
   __$ObjectivesTrackerStateCopyWithImpl<$Res>;
+  
   @override
   $Res call({KtList<Objective> objectivesToDo, bool isFinished});
 }
@@ -371,10 +376,10 @@ class __$ObjectivesTrackerStateCopyWithImpl<$Res> extends _$ObjectivesTrackerSta
   __$ObjectivesTrackerStateCopyWithImpl(_ObjectivesTrackerState _value,
     $Res Function(_ObjectivesTrackerState) _then)
     : super(_value, (v) => _then(v as _ObjectivesTrackerState));
-
+  
   @override
   _ObjectivesTrackerState get _value => super._value as _ObjectivesTrackerState;
-
+  
   @override
   $Res call({
     Object objectivesToDo = freezed,
@@ -392,14 +397,14 @@ class __$ObjectivesTrackerStateCopyWithImpl<$Res> extends _$ObjectivesTrackerSta
 
 class _$_ObjectivesTrackerState implements _ObjectivesTrackerState {
   const _$_ObjectivesTrackerState({@required this.objectivesToDo, @required this.isFinished})
-      : assert(objectivesToDo != null),
-        assert(isFinished != null);
-
+    : assert(objectivesToDo != null),
+      assert(isFinished != null);
+  
   @override
   final KtList<Objective> objectivesToDo;
   @override
   final bool isFinished;
-
+  
   @override
   String toString() {
     return 'ObjectivesTrackerState(objectivesToDo: $objectivesToDo, isFinished: $isFinished)';
@@ -408,13 +413,13 @@ class _$_ObjectivesTrackerState implements _ObjectivesTrackerState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ObjectivesTrackerState &&
-          (identical(other.objectivesToDo, objectivesToDo) ||
-            const DeepCollectionEquality()
-              .equals(other.objectivesToDo, objectivesToDo)) &&
-          (identical(other.isFinished, isFinished) ||
-            const DeepCollectionEquality()
-              .equals(other.isFinished, isFinished)));
+      (other is _ObjectivesTrackerState &&
+        (identical(other.objectivesToDo, objectivesToDo) ||
+          const DeepCollectionEquality()
+            .equals(other.objectivesToDo, objectivesToDo)) &&
+        (identical(other.isFinished, isFinished) ||
+          const DeepCollectionEquality()
+            .equals(other.isFinished, isFinished)));
   }
 
   @override
@@ -432,11 +437,13 @@ class _$_ObjectivesTrackerState implements _ObjectivesTrackerState {
 abstract class _ObjectivesTrackerState implements ObjectivesTrackerState {
   const factory _ObjectivesTrackerState({@required KtList<Objective> objectivesToDo,
     @required bool isFinished}) = _$_ObjectivesTrackerState;
-
+  
   @override
   KtList<Objective> get objectivesToDo;
+  
   @override
   bool get isFinished;
+  
   @override
   _$ObjectivesTrackerStateCopyWith<_ObjectivesTrackerState> get copyWith;
 }

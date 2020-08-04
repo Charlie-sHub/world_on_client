@@ -53,19 +53,6 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     );
   }
 
-  Stream<RegistrationFormState> onPasswordConfirmationChanged(_PasswordConfirmationChanged event) async* {
-    yield state.copyWith(
-      passwordConfirmator: PasswordConfirmator(
-        password: state.user.password.value.fold(
-          (failure) => "",
-          id,
-        ),
-        confirmation: event.passwordConfirmation,
-      ),
-      failureOrSuccessOption: none(),
-    );
-  }
-
   Stream<RegistrationFormState> onSubmitted(_Submitted event) async* {
     Either<Failure, Unit> _failureOrUnit;
     yield state.copyWith(
@@ -126,10 +113,28 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     );
   }
 
+  Stream<RegistrationFormState> onPasswordConfirmationChanged(_PasswordConfirmationChanged event) async* {
+    yield state.copyWith(
+      passwordConfirmator: PasswordConfirmator(
+        password: state.user.password.value.fold(
+          (failure) => "",
+          id,
+        ),
+        confirmation: event.passwordConfirmation,
+      ),
+      passwordToCompare: event.passwordConfirmation,
+      failureOrSuccessOption: none(),
+    );
+  }
+
   Stream<RegistrationFormState> onPasswordChanged(_PasswordChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         password: Password(event.password),
+      ),
+      passwordConfirmator: PasswordConfirmator(
+        password: event.password,
+        confirmation: state.passwordToCompare,
       ),
       failureOrSuccessOption: none(),
     );

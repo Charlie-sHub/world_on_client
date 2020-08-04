@@ -11,7 +11,7 @@ class Password extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
   // Just chose a number that seemed sensible in the moment, nothing especial
-  static const maxLength = 40;
+  static const maxLength = 41;
 
   factory Password(String input) {
     assert(input != null);

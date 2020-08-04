@@ -112,10 +112,12 @@ abstract class $CoreDataFailureCopyWith<T, $Res> {
   factory $CoreDataFailureCopyWith(CoreDataFailure<T> value, $Res Function(CoreDataFailure<T>) then) = _$CoreDataFailureCopyWithImpl<T, $Res>;
 }
 
-class _$CoreDataFailureCopyWithImpl<T, $Res> implements $CoreDataFailureCopyWith<T, $Res> {
+class _$CoreDataFailureCopyWithImpl<T, $Res>
+  implements $CoreDataFailureCopyWith<T, $Res> {
   _$CoreDataFailureCopyWithImpl(this._value, this._then);
-
+  
   final CoreDataFailure<T> _value;
+  
   // ignore: unused_field
   final $Res Function(CoreDataFailure<T>) _then;
 }
@@ -123,6 +125,7 @@ class _$CoreDataFailureCopyWithImpl<T, $Res> implements $CoreDataFailureCopyWith
 abstract class $ServerErrorCopyWith<T, $Res> {
   factory $ServerErrorCopyWith(ServerError<T> value, $Res Function(ServerError<T>) then) =
   _$ServerErrorCopyWithImpl<T, $Res>;
+  
   $Res call({String errorString});
 }
 
@@ -130,10 +133,10 @@ class _$ServerErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T
   implements $ServerErrorCopyWith<T, $Res> {
   _$ServerErrorCopyWithImpl(ServerError<T> _value, $Res Function(ServerError<T>) _then)
     : super(_value, (v) => _then(v as ServerError<T>));
-
+  
   @override
   ServerError<T> get _value => super._value as ServerError<T>;
-
+  
   @override
   $Res call({
     Object errorString = freezed,
@@ -271,7 +274,7 @@ class _$NotFoundErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl
   implements $NotFoundErrorCopyWith<T, $Res> {
   _$NotFoundErrorCopyWithImpl(NotFoundError<T> _value, $Res Function(NotFoundError<T>) _then)
     : super(_value, (v) => _then(v as NotFoundError<T>));
-
+  
   @override
   NotFoundError<T> get _value => super._value as NotFoundError<T>;
 }
@@ -380,6 +383,7 @@ abstract class NotFoundError<T> implements CoreDataFailure<T> {
 abstract class $CacheErrorCopyWith<T, $Res> {
   factory $CacheErrorCopyWith(CacheError<T> value, $Res Function(CacheError<T>) then) =
   _$CacheErrorCopyWithImpl<T, $Res>;
+  
   $Res call({String errorString});
 }
 
@@ -387,10 +391,10 @@ class _$CacheErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T,
   implements $CacheErrorCopyWith<T, $Res> {
   _$CacheErrorCopyWithImpl(CacheError<T> _value, $Res Function(CacheError<T>) _then)
     : super(_value, (v) => _then(v as CacheError<T>));
-
+  
   @override
   CacheError<T> get _value => super._value as CacheError<T>;
-
+  
   @override
   $Res call({
     Object errorString = freezed,
@@ -522,6 +526,7 @@ abstract class CacheError<T> implements CoreDataFailure<T> {
 abstract class $GeoLocationErrorCopyWith<T, $Res> {
   factory $GeoLocationErrorCopyWith(GeoLocationError<T> value, $Res Function(GeoLocationError<T>) then) =
   _$GeoLocationErrorCopyWithImpl<T, $Res>;
+  
   $Res call({String errorString});
 }
 
@@ -529,10 +534,10 @@ class _$GeoLocationErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithI
   implements $GeoLocationErrorCopyWith<T, $Res> {
   _$GeoLocationErrorCopyWithImpl(GeoLocationError<T> _value, $Res Function(GeoLocationError<T>) _then)
     : super(_value, (v) => _then(v as GeoLocationError<T>));
-
+  
   @override
   GeoLocationError<T> get _value => super._value as GeoLocationError<T>;
-
+  
   @override
   $Res call({
     Object errorString = freezed,
@@ -674,10 +679,10 @@ class _$UsernameAlreadyInUseCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyW
   _$UsernameAlreadyInUseCopyWithImpl(UsernameAlreadyInUse<T> _value,
     $Res Function(UsernameAlreadyInUse<T>) _then)
     : super(_value, (v) => _then(v as UsernameAlreadyInUse<T>));
-
+  
   @override
   UsernameAlreadyInUse<T> get _value => super._value as UsernameAlreadyInUse<T>;
-
+  
   @override
   $Res call({
     Object username = freezed,
@@ -818,10 +823,10 @@ class _$EmailAlreadyInUseCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWith
   implements $EmailAlreadyInUseCopyWith<T, $Res> {
   _$EmailAlreadyInUseCopyWithImpl(EmailAlreadyInUse<T> _value, $Res Function(EmailAlreadyInUse<T>) _then)
     : super(_value, (v) => _then(v as EmailAlreadyInUse<T>));
-
+  
   @override
   EmailAlreadyInUse<T> get _value => super._value as EmailAlreadyInUse<T>;
-
+  
   @override
   $Res call({
     Object email = freezed,
@@ -952,6 +957,7 @@ abstract class EmailAlreadyInUse<T> implements CoreDataFailure<T> {
 abstract class $NameAlreadyInUseCopyWith<T, $Res> {
   factory $NameAlreadyInUseCopyWith(NameAlreadyInUse<T> value, $Res Function(NameAlreadyInUse<T>) then) =
   _$NameAlreadyInUseCopyWithImpl<T, $Res>;
+  
   $Res call({Name name});
 }
 
@@ -959,10 +965,10 @@ class _$NameAlreadyInUseCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithI
   implements $NameAlreadyInUseCopyWith<T, $Res> {
   _$NameAlreadyInUseCopyWithImpl(NameAlreadyInUse<T> _value, $Res Function(NameAlreadyInUse<T>) _then)
     : super(_value, (v) => _then(v as NameAlreadyInUse<T>));
-
+  
   @override
   NameAlreadyInUse<T> get _value => super._value as NameAlreadyInUse<T>;
-
+  
   @override
   $Res call({
     Object name = freezed,

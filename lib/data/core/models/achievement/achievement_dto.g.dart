@@ -18,24 +18,21 @@ _$_AchievementDto _$_$_AchievementDtoFromJson(Map<String, dynamic> json) {
     creator: json['creator'] == null ? null : UserDto.fromJson(json['creator'] as Map<String, dynamic>),
     creationDate: json['creationDate'] as String,
     modificationDate: json['modificationDate'] as String,
-    tags: (json['tags'] as List)
-      ?.map((e) =>
-    e == null ? null : TagDto.fromJson(e as Map<String, dynamic>))
-      ?.toSet(),
+    tags: (json['tags'] as List)?.map((e) => e == null ? null : TagDto.fromJson(e as Map<String, dynamic>))?.toSet(),
   );
 }
 
 Map<String, dynamic> _$_$_AchievementDtoToJson(_$_AchievementDto instance) =>
   <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'description': instance.description,
-      'imageURL': instance.imageURL,
-      'type': instance.type,
-      'requisite': instance.requisite,
-      'experiencePoints': instance.experiencePoints,
-      'creator': instance.creator,
-      'creationDate': instance.creationDate,
-      'modificationDate': instance.modificationDate,
+    'id': instance.id,
+    'name': instance.name,
+    'description': instance.description,
+    'imageURL': instance.imageURL,
+    'type': instance.type,
+    'requisite': instance.requisite,
+    'experiencePoints': instance.experiencePoints,
+    'creator': instance.creator,
+    'creationDate': instance.creationDate,
+    'modificationDate': instance.modificationDate,
       'tags': instance.tags?.toList(),
     };
