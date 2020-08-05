@@ -247,7 +247,7 @@ class _$_AllObjectivesAccomplished implements _AllObjectivesAccomplished {
           const DeepCollectionEquality()
             .equals(other.experience, experience)));
   }
-
+  
   @override
   int get hashCode =>
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
@@ -257,7 +257,7 @@ class _$_AllObjectivesAccomplished implements _AllObjectivesAccomplished {
   get copyWith =>
     __$AllObjectivesAccomplishedCopyWithImpl<_AllObjectivesAccomplished>(
       this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({

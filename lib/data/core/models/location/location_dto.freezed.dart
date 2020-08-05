@@ -138,7 +138,7 @@ class _$_LocationDto extends _LocationDto {
   
   factory _$_LocationDto.fromJson(Map<String, dynamic> json) =>
     _$_$_LocationDtoFromJson(json);
-
+  
   @override
   final int id;
   @override
@@ -213,8 +213,10 @@ abstract class _LocationDto extends LocationDto {
   
   @override
   String get country;
+  
   @override
   String get postalCode;
+  
   @override
   Set<ExperienceDto> get experiences;
   @override

@@ -316,6 +316,7 @@ class _$_AchievementDto extends _AchievementDto {
 
 abstract class _AchievementDto extends AchievementDto {
   const _AchievementDto._() : super._();
+  
   const factory _AchievementDto({@required int id,
     @required String name,
     @required String description,
@@ -327,14 +328,16 @@ abstract class _AchievementDto extends AchievementDto {
     @required String creationDate,
     @required String modificationDate,
     @required Set<TagDto> tags}) = _$_AchievementDto;
-
+  
   factory _AchievementDto.fromJson(Map<String, dynamic> json) =
   _$_AchievementDto.fromJson;
-
+  
   @override
   int get id;
+  
   @override
   String get name;
+  
   @override
   String get description;
   @override

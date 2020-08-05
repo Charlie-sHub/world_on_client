@@ -161,15 +161,15 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
     final _getLoggedInUser = getIt<GetLoggedInUser>();
     final _userOption = await _getLoggedInUser(getIt<NoParams>());
     yield _userOption.fold(
-        () => state,
-        (user) =>
-        state.copyWith(
-          user: user,
-          passwordConfirmator: PasswordConfirmator(
-            password: user.password.getOrCrash(),
-            confirmation: user.password.getOrCrash(),
-          ),
+      () => state,
+      (user) => state.copyWith(
+        user: user,
+        passwordConfirmator: PasswordConfirmator(
+          password: user.password.getOrCrash(),
+          confirmation: user.password.getOrCrash(),
         ),
+        passwordToCompare: user.password.getOrCrash(),
+      ),
     );
   }
 }

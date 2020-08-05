@@ -94,7 +94,7 @@ void main() {
   );
   group(
     "${TestDescription.groupOnSuccess} updating the user fields",
-      () {
+    () {
       // TODO: Test Eula check
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the imageFile",
@@ -173,6 +173,10 @@ void main() {
             user: User.empty().copyWith(
               password: Password(password),
             ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: "",
+            ),
           ),
         ],
       );
@@ -194,6 +198,10 @@ void main() {
             user: User.empty().copyWith(
               password: Password(password),
             ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: "",
+            ),
           ),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
@@ -203,6 +211,7 @@ void main() {
               password: password,
               confirmation: password,
             ),
+            passwordToCompare: password,
           ),
         ],
       );
@@ -335,6 +344,10 @@ void main() {
               username: Name(username),
               password: Password(password),
             ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: "",
+            ),
           ),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
@@ -346,18 +359,7 @@ void main() {
               password: password,
               confirmation: password,
             ),
-          ),
-          RegistrationFormState.initial().copyWith(
-            user: User.empty().copyWith(
-              name: Name(name),
-              username: Name(username),
-              password: Password(password),
-              email: EmailAddress(emailAddress),
-            ),
-            passwordConfirmator: PasswordConfirmator(
-              password: password,
-              confirmation: password,
-            ),
+            passwordToCompare: password,
           ),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
@@ -365,12 +367,12 @@ void main() {
               username: Name(username),
               password: Password(password),
               email: EmailAddress(emailAddress),
-              birthday: PastDate(birthday),
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
               confirmation: password,
             ),
+            passwordToCompare: password,
           ),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
@@ -379,12 +381,12 @@ void main() {
               password: Password(password),
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
-              description: EntityDescription(description),
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
               confirmation: password,
             ),
+            passwordToCompare: password,
           ),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
@@ -394,12 +396,12 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
               confirmation: password,
             ),
+            passwordToCompare: password,
           ),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
@@ -410,12 +412,12 @@ void main() {
               birthday: PastDate(birthday),
               description: EntityDescription(description),
               interests: interests,
-              imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
               confirmation: password,
             ),
+            passwordToCompare: password,
           ),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
@@ -432,6 +434,24 @@ void main() {
               password: password,
               confirmation: password,
             ),
+            passwordToCompare: password,
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: User.empty().copyWith(
+              name: Name(name),
+              username: Name(username),
+              password: Password(password),
+              email: EmailAddress(emailAddress),
+              birthday: PastDate(birthday),
+              description: EntityDescription(description),
+              interests: interests,
+              imageFileOption: some(imageFile),
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
+            ),
+            passwordToCompare: password,
             acceptedEULA: true,
           ),
           RegistrationFormState.initial().copyWith(
@@ -449,6 +469,7 @@ void main() {
               password: password,
               confirmation: password,
             ),
+            passwordToCompare: password,
             acceptedEULA: true,
             isSubmitting: true,
           ),
@@ -467,8 +488,8 @@ void main() {
               password: password,
               confirmation: password,
             ),
+            passwordToCompare: password,
             acceptedEULA: true,
-            isSubmitting: false,
             showErrorMessages: true,
             failureOrSuccessOption: some(right(unit)),
           ),
@@ -607,11 +628,124 @@ void main() {
         ],
       );
     },
-    // TODO: Test the register is not possible without accepting the EULA
   );
   group(
     TestDescription.groupOnFailure,
-      () {
+    () {
+      blocTest(
+        "Registering shouldn't be possible without accepting the EULA",
+        build: () {
+          when(register.call(any)).thenAnswer((_) async => right(unit));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(thirdPartyUser));
+          return getIt<RegistrationFormBloc>();
+        },
+        act: (bloc) async {
+          bloc.add(const RegistrationFormEvent.initialized());
+          bloc.add(const RegistrationFormEvent.nameChanged(name));
+          bloc.add(const RegistrationFormEvent.usernameChanged(username));
+          bloc.add(RegistrationFormEvent.birthdayChanged(birthday));
+          bloc.add(const RegistrationFormEvent.descriptionChanged(description));
+          bloc.add(RegistrationFormEvent.interestsChanged(interests));
+          bloc.add(const RegistrationFormEvent.submitted());
+        },
+        verify: (_) async {
+          verify(getLoggedInUser.call(any));
+          verifyNever(register.call(any));
+        },
+        expect: [
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser,
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
+            ),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser.copyWith(
+              name: Name(name),
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
+            ),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser.copyWith(
+              name: Name(name),
+              username: Name(username),
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
+            ),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser.copyWith(
+              name: Name(name),
+              username: Name(username),
+              birthday: PastDate(birthday),
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
+            ),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser.copyWith(
+              name: Name(name),
+              username: Name(username),
+              birthday: PastDate(birthday),
+              description: EntityDescription(description),
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
+            ),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser.copyWith(
+              name: Name(name),
+              username: Name(username),
+              birthday: PastDate(birthday),
+              description: EntityDescription(description),
+              interests: interests,
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
+            ),
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser.copyWith(
+              name: Name(name),
+              username: Name(username),
+              email: EmailAddress(emailAddress),
+              birthday: PastDate(birthday),
+              description: EntityDescription(description),
+              interests: interests,
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
+            ),
+            isSubmitting: true,
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: thirdPartyUser.copyWith(
+              name: Name(name),
+              username: Name(username),
+              birthday: PastDate(birthday),
+              description: EntityDescription(description),
+              interests: interests,
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: password,
+            ),
+            showErrorMessages: true,
+          ),
+        ],
+      );
       blocTest(
         "${TestDescription.shouldEmitFailure} when submitting with a third party User",
         build: () {
@@ -788,6 +922,10 @@ void main() {
               username: Name(username),
               password: Password(password),
             ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: "",
+            ),
           ),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
@@ -799,18 +937,7 @@ void main() {
               password: password,
               confirmation: differentPassword,
             ),
-          ),
-          RegistrationFormState.initial().copyWith(
-            user: User.empty().copyWith(
-              name: Name(name),
-              username: Name(username),
-              password: Password(password),
-              email: EmailAddress(emailAddress),
-            ),
-            passwordConfirmator: PasswordConfirmator(
-              password: password,
-              confirmation: differentPassword,
-            ),
+            passwordToCompare: differentPassword,
           ),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
@@ -818,12 +945,12 @@ void main() {
               username: Name(username),
               password: Password(password),
               email: EmailAddress(emailAddress),
-              birthday: PastDate(birthday),
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
               confirmation: differentPassword,
             ),
+            passwordToCompare: differentPassword,
           ),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
@@ -832,12 +959,12 @@ void main() {
               password: Password(password),
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
-              description: EntityDescription(description),
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
               confirmation: differentPassword,
             ),
+            passwordToCompare: differentPassword,
           ),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
@@ -847,12 +974,12 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
               confirmation: differentPassword,
             ),
+            passwordToCompare: differentPassword,
           ),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
@@ -863,12 +990,12 @@ void main() {
               birthday: PastDate(birthday),
               description: EntityDescription(description),
               interests: interests,
-              imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
               confirmation: differentPassword,
             ),
+            passwordToCompare: differentPassword,
           ),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
@@ -885,6 +1012,24 @@ void main() {
               password: password,
               confirmation: differentPassword,
             ),
+            passwordToCompare: differentPassword,
+          ),
+          RegistrationFormState.initial().copyWith(
+            user: User.empty().copyWith(
+              name: Name(name),
+              username: Name(username),
+              password: Password(password),
+              email: EmailAddress(emailAddress),
+              birthday: PastDate(birthday),
+              description: EntityDescription(description),
+              interests: interests,
+              imageFileOption: some(imageFile),
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: password,
+              confirmation: differentPassword,
+            ),
+            passwordToCompare: differentPassword,
             acceptedEULA: true,
           ),
           RegistrationFormState.initial().copyWith(
@@ -902,6 +1047,7 @@ void main() {
               password: password,
               confirmation: differentPassword,
             ),
+            passwordToCompare: differentPassword,
             acceptedEULA: true,
             isSubmitting: true,
           ),
@@ -920,6 +1066,7 @@ void main() {
               password: password,
               confirmation: differentPassword,
             ),
+            passwordToCompare: differentPassword,
             acceptedEULA: true,
             showErrorMessages: true,
           ),

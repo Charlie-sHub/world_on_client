@@ -51,11 +51,17 @@ class ProfileEditingForm extends StatelessWidget {
                       ),
                     ],
                   ),
+                  const SizedBox(height: 8),
                   const DescriptionTextFormField(),
+                  const SizedBox(height: 8),
                   const EmailTextField(),
-                  const BirthdayPicker(), // Maybe the password should be changed in Option or in some more special way
+                  const SizedBox(height: 8),
+                  const BirthdayPicker(),
+                  const SizedBox(height: 8),
+                  // Maybe the password should be changed in Option or in some more special way
                   const PasswordTextField(),
                   const PasswordConfirmationTextField(),
+                  const SizedBox(height: 8),
                   const SubmitButton(),
                 ],
               ),
@@ -70,18 +76,16 @@ class ProfileEditingForm extends StatelessWidget {
     return FlushbarHelper.createError(
       duration: const Duration(seconds: 2),
       message: failure.maybeMap(
-        coreData: (failure) =>
-          failure.coreDataFailure.maybeMap(
-            serverError: (failure) => failure.errorString,
-            emailAlreadyInUse: (_) => "The email is already in use",
-            usernameAlreadyInUse: (_) => "The username is already in use",
-            orElse: () => StringConst.unknownError,
-          ),
-        coreDomain: (failure) =>
-          failure.coreDomainFailure.maybeMap(
-            unAuthorizedError: (_) => StringConst.unauthorizedError,
-            orElse: () => StringConst.unknownError,
-          ),
+        coreData: (failure) => failure.coreDataFailure.maybeMap(
+          serverError: (failure) => failure.errorString,
+          emailAlreadyInUse: (_) => "The email is already in use",
+          usernameAlreadyInUse: (_) => "The username is already in use",
+          orElse: () => StringConst.unknownError,
+        ),
+        coreDomain: (failure) => failure.coreDomainFailure.maybeMap(
+          unAuthorizedError: (_) => StringConst.unauthorizedError,
+          orElse: () => StringConst.unknownError,
+        ),
         orElse: () => StringConst.unknownError,
       ),
     ).show(context);
@@ -97,7 +101,7 @@ class PasswordConfirmationTextField extends StatelessWidget {
   const PasswordConfirmationTextField({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -141,7 +145,7 @@ class PasswordTextField extends StatelessWidget {
   const PasswordTextField({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -190,7 +194,7 @@ class BirthdayPicker extends StatelessWidget {
   const BirthdayPicker({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
@@ -215,7 +219,7 @@ class EmailTextField extends StatelessWidget {
   const EmailTextField({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -257,7 +261,7 @@ class SubmitButton extends StatelessWidget {
   const SubmitButton({
     Key key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return RaisedButton(

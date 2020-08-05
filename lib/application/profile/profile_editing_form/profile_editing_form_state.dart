@@ -12,7 +12,7 @@ abstract class ProfileEditingFormState with _$ProfileEditingFormState {
   }) = _ProfileEditingFormState;
 
   factory ProfileEditingFormState.initial() => ProfileEditingFormState(
-    user: User.empty(),
+        user: User.empty(),
         passwordConfirmator: PasswordConfirmator(
           password: "",
           confirmation: "",

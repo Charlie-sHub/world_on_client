@@ -26,11 +26,11 @@ class ObjectivesTrackerBloc extends Bloc<ObjectivesTrackerEvent, ObjectivesTrack
 
   Stream<ObjectivesTrackerState> onObjectiveAccomplished(_ObjectiveAccomplished event) async* {
     // Maybe it's unnecessary, but this way i make sure the list can only change where i want it to change
-    final mutableKtList = state.objectivesToDo.toMutableList();
-    mutableKtList.remove(event.objective);
+    final _mutableKtList = state.objectivesToDo.toMutableList();
+    _mutableKtList.remove(event.objective);
     yield state.copyWith(
-      objectivesToDo: mutableKtList.toList(),
-      isFinished: mutableKtList.isEmpty(),
+      objectivesToDo: _mutableKtList.toList(),
+      isFinished: _mutableKtList.isEmpty(),
     );
   }
 

@@ -180,8 +180,10 @@ abstract class _DeviceDto extends DeviceDto {
   
   @override
   String get type;
+  
   @override
   String get company;
+  
   @override
   _$DeviceDtoCopyWith<_DeviceDto> get copyWith;
 }

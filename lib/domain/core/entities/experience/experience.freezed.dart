@@ -219,8 +219,8 @@ abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
     RewardSet rewards,
     TagSet tags,
     Set<Comment> comments,
-      Set<User> likedBy,
-      Set<User> doneBy});
+    Set<User> likedBy,
+    Set<User> doneBy});
 
   @override
   $CoordinatesCopyWith<$Res> get coordinates;
@@ -311,8 +311,8 @@ class _$_Experience extends _Experience {
     @required this.rewards,
     @required this.tags,
     @required this.comments,
-      @required this.likedBy,
-      @required this.doneBy})
+    @required this.likedBy,
+    @required this.doneBy})
     : assert(title != null),
       assert(description != null),
       assert(imageURLs != null),
@@ -327,9 +327,9 @@ class _$_Experience extends _Experience {
       assert(rewards != null),
       assert(tags != null),
       assert(comments != null),
-        assert(likedBy != null),
-        assert(doneBy != null),
-        super._();
+      assert(likedBy != null),
+      assert(doneBy != null),
+      super._();
 
   @override
   final int id;
@@ -452,6 +452,7 @@ class _$_Experience extends _Experience {
 
 abstract class _Experience extends Experience {
   const _Experience._() : super._();
+  
   const factory _Experience({int id,
     @required Name title,
     @required EntityDescription description,
@@ -467,15 +468,18 @@ abstract class _Experience extends Experience {
     @required RewardSet rewards,
     @required TagSet tags,
     @required Set<Comment> comments,
-      @required Set<User> likedBy,
-      @required Set<User> doneBy}) = _$_Experience;
-
+    @required Set<User> likedBy,
+    @required Set<User> doneBy}) = _$_Experience;
+  
   @override
   int get id;
+  
   @override
   Name get title;
+  
   @override
   EntityDescription get description;
+  
   @override
   Set<String> get imageURLs;
   @override

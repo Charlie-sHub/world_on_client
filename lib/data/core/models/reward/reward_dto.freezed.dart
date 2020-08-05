@@ -184,8 +184,10 @@ abstract class _RewardDto extends RewardDto {
   
   @override
   String get description;
+  
   @override
   String get imageURL;
+  
   @override
   _$RewardDtoCopyWith<_RewardDto> get copyWith;
 }

@@ -556,7 +556,7 @@ class _$_UserDto extends _UserDto {
           (identical(other.experiencesDone, experiencesDone) ||
             const DeepCollectionEquality().equals(other.experiencesDone, experiencesDone)) &&
           (identical(other.experiencesLiked, experiencesLiked) || const DeepCollectionEquality().equals(other.experiencesLiked, experiencesLiked)) &&
-            (identical(other.experiencesToDo, experiencesToDo) || const DeepCollectionEquality().equals(other.experiencesToDo, experiencesToDo)));
+          (identical(other.experiencesToDo, experiencesToDo) || const DeepCollectionEquality().equals(other.experiencesToDo, experiencesToDo)));
   }
 
   @override

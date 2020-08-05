@@ -516,7 +516,7 @@ class _$_ExperienceNavigationTapped implements _ExperienceNavigationTapped {
           const DeepCollectionEquality()
             .equals(other.experienceOption, experienceOption)));
   }
-
+  
   @override
   int get hashCode =>
     runtimeType.hashCode ^
@@ -527,7 +527,7 @@ class _$_ExperienceNavigationTapped implements _ExperienceNavigationTapped {
   get copyWith =>
     __$ExperienceNavigationTappedCopyWithImpl<
       _ExperienceNavigationTapped>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({

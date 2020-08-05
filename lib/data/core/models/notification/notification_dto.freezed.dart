@@ -190,7 +190,7 @@ class _$_NotificationDto extends _NotificationDto {
   
   factory _$_NotificationDto.fromJson(Map<String, dynamic> json) =>
     _$_$_NotificationDtoFromJson(json);
-
+  
   @override
   final int id;
   @override

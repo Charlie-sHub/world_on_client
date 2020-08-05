@@ -250,6 +250,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
 abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   factory _$UserCopyWith(_User value, $Res Function(_User) then) =
   __$UserCopyWithImpl<$Res>;
+  
   @override
   $Res call({int id,
     Name name,
@@ -270,14 +271,14 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
     PastDate modificationDate,
     Options options,
     Set<User> blockedUsers,
-      Set<User> followedUsers,
-      Set<Device> devices,
-      Set<System> systems,
-      Set<Tag> interests,
-      Set<Achievement> achievements,
-      Set<Experience> experiencesDone,
-      Set<Experience> experiencesLiked,
-      Set<Experience> experiencesToDo});
+    Set<User> followedUsers,
+    Set<Device> devices,
+    Set<System> systems,
+    Set<Tag> interests,
+    Set<Achievement> achievements,
+    Set<Experience> experiencesDone,
+    Set<Experience> experiencesLiked,
+    Set<Experience> experiencesToDo});
 
   @override
   $OptionsCopyWith<$Res> get options;
@@ -398,14 +399,14 @@ class _$_User extends _User {
     @required this.modificationDate,
     @required this.options,
     @required this.blockedUsers,
-      @required this.followedUsers,
-      @required this.devices,
-      @required this.systems,
-      @required this.interests,
-      @required this.achievements,
-      @required this.experiencesDone,
-      @required this.experiencesLiked,
-      @required this.experiencesToDo})
+    @required this.followedUsers,
+    @required this.devices,
+    @required this.systems,
+    @required this.interests,
+    @required this.achievements,
+    @required this.experiencesDone,
+    @required this.experiencesLiked,
+    @required this.experiencesToDo})
     : assert(name != null),
       assert(username != null),
       assert(password != null),
@@ -424,15 +425,15 @@ class _$_User extends _User {
       assert(modificationDate != null),
       assert(options != null),
       assert(blockedUsers != null),
-        assert(followedUsers != null),
-        assert(devices != null),
-        assert(systems != null),
-        assert(interests != null),
-        assert(achievements != null),
-        assert(experiencesDone != null),
-        assert(experiencesLiked != null),
-        assert(experiencesToDo != null),
-        super._();
+      assert(followedUsers != null),
+      assert(devices != null),
+      assert(systems != null),
+      assert(interests != null),
+      assert(achievements != null),
+      assert(experiencesDone != null),
+      assert(experiencesLiked != null),
+      assert(experiencesToDo != null),
+      super._();
 
   @override
   final int id;
@@ -566,7 +567,7 @@ class _$_User extends _User {
           (identical(other.achievements, achievements) ||
             const DeepCollectionEquality().equals(other.achievements, achievements)) &&
           (identical(other.experiencesDone, experiencesDone) || const DeepCollectionEquality().equals(other.experiencesDone, experiencesDone)) &&
-            (identical(other.experiencesLiked, experiencesLiked) || const DeepCollectionEquality().equals(other.experiencesLiked, experiencesLiked)) &&
+          (identical(other.experiencesLiked, experiencesLiked) || const DeepCollectionEquality().equals(other.experiencesLiked, experiencesLiked)) &&
             (identical(other.experiencesToDo, experiencesToDo) || const DeepCollectionEquality().equals(other.experiencesToDo, experiencesToDo)));
   }
 
@@ -608,6 +609,7 @@ class _$_User extends _User {
 
 abstract class _User extends User {
   const _User._() : super._();
+  
   const factory _User({int id,
     @required Name name,
     @required Name username,
@@ -635,15 +637,19 @@ abstract class _User extends User {
     @required Set<Experience> experiencesDone,
     @required Set<Experience> experiencesLiked,
     @required Set<Experience> experiencesToDo}) = _$_User;
-
+  
   @override
   int get id;
+  
   @override
   Name get name;
+  
   @override
   Name get username;
+  
   @override
   Password get password;
+  
   @override
   EmailAddress get email;
   @override

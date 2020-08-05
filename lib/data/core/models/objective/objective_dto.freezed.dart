@@ -212,8 +212,10 @@ abstract class _ObjectiveDto extends ObjectiveDto {
   
   @override
   CoordinatesDto get coordinates;
+  
   @override
   String get imageURL;
+  
   @override
   _$ObjectiveDtoCopyWith<_ObjectiveDto> get copyWith;
 }

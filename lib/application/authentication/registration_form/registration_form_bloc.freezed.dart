@@ -2223,11 +2223,8 @@ const $RegistrationFormState = _$RegistrationFormStateTearOff();
 
 mixin _$RegistrationFormState {
   User get user;
-
   PasswordConfirmator get passwordConfirmator;
-
   String get passwordToCompare;
-
   bool get showErrorMessages;
   bool get isSubmitting;
   bool get acceptedEULA;
@@ -2238,8 +2235,9 @@ mixin _$RegistrationFormState {
 
 abstract class $RegistrationFormStateCopyWith<$Res> {
   factory $RegistrationFormStateCopyWith(RegistrationFormState value,
-          $Res Function(RegistrationFormState) then) =
-      _$RegistrationFormStateCopyWithImpl<$Res>;
+    $Res Function(RegistrationFormState) then) =
+  _$RegistrationFormStateCopyWithImpl<$Res>;
+  
   $Res call({User user,
     PasswordConfirmator passwordConfirmator,
     String passwordToCompare,
@@ -2247,7 +2245,7 @@ abstract class $RegistrationFormStateCopyWith<$Res> {
     bool isSubmitting,
     bool acceptedEULA,
     Option<Either<Failure, Unit>> failureOrSuccessOption});
-
+  
   $UserCopyWith<$Res> get user;
 }
 
@@ -2306,6 +2304,7 @@ abstract class _$RegistrationFormStateCopyWith<$Res>
   factory _$RegistrationFormStateCopyWith(_RegistrationFormState value,
           $Res Function(_RegistrationFormState) then) =
       __$RegistrationFormStateCopyWithImpl<$Res>;
+
   @override
   $Res call({User user,
     PasswordConfirmator passwordConfirmator,
@@ -2376,7 +2375,7 @@ class _$_RegistrationFormState implements _RegistrationFormState {
       assert(isSubmitting != null),
       assert(acceptedEULA != null),
       assert(failureOrSuccessOption != null);
-
+  
   @override
   final User user;
   @override
@@ -2400,27 +2399,27 @@ class _$_RegistrationFormState implements _RegistrationFormState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RegistrationFormState &&
-          (identical(other.user, user) ||
-            const DeepCollectionEquality().equals(other.user, user)) &&
-          (identical(other.passwordConfirmator, passwordConfirmator) ||
-            const DeepCollectionEquality()
-              .equals(other.passwordConfirmator, passwordConfirmator)) &&
-          (identical(other.passwordToCompare, passwordToCompare) ||
-            const DeepCollectionEquality()
-              .equals(other.passwordToCompare, passwordToCompare)) &&
-          (identical(other.showErrorMessages, showErrorMessages) ||
-            const DeepCollectionEquality()
-              .equals(other.showErrorMessages, showErrorMessages)) &&
-          (identical(other.isSubmitting, isSubmitting) ||
-            const DeepCollectionEquality()
-              .equals(other.isSubmitting, isSubmitting)) &&
-          (identical(other.acceptedEULA, acceptedEULA) ||
-            const DeepCollectionEquality()
-              .equals(other.acceptedEULA, acceptedEULA)) &&
-          (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-            const DeepCollectionEquality().equals(
-              other.failureOrSuccessOption, failureOrSuccessOption)));
+      (other is _RegistrationFormState &&
+        (identical(other.user, user) ||
+          const DeepCollectionEquality().equals(other.user, user)) &&
+        (identical(other.passwordConfirmator, passwordConfirmator) ||
+          const DeepCollectionEquality()
+            .equals(other.passwordConfirmator, passwordConfirmator)) &&
+        (identical(other.passwordToCompare, passwordToCompare) ||
+          const DeepCollectionEquality()
+            .equals(other.passwordToCompare, passwordToCompare)) &&
+        (identical(other.showErrorMessages, showErrorMessages) ||
+          const DeepCollectionEquality()
+            .equals(other.showErrorMessages, showErrorMessages)) &&
+        (identical(other.isSubmitting, isSubmitting) ||
+          const DeepCollectionEquality()
+            .equals(other.isSubmitting, isSubmitting)) &&
+        (identical(other.acceptedEULA, acceptedEULA) ||
+          const DeepCollectionEquality()
+            .equals(other.acceptedEULA, acceptedEULA)) &&
+        (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
+          const DeepCollectionEquality().equals(
+            other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -2430,9 +2429,9 @@ class _$_RegistrationFormState implements _RegistrationFormState {
     const DeepCollectionEquality().hash(passwordConfirmator) ^
     const DeepCollectionEquality().hash(passwordToCompare) ^
     const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(acceptedEULA) ^
-      const DeepCollectionEquality().hash(failureOrSuccessOption);
+    const DeepCollectionEquality().hash(isSubmitting) ^
+    const DeepCollectionEquality().hash(acceptedEULA) ^
+    const DeepCollectionEquality().hash(failureOrSuccessOption);
 
   @override
   _$RegistrationFormStateCopyWith<_RegistrationFormState> get copyWith =>
@@ -2449,28 +2448,25 @@ abstract class _RegistrationFormState implements RegistrationFormState {
     @required bool acceptedEULA,
     @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
   _$_RegistrationFormState;
-
+  
   @override
   User get user;
-
+  
   @override
   PasswordConfirmator get passwordConfirmator;
-
+  
   @override
   String get passwordToCompare;
-
+  
   @override
   bool get showErrorMessages;
-
+  
   @override
   bool get isSubmitting;
-
   @override
   bool get acceptedEULA;
-
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
-
   @override
   _$RegistrationFormStateCopyWith<_RegistrationFormState> get copyWith;
 }

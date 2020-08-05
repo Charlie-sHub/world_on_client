@@ -48,7 +48,7 @@ dependencies:
   # For email validation
   email_validator: ^1.0.5
   # For mapping
-  google_maps_flutter: ^0.5.28+1
+  google_maps_flutter: ^0.5.29
   # For getting the geolocation of the user
   geolocator: ^5.3.2+2
   # For Kotlin like collections

@@ -1033,7 +1033,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
   get copyWith =>
     __$PasswordConfirmationChangedCopyWithImpl<
       _PasswordConfirmationChanged>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -1987,11 +1987,8 @@ const $ProfileEditingFormState = _$ProfileEditingFormStateTearOff();
 
 mixin _$ProfileEditingFormState {
   User get user;
-
   PasswordConfirmator get passwordConfirmator;
-
   String get passwordToCompare;
-
   bool get showErrorMessages;
   bool get isSubmitting;
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
@@ -2001,15 +1998,16 @@ mixin _$ProfileEditingFormState {
 
 abstract class $ProfileEditingFormStateCopyWith<$Res> {
   factory $ProfileEditingFormStateCopyWith(ProfileEditingFormState value,
-          $Res Function(ProfileEditingFormState) then) =
-      _$ProfileEditingFormStateCopyWithImpl<$Res>;
+    $Res Function(ProfileEditingFormState) then) =
+  _$ProfileEditingFormStateCopyWithImpl<$Res>;
+  
   $Res call({User user,
     PasswordConfirmator passwordConfirmator,
     String passwordToCompare,
     bool showErrorMessages,
     bool isSubmitting,
     Option<Either<Failure, Unit>> failureOrSuccessOption});
-
+  
   $UserCopyWith<$Res> get user;
 }
 
@@ -2065,6 +2063,7 @@ abstract class _$ProfileEditingFormStateCopyWith<$Res>
   factory _$ProfileEditingFormStateCopyWith(_ProfileEditingFormState value,
           $Res Function(_ProfileEditingFormState) then) =
       __$ProfileEditingFormStateCopyWithImpl<$Res>;
+
   @override
   $Res call({User user,
     PasswordConfirmator passwordConfirmator,
@@ -2130,7 +2129,7 @@ class _$_ProfileEditingFormState implements _ProfileEditingFormState {
       assert(showErrorMessages != null),
       assert(isSubmitting != null),
       assert(failureOrSuccessOption != null);
-
+  
   @override
   final User user;
   @override
@@ -2164,9 +2163,9 @@ class _$_ProfileEditingFormState implements _ProfileEditingFormState {
           (identical(other.showErrorMessages, showErrorMessages) ||
             const DeepCollectionEquality()
               .equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)) &&
+          (identical(other.isSubmitting, isSubmitting) ||
+            const DeepCollectionEquality()
+              .equals(other.isSubmitting, isSubmitting)) &&
             (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
                     other.failureOrSuccessOption, failureOrSuccessOption)));
@@ -2179,8 +2178,8 @@ class _$_ProfileEditingFormState implements _ProfileEditingFormState {
     const DeepCollectionEquality().hash(passwordConfirmator) ^
     const DeepCollectionEquality().hash(passwordToCompare) ^
     const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(failureOrSuccessOption);
+    const DeepCollectionEquality().hash(isSubmitting) ^
+    const DeepCollectionEquality().hash(failureOrSuccessOption);
 
   @override
   _$ProfileEditingFormStateCopyWith<_ProfileEditingFormState> get copyWith =>
@@ -2196,25 +2195,23 @@ abstract class _ProfileEditingFormState implements ProfileEditingFormState {
     @required bool isSubmitting,
     @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
   _$_ProfileEditingFormState;
-
+  
   @override
   User get user;
-
+  
   @override
   PasswordConfirmator get passwordConfirmator;
-
+  
   @override
   String get passwordToCompare;
-
+  
   @override
   bool get showErrorMessages;
-
+  
   @override
   bool get isSubmitting;
-
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
-
   @override
   _$ProfileEditingFormStateCopyWith<_ProfileEditingFormState> get copyWith;
 }

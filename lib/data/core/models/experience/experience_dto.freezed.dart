@@ -213,10 +213,10 @@ abstract class _$ExperienceDtoCopyWith<$Res>
     String modificationDate,
     Set<ObjectiveDto> objectives,
     Set<RewardDto> rewards,
-      Set<TagDto> tags,
-      Set<CommentDto> comments,
-      Set<UserDto> likedBy,
-      Set<UserDto> doneBy});
+    Set<TagDto> tags,
+    Set<CommentDto> comments,
+    Set<UserDto> likedBy,
+    Set<UserDto> doneBy});
 
   @override
   $CoordinatesDtoCopyWith<$Res> get coordinates;
@@ -299,10 +299,10 @@ class _$_ExperienceDto extends _ExperienceDto {
     @required this.modificationDate,
     @required this.objectives,
     @required this.rewards,
-      @required this.tags,
-      @required this.comments,
-      @required this.likedBy,
-      @required this.doneBy})
+    @required this.tags,
+    @required this.comments,
+    @required this.likedBy,
+    @required this.doneBy})
     : assert(id != null),
       assert(title != null),
       assert(description != null),
@@ -315,11 +315,11 @@ class _$_ExperienceDto extends _ExperienceDto {
       assert(modificationDate != null),
       assert(objectives != null),
       assert(rewards != null),
-        assert(tags != null),
-        assert(comments != null),
-        assert(likedBy != null),
-        assert(doneBy != null),
-        super._();
+      assert(tags != null),
+      assert(comments != null),
+      assert(likedBy != null),
+      assert(doneBy != null),
+      super._();
 
   factory _$_ExperienceDto.fromJson(Map<String, dynamic> json) =>
     _$_$_ExperienceDtoFromJson(json);
@@ -444,6 +444,7 @@ class _$_ExperienceDto extends _ExperienceDto {
 
 abstract class _ExperienceDto extends ExperienceDto {
   const _ExperienceDto._() : super._();
+  
   const factory _ExperienceDto({@required int id,
     @required String title,
     @required String description,
@@ -456,14 +457,14 @@ abstract class _ExperienceDto extends ExperienceDto {
     @required String modificationDate,
     @required Set<ObjectiveDto> objectives,
     @required Set<RewardDto> rewards,
-      @required Set<TagDto> tags,
-      @required Set<CommentDto> comments,
-      @required Set<UserDto> likedBy,
-      @required Set<UserDto> doneBy}) = _$_ExperienceDto;
-
+    @required Set<TagDto> tags,
+    @required Set<CommentDto> comments,
+    @required Set<UserDto> likedBy,
+    @required Set<UserDto> doneBy}) = _$_ExperienceDto;
+  
   factory _ExperienceDto.fromJson(Map<String, dynamic> json) =
   _$_ExperienceDto.fromJson;
-
+  
   @override
   int get id;
   @override

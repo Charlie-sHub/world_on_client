@@ -23,8 +23,14 @@ class ExperienceManagementForm extends StatelessWidget {
           (either) => either.fold(
             (failure) => failure.maybeMap(
               coreData: (failure) => failure.coreDataFailure.maybeMap(
-                nameAlreadyInUse: (_) => FlushbarHelper.createError(duration: const Duration(seconds: 2), message: "The title is already in use").show(context),
-                serverError: (failure) => FlushbarHelper.createError(duration: const Duration(seconds: 2), message: failure.errorString).show(context),
+                nameAlreadyInUse: (_) => FlushbarHelper.createError(
+                  duration: const Duration(seconds: 2),
+                  message: "The title is already in use",
+                ).show(context),
+                serverError: (failure) => FlushbarHelper.createError(
+                  duration: const Duration(seconds: 2),
+                  message: failure.errorString,
+                ).show(context),
                 orElse: () => null,
               ),
               orElse: () => null,
@@ -85,6 +91,13 @@ class TagAdditionCard extends StatelessWidget {
             ),
           ),
           // TODO: implement tag addition
+          // Use the search by name form bloc to control the search term
+          // Use the tag search watcher to view the results
+          // Each tag card will have a button to add it to the tag selector bloc
+          // Use the tag selector to hold the set of selected tags
+          // TODO: Alternatively i could use the experience itself to hold the tags
+          // Change the experience management form to add and remove tags from the tag list it holds
+          // Limit to ten tags
         ],
       ),
     );

@@ -238,7 +238,7 @@ class _$_Achievement extends _Achievement {
       assert(modificationDate != null),
       assert(tags != null),
       super._();
-
+  
   @override
   final int id;
   @override
@@ -330,6 +330,7 @@ class _$_Achievement extends _Achievement {
 
 abstract class _Achievement extends Achievement {
   const _Achievement._() : super._();
+  
   const factory _Achievement({int id,
     @required Name name,
     @required EntityDescription description,
@@ -342,15 +343,19 @@ abstract class _Achievement extends Achievement {
     @required PastDate creationDate,
     @required PastDate modificationDate,
     @required TagSet tags}) = _$_Achievement;
-
+  
   @override
   int get id;
+  
   @override
   Name get name;
+  
   @override
   EntityDescription get description;
+  
   @override
   String get imageURL;
+  
   @override
   Option<File> get imageFile;
   @override

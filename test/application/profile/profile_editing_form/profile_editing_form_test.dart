@@ -26,15 +26,18 @@ void main() {
   EditUser editUser;
   GetLoggedInUser getLoggedInUser;
   setUpAll(
-      () {
+    () {
       configureDependencies(injectable.Environment.test);
       editUser = getIt<EditUser>();
       getLoggedInUser = getIt<GetLoggedInUser>();
     },
   );
-  const name = "test";
+  const name = "Test";
+  const nameChange = "testing";
   const username = "test";
-  const password = "test*1234";
+  const originalPassword = "abcd*1234";
+  const passwordChange = "4321*dcba";
+  const passwordConfirmation = "test*1234";
   const emailAddress = "testing@test.test";
   final birthday = DateTime.now().subtract(const Duration(days: 100000));
   const description = "For testing";
@@ -67,9 +70,10 @@ void main() {
       ProfileEditingFormState.initial().copyWith(
         user: user,
         passwordConfirmator: PasswordConfirmator(
-          password: password,
-          confirmation: password,
+          password: originalPassword,
+          confirmation: originalPassword,
         ),
+        passwordToCompare: originalPassword,
       ),
     ],
   );
@@ -91,18 +95,20 @@ void main() {
           ProfileEditingFormState.initial().copyWith(
             user: user,
             passwordConfirmator: PasswordConfirmator(
-              password: password,
-              confirmation: password,
+              password: originalPassword,
+              confirmation: originalPassword,
             ),
+            passwordToCompare: originalPassword,
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
               imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
-              password: password,
-              confirmation: password,
+              password: originalPassword,
+              confirmation: originalPassword,
             ),
+            passwordToCompare: originalPassword,
           ),
         ],
       );
@@ -114,25 +120,27 @@ void main() {
         },
         act: (bloc) async {
           bloc.add(const ProfileEditingFormEvent.initialized());
-          bloc.add(const ProfileEditingFormEvent.nameChanged(name));
+          bloc.add(const ProfileEditingFormEvent.nameChanged(nameChange));
         },
         verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
           ProfileEditingFormState.initial().copyWith(
             user: user,
             passwordConfirmator: PasswordConfirmator(
-              password: password,
-              confirmation: password,
+              password: originalPassword,
+              confirmation: originalPassword,
             ),
+            passwordToCompare: originalPassword,
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
-              name: Name(name),
+              name: Name(nameChange),
             ),
             passwordConfirmator: PasswordConfirmator(
-              password: password,
-              confirmation: password,
+              password: originalPassword,
+              confirmation: originalPassword,
             ),
+            passwordToCompare: originalPassword,
           ),
         ],
       );
@@ -151,18 +159,20 @@ void main() {
           ProfileEditingFormState.initial().copyWith(
             user: user,
             passwordConfirmator: PasswordConfirmator(
-              password: password,
-              confirmation: password,
+              password: originalPassword,
+              confirmation: originalPassword,
             ),
+            passwordToCompare: originalPassword,
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
               username: Name(username),
             ),
             passwordConfirmator: PasswordConfirmator(
-              password: password,
-              confirmation: password,
+              password: originalPassword,
+              confirmation: originalPassword,
             ),
+            passwordToCompare: originalPassword,
           ),
         ],
       );
@@ -174,25 +184,27 @@ void main() {
         },
         act: (bloc) async {
           bloc.add(const ProfileEditingFormEvent.initialized());
-          bloc.add(const ProfileEditingFormEvent.passwordChanged(password));
+          bloc.add(const ProfileEditingFormEvent.passwordChanged(passwordChange));
         },
         verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
           ProfileEditingFormState.initial().copyWith(
             user: user,
             passwordConfirmator: PasswordConfirmator(
-              password: password,
-              confirmation: password,
+              password: originalPassword,
+              confirmation: originalPassword,
             ),
+            passwordToCompare: originalPassword,
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
-              password: Password(password),
+              password: Password(passwordChange),
             ),
             passwordConfirmator: PasswordConfirmator(
-              password: password,
-              confirmation: password,
+              password: passwordChange,
+              confirmation: originalPassword,
             ),
+            passwordToCompare: originalPassword,
           ),
         ],
       );
@@ -204,23 +216,25 @@ void main() {
         },
         act: (bloc) async {
           bloc.add(const ProfileEditingFormEvent.initialized());
-          bloc.add(const ProfileEditingFormEvent.passwordChanged(password));
+          bloc.add(const ProfileEditingFormEvent.passwordConfirmationChanged(passwordConfirmation));
         },
         verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
           ProfileEditingFormState.initial().copyWith(
             user: user,
             passwordConfirmator: PasswordConfirmator(
-              password: password,
-              confirmation: password,
+              password: originalPassword,
+              confirmation: originalPassword,
             ),
+            passwordToCompare: originalPassword,
           ),
           ProfileEditingFormState.initial().copyWith(
+            user: user,
             passwordConfirmator: PasswordConfirmator(
-              password: password,
-              confirmation: password,
+              password: originalPassword,
+              confirmation: passwordConfirmation,
             ),
-            passwordToCompare: password,
+            passwordToCompare: passwordConfirmation,
           ),
         ],
       );
@@ -239,18 +253,20 @@ void main() {
           ProfileEditingFormState.initial().copyWith(
             user: user,
             passwordConfirmator: PasswordConfirmator(
-              password: password,
-              confirmation: password,
+              password: originalPassword,
+              confirmation: originalPassword,
             ),
+            passwordToCompare: originalPassword,
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
               email: EmailAddress(emailAddress),
             ),
             passwordConfirmator: PasswordConfirmator(
-              password: password,
-              confirmation: password,
+              password: originalPassword,
+              confirmation: originalPassword,
             ),
+            passwordToCompare: originalPassword,
           ),
         ],
       );
@@ -269,18 +285,20 @@ void main() {
           ProfileEditingFormState.initial().copyWith(
             user: user,
             passwordConfirmator: PasswordConfirmator(
-              password: password,
-              confirmation: password,
+              password: originalPassword,
+              confirmation: originalPassword,
             ),
+            passwordToCompare: originalPassword,
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
               birthday: PastDate(birthday),
             ),
             passwordConfirmator: PasswordConfirmator(
-              password: password,
-              confirmation: password,
+              password: originalPassword,
+              confirmation: originalPassword,
             ),
+            passwordToCompare: originalPassword,
           ),
         ],
       );
@@ -299,18 +317,20 @@ void main() {
           ProfileEditingFormState.initial().copyWith(
             user: user,
             passwordConfirmator: PasswordConfirmator(
-              password: password,
-              confirmation: password,
+              password: originalPassword,
+              confirmation: originalPassword,
             ),
+            passwordToCompare: originalPassword,
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
               description: EntityDescription(description),
             ),
             passwordConfirmator: PasswordConfirmator(
-              password: password,
-              confirmation: password,
+              password: originalPassword,
+              confirmation: originalPassword,
             ),
+            passwordToCompare: originalPassword,
           ),
         ],
       );
@@ -329,18 +349,20 @@ void main() {
           ProfileEditingFormState.initial().copyWith(
             user: user,
             passwordConfirmator: PasswordConfirmator(
-              password: password,
-              confirmation: password,
+              password: originalPassword,
+              confirmation: originalPassword,
             ),
+            passwordToCompare: originalPassword,
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
               interests: interests,
             ),
             passwordConfirmator: PasswordConfirmator(
-              password: password,
-              confirmation: password,
+              password: originalPassword,
+              confirmation: originalPassword,
             ),
+            passwordToCompare: originalPassword,
           ),
         ],
       );
@@ -355,9 +377,9 @@ void main() {
     },
     act: (bloc) async {
       bloc.add(const ProfileEditingFormEvent.initialized());
-      bloc.add(const ProfileEditingFormEvent.nameChanged(name));
+      bloc.add(const ProfileEditingFormEvent.nameChanged(nameChange));
       bloc.add(const ProfileEditingFormEvent.usernameChanged(username));
-      bloc.add(const ProfileEditingFormEvent.passwordChanged(password));
+      bloc.add(const ProfileEditingFormEvent.passwordChanged(originalPassword));
       bloc.add(const ProfileEditingFormEvent.emailAddressChanged(emailAddress));
       bloc.add(ProfileEditingFormEvent.birthdayChanged(birthday));
       bloc.add(const ProfileEditingFormEvent.descriptionChanged(description));
@@ -371,110 +393,146 @@ void main() {
     },
     expect: [
       ProfileEditingFormState.initial().copyWith(
-        user: user,
-      ),
-      ProfileEditingFormState.initial().copyWith(
         user: user.copyWith(
           name: Name(name),
         ),
-        failureOrSuccessOption: none(),
-      ),
-      ProfileEditingFormState.initial().copyWith(
-        user: user.copyWith(
-          name: Name(name),
-          username: Name(username),
+        passwordConfirmator: PasswordConfirmator(
+          password: originalPassword,
+          confirmation: originalPassword,
         ),
-        failureOrSuccessOption: none(),
+        passwordToCompare: originalPassword,
       ),
       ProfileEditingFormState.initial().copyWith(
         user: user.copyWith(
-          name: Name(name),
-          username: Name(username),
-          password: Password(password),
+          name: Name(nameChange),
         ),
-        failureOrSuccessOption: none(),
+        passwordConfirmator: PasswordConfirmator(
+          password: originalPassword,
+          confirmation: originalPassword,
+        ),
+        passwordToCompare: originalPassword,
       ),
       ProfileEditingFormState.initial().copyWith(
         user: user.copyWith(
-          name: Name(name),
+          name: Name(nameChange),
           username: Name(username),
-          password: Password(password),
+          password: Password(originalPassword),
+        ),
+        passwordConfirmator: PasswordConfirmator(
+          password: originalPassword,
+          confirmation: originalPassword,
+        ),
+        passwordToCompare: originalPassword,
+      ),
+      ProfileEditingFormState.initial().copyWith(
+        user: user.copyWith(
+          name: Name(nameChange),
+          username: Name(username),
+          password: Password(originalPassword),
           email: EmailAddress(emailAddress),
         ),
-        failureOrSuccessOption: none(),
+        passwordConfirmator: PasswordConfirmator(
+          password: originalPassword,
+          confirmation: originalPassword,
+        ),
+        passwordToCompare: originalPassword,
       ),
       ProfileEditingFormState.initial().copyWith(
         user: user.copyWith(
-          name: Name(name),
+          name: Name(nameChange),
           username: Name(username),
-          password: Password(password),
+          password: Password(originalPassword),
           email: EmailAddress(emailAddress),
           birthday: PastDate(birthday),
         ),
-        failureOrSuccessOption: none(),
+        passwordConfirmator: PasswordConfirmator(
+          password: originalPassword,
+          confirmation: originalPassword,
+        ),
+        passwordToCompare: originalPassword,
       ),
       ProfileEditingFormState.initial().copyWith(
         user: user.copyWith(
-          name: Name(name),
+          name: Name(nameChange),
           username: Name(username),
           birthday: PastDate(birthday),
-          password: Password(password),
+          password: Password(originalPassword),
           email: EmailAddress(emailAddress),
           description: EntityDescription(description),
         ),
-        failureOrSuccessOption: none(),
+        passwordConfirmator: PasswordConfirmator(
+          password: originalPassword,
+          confirmation: originalPassword,
+        ),
+        passwordToCompare: originalPassword,
       ),
       ProfileEditingFormState.initial().copyWith(
         user: user.copyWith(
-          name: Name(name),
+          name: Name(nameChange),
           username: Name(username),
           birthday: PastDate(birthday),
-          password: Password(password),
+          password: Password(originalPassword),
           email: EmailAddress(emailAddress),
           description: EntityDescription(description),
           interests: interests,
         ),
-        failureOrSuccessOption: none(),
+        passwordConfirmator: PasswordConfirmator(
+          password: originalPassword,
+          confirmation: originalPassword,
+        ),
+        passwordToCompare: originalPassword,
       ),
       ProfileEditingFormState.initial().copyWith(
         user: user.copyWith(
-          name: Name(name),
+          name: Name(nameChange),
           username: Name(username),
           birthday: PastDate(birthday),
-          password: Password(password),
+          password: Password(originalPassword),
           email: EmailAddress(emailAddress),
           description: EntityDescription(description),
           interests: interests,
           imageFileOption: some(imageFile),
         ),
-        failureOrSuccessOption: none(),
+        passwordConfirmator: PasswordConfirmator(
+          password: originalPassword,
+          confirmation: originalPassword,
+        ),
+        passwordToCompare: originalPassword,
       ),
       ProfileEditingFormState.initial().copyWith(
         user: user.copyWith(
-          name: Name(name),
+          name: Name(nameChange),
           username: Name(username),
           birthday: PastDate(birthday),
-          password: Password(password),
+          password: Password(originalPassword),
           email: EmailAddress(emailAddress),
           description: EntityDescription(description),
           interests: interests,
           imageFileOption: some(imageFile),
         ),
+        passwordConfirmator: PasswordConfirmator(
+          password: originalPassword,
+          confirmation: originalPassword,
+        ),
+        passwordToCompare: originalPassword,
         isSubmitting: true,
-        failureOrSuccessOption: none(),
       ),
       ProfileEditingFormState.initial().copyWith(
         user: user.copyWith(
-          name: Name(name),
+          name: Name(nameChange),
           username: Name(username),
           birthday: PastDate(birthday),
-          password: Password(password),
+          password: Password(originalPassword),
           email: EmailAddress(emailAddress),
           description: EntityDescription(description),
           interests: interests,
           imageFileOption: some(imageFile),
         ),
-        isSubmitting: false,
+        passwordConfirmator: PasswordConfirmator(
+          password: originalPassword,
+          confirmation: originalPassword,
+        ),
+        passwordToCompare: originalPassword,
         showErrorMessages: true,
         failureOrSuccessOption: some(right(unit)),
       ),
@@ -492,9 +550,9 @@ void main() {
         },
         act: (bloc) async {
           bloc.add(const ProfileEditingFormEvent.initialized());
-          bloc.add(const ProfileEditingFormEvent.nameChanged(name));
+          bloc.add(const ProfileEditingFormEvent.nameChanged(nameChange));
           bloc.add(const ProfileEditingFormEvent.usernameChanged(username));
-          bloc.add(const ProfileEditingFormEvent.passwordChanged(password));
+          bloc.add(const ProfileEditingFormEvent.passwordChanged(originalPassword));
           bloc.add(const ProfileEditingFormEvent.emailAddressChanged(emailAddress));
           bloc.add(ProfileEditingFormEvent.birthdayChanged(birthday));
           bloc.add(const ProfileEditingFormEvent.descriptionChanged(description));
@@ -508,110 +566,146 @@ void main() {
         },
         expect: [
           ProfileEditingFormState.initial().copyWith(
-            user: user,
-          ),
-          ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
               name: Name(name),
             ),
-            failureOrSuccessOption: none(),
-          ),
-          ProfileEditingFormState.initial().copyWith(
-            user: user.copyWith(
-              name: Name(name),
-              username: Name(username),
+            passwordConfirmator: PasswordConfirmator(
+              password: originalPassword,
+              confirmation: originalPassword,
             ),
-            failureOrSuccessOption: none(),
+            passwordToCompare: originalPassword,
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
-              name: Name(name),
-              username: Name(username),
-              password: Password(password),
+              name: Name(nameChange),
             ),
-            failureOrSuccessOption: none(),
+            passwordConfirmator: PasswordConfirmator(
+              password: originalPassword,
+              confirmation: originalPassword,
+            ),
+            passwordToCompare: originalPassword,
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
-              name: Name(name),
+              name: Name(nameChange),
               username: Name(username),
-              password: Password(password),
+              password: Password(originalPassword),
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: originalPassword,
+              confirmation: originalPassword,
+            ),
+            passwordToCompare: originalPassword,
+          ),
+          ProfileEditingFormState.initial().copyWith(
+            user: user.copyWith(
+              name: Name(nameChange),
+              username: Name(username),
+              password: Password(originalPassword),
               email: EmailAddress(emailAddress),
             ),
-            failureOrSuccessOption: none(),
+            passwordConfirmator: PasswordConfirmator(
+              password: originalPassword,
+              confirmation: originalPassword,
+            ),
+            passwordToCompare: originalPassword,
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
-              name: Name(name),
+              name: Name(nameChange),
               username: Name(username),
-              password: Password(password),
+              password: Password(originalPassword),
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
             ),
-            failureOrSuccessOption: none(),
+            passwordConfirmator: PasswordConfirmator(
+              password: originalPassword,
+              confirmation: originalPassword,
+            ),
+            passwordToCompare: originalPassword,
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
-              name: Name(name),
+              name: Name(nameChange),
               username: Name(username),
               birthday: PastDate(birthday),
-              password: Password(password),
+              password: Password(originalPassword),
               email: EmailAddress(emailAddress),
               description: EntityDescription(description),
             ),
-            failureOrSuccessOption: none(),
+            passwordConfirmator: PasswordConfirmator(
+              password: originalPassword,
+              confirmation: originalPassword,
+            ),
+            passwordToCompare: originalPassword,
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
-              name: Name(name),
+              name: Name(nameChange),
               username: Name(username),
               birthday: PastDate(birthday),
-              password: Password(password),
+              password: Password(originalPassword),
               email: EmailAddress(emailAddress),
               description: EntityDescription(description),
               interests: interests,
             ),
-            failureOrSuccessOption: none(),
+            passwordConfirmator: PasswordConfirmator(
+              password: originalPassword,
+              confirmation: originalPassword,
+            ),
+            passwordToCompare: originalPassword,
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
-              name: Name(name),
+              name: Name(nameChange),
               username: Name(username),
               birthday: PastDate(birthday),
-              password: Password(password),
+              password: Password(originalPassword),
               email: EmailAddress(emailAddress),
               description: EntityDescription(description),
               interests: interests,
               imageFileOption: some(imageFile),
             ),
-            failureOrSuccessOption: none(),
+            passwordConfirmator: PasswordConfirmator(
+              password: originalPassword,
+              confirmation: originalPassword,
+            ),
+            passwordToCompare: originalPassword,
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
-              name: Name(name),
+              name: Name(nameChange),
               username: Name(username),
               birthday: PastDate(birthday),
-              password: Password(password),
+              password: Password(originalPassword),
               email: EmailAddress(emailAddress),
               description: EntityDescription(description),
               interests: interests,
               imageFileOption: some(imageFile),
             ),
+            passwordConfirmator: PasswordConfirmator(
+              password: originalPassword,
+              confirmation: originalPassword,
+            ),
+            passwordToCompare: originalPassword,
             isSubmitting: true,
-            failureOrSuccessOption: none(),
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
-              name: Name(name),
+              name: Name(nameChange),
               username: Name(username),
-              password: Password(password),
+              password: Password(originalPassword),
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
               interests: interests,
               imageFileOption: some(imageFile),
             ),
-            isSubmitting: false,
+            passwordConfirmator: PasswordConfirmator(
+              password: originalPassword,
+              confirmation: originalPassword,
+            ),
+            passwordToCompare: originalPassword,
             showErrorMessages: true,
             failureOrSuccessOption: some(left(failure)),
           ),
@@ -626,9 +720,9 @@ void main() {
         },
         act: (bloc) async {
           bloc.add(const ProfileEditingFormEvent.initialized());
-          bloc.add(const ProfileEditingFormEvent.nameChanged(name));
+          bloc.add(const ProfileEditingFormEvent.nameChanged(nameChange));
           bloc.add(const ProfileEditingFormEvent.usernameChanged(username));
-          bloc.add(const ProfileEditingFormEvent.passwordChanged(password));
+          bloc.add(const ProfileEditingFormEvent.passwordChanged(originalPassword));
           bloc.add(const ProfileEditingFormEvent.emailAddressChanged(emailAddress));
           bloc.add(ProfileEditingFormEvent.birthdayChanged(birthday));
           bloc.add(const ProfileEditingFormEvent.descriptionChanged(description));
@@ -643,110 +737,146 @@ void main() {
         },
         expect: [
           ProfileEditingFormState.initial().copyWith(
-            user: user,
-          ),
-          ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
               name: Name(name),
             ),
-            failureOrSuccessOption: none(),
-          ),
-          ProfileEditingFormState.initial().copyWith(
-            user: user.copyWith(
-              name: Name(name),
-              username: Name(username),
+            passwordConfirmator: PasswordConfirmator(
+              password: originalPassword,
+              confirmation: originalPassword,
             ),
-            failureOrSuccessOption: none(),
+            passwordToCompare: originalPassword,
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
-              name: Name(name),
-              username: Name(username),
-              password: Password(password),
+              name: Name(nameChange),
             ),
-            failureOrSuccessOption: none(),
+            passwordConfirmator: PasswordConfirmator(
+              password: originalPassword,
+              confirmation: originalPassword,
+            ),
+            passwordToCompare: originalPassword,
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
-              name: Name(name),
+              name: Name(nameChange),
               username: Name(username),
-              password: Password(password),
+              password: Password(originalPassword),
+            ),
+            passwordConfirmator: PasswordConfirmator(
+              password: originalPassword,
+              confirmation: originalPassword,
+            ),
+            passwordToCompare: originalPassword,
+          ),
+          ProfileEditingFormState.initial().copyWith(
+            user: user.copyWith(
+              name: Name(nameChange),
+              username: Name(username),
+              password: Password(originalPassword),
               email: EmailAddress(emailAddress),
             ),
-            failureOrSuccessOption: none(),
+            passwordConfirmator: PasswordConfirmator(
+              password: originalPassword,
+              confirmation: originalPassword,
+            ),
+            passwordToCompare: originalPassword,
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
-              name: Name(name),
+              name: Name(nameChange),
               username: Name(username),
-              password: Password(password),
+              password: Password(originalPassword),
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
             ),
-            failureOrSuccessOption: none(),
+            passwordConfirmator: PasswordConfirmator(
+              password: originalPassword,
+              confirmation: originalPassword,
+            ),
+            passwordToCompare: originalPassword,
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
-              name: Name(name),
+              name: Name(nameChange),
               username: Name(username),
               birthday: PastDate(birthday),
-              password: Password(password),
+              password: Password(originalPassword),
               email: EmailAddress(emailAddress),
               description: EntityDescription(description),
             ),
-            failureOrSuccessOption: none(),
+            passwordConfirmator: PasswordConfirmator(
+              password: originalPassword,
+              confirmation: originalPassword,
+            ),
+            passwordToCompare: originalPassword,
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
-              name: Name(name),
+              name: Name(nameChange),
               username: Name(username),
               birthday: PastDate(birthday),
-              password: Password(password),
+              password: Password(originalPassword),
               email: EmailAddress(emailAddress),
               description: EntityDescription(description),
               interests: interests,
             ),
-            failureOrSuccessOption: none(),
+            passwordConfirmator: PasswordConfirmator(
+              password: originalPassword,
+              confirmation: originalPassword,
+            ),
+            passwordToCompare: originalPassword,
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
-              name: Name(name),
+              name: Name(nameChange),
               username: Name(username),
               birthday: PastDate(birthday),
-              password: Password(password),
+              password: Password(originalPassword),
               email: EmailAddress(emailAddress),
               description: EntityDescription(description),
               interests: interests,
               imageFileOption: some(imageFile),
             ),
-            failureOrSuccessOption: none(),
+            passwordConfirmator: PasswordConfirmator(
+              password: originalPassword,
+              confirmation: originalPassword,
+            ),
+            passwordToCompare: originalPassword,
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
-              name: Name(name),
+              name: Name(nameChange),
               username: Name(username),
               birthday: PastDate(birthday),
-              password: Password(password),
+              password: Password(originalPassword),
               email: EmailAddress(emailAddress),
               description: EntityDescription(description),
               interests: interests,
               imageFileOption: some(imageFile),
             ),
+            passwordConfirmator: PasswordConfirmator(
+              password: originalPassword,
+              confirmation: originalPassword,
+            ),
+            passwordToCompare: originalPassword,
             isSubmitting: true,
-            failureOrSuccessOption: none(),
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
-              name: Name(name),
+              name: Name(nameChange),
               username: Name(username),
-              password: Password(password),
+              password: Password(originalPassword),
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
               interests: interests,
               imageFileOption: some(imageFile),
             ),
-            isSubmitting: false,
+            passwordConfirmator: PasswordConfirmator(
+              password: originalPassword,
+              confirmation: originalPassword,
+            ),
+            passwordToCompare: originalPassword,
             showErrorMessages: true,
             failureOrSuccessOption: some(left(failure)),
           ),
@@ -754,15 +884,19 @@ void main() {
             user: user.copyWith(
               name: Name(name),
               username: Name(username),
-              password: Password(password),
+              password: Password(originalPassword),
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
               interests: interests,
               imageFileOption: some(imageFile),
             ),
+            passwordConfirmator: PasswordConfirmator(
+              password: originalPassword,
+              confirmation: originalPassword,
+            ),
+            passwordToCompare: originalPassword,
             showErrorMessages: true,
-            failureOrSuccessOption: none(),
           ),
         ],
       );

@@ -180,8 +180,10 @@ abstract class _SystemDto extends SystemDto {
   
   @override
   String get type;
+  
   @override
   String get company;
+  
   @override
   _$SystemDtoCopyWith<_SystemDto> get copyWith;
 }

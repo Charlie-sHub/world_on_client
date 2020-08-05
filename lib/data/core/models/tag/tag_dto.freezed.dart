@@ -154,7 +154,7 @@ class _$_TagDto extends _TagDto {
   
   factory _$_TagDto.fromJson(Map<String, dynamic> json) =>
     _$_$_TagDtoFromJson(json);
-
+  
   @override
   final int id;
   @override
