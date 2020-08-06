@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/main_feed/main_feed_watcher/main_feed_watcher_bloc.dart';
+import 'package:worldon/views/core/widget/cards/error_card.dart';
 import 'package:worldon/views/core/widget/cards/experience_card.dart';
-import 'package:worldon/views/core/widget/cards/experience_error_card.dart';
 import 'package:worldon/views/core/widget/critical_error_display.dart';
 import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
 
@@ -39,7 +39,13 @@ class MainFeedBody extends StatelessWidget {
               if (_experience.isValid) {
                 return ExperienceCard(experience: _experience);
               } else {
-                return ExperienceErrorCard(experience: _experience);
+                return ErrorCard(
+                  entityType: "Experience",
+                  valueFailure: _experience.failureOption.fold(
+                    () => "",
+                    (failure) => failure.toString(),
+                  ),
+                );
               }
             },
           ),

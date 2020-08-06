@@ -4,8 +4,8 @@ import 'package:unicorndial/unicorndial.dart';
 import 'package:worldon/application/profile/profile_users_watcher/profile_users_watcher_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
+import 'package:worldon/views/core/widget/cards/error_card.dart';
 import 'package:worldon/views/core/widget/cards/user_card.dart';
-import 'package:worldon/views/core/widget/cards/user_error_card.dart';
 import 'package:worldon/views/core/widget/critical_error_display.dart';
 import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
 
@@ -40,7 +40,13 @@ class ProfileUsersTabView extends StatelessWidget {
                 if (_user.isValid) {
                   return UserCard(user: _user);
                 } else {
-                  return UserErrorCard(user: _user);
+                  return ErrorCard(
+                    entityType: "User",
+                    valueFailure: _user.failureOption.fold(
+                      () => "",
+                      (failure) => failure.toString(),
+                    ),
+                  );
                 }
               },
             ),

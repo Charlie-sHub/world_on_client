@@ -38,20 +38,17 @@ mixin _$TagSelectorEvent {
     @required Result addedTag(Tag tag),
     @required Result removedTag(Tag tag),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addedTag(Tag tag),
     Result removedTag(Tag tag),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addedTag(_AddedTag value),
     @required Result removedTag(_RemovedTag value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addedTag(_AddedTag value),
@@ -202,7 +199,6 @@ abstract class _AddedTag implements TagSelectorEvent {
 
   @override
   Tag get tag;
-
   @override
   _$AddedTagCopyWith<_AddedTag> get copyWith;
 }
@@ -311,7 +307,6 @@ abstract class _RemovedTag implements TagSelectorEvent {
 
   @override
   Tag get tag;
-
   @override
   _$RemovedTagCopyWith<_RemovedTag> get copyWith;
 }
@@ -320,7 +315,7 @@ class _$TagSelectorStateTearOff {
   const _$TagSelectorStateTearOff();
 
 // ignore: unused_element
-  _TagSearchFormState call({@required KtList<Tag> tagsSelected}) {
+  _TagSearchFormState call({@required KtSet<Tag> tagsSelected}) {
     return _TagSearchFormState(
       tagsSelected: tagsSelected,
     );
@@ -331,7 +326,7 @@ class _$TagSelectorStateTearOff {
 const $TagSelectorState = _$TagSelectorStateTearOff();
 
 mixin _$TagSelectorState {
-  KtList<Tag> get tagsSelected;
+  KtSet<Tag> get tagsSelected;
 
   $TagSelectorStateCopyWith<TagSelectorState> get copyWith;
 }
@@ -339,7 +334,7 @@ mixin _$TagSelectorState {
 abstract class $TagSelectorStateCopyWith<$Res> {
   factory $TagSelectorStateCopyWith(TagSelectorState value, $Res Function(TagSelectorState) then) = _$TagSelectorStateCopyWithImpl<$Res>;
 
-  $Res call({KtList<Tag> tagsSelected});
+  $Res call({KtSet<Tag> tagsSelected});
 }
 
 class _$TagSelectorStateCopyWithImpl<$Res> implements $TagSelectorStateCopyWith<$Res> {
@@ -355,7 +350,7 @@ class _$TagSelectorStateCopyWithImpl<$Res> implements $TagSelectorStateCopyWith<
     Object tagsSelected = freezed,
   }) {
     return _then(_value.copyWith(
-      tagsSelected: tagsSelected == freezed ? _value.tagsSelected : tagsSelected as KtList<Tag>,
+      tagsSelected: tagsSelected == freezed ? _value.tagsSelected : tagsSelected as KtSet<Tag>,
     ));
   }
 }
@@ -364,7 +359,7 @@ abstract class _$TagSearchFormStateCopyWith<$Res> implements $TagSelectorStateCo
   factory _$TagSearchFormStateCopyWith(_TagSearchFormState value, $Res Function(_TagSearchFormState) then) = __$TagSearchFormStateCopyWithImpl<$Res>;
 
   @override
-  $Res call({KtList<Tag> tagsSelected});
+  $Res call({KtSet<Tag> tagsSelected});
 }
 
 class __$TagSearchFormStateCopyWithImpl<$Res> extends _$TagSelectorStateCopyWithImpl<$Res> implements _$TagSearchFormStateCopyWith<$Res> {
@@ -378,7 +373,7 @@ class __$TagSearchFormStateCopyWithImpl<$Res> extends _$TagSelectorStateCopyWith
     Object tagsSelected = freezed,
   }) {
     return _then(_TagSearchFormState(
-      tagsSelected: tagsSelected == freezed ? _value.tagsSelected : tagsSelected as KtList<Tag>,
+      tagsSelected: tagsSelected == freezed ? _value.tagsSelected : tagsSelected as KtSet<Tag>,
     ));
   }
 }
@@ -387,7 +382,7 @@ class _$_TagSearchFormState implements _TagSearchFormState {
   const _$_TagSearchFormState({@required this.tagsSelected}) : assert(tagsSelected != null);
 
   @override
-  final KtList<Tag> tagsSelected;
+  final KtSet<Tag> tagsSelected;
 
   @override
   String toString() {
@@ -407,10 +402,10 @@ class _$_TagSearchFormState implements _TagSearchFormState {
 }
 
 abstract class _TagSearchFormState implements TagSelectorState {
-  const factory _TagSearchFormState({@required KtList<Tag> tagsSelected}) = _$_TagSearchFormState;
-
+  const factory _TagSearchFormState({@required KtSet<Tag> tagsSelected}) = _$_TagSearchFormState;
+  
   @override
-  KtList<Tag> get tagsSelected;
+  KtSet<Tag> get tagsSelected;
 
   @override
   _$TagSearchFormStateCopyWith<_TagSearchFormState> get copyWith;

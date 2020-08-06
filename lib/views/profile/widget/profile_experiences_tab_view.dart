@@ -5,8 +5,8 @@ import 'package:unicorndial/unicorndial.dart';
 import 'package:worldon/application/profile/profile_experiences_watcher/profile_experiences_watcher_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
+import 'package:worldon/views/core/widget/cards/error_card.dart';
 import 'package:worldon/views/core/widget/cards/experience_card.dart';
-import 'package:worldon/views/core/widget/cards/experience_error_card.dart';
 import 'package:worldon/views/core/widget/critical_error_display.dart';
 import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
 
@@ -42,7 +42,13 @@ class ProfileExperiencesTabView extends StatelessWidget {
                 if (_experience.isValid) {
                   return ExperienceCard(experience: _experience);
                 } else {
-                  return ExperienceErrorCard(experience: _experience);
+                  return ErrorCard(
+                    entityType: "Experience",
+                    valueFailure: _experience.failureOption.fold(
+                      () => "",
+                      (failure) => failure.toString(),
+                    ),
+                  );
                 }
               },
             ),

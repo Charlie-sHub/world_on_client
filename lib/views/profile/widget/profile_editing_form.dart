@@ -28,42 +28,47 @@ class ProfileEditingForm extends StatelessWidget {
         ),
       ),
       builder: (context, state) => state.user.isValid
-          ? Form(
-              autovalidate: state.showErrorMessages,
-              child: ListView(
-                padding: const EdgeInsets.all(10),
-                children: <Widget>[
-                  Row(
+          ? SingleChildScrollView(
+              child: Form(
+                autovalidate: state.showErrorMessages,
+                child: Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: Column(
                     children: <Widget>[
-                      UserImagePicker(),
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.all(5),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const <Widget>[
-                              NameTextFormField(),
-                              SizedBox(height: 10),
-                              UsernameTextFormField(),
-                            ],
+                      Row(
+                        children: <Widget>[
+                          UserImagePicker(),
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.all(5),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const <Widget>[
+                                  NameTextFormField(),
+                                  SizedBox(height: 10),
+                                  UsernameTextFormField(),
+                                ],
+                              ),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
+                      const SizedBox(height: 8),
+                      const DescriptionTextFormField(),
+                      const SizedBox(height: 8),
+                      const EmailTextField(),
+                      const SizedBox(height: 8),
+                      const BirthdayPicker(),
+                      const SizedBox(height: 8),
+                      // Maybe the password should be changed in Option or in some more special way
+                      const PasswordTextField(),
+                      const PasswordConfirmationTextField(),
+                      const SizedBox(height: 8),
+                      // TODO: Add interests list
+                      const SubmitButton(),
                     ],
                   ),
-                  const SizedBox(height: 8),
-                  const DescriptionTextFormField(),
-                  const SizedBox(height: 8),
-                  const EmailTextField(),
-                  const SizedBox(height: 8),
-                  const BirthdayPicker(),
-                  const SizedBox(height: 8),
-                  // Maybe the password should be changed in Option or in some more special way
-                  const PasswordTextField(),
-                  const PasswordConfirmationTextField(),
-                  const SizedBox(height: 8),
-                  const SubmitButton(),
-                ],
+                ),
               ),
             )
           // TODO: Control for errors
@@ -105,7 +110,6 @@ class PasswordConfirmationTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      maxLengthEnforced: true,
       maxLength: 40,
       onChanged: (value) =>
         context.bloc<ProfileEditingFormBloc>().add(
@@ -149,7 +153,6 @@ class PasswordTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      maxLengthEnforced: true,
       maxLength: 40,
       onChanged: (value) =>
         context.bloc<ProfileEditingFormBloc>().add(
@@ -293,7 +296,6 @@ class DescriptionTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      maxLengthEnforced: true,
       maxLength: 300,
       initialValue: context
         .bloc<ProfileEditingFormBloc>()
@@ -341,7 +343,6 @@ class UsernameTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      maxLengthEnforced: true,
       maxLength: 50,
       initialValue: context
         .bloc<ProfileEditingFormBloc>()
@@ -388,7 +389,6 @@ class NameTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      maxLengthEnforced: true,
       maxLength: 50,
       initialValue: context
         .bloc<ProfileEditingFormBloc>()

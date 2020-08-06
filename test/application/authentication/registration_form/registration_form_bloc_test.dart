@@ -299,7 +299,7 @@ void main() {
   );
   group(
     "${TestDescription.groupOnSuccess} when submitting",
-      () {
+    () {
       blocTest(
         "${TestDescription.shouldEmitSuccess} when submitting with a new User",
         build: () {

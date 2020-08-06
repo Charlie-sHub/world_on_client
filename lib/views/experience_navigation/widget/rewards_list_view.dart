@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
+import 'package:worldon/views/core/widget/cards/error_card.dart';
 import 'package:worldon/views/core/widget/cards/reward_card.dart';
-import 'package:worldon/views/core/widget/cards/reward_error_card.dart';
 
 class RewardsListView extends StatelessWidget {
   const RewardsListView({
@@ -29,7 +29,13 @@ class RewardsListView extends StatelessWidget {
           if (_reward.isValid) {
             return RewardCard(reward: _reward);
           } else {
-            return RewardErrorCard(reward: _reward);
+            return ErrorCard(
+              entityType: "Reward",
+              valueFailure: _reward.failureOption.fold(
+                () => "",
+                (failure) => failure.toString(),
+              ),
+            );
           }
         },
       ),

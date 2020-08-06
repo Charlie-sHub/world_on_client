@@ -2,12 +2,15 @@ import 'package:dartz/dartz.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:multi_image_picker/multi_image_picker.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
+import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/common_functions/get_color_by_difficulty.dart';
 import 'package:worldon/views/core/misc/string_constants.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
+import 'package:worldon/views/core/widget/misc/tag_addition_card.dart';
 
 // TODO: How to initialize this for editing?
 // The same way the profiles are, with Option<Experience> experience
@@ -40,65 +43,40 @@ class ExperienceManagementForm extends StatelessWidget {
             (_) => null,
           ),
         ),
-        builder: (context, state) => Form(
-          autovalidate: state.showErrorMessages,
-          child: ListView(
-            padding: const EdgeInsets.all(10),
-            children: [
-              const ExperienceCreationTitle(),
-              const SizedBox(height: 10),
-              const TitleFormField(),
-              const SizedBox(height: 10),
-              const DescriptionFormField(),
-              const SizedBox(height: 10),
-              PicturesSelector(),
-              const SizedBox(height: 10),
-              // TODO: Implement the google map to get the coordinates
-              const Map(),
-              const SizedBox(height: 10),
-              const DifficultyTitle(),
-              // Ideally the DifficultySlider would also be const
-              DifficultySlider(),
-              const ObjectiveCreationCard(),
-              const RewardCreationCard(),
-              const TagAdditionCard(),
-              const FinishButton(),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class TagAdditionCard extends StatelessWidget {
-  const TagAdditionCard({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: Column(
-        children: const <Widget>[
-          Text(
-            "Tags",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: WorldOnColors.background,
-              fontSize: 15,
+        builder: (context, state) => SingleChildScrollView(
+          child: Form(
+            autovalidate: state.showErrorMessages,
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: Column(
+                children: [
+                  const ExperienceCreationTitle(),
+                  const SizedBox(height: 10),
+                  const TitleFormField(),
+                  const SizedBox(height: 10),
+                  const DescriptionFormField(),
+                  const SizedBox(height: 10),
+                  PicturesSelector(),
+                  const SizedBox(height: 10),
+                  // TODO: Implement the google map to get the coordinates
+                  const Map(),
+                  const SizedBox(height: 10),
+                  const DifficultyTitle(),
+                  // Ideally the DifficultySlider would also be const
+                  DifficultySlider(),
+                  const ObjectiveCreationCard(),
+                  const RewardCreationCard(),
+                  TagAdditionCard(
+                    tagChangeEvent: (KtSet<Tag> tags) => context.bloc<ExperienceManagementFormBloc>().add(
+                          ExperienceManagementFormEvent.tagsChanged(tags),
+                        ),
+                  ),
+                  const FinishButton(),
+                ],
+              ),
             ),
           ),
-          // TODO: implement tag addition
-          // Use the search by name form bloc to control the search term
-          // Use the tag search watcher to view the results
-          // Each tag card will have a button to add it to the tag selector bloc
-          // Use the tag selector to hold the set of selected tags
-          // TODO: Alternatively i could use the experience itself to hold the tags
-          // Change the experience management form to add and remove tags from the tag list it holds
-          // Limit to ten tags
-        ],
+        ),
       ),
     );
   }
@@ -191,7 +169,6 @@ class TitleFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      maxLengthEnforced: true,
       maxLength: 50,
       onChanged: (value) => context.bloc<ExperienceManagementFormBloc>().add(
             ExperienceManagementFormEvent.titleChanged(value),
@@ -222,7 +199,6 @@ class DescriptionFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      maxLengthEnforced: true,
       maxLength: 300,
       onChanged: (value) =>
         context.bloc<ExperienceManagementFormBloc>().add(

@@ -5,7 +5,7 @@
 // **************************************************************************
 
 import 'package:get_it/get_it.dart';
-import 'package:injectable/get_it_helper.dart';
+import 'package:injectable/injectable.dart';
 
 import 'application/achievement_management/achievement_management_actor/achievement_management_actor_bloc.dart';
 import 'application/achievement_management/achievement_management_form/achievement_management_form_bloc.dart';
@@ -217,111 +217,72 @@ import 'domain/tag_management/use_case/use_case_mocks.dart';
 
 /// Environment names
 const _test = 'test';
-const _prod = 'prod';
 const _dev = 'dev';
+const _prod = 'prod';
 
 /// adds generated dependencies
 /// to the provided [GetIt] instance
 
-void $initGetIt(GetIt g, {String environment}) {
-  final gh = GetItHelper(g, environment);
+GetIt $initGetIt(
+  GetIt get, {
+  String environment,
+  EnvironmentFilter environmentFilter,
+}) {
+  final gh = GetItHelper(get, environment, environmentFilter);
   gh.lazySingleton<AccomplishObjective>(() => MockAccomplishObjective(), registerFor: {_test});
   gh.factory<AchievementManagementActorBloc>(() => AchievementManagementActorBloc());
   gh.factory<AchievementManagementFormBloc>(() => AchievementManagementFormBloc());
   gh.factory<AchievementManagementWatcherBloc>(() => AchievementManagementWatcherBloc());
-  gh.lazySingleton<AchievementRepositoryInterface>(() => ProductionAchievementRepository(), registerFor: {_prod});
   gh.lazySingleton<AchievementRepositoryInterface>(() => DevelopmentAchievementRepository(), registerFor: {_dev});
+  gh.lazySingleton<AchievementRepositoryInterface>(() => ProductionAchievementRepository(), registerFor: {_prod});
   gh.lazySingleton<AchievementRepositoryInterface>(() => MockAchievementRepository(), registerFor: {_test});
   gh.lazySingleton<AddExperienceToLog>(() => MockAddExperienceToLog(), registerFor: {_test});
   gh.lazySingleton<AddTagToInterests>(() => MockAddTagToInterests(), registerFor: {_test});
   gh.factory<AuthenticationBloc>(() => AuthenticationBloc());
   gh.lazySingleton<AuthenticationRepositoryInterface>(() => DevelopmentAuthenticationRepository(), registerFor: {_dev});
-  gh.lazySingleton<AuthenticationRepositoryInterface>(
-      () => ProductionAuthenticationRepository(),
-      registerFor: {_prod});
-  gh.lazySingleton<AuthenticationRepositoryInterface>(
-      () => MockAuthenticationRepository(),
-      registerFor: {_test});
-  gh.lazySingleton<AwardAchievement>(
-      () => AwardAchievement(g<AchievementRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<AwardAchievement>(() => MockAwardAchievement(),
-      registerFor: {_test});
+  gh.lazySingleton<AuthenticationRepositoryInterface>(() => ProductionAuthenticationRepository(), registerFor: {_prod});
+  gh.lazySingleton<AuthenticationRepositoryInterface>(() => MockAuthenticationRepository(), registerFor: {_test});
+  gh.lazySingleton<AwardAchievement>(() => AwardAchievement(get<AchievementRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<AwardAchievement>(() => MockAwardAchievement(), registerFor: {_test});
   gh.factory<BlockActorBloc>(() => BlockActorBloc());
   gh.lazySingleton<BlockUser>(() => MockBlockUser(), registerFor: {_test});
   gh.factory<BlockedWatcherBloc>(() => BlockedWatcherBloc());
-  gh.lazySingleton<CachedCredentialsRepositoryInterface>(
-      () => MockCachedUserRepository(),
-      registerFor: {_test});
-  gh.lazySingleton<CheckNotification>(() => MockCheckNotification(),
-      registerFor: {_test});
+  gh.lazySingleton<CachedCredentialsRepositoryInterface>(() => MockCachedUserRepository(), registerFor: {_test});
+  gh.lazySingleton<CheckNotification>(() => MockCheckNotification(), registerFor: {_test});
   gh.factory<CommentActorBloc>(() => CommentActorBloc());
   gh.factory<CommentFormBloc>(() => CommentFormBloc());
-  gh.lazySingleton<CommentRepositoryInterface>(
-      () => DevelopmentCommentRepository(),
-      registerFor: {_dev});
-  gh.lazySingleton<CommentRepositoryInterface>(
-      () => ProductionCommentRepository(),
-    registerFor: {_prod});
-  gh.lazySingleton<CommentRepositoryInterface>(() => MockCommentRepository(),
-    registerFor: {_test});
+  gh.lazySingleton<CommentRepositoryInterface>(() => DevelopmentCommentRepository(), registerFor: {_dev});
+  gh.lazySingleton<CommentRepositoryInterface>(() => ProductionCommentRepository(), registerFor: {_prod});
+  gh.lazySingleton<CommentRepositoryInterface>(() => MockCommentRepository(), registerFor: {_test});
   gh.factory<CommentWatcherBloc>(() => CommentWatcherBloc());
-  gh.lazySingleton<CoreRepositoryInterface>(() => DevelopmentCoreRepository(),
-    registerFor: {_dev});
-  gh.lazySingleton<CoreRepositoryInterface>(() => ProductionCoreRepository(),
-    registerFor: {_prod});
-  gh.lazySingleton<CoreRepositoryInterface>(() => MockCoreRepository(),
-    registerFor: {_test});
-  gh.lazySingleton<CreateAchievement>(
-      () => CreateAchievement(g<AchievementRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<CreateAchievement>(() => MockCreateAchievement(),
-    registerFor: {_test});
-  gh.lazySingleton<CreateExperience>(() => MockCreateExperience(),
-    registerFor: {_test});
-  gh.lazySingleton<CreateObjectives>(() => CreateObjectives(),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<CreateObjectives>(() => MockCreateObjectives(),
-    registerFor: {_test});
+  gh.lazySingleton<CoreRepositoryInterface>(() => MockCoreRepository(), registerFor: {_test});
+  gh.lazySingleton<CoreRepositoryInterface>(() => DevelopmentCoreRepository(), registerFor: {_dev});
+  gh.lazySingleton<CoreRepositoryInterface>(() => ProductionCoreRepository(), registerFor: {_prod});
+  gh.lazySingleton<CreateAchievement>(() => CreateAchievement(get<AchievementRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<CreateAchievement>(() => MockCreateAchievement(), registerFor: {_test});
+  gh.lazySingleton<CreateExperience>(() => MockCreateExperience(), registerFor: {_test});
+  gh.lazySingleton<CreateObjectives>(() => CreateObjectives(), registerFor: {_dev, _prod});
+  gh.lazySingleton<CreateObjectives>(() => MockCreateObjectives(), registerFor: {_test});
   gh.lazySingleton<CreateTag>(() => MockCreateTag(), registerFor: {_test});
   gh.lazySingleton<Cypher>(() => Cypher(), registerFor: {_prod});
-  gh.lazySingleton<DeleteAchievement>(
-      () => DeleteAchievement(g<AchievementRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<DeleteAchievement>(() => MockDeleteAchievement(),
-    registerFor: {_test});
-  gh.lazySingleton<DeleteCache>(() => DeleteCache(g<CoreRepositoryInterface>()),
-    registerFor: {_dev, _prod});
+  gh.lazySingleton<DeleteAchievement>(() => MockDeleteAchievement(), registerFor: {_test});
+  gh.lazySingleton<DeleteAchievement>(() => DeleteAchievement(get<AchievementRepositoryInterface>()), registerFor: {_dev, _prod});
   gh.lazySingleton<DeleteCache>(() => MockDeleteCache(), registerFor: {_test});
-  gh.lazySingleton<DeleteComment>(
-      () => DeleteComment(g<CommentRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<DeleteComment>(() => MockDeleteComment(),
-    registerFor: {_test});
-  gh.lazySingleton<DeleteExperience>(() => MockDeleteExperience(),
-    registerFor: {_test});
-  gh.lazySingleton<DeleteNotification>(() => MockDeleteNotification(),
-    registerFor: {_test});
+  gh.lazySingleton<DeleteCache>(() => DeleteCache(get<CoreRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<DeleteComment>(() => MockDeleteComment(), registerFor: {_test});
+  gh.lazySingleton<DeleteComment>(() => DeleteComment(get<CommentRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<DeleteExperience>(() => MockDeleteExperience(), registerFor: {_test});
+  gh.lazySingleton<DeleteNotification>(() => MockDeleteNotification(), registerFor: {_test});
   gh.lazySingleton<DeleteTag>(() => MockDeleteTag(), registerFor: {_test});
   gh.lazySingleton<DeleteUser>(() => MockDeleteUser(), registerFor: {_test});
-  gh.lazySingleton<DeleteUserNotifications>(() => MockDeleteUserNotifications(),
-    registerFor: {_test});
-  gh.lazySingleton<DismissExperienceFromLog>(
-      () => MockDismissExperienceFromLog(),
-    registerFor: {_test});
-  gh.lazySingleton<DismissTagFromInterests>(() => MockDismissTagFromInterests(),
-    registerFor: {_test});
-  gh.lazySingleton<EditAchievement>(
-      () => EditAchievement(g<AchievementRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<EditAchievement>(() => MockEditAchievement(),
-    registerFor: {_test});
+  gh.lazySingleton<DeleteUserNotifications>(() => MockDeleteUserNotifications(), registerFor: {_test});
+  gh.lazySingleton<DismissExperienceFromLog>(() => MockDismissExperienceFromLog(), registerFor: {_test});
+  gh.lazySingleton<DismissTagFromInterests>(() => MockDismissTagFromInterests(), registerFor: {_test});
+  gh.lazySingleton<EditAchievement>(() => MockEditAchievement(), registerFor: {_test});
+  gh.lazySingleton<EditAchievement>(() => EditAchievement(get<AchievementRepositoryInterface>()), registerFor: {_dev, _prod});
   gh.lazySingleton<EditComment>(() => MockEditComment(), registerFor: {_test});
-  gh.lazySingleton<EditComment>(
-      () => EditComment(g<CommentRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<EditExperience>(() => MockEditExperience(),
-    registerFor: {_test});
+  gh.lazySingleton<EditComment>(() => EditComment(get<CommentRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<EditExperience>(() => MockEditExperience(), registerFor: {_test});
   gh.lazySingleton<EditTag>(() => MockEditTag(), registerFor: {_test});
   gh.lazySingleton<EditUser>(() => MockEditUser(), registerFor: {_test});
   gh.factory<ExperienceCardActorBloc>(() => ExperienceCardActorBloc());
@@ -329,432 +290,193 @@ void $initGetIt(GetIt g, {String environment}) {
   gh.factory<ExperienceFinishActorBloc>(() => ExperienceFinishActorBloc());
   gh.factory<ExperienceLikeActorBloc>(() => ExperienceLikeActorBloc());
   gh.factory<ExperienceLogActorBloc>(() => ExperienceLogActorBloc());
-  gh.lazySingleton<ExperienceLogRepositoryInterface>(
-      () => ProductionExperienceLogRepository(),
-    registerFor: {_prod});
-  gh.lazySingleton<ExperienceLogRepositoryInterface>(
-      () => MockExperienceLogRepository(),
-    registerFor: {_test});
-  gh.lazySingleton<ExperienceLogRepositoryInterface>(
-      () => DevelopmentExperienceLogRepository(),
-    registerFor: {_dev});
+  gh.lazySingleton<ExperienceLogRepositoryInterface>(() => ProductionExperienceLogRepository(), registerFor: {_prod});
+  gh.lazySingleton<ExperienceLogRepositoryInterface>(() => DevelopmentExperienceLogRepository(), registerFor: {_dev});
+  gh.lazySingleton<ExperienceLogRepositoryInterface>(() => MockExperienceLogRepository(), registerFor: {_test});
   gh.factory<ExperienceLogWatcherBloc>(() => ExperienceLogWatcherBloc());
-  gh.factory<ExperienceManagementActorBloc>(
-      () => ExperienceManagementActorBloc());
-  gh.factory<ExperienceManagementFormBloc>(
-      () => ExperienceManagementFormBloc());
-  gh.lazySingleton<ExperienceManagementRepositoryInterface>(
-      () => ProductionExperienceManagementRepository(),
-    registerFor: {_prod});
-  gh.lazySingleton<ExperienceManagementRepositoryInterface>(
-      () => DevelopmentExperienceManagementRepository(),
-    registerFor: {_dev});
-  gh.lazySingleton<ExperienceManagementRepositoryInterface>(
-      () => MockExperienceManagementRepository(),
-    registerFor: {_test});
-  gh.factory<ExperienceNavigationActorBloc>(
-      () => ExperienceNavigationActorBloc());
-  gh.lazySingleton<ExperienceNavigationRepositoryInterface>(
-      () => MockExperienceNavigationRepository(),
-    registerFor: {_test});
-  gh.lazySingleton<ExperienceNavigationRepositoryInterface>(
-      () => ProductionExperienceNavigationRepository(),
-    registerFor: {_prod});
-  gh.lazySingleton<ExperienceNavigationRepositoryInterface>(
-      () => DevelopmentExperienceNavigationRepository(),
-    registerFor: {_dev});
-  gh.factory<ExperienceNavigationWatcherBloc>(
-      () => ExperienceNavigationWatcherBloc());
+  gh.factory<ExperienceManagementActorBloc>(() => ExperienceManagementActorBloc());
+  gh.factory<ExperienceManagementFormBloc>(() => ExperienceManagementFormBloc());
+  gh.lazySingleton<ExperienceManagementRepositoryInterface>(() => MockExperienceManagementRepository(), registerFor: {_test});
+  gh.lazySingleton<ExperienceManagementRepositoryInterface>(() => ProductionExperienceManagementRepository(), registerFor: {_prod});
+  gh.lazySingleton<ExperienceManagementRepositoryInterface>(() => DevelopmentExperienceManagementRepository(), registerFor: {_dev});
+  gh.factory<ExperienceNavigationActorBloc>(() => ExperienceNavigationActorBloc());
+  gh.lazySingleton<ExperienceNavigationRepositoryInterface>(() => ProductionExperienceNavigationRepository(), registerFor: {_prod});
+  gh.lazySingleton<ExperienceNavigationRepositoryInterface>(() => DevelopmentExperienceNavigationRepository(), registerFor: {_dev});
+  gh.lazySingleton<ExperienceNavigationRepositoryInterface>(() => MockExperienceNavigationRepository(), registerFor: {_test});
+  gh.factory<ExperienceNavigationWatcherBloc>(() => ExperienceNavigationWatcherBloc());
   gh.lazySingleton<FillFeed>(() => MockFillFeed(), registerFor: {_test});
-  gh.lazySingleton<FillObjectiveTracker>(() => FillObjectiveTracker(),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<FillObjectiveTracker>(() => MockFillObjectiveTracker(),
-    registerFor: {_test});
-  gh.lazySingleton<FinishExperience>(() => MockFinishExperience(),
-    registerFor: {_test});
-  gh.lazySingleton<FinishExperience>(
-      () => FinishExperience(g<ExperienceNavigationRepositoryInterface>()),
-    registerFor: {_dev, _prod});
+  gh.lazySingleton<FillObjectiveTracker>(() => MockFillObjectiveTracker(), registerFor: {_test});
+  gh.lazySingleton<FillObjectiveTracker>(() => FillObjectiveTracker(), registerFor: {_dev, _prod});
+  gh.lazySingleton<FinishExperience>(() => FinishExperience(get<ExperienceNavigationRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<FinishExperience>(() => MockFinishExperience(), registerFor: {_test});
   gh.factory<FollowActorBloc>(() => FollowActorBloc());
   gh.lazySingleton<FollowUser>(() => MockFollowUser(), registerFor: {_test});
   gh.factory<FollowingWatcherBloc>(() => FollowingWatcherBloc());
-  gh.lazySingleton<GeoLocationRepositoryInterface>(
-      () => MockGeoLocationRepository(),
-    registerFor: {_test});
-  gh.lazySingleton<GeoLocationRepositoryInterface>(
-      () => ProductionGeoLocationRepository(),
-      registerFor: {_prod});
-  gh.lazySingleton<GeoLocationRepositoryInterface>(
-      () => DevelopmentGeoLocationRepository(),
-      registerFor: {_dev});
-  gh.lazySingleton<GetAchievement>(() => MockGetAchievement(),
-      registerFor: {_test});
-  gh.lazySingleton<GetAchievement>(
-      () => GetAchievement(g<AchievementRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<GetAllAchievements>(() => MockGetAllAchievements(),
-      registerFor: {_test});
-  gh.lazySingleton<GetAllAchievements>(
-      () => GetAllAchievements(g<AchievementRepositoryInterface>()),
-      registerFor: {_dev, _prod});
+  gh.lazySingleton<GeoLocationRepositoryInterface>(() => MockGeoLocationRepository(), registerFor: {_test});
+  gh.lazySingleton<GeoLocationRepositoryInterface>(() => ProductionGeoLocationRepository(), registerFor: {_prod});
+  gh.lazySingleton<GeoLocationRepositoryInterface>(() => DevelopmentGeoLocationRepository(), registerFor: {_dev});
+  gh.lazySingleton<GetAchievement>(() => MockGetAchievement(), registerFor: {_test});
+  gh.lazySingleton<GetAchievement>(() => GetAchievement(get<AchievementRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<GetAllAchievements>(() => MockGetAllAchievements(), registerFor: {_test});
+  gh.lazySingleton<GetAllAchievements>(() => GetAllAchievements(get<AchievementRepositoryInterface>()), registerFor: {_dev, _prod});
   gh.lazySingleton<GetAllTags>(() => MockGetAllTags(), registerFor: {_test});
-  gh.lazySingleton<GetCachedUser>(() => MockGetCachedUser(),
-      registerFor: {_test});
-  gh.lazySingleton<GetCachedUser>(
-      () => GetCachedUser(g<CachedCredentialsRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<GetCurrentLocation>(
-      () => GetCurrentLocation(g<GeoLocationRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<GetCurrentLocation>(() => MockGetCurrentLocation(),
-      registerFor: {_test});
-  gh.lazySingleton<GetExperience>(
-      () => GetExperience(g<ExperienceManagementRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<GetExperience>(() => MockGetExperience(),
-    registerFor: {_test});
-  gh.lazySingleton<GetExperienceComments>(
-      () => GetExperienceComments(g<CommentRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<GetExperienceComments>(() => MockGetExperienceComments(),
-    registerFor: {_test});
-  gh.lazySingleton<GetLoggedInUser>(
-      () => GetLoggedInUser(g<AuthenticationRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<GetLoggedInUser>(() => MockGetLoggedInUser(),
-    registerFor: {_test});
+  gh.lazySingleton<GetCachedUser>(() => MockGetCachedUser(), registerFor: {_test});
+  gh.lazySingleton<GetCachedUser>(() => GetCachedUser(get<CachedCredentialsRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<GetCurrentLocation>(() => GetCurrentLocation(get<GeoLocationRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<GetCurrentLocation>(() => MockGetCurrentLocation(), registerFor: {_test});
+  gh.lazySingleton<GetExperience>(() => MockGetExperience(), registerFor: {_test});
+  gh.lazySingleton<GetExperience>(() => GetExperience(get<ExperienceManagementRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<GetExperienceComments>(() => MockGetExperienceComments(), registerFor: {_test});
+  gh.lazySingleton<GetExperienceComments>(() => GetExperienceComments(get<CommentRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<GetLoggedInUser>(() => MockGetLoggedInUser(), registerFor: {_test});
+  gh.lazySingleton<GetLoggedInUser>(() => GetLoggedInUser(get<AuthenticationRepositoryInterface>()), registerFor: {_dev, _prod});
   gh.lazySingleton<GetTag>(() => MockGetTag(), registerFor: {_test});
-  gh.lazySingleton<GetTagCreator>(() => MockGetTagCreator(),
-    registerFor: {_test});
-  gh.lazySingleton<GetTagsByCreator>(() => MockGetTagsByCreator(),
-    registerFor: {_test});
-  gh.lazySingleton<GetUserAchievements>(() => MockGetUserAchievements(),
-    registerFor: {_test});
-  gh.lazySingleton<GetUserAchievements>(
-      () => GetUserAchievements(g<AchievementRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<GetUserComments>(
-      () => GetUserComments(g<CommentRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<GetUserComments>(() => MockGetUserComments(),
-    registerFor: {_test});
-  gh.lazySingleton<IsLoggedInUser>(() => IsLoggedInUser(),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<IsLoggedInUser>(() => MockIsLoggedInUser(),
-    registerFor: {_test});
-  gh.lazySingleton<LikeExperience>(
-      () => LikeExperience(g<ExperienceNavigationRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<LikeExperience>(() => MockLikeExperience(),
-    registerFor: {_test});
-  gh.lazySingleton<LoadBlockedUsers>(() => MockLoadBlockedUsers(),
-      registerFor: {_test});
-  gh.lazySingleton<LoadExperiencesCreated>(() => MockLoadExperiencesCreated(),
-      registerFor: {_test});
-  gh.lazySingleton<LoadExperiencesDone>(() => MockLoadExperiencesDone(),
-      registerFor: {_test});
-  gh.lazySingleton<LoadExperiencesLiked>(() => MockLoadExperiencesLiked(),
-      registerFor: {_test});
-  gh.lazySingleton<LoadFollowedUsers>(() => MockLoadFollowedUsers(),
-      registerFor: {_test});
-  gh.lazySingleton<LoadFollowingUsers>(() => MockLoadFollowingUsers(),
-      registerFor: {_test});
-  gh.lazySingleton<LoadNotifications>(() => MockLoadNotifications(),
-      registerFor: {_test});
-  gh.lazySingleton<LoadSurroundingExperiences>(
-      () => LoadSurroundingExperiences(
-      g<ExperienceNavigationRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<LoadSurroundingExperiences>(
-      () => MockLoadSurroundingExperiences(),
-    registerFor: {_test});
+  gh.lazySingleton<GetTagCreator>(() => MockGetTagCreator(), registerFor: {_test});
+  gh.lazySingleton<GetTagsByCreator>(() => MockGetTagsByCreator(), registerFor: {_test});
+  gh.lazySingleton<GetUserAchievements>(() => GetUserAchievements(get<AchievementRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<GetUserAchievements>(() => MockGetUserAchievements(), registerFor: {_test});
+  gh.lazySingleton<GetUserComments>(() => MockGetUserComments(), registerFor: {_test});
+  gh.lazySingleton<GetUserComments>(() => GetUserComments(get<CommentRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<IsLoggedInUser>(() => IsLoggedInUser(), registerFor: {_dev, _prod});
+  gh.lazySingleton<IsLoggedInUser>(() => MockIsLoggedInUser(), registerFor: {_test});
+  gh.lazySingleton<LikeExperience>(() => LikeExperience(get<ExperienceNavigationRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<LikeExperience>(() => MockLikeExperience(), registerFor: {_test});
+  gh.lazySingleton<LoadBlockedUsers>(() => MockLoadBlockedUsers(), registerFor: {_test});
+  gh.lazySingleton<LoadExperiencesCreated>(() => MockLoadExperiencesCreated(), registerFor: {_test});
+  gh.lazySingleton<LoadExperiencesDone>(() => MockLoadExperiencesDone(), registerFor: {_test});
+  gh.lazySingleton<LoadExperiencesLiked>(() => MockLoadExperiencesLiked(), registerFor: {_test});
+  gh.lazySingleton<LoadFollowedUsers>(() => MockLoadFollowedUsers(), registerFor: {_test});
+  gh.lazySingleton<LoadFollowingUsers>(() => MockLoadFollowingUsers(), registerFor: {_test});
+  gh.lazySingleton<LoadNotifications>(() => MockLoadNotifications(), registerFor: {_test});
+  gh.lazySingleton<LoadSurroundingExperiences>(() => LoadSurroundingExperiences(get<ExperienceNavigationRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<LoadSurroundingExperiences>(() => MockLoadSurroundingExperiences(), registerFor: {_test});
   gh.lazySingleton<LoadUser>(() => MockLoadUser(), registerFor: {_test});
-  gh.lazySingleton<LoadUserAchievements>(() => MockLoadUserAchievements(),
-    registerFor: {_test});
-  gh.lazySingleton<LoadUserInterests>(() => MockLoadUserInterests(),
-    registerFor: {_test});
+  gh.lazySingleton<LoadUserAchievements>(() => MockLoadUserAchievements(), registerFor: {_test});
+  gh.lazySingleton<LoadUserInterests>(() => MockLoadUserInterests(), registerFor: {_test});
+  gh.lazySingleton<LoadUserLog>(() => LoadUserLog(get<ExperienceLogRepositoryInterface>()), registerFor: {_dev, _prod});
   gh.lazySingleton<LoadUserLog>(() => MockLoadUserLog(), registerFor: {_test});
-  gh.lazySingleton<LoadUserLog>(
-      () => LoadUserLog(g<ExperienceLogRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<LocalOptionsRepositoryInterface>(
-      () => ProductionLocalOptionsRepository(),
-    registerFor: {_prod});
-  gh.lazySingleton<LocalOptionsRepositoryInterface>(
-      () => DevelopmentLocalOptionsRepository(),
-    registerFor: {_dev});
-  gh.lazySingleton<LocalOptionsRepositoryInterface>(
-      () => MockLocalOptionsRepository(),
-    registerFor: {_test});
-  gh.lazySingleton<LogIn>(() => LogIn(g<AuthenticationRepositoryInterface>()),
-    registerFor: {_dev, _prod});
+  gh.lazySingleton<LocalOptionsRepositoryInterface>(() => MockLocalOptionsRepository(), registerFor: {_test});
+  gh.lazySingleton<LocalOptionsRepositoryInterface>(() => DevelopmentLocalOptionsRepository(), registerFor: {_dev});
+  gh.lazySingleton<LocalOptionsRepositoryInterface>(() => ProductionLocalOptionsRepository(), registerFor: {_prod});
+  gh.lazySingleton<LogIn>(() => LogIn(get<AuthenticationRepositoryInterface>()), registerFor: {_dev, _prod});
   gh.lazySingleton<LogIn>(() => MockLogIn(), registerFor: {_test});
   gh.factory<LogInFormBloc>(() => LogInFormBloc());
   gh.lazySingleton<LogInGoogle>(() => MockLogInGoogle(), registerFor: {_test});
-  gh.lazySingleton<LogInGoogle>(
-      () => LogInGoogle(g<AuthenticationRepositoryInterface>()),
-    registerFor: {_dev, _prod});
+  gh.lazySingleton<LogInGoogle>(() => LogInGoogle(get<AuthenticationRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<LogOut>(() => LogOut(get<AuthenticationRepositoryInterface>()), registerFor: {_dev, _prod});
   gh.lazySingleton<LogOut>(() => MockLogOut(), registerFor: {_test});
-  gh.lazySingleton<LogOut>(() => LogOut(g<AuthenticationRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<MainFeedRepositoryInterface>(() => MockMainFeedRepository(),
-    registerFor: {_test});
-  gh.lazySingleton<MainFeedRepositoryInterface>(
-      () => ProductionMainFeedRepository(),
-    registerFor: {_prod});
-  gh.lazySingleton<MainFeedRepositoryInterface>(
-      () => DevelopmentMainFeedRepository(),
-    registerFor: {_dev});
+  gh.lazySingleton<MainFeedRepositoryInterface>(() => DevelopmentMainFeedRepository(), registerFor: {_dev});
+  gh.lazySingleton<MainFeedRepositoryInterface>(() => ProductionMainFeedRepository(), registerFor: {_prod});
+  gh.lazySingleton<MainFeedRepositoryInterface>(() => MockMainFeedRepository(), registerFor: {_test});
   gh.factory<MainFeedWatcherBloc>(() => MainFeedWatcherBloc());
   gh.factory<NavigationActorBloc>(() => NavigationActorBloc());
   gh.lazySingleton<NoParams>(() => NoParams());
   gh.factory<NotificationActorBloc>(() => NotificationActorBloc());
-  gh.lazySingleton<NotificationRepositoryInterface>(
-      () => ProductionNotificationRepository(),
-    registerFor: {_prod});
-  gh.lazySingleton<NotificationRepositoryInterface>(
-      () => DevelopmentNotificationRepository(),
-    registerFor: {_dev});
-  gh.lazySingleton<NotificationRepositoryInterface>(
-      () => MockNotificationRepository(),
-    registerFor: {_test});
+  gh.lazySingleton<NotificationRepositoryInterface>(() => MockNotificationRepository(), registerFor: {_test});
+  gh.lazySingleton<NotificationRepositoryInterface>(() => DevelopmentNotificationRepository(), registerFor: {_dev});
+  gh.lazySingleton<NotificationRepositoryInterface>(() => ProductionNotificationRepository(), registerFor: {_prod});
   gh.factory<NotificationsWatcherBloc>(() => NotificationsWatcherBloc());
   gh.factory<ObjectivesTrackerBloc>(() => ObjectivesTrackerBloc());
   gh.factory<OptionsFormBloc>(() => OptionsFormBloc());
+  gh.lazySingleton<PostComment>(() => PostComment(get<CommentRepositoryInterface>()), registerFor: {_dev, _prod});
   gh.lazySingleton<PostComment>(() => MockPostComment(), registerFor: {_test});
-  gh.lazySingleton<PostComment>(
-      () => PostComment(g<CommentRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.factory<ProfileAchievementsWatcherBloc>(
-      () => ProfileAchievementsWatcherBloc());
+  gh.factory<ProfileAchievementsWatcherBloc>(() => ProfileAchievementsWatcherBloc());
   gh.factory<ProfileEditingFormBloc>(() => ProfileEditingFormBloc());
-  gh.factory<ProfileExperiencesWatcherBloc>(
-      () => ProfileExperiencesWatcherBloc());
+  gh.factory<ProfileExperiencesWatcherBloc>(() => ProfileExperiencesWatcherBloc());
   gh.factory<ProfileInterestsWatcherBloc>(() => ProfileInterestsWatcherBloc());
-  gh.lazySingleton<ProfileRepositoryInterface>(
-      () => DevelopmentProfileRepository(),
-    registerFor: {_dev});
-  gh.lazySingleton<ProfileRepositoryInterface>(() => MockProfileRepository(),
-    registerFor: {_test});
-  gh.lazySingleton<ProfileRepositoryInterface>(
-      () => ProductionProfileRepository(),
-    registerFor: {_prod});
+  gh.lazySingleton<ProfileRepositoryInterface>(() => MockProfileRepository(), registerFor: {_test});
+  gh.lazySingleton<ProfileRepositoryInterface>(() => DevelopmentProfileRepository(), registerFor: {_dev});
+  gh.lazySingleton<ProfileRepositoryInterface>(() => ProductionProfileRepository(), registerFor: {_prod});
   gh.factory<ProfileUsersWatcherBloc>(() => ProfileUsersWatcherBloc());
   gh.factory<ProfileWatcherBloc>(() => ProfileWatcherBloc());
-  gh.lazySingleton<PublicKeyRepositoryInterface>(
-      () => MockPublicKeyRepository(),
-    registerFor: {_test});
-  gh.lazySingleton<RateDifficulty>(() => MockRateDifficulty(),
-    registerFor: {_test});
-  gh.lazySingleton<RateDifficulty>(
-      () => RateDifficulty(g<ExperienceNavigationRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.factory<RateExperienceDifficultyActorBloc>(
-      () => RateExperienceDifficultyActorBloc());
-  gh.lazySingleton<Register>(
-      () => Register(g<AuthenticationRepositoryInterface>()),
-    registerFor: {_dev, _prod});
+  gh.lazySingleton<PublicKeyRepositoryInterface>(() => MockPublicKeyRepository(), registerFor: {_test});
+  gh.lazySingleton<RateDifficulty>(() => RateDifficulty(get<ExperienceNavigationRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<RateDifficulty>(() => MockRateDifficulty(), registerFor: {_test});
+  gh.factory<RateExperienceDifficultyActorBloc>(() => RateExperienceDifficultyActorBloc());
   gh.lazySingleton<Register>(() => MockRegister(), registerFor: {_test});
+  gh.lazySingleton<Register>(() => Register(get<AuthenticationRepositoryInterface>()), registerFor: {_dev, _prod});
   gh.factory<RegistrationFormBloc>(() => RegistrationFormBloc());
-  gh.lazySingleton<RemoteOptionsRepositoryInterface>(
-      () => ProductionRemoteOptionsRepository(),
-    registerFor: {_prod});
-  gh.lazySingleton<RemoteOptionsRepositoryInterface>(
-      () => DevelopmentRemoteOptionsRepository(),
-    registerFor: {_dev});
-  gh.lazySingleton<RemoteOptionsRepositoryInterface>(
-      () => MockRemoteOptionsRepository(),
-    registerFor: {_test});
-  gh.lazySingleton<RemoveExperienceLiked>(
-      () => RemoveExperienceLiked(g<ProfileRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<RemoveExperienceLiked>(() => MockRemoveExperienceLiked(),
-    registerFor: {_test});
+  gh.lazySingleton<RemoteOptionsRepositoryInterface>(() => DevelopmentRemoteOptionsRepository(), registerFor: {_dev});
+  gh.lazySingleton<RemoteOptionsRepositoryInterface>(() => ProductionRemoteOptionsRepository(), registerFor: {_prod});
+  gh.lazySingleton<RemoteOptionsRepositoryInterface>(() => MockRemoteOptionsRepository(), registerFor: {_test});
+  gh.lazySingleton<RemoveExperienceLiked>(() => RemoveExperienceLiked(get<ProfileRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<RemoveExperienceLiked>(() => MockRemoveExperienceLiked(), registerFor: {_test});
+  gh.lazySingleton<RewardUser>(() => RewardUser(get<ExperienceNavigationRepositoryInterface>()), registerFor: {_dev, _prod});
   gh.lazySingleton<RewardUser>(() => MockRewardUser(), registerFor: {_test});
-  gh.lazySingleton<RewardUser>(
-      () => RewardUser(g<ExperienceNavigationRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<SaveGlobalOptions>(
-      () => SaveGlobalOptions(g<RemoteOptionsRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<SaveGlobalOptions>(() => MockSaveGlobalOptions(),
-    registerFor: {_test});
+  gh.lazySingleton<SaveGlobalOptions>(() => SaveGlobalOptions(get<RemoteOptionsRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<SaveGlobalOptions>(() => MockSaveGlobalOptions(), registerFor: {_test});
   gh.factory<SearchByNameFormBloc>(() => SearchByNameFormBloc());
-  gh.lazySingleton<SearchExperiencesByDifficulty>(
-      () => MockSearchExperiencesByDifficulty(),
-      registerFor: {_test});
-  gh.factory<SearchExperiencesByDifficultyBloc>(
-      () => SearchExperiencesByDifficultyBloc());
-  gh.lazySingleton<SearchExperiencesByName>(() => MockSearchExperiencesByName(),
-    registerFor: {_test});
-  gh.factory<SearchExperiencesByNameWatcherBloc>(
-      () => SearchExperiencesByNameWatcherBloc());
-  gh.lazySingleton<SearchExperiencesByTags>(() => MockSearchExperiencesByTags(),
-    registerFor: {_test});
+  gh.lazySingleton<SearchExperiencesByDifficulty>(() => MockSearchExperiencesByDifficulty(), registerFor: {_test});
+  gh.factory<SearchExperiencesByDifficultyBloc>(() => SearchExperiencesByDifficultyBloc());
+  gh.lazySingleton<SearchExperiencesByName>(() => MockSearchExperiencesByName(), registerFor: {_test});
+  gh.factory<SearchExperiencesByNameWatcherBloc>(() => SearchExperiencesByNameWatcherBloc());
+  gh.lazySingleton<SearchExperiencesByTags>(() => MockSearchExperiencesByTags(), registerFor: {_test});
   gh.factory<SearchExperiencesByTagsBloc>(() => SearchExperiencesByTagsBloc());
-  gh.lazySingleton<SearchRepositoryInterface>(
-      () => ProductionSearchRepository(),
-    registerFor: {_prod});
-  gh.lazySingleton<SearchRepositoryInterface>(() => MockSearchRepository(),
-    registerFor: {_test});
-  gh.lazySingleton<SearchRepositoryInterface>(
-      () => DevelopmentSearchRepository(),
-    registerFor: {_dev});
-  gh.lazySingleton<SearchTagsByName>(
-      () => SearchTagsByName(g<SearchRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<SearchTagsByName>(() => MockSearchTagsByName(),
-    registerFor: {_test});
+  gh.lazySingleton<SearchRepositoryInterface>(() => ProductionSearchRepository(), registerFor: {_prod});
+  gh.lazySingleton<SearchRepositoryInterface>(() => DevelopmentSearchRepository(), registerFor: {_dev});
+  gh.lazySingleton<SearchRepositoryInterface>(() => MockSearchRepository(), registerFor: {_test});
+  gh.lazySingleton<SearchTagsByName>(() => SearchTagsByName(get<SearchRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<SearchTagsByName>(() => MockSearchTagsByName(), registerFor: {_test});
   gh.factory<SearchTagsByNameWatcherBloc>(() => SearchTagsByNameWatcherBloc());
-  gh.lazySingleton<SearchUsersByName>(
-      () => SearchUsersByName(g<SearchRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<SearchUsersByName>(() => MockSearchUsersByName(),
-    registerFor: {_test});
-  gh.factory<SearchUsersByNameWatcherBloc>(
-      () => SearchUsersByNameWatcherBloc());
-  gh.lazySingleton<SearchUsersByUsername>(() => MockSearchUsersByUsername(),
-    registerFor: {_test});
-  gh.lazySingleton<SearchUsersByUsername>(
-      () => SearchUsersByUsername(g<SearchRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<SendNotification>(
-      () => SendNotification(g<NotificationRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<SendNotification>(() => MockSendNotification(),
-    registerFor: {_test});
+  gh.lazySingleton<SearchUsersByName>(() => SearchUsersByName(get<SearchRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<SearchUsersByName>(() => MockSearchUsersByName(), registerFor: {_test});
+  gh.factory<SearchUsersByNameWatcherBloc>(() => SearchUsersByNameWatcherBloc());
+  gh.lazySingleton<SearchUsersByUsername>(() => SearchUsersByUsername(get<SearchRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<SearchUsersByUsername>(() => MockSearchUsersByUsername(), registerFor: {_test});
+  gh.lazySingleton<SendNotification>(() => SendNotification(get<NotificationRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<SendNotification>(() => MockSendNotification(), registerFor: {_test});
   gh.factory<TagCardActorBloc>(() => TagCardActorBloc());
   gh.factory<TagCardCheckBloc>(() => TagCardCheckBloc());
-  gh.lazySingleton<TagCoreRepositoryInterface>(() => MockTagRepository(),
-    registerFor: {_test});
-  gh.lazySingleton<TagCoreRepositoryInterface>(() => DevelopmentTagRepository(),
-    registerFor: {_dev});
-  gh.lazySingleton<TagCoreRepositoryInterface>(() => ProductionTagRepository(),
-    registerFor: {_prod});
+  gh.lazySingleton<TagCoreRepositoryInterface>(() => DevelopmentTagRepository(), registerFor: {_dev});
+  gh.lazySingleton<TagCoreRepositoryInterface>(() => MockTagRepository(), registerFor: {_test});
+  gh.lazySingleton<TagCoreRepositoryInterface>(() => ProductionTagRepository(), registerFor: {_prod});
   gh.factory<TagManagementActorBloc>(() => TagManagementActorBloc());
   gh.factory<TagManagementFormBloc>(() => TagManagementFormBloc());
-  gh.lazySingleton<TagManagementRepositoryInterface>(
-      () => MockTagManagementRepository(),
-    registerFor: {_test});
-  gh.lazySingleton<TagManagementRepositoryInterface>(
-      () => DevelopmentTagManagementRepository(),
-    registerFor: {_dev});
-  gh.lazySingleton<TagManagementRepositoryInterface>(
-      () => ProductionTagManagementRepository(),
-    registerFor: {_prod});
+  gh.lazySingleton<TagManagementRepositoryInterface>(() => DevelopmentTagManagementRepository(), registerFor: {_dev});
+  gh.lazySingleton<TagManagementRepositoryInterface>(() => MockTagManagementRepository(), registerFor: {_test});
+  gh.lazySingleton<TagManagementRepositoryInterface>(() => ProductionTagManagementRepository(), registerFor: {_prod});
   gh.factory<TagManagementWatcherBloc>(() => TagManagementWatcherBloc());
   gh.factory<TagSelectorBloc>(() => TagSelectorBloc());
   gh.lazySingleton<UnBlockUser>(() => MockUnBlockUser(), registerFor: {_test});
-  gh.lazySingleton<UnBlockUser>(
-      () => UnBlockUser(g<ProfileRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<UnFollowUser>(() => MockUnFollowUser(),
-    registerFor: {_test});
-  gh.lazySingleton<UnFollowUser>(
-      () => UnFollowUser(g<ProfileRepositoryInterface>()),
-    registerFor: {_dev, _prod});
+  gh.lazySingleton<UnBlockUser>(() => UnBlockUser(get<ProfileRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<UnFollowUser>(() => UnFollowUser(get<ProfileRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<UnFollowUser>(() => MockUnFollowUser(), registerFor: {_test});
   gh.factory<UserActorBloc>(() => UserActorBloc());
-  gh.lazySingleton<AddExperienceToLog>(
-      () => AddExperienceToLog(g<ExperienceLogRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<AddTagToInterests>(
-      () => AddTagToInterests(g<TagCoreRepositoryInterface>()),
-    registerFor: {_dev, _prod});
-  gh.lazySingleton<BlockUser>(() => BlockUser(g<ProfileRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<CheckNotification>(
-      () => CheckNotification(g<NotificationRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<CreateExperience>(
-      () => CreateExperience(g<ExperienceManagementRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<CreateTag>(
-      () => CreateTag(g<TagManagementRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<DeleteExperience>(
-      () => DeleteExperience(g<ProfileRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<DeleteNotification>(
-      () => DeleteNotification(g<NotificationRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<DeleteTag>(
-      () => DeleteTag(g<TagManagementRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<DeleteUser>(
-      () => DeleteUser(g<RemoteOptionsRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<DeleteUserNotifications>(
-      () => DeleteUserNotifications(g<NotificationRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<DismissExperienceFromLog>(
-      () => DismissExperienceFromLog(g<ExperienceLogRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<DismissTagFromInterests>(
-      () => DismissTagFromInterests(g<TagCoreRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<EditExperience>(
-      () => EditExperience(g<ExperienceManagementRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<EditTag>(
-      () => EditTag(g<TagManagementRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<EditUser>(() => EditUser(g<ProfileRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<FillFeed>(() => FillFeed(g<MainFeedRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<FollowUser>(
-      () => FollowUser(g<ProfileRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<GetAllTags>(
-      () => GetAllTags(g<TagCoreRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<GetPublicKey>(
-      () => GetPublicKey(g<PublicKeyRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<GetTag>(() => GetTag(g<TagManagementRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<GetTagCreator>(
-      () => GetTagCreator(g<TagCoreRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<GetTagsByCreator>(
-      () => GetTagsByCreator(g<TagCoreRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<LoadBlockedUsers>(
-      () => LoadBlockedUsers(g<ProfileRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<LoadExperiencesCreated>(
-      () => LoadExperiencesCreated(g<ProfileRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<LoadExperiencesDone>(
-      () => LoadExperiencesDone(g<ProfileRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<LoadExperiencesLiked>(
-      () => LoadExperiencesLiked(g<ProfileRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<LoadFollowedUsers>(
-      () => LoadFollowedUsers(g<ProfileRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<LoadFollowingUsers>(
-      () => LoadFollowingUsers(g<ProfileRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<LoadNotifications>(
-      () => LoadNotifications(g<NotificationRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<LoadUser>(() => LoadUser(g<ProfileRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<LoadUserAchievements>(
-      () => LoadUserAchievements(g<ProfileRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<LoadUserInterests>(
-      () => LoadUserInterests(g<ProfileRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<SearchExperiencesByDifficulty>(
-      () => SearchExperiencesByDifficulty(g<SearchRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<SearchExperiencesByName>(
-      () => SearchExperiencesByName(g<SearchRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<SearchExperiencesByTags>(
-      () => SearchExperiencesByTags(g<SearchRepositoryInterface>()),
-      registerFor: {_dev, _prod});
+  gh.lazySingleton<AddExperienceToLog>(() => AddExperienceToLog(get<ExperienceLogRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<AddTagToInterests>(() => AddTagToInterests(get<TagCoreRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<BlockUser>(() => BlockUser(get<ProfileRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<CheckNotification>(() => CheckNotification(get<NotificationRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<CreateExperience>(() => CreateExperience(get<ExperienceManagementRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<CreateTag>(() => CreateTag(get<TagManagementRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<DeleteExperience>(() => DeleteExperience(get<ProfileRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<DeleteNotification>(() => DeleteNotification(get<NotificationRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<DeleteTag>(() => DeleteTag(get<TagManagementRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<DeleteUser>(() => DeleteUser(get<RemoteOptionsRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<DeleteUserNotifications>(() => DeleteUserNotifications(get<NotificationRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<DismissExperienceFromLog>(() => DismissExperienceFromLog(get<ExperienceLogRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<DismissTagFromInterests>(() => DismissTagFromInterests(get<TagCoreRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<EditExperience>(() => EditExperience(get<ExperienceManagementRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<EditTag>(() => EditTag(get<TagManagementRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<EditUser>(() => EditUser(get<ProfileRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<FillFeed>(() => FillFeed(get<MainFeedRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<FollowUser>(() => FollowUser(get<ProfileRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<GetAllTags>(() => GetAllTags(get<TagCoreRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<GetPublicKey>(() => GetPublicKey(get<PublicKeyRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<GetTag>(() => GetTag(get<TagManagementRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<GetTagCreator>(() => GetTagCreator(get<TagCoreRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<GetTagsByCreator>(() => GetTagsByCreator(get<TagCoreRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<LoadBlockedUsers>(() => LoadBlockedUsers(get<ProfileRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<LoadExperiencesCreated>(() => LoadExperiencesCreated(get<ProfileRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<LoadExperiencesDone>(() => LoadExperiencesDone(get<ProfileRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<LoadExperiencesLiked>(() => LoadExperiencesLiked(get<ProfileRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<LoadFollowedUsers>(() => LoadFollowedUsers(get<ProfileRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<LoadFollowingUsers>(() => LoadFollowingUsers(get<ProfileRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<LoadNotifications>(() => LoadNotifications(get<NotificationRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<LoadUser>(() => LoadUser(get<ProfileRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<LoadUserAchievements>(() => LoadUserAchievements(get<ProfileRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<LoadUserInterests>(() => LoadUserInterests(get<ProfileRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<SearchExperiencesByDifficulty>(() => SearchExperiencesByDifficulty(get<SearchRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<SearchExperiencesByName>(() => SearchExperiencesByName(get<SearchRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<SearchExperiencesByTags>(() => SearchExperiencesByTags(get<SearchRepositoryInterface>()), registerFor: {_dev, _prod});
+  return get;
 }

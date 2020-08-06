@@ -26,45 +26,47 @@ class MainPage extends StatelessWidget {
       child: BlocProvider(
         create: (context) => getIt<NavigationActorBloc>(),
         child: BlocBuilder<NavigationActorBloc, NavigationActorState>(
-          builder: (context, state) => Scaffold(
-            appBar: const WorldOnAppBar(),
-            body: IndexedStack(
-              // Feels rather duct tape-ish to return the index this way
-              // but changing the state would mess with the rest of the navigation, such as when "participating" in a experience
-              index: context.bloc<NavigationActorBloc>().state.map(
-                    mainFeedView: (_) => 0,
-                    searchView: (_) => 1,
-                    experienceFormView: (_) => 2,
-                    navigateExperienceView: (_) => 3,
-                    profileView: (_) => 4,
-                    errorView: (_) => 5,
-                    notificationsView: (_) => 6,
+          builder: (context, state) => SafeArea(
+            child: Scaffold(
+              appBar: const WorldOnAppBar(),
+              body: IndexedStack(
+                // Feels rather duct tape-ish to return the index this way
+                // but changing the state would mess with the rest of the navigation, such as when "participating" in a experience
+                index: context.bloc<NavigationActorBloc>().state.map(
+                      mainFeedView: (_) => 0,
+                      searchView: (_) => 1,
+                      experienceFormView: (_) => 2,
+                      navigateExperienceView: (_) => 3,
+                      profileView: (_) => 4,
+                      errorView: (_) => 5,
+                      notificationsView: (_) => 6,
+                    ),
+                children: <Widget>[
+                  const MainFeedBody(),
+                  const SearchBody(),
+                  // TODO: Create creation selection view
+                  // So the Users can select between creating experiences or Tags or even achievements
+                  ExperienceManagementForm(),
+                  ExperienceNavigationBody(
+                    experienceOption: context.bloc<NavigationActorBloc>().state.maybeMap(
+                          navigateExperienceView: (state) => state.experienceOption,
+                          orElse: () => none(),
+                        ),
                   ),
-              children: <Widget>[
-                const MainFeedBody(),
-                const SearchBody(),
-                // TODO: Create creation selection view
-                // So the Users can select between creating experiences or Tags or even achievements
-                ExperienceManagementForm(),
-                ExperienceNavigationBody(
-                  experienceOption: context.bloc<NavigationActorBloc>().state.maybeMap(
-                        navigateExperienceView: (state) => state.experienceOption,
-                        orElse: () => none(),
-                      ),
-                ),
-                ProfileBody(
-                  userOption: context.bloc<NavigationActorBloc>().state.maybeMap(
-                        profileView: (state) => state.userOption,
-                        orElse: () => none(),
-                      ),
-                ),
-                const Center(
-                  child: Text("Error"),
-                ),
-                const NotificationsBody(),
-              ],
+                  ProfileBody(
+                    userOption: context.bloc<NavigationActorBloc>().state.maybeMap(
+                          profileView: (state) => state.userOption,
+                          orElse: () => none(),
+                        ),
+                  ),
+                  const Center(
+                    child: Text("Error"),
+                  ),
+                  const NotificationsBody(),
+                ],
+              ),
+              bottomNavigationBar: WorldOnBottomNavigationBar(),
             ),
-            bottomNavigationBar: WorldOnBottomNavigationBar(),
           ),
         ),
       ),

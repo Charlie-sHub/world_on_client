@@ -79,7 +79,7 @@ void main() {
   );
   group(
     "${TestDescription.groupOnSuccess} updating the user fields",
-      () {
+    () {
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the imageFile",
         build: () {

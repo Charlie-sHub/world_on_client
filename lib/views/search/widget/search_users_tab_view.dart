@@ -4,8 +4,8 @@ import 'package:unicorndial/unicorndial.dart';
 import 'package:worldon/application/search/search_by_name_form/search_by_name_form_bloc.dart';
 import 'package:worldon/application/search/search_users_by_name_watcher/search_users_by_name_watcher_bloc.dart';
 import 'package:worldon/domain/core/validation/objects/search_term.dart';
+import 'package:worldon/views/core/widget/cards/error_card.dart';
 import 'package:worldon/views/core/widget/cards/user_card.dart';
-import 'package:worldon/views/core/widget/cards/user_error_card.dart';
 import 'package:worldon/views/core/widget/critical_error_display.dart';
 import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
 import 'package:worldon/views/search/widget/search_something.dart';
@@ -36,7 +36,13 @@ class SearchUsersTabView extends StatelessWidget {
               if (_user.isValid) {
                 return UserCard(user: _user);
               } else {
-                return UserErrorCard(user: _user);
+                return ErrorCard(
+                  entityType: "User",
+                  valueFailure: _user.failureOption.fold(
+                    () => "",
+                    (failure) => failure.toString(),
+                  ),
+                );
               }
             },
           ),
@@ -85,9 +91,10 @@ class SearchUsersUnicornDialer extends StatelessWidget {
           currentButton: FloatingActionButton(
             heroTag: "name",
             mini: true,
-            onPressed: () => context.bloc<SearchUsersByNameWatcherBloc>().add(
-              SearchUsersByNameWatcherEvent.watchUsersFoundByNameStarted(searchTerm),
-            ),
+            onPressed: () =>
+              context.bloc<SearchUsersByNameWatcherBloc>().add(
+                SearchUsersByNameWatcherEvent.watchUsersFoundByNameStarted(searchTerm),
+              ),
             child: Icon(Icons.assignment_ind),
           ),
         ),

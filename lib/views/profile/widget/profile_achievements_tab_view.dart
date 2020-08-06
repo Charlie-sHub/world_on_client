@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/profile/profile_achievements_watcher/profile_achievements_watcher_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/widget/cards/achievement_card.dart';
-import 'package:worldon/views/core/widget/cards/achievement_error_card.dart';
+import 'package:worldon/views/core/widget/cards/error_card.dart';
 import 'package:worldon/views/core/widget/critical_error_display.dart';
 import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
 
@@ -37,7 +37,13 @@ class ProfileAchievementsTabView extends StatelessWidget {
               if (_achievement.isValid) {
                 return AchievementCard(achievement: _achievement);
               } else {
-                return AchievementErrorCard(achievement: _achievement);
+                return ErrorCard(
+                  entityType: "Achievement",
+                  valueFailure: _achievement.failureOption.fold(
+                    () => "",
+                    (failure) => failure.toString(),
+                  ),
+                );
               }
             },
           ),

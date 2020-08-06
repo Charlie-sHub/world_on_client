@@ -1,16 +1,20 @@
 import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:kt_dart/kt.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
 import 'package:worldon/application/authentication/registration_form/registration_form_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
+import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/views/core/misc/string_constants.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/routes/router.gr.dart';
+import 'package:worldon/views/core/widget/misc/tag_addition_card.dart';
 
 class RegistrationForm extends StatelessWidget {
   @override
@@ -24,37 +28,47 @@ class RegistrationForm extends StatelessWidget {
         ),
       ),
       // TODO: Check how to initialize this form with a google user or similar
-      // RegistrationFormEvent.initialized() Does get the user but the initialValue of the TextFormFields doesn't change
-      builder: (context, state) => Form(
-        autovalidate: state.showErrorMessages,
-        child: ListView(
-          padding: const EdgeInsets.all(30),
-          children: <Widget>[
-            const WorldOnTitle(),
-            const SizedBox(height: 10),
-            const Divider(color: Colors.grey),
-            const SizedBox(height: 10),
-            UserImagePicker(),
-            const SizedBox(height: 10),
-            const UsernameTextField(),
-            const SizedBox(height: 8),
-            const NameTextField(),
-            const SizedBox(height: 8),
-            const EmailTextField(),
-            const SizedBox(height: 8),
-            const DescriptionTextField(),
-            const SizedBox(height: 8),
-            const BirthdayButton(),
-            const SizedBox(height: 8),
-            const PasswordTextField(),
-            const SizedBox(height: 8),
-            const PasswordConfirmationTextField(),
-            const SizedBox(height: 8),
-            EULACheckBox(),
-            const SizedBox(height: 8),
-            // TODO: Add the interest selection, at least a placeholder
-            const RegisterButton(),
-          ],
+      builder: (context, state) => SingleChildScrollView(
+        child: Form(
+          autovalidate: state.showErrorMessages,
+          child: Padding(
+            padding: const EdgeInsets.all(25),
+            child: Column(
+              children: <Widget>[
+                const WorldOnTitle(),
+                const SizedBox(height: 10),
+                const Divider(color: Colors.grey),
+                const SizedBox(height: 10),
+                UserImagePicker(),
+                const SizedBox(height: 10),
+                const UsernameTextField(),
+                const SizedBox(height: 8),
+                const NameTextField(),
+                const SizedBox(height: 8),
+                const EmailTextField(),
+                const SizedBox(height: 8),
+                const DescriptionTextField(),
+                const SizedBox(height: 8),
+                const BirthdayButton(),
+                const SizedBox(height: 8),
+                const PasswordTextField(),
+                const SizedBox(height: 8),
+                const PasswordConfirmationTextField(),
+                const SizedBox(height: 8),
+                TagAdditionCard(
+                  tagChangeEvent: (KtSet<Tag> tags) => context.bloc<RegistrationFormBloc>().add(
+                        RegistrationFormEvent.interestsChanged(
+                          tags.asSet(),
+                        ),
+                      ),
+                ),
+                const SizedBox(height: 8),
+                EULACheckBox(),
+                const SizedBox(height: 8),
+                const RegisterButton(),
+              ],
+            ),
+          ),
         ),
       ),
     );
@@ -90,7 +104,7 @@ class UserImagePicker extends StatelessWidget {
               children: <Widget>[
                 IconButton(
                   iconSize: 80,
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.photo_camera,
                   ),
                   onPressed: () async => pickImage(context),
@@ -149,7 +163,6 @@ class UsernameTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      maxLengthEnforced: true,
       maxLength: 50,
       onChanged: (value) =>
         context.bloc<RegistrationFormBloc>().add(
@@ -173,6 +186,16 @@ class UsernameTextField extends StatelessWidget {
             ),
             (_) => null,
         ),
+      initialValue: context
+        .bloc<RegistrationFormBloc>()
+        .state
+        .user
+        .username
+        .value
+        .fold(
+          (_) => "",
+        id,
+      ),
       autocorrect: false,
       decoration: const InputDecoration(
         labelText: "Username",
@@ -190,7 +213,6 @@ class NameTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      maxLengthEnforced: true,
       maxLength: 50,
       onChanged: (value) =>
         context.bloc<RegistrationFormBloc>().add(
@@ -214,6 +236,16 @@ class NameTextField extends StatelessWidget {
             ),
             (_) => null,
         ),
+      initialValue: context
+        .bloc<RegistrationFormBloc>()
+        .state
+        .user
+        .name
+        .value
+        .fold(
+          (_) => "",
+        id,
+      ),
       autocorrect: false,
       decoration: const InputDecoration(
         labelText: "Name",
@@ -250,8 +282,18 @@ class EmailTextField extends StatelessWidget {
             ),
             (_) => null,
         ),
+      initialValue: context
+        .bloc<RegistrationFormBloc>()
+        .state
+        .user
+        .email
+        .value
+        .fold(
+          (_) => "",
+        id,
+      ),
       autocorrect: false,
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         labelText: "Email Address",
         prefixIcon: Icon(Icons.email),
       ),
@@ -267,7 +309,6 @@ class DescriptionTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      maxLengthEnforced: true,
       maxLength: 300,
       onChanged: (value) =>
         context.bloc<RegistrationFormBloc>().add(
@@ -291,7 +332,7 @@ class DescriptionTextField extends StatelessWidget {
         ),
       autocorrect: false,
       maxLines: 5,
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         labelText: "Tell us about you!",
         prefixIcon: Icon(Icons.description),
       ),
@@ -332,7 +373,6 @@ class PasswordTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      maxLengthEnforced: true,
       maxLength: 40,
       onChanged: (value) =>
         context.bloc<RegistrationFormBloc>().add(
@@ -357,9 +397,19 @@ class PasswordTextField extends StatelessWidget {
             ),
             (_) => null,
         ),
+      initialValue: context
+        .bloc<RegistrationFormBloc>()
+        .state
+        .user
+        .password
+        .value
+        .fold(
+          (_) => "",
+        id,
+      ),
       autocorrect: false,
       obscureText: true,
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         labelText: "Password",
         prefixIcon: Icon(Icons.lock),
       ),
@@ -375,7 +425,6 @@ class PasswordConfirmationTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      maxLengthEnforced: true,
       maxLength: 40,
       onChanged: (value) =>
         context.bloc<RegistrationFormBloc>().add(
@@ -396,9 +445,18 @@ class PasswordConfirmationTextField extends StatelessWidget {
             ),
             (_) => null,
         ),
+      initialValue: context
+        .bloc<RegistrationFormBloc>()
+        .state
+        .passwordConfirmator
+        .value
+        .fold(
+          (_) => "",
+        id,
+      ),
       autocorrect: false,
       obscureText: true,
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         labelText: "Password Confirmation",
         prefixIcon: Icon(Icons.lock_outline),
       ),

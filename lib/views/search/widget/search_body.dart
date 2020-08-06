@@ -8,14 +8,13 @@ import 'package:worldon/application/search/search_tags_by_name_watcher/search_ta
 import 'package:worldon/application/search/search_users_by_name_watcher/search_users_by_name_watcher_bloc.dart';
 import 'package:worldon/domain/core/validation/objects/search_term.dart';
 import 'package:worldon/injection.dart';
-import 'package:worldon/views/core/misc/string_constants.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
+import 'package:worldon/views/core/widget/cards/error_card.dart';
 import 'package:worldon/views/core/widget/cards/experience_card.dart';
-import 'package:worldon/views/core/widget/cards/experience_error_card.dart';
 import 'package:worldon/views/core/widget/cards/tag_card.dart';
-import 'package:worldon/views/core/widget/cards/tag_error_card.dart';
 import 'package:worldon/views/core/widget/critical_error_display.dart';
 import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
+import 'package:worldon/views/search/widget/search_header.dart';
 import 'package:worldon/views/search/widget/search_something.dart';
 import 'package:worldon/views/search/widget/search_users_tab_view.dart';
 
@@ -34,36 +33,27 @@ class SearchBody extends StatelessWidget {
         BlocProvider(create: (context) => getIt<SearchExperiencesByDifficultyBloc>()),
         BlocProvider(create: (context) => getIt<SearchExperiencesByTagsBloc>()),
       ],
-      child: MultiBlocListener(
-        listeners: [
-          BlocListener<SearchByNameFormBloc, SearchByNameFormState>(
-            listener: searchFormListener,
-          ),
-        ],
-        child: BlocBuilder<SearchByNameFormBloc, SearchByNameFormState>(
-          builder: (context, state) => Padding(
-            padding: const EdgeInsets.all(5),
-            child: DefaultTabController(
-              length: 3,
-              child: Form(
-                autovalidate: state.showErrorMessages,
-                child: Column(
-                  children: <Widget>[
-                    const SearchHeader(),
-                    const SizedBox(height: 5),
-                    const SearchTabBar(),
-                    Expanded(
-                      child: TabBarView(
-                        children: [
-                          SearchExperiencesTabView(searchTerm: state.searchTerm),
-                          SearchUsersTabView(searchTerm: state.searchTerm),
-                          SearchTagsTabView(searchTerm: state.searchTerm),
-                        ],
-                      ),
-                    ),
-                  ],
+      child: BlocConsumer<SearchByNameFormBloc, SearchByNameFormState>(
+        listener: searchFormListener,
+        builder: (context, state) => Padding(
+          padding: const EdgeInsets.all(5),
+          child: DefaultTabController(
+            length: 3,
+            child: Column(
+              children: <Widget>[
+                const SearchHeader(),
+                const SizedBox(height: 5),
+                const SearchTabBar(),
+                Expanded(
+                  child: TabBarView(
+                    children: [
+                      SearchExperiencesTabView(searchTerm: state.searchTerm),
+                      SearchUsersTabView(searchTerm: state.searchTerm),
+                      SearchTagsTabView(searchTerm: state.searchTerm),
+                    ],
+                  ),
                 ),
-              ),
+              ],
             ),
           ),
         ),
@@ -84,49 +74,6 @@ class SearchBody extends StatelessWidget {
             SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(state.searchTerm),
           );
     }
-  }
-}
-
-class SearchHeader extends StatelessWidget {
-  const SearchHeader({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 50,
-      child: Row(
-        children: <Widget>[
-          Expanded(
-            child: TextFormField(
-              onChanged: (value) => context.bloc<SearchByNameFormBloc>().add(
-                    SearchByNameFormEvent.searchTermChanged(value),
-                  ),
-              decoration: const InputDecoration(
-                labelText: "Search",
-              ),
-              validator: (_) => context.bloc<SearchByNameFormBloc>().state.searchTerm.value.fold(
-                    (failure) => failure.maybeMap(
-                      emptyString: (_) => "The search term can't be empty",
-                      orElse: () => StringConst.unknownError,
-                    ),
-                    (_) => null,
-                  ),
-            ),
-          ),
-          IconButton(
-            icon: Icon(
-              Icons.search,
-              size: 35,
-            ),
-            onPressed: () => context.bloc<SearchByNameFormBloc>().add(
-                  const SearchByNameFormEvent.submitted(),
-                ),
-          ),
-        ],
-      ),
-    );
   }
 }
 
@@ -152,8 +99,13 @@ class SearchTagsTabView extends StatelessWidget {
             if (_tag.isValid) {
               return TagCard(tag: _tag);
             } else {
-              // Maybe the error cards should be unified into one
-              return TagErrorCard(tag: _tag);
+              return ErrorCard(
+                entityType: "Tag",
+                valueFailure: _tag.failureOption.fold(
+                    () => "",
+                    (failure) => failure.toString(),
+                ),
+              );
             }
           },
         ),
@@ -190,7 +142,13 @@ class SearchExperiencesTabView extends StatelessWidget {
             if (_experience.isValid) {
               return ExperienceCard(experience: _experience);
             } else {
-              return ExperienceErrorCard(experience: _experience);
+              return ErrorCard(
+                entityType: "Experience",
+                valueFailure: _experience.failureOption.fold(
+                    () => "",
+                    (failure) => failure.toString(),
+                ),
+              );
             }
           },
         ),

@@ -26,7 +26,7 @@ dependencies:
   # Service locator
   get_it: ^4.0.4
   # For dependency injection
-  injectable: ^1.0.2
+  injectable: ^1.0.4
   # Bloc for state management
   flutter_bloc: ^6.0.1
   # Value equality
@@ -94,11 +94,11 @@ dev_dependencies:
   # Collection of lint rules
   lint: ^1.2.0
   # For dependency injection code generation
-  injectable_generator: ^1.0.3
+  injectable_generator: ^1.0.4
   # For Serializing entities to JSON
   json_serializable: ^3.3.0
   # For auto generating the routes
-  auto_route_generator: ^0.6.7
+  auto_route_generator: ^0.6.8
   # For ease of setting the app icon
   flutter_launcher_icons: ^0.7.5
   # For extra icons

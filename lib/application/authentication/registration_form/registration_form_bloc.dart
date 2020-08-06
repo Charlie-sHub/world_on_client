@@ -59,8 +59,8 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
       isSubmitting: true,
       failureOrSuccessOption: none(),
     );
-    final canRegister = state.user.isValid && state.passwordConfirmator.isValid() && state.acceptedEULA && state.user.imageFileOption.isSome();
-    if (canRegister) {
+    final _canRegister = state.user.isValid && state.passwordConfirmator.isValid() && state.acceptedEULA && state.user.imageFileOption.isSome();
+    if (_canRegister) {
       final _register = getIt<Register>();
       // TODO: Create default Options for the user before registering
       // For now with the languageCode of the phone
@@ -150,6 +150,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
   }
 
   Stream<RegistrationFormState> onNameChanged(_NameChanged event) async* {
+    // TODO: Why does the name change erases the password confirmation?
     yield state.copyWith(
       user: state.user.copyWith(
         name: Name(event.name),

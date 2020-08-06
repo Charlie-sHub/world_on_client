@@ -1,12 +1,16 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:worldon/domain/core/entities/reward/reward.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
-class RewardErrorCard extends StatelessWidget {
-  final Reward reward;
+class ErrorCard extends StatelessWidget {
+  final String valueFailure;
+  final String entityType;
 
-  const RewardErrorCard({Key key, @required this.reward}) : super(key: key);
+  const ErrorCard({
+    Key key,
+    @required this.valueFailure,
+    @required this.entityType,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +21,10 @@ class RewardErrorCard extends StatelessWidget {
         padding: const EdgeInsets.all(5),
         child: Column(
           children: <Widget>[
-            const Text(
-              "Invalid Reward",
+            Text(
+              "Invalid $entityType",
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 15,
                 color: WorldOnColors.white,
               ),
@@ -36,10 +40,7 @@ class RewardErrorCard extends StatelessWidget {
             ),
             const SizedBox(height: 5),
             AutoSizeText(
-              reward.failureOption.fold(
-                () => "",
-                (failure) => failure.toString(),
-              ),
+              valueFailure,
               textAlign: TextAlign.justify,
               style: const TextStyle(
                 fontSize: 12,
