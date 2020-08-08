@@ -431,7 +431,7 @@ class _$_ExperienceDto extends _ExperienceDto {
       const DeepCollectionEquality().hash(comments) ^
       const DeepCollectionEquality().hash(likedBy) ^
       const DeepCollectionEquality().hash(doneBy);
-  
+
   @override
   _$ExperienceDtoCopyWith<_ExperienceDto> get copyWith =>
     __$ExperienceDtoCopyWithImpl<_ExperienceDto>(this, _$identity);

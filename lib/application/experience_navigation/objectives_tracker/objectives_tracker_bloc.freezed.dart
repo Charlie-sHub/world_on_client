@@ -186,9 +186,8 @@ abstract class _$ObjectiveAccomplishedCopyWith<$Res> {
   factory _$ObjectiveAccomplishedCopyWith(_ObjectiveAccomplished value,
     $Res Function(_ObjectiveAccomplished) then) =
   __$ObjectiveAccomplishedCopyWithImpl<$Res>;
-  
   $Res call({Objective objective});
-  
+
   $ObjectiveCopyWith<$Res> get objective;
 }
 
@@ -336,7 +335,6 @@ abstract class $ObjectivesTrackerStateCopyWith<$Res> {
   factory $ObjectivesTrackerStateCopyWith(ObjectivesTrackerState value,
     $Res Function(ObjectivesTrackerState) then) =
   _$ObjectivesTrackerStateCopyWithImpl<$Res>;
-  
   $Res call({KtList<Objective> objectivesToDo, bool isFinished});
 }
 

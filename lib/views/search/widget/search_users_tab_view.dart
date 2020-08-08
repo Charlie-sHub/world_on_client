@@ -91,10 +91,9 @@ class SearchUsersUnicornDialer extends StatelessWidget {
           currentButton: FloatingActionButton(
             heroTag: "name",
             mini: true,
-            onPressed: () =>
-              context.bloc<SearchUsersByNameWatcherBloc>().add(
-                SearchUsersByNameWatcherEvent.watchUsersFoundByNameStarted(searchTerm),
-              ),
+            onPressed: () => context.bloc<SearchUsersByNameWatcherBloc>().add(
+                  SearchUsersByNameWatcherEvent.watchUsersFoundByNameStarted(searchTerm),
+                ),
             child: const Icon(Icons.assignment_ind),
           ),
         ),

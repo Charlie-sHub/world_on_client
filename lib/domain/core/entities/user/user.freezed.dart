@@ -260,16 +260,16 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
     PastDate birthday,
     EntityDescription description,
     String imageURL,
-      Option<File> imageFileOption,
-      UserLevel level,
-      ExperiencePoints experiencePoints,
-      bool privacy,
-      bool adminPowers,
-      bool enabled,
-      PastDate lastLogin,
-      PastDate creationDate,
-      PastDate modificationDate,
-      Options options,
+    Option<File> imageFileOption,
+    UserLevel level,
+    ExperiencePoints experiencePoints,
+    bool privacy,
+    bool adminPowers,
+    bool enabled,
+    PastDate lastLogin,
+    PastDate creationDate,
+    PastDate modificationDate,
+    Options options,
       Set<User> blockedUsers,
       Set<User> followedUsers,
       Set<Device> devices,
@@ -601,7 +601,7 @@ class _$_User extends _User {
       const DeepCollectionEquality().hash(experiencesDone) ^
       const DeepCollectionEquality().hash(experiencesLiked) ^
       const DeepCollectionEquality().hash(experiencesToDo);
-  
+
   @override
   _$UserCopyWith<_User> get copyWith =>
     __$UserCopyWithImpl<_User>(this, _$identity);

@@ -70,12 +70,13 @@ class Router extends RouterBase {
     },
     ProfileEditingPage: (data) {
       final args = data.getArgs<ProfileEditingPageArguments>(nullOk: false);
-      return MaterialPageRoute<dynamic>(
-        builder: (context) => ProfileEditingPage(
+      return PageRouteBuilder<bool>(
+        pageBuilder: (context, animation, secondaryAnimation) => ProfileEditingPage(
           key: args.key,
           user: args.user,
         ),
         settings: data,
+        transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
       );
     },
   };
@@ -95,14 +96,14 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
 
   Future<dynamic> pushMainPage() => push<dynamic>(Routes.mainPage);
 
-  Future<dynamic> pushProfileEditingPage({
+  Future<bool> pushProfileEditingPage({
     Key key,
     @required User user,
   }) =>
-      push<dynamic>(
-        Routes.profileEditingPage,
-        arguments: ProfileEditingPageArguments(key: key, user: user),
-      );
+    push<bool>(
+      Routes.profileEditingPage,
+      arguments: ProfileEditingPageArguments(key: key, user: user),
+    );
 }
 
 /// ************************************************************************

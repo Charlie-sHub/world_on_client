@@ -145,8 +145,8 @@ class SearchExperiencesTabView extends StatelessWidget {
               return ErrorCard(
                 entityType: "Experience",
                 valueFailure: _experience.failureOption.fold(
-                    () => "",
-                    (failure) => failure.toString(),
+                  () => "",
+                  (failure) => failure.toString(),
                 ),
               );
             }

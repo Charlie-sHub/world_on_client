@@ -155,10 +155,10 @@ abstract class _$AchievementCopyWith<$Res>
     String type,
     int requisite,
     ExperiencePoints experiencePoints,
-      User creator,
-      PastDate creationDate,
-      PastDate modificationDate,
-      TagSet tags});
+    User creator,
+    PastDate creationDate,
+    PastDate modificationDate,
+    TagSet tags});
 
   @override
   $UserCopyWith<$Res> get creator;
@@ -322,7 +322,7 @@ class _$_Achievement extends _Achievement {
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(modificationDate) ^
       const DeepCollectionEquality().hash(tags);
-  
+
   @override
   _$AchievementCopyWith<_Achievement> get copyWith =>
     __$AchievementCopyWithImpl<_Achievement>(this, _$identity);

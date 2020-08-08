@@ -93,20 +93,16 @@ class TagSelection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<TagSelectorBloc, TagSelectorState>(
-      builder: (context, state) =>
-        Container(
-          constraints: BoxConstraints(
-            maxHeight: MediaQuery
-              .of(context)
-              .size
-              .height * 0.3,
-          ),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Wrap(
-                  alignment: WrapAlignment.start,
-                  spacing: 5,
+      builder: (context, state) => Container(
+        constraints: BoxConstraints(
+          maxHeight: MediaQuery.of(context).size.height * 0.3,
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Wrap(
+                alignment: WrapAlignment.start,
+                spacing: 5,
                 runSpacing: 2,
                 children: <Widget>[
                   ...state.tagsSelected.asSet().map(
@@ -126,10 +122,10 @@ class TagSelection extends StatelessWidget {
                 ],
               ),
               if (state.tagsSelected.size >= TagSet.maxLength)
-                Text(
+                const Text(
                   "You can't add more than ${TagSet.maxLength} tags",
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: WorldOnColors.red,
                     fontWeight: FontWeight.bold,
                   ),

@@ -14,7 +14,6 @@ class ObjectiveCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ObjectivesTrackerBloc, ObjectivesTrackerState>(
       builder: (context, state) => InkWell(
-        // TODO: Change to a button
         onTap: () => context.bloc<ObjectivesTrackerBloc>().add(
               ObjectivesTrackerEvent.objectiveAccomplished(objective),
             ),

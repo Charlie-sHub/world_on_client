@@ -199,27 +199,18 @@ class DescriptionFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       maxLength: 300,
-      onChanged: (value) =>
-        context.bloc<ExperienceManagementFormBloc>().add(
-          ExperienceManagementFormEvent.descriptionChanged(value),
-        ),
-      validator: (_) =>
-        context
-          .bloc<ExperienceManagementFormBloc>()
-          .state
-          .experience
-          .description
-          .value
-          .fold(
-            (failure) =>
-            failure.maybeMap(
+      onChanged: (value) => context.bloc<ExperienceManagementFormBloc>().add(
+            ExperienceManagementFormEvent.descriptionChanged(value),
+          ),
+      validator: (_) => context.bloc<ExperienceManagementFormBloc>().state.experience.description.value.fold(
+            (failure) => failure.maybeMap(
               emptyString: (_) => "The description can't be empty",
               stringExceedsLength: (_) => "The description is too long",
               stringWithInvalidCharacters: (_) => "The description has invalid characters",
               orElse: () => StringConst.unknownError,
             ),
             (_) => null,
-        ),
+          ),
       maxLines: 5,
       decoration: InputDecoration(
         labelText: "Description",
@@ -320,7 +311,11 @@ class Map extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      height: MediaQuery
+        .of(context)
+        .size
+        .height * 0.5,
       child: Icon(
         Icons.map,
         size: 150,

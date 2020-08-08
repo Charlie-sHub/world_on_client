@@ -164,20 +164,11 @@ class UsernameTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       maxLength: 50,
-      onChanged: (value) =>
-        context.bloc<RegistrationFormBloc>().add(
-          RegistrationFormEvent.usernameChanged(value),
-        ),
-      validator: (_) =>
-        context
-          .bloc<RegistrationFormBloc>()
-          .state
-          .user
-          .username
-          .value
-          .fold(
-            (failure) =>
-            failure.maybeMap(
+      onChanged: (value) => context.bloc<RegistrationFormBloc>().add(
+            RegistrationFormEvent.usernameChanged(value),
+          ),
+      validator: (_) => context.bloc<RegistrationFormBloc>().state.user.username.value.fold(
+            (failure) => failure.maybeMap(
               emptyString: (_) => "The username can't be empty",
               multiLineString: (_) => "The username can't be more than one line",
               stringExceedsLength: (_) => "The username is too long",
@@ -185,17 +176,11 @@ class UsernameTextField extends StatelessWidget {
               orElse: () => StringConst.unknownError,
             ),
             (_) => null,
-        ),
-      initialValue: context
-        .bloc<RegistrationFormBloc>()
-        .state
-        .user
-        .username
-        .value
-        .fold(
-          (_) => "",
-        id,
-      ),
+          ),
+      initialValue: context.bloc<RegistrationFormBloc>().state.user.username.value.fold(
+            (_) => "",
+            id,
+          ),
       autocorrect: false,
       decoration: const InputDecoration(
         labelText: "Username",

@@ -58,9 +58,12 @@ class OwnProfileHeader extends StatelessWidget {
             children: <Widget>[
               const Padding(
                 padding: EdgeInsets.all(5),
-                child: CircleAvatar(
-                  radius: 40,
-                  backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
+                child: Hero(
+                  tag: "userImage",
+                  child: CircleAvatar(
+                    radius: 40,
+                    backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
+                  ),
                 ),
               ),
               Expanded(

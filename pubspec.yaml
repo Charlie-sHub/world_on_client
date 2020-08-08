@@ -90,7 +90,7 @@ dev_dependencies:
   # For mocking dependencies during unit testing
   mockito: ^4.1.1
   # For unions generation
-  freezed: ^0.11.4
+  freezed: ^0.11.5
   # Collection of lint rules
   lint: ^1.2.0
   # For dependency injection code generation

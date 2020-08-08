@@ -44,6 +44,8 @@ class ProfileEditingForm extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: const <Widget>[
+                                  // TODO: Refactor the text fields so they can be used in the register page too
+                                  // Passing the event adding function as a parameter, like with the tag addition
                                   NameTextFormField(),
                                   SizedBox(height: 10),
                                   UsernameTextFormField(),
@@ -142,26 +144,12 @@ class PasswordTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       maxLength: 40,
-      onChanged: (value) =>
-        context.bloc<ProfileEditingFormBloc>().add(
-          ProfileEditingFormEvent.passwordChanged(value),
-        ),
-      initialValue: context
-        .bloc<ProfileEditingFormBloc>()
-        .state
-        .user
-        .password
-        .getOrCrash(),
-      validator: (_) =>
-        context
-          .bloc<ProfileEditingFormBloc>()
-          .state
-          .user
-          .password
-          .value
-          .fold(
-            (failure) =>
-            failure.maybeMap(
+      onChanged: (value) => context.bloc<ProfileEditingFormBloc>().add(
+            ProfileEditingFormEvent.passwordChanged(value),
+          ),
+      initialValue: context.bloc<ProfileEditingFormBloc>().state.user.password.getOrCrash(),
+      validator: (_) => context.bloc<ProfileEditingFormBloc>().state.user.password.value.fold(
+            (failure) => failure.maybeMap(
               emptyString: (_) => "The password can't be empty",
               multiLineString: (_) => "The password can't be more than one line",
               stringExceedsLength: (_) => "The password is too long",
@@ -170,10 +158,10 @@ class PasswordTextField extends StatelessWidget {
               orElse: () => StringConst.unknownError,
             ),
             (_) => null,
-        ),
+          ),
       autocorrect: false,
       obscureText: true,
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         labelText: "Password",
         prefixIcon: Icon(Icons.lock),
       ),
@@ -429,10 +417,13 @@ class UserImagePicker extends StatelessWidget {
           () =>
           FlatButton(
             onPressed: () async => pickImage(context),
-            child: const CircleAvatar(
-              radius: 80,
-              // TODO: Change to user's network image
-              backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
+            child: const Hero(
+              tag: "userImage",
+              child: CircleAvatar(
+                radius: 80,
+                // TODO: Change to user's network image
+                backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
+              ),
             ),
           ),
           (imageFile) =>
