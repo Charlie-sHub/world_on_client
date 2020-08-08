@@ -111,33 +111,21 @@ class PasswordConfirmationTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       maxLength: 40,
-      onChanged: (value) =>
-        context.bloc<ProfileEditingFormBloc>().add(
-          ProfileEditingFormEvent.passwordConfirmationChanged(value),
-        ),
-      initialValue: context
-        .bloc<ProfileEditingFormBloc>()
-        .state
-        .passwordConfirmator
-        .getOrCrash(),
-      validator: (_) =>
-        context
-          .bloc<ProfileEditingFormBloc>()
-          .state
-          .passwordConfirmator
-          .value
-          .fold(
-            (failure) =>
-            failure.maybeMap(
+      onChanged: (value) => context.bloc<ProfileEditingFormBloc>().add(
+            ProfileEditingFormEvent.passwordConfirmationChanged(value),
+          ),
+      initialValue: context.bloc<ProfileEditingFormBloc>().state.passwordConfirmator.getOrCrash(),
+      validator: (_) => context.bloc<ProfileEditingFormBloc>().state.passwordConfirmator.value.fold(
+            (failure) => failure.maybeMap(
               stringMismatch: (_) => "The passwords are different",
               emptyString: (_) => "Please confirm the password",
               orElse: () => StringConst.unknownError,
             ),
             (_) => null,
-        ),
+          ),
       autocorrect: false,
       obscureText: true,
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         labelText: "Password Confirmation",
         prefixIcon: Icon(Icons.lock_outline),
       ),

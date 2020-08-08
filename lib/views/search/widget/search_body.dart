@@ -102,8 +102,8 @@ class SearchTagsTabView extends StatelessWidget {
               return ErrorCard(
                 entityType: "Tag",
                 valueFailure: _tag.failureOption.fold(
-                    () => "",
-                    (failure) => failure.toString(),
+                  () => "",
+                  (failure) => failure.toString(),
                 ),
               );
             }

@@ -82,7 +82,7 @@ class SearchUsersUnicornDialer extends StatelessWidget {
             onPressed: () => context.bloc<SearchUsersByNameWatcherBloc>().add(
                   SearchUsersByNameWatcherEvent.watchUsersFoundByUsernameStarted(searchTerm),
                 ),
-            child: Icon(Icons.account_box),
+            child: const Icon(Icons.account_box),
           ),
         ),
         UnicornButton(
@@ -95,7 +95,7 @@ class SearchUsersUnicornDialer extends StatelessWidget {
               context.bloc<SearchUsersByNameWatcherBloc>().add(
                 SearchUsersByNameWatcherEvent.watchUsersFoundByNameStarted(searchTerm),
               ),
-            child: Icon(Icons.assignment_ind),
+            child: const Icon(Icons.assignment_ind),
           ),
         ),
       ],

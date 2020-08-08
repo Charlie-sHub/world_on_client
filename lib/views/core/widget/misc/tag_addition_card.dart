@@ -15,11 +15,11 @@ import 'package:worldon/views/search/widget/search_something.dart';
 import '../../../../injection.dart';
 
 class TagAdditionCard extends StatelessWidget {
-  final Function tagChangeEvent;
+  final Function tagChangeFunction;
 
   const TagAdditionCard({
     Key key,
-    @required this.tagChangeEvent,
+    @required this.tagChangeFunction,
   }) : super(key: key);
 
   @override
@@ -30,55 +30,56 @@ class TagAdditionCard extends StatelessWidget {
         BlocProvider(create: (context) => getIt<SearchTagsByNameWatcherBloc>()),
         BlocProvider(create: (context) => getIt<TagSelectorBloc>()),
       ],
-      child: Card(
-        color: WorldOnColors.background,
-        shape: const RoundedRectangleBorder(
-          side: BorderSide(
-            color: WorldOnColors.primary,
+      child: BlocListener<TagSelectorBloc, TagSelectorState>(
+        listener: (context, state) => tagChangeFunction(context.bloc<TagSelectorBloc>().state.tagsSelected),
+        child: Card(
+          color: WorldOnColors.background,
+          shape: const RoundedRectangleBorder(
+            side: BorderSide(
+              color: WorldOnColors.primary,
+            ),
           ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(5),
-          child: Column(
-            children: <Widget>[
-              const Text(
-                "Select Tags",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15,
+          child: Padding(
+            padding: const EdgeInsets.all(5),
+            child: Column(
+              children: const <Widget>[
+                Text(
+                  "Select Tags",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 5),
-              const Padding(
-                padding: EdgeInsets.all(5),
-                child: TagSearchHeader(),
-              ),
-              const SizedBox(height: 5),
-              const Text(
-                "Tags Found",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 12,
+                SizedBox(height: 5),
+                Padding(
+                  padding: EdgeInsets.all(5),
+                  child: TagSearchHeader(),
                 ),
-              ),
-              const SizedBox(height: 5),
-              const TagsFoundView(),
-              const SizedBox(height: 10),
-              const Text(
-                "Tags Selected",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 12,
+                SizedBox(height: 5),
+                Text(
+                  "Tags Found",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 12,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 5),
-              TagSelection(
-                tagChangeEvent: tagChangeEvent,
-              ),
-            ],
+                SizedBox(height: 5),
+                TagsFoundView(),
+                SizedBox(height: 10),
+                Text(
+                  "Tags Selected",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 12,
+                  ),
+                ),
+                SizedBox(height: 5),
+                TagSelection(),
+              ],
+            ),
           ),
         ),
       ),
@@ -87,27 +88,25 @@ class TagAdditionCard extends StatelessWidget {
 }
 
 class TagSelection extends StatelessWidget {
-  final Function tagChangeEvent;
-
-  const TagSelection({
-    Key key,
-    @required this.tagChangeEvent,
-  }) : super(key: key);
+  const TagSelection({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<TagSelectorBloc, TagSelectorState>(
-      listener: (context, state) => tagChangeEvent,
-      builder: (context, state) => Container(
-        constraints: BoxConstraints(
-          maxHeight: MediaQuery.of(context).size.height * 0.3,
-        ),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Wrap(
-                alignment: WrapAlignment.start,
-                spacing: 5,
+    return BlocBuilder<TagSelectorBloc, TagSelectorState>(
+      builder: (context, state) =>
+        Container(
+          constraints: BoxConstraints(
+            maxHeight: MediaQuery
+              .of(context)
+              .size
+              .height * 0.3,
+          ),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Wrap(
+                  alignment: WrapAlignment.start,
+                  spacing: 5,
                 runSpacing: 2,
                 children: <Widget>[
                   ...state.tagsSelected.asSet().map(
@@ -130,13 +129,13 @@ class TagSelection extends StatelessWidget {
                 Text(
                   "You can't add more than ${TagSet.maxLength} tags",
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: WorldOnColors.red,
                     fontWeight: FontWeight.bold,
                   ),
                 )
               else if (state.tagsSelected.size <= 0)
-                Text(
+                const Text(
                   "No tags selected",
                   textAlign: TextAlign.center,
                   style: TextStyle(

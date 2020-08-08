@@ -540,7 +540,7 @@ void main() {
   );
   group(
     TestDescription.groupOnFailure,
-      () {
+    () {
       blocTest(
         "${TestDescription.shouldEmitFailure} when submitting",
         build: () {

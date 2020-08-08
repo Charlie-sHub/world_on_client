@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/routes/router.gr.dart';
@@ -8,6 +9,10 @@ import 'package:worldon/views/core/routes/router.gr.dart';
 import '../../../injection.dart';
 
 class AppWidget extends StatelessWidget {
+  final String environment;
+
+  const AppWidget({Key key, @required this.environment}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -21,7 +26,7 @@ class AppWidget extends StatelessWidget {
       ],
       child: MaterialApp(
         title: "World On",
-        // debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: environment != Environment.prod,
         // TODO: Improve the theme
         // Accent and primary being the same color doesn't make much sense
         // The difference is not really noticed as many widgets have set colors, but that should be changed

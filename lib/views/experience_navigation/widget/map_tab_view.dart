@@ -20,7 +20,7 @@ class MapTabView extends StatelessWidget {
           size: 180,
           color: WorldOnColors.primary,
         ),
-        Text(
+        const Text(
           "Map",
           style: TextStyle(
             fontWeight: FontWeight.bold,

@@ -30,7 +30,6 @@ void main() {
   group(
     TestDescription.deleteEventTests,
     () {
-      const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
       blocTest(
         TestDescription.shouldEmitSuccess,
         build: () {

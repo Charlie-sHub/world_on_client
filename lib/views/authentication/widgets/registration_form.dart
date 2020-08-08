@@ -56,7 +56,7 @@ class RegistrationForm extends StatelessWidget {
                 const PasswordConfirmationTextField(),
                 const SizedBox(height: 8),
                 TagAdditionCard(
-                  tagChangeEvent: (KtSet<Tag> tags) => context.bloc<RegistrationFormBloc>().add(
+                  tagChangeFunction: (KtSet<Tag> tags) => context.bloc<RegistrationFormBloc>().add(
                         RegistrationFormEvent.interestsChanged(
                           tags.asSet(),
                         ),

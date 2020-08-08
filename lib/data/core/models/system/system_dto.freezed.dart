@@ -40,7 +40,9 @@ mixin _$SystemDto {
 }
 
 abstract class $SystemDtoCopyWith<$Res> {
-  factory $SystemDtoCopyWith(SystemDto value, $Res Function(SystemDto) then) = _$SystemDtoCopyWithImpl<$Res>;
+  factory $SystemDtoCopyWith(SystemDto value, $Res Function(SystemDto) then) =
+  _$SystemDtoCopyWithImpl<$Res>;
+  
   $Res call({int id, String name, String type, String company});
 }
 
@@ -68,14 +70,17 @@ class _$SystemDtoCopyWithImpl<$Res> implements $SystemDtoCopyWith<$Res> {
 }
 
 abstract class _$SystemDtoCopyWith<$Res> implements $SystemDtoCopyWith<$Res> {
-  factory _$SystemDtoCopyWith(_SystemDto value, $Res Function(_SystemDto) then) = __$SystemDtoCopyWithImpl<$Res>;
-
+  factory _$SystemDtoCopyWith(_SystemDto value, $Res Function(_SystemDto) then) =
+  __$SystemDtoCopyWithImpl<$Res>;
+  
   @override
   $Res call({int id, String name, String type, String company});
 }
 
-class __$SystemDtoCopyWithImpl<$Res> extends _$SystemDtoCopyWithImpl<$Res> implements _$SystemDtoCopyWith<$Res> {
-  __$SystemDtoCopyWithImpl(_SystemDto _value, $Res Function(_SystemDto) _then) : super(_value, (v) => _then(v as _SystemDto));
+class __$SystemDtoCopyWithImpl<$Res> extends _$SystemDtoCopyWithImpl<$Res>
+  implements _$SystemDtoCopyWith<$Res> {
+  __$SystemDtoCopyWithImpl(_SystemDto _value, $Res Function(_SystemDto) _then)
+    : super(_value, (v) => _then(v as _SystemDto));
   
   @override
   _SystemDto get _value => super._value as _SystemDto;
@@ -98,14 +103,18 @@ class __$SystemDtoCopyWithImpl<$Res> extends _$SystemDtoCopyWithImpl<$Res> imple
 
 @JsonSerializable()
 class _$_SystemDto extends _SystemDto {
-  const _$_SystemDto({@required this.id, @required this.name, @required this.type, @required this.company})
+  const _$_SystemDto({@required this.id,
+    @required this.name,
+    @required this.type,
+    @required this.company})
     : assert(id != null),
       assert(name != null),
       assert(type != null),
       assert(company != null),
       super._();
   
-  factory _$_SystemDto.fromJson(Map<String, dynamic> json) => _$_$_SystemDtoFromJson(json);
+  factory _$_SystemDto.fromJson(Map<String, dynamic> json) =>
+    _$_$_SystemDtoFromJson(json);
   
   @override
   final int id;
@@ -125,10 +134,14 @@ class _$_SystemDto extends _SystemDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
       (other is _SystemDto &&
-        (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-        (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
-        (identical(other.company, company) || const DeepCollectionEquality().equals(other.company, company)));
+        (identical(other.id, id) ||
+          const DeepCollectionEquality().equals(other.id, id)) &&
+        (identical(other.name, name) ||
+          const DeepCollectionEquality().equals(other.name, name)) &&
+        (identical(other.type, type) ||
+          const DeepCollectionEquality().equals(other.type, type)) &&
+        (identical(other.company, company) ||
+          const DeepCollectionEquality().equals(other.company, company)));
   }
 
   @override
@@ -140,7 +153,8 @@ class _$_SystemDto extends _SystemDto {
       const DeepCollectionEquality().hash(company);
   
   @override
-  _$SystemDtoCopyWith<_SystemDto> get copyWith => __$SystemDtoCopyWithImpl<_SystemDto>(this, _$identity);
+  _$SystemDtoCopyWith<_SystemDto> get copyWith =>
+    __$SystemDtoCopyWithImpl<_SystemDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -151,9 +165,13 @@ class _$_SystemDto extends _SystemDto {
 abstract class _SystemDto extends SystemDto {
   const _SystemDto._() : super._();
   
-  const factory _SystemDto({@required int id, @required String name, @required String type, @required String company}) = _$_SystemDto;
+  const factory _SystemDto({@required int id,
+    @required String name,
+    @required String type,
+    @required String company}) = _$_SystemDto;
   
-  factory _SystemDto.fromJson(Map<String, dynamic> json) = _$_SystemDto.fromJson;
+  factory _SystemDto.fromJson(Map<String, dynamic> json) =
+  _$_SystemDto.fromJson;
   
   @override
   int get id;
@@ -163,7 +181,7 @@ abstract class _SystemDto extends SystemDto {
   
   @override
   String get type;
-
+  
   @override
   String get company;
   

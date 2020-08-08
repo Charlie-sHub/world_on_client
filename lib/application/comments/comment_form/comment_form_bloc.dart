@@ -10,7 +10,6 @@ import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/comments/use_case/edit_comment.dart' as edit_comment;
 import 'package:worldon/domain/comments/use_case/post_comment.dart' as post_comment;
 import 'package:worldon/domain/core/entities/comment/comment.dart';
-import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';

@@ -37,7 +37,6 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
 
   @override
   Future<Either<Failure, KtSet<Experience>>> loadSurroundingExperiences(Coordinates coordinates) {
-    Either<Failure, KtSet<Experience>> _either;
     if (_random.nextBool()) {
       final _experienceSet = KtSet.of(
         getValidExperience(),

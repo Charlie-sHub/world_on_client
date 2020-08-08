@@ -27,7 +27,7 @@ class SimpleTagErrorDisplay extends StatelessWidget {
             () => "",
             (failure) => failure.toString(),
           ),
-          style: TextStyle(
+          style: const TextStyle(
             color: WorldOnColors.red,
           ),
         ),

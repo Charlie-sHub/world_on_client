@@ -18,15 +18,16 @@ _$_NotificationDto _$_$_NotificationDtoFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_NotificationDtoToJson(_$_NotificationDto instance) => <String, dynamic>{
-      'id': instance.id,
-      'sender': instance.sender,
-      'receiver': instance.receiver,
-      'description': instance.description,
-      'seen': instance.seen,
-      'creationDate': instance.creationDate,
-      'type': _$NotificationTypeEnumMap[instance.type],
-    };
+Map<String, dynamic> _$_$_NotificationDtoToJson(_$_NotificationDto instance) =>
+  <String, dynamic>{
+    'id': instance.id,
+    'sender': instance.sender,
+    'receiver': instance.receiver,
+    'description': instance.description,
+    'seen': instance.seen,
+    'creationDate': instance.creationDate,
+    'type': _$NotificationTypeEnumMap[instance.type],
+  };
 
 T _$enumDecode<T>(
   Map<T, dynamic> enumValues,

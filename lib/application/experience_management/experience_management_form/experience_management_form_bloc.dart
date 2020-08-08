@@ -80,6 +80,7 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
   }
 
   Stream<ExperienceManagementFormState> onTagsChanged(_TagsChanged event) async* {
+    print("event tags ${event.tags.size}");
     yield state.copyWith(
       experience: state.experience.copyWith(
         tags: TagSet(event.tags),

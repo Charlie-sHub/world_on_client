@@ -24,7 +24,7 @@ class SimpleTagDisplay extends StatelessWidget {
         padding: const EdgeInsets.all(3),
         child: Text(
           tag.name.getOrCrash(),
-          style: TextStyle(
+          style: const TextStyle(
             color: WorldOnColors.accent,
           ),
         ),

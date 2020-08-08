@@ -11,7 +11,6 @@ import 'package:worldon/domain/tag_management/use_case/dismiss_tag_from_interest
 import 'package:worldon/injection.dart';
 
 import '../../../domain/core/methods/get_valid_tag.dart';
-import '../../../domain/core/methods/get_valid_user.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
@@ -26,7 +25,6 @@ void main() {
   );
   final tagInInterests = getValidTag();
   final tagNotInInterests = tagInInterests.copyWith(id: 2);
-  final user = getValidUser().copyWith(interests: {tagInInterests});
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,

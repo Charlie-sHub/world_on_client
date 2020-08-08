@@ -58,7 +58,6 @@ class ExperienceManagementForm extends StatelessWidget {
                   const SizedBox(height: 10),
                   PicturesSelector(),
                   const SizedBox(height: 10),
-                  // TODO: Implement the google map to get the coordinates
                   const Map(),
                   const SizedBox(height: 10),
                   const DifficultyTitle(),
@@ -67,7 +66,7 @@ class ExperienceManagementForm extends StatelessWidget {
                   const ObjectiveCreationCard(),
                   const RewardCreationCard(),
                   TagAdditionCard(
-                    tagChangeEvent: (KtSet<Tag> tags) => context.bloc<ExperienceManagementFormBloc>().add(
+                    tagChangeFunction: (KtSet<Tag> tags) => context.bloc<ExperienceManagementFormBloc>().add(
                           ExperienceManagementFormEvent.tagsChanged(tags),
                         ),
                   ),
@@ -324,7 +323,7 @@ class Map extends StatelessWidget {
     return SizedBox(
       child: Icon(
         Icons.map,
-        size: 100,
+        size: 150,
       ),
     );
   }
