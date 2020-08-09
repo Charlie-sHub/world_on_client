@@ -1,10 +1,13 @@
 import 'package:dartz/dartz.dart';
 import 'package:flushbar/flushbar_helper.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:multi_image_picker/multi_image_picker.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
+import 'package:worldon/application/experience_management/objectives_creation/objectives_creation_bloc.dart';
+import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/common_functions/get_color_by_difficulty.dart';
@@ -114,20 +117,63 @@ class ObjectiveCreationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Column(
-        children: const <Widget>[
-          Text(
-            "Objectives",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: WorldOnColors.background,
-              fontSize: 15,
+    return BlocProvider(
+      create: (context) => getIt<ObjectivesCreationBloc>(),
+      child: BlocConsumer<ObjectivesCreationBloc, ObjectivesCreationState>(
+        listener: (context, state) => context.bloc<ExperienceManagementFormBloc>().add(
+              ExperienceManagementFormEvent.objectivesChanged(state.objectivesCreated),
+            ),
+        builder: (context, state) => Card(
+          color: WorldOnColors.background,
+          shape: const RoundedRectangleBorder(
+            side: BorderSide(
+              color: WorldOnColors.primary,
             ),
           ),
-          // TODO: implement objectives creation
-        ],
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Container(
+                constraints: BoxConstraints(
+                  minHeight: MediaQuery.of(context).size.height * 0.1,
+                  maxHeight: MediaQuery.of(context).size.height * 0.5,
+                ),
+                child: ListView.builder(
+                  padding: const EdgeInsets.all(10),
+                  itemCount: state.objectivesCreated.size,
+                  shrinkWrap: true,
+                  physics: const ClampingScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    final _objective = state.objectivesCreated.asSet().elementAt(index);
+                    if (_objective.isValid) {
+                      return const Text("Objective Creation Card");
+                    } else {
+                      return const Text("Objective Form");
+                    }
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: RaisedButton(
+                  onPressed: () => context.bloc<ObjectivesCreationBloc>().add(
+                        ObjectivesCreationEvent.addedObjective(
+                          Objective.empty(),
+                        ),
+                      ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const <Widget>[
+                      Icon(Icons.add),
+                      SizedBox(width: 5),
+                      Text("Add Objective"),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

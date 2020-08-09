@@ -95,7 +95,24 @@ void main() {
   group(
     "${TestDescription.groupOnSuccess} updating the user fields",
     () {
-      // TODO: Test Eula check
+      blocTest(
+        "${TestDescription.shouldEmitUpdated} with the EULA check",
+        build: () {
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
+          return getIt<RegistrationFormBloc>();
+        },
+        act: (bloc) async {
+          bloc.add(const RegistrationFormEvent.initialized());
+          bloc.add(const RegistrationFormEvent.tappedEULA());
+        },
+        verify: (_) async => verify(getLoggedInUser.call(any)),
+        expect: [
+          RegistrationFormState.initial(),
+          RegistrationFormState.initial().copyWith(
+            acceptedEULA: true,
+          ),
+        ],
+      );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the imageFile",
         build: () {

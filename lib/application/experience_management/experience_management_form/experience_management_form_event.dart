@@ -17,7 +17,7 @@ abstract class ExperienceManagementFormEvent with _$ExperienceManagementFormEven
 
   const factory ExperienceManagementFormEvent.difficultyChanged(int difficulty) = _DifficultyChanged;
 
-  const factory ExperienceManagementFormEvent.objectivesChanged(KtSet<PrimitiveObjective> objectives) = _ObjectivesChanged;
+  const factory ExperienceManagementFormEvent.objectivesChanged(KtSet<Objective> objectives) = _ObjectivesChanged;
 
   const factory ExperienceManagementFormEvent.rewardsChanged(KtSet<PrimitiveReward> rewards) = _RewardsChanged;
 

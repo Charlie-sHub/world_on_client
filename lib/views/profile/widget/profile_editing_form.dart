@@ -185,8 +185,8 @@ class BirthdayPicker extends StatelessWidget {
           lastDate: DateTime.now(),
         );
         context.bloc<ProfileEditingFormBloc>().add(
-          ProfileEditingFormEvent.birthdayChanged(_birthDate),
-        );
+              ProfileEditingFormEvent.birthdayChanged(_birthDate),
+            );
       },
       // TODO: Make it so the text changes to the selected date after selection or the failure
       child: const Text("Select your birthday"),

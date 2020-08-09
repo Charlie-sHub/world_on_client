@@ -7,6 +7,7 @@ abstract class ExperienceManagementFormState with _$ExperienceManagementFormStat
     @required bool showErrorMessages,
     @required bool isEditing,
     @required bool isSubmitting,
+    // TODO: Control that there's at least one image
     @required Option<Either<Failure, Unit>> failureOrSuccessOption,
   }) = _ExperienceManagementFormState;
 

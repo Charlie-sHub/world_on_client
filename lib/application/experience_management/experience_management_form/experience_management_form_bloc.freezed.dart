@@ -57,7 +57,7 @@ class _$ExperienceManagementFormEventTearOff {
   }
 
 // ignore: unused_element
-  _ObjectivesChanged objectivesChanged(KtSet<PrimitiveObjective> objectives) {
+  _ObjectivesChanged objectivesChanged(KtSet<Objective> objectives) {
     return _ObjectivesChanged(
       objectives,
     );
@@ -95,7 +95,7 @@ mixin _$ExperienceManagementFormEvent {
     @required Result imagesChanged(List<Asset> imageAssets),
     @required Result coordinatesChanged(double latitude, double longitude),
     @required Result difficultyChanged(int difficulty),
-    @required Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
+    @required Result objectivesChanged(KtSet<Objective> objectives),
     @required Result rewardsChanged(KtSet<PrimitiveReward> rewards),
     @required Result tagsChanged(KtSet<Tag> tags),
     @required Result submitted(),
@@ -108,7 +108,7 @@ mixin _$ExperienceManagementFormEvent {
     Result imagesChanged(List<Asset> imageAssets),
     Result coordinatesChanged(double latitude, double longitude),
     Result difficultyChanged(int difficulty),
-    Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
+    Result objectivesChanged(KtSet<Objective> objectives),
     Result rewardsChanged(KtSet<PrimitiveReward> rewards),
     Result tagsChanged(KtSet<Tag> tags),
     Result submitted(),
@@ -227,7 +227,7 @@ class _$_Initialized implements _Initialized {
     @required Result imagesChanged(List<Asset> imageAssets),
     @required Result coordinatesChanged(double latitude, double longitude),
     @required Result difficultyChanged(int difficulty),
-    @required Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
+    @required Result objectivesChanged(KtSet<Objective> objectives),
     @required Result rewardsChanged(KtSet<PrimitiveReward> rewards),
     @required Result tagsChanged(KtSet<Tag> tags),
     @required Result submitted(),
@@ -254,7 +254,7 @@ class _$_Initialized implements _Initialized {
     Result imagesChanged(List<Asset> imageAssets),
     Result coordinatesChanged(double latitude, double longitude),
     Result difficultyChanged(int difficulty),
-    Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
+    Result objectivesChanged(KtSet<Objective> objectives),
     Result rewardsChanged(KtSet<PrimitiveReward> rewards),
     Result tagsChanged(KtSet<Tag> tags),
     Result submitted(),
@@ -388,7 +388,7 @@ class _$_TitleChanged implements _TitleChanged {
     @required Result imagesChanged(List<Asset> imageAssets),
     @required Result coordinatesChanged(double latitude, double longitude),
     @required Result difficultyChanged(int difficulty),
-    @required Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
+    @required Result objectivesChanged(KtSet<Objective> objectives),
     @required Result rewardsChanged(KtSet<PrimitiveReward> rewards),
     @required Result tagsChanged(KtSet<Tag> tags),
     @required Result submitted(),
@@ -415,7 +415,7 @@ class _$_TitleChanged implements _TitleChanged {
     Result imagesChanged(List<Asset> imageAssets),
     Result coordinatesChanged(double latitude, double longitude),
     Result difficultyChanged(int difficulty),
-    Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
+    Result objectivesChanged(KtSet<Objective> objectives),
     Result rewardsChanged(KtSet<PrimitiveReward> rewards),
     Result tagsChanged(KtSet<Tag> tags),
     Result submitted(),
@@ -549,7 +549,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     @required Result imagesChanged(List<Asset> imageAssets),
     @required Result coordinatesChanged(double latitude, double longitude),
     @required Result difficultyChanged(int difficulty),
-    @required Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
+    @required Result objectivesChanged(KtSet<Objective> objectives),
     @required Result rewardsChanged(KtSet<PrimitiveReward> rewards),
     @required Result tagsChanged(KtSet<Tag> tags),
     @required Result submitted(),
@@ -576,7 +576,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     Result imagesChanged(List<Asset> imageAssets),
     Result coordinatesChanged(double latitude, double longitude),
     Result difficultyChanged(int difficulty),
-    Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
+    Result objectivesChanged(KtSet<Objective> objectives),
     Result rewardsChanged(KtSet<PrimitiveReward> rewards),
     Result tagsChanged(KtSet<Tag> tags),
     Result submitted(),
@@ -710,7 +710,7 @@ class _$_ImagesChanged implements _ImagesChanged {
     @required Result imagesChanged(List<Asset> imageAssets),
     @required Result coordinatesChanged(double latitude, double longitude),
     @required Result difficultyChanged(int difficulty),
-    @required Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
+    @required Result objectivesChanged(KtSet<Objective> objectives),
     @required Result rewardsChanged(KtSet<PrimitiveReward> rewards),
     @required Result tagsChanged(KtSet<Tag> tags),
     @required Result submitted(),
@@ -737,7 +737,7 @@ class _$_ImagesChanged implements _ImagesChanged {
     Result imagesChanged(List<Asset> imageAssets),
     Result coordinatesChanged(double latitude, double longitude),
     Result difficultyChanged(int difficulty),
-    Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
+    Result objectivesChanged(KtSet<Objective> objectives),
     Result rewardsChanged(KtSet<PrimitiveReward> rewards),
     Result tagsChanged(KtSet<Tag> tags),
     Result submitted(),
@@ -883,7 +883,7 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
     @required Result imagesChanged(List<Asset> imageAssets),
     @required Result coordinatesChanged(double latitude, double longitude),
     @required Result difficultyChanged(int difficulty),
-    @required Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
+    @required Result objectivesChanged(KtSet<Objective> objectives),
     @required Result rewardsChanged(KtSet<PrimitiveReward> rewards),
     @required Result tagsChanged(KtSet<Tag> tags),
     @required Result submitted(),
@@ -910,7 +910,7 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
     Result imagesChanged(List<Asset> imageAssets),
     Result coordinatesChanged(double latitude, double longitude),
     Result difficultyChanged(int difficulty),
-    Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
+    Result objectivesChanged(KtSet<Objective> objectives),
     Result rewardsChanged(KtSet<PrimitiveReward> rewards),
     Result tagsChanged(KtSet<Tag> tags),
     Result submitted(),
@@ -1047,7 +1047,7 @@ class _$_DifficultyChanged implements _DifficultyChanged {
     @required Result imagesChanged(List<Asset> imageAssets),
     @required Result coordinatesChanged(double latitude, double longitude),
     @required Result difficultyChanged(int difficulty),
-    @required Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
+    @required Result objectivesChanged(KtSet<Objective> objectives),
     @required Result rewardsChanged(KtSet<PrimitiveReward> rewards),
     @required Result tagsChanged(KtSet<Tag> tags),
     @required Result submitted(),
@@ -1074,7 +1074,7 @@ class _$_DifficultyChanged implements _DifficultyChanged {
     Result imagesChanged(List<Asset> imageAssets),
     Result coordinatesChanged(double latitude, double longitude),
     Result difficultyChanged(int difficulty),
-    Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
+    Result objectivesChanged(KtSet<Objective> objectives),
     Result rewardsChanged(KtSet<PrimitiveReward> rewards),
     Result tagsChanged(KtSet<Tag> tags),
     Result submitted(),
@@ -1148,7 +1148,8 @@ abstract class _$ObjectivesChangedCopyWith<$Res> {
   factory _$ObjectivesChangedCopyWith(
           _ObjectivesChanged value, $Res Function(_ObjectivesChanged) then) =
       __$ObjectivesChangedCopyWithImpl<$Res>;
-  $Res call({KtSet<PrimitiveObjective> objectives});
+
+  $Res call({KtSet<Objective> objectives});
 }
 
 class __$ObjectivesChangedCopyWithImpl<$Res>
@@ -1166,28 +1167,26 @@ class __$ObjectivesChangedCopyWithImpl<$Res>
     Object objectives = freezed,
   }) {
     return _then(_ObjectivesChanged(
-      objectives == freezed
-          ? _value.objectives
-          : objectives as KtSet<PrimitiveObjective>,
+      objectives == freezed ? _value.objectives : objectives as KtSet<Objective>,
     ));
   }
 }
 
 class _$_ObjectivesChanged implements _ObjectivesChanged {
   const _$_ObjectivesChanged(this.objectives) : assert(objectives != null);
-
+  
   @override
-  final KtSet<PrimitiveObjective> objectives;
-
+  final KtSet<Objective> objectives;
+  
   @override
   String toString() {
     return 'ExperienceManagementFormEvent.objectivesChanged(objectives: $objectives)';
   }
-
+  
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ObjectivesChanged &&
+      (other is _ObjectivesChanged &&
             (identical(other.objectives, objectives) ||
                 const DeepCollectionEquality()
                     .equals(other.objectives, objectives)));
@@ -1210,7 +1209,7 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
     @required Result imagesChanged(List<Asset> imageAssets),
     @required Result coordinatesChanged(double latitude, double longitude),
     @required Result difficultyChanged(int difficulty),
-    @required Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
+    @required Result objectivesChanged(KtSet<Objective> objectives),
     @required Result rewardsChanged(KtSet<PrimitiveReward> rewards),
     @required Result tagsChanged(KtSet<Tag> tags),
     @required Result submitted(),
@@ -1237,7 +1236,7 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
     Result imagesChanged(List<Asset> imageAssets),
     Result coordinatesChanged(double latitude, double longitude),
     Result difficultyChanged(int difficulty),
-    Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
+    Result objectivesChanged(KtSet<Objective> objectives),
     Result rewardsChanged(KtSet<PrimitiveReward> rewards),
     Result tagsChanged(KtSet<Tag> tags),
     Result submitted(),
@@ -1301,10 +1300,11 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
 }
 
 abstract class _ObjectivesChanged implements ExperienceManagementFormEvent {
-  const factory _ObjectivesChanged(KtSet<PrimitiveObjective> objectives) =
-      _$_ObjectivesChanged;
-
-  KtSet<PrimitiveObjective> get objectives;
+  const factory _ObjectivesChanged(KtSet<Objective> objectives) =
+  _$_ObjectivesChanged;
+  
+  KtSet<Objective> get objectives;
+  
   _$ObjectivesChangedCopyWith<_ObjectivesChanged> get copyWith;
 }
 
@@ -1371,7 +1371,7 @@ class _$_RewardsChanged implements _RewardsChanged {
     @required Result imagesChanged(List<Asset> imageAssets),
     @required Result coordinatesChanged(double latitude, double longitude),
     @required Result difficultyChanged(int difficulty),
-    @required Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
+    @required Result objectivesChanged(KtSet<Objective> objectives),
     @required Result rewardsChanged(KtSet<PrimitiveReward> rewards),
     @required Result tagsChanged(KtSet<Tag> tags),
     @required Result submitted(),
@@ -1398,7 +1398,7 @@ class _$_RewardsChanged implements _RewardsChanged {
     Result imagesChanged(List<Asset> imageAssets),
     Result coordinatesChanged(double latitude, double longitude),
     Result difficultyChanged(int difficulty),
-    Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
+    Result objectivesChanged(KtSet<Objective> objectives),
     Result rewardsChanged(KtSet<PrimitiveReward> rewards),
     Result tagsChanged(KtSet<Tag> tags),
     Result submitted(),
@@ -1532,7 +1532,7 @@ class _$_TagsChanged implements _TagsChanged {
     @required Result imagesChanged(List<Asset> imageAssets),
     @required Result coordinatesChanged(double latitude, double longitude),
     @required Result difficultyChanged(int difficulty),
-    @required Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
+    @required Result objectivesChanged(KtSet<Objective> objectives),
     @required Result rewardsChanged(KtSet<PrimitiveReward> rewards),
     @required Result tagsChanged(KtSet<Tag> tags),
     @required Result submitted(),
@@ -1559,7 +1559,7 @@ class _$_TagsChanged implements _TagsChanged {
     Result imagesChanged(List<Asset> imageAssets),
     Result coordinatesChanged(double latitude, double longitude),
     Result difficultyChanged(int difficulty),
-    Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
+    Result objectivesChanged(KtSet<Objective> objectives),
     Result rewardsChanged(KtSet<PrimitiveReward> rewards),
     Result tagsChanged(KtSet<Tag> tags),
     Result submitted(),
@@ -1670,7 +1670,7 @@ class _$_Submitted implements _Submitted {
     @required Result imagesChanged(List<Asset> imageAssets),
     @required Result coordinatesChanged(double latitude, double longitude),
     @required Result difficultyChanged(int difficulty),
-    @required Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
+    @required Result objectivesChanged(KtSet<Objective> objectives),
     @required Result rewardsChanged(KtSet<PrimitiveReward> rewards),
     @required Result tagsChanged(KtSet<Tag> tags),
     @required Result submitted(),
@@ -1697,7 +1697,7 @@ class _$_Submitted implements _Submitted {
     Result imagesChanged(List<Asset> imageAssets),
     Result coordinatesChanged(double latitude, double longitude),
     Result difficultyChanged(int difficulty),
-    Result objectivesChanged(KtSet<PrimitiveObjective> objectives),
+    Result objectivesChanged(KtSet<Objective> objectives),
     Result rewardsChanged(KtSet<PrimitiveReward> rewards),
     Result tagsChanged(KtSet<Tag> tags),
     Result submitted(),
