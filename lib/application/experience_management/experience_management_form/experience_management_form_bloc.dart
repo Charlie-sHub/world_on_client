@@ -54,6 +54,9 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
   }
 
   Stream<ExperienceManagementFormState> onSubmitted(_Submitted event) async* {
+    // TODO: reinitialize the form
+    // can start by yielding a new initial state
+    // but then must send another initialized event, but from where?
     Either<Failure, Unit> _failureOrUnit;
     yield state.copyWith(
       isSubmitting: true,

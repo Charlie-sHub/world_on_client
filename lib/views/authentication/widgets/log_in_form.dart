@@ -6,6 +6,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
 import 'package:worldon/application/authentication/log_in_form/log_in_form_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/password.dart';
 import 'package:worldon/views/core/misc/string_constants.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/routes/router.gr.dart';
@@ -172,27 +174,35 @@ class PasswordTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLength: Password.maxLength,
       decoration: const InputDecoration(
         labelText: "Password",
         prefixIcon: Icon(Icons.lock),
       ),
       autocorrect: false,
       obscureText: true,
-      onChanged: (value) => context.bloc<LogInFormBloc>().add(
-            LogInFormEvent.passwordChanged(value),
-          ),
-      validator: (_) => context.bloc<LogInFormBloc>().state.password.value.fold(
-            // TODO: Instead of mapping just return an error string from the failure
+      onChanged: (value) =>
+        context.bloc<LogInFormBloc>().add(
+          LogInFormEvent.passwordChanged(value),
+        ),
+      validator: (_) =>
+        context
+          .bloc<LogInFormBloc>()
+          .state
+          .password
+          .value
+          .fold(
+          // TODO: Instead of mapping just return an error string from the failure
             (failure) => failure.maybeMap(
-              emptyString: (_) => "The password can't be empty",
-              multiLineString: (_) => "The password can't be more than one line",
-              stringExceedsLength: (_) => "The password is too long",
-              // Rather superfluous
-              invalidPassword: (_) => "The password is invalid",
-              orElse: () => StringConst.unknownError,
-            ),
-            (_) => null,
+            emptyString: (_) => "The password can't be empty",
+            multiLineString: (_) => "The password can't be more than one line",
+            stringExceedsLength: (_) => "The password is too long",
+            // Rather superfluous
+            invalidPassword: (_) => "The password is invalid",
+            orElse: () => StringConst.unknownError,
           ),
+            (_) => null,
+        ),
     );
   }
 }
@@ -205,17 +215,25 @@ class UsernameTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      // TODO: Set maxLines and maxLength for all text fields
+      maxLength: Name.maxLength,
       decoration: const InputDecoration(
         labelText: "Username",
         prefixIcon: Icon(Icons.account_box),
       ),
       autocorrect: false,
-      onChanged: (value) => context.bloc<LogInFormBloc>().add(
-            LogInFormEvent.usernameChanged(value),
-          ),
-      validator: (_) => context.bloc<LogInFormBloc>().state.username.value.fold(
-            (failure) => failure.maybeMap(
+      onChanged: (value) =>
+        context.bloc<LogInFormBloc>().add(
+          LogInFormEvent.usernameChanged(value),
+        ),
+      validator: (_) =>
+        context
+          .bloc<LogInFormBloc>()
+          .state
+          .username
+          .value
+          .fold(
+            (failure) =>
+            failure.maybeMap(
               emptyString: (_) => "The username can't be empty",
               multiLineString: (_) => "The username can't be more than one line",
               stringExceedsLength: (_) => "The username is too long",

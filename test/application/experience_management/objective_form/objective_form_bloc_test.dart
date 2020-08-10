@@ -131,6 +131,7 @@ void main() {
             ),
             isSubmitting: true,
           ),
+          ObjectiveFormState.initial(),
         ],
       );
     },

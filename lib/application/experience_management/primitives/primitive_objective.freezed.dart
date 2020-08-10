@@ -43,12 +43,12 @@ abstract class $PrimitiveObjectiveCopyWith<$Res> {
 
 class _$PrimitiveObjectiveCopyWithImpl<$Res> implements $PrimitiveObjectiveCopyWith<$Res> {
   _$PrimitiveObjectiveCopyWithImpl(this._value, this._then);
-  
+
   final PrimitiveObjective _value;
-  
+
   // ignore: unused_field
   final $Res Function(PrimitiveObjective) _then;
-  
+
   @override
   $Res call({
     Object description = freezed,
@@ -67,17 +67,17 @@ class _$PrimitiveObjectiveCopyWithImpl<$Res> implements $PrimitiveObjectiveCopyW
 
 abstract class _$PrimitiveObjectiveCopyWith<$Res> implements $PrimitiveObjectiveCopyWith<$Res> {
   factory _$PrimitiveObjectiveCopyWith(_PrimitiveObjective value, $Res Function(_PrimitiveObjective) then) = __$PrimitiveObjectiveCopyWithImpl<$Res>;
-  
+
   @override
   $Res call({String description, double latitude, double longitude, File imageFile});
 }
 
 class __$PrimitiveObjectiveCopyWithImpl<$Res> extends _$PrimitiveObjectiveCopyWithImpl<$Res> implements _$PrimitiveObjectiveCopyWith<$Res> {
   __$PrimitiveObjectiveCopyWithImpl(_PrimitiveObjective _value, $Res Function(_PrimitiveObjective) _then) : super(_value, (v) => _then(v as _PrimitiveObjective));
-  
+
   @override
   _PrimitiveObjective get _value => super._value as _PrimitiveObjective;
-  
+
   @override
   $Res call({
     Object description = freezed,
@@ -96,12 +96,12 @@ class __$PrimitiveObjectiveCopyWithImpl<$Res> extends _$PrimitiveObjectiveCopyWi
 
 class _$_PrimitiveObjective extends _PrimitiveObjective {
   const _$_PrimitiveObjective({@required this.description, @required this.latitude, @required this.longitude, @required this.imageFile})
-    : assert(description != null),
-      assert(latitude != null),
-      assert(longitude != null),
-      assert(imageFile != null),
-      super._();
-  
+      : assert(description != null),
+        assert(latitude != null),
+        assert(longitude != null),
+        assert(imageFile != null),
+        super._();
+
   @override
   final String description;
   @override
@@ -140,21 +140,21 @@ class _$_PrimitiveObjective extends _PrimitiveObjective {
 
 abstract class _PrimitiveObjective extends PrimitiveObjective {
   const _PrimitiveObjective._() : super._();
-  
+
   const factory _PrimitiveObjective({@required String description, @required double latitude, @required double longitude, @required File imageFile}) = _$_PrimitiveObjective;
-  
+
   @override
   String get description;
-  
+
   @override
   double get latitude;
-  
+
   @override
   double get longitude;
 
   @override
   File get imageFile;
-  
+
   @override
   _$PrimitiveObjectiveCopyWith<_PrimitiveObjective> get copyWith;
 }

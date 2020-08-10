@@ -5,10 +5,10 @@ import 'package:worldon/views/core/widget/app_widget.dart';
 
 @Deprecated("Prefer the use of either main dev or prod to un the app")
 void main() {
-  final environment = Environment.dev;
+  const environment = Environment.dev;
   configureDependencies(environment);
   runApp(
-    AppWidget(
+    const AppWidget(
       environment: environment,
     ),
   );

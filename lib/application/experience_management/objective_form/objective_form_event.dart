@@ -2,6 +2,7 @@ part of 'objective_form_bloc.dart';
 
 @freezed
 abstract class ObjectiveFormEvent with _$ObjectiveFormEvent {
+  // TODO; reinitialize event
   const factory ObjectiveFormEvent.descriptionChanged(String description) = _DescriptionChanged;
 
   const factory ObjectiveFormEvent.coordinatesChanged({

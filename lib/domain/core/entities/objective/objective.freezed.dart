@@ -82,20 +82,20 @@ class _$ObjectiveCopyWithImpl<$Res> implements $ObjectiveCopyWith<$Res> {
 
 abstract class _$ObjectiveCopyWith<$Res> implements $ObjectiveCopyWith<$Res> {
   factory _$ObjectiveCopyWith(_Objective value, $Res Function(_Objective) then) = __$ObjectiveCopyWithImpl<$Res>;
-  
+
   @override
   $Res call({int id, EntityDescription description, Coordinates coordinates, String imageURL, Option<File> imageFile});
-  
+
   @override
   $CoordinatesCopyWith<$Res> get coordinates;
 }
 
 class __$ObjectiveCopyWithImpl<$Res> extends _$ObjectiveCopyWithImpl<$Res> implements _$ObjectiveCopyWith<$Res> {
   __$ObjectiveCopyWithImpl(_Objective _value, $Res Function(_Objective) _then) : super(_value, (v) => _then(v as _Objective));
-  
+
   @override
   _Objective get _value => super._value as _Objective;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -116,12 +116,12 @@ class __$ObjectiveCopyWithImpl<$Res> extends _$ObjectiveCopyWithImpl<$Res> imple
 
 class _$_Objective extends _Objective {
   const _$_Objective({this.id, @required this.description, @required this.coordinates, @required this.imageURL, @required this.imageFile})
-    : assert(description != null),
-      assert(coordinates != null),
-      assert(imageURL != null),
-      assert(imageFile != null),
-      super._();
-  
+      : assert(description != null),
+        assert(coordinates != null),
+        assert(imageURL != null),
+        assert(imageFile != null),
+        super._();
+
   @override
   final int id;
   @override
@@ -164,21 +164,21 @@ class _$_Objective extends _Objective {
 
 abstract class _Objective extends Objective {
   const _Objective._() : super._();
-  
+
   const factory _Objective({int id, @required EntityDescription description, @required Coordinates coordinates, @required String imageURL, @required Option<File> imageFile}) = _$_Objective;
-  
+
   @override
   int get id;
-  
+
   @override
   EntityDescription get description;
-  
+
   @override
   Coordinates get coordinates;
 
   @override
   String get imageURL;
-  
+
   @override
   Option<File> get imageFile;
   @override

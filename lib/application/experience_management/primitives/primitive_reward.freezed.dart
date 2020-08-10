@@ -41,12 +41,12 @@ abstract class $PrimitiveRewardCopyWith<$Res> {
 
 class _$PrimitiveRewardCopyWithImpl<$Res> implements $PrimitiveRewardCopyWith<$Res> {
   _$PrimitiveRewardCopyWithImpl(this._value, this._then);
-  
+
   final PrimitiveReward _value;
-  
+
   // ignore: unused_field
   final $Res Function(PrimitiveReward) _then;
-  
+
   @override
   $Res call({
     Object name = freezed,
@@ -63,17 +63,17 @@ class _$PrimitiveRewardCopyWithImpl<$Res> implements $PrimitiveRewardCopyWith<$R
 
 abstract class _$PrimitiveRewardCopyWith<$Res> implements $PrimitiveRewardCopyWith<$Res> {
   factory _$PrimitiveRewardCopyWith(_PrimitiveReward value, $Res Function(_PrimitiveReward) then) = __$PrimitiveRewardCopyWithImpl<$Res>;
-  
+
   @override
   $Res call({String name, String description, File imageFile});
 }
 
 class __$PrimitiveRewardCopyWithImpl<$Res> extends _$PrimitiveRewardCopyWithImpl<$Res> implements _$PrimitiveRewardCopyWith<$Res> {
   __$PrimitiveRewardCopyWithImpl(_PrimitiveReward _value, $Res Function(_PrimitiveReward) _then) : super(_value, (v) => _then(v as _PrimitiveReward));
-  
+
   @override
   _PrimitiveReward get _value => super._value as _PrimitiveReward;
-  
+
   @override
   $Res call({
     Object name = freezed,
@@ -90,18 +90,18 @@ class __$PrimitiveRewardCopyWithImpl<$Res> extends _$PrimitiveRewardCopyWithImpl
 
 class _$_PrimitiveReward extends _PrimitiveReward {
   const _$_PrimitiveReward({@required this.name, @required this.description, @required this.imageFile})
-    : assert(name != null),
-      assert(description != null),
-      assert(imageFile != null),
-      super._();
-  
+      : assert(name != null),
+        assert(description != null),
+        assert(imageFile != null),
+        super._();
+
   @override
   final String name;
   @override
   final String description;
   @override
   final File imageFile;
-  
+
   @override
   String toString() {
     return 'PrimitiveReward(name: $name, description: $description, imageFile: $imageFile)';
@@ -125,15 +125,15 @@ class _$_PrimitiveReward extends _PrimitiveReward {
 
 abstract class _PrimitiveReward extends PrimitiveReward {
   const _PrimitiveReward._() : super._();
-  
+
   const factory _PrimitiveReward({@required String name, @required String description, @required File imageFile}) = _$_PrimitiveReward;
-  
+
   @override
   String get name;
-  
+
   @override
   String get description;
-  
+
   @override
   File get imageFile;
 

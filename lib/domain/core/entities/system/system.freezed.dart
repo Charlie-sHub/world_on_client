@@ -93,11 +93,11 @@ class __$SystemCopyWithImpl<$Res> extends _$SystemCopyWithImpl<$Res> implements 
 
 class _$_System extends _System {
   const _$_System({this.id, @required this.name, @required this.type, @required this.company})
-    : assert(name != null),
-      assert(type != null),
-      assert(company != null),
-      super._();
-  
+      : assert(name != null),
+        assert(type != null),
+        assert(company != null),
+        super._();
+
   @override
   final int id;
   @override
@@ -129,28 +129,28 @@ class _$_System extends _System {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(company);
-  
+
   @override
   _$SystemCopyWith<_System> get copyWith => __$SystemCopyWithImpl<_System>(this, _$identity);
 }
 
 abstract class _System extends System {
   const _System._() : super._();
-  
+
   const factory _System({int id, @required String name, @required String type, @required String company}) = _$_System;
-  
+
   @override
   int get id;
-  
+
   @override
   String get name;
-  
+
   @override
   String get type;
 
   @override
   String get company;
-  
+
   @override
   _$SystemCopyWith<_System> get copyWith;
 }

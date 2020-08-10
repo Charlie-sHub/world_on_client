@@ -93,11 +93,11 @@ class __$DeviceCopyWithImpl<$Res> extends _$DeviceCopyWithImpl<$Res> implements 
 
 class _$_Device extends _Device {
   const _$_Device({this.id, @required this.name, @required this.type, @required this.company})
-    : assert(name != null),
-      assert(type != null),
-      assert(company != null),
-      super._();
-  
+      : assert(name != null),
+        assert(type != null),
+        assert(company != null),
+        super._();
+
   @override
   final int id;
   @override
@@ -129,28 +129,28 @@ class _$_Device extends _Device {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(company);
-  
+
   @override
   _$DeviceCopyWith<_Device> get copyWith => __$DeviceCopyWithImpl<_Device>(this, _$identity);
 }
 
 abstract class _Device extends Device {
   const _Device._() : super._();
-  
+
   const factory _Device({int id, @required String name, @required String type, @required String company}) = _$_Device;
-  
+
   @override
   int get id;
-  
+
   @override
   String get name;
-  
+
   @override
   String get type;
 
   @override
   String get company;
-  
+
   @override
   _$DeviceCopyWith<_Device> get copyWith;
 }

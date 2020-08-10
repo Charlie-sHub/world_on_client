@@ -8,6 +8,9 @@ import 'package:image_picker/image_picker.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
 import 'package:worldon/application/profile/profile_editing_form/profile_editing_form_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
+import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/password.dart';
 import 'package:worldon/views/core/misc/string_constants.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
@@ -112,13 +115,25 @@ class PasswordConfirmationTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      maxLength: 40,
-      onChanged: (value) => context.bloc<ProfileEditingFormBloc>().add(
-            ProfileEditingFormEvent.passwordConfirmationChanged(value),
-          ),
-      initialValue: context.bloc<ProfileEditingFormBloc>().state.passwordConfirmator.getOrCrash(),
-      validator: (_) => context.bloc<ProfileEditingFormBloc>().state.passwordConfirmator.value.fold(
-            (failure) => failure.maybeMap(
+      maxLength: Password.maxLength,
+      onChanged: (value) =>
+        context.bloc<ProfileEditingFormBloc>().add(
+          ProfileEditingFormEvent.passwordConfirmationChanged(value),
+        ),
+      initialValue: context
+        .bloc<ProfileEditingFormBloc>()
+        .state
+        .passwordConfirmator
+        .getOrCrash(),
+      validator: (_) =>
+        context
+          .bloc<ProfileEditingFormBloc>()
+          .state
+          .passwordConfirmator
+          .value
+          .fold(
+            (failure) =>
+            failure.maybeMap(
               stringMismatch: (_) => "The passwords are different",
               emptyString: (_) => "Please confirm the password",
               orElse: () => StringConst.unknownError,
@@ -143,13 +158,27 @@ class PasswordTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      maxLength: 40,
-      onChanged: (value) => context.bloc<ProfileEditingFormBloc>().add(
-            ProfileEditingFormEvent.passwordChanged(value),
-          ),
-      initialValue: context.bloc<ProfileEditingFormBloc>().state.user.password.getOrCrash(),
-      validator: (_) => context.bloc<ProfileEditingFormBloc>().state.user.password.value.fold(
-            (failure) => failure.maybeMap(
+      maxLength: Password.maxLength,
+      onChanged: (value) =>
+        context.bloc<ProfileEditingFormBloc>().add(
+          ProfileEditingFormEvent.passwordChanged(value),
+        ),
+      initialValue: context
+        .bloc<ProfileEditingFormBloc>()
+        .state
+        .user
+        .password
+        .getOrCrash(),
+      validator: (_) =>
+        context
+          .bloc<ProfileEditingFormBloc>()
+          .state
+          .user
+          .password
+          .value
+          .fold(
+            (failure) =>
+            failure.maybeMap(
               emptyString: (_) => "The password can't be empty",
               multiLineString: (_) => "The password can't be more than one line",
               stringExceedsLength: (_) => "The password is too long",
@@ -228,7 +257,7 @@ class EmailTextField extends StatelessWidget {
             (_) => null,
         ),
       autocorrect: false,
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         labelText: "Email Address",
         prefixIcon: Icon(Icons.email),
       ),
@@ -272,7 +301,7 @@ class DescriptionTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      maxLength: 300,
+      maxLength: EntityDescription.maxLength,
       initialValue: context
         .bloc<ProfileEditingFormBloc>()
         .state
@@ -303,7 +332,7 @@ class DescriptionTextFormField extends StatelessWidget {
         ),
       autocorrect: false,
       maxLines: 5,
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         labelText: "Description",
         prefixIcon: Icon(Icons.description),
       ),
@@ -319,7 +348,7 @@ class UsernameTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      maxLength: 50,
+      maxLength: Name.maxLength,
       initialValue: context
         .bloc<ProfileEditingFormBloc>()
         .state
@@ -365,7 +394,7 @@ class NameTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      maxLength: 50,
+      maxLength: Name.maxLength,
       initialValue: context
         .bloc<ProfileEditingFormBloc>()
         .state
@@ -416,7 +445,7 @@ class UserImagePicker extends StatelessWidget {
         .fold(
           () =>
           FlatButton(
-            onPressed: () async => pickImage(context),
+            onPressed: () async => _pickImage(context),
             child: const Hero(
               tag: "userImage",
               child: CircleAvatar(
@@ -428,7 +457,7 @@ class UserImagePicker extends StatelessWidget {
           ),
           (imageFile) =>
           FlatButton(
-            onPressed: () async => pickImage(context),
+            onPressed: () async => _pickImage(context),
             child: CircleAvatar(
               radius: 80,
               backgroundImage: FileImage(imageFile),
@@ -438,9 +467,9 @@ class UserImagePicker extends StatelessWidget {
     );
   }
 
-  Future pickImage(BuildContext context) async {
-    final imagePicked = await ImagePicker().getImage(source: ImageSource.gallery);
-    final imageFile = File(imagePicked.path);
-    context.bloc<ProfileEditingFormBloc>().add(ProfileEditingFormEvent.imageChanged(imageFile));
+  Future _pickImage(BuildContext context) async {
+    final _imagePicked = await ImagePicker().getImage(source: ImageSource.gallery);
+    final _imageFile = File(_imagePicked.path);
+    context.bloc<ProfileEditingFormBloc>().add(ProfileEditingFormEvent.imageChanged(_imageFile));
   }
 }

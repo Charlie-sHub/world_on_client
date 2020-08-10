@@ -82,20 +82,20 @@ class _$TagCopyWithImpl<$Res> implements $TagCopyWith<$Res> {
 
 abstract class _$TagCopyWith<$Res> implements $TagCopyWith<$Res> {
   factory _$TagCopyWith(_Tag value, $Res Function(_Tag) then) = __$TagCopyWithImpl<$Res>;
-  
+
   @override
   $Res call({int id, Name name, User creator, PastDate creationDate, PastDate modificationDate});
-  
+
   @override
   $UserCopyWith<$Res> get creator;
 }
 
 class __$TagCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res> implements _$TagCopyWith<$Res> {
   __$TagCopyWithImpl(_Tag _value, $Res Function(_Tag) _then) : super(_value, (v) => _then(v as _Tag));
-  
+
   @override
   _Tag get _value => super._value as _Tag;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -116,12 +116,12 @@ class __$TagCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res> implements _$TagC
 
 class _$_Tag extends _Tag {
   const _$_Tag({this.id, @required this.name, @required this.creator, @required this.creationDate, @required this.modificationDate})
-    : assert(name != null),
-      assert(creator != null),
-      assert(creationDate != null),
-      assert(modificationDate != null),
-      super._();
-  
+      : assert(name != null),
+        assert(creator != null),
+        assert(creationDate != null),
+        assert(modificationDate != null),
+        super._();
+
   @override
   final int id;
   @override
@@ -164,21 +164,21 @@ class _$_Tag extends _Tag {
 
 abstract class _Tag extends Tag {
   const _Tag._() : super._();
-  
+
   const factory _Tag({int id, @required Name name, @required User creator, @required PastDate creationDate, @required PastDate modificationDate}) = _$_Tag;
-  
+
   @override
   int get id;
-  
+
   @override
   Name get name;
-  
+
   @override
   User get creator;
 
   @override
   PastDate get creationDate;
-  
+
   @override
   PastDate get modificationDate;
   @override

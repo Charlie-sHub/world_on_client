@@ -1148,7 +1148,6 @@ abstract class _$ObjectivesChangedCopyWith<$Res> {
   factory _$ObjectivesChangedCopyWith(
           _ObjectivesChanged value, $Res Function(_ObjectivesChanged) then) =
       __$ObjectivesChangedCopyWithImpl<$Res>;
-
   $Res call({KtSet<Objective> objectives});
 }
 
@@ -1174,22 +1173,22 @@ class __$ObjectivesChangedCopyWithImpl<$Res>
 
 class _$_ObjectivesChanged implements _ObjectivesChanged {
   const _$_ObjectivesChanged(this.objectives) : assert(objectives != null);
-  
+
   @override
   final KtSet<Objective> objectives;
-  
+
   @override
   String toString() {
     return 'ExperienceManagementFormEvent.objectivesChanged(objectives: $objectives)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
       (other is _ObjectivesChanged &&
-            (identical(other.objectives, objectives) ||
-                const DeepCollectionEquality()
-                    .equals(other.objectives, objectives)));
+        (identical(other.objectives, objectives) ||
+          const DeepCollectionEquality()
+            .equals(other.objectives, objectives)));
   }
 
   @override

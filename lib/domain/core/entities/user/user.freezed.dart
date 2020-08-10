@@ -261,10 +261,10 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
 
 class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res> implements _$UserCopyWith<$Res> {
   __$UserCopyWithImpl(_User _value, $Res Function(_User) _then) : super(_value, (v) => _then(v as _User));
-  
+
   @override
   _User get _value => super._value as _User;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -328,61 +328,62 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res> implements _$Us
 }
 
 class _$_User extends _User {
-  const _$_User({this.id,
-    @required this.name,
-    @required this.username,
-    @required this.password,
-    @required this.email,
-    @required this.birthday,
-    @required this.description,
-    @required this.imageURL,
-    @required this.imageFileOption,
-    @required this.level,
-    @required this.experiencePoints,
-    @required this.privacy,
-    @required this.adminPowers,
-    @required this.enabled,
-    @required this.lastLogin,
-    @required this.creationDate,
-    @required this.modificationDate,
-    @required this.options,
-    @required this.blockedUsers,
-    @required this.followedUsers,
-    @required this.devices,
-    @required this.systems,
-    @required this.interests,
-    @required this.achievements,
-    @required this.experiencesDone,
-    @required this.experiencesLiked,
-    @required this.experiencesToDo})
-    : assert(name != null),
-      assert(username != null),
-      assert(password != null),
-      assert(email != null),
-      assert(birthday != null),
-      assert(description != null),
-      assert(imageURL != null),
-      assert(imageFileOption != null),
-      assert(level != null),
-      assert(experiencePoints != null),
-      assert(privacy != null),
-      assert(adminPowers != null),
-      assert(enabled != null),
-      assert(lastLogin != null),
-      assert(creationDate != null),
-      assert(modificationDate != null),
-      assert(options != null),
-      assert(blockedUsers != null),
-      assert(followedUsers != null),
-      assert(devices != null),
-      assert(systems != null),
-      assert(interests != null),
-      assert(achievements != null),
-      assert(experiencesDone != null),
-      assert(experiencesLiked != null),
-      assert(experiencesToDo != null),
-      super._();
-  
+  const _$_User(
+      {this.id,
+      @required this.name,
+      @required this.username,
+      @required this.password,
+      @required this.email,
+      @required this.birthday,
+      @required this.description,
+      @required this.imageURL,
+      @required this.imageFileOption,
+      @required this.level,
+      @required this.experiencePoints,
+      @required this.privacy,
+      @required this.adminPowers,
+      @required this.enabled,
+      @required this.lastLogin,
+      @required this.creationDate,
+      @required this.modificationDate,
+      @required this.options,
+      @required this.blockedUsers,
+      @required this.followedUsers,
+      @required this.devices,
+      @required this.systems,
+      @required this.interests,
+      @required this.achievements,
+      @required this.experiencesDone,
+      @required this.experiencesLiked,
+      @required this.experiencesToDo})
+      : assert(name != null),
+        assert(username != null),
+        assert(password != null),
+        assert(email != null),
+        assert(birthday != null),
+        assert(description != null),
+        assert(imageURL != null),
+        assert(imageFileOption != null),
+        assert(level != null),
+        assert(experiencePoints != null),
+        assert(privacy != null),
+        assert(adminPowers != null),
+        assert(enabled != null),
+        assert(lastLogin != null),
+        assert(creationDate != null),
+        assert(modificationDate != null),
+        assert(options != null),
+        assert(blockedUsers != null),
+        assert(followedUsers != null),
+        assert(devices != null),
+        assert(systems != null),
+        assert(interests != null),
+        assert(achievements != null),
+        assert(experiencesDone != null),
+        assert(experiencesLiked != null),
+        assert(experiencesToDo != null),
+        super._();
+
   @override
   final int id;
   @override

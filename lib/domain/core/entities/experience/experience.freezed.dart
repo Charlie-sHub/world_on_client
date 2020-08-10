@@ -217,10 +217,10 @@ abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
 
 class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res> implements _$ExperienceCopyWith<$Res> {
   __$ExperienceCopyWithImpl(_Experience _value, $Res Function(_Experience) _then) : super(_value, (v) => _then(v as _Experience));
-  
+
   @override
   _Experience get _value => super._value as _Experience;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -264,41 +264,42 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res> imp
 }
 
 class _$_Experience extends _Experience {
-  const _$_Experience({this.id,
-    @required this.title,
-    @required this.description,
-    @required this.imageURLs,
-    @required this.imageAssetsOption,
-    @required this.coordinates,
-    @required this.location,
-    @required this.creator,
-    @required this.difficulty,
-    @required this.creationDate,
-    @required this.modificationDate,
-    @required this.objectives,
-    @required this.rewards,
-    @required this.tags,
-    @required this.comments,
-    @required this.likedBy,
-    @required this.doneBy})
-    : assert(title != null),
-      assert(description != null),
-      assert(imageURLs != null),
-      assert(imageAssetsOption != null),
-      assert(coordinates != null),
-      assert(location != null),
-      assert(creator != null),
-      assert(difficulty != null),
-      assert(creationDate != null),
-      assert(modificationDate != null),
-      assert(objectives != null),
-      assert(rewards != null),
-      assert(tags != null),
-      assert(comments != null),
-      assert(likedBy != null),
-      assert(doneBy != null),
-      super._();
-  
+  const _$_Experience(
+      {this.id,
+      @required this.title,
+      @required this.description,
+      @required this.imageURLs,
+      @required this.imageAssetsOption,
+      @required this.coordinates,
+      @required this.location,
+      @required this.creator,
+      @required this.difficulty,
+      @required this.creationDate,
+      @required this.modificationDate,
+      @required this.objectives,
+      @required this.rewards,
+      @required this.tags,
+      @required this.comments,
+      @required this.likedBy,
+      @required this.doneBy})
+      : assert(title != null),
+        assert(description != null),
+        assert(imageURLs != null),
+        assert(imageAssetsOption != null),
+        assert(coordinates != null),
+        assert(location != null),
+        assert(creator != null),
+        assert(difficulty != null),
+        assert(creationDate != null),
+        assert(modificationDate != null),
+        assert(objectives != null),
+        assert(rewards != null),
+        assert(tags != null),
+        assert(comments != null),
+        assert(likedBy != null),
+        assert(doneBy != null),
+        super._();
+
   @override
   final int id;
   @override

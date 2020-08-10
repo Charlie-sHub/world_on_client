@@ -11,6 +11,9 @@ import 'package:worldon/application/authentication/authentication/authentication
 import 'package:worldon/application/authentication/registration_form/registration_form_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
+import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/password.dart';
 import 'package:worldon/views/core/misc/string_constants.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/routes/router.gr.dart';
@@ -107,7 +110,7 @@ class UserImagePicker extends StatelessWidget {
                   icon: const Icon(
                     Icons.photo_camera,
                   ),
-                  onPressed: () async => pickImage(context),
+                  onPressed: () async => _pickImage(context),
                 ),
                 if (context.bloc<RegistrationFormBloc>().state.showErrorMessages)
                   const Text(
@@ -120,7 +123,7 @@ class UserImagePicker extends StatelessWidget {
               ],
             ),
             (imageFile) => FlatButton(
-              onPressed: () async => pickImage(context),
+              onPressed: () async => _pickImage(context),
               child: CircleAvatar(
                 radius: 80,
                 backgroundImage: FileImage(imageFile),
@@ -130,7 +133,7 @@ class UserImagePicker extends StatelessWidget {
     );
   }
 
-  Future pickImage(BuildContext context) async {
+  Future _pickImage(BuildContext context) async {
     final imagePicked = await ImagePicker().getImage(source: ImageSource.gallery);
     final imageFile = File(imagePicked.path);
     context.bloc<RegistrationFormBloc>().add(RegistrationFormEvent.imageChanged(imageFile));
@@ -163,12 +166,21 @@ class UsernameTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      maxLength: 50,
-      onChanged: (value) => context.bloc<RegistrationFormBloc>().add(
-            RegistrationFormEvent.usernameChanged(value),
-          ),
-      validator: (_) => context.bloc<RegistrationFormBloc>().state.user.username.value.fold(
-            (failure) => failure.maybeMap(
+      maxLength: Name.maxLength,
+      onChanged: (value) =>
+        context.bloc<RegistrationFormBloc>().add(
+          RegistrationFormEvent.usernameChanged(value),
+        ),
+      validator: (_) =>
+        context
+          .bloc<RegistrationFormBloc>()
+          .state
+          .user
+          .username
+          .value
+          .fold(
+            (failure) =>
+            failure.maybeMap(
               emptyString: (_) => "The username can't be empty",
               multiLineString: (_) => "The username can't be more than one line",
               stringExceedsLength: (_) => "The username is too long",
@@ -198,12 +210,21 @@ class NameTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      maxLength: 50,
-      onChanged: (value) => context.bloc<RegistrationFormBloc>().add(
-            RegistrationFormEvent.nameChanged(value),
-          ),
-      validator: (_) => context.bloc<RegistrationFormBloc>().state.user.name.value.fold(
-            (failure) => failure.maybeMap(
+      maxLength: Name.maxLength,
+      onChanged: (value) =>
+        context.bloc<RegistrationFormBloc>().add(
+          RegistrationFormEvent.nameChanged(value),
+        ),
+      validator: (_) =>
+        context
+          .bloc<RegistrationFormBloc>()
+          .state
+          .user
+          .name
+          .value
+          .fold(
+            (failure) =>
+            failure.maybeMap(
               emptyString: (_) => "The name can't be empty",
               multiLineString: (_) => "The name can't be more than one line",
               stringExceedsLength: (_) => "The name is too long",
@@ -279,7 +300,7 @@ class DescriptionTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      maxLength: 300,
+      maxLength: EntityDescription.maxLength,
       onChanged: (value) =>
         context.bloc<RegistrationFormBloc>().add(
           RegistrationFormEvent.descriptionChanged(value),
@@ -343,7 +364,7 @@ class PasswordTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      maxLength: 40,
+      maxLength: Password.maxLength,
       onChanged: (value) =>
         context.bloc<RegistrationFormBloc>().add(
           RegistrationFormEvent.passwordChanged(value),
@@ -395,7 +416,7 @@ class PasswordConfirmationTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      maxLength: 40,
+      maxLength: Password.maxLength,
       onChanged: (value) =>
         context.bloc<RegistrationFormBloc>().add(
           RegistrationFormEvent.passwordConfirmationChanged(value),
