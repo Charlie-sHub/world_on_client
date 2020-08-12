@@ -21,6 +21,8 @@ abstract class Achievement implements _$Achievement {
   const Achievement._();
 
   const factory Achievement({
+    // TODO: Use uuid for the ids
+    // First check Hive, Moor and sqflite
     int id,
     @required Name name,
     @required EntityDescription description,
@@ -31,6 +33,8 @@ abstract class Achievement implements _$Achievement {
     @required String type,
     @required int requisite, // This will probably be reworked in the future to accommodate different kinds of achievements
     @required ExperiencePoints experiencePoints,
+    // TODO: Maybe just have the id
+    // Same with all the other relationships between entities
     @required User creator,
     @required PastDate creationDate,
     @required PastDate modificationDate,

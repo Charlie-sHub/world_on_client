@@ -14,17 +14,14 @@ class UserImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(5),
-      child: FlatButton(
-        onPressed: () => context.bloc<NavigationActorBloc>().add(
-              NavigationActorEvent.profileTapped(some(user)),
-            ),
-        // TODO: Change to NetworkImage
-        child: const CircleAvatar(
-          radius: 22,
-          backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
-        ),
+    return FlatButton(
+      onPressed: () => context.bloc<NavigationActorBloc>().add(
+            NavigationActorEvent.profileTapped(some(user)),
+          ),
+      // TODO: Change to NetworkImage
+      child: const CircleAvatar(
+        radius: 22,
+        backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
       ),
     );
   }

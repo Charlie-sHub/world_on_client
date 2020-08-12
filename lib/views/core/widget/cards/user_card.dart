@@ -21,14 +21,23 @@ class UserCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              UserImage(user: user),
+              Padding(
+                padding: const EdgeInsets.all(5),
+                child: UserImage(user: user),
+              ),
               NameUsernameDisplay(user: user),
               FollowUnfollowButtonBuilder(user: user),
               BlockUnblockButtonBuilder(user: user),
             ],
           ),
-          UserBio(user: user),
-          UserExperienceInfo(user: user),
+          Padding(
+            padding: const EdgeInsets.all(5),
+            child: UserBio(user: user),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(5),
+            child: UserExperienceInfo(user: user),
+          ),
         ],
       ),
     );
@@ -45,13 +54,10 @@ class UserBio extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(5),
-      child: AutoSizeText(
-        user.description.getOrCrash(),
-        style: const TextStyle(
-          color: WorldOnColors.background,
-        ),
+    return AutoSizeText(
+      user.description.getOrCrash(),
+      style: const TextStyle(
+        color: WorldOnColors.background,
       ),
     );
   }

@@ -1,11 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:worldon/application/tag_management/tag_card_actor/tag_card_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/injection.dart';
-import 'package:worldon/views/core/misc/common_functions/tag_card_listener.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class TagCard extends StatelessWidget {
@@ -21,7 +21,7 @@ class TagCard extends StatelessWidget {
           TagCardActorEvent.initialized(tag),
         ),
       child: BlocConsumer<TagCardActorBloc, TagCardActorState>(
-        listener: tagCardListener,
+        listener: _tagCardListener,
         builder: (context, state) => Card(
           shape: const RoundedRectangleBorder(),
           child: Padding(
@@ -54,13 +54,42 @@ class TagCard extends StatelessWidget {
                     dismissalFailure: (_) => DislikeTagButton(tag: tag),
                   ),
                 ),
-              ],
+                ],
+              ),
             ),
           ),
-        ),
       ),
     );
   }
+
+  void _tagCardListener(BuildContext context, TagCardActorState state) =>
+    state.maybeMap(
+      additionFailure: (state) =>
+        FlushbarHelper.createError(
+          duration: const Duration(seconds: 2),
+          message: state.failure.maybeMap(
+            coreData: (failure) =>
+              failure.coreDataFailure.maybeMap(
+                serverError: (failure) => failure.errorString,
+                orElse: () => "Unknown Error",
+              ),
+            orElse: () => "Unknown Error",
+          ),
+        ).show(context),
+      dismissalFailure: (state) =>
+        FlushbarHelper.createError(
+          duration: const Duration(seconds: 2),
+          message: state.failure.maybeMap(
+            coreData: (failure) =>
+              failure.coreDataFailure.maybeMap(
+                serverError: (failure) => failure.errorString,
+                orElse: () => "Unknown Error",
+              ),
+            orElse: () => "Unknown Error",
+          ),
+        ).show(context),
+      orElse: () => null,
+    );
 }
 
 class DislikeTagButton extends StatelessWidget {

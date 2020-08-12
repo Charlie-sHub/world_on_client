@@ -438,7 +438,7 @@ void main() {
   );
   group(
     "${TestDescription.groupOnFailure} with submitting",
-      () {
+    () {
       blocTest(
         "${TestDescription.shouldEmitSuccess} creating a new Experience",
         build: () {

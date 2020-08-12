@@ -14,29 +14,26 @@ class UserExperienceInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(5),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          AutoSizeText(
-            "Level: ${user.level.getOrCrash().toString()}",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: _getColor(user.level.getOrCrash()),
-            ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        AutoSizeText(
+          "Level: ${user.level.getOrCrash().toString()}",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: _getColor(user.level.getOrCrash()),
           ),
-          Expanded(
-            child: LinearPercentIndicator(
-              lineHeight: 10,
-              // TODO: Implement a way to measure what percentage to the next level the user is in based on its experience points
-              percent: 0.7,
-              backgroundColor: WorldOnColors.background,
-              progressColor: WorldOnColors.primary,
-            ),
+        ),
+        Expanded(
+          child: LinearPercentIndicator(
+            lineHeight: 10,
+            // TODO: Implement a way to measure what percentage to the next level the user is in based on its experience points
+            percent: 0.7,
+            backgroundColor: WorldOnColors.background,
+            progressColor: WorldOnColors.primary,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

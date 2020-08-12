@@ -119,21 +119,21 @@ class _$_PrimitiveObjective extends _PrimitiveObjective {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _PrimitiveObjective &&
-        (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-        (identical(other.latitude, latitude) || const DeepCollectionEquality().equals(other.latitude, latitude)) &&
-        (identical(other.longitude, longitude) || const DeepCollectionEquality().equals(other.longitude, longitude)) &&
-        (identical(other.imageFile, imageFile) || const DeepCollectionEquality().equals(other.imageFile, imageFile)));
+        (other is _PrimitiveObjective &&
+            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.latitude, latitude) || const DeepCollectionEquality().equals(other.latitude, latitude)) &&
+            (identical(other.longitude, longitude) || const DeepCollectionEquality().equals(other.longitude, longitude)) &&
+            (identical(other.imageFile, imageFile) || const DeepCollectionEquality().equals(other.imageFile, imageFile)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(description) ^
-    const DeepCollectionEquality().hash(latitude) ^
-    const DeepCollectionEquality().hash(longitude) ^
-    const DeepCollectionEquality().hash(imageFile);
-  
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(description) ^
+      const DeepCollectionEquality().hash(latitude) ^
+      const DeepCollectionEquality().hash(longitude) ^
+      const DeepCollectionEquality().hash(imageFile);
+
   @override
   _$PrimitiveObjectiveCopyWith<_PrimitiveObjective> get copyWith => __$PrimitiveObjectiveCopyWithImpl<_PrimitiveObjective>(this, _$identity);
 }

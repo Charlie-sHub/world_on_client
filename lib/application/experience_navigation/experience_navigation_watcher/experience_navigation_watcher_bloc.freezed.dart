@@ -355,7 +355,7 @@ mixin _$ExperienceNavigationWatcherState {
 
 abstract class $ExperienceNavigationWatcherStateCopyWith<$Res> {
   factory $ExperienceNavigationWatcherStateCopyWith(ExperienceNavigationWatcherState value, $Res Function(ExperienceNavigationWatcherState) then) =
-  _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>;
+      _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>;
 }
 
 class _$ExperienceNavigationWatcherStateCopyWithImpl<$Res> implements $ExperienceNavigationWatcherStateCopyWith<$Res> {

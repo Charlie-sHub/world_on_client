@@ -10,7 +10,7 @@ import 'package:worldon/domain/core/validation/objects/search_term.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widget/cards/error_card.dart';
-import 'package:worldon/views/core/widget/cards/experience_card.dart';
+import 'package:worldon/views/core/widget/cards/experience_card/experience_card.dart';
 import 'package:worldon/views/core/widget/cards/tag_card.dart';
 import 'package:worldon/views/core/widget/critical_error_display.dart';
 import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';

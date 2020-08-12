@@ -134,12 +134,12 @@ class _$_LocationDto extends _LocationDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _LocationDto &&
-        (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.city, city) || const DeepCollectionEquality().equals(other.city, city)) &&
-        (identical(other.country, country) || const DeepCollectionEquality().equals(other.country, country)) &&
-        (identical(other.postalCode, postalCode) || const DeepCollectionEquality().equals(other.postalCode, postalCode)) &&
-        (identical(other.experiences, experiences) || const DeepCollectionEquality().equals(other.experiences, experiences)));
+        (other is _LocationDto &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.city, city) || const DeepCollectionEquality().equals(other.city, city)) &&
+            (identical(other.country, country) || const DeepCollectionEquality().equals(other.country, country)) &&
+            (identical(other.postalCode, postalCode) || const DeepCollectionEquality().equals(other.postalCode, postalCode)) &&
+            (identical(other.experiences, experiences) || const DeepCollectionEquality().equals(other.experiences, experiences)));
   }
 
   @override
@@ -150,7 +150,7 @@ class _$_LocationDto extends _LocationDto {
       const DeepCollectionEquality().hash(country) ^
       const DeepCollectionEquality().hash(postalCode) ^
       const DeepCollectionEquality().hash(experiences);
-  
+
   @override
   _$LocationDtoCopyWith<_LocationDto> get copyWith => __$LocationDtoCopyWithImpl<_LocationDto>(this, _$identity);
 

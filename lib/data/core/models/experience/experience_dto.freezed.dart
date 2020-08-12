@@ -261,42 +261,43 @@ class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Re
 
 @JsonSerializable()
 class _$_ExperienceDto extends _ExperienceDto {
-  const _$_ExperienceDto({@required this.id,
-    @required this.title,
-    @required this.description,
-    @required this.imageURLs,
-    @required this.coordinates,
-    @required this.location,
-    @required this.creator,
-    @required this.difficulty,
-    @required this.creationDate,
-    @required this.modificationDate,
-    @required this.objectives,
-    @required this.rewards,
-    @required this.tags,
-    @required this.comments,
-    @required this.likedBy,
-    @required this.doneBy})
-    : assert(id != null),
-      assert(title != null),
-      assert(description != null),
-      assert(imageURLs != null),
-      assert(coordinates != null),
-      assert(location != null),
-      assert(creator != null),
-      assert(difficulty != null),
-      assert(creationDate != null),
-      assert(modificationDate != null),
-      assert(objectives != null),
-      assert(rewards != null),
-      assert(tags != null),
-      assert(comments != null),
-      assert(likedBy != null),
-      assert(doneBy != null),
-      super._();
-  
+  const _$_ExperienceDto(
+      {@required this.id,
+      @required this.title,
+      @required this.description,
+      @required this.imageURLs,
+      @required this.coordinates,
+      @required this.location,
+      @required this.creator,
+      @required this.difficulty,
+      @required this.creationDate,
+      @required this.modificationDate,
+      @required this.objectives,
+      @required this.rewards,
+      @required this.tags,
+      @required this.comments,
+      @required this.likedBy,
+      @required this.doneBy})
+      : assert(id != null),
+        assert(title != null),
+        assert(description != null),
+        assert(imageURLs != null),
+        assert(coordinates != null),
+        assert(location != null),
+        assert(creator != null),
+        assert(difficulty != null),
+        assert(creationDate != null),
+        assert(modificationDate != null),
+        assert(objectives != null),
+        assert(rewards != null),
+        assert(tags != null),
+        assert(comments != null),
+        assert(likedBy != null),
+        assert(doneBy != null),
+        super._();
+
   factory _$_ExperienceDto.fromJson(Map<String, dynamic> json) => _$_$_ExperienceDtoFromJson(json);
-  
+
   @override
   final int id;
   @override
@@ -376,7 +377,7 @@ class _$_ExperienceDto extends _ExperienceDto {
       const DeepCollectionEquality().hash(comments) ^
       const DeepCollectionEquality().hash(likedBy) ^
       const DeepCollectionEquality().hash(doneBy);
-  
+
   @override
   _$ExperienceDtoCopyWith<_ExperienceDto> get copyWith => __$ExperienceDtoCopyWithImpl<_ExperienceDto>(this, _$identity);
 

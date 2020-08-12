@@ -149,12 +149,12 @@ class _$_CommentDto extends _CommentDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _CommentDto &&
-        (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.poster, poster) || const DeepCollectionEquality().equals(other.poster, poster)) &&
-        (identical(other.content, content) || const DeepCollectionEquality().equals(other.content, content)) &&
-        (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
-        (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)));
+        (other is _CommentDto &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.poster, poster) || const DeepCollectionEquality().equals(other.poster, poster)) &&
+            (identical(other.content, content) || const DeepCollectionEquality().equals(other.content, content)) &&
+            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+            (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)));
   }
 
   @override
@@ -165,7 +165,7 @@ class _$_CommentDto extends _CommentDto {
       const DeepCollectionEquality().hash(content) ^
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(modificationDate);
-  
+
   @override
   _$CommentDtoCopyWith<_CommentDto> get copyWith => __$CommentDtoCopyWithImpl<_CommentDto>(this, _$identity);
 

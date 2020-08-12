@@ -339,11 +339,11 @@ class __$SearchByNameFormStateCopyWithImpl<$Res> extends _$SearchByNameFormState
 
 class _$_SearchByNameFormState implements _SearchByNameFormState {
   const _$_SearchByNameFormState({@required this.searchTerm, @required this.showErrorMessages, @required this.isSubmitting, @required this.failureOrSuccessOption})
-    : assert(searchTerm != null),
-      assert(showErrorMessages != null),
-      assert(isSubmitting != null),
-      assert(failureOrSuccessOption != null);
-  
+      : assert(searchTerm != null),
+        assert(showErrorMessages != null),
+        assert(isSubmitting != null),
+        assert(failureOrSuccessOption != null);
+
   @override
   final SearchTerm searchTerm;
   @override
@@ -375,7 +375,7 @@ class _$_SearchByNameFormState implements _SearchByNameFormState {
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
-  
+
   @override
   _$SearchByNameFormStateCopyWith<_SearchByNameFormState> get copyWith => __$SearchByNameFormStateCopyWithImpl<_SearchByNameFormState>(this, _$identity);
 }

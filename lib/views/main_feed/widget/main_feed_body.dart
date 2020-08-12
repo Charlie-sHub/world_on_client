@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/main_feed/main_feed_watcher/main_feed_watcher_bloc.dart';
 import 'package:worldon/views/core/widget/cards/error_card.dart';
-import 'package:worldon/views/core/widget/cards/experience_card.dart';
+import 'package:worldon/views/core/widget/cards/experience_card/experience_card.dart';
 import 'package:worldon/views/core/widget/critical_error_display.dart';
 import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
 

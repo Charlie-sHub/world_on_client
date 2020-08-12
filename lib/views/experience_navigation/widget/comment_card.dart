@@ -24,7 +24,10 @@ class CommentCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              UserImage(user: comment.poster),
+              Padding(
+                padding: const EdgeInsets.all(5),
+                child: UserImage(user: comment.poster),
+              ),
               NameUsernameDisplay(user: comment.poster),
               // TODO: Implement report functionality
               IconButton(
@@ -32,7 +35,10 @@ class CommentCard extends StatelessWidget {
                   Icons.more_vert,
                   color: Colors.grey,
                 ),
-                onPressed: () => FlushbarHelper.createInformation(duration: const Duration(seconds: 2), message: "Just a placeholder").show(context),
+                onPressed: () => FlushbarHelper.createInformation(
+                  duration: const Duration(seconds: 2),
+                  message: "Just a placeholder",
+                ).show(context),
               ),
             ],
           ),
@@ -50,7 +56,11 @@ class CommentCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               RaisedButton(
-                onPressed: () => FlushbarHelper.createInformation(duration: const Duration(seconds: 2), message: "Just a placeholder").show(context),
+                onPressed: () =>
+                  FlushbarHelper.createInformation(
+                    duration: const Duration(seconds: 2),
+                    message: "Just a placeholder",
+                  ).show(context),
                 child: const Text(
                   "Reply",
                 ),
@@ -60,7 +70,11 @@ class CommentCard extends StatelessWidget {
                   Icons.thumb_up,
                   color: WorldOnColors.accent,
                 ),
-                onPressed: () => FlushbarHelper.createInformation(duration: const Duration(seconds: 2), message: "Just a placeholder").show(context),
+                onPressed: () =>
+                  FlushbarHelper.createInformation(
+                    duration: const Duration(seconds: 2),
+                    message: "Just a placeholder",
+                  ).show(context),
               ),
             ],
           ),

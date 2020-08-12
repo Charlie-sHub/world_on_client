@@ -30,7 +30,10 @@ class ExperienceInformationTabView extends StatelessWidget {
       child: ListView(
         children: [
           ExperienceHeader(experience: experience),
-          ExperienceDescription(experience: experience),
+          Padding(
+            padding: const EdgeInsets.all(5),
+            child: ExperienceDescription(experience: experience),
+          ),
           // TODO: Implement image gallery
           const Image(
             image: AssetImage('assets/experience_placeholder_image.jpg'),
@@ -105,7 +108,10 @@ class ExperienceInformationTabView extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              UserImage(user: experience.creator),
+              Padding(
+                padding: const EdgeInsets.all(5),
+                child: UserImage(user: experience.creator),
+              ),
               NameUsernameDisplay(user: experience.creator),
               FollowUnfollowButtonBuilder(user: experience.creator),
               BlockUnblockButtonBuilder(user: experience.creator),
@@ -184,15 +190,12 @@ class ExperienceDescription extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(5),
-      child: AutoSizeText(
-        experience.description.getOrCrash(),
-        textAlign: TextAlign.justify,
-        style: const TextStyle(
-          fontSize: 15,
-          color: WorldOnColors.background,
-        ),
+    return AutoSizeText(
+      experience.description.getOrCrash(),
+      textAlign: TextAlign.justify,
+      style: const TextStyle(
+        fontSize: 15,
+        color: WorldOnColors.background,
       ),
     );
   }

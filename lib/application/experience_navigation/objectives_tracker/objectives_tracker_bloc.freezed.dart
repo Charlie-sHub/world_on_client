@@ -374,14 +374,14 @@ class _$_ObjectivesTrackerState implements _ObjectivesTrackerState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _ObjectivesTrackerState &&
-        (identical(other.objectivesToDo, objectivesToDo) || const DeepCollectionEquality().equals(other.objectivesToDo, objectivesToDo)) &&
-        (identical(other.isFinished, isFinished) || const DeepCollectionEquality().equals(other.isFinished, isFinished)));
+        (other is _ObjectivesTrackerState &&
+            (identical(other.objectivesToDo, objectivesToDo) || const DeepCollectionEquality().equals(other.objectivesToDo, objectivesToDo)) &&
+            (identical(other.isFinished, isFinished) || const DeepCollectionEquality().equals(other.isFinished, isFinished)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectivesToDo) ^ const DeepCollectionEquality().hash(isFinished);
-  
+
   @override
   _$ObjectivesTrackerStateCopyWith<_ObjectivesTrackerState> get copyWith => __$ObjectivesTrackerStateCopyWithImpl<_ObjectivesTrackerState>(this, _$identity);
 }

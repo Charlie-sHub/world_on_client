@@ -125,7 +125,10 @@ class FinishSuccessView extends StatelessWidget {
             ],
           ),
           RateDifficulty(experience: experience),
-          const FinishButton(),
+          const Padding(
+            padding: EdgeInsets.all(5),
+            child: FinishButton(),
+          ),
         ],
       ),
     );
@@ -181,22 +184,19 @@ class FinishButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(5),
-      child: RaisedButton(
-        color: WorldOnColors.primary,
-        onPressed: () => context.bloc<ExperienceNavigationWatcherBloc>().add(
-              ExperienceNavigationWatcherEvent.initialized(none()),
-            ),
-        child: const Padding(
-          padding: EdgeInsets.all(5),
-          child: Text(
-            "Finish",
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-              color: WorldOnColors.white,
-            ),
+    return RaisedButton(
+      color: WorldOnColors.primary,
+      onPressed: () => context.bloc<ExperienceNavigationWatcherBloc>().add(
+            ExperienceNavigationWatcherEvent.initialized(none()),
+          ),
+      child: const Padding(
+        padding: EdgeInsets.all(5),
+        child: Text(
+          "Finish",
+          style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+            color: WorldOnColors.white,
           ),
         ),
       ),

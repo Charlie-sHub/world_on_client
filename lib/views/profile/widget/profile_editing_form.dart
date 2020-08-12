@@ -40,7 +40,10 @@ class ProfileEditingForm extends StatelessWidget {
                     children: <Widget>[
                       Row(
                         children: <Widget>[
-                          UserImagePicker(),
+                          Padding(
+                            padding: const EdgeInsets.all(5),
+                            child: UserImagePicker(),
+                          ),
                           Expanded(
                             child: Padding(
                               padding: const EdgeInsets.all(5),
@@ -116,24 +119,12 @@ class PasswordConfirmationTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       maxLength: Password.maxLength,
-      onChanged: (value) =>
-        context.bloc<ProfileEditingFormBloc>().add(
-          ProfileEditingFormEvent.passwordConfirmationChanged(value),
-        ),
-      initialValue: context
-        .bloc<ProfileEditingFormBloc>()
-        .state
-        .passwordConfirmator
-        .getOrCrash(),
-      validator: (_) =>
-        context
-          .bloc<ProfileEditingFormBloc>()
-          .state
-          .passwordConfirmator
-          .value
-          .fold(
-            (failure) =>
-            failure.maybeMap(
+      onChanged: (value) => context.bloc<ProfileEditingFormBloc>().add(
+            ProfileEditingFormEvent.passwordConfirmationChanged(value),
+          ),
+      initialValue: context.bloc<ProfileEditingFormBloc>().state.passwordConfirmator.getOrCrash(),
+      validator: (_) => context.bloc<ProfileEditingFormBloc>().state.passwordConfirmator.value.fold(
+            (failure) => failure.maybeMap(
               stringMismatch: (_) => "The passwords are different",
               emptyString: (_) => "Please confirm the password",
               orElse: () => StringConst.unknownError,
@@ -187,7 +178,7 @@ class PasswordTextField extends StatelessWidget {
               orElse: () => StringConst.unknownError,
             ),
             (_) => null,
-          ),
+        ),
       autocorrect: false,
       obscureText: true,
       decoration: const InputDecoration(
@@ -435,35 +426,32 @@ class NameTextFormField extends StatelessWidget {
 class UserImagePicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(5),
-      child: context
-        .bloc<ProfileEditingFormBloc>()
-        .state
-        .user
-        .imageFileOption
-        .fold(
-          () =>
-          FlatButton(
-            onPressed: () async => _pickImage(context),
-            child: const Hero(
-              tag: "userImage",
-              child: CircleAvatar(
-                radius: 80,
-                // TODO: Change to user's network image
-                backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
-              ),
-            ),
-          ),
-          (imageFile) =>
-          FlatButton(
-            onPressed: () async => _pickImage(context),
+    return context
+      .bloc<ProfileEditingFormBloc>()
+      .state
+      .user
+      .imageFileOption
+      .fold(
+        () =>
+        FlatButton(
+          onPressed: () async => _pickImage(context),
+          child: const Hero(
+            tag: "userImage",
             child: CircleAvatar(
               radius: 80,
-              backgroundImage: FileImage(imageFile),
+              // TODO: Change to user's network image
+              backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
             ),
           ),
-      ),
+        ),
+        (imageFile) =>
+        FlatButton(
+          onPressed: () async => _pickImage(context),
+          child: CircleAvatar(
+            radius: 80,
+            backgroundImage: FileImage(imageFile),
+          ),
+        ),
     );
   }
 

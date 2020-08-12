@@ -6,7 +6,7 @@ import 'package:worldon/application/profile/profile_experiences_watcher/profile_
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widget/cards/error_card.dart';
-import 'package:worldon/views/core/widget/cards/experience_card.dart';
+import 'package:worldon/views/core/widget/cards/experience_card/experience_card.dart';
 import 'package:worldon/views/core/widget/critical_error_display.dart';
 import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
 

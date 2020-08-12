@@ -122,20 +122,11 @@ class TitleFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       maxLength: Name.maxLength,
-      onChanged: (value) =>
-        context.bloc<ExperienceManagementFormBloc>().add(
-          ExperienceManagementFormEvent.titleChanged(value),
-        ),
-      validator: (_) =>
-        context
-          .bloc<ExperienceManagementFormBloc>()
-          .state
-          .experience
-          .title
-          .value
-          .fold(
-            (failure) =>
-            failure.maybeMap(
+      onChanged: (value) => context.bloc<ExperienceManagementFormBloc>().add(
+            ExperienceManagementFormEvent.titleChanged(value),
+          ),
+      validator: (_) => context.bloc<ExperienceManagementFormBloc>().state.experience.title.value.fold(
+            (failure) => failure.maybeMap(
               emptyString: (_) => "The title can't be empty",
               multiLineString: (_) => "The title can't be more than one line",
               stringExceedsLength: (_) => "The title is too long",
@@ -181,7 +172,7 @@ class DescriptionFormField extends StatelessWidget {
               orElse: () => StringConst.unknownError,
             ),
             (_) => null,
-          ),
+        ),
       maxLines: 5,
       decoration: const InputDecoration(
         labelText: "Description",

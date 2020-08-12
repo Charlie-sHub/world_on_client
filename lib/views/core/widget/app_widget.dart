@@ -11,7 +11,10 @@ import '../../../injection.dart';
 class AppWidget extends StatelessWidget {
   final String environment;
 
-  const AppWidget({Key key, @required this.environment}) : super(key: key);
+  const AppWidget({
+    Key key,
+    @required this.environment,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
