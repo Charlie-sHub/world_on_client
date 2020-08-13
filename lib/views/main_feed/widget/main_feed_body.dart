@@ -19,42 +19,40 @@ class MainFeedBody extends StatelessWidget {
           const MainFeedWatcherEvent.watchMainFeedStarted(),
         ),
       child: BlocBuilder<MainFeedWatcherBloc, MainFeedWatcherState>(
-        builder: onBuild,
+        builder: (context, state) => state.map(
+          initial: (_) => Container(),
+          loadInProgress: (_) => WorldOnProgressIndicator(),
+          loadSuccess: (state) => RefreshIndicator(
+            onRefresh: () async => context.bloc<MainFeedWatcherBloc>().add(
+                  const MainFeedWatcherEvent.watchMainFeedStarted(),
+                ),
+            child: ListView.builder(
+              padding: const EdgeInsets.all(10),
+              itemCount: state.experiences.size,
+              itemBuilder: (context, index) {
+                final _experience = state.experiences[index];
+                if (_experience.isValid) {
+                  return ExperienceCard(experience: _experience);
+                } else {
+                  return ErrorCard(
+                    entityType: "Experience",
+                    valueFailureString: _experience.failureOption.fold(
+                      () => "",
+                      (failure) => failure.toString(),
+                    ),
+                  );
+                }
+              },
+            ),
+          ),
+          loadFailure: (state) => InkWell(
+            onTap: () async => context.bloc<MainFeedWatcherBloc>().add(
+                  const MainFeedWatcherEvent.watchMainFeedStarted(),
+                ),
+            child: CriticalErrorDisplay(failure: state.failure),
+          ),
+        ),
       ),
     );
   }
-
-  Widget onBuild(BuildContext context, MainFeedWatcherState state) => state.map(
-        initial: (_) => Container(),
-        loadInProgress: (_) => WorldOnProgressIndicator(),
-        loadSuccess: (state) => RefreshIndicator(
-          onRefresh: () async => context.bloc<MainFeedWatcherBloc>().add(
-                const MainFeedWatcherEvent.watchMainFeedStarted(),
-              ),
-          child: ListView.builder(
-            padding: const EdgeInsets.all(10),
-            itemCount: state.experiences.size,
-            itemBuilder: (context, index) {
-              final _experience = state.experiences[index];
-              if (_experience.isValid) {
-                return ExperienceCard(experience: _experience);
-              } else {
-                return ErrorCard(
-                  entityType: "Experience",
-                  valueFailure: _experience.failureOption.fold(
-                    () => "",
-                    (failure) => failure.toString(),
-                  ),
-                );
-              }
-            },
-          ),
-        ),
-        loadFailure: (state) => InkWell(
-          onTap: () async => context.bloc<MainFeedWatcherBloc>().add(
-                const MainFeedWatcherEvent.watchMainFeedStarted(),
-              ),
-          child: CriticalErrorDisplay(failure: state.failure),
-        ),
-      );
 }

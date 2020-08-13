@@ -4,11 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_navigation/experience_navigation_watcher/experience_navigation_watcher_bloc.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
-import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/experience_navigation/widget/experience_navigation.dart';
 
 import '../../../injection.dart';
-import 'experience_finish.dart';
+import 'experience_finish/experience_finish.dart';
+import 'no_experience_view.dart';
 
 class ExperienceNavigationBody extends StatelessWidget {
   final Option<Experience> experienceOption;
@@ -38,48 +38,10 @@ class ExperienceNavigationBody extends StatelessWidget {
         child: BlocBuilder<ExperienceNavigationWatcherBloc, ExperienceNavigationWatcherState>(
           builder: (context, state) => state.map(
             initial: (_) => Container(),
-            noExperience: (_) => const NoExperienceText(),
+            noExperience: (_) => const NoExperienceView(),
             navigatingExperience: (state) => ExperienceNavigation(experience: state.experience),
             finishExperience: (state) => ExperienceFinish(experience: state.experience),
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class NoExperienceText extends StatelessWidget {
-  const NoExperienceText({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-            Text(
-              "No Experience chosen",
-              style: TextStyle(
-                color: WorldOnColors.red,
-                fontWeight: FontWeight.bold,
-                fontSize: 25,
-              ),
-            ),
-            SizedBox(height: 5),
-            Text(
-              "Please select an Experience to start the adventure of your life!",
-              style: TextStyle(
-                color: WorldOnColors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ],
         ),
       ),
     );

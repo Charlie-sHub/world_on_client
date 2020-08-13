@@ -4,10 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/notifications/notification_actor/notification_actor_bloc.dart';
 import 'package:worldon/application/notifications/notifications_watcher/notifications_watcher_bloc.dart';
 import 'package:worldon/injection.dart';
+import 'package:worldon/views/core/widget/cards/error_card.dart';
 import 'package:worldon/views/core/widget/critical_error_display.dart';
 import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
 import 'package:worldon/views/notifications/widget/notification_card.dart';
-import 'package:worldon/views/notifications/widget/notification_error_card.dart';
 
 class NotificationsBody extends StatelessWidget {
   const NotificationsBody({Key key}) : super(key: key);
@@ -57,7 +57,13 @@ class NotificationsBody extends StatelessWidget {
                   context.bloc<NotificationActorBloc>().add(NotificationActorEvent.checked(_notification));
                   return NotificationCard(notification: _notification);
                 } else {
-                  return NotificationErrorCard(notification: _notification);
+                  return ErrorCard(
+                    entityType: "Notification",
+                    valueFailureString: _notification.failureOption.fold(
+                      () => "",
+                      (failure) => failure.toString(),
+                    ),
+                  );
                 }
               },
             ),

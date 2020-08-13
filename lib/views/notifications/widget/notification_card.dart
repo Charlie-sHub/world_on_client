@@ -57,24 +57,24 @@ class NotificationCard extends StatelessWidget {
       ),
     );
   }
-}
 
-Color _getColorByNotificationType(NotificationType type) {
-  switch (type) {
-    case NotificationType.follow:
-      return Colors.green;
-      break;
-    case NotificationType.unfollow:
-      return Colors.yellow;
-      break;
-    case NotificationType.block:
-      return Colors.red;
-      break;
-    case NotificationType.unblock:
-      return Colors.orange;
-      break;
-    default:
-      return Colors.white;
-      break;
+  Color _getColorByNotificationType(NotificationType type) {
+    switch (type) {
+      case NotificationType.follow:
+        return Colors.green;
+        break;
+      case NotificationType.unfollow:
+        return Colors.yellow;
+        break;
+      case NotificationType.block:
+        return Colors.red;
+        break;
+      case NotificationType.unblock:
+        return Colors.orange;
+        break;
+      default:
+        return Colors.white;
+        break;
+    }
   }
 }

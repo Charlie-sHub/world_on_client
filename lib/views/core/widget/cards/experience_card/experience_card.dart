@@ -95,26 +95,22 @@ class ExperienceCard extends StatelessWidget {
       ),
     );
   }
-  
+
   // TODO: Customize snackbars
-// And ensure they show above the navigation bar
-  void _experienceCardListener(BuildContext context, ExperienceCardActorState state) =>
-    state.maybeMap(
-      actionInProgress: (_) =>
-        FlushbarHelper.createLoading(
+  // And ensure they show above the navigation bar
+  void _experienceCardListener(BuildContext context, ExperienceCardActorState state) => state.maybeMap(
+        actionInProgress: (_) => FlushbarHelper.createLoading(
           duration: const Duration(seconds: 2),
           message: "Action in progress",
           linearProgressIndicator: const LinearProgressIndicator(),
         ).show(context),
-      additionFailure: (state) =>
-        FlushbarHelper.createError(
+        additionFailure: (state) => FlushbarHelper.createError(
           duration: const Duration(seconds: 2),
           message: state.failure.maybeMap(
-            coreData: (failure) =>
-              failure.coreDataFailure.maybeMap(
-                serverError: (failure) => failure.errorString,
-                orElse: () => "Unknown Error",
-              ),
+            coreData: (failure) => failure.coreDataFailure.maybeMap(
+              serverError: (failure) => failure.errorString,
+              orElse: () => "Unknown Error",
+            ),
             orElse: () => "Unknown Error",
           ),
         ).show(context),

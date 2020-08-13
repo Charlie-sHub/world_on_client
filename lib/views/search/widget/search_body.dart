@@ -6,17 +6,12 @@ import 'package:worldon/application/search/search_experiences_by_name_watcher/se
 import 'package:worldon/application/search/search_experiences_by_tags/search_experiences_by_tags_bloc.dart';
 import 'package:worldon/application/search/search_tags_by_name_watcher/search_tags_by_name_watcher_bloc.dart';
 import 'package:worldon/application/search/search_users_by_name_watcher/search_users_by_name_watcher_bloc.dart';
-import 'package:worldon/domain/core/validation/objects/search_term.dart';
 import 'package:worldon/injection.dart';
-import 'package:worldon/views/core/misc/world_on_colors.dart';
-import 'package:worldon/views/core/widget/cards/error_card.dart';
-import 'package:worldon/views/core/widget/cards/experience_card/experience_card.dart';
-import 'package:worldon/views/core/widget/cards/tag_card.dart';
-import 'package:worldon/views/core/widget/critical_error_display.dart';
-import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
+import 'package:worldon/views/search/widget/search_experiences_tab_bar_view.dart';
 import 'package:worldon/views/search/widget/search_header.dart';
-import 'package:worldon/views/search/widget/search_something.dart';
-import 'package:worldon/views/search/widget/search_users_tab_view.dart';
+import 'package:worldon/views/search/widget/search_tab_bar.dart';
+import 'package:worldon/views/search/widget/search_tags_tab_view.dart';
+import 'package:worldon/views/search/widget/search_users_tab_view/search_users_tab_view.dart';
 
 // TODO: Implement search experiences by difficulty and by tags
 class SearchBody extends StatelessWidget {
@@ -34,17 +29,18 @@ class SearchBody extends StatelessWidget {
         BlocProvider(create: (context) => getIt<SearchExperiencesByTagsBloc>()),
       ],
       child: BlocConsumer<SearchByNameFormBloc, SearchByNameFormState>(
-        listener: searchFormListener,
-        builder: (context, state) => Padding(
-          padding: const EdgeInsets.all(5),
-          child: DefaultTabController(
-            length: 3,
-            child: Column(
-              children: <Widget>[
-                const SearchHeader(),
-                const SizedBox(height: 5),
-                const SearchTabBar(),
-                Expanded(
+        listener: _searchFormListener,
+        builder: (context, state) =>
+          Padding(
+            padding: const EdgeInsets.all(5),
+            child: DefaultTabController(
+              length: 3,
+              child: Column(
+                children: <Widget>[
+                  const SearchHeader(),
+                  const SizedBox(height: 5),
+                  const SearchTabBar(),
+                  Expanded(
                   child: TabBarView(
                     children: [
                       SearchExperiencesTabView(searchTerm: state.searchTerm),
@@ -60,140 +56,18 @@ class SearchBody extends StatelessWidget {
       ),
     );
   }
-
-  void searchFormListener(BuildContext context, SearchByNameFormState state) {
+  
+  void _searchFormListener(BuildContext context, SearchByNameFormState state) {
     if (state.isSubmitting) {
       context.bloc<SearchUsersByNameWatcherBloc>().add(
-            // What to do with the users found by name?
-            SearchUsersByNameWatcherEvent.watchUsersFoundByUsernameStarted(state.searchTerm),
-          );
+        SearchUsersByNameWatcherEvent.watchUsersFoundByUsernameStarted(state.searchTerm),
+      );
       context.bloc<SearchExperiencesByNameWatcherBloc>().add(
-            SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(state.searchTerm),
-          );
+        SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(state.searchTerm),
+      );
       context.bloc<SearchTagsByNameWatcherBloc>().add(
-            SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(state.searchTerm),
-          );
+        SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(state.searchTerm),
+      );
     }
-  }
-}
-
-class SearchTagsTabView extends StatelessWidget {
-  final SearchTerm searchTerm;
-
-  const SearchTagsTabView({
-    Key key,
-    @required this.searchTerm,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<SearchTagsByNameWatcherBloc, SearchTagsByNameWatcherState>(
-      builder: (context, state) => state.map(
-        initial: (_) => SearchSomething(),
-        searchInProgress: (_) => WorldOnProgressIndicator(),
-        searchSuccess: (state) => ListView.builder(
-          padding: const EdgeInsets.all(10),
-          itemCount: state.tagsFound.size,
-          itemBuilder: (context, index) {
-            final _tag = state.tagsFound[index];
-            if (_tag.isValid) {
-              return TagCard(tag: _tag);
-            } else {
-              return ErrorCard(
-                entityType: "Tag",
-                valueFailure: _tag.failureOption.fold(
-                  () => "",
-                  (failure) => failure.toString(),
-                ),
-              );
-            }
-          },
-        ),
-        searchFailure: (state) => InkWell(
-          onTap: () async => context.bloc<SearchTagsByNameWatcherBloc>().add(
-                SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(searchTerm),
-              ),
-          child: CriticalErrorDisplay(failure: state.failure),
-        ),
-      ),
-    );
-  }
-}
-
-class SearchExperiencesTabView extends StatelessWidget {
-  final SearchTerm searchTerm;
-
-  const SearchExperiencesTabView({
-    Key key,
-    @required this.searchTerm,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<SearchExperiencesByNameWatcherBloc, SearchExperiencesByNameWatcherState>(
-      builder: (context, state) => state.map(
-        initial: (_) => SearchSomething(),
-        searchInProgress: (_) => WorldOnProgressIndicator(),
-        searchSuccess: (state) => ListView.builder(
-          padding: const EdgeInsets.all(10),
-          itemCount: state.experiencesFound.size,
-          itemBuilder: (context, index) {
-            final _experience = state.experiencesFound[index];
-            if (_experience.isValid) {
-              return ExperienceCard(experience: _experience);
-            } else {
-              return ErrorCard(
-                entityType: "Experience",
-                valueFailure: _experience.failureOption.fold(
-                  () => "",
-                  (failure) => failure.toString(),
-                ),
-              );
-            }
-          },
-        ),
-        searchFailure: (state) => InkWell(
-          onTap: () async => context.bloc<SearchExperiencesByNameWatcherBloc>().add(
-                SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(searchTerm),
-              ),
-          child: CriticalErrorDisplay(failure: state.failure),
-        ),
-      ),
-    );
-  }
-}
-
-class SearchTabBar extends StatelessWidget {
-  const SearchTabBar({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      // Don't like the idea of having this hardcoded, but i can't find any other way to thing out the tabBar
-      height: 52,
-      child: const TabBar(
-        labelPadding: EdgeInsets.all(2),
-        indicatorColor: WorldOnColors.primary,
-        tabs: [
-          Tab(
-            iconMargin: EdgeInsets.all(2),
-            icon: Icon(Icons.explore),
-            text: "Experiences",
-          ),
-          Tab(
-            iconMargin: EdgeInsets.all(2),
-            icon: Icon(Icons.account_circle),
-            text: "Users",
-          ),
-          Tab(
-            iconMargin: EdgeInsets.all(2),
-            icon: Icon(Icons.local_offer),
-            text: "Tags",
-          ),
-        ],
-      ),
-    );
   }
 }

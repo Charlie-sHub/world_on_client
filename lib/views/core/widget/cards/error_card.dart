@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ErrorCard extends StatelessWidget {
-  final String valueFailure;
+  final String valueFailureString;
   final String entityType;
 
   const ErrorCard({
     Key key,
-    @required this.valueFailure,
+    @required this.valueFailureString,
     @required this.entityType,
   }) : super(key: key);
 
@@ -40,7 +40,7 @@ class ErrorCard extends StatelessWidget {
             ),
             const SizedBox(height: 5),
             AutoSizeText(
-              valueFailure,
+              valueFailureString,
               textAlign: TextAlign.justify,
               style: const TextStyle(
                 fontSize: 12,

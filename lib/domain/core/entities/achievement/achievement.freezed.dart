@@ -289,32 +289,33 @@ class _$_Achievement extends _Achievement {
 
 abstract class _Achievement extends Achievement {
   const _Achievement._() : super._();
-  
-  const factory _Achievement({int id,
-    @required Name name,
-    @required EntityDescription description,
-    @required String imageURL,
-    @required Option<File> imageFile,
-    @required String type,
-    @required int requisite,
-    @required ExperiencePoints experiencePoints,
-    @required User creator,
-    @required PastDate creationDate,
-    @required PastDate modificationDate,
-    @required TagSet tags}) = _$_Achievement;
-  
+
+  const factory _Achievement(
+      {int id,
+      @required Name name,
+      @required EntityDescription description,
+      @required String imageURL,
+      @required Option<File> imageFile,
+      @required String type,
+      @required int requisite,
+      @required ExperiencePoints experiencePoints,
+      @required User creator,
+      @required PastDate creationDate,
+      @required PastDate modificationDate,
+      @required TagSet tags}) = _$_Achievement;
+
   @override
   int get id;
-  
+
   @override
   Name get name;
-  
+
   @override
   EntityDescription get description;
 
   @override
   String get imageURL;
-  
+
   @override
   Option<File> get imageFile;
   @override

@@ -162,10 +162,10 @@ abstract class _$InitializedCopyWith<$Res> {
 
 class __$InitializedCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
   __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
-  
+
   @override
   _Initialized get _value => super._value as _Initialized;
-  
+
   @override
   $Res call({
     Object experienceOption = freezed,
@@ -190,12 +190,12 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Initialized && (identical(other.experienceOption, experienceOption) || const DeepCollectionEquality().equals(other.experienceOption, experienceOption)));
+        (other is _Initialized && (identical(other.experienceOption, experienceOption) || const DeepCollectionEquality().equals(other.experienceOption, experienceOption)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceOption);
-  
+
   @override
   _$InitializedCopyWith<_Initialized> get copyWith => __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
@@ -312,10 +312,10 @@ abstract class _$TitleChangedCopyWith<$Res> {
 
 class __$TitleChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res> implements _$TitleChangedCopyWith<$Res> {
   __$TitleChangedCopyWithImpl(_TitleChanged _value, $Res Function(_TitleChanged) _then) : super(_value, (v) => _then(v as _TitleChanged));
-  
+
   @override
   _TitleChanged get _value => super._value as _TitleChanged;
-  
+
   @override
   $Res call({
     Object title = freezed,
@@ -461,10 +461,10 @@ abstract class _$DescriptionChangedCopyWith<$Res> {
 
 class __$DescriptionChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res> implements _$DescriptionChangedCopyWith<$Res> {
   __$DescriptionChangedCopyWithImpl(_DescriptionChanged _value, $Res Function(_DescriptionChanged) _then) : super(_value, (v) => _then(v as _DescriptionChanged));
-  
+
   @override
   _DescriptionChanged get _value => super._value as _DescriptionChanged;
-  
+
   @override
   $Res call({
     Object description = freezed,
@@ -610,10 +610,10 @@ abstract class _$ImagesChangedCopyWith<$Res> {
 
 class __$ImagesChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res> implements _$ImagesChangedCopyWith<$Res> {
   __$ImagesChangedCopyWithImpl(_ImagesChanged _value, $Res Function(_ImagesChanged) _then) : super(_value, (v) => _then(v as _ImagesChanged));
-  
+
   @override
   _ImagesChanged get _value => super._value as _ImagesChanged;
-  
+
   @override
   $Res call({
     Object imageAssets = freezed,
@@ -759,10 +759,10 @@ abstract class _$CoordinatesChangedCopyWith<$Res> {
 
 class __$CoordinatesChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res> implements _$CoordinatesChangedCopyWith<$Res> {
   __$CoordinatesChangedCopyWithImpl(_CoordinatesChanged _value, $Res Function(_CoordinatesChanged) _then) : super(_value, (v) => _then(v as _CoordinatesChanged));
-  
+
   @override
   _CoordinatesChanged get _value => super._value as _CoordinatesChanged;
-  
+
   @override
   $Res call({
     Object latitude = freezed,
@@ -918,10 +918,10 @@ abstract class _$DifficultyChangedCopyWith<$Res> {
 
 class __$DifficultyChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res> implements _$DifficultyChangedCopyWith<$Res> {
   __$DifficultyChangedCopyWithImpl(_DifficultyChanged _value, $Res Function(_DifficultyChanged) _then) : super(_value, (v) => _then(v as _DifficultyChanged));
-  
+
   @override
   _DifficultyChanged get _value => super._value as _DifficultyChanged;
-  
+
   @override
   $Res call({
     Object difficulty = freezed,
@@ -1067,10 +1067,10 @@ abstract class _$ObjectivesChangedCopyWith<$Res> {
 
 class __$ObjectivesChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res> implements _$ObjectivesChangedCopyWith<$Res> {
   __$ObjectivesChangedCopyWithImpl(_ObjectivesChanged _value, $Res Function(_ObjectivesChanged) _then) : super(_value, (v) => _then(v as _ObjectivesChanged));
-  
+
   @override
   _ObjectivesChanged get _value => super._value as _ObjectivesChanged;
-  
+
   @override
   $Res call({
     Object objectives = freezed,
@@ -1204,9 +1204,9 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
 
 abstract class _ObjectivesChanged implements ExperienceManagementFormEvent {
   const factory _ObjectivesChanged(KtSet<Objective> objectives) = _$_ObjectivesChanged;
-  
+
   KtSet<Objective> get objectives;
-  
+
   _$ObjectivesChangedCopyWith<_ObjectivesChanged> get copyWith;
 }
 
@@ -1217,10 +1217,10 @@ abstract class _$RewardsChangedCopyWith<$Res> {
 
 class __$RewardsChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res> implements _$RewardsChangedCopyWith<$Res> {
   __$RewardsChangedCopyWithImpl(_RewardsChanged _value, $Res Function(_RewardsChanged) _then) : super(_value, (v) => _then(v as _RewardsChanged));
-  
+
   @override
   _RewardsChanged get _value => super._value as _RewardsChanged;
-  
+
   @override
   $Res call({
     Object rewards = freezed,
@@ -1366,10 +1366,10 @@ abstract class _$TagsChangedCopyWith<$Res> {
 
 class __$TagsChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res> implements _$TagsChangedCopyWith<$Res> {
   __$TagsChangedCopyWithImpl(_TagsChanged _value, $Res Function(_TagsChanged) _then) : super(_value, (v) => _then(v as _TagsChanged));
-  
+
   @override
   _TagsChanged get _value => super._value as _TagsChanged;
-  
+
   @override
   $Res call({
     Object tags = freezed,
@@ -1514,7 +1514,7 @@ abstract class _$SubmittedCopyWith<$Res> {
 
 class __$SubmittedCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res> implements _$SubmittedCopyWith<$Res> {
   __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then) : super(_value, (v) => _then(v as _Submitted));
-  
+
   @override
   _Submitted get _value => super._value as _Submitted;
 }
@@ -1669,20 +1669,20 @@ mixin _$ExperienceManagementFormState {
 
 abstract class $ExperienceManagementFormStateCopyWith<$Res> {
   factory $ExperienceManagementFormStateCopyWith(ExperienceManagementFormState value, $Res Function(ExperienceManagementFormState) then) = _$ExperienceManagementFormStateCopyWithImpl<$Res>;
-  
+
   $Res call({Experience experience, bool showErrorMessages, bool isEditing, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
-  
+
   $ExperienceCopyWith<$Res> get experience;
 }
 
 class _$ExperienceManagementFormStateCopyWithImpl<$Res> implements $ExperienceManagementFormStateCopyWith<$Res> {
   _$ExperienceManagementFormStateCopyWithImpl(this._value, this._then);
-  
+
   final ExperienceManagementFormState _value;
-  
+
   // ignore: unused_field
   final $Res Function(ExperienceManagementFormState) _then;
-  
+
   @override
   $Res call({
     Object experience = freezed,
@@ -1713,10 +1713,10 @@ class _$ExperienceManagementFormStateCopyWithImpl<$Res> implements $ExperienceMa
 
 abstract class _$ExperienceManagementFormStateCopyWith<$Res> implements $ExperienceManagementFormStateCopyWith<$Res> {
   factory _$ExperienceManagementFormStateCopyWith(_ExperienceManagementFormState value, $Res Function(_ExperienceManagementFormState) then) = __$ExperienceManagementFormStateCopyWithImpl<$Res>;
-  
+
   @override
   $Res call({Experience experience, bool showErrorMessages, bool isEditing, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
-  
+
   @override
   $ExperienceCopyWith<$Res> get experience;
 }
@@ -1806,8 +1806,10 @@ abstract class _ExperienceManagementFormState implements ExperienceManagementFor
   
   @override
   bool get showErrorMessages;
+  
   @override
   bool get isEditing;
+  
   @override
   bool get isSubmitting;
   

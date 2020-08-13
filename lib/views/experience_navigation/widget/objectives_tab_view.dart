@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_navigation/experience_navigation_watcher/experience_navigation_watcher_bloc.dart';
 import 'package:worldon/application/experience_navigation/objectives_tracker/objectives_tracker_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/views/core/widget/cards/error_card.dart';
 
 import 'objective_card.dart';
-import 'objective_error_card.dart';
 
 class ObjectivesTabView extends StatelessWidget {
   final Experience experience;
@@ -33,7 +33,13 @@ class ObjectivesTabView extends StatelessWidget {
           if (_objective.isValid) {
             return ObjectiveCard(objective: _objective);
           } else {
-            return ObjectiveErrorCard(objective: _objective);
+            return ErrorCard(
+              entityType: "Objective",
+              valueFailureString: _objective.failureOption.fold(
+                () => "",
+                (failure) => failure.toString(),
+              ),
+            );
           }
         },
       ),

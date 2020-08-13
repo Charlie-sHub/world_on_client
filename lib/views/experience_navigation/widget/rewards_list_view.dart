@@ -31,7 +31,7 @@ class RewardsListView extends StatelessWidget {
           } else {
             return ErrorCard(
               entityType: "Reward",
-              valueFailure: _reward.failureOption.fold(
+              valueFailureString: _reward.failureOption.fold(
                 () => "",
                 (failure) => failure.toString(),
               ),

@@ -62,7 +62,7 @@ class _ObjectiveCreationCardState extends State<ObjectiveCreationCard> {
                     } else {
                       return ErrorCard(
                         entityType: "Objective",
-                        valueFailure: _objective.failureOption.fold(
+                        valueFailureString: _objective.failureOption.fold(
                           () => "No error",
                           (failure) => failure.toString(),
                         ),

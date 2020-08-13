@@ -1,5 +1,5 @@
 name: worldon
-description: Front end or client side of the World On project.
+description: Front end of the World On project.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -48,7 +48,7 @@ dependencies:
   # For email validation
   email_validator: ^1.0.5
   # For mapping
-  google_maps_flutter: ^0.5.29
+  google_maps_flutter: ^0.5.30
   # For getting the geolocation of the user
   geolocator: ^5.3.2+2
   # For Kotlin like collections
@@ -72,7 +72,7 @@ dependencies:
   # For showing the user's experience progression
   percent_indicator: ^2.1.5
   # Takes out some boilerplate
-  flutter_hooks: ^0.13.0
+  flutter_hooks: ^0.13.1
   # For FloatingActionButton menus
   unicorndial: ^1.1.5
   # To add shadow to icons with less boiler plate
@@ -96,7 +96,7 @@ dev_dependencies:
   # For dependency injection code generation
   injectable_generator: ^1.0.4
   # For Serializing entities to JSON
-  json_serializable: ^3.3.0
+  json_serializable: ^3.4.0
   # For auto generating the routes
   auto_route_generator: ^0.6.8
   # For ease of setting the app icon

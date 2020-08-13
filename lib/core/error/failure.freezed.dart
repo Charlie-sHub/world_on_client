@@ -462,7 +462,7 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _CoreDomain<T> && (identical(other.coreDomainFailure, coreDomainFailure) || const DeepCollectionEquality().equals(other.coreDomainFailure, coreDomainFailure)));
+        (other is _CoreDomain<T> && (identical(other.coreDomainFailure, coreDomainFailure) || const DeepCollectionEquality().equals(other.coreDomainFailure, coreDomainFailure)));
   }
 
   @override

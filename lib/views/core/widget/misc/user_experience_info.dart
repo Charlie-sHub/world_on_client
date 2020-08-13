@@ -36,14 +36,14 @@ class UserExperienceInfo extends StatelessWidget {
       ],
     );
   }
-}
 
-Color _getColor(int level) {
-  if (level < 30) {
-    return Colors.blue;
-  } else if (level >= 30 && level < 70) {
-    return Colors.purple;
-  } else {
-    return Colors.red;
+  Color _getColor(int level) {
+    if (level < 30) {
+      return Colors.blue;
+    } else if (level >= 30 && level < 70) {
+      return Colors.purple;
+    } else {
+      return Colors.red;
+    }
   }
 }

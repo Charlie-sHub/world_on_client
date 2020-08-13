@@ -228,38 +228,38 @@ class _$_AchievementDto extends _AchievementDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _AchievementDto &&
-        (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-        (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-        (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
-        (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
-        (identical(other.requisite, requisite) || const DeepCollectionEquality().equals(other.requisite, requisite)) &&
-        (identical(other.experiencePoints, experiencePoints) || const DeepCollectionEquality().equals(other.experiencePoints, experiencePoints)) &&
-        (identical(other.creator, creator) || const DeepCollectionEquality().equals(other.creator, creator)) &&
-        (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
-        (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)) &&
-        (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)));
+        (other is _AchievementDto &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
+            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.requisite, requisite) || const DeepCollectionEquality().equals(other.requisite, requisite)) &&
+            (identical(other.experiencePoints, experiencePoints) || const DeepCollectionEquality().equals(other.experiencePoints, experiencePoints)) &&
+            (identical(other.creator, creator) || const DeepCollectionEquality().equals(other.creator, creator)) &&
+            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+            (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)) &&
+            (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(id) ^
-    const DeepCollectionEquality().hash(name) ^
-    const DeepCollectionEquality().hash(description) ^
-    const DeepCollectionEquality().hash(imageURL) ^
-    const DeepCollectionEquality().hash(type) ^
-    const DeepCollectionEquality().hash(requisite) ^
-    const DeepCollectionEquality().hash(experiencePoints) ^
-    const DeepCollectionEquality().hash(creator) ^
-    const DeepCollectionEquality().hash(creationDate) ^
-    const DeepCollectionEquality().hash(modificationDate) ^
-    const DeepCollectionEquality().hash(tags);
-  
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(description) ^
+      const DeepCollectionEquality().hash(imageURL) ^
+      const DeepCollectionEquality().hash(type) ^
+      const DeepCollectionEquality().hash(requisite) ^
+      const DeepCollectionEquality().hash(experiencePoints) ^
+      const DeepCollectionEquality().hash(creator) ^
+      const DeepCollectionEquality().hash(creationDate) ^
+      const DeepCollectionEquality().hash(modificationDate) ^
+      const DeepCollectionEquality().hash(tags);
+
   @override
   _$AchievementDtoCopyWith<_AchievementDto> get copyWith => __$AchievementDtoCopyWithImpl<_AchievementDto>(this, _$identity);
-  
+
   @override
   Map<String, dynamic> toJson() {
     return _$_$_AchievementDtoToJson(this);

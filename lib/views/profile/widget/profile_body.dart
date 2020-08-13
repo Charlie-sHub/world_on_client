@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/application/profile/profile_watcher/profile_watcher_bloc.dart';
-import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
-import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
-import 'package:worldon/views/profile/widget/foreign_profile.dart';
-import 'package:worldon/views/profile/widget/own_profile.dart';
+import 'package:worldon/views/profile/widget/profile_critical_failure.dart';
 
 import '../../../injection.dart';
+import 'foreign_profile/foreign_profile.dart';
+import 'own_profile/own_profile.dart';
 
 // TODO: Implement some way to always go to the own profile
+// Like a button in te appbar that will always take the user to its own profile
 class ProfileBody extends StatelessWidget {
   final Option<User> userOption;
 
@@ -48,48 +48,6 @@ class ProfileBody extends StatelessWidget {
               child: const ProfileCriticalFailure(),
             ),
           ),
-        ),
-      ),
-    );
-  }
-}
-
-/// This class only exists because the [GetLoggedInUser] use case doesn't give back possible failures
-/// Something to rework in the future for sure
-class ProfileCriticalFailure extends StatelessWidget {
-  const ProfileCriticalFailure({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Icon(
-              Icons.error_outline,
-              color: WorldOnColors.red,
-              size: 70,
-            ),
-            const SizedBox(height: 10),
-            const Text(
-              "There's been a critical failure",
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 50),
-            const Text(
-              "Tap to try again",
-              style: TextStyle(fontSize: 16),
-              textAlign: TextAlign.justify,
-            ),
-          ],
         ),
       ),
     );

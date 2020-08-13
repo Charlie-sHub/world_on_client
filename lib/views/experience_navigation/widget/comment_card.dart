@@ -3,7 +3,7 @@ import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
-import 'package:worldon/views/core/widget/cards/user_card.dart';
+import 'package:worldon/views/core/widget/cards/user_card/name_username_display.dart';
 import 'package:worldon/views/core/widget/misc/user_image.dart';
 
 class CommentCard extends StatelessWidget {
@@ -56,11 +56,10 @@ class CommentCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               RaisedButton(
-                onPressed: () =>
-                  FlushbarHelper.createInformation(
-                    duration: const Duration(seconds: 2),
-                    message: "Just a placeholder",
-                  ).show(context),
+                onPressed: () => FlushbarHelper.createInformation(
+                  duration: const Duration(seconds: 2),
+                  message: "Just a placeholder",
+                ).show(context),
                 child: const Text(
                   "Reply",
                 ),

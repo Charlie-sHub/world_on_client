@@ -39,7 +39,7 @@ class ProfileAchievementsTabView extends StatelessWidget {
               } else {
                 return ErrorCard(
                   entityType: "Achievement",
-                  valueFailure: _achievement.failureOption.fold(
+                  valueFailureString: _achievement.failureOption.fold(
                     () => "",
                     (failure) => failure.toString(),
                   ),

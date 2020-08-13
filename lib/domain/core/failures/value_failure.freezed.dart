@@ -2004,11 +2004,11 @@ abstract class $StringWithInvalidCharactersCopyWith<T, $Res> {
 
 class _$StringWithInvalidCharactersCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res> implements $StringWithInvalidCharactersCopyWith<T, $Res> {
   _$StringWithInvalidCharactersCopyWithImpl(StringWithInvalidCharacters<T> _value, $Res Function(StringWithInvalidCharacters<T>) _then)
-    : super(_value, (v) => _then(v as StringWithInvalidCharacters<T>));
-  
+      : super(_value, (v) => _then(v as StringWithInvalidCharacters<T>));
+
   @override
   StringWithInvalidCharacters<T> get _value => super._value as StringWithInvalidCharacters<T>;
-  
+
   @override
   $Res call({
     Object failedValue = freezed,
@@ -2582,7 +2582,7 @@ class _$SetExceedsLength<T> with DiagnosticableTreeMixin implements SetExceedsLe
     super.debugFillProperties(properties);
     properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.setExceedsLength'))..add(DiagnosticsProperty('failedValue', failedValue))..add(DiagnosticsProperty('maxLength', maxLength));
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||

@@ -1171,7 +1171,7 @@ class _$_ExperienceFormView implements _ExperienceFormView {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _ExperienceFormView && (identical(other.experienceOption, experienceOption) || const DeepCollectionEquality().equals(other.experienceOption, experienceOption)));
+        (other is _ExperienceFormView && (identical(other.experienceOption, experienceOption) || const DeepCollectionEquality().equals(other.experienceOption, experienceOption)));
   }
 
   @override

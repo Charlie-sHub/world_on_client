@@ -390,37 +390,38 @@ class _$_Experience extends _Experience {
 
 abstract class _Experience extends Experience {
   const _Experience._() : super._();
-  
-  const factory _Experience({int id,
-    @required Name title,
-    @required EntityDescription description,
-    @required Set<String> imageURLs,
-    @required Option<List<Asset>> imageAssetsOption,
-    @required Coordinates coordinates,
-    @required Location location,
-    @required User creator,
-    @required Difficulty difficulty,
-    @required PastDate creationDate,
-    @required PastDate modificationDate,
-    @required ObjectiveSet objectives,
-    @required RewardSet rewards,
-    @required TagSet tags,
-    @required Set<Comment> comments,
-    @required Set<User> likedBy,
-    @required Set<User> doneBy}) = _$_Experience;
-  
+
+  const factory _Experience(
+      {int id,
+      @required Name title,
+      @required EntityDescription description,
+      @required Set<String> imageURLs,
+      @required Option<List<Asset>> imageAssetsOption,
+      @required Coordinates coordinates,
+      @required Location location,
+      @required User creator,
+      @required Difficulty difficulty,
+      @required PastDate creationDate,
+      @required PastDate modificationDate,
+      @required ObjectiveSet objectives,
+      @required RewardSet rewards,
+      @required TagSet tags,
+      @required Set<Comment> comments,
+      @required Set<User> likedBy,
+      @required Set<User> doneBy}) = _$_Experience;
+
   @override
   int get id;
-  
+
   @override
   Name get title;
-  
+
   @override
   EntityDescription get description;
 
   @override
   Set<String> get imageURLs;
-  
+
   @override
   Option<List<Asset>> get imageAssetsOption;
   @override

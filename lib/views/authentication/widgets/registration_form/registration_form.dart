@@ -6,7 +6,7 @@ import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/views/authentication/widgets/log_in_form/register_button.dart';
 import 'package:worldon/views/authentication/widgets/registration_form/password_confirmation_text_field.dart';
 import 'package:worldon/views/authentication/widgets/registration_form/user_image_picker.dart';
-import 'package:worldon/views/core/widget/misc/tag_addition_card.dart';
+import 'package:worldon/views/core/widget/misc/tag_addition_card/tag_addition_card.dart';
 
 import '../password_text_field.dart';
 import '../username_text_field.dart';

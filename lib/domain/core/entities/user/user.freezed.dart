@@ -514,47 +514,48 @@ class _$_User extends _User {
 
 abstract class _User extends User {
   const _User._() : super._();
-  
-  const factory _User({int id,
-    @required Name name,
-    @required Name username,
-    @required Password password,
-    @required EmailAddress email,
-    @required PastDate birthday,
-    @required EntityDescription description,
-    @required String imageURL,
-    @required Option<File> imageFileOption,
-    @required UserLevel level,
-    @required ExperiencePoints experiencePoints,
-    @required bool privacy,
-    @required bool adminPowers,
-    @required bool enabled,
-    @required PastDate lastLogin,
-    @required PastDate creationDate,
-    @required PastDate modificationDate,
-    @required Options options,
-    @required Set<User> blockedUsers,
-    @required Set<User> followedUsers,
-    @required Set<Device> devices,
-    @required Set<System> systems,
-    @required Set<Tag> interests,
-    @required Set<Achievement> achievements,
-    @required Set<Experience> experiencesDone,
-    @required Set<Experience> experiencesLiked,
-    @required Set<Experience> experiencesToDo}) = _$_User;
-  
+
+  const factory _User(
+      {int id,
+      @required Name name,
+      @required Name username,
+      @required Password password,
+      @required EmailAddress email,
+      @required PastDate birthday,
+      @required EntityDescription description,
+      @required String imageURL,
+      @required Option<File> imageFileOption,
+      @required UserLevel level,
+      @required ExperiencePoints experiencePoints,
+      @required bool privacy,
+      @required bool adminPowers,
+      @required bool enabled,
+      @required PastDate lastLogin,
+      @required PastDate creationDate,
+      @required PastDate modificationDate,
+      @required Options options,
+      @required Set<User> blockedUsers,
+      @required Set<User> followedUsers,
+      @required Set<Device> devices,
+      @required Set<System> systems,
+      @required Set<Tag> interests,
+      @required Set<Achievement> achievements,
+      @required Set<Experience> experiencesDone,
+      @required Set<Experience> experiencesLiked,
+      @required Set<Experience> experiencesToDo}) = _$_User;
+
   @override
   int get id;
-  
+
   @override
   Name get name;
-  
+
   @override
   Name get username;
 
   @override
   Password get password;
-  
+
   @override
   EmailAddress get email;
   @override
