@@ -7,8 +7,8 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/application/profile/profile_users_watcher/profile_users_watcher_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/profile/use_case/load_followed_users.dart';
-import 'package:worldon/domain/profile/use_case/load_following_users.dart';
+import 'package:worldon/domain/profile/use_case/watch_followed_users.dart';
+import 'package:worldon/domain/profile/use_case/watch_following_users.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../domain/core/methods/create_stream.dart';
@@ -16,13 +16,13 @@ import '../../../domain/core/methods/get_valid_user.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  LoadFollowingUsers loadFollowingUsers;
-  LoadFollowedUsers loadFollowedUsers;
+  WatchFollowingUsers loadFollowingUsers;
+  WatchFollowedUsers loadFollowedUsers;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
-      loadFollowedUsers = getIt<LoadFollowedUsers>();
-      loadFollowingUsers = getIt<LoadFollowingUsers>();
+      loadFollowedUsers = getIt<WatchFollowedUsers>();
+      loadFollowingUsers = getIt<WatchFollowingUsers>();
     },
   );
   final usersFollowed = KtList.of(

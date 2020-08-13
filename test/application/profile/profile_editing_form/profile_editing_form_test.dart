@@ -8,7 +8,6 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/application/profile/profile_editing_form/profile_editing_form_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -24,12 +23,10 @@ import '../../../test_descriptions.dart';
 
 void main() {
   EditUser editUser;
-  GetLoggedInUser getLoggedInUser;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
       editUser = getIt<EditUser>();
-      getLoggedInUser = getIt<GetLoggedInUser>();
     },
   );
   const name = "Test";
@@ -57,15 +54,8 @@ void main() {
   );
   blocTest(
     TestDescription.shouldEmitInitialized,
-    build: () {
-      when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
-      return getIt<ProfileEditingFormBloc>();
-    },
-    act: (bloc) async => bloc.add(const ProfileEditingFormEvent.initialized()),
-    verify: (_) async {
-      verify(getLoggedInUser.call(any));
-      verifyNoMoreInteractions(getLoggedInUser);
-    },
+    build: () => getIt<ProfileEditingFormBloc>(),
+    act: (bloc) async => bloc.add(ProfileEditingFormEvent.initialized(user)),
     expect: [
       ProfileEditingFormState.initial().copyWith(
         user: user,
@@ -82,15 +72,11 @@ void main() {
     () {
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the imageFile",
-        build: () {
-          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
-          return getIt<ProfileEditingFormBloc>();
-        },
+        build: () => getIt<ProfileEditingFormBloc>(),
         act: (bloc) async {
-          bloc.add(const ProfileEditingFormEvent.initialized());
+          bloc.add(ProfileEditingFormEvent.initialized(user));
           bloc.add(ProfileEditingFormEvent.imageChanged(imageFile));
         },
-        verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
           ProfileEditingFormState.initial().copyWith(
             user: user,
@@ -114,15 +100,11 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the name",
-        build: () {
-          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
-          return getIt<ProfileEditingFormBloc>();
-        },
+        build: () => getIt<ProfileEditingFormBloc>(),
         act: (bloc) async {
-          bloc.add(const ProfileEditingFormEvent.initialized());
+          bloc.add(ProfileEditingFormEvent.initialized(user));
           bloc.add(const ProfileEditingFormEvent.nameChanged(nameChange));
         },
-        verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
           ProfileEditingFormState.initial().copyWith(
             user: user,
@@ -146,15 +128,11 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the username",
-        build: () {
-          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
-          return getIt<ProfileEditingFormBloc>();
-        },
+        build: () => getIt<ProfileEditingFormBloc>(),
         act: (bloc) async {
-          bloc.add(const ProfileEditingFormEvent.initialized());
+          bloc.add(ProfileEditingFormEvent.initialized(user));
           bloc.add(const ProfileEditingFormEvent.usernameChanged(username));
         },
-        verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
           ProfileEditingFormState.initial().copyWith(
             user: user,
@@ -178,15 +156,11 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the password",
-        build: () {
-          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
-          return getIt<ProfileEditingFormBloc>();
-        },
+        build: () => getIt<ProfileEditingFormBloc>(),
         act: (bloc) async {
-          bloc.add(const ProfileEditingFormEvent.initialized());
+          bloc.add(ProfileEditingFormEvent.initialized(user));
           bloc.add(const ProfileEditingFormEvent.passwordChanged(passwordChange));
         },
-        verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
           ProfileEditingFormState.initial().copyWith(
             user: user,
@@ -210,15 +184,11 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the password confirmation",
-        build: () {
-          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
-          return getIt<ProfileEditingFormBloc>();
-        },
+        build: () => getIt<ProfileEditingFormBloc>(),
         act: (bloc) async {
-          bloc.add(const ProfileEditingFormEvent.initialized());
+          bloc.add(ProfileEditingFormEvent.initialized(user));
           bloc.add(const ProfileEditingFormEvent.passwordConfirmationChanged(passwordConfirmation));
         },
-        verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
           ProfileEditingFormState.initial().copyWith(
             user: user,
@@ -240,15 +210,11 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the email",
-        build: () {
-          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
-          return getIt<ProfileEditingFormBloc>();
-        },
+        build: () => getIt<ProfileEditingFormBloc>(),
         act: (bloc) async {
-          bloc.add(const ProfileEditingFormEvent.initialized());
+          bloc.add(ProfileEditingFormEvent.initialized(user));
           bloc.add(const ProfileEditingFormEvent.emailAddressChanged(emailAddress));
         },
-        verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
           ProfileEditingFormState.initial().copyWith(
             user: user,
@@ -272,15 +238,11 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the birthday",
-        build: () {
-          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
-          return getIt<ProfileEditingFormBloc>();
-        },
+        build: () => getIt<ProfileEditingFormBloc>(),
         act: (bloc) async {
-          bloc.add(const ProfileEditingFormEvent.initialized());
+          bloc.add(ProfileEditingFormEvent.initialized(user));
           bloc.add(ProfileEditingFormEvent.birthdayChanged(birthday));
         },
-        verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
           ProfileEditingFormState.initial().copyWith(
             user: user,
@@ -304,15 +266,11 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the description",
-        build: () {
-          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
-          return getIt<ProfileEditingFormBloc>();
-        },
+        build: () => getIt<ProfileEditingFormBloc>(),
         act: (bloc) async {
-          bloc.add(const ProfileEditingFormEvent.initialized());
+          bloc.add(ProfileEditingFormEvent.initialized(user));
           bloc.add(const ProfileEditingFormEvent.descriptionChanged(description));
         },
-        verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
           ProfileEditingFormState.initial().copyWith(
             user: user,
@@ -336,15 +294,11 @@ void main() {
       );
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the interests",
-        build: () {
-          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
-          return getIt<ProfileEditingFormBloc>();
-        },
+        build: () => getIt<ProfileEditingFormBloc>(),
         act: (bloc) async {
-          bloc.add(const ProfileEditingFormEvent.initialized());
+          bloc.add(ProfileEditingFormEvent.initialized(user));
           bloc.add(ProfileEditingFormEvent.interestsChanged(interests));
         },
-        verify: (_) async => verify(getLoggedInUser.call(any)),
         expect: [
           ProfileEditingFormState.initial().copyWith(
             user: user,
@@ -372,11 +326,10 @@ void main() {
     TestDescription.shouldEmitSuccess,
     build: () {
       when(editUser.call(any)).thenAnswer((_) async => right(unit));
-      when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
       return getIt<ProfileEditingFormBloc>();
     },
     act: (bloc) async {
-      bloc.add(const ProfileEditingFormEvent.initialized());
+      bloc.add(ProfileEditingFormEvent.initialized(user));
       bloc.add(const ProfileEditingFormEvent.nameChanged(nameChange));
       bloc.add(const ProfileEditingFormEvent.usernameChanged(username));
       bloc.add(const ProfileEditingFormEvent.passwordChanged(originalPassword));
@@ -387,10 +340,7 @@ void main() {
       bloc.add(ProfileEditingFormEvent.imageChanged(imageFile));
       bloc.add(const ProfileEditingFormEvent.submitted());
     },
-    verify: (_) async {
-      verify(getLoggedInUser.call(any));
-      verify(editUser.call(any));
-    },
+    verify: (_) async => verify(editUser.call(any)),
     expect: [
       ProfileEditingFormState.initial().copyWith(
         user: user.copyWith(
@@ -545,11 +495,10 @@ void main() {
         "${TestDescription.shouldEmitFailure} when submitting",
         build: () {
           when(editUser.call(any)).thenAnswer((_) async => left(failure));
-          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
           return getIt<ProfileEditingFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(const ProfileEditingFormEvent.initialized());
+          bloc.add(ProfileEditingFormEvent.initialized(user));
           bloc.add(const ProfileEditingFormEvent.nameChanged(nameChange));
           bloc.add(const ProfileEditingFormEvent.usernameChanged(username));
           bloc.add(const ProfileEditingFormEvent.passwordChanged(originalPassword));
@@ -560,10 +509,7 @@ void main() {
           bloc.add(ProfileEditingFormEvent.imageChanged(imageFile));
           bloc.add(const ProfileEditingFormEvent.submitted());
         },
-        verify: (_) async {
-          verify(getLoggedInUser.call(any));
-          verify(editUser.call(any));
-        },
+        verify: (_) async => verify(editUser.call(any)),
         expect: [
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
@@ -715,11 +661,10 @@ void main() {
         TestDescription.shouldResetOption,
         build: () {
           when(editUser.call(any)).thenAnswer((_) async => left(failure));
-          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
           return getIt<ProfileEditingFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(const ProfileEditingFormEvent.initialized());
+          bloc.add(ProfileEditingFormEvent.initialized(user));
           bloc.add(const ProfileEditingFormEvent.nameChanged(nameChange));
           bloc.add(const ProfileEditingFormEvent.usernameChanged(username));
           bloc.add(const ProfileEditingFormEvent.passwordChanged(originalPassword));
@@ -731,10 +676,7 @@ void main() {
           bloc.add(const ProfileEditingFormEvent.submitted());
           bloc.add(const ProfileEditingFormEvent.nameChanged(name));
         },
-        verify: (_) async {
-          verify(getLoggedInUser.call(any));
-          verify(editUser.call(any));
-        },
+        verify: (_) async => verify(editUser.call(any)),
         expect: [
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(

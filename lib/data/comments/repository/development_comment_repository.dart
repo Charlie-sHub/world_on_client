@@ -27,7 +27,7 @@ class DevelopmentCommentRepository implements CommentRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtSet<Comment>>> getExperienceComments(int experienceId) {
+  Stream<Either<Failure, KtSet<Comment>>> watchExperienceComments(int experienceId) {
     Either<Failure, KtSet<Comment>> _either;
     if (_random.nextBool()) {
       _either = right(KtSet.of(
@@ -44,7 +44,7 @@ class DevelopmentCommentRepository implements CommentRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtSet<Comment>>> getUserComments(int userId) {
+  Stream<Either<Failure, KtSet<Comment>>> watchUserComments(int userId) {
     Either<Failure, KtSet<Comment>> _either;
     if (_random.nextBool()) {
       _either = right(KtSet.of(

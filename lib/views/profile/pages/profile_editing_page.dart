@@ -8,12 +8,16 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/string_constants.dart';
+import 'package:worldon/views/core/widget/critical_error_display.dart';
 import 'package:worldon/views/profile/widget/profile_editing_form/profile_editing_form.dart';
 
 class ProfileEditingPage extends StatelessWidget {
   final User user;
 
-  const ProfileEditingPage({Key key, @required this.user}) : super(key: key);
+  const ProfileEditingPage({
+    Key key,
+    @required this.user,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +37,7 @@ class ProfileEditingPage extends StatelessWidget {
         create: (context) =>
         getIt<ProfileEditingFormBloc>()
           ..add(
-            const ProfileEditingFormEvent.initialized(),
+            ProfileEditingFormEvent.initialized(user),
           ),
         child: BlocConsumer<ProfileEditingFormBloc, ProfileEditingFormState>(
           listener: (context, state) =>
@@ -45,12 +49,33 @@ class ProfileEditingPage extends StatelessWidget {
                     (_) => _onSuccess(context),
                 ),
             ),
-          builder: (context, state) => const ProfileEditingForm(),
+          builder: (context, state) =>
+            state.user.failureOption.fold(
+                () => const ProfileEditingForm(),
+              // TODO: Make the CriticalErrorDisplay take the function to retry as a parameter
+              // That way one will never forget to implement that functionality
+                (valueFailure) =>
+                InkWell(
+                  onTap: () async =>
+                    context.bloc<ProfileEditingFormBloc>().add(
+                      // It doesn't make much sense to re try with a failed user
+                      // This is almost impossible to happen, but still
+                      // The function should be one to go back to the profile page
+                      ProfileEditingFormEvent.initialized(context
+                        .bloc<ProfileEditingFormBloc>()
+                        .state
+                        .user),
+                    ),
+                  child: CriticalErrorDisplay(
+                    failure: Failure.value(valueFailure),
+                  ),
+                ),
+            ),
         ),
       ),
     );
   }
-  
+
   Future _onFailure(Failure failure, BuildContext context) {
     return FlushbarHelper.createError(
       duration: const Duration(seconds: 2),

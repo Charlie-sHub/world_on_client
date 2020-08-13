@@ -31,6 +31,7 @@ class SearchHeader extends StatelessWidget {
                       ),
                       (_) => null,
                     ),
+                onFieldSubmitted: (_) => _submit(context),
               ),
             ),
             IconButton(
@@ -38,13 +39,15 @@ class SearchHeader extends StatelessWidget {
                 Icons.search,
                 size: 35,
               ),
-              onPressed: () => context.bloc<SearchByNameFormBloc>().add(
-                    const SearchByNameFormEvent.submitted(),
-                  ),
+              onPressed: () => _submit(context),
             ),
           ],
         ),
       ),
     );
   }
+
+  void _submit(BuildContext context) => context.bloc<SearchByNameFormBloc>().add(
+        const SearchByNameFormEvent.submitted(),
+      );
 }

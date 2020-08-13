@@ -8,7 +8,7 @@ import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/validation/objects/search_term.dart';
-import 'package:worldon/domain/search/use_case/search_experiences_by_name.dart';
+import 'package:worldon/domain/search/use_case/watch_search_experiences_by_name.dart';
 import 'package:worldon/injection.dart';
 
 part 'search_experiences_by_name_watcher_bloc.freezed.dart';
@@ -28,7 +28,7 @@ class SearchExperiencesByNameWatcherBloc extends Bloc<SearchExperiencesByNameWat
 
   Stream<SearchExperiencesByNameWatcherState> onWatchExperiencesFoundByNameStarted(_WatchExperiencesFoundByNameStarted event) async* {
     yield const SearchExperiencesByNameWatcherState.searchInProgress();
-    final _searchExperiencesByName = getIt<SearchExperiencesByName>();
+    final _searchExperiencesByName = getIt<WatchSearchExperiencesByName>();
     yield* _searchExperiencesByName(
       Params(name: event.searchTerm),
     ).map(

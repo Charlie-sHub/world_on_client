@@ -36,7 +36,7 @@ class DevelopmentExperienceLogRepository implements ExperienceLogRepositoryInter
   }
 
   @override
-  Stream<Either<Failure, KtSet<Experience>>> loadUserLog() {
+  Stream<Either<Failure, KtSet<Experience>>> watchUserLog() {
     Either<Failure, KtSet<Experience>> _either;
     if (_random.nextBool()) {
       _either = right(KtSet.of(

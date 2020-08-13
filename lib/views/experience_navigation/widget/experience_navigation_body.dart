@@ -4,11 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_navigation/experience_navigation_watcher/experience_navigation_watcher_bloc.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/views/experience_navigation/widget/experience_finish/experience_finish.dart';
 import 'package:worldon/views/experience_navigation/widget/experience_navigation.dart';
+import 'package:worldon/views/experience_navigation/widget/no_experience_view.dart';
 
 import '../../../injection.dart';
-import 'experience_finish/experience_finish.dart';
-import 'no_experience_view.dart';
 
 class ExperienceNavigationBody extends StatelessWidget {
   final Option<Experience> experienceOption;

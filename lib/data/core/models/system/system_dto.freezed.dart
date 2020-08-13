@@ -41,6 +41,7 @@ mixin _$SystemDto {
 
 abstract class $SystemDtoCopyWith<$Res> {
   factory $SystemDtoCopyWith(SystemDto value, $Res Function(SystemDto) then) = _$SystemDtoCopyWithImpl<$Res>;
+
   $Res call({int id, String name, String type, String company});
 }
 

@@ -7,7 +7,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/application/achievement_management/achievement_management_watcher/achievement_management_watcher_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/achievement_management/use_case/get_all_achievements.dart';
+import 'package:worldon/domain/achievement_management/use_case/watch_all_achievements.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/injection.dart';
 
@@ -15,11 +15,11 @@ import '../../../domain/core/methods/create_stream.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  GetAllAchievements getAllAchievements;
+  WatchAllAchievements getAllAchievements;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
-      getAllAchievements = getIt<GetAllAchievements>();
+      getAllAchievements = getIt<WatchAllAchievements>();
     },
   );
   final achievementSet = KtSet.of(Achievement.empty());

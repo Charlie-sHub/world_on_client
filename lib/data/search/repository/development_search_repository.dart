@@ -24,7 +24,7 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
   final _random = Random();
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> searchExperiencesByDifficulty(Difficulty difficulty) {
+  Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByDifficulty(Difficulty difficulty) {
     Either<Failure, KtList<Experience>> _either;
     if (_random.nextBool()) {
       _either = right(
@@ -52,7 +52,7 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> searchExperiencesByTags(TagSet tags) {
+  Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByTags(TagSet tags) {
     Either<Failure, KtList<Experience>> _either;
     if (_random.nextBool()) {
       _either = right(
@@ -80,7 +80,7 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> searchExperiencesByName(SearchTerm name) {
+  Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByName(SearchTerm name) {
     Either<Failure, KtList<Experience>> _either;
     if (_random.nextBool()) {
       _either = right(
@@ -106,7 +106,7 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtList<Tag>>> searchTagsByName(SearchTerm name) {
+  Stream<Either<Failure, KtList<Tag>>> watchSearchTagsByName(SearchTerm name) {
     Either<Failure, KtList<Tag>> _either;
     if (_random.nextBool()) {
       _either = right(
@@ -168,7 +168,7 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtList<User>>> searchUsersByName(SearchTerm name) {
+  Stream<Either<Failure, KtList<User>>> watchSearchUsersByName(SearchTerm name) {
     Either<Failure, KtList<User>> _either;
     if (_random.nextBool()) {
       _either = right(
@@ -198,7 +198,7 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtList<User>>> searchUsersByUserName(SearchTerm username) {
+  Stream<Either<Failure, KtList<User>>> watchSearchUsersByUserName(SearchTerm username) {
     Either<Failure, KtList<User>> _either;
     if (_random.nextBool()) {
       _either = right(

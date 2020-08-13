@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:worldon/application/authentication/log_in_form/log_in_form_bloc.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
-import 'package:worldon/views/core/misc/string_constants.dart';
+import 'package:worldon/views/authentication/validator_typedef.dart';
 
 class PasswordTextField extends StatelessWidget {
   final Function eventToAdd;
+  final Validator<String> validator;
 
   const PasswordTextField({
     Key key,
     @required this.eventToAdd,
+    @required this.validator,
   }) : super(key: key);
 
   @override
@@ -23,18 +23,7 @@ class PasswordTextField extends StatelessWidget {
       autocorrect: false,
       obscureText: true,
       onChanged: (value) => eventToAdd(value),
-      validator: (_) => context.bloc<LogInFormBloc>().state.password.value.fold(
-            // TODO: Instead of mapping just return an error string from the failure
-            (failure) => failure.maybeMap(
-              emptyString: (_) => "The password can't be empty",
-              multiLineString: (_) => "The password can't be more than one line",
-              stringExceedsLength: (_) => "The password is too long",
-              // Rather superfluous
-              invalidPassword: (_) => "The password is invalid",
-              orElse: () => StringConst.unknownError,
-            ),
-            (_) => null,
-          ),
+      validator: (_) => validator(_),
     );
   }
 }

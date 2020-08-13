@@ -8,7 +8,7 @@ import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
-import 'package:worldon/domain/notifications/use_case/load_notifications.dart';
+import 'package:worldon/domain/notifications/use_case/watch_notifications.dart';
 
 import '../../../injection.dart';
 
@@ -29,7 +29,7 @@ class NotificationsWatcherBloc extends Bloc<NotificationsWatcherEvent, Notificat
 
   Stream<NotificationsWatcherState> onWatchNotificationsStarted(_WatchNotificationsStarted event) async* {
     yield const NotificationsWatcherState.loadInProgress();
-    final _loadNotifications = getIt<LoadNotifications>();
+    final _loadNotifications = getIt<WatchNotifications>();
     yield* _loadNotifications(getIt<NoParams>()).map(
       (failureOrNotifications) => failureOrNotifications.fold(
         (failure) => NotificationsWatcherState.loadFailure(failure),

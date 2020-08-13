@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/views/core/widget/cards/user_card/name_username_display.dart';
 import 'package:worldon/views/core/widget/cards/user_card/user_bio.dart';
 import 'package:worldon/views/core/widget/misc/block_unblock_button_builder/block_unblock_button_builder.dart';
 import 'package:worldon/views/core/widget/misc/follow_unfollow_button_builder/follow_unfollow_button_builder.dart';
 import 'package:worldon/views/core/widget/misc/user_experience_info.dart';
 import 'package:worldon/views/core/widget/misc/user_image.dart';
-
-import 'name_username_display.dart';
 
 class UserCard extends StatelessWidget {
   final User user;

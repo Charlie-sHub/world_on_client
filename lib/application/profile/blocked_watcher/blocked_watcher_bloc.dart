@@ -7,7 +7,7 @@ import 'package:kt_dart/kt.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
-import 'package:worldon/domain/profile/use_case/load_blocked_users.dart';
+import 'package:worldon/domain/profile/use_case/watch_blocked_users.dart';
 
 import '../../../injection.dart';
 
@@ -28,7 +28,7 @@ class BlockedWatcherBloc extends Bloc<BlockedWatcherEvent, BlockedWatcherState> 
 
   Stream<BlockedWatcherState> onWatchBlockedUsersStarted(_WatchBlockedUsersStarted event) async* {
     yield const BlockedWatcherState.loadInProgress();
-    final _loadBlockedUsers = getIt<LoadBlockedUsers>();
+    final _loadBlockedUsers = getIt<WatchBlockedUsers>();
     yield* _loadBlockedUsers(
       Params(id: event.user.id),
     ).map(

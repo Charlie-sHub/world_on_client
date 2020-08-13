@@ -4,8 +4,7 @@ import 'package:worldon/application/experience_navigation/experience_navigation_
 import 'package:worldon/application/experience_navigation/objectives_tracker/objectives_tracker_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/views/core/widget/cards/error_card.dart';
-
-import 'objective_card.dart';
+import 'package:worldon/views/experience_navigation/widget/objective_card.dart';
 
 class ObjectivesTabView extends StatelessWidget {
   final Experience experience;

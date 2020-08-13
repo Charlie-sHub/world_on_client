@@ -8,18 +8,18 @@ import 'package:worldon/application/notifications/notifications_watcher/notifica
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart';
-import 'package:worldon/domain/notifications/use_case/load_notifications.dart';
+import 'package:worldon/domain/notifications/use_case/watch_notifications.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../domain/core/methods/create_stream.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  LoadNotifications loadNotifications;
+  WatchNotifications loadNotifications;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
-      loadNotifications = getIt<LoadNotifications>();
+      loadNotifications = getIt<WatchNotifications>();
     },
   );
   final notifications = KtList.of(Notification.empty());

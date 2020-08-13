@@ -6,9 +6,8 @@ import 'package:worldon/application/tag_management/tag_card_actor/tag_card_actor
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
-
-import 'dislike_tag_button.dart';
-import 'like_tag_button.dart';
+import 'package:worldon/views/core/widget/cards/tag_card/dislike_tag_button.dart';
+import 'package:worldon/views/core/widget/cards/tag_card/like_tag_button.dart';
 
 class TagCard extends StatelessWidget {
   final Tag tag;

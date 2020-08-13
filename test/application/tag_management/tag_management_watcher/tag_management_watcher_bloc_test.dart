@@ -8,18 +8,18 @@ import 'package:worldon/application/tag_management/tag_management_watcher/tag_ma
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
-import 'package:worldon/domain/tag_management/use_case/get_all_tags.dart';
+import 'package:worldon/domain/tag_management/use_case/watch_all_tags.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../domain/core/methods/create_stream.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  GetAllTags getAllTags;
+  WatchAllTags getAllTags;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
-      getAllTags = getIt<GetAllTags>();
+      getAllTags = getIt<WatchAllTags>();
     },
   );
   final tagList = KtSet.of(Tag.empty());

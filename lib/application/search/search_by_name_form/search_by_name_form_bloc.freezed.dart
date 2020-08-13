@@ -382,20 +382,20 @@ class _$_SearchByNameFormState implements _SearchByNameFormState {
 
 abstract class _SearchByNameFormState implements SearchByNameFormState {
   const factory _SearchByNameFormState({@required SearchTerm searchTerm, @required bool showErrorMessages, @required bool isSubmitting, @required Option<ValueFailure> failureOrSuccessOption}) =
-  _$_SearchByNameFormState;
-  
+      _$_SearchByNameFormState;
+
   @override
   SearchTerm get searchTerm;
-  
+
   @override
   bool get showErrorMessages;
-  
+
   @override
   bool get isSubmitting;
 
   @override
   Option<ValueFailure> get failureOrSuccessOption;
-  
+
   @override
   _$SearchByNameFormStateCopyWith<_SearchByNameFormState> get copyWith;
 }

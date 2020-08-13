@@ -12,15 +12,6 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
   final _random = Random();
 
   @override
-  Future<Either<Failure, Unit>> addExperienceToLog(int experienceId) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
-  }
-
-  @override
   Future<Either<Failure, Unit>> deleteCache() {
     if (_random.nextBool()) {
       return getRightFuture(unit);

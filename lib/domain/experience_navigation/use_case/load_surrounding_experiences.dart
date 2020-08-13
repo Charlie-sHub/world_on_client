@@ -14,6 +14,7 @@ class LoadSurroundingExperiences implements AsyncUseCase<KtSet<Experience>, Para
 
   LoadSurroundingExperiences(this._repository);
 
+  // TODO: Should this return a stream?
   @override
   Future<Either<Failure, KtSet<Experience>>> call(Params params) async {
     return _repository.loadSurroundingExperiences(params.coordinates);

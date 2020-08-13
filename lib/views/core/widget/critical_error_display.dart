@@ -5,7 +5,10 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 class CriticalErrorDisplay extends StatelessWidget {
   final Failure failure;
 
-  const CriticalErrorDisplay({Key key, @required this.failure}) : super(key: key);
+  const CriticalErrorDisplay({
+    Key key,
+    @required this.failure,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

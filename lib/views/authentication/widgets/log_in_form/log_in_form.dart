@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/log_in_form/log_in_form_bloc.dart';
+import 'package:worldon/views/authentication/widgets/log_in_form/log_in_button.dart';
+import 'package:worldon/views/authentication/widgets/log_in_form/log_in_google_button.dart';
+import 'package:worldon/views/authentication/widgets/log_in_form/log_in_trouble_button.dart';
+import 'package:worldon/views/authentication/widgets/log_in_form/register_button.dart';
 import 'package:worldon/views/authentication/widgets/log_in_form/world_on_image.dart';
-import 'package:worldon/views/authentication/widgets/registration_form/submit_register_button.dart';
-
-import '../password_text_field.dart';
-import '../username_text_field.dart';
-import '../world_on_title.dart';
-import 'log_in_button.dart';
-import 'log_in_google_button.dart';
-import 'log_in_trouble_button.dart';
+import 'package:worldon/views/authentication/widgets/password_text_field.dart';
+import 'package:worldon/views/authentication/widgets/username_text_field.dart';
+import 'package:worldon/views/authentication/widgets/world_on_title.dart';
+import 'package:worldon/views/core/misc/string_constants.dart';
 
 class LogInForm extends StatelessWidget {
   @override
@@ -29,12 +29,14 @@ class LogInForm extends StatelessWidget {
             eventToAdd: (String value) => context.bloc<LogInFormBloc>().add(
                   LogInFormEvent.usernameChanged(value),
                 ),
+            validator: (_) => _usernameValidator(context),
           ),
           const SizedBox(height: 3),
           PasswordTextField(
             eventToAdd: (String value) => context.bloc<LogInFormBloc>().add(
                   LogInFormEvent.passwordChanged(value),
                 ),
+            validator: (_) => _passwordValidator(context),
           ),
           const SizedBox(height: 7),
           const LogInButton(),
@@ -43,9 +45,36 @@ class LogInForm extends StatelessWidget {
           const SizedBox(height: 5),
           const LogInGoogleButton(),
           const SizedBox(height: 5),
-          const SubmitRegisterButton(),
+          const RegisterButton(),
         ],
       ),
     );
+  }
+
+  String _passwordValidator(BuildContext context) {
+    return context.bloc<LogInFormBloc>().state.password.value.fold(
+          (failure) => failure.maybeMap(
+            emptyString: (_) => "The password can't be empty",
+            multiLineString: (_) => "The password can't be more than one line",
+            stringExceedsLength: (_) => "The password is too long",
+            // Rather superfluous
+            invalidPassword: (_) => "The password is invalid",
+            orElse: () => StringConst.unknownError,
+          ),
+          (_) => null,
+        );
+  }
+
+  String _usernameValidator(BuildContext context) {
+    return context.bloc<LogInFormBloc>().state.username.value.fold(
+          (failure) => failure.maybeMap(
+            emptyString: (_) => "The username can't be empty",
+            multiLineString: (_) => "The username can't be more than one line",
+            stringExceedsLength: (_) => "The username is too long",
+            stringWithInvalidCharacters: (_) => "The username has invalid characters",
+            orElse: () => StringConst.unknownError,
+          ),
+          (_) => null,
+        );
   }
 }

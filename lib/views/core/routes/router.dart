@@ -15,7 +15,7 @@ import 'package:worldon/views/splash/pages/splash_page.dart';
     MaterialRoute(page: MainPage),
     CustomRoute<bool>(
       page: ProfileEditingPage,
-      transitionsBuilder: TransitionsBuilders.slideRight,
+      transitionsBuilder: TransitionsBuilders.slideLeft,
     ),
   ],
 )

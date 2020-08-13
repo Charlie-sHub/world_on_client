@@ -9,7 +9,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
-import 'package:worldon/domain/search/use_case/search_experiences_by_difficulty.dart';
+import 'package:worldon/domain/search/use_case/watch_search_experiences_by_difficulty.dart';
 import 'package:worldon/injection.dart';
 
 part 'search_experiences_by_difficulty_bloc.freezed.dart';
@@ -31,7 +31,7 @@ class SearchExperiencesByDifficultyBloc extends Bloc<SearchExperiencesByDifficul
     yield const SearchExperiencesByDifficultyState.searchInProgress();
     final _difficulty = Difficulty(event.difficulty);
     if (_difficulty.isValid()) {
-      final _searchExperiencesByDifficulty = getIt<SearchExperiencesByDifficulty>();
+      final _searchExperiencesByDifficulty = getIt<WatchSearchExperiencesByDifficulty>();
       yield* _searchExperiencesByDifficulty(
         Params(difficulty: _difficulty),
       ).map(

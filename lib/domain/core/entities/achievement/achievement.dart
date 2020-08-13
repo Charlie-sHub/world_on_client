@@ -21,8 +21,6 @@ abstract class Achievement implements _$Achievement {
   const Achievement._();
 
   const factory Achievement({
-    // TODO: Use uuid for the ids
-    // First check Hive, Moor and sqflite
     int id,
     @required Name name,
     @required EntityDescription description,

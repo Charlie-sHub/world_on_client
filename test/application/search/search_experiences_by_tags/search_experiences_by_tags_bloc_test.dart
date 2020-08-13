@@ -10,18 +10,18 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
-import 'package:worldon/domain/search/use_case/search_experiences_by_tags.dart';
+import 'package:worldon/domain/search/use_case/watch_search_experiences_by_tags.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../domain/core/methods/create_stream.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  SearchExperiencesByTags searchExperiencesByTags;
+  WatchSearchExperiencesByTags searchExperiencesByTags;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
-      searchExperiencesByTags = getIt<SearchExperiencesByTags>();
+      searchExperiencesByTags = getIt<WatchSearchExperiencesByTags>();
     },
   );
   final tags = {Tag.empty()};

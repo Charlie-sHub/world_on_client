@@ -8,9 +8,9 @@ import 'package:worldon/application/profile/profile_experiences_watcher/profile_
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
-import 'package:worldon/domain/profile/use_case/load_experiences_created.dart';
-import 'package:worldon/domain/profile/use_case/load_experiences_done.dart';
-import 'package:worldon/domain/profile/use_case/load_experiences_liked.dart';
+import 'package:worldon/domain/profile/use_case/watch_experiences_created.dart';
+import 'package:worldon/domain/profile/use_case/watch_experiences_done.dart';
+import 'package:worldon/domain/profile/use_case/watch_experiences_liked.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../domain/core/methods/create_stream.dart';
@@ -18,15 +18,15 @@ import '../../../domain/core/methods/get_valid_user.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  LoadExperiencesLiked loadExperiencesLiked;
-  LoadExperiencesDone loadExperiencesDone;
-  LoadExperiencesCreated loadExperiencesCreated;
+  WatchExperiencesLiked loadExperiencesLiked;
+  WatchExperiencesDone loadExperiencesDone;
+  WatchExperiencesCreated loadExperiencesCreated;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
-      loadExperiencesLiked = getIt<LoadExperiencesLiked>();
-      loadExperiencesDone = getIt<LoadExperiencesDone>();
-      loadExperiencesCreated = getIt<LoadExperiencesCreated>();
+      loadExperiencesLiked = getIt<WatchExperiencesLiked>();
+      loadExperiencesDone = getIt<WatchExperiencesDone>();
+      loadExperiencesCreated = getIt<WatchExperiencesCreated>();
     },
   );
   final user = getValidUser();

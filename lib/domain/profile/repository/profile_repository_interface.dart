@@ -9,7 +9,7 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 /// Repository for the [User]'s profile feature.
 abstract class ProfileRepositoryInterface {
   /// Gets the [User] associated with the given id
-  Future<Either<Failure, User>> loadUser(int id);
+  Future<Either<Failure, User>> getUser(int id);
 
   /// Sends a edited [User] to the server to be saved on the database
   Future<Either<Failure, Unit>> editUser(User user);
@@ -37,28 +37,28 @@ abstract class ProfileRepositoryInterface {
   // Basically separate them into two features
 
   /// Sends an [User]'s id to the server so it returns a [KtList] of the [User]s it follows
-  Stream<Either<Failure, KtList<User>>> loadFollowedUsers(int id);
+  Stream<Either<Failure, KtList<User>>> watchFollowedUsers(int id);
 
   /// Sends an [User]'s id to the server so it returns a [KtList] of the [User]s following it
-  Stream<Either<Failure, KtList<User>>> loadFollowingUsers(int id);
+  Stream<Either<Failure, KtList<User>>> watchFollowingUsers(int id);
 
   /// Sends an [User]'s id to the server so it returns a [KtList] of the [User]s it has blocked
-  Stream<Either<Failure, KtList<User>>> loadBlockedUsers(int id);
+  Stream<Either<Failure, KtList<User>>> watchBlockedUsers(int id);
 
   /// Sends an [User]'s id to the server so it returns a [KtList] of the [Experience]s it has done
-  Stream<Either<Failure, KtList<Experience>>> loadExperiencesDone(int id);
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesDone(int id);
 
   /// Sends an [User]'s id to the server so it returns a [KtList] of the [Experience]s it has liked
-  Stream<Either<Failure, KtList<Experience>>> loadExperiencesLiked(int id);
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesLiked(int id);
 
   /// Sends an [User]'s id to the server so it returns a [KtList] of the [Experience]s it has created
-  Stream<Either<Failure, KtList<Experience>>> loadExperiencesCreated(int id);
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesCreated(int id);
 
   /// Returns a [KtList] of [Tag]s of a given [User] interests
-  Stream<Either<Failure, KtList<Tag>>> loadUserInterests(int userId);
+  Stream<Either<Failure, KtList<Tag>>> watchUserInterests(int userId);
 
   /// Returns a [KtList] of the [Achievement]s accomplished by a [User]
-  Stream<Either<Failure, KtList<Achievement>>> loadUserAchievements(int userId);
+  Stream<Either<Failure, KtList<Achievement>>> watchUserAchievements(int userId);
 
 // TODO: implement Message user
 }

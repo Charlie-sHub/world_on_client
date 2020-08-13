@@ -9,11 +9,10 @@ import 'package:worldon/views/core/widget/misc/experience_done_counter.dart';
 import 'package:worldon/views/core/widget/misc/experience_likes_counter.dart';
 import 'package:worldon/views/core/widget/misc/follow_unfollow_button_builder/follow_unfollow_button_builder.dart';
 import 'package:worldon/views/core/widget/misc/user_image.dart';
-
-import '../rewards_list_view.dart';
-import 'experience_comments_list_view.dart';
-import 'experience_description.dart';
-import 'experience_header.dart';
+import 'package:worldon/views/experience_navigation/widget/experience_information_tab_view/experience_comments_list_view.dart';
+import 'package:worldon/views/experience_navigation/widget/experience_information_tab_view/experience_description.dart';
+import 'package:worldon/views/experience_navigation/widget/experience_information_tab_view/experience_header.dart';
+import 'package:worldon/views/experience_navigation/widget/rewards_list_view.dart';
 
 class ExperienceInformationTabView extends StatelessWidget {
   const ExperienceInformationTabView({

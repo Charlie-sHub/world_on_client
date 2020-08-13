@@ -8,7 +8,7 @@ import 'package:worldon/application/profile/profile_interests_watcher/profile_in
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
-import 'package:worldon/domain/profile/use_case/load_user_interests.dart';
+import 'package:worldon/domain/profile/use_case/watch_user_interests.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../domain/core/methods/create_stream.dart';
@@ -16,11 +16,11 @@ import '../../../domain/core/methods/get_valid_user.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  LoadUserInterests loadUserInterests;
+  WatchUserInterests loadUserInterests;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
-      loadUserInterests = getIt<LoadUserInterests>();
+      loadUserInterests = getIt<WatchUserInterests>();
     },
   );
   final interests = KtList.of(Tag.empty());

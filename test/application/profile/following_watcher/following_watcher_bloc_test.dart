@@ -7,7 +7,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/application/profile/following_watcher/following_watcher_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/profile/use_case/load_following_users.dart';
+import 'package:worldon/domain/profile/use_case/watch_following_users.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../domain/core/methods/create_stream.dart';
@@ -15,11 +15,11 @@ import '../../../domain/core/methods/get_valid_user.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  LoadFollowingUsers loadFollowingUsers;
+  WatchFollowingUsers loadFollowingUsers;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
-      loadFollowingUsers = getIt<LoadFollowingUsers>();
+      loadFollowingUsers = getIt<WatchFollowingUsers>();
     },
   );
 

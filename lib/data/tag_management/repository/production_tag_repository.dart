@@ -9,7 +9,7 @@ import 'package:worldon/domain/tag_management/repository/tag_repository_interfac
 @LazySingleton(as: TagCoreRepositoryInterface, env: [Environment.prod])
 class ProductionTagRepository implements TagCoreRepositoryInterface {
   @override
-  Stream<Either<Failure, KtSet<Tag>>> getAllTags() {
+  Stream<Either<Failure, KtSet<Tag>>> watchAllTags() {
     // TODO: implement getAllTags
     throw UnimplementedError();
   }
@@ -21,7 +21,7 @@ class ProductionTagRepository implements TagCoreRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtSet<Tag>>> getTagsByCreator(int id) {
+  Stream<Either<Failure, KtSet<Tag>>> watchTagsByCreator(int id) {
     // TODO: implement getTagsByCreator
     throw UnimplementedError();
   }

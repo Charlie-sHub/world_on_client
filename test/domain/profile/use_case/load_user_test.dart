@@ -27,7 +27,7 @@ void main() {
     "Should return a User if everything goes well",
     () async {
       // Arrange
-      when(mockProfileRepository.loadUser(any)).thenAnswer((_) async => right(user));
+      when(mockProfileRepository.getUser(any)).thenAnswer((_) async => right(user));
       // Act
       final result = await useCase(Params(id: id));
       // Assert
@@ -43,7 +43,7 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
-          when(mockProfileRepository.loadUser(any)).thenAnswer((_) async => left(failure));
+          when(mockProfileRepository.getUser(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(Params(id: id));
           // Assert
@@ -56,7 +56,7 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: TestDescription.errorString));
-          when(mockProfileRepository.loadUser(any)).thenAnswer((_) async => left(failure));
+          when(mockProfileRepository.getUser(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(Params(id: id));
           // Assert
@@ -69,7 +69,7 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());
-          when(mockProfileRepository.loadUser(any)).thenAnswer((_) async => left(failure));
+          when(mockProfileRepository.getUser(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(Params(id: id));
           // Assert
@@ -82,6 +82,6 @@ void main() {
 }
 
 void _verifyInteractions(ProfileRepositoryInterface mockProfileRepository) {
-  verify(mockProfileRepository.loadUser(any));
+  verify(mockProfileRepository.getUser(any));
   verifyNoMoreInteractions(mockProfileRepository);
 }

@@ -2,13 +2,12 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
+import 'package:worldon/views/experience_navigation/widget/experience_finish/experience_gained_text.dart';
+import 'package:worldon/views/experience_navigation/widget/experience_finish/finish_button.dart';
+import 'package:worldon/views/experience_navigation/widget/experience_finish/like_dislike_button_builder.dart';
 import 'package:worldon/views/experience_navigation/widget/experience_finish/rate_difficulty_widget.dart';
 import 'package:worldon/views/experience_navigation/widget/experience_finish/world_on_star.dart';
-
-import '../rewards_list_view.dart';
-import 'experience_gained_text.dart';
-import 'finish_button.dart';
-import 'like_dislike_button_builder.dart';
+import 'package:worldon/views/experience_navigation/widget/rewards_list_view.dart';
 
 class FinishSuccessView extends StatelessWidget {
   final Experience experience;

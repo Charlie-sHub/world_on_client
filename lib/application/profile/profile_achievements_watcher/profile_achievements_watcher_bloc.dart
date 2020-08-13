@@ -8,7 +8,7 @@ import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
-import 'package:worldon/domain/profile/use_case/load_user_achievements.dart';
+import 'package:worldon/domain/profile/use_case/watch_user_achievements.dart';
 
 import '../../../injection.dart';
 
@@ -29,7 +29,7 @@ class ProfileAchievementsWatcherBloc extends Bloc<ProfileAchievementsWatcherEven
 
   Stream<ProfileAchievementsWatcherState> onWatchAchievementsStarted(_WatchAchievementsStarted event) async* {
     yield const ProfileAchievementsWatcherState.loadInProgress();
-    final _loadAchievements = getIt<LoadUserAchievements>();
+    final _loadAchievements = getIt<WatchUserAchievements>();
     yield* _loadAchievements(
       Params(userId: event.user.id),
     ).map(

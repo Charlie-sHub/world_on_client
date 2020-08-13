@@ -5,11 +5,11 @@ import 'package:worldon/application/navigation/navigation_actor/navigation_actor
 import 'package:worldon/application/profile/profile_watcher/profile_watcher_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
+import 'package:worldon/views/profile/widget/foreign_profile/foreign_profile.dart';
+import 'package:worldon/views/profile/widget/own_profile/own_profile.dart';
 import 'package:worldon/views/profile/widget/profile_critical_failure.dart';
 
 import '../../../injection.dart';
-import 'foreign_profile/foreign_profile.dart';
-import 'own_profile/own_profile.dart';
 
 // TODO: Implement some way to always go to the own profile
 // Like a button in te appbar that will always take the user to its own profile

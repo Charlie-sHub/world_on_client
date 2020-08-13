@@ -5,8 +5,7 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/widget/critical_error_display.dart';
 import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
-
-import 'finish_success_view.dart';
+import 'package:worldon/views/experience_navigation/widget/experience_finish/finish_success_view.dart';
 
 class ExperienceFinish extends StatelessWidget {
   final Experience experience;

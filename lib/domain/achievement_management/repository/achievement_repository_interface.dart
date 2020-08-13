@@ -27,8 +27,8 @@ abstract class AchievementRepositoryInterface {
   });
 
   /// Gets all the [Achievement]s of the logged in [User]
-  Stream<Either<Failure, KtSet<Achievement>>> getUserAchievements();
+  Stream<Either<Failure, KtSet<Achievement>>> watchUserAchievements();
 
   /// Gets all the [Achievement]s in the database.
-  Stream<Either<Failure, KtSet<Achievement>>> getAllAchievement();
+  Stream<Either<Failure, KtSet<Achievement>>> watchAllAchievements();
 }

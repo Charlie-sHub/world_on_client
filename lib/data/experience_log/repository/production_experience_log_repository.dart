@@ -20,7 +20,7 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
   }
 
   @override
-  Stream<Either<Failure, KtSet<Experience>>> loadUserLog() {
+  Stream<Either<Failure, KtSet<Experience>>> watchUserLog() {
     // TODO: implement loadUserLog
     throw UnimplementedError();
   }

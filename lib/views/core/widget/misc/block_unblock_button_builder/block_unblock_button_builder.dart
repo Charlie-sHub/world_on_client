@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/profile/block_actor/block_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/views/core/widget/misc/block_unblock_button_builder/block_button.dart';
 import 'package:worldon/views/core/widget/misc/block_unblock_button_builder/unblock_button.dart';
 
 import '../../../../../injection.dart';
-import 'block_button.dart';
 
 class BlockUnblockButtonBuilder extends StatelessWidget {
   const BlockUnblockButtonBuilder({
@@ -26,46 +26,40 @@ class BlockUnblockButtonBuilder extends StatelessWidget {
       child: BlocListener<BlockActorBloc, BlockActorState>(
         listener: _userBlockListener,
         child: BlocBuilder<BlockActorBloc, BlockActorState>(
-          builder: (context, state) =>
-            AnimatedSwitcher(
-              duration: const Duration(milliseconds: 250),
-              transitionBuilder: (child, animation) =>
-                FadeTransition(
-                  opacity: animation,
-                  child: child,
-                ),
-              child: state.map(
-                initial: (_) => Container(),
-                actionInProgress: (_) => const CircularProgressIndicator(),
+          builder: (context, state) => AnimatedSwitcher(
+            duration: const Duration(milliseconds: 250),
+            transitionBuilder: (child, animation) => FadeTransition(
+              opacity: animation,
+              child: child,
+            ),
+            child: state.map(
+              initial: (_) => Container(),
+              actionInProgress: (_) => const CircularProgressIndicator(),
               blocks: (_) => UnBlockButton(user: user),
               blocksNot: (_) => BlockButton(user: user),
               blockSuccess: (_) => UnBlockButton(user: user),
-                blockFailure: (_) => BlockButton(user: user),
-                unBlockSuccess: (_) => BlockButton(user: user),
-                unBlockFailure: (_) => UnBlockButton(user: user),
-              ),
+              blockFailure: (_) => BlockButton(user: user),
+              unBlockSuccess: (_) => BlockButton(user: user),
+              unBlockFailure: (_) => UnBlockButton(user: user),
             ),
+          ),
         ),
       ),
     );
   }
-  
-  void _userBlockListener(BuildContext context, BlockActorState state) =>
-    state.maybeMap(
-      blockFailure: (state) =>
-        FlushbarHelper.createError(
+
+  void _userBlockListener(BuildContext context, BlockActorState state) => state.maybeMap(
+        blockFailure: (state) => FlushbarHelper.createError(
           duration: const Duration(seconds: 2),
           message: state.failure.maybeMap(
-            coreData: (failure) =>
-              failure.coreDataFailure.maybeMap(
-                serverError: (failure) => failure.errorString,
-                orElse: () => "Unknown Error",
-              ),
-            profileDomain: (failure) =>
-              failure.profileDomainFailure.maybeMap(
-                blockItself: (_) => "You can't block yourself",
-                orElse: () => "Unknown Error",
-              ),
+            coreData: (failure) => failure.coreDataFailure.maybeMap(
+              serverError: (failure) => failure.errorString,
+              orElse: () => "Unknown Error",
+            ),
+            profileDomain: (failure) => failure.profileDomainFailure.maybeMap(
+              blockItself: (_) => "You can't block yourself",
+              orElse: () => "Unknown Error",
+            ),
             orElse: () => "Unknown Error",
           ),
         ).show(context),

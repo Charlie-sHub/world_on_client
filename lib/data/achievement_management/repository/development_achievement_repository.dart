@@ -58,7 +58,7 @@ class DevelopmentAchievementRepository implements AchievementRepositoryInterface
   }
 
   @override
-  Stream<Either<Failure, KtSet<Achievement>>> getAllAchievement() {
+  Stream<Either<Failure, KtSet<Achievement>>> watchAllAchievements() {
     Either<Failure, KtSet<Achievement>> _either;
     if (_random.nextBool()) {
       _either = right(KtSet.of(
@@ -79,7 +79,7 @@ class DevelopmentAchievementRepository implements AchievementRepositoryInterface
   }
 
   @override
-  Stream<Either<Failure, KtSet<Achievement>>> getUserAchievements() {
+  Stream<Either<Failure, KtSet<Achievement>>> watchUserAchievements() {
     Either<Failure, KtSet<Achievement>> _either;
     if (_random.nextBool()) {
       _either = right(KtSet.of(

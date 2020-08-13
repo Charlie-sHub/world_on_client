@@ -81,8 +81,9 @@ dependencies:
   image_picker: ^0.6.7+4
   # For getting multiple images from the device
   multi_image_picker: ^4.7.10
+  # Local database, mostly for back-end simulation
+  moor_flutter: ^3.1.0
   cached_network_image: ^2.2.0+1
-  uuid: ^2.2.0
 
 dev_dependencies:
   flutter_test:
@@ -103,6 +104,8 @@ dev_dependencies:
   flutter_launcher_icons: ^0.7.5
   # For extra icons
   font_awesome_flutter: ^8.8.1
+  # Generator for moor
+  moor_generator: ^3.3.1
   build_runner:
 
 flutter_icons:

@@ -100,7 +100,6 @@ abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
 
   @override
   $UserCopyWith<$Res> get sender;
-
   @override
   $UserCopyWith<$Res> get receiver;
 }

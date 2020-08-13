@@ -8,18 +8,18 @@ import 'package:worldon/application/experience_log/experience_log_watcher/experi
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
-import 'package:worldon/domain/experience_log/use_case/load_user_log.dart';
+import 'package:worldon/domain/experience_log/use_case/watch_user_log.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../domain/core/methods/create_stream.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  LoadUserLog loadUserLog;
+  WatchUserLog loadUserLog;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
-      loadUserLog = getIt<LoadUserLog>();
+      loadUserLog = getIt<WatchUserLog>();
     },
   );
   final experienceSet = KtSet.of(Experience.empty());

@@ -8,7 +8,7 @@ import 'package:worldon/application/profile/profile_achievements_watcher/profile
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
-import 'package:worldon/domain/profile/use_case/load_user_achievements.dart';
+import 'package:worldon/domain/profile/use_case/watch_user_achievements.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../domain/core/methods/create_stream.dart';
@@ -16,11 +16,11 @@ import '../../../domain/core/methods/get_valid_user.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  LoadUserAchievements loadUserAchievements;
+  WatchUserAchievements loadUserAchievements;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
-      loadUserAchievements = getIt<LoadUserAchievements>();
+      loadUserAchievements = getIt<WatchUserAchievements>();
     },
   );
   final achievements = KtList.of(Achievement.empty());

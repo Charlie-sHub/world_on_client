@@ -289,7 +289,6 @@ class _$_Achievement extends _Achievement {
 
 abstract class _Achievement extends Achievement {
   const _Achievement._() : super._();
-
   const factory _Achievement(
       {int id,
       @required Name name,
@@ -306,16 +305,12 @@ abstract class _Achievement extends Achievement {
 
   @override
   int get id;
-
   @override
   Name get name;
-
   @override
   EntityDescription get description;
-
   @override
   String get imageURL;
-
   @override
   Option<File> get imageFile;
   @override

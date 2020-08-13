@@ -7,7 +7,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/application/comments/comment_watcher/comment_watcher_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/comments/use_case/get_experience_comments.dart';
+import 'package:worldon/domain/comments/use_case/watch_experience_comments.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/injection.dart';
 
@@ -15,11 +15,11 @@ import '../../../domain/core/methods/create_stream.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  GetExperienceComments getExperienceComments;
+  WatchExperienceComments getExperienceComments;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
-      getExperienceComments = getIt<GetExperienceComments>();
+      getExperienceComments = getIt<WatchExperienceComments>();
     },
   );
   final commentSet = KtSet.of(Comment.empty());

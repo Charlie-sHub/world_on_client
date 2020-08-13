@@ -14,13 +14,13 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtSet<Comment>>> getExperienceComments(int experienceId) {
+  Stream<Either<Failure, KtSet<Comment>>> watchExperienceComments(int experienceId) {
     // TODO: implement getExperienceComments
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtSet<Comment>>> getUserComments(int userId) {
+  Stream<Either<Failure, KtSet<Comment>>> watchUserComments(int userId) {
     // TODO: implement getUserComments
     throw UnimplementedError();
   }

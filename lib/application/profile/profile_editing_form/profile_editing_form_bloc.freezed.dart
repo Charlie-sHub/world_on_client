@@ -13,8 +13,10 @@ class _$ProfileEditingFormEventTearOff {
   const _$ProfileEditingFormEventTearOff();
 
 // ignore: unused_element
-  _Initialized initialized() {
-    return const _Initialized();
+  _Initialized initialized(User userToEdit) {
+    return _Initialized(
+      userToEdit,
+    );
   }
 
 // ignore: unused_element
@@ -92,7 +94,7 @@ const $ProfileEditingFormEvent = _$ProfileEditingFormEventTearOff();
 mixin _$ProfileEditingFormEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(),
+    @required Result initialized(User userToEdit),
     @required Result nameChanged(String name),
     @required Result imageChanged(File imageFile),
     @required Result usernameChanged(String username),
@@ -106,7 +108,7 @@ mixin _$ProfileEditingFormEvent {
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(),
+    Result initialized(User userToEdit),
     Result nameChanged(String name),
     Result imageChanged(File imageFile),
     Result usernameChanged(String username),
@@ -165,6 +167,10 @@ class _$ProfileEditingFormEventCopyWithImpl<$Res> implements $ProfileEditingForm
 
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+
+  $Res call({User userToEdit});
+
+  $UserCopyWith<$Res> get userToEdit;
 }
 
 class __$InitializedCopyWithImpl<$Res> extends _$ProfileEditingFormEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
@@ -172,28 +178,53 @@ class __$InitializedCopyWithImpl<$Res> extends _$ProfileEditingFormEventCopyWith
 
   @override
   _Initialized get _value => super._value as _Initialized;
+
+  @override
+  $Res call({
+    Object userToEdit = freezed,
+  }) {
+    return _then(_Initialized(
+      userToEdit == freezed ? _value.userToEdit : userToEdit as User,
+    ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get userToEdit {
+    if (_value.userToEdit == null) {
+      return null;
+    }
+    return $UserCopyWith<$Res>(_value.userToEdit, (value) {
+      return _then(_value.copyWith(userToEdit: value));
+    });
+  }
 }
 
 class _$_Initialized implements _Initialized {
-  const _$_Initialized();
+  const _$_Initialized(this.userToEdit) : assert(userToEdit != null);
+
+  @override
+  final User userToEdit;
 
   @override
   String toString() {
-    return 'ProfileEditingFormEvent.initialized()';
+    return 'ProfileEditingFormEvent.initialized(userToEdit: $userToEdit)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initialized);
+    return identical(this, other) || (other is _Initialized && (identical(other.userToEdit, userToEdit) || const DeepCollectionEquality().equals(other.userToEdit, userToEdit)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(userToEdit);
+
+  @override
+  _$InitializedCopyWith<_Initialized> get copyWith => __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(),
+    @required Result initialized(User userToEdit),
     @required Result nameChanged(String name),
     @required Result imageChanged(File imageFile),
     @required Result usernameChanged(String username),
@@ -216,13 +247,13 @@ class _$_Initialized implements _Initialized {
     assert(descriptionChanged != null);
     assert(interestsChanged != null);
     assert(submitted != null);
-    return initialized();
+    return initialized(userToEdit);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(),
+    Result initialized(User userToEdit),
     Result nameChanged(String name),
     Result imageChanged(File imageFile),
     Result usernameChanged(String username),
@@ -237,7 +268,7 @@ class _$_Initialized implements _Initialized {
   }) {
     assert(orElse != null);
     if (initialized != null) {
-      return initialized();
+      return initialized(userToEdit);
     }
     return orElse();
   }
@@ -296,7 +327,11 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements ProfileEditingFormEvent {
-  const factory _Initialized() = _$_Initialized;
+  const factory _Initialized(User userToEdit) = _$_Initialized;
+
+  User get userToEdit;
+
+  _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
 abstract class _$NameChangedCopyWith<$Res> {
@@ -346,7 +381,7 @@ class _$_NameChanged implements _NameChanged {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(),
+    @required Result initialized(User userToEdit),
     @required Result nameChanged(String name),
     @required Result imageChanged(File imageFile),
     @required Result usernameChanged(String username),
@@ -375,7 +410,7 @@ class _$_NameChanged implements _NameChanged {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(),
+    Result initialized(User userToEdit),
     Result nameChanged(String name),
     Result imageChanged(File imageFile),
     Result usernameChanged(String username),
@@ -502,7 +537,7 @@ class _$_ImageChanged implements _ImageChanged {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(),
+    @required Result initialized(User userToEdit),
     @required Result nameChanged(String name),
     @required Result imageChanged(File imageFile),
     @required Result usernameChanged(String username),
@@ -531,7 +566,7 @@ class _$_ImageChanged implements _ImageChanged {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(),
+    Result initialized(User userToEdit),
     Result nameChanged(String name),
     Result imageChanged(File imageFile),
     Result usernameChanged(String username),
@@ -658,7 +693,7 @@ class _$_UsernameChanged implements _UsernameChanged {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(),
+    @required Result initialized(User userToEdit),
     @required Result nameChanged(String name),
     @required Result imageChanged(File imageFile),
     @required Result usernameChanged(String username),
@@ -687,7 +722,7 @@ class _$_UsernameChanged implements _UsernameChanged {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(),
+    Result initialized(User userToEdit),
     Result nameChanged(String name),
     Result imageChanged(File imageFile),
     Result usernameChanged(String username),
@@ -814,7 +849,7 @@ class _$_PasswordChanged implements _PasswordChanged {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(),
+    @required Result initialized(User userToEdit),
     @required Result nameChanged(String name),
     @required Result imageChanged(File imageFile),
     @required Result usernameChanged(String username),
@@ -843,7 +878,7 @@ class _$_PasswordChanged implements _PasswordChanged {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(),
+    Result initialized(User userToEdit),
     Result nameChanged(String name),
     Result imageChanged(File imageFile),
     Result usernameChanged(String username),
@@ -972,7 +1007,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(),
+    @required Result initialized(User userToEdit),
     @required Result nameChanged(String name),
     @required Result imageChanged(File imageFile),
     @required Result usernameChanged(String username),
@@ -1001,7 +1036,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(),
+    Result initialized(User userToEdit),
     Result nameChanged(String name),
     Result imageChanged(File imageFile),
     Result usernameChanged(String username),
@@ -1084,6 +1119,7 @@ abstract class _PasswordConfirmationChanged implements ProfileEditingFormEvent {
 
 abstract class _$EmailAddressChangedCopyWith<$Res> {
   factory _$EmailAddressChangedCopyWith(_EmailAddressChanged value, $Res Function(_EmailAddressChanged) then) = __$EmailAddressChangedCopyWithImpl<$Res>;
+
   $Res call({String emailAddress});
 }
 
@@ -1128,7 +1164,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(),
+    @required Result initialized(User userToEdit),
     @required Result nameChanged(String name),
     @required Result imageChanged(File imageFile),
     @required Result usernameChanged(String username),
@@ -1157,7 +1193,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(),
+    Result initialized(User userToEdit),
     Result nameChanged(String name),
     Result imageChanged(File imageFile),
     Result usernameChanged(String username),
@@ -1285,7 +1321,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(),
+    @required Result initialized(User userToEdit),
     @required Result nameChanged(String name),
     @required Result imageChanged(File imageFile),
     @required Result usernameChanged(String username),
@@ -1314,7 +1350,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(),
+    Result initialized(User userToEdit),
     Result nameChanged(String name),
     Result imageChanged(File imageFile),
     Result usernameChanged(String username),
@@ -1441,7 +1477,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(),
+    @required Result initialized(User userToEdit),
     @required Result nameChanged(String name),
     @required Result imageChanged(File imageFile),
     @required Result usernameChanged(String username),
@@ -1470,7 +1506,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(),
+    Result initialized(User userToEdit),
     Result nameChanged(String name),
     Result imageChanged(File imageFile),
     Result usernameChanged(String username),
@@ -1597,7 +1633,7 @@ class _$_InterestsChanged implements _InterestsChanged {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(),
+    @required Result initialized(User userToEdit),
     @required Result nameChanged(String name),
     @required Result imageChanged(File imageFile),
     @required Result usernameChanged(String username),
@@ -1626,7 +1662,7 @@ class _$_InterestsChanged implements _InterestsChanged {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(),
+    Result initialized(User userToEdit),
     Result nameChanged(String name),
     Result imageChanged(File imageFile),
     Result usernameChanged(String username),
@@ -1736,7 +1772,7 @@ class _$_Submitted implements _Submitted {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result initialized(),
+    @required Result initialized(User userToEdit),
     @required Result nameChanged(String name),
     @required Result imageChanged(File imageFile),
     @required Result usernameChanged(String username),
@@ -1765,7 +1801,7 @@ class _$_Submitted implements _Submitted {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result initialized(),
+    Result initialized(User userToEdit),
     Result nameChanged(String name),
     Result imageChanged(File imageFile),
     Result usernameChanged(String username),
@@ -1846,12 +1882,13 @@ class _$ProfileEditingFormStateTearOff {
   const _$ProfileEditingFormStateTearOff();
 
 // ignore: unused_element
-  _ProfileEditingFormState call({@required User user,
-    @required PasswordConfirmator passwordConfirmator,
-    @required String passwordToCompare,
-    @required bool showErrorMessages,
-    @required bool isSubmitting,
-    @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
+  _ProfileEditingFormState call(
+      {@required User user,
+      @required PasswordConfirmator passwordConfirmator,
+      @required String passwordToCompare,
+      @required bool showErrorMessages,
+      @required bool isSubmitting,
+      @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _ProfileEditingFormState(
       user: user,
       passwordConfirmator: passwordConfirmator,
@@ -1961,14 +1998,14 @@ class __$ProfileEditingFormStateCopyWithImpl<$Res> extends _$ProfileEditingFormS
 
 class _$_ProfileEditingFormState implements _ProfileEditingFormState {
   const _$_ProfileEditingFormState(
-    {@required this.user, @required this.passwordConfirmator, @required this.passwordToCompare, @required this.showErrorMessages, @required this.isSubmitting, @required this.failureOrSuccessOption})
-    : assert(user != null),
-      assert(passwordConfirmator != null),
-      assert(passwordToCompare != null),
-      assert(showErrorMessages != null),
-      assert(isSubmitting != null),
-      assert(failureOrSuccessOption != null);
-  
+      {@required this.user, @required this.passwordConfirmator, @required this.passwordToCompare, @required this.showErrorMessages, @required this.isSubmitting, @required this.failureOrSuccessOption})
+      : assert(user != null),
+        assert(passwordConfirmator != null),
+        assert(passwordToCompare != null),
+        assert(showErrorMessages != null),
+        assert(isSubmitting != null),
+        assert(failureOrSuccessOption != null);
+
   @override
   final User user;
   @override
@@ -1990,49 +2027,50 @@ class _$_ProfileEditingFormState implements _ProfileEditingFormState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _ProfileEditingFormState &&
-        (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)) &&
-        (identical(other.passwordConfirmator, passwordConfirmator) || const DeepCollectionEquality().equals(other.passwordConfirmator, passwordConfirmator)) &&
-        (identical(other.passwordToCompare, passwordToCompare) || const DeepCollectionEquality().equals(other.passwordToCompare, passwordToCompare)) &&
-        (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
-        (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
-        (identical(other.failureOrSuccessOption, failureOrSuccessOption) || const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+        (other is _ProfileEditingFormState &&
+            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)) &&
+            (identical(other.passwordConfirmator, passwordConfirmator) || const DeepCollectionEquality().equals(other.passwordConfirmator, passwordConfirmator)) &&
+            (identical(other.passwordToCompare, passwordToCompare) || const DeepCollectionEquality().equals(other.passwordToCompare, passwordToCompare)) &&
+            (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
+            (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
+            (identical(other.failureOrSuccessOption, failureOrSuccessOption) || const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(user) ^
-    const DeepCollectionEquality().hash(passwordConfirmator) ^
-    const DeepCollectionEquality().hash(passwordToCompare) ^
-    const DeepCollectionEquality().hash(showErrorMessages) ^
-    const DeepCollectionEquality().hash(isSubmitting) ^
-    const DeepCollectionEquality().hash(failureOrSuccessOption);
-  
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(user) ^
+      const DeepCollectionEquality().hash(passwordConfirmator) ^
+      const DeepCollectionEquality().hash(passwordToCompare) ^
+      const DeepCollectionEquality().hash(showErrorMessages) ^
+      const DeepCollectionEquality().hash(isSubmitting) ^
+      const DeepCollectionEquality().hash(failureOrSuccessOption);
+
   @override
   _$ProfileEditingFormStateCopyWith<_ProfileEditingFormState> get copyWith => __$ProfileEditingFormStateCopyWithImpl<_ProfileEditingFormState>(this, _$identity);
 }
 
 abstract class _ProfileEditingFormState implements ProfileEditingFormState {
-  const factory _ProfileEditingFormState({@required User user,
-    @required PasswordConfirmator passwordConfirmator,
-    @required String passwordToCompare,
-    @required bool showErrorMessages,
-    @required bool isSubmitting,
-    @required Option<Either<Failure, Unit>> failureOrSuccessOption}) = _$_ProfileEditingFormState;
-  
+  const factory _ProfileEditingFormState(
+      {@required User user,
+      @required PasswordConfirmator passwordConfirmator,
+      @required String passwordToCompare,
+      @required bool showErrorMessages,
+      @required bool isSubmitting,
+      @required Option<Either<Failure, Unit>> failureOrSuccessOption}) = _$_ProfileEditingFormState;
+
   @override
   User get user;
-  
+
   @override
   PasswordConfirmator get passwordConfirmator;
-  
+
   @override
   String get passwordToCompare;
 
   @override
   bool get showErrorMessages;
-  
+
   @override
   bool get isSubmitting;
   @override

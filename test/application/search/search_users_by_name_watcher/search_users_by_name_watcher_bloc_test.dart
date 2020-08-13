@@ -9,21 +9,21 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/search_term.dart';
-import 'package:worldon/domain/search/use_case/search_users_by_name.dart';
-import 'package:worldon/domain/search/use_case/search_users_by_username.dart';
+import 'package:worldon/domain/search/use_case/watch_search_users_by_name.dart';
+import 'package:worldon/domain/search/use_case/watch_search_users_by_username.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../domain/core/methods/create_stream.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  SearchUsersByUsername searchUsersByUsername;
-  SearchUsersByName searchUsersByName;
+  WatchSearchUsersByUsername searchUsersByUsername;
+  WatchSearchUsersByName searchUsersByName;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
-      searchUsersByUsername = getIt<SearchUsersByUsername>();
-      searchUsersByName = getIt<SearchUsersByName>();
+      searchUsersByUsername = getIt<WatchSearchUsersByUsername>();
+      searchUsersByName = getIt<WatchSearchUsersByName>();
     },
   );
   final searchTerm = SearchTerm("Test");

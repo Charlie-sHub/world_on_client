@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
-
-import 'messages_widget.dart';
-import 'notifications_widget.dart';
+import 'package:worldon/views/core/widget/main_page/messages_widget.dart';
+import 'package:worldon/views/core/widget/main_page/notifications_widget.dart';
 
 class WorldOnAppBar extends StatelessWidget implements PreferredSizeWidget {
   const WorldOnAppBar({

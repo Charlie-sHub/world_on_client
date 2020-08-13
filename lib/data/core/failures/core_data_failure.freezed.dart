@@ -632,6 +632,7 @@ abstract class GeoLocationError<T> implements CoreDataFailure<T> {
 
 abstract class $UsernameAlreadyInUseCopyWith<T, $Res> {
   factory $UsernameAlreadyInUseCopyWith(UsernameAlreadyInUse<T> value, $Res Function(UsernameAlreadyInUse<T>) then) = _$UsernameAlreadyInUseCopyWithImpl<T, $Res>;
+
   $Res call({Name username});
 }
 
@@ -764,6 +765,7 @@ abstract class UsernameAlreadyInUse<T> implements CoreDataFailure<T> {
 
 abstract class $EmailAlreadyInUseCopyWith<T, $Res> {
   factory $EmailAlreadyInUseCopyWith(EmailAlreadyInUse<T> value, $Res Function(EmailAlreadyInUse<T>) then) = _$EmailAlreadyInUseCopyWithImpl<T, $Res>;
+
   $Res call({EmailAddress email});
 }
 

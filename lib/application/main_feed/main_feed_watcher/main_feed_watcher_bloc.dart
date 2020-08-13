@@ -8,7 +8,7 @@ import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
-import 'package:worldon/domain/main_feed/use_case/fill_feed.dart';
+import 'package:worldon/domain/main_feed/use_case/watch_feed.dart';
 
 import '../../../injection.dart';
 
@@ -31,7 +31,7 @@ class MainFeedWatcherBloc extends Bloc<MainFeedWatcherEvent, MainFeedWatcherStat
 
   Stream<MainFeedWatcherState> onWatchMainFeedStarted(_WatchMainFeedStarted event) async* {
     yield const MainFeedWatcherState.loadInProgress();
-    final _fillFeed = getIt<FillFeed>();
+    final _fillFeed = getIt<WatchFeed>();
     yield* _fillFeed(getIt<NoParams>()).map(
       (failureOrExperiences) => failureOrExperiences.fold(
         (failure) => MainFeedWatcherState.loadFailure(failure),

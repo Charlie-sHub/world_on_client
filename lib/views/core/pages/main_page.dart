@@ -9,12 +9,11 @@ import 'package:worldon/views/core/routes/router.gr.dart';
 import 'package:worldon/views/core/widget/main_page/world_on_app_bar.dart';
 import 'package:worldon/views/core/widget/main_page/world_on_bottom_navigation_bar.dart';
 import 'package:worldon/views/experience_management/widget/experience_management_form.dart';
+import 'package:worldon/views/experience_navigation/widget/experience_navigation_body.dart';
 import 'package:worldon/views/main_feed/widget/main_feed_body.dart';
 import 'package:worldon/views/notifications/widget/notifications_body.dart';
 import 'package:worldon/views/profile/widget/profile_body.dart';
 import 'package:worldon/views/search/widget/search_body.dart';
-
-import '../../experience_navigation/widget/experience_navigation_body.dart';
 
 class MainPage extends StatelessWidget {
   @override

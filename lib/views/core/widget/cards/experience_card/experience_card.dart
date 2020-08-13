@@ -6,15 +6,14 @@ import 'package:worldon/application/core/experience_card_actor/experience_card_a
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
+import 'package:worldon/views/core/widget/cards/experience_card/difficulty_display.dart';
+import 'package:worldon/views/core/widget/cards/experience_card/image_stack.dart';
+import 'package:worldon/views/core/widget/cards/experience_card/log_button.dart';
 import 'package:worldon/views/core/widget/cards/experience_card/participate_button.dart';
 import 'package:worldon/views/core/widget/cards/experience_card/report_button.dart';
 import 'package:worldon/views/core/widget/cards/simple_tag_display.dart';
 import 'package:worldon/views/core/widget/misc/experience_done_counter.dart';
 import 'package:worldon/views/core/widget/misc/experience_likes_counter.dart';
-
-import 'difficulty_display.dart';
-import 'image_stack.dart';
-import 'log_button.dart';
 
 class ExperienceCard extends StatelessWidget {
   final Experience experience;
@@ -114,18 +113,18 @@ class ExperienceCard extends StatelessWidget {
             orElse: () => "Unknown Error",
           ),
         ).show(context),
-      dismissalFailure: (state) =>
-        FlushbarHelper.createError(
-          duration: const Duration(seconds: 2),
-          message: state.failure.maybeMap(
-            coreData: (failure) =>
-              failure.coreDataFailure.maybeMap(
-                serverError: (failure) => failure.errorString,
-                orElse: () => "Unknown Error",
-              ),
-            orElse: () => "Unknown Error",
-          ),
-        ).show(context),
-      orElse: () => null,
-    );
+    dismissalFailure: (state) =>
+      FlushbarHelper.createError(
+        duration: const Duration(seconds: 2),
+        message: state.failure.maybeMap(
+          coreData: (failure) =>
+            failure.coreDataFailure.maybeMap(
+              serverError: (failure) => failure.errorString,
+              orElse: () => "Unknown Error",
+            ),
+          orElse: () => "Unknown Error",
+        ),
+      ).show(context),
+    orElse: () => null,
+  );
 }

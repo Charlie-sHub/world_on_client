@@ -390,7 +390,6 @@ class _$_Experience extends _Experience {
 
 abstract class _Experience extends Experience {
   const _Experience._() : super._();
-
   const factory _Experience(
       {int id,
       @required Name title,
@@ -412,16 +411,12 @@ abstract class _Experience extends Experience {
 
   @override
   int get id;
-
   @override
   Name get title;
-
   @override
   EntityDescription get description;
-
   @override
   Set<String> get imageURLs;
-
   @override
   Option<List<Asset>> get imageAssetsOption;
   @override

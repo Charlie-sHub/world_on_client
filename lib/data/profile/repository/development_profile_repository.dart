@@ -61,7 +61,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtList<User>>> loadBlockedUsers(int id) {
+  Stream<Either<Failure, KtList<User>>> watchBlockedUsers(int id) {
     Either<Failure, KtList<User>> _either;
     if (_random.nextBool()) {
       _either = right(KtList.of(
@@ -85,7 +85,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> loadExperiencesCreated(int id) {
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesCreated(int id) {
     Either<Failure, KtList<Experience>> _either;
     if (_random.nextBool()) {
       _either = right(KtList.of(
@@ -107,7 +107,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> loadExperiencesDone(int id) {
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesDone(int id) {
     Either<Failure, KtList<Experience>> _either;
     if (_random.nextBool()) {
       _either = right(KtList.of(
@@ -131,7 +131,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> loadExperiencesLiked(int id) {
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesLiked(int id) {
     Either<Failure, KtList<Experience>> _either;
     if (_random.nextBool()) {
       _either = right(KtList.of(
@@ -155,7 +155,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtList<User>>> loadFollowedUsers(int id) {
+  Stream<Either<Failure, KtList<User>>> watchFollowedUsers(int id) {
     Either<Failure, KtList<User>> _either;
     if (_random.nextBool()) {
       _either = right(KtList.of(
@@ -181,7 +181,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtList<User>>> loadFollowingUsers(int id) {
+  Stream<Either<Failure, KtList<User>>> watchFollowingUsers(int id) {
     Either<Failure, KtList<User>> _either;
     if (_random.nextBool()) {
       _either = right(KtList.of(
@@ -207,7 +207,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Future<Either<Failure, User>> loadUser(int id) {
+  Future<Either<Failure, User>> getUser(int id) {
     if (_random.nextBool()) {
       return getRightFuture(getValidUser());
     } else {
@@ -216,7 +216,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtList<Achievement>>> loadUserAchievements(int userId) {
+  Stream<Either<Failure, KtList<Achievement>>> watchUserAchievements(int userId) {
     Either<Failure, KtList<Achievement>> _either;
     if (_random.nextBool()) {
       _either = right(KtList.of(
@@ -234,7 +234,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtList<Tag>>> loadUserInterests(int userId) {
+  Stream<Either<Failure, KtList<Tag>>> watchUserInterests(int userId) {
     Either<Failure, KtList<Tag>> _either;
     if (_random.nextBool()) {
       _either = right(KtList.of(

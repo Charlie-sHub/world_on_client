@@ -245,17 +245,17 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _CoordinatesChanged &&
-        (identical(other.latitude, latitude) || const DeepCollectionEquality().equals(other.latitude, latitude)) &&
-        (identical(other.longitude, longitude) || const DeepCollectionEquality().equals(other.longitude, longitude)));
+        (other is _CoordinatesChanged &&
+            (identical(other.latitude, latitude) || const DeepCollectionEquality().equals(other.latitude, latitude)) &&
+            (identical(other.longitude, longitude) || const DeepCollectionEquality().equals(other.longitude, longitude)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(latitude) ^ const DeepCollectionEquality().hash(longitude);
-  
+
   @override
   _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith => __$CoordinatesChangedCopyWithImpl<_CoordinatesChanged>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -633,17 +633,17 @@ class __$ObjectiveFormStateCopyWithImpl<$Res> extends _$ObjectiveFormStateCopyWi
 
 class _$_ObjectiveFormState implements _ObjectiveFormState {
   const _$_ObjectiveFormState({@required this.objective, @required this.showErrorMessages, @required this.isSubmitting})
-    : assert(objective != null),
-      assert(showErrorMessages != null),
-      assert(isSubmitting != null);
-  
+      : assert(objective != null),
+        assert(showErrorMessages != null),
+        assert(isSubmitting != null);
+
   @override
   final Objective objective;
   @override
   final bool showErrorMessages;
   @override
   final bool isSubmitting;
-  
+
   @override
   String toString() {
     return 'ObjectiveFormState(objective: $objective, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting)';
@@ -652,16 +652,16 @@ class _$_ObjectiveFormState implements _ObjectiveFormState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _ObjectiveFormState &&
-        (identical(other.objective, objective) || const DeepCollectionEquality().equals(other.objective, objective)) &&
-        (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
-        (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)));
+        (other is _ObjectiveFormState &&
+            (identical(other.objective, objective) || const DeepCollectionEquality().equals(other.objective, objective)) &&
+            (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
+            (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective) ^ const DeepCollectionEquality().hash(showErrorMessages) ^ const DeepCollectionEquality().hash(isSubmitting);
-  
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective) ^ const DeepCollectionEquality().hash(showErrorMessages) ^ const DeepCollectionEquality().hash(isSubmitting);
+
   @override
   _$ObjectiveFormStateCopyWith<_ObjectiveFormState> get copyWith => __$ObjectiveFormStateCopyWithImpl<_ObjectiveFormState>(this, _$identity);
 }

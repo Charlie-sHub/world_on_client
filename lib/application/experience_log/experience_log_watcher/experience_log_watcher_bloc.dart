@@ -7,7 +7,7 @@ import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
-import 'package:worldon/domain/experience_log/use_case/load_user_log.dart';
+import 'package:worldon/domain/experience_log/use_case/watch_user_log.dart';
 import 'package:worldon/injection.dart';
 
 part 'experience_log_watcher_bloc.freezed.dart';
@@ -27,7 +27,7 @@ class ExperienceLogWatcherBloc extends Bloc<ExperienceLogWatcherEvent, Experienc
 
   Stream<ExperienceLogWatcherState> onWatchExperiencesLogStarted(_WatchExperiencesLogStarted event) async* {
     yield const ExperienceLogWatcherState.loadInProgress();
-    final _loadUserLog = getIt<LoadUserLog>();
+    final _loadUserLog = getIt<WatchUserLog>();
     yield* _loadUserLog(getIt<NoParams>()).map(
       (failureOrExperiences) => failureOrExperiences.fold(
         (failure) => ExperienceLogWatcherState.loadFailure(failure),

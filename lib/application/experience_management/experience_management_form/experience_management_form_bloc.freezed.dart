@@ -157,6 +157,7 @@ class _$ExperienceManagementFormEventCopyWithImpl<$Res> implements $ExperienceMa
 
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+
   $Res call({Option<Experience> experienceOption});
 }
 
@@ -302,11 +303,13 @@ abstract class _Initialized implements ExperienceManagementFormEvent {
   const factory _Initialized(Option<Experience> experienceOption) = _$_Initialized;
 
   Option<Experience> get experienceOption;
+
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
 abstract class _$TitleChangedCopyWith<$Res> {
   factory _$TitleChangedCopyWith(_TitleChanged value, $Res Function(_TitleChanged) then) = __$TitleChangedCopyWithImpl<$Res>;
+
   $Res call({String title});
 }
 
@@ -456,6 +459,7 @@ abstract class _TitleChanged implements ExperienceManagementFormEvent {
 
 abstract class _$DescriptionChangedCopyWith<$Res> {
   factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) = __$DescriptionChangedCopyWithImpl<$Res>;
+
   $Res call({String description});
 }
 
@@ -605,6 +609,7 @@ abstract class _DescriptionChanged implements ExperienceManagementFormEvent {
 
 abstract class _$ImagesChangedCopyWith<$Res> {
   factory _$ImagesChangedCopyWith(_ImagesChanged value, $Res Function(_ImagesChanged) then) = __$ImagesChangedCopyWithImpl<$Res>;
+
   $Res call({List<Asset> imageAssets});
 }
 
@@ -754,6 +759,7 @@ abstract class _ImagesChanged implements ExperienceManagementFormEvent {
 
 abstract class _$CoordinatesChangedCopyWith<$Res> {
   factory _$CoordinatesChangedCopyWith(_CoordinatesChanged value, $Res Function(_CoordinatesChanged) then) = __$CoordinatesChangedCopyWithImpl<$Res>;
+
   $Res call({double latitude, double longitude});
 }
 
@@ -777,8 +783,8 @@ class __$CoordinatesChangedCopyWithImpl<$Res> extends _$ExperienceManagementForm
 
 class _$_CoordinatesChanged implements _CoordinatesChanged {
   const _$_CoordinatesChanged({@required this.latitude, @required this.longitude})
-    : assert(latitude != null),
-      assert(longitude != null);
+      : assert(latitude != null),
+        assert(longitude != null);
 
   @override
   final double latitude;
@@ -793,14 +799,14 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _CoordinatesChanged &&
-        (identical(other.latitude, latitude) || const DeepCollectionEquality().equals(other.latitude, latitude)) &&
-        (identical(other.longitude, longitude) || const DeepCollectionEquality().equals(other.longitude, longitude)));
+        (other is _CoordinatesChanged &&
+            (identical(other.latitude, latitude) || const DeepCollectionEquality().equals(other.latitude, latitude)) &&
+            (identical(other.longitude, longitude) || const DeepCollectionEquality().equals(other.longitude, longitude)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(latitude) ^ const DeepCollectionEquality().hash(longitude);
-  
+
   @override
   _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith => __$CoordinatesChangedCopyWithImpl<_CoordinatesChanged>(this, _$identity);
 
@@ -907,12 +913,15 @@ abstract class _CoordinatesChanged implements ExperienceManagementFormEvent {
   const factory _CoordinatesChanged({@required double latitude, @required double longitude}) = _$_CoordinatesChanged;
 
   double get latitude;
+
   double get longitude;
+
   _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith;
 }
 
 abstract class _$DifficultyChangedCopyWith<$Res> {
   factory _$DifficultyChangedCopyWith(_DifficultyChanged value, $Res Function(_DifficultyChanged) then) = __$DifficultyChangedCopyWithImpl<$Res>;
+
   $Res call({int difficulty});
 }
 
@@ -1062,6 +1071,7 @@ abstract class _DifficultyChanged implements ExperienceManagementFormEvent {
 
 abstract class _$ObjectivesChangedCopyWith<$Res> {
   factory _$ObjectivesChangedCopyWith(_ObjectivesChanged value, $Res Function(_ObjectivesChanged) then) = __$ObjectivesChangedCopyWithImpl<$Res>;
+
   $Res call({KtSet<Objective> objectives});
 }
 
@@ -1212,6 +1222,7 @@ abstract class _ObjectivesChanged implements ExperienceManagementFormEvent {
 
 abstract class _$RewardsChangedCopyWith<$Res> {
   factory _$RewardsChangedCopyWith(_RewardsChanged value, $Res Function(_RewardsChanged) then) = __$RewardsChangedCopyWithImpl<$Res>;
+
   $Res call({KtSet<PrimitiveReward> rewards});
 }
 
@@ -1356,11 +1367,13 @@ abstract class _RewardsChanged implements ExperienceManagementFormEvent {
   const factory _RewardsChanged(KtSet<PrimitiveReward> rewards) = _$_RewardsChanged;
 
   KtSet<PrimitiveReward> get rewards;
+
   _$RewardsChangedCopyWith<_RewardsChanged> get copyWith;
 }
 
 abstract class _$TagsChangedCopyWith<$Res> {
   factory _$TagsChangedCopyWith(_TagsChanged value, $Res Function(_TagsChanged) then) = __$TagsChangedCopyWithImpl<$Res>;
+
   $Res call({KtSet<Tag> tags});
 }
 
@@ -1643,7 +1656,7 @@ class _$ExperienceManagementFormStateTearOff {
 
 // ignore: unused_element
   _ExperienceManagementFormState call(
-    {@required Experience experience, @required bool showErrorMessages, @required bool isEditing, @required bool isSubmitting, @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
+      {@required Experience experience, @required bool showErrorMessages, @required bool isEditing, @required bool isSubmitting, @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _ExperienceManagementFormState(
       experience: experience,
       showErrorMessages: showErrorMessages,
@@ -1659,9 +1672,13 @@ const $ExperienceManagementFormState = _$ExperienceManagementFormStateTearOff();
 
 mixin _$ExperienceManagementFormState {
   Experience get experience;
+
   bool get showErrorMessages;
+
   bool get isEditing;
+
   bool get isSubmitting;
+
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
 
   $ExperienceManagementFormStateCopyWith<ExperienceManagementFormState> get copyWith;
@@ -1723,11 +1740,11 @@ abstract class _$ExperienceManagementFormStateCopyWith<$Res> implements $Experie
 
 class __$ExperienceManagementFormStateCopyWithImpl<$Res> extends _$ExperienceManagementFormStateCopyWithImpl<$Res> implements _$ExperienceManagementFormStateCopyWith<$Res> {
   __$ExperienceManagementFormStateCopyWithImpl(_ExperienceManagementFormState _value, $Res Function(_ExperienceManagementFormState) _then)
-    : super(_value, (v) => _then(v as _ExperienceManagementFormState));
-  
+      : super(_value, (v) => _then(v as _ExperienceManagementFormState));
+
   @override
   _ExperienceManagementFormState get _value => super._value as _ExperienceManagementFormState;
-  
+
   @override
   $Res call({
     Object experience = freezed,
@@ -1748,12 +1765,12 @@ class __$ExperienceManagementFormStateCopyWithImpl<$Res> extends _$ExperienceMan
 
 class _$_ExperienceManagementFormState implements _ExperienceManagementFormState {
   const _$_ExperienceManagementFormState({@required this.experience, @required this.showErrorMessages, @required this.isEditing, @required this.isSubmitting, @required this.failureOrSuccessOption})
-    : assert(experience != null),
-      assert(showErrorMessages != null),
-      assert(isEditing != null),
-      assert(isSubmitting != null),
-      assert(failureOrSuccessOption != null);
-  
+      : assert(experience != null),
+        assert(showErrorMessages != null),
+        assert(isEditing != null),
+        assert(isSubmitting != null),
+        assert(failureOrSuccessOption != null);
+
   @override
   final Experience experience;
   @override
@@ -1773,12 +1790,12 @@ class _$_ExperienceManagementFormState implements _ExperienceManagementFormState
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _ExperienceManagementFormState &&
-        (identical(other.experience, experience) || const DeepCollectionEquality().equals(other.experience, experience)) &&
-        (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
-        (identical(other.isEditing, isEditing) || const DeepCollectionEquality().equals(other.isEditing, isEditing)) &&
-        (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
-        (identical(other.failureOrSuccessOption, failureOrSuccessOption) || const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+        (other is _ExperienceManagementFormState &&
+            (identical(other.experience, experience) || const DeepCollectionEquality().equals(other.experience, experience)) &&
+            (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
+            (identical(other.isEditing, isEditing) || const DeepCollectionEquality().equals(other.isEditing, isEditing)) &&
+            (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
+            (identical(other.failureOrSuccessOption, failureOrSuccessOption) || const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -1789,33 +1806,34 @@ class _$_ExperienceManagementFormState implements _ExperienceManagementFormState
       const DeepCollectionEquality().hash(isEditing) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
-  
+
   @override
   _$ExperienceManagementFormStateCopyWith<_ExperienceManagementFormState> get copyWith => __$ExperienceManagementFormStateCopyWithImpl<_ExperienceManagementFormState>(this, _$identity);
 }
 
 abstract class _ExperienceManagementFormState implements ExperienceManagementFormState {
-  const factory _ExperienceManagementFormState({@required Experience experience,
-    @required bool showErrorMessages,
-    @required bool isEditing,
-    @required bool isSubmitting,
-    @required Option<Either<Failure, Unit>> failureOrSuccessOption}) = _$_ExperienceManagementFormState;
-  
+  const factory _ExperienceManagementFormState(
+      {@required Experience experience,
+      @required bool showErrorMessages,
+      @required bool isEditing,
+      @required bool isSubmitting,
+      @required Option<Either<Failure, Unit>> failureOrSuccessOption}) = _$_ExperienceManagementFormState;
+
   @override
   Experience get experience;
-  
+
   @override
   bool get showErrorMessages;
-  
+
   @override
   bool get isEditing;
-  
+
   @override
   bool get isSubmitting;
-  
+
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
-  
+
   @override
   _$ExperienceManagementFormStateCopyWith<_ExperienceManagementFormState> get copyWith;
 }

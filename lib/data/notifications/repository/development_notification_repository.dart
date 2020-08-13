@@ -38,7 +38,7 @@ class DevelopmentNotificationRepository implements NotificationRepositoryInterfa
   }
 
   @override
-  Stream<Either<Failure, KtList<Notification>>> loadNotifications() {
+  Stream<Either<Failure, KtList<Notification>>> watchNotifications() {
     Either<Failure, KtList<Notification>> _either;
     if (_random.nextBool()) {
       _either = right(KtList.of(

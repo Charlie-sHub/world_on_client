@@ -7,7 +7,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/application/profile/blocked_watcher/blocked_watcher_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/profile/use_case/load_blocked_users.dart';
+import 'package:worldon/domain/profile/use_case/watch_blocked_users.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../domain/core/methods/create_stream.dart';
@@ -15,11 +15,11 @@ import '../../../domain/core/methods/get_valid_user.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  LoadBlockedUsers loadBlockedUsers;
+  WatchBlockedUsers loadBlockedUsers;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
-      loadBlockedUsers = getIt<LoadBlockedUsers>();
+      loadBlockedUsers = getIt<WatchBlockedUsers>();
     },
   );
   final usersBlocked = KtList.of(

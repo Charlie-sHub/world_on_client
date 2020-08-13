@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_navigation/objectives_tracker/objectives_tracker_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/views/experience_navigation/widget/experience_information_tab_view/experience_information_tab_view.dart';
+import 'package:worldon/views/experience_navigation/widget/experience_navigation_tab_bar.dart';
+import 'package:worldon/views/experience_navigation/widget/map_tab_view.dart';
+import 'package:worldon/views/experience_navigation/widget/objectives_tab_view.dart';
 
 import '../../../injection.dart';
-import 'experience_information_tab_view/experience_information_tab_view.dart';
-import 'experience_navigation_tab_bar.dart';
-import 'map_tab_view.dart';
-import 'objectives_tab_view.dart';
 
 class ExperienceNavigation extends StatelessWidget {
   final Experience experience;

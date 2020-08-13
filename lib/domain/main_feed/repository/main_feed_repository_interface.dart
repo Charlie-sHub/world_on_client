@@ -7,5 +7,5 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 /// Repository for the main feed of the application
 abstract class MainFeedRepositoryInterface {
   /// Returns a [KtList] of [Experience]s corresponding to the latest creations of the [User]s the logged in [User] follows
-  Stream<Either<Failure, KtList<Experience>>> fillFeed();
+  Stream<Either<Failure, KtList<Experience>>> watchFeed();
 }

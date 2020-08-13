@@ -8,12 +8,13 @@ import 'package:kt_dart/kt.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
-import 'package:worldon/domain/profile/use_case/load_followed_users.dart' as load_followed_users;
-import 'package:worldon/domain/profile/use_case/load_following_users.dart' as load_following_users;
+import 'package:worldon/domain/profile/use_case/watch_followed_users.dart' as load_followed_users;
+import 'package:worldon/domain/profile/use_case/watch_following_users.dart' as load_following_users;
 import 'package:worldon/injection.dart';
 
 part 'profile_users_watcher_bloc.freezed.dart';
-part 'profile_users_watcher_event.dart';
+part 'profile_users_watcher_event.dart';er_event.dart';
+
 part 'profile_users_watcher_state.dart';
 
 /// Loads the [User]s followed by the given [User]
@@ -35,7 +36,7 @@ class ProfileUsersWatcherBloc extends Bloc<ProfileUsersWatcherEvent, ProfileUser
   Stream<ProfileUsersWatcherState> onWatchFollowingUsersStarted(_WatchFollowingUsersStarted event) async* {
     yield const ProfileUsersWatcherState.loadInProgress();
     await _userStreamSubscription?.cancel();
-    final _loadFollowingUsers = getIt<load_following_users.LoadFollowingUsers>();
+    final _loadFollowingUsers = getIt<load_following_users.WatchFollowingUsers>();
     _userStreamSubscription = _loadFollowingUsers(
       load_following_users.Params(id: event.user.id),
     ).listen(
@@ -46,11 +47,11 @@ class ProfileUsersWatcherBloc extends Bloc<ProfileUsersWatcherEvent, ProfileUser
   Stream<ProfileUsersWatcherState> onWatchFollowedUsersStarted(_WatchFollowedUsersStarted event) async* {
     yield const ProfileUsersWatcherState.loadInProgress();
     await _userStreamSubscription?.cancel();
-    final _loadFollowedUsers = getIt<load_followed_users.LoadFollowedUsers>();
+    final _loadFollowedUsers = getIt<load_followed_users.WatchFollowedUsers>();
     _userStreamSubscription = _loadFollowedUsers(
       load_followed_users.Params(id: event.user.id),
     ).listen(
-      (failureOrUsers) => add(ProfileUsersWatcherEvent.usersReceived(failureOrUsers)),
+        (failureOrUsers) => add(ProfileUsersWatcherEvent.usersReceived(failureOrUsers)),
     );
   }
 

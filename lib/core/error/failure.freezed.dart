@@ -124,6 +124,7 @@ class _$FailureCopyWithImpl<T, $Res> implements $FailureCopyWith<T, $Res> {
 
 abstract class _$AuthenticationDomainCopyWith<T, $Res> {
   factory _$AuthenticationDomainCopyWith(_AuthenticationDomain<T> value, $Res Function(_AuthenticationDomain<T>) then) = __$AuthenticationDomainCopyWithImpl<T, $Res>;
+
   $Res call({AuthenticationDomainFailure<T> authenticationDomainFailure});
 
   $AuthenticationDomainFailureCopyWith<T, $Res> get authenticationDomainFailure;
@@ -270,6 +271,7 @@ abstract class _AuthenticationDomain<T> implements Failure<T> {
 
 abstract class _$AuthenticationDataCopyWith<T, $Res> {
   factory _$AuthenticationDataCopyWith(_AuthenticationData<T> value, $Res Function(_AuthenticationData<T>) then) = __$AuthenticationDataCopyWithImpl<T, $Res>;
+
   $Res call({AuthenticationDataFailure<T> authenticationDataFailure});
 
   $AuthenticationDataFailureCopyWith<T, $Res> get authenticationDataFailure;
@@ -562,6 +564,7 @@ abstract class _CoreDomain<T> implements Failure<T> {
 
 abstract class _$CoreAppllicationCopyWith<T, $Res> {
   factory _$CoreAppllicationCopyWith(_CoreAppllication<T> value, $Res Function(_CoreAppllication<T>) then) = __$CoreAppllicationCopyWithImpl<T, $Res>;
+
   $Res call({CoreApplicationFailure<T> coreApplicationFailure});
 
   $CoreApplicationFailureCopyWith<T, $Res> get coreApplicationFailure;
@@ -607,8 +610,8 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _CoreAppllication<T> &&
-        (identical(other.coreApplicationFailure, coreApplicationFailure) || const DeepCollectionEquality().equals(other.coreApplicationFailure, coreApplicationFailure)));
+        (other is _CoreAppllication<T> &&
+            (identical(other.coreApplicationFailure, coreApplicationFailure) || const DeepCollectionEquality().equals(other.coreApplicationFailure, coreApplicationFailure)));
   }
 
   @override
@@ -852,6 +855,7 @@ abstract class _CoreData<T> implements Failure<T> {
 
 abstract class _$ValueCopyWith<T, $Res> {
   factory _$ValueCopyWith(_Value<T> value, $Res Function(_Value<T>) then) = __$ValueCopyWithImpl<T, $Res>;
+
   $Res call({ValueFailure<T> valueFailure});
 
   $ValueFailureCopyWith<T, $Res> get valueFailure;
@@ -1041,7 +1045,7 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _ProfileDomain<T> && (identical(other.profileDomainFailure, profileDomainFailure) || const DeepCollectionEquality().equals(other.profileDomainFailure, profileDomainFailure)));
+        (other is _ProfileDomain<T> && (identical(other.profileDomainFailure, profileDomainFailure) || const DeepCollectionEquality().equals(other.profileDomainFailure, profileDomainFailure)));
   }
 
   @override

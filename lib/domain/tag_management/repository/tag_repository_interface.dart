@@ -7,10 +7,10 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 /// Abstract class of the [Tag] repository
 abstract class TagCoreRepositoryInterface {
   /// Returns all [Tag]s
-  Stream<Either<Failure, KtSet<Tag>>> getAllTags();
+  Stream<Either<Failure, KtSet<Tag>>> watchAllTags();
 
   /// Gets all the [Tag]s created by a given [User]'s id
-  Stream<Either<Failure, KtSet<Tag>>> getTagsByCreator(int creatorId);
+  Stream<Either<Failure, KtSet<Tag>>> watchTagsByCreator(int creatorId);
 
   /// Gets the [User] that created a given [Tag]
   Future<Either<Failure, User>> getCreator(int id);

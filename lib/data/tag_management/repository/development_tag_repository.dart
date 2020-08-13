@@ -20,7 +20,7 @@ class DevelopmentTagRepository implements TagCoreRepositoryInterface {
   final _random = Random();
 
   @override
-  Stream<Either<Failure, KtSet<Tag>>> getAllTags() {
+  Stream<Either<Failure, KtSet<Tag>>> watchAllTags() {
     Either<Failure, KtSet<Tag>> _either;
     if (_random.nextBool()) {
       _either = right(KtSet.of(
@@ -46,7 +46,7 @@ class DevelopmentTagRepository implements TagCoreRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtSet<Tag>>> getTagsByCreator(int id) {
+  Stream<Either<Failure, KtSet<Tag>>> watchTagsByCreator(int id) {
     Either<Failure, KtSet<Tag>> _either;
     if (_random.nextBool()) {
       _either = right(KtSet.of(

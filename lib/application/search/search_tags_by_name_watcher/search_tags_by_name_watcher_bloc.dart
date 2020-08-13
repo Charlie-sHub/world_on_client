@@ -8,7 +8,7 @@ import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/validation/objects/search_term.dart';
-import 'package:worldon/domain/search/use_case/search_tags_by_name.dart';
+import 'package:worldon/domain/search/use_case/watch_search_tags_by_name.dart';
 import 'package:worldon/injection.dart';
 
 part 'search_tags_by_name_watcher_bloc.freezed.dart';
@@ -28,7 +28,7 @@ class SearchTagsByNameWatcherBloc extends Bloc<SearchTagsByNameWatcherEvent, Sea
 
   Stream<SearchTagsByNameWatcherState> onWatchTagsFoundByNameStarted(_WatchTagsFoundByNameStarted event) async* {
     yield const SearchTagsByNameWatcherState.searchInProgress();
-    final _searchTagsByName = getIt<SearchTagsByName>();
+    final _searchTagsByName = getIt<WatchSearchTagsByName>();
     yield* _searchTagsByName(
       Params(name: event.searchTerm),
     ).map(

@@ -1,12 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/views/profile/widget/own_profile/own_profile_header.dart';
 import 'package:worldon/views/profile/widget/profile_achievements_tab_view.dart';
 import 'package:worldon/views/profile/widget/profile_experiences_tab_view/profile_experiences_tab_view.dart';
 import 'package:worldon/views/profile/widget/profile_tab_bar.dart';
 import 'package:worldon/views/profile/widget/profile_users_tab_view/profile_users_tab_view.dart';
-
-import 'own_profile_header.dart';
 
 class OwnProfile extends StatelessWidget {
   final User user;

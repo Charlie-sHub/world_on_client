@@ -7,7 +7,7 @@ import 'package:kt_dart/kt.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
-import 'package:worldon/domain/profile/use_case/load_following_users.dart';
+import 'package:worldon/domain/profile/use_case/watch_following_users.dart';
 import 'package:worldon/injection.dart';
 
 part 'following_watcher_bloc.freezed.dart';
@@ -29,7 +29,7 @@ class FollowingWatcherBloc extends Bloc<FollowingWatcherEvent, FollowingWatcherS
 
   Stream<FollowingWatcherState> onFollowingUsersLoaded(_WatchFollowingUsersStarted event) async* {
     yield const FollowingWatcherState.loadInProgress();
-    final _loadFollowingUsers = getIt<LoadFollowingUsers>();
+    final _loadFollowingUsers = getIt<WatchFollowingUsers>();
     yield* _loadFollowingUsers(
       Params(id: event.user.id),
     ).map(

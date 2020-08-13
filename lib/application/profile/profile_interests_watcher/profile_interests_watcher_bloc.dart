@@ -8,7 +8,7 @@ import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
-import 'package:worldon/domain/profile/use_case/load_user_interests.dart';
+import 'package:worldon/domain/profile/use_case/watch_user_interests.dart';
 
 import '../../../injection.dart';
 
@@ -29,7 +29,7 @@ class ProfileInterestsWatcherBloc extends Bloc<ProfileInterestsWatcherEvent, Pro
 
   Stream<ProfileInterestsWatcherState> onWatchInterestsStarted(_WatchInterestsStarted event) async* {
     yield const ProfileInterestsWatcherState.loadInProgress();
-    final _loadInterests = getIt<LoadUserInterests>();
+    final _loadInterests = getIt<WatchUserInterests>();
     yield* _loadInterests(
       Params(userId: event.user.id),
     ).map(

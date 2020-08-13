@@ -514,7 +514,6 @@ class _$_User extends _User {
 
 abstract class _User extends User {
   const _User._() : super._();
-
   const factory _User(
       {int id,
       @required Name name,
@@ -546,16 +545,12 @@ abstract class _User extends User {
 
   @override
   int get id;
-
   @override
   Name get name;
-
   @override
   Name get username;
-
   @override
   Password get password;
-
   @override
   EmailAddress get email;
   @override

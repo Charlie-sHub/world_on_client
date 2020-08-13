@@ -26,7 +26,7 @@ class DevelopmentMainFeedRepository implements MainFeedRepositoryInterface {
   final _random = Random();
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> fillFeed() {
+  Stream<Either<Failure, KtList<Experience>>> watchFeed() {
     Either<Failure, KtList<Experience>> _either;
     if (_random.nextBool()) {
       _either = right(

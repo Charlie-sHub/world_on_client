@@ -9,18 +9,18 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
-import 'package:worldon/domain/search/use_case/search_experiences_by_difficulty.dart';
+import 'package:worldon/domain/search/use_case/watch_search_experiences_by_difficulty.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../domain/core/methods/create_stream.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  SearchExperiencesByDifficulty searchExperiencesByDifficulty;
+  WatchSearchExperiencesByDifficulty searchExperiencesByDifficulty;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
-      searchExperiencesByDifficulty = getIt<SearchExperiencesByDifficulty>();
+      searchExperiencesByDifficulty = getIt<WatchSearchExperiencesByDifficulty>();
     },
   );
   final experiencesFound = KtList.of(Experience.empty());

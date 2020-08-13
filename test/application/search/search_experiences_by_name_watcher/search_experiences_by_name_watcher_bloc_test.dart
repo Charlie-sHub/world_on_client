@@ -9,18 +9,18 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/validation/objects/search_term.dart';
-import 'package:worldon/domain/search/use_case/search_experiences_by_name.dart';
+import 'package:worldon/domain/search/use_case/watch_search_experiences_by_name.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../domain/core/methods/create_stream.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  SearchExperiencesByName searchExperiencesByName;
+  WatchSearchExperiencesByName searchExperiencesByName;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
-      searchExperiencesByName = getIt<SearchExperiencesByName>();
+      searchExperiencesByName = getIt<WatchSearchExperiencesByName>();
     },
   );
   final name = SearchTerm("Test");

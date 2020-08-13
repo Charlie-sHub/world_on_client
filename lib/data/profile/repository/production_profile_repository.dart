@@ -35,55 +35,55 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtList<User>>> loadBlockedUsers(int id) {
+  Stream<Either<Failure, KtList<User>>> watchBlockedUsers(int id) {
     // TODO: implement loadBlockedUsers
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> loadExperiencesCreated(int id) {
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesCreated(int id) {
     // TODO: implement loadExperiencesCreated
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> loadExperiencesDone(int id) {
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesDone(int id) {
     // TODO: implement loadExperiencesDone
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> loadExperiencesLiked(int id) {
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesLiked(int id) {
     // TODO: implement loadExperiencesLiked
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtList<User>>> loadFollowedUsers(int id) {
+  Stream<Either<Failure, KtList<User>>> watchFollowedUsers(int id) {
     // TODO: implement loadFollowedUsers
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtList<User>>> loadFollowingUsers(int id) {
+  Stream<Either<Failure, KtList<User>>> watchFollowingUsers(int id) {
     // TODO: implement loadFollowingUsers
     throw UnimplementedError();
   }
 
   @override
-  Future<Either<Failure, User>> loadUser(int id) {
+  Future<Either<Failure, User>> getUser(int id) {
     // TODO: implement loadUser
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtList<Achievement>>> loadUserAchievements(int userId) {
+  Stream<Either<Failure, KtList<Achievement>>> watchUserAchievements(int userId) {
     // TODO: implement loadUserAchievements
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtList<Tag>>> loadUserInterests(int userId) {
+  Stream<Either<Failure, KtList<Tag>>> watchUserInterests(int userId) {
     // TODO: implement loadUserInterests
     throw UnimplementedError();
   }

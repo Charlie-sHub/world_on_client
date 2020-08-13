@@ -69,11 +69,10 @@ class CommentCard extends StatelessWidget {
                   Icons.thumb_up,
                   color: WorldOnColors.accent,
                 ),
-                onPressed: () =>
-                  FlushbarHelper.createInformation(
-                    duration: const Duration(seconds: 2),
-                    message: "Just a placeholder",
-                  ).show(context),
+                onPressed: () => FlushbarHelper.createInformation(
+                  duration: const Duration(seconds: 2),
+                  message: "Just a placeholder",
+                ).show(context),
               ),
             ],
           ),

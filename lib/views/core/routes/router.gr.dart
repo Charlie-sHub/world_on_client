@@ -76,7 +76,7 @@ class Router extends RouterBase {
           user: args.user,
         ),
         settings: data,
-        transitionsBuilder: TransitionsBuilders.slideRight,
+        transitionsBuilder: TransitionsBuilders.slideLeft,
       );
     },
   };
@@ -88,20 +88,21 @@ class Router extends RouterBase {
 
 extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
   Future<dynamic> pushSplashPage() => push<dynamic>(Routes.splashPage);
-
+  
   Future<dynamic> pushLogInPage() => push<dynamic>(Routes.logInPage);
-
-  Future<dynamic> pushRegistrationPage() => push<dynamic>(Routes.registrationPage);
-
+  
+  Future<dynamic> pushRegistrationPage() =>
+    push<dynamic>(Routes.registrationPage);
+  
   Future<dynamic> pushMainPage() => push<dynamic>(Routes.mainPage);
-
+  
   Future<bool> pushProfileEditingPage({
     Key key,
     @required User user,
   }) =>
-      push<bool>(
-        Routes.profileEditingPage,
-        arguments: ProfileEditingPageArguments(key: key, user: user),
+    push<bool>(
+      Routes.profileEditingPage,
+      arguments: ProfileEditingPageArguments(key: key, user: user),
       );
 }
 

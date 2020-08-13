@@ -7,15 +7,14 @@ import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widget/misc/tag_addition_card/tag_addition_card.dart';
+import 'package:worldon/views/experience_management/widget/description_form_field.dart';
+import 'package:worldon/views/experience_management/widget/difficulty_slider.dart';
+import 'package:worldon/views/experience_management/widget/finish_button.dart';
+import 'package:worldon/views/experience_management/widget/map.dart';
+import 'package:worldon/views/experience_management/widget/objective_creation_card/objective_creation_card.dart';
 import 'package:worldon/views/experience_management/widget/pictures_selector.dart';
 import 'package:worldon/views/experience_management/widget/reward_creation_card.dart';
 import 'package:worldon/views/experience_management/widget/title_form_field.dart';
-
-import 'description_form_field.dart';
-import 'difficulty_slider.dart';
-import 'finish_button.dart';
-import 'map.dart';
-import 'objective_creation_card.dart';
 
 // TODO: How to initialize this for editing?
 // The same way the profiles are, with Option<Experience> experience

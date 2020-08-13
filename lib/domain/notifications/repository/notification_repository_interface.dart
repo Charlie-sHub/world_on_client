@@ -10,7 +10,7 @@ abstract class NotificationRepositoryInterface {
   Future<Either<Failure, Unit>> sendNotification(Notification notification);
 
   /// Loads all the [Notification]s of the logged in [User]
-  Stream<Either<Failure, KtList<Notification>>> loadNotifications();
+  Stream<Either<Failure, KtList<Notification>>> watchNotifications();
 
   /// Requests the server to delete all [Notification]s of the logged in [User]
   Future<Either<Failure, Unit>> deleteUserNotifications();

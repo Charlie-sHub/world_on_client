@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/views/profile/widget/foreign_profile/foreign_profile_header.dart';
 import 'package:worldon/views/profile/widget/profile_achievements_tab_view.dart';
 import 'package:worldon/views/profile/widget/profile_experiences_tab_view/profile_experiences_tab_view.dart';
 import 'package:worldon/views/profile/widget/profile_tab_bar.dart';
 import 'package:worldon/views/profile/widget/profile_users_tab_view/profile_users_tab_view.dart';
-
-import 'foreign_profile_header.dart';
 
 class ForeignProfile extends StatelessWidget {
   final User user;

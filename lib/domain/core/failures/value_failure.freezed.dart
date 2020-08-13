@@ -1627,6 +1627,7 @@ abstract class MultiLineString<T> implements ValueFailure<T> {
 
 abstract class $StringExceedsLengthCopyWith<T, $Res> {
   factory $StringExceedsLengthCopyWith(StringExceedsLength<T> value, $Res Function(StringExceedsLength<T>) then) = _$StringExceedsLengthCopyWithImpl<T, $Res>;
+
   $Res call({String failedValue, int maxLength});
 }
 
@@ -1818,6 +1819,7 @@ abstract class StringExceedsLength<T> implements ValueFailure<T> {
 
 abstract class $IntegerOutOfBoundsCopyWith<T, $Res> {
   factory $IntegerOutOfBoundsCopyWith(IntegerOutOfBounds<T> value, $Res Function(IntegerOutOfBounds<T>) then) = _$IntegerOutOfBoundsCopyWithImpl<T, $Res>;
+
   $Res call({int failedValue});
 }
 
@@ -2180,6 +2182,7 @@ abstract class StringWithInvalidCharacters<T> implements ValueFailure<T> {
 
 abstract class $InvalidCoordinatesCopyWith<T, $Res> {
   factory $InvalidCoordinatesCopyWith(InvalidCoordinates<T> value, $Res Function(InvalidCoordinates<T>) then) = _$InvalidCoordinatesCopyWithImpl<T, $Res>;
+
   $Res call({double failedValue});
 }
 
@@ -2564,14 +2567,14 @@ class _$SetExceedsLengthCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl
 
 class _$SetExceedsLength<T> with DiagnosticableTreeMixin implements SetExceedsLength<T> {
   const _$SetExceedsLength({@required this.failedValue, @required this.maxLength})
-    : assert(failedValue != null),
-      assert(maxLength != null);
-  
+      : assert(failedValue != null),
+        assert(maxLength != null);
+
   @override
   final T failedValue;
   @override
   final int maxLength;
-  
+
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'ValueFailure<$T>.setExceedsLength(failedValue: $failedValue, maxLength: $maxLength)';
@@ -2586,17 +2589,17 @@ class _$SetExceedsLength<T> with DiagnosticableTreeMixin implements SetExceedsLe
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is SetExceedsLength<T> &&
-        (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)) &&
-        (identical(other.maxLength, maxLength) || const DeepCollectionEquality().equals(other.maxLength, maxLength)));
+        (other is SetExceedsLength<T> &&
+            (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)) &&
+            (identical(other.maxLength, maxLength) || const DeepCollectionEquality().equals(other.maxLength, maxLength)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue) ^ const DeepCollectionEquality().hash(maxLength);
-  
+
   @override
   $SetExceedsLengthCopyWith<T, SetExceedsLength<T>> get copyWith => _$SetExceedsLengthCopyWithImpl<T, SetExceedsLength<T>>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({

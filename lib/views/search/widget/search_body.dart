@@ -30,17 +30,16 @@ class SearchBody extends StatelessWidget {
       ],
       child: BlocConsumer<SearchByNameFormBloc, SearchByNameFormState>(
         listener: _searchFormListener,
-        builder: (context, state) =>
-          Padding(
-            padding: const EdgeInsets.all(5),
-            child: DefaultTabController(
-              length: 3,
-              child: Column(
-                children: <Widget>[
-                  const SearchHeader(),
-                  const SizedBox(height: 5),
-                  const SearchTabBar(),
-                  Expanded(
+        builder: (context, state) => Padding(
+          padding: const EdgeInsets.all(5),
+          child: DefaultTabController(
+            length: 3,
+            child: Column(
+              children: <Widget>[
+                const SearchHeader(),
+                const SizedBox(height: 5),
+                const SearchTabBar(),
+                Expanded(
                   child: TabBarView(
                     children: [
                       SearchExperiencesTabView(searchTerm: state.searchTerm),
@@ -56,7 +55,7 @@ class SearchBody extends StatelessWidget {
       ),
     );
   }
-  
+
   void _searchFormListener(BuildContext context, SearchByNameFormState state) {
     if (state.isSubmitting) {
       context.bloc<SearchUsersByNameWatcherBloc>().add(

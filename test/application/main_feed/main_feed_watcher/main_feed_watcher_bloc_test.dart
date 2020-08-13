@@ -7,7 +7,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/application/main_feed/main_feed_watcher/main_feed_watcher_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/main_feed/use_case/fill_feed.dart';
+import 'package:worldon/domain/main_feed/use_case/watch_feed.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../domain/core/methods/create_stream.dart';
@@ -15,11 +15,11 @@ import '../../../domain/core/methods/get_valid_experience.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  FillFeed fillFeed;
+  WatchFeed fillFeed;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
-      fillFeed = getIt<FillFeed>();
+      fillFeed = getIt<WatchFeed>();
     },
   );
   final experienceFeed = KtList.of(getValidExperience());

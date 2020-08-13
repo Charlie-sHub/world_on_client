@@ -10,7 +10,7 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
-import 'package:worldon/domain/search/use_case/search_experiences_by_tags.dart';
+import 'package:worldon/domain/search/use_case/watch_search_experiences_by_tags.dart';
 import 'package:worldon/injection.dart';
 
 part 'search_experiences_by_tags_bloc.freezed.dart';
@@ -32,7 +32,7 @@ class SearchExperiencesByTagsBloc extends Bloc<SearchExperiencesByTagsEvent, Sea
     yield const SearchExperiencesByTagsState.searchInProgress();
     final _tagSet = TagSet(KtSet.from(event.tags));
     if (_tagSet.isValid()) {
-      final _searchExperiencesByTags = getIt<SearchExperiencesByTags>();
+      final _searchExperiencesByTags = getIt<WatchSearchExperiencesByTags>();
       yield* _searchExperiencesByTags(
         Params(tags: _tagSet),
       ).map(

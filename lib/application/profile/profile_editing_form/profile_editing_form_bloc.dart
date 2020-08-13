@@ -7,10 +7,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
-import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
-import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
@@ -158,18 +156,14 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
   }
 
   Stream<ProfileEditingFormState> onInitialized(_Initialized event) async* {
-    final _getLoggedInUser = getIt<GetLoggedInUser>();
-    final _userOption = await _getLoggedInUser(getIt<NoParams>());
-    yield _userOption.fold(
-      () => state,
-      (user) => state.copyWith(
-        user: user,
-        passwordConfirmator: PasswordConfirmator(
-          password: user.password.getOrCrash(),
-          confirmation: user.password.getOrCrash(),
-        ),
-        passwordToCompare: user.password.getOrCrash(),
+    final user = event.userToEdit;
+    yield state.copyWith(
+      user: user,
+      passwordConfirmator: PasswordConfirmator(
+        password: user.password.getOrCrash(),
+        confirmation: user.password.getOrCrash(),
       ),
+      passwordToCompare: user.password.getOrCrash(),
     );
   }
 }

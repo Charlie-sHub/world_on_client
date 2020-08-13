@@ -13,37 +13,37 @@ import 'package:worldon/domain/search/repository/search_repository_interface.dar
 @LazySingleton(as: SearchRepositoryInterface, env: [Environment.prod])
 class ProductionSearchRepository implements SearchRepositoryInterface {
   @override
-  Stream<Either<Failure, KtList<Experience>>> searchExperiencesByDifficulty(Difficulty difficulty) {
+  Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByDifficulty(Difficulty difficulty) {
     // TODO: implement searchExperiencesByDifficulty
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> searchExperiencesByTags(TagSet tags) {
+  Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByTags(TagSet tags) {
     // TODO: implement searchExperiencesByTags
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> searchExperiencesByName(SearchTerm name) {
+  Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByName(SearchTerm name) {
     // TODO: implement searchExperiencesByName
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtList<Tag>>> searchTagsByName(SearchTerm name) {
+  Stream<Either<Failure, KtList<Tag>>> watchSearchTagsByName(SearchTerm name) {
     // TODO: implement searchTagsByName
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtList<User>>> searchUsersByName(SearchTerm name) {
+  Stream<Either<Failure, KtList<User>>> watchSearchUsersByName(SearchTerm name) {
     // TODO: implement searchUsersByName
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtList<User>>> searchUsersByUserName(SearchTerm username) {
+  Stream<Either<Failure, KtList<User>>> watchSearchUsersByUserName(SearchTerm username) {
     // TODO: implement searchUsersByUserName
     throw UnimplementedError();
   }

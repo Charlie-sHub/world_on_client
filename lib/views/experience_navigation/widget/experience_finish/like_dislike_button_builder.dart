@@ -3,9 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_navigation/experience_like_actor/experience_like_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/injection.dart';
-
-import 'dislike_experience_button.dart';
-import 'like_experience_button.dart';
+import 'package:worldon/views/experience_navigation/widget/experience_finish/dislike_experience_button.dart';
+import 'package:worldon/views/experience_navigation/widget/experience_finish/like_experience_button.dart';
 
 class LikeDislikeButtonBuilder extends StatelessWidget {
   const LikeDislikeButtonBuilder({

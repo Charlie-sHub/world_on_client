@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/core/experience_card_actor/experience_card_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
-
-import 'add_to_log_button.dart';
-import 'dismiss_from_log_button.dart';
+import 'package:worldon/views/core/widget/cards/experience_card/add_to_log_button.dart';
+import 'package:worldon/views/core/widget/cards/experience_card/dismiss_from_log_button.dart';
 
 class LogButton extends StatelessWidget {
   const LogButton({

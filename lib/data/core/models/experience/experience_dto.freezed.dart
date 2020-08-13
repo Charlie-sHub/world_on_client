@@ -389,38 +389,39 @@ class _$_ExperienceDto extends _ExperienceDto {
 
 abstract class _ExperienceDto extends ExperienceDto {
   const _ExperienceDto._() : super._();
-  
-  const factory _ExperienceDto({@required int id,
-    @required String title,
-    @required String description,
-    @required Set<String> imageURLs,
-    @required CoordinatesDto coordinates,
-    @required LocationDto location,
-    @required UserDto creator,
-    @required int difficulty,
-    @required String creationDate,
-    @required String modificationDate,
-    @required Set<ObjectiveDto> objectives,
-    @required Set<RewardDto> rewards,
-    @required Set<TagDto> tags,
-    @required Set<CommentDto> comments,
-    @required Set<UserDto> likedBy,
-    @required Set<UserDto> doneBy}) = _$_ExperienceDto;
-  
+
+  const factory _ExperienceDto(
+      {@required int id,
+      @required String title,
+      @required String description,
+      @required Set<String> imageURLs,
+      @required CoordinatesDto coordinates,
+      @required LocationDto location,
+      @required UserDto creator,
+      @required int difficulty,
+      @required String creationDate,
+      @required String modificationDate,
+      @required Set<ObjectiveDto> objectives,
+      @required Set<RewardDto> rewards,
+      @required Set<TagDto> tags,
+      @required Set<CommentDto> comments,
+      @required Set<UserDto> likedBy,
+      @required Set<UserDto> doneBy}) = _$_ExperienceDto;
+
   factory _ExperienceDto.fromJson(Map<String, dynamic> json) = _$_ExperienceDto.fromJson;
-  
+
   @override
   int get id;
-  
+
   @override
   String get title;
-  
+
   @override
   String get description;
 
   @override
   Set<String> get imageURLs;
-  
+
   @override
   CoordinatesDto get coordinates;
   @override
