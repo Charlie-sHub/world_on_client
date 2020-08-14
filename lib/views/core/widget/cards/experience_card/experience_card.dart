@@ -113,18 +113,16 @@ class ExperienceCard extends StatelessWidget {
             orElse: () => "Unknown Error",
           ),
         ).show(context),
-    dismissalFailure: (state) =>
-      FlushbarHelper.createError(
-        duration: const Duration(seconds: 2),
-        message: state.failure.maybeMap(
-          coreData: (failure) =>
-            failure.coreDataFailure.maybeMap(
+        dismissalFailure: (state) => FlushbarHelper.createError(
+          duration: const Duration(seconds: 2),
+          message: state.failure.maybeMap(
+            coreData: (failure) => failure.coreDataFailure.maybeMap(
               serverError: (failure) => failure.errorString,
               orElse: () => "Unknown Error",
             ),
-          orElse: () => "Unknown Error",
-        ),
-      ).show(context),
-    orElse: () => null,
-  );
+            orElse: () => "Unknown Error",
+          ),
+        ).show(context),
+        orElse: () => null,
+      );
 }

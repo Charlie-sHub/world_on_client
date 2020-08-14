@@ -34,8 +34,7 @@ class ProfileEditingPage extends StatelessWidget {
         ),
       ),
       body: BlocProvider(
-        create: (context) =>
-        getIt<ProfileEditingFormBloc>()
+        create: (context) => getIt<ProfileEditingFormBloc>()
           ..add(
             ProfileEditingFormEvent.initialized(user),
           ),
@@ -96,7 +95,7 @@ class ProfileEditingPage extends StatelessWidget {
       ),
     ).show(context);
   }
-  
+
   void _onSuccess(BuildContext context) {
     context.navigator.pop();
     context.bloc<AuthenticationBloc>().add(const AuthenticationEvent.authenticationCheckRequested());

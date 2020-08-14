@@ -82,7 +82,7 @@ dependencies:
   # For getting multiple images from the device
   multi_image_picker: ^4.7.10
   # Local database, mostly for back-end simulation
-  moor_flutter: ^3.1.0
+  moor: ^3.3.1
   cached_network_image: ^2.2.0+1
 
 dev_dependencies:

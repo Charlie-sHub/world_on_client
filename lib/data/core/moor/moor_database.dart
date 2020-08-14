@@ -1,57 +1,63 @@
-// MoorAchievements
-// MoorAchievements DAO:
-//  watchUserAchievements
+import 'package:moor/moor.dart';
+import 'package:worldon/domain/core/validation/objects/comment_content.dart';
+import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/password.dart';
 
-// MoorComments
-// MoorComments DAO:
-//  watchExperienceComments
+import 'daos/moor_achievement_dao/moor_achievements_dao.dart';
+import 'daos/moor_comments_dao/moor_comments_dao.dart';
+import 'daos/moor_experiences_dao/moor_experiences_dao.dart';
+import 'daos/moor_notifications_dao/moor_notifications_dao.dart';
+import 'daos/moor_tags_dao/moor_tags_dao.dart';
+import 'daos/moor_users_dao/moor_users_dao.dart';
 
-// MoorExperiences
-// MoorExperiences DAO:
-//  addExperienceToLog
-//  dismissExperienceFromLog
-//  createExperience
-//  rateDifficulty
-//  likeExperience
-//  finishExperience
-//  watchFeed
-//  watchExperiencesDone
-//  watchExperiencesLiked
-//  watchExperiencesCreated
-//  watchSearchExperiencesByName
+part 'moor_achievements.dart';
 
-// MoorLocations
+part 'moor_comments.dart';
 
-// MoorNotifications
-// MoorNotifications DAO:
-//  watchNotifications
-//  deleteNotification
+part 'moor_database.g.dart';
 
-// MoorObjectives
+part 'moor_experiences.dart';
 
-// MoorOptions
+part 'moor_locations.dart';
 
-// MoorRewards
+part 'moor_notifications.dart';
 
-// MoorTags
-// MoorTags DAO:
-//  watchUserInterests
-//  watchSearchTagsByName
-//  addTagToInterests
-//  dismissTagFromInterests
+part 'moor_objectives.dart';
 
-// MoorUsers
-// MoorUsers DAO:
-//  rewardUser
-//  register
-//  logIn
-//  editUser
-//  blockUser
-//  unBlockUser
-//  followUser
-//  unFollowUser
-//  watchFollowedUsers
-//  watchFollowingUsers
-//  watchBlockedUsers
-//  watchSearchUsersByName
-//  watchSearchUsersByUserName
+part 'moor_options.dart';
+
+part 'moor_rewards.dart';
+
+part 'moor_tags.dart';
+
+part 'moor_users.dart';
+
+@UseMoor(
+  tables: [
+    MoorAchievements,
+    MoorComments,
+    MoorExperiences,
+    MoorLocations,
+    MoorNotifications,
+    MoorObjectives,
+    MoorOptions,
+    MoorRewards,
+    MoorTags,
+    MoorUsers,
+  ],
+  daos: [
+    MoorAchievementsDao,
+    MoorCommentsDao,
+    MoorExperiencesDao,
+    MoorNotificationsDao,
+    MoorTagsDao,
+    MoorUsersDao,
+  ],
+)
+class Database extends _$Database {
+  Database(QueryExecutor e) : super(e);
+
+  @override
+  int get schemaVersion => 1;
+}

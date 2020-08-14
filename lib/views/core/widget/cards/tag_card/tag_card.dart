@@ -62,33 +62,28 @@ class TagCard extends StatelessWidget {
       ),
     );
   }
-  
-  void _tagCardListener(BuildContext context, TagCardActorState state) =>
-    state.maybeMap(
-      additionFailure: (state) =>
-        FlushbarHelper.createError(
+
+  void _tagCardListener(BuildContext context, TagCardActorState state) => state.maybeMap(
+        additionFailure: (state) => FlushbarHelper.createError(
           duration: const Duration(seconds: 2),
           message: state.failure.maybeMap(
-            coreData: (failure) =>
-              failure.coreDataFailure.maybeMap(
-                serverError: (failure) => failure.errorString,
-                orElse: () => "Unknown Error",
-              ),
+            coreData: (failure) => failure.coreDataFailure.maybeMap(
+              serverError: (failure) => failure.errorString,
+              orElse: () => "Unknown Error",
+            ),
             orElse: () => "Unknown Error",
           ),
         ).show(context),
-      dismissalFailure: (state) =>
-        FlushbarHelper.createError(
+        dismissalFailure: (state) => FlushbarHelper.createError(
           duration: const Duration(seconds: 2),
           message: state.failure.maybeMap(
-            coreData: (failure) =>
-              failure.coreDataFailure.maybeMap(
-                serverError: (failure) => failure.errorString,
-                orElse: () => "Unknown Error",
-              ),
+            coreData: (failure) => failure.coreDataFailure.maybeMap(
+              serverError: (failure) => failure.errorString,
+              orElse: () => "Unknown Error",
+            ),
             orElse: () => "Unknown Error",
           ),
         ).show(context),
-      orElse: () => null,
-    );
+        orElse: () => null,
+      );
 }

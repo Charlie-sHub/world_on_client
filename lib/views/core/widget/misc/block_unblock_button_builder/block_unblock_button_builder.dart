@@ -63,18 +63,16 @@ class BlockUnblockButtonBuilder extends StatelessWidget {
             orElse: () => "Unknown Error",
           ),
         ).show(context),
-      unBlockFailure: (state) =>
-        FlushbarHelper.createError(
+        unBlockFailure: (state) => FlushbarHelper.createError(
           duration: const Duration(seconds: 2),
           message: state.failure.maybeMap(
-            coreData: (failure) =>
-              failure.coreDataFailure.maybeMap(
-                serverError: (failure) => failure.errorString,
-                orElse: () => "Unknown Error",
-              ),
+            coreData: (failure) => failure.coreDataFailure.maybeMap(
+              serverError: (failure) => failure.errorString,
+              orElse: () => "Unknown Error",
+            ),
             orElse: () => "Unknown Error",
           ),
         ).show(context),
-      orElse: () => null,
-    );
+        orElse: () => null,
+      );
 }
