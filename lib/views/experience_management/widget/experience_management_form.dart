@@ -25,6 +25,7 @@ class ExperienceManagementForm extends StatelessWidget {
     return BlocProvider(
       create: (context) => getIt<ExperienceManagementFormBloc>(),
       child: BlocConsumer<ExperienceManagementFormBloc, ExperienceManagementFormState>(
+        listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
         listener: (context, state) => state.failureOrSuccessOption.fold(
           () => null,
           (either) => either.fold(
@@ -36,18 +37,18 @@ class ExperienceManagementForm extends StatelessWidget {
                 ).show(context),
                 serverError: (failure) => FlushbarHelper.createError(
                   duration: const Duration(seconds: 2),
-                  message: failure.errorString,
+                            message: failure.errorString,
+                          ).show(context),
+                        orElse: () => null,
+                      ),
+                    orElse: () => null,
+                  ),
+                  (_) => FlushbarHelper.createSuccess(
+                  duration: const Duration(seconds: 2),
+                  message: "The experience was created",
                 ).show(context),
-                orElse: () => null,
               ),
-              orElse: () => null,
-            ),
-            (_) => FlushbarHelper.createSuccess(
-              duration: const Duration(seconds: 2),
-              message: "The experience was created",
-            ).show(context),
           ),
-        ),
         builder: (context, state) => SingleChildScrollView(
           child: Form(
             autovalidate: state.showErrorMessages,
@@ -87,8 +88,8 @@ class ExperienceManagementForm extends StatelessWidget {
                   const RewardCreationCard(),
                   TagAdditionCard(
                     tagChangeFunction: (KtSet<Tag> tags) => context.bloc<ExperienceManagementFormBloc>().add(
-                          ExperienceManagementFormEvent.tagsChanged(tags),
-                        ),
+                      ExperienceManagementFormEvent.tagsChanged(tags),
+                    ),
                   ),
                   const FinishButton(),
                 ],

@@ -5,11 +5,10 @@ import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/create_stream_of_either.dart';
-import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_left_server_error.dart';
-import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_right_future.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_server_error_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_notification.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/simulate_failure_or_unit.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -21,20 +20,12 @@ class DevelopmentNotificationRepository implements NotificationRepositoryInterfa
 
   @override
   Future<Either<Failure, Unit>> checkNotification(int id) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 
   @override
   Future<Either<Failure, Unit>> deleteUserNotifications() {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 
   @override
@@ -68,19 +59,12 @@ class DevelopmentNotificationRepository implements NotificationRepositoryInterfa
 
   @override
   Future<Either<Failure, Unit>> sendNotification(Notification notification) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 
   @override
   Future<Either<Failure, Unit>> deleteNotification(int id) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    // use the notifications dao to delete the notification by its id
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 }

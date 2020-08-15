@@ -9,8 +9,8 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
 
   Future createExperience(Insertable<MoorExperience> experience) => into(moorExperiences).insert(experience);
 
-  // Maybe i can use this method to update the difficulty
-  // Leaving the logic to the repository
+  // TODO: Select experience by id
+
   Future updateExperience(Insertable<MoorExperience> experience) => update(moorExperiences).replace(experience);
 
   Stream<List<MoorExperience>> watchFeed(MoorExperience experience) {

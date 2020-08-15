@@ -12,6 +12,7 @@ import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_v
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_experience.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_tag.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/simulate_failure_or_unit.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
@@ -26,38 +27,32 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
 
   @override
   Future<Either<Failure, Unit>> blockUser(int blockedId) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    // get the logged in user from the dao
+    // get the user to be blocked by the id
+    // to copy the logged in user with the user to be blocked added to its list of blocked users
+    // update logged in user
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 
   @override
   Future<Either<Failure, Unit>> deleteExperience(int experienceId) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 
   @override
   Future<Either<Failure, Unit>> editUser(User user) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    // transform the user to a moor user
+    // update with the user dao
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 
   @override
   Future<Either<Failure, Unit>> followUser(int userToUnFollowId) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    // get the logged in user from the dao
+    // get the user to be followed by the id
+    // to copy the logged in user with the user to be followed added to its list of followed users
+    // update logged in user
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 
   @override
@@ -221,7 +216,6 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
     if (_random.nextBool()) {
       _either = right(KtList.of(
         getValidAchievement(),
-        Achievement.empty(),
         getValidAchievement().copyWith(
           id: 2,
           name: Name("Nullam quam"),
@@ -253,28 +247,24 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
 
   @override
   Future<Either<Failure, Unit>> removeExperienceLiked(int experienceId) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 
   @override
   Future<Either<Failure, Unit>> unBlockUser(int blockedId) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    // get the logged i user from the dao
+    // get the user to be unblocked by the id
+    // to copy the logged in user with the user to be unblocked removed from its list of blocked users
+    // update logged in user
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 
   @override
   Future<Either<Failure, Unit>> unFollowUser(int userToUnFollowId) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    // get the logged i user from the dao
+    // get the user to be unfollowed by the id
+    // to copy the logged in user with the user to be unfollowed removed from its list of followed users
+    // update logged in user
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 }

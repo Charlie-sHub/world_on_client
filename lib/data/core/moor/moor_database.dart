@@ -12,22 +12,15 @@ import 'daos/moor_tags_dao/moor_tags_dao.dart';
 import 'daos/moor_users_dao/moor_users_dao.dart';
 
 part 'moor_achievements.dart';
-
 part 'moor_comments.dart';
-
 part 'moor_database.g.dart';
-
 part 'moor_experiences.dart';
-
 part 'moor_locations.dart';
-
 part 'moor_notifications.dart';
-
 part 'moor_objectives.dart';
-
 part 'moor_options.dart';
-
 part 'moor_rewards.dart';
+part 'moor_tags.dart';
 
 part 'moor_tags.dart';
 

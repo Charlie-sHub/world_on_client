@@ -10,6 +10,7 @@ import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_r
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_server_error_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_tag.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/simulate_failure_or_unit.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
@@ -64,19 +65,19 @@ class DevelopmentTagRepository implements TagCoreRepositoryInterface {
 
   @override
   Future<Either<Failure, Unit>> addTagToInterests(Tag tag) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    // get the logged in user from the users dao
+    // get the tag by its id with the tag dao
+    // copy the logged in user with the tag added to its interests
+    // update user
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 
   @override
   Future<Either<Failure, Unit>> dismissTagFromInterests(Tag tag) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    // get the logged in user from the users dao
+    // get the tag by its id with the tag dao
+    // copy the logged in user with the tag removed from its interests
+    // update user
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 }

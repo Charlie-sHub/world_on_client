@@ -17,6 +17,7 @@ class LogInPage extends StatelessWidget {
       body: BlocProvider(
         create: (context) => getIt<LogInFormBloc>(),
         child: BlocConsumer<LogInFormBloc, LogInFormState>(
+          listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
           listener: (context, state) => state.failureOrSuccessOption.fold(
             () => null,
             (either) => either.fold(

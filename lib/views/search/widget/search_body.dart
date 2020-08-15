@@ -29,6 +29,7 @@ class SearchBody extends StatelessWidget {
         BlocProvider(create: (context) => getIt<SearchExperiencesByTagsBloc>()),
       ],
       child: BlocConsumer<SearchByNameFormBloc, SearchByNameFormState>(
+        listenWhen: (_, current) => current.isSubmitting,
         listener: _searchFormListener,
         builder: (context, state) => Padding(
           padding: const EdgeInsets.all(5),
@@ -40,33 +41,37 @@ class SearchBody extends StatelessWidget {
                 const SizedBox(height: 5),
                 const SearchTabBar(),
                 Expanded(
-                  child: TabBarView(
-                    children: [
-                      SearchExperiencesTabView(searchTerm: state.searchTerm),
-                      SearchUsersTabView(searchTerm: state.searchTerm),
-                      SearchTagsTabView(searchTerm: state.searchTerm),
-                    ],
+                    child: TabBarView(
+                      children: [
+                        SearchExperiencesTabView(searchTerm: state.searchTerm),
+                        SearchUsersTabView(searchTerm: state.searchTerm),
+                        SearchTagsTabView(searchTerm: state.searchTerm),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
-        ),
       ),
     );
   }
 
   void _searchFormListener(BuildContext context, SearchByNameFormState state) {
-    if (state.isSubmitting) {
-      context.bloc<SearchUsersByNameWatcherBloc>().add(
-            SearchUsersByNameWatcherEvent.watchUsersFoundByUsernameStarted(state.searchTerm),
-          );
-      context.bloc<SearchExperiencesByNameWatcherBloc>().add(
-            SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(state.searchTerm),
-          );
-      context.bloc<SearchTagsByNameWatcherBloc>().add(
-            SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(state.searchTerm),
-          );
-    }
+    context.bloc<SearchUsersByNameWatcherBloc>().add(
+      SearchUsersByNameWatcherEvent.watchUsersFoundByUsernameStarted(
+        state.searchTerm,
+      ),
+    );
+    context.bloc<SearchExperiencesByNameWatcherBloc>().add(
+      SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(
+        state.searchTerm,
+      ),
+    );
+    context.bloc<SearchTagsByNameWatcherBloc>().add(
+      SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(
+        state.searchTerm,
+      ),
+    );
   }
 }

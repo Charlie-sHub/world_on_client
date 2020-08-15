@@ -7,6 +7,8 @@ part 'moor_tags_dao.g.dart';
 class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
   MoorTagsDao(Database db) : super(db);
 
+  // TODO: implement get tag by id
+
   Stream<List<MoorTag>> watchUserInterests(MoorUser user) {
     // TODO: Implement this method
     return null;

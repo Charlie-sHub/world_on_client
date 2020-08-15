@@ -39,37 +39,30 @@ class ProfileEditingPage extends StatelessWidget {
             ProfileEditingFormEvent.initialized(user),
           ),
         child: BlocConsumer<ProfileEditingFormBloc, ProfileEditingFormState>(
-          listener: (context, state) =>
-            state.failureOrSuccessOption.fold(
-                () => null,
-                (either) =>
-                either.fold(
-                    (failure) => _onFailure(failure, context),
-                    (_) => _onSuccess(context),
-                ),
+          listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
+          listener: (context, state) => state.failureOrSuccessOption.fold(
+            () => null,
+            (either) => either.fold(
+              (failure) => _onFailure(failure, context),
+              (_) => _onSuccess(context),
             ),
-          builder: (context, state) =>
-            state.user.failureOption.fold(
-                () => const ProfileEditingForm(),
-              // TODO: Make the CriticalErrorDisplay take the function to retry as a parameter
-              // That way one will never forget to implement that functionality
-                (valueFailure) =>
-                InkWell(
-                  onTap: () async =>
-                    context.bloc<ProfileEditingFormBloc>().add(
-                      // It doesn't make much sense to re try with a failed user
-                      // This is almost impossible to happen, but still
-                      // The function should be one to go back to the profile page
-                      ProfileEditingFormEvent.initialized(context
-                        .bloc<ProfileEditingFormBloc>()
-                        .state
-                        .user),
-                    ),
-                  child: CriticalErrorDisplay(
-                    failure: Failure.value(valueFailure),
+          ),
+          builder: (context, state) => state.user.failureOption.fold(
+            () => const ProfileEditingForm(),
+            // TODO: Make the CriticalErrorDisplay take the function to retry as a parameter
+            // That way one will never forget to implement that functionality
+            (valueFailure) => InkWell(
+              onTap: () async => context.bloc<ProfileEditingFormBloc>().add(
+                    // It doesn't make much sense to re try with a failed user
+                    // This is almost impossible to happen, but still
+                    // The function should be one to go back to the profile page
+                    ProfileEditingFormEvent.initialized(context.bloc<ProfileEditingFormBloc>().state.user),
                   ),
-                ),
+              child: CriticalErrorDisplay(
+                failure: Failure.value(valueFailure),
+              ),
             ),
+          ),
         ),
       ),
     );

@@ -17,6 +17,7 @@ class RegistrationPage extends StatelessWidget {
       body: BlocProvider(
         create: (context) => getIt<RegistrationFormBloc>(),
         child: BlocConsumer<RegistrationFormBloc, RegistrationFormState>(
+          listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
           listener: (context, state) => state.failureOrSuccessOption.fold(
             () => null,
             (either) => either.fold(

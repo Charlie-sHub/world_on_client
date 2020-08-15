@@ -9,21 +9,8 @@ class MoorUsersDao extends DatabaseAccessor<Database> with _$MoorUsersDaoMixin {
 
   Future createUser(Insertable<MoorUser> user) => into(moorUsers).insert(user);
 
-  // Leave the logic of the following use cases to the repositories
-  // At the end of the day they all just update the user in different ways
-  //  logIn
-  //  rewardUser
-  //  editUser
-  //  blockUser
-  //  unBlockUser
-  //  followUser
-  //  unFollowUser
-  //  addExperienceToLog
-  //  dismissExperienceFromLog
-  //  likeExperience
-  //  finishExperience
-  //  addTagToInterests
-  //  dismissTagFromInterests
+  // TODO: implement getLoggedInUser
+
   Future updateUser(Insertable<MoorUser> user) => update(moorUsers).replace(user);
 
   Stream<List<MoorUser>> watchFollowedUsers(MoorUser user) {

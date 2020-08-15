@@ -212,7 +212,7 @@ class _$_Initialized implements _Initialized {
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
     __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -860,7 +860,7 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
   @override
   _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith =>
     __$CoordinatesChangedCopyWithImpl<_CoordinatesChanged>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -1768,15 +1768,11 @@ const $ExperienceManagementFormState = _$ExperienceManagementFormStateTearOff();
 
 mixin _$ExperienceManagementFormState {
   Experience get experience;
-  
   bool get showErrorMessages;
-  
   bool get isEditing;
-  
   bool get isSubmitting;
-  
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
-  
+
   $ExperienceManagementFormStateCopyWith<ExperienceManagementFormState>
   get copyWith;
 }
@@ -1966,10 +1962,13 @@ abstract class _ExperienceManagementFormState
   
   @override
   Experience get experience;
+  
   @override
   bool get showErrorMessages;
+  
   @override
   bool get isEditing;
+  
   @override
   bool get isSubmitting;
   

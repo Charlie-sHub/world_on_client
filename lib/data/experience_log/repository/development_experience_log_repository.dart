@@ -5,10 +5,9 @@ import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/create_stream_of_either.dart';
-import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_left_server_error.dart';
-import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_right_future.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_server_error_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_experience.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/simulate_failure_or_unit.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/experience_log/repository/experience_log_repository_interface.dart';
@@ -19,20 +18,20 @@ class DevelopmentExperienceLogRepository implements ExperienceLogRepositoryInter
 
   @override
   Future<Either<Failure, Unit>> addExperienceToLog(int experienceId) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    // get the logged in user from the users dao
+    // get the experience by its id with the experience dao
+    // copy the logged in user with the experience added to its log
+    // update user
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 
   @override
   Future<Either<Failure, Unit>> dismissExperienceFromLog(int experienceId) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    // get the logged in user from the users dao
+    // get the experience by its id with the experience dao
+    // copy the logged in user with the experience removed from its log
+    // update user
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 
   @override

@@ -6,6 +6,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_left_server_error.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_right_future.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_tag.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/simulate_failure_or_unit.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/tag_management/repository/tag_management_repository_interface.dart';
 
@@ -15,20 +16,12 @@ class DevelopmentTagManagementRepository implements TagManagementRepositoryInter
 
   @override
   Future<Either<Failure, Unit>> createTag(Tag tag) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 
   @override
   Future<Either<Failure, Unit>> editTag(Tag tag) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 
   @override
@@ -46,10 +39,6 @@ class DevelopmentTagManagementRepository implements TagManagementRepositoryInter
 
   @override
   Future<Either<Failure, Unit>> removeTag(int id) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 }

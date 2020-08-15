@@ -5,10 +5,9 @@ import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/create_stream_of_either.dart';
-import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_left_server_error.dart';
-import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_right_future.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_server_error_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_comment.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/simulate_failure_or_unit.dart';
 import 'package:worldon/domain/comments/repository/comment_repository_interface.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
@@ -19,11 +18,7 @@ class DevelopmentCommentRepository implements CommentRepositoryInterface {
 
   @override
   Future<Either<Failure, Unit>> editComment(Comment comment) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 
   @override
@@ -65,19 +60,11 @@ class DevelopmentCommentRepository implements CommentRepositoryInterface {
     Comment comment,
     int experienceId,
   }) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 
   @override
   Future<Either<Failure, Unit>> removeComment(int id) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 }

@@ -7,6 +7,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_left_server_error.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_right_future.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_experience.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/simulate_failure_or_unit.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
@@ -19,20 +20,20 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
 
   @override
   Future<Either<Failure, Unit>> finishExperience(int experienceId) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    // get the logged in user with the users dao
+    // get the experience by its id from the experience dao
+    // copy the user with the experience added to its done experiences
+    // update the user with the users dao
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 
   @override
   Future<Either<Failure, Unit>> likeExperience(int experienceId) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    // get the logged in user with the users dao
+    // get the experience by its id from the experience dao
+    // copy the user with the experience added to its liked experiences
+    // update the user with the users dao
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 
   @override
@@ -60,19 +61,20 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
     Difficulty difficulty,
     int experienceId,
   }) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    // get the experience by its id from the experience dao
+    // copy with the new difficulty
+    // update with the experience dao
+    // To actually implement the difficulty being an average of all the ratings, we'd need to keep all the ratings given by everyone in the database, hadn't thought of that
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 
   @override
   Future<Either<Failure, Unit>> rewardUser(int experienceId) {
-    if (_random.nextBool()) {
-      return getRightFuture(unit);
-    } else {
-      return getLeftServerErrorFuture();
-    }
+    // get the logged in user with the users dao
+    // get the experience by its id from the experience dao
+    // calculate the experience that should be awarded
+    // copy the user with the experience points added to its own
+    // update the user with the users dao
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 }
