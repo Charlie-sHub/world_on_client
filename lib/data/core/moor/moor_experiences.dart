@@ -7,8 +7,6 @@ class MoorExperiences extends Table {
 
   TextColumn get description => text().withLength(min: 1, max: EntityDescription.maxLength)();
 
-  // TODO: Implement Set<String> imageURLs
-
   RealColumn get latitude => real()();
 
   RealColumn get longitude => real()();
@@ -18,28 +16,18 @@ class MoorExperiences extends Table {
   DateTimeColumn get creationDate => dateTime()();
 
   DateTimeColumn get modificationDate => dateTime()();
+
+  IntColumn get creatorId => integer()();
 }
 
-class MoorExperienceWithRelations {
-  final MoorExperience experience;
-  final MoorLocation location;
-  final MoorUser creator;
-  final Set<MoorObjective> objectives;
-  final Set<MoorReward> rewards;
-  final Set<MoorTag> tags;
-  final Set<MoorComment> comments;
-  final Set<MoorUser> likedBy;
-  final Set<MoorUser> doneBy;
+class ExperienceImageUrls extends Table {
+  IntColumn get experienceId => integer()();
 
-  MoorExperienceWithRelations(
-    this.experience,
-    this.location,
-    this.creator,
-    this.objectives,
-    this.rewards,
-    this.tags,
-    this.comments,
-    this.likedBy,
-    this.doneBy,
-  );
+  TextColumn get imageUrl => text()();
+}
+
+class ExperienceTags extends Table {
+  IntColumn get experienceId => integer()();
+
+  IntColumn get tagId => integer()();
 }

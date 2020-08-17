@@ -7,7 +7,10 @@ part 'moor_tags_dao.g.dart';
 class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
   MoorTagsDao(Database db) : super(db);
 
-  // TODO: implement get tag by id
+  Stream<MoorTag> selectTagById(int id) {
+    final tagQuery = select(moorTags)..where((tag) => tag.id.equals(id));
+    return tagQuery.watchSingle();
+  }
 
   Stream<List<MoorTag>> watchUserInterests(MoorUser user) {
     // TODO: Implement this method

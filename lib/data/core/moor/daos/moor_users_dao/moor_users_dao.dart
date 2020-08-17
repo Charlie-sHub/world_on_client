@@ -9,7 +9,27 @@ class MoorUsersDao extends DatabaseAccessor<Database> with _$MoorUsersDaoMixin {
 
   Future createUser(Insertable<MoorUser> user) => into(moorUsers).insert(user);
 
-  // TODO: implement getLoggedInUser
+  Stream<MoorUser> selectLoggedInUser() {
+    final userQuery = select(moorUsers)..where((user) => user.isLoggedIn);
+    return userQuery.watchSingle();
+  }
+
+  Stream<MoorUser> getUserByUsernameAndPassword({
+    @required String username,
+    @required String password,
+  }) {
+    final userQuery = select(moorUsers)
+      ..where(
+        (user) =>
+            user.username.equals(
+              username,
+            ) &
+            user.password.equals(
+              password,
+            ),
+      );
+    return userQuery.watchSingle();
+  }
 
   Future updateUser(Insertable<MoorUser> user) => update(moorUsers).replace(user);
 

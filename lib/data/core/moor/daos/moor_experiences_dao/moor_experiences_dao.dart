@@ -9,7 +9,10 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
 
   Future createExperience(Insertable<MoorExperience> experience) => into(moorExperiences).insert(experience);
 
-  // TODO: Select experience by id
+  Stream<MoorExperience> selectExperienceById(int id) {
+    final experienceQuery = select(moorExperiences)..where((experience) => experience.id.equals(id));
+    return experienceQuery.watchSingle();
+  }
 
   Future updateExperience(Insertable<MoorExperience> experience) => update(moorExperiences).replace(experience);
 
@@ -18,17 +21,17 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
     return null;
   }
 
-  Stream<List<MoorExperience>> watchExperiencesDone(MoorUser user) {
+  Stream<List<MoorExperience>> watchExperiencesDone(int userId) {
     // TODO: Implement this method
     return null;
   }
 
-  Stream<List<MoorExperience>> watchExperiencesLiked(MoorUser user) {
+  Stream<List<MoorExperience>> watchExperiencesLiked(int userId) {
     // TODO: Implement this method
     return null;
   }
 
-  Stream<List<MoorExperience>> watchExperiencesCreated(MoorUser creator) {
+  Stream<List<MoorExperience>> watchExperiencesCreated(int userId) {
     // TODO: Implement this method
     return null;
   }

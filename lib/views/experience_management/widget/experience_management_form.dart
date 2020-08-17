@@ -37,18 +37,18 @@ class ExperienceManagementForm extends StatelessWidget {
                 ).show(context),
                 serverError: (failure) => FlushbarHelper.createError(
                   duration: const Duration(seconds: 2),
-                            message: failure.errorString,
-                          ).show(context),
-                        orElse: () => null,
-                      ),
-                    orElse: () => null,
-                  ),
-                  (_) => FlushbarHelper.createSuccess(
-                  duration: const Duration(seconds: 2),
-                  message: "The experience was created",
+                  message: failure.errorString,
                 ).show(context),
+                orElse: () => null,
               ),
+              orElse: () => null,
+            ),
+            (_) => FlushbarHelper.createSuccess(
+              duration: const Duration(seconds: 2),
+              message: "The experience was created",
+            ).show(context),
           ),
+        ),
         builder: (context, state) => SingleChildScrollView(
           child: Form(
             autovalidate: state.showErrorMessages,
@@ -87,9 +87,10 @@ class ExperienceManagementForm extends StatelessWidget {
                   const ObjectiveCreationCard(),
                   const RewardCreationCard(),
                   TagAdditionCard(
-                    tagChangeFunction: (KtSet<Tag> tags) => context.bloc<ExperienceManagementFormBloc>().add(
-                      ExperienceManagementFormEvent.tagsChanged(tags),
-                    ),
+                    tagChangeFunction: (KtSet<Tag> tags) =>
+                      context.bloc<ExperienceManagementFormBloc>().add(
+                        ExperienceManagementFormEvent.tagsChanged(tags),
+                      ),
                   ),
                   const FinishButton(),
                 ],

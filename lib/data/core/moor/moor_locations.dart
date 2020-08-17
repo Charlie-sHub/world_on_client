@@ -10,12 +10,8 @@ class MoorLocations extends Table {
   TextColumn get postalCode => text()();
 }
 
-class MoorLocationWithRelations {
-  final MoorLocation location;
-  final Set<MoorExperience> experiences;
+class LocationExperiences extends Table {
+  IntColumn get locationId => integer()();
 
-  MoorLocationWithRelations(
-    this.location,
-    this.experiences,
-  );
+  IntColumn get experienceId => integer()();
 }

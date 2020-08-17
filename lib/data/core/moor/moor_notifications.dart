@@ -9,17 +9,9 @@ class MoorNotifications extends Table {
 
   DateTimeColumn get creationDate => dateTime()();
 
-// TODO: Implement NotificationType type
-}
+  IntColumn get senderId => integer()();
 
-class MoorNotificationWithRelations {
-  final MoorNotification notification;
-  final MoorUser sender;
-  final MoorUser receiver;
+  IntColumn get receiverId => integer()();
 
-  MoorNotificationWithRelations(
-    this.notification,
-    this.sender,
-    this.receiver,
-  );
+  IntColumn get notificationType => intEnum<NotificationType>()();
 }

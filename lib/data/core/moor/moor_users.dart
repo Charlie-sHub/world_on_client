@@ -36,26 +36,44 @@ class MoorUsers extends Table {
   BoolColumn get isLoggedIn => boolean()();
 }
 
-class MoorUserWithRelations {
-  final MoorUser user;
-  final MoorOptions options;
-  final Set<MoorUser> blockedUsers;
-  final Set<MoorUser> followedUsers;
-  final Set<MoorTag> interests;
-  final Set<MoorAchievement> achievements;
-  final Set<MoorExperience> experiencesDone;
-  final Set<MoorExperience> experiencesLiked;
-  final Set<MoorExperience> experiencesToDo;
+class BlockedUsers extends Table {
+  IntColumn get userId => integer()();
 
-  MoorUserWithRelations(
-    this.user,
-    this.options,
-    this.blockedUsers,
-    this.followedUsers,
-    this.interests,
-    this.achievements,
-    this.experiencesDone,
-    this.experiencesLiked,
-    this.experiencesToDo,
-  );
+  IntColumn get blockedUserId => integer()();
+}
+
+class FollowedUsers extends Table {
+  IntColumn get userId => integer()();
+
+  IntColumn get followedUserId => integer()();
+}
+
+class UserAchievements extends Table {
+  IntColumn get userId => integer()();
+
+  IntColumn get achievementId => integer()();
+}
+
+class UserInterests extends Table {
+  IntColumn get userId => integer()();
+
+  IntColumn get tagId => integer()();
+}
+
+class UserExperiencesDone extends Table {
+  IntColumn get userId => integer()();
+
+  IntColumn get experienceId => integer()();
+}
+
+class UserExperiencesLiked extends Table {
+  IntColumn get userId => integer()();
+
+  IntColumn get experienceId => integer()();
+}
+
+class UserExperiencesToDo extends Table {
+  IntColumn get userId => integer()();
+
+  IntColumn get experienceId => integer()();
 }

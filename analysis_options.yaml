@@ -5,6 +5,8 @@ linter:
     - parameter_assignments
 
 analyzer:
+  exclude:
+    - "**/*.g.dart"
   errors:
     missing_return: error
     missing_required_param: error

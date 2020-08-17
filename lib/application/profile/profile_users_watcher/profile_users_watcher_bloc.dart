@@ -13,7 +13,8 @@ import 'package:worldon/domain/profile/use_case/watch_following_users.dart' as l
 import 'package:worldon/injection.dart';
 
 part 'profile_users_watcher_bloc.freezed.dart';
-part 'profile_users_watcher_event.dart';er_event.dart';
+
+part 'profile_users_watcher_event.dart';
 
 part 'profile_users_watcher_state.dart';
 

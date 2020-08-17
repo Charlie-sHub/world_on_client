@@ -8,13 +8,16 @@ import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/creat
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_server_error_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_comment.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/simulate_failure_or_unit.dart';
+import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/comments/repository/comment_repository_interface.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
+import 'package:worldon/injection.dart';
 
 @LazySingleton(as: CommentRepositoryInterface, env: [Environment.dev])
 class DevelopmentCommentRepository implements CommentRepositoryInterface {
   final _random = Random();
+  final _database = getIt<Database>();
 
   @override
   Future<Either<Failure, Unit>> editComment(Comment comment) {

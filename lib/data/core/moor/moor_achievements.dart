@@ -18,16 +18,12 @@ class MoorAchievements extends Table {
   DateTimeColumn get creationDate => dateTime()();
 
   DateTimeColumn get modificationDate => dateTime()();
+
+  IntColumn get creatorId => integer()();
 }
 
-class MoorAchievementsWithRelations {
-  final MoorAchievement achievement;
-  final MoorUser creator;
-  final Set<MoorTag> tags;
+class AchievementTags extends Table {
+  IntColumn get achievementId => integer()();
 
-  MoorAchievementsWithRelations(
-    this.achievement,
-    this.creator,
-    this.tags,
-  );
+  IntColumn get tagId => integer()();
 }

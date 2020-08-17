@@ -5,12 +5,15 @@ import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/simulate_failure_or_unit.dart';
+import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/authentication/repository/authentication_repository_interface.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/injection.dart';
 
 @LazySingleton(as: AuthenticationRepositoryInterface, env: [Environment.dev])
 class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInterface {
   final _random = Random();
+  final _database = getIt<Database>();
 
   @override
   Future<Option<User>> getLoggedInUser() {

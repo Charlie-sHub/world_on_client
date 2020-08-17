@@ -15,7 +15,8 @@ import 'package:worldon/domain/profile/use_case/watch_experiences_liked.dart' as
 import 'package:worldon/injection.dart';
 
 part 'profile_experiences_watcher_bloc.freezed.dart';
-part 'profile_experiences_watcher_event.dart';cher_event.dart';
+
+part 'profile_experiences_watcher_event.dart';
 
 part 'profile_experiences_watcher_state.dart';
 

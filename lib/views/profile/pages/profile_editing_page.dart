@@ -72,18 +72,16 @@ class ProfileEditingPage extends StatelessWidget {
     return FlushbarHelper.createError(
       duration: const Duration(seconds: 2),
       message: failure.maybeMap(
-        coreData: (failure) =>
-          failure.coreDataFailure.maybeMap(
-            serverError: (failure) => failure.errorString,
-            emailAlreadyInUse: (_) => "The email is already in use",
-            usernameAlreadyInUse: (_) => "The username is already in use",
-            orElse: () => StringConst.unknownError,
-          ),
-        coreDomain: (failure) =>
-          failure.coreDomainFailure.maybeMap(
-            unAuthorizedError: (_) => StringConst.unauthorizedError,
-            orElse: () => StringConst.unknownError,
-          ),
+        coreData: (failure) => failure.coreDataFailure.maybeMap(
+          serverError: (failure) => failure.errorString,
+          emailAlreadyInUse: (_) => "The email is already in use",
+          usernameAlreadyInUse: (_) => "The username is already in use",
+          orElse: () => StringConst.unknownError,
+        ),
+        coreDomain: (failure) => failure.coreDomainFailure.maybeMap(
+          unAuthorizedError: (_) => StringConst.unauthorizedError,
+          orElse: () => StringConst.unknownError,
+        ),
         orElse: () => StringConst.unknownError,
       ),
     ).show(context);

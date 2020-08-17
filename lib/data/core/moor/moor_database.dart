@@ -1,4 +1,6 @@
-import 'package:moor/moor.dart';
+import 'package:injectable/injectable.dart';
+import 'package:moor_flutter/moor_flutter.dart';
+import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
@@ -21,11 +23,9 @@ part 'moor_objectives.dart';
 part 'moor_options.dart';
 part 'moor_rewards.dart';
 part 'moor_tags.dart';
-
-part 'moor_tags.dart';
-
 part 'moor_users.dart';
 
+@LazySingleton(env: [Environment.dev])
 @UseMoor(
   tables: [
     MoorAchievements,
@@ -38,6 +38,17 @@ part 'moor_users.dart';
     MoorRewards,
     MoorTags,
     MoorUsers,
+    BlockedUsers,
+    FollowedUsers,
+    UserAchievements,
+    UserInterests,
+    UserExperiencesDone,
+    UserExperiencesLiked,
+    UserExperiencesToDo,
+    LocationExperiences,
+    ExperienceImageUrls,
+    ExperienceTags,
+    AchievementTags,
   ],
   daos: [
     MoorAchievementsDao,
@@ -49,7 +60,7 @@ part 'moor_users.dart';
   ],
 )
 class Database extends _$Database {
-  Database(QueryExecutor e) : super(e);
+  Database() : super(FlutterQueryExecutor.inDatabaseFolder(path: 'db.sqlite', logStatements: true));
 
   @override
   int get schemaVersion => 1;

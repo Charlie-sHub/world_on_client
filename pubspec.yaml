@@ -54,7 +54,7 @@ dependencies:
   # For Kotlin like collections
   kt_dart: ^0.7.0+1
   # For easier bloc testing
-  bloc_test: ^7.0.0
+  bloc_test: ^7.0.1
   # For ease of serialization
   json_annotation: ^3.0.1
   # For ease of routing
@@ -82,6 +82,7 @@ dependencies:
   # For getting multiple images from the device
   multi_image_picker: ^4.7.10
   # Local database, mostly for back-end simulation
+  moor_flutter: ^3.1.0
   moor: ^3.3.1
   cached_network_image: ^2.2.0+1
 

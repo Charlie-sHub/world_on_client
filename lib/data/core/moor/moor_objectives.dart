@@ -3,6 +3,8 @@ part of 'moor_database.dart';
 class MoorObjectives extends Table {
   IntColumn get id => integer().autoIncrement()();
 
+  IntColumn get experienceId => integer()();
+
   TextColumn get description => text().withLength(min: 1, max: EntityDescription.maxLength)();
 
   RealColumn get latitude => real()();

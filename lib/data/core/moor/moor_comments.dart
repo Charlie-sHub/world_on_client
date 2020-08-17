@@ -8,14 +8,8 @@ class MoorComments extends Table {
   DateTimeColumn get creationDate => dateTime()();
 
   DateTimeColumn get modificationDate => dateTime()();
-}
 
-class MoorCommentWithRelations {
-  final MoorComment comment;
-  final MoorUser poster;
+  IntColumn get posterId => integer()();
 
-  MoorCommentWithRelations(
-    this.poster,
-    this.comment,
-  );
+  IntColumn get experienceId => integer()();
 }

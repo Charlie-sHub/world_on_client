@@ -55,21 +55,25 @@ abstract class $ProfileDomainFailureCopyWith<T, $Res> {
   factory $ProfileDomainFailureCopyWith(ProfileDomainFailure<T> value, $Res Function(ProfileDomainFailure<T>) then) = _$ProfileDomainFailureCopyWithImpl<T, $Res>;
 }
 
-class _$ProfileDomainFailureCopyWithImpl<T, $Res> implements $ProfileDomainFailureCopyWith<T, $Res> {
+class _$ProfileDomainFailureCopyWithImpl<T, $Res>
+  implements $ProfileDomainFailureCopyWith<T, $Res> {
   _$ProfileDomainFailureCopyWithImpl(this._value, this._then);
-
+  
   final ProfileDomainFailure<T> _value;
-
+  
   // ignore: unused_field
   final $Res Function(ProfileDomainFailure<T>) _then;
 }
 
 abstract class $FollowItselfCopyWith<T, $Res> {
-  factory $FollowItselfCopyWith(FollowItself<T> value, $Res Function(FollowItself<T>) then) = _$FollowItselfCopyWithImpl<T, $Res>;
+  factory $FollowItselfCopyWith(FollowItself<T> value, $Res Function(FollowItself<T>) then) =
+  _$FollowItselfCopyWithImpl<T, $Res>;
 }
 
-class _$FollowItselfCopyWithImpl<T, $Res> extends _$ProfileDomainFailureCopyWithImpl<T, $Res> implements $FollowItselfCopyWith<T, $Res> {
-  _$FollowItselfCopyWithImpl(FollowItself<T> _value, $Res Function(FollowItself<T>) _then) : super(_value, (v) => _then(v as FollowItself<T>));
+class _$FollowItselfCopyWithImpl<T, $Res> extends _$ProfileDomainFailureCopyWithImpl<T, $Res>
+  implements $FollowItselfCopyWith<T, $Res> {
+  _$FollowItselfCopyWithImpl(FollowItself<T> _value, $Res Function(FollowItself<T>) _then)
+    : super(_value, (v) => _then(v as FollowItself<T>));
   
   @override
   FollowItself<T> get _value => super._value as FollowItself<T>;
@@ -147,11 +151,14 @@ abstract class FollowItself<T> implements ProfileDomainFailure<T> {
 }
 
 abstract class $BlockItselfCopyWith<T, $Res> {
-  factory $BlockItselfCopyWith(BlockItself<T> value, $Res Function(BlockItself<T>) then) = _$BlockItselfCopyWithImpl<T, $Res>;
+  factory $BlockItselfCopyWith(BlockItself<T> value, $Res Function(BlockItself<T>) then) =
+  _$BlockItselfCopyWithImpl<T, $Res>;
 }
 
-class _$BlockItselfCopyWithImpl<T, $Res> extends _$ProfileDomainFailureCopyWithImpl<T, $Res> implements $BlockItselfCopyWith<T, $Res> {
-  _$BlockItselfCopyWithImpl(BlockItself<T> _value, $Res Function(BlockItself<T>) _then) : super(_value, (v) => _then(v as BlockItself<T>));
+class _$BlockItselfCopyWithImpl<T, $Res> extends _$ProfileDomainFailureCopyWithImpl<T, $Res>
+  implements $BlockItselfCopyWith<T, $Res> {
+  _$BlockItselfCopyWithImpl(BlockItself<T> _value, $Res Function(BlockItself<T>) _then)
+    : super(_value, (v) => _then(v as BlockItself<T>));
   
   @override
   BlockItself<T> get _value => super._value as BlockItself<T>;

@@ -41,18 +41,18 @@ class SearchBody extends StatelessWidget {
                 const SizedBox(height: 5),
                 const SearchTabBar(),
                 Expanded(
-                    child: TabBarView(
-                      children: [
-                        SearchExperiencesTabView(searchTerm: state.searchTerm),
-                        SearchUsersTabView(searchTerm: state.searchTerm),
-                        SearchTagsTabView(searchTerm: state.searchTerm),
-                      ],
-                    ),
+                  child: TabBarView(
+                    children: [
+                      SearchExperiencesTabView(searchTerm: state.searchTerm),
+                      SearchUsersTabView(searchTerm: state.searchTerm),
+                      SearchTagsTabView(searchTerm: state.searchTerm),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
+        ),
       ),
     );
   }

@@ -8,4 +8,6 @@ part of 'moor_achievements_dao.dart';
 
 mixin _$MoorAchievementsDaoMixin on DatabaseAccessor<Database> {
   $MoorAchievementsTable get moorAchievements => attachedDatabase.moorAchievements;
+
+  $UserAchievementsTable get userAchievements => attachedDatabase.userAchievements;
 }

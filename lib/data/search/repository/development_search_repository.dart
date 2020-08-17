@@ -9,6 +9,7 @@ import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_s
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_experience.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_tag.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
+import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
@@ -18,10 +19,12 @@ import 'package:worldon/domain/core/validation/objects/search_term.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 import 'package:worldon/domain/core/validation/objects/user_level.dart';
 import 'package:worldon/domain/search/repository/search_repository_interface.dart';
+import 'package:worldon/injectione/moor/moor_database.dart';
 
 @LazySingleton(as: SearchRepositoryInterface, env: [Environment.dev])
 class DevelopmentSearchRepository implements SearchRepositoryInterface {
   final _random = Random();
+  final _database = getIt<Database>();
 
   @override
   Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByDifficulty(Difficulty difficulty) {

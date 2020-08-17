@@ -14,7 +14,8 @@ import 'package:worldon/domain/search/use_case/watch_search_users_by_username.da
 import 'package:worldon/injection.dart';
 
 part 'search_users_by_name_watcher_bloc.freezed.dart';
-part 'search_users_by_name_watcher_event.dart';her_event.dart';
+
+part 'search_users_by_name_watcher_event.dart';
 
 part 'search_users_by_name_watcher_state.dart';
 

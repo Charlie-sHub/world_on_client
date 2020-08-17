@@ -13,6 +13,7 @@ import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_v
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_tag.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/simulate_failure_or_unit.dart';
+import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
@@ -20,10 +21,12 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/user_level.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
+import 'package:worldon/injection.dart';
 
 @LazySingleton(as: ProfileRepositoryInterface, env: [Environment.dev])
 class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   final _random = Random();
+  final _database = getIt<Database>();
 
   @override
   Future<Either<Failure, Unit>> blockUser(int blockedId) {
