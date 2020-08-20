@@ -27,9 +27,9 @@ void main() {
     "Should return the currentLocation",
     () async {
       // Arrange
-      when(mockGeoLocationRepository.getCurrentLocation()).thenReturn(right(currentLocation));
+      when(mockGeoLocationRepository.getCurrentLocation()).thenAnswer((_) async => right(currentLocation));
       // Act
-      final result = useCase(getIt<NoParams>());
+      final result = await useCase(getIt<NoParams>());
       // Assert
       expect(result, right(currentLocation));
     },
@@ -39,9 +39,9 @@ void main() {
     () async {
       // Arrange
       const failure = Failure.coreData(CoreDataFailure.geoLocationError(errorString: TestDescription.errorString));
-      when(mockGeoLocationRepository.getCurrentLocation()).thenReturn(left(failure));
+      when(mockGeoLocationRepository.getCurrentLocation()).thenAnswer((_) async => left(failure));
       // Act
-      final result = useCase(getIt<NoParams>());
+      final result = await useCase(getIt<NoParams>());
       // Assert
       expect(result, left(failure));
     },

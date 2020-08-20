@@ -13,6 +13,8 @@ part 'moor_tags_dao.g.dart';
 class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
   MoorTagsDao(Database db) : super(db);
 
+  Future deleteUserInterests(int userId) => (delete(userInterests)..where((interest) => interest.userId.equals(userId))).go();
+
   Future<MoorTag> selectTagById(int id) async {
     final _contentQuery = select(moorTags)
       ..where((tag) => tag.id.equals(id))
@@ -20,6 +22,10 @@ class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
       ..get();
     return _contentQuery.getSingle();
   }
+
+  Future insertExperienceTag(Insertable<ExperienceTag> experienceTag) => into(experienceTags).insert(experienceTag);
+
+  Future insertUserInterest(Insertable<UserInterest> userInterest) => into(userInterests).insert(userInterest);
 
   Stream<List<MoorTag>> watchSearchTagsByName(String name) {
     final _contentQuery = select(moorTags)..where((moorTags) => moorTags.name.equals(name));

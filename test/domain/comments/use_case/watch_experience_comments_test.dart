@@ -24,16 +24,16 @@ void main() {
     },
   );
   final params = Params(experienceId: 1);
-  final commentSet = KtSet.of(Comment.empty());
+  final commentList = KtList.of(Comment.empty());
   test(
     "Should return a Set of Comments",
     () async {
       // Arrange
-      when(mockCommentRepository.watchExperienceComments(any)).thenAnswer((_) => createStream(right(commentSet)));
+      when(mockCommentRepository.watchExperienceComments(any)).thenAnswer((_) => createStream(right(commentList)));
       // Act
       final result = await _act(useCase, params);
       // Assert
-      expect(result, right(commentSet));
+      expect(result, right(commentList));
       _verifyInteractions(mockCommentRepository);
     },
   );
@@ -83,9 +83,9 @@ void main() {
   );
 }
 
-Future<Either<Failure, KtSet<Comment>>> _act(WatchExperienceComments useCase, Params params) async {
+Future<Either<Failure, KtList<Comment>>> _act(WatchExperienceComments useCase, Params params) async {
   final resultStream = useCase(params);
-  Either<Failure, KtSet<Comment>> result;
+  Either<Failure, KtList<Comment>> result;
   await for (final either in resultStream) {
     result = either;
   }

@@ -41,12 +41,6 @@ class ProductionAchievementRepository implements AchievementRepositoryInterface 
   }
 
   @override
-  Stream<Either<Failure, KtSet<Achievement>>> watchUserAchievements(int userId) {
-    // TODO: implement getUserAchievements
-    throw UnimplementedError();
-  }
-
-  @override
   Future<Either<Failure, Unit>> removeAchievement(int ac) {
     // TODO: implement removeAchievement
     throw UnimplementedError();

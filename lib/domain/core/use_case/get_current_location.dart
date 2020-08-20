@@ -6,13 +6,13 @@ import 'package:worldon/domain/core/repository/geo_location_repository_interface
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
 @LazySingleton(env: [Environment.dev, Environment.prod])
-class GetCurrentLocation implements UseCase<Coordinates, NoParams> {
+class GetCurrentLocation implements AsyncUseCase<Coordinates, NoParams> {
   final GeoLocationRepositoryInterface _repository;
 
   GetCurrentLocation(this._repository);
 
   @override
-  Either<Failure, Coordinates> call(NoParams params) {
+  Future<Either<Failure, Coordinates>> call(NoParams params) async {
     return _repository.getCurrentLocation();
   }
 }

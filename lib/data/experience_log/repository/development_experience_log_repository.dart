@@ -3,11 +3,12 @@ import 'dart:math';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
+import 'package:logger/logger.dart';
 import 'package:worldon/core/error/failure.dart';
+import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/create_stream_of_either.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_server_error_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_experience.dart';
-import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/simulate_failure_or_unit.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
@@ -19,22 +20,52 @@ class DevelopmentExperienceLogRepository implements ExperienceLogRepositoryInter
   final _random = Random();
   final _database = getIt<Database>();
 
+  final _logger = Logger();
+
   @override
-  Future<Either<Failure, Unit>> addExperienceToLog(int experienceId) {
-    // get the logged in user from the users dao
-    // get the experience by its id with the experience dao
-    // copy the logged in user with the experience added to its log
-    // update user
-    return simulateFailureOrUnit(auxBool: _random.nextBool());
+  Future<Either<Failure, Unit>> addExperienceToLog(int experienceId) async {
+    try {
+      final _moorUser = await _database.moorUsersDao.getLoggedInUser();
+      final _userToDoExperience = UserToDoExperience(
+        userId: _moorUser.id,
+        experienceId: experienceId,
+      );
+      await _database.moorExperiencesDao.insertExperienceTodo(_userToDoExperience);
+      return right(unit);
+    } on Exception catch (exception) {
+      final _errorMessage = "Development repository error: $exception";
+      _logger.e(_errorMessage);
+      return left(
+        Failure.coreData(
+          CoreDataFailure.serverError(
+            errorString: _errorMessage,
+          ),
+        ),
+      );
+    }
   }
 
   @override
-  Future<Either<Failure, Unit>> dismissExperienceFromLog(int experienceId) {
-    // get the logged in user from the users dao
-    // get the experience by its id with the experience dao
-    // copy the logged in user with the experience removed from its log
-    // update user
-    return simulateFailureOrUnit(auxBool: _random.nextBool());
+  Future<Either<Failure, Unit>> dismissExperienceFromLog(int experienceId) async {
+    try {
+      final _moorUser = await _database.moorUsersDao.getLoggedInUser();
+      final _userToDoExperience = UserToDoExperience(
+        userId: _moorUser.id,
+        experienceId: experienceId,
+      );
+      await _database.moorExperiencesDao.removeExperienceTodo(_userToDoExperience);
+      return right(unit);
+    } on Exception catch (exception) {
+      final _errorMessage = "Development repository error: $exception";
+      _logger.e(_errorMessage);
+      return left(
+        Failure.coreData(
+          CoreDataFailure.serverError(
+            errorString: _errorMessage,
+          ),
+        ),
+      );
+    }
   }
 
   @override

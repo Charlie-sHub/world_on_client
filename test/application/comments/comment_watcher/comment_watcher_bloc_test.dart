@@ -22,7 +22,7 @@ void main() {
       getExperienceComments = getIt<WatchExperienceComments>();
     },
   );
-  final commentSet = KtSet.of(Comment.empty());
+  final commentList = KtList.of(Comment.empty());
   const experienceId = 1;
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
@@ -33,7 +33,7 @@ void main() {
   blocTest(
     TestDescription.shouldEmitSuccess,
     build: () {
-      when(getExperienceComments.call(any)).thenAnswer((realInvocation) => createStream(right(commentSet)));
+      when(getExperienceComments.call(any)).thenAnswer((realInvocation) => createStream(right(commentList)));
       return getIt<CommentWatcherBloc>();
     },
     act: (bloc) async => bloc.add(const CommentWatcherEvent.watchExperienceCommentsStarted(experienceId)),
@@ -43,7 +43,7 @@ void main() {
     },
     expect: [
       const CommentWatcherState.loadInProgress(),
-      CommentWatcherState.loadSuccess(commentSet),
+      CommentWatcherState.loadSuccess(commentList),
     ],
   );
   blocTest(

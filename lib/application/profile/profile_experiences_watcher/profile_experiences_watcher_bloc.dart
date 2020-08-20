@@ -69,10 +69,9 @@ class ProfileExperiencesWatcherBloc extends Bloc<ProfileExperiencesWatcherEvent,
         userId: event.user.id,
       ),
     ).listen(
-        (failureOrExperiences) =>
-        add(
-          ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences),
-        ),
+      (failureOrExperiences) => add(
+        ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences),
+      ),
     );
   }
 

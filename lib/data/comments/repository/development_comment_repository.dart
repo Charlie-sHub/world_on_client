@@ -3,11 +3,16 @@ import 'dart:math';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
+import 'package:logger/logger.dart';
+import 'package:rxdart/rxdart.dart';
 import 'package:worldon/core/error/failure.dart';
+import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/create_stream_of_either.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_server_error_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_comment.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/simulate_failure_or_unit.dart';
+import 'package:worldon/data/core/moor/converters/domain_comment_to_moor_comment.dart';
+import 'package:worldon/data/core/moor/converters/moor_comment_to_domain_comment.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/comments/repository/comment_repository_interface.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
@@ -18,6 +23,7 @@ import 'package:worldon/injection.dart';
 class DevelopmentCommentRepository implements CommentRepositoryInterface {
   final _random = Random();
   final _database = getIt<Database>();
+  final _logger = Logger();
 
   @override
   Future<Either<Failure, Unit>> editComment(Comment comment) {
@@ -25,20 +31,34 @@ class DevelopmentCommentRepository implements CommentRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtSet<Comment>>> watchExperienceComments(int experienceId) {
-    Either<Failure, KtSet<Comment>> _either;
-    if (_random.nextBool()) {
-      _either = right(KtSet.of(
-        getValidComment(),
-        getValidComment().copyWith(
-          id: 2,
-          content: CommentContent("Phasellus elementum mollis ipsum non auctor."),
-        ),
-      ));
-    } else {
-      _either = left(getServerErrorFailure());
-    }
-    return createStreamOfEither(_either);
+  Stream<Either<Failure, KtList<Comment>>> watchExperienceComments(int experienceId) async* {
+    yield* _database.moorCommentsDao.watchExperienceComments(experienceId).asyncMap(
+      (_moorCommentList) {
+        return right<Failure, KtList<Comment>>(
+          _moorCommentList
+              .map(
+                (_moorCommentWithMoorUser) => moorCommentToDomainComment(_moorCommentWithMoorUser),
+              )
+              .toList()
+              .toImmutableList()
+              .sortedBy(
+                (comment) => comment.creationDate.getOrCrash(),
+              ),
+        );
+      },
+    ).onErrorReturnWith(
+      (error) {
+        final _errorMessage = "Development repository error: $error";
+        _logger.e(_errorMessage);
+        return left(
+          Failure.coreData(
+            CoreDataFailure.serverError(
+              errorString: _errorMessage,
+            ),
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -57,13 +77,26 @@ class DevelopmentCommentRepository implements CommentRepositoryInterface {
     }
     return createStreamOfEither(_either);
   }
-
+  
   @override
   Future<Either<Failure, Unit>> postComment({
     Comment comment,
     int experienceId,
-  }) {
-    return simulateFailureOrUnit(auxBool: _random.nextBool());
+  }) async {
+    try {
+      final _moorComment = domainCommentToMoorComment(comment, experienceId);
+      await _database.moorCommentsDao.insertComment(_moorComment);
+      return right(unit);
+    } on Exception catch (exception) {
+      _logger.e("Moor Database error: $exception");
+      return left(
+        Failure.coreData(
+          CoreDataFailure.serverError(
+            errorString: "Development repository error $exception",
+          ),
+        ),
+      );
+    }
   }
 
   @override

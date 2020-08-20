@@ -7,9 +7,9 @@ import 'package:worldon/domain/core/repository/geo_location_repository_interface
 @LazySingleton(as: GeoLocationRepositoryInterface, env: [Environment.prod])
 class ProductionGeoLocationRepository implements GeoLocationRepositoryInterface {
   @override
-  Either<Failure, Coordinates> getCurrentLocation() {
+  Future<Either<Failure, Coordinates>> getCurrentLocation() {
     // TODO: implement getCurrentLocation
-    // Use geolocator
+    // Check the dev repository, it should be pretty much exactly the same code
     throw UnimplementedError();
   }
 }

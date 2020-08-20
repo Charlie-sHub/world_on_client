@@ -134,13 +134,11 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
 class ProfileEditingPageArguments {
   final Key key;
   final User user;
-  
   ProfileEditingPageArguments({this.key, @required this.user});
 }
 
 /// MoorDbViewer arguments holder class
 class MoorDbViewerArguments {
   final GeneratedDatabase db;
-  
   MoorDbViewerArguments({@required this.db});
 }

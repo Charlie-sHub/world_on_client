@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:worldon/application/comments/comment_watcher/comment_watcher_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widget/cards/error_card.dart';
+import 'package:worldon/views/core/widget/critical_error_display.dart';
+import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
 import 'package:worldon/views/experience_navigation/widget/comment_card.dart';
 
 class ExperienceCommentsListView extends StatelessWidget {
@@ -15,27 +20,49 @@ class ExperienceCommentsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.4,
+      height: MediaQuery
+        .of(context)
+        .size
+        .height * 0.4,
       color: WorldOnColors.background,
-      child: ListView.builder(
-        padding: const EdgeInsets.all(5),
-        itemCount: experience.comments.length,
-        shrinkWrap: true,
-        physics: const ClampingScrollPhysics(),
-        itemBuilder: (context, index) {
-          final _comment = experience.comments.elementAt(index);
-          if (_comment.isValid) {
-            return CommentCard(comment: _comment);
-          } else {
-            return ErrorCard(
-              entityType: "Comment",
-              valueFailureString: _comment.failureOption.fold(
-                () => "",
-                (failure) => failure.toString(),
-              ),
-            );
-          }
-        },
+      child: BlocProvider(
+        create: (context) => getIt<CommentWatcherBloc>(),
+        child: BlocBuilder<CommentWatcherBloc, CommentWatcherState>(
+          builder: (context, state) =>
+            state.map(
+              initial: (_) => Container(),
+              loadInProgress: (_) => WorldOnProgressIndicator(),
+              loadSuccess: (state) =>
+                ListView.builder(
+                  padding: const EdgeInsets.all(5),
+                  itemCount: state.comments.size,
+                  shrinkWrap: true,
+                  physics: const ClampingScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    final _comment = state.comments[index];
+                    if (_comment.isValid) {
+                      return CommentCard(comment: _comment);
+                    } else {
+                      return ErrorCard(
+                        entityType: "Comment",
+                        valueFailureString: _comment.failureOption.fold(
+                            () => "",
+                            (failure) => failure.toString(),
+                        ),
+                      );
+                    }
+                  },
+                ),
+              loadFailure: (state) =>
+                InkWell(
+                  onTap: () async =>
+                    context.bloc<CommentWatcherBloc>().add(
+                      CommentWatcherEvent.watchExperienceCommentsStarted(experience.id),
+                    ),
+                  child: CriticalErrorDisplay(failure: state.failure),
+                ),
+            ),
+        ),
       ),
     );
   }

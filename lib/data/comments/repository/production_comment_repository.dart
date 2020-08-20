@@ -14,7 +14,7 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtSet<Comment>>> watchExperienceComments(int experienceId) {
+  Stream<Either<Failure, KtList<Comment>>> watchExperienceComments(int experienceId) {
     // TODO: implement getExperienceComments
     throw UnimplementedError();
   }

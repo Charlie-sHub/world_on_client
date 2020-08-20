@@ -59,10 +59,10 @@ Map<String, dynamic> _$_$_UserDtoToJson(_$_UserDto instance) =>
     'blockedUsers': instance.blockedUsers?.toList(),
     'followedUsers': instance.followedUsers?.toList(),
     'devices': instance.devices?.toList(),
-      'systems': instance.systems?.toList(),
-      'interests': instance.interests?.toList(),
-      'achievements': instance.achievements?.toList(),
-      'experiencesDone': instance.experiencesDone?.toList(),
-      'experiencesLiked': instance.experiencesLiked?.toList(),
-      'experiencesToDo': instance.experiencesToDo?.toList(),
-    };
+    'systems': instance.systems?.toList(),
+    'interests': instance.interests?.toList(),
+    'achievements': instance.achievements?.toList(),
+    'experiencesDone': instance.experiencesDone?.toList(),
+    'experiencesLiked': instance.experiencesLiked?.toList(),
+    'experiencesToDo': instance.experiencesToDo?.toList(),
+  };

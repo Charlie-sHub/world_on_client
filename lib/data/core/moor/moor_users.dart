@@ -44,35 +44,35 @@ class UserBlockRelations extends Table {
 
 class UserFollowRelations extends Table {
   IntColumn get followedId => integer().customConstraint("REFERENCES moor_users(id)")();
-  
+
   IntColumn get followingId => integer().customConstraint("REFERENCES moor_users(id)")();
 }
 
 class UserAchievements extends Table {
   IntColumn get userId => integer().customConstraint("REFERENCES moor_users(id)")();
-  
+
   IntColumn get achievementId => integer().customConstraint("REFERENCES moor_achievements(id)")();
 }
 
 class UserInterests extends Table {
   IntColumn get userId => integer().customConstraint("REFERENCES moor_users(id)")();
-  
+
   IntColumn get tagId => integer().customConstraint("REFERENCES moor_tags(id)")();
 }
 
-class UserExperiencesDone extends Table {
+class UserDoneExperiences extends Table {
+  IntColumn get userId => integer().customConstraint("REFERENCES moor_users(id)")();
+
+  IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
+}
+
+class UserLikedExperiences extends Table {
   IntColumn get userId => integer().customConstraint("REFERENCES moor_users(id)")();
   
   IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
 }
 
-class UserExperiencesLiked extends Table {
-  IntColumn get userId => integer().customConstraint("REFERENCES moor_users(id)")();
-  
-  IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
-}
-
-class UserExperiencesToDo extends Table {
+class UserToDoExperiences extends Table {
   IntColumn get userId => integer().customConstraint("REFERENCES moor_users(id)")();
   
   IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();

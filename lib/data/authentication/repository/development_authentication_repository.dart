@@ -1,10 +1,9 @@
-import 'dart:math';
-
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:logger/logger.dart';
 import 'package:worldon/core/error/failure.dart';
+import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_left_server_error.dart';
-import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/simulate_failure_or_unit.dart';
 import 'package:worldon/data/core/moor/converters/domain_user_to_moor_user_companion.dart';
 import 'package:worldon/data/core/moor/converters/moor_user_to_domain_user.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
@@ -14,31 +13,100 @@ import 'package:worldon/injection.dart';
 
 @LazySingleton(as: AuthenticationRepositoryInterface, env: [Environment.dev])
 class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInterface {
-  final _random = Random();
   final _database = getIt<Database>();
+  final _logger = Logger();
 
   @override
   Future<Option<User>> getLoggedInUser() async {
-    final _moorUser = await _database.moorUsersDao.getLoggedInUser();
-    final _moorOptions = await _database.moorUsersDao.getUserOptions(_moorUser.id);
-    final _user = moorUserToDomainUser(_moorUser, _moorOptions);
-    return some(_user);
+    try {
+      final _moorUser = await _database.moorUsersDao.getLoggedInUser();
+      final _user = moorUserToDomainUser(_moorUser);
+      return some(_user);
+    } on Exception catch (exception) {
+      _logger.e("Moor Database error: $exception");
+      return none();
+    }
+  }
+
+  @override
+  Future<Either<Failure, Unit>> logIn(User user) async {
+    try {
+      final _moorUser = await _database.moorUsersDao.getUserByUsernameAndPassword(
+        username: user.username.getOrCrash(),
+        password: user.password.getOrCrash(),
+      );
+      await _database.moorUsersDao.updateUser(
+        _moorUser.copyWith(
+          isLoggedIn: true,
+        ),
+      );
+      return right(unit);
+    } on Exception catch (exception) {
+      _logger.e("Moor Database error: $exception");
+      return left(
+        Failure.coreData(
+          CoreDataFailure.serverError(
+            errorString: "Development repository error $exception",
+          ),
+        ),
+      );
+    }
   }
   
   @override
-  Future<Either<Failure, Unit>> logIn(User user) async {
-    final _moorUser = await _database.moorUsersDao.getUserByUsernameAndPassword(
-      username: user.username.getOrCrash(),
-      password: user.password.getOrCrash(),
-    );
-    await _database.moorUsersDao.updateUser(
-      _moorUser.copyWith(
-        isLoggedIn: true,
-      ),
-    );
-    return right(unit);
+  Future<Either<Failure, Unit>> logOut() async {
+    try {
+      final _moorUser = await _database.moorUsersDao.getLoggedInUser();
+      await _database.moorUsersDao.updateUser(
+        _moorUser.copyWith(
+          isLoggedIn: false,
+        ),
+      );
+      return right(unit);
+    } on Exception catch (exception) {
+      _logger.e("Moor Database error: $exception");
+      return left(
+        Failure.coreData(
+          CoreDataFailure.serverError(
+            errorString: "Development repository error $exception",
+          ),
+        ),
+      );
+    }
   }
-
+  
+  @override
+  Future<Either<Failure, Unit>> register(User user) async {
+    try {
+      final _moorUserCompanion = domainUserToMoorUserCompanion(user);
+      final _userId = await _database.moorUsersDao.insertUser(_moorUserCompanion);
+      await _database.moorOptionsDao.insertOptions(
+        MoorOptionsCompanion.insert(
+          userId: _userId,
+          languageCode: user.options.languageCode,
+        ),
+      );
+      await _database.moorTagsDao.deleteUserInterests(_userId);
+      for (final tag in user.interests) {
+        final _userInterest = UserInterestsCompanion.insert(
+          tagId: tag.id,
+          userId: _userId,
+        );
+        await _database.moorTagsDao.insertUserInterest(_userInterest);
+      }
+      return right(unit);
+    } on Exception catch (exception) {
+      _logger.e("Moor Database error: $exception");
+      return left(
+        Failure.coreData(
+          CoreDataFailure.serverError(
+            errorString: "Development repository error $exception",
+          ),
+        ),
+      );
+    }
+  }
+  
   @override
   Future<Either<Failure, Unit>> logInGoogle() {
     // It'll always fails just so it doesn't mess with the simulation of the normal log in
@@ -46,26 +114,8 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
   }
   
   @override
-  Future<Either<Failure, Unit>> logOut() async {
-    final _moorUser = await _database.moorUsersDao.getLoggedInUser();
-    await _database.moorUsersDao.updateUser(
-      _moorUser.copyWith(
-        isLoggedIn: false,
-      ),
-    );
-    return right(unit);
-  }
-  
-  @override
-  Future<Either<Failure, Unit>> register(User user) async {
-    // TODO: Register the interests
-    final _moorUserCompanion = domainUserToMoorUserCompanion(user);
-    await _database.moorUsersDao.insertUser(_moorUserCompanion);
-    return right(unit);
-  }
-
-  @override
   Future<Either<Failure, Unit>> registerGoogle() {
-    return simulateFailureOrUnit(auxBool: _random.nextBool());
+    // It'll always fails just so it doesn't mess with the simulation of the normal log in
+    return getLeftServerErrorFuture();
   }
 }

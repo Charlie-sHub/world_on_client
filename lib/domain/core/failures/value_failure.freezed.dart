@@ -2762,7 +2762,7 @@ class _$SetExceedsLength<T>
     super.debugFillProperties(properties);
     properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.setExceedsLength'))..add(DiagnosticsProperty('failedValue', failedValue))..add(DiagnosticsProperty('maxLength', maxLength));
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||

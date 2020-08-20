@@ -11,7 +11,7 @@ part 'moor_users_dao.g.dart';
 class MoorUsersDao extends DatabaseAccessor<Database> with _$MoorUsersDaoMixin {
   MoorUsersDao(Database db) : super(db);
 
-  Future insertUser(Insertable<MoorUser> user) => into(moorUsers).insert(user);
+  Future<int> insertUser(Insertable<MoorUser> user) => into(moorUsers).insert(user);
 
   Future updateUser(Insertable<MoorUser> user) => update(moorUsers).replace(user);
 
@@ -21,6 +21,14 @@ class MoorUsersDao extends DatabaseAccessor<Database> with _$MoorUsersDaoMixin {
       ..limit(1)
       ..get();
     return _userQuery.getSingle();
+  }
+
+  Future<MoorUser> selectUserById(int id) async {
+    final _experienceQuery = select(moorUsers)
+      ..where((user) => user.id.equals(id))
+      ..limit(1)
+      ..get();
+    return _experienceQuery.getSingle();
   }
 
   Future<MoorUser> getUserByUsernameAndPassword({
@@ -84,13 +92,5 @@ class MoorUsersDao extends DatabaseAccessor<Database> with _$MoorUsersDaoMixin {
               )
               .toList(),
         );
-  }
-
-  Future<MoorOption> getUserOptions(int userId) async {
-    final _userQuery = select(moorOptions)
-      ..where((options) => options.userId.equals(userId))
-      ..limit(1)
-      ..get();
-    return _userQuery.getSingle();
   }
 }

@@ -1,26 +1,37 @@
-import 'dart:math';
-
 import 'package:dartz/dartz.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:injectable/injectable.dart';
+import 'package:logger/logger.dart';
 import 'package:worldon/core/error/failure.dart';
-import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_geo_location_error.dart';
-import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_coordinates.dart';
-import 'package:worldon/data/core/moor/moor_database.dart';
+import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/repository/geo_location_repository_interface.dart';
-import 'package:worldon/injection.dart';
+import 'package:worldon/domain/core/validation/objects/latitude.dart';
+import 'package:worldon/domain/core/validation/objects/longitude.dart';
 
 @LazySingleton(as: GeoLocationRepositoryInterface, env: [Environment.dev])
 class DevelopmentGeoLocationRepository implements GeoLocationRepositoryInterface {
-  final _random = Random();
-  final _database = getIt<Database>();
+  final _logger = Logger();
 
   @override
-  Either<Failure, Coordinates> getCurrentLocation() {
-    if (_random.nextBool()) {
-      return right(getValidCoordinates());
-    } else {
-      return left(getGeoLocationError());
+  Future<Either<Failure, Coordinates>> getCurrentLocation() async {
+    try {
+      final _position = await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+      final _coordinates = Coordinates(
+        latitude: Latitude(_position.latitude),
+        longitude: Longitude(_position.longitude),
+      );
+      return right(_coordinates);
+    } on Exception catch (exception) {
+      final _errorMessage = "Geolocation error: $exception";
+      _logger.e(_errorMessage);
+      return left(
+        Failure.coreData(
+          CoreDataFailure.geoLocationError(
+            errorString: _errorMessage,
+          ),
+        ),
+      );
     }
   }
 }

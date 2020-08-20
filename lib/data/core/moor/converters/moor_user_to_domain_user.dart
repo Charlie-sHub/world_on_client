@@ -10,7 +10,8 @@ import 'package:worldon/domain/core/validation/objects/password.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/core/validation/objects/user_level.dart';
 
-User moorUserToDomainUser(MoorUser _moorUser, MoorOption _moorOptions) => User(
+User moorUserToDomainUser(MoorUser _moorUser) => User.empty().copyWith(
+      id: _moorUser.id,
       name: Name(_moorUser.name),
       username: Name(_moorUser.username),
       password: Password(_moorUser.password),
@@ -27,17 +28,5 @@ User moorUserToDomainUser(MoorUser _moorUser, MoorOption _moorOptions) => User(
       lastLogin: PastDate(_moorUser.lastLogin),
       creationDate: PastDate(_moorUser.creationDate),
       modificationDate: PastDate(_moorUser.modificationDate),
-      options: Options(
-        id: _moorOptions.id,
-        languageCode: _moorOptions.languageCode,
-      ),
-      blockedUsers: {},
-      followedUsers: {},
-      devices: {},
-      systems: {},
-      interests: {},
-      achievements: {},
-      experiencesDone: {},
-      experiencesLiked: {},
-      experiencesToDo: {},
+      options: Options.empty(),
     );

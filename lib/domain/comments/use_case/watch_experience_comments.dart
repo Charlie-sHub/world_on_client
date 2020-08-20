@@ -8,13 +8,13 @@ import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 
 @LazySingleton(env: [Environment.dev, Environment.prod])
-class WatchExperienceComments implements StreamUseCase<KtSet<Comment>, Params> {
+class WatchExperienceComments implements StreamUseCase<KtList<Comment>, Params> {
   final CommentRepositoryInterface _repository;
 
   WatchExperienceComments(this._repository);
 
   @override
-  Stream<Either<Failure, KtSet<Comment>>> call(Params params) async* {
+  Stream<Either<Failure, KtList<Comment>>> call(Params params) async* {
     yield* _repository.watchExperienceComments(params.experienceId);
   }
 }

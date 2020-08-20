@@ -320,10 +320,10 @@ class _$_ExperienceDto extends _ExperienceDto {
       assert(likedBy != null),
       assert(doneBy != null),
       super._();
-
+  
   factory _$_ExperienceDto.fromJson(Map<String, dynamic> json) =>
     _$_$_ExperienceDtoFromJson(json);
-
+  
   @override
   final int id;
   @override

@@ -10,17 +10,13 @@ import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_r
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_server_error_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_achievement.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/simulate_failure_or_unit.dart';
-import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/achievement_management/repository/achievement_repository_interface.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 
-import '../../../injection.dart';
-
 @LazySingleton(as: AchievementRepositoryInterface, env: [Environment.dev])
 class DevelopmentAchievementRepository implements AchievementRepositoryInterface {
   final _random = Random();
-  final _database = getIt<Database>();
 
   @override
   Future<Either<Failure, Unit>> awardAchievement({

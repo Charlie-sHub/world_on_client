@@ -9,9 +9,11 @@ part of 'moor_experiences_dao.dart';
 mixin _$MoorExperiencesDaoMixin on DatabaseAccessor<Database> {
   $MoorExperiencesTable get moorExperiences => attachedDatabase.moorExperiences;
 
-  $UserExperiencesDoneTable get userExperiencesDone => attachedDatabase.userExperiencesDone;
+  $UserDoneExperiencesTable get userDoneExperiences => attachedDatabase.userDoneExperiences;
 
-  $UserExperiencesLikedTable get userExperiencesLiked => attachedDatabase.userExperiencesLiked;
+  $UserLikedExperiencesTable get userLikedExperiences => attachedDatabase.userLikedExperiences;
+
+  $UserToDoExperiencesTable get userToDoExperiences => attachedDatabase.userToDoExperiences;
 
   $UserFollowRelationsTable get userFollowRelations => attachedDatabase.userFollowRelations;
 
