@@ -302,7 +302,7 @@ class _$_AchievementDto extends _AchievementDto {
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(modificationDate) ^
       const DeepCollectionEquality().hash(tags);
-  
+
   @override
   _$AchievementDtoCopyWith<_AchievementDto> get copyWith =>
     __$AchievementDtoCopyWithImpl<_AchievementDto>(this, _$identity);

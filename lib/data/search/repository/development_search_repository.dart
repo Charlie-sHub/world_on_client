@@ -19,7 +19,8 @@ import 'package:worldon/domain/core/validation/objects/search_term.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 import 'package:worldon/domain/core/validation/objects/user_level.dart';
 import 'package:worldon/domain/search/repository/search_repository_interface.dart';
-import 'package:worldon/injectione/moor/moor_database.dart';
+
+import '../../../injection.dart';
 
 @LazySingleton(as: SearchRepositoryInterface, env: [Environment.dev])
 class DevelopmentSearchRepository implements SearchRepositoryInterface {

@@ -42,7 +42,6 @@ mixin _$SystemDto {
 abstract class $SystemDtoCopyWith<$Res> {
   factory $SystemDtoCopyWith(SystemDto value, $Res Function(SystemDto) then) =
   _$SystemDtoCopyWithImpl<$Res>;
-  
   $Res call({int id, String name, String type, String company});
 }
 
@@ -151,7 +150,7 @@ class _$_SystemDto extends _SystemDto {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(company);
-  
+
   @override
   _$SystemDtoCopyWith<_SystemDto> get copyWith =>
     __$SystemDtoCopyWithImpl<_SystemDto>(this, _$identity);

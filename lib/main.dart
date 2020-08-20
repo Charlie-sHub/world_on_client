@@ -8,8 +8,6 @@ void main() {
   const environment = Environment.dev;
   configureDependencies(environment);
   runApp(
-    const AppWidget(
-      environment: environment,
-    ),
+    const AppWidget(),
   );
 }

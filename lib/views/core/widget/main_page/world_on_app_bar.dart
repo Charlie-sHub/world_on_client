@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:injectable/injectable.dart';
+import 'package:provider/provider.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
+import 'package:worldon/views/core/widget/main_page/debug_database_button.dart';
 import 'package:worldon/views/core/widget/main_page/messages_widget.dart';
 import 'package:worldon/views/core/widget/main_page/notifications_widget.dart';
 
@@ -18,36 +21,32 @@ class WorldOnAppBar extends StatelessWidget implements PreferredSizeWidget {
         onPressed: () => context.bloc<AuthenticationBloc>().add(const AuthenticationEvent.loggedOut()),
       ),
       centerTitle: true,
-      title: Row(
-        children: const <Widget>[
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.all(10),
-              child: Image(
-                image: AssetImage('assets/world_on_logo.jpg'),
+      title: Padding(
+        padding: const EdgeInsets.all(5),
+        child: Row(
+          children: const <Widget>[
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.all(3),
+                child: Image(
+                  image: AssetImage('assets/world_on_logo.jpg'),
+                ),
               ),
             ),
-          ),
-          Text(
-            "WORLD ON",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 27,
+            Text(
+              "WORLD ON",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 25,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
-      actions: const <Widget>[
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 5),
-          // TODO: Wrap in bloc that checks if there are unseen notifications
-          child: NotificationsButton(),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 5),
-          // TODO: Wrap in bloc that checks if there are new messages
-          child: MessagesButton(),
-        ),
+      actions: <Widget>[
+        if (Provider.of<String>(context) != Environment.prod) const DebugDatabaseButton(),
+        const NotificationsButton(),
+        const MessagesButton(),
       ],
     );
   }

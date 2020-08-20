@@ -14,7 +14,8 @@ import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/achievement_management/repository/achievement_repository_interface.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
-import 'package:worldon/injectionor/moor_database.dart';
+
+import '../../../injection.dart';
 
 @LazySingleton(as: AchievementRepositoryInterface, env: [Environment.dev])
 class DevelopmentAchievementRepository implements AchievementRepositoryInterface {
@@ -61,23 +62,6 @@ class DevelopmentAchievementRepository implements AchievementRepositoryInterface
         getValidAchievement().copyWith(
           id: 3,
           name: Name("Curabitur"),
-        ),
-      ));
-    } else {
-      _either = left(getServerErrorFailure());
-    }
-    return createStreamOfEither(_either);
-  }
-
-  @override
-  Stream<Either<Failure, KtSet<Achievement>>> watchUserAchievements() {
-    Either<Failure, KtSet<Achievement>> _either;
-    if (_random.nextBool()) {
-      _either = right(KtSet.of(
-        getValidAchievement(),
-        getValidAchievement().copyWith(
-          id: 2,
-          name: Name("Nullam quam"),
         ),
       ));
     } else {

@@ -7,12 +7,10 @@ part 'moor_notifications_dao.g.dart';
 class MoorNotificationsDao extends DatabaseAccessor<Database> with _$MoorNotificationsDaoMixin {
   MoorNotificationsDao(Database db) : super(db);
 
-  // TODO: Rework it so it takes the an id as parameter
-  // so delete(select... where id: id) or something like that
   Future deleteNotification(Insertable<MoorNotification> notification) => delete(moorNotifications).delete(notification);
 
-  Stream<List<MoorNotification>> watchNotifications(MoorUser user) {
-    // TODO: Implement this method
-    return null;
+  Stream<List<MoorNotification>> watchNotifications(int userId) {
+    final _contentQuery = select(moorNotifications)..where((moorNotifications) => moorNotifications.receiverId.equals(userId));
+    return _contentQuery.watch();
   }
 }

@@ -7,8 +7,17 @@ part 'moor_comments_dao.g.dart';
 class MoorCommentsDao extends DatabaseAccessor<Database> with _$MoorCommentsDaoMixin {
   MoorCommentsDao(Database db) : super(db);
 
-  Stream<List<MoorComment>> watchExperienceComments(MoorExperience experience) {
-    // TODO: Implement this method
-    return null;
+  Stream<List<MoorComment>> watchExperienceComments(int experienceId) {
+    final _contentQuery = select(moorComments)
+      ..where((moorComment) => moorComment.experienceId.equals(experienceId))
+      ..orderBy(
+        [
+          (comment) => OrderingTerm(
+                expression: comment.creationDate,
+                mode: OrderingMode.desc,
+              ),
+        ],
+      );
+    return _contentQuery.watch();
   }
 }

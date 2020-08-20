@@ -212,15 +212,15 @@ abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
     Coordinates coordinates,
     Location location,
     User creator,
-      Difficulty difficulty,
-      PastDate creationDate,
-      PastDate modificationDate,
-      ObjectiveSet objectives,
-      RewardSet rewards,
-      TagSet tags,
-      Set<Comment> comments,
-      Set<User> likedBy,
-      Set<User> doneBy});
+    Difficulty difficulty,
+    PastDate creationDate,
+    PastDate modificationDate,
+    ObjectiveSet objectives,
+    RewardSet rewards,
+    TagSet tags,
+    Set<Comment> comments,
+    Set<User> likedBy,
+    Set<User> doneBy});
 
   @override
   $CoordinatesCopyWith<$Res> get coordinates;

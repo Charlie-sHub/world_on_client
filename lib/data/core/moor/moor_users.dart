@@ -5,11 +5,11 @@ class MoorUsers extends Table {
 
   TextColumn get name => text().withLength(min: 1, max: Name.maxLength)();
 
-  TextColumn get username => text().withLength(min: 1, max: Name.maxLength)();
+  TextColumn get username => text().withLength(min: 1, max: Name.maxLength).customConstraint('UNIQUE')();
 
   TextColumn get password => text().withLength(min: 1, max: Password.maxLength)();
 
-  TextColumn get email => text()();
+  TextColumn get email => text().customConstraint('UNIQUE')();
 
   DateTimeColumn get birthday => dateTime()();
 
@@ -33,47 +33,47 @@ class MoorUsers extends Table {
 
   DateTimeColumn get modificationDate => dateTime()();
 
-  BoolColumn get isLoggedIn => boolean()();
+  BoolColumn get isLoggedIn => boolean().customConstraint('UNIQUE')();
 }
 
-class BlockedUsers extends Table {
-  IntColumn get userId => integer()();
+class UserBlockRelations extends Table {
+  IntColumn get blockedId => integer().customConstraint("REFERENCES moor_users(id)")();
 
-  IntColumn get blockedUserId => integer()();
+  IntColumn get blockerId => integer().customConstraint("REFERENCES moor_users(id)")();
 }
 
-class FollowedUsers extends Table {
-  IntColumn get userId => integer()();
-
-  IntColumn get followedUserId => integer()();
+class UserFollowRelations extends Table {
+  IntColumn get followedId => integer().customConstraint("REFERENCES moor_users(id)")();
+  
+  IntColumn get followingId => integer().customConstraint("REFERENCES moor_users(id)")();
 }
 
 class UserAchievements extends Table {
-  IntColumn get userId => integer()();
-
-  IntColumn get achievementId => integer()();
+  IntColumn get userId => integer().customConstraint("REFERENCES moor_users(id)")();
+  
+  IntColumn get achievementId => integer().customConstraint("REFERENCES moor_achievements(id)")();
 }
 
 class UserInterests extends Table {
-  IntColumn get userId => integer()();
-
-  IntColumn get tagId => integer()();
+  IntColumn get userId => integer().customConstraint("REFERENCES moor_users(id)")();
+  
+  IntColumn get tagId => integer().customConstraint("REFERENCES moor_tags(id)")();
 }
 
 class UserExperiencesDone extends Table {
-  IntColumn get userId => integer()();
-
-  IntColumn get experienceId => integer()();
+  IntColumn get userId => integer().customConstraint("REFERENCES moor_users(id)")();
+  
+  IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
 }
 
 class UserExperiencesLiked extends Table {
-  IntColumn get userId => integer()();
-
-  IntColumn get experienceId => integer()();
+  IntColumn get userId => integer().customConstraint("REFERENCES moor_users(id)")();
+  
+  IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
 }
 
 class UserExperiencesToDo extends Table {
-  IntColumn get userId => integer()();
-
-  IntColumn get experienceId => integer()();
+  IntColumn get userId => integer().customConstraint("REFERENCES moor_users(id)")();
+  
+  IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
 }

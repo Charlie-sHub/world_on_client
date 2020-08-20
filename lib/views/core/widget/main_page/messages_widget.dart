@@ -10,7 +10,7 @@ class MessagesButton extends StatelessWidget {
     return IconButton(
       icon: Icon(
         Icons.message,
-        size: 35,
+        size: 30,
       ),
       onPressed: () {
         // TODO: Navigate to MessagesPage

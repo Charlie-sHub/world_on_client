@@ -38,7 +38,6 @@ mixin _$System {
 abstract class $SystemCopyWith<$Res> {
   factory $SystemCopyWith(System value, $Res Function(System) then) =
   _$SystemCopyWithImpl<$Res>;
-  
   $Res call({int id, String name, String type, String company});
 }
 
@@ -68,7 +67,6 @@ class _$SystemCopyWithImpl<$Res> implements $SystemCopyWith<$Res> {
 abstract class _$SystemCopyWith<$Res> implements $SystemCopyWith<$Res> {
   factory _$SystemCopyWith(_System value, $Res Function(_System) then) =
   __$SystemCopyWithImpl<$Res>;
-  
   @override
   $Res call({int id, String name, String type, String company});
 }
@@ -142,7 +140,7 @@ class _$_System extends _System {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(company);
-  
+
   @override
   _$SystemCopyWith<_System> get copyWith =>
     __$SystemCopyWithImpl<_System>(this, _$identity);

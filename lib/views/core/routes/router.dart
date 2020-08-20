@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:auto_route/auto_route_annotations.dart';
+import 'package:moor_db_viewer/moor_db_viewer.dart';
 import 'package:worldon/views/authentication/pages/log_in_page.dart';
 import 'package:worldon/views/authentication/pages/registration_page.dart';
 import 'package:worldon/views/core/pages/main_page.dart';
@@ -17,6 +18,7 @@ import 'package:worldon/views/splash/pages/splash_page.dart';
       page: ProfileEditingPage,
       transitionsBuilder: TransitionsBuilders.slideLeft,
     ),
+    MaterialRoute(page: MoorDbViewer),
   ],
 )
 class $Router {}

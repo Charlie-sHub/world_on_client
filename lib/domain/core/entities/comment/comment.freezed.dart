@@ -189,7 +189,7 @@ class _$_Comment extends _Comment {
       const DeepCollectionEquality().hash(content) ^
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(modificationDate);
-  
+
   @override
   _$CommentCopyWith<_Comment> get copyWith =>
     __$CommentCopyWithImpl<_Comment>(this, _$identity);

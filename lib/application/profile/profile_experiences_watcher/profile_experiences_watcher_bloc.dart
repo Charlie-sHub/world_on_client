@@ -15,9 +15,7 @@ import 'package:worldon/domain/profile/use_case/watch_experiences_liked.dart' as
 import 'package:worldon/injection.dart';
 
 part 'profile_experiences_watcher_bloc.freezed.dart';
-
 part 'profile_experiences_watcher_event.dart';
-
 part 'profile_experiences_watcher_state.dart';
 
 @injectable
@@ -56,10 +54,9 @@ class ProfileExperiencesWatcherBloc extends Bloc<ProfileExperiencesWatcherEvent,
     _experienceStreamSubscription = _loadExperiencesLiked(
       load_experiences_liked.Params(userId: event.user.id),
     ).listen(
-        (failureOrExperiences) =>
-        add(
-          ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences),
-        ),
+      (failureOrExperiences) => add(
+        ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences),
+      ),
     );
   }
 

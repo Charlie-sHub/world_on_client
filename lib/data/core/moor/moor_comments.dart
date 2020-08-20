@@ -9,7 +9,7 @@ class MoorComments extends Table {
 
   DateTimeColumn get modificationDate => dateTime()();
 
-  IntColumn get posterId => integer()();
+  IntColumn get posterId => integer().customConstraint("REFERENCES moor_users(id)")();
 
-  IntColumn get experienceId => integer()();
+  IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
 }

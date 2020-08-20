@@ -41,7 +41,7 @@ class ProductionAchievementRepository implements AchievementRepositoryInterface 
   }
 
   @override
-  Stream<Either<Failure, KtSet<Achievement>>> watchUserAchievements() {
+  Stream<Either<Failure, KtSet<Achievement>>> watchUserAchievements(int userId) {
     // TODO: implement getUserAchievements
     throw UnimplementedError();
   }

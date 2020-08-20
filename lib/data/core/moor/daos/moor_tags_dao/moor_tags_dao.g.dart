@@ -8,4 +8,8 @@ part of 'moor_tags_dao.dart';
 
 mixin _$MoorTagsDaoMixin on DatabaseAccessor<Database> {
   $MoorTagsTable get moorTags => attachedDatabase.moorTags;
+
+  $ExperienceTagsTable get experienceTags => attachedDatabase.experienceTags;
+
+  $UserInterestsTable get userInterests => attachedDatabase.userInterests;
 }

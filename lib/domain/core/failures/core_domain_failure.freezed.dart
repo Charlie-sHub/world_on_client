@@ -82,7 +82,6 @@ abstract class $UnknownDomainLayerErrorCopyWith<T, $Res> {
   factory $UnknownDomainLayerErrorCopyWith(UnknownDomainLayerError<T> value,
     $Res Function(UnknownDomainLayerError<T>) then) =
   _$UnknownDomainLayerErrorCopyWithImpl<T, $Res>;
-  
   $Res call({String errorString});
 }
 

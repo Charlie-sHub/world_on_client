@@ -245,7 +245,7 @@ class _$_NotificationDto extends _NotificationDto {
       const DeepCollectionEquality().hash(seen) ^
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(type);
-  
+
   @override
   _$NotificationDtoCopyWith<_NotificationDto> get copyWith =>
     __$NotificationDtoCopyWithImpl<_NotificationDto>(this, _$identity);

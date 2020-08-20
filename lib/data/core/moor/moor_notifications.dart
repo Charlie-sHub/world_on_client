@@ -9,9 +9,9 @@ class MoorNotifications extends Table {
 
   DateTimeColumn get creationDate => dateTime()();
 
-  IntColumn get senderId => integer()();
-
-  IntColumn get receiverId => integer()();
-
   IntColumn get notificationType => intEnum<NotificationType>()();
+
+  IntColumn get senderId => integer().customConstraint("REFERENCES moor_users(id)")();
+
+  IntColumn get receiverId => integer().customConstraint("REFERENCES moor_users(id)")();
 }

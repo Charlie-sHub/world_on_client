@@ -3,7 +3,7 @@ part of 'moor_database.dart';
 class MoorRewards extends Table {
   IntColumn get id => integer().autoIncrement()();
 
-  IntColumn get experienceId => integer()();
+  IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
 
   TextColumn get name => text().withLength(min: 1, max: Name.maxLength)();
 

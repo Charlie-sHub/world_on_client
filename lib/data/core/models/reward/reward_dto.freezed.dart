@@ -42,7 +42,6 @@ mixin _$RewardDto {
 abstract class $RewardDtoCopyWith<$Res> {
   factory $RewardDtoCopyWith(RewardDto value, $Res Function(RewardDto) then) =
   _$RewardDtoCopyWithImpl<$Res>;
-  
   $Res call({int id, String name, String description, String imageURL});
 }
 
@@ -155,7 +154,7 @@ class _$_RewardDto extends _RewardDto {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(imageURL);
-  
+
   @override
   _$RewardDtoCopyWith<_RewardDto> get copyWith =>
     __$RewardDtoCopyWithImpl<_RewardDto>(this, _$identity);

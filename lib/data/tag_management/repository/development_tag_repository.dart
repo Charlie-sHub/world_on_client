@@ -16,7 +16,8 @@ import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/tag_management/repository/tag_repository_interface.dart';
-import 'package:worldon/injectionoor/moor_database.dart';
+
+import '../../../injection.dart';
 
 @LazySingleton(as: TagCoreRepositoryInterface, env: [Environment.dev])
 class DevelopmentTagRepository implements TagCoreRepositoryInterface {

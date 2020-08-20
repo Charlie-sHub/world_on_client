@@ -11,7 +11,7 @@ class MoorLocations extends Table {
 }
 
 class LocationExperiences extends Table {
-  IntColumn get locationId => integer()();
+  IntColumn get locationId => integer().customConstraint("REFERENCES moor_locations(id)")();
 
-  IntColumn get experienceId => integer()();
+  IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
 }

@@ -8,6 +8,8 @@
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:moor_db_viewer/moor_db_viewer.dart';
+import 'package:moor_flutter/moor_flutter.dart';
 
 import '../../../domain/core/entities/user/user.dart';
 import '../../authentication/pages/log_in_page.dart';
@@ -22,12 +24,14 @@ class Routes {
   static const String registrationPage = '/registration-page';
   static const String mainPage = '/main-page';
   static const String profileEditingPage = '/profile-editing-page';
+  static const String moorDbViewer = '/moor-db-viewer';
   static const all = <String>{
     splashPage,
     logInPage,
     registrationPage,
     mainPage,
     profileEditingPage,
+    moorDbViewer,
   };
 }
 
@@ -40,6 +44,7 @@ class Router extends RouterBase {
     RouteDef(Routes.registrationPage, page: RegistrationPage),
     RouteDef(Routes.mainPage, page: MainPage),
     RouteDef(Routes.profileEditingPage, page: ProfileEditingPage),
+    RouteDef(Routes.moorDbViewer, page: MoorDbViewer),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -79,6 +84,13 @@ class Router extends RouterBase {
         transitionsBuilder: TransitionsBuilders.slideLeft,
       );
     },
+    MoorDbViewer: (data) {
+      final args = data.getArgs<MoorDbViewerArguments>(nullOk: false);
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => MoorDbViewer(args.db),
+        settings: data,
+      );
+    },
   };
 }
 
@@ -104,6 +116,14 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
       Routes.profileEditingPage,
       arguments: ProfileEditingPageArguments(key: key, user: user),
     );
+  
+  Future<dynamic> pushMoorDbViewer({
+    @required GeneratedDatabase db,
+  }) =>
+    push<dynamic>(
+      Routes.moorDbViewer,
+      arguments: MoorDbViewerArguments(db: db),
+    );
 }
 
 /// ************************************************************************
@@ -114,5 +134,13 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
 class ProfileEditingPageArguments {
   final Key key;
   final User user;
+  
   ProfileEditingPageArguments({this.key, @required this.user});
+}
+
+/// MoorDbViewer arguments holder class
+class MoorDbViewerArguments {
+  final GeneratedDatabase db;
+  
+  MoorDbViewerArguments({@required this.db});
 }

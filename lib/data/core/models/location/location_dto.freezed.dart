@@ -182,7 +182,7 @@ class _$_LocationDto extends _LocationDto {
       const DeepCollectionEquality().hash(country) ^
       const DeepCollectionEquality().hash(postalCode) ^
       const DeepCollectionEquality().hash(experiences);
-  
+
   @override
   _$LocationDtoCopyWith<_LocationDto> get copyWith =>
     __$LocationDtoCopyWithImpl<_LocationDto>(this, _$identity);

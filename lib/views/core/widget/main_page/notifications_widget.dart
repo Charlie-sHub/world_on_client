@@ -12,7 +12,7 @@ class NotificationsButton extends StatelessWidget {
     return IconButton(
       icon: Icon(
         Icons.notifications_none,
-        size: 35,
+        size: 30,
       ),
       onPressed: () => context.bloc<NavigationActorBloc>().add(
             const NavigationActorEvent.notificationsTapped(),

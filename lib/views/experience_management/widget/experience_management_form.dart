@@ -87,10 +87,9 @@ class ExperienceManagementForm extends StatelessWidget {
                   const ObjectiveCreationCard(),
                   const RewardCreationCard(),
                   TagAdditionCard(
-                    tagChangeFunction: (KtSet<Tag> tags) =>
-                      context.bloc<ExperienceManagementFormBloc>().add(
-                        ExperienceManagementFormEvent.tagsChanged(tags),
-                      ),
+                    tagChangeFunction: (KtSet<Tag> tags) => context.bloc<ExperienceManagementFormBloc>().add(
+                          ExperienceManagementFormEvent.tagsChanged(tags),
+                        ),
                   ),
                   const FinishButton(),
                 ],

@@ -6,7 +6,6 @@ import 'package:worldon/domain/achievement_management/use_case/delete_achievemen
 import 'package:worldon/domain/achievement_management/use_case/edit_achievement.dart';
 import 'package:worldon/domain/achievement_management/use_case/get_achievement.dart';
 import 'package:worldon/domain/achievement_management/use_case/watch_all_achievements.dart';
-import 'package:worldon/domain/achievement_management/use_case/watch_user_achievements.dart';
 
 @LazySingleton(as: AwardAchievement, env: [Environment.test])
 class MockAwardAchievement extends Mock implements AwardAchievement {}
@@ -25,6 +24,3 @@ class MockGetAchievement extends Mock implements GetAchievement {}
 
 @LazySingleton(as: WatchAllAchievements, env: [Environment.test])
 class MockGetAllAchievements extends Mock implements WatchAllAchievements {}
-
-@LazySingleton(as: WatchUserAchievements, env: [Environment.test])
-class MockGetUserAchievements extends Mock implements WatchUserAchievements {}

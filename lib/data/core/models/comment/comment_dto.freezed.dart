@@ -198,7 +198,7 @@ class _$_CommentDto extends _CommentDto {
       const DeepCollectionEquality().hash(content) ^
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(modificationDate);
-  
+
   @override
   _$CommentDtoCopyWith<_CommentDto> get copyWith =>
     __$CommentDtoCopyWithImpl<_CommentDto>(this, _$identity);

@@ -13,9 +13,7 @@ import 'package:worldon/domain/profile/use_case/watch_following_users.dart' as l
 import 'package:worldon/injection.dart';
 
 part 'profile_users_watcher_bloc.freezed.dart';
-
 part 'profile_users_watcher_event.dart';
-
 part 'profile_users_watcher_state.dart';
 
 /// Loads the [User]s followed by the given [User]
@@ -52,7 +50,7 @@ class ProfileUsersWatcherBloc extends Bloc<ProfileUsersWatcherEvent, ProfileUser
     _userStreamSubscription = _loadFollowedUsers(
       load_followed_users.Params(id: event.user.id),
     ).listen(
-        (failureOrUsers) => add(ProfileUsersWatcherEvent.usersReceived(failureOrUsers)),
+      (failureOrUsers) => add(ProfileUsersWatcherEvent.usersReceived(failureOrUsers)),
     );
   }
 

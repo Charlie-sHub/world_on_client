@@ -6,7 +6,9 @@ part 'moor_achievements_dao.g.dart';
 @UseDao(
   tables: [
     MoorAchievements,
+    MoorTags,
     UserAchievements,
+    AchievementTags,
   ],
 )
 class MoorAchievementsDao extends DatabaseAccessor<Database> with _$MoorAchievementsDaoMixin {
@@ -20,9 +22,7 @@ class MoorAchievementsDao extends DatabaseAccessor<Database> with _$MoorAchievem
           moorAchievements.id.equalsExp(userAchievements.achievementId),
         ),
       ],
-    )
-      ..where((userAchievements.userId.equals(userId)))
-      ..watch();
+    )..where((userAchievements.userId.equals(userId)));
     return _contentQuery.watch().map(
           (rows) => rows
               .map(
@@ -30,5 +30,24 @@ class MoorAchievementsDao extends DatabaseAccessor<Database> with _$MoorAchievem
               )
               .toList(),
         );
+  }
+
+  Future<List<MoorTag>> watchAchievementTags(int achievementId) async {
+    final _contentQuery = select(achievementTags).join(
+      [
+        innerJoin(
+          moorTags,
+          moorTags.id.equalsExp(achievementTags.tagId),
+        ),
+      ],
+    )..where((achievementTags.achievementId.equals(achievementId)));
+    final _contentStream = _contentQuery.watch().map(
+          (rows) => rows
+              .map(
+                (row) => row.readTable(moorTags),
+              )
+              .toList(),
+        );
+    return _contentStream.first;
   }
 }

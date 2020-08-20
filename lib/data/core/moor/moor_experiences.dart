@@ -17,17 +17,23 @@ class MoorExperiences extends Table {
 
   DateTimeColumn get modificationDate => dateTime()();
 
-  IntColumn get creatorId => integer()();
+  IntColumn get creatorId => integer().customConstraint("REFERENCES moor_users(id)")();
 }
 
 class ExperienceImageUrls extends Table {
-  IntColumn get experienceId => integer()();
+  IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
 
   TextColumn get imageUrl => text()();
+
+  @override
+  Set<Column> get primaryKey => {
+        experienceId,
+        imageUrl,
+      };
 }
 
 class ExperienceTags extends Table {
-  IntColumn get experienceId => integer()();
-
-  IntColumn get tagId => integer()();
+  IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
+  
+  IntColumn get tagId => integer().customConstraint("REFERENCES moor_tags(id)")();
 }
