@@ -73,15 +73,14 @@ abstract class $AchievementDtoCopyWith<$Res> {
   $UserDtoCopyWith<$Res> get creator;
 }
 
-class _$AchievementDtoCopyWithImpl<$Res>
-  implements $AchievementDtoCopyWith<$Res> {
+class _$AchievementDtoCopyWithImpl<$Res> implements $AchievementDtoCopyWith<$Res> {
   _$AchievementDtoCopyWithImpl(this._value, this._then);
-  
+
   final AchievementDto _value;
-  
+
   // ignore: unused_field
   final $Res Function(AchievementDto) _then;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -99,21 +98,14 @@ class _$AchievementDtoCopyWithImpl<$Res>
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as int,
       name: name == freezed ? _value.name : name as String,
-      description:
-      description == freezed ? _value.description : description as String,
+      description: description == freezed ? _value.description : description as String,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
       type: type == freezed ? _value.type : type as String,
       requisite: requisite == freezed ? _value.requisite : requisite as int,
-      experiencePoints: experiencePoints == freezed
-        ? _value.experiencePoints
-        : experiencePoints as int,
+      experiencePoints: experiencePoints == freezed ? _value.experiencePoints : experiencePoints as int,
       creator: creator == freezed ? _value.creator : creator as UserDto,
-      creationDate: creationDate == freezed
-        ? _value.creationDate
-        : creationDate as String,
-      modificationDate: modificationDate == freezed
-        ? _value.modificationDate
-        : modificationDate as String,
+      creationDate: creationDate == freezed ? _value.creationDate : creationDate as String,
+      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as String,
       tags: tags == freezed ? _value.tags : tags as Set<TagDto>,
     ));
   }
@@ -129,32 +121,19 @@ class _$AchievementDtoCopyWithImpl<$Res>
   }
 }
 
-abstract class _$AchievementDtoCopyWith<$Res>
-  implements $AchievementDtoCopyWith<$Res> {
-  factory _$AchievementDtoCopyWith(_AchievementDto value, $Res Function(_AchievementDto) then) =
-  __$AchievementDtoCopyWithImpl<$Res>;
+abstract class _$AchievementDtoCopyWith<$Res> implements $AchievementDtoCopyWith<$Res> {
+  factory _$AchievementDtoCopyWith(_AchievementDto value, $Res Function(_AchievementDto) then) = __$AchievementDtoCopyWithImpl<$Res>;
   
   @override
-  $Res call({int id,
-    String name,
-    String description,
-    String imageURL,
-    String type,
-    int requisite,
-    int experiencePoints,
-    UserDto creator,
-    String creationDate,
-    String modificationDate,
-    Set<TagDto> tags});
+  $Res call(
+    {int id, String name, String description, String imageURL, String type, int requisite, int experiencePoints, UserDto creator, String creationDate, String modificationDate, Set<TagDto> tags});
   
   @override
   $UserDtoCopyWith<$Res> get creator;
 }
 
-class __$AchievementDtoCopyWithImpl<$Res> extends _$AchievementDtoCopyWithImpl<$Res>
-  implements _$AchievementDtoCopyWith<$Res> {
-  __$AchievementDtoCopyWithImpl(_AchievementDto _value, $Res Function(_AchievementDto) _then)
-    : super(_value, (v) => _then(v as _AchievementDto));
+class __$AchievementDtoCopyWithImpl<$Res> extends _$AchievementDtoCopyWithImpl<$Res> implements _$AchievementDtoCopyWith<$Res> {
+  __$AchievementDtoCopyWithImpl(_AchievementDto _value, $Res Function(_AchievementDto) _then) : super(_value, (v) => _then(v as _AchievementDto));
   
   @override
   _AchievementDto get _value => super._value as _AchievementDto;
@@ -176,21 +155,14 @@ class __$AchievementDtoCopyWithImpl<$Res> extends _$AchievementDtoCopyWithImpl<$
     return _then(_AchievementDto(
       id: id == freezed ? _value.id : id as int,
       name: name == freezed ? _value.name : name as String,
-      description:
-      description == freezed ? _value.description : description as String,
+      description: description == freezed ? _value.description : description as String,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
       type: type == freezed ? _value.type : type as String,
       requisite: requisite == freezed ? _value.requisite : requisite as int,
-      experiencePoints: experiencePoints == freezed
-        ? _value.experiencePoints
-        : experiencePoints as int,
+      experiencePoints: experiencePoints == freezed ? _value.experiencePoints : experiencePoints as int,
       creator: creator == freezed ? _value.creator : creator as UserDto,
-      creationDate: creationDate == freezed
-        ? _value.creationDate
-        : creationDate as String,
-      modificationDate: modificationDate == freezed
-        ? _value.modificationDate
-        : modificationDate as String,
+      creationDate: creationDate == freezed ? _value.creationDate : creationDate as String,
+      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as String,
       tags: tags == freezed ? _value.tags : tags as Set<TagDto>,
     ));
   }
@@ -222,8 +194,7 @@ class _$_AchievementDto extends _AchievementDto {
       assert(tags != null),
       super._();
   
-  factory _$_AchievementDto.fromJson(Map<String, dynamic> json) =>
-    _$_$_AchievementDtoFromJson(json);
+  factory _$_AchievementDto.fromJson(Map<String, dynamic> json) => _$_$_AchievementDtoFromJson(json);
   
   @override
   final int id;
@@ -257,35 +228,17 @@ class _$_AchievementDto extends _AchievementDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
       (other is _AchievementDto &&
-        (identical(other.id, id) ||
-          const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.name, name) ||
-          const DeepCollectionEquality().equals(other.name, name)) &&
-        (identical(other.description, description) ||
-          const DeepCollectionEquality()
-            .equals(other.description, description)) &&
-        (identical(other.imageURL, imageURL) ||
-          const DeepCollectionEquality()
-            .equals(other.imageURL, imageURL)) &&
-        (identical(other.type, type) ||
-          const DeepCollectionEquality().equals(other.type, type)) &&
-        (identical(other.requisite, requisite) ||
-          const DeepCollectionEquality()
-            .equals(other.requisite, requisite)) &&
-        (identical(other.experiencePoints, experiencePoints) ||
-          const DeepCollectionEquality()
-            .equals(other.experiencePoints, experiencePoints)) &&
-        (identical(other.creator, creator) ||
-          const DeepCollectionEquality()
-            .equals(other.creator, creator)) &&
-        (identical(other.creationDate, creationDate) ||
-          const DeepCollectionEquality()
-            .equals(other.creationDate, creationDate)) &&
-        (identical(other.modificationDate, modificationDate) ||
-          const DeepCollectionEquality()
-            .equals(other.modificationDate, modificationDate)) &&
-        (identical(other.tags, tags) ||
-          const DeepCollectionEquality().equals(other.tags, tags)));
+        (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+        (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+        (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
+        (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
+        (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
+        (identical(other.requisite, requisite) || const DeepCollectionEquality().equals(other.requisite, requisite)) &&
+        (identical(other.experiencePoints, experiencePoints) || const DeepCollectionEquality().equals(other.experiencePoints, experiencePoints)) &&
+        (identical(other.creator, creator) || const DeepCollectionEquality().equals(other.creator, creator)) &&
+        (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+        (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)) &&
+        (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)));
   }
 
   @override
@@ -302,10 +255,9 @@ class _$_AchievementDto extends _AchievementDto {
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(modificationDate) ^
       const DeepCollectionEquality().hash(tags);
-
+  
   @override
-  _$AchievementDtoCopyWith<_AchievementDto> get copyWith =>
-    __$AchievementDtoCopyWithImpl<_AchievementDto>(this, _$identity);
+  _$AchievementDtoCopyWith<_AchievementDto> get copyWith => __$AchievementDtoCopyWithImpl<_AchievementDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -328,8 +280,7 @@ abstract class _AchievementDto extends AchievementDto {
     @required String modificationDate,
     @required Set<TagDto> tags}) = _$_AchievementDto;
   
-  factory _AchievementDto.fromJson(Map<String, dynamic> json) =
-  _$_AchievementDto.fromJson;
+  factory _AchievementDto.fromJson(Map<String, dynamic> json) = _$_AchievementDto.fromJson;
   
   @override
   int get id;
@@ -339,7 +290,7 @@ abstract class _AchievementDto extends AchievementDto {
   
   @override
   String get description;
-  
+
   @override
   String get imageURL;
   

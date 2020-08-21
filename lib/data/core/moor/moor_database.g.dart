@@ -18,20 +18,19 @@ class MoorAchievement extends DataClass implements Insertable<MoorAchievement> {
   final DateTime creationDate;
   final DateTime modificationDate;
   final int creatorId;
+  MoorAchievement({@required this.id,
+    @required this.name,
+    @required this.description,
+    @required this.imageURL,
+    @required this.type,
+    @required this.requisite,
+    @required this.experiencePoints,
+    @required this.creationDate,
+    @required this.modificationDate,
+    @required this.creatorId});
 
-  MoorAchievement(
-      {@required this.id,
-      @required this.name,
-      @required this.description,
-      @required this.imageURL,
-      @required this.type,
-      @required this.requisite,
-      @required this.experiencePoints,
-      @required this.creationDate,
-      @required this.modificationDate,
-      @required this.creatorId});
-
-  factory MoorAchievement.fromData(Map<String, dynamic> data, GeneratedDatabase db, {String prefix}) {
+  factory MoorAchievement.fromData(Map<String, dynamic> data, GeneratedDatabase db,
+    {String prefix}) {
     final effectivePrefix = prefix ?? '';
     final intType = db.typeSystem.forDartType<int>();
     final stringType = db.typeSystem.forDartType<String>();
@@ -39,14 +38,21 @@ class MoorAchievement extends DataClass implements Insertable<MoorAchievement> {
     return MoorAchievement(
       id: intType.mapFromDatabaseResponse(data['${effectivePrefix}id']),
       name: stringType.mapFromDatabaseResponse(data['${effectivePrefix}name']),
-      description: stringType.mapFromDatabaseResponse(data['${effectivePrefix}description']),
-      imageURL: stringType.mapFromDatabaseResponse(data['${effectivePrefix}image_u_r_l']),
+      description: stringType
+        .mapFromDatabaseResponse(data['${effectivePrefix}description']),
+      imageURL: stringType
+        .mapFromDatabaseResponse(data['${effectivePrefix}image_u_r_l']),
       type: stringType.mapFromDatabaseResponse(data['${effectivePrefix}type']),
-      requisite: intType.mapFromDatabaseResponse(data['${effectivePrefix}requisite']),
-      experiencePoints: intType.mapFromDatabaseResponse(data['${effectivePrefix}experience_points']),
-      creationDate: dateTimeType.mapFromDatabaseResponse(data['${effectivePrefix}creation_date']),
-      modificationDate: dateTimeType.mapFromDatabaseResponse(data['${effectivePrefix}modification_date']),
-      creatorId: intType.mapFromDatabaseResponse(data['${effectivePrefix}creator_id']),
+      requisite:
+      intType.mapFromDatabaseResponse(data['${effectivePrefix}requisite']),
+      experiencePoints: intType
+        .mapFromDatabaseResponse(data['${effectivePrefix}experience_points']),
+      creationDate: dateTimeType
+        .mapFromDatabaseResponse(data['${effectivePrefix}creation_date']),
+      modificationDate: dateTimeType
+        .mapFromDatabaseResponse(data['${effectivePrefix}modification_date']),
+      creatorId:
+      intType.mapFromDatabaseResponse(data['${effectivePrefix}creator_id']),
     );
   }
   @override
@@ -89,28 +95,14 @@ class MoorAchievement extends DataClass implements Insertable<MoorAchievement> {
     return MoorAchievementsCompanion(
       id: id == null && nullToAbsent ? const Value.absent() : Value(id),
       name: name == null && nullToAbsent ? const Value.absent() : Value(name),
-      description: description == null && nullToAbsent
-        ? const Value.absent()
-        : Value(description),
-      imageURL: imageURL == null && nullToAbsent
-        ? const Value.absent()
-        : Value(imageURL),
+      description: description == null && nullToAbsent ? const Value.absent() : Value(description),
+      imageURL: imageURL == null && nullToAbsent ? const Value.absent() : Value(imageURL),
       type: type == null && nullToAbsent ? const Value.absent() : Value(type),
-      requisite: requisite == null && nullToAbsent
-        ? const Value.absent()
-        : Value(requisite),
-      experiencePoints: experiencePoints == null && nullToAbsent
-        ? const Value.absent()
-        : Value(experiencePoints),
-      creationDate: creationDate == null && nullToAbsent
-        ? const Value.absent()
-        : Value(creationDate),
-      modificationDate: modificationDate == null && nullToAbsent
-        ? const Value.absent()
-        : Value(modificationDate),
-      creatorId: creatorId == null && nullToAbsent
-        ? const Value.absent()
-        : Value(creatorId),
+      requisite: requisite == null && nullToAbsent ? const Value.absent() : Value(requisite),
+      experiencePoints: experiencePoints == null && nullToAbsent ? const Value.absent() : Value(experiencePoints),
+      creationDate: creationDate == null && nullToAbsent ? const Value.absent() : Value(creationDate),
+      modificationDate: modificationDate == null && nullToAbsent ? const Value.absent() : Value(modificationDate),
+      creatorId: creatorId == null && nullToAbsent ? const Value.absent() : Value(creatorId),
     );
   }
 
@@ -173,13 +165,8 @@ class MoorAchievement extends DataClass implements Insertable<MoorAchievement> {
   @override
   String toString() {
     return (StringBuffer('MoorAchievement(')
-      ..write('id: $id, ')..write('name: $name, ')..write('description: $description, ')..write('imageURL: $imageURL, ')..write('type: $type, ')
-          ..write('requisite: $requisite, ')
-          ..write('experiencePoints: $experiencePoints, ')
-          ..write('creationDate: $creationDate, ')
-          ..write('modificationDate: $modificationDate, ')
-          ..write('creatorId: $creatorId')
-          ..write(')'))
+      ..write('id: $id, ')..write('name: $name, ')..write('description: $description, ')..write('imageURL: $imageURL, ')..write('type: $type, ')..write('requisite: $requisite, ')..write(
+        'experiencePoints: $experiencePoints, ')..write('creationDate: $creationDate, ')..write('modificationDate: $modificationDate, ')..write('creatorId: $creatorId')..write(')'))
         .toString();
   }
 
@@ -1181,11 +1168,8 @@ class MoorExperience extends DataClass implements Insertable<MoorExperience> {
   @override
   String toString() {
     return (StringBuffer('MoorExperience(')
-      ..write('id: $id, ')..write('title: $title, ')..write('description: $description, ')..write('latitude: $latitude, ')..write('longitude: $longitude, ')..write('difficulty: $difficulty, ')
-          ..write('creationDate: $creationDate, ')
-          ..write('modificationDate: $modificationDate, ')
-          ..write('creatorId: $creatorId')
-          ..write(')'))
+      ..write('id: $id, ')..write('title: $title, ')..write('description: $description, ')..write('latitude: $latitude, ')..write('longitude: $longitude, ')..write('difficulty: $difficulty, ')..write(
+        'creationDate: $creationDate, ')..write('modificationDate: $modificationDate, ')..write('creatorId: $creatorId')..write(')'))
         .toString();
   }
   
@@ -3942,42 +3926,43 @@ class MoorUser extends DataClass implements Insertable<MoorUser> {
   }
 
   @override
-  int get hashCode => $mrjf($mrjc(
+  int get hashCode =>
+    $mrjf($mrjc(
       id.hashCode,
-    $mrjc(
-      name.hashCode,
       $mrjc(
-        username.hashCode,
+        name.hashCode,
         $mrjc(
-          password.hashCode,
+          username.hashCode,
           $mrjc(
-            email.hashCode,
+            password.hashCode,
             $mrjc(
-              birthday.hashCode,
+              email.hashCode,
               $mrjc(
-                description.hashCode,
+                birthday.hashCode,
                 $mrjc(
-                  imageURL.hashCode,
+                  description.hashCode,
                   $mrjc(
-                    level.hashCode,
+                    imageURL.hashCode,
                     $mrjc(
-                      experiencePoints.hashCode,
+                      level.hashCode,
                       $mrjc(
-                        privacy.hashCode,
+                        experiencePoints.hashCode,
                         $mrjc(
-                          adminPowers.hashCode,
+                          privacy.hashCode,
                           $mrjc(
-                            enabled.hashCode,
+                            adminPowers.hashCode,
                             $mrjc(
-                              lastLogin.hashCode,
+                              enabled.hashCode,
                               $mrjc(
-                                creationDate
-                                  .hashCode,
+                                lastLogin.hashCode,
                                 $mrjc(
-                                  modificationDate
+                                  creationDate
                                     .hashCode,
-                                  isLoggedIn
-                                    .hashCode)))))))))))))))));
+                                  $mrjc(
+                                    modificationDate
+                                      .hashCode,
+                                    isLoggedIn
+                                      .hashCode)))))))))))))))));
   @override
   bool operator ==(dynamic other) =>
       identical(this, other) ||
@@ -5450,7 +5435,7 @@ class UserDoneExperience extends DataClass
     }
     return map;
   }
-  
+
   UserDoneExperiencesCompanion toCompanion(bool nullToAbsent) {
     return UserDoneExperiencesCompanion(
       userId:
@@ -5469,7 +5454,6 @@ class UserDoneExperience extends DataClass
       experienceId: serializer.fromJson<int>(json['experienceId']),
     );
   }
-  
   @override
   Map<String, dynamic> toJson({ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
@@ -5478,20 +5462,19 @@ class UserDoneExperience extends DataClass
       'experienceId': serializer.toJson<int>(experienceId),
     };
   }
-  
+
   UserDoneExperience copyWith({int userId, int experienceId}) =>
     UserDoneExperience(
       userId: userId ?? this.userId,
       experienceId: experienceId ?? this.experienceId,
     );
-  
   @override
   String toString() {
     return (StringBuffer('UserDoneExperience(')
       ..write('userId: $userId, ')..write('experienceId: $experienceId')..write(')'))
       .toString();
   }
-  
+
   @override
   int get hashCode => $mrjf($mrjc(userId.hashCode, experienceId.hashCode));
   @override
@@ -5505,19 +5488,18 @@ class UserDoneExperience extends DataClass
 class UserDoneExperiencesCompanion extends UpdateCompanion<UserDoneExperience> {
   final Value<int> userId;
   final Value<int> experienceId;
-  
   const UserDoneExperiencesCompanion({
     this.userId = const Value.absent(),
     this.experienceId = const Value.absent(),
   });
-  
+
   UserDoneExperiencesCompanion.insert({
     @required int userId,
     @required int experienceId,
   })
     : userId = Value(userId),
       experienceId = Value(experienceId);
-  
+
   static Insertable<UserDoneExperience> custom({
     Expression<int> userId,
     Expression<int> experienceId,
@@ -5527,14 +5509,14 @@ class UserDoneExperiencesCompanion extends UpdateCompanion<UserDoneExperience> {
       if (experienceId != null) 'experience_id': experienceId,
     });
   }
-  
+
   UserDoneExperiencesCompanion copyWith({Value<int> userId, Value<int> experienceId}) {
     return UserDoneExperiencesCompanion(
       userId: userId ?? this.userId,
       experienceId: experienceId ?? this.experienceId,
     );
   }
-  
+
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
@@ -5588,10 +5570,8 @@ class $UserDoneExperiencesTable extends UserDoneExperiences
   
   @override
   List<GeneratedColumn> get $columns => [userId, experienceId];
-  
   @override
   $UserDoneExperiencesTable get asDslTable => this;
-  
   @override
   String get $tableName => _alias ?? 'user_done_experiences';
   @override
@@ -5621,13 +5601,12 @@ class $UserDoneExperiencesTable extends UserDoneExperiences
 
   @override
   Set<GeneratedColumn> get $primaryKey => <GeneratedColumn>{};
-  
   @override
   UserDoneExperience map(Map<String, dynamic> data, {String tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
     return UserDoneExperience.fromData(data, _db, prefix: effectivePrefix);
   }
-  
+
   @override
   $UserDoneExperiencesTable createAlias(String alias) {
     return $UserDoneExperiencesTable(_db, alias);
@@ -5664,7 +5643,7 @@ class UserLikedExperience extends DataClass
     }
     return map;
   }
-  
+
   UserLikedExperiencesCompanion toCompanion(bool nullToAbsent) {
     return UserLikedExperiencesCompanion(
       userId:
@@ -5683,7 +5662,6 @@ class UserLikedExperience extends DataClass
       experienceId: serializer.fromJson<int>(json['experienceId']),
     );
   }
-  
   @override
   Map<String, dynamic> toJson({ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
@@ -5692,20 +5670,19 @@ class UserLikedExperience extends DataClass
       'experienceId': serializer.toJson<int>(experienceId),
     };
   }
-  
+
   UserLikedExperience copyWith({int userId, int experienceId}) =>
     UserLikedExperience(
       userId: userId ?? this.userId,
       experienceId: experienceId ?? this.experienceId,
     );
-  
   @override
   String toString() {
     return (StringBuffer('UserLikedExperience(')
       ..write('userId: $userId, ')..write('experienceId: $experienceId')..write(')'))
       .toString();
   }
-  
+
   @override
   int get hashCode => $mrjf($mrjc(userId.hashCode, experienceId.hashCode));
   @override
@@ -5802,10 +5779,8 @@ class $UserLikedExperiencesTable extends UserLikedExperiences
   
   @override
   List<GeneratedColumn> get $columns => [userId, experienceId];
-  
   @override
   $UserLikedExperiencesTable get asDslTable => this;
-  
   @override
   String get $tableName => _alias ?? 'user_liked_experiences';
   @override
@@ -5835,13 +5810,12 @@ class $UserLikedExperiencesTable extends UserLikedExperiences
 
   @override
   Set<GeneratedColumn> get $primaryKey => <GeneratedColumn>{};
-  
   @override
   UserLikedExperience map(Map<String, dynamic> data, {String tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
     return UserLikedExperience.fromData(data, _db, prefix: effectivePrefix);
   }
-  
+
   @override
   $UserLikedExperiencesTable createAlias(String alias) {
     return $UserLikedExperiencesTable(_db, alias);
@@ -5878,7 +5852,7 @@ class UserToDoExperience extends DataClass
     }
     return map;
   }
-  
+
   UserToDoExperiencesCompanion toCompanion(bool nullToAbsent) {
     return UserToDoExperiencesCompanion(
       userId:
@@ -5897,7 +5871,6 @@ class UserToDoExperience extends DataClass
       experienceId: serializer.fromJson<int>(json['experienceId']),
     );
   }
-  
   @override
   Map<String, dynamic> toJson({ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
@@ -5906,20 +5879,19 @@ class UserToDoExperience extends DataClass
       'experienceId': serializer.toJson<int>(experienceId),
     };
   }
-  
+
   UserToDoExperience copyWith({int userId, int experienceId}) =>
     UserToDoExperience(
       userId: userId ?? this.userId,
       experienceId: experienceId ?? this.experienceId,
     );
-  
   @override
   String toString() {
     return (StringBuffer('UserToDoExperience(')
       ..write('userId: $userId, ')..write('experienceId: $experienceId')..write(')'))
       .toString();
   }
-  
+
   @override
   int get hashCode => $mrjf($mrjc(userId.hashCode, experienceId.hashCode));
   @override
@@ -5933,19 +5905,18 @@ class UserToDoExperience extends DataClass
 class UserToDoExperiencesCompanion extends UpdateCompanion<UserToDoExperience> {
   final Value<int> userId;
   final Value<int> experienceId;
-  
   const UserToDoExperiencesCompanion({
     this.userId = const Value.absent(),
     this.experienceId = const Value.absent(),
   });
-  
+
   UserToDoExperiencesCompanion.insert({
     @required int userId,
     @required int experienceId,
   })
     : userId = Value(userId),
       experienceId = Value(experienceId);
-  
+
   static Insertable<UserToDoExperience> custom({
     Expression<int> userId,
     Expression<int> experienceId,
@@ -5955,14 +5926,14 @@ class UserToDoExperiencesCompanion extends UpdateCompanion<UserToDoExperience> {
       if (experienceId != null) 'experience_id': experienceId,
     });
   }
-  
+
   UserToDoExperiencesCompanion copyWith({Value<int> userId, Value<int> experienceId}) {
     return UserToDoExperiencesCompanion(
       userId: userId ?? this.userId,
       experienceId: experienceId ?? this.experienceId,
     );
   }
-  
+
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
@@ -6016,10 +5987,8 @@ class $UserToDoExperiencesTable extends UserToDoExperiences
   
   @override
   List<GeneratedColumn> get $columns => [userId, experienceId];
-  
   @override
   $UserToDoExperiencesTable get asDslTable => this;
-  
   @override
   String get $tableName => _alias ?? 'user_to_do_experiences';
   @override
@@ -6049,13 +6018,12 @@ class $UserToDoExperiencesTable extends UserToDoExperiences
 
   @override
   Set<GeneratedColumn> get $primaryKey => <GeneratedColumn>{};
-  
   @override
   UserToDoExperience map(Map<String, dynamic> data, {String tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
     return UserToDoExperience.fromData(data, _db, prefix: effectivePrefix);
   }
-  
+
   @override
   $UserToDoExperiencesTable createAlias(String alias) {
     return $UserToDoExperiencesTable(_db, alias);
@@ -6329,7 +6297,7 @@ class ExperienceImageUrl extends DataClass
       'imageUrl': serializer.toJson<String>(imageUrl),
     };
   }
-  
+
   ExperienceImageUrl copyWith({int experienceId, String imageUrl}) =>
     ExperienceImageUrl(
       experienceId: experienceId ?? this.experienceId,
@@ -6464,7 +6432,7 @@ class $ExperienceImageUrlsTable extends ExperienceImageUrls
     }
     return context;
   }
-  
+
   @override
   Set<GeneratedColumn> get $primaryKey => {experienceId, imageUrl};
   @override
@@ -6507,7 +6475,7 @@ class ExperienceTag extends DataClass implements Insertable<ExperienceTag> {
     }
     return map;
   }
-  
+
   ExperienceTagsCompanion toCompanion(bool nullToAbsent) {
     return ExperienceTagsCompanion(
       experienceId: experienceId == null && nullToAbsent
@@ -6910,43 +6878,33 @@ abstract class _$Database extends GeneratedDatabase {
   $MoorUsersTable _moorUsers;
   $MoorUsersTable get moorUsers => _moorUsers ??= $MoorUsersTable(this);
   $UserBlockRelationsTable _userBlockRelations;
-
   $UserBlockRelationsTable get userBlockRelations =>
     _userBlockRelations ??= $UserBlockRelationsTable(this);
   $UserFollowRelationsTable _userFollowRelations;
-
   $UserFollowRelationsTable get userFollowRelations =>
     _userFollowRelations ??= $UserFollowRelationsTable(this);
   $UserAchievementsTable _userAchievements;
-
   $UserAchievementsTable get userAchievements =>
     _userAchievements ??= $UserAchievementsTable(this);
   $UserInterestsTable _userInterests;
-
   $UserInterestsTable get userInterests =>
     _userInterests ??= $UserInterestsTable(this);
   $UserDoneExperiencesTable _userDoneExperiences;
-
   $UserDoneExperiencesTable get userDoneExperiences =>
     _userDoneExperiences ??= $UserDoneExperiencesTable(this);
   $UserLikedExperiencesTable _userLikedExperiences;
-
   $UserLikedExperiencesTable get userLikedExperiences =>
     _userLikedExperiences ??= $UserLikedExperiencesTable(this);
   $UserToDoExperiencesTable _userToDoExperiences;
-
   $UserToDoExperiencesTable get userToDoExperiences =>
     _userToDoExperiences ??= $UserToDoExperiencesTable(this);
   $LocationExperiencesTable _locationExperiences;
-
   $LocationExperiencesTable get locationExperiences =>
     _locationExperiences ??= $LocationExperiencesTable(this);
   $ExperienceImageUrlsTable _experienceImageUrls;
-
   $ExperienceImageUrlsTable get experienceImageUrls =>
     _experienceImageUrls ??= $ExperienceImageUrlsTable(this);
   $ExperienceTagsTable _experienceTags;
-
   $ExperienceTagsTable get experienceTags =>
     _experienceTags ??= $ExperienceTagsTable(this);
   $AchievementTagsTable _achievementTags;
@@ -6962,22 +6920,17 @@ abstract class _$Database extends GeneratedDatabase {
   MoorExperiencesDao get moorExperiencesDao =>
     _moorExperiencesDao ??= MoorExperiencesDao(this as Database);
   MoorNotificationsDao _moorNotificationsDao;
-
   MoorNotificationsDao get moorNotificationsDao =>
     _moorNotificationsDao ??= MoorNotificationsDao(this as Database);
   MoorTagsDao _moorTagsDao;
-
   MoorTagsDao get moorTagsDao => _moorTagsDao ??= MoorTagsDao(this as Database);
   MoorUsersDao _moorUsersDao;
-
   MoorUsersDao get moorUsersDao =>
     _moorUsersDao ??= MoorUsersDao(this as Database);
   MoorObjectivesDao _moorObjectivesDao;
-
   MoorObjectivesDao get moorObjectivesDao =>
     _moorObjectivesDao ??= MoorObjectivesDao(this as Database);
   MoorOptionsDao _moorOptionsDao;
-
   MoorOptionsDao get moorOptionsDao =>
     _moorOptionsDao ??= MoorOptionsDao(this as Database);
 

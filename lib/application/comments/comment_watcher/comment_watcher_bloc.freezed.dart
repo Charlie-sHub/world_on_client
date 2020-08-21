@@ -481,7 +481,6 @@ abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(
           _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-
   $Res call({KtList<Comment> comments});
 }
 
@@ -518,9 +517,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadSuccess && (identical(other.comments, comments) ||
-                const DeepCollectionEquality()
-                    .equals(other.comments, comments)));
+    return identical(this, other) || (other is _LoadSuccess && (identical(other.comments, comments) || const DeepCollectionEquality().equals(other.comments, comments)));
   }
 
   @override
@@ -596,9 +593,8 @@ class _$_LoadSuccess implements _LoadSuccess {
 
 abstract class _LoadSuccess implements CommentWatcherState {
   const factory _LoadSuccess(KtList<Comment> comments) = _$_LoadSuccess;
-  
+
   KtList<Comment> get comments;
-  
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 

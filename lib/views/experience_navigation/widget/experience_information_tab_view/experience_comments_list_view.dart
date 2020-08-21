@@ -20,48 +20,41 @@ class ExperienceCommentsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery
-        .of(context)
-        .size
-        .height * 0.4,
+      height: MediaQuery.of(context).size.height * 0.4,
       color: WorldOnColors.background,
       child: BlocProvider(
         create: (context) => getIt<CommentWatcherBloc>(),
         child: BlocBuilder<CommentWatcherBloc, CommentWatcherState>(
-          builder: (context, state) =>
-            state.map(
-              initial: (_) => Container(),
-              loadInProgress: (_) => WorldOnProgressIndicator(),
-              loadSuccess: (state) =>
-                ListView.builder(
-                  padding: const EdgeInsets.all(5),
-                  itemCount: state.comments.size,
-                  shrinkWrap: true,
-                  physics: const ClampingScrollPhysics(),
-                  itemBuilder: (context, index) {
-                    final _comment = state.comments[index];
-                    if (_comment.isValid) {
-                      return CommentCard(comment: _comment);
-                    } else {
-                      return ErrorCard(
-                        entityType: "Comment",
-                        valueFailureString: _comment.failureOption.fold(
-                            () => "",
-                            (failure) => failure.toString(),
-                        ),
-                      );
-                    }
-                  },
-                ),
-              loadFailure: (state) =>
-                InkWell(
-                  onTap: () async =>
-                    context.bloc<CommentWatcherBloc>().add(
-                      CommentWatcherEvent.watchExperienceCommentsStarted(experience.id),
+          builder: (context, state) => state.map(
+            initial: (_) => Container(),
+            loadInProgress: (_) => WorldOnProgressIndicator(),
+            loadSuccess: (state) => ListView.builder(
+              padding: const EdgeInsets.all(5),
+              itemCount: state.comments.size,
+              shrinkWrap: true,
+              physics: const ClampingScrollPhysics(),
+              itemBuilder: (context, index) {
+                final _comment = state.comments[index];
+                if (_comment.isValid) {
+                  return CommentCard(comment: _comment);
+                } else {
+                  return ErrorCard(
+                    entityType: "Comment",
+                    valueFailureString: _comment.failureOption.fold(
+                      () => "",
+                      (failure) => failure.toString(),
                     ),
-                  child: CriticalErrorDisplay(failure: state.failure),
-                ),
+                  );
+                }
+              },
             ),
+            loadFailure: (state) => InkWell(
+              onTap: () async => context.bloc<CommentWatcherBloc>().add(
+                    CommentWatcherEvent.watchExperienceCommentsStarted(experience.id),
+                  ),
+              child: CriticalErrorDisplay(failure: state.failure),
+            ),
+          ),
         ),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:moor/moor.dart';
+import 'package:worldon/data/core/moor/daos/moor_tags_dao/moor_tag_with_moor_user.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
 
 part 'moor_tags_dao.g.dart';
@@ -6,6 +7,7 @@ part 'moor_tags_dao.g.dart';
 @UseDao(
   tables: [
     MoorTags,
+    MoorUsers,
     ExperienceTags,
     UserInterests,
   ],
@@ -27,11 +29,37 @@ class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
 
   Future insertUserInterest(Insertable<UserInterest> userInterest) => into(userInterests).insert(userInterest);
 
-  Stream<List<MoorTag>> watchSearchTagsByName(String name) {
-    final _contentQuery = select(moorTags)..where((moorTags) => moorTags.name.equals(name));
-    return _contentQuery.watch();
+  Future<Stream<List<MoorTagWithMoorUser>>> watchSearchTagsByName(String name) async {
+    final _whereExpression = moorTags.name.equals(name);
+    return _createMoorTagWithMoorUserListStream(_whereExpression);
   }
 
+  Future<Stream<List<MoorTagWithMoorUser>>> watchUserInterests(int userId) async {
+    final _userInterestsQuery = select(userInterests).join(
+      [
+        innerJoin(
+          moorTags,
+          moorTags.id.equalsExp(userInterests.tagId),
+        ),
+      ],
+    )..where((userInterests.userId.equals(userId)));
+    final _tagsIds = await _userInterestsQuery
+        .watch()
+        .map(
+          (_rows) => _rows
+              .map(
+                (_row) => _row.readTable(moorTags).id,
+              )
+              .toList(),
+        )
+        .first;
+    final _whereExpression = moorTags.id.isIn(_tagsIds);
+    return _createMoorTagWithMoorUserListStream(_whereExpression);
+  }
+
+  // TODO: The experiences dao could be simplified if each relation where left to their own daos to obtain
+  // For example having the stream of lists of MoorTagsWithUser by the experience be obtained from this dao
+  @Deprecated("The correct way of associating experiences with their tags is in the experience dao")
   Future<List<MoorTag>> selectExperienceTags(int experienceId) async {
     final _contentQuery = select(experienceTags).join(
       [
@@ -42,28 +70,31 @@ class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
       ],
     )..where((experienceTags.experienceId.equals(experienceId)));
     final _contentStream = _contentQuery.watch().map(
-          (rows) => rows
+          (_rows) => _rows
               .map(
-                (row) => row.readTable(moorTags),
+                (_row) => _row.readTable(moorTags),
               )
               .toList(),
         );
     return _contentStream.first;
   }
 
-  Stream<List<MoorTag>> watchUserInterests(int userId) {
-    final _contentQuery = select(userInterests).join(
+  Stream<List<MoorTagWithMoorUser>> _createMoorTagWithMoorUserListStream(Expression<bool> _whereExpression) {
+    final _tagWithCreatorQuery = select(moorUsers).join(
       [
         innerJoin(
           moorTags,
-          moorTags.id.equalsExp(userInterests.tagId),
+          moorTags.creatorId.equalsExp(moorUsers.id),
         ),
       ],
-    )..where((userInterests.userId.equals(userId)));
-    return _contentQuery.watch().map(
-          (rows) => rows
+    )..where(_whereExpression);
+    return _tagWithCreatorQuery.watch().map(
+          (_rows) => _rows
               .map(
-                (row) => row.readTable(moorTags),
+                (_row) => MoorTagWithMoorUser(
+                  tag: _row.readTable(moorTags),
+                  creator: _row.readTable(moorUsers),
+                ),
               )
               .toList(),
         );

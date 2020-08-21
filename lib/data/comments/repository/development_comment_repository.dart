@@ -77,7 +77,7 @@ class DevelopmentCommentRepository implements CommentRepositoryInterface {
     }
     return createStreamOfEither(_either);
   }
-  
+
   @override
   Future<Either<Failure, Unit>> postComment({
     Comment comment,

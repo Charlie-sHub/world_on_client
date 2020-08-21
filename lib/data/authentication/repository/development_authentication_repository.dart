@@ -52,7 +52,7 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
       );
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> logOut() async {
     try {
@@ -74,7 +74,7 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
       );
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> register(User user) async {
     try {
@@ -106,13 +106,13 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
       );
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> logInGoogle() {
     // It'll always fails just so it doesn't mess with the simulation of the normal log in
     return getLeftServerErrorFuture();
   }
-  
+
   @override
   Future<Either<Failure, Unit>> registerGoogle() {
     // It'll always fails just so it doesn't mess with the simulation of the normal log in

@@ -10,6 +10,7 @@ class MoorNotificationsDao extends DatabaseAccessor<Database> with _$MoorNotific
   Future deleteNotification(Insertable<MoorNotification> notification) => delete(moorNotifications).delete(notification);
 
   Stream<List<MoorNotification>> watchNotifications(int userId) {
+    // TODO: return a stream of Notifications with sender and receiver
     final _contentQuery = select(moorNotifications)..where((moorNotifications) => moorNotifications.receiverId.equals(userId));
     return _contentQuery.watch();
   }
