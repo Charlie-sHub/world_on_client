@@ -17,29 +17,32 @@ abstract class Notification implements _$Notification {
 
   const factory Notification({
     int id,
-    @required User sender, // Maybe change the Users to only the ids
+    @required User sender,
+    // TODO: Is the receiver necessary for the domain entity?
+    // The receiver will always be the logged in user
+    // Relation is needed in the database of course, but not really beyond that
     @required User receiver,
     @required EntityDescription description,
     @required bool seen,
     @required PastDate creationDate,
     @required NotificationType type,
   }) = _Notification;
-  
+
   factory Notification.empty() => Notification(
-    sender: User.empty(),
-    receiver: User.empty(),
-    description: EntityDescription(""),
-    seen: false,
-    creationDate: PastDate(DateTime.now()),
-    type: NotificationType.follow,
-  );
-  
+        sender: User.empty(),
+        receiver: User.empty(),
+        description: EntityDescription(""),
+        seen: false,
+        creationDate: PastDate(DateTime.now()),
+        type: NotificationType.follow,
+      );
+
   Option<ValueFailure<dynamic>> get failureOption {
     return description.failureOrUnit.andThen(receiver.failureOrUnit).andThen(sender.failureOrUnit).andThen(creationDate.failureOrUnit).fold(
-        (failure) => some(failure),
-        (_) => none(),
-    );
+          (failure) => some(failure),
+          (_) => none(),
+        );
   }
-  
+
   bool get isValid => failureOption.isNone();
 }

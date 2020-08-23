@@ -26,29 +26,31 @@ class DevelopmentCommentRepository implements CommentRepositoryInterface {
   final _logger = Logger();
 
   @override
-  Future<Either<Failure, Unit>> editComment(Comment comment) {
-    return simulateFailureOrUnit(auxBool: _random.nextBool());
-  }
-
-  @override
   Stream<Either<Failure, KtList<Comment>>> watchExperienceComments(int experienceId) async* {
     yield* _database.moorCommentsDao.watchExperienceComments(experienceId).asyncMap(
       (_moorCommentList) {
-        return right<Failure, KtList<Comment>>(
-          _moorCommentList
-              .map(
-                (_moorCommentWithMoorUser) => moorCommentToDomainComment(_moorCommentWithMoorUser),
-              )
-              .toList()
-              .toImmutableList()
-              .sortedBy(
-                (comment) => comment.creationDate.getOrCrash(),
-              ),
-        );
+        if (_moorCommentList != null) {
+          return right<Failure, KtList<Comment>>(
+            _moorCommentList
+                .map(
+                  (_moorCommentWithMoorUser) => moorCommentToDomainComment(_moorCommentWithMoorUser),
+                )
+                .toImmutableList()
+                .sortedBy(
+                  (comment) => comment.creationDate.getOrCrash(),
+                ),
+          );
+        } else {
+          return left<Failure, KtList<Comment>>(
+            const Failure.coreData(
+              CoreDataFailure.notFoundError(),
+            ),
+          );
+        }
       },
     ).onErrorReturnWith(
-      (error) {
-        final _errorMessage = "Development repository error: $error";
+        (_error) {
+        final _errorMessage = "Development repository error: $_error";
         _logger.e(_errorMessage);
         return left(
           Failure.coreData(
@@ -59,6 +61,32 @@ class DevelopmentCommentRepository implements CommentRepositoryInterface {
         );
       },
     );
+  }
+
+  @override
+  Future<Either<Failure, Unit>> postComment({
+    Comment comment,
+    int experienceId,
+  }) async {
+    try {
+      final _moorComment = domainCommentToMoorComment(comment, experienceId);
+      await _database.moorCommentsDao.insertComment(_moorComment);
+      return right(unit);
+    } catch (exception) {
+      _logger.e("Moor Database error: $exception");
+      return left(
+        Failure.coreData(
+          CoreDataFailure.serverError(
+            errorString: "Development repository error $exception",
+          ),
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, Unit>> editComment(Comment comment) {
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 
   @override
@@ -76,27 +104,6 @@ class DevelopmentCommentRepository implements CommentRepositoryInterface {
       _either = left(getServerErrorFailure());
     }
     return createStreamOfEither(_either);
-  }
-
-  @override
-  Future<Either<Failure, Unit>> postComment({
-    Comment comment,
-    int experienceId,
-  }) async {
-    try {
-      final _moorComment = domainCommentToMoorComment(comment, experienceId);
-      await _database.moorCommentsDao.insertComment(_moorComment);
-      return right(unit);
-    } on Exception catch (exception) {
-      _logger.e("Moor Database error: $exception");
-      return left(
-        Failure.coreData(
-          CoreDataFailure.serverError(
-            errorString: "Development repository error $exception",
-          ),
-        ),
-      );
-    }
   }
 
   @override

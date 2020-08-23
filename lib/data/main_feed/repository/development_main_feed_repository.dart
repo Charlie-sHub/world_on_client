@@ -37,23 +37,30 @@ class DevelopmentMainFeedRepository implements MainFeedRepositoryInterface {
   Stream<Either<Failure, KtList<Experience>>> watchFeed() async* {
     final _moorUser = await _database.moorUsersDao.getLoggedInUser();
     final _stream = await _database.moorExperiencesDao.watchFeed(_moorUser.id);
-    yield* _stream.asyncMap(
+    yield* _stream.map(
       (_moorExperienceList) {
-        return right<Failure, KtList<Experience>>(
-          _moorExperienceList
-              .map(
-                (_moorExperienceWithRelations) => moorExperienceToDomainExperience(_moorExperienceWithRelations),
-              )
-              .toList()
-              .toImmutableList()
-              .sortedBy(
-                (experience) => experience.creationDate.getOrCrash(),
-              ),
-        );
+        if (_moorExperienceList != null) {
+          return right<Failure, KtList<Experience>>(
+            _moorExperienceList
+                .map(
+                  (_moorExperienceWithRelations) => moorExperienceToDomainExperience(_moorExperienceWithRelations),
+                )
+                .toImmutableList()
+                .sortedBy(
+                  (_experience) => _experience.creationDate.getOrCrash(),
+                ),
+          );
+        } else {
+          return left<Failure, KtList<Experience>>(
+            const Failure.coreData(
+              CoreDataFailure.notFoundError(),
+            ),
+          );
+        }
       },
     ).onErrorReturnWith(
-      (error) {
-        final _errorMessage = "Development repository error: $error";
+        (_error) {
+        final _errorMessage = "Development repository error: $_error";
         _logger.e(_errorMessage);
         return left(
           Failure.coreData(

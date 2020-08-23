@@ -31,6 +31,7 @@ class SearchBody extends StatelessWidget {
       child: BlocConsumer<SearchByNameFormBloc, SearchByNameFormState>(
         listenWhen: (_, current) => current.isSubmitting,
         listener: _searchFormListener,
+        buildWhen: (previous, current) => previous.showErrorMessages != current.showErrorMessages,
         builder: (context, state) => Padding(
           padding: const EdgeInsets.all(5),
           child: DefaultTabController(

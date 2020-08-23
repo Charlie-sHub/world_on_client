@@ -18,35 +18,43 @@ class LogInForm extends StatelessWidget {
     // It doesn't make sense for the logo and register buttons to be part of the form for example
     return Form(
       autovalidate: context.bloc<LogInFormBloc>().state.showErrorMessages,
-      child: ListView(
-        padding: const EdgeInsets.all(40),
-        children: <Widget>[
-          const WorldOnLogoImage(),
-          const SizedBox(height: 5),
-          const WorldOnTitle(),
-          const SizedBox(height: 10),
-          UsernameTextField(
-            eventToAdd: (String value) => context.bloc<LogInFormBloc>().add(
-                  LogInFormEvent.usernameChanged(value),
-                ),
-            validator: (_) => _usernameValidator(context),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 40,
+          vertical: 30,
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              const WorldOnLogoImage(),
+              const SizedBox(height: 5),
+              const WorldOnTitle(),
+              const SizedBox(height: 10),
+              UsernameTextField(
+                eventToAdd: (String value) => context.bloc<LogInFormBloc>().add(
+                      LogInFormEvent.usernameChanged(value),
+                    ),
+                validator: (_) => _usernameValidator(context),
+              ),
+              const SizedBox(height: 3),
+              PasswordTextField(
+                eventToAdd: (String value) => context.bloc<LogInFormBloc>().add(
+                      LogInFormEvent.passwordChanged(value),
+                    ),
+                validator: (_) => _passwordValidator(context),
+              ),
+              const SizedBox(height: 7),
+              const LogInButton(),
+              const SizedBox(height: 5),
+              const LogInTroubleButton(),
+              const SizedBox(height: 5),
+              const LogInGoogleButton(),
+              const SizedBox(height: 5),
+              const RegisterButton(),
+            ],
           ),
-          const SizedBox(height: 3),
-          PasswordTextField(
-            eventToAdd: (String value) => context.bloc<LogInFormBloc>().add(
-                  LogInFormEvent.passwordChanged(value),
-                ),
-            validator: (_) => _passwordValidator(context),
-          ),
-          const SizedBox(height: 7),
-          const LogInButton(),
-          const SizedBox(height: 5),
-          const LogInTroubleButton(),
-          const SizedBox(height: 5),
-          const LogInGoogleButton(),
-          const SizedBox(height: 5),
-          const RegisterButton(),
-        ],
+        ),
       ),
     );
   }

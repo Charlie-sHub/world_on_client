@@ -22,7 +22,7 @@ class DevelopmentGeoLocationRepository implements GeoLocationRepositoryInterface
         longitude: Longitude(_position.longitude),
       );
       return right(_coordinates);
-    } on Exception catch (exception) {
+    } catch (exception) {
       final _errorMessage = "Geolocation error: $exception";
       _logger.e(_errorMessage);
       return left(

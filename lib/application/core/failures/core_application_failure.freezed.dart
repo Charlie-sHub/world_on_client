@@ -74,18 +74,18 @@ class _$CoreApplicationFailureCopyWithImpl<T, $Res> implements $CoreApplicationF
 
 abstract class $UnknownApplicationLayerErrorCopyWith<T, $Res> implements $CoreApplicationFailureCopyWith<T, $Res> {
   factory $UnknownApplicationLayerErrorCopyWith(UnknownApplicationLayerError<T> value, $Res Function(UnknownApplicationLayerError<T>) then) = _$UnknownApplicationLayerErrorCopyWithImpl<T, $Res>;
-  
+
   @override
   $Res call({String errorString});
 }
 
 class _$UnknownApplicationLayerErrorCopyWithImpl<T, $Res> extends _$CoreApplicationFailureCopyWithImpl<T, $Res> implements $UnknownApplicationLayerErrorCopyWith<T, $Res> {
   _$UnknownApplicationLayerErrorCopyWithImpl(UnknownApplicationLayerError<T> _value, $Res Function(UnknownApplicationLayerError<T>) _then)
-    : super(_value, (v) => _then(v as UnknownApplicationLayerError<T>));
-  
+      : super(_value, (v) => _then(v as UnknownApplicationLayerError<T>));
+
   @override
   UnknownApplicationLayerError<T> get _value => super._value as UnknownApplicationLayerError<T>;
-  
+
   @override
   $Res call({
     Object errorString = freezed,
@@ -98,26 +98,26 @@ class _$UnknownApplicationLayerErrorCopyWithImpl<T, $Res> extends _$CoreApplicat
 
 class _$UnknownApplicationLayerError<T> implements UnknownApplicationLayerError<T> {
   const _$UnknownApplicationLayerError({@required this.errorString}) : assert(errorString != null);
-  
+
   @override
   final String errorString;
-  
+
   @override
   String toString() {
     return 'CoreApplicationFailure<$T>.unknownApplicationLayerError(errorString: $errorString)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is UnknownApplicationLayerError<T> && (identical(other.errorString, errorString) || const DeepCollectionEquality().equals(other.errorString, errorString)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
-  
+
   @override
   $UnknownApplicationLayerErrorCopyWith<T, UnknownApplicationLayerError<T>> get copyWith => _$UnknownApplicationLayerErrorCopyWithImpl<T, UnknownApplicationLayerError<T>>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -165,10 +165,10 @@ class _$UnknownApplicationLayerError<T> implements UnknownApplicationLayerError<
 
 abstract class UnknownApplicationLayerError<T> implements CoreApplicationFailure<T> {
   const factory UnknownApplicationLayerError({@required String errorString}) = _$UnknownApplicationLayerError<T>;
-  
+
   @override
   String get errorString;
-  
+
   @override
   $UnknownApplicationLayerErrorCopyWith<T, UnknownApplicationLayerError<T>> get copyWith;
 }

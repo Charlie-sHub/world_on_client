@@ -30,7 +30,7 @@ void main() {
     "Should return a KtSet of Experiences",
     () async {
       // Arrange
-      when(mockSearchRepository.watchSearchExperiencesByName(any)).thenAnswer((_) => createStream(right(experiencesFound)));
+      when(mockSearchRepository.watchSearchExperiencesByTitle(any)).thenAnswer((_) => createStream(right(experiencesFound)));
       // Act
       final result = await _act(useCase, params);
       // Assert
@@ -46,7 +46,7 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
-          when(mockSearchRepository.watchSearchExperiencesByName(any)).thenAnswer((_) => createStream(left(failure)));
+          when(mockSearchRepository.watchSearchExperiencesByTitle(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
           final result = await _act(useCase, params);
           // Assert
@@ -59,7 +59,7 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.cacheError(errorString: TestDescription.errorString));
-          when(mockSearchRepository.watchSearchExperiencesByName(any)).thenAnswer((_) => createStream(left(failure)));
+          when(mockSearchRepository.watchSearchExperiencesByTitle(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
           final result = await _act(useCase, params);
           // Assert
@@ -72,7 +72,7 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.notFoundError());
-          when(mockSearchRepository.watchSearchExperiencesByName(any)).thenAnswer((_) => createStream(left(failure)));
+          when(mockSearchRepository.watchSearchExperiencesByTitle(any)).thenAnswer((_) => createStream(left(failure)));
           // Act
           final result = await _act(useCase, params);
           // Assert
@@ -94,6 +94,6 @@ Future<Either<Failure, KtList<Experience>>> _act(WatchSearchExperiencesByName us
 }
 
 void _verifyInteractions(SearchRepositoryInterface mockSearchRepository) {
-  verify(mockSearchRepository.watchSearchExperiencesByName(any));
+  verify(mockSearchRepository.watchSearchExperiencesByTitle(any));
   verifyNoMoreInteractions(mockSearchRepository);
 }

@@ -3,14 +3,15 @@ import 'dart:math';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
+import 'package:logger/logger.dart';
 import 'package:worldon/core/error/failure.dart';
+import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/create_stream_of_either.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_left_server_error.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_right_future.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_server_error_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_tag.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
-import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/simulate_failure_or_unit.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
@@ -23,6 +24,50 @@ import '../../../injection.dart';
 class DevelopmentTagRepository implements TagCoreRepositoryInterface {
   final _random = Random();
   final _database = getIt<Database>();
+  final _logger = Logger();
+
+  @override
+  Future<Either<Failure, Unit>> addTagToInterests(Tag tag) async {
+    try {
+      final _moorUser = await _database.moorUsersDao.getLoggedInUser();
+      final _userInterest = _createUserInterest(_moorUser, tag);
+      await _database.moorTagsDao.insertUserInterest(_userInterest);
+      return right(unit);
+    } catch (exception) {
+      _logger.e("Moor Database error: $exception");
+      return left(
+        Failure.coreData(
+          CoreDataFailure.serverError(
+            errorString: "Development repository error $exception",
+          ),
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, Unit>> dismissTagFromInterests(Tag tag) async {
+    try {
+      final _moorUser = await _database.moorUsersDao.getLoggedInUser();
+      final _userInterest = _createUserInterest(_moorUser, tag);
+      await _database.moorTagsDao.removeUserInterest(_userInterest);
+      return right(unit);
+    } catch (exception) {
+      _logger.e("Moor Database error: $exception");
+      return left(
+        Failure.coreData(
+          CoreDataFailure.serverError(
+            errorString: "Development repository error $exception",
+          ),
+        ),
+      );
+    }
+  }
+
+  UserInterestsCompanion _createUserInterest(MoorUser _moorUser, Tag tag) => UserInterestsCompanion.insert(
+        userId: _moorUser.id,
+        tagId: tag.id,
+      );
 
   @override
   Stream<Either<Failure, KtSet<Tag>>> watchAllTags() {
@@ -65,23 +110,5 @@ class DevelopmentTagRepository implements TagCoreRepositoryInterface {
       _either = left(getServerErrorFailure());
     }
     return createStreamOfEither(_either);
-  }
-
-  @override
-  Future<Either<Failure, Unit>> addTagToInterests(Tag tag) {
-    // get the logged in user from the users dao
-    // get the tag by its id with the tag dao
-    // copy the logged in user with the tag added to its interests
-    // update user
-    return simulateFailureOrUnit(auxBool: _random.nextBool());
-  }
-
-  @override
-  Future<Either<Failure, Unit>> dismissTagFromInterests(Tag tag) {
-    // get the logged in user from the users dao
-    // get the tag by its id with the tag dao
-    // copy the logged in user with the tag removed from its interests
-    // update user
-    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 }

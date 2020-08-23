@@ -15,7 +15,14 @@ part 'moor_tags_dao.g.dart';
 class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
   MoorTagsDao(Database db) : super(db);
 
-  Future deleteUserInterests(int userId) => (delete(userInterests)..where((interest) => interest.userId.equals(userId))).go();
+  Future<int> deleteUserInterests(int userId) => (delete(userInterests)..where((interest) => interest.userId.equals(userId))).go();
+
+  Future<int> deleteAllTags() => delete(moorTags).go();
+
+  Future<int> countTags() async {
+    final _moorTagList = await select(moorTags).get();
+    return _moorTagList.length;
+  }
 
   Future<MoorTag> selectTagById(int id) async {
     final _contentQuery = select(moorTags)
@@ -28,6 +35,8 @@ class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
   Future insertExperienceTag(Insertable<ExperienceTag> experienceTag) => into(experienceTags).insert(experienceTag);
 
   Future insertUserInterest(Insertable<UserInterest> userInterest) => into(userInterests).insert(userInterest);
+
+  Future removeUserInterest(Insertable<UserInterest> userInterest) => delete(userInterests).delete(userInterest);
 
   Future<Stream<List<MoorTagWithMoorUser>>> watchSearchTagsByName(String name) async {
     final _whereExpression = moorTags.name.equals(name);
@@ -55,28 +64,6 @@ class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
         .first;
     final _whereExpression = moorTags.id.isIn(_tagsIds);
     return _createMoorTagWithMoorUserListStream(_whereExpression);
-  }
-
-  // TODO: The experiences dao could be simplified if each relation where left to their own daos to obtain
-  // For example having the stream of lists of MoorTagsWithUser by the experience be obtained from this dao
-  @Deprecated("The correct way of associating experiences with their tags is in the experience dao")
-  Future<List<MoorTag>> selectExperienceTags(int experienceId) async {
-    final _contentQuery = select(experienceTags).join(
-      [
-        innerJoin(
-          moorTags,
-          moorTags.id.equalsExp(experienceTags.tagId),
-        ),
-      ],
-    )..where((experienceTags.experienceId.equals(experienceId)));
-    final _contentStream = _contentQuery.watch().map(
-          (_rows) => _rows
-              .map(
-                (_row) => _row.readTable(moorTags),
-              )
-              .toList(),
-        );
-    return _contentStream.first;
   }
 
   Stream<List<MoorTagWithMoorUser>> _createMoorTagWithMoorUserListStream(Expression<bool> _whereExpression) {

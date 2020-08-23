@@ -17,6 +17,13 @@ class MoorCommentsDao extends DatabaseAccessor<Database> with _$MoorCommentsDaoM
 
   Future insertComment(Insertable<MoorComment> comment) => into(moorComments).insert(comment);
 
+  Future<int> countComments() async {
+    final _moorCommentList = await select(moorComments).get();
+    return _moorCommentList.length;
+  }
+
+  Future<int> deleteAllComments() => delete(moorComments).go();
+
   Stream<List<MoorCommentWithMoorUser>> watchExperienceComments(int experienceId) {
     final _commentQuery = select(moorComments);
     return _commentQuery.watch().switchMap(

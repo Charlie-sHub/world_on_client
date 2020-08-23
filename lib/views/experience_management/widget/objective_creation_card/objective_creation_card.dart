@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
 import 'package:worldon/application/experience_management/objective_form/objective_form_bloc.dart';
@@ -14,20 +15,14 @@ import 'package:worldon/views/experience_management/widget/objective_creation_ca
 import 'package:worldon/views/experience_management/widget/objective_creation_card/objective_coordinates_picker.dart';
 import 'package:worldon/views/experience_management/widget/objective_creation_card/submit_button.dart';
 
-class ObjectiveCreationCard extends StatefulWidget {
+class ObjectiveCreationCard extends HookWidget {
   const ObjectiveCreationCard({
     Key key,
   }) : super(key: key);
 
   @override
-  _ObjectiveCreationCardState createState() => _ObjectiveCreationCardState();
-}
-
-class _ObjectiveCreationCardState extends State<ObjectiveCreationCard> {
-  final TextEditingController _textEditingController = TextEditingController();
-
-  @override
   Widget build(BuildContext context) {
+    final _textEditingController = useTextEditingController();
     return BlocProvider(
       create: (context) => getIt<ObjectivesCreationBloc>(),
       child: BlocConsumer<ObjectivesCreationBloc, ObjectivesCreationState>(
@@ -39,110 +34,113 @@ class _ObjectiveCreationCardState extends State<ObjectiveCreationCard> {
           shape: const RoundedRectangleBorder(
             side: BorderSide(
               color: WorldOnColors.primary,
-            ),
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              Container(
-                constraints: BoxConstraints(
-                  maxHeight: MediaQuery.of(context).size.height * 0.5,
-                ),
-                child: ListView.builder(
-                  padding: const EdgeInsets.all(10),
-                  itemCount: state.objectivesCreated.size,
-                  shrinkWrap: true,
-                  physics: const ClampingScrollPhysics(),
-                  itemBuilder: (context, index) {
-                    final _objective = state.objectivesCreated.asSet().elementAt(index);
-                    if (_objective.isValid) {
-                      return CreatedObjectiveCard(objective: _objective);
-                    } else {
-                      return ErrorCard(
-                        entityType: "Objective",
-                        valueFailureString: _objective.failureOption.fold(
-                          () => "No error",
-                          (failure) => failure.toString(),
-                        ),
-                      );
-                    }
-                  },
-                ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(10),
-                child: BlocProvider(
-                  create: (context) => getIt<ObjectiveFormBloc>(),
-                  child: BlocConsumer<ObjectiveFormBloc, ObjectiveFormState>(
-                    listener: _objectiveFormListener,
-                    builder: (context, state) => Form(
-                      autovalidate: state.showErrorMessages,
-                      child: Column(
-                        children: <Widget>[
-                          DescriptionTextField(
-                            textController: _textEditingController,
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Container(
+                  constraints: BoxConstraints(
+                    maxHeight: MediaQuery.of(context).size.height * 0.5,
+                  ),
+                  child: ListView.builder(
+                    padding: const EdgeInsets.all(10),
+                    itemCount: state.objectivesCreated.size,
+                    shrinkWrap: true,
+                    physics: const ClampingScrollPhysics(),
+                    itemBuilder: (context, index) {
+                      final _objective = state.objectivesCreated.asSet().elementAt(index);
+                      if (_objective.isValid) {
+                        return CreatedObjectiveCard(objective: _objective);
+                      } else {
+                        return ErrorCard(
+                          entityType: "Objective",
+                          valueFailureString: _objective.failureOption.fold(
+                              () => "No error",
+                              (failure) => failure.toString(),
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        );
+                      }
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: BlocProvider(
+                    create: (context) => getIt<ObjectiveFormBloc>(),
+                    child: BlocConsumer<ObjectiveFormBloc, ObjectiveFormState>(
+                      listener: (context, state) {
+                        _objectiveFormListener(state, _textEditingController, context);
+                      },
+                      builder: (context, state) =>
+                        Form(
+                          autovalidate: state.showErrorMessages,
+                          child: Column(
                             children: <Widget>[
-                              Expanded(
-                                child: state.objective.imageFile.fold(
-                                  () => Column(
-                                    children: <Widget>[
-                                      IconButton(
-                                        iconSize: 80,
-                                        icon: const Icon(
-                                          Icons.photo_camera,
-                                        ),
-                                        onPressed: () async => _pickImage(context),
+                              DescriptionTextField(
+                                textController: _textEditingController,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: <Widget>[
+                                  Expanded(
+                                    child: state.objective.imageFile.fold(
+                                        () => Column(
+                                        children: <Widget>[
+                                          IconButton(
+                                            iconSize: 80,
+                                            icon: const Icon(
+                                              Icons.photo_camera,
+                                            ),
+                                            onPressed: () async => _pickImage(context),
+                                          ),
+                                          if (context.bloc<ObjectiveFormBloc>().state.showErrorMessages && context.bloc<ObjectiveFormBloc>().state.objective.imageFile.isNone())
+                                            const Text(
+                                              "Please select a picture",
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(color: Colors.red),
+                                            )
+                                          else
+                                            Container(),
+                                        ],
                                       ),
-                                      if (context.bloc<ObjectiveFormBloc>().state.showErrorMessages && context.bloc<ObjectiveFormBloc>().state.objective.imageFile.isNone())
-                                        const Text(
-                                          "Please select a picture",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(color: Colors.red),
-                                        )
-                                      else
-                                        Container(),
-                                    ],
-                                  ),
-                                  (imageFile) => Padding(
-                                    padding: const EdgeInsets.all(10),
-                                    child: FlatButton(
-                                      onPressed: () async => _pickImage(context),
-                                      child: Image(
-                                        fit: BoxFit.fitWidth,
-                                        image: FileImage(imageFile),
+                                        (imageFile) => Padding(
+                                        padding: const EdgeInsets.all(10),
+                                        child: FlatButton(
+                                          onPressed: () async => _pickImage(context),
+                                          child: Image(
+                                            fit: BoxFit.fitWidth,
+                                            image: FileImage(imageFile),
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
+                                  const ObjectiveCoordinatePicker(),
+                                ],
                               ),
-                              const ObjectiveCoordinatePicker(),
+                              const SubmitButton(),
                             ],
                           ),
-                          const SubmitButton(),
-                        ],
-                      ),
+                        ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
       ),
     );
   }
-
-  void _objectiveFormListener(BuildContext context, ObjectiveFormState state) {
+  
+  void _objectiveFormListener(ObjectiveFormState state, TextEditingController _textEditingController, BuildContext context) {
     if (state.isSubmitting) {
       _textEditingController.clear();
       context.bloc<ObjectivesCreationBloc>().add(
-            ObjectivesCreationEvent.addedObjective(
-              state.objective,
-            ),
-          );
+        ObjectivesCreationEvent.addedObjective(
+          state.objective,
+        ),
+      );
     }
   }
 
@@ -150,11 +148,5 @@ class _ObjectiveCreationCardState extends State<ObjectiveCreationCard> {
     final _imagePicked = await ImagePicker().getImage(source: ImageSource.gallery);
     final _imageFile = File(_imagePicked.path);
     context.bloc<ObjectiveFormBloc>().add(ObjectiveFormEvent.imageChanged(_imageFile));
-  }
-
-  @override
-  void dispose() {
-    _textEditingController.dispose();
-    super.dispose();
   }
 }

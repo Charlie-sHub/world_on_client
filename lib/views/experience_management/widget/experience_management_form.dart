@@ -49,6 +49,7 @@ class ExperienceManagementForm extends StatelessWidget {
             ).show(context),
           ),
         ),
+        buildWhen: (previous, current) => previous.showErrorMessages != current.showErrorMessages,
         builder: (context, state) => SingleChildScrollView(
           child: Form(
             autovalidate: state.showErrorMessages,

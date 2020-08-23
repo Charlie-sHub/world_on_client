@@ -17,7 +17,7 @@ abstract class SearchRepositoryInterface {
   Stream<Either<Failure, KtList<User>>> watchSearchUsersByUserName(SearchTerm username);
 
   /// Sends a given [SearchTerm] to the server and it returns the [Experience]s with said [SearchTerm] in their names
-  Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByName(SearchTerm name);
+  Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByTitle(SearchTerm title);
 
   /// Sends a given [SearchTerm] to the server and it returns the [Tag]s with said [SearchTerm] in their names
   Stream<Either<Failure, KtList<Tag>>> watchSearchTagsByName(SearchTerm name);

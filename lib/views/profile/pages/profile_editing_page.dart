@@ -47,6 +47,7 @@ class ProfileEditingPage extends StatelessWidget {
               (_) => _onSuccess(context),
             ),
           ),
+          buildWhen: (previous, current) => previous.showErrorMessages != current.showErrorMessages,
           builder: (context, state) => state.user.failureOption.fold(
             () => const ProfileEditingForm(),
             // TODO: Make the CriticalErrorDisplay take the function to retry as a parameter

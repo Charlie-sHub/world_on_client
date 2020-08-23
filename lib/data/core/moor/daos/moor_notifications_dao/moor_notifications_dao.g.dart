@@ -8,4 +8,6 @@ part of 'moor_notifications_dao.dart';
 
 mixin _$MoorNotificationsDaoMixin on DatabaseAccessor<Database> {
   $MoorNotificationsTable get moorNotifications => attachedDatabase.moorNotifications;
+
+  $MoorUsersTable get moorUsers => attachedDatabase.moorUsers;
 }

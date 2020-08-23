@@ -25,7 +25,7 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByName(SearchTerm name) {
+  Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByTitle(SearchTerm title) {
     // TODO: implement searchExperiencesByName
     throw UnimplementedError();
   }

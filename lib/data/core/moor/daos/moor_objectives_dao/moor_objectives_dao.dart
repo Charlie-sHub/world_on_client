@@ -9,9 +9,5 @@ class MoorObjectivesDao extends DatabaseAccessor<Database> with _$MoorObjectives
 
   Future insertObjective(Insertable<MoorObjective> objective) => into(moorObjectives).insert(objective);
 
-  @Deprecated("The correct way of obtaining the objectives is in the experiences dao")
-  Future<List<MoorObjective>> selectExperienceObjectives(int experienceId) async {
-    final _contentQuery = select(moorObjectives)..where((moorObjective) => moorObjective.experienceId.equals(experienceId));
-    return _contentQuery.get();
-  }
+  Future<int> deleteAllObjectives() => delete(moorObjectives).go();
 }

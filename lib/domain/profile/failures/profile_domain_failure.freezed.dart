@@ -70,7 +70,7 @@ abstract class $FollowItselfCopyWith<T, $Res> {
 
 class _$FollowItselfCopyWithImpl<T, $Res> extends _$ProfileDomainFailureCopyWithImpl<T, $Res> implements $FollowItselfCopyWith<T, $Res> {
   _$FollowItselfCopyWithImpl(FollowItself<T> _value, $Res Function(FollowItself<T>) _then) : super(_value, (v) => _then(v as FollowItself<T>));
-  
+
   @override
   FollowItself<T> get _value => super._value as FollowItself<T>;
 }
@@ -152,7 +152,7 @@ abstract class $BlockItselfCopyWith<T, $Res> {
 
 class _$BlockItselfCopyWithImpl<T, $Res> extends _$ProfileDomainFailureCopyWithImpl<T, $Res> implements $BlockItselfCopyWith<T, $Res> {
   _$BlockItselfCopyWithImpl(BlockItself<T> _value, $Res Function(BlockItself<T>) _then) : super(_value, (v) => _then(v as BlockItself<T>));
-  
+
   @override
   BlockItself<T> get _value => super._value as BlockItself<T>;
 }

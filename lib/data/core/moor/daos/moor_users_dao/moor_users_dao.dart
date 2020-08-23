@@ -7,6 +7,7 @@ part 'moor_users_dao.g.dart';
   MoorUsers,
   MoorOptions,
   UserFollowRelations,
+  UserBlockRelations,
 ])
 class MoorUsersDao extends DatabaseAccessor<Database> with _$MoorUsersDaoMixin {
   MoorUsersDao(Database db) : super(db);
@@ -15,9 +16,26 @@ class MoorUsersDao extends DatabaseAccessor<Database> with _$MoorUsersDaoMixin {
 
   Future updateUser(Insertable<MoorUser> user) => update(moorUsers).replace(user);
 
+  Future blockUser(Insertable<UserBlockRelation> userBlockRelation) => into(userBlockRelations).insert(userBlockRelation);
+
+  Future unBlockUser(Insertable<UserBlockRelation> userBlockRelation) => delete(userBlockRelations).delete(userBlockRelation);
+
+  Future followUser(Insertable<UserFollowRelation> userFollowRelation) => into(userFollowRelations).insert(userFollowRelation);
+
+  Future unFollowUser(Insertable<UserFollowRelation> userFollowRelation) => delete(userFollowRelations).delete(userFollowRelation);
+
+  Future<int> deleteAllUsers() => delete(moorUsers).go();
+
+  Future<int> countUsers() async {
+    final _moorUserList = await select(moorUsers).get();
+    return _moorUserList.length;
+  }
+
   Future<MoorUser> getLoggedInUser() async {
     final _userQuery = select(moorUsers)
-      ..where((user) => user.isLoggedIn)
+      ..where(
+        (_user) => _user.isLoggedIn,
+      )
       ..limit(1)
       ..get();
     return _userQuery.getSingle();
@@ -25,7 +43,9 @@ class MoorUsersDao extends DatabaseAccessor<Database> with _$MoorUsersDaoMixin {
 
   Future<MoorUser> selectUserById(int id) async {
     final _experienceQuery = select(moorUsers)
-      ..where((user) => user.id.equals(id))
+      ..where(
+          (_user) => _user.id.equals(id),
+      )
       ..limit(1)
       ..get();
     return _experienceQuery.getSingle();
@@ -37,13 +57,13 @@ class MoorUsersDao extends DatabaseAccessor<Database> with _$MoorUsersDaoMixin {
   }) async {
     final userQuery = select(moorUsers)
       ..where(
-        (user) =>
-            user.username.equals(
-              username,
-            ) &
-            user.password.equals(
-              password,
-            ),
+          (_user) =>
+        _user.username.equals(
+          username,
+        ) &
+        _user.password.equals(
+          password,
+        ),
       );
     return userQuery.getSingle();
   }
@@ -68,11 +88,12 @@ class MoorUsersDao extends DatabaseAccessor<Database> with _$MoorUsersDaoMixin {
       ],
     )..where((userFollowRelations.followingId.equals(userId)));
     return _contentQuery.watch().map(
-          (rows) => rows
-              .map(
-                (row) => row.readTable(moorUsers),
-              )
-              .toList(),
+        (_rows) =>
+        _rows
+          .map(
+            (_row) => _row.readTable(moorUsers),
+        )
+          .toList(),
         );
   }
 
@@ -86,11 +107,12 @@ class MoorUsersDao extends DatabaseAccessor<Database> with _$MoorUsersDaoMixin {
       ],
     )..where((userFollowRelations.followedId.equals(userId)));
     return _contentQuery.watch().map(
-          (rows) => rows
-              .map(
-                (row) => row.readTable(moorUsers),
-              )
-              .toList(),
+        (_rows) =>
+        _rows
+          .map(
+            (_row) => _row.readTable(moorUsers),
+        )
+          .toList(),
         );
   }
 }

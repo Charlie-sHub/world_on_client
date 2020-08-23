@@ -63,17 +63,17 @@ class _$CoordinatesDtoCopyWithImpl<$Res> implements $CoordinatesDtoCopyWith<$Res
 
 abstract class _$CoordinatesDtoCopyWith<$Res> implements $CoordinatesDtoCopyWith<$Res> {
   factory _$CoordinatesDtoCopyWith(_CoordinatesDto value, $Res Function(_CoordinatesDto) then) = __$CoordinatesDtoCopyWithImpl<$Res>;
-  
+
   @override
   $Res call({double latitude, double longitude});
 }
 
 class __$CoordinatesDtoCopyWithImpl<$Res> extends _$CoordinatesDtoCopyWithImpl<$Res> implements _$CoordinatesDtoCopyWith<$Res> {
   __$CoordinatesDtoCopyWithImpl(_CoordinatesDto _value, $Res Function(_CoordinatesDto) _then) : super(_value, (v) => _then(v as _CoordinatesDto));
-  
+
   @override
   _CoordinatesDto get _value => super._value as _CoordinatesDto;
-  
+
   @override
   $Res call({
     Object latitude = freezed,
@@ -89,22 +89,22 @@ class __$CoordinatesDtoCopyWithImpl<$Res> extends _$CoordinatesDtoCopyWithImpl<$
 @JsonSerializable()
 class _$_CoordinatesDto extends _CoordinatesDto {
   const _$_CoordinatesDto({@required this.latitude, @required this.longitude})
-    : assert(latitude != null),
-      assert(longitude != null),
-      super._();
-  
+      : assert(latitude != null),
+        assert(longitude != null),
+        super._();
+
   factory _$_CoordinatesDto.fromJson(Map<String, dynamic> json) => _$_$_CoordinatesDtoFromJson(json);
-  
+
   @override
   final double latitude;
   @override
   final double longitude;
-  
+
   @override
   String toString() {
     return 'CoordinatesDto(latitude: $latitude, longitude: $longitude)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -127,17 +127,17 @@ class _$_CoordinatesDto extends _CoordinatesDto {
 
 abstract class _CoordinatesDto extends CoordinatesDto {
   const _CoordinatesDto._() : super._();
-  
+
   const factory _CoordinatesDto({@required double latitude, @required double longitude}) = _$_CoordinatesDto;
-  
+
   factory _CoordinatesDto.fromJson(Map<String, dynamic> json) = _$_CoordinatesDto.fromJson;
-  
+
   @override
   double get latitude;
-  
+
   @override
   double get longitude;
-  
+
   @override
   _$CoordinatesDtoCopyWith<_CoordinatesDto> get copyWith;
 }

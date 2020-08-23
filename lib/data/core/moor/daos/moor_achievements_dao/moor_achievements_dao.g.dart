@@ -11,6 +11,8 @@ mixin _$MoorAchievementsDaoMixin on DatabaseAccessor<Database> {
 
   $MoorTagsTable get moorTags => attachedDatabase.moorTags;
 
+  $MoorUsersTable get moorUsers => attachedDatabase.moorUsers;
+
   $UserAchievementsTable get userAchievements => attachedDatabase.userAchievements;
 
   $AchievementTagsTable get achievementTags => attachedDatabase.achievementTags;

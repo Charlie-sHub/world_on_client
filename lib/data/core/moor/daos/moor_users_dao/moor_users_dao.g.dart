@@ -12,4 +12,6 @@ mixin _$MoorUsersDaoMixin on DatabaseAccessor<Database> {
   $MoorOptionsTable get moorOptions => attachedDatabase.moorOptions;
 
   $UserFollowRelationsTable get userFollowRelations => attachedDatabase.userFollowRelations;
+
+  $UserBlockRelationsTable get userBlockRelations => attachedDatabase.userBlockRelations;
 }

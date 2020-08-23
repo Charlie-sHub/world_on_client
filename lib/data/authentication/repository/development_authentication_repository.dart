@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:logger/logger.dart';
 import 'package:worldon/core/error/failure.dart';
+import 'package:worldon/data/authentication/failures/authentication_data_failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_left_server_error.dart';
 import 'package:worldon/data/core/moor/converters/domain_user_to_moor_user_companion.dart';
@@ -20,9 +21,8 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
   Future<Option<User>> getLoggedInUser() async {
     try {
       final _moorUser = await _database.moorUsersDao.getLoggedInUser();
-      final _user = moorUserToDomainUser(_moorUser);
-      return some(_user);
-    } on Exception catch (exception) {
+      return _moorUser != null ? some(moorUserToDomainUser(_moorUser)) : none();
+    } catch (exception) {
       _logger.e("Moor Database error: $exception");
       return none();
     }
@@ -35,13 +35,21 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
         username: user.username.getOrCrash(),
         password: user.password.getOrCrash(),
       );
-      await _database.moorUsersDao.updateUser(
-        _moorUser.copyWith(
-          isLoggedIn: true,
-        ),
-      );
-      return right(unit);
-    } on Exception catch (exception) {
+      if (_moorUser != null) {
+        await _database.moorUsersDao.updateUser(
+          _moorUser.copyWith(
+            isLoggedIn: true,
+          ),
+        );
+        return right(unit);
+      } else {
+        return left(
+          const Failure.authenticationData(
+            AuthenticationDataFailure.invalidCredentials(),
+          ),
+        );
+      }
+    } catch (exception) {
       _logger.e("Moor Database error: $exception");
       return left(
         Failure.coreData(
@@ -63,7 +71,7 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
         ),
       );
       return right(unit);
-    } on Exception catch (exception) {
+    } catch (exception) {
       _logger.e("Moor Database error: $exception");
       return left(
         Failure.coreData(
@@ -95,7 +103,7 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
         await _database.moorTagsDao.insertUserInterest(_userInterest);
       }
       return right(unit);
-    } on Exception catch (exception) {
+    } catch (exception) {
       _logger.e("Moor Database error: $exception");
       return left(
         Failure.coreData(

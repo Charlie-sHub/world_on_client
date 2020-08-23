@@ -32,7 +32,7 @@ class DevelopmentExperienceLogRepository implements ExperienceLogRepositoryInter
       );
       await _database.moorExperiencesDao.insertExperienceTodo(_userToDoExperience);
       return right(unit);
-    } on Exception catch (exception) {
+    } catch (exception) {
       final _errorMessage = "Development repository error: $exception";
       _logger.e(_errorMessage);
       return left(
@@ -55,7 +55,7 @@ class DevelopmentExperienceLogRepository implements ExperienceLogRepositoryInter
       );
       await _database.moorExperiencesDao.removeExperienceTodo(_userToDoExperience);
       return right(unit);
-    } on Exception catch (exception) {
+    } catch (exception) {
       final _errorMessage = "Development repository error: $exception";
       _logger.e(_errorMessage);
       return left(

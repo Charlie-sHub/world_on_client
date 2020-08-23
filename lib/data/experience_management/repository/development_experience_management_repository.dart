@@ -50,7 +50,7 @@ class DevelopmentExperienceManagementRepository implements ExperienceManagementR
         await _database.moorTagsDao.insertExperienceTag(_experienceTag);
       }
       return right(unit);
-    } on Exception catch (exception) {
+    } catch (exception) {
       _logger.e("Moor Database error: $exception");
       return left(
         Failure.coreData(

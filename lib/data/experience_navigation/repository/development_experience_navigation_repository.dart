@@ -33,7 +33,7 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
       );
       await _database.moorExperiencesDao.insertExperienceDone(_userDoneExperience);
       return right(unit);
-    } on Exception catch (exception) {
+    } catch (exception) {
       _logger.e("Moor Database error: $exception");
       return left(
         Failure.coreData(
@@ -55,7 +55,7 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
       );
       await _database.moorExperiencesDao.insertExperienceLiked(_userLikedExperience);
       return right(unit);
-    } on Exception catch (exception) {
+    } catch (exception) {
       _logger.e("Moor Database error: $exception");
       return left(
         Failure.coreData(
@@ -81,7 +81,7 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
         ),
       );
       return right(unit);
-    } on Exception catch (exception) {
+    } catch (exception) {
       _logger.e("Moor Database error: $exception");
       return left(
         Failure.coreData(
@@ -105,7 +105,7 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
         ),
       );
       return right(unit);
-    } on Exception catch (exception) {
+    } catch (exception) {
       _logger.e("Moor Database error: $exception");
       return left(
         Failure.coreData(

@@ -27,6 +27,7 @@ class RegistrationForm extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(25),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               const WorldOnTitle(),
               const SizedBox(height: 10),
@@ -51,8 +52,8 @@ class RegistrationForm extends StatelessWidget {
               const SizedBox(height: 8),
               PasswordTextField(
                 eventToAdd: (String value) => context.bloc<RegistrationFormBloc>().add(
-                      RegistrationFormEvent.passwordChanged(value),
-                    ),
+                  RegistrationFormEvent.passwordChanged(value),
+                ),
                 validator: (_) => _passwordValidator(context),
               ),
               const SizedBox(height: 8),
@@ -60,10 +61,10 @@ class RegistrationForm extends StatelessWidget {
               const SizedBox(height: 8),
               TagAdditionCard(
                 tagChangeFunction: (KtSet<Tag> tags) => context.bloc<RegistrationFormBloc>().add(
-                      RegistrationFormEvent.interestsChanged(
-                        tags.asSet(),
-                      ),
-                    ),
+                  RegistrationFormEvent.interestsChanged(
+                    tags.asSet(),
+                  ),
+                ),
               ),
               const SizedBox(height: 8),
               EULACheckBox(),

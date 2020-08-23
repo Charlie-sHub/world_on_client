@@ -9,6 +9,8 @@ class MoorOptionsDao extends DatabaseAccessor<Database> with _$MoorOptionsDaoMix
 
   Future insertOptions(Insertable<MoorOption> options) => into(moorOptions).insert(options);
 
+  Future<int> deleteAllOptions() => delete(moorOptions).go();
+
   Future<MoorOption> getUserOptions(int userId) async {
     final _userQuery = select(moorOptions)
       ..where((options) => options.userId.equals(userId))

@@ -39,6 +39,13 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
 
   Future insertExperienceLiked(Insertable<UserLikedExperience> userLikedExperience) => into(userLikedExperiences).insert(userLikedExperience);
 
+  Future<int> deleteAllExperiences() => delete(moorExperiences).go();
+
+  Future<int> countExperiences() async {
+    final _moorExperienceList = await select(moorExperiences).get();
+    return _moorExperienceList.length;
+  }
+
   Future<MoorExperience> selectExperienceById(int id) async {
     final _experienceQuery = select(moorExperiences)
       ..where((experience) => experience.id.equals(id))
@@ -49,6 +56,22 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
 
   Future<Stream<List<MoorExperienceWithRelations>>> watchSearchExperiencesByTitle(String title) async {
     final _whereExpression = moorExperiences.title.equals(title);
+    return _getExperienceWithRelationsStream(_whereExpression);
+  }
+
+  Future<Stream<List<MoorExperienceWithRelations>>> watchSearchExperiencesByDifficulty(int difficulty) async {
+    final _whereExpression = moorExperiences.difficulty.equals(difficulty);
+    return _getExperienceWithRelationsStream(_whereExpression);
+  }
+
+  Future<Stream<List<MoorExperienceWithRelations>>> watchSearchExperiencesByTags(List<int> tagIds) async {
+    final _experiencesByTagsQuery = select(experienceTags)
+      ..where(
+        (experienceTags) => experienceTags.tagId.isIn(tagIds),
+      );
+    final _experienceTagList = await _experiencesByTagsQuery.get();
+    final _experienceIds = _experienceTagList.map((_experienceTag) => _experienceTag.experienceId).toSet();
+    final _whereExpression = moorExperiences.id.isIn(_experienceIds);
     return _getExperienceWithRelationsStream(_whereExpression);
   }
 
@@ -127,6 +150,7 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
   }
 
   Future<Stream<List<MoorExperienceWithRelations>>> _getExperienceWithRelationsStream(Expression<bool> _whereExpression) async {
+    // TODO: Control null values
     final _experiencesWithCreatorJoin = select(moorExperiences).join(
       [
         innerJoin(
@@ -199,9 +223,9 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
         List<ExperienceImageUrl> _imageUrlList,
         List<MoorTagWithMoorUser> _tagsWithCreator,) {
         return _experiencesWithCreator.map(
-            (experienceWithCreatorTypedResult) {
-            final _moorExperience = experienceWithCreatorTypedResult.readTable(moorExperiences);
-            final _moorUser = experienceWithCreatorTypedResult.readTable(moorUsers);
+            (_experienceWithCreatorTypedResult) {
+            final _moorExperience = _experienceWithCreatorTypedResult.readTable(moorExperiences);
+            final _moorUser = _experienceWithCreatorTypedResult.readTable(moorUsers);
             final _experienceImageUrls = _imageUrlList;
             _experienceImageUrls.removeWhere((experienceImageUrl) => experienceImageUrl.experienceId != _moorExperience.id);
             final _imageUrls = _experienceImageUrls
@@ -218,13 +242,17 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
             _row
               .readTable(moorExperiences)
               .id != _moorExperience.id);
-            final _experienceMoorTagIdList = _experiencesWithTagsList.map((_row) =>
-            _row
-              .readTable(moorTags)
-              .id).toList();
+            final _experienceMoorTagIdList = _experiencesWithTagsList
+              .map(
+                (_row) =>
+              _row
+                .readTable(moorTags)
+                .id,
+            )
+              .toList();
             final _experienceMoorTagsWithCreator = _tagsWithCreator;
             _experienceMoorTagsWithCreator.removeWhere(
-                (_moorTagWithUser) => _experienceMoorTagIdList.contains(_moorTagWithUser.tag.id),
+                (_moorTagWithUser) => !_experienceMoorTagIdList.contains(_moorTagWithUser.tag.id),
             );
             return MoorExperienceWithRelations(
               experience: _moorExperience,
