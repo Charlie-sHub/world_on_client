@@ -68,7 +68,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
       );
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> unBlockUser(int blockedId) async {
     try {
@@ -87,14 +87,14 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
       );
     }
   }
-  
+
   UserBlockRelationsCompanion _createUserBlockRelation(int blockedId, MoorUser _moorUser) {
     return UserBlockRelationsCompanion.insert(
       blockedId: blockedId,
       blockerId: _moorUser.id,
     );
   }
-  
+
   @override
   Future<Either<Failure, Unit>> followUser(int userToFollowId) async {
     try {
@@ -113,7 +113,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
       );
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> unFollowUser(int userToUnFollowId) async {
     try {
@@ -132,44 +132,44 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
       );
     }
   }
-  
+
   UserFollowRelationsCompanion _createUserFollowRelation(int userToUnFollowId, MoorUser _moorUser) {
     return UserFollowRelationsCompanion.insert(
       followedId: userToUnFollowId,
       followingId: _moorUser.id,
     );
   }
-  
+
   @override
   Stream<Either<Failure, KtList<Experience>>> watchExperiencesCreated(int id) async* {
     final _stream = await _database.moorExperiencesDao.watchExperiencesCreated(id);
     yield* createExperienceListStream(_stream, _logger);
   }
-  
+
   @override
   Stream<Either<Failure, KtList<Experience>>> watchExperiencesDone(int id) async* {
     final _stream = await _database.moorExperiencesDao.watchExperiencesDone(id);
     yield* createExperienceListStream(_stream, _logger);
   }
-  
+
   @override
   Stream<Either<Failure, KtList<Experience>>> watchExperiencesLiked(int id) async* {
     final _stream = await _database.moorExperiencesDao.watchExperiencesLiked(id);
     yield* createExperienceListStream(_stream, _logger);
   }
-  
+
   @override
   Stream<Either<Failure, KtList<User>>> watchFollowedUsers(int id) async* {
     final _stream = _database.moorUsersDao.watchFollowedUsers(id);
     yield* createUserListStream(_stream, _logger);
   }
-  
+
   @override
   Stream<Either<Failure, KtList<User>>> watchFollowingUsers(int id) async* {
     final _stream = _database.moorUsersDao.watchFollowingUsers(id);
     yield* createUserListStream(_stream, _logger);
   }
-  
+
   @override
   Future<Either<Failure, User>> getUser(int id) async {
     try {
@@ -187,7 +187,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
       );
     }
   }
-  
+
   @override
   Stream<Either<Failure, KtList<Achievement>>> watchUserAchievements(int userId) async* {
     final _stream = await _database.moorAchievementsDao.watchUserAchievements(userId);
@@ -196,13 +196,13 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
         if (_moorAchievementList != null) {
           return right<Failure, KtList<Achievement>>(
             _moorAchievementList
-              .map(
-                (_moorAchievementWithRelations) => moorAchievementToDomainAchievement(_moorAchievementWithRelations),
-            )
-              .toImmutableList()
-              .sortedBy(
-                (_tag) => _tag.creationDate.getOrCrash(),
-            ),
+                .map(
+                  (_moorAchievementWithRelations) => moorAchievementToDomainAchievement(_moorAchievementWithRelations),
+                )
+                .toImmutableList()
+                .sortedBy(
+                  (_tag) => _tag.creationDate.getOrCrash(),
+                ),
           );
         } else {
           return left<Failure, KtList<Achievement>>(
@@ -226,28 +226,28 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
       },
     );
   }
-  
+
   @override
   Stream<Either<Failure, KtList<Tag>>> watchUserInterests(int userId) async* {
     final _stream = await _database.moorTagsDao.watchUserInterests(userId);
     yield* createTagListStream(_stream, _logger);
   }
-  
+
   @override
   Future<Either<Failure, Unit>> removeExperienceLiked(int experienceId) {
     return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
-  
+
   @override
   Future<Either<Failure, Unit>> deleteExperience(int experienceId) {
     return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
-  
+
   @override
   Stream<Either<Failure, KtList<User>>> watchBlockedUsers(int id) {
     return _oldBlockedUsersSimulation();
   }
-  
+
   Stream<Either<Failure, KtList<User>>> _oldBlockedUsersSimulation() {
     Either<Failure, KtList<User>> _either;
     if (_random.nextBool()) {

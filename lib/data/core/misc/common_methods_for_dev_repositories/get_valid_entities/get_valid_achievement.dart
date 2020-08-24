@@ -13,8 +13,8 @@ import 'get_valid_user.dart';
 Achievement getValidAchievement() {
   return Achievement(
     id: 1,
-    name: Name("Cras scelerisque"),
-    description: EntityDescription("Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce vel mauris et sapien finibus congue."),
+    name: Name("The Hardest"),
+    description: EntityDescription("You're the hardest"),
     imageURL: "testAchievement.jpg",
     imageFile: none(),
     type: "Meta achievement",

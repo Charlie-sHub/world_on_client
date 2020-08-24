@@ -40,19 +40,19 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
     final _stream = await _database.moorExperiencesDao.watchSearchExperiencesByTitle(title.getOrCrash());
     yield* createExperienceListStream(_stream, _logger);
   }
-  
+
   @override
   Stream<Either<Failure, KtList<Tag>>> watchSearchTagsByName(SearchTerm name) async* {
     final _stream = await _database.moorTagsDao.watchSearchTagsByName(name.getOrCrash());
     yield* createTagListStream(_stream, _logger);
   }
-  
+
   @override
   Stream<Either<Failure, KtList<User>>> watchSearchUsersByName(SearchTerm name) async* {
     final _stream = _database.moorUsersDao.watchSearchUsersByName(name.getOrCrash());
     yield* createUserListStream(_stream, _logger);
   }
-  
+
   @override
   Stream<Either<Failure, KtList<User>>> watchSearchUsersByUserName(SearchTerm username) async* {
     final _stream = _database.moorUsersDao.watchSearchUsersByUserName(username.getOrCrash());

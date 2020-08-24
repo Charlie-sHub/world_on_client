@@ -19,12 +19,20 @@ part 'moor_achievements_dao.g.dart';
 class MoorAchievementsDao extends DatabaseAccessor<Database> with _$MoorAchievementsDaoMixin {
   MoorAchievementsDao(Database db) : super(db);
 
+  Future<int> insertAchievement(Insertable<MoorAchievement> achievement) => into(moorAchievements).insert(achievement);
+
+  Future insertUserAchievement(Insertable<UserAchievement> userAchievement) => into(userAchievements).insert(userAchievement);
+
   Future<int> countAchievements() async {
     final _moorAchievementList = await select(moorAchievements).get();
     return _moorAchievementList.length;
   }
 
   Future<int> deleteAllAchievements() => delete(moorAchievements).go();
+
+  Future<int> deleteAllAchievementsTags() => delete(achievementTags).go();
+
+  Future<int> deleteAllUsersAchievements() => delete(userAchievements).go();
 
   Future<Stream<List<MoorAchievementWithRelations>>> watchUserAchievements(int userId) async {
     final _userAchievementsQuery = select(userAchievements).join(

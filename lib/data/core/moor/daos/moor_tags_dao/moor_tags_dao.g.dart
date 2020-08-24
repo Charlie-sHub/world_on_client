@@ -11,4 +11,6 @@ mixin _$MoorTagsDaoMixin on DatabaseAccessor<Database> {
   $MoorUsersTable get moorUsers => attachedDatabase.moorUsers;
   $ExperienceTagsTable get experienceTags => attachedDatabase.experienceTags;
   $UserInterestsTable get userInterests => attachedDatabase.userInterests;
+
+  $AchievementTagsTable get achievementTags => attachedDatabase.achievementTags;
 }

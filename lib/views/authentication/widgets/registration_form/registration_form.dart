@@ -52,19 +52,20 @@ class RegistrationForm extends StatelessWidget {
               const SizedBox(height: 8),
               PasswordTextField(
                 eventToAdd: (String value) => context.bloc<RegistrationFormBloc>().add(
-                  RegistrationFormEvent.passwordChanged(value),
-                ),
+                      RegistrationFormEvent.passwordChanged(value),
+                    ),
                 validator: (_) => _passwordValidator(context),
               ),
               const SizedBox(height: 8),
               const PasswordConfirmationTextField(),
               const SizedBox(height: 8),
               TagAdditionCard(
-                tagChangeFunction: (KtSet<Tag> tags) => context.bloc<RegistrationFormBloc>().add(
-                  RegistrationFormEvent.interestsChanged(
-                    tags.asSet(),
+                tagChangeFunction: (KtSet<Tag> tags) =>
+                  context.bloc<RegistrationFormBloc>().add(
+                    RegistrationFormEvent.interestsChanged(
+                      tags.asSet(),
+                    ),
                   ),
-                ),
               ),
               const SizedBox(height: 8),
               EULACheckBox(),

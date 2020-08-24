@@ -26,6 +26,10 @@ class MoorUsersDao extends DatabaseAccessor<Database> with _$MoorUsersDaoMixin {
 
   Future<int> deleteAllUsers() => delete(moorUsers).go();
 
+  Future<int> deleteAllUsersFollowRelations() => delete(userFollowRelations).go();
+
+  Future<int> deleteAllUsersBlockRelations() => delete(userBlockRelations).go();
+
   Future<int> countUsers() async {
     final _moorUserList = await select(moorUsers).get();
     return _moorUserList.length;
@@ -94,7 +98,7 @@ class MoorUsersDao extends DatabaseAccessor<Database> with _$MoorUsersDaoMixin {
             (_row) => _row.readTable(moorUsers),
         )
           .toList(),
-        );
+    );
   }
 
   Stream<List<MoorUser>> watchFollowingUsers(int userId) {
@@ -113,6 +117,6 @@ class MoorUsersDao extends DatabaseAccessor<Database> with _$MoorUsersDaoMixin {
             (_row) => _row.readTable(moorUsers),
         )
           .toList(),
-        );
+    );
   }
 }

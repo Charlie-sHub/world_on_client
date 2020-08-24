@@ -41,6 +41,16 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
 
   Future<int> deleteAllExperiences() => delete(moorExperiences).go();
 
+  Future<int> deleteAllExperiencesImagesUrls() => delete(experienceImageUrls).go();
+
+  Future<int> deleteAllExperiencesTags() => delete(experienceTags).go();
+
+  Future<int> deleteAllUsersLikedExperiences() => delete(userLikedExperiences).go();
+
+  Future<int> deleteAllUsersDoneExperiences() => delete(userDoneExperiences).go();
+
+  Future<int> deleteAllUsersToDoExperiences() => delete(userToDoExperiences).go();
+
   Future<int> countExperiences() async {
     final _moorExperienceList = await select(moorExperiences).get();
     return _moorExperienceList.length;
@@ -105,20 +115,15 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
           moorExperiences.id.equalsExp(userDoneExperiences.experienceId),
         ),
       ],
-    )
-      ..where((userDoneExperiences.userId.equals(userId)));
+    )..where((userDoneExperiences.userId.equals(userId)));
     final _usersDoneExperiencesIds = await _contentQuery
-      .watch()
-      .map(
-        (_rows) =>
-        _rows.map(
-            (_row) =>
-          _row
-            .readTable(moorExperiences)
-            .id,
-        ),
-    )
-      .first;
+        .watch()
+        .map(
+          (_rows) => _rows.map(
+            (_row) => _row.readTable(moorExperiences).id,
+          ),
+        )
+        .first;
     final _whereExpression = moorExperiences.creatorId.isIn(_usersDoneExperiencesIds);
     return _getExperienceWithRelationsStream(_whereExpression);
   }

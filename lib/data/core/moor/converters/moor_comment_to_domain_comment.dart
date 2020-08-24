@@ -5,7 +5,7 @@ import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 
 Comment moorCommentToDomainComment(MoorCommentWithMoorUser moorCommentWithMoorUser) => Comment(
-  id: moorCommentWithMoorUser.comment.id,
+      id: moorCommentWithMoorUser.comment.id,
       poster: moorUserToDomainUser(moorCommentWithMoorUser.poster),
       content: CommentContent(moorCommentWithMoorUser.comment.content),
       creationDate: PastDate(moorCommentWithMoorUser.comment.creationDate),

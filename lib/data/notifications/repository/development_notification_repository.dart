@@ -114,25 +114,27 @@ class DevelopmentNotificationRepository implements NotificationRepositoryInterfa
   Stream<Either<Failure, KtList<world_on_notification.Notification>>> _oldSimulation() {
     Either<Failure, KtList<world_on_notification.Notification>> _either;
     if (_random.nextBool()) {
-      _either = right(KtList.of(
-        getValidNotification(),
-        world_on_notification.Notification.empty(),
-        getValidNotification().copyWith(
-          id: 2,
-          description: EntityDescription("${getValidUser().name.getOrCrash()} unfollowed you"),
-          type: NotificationType.unfollow,
+      _either = right(
+        KtList.of(
+          getValidNotification(),
+          world_on_notification.Notification.empty(),
+          getValidNotification().copyWith(
+            id: 2,
+            description: EntityDescription("${getValidUser().name.getOrCrash()} unfollowed you"),
+            type: NotificationType.unfollow,
+          ),
+          getValidNotification().copyWith(
+            id: 3,
+            description: EntityDescription("${getValidUser().name.getOrCrash()} blocked you"),
+            type: NotificationType.block,
+          ),
+          getValidNotification().copyWith(
+            id: 4,
+            description: EntityDescription("${getValidUser().name.getOrCrash()} unblocked you"),
+            type: NotificationType.unblock,
+          ),
         ),
-        getValidNotification().copyWith(
-          id: 3,
-          description: EntityDescription("${getValidUser().name.getOrCrash()} blocked you"),
-          type: NotificationType.block,
-        ),
-        getValidNotification().copyWith(
-          id: 4,
-          description: EntityDescription("${getValidUser().name.getOrCrash()} unblocked you"),
-          type: NotificationType.unblock,
-        ),
-      ));
+      );
     } else {
       _either = left(getServerErrorFailure());
     }

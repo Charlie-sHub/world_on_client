@@ -22,17 +22,16 @@ _$_AchievementDto _$_$_AchievementDtoFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_AchievementDtoToJson(_$_AchievementDto instance) =>
-  <String, dynamic>{
-    'id': instance.id,
-    'name': instance.name,
-    'description': instance.description,
-    'imageURL': instance.imageURL,
-    'type': instance.type,
-    'requisite': instance.requisite,
-    'experiencePoints': instance.experiencePoints,
-    'creator': instance.creator,
-    'creationDate': instance.creationDate,
-    'modificationDate': instance.modificationDate,
+Map<String, dynamic> _$_$_AchievementDtoToJson(_$_AchievementDto instance) => <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'description': instance.description,
+      'imageURL': instance.imageURL,
+      'type': instance.type,
+      'requisite': instance.requisite,
+      'experiencePoints': instance.experiencePoints,
+      'creator': instance.creator,
+      'creationDate': instance.creationDate,
+      'modificationDate': instance.modificationDate,
       'tags': instance.tags?.toList(),
     };

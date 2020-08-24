@@ -15,7 +15,7 @@ part 'moor_comments_dao.g.dart';
 class MoorCommentsDao extends DatabaseAccessor<Database> with _$MoorCommentsDaoMixin {
   MoorCommentsDao(Database db) : super(db);
 
-  Future insertComment(Insertable<MoorComment> comment) => into(moorComments).insert(comment);
+  Future<int> insertComment(Insertable<MoorComment> comment) => into(moorComments).insert(comment);
 
   Future<int> countComments() async {
     final _moorCommentList = await select(moorComments).get();

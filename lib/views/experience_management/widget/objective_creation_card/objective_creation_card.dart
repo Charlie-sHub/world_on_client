@@ -34,105 +34,104 @@ class ObjectiveCreationCard extends HookWidget {
           shape: const RoundedRectangleBorder(
             side: BorderSide(
               color: WorldOnColors.primary,
-              ),
             ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Container(
-                  constraints: BoxConstraints(
-                    maxHeight: MediaQuery.of(context).size.height * 0.5,
-                  ),
-                  child: ListView.builder(
-                    padding: const EdgeInsets.all(10),
-                    itemCount: state.objectivesCreated.size,
-                    shrinkWrap: true,
-                    physics: const ClampingScrollPhysics(),
-                    itemBuilder: (context, index) {
-                      final _objective = state.objectivesCreated.asSet().elementAt(index);
-                      if (_objective.isValid) {
-                        return CreatedObjectiveCard(objective: _objective);
-                      } else {
-                        return ErrorCard(
-                          entityType: "Objective",
-                          valueFailureString: _objective.failureOption.fold(
-                              () => "No error",
-                              (failure) => failure.toString(),
-                          ),
-                        );
-                      }
-                    },
-                  ),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Container(
+                constraints: BoxConstraints(
+                  maxHeight: MediaQuery.of(context).size.height * 0.5,
                 ),
-                Padding(
+                child: ListView.builder(
                   padding: const EdgeInsets.all(10),
-                  child: BlocProvider(
-                    create: (context) => getIt<ObjectiveFormBloc>(),
-                    child: BlocConsumer<ObjectiveFormBloc, ObjectiveFormState>(
-                      listener: (context, state) {
-                        _objectiveFormListener(state, _textEditingController, context);
-                      },
-                      builder: (context, state) =>
-                        Form(
-                          autovalidate: state.showErrorMessages,
-                          child: Column(
+                  itemCount: state.objectivesCreated.size,
+                  shrinkWrap: true,
+                  physics: const ClampingScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    final _objective = state.objectivesCreated.asSet().elementAt(index);
+                    if (_objective.isValid) {
+                      return CreatedObjectiveCard(objective: _objective);
+                    } else {
+                      return ErrorCard(
+                        entityType: "Objective",
+                        valueFailureString: _objective.failureOption.fold(
+                          () => "No error",
+                          (failure) => failure.toString(),
+                        ),
+                      );
+                    }
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: BlocProvider(
+                  create: (context) => getIt<ObjectiveFormBloc>(),
+                  child: BlocConsumer<ObjectiveFormBloc, ObjectiveFormState>(
+                    listener: (context, state) {
+                      _objectiveFormListener(state, _textEditingController, context);
+                    },
+                    builder: (context, state) => Form(
+                      autovalidate: state.showErrorMessages,
+                      child: Column(
+                        children: <Widget>[
+                          DescriptionTextField(
+                            textController: _textEditingController,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              DescriptionTextField(
-                                textController: _textEditingController,
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: <Widget>[
-                                  Expanded(
-                                    child: state.objective.imageFile.fold(
-                                        () => Column(
-                                        children: <Widget>[
-                                          IconButton(
-                                            iconSize: 80,
-                                            icon: const Icon(
-                                              Icons.photo_camera,
-                                            ),
-                                            onPressed: () async => _pickImage(context),
-                                          ),
-                                          if (context.bloc<ObjectiveFormBloc>().state.showErrorMessages && context.bloc<ObjectiveFormBloc>().state.objective.imageFile.isNone())
-                                            const Text(
-                                              "Please select a picture",
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(color: Colors.red),
-                                            )
-                                          else
-                                            Container(),
-                                        ],
-                                      ),
-                                        (imageFile) => Padding(
-                                        padding: const EdgeInsets.all(10),
-                                        child: FlatButton(
-                                          onPressed: () async => _pickImage(context),
-                                          child: Image(
-                                            fit: BoxFit.fitWidth,
-                                            image: FileImage(imageFile),
-                                          ),
+                              Expanded(
+                                child: state.objective.imageFile.fold(
+                                  () => Column(
+                                    children: <Widget>[
+                                      IconButton(
+                                        iconSize: 80,
+                                        icon: const Icon(
+                                          Icons.photo_camera,
                                         ),
+                                        onPressed: () async => _pickImage(context),
+                                      ),
+                                      if (context.bloc<ObjectiveFormBloc>().state.showErrorMessages && context.bloc<ObjectiveFormBloc>().state.objective.imageFile.isNone())
+                                        const Text(
+                                          "Please select a picture",
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(color: Colors.red),
+                                        )
+                                      else
+                                        Container(),
+                                    ],
+                                  ),
+                                  (imageFile) => Padding(
+                                    padding: const EdgeInsets.all(10),
+                                    child: FlatButton(
+                                      onPressed: () async => _pickImage(context),
+                                      child: Image(
+                                        fit: BoxFit.fitWidth,
+                                        image: FileImage(imageFile),
                                       ),
                                     ),
                                   ),
-                                  const ObjectiveCoordinatePicker(),
-                                ],
+                                ),
                               ),
-                              const SubmitButton(),
+                              const ObjectiveCoordinatePicker(),
                             ],
                           ),
-                        ),
+                          const SubmitButton(),
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
+        ),
       ),
     );
   }
-  
+
   void _objectiveFormListener(ObjectiveFormState state, TextEditingController _textEditingController, BuildContext context) {
     if (state.isSubmitting) {
       _textEditingController.clear();

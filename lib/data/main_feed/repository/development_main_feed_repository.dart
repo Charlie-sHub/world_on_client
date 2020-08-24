@@ -59,7 +59,7 @@ class DevelopmentMainFeedRepository implements MainFeedRepositoryInterface {
         }
       },
     ).onErrorReturnWith(
-        (_error) {
+      (_error) {
         final _errorMessage = "Development repository error: $_error";
         _logger.e(_errorMessage);
         return left(

@@ -10,19 +10,32 @@ part 'moor_tags_dao.g.dart';
     MoorUsers,
     ExperienceTags,
     UserInterests,
+    AchievementTags,
   ],
 )
 class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
   MoorTagsDao(Database db) : super(db);
 
-  Future<int> deleteUserInterests(int userId) => (delete(userInterests)..where((interest) => interest.userId.equals(userId))).go();
-
-  Future<int> deleteAllTags() => delete(moorTags).go();
-
   Future<int> countTags() async {
     final _moorTagList = await select(moorTags).get();
     return _moorTagList.length;
   }
+
+  Future<int> insertTag(Insertable<MoorTag> tag) => into(moorTags).insert(tag);
+
+  Future insertExperienceTag(Insertable<ExperienceTag> experienceTag) => into(experienceTags).insert(experienceTag);
+
+  Future insertAchievementTag(Insertable<AchievementTag> achievementTag) => into(achievementTags).insert(achievementTag);
+
+  Future insertUserInterest(Insertable<UserInterest> userInterest) => into(userInterests).insert(userInterest);
+
+  Future<int> deleteUserInterests(int userId) => (delete(userInterests)..where((interest) => interest.userId.equals(userId))).go();
+
+  Future<int> deleteAllTags() => delete(moorTags).go();
+
+  Future<int> deleteAllUsersInterests() => delete(userInterests).go();
+
+  Future removeUserInterest(Insertable<UserInterest> userInterest) => delete(userInterests).delete(userInterest);
 
   Future<MoorTag> selectTagById(int id) async {
     final _contentQuery = select(moorTags)
@@ -31,12 +44,6 @@ class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
       ..get();
     return _contentQuery.getSingle();
   }
-
-  Future insertExperienceTag(Insertable<ExperienceTag> experienceTag) => into(experienceTags).insert(experienceTag);
-
-  Future insertUserInterest(Insertable<UserInterest> userInterest) => into(userInterests).insert(userInterest);
-
-  Future removeUserInterest(Insertable<UserInterest> userInterest) => delete(userInterests).delete(userInterest);
 
   Future<Stream<List<MoorTagWithMoorUser>>> watchSearchTagsByName(String name) async {
     final _whereExpression = moorTags.name.equals(name);
