@@ -1,4 +1,4 @@
-part of 'moor_database.dart';
+import 'package:moor_flutter/moor_flutter.dart';
 
 class MoorOptions extends Table {
   IntColumn get id => integer().autoIncrement()();

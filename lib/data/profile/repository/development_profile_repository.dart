@@ -192,7 +192,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   Stream<Either<Failure, KtList<Achievement>>> watchUserAchievements(int userId) async* {
     final _stream = await _database.moorAchievementsDao.watchUserAchievements(userId);
     yield* _stream.map(
-        (_moorAchievementList) {
+      (_moorAchievementList) {
         if (_moorAchievementList != null) {
           return right<Failure, KtList<Achievement>>(
             _moorAchievementList

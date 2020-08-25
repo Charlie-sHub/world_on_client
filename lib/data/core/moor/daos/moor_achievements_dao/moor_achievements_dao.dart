@@ -3,6 +3,9 @@ import 'package:rxdart/rxdart.dart';
 import 'package:worldon/data/core/moor/daos/moor_tags_dao/moor_tag_with_moor_user.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
 
+import '../../tables/moor_achievements.dart';
+import '../../tables/moor_tags.dart';
+import '../../tables/moor_users.dart';
 import 'moor_achievement_with_tags.dart';
 
 part 'moor_achievements_dao.g.dart';
@@ -26,6 +29,11 @@ class MoorAchievementsDao extends DatabaseAccessor<Database> with _$MoorAchievem
   Future<int> countAchievements() async {
     final _moorAchievementList = await select(moorAchievements).get();
     return _moorAchievementList.length;
+  }
+
+  Future<MoorAchievement> selectAchievementById(int id) async {
+    final _contentQuery = select(moorAchievements)..where((_achievements) => _achievements.id.equals(id));
+    return _contentQuery.getSingle();
   }
 
   Future<int> deleteAllAchievements() => delete(moorAchievements).go();

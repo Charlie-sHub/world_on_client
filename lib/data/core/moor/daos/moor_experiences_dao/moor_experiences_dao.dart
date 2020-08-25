@@ -3,6 +3,11 @@ import 'package:rxdart/rxdart.dart';
 import 'package:worldon/data/core/moor/daos/moor_tags_dao/moor_tag_with_moor_user.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
 
+import '../../tables/moor_experiences.dart';
+import '../../tables/moor_objectives.dart';
+import '../../tables/moor_rewards.dart';
+import '../../tables/moor_tags.dart';
+import '../../tables/moor_users.dart';
 import 'moor_experience_with_relations.dart';
 
 part 'moor_experiences_dao.g.dart';
@@ -57,15 +62,12 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
   }
 
   Future<MoorExperience> selectExperienceById(int id) async {
-    final _experienceQuery = select(moorExperiences)
-      ..where((experience) => experience.id.equals(id))
-      ..limit(1)
-      ..get();
+    final _experienceQuery = select(moorExperiences)..where((_experiences) => _experiences.id.equals(id));
     return _experienceQuery.getSingle();
   }
 
   Future<Stream<List<MoorExperienceWithRelations>>> watchSearchExperiencesByTitle(String title) async {
-    final _whereExpression = moorExperiences.title.equals(title);
+    final _whereExpression = moorExperiences.title.contains(title);
     return _getExperienceWithRelationsStream(_whereExpression);
   }
 

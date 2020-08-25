@@ -1,4 +1,5 @@
-part of 'moor_database.dart';
+import 'package:moor_flutter/moor_flutter.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
 
 class MoorTags extends Table {
   IntColumn get id => integer().autoIncrement()();

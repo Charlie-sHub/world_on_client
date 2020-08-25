@@ -1,4 +1,6 @@
-part of 'moor_database.dart';
+import 'package:moor_flutter/moor_flutter.dart';
+import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
+import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 
 class MoorNotifications extends Table {
   IntColumn get id => integer().autoIncrement()();

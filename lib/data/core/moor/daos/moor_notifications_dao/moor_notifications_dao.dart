@@ -1,6 +1,8 @@
 import 'package:moor/moor.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
 
+import '../../tables/moor_notifications.dart';
+import '../../tables/moor_users.dart';
 import 'moor_notification_with_relations.dart';
 
 part 'moor_notifications_dao.g.dart';
@@ -14,11 +16,16 @@ part 'moor_notifications_dao.g.dart';
 class MoorNotificationsDao extends DatabaseAccessor<Database> with _$MoorNotificationsDaoMixin {
   MoorNotificationsDao(Database db) : super(db);
 
+  Future insertNotification(Insertable<MoorNotification> notification) => into(moorNotifications).insert(notification);
+
+  Future<MoorNotification> selectTagById(int id) async {
+    final _contentQuery = select(moorNotifications)..where((_notifications) => _notifications.id.equals(id));
+    return _contentQuery.getSingle();
+  }
+
   Future<void> deleteNotification(int notificationId) async => delete(moorNotifications).where((_moorNotifications) => _moorNotifications.id.equals(notificationId));
 
   Future<int> deleteAllNotifications() => delete(moorNotifications).go();
-
-  Future insertNotification(Insertable<MoorNotification> notification) => into(moorNotifications).insert(notification);
 
   Future<Stream<List<MoorNotificationWithRelations>>> watchNotifications() async {
     final _receiver = await db.moorUsersDao.getLoggedInUser();

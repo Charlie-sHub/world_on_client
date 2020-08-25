@@ -31,7 +31,7 @@ dependencies:
   flutter_bloc: ^6.0.1
   # Value equality
   # Probably useless now
-  equatable: ^1.2.3
+  equatable: ^1.2.4
   # Functional programming thingies
   dartz: ^0.9.1
   # Remote API
@@ -40,9 +40,6 @@ dependencies:
   # For connecting to http services
   # Probably useless now
   http: ^0.12.2
-  # For local cache, probably useless as we'll use Firestore
-  # Probably useless now
-  shared_preferences: ^0.5.8
   # For unions generation
   freezed_annotation: ^0.11.0+1
   # For email validation
@@ -72,15 +69,15 @@ dependencies:
   # For showing the user's experience progression
   percent_indicator: ^2.1.5
   # Takes out some boilerplate
-  flutter_hooks: ^0.13.1
+  flutter_hooks: ^0.13.2
   # For FloatingActionButton menus
   unicorndial: ^1.1.5
   # To add shadow to icons with less boiler plate
   icon_shadow: ^1.0.1
   # For getting images from the device
-  image_picker: ^0.6.7+4
+  image_picker: ^0.6.7+6
   # For getting multiple images from the device
-  multi_image_picker: ^4.7.11
+  multi_image_picker: ^4.7.12
   # Local database, mostly for back-end simulation
   moor_flutter: ^3.1.0
   moor: ^3.3.1
@@ -102,7 +99,7 @@ dev_dependencies:
   # For mocking dependencies during unit testing
   mockito: ^4.1.1
   # For unions generation
-  freezed: ^0.11.5
+  freezed: ^0.11.6
   # Collection of lint rules
   lint: ^1.2.0
   # For dependency injection code generation
@@ -117,6 +114,8 @@ dev_dependencies:
   font_awesome_flutter: ^8.8.1
   # Generator for moor
   moor_generator: ^3.3.1
+  # For testing with moor
+  moor_ffi: ^0.8.0
   build_runner:
 
 flutter_icons:

@@ -1,4 +1,5 @@
-part of 'moor_database.dart';
+import 'package:moor_flutter/moor_flutter.dart';
+import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 
 class MoorComments extends Table {
   IntColumn get id => integer().autoIncrement()();

@@ -32,7 +32,7 @@ Experience moorExperienceToDomainExperience(MoorExperienceWithRelations _moorExp
       objectives: ObjectiveSet(
         _moorExperienceWithRelations.objectives
             .map(
-            (_moorObjective) => moorObjectiveToDomainObjective(_moorObjective),
+              (_moorObjective) => moorObjectiveToDomainObjective(_moorObjective),
             )
             .toSet()
             .toImmutableSet(),

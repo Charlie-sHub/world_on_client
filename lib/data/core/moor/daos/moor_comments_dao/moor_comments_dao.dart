@@ -2,6 +2,8 @@ import 'package:moor/moor.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
 
+import '../../tables/moor_comments.dart';
+import '../../tables/moor_users.dart';
 import 'moor_comment_with_moor_user.dart';
 
 part 'moor_comments_dao.g.dart';
@@ -16,6 +18,11 @@ class MoorCommentsDao extends DatabaseAccessor<Database> with _$MoorCommentsDaoM
   MoorCommentsDao(Database db) : super(db);
 
   Future<int> insertComment(Insertable<MoorComment> comment) => into(moorComments).insert(comment);
+
+  Future<MoorComment> selectCommentById(int id) async {
+    final _contentQuery = select(moorComments)..where((_comments) => _comments.id.equals(id));
+    return _contentQuery.getSingle();
+  }
 
   Future<int> countComments() async {
     final _moorCommentList = await select(moorComments).get();

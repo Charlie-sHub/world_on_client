@@ -1,4 +1,6 @@
-part of 'moor_database.dart';
+import 'package:moor_flutter/moor_flutter.dart';
+import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
 
 class MoorExperiences extends Table {
   IntColumn get id => integer().autoIncrement()();
@@ -36,4 +38,11 @@ class ExperienceTags extends Table {
   IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
   
   IntColumn get tagId => integer().customConstraint("REFERENCES moor_tags(id)")();
+  
+  @override
+  Set<Column> get primaryKey =>
+    {
+      experienceId,
+      tagId,
+    };
 }

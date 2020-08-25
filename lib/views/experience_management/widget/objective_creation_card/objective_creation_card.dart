@@ -136,10 +136,10 @@ class ObjectiveCreationCard extends HookWidget {
     if (state.isSubmitting) {
       _textEditingController.clear();
       context.bloc<ObjectivesCreationBloc>().add(
-        ObjectivesCreationEvent.addedObjective(
-          state.objective,
-        ),
-      );
+            ObjectivesCreationEvent.addedObjective(
+              state.objective,
+            ),
+          );
     }
   }
 

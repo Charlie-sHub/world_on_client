@@ -2,6 +2,11 @@ import 'package:moor/moor.dart';
 import 'package:worldon/data/core/moor/daos/moor_tags_dao/moor_tag_with_moor_user.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
 
+import '../../tables/moor_achievements.dart';
+import '../../tables/moor_experiences.dart';
+import '../../tables/moor_tags.dart';
+import '../../tables/moor_users.dart';
+
 part 'moor_tags_dao.g.dart';
 
 @UseDao(
@@ -23,11 +28,11 @@ class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
 
   Future<int> insertTag(Insertable<MoorTag> tag) => into(moorTags).insert(tag);
 
-  Future insertExperienceTag(Insertable<ExperienceTag> experienceTag) => into(experienceTags).insert(experienceTag);
+  Future<int> insertExperienceTag(Insertable<ExperienceTag> experienceTag) => into(experienceTags).insert(experienceTag);
 
-  Future insertAchievementTag(Insertable<AchievementTag> achievementTag) => into(achievementTags).insert(achievementTag);
+  Future<int> insertAchievementTag(Insertable<AchievementTag> achievementTag) => into(achievementTags).insert(achievementTag);
 
-  Future insertUserInterest(Insertable<UserInterest> userInterest) => into(userInterests).insert(userInterest);
+  Future<int> insertUserInterest(Insertable<UserInterest> userInterest) => into(userInterests).insert(userInterest);
 
   Future<int> deleteUserInterests(int userId) => (delete(userInterests)..where((interest) => interest.userId.equals(userId))).go();
 
@@ -35,18 +40,15 @@ class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
 
   Future<int> deleteAllUsersInterests() => delete(userInterests).go();
 
-  Future removeUserInterest(Insertable<UserInterest> userInterest) => delete(userInterests).delete(userInterest);
+  Future<int> removeUserInterest(Insertable<UserInterest> userInterest) => delete(userInterests).delete(userInterest);
 
   Future<MoorTag> selectTagById(int id) async {
-    final _contentQuery = select(moorTags)
-      ..where((tag) => tag.id.equals(id))
-      ..limit(1)
-      ..get();
+    final _contentQuery = select(moorTags)..where((_tags) => _tags.id.equals(id));
     return _contentQuery.getSingle();
   }
 
   Future<Stream<List<MoorTagWithMoorUser>>> watchSearchTagsByName(String name) async {
-    final _whereExpression = moorTags.name.equals(name);
+    final _whereExpression = moorTags.name.contains(name);
     return _createMoorTagWithMoorUserListStream(_whereExpression);
   }
 

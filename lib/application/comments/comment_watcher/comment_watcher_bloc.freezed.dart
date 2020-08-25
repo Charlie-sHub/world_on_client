@@ -135,7 +135,7 @@ class _$_WatchExperienceCommentsStarted
   get copyWith =>
     __$WatchExperienceCommentsStartedCopyWithImpl<
       _WatchExperienceCommentsStarted>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({

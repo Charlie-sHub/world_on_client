@@ -1,4 +1,6 @@
-part of 'moor_database.dart';
+import 'package:moor_flutter/moor_flutter.dart';
+import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
 
 class MoorAchievements extends Table {
   IntColumn get id => integer().autoIncrement()();
@@ -24,6 +26,13 @@ class MoorAchievements extends Table {
 
 class AchievementTags extends Table {
   IntColumn get achievementId => integer().customConstraint("REFERENCES moor_achievements(id)")();
-
+  
   IntColumn get tagId => integer().customConstraint("REFERENCES moor_tags(id)")();
+  
+  @override
+  Set<Column> get primaryKey =>
+    {
+      achievementId,
+      tagId,
+    };
 }

@@ -1,4 +1,7 @@
-part of 'moor_database.dart';
+import 'package:moor_flutter/moor_flutter.dart';
+import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/password.dart';
 
 class MoorUsers extends Table {
   IntColumn get id => integer().autoIncrement()();
@@ -32,48 +35,97 @@ class MoorUsers extends Table {
   DateTimeColumn get creationDate => dateTime()();
 
   DateTimeColumn get modificationDate => dateTime()();
-
-  BoolColumn get isLoggedIn => boolean().customConstraint('UNIQUE')();
+  
+  BoolColumn get isLoggedIn => boolean()();
 }
 
 class UserBlockRelations extends Table {
   IntColumn get blockedId => integer().customConstraint("REFERENCES moor_users(id)")();
-
+  
   IntColumn get blockerId => integer().customConstraint("REFERENCES moor_users(id)")();
+  
+  @override
+  Set<Column> get primaryKey =>
+    {
+      blockedId,
+      blockerId,
+    };
 }
 
 class UserFollowRelations extends Table {
   IntColumn get followedId => integer().customConstraint("REFERENCES moor_users(id)")();
-
+  
   IntColumn get followingId => integer().customConstraint("REFERENCES moor_users(id)")();
+  
+  @override
+  Set<Column> get primaryKey =>
+    {
+      followedId,
+      followingId,
+    };
 }
 
 class UserAchievements extends Table {
   IntColumn get userId => integer().customConstraint("REFERENCES moor_users(id)")();
-
+  
   IntColumn get achievementId => integer().customConstraint("REFERENCES moor_achievements(id)")();
+  
+  @override
+  Set<Column> get primaryKey =>
+    {
+      userId,
+      achievementId,
+    };
 }
 
 class UserInterests extends Table {
   IntColumn get userId => integer().customConstraint("REFERENCES moor_users(id)")();
-
+  
   IntColumn get tagId => integer().customConstraint("REFERENCES moor_tags(id)")();
+  
+  @override
+  Set<Column> get primaryKey =>
+    {
+      userId,
+      tagId,
+    };
 }
 
 class UserDoneExperiences extends Table {
   IntColumn get userId => integer().customConstraint("REFERENCES moor_users(id)")();
-
+  
   IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
+  
+  @override
+  Set<Column> get primaryKey =>
+    {
+      userId,
+      experienceId,
+    };
 }
 
 class UserLikedExperiences extends Table {
   IntColumn get userId => integer().customConstraint("REFERENCES moor_users(id)")();
   
   IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
+  
+  @override
+  Set<Column> get primaryKey =>
+    {
+      userId,
+      experienceId,
+    };
 }
 
 class UserToDoExperiences extends Table {
   IntColumn get userId => integer().customConstraint("REFERENCES moor_users(id)")();
   
   IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
+  
+  @override
+  Set<Column> get primaryKey =>
+    {
+      userId,
+      experienceId,
+    };
 }
