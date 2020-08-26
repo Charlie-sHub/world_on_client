@@ -87,7 +87,8 @@ class DevelopmentNotificationRepository implements NotificationRepositoryInterfa
   @override
   Future<Either<Failure, Unit>> deleteNotification(int id) async {
     try {
-      await _database.moorNotificationsDao.deleteNotification(id);
+      final _notificationToDelete = await _database.moorNotificationsDao.getNotificationById(id);
+      await _database.moorNotificationsDao.deleteNotification(_notificationToDelete);
       return right(unit);
     } catch (exception) {
       _logger.e("Moor Database error: $exception");

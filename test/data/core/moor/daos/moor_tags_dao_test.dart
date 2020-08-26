@@ -9,8 +9,12 @@ import 'package:worldon/data/core/moor/converters/domain_achievement_to_moor_ach
 import 'package:worldon/data/core/moor/converters/domain_experience_to_moor_experience.dart';
 import 'package:worldon/data/core/moor/converters/domain_tag_to_moor_tag.dart';
 import 'package:worldon/data/core/moor/converters/domain_user_to_moor_user_companion.dart';
+import 'package:worldon/data/core/moor/converters/moor_tag_to_domain_tag.dart';
+import 'package:worldon/data/core/moor/daos/moor_tags_dao/moor_tag_with_moor_user.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
+
+import '../../../../test_descriptions.dart';
 
 void main() {
   Database _database;
@@ -35,7 +39,7 @@ void main() {
       );
       // Act
       final _insertedTagId = await _database.moorTagsDao.insertTag(_moorTagSport);
-      final _moorTag = await _database.moorTagsDao.selectTagById(_insertedTagId);
+      final _moorTag = await _database.moorTagsDao.getTagById(_insertedTagId);
       // Assert
       expect(_moorTag.toCompanion(true), _moorTagSport.copyWith(id: Value(_insertedTagId)));
     },
@@ -122,11 +126,11 @@ void main() {
     },
   );
   group(
-    "Testing deletion",
-    () {
+    TestDescription.groupDeletion,
+      () {
       test(
         "Should delete all tags",
-        () async {
+          () async {
           // Arrange
           final _userId = await _insertCreator(_database);
           final _moorTagList = _createTagList(_tag, _userId);
@@ -214,38 +218,78 @@ void main() {
           expect(_interestsDeletedAmount, _interestIds.length);
         },
       );
+      test(
+        "Should delete all tags of all experiences",
+          () async {
+          // Arrange
+          final _userId = await _insertCreator(_database);
+          final _experience = domainExperienceToMoorExperience(getValidExperience()).copyWith(creatorId: Value(_userId));
+          final _otherExperience = _experience.copyWith(title: const Value("Test"));
+          final _moorTagList = _createTagList(_tag, _userId);
+          final _experienceTagsIds = [];
+          // Act
+          final _experienceId = await _database.moorExperiencesDao.insertExperience(_experience);
+          final _otherExperienceId = await _database.moorExperiencesDao.insertExperience(_otherExperience);
+          for (final _moorTag in _moorTagList) {
+            final _insertedTagId = await _database.moorTagsDao.insertTag(_moorTag);
+            final _experienceTag = ExperienceTagsCompanion.insert(
+              experienceId: _experienceId,
+              tagId: _insertedTagId,
+            );
+            final _otherExperienceTag = ExperienceTagsCompanion.insert(
+              experienceId: _otherExperienceId,
+              tagId: _insertedTagId,
+            );
+            _experienceTagsIds.add(await _database.moorTagsDao.insertExperienceTag(_experienceTag));
+            _experienceTagsIds.add(await _database.moorTagsDao.insertExperienceTag(_otherExperienceTag));
+          }
+          final _experienceTagsDeletedAmount = await _database.moorTagsDao.deleteAllExperiencesTags();
+          // Assert
+          expect(_experienceTagsDeletedAmount, _experienceTagsIds.length);
+        },
+      );
     },
   );
   group(
-    "Testing the streams",
-    () {
+    TestDescription.groupStreams,
+      () {
       test(
         "Should emit a stream of lists of tags by their name",
-        () async {
+          () async {
           // Arrange
           const _searchTerm = "f";
-          final _searchResults = <MoorTag>[];
+          final _searchResults = <Tag>[];
           final _userId = await _insertCreator(_database);
           final _tagList = _createTagList(_tag, _userId);
           // Act
           for (final _moorTag in _tagList) {
             final _id = await _database.moorTagsDao.insertTag(_moorTag);
             if (_moorTag.name.value.contains(_searchTerm.toLowerCase()) || _moorTag.name.value.contains(_searchTerm.toUpperCase())) {
-              final _tagInserted = await _database.moorTagsDao.selectTagById(_id);
-              _searchResults.add(_tagInserted);
+              final _tagInserted = await _database.moorTagsDao.getTagById(_id);
+              final _creator = await _database.moorUsersDao.getUserById(_tagInserted.creatorId);
+              _searchResults.add(
+                moorTagToDomainTag(
+                  MoorTagWithMoorUser(
+                    tag: _tagInserted,
+                    creator: _creator,
+                  ),
+                ),
+              );
             }
           }
           final _tagStream = await _database.moorTagsDao.watchSearchTagsByName(_searchTerm);
           // Assert
           expectLater(
-              _tagStream.map(
-                (_moorTagWithUserList) => _moorTagWithUserList
-                    .map(
-                      (_moorTagWithUser) => _moorTagWithUser.tag,
-                    )
-                    .toList(),
-              ),
-              emitsInOrder([_searchResults]));
+            _tagStream.map(
+                (_moorTagWithMoorUserList) =>
+                _moorTagWithMoorUserList
+                  .map(
+                    (_moorTagWithMoorUser) => moorTagToDomainTag(_moorTagWithMoorUser),
+                )
+                  .toList(),
+            ),
+            emitsInOrder([_searchResults]),
+          );
         },
       );
       test(
@@ -254,7 +298,7 @@ void main() {
           // Arrange
           final _userId = await _insertCreator(_database);
           final _moorTagList = _createTagList(_tag, _userId);
-          final _moorTagAfterInsertList = [];
+          final _moorTagAfterInsertList = <Tag>[];
           // Act
           for (final _moorTag in _moorTagList) {
             final _insertedTagId = await _database.moorTagsDao.insertTag(_moorTag);
@@ -262,20 +306,31 @@ void main() {
               userId: _userId,
               tagId: _insertedTagId,
             );
-            _moorTagAfterInsertList.add(_moorTag.copyWith(id: Value(_insertedTagId)));
+            final _tagInserted = await _database.moorTagsDao.getTagById(_insertedTagId);
+            final _creator = await _database.moorUsersDao.getUserById(_tagInserted.creatorId);
+            _moorTagAfterInsertList.add(
+              moorTagToDomainTag(
+                MoorTagWithMoorUser(
+                  tag: _tagInserted,
+                  creator: _creator,
+                ),
+              ),
+            );
             await _database.moorTagsDao.insertUserInterest(_userInterest);
           }
-          final _tagStream = await _database.moorTagsDao.watchUserInterests(_userId);
+          final _tagListStream = await _database.moorTagsDao.watchUserInterests(_userId);
           // Assert
           expectLater(
-              _tagStream.map(
-                (_moorTagWithUserList) => _moorTagWithUserList
-                    .map(
-                      (_moorTagWithUser) => _moorTagWithUser.tag.toCompanion(true),
-                    )
-                    .toList(),
-              ),
-              emitsInOrder([_moorTagAfterInsertList]));
+            _tagListStream.map(
+                (_moorTagWithUserList) =>
+                _moorTagWithUserList
+                  .map(
+                    (_moorTagWithUser) => moorTagToDomainTag(_moorTagWithUser),
+                )
+                  .toList(),
+            ),
+            emitsInOrder([_moorTagAfterInsertList]),
+          );
         },
       );
     },

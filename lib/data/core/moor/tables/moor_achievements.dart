@@ -26,13 +26,12 @@ class MoorAchievements extends Table {
 
 class AchievementTags extends Table {
   IntColumn get achievementId => integer().customConstraint("REFERENCES moor_achievements(id)")();
-  
+
   IntColumn get tagId => integer().customConstraint("REFERENCES moor_tags(id)")();
-  
+
   @override
-  Set<Column> get primaryKey =>
-    {
-      achievementId,
-      tagId,
-    };
+  Set<Column> get primaryKey => {
+        achievementId,
+        tagId,
+      };
 }

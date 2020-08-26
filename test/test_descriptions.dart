@@ -46,4 +46,7 @@ abstract class TestDescription {
 
   // Data Layer
   static const shouldEqualEntity = "the result of converting to and from the dto should equal the original entity";
+  static const groupDeletion = "Testing deletions";
+  static const groupInsert = "Testing inserts";
+  static const groupStreams = "Testing the streams";
 }

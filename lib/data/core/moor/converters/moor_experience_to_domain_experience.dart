@@ -40,7 +40,7 @@ Experience moorExperienceToDomainExperience(MoorExperienceWithRelations _moorExp
       rewards: RewardSet(
         _moorExperienceWithRelations.rewards
             .map(
-            (_moorReward) => moorRewardToDomainReward(_moorReward),
+              (_moorReward) => moorRewardToDomainReward(_moorReward),
             )
             .toSet()
             .toImmutableSet(),

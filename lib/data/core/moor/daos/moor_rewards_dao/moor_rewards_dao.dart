@@ -13,9 +13,9 @@ part 'moor_rewards_dao.g.dart';
 class MoorRewardsDao extends DatabaseAccessor<Database> with _$MoorRewardsDaoMixin {
   MoorRewardsDao(Database db) : super(db);
 
-  Future insertReward(Insertable<MoorReward> reward) => into(moorRewards).insert(reward);
+  Future<int> insertReward(Insertable<MoorReward> reward) => into(moorRewards).insert(reward);
 
-  Future<MoorReward> selectRewardById(int id) async {
+  Future<MoorReward> getRewardById(int id) async {
     final _contentQuery = select(moorRewards)..where((_rewards) => _rewards.id.equals(id));
     return _contentQuery.getSingle();
   }

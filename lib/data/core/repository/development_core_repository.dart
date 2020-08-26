@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
-import 'package:kt_dart/kt.dart';
 import 'package:logger/logger.dart';
 import 'package:moor_flutter/moor_flutter.dart';
 import 'package:worldon/core/error/failure.dart';
@@ -24,7 +23,6 @@ import 'package:worldon/domain/core/entities/notification/notification_type_enum
 import 'package:worldon/domain/core/repository/core_repository_interface.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
-import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 import 'package:worldon/injection.dart';
 
 @LazySingleton(as: CoreRepositoryInterface, env: [Environment.dev])
@@ -407,33 +405,7 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
 
   Future insertExperiences(Set<int> _userIds, Set<int> _tagsIds, Set<int> _experiencesIds) async {
     final _devExperienceRepository = DevelopmentExperienceManagementRepository();
-    final _experienceIpsum = getValidExperience().copyWith(
-      creator: getValidUser().copyWith(
-        id: _userIds.first,
-      ),
-      tags: TagSet(
-        KtSet.of(
-          getValidTag().copyWith(
-            id: _tagsIds.first,
-          ),
-          getValidTag().copyWith(
-            id: _tagsIds.elementAt(1),
-          ),
-          getValidTag().copyWith(
-            id: _tagsIds.elementAt(2),
-          ),
-          getValidTag().copyWith(
-            id: _tagsIds.elementAt(3),
-          ),
-          getValidTag().copyWith(
-            id: _tagsIds.elementAt(4),
-          ),
-          getValidTag().copyWith(
-            id: _tagsIds.elementAt(5),
-          ),
-        ),
-      ),
-    );
+    final _experienceIpsum = getValidExperience();
     final _experienceBro = _experienceIpsum.copyWith(
       title: Name("Malesuada fames ac ante"),
       description: EntityDescription("Gorby poaching Whistler corduroy freshies stoked sharkbite brain bucket dirtbag."),
@@ -566,7 +538,7 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
     _logger.i("Deleted  $_deletedUserAchievementsAmount user achievement(s)");
     final _deletedExperienceImagesUrlsAmount = await _database.moorExperiencesDao.deleteAllExperiencesImagesUrls();
     _logger.i("Deleted  $_deletedExperienceImagesUrlsAmount experiences image url(s)");
-    final _deletedExperiencesTagsAmount = await _database.moorExperiencesDao.deleteAllExperiencesTags();
+    final _deletedExperiencesTagsAmount = await _database.moorTagsDao.deleteAllExperiencesTags();
     _logger.i("Deleted  $_deletedExperiencesTagsAmount experiences tag(s)");
     final _deletedExperiencesToDoAmount = await _database.moorExperiencesDao.deleteAllUsersToDoExperiences();
     _logger.i("Deleted  $_deletedExperiencesToDoAmount experiences to do");

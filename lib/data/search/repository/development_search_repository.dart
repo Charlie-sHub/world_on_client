@@ -24,26 +24,26 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
 
   @override
   Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByDifficulty(Difficulty difficulty) async* {
-    final _stream = await _database.moorExperiencesDao.watchSearchExperiencesByDifficulty(difficulty.getOrCrash());
+    final _stream = _database.moorExperiencesDao.watchSearchExperiencesByDifficulty(difficulty.getOrCrash());
     yield* createExperienceListStream(_stream, _logger);
   }
 
   @override
   Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByTags(TagSet tags) async* {
     final _tagIdList = tags.getOrCrash().map((_tag) => _tag.id).asList();
-    final _stream = await _database.moorExperiencesDao.watchSearchExperiencesByTags(_tagIdList);
+    final _stream = _database.moorExperiencesDao.watchSearchExperiencesByTags(_tagIdList);
     yield* createExperienceListStream(_stream, _logger);
   }
 
   @override
   Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByTitle(SearchTerm title) async* {
-    final _stream = await _database.moorExperiencesDao.watchSearchExperiencesByTitle(title.getOrCrash());
+    final _stream = _database.moorExperiencesDao.watchSearchExperiencesByTitle(title.getOrCrash());
     yield* createExperienceListStream(_stream, _logger);
   }
 
   @override
   Stream<Either<Failure, KtList<Tag>>> watchSearchTagsByName(SearchTerm name) async* {
-    final _stream = await _database.moorTagsDao.watchSearchTagsByName(name.getOrCrash());
+    final _stream = _database.moorTagsDao.watchSearchTagsByName(name.getOrCrash());
     yield* createTagListStream(_stream, _logger);
   }
 

@@ -19,7 +19,7 @@ class MoorCommentsDao extends DatabaseAccessor<Database> with _$MoorCommentsDaoM
 
   Future<int> insertComment(Insertable<MoorComment> comment) => into(moorComments).insert(comment);
 
-  Future<MoorComment> selectCommentById(int id) async {
+  Future<MoorComment> getCommentById(int id) async {
     final _contentQuery = select(moorComments)..where((_comments) => _comments.id.equals(id));
     return _contentQuery.getSingle();
   }

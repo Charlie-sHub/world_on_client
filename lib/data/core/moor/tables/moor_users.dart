@@ -35,28 +35,27 @@ class MoorUsers extends Table {
   DateTimeColumn get creationDate => dateTime()();
 
   DateTimeColumn get modificationDate => dateTime()();
-  
+
   BoolColumn get isLoggedIn => boolean()();
 }
 
 class UserBlockRelations extends Table {
   IntColumn get blockedId => integer().customConstraint("REFERENCES moor_users(id)")();
-  
+
   IntColumn get blockerId => integer().customConstraint("REFERENCES moor_users(id)")();
-  
+
   @override
-  Set<Column> get primaryKey =>
-    {
-      blockedId,
-      blockerId,
-    };
+  Set<Column> get primaryKey => {
+        blockedId,
+        blockerId,
+      };
 }
 
 class UserFollowRelations extends Table {
   IntColumn get followedId => integer().customConstraint("REFERENCES moor_users(id)")();
-  
+
   IntColumn get followingId => integer().customConstraint("REFERENCES moor_users(id)")();
-  
+
   @override
   Set<Column> get primaryKey =>
     {
@@ -67,9 +66,9 @@ class UserFollowRelations extends Table {
 
 class UserAchievements extends Table {
   IntColumn get userId => integer().customConstraint("REFERENCES moor_users(id)")();
-  
+
   IntColumn get achievementId => integer().customConstraint("REFERENCES moor_achievements(id)")();
-  
+
   @override
   Set<Column> get primaryKey =>
     {
@@ -80,9 +79,9 @@ class UserAchievements extends Table {
 
 class UserInterests extends Table {
   IntColumn get userId => integer().customConstraint("REFERENCES moor_users(id)")();
-  
+
   IntColumn get tagId => integer().customConstraint("REFERENCES moor_tags(id)")();
-  
+
   @override
   Set<Column> get primaryKey =>
     {
@@ -93,9 +92,9 @@ class UserInterests extends Table {
 
 class UserDoneExperiences extends Table {
   IntColumn get userId => integer().customConstraint("REFERENCES moor_users(id)")();
-  
+
   IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
-  
+
   @override
   Set<Column> get primaryKey =>
     {
@@ -106,9 +105,9 @@ class UserDoneExperiences extends Table {
 
 class UserLikedExperiences extends Table {
   IntColumn get userId => integer().customConstraint("REFERENCES moor_users(id)")();
-  
+
   IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
-  
+
   @override
   Set<Column> get primaryKey =>
     {
@@ -119,9 +118,9 @@ class UserLikedExperiences extends Table {
 
 class UserToDoExperiences extends Table {
   IntColumn get userId => integer().customConstraint("REFERENCES moor_users(id)")();
-  
+
   IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
-  
+
   @override
   Set<Column> get primaryKey =>
     {

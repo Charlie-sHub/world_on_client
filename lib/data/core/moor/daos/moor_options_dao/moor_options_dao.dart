@@ -9,9 +9,9 @@ part 'moor_options_dao.g.dart';
 class MoorOptionsDao extends DatabaseAccessor<Database> with _$MoorOptionsDaoMixin {
   MoorOptionsDao(Database db) : super(db);
 
-  Future insertOptions(Insertable<MoorOption> options) => into(moorOptions).insert(options);
+  Future<int> insertOptions(Insertable<MoorOption> options) => into(moorOptions).insert(options);
 
-  Future<MoorOption> selectOptionsById(int id) async {
+  Future<MoorOption> getOptionsById(int id) async {
     final _contentQuery = select(moorOptions)..where((_options) => _options.id.equals(id));
     return _contentQuery.getSingle();
   }

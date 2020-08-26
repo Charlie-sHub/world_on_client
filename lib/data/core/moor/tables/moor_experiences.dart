@@ -36,13 +36,12 @@ class ExperienceImageUrls extends Table {
 
 class ExperienceTags extends Table {
   IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
-  
+
   IntColumn get tagId => integer().customConstraint("REFERENCES moor_tags(id)")();
-  
+
   @override
-  Set<Column> get primaryKey =>
-    {
-      experienceId,
-      tagId,
-    };
+  Set<Column> get primaryKey => {
+        experienceId,
+        tagId,
+      };
 }

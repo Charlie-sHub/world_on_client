@@ -40,19 +40,21 @@ class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
 
   Future<int> deleteAllUsersInterests() => delete(userInterests).go();
 
+  Future<int> deleteAllExperiencesTags() => delete(experienceTags).go();
+
   Future<int> removeUserInterest(Insertable<UserInterest> userInterest) => delete(userInterests).delete(userInterest);
 
-  Future<MoorTag> selectTagById(int id) async {
+  Future<MoorTag> getTagById(int id) async {
     final _contentQuery = select(moorTags)..where((_tags) => _tags.id.equals(id));
     return _contentQuery.getSingle();
   }
 
-  Future<Stream<List<MoorTagWithMoorUser>>> watchSearchTagsByName(String name) async {
+  Stream<List<MoorTagWithMoorUser>> watchSearchTagsByName(String name) async* {
     final _whereExpression = moorTags.name.contains(name);
-    return _createMoorTagWithMoorUserListStream(_whereExpression);
+    yield* _createMoorTagWithMoorUserListStream(_whereExpression);
   }
 
-  Future<Stream<List<MoorTagWithMoorUser>>> watchUserInterests(int userId) async {
+  Stream<List<MoorTagWithMoorUser>> watchUserInterests(int userId) async* {
     final _userInterestsQuery = select(userInterests).join(
       [
         innerJoin(
@@ -60,9 +62,10 @@ class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
           moorTags.id.equalsExp(userInterests.tagId),
         ),
       ],
-    )..where((userInterests.userId.equals(userId)));
+    )
+      ..where((userInterests.userId.equals(userId)));
     final _tagsIds = await _userInterestsQuery
-        .watch()
+      .watch()
         .map(
           (_rows) => _rows
               .map(
@@ -72,7 +75,7 @@ class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
         )
         .first;
     final _whereExpression = moorTags.id.isIn(_tagsIds);
-    return _createMoorTagWithMoorUserListStream(_whereExpression);
+    yield* _createMoorTagWithMoorUserListStream(_whereExpression);
   }
 
   Stream<List<MoorTagWithMoorUser>> _createMoorTagWithMoorUserListStream(Expression<bool> _whereExpression) {

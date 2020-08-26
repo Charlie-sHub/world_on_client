@@ -142,19 +142,19 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
 
   @override
   Stream<Either<Failure, KtList<Experience>>> watchExperiencesCreated(int id) async* {
-    final _stream = await _database.moorExperiencesDao.watchExperiencesCreated(id);
+    final _stream = _database.moorExperiencesDao.watchExperiencesCreated(id);
     yield* createExperienceListStream(_stream, _logger);
   }
 
   @override
   Stream<Either<Failure, KtList<Experience>>> watchExperiencesDone(int id) async* {
-    final _stream = await _database.moorExperiencesDao.watchExperiencesDone(id);
+    final _stream = _database.moorExperiencesDao.watchExperiencesDone(id);
     yield* createExperienceListStream(_stream, _logger);
   }
 
   @override
   Stream<Either<Failure, KtList<Experience>>> watchExperiencesLiked(int id) async* {
-    final _stream = await _database.moorExperiencesDao.watchExperiencesLiked(id);
+    final _stream = _database.moorExperiencesDao.watchExperiencesLiked(id);
     yield* createExperienceListStream(_stream, _logger);
   }
 
@@ -173,7 +173,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   @override
   Future<Either<Failure, User>> getUser(int id) async {
     try {
-      final _moorUser = await _database.moorUsersDao.selectUserById(id);
+      final _moorUser = await _database.moorUsersDao.getUserById(id);
       final _user = moorUserToDomainUser(_moorUser);
       return right(_user);
     } catch (exception) {
@@ -190,7 +190,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
 
   @override
   Stream<Either<Failure, KtList<Achievement>>> watchUserAchievements(int userId) async* {
-    final _stream = await _database.moorAchievementsDao.watchUserAchievements(userId);
+    final _stream = _database.moorAchievementsDao.watchUserAchievements(userId);
     yield* _stream.map(
       (_moorAchievementList) {
         if (_moorAchievementList != null) {
@@ -229,7 +229,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
 
   @override
   Stream<Either<Failure, KtList<Tag>>> watchUserInterests(int userId) async* {
-    final _stream = await _database.moorTagsDao.watchUserInterests(userId);
+    final _stream = _database.moorTagsDao.watchUserInterests(userId);
     yield* createTagListStream(_stream, _logger);
   }
 

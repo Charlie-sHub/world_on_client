@@ -73,7 +73,7 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
     int experienceId,
   }) async {
     try {
-      final _moorExperience = await _database.moorExperiencesDao.selectExperienceById(experienceId);
+      final _moorExperience = await _database.moorExperiencesDao.getExperienceById(experienceId);
       final _difficulty = _moorExperience.difficulty + difficulty.getOrCrash() / 2;
       await _database.moorExperiencesDao.updateExperience(
         _moorExperience.copyWith(
@@ -97,7 +97,7 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
   Future<Either<Failure, Unit>> rewardUser(int experienceId) async {
     try {
       final _moorUser = await _database.moorUsersDao.getLoggedInUser();
-      final _moorExperience = await _database.moorExperiencesDao.selectExperienceById(experienceId);
+      final _moorExperience = await _database.moorExperiencesDao.getExperienceById(experienceId);
       final _experiencePoints = _moorUser.experiencePoints + _moorExperience.difficulty * 10;
       await _database.moorUsersDao.updateUser(
         _moorUser.copyWith(

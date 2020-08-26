@@ -5,6 +5,8 @@ import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_v
 import 'package:worldon/data/core/moor/converters/domain_user_to_moor_user_companion.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
 
+import '../../../../test_descriptions.dart';
+
 void main() {
   Database _database;
   setUp(
@@ -51,7 +53,7 @@ void main() {
     () async {
       // Act
       final _insertedUserId = await _database.moorUsersDao.insertUser(_moorUserRicky);
-      final _moorUser = await _database.moorUsersDao.selectUserById(_insertedUserId);
+      final _moorUser = await _database.moorUsersDao.getUserById(_insertedUserId);
       // Assert
       expect(_moorUser.toCompanion(true), _moorUserRicky.copyWith(id: Value(_insertedUserId)));
     },
@@ -75,9 +77,9 @@ void main() {
       const _newName = "Charlie";
       // Act
       final _insertedUserId = await _database.moorUsersDao.insertUser(_moorUserRicky);
-      final _moorUserToUpdate = await _database.moorUsersDao.selectUserById(_insertedUserId);
+      final _moorUserToUpdate = await _database.moorUsersDao.getUserById(_insertedUserId);
       await _database.moorUsersDao.updateUser(_moorUserToUpdate.copyWith(name: _newName));
-      final _moorUser = await _database.moorUsersDao.selectUserById(_insertedUserId);
+      final _moorUser = await _database.moorUsersDao.getUserById(_insertedUserId);
       // Assert
       expect(
         _moorUser.toCompanion(true),
@@ -161,11 +163,11 @@ void main() {
     },
   );
   group(
-    "Testing deletion",
-    () {
+    TestDescription.groupDeletion,
+      () {
       test(
         "Should delete all users",
-        () async {
+          () async {
           // Act
           for (final _moorUser in _moorUserList) {
             await _database.moorUsersDao.insertUser(_moorUser);
@@ -268,18 +270,18 @@ void main() {
     },
   );
   group(
-    "Testing the streams",
-    () {
+    TestDescription.groupStreams,
+      () {
       test(
         "Should emit a stream of lists of users by their username",
-        () async {
+          () async {
           // Arrange
           final _searchResults = <MoorUser>[];
           // Act
           for (final _moorUser in _moorUserList) {
             final _id = await _database.moorUsersDao.insertUser(_moorUser);
             if (_moorUser.username.value.contains(_searchTerm)) {
-              final _userInserted = await _database.moorUsersDao.selectUserById(_id);
+              final _userInserted = await _database.moorUsersDao.getUserById(_id);
               _searchResults.add(_userInserted);
             }
           } // Assert
@@ -295,7 +297,7 @@ void main() {
           for (final _moorUser in _moorUserList) {
             final _id = await _database.moorUsersDao.insertUser(_moorUser);
             if (_moorUser.name.value.contains(_searchTerm.toLowerCase()) || _moorUser.name.value.contains(_searchTerm.toUpperCase())) {
-              final _userInserted = await _database.moorUsersDao.selectUserById(_id);
+              final _userInserted = await _database.moorUsersDao.getUserById(_id);
               _searchResults.add(_userInserted);
             }
           } // Assert

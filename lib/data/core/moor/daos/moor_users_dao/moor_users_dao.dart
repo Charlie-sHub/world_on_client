@@ -47,10 +47,10 @@ class MoorUsersDao extends DatabaseAccessor<Database> with _$MoorUsersDaoMixin {
     return _userQuery.getSingle();
   }
 
-  Future<MoorUser> selectUserById(int id) async {
+  Future<MoorUser> getUserById(int id) async {
     final _experienceQuery = select(moorUsers)
       ..where(
-          (_user) => _user.id.equals(id),
+        (_user) => _user.id.equals(id),
       );
     return _experienceQuery.getSingle();
   }
