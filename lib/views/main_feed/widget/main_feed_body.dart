@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/main_feed/main_feed_watcher/main_feed_watcher_bloc.dart';
 import 'package:worldon/views/core/widget/cards/error_card.dart';
 import 'package:worldon/views/core/widget/cards/experience_card/experience_card.dart';
-import 'package:worldon/views/core/widget/critical_error_display.dart';
-import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
+import 'package:worldon/views/core/widget/error/error_display.dart';
+import 'package:worldon/views/core/widget/misc/world_on_progress_indicator.dart';
 
 import '../../../injection.dart';
 
@@ -46,10 +46,11 @@ class MainFeedBody extends StatelessWidget {
             ),
           ),
           loadFailure: (state) => InkWell(
-            onTap: () async => context.bloc<MainFeedWatcherBloc>().add(
-                  const MainFeedWatcherEvent.watchMainFeedStarted(),
-                ),
-            child: CriticalErrorDisplay(failure: state.failure),
+            onTap: () async =>
+              context.bloc<MainFeedWatcherBloc>().add(
+                const MainFeedWatcherEvent.watchMainFeedStarted(),
+              ),
+            child: ErrorDisplay(failure: state.failure),
           ),
         ),
       ),

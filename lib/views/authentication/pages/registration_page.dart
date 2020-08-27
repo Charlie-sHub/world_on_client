@@ -25,7 +25,10 @@ class RegistrationPage extends StatelessWidget {
               (_) => _onSuccess(context),
             ),
           ),
-          buildWhen: (previous, current) => previous.showErrorMessages != current.showErrorMessages,
+          buildWhen: (previous, current) =>
+              previous.showErrorMessages != current.showErrorMessages ||
+              previous.acceptedEULA != current.acceptedEULA ||
+              previous.user.imageFileOption.isSome() != current.user.imageFileOption.isSome(),
           builder: (context, state) => RegistrationForm(),
         ),
       ),

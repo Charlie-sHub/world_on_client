@@ -15,7 +15,7 @@ class DescriptionTextFormField extends StatelessWidget {
       maxLength: EntityDescription.maxLength,
       initialValue: context.bloc<ProfileEditingFormBloc>().state.user.description.getOrCrash(),
       onChanged: (value) => context.bloc<ProfileEditingFormBloc>().add(
-            ProfileEditingFormEvent.descriptionChanged(value),
+            ProfileEditingFormEvent.descriptionChanged(value.trim()),
           ),
       validator: (_) => context.bloc<ProfileEditingFormBloc>().state.user.username.value.fold(
             (failure) => failure.maybeMap(

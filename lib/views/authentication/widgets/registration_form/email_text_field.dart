@@ -13,7 +13,7 @@ class EmailTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       onChanged: (value) => context.bloc<RegistrationFormBloc>().add(
-            RegistrationFormEvent.emailAddressChanged(value),
+            RegistrationFormEvent.emailAddressChanged(value.trim()),
           ),
       validator: (_) => context.bloc<RegistrationFormBloc>().state.user.email.value.fold(
             (failure) => failure.maybeMap(

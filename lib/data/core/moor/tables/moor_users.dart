@@ -57,11 +57,10 @@ class UserFollowRelations extends Table {
   IntColumn get followingId => integer().customConstraint("REFERENCES moor_users(id)")();
 
   @override
-  Set<Column> get primaryKey =>
-    {
-      followedId,
-      followingId,
-    };
+  Set<Column> get primaryKey => {
+        followedId,
+        followingId,
+      };
 }
 
 class UserAchievements extends Table {

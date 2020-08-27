@@ -22,7 +22,7 @@ class PasswordTextField extends StatelessWidget {
       ),
       autocorrect: false,
       obscureText: true,
-      onChanged: (value) => eventToAdd(value),
+      onChanged: (value) => eventToAdd(value.trim()),
       validator: (_) => validator(_),
     );
   }

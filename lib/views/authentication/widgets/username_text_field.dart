@@ -21,7 +21,7 @@ class UsernameTextField extends StatelessWidget {
         prefixIcon: Icon(Icons.account_box),
       ),
       autocorrect: false,
-      onChanged: (value) => eventToAdd(value),
+      onChanged: (value) => eventToAdd(value.trim()),
       validator: (_) => validator(_),
     );
   }

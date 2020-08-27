@@ -5,8 +5,8 @@ import 'package:worldon/application/search/search_tags_by_name_watcher/search_ta
 import 'package:worldon/application/search/tag_selector/tag_selector_bloc.dart';
 import 'package:worldon/views/core/widget/cards/simple_tag_display.dart';
 import 'package:worldon/views/core/widget/cards/simple_tag_error_display.dart';
-import 'package:worldon/views/core/widget/critical_error_display.dart';
-import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
+import 'package:worldon/views/core/widget/error/error_display.dart';
+import 'package:worldon/views/core/widget/misc/world_on_progress_indicator.dart';
 import 'package:worldon/views/search/widget/search_something.dart';
 
 class TagsFoundView extends StatelessWidget {
@@ -50,14 +50,18 @@ class TagsFoundView extends StatelessWidget {
           ),
         ),
         searchFailure: (state) => InkWell(
-          onTap: () async => context.bloc<SearchTagsByNameWatcherBloc>().add(
-                SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(
-                  // Don't really like getting the search term that way
-                  // but it seems better than having this widget as a child of the SearchByNameFormBloc BlocConsumer
-                  context.bloc<SearchByNameFormBloc>().state.searchTerm,
-                ),
+          onTap: () async =>
+            context.bloc<SearchTagsByNameWatcherBloc>().add(
+              SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(
+                // Don't really like getting the search term that way
+                // but it seems better than having this widget as a child of the SearchByNameFormBloc BlocConsumer
+                context
+                  .bloc<SearchByNameFormBloc>()
+                  .state
+                  .searchTerm,
               ),
-          child: CriticalErrorDisplay(failure: state.failure),
+            ),
+          child: ErrorDisplay(failure: state.failure),
         ),
       ),
     );

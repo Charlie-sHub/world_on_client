@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_navigation/experience_finish_actor/experience_finish_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/injection.dart';
-import 'package:worldon/views/core/widget/critical_error_display.dart';
-import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
+import 'package:worldon/views/core/widget/error/error_display.dart';
+import 'package:worldon/views/core/widget/misc/world_on_progress_indicator.dart';
 import 'package:worldon/views/experience_navigation/widget/experience_finish/finish_success_view.dart';
 
 class ExperienceFinish extends StatelessWidget {
@@ -25,10 +25,11 @@ class ExperienceFinish extends StatelessWidget {
           actionInProgress: (_) => WorldOnProgressIndicator(),
           finishSuccess: (_) => FinishSuccessView(experience: experience),
           finishFailure: (state) => InkWell(
-            onTap: () async => context.bloc<ExperienceFinishActorBloc>().add(
-                  ExperienceFinishActorEvent.finishedExperience(experience),
-                ),
-            child: CriticalErrorDisplay(failure: state.failure),
+            onTap: () async =>
+              context.bloc<ExperienceFinishActorBloc>().add(
+                ExperienceFinishActorEvent.finishedExperience(experience),
+              ),
+            child: ErrorDisplay(failure: state.failure),
           ),
         ),
       ),

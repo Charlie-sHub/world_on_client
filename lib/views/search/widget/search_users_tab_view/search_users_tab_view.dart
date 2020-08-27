@@ -5,8 +5,9 @@ import 'package:worldon/application/search/search_users_by_name_watcher/search_u
 import 'package:worldon/domain/core/validation/objects/search_term.dart';
 import 'package:worldon/views/core/widget/cards/error_card.dart';
 import 'package:worldon/views/core/widget/cards/user_card/user_card.dart';
-import 'package:worldon/views/core/widget/critical_error_display.dart';
-import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
+import 'package:worldon/views/core/widget/error/critical_error_display.dart';
+import 'package:worldon/views/core/widget/error/error_display.dart';
+import 'package:worldon/views/core/widget/misc/world_on_progress_indicator.dart';
 import 'package:worldon/views/search/widget/search_something.dart';
 import 'package:worldon/views/search/widget/search_users_tab_view/search_users_unicorn_dialer.dart';
 
@@ -48,10 +49,11 @@ class SearchUsersTabView extends StatelessWidget {
           ),
         ),
         searchFailure: (state) => InkWell(
-          onTap: () async => context.bloc<SearchUsersByNameWatcherBloc>().add(
-                SearchUsersByNameWatcherEvent.watchUsersFoundByNameStarted(searchTerm),
-              ),
-          child: CriticalErrorDisplay(failure: state.failure),
+          onTap: () async =>
+            context.bloc<SearchUsersByNameWatcherBloc>().add(
+              SearchUsersByNameWatcherEvent.watchUsersFoundByNameStarted(searchTerm),
+            ),
+          child: ErrorDisplay(failure: state.failure),
         ),
       ),
     );

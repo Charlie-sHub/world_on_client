@@ -5,8 +5,8 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widget/cards/error_card.dart';
-import 'package:worldon/views/core/widget/critical_error_display.dart';
-import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
+import 'package:worldon/views/core/widget/error/error_display.dart';
+import 'package:worldon/views/core/widget/misc/world_on_progress_indicator.dart';
 import 'package:worldon/views/experience_navigation/widget/comment_card.dart';
 
 class ExperienceCommentsListView extends StatelessWidget {
@@ -49,10 +49,11 @@ class ExperienceCommentsListView extends StatelessWidget {
               },
             ),
             loadFailure: (state) => InkWell(
-              onTap: () async => context.bloc<CommentWatcherBloc>().add(
-                    CommentWatcherEvent.watchExperienceCommentsStarted(experience.id),
-                  ),
-              child: CriticalErrorDisplay(failure: state.failure),
+              onTap: () async =>
+                context.bloc<CommentWatcherBloc>().add(
+                  CommentWatcherEvent.watchExperienceCommentsStarted(experience.id),
+                ),
+              child: ErrorDisplay(failure: state.failure),
             ),
           ),
         ),

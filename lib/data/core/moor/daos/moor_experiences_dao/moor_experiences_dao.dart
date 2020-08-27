@@ -34,15 +34,27 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
 
   Future updateExperience(Insertable<MoorExperience> experience) => update(moorExperiences).replace(experience);
 
-  Future<int> insertExperienceTodo(Insertable<UserToDoExperience> userToDoExperience) => into(userToDoExperiences).insert(userToDoExperience);
+  Future<int> insertExperienceTodo(Insertable<UserToDoExperience> userToDoExperience) => into(userToDoExperiences).insert(
+        userToDoExperience,
+        mode: InsertMode.replace,
+      );
 
-  Future<int> insertExperienceImage(Insertable<ExperienceImageUrl> imageUrl) => into(experienceImageUrls).insert(imageUrl);
+  Future<int> insertExperienceImage(Insertable<ExperienceImageUrl> imageUrl) => into(experienceImageUrls).insert(
+        imageUrl,
+        mode: InsertMode.replace,
+      );
 
   Future<int> removeExperienceTodo(Insertable<UserToDoExperience> userToDoExperience) => delete(userToDoExperiences).delete(userToDoExperience);
 
-  Future<int> insertExperienceDone(Insertable<UserDoneExperience> userDoneExperience) => into(userDoneExperiences).insert(userDoneExperience);
+  Future<int> insertExperienceDone(Insertable<UserDoneExperience> userDoneExperience) => into(userDoneExperiences).insert(
+        userDoneExperience,
+        mode: InsertMode.replace,
+      );
 
-  Future<int> insertExperienceLiked(Insertable<UserLikedExperience> userLikedExperience) => into(userLikedExperiences).insert(userLikedExperience);
+  Future<int> insertExperienceLiked(Insertable<UserLikedExperience> userLikedExperience) => into(userLikedExperiences).insert(
+        userLikedExperience,
+        mode: InsertMode.replace,
+      );
 
   Future<int> deleteAllExperiences() => delete(moorExperiences).go();
 

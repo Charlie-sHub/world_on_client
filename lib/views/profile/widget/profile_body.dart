@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/application/profile/profile_watcher/profile_watcher_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
-import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
+import 'package:worldon/views/core/widget/misc/world_on_progress_indicator.dart';
 import 'package:worldon/views/profile/widget/foreign_profile/foreign_profile.dart';
 import 'package:worldon/views/profile/widget/own_profile/own_profile.dart';
 import 'package:worldon/views/profile/widget/profile_critical_failure.dart';

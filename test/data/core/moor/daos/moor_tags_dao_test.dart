@@ -127,10 +127,10 @@ void main() {
   );
   group(
     TestDescription.groupDeletion,
-      () {
+    () {
       test(
         "Should delete all tags",
-          () async {
+        () async {
           // Arrange
           final _userId = await _insertCreator(_database);
           final _moorTagList = _createTagList(_tag, _userId);
@@ -246,6 +246,30 @@ void main() {
           final _experienceTagsDeletedAmount = await _database.moorTagsDao.deleteAllExperiencesTags();
           // Assert
           expect(_experienceTagsDeletedAmount, _experienceTagsIds.length);
+        },
+      );
+      test(
+        "Should delete all tag achievement relations",
+          () async {
+          // Arrange
+          final _userId = await _insertCreator(_database);
+          final _moorAchievement = domainAchievementToMoorAchievement(getValidAchievement()).copyWith(creatorId: Value(_userId));
+          final _moorTag = domainTagToMoorTag(getValidTag()).copyWith(creatorId: Value(_userId));
+          // Act
+          final _achievementId = await _database.moorAchievementsDao.insertAchievement(_moorAchievement);
+          final _tagId = await _database.moorTagsDao.insertTag(_moorTag);
+          final _tagAchievementList = [
+            AchievementTagsCompanion.insert(
+              tagId: _tagId,
+              achievementId: _achievementId,
+            ),
+          ];
+          for (final _tagAchievement in _tagAchievementList) {
+            await _database.moorTagsDao.insertAchievementTag(_tagAchievement);
+          }
+          final _tagAchievementsDeletedCount = await _database.moorTagsDao.deleteAllAchievementsTags();
+          // Assert
+          expect(_tagAchievementsDeletedCount, _tagAchievementList.length);
         },
       );
     },

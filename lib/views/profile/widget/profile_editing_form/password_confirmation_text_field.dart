@@ -14,7 +14,7 @@ class PasswordConfirmationTextField extends StatelessWidget {
     return TextFormField(
       maxLength: Password.maxLength,
       onChanged: (value) => context.bloc<ProfileEditingFormBloc>().add(
-            ProfileEditingFormEvent.passwordConfirmationChanged(value),
+            ProfileEditingFormEvent.passwordConfirmationChanged(value.trim()),
           ),
       initialValue: context.bloc<ProfileEditingFormBloc>().state.passwordConfirmator.getOrCrash(),
       validator: (_) => context.bloc<ProfileEditingFormBloc>().state.passwordConfirmator.value.fold(

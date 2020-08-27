@@ -28,11 +28,20 @@ class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
 
   Future<int> insertTag(Insertable<MoorTag> tag) => into(moorTags).insert(tag);
 
-  Future<int> insertExperienceTag(Insertable<ExperienceTag> experienceTag) => into(experienceTags).insert(experienceTag);
+  Future<int> insertExperienceTag(Insertable<ExperienceTag> experienceTag) => into(experienceTags).insert(
+        experienceTag,
+        mode: InsertMode.replace,
+      );
 
-  Future<int> insertAchievementTag(Insertable<AchievementTag> achievementTag) => into(achievementTags).insert(achievementTag);
+  Future<int> insertAchievementTag(Insertable<AchievementTag> achievementTag) => into(achievementTags).insert(
+        achievementTag,
+        mode: InsertMode.replace,
+      );
 
-  Future<int> insertUserInterest(Insertable<UserInterest> userInterest) => into(userInterests).insert(userInterest);
+  Future<int> insertUserInterest(Insertable<UserInterest> userInterest) => into(userInterests).insert(
+        userInterest,
+        mode: InsertMode.replace,
+      );
 
   Future<int> deleteUserInterests(int userId) => (delete(userInterests)..where((interest) => interest.userId.equals(userId))).go();
 
@@ -41,6 +50,8 @@ class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
   Future<int> deleteAllUsersInterests() => delete(userInterests).go();
 
   Future<int> deleteAllExperiencesTags() => delete(experienceTags).go();
+
+  Future<int> deleteAllAchievementsTags() => delete(achievementTags).go();
 
   Future<int> removeUserInterest(Insertable<UserInterest> userInterest) => delete(userInterests).delete(userInterest);
 
@@ -66,14 +77,18 @@ class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
       ..where((userInterests.userId.equals(userId)));
     final _tagsIds = await _userInterestsQuery
       .watch()
-        .map(
-          (_rows) => _rows
-              .map(
-                (_row) => _row.readTable(moorTags).id,
-              )
-              .toList(),
+      .map(
+        (_rows) =>
+        _rows
+          .map(
+            (_row) =>
+          _row
+            .readTable(moorTags)
+            .id,
         )
-        .first;
+          .toList(),
+    )
+      .first;
     final _whereExpression = moorTags.id.isIn(_tagsIds);
     yield* _createMoorTagWithMoorUserListStream(_whereExpression);
   }

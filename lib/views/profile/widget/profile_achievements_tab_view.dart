@@ -4,8 +4,8 @@ import 'package:worldon/application/profile/profile_achievements_watcher/profile
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/widget/cards/achievement_card.dart';
 import 'package:worldon/views/core/widget/cards/error_card.dart';
-import 'package:worldon/views/core/widget/critical_error_display.dart';
-import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
+import 'package:worldon/views/core/widget/error/error_display.dart';
+import 'package:worldon/views/core/widget/misc/world_on_progress_indicator.dart';
 
 import '../../../injection.dart';
 
@@ -48,10 +48,11 @@ class ProfileAchievementsTabView extends StatelessWidget {
             },
           ),
           loadFailure: (state) => InkWell(
-            onTap: () async => context.bloc<ProfileAchievementsWatcherBloc>().add(
-                  ProfileAchievementsWatcherEvent.watchAchievementsStarted(user),
-                ),
-            child: CriticalErrorDisplay(failure: state.failure),
+            onTap: () async =>
+              context.bloc<ProfileAchievementsWatcherBloc>().add(
+                ProfileAchievementsWatcherEvent.watchAchievementsStarted(user),
+              ),
+            child: ErrorDisplay(failure: state.failure),
           ),
         ),
       ),

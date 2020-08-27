@@ -5,8 +5,8 @@ import 'package:worldon/application/notifications/notification_actor/notificatio
 import 'package:worldon/application/notifications/notifications_watcher/notifications_watcher_bloc.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/widget/cards/error_card.dart';
-import 'package:worldon/views/core/widget/critical_error_display.dart';
-import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
+import 'package:worldon/views/core/widget/error/error_display.dart';
+import 'package:worldon/views/core/widget/misc/world_on_progress_indicator.dart';
 import 'package:worldon/views/notifications/widget/notification_card.dart';
 
 class NotificationsBody extends StatelessWidget {
@@ -68,10 +68,11 @@ class NotificationsBody extends StatelessWidget {
               },
             ),
             loadFailure: (state) => InkWell(
-              onTap: () async => context.bloc<NotificationsWatcherBloc>().add(
-                    const NotificationsWatcherEvent.watchNotificationsStarted(),
-                  ),
-              child: CriticalErrorDisplay(failure: state.failure),
+              onTap: () async =>
+                context.bloc<NotificationsWatcherBloc>().add(
+                  const NotificationsWatcherEvent.watchNotificationsStarted(),
+                ),
+              child: ErrorDisplay(failure: state.failure),
             ),
           ),
         ),

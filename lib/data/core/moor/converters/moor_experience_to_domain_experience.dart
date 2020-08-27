@@ -48,7 +48,7 @@ Experience moorExperienceToDomainExperience(MoorExperienceWithRelations _moorExp
       tags: TagSet(
         _moorExperienceWithRelations.tags
             .map(
-            (_moorTagWithCreator) => moorTagToDomainTag(_moorTagWithCreator),
+              (_moorTagWithCreator) => moorTagToDomainTag(_moorTagWithCreator),
             )
             .toSet()
             .toImmutableSet(),

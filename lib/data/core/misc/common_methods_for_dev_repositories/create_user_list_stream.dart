@@ -10,7 +10,7 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 
 Stream<Either<Failure, KtList<User>>> createUserListStream(Stream<List<MoorUser>> _stream, Logger logger) => _stream.map(
       (_moorUserList) {
-        if (_moorUserList != null) {
+        if (_moorUserList != null && _moorUserList.isNotEmpty) {
           return right<Failure, KtList<User>>(
             _moorUserList
                 .map(

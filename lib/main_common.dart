@@ -10,6 +10,7 @@ import 'data/core/repository/development_core_repository.dart';
 // It's what Jose recommended, but i should ask for a more specific example
 // as i'm not sure how best to use it, or even if i can get advantage of it right now
 Future<void> mainCommon(String environment) async {
+  WidgetsFlutterBinding.ensureInitialized();
   configureDependencies(environment);
   // TODO: Delete this when the backend is ready to be used and the simulation is no longer necessary
   if (environment == Environment.dev) {

@@ -164,10 +164,10 @@ void main() {
   );
   group(
     TestDescription.groupDeletion,
-      () {
+    () {
       test(
         "Should delete all users",
-          () async {
+        () async {
           // Act
           for (final _moorUser in _moorUserList) {
             await _database.moorUsersDao.insertUser(_moorUser);

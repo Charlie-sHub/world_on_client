@@ -19,7 +19,7 @@ class SearchHeader extends StatelessWidget {
             Expanded(
               child: TextFormField(
                 onChanged: (value) => context.bloc<SearchByNameFormBloc>().add(
-                      SearchByNameFormEvent.searchTermChanged(value),
+                      SearchByNameFormEvent.searchTermChanged(value.trim()),
                     ),
                 decoration: const InputDecoration(
                   labelText: "Search",

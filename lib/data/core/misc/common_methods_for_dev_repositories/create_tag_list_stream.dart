@@ -10,7 +10,7 @@ import 'package:worldon/domain/core/entities/tag/tag.dart';
 
 Stream<Either<Failure, KtList<Tag>>> createTagListStream(Stream<List<MoorTagWithMoorUser>> _stream, Logger logger) => _stream.map(
       (_moorTagList) {
-        if (_moorTagList != null) {
+        if (_moorTagList != null && _moorTagList.isNotEmpty) {
           return right<Failure, KtList<Tag>>(
             _moorTagList
                 .map(

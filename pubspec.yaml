@@ -28,7 +28,7 @@ dependencies:
   # For dependency injection
   injectable: ^1.0.4
   # Bloc for state management
-  flutter_bloc: ^6.0.1
+  flutter_bloc: ^6.0.2
   # Value equality
   # Probably useless now
   equatable: ^1.2.4
@@ -75,7 +75,7 @@ dependencies:
   # To add shadow to icons with less boiler plate
   icon_shadow: ^1.0.1
   # For getting images from the device
-  image_picker: ^0.6.7+6
+  image_picker: ^0.6.7+7
   # For getting multiple images from the device
   multi_image_picker: ^4.7.12
   # Local database, mostly for back-end simulation
@@ -105,7 +105,7 @@ dev_dependencies:
   # For dependency injection code generation
   injectable_generator: ^1.0.4
   # For Serializing entities to JSON
-  json_serializable: ^3.4.0
+  json_serializable: ^3.4.1
   # For auto generating the routes
   auto_route_generator: ^0.6.8
   # For ease of setting the app icon

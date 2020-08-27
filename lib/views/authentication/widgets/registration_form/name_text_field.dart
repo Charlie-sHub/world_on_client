@@ -15,7 +15,7 @@ class NameTextField extends StatelessWidget {
     return TextFormField(
       maxLength: Name.maxLength,
       onChanged: (value) => context.bloc<RegistrationFormBloc>().add(
-            RegistrationFormEvent.nameChanged(value),
+            RegistrationFormEvent.nameChanged(value.trim()),
           ),
       validator: (_) => context.bloc<RegistrationFormBloc>().state.user.name.value.fold(
             (failure) => failure.maybeMap(

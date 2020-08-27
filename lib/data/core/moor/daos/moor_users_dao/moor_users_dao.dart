@@ -19,11 +19,17 @@ class MoorUsersDao extends DatabaseAccessor<Database> with _$MoorUsersDaoMixin {
 
   Future updateUser(Insertable<MoorUser> user) => update(moorUsers).replace(user);
 
-  Future<int> blockUser(Insertable<UserBlockRelation> userBlockRelation) => into(userBlockRelations).insert(userBlockRelation);
+  Future<int> blockUser(Insertable<UserBlockRelation> userBlockRelation) => into(userBlockRelations).insert(
+        userBlockRelation,
+        mode: InsertMode.replace,
+      );
 
   Future<int> unBlockUser(Insertable<UserBlockRelation> userBlockRelation) => delete(userBlockRelations).delete(userBlockRelation);
 
-  Future<int> followUser(Insertable<UserFollowRelation> userFollowRelation) => into(userFollowRelations).insert(userFollowRelation);
+  Future<int> followUser(Insertable<UserFollowRelation> userFollowRelation) => into(userFollowRelations).insert(
+        userFollowRelation,
+        mode: InsertMode.replace,
+      );
 
   Future<int> unFollowUser(Insertable<UserFollowRelation> userFollowRelation) => delete(userFollowRelations).delete(userFollowRelation);
 

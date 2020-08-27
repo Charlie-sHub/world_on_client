@@ -36,20 +36,17 @@ class MoorNotificationsDao extends DatabaseAccessor<Database> with _$MoorNotific
           moorUsers.id.equalsExp(moorNotifications.senderId),
         ),
       ],
-    )
-      ..where(moorNotifications.receiverId.equals(_receiver.id));
+    )..where(moorNotifications.receiverId.equals(_receiver.id));
     yield* _contentQuery.watch().map(
-        (_rows) =>
-        _rows
-          .map(
-            (_row) =>
-            MoorNotificationWithRelations(
-              notification: _row.readTable(moorNotifications),
-              sender: _row.readTable(moorUsers),
-              receiver: _receiver,
-            ),
-        )
-          .toList(),
-    );
+          (_rows) => _rows
+              .map(
+                (_row) => MoorNotificationWithRelations(
+                  notification: _row.readTable(moorNotifications),
+                  sender: _row.readTable(moorUsers),
+                  receiver: _receiver,
+                ),
+              )
+              .toList(),
+        );
   }
 }

@@ -98,10 +98,29 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> followUser(int userToFollowId) async {
     try {
+      // TODO: Why aren't the user's followed shown?
       final _moorUser = await _database.moorUsersDao.getLoggedInUser();
       final _userFollowRelation = _createUserFollowRelation(userToFollowId, _moorUser);
       await _database.moorUsersDao.followUser(_userFollowRelation);
       return right(unit);
+    } catch (exception) {
+      _logger.e("Moor Database error: $exception");
+      return left(
+        Failure.coreData(
+          CoreDataFailure.serverError(
+            errorString: "Development repository error $exception",
+          ),
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, User>> getUser(int id) async {
+    try {
+      final _moorUser = await _database.moorUsersDao.getUserById(id);
+      final _user = moorUserToDomainUser(_moorUser);
+      return right(_user);
     } catch (exception) {
       _logger.e("Moor Database error: $exception");
       return left(
@@ -171,29 +190,11 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Future<Either<Failure, User>> getUser(int id) async {
-    try {
-      final _moorUser = await _database.moorUsersDao.getUserById(id);
-      final _user = moorUserToDomainUser(_moorUser);
-      return right(_user);
-    } catch (exception) {
-      _logger.e("Moor Database error: $exception");
-      return left(
-        Failure.coreData(
-          CoreDataFailure.serverError(
-            errorString: "Development repository error $exception",
-          ),
-        ),
-      );
-    }
-  }
-
-  @override
   Stream<Either<Failure, KtList<Achievement>>> watchUserAchievements(int userId) async* {
     final _stream = _database.moorAchievementsDao.watchUserAchievements(userId);
     yield* _stream.map(
       (_moorAchievementList) {
-        if (_moorAchievementList != null) {
+        if (_moorAchievementList != null && _moorAchievementList.isNotEmpty) {
           return right<Failure, KtList<Achievement>>(
             _moorAchievementList
                 .map(

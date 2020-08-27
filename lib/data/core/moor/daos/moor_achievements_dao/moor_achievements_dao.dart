@@ -24,7 +24,10 @@ class MoorAchievementsDao extends DatabaseAccessor<Database> with _$MoorAchievem
 
   Future<int> insertAchievement(Insertable<MoorAchievement> achievement) => into(moorAchievements).insert(achievement);
 
-  Future insertUserAchievement(Insertable<UserAchievement> userAchievement) => into(userAchievements).insert(userAchievement);
+  Future insertUserAchievement(Insertable<UserAchievement> userAchievement) => into(userAchievements).insert(
+        userAchievement,
+        mode: InsertMode.replace,
+      );
 
   Future<int> countAchievements() async {
     final _moorAchievementList = await select(moorAchievements).get();
@@ -37,8 +40,6 @@ class MoorAchievementsDao extends DatabaseAccessor<Database> with _$MoorAchievem
   }
 
   Future<int> deleteAllAchievements() => delete(moorAchievements).go();
-
-  Future<int> deleteAllAchievementsTags() => delete(achievementTags).go();
 
   Future<int> deleteAllUsersAchievements() => delete(userAchievements).go();
 
@@ -54,12 +55,16 @@ class MoorAchievementsDao extends DatabaseAccessor<Database> with _$MoorAchievem
       ..where(userAchievements.userId.equals(userId));
     final _usersAchievementsIds = await _userAchievementsQuery
       .watch()
-        .map(
-          (_rows) => _rows.map(
-            (_row) => _row.readTable(moorAchievements).id,
-          ),
-        )
-        .first;
+      .map(
+        (_rows) =>
+        _rows.map(
+            (_row) =>
+          _row
+            .readTable(moorAchievements)
+            .id,
+        ),
+    )
+      .first;
     final _achievementsWithCreatorJoin = select(moorAchievements).join(
       [
         innerJoin(

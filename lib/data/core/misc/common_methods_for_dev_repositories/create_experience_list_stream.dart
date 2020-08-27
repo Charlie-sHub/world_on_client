@@ -10,7 +10,7 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 
 Stream<Either<Failure, KtList<Experience>>> createExperienceListStream(Stream<List<MoorExperienceWithRelations>> stream, Logger logger) => stream.map(
       (_moorExperienceList) {
-        if (_moorExperienceList != null) {
+        if (_moorExperienceList != null && _moorExperienceList.isNotEmpty) {
           return right<Failure, KtList<Experience>>(
             _moorExperienceList
                 .map(

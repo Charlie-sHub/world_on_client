@@ -14,7 +14,7 @@ class PasswordTextField extends StatelessWidget {
     return TextFormField(
       maxLength: Password.maxLength,
       onChanged: (value) => context.bloc<ProfileEditingFormBloc>().add(
-            ProfileEditingFormEvent.passwordChanged(value),
+            ProfileEditingFormEvent.passwordChanged(value.trim()),
           ),
       initialValue: context.bloc<ProfileEditingFormBloc>().state.user.password.getOrCrash(),
       validator: (_) => context.bloc<ProfileEditingFormBloc>().state.user.password.value.fold(

@@ -4,8 +4,8 @@ import 'package:worldon/application/profile/profile_experiences_watcher/profile_
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/widget/cards/error_card.dart';
 import 'package:worldon/views/core/widget/cards/experience_card/experience_card.dart';
-import 'package:worldon/views/core/widget/critical_error_display.dart';
-import 'package:worldon/views/core/widget/world_on_progress_indicator.dart';
+import 'package:worldon/views/core/widget/error/error_display.dart';
+import 'package:worldon/views/core/widget/misc/world_on_progress_indicator.dart';
 import 'package:worldon/views/profile/widget/profile_experiences_tab_view/profile_experiences_unicorn_dialer.dart';
 
 import '../../../../injection.dart';
@@ -58,7 +58,7 @@ class ProfileExperiencesTabView extends StatelessWidget {
                   // same with the other watchers
                   ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(user),
                 ),
-            child: CriticalErrorDisplay(failure: state.failure),
+            child: ErrorDisplay(failure: state.failure),
           ),
         ),
       ),

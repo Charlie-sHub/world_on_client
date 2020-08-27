@@ -14,11 +14,14 @@ import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_v
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/simulate_failure_or_unit.dart';
 import 'package:worldon/data/core/moor/converters/domain_achievement_to_moor_achievement.dart';
 import 'package:worldon/data/core/moor/converters/domain_comment_to_moor_comment.dart';
+import 'package:worldon/data/core/moor/converters/domain_experience_to_moor_experience.dart';
 import 'package:worldon/data/core/moor/converters/domain_notification_to_moor_notification.dart';
+import 'package:worldon/data/core/moor/converters/domain_objective_to_moor_objective.dart';
+import 'package:worldon/data/core/moor/converters/domain_reward_to_moor_reward.dart';
 import 'package:worldon/data/core/moor/converters/domain_tag_to_moor_tag.dart';
 import 'package:worldon/data/core/moor/converters/domain_user_to_moor_user_companion.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
-import 'package:worldon/data/experience_management/repository/development_experience_management_repository.dart';
+import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
 import 'package:worldon/domain/core/repository/core_repository_interface.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -30,6 +33,8 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
   final _random = Random();
   final _database = getIt<Database>();
   final _logger = Logger();
+
+  // final _database = Database.test(VmDatabase.memory());
 
   @override
   Future<Either<Failure, Unit>> deleteCache() {
@@ -45,24 +50,28 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
       final Set<int> _tagsIds = {};
       final Set<int> _experiencesIds = {};
       if (await _database.moorUsersDao.countUsers() == 0) {
+        _logger.i("Starting the creation of users and their relations");
         await _insertUsers(_userIds);
         _insertFollows(_userIds);
         _insertNotifications(_userIds);
         _logger.i("Created Users and their relations");
       }
       if (await _database.moorAchievementsDao.countAchievements() == 0) {
+        _logger.i("Starting the creation of achievements and their relations");
         await _insertAchievements(_userIds, _achievementIds);
         _insertUserAchievements(_userIds, _achievementIds);
         _logger.i("Created Achievements and their relations");
       }
       if (await _database.moorTagsDao.countTags() == 0) {
+        _logger.i("Starting the creation of tags and their relations");
         await _insertTags(_userIds, _tagsIds);
         _insertUsersInterests(_userIds, _tagsIds);
         _insertAchievementsTags(_achievementIds, _tagsIds);
         _logger.i("Created Tags and their relations");
       }
       if (await _database.moorExperiencesDao.countExperiences() == 0) {
-        await insertExperiences(_userIds, _tagsIds, _experiencesIds);
+        _logger.i("Starting the creation of experiences and their relations");
+        await _insertExperiences(_userIds, _tagsIds, _experiencesIds);
         await insertComments(_experiencesIds);
         _insertExperiencesLiked(_userIds, _experiencesIds);
         _insertExperiencesDone(_userIds, _experiencesIds);
@@ -70,7 +79,7 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
         _insertExperiencesTags(_experiencesIds, _tagsIds);
         _logger.i("Created Experiences and their relations");
       }
-    } catch (exception) {
+    } on Exception catch (exception) {
       await _logException(exception);
     }
   }
@@ -219,7 +228,7 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
         experienceId: _experiencesIds.elementAt(1),
       ),
       UserDoneExperiencesCompanion.insert(
-        userId: _userIds.elementAt(0),
+        userId: _userIds.elementAt(1),
         experienceId: _experiencesIds.elementAt(2),
       ),
     ];
@@ -402,9 +411,9 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
       _database.moorCommentsDao.insertComment(_comment);
     }
   }
-
-  Future insertExperiences(Set<int> _userIds, Set<int> _tagsIds, Set<int> _experiencesIds) async {
-    final _devExperienceRepository = DevelopmentExperienceManagementRepository();
+  
+  Future _insertExperiences(Set<int> _userIds, Set<int> _tagsIds, Set<int> _experiencesIds) async {
+    // TODO: Insert experiences with other creators
     final _experienceIpsum = getValidExperience();
     final _experienceBro = _experienceIpsum.copyWith(
       title: Name("Malesuada fames ac ante"),
@@ -425,10 +434,60 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
       _experienceSpace,
     ];
     for (final _experience in _experienceList) {
-      _experiencesIds.add(await _devExperienceRepository.insertExperience(_experience));
+      _experiencesIds.add(await _insertExperience(_experience));
     }
   }
-
+  
+  Future<int> _insertExperience(Experience experience) async {
+    final _moorExperience = domainExperienceToMoorExperience(experience);
+    final _experienceId = await _database.moorExperiencesDao.insertExperience(_moorExperience);
+    final _moorObjectives = experience.objectives
+      .getOrCrash()
+      .asSet()
+      .map(
+        (_objective) =>
+        domainObjectiveToMoorObjective(
+          _experienceId,
+          _objective,
+        ),
+    )
+      .toSet();
+    final _moorRewards = experience.rewards
+      .getOrCrash()
+      .asSet()
+      .map(
+        (_reward) =>
+        domainRewardToMoorReward(
+          _experienceId,
+          _reward,
+        ),
+    )
+      .toSet();
+    experience.imageAssetsOption.fold(
+      // This should never happen
+      // If it does an exception should be thrown or something
+        () => _logger.i("The experience ${experience.title} imageAssetOption field is none()"),
+        (imageAssetList) async {
+        for (final _imageAsset in imageAssetList) {
+          final _experienceImage = ExperienceImageUrlsCompanion.insert(
+            experienceId: _experienceId,
+            // TODO: Figure out a way to select multiple file images
+            // just saving the name is useless for this
+            imageUrl: _imageAsset.name,
+          );
+          await _database.moorExperiencesDao.insertExperienceImage(_experienceImage);
+        }
+      },
+    );
+    for (final _objective in _moorObjectives) {
+      await _database.moorObjectivesDao.insertObjective(_objective);
+    }
+    for (final _reward in _moorRewards) {
+      await _database.moorRewardsDao.insertReward(_reward);
+    }
+    return _experienceId;
+  }
+  
   Future _insertTags(Set<int> _userIds, Set<int> _tagsIds) async {
     final _tag = getValidTag();
     final _moorTagSport = domainTagToMoorTag(_tag).copyWith(
@@ -532,7 +591,7 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
   Future _logException(exception) async {
     _logger.e("Moor Database error: $exception");
     _logger.i("DELETING RELATIONS");
-    final _deletedAchievementsTagsAmount = await _database.moorAchievementsDao.deleteAllAchievementsTags();
+    final _deletedAchievementsTagsAmount = await _database.moorTagsDao.deleteAllAchievementsTags();
     _logger.i("Deleted  $_deletedAchievementsTagsAmount achievements tag(s)");
     final _deletedUserAchievementsAmount = await _database.moorAchievementsDao.deleteAllUsersAchievements();
     _logger.i("Deleted  $_deletedUserAchievementsAmount user achievement(s)");
