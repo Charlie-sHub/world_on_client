@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
@@ -16,25 +17,38 @@ part 'comment_watcher_state.dart';
 @injectable
 class CommentWatcherBloc extends Bloc<CommentWatcherEvent, CommentWatcherState> {
   CommentWatcherBloc() : super(const CommentWatcherState.initial());
+  StreamSubscription<Either<Failure, KtList<Comment>>> _experienceCommentsStreamSubscription;
 
   @override
   Stream<CommentWatcherState> mapEventToState(CommentWatcherEvent event) async* {
     yield* event.map(
-      watchExperienceCommentsStarted: onWatchExperienceCommentsStarted,
+      watchExperienceCommentsStarted: _onWatchExperienceCommentsStarted,
+      resultsReceived: _onResultsReceived,
     );
   }
 
-  Stream<CommentWatcherState> onWatchExperienceCommentsStarted(_WatchExperienceCommentsStarted event) async* {
+  Stream<CommentWatcherState> _onResultsReceived(_ResultsReceived event) async* {
+    yield event.failureOrComments.fold(
+      (_failure) => CommentWatcherState.loadFailure(_failure),
+      (_comments) => CommentWatcherState.loadSuccess(_comments),
+    );
+  }
+
+  Stream<CommentWatcherState> _onWatchExperienceCommentsStarted(_WatchExperienceCommentsStarted event) async* {
     yield const CommentWatcherState.loadInProgress();
+    await _experienceCommentsStreamSubscription?.cancel();
     final _getExperienceComments = getIt<WatchExperienceComments>();
     final _params = Params(
       experienceId: event.experienceId,
     );
-    yield* _getExperienceComments(_params).map(
-      (failureOrComments) => failureOrComments.fold(
-        (failure) => CommentWatcherState.loadFailure(failure),
-        (comments) => CommentWatcherState.loadSuccess(comments),
-      ),
+    _experienceCommentsStreamSubscription = _getExperienceComments(_params).listen(
+      (_failureOrComments) => add(CommentWatcherEvent.resultsReceived(_failureOrComments)),
     );
+  }
+
+  @override
+  Future<void> close() async {
+    await _experienceCommentsStreamSubscription?.cancel();
+    return super.close();
   }
 }

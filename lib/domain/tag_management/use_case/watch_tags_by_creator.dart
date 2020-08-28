@@ -9,13 +9,13 @@ import 'package:worldon/domain/tag_management/repository/tag_repository_interfac
 import '../../core/use_case/use_case.dart';
 
 @LazySingleton(env: [Environment.dev, Environment.prod])
-class WatchTagsByCreator implements StreamUseCase<KtSet<Tag>, Params> {
+class WatchTagsByCreator implements StreamUseCase<KtList<Tag>, Params> {
   final TagCoreRepositoryInterface _repository;
 
   WatchTagsByCreator(this._repository);
 
   @override
-  Stream<Either<Failure, KtSet<Tag>>> call(Params params) async* {
+  Stream<Either<Failure, KtList<Tag>>> call(Params params) async* {
     yield* _repository.watchTagsByCreator(params.creatorId);
   }
 }

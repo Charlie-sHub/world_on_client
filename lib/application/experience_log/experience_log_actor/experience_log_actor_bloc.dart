@@ -19,11 +19,11 @@ class ExperienceLogActorBloc extends Bloc<ExperienceLogActorEvent, ExperienceLog
   @override
   Stream<ExperienceLogActorState> mapEventToState(ExperienceLogActorEvent event) async* {
     yield* event.map(
-      experienceDismissed: onExperienceDismissed,
+      experienceDismissed: _onExperienceDismissed,
     );
   }
 
-  Stream<ExperienceLogActorState> onExperienceDismissed(_ExperienceDismissed event) async* {
+  Stream<ExperienceLogActorState> _onExperienceDismissed(_ExperienceDismissed event) async* {
     yield const ExperienceLogActorState.actionInProgress();
     final _dismissExperienceFromLog = getIt<DismissExperienceFromLog>();
     final _failureOrUnit = await _dismissExperienceFromLog(

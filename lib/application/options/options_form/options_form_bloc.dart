@@ -20,13 +20,13 @@ class OptionsFormBloc extends Bloc<OptionsFormEvent, OptionsFormState> {
   @override
   Stream<OptionsFormState> mapEventToState(OptionsFormEvent event) async* {
     yield* event.map(
-      initialized: onInitialized,
-      languageCodeChanged: onLanguageCodeChanged,
-      submitted: onSubmitted,
+      initialized: _onInitialized,
+      languageCodeChanged: _onLanguageCodeChanged,
+      submitted: _onSubmitted,
     );
   }
 
-  Stream<OptionsFormState> onSubmitted(_Submitted event) async* {
+  Stream<OptionsFormState> _onSubmitted(_) async* {
     Either<Failure, Unit> _failureOrSuccess;
     yield state.copyWith(
       isSubmitting: true,
@@ -43,7 +43,7 @@ class OptionsFormBloc extends Bloc<OptionsFormEvent, OptionsFormState> {
     );
   }
 
-  Stream<OptionsFormState> onLanguageCodeChanged(_LanguageCodeChanged event) async* {
+  Stream<OptionsFormState> _onLanguageCodeChanged(_LanguageCodeChanged event) async* {
     yield state.copyWith(
       options: state.options.copyWith(
         languageCode: event.languageCode,
@@ -52,7 +52,7 @@ class OptionsFormBloc extends Bloc<OptionsFormEvent, OptionsFormState> {
     );
   }
 
-  Stream<OptionsFormState> onInitialized(_Initialized event) async* {
+  Stream<OptionsFormState> _onInitialized(_Initialized event) async* {
     yield event.optionsOption.fold(
       () => state,
       (options) => state.copyWith(

@@ -8,13 +8,13 @@ import 'package:worldon/domain/tag_management/repository/tag_repository_interfac
 import '../../core/use_case/use_case.dart';
 
 @LazySingleton(env: [Environment.dev, Environment.prod])
-class WatchAllTags implements StreamUseCase<KtSet<Tag>, NoParams> {
+class WatchAllTags implements StreamUseCase<KtList<Tag>, NoParams> {
   final TagCoreRepositoryInterface _repository;
 
   WatchAllTags(this._repository);
 
   @override
-  Stream<Either<Failure, KtSet<Tag>>> call(NoParams params) async* {
+  Stream<Either<Failure, KtList<Tag>>> call(NoParams params) async* {
     yield* _repository.watchAllTags();
   }
 }

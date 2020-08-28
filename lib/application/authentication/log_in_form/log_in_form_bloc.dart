@@ -24,14 +24,14 @@ class LogInFormBloc extends Bloc<LogInFormEvent, LogInFormState> {
   @override
   Stream<LogInFormState> mapEventToState(LogInFormEvent event) async* {
     yield* event.map(
-      usernameChanged: onUsernameChanged,
-      passwordChanged: onPasswordChanged,
-      loggedIn: onLoggedIn,
-      loggedInGoogle: onLoggedInGoogle,
+      usernameChanged: _onUsernameChanged,
+      passwordChanged: _onPasswordChanged,
+      loggedIn: _onLoggedIn,
+      loggedInGoogle: _onLoggedInGoogle,
     );
   }
 
-  Stream<LogInFormState> onLoggedInGoogle(_LoggedInGoogle event) async* {
+  Stream<LogInFormState> _onLoggedInGoogle(_) async* {
     final _logInGoogle = getIt<LogInGoogle>();
     yield state.copyWith(
       isSubmitting: true,
@@ -44,7 +44,7 @@ class LogInFormBloc extends Bloc<LogInFormEvent, LogInFormState> {
     );
   }
 
-  Stream<LogInFormState> onLoggedIn(_LoggedIn event) async* {
+  Stream<LogInFormState> _onLoggedIn(_) async* {
     Either<Failure, Unit> _failureOrSuccess;
     if (state.username.isValid() && state.password.isValid()) {
       final _logIn = getIt<LogIn>();
@@ -70,14 +70,14 @@ class LogInFormBloc extends Bloc<LogInFormEvent, LogInFormState> {
     }
   }
 
-  Stream<LogInFormState> onPasswordChanged(_PasswordChanged event) async* {
+  Stream<LogInFormState> _onPasswordChanged(_PasswordChanged event) async* {
     yield state.copyWith(
       password: Password(event.password),
       failureOrSuccessOption: none(),
     );
   }
 
-  Stream<LogInFormState> onUsernameChanged(_UsernameChanged event) async* {
+  Stream<LogInFormState> _onUsernameChanged(_UsernameChanged event) async* {
     yield state.copyWith(
       username: Name(event.username),
       failureOrSuccessOption: none(),

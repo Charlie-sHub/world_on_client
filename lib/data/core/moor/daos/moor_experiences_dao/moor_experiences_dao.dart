@@ -76,17 +76,6 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
     return _experienceQuery.getSingle();
   }
 
-  Stream<List<MoorExperienceWithRelations>> watchFeed(int userId) async* {
-    final _followedUsersQuery = select(userFollowRelations)
-      ..where(
-        (userFollowRelations) => userFollowRelations.followingId.equals(userId),
-      );
-    final _followedRelations = await _followedUsersQuery.get();
-    final _followedIds = _followedRelations.map((_followRelations) => _followRelations.followedId).toList();
-    final _whereExpression = moorExperiences.creatorId.isIn(_followedIds);
-    yield* _getExperienceWithRelationsStream(_whereExpression);
-  }
-
   Stream<List<MoorExperienceWithRelations>> watchSearchExperiencesByTitle(String title) async* {
     final _whereExpression = moorExperiences.title.contains(title);
     yield* _getExperienceWithRelationsStream(_whereExpression);
@@ -113,15 +102,69 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
     yield* _getExperienceWithRelationsStream(_whereExpression);
   }
 
+  Stream<List<MoorExperienceWithRelations>> watchFeed(int userId) async* {
+    final _followedUsersQuery = select(userFollowRelations)
+      ..where(
+        (_userFollowRelations) => _userFollowRelations.followingId.equals(userId),
+      );
+    final _followedIdsStream = _followedUsersQuery.watch().map(
+          (_userFollowRelationList) => _userFollowRelationList
+              .map(
+                (_userFollowRelation) => _userFollowRelation.followedId,
+              )
+              .toList(),
+        );
+    final _experiencesWithCreatorJoinStream = _createExperienceWithCreatorsJoinStream();
+    final _experiencesWithTagsJoinStream = _createExperiencesWithTagsJoinStream();
+    final _tagsWithCreatorsListStream = _createTagWithCreatorsStream();
+    final _objectivesStream = select(moorObjectives).watch();
+    final _rewardsStream = select(moorRewards).watch();
+    final _imageUrlsStream = select(experienceImageUrls).watch();
+    yield* Rx.combineLatest7(
+      _followedIdsStream,
+      _experiencesWithCreatorJoinStream,
+      _experiencesWithTagsJoinStream,
+      _objectivesStream,
+      _rewardsStream,
+      _imageUrlsStream,
+      _tagsWithCreatorsListStream,
+      (
+        List<int> _followedIds,
+        List<TypedResult> _experiencesWithCreator,
+        List<TypedResult> _experiencesWithTags,
+        List<MoorObjective> _objectiveList,
+        List<MoorReward> _rewardList,
+        List<ExperienceImageUrl> _imageUrlList,
+        List<MoorTagWithMoorUser> _tagsWithCreator,
+      ) {
+        _experiencesWithCreator.removeWhere(
+          (_row) => !_followedIds.contains(_row.readTable(moorExperiences).creatorId),
+        );
+        return _createExperienceWithRelationsList(
+          _experiencesWithCreator,
+          _imageUrlList,
+          _objectiveList,
+          _rewardList,
+          _experiencesWithTags,
+          _tagsWithCreator,
+        );
+      },
+    );
+  }
+
   Stream<List<MoorExperienceWithRelations>> watchExperiencesDone(int userId) async* {
-    final _contentQuery = select(userDoneExperiences)
+    final _experiencesDoneQuery = select(userDoneExperiences)
       ..where(
         (_userDoneExperiences) => _userDoneExperiences.userId.equals(userId),
       );
-    final _usersDoneExperienceList = await _contentQuery.get();
-    final _usersDoneExperiencesIds = _usersDoneExperienceList.map((_userDoneExperience) => _userDoneExperience.experienceId).toList();
-    final _whereExpression = moorExperiences.creatorId.isIn(_usersDoneExperiencesIds);
-    yield* _getExperienceWithRelationsStream(_whereExpression);
+    final _doneExperiencesIdStream = _experiencesDoneQuery.watch().map(
+          (_userDoneExperienceList) => _userDoneExperienceList
+              .map(
+                (_userDoneExperience) => _userDoneExperience.experienceId,
+              )
+              .toList(),
+        );
+    yield* _createExperienceStreamInRelationToUser(_doneExperiencesIdStream);
   }
 
   Stream<List<MoorExperienceWithRelations>> watchExperiencesLiked(int userId) async* {
@@ -129,10 +172,98 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
       ..where(
         (_userLikedExperiences) => _userLikedExperiences.userId.equals(userId),
       );
-    final _usersLikedExperienceList = await _contentQuery.get();
-    final _usersLikedExperiencesIds = _usersLikedExperienceList.map((_userLikedExperience) => _userLikedExperience.experienceId).toList();
-    final _whereExpression = moorExperiences.creatorId.isIn(_usersLikedExperiencesIds);
-    yield* _getExperienceWithRelationsStream(_whereExpression);
+    final _likedExperiencesIdStream = _contentQuery.watch().map(
+          (_userLikedExperienceList) => _userLikedExperienceList
+              .map(
+                (_userLikedExperience) => _userLikedExperience.experienceId,
+              )
+              .toList(),
+        );
+    yield* _createExperienceStreamInRelationToUser(_likedExperiencesIdStream);
+  }
+
+  Stream<List<MoorTagWithMoorUser>> _createTagWithCreatorsStream() {
+    return select(moorUsers)
+        .join(
+          [
+            innerJoin(
+              moorTags,
+              moorTags.creatorId.equalsExp(moorUsers.id),
+            ),
+          ],
+        )
+        .watch()
+        .map(
+          (_rows) => _rows
+              .map(
+                (_row) => MoorTagWithMoorUser(
+                  tag: _row.readTable(moorTags),
+                  creator: _row.readTable(moorUsers),
+                ),
+              )
+              .toList(),
+        );
+  }
+
+  Stream<List<TypedResult>> _createExperiencesWithTagsJoinStream() {
+    return select(experienceTags).join(
+      [
+        innerJoin(
+          moorTags,
+          moorTags.id.equalsExp(experienceTags.tagId),
+        ),
+      ],
+    ).watch();
+  }
+
+  Stream<List<TypedResult>> _createExperienceWithCreatorsJoinStream() {
+    return select(moorExperiences).join(
+      [
+        innerJoin(
+          moorUsers,
+          moorUsers.id.equalsExp(moorExperiences.creatorId),
+        ),
+      ],
+    ).watch();
+  }
+
+  Stream<List<MoorExperienceWithRelations>> _createExperienceStreamInRelationToUser(Stream<List<int>> _likedExperiencesIdStream) async* {
+    final _experiencesWithCreatorJoinStream = _createExperienceWithCreatorsJoinStream();
+    final _experiencesWithTagsJoinStream = _createExperiencesWithTagsJoinStream();
+    final _tagsWithCreatorsListStream = _createTagWithCreatorsStream();
+    final _objectivesStream = select(moorObjectives).watch();
+    final _rewardsStream = select(moorRewards).watch();
+    final _imageUrlsStream = select(experienceImageUrls).watch();
+    yield* Rx.combineLatest7(
+      _likedExperiencesIdStream,
+      _experiencesWithCreatorJoinStream,
+      _experiencesWithTagsJoinStream,
+      _objectivesStream,
+      _rewardsStream,
+      _imageUrlsStream,
+      _tagsWithCreatorsListStream,
+      (
+        List<int> _experiencesLikedIds,
+        List<TypedResult> _experiencesWithCreator,
+        List<TypedResult> _experiencesWithTags,
+        List<MoorObjective> _objectiveList,
+        List<MoorReward> _rewardList,
+        List<ExperienceImageUrl> _imageUrlList,
+        List<MoorTagWithMoorUser> _tagsWithCreator,
+      ) {
+        _experiencesWithCreator.removeWhere(
+          (_row) => !_experiencesLikedIds.contains(_row.readTable(moorExperiences).id),
+        );
+        return _createExperienceWithRelationsList(
+          _experiencesWithCreator,
+          _imageUrlList,
+          _objectiveList,
+          _rewardList,
+          _experiencesWithTags,
+          _tagsWithCreator,
+        );
+      },
+    );
   }
 
   Stream<List<MoorExperienceWithRelations>> _getExperienceWithRelationsStream(Expression<bool> _whereExpression) async* {
@@ -160,26 +291,7 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
         ),
       ],
     )..where(experienceTags.experienceId.isIn(_experienceIds));
-    final _tagsWithCreatorsListStream = select(moorUsers)
-        .join(
-          [
-            innerJoin(
-              moorTags,
-              moorTags.creatorId.equalsExp(moorUsers.id),
-            ),
-          ],
-        )
-        .watch()
-        .map(
-          (_rows) => _rows
-              .map(
-                (_row) => MoorTagWithMoorUser(
-                  tag: _row.readTable(moorTags),
-                  creator: _row.readTable(moorUsers),
-                ),
-              )
-              .toList(),
-        );
+    final _tagsWithCreatorsListStream = _createTagWithCreatorsStream();
     final _objectivesSelect = select(moorObjectives)..where((moorObjectives) => moorObjectives.experienceId.isIn(_experienceIds));
     final _rewardsSelect = select(moorRewards)..where((moorRewards) => moorRewards.experienceId.isIn(_experienceIds));
     final _imageUrlsSelect = select(experienceImageUrls)..where((experienceImageUrls) => experienceImageUrls.experienceId.isIn(_experienceIds));
@@ -198,45 +310,63 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
         List<ExperienceImageUrl> _imageUrlList,
         List<MoorTagWithMoorUser> _tagsWithCreator,
       ) {
-        return _experiencesWithCreator.map(
-          (_experienceWithCreatorTypedResult) {
-            final _moorExperience = _experienceWithCreatorTypedResult.readTable(moorExperiences);
-            final _moorUser = _experienceWithCreatorTypedResult.readTable(moorUsers);
-            final _experienceImageUrls = List<ExperienceImageUrl>.from(_imageUrlList);
-            _experienceImageUrls.removeWhere((experienceImageUrl) => experienceImageUrl.experienceId != _moorExperience.id);
-            final _imageUrls = _experienceImageUrls
-                .map(
-                  (experienceImageUrl) => experienceImageUrl.imageUrl,
-                )
-                .toList();
-            final _moorObjectives = List<MoorObjective>.from(_objectiveList);
-            _moorObjectives.removeWhere((objective) => objective.experienceId != _moorExperience.id);
-            final _moorRewards = List<MoorReward>.from(_rewardList);
-            _moorRewards.removeWhere((reward) => reward.experienceId != _moorExperience.id);
-            final _experiencesWithTagsList = List.from(_experiencesWithTags);
-            _experiencesWithTagsList.removeWhere(
-              (_row) => _row.readTable(experienceTags).experienceId != _moorExperience.id,
-            );
-            final _experienceMoorTagIdList = _experiencesWithTagsList
-                .map(
-                  (_row) => _row.readTable(moorTags).id,
-                )
-                .toList();
-            final _experienceMoorTagsWithCreator = List<MoorTagWithMoorUser>.from(_tagsWithCreator);
-            _experienceMoorTagsWithCreator.removeWhere(
-              (_moorTagWithUser) => !_experienceMoorTagIdList.contains(_moorTagWithUser.tag.id),
-            );
-            return MoorExperienceWithRelations(
-              experience: _moorExperience,
-              creator: _moorUser,
-              imageUrls: _imageUrls,
-              objectives: _moorObjectives,
-              rewards: _moorRewards,
-              tags: _experienceMoorTagsWithCreator,
-            );
-          },
-        ).toList();
+        return _createExperienceWithRelationsList(
+          _experiencesWithCreator,
+          _imageUrlList,
+          _objectiveList,
+          _rewardList,
+          _experiencesWithTags,
+          _tagsWithCreator,
+        );
       },
     );
+  }
+
+  List<MoorExperienceWithRelations> _createExperienceWithRelationsList(
+    List<TypedResult> _experiencesWithCreator,
+    List<ExperienceImageUrl> _imageUrlList,
+    List<MoorObjective> _objectiveList,
+    List<MoorReward> _rewardList,
+    List<TypedResult> _experiencesWithTags,
+    List<MoorTagWithMoorUser> _tagsWithCreator,
+  ) {
+    return _experiencesWithCreator.map(
+      (_experienceWithCreatorTypedResult) {
+        final _moorExperience = _experienceWithCreatorTypedResult.readTable(moorExperiences);
+        final _moorUser = _experienceWithCreatorTypedResult.readTable(moorUsers);
+        final _experienceImageUrls = List<ExperienceImageUrl>.from(_imageUrlList);
+        _experienceImageUrls.removeWhere((experienceImageUrl) => experienceImageUrl.experienceId != _moorExperience.id);
+        final _imageUrls = _experienceImageUrls
+            .map(
+              (experienceImageUrl) => experienceImageUrl.imageUrl,
+            )
+            .toList();
+        final _moorObjectives = List<MoorObjective>.from(_objectiveList);
+        _moorObjectives.removeWhere((objective) => objective.experienceId != _moorExperience.id);
+        final _moorRewards = List<MoorReward>.from(_rewardList);
+        _moorRewards.removeWhere((reward) => reward.experienceId != _moorExperience.id);
+        final _experiencesWithTagsList = List.from(_experiencesWithTags);
+        _experiencesWithTagsList.removeWhere(
+          (_row) => _row.readTable(experienceTags).experienceId != _moorExperience.id,
+        );
+        final _experienceMoorTagIdList = _experiencesWithTagsList
+            .map(
+              (_row) => _row.readTable(moorTags).id,
+            )
+            .toList();
+        final _experienceMoorTagsWithCreator = List<MoorTagWithMoorUser>.from(_tagsWithCreator);
+        _experienceMoorTagsWithCreator.removeWhere(
+          (_moorTagWithUser) => !_experienceMoorTagIdList.contains(_moorTagWithUser.tag.id),
+        );
+        return MoorExperienceWithRelations(
+          experience: _moorExperience,
+          creator: _moorUser,
+          imageUrls: _imageUrls,
+          objectives: _moorObjectives,
+          rewards: _moorRewards,
+          tags: _experienceMoorTagsWithCreator,
+        );
+      },
+    ).toList();
   }
 }

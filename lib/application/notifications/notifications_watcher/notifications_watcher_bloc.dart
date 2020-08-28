@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
@@ -19,22 +20,35 @@ part 'notifications_watcher_state.dart';
 @injectable
 class NotificationsWatcherBloc extends Bloc<NotificationsWatcherEvent, NotificationsWatcherState> {
   NotificationsWatcherBloc() : super(const NotificationsWatcherState.initial());
+  StreamSubscription<Either<Failure, KtList<Notification>>> _notificationsStreamSubscription;
 
   @override
   Stream<NotificationsWatcherState> mapEventToState(NotificationsWatcherEvent event) async* {
     yield* event.map(
-      watchNotificationsStarted: onWatchNotificationsStarted,
+      watchNotificationsStarted: _onWatchNotificationsStarted,
+      resultsReceived: _onResultsReceived,
     );
   }
 
-  Stream<NotificationsWatcherState> onWatchNotificationsStarted(_WatchNotificationsStarted event) async* {
-    yield const NotificationsWatcherState.loadInProgress();
-    final _loadNotifications = getIt<WatchNotifications>();
-    yield* _loadNotifications(getIt<NoParams>()).map(
-      (failureOrNotifications) => failureOrNotifications.fold(
-        (failure) => NotificationsWatcherState.loadFailure(failure),
-        (notifications) => NotificationsWatcherState.loadSuccess(notifications),
-      ),
+  Stream<NotificationsWatcherState> _onResultsReceived(_ResultsReceived event) async* {
+    yield event.failureOrNotifications.fold(
+      (failure) => NotificationsWatcherState.loadFailure(failure),
+      (notifications) => NotificationsWatcherState.loadSuccess(notifications),
     );
+  }
+
+  Stream<NotificationsWatcherState> _onWatchNotificationsStarted(_) async* {
+    yield const NotificationsWatcherState.loadInProgress();
+    await _notificationsStreamSubscription?.cancel();
+    final _loadNotifications = getIt<WatchNotifications>();
+    _notificationsStreamSubscription = _loadNotifications(getIt<NoParams>()).listen(
+      (_failureOrNotifications) => add(NotificationsWatcherEvent.resultsReceived(_failureOrNotifications)),
+    );
+  }
+
+  @override
+  Future<void> close() async {
+    await _notificationsStreamSubscription?.cancel();
+    return super.close();
   }
 }

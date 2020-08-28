@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
@@ -18,24 +19,36 @@ part 'blocked_watcher_state.dart';
 @injectable
 class BlockedWatcherBloc extends Bloc<BlockedWatcherEvent, BlockedWatcherState> {
   BlockedWatcherBloc() : super(const BlockedWatcherState.initial());
+  StreamSubscription<Either<Failure, KtList<User>>> _experienceCommentsStreamSubscription;
 
   @override
   Stream<BlockedWatcherState> mapEventToState(BlockedWatcherEvent event) async* {
     yield* event.map(
-      watchBlockedUsersStarted: onWatchBlockedUsersStarted,
+      watchBlockedUsersStarted: _onWatchBlockedUsersStarted,
+      resultsReceived: _onResultsReceived,
     );
   }
 
-  Stream<BlockedWatcherState> onWatchBlockedUsersStarted(_WatchBlockedUsersStarted event) async* {
+  Stream<BlockedWatcherState> _onResultsReceived(_ResultsReceived event) async* {
+    event.failureOrUsers.fold(
+      (failure) => BlockedWatcherState.loadFailure(failure),
+      (blockedUsers) => BlockedWatcherState.loadSuccess(blockedUsers),
+    );
+  }
+
+  Stream<BlockedWatcherState> _onWatchBlockedUsersStarted(_WatchBlockedUsersStarted event) async* {
     yield const BlockedWatcherState.loadInProgress();
     final _loadBlockedUsers = getIt<WatchBlockedUsers>();
-    yield* _loadBlockedUsers(
+    _experienceCommentsStreamSubscription = _loadBlockedUsers(
       Params(id: event.user.id),
-    ).map(
-      (failureOrBlockedUsers) => failureOrBlockedUsers.fold(
-        (failure) => BlockedWatcherState.loadFailure(failure),
-        (blockedUsers) => BlockedWatcherState.loadSuccess(blockedUsers),
-      ),
+    ).listen(
+      (_failureOrUsers) => add(BlockedWatcherEvent.resultsReceived(_failureOrUsers)),
     );
+  }
+
+  @override
+  Future<void> close() async {
+    await _experienceCommentsStreamSubscription?.cancel();
+    return super.close();
   }
 }

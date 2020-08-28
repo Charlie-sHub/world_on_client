@@ -29,7 +29,7 @@ class SearchBody extends StatelessWidget {
         BlocProvider(create: (context) => getIt<SearchExperiencesByTagsBloc>()),
       ],
       child: BlocConsumer<SearchByNameFormBloc, SearchByNameFormState>(
-        listenWhen: (_, current) => current.isSubmitting,
+        listenWhen: (previous, current) => previous.isSubmitting != current.isSubmitting,
         listener: _searchFormListener,
         buildWhen: (previous, current) => previous.showErrorMessages != current.showErrorMessages,
         builder: (context, state) => Padding(
@@ -59,20 +59,22 @@ class SearchBody extends StatelessWidget {
   }
 
   void _searchFormListener(BuildContext context, SearchByNameFormState state) {
-    context.bloc<SearchUsersByNameWatcherBloc>().add(
-          SearchUsersByNameWatcherEvent.watchUsersFoundByUsernameStarted(
-            state.searchTerm,
-          ),
-        );
-    context.bloc<SearchExperiencesByNameWatcherBloc>().add(
-          SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(
-            state.searchTerm,
-          ),
-        );
-    context.bloc<SearchTagsByNameWatcherBloc>().add(
-          SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(
-            state.searchTerm,
-          ),
-        );
+    if (state.searchTerm.value.isRight()) {
+      context.bloc<SearchUsersByNameWatcherBloc>().add(
+        SearchUsersByNameWatcherEvent.watchUsersFoundByUsernameStarted(
+          state.searchTerm,
+        ),
+      );
+      context.bloc<SearchExperiencesByNameWatcherBloc>().add(
+        SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(
+          state.searchTerm,
+        ),
+      );
+      context.bloc<SearchTagsByNameWatcherBloc>().add(
+        SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(
+          state.searchTerm,
+        ),
+      );
+    }
   }
 }

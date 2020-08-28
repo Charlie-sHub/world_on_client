@@ -23,17 +23,20 @@ class TagCardCheckBloc extends Bloc<TagCardCheckEvent, TagCardCheckState> {
   @override
   Stream<TagCardCheckState> mapEventToState(TagCardCheckEvent event) async* {
     yield* event.map(
-      initialized: onInitialized,
+      initialized: _onInitialized,
     );
   }
 
-  Stream<TagCardCheckState> onInitialized(_Initialized event) async* {
+  Stream<TagCardCheckState> _onInitialized(_Initialized event) async* {
     final _getLoggedInUser = getIt<GetLoggedInUser>();
     final _userOption = await _getLoggedInUser(getIt<NoParams>());
     final _user = _userOption.fold(
       () => throw UnAuthenticatedError(),
       id,
     );
+    // TODO: Find a way to check if the user likes the tag
+    // Either by checking from the database like with followsUser
+    // or by getting the relations when getting the logged in user
     if (_user.interests.contains(event.tag)) {
       yield const TagCardCheckState.inInterests();
     } else {

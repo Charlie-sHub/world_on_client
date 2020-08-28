@@ -31,29 +31,29 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
   @override
   Stream<RegistrationFormState> mapEventToState(RegistrationFormEvent event) async* {
     yield* event.map(
-      initialized: onInitialized,
-      imageChanged: onImageChanged,
-      nameChanged: onNameChanged,
-      usernameChanged: onUsernameChanged,
-      passwordChanged: onPasswordChanged,
-      passwordConfirmationChanged: onPasswordConfirmationChanged,
-      emailAddressChanged: onEmailAddressChanged,
-      birthdayChanged: onBirthdayChanged,
-      descriptionChanged: onDescriptionChanged,
-      interestsChanged: onInterestsChanged,
-      tappedEULA: onTappedEULA,
-      submitted: onSubmitted,
+      initialized: _onInitialized,
+      imageChanged: _onImageChanged,
+      nameChanged: _onNameChanged,
+      usernameChanged: _onUsernameChanged,
+      passwordChanged: _onPasswordChanged,
+      passwordConfirmationChanged: _onPasswordConfirmationChanged,
+      emailAddressChanged: _onEmailAddressChanged,
+      birthdayChanged: _onBirthdayChanged,
+      descriptionChanged: _onDescriptionChanged,
+      interestsChanged: _onInterestsChanged,
+      tappedEULA: _onTappedEULA,
+      submitted: _onSubmitted,
     );
   }
 
-  Stream<RegistrationFormState> onTappedEULA(_TappedEULA event) async* {
+  Stream<RegistrationFormState> _onTappedEULA(_) async* {
     yield state.copyWith(
       acceptedEULA: !state.acceptedEULA,
       failureOrSuccessOption: none(),
     );
   }
 
-  Stream<RegistrationFormState> onSubmitted(_Submitted event) async* {
+  Stream<RegistrationFormState> _onSubmitted(_) async* {
     Either<Failure, Unit> _failureOrUnit;
     yield state.copyWith(
       isSubmitting: true,
@@ -77,7 +77,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     );
   }
 
-  Stream<RegistrationFormState> onInterestsChanged(_InterestsChanged event) async* {
+  Stream<RegistrationFormState> _onInterestsChanged(_InterestsChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         interests: event.interests,
@@ -86,7 +86,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     );
   }
 
-  Stream<RegistrationFormState> onDescriptionChanged(_DescriptionChanged event) async* {
+  Stream<RegistrationFormState> _onDescriptionChanged(_DescriptionChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         description: EntityDescription(event.description),
@@ -95,7 +95,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     );
   }
 
-  Stream<RegistrationFormState> onBirthdayChanged(_BirthdayChanged event) async* {
+  Stream<RegistrationFormState> _onBirthdayChanged(_BirthdayChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         birthday: PastDate(event.birthday),
@@ -104,7 +104,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     );
   }
 
-  Stream<RegistrationFormState> onEmailAddressChanged(_EmailAddressChanged event) async* {
+  Stream<RegistrationFormState> _onEmailAddressChanged(_EmailAddressChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         email: EmailAddress(event.emailAddress),
@@ -113,7 +113,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     );
   }
 
-  Stream<RegistrationFormState> onPasswordConfirmationChanged(_PasswordConfirmationChanged event) async* {
+  Stream<RegistrationFormState> _onPasswordConfirmationChanged(_PasswordConfirmationChanged event) async* {
     yield state.copyWith(
       passwordConfirmator: PasswordConfirmator(
         password: state.user.password.value.fold(
@@ -127,7 +127,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     );
   }
 
-  Stream<RegistrationFormState> onPasswordChanged(_PasswordChanged event) async* {
+  Stream<RegistrationFormState> _onPasswordChanged(_PasswordChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         password: Password(event.password),
@@ -140,7 +140,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     );
   }
 
-  Stream<RegistrationFormState> onUsernameChanged(_UsernameChanged event) async* {
+  Stream<RegistrationFormState> _onUsernameChanged(_UsernameChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         username: Name(event.username),
@@ -149,8 +149,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     );
   }
 
-  Stream<RegistrationFormState> onNameChanged(_NameChanged event) async* {
-    // TODO: Why does the name change erases the password confirmation?
+  Stream<RegistrationFormState> _onNameChanged(_NameChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         name: Name(event.name),
@@ -159,7 +158,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     );
   }
 
-  Stream<RegistrationFormState> onImageChanged(_ImageChanged event) async* {
+  Stream<RegistrationFormState> _onImageChanged(_ImageChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         imageFileOption: some(event.imageFile),
@@ -168,7 +167,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     );
   }
 
-  Stream<RegistrationFormState> onInitialized(_Initialized event) async* {
+  Stream<RegistrationFormState> _onInitialized(_) async* {
     final _getLoggedInUser = getIt<GetLoggedInUser>();
     final _userOption = await _getLoggedInUser(getIt<NoParams>());
     yield _userOption.fold(

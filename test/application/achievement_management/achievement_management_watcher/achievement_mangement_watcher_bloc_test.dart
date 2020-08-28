@@ -22,7 +22,7 @@ void main() {
       getAllAchievements = getIt<WatchAllAchievements>();
     },
   );
-  final achievementSet = KtSet.of(Achievement.empty());
+  final achievementList = KtList.of(Achievement.empty());
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
@@ -32,7 +32,7 @@ void main() {
   blocTest(
     TestDescription.shouldEmitSuccess,
     build: () {
-      when(getAllAchievements.call(any)).thenAnswer((_) => createStream(right(achievementSet)));
+      when(getAllAchievements.call(any)).thenAnswer((_) => createStream(right(achievementList)));
       return getIt<AchievementManagementWatcherBloc>();
     },
     act: (bloc) async => bloc.add(const AchievementManagementWatcherEvent.watchAllAchievementsStarted()),
@@ -42,7 +42,7 @@ void main() {
     },
     expect: [
       const AchievementManagementWatcherState.loadInProgress(),
-      AchievementManagementWatcherState.loadSuccess(achievementSet),
+      AchievementManagementWatcherState.loadSuccess(achievementList),
     ],
   );
   blocTest(

@@ -7,13 +7,13 @@ import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/experience_log/repository/experience_log_repository_interface.dart';
 
 @LazySingleton(env: [Environment.dev, Environment.prod])
-class WatchUserLog implements StreamUseCase<KtSet<Experience>, NoParams> {
+class WatchUserLog implements StreamUseCase<KtList<Experience>, NoParams> {
   final ExperienceLogRepositoryInterface _repository;
 
   WatchUserLog(this._repository);
 
   @override
-  Stream<Either<Failure, KtSet<Experience>>> call(NoParams params) async* {
+  Stream<Either<Failure, KtList<Experience>>> call(NoParams params) async* {
     yield* _repository.watchUserLog();
   }
 }

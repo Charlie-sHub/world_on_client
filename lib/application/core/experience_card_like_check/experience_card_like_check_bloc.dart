@@ -23,11 +23,11 @@ class ExperienceCardLikeCheckBloc extends Bloc<ExperienceCardLikeCheckEvent, Exp
   @override
   Stream<ExperienceCardLikeCheckState> mapEventToState(ExperienceCardLikeCheckEvent event) async* {
     yield* event.map(
-      initialized: onInitialized,
+      initialized: _onInitialized,
     );
   }
 
-  Stream<ExperienceCardLikeCheckState> onInitialized(_Initialized event) async* {
+  Stream<ExperienceCardLikeCheckState> _onInitialized(_Initialized event) async* {
     final _getLoggedInUser = getIt<GetLoggedInUser>();
     final _userOption = await _getLoggedInUser(getIt<NoParams>());
     final _user = _userOption.fold(

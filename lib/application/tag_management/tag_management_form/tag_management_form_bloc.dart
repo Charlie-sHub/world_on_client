@@ -27,13 +27,13 @@ class TagManagementFormBloc extends Bloc<TagManagementFormEvent, TagManagementFo
   @override
   Stream<TagManagementFormState> mapEventToState(TagManagementFormEvent event) async* {
     yield* event.map(
-      initialized: onInitialized,
-      nameChanged: onNameChanged,
-      submitted: onSubmitted,
+      initialized: _onInitialized,
+      nameChanged: _onNameChanged,
+      submitted: _onSubmitted,
     );
   }
 
-  Stream<TagManagementFormState> onSubmitted(_Submitted event) async* {
+  Stream<TagManagementFormState> _onSubmitted(_) async* {
     Either<Failure, Unit> _failureOrUnit;
     yield state.copyWith(
       isSubmitting: true,
@@ -63,7 +63,7 @@ class TagManagementFormBloc extends Bloc<TagManagementFormEvent, TagManagementFo
     );
   }
 
-  Stream<TagManagementFormState> onNameChanged(_NameChanged event) async* {
+  Stream<TagManagementFormState> _onNameChanged(_NameChanged event) async* {
     yield state.copyWith(
       tag: state.tag.copyWith(
         name: Name(event.name),
@@ -72,7 +72,7 @@ class TagManagementFormBloc extends Bloc<TagManagementFormEvent, TagManagementFo
     );
   }
 
-  Stream<TagManagementFormState> onInitialized(_Initialized event) async* {
+  Stream<TagManagementFormState> _onInitialized(_Initialized event) async* {
     yield await event.tagOption.fold(
       () async {
         final _getLoggedInUser = getIt<GetLoggedInUser>();

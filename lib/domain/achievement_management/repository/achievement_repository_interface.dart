@@ -27,5 +27,5 @@ abstract class AchievementRepositoryInterface {
   });
 
   /// Gets all the [Achievement]s in the database.
-  Stream<Either<Failure, KtSet<Achievement>>> watchAllAchievements();
+  Stream<Either<Failure, KtList<Achievement>>> watchAllAchievements();
 }

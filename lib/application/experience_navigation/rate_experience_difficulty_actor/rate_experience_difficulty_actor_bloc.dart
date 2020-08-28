@@ -28,11 +28,11 @@ class RateExperienceDifficultyActorBloc extends Bloc<RateExperienceDifficultyAct
           failureOrSuccessOption: none(),
         );
       },
-      difficultyRated: onDifficultyRated,
+      difficultyRated: _onDifficultyRated,
     );
   }
 
-  Stream<RateExperienceDifficultyActorState> onDifficultyRated(_DifficultyRated event) async* {
+  Stream<RateExperienceDifficultyActorState> _onDifficultyRated(_DifficultyRated event) async* {
     yield state.copyWith(
       isSubmitting: true,
       failureOrSuccessOption: none(),

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
@@ -18,22 +19,35 @@ part 'tag_management_watcher_state.dart';
 @injectable
 class TagManagementWatcherBloc extends Bloc<TagManagementWatcherEvent, TagManagementWatcherState> {
   TagManagementWatcherBloc() : super(const TagManagementWatcherState.initial());
+  StreamSubscription<Either<Failure, KtList<Tag>>> _tagsStreamSubscription;
 
   @override
   Stream<TagManagementWatcherState> mapEventToState(TagManagementWatcherEvent event) async* {
     yield* event.map(
-      watchAllTagsStarted: onWatchAllTagsStarted,
+      watchAllTagsStarted: _onWatchAllTagsStarted,
+      resultsReceived: _onResultsReceived,
     );
   }
 
-  Stream<TagManagementWatcherState> onWatchAllTagsStarted(_WatchAllTagsStarted event) async* {
-    yield const TagManagementWatcherState.loadInProgress();
-    final _getAllTags = getIt<WatchAllTags>();
-    yield* _getAllTags(getIt<NoParams>()).map(
-      (failureOrTags) => failureOrTags.fold(
-        (failure) => TagManagementWatcherState.loadFailure(failure),
-        (tags) => TagManagementWatcherState.loadSuccess(tags),
-      ),
+  Stream<TagManagementWatcherState> _onResultsReceived(_ResultsReceived event) async* {
+    yield event.failureOrTags.fold(
+      (failure) => TagManagementWatcherState.loadFailure(failure),
+      (tags) => TagManagementWatcherState.loadSuccess(tags),
     );
+  }
+
+  Stream<TagManagementWatcherState> _onWatchAllTagsStarted(_) async* {
+    yield const TagManagementWatcherState.loadInProgress();
+    await _tagsStreamSubscription?.cancel();
+    final _getAllTags = getIt<WatchAllTags>();
+    _tagsStreamSubscription = _getAllTags(getIt<NoParams>()).listen(
+      (_failureOrTags) => add(TagManagementWatcherEvent.resultsReceived(_failureOrTags)),
+    );
+  }
+
+  @override
+  Future<void> close() async {
+    await _tagsStreamSubscription?.cancel();
+    return super.close();
   }
 }

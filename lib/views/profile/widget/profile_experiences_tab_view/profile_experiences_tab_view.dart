@@ -27,12 +27,12 @@ class ProfileExperiencesTabView extends StatelessWidget {
         ),
       child: BlocConsumer<ProfileExperiencesWatcherBloc, ProfileExperiencesWatcherState>(
         listener: (context, state) {},
-        builder: (context, state) => state.map(
-          initial: (_) => Container(),
-          loadInProgress: (_) => WorldOnProgressIndicator(),
-          loadSuccess: (state) => Scaffold(
-            floatingActionButton: ProfileExperiencesUnicornDialer(user: user),
-            body: ListView.builder(
+        builder: (context, state) => Scaffold(
+          floatingActionButton: ProfileExperiencesUnicornDialer(user: user),
+          body: state.map(
+            initial: (_) => Container(),
+            loadInProgress: (_) => WorldOnProgressIndicator(),
+            loadSuccess: (state) => ListView.builder(
               padding: const EdgeInsets.all(10),
               itemCount: state.experiences.size,
               itemBuilder: (context, index) {
@@ -50,15 +50,15 @@ class ProfileExperiencesTabView extends StatelessWidget {
                 }
               },
             ),
-          ),
-          loadFailure: (state) => InkWell(
-            onTap: () async => context.bloc<ProfileExperiencesWatcherBloc>().add(
-                  // TODO: Figure out how to add the right event
-                  // the one that caused the failure, not just watchExperiencesCreatedStarted
-                  // same with the other watchers
-                  ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(user),
-                ),
-            child: ErrorDisplay(failure: state.failure),
+            loadFailure: (state) => InkWell(
+              onTap: () async => context.bloc<ProfileExperiencesWatcherBloc>().add(
+                    // TODO: Figure out how to add the right event
+                    // the one that caused the failure, not just watchExperiencesCreatedStarted
+                    // same with the other watchers
+                    ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(user),
+                  ),
+              child: ErrorDisplay(failure: state.failure),
+            ),
           ),
         ),
       ),

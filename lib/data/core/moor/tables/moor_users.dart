@@ -69,11 +69,10 @@ class UserAchievements extends Table {
   IntColumn get achievementId => integer().customConstraint("REFERENCES moor_achievements(id)")();
 
   @override
-  Set<Column> get primaryKey =>
-    {
-      userId,
-      achievementId,
-    };
+  Set<Column> get primaryKey => {
+        userId,
+        achievementId,
+      };
 }
 
 class UserInterests extends Table {

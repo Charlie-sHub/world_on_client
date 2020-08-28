@@ -26,13 +26,13 @@ class CommentFormBloc extends Bloc<CommentFormEvent, CommentFormState> {
   @override
   Stream<CommentFormState> mapEventToState(CommentFormEvent event) async* {
     yield* event.map(
-      initialized: onInitialized,
-      contentChanged: onContentChanged,
-      submitted: onSubmitted,
+      initialized: _onInitialized,
+      contentChanged: _onContentChanged,
+      submitted: _onSubmitted,
     );
   }
 
-  Stream<CommentFormState> onSubmitted(_Submitted event) async* {
+  Stream<CommentFormState> _onSubmitted(_) async* {
     Either<Failure, Unit> _failureOrUnit;
     yield state.copyWith(
       isSubmitting: true,
@@ -63,7 +63,7 @@ class CommentFormBloc extends Bloc<CommentFormEvent, CommentFormState> {
     );
   }
 
-  Stream<CommentFormState> onContentChanged(_ContentChanged event) async* {
+  Stream<CommentFormState> _onContentChanged(_ContentChanged event) async* {
     yield state.copyWith(
       comment: state.comment.copyWith(
         content: CommentContent(event.content),
@@ -72,7 +72,7 @@ class CommentFormBloc extends Bloc<CommentFormEvent, CommentFormState> {
     );
   }
 
-  Stream<CommentFormState> onInitialized(_Initialized event) async* {
+  Stream<CommentFormState> _onInitialized(_Initialized event) async* {
     yield await event.commentOption.fold(
       () async {
         final _getLoggedInUser = getIt<GetLoggedInUser>();

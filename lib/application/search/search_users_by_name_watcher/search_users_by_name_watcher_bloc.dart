@@ -25,20 +25,20 @@ class SearchUsersByNameWatcherBloc extends Bloc<SearchUsersByNameWatcherEvent, S
   @override
   Stream<SearchUsersByNameWatcherState> mapEventToState(SearchUsersByNameWatcherEvent event) async* {
     yield* event.map(
-      watchUsersFoundByNameStarted: onWatchUsersFoundByNameStarted,
-      watchUsersFoundByUsernameStarted: onWatchUsersFoundByUsernameStarted,
-      searchResultsReceived: onSearchResultsReceived,
+      watchUsersFoundByNameStarted: _onWatchUsersFoundByNameStarted,
+      watchUsersFoundByUsernameStarted: _onWatchUsersFoundByUsernameStarted,
+      searchResultsReceived: _onSearchResultsReceived,
     );
   }
 
-  Stream<SearchUsersByNameWatcherState> onSearchResultsReceived(_SearchResultsReceived event) async* {
+  Stream<SearchUsersByNameWatcherState> _onSearchResultsReceived(_SearchResultsReceived event) async* {
     yield event.failureOrUsers.fold(
       (failure) => SearchUsersByNameWatcherState.searchFailure(failure),
       (usersFound) => SearchUsersByNameWatcherState.searchSuccess(usersFound),
     );
   }
 
-  Stream<SearchUsersByNameWatcherState> onWatchUsersFoundByUsernameStarted(_WatchUsersFoundByUsernameStarted event) async* {
+  Stream<SearchUsersByNameWatcherState> _onWatchUsersFoundByUsernameStarted(_WatchUsersFoundByUsernameStarted event) async* {
     yield const SearchUsersByNameWatcherState.searchInProgress();
     await _usersSearchStreamSubscription?.cancel();
     final _searchUsersByUsername = getIt<search_users_by_username.WatchSearchUsersByUsername>();
@@ -49,7 +49,7 @@ class SearchUsersByNameWatcherBloc extends Bloc<SearchUsersByNameWatcherEvent, S
     );
   }
 
-  Stream<SearchUsersByNameWatcherState> onWatchUsersFoundByNameStarted(_WatchUsersFoundByNameStarted event) async* {
+  Stream<SearchUsersByNameWatcherState> _onWatchUsersFoundByNameStarted(_WatchUsersFoundByNameStarted event) async* {
     yield const SearchUsersByNameWatcherState.searchInProgress();
     await _usersSearchStreamSubscription?.cancel();
     final _searchUsersByName = getIt<search_users_by_name.WatchSearchUsersByName>();

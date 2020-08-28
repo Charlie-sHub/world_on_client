@@ -46,20 +46,22 @@ class DevelopmentAchievementRepository implements AchievementRepositoryInterface
   }
 
   @override
-  Stream<Either<Failure, KtSet<Achievement>>> watchAllAchievements() {
-    Either<Failure, KtSet<Achievement>> _either;
+  Stream<Either<Failure, KtList<Achievement>>> watchAllAchievements() {
+    Either<Failure, KtList<Achievement>> _either;
     if (_random.nextBool()) {
-      _either = right(KtSet.of(
-        getValidAchievement(),
-        getValidAchievement().copyWith(
-          id: 2,
-          name: Name("Nullam quam"),
+      _either = right(
+        KtList.of(
+          getValidAchievement(),
+          getValidAchievement().copyWith(
+            id: 2,
+            name: Name("Nullam quam"),
+          ),
+          getValidAchievement().copyWith(
+            id: 3,
+            name: Name("Curabitur"),
+          ),
         ),
-        getValidAchievement().copyWith(
-          id: 3,
-          name: Name("Curabitur"),
-        ),
-      ));
+      );
     } else {
       _either = left(getServerErrorFailure());
     }

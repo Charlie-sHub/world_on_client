@@ -220,7 +220,7 @@ void main() {
       );
       test(
         "Should delete all tags of all experiences",
-          () async {
+        () async {
           // Arrange
           final _userId = await _insertCreator(_database);
           final _experience = domainExperienceToMoorExperience(getValidExperience()).copyWith(creatorId: Value(_userId));
@@ -279,7 +279,7 @@ void main() {
       () {
       test(
         "Should emit a stream of lists of tags by their name",
-          () async {
+        () async {
           // Arrange
           const _searchTerm = "f";
           final _searchResults = <Tag>[];

@@ -20,11 +20,11 @@ class ExperienceManagementActorBloc extends Bloc<ExperienceManagementActorEvent,
   @override
   Stream<ExperienceManagementActorState> mapEventToState(ExperienceManagementActorEvent event) async* {
     yield* event.map(
-      deleted: onDeleted,
+      deleted: _onDeleted,
     );
   }
 
-  Stream<ExperienceManagementActorState> onDeleted(_Deleted event) async* {
+  Stream<ExperienceManagementActorState> _onDeleted(_Deleted event) async* {
     yield const ExperienceManagementActorState.actionInProgress();
     final _deleteExperience = getIt<DeleteExperience>();
     final _failureOrUnit = await _deleteExperience(

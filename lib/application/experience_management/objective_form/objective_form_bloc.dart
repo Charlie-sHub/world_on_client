@@ -24,14 +24,14 @@ class ObjectiveFormBloc extends Bloc<ObjectiveFormEvent, ObjectiveFormState> {
   @override
   Stream<ObjectiveFormState> mapEventToState(ObjectiveFormEvent event) async* {
     yield* event.map(
-      descriptionChanged: onDescriptionChanged,
-      coordinatesChanged: onCoordinatesChanged,
-      imageChanged: onImageChanged,
-      submitted: onSubmitted,
+      descriptionChanged: _onDescriptionChanged,
+      coordinatesChanged: _onCoordinatesChanged,
+      imageChanged: _onImageChanged,
+      submitted: _onSubmitted,
     );
   }
 
-  Stream<ObjectiveFormState> onSubmitted(_Submitted event) async* {
+  Stream<ObjectiveFormState> _onSubmitted(_) async* {
     if (state.objective.isValid && state.objective.imageFile.isSome()) {
       yield state.copyWith(
         isSubmitting: true,
@@ -44,7 +44,7 @@ class ObjectiveFormBloc extends Bloc<ObjectiveFormEvent, ObjectiveFormState> {
     }
   }
 
-  Stream<ObjectiveFormState> onImageChanged(_ImageChanged event) async* {
+  Stream<ObjectiveFormState> _onImageChanged(_ImageChanged event) async* {
     yield state.copyWith(
       objective: state.objective.copyWith(
         imageFile: some(event.imageFile),
@@ -52,7 +52,7 @@ class ObjectiveFormBloc extends Bloc<ObjectiveFormEvent, ObjectiveFormState> {
     );
   }
 
-  Stream<ObjectiveFormState> onCoordinatesChanged(_CoordinatesChanged event) async* {
+  Stream<ObjectiveFormState> _onCoordinatesChanged(_CoordinatesChanged event) async* {
     yield state.copyWith(
       objective: state.objective.copyWith(
         coordinates: Coordinates(
@@ -63,7 +63,7 @@ class ObjectiveFormBloc extends Bloc<ObjectiveFormEvent, ObjectiveFormState> {
     );
   }
 
-  Stream<ObjectiveFormState> onDescriptionChanged(_DescriptionChanged event) async* {
+  Stream<ObjectiveFormState> _onDescriptionChanged(_DescriptionChanged event) async* {
     yield state.copyWith(
       objective: state.objective.copyWith(
         description: EntityDescription(event.description),

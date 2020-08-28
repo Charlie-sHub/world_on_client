@@ -24,16 +24,16 @@ void main() {
       useCase = WatchAllAchievements(mockAchievementRepository);
     },
   );
-  final achievementSet = KtSet.of(Achievement.empty());
+  final achievementList = KtList.of(Achievement.empty());
   test(
     "Should return the achievementListStream",
     () async {
       // Arrange
-      when(mockAchievementRepository.watchAllAchievements()).thenAnswer((_) => createStream(right(achievementSet)));
+      when(mockAchievementRepository.watchAllAchievements()).thenAnswer((_) => createStream(right(achievementList)));
       // Act
       final result = await _act(useCase);
       // Assert
-      expect(result, right(achievementSet));
+      expect(result, right(achievementList));
       _verifyInteractions(mockAchievementRepository);
     },
   );
@@ -83,9 +83,9 @@ void main() {
   );
 }
 
-Future<Either<Failure, KtSet<Achievement>>> _act(WatchAllAchievements useCase) async {
+Future<Either<Failure, KtList<Achievement>>> _act(WatchAllAchievements useCase) async {
   final resultStream = useCase(getIt<NoParams>());
-  Either<Failure, KtSet<Achievement>> result;
+  Either<Failure, KtList<Achievement>> result;
   await for (final either in resultStream) {
     result = either;
   }

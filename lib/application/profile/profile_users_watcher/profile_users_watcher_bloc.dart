@@ -26,13 +26,13 @@ class ProfileUsersWatcherBloc extends Bloc<ProfileUsersWatcherEvent, ProfileUser
   @override
   Stream<ProfileUsersWatcherState> mapEventToState(ProfileUsersWatcherEvent event) async* {
     yield* event.map(
-      watchFollowingUsersStarted: onWatchFollowingUsersStarted,
-      watchFollowedUsersStarted: onWatchFollowedUsersStarted,
-      usersReceived: onUsersReceived,
+      watchFollowingUsersStarted: _onWatchFollowingUsersStarted,
+      watchFollowedUsersStarted: _onWatchFollowedUsersStarted,
+      usersReceived: _onUsersReceived,
     );
   }
 
-  Stream<ProfileUsersWatcherState> onWatchFollowingUsersStarted(_WatchFollowingUsersStarted event) async* {
+  Stream<ProfileUsersWatcherState> _onWatchFollowingUsersStarted(_WatchFollowingUsersStarted event) async* {
     yield const ProfileUsersWatcherState.loadInProgress();
     await _userStreamSubscription?.cancel();
     final _loadFollowingUsers = getIt<load_following_users.WatchFollowingUsers>();
@@ -43,7 +43,7 @@ class ProfileUsersWatcherBloc extends Bloc<ProfileUsersWatcherEvent, ProfileUser
     );
   }
 
-  Stream<ProfileUsersWatcherState> onWatchFollowedUsersStarted(_WatchFollowedUsersStarted event) async* {
+  Stream<ProfileUsersWatcherState> _onWatchFollowedUsersStarted(_WatchFollowedUsersStarted event) async* {
     yield const ProfileUsersWatcherState.loadInProgress();
     await _userStreamSubscription?.cancel();
     final _loadFollowedUsers = getIt<load_followed_users.WatchFollowedUsers>();
@@ -54,7 +54,7 @@ class ProfileUsersWatcherBloc extends Bloc<ProfileUsersWatcherEvent, ProfileUser
     );
   }
 
-  Stream<ProfileUsersWatcherState> onUsersReceived(_UsersReceived event) async* {
+  Stream<ProfileUsersWatcherState> _onUsersReceived(_UsersReceived event) async* {
     yield event.failureOrUsers.fold(
       (failure) => ProfileUsersWatcherState.loadFailure(failure),
       (users) => ProfileUsersWatcherState.loadSuccess(users),

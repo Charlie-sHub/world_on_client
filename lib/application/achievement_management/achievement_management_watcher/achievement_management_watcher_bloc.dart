@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
@@ -19,23 +20,35 @@ part 'achievement_management_watcher_state.dart';
 class AchievementManagementWatcherBloc extends Bloc<AchievementManagementWatcherEvent, AchievementManagementWatcherState> {
   AchievementManagementWatcherBloc() : super(const AchievementManagementWatcherState.initial());
 
+  StreamSubscription<Either<Failure, KtList<Achievement>>> _achievementsStreamSubscription;
+
   @override
   Stream<AchievementManagementWatcherState> mapEventToState(AchievementManagementWatcherEvent event) async* {
     yield* event.map(
-      watchAllAchievementsStarted: onWatchAllAchievementsStarted,
+      watchAllAchievementsStarted: _onWatchAllAchievementsStarted,
+      resultsReceived: _onSearchResultsReceived,
     );
   }
 
-  // TODO: Close Streams
-  Stream<AchievementManagementWatcherState> onWatchAllAchievementsStarted(_WatchAllAchievementsStarted event) async* {
-    // TODO: Check https://bloclibrary.dev/#/flutterinfinitelisttutorial for this and other infinite list blocs
-    yield const AchievementManagementWatcherState.loadInProgress();
-    final _getAllAchievements = getIt<WatchAllAchievements>();
-    yield* _getAllAchievements(getIt<NoParams>()).map(
-      (failureOrAchievements) => failureOrAchievements.fold(
-        (failure) => AchievementManagementWatcherState.loadFailure(failure),
-        (achievements) => AchievementManagementWatcherState.loadSuccess(achievements),
-      ),
+  Stream<AchievementManagementWatcherState> _onSearchResultsReceived(_ResultsReceived event) async* {
+    yield event.failureOrAchievements.fold(
+      (failure) => AchievementManagementWatcherState.loadFailure(failure),
+      (achievements) => AchievementManagementWatcherState.loadSuccess(achievements),
     );
+  }
+
+  Stream<AchievementManagementWatcherState> _onWatchAllAchievementsStarted(_) async* {
+    yield const AchievementManagementWatcherState.loadInProgress();
+    await _achievementsStreamSubscription?.cancel();
+    final _getAllAchievements = getIt<WatchAllAchievements>();
+    _achievementsStreamSubscription = _getAllAchievements(getIt<NoParams>()).listen(
+      (_failureOrAchievements) => add(AchievementManagementWatcherEvent.resultsReceived(_failureOrAchievements)),
+    );
+  }
+
+  @override
+  Future<void> close() async {
+    await _achievementsStreamSubscription?.cancel();
+    return super.close();
   }
 }

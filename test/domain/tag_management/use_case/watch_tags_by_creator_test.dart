@@ -24,7 +24,7 @@ void main() {
     },
   );
   final params = Params(creatorId: 1);
-  final tagList = KtSet.of(Tag.empty());
+  final tagList = KtList.of(Tag.empty());
   test(
     "Should get a List of Tags by a given creator id",
     () async {
@@ -83,9 +83,9 @@ void main() {
   );
 }
 
-Future<Either<Failure, KtSet<Tag>>> _act(WatchTagsByCreator useCase, Params params) async {
+Future<Either<Failure, KtList<Tag>>> _act(WatchTagsByCreator useCase, Params params) async {
   final resultStream = useCase(params);
-  Either<Failure, KtSet<Tag>> result;
+  Either<Failure, KtList<Tag>> result;
   await for (final either in resultStream) {
     result = either;
   }

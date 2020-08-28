@@ -26,12 +26,12 @@ class ProfileUsersTabView extends StatelessWidget {
           ProfileUsersWatcherEvent.watchFollowedUsersStarted(user),
         ),
       child: BlocBuilder<ProfileUsersWatcherBloc, ProfileUsersWatcherState>(
-        builder: (context, state) => state.map(
-          initial: (_) => Container(),
-          loadInProgress: (_) => WorldOnProgressIndicator(),
-          loadSuccess: (state) => Scaffold(
-            floatingActionButton: ProfileUsersUnicornDialer(user: user),
-            body: ListView.builder(
+        builder: (context, state) => Scaffold(
+          floatingActionButton: ProfileUsersUnicornDialer(user: user),
+          body: state.map(
+            initial: (_) => Container(),
+            loadInProgress: (_) => WorldOnProgressIndicator(),
+            loadSuccess: (state) => ListView.builder(
               padding: const EdgeInsets.all(10),
               itemCount: state.users.size,
               itemBuilder: (context, index) {
@@ -49,12 +49,12 @@ class ProfileUsersTabView extends StatelessWidget {
                 }
               },
             ),
-          ),
-          loadFailure: (state) => InkWell(
-            onTap: () async => context.bloc<ProfileUsersWatcherBloc>().add(
-                  ProfileUsersWatcherEvent.watchFollowedUsersStarted(user),
-                ),
-            child: ErrorDisplay(failure: state.failure),
+            loadFailure: (state) => InkWell(
+              onTap: () async => context.bloc<ProfileUsersWatcherBloc>().add(
+                    ProfileUsersWatcherEvent.watchFollowedUsersStarted(user),
+                  ),
+              child: ErrorDisplay(failure: state.failure),
+            ),
           ),
         ),
       ),

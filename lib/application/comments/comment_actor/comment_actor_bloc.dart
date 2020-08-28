@@ -20,11 +20,11 @@ class CommentActorBloc extends Bloc<CommentActorEvent, CommentActorState> {
   @override
   Stream<CommentActorState> mapEventToState(CommentActorEvent event) async* {
     yield* event.map(
-      deleted: onDeleted,
+      deleted: _onDeleted,
     );
   }
 
-  Stream<CommentActorState> onDeleted(_Deleted event) async* {
+  Stream<CommentActorState> _onDeleted(_Deleted event) async* {
     yield const CommentActorState.actionInProgress();
     final _deleteComment = getIt<DeleteComment>();
     final _failureOrUnit = await _deleteComment(Params(comment: event.comment));

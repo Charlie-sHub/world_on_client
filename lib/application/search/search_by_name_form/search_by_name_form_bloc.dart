@@ -22,12 +22,12 @@ class SearchByNameFormBloc extends Bloc<SearchByNameFormEvent, SearchByNameFormS
   @override
   Stream<SearchByNameFormState> mapEventToState(SearchByNameFormEvent event) async* {
     yield* event.map(
-      searchTermChanged: onSearchTermChanged,
-      submitted: onSubmitted,
+      searchTermChanged: _onSearchTermChanged,
+      submitted: _onSubmitted,
     );
   }
 
-  Stream<SearchByNameFormState> onSubmitted(_Submitted event) async* {
+  Stream<SearchByNameFormState> _onSubmitted(_) async* {
     yield state.searchTerm.value.fold(
       (failure) => state.copyWith(
         showErrorMessages: true,
@@ -40,7 +40,7 @@ class SearchByNameFormBloc extends Bloc<SearchByNameFormEvent, SearchByNameFormS
     );
   }
 
-  Stream<SearchByNameFormState> onSearchTermChanged(_SearchTermChanged event) async* {
+  Stream<SearchByNameFormState> _onSearchTermChanged(_SearchTermChanged event) async* {
     yield state.copyWith(
       searchTerm: SearchTerm(event.searchTermString),
       isSubmitting: false,

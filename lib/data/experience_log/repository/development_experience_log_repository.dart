@@ -69,20 +69,22 @@ class DevelopmentExperienceLogRepository implements ExperienceLogRepositoryInter
   }
 
   @override
-  Stream<Either<Failure, KtSet<Experience>>> watchUserLog() {
-    Either<Failure, KtSet<Experience>> _either;
+  Stream<Either<Failure, KtList<Experience>>> watchUserLog() {
+    Either<Failure, KtList<Experience>> _either;
     if (_random.nextBool()) {
-      _either = right(KtSet.of(
-        getValidExperience(),
-        getValidExperience().copyWith(
-          id: 2,
-          title: Name("Phasellus"),
+      _either = right(
+        KtList.of(
+          getValidExperience(),
+          getValidExperience().copyWith(
+            id: 2,
+            title: Name("Phasellus"),
+          ),
+          getValidExperience().copyWith(
+            id: 3,
+            title: Name("Itaque"),
+          ),
         ),
-        getValidExperience().copyWith(
-          id: 3,
-          title: Name("Itaque"),
-        ),
-      ));
+      );
     } else {
       _either = left(getServerErrorFailure());
     }

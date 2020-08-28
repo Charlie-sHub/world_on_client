@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
@@ -19,30 +20,43 @@ part 'search_experiences_by_difficulty_state.dart';
 @injectable
 class SearchExperiencesByDifficultyBloc extends Bloc<SearchExperiencesByDifficultyEvent, SearchExperiencesByDifficultyState> {
   SearchExperiencesByDifficultyBloc() : super(const SearchExperiencesByDifficultyState.initial());
+  StreamSubscription<Either<Failure, KtList<Experience>>> _experiencesStreamSubscription;
 
   @override
   Stream<SearchExperiencesByDifficultyState> mapEventToState(SearchExperiencesByDifficultyEvent event) async* {
     yield* event.map(
-      submitted: onSubmitted,
+      submitted: _onSubmitted,
+      resultsReceived: _onResultsReceived,
     );
   }
 
-  Stream<SearchExperiencesByDifficultyState> onSubmitted(_Submitted event) async* {
+  Stream<SearchExperiencesByDifficultyState> _onResultsReceived(_ResultsReceived event) async* {
+    yield event.failureOrExperiences.fold(
+      (failure) => SearchExperiencesByDifficultyState.searchFailure(failure),
+      (experiencesFound) => SearchExperiencesByDifficultyState.searchSuccess(experiencesFound),
+    );
+  }
+
+  Stream<SearchExperiencesByDifficultyState> _onSubmitted(_Submitted event) async* {
     yield const SearchExperiencesByDifficultyState.searchInProgress();
+    await _experiencesStreamSubscription?.cancel();
     final _difficulty = Difficulty(event.difficulty);
     if (_difficulty.isValid()) {
       final _searchExperiencesByDifficulty = getIt<WatchSearchExperiencesByDifficulty>();
-      yield* _searchExperiencesByDifficulty(
+      _experiencesStreamSubscription = _searchExperiencesByDifficulty(
         Params(difficulty: _difficulty),
-      ).map(
-        (failureOrExperiences) => failureOrExperiences.fold(
-          (failure) => SearchExperiencesByDifficultyState.searchFailure(failure),
-          (experiencesFound) => SearchExperiencesByDifficultyState.searchSuccess(experiencesFound),
-        ),
+      ).listen(
+        (_failureOrExperiences) => add(SearchExperiencesByDifficultyEvent.resultsReceived(_failureOrExperiences)),
       );
     } else {
       final _failure = _difficulty.failureOrCrash();
       yield SearchExperiencesByDifficultyState.valueFailure(_failure);
     }
+  }
+
+  @override
+  Future<void> close() async {
+    await _experiencesStreamSubscription?.cancel();
+    return super.close();
   }
 }

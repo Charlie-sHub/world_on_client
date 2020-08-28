@@ -98,7 +98,6 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> followUser(int userToFollowId) async {
     try {
-      // TODO: Why aren't the user's followed shown?
       final _moorUser = await _database.moorUsersDao.getLoggedInUser();
       final _userFollowRelation = _createUserFollowRelation(userToFollowId, _moorUser);
       await _database.moorUsersDao.followUser(_userFollowRelation);
@@ -214,7 +213,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
         }
       },
     ).onErrorReturnWith(
-        (_error) {
+      (_error) {
         final _errorMessage = "Development repository error: $_error";
         _logger.e(_errorMessage);
         return left(
@@ -232,6 +231,32 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   Stream<Either<Failure, KtList<Tag>>> watchUserInterests(int userId) async* {
     final _stream = _database.moorTagsDao.watchUserInterests(userId);
     yield* createTagListStream(_stream, _logger);
+  }
+
+  @override
+  Future<Either<Failure, bool>> followsUser(int userId) async {
+    try {
+      final _moorUser = await _database.moorUsersDao.getLoggedInUser();
+      final _followedUsersList = await _database.moorUsersDao.watchFollowedUsers(_moorUser.id).first;
+      final _followedUsersIdList = _followedUsersList.map((_moorUser) => _moorUser.id).toList();
+      final _isFollowed = _followedUsersIdList.contains(userId);
+      return right(_isFollowed);
+    } catch (exception) {
+      _logger.e("Moor Database error: $exception");
+      return left(
+        Failure.coreData(
+          CoreDataFailure.serverError(
+            errorString: "Development repository error $exception",
+          ),
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> blocksUser(int userId) {
+    // TODO: implement blocksUser
+    throw UnimplementedError();
   }
 
   @override

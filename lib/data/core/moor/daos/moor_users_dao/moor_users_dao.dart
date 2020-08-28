@@ -65,68 +65,52 @@ class MoorUsersDao extends DatabaseAccessor<Database> with _$MoorUsersDaoMixin {
     @required String username,
     @required String password,
   }) async {
-    final userQuery = select(moorUsers)
+    final _userQuery = select(moorUsers)
       ..where(
-          (_user) =>
-        _user.username.equals(
-          username,
-        ) &
-        _user.password.equals(
-          password,
-        ),
+        (_user) =>
+            _user.username.equals(
+              username,
+            ) &
+            _user.password.equals(
+              password,
+            ),
       );
-    return userQuery.getSingle();
+    return _userQuery.getSingle();
   }
 
   Stream<List<MoorUser>> watchSearchUsersByUserName(String username) {
-    final _contentQuery = select(moorUsers)
-      ..where((moorUsers) => moorUsers.username.contains(username));
-    return _contentQuery.watch();
+    final _searchQuery = select(moorUsers)..where((moorUsers) => moorUsers.username.contains(username));
+    return _searchQuery.watch();
   }
 
   Stream<List<MoorUser>> watchSearchUsersByName(String name) {
-    final _contentQuery = select(moorUsers)
-      ..where((moorUsers) => moorUsers.name.contains(name));
-    return _contentQuery.watch();
+    final _searchQuery = select(moorUsers)..where((moorUsers) => moorUsers.name.contains(name));
+    return _searchQuery.watch();
   }
 
-  Stream<List<MoorUser>> watchFollowedUsers(int userId) {
-    final _contentQuery = select(userFollowRelations).join(
+  Stream<List<MoorUser>> watchFollowingUsers(int userId) {
+    final _followedUsersQuery = select(userFollowRelations).join(
       [
         innerJoin(
           moorUsers,
           moorUsers.id.equalsExp(userFollowRelations.followingId),
         ),
       ],
-    )
-      ..where((userFollowRelations.followedId.equals(userId)));
-    return _contentQuery.watch().map(
-        (_rows) =>
-        _rows
-          .map(
-            (_row) => _row.readTable(moorUsers),
-        )
-          .toList(),
-    );
+    )..where((userFollowRelations.followedId.equals(userId)));
+    return _followedUsersQuery.watch().map(_createMoorUserList);
   }
 
-  Stream<List<MoorUser>> watchFollowingUsers(int userId) {
-    final _contentQuery = select(userFollowRelations).join(
+  Stream<List<MoorUser>> watchFollowedUsers(int userId) {
+    final _followingUsersQuery = select(userFollowRelations).join(
       [
         innerJoin(
           moorUsers,
           moorUsers.id.equalsExp(userFollowRelations.followedId),
         ),
       ],
-    )
-      ..where((userFollowRelations.followingId.equals(userId)));
-    return _contentQuery.watch().map(
-        (_rows) =>
-        _rows
-          .map(
-            (_row) => _row.readTable(moorUsers),
-        )
-          .toList(),
-    );
+    )..where((userFollowRelations.followingId.equals(userId)));
+    return _followingUsersQuery.watch().map(_createMoorUserList);
   }
+
+  List<MoorUser> _createMoorUserList(List<TypedResult> rows) => rows.map((_row) => _row.readTable(moorUsers)).toList();
 }

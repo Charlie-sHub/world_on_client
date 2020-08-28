@@ -20,21 +20,20 @@ part 'profile_experiences_watcher_state.dart';
 
 @injectable
 class ProfileExperiencesWatcherBloc extends Bloc<ProfileExperiencesWatcherEvent, ProfileExperiencesWatcherState> {
-  StreamSubscription<Either<Failure, KtList<Experience>>> _experienceStreamSubscription;
-
   ProfileExperiencesWatcherBloc() : super(const ProfileExperiencesWatcherState.initial());
+  StreamSubscription<Either<Failure, KtList<Experience>>> _experienceStreamSubscription;
 
   @override
   Stream<ProfileExperiencesWatcherState> mapEventToState(ProfileExperiencesWatcherEvent event) async* {
     yield* event.map(
-      watchExperiencesDoneStarted: onWatchExperiencesDoneStarted,
-      watchExperiencesLikedStarted: onWatchExperiencesLikedStarted,
-      watchExperiencesCreatedStarted: onWatchExperiencesCreatedStarted,
-      experiencesReceived: onExperiencesReceived,
+      watchExperiencesDoneStarted: _onWatchExperiencesDoneStarted,
+      watchExperiencesLikedStarted: _onWatchExperiencesLikedStarted,
+      watchExperiencesCreatedStarted: _onWatchExperiencesCreatedStarted,
+      experiencesReceived: _onExperiencesReceived,
     );
   }
 
-  Stream<ProfileExperiencesWatcherState> onWatchExperiencesDoneStarted(_WatchExperiencesDoneStarted event) async* {
+  Stream<ProfileExperiencesWatcherState> _onWatchExperiencesDoneStarted(_WatchExperiencesDoneStarted event) async* {
     yield const ProfileExperiencesWatcherState.loadInProgress();
     await _experienceStreamSubscription?.cancel();
     final _loadExperiencesDone = getIt<load_experiences_done.WatchExperiencesDone>();
@@ -47,7 +46,7 @@ class ProfileExperiencesWatcherBloc extends Bloc<ProfileExperiencesWatcherEvent,
     );
   }
 
-  Stream<ProfileExperiencesWatcherState> onWatchExperiencesLikedStarted(_WatchExperiencesLikedStarted event) async* {
+  Stream<ProfileExperiencesWatcherState> _onWatchExperiencesLikedStarted(_WatchExperiencesLikedStarted event) async* {
     yield const ProfileExperiencesWatcherState.loadInProgress();
     await _experienceStreamSubscription?.cancel();
     final _loadExperiencesLiked = getIt<load_experiences_liked.WatchExperiencesLiked>();
@@ -60,7 +59,7 @@ class ProfileExperiencesWatcherBloc extends Bloc<ProfileExperiencesWatcherEvent,
     );
   }
 
-  Stream<ProfileExperiencesWatcherState> onWatchExperiencesCreatedStarted(_WatchExperiencesCreatedStarted event) async* {
+  Stream<ProfileExperiencesWatcherState> _onWatchExperiencesCreatedStarted(_WatchExperiencesCreatedStarted event) async* {
     yield const ProfileExperiencesWatcherState.loadInProgress();
     await _experienceStreamSubscription?.cancel();
     final _loadExperiencesCreated = getIt<load_experiences_created.WatchExperiencesCreated>();
@@ -75,7 +74,7 @@ class ProfileExperiencesWatcherBloc extends Bloc<ProfileExperiencesWatcherEvent,
     );
   }
 
-  Stream<ProfileExperiencesWatcherState> onExperiencesReceived(_ExperiencesReceived event) async* {
+  Stream<ProfileExperiencesWatcherState> _onExperiencesReceived(_ExperiencesReceived event) async* {
     yield event.failureOrExperiences.fold(
       (failure) => ProfileExperiencesWatcherState.loadFailure(failure),
       (experiences) => ProfileExperiencesWatcherState.loadSuccess(experiences),

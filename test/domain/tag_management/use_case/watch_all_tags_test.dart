@@ -24,7 +24,7 @@ void main() {
       useCase = WatchAllTags(mockTagRepository);
     },
   );
-  final tagList = KtSet.of(Tag.empty());
+  final tagList = KtList.of(Tag.empty());
   test(
     "Should get the full list of tags",
     () async {
@@ -83,9 +83,9 @@ void main() {
   );
 }
 
-Future<Either<Failure, KtSet<Tag>>> _act(WatchAllTags useCase) async {
+Future<Either<Failure, KtList<Tag>>> _act(WatchAllTags useCase) async {
   final resultStream = useCase(getIt<NoParams>());
-  Either<Failure, KtSet<Tag>> result;
+  Either<Failure, KtList<Tag>> result;
   await for (final either in resultStream) {
     result = either;
   }

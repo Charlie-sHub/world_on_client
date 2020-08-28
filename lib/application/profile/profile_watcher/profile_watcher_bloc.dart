@@ -22,11 +22,11 @@ class ProfileWatcherBloc extends Bloc<ProfileWatcherEvent, ProfileWatcherState> 
   @override
   Stream<ProfileWatcherState> mapEventToState(ProfileWatcherEvent event) async* {
     yield* event.map(
-      initializedForeignOrOwn: onInitializedForeignOrOwn,
+      initializedForeignOrOwn: _onInitializedForeignOrOwn,
     );
   }
 
-  Stream<ProfileWatcherState> onInitializedForeignOrOwn(_InitializedForeignOrOwn event) async* {
+  Stream<ProfileWatcherState> _onInitializedForeignOrOwn(_InitializedForeignOrOwn event) async* {
     yield const ProfileWatcherState.loadInProgress();
     yield* event.userOption.fold(
       () async* {

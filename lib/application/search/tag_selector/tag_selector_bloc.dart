@@ -19,12 +19,12 @@ class TagSelectorBloc extends Bloc<TagSelectorEvent, TagSelectorState> {
   @override
   Stream<TagSelectorState> mapEventToState(TagSelectorEvent event) async* {
     yield* event.map(
-      addedTag: onAddedTag,
-      removedTag: onSubtractedTag,
+      addedTag: _onAddedTag,
+      removedTag: _onSubtractedTag,
     );
   }
 
-  Stream<TagSelectorState> onSubtractedTag(_RemovedTag event) async* {
+  Stream<TagSelectorState> _onSubtractedTag(_RemovedTag event) async* {
     final _mutableKtSet = state.tagsSelected.toMutableSet();
     _mutableKtSet.remove(event.tag);
     yield state.copyWith(
@@ -32,7 +32,7 @@ class TagSelectorBloc extends Bloc<TagSelectorEvent, TagSelectorState> {
     );
   }
 
-  Stream<TagSelectorState> onAddedTag(_AddedTag event) async* {
+  Stream<TagSelectorState> _onAddedTag(_AddedTag event) async* {
     if (state.tagsSelected.size < TagSet.maxLength) {
       final _mutableKtSet = state.tagsSelected.toMutableSet();
       _mutableKtSet.add(event.tag);

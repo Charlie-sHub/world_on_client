@@ -6,7 +6,7 @@ abstract class TagManagementWatcherState with _$TagManagementWatcherState {
 
   const factory TagManagementWatcherState.loadInProgress() = _LoadInProgress;
 
-  const factory TagManagementWatcherState.loadSuccess(KtSet<Tag> tags) = _loadSuccess;
+  const factory TagManagementWatcherState.loadSuccess(KtList<Tag> tags) = _LoadSuccess;
 
-  const factory TagManagementWatcherState.loadFailure(Failure<dynamic> failure) = _loadFailure;
+  const factory TagManagementWatcherState.loadFailure(Failure<dynamic> failure) = _LoadFailure;
 }

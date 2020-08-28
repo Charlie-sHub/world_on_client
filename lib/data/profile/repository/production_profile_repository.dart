@@ -105,4 +105,16 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     // TODO: implement unFollowUser
     throw UnimplementedError();
   }
+
+  @override
+  Future<Either<Failure, bool>> blocksUser(int userId) {
+    // TODO: implement blocksUser
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Either<Failure, bool>> followsUser(int userId) {
+    // TODO: implement followsUser
+    throw UnimplementedError();
+  }
 }

@@ -20,12 +20,12 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
   @override
   Stream<AuthenticationState> mapEventToState(AuthenticationEvent event) async* {
     yield* event.map(
-      authenticationCheckRequested: onAuthenticationCheckRequested,
-      loggedOut: onLoggedOut,
+      authenticationCheckRequested: _onAuthenticationCheckRequested,
+      loggedOut: _onLoggedOut,
     );
   }
 
-  Stream<AuthenticationState> onLoggedOut(_LoggedOut event) async* {
+  Stream<AuthenticationState> _onLoggedOut(_) async* {
     final _logOut = getIt<LogOut>();
     final _failureOrUnit = await _logOut(getIt<NoParams>());
     // On second thought it's kinda silly the log out doesn't simply return void
@@ -35,12 +35,12 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
     );
   }
 
-  Stream<AuthenticationState> onAuthenticationCheckRequested(_AuthenticationCheckRequested event) async* {
+  Stream<AuthenticationState> _onAuthenticationCheckRequested(_) async* {
     final _getLoggedInUser = getIt<GetLoggedInUser>();
     final _userOption = await _getLoggedInUser(getIt<NoParams>());
     yield _userOption.fold(
-        () => const AuthenticationState.authenticationFailure(),
-        (_) => const AuthenticationState.authenticationSuccess(),
+      () => const AuthenticationState.authenticationFailure(),
+      (_) => const AuthenticationState.authenticationSuccess(),
     );
   }
 }

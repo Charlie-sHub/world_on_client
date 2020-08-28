@@ -29,21 +29,21 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
   @override
   Stream<ProfileEditingFormState> mapEventToState(ProfileEditingFormEvent event) async* {
     yield* event.map(
-      initialized: onInitialized,
-      imageChanged: onImageChanged,
-      nameChanged: onNameChanged,
-      usernameChanged: onUsernameChanged,
-      passwordChanged: onPasswordChanged,
-      passwordConfirmationChanged: onPasswordConfirmationChanged,
-      emailAddressChanged: onEmailAddressChanged,
-      birthdayChanged: onBirthdayChanged,
-      descriptionChanged: onDescriptionChanged,
-      interestsChanged: onInterestsChanged,
-      submitted: onSubmitted,
+      initialized: _onInitialized,
+      imageChanged: _onImageChanged,
+      nameChanged: _onNameChanged,
+      usernameChanged: _onUsernameChanged,
+      passwordChanged: _onPasswordChanged,
+      passwordConfirmationChanged: _onPasswordConfirmationChanged,
+      emailAddressChanged: _onEmailAddressChanged,
+      birthdayChanged: _onBirthdayChanged,
+      descriptionChanged: _onDescriptionChanged,
+      interestsChanged: _onInterestsChanged,
+      submitted: _onSubmitted,
     );
   }
 
-  Stream<ProfileEditingFormState> onSubmitted(_Submitted event) async* {
+  Stream<ProfileEditingFormState> _onSubmitted(_) async* {
     Either<Failure, Unit> _failureOrUnit;
     yield state.copyWith(
       isSubmitting: true,
@@ -65,7 +65,7 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
     );
   }
 
-  Stream<ProfileEditingFormState> onInterestsChanged(_InterestsChanged event) async* {
+  Stream<ProfileEditingFormState> _onInterestsChanged(_InterestsChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         interests: event.interests,
@@ -74,7 +74,7 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
     );
   }
 
-  Stream<ProfileEditingFormState> onDescriptionChanged(_DescriptionChanged event) async* {
+  Stream<ProfileEditingFormState> _onDescriptionChanged(_DescriptionChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         description: EntityDescription(event.description),
@@ -83,7 +83,7 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
     );
   }
 
-  Stream<ProfileEditingFormState> onBirthdayChanged(_BirthdayChanged event) async* {
+  Stream<ProfileEditingFormState> _onBirthdayChanged(_BirthdayChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         birthday: PastDate(event.birthday),
@@ -92,7 +92,7 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
     );
   }
 
-  Stream<ProfileEditingFormState> onEmailAddressChanged(_EmailAddressChanged event) async* {
+  Stream<ProfileEditingFormState> _onEmailAddressChanged(_EmailAddressChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         email: EmailAddress(event.emailAddress),
@@ -101,7 +101,7 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
     );
   }
 
-  Stream<ProfileEditingFormState> onPasswordConfirmationChanged(_PasswordConfirmationChanged event) async* {
+  Stream<ProfileEditingFormState> _onPasswordConfirmationChanged(_PasswordConfirmationChanged event) async* {
     yield state.copyWith(
       passwordConfirmator: PasswordConfirmator(
         password: state.user.password.value.fold(
@@ -115,7 +115,7 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
     );
   }
 
-  Stream<ProfileEditingFormState> onPasswordChanged(_PasswordChanged event) async* {
+  Stream<ProfileEditingFormState> _onPasswordChanged(_PasswordChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         password: Password(event.password),
@@ -128,7 +128,7 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
     );
   }
 
-  Stream<ProfileEditingFormState> onUsernameChanged(_UsernameChanged event) async* {
+  Stream<ProfileEditingFormState> _onUsernameChanged(_UsernameChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         username: Name(event.username),
@@ -137,7 +137,7 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
     );
   }
 
-  Stream<ProfileEditingFormState> onNameChanged(_NameChanged event) async* {
+  Stream<ProfileEditingFormState> _onNameChanged(_NameChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         name: Name(event.name),
@@ -146,7 +146,7 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
     );
   }
 
-  Stream<ProfileEditingFormState> onImageChanged(_ImageChanged event) async* {
+  Stream<ProfileEditingFormState> _onImageChanged(_ImageChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
         imageFileOption: some(event.imageFile),
@@ -155,7 +155,7 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
     );
   }
 
-  Stream<ProfileEditingFormState> onInitialized(_Initialized event) async* {
+  Stream<ProfileEditingFormState> _onInitialized(_Initialized event) async* {
     final user = event.userToEdit;
     yield state.copyWith(
       user: user,

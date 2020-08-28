@@ -73,22 +73,17 @@ class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
           moorTags.id.equalsExp(userInterests.tagId),
         ),
       ],
-    )
-      ..where((userInterests.userId.equals(userId)));
+    )..where((userInterests.userId.equals(userId)));
     final _tagsIds = await _userInterestsQuery
-      .watch()
-      .map(
-        (_rows) =>
-        _rows
-          .map(
-            (_row) =>
-          _row
-            .readTable(moorTags)
-            .id,
+        .watch()
+        .map(
+          (_rows) => _rows
+              .map(
+                (_row) => _row.readTable(moorTags).id,
+              )
+              .toList(),
         )
-          .toList(),
-    )
-      .first;
+        .first;
     final _whereExpression = moorTags.id.isIn(_tagsIds);
     yield* _createMoorTagWithMoorUserListStream(_whereExpression);
   }

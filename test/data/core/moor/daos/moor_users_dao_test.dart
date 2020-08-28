@@ -271,10 +271,10 @@ void main() {
   );
   group(
     TestDescription.groupStreams,
-      () {
+    () {
       test(
         "Should emit a stream of lists of users by their username",
-          () async {
+        () async {
           // Arrange
           final _searchResults = <MoorUser>[];
           // Act
@@ -312,23 +312,9 @@ void main() {
           final _moorUserCharlieId = await _database.moorUsersDao.insertUser(_moorUserCharlie);
           final _moorUserBroId = await _database.moorUsersDao.insertUser(_moorUserBro);
           final _followedUsersList = [
-            _moorUserRicky.copyWith(id: Value(_moorUserRickyId)),
             _moorUserBro.copyWith(id: Value(_moorUserBroId)),
           ];
-          final _followRelationsList = [
-            UserFollowRelationsCompanion.insert(
-              followedId: _moorUserCharlieId,
-              followingId: _moorUserRickyId,
-            ),
-            UserFollowRelationsCompanion.insert(
-              followedId: _moorUserCharlieId,
-              followingId: _moorUserBroId,
-            ),
-            UserFollowRelationsCompanion.insert(
-              followedId: _moorUserRickyId,
-              followingId: _moorUserBroId,
-            ),
-          ];
+          final _followRelationsList = _createFollowRelationsList(_moorUserCharlieId, _moorUserRickyId, _moorUserBroId);
           for (final _followRelation in _followRelationsList) {
             await _database.moorUsersDao.followUser(_followRelation);
           } // Assert
@@ -346,23 +332,10 @@ void main() {
           final _moorUserCharlieId = await _database.moorUsersDao.insertUser(_moorUserCharlie);
           final _moorUserBroId = await _database.moorUsersDao.insertUser(_moorUserBro);
           final _followingUsersList = [
-            _moorUserCharlie.copyWith(id: Value(_moorUserCharlieId)),
             _moorUserRicky.copyWith(id: Value(_moorUserRickyId)),
+            _moorUserCharlie.copyWith(id: Value(_moorUserCharlieId)),
           ];
-          final _followRelationsList = [
-            UserFollowRelationsCompanion.insert(
-              followedId: _moorUserCharlieId,
-              followingId: _moorUserRickyId,
-            ),
-            UserFollowRelationsCompanion.insert(
-              followedId: _moorUserCharlieId,
-              followingId: _moorUserBroId,
-            ),
-            UserFollowRelationsCompanion.insert(
-              followedId: _moorUserRickyId,
-              followingId: _moorUserBroId,
-            ),
-          ];
+          final _followRelationsList = _createFollowRelationsList(_moorUserCharlieId, _moorUserRickyId, _moorUserBroId);
           for (final _followRelation in _followRelationsList) {
             await _database.moorUsersDao.followUser(_followRelation);
           }
@@ -377,8 +350,34 @@ void main() {
   );
 }
 
-List<MoorUsersCompanion> _moorUserToCompanionList(List<MoorUser> _moorUserList) => _moorUserList
+List<UserFollowRelationsCompanion> _createFollowRelationsList(int someUserId, int otherUserId, int yetAnotherUserId) {
+  return [
+    UserFollowRelationsCompanion.insert(
+      followedId: someUserId,
+      followingId: otherUserId,
+    ),
+    UserFollowRelationsCompanion.insert(
+      followedId: someUserId,
+      followingId: yetAnotherUserId,
+    ),
+    UserFollowRelationsCompanion.insert(
+      followedId: otherUserId,
+      followingId: yetAnotherUserId,
+    ),
+    UserFollowRelationsCompanion.insert(
+      followedId: yetAnotherUserId,
+      followingId: otherUserId,
+    ),
+    UserFollowRelationsCompanion.insert(
+      followedId: yetAnotherUserId,
+      followingId: someUserId,
+    ),
+  ];
+}
+
+List<MoorUsersCompanion> _moorUserToCompanionList(List<MoorUser> _moorUserList) =>
+  _moorUserList
     .map(
       (_moorUser) => _moorUser.toCompanion(true),
-    )
+  )
     .toList();

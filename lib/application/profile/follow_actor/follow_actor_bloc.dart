@@ -1,16 +1,14 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:logger/logger.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
-import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
-import 'package:worldon/domain/core/failures/error.dart';
-import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/profile/use_case/follow_user.dart' as follow_user;
+import 'package:worldon/domain/profile/use_case/follows_user.dart' as follows_user;
 import 'package:worldon/domain/profile/use_case/un_follow_user.dart' as un_follow_user;
 import 'package:worldon/injection.dart';
 
@@ -23,16 +21,18 @@ part 'follow_actor_state.dart';
 class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
   FollowActorBloc() : super(const FollowActorState.initial());
 
+  final _logger = Logger();
+
   @override
   Stream<FollowActorState> mapEventToState(FollowActorEvent event) async* {
     yield* event.map(
-      initialized: onInitialized,
-      followed: onFollowed,
-      unFollowed: onUnFollowed,
+      initialized: _onInitialized,
+      followed: _onFollowed,
+      unFollowed: _onUnFollowed,
     );
   }
 
-  Stream<FollowActorState> onUnFollowed(_UnFollowed event) async* {
+  Stream<FollowActorState> _onUnFollowed(_UnFollowed event) async* {
     yield const FollowActorState.actionInProgress();
     final _unFollowUser = getIt<un_follow_user.UnFollowUser>();
     final _failureOrUnit = await _unFollowUser(
@@ -49,7 +49,7 @@ class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
     );
   }
 
-  Stream<FollowActorState> onFollowed(_Followed event) async* {
+  Stream<FollowActorState> _onFollowed(_Followed event) async* {
     yield const FollowActorState.actionInProgress();
     final _followUser = getIt<follow_user.FollowUser>();
     final _failureOrUnit = await _followUser(
@@ -66,19 +66,20 @@ class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
     );
   }
 
-  // TODO: check if the user in the card is the logged in user and have a state to show that
-  // So the user can't even attempt to follow itself
-  Stream<FollowActorState> onInitialized(_Initialized event) async* {
-    final _getLoggedInUser = getIt<GetLoggedInUser>();
-    final _loggedInUserOption = await _getLoggedInUser(getIt<NoParams>());
-    final _loggedInUser = _loggedInUserOption.fold(
-      () => throw UnAuthenticatedError(),
-      id,
+  Stream<FollowActorState> _onInitialized(_Initialized event) async* {
+    final _followsUser = getIt<follows_user.FollowsUser>();
+    final _followsUserResult = await _followsUser(
+      follows_user.Params(userId: event.user.id),
     );
-    if (_loggedInUser.followedUsers.contains(event.user)) {
-      yield const FollowActorState.follows();
-    } else {
-      yield const FollowActorState.followsNot();
-    }
+    yield _followsUserResult.fold(
+      (failure) => FollowActorState.followFailure(failure),
+      (_follows) {
+        if (_follows) {
+          return const FollowActorState.follows();
+        } else {
+          return const FollowActorState.followsNot();
+        }
+      },
+    );
   }
 }

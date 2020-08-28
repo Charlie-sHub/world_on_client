@@ -26,13 +26,13 @@ class BlockActorBloc extends Bloc<BlockActorEvent, BlockActorState> {
   @override
   Stream<BlockActorState> mapEventToState(BlockActorEvent event) async* {
     yield* event.map(
-      initialized: onInitialized,
-      blocked: onBlocked,
-      unBlocked: onUnBlocked,
+      initialized: _onInitialized,
+      blocked: _onBlocked,
+      unBlocked: _onUnBlocked,
     );
   }
 
-  Stream<BlockActorState> onUnBlocked(_UnBlocked event) async* {
+  Stream<BlockActorState> _onUnBlocked(_UnBlocked event) async* {
     yield const BlockActorState.actionInProgress();
     final _unBlockUser = getIt<un_block_user.UnBlockUser>();
     final _failureOrUnit = await _unBlockUser(
@@ -49,7 +49,7 @@ class BlockActorBloc extends Bloc<BlockActorEvent, BlockActorState> {
     );
   }
 
-  Stream<BlockActorState> onBlocked(_Blocked event) async* {
+  Stream<BlockActorState> _onBlocked(_Blocked event) async* {
     yield const BlockActorState.actionInProgress();
     final _blockUser = getIt<block_user.BlockUser>();
     final _failureOrUnit = await _blockUser(
@@ -68,7 +68,7 @@ class BlockActorBloc extends Bloc<BlockActorEvent, BlockActorState> {
 
   // TODO: check if the user in the card is the logged in user and have a state to show that
   // So the user can't even attempt to block itself
-  Stream<BlockActorState> onInitialized(_Initialized event) async* {
+  Stream<BlockActorState> _onInitialized(_Initialized event) async* {
     final _getLoggedInUser = getIt<GetLoggedInUser>();
     final _loggedInUserOption = await _getLoggedInUser(getIt<NoParams>());
     final _loggedInUser = _loggedInUserOption.fold(

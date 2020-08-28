@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
@@ -16,27 +17,38 @@ part 'main_feed_watcher_bloc.freezed.dart';
 part 'main_feed_watcher_event.dart';
 part 'main_feed_watcher_state.dart';
 
-// TODO: Debug as lazySingleton
-// Add as many prints as necessary
 @injectable
 class MainFeedWatcherBloc extends Bloc<MainFeedWatcherEvent, MainFeedWatcherState> {
   MainFeedWatcherBloc() : super(const MainFeedWatcherState.initial());
+  StreamSubscription<Either<Failure, KtList<Experience>>> _experienceCommentsStreamSubscription;
 
   @override
   Stream<MainFeedWatcherState> mapEventToState(MainFeedWatcherEvent event) async* {
     yield* event.map(
-      watchMainFeedStarted: onWatchMainFeedStarted,
+      watchMainFeedStarted: _onWatchMainFeedStarted,
+      resultsReceived: _onResultsReceived,
     );
   }
 
-  Stream<MainFeedWatcherState> onWatchMainFeedStarted(_WatchMainFeedStarted event) async* {
-    yield const MainFeedWatcherState.loadInProgress();
-    final _fillFeed = getIt<WatchFeed>();
-    yield* _fillFeed(getIt<NoParams>()).map(
-      (failureOrExperiences) => failureOrExperiences.fold(
-        (failure) => MainFeedWatcherState.loadFailure(failure),
-        (experiences) => MainFeedWatcherState.loadSuccess(experiences),
-      ),
+  Stream<MainFeedWatcherState> _onResultsReceived(_ResultsReceived event) async* {
+    yield event.failureOrExperiences.fold(
+      (failure) => MainFeedWatcherState.loadFailure(failure),
+      (experiences) => MainFeedWatcherState.loadSuccess(experiences),
     );
+  }
+
+  Stream<MainFeedWatcherState> _onWatchMainFeedStarted(_) async* {
+    yield const MainFeedWatcherState.loadInProgress();
+    await _experienceCommentsStreamSubscription?.cancel();
+    final _fillFeed = getIt<WatchFeed>();
+    _experienceCommentsStreamSubscription = _fillFeed(getIt<NoParams>()).listen(
+      (_failureOrExperiences) => add(MainFeedWatcherEvent.resultsReceived(_failureOrExperiences)),
+    );
+  }
+
+  @override
+  Future<void> close() async {
+    await _experienceCommentsStreamSubscription?.cancel();
+    return super.close();
   }
 }

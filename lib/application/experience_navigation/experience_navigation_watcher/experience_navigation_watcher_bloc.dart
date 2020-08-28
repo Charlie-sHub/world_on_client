@@ -18,16 +18,16 @@ class ExperienceNavigationWatcherBloc extends Bloc<ExperienceNavigationWatcherEv
   @override
   Stream<ExperienceNavigationWatcherState> mapEventToState(ExperienceNavigationWatcherEvent event) async* {
     yield* event.map(
-      initialized: onInitialized,
-      allObjectivesAccomplished: onAllObjectivesAccomplished,
+      initialized: _onInitialized,
+      allObjectivesAccomplished: _onAllObjectivesAccomplished,
     );
   }
 
-  Stream<ExperienceNavigationWatcherState> onAllObjectivesAccomplished(_AllObjectivesAccomplished event) async* {
+  Stream<ExperienceNavigationWatcherState> _onAllObjectivesAccomplished(_AllObjectivesAccomplished event) async* {
     yield ExperienceNavigationWatcherState.finishExperience(event.experience);
   }
 
-  Stream<ExperienceNavigationWatcherState> onInitialized(_Initialized event) async* {
+  Stream<ExperienceNavigationWatcherState> _onInitialized(_Initialized event) async* {
     yield event.experienceOption.fold(
       () => const ExperienceNavigationWatcherState.noExperience(),
       (experience) => ExperienceNavigationWatcherState.navigatingExperience(experience),

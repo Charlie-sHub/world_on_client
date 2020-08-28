@@ -51,20 +51,15 @@ class MoorAchievementsDao extends DatabaseAccessor<Database> with _$MoorAchievem
           moorAchievements.id.equalsExp(userAchievements.achievementId),
         ),
       ],
-    )
-      ..where(userAchievements.userId.equals(userId));
+    )..where(userAchievements.userId.equals(userId));
     final _usersAchievementsIds = await _userAchievementsQuery
-      .watch()
-      .map(
-        (_rows) =>
-        _rows.map(
-            (_row) =>
-          _row
-            .readTable(moorAchievements)
-            .id,
-        ),
-    )
-      .first;
+        .watch()
+        .map(
+          (_rows) => _rows.map(
+            (_row) => _row.readTable(moorAchievements).id,
+          ),
+        )
+        .first;
     final _achievementsWithCreatorJoin = select(moorAchievements).join(
       [
         innerJoin(
@@ -105,24 +100,23 @@ class MoorAchievementsDao extends DatabaseAccessor<Database> with _$MoorAchievem
       _achievementsWithCreatorJoin.watch(),
       _achievementsWithTagsJoin.watch(),
       _tagsWithCreatorsListStream,
-        (List<TypedResult> _achievementsWithCreatorRows,
+      (
+        List<TypedResult> _achievementsWithCreatorRows,
         List<TypedResult> _achievementsWithTagsRows,
-        List<MoorTagWithMoorUser> _moorTagsWithCreators,) {
+        List<MoorTagWithMoorUser> _moorTagsWithCreators,
+      ) {
         return _achievementsWithCreatorRows.map(
-            (_achievementsWithCreatorRow) {
+          (_achievementsWithCreatorRow) {
             final _achievement = _achievementsWithCreatorRow.readTable(moorAchievements);
             final _creator = _achievementsWithCreatorRow.readTable(moorUsers);
             final _tagsWithCreators = List<MoorTagWithMoorUser>.from(_moorTagsWithCreators);
             final _achievementMoorTagIdList = _achievementsWithTagsRows
-              .map(
-                (_row) =>
-              _row
-                .readTable(moorTags)
-                .id,
-            )
-              .toList();
+                .map(
+                  (_row) => _row.readTable(moorTags).id,
+                )
+                .toList();
             _tagsWithCreators.removeWhere(
-                (_moorTagWithUser) => !_achievementMoorTagIdList.contains(_moorTagWithUser.tag.id),
+              (_moorTagWithUser) => !_achievementMoorTagIdList.contains(_moorTagWithUser.tag.id),
             );
             return MoorAchievementWithRelations(
               achievement: _achievement,

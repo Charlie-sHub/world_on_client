@@ -67,22 +67,20 @@ abstract class $ObjectivesCreationEventCopyWith<$Res> {
   $ObjectiveCopyWith<$Res> get objective;
 }
 
-class _$ObjectivesCreationEventCopyWithImpl<$Res>
-  implements $ObjectivesCreationEventCopyWith<$Res> {
+class _$ObjectivesCreationEventCopyWithImpl<$Res> implements $ObjectivesCreationEventCopyWith<$Res> {
   _$ObjectivesCreationEventCopyWithImpl(this._value, this._then);
-  
+
   final ObjectivesCreationEvent _value;
-  
+
   // ignore: unused_field
   final $Res Function(ObjectivesCreationEvent) _then;
-  
+
   @override
   $Res call({
     Object objective = freezed,
   }) {
     return _then(_value.copyWith(
-      objective:
-      objective == freezed ? _value.objective : objective as Objective,
+      objective: objective == freezed ? _value.objective : objective as Objective,
     ));
   }
 
@@ -97,26 +95,22 @@ class _$ObjectivesCreationEventCopyWithImpl<$Res>
   }
 }
 
-abstract class _$AddedObjectiveCopyWith<$Res>
-  implements $ObjectivesCreationEventCopyWith<$Res> {
-  factory _$AddedObjectiveCopyWith(_AddedObjective value, $Res Function(_AddedObjective) then) =
-  __$AddedObjectiveCopyWithImpl<$Res>;
-  
+abstract class _$AddedObjectiveCopyWith<$Res> implements $ObjectivesCreationEventCopyWith<$Res> {
+  factory _$AddedObjectiveCopyWith(_AddedObjective value, $Res Function(_AddedObjective) then) = __$AddedObjectiveCopyWithImpl<$Res>;
+
   @override
   $Res call({Objective objective});
-  
+
   @override
   $ObjectiveCopyWith<$Res> get objective;
 }
 
-class __$AddedObjectiveCopyWithImpl<$Res> extends _$ObjectivesCreationEventCopyWithImpl<$Res>
-  implements _$AddedObjectiveCopyWith<$Res> {
-  __$AddedObjectiveCopyWithImpl(_AddedObjective _value, $Res Function(_AddedObjective) _then)
-    : super(_value, (v) => _then(v as _AddedObjective));
-  
+class __$AddedObjectiveCopyWithImpl<$Res> extends _$ObjectivesCreationEventCopyWithImpl<$Res> implements _$AddedObjectiveCopyWith<$Res> {
+  __$AddedObjectiveCopyWithImpl(_AddedObjective _value, $Res Function(_AddedObjective) _then) : super(_value, (v) => _then(v as _AddedObjective));
+
   @override
   _AddedObjective get _value => super._value as _AddedObjective;
-  
+
   @override
   $Res call({
     Object objective = freezed,
@@ -140,20 +134,14 @@ class _$_AddedObjective implements _AddedObjective {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-      (other is _AddedObjective &&
-        (identical(other.objective, objective) ||
-          const DeepCollectionEquality()
-            .equals(other.objective, objective)));
+    return identical(this, other) || (other is _AddedObjective && (identical(other.objective, objective) || const DeepCollectionEquality().equals(other.objective, objective)));
   }
 
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective);
 
   @override
-  _$AddedObjectiveCopyWith<_AddedObjective> get copyWith =>
-    __$AddedObjectiveCopyWithImpl<_AddedObjective>(this, _$identity);
+  _$AddedObjectiveCopyWith<_AddedObjective> get copyWith => __$AddedObjectiveCopyWithImpl<_AddedObjective>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -215,26 +203,22 @@ abstract class _AddedObjective implements ObjectivesCreationEvent {
   _$AddedObjectiveCopyWith<_AddedObjective> get copyWith;
 }
 
-abstract class _$RemovedObjectiveCopyWith<$Res>
-  implements $ObjectivesCreationEventCopyWith<$Res> {
-  factory _$RemovedObjectiveCopyWith(_RemovedObjective value, $Res Function(_RemovedObjective) then) =
-  __$RemovedObjectiveCopyWithImpl<$Res>;
-  
+abstract class _$RemovedObjectiveCopyWith<$Res> implements $ObjectivesCreationEventCopyWith<$Res> {
+  factory _$RemovedObjectiveCopyWith(_RemovedObjective value, $Res Function(_RemovedObjective) then) = __$RemovedObjectiveCopyWithImpl<$Res>;
+
   @override
   $Res call({Objective objective});
-  
+
   @override
   $ObjectiveCopyWith<$Res> get objective;
 }
 
-class __$RemovedObjectiveCopyWithImpl<$Res> extends _$ObjectivesCreationEventCopyWithImpl<$Res>
-  implements _$RemovedObjectiveCopyWith<$Res> {
-  __$RemovedObjectiveCopyWithImpl(_RemovedObjective _value, $Res Function(_RemovedObjective) _then)
-    : super(_value, (v) => _then(v as _RemovedObjective));
-  
+class __$RemovedObjectiveCopyWithImpl<$Res> extends _$ObjectivesCreationEventCopyWithImpl<$Res> implements _$RemovedObjectiveCopyWith<$Res> {
+  __$RemovedObjectiveCopyWithImpl(_RemovedObjective _value, $Res Function(_RemovedObjective) _then) : super(_value, (v) => _then(v as _RemovedObjective));
+
   @override
   _RemovedObjective get _value => super._value as _RemovedObjective;
-  
+
   @override
   $Res call({
     Object objective = freezed,
@@ -258,20 +242,14 @@ class _$_RemovedObjective implements _RemovedObjective {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-      (other is _RemovedObjective &&
-        (identical(other.objective, objective) ||
-          const DeepCollectionEquality()
-            .equals(other.objective, objective)));
+    return identical(this, other) || (other is _RemovedObjective && (identical(other.objective, objective) || const DeepCollectionEquality().equals(other.objective, objective)));
   }
 
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective);
 
   @override
-  _$RemovedObjectiveCopyWith<_RemovedObjective> get copyWith =>
-    __$RemovedObjectiveCopyWithImpl<_RemovedObjective>(this, _$identity);
+  _$RemovedObjectiveCopyWith<_RemovedObjective> get copyWith => __$RemovedObjectiveCopyWithImpl<_RemovedObjective>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -354,105 +332,81 @@ mixin _$ObjectivesCreationState {
 }
 
 abstract class $ObjectivesCreationStateCopyWith<$Res> {
-  factory $ObjectivesCreationStateCopyWith(ObjectivesCreationState value,
-    $Res Function(ObjectivesCreationState) then) =
-  _$ObjectivesCreationStateCopyWithImpl<$Res>;
-  
+  factory $ObjectivesCreationStateCopyWith(ObjectivesCreationState value, $Res Function(ObjectivesCreationState) then) = _$ObjectivesCreationStateCopyWithImpl<$Res>;
   $Res call({KtSet<Objective> objectivesCreated});
 }
 
-class _$ObjectivesCreationStateCopyWithImpl<$Res>
-  implements $ObjectivesCreationStateCopyWith<$Res> {
+class _$ObjectivesCreationStateCopyWithImpl<$Res> implements $ObjectivesCreationStateCopyWith<$Res> {
   _$ObjectivesCreationStateCopyWithImpl(this._value, this._then);
-  
+
   final ObjectivesCreationState _value;
-  
+
   // ignore: unused_field
   final $Res Function(ObjectivesCreationState) _then;
-  
+
   @override
   $Res call({
     Object objectivesCreated = freezed,
   }) {
     return _then(_value.copyWith(
-      objectivesCreated: objectivesCreated == freezed
-        ? _value.objectivesCreated
-        : objectivesCreated as KtSet<Objective>,
+      objectivesCreated: objectivesCreated == freezed ? _value.objectivesCreated : objectivesCreated as KtSet<Objective>,
     ));
   }
 }
 
-abstract class _$ObjectivesCreationStateCopyWith<$Res>
-  implements $ObjectivesCreationStateCopyWith<$Res> {
-  factory _$ObjectivesCreationStateCopyWith(_ObjectivesCreationState value,
-    $Res Function(_ObjectivesCreationState) then) =
-  __$ObjectivesCreationStateCopyWithImpl<$Res>;
-  
+abstract class _$ObjectivesCreationStateCopyWith<$Res> implements $ObjectivesCreationStateCopyWith<$Res> {
+  factory _$ObjectivesCreationStateCopyWith(_ObjectivesCreationState value, $Res Function(_ObjectivesCreationState) then) = __$ObjectivesCreationStateCopyWithImpl<$Res>;
+
   @override
   $Res call({KtSet<Objective> objectivesCreated});
 }
 
-class __$ObjectivesCreationStateCopyWithImpl<$Res> extends _$ObjectivesCreationStateCopyWithImpl<$Res>
-  implements _$ObjectivesCreationStateCopyWith<$Res> {
-  __$ObjectivesCreationStateCopyWithImpl(_ObjectivesCreationState _value,
-    $Res Function(_ObjectivesCreationState) _then)
-    : super(_value, (v) => _then(v as _ObjectivesCreationState));
-  
+class __$ObjectivesCreationStateCopyWithImpl<$Res> extends _$ObjectivesCreationStateCopyWithImpl<$Res> implements _$ObjectivesCreationStateCopyWith<$Res> {
+  __$ObjectivesCreationStateCopyWithImpl(_ObjectivesCreationState _value, $Res Function(_ObjectivesCreationState) _then) : super(_value, (v) => _then(v as _ObjectivesCreationState));
+
   @override
-  _ObjectivesCreationState get _value =>
-    super._value as _ObjectivesCreationState;
-  
+  _ObjectivesCreationState get _value => super._value as _ObjectivesCreationState;
+
   @override
   $Res call({
     Object objectivesCreated = freezed,
   }) {
     return _then(_ObjectivesCreationState(
-      objectivesCreated: objectivesCreated == freezed
-        ? _value.objectivesCreated
-        : objectivesCreated as KtSet<Objective>,
+      objectivesCreated: objectivesCreated == freezed ? _value.objectivesCreated : objectivesCreated as KtSet<Objective>,
     ));
   }
 }
 
 class _$_ObjectivesCreationState implements _ObjectivesCreationState {
-  const _$_ObjectivesCreationState({@required this.objectivesCreated})
-    : assert(objectivesCreated != null);
-  
+  const _$_ObjectivesCreationState({@required this.objectivesCreated}) : assert(objectivesCreated != null);
+
   @override
   final KtSet<Objective> objectivesCreated;
-  
+
   @override
   String toString() {
     return 'ObjectivesCreationState(objectivesCreated: $objectivesCreated)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _ObjectivesCreationState &&
-        (identical(other.objectivesCreated, objectivesCreated) ||
-          const DeepCollectionEquality()
-            .equals(other.objectivesCreated, objectivesCreated)));
+        (other is _ObjectivesCreationState && (identical(other.objectivesCreated, objectivesCreated) || const DeepCollectionEquality().equals(other.objectivesCreated, objectivesCreated)));
   }
-  
+
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(objectivesCreated);
-  
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectivesCreated);
+
   @override
-  _$ObjectivesCreationStateCopyWith<_ObjectivesCreationState> get copyWith =>
-    __$ObjectivesCreationStateCopyWithImpl<_ObjectivesCreationState>(
-      this, _$identity);
+  _$ObjectivesCreationStateCopyWith<_ObjectivesCreationState> get copyWith => __$ObjectivesCreationStateCopyWithImpl<_ObjectivesCreationState>(this, _$identity);
 }
 
 abstract class _ObjectivesCreationState implements ObjectivesCreationState {
-  const factory _ObjectivesCreationState({@required KtSet<Objective> objectivesCreated}) =
-  _$_ObjectivesCreationState;
-  
+  const factory _ObjectivesCreationState({@required KtSet<Objective> objectivesCreated}) = _$_ObjectivesCreationState;
+
   @override
   KtSet<Objective> get objectivesCreated;
-  
+
   @override
   _$ObjectivesCreationStateCopyWith<_ObjectivesCreationState> get copyWith;
 }

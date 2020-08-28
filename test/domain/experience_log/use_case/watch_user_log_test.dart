@@ -26,16 +26,16 @@ void main() {
       useCase = WatchUserLog(mockExperienceLogRepository);
     },
   );
-  final experienceSet = KtSet.of(Experience.empty());
+  final experienceList = KtList.of(Experience.empty());
   test(
     "Should return a Set of Experiences",
     () async {
       // Arrange
-      when(mockExperienceLogRepository.watchUserLog()).thenAnswer((_) => createStream(right(experienceSet)));
+      when(mockExperienceLogRepository.watchUserLog()).thenAnswer((_) => createStream(right(experienceList)));
       // Act
       final result = await _act(useCase, params);
       // Assert
-      expect(result, right(experienceSet));
+      expect(result, right(experienceList));
       _verifyInteractions(mockExperienceLogRepository);
     },
   );
@@ -85,9 +85,9 @@ void main() {
   );
 }
 
-Future<Either<Failure, KtSet<Experience>>> _act(WatchUserLog useCase, NoParams params) async {
+Future<Either<Failure, KtList<Experience>>> _act(WatchUserLog useCase, NoParams params) async {
   final resultStream = useCase(params);
-  Either<Failure, KtSet<Experience>> result;
+  Either<Failure, KtList<Experience>> result;
   await for (final either in resultStream) {
     result = either;
   }

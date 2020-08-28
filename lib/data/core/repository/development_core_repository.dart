@@ -72,7 +72,7 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
       if (await _database.moorExperiencesDao.countExperiences() == 0) {
         _logger.i("Starting the creation of experiences and their relations");
         await _insertExperiences(_userIds, _tagsIds, _experiencesIds);
-        await insertComments(_experiencesIds);
+        await _insertComments(_experiencesIds);
         _insertExperiencesLiked(_userIds, _experiencesIds);
         _insertExperiencesDone(_userIds, _experiencesIds);
         _insertExperiencesToDo(_userIds, _experiencesIds);
@@ -182,6 +182,46 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
       ExperienceTagsCompanion.insert(
         experienceId: _experiencesIds.elementAt(3),
         tagId: _tagsIds.elementAt(8),
+      ),
+      ExperienceTagsCompanion.insert(
+        experienceId: _experiencesIds.elementAt(4),
+        tagId: _tagsIds.elementAt(8),
+      ),
+      ExperienceTagsCompanion.insert(
+        experienceId: _experiencesIds.elementAt(4),
+        tagId: _tagsIds.elementAt(7),
+      ),
+      ExperienceTagsCompanion.insert(
+        experienceId: _experiencesIds.elementAt(5),
+        tagId: _tagsIds.elementAt(8),
+      ),
+      ExperienceTagsCompanion.insert(
+        experienceId: _experiencesIds.elementAt(5),
+        tagId: _tagsIds.elementAt(6),
+      ),
+      ExperienceTagsCompanion.insert(
+        experienceId: _experiencesIds.elementAt(5),
+        tagId: _tagsIds.elementAt(5),
+      ),
+      ExperienceTagsCompanion.insert(
+        experienceId: _experiencesIds.elementAt(5),
+        tagId: _tagsIds.elementAt(4),
+      ),
+      ExperienceTagsCompanion.insert(
+        experienceId: _experiencesIds.elementAt(6),
+        tagId: _tagsIds.elementAt(3),
+      ),
+      ExperienceTagsCompanion.insert(
+        experienceId: _experiencesIds.elementAt(6),
+        tagId: _tagsIds.elementAt(2),
+      ),
+      ExperienceTagsCompanion.insert(
+        experienceId: _experiencesIds.elementAt(6),
+        tagId: _tagsIds.elementAt(1),
+      ),
+      ExperienceTagsCompanion.insert(
+        experienceId: _experiencesIds.elementAt(6),
+        tagId: _tagsIds.elementAt(0),
       ),
     ];
     for (final _experienceTag in _experiencesTagsList) {
@@ -383,13 +423,17 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
         followedId: _userIds.elementAt(2),
         followingId: _userIds.elementAt(0),
       ),
+      UserFollowRelationsCompanion.insert(
+        followedId: _userIds.elementAt(2),
+        followingId: _userIds.elementAt(1),
+      ),
     ];
     for (final _userFollowRelation in _userFollowRelationList) {
       _database.moorUsersDao.followUser(_userFollowRelation);
     }
   }
 
-  Future insertComments(Set<int> _experiencesIds) async {
+  Future _insertComments(Set<int> _experiencesIds) async {
     final _comment = getValidComment();
     final _moorCommentIpsum = domainCommentToMoorComment(
       _comment,
@@ -411,12 +455,14 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
       _database.moorCommentsDao.insertComment(_comment);
     }
   }
-  
+
   Future _insertExperiences(Set<int> _userIds, Set<int> _tagsIds, Set<int> _experiencesIds) async {
-    // TODO: Insert experiences with other creators
-    final _experienceIpsum = getValidExperience();
+    final _experienceIpsum = getValidExperience().copyWith(
+        creator: getValidUser().copyWith(
+      id: _userIds.elementAt(2),
+    ));
     final _experienceBro = _experienceIpsum.copyWith(
-      title: Name("Malesuada fames ac ante"),
+      title: Name("Road rash shred"),
       description: EntityDescription("Gorby poaching Whistler corduroy freshies stoked sharkbite brain bucket dirtbag."),
     );
     final _experienceHip = _experienceIpsum.copyWith(
@@ -427,17 +473,34 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
       title: Name("The final frontier"),
       description: EntityDescription("Many say exploration is part of our destiny, but it’s actually our duty to future generations and their quest to ensure the survival of the human species."),
     );
+    final _experiencePostModern = _experienceIpsum.copyWith(
+      title: Name("Consensuses of collapse"),
+      description: EntityDescription("In a sense, Lyotard suggests the use of Foucaultist power relations to read and analyse society. "
+          "Several deappropriations concerning conceptual subcapitalist theory exist."),
+    );
+    final _experienceCat = _experienceIpsum.copyWith(
+      title: Name("Human give me attention meow"),
+      description: EntityDescription("Meowzer flee in terror at cucumber discovered on floor sit on human purr like a car engine oh yes"),
+    );
+    final _experienceCorporate = _experienceIpsum.copyWith(
+      title: Name("Leverage agile frameworks"),
+      description: EntityDescription("Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. "
+          "Override the digital divide with additional clickthroughs from DevOps."),
+    );
     final _experienceList = [
       _experienceIpsum,
       _experienceBro,
       _experienceHip,
       _experienceSpace,
+      _experiencePostModern,
+      _experienceCat,
+      _experienceCorporate,
     ];
     for (final _experience in _experienceList) {
       _experiencesIds.add(await _insertExperience(_experience));
     }
   }
-  
+
   Future<int> _insertExperience(Experience experience) async {
     final _moorExperience = domainExperienceToMoorExperience(experience);
     final _experienceId = await _database.moorExperiencesDao.insertExperience(_moorExperience);
@@ -487,7 +550,7 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
     }
     return _experienceId;
   }
-  
+
   Future _insertTags(Set<int> _userIds, Set<int> _tagsIds) async {
     final _tag = getValidTag();
     final _moorTagSport = domainTagToMoorTag(_tag).copyWith(
@@ -563,18 +626,21 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
       username: const Value("charlie"),
       email: const Value("wew@lad.lel"),
       description: const Value("Why even live?"),
+      level: const Value(90),
     );
     final _moorUserBro = _moorUserRicky.copyWith(
       name: const Value("Bro"),
       username: const Value("suck_lid"),
       email: const Value("chicken@huck.moguls"),
       description: const Value("Snake bite nose press flow couloir, poaching freshies OTB ride"),
+      level: const Value(66),
     );
     final _moorUserHipster = _moorUserRicky.copyWith(
       name: const Value("I'm baby"),
       username: const Value("stumptown"),
       email: const Value("paleo@pork.belly"),
       description: const Value("Vinyl succulents poutine brunch twee, gentrify cred listicle affogato four dollar toast."),
+      level: const Value(32),
     );
     final _moorUserList = [
       _moorUserRicky,

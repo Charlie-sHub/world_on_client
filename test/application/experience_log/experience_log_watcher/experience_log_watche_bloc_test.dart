@@ -22,7 +22,7 @@ void main() {
       loadUserLog = getIt<WatchUserLog>();
     },
   );
-  final experienceSet = KtSet.of(Experience.empty());
+  final experienceList = KtList.of(Experience.empty());
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
@@ -32,7 +32,7 @@ void main() {
   blocTest(
     TestDescription.shouldEmitSuccess,
     build: () {
-      when(loadUserLog.call(any)).thenAnswer((realInvocation) => createStream(right(experienceSet)));
+      when(loadUserLog.call(any)).thenAnswer((realInvocation) => createStream(right(experienceList)));
       return getIt<ExperienceLogWatcherBloc>();
     },
     act: (bloc) async => bloc.add(const ExperienceLogWatcherEvent.watchExperiencesLogStarted()),
@@ -42,7 +42,7 @@ void main() {
     },
     expect: [
       const ExperienceLogWatcherState.loadInProgress(),
-      ExperienceLogWatcherState.loadSuccess(experienceSet),
+      ExperienceLogWatcherState.loadSuccess(experienceList),
     ],
   );
   blocTest(

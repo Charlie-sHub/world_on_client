@@ -41,10 +41,9 @@ class SearchExperiencesTabView extends StatelessWidget {
           },
         ),
         searchFailure: (state) => InkWell(
-          onTap: () async =>
-            context.bloc<SearchExperiencesByNameWatcherBloc>().add(
-              SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(searchTerm),
-            ),
+          onTap: () async => context.bloc<SearchExperiencesByNameWatcherBloc>().add(
+                SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(searchTerm),
+              ),
           child: ErrorDisplay(failure: state.failure),
         ),
       ),

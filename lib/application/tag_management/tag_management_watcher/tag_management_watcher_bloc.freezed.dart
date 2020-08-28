@@ -16,6 +16,13 @@ class _$TagManagementWatcherEventTearOff {
   _WatchAllTagsStarted watchAllTagsStarted() {
     return const _WatchAllTagsStarted();
   }
+
+// ignore: unused_element
+  _ResultsReceived resultsReceived(Either<Failure, KtList<Tag>> failureOrTags) {
+    return _ResultsReceived(
+      failureOrTags,
+    );
+  }
 }
 
 // ignore: unused_element
@@ -25,31 +32,32 @@ mixin _$TagManagementWatcherEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result watchAllTagsStarted(),
+    @required Result resultsReceived(Either<Failure, KtList<Tag>> failureOrTags),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result watchAllTagsStarted(),
+    Result resultsReceived(Either<Failure, KtList<Tag>> failureOrTags),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result watchAllTagsStarted(_WatchAllTagsStarted value),
+    @required Result resultsReceived(_ResultsReceived value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result watchAllTagsStarted(_WatchAllTagsStarted value),
+    Result resultsReceived(_ResultsReceived value),
     @required Result orElse(),
   });
 }
 
 abstract class $TagManagementWatcherEventCopyWith<$Res> {
-  factory $TagManagementWatcherEventCopyWith(TagManagementWatcherEvent value,
-          $Res Function(TagManagementWatcherEvent) then) =
-      _$TagManagementWatcherEventCopyWithImpl<$Res>;
+  factory $TagManagementWatcherEventCopyWith(TagManagementWatcherEvent value, $Res Function(TagManagementWatcherEvent) then) = _$TagManagementWatcherEventCopyWithImpl<$Res>;
 }
 
-class _$TagManagementWatcherEventCopyWithImpl<$Res>
-    implements $TagManagementWatcherEventCopyWith<$Res> {
+class _$TagManagementWatcherEventCopyWithImpl<$Res> implements $TagManagementWatcherEventCopyWith<$Res> {
   _$TagManagementWatcherEventCopyWithImpl(this._value, this._then);
 
   final TagManagementWatcherEvent _value;
@@ -58,17 +66,11 @@ class _$TagManagementWatcherEventCopyWithImpl<$Res>
 }
 
 abstract class _$WatchAllTagsStartedCopyWith<$Res> {
-  factory _$WatchAllTagsStartedCopyWith(_WatchAllTagsStarted value,
-          $Res Function(_WatchAllTagsStarted) then) =
-      __$WatchAllTagsStartedCopyWithImpl<$Res>;
+  factory _$WatchAllTagsStartedCopyWith(_WatchAllTagsStarted value, $Res Function(_WatchAllTagsStarted) then) = __$WatchAllTagsStartedCopyWithImpl<$Res>;
 }
 
-class __$WatchAllTagsStartedCopyWithImpl<$Res>
-    extends _$TagManagementWatcherEventCopyWithImpl<$Res>
-    implements _$WatchAllTagsStartedCopyWith<$Res> {
-  __$WatchAllTagsStartedCopyWithImpl(
-      _WatchAllTagsStarted _value, $Res Function(_WatchAllTagsStarted) _then)
-      : super(_value, (v) => _then(v as _WatchAllTagsStarted));
+class __$WatchAllTagsStartedCopyWithImpl<$Res> extends _$TagManagementWatcherEventCopyWithImpl<$Res> implements _$WatchAllTagsStartedCopyWith<$Res> {
+  __$WatchAllTagsStartedCopyWithImpl(_WatchAllTagsStarted _value, $Res Function(_WatchAllTagsStarted) _then) : super(_value, (v) => _then(v as _WatchAllTagsStarted));
 
   @override
   _WatchAllTagsStarted get _value => super._value as _WatchAllTagsStarted;
@@ -94,8 +96,10 @@ class _$_WatchAllTagsStarted implements _WatchAllTagsStarted {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result watchAllTagsStarted(),
+    @required Result resultsReceived(Either<Failure, KtList<Tag>> failureOrTags),
   }) {
     assert(watchAllTagsStarted != null);
+    assert(resultsReceived != null);
     return watchAllTagsStarted();
   }
 
@@ -103,6 +107,7 @@ class _$_WatchAllTagsStarted implements _WatchAllTagsStarted {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result watchAllTagsStarted(),
+    Result resultsReceived(Either<Failure, KtList<Tag>> failureOrTags),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -116,8 +121,10 @@ class _$_WatchAllTagsStarted implements _WatchAllTagsStarted {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result watchAllTagsStarted(_WatchAllTagsStarted value),
+    @required Result resultsReceived(_ResultsReceived value),
   }) {
     assert(watchAllTagsStarted != null);
+    assert(resultsReceived != null);
     return watchAllTagsStarted(this);
   }
 
@@ -125,6 +132,7 @@ class _$_WatchAllTagsStarted implements _WatchAllTagsStarted {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result watchAllTagsStarted(_WatchAllTagsStarted value),
+    Result resultsReceived(_ResultsReceived value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -137,6 +145,109 @@ class _$_WatchAllTagsStarted implements _WatchAllTagsStarted {
 
 abstract class _WatchAllTagsStarted implements TagManagementWatcherEvent {
   const factory _WatchAllTagsStarted() = _$_WatchAllTagsStarted;
+}
+
+abstract class _$ResultsReceivedCopyWith<$Res> {
+  factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
+
+  $Res call({Either<Failure, KtList<Tag>> failureOrTags});
+}
+
+class __$ResultsReceivedCopyWithImpl<$Res> extends _$TagManagementWatcherEventCopyWithImpl<$Res> implements _$ResultsReceivedCopyWith<$Res> {
+  __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then) : super(_value, (v) => _then(v as _ResultsReceived));
+
+  @override
+  _ResultsReceived get _value => super._value as _ResultsReceived;
+
+  @override
+  $Res call({
+    Object failureOrTags = freezed,
+  }) {
+    return _then(_ResultsReceived(
+      failureOrTags == freezed ? _value.failureOrTags : failureOrTags as Either<Failure, KtList<Tag>>,
+    ));
+  }
+}
+
+class _$_ResultsReceived implements _ResultsReceived {
+  const _$_ResultsReceived(this.failureOrTags) : assert(failureOrTags != null);
+
+  @override
+  final Either<Failure, KtList<Tag>> failureOrTags;
+
+  @override
+  String toString() {
+    return 'TagManagementWatcherEvent.resultsReceived(failureOrTags: $failureOrTags)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _ResultsReceived && (identical(other.failureOrTags, failureOrTags) || const DeepCollectionEquality().equals(other.failureOrTags, failureOrTags)));
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrTags);
+
+  @override
+  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result watchAllTagsStarted(),
+    @required Result resultsReceived(Either<Failure, KtList<Tag>> failureOrTags),
+  }) {
+    assert(watchAllTagsStarted != null);
+    assert(resultsReceived != null);
+    return resultsReceived(failureOrTags);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result watchAllTagsStarted(),
+    Result resultsReceived(Either<Failure, KtList<Tag>> failureOrTags),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (resultsReceived != null) {
+      return resultsReceived(failureOrTags);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result watchAllTagsStarted(_WatchAllTagsStarted value),
+    @required Result resultsReceived(_ResultsReceived value),
+  }) {
+    assert(watchAllTagsStarted != null);
+    assert(resultsReceived != null);
+    return resultsReceived(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result watchAllTagsStarted(_WatchAllTagsStarted value),
+    Result resultsReceived(_ResultsReceived value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (resultsReceived != null) {
+      return resultsReceived(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ResultsReceived implements TagManagementWatcherEvent {
+  const factory _ResultsReceived(Either<Failure, KtList<Tag>> failureOrTags) = _$_ResultsReceived;
+
+  Either<Failure, KtList<Tag>> get failureOrTags;
+
+  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith;
 }
 
 class _$TagManagementWatcherStateTearOff {
@@ -153,15 +264,15 @@ class _$TagManagementWatcherStateTearOff {
   }
 
 // ignore: unused_element
-  _loadSuccess loadSuccess(KtSet<Tag> tags) {
-    return _loadSuccess(
+  _LoadSuccess loadSuccess(KtList<Tag> tags) {
+    return _LoadSuccess(
       tags,
     );
   }
 
 // ignore: unused_element
-  _loadFailure loadFailure(Failure<dynamic> failure) {
-    return _loadFailure(
+  _LoadFailure loadFailure(Failure<dynamic> failure) {
+    return _LoadFailure(
       failure,
     );
   }
@@ -175,14 +286,14 @@ mixin _$TagManagementWatcherState {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(KtSet<Tag> tags),
+    @required Result loadSuccess(KtList<Tag> tags),
     @required Result loadFailure(Failure<dynamic> failure),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(KtSet<Tag> tags),
+    Result loadSuccess(KtList<Tag> tags),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   });
@@ -190,27 +301,24 @@ mixin _$TagManagementWatcherState {
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
     @required Result loadInProgress(_LoadInProgress value),
-    @required Result loadSuccess(_loadSuccess value),
-    @required Result loadFailure(_loadFailure value),
+    @required Result loadSuccess(_LoadSuccess value),
+    @required Result loadFailure(_LoadFailure value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
     Result loadInProgress(_LoadInProgress value),
-    Result loadSuccess(_loadSuccess value),
-    Result loadFailure(_loadFailure value),
+    Result loadSuccess(_LoadSuccess value),
+    Result loadFailure(_LoadFailure value),
     @required Result orElse(),
   });
 }
 
 abstract class $TagManagementWatcherStateCopyWith<$Res> {
-  factory $TagManagementWatcherStateCopyWith(TagManagementWatcherState value,
-          $Res Function(TagManagementWatcherState) then) =
-      _$TagManagementWatcherStateCopyWithImpl<$Res>;
+  factory $TagManagementWatcherStateCopyWith(TagManagementWatcherState value, $Res Function(TagManagementWatcherState) then) = _$TagManagementWatcherStateCopyWithImpl<$Res>;
 }
 
-class _$TagManagementWatcherStateCopyWithImpl<$Res>
-    implements $TagManagementWatcherStateCopyWith<$Res> {
+class _$TagManagementWatcherStateCopyWithImpl<$Res> implements $TagManagementWatcherStateCopyWith<$Res> {
   _$TagManagementWatcherStateCopyWithImpl(this._value, this._then);
 
   final TagManagementWatcherState _value;
@@ -219,15 +327,11 @@ class _$TagManagementWatcherStateCopyWithImpl<$Res>
 }
 
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
-class __$InitialCopyWithImpl<$Res>
-    extends _$TagManagementWatcherStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$TagManagementWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -254,7 +358,7 @@ class _$_Initial implements _Initial {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(KtSet<Tag> tags),
+    @required Result loadSuccess(KtList<Tag> tags),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -269,7 +373,7 @@ class _$_Initial implements _Initial {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(KtSet<Tag> tags),
+    Result loadSuccess(KtList<Tag> tags),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -285,8 +389,8 @@ class _$_Initial implements _Initial {
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
     @required Result loadInProgress(_LoadInProgress value),
-    @required Result loadSuccess(_loadSuccess value),
-    @required Result loadFailure(_loadFailure value),
+    @required Result loadSuccess(_LoadSuccess value),
+    @required Result loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
     assert(loadInProgress != null);
@@ -300,8 +404,8 @@ class _$_Initial implements _Initial {
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
     Result loadInProgress(_LoadInProgress value),
-    Result loadSuccess(_loadSuccess value),
-    Result loadFailure(_loadFailure value),
+    Result loadSuccess(_LoadSuccess value),
+    Result loadFailure(_LoadFailure value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -317,17 +421,11 @@ abstract class _Initial implements TagManagementWatcherState {
 }
 
 abstract class _$LoadInProgressCopyWith<$Res> {
-  factory _$LoadInProgressCopyWith(
-          _LoadInProgress value, $Res Function(_LoadInProgress) then) =
-      __$LoadInProgressCopyWithImpl<$Res>;
+  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) = __$LoadInProgressCopyWithImpl<$Res>;
 }
 
-class __$LoadInProgressCopyWithImpl<$Res>
-    extends _$TagManagementWatcherStateCopyWithImpl<$Res>
-    implements _$LoadInProgressCopyWith<$Res> {
-  __$LoadInProgressCopyWithImpl(
-      _LoadInProgress _value, $Res Function(_LoadInProgress) _then)
-      : super(_value, (v) => _then(v as _LoadInProgress));
+class __$LoadInProgressCopyWithImpl<$Res> extends _$TagManagementWatcherStateCopyWithImpl<$Res> implements _$LoadInProgressCopyWith<$Res> {
+  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then) : super(_value, (v) => _then(v as _LoadInProgress));
 
   @override
   _LoadInProgress get _value => super._value as _LoadInProgress;
@@ -354,7 +452,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(KtSet<Tag> tags),
+    @required Result loadSuccess(KtList<Tag> tags),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -369,7 +467,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(KtSet<Tag> tags),
+    Result loadSuccess(KtList<Tag> tags),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -385,8 +483,8 @@ class _$_LoadInProgress implements _LoadInProgress {
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
     @required Result loadInProgress(_LoadInProgress value),
-    @required Result loadSuccess(_loadSuccess value),
-    @required Result loadFailure(_loadFailure value),
+    @required Result loadSuccess(_LoadSuccess value),
+    @required Result loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
     assert(loadInProgress != null);
@@ -400,8 +498,8 @@ class _$_LoadInProgress implements _LoadInProgress {
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
     Result loadInProgress(_LoadInProgress value),
-    Result loadSuccess(_loadSuccess value),
-    Result loadFailure(_loadFailure value),
+    Result loadSuccess(_LoadSuccess value),
+    Result loadFailure(_LoadFailure value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -416,38 +514,33 @@ abstract class _LoadInProgress implements TagManagementWatcherState {
   const factory _LoadInProgress() = _$_LoadInProgress;
 }
 
-abstract class _$loadSuccessCopyWith<$Res> {
-  factory _$loadSuccessCopyWith(
-          _loadSuccess value, $Res Function(_loadSuccess) then) =
-      __$loadSuccessCopyWithImpl<$Res>;
-  $Res call({KtSet<Tag> tags});
+abstract class _$LoadSuccessCopyWith<$Res> {
+  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
+
+  $Res call({KtList<Tag> tags});
 }
 
-class __$loadSuccessCopyWithImpl<$Res>
-    extends _$TagManagementWatcherStateCopyWithImpl<$Res>
-    implements _$loadSuccessCopyWith<$Res> {
-  __$loadSuccessCopyWithImpl(
-      _loadSuccess _value, $Res Function(_loadSuccess) _then)
-      : super(_value, (v) => _then(v as _loadSuccess));
+class __$LoadSuccessCopyWithImpl<$Res> extends _$TagManagementWatcherStateCopyWithImpl<$Res> implements _$LoadSuccessCopyWith<$Res> {
+  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then) : super(_value, (v) => _then(v as _LoadSuccess));
 
   @override
-  _loadSuccess get _value => super._value as _loadSuccess;
+  _LoadSuccess get _value => super._value as _LoadSuccess;
 
   @override
   $Res call({
     Object tags = freezed,
   }) {
-    return _then(_loadSuccess(
-      tags == freezed ? _value.tags : tags as KtSet<Tag>,
+    return _then(_LoadSuccess(
+      tags == freezed ? _value.tags : tags as KtList<Tag>,
     ));
   }
 }
 
-class _$_loadSuccess implements _loadSuccess {
-  const _$_loadSuccess(this.tags) : assert(tags != null);
+class _$_LoadSuccess implements _LoadSuccess {
+  const _$_LoadSuccess(this.tags) : assert(tags != null);
 
   @override
-  final KtSet<Tag> tags;
+  final KtList<Tag> tags;
 
   @override
   String toString() {
@@ -456,26 +549,21 @@ class _$_loadSuccess implements _loadSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _loadSuccess &&
-            (identical(other.tags, tags) ||
-                const DeepCollectionEquality().equals(other.tags, tags)));
+    return identical(this, other) || (other is _LoadSuccess && (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(tags);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tags);
 
   @override
-  _$loadSuccessCopyWith<_loadSuccess> get copyWith =>
-      __$loadSuccessCopyWithImpl<_loadSuccess>(this, _$identity);
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(KtSet<Tag> tags),
+    @required Result loadSuccess(KtList<Tag> tags),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -490,7 +578,7 @@ class _$_loadSuccess implements _loadSuccess {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(KtSet<Tag> tags),
+    Result loadSuccess(KtList<Tag> tags),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -506,8 +594,8 @@ class _$_loadSuccess implements _loadSuccess {
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
     @required Result loadInProgress(_LoadInProgress value),
-    @required Result loadSuccess(_loadSuccess value),
-    @required Result loadFailure(_loadFailure value),
+    @required Result loadSuccess(_LoadSuccess value),
+    @required Result loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
     assert(loadInProgress != null);
@@ -521,8 +609,8 @@ class _$_loadSuccess implements _loadSuccess {
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
     Result loadInProgress(_LoadInProgress value),
-    Result loadSuccess(_loadSuccess value),
-    Result loadFailure(_loadFailure value),
+    Result loadSuccess(_LoadSuccess value),
+    Result loadFailure(_LoadFailure value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -533,37 +621,33 @@ class _$_loadSuccess implements _loadSuccess {
   }
 }
 
-abstract class _loadSuccess implements TagManagementWatcherState {
-  const factory _loadSuccess(KtSet<Tag> tags) = _$_loadSuccess;
+abstract class _LoadSuccess implements TagManagementWatcherState {
+  const factory _LoadSuccess(KtList<Tag> tags) = _$_LoadSuccess;
 
-  KtSet<Tag> get tags;
-  _$loadSuccessCopyWith<_loadSuccess> get copyWith;
+  KtList<Tag> get tags;
+
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
-abstract class _$loadFailureCopyWith<$Res> {
-  factory _$loadFailureCopyWith(
-          _loadFailure value, $Res Function(_loadFailure) then) =
-      __$loadFailureCopyWithImpl<$Res>;
+abstract class _$LoadFailureCopyWith<$Res> {
+  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
-class __$loadFailureCopyWithImpl<$Res>
-    extends _$TagManagementWatcherStateCopyWithImpl<$Res>
-    implements _$loadFailureCopyWith<$Res> {
-  __$loadFailureCopyWithImpl(
-      _loadFailure _value, $Res Function(_loadFailure) _then)
-      : super(_value, (v) => _then(v as _loadFailure));
+class __$LoadFailureCopyWithImpl<$Res> extends _$TagManagementWatcherStateCopyWithImpl<$Res> implements _$LoadFailureCopyWith<$Res> {
+  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then) : super(_value, (v) => _then(v as _LoadFailure));
 
   @override
-  _loadFailure get _value => super._value as _loadFailure;
+  _LoadFailure get _value => super._value as _LoadFailure;
 
   @override
   $Res call({
     Object failure = freezed,
   }) {
-    return _then(_loadFailure(
+    return _then(_LoadFailure(
       failure == freezed ? _value.failure : failure as Failure<dynamic>,
     ));
   }
@@ -579,8 +663,8 @@ class __$loadFailureCopyWithImpl<$Res>
   }
 }
 
-class _$_loadFailure implements _loadFailure {
-  const _$_loadFailure(this.failure) : assert(failure != null);
+class _$_LoadFailure implements _LoadFailure {
+  const _$_LoadFailure(this.failure) : assert(failure != null);
 
   @override
   final Failure<dynamic> failure;
@@ -592,26 +676,21 @@ class _$_loadFailure implements _loadFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _loadFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) || (other is _LoadFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
-  _$loadFailureCopyWith<_loadFailure> get copyWith =>
-      __$loadFailureCopyWithImpl<_loadFailure>(this, _$identity);
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith => __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loadInProgress(),
-    @required Result loadSuccess(KtSet<Tag> tags),
+    @required Result loadSuccess(KtList<Tag> tags),
     @required Result loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -626,7 +705,7 @@ class _$_loadFailure implements _loadFailure {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result loadInProgress(),
-    Result loadSuccess(KtSet<Tag> tags),
+    Result loadSuccess(KtList<Tag> tags),
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   }) {
@@ -642,8 +721,8 @@ class _$_loadFailure implements _loadFailure {
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
     @required Result loadInProgress(_LoadInProgress value),
-    @required Result loadSuccess(_loadSuccess value),
-    @required Result loadFailure(_loadFailure value),
+    @required Result loadSuccess(_LoadSuccess value),
+    @required Result loadFailure(_LoadFailure value),
   }) {
     assert(initial != null);
     assert(loadInProgress != null);
@@ -657,8 +736,8 @@ class _$_loadFailure implements _loadFailure {
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
     Result loadInProgress(_LoadInProgress value),
-    Result loadSuccess(_loadSuccess value),
-    Result loadFailure(_loadFailure value),
+    Result loadSuccess(_LoadSuccess value),
+    Result loadFailure(_LoadFailure value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -669,9 +748,10 @@ class _$_loadFailure implements _loadFailure {
   }
 }
 
-abstract class _loadFailure implements TagManagementWatcherState {
-  const factory _loadFailure(Failure<dynamic> failure) = _$_loadFailure;
+abstract class _LoadFailure implements TagManagementWatcherState {
+  const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
   Failure<dynamic> get failure;
-  _$loadFailureCopyWith<_loadFailure> get copyWith;
+
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith;
 }

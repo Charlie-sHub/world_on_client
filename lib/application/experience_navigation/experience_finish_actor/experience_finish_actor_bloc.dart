@@ -20,11 +20,11 @@ class ExperienceFinishActorBloc extends Bloc<ExperienceFinishActorEvent, Experie
   @override
   Stream<ExperienceFinishActorState> mapEventToState(ExperienceFinishActorEvent event) async* {
     yield* event.map(
-      finishedExperience: onFinishedExperience,
+      finishedExperience: _onFinishedExperience,
     );
   }
 
-  Stream<ExperienceFinishActorState> onFinishedExperience(_FinishedExperience event) async* {
+  Stream<ExperienceFinishActorState> _onFinishedExperience(_FinishedExperience event) async* {
     yield const ExperienceFinishActorState.actionInProgress();
     final _finishExperience = getIt<finish_experience.FinishExperience>();
     final _finishFailureOrUnit = await _finishExperience(

@@ -19,13 +19,13 @@ class ObjectivesTrackerBloc extends Bloc<ObjectivesTrackerEvent, ObjectivesTrack
   @override
   Stream<ObjectivesTrackerState> mapEventToState(ObjectivesTrackerEvent event) async* {
     yield* event.map(
-      initialized: onInitialized,
-      objectiveAccomplished: onObjectiveAccomplished,
+      initialized: _onInitialized,
+      objectiveAccomplished: _onObjectiveAccomplished,
     );
   }
 
-  Stream<ObjectivesTrackerState> onObjectiveAccomplished(_ObjectiveAccomplished event) async* {
-    // Maybe it's unnecessary, but this way i make sure the list can only change where i want it to change
+  Stream<ObjectivesTrackerState> _onObjectiveAccomplished(_ObjectiveAccomplished event) async* {
+    // Maybe it's unnecessary, but this way i make sure the list can _only change where i want it to change
     final _mutableKtList = state.objectivesToDo.toMutableList();
     _mutableKtList.remove(event.objective);
     yield state.copyWith(
@@ -34,7 +34,7 @@ class ObjectivesTrackerBloc extends Bloc<ObjectivesTrackerEvent, ObjectivesTrack
     );
   }
 
-  Stream<ObjectivesTrackerState> onInitialized(_Initialized event) async* {
+  Stream<ObjectivesTrackerState> _onInitialized(_Initialized event) async* {
     yield state.copyWith(objectivesToDo: event.objectiveSet.getOrCrash().toList());
   }
 }

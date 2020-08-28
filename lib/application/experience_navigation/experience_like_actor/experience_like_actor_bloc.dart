@@ -25,12 +25,12 @@ class ExperienceLikeActorBloc extends Bloc<ExperienceLikeActorEvent, ExperienceL
   @override
   Stream<ExperienceLikeActorState> mapEventToState(ExperienceLikeActorEvent event) async* {
     yield* event.map(
-      initialized: onInitialized,
-      liked: onLiked,
+      initialized: _onInitialized,
+      liked: _onLiked,
     );
   }
 
-  Stream<ExperienceLikeActorState> onLiked(_Liked event) async* {
+  Stream<ExperienceLikeActorState> _onLiked(_Liked event) async* {
     yield const ExperienceLikeActorState.actionInProgress();
     final _likeExperience = getIt<LikeExperience>();
     final _failureOrUnit = await _likeExperience(
@@ -42,7 +42,7 @@ class ExperienceLikeActorBloc extends Bloc<ExperienceLikeActorEvent, ExperienceL
     );
   }
 
-  Stream<ExperienceLikeActorState> onInitialized(_Initialized event) async* {
+  Stream<ExperienceLikeActorState> _onInitialized(_Initialized event) async* {
     final _getLoggedInUser = getIt<GetLoggedInUser>();
     final _userOption = await _getLoggedInUser(getIt<NoParams>());
     final _user = _userOption.fold(

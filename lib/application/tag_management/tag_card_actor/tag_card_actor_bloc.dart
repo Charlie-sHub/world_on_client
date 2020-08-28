@@ -25,13 +25,13 @@ class TagCardActorBloc extends Bloc<TagCardActorEvent, TagCardActorState> {
   @override
   Stream<TagCardActorState> mapEventToState(TagCardActorEvent event) async* {
     yield* event.map(
-      initialized: onInitialized,
-      dismissedFromInterests: onDismissedFromInterests,
-      addedToInterests: onAddedToInterests,
+      initialized: _onInitialized,
+      dismissedFromInterests: _onDismissedFromInterests,
+      addedToInterests: _onAddedToInterests,
     );
   }
 
-  Stream<TagCardActorState> onAddedToInterests(_AddedToInterests event) async* {
+  Stream<TagCardActorState> _onAddedToInterests(_AddedToInterests event) async* {
     yield const TagCardActorState.actionInProgress();
     final _addToInterests = getIt<add_tag_to_interests.AddTagToInterests>();
     final _failureOrUnit = await _addToInterests(
@@ -43,7 +43,7 @@ class TagCardActorBloc extends Bloc<TagCardActorEvent, TagCardActorState> {
     );
   }
 
-  Stream<TagCardActorState> onDismissedFromInterests(_DismissedFromInterests event) async* {
+  Stream<TagCardActorState> _onDismissedFromInterests(_DismissedFromInterests event) async* {
     yield const TagCardActorState.actionInProgress();
     final _dismissFromInterests = getIt<dismiss_tag_from_interests.DismissTagFromInterests>();
     final _failureOrUnit = await _dismissFromInterests(
@@ -55,7 +55,9 @@ class TagCardActorBloc extends Bloc<TagCardActorEvent, TagCardActorState> {
     );
   }
 
-  Stream<TagCardActorState> onInitialized(_Initialized event) async* {
+// TODO: Why is this method here?
+  // It's exactly the same as the tag card check
+  Stream<TagCardActorState> _onInitialized(_Initialized event) async* {
     final _getLoggedInUser = getIt<GetLoggedInUser>();
     final _userOption = await _getLoggedInUser(getIt<NoParams>());
     final _user = _userOption.fold(

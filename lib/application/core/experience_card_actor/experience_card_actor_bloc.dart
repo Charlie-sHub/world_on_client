@@ -25,13 +25,13 @@ class ExperienceCardActorBloc extends Bloc<ExperienceCardActorEvent, ExperienceC
   @override
   Stream<ExperienceCardActorState> mapEventToState(ExperienceCardActorEvent event) async* {
     yield* event.map(
-      initialized: onInitialized,
-      dismissedExperienceFromLog: onDismissedExperienceFromLog,
-      addedExperienceToLog: onAddedExperienceToLog,
+      initialized: _onInitialized,
+      dismissedExperienceFromLog: _onDismissedExperienceFromLog,
+      addedExperienceToLog: _onAddedExperienceToLog,
     );
   }
 
-  Stream<ExperienceCardActorState> onAddedExperienceToLog(_AddedExperienceToLog event) async* {
+  Stream<ExperienceCardActorState> _onAddedExperienceToLog(_AddedExperienceToLog event) async* {
     yield const ExperienceCardActorState.actionInProgress();
     final _addExperienceToLog = getIt<add_experience_to_log.AddExperienceToLog>();
     final _failureOrUnit = await _addExperienceToLog(
@@ -43,7 +43,7 @@ class ExperienceCardActorBloc extends Bloc<ExperienceCardActorEvent, ExperienceC
     );
   }
 
-  Stream<ExperienceCardActorState> onDismissedExperienceFromLog(_DismissedExperienceFromLog event) async* {
+  Stream<ExperienceCardActorState> _onDismissedExperienceFromLog(_DismissedExperienceFromLog event) async* {
     yield const ExperienceCardActorState.actionInProgress();
     final _dismissExperienceFromLog = getIt<dismiss_experience_from_log.DismissExperienceFromLog>();
     final _failureOrUnit = await _dismissExperienceFromLog(
@@ -55,7 +55,7 @@ class ExperienceCardActorBloc extends Bloc<ExperienceCardActorEvent, ExperienceC
     );
   }
 
-  Stream<ExperienceCardActorState> onInitialized(_Initialized event) async* {
+  Stream<ExperienceCardActorState> _onInitialized(_Initialized event) async* {
     final _getLoggedInUser = getIt<GetLoggedInUser>();
     final _loggedInUserOption = await _getLoggedInUser(getIt<NoParams>());
     final _loggedInUser = _loggedInUserOption.fold(

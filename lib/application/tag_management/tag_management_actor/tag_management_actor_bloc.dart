@@ -10,9 +10,7 @@ import 'package:worldon/domain/tag_management/use_case/delete_tag.dart';
 import 'package:worldon/injection.dart';
 
 part 'tag_management_actor_bloc.freezed.dart';
-
 part 'tag_management_actor_event.dart';
-
 part 'tag_management_actor_state.dart';
 
 /// As it controls the deletion of [Tag]s this [Bloc] is meant administrative purposes
@@ -23,11 +21,11 @@ class TagManagementActorBloc extends Bloc<TagManagementActorEvent, TagManagement
   @override
   Stream<TagManagementActorState> mapEventToState(TagManagementActorEvent event) async* {
     yield* event.map(
-      deleted: onDeleted,
+      deleted: _onDeleted,
     );
   }
 
-  Stream<TagManagementActorState> onDeleted(_Deleted event) async* {
+  Stream<TagManagementActorState> _onDeleted(_Deleted event) async* {
     yield const TagManagementActorState.actionInProgress();
     final _deleteTag = getIt<DeleteTag>();
     final _eitherFailureOrSuccess = await _deleteTag(

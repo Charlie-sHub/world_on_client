@@ -70,16 +70,18 @@ class DevelopmentTagRepository implements TagCoreRepositoryInterface {
       );
 
   @override
-  Stream<Either<Failure, KtSet<Tag>>> watchAllTags() {
-    Either<Failure, KtSet<Tag>> _either;
+  Stream<Either<Failure, KtList<Tag>>> watchAllTags() {
+    Either<Failure, KtList<Tag>> _either;
     if (_random.nextBool()) {
-      _either = right(KtSet.of(
-        getValidTag(),
-        getValidTag().copyWith(
-          id: 2,
-          name: Name("Nullam quam"),
+      _either = right(
+        KtList.of(
+          getValidTag(),
+          getValidTag().copyWith(
+            id: 2,
+            name: Name("Nullam quam"),
+          ),
         ),
-      ));
+      );
     } else {
       _either = left(getServerErrorFailure());
     }
@@ -96,16 +98,18 @@ class DevelopmentTagRepository implements TagCoreRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtSet<Tag>>> watchTagsByCreator(int id) {
-    Either<Failure, KtSet<Tag>> _either;
+  Stream<Either<Failure, KtList<Tag>>> watchTagsByCreator(int id) {
+    Either<Failure, KtList<Tag>> _either;
     if (_random.nextBool()) {
-      _either = right(KtSet.of(
-        getValidTag(),
-        getValidTag().copyWith(
-          id: 2,
-          name: Name("Nullam quam"),
+      _either = right(
+        KtList.of(
+          getValidTag(),
+          getValidTag().copyWith(
+            id: 2,
+            name: Name("Nullam quam"),
+          ),
         ),
-      ));
+      );
     } else {
       _either = left(getServerErrorFailure());
     }
