@@ -35,7 +35,10 @@ void main() {
       when(getAllAchievements.call(any)).thenAnswer((_) => createStream(right(achievementList)));
       return getIt<AchievementManagementWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(const AchievementManagementWatcherEvent.watchAllAchievementsStarted()),
+    act: (bloc) async {
+      bloc.add(const AchievementManagementWatcherEvent.watchAllAchievementsStarted());
+      bloc.add(AchievementManagementWatcherEvent.resultsReceived(right(achievementList)));
+    },
     verify: (_) async {
       verify(getAllAchievements.call(any));
       verifyNoMoreInteractions(getAllAchievements);
@@ -51,7 +54,10 @@ void main() {
       when(getAllAchievements.call(any)).thenAnswer((_) => createStream(left(failure)));
       return getIt<AchievementManagementWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(const AchievementManagementWatcherEvent.watchAllAchievementsStarted()),
+    act: (bloc) async {
+      bloc.add(const AchievementManagementWatcherEvent.watchAllAchievementsStarted());
+      bloc.add(AchievementManagementWatcherEvent.resultsReceived(left(failure)));
+    },
     verify: (_) async {
       verify(getAllAchievements.call(any));
       verifyNoMoreInteractions(getAllAchievements);

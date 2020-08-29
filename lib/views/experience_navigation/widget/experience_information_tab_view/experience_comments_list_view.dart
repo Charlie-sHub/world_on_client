@@ -36,7 +36,10 @@ class ExperienceCommentsListView extends StatelessWidget {
               itemBuilder: (context, index) {
                 final _comment = state.comments[index];
                 if (_comment.isValid) {
-                  return CommentCard(comment: _comment);
+                  return CommentCard(
+                    comment: _comment,
+                    key: Key(_comment.id.toString()),
+                  );
                 } else {
                   return ErrorCard(
                     entityType: "Comment",

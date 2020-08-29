@@ -15,7 +15,7 @@ class CriticalErrorDisplay extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Icon(
+        const Icon(
           Icons.error_outline,
           color: WorldOnColors.red,
           size: 70,

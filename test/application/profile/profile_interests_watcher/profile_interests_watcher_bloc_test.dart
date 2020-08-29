@@ -37,7 +37,10 @@ void main() {
       when(loadUserInterests.call(any)).thenAnswer((realInvocation) => createStream(right(interests)));
       return getIt<ProfileInterestsWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(ProfileInterestsWatcherEvent.watchInterestsStarted(user)),
+    act: (bloc) async {
+      bloc.add(ProfileInterestsWatcherEvent.watchInterestsStarted(user));
+      bloc.add(ProfileInterestsWatcherEvent.resultsReceived(right(interests)));
+    },
     verify: (_) async {
       verify(loadUserInterests.call(any));
       verifyNoMoreInteractions(loadUserInterests);
@@ -53,7 +56,10 @@ void main() {
       when(loadUserInterests.call(any)).thenAnswer((realInvocation) => createStream(left(failure)));
       return getIt<ProfileInterestsWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(ProfileInterestsWatcherEvent.watchInterestsStarted(user)),
+    act: (bloc) async {
+      bloc.add(ProfileInterestsWatcherEvent.watchInterestsStarted(user));
+      bloc.add(ProfileInterestsWatcherEvent.resultsReceived(left(failure)));
+    },
     verify: (_) async {
       verify(loadUserInterests.call(any));
       verifyNoMoreInteractions(loadUserInterests);

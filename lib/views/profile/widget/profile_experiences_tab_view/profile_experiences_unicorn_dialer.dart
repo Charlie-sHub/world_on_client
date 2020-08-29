@@ -19,7 +19,7 @@ class ProfileExperiencesUnicornDialer extends StatelessWidget {
     return UnicornDialer(
       hasBackground: false,
       orientation: UnicornOrientation.VERTICAL,
-      parentButton: Icon(Icons.format_list_bulleted),
+      parentButton: const Icon(Icons.format_list_bulleted),
       childButtons: [
         UnicornButton(
           currentButton: FloatingActionButton(
@@ -29,29 +29,31 @@ class ProfileExperiencesUnicornDialer extends StatelessWidget {
                   ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(user),
                 ),
             foregroundColor: WorldOnColors.primary,
-            child: Icon(Icons.create),
+            child: const Icon(Icons.create),
           ),
         ),
         UnicornButton(
           currentButton: FloatingActionButton(
             heroTag: "done",
             mini: true,
-            onPressed: () => context.bloc<ProfileExperiencesWatcherBloc>().add(
-                  ProfileExperiencesWatcherEvent.watchExperiencesDoneStarted(user),
-                ),
+            onPressed: () =>
+              context.bloc<ProfileExperiencesWatcherBloc>().add(
+                ProfileExperiencesWatcherEvent.watchExperiencesDoneStarted(user),
+              ),
             foregroundColor: Colors.green,
-            child: Icon(Icons.done),
+            child: const Icon(Icons.done),
           ),
         ),
         UnicornButton(
           currentButton: FloatingActionButton(
             heroTag: "liked",
             mini: true,
-            onPressed: () => context.bloc<ProfileExperiencesWatcherBloc>().add(
-                  ProfileExperiencesWatcherEvent.watchExperiencesLikedStarted(user),
-                ),
+            onPressed: () =>
+              context.bloc<ProfileExperiencesWatcherBloc>().add(
+                ProfileExperiencesWatcherEvent.watchExperiencesLikedStarted(user),
+              ),
             foregroundColor: WorldOnColors.red,
-            child: FaIcon(FontAwesomeIcons.solidHeart),
+            child: const FaIcon(FontAwesomeIcons.solidHeart),
           ),
         ),
       ],

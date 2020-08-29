@@ -51,70 +51,6 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Future<Either<Failure, Unit>> blockUser(int blockedId) async {
-    try {
-      final _moorUser = await _database.moorUsersDao.getLoggedInUser();
-      final _userBlockRelation = _createUserBlockRelation(blockedId, _moorUser);
-      await _database.moorUsersDao.blockUser(_userBlockRelation);
-      return right(unit);
-    } catch (exception) {
-      _logger.e("Moor Database error: $exception");
-      return left(
-        Failure.coreData(
-          CoreDataFailure.serverError(
-            errorString: "Development repository error $exception",
-          ),
-        ),
-      );
-    }
-  }
-
-  @override
-  Future<Either<Failure, Unit>> unBlockUser(int blockedId) async {
-    try {
-      final _moorUser = await _database.moorUsersDao.getLoggedInUser();
-      final _userBlockRelation = _createUserBlockRelation(blockedId, _moorUser);
-      await _database.moorUsersDao.unBlockUser(_userBlockRelation);
-      return right(unit);
-    } catch (exception) {
-      _logger.e("Moor Database error: $exception");
-      return left(
-        Failure.coreData(
-          CoreDataFailure.serverError(
-            errorString: "Development repository error $exception",
-          ),
-        ),
-      );
-    }
-  }
-
-  UserBlockRelationsCompanion _createUserBlockRelation(int blockedId, MoorUser _moorUser) {
-    return UserBlockRelationsCompanion.insert(
-      blockedId: blockedId,
-      blockerId: _moorUser.id,
-    );
-  }
-
-  @override
-  Future<Either<Failure, Unit>> followUser(int userToFollowId) async {
-    try {
-      final _moorUser = await _database.moorUsersDao.getLoggedInUser();
-      final _userFollowRelation = _createUserFollowRelation(userToFollowId, _moorUser);
-      await _database.moorUsersDao.followUser(_userFollowRelation);
-      return right(unit);
-    } catch (exception) {
-      _logger.e("Moor Database error: $exception");
-      return left(
-        Failure.coreData(
-          CoreDataFailure.serverError(
-            errorString: "Development repository error $exception",
-          ),
-        ),
-      );
-    }
-  }
-
-  @override
   Future<Either<Failure, User>> getUser(int id) async {
     try {
       final _moorUser = await _database.moorUsersDao.getUserById(id);
@@ -133,10 +69,74 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
+  Future<Either<Failure, Unit>> blockUser(int blockedId) async {
+    try {
+      final _moorUser = await _database.moorUsersDao.getLoggedInUser();
+      final _userBlockRelation = _createUserBlockRelation(blockedId, _moorUser.id);
+      await _database.moorUsersDao.blockUser(_userBlockRelation);
+      return right(unit);
+    } catch (exception) {
+      _logger.e("Moor Database error: $exception");
+      return left(
+        Failure.coreData(
+          CoreDataFailure.serverError(
+            errorString: "Development repository error $exception",
+          ),
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, Unit>> unBlockUser(int blockedId) async {
+    try {
+      final _moorUser = await _database.moorUsersDao.getLoggedInUser();
+      final _userBlockRelation = _createUserBlockRelation(blockedId, _moorUser.id);
+      await _database.moorUsersDao.unBlockUser(_userBlockRelation);
+      return right(unit);
+    } catch (exception) {
+      _logger.e("Moor Database error: $exception");
+      return left(
+        Failure.coreData(
+          CoreDataFailure.serverError(
+            errorString: "Development repository error $exception",
+          ),
+        ),
+      );
+    }
+  }
+
+  UserBlockRelationsCompanion _createUserBlockRelation(int blockedId, int loggedInUserId) {
+    return UserBlockRelationsCompanion.insert(
+      blockedId: blockedId,
+      blockerId: loggedInUserId,
+    );
+  }
+
+  @override
+  Future<Either<Failure, Unit>> followUser(int userToFollowId) async {
+    try {
+      final _moorUser = await _database.moorUsersDao.getLoggedInUser();
+      final _userFollowRelation = _createUserFollowRelation(userToFollowId, _moorUser.id);
+      await _database.moorUsersDao.followUser(_userFollowRelation);
+      return right(unit);
+    } catch (exception) {
+      _logger.e("Moor Database error: $exception");
+      return left(
+        Failure.coreData(
+          CoreDataFailure.serverError(
+            errorString: "Development repository error $exception",
+          ),
+        ),
+      );
+    }
+  }
+
+  @override
   Future<Either<Failure, Unit>> unFollowUser(int userToUnFollowId) async {
     try {
       final _moorUser = await _database.moorUsersDao.getLoggedInUser();
-      final _userFollowRelation = _createUserFollowRelation(userToUnFollowId, _moorUser);
+      final _userFollowRelation = _createUserFollowRelation(userToUnFollowId, _moorUser.id);
       await _database.moorUsersDao.unFollowUser(_userFollowRelation);
       return right(unit);
     } catch (exception) {
@@ -151,10 +151,10 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
     }
   }
 
-  UserFollowRelationsCompanion _createUserFollowRelation(int userToUnFollowId, MoorUser _moorUser) {
+  UserFollowRelationsCompanion _createUserFollowRelation(int followedId, int loggedInUserId) {
     return UserFollowRelationsCompanion.insert(
-      followedId: userToUnFollowId,
-      followingId: _moorUser.id,
+      followedId: followedId,
+      followingId: loggedInUserId,
     );
   }
 

@@ -27,7 +27,6 @@ class TagsFoundView extends StatelessWidget {
           ),
           child: SingleChildScrollView(
             child: Wrap(
-              alignment: WrapAlignment.start,
               spacing: 5,
               runSpacing: 5,
               children: <Widget>[

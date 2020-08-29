@@ -81,11 +81,10 @@ class UserInterests extends Table {
   IntColumn get tagId => integer().customConstraint("REFERENCES moor_tags(id)")();
 
   @override
-  Set<Column> get primaryKey =>
-    {
-      userId,
-      tagId,
-    };
+  Set<Column> get primaryKey => {
+        userId,
+        tagId,
+      };
 }
 
 class UserDoneExperiences extends Table {

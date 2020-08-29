@@ -13,7 +13,7 @@ class DebugDatabaseButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: FaIcon(
+      icon: const FaIcon(
         FontAwesomeIcons.database,
         size: 25,
       ),

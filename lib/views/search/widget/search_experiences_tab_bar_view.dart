@@ -28,7 +28,10 @@ class SearchExperiencesTabView extends StatelessWidget {
           itemBuilder: (context, index) {
             final _experience = state.experiencesFound[index];
             if (_experience.isValid) {
-              return ExperienceCard(experience: _experience);
+              return ExperienceCard(
+                experience: _experience,
+                key: Key(_experience.id.toString()),
+              );
             } else {
               return ErrorCard(
                 entityType: "Experience",

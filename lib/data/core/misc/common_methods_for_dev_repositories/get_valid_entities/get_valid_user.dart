@@ -30,7 +30,7 @@ User getValidUser() {
     password: Password("abcd*1234"),
     email: EmailAddress("Ricardo@test.test"),
     birthday: PastDate(DateTime.now().subtract(const Duration(days: 10000))),
-    description: EntityDescription("Quisque vitae enim cursus mauris elementum tincidunt sed sodales felis."),
+    description: EntityDescription("Trying to turn life into a game"),
     imageURL: "testUser.jpg",
     imageFileOption: dartz.none(),
     level: UserLevel(10),

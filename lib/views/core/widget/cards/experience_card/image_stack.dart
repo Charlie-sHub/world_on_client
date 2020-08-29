@@ -38,13 +38,13 @@ class ImageStack extends StatelessWidget {
                 padding: const EdgeInsets.all(10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
+                  children: const <Widget>[
                     Icon(
                       Icons.place,
                       size: 30,
                     ),
                     // TODO: Implement a function that checks the distance from the experience
-                    const AutoSizeText(
+                    AutoSizeText(
                       "500m",
                       textAlign: TextAlign.center,
                       style: TextStyle(

@@ -106,7 +106,7 @@ void main() {
           _userNotificationsList.add(_moorNotification.copyWith(id: Value(_notificationId)));
         }
       }
-      final _notificationListStream = await _database.moorNotificationsDao.watchNotifications();
+      final _notificationListStream = _database.moorNotificationsDao.watchNotifications();
       // Assert
       expectLater(
         _notificationListStream.map(

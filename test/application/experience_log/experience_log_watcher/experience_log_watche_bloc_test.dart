@@ -35,7 +35,10 @@ void main() {
       when(loadUserLog.call(any)).thenAnswer((realInvocation) => createStream(right(experienceList)));
       return getIt<ExperienceLogWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(const ExperienceLogWatcherEvent.watchExperiencesLogStarted()),
+    act: (bloc) async {
+      bloc.add(const ExperienceLogWatcherEvent.watchExperiencesLogStarted());
+      bloc.add(ExperienceLogWatcherEvent.resultsReceived(right(experienceList)));
+    },
     verify: (_) async {
       verify(loadUserLog.call(any));
       verifyNoMoreInteractions(loadUserLog);
@@ -51,7 +54,10 @@ void main() {
       when(loadUserLog.call(any)).thenAnswer((realInvocation) => createStream(left(failure)));
       return getIt<ExperienceLogWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(const ExperienceLogWatcherEvent.watchExperiencesLogStarted()),
+    act: (bloc) async {
+      bloc.add(const ExperienceLogWatcherEvent.watchExperiencesLogStarted());
+      bloc.add(ExperienceLogWatcherEvent.resultsReceived(left(failure)));
+    },
     verify: (_) async {
       verify(loadUserLog.call(any));
       verifyNoMoreInteractions(loadUserLog);

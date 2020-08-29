@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:logger/logger.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
@@ -20,8 +19,6 @@ part 'follow_actor_state.dart';
 @injectable
 class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
   FollowActorBloc() : super(const FollowActorState.initial());
-
-  final _logger = Logger();
 
   @override
   Stream<FollowActorState> mapEventToState(FollowActorEvent event) async* {

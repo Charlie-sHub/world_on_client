@@ -10,7 +10,7 @@ class ReportButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: Icon(
+      icon: const Icon(
         Icons.error_outline,
         size: 30,
         color: WorldOnColors.background,

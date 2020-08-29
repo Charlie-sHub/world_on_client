@@ -37,7 +37,10 @@ void main() {
       when(loadUserAchievements.call(any)).thenAnswer((realInvocation) => createStream(right(achievements)));
       return getIt<ProfileAchievementsWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(ProfileAchievementsWatcherEvent.watchAchievementsStarted(user)),
+    act: (bloc) async {
+      bloc.add(ProfileAchievementsWatcherEvent.watchAchievementsStarted(user));
+      bloc.add(ProfileAchievementsWatcherEvent.resultsReceived(right(achievements)));
+    },
     verify: (_) async {
       verify(loadUserAchievements.call(any));
       verifyNoMoreInteractions(loadUserAchievements);
@@ -53,7 +56,10 @@ void main() {
       when(loadUserAchievements.call(any)).thenAnswer((realInvocation) => createStream(left(failure)));
       return getIt<ProfileAchievementsWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(ProfileAchievementsWatcherEvent.watchAchievementsStarted(user)),
+    act: (bloc) async {
+      bloc.add(ProfileAchievementsWatcherEvent.watchAchievementsStarted(user));
+      bloc.add(ProfileAchievementsWatcherEvent.resultsReceived(left(failure)));
+    },
     verify: (_) async {
       verify(loadUserAchievements.call(any));
       verifyNoMoreInteractions(loadUserAchievements);

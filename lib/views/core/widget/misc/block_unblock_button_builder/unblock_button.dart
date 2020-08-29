@@ -15,7 +15,7 @@ class UnBlockButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: FaIcon(
+      icon: const FaIcon(
         FontAwesomeIcons.user,
         color: Colors.green,
       ),

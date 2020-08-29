@@ -35,7 +35,10 @@ class ProfileAchievementsTabView extends StatelessWidget {
             itemBuilder: (context, index) {
               final _achievement = state.achievements[index];
               if (_achievement.isValid) {
-                return AchievementCard(achievement: _achievement);
+                return AchievementCard(
+                  achievement: _achievement,
+                  key: Key(_achievement.id.toString()),
+                );
               } else {
                 return ErrorCard(
                   entityType: "Achievement",

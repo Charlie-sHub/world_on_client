@@ -51,7 +51,10 @@ class ObjectiveCreationCard extends HookWidget {
                   itemBuilder: (context, index) {
                     final _objective = state.objectivesCreated.asSet().elementAt(index);
                     if (_objective.isValid) {
-                      return CreatedObjectiveCard(objective: _objective);
+                      return CreatedObjectiveCard(
+                        objective: _objective,
+                        key: Key(_objective.id.toString()),
+                      );
                     } else {
                       return ErrorCard(
                         entityType: "Objective",

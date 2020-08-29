@@ -62,6 +62,12 @@ class ExperienceCardActorBloc extends Bloc<ExperienceCardActorEvent, ExperienceC
       () => throw UnAuthenticatedError(),
       id,
     );
+    // TODO: Find a way to check if the user has the experience in its log already
+    // Either by checking from the database like with followsUser
+    // or by getting the relations when getting the logged in user
+    // TODO: Maybe just getting the ids
+    // Would be easier for the database too
+    // It'd be a mayor change though, but i've been thinking about it for a while and it's what makes the most sense
     if (_loggedInUser.experiencesToDo.contains(event.experience)) {
       yield const ExperienceCardActorState.inLog();
     } else {

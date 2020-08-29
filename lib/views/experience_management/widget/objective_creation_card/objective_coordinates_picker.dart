@@ -12,7 +12,7 @@ class ObjectiveCoordinatePicker extends StatelessWidget {
     return Expanded(
       child: IconButton(
         iconSize: 80,
-        icon: Icon(Icons.map),
+        icon: const Icon(Icons.map),
         onPressed: () => FlushbarHelper.createInformation(
           message: "This is just a placeholder",
         ).show(context),

@@ -35,7 +35,10 @@ void main() {
       when(getAllTags.call(any)).thenAnswer((_) => createStream(right(tagList)));
       return getIt<TagManagementWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(const TagManagementWatcherEvent.watchAllTagsStarted()),
+    act: (bloc) async {
+      bloc.add(const TagManagementWatcherEvent.watchAllTagsStarted());
+      bloc.add(TagManagementWatcherEvent.resultsReceived(right(tagList)));
+    },
     verify: (_) async {
       verify(getAllTags.call(any));
       verifyNoMoreInteractions(getAllTags);
@@ -51,7 +54,10 @@ void main() {
       when(getAllTags.call(any)).thenAnswer((_) => createStream(left(failure)));
       return getIt<TagManagementWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(const TagManagementWatcherEvent.watchAllTagsStarted()),
+    act: (bloc) async {
+      bloc.add(const TagManagementWatcherEvent.watchAllTagsStarted());
+      bloc.add(TagManagementWatcherEvent.resultsReceived(left(failure)));
+    },
     verify: (_) async {
       verify(getAllTags.call(any));
       verifyNoMoreInteractions(getAllTags);

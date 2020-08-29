@@ -30,7 +30,10 @@ class ObjectivesTabView extends StatelessWidget {
         itemBuilder: (context, index) {
           final _objective = experience.objectives.getOrCrash().asSet().elementAt(index);
           if (_objective.isValid) {
-            return ObjectiveCard(objective: _objective);
+            return ObjectiveCard(
+              objective: _objective,
+              key: Key(_objective.id.toString()),
+            );
           } else {
             return ErrorCard(
               entityType: "Objective",

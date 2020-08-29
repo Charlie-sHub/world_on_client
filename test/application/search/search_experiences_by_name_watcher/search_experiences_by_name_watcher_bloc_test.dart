@@ -37,7 +37,10 @@ void main() {
       when(searchExperiencesByName.call(any)).thenAnswer((_) => createStream(right(experiencesFound)));
       return getIt<SearchExperiencesByNameWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(name)),
+    act: (bloc) async {
+      bloc.add(SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(name));
+      bloc.add(SearchExperiencesByNameWatcherEvent.searchResultsReceived(right(experiencesFound)));
+    },
     verify: (_) async {
       verify(searchExperiencesByName.call(any));
       verifyNoMoreInteractions(searchExperiencesByName);
@@ -53,7 +56,10 @@ void main() {
       when(searchExperiencesByName.call(any)).thenAnswer((_) => createStream(left(failure)));
       return getIt<SearchExperiencesByNameWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(name)),
+    act: (bloc) async {
+      bloc.add(SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(name));
+      bloc.add(SearchExperiencesByNameWatcherEvent.searchResultsReceived(left(failure)));
+    },
     verify: (_) async {
       verify(searchExperiencesByName.call(any));
       verifyNoMoreInteractions(searchExperiencesByName);

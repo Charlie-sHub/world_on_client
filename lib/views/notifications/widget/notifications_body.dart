@@ -34,10 +34,6 @@ class NotificationsBody extends StatelessWidget {
             message: "Action in progress",
             linearProgressIndicator: const LinearProgressIndicator(),
           ).show(context),
-          deletionSuccess: (_) => FlushbarHelper.createSuccess(
-            duration: const Duration(seconds: 2),
-            message: "Success",
-          ).show(context),
           deletionFailure: (state) => FlushbarHelper.createError(
             duration: const Duration(seconds: 2),
             message: state.failure.toString(),
@@ -55,7 +51,10 @@ class NotificationsBody extends StatelessWidget {
                 final _notification = state.notifications[index];
                 if (_notification.isValid) {
                   context.bloc<NotificationActorBloc>().add(NotificationActorEvent.checked(_notification));
-                  return NotificationCard(notification: _notification);
+                  return NotificationCard(
+                    notification: _notification,
+                    key: Key(_notification.id.toString()),
+                  );
                 } else {
                   return ErrorCard(
                     entityType: "Notification",

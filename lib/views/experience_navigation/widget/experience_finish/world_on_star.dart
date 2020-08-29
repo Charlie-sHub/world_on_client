@@ -10,12 +10,11 @@ class WorldOnStar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconShadowWidget(
-      Icon(
+      const Icon(
         Icons.star,
         size: 50,
         color: WorldOnColors.primary,
       ),
-      showShadow: true,
       shadowColor: Colors.black,
     );
   }

@@ -17,7 +17,6 @@ class SplashPage extends StatelessWidget {
       ),
       child: Scaffold(
         body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: const <Widget>[
             WorldOnLogo(),

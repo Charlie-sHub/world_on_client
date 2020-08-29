@@ -40,7 +40,10 @@ void main() {
       when(searchExperiencesByTags.call(any)).thenAnswer((_) => createStream(right(experiencesFound)));
       return getIt<SearchExperiencesByTagsBloc>();
     },
-    act: (bloc) async => bloc.add(SearchExperiencesByTagsEvent.submitted(tags)),
+    act: (bloc) async {
+      bloc.add(SearchExperiencesByTagsEvent.submitted(tags));
+      bloc.add(SearchExperiencesByTagsEvent.resultsReceived(right(experiencesFound)));
+    },
     verify: (_) async {
       verify(searchExperiencesByTags.call(any));
       verifyNoMoreInteractions(searchExperiencesByTags);
@@ -59,7 +62,10 @@ void main() {
           when(searchExperiencesByTags.call(any)).thenAnswer((_) => createStream(left(serverFailure)));
           return getIt<SearchExperiencesByTagsBloc>();
         },
-        act: (bloc) async => bloc.add(SearchExperiencesByTagsEvent.submitted(tags)),
+        act: (bloc) async {
+          bloc.add(SearchExperiencesByTagsEvent.submitted(tags));
+          bloc.add(SearchExperiencesByTagsEvent.resultsReceived(left(serverFailure)));
+        },
         verify: (_) async {
           verify(searchExperiencesByTags.call(any));
           verifyNoMoreInteractions(searchExperiencesByTags);

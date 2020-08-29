@@ -20,7 +20,6 @@ class TagSelection extends StatelessWidget {
           child: Column(
             children: [
               Wrap(
-                alignment: WrapAlignment.start,
                 spacing: 5,
                 runSpacing: 2,
                 children: <Widget>[

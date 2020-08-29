@@ -26,7 +26,7 @@ class TitleFormField extends StatelessWidget {
             ),
             (_) => null,
           ),
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         labelText: "Title",
         prefixIcon: Icon(Icons.title),
       ),

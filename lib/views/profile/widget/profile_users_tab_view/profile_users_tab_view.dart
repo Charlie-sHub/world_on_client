@@ -37,7 +37,10 @@ class ProfileUsersTabView extends StatelessWidget {
               itemBuilder: (context, index) {
                 final _user = state.users[index];
                 if (_user.isValid) {
-                  return UserCard(user: _user);
+                  return UserCard(
+                    user: _user,
+                    key: Key(_user.id.toString()),
+                  );
                 } else {
                   return ErrorCard(
                     entityType: "User",

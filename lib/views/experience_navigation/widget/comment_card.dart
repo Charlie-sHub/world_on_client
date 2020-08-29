@@ -31,7 +31,7 @@ class CommentCard extends StatelessWidget {
               NameUsernameDisplay(user: comment.poster),
               // TODO: Implement report functionality
               IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.more_vert,
                   color: Colors.grey,
                 ),
@@ -65,7 +65,7 @@ class CommentCard extends StatelessWidget {
                 ),
               ),
               IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.thumb_up,
                   color: WorldOnColors.accent,
                 ),

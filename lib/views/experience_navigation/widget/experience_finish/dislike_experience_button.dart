@@ -15,7 +15,7 @@ class DislikeExperienceButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: FaIcon(
+      icon: const FaIcon(
         FontAwesomeIcons.heart,
         color: Colors.grey,
       ),

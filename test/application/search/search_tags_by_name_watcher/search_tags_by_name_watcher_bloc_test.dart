@@ -37,7 +37,10 @@ void main() {
       when(searchTagsByName.call(any)).thenAnswer((_) => createStream(right(tagsFound)));
       return getIt<SearchTagsByNameWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(name)),
+    act: (bloc) async {
+      bloc.add(SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(name));
+      bloc.add(SearchTagsByNameWatcherEvent.resultsReceived(right(tagsFound)));
+    },
     verify: (_) async {
       verify(searchTagsByName.call(any));
       verifyNoMoreInteractions(searchTagsByName);
@@ -53,7 +56,10 @@ void main() {
       when(searchTagsByName.call(any)).thenAnswer((_) => createStream(left(failure)));
       return getIt<SearchTagsByNameWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(name)),
+    act: (bloc) async {
+      bloc.add(SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(name));
+      bloc.add(SearchTagsByNameWatcherEvent.resultsReceived(left(failure)));
+    },
     verify: (_) async {
       verify(searchTagsByName.call(any));
       verifyNoMoreInteractions(searchTagsByName);

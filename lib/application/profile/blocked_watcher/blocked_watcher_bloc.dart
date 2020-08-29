@@ -19,7 +19,7 @@ part 'blocked_watcher_state.dart';
 @injectable
 class BlockedWatcherBloc extends Bloc<BlockedWatcherEvent, BlockedWatcherState> {
   BlockedWatcherBloc() : super(const BlockedWatcherState.initial());
-  StreamSubscription<Either<Failure, KtList<User>>> _experienceCommentsStreamSubscription;
+  StreamSubscription<Either<Failure, KtList<User>>> _blockedUsersStreamSubscription;
 
   @override
   Stream<BlockedWatcherState> mapEventToState(BlockedWatcherEvent event) async* {
@@ -30,7 +30,7 @@ class BlockedWatcherBloc extends Bloc<BlockedWatcherEvent, BlockedWatcherState> 
   }
 
   Stream<BlockedWatcherState> _onResultsReceived(_ResultsReceived event) async* {
-    event.failureOrUsers.fold(
+    yield event.failureOrUsers.fold(
       (failure) => BlockedWatcherState.loadFailure(failure),
       (blockedUsers) => BlockedWatcherState.loadSuccess(blockedUsers),
     );
@@ -38,17 +38,18 @@ class BlockedWatcherBloc extends Bloc<BlockedWatcherEvent, BlockedWatcherState> 
 
   Stream<BlockedWatcherState> _onWatchBlockedUsersStarted(_WatchBlockedUsersStarted event) async* {
     yield const BlockedWatcherState.loadInProgress();
+    await _blockedUsersStreamSubscription?.cancel();
     final _loadBlockedUsers = getIt<WatchBlockedUsers>();
-    _experienceCommentsStreamSubscription = _loadBlockedUsers(
+    _blockedUsersStreamSubscription = _loadBlockedUsers(
       Params(id: event.user.id),
     ).listen(
-      (_failureOrUsers) => add(BlockedWatcherEvent.resultsReceived(_failureOrUsers)),
+        (_failureOrUsers) => add(BlockedWatcherEvent.resultsReceived(_failureOrUsers)),
     );
   }
 
   @override
   Future<void> close() async {
-    await _experienceCommentsStreamSubscription?.cancel();
+    await _blockedUsersStreamSubscription?.cancel();
     return super.close();
   }
 }

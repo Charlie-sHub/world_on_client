@@ -35,7 +35,7 @@ class SearchHeader extends StatelessWidget {
               ),
             ),
             IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.search,
                 size: 35,
               ),

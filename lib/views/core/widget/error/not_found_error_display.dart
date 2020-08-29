@@ -5,14 +5,14 @@ class NotFoundErrorDisplay extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
+      children: const <Widget>[
         Icon(
           Icons.sentiment_dissatisfied,
           color: Colors.grey,
           size: 70,
         ),
-        const SizedBox(height: 10),
-        const Text(
+        SizedBox(height: 10),
+        Text(
           "There's nothing to show",
           style: TextStyle(
             fontSize: 40,

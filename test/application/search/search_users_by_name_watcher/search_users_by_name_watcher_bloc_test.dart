@@ -45,7 +45,6 @@ void main() {
         },
         act: (bloc) async {
           bloc.add(SearchUsersByNameWatcherEvent.watchUsersFoundByUsernameStarted(searchTerm));
-          // This shouldn't be necessary, but it seems bloc_test "ignores" when events are added from the bloc itself
           bloc.add(SearchUsersByNameWatcherEvent.searchResultsReceived(right(usersFound)));
         },
         verify: (_) async {
@@ -65,7 +64,6 @@ void main() {
         },
         act: (bloc) async {
           bloc.add(SearchUsersByNameWatcherEvent.watchUsersFoundByUsernameStarted(searchTerm));
-          // This shouldn't be necessary, but it seems bloc_test "ignores" when events are added from the bloc itself
           bloc.add(SearchUsersByNameWatcherEvent.searchResultsReceived(left(failure)));
         },
         verify: (_) async {
@@ -90,7 +88,6 @@ void main() {
         },
         act: (bloc) async {
           bloc.add(SearchUsersByNameWatcherEvent.watchUsersFoundByNameStarted(searchTerm));
-          // This shouldn't be necessary, but it seems bloc_test "ignores" when events are added from the bloc itself
           bloc.add(SearchUsersByNameWatcherEvent.searchResultsReceived(right(usersFound)));
         },
         verify: (_) async {
@@ -110,7 +107,6 @@ void main() {
         },
         act: (bloc) async {
           bloc.add(SearchUsersByNameWatcherEvent.watchUsersFoundByNameStarted(searchTerm));
-          // This shouldn't be necessary, but it seems bloc_test "ignores" when events are added from the bloc itself
           bloc.add(SearchUsersByNameWatcherEvent.searchResultsReceived(left(failure)));
         },
         verify: (_) async {

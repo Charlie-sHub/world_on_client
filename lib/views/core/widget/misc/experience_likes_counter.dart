@@ -29,11 +29,12 @@ class ExperienceLikesCounter extends StatelessWidget {
           BlocBuilder<ExperienceCardLikeCheckBloc, ExperienceCardLikeCheckState>(
             builder: (context, state) => state.map(
               initial: (_) => const CircularProgressIndicator(),
-              likes: (_) => FaIcon(
+              likes: (_) => const FaIcon(
                 FontAwesomeIcons.solidHeart,
                 color: WorldOnColors.red,
               ),
-              neutral: (_) => FaIcon(
+              neutral: (_) =>
+              const FaIcon(
                 FontAwesomeIcons.heart,
                 color: WorldOnColors.red,
               ),

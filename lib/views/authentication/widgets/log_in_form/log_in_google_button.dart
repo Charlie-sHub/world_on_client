@@ -16,10 +16,10 @@ class LogInGoogleButton extends StatelessWidget {
           ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
+        children: const <Widget>[
           FaIcon(FontAwesomeIcons.google),
-          const SizedBox(width: 5),
-          const Text("Log In with Google"),
+          SizedBox(width: 5),
+          Text("Log In with Google"),
         ],
       ),
     );

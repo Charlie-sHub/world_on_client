@@ -28,7 +28,10 @@ class SearchTagsTabView extends StatelessWidget {
           itemBuilder: (context, index) {
             final _tag = state.tagsFound[index];
             if (_tag.isValid) {
-              return TagCard(tag: _tag);
+              return TagCard(
+                tag: _tag,
+                key: Key(_tag.id.toString()),
+              );
             } else {
               return ErrorCard(
                 entityType: "Tag",

@@ -20,7 +20,7 @@ part 'main_feed_watcher_state.dart';
 @injectable
 class MainFeedWatcherBloc extends Bloc<MainFeedWatcherEvent, MainFeedWatcherState> {
   MainFeedWatcherBloc() : super(const MainFeedWatcherState.initial());
-  StreamSubscription<Either<Failure, KtList<Experience>>> _experienceCommentsStreamSubscription;
+  StreamSubscription<Either<Failure, KtList<Experience>>> _mainFeedsStreamSubscription;
 
   @override
   Stream<MainFeedWatcherState> mapEventToState(MainFeedWatcherEvent event) async* {
@@ -39,16 +39,16 @@ class MainFeedWatcherBloc extends Bloc<MainFeedWatcherEvent, MainFeedWatcherStat
 
   Stream<MainFeedWatcherState> _onWatchMainFeedStarted(_) async* {
     yield const MainFeedWatcherState.loadInProgress();
-    await _experienceCommentsStreamSubscription?.cancel();
+    await _mainFeedsStreamSubscription?.cancel();
     final _fillFeed = getIt<WatchFeed>();
-    _experienceCommentsStreamSubscription = _fillFeed(getIt<NoParams>()).listen(
+    _mainFeedsStreamSubscription = _fillFeed(getIt<NoParams>()).listen(
       (_failureOrExperiences) => add(MainFeedWatcherEvent.resultsReceived(_failureOrExperiences)),
     );
   }
 
   @override
   Future<void> close() async {
-    await _experienceCommentsStreamSubscription?.cancel();
+    await _mainFeedsStreamSubscription?.cancel();
     return super.close();
   }
 }

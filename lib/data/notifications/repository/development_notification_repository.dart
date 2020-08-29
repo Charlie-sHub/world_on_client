@@ -29,7 +29,7 @@ class DevelopmentNotificationRepository implements NotificationRepositoryInterfa
 
   @override
   Stream<Either<Failure, KtList<world_on_notification.Notification>>> watchNotifications() async* {
-    final _stream = await _database.moorNotificationsDao.watchNotifications();
+    final _stream = _database.moorNotificationsDao.watchNotifications();
     yield* _stream.map(
       (_moorNotificationsWithRelationsList) {
         if (_moorNotificationsWithRelationsList != null) {

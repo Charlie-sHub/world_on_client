@@ -9,7 +9,7 @@ class Map extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height * 0.5,
-      child: Icon(
+      child: const Icon(
         Icons.map,
         size: 150,
       ),

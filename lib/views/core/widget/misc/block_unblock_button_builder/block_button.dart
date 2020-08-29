@@ -16,7 +16,7 @@ class BlockButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: FaIcon(
+      icon: const FaIcon(
         FontAwesomeIcons.userSlash,
         color: WorldOnColors.red,
       ),

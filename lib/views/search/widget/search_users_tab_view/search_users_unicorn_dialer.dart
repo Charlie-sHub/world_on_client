@@ -17,7 +17,7 @@ class SearchUsersUnicornDialer extends StatelessWidget {
     return UnicornDialer(
       hasBackground: false,
       orientation: UnicornOrientation.VERTICAL,
-      parentButton: Icon(Icons.format_list_bulleted),
+      parentButton: const Icon(Icons.format_list_bulleted),
       childButtons: [
         UnicornButton(
           hasLabel: true,

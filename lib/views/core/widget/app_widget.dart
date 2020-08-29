@@ -31,8 +31,12 @@ class AppWidget extends StatelessWidget {
         // TODO: Improve the theme
         // Accent and primary being the same color doesn't make much sense
         // The difference is not really noticed as many widgets have set colors, but that should be changed
-        // Most if not all widget colors should depend of the theme
+        // Most if not all widget colors should depend of the theme instead of having to set the colors directly
         theme: ThemeData.dark().copyWith(
+          bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+            selectedItemColor: Colors.white,
+            unselectedItemColor: Colors.white,
+          ),
           floatingActionButtonTheme: const FloatingActionButtonThemeData(
             elevation: 10,
             backgroundColor: WorldOnColors.white,

@@ -23,11 +23,12 @@ class RewardsListView extends StatelessWidget {
         shrinkWrap: true,
         physics: const ClampingScrollPhysics(),
         itemBuilder: (context, index) {
-          // Damn this is convoluted
-          // TODO: Change the KtSets in the Set value objects to KtLists
           final _reward = experience.rewards.getOrCrash().asSet().elementAt(index);
           if (_reward.isValid) {
-            return RewardCard(reward: _reward);
+            return RewardCard(
+              reward: _reward,
+              key: Key(_reward.id.toString()),
+            );
           } else {
             return ErrorCard(
               entityType: "Reward",

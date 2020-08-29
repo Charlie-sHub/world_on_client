@@ -457,35 +457,51 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
   }
 
   Future _insertExperiences(Set<int> _userIds, Set<int> _tagsIds, Set<int> _experiencesIds) async {
-    final _experienceIpsum = getValidExperience().copyWith(
-        creator: getValidUser().copyWith(
-      id: _userIds.elementAt(2),
-    ));
+    final _experienceIpsum = getValidExperience();
+    final _validUser = getValidUser();
     final _experienceBro = _experienceIpsum.copyWith(
       title: Name("Road rash shred"),
       description: EntityDescription("Gorby poaching Whistler corduroy freshies stoked sharkbite brain bucket dirtbag."),
+      creator: _validUser.copyWith(
+        id: _userIds.first,
+      ),
     );
     final _experienceHip = _experienceIpsum.copyWith(
       title: Name("Put a bird on it"),
       description: EntityDescription("Roof party marfa cronut, adaptogen shabby chic iceland pitchfork fashion axe flannel shoreditch sriracha palo santo slow-carb."),
+      creator: _validUser.copyWith(
+        id: _userIds.elementAt(1),
+      ),
     );
     final _experienceSpace = _experienceIpsum.copyWith(
       title: Name("The final frontier"),
       description: EntityDescription("Many say exploration is part of our destiny, but it’s actually our duty to future generations and their quest to ensure the survival of the human species."),
+      creator: _validUser.copyWith(
+        id: _userIds.elementAt(2),
+      ),
     );
     final _experiencePostModern = _experienceIpsum.copyWith(
       title: Name("Consensuses of collapse"),
       description: EntityDescription("In a sense, Lyotard suggests the use of Foucaultist power relations to read and analyse society. "
           "Several deappropriations concerning conceptual subcapitalist theory exist."),
+      creator: _validUser.copyWith(
+        id: _userIds.elementAt(3),
+      ),
     );
     final _experienceCat = _experienceIpsum.copyWith(
       title: Name("Human give me attention meow"),
       description: EntityDescription("Meowzer flee in terror at cucumber discovered on floor sit on human purr like a car engine oh yes"),
+      creator: _validUser.copyWith(
+        id: _userIds.elementAt(2),
+      ),
     );
     final _experienceCorporate = _experienceIpsum.copyWith(
       title: Name("Leverage agile frameworks"),
       description: EntityDescription("Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. "
-          "Override the digital divide with additional clickthroughs from DevOps."),
+        "Override the digital divide with additional clickthroughs from DevOps."),
+      creator: _validUser.copyWith(
+        id: _userIds.elementAt(1),
+      ),
     );
     final _experienceList = [
       _experienceIpsum,
@@ -615,7 +631,6 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
     }
   }
 
-  // Not using the authentication repository as it treats a successful register as a log in too
   Future _insertUsers(Set<int> _userIds) async {
     final _user = getValidUser();
     final _moorUserRicky = domainUserToMoorUserCompanion(_user).copyWith(

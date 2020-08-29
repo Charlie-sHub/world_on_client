@@ -40,8 +40,8 @@ class AchievementCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(5),
+                const Padding(
+                  padding: EdgeInsets.all(5),
                   // Just a placeholder, the icon shown should be the image/icon representing the Achievement
                   child: Icon(
                     Icons.star_border,

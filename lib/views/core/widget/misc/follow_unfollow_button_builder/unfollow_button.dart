@@ -16,7 +16,7 @@ class UnFollowButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: FaIcon(
+      icon: const FaIcon(
         FontAwesomeIcons.userMinus,
         color: WorldOnColors.red,
       ),

@@ -250,7 +250,7 @@ void main() {
       );
       test(
         "Should delete all tag achievement relations",
-          () async {
+        () async {
           // Arrange
           final _userId = await _insertCreator(_database);
           final _moorAchievement = domainAchievementToMoorAchievement(getValidAchievement()).copyWith(creatorId: Value(_userId));
@@ -301,7 +301,7 @@ void main() {
               );
             }
           }
-          final _tagStream = await _database.moorTagsDao.watchSearchTagsByName(_searchTerm);
+          final _tagStream = _database.moorTagsDao.watchSearchTagsByName(_searchTerm);
           // Assert
           expectLater(
             _tagStream.map(
@@ -342,7 +342,7 @@ void main() {
             );
             await _database.moorTagsDao.insertUserInterest(_userInterest);
           }
-          final _tagListStream = await _database.moorTagsDao.watchUserInterests(_userId);
+          final _tagListStream = _database.moorTagsDao.watchUserInterests(_userId);
           // Assert
           expectLater(
             _tagListStream.map(

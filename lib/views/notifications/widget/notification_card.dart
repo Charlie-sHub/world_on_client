@@ -44,12 +44,11 @@ class NotificationCard extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(7),
             child: IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.delete_forever,
                 size: 30,
               ),
               color: WorldOnColors.red,
-              // TODO: Make the card destroy itself
               onPressed: () => context.bloc<NotificationActorBloc>().add(NotificationActorEvent.deleted(notification)),
             ),
           ),

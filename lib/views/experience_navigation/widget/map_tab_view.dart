@@ -14,13 +14,13 @@ class MapTabView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
+      children: const <Widget>[
         Icon(
           Icons.map,
           size: 180,
           color: WorldOnColors.primary,
         ),
-        const Text(
+        Text(
           "Map",
           style: TextStyle(
             fontWeight: FontWeight.bold,

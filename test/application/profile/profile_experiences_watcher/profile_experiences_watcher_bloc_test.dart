@@ -48,7 +48,6 @@ void main() {
         },
         act: (bloc) async {
           bloc.add(ProfileExperiencesWatcherEvent.watchExperiencesDoneStarted(user));
-          // This shouldn't be necessary, but it seems bloc_test "ignores" when events are added from the bloc itself
           bloc.add(ProfileExperiencesWatcherEvent.experiencesReceived(right(experiences)));
         },
         verify: (_) async {
@@ -68,7 +67,6 @@ void main() {
         },
         act: (bloc) async {
           bloc.add(ProfileExperiencesWatcherEvent.watchExperiencesDoneStarted(user));
-          // This shouldn't be necessary, but it seems bloc_test "ignores" when events are added from the bloc itself
           bloc.add(ProfileExperiencesWatcherEvent.experiencesReceived(left(failure)));
         },
         verify: (_) async {
@@ -93,7 +91,6 @@ void main() {
         },
         act: (bloc) async {
           bloc.add(ProfileExperiencesWatcherEvent.watchExperiencesLikedStarted(user));
-          // This shouldn't be necessary, but it seems bloc_test "ignores" when events are added from the bloc itself
           bloc.add(ProfileExperiencesWatcherEvent.experiencesReceived(right(experiences)));
         },
         verify: (_) async {
@@ -113,7 +110,6 @@ void main() {
         },
         act: (bloc) async {
           bloc.add(ProfileExperiencesWatcherEvent.watchExperiencesLikedStarted(user));
-          // This shouldn't be necessary, but it seems bloc_test "ignores" when events are added from the bloc itself
           bloc.add(ProfileExperiencesWatcherEvent.experiencesReceived(left(failure)));
         },
         verify: (_) async {
@@ -138,7 +134,6 @@ void main() {
         },
         act: (bloc) async {
           bloc.add(ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(user));
-          // This shouldn't be necessary, but it seems bloc_test "ignores" when events are added from the bloc itself
           bloc.add(ProfileExperiencesWatcherEvent.experiencesReceived(right(experiences)));
         },
         verify: (_) async {
@@ -158,7 +153,6 @@ void main() {
         },
         act: (bloc) async {
           bloc.add(ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(user));
-          // This shouldn't be necessary, but it seems bloc_test "ignores" when events are added from the bloc itself
           bloc.add(ProfileExperiencesWatcherEvent.experiencesReceived(left(failure)));
         },
         verify: (_) async {

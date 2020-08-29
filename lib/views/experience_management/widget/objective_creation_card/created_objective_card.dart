@@ -51,7 +51,7 @@ class CreatedObjectiveCard extends StatelessWidget {
               // TODO: Change to Slidable widgets with flutter_slidable
               child: IconButton(
                 iconSize: 40,
-                icon: Icon(
+                icon: const Icon(
                   Icons.delete_forever,
                   color: WorldOnColors.red,
                 ),

@@ -55,8 +55,6 @@ class TagCardActorBloc extends Bloc<TagCardActorEvent, TagCardActorState> {
     );
   }
 
-// TODO: Why is this method here?
-  // It's exactly the same as the tag card check
   Stream<TagCardActorState> _onInitialized(_Initialized event) async* {
     final _getLoggedInUser = getIt<GetLoggedInUser>();
     final _userOption = await _getLoggedInUser(getIt<NoParams>());
@@ -64,6 +62,9 @@ class TagCardActorBloc extends Bloc<TagCardActorEvent, TagCardActorState> {
       () => throw UnAuthenticatedError(),
       id,
     );
+    // TODO: Find a way to check if the user likes the tag
+    // Either by checking from the database like with followsUser
+    // or by getting the relations when getting the logged in user
     if (_user.interests.contains(event.tag)) {
       yield const TagCardActorState.inInterests();
     } else {

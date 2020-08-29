@@ -28,8 +28,6 @@ void main() {
   );
   final user = getValidUser().copyWith(
     id: 3,
-    // TODO: Change the Sets in the entities to KtList
-    // Are those even necessary? if anything they might give problems in the future in the way of chains and loops
     blockedUsers: usersBlocked.toSet().dart,
   );
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
@@ -44,7 +42,10 @@ void main() {
       when(loadBlockedUsers.call(any)).thenAnswer((realInvocation) => createStream(right(usersBlocked)));
       return getIt<BlockedWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(BlockedWatcherEvent.watchBlockedUsersStarted(user)),
+    act: (bloc) async {
+      bloc.add(BlockedWatcherEvent.watchBlockedUsersStarted(user));
+      bloc.add(BlockedWatcherEvent.resultsReceived(right(usersBlocked)));
+    },
     verify: (_) async {
       verify(loadBlockedUsers.call(any));
       verifyNoMoreInteractions(loadBlockedUsers);
@@ -60,7 +61,10 @@ void main() {
       when(loadBlockedUsers.call(any)).thenAnswer((realInvocation) => createStream(left(failure)));
       return getIt<BlockedWatcherBloc>();
     },
-    act: (bloc) async => bloc.add(BlockedWatcherEvent.watchBlockedUsersStarted(user)),
+    act: (bloc) async {
+      bloc.add(BlockedWatcherEvent.watchBlockedUsersStarted(user));
+      bloc.add(BlockedWatcherEvent.resultsReceived(left(failure)));
+    },
     verify: (_) async {
       verify(loadBlockedUsers.call(any));
       verifyNoMoreInteractions(loadBlockedUsers);

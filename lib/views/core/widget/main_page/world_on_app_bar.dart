@@ -17,7 +17,7 @@ class WorldOnAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       leading: IconButton(
-        icon: FaIcon(FontAwesomeIcons.signOutAlt),
+        icon: const FaIcon(FontAwesomeIcons.signOutAlt),
         onPressed: () => context.bloc<AuthenticationBloc>().add(const AuthenticationEvent.loggedOut()),
       ),
       centerTitle: true,

@@ -51,7 +51,7 @@ dependencies:
   # For Kotlin like collections
   kt_dart: ^0.7.0+1
   # For easier bloc testing
-  bloc_test: ^7.0.2
+  bloc_test: ^7.0.3
   # For ease of serialization
   json_annotation: ^3.0.1
   # For ease of routing

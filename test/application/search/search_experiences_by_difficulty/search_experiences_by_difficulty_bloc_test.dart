@@ -39,7 +39,10 @@ void main() {
       when(searchExperiencesByDifficulty.call(any)).thenAnswer((_) => createStream(right(experiencesFound)));
       return getIt<SearchExperiencesByDifficultyBloc>();
     },
-    act: (bloc) async => bloc.add(const SearchExperiencesByDifficultyEvent.submitted(validDifficulty)),
+    act: (bloc) async {
+      bloc.add(const SearchExperiencesByDifficultyEvent.submitted(validDifficulty));
+      bloc.add(SearchExperiencesByDifficultyEvent.resultsReceived(right(experiencesFound)));
+    },
     verify: (_) async {
       verify(searchExperiencesByDifficulty.call(any));
       verifyNoMoreInteractions(searchExperiencesByDifficulty);
@@ -58,7 +61,10 @@ void main() {
           when(searchExperiencesByDifficulty.call(any)).thenAnswer((_) => createStream(left(serverFailure)));
           return getIt<SearchExperiencesByDifficultyBloc>();
         },
-        act: (bloc) async => bloc.add(const SearchExperiencesByDifficultyEvent.submitted(validDifficulty)),
+        act: (bloc) async {
+          bloc.add(const SearchExperiencesByDifficultyEvent.submitted(validDifficulty));
+          bloc.add(SearchExperiencesByDifficultyEvent.resultsReceived(left(serverFailure)));
+        },
         verify: (_) async {
           verify(searchExperiencesByDifficulty.call(any));
           verifyNoMoreInteractions(searchExperiencesByDifficulty);

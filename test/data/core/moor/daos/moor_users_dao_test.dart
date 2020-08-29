@@ -375,9 +375,8 @@ List<UserFollowRelationsCompanion> _createFollowRelationsList(int someUserId, in
   ];
 }
 
-List<MoorUsersCompanion> _moorUserToCompanionList(List<MoorUser> _moorUserList) =>
-  _moorUserList
+List<MoorUsersCompanion> _moorUserToCompanionList(List<MoorUser> _moorUserList) => _moorUserList
     .map(
       (_moorUser) => _moorUser.toCompanion(true),
-  )
+    )
     .toList();
