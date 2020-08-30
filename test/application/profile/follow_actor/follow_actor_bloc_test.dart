@@ -6,8 +6,9 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/application/profile/follow_actor/follow_actor_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
+import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/profile/use_case/follow_user.dart';
-import 'package:worldon/domain/profile/use_case/follows_user.dart';
 import 'package:worldon/domain/profile/use_case/un_follow_user.dart';
 import 'package:worldon/injection.dart';
 
@@ -16,18 +17,24 @@ import '../../../test_descriptions.dart';
 
 void main() {
   FollowUser followUser;
-  FollowsUser followsUser;
   UnFollowUser unFollowUser;
+  GetLoggedInUser getLoggedInUser;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
       followUser = getIt<FollowUser>();
-      followsUser = getIt<FollowsUser>();
       unFollowUser = getIt<UnFollowUser>();
+      getLoggedInUser = getIt<GetLoggedInUser>();
     },
   );
   final followedUser = getValidUser();
   final notFollowedUser = getValidUser().copyWith(id: 2);
+  final loggedInUser = getValidUser().copyWith(
+    id: 3,
+    followedUsersIds: {
+      followedUser.id,
+    },
+  );
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
@@ -40,26 +47,26 @@ void main() {
       blocTest(
         "Should emit followed",
         build: () {
-          when(followsUser.call(any)).thenAnswer((_) async => right(true));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(loggedInUser));
           return getIt<FollowActorBloc>();
         },
         act: (bloc) async => bloc.add(FollowActorEvent.initialized(followedUser)),
         verify: (_) async {
-          verify(followsUser.call(any));
-          verifyNoMoreInteractions(followsUser);
+          verify(getLoggedInUser.call(any));
+          verifyNoMoreInteractions(getLoggedInUser);
         },
         expect: [const FollowActorState.follows()],
       );
       blocTest(
         "Should emit notFollowed",
         build: () {
-          when(followsUser.call(any)).thenAnswer((_) async => right(false));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(loggedInUser));
           return getIt<FollowActorBloc>();
         },
         act: (bloc) async => bloc.add(FollowActorEvent.initialized(notFollowedUser)),
         verify: (_) async {
-          verify(followsUser.call(any));
-          verifyNoMoreInteractions(followsUser);
+          verify(getLoggedInUser.call(any));
+          verifyNoMoreInteractions(getLoggedInUser);
         },
         expect: [const FollowActorState.followsNot()],
       );
@@ -71,7 +78,7 @@ void main() {
       blocTest(
         "${TestDescription.shouldEmitSuccess} by un-following",
         build: () {
-          when(followsUser.call(any)).thenAnswer((_) async => right(true));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(loggedInUser));
           when(unFollowUser.call(any)).thenAnswer((_) async => right(unit));
           return getIt<FollowActorBloc>();
         },
@@ -80,8 +87,8 @@ void main() {
           bloc.add(FollowActorEvent.unFollowed(followedUser));
         },
         verify: (_) async {
-          verify(followsUser.call(any));
-          verifyNoMoreInteractions(followsUser);
+          verify(getLoggedInUser.call(any));
+          verifyNoMoreInteractions(getLoggedInUser);
           verify(unFollowUser.call(any));
           verifyNoMoreInteractions(unFollowUser);
         },
@@ -95,7 +102,7 @@ void main() {
       blocTest(
         "${TestDescription.shouldEmitSuccess} by following",
         build: () {
-          when(followsUser.call(any)).thenAnswer((_) async => right(false));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(loggedInUser));
           when(followUser.call(any)).thenAnswer((_) async => right(unit));
           return getIt<FollowActorBloc>();
         },
@@ -104,8 +111,8 @@ void main() {
           bloc.add(FollowActorEvent.followed(notFollowedUser));
         },
         verify: (_) async {
-          verify(followsUser.call(any));
-          verifyNoMoreInteractions(followsUser);
+          verify(getLoggedInUser.call(any));
+          verifyNoMoreInteractions(getLoggedInUser);
           verify(followUser.call(any));
           verifyNoMoreInteractions(followUser);
         },
@@ -124,7 +131,7 @@ void main() {
       blocTest(
         "${TestDescription.shouldEmitFailure} by un-following",
         build: () {
-          when(followsUser.call(any)).thenAnswer((_) async => right(true));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(loggedInUser));
           when(unFollowUser.call(any)).thenAnswer((_) async => left(failure));
           return getIt<FollowActorBloc>();
         },
@@ -133,8 +140,8 @@ void main() {
           bloc.add(FollowActorEvent.unFollowed(followedUser));
         },
         verify: (_) async {
-          verify(followsUser.call(any));
-          verifyNoMoreInteractions(followsUser);
+          verify(getLoggedInUser.call(any));
+          verifyNoMoreInteractions(getLoggedInUser);
           verify(unFollowUser.call(any));
           verifyNoMoreInteractions(unFollowUser);
         },
@@ -147,7 +154,7 @@ void main() {
       blocTest(
         "${TestDescription.shouldEmitFailure} by following",
         build: () {
-          when(followsUser.call(any)).thenAnswer((_) async => right(false));
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => some(loggedInUser));
           when(followUser.call(any)).thenAnswer((_) async => left(failure));
           return getIt<FollowActorBloc>();
         },
@@ -156,8 +163,8 @@ void main() {
           bloc.add(FollowActorEvent.followed(notFollowedUser));
         },
         verify: (_) async {
-          verify(followsUser.call(any));
-          verifyNoMoreInteractions(followsUser);
+          verify(getLoggedInUser.call(any));
+          verifyNoMoreInteractions(getLoggedInUser);
           verify(followUser.call(any));
           verifyNoMoreInteractions(followUser);
         },
@@ -166,6 +173,19 @@ void main() {
           const FollowActorState.actionInProgress(),
           const FollowActorState.followFailure(failure),
         ],
+      );
+      blocTest(
+        TestDescription.throwUnAuthenticated,
+        build: () {
+          when(getLoggedInUser.call(any)).thenAnswer((_) async => none());
+          return getIt<FollowActorBloc>();
+        },
+        act: (bloc) async => bloc.add(FollowActorEvent.initialized(notFollowedUser)),
+        verify: (_) async {
+          verify(getLoggedInUser.call(any));
+          verifyNoMoreInteractions(getLoggedInUser);
+        },
+        errors: [isA<UnAuthenticatedError>()],
       );
     },
   );

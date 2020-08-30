@@ -1,18 +1,22 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
+import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/failures/error.dart';
+import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/profile/use_case/follow_user.dart' as follow_user;
-import 'package:worldon/domain/profile/use_case/follows_user.dart' as follows_user;
 import 'package:worldon/domain/profile/use_case/un_follow_user.dart' as un_follow_user;
 import 'package:worldon/injection.dart';
 
 part 'follow_actor_bloc.freezed.dart';
-part 'follow_actor_event.dart';
+part 'follow_actor_event.dart';ctor_event.dart';
+
 part 'follow_actor_state.dart';
 
 // TODO: Move to core
@@ -64,19 +68,16 @@ class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
   }
 
   Stream<FollowActorState> _onInitialized(_Initialized event) async* {
-    final _followsUser = getIt<follows_user.FollowsUser>();
-    final _followsUserResult = await _followsUser(
-      follows_user.Params(userId: event.user.id),
+    final _getLoggedInUser = getIt<GetLoggedInUser>();
+    final _userOption = await _getLoggedInUser(getIt<NoParams>());
+    final _user = _userOption.fold(
+      () => throw UnAuthenticatedError(),
+      id,
     );
-    yield _followsUserResult.fold(
-      (failure) => FollowActorState.followFailure(failure),
-      (_follows) {
-        if (_follows) {
-          return const FollowActorState.follows();
-        } else {
-          return const FollowActorState.followsNot();
-        }
-      },
-    );
+    if (_user.followedUsersIds.contains(event.user.id)) {
+      yield const FollowActorState.follows();
+    } else {
+      yield const FollowActorState.followsNot();
+    }
   }
 }

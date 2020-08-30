@@ -41,6 +41,7 @@ mixin _$RewardDto {
 
 abstract class $RewardDtoCopyWith<$Res> {
   factory $RewardDtoCopyWith(RewardDto value, $Res Function(RewardDto) then) = _$RewardDtoCopyWithImpl<$Res>;
+
   $Res call({int id, String name, String description, String imageURL});
 }
 

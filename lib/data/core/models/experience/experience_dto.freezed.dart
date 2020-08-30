@@ -389,7 +389,6 @@ class _$_ExperienceDto extends _ExperienceDto {
 
 abstract class _ExperienceDto extends ExperienceDto {
   const _ExperienceDto._() : super._();
-
   const factory _ExperienceDto(
       {@required int id,
       @required String title,

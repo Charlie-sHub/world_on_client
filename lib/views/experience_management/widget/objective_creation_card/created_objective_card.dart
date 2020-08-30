@@ -5,6 +5,7 @@ import 'package:dartz/dartz.dart' as dartz;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_management/objectives_creation/objectives_creation_bloc.dart';
+import 'package:worldon/core/assets.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
@@ -28,7 +29,7 @@ class CreatedObjectiveCard extends StatelessWidget {
               child: Image(
                 image: FileImage(
                   objective.imageFile.fold(
-                    () => File('assets/objective_placeholder.jpg'),
+                    () => File(Assets.objectivePlaceholder),
                     dartz.id,
                   ),
                 ),

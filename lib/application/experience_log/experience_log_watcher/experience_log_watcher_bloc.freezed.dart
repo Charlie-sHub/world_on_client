@@ -61,6 +61,7 @@ class _$ExperienceLogWatcherEventCopyWithImpl<$Res> implements $ExperienceLogWat
   _$ExperienceLogWatcherEventCopyWithImpl(this._value, this._then);
 
   final ExperienceLogWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceLogWatcherEvent) _then;
 }
@@ -323,6 +324,7 @@ class _$ExperienceLogWatcherStateCopyWithImpl<$Res> implements $ExperienceLogWat
   _$ExperienceLogWatcherStateCopyWithImpl(this._value, this._then);
 
   final ExperienceLogWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceLogWatcherState) _then;
 }
@@ -626,12 +628,12 @@ abstract class _LoadSuccess implements ExperienceLogWatcherState {
   const factory _LoadSuccess(KtList<Experience> experienceSet) = _$_LoadSuccess;
 
   KtList<Experience> get experienceSet;
-
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

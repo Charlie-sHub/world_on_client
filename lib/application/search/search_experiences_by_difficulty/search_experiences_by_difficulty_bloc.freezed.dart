@@ -36,6 +36,7 @@ mixin _$SearchExperiencesByDifficultyEvent {
     @required Result submitted(int difficulty),
     @required Result resultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
   });
+
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result submitted(int difficulty),
@@ -64,6 +65,7 @@ class _$SearchExperiencesByDifficultyEventCopyWithImpl<$Res> implements $SearchE
   _$SearchExperiencesByDifficultyEventCopyWithImpl(this._value, this._then);
 
   final SearchExperiencesByDifficultyEvent _value;
+
   // ignore: unused_field
   final $Res Function(SearchExperiencesByDifficultyEvent) _then;
 }
@@ -167,7 +169,6 @@ abstract class _Submitted implements SearchExperiencesByDifficultyEvent {
   const factory _Submitted(int difficulty) = _$_Submitted;
 
   int get difficulty;
-
   _$SubmittedCopyWith<_Submitted> get copyWith;
 }
 
@@ -359,6 +360,7 @@ class _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res> implements $SearchE
   _$SearchExperiencesByDifficultyStateCopyWithImpl(this._value, this._then);
 
   final SearchExperiencesByDifficultyState _value;
+
   // ignore: unused_field
   final $Res Function(SearchExperiencesByDifficultyState) _then;
 }
@@ -565,6 +567,7 @@ abstract class _SearchInProgress implements SearchExperiencesByDifficultyState {
 
 abstract class _$SearchSuccessCopyWith<$Res> {
   factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) = __$SearchSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<Experience> experiencesFound});
 }
 
@@ -680,11 +683,13 @@ abstract class _SearchSuccess implements SearchExperiencesByDifficultyState {
   const factory _SearchSuccess(KtList<Experience> experiencesFound) = _$_SearchSuccess;
 
   KtList<Experience> get experiencesFound;
+
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith;
 }
 
 abstract class _$SearchFailureCopyWith<$Res> {
   factory _$SearchFailureCopyWith(_SearchFailure value, $Res Function(_SearchFailure) then) = __$SearchFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
@@ -816,6 +821,7 @@ abstract class _SearchFailure implements SearchExperiencesByDifficultyState {
 
 abstract class _$ValueFailureCopyWith<$Res> {
   factory _$ValueFailureCopyWith(_ValueFailure value, $Res Function(_ValueFailure) then) = __$ValueFailureCopyWithImpl<$Res>;
+
   $Res call({ValueFailure<int> failure});
 
   $ValueFailureCopyWith<int, $Res> get failure;

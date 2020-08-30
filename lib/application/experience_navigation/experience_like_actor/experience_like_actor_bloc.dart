@@ -49,7 +49,7 @@ class ExperienceLikeActorBloc extends Bloc<ExperienceLikeActorEvent, ExperienceL
       () => throw UnAuthenticatedError(),
       id,
     );
-    if (_user.experiencesLiked.contains(event.experience)) {
+    if (_user.experiencesLikedIds.contains(event.experience.id)) {
       yield const ExperienceLikeActorState.likes();
     } else {
       yield const ExperienceLikeActorState.neutral();

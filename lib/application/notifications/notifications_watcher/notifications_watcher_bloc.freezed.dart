@@ -61,6 +61,7 @@ class _$NotificationsWatcherEventCopyWithImpl<$Res> implements $NotificationsWat
   _$NotificationsWatcherEventCopyWithImpl(this._value, this._then);
 
   final NotificationsWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(NotificationsWatcherEvent) _then;
 }
@@ -323,6 +324,7 @@ class _$NotificationsWatcherStateCopyWithImpl<$Res> implements $NotificationsWat
   _$NotificationsWatcherStateCopyWithImpl(this._value, this._then);
 
   final NotificationsWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(NotificationsWatcherState) _then;
 }
@@ -517,6 +519,7 @@ abstract class _LoadInProgress implements NotificationsWatcherState {
 
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<Notification> notifications});
 }
 
@@ -625,11 +628,13 @@ abstract class _LoadSuccess implements NotificationsWatcherState {
   const factory _LoadSuccess(KtList<Notification> notifications) = _$_LoadSuccess;
 
   KtList<Notification> get notifications;
+
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

@@ -75,7 +75,7 @@ class BlockActorBloc extends Bloc<BlockActorEvent, BlockActorState> {
       () => throw UnAuthenticatedError(),
       id,
     );
-    if (_loggedInUser.blockedUsers.contains(event.user)) {
+    if (_loggedInUser.blockedUsersIds.contains(event.user.id)) {
       yield const BlockActorState.blocks();
     } else {
       yield const BlockActorState.blocksNot();

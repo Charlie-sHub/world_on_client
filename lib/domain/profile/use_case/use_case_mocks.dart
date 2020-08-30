@@ -4,7 +4,6 @@ import 'package:worldon/domain/profile/use_case/block_user.dart';
 import 'package:worldon/domain/profile/use_case/delete_experience.dart';
 import 'package:worldon/domain/profile/use_case/edit_user.dart';
 import 'package:worldon/domain/profile/use_case/follow_user.dart';
-import 'package:worldon/domain/profile/use_case/follows_user.dart';
 import 'package:worldon/domain/profile/use_case/load_user.dart';
 import 'package:worldon/domain/profile/use_case/remove_experience_liked.dart';
 import 'package:worldon/domain/profile/use_case/un_block_user.dart';
@@ -65,6 +64,3 @@ class MockUnBlockUser extends Mock implements UnBlockUser {}
 
 @LazySingleton(as: UnFollowUser, env: [Environment.test])
 class MockUnFollowUser extends Mock implements UnFollowUser {}
-
-@LazySingleton(as: FollowsUser, env: [Environment.test])
-class MockFollowsUser extends Mock implements FollowsUser {}

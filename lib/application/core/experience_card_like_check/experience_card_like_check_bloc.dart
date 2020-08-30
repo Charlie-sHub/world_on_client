@@ -34,7 +34,7 @@ class ExperienceCardLikeCheckBloc extends Bloc<ExperienceCardLikeCheckEvent, Exp
       () => throw UnAuthenticatedError(),
       id,
     );
-    if (_user.experiencesLiked.contains(event.experience)) {
+    if (_user.experiencesLikedIds.contains(event.experience.id)) {
       yield const ExperienceCardLikeCheckState.likes();
     } else {
       yield const ExperienceCardLikeCheckState.neutral();

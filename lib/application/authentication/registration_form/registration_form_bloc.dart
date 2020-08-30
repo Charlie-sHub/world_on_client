@@ -9,7 +9,6 @@ import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/authentication/use_case/register.dart';
-import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
@@ -80,7 +79,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
   Stream<RegistrationFormState> _onInterestsChanged(_InterestsChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
-        interests: event.interests,
+        interestsIds: event.interests,
       ),
       failureOrSuccessOption: none(),
     );

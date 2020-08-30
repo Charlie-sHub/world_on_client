@@ -238,7 +238,10 @@ void main() {
           final _moorUser = await _database.moorUsersDao.getLoggedInUser();
           // Assert
           expect(
-            _moorUser.toCompanion(true),
+            _moorUser.fold(
+              () => null,
+              (_userWithRelations) => _userWithRelations.user.toCompanion(true),
+            ),
             _moorUserRicky.copyWith(
               id: Value(_insertedUserId),
               isLoggedIn: const Value(true),

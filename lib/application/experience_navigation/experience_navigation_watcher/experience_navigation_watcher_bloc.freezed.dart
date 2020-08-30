@@ -176,6 +176,7 @@ abstract class _Initialized implements ExperienceNavigationWatcherEvent {
 
 abstract class _$AllObjectivesAccomplishedCopyWith<$Res> {
   factory _$AllObjectivesAccomplishedCopyWith(_AllObjectivesAccomplished value, $Res Function(_AllObjectivesAccomplished) then) = __$AllObjectivesAccomplishedCopyWithImpl<$Res>;
+
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
@@ -557,6 +558,7 @@ abstract class _NoExperience implements ExperienceNavigationWatcherState {
 
 abstract class _$NavigatingExperienceCopyWith<$Res> {
   factory _$NavigatingExperienceCopyWith(_NavigatingExperience value, $Res Function(_NavigatingExperience) then) = __$NavigatingExperienceCopyWithImpl<$Res>;
+
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;

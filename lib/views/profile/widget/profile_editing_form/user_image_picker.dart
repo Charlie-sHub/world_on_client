@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:worldon/application/profile/profile_editing_form/profile_editing_form_bloc.dart';
+import 'package:worldon/core/assets.dart';
 
 class UserImagePicker extends StatelessWidget {
   @override
@@ -16,7 +17,7 @@ class UserImagePicker extends StatelessWidget {
               child: CircleAvatar(
                 radius: 80,
                 // TODO: Change to user's network image
-                backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
+                backgroundImage: AssetImage(Assets.userPlaceholder),
               ),
             ),
           ),

@@ -22,6 +22,7 @@ import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 import 'package:worldon/injection.dart';
@@ -71,10 +72,15 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> blockUser(int blockedId) async {
     try {
-      final _moorUser = await _database.moorUsersDao.getLoggedInUser();
-      final _userBlockRelation = _createUserBlockRelation(blockedId, _moorUser.id);
-      await _database.moorUsersDao.blockUser(_userBlockRelation);
-      return right(unit);
+      final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
+      return _moorUserOption.fold(
+        () => throw UnAuthenticatedError,
+        (_moorUserWithRelations) async {
+          final _userBlockRelation = _createUserBlockRelation(blockedId, _moorUserWithRelations.user.id);
+          await _database.moorUsersDao.blockUser(_userBlockRelation);
+          return right(unit);
+        },
+      );
     } catch (exception) {
       _logger.e("Moor Database error: $exception");
       return left(
@@ -90,10 +96,15 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> unBlockUser(int blockedId) async {
     try {
-      final _moorUser = await _database.moorUsersDao.getLoggedInUser();
-      final _userBlockRelation = _createUserBlockRelation(blockedId, _moorUser.id);
-      await _database.moorUsersDao.unBlockUser(_userBlockRelation);
-      return right(unit);
+      final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
+      return _moorUserOption.fold(
+        () => throw UnAuthenticatedError,
+        (_moorUserWithRelations) async {
+          final _userBlockRelation = _createUserBlockRelation(blockedId, _moorUserWithRelations.user.id);
+          await _database.moorUsersDao.unBlockUser(_userBlockRelation);
+          return right(unit);
+        },
+      );
     } catch (exception) {
       _logger.e("Moor Database error: $exception");
       return left(
@@ -116,10 +127,15 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> followUser(int userToFollowId) async {
     try {
-      final _moorUser = await _database.moorUsersDao.getLoggedInUser();
-      final _userFollowRelation = _createUserFollowRelation(userToFollowId, _moorUser.id);
-      await _database.moorUsersDao.followUser(_userFollowRelation);
-      return right(unit);
+      final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
+      return _moorUserOption.fold(
+        () => throw UnAuthenticatedError,
+        (_moorUserWithRelations) async {
+          final _userFollowRelation = _createUserFollowRelation(userToFollowId, _moorUserWithRelations.user.id);
+          await _database.moorUsersDao.followUser(_userFollowRelation);
+          return right(unit);
+        },
+      );
     } catch (exception) {
       _logger.e("Moor Database error: $exception");
       return left(
@@ -135,10 +151,15 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> unFollowUser(int userToUnFollowId) async {
     try {
-      final _moorUser = await _database.moorUsersDao.getLoggedInUser();
-      final _userFollowRelation = _createUserFollowRelation(userToUnFollowId, _moorUser.id);
-      await _database.moorUsersDao.unFollowUser(_userFollowRelation);
-      return right(unit);
+      final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
+      return _moorUserOption.fold(
+        () => throw UnAuthenticatedError,
+        (_moorUserWithRelations) async {
+          final _userFollowRelation = _createUserFollowRelation(userToUnFollowId, _moorUserWithRelations.user.id);
+          await _database.moorUsersDao.unFollowUser(_userFollowRelation);
+          return right(unit);
+        },
+      );
     } catch (exception) {
       _logger.e("Moor Database error: $exception");
       return left(
@@ -231,32 +252,6 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   Stream<Either<Failure, KtList<Tag>>> watchUserInterests(int userId) async* {
     final _stream = _database.moorTagsDao.watchUserInterests(userId);
     yield* createTagListStream(_stream, _logger);
-  }
-
-  @override
-  Future<Either<Failure, bool>> followsUser(int userId) async {
-    try {
-      final _moorUser = await _database.moorUsersDao.getLoggedInUser();
-      final _followedUsersList = await _database.moorUsersDao.watchFollowedUsers(_moorUser.id).first;
-      final _followedUsersIdList = _followedUsersList.map((_moorUser) => _moorUser.id).toList();
-      final _isFollowed = _followedUsersIdList.contains(userId);
-      return right(_isFollowed);
-    } catch (exception) {
-      _logger.e("Moor Database error: $exception");
-      return left(
-        Failure.coreData(
-          CoreDataFailure.serverError(
-            errorString: "Development repository error $exception",
-          ),
-        ),
-      );
-    }
-  }
-
-  @override
-  Future<Either<Failure, bool>> blocksUser(int userId) {
-    // TODO: implement blocksUser
-    throw UnimplementedError();
   }
 
   @override

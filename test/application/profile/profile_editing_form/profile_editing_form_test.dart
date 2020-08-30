@@ -6,6 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/application/profile/profile_editing_form/profile_editing_form_bloc.dart';
+import 'package:worldon/core/assets.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
@@ -40,11 +41,13 @@ void main() {
   const description = "For testing";
   final interests = {
     Tag.empty().copyWith(
+      id: 1,
       name: Name("Test"),
       creator: getValidUser(),
     ),
   };
-  final imageFile = File("assets/non_existing_person_placeholder.jpg");
+  final interestIds = interests.map((_tag) => _tag.id).toSet();
+  final imageFile = File(Assets.userPlaceholder);
   final user = getValidUser();
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
@@ -310,7 +313,7 @@ void main() {
           ),
           ProfileEditingFormState.initial().copyWith(
             user: user.copyWith(
-              interests: interests,
+              interestsIds: interestIds,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: originalPassword,
@@ -424,7 +427,7 @@ void main() {
           password: Password(originalPassword),
           email: EmailAddress(emailAddress),
           description: EntityDescription(description),
-          interests: interests,
+          interestsIds: interestIds,
         ),
         passwordConfirmator: PasswordConfirmator(
           password: originalPassword,
@@ -440,7 +443,7 @@ void main() {
           password: Password(originalPassword),
           email: EmailAddress(emailAddress),
           description: EntityDescription(description),
-          interests: interests,
+          interestsIds: interestIds,
           imageFileOption: some(imageFile),
         ),
         passwordConfirmator: PasswordConfirmator(
@@ -457,7 +460,7 @@ void main() {
           password: Password(originalPassword),
           email: EmailAddress(emailAddress),
           description: EntityDescription(description),
-          interests: interests,
+          interestsIds: interestIds,
           imageFileOption: some(imageFile),
         ),
         passwordConfirmator: PasswordConfirmator(
@@ -475,7 +478,7 @@ void main() {
           password: Password(originalPassword),
           email: EmailAddress(emailAddress),
           description: EntityDescription(description),
-          interests: interests,
+          interestsIds: interestIds,
           imageFileOption: some(imageFile),
         ),
         passwordConfirmator: PasswordConfirmator(
@@ -593,7 +596,7 @@ void main() {
               password: Password(originalPassword),
               email: EmailAddress(emailAddress),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interestIds,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: originalPassword,
@@ -609,7 +612,7 @@ void main() {
               password: Password(originalPassword),
               email: EmailAddress(emailAddress),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interestIds,
               imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
@@ -626,7 +629,7 @@ void main() {
               password: Password(originalPassword),
               email: EmailAddress(emailAddress),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interestIds,
               imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
@@ -644,7 +647,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interestIds,
               imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
@@ -760,7 +763,7 @@ void main() {
               password: Password(originalPassword),
               email: EmailAddress(emailAddress),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interestIds,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: originalPassword,
@@ -776,7 +779,7 @@ void main() {
               password: Password(originalPassword),
               email: EmailAddress(emailAddress),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interestIds,
               imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
@@ -793,7 +796,7 @@ void main() {
               password: Password(originalPassword),
               email: EmailAddress(emailAddress),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interestIds,
               imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
@@ -811,7 +814,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interestIds,
               imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
@@ -830,7 +833,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interestIds,
               imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(

@@ -61,6 +61,7 @@ class _$TagManagementWatcherEventCopyWithImpl<$Res> implements $TagManagementWat
   _$TagManagementWatcherEventCopyWithImpl(this._value, this._then);
 
   final TagManagementWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(TagManagementWatcherEvent) _then;
 }
@@ -322,6 +323,7 @@ class _$TagManagementWatcherStateCopyWithImpl<$Res> implements $TagManagementWat
   _$TagManagementWatcherStateCopyWithImpl(this._value, this._then);
 
   final TagManagementWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(TagManagementWatcherState) _then;
 }
@@ -625,7 +627,6 @@ abstract class _LoadSuccess implements TagManagementWatcherState {
   const factory _LoadSuccess(KtList<Tag> tags) = _$_LoadSuccess;
 
   KtList<Tag> get tags;
-
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
@@ -752,6 +753,5 @@ abstract class _LoadFailure implements TagManagementWatcherState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
   Failure<dynamic> get failure;
-
   _$LoadFailureCopyWith<_LoadFailure> get copyWith;
 }

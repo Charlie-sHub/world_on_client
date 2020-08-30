@@ -1,11 +1,8 @@
 import 'package:dartz/dartz.dart' as dartz;
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:worldon/data/core/models/achievement/achievement_dto.dart';
 import 'package:worldon/data/core/models/device/device_dto.dart';
-import 'package:worldon/data/core/models/experience/experience_dto.dart';
 import 'package:worldon/data/core/models/options/options_dto.dart';
 import 'package:worldon/data/core/models/system/system_dto.dart';
-import 'package:worldon/data/core/models/tag/tag_dto.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -41,15 +38,15 @@ abstract class UserDto implements _$UserDto {
     @required String creationDate,
     @required String modificationDate,
     @required OptionsDto options,
-    @required Set<UserDto> blockedUsers,
-    @required Set<UserDto> followedUsers,
+    @required Set<int> blockedUsersIds,
+    @required Set<int> followedUsersIds,
+    @required Set<int> interestsIds,
+    @required Set<int> achievementsIds,
+    @required Set<int> experiencesDoneIds,
+    @required Set<int> experiencesLikedIds,
+    @required Set<int> experiencesToDoIds,
     @required Set<DeviceDto> devices,
     @required Set<SystemDto> systems,
-    @required Set<TagDto> interests,
-    @required Set<AchievementDto> achievements,
-    @required Set<ExperienceDto> experiencesDone,
-    @required Set<ExperienceDto> experiencesLiked,
-    @required Set<ExperienceDto> experiencesToDo,
   }) = _UserDto;
 
   factory UserDto.fromDomain(User user) => UserDto(
@@ -70,15 +67,15 @@ abstract class UserDto implements _$UserDto {
         creationDate: user.creationDate.getOrCrash().toIso8601String(),
         modificationDate: user.modificationDate.getOrCrash().toIso8601String(),
         options: OptionsDto.fromDomain(user.options),
-        blockedUsers: user.blockedUsers.map((user) => UserDto.fromDomain(user)).toSet(),
-        followedUsers: user.followedUsers.map((user) => UserDto.fromDomain(user)).toSet(),
+        blockedUsersIds: user.blockedUsersIds,
+        followedUsersIds: user.followedUsersIds,
+        interestsIds: user.interestsIds,
+        achievementsIds: user.achievementsIds,
+        experiencesDoneIds: user.experiencesDoneIds,
+        experiencesLikedIds: user.experiencesLikedIds,
+        experiencesToDoIds: user.experiencesToDoIds,
         devices: user.devices.map((device) => DeviceDto.fromDomain(device)).toSet(),
         systems: user.systems.map((system) => SystemDto.fromDomain(system)).toSet(),
-        interests: user.interests.map((tag) => TagDto.fromDomain(tag)).toSet(),
-        achievements: user.achievements.map((achievement) => AchievementDto.fromDomain(achievement)).toSet(),
-        experiencesDone: user.experiencesDone.map((experience) => ExperienceDto.fromDomain(experience)).toSet(),
-        experiencesLiked: user.experiencesLiked.map((experience) => ExperienceDto.fromDomain(experience)).toSet(),
-        experiencesToDo: user.experiencesToDo.map((experience) => ExperienceDto.fromDomain(experience)).toSet(),
       );
 
   User toDomain() => User(
@@ -100,15 +97,15 @@ abstract class UserDto implements _$UserDto {
         creationDate: PastDate(DateTime.parse(creationDate)),
         modificationDate: PastDate(DateTime.parse(modificationDate)),
         options: options.toDomain(),
-        blockedUsers: blockedUsers.map((userDto) => userDto.toDomain()).toSet(),
-        followedUsers: followedUsers.map((userDto) => userDto.toDomain()).toSet(),
+        blockedUsersIds: blockedUsersIds,
+        followedUsersIds: followedUsersIds,
+        interestsIds: interestsIds,
+        achievementsIds: achievementsIds,
+        experiencesDoneIds: experiencesDoneIds,
+        experiencesLikedIds: experiencesLikedIds,
+        experiencesToDoIds: experiencesToDoIds,
         devices: devices.map((deviceDto) => deviceDto.toDomain()).toSet(),
         systems: systems.map((systemDto) => systemDto.toDomain()).toSet(),
-        interests: interests.map((tagDto) => tagDto.toDomain()).toSet(),
-        achievements: achievements.map((achievementDto) => achievementDto.toDomain()).toSet(),
-        experiencesDone: experiencesDone.map((experiencesDto) => experiencesDto.toDomain()).toSet(),
-        experiencesLiked: experiencesLiked.map((experiencesDto) => experiencesDto.toDomain()).toSet(),
-        experiencesToDo: experiencesToDo.map((experiencesDto) => experiencesDto.toDomain()).toSet(),
       );
 
   factory UserDto.fromJson(Map<String, dynamic> json) => _$UserDtoFromJson(json);

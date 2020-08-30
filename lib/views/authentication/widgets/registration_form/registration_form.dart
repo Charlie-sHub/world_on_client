@@ -62,7 +62,7 @@ class RegistrationForm extends StatelessWidget {
               TagAdditionCard(
                 tagChangeFunction: (KtSet<Tag> tags) => context.bloc<RegistrationFormBloc>().add(
                       RegistrationFormEvent.interestsChanged(
-                        tags.asSet(),
+                        tags.asSet().map((_tag) => _tag.id).toSet(),
                       ),
                     ),
               ),

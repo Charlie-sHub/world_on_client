@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:worldon/core/assets.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widget/misc/block_unblock_button_builder/block_unblock_button_builder.dart';
@@ -22,12 +25,17 @@ class ForeignProfileHeader extends StatelessWidget {
         children: <Widget>[
           Row(
             children: <Widget>[
-              const Padding(
-                padding: EdgeInsets.all(5),
-                child: CircleAvatar(
-                  radius: 40,
-                  backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
-                ),
+              Padding(
+                padding: const EdgeInsets.all(5),
+                child: user.imageURL == Assets.userPlaceholder
+                    ? CircleAvatar(
+                        radius: 40,
+                        backgroundImage: AssetImage(user.imageURL),
+                      )
+                    : CircleAvatar(
+                        radius: 40,
+                        backgroundImage: FileImage(File(user.imageURL)),
+                      ),
               ),
               Expanded(
                 child: Padding(

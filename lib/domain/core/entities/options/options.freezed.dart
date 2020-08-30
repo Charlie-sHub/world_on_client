@@ -58,6 +58,7 @@ class _$OptionsCopyWithImpl<$Res> implements $OptionsCopyWith<$Res> {
 
 abstract class _$OptionsCopyWith<$Res> implements $OptionsCopyWith<$Res> {
   factory _$OptionsCopyWith(_Options value, $Res Function(_Options) then) = __$OptionsCopyWithImpl<$Res>;
+
   @override
   $Res call({int id, String languageCode});
 }
@@ -98,9 +99,9 @@ class _$_Options extends _Options {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Options &&
-        (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.languageCode, languageCode) || const DeepCollectionEquality().equals(other.languageCode, languageCode)));
+        (other is _Options &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.languageCode, languageCode) || const DeepCollectionEquality().equals(other.languageCode, languageCode)));
   }
 
   @override

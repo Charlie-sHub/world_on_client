@@ -15,6 +15,7 @@ import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_v
 import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/tag_management/repository/tag_repository_interface.dart';
 
@@ -29,10 +30,15 @@ class DevelopmentTagRepository implements TagCoreRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> addTagToInterests(Tag tag) async {
     try {
-      final _moorUser = await _database.moorUsersDao.getLoggedInUser();
-      final _userInterest = _createUserInterest(_moorUser, tag);
-      await _database.moorTagsDao.insertUserInterest(_userInterest);
-      return right(unit);
+      final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
+      return _moorUserOption.fold(
+        () => throw UnAuthenticatedError,
+        (_moorUserWithRelations) async {
+          final _userInterest = _createUserInterest(_moorUserWithRelations.user, tag);
+          await _database.moorTagsDao.insertUserInterest(_userInterest);
+          return right(unit);
+        },
+      );
     } catch (exception) {
       _logger.e("Moor Database error: $exception");
       return left(
@@ -48,10 +54,15 @@ class DevelopmentTagRepository implements TagCoreRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> dismissTagFromInterests(Tag tag) async {
     try {
-      final _moorUser = await _database.moorUsersDao.getLoggedInUser();
-      final _userInterest = _createUserInterest(_moorUser, tag);
-      await _database.moorTagsDao.removeUserInterest(_userInterest);
-      return right(unit);
+      final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
+      return _moorUserOption.fold(
+        () => throw UnAuthenticatedError,
+        (_moorUserWithRelations) async {
+          final _userInterest = _createUserInterest(_moorUserWithRelations.user, tag);
+          await _database.moorTagsDao.removeUserInterest(_userInterest);
+          return right(unit);
+        },
+      );
     } catch (exception) {
       _logger.e("Moor Database error: $exception");
       return left(

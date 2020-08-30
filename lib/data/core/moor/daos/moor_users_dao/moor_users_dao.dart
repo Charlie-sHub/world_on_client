@@ -1,4 +1,6 @@
+import 'package:dartz/dartz.dart';
 import 'package:moor/moor.dart';
+import 'package:worldon/data/core/moor/daos/moor_users_dao/moor_user_with_relations.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
 
 import '../../tables/moor_options.dart';
@@ -9,6 +11,12 @@ part 'moor_users_dao.g.dart';
 @UseDao(tables: [
   MoorUsers,
   MoorOptions,
+  MoorOptions,
+  UserAchievements,
+  UserDoneExperiences,
+  UserLikedExperiences,
+  UserToDoExperiences,
+  UserInterests,
   UserFollowRelations,
   UserBlockRelations,
 ])
@@ -44,13 +52,83 @@ class MoorUsersDao extends DatabaseAccessor<Database> with _$MoorUsersDaoMixin {
     return _moorUserList.length;
   }
 
-  Future<MoorUser> getLoggedInUser() async {
+  Future<Option<MoorUserWithRelations>> getLoggedInUser() async {
     final _userQuery = select(moorUsers)
       ..where(
         (_user) => _user.isLoggedIn,
-      )
-      ..limit(1);
-    return _userQuery.getSingle();
+      );
+    final _moorUser = await _userQuery.getSingle();
+    if (_moorUser != null) {
+      final _usersBlockedIds = await _getBlockedUsersIds(_moorUser);
+      final _usersFollowedIds = await _getFollowedUsersIds(_moorUser);
+      final _userInterestsIds = await _getUserInterestIds(_moorUser);
+      final _userAchievementsIds = await _getUserAchievementsIds(_moorUser);
+      final _userDoneExperiencesIds = await _getUserDoneExperiencesIds(_moorUser);
+      final _userLikedExperiencesIds = await _getUserLikedExperiencesIds(_moorUser);
+      final _userToDoExperiencesIds = await _getUserToDoExperiencesIds(_moorUser);
+      final _moorUserWithRelations = MoorUserWithRelations(
+        user: _moorUser,
+        blockedUsersIds: _usersBlockedIds,
+        followedUsersIds: _usersFollowedIds,
+        interestsIds: _userInterestsIds,
+        achievementsIds: _userAchievementsIds,
+        experiencesDoneIds: _userDoneExperiencesIds,
+        experiencesLikedIds: _userLikedExperiencesIds,
+        experiencesToDoIds: _userToDoExperiencesIds,
+      );
+      return some(_moorUserWithRelations);
+    } else {
+      return none();
+    }
+  }
+
+  Future<Set<int>> _getUserToDoExperiencesIds(MoorUser _moorUser) async {
+    final _userExperiencesToDoQuery = select(userToDoExperiences)..where((userToDoExperiences) => userToDoExperiences.userId.equals(_moorUser.id));
+    final _userToDoExperiences = await _userExperiencesToDoQuery.get();
+    final _userToDoExperiencesIds = _userToDoExperiences.map((userToDoExperiences) => userToDoExperiences.experienceId).toSet();
+    return _userToDoExperiencesIds;
+  }
+
+  Future<Set<int>> _getUserLikedExperiencesIds(MoorUser _moorUser) async {
+    final _userExperiencesLikedQuery = select(userLikedExperiences)..where((userLikedExperiences) => userLikedExperiences.userId.equals(_moorUser.id));
+    final _userLikedExperiences = await _userExperiencesLikedQuery.get();
+    final _userLikedExperiencesIds = _userLikedExperiences.map((userLikedExperiences) => userLikedExperiences.experienceId).toSet();
+    return _userLikedExperiencesIds;
+  }
+
+  Future<Set<int>> _getUserDoneExperiencesIds(MoorUser _moorUser) async {
+    final _userExperiencesDoneQuery = select(userDoneExperiences)..where((userDoneExperiences) => userDoneExperiences.userId.equals(_moorUser.id));
+    final _userDoneExperiences = await _userExperiencesDoneQuery.get();
+    final _userDoneExperiencesIds = _userDoneExperiences.map((userDoneExperiences) => userDoneExperiences.experienceId).toSet();
+    return _userDoneExperiencesIds;
+  }
+
+  Future<Set<int>> _getUserAchievementsIds(MoorUser _moorUser) async {
+    final _userAchievementsQuery = select(userAchievements)..where((userAchievements) => userAchievements.userId.equals(_moorUser.id));
+    final _userAchievements = await _userAchievementsQuery.get();
+    final _userAchievementsIds = _userAchievements.map((userAchievements) => userAchievements.achievementId).toSet();
+    return _userAchievementsIds;
+  }
+
+  Future<Set<int>> _getUserInterestIds(MoorUser _moorUser) async {
+    final _userInterestsQuery = select(userInterests)..where((userInterests) => userInterests.userId.equals(_moorUser.id));
+    final _userInterests = await _userInterestsQuery.get();
+    final _userInterestsIds = _userInterests.map((userInterests) => userInterests.tagId).toSet();
+    return _userInterestsIds;
+  }
+
+  Future<Set<int>> _getFollowedUsersIds(MoorUser _moorUser) async {
+    final _followedUsersQuery = select(userFollowRelations)..where((userFollowRelations) => userFollowRelations.followingId.equals(_moorUser.id));
+    final _userFollowRelations = await _followedUsersQuery.get();
+    final _usersFollowedIds = _userFollowRelations.map((_followRelation) => _followRelation.followedId).toSet();
+    return _usersFollowedIds;
+  }
+
+  Future<Set<int>> _getBlockedUsersIds(MoorUser _moorUser) async {
+    final _blockedUsersQuery = select(userBlockRelations)..where((userBlockRelations) => userBlockRelations.blockerId.equals(_moorUser.id));
+    final _userBlockRelations = await _blockedUsersQuery.get();
+    final _usersBlockedIds = _userBlockRelations.map((_blockRelation) => _blockRelation.blockedId).toSet();
+    return _usersBlockedIds;
   }
 
   Future<MoorUser> getUserById(int id) async {

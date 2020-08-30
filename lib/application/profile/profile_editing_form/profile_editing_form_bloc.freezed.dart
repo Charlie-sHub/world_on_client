@@ -1118,6 +1118,7 @@ abstract class _PasswordConfirmationChanged implements ProfileEditingFormEvent {
 
 abstract class _$EmailAddressChangedCopyWith<$Res> {
   factory _$EmailAddressChangedCopyWith(_EmailAddressChanged value, $Res Function(_EmailAddressChanged) then) = __$EmailAddressChangedCopyWithImpl<$Res>;
+
   $Res call({String emailAddress});
 }
 
@@ -2059,16 +2060,12 @@ abstract class _ProfileEditingFormState implements ProfileEditingFormState {
 
   @override
   User get user;
-
   @override
   PasswordConfirmator get passwordConfirmator;
-
   @override
   String get passwordToCompare;
-
   @override
   bool get showErrorMessages;
-
   @override
   bool get isSubmitting;
   @override

@@ -32,9 +32,7 @@ import 'package:worldon/injection.dart';
 class DevelopmentCoreRepository implements CoreRepositoryInterface {
   final _random = Random();
   final _database = getIt<Database>();
-  final _logger = Logger();
-
-  // final _database = Database.test(VmDatabase.memory());
+  final _logger = Logger(printer: PrefixPrinter(PrettyPrinter(colors: false)));
 
   @override
   Future<Either<Failure, Unit>> deleteCache() {
@@ -45,10 +43,10 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
   /// Deletes everything in the database in case of error
   Future<void> initializeDatabase() async {
     try {
-      final Set<int> _userIds = {};
-      final Set<int> _achievementIds = {};
-      final Set<int> _tagsIds = {};
-      final Set<int> _experiencesIds = {};
+      final _userIds = <int>{};
+      final _achievementIds = <int>{};
+      final _tagsIds = <int>{};
+      final _experiencesIds = <int>{};
       if (await _database.moorUsersDao.countUsers() == 0) {
         _logger.i("Starting the creation of users and their relations");
         await _insertUsers(_userIds);
@@ -498,7 +496,7 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
     final _experienceCorporate = _experienceIpsum.copyWith(
       title: Name("Leverage agile frameworks"),
       description: EntityDescription("Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. "
-        "Override the digital divide with additional clickthroughs from DevOps."),
+          "Override the digital divide with additional clickthroughs from DevOps."),
       creator: _validUser.copyWith(
         id: _userIds.elementAt(1),
       ),
@@ -521,43 +519,30 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
     final _moorExperience = domainExperienceToMoorExperience(experience);
     final _experienceId = await _database.moorExperiencesDao.insertExperience(_moorExperience);
     final _moorObjectives = experience.objectives
-      .getOrCrash()
-      .asSet()
-      .map(
-        (_objective) =>
-        domainObjectiveToMoorObjective(
-          _experienceId,
-          _objective,
-        ),
-    )
-      .toSet();
+        .getOrCrash()
+        .asSet()
+        .map(
+          (_objective) => domainObjectiveToMoorObjective(
+            _experienceId,
+            _objective,
+          ),
+        )
+        .toSet();
     final _moorRewards = experience.rewards
-      .getOrCrash()
-      .asSet()
-      .map(
-        (_reward) =>
-        domainRewardToMoorReward(
-          _experienceId,
-          _reward,
-        ),
-    )
-      .toSet();
-    experience.imageAssetsOption.fold(
-      // This should never happen
-      // If it does an exception should be thrown or something
-        () => _logger.i("The experience ${experience.title} imageAssetOption field is none()"),
-        (imageAssetList) async {
-        for (final _imageAsset in imageAssetList) {
-          final _experienceImage = ExperienceImageUrlsCompanion.insert(
-            experienceId: _experienceId,
-            // TODO: Figure out a way to select multiple file images
-            // just saving the name is useless for this
-            imageUrl: _imageAsset.name,
-          );
-          await _database.moorExperiencesDao.insertExperienceImage(_experienceImage);
-        }
-      },
+        .getOrCrash()
+        .asSet()
+        .map(
+          (_reward) => domainRewardToMoorReward(
+            _experienceId,
+            _reward,
+          ),
+        )
+        .toSet();
+    final _experienceImage = ExperienceImageUrlsCompanion.insert(
+      experienceId: _experienceId,
+      imageUrl: experience.imageURLs.first,
     );
+    await _database.moorExperiencesDao.insertExperienceImage(_experienceImage);
     for (final _objective in _moorObjectives) {
       await _database.moorObjectivesDao.insertObjective(_objective);
     }

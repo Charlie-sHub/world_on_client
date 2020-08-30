@@ -63,6 +63,7 @@ class _$BlockedWatcherEventCopyWithImpl<$Res> implements $BlockedWatcherEventCop
   _$BlockedWatcherEventCopyWithImpl(this._value, this._then);
 
   final BlockedWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(BlockedWatcherEvent) _then;
 }
@@ -357,6 +358,7 @@ class _$BlockedWatcherStateCopyWithImpl<$Res> implements $BlockedWatcherStateCop
   _$BlockedWatcherStateCopyWithImpl(this._value, this._then);
 
   final BlockedWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(BlockedWatcherState) _then;
 }
@@ -551,6 +553,7 @@ abstract class _LoadInProgress implements BlockedWatcherState {
 
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<User> blockedUsers});
 }
 
@@ -664,6 +667,7 @@ abstract class _LoadSuccess implements BlockedWatcherState {
 
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

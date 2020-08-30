@@ -34,6 +34,7 @@ mixin _$AchievementManagementWatcherEvent {
     @required Result watchAllAchievementsStarted(),
     @required Result resultsReceived(Either<Failure, KtList<Achievement>> failureOrAchievements),
   });
+
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result watchAllAchievementsStarted(),
@@ -62,6 +63,7 @@ class _$AchievementManagementWatcherEventCopyWithImpl<$Res> implements $Achievem
   _$AchievementManagementWatcherEventCopyWithImpl(this._value, this._then);
 
   final AchievementManagementWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(AchievementManagementWatcherEvent) _then;
 }
@@ -291,6 +293,7 @@ mixin _$AchievementManagementWatcherState {
     @required Result loadSuccess(KtList<Achievement> achievements),
     @required Result loadFailure(Failure<dynamic> failure),
   });
+
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
@@ -325,6 +328,7 @@ class _$AchievementManagementWatcherStateCopyWithImpl<$Res> implements $Achievem
   _$AchievementManagementWatcherStateCopyWithImpl(this._value, this._then);
 
   final AchievementManagementWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(AchievementManagementWatcherState) _then;
 }
@@ -628,7 +632,6 @@ abstract class _LoadSuccess implements AchievementManagementWatcherState {
   const factory _LoadSuccess(KtList<Achievement> achievements) = _$_LoadSuccess;
 
   KtList<Achievement> get achievements;
-
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
@@ -755,6 +758,5 @@ abstract class _LoadFailure implements AchievementManagementWatcherState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
   Failure<dynamic> get failure;
-
   _$LoadFailureCopyWith<_LoadFailure> get copyWith;
 }

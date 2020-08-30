@@ -23,8 +23,8 @@ void main() {
       loadUserInterests = getIt<WatchUserInterests>();
     },
   );
-  final interests = KtList.of(Tag.empty());
-  final user = getValidUser().copyWith(interests: interests.toSet().dart);
+  final interests = KtList.of(Tag.empty().copyWith(id: 1));
+  final user = getValidUser().copyWith(interestsIds: interests.map((_tag) => _tag.id).toSet().dart);
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,

@@ -1,5 +1,6 @@
 import 'package:moor/moor.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
+import 'package:worldon/domain/core/failures/error.dart';
 
 import '../../tables/moor_notifications.dart';
 import '../../tables/moor_users.dart';
@@ -28,7 +29,11 @@ class MoorNotificationsDao extends DatabaseAccessor<Database> with _$MoorNotific
   Future<int> deleteAllNotifications() => delete(moorNotifications).go();
 
   Stream<List<MoorNotificationWithRelations>> watchNotifications() async* {
-    final _receiver = await db.moorUsersDao.getLoggedInUser();
+    final _receiverOption = await db.moorUsersDao.getLoggedInUser();
+    final _receiver = _receiverOption.fold(
+      () => throw UnAuthenticatedError,
+      (_moorUserWithRelations) => _moorUserWithRelations.user,
+    );
     final _contentQuery = select(moorNotifications).join(
       [
         innerJoin(

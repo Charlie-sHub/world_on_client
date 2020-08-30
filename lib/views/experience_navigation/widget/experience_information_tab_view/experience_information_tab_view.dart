@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:worldon/core/assets.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/views/core/misc/common_functions/get_color_by_difficulty.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
@@ -36,7 +37,7 @@ class ExperienceInformationTabView extends StatelessWidget {
           ),
           // TODO: Implement image gallery
           const Image(
-            image: AssetImage('assets/experience_placeholder_image.jpg'),
+            image: AssetImage(Assets.experiencePlaceholder),
             fit: BoxFit.fill,
           ),
           Padding(

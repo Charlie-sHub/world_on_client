@@ -63,6 +63,7 @@ class _$ProfileInterestsWatcherEventCopyWithImpl<$Res> implements $ProfileIntere
   _$ProfileInterestsWatcherEventCopyWithImpl(this._value, this._then);
 
   final ProfileInterestsWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(ProfileInterestsWatcherEvent) _then;
 }
@@ -178,7 +179,6 @@ abstract class _WatchInterestsStarted implements ProfileInterestsWatcherEvent {
   const factory _WatchInterestsStarted(User user) = _$_WatchInterestsStarted;
 
   User get user;
-
   _$WatchInterestsStartedCopyWith<_WatchInterestsStarted> get copyWith;
 }
 
@@ -357,6 +357,7 @@ class _$ProfileInterestsWatcherStateCopyWithImpl<$Res> implements $ProfileIntere
   _$ProfileInterestsWatcherStateCopyWithImpl(this._value, this._then);
 
   final ProfileInterestsWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(ProfileInterestsWatcherState) _then;
 }
@@ -551,6 +552,7 @@ abstract class _LoadInProgress implements ProfileInterestsWatcherState {
 
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<Tag> interests});
 }
 
@@ -664,6 +666,7 @@ abstract class _LoadSuccess implements ProfileInterestsWatcherState {
 
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

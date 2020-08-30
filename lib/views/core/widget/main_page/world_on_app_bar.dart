@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:injectable/injectable.dart';
 import 'package:provider/provider.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
+import 'package:worldon/core/assets.dart';
 import 'package:worldon/views/core/widget/main_page/debug_database_button.dart';
 import 'package:worldon/views/core/widget/main_page/messages_widget.dart';
 import 'package:worldon/views/core/widget/main_page/notifications_widget.dart';
@@ -29,7 +30,7 @@ class WorldOnAppBar extends StatelessWidget implements PreferredSizeWidget {
               child: Padding(
                 padding: EdgeInsets.all(3),
                 child: Image(
-                  image: AssetImage('assets/world_on_logo.jpg'),
+                  image: AssetImage(Assets.worldOnLogo),
                 ),
               ),
             ),

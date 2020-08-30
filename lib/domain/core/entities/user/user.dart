@@ -2,12 +2,9 @@ import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/entities/device/device.dart';
-import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/options/options.dart';
 import 'package:worldon/domain/core/entities/system/system.dart';
-import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -48,15 +45,15 @@ abstract class User implements _$User {
     @required PastDate creationDate,
     @required PastDate modificationDate,
     @required Options options,
-    @required Set<User> blockedUsers,
-    @required Set<User> followedUsers,
+    @required Set<int> blockedUsersIds,
+    @required Set<int> followedUsersIds,
+    @required Set<int> interestsIds,
+    @required Set<int> achievementsIds,
+    @required Set<int> experiencesDoneIds,
+    @required Set<int> experiencesLikedIds,
+    @required Set<int> experiencesToDoIds,
     @required Set<Device> devices,
     @required Set<System> systems,
-    @required Set<Tag> interests,
-    @required Set<Achievement> achievements,
-    @required Set<Experience> experiencesDone,
-    @required Set<Experience> experiencesLiked,
-    @required Set<Experience> experiencesToDo,
   }) = _User;
 
   factory User.empty() => User(
@@ -80,15 +77,15 @@ abstract class User implements _$User {
           id: 1,
           languageCode: "",
         ),
-        blockedUsers: <User>{},
-        followedUsers: <User>{},
+        blockedUsersIds: <int>{},
+        followedUsersIds: <int>{},
+        interestsIds: <int>{},
+        achievementsIds: <int>{},
+        experiencesDoneIds: <int>{},
+        experiencesLikedIds: <int>{},
+        experiencesToDoIds: <int>{},
         devices: <Device>{},
         systems: <System>{},
-        interests: <Tag>{},
-        achievements: <Achievement>{},
-        experiencesDone: <Experience>{},
-        experiencesLiked: <Experience>{},
-        experiencesToDo: <Experience>{},
       );
 
   Option<ValueFailure<dynamic>> get failureOption {

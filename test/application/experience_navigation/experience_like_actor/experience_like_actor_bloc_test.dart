@@ -26,7 +26,7 @@ void main() {
   );
   final experienceLiked = getValidExperience();
   final experienceNotLiked = experienceLiked.copyWith(id: 2);
-  final user = getValidUser().copyWith(experiencesLiked: {experienceLiked});
+  final user = getValidUser().copyWith(experiencesLikedIds: {experienceLiked.id});
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,

@@ -20,15 +20,11 @@ abstract class ProfileRepositoryInterface {
   /// Sends the id of a [User] the logged in [User] wants to un-block
   Future<Either<Failure, Unit>> unBlockUser(int blockedId);
 
-  Future<Either<Failure, bool>> blocksUser(int userId);
-
   /// Sends the id of a [User] the logged in [User] wants to follow
   Future<Either<Failure, Unit>> followUser(int userToFollowId);
 
   /// Sends the id of a [User] the logged in [User] wants to un-follow
   Future<Either<Failure, Unit>> unFollowUser(int userToUnFollowId);
-
-  Future<Either<Failure, bool>> followsUser(int userId);
 
   /// Sends the id of an [Experience] to the server so this one can be removed from the liked [Experience]s list of the logged in [User]
   Future<Either<Failure, Unit>> removeExperienceLiked(int experienceId);

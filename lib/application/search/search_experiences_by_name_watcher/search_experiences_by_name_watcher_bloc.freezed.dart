@@ -36,6 +36,7 @@ mixin _$SearchExperiencesByNameWatcherEvent {
     @required Result watchExperiencesFoundByNameStarted(SearchTerm searchTerm),
     @required Result searchResultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
   });
+
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result watchExperiencesFoundByNameStarted(SearchTerm searchTerm),
@@ -64,6 +65,7 @@ class _$SearchExperiencesByNameWatcherEventCopyWithImpl<$Res> implements $Search
   _$SearchExperiencesByNameWatcherEventCopyWithImpl(this._value, this._then);
 
   final SearchExperiencesByNameWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(SearchExperiencesByNameWatcherEvent) _then;
 }
@@ -317,6 +319,7 @@ mixin _$SearchExperiencesByNameWatcherState {
     @required Result searchSuccess(KtList<Experience> experiencesFound),
     @required Result searchFailure(Failure<dynamic> failure),
   });
+
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
@@ -351,6 +354,7 @@ class _$SearchExperiencesByNameWatcherStateCopyWithImpl<$Res> implements $Search
   _$SearchExperiencesByNameWatcherStateCopyWithImpl(this._value, this._then);
 
   final SearchExperiencesByNameWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(SearchExperiencesByNameWatcherState) _then;
 }
@@ -545,6 +549,7 @@ abstract class _SearchInProgress implements SearchExperiencesByNameWatcherState 
 
 abstract class _$SearchSuccessCopyWith<$Res> {
   factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) = __$SearchSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<Experience> experiencesFound});
 }
 
@@ -654,11 +659,13 @@ abstract class _SearchSuccess implements SearchExperiencesByNameWatcherState {
   const factory _SearchSuccess(KtList<Experience> experiencesFound) = _$_SearchSuccess;
 
   KtList<Experience> get experiencesFound;
+
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith;
 }
 
 abstract class _$SearchFailureCopyWith<$Res> {
   factory _$SearchFailureCopyWith(_SearchFailure value, $Res Function(_SearchFailure) then) = __$SearchFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

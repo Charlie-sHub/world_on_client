@@ -10,6 +10,7 @@ import 'package:mockito/mockito.dart';
 import 'package:multi_image_picker/multi_image_picker.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
 import 'package:worldon/application/experience_management/primitives/primitive_reward.dart';
+import 'package:worldon/core/assets.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
@@ -53,7 +54,7 @@ void main() {
   final imageAssets = [
     Asset(
       "1",
-      "assets/experience_placeholder_image.jpg",
+      Assets.experiencePlaceholder,
       100,
       100,
     ),
@@ -73,7 +74,7 @@ void main() {
     PrimitiveReward(
       name: title,
       description: description,
-      imageFile: File("assets/reward_placeholder.jpg"),
+      imageFile: File(Assets.rewardPlaceholder),
     ),
   );
   final rewardSet = primitiveRewards.map((primitiveReward) => primitiveReward.toDomain()).toSet();

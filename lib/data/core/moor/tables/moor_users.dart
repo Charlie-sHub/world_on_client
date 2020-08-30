@@ -93,11 +93,10 @@ class UserDoneExperiences extends Table {
   IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
 
   @override
-  Set<Column> get primaryKey =>
-    {
-      userId,
-      experienceId,
-    };
+  Set<Column> get primaryKey => {
+        userId,
+        experienceId,
+      };
 }
 
 class UserLikedExperiences extends Table {
@@ -106,11 +105,10 @@ class UserLikedExperiences extends Table {
   IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
 
   @override
-  Set<Column> get primaryKey =>
-    {
-      userId,
-      experienceId,
-    };
+  Set<Column> get primaryKey => {
+        userId,
+        experienceId,
+      };
 }
 
 class UserToDoExperiences extends Table {
@@ -119,9 +117,8 @@ class UserToDoExperiences extends Table {
   IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
 
   @override
-  Set<Column> get primaryKey =>
-    {
-      userId,
-      experienceId,
-    };
+  Set<Column> get primaryKey => {
+        userId,
+        experienceId,
+      };
 }

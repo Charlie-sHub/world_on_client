@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
+import 'package:worldon/core/assets.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 
 class UserImage extends StatelessWidget {
@@ -19,10 +22,15 @@ class UserImage extends StatelessWidget {
             NavigationActorEvent.profileTapped(some(user)),
           ),
       // TODO: Change to NetworkImage
-      child: const CircleAvatar(
-        radius: 22,
-        backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
-      ),
+      child: user.imageURL == Assets.userPlaceholder
+          ? CircleAvatar(
+              radius: 22,
+              backgroundImage: AssetImage(user.imageURL),
+            )
+          : CircleAvatar(
+              radius: 22,
+              backgroundImage: FileImage(File(user.imageURL)),
+            ),
     );
   }
 }

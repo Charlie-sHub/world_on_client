@@ -68,9 +68,12 @@ class ExperienceCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 5),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        ParticipateButton(experience: experience),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: ParticipateButton(experience: experience),
+                        ),
                         LogButton(experience: experience),
                         const ReportButton(),
                       ],
@@ -98,11 +101,6 @@ class ExperienceCard extends StatelessWidget {
   // TODO: Customize snackbars
   // And ensure they show above the navigation bar
   void _experienceCardListener(BuildContext context, ExperienceCardActorState state) => state.maybeMap(
-        actionInProgress: (_) => FlushbarHelper.createLoading(
-          duration: const Duration(seconds: 2),
-          message: "Action in progress",
-          linearProgressIndicator: const LinearProgressIndicator(),
-        ).show(context),
         additionFailure: (state) => FlushbarHelper.createError(
           duration: const Duration(seconds: 2),
           message: state.failure.maybeMap(

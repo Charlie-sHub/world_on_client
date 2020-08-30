@@ -36,6 +36,7 @@ mixin _$ProfileAchievementsWatcherEvent {
     @required Result watchAchievementsStarted(User user),
     @required Result resultsReceived(Either<Failure, KtList<Achievement>> failureOrAchievements),
   });
+
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result watchAchievementsStarted(User user),
@@ -63,6 +64,7 @@ class _$ProfileAchievementsWatcherEventCopyWithImpl<$Res> implements $ProfileAch
   _$ProfileAchievementsWatcherEventCopyWithImpl(this._value, this._then);
 
   final ProfileAchievementsWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(ProfileAchievementsWatcherEvent) _then;
 }
@@ -325,6 +327,7 @@ mixin _$ProfileAchievementsWatcherState {
     @required Result loadSuccess(KtList<Achievement> achievements),
     @required Result loadFailure(Failure<dynamic> failure),
   });
+
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
@@ -358,6 +361,7 @@ class _$ProfileAchievementsWatcherStateCopyWithImpl<$Res> implements $ProfileAch
   _$ProfileAchievementsWatcherStateCopyWithImpl(this._value, this._then);
 
   final ProfileAchievementsWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(ProfileAchievementsWatcherState) _then;
 }
@@ -552,6 +556,7 @@ abstract class _LoadInProgress implements ProfileAchievementsWatcherState {
 
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<Achievement> achievements});
 }
 
@@ -665,6 +670,7 @@ abstract class _LoadSuccess implements ProfileAchievementsWatcherState {
 
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

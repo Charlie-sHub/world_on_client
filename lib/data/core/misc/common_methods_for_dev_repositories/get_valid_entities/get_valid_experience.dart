@@ -1,4 +1,5 @@
 import 'package:kt_dart/kt.dart';
+import 'package:worldon/core/assets.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_comment.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_coordinates.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_tag.dart';
@@ -22,7 +23,7 @@ Experience getValidExperience() {
     id: 1,
     title: Name("Malesuada fames ac ante"),
     description: EntityDescription("Donec bibendum congue libero nec viverra. Cras eget placerat libero. Maecenas cursus turpis vitae ultricies tempus. In suscipit orci id dapibus molestie."),
-    imageURLs: {"somePic.jpg"},
+    imageURLs: {Assets.experiencePlaceholder},
     coordinates: getValidCoordinates(),
     location: getValidLocation(),
     creator: getValidUser(),

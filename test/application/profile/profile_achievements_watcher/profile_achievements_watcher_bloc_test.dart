@@ -24,7 +24,7 @@ void main() {
     },
   );
   final achievements = KtList.of(Achievement.empty());
-  final user = getValidUser().copyWith(achievements: achievements.toSet().dart);
+  final user = getValidUser().copyWith(achievementsIds: achievements.map((_achievement) => _achievement.id).toSet().dart);
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,

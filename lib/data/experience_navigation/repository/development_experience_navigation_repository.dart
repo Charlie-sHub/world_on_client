@@ -12,6 +12,7 @@ import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_v
 import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_interface.dart';
@@ -26,13 +27,18 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
   @override
   Future<Either<Failure, Unit>> finishExperience(int experienceId) async {
     try {
-      final _moorUser = await _database.moorUsersDao.getLoggedInUser();
-      final _userDoneExperience = UserDoneExperiencesCompanion.insert(
-        userId: _moorUser.id,
-        experienceId: experienceId,
+      final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
+      return _moorUserOption.fold(
+        () => throw UnAuthenticatedError,
+        (_moorUserWithRelations) async {
+          final _userDoneExperience = UserDoneExperiencesCompanion.insert(
+            userId: _moorUserWithRelations.user.id,
+            experienceId: experienceId,
+          );
+          await _database.moorExperiencesDao.insertExperienceDone(_userDoneExperience);
+          return right(unit);
+        },
       );
-      await _database.moorExperiencesDao.insertExperienceDone(_userDoneExperience);
-      return right(unit);
     } catch (exception) {
       _logger.e("Moor Database error: $exception");
       return left(
@@ -48,13 +54,18 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
   @override
   Future<Either<Failure, Unit>> likeExperience(int experienceId) async {
     try {
-      final _moorUser = await _database.moorUsersDao.getLoggedInUser();
-      final _userLikedExperience = UserLikedExperiencesCompanion.insert(
-        userId: _moorUser.id,
-        experienceId: experienceId,
+      final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
+      return _moorUserOption.fold(
+        () => throw UnAuthenticatedError,
+        (_moorUserWithRelations) async {
+          final _userLikedExperience = UserLikedExperiencesCompanion.insert(
+            userId: _moorUserWithRelations.user.id,
+            experienceId: experienceId,
+          );
+          await _database.moorExperiencesDao.insertExperienceLiked(_userLikedExperience);
+          return right(unit);
+        },
       );
-      await _database.moorExperiencesDao.insertExperienceLiked(_userLikedExperience);
-      return right(unit);
     } catch (exception) {
       _logger.e("Moor Database error: $exception");
       return left(
@@ -96,15 +107,20 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
   @override
   Future<Either<Failure, Unit>> rewardUser(int experienceId) async {
     try {
-      final _moorUser = await _database.moorUsersDao.getLoggedInUser();
-      final _moorExperience = await _database.moorExperiencesDao.getExperienceById(experienceId);
-      final _experiencePoints = _moorUser.experiencePoints + _moorExperience.difficulty * 10;
-      await _database.moorUsersDao.updateUser(
-        _moorUser.copyWith(
-          experiencePoints: _experiencePoints,
-        ),
+      final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
+      return _moorUserOption.fold(
+        () => throw UnAuthenticatedError,
+        (_moorUserWithRelations) async {
+          final _moorExperience = await _database.moorExperiencesDao.getExperienceById(experienceId);
+          final _experiencePoints = _moorUserWithRelations.user.experiencePoints + _moorExperience.difficulty * 10;
+          await _database.moorUsersDao.updateUser(
+            _moorUserWithRelations.user.copyWith(
+              experiencePoints: _experiencePoints,
+            ),
+          );
+          return right(unit);
+        },
       );
-      return right(unit);
     } catch (exception) {
       _logger.e("Moor Database error: $exception");
       return left(

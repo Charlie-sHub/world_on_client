@@ -17,9 +17,9 @@ class LogButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ExperienceCardActorBloc, ExperienceCardActorState>(
       builder: (context, state) => AnimatedSwitcher(
-        duration: const Duration(milliseconds: 300),
-        transitionBuilder: (child, animation) => ScaleTransition(
-          scale: animation,
+        duration: const Duration(milliseconds: 200),
+        transitionBuilder: (child, animation) => FadeTransition(
+          opacity: animation,
           child: child,
         ),
         child: state.map(

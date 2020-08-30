@@ -74,7 +74,7 @@ class _$RegistrationFormEventTearOff {
   }
 
 // ignore: unused_element
-  _InterestsChanged interestsChanged(Set<Tag> interests) {
+  _InterestsChanged interestsChanged(Set<int> interests) {
     return _InterestsChanged(
       interests,
     );
@@ -106,7 +106,7 @@ mixin _$RegistrationFormEvent {
     @required Result emailAddressChanged(String emailAddress),
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<Tag> interests),
+    @required Result interestsChanged(Set<int> interests),
     @required Result tappedEULA(),
     @required Result submitted(),
   });
@@ -121,7 +121,7 @@ mixin _$RegistrationFormEvent {
     Result emailAddressChanged(String emailAddress),
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
-    Result interestsChanged(Set<Tag> interests),
+    Result interestsChanged(Set<int> interests),
     Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
@@ -211,7 +211,7 @@ class _$_Initialized implements _Initialized {
     @required Result emailAddressChanged(String emailAddress),
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<Tag> interests),
+    @required Result interestsChanged(Set<int> interests),
     @required Result tappedEULA(),
     @required Result submitted(),
   }) {
@@ -242,7 +242,7 @@ class _$_Initialized implements _Initialized {
     Result emailAddressChanged(String emailAddress),
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
-    Result interestsChanged(Set<Tag> interests),
+    Result interestsChanged(Set<int> interests),
     Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
@@ -370,7 +370,7 @@ class _$_ImageChanged implements _ImageChanged {
     @required Result emailAddressChanged(String emailAddress),
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<Tag> interests),
+    @required Result interestsChanged(Set<int> interests),
     @required Result tappedEULA(),
     @required Result submitted(),
   }) {
@@ -401,7 +401,7 @@ class _$_ImageChanged implements _ImageChanged {
     Result emailAddressChanged(String emailAddress),
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
-    Result interestsChanged(Set<Tag> interests),
+    Result interestsChanged(Set<int> interests),
     Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
@@ -532,7 +532,7 @@ class _$_NameChanged implements _NameChanged {
     @required Result emailAddressChanged(String emailAddress),
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<Tag> interests),
+    @required Result interestsChanged(Set<int> interests),
     @required Result tappedEULA(),
     @required Result submitted(),
   }) {
@@ -563,7 +563,7 @@ class _$_NameChanged implements _NameChanged {
     Result emailAddressChanged(String emailAddress),
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
-    Result interestsChanged(Set<Tag> interests),
+    Result interestsChanged(Set<int> interests),
     Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
@@ -694,7 +694,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     @required Result emailAddressChanged(String emailAddress),
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<Tag> interests),
+    @required Result interestsChanged(Set<int> interests),
     @required Result tappedEULA(),
     @required Result submitted(),
   }) {
@@ -725,7 +725,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     Result emailAddressChanged(String emailAddress),
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
-    Result interestsChanged(Set<Tag> interests),
+    Result interestsChanged(Set<int> interests),
     Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
@@ -856,7 +856,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     @required Result emailAddressChanged(String emailAddress),
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<Tag> interests),
+    @required Result interestsChanged(Set<int> interests),
     @required Result tappedEULA(),
     @required Result submitted(),
   }) {
@@ -887,7 +887,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     Result emailAddressChanged(String emailAddress),
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
-    Result interestsChanged(Set<Tag> interests),
+    Result interestsChanged(Set<int> interests),
     Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
@@ -1020,7 +1020,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
     @required Result emailAddressChanged(String emailAddress),
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<Tag> interests),
+    @required Result interestsChanged(Set<int> interests),
     @required Result tappedEULA(),
     @required Result submitted(),
   }) {
@@ -1051,7 +1051,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
     Result emailAddressChanged(String emailAddress),
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
-    Result interestsChanged(Set<Tag> interests),
+    Result interestsChanged(Set<int> interests),
     Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
@@ -1129,6 +1129,7 @@ abstract class _PasswordConfirmationChanged implements RegistrationFormEvent {
 
 abstract class _$EmailAddressChangedCopyWith<$Res> {
   factory _$EmailAddressChangedCopyWith(_EmailAddressChanged value, $Res Function(_EmailAddressChanged) then) = __$EmailAddressChangedCopyWithImpl<$Res>;
+
   $Res call({String emailAddress});
 }
 
@@ -1182,7 +1183,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     @required Result emailAddressChanged(String emailAddress),
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<Tag> interests),
+    @required Result interestsChanged(Set<int> interests),
     @required Result tappedEULA(),
     @required Result submitted(),
   }) {
@@ -1213,7 +1214,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     Result emailAddressChanged(String emailAddress),
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
-    Result interestsChanged(Set<Tag> interests),
+    Result interestsChanged(Set<int> interests),
     Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
@@ -1345,7 +1346,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     @required Result emailAddressChanged(String emailAddress),
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<Tag> interests),
+    @required Result interestsChanged(Set<int> interests),
     @required Result tappedEULA(),
     @required Result submitted(),
   }) {
@@ -1376,7 +1377,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     Result emailAddressChanged(String emailAddress),
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
-    Result interestsChanged(Set<Tag> interests),
+    Result interestsChanged(Set<int> interests),
     Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
@@ -1507,7 +1508,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     @required Result emailAddressChanged(String emailAddress),
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<Tag> interests),
+    @required Result interestsChanged(Set<int> interests),
     @required Result tappedEULA(),
     @required Result submitted(),
   }) {
@@ -1538,7 +1539,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     Result emailAddressChanged(String emailAddress),
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
-    Result interestsChanged(Set<Tag> interests),
+    Result interestsChanged(Set<int> interests),
     Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
@@ -1616,7 +1617,7 @@ abstract class _DescriptionChanged implements RegistrationFormEvent {
 abstract class _$InterestsChangedCopyWith<$Res> {
   factory _$InterestsChangedCopyWith(_InterestsChanged value, $Res Function(_InterestsChanged) then) = __$InterestsChangedCopyWithImpl<$Res>;
 
-  $Res call({Set<Tag> interests});
+  $Res call({Set<int> interests});
 }
 
 class __$InterestsChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyWithImpl<$Res> implements _$InterestsChangedCopyWith<$Res> {
@@ -1630,7 +1631,7 @@ class __$InterestsChangedCopyWithImpl<$Res> extends _$RegistrationFormEventCopyW
     Object interests = freezed,
   }) {
     return _then(_InterestsChanged(
-      interests == freezed ? _value.interests : interests as Set<Tag>,
+      interests == freezed ? _value.interests : interests as Set<int>,
     ));
   }
 }
@@ -1639,7 +1640,7 @@ class _$_InterestsChanged implements _InterestsChanged {
   const _$_InterestsChanged(this.interests) : assert(interests != null);
 
   @override
-  final Set<Tag> interests;
+  final Set<int> interests;
 
   @override
   String toString() {
@@ -1669,7 +1670,7 @@ class _$_InterestsChanged implements _InterestsChanged {
     @required Result emailAddressChanged(String emailAddress),
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<Tag> interests),
+    @required Result interestsChanged(Set<int> interests),
     @required Result tappedEULA(),
     @required Result submitted(),
   }) {
@@ -1700,7 +1701,7 @@ class _$_InterestsChanged implements _InterestsChanged {
     Result emailAddressChanged(String emailAddress),
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
-    Result interestsChanged(Set<Tag> interests),
+    Result interestsChanged(Set<int> interests),
     Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
@@ -1769,9 +1770,10 @@ class _$_InterestsChanged implements _InterestsChanged {
 }
 
 abstract class _InterestsChanged implements RegistrationFormEvent {
-  const factory _InterestsChanged(Set<Tag> interests) = _$_InterestsChanged;
+  const factory _InterestsChanged(Set<int> interests) = _$_InterestsChanged;
 
-  Set<Tag> get interests;
+  Set<int> get interests;
+
   _$InterestsChangedCopyWith<_InterestsChanged> get copyWith;
 }
 
@@ -1814,7 +1816,7 @@ class _$_TappedEULA implements _TappedEULA {
     @required Result emailAddressChanged(String emailAddress),
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<Tag> interests),
+    @required Result interestsChanged(Set<int> interests),
     @required Result tappedEULA(),
     @required Result submitted(),
   }) {
@@ -1845,7 +1847,7 @@ class _$_TappedEULA implements _TappedEULA {
     Result emailAddressChanged(String emailAddress),
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
-    Result interestsChanged(Set<Tag> interests),
+    Result interestsChanged(Set<int> interests),
     Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
@@ -1956,7 +1958,7 @@ class _$_Submitted implements _Submitted {
     @required Result emailAddressChanged(String emailAddress),
     @required Result birthdayChanged(DateTime birthday),
     @required Result descriptionChanged(String description),
-    @required Result interestsChanged(Set<Tag> interests),
+    @required Result interestsChanged(Set<int> interests),
     @required Result tappedEULA(),
     @required Result submitted(),
   }) {
@@ -1987,7 +1989,7 @@ class _$_Submitted implements _Submitted {
     Result emailAddressChanged(String emailAddress),
     Result birthdayChanged(DateTime birthday),
     Result descriptionChanged(String description),
-    Result interestsChanged(Set<Tag> interests),
+    Result interestsChanged(Set<int> interests),
     Result tappedEULA(),
     Result submitted(),
     @required Result orElse(),
@@ -2275,16 +2277,12 @@ abstract class _RegistrationFormState implements RegistrationFormState {
 
   @override
   User get user;
-
   @override
   PasswordConfirmator get passwordConfirmator;
-
   @override
   String get passwordToCompare;
-
   @override
   bool get showErrorMessages;
-
   @override
   bool get isSubmitting;
   @override

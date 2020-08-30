@@ -43,7 +43,7 @@ class BlockedWatcherBloc extends Bloc<BlockedWatcherEvent, BlockedWatcherState> 
     _blockedUsersStreamSubscription = _loadBlockedUsers(
       Params(id: event.user.id),
     ).listen(
-        (_failureOrUsers) => add(BlockedWatcherEvent.resultsReceived(_failureOrUsers)),
+      (_failureOrUsers) => add(BlockedWatcherEvent.resultsReceived(_failureOrUsers)),
     );
   }
 

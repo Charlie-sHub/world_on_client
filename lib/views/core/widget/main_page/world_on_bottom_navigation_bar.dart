@@ -53,7 +53,7 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
       ],
     );
   }
-  
+
   void onTap(int index, BuildContext context) {
     switch (index) {
       case _mainFeedIndex:

@@ -33,8 +33,7 @@ class ExperienceLikesCounter extends StatelessWidget {
                 FontAwesomeIcons.solidHeart,
                 color: WorldOnColors.red,
               ),
-              neutral: (_) =>
-              const FaIcon(
+              neutral: (_) => const FaIcon(
                 FontAwesomeIcons.heart,
                 color: WorldOnColors.red,
               ),

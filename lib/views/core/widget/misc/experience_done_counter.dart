@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:worldon/core/assets.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
@@ -19,23 +20,22 @@ class ExperienceDoneCounter extends StatelessWidget {
         // TODO: Implement the user pictures
         // The avatars of the last 3 users to have done the experience should appear here
         Container(
-          // I don't like the idea of hard coding this, but it will work for now
           width: 80,
           child: Stack(
             children: const <Widget>[
               CircleAvatar(
-                backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
+                backgroundImage: AssetImage(Assets.userPlaceholder),
               ),
               Positioned(
                 left: 20,
                 child: CircleAvatar(
-                  backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
+                  backgroundImage: AssetImage(Assets.userPlaceholder),
                 ),
               ),
               Positioned(
                 left: 40,
                 child: CircleAvatar(
-                  backgroundImage: AssetImage("assets/non_existing_person_placeholder.jpg"),
+                  backgroundImage: AssetImage(Assets.userPlaceholder),
                 ),
               )
             ],

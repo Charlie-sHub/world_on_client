@@ -62,10 +62,7 @@ class TagCardActorBloc extends Bloc<TagCardActorEvent, TagCardActorState> {
       () => throw UnAuthenticatedError(),
       id,
     );
-    // TODO: Find a way to check if the user likes the tag
-    // Either by checking from the database like with followsUser
-    // or by getting the relations when getting the logged in user
-    if (_user.interests.contains(event.tag)) {
+    if (_user.interestsIds.contains(event.tag.id)) {
       yield const TagCardActorState.inInterests();
     } else {
       yield const TagCardActorState.notInInterests();

@@ -63,6 +63,7 @@ class _$SearchTagsByNameWatcherEventCopyWithImpl<$Res> implements $SearchTagsByN
   _$SearchTagsByNameWatcherEventCopyWithImpl(this._value, this._then);
 
   final SearchTagsByNameWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(SearchTagsByNameWatcherEvent) _then;
 }
@@ -345,6 +346,7 @@ class _$SearchTagsByNameWatcherStateCopyWithImpl<$Res> implements $SearchTagsByN
   _$SearchTagsByNameWatcherStateCopyWithImpl(this._value, this._then);
 
   final SearchTagsByNameWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(SearchTagsByNameWatcherState) _then;
 }
@@ -539,6 +541,7 @@ abstract class _SearchInProgress implements SearchTagsByNameWatcherState {
 
 abstract class _$SearchSuccessCopyWith<$Res> {
   factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) = __$SearchSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<Tag> tagsFound});
 }
 
@@ -652,6 +655,7 @@ abstract class _SearchSuccess implements SearchTagsByNameWatcherState {
 
 abstract class _$SearchFailureCopyWith<$Res> {
   factory _$SearchFailureCopyWith(_SearchFailure value, $Res Function(_SearchFailure) then) = __$SearchFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

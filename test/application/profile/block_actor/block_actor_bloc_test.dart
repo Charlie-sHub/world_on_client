@@ -31,8 +31,8 @@ void main() {
   final notBlockedUser = getValidUser().copyWith(id: 2);
   final loggedInUser = getValidUser().copyWith(
     id: 3,
-    blockedUsers: {
-      blockedUser,
+    blockedUsersIds: {
+      blockedUser.id,
     },
   );
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));

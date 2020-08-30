@@ -63,6 +63,7 @@ class _$SearchExperiencesByTagsEventCopyWithImpl<$Res> implements $SearchExperie
   _$SearchExperiencesByTagsEventCopyWithImpl(this._value, this._then);
 
   final SearchExperiencesByTagsEvent _value;
+
   // ignore: unused_field
   final $Res Function(SearchExperiencesByTagsEvent) _then;
 }
@@ -166,7 +167,6 @@ abstract class _Submitted implements SearchExperiencesByTagsEvent {
   const factory _Submitted(Set<Tag> tags) = _$_Submitted;
 
   Set<Tag> get tags;
-
   _$SubmittedCopyWith<_Submitted> get copyWith;
 }
 
@@ -357,6 +357,7 @@ class _$SearchExperiencesByTagsStateCopyWithImpl<$Res> implements $SearchExperie
   _$SearchExperiencesByTagsStateCopyWithImpl(this._value, this._then);
 
   final SearchExperiencesByTagsState _value;
+
   // ignore: unused_field
   final $Res Function(SearchExperiencesByTagsState) _then;
 }
@@ -563,6 +564,7 @@ abstract class _SearchInProgress implements SearchExperiencesByTagsState {
 
 abstract class _$SearchSuccessCopyWith<$Res> {
   factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) = __$SearchSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<Experience> experiencesFound});
 }
 
@@ -678,11 +680,13 @@ abstract class _SearchSuccess implements SearchExperiencesByTagsState {
   const factory _SearchSuccess(KtList<Experience> experiencesFound) = _$_SearchSuccess;
 
   KtList<Experience> get experiencesFound;
+
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith;
 }
 
 abstract class _$SearchFailureCopyWith<$Res> {
   factory _$SearchFailureCopyWith(_SearchFailure value, $Res Function(_SearchFailure) then) = __$SearchFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
@@ -814,6 +818,7 @@ abstract class _SearchFailure implements SearchExperiencesByTagsState {
 
 abstract class _$ValueFailureCopyWith<$Res> {
   factory _$ValueFailureCopyWith(_ValueFailure value, $Res Function(_ValueFailure) then) = __$ValueFailureCopyWithImpl<$Res>;
+
   $Res call({ValueFailure<KtSet<Tag>> failure});
 
   $ValueFailureCopyWith<KtSet<Tag>, $Res> get failure;
@@ -940,5 +945,6 @@ abstract class _ValueFailure implements SearchExperiencesByTagsState {
   const factory _ValueFailure(ValueFailure<KtSet<Tag>> failure) = _$_ValueFailure;
 
   ValueFailure<KtSet<Tag>> get failure;
+
   _$ValueFailureCopyWith<_ValueFailure> get copyWith;
 }

@@ -5,7 +5,7 @@ import 'package:worldon/views/authentication/widgets/log_in_form/log_in_button.d
 import 'package:worldon/views/authentication/widgets/log_in_form/log_in_google_button.dart';
 import 'package:worldon/views/authentication/widgets/log_in_form/log_in_trouble_button.dart';
 import 'package:worldon/views/authentication/widgets/log_in_form/register_button.dart';
-import 'package:worldon/views/authentication/widgets/log_in_form/world_on_image.dart';
+import 'package:worldon/views/authentication/widgets/log_in_form/world_on_logo_medium.dart';
 import 'package:worldon/views/authentication/widgets/password_text_field.dart';
 import 'package:worldon/views/authentication/widgets/username_text_field.dart';
 import 'package:worldon/views/authentication/widgets/world_on_title.dart';
@@ -27,7 +27,7 @@ class LogInForm extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              const WorldOnLogoImage(),
+              const WorldOnLogoMedium(),
               const SizedBox(height: 5),
               const WorldOnTitle(),
               const SizedBox(height: 10),

@@ -32,7 +32,7 @@ void main() {
   final usersFollowing = usersFollowed;
   final user = getValidUser().copyWith(
     id: 3,
-    followedUsers: usersFollowed.toSet().dart,
+    followedUsersIds: usersFollowed.map((_user) => _user.id).toSet().dart,
   );
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(

@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:multi_image_picker/multi_image_picker.dart';
+import 'package:worldon/core/assets.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/location/location.dart';
@@ -22,7 +23,7 @@ Experience getValidExperience() {
       [
         Asset(
           "1",
-          "assets/experience_placeholder_image.jpg",
+          Assets.experiencePlaceholder,
           100,
           100,
         ),

@@ -276,7 +276,7 @@ void main() {
   );
   group(
     TestDescription.groupStreams,
-      () {
+    () {
       test(
         "Should emit a stream of lists of tags by their name",
         () async {

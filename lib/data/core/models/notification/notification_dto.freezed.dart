@@ -114,7 +114,6 @@ abstract class _$NotificationDtoCopyWith<$Res> implements $NotificationDtoCopyWi
 
   @override
   $UserDtoCopyWith<$Res> get sender;
-
   @override
   $UserDtoCopyWith<$Res> get receiver;
 }

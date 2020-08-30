@@ -28,7 +28,7 @@ void main() {
     },
   );
   final experience = getValidExperience();
-  final user = getValidUser().copyWith(experiencesToDo: {experience});
+  final user = getValidUser().copyWith(experiencesToDoIds: {experience.id});
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,

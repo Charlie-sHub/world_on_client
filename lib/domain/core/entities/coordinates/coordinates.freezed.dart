@@ -65,10 +65,10 @@ abstract class _$CoordinatesCopyWith<$Res> implements $CoordinatesCopyWith<$Res>
 
 class __$CoordinatesCopyWithImpl<$Res> extends _$CoordinatesCopyWithImpl<$Res> implements _$CoordinatesCopyWith<$Res> {
   __$CoordinatesCopyWithImpl(_Coordinates _value, $Res Function(_Coordinates) _then) : super(_value, (v) => _then(v as _Coordinates));
-  
+
   @override
   _Coordinates get _value => super._value as _Coordinates;
-  
+
   @override
   $Res call({
     Object latitude = freezed,
@@ -100,9 +100,9 @@ class _$_Coordinates extends _Coordinates {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Coordinates &&
-        (identical(other.latitude, latitude) || const DeepCollectionEquality().equals(other.latitude, latitude)) &&
-        (identical(other.longitude, longitude) || const DeepCollectionEquality().equals(other.longitude, longitude)));
+        (other is _Coordinates &&
+            (identical(other.latitude, latitude) || const DeepCollectionEquality().equals(other.latitude, latitude)) &&
+            (identical(other.longitude, longitude) || const DeepCollectionEquality().equals(other.longitude, longitude)));
   }
 
   @override
@@ -114,15 +114,15 @@ class _$_Coordinates extends _Coordinates {
 
 abstract class _Coordinates extends Coordinates {
   const _Coordinates._() : super._();
-  
+
   const factory _Coordinates({@required Latitude latitude, @required Longitude longitude}) = _$_Coordinates;
-  
+
   @override
   Latitude get latitude;
-  
+
   @override
   Longitude get longitude;
-  
+
   @override
   _$CoordinatesCopyWith<_Coordinates> get copyWith;
 }

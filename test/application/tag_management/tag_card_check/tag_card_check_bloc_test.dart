@@ -21,7 +21,7 @@ void main() {
   );
   final tagInInterests = getValidTag();
   final tagNotInInterests = tagInInterests.copyWith(id: 2);
-  final user = getValidUser().copyWith(interests: {tagInInterests});
+  final user = getValidUser().copyWith(interestsIds: {tagInInterests.id});
   blocTest(
     TestDescription.shouldEmitInitial,
     build: () => getIt<TagCardCheckBloc>(),

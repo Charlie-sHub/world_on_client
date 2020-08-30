@@ -268,7 +268,6 @@ class _$_AchievementDto extends _AchievementDto {
 
 abstract class _AchievementDto extends AchievementDto {
   const _AchievementDto._() : super._();
-
   const factory _AchievementDto(
       {@required int id,
       @required String name,

@@ -6,11 +6,11 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/application/authentication/registration_form/registration_form_bloc.dart';
+import 'package:worldon/core/assets.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/authentication/use_case/register.dart';
-import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -20,7 +20,6 @@ import 'package:worldon/domain/core/validation/objects/password_confirmator.dart
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/injection.dart';
 
-import '../../../domain/core/methods/get_valid_user.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
@@ -40,13 +39,8 @@ void main() {
   const emailAddress = "test@test.test";
   final birthday = DateTime.now().subtract(const Duration(days: 100000));
   const description = "For testing";
-  final interests = {
-    Tag.empty().copyWith(
-      name: Name("Test"),
-      creator: getValidUser(),
-    ),
-  };
-  final imageFile = File("assets/non_existing_person_placeholder.jpg");
+  final interests = {1, 2};
+  final imageFile = File(Assets.userPlaceholder);
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   final thirdPartyUser = User.empty().copyWith(
     email: EmailAddress(emailAddress),
@@ -307,7 +301,7 @@ void main() {
           RegistrationFormState.initial(),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
-              interests: interests,
+              interestsIds: interests,
             ),
           ),
         ],
@@ -428,7 +422,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -444,7 +438,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
               imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
@@ -461,7 +455,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
               imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
@@ -479,7 +473,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
               imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
@@ -498,7 +492,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
               imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
@@ -589,7 +583,7 @@ void main() {
               username: Name(username),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -602,7 +596,7 @@ void main() {
               username: Name(username),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -617,7 +611,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -632,7 +626,7 @@ void main() {
               username: Name(username),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -725,7 +719,7 @@ void main() {
               username: Name(username),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -739,7 +733,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -753,7 +747,7 @@ void main() {
               username: Name(username),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -840,7 +834,7 @@ void main() {
               username: Name(username),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -853,7 +847,7 @@ void main() {
               username: Name(username),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -868,7 +862,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -883,7 +877,7 @@ void main() {
               username: Name(username),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -1006,7 +1000,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -1022,7 +1016,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
               imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
@@ -1039,7 +1033,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
               imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
@@ -1057,7 +1051,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
               imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
@@ -1076,7 +1070,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
               imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
@@ -1167,7 +1161,7 @@ void main() {
               username: Name(username),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -1180,7 +1174,7 @@ void main() {
               username: Name(username),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -1196,7 +1190,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -1211,7 +1205,7 @@ void main() {
               username: Name(username),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -1227,7 +1221,7 @@ void main() {
               username: Name(username),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interests: interests,
+              interestsIds: interests,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,

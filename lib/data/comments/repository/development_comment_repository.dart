@@ -93,13 +93,15 @@ class DevelopmentCommentRepository implements CommentRepositoryInterface {
   Stream<Either<Failure, KtSet<Comment>>> watchUserComments(int userId) {
     Either<Failure, KtSet<Comment>> _either;
     if (_random.nextBool()) {
-      _either = right(KtSet.of(
-        getValidComment(),
-        getValidComment().copyWith(
-          id: 2,
-          content: CommentContent("Phasellus elementum mollis ipsum non auctor."),
+      _either = right(
+        KtSet.of(
+          getValidComment(),
+          getValidComment().copyWith(
+            id: 2,
+            content: CommentContent("Phasellus elementum mollis ipsum non auctor."),
+          ),
         ),
-      ));
+      );
     } else {
       _either = left(getServerErrorFailure());
     }

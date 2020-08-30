@@ -68,7 +68,7 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
   Stream<ProfileEditingFormState> _onInterestsChanged(_InterestsChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
-        interests: event.interests,
+        interestsIds: event.interests.map((_tag) => _tag.id).toSet(),
       ),
       failureOrSuccessOption: none(),
     );

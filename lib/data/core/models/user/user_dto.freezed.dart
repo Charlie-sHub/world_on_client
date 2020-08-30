@@ -34,15 +34,15 @@ class _$UserDtoTearOff {
       @required String creationDate,
       @required String modificationDate,
       @required OptionsDto options,
-      @required Set<UserDto> blockedUsers,
-      @required Set<UserDto> followedUsers,
+      @required Set<int> blockedUsersIds,
+      @required Set<int> followedUsersIds,
+      @required Set<int> interestsIds,
+      @required Set<int> achievementsIds,
+      @required Set<int> experiencesDoneIds,
+      @required Set<int> experiencesLikedIds,
+      @required Set<int> experiencesToDoIds,
       @required Set<DeviceDto> devices,
-      @required Set<SystemDto> systems,
-      @required Set<TagDto> interests,
-      @required Set<AchievementDto> achievements,
-      @required Set<ExperienceDto> experiencesDone,
-      @required Set<ExperienceDto> experiencesLiked,
-      @required Set<ExperienceDto> experiencesToDo}) {
+      @required Set<SystemDto> systems}) {
     return _UserDto(
       id: id,
       name: name,
@@ -61,15 +61,15 @@ class _$UserDtoTearOff {
       creationDate: creationDate,
       modificationDate: modificationDate,
       options: options,
-      blockedUsers: blockedUsers,
-      followedUsers: followedUsers,
+      blockedUsersIds: blockedUsersIds,
+      followedUsersIds: followedUsersIds,
+      interestsIds: interestsIds,
+      achievementsIds: achievementsIds,
+      experiencesDoneIds: experiencesDoneIds,
+      experiencesLikedIds: experiencesLikedIds,
+      experiencesToDoIds: experiencesToDoIds,
       devices: devices,
       systems: systems,
-      interests: interests,
-      achievements: achievements,
-      experiencesDone: experiencesDone,
-      experiencesLiked: experiencesLiked,
-      experiencesToDo: experiencesToDo,
     );
   }
 }
@@ -85,27 +85,47 @@ mixin _$UserDto {
   String get email;
   String get birthday;
   String get description;
+
   String get imageURL;
+
   int get level;
+
   int get experiencePoints;
+
   bool get privacy;
+
   bool get adminPowers;
+
   bool get enabled;
+
   String get lastLogin;
+
   String get creationDate;
+
   String get modificationDate;
+
   OptionsDto get options;
-  Set<UserDto> get blockedUsers;
-  Set<UserDto> get followedUsers;
+
+  Set<int> get blockedUsersIds;
+
+  Set<int> get followedUsersIds;
+
+  Set<int> get interestsIds;
+
+  Set<int> get achievementsIds;
+
+  Set<int> get experiencesDoneIds;
+
+  Set<int> get experiencesLikedIds;
+
+  Set<int> get experiencesToDoIds;
+
   Set<DeviceDto> get devices;
+
   Set<SystemDto> get systems;
-  Set<TagDto> get interests;
-  Set<AchievementDto> get achievements;
-  Set<ExperienceDto> get experiencesDone;
-  Set<ExperienceDto> get experiencesLiked;
-  Set<ExperienceDto> get experiencesToDo;
 
   Map<String, dynamic> toJson();
+
   $UserDtoCopyWith<UserDto> get copyWith;
 }
 
@@ -130,15 +150,15 @@ abstract class $UserDtoCopyWith<$Res> {
       String creationDate,
       String modificationDate,
       OptionsDto options,
-      Set<UserDto> blockedUsers,
-      Set<UserDto> followedUsers,
+      Set<int> blockedUsersIds,
+      Set<int> followedUsersIds,
+      Set<int> interestsIds,
+      Set<int> achievementsIds,
+      Set<int> experiencesDoneIds,
+      Set<int> experiencesLikedIds,
+      Set<int> experiencesToDoIds,
       Set<DeviceDto> devices,
-      Set<SystemDto> systems,
-      Set<TagDto> interests,
-      Set<AchievementDto> achievements,
-      Set<ExperienceDto> experiencesDone,
-      Set<ExperienceDto> experiencesLiked,
-      Set<ExperienceDto> experiencesToDo});
+      Set<SystemDto> systems});
 
   $OptionsDtoCopyWith<$Res> get options;
 }
@@ -169,15 +189,15 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
     Object creationDate = freezed,
     Object modificationDate = freezed,
     Object options = freezed,
-    Object blockedUsers = freezed,
-    Object followedUsers = freezed,
+    Object blockedUsersIds = freezed,
+    Object followedUsersIds = freezed,
+    Object interestsIds = freezed,
+    Object achievementsIds = freezed,
+    Object experiencesDoneIds = freezed,
+    Object experiencesLikedIds = freezed,
+    Object experiencesToDoIds = freezed,
     Object devices = freezed,
     Object systems = freezed,
-    Object interests = freezed,
-    Object achievements = freezed,
-    Object experiencesDone = freezed,
-    Object experiencesLiked = freezed,
-    Object experiencesToDo = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as int,
@@ -197,15 +217,15 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
       creationDate: creationDate == freezed ? _value.creationDate : creationDate as String,
       modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as String,
       options: options == freezed ? _value.options : options as OptionsDto,
-      blockedUsers: blockedUsers == freezed ? _value.blockedUsers : blockedUsers as Set<UserDto>,
-      followedUsers: followedUsers == freezed ? _value.followedUsers : followedUsers as Set<UserDto>,
+      blockedUsersIds: blockedUsersIds == freezed ? _value.blockedUsersIds : blockedUsersIds as Set<int>,
+      followedUsersIds: followedUsersIds == freezed ? _value.followedUsersIds : followedUsersIds as Set<int>,
+      interestsIds: interestsIds == freezed ? _value.interestsIds : interestsIds as Set<int>,
+      achievementsIds: achievementsIds == freezed ? _value.achievementsIds : achievementsIds as Set<int>,
+      experiencesDoneIds: experiencesDoneIds == freezed ? _value.experiencesDoneIds : experiencesDoneIds as Set<int>,
+      experiencesLikedIds: experiencesLikedIds == freezed ? _value.experiencesLikedIds : experiencesLikedIds as Set<int>,
+      experiencesToDoIds: experiencesToDoIds == freezed ? _value.experiencesToDoIds : experiencesToDoIds as Set<int>,
       devices: devices == freezed ? _value.devices : devices as Set<DeviceDto>,
       systems: systems == freezed ? _value.systems : systems as Set<SystemDto>,
-      interests: interests == freezed ? _value.interests : interests as Set<TagDto>,
-      achievements: achievements == freezed ? _value.achievements : achievements as Set<AchievementDto>,
-      experiencesDone: experiencesDone == freezed ? _value.experiencesDone : experiencesDone as Set<ExperienceDto>,
-      experiencesLiked: experiencesLiked == freezed ? _value.experiencesLiked : experiencesLiked as Set<ExperienceDto>,
-      experiencesToDo: experiencesToDo == freezed ? _value.experiencesToDo : experiencesToDo as Set<ExperienceDto>,
     ));
   }
 
@@ -242,15 +262,15 @@ abstract class _$UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
       String creationDate,
       String modificationDate,
       OptionsDto options,
-      Set<UserDto> blockedUsers,
-      Set<UserDto> followedUsers,
+      Set<int> blockedUsersIds,
+      Set<int> followedUsersIds,
+      Set<int> interestsIds,
+      Set<int> achievementsIds,
+      Set<int> experiencesDoneIds,
+      Set<int> experiencesLikedIds,
+      Set<int> experiencesToDoIds,
       Set<DeviceDto> devices,
-      Set<SystemDto> systems,
-      Set<TagDto> interests,
-      Set<AchievementDto> achievements,
-      Set<ExperienceDto> experiencesDone,
-      Set<ExperienceDto> experiencesLiked,
-      Set<ExperienceDto> experiencesToDo});
+      Set<SystemDto> systems});
 
   @override
   $OptionsDtoCopyWith<$Res> get options;
@@ -281,15 +301,15 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res> implement
     Object creationDate = freezed,
     Object modificationDate = freezed,
     Object options = freezed,
-    Object blockedUsers = freezed,
-    Object followedUsers = freezed,
+    Object blockedUsersIds = freezed,
+    Object followedUsersIds = freezed,
+    Object interestsIds = freezed,
+    Object achievementsIds = freezed,
+    Object experiencesDoneIds = freezed,
+    Object experiencesLikedIds = freezed,
+    Object experiencesToDoIds = freezed,
     Object devices = freezed,
     Object systems = freezed,
-    Object interests = freezed,
-    Object achievements = freezed,
-    Object experiencesDone = freezed,
-    Object experiencesLiked = freezed,
-    Object experiencesToDo = freezed,
   }) {
     return _then(_UserDto(
       id: id == freezed ? _value.id : id as int,
@@ -309,15 +329,15 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res> implement
       creationDate: creationDate == freezed ? _value.creationDate : creationDate as String,
       modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as String,
       options: options == freezed ? _value.options : options as OptionsDto,
-      blockedUsers: blockedUsers == freezed ? _value.blockedUsers : blockedUsers as Set<UserDto>,
-      followedUsers: followedUsers == freezed ? _value.followedUsers : followedUsers as Set<UserDto>,
+      blockedUsersIds: blockedUsersIds == freezed ? _value.blockedUsersIds : blockedUsersIds as Set<int>,
+      followedUsersIds: followedUsersIds == freezed ? _value.followedUsersIds : followedUsersIds as Set<int>,
+      interestsIds: interestsIds == freezed ? _value.interestsIds : interestsIds as Set<int>,
+      achievementsIds: achievementsIds == freezed ? _value.achievementsIds : achievementsIds as Set<int>,
+      experiencesDoneIds: experiencesDoneIds == freezed ? _value.experiencesDoneIds : experiencesDoneIds as Set<int>,
+      experiencesLikedIds: experiencesLikedIds == freezed ? _value.experiencesLikedIds : experiencesLikedIds as Set<int>,
+      experiencesToDoIds: experiencesToDoIds == freezed ? _value.experiencesToDoIds : experiencesToDoIds as Set<int>,
       devices: devices == freezed ? _value.devices : devices as Set<DeviceDto>,
       systems: systems == freezed ? _value.systems : systems as Set<SystemDto>,
-      interests: interests == freezed ? _value.interests : interests as Set<TagDto>,
-      achievements: achievements == freezed ? _value.achievements : achievements as Set<AchievementDto>,
-      experiencesDone: experiencesDone == freezed ? _value.experiencesDone : experiencesDone as Set<ExperienceDto>,
-      experiencesLiked: experiencesLiked == freezed ? _value.experiencesLiked : experiencesLiked as Set<ExperienceDto>,
-      experiencesToDo: experiencesToDo == freezed ? _value.experiencesToDo : experiencesToDo as Set<ExperienceDto>,
     ));
   }
 }
@@ -342,15 +362,15 @@ class _$_UserDto extends _UserDto {
       @required this.creationDate,
       @required this.modificationDate,
       @required this.options,
-      @required this.blockedUsers,
-      @required this.followedUsers,
+      @required this.blockedUsersIds,
+      @required this.followedUsersIds,
+      @required this.interestsIds,
+      @required this.achievementsIds,
+      @required this.experiencesDoneIds,
+      @required this.experiencesLikedIds,
+      @required this.experiencesToDoIds,
       @required this.devices,
-      @required this.systems,
-      @required this.interests,
-      @required this.achievements,
-      @required this.experiencesDone,
-      @required this.experiencesLiked,
-      @required this.experiencesToDo})
+      @required this.systems})
       : assert(id != null),
         assert(name != null),
         assert(username != null),
@@ -368,15 +388,15 @@ class _$_UserDto extends _UserDto {
         assert(creationDate != null),
         assert(modificationDate != null),
         assert(options != null),
-        assert(blockedUsers != null),
-        assert(followedUsers != null),
+        assert(blockedUsersIds != null),
+        assert(followedUsersIds != null),
+        assert(interestsIds != null),
+        assert(achievementsIds != null),
+        assert(experiencesDoneIds != null),
+        assert(experiencesLikedIds != null),
+        assert(experiencesToDoIds != null),
         assert(devices != null),
         assert(systems != null),
-        assert(interests != null),
-        assert(achievements != null),
-        assert(experiencesDone != null),
-        assert(experiencesLiked != null),
-        assert(experiencesToDo != null),
         super._();
 
   factory _$_UserDto.fromJson(Map<String, dynamic> json) => _$_$_UserDtoFromJson(json);
@@ -416,27 +436,27 @@ class _$_UserDto extends _UserDto {
   @override
   final OptionsDto options;
   @override
-  final Set<UserDto> blockedUsers;
+  final Set<int> blockedUsersIds;
   @override
-  final Set<UserDto> followedUsers;
+  final Set<int> followedUsersIds;
+  @override
+  final Set<int> interestsIds;
+  @override
+  final Set<int> achievementsIds;
+  @override
+  final Set<int> experiencesDoneIds;
+  @override
+  final Set<int> experiencesLikedIds;
+  @override
+  final Set<int> experiencesToDoIds;
   @override
   final Set<DeviceDto> devices;
   @override
   final Set<SystemDto> systems;
-  @override
-  final Set<TagDto> interests;
-  @override
-  final Set<AchievementDto> achievements;
-  @override
-  final Set<ExperienceDto> experiencesDone;
-  @override
-  final Set<ExperienceDto> experiencesLiked;
-  @override
-  final Set<ExperienceDto> experiencesToDo;
 
   @override
   String toString() {
-    return 'UserDto(id: $id, name: $name, username: $username, password: $password, email: $email, birthday: $birthday, description: $description, imageURL: $imageURL, level: $level, experiencePoints: $experiencePoints, privacy: $privacy, adminPowers: $adminPowers, enabled: $enabled, lastLogin: $lastLogin, creationDate: $creationDate, modificationDate: $modificationDate, options: $options, blockedUsers: $blockedUsers, followedUsers: $followedUsers, devices: $devices, systems: $systems, interests: $interests, achievements: $achievements, experiencesDone: $experiencesDone, experiencesLiked: $experiencesLiked, experiencesToDo: $experiencesToDo)';
+    return 'UserDto(id: $id, name: $name, username: $username, password: $password, email: $email, birthday: $birthday, description: $description, imageURL: $imageURL, level: $level, experiencePoints: $experiencePoints, privacy: $privacy, adminPowers: $adminPowers, enabled: $enabled, lastLogin: $lastLogin, creationDate: $creationDate, modificationDate: $modificationDate, options: $options, blockedUsersIds: $blockedUsersIds, followedUsersIds: $followedUsersIds, interestsIds: $interestsIds, achievementsIds: $achievementsIds, experiencesDoneIds: $experiencesDoneIds, experiencesLikedIds: $experiencesLikedIds, experiencesToDoIds: $experiencesToDoIds, devices: $devices, systems: $systems)';
   }
 
   @override
@@ -460,15 +480,15 @@ class _$_UserDto extends _UserDto {
             (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
             (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)) &&
             (identical(other.options, options) || const DeepCollectionEquality().equals(other.options, options)) &&
-            (identical(other.blockedUsers, blockedUsers) || const DeepCollectionEquality().equals(other.blockedUsers, blockedUsers)) &&
-            (identical(other.followedUsers, followedUsers) || const DeepCollectionEquality().equals(other.followedUsers, followedUsers)) &&
+            (identical(other.blockedUsersIds, blockedUsersIds) || const DeepCollectionEquality().equals(other.blockedUsersIds, blockedUsersIds)) &&
+            (identical(other.followedUsersIds, followedUsersIds) || const DeepCollectionEquality().equals(other.followedUsersIds, followedUsersIds)) &&
+            (identical(other.interestsIds, interestsIds) || const DeepCollectionEquality().equals(other.interestsIds, interestsIds)) &&
+            (identical(other.achievementsIds, achievementsIds) || const DeepCollectionEquality().equals(other.achievementsIds, achievementsIds)) &&
+            (identical(other.experiencesDoneIds, experiencesDoneIds) || const DeepCollectionEquality().equals(other.experiencesDoneIds, experiencesDoneIds)) &&
+            (identical(other.experiencesLikedIds, experiencesLikedIds) || const DeepCollectionEquality().equals(other.experiencesLikedIds, experiencesLikedIds)) &&
+            (identical(other.experiencesToDoIds, experiencesToDoIds) || const DeepCollectionEquality().equals(other.experiencesToDoIds, experiencesToDoIds)) &&
             (identical(other.devices, devices) || const DeepCollectionEquality().equals(other.devices, devices)) &&
-            (identical(other.systems, systems) || const DeepCollectionEquality().equals(other.systems, systems)) &&
-            (identical(other.interests, interests) || const DeepCollectionEquality().equals(other.interests, interests)) &&
-            (identical(other.achievements, achievements) || const DeepCollectionEquality().equals(other.achievements, achievements)) &&
-            (identical(other.experiencesDone, experiencesDone) || const DeepCollectionEquality().equals(other.experiencesDone, experiencesDone)) &&
-            (identical(other.experiencesLiked, experiencesLiked) || const DeepCollectionEquality().equals(other.experiencesLiked, experiencesLiked)) &&
-            (identical(other.experiencesToDo, experiencesToDo) || const DeepCollectionEquality().equals(other.experiencesToDo, experiencesToDo)));
+            (identical(other.systems, systems) || const DeepCollectionEquality().equals(other.systems, systems)));
   }
 
   @override
@@ -491,15 +511,15 @@ class _$_UserDto extends _UserDto {
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(modificationDate) ^
       const DeepCollectionEquality().hash(options) ^
-      const DeepCollectionEquality().hash(blockedUsers) ^
-      const DeepCollectionEquality().hash(followedUsers) ^
+      const DeepCollectionEquality().hash(blockedUsersIds) ^
+      const DeepCollectionEquality().hash(followedUsersIds) ^
+      const DeepCollectionEquality().hash(interestsIds) ^
+      const DeepCollectionEquality().hash(achievementsIds) ^
+      const DeepCollectionEquality().hash(experiencesDoneIds) ^
+      const DeepCollectionEquality().hash(experiencesLikedIds) ^
+      const DeepCollectionEquality().hash(experiencesToDoIds) ^
       const DeepCollectionEquality().hash(devices) ^
-      const DeepCollectionEquality().hash(systems) ^
-      const DeepCollectionEquality().hash(interests) ^
-      const DeepCollectionEquality().hash(achievements) ^
-      const DeepCollectionEquality().hash(experiencesDone) ^
-      const DeepCollectionEquality().hash(experiencesLiked) ^
-      const DeepCollectionEquality().hash(experiencesToDo);
+      const DeepCollectionEquality().hash(systems);
 
   @override
   _$UserDtoCopyWith<_UserDto> get copyWith => __$UserDtoCopyWithImpl<_UserDto>(this, _$identity);
@@ -530,15 +550,15 @@ abstract class _UserDto extends UserDto {
       @required String creationDate,
       @required String modificationDate,
       @required OptionsDto options,
-      @required Set<UserDto> blockedUsers,
-      @required Set<UserDto> followedUsers,
+      @required Set<int> blockedUsersIds,
+      @required Set<int> followedUsersIds,
+      @required Set<int> interestsIds,
+      @required Set<int> achievementsIds,
+      @required Set<int> experiencesDoneIds,
+      @required Set<int> experiencesLikedIds,
+      @required Set<int> experiencesToDoIds,
       @required Set<DeviceDto> devices,
-      @required Set<SystemDto> systems,
-      @required Set<TagDto> interests,
-      @required Set<AchievementDto> achievements,
-      @required Set<ExperienceDto> experiencesDone,
-      @required Set<ExperienceDto> experiencesLiked,
-      @required Set<ExperienceDto> experiencesToDo}) = _$_UserDto;
+      @required Set<SystemDto> systems}) = _$_UserDto;
 
   factory _UserDto.fromJson(Map<String, dynamic> json) = _$_UserDto.fromJson;
 
@@ -574,26 +594,37 @@ abstract class _UserDto extends UserDto {
   String get creationDate;
   @override
   String get modificationDate;
+
   @override
   OptionsDto get options;
+
   @override
-  Set<UserDto> get blockedUsers;
+  Set<int> get blockedUsersIds;
+
   @override
-  Set<UserDto> get followedUsers;
+  Set<int> get followedUsersIds;
+
+  @override
+  Set<int> get interestsIds;
+
+  @override
+  Set<int> get achievementsIds;
+
+  @override
+  Set<int> get experiencesDoneIds;
+
+  @override
+  Set<int> get experiencesLikedIds;
+
+  @override
+  Set<int> get experiencesToDoIds;
+
   @override
   Set<DeviceDto> get devices;
+
   @override
   Set<SystemDto> get systems;
-  @override
-  Set<TagDto> get interests;
-  @override
-  Set<AchievementDto> get achievements;
-  @override
-  Set<ExperienceDto> get experiencesDone;
-  @override
-  Set<ExperienceDto> get experiencesLiked;
-  @override
-  Set<ExperienceDto> get experiencesToDo;
+
   @override
   _$UserDtoCopyWith<_UserDto> get copyWith;
 }

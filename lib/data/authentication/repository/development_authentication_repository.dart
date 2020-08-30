@@ -6,10 +6,11 @@ import 'package:worldon/data/authentication/failures/authentication_data_failure
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_left_server_error.dart';
 import 'package:worldon/data/core/moor/converters/domain_user_to_moor_user_companion.dart';
-import 'package:worldon/data/core/moor/converters/moor_user_to_domain_user.dart';
+import 'package:worldon/data/core/moor/converters/moor_user_with_relations_to_domain_user.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/authentication/repository/authentication_repository_interface.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/injection.dart';
 
 @LazySingleton(as: AuthenticationRepositoryInterface, env: [Environment.dev])
@@ -21,7 +22,10 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
   Future<Option<User>> getLoggedInUser() async {
     try {
       final _moorUser = await _database.moorUsersDao.getLoggedInUser();
-      return _moorUser != null ? some(moorUserToDomainUser(_moorUser)) : none();
+      return _moorUser.fold(
+        () => none(),
+        (_moorUserWithRelations) => some(moorUserWithRelationsToDomainUser(_moorUserWithRelations)),
+      );
     } catch (exception) {
       _logger.e("Moor Database error: $exception");
       return none();
@@ -64,13 +68,18 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
   @override
   Future<Either<Failure, Unit>> logOut() async {
     try {
-      final _moorUser = await _database.moorUsersDao.getLoggedInUser();
-      await _database.moorUsersDao.updateUser(
-        _moorUser.copyWith(
-          isLoggedIn: false,
-        ),
+      final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
+      return _moorUserOption.fold(
+        () => throw UnAuthenticatedError,
+        (_moorUserWithRelations) async {
+          await _database.moorUsersDao.updateUser(
+            _moorUserWithRelations.user.copyWith(
+              isLoggedIn: false,
+            ),
+          );
+          return right(unit);
+        },
       );
-      return right(unit);
     } catch (exception) {
       _logger.e("Moor Database error: $exception");
       return left(
@@ -95,9 +104,9 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
         ),
       );
       await _database.moorTagsDao.deleteUserInterests(_userId);
-      for (final tag in user.interests) {
+      for (final _tagId in user.interestsIds) {
         final _userInterest = UserInterestsCompanion.insert(
-          tagId: tag.id,
+          tagId: _tagId,
           userId: _userId,
         );
         await _database.moorTagsDao.insertUserInterest(_userInterest);

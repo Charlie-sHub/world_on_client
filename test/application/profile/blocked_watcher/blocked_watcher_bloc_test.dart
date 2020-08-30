@@ -28,7 +28,7 @@ void main() {
   );
   final user = getValidUser().copyWith(
     id: 3,
-    blockedUsers: usersBlocked.toSet().dart,
+    blockedUsersIds: usersBlocked.map((_user) => _user.id).toSet().dart,
   );
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(

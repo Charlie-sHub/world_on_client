@@ -34,7 +34,7 @@ class TagCardCheckBloc extends Bloc<TagCardCheckEvent, TagCardCheckState> {
       () => throw UnAuthenticatedError(),
       id,
     );
-    if (_user.interests.contains(event.tag)) {
+    if (_user.interestsIds.contains(event.tag.id)) {
       yield const TagCardCheckState.inInterests();
     } else {
       yield const TagCardCheckState.notInInterests();
