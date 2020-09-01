@@ -1,4 +1,3 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/profile/profile_editing_form/profile_editing_form_bloc.dart';
@@ -6,21 +5,21 @@ import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/views/core/misc/string_constants.dart';
 
 class DescriptionTextFormField extends StatelessWidget {
+  final String initialValue;
+
   const DescriptionTextFormField({
     Key key,
+    @required this.initialValue,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       maxLength: EntityDescription.maxLength,
-      initialValue: context.bloc<ProfileEditingFormBloc>().state.user.description.value.fold(
-            (_) => "Value Failure",
-            id,
-          ),
       onChanged: (value) => context.bloc<ProfileEditingFormBloc>().add(
             ProfileEditingFormEvent.descriptionChanged(value.trim()),
           ),
+      initialValue: initialValue,
       validator: (_) => context.bloc<ProfileEditingFormBloc>().state.user.description.value.fold(
             (failure) => failure.maybeMap(
               emptyString: (_) => "The description can't be empty",

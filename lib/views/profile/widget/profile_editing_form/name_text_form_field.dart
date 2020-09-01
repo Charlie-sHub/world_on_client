@@ -1,4 +1,3 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/profile/profile_editing_form/profile_editing_form_bloc.dart';
@@ -6,18 +5,18 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/views/core/misc/string_constants.dart';
 
 class NameTextFormField extends StatelessWidget {
+  final String initialValue;
+
   const NameTextFormField({
     Key key,
+    @required this.initialValue,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       maxLength: Name.maxLength,
-      initialValue: context.bloc<ProfileEditingFormBloc>().state.user.name.value.fold(
-            (_) => "Value Failure",
-            id,
-          ),
+      initialValue: initialValue,
       onChanged: (value) => context.bloc<ProfileEditingFormBloc>().add(
             ProfileEditingFormEvent.nameChanged(value.trim()),
           ),
@@ -30,7 +29,7 @@ class NameTextFormField extends StatelessWidget {
               orElse: () => StringConst.unknownError,
             ),
             (_) => null,
-          ),
+        ),
       autocorrect: false,
       decoration: const InputDecoration(
         labelText: "Name",

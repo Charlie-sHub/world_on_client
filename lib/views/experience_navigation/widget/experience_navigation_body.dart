@@ -26,7 +26,7 @@ class ExperienceNavigationBody extends StatelessWidget {
           ExperienceNavigationWatcherEvent.initialized(none()),
         ),
       child: BlocListener<NavigationActorBloc, NavigationActorState>(
-        listener: (context, navigationState) => navigationState.maybeMap(
+        listener: (context, state) => state.maybeMap(
           navigateExperienceView: (navigateExperienceState) => navigateExperienceState.experienceOption.fold(
             () => null,
             (experience) => context.bloc<ExperienceNavigationWatcherBloc>().add(

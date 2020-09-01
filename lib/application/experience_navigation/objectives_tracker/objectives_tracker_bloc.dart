@@ -35,6 +35,6 @@ class ObjectivesTrackerBloc extends Bloc<ObjectivesTrackerEvent, ObjectivesTrack
   }
 
   Stream<ObjectivesTrackerState> _onInitialized(_Initialized event) async* {
-    yield state.copyWith(objectivesToDo: event.objectiveSet.getOrCrash().toList());
+    yield ObjectivesTrackerState.initial().copyWith(objectivesToDo: event.objectiveSet.getOrCrash().toList());
   }
 }

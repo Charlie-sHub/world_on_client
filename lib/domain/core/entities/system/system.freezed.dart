@@ -36,8 +36,9 @@ mixin _$System {
 }
 
 abstract class $SystemCopyWith<$Res> {
-  factory $SystemCopyWith(System value, $Res Function(System) then) = _$SystemCopyWithImpl<$Res>;
-
+  factory $SystemCopyWith(System value, $Res Function(System) then) =
+  _$SystemCopyWithImpl<$Res>;
+  
   $Res call({int id, String name, String type, String company});
 }
 
@@ -65,18 +66,21 @@ class _$SystemCopyWithImpl<$Res> implements $SystemCopyWith<$Res> {
 }
 
 abstract class _$SystemCopyWith<$Res> implements $SystemCopyWith<$Res> {
-  factory _$SystemCopyWith(_System value, $Res Function(_System) then) = __$SystemCopyWithImpl<$Res>;
-
+  factory _$SystemCopyWith(_System value, $Res Function(_System) then) =
+  __$SystemCopyWithImpl<$Res>;
+  
   @override
   $Res call({int id, String name, String type, String company});
 }
 
-class __$SystemCopyWithImpl<$Res> extends _$SystemCopyWithImpl<$Res> implements _$SystemCopyWith<$Res> {
-  __$SystemCopyWithImpl(_System _value, $Res Function(_System) _then) : super(_value, (v) => _then(v as _System));
-
+class __$SystemCopyWithImpl<$Res> extends _$SystemCopyWithImpl<$Res>
+  implements _$SystemCopyWith<$Res> {
+  __$SystemCopyWithImpl(_System _value, $Res Function(_System) _then)
+    : super(_value, (v) => _then(v as _System));
+  
   @override
   _System get _value => super._value as _System;
-
+  
   @override
   $Res call({
     Object id = freezed,
@@ -94,12 +98,15 @@ class __$SystemCopyWithImpl<$Res> extends _$SystemCopyWithImpl<$Res> implements 
 }
 
 class _$_System extends _System {
-  const _$_System({this.id, @required this.name, @required this.type, @required this.company})
-      : assert(name != null),
-        assert(type != null),
-        assert(company != null),
-        super._();
-
+  const _$_System({this.id,
+    @required this.name,
+    @required this.type,
+    @required this.company})
+    : assert(name != null),
+      assert(type != null),
+      assert(company != null),
+      super._();
+  
   @override
   final int id;
   @override
@@ -117,11 +124,15 @@ class _$_System extends _System {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _System &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.company, company) || const DeepCollectionEquality().equals(other.company, company)));
+      (other is _System &&
+        (identical(other.id, id) ||
+          const DeepCollectionEquality().equals(other.id, id)) &&
+        (identical(other.name, name) ||
+          const DeepCollectionEquality().equals(other.name, name)) &&
+        (identical(other.type, type) ||
+          const DeepCollectionEquality().equals(other.type, type)) &&
+        (identical(other.company, company) ||
+          const DeepCollectionEquality().equals(other.company, company)));
   }
 
   @override
@@ -131,28 +142,32 @@ class _$_System extends _System {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(company);
-
+  
   @override
-  _$SystemCopyWith<_System> get copyWith => __$SystemCopyWithImpl<_System>(this, _$identity);
+  _$SystemCopyWith<_System> get copyWith =>
+    __$SystemCopyWithImpl<_System>(this, _$identity);
 }
 
 abstract class _System extends System {
   const _System._() : super._();
-
-  const factory _System({int id, @required String name, @required String type, @required String company}) = _$_System;
-
+  
+  const factory _System({int id,
+    @required String name,
+    @required String type,
+    @required String company}) = _$_System;
+  
   @override
   int get id;
-
+  
   @override
   String get name;
-
+  
   @override
   String get type;
-
+  
   @override
   String get company;
-
+  
   @override
   _$SystemCopyWith<_System> get copyWith;
 }

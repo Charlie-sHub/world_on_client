@@ -21,10 +21,13 @@ import 'package:worldon/data/core/moor/converters/domain_reward_to_moor_reward.d
 import 'package:worldon/data/core/moor/converters/domain_tag_to_moor_tag.dart';
 import 'package:worldon/data/core/moor/converters/domain_user_to_moor_user_companion.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
+import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
 import 'package:worldon/domain/core/repository/core_repository_interface.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/latitude.dart';
+import 'package:worldon/domain/core/validation/objects/longitude.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/injection.dart';
 
@@ -464,6 +467,10 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
         id: _userIds.first,
       ),
       imageURLs: {"assets/experience_placeholder_image_2.jpeg"},
+      coordinates: Coordinates(
+        latitude: Latitude(40.461036),
+        longitude: Longitude(-3.606436),
+      ),
     );
     final _experienceHip = _experienceIpsum.copyWith(
       title: Name("Put a bird on it"),
@@ -472,6 +479,10 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
         id: _userIds.elementAt(1),
       ),
       imageURLs: {"assets/experience_placeholder_image_3.jpeg"},
+      coordinates: Coordinates(
+        latitude: Latitude(40.409124),
+        longitude: Longitude(-3.716106),
+      ),
     );
     final _experienceSpace = _experienceIpsum.copyWith(
       title: Name("The final frontier"),
@@ -480,15 +491,23 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
         id: _userIds.elementAt(2),
       ),
       imageURLs: {"assets/experience_placeholder_image_4.jpeg"},
+      coordinates: Coordinates(
+        latitude: Latitude(40.431185),
+        longitude: Longitude(-3.725424),
+      ),
     );
     final _experiencePostModern = _experienceIpsum.copyWith(
       title: Name("Consensuses of collapse"),
       description: EntityDescription("In a sense, Lyotard suggests the use of Foucaultist power relations to read and analyse society. "
-          "Several deappropriations concerning conceptual subcapitalist theory exist."),
+        "Several deappropriations concerning conceptual subcapitalist theory exist."),
       creator: _validUser.copyWith(
         id: _userIds.elementAt(3),
       ),
       imageURLs: {"assets/experience_placeholder_image_5.jpeg"},
+      coordinates: Coordinates(
+        latitude: Latitude(40.446616),
+        longitude: Longitude(-3.720231),
+      ),
     );
     final _experienceCat = _experienceIpsum.copyWith(
       title: Name("Human give me attention meow"),
@@ -497,15 +516,23 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
         id: _userIds.elementAt(2),
       ),
       imageURLs: {"assets/experience_placeholder_image_6.jpeg"},
+      coordinates: Coordinates(
+        latitude: Latitude(40.451969),
+        longitude: Longitude(-3.699474),
+      ),
     );
     final _experienceCorporate = _experienceIpsum.copyWith(
       title: Name("Leverage agile frameworks"),
       description: EntityDescription("Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. "
-          "Override the digital divide with additional clickthroughs from DevOps."),
+        "Override the digital divide with additional clickthroughs from DevOps."),
       creator: _validUser.copyWith(
         id: _userIds.elementAt(1),
       ),
       imageURLs: {"assets/experience_placeholder_image_7.jpeg"},
+      coordinates: Coordinates(
+        latitude: Latitude(40.398246),
+        longitude: Longitude(-3.661680),
+      ),
     );
     final _experienceList = [
       _experienceIpsum,

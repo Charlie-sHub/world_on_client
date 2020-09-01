@@ -38,22 +38,30 @@ class ProfileEditingPage extends StatelessWidget {
           ..add(
             ProfileEditingFormEvent.initialized(user),
           ),
-        child: BlocConsumer<ProfileEditingFormBloc, ProfileEditingFormState>(
-          listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
-          listener: (context, state) => state.failureOrSuccessOption.fold(
-            () => null,
-            (either) => either.fold(
-              (failure) => _onFailure(failure, context),
-              (_) => _onSuccess(context),
-            ),
-          ),
-          builder: (context, state) => state.user.failureOption.fold(
-            () => const ProfileEditingForm(),
-            (valueFailure) => InkWell(
-              onTap: () async => context.navigator.pop(),
-              child: CriticalErrorDisplay(
-                failure: Failure.value(valueFailure),
+        child: user.failureOption.fold(
+          () => BlocConsumer<ProfileEditingFormBloc, ProfileEditingFormState>(
+            listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
+            listener: (context, state) => state.failureOrSuccessOption.fold(
+              () => null,
+              (either) => either.fold(
+                (failure) => _onFailure(failure, context),
+                (_) => _onSuccess(context),
               ),
+            ),
+            // TODO: Find a way to make the form initialize with the state's user
+            // For some reason the form doesn't properly initialize when going to the form directly
+            // instead of folding the failure option of the state's user
+            // So the initial values of the form are all value failures due to the empty user of the first state
+            // Sending the user an using its values solves the problems
+            // but it has the potential of leading to more errors in the future
+            // as the user here is not technically the one in the state
+            // It shouldn't be a problem for now, but still.
+            builder: (context, state) => ProfileEditingForm(user: user),
+          ),
+          (valueFailure) => InkWell(
+            onTap: () async => context.navigator.pop(),
+            child: CriticalErrorDisplay(
+              failure: Failure.value(valueFailure),
             ),
           ),
         ),

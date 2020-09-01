@@ -4,10 +4,13 @@ import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_v
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_coordinates.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_tag.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
+import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/latitude.dart';
+import 'package:worldon/domain/core/validation/objects/longitude.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/objective_set.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
@@ -36,24 +39,44 @@ Experience getValidExperience() {
         getValidObjective().copyWith(
           id: 2,
           description: EntityDescription("Poaching Whistler cruiser white room, carbon chowder dirtbag death cookies steeps."),
+          coordinates: Coordinates(
+            latitude: Latitude(40.428938),
+            longitude: Longitude(-3.680765),
+          ),
         ),
         getValidObjective().copyWith(
           id: 3,
           description: EntityDescription("Vaporware post-ironic listicle."),
+          coordinates: Coordinates(
+            latitude: Latitude(40.425292),
+            longitude: Longitude(-3.706473),
+          ),
         ),
         getValidObjective().copyWith(
           id: 4,
           description: EntityDescription("Yard sale poaching cork afterbang giblets stomp saddle.."),
+          coordinates: Coordinates(
+            latitude: Latitude(40.412429),
+            longitude: Longitude(-3.683762),
+          ),
         ),
         getValidObjective().copyWith(
           id: 5,
           description: EntityDescription("""
 Stoked wheelie cork jib roadie. Pow pow twin tip bomb hole north shore, spread eagle misty pow clipless wheelie.
 Chillax gapers Whistler skid."""),
+          coordinates: Coordinates(
+            latitude: Latitude(40.386485),
+            longitude: Longitude(-3.684008),
+          ),
         ),
         getValidObjective().copyWith(
           id: 6,
           description: EntityDescription("Disrupt selvage blue bottle whatever, synth craft beer messenger bag."),
+          coordinates: Coordinates(
+            latitude: Latitude(40.435630),
+            longitude: Longitude(-3.644995),
+          ),
         ),
       ),
     ),

@@ -40,8 +40,9 @@ mixin _$DeviceDto {
 }
 
 abstract class $DeviceDtoCopyWith<$Res> {
-  factory $DeviceDtoCopyWith(DeviceDto value, $Res Function(DeviceDto) then) = _$DeviceDtoCopyWithImpl<$Res>;
-
+  factory $DeviceDtoCopyWith(DeviceDto value, $Res Function(DeviceDto) then) =
+  _$DeviceDtoCopyWithImpl<$Res>;
+  
   $Res call({int id, String name, String type, String company});
 }
 
@@ -69,18 +70,21 @@ class _$DeviceDtoCopyWithImpl<$Res> implements $DeviceDtoCopyWith<$Res> {
 }
 
 abstract class _$DeviceDtoCopyWith<$Res> implements $DeviceDtoCopyWith<$Res> {
-  factory _$DeviceDtoCopyWith(_DeviceDto value, $Res Function(_DeviceDto) then) = __$DeviceDtoCopyWithImpl<$Res>;
-
+  factory _$DeviceDtoCopyWith(_DeviceDto value, $Res Function(_DeviceDto) then) =
+  __$DeviceDtoCopyWithImpl<$Res>;
+  
   @override
   $Res call({int id, String name, String type, String company});
 }
 
-class __$DeviceDtoCopyWithImpl<$Res> extends _$DeviceDtoCopyWithImpl<$Res> implements _$DeviceDtoCopyWith<$Res> {
-  __$DeviceDtoCopyWithImpl(_DeviceDto _value, $Res Function(_DeviceDto) _then) : super(_value, (v) => _then(v as _DeviceDto));
-
+class __$DeviceDtoCopyWithImpl<$Res> extends _$DeviceDtoCopyWithImpl<$Res>
+  implements _$DeviceDtoCopyWith<$Res> {
+  __$DeviceDtoCopyWithImpl(_DeviceDto _value, $Res Function(_DeviceDto) _then)
+    : super(_value, (v) => _then(v as _DeviceDto));
+  
   @override
   _DeviceDto get _value => super._value as _DeviceDto;
-
+  
   @override
   $Res call({
     Object id = freezed,
@@ -99,15 +103,19 @@ class __$DeviceDtoCopyWithImpl<$Res> extends _$DeviceDtoCopyWithImpl<$Res> imple
 
 @JsonSerializable()
 class _$_DeviceDto extends _DeviceDto {
-  const _$_DeviceDto({@required this.id, @required this.name, @required this.type, @required this.company})
-      : assert(id != null),
-        assert(name != null),
-        assert(type != null),
-        assert(company != null),
-        super._();
-
-  factory _$_DeviceDto.fromJson(Map<String, dynamic> json) => _$_$_DeviceDtoFromJson(json);
-
+  const _$_DeviceDto({@required this.id,
+    @required this.name,
+    @required this.type,
+    @required this.company})
+    : assert(id != null),
+      assert(name != null),
+      assert(type != null),
+      assert(company != null),
+      super._();
+  
+  factory _$_DeviceDto.fromJson(Map<String, dynamic> json) =>
+    _$_$_DeviceDtoFromJson(json);
+  
   @override
   final int id;
   @override
@@ -125,11 +133,15 @@ class _$_DeviceDto extends _DeviceDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DeviceDto &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.company, company) || const DeepCollectionEquality().equals(other.company, company)));
+      (other is _DeviceDto &&
+        (identical(other.id, id) ||
+          const DeepCollectionEquality().equals(other.id, id)) &&
+        (identical(other.name, name) ||
+          const DeepCollectionEquality().equals(other.name, name)) &&
+        (identical(other.type, type) ||
+          const DeepCollectionEquality().equals(other.type, type)) &&
+        (identical(other.company, company) ||
+          const DeepCollectionEquality().equals(other.company, company)));
   }
 
   @override
@@ -139,9 +151,10 @@ class _$_DeviceDto extends _DeviceDto {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(company);
-
+  
   @override
-  _$DeviceDtoCopyWith<_DeviceDto> get copyWith => __$DeviceDtoCopyWithImpl<_DeviceDto>(this, _$identity);
+  _$DeviceDtoCopyWith<_DeviceDto> get copyWith =>
+    __$DeviceDtoCopyWithImpl<_DeviceDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -151,23 +164,27 @@ class _$_DeviceDto extends _DeviceDto {
 
 abstract class _DeviceDto extends DeviceDto {
   const _DeviceDto._() : super._();
-
-  const factory _DeviceDto({@required int id, @required String name, @required String type, @required String company}) = _$_DeviceDto;
-
-  factory _DeviceDto.fromJson(Map<String, dynamic> json) = _$_DeviceDto.fromJson;
-
+  
+  const factory _DeviceDto({@required int id,
+    @required String name,
+    @required String type,
+    @required String company}) = _$_DeviceDto;
+  
+  factory _DeviceDto.fromJson(Map<String, dynamic> json) =
+  _$_DeviceDto.fromJson;
+  
   @override
   int get id;
-
+  
   @override
   String get name;
-
+  
   @override
   String get type;
-
+  
   @override
   String get company;
-
+  
   @override
   _$DeviceDtoCopyWith<_DeviceDto> get copyWith;
 }

@@ -100,7 +100,7 @@ void main() {
   );
   group(
     "Testing disliked",
-      () {
+    () {
       blocTest(
         TestDescription.shouldEmitSuccess,
         build: () {

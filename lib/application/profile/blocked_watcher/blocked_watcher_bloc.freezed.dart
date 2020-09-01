@@ -59,29 +59,36 @@ abstract class $BlockedWatcherEventCopyWith<$Res> {
   factory $BlockedWatcherEventCopyWith(BlockedWatcherEvent value, $Res Function(BlockedWatcherEvent) then) = _$BlockedWatcherEventCopyWithImpl<$Res>;
 }
 
-class _$BlockedWatcherEventCopyWithImpl<$Res> implements $BlockedWatcherEventCopyWith<$Res> {
+class _$BlockedWatcherEventCopyWithImpl<$Res>
+  implements $BlockedWatcherEventCopyWith<$Res> {
   _$BlockedWatcherEventCopyWithImpl(this._value, this._then);
-
+  
   final BlockedWatcherEvent _value;
-
+  
   // ignore: unused_field
   final $Res Function(BlockedWatcherEvent) _then;
 }
 
 abstract class _$WatchBlockedUsersStartedCopyWith<$Res> {
-  factory _$WatchBlockedUsersStartedCopyWith(_WatchBlockedUsersStarted value, $Res Function(_WatchBlockedUsersStarted) then) = __$WatchBlockedUsersStartedCopyWithImpl<$Res>;
-
+  factory _$WatchBlockedUsersStartedCopyWith(_WatchBlockedUsersStarted value,
+    $Res Function(_WatchBlockedUsersStarted) then) =
+  __$WatchBlockedUsersStartedCopyWithImpl<$Res>;
+  
   $Res call({User user});
-
+  
   $UserCopyWith<$Res> get user;
 }
 
-class __$WatchBlockedUsersStartedCopyWithImpl<$Res> extends _$BlockedWatcherEventCopyWithImpl<$Res> implements _$WatchBlockedUsersStartedCopyWith<$Res> {
-  __$WatchBlockedUsersStartedCopyWithImpl(_WatchBlockedUsersStarted _value, $Res Function(_WatchBlockedUsersStarted) _then) : super(_value, (v) => _then(v as _WatchBlockedUsersStarted));
-
+class __$WatchBlockedUsersStartedCopyWithImpl<$Res> extends _$BlockedWatcherEventCopyWithImpl<$Res>
+  implements _$WatchBlockedUsersStartedCopyWith<$Res> {
+  __$WatchBlockedUsersStartedCopyWithImpl(_WatchBlockedUsersStarted _value,
+    $Res Function(_WatchBlockedUsersStarted) _then)
+    : super(_value, (v) => _then(v as _WatchBlockedUsersStarted));
+  
   @override
-  _WatchBlockedUsersStarted get _value => super._value as _WatchBlockedUsersStarted;
-
+  _WatchBlockedUsersStarted get _value =>
+    super._value as _WatchBlockedUsersStarted;
+  
   @override
   $Res call({
     Object user = freezed,
@@ -115,14 +122,20 @@ class _$_WatchBlockedUsersStarted implements _WatchBlockedUsersStarted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _WatchBlockedUsersStarted && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
+    return identical(this, other) ||
+      (other is _WatchBlockedUsersStarted &&
+        (identical(other.user, user) ||
+          const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @override
-  _$WatchBlockedUsersStartedCopyWith<_WatchBlockedUsersStarted> get copyWith => __$WatchBlockedUsersStartedCopyWithImpl<_WatchBlockedUsersStarted>(this, _$identity);
+  _$WatchBlockedUsersStartedCopyWith<_WatchBlockedUsersStarted> get copyWith =>
+    __$WatchBlockedUsersStartedCopyWithImpl<_WatchBlockedUsersStarted>(
+      this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -176,56 +189,70 @@ class _$_WatchBlockedUsersStarted implements _WatchBlockedUsersStarted {
 }
 
 abstract class _WatchBlockedUsersStarted implements BlockedWatcherEvent {
-  const factory _WatchBlockedUsersStarted(User user) = _$_WatchBlockedUsersStarted;
-
+  const factory _WatchBlockedUsersStarted(User user) =
+  _$_WatchBlockedUsersStarted;
+  
   User get user;
-
+  
   _$WatchBlockedUsersStartedCopyWith<_WatchBlockedUsersStarted> get copyWith;
 }
 
 abstract class _$ResultsReceivedCopyWith<$Res> {
-  factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
-
+  factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) =
+  __$ResultsReceivedCopyWithImpl<$Res>;
+  
   $Res call({Either<Failure, KtList<User>> failureOrUsers});
 }
 
-class __$ResultsReceivedCopyWithImpl<$Res> extends _$BlockedWatcherEventCopyWithImpl<$Res> implements _$ResultsReceivedCopyWith<$Res> {
-  __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then) : super(_value, (v) => _then(v as _ResultsReceived));
-
+class __$ResultsReceivedCopyWithImpl<$Res> extends _$BlockedWatcherEventCopyWithImpl<$Res>
+  implements _$ResultsReceivedCopyWith<$Res> {
+  __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then)
+    : super(_value, (v) => _then(v as _ResultsReceived));
+  
   @override
   _ResultsReceived get _value => super._value as _ResultsReceived;
-
+  
   @override
   $Res call({
     Object failureOrUsers = freezed,
   }) {
     return _then(_ResultsReceived(
-      failureOrUsers == freezed ? _value.failureOrUsers : failureOrUsers as Either<Failure, KtList<User>>,
+      failureOrUsers == freezed
+        ? _value.failureOrUsers
+        : failureOrUsers as Either<Failure, KtList<User>>,
     ));
   }
 }
 
 class _$_ResultsReceived implements _ResultsReceived {
-  const _$_ResultsReceived(this.failureOrUsers) : assert(failureOrUsers != null);
-
+  const _$_ResultsReceived(this.failureOrUsers)
+    : assert(failureOrUsers != null);
+  
   @override
   final Either<Failure, KtList<User>> failureOrUsers;
-
+  
   @override
   String toString() {
     return 'BlockedWatcherEvent.resultsReceived(failureOrUsers: $failureOrUsers)';
   }
-
+  
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ResultsReceived && (identical(other.failureOrUsers, failureOrUsers) || const DeepCollectionEquality().equals(other.failureOrUsers, failureOrUsers)));
+    return identical(this, other) ||
+      (other is _ResultsReceived &&
+        (identical(other.failureOrUsers, failureOrUsers) ||
+          const DeepCollectionEquality()
+            .equals(other.failureOrUsers, failureOrUsers)));
   }
-
+  
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrUsers);
-
+  int get hashCode =>
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(failureOrUsers);
+  
   @override
-  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
+  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
+    __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -279,10 +306,11 @@ class _$_ResultsReceived implements _ResultsReceived {
 }
 
 abstract class _ResultsReceived implements BlockedWatcherEvent {
-  const factory _ResultsReceived(Either<Failure, KtList<User>> failureOrUsers) = _$_ResultsReceived;
-
+  const factory _ResultsReceived(Either<Failure, KtList<User>> failureOrUsers) =
+  _$_ResultsReceived;
+  
   Either<Failure, KtList<User>> get failureOrUsers;
-
+  
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith;
 }
 
@@ -351,25 +379,30 @@ mixin _$BlockedWatcherState {
 }
 
 abstract class $BlockedWatcherStateCopyWith<$Res> {
-  factory $BlockedWatcherStateCopyWith(BlockedWatcherState value, $Res Function(BlockedWatcherState) then) = _$BlockedWatcherStateCopyWithImpl<$Res>;
+  factory $BlockedWatcherStateCopyWith(BlockedWatcherState value, $Res Function(BlockedWatcherState) then) =
+  _$BlockedWatcherStateCopyWithImpl<$Res>;
 }
 
-class _$BlockedWatcherStateCopyWithImpl<$Res> implements $BlockedWatcherStateCopyWith<$Res> {
+class _$BlockedWatcherStateCopyWithImpl<$Res>
+  implements $BlockedWatcherStateCopyWith<$Res> {
   _$BlockedWatcherStateCopyWithImpl(this._value, this._then);
-
+  
   final BlockedWatcherState _value;
-
+  
   // ignore: unused_field
   final $Res Function(BlockedWatcherState) _then;
 }
 
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+  __$InitialCopyWithImpl<$Res>;
 }
 
-class __$InitialCopyWithImpl<$Res> extends _$BlockedWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
-
+class __$InitialCopyWithImpl<$Res> extends _$BlockedWatcherStateCopyWithImpl<$Res>
+  implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+    : super(_value, (v) => _then(v as _Initial));
+  
   @override
   _Initial get _value => super._value as _Initial;
 }
@@ -458,12 +491,15 @@ abstract class _Initial implements BlockedWatcherState {
 }
 
 abstract class _$LoadInProgressCopyWith<$Res> {
-  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) = __$LoadInProgressCopyWithImpl<$Res>;
+  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) =
+  __$LoadInProgressCopyWithImpl<$Res>;
 }
 
-class __$LoadInProgressCopyWithImpl<$Res> extends _$BlockedWatcherStateCopyWithImpl<$Res> implements _$LoadInProgressCopyWith<$Res> {
-  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then) : super(_value, (v) => _then(v as _LoadInProgress));
-
+class __$LoadInProgressCopyWithImpl<$Res> extends _$BlockedWatcherStateCopyWithImpl<$Res>
+  implements _$LoadInProgressCopyWith<$Res> {
+  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then)
+    : super(_value, (v) => _then(v as _LoadInProgress));
+  
   @override
   _LoadInProgress get _value => super._value as _LoadInProgress;
 }
@@ -552,23 +588,28 @@ abstract class _LoadInProgress implements BlockedWatcherState {
 }
 
 abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
-
+  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) =
+  __$LoadSuccessCopyWithImpl<$Res>;
+  
   $Res call({KtList<User> blockedUsers});
 }
 
-class __$LoadSuccessCopyWithImpl<$Res> extends _$BlockedWatcherStateCopyWithImpl<$Res> implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then) : super(_value, (v) => _then(v as _LoadSuccess));
-
+class __$LoadSuccessCopyWithImpl<$Res> extends _$BlockedWatcherStateCopyWithImpl<$Res>
+  implements _$LoadSuccessCopyWith<$Res> {
+  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then)
+    : super(_value, (v) => _then(v as _LoadSuccess));
+  
   @override
   _LoadSuccess get _value => super._value as _LoadSuccess;
-
+  
   @override
   $Res call({
     Object blockedUsers = freezed,
   }) {
     return _then(_LoadSuccess(
-      blockedUsers == freezed ? _value.blockedUsers : blockedUsers as KtList<User>,
+      blockedUsers == freezed
+        ? _value.blockedUsers
+        : blockedUsers as KtList<User>,
     ));
   }
 }
@@ -586,14 +627,20 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadSuccess && (identical(other.blockedUsers, blockedUsers) || const DeepCollectionEquality().equals(other.blockedUsers, blockedUsers)));
+    return identical(this, other) ||
+      (other is _LoadSuccess &&
+        (identical(other.blockedUsers, blockedUsers) ||
+          const DeepCollectionEquality()
+            .equals(other.blockedUsers, blockedUsers)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(blockedUsers);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(blockedUsers);
 
   @override
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+    __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -666,19 +713,22 @@ abstract class _LoadSuccess implements BlockedWatcherState {
 }
 
 abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
-
+  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) =
+  __$LoadFailureCopyWithImpl<$Res>;
+  
   $Res call({Failure<dynamic> failure});
-
+  
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
-class __$LoadFailureCopyWithImpl<$Res> extends _$BlockedWatcherStateCopyWithImpl<$Res> implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then) : super(_value, (v) => _then(v as _LoadFailure));
-
+class __$LoadFailureCopyWithImpl<$Res> extends _$BlockedWatcherStateCopyWithImpl<$Res>
+  implements _$LoadFailureCopyWith<$Res> {
+  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then)
+    : super(_value, (v) => _then(v as _LoadFailure));
+  
   @override
   _LoadFailure get _value => super._value as _LoadFailure;
-
+  
   @override
   $Res call({
     Object failure = freezed,
@@ -712,14 +762,19 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) ||
+      (other is _LoadFailure &&
+        (identical(other.failure, failure) ||
+          const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith => __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+    __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs

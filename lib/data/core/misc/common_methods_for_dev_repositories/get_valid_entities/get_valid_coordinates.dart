@@ -4,7 +4,7 @@ import 'package:worldon/domain/core/validation/objects/longitude.dart';
 
 Coordinates getValidCoordinates() {
   return Coordinates(
-    latitude: Latitude(0.0),
-    longitude: Longitude(0.0),
+    latitude: Latitude(40.417611),
+    longitude: Longitude(-3.703749),
   );
 }
