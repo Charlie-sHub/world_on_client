@@ -40,7 +40,7 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
         },
       );
     } catch (exception) {
-      _logger.e("Moor Database error: $exception");
+      _logger.e("Error with moor database: $exception");
       return left(
         Failure.coreData(
           CoreDataFailure.serverError(
@@ -67,7 +67,34 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
         },
       );
     } catch (exception) {
-      _logger.e("Moor Database error: $exception");
+      _logger.e("Error with moor database: $exception");
+      return left(
+        Failure.coreData(
+          CoreDataFailure.serverError(
+            errorString: "Development repository error $exception",
+          ),
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, Unit>> dislikeExperience(int experienceId) async {
+    try {
+      final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
+      return _moorUserOption.fold(
+        () => throw UnAuthenticatedError,
+        (_moorUserWithRelations) async {
+          final _userLikedExperience = UserLikedExperiencesCompanion.insert(
+            userId: _moorUserWithRelations.user.id,
+            experienceId: experienceId,
+          );
+          await _database.moorExperiencesDao.removeExperienceLiked(_userLikedExperience);
+          return right(unit);
+        },
+      );
+    } catch (exception) {
+      _logger.e("Error with moor database: $exception");
       return left(
         Failure.coreData(
           CoreDataFailure.serverError(
@@ -93,7 +120,7 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
       );
       return right(unit);
     } catch (exception) {
-      _logger.e("Moor Database error: $exception");
+      _logger.e("Error with moor database: $exception");
       return left(
         Failure.coreData(
           CoreDataFailure.serverError(
@@ -122,7 +149,7 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
         },
       );
     } catch (exception) {
-      _logger.e("Moor Database error: $exception");
+      _logger.e("Error with moor database: $exception");
       return left(
         Failure.coreData(
           CoreDataFailure.serverError(

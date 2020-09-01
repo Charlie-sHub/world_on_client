@@ -305,11 +305,10 @@ void main() {
           // Assert
           expectLater(
             _tagStream.map(
-                (_moorTagWithMoorUserList) =>
-                _moorTagWithMoorUserList
+              (_moorTagWithMoorUserList) => _moorTagWithMoorUserList
                   .map(
                     (_moorTagWithMoorUser) => moorTagToDomainTag(_moorTagWithMoorUser),
-                )
+                  )
                   .toList(),
             ),
             emitsInOrder([_searchResults]),

@@ -22,6 +22,12 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   }
 
   @override
+  Future<Either<Failure, Unit>> dislikeExperience(int experienceId) {
+    // TODO: implement dislikeExperience
+    throw UnimplementedError();
+  }
+
+  @override
   Future<Either<Failure, KtSet<Experience>>> loadSurroundingExperiences(Coordinates coordinates) {
     // TODO: implement loadSurroundingExperiences
     throw UnimplementedError();

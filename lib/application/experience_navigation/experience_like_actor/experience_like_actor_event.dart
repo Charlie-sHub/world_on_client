@@ -5,5 +5,6 @@ abstract class ExperienceLikeActorEvent with _$ExperienceLikeActorEvent {
   const factory ExperienceLikeActorEvent.initialized(Experience experience) = _Initialized;
 
   const factory ExperienceLikeActorEvent.liked(Experience experience) = _Liked;
-// TODO: Implement disliked
+
+  const factory ExperienceLikeActorEvent.disliked(Experience experience) = _Disliked;
 }

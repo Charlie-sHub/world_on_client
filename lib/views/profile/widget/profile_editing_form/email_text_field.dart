@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/profile/profile_editing_form/profile_editing_form_bloc.dart';
@@ -14,7 +15,10 @@ class EmailTextField extends StatelessWidget {
       onChanged: (value) => context.bloc<ProfileEditingFormBloc>().add(
             ProfileEditingFormEvent.emailAddressChanged(value.trim()),
           ),
-      initialValue: context.bloc<ProfileEditingFormBloc>().state.user.email.getOrCrash(),
+      initialValue: context.bloc<ProfileEditingFormBloc>().state.user.email.value.fold(
+            (_) => "Value Failure",
+            id,
+          ),
       validator: (_) => context.bloc<ProfileEditingFormBloc>().state.user.email.value.fold(
             (failure) => failure.maybeMap(
               invalidEmail: (_) => "Invalid email",

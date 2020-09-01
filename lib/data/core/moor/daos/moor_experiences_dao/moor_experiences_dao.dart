@@ -56,6 +56,8 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
         mode: InsertMode.replace,
       );
 
+  Future<int> removeExperienceLiked(Insertable<UserLikedExperience> userLikedExperience) => delete(userLikedExperiences).delete(userLikedExperience);
+
   Future<int> deleteAllExperiences() => delete(moorExperiences).go();
 
   Future<int> deleteAllExperiencesImagesUrls() => delete(experienceImageUrls).go();

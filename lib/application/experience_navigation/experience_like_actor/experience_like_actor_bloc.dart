@@ -10,12 +10,14 @@ import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
-import 'package:worldon/domain/experience_navigation/use_case/like_experience.dart';
+import 'package:worldon/domain/experience_navigation/use_case/dislike_experience.dart' as dislike_experience;
+import 'package:worldon/domain/experience_navigation/use_case/like_experience.dart' as like_experience;
 
 import '../../../injection.dart';
 
 part 'experience_like_actor_bloc.freezed.dart';
-part 'experience_like_actor_event.dart';
+part 'experience_like_actor_event.dart';actor_event.dart';
+
 part 'experience_like_actor_state.dart';
 
 @injectable
@@ -27,14 +29,27 @@ class ExperienceLikeActorBloc extends Bloc<ExperienceLikeActorEvent, ExperienceL
     yield* event.map(
       initialized: _onInitialized,
       liked: _onLiked,
+      disliked: _onDisliked,
+    );
+  }
+
+  Stream<ExperienceLikeActorState> _onDisliked(_Disliked event) async* {
+    yield const ExperienceLikeActorState.actionInProgress();
+    final _dislikeExperience = getIt<dislike_experience.DislikeExperience>();
+    final _failureOrUnit = await _dislikeExperience(
+      dislike_experience.Params(experienceId: event.experience.id),
+    );
+    yield _failureOrUnit.fold(
+      (failure) => ExperienceLikeActorState.dislikeFailure(failure),
+      (_) => const ExperienceLikeActorState.dislikeSuccess(),
     );
   }
 
   Stream<ExperienceLikeActorState> _onLiked(_Liked event) async* {
     yield const ExperienceLikeActorState.actionInProgress();
-    final _likeExperience = getIt<LikeExperience>();
+    final _likeExperience = getIt<like_experience.LikeExperience>();
     final _failureOrUnit = await _likeExperience(
-      Params(experienceId: event.experience.id),
+      like_experience.Params(experienceId: event.experience.id),
     );
     yield _failureOrUnit.fold(
       (failure) => ExperienceLikeActorState.likeFailure(failure),

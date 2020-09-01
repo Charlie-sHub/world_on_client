@@ -73,7 +73,7 @@ class DevelopmentNotificationRepository implements NotificationRepositoryInterfa
       await _database.moorNotificationsDao.insertNotification(_moorNotification);
       return right(unit);
     } catch (exception) {
-      _logger.e("Moor Database error: $exception");
+      _logger.e("Error with moor database: $exception");
       return left(
         Failure.coreData(
           CoreDataFailure.serverError(
@@ -91,7 +91,7 @@ class DevelopmentNotificationRepository implements NotificationRepositoryInterfa
       await _database.moorNotificationsDao.deleteNotification(_notificationToDelete);
       return right(unit);
     } catch (exception) {
-      _logger.e("Moor Database error: $exception");
+      _logger.e("Error with moor database: $exception");
       return left(
         Failure.coreData(
           CoreDataFailure.serverError(

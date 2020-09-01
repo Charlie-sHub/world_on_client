@@ -40,7 +40,7 @@ class DevelopmentTagRepository implements TagCoreRepositoryInterface {
         },
       );
     } catch (exception) {
-      _logger.e("Moor Database error: $exception");
+      _logger.e("Error with moor database: $exception");
       return left(
         Failure.coreData(
           CoreDataFailure.serverError(
@@ -64,7 +64,7 @@ class DevelopmentTagRepository implements TagCoreRepositoryInterface {
         },
       );
     } catch (exception) {
-      _logger.e("Moor Database error: $exception");
+      _logger.e("Error with moor database: $exception");
       return left(
         Failure.coreData(
           CoreDataFailure.serverError(

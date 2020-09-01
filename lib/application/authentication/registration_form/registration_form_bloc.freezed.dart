@@ -1773,7 +1773,6 @@ abstract class _InterestsChanged implements RegistrationFormEvent {
   const factory _InterestsChanged(Set<int> interests) = _$_InterestsChanged;
 
   Set<int> get interests;
-
   _$InterestsChangedCopyWith<_InterestsChanged> get copyWith;
 }
 

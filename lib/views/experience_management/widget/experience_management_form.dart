@@ -26,30 +26,11 @@ class ExperienceManagementForm extends StatelessWidget {
       create: (context) => getIt<ExperienceManagementFormBloc>(),
       child: BlocConsumer<ExperienceManagementFormBloc, ExperienceManagementFormState>(
         listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
-        listener: (context, state) => state.failureOrSuccessOption.fold(
-          () => null,
-          (either) => either.fold(
-            (failure) => failure.maybeMap(
-              coreData: (failure) => failure.coreDataFailure.maybeMap(
-                nameAlreadyInUse: (_) => FlushbarHelper.createError(
-                  duration: const Duration(seconds: 2),
-                  message: "The title is already in use",
-                ).show(context),
-                serverError: (failure) => FlushbarHelper.createError(
-                  duration: const Duration(seconds: 2),
-                  message: failure.errorString,
-                ).show(context),
-                orElse: () => null,
-              ),
-              orElse: () => null,
-            ),
-            (_) => FlushbarHelper.createSuccess(
-              duration: const Duration(seconds: 2),
-              message: "The experience was created",
-            ).show(context),
-          ),
-        ),
-        buildWhen: (previous, current) => previous.showErrorMessages != current.showErrorMessages,
+        listener: _experienceManagementListener,
+        buildWhen: (previous, current) {
+          final _build = previous.showErrorMessages != current.showErrorMessages || previous.experience.difficulty != current.experience.difficulty;
+          return _build;
+        },
         builder: (context, state) => SingleChildScrollView(
           child: Form(
             autovalidate: state.showErrorMessages,
@@ -101,4 +82,28 @@ class ExperienceManagementForm extends StatelessWidget {
       ),
     );
   }
+
+  void _experienceManagementListener(BuildContext context, ExperienceManagementFormState state) => state.failureOrSuccessOption.fold(
+        () => null,
+        (either) => either.fold(
+          (failure) => failure.maybeMap(
+            coreData: (failure) => failure.coreDataFailure.maybeMap(
+              nameAlreadyInUse: (_) => FlushbarHelper.createError(
+                duration: const Duration(seconds: 2),
+                message: "The title is already in use",
+              ).show(context),
+              serverError: (failure) => FlushbarHelper.createError(
+                duration: const Duration(seconds: 2),
+                message: failure.errorString,
+              ).show(context),
+              orElse: () => null,
+            ),
+            orElse: () => null,
+          ),
+          (_) => FlushbarHelper.createSuccess(
+            duration: const Duration(seconds: 2),
+            message: "The experience was created",
+          ).show(context),
+        ),
+      );
 }

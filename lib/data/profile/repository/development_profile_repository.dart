@@ -5,6 +5,7 @@ import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:logger/logger.dart';
 import 'package:rxdart/rxdart.dart';
+import 'package:worldon/core/assets.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/create_experience_list_stream.dart';
@@ -14,7 +15,6 @@ import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/creat
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_server_error_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/simulate_failure_or_unit.dart';
-import 'package:worldon/data/core/moor/converters/domain_user_to_moor_user_companion.dart';
 import 'package:worldon/data/core/moor/converters/moor_achievement_to_domain_achievement.dart';
 import 'package:worldon/data/core/moor/converters/moor_user_to_domain_user.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
@@ -36,11 +36,11 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> editUser(User user) async {
     try {
-      final _moorUser = domainUserToMoorUserCompanion(user);
+      final _moorUser = _moorUserFromDomainUserToUpdate(user);
       await _database.moorUsersDao.updateUser(_moorUser);
       return right(unit);
     } catch (exception) {
-      _logger.e("Moor Database error: $exception");
+      _logger.e("Error with moor database: $exception");
       return left(
         Failure.coreData(
           CoreDataFailure.serverError(
@@ -51,6 +51,29 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
     }
   }
 
+  MoorUser _moorUserFromDomainUserToUpdate(User user) => MoorUser(
+        id: user.id,
+        name: user.name.getOrCrash(),
+        username: user.username.getOrCrash(),
+        password: user.password.getOrCrash(),
+        email: user.email.getOrCrash(),
+        birthday: user.birthday.getOrCrash(),
+        description: user.description.getOrCrash(),
+        imageURL: user.imageFileOption.fold(
+          () => user.imageURL ?? Assets.userPlaceholder,
+          (imageFile) => imageFile.path,
+        ),
+        level: user.level.getOrCrash(),
+        experiencePoints: user.experiencePoints.getOrCrash(),
+        privacy: user.privacy,
+        adminPowers: user.adminPowers,
+        enabled: user.enabled,
+        lastLogin: user.lastLogin.getOrCrash(),
+        creationDate: user.creationDate.getOrCrash(),
+        modificationDate: user.modificationDate.getOrCrash(),
+        isLoggedIn: true,
+      );
+
   @override
   Future<Either<Failure, User>> getUser(int id) async {
     try {
@@ -58,7 +81,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
       final _user = moorUserToDomainUser(_moorUser);
       return right(_user);
     } catch (exception) {
-      _logger.e("Moor Database error: $exception");
+      _logger.e("Error with moor database: $exception");
       return left(
         Failure.coreData(
           CoreDataFailure.serverError(
@@ -82,7 +105,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
         },
       );
     } catch (exception) {
-      _logger.e("Moor Database error: $exception");
+      _logger.e("Error with moor database: $exception");
       return left(
         Failure.coreData(
           CoreDataFailure.serverError(
@@ -106,7 +129,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
         },
       );
     } catch (exception) {
-      _logger.e("Moor Database error: $exception");
+      _logger.e("Error with moor database: $exception");
       return left(
         Failure.coreData(
           CoreDataFailure.serverError(
@@ -137,7 +160,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
         },
       );
     } catch (exception) {
-      _logger.e("Moor Database error: $exception");
+      _logger.e("Error with moor database: $exception");
       return left(
         Failure.coreData(
           CoreDataFailure.serverError(
@@ -161,7 +184,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
         },
       );
     } catch (exception) {
-      _logger.e("Moor Database error: $exception");
+      _logger.e("Error with moor database: $exception");
       return left(
         Failure.coreData(
           CoreDataFailure.serverError(

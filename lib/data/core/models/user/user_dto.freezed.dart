@@ -85,47 +85,27 @@ mixin _$UserDto {
   String get email;
   String get birthday;
   String get description;
-
   String get imageURL;
-
   int get level;
-
   int get experiencePoints;
-
   bool get privacy;
-
   bool get adminPowers;
-
   bool get enabled;
-
   String get lastLogin;
-
   String get creationDate;
-
   String get modificationDate;
-
   OptionsDto get options;
-
   Set<int> get blockedUsersIds;
-
   Set<int> get followedUsersIds;
-
   Set<int> get interestsIds;
-
   Set<int> get achievementsIds;
-
   Set<int> get experiencesDoneIds;
-
   Set<int> get experiencesLikedIds;
-
   Set<int> get experiencesToDoIds;
-
   Set<DeviceDto> get devices;
-
   Set<SystemDto> get systems;
 
   Map<String, dynamic> toJson();
-
   $UserDtoCopyWith<UserDto> get copyWith;
 }
 
@@ -594,37 +574,26 @@ abstract class _UserDto extends UserDto {
   String get creationDate;
   @override
   String get modificationDate;
-
   @override
   OptionsDto get options;
-
   @override
   Set<int> get blockedUsersIds;
-
   @override
   Set<int> get followedUsersIds;
-
   @override
   Set<int> get interestsIds;
-
   @override
   Set<int> get achievementsIds;
-
   @override
   Set<int> get experiencesDoneIds;
-
   @override
   Set<int> get experiencesLikedIds;
-
   @override
   Set<int> get experiencesToDoIds;
-
   @override
   Set<DeviceDto> get devices;
-
   @override
   Set<SystemDto> get systems;
-
   @override
   _$UserDtoCopyWith<_UserDto> get copyWith;
 }

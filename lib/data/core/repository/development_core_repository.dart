@@ -463,6 +463,7 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
       creator: _validUser.copyWith(
         id: _userIds.first,
       ),
+      imageURLs: {"assets/experience_placeholder_image_2.jpeg"},
     );
     final _experienceHip = _experienceIpsum.copyWith(
       title: Name("Put a bird on it"),
@@ -470,6 +471,7 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
       creator: _validUser.copyWith(
         id: _userIds.elementAt(1),
       ),
+      imageURLs: {"assets/experience_placeholder_image_3.jpeg"},
     );
     final _experienceSpace = _experienceIpsum.copyWith(
       title: Name("The final frontier"),
@@ -477,6 +479,7 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
       creator: _validUser.copyWith(
         id: _userIds.elementAt(2),
       ),
+      imageURLs: {"assets/experience_placeholder_image_4.jpeg"},
     );
     final _experiencePostModern = _experienceIpsum.copyWith(
       title: Name("Consensuses of collapse"),
@@ -485,6 +488,7 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
       creator: _validUser.copyWith(
         id: _userIds.elementAt(3),
       ),
+      imageURLs: {"assets/experience_placeholder_image_5.jpeg"},
     );
     final _experienceCat = _experienceIpsum.copyWith(
       title: Name("Human give me attention meow"),
@@ -492,6 +496,7 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
       creator: _validUser.copyWith(
         id: _userIds.elementAt(2),
       ),
+      imageURLs: {"assets/experience_placeholder_image_6.jpeg"},
     );
     final _experienceCorporate = _experienceIpsum.copyWith(
       title: Name("Leverage agile frameworks"),
@@ -500,6 +505,7 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
       creator: _validUser.copyWith(
         id: _userIds.elementAt(1),
       ),
+      imageURLs: {"assets/experience_placeholder_image_7.jpeg"},
     );
     final _experienceList = [
       _experienceIpsum,
@@ -627,6 +633,7 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
       email: const Value("wew@lad.lel"),
       description: const Value("Why even live?"),
       level: const Value(90),
+      imageURL: const Value("assets/placeholder_user_charlie.jpg"),
     );
     final _moorUserBro = _moorUserRicky.copyWith(
       name: const Value("Bro"),
@@ -634,6 +641,7 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
       email: const Value("chicken@huck.moguls"),
       description: const Value("Snake bite nose press flow couloir, poaching freshies OTB ride"),
       level: const Value(66),
+      imageURL: const Value("assets/placeholder_user_bro.jpg"),
     );
     final _moorUserHipster = _moorUserRicky.copyWith(
       name: const Value("I'm baby"),
@@ -641,6 +649,7 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
       email: const Value("paleo@pork.belly"),
       description: const Value("Vinyl succulents poutine brunch twee, gentrify cred listicle affogato four dollar toast."),
       level: const Value(32),
+      imageURL: const Value("assets/placeholder_user_hipster.jpg"),
     );
     final _moorUserList = [
       _moorUserRicky,
@@ -655,7 +664,7 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
   }
 
   Future _logException(exception) async {
-    _logger.e("Moor Database error: $exception");
+    _logger.e("Error with moor database: $exception");
     _logger.i("DELETING RELATIONS");
     final _deletedAchievementsTagsAmount = await _database.moorTagsDao.deleteAllAchievementsTags();
     _logger.i("Deleted  $_deletedAchievementsTagsAmount achievements tag(s)");

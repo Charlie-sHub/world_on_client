@@ -27,7 +27,7 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
         (_moorUserWithRelations) => some(moorUserWithRelationsToDomainUser(_moorUserWithRelations)),
       );
     } catch (exception) {
-      _logger.e("Moor Database error: $exception");
+      _logger.e("Error with moor database: $exception");
       return none();
     }
   }
@@ -54,7 +54,7 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
         );
       }
     } catch (exception) {
-      _logger.e("Moor Database error: $exception");
+      _logger.e("Error with moor database: $exception");
       return left(
         Failure.coreData(
           CoreDataFailure.serverError(
@@ -81,7 +81,7 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
         },
       );
     } catch (exception) {
-      _logger.e("Moor Database error: $exception");
+      _logger.e("Error with moor database: $exception");
       return left(
         Failure.coreData(
           CoreDataFailure.serverError(
@@ -113,7 +113,7 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
       }
       return right(unit);
     } catch (exception) {
-      _logger.e("Moor Database error: $exception");
+      _logger.e("Error with moor database: $exception");
       return left(
         Failure.coreData(
           CoreDataFailure.serverError(

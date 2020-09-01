@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/profile/profile_editing_form/profile_editing_form_bloc.dart';
@@ -13,7 +14,10 @@ class UsernameTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       maxLength: Name.maxLength,
-      initialValue: context.bloc<ProfileEditingFormBloc>().state.user.username.getOrCrash(),
+      initialValue: context.bloc<ProfileEditingFormBloc>().state.user.username.value.fold(
+            (_) => "Value Failure",
+            id,
+          ),
       onChanged: (value) => context.bloc<ProfileEditingFormBloc>().add(
             ProfileEditingFormEvent.usernameChanged(value.trim()),
           ),

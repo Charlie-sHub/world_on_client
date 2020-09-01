@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/profile/profile_editing_form/profile_editing_form_bloc.dart';
@@ -13,11 +14,14 @@ class DescriptionTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       maxLength: EntityDescription.maxLength,
-      initialValue: context.bloc<ProfileEditingFormBloc>().state.user.description.getOrCrash(),
+      initialValue: context.bloc<ProfileEditingFormBloc>().state.user.description.value.fold(
+            (_) => "Value Failure",
+            id,
+          ),
       onChanged: (value) => context.bloc<ProfileEditingFormBloc>().add(
             ProfileEditingFormEvent.descriptionChanged(value.trim()),
           ),
-      validator: (_) => context.bloc<ProfileEditingFormBloc>().state.user.username.value.fold(
+      validator: (_) => context.bloc<ProfileEditingFormBloc>().state.user.description.value.fold(
             (failure) => failure.maybeMap(
               emptyString: (_) => "The description can't be empty",
               multiLineString: (_) => "The description can't be more than one line",

@@ -29,13 +29,13 @@ class ExperienceDoneCounter extends StatelessWidget {
               Positioned(
                 left: 20,
                 child: CircleAvatar(
-                  backgroundImage: AssetImage(Assets.userPlaceholder),
+                  backgroundImage: AssetImage("assets/placeholder_user_bro.jpg"),
                 ),
               ),
               Positioned(
                 left: 40,
                 child: CircleAvatar(
-                  backgroundImage: AssetImage(Assets.userPlaceholder),
+                  backgroundImage: AssetImage("assets/placeholder_user_charlie.jpg"),
                 ),
               )
             ],

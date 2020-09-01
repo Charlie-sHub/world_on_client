@@ -1,6 +1,7 @@
 import 'package:injectable/injectable.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/domain/experience_navigation/use_case/accomplish_objective.dart';
+import 'package:worldon/domain/experience_navigation/use_case/dislike_experience.dart';
 import 'package:worldon/domain/experience_navigation/use_case/fill_objective_tracker.dart';
 import 'package:worldon/domain/experience_navigation/use_case/finish_experience.dart';
 import 'package:worldon/domain/experience_navigation/use_case/like_experience.dart';
@@ -19,6 +20,9 @@ class MockFinishExperience extends Mock implements FinishExperience {}
 
 @LazySingleton(as: LikeExperience, env: [Environment.test])
 class MockLikeExperience extends Mock implements LikeExperience {}
+
+@LazySingleton(as: DislikeExperience, env: [Environment.test])
+class MockDislikeExperience extends Mock implements DislikeExperience {}
 
 @LazySingleton(as: LoadSurroundingExperiences, env: [Environment.test])
 class MockLoadSurroundingExperiences extends Mock implements LoadSurroundingExperiences {}

@@ -1627,6 +1627,7 @@ abstract class MultiLineString<T> implements ValueFailure<T> {
 
 abstract class $StringExceedsLengthCopyWith<T, $Res> {
   factory $StringExceedsLengthCopyWith(StringExceedsLength<T> value, $Res Function(StringExceedsLength<T>) then) = _$StringExceedsLengthCopyWithImpl<T, $Res>;
+
   $Res call({String failedValue, int maxLength});
 }
 
@@ -1818,6 +1819,7 @@ abstract class StringExceedsLength<T> implements ValueFailure<T> {
 
 abstract class $IntegerOutOfBoundsCopyWith<T, $Res> {
   factory $IntegerOutOfBoundsCopyWith(IntegerOutOfBounds<T> value, $Res Function(IntegerOutOfBounds<T>) then) = _$IntegerOutOfBoundsCopyWithImpl<T, $Res>;
+
   $Res call({int failedValue});
 }
 
@@ -2180,6 +2182,7 @@ abstract class StringWithInvalidCharacters<T> implements ValueFailure<T> {
 
 abstract class $InvalidCoordinatesCopyWith<T, $Res> {
   factory $InvalidCoordinatesCopyWith(InvalidCoordinates<T> value, $Res Function(InvalidCoordinates<T>) then) = _$InvalidCoordinatesCopyWithImpl<T, $Res>;
+
   $Res call({double failedValue});
 }
 

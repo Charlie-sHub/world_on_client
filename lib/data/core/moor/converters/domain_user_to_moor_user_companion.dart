@@ -1,7 +1,6 @@
+import 'package:worldon/core/assets.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
-
-import 'file:///C:/Users/Lucholito/Documents/WorldOn/Client/world_on_project/world_on/lib/core/assets.dart';
 
 MoorUsersCompanion domainUserToMoorUserCompanion(User user) => MoorUsersCompanion.insert(
       name: user.name.getOrCrash(),

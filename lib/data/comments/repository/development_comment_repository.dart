@@ -73,7 +73,7 @@ class DevelopmentCommentRepository implements CommentRepositoryInterface {
       await _database.moorCommentsDao.insertComment(_moorComment);
       return right(unit);
     } catch (exception) {
-      _logger.e("Moor Database error: $exception");
+      _logger.e("Error with moor database: $exception");
       return left(
         Failure.coreData(
           CoreDataFailure.serverError(

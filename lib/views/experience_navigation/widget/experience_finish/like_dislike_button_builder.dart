@@ -35,6 +35,8 @@ class LikeDislikeButtonBuilder extends StatelessWidget {
             neutral: (_) => LikeExperienceButton(experience: experience),
             likeSuccess: (_) => DislikeExperienceButton(experience: experience),
             likeFailure: (_) => LikeExperienceButton(experience: experience),
+            dislikeFailure: (_) => DislikeExperienceButton(experience: experience),
+            dislikeSuccess: (_) => LikeExperienceButton(experience: experience),
           ),
         ),
       ),

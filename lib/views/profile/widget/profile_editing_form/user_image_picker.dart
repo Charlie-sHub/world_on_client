@@ -12,14 +12,21 @@ class UserImagePicker extends StatelessWidget {
     return context.bloc<ProfileEditingFormBloc>().state.user.imageFileOption.fold(
           () => FlatButton(
             onPressed: () async => _pickImage(context),
-            child: const Hero(
-              tag: "userImage",
-              child: CircleAvatar(
-                radius: 80,
-                // TODO: Change to user's network image
-                backgroundImage: AssetImage(Assets.userPlaceholder),
-              ),
-            ),
+            child: context.bloc<ProfileEditingFormBloc>().state.user.imageURL == Assets.userPlaceholder
+                ? Hero(
+                    tag: "userImageAsset",
+                    child: CircleAvatar(
+                      radius: 60,
+                      backgroundImage: AssetImage(context.bloc<ProfileEditingFormBloc>().state.user.imageURL),
+                    ),
+                  )
+                : Hero(
+                    tag: "userImageFile",
+                    child: CircleAvatar(
+                      radius: 60,
+                      backgroundImage: FileImage(File(context.bloc<ProfileEditingFormBloc>().state.user.imageURL)),
+                    ),
+                  ),
           ),
           (imageFile) => FlatButton(
             onPressed: () async => _pickImage(context),

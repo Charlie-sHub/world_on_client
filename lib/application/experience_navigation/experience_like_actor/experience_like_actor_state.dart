@@ -13,4 +13,8 @@ abstract class ExperienceLikeActorState with _$ExperienceLikeActorState {
   const factory ExperienceLikeActorState.likeSuccess() = _LikeSuccess;
 
   const factory ExperienceLikeActorState.likeFailure(Failure<dynamic> failure) = _LikeFailure;
+
+  const factory ExperienceLikeActorState.dislikeSuccess() = _DislikeSuccess;
+
+  const factory ExperienceLikeActorState.dislikeFailure(Failure<dynamic> failure) = _DislikeFailure;
 }

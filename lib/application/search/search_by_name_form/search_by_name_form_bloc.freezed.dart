@@ -395,7 +395,6 @@ abstract class _SearchByNameFormState implements SearchByNameFormState {
 
   @override
   Option<ValueFailure> get failureOrSuccessOption;
-
   @override
   _$SearchByNameFormStateCopyWith<_SearchByNameFormState> get copyWith;
 }

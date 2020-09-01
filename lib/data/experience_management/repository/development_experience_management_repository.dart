@@ -29,7 +29,7 @@ class DevelopmentExperienceManagementRepository implements ExperienceManagementR
       await insertExperience(experience);
       return right(unit);
     } catch (exception) {
-      _logger.e("Moor Database error: $exception");
+      _logger.e("Error with moor database: $exception");
       return left(
         Failure.coreData(
           CoreDataFailure.serverError(
@@ -38,25 +38,6 @@ class DevelopmentExperienceManagementRepository implements ExperienceManagementR
         ),
       );
     }
-  }
-
-  @override
-  Future<Either<Failure, Unit>> editExperience(Experience experience) {
-    return simulateFailureOrUnit(auxBool: _random.nextBool());
-  }
-
-  @override
-  Future<Either<Failure, Experience>> getExperience(int id) {
-    if (_random.nextBool()) {
-      return getRightFuture(getValidExperience());
-    } else {
-      return getLeftServerErrorFuture();
-    }
-  }
-
-  @override
-  Future<Either<Failure, Unit>> removeExperience(int id) {
-    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 
   Future<int> insertExperience(Experience experience) async {
@@ -112,5 +93,24 @@ class DevelopmentExperienceManagementRepository implements ExperienceManagementR
       await _database.moorRewardsDao.insertReward(_reward);
     }
     return _experienceId;
+  }
+
+  @override
+  Future<Either<Failure, Unit>> editExperience(Experience experience) {
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
+  }
+
+  @override
+  Future<Either<Failure, Experience>> getExperience(int id) {
+    if (_random.nextBool()) {
+      return getRightFuture(getValidExperience());
+    } else {
+      return getLeftServerErrorFuture();
+    }
+  }
+
+  @override
+  Future<Either<Failure, Unit>> removeExperience(int id) {
+    return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 }

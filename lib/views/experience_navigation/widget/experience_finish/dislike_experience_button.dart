@@ -20,7 +20,7 @@ class DislikeExperienceButton extends StatelessWidget {
         color: Colors.grey,
       ),
       onPressed: () => context.bloc<ExperienceLikeActorBloc>().add(
-            ExperienceLikeActorEvent.liked(experience),
+            ExperienceLikeActorEvent.disliked(experience),
           ),
     );
   }

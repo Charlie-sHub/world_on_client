@@ -4,7 +4,6 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
-import 'package:worldon/core/assets.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 
 class UserImage extends StatelessWidget {
@@ -22,7 +21,7 @@ class UserImage extends StatelessWidget {
             NavigationActorEvent.profileTapped(some(user)),
           ),
       // TODO: Change to NetworkImage
-      child: user.imageURL == Assets.userPlaceholder
+      child: user.imageURL.contains("assets/")
           ? CircleAvatar(
               radius: 22,
               backgroundImage: AssetImage(user.imageURL),

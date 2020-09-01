@@ -33,7 +33,17 @@ class AppWidget extends StatelessWidget {
         // The difference is not really noticed as many widgets have set colors, but that should be changed
         // Most if not all widget colors should depend of the theme instead of having to set the colors directly
         theme: ThemeData.dark().copyWith(
-          bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          sliderTheme: SliderTheme.of(context).copyWith(
+            inactiveTrackColor: Colors.white,
+            trackShape: const RoundedRectSliderTrackShape(),
+            trackHeight: 5,
+            thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 12.0),
+            overlayShape: const RoundSliderOverlayShape(overlayRadius: 28.0),
+            tickMarkShape: const RoundSliderTickMarkShape(),
+            valueIndicatorShape: const PaddleSliderValueIndicatorShape(),
+            showValueIndicator: ShowValueIndicator.always,
+          ),
+          bottomNavigationBarTheme: BottomNavigationBarTheme.of(context).copyWith(
             selectedItemColor: Colors.white,
             unselectedItemColor: Colors.white,
           ),
@@ -46,7 +56,7 @@ class AppWidget extends StatelessWidget {
           primaryColor: WorldOnColors.primary,
           accentColor: WorldOnColors.primary,
           scaffoldBackgroundColor: WorldOnColors.background,
-          appBarTheme: const AppBarTheme(
+          appBarTheme: AppBarTheme.of(context).copyWith(
             color: WorldOnColors.background,
           ),
           inputDecorationTheme: const InputDecorationTheme(

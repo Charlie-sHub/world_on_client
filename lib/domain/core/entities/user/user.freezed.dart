@@ -85,43 +85,24 @@ mixin _$User {
   PastDate get birthday;
   EntityDescription get description;
   String get imageURL;
-
   Option<File> get imageFileOption;
-
   UserLevel get level;
-
   ExperiencePoints get experiencePoints;
-
   bool get privacy;
-
   bool get adminPowers;
-
   bool get enabled;
-
   PastDate get lastLogin;
-
   PastDate get creationDate;
-
   PastDate get modificationDate;
-
   Options get options;
-
   Set<int> get blockedUsersIds;
-
   Set<int> get followedUsersIds;
-
   Set<int> get interestsIds;
-
   Set<int> get achievementsIds;
-
   Set<int> get experiencesDoneIds;
-
   Set<int> get experiencesLikedIds;
-
   Set<int> get experiencesToDoIds;
-
   Set<Device> get devices;
-
   Set<System> get systems;
 
   $UserCopyWith<User> get copyWith;
@@ -596,37 +577,26 @@ abstract class _User extends User {
   PastDate get creationDate;
   @override
   PastDate get modificationDate;
-
   @override
   Options get options;
-
   @override
   Set<int> get blockedUsersIds;
-
   @override
   Set<int> get followedUsersIds;
-
   @override
   Set<int> get interestsIds;
-
   @override
   Set<int> get achievementsIds;
-
   @override
   Set<int> get experiencesDoneIds;
-
   @override
   Set<int> get experiencesLikedIds;
-
   @override
   Set<int> get experiencesToDoIds;
-
   @override
   Set<Device> get devices;
-
   @override
   Set<System> get systems;
-
   @override
   _$UserCopyWith<_User> get copyWith;
 }
