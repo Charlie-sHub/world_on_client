@@ -32,6 +32,7 @@ class ProfileUsersTabView extends StatelessWidget {
             initial: (_) => Container(),
             loadInProgress: (_) => WorldOnProgressIndicator(),
             loadSuccess: (state) => ListView.builder(
+              physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.all(10),
               itemCount: state.users.size,
               itemBuilder: (context, index) {
@@ -45,8 +46,8 @@ class ProfileUsersTabView extends StatelessWidget {
                   return ErrorCard(
                     entityType: "User",
                     valueFailureString: _user.failureOption.fold(
-                      () => "",
-                      (failure) => failure.toString(),
+                        () => "",
+                        (failure) => failure.toString(),
                     ),
                   );
                 }

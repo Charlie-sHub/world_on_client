@@ -203,16 +203,16 @@ class _$_AchievementDto extends _AchievementDto {
       @required this.name,
       @required this.description,
       @required this.imageURL,
-      @required this.type,
-      @required this.requisite,
-      @required this.experiencePoints,
-      @required this.creator,
-      @required this.creationDate,
-      @required this.modificationDate,
-      @required this.tags})
-      : assert(id != null),
-        assert(name != null),
-        assert(description != null),
+        @required this.type,
+        @required this.requisite,
+        @required this.experiencePoints,
+        @required this.creator,
+        @required this.creationDate,
+        @required this.modificationDate,
+        @required this.tags})
+    : assert(id != null),
+      assert(name != null),
+      assert(description != null),
       assert(imageURL != null),
       assert(type != null),
       assert(requisite != null),
@@ -316,34 +316,30 @@ class _$_AchievementDto extends _AchievementDto {
 
 abstract class _AchievementDto extends AchievementDto {
   const _AchievementDto._() : super._();
-  const factory _AchievementDto(
-      {@required int id,
-      @required String name,
-        @required String description,
-        @required String imageURL,
-        @required String type,
-        @required int requisite,
-        @required int experiencePoints,
-        @required UserDto creator,
-        @required String creationDate,
-        @required String modificationDate,
-        @required Set<TagDto> tags}) = _$_AchievementDto;
+
+  const factory _AchievementDto({@required int id,
+    @required String name,
+    @required String description,
+    @required String imageURL,
+    @required String type,
+    @required int requisite,
+    @required int experiencePoints,
+    @required UserDto creator,
+    @required String creationDate,
+    @required String modificationDate,
+    @required Set<TagDto> tags}) = _$_AchievementDto;
 
   factory _AchievementDto.fromJson(Map<String, dynamic> json) =
   _$_AchievementDto.fromJson;
 
   @override
   int get id;
-
   @override
   String get name;
-
   @override
   String get description;
-
   @override
   String get imageURL;
-
   @override
   String get type;
   @override

@@ -45,6 +45,7 @@ class NotificationsBody extends StatelessWidget {
             initial: (_) => Container(),
             loadInProgress: (_) => WorldOnProgressIndicator(),
             loadSuccess: (state) => ListView.builder(
+              physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.all(10),
               itemCount: state.notifications.size,
               itemBuilder: (context, index) {
@@ -59,8 +60,8 @@ class NotificationsBody extends StatelessWidget {
                   return ErrorCard(
                     entityType: "Notification",
                     valueFailureString: _notification.failureOption.fold(
-                      () => "",
-                      (failure) => failure.toString(),
+                        () => "",
+                        (failure) => failure.toString(),
                     ),
                   );
                 }

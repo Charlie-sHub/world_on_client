@@ -29,7 +29,7 @@ class NameTextFormField extends StatelessWidget {
               orElse: () => StringConst.unknownError,
             ),
             (_) => null,
-        ),
+          ),
       autocorrect: false,
       decoration: const InputDecoration(
         labelText: "Name",

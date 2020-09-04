@@ -152,7 +152,7 @@ class _$_PrimitiveObjective extends _PrimitiveObjective {
       const DeepCollectionEquality().hash(latitude) ^
       const DeepCollectionEquality().hash(longitude) ^
       const DeepCollectionEquality().hash(imageFile);
-  
+
   @override
   _$PrimitiveObjectiveCopyWith<_PrimitiveObjective> get copyWith =>
     __$PrimitiveObjectiveCopyWithImpl<_PrimitiveObjective>(this, _$identity);

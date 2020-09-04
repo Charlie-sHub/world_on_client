@@ -1062,7 +1062,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
   get copyWith =>
     __$PasswordConfirmationChangedCopyWithImpl<
       _PasswordConfirmationChanged>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -1188,7 +1188,6 @@ abstract class _$EmailAddressChangedCopyWith<$Res> {
   factory _$EmailAddressChangedCopyWith(_EmailAddressChanged value,
     $Res Function(_EmailAddressChanged) then) =
   __$EmailAddressChangedCopyWithImpl<$Res>;
-  
   $Res call({String emailAddress});
 }
 
@@ -1239,7 +1238,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
   _$EmailAddressChangedCopyWith<_EmailAddressChanged> get copyWith =>
     __$EmailAddressChangedCopyWithImpl<_EmailAddressChanged>(
       this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -2418,15 +2417,19 @@ abstract class _RegistrationFormState implements RegistrationFormState {
     @required bool acceptedEULA,
     @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
   _$_RegistrationFormState;
-
+  
   @override
   User get user;
+  
   @override
   PasswordConfirmator get passwordConfirmator;
+  
   @override
   String get passwordToCompare;
+  
   @override
   bool get showErrorMessages;
+  
   @override
   bool get isSubmitting;
   @override

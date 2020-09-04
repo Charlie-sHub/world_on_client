@@ -23,6 +23,7 @@ class SearchExperiencesTabView extends StatelessWidget {
         initial: (_) => SearchSomething(),
         searchInProgress: (_) => WorldOnProgressIndicator(),
         searchSuccess: (state) => ListView.builder(
+          physics: const BouncingScrollPhysics(),
           padding: const EdgeInsets.all(10),
           itemCount: state.experiencesFound.size,
           itemBuilder: (context, index) {
@@ -36,8 +37,8 @@ class SearchExperiencesTabView extends StatelessWidget {
               return ErrorCard(
                 entityType: "Experience",
                 valueFailureString: _experience.failureOption.fold(
-                  () => "",
-                  (failure) => failure.toString(),
+                    () => "",
+                    (failure) => failure.toString(),
                 ),
               );
             }

@@ -126,9 +126,8 @@ abstract class _$AuthenticationDomainCopyWith<T, $Res> {
   factory _$AuthenticationDomainCopyWith(_AuthenticationDomain<T> value,
     $Res Function(_AuthenticationDomain<T>) then) =
   __$AuthenticationDomainCopyWithImpl<T, $Res>;
-  
   $Res call({AuthenticationDomainFailure<T> authenticationDomainFailure});
-  
+
   $AuthenticationDomainFailureCopyWith<T, $Res> get authenticationDomainFailure;
 }
 
@@ -198,7 +197,7 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
   _$AuthenticationDomainCopyWith<T, _AuthenticationDomain<T>> get copyWith =>
     __$AuthenticationDomainCopyWithImpl<T, _AuthenticationDomain<T>>(
       this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -293,9 +292,8 @@ abstract class _$AuthenticationDataCopyWith<T, $Res> {
   factory _$AuthenticationDataCopyWith(_AuthenticationData<T> value,
     $Res Function(_AuthenticationData<T>) then) =
   __$AuthenticationDataCopyWithImpl<T, $Res>;
-  
   $Res call({AuthenticationDataFailure<T> authenticationDataFailure});
-  
+
   $AuthenticationDataFailureCopyWith<T, $Res> get authenticationDataFailure;
 }
 
@@ -363,7 +361,7 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
   _$AuthenticationDataCopyWith<T, _AuthenticationData<T>> get copyWith =>
     __$AuthenticationDataCopyWithImpl<T, _AuthenticationData<T>>(
       this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -523,7 +521,7 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
   @override
   _$CoreDomainCopyWith<T, _CoreDomain<T>> get copyWith =>
     __$CoreDomainCopyWithImpl<T, _CoreDomain<T>>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -618,9 +616,8 @@ abstract class _$CoreAppllicationCopyWith<T, $Res> {
   factory _$CoreAppllicationCopyWith(_CoreAppllication<T> value,
     $Res Function(_CoreAppllication<T>) then) =
   __$CoreAppllicationCopyWithImpl<T, $Res>;
-  
   $Res call({CoreApplicationFailure<T> coreApplicationFailure});
-  
+
   $CoreApplicationFailureCopyWith<T, $Res> get coreApplicationFailure;
 }
 
@@ -685,7 +682,7 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
   _$CoreAppllicationCopyWith<T, _CoreAppllication<T>> get copyWith =>
     __$CoreAppllicationCopyWithImpl<T, _CoreAppllication<T>>(
       this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -935,9 +932,8 @@ abstract class _CoreData<T> implements Failure<T> {
 abstract class _$ValueCopyWith<T, $Res> {
   factory _$ValueCopyWith(_Value<T> value, $Res Function(_Value<T>) then) =
   __$ValueCopyWithImpl<T, $Res>;
-  
   $Res call({ValueFailure<T> valueFailure});
-  
+
   $ValueFailureCopyWith<T, $Res> get valueFailure;
 }
 
@@ -1156,7 +1152,7 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
   @override
   _$ProfileDomainCopyWith<T, _ProfileDomain<T>> get copyWith =>
     __$ProfileDomainCopyWithImpl<T, _ProfileDomain<T>>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({

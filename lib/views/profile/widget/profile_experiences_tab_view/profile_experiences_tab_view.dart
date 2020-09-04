@@ -33,6 +33,7 @@ class ProfileExperiencesTabView extends StatelessWidget {
             initial: (_) => Container(),
             loadInProgress: (_) => WorldOnProgressIndicator(),
             loadSuccess: (state) => ListView.builder(
+              physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.all(10),
               itemCount: state.experiences.size,
               itemBuilder: (context, index) {
@@ -46,8 +47,8 @@ class ProfileExperiencesTabView extends StatelessWidget {
                   return ErrorCard(
                     entityType: "Experience",
                     valueFailureString: _experience.failureOption.fold(
-                      () => "",
-                      (failure) => failure.toString(),
+                        () => "",
+                        (failure) => failure.toString(),
                     ),
                   );
                 }

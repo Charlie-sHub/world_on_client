@@ -132,7 +132,7 @@ class _$_WatchExperiencesFoundByNameStarted
   get copyWith =>
     __$WatchExperiencesFoundByNameStartedCopyWithImpl<
       _WatchExperiencesFoundByNameStarted>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -199,7 +199,6 @@ abstract class _$SearchResultsReceivedCopyWith<$Res> {
   factory _$SearchResultsReceivedCopyWith(_SearchResultsReceived value,
     $Res Function(_SearchResultsReceived) then) =
   __$SearchResultsReceivedCopyWithImpl<$Res>;
-  
   $Res call({Either<Failure, KtList<Experience>> failureOrExperiences});
 }
 
@@ -254,7 +253,7 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
   _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith =>
     __$SearchResultsReceivedCopyWithImpl<_SearchResultsReceived>(
       this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -649,7 +648,7 @@ class _$_SearchSuccess implements _SearchSuccess {
   @override
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith =>
     __$SearchSuccessCopyWithImpl<_SearchSuccess>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({

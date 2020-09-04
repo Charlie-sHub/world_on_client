@@ -29,6 +29,7 @@ class SearchUsersTabView extends StatelessWidget {
             searchTerm: context.bloc<SearchByNameFormBloc>().state.searchTerm,
           ),
           body: ListView.builder(
+            physics: const BouncingScrollPhysics(),
             padding: const EdgeInsets.all(10),
             itemCount: state.usersFound.size,
             itemBuilder: (context, index) {
@@ -42,8 +43,8 @@ class SearchUsersTabView extends StatelessWidget {
                 return ErrorCard(
                   entityType: "User",
                   valueFailureString: _user.failureOption.fold(
-                    () => "",
-                    (failure) => failure.toString(),
+                      () => "",
+                      (failure) => failure.toString(),
                   ),
                 );
               }

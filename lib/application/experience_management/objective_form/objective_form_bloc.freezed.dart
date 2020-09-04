@@ -276,7 +276,7 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
   @override
   _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith =>
     __$CoordinatesChangedCopyWithImpl<_CoordinatesChanged>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -695,7 +695,7 @@ class _$_ObjectiveFormState implements _ObjectiveFormState {
   final bool showErrorMessages;
   @override
   final bool isSubmitting;
-
+  
   @override
   String toString() {
     return 'ObjectiveFormState(objective: $objective, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting)';
@@ -715,7 +715,7 @@ class _$_ObjectiveFormState implements _ObjectiveFormState {
           const DeepCollectionEquality()
             .equals(other.isSubmitting, isSubmitting)));
   }
-
+  
   @override
   int get hashCode =>
     runtimeType.hashCode ^

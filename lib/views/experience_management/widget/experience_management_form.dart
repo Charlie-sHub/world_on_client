@@ -27,10 +27,10 @@ class ExperienceManagementForm extends StatelessWidget {
       child: BlocConsumer<ExperienceManagementFormBloc, ExperienceManagementFormState>(
         listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
         listener: _experienceManagementListener,
-        buildWhen: (previous, current) {
-          final _build = previous.showErrorMessages != current.showErrorMessages || previous.experience.difficulty != current.experience.difficulty;
-          return _build;
-        },
+        buildWhen: (previous, current) =>
+            previous.showErrorMessages != current.showErrorMessages ||
+            previous.experience.difficulty != current.experience.difficulty ||
+            previous.experience.coordinates != current.experience.coordinates,
         builder: (context, state) => SingleChildScrollView(
           child: Form(
             autovalidate: state.showErrorMessages,
@@ -46,27 +46,28 @@ class ExperienceManagementForm extends StatelessWidget {
                       color: WorldOnColors.primary,
                       fontSize: 25,
                     ),
-                  ),
-                  const SizedBox(height: 10),
-                  const TitleFormField(),
-                  const SizedBox(height: 10),
-                  const DescriptionFormField(),
-                  const SizedBox(height: 10),
-                  PicturesSelector(),
-                  const SizedBox(height: 10),
-                  const Map(),
-                  const SizedBox(height: 10),
-                  const Text(
-                    "Set the initial difficulty",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: WorldOnColors.primary,
-                      fontSize: 15,
                     ),
-                  ),
-                  DifficultySlider(),
-                  const ObjectiveCreationCard(),
+                    const SizedBox(height: 10),
+                    const TitleFormField(),
+                    const SizedBox(height: 10),
+                    const DescriptionFormField(),
+                    const SizedBox(height: 10),
+                    PicturesSelector(),
+                    const SizedBox(height: 10),
+                    // TODO: Figure out why the map can't be constant
+                    // adding const freezes the map, meaning the marker can't change position
+                    Map(),
+                    const SizedBox(height: 20),
+                    const Text(
+                      "Set the initial difficulty",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                    DifficultySlider(),
+                    const ObjectiveCreationCard(),
                   const RewardCreationCard(),
                   TagAdditionCard(
                     tagChangeFunction: (KtSet<Tag> tags) => context.bloc<ExperienceManagementFormBloc>().add(

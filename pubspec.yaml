@@ -28,7 +28,7 @@ dependencies:
   # For dependency injection
   injectable: ^1.0.4
   # Bloc for state management
-  flutter_bloc: ^6.0.2
+  flutter_bloc: ^6.0.5
   # Value equality
   # Probably useless now
   equatable: ^1.2.4
@@ -45,7 +45,7 @@ dependencies:
   # For email validation
   email_validator: ^1.0.5
   # For mapping
-  google_maps_flutter: ^0.5.30
+  google_maps_flutter: ^0.5.31
   # For getting the geolocation of the user
   geolocator: ^5.3.2+2
   # For Kotlin like collections

@@ -23,6 +23,7 @@ class SearchTagsTabView extends StatelessWidget {
         initial: (_) => SearchSomething(),
         searchInProgress: (_) => WorldOnProgressIndicator(),
         searchSuccess: (state) => ListView.builder(
+          physics: const BouncingScrollPhysics(),
           padding: const EdgeInsets.all(10),
           itemCount: state.tagsFound.size,
           itemBuilder: (context, index) {
@@ -36,8 +37,8 @@ class SearchTagsTabView extends StatelessWidget {
               return ErrorCard(
                 entityType: "Tag",
                 valueFailureString: _tag.failureOption.fold(
-                  () => "",
-                  (failure) => failure.toString(),
+                    () => "",
+                    (failure) => failure.toString(),
                 ),
               );
             }

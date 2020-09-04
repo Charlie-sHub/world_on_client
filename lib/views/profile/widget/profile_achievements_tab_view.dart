@@ -30,6 +30,7 @@ class ProfileAchievementsTabView extends StatelessWidget {
           initial: (_) => Container(),
           loadInProgress: (_) => WorldOnProgressIndicator(),
           loadSuccess: (state) => ListView.builder(
+            physics: const BouncingScrollPhysics(),
             padding: const EdgeInsets.all(10),
             itemCount: state.achievements.size,
             itemBuilder: (context, index) {
@@ -43,8 +44,8 @@ class ProfileAchievementsTabView extends StatelessWidget {
                 return ErrorCard(
                   entityType: "Achievement",
                   valueFailureString: _achievement.failureOption.fold(
-                    () => "",
-                    (failure) => failure.toString(),
+                      () => "",
+                      (failure) => failure.toString(),
                   ),
                 );
               }

@@ -155,10 +155,10 @@ abstract class _$AchievementCopyWith<$Res>
     String type,
     int requisite,
     ExperiencePoints experiencePoints,
-      User creator,
-      PastDate creationDate,
-      PastDate modificationDate,
-      TagSet tags});
+    User creator,
+    PastDate creationDate,
+    PastDate modificationDate,
+    TagSet tags});
 
   @override
   $UserCopyWith<$Res> get creator;

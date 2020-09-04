@@ -189,7 +189,7 @@ class _$_Tag extends _Tag {
       const DeepCollectionEquality().hash(creator) ^
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(modificationDate);
-  
+
   @override
   _$TagCopyWith<_Tag> get copyWith =>
     __$TagCopyWithImpl<_Tag>(this, _$identity);

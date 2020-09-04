@@ -132,7 +132,7 @@ class _$_CoordinatesDto extends _CoordinatesDto {
   @override
   _$CoordinatesDtoCopyWith<_CoordinatesDto> get copyWith =>
     __$CoordinatesDtoCopyWithImpl<_CoordinatesDto>(this, _$identity);
-
+  
   @override
   Map<String, dynamic> toJson() {
     return _$_$_CoordinatesDtoToJson(this);

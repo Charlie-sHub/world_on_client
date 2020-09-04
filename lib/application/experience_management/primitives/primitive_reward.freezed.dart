@@ -111,7 +111,7 @@ class _$_PrimitiveReward extends _PrimitiveReward {
   final String description;
   @override
   final File imageFile;
-
+  
   @override
   String toString() {
     return 'PrimitiveReward(name: $name, description: $description, imageFile: $imageFile)';

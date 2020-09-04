@@ -128,7 +128,7 @@ class _$_WatchExperienceCommentsStarted
   get copyWith =>
     __$WatchExperienceCommentsStartedCopyWithImpl<
       _WatchExperienceCommentsStarted>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -246,7 +246,7 @@ class _$_ResultsReceived implements _ResultsReceived {
   @override
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
     __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({

@@ -30,6 +30,8 @@ class WorldOnAppBar extends StatelessWidget implements PreferredSizeWidget {
               child: Padding(
                 padding: EdgeInsets.all(3),
                 child: Image(
+                  height: 38,
+                  width: 38,
                   image: AssetImage(Assets.worldOnLogo),
                 ),
               ),
@@ -38,7 +40,7 @@ class WorldOnAppBar extends StatelessWidget implements PreferredSizeWidget {
               "WORLD ON",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 25,
+                fontSize: 20,
               ),
             ),
           ],

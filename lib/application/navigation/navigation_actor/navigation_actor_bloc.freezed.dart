@@ -329,7 +329,6 @@ abstract class _$ExperienceFormTappedCopyWith<$Res> {
   factory _$ExperienceFormTappedCopyWith(_ExperienceFormTapped value,
     $Res Function(_ExperienceFormTapped) then) =
   __$ExperienceFormTappedCopyWithImpl<$Res>;
-  
   $Res call({Option<Experience> experienceOption});
 }
 
@@ -383,7 +382,7 @@ class _$_ExperienceFormTapped implements _ExperienceFormTapped {
   _$ExperienceFormTappedCopyWith<_ExperienceFormTapped> get copyWith =>
     __$ExperienceFormTappedCopyWithImpl<_ExperienceFormTapped>(
       this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -529,7 +528,7 @@ class _$_ExperienceNavigationTapped implements _ExperienceNavigationTapped {
   get copyWith =>
     __$ExperienceNavigationTappedCopyWithImpl<
       _ExperienceNavigationTapped>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -1254,7 +1253,7 @@ class _$_ExperienceFormView implements _ExperienceFormView {
   @override
   _$ExperienceFormViewCopyWith<_ExperienceFormView> get copyWith =>
     __$ExperienceFormViewCopyWithImpl<_ExperienceFormView>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -1349,7 +1348,6 @@ abstract class _$NavigateExperienceViewCopyWith<$Res> {
   factory _$NavigateExperienceViewCopyWith(_NavigateExperienceView value,
     $Res Function(_NavigateExperienceView) then) =
   __$NavigateExperienceViewCopyWithImpl<$Res>;
-  
   $Res call({Option<Experience> experienceOption});
 }
 
@@ -1404,7 +1402,7 @@ class _$_NavigateExperienceView implements _NavigateExperienceView {
   _$NavigateExperienceViewCopyWith<_NavigateExperienceView> get copyWith =>
     __$NavigateExperienceViewCopyWithImpl<_NavigateExperienceView>(
       this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({

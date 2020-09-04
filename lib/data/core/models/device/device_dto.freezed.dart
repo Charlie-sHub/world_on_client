@@ -42,7 +42,6 @@ mixin _$DeviceDto {
 abstract class $DeviceDtoCopyWith<$Res> {
   factory $DeviceDtoCopyWith(DeviceDto value, $Res Function(DeviceDto) then) =
   _$DeviceDtoCopyWithImpl<$Res>;
-  
   $Res call({int id, String name, String type, String company});
 }
 
@@ -151,7 +150,7 @@ class _$_DeviceDto extends _DeviceDto {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(company);
-  
+
   @override
   _$DeviceDtoCopyWith<_DeviceDto> get copyWith =>
     __$DeviceDtoCopyWithImpl<_DeviceDto>(this, _$identity);

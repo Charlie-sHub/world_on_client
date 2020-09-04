@@ -27,7 +27,7 @@ class FinishSuccessView extends StatelessWidget {
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   color: WorldOnColors.background,
-                  fontSize: 28,
+                  fontSize: 25,
                 ),
               ),
             ),
@@ -39,7 +39,7 @@ class FinishSuccessView extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               color: WorldOnColors.background,
-              fontSize: 25,
+              fontSize: 20,
             ),
           ),
           Row(

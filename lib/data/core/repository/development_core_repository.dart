@@ -499,7 +499,7 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
     final _experiencePostModern = _experienceIpsum.copyWith(
       title: Name("Consensuses of collapse"),
       description: EntityDescription("In a sense, Lyotard suggests the use of Foucaultist power relations to read and analyse society. "
-        "Several deappropriations concerning conceptual subcapitalist theory exist."),
+          "Several deappropriations concerning conceptual subcapitalist theory exist."),
       creator: _validUser.copyWith(
         id: _userIds.elementAt(3),
       ),

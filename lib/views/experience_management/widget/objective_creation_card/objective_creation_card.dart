@@ -39,6 +39,15 @@ class ObjectiveCreationCard extends HookWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
+              const SizedBox(height: 5),
+              const Text(
+                "Create the Objectives",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),
+              ),
               Container(
                 constraints: BoxConstraints(
                   maxHeight: MediaQuery.of(context).size.height * 0.5,

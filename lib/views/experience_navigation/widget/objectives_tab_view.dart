@@ -32,6 +32,7 @@ class ObjectivesTabView extends StatelessWidget {
         }
       },
       child: ListView.builder(
+        physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.all(10),
         itemCount: experience.objectives.getOrCrash().size,
         itemBuilder: (context, index) {
@@ -45,8 +46,8 @@ class ObjectivesTabView extends StatelessWidget {
             return ErrorCard(
               entityType: "Objective",
               valueFailureString: _objective.failureOption.fold(
-                () => "",
-                (failure) => failure.toString(),
+                  () => "",
+                  (failure) => failure.toString(),
               ),
             );
           }

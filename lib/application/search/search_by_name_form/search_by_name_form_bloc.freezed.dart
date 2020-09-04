@@ -123,7 +123,7 @@ class _$_SearchTermChanged implements _SearchTermChanged {
   @override
   _$SearchTermChangedCopyWith<_SearchTermChanged> get copyWith =>
     __$SearchTermChangedCopyWithImpl<_SearchTermChanged>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -433,7 +433,7 @@ class _$_SearchByNameFormState implements _SearchByNameFormState {
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
-  
+
   @override
   _$SearchByNameFormStateCopyWith<_SearchByNameFormState> get copyWith =>
     __$SearchByNameFormStateCopyWithImpl<_SearchByNameFormState>(
@@ -458,6 +458,7 @@ abstract class _SearchByNameFormState implements SearchByNameFormState {
   
   @override
   Option<ValueFailure> get failureOrSuccessOption;
+  
   @override
   _$SearchByNameFormStateCopyWith<_SearchByNameFormState> get copyWith;
 }

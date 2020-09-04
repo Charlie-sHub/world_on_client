@@ -11,6 +11,6 @@ abstract class MapControllerState with _$MapControllerState {
   factory MapControllerState.initial() => MapControllerState(
         coordinates: Coordinates.empty(),
         objectives: KtList.empty(),
-        zoom: 15,
+        zoom: 5,
       );
 }

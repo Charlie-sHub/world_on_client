@@ -19,34 +19,21 @@ class MapTabView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<MapControllerBloc, MapControllerState>(
-      builder: (context, state) =>
-        GoogleMap(
-          markers: state.objectives.asList().map(_mapObjectiveToMarker).toSet(),
-          onCameraMove: (position) => _onCameraMoved(context, position),
-          initialCameraPosition: CameraPosition(
-            target: LatLng(
-              context
-                .bloc<MapControllerBloc>()
-                .state
-                .coordinates
-                .latitude
-                .getOrCrash(),
-              context
-                .bloc<MapControllerBloc>()
-                .state
-                .coordinates
-                .longitude
-                .getOrCrash(),
-            ),
-            zoom: context
-              .bloc<MapControllerBloc>()
-              .state
-              .zoom,
+      builder: (context, state) => GoogleMap(
+        mapType: MapType.satellite,
+        markers: state.objectives.asList().map(_mapObjectiveToMarker).toSet(),
+        onCameraMove: (position) => _onCameraMoved(context, position),
+        initialCameraPosition: CameraPosition(
+          target: LatLng(
+            state.coordinates.latitude.getOrCrash(),
+            state.coordinates.longitude.getOrCrash(),
           ),
+          zoom: state.zoom,
         ),
+      ),
     );
   }
-  
+
   Marker _mapObjectiveToMarker(Objective _objective) {
     return Marker(
       markerId: MarkerId(_objective.id.toString()),
@@ -63,15 +50,14 @@ class MapTabView extends StatelessWidget {
       ),
     );
   }
-  
-  void _onCameraMoved(BuildContext context, CameraPosition position) =>
-    context.bloc<MapControllerBloc>().add(
-      MapControllerEvent.cameraPositionChanged(
-        coordinates: Coordinates(
-          latitude: Latitude(position.target.latitude),
-          longitude: Longitude(position.target.longitude),
+
+  void _onCameraMoved(BuildContext context, CameraPosition position) => context.bloc<MapControllerBloc>().add(
+        MapControllerEvent.cameraPositionChanged(
+          coordinates: Coordinates(
+            latitude: Latitude(position.target.latitude),
+            longitude: Longitude(position.target.longitude),
+          ),
+          zoom: position.zoom,
         ),
-        zoom: position.zoom,
-      ),
-    );
+      );
 }

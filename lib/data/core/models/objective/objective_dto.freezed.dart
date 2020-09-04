@@ -182,7 +182,7 @@ class _$_ObjectiveDto extends _ObjectiveDto {
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(coordinates) ^
       const DeepCollectionEquality().hash(imageURL);
-  
+
   @override
   _$ObjectiveDtoCopyWith<_ObjectiveDto> get copyWith =>
     __$ObjectiveDtoCopyWithImpl<_ObjectiveDto>(this, _$identity);
