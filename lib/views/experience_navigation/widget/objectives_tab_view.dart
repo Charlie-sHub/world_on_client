@@ -46,8 +46,8 @@ class ObjectivesTabView extends StatelessWidget {
             return ErrorCard(
               entityType: "Objective",
               valueFailureString: _objective.failureOption.fold(
-                  () => "",
-                  (failure) => failure.toString(),
+                () => "",
+                (failure) => failure.toString(),
               ),
             );
           }

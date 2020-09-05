@@ -60,8 +60,8 @@ class NotificationsBody extends StatelessWidget {
                   return ErrorCard(
                     entityType: "Notification",
                     valueFailureString: _notification.failureOption.fold(
-                        () => "",
-                        (failure) => failure.toString(),
+                      () => "",
+                      (failure) => failure.toString(),
                     ),
                   );
                 }

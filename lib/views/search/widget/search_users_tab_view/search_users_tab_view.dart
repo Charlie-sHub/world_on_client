@@ -43,8 +43,8 @@ class SearchUsersTabView extends StatelessWidget {
                 return ErrorCard(
                   entityType: "User",
                   valueFailureString: _user.failureOption.fold(
-                      () => "",
-                      (failure) => failure.toString(),
+                    () => "",
+                    (failure) => failure.toString(),
                   ),
                 );
               }

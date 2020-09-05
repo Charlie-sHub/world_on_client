@@ -46,28 +46,28 @@ class ExperienceManagementForm extends StatelessWidget {
                       color: WorldOnColors.primary,
                       fontSize: 25,
                     ),
+                  ),
+                  const SizedBox(height: 10),
+                  const TitleFormField(),
+                  const SizedBox(height: 10),
+                  const DescriptionFormField(),
+                  const SizedBox(height: 10),
+                  PicturesSelector(),
+                  const Text(
+                    "Set the initial difficulty",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
                     ),
-                    const SizedBox(height: 10),
-                    const TitleFormField(),
-                    const SizedBox(height: 10),
-                    const DescriptionFormField(),
-                    const SizedBox(height: 10),
-                    PicturesSelector(),
-                    const SizedBox(height: 10),
-                    // TODO: Figure out why the map can't be constant
-                    // adding const freezes the map, meaning the marker can't change position
-                    Map(),
-                    const SizedBox(height: 20),
-                    const Text(
-                      "Set the initial difficulty",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                      ),
-                    ),
-                    DifficultySlider(),
-                    const ObjectiveCreationCard(),
+                  ),
+                  DifficultySlider(),
+                  const SizedBox(height: 10),
+                  // TODO: Figure out why the map can't be constant
+                  // adding const freezes the map, meaning the marker can't change position
+                  Map(),
+                  const SizedBox(height: 10),
+                  const ObjectiveCreationCard(),
                   const RewardCreationCard(),
                   TagAdditionCard(
                     tagChangeFunction: (KtSet<Tag> tags) => context.bloc<ExperienceManagementFormBloc>().add(

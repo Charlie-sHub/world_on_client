@@ -524,7 +524,7 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
     final _experienceCorporate = _experienceIpsum.copyWith(
       title: Name("Leverage agile frameworks"),
       description: EntityDescription("Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. "
-        "Override the digital divide with additional clickthroughs from DevOps."),
+          "Override the digital divide with additional clickthroughs from DevOps."),
       creator: _validUser.copyWith(
         id: _userIds.elementAt(1),
       ),

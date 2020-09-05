@@ -57,13 +57,11 @@ mixin _$SearchExperiencesByNameWatcherEvent {
 }
 
 abstract class $SearchExperiencesByNameWatcherEventCopyWith<$Res> {
-  factory $SearchExperiencesByNameWatcherEventCopyWith(SearchExperiencesByNameWatcherEvent value,
-    $Res Function(SearchExperiencesByNameWatcherEvent) then) =
-  _$SearchExperiencesByNameWatcherEventCopyWithImpl<$Res>;
+  factory $SearchExperiencesByNameWatcherEventCopyWith(SearchExperiencesByNameWatcherEvent value, $Res Function(SearchExperiencesByNameWatcherEvent) then) =
+      _$SearchExperiencesByNameWatcherEventCopyWithImpl<$Res>;
 }
 
-class _$SearchExperiencesByNameWatcherEventCopyWithImpl<$Res>
-  implements $SearchExperiencesByNameWatcherEventCopyWith<$Res> {
+class _$SearchExperiencesByNameWatcherEventCopyWithImpl<$Res> implements $SearchExperiencesByNameWatcherEventCopyWith<$Res> {
   _$SearchExperiencesByNameWatcherEventCopyWithImpl(this._value, this._then);
   
   final SearchExperiencesByNameWatcherEvent _value;
@@ -73,22 +71,18 @@ class _$SearchExperiencesByNameWatcherEventCopyWithImpl<$Res>
 }
 
 abstract class _$WatchExperiencesFoundByNameStartedCopyWith<$Res> {
-  factory _$WatchExperiencesFoundByNameStartedCopyWith(_WatchExperiencesFoundByNameStarted value,
-    $Res Function(_WatchExperiencesFoundByNameStarted) then) =
+  factory _$WatchExperiencesFoundByNameStartedCopyWith(_WatchExperiencesFoundByNameStarted value, $Res Function(_WatchExperiencesFoundByNameStarted) then) =
   __$WatchExperiencesFoundByNameStartedCopyWithImpl<$Res>;
   
   $Res call({SearchTerm searchTerm});
 }
 
-class __$WatchExperiencesFoundByNameStartedCopyWithImpl<$Res> extends _$SearchExperiencesByNameWatcherEventCopyWithImpl<$Res>
-  implements _$WatchExperiencesFoundByNameStartedCopyWith<$Res> {
-  __$WatchExperiencesFoundByNameStartedCopyWithImpl(_WatchExperiencesFoundByNameStarted _value,
-    $Res Function(_WatchExperiencesFoundByNameStarted) _then)
+class __$WatchExperiencesFoundByNameStartedCopyWithImpl<$Res> extends _$SearchExperiencesByNameWatcherEventCopyWithImpl<$Res> implements _$WatchExperiencesFoundByNameStartedCopyWith<$Res> {
+  __$WatchExperiencesFoundByNameStartedCopyWithImpl(_WatchExperiencesFoundByNameStarted _value, $Res Function(_WatchExperiencesFoundByNameStarted) _then)
     : super(_value, (v) => _then(v as _WatchExperiencesFoundByNameStarted));
   
   @override
-  _WatchExperiencesFoundByNameStarted get _value =>
-    super._value as _WatchExperiencesFoundByNameStarted;
+  _WatchExperiencesFoundByNameStarted get _value => super._value as _WatchExperiencesFoundByNameStarted;
   
   @override
   $Res call({
@@ -100,10 +94,8 @@ class __$WatchExperiencesFoundByNameStartedCopyWithImpl<$Res> extends _$SearchEx
   }
 }
 
-class _$_WatchExperiencesFoundByNameStarted
-  implements _WatchExperiencesFoundByNameStarted {
-  const _$_WatchExperiencesFoundByNameStarted(this.searchTerm)
-    : assert(searchTerm != null);
+class _$_WatchExperiencesFoundByNameStarted implements _WatchExperiencesFoundByNameStarted {
+  const _$_WatchExperiencesFoundByNameStarted(this.searchTerm) : assert(searchTerm != null);
   
   @override
   final SearchTerm searchTerm;
@@ -115,23 +107,15 @@ class _$_WatchExperiencesFoundByNameStarted
   
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-      (other is _WatchExperiencesFoundByNameStarted &&
-        (identical(other.searchTerm, searchTerm) ||
-          const DeepCollectionEquality()
-            .equals(other.searchTerm, searchTerm)));
+    return identical(this, other) || (other is _WatchExperiencesFoundByNameStarted && (identical(other.searchTerm, searchTerm) || const DeepCollectionEquality().equals(other.searchTerm, searchTerm)));
   }
   
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(searchTerm);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(searchTerm);
   
   @override
-  _$WatchExperiencesFoundByNameStartedCopyWith<
-    _WatchExperiencesFoundByNameStarted>
-  get copyWith =>
-    __$WatchExperiencesFoundByNameStartedCopyWithImpl<
-      _WatchExperiencesFoundByNameStarted>(this, _$identity);
+  _$WatchExperiencesFoundByNameStartedCopyWith<_WatchExperiencesFoundByNameStarted> get copyWith =>
+    __$WatchExperiencesFoundByNameStartedCopyWithImpl<_WatchExperiencesFoundByNameStarted>(this, _$identity);
   
   @override
   @optionalTypeArgs
@@ -184,29 +168,21 @@ class _$_WatchExperiencesFoundByNameStarted
   }
 }
 
-abstract class _WatchExperiencesFoundByNameStarted
-  implements SearchExperiencesByNameWatcherEvent {
-  const factory _WatchExperiencesFoundByNameStarted(SearchTerm searchTerm) =
-  _$_WatchExperiencesFoundByNameStarted;
+abstract class _WatchExperiencesFoundByNameStarted implements SearchExperiencesByNameWatcherEvent {
+  const factory _WatchExperiencesFoundByNameStarted(SearchTerm searchTerm) = _$_WatchExperiencesFoundByNameStarted;
   
   SearchTerm get searchTerm;
   
-  _$WatchExperiencesFoundByNameStartedCopyWith<
-    _WatchExperiencesFoundByNameStarted> get copyWith;
+  _$WatchExperiencesFoundByNameStartedCopyWith<_WatchExperiencesFoundByNameStarted> get copyWith;
 }
 
 abstract class _$SearchResultsReceivedCopyWith<$Res> {
-  factory _$SearchResultsReceivedCopyWith(_SearchResultsReceived value,
-    $Res Function(_SearchResultsReceived) then) =
-  __$SearchResultsReceivedCopyWithImpl<$Res>;
+  factory _$SearchResultsReceivedCopyWith(_SearchResultsReceived value, $Res Function(_SearchResultsReceived) then) = __$SearchResultsReceivedCopyWithImpl<$Res>;
   $Res call({Either<Failure, KtList<Experience>> failureOrExperiences});
 }
 
-class __$SearchResultsReceivedCopyWithImpl<$Res> extends _$SearchExperiencesByNameWatcherEventCopyWithImpl<$Res>
-  implements _$SearchResultsReceivedCopyWith<$Res> {
-  __$SearchResultsReceivedCopyWithImpl(_SearchResultsReceived _value,
-    $Res Function(_SearchResultsReceived) _then)
-    : super(_value, (v) => _then(v as _SearchResultsReceived));
+class __$SearchResultsReceivedCopyWithImpl<$Res> extends _$SearchExperiencesByNameWatcherEventCopyWithImpl<$Res> implements _$SearchResultsReceivedCopyWith<$Res> {
+  __$SearchResultsReceivedCopyWithImpl(_SearchResultsReceived _value, $Res Function(_SearchResultsReceived) _then) : super(_value, (v) => _then(v as _SearchResultsReceived));
   
   @override
   _SearchResultsReceived get _value => super._value as _SearchResultsReceived;
@@ -216,16 +192,13 @@ class __$SearchResultsReceivedCopyWithImpl<$Res> extends _$SearchExperiencesByNa
     Object failureOrExperiences = freezed,
   }) {
     return _then(_SearchResultsReceived(
-      failureOrExperiences == freezed
-        ? _value.failureOrExperiences
-        : failureOrExperiences as Either<Failure, KtList<Experience>>,
+      failureOrExperiences == freezed ? _value.failureOrExperiences : failureOrExperiences as Either<Failure, KtList<Experience>>,
     ));
   }
 }
 
 class _$_SearchResultsReceived implements _SearchResultsReceived {
-  const _$_SearchResultsReceived(this.failureOrExperiences)
-    : assert(failureOrExperiences != null);
+  const _$_SearchResultsReceived(this.failureOrExperiences) : assert(failureOrExperiences != null);
   
   @override
   final Either<Failure, KtList<Experience>> failureOrExperiences;
@@ -238,21 +211,14 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _SearchResultsReceived &&
-        (identical(other.failureOrExperiences, failureOrExperiences) ||
-          const DeepCollectionEquality()
-            .equals(other.failureOrExperiences, failureOrExperiences)));
+      (other is _SearchResultsReceived && (identical(other.failureOrExperiences, failureOrExperiences) || const DeepCollectionEquality().equals(other.failureOrExperiences, failureOrExperiences)));
   }
   
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(failureOrExperiences);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrExperiences);
   
   @override
-  _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith =>
-    __$SearchResultsReceivedCopyWithImpl<_SearchResultsReceived>(
-      this, _$identity);
+  _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith => __$SearchResultsReceivedCopyWithImpl<_SearchResultsReceived>(this, _$identity);
   
   @override
   @optionalTypeArgs
@@ -305,10 +271,8 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
   }
 }
 
-abstract class _SearchResultsReceived
-  implements SearchExperiencesByNameWatcherEvent {
-  const factory _SearchResultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences) =
-  _$_SearchResultsReceived;
+abstract class _SearchResultsReceived implements SearchExperiencesByNameWatcherEvent {
+  const factory _SearchResultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences) = _$_SearchResultsReceived;
   
   Either<Failure, KtList<Experience>> get failureOrExperiences;
   
@@ -344,8 +308,7 @@ class _$SearchExperiencesByNameWatcherStateTearOff {
 }
 
 // ignore: unused_element
-const $SearchExperiencesByNameWatcherState =
-_$SearchExperiencesByNameWatcherStateTearOff();
+const $SearchExperiencesByNameWatcherState = _$SearchExperiencesByNameWatcherStateTearOff();
 
 mixin _$SearchExperiencesByNameWatcherState {
   @optionalTypeArgs
@@ -355,7 +318,7 @@ mixin _$SearchExperiencesByNameWatcherState {
     @required Result searchSuccess(KtList<Experience> experiencesFound),
     @required Result searchFailure(Failure<dynamic> failure),
   });
-  
+
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
@@ -382,13 +345,11 @@ mixin _$SearchExperiencesByNameWatcherState {
 }
 
 abstract class $SearchExperiencesByNameWatcherStateCopyWith<$Res> {
-  factory $SearchExperiencesByNameWatcherStateCopyWith(SearchExperiencesByNameWatcherState value,
-    $Res Function(SearchExperiencesByNameWatcherState) then) =
+  factory $SearchExperiencesByNameWatcherStateCopyWith(SearchExperiencesByNameWatcherState value, $Res Function(SearchExperiencesByNameWatcherState) then) =
   _$SearchExperiencesByNameWatcherStateCopyWithImpl<$Res>;
 }
 
-class _$SearchExperiencesByNameWatcherStateCopyWithImpl<$Res>
-  implements $SearchExperiencesByNameWatcherStateCopyWith<$Res> {
+class _$SearchExperiencesByNameWatcherStateCopyWithImpl<$Res> implements $SearchExperiencesByNameWatcherStateCopyWith<$Res> {
   _$SearchExperiencesByNameWatcherStateCopyWithImpl(this._value, this._then);
   
   final SearchExperiencesByNameWatcherState _value;
@@ -398,14 +359,11 @@ class _$SearchExperiencesByNameWatcherStateCopyWithImpl<$Res>
 }
 
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-  __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
-class __$InitialCopyWithImpl<$Res> extends _$SearchExperiencesByNameWatcherStateCopyWithImpl<$Res>
-  implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-    : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$SearchExperiencesByNameWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
   
   @override
   _Initial get _value => super._value as _Initial;
@@ -495,14 +453,11 @@ abstract class _Initial implements SearchExperiencesByNameWatcherState {
 }
 
 abstract class _$SearchInProgressCopyWith<$Res> {
-  factory _$SearchInProgressCopyWith(_SearchInProgress value, $Res Function(_SearchInProgress) then) =
-  __$SearchInProgressCopyWithImpl<$Res>;
+  factory _$SearchInProgressCopyWith(_SearchInProgress value, $Res Function(_SearchInProgress) then) = __$SearchInProgressCopyWithImpl<$Res>;
 }
 
-class __$SearchInProgressCopyWithImpl<$Res> extends _$SearchExperiencesByNameWatcherStateCopyWithImpl<$Res>
-  implements _$SearchInProgressCopyWith<$Res> {
-  __$SearchInProgressCopyWithImpl(_SearchInProgress _value, $Res Function(_SearchInProgress) _then)
-    : super(_value, (v) => _then(v as _SearchInProgress));
+class __$SearchInProgressCopyWithImpl<$Res> extends _$SearchExperiencesByNameWatcherStateCopyWithImpl<$Res> implements _$SearchInProgressCopyWith<$Res> {
+  __$SearchInProgressCopyWithImpl(_SearchInProgress _value, $Res Function(_SearchInProgress) _then) : super(_value, (v) => _then(v as _SearchInProgress));
   
   @override
   _SearchInProgress get _value => super._value as _SearchInProgress;
@@ -587,22 +542,18 @@ class _$_SearchInProgress implements _SearchInProgress {
   }
 }
 
-abstract class _SearchInProgress
-  implements SearchExperiencesByNameWatcherState {
+abstract class _SearchInProgress implements SearchExperiencesByNameWatcherState {
   const factory _SearchInProgress() = _$_SearchInProgress;
 }
 
 abstract class _$SearchSuccessCopyWith<$Res> {
-  factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) =
-  __$SearchSuccessCopyWithImpl<$Res>;
+  factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) = __$SearchSuccessCopyWithImpl<$Res>;
   
   $Res call({KtList<Experience> experiencesFound});
 }
 
-class __$SearchSuccessCopyWithImpl<$Res> extends _$SearchExperiencesByNameWatcherStateCopyWithImpl<$Res>
-  implements _$SearchSuccessCopyWith<$Res> {
-  __$SearchSuccessCopyWithImpl(_SearchSuccess _value, $Res Function(_SearchSuccess) _then)
-    : super(_value, (v) => _then(v as _SearchSuccess));
+class __$SearchSuccessCopyWithImpl<$Res> extends _$SearchExperiencesByNameWatcherStateCopyWithImpl<$Res> implements _$SearchSuccessCopyWith<$Res> {
+  __$SearchSuccessCopyWithImpl(_SearchSuccess _value, $Res Function(_SearchSuccess) _then) : super(_value, (v) => _then(v as _SearchSuccess));
   
   @override
   _SearchSuccess get _value => super._value as _SearchSuccess;
@@ -612,16 +563,13 @@ class __$SearchSuccessCopyWithImpl<$Res> extends _$SearchExperiencesByNameWatche
     Object experiencesFound = freezed,
   }) {
     return _then(_SearchSuccess(
-      experiencesFound == freezed
-        ? _value.experiencesFound
-        : experiencesFound as KtList<Experience>,
+      experiencesFound == freezed ? _value.experiencesFound : experiencesFound as KtList<Experience>,
     ));
   }
 }
 
 class _$_SearchSuccess implements _SearchSuccess {
-  const _$_SearchSuccess(this.experiencesFound)
-    : assert(experiencesFound != null);
+  const _$_SearchSuccess(this.experiencesFound) : assert(experiencesFound != null);
   
   @override
   final KtList<Experience> experiencesFound;
@@ -634,20 +582,14 @@ class _$_SearchSuccess implements _SearchSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _SearchSuccess &&
-        (identical(other.experiencesFound, experiencesFound) ||
-          const DeepCollectionEquality()
-            .equals(other.experiencesFound, experiencesFound)));
+      (other is _SearchSuccess && (identical(other.experiencesFound, experiencesFound) || const DeepCollectionEquality().equals(other.experiencesFound, experiencesFound)));
   }
   
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(experiencesFound);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experiencesFound);
   
   @override
-  _$SearchSuccessCopyWith<_SearchSuccess> get copyWith =>
-    __$SearchSuccessCopyWithImpl<_SearchSuccess>(this, _$identity);
+  _$SearchSuccessCopyWith<_SearchSuccess> get copyWith => __$SearchSuccessCopyWithImpl<_SearchSuccess>(this, _$identity);
   
   @override
   @optionalTypeArgs
@@ -713,8 +655,7 @@ class _$_SearchSuccess implements _SearchSuccess {
 }
 
 abstract class _SearchSuccess implements SearchExperiencesByNameWatcherState {
-  const factory _SearchSuccess(KtList<Experience> experiencesFound) =
-  _$_SearchSuccess;
+  const factory _SearchSuccess(KtList<Experience> experiencesFound) = _$_SearchSuccess;
   
   KtList<Experience> get experiencesFound;
   
@@ -722,18 +663,15 @@ abstract class _SearchSuccess implements SearchExperiencesByNameWatcherState {
 }
 
 abstract class _$SearchFailureCopyWith<$Res> {
-  factory _$SearchFailureCopyWith(_SearchFailure value, $Res Function(_SearchFailure) then) =
-  __$SearchFailureCopyWithImpl<$Res>;
+  factory _$SearchFailureCopyWith(_SearchFailure value, $Res Function(_SearchFailure) then) = __$SearchFailureCopyWithImpl<$Res>;
   
   $Res call({Failure<dynamic> failure});
   
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
-class __$SearchFailureCopyWithImpl<$Res> extends _$SearchExperiencesByNameWatcherStateCopyWithImpl<$Res>
-  implements _$SearchFailureCopyWith<$Res> {
-  __$SearchFailureCopyWithImpl(_SearchFailure _value, $Res Function(_SearchFailure) _then)
-    : super(_value, (v) => _then(v as _SearchFailure));
+class __$SearchFailureCopyWithImpl<$Res> extends _$SearchExperiencesByNameWatcherStateCopyWithImpl<$Res> implements _$SearchFailureCopyWith<$Res> {
+  __$SearchFailureCopyWithImpl(_SearchFailure _value, $Res Function(_SearchFailure) _then) : super(_value, (v) => _then(v as _SearchFailure));
   
   @override
   _SearchFailure get _value => super._value as _SearchFailure;
@@ -771,19 +709,14 @@ class _$_SearchFailure implements _SearchFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-      (other is _SearchFailure &&
-        (identical(other.failure, failure) ||
-          const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) || (other is _SearchFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
-  _$SearchFailureCopyWith<_SearchFailure> get copyWith =>
-    __$SearchFailureCopyWithImpl<_SearchFailure>(this, _$identity);
+  _$SearchFailureCopyWith<_SearchFailure> get copyWith => __$SearchFailureCopyWithImpl<_SearchFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs

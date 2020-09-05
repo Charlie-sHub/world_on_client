@@ -88,46 +88,42 @@ class ObjectiveCreationCard extends HookWidget {
                       autovalidate: state.showErrorMessages,
                       child: Column(
                         children: <Widget>[
-                          DescriptionTextField(
-                            textController: _textEditingController,
-                          ),
-                          Row(
+                          DescriptionTextField(textController: _textEditingController),
+                          Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              Expanded(
-                                child: state.objective.imageFile.fold(
-                                  () => Column(
-                                    children: <Widget>[
-                                      IconButton(
-                                        iconSize: 80,
-                                        icon: const Icon(
-                                          Icons.photo_camera,
-                                        ),
-                                        onPressed: () async => _pickImage(context),
+                              state.objective.imageFile.fold(
+                                () => Column(
+                                  children: <Widget>[
+                                    IconButton(
+                                      iconSize: 80,
+                                      icon: const Icon(
+                                        Icons.photo_camera,
                                       ),
-                                      if (context.bloc<ObjectiveFormBloc>().state.showErrorMessages && context.bloc<ObjectiveFormBloc>().state.objective.imageFile.isNone())
-                                        const Text(
-                                          "Please select a picture",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(color: Colors.red),
-                                        )
-                                      else
-                                        Container(),
-                                    ],
-                                  ),
-                                  (imageFile) => Padding(
-                                    padding: const EdgeInsets.all(10),
-                                    child: FlatButton(
                                       onPressed: () async => _pickImage(context),
-                                      child: Image(
-                                        fit: BoxFit.fitWidth,
-                                        image: FileImage(imageFile),
-                                      ),
+                                    ),
+                                    if (context.bloc<ObjectiveFormBloc>().state.showErrorMessages && context.bloc<ObjectiveFormBloc>().state.objective.imageFile.isNone())
+                                      const Text(
+                                        "Please select a picture",
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(color: Colors.red),
+                                      )
+                                    else
+                                      Container(),
+                                  ],
+                                ),
+                                (imageFile) => Padding(
+                                  padding: const EdgeInsets.all(10),
+                                  child: FlatButton(
+                                    onPressed: () async => _pickImage(context),
+                                    child: Image(
+                                      fit: BoxFit.fitWidth,
+                                      image: FileImage(imageFile),
                                     ),
                                   ),
                                 ),
                               ),
-                              const ObjectiveCoordinatePicker(),
+                              ObjectiveCoordinatePicker(),
                             ],
                           ),
                           const SubmitButton(),
@@ -147,17 +143,15 @@ class ObjectiveCreationCard extends HookWidget {
   void _objectiveFormListener(ObjectiveFormState state, TextEditingController _textEditingController, BuildContext context) {
     if (state.isSubmitting) {
       _textEditingController.clear();
-      context.bloc<ObjectivesCreationBloc>().add(
-            ObjectivesCreationEvent.addedObjective(
-              state.objective,
-            ),
-          );
+      context.bloc<ObjectivesCreationBloc>().add(ObjectivesCreationEvent.addedObjective(state.objective));
     }
   }
 
   Future _pickImage(BuildContext context) async {
     final _imagePicked = await ImagePicker().getImage(source: ImageSource.gallery);
-    final _imageFile = File(_imagePicked.path);
-    context.bloc<ObjectiveFormBloc>().add(ObjectiveFormEvent.imageChanged(_imageFile));
+    if (_imagePicked != null) {
+      final _imageFile = File(_imagePicked.path);
+      context.bloc<ObjectiveFormBloc>().add(ObjectiveFormEvent.imageChanged(_imageFile));
+    }
   }
 }
