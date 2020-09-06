@@ -7,12 +7,12 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/application/profile/profile_interests_watcher/profile_interests_watcher_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/profile/use_case/watch_user_interests.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../domain/core/methods/create_stream.dart';
-import '../../../domain/core/methods/get_valid_user.dart';
 import '../../../test_descriptions.dart';
 
 void main() {

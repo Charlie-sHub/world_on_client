@@ -4,12 +4,12 @@ import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_tag.dart';
 import 'package:worldon/domain/tag_management/repository/tag_repository_interface.dart';
 import 'package:worldon/domain/tag_management/use_case/add_tag_to_interests.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../test_descriptions.dart';
-import '../../core/methods/get_valid_tag.dart';
 
 void main() {
   TagCoreRepositoryInterface mockTagCoreRepository;

@@ -15,8 +15,8 @@ void main() {
     },
   );
   final _objective = getValidObjective();
-  // TODO: Use loops for these kind of tests
-  // This is an ugly mess
+  // TODO: Use loops for these kind of tests if possible
+  // This is ugly af
   final _objective2 = _objective.copyWith(id: 2);
   final _objective3 = _objective.copyWith(id: 3);
   final _objective4 = _objective.copyWith(id: 4);

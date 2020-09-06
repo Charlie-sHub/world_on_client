@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
@@ -8,11 +7,8 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 
 /// Repository for the management of [Comment]s
 abstract class CommentRepositoryInterface {
-  /// Sends a [Comment] to the server to the associated to the [Experience] with the given id
-  Future<Either<Failure, Unit>> postComment({
-    @required Comment comment,
-    @required int experienceId,
-  });
+  /// Sends a [Comment] to the server to be saved
+  Future<Either<Failure, Unit>> postComment(Comment comment);
 
   /// Sends an id to the server to it removes the [Comment] associated with it
   Future<Either<Failure, Unit>> removeComment(int id);

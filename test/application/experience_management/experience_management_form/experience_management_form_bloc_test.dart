@@ -13,6 +13,9 @@ import 'package:worldon/application/experience_management/primitives/primitive_r
 import 'package:worldon/core/assets.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_experience.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_tag.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
@@ -29,9 +32,6 @@ import 'package:worldon/domain/experience_management/use_case/create_experience.
 import 'package:worldon/domain/experience_management/use_case/edit_experience.dart';
 import 'package:worldon/injection.dart';
 
-import '../../../domain/core/methods/get_valid_experience.dart';
-import '../../../domain/core/methods/get_valid_tag.dart';
-import '../../../domain/core/methods/get_valid_user.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
@@ -413,6 +413,10 @@ void main() {
         },
         expect: [
           ExperienceManagementFormState.initial().copyWith(
+            experience: experienceToEdit,
+            isEditing: true,
+          ),
+          ExperienceManagementFormState.initial().copyWith(
             experience: experienceToEdit.copyWith(
               title: Name(title),
             ),
@@ -441,7 +445,7 @@ void main() {
     "${TestDescription.groupOnFailure} with submitting",
     () {
       blocTest(
-        "${TestDescription.shouldEmitSuccess} creating a new Experience",
+        "${TestDescription.shouldEmitFailure} creating a new Experience",
         build: () {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(getValidUser()));
           when(createExperience.call(any)).thenAnswer((_) async => left(failure));
@@ -598,7 +602,7 @@ void main() {
         ],
       );
       blocTest(
-        "${TestDescription.shouldEmitSuccess} editing an Experience",
+        "${TestDescription.shouldEmitFailure} editing an Experience",
         build: () {
           when(editExperience.call(any)).thenAnswer((_) async => left(failure));
           return getIt<ExperienceManagementFormBloc>();
@@ -612,6 +616,10 @@ void main() {
           verify(editExperience.call(any));
         },
         expect: [
+          ExperienceManagementFormState.initial().copyWith(
+            experience: experienceToEdit,
+            isEditing: true,
+          ),
           ExperienceManagementFormState.initial().copyWith(
             experience: experienceToEdit.copyWith(
               title: Name(title),
@@ -651,6 +659,10 @@ void main() {
           verify(editExperience.call(any));
         },
         expect: [
+          ExperienceManagementFormState.initial().copyWith(
+            experience: experienceToEdit,
+            isEditing: true,
+          ),
           ExperienceManagementFormState.initial().copyWith(
             experience: experienceToEdit.copyWith(
               title: Name(title),

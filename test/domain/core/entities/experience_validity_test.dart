@@ -1,5 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kt_dart/kt.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_tag.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/location/location.dart';
@@ -16,8 +18,6 @@ import 'package:worldon/domain/core/validation/objects/reward_set.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 
 import '../../../test_descriptions.dart';
-import '../methods/get_valid_tag_set.dart';
-import '../methods/get_valid_user.dart';
 
 void main() {
   final validExperience = _getValidExperience();
@@ -137,7 +137,7 @@ Experience _getValidExperience() {
     modificationDate: PastDate(DateTime.now().subtract(const Duration(days: 10))),
     objectives: _getValidObjectiveSet(),
     rewards: _getValidRewardSet(),
-    tags: getValidTagSet(),
+    tags: TagSet(KtSet.of(getValidTag())),
   );
 }
 

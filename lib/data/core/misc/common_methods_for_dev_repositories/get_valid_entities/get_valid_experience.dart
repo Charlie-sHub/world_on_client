@@ -54,7 +54,7 @@ Experience getValidExperience() {
         ),
         getValidObjective().copyWith(
           id: 4,
-          description: EntityDescription("Yard sale poaching cork afterbang giblets stomp saddle.."),
+          description: EntityDescription("Yard sale poaching cork afterbang giblets stomp saddle."),
           coordinates: Coordinates(
             latitude: Latitude(40.412429),
             longitude: Longitude(-3.683762),

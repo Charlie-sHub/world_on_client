@@ -20,7 +20,7 @@ Achievement getValidAchievement() {
     type: "Meta achievement",
     requisite: 1,
     experiencePoints: ExperiencePoints(100),
-    creator: getValidUser(),
+    creatorId: getValidUser().id,
     creationDate: PastDate(DateTime.now().subtract(const Duration(days: 100))),
     modificationDate: PastDate(DateTime.now()),
     tags: TagSet(KtSet.of(getValidTag())),

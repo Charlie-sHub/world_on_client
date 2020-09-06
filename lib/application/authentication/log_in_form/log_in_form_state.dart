@@ -3,7 +3,6 @@ part of 'log_in_form_bloc.dart';
 @freezed
 abstract class LogInFormState with _$LogInFormState {
   const factory LogInFormState({
-    // TODO: Create a Credentials class to hold username and password
     @required Name username,
     @required Password password,
     @required bool showErrorMessages,

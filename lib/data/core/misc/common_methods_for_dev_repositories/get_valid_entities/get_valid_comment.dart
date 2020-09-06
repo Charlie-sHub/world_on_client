@@ -7,6 +7,7 @@ Comment getValidComment() {
   return Comment(
     id: 1,
     poster: getValidUser(),
+    experienceId: 1,
     content: CommentContent("Mauris a ornare nisl. Nunc tincidunt consequat massa a fermentum. Praesent eu mi aliquet, tincidunt magna sit amet, venenatis est."),
     creationDate: PastDate(DateTime.now().subtract(const Duration(days: 100))),
     modificationDate: PastDate(DateTime.now()),

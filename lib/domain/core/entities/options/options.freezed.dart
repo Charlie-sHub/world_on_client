@@ -98,9 +98,9 @@ class _$_Options extends _Options {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Options &&
-        (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.languageCode, languageCode) || const DeepCollectionEquality().equals(other.languageCode, languageCode)));
+        (other is _Options &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.languageCode, languageCode) || const DeepCollectionEquality().equals(other.languageCode, languageCode)));
   }
 
   @override

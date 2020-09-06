@@ -64,12 +64,9 @@ class DevelopmentCommentRepository implements CommentRepositoryInterface {
   }
 
   @override
-  Future<Either<Failure, Unit>> postComment({
-    Comment comment,
-    int experienceId,
-  }) async {
+  Future<Either<Failure, Unit>> postComment(Comment comment) async {
     try {
-      final _moorComment = domainCommentToMoorComment(comment, experienceId);
+      final _moorComment = domainCommentToMoorComment(comment);
       await _database.moorCommentsDao.insertComment(_moorComment);
       return right(unit);
     } catch (exception) {

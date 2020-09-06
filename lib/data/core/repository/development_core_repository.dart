@@ -435,11 +435,8 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
   }
 
   Future _insertComments(Set<int> _experiencesIds) async {
-    final _comment = getValidComment();
-    final _moorCommentIpsum = domainCommentToMoorComment(
-      _comment,
-      _experiencesIds.first,
-    );
+    final _comment = getValidComment().copyWith(experienceId: _experiencesIds.first);
+    final _moorCommentIpsum = domainCommentToMoorComment(_comment);
     final _moorCommentBro = _moorCommentIpsum.copyWith(
       content: const Value("Chain suck lid huck wheels titanium face plant slash greasy shreddin grind derailleur rigid brain bucket chain ring groomer"),
     );

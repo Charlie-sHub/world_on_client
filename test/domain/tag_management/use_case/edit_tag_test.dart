@@ -32,7 +32,7 @@ void main() {
   final creatorUser = User.empty().copyWith(id: 2, adminPowers: false);
   final admin = User.empty().copyWith(id: 3, adminPowers: true);
   final name = Name("Test");
-  final params = Params(tag: Tag.empty().copyWith(creator: creatorUser));
+  final params = Params(tag: Tag.empty().copyWith(creatorId: creatorUser.id));
 
   group(
     TestDescription.authorization,

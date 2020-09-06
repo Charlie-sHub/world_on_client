@@ -31,7 +31,7 @@ void main() {
       // Arrange
       final _userId = await _insertPoster(_database);
       final _experienceId = await _insertExperience(_database);
-      final _moorComment = domainCommentToMoorComment(_comment, _experienceId).copyWith(posterId: Value(_userId));
+      final _moorComment = domainCommentToMoorComment(_comment.copyWith(experienceId: _experienceId)).copyWith(posterId: Value(_userId));
       // Act
       final _commentId = await _database.moorCommentsDao.insertComment(_moorComment);
       final _commentFromDb = await _database.moorCommentsDao.getCommentById(_commentId);
@@ -45,7 +45,7 @@ void main() {
       // Arrange
       final _userId = await _insertPoster(_database);
       final _experienceId = await _insertExperience(_database);
-      final _moorCommentCompanion = domainCommentToMoorComment(_comment, _experienceId).copyWith(posterId: Value(_userId));
+      final _moorCommentCompanion = domainCommentToMoorComment(_comment.copyWith(experienceId: _experienceId)).copyWith(posterId: Value(_userId));
       final _moorCommentList = [
         _moorCommentCompanion,
         _moorCommentCompanion.copyWith(content: const Value("Test")),
@@ -65,7 +65,7 @@ void main() {
       // Arrange
       final _userId = await _insertPoster(_database);
       final _experienceId = await _insertExperience(_database);
-      final _moorCommentCompanion = domainCommentToMoorComment(_comment, _experienceId).copyWith(posterId: Value(_userId));
+      final _moorCommentCompanion = domainCommentToMoorComment(_comment.copyWith(experienceId: _experienceId)).copyWith(posterId: Value(_userId));
       final _moorCommentList = [
         _moorCommentCompanion,
         _moorCommentCompanion.copyWith(content: const Value("Test")),
@@ -85,7 +85,7 @@ void main() {
       // Arrange
       final _userId = await _insertPoster(_database);
       final _experienceId = await _insertExperience(_database);
-      final _moorCommentCompanion = domainCommentToMoorComment(_comment, _experienceId).copyWith(posterId: Value(_userId));
+      final _moorCommentCompanion = domainCommentToMoorComment(_comment).copyWith(posterId: Value(_userId));
       final _moorCommentList = [
         _moorCommentCompanion,
         _moorCommentCompanion.copyWith(content: const Value("Test")),

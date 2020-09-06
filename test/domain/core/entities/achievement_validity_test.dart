@@ -1,8 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kt_dart/collection.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_tag.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
-import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/experience_points.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
@@ -10,15 +11,12 @@ import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 
 import '../../../test_descriptions.dart';
-import '../methods/get_valid_tag_set.dart';
-import '../methods/get_valid_user.dart';
 
 void main() {
   final validAchievement = _getValidAchievement();
   final invalidNameAchievement = validAchievement.copyWith(name: Name(""));
   final invalidDescriptionAchievement = validAchievement.copyWith(description: EntityDescription(""));
   final invalidExperiencePointsAchievement = validAchievement.copyWith(experiencePoints: ExperiencePoints(1000000));
-  final invalidCreatorAchievement = validAchievement.copyWith(creator: User.empty());
   final invalidCreationDateAchievement = validAchievement.copyWith(creationDate: PastDate(DateTime.now().add(const Duration(days: 10))));
   final invalidModificationDateAchievement = validAchievement.copyWith(modificationDate: PastDate(DateTime.now().add(const Duration(days: 10))));
   final invalidTagsAchievement = validAchievement.copyWith(tags: TagSet(KtSet.of(Tag.empty())));
@@ -54,13 +52,6 @@ void main() {
         },
       );
       test(
-        "${TestDescription.invalid} with invalidCreatorAchievement",
-        () async {
-          // Assert
-          expect(invalidCreatorAchievement.isValid, false);
-        },
-      );
-      test(
         "${TestDescription.invalid} with invalidCreationDateAchievement",
         () async {
           // Assert
@@ -90,8 +81,8 @@ Achievement _getValidAchievement() {
     name: Name("Test"),
     description: EntityDescription("Testing"),
     experiencePoints: ExperiencePoints(100),
-    creator: getValidUser(),
-    tags: getValidTagSet(),
+    creatorId: getValidUser().id,
+    tags: TagSet(KtSet.of(getValidTag())),
     creationDate: PastDate(DateTime.now().subtract(const Duration(days: 10))),
     modificationDate: PastDate(DateTime.now().subtract(const Duration(days: 10))),
   );

@@ -10,5 +10,5 @@ MoorAchievementsCompanion domainAchievementToMoorAchievement(Achievement achieve
       experiencePoints: achievement.experiencePoints.getOrCrash(),
       creationDate: achievement.creationDate.getOrCrash(),
       modificationDate: achievement.modificationDate.getOrCrash(),
-      creatorId: achievement.creator.id,
+      creatorId: achievement.creatorId,
     );

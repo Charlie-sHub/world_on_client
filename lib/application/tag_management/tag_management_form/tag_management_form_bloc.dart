@@ -83,7 +83,7 @@ class TagManagementFormBloc extends Bloc<TagManagementFormEvent, TagManagementFo
         );
         return state.copyWith(
           tag: Tag.empty().copyWith(
-            creator: _currentUser,
+            creatorId: _currentUser.id,
           ),
         );
       },

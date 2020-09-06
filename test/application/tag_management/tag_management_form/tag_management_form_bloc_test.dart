@@ -6,6 +6,8 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/application/tag_management/tag_management_form/tag_management_form_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_tag.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
@@ -13,8 +15,6 @@ import 'package:worldon/domain/tag_management/use_case/create_tag.dart';
 import 'package:worldon/domain/tag_management/use_case/edit_tag.dart';
 import 'package:worldon/injection.dart';
 
-import '../../../domain/core/methods/get_valid_tag.dart';
-import '../../../domain/core/methods/get_valid_user.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
@@ -31,7 +31,7 @@ void main() {
   );
   final creator = getValidUser();
   const name = "Test";
-  final tagToEdit = getValidTag().copyWith(creator: creator);
+  final tagToEdit = getValidTag().copyWith(creatorId: creator.id);
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
@@ -74,7 +74,6 @@ void main() {
         tag: Tag.empty().copyWith(
           name: Name(name),
         ),
-        failureOrSuccessOption: none(),
       ),
     ],
   );
@@ -99,28 +98,25 @@ void main() {
         expect: [
           TagManagementFormState.initial().copyWith(
             tag: Tag.empty().copyWith(
-              creator: creator,
+              creatorId: creator.id,
             ),
-            failureOrSuccessOption: none(),
           ),
           TagManagementFormState.initial().copyWith(
             tag: Tag.empty().copyWith(
-              creator: creator,
+              creatorId: creator.id,
               name: Name(name),
             ),
-            failureOrSuccessOption: none(),
           ),
           TagManagementFormState.initial().copyWith(
             tag: Tag.empty().copyWith(
-              creator: creator,
+              creatorId: creator.id,
               name: Name(name),
             ),
             isSubmitting: true,
-            failureOrSuccessOption: none(),
           ),
           TagManagementFormState.initial().copyWith(
             tag: Tag.empty().copyWith(
-              creator: creator,
+              creatorId: creator.id,
               name: Name(name),
             ),
             showErrorMessages: true,
@@ -135,9 +131,7 @@ void main() {
           return getIt<TagManagementFormBloc>();
         },
         act: (bloc) async {
-          bloc.add(
-            TagManagementFormEvent.initialized(some(tagToEdit)),
-          );
+          bloc.add(TagManagementFormEvent.initialized(some(tagToEdit)));
           bloc.add(const TagManagementFormEvent.nameChanged(name));
           bloc.add(const TagManagementFormEvent.submitted());
         },
@@ -146,11 +140,14 @@ void main() {
         },
         expect: [
           TagManagementFormState.initial().copyWith(
+            tag: tagToEdit,
+            isEditing: true,
+          ),
+          TagManagementFormState.initial().copyWith(
             tag: tagToEdit.copyWith(
               name: Name(name),
             ),
             isEditing: true,
-            failureOrSuccessOption: none(),
           ),
           TagManagementFormState.initial().copyWith(
             tag: tagToEdit.copyWith(
@@ -158,7 +155,6 @@ void main() {
             ),
             isSubmitting: true,
             isEditing: true,
-            failureOrSuccessOption: none(),
           ),
           TagManagementFormState.initial().copyWith(
             tag: tagToEdit.copyWith(
@@ -196,28 +192,25 @@ void main() {
         expect: [
           TagManagementFormState.initial().copyWith(
             tag: Tag.empty().copyWith(
-              creator: creator,
+              creatorId: creator.id,
             ),
-            failureOrSuccessOption: none(),
           ),
           TagManagementFormState.initial().copyWith(
             tag: Tag.empty().copyWith(
-              creator: creator,
+              creatorId: creator.id,
               name: Name(name),
             ),
-            failureOrSuccessOption: none(),
           ),
           TagManagementFormState.initial().copyWith(
             tag: Tag.empty().copyWith(
-              creator: creator,
+              creatorId: creator.id,
               name: Name(name),
             ),
             isSubmitting: true,
-            failureOrSuccessOption: none(),
           ),
           TagManagementFormState.initial().copyWith(
             tag: Tag.empty().copyWith(
-              creator: creator,
+              creatorId: creator.id,
               name: Name(name),
             ),
             isSubmitting: false,
@@ -244,11 +237,14 @@ void main() {
         },
         expect: [
           TagManagementFormState.initial().copyWith(
+            tag: tagToEdit,
+            isEditing: true,
+          ),
+          TagManagementFormState.initial().copyWith(
             tag: tagToEdit.copyWith(
               name: Name(name),
             ),
             isEditing: true,
-            failureOrSuccessOption: none(),
           ),
           TagManagementFormState.initial().copyWith(
             tag: tagToEdit.copyWith(
@@ -256,7 +252,6 @@ void main() {
             ),
             isSubmitting: true,
             isEditing: true,
-            failureOrSuccessOption: none(),
           ),
           TagManagementFormState.initial().copyWith(
             tag: tagToEdit.copyWith(

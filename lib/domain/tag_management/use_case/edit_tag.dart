@@ -24,7 +24,7 @@ class EditTag implements AsyncUseCase<Unit, Params> {
       () => throw UnAuthenticatedError(),
       id,
     );
-    final _isAuthorized = _userRequesting == params.tag.creator || _userRequesting.adminPowers;
+    final _isAuthorized = _userRequesting.id == params.tag.creatorId || _userRequesting.adminPowers;
     if (_isAuthorized) {
       return _repository.editTag(params.tag);
     } else {

@@ -6,11 +6,11 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/application/tag_management/tag_card_actor/tag_card_actor_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_tag.dart';
 import 'package:worldon/domain/tag_management/use_case/add_tag_to_interests.dart';
 import 'package:worldon/domain/tag_management/use_case/dismiss_tag_from_interests.dart';
 import 'package:worldon/injection.dart';
 
-import '../../../domain/core/methods/get_valid_tag.dart';
 import '../../../test_descriptions.dart';
 
 void main() {

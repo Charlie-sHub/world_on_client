@@ -58,12 +58,12 @@ abstract class $NotificationDtoCopyWith<$Res> {
 
 class _$NotificationDtoCopyWithImpl<$Res> implements $NotificationDtoCopyWith<$Res> {
   _$NotificationDtoCopyWithImpl(this._value, this._then);
-  
+
   final NotificationDto _value;
-  
+
   // ignore: unused_field
   final $Res Function(NotificationDto) _then;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -108,23 +108,23 @@ class _$NotificationDtoCopyWithImpl<$Res> implements $NotificationDtoCopyWith<$R
 
 abstract class _$NotificationDtoCopyWith<$Res> implements $NotificationDtoCopyWith<$Res> {
   factory _$NotificationDtoCopyWith(_NotificationDto value, $Res Function(_NotificationDto) then) = __$NotificationDtoCopyWithImpl<$Res>;
-  
+
   @override
   $Res call({int id, UserDto sender, UserDto receiver, String description, bool seen, String creationDate, NotificationType type});
-  
+
   @override
   $UserDtoCopyWith<$Res> get sender;
-  
+
   @override
   $UserDtoCopyWith<$Res> get receiver;
 }
 
 class __$NotificationDtoCopyWithImpl<$Res> extends _$NotificationDtoCopyWithImpl<$Res> implements _$NotificationDtoCopyWith<$Res> {
   __$NotificationDtoCopyWithImpl(_NotificationDto _value, $Res Function(_NotificationDto) _then) : super(_value, (v) => _then(v as _NotificationDto));
-  
+
   @override
   _NotificationDto get _value => super._value as _NotificationDto;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -150,17 +150,17 @@ class __$NotificationDtoCopyWithImpl<$Res> extends _$NotificationDtoCopyWithImpl
 @JsonSerializable()
 class _$_NotificationDto extends _NotificationDto {
   const _$_NotificationDto({@required this.id, @required this.sender, @required this.receiver, @required this.description, @required this.seen, @required this.creationDate, @required this.type})
-    : assert(id != null),
-      assert(sender != null),
-      assert(receiver != null),
-      assert(description != null),
-      assert(seen != null),
-      assert(creationDate != null),
-      assert(type != null),
-      super._();
-  
+      : assert(id != null),
+        assert(sender != null),
+        assert(receiver != null),
+        assert(description != null),
+        assert(seen != null),
+        assert(creationDate != null),
+        assert(type != null),
+        super._();
+
   factory _$_NotificationDto.fromJson(Map<String, dynamic> json) => _$_$_NotificationDtoFromJson(json);
-  
+
   @override
   final int id;
   @override

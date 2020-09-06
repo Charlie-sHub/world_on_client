@@ -30,7 +30,7 @@ void main() {
   final randomUser = User.empty().copyWith(id: 1, adminPowers: false);
   final creatorUser = User.empty().copyWith(id: 2, adminPowers: false);
   final admin = User.empty().copyWith(id: 3, adminPowers: true);
-  final tag = Tag.empty().copyWith(creator: creatorUser);
+  final tag = Tag.empty().copyWith(creatorId: creatorUser.id);
   final params = Params(tag: tag);
 
   group(

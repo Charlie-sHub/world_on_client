@@ -185,24 +185,25 @@ class _$ExperienceDtoCopyWithImpl<$Res> implements $ExperienceDtoCopyWith<$Res> 
 
 abstract class _$ExperienceDtoCopyWith<$Res> implements $ExperienceDtoCopyWith<$Res> {
   factory _$ExperienceDtoCopyWith(_ExperienceDto value, $Res Function(_ExperienceDto) then) = __$ExperienceDtoCopyWithImpl<$Res>;
-  
+
   @override
-  $Res call({int id,
-    String title,
-    String description,
-    Set<String> imageURLs,
-    CoordinatesDto coordinates,
-    LocationDto location,
-    UserDto creator,
-    int difficulty,
-    String creationDate,
-    String modificationDate,
-    Set<ObjectiveDto> objectives,
-    Set<RewardDto> rewards,
-    Set<TagDto> tags,
-    Set<CommentDto> comments,
-    Set<UserDto> likedBy,
-    Set<UserDto> doneBy});
+  $Res call(
+      {int id,
+      String title,
+      String description,
+      Set<String> imageURLs,
+      CoordinatesDto coordinates,
+      LocationDto location,
+      UserDto creator,
+      int difficulty,
+      String creationDate,
+      String modificationDate,
+      Set<ObjectiveDto> objectives,
+      Set<RewardDto> rewards,
+      Set<TagDto> tags,
+      Set<CommentDto> comments,
+      Set<UserDto> likedBy,
+      Set<UserDto> doneBy});
 
   @override
   $CoordinatesDtoCopyWith<$Res> get coordinates;
@@ -214,10 +215,10 @@ abstract class _$ExperienceDtoCopyWith<$Res> implements $ExperienceDtoCopyWith<$
 
 class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Res> implements _$ExperienceDtoCopyWith<$Res> {
   __$ExperienceDtoCopyWithImpl(_ExperienceDto _value, $Res Function(_ExperienceDto) _then) : super(_value, (v) => _then(v as _ExperienceDto));
-  
+
   @override
   _ExperienceDto get _value => super._value as _ExperienceDto;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -260,23 +261,22 @@ class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Re
 
 @JsonSerializable()
 class _$_ExperienceDto extends _ExperienceDto {
-  const _$_ExperienceDto(
-      {@required this.id,
-      @required this.title,
-      @required this.description,
-      @required this.imageURLs,
-        @required this.coordinates,
-        @required this.location,
-        @required this.creator,
-        @required this.difficulty,
-        @required this.creationDate,
-        @required this.modificationDate,
-        @required this.objectives,
-        @required this.rewards,
-        @required this.tags,
-        @required this.comments,
-        @required this.likedBy,
-        @required this.doneBy})
+  const _$_ExperienceDto({@required this.id,
+    @required this.title,
+    @required this.description,
+    @required this.imageURLs,
+    @required this.coordinates,
+    @required this.location,
+    @required this.creator,
+    @required this.difficulty,
+    @required this.creationDate,
+    @required this.modificationDate,
+    @required this.objectives,
+    @required this.rewards,
+    @required this.tags,
+    @required this.comments,
+    @required this.likedBy,
+    @required this.doneBy})
     : assert(id != null),
       assert(title != null),
       assert(description != null),
@@ -419,6 +419,7 @@ abstract class _ExperienceDto extends ExperienceDto {
   
   @override
   Set<String> get imageURLs;
+  
   @override
   CoordinatesDto get coordinates;
   @override

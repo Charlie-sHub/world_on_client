@@ -10,9 +10,7 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 
 part 'map_controller_bloc.freezed.dart';
-
 part 'map_controller_event.dart';
-
 part 'map_controller_state.dart';
 
 @injectable

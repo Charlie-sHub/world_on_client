@@ -76,10 +76,10 @@ abstract class _$SystemDtoCopyWith<$Res> implements $SystemDtoCopyWith<$Res> {
 
 class __$SystemDtoCopyWithImpl<$Res> extends _$SystemDtoCopyWithImpl<$Res> implements _$SystemDtoCopyWith<$Res> {
   __$SystemDtoCopyWithImpl(_SystemDto _value, $Res Function(_SystemDto) _then) : super(_value, (v) => _then(v as _SystemDto));
-  
+
   @override
   _SystemDto get _value => super._value as _SystemDto;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -99,14 +99,14 @@ class __$SystemDtoCopyWithImpl<$Res> extends _$SystemDtoCopyWithImpl<$Res> imple
 @JsonSerializable()
 class _$_SystemDto extends _SystemDto {
   const _$_SystemDto({@required this.id, @required this.name, @required this.type, @required this.company})
-    : assert(id != null),
-      assert(name != null),
-      assert(type != null),
-      assert(company != null),
-      super._();
-  
+      : assert(id != null),
+        assert(name != null),
+        assert(type != null),
+        assert(company != null),
+        super._();
+
   factory _$_SystemDto.fromJson(Map<String, dynamic> json) => _$_$_SystemDtoFromJson(json);
-  
+
   @override
   final int id;
   @override
@@ -150,23 +150,23 @@ class _$_SystemDto extends _SystemDto {
 
 abstract class _SystemDto extends SystemDto {
   const _SystemDto._() : super._();
-  
+
   const factory _SystemDto({@required int id, @required String name, @required String type, @required String company}) = _$_SystemDto;
-  
+
   factory _SystemDto.fromJson(Map<String, dynamic> json) = _$_SystemDto.fromJson;
-  
+
   @override
   int get id;
-  
+
   @override
   String get name;
-  
+
   @override
   String get type;
 
   @override
   String get company;
-  
+
   @override
   _$SystemDtoCopyWith<_SystemDto> get copyWith;
 }

@@ -8,7 +8,6 @@ import 'package:worldon/core/error/failure.dart';
 @Deprecated("Using Firebase makes this pretty much unnecessary")
 class Cypher {
   Either<Failure, String> call(String text, Uint8List publicKey) {
-    // TODO: Implement cyphering
     return null;
   }
 }

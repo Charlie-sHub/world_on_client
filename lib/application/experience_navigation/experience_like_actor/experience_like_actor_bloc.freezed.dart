@@ -108,20 +108,20 @@ class _$ExperienceLikeActorEventCopyWithImpl<$Res> implements $ExperienceLikeAct
 
 abstract class _$InitializedCopyWith<$Res> implements $ExperienceLikeActorEventCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
-  
+
   @override
   $Res call({Experience experience});
-  
+
   @override
   $ExperienceCopyWith<$Res> get experience;
 }
 
 class __$InitializedCopyWithImpl<$Res> extends _$ExperienceLikeActorEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
   __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
-  
+
   @override
   _Initialized get _value => super._value as _Initialized;
-  
+
   @override
   $Res call({
     Object experience = freezed,
@@ -222,20 +222,20 @@ abstract class _Initialized implements ExperienceLikeActorEvent {
 
 abstract class _$LikedCopyWith<$Res> implements $ExperienceLikeActorEventCopyWith<$Res> {
   factory _$LikedCopyWith(_Liked value, $Res Function(_Liked) then) = __$LikedCopyWithImpl<$Res>;
-  
+
   @override
   $Res call({Experience experience});
-  
+
   @override
   $ExperienceCopyWith<$Res> get experience;
 }
 
 class __$LikedCopyWithImpl<$Res> extends _$ExperienceLikeActorEventCopyWithImpl<$Res> implements _$LikedCopyWith<$Res> {
   __$LikedCopyWithImpl(_Liked _value, $Res Function(_Liked) _then) : super(_value, (v) => _then(v as _Liked));
-  
+
   @override
   _Liked get _value => super._value as _Liked;
-  
+
   @override
   $Res call({
     Object experience = freezed,
@@ -336,20 +336,20 @@ abstract class _Liked implements ExperienceLikeActorEvent {
 
 abstract class _$DislikedCopyWith<$Res> implements $ExperienceLikeActorEventCopyWith<$Res> {
   factory _$DislikedCopyWith(_Disliked value, $Res Function(_Disliked) then) = __$DislikedCopyWithImpl<$Res>;
-  
+
   @override
   $Res call({Experience experience});
-  
+
   @override
   $ExperienceCopyWith<$Res> get experience;
 }
 
 class __$DislikedCopyWithImpl<$Res> extends _$ExperienceLikeActorEventCopyWithImpl<$Res> implements _$DislikedCopyWith<$Res> {
   __$DislikedCopyWithImpl(_Disliked _value, $Res Function(_Disliked) _then) : super(_value, (v) => _then(v as _Disliked));
-  
+
   @override
   _Disliked get _value => super._value as _Disliked;
-  
+
   @override
   $Res call({
     Object experience = freezed,
@@ -554,9 +554,9 @@ abstract class $ExperienceLikeActorStateCopyWith<$Res> {
 
 class _$ExperienceLikeActorStateCopyWithImpl<$Res> implements $ExperienceLikeActorStateCopyWith<$Res> {
   _$ExperienceLikeActorStateCopyWithImpl(this._value, this._then);
-  
+
   final ExperienceLikeActorState _value;
-  
+
   // ignore: unused_field
   final $Res Function(ExperienceLikeActorState) _then;
 }
@@ -567,7 +567,7 @@ abstract class _$InitialCopyWith<$Res> {
 
 class __$InitialCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
-  
+
   @override
   _Initial get _value => super._value as _Initial;
 }
@@ -685,7 +685,7 @@ abstract class _$ActionInProgressCopyWith<$Res> {
 
 class __$ActionInProgressCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImpl<$Res> implements _$ActionInProgressCopyWith<$Res> {
   __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then) : super(_value, (v) => _then(v as _ActionInProgress));
-  
+
   @override
   _ActionInProgress get _value => super._value as _ActionInProgress;
 }
@@ -803,7 +803,7 @@ abstract class _$LikesCopyWith<$Res> {
 
 class __$LikesCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImpl<$Res> implements _$LikesCopyWith<$Res> {
   __$LikesCopyWithImpl(_Likes _value, $Res Function(_Likes) _then) : super(_value, (v) => _then(v as _Likes));
-  
+
   @override
   _Likes get _value => super._value as _Likes;
 }
@@ -921,7 +921,7 @@ abstract class _$NeutralCopyWith<$Res> {
 
 class __$NeutralCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImpl<$Res> implements _$NeutralCopyWith<$Res> {
   __$NeutralCopyWithImpl(_Neutral _value, $Res Function(_Neutral) _then) : super(_value, (v) => _then(v as _Neutral));
-  
+
   @override
   _Neutral get _value => super._value as _Neutral;
 }
@@ -1039,7 +1039,7 @@ abstract class _$LikeSuccessCopyWith<$Res> {
 
 class __$LikeSuccessCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImpl<$Res> implements _$LikeSuccessCopyWith<$Res> {
   __$LikeSuccessCopyWithImpl(_LikeSuccess _value, $Res Function(_LikeSuccess) _then) : super(_value, (v) => _then(v as _LikeSuccess));
-  
+
   @override
   _LikeSuccess get _value => super._value as _LikeSuccess;
 }
@@ -1153,18 +1153,18 @@ abstract class _LikeSuccess implements ExperienceLikeActorState {
 
 abstract class _$LikeFailureCopyWith<$Res> {
   factory _$LikeFailureCopyWith(_LikeFailure value, $Res Function(_LikeFailure) then) = __$LikeFailureCopyWithImpl<$Res>;
-  
+
   $Res call({Failure<dynamic> failure});
-  
+
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 class __$LikeFailureCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImpl<$Res> implements _$LikeFailureCopyWith<$Res> {
   __$LikeFailureCopyWithImpl(_LikeFailure _value, $Res Function(_LikeFailure) _then) : super(_value, (v) => _then(v as _LikeFailure));
-  
+
   @override
   _LikeFailure get _value => super._value as _LikeFailure;
-  
+
   @override
   $Res call({
     Object failure = freezed,
@@ -1307,7 +1307,7 @@ abstract class _$DislikeSuccessCopyWith<$Res> {
 
 class __$DislikeSuccessCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImpl<$Res> implements _$DislikeSuccessCopyWith<$Res> {
   __$DislikeSuccessCopyWithImpl(_DislikeSuccess _value, $Res Function(_DislikeSuccess) _then) : super(_value, (v) => _then(v as _DislikeSuccess));
-  
+
   @override
   _DislikeSuccess get _value => super._value as _DislikeSuccess;
 }
@@ -1421,18 +1421,18 @@ abstract class _DislikeSuccess implements ExperienceLikeActorState {
 
 abstract class _$DislikeFailureCopyWith<$Res> {
   factory _$DislikeFailureCopyWith(_DislikeFailure value, $Res Function(_DislikeFailure) then) = __$DislikeFailureCopyWithImpl<$Res>;
-  
+
   $Res call({Failure<dynamic> failure});
-  
+
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 class __$DislikeFailureCopyWithImpl<$Res> extends _$ExperienceLikeActorStateCopyWithImpl<$Res> implements _$DislikeFailureCopyWith<$Res> {
   __$DislikeFailureCopyWithImpl(_DislikeFailure _value, $Res Function(_DislikeFailure) _then) : super(_value, (v) => _then(v as _DislikeFailure));
-  
+
   @override
   _DislikeFailure get _value => super._value as _DislikeFailure;
-  
+
   @override
   $Res call({
     Object failure = freezed,

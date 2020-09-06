@@ -30,7 +30,7 @@ void main() {
   final randomUser = User.empty().copyWith(id: 1, adminPowers: false);
   final creatorUser = User.empty().copyWith(id: 2, adminPowers: false);
   final admin = User.empty().copyWith(id: 3, adminPowers: true);
-  final achievement = Achievement.empty().copyWith(creator: creatorUser);
+  final achievement = Achievement.empty().copyWith(creatorId: creatorUser.id);
   final params = Params(achievement: achievement);
   group(
     TestDescription.authorization,

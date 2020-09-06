@@ -70,6 +70,7 @@ class _$ProfileInterestsWatcherEventCopyWithImpl<$Res> implements $ProfileIntere
 
 abstract class _$WatchInterestsStartedCopyWith<$Res> {
   factory _$WatchInterestsStartedCopyWith(_WatchInterestsStarted value, $Res Function(_WatchInterestsStarted) then) = __$WatchInterestsStartedCopyWithImpl<$Res>;
+
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -77,10 +78,10 @@ abstract class _$WatchInterestsStartedCopyWith<$Res> {
 
 class __$WatchInterestsStartedCopyWithImpl<$Res> extends _$ProfileInterestsWatcherEventCopyWithImpl<$Res> implements _$WatchInterestsStartedCopyWith<$Res> {
   __$WatchInterestsStartedCopyWithImpl(_WatchInterestsStarted _value, $Res Function(_WatchInterestsStarted) _then) : super(_value, (v) => _then(v as _WatchInterestsStarted));
-  
+
   @override
   _WatchInterestsStarted get _value => super._value as _WatchInterestsStarted;
-  
+
   @override
   $Res call({
     Object user = freezed,
@@ -183,16 +184,16 @@ abstract class _WatchInterestsStarted implements ProfileInterestsWatcherEvent {
 
 abstract class _$ResultsReceivedCopyWith<$Res> {
   factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
-  
+
   $Res call({Either<Failure, KtList<Tag>> failureOrTags});
 }
 
 class __$ResultsReceivedCopyWithImpl<$Res> extends _$ProfileInterestsWatcherEventCopyWithImpl<$Res> implements _$ResultsReceivedCopyWith<$Res> {
   __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then) : super(_value, (v) => _then(v as _ResultsReceived));
-  
+
   @override
   _ResultsReceived get _value => super._value as _ResultsReceived;
-  
+
   @override
   $Res call({
     Object failureOrTags = freezed,
@@ -278,9 +279,9 @@ class _$_ResultsReceived implements _ResultsReceived {
 
 abstract class _ResultsReceived implements ProfileInterestsWatcherEvent {
   const factory _ResultsReceived(Either<Failure, KtList<Tag>> failureOrTags) = _$_ResultsReceived;
-  
+
   Either<Failure, KtList<Tag>> get failureOrTags;
-  
+
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith;
 }
 
@@ -354,9 +355,9 @@ abstract class $ProfileInterestsWatcherStateCopyWith<$Res> {
 
 class _$ProfileInterestsWatcherStateCopyWithImpl<$Res> implements $ProfileInterestsWatcherStateCopyWith<$Res> {
   _$ProfileInterestsWatcherStateCopyWithImpl(this._value, this._then);
-  
+
   final ProfileInterestsWatcherState _value;
-  
+
   // ignore: unused_field
   final $Res Function(ProfileInterestsWatcherState) _then;
 }
@@ -367,7 +368,7 @@ abstract class _$InitialCopyWith<$Res> {
 
 class __$InitialCopyWithImpl<$Res> extends _$ProfileInterestsWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
-  
+
   @override
   _Initial get _value => super._value as _Initial;
 }
@@ -461,7 +462,7 @@ abstract class _$LoadInProgressCopyWith<$Res> {
 
 class __$LoadInProgressCopyWithImpl<$Res> extends _$ProfileInterestsWatcherStateCopyWithImpl<$Res> implements _$LoadInProgressCopyWith<$Res> {
   __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then) : super(_value, (v) => _then(v as _LoadInProgress));
-  
+
   @override
   _LoadInProgress get _value => super._value as _LoadInProgress;
 }
@@ -551,16 +552,16 @@ abstract class _LoadInProgress implements ProfileInterestsWatcherState {
 
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
-  
+
   $Res call({KtList<Tag> interests});
 }
 
 class __$LoadSuccessCopyWithImpl<$Res> extends _$ProfileInterestsWatcherStateCopyWithImpl<$Res> implements _$LoadSuccessCopyWith<$Res> {
   __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then) : super(_value, (v) => _then(v as _LoadSuccess));
-  
+
   @override
   _LoadSuccess get _value => super._value as _LoadSuccess;
-  
+
   @override
   $Res call({
     Object interests = freezed,
@@ -665,18 +666,18 @@ abstract class _LoadSuccess implements ProfileInterestsWatcherState {
 
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
-  
+
   $Res call({Failure<dynamic> failure});
-  
+
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 class __$LoadFailureCopyWithImpl<$Res> extends _$ProfileInterestsWatcherStateCopyWithImpl<$Res> implements _$LoadFailureCopyWith<$Res> {
   __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then) : super(_value, (v) => _then(v as _LoadFailure));
-  
+
   @override
   _LoadFailure get _value => super._value as _LoadFailure;
-  
+
   @override
   $Res call({
     Object failure = freezed,

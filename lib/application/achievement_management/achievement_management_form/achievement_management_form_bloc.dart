@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
@@ -36,6 +37,7 @@ class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent,
       descriptionChanged: _onDescriptionChanged,
       experiencePointsChanged: _onExperiencePointsChanged,
       tagsChanged: _onTagsChanged,
+      imageChanged: _onImageChanged,
       submitted: _onSubmitted,
     );
   }
@@ -54,7 +56,7 @@ class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent,
             achievement: state.achievement,
           ),
         );
-      } else {
+      } else if (state.achievement.imageFile.isSome()) {
         final _createAchievement = getIt<create_achievement.CreateAchievement>();
         _failureOrUnit = await _createAchievement(
           create_achievement.Params(
@@ -67,6 +69,15 @@ class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent,
       isSubmitting: false,
       showErrorMessages: true,
       failureOrSuccessOption: optionOf(_failureOrUnit),
+    );
+  }
+
+  Stream<AchievementManagementFormState> _onImageChanged(_ImageChanged event) async* {
+    yield state.copyWith(
+      achievement: state.achievement.copyWith(
+        imageFile: some(event.image),
+      ),
+      failureOrSuccessOption: none(),
     );
   }
 
@@ -117,7 +128,7 @@ class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent,
         );
         return state.copyWith(
           achievement: Achievement.empty().copyWith(
-            creator: _currentUser,
+            creatorId: _currentUser.id,
           ),
         );
       },

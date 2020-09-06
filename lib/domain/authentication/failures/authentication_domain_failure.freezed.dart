@@ -26,15 +26,18 @@ mixin _$AuthenticationDomainFailure<T> {
   Result when<Result extends Object>({
     @required Result cancelledByUser(),
   });
+
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result cancelledByUser(),
     @required Result orElse(),
   });
+
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result cancelledByUser(CancelledByUser<T> value),
   });
+
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result cancelledByUser(CancelledByUser<T> value),
@@ -61,19 +64,19 @@ abstract class $CancelledByUserCopyWith<T, $Res> {
 
 class _$CancelledByUserCopyWithImpl<T, $Res> extends _$AuthenticationDomainFailureCopyWithImpl<T, $Res> implements $CancelledByUserCopyWith<T, $Res> {
   _$CancelledByUserCopyWithImpl(CancelledByUser<T> _value, $Res Function(CancelledByUser<T>) _then) : super(_value, (v) => _then(v as CancelledByUser<T>));
-  
+
   @override
   CancelledByUser<T> get _value => super._value as CancelledByUser<T>;
 }
 
 class _$CancelledByUser<T> with DiagnosticableTreeMixin implements CancelledByUser<T> {
   const _$CancelledByUser();
-  
+
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AuthenticationDomainFailure<$T>.cancelledByUser()';
   }
-  
+
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);

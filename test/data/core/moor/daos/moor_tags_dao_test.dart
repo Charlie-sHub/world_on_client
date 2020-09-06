@@ -10,7 +10,6 @@ import 'package:worldon/data/core/moor/converters/domain_experience_to_moor_expe
 import 'package:worldon/data/core/moor/converters/domain_tag_to_moor_tag.dart';
 import 'package:worldon/data/core/moor/converters/domain_user_to_moor_user_companion.dart';
 import 'package:worldon/data/core/moor/converters/moor_tag_to_domain_tag.dart';
-import 'package:worldon/data/core/moor/daos/moor_tags_dao/moor_tag_with_moor_user.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 
@@ -290,14 +289,8 @@ void main() {
             final _id = await _database.moorTagsDao.insertTag(_moorTag);
             if (_moorTag.name.value.contains(_searchTerm.toLowerCase()) || _moorTag.name.value.contains(_searchTerm.toUpperCase())) {
               final _tagInserted = await _database.moorTagsDao.getTagById(_id);
-              final _creator = await _database.moorUsersDao.getUserById(_tagInserted.creatorId);
               _searchResults.add(
-                moorTagToDomainTag(
-                  MoorTagWithMoorUser(
-                    tag: _tagInserted,
-                    creator: _creator,
-                  ),
-                ),
+                moorTagToDomainTag(_tagInserted),
               );
             }
           }
@@ -330,14 +323,8 @@ void main() {
               tagId: _insertedTagId,
             );
             final _tagInserted = await _database.moorTagsDao.getTagById(_insertedTagId);
-            final _creator = await _database.moorUsersDao.getUserById(_tagInserted.creatorId);
             _moorTagAfterInsertList.add(
-              moorTagToDomainTag(
-                MoorTagWithMoorUser(
-                  tag: _tagInserted,
-                  creator: _creator,
-                ),
-              ),
+              moorTagToDomainTag(_tagInserted),
             );
             await _database.moorTagsDao.insertUserInterest(_userInterest);
           }

@@ -26,10 +26,7 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
   }
 
   @override
-  Future<Either<Failure, Unit>> postComment({
-    Comment comment,
-    int experienceId,
-  }) {
+  Future<Either<Failure, Unit>> postComment(Comment comment) {
     // TODO: implement postComment
     throw UnimplementedError();
   }

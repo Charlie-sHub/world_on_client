@@ -67,9 +67,9 @@ dependencies:
   # For dynamically resizing text
   auto_size_text: ^2.1.0
   # For showing the user's experience progression
-  percent_indicator: ^2.1.5
+  percent_indicator: ^2.1.6
   # Takes out some boilerplate
-  flutter_hooks: ^0.13.2
+  flutter_hooks: ^0.14.0
   # For FloatingActionButton menus
   unicorndial: ^1.1.5
   # To add shadow to icons with less boiler plate
@@ -84,7 +84,7 @@ dependencies:
   # For viewing the database
   moor_db_viewer: ^2.0.3
   # For providing objects down the widget tree
-  provider: ^4.3.2+1
+  provider: ^4.3.2+2
   # For environment control
   flutter_dotenv: ^2.1.0
   # For ease of logging

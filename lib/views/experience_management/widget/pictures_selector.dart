@@ -18,45 +18,45 @@ class PicturesSelector extends StatelessWidget {
             ),
             onPressed: () async => _pickImages(context),
           ),
-        (imageAssets) => Container(
-        height: MediaQuery.of(context).size.height * 0.4,
-        child: Column(
-          children: <Widget>[
-            Expanded(
-              flex: 2,
-              child: GridView.count(
-                padding: const EdgeInsets.all(10),
-                shrinkWrap: true,
-                physics: const ClampingScrollPhysics(),
-                crossAxisCount: 3,
-                children: List.generate(
-                  imageAssets.length,
-                    (index) {
-                    return Card(
-                      shape: const RoundedRectangleBorder(),
-                      child: AssetThumb(
-                        asset: imageAssets[index],
-                        width: 150,
-                        height: 150,
-                      ),
-                    );
-                  },
+          (imageAssets) => Container(
+            height: MediaQuery.of(context).size.height * 0.4,
+            child: Column(
+              children: <Widget>[
+                Expanded(
+                  flex: 2,
+                  child: GridView.count(
+                    padding: const EdgeInsets.all(10),
+                    shrinkWrap: true,
+                    physics: const ClampingScrollPhysics(),
+                    crossAxisCount: 3,
+                    children: List.generate(
+                      imageAssets.length,
+                      (index) {
+                        return Card(
+                          shape: const RoundedRectangleBorder(),
+                          child: AssetThumb(
+                            asset: imageAssets[index],
+                            width: 150,
+                            height: 150,
+                          ),
+                        );
+                      },
+                    ),
+                  ),
                 ),
-              ),
+                IconButton(
+                  iconSize: 40,
+                  icon: const Icon(
+                    Icons.photo_camera,
+                  ),
+                  onPressed: () async => _pickImages(context),
+                ),
+              ],
             ),
-            IconButton(
-              iconSize: 40,
-              icon: const Icon(
-                Icons.photo_camera,
-              ),
-              onPressed: () async => _pickImages(context),
-            ),
-          ],
-        ),
-      ),
-    );
+          ),
+        );
   }
-  
+
   Future _pickImages(BuildContext context) async {
     try {
       final imagesPicked = await MultiImagePicker.pickImages(

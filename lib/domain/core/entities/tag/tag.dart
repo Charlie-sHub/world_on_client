@@ -19,25 +19,24 @@ abstract class Tag implements _$Tag {
 
   const factory Tag({
     int id,
-    // TODO: Add Icon to the Tag
     @required Name name,
-    @required User creator,
+    @required int creatorId,
     @required PastDate creationDate,
     @required PastDate modificationDate,
   }) = _Tag;
 
   factory Tag.empty() => Tag(
-        name: Name(""),
-        creator: User.empty(),
+    name: Name(""),
+        creatorId: 0,
         creationDate: PastDate(DateTime.now()),
         modificationDate: PastDate(DateTime.now()),
       );
 
   Option<ValueFailure<dynamic>> get failureOption {
-    return name.failureOrUnit.andThen(creator.failureOrUnit).andThen(creationDate.failureOrUnit).andThen(modificationDate.failureOrUnit).fold(
-          (failure) => some(failure),
-          (_) => none(),
-        );
+    return name.failureOrUnit.andThen(creationDate.failureOrUnit).andThen(modificationDate.failureOrUnit).fold(
+        (failure) => some(failure),
+        (_) => none(),
+    );
   }
 
   bool get isValid => failureOption.isNone();

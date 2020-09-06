@@ -70,17 +70,17 @@ class _$RewardCopyWithImpl<$Res> implements $RewardCopyWith<$Res> {
 
 abstract class _$RewardCopyWith<$Res> implements $RewardCopyWith<$Res> {
   factory _$RewardCopyWith(_Reward value, $Res Function(_Reward) then) = __$RewardCopyWithImpl<$Res>;
-  
+
   @override
   $Res call({int id, Name name, EntityDescription description, String imageURL, Option<File> imageFile});
 }
 
 class __$RewardCopyWithImpl<$Res> extends _$RewardCopyWithImpl<$Res> implements _$RewardCopyWith<$Res> {
   __$RewardCopyWithImpl(_Reward _value, $Res Function(_Reward) _then) : super(_value, (v) => _then(v as _Reward));
-  
+
   @override
   _Reward get _value => super._value as _Reward;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -101,12 +101,12 @@ class __$RewardCopyWithImpl<$Res> extends _$RewardCopyWithImpl<$Res> implements 
 
 class _$_Reward extends _Reward {
   const _$_Reward({this.id, @required this.name, @required this.description, @required this.imageURL, @required this.imageFile})
-    : assert(name != null),
-      assert(description != null),
-      assert(imageURL != null),
-      assert(imageFile != null),
-      super._();
-  
+      : assert(name != null),
+        assert(description != null),
+        assert(imageURL != null),
+        assert(imageFile != null),
+        super._();
+
   @override
   final int id;
   @override
@@ -149,21 +149,21 @@ class _$_Reward extends _Reward {
 
 abstract class _Reward extends Reward {
   const _Reward._() : super._();
-  
+
   const factory _Reward({int id, @required Name name, @required EntityDescription description, @required String imageURL, @required Option<File> imageFile}) = _$_Reward;
-  
+
   @override
   int get id;
-  
+
   @override
   Name get name;
-  
+
   @override
   EntityDescription get description;
 
   @override
   String get imageURL;
-  
+
   @override
   Option<File> get imageFile;
   @override

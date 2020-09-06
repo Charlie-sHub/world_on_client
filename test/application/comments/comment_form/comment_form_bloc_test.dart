@@ -6,6 +6,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/application/comments/comment_form/comment_form_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/comments/use_case/edit_comment.dart';
 import 'package:worldon/domain/comments/use_case/post_comment.dart';
@@ -13,7 +14,6 @@ import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 import 'package:worldon/injection.dart';
 
-import '../../../domain/core/methods/get_valid_user.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
@@ -56,7 +56,6 @@ void main() {
         expect: [
           CommentFormState.initial().copyWith(
             comment: commentToEdit,
-            experienceId: experienceId,
             isEditing: true,
           ),
         ],
@@ -122,35 +121,35 @@ void main() {
           CommentFormState.initial().copyWith(
             comment: Comment.empty().copyWith(
               poster: _validPoster,
+              experienceId: experienceId,
             ),
             failureOrSuccessOption: none(),
-            experienceId: experienceId,
           ),
           CommentFormState.initial().copyWith(
             comment: Comment.empty().copyWith(
               poster: _validPoster,
+              experienceId: experienceId,
               content: CommentContent(content),
             ),
             failureOrSuccessOption: none(),
-            experienceId: experienceId,
           ),
           CommentFormState.initial().copyWith(
             comment: Comment.empty().copyWith(
               poster: _validPoster,
+              experienceId: experienceId,
               content: CommentContent(content),
             ),
             isSubmitting: true,
             failureOrSuccessOption: none(),
-            experienceId: experienceId,
           ),
           CommentFormState.initial().copyWith(
             comment: Comment.empty().copyWith(
               poster: _validPoster,
+              experienceId: experienceId,
               content: CommentContent(content),
             ),
             showErrorMessages: true,
             failureOrSuccessOption: some(right(unit)),
-            experienceId: experienceId,
           ),
         ],
       );
@@ -180,7 +179,6 @@ void main() {
             ),
             isEditing: true,
             failureOrSuccessOption: none(),
-            experienceId: experienceId,
           ),
           CommentFormState.initial().copyWith(
             comment: commentToEdit.copyWith(
@@ -189,7 +187,6 @@ void main() {
             isSubmitting: true,
             isEditing: true,
             failureOrSuccessOption: none(),
-            experienceId: experienceId,
           ),
           CommentFormState.initial().copyWith(
             comment: commentToEdit.copyWith(
@@ -199,7 +196,6 @@ void main() {
             isEditing: true,
             showErrorMessages: true,
             failureOrSuccessOption: some(right(unit)),
-            experienceId: experienceId,
           ),
         ],
       );
@@ -231,37 +227,37 @@ void main() {
         expect: [
           CommentFormState.initial().copyWith(
             comment: Comment.empty().copyWith(
+              experienceId: experienceId,
               poster: _validPoster,
             ),
             failureOrSuccessOption: none(),
-            experienceId: experienceId,
           ),
           CommentFormState.initial().copyWith(
             comment: Comment.empty().copyWith(
+              experienceId: experienceId,
               poster: _validPoster,
               content: CommentContent(content),
             ),
             failureOrSuccessOption: none(),
-            experienceId: experienceId,
           ),
           CommentFormState.initial().copyWith(
             comment: Comment.empty().copyWith(
+              experienceId: experienceId,
               poster: _validPoster,
               content: CommentContent(content),
             ),
             isSubmitting: true,
             failureOrSuccessOption: none(),
-            experienceId: experienceId,
           ),
           CommentFormState.initial().copyWith(
             comment: Comment.empty().copyWith(
+              experienceId: experienceId,
               poster: _validPoster,
               content: CommentContent(content),
             ),
             isSubmitting: false,
             showErrorMessages: true,
             failureOrSuccessOption: some(left(failure)),
-            experienceId: experienceId,
           ),
         ],
       );
@@ -291,7 +287,6 @@ void main() {
             ),
             isEditing: true,
             failureOrSuccessOption: none(),
-            experienceId: experienceId,
           ),
           CommentFormState.initial().copyWith(
             comment: commentToEdit.copyWith(
@@ -300,7 +295,6 @@ void main() {
             isSubmitting: true,
             isEditing: true,
             failureOrSuccessOption: none(),
-            experienceId: experienceId,
           ),
           CommentFormState.initial().copyWith(
             comment: commentToEdit.copyWith(
@@ -309,7 +303,6 @@ void main() {
             isEditing: true,
             showErrorMessages: true,
             failureOrSuccessOption: some(left(failure)),
-            experienceId: experienceId,
           ),
         ],
       );
@@ -342,7 +335,6 @@ void main() {
         ),
         isEditing: true,
         failureOrSuccessOption: none(),
-        experienceId: experienceId,
       ),
       CommentFormState.initial().copyWith(
         comment: commentToEdit.copyWith(
@@ -351,7 +343,6 @@ void main() {
         isSubmitting: true,
         isEditing: true,
         failureOrSuccessOption: none(),
-        experienceId: experienceId,
       ),
       CommentFormState.initial().copyWith(
         comment: commentToEdit.copyWith(
@@ -360,7 +351,6 @@ void main() {
         isEditing: true,
         showErrorMessages: true,
         failureOrSuccessOption: some(left(failure)),
-        experienceId: experienceId,
       ),
       CommentFormState.initial().copyWith(
         comment: commentToEdit.copyWith(
@@ -368,7 +358,6 @@ void main() {
         ),
         isEditing: true,
         showErrorMessages: true,
-        experienceId: experienceId,
       ),
     ],
   );

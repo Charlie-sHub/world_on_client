@@ -24,5 +24,4 @@ abstract class Failure<T> with _$Failure<T> {
   const factory Failure.value(ValueFailure<T> valueFailure) = _Value<T>;
 
   const factory Failure.profileDomain(ProfileDomainFailure<T> profileDomainFailure) = _ProfileDomain<T>;
-// TODO: Create ProfileDataFailure
 }

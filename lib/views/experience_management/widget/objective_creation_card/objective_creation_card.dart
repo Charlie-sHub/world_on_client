@@ -123,6 +123,7 @@ class ObjectiveCreationCard extends HookWidget {
                                   ),
                                 ),
                               ),
+                              // This widget isn't constant for the same reason the map for the experience can't be constant either
                               ObjectiveCoordinatePicker(),
                             ],
                           ),

@@ -50,7 +50,6 @@ class CommentFormBloc extends Bloc<CommentFormEvent, CommentFormState> {
         final _postComment = getIt<post_comment.PostComment>();
         _failureOrUnit = await _postComment(
           post_comment.Params(
-            experienceId: state.experienceId,
             comment: state.comment,
           ),
         );
@@ -84,13 +83,12 @@ class CommentFormBloc extends Bloc<CommentFormEvent, CommentFormState> {
         return state.copyWith(
           comment: Comment.empty().copyWith(
             poster: _currentUser,
+            experienceId: event.experienceId,
           ),
-          experienceId: event.experienceId,
         );
       },
       (comment) => state.copyWith(
         comment: comment,
-        experienceId: event.experienceId,
         isEditing: true,
       ),
     );

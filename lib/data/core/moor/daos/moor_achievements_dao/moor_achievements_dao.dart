@@ -1,6 +1,5 @@
 import 'package:moor/moor.dart';
 import 'package:rxdart/rxdart.dart';
-import 'package:worldon/data/core/moor/daos/moor_tags_dao/moor_tag_with_moor_user.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
 
 import '../../tables/moor_achievements.dart';
@@ -60,14 +59,7 @@ class MoorAchievementsDao extends DatabaseAccessor<Database> with _$MoorAchievem
           ),
         )
         .first;
-    final _achievementsWithCreatorJoin = select(moorAchievements).join(
-      [
-        innerJoin(
-          moorUsers,
-          moorUsers.id.equalsExp(moorAchievements.creatorId),
-        ),
-      ],
-    )..where(moorAchievements.id.isIn(_usersAchievementsIds));
+    final _achievementsQuery = select(moorAchievements)..where((_achievements) => _achievements.id.isIn(_usersAchievementsIds));
     final _achievementsWithTagsJoin = select(achievementTags).join(
       [
         innerJoin(
@@ -76,52 +68,30 @@ class MoorAchievementsDao extends DatabaseAccessor<Database> with _$MoorAchievem
         ),
       ],
     )..where(achievementTags.achievementId.isIn(_usersAchievementsIds));
-    final _tagsWithCreatorsListStream = select(moorUsers)
-        .join(
-          [
-            innerJoin(
-              moorTags,
-              moorTags.creatorId.equalsExp(moorUsers.id),
-            ),
-          ],
-        )
-        .watch()
-        .map(
-          (_rows) => _rows
-              .map(
-                (_row) => MoorTagWithMoorUser(
-                  tag: _row.readTable(moorTags),
-                  creator: _row.readTable(moorUsers),
-                ),
-              )
-              .toList(),
-        );
+    final _tagsQueryStream = select(moorTags).watch();
     yield* Rx.combineLatest3(
-      _achievementsWithCreatorJoin.watch(),
+      _achievementsQuery.watch(),
       _achievementsWithTagsJoin.watch(),
-      _tagsWithCreatorsListStream,
+      _tagsQueryStream,
       (
-        List<TypedResult> _achievementsWithCreatorRows,
+        List<MoorAchievement> _achievements,
         List<TypedResult> _achievementsWithTagsRows,
-        List<MoorTagWithMoorUser> _moorTagsWithCreators,
+        List<MoorTag> _tags,
       ) {
-        return _achievementsWithCreatorRows.map(
-          (_achievementsWithCreatorRow) {
-            final _achievement = _achievementsWithCreatorRow.readTable(moorAchievements);
-            final _creator = _achievementsWithCreatorRow.readTable(moorUsers);
-            final _tagsWithCreators = List<MoorTagWithMoorUser>.from(_moorTagsWithCreators);
+        return _achievements.map(
+          (_achievement) {
+            final _achievementTags = List<MoorTag>.from(_tags);
             final _achievementMoorTagIdList = _achievementsWithTagsRows
                 .map(
                   (_row) => _row.readTable(moorTags).id,
                 )
                 .toList();
-            _tagsWithCreators.removeWhere(
-              (_moorTagWithUser) => !_achievementMoorTagIdList.contains(_moorTagWithUser.tag.id),
+            _achievementTags.removeWhere(
+              (_tag) => !_achievementMoorTagIdList.contains(_tag.id),
             );
             return MoorAchievementWithRelations(
               achievement: _achievement,
-              creator: _creator,
-              tags: _tagsWithCreators,
+              tags: _achievementTags,
             );
           },
         ).toList();

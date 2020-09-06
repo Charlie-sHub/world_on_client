@@ -70,16 +70,16 @@ class _$SearchTagsByNameWatcherEventCopyWithImpl<$Res> implements $SearchTagsByN
 
 abstract class _$WatchTagsFoundByNameStartedCopyWith<$Res> {
   factory _$WatchTagsFoundByNameStartedCopyWith(_WatchTagsFoundByNameStarted value, $Res Function(_WatchTagsFoundByNameStarted) then) = __$WatchTagsFoundByNameStartedCopyWithImpl<$Res>;
-  
+
   $Res call({SearchTerm searchTerm});
 }
 
 class __$WatchTagsFoundByNameStartedCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherEventCopyWithImpl<$Res> implements _$WatchTagsFoundByNameStartedCopyWith<$Res> {
   __$WatchTagsFoundByNameStartedCopyWithImpl(_WatchTagsFoundByNameStarted _value, $Res Function(_WatchTagsFoundByNameStarted) _then) : super(_value, (v) => _then(v as _WatchTagsFoundByNameStarted));
-  
+
   @override
   _WatchTagsFoundByNameStarted get _value => super._value as _WatchTagsFoundByNameStarted;
-  
+
   @override
   $Res call({
     Object searchTerm = freezed,
@@ -92,26 +92,26 @@ class __$WatchTagsFoundByNameStartedCopyWithImpl<$Res> extends _$SearchTagsByNam
 
 class _$_WatchTagsFoundByNameStarted implements _WatchTagsFoundByNameStarted {
   const _$_WatchTagsFoundByNameStarted(this.searchTerm) : assert(searchTerm != null);
-  
+
   @override
   final SearchTerm searchTerm;
-  
+
   @override
   String toString() {
     return 'SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(searchTerm: $searchTerm)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is _WatchTagsFoundByNameStarted && (identical(other.searchTerm, searchTerm) || const DeepCollectionEquality().equals(other.searchTerm, searchTerm)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(searchTerm);
-  
+
   @override
   _$WatchTagsFoundByNameStartedCopyWith<_WatchTagsFoundByNameStarted> get copyWith => __$WatchTagsFoundByNameStartedCopyWithImpl<_WatchTagsFoundByNameStarted>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -165,24 +165,24 @@ class _$_WatchTagsFoundByNameStarted implements _WatchTagsFoundByNameStarted {
 
 abstract class _WatchTagsFoundByNameStarted implements SearchTagsByNameWatcherEvent {
   const factory _WatchTagsFoundByNameStarted(SearchTerm searchTerm) = _$_WatchTagsFoundByNameStarted;
-  
+
   SearchTerm get searchTerm;
-  
+
   _$WatchTagsFoundByNameStartedCopyWith<_WatchTagsFoundByNameStarted> get copyWith;
 }
 
 abstract class _$ResultsReceivedCopyWith<$Res> {
   factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
-  
+
   $Res call({Either<Failure, KtList<Tag>> failureOrTags});
 }
 
 class __$ResultsReceivedCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherEventCopyWithImpl<$Res> implements _$ResultsReceivedCopyWith<$Res> {
   __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then) : super(_value, (v) => _then(v as _ResultsReceived));
-  
+
   @override
   _ResultsReceived get _value => super._value as _ResultsReceived;
-  
+
   @override
   $Res call({
     Object failureOrTags = freezed,
@@ -268,9 +268,9 @@ class _$_ResultsReceived implements _ResultsReceived {
 
 abstract class _ResultsReceived implements SearchTagsByNameWatcherEvent {
   const factory _ResultsReceived(Either<Failure, KtList<Tag>> failureOrTags) = _$_ResultsReceived;
-  
+
   Either<Failure, KtList<Tag>> get failureOrTags;
-  
+
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith;
 }
 
@@ -344,9 +344,9 @@ abstract class $SearchTagsByNameWatcherStateCopyWith<$Res> {
 
 class _$SearchTagsByNameWatcherStateCopyWithImpl<$Res> implements $SearchTagsByNameWatcherStateCopyWith<$Res> {
   _$SearchTagsByNameWatcherStateCopyWithImpl(this._value, this._then);
-  
+
   final SearchTagsByNameWatcherState _value;
-  
+
   // ignore: unused_field
   final $Res Function(SearchTagsByNameWatcherState) _then;
 }
@@ -357,7 +357,7 @@ abstract class _$InitialCopyWith<$Res> {
 
 class __$InitialCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
-  
+
   @override
   _Initial get _value => super._value as _Initial;
 }
@@ -451,7 +451,7 @@ abstract class _$SearchInProgressCopyWith<$Res> {
 
 class __$SearchInProgressCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherStateCopyWithImpl<$Res> implements _$SearchInProgressCopyWith<$Res> {
   __$SearchInProgressCopyWithImpl(_SearchInProgress _value, $Res Function(_SearchInProgress) _then) : super(_value, (v) => _then(v as _SearchInProgress));
-  
+
   @override
   _SearchInProgress get _value => super._value as _SearchInProgress;
 }
@@ -541,16 +541,16 @@ abstract class _SearchInProgress implements SearchTagsByNameWatcherState {
 
 abstract class _$SearchSuccessCopyWith<$Res> {
   factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) = __$SearchSuccessCopyWithImpl<$Res>;
-  
+
   $Res call({KtList<Tag> tagsFound});
 }
 
 class __$SearchSuccessCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherStateCopyWithImpl<$Res> implements _$SearchSuccessCopyWith<$Res> {
   __$SearchSuccessCopyWithImpl(_SearchSuccess _value, $Res Function(_SearchSuccess) _then) : super(_value, (v) => _then(v as _SearchSuccess));
-  
+
   @override
   _SearchSuccess get _value => super._value as _SearchSuccess;
-  
+
   @override
   $Res call({
     Object tagsFound = freezed,
@@ -655,18 +655,18 @@ abstract class _SearchSuccess implements SearchTagsByNameWatcherState {
 
 abstract class _$SearchFailureCopyWith<$Res> {
   factory _$SearchFailureCopyWith(_SearchFailure value, $Res Function(_SearchFailure) then) = __$SearchFailureCopyWithImpl<$Res>;
-  
+
   $Res call({Failure<dynamic> failure});
-  
+
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 class __$SearchFailureCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherStateCopyWithImpl<$Res> implements _$SearchFailureCopyWith<$Res> {
   __$SearchFailureCopyWithImpl(_SearchFailure _value, $Res Function(_SearchFailure) _then) : super(_value, (v) => _then(v as _SearchFailure));
-  
+
   @override
   _SearchFailure get _value => super._value as _SearchFailure;
-  
+
   @override
   $Res call({
     Object failure = freezed,

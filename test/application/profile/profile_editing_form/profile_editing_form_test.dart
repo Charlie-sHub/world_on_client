@@ -9,7 +9,8 @@ import 'package:worldon/application/profile/profile_editing_form/profile_editing
 import 'package:worldon/core/assets.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/domain/core/entities/tag/tag.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_tag.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
@@ -19,7 +20,6 @@ import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/profile/use_case/edit_user.dart';
 import 'package:worldon/injection.dart';
 
-import '../../../domain/core/methods/get_valid_user.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
@@ -30,25 +30,23 @@ void main() {
       editUser = getIt<EditUser>();
     },
   );
+  final user = getValidUser();
   const name = "Test";
   const nameChange = "testing";
   const username = "test";
-  const originalPassword = "abcd*1234";
+  final originalPassword = user.password.getOrCrash();
   const passwordChange = "4321*dcba";
   const passwordConfirmation = "test*1234";
   const emailAddress = "testing@test.test";
   final birthday = DateTime.now().subtract(const Duration(days: 100000));
   const description = "For testing";
+  final validTag = getValidTag();
   final interests = {
-    Tag.empty().copyWith(
-      id: 1,
-      name: Name("Test"),
-      creator: getValidUser(),
-    ),
+    validTag,
+    validTag.copyWith(id: 2),
   };
   final interestIds = interests.map((_tag) => _tag.id).toSet();
   final imageFile = File(Assets.userPlaceholder);
-  final user = getValidUser();
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
@@ -63,10 +61,10 @@ void main() {
       ProfileEditingFormState.initial().copyWith(
         user: user,
         passwordConfirmator: PasswordConfirmator(
-          password: originalPassword,
-          confirmation: originalPassword,
+          password: user.password.getOrCrash(),
+          confirmation: user.password.getOrCrash(),
         ),
-        passwordToCompare: originalPassword,
+        passwordToCompare: user.password.getOrCrash(),
       ),
     ],
   );
@@ -335,7 +333,7 @@ void main() {
       bloc.add(ProfileEditingFormEvent.initialized(user));
       bloc.add(const ProfileEditingFormEvent.nameChanged(nameChange));
       bloc.add(const ProfileEditingFormEvent.usernameChanged(username));
-      bloc.add(const ProfileEditingFormEvent.passwordChanged(originalPassword));
+      bloc.add(ProfileEditingFormEvent.passwordChanged(originalPassword));
       bloc.add(const ProfileEditingFormEvent.emailAddressChanged(emailAddress));
       bloc.add(ProfileEditingFormEvent.birthdayChanged(birthday));
       bloc.add(const ProfileEditingFormEvent.descriptionChanged(description));
@@ -346,9 +344,7 @@ void main() {
     verify: (_) async => verify(editUser.call(any)),
     expect: [
       ProfileEditingFormState.initial().copyWith(
-        user: user.copyWith(
-          name: Name(name),
-        ),
+        user: user,
         passwordConfirmator: PasswordConfirmator(
           password: originalPassword,
           confirmation: originalPassword,
@@ -504,7 +500,7 @@ void main() {
           bloc.add(ProfileEditingFormEvent.initialized(user));
           bloc.add(const ProfileEditingFormEvent.nameChanged(nameChange));
           bloc.add(const ProfileEditingFormEvent.usernameChanged(username));
-          bloc.add(const ProfileEditingFormEvent.passwordChanged(originalPassword));
+          bloc.add(ProfileEditingFormEvent.passwordChanged(originalPassword));
           bloc.add(const ProfileEditingFormEvent.emailAddressChanged(emailAddress));
           bloc.add(ProfileEditingFormEvent.birthdayChanged(birthday));
           bloc.add(const ProfileEditingFormEvent.descriptionChanged(description));
@@ -515,9 +511,7 @@ void main() {
         verify: (_) async => verify(editUser.call(any)),
         expect: [
           ProfileEditingFormState.initial().copyWith(
-            user: user.copyWith(
-              name: Name(name),
-            ),
+            user: user,
             passwordConfirmator: PasswordConfirmator(
               password: originalPassword,
               confirmation: originalPassword,
@@ -670,7 +664,7 @@ void main() {
           bloc.add(ProfileEditingFormEvent.initialized(user));
           bloc.add(const ProfileEditingFormEvent.nameChanged(nameChange));
           bloc.add(const ProfileEditingFormEvent.usernameChanged(username));
-          bloc.add(const ProfileEditingFormEvent.passwordChanged(originalPassword));
+          bloc.add(ProfileEditingFormEvent.passwordChanged(originalPassword));
           bloc.add(const ProfileEditingFormEvent.emailAddressChanged(emailAddress));
           bloc.add(ProfileEditingFormEvent.birthdayChanged(birthday));
           bloc.add(const ProfileEditingFormEvent.descriptionChanged(description));
@@ -682,9 +676,7 @@ void main() {
         verify: (_) async => verify(editUser.call(any)),
         expect: [
           ProfileEditingFormState.initial().copyWith(
-            user: user.copyWith(
-              name: Name(name),
-            ),
+            user: user,
             passwordConfirmator: PasswordConfirmator(
               password: originalPassword,
               confirmation: originalPassword,

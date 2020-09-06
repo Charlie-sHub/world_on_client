@@ -31,23 +31,21 @@ abstract class Achievement implements _$Achievement {
     @required String type,
     @required int requisite, // This will probably be reworked in the future to accommodate different kinds of achievements
     @required ExperiencePoints experiencePoints,
-    // TODO: Maybe just have the id
-    // Same with all the other relationships between entities
-    @required User creator,
+    @required int creatorId,
     @required PastDate creationDate,
     @required PastDate modificationDate,
     @required TagSet tags,
   }) = _Achievement;
 
   factory Achievement.empty() => Achievement(
-        name: Name(""),
+    name: Name(""),
         description: EntityDescription(""),
         imageURL: "",
         imageFile: none(),
         type: "",
         requisite: 1,
         experiencePoints: ExperiencePoints(1),
-        creator: User.empty(),
+        creatorId: 0,
         creationDate: PastDate(DateTime.now()),
         modificationDate: PastDate(DateTime.now()),
         tags: TagSet(KtSet.empty()),
@@ -57,7 +55,6 @@ abstract class Achievement implements _$Achievement {
     return name.failureOrUnit
         .andThen(description.failureOrUnit)
         .andThen(experiencePoints.failureOrUnit)
-        .andThen(creator.failureOrUnit)
         .andThen(creationDate.failureOrUnit)
         .andThen(modificationDate.failureOrUnit)
         .andThen(tags.failureOrUnit)

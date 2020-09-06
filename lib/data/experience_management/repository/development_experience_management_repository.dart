@@ -66,13 +66,16 @@ class DevelopmentExperienceManagementRepository implements ExperienceManagementR
     experience.imageAssetsOption.fold(
       // This should never happen
       // If it does an exception should be thrown or something
-      () => _logger.i("The experience ${experience.title} imageAssetOption field is none()"),
+      () => _logger.e("The experience ${experience.title} imageAssetOption field is none()"),
       (imageAssetList) async {
         for (final _imageAsset in imageAssetList) {
           final _experienceImage = ExperienceImageUrlsCompanion.insert(
             experienceId: _experienceId,
-            // TODO: Figure out a way to select multiple file images
+            // TODO: Figure out a way to save multiple file images
             // just saving the name is useless for this
+            // could save the byte data but then would have to figure out a way to use it when retrieving an experience
+            // how to convert those bytes to an io File or an Asset?
+            // haven't found a way
             imageUrl: _imageAsset.name,
           );
           await _database.moorExperiencesDao.insertExperienceImage(_experienceImage);

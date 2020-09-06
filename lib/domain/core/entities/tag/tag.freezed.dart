@@ -13,11 +13,11 @@ class _$TagTearOff {
   const _$TagTearOff();
 
 // ignore: unused_element
-  _Tag call({int id, @required Name name, @required User creator, @required PastDate creationDate, @required PastDate modificationDate}) {
+  _Tag call({int id, @required Name name, @required int creatorId, @required PastDate creationDate, @required PastDate modificationDate}) {
     return _Tag(
       id: id,
       name: name,
-      creator: creator,
+      creatorId: creatorId,
       creationDate: creationDate,
       modificationDate: modificationDate,
     );
@@ -29,9 +29,13 @@ const $Tag = _$TagTearOff();
 
 mixin _$Tag {
   int get id;
+
   Name get name;
-  User get creator;
+
+  int get creatorId;
+
   PastDate get creationDate;
+
   PastDate get modificationDate;
 
   $TagCopyWith<Tag> get copyWith;
@@ -40,9 +44,7 @@ mixin _$Tag {
 abstract class $TagCopyWith<$Res> {
   factory $TagCopyWith(Tag value, $Res Function(Tag) then) = _$TagCopyWithImpl<$Res>;
 
-  $Res call({int id, Name name, User creator, PastDate creationDate, PastDate modificationDate});
-
-  $UserCopyWith<$Res> get creator;
+  $Res call({int id, Name name, int creatorId, PastDate creationDate, PastDate modificationDate});
 }
 
 class _$TagCopyWithImpl<$Res> implements $TagCopyWith<$Res> {
@@ -56,58 +58,45 @@ class _$TagCopyWithImpl<$Res> implements $TagCopyWith<$Res> {
   $Res call({
     Object id = freezed,
     Object name = freezed,
-    Object creator = freezed,
+    Object creatorId = freezed,
     Object creationDate = freezed,
     Object modificationDate = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as int,
       name: name == freezed ? _value.name : name as Name,
-      creator: creator == freezed ? _value.creator : creator as User,
+      creatorId: creatorId == freezed ? _value.creatorId : creatorId as int,
       creationDate: creationDate == freezed ? _value.creationDate : creationDate as PastDate,
       modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as PastDate,
     ));
-  }
-
-  @override
-  $UserCopyWith<$Res> get creator {
-    if (_value.creator == null) {
-      return null;
-    }
-    return $UserCopyWith<$Res>(_value.creator, (value) {
-      return _then(_value.copyWith(creator: value));
-    });
   }
 }
 
 abstract class _$TagCopyWith<$Res> implements $TagCopyWith<$Res> {
   factory _$TagCopyWith(_Tag value, $Res Function(_Tag) then) = __$TagCopyWithImpl<$Res>;
-  
+
   @override
-  $Res call({int id, Name name, User creator, PastDate creationDate, PastDate modificationDate});
-  
-  @override
-  $UserCopyWith<$Res> get creator;
+  $Res call({int id, Name name, int creatorId, PastDate creationDate, PastDate modificationDate});
 }
 
 class __$TagCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res> implements _$TagCopyWith<$Res> {
   __$TagCopyWithImpl(_Tag _value, $Res Function(_Tag) _then) : super(_value, (v) => _then(v as _Tag));
-  
+
   @override
   _Tag get _value => super._value as _Tag;
-  
+
   @override
   $Res call({
     Object id = freezed,
     Object name = freezed,
-    Object creator = freezed,
+    Object creatorId = freezed,
     Object creationDate = freezed,
     Object modificationDate = freezed,
   }) {
     return _then(_Tag(
       id: id == freezed ? _value.id : id as int,
       name: name == freezed ? _value.name : name as Name,
-      creator: creator == freezed ? _value.creator : creator as User,
+      creatorId: creatorId == freezed ? _value.creatorId : creatorId as int,
       creationDate: creationDate == freezed ? _value.creationDate : creationDate as PastDate,
       modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as PastDate,
     ));
@@ -115,9 +104,9 @@ class __$TagCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res> implements _$TagC
 }
 
 class _$_Tag extends _Tag {
-  const _$_Tag({this.id, @required this.name, @required this.creator, @required this.creationDate, @required this.modificationDate})
+  const _$_Tag({this.id, @required this.name, @required this.creatorId, @required this.creationDate, @required this.modificationDate})
     : assert(name != null),
-      assert(creator != null),
+      assert(creatorId != null),
       assert(creationDate != null),
       assert(modificationDate != null),
       super._();
@@ -127,15 +116,15 @@ class _$_Tag extends _Tag {
   @override
   final Name name;
   @override
-  final User creator;
+  final int creatorId;
   @override
   final PastDate creationDate;
   @override
   final PastDate modificationDate;
-
+  
   @override
   String toString() {
-    return 'Tag(id: $id, name: $name, creator: $creator, creationDate: $creationDate, modificationDate: $modificationDate)';
+    return 'Tag(id: $id, name: $name, creatorId: $creatorId, creationDate: $creationDate, modificationDate: $modificationDate)';
   }
 
   @override
@@ -144,18 +133,18 @@ class _$_Tag extends _Tag {
       (other is _Tag &&
         (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
         (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-        (identical(other.creator, creator) || const DeepCollectionEquality().equals(other.creator, creator)) &&
+        (identical(other.creatorId, creatorId) || const DeepCollectionEquality().equals(other.creatorId, creatorId)) &&
         (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
         (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(creator) ^
-      const DeepCollectionEquality().hash(creationDate) ^
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(id) ^
+    const DeepCollectionEquality().hash(name) ^
+    const DeepCollectionEquality().hash(creatorId) ^
+    const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(modificationDate);
   
   @override
@@ -165,7 +154,7 @@ class _$_Tag extends _Tag {
 abstract class _Tag extends Tag {
   const _Tag._() : super._();
   
-  const factory _Tag({int id, @required Name name, @required User creator, @required PastDate creationDate, @required PastDate modificationDate}) = _$_Tag;
+  const factory _Tag({int id, @required Name name, @required int creatorId, @required PastDate creationDate, @required PastDate modificationDate}) = _$_Tag;
   
   @override
   int get id;
@@ -174,7 +163,7 @@ abstract class _Tag extends Tag {
   Name get name;
   
   @override
-  User get creator;
+  int get creatorId;
 
   @override
   PastDate get creationDate;

@@ -13,7 +13,6 @@ import 'package:worldon/data/core/moor/converters/domain_tag_to_moor_tag.dart';
 import 'package:worldon/data/core/moor/converters/domain_user_to_moor_user_companion.dart';
 import 'package:worldon/data/core/moor/converters/moor_experience_to_domain_experience.dart';
 import 'package:worldon/data/core/moor/daos/moor_experiences_dao/moor_experience_with_relations.dart';
-import 'package:worldon/data/core/moor/daos/moor_tags_dao/moor_tag_with_moor_user.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
@@ -334,7 +333,7 @@ void main() {
           await _database.moorUsersDao.followUser(_followRelation);
           final _experienceCompanionList = _createExperienceList(_moorUserRickyId, _difficulty);
           final _tagCompanionList = _createTagList(_moorUserCharlieId);
-          final _tagWithUserList = <MoorTagWithMoorUser>[];
+          final _tagWithUserList = <MoorTag>[];
           final _experienceList = <Experience>[];
           // Act
           await _insertTagList(_tagCompanionList, _database, _tagWithUserList);
@@ -363,7 +362,7 @@ void main() {
           final _moorUserRickyId = await _database.moorUsersDao.insertUser(_moorUserRicky);
           final _experienceCompanionList = _createExperienceList(_moorUserRickyId, _difficulty);
           final _tagCompanionList = _createTagList(_moorUserRickyId);
-          final _tagWithUserList = <MoorTagWithMoorUser>[];
+          final _tagWithUserList = <MoorTag>[];
           final _experienceList = <Experience>[];
           // Act
           await _insertTagList(_tagCompanionList, _database, _tagWithUserList);
@@ -393,7 +392,7 @@ void main() {
           final _moorUserRickyId = await _database.moorUsersDao.insertUser(_moorUserRicky);
           final _experienceCompanionList = _createExperienceList(_moorUserRickyId, _difficulty);
           final _tagCompanionList = _createTagList(_moorUserRickyId);
-          final _tagWithUserList = <MoorTagWithMoorUser>[];
+          final _tagWithUserList = <MoorTag>[];
           final _experienceList = <Experience>[];
           // Act
           await _insertTagList(_tagCompanionList, _database, _tagWithUserList);
@@ -423,7 +422,7 @@ void main() {
           final _moorUserRickyId = await _database.moorUsersDao.insertUser(_moorUserRicky);
           final _experienceCompanionList = _createExperienceList(_moorUserRickyId, _difficulty);
           final _tagCompanionList = _createTagList(_moorUserRickyId);
-          final _tagWithUserList = <MoorTagWithMoorUser>[];
+          final _tagWithUserList = <MoorTag>[];
           final _experienceList = <Experience>[];
           // Act
           final _tagIdList = await _insertTagList(_tagCompanionList, _database, _tagWithUserList);
@@ -437,7 +436,7 @@ void main() {
               _objective,
               _reward,
             );
-            final _tagsInExperienceIds = _experienceWithRelations.tags.map((_tagWithUser) => _tagWithUser.tag.id).toList();
+            final _tagsInExperienceIds = _experienceWithRelations.tags.map((_tag) => _tag.id).toList();
             if (_tagsInExperienceIds.contains(_tagId)) {
               _experienceList.add(moorExperienceToDomainExperience(_experienceWithRelations));
             }
@@ -455,7 +454,7 @@ void main() {
           final _moorUserRickyId = await _database.moorUsersDao.insertUser(_moorUserRicky);
           final _experienceCompanionList = _createExperienceList(_moorUserRickyId, _difficulty);
           final _tagCompanionList = _createTagList(_moorUserRickyId);
-          final _tagWithUserList = <MoorTagWithMoorUser>[];
+          final _tagWithUserList = <MoorTag>[];
           final _experienceList = <Experience>[];
           // Act
           await _insertTagList(_tagCompanionList, _database, _tagWithUserList);
@@ -485,7 +484,7 @@ void main() {
           final _moorUserRickyId = await _database.moorUsersDao.insertUser(_moorUserRicky);
           final _experienceCompanionList = _createExperienceList(_moorUserRickyId, _difficulty);
           final _tagCompanionList = _createTagList(_moorUserRickyId);
-          final _tagWithUserList = <MoorTagWithMoorUser>[];
+          final _tagWithUserList = <MoorTag>[];
           final _experienceList = <Experience>[];
           // Act
           await _insertTagList(_tagCompanionList, _database, _tagWithUserList);
@@ -520,7 +519,7 @@ void main() {
           final _moorUserRickyId = await _database.moorUsersDao.insertUser(_moorUserRicky);
           final _experienceCompanionList = _createExperienceList(_moorUserRickyId, _difficulty);
           final _tagCompanionList = _createTagList(_moorUserRickyId);
-          final _tagWithUserList = <MoorTagWithMoorUser>[];
+          final _tagWithUserList = <MoorTag>[];
           final _experienceList = <Experience>[];
           // Act
           await _insertTagList(_tagCompanionList, _database, _tagWithUserList);
@@ -551,19 +550,13 @@ void main() {
   );
 }
 
-Future<List<int>> _insertTagList(List<MoorTagsCompanion> _tagCompanionList, Database _database, List<MoorTagWithMoorUser> _tagWithUserList) async {
+Future<List<int>> _insertTagList(List<MoorTagsCompanion> _tagCompanionList, Database _database, List<MoorTag> _tagList) async {
   final _tagIds = <int>[];
   for (final _tag in _tagCompanionList) {
     final _tagId = await _database.moorTagsDao.insertTag(_tag);
     _tagIds.add(_tagId);
     final _moorTag = await _database.moorTagsDao.getTagById(_tagId);
-    final _moorUser = await _database.moorUsersDao.getUserById(_moorTag.creatorId);
-    _tagWithUserList.add(
-      MoorTagWithMoorUser(
-        tag: _moorTag,
-        creator: _moorUser,
-      ),
-    );
+    _tagList.add(_moorTag);
   }
   return _tagIds;
 }
@@ -572,17 +565,17 @@ Future<MoorExperienceWithRelations> _insertExperienceAndRelations(
   Database _database,
   MoorExperiencesCompanion _experienceCompanion,
   int _moorUserRickyId,
-  List<MoorTagWithMoorUser> _tagWithUserList,
+  List<MoorTag> _tagList,
   Objective _objective,
   Reward _reward,
 ) async {
   final _insertedExperienceId = await _database.moorExperiencesDao.insertExperience(_experienceCompanion);
   final _moorExperience = await _database.moorExperiencesDao.getExperienceById(_insertedExperienceId);
   final _moorUser = await _database.moorUsersDao.getUserById(_moorUserRickyId);
-  for (final _tagWithUser in _tagWithUserList) {
+  for (final _tag in _tagList) {
     final _experienceTag = ExperienceTagsCompanion.insert(
       experienceId: _insertedExperienceId,
-      tagId: _tagWithUser.tag.id,
+      tagId: _tag.id,
     );
     await _database.moorTagsDao.insertExperienceTag(_experienceTag);
   }
@@ -611,7 +604,7 @@ Future<MoorExperienceWithRelations> _insertExperienceAndRelations(
     imageUrls: _experienceImageUrlList.map((experienceImageUrl) => experienceImageUrl.imageUrl.value).toList(),
     objectives: [_moorObjective],
     rewards: [_moorReward],
-    tags: _tagWithUserList,
+    tags: _tagList,
   );
   return _moorExperienceWithRelations;
 }

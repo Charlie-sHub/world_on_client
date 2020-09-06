@@ -1,5 +1,4 @@
 import 'package:moor/moor.dart';
-import 'package:worldon/data/core/moor/daos/moor_tags_dao/moor_tag_with_moor_user.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
 
 import '../../tables/moor_achievements.dart';
@@ -60,12 +59,12 @@ class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
     return _contentQuery.getSingle();
   }
 
-  Stream<List<MoorTagWithMoorUser>> watchSearchTagsByName(String name) async* {
-    final _whereExpression = moorTags.name.contains(name);
-    yield* _createMoorTagWithMoorUserListStream(_whereExpression);
+  Stream<List<MoorTag>> watchSearchTagsByName(String name) async* {
+    final _tagsQuery = select(moorTags)..where((_moorTags) => _moorTags.name.contains(name));
+    yield* _tagsQuery.watch();
   }
 
-  Stream<List<MoorTagWithMoorUser>> watchUserInterests(int userId) async* {
+  Stream<List<MoorTag>> watchUserInterests(int userId) async* {
     final _userInterestsQuery = select(userInterests).join(
       [
         innerJoin(
@@ -84,28 +83,7 @@ class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
               .toList(),
         )
         .first;
-    final _whereExpression = moorTags.id.isIn(_tagsIds);
-    yield* _createMoorTagWithMoorUserListStream(_whereExpression);
-  }
-
-  Stream<List<MoorTagWithMoorUser>> _createMoorTagWithMoorUserListStream(Expression<bool> _whereExpression) {
-    final _tagWithCreatorQuery = select(moorUsers).join(
-      [
-        innerJoin(
-          moorTags,
-          moorTags.creatorId.equalsExp(moorUsers.id),
-        ),
-      ],
-    )..where(_whereExpression);
-    return _tagWithCreatorQuery.watch().map(
-          (_rows) => _rows
-              .map(
-                (_row) => MoorTagWithMoorUser(
-                  tag: _row.readTable(moorTags),
-                  creator: _row.readTable(moorUsers),
-                ),
-              )
-              .toList(),
-        );
+    final _tagsQuery = select(moorTags)..where((_moorTags) => _moorTags.id.isIn(_tagsIds));
+    yield* _tagsQuery.watch();
   }
 }

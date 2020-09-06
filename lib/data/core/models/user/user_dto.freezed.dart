@@ -258,10 +258,10 @@ abstract class _$UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
 
 class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res> implements _$UserDtoCopyWith<$Res> {
   __$UserDtoCopyWithImpl(_UserDto _value, $Res Function(_UserDto) _then) : super(_value, (v) => _then(v as _UserDto));
-  
+
   @override
   _UserDto get _value => super._value as _UserDto;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -349,35 +349,35 @@ class _$_UserDto extends _UserDto {
       @required this.experiencesDoneIds,
       @required this.experiencesLikedIds,
       @required this.experiencesToDoIds,
-        @required this.devices,
-        @required this.systems})
-    : assert(id != null),
-      assert(name != null),
-      assert(username != null),
-      assert(password != null),
-      assert(email != null),
-      assert(birthday != null),
-      assert(description != null),
-      assert(imageURL != null),
-      assert(level != null),
-      assert(experiencePoints != null),
-      assert(privacy != null),
-      assert(adminPowers != null),
-      assert(enabled != null),
-      assert(lastLogin != null),
-      assert(creationDate != null),
-      assert(modificationDate != null),
-      assert(options != null),
-      assert(blockedUsersIds != null),
-      assert(followedUsersIds != null),
-      assert(interestsIds != null),
-      assert(achievementsIds != null),
-      assert(experiencesDoneIds != null),
-      assert(experiencesLikedIds != null),
-      assert(experiencesToDoIds != null),
-      assert(devices != null),
-      assert(systems != null),
-      super._();
+      @required this.devices,
+      @required this.systems})
+      : assert(id != null),
+        assert(name != null),
+        assert(username != null),
+        assert(password != null),
+        assert(email != null),
+        assert(birthday != null),
+        assert(description != null),
+        assert(imageURL != null),
+        assert(level != null),
+        assert(experiencePoints != null),
+        assert(privacy != null),
+        assert(adminPowers != null),
+        assert(enabled != null),
+        assert(lastLogin != null),
+        assert(creationDate != null),
+        assert(modificationDate != null),
+        assert(options != null),
+        assert(blockedUsersIds != null),
+        assert(followedUsersIds != null),
+        assert(interestsIds != null),
+        assert(achievementsIds != null),
+        assert(experiencesDoneIds != null),
+        assert(experiencesLikedIds != null),
+        assert(experiencesToDoIds != null),
+        assert(devices != null),
+        assert(systems != null),
+        super._();
 
   factory _$_UserDto.fromJson(Map<String, dynamic> json) => _$_$_UserDtoFromJson(json);
 

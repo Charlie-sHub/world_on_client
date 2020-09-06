@@ -439,14 +439,12 @@ class _$CommentFormStateTearOff {
 // ignore: unused_element
   _CommentFormState call(
       {@required Comment comment,
-      @required int experienceId,
       @required bool showErrorMessages,
       @required bool isEditing,
       @required bool isSubmitting,
       @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _CommentFormState(
       comment: comment,
-      experienceId: experienceId,
       showErrorMessages: showErrorMessages,
       isEditing: isEditing,
       isSubmitting: isSubmitting,
@@ -460,7 +458,6 @@ const $CommentFormState = _$CommentFormStateTearOff();
 
 mixin _$CommentFormState {
   Comment get comment;
-  int get experienceId;
   bool get showErrorMessages;
   bool get isEditing;
   bool get isSubmitting;
@@ -475,7 +472,6 @@ abstract class $CommentFormStateCopyWith<$Res> {
       _$CommentFormStateCopyWithImpl<$Res>;
   $Res call(
       {Comment comment,
-      int experienceId,
       bool showErrorMessages,
       bool isEditing,
       bool isSubmitting,
@@ -495,7 +491,6 @@ class _$CommentFormStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object comment = freezed,
-    Object experienceId = freezed,
     Object showErrorMessages = freezed,
     Object isEditing = freezed,
     Object isSubmitting = freezed,
@@ -503,8 +498,6 @@ class _$CommentFormStateCopyWithImpl<$Res>
   }) {
     return _then(_value.copyWith(
       comment: comment == freezed ? _value.comment : comment as Comment,
-      experienceId:
-          experienceId == freezed ? _value.experienceId : experienceId as int,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
@@ -536,7 +529,6 @@ abstract class _$CommentFormStateCopyWith<$Res>
   @override
   $Res call(
       {Comment comment,
-      int experienceId,
       bool showErrorMessages,
       bool isEditing,
       bool isSubmitting,
@@ -559,7 +551,6 @@ class __$CommentFormStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object comment = freezed,
-    Object experienceId = freezed,
     Object showErrorMessages = freezed,
     Object isEditing = freezed,
     Object isSubmitting = freezed,
@@ -567,8 +558,6 @@ class __$CommentFormStateCopyWithImpl<$Res>
   }) {
     return _then(_CommentFormState(
       comment: comment == freezed ? _value.comment : comment as Comment,
-      experienceId:
-          experienceId == freezed ? _value.experienceId : experienceId as int,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
@@ -585,13 +574,11 @@ class __$CommentFormStateCopyWithImpl<$Res>
 class _$_CommentFormState implements _CommentFormState {
   const _$_CommentFormState(
       {@required this.comment,
-      @required this.experienceId,
       @required this.showErrorMessages,
       @required this.isEditing,
       @required this.isSubmitting,
       @required this.failureOrSuccessOption})
       : assert(comment != null),
-        assert(experienceId != null),
         assert(showErrorMessages != null),
         assert(isEditing != null),
         assert(isSubmitting != null),
@@ -599,8 +586,6 @@ class _$_CommentFormState implements _CommentFormState {
 
   @override
   final Comment comment;
-  @override
-  final int experienceId;
   @override
   final bool showErrorMessages;
   @override
@@ -612,7 +597,7 @@ class _$_CommentFormState implements _CommentFormState {
 
   @override
   String toString() {
-    return 'CommentFormState(comment: $comment, experienceId: $experienceId, showErrorMessages: $showErrorMessages, isEditing: $isEditing, isSubmitting: $isSubmitting, failureOrSuccessOption: $failureOrSuccessOption)';
+    return 'CommentFormState(comment: $comment, showErrorMessages: $showErrorMessages, isEditing: $isEditing, isSubmitting: $isSubmitting, failureOrSuccessOption: $failureOrSuccessOption)';
   }
 
   @override
@@ -622,9 +607,6 @@ class _$_CommentFormState implements _CommentFormState {
             (identical(other.comment, comment) ||
                 const DeepCollectionEquality()
                     .equals(other.comment, comment)) &&
-            (identical(other.experienceId, experienceId) ||
-                const DeepCollectionEquality()
-                    .equals(other.experienceId, experienceId)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
                 const DeepCollectionEquality()
                     .equals(other.showErrorMessages, showErrorMessages)) &&
@@ -643,7 +625,6 @@ class _$_CommentFormState implements _CommentFormState {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(comment) ^
-      const DeepCollectionEquality().hash(experienceId) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isEditing) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
@@ -657,7 +638,6 @@ class _$_CommentFormState implements _CommentFormState {
 abstract class _CommentFormState implements CommentFormState {
   const factory _CommentFormState(
           {@required Comment comment,
-          @required int experienceId,
           @required bool showErrorMessages,
           @required bool isEditing,
           @required bool isSubmitting,
@@ -666,8 +646,6 @@ abstract class _CommentFormState implements CommentFormState {
 
   @override
   Comment get comment;
-  @override
-  int get experienceId;
   @override
   bool get showErrorMessages;
   @override

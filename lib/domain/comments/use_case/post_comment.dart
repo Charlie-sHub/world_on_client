@@ -14,19 +14,14 @@ class PostComment implements AsyncUseCase<Unit, Params> {
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.postComment(
-      comment: params.comment,
-      experienceId: params.experienceId,
-    );
+    return _repository.postComment(params.comment);
   }
 }
 
 class Params {
-  final int experienceId;
   final Comment comment;
 
   Params({
-    @required this.experienceId,
     @required this.comment,
   });
 }

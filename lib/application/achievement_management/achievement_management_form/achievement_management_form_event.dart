@@ -12,6 +12,7 @@ abstract class AchievementManagementFormEvent with _$AchievementManagementFormEv
 
   const factory AchievementManagementFormEvent.tagsChanged(KtSet<Tag> tags) = _TagsChanged;
 
+  const factory AchievementManagementFormEvent.imageChanged(File image) = _ImageChanged;
+
   const factory AchievementManagementFormEvent.submitted() = _Submitted;
-// TODO: Add imageChange event to this and all the other blocs that require it
 }

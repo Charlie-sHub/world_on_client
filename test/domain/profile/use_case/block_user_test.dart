@@ -4,6 +4,7 @@ import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/profile/failures/profile_domain_failure.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
@@ -11,7 +12,6 @@ import 'package:worldon/domain/profile/use_case/block_user.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../test_descriptions.dart';
-import '../../core/methods/get_valid_user.dart';
 
 void main() {
   ProfileRepositoryInterface mockProfileRepository;

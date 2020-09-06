@@ -4,11 +4,11 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
 import 'package:mockito/mockito.dart';
 import 'package:worldon/application/profile/profile_watcher/profile_watcher_bloc.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/use_case/is_logged_in_user.dart';
 import 'package:worldon/injection.dart';
 
-import '../../../domain/core/methods/get_valid_user.dart';
 import '../../../test_descriptions.dart';
 
 void main() {

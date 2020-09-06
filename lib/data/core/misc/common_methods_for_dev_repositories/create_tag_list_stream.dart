@@ -5,16 +5,16 @@ import 'package:rxdart/rxdart.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/moor/converters/moor_tag_to_domain_tag.dart';
-import 'package:worldon/data/core/moor/daos/moor_tags_dao/moor_tag_with_moor_user.dart';
+import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 
-Stream<Either<Failure, KtList<Tag>>> createTagListStream(Stream<List<MoorTagWithMoorUser>> _stream, Logger logger) => _stream.map(
+Stream<Either<Failure, KtList<Tag>>> createTagListStream(Stream<List<MoorTag>> _stream, Logger logger) => _stream.map(
       (_moorTagList) {
         if (_moorTagList != null && _moorTagList.isNotEmpty) {
           return right<Failure, KtList<Tag>>(
             _moorTagList
                 .map(
-                  (_moorTagWithCreator) => moorTagToDomainTag(_moorTagWithCreator),
+                  (_moorTag) => moorTagToDomainTag(_moorTag),
                 )
                 .toImmutableList()
                 .sortedBy(

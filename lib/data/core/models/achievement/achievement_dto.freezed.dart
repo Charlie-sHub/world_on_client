@@ -24,7 +24,7 @@ class _$AchievementDtoTearOff {
       @required String type,
       @required int requisite,
       @required int experiencePoints,
-      @required UserDto creator,
+      @required int creatorId,
       @required String creationDate,
       @required String modificationDate,
       @required Set<TagDto> tags}) {
@@ -36,7 +36,7 @@ class _$AchievementDtoTearOff {
       type: type,
       requisite: requisite,
       experiencePoints: experiencePoints,
-      creator: creator,
+      creatorId: creatorId,
       creationDate: creationDate,
       modificationDate: modificationDate,
       tags: tags,
@@ -49,18 +49,29 @@ const $AchievementDto = _$AchievementDtoTearOff();
 
 mixin _$AchievementDto {
   int get id;
+
   String get name;
+
   String get description;
+
   String get imageURL;
+
   String get type;
+
   int get requisite;
+
   int get experiencePoints;
-  UserDto get creator;
+
+  int get creatorId;
+
   String get creationDate;
+
   String get modificationDate;
+
   Set<TagDto> get tags;
 
   Map<String, dynamic> toJson();
+
   $AchievementDtoCopyWith<AchievementDto> get copyWith;
 }
 
@@ -68,9 +79,7 @@ abstract class $AchievementDtoCopyWith<$Res> {
   factory $AchievementDtoCopyWith(AchievementDto value, $Res Function(AchievementDto) then) = _$AchievementDtoCopyWithImpl<$Res>;
 
   $Res call(
-      {int id, String name, String description, String imageURL, String type, int requisite, int experiencePoints, UserDto creator, String creationDate, String modificationDate, Set<TagDto> tags});
-
-  $UserDtoCopyWith<$Res> get creator;
+    {int id, String name, String description, String imageURL, String type, int requisite, int experiencePoints, int creatorId, String creationDate, String modificationDate, Set<TagDto> tags});
 }
 
 class _$AchievementDtoCopyWithImpl<$Res> implements $AchievementDtoCopyWith<$Res> {
@@ -90,7 +99,7 @@ class _$AchievementDtoCopyWithImpl<$Res> implements $AchievementDtoCopyWith<$Res
     Object type = freezed,
     Object requisite = freezed,
     Object experiencePoints = freezed,
-    Object creator = freezed,
+    Object creatorId = freezed,
     Object creationDate = freezed,
     Object modificationDate = freezed,
     Object tags = freezed,
@@ -103,41 +112,28 @@ class _$AchievementDtoCopyWithImpl<$Res> implements $AchievementDtoCopyWith<$Res
       type: type == freezed ? _value.type : type as String,
       requisite: requisite == freezed ? _value.requisite : requisite as int,
       experiencePoints: experiencePoints == freezed ? _value.experiencePoints : experiencePoints as int,
-      creator: creator == freezed ? _value.creator : creator as UserDto,
+      creatorId: creatorId == freezed ? _value.creatorId : creatorId as int,
       creationDate: creationDate == freezed ? _value.creationDate : creationDate as String,
       modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as String,
       tags: tags == freezed ? _value.tags : tags as Set<TagDto>,
     ));
   }
-
-  @override
-  $UserDtoCopyWith<$Res> get creator {
-    if (_value.creator == null) {
-      return null;
-    }
-    return $UserDtoCopyWith<$Res>(_value.creator, (value) {
-      return _then(_value.copyWith(creator: value));
-    });
-  }
 }
 
 abstract class _$AchievementDtoCopyWith<$Res> implements $AchievementDtoCopyWith<$Res> {
   factory _$AchievementDtoCopyWith(_AchievementDto value, $Res Function(_AchievementDto) then) = __$AchievementDtoCopyWithImpl<$Res>;
-  
+
   @override
   $Res call(
-    {int id, String name, String description, String imageURL, String type, int requisite, int experiencePoints, UserDto creator, String creationDate, String modificationDate, Set<TagDto> tags});
-  
-  @override
-  $UserDtoCopyWith<$Res> get creator;
+    {int id, String name, String description, String imageURL, String type, int requisite, int experiencePoints, int creatorId, String creationDate, String modificationDate, Set<TagDto> tags});
 }
 
 class __$AchievementDtoCopyWithImpl<$Res> extends _$AchievementDtoCopyWithImpl<$Res> implements _$AchievementDtoCopyWith<$Res> {
   __$AchievementDtoCopyWithImpl(_AchievementDto _value, $Res Function(_AchievementDto) _then) : super(_value, (v) => _then(v as _AchievementDto));
-  
+
   @override
   _AchievementDto get _value => super._value as _AchievementDto;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -147,7 +143,7 @@ class __$AchievementDtoCopyWithImpl<$Res> extends _$AchievementDtoCopyWithImpl<$
     Object type = freezed,
     Object requisite = freezed,
     Object experiencePoints = freezed,
-    Object creator = freezed,
+    Object creatorId = freezed,
     Object creationDate = freezed,
     Object modificationDate = freezed,
     Object tags = freezed,
@@ -160,7 +156,7 @@ class __$AchievementDtoCopyWithImpl<$Res> extends _$AchievementDtoCopyWithImpl<$
       type: type == freezed ? _value.type : type as String,
       requisite: requisite == freezed ? _value.requisite : requisite as int,
       experiencePoints: experiencePoints == freezed ? _value.experiencePoints : experiencePoints as int,
-      creator: creator == freezed ? _value.creator : creator as UserDto,
+      creatorId: creatorId == freezed ? _value.creatorId : creatorId as int,
       creationDate: creationDate == freezed ? _value.creationDate : creationDate as String,
       modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as String,
       tags: tags == freezed ? _value.tags : tags as Set<TagDto>,
@@ -177,7 +173,7 @@ class _$_AchievementDto extends _AchievementDto {
     @required this.type,
     @required this.requisite,
     @required this.experiencePoints,
-    @required this.creator,
+    @required this.creatorId,
     @required this.creationDate,
     @required this.modificationDate,
     @required this.tags})
@@ -188,14 +184,14 @@ class _$_AchievementDto extends _AchievementDto {
       assert(type != null),
       assert(requisite != null),
       assert(experiencePoints != null),
-      assert(creator != null),
+      assert(creatorId != null),
       assert(creationDate != null),
       assert(modificationDate != null),
       assert(tags != null),
       super._();
   
   factory _$_AchievementDto.fromJson(Map<String, dynamic> json) => _$_$_AchievementDtoFromJson(json);
-
+  
   @override
   final int id;
   @override
@@ -211,17 +207,17 @@ class _$_AchievementDto extends _AchievementDto {
   @override
   final int experiencePoints;
   @override
-  final UserDto creator;
+  final int creatorId;
   @override
   final String creationDate;
   @override
   final String modificationDate;
   @override
   final Set<TagDto> tags;
-
+  
   @override
   String toString() {
-    return 'AchievementDto(id: $id, name: $name, description: $description, imageURL: $imageURL, type: $type, requisite: $requisite, experiencePoints: $experiencePoints, creator: $creator, creationDate: $creationDate, modificationDate: $modificationDate, tags: $tags)';
+    return 'AchievementDto(id: $id, name: $name, description: $description, imageURL: $imageURL, type: $type, requisite: $requisite, experiencePoints: $experiencePoints, creatorId: $creatorId, creationDate: $creationDate, modificationDate: $modificationDate, tags: $tags)';
   }
 
   @override
@@ -235,7 +231,7 @@ class _$_AchievementDto extends _AchievementDto {
         (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
         (identical(other.requisite, requisite) || const DeepCollectionEquality().equals(other.requisite, requisite)) &&
         (identical(other.experiencePoints, experiencePoints) || const DeepCollectionEquality().equals(other.experiencePoints, experiencePoints)) &&
-        (identical(other.creator, creator) || const DeepCollectionEquality().equals(other.creator, creator)) &&
+        (identical(other.creatorId, creatorId) || const DeepCollectionEquality().equals(other.creatorId, creatorId)) &&
         (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
         (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)) &&
         (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)));
@@ -243,16 +239,16 @@ class _$_AchievementDto extends _AchievementDto {
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(imageURL) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(requisite) ^
-      const DeepCollectionEquality().hash(experiencePoints) ^
-      const DeepCollectionEquality().hash(creator) ^
-      const DeepCollectionEquality().hash(creationDate) ^
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(id) ^
+    const DeepCollectionEquality().hash(name) ^
+    const DeepCollectionEquality().hash(description) ^
+    const DeepCollectionEquality().hash(imageURL) ^
+    const DeepCollectionEquality().hash(type) ^
+    const DeepCollectionEquality().hash(requisite) ^
+    const DeepCollectionEquality().hash(experiencePoints) ^
+    const DeepCollectionEquality().hash(creatorId) ^
+    const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(modificationDate) ^
       const DeepCollectionEquality().hash(tags);
   
@@ -275,7 +271,7 @@ abstract class _AchievementDto extends AchievementDto {
     @required String type,
     @required int requisite,
     @required int experiencePoints,
-    @required UserDto creator,
+    @required int creatorId,
     @required String creationDate,
     @required String modificationDate,
     @required Set<TagDto> tags}) = _$_AchievementDto;
@@ -293,20 +289,28 @@ abstract class _AchievementDto extends AchievementDto {
   
   @override
   String get imageURL;
+  
   @override
   String get type;
+  
   @override
   int get requisite;
+  
   @override
   int get experiencePoints;
+  
   @override
-  UserDto get creator;
+  int get creatorId;
+  
   @override
   String get creationDate;
+  
   @override
   String get modificationDate;
+  
   @override
   Set<TagDto> get tags;
+
   @override
   _$AchievementDtoCopyWith<_AchievementDto> get copyWith;
 }

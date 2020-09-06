@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:worldon/data/core/moor/converters/moor_tag_to_domain_tag.dart';
-import 'package:worldon/data/core/moor/converters/moor_user_to_domain_user.dart';
 import 'package:worldon/data/core/moor/daos/moor_achievements_dao/moor_achievement_with_tags.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -19,7 +18,7 @@ Achievement moorAchievementToDomainAchievement(MoorAchievementWithRelations _moo
       type: _moorAchievementWithRelations.achievement.type,
       requisite: _moorAchievementWithRelations.achievement.requisite,
       experiencePoints: ExperiencePoints(_moorAchievementWithRelations.achievement.experiencePoints),
-      creator: moorUserToDomainUser(_moorAchievementWithRelations.creator),
+      creatorId: _moorAchievementWithRelations.achievement.creatorId,
       creationDate: PastDate(_moorAchievementWithRelations.achievement.creationDate),
       modificationDate: PastDate(_moorAchievementWithRelations.achievement.modificationDate),
       tags: TagSet(

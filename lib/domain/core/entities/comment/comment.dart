@@ -18,17 +18,15 @@ abstract class Comment implements _$Comment {
   const factory Comment({
     int id,
     @required User poster,
-    // TODO: Maybe the id of the experience should be a field
-    // After all it's a many to one relationship
-    // just like with the user
-    // Would make it easier to save to the database
+    @required int experienceId,
     @required CommentContent content,
     @required PastDate creationDate,
     @required PastDate modificationDate,
   }) = _Comment;
 
   factory Comment.empty() => Comment(
-        poster: User.empty(),
+    poster: User.empty(),
+        experienceId: 0,
         content: CommentContent(""),
         creationDate: PastDate(DateTime.now()),
         modificationDate: PastDate(DateTime.now()),

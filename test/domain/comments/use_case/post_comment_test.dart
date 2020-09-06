@@ -21,18 +21,12 @@ void main() {
       useCase = PostComment(mockCommentRepository);
     },
   );
-  final params = Params(
-    experienceId: 1,
-    comment: Comment.empty(),
-  );
+  final params = Params(comment: Comment.empty());
   test(
     TestDescription.returnNothing,
     () async {
       // Arrange
-      when(mockCommentRepository.postComment(
-        comment: anyNamed("comment"),
-        experienceId: anyNamed("experienceId"),
-      )).thenAnswer((_) async => right(unit));
+      when(mockCommentRepository.postComment(any)).thenAnswer((_) async => right(unit));
       // Act
       final result = await useCase(params);
       // Assert
@@ -48,10 +42,7 @@ void main() {
         () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
-          when(mockCommentRepository.postComment(
-            comment: anyNamed("comment"),
-            experienceId: anyNamed("experienceId"),
-          )).thenAnswer((_) async => left(failure));
+          when(mockCommentRepository.postComment(any)).thenAnswer((_) async => left(failure));
           // Act
           final result = await useCase(params);
           // Assert
@@ -64,9 +55,6 @@ void main() {
 }
 
 void _verifyInteractions(CommentRepositoryInterface mockCommentRepository) {
-  verify(mockCommentRepository.postComment(
-    comment: anyNamed("comment"),
-    experienceId: anyNamed("experienceId"),
-  ));
+  verify(mockCommentRepository.postComment(any));
   verifyNoMoreInteractions(mockCommentRepository);
 }

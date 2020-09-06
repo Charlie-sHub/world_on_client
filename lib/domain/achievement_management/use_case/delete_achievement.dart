@@ -24,7 +24,7 @@ class DeleteAchievement implements AsyncUseCase<Unit, Params> {
       () => throw UnAuthenticatedError(),
       id,
     );
-    final _isAuthorized = _userRequesting == params.achievement.creator || _userRequesting.adminPowers;
+    final _isAuthorized = _userRequesting.id == params.achievement.creatorId || _userRequesting.adminPowers;
     if (_isAuthorized) {
       return _repository.removeAchievement(params.achievement.id);
     } else {

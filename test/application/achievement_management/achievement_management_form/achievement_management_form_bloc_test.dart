@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -5,8 +7,11 @@ import 'package:injectable/injectable.dart' as injectable;
 import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:worldon/application/achievement_management/achievement_management_form/achievement_management_form_bloc.dart';
+import 'package:worldon/core/assets.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_tag.dart';
+import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
 import 'package:worldon/domain/achievement_management/use_case/create_achievement.dart';
 import 'package:worldon/domain/achievement_management/use_case/edit_achievement.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
@@ -17,9 +22,6 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 import 'package:worldon/injection.dart';
 
-import '../../../domain/core/methods/get_valid_tag.dart';
-import '../../../domain/core/methods/get_valid_tag_set.dart';
-import '../../../domain/core/methods/get_valid_user.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
@@ -35,12 +37,13 @@ void main() {
     },
   );
   final validUser = getValidUser();
+  final imageFile = File(Assets.worldOnLogo);
   final achievementToEdit = Achievement.empty().copyWith(
     name: Name("Test"),
     description: EntityDescription("Test"),
     experiencePoints: ExperiencePoints(1),
-    creator: validUser,
-    tags: getValidTagSet(),
+    creatorId: validUser.id,
+    tags: TagSet(KtSet.of(getValidTag())),
   );
   const name = "Test";
   const description = "For testing";
@@ -53,7 +56,7 @@ void main() {
   );
   group(
     TestDescription.testingInitialization,
-    () {
+      () {
       blocTest(
         TestDescription.shouldEmitInitialized,
         build: () => getIt<AchievementManagementFormBloc>(),
@@ -75,7 +78,7 @@ void main() {
   );
   group(
     TestDescription.groupOnSuccess,
-    () {
+      () {
       blocTest(
         "${TestDescription.shouldEmitUpdated} with the name",
         build: () => getIt<AchievementManagementFormBloc>(),
@@ -87,6 +90,21 @@ void main() {
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
               name: Name(name),
+            ),
+          ),
+        ],
+      );
+      blocTest(
+        "${TestDescription.shouldEmitUpdated} with the image",
+        build: () => getIt<AchievementManagementFormBloc>(),
+        act: (bloc) async {
+          bloc.add(AchievementManagementFormEvent.initialized(none()));
+          bloc.add(AchievementManagementFormEvent.imageChanged(imageFile));
+        },
+        expect: [
+          AchievementManagementFormState.initial().copyWith(
+            achievement: Achievement.empty().copyWith(
+              imageFile: some(imageFile),
             ),
           ),
         ],
@@ -149,6 +167,7 @@ void main() {
           bloc.add(const AchievementManagementFormEvent.descriptionChanged(description));
           bloc.add(const AchievementManagementFormEvent.experiencePointsChanged(experiencePoints));
           bloc.add(AchievementManagementFormEvent.tagsChanged(tags));
+          bloc.add(AchievementManagementFormEvent.imageChanged(imageFile));
           bloc.add(const AchievementManagementFormEvent.submitted());
         },
         verify: (_) async {
@@ -159,56 +178,68 @@ void main() {
         expect: [
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
-              creator: validUser,
+              creatorId: validUser.id,
             ),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
-              creator: validUser,
+              creatorId: validUser.id,
               name: Name(name),
             ),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
-              creator: validUser,
-              name: Name(name),
-              description: EntityDescription(description),
-            ),
-          ),
-          AchievementManagementFormState.initial().copyWith(
-            achievement: Achievement.empty().copyWith(
-              creator: validUser,
+              creatorId: validUser.id,
               name: Name(name),
               description: EntityDescription(description),
-              experiencePoints: ExperiencePoints(experiencePoints),
             ),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
-              creator: validUser,
+              creatorId: validUser.id,
               name: Name(name),
               description: EntityDescription(description),
               experiencePoints: ExperiencePoints(experiencePoints),
-              tags: TagSet(tags),
             ),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
-              creator: validUser,
+              creatorId: validUser.id,
               name: Name(name),
               description: EntityDescription(description),
               experiencePoints: ExperiencePoints(experiencePoints),
               tags: TagSet(tags),
+            ),
+          ),
+          AchievementManagementFormState.initial().copyWith(
+            achievement: Achievement.empty().copyWith(
+              creatorId: validUser.id,
+              name: Name(name),
+              description: EntityDescription(description),
+              experiencePoints: ExperiencePoints(experiencePoints),
+              tags: TagSet(tags),
+              imageFile: some(imageFile),
+            ),
+          ),
+          AchievementManagementFormState.initial().copyWith(
+            achievement: Achievement.empty().copyWith(
+              creatorId: validUser.id,
+              name: Name(name),
+              description: EntityDescription(description),
+              experiencePoints: ExperiencePoints(experiencePoints),
+              tags: TagSet(tags),
+              imageFile: some(imageFile),
             ),
             isSubmitting: true,
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
-              creator: validUser,
+              creatorId: validUser.id,
               name: Name(name),
               description: EntityDescription(description),
               experiencePoints: ExperiencePoints(experiencePoints),
               tags: TagSet(tags),
+              imageFile: some(imageFile),
             ),
             showErrorMessages: true,
             failureOrSuccessOption: some(right(unit)),
@@ -219,7 +250,7 @@ void main() {
         "${TestDescription.shouldEmitSuccess} editing an Achievement",
         build: () {
           when(editAchievement.call(any)).thenAnswer((_) async => right(unit));
-
+          
           return getIt<AchievementManagementFormBloc>();
         },
         act: (bloc) async {
@@ -227,14 +258,7 @@ void main() {
           bloc.add(const AchievementManagementFormEvent.nameChanged(name));
           bloc.add(const AchievementManagementFormEvent.submitted());
         },
-        verify: (_) async {
-          verify(editAchievement.call(any));
-          // TODO: How to verify that createAchievement is not called?
-          // Seems to me this verification fails due to the use case being a singleton, hence the creation test calls the use case from the same bloc as this test
-          // Apply to the other bloc tests if a solution is found
-          // resetMockitoState() doesn't seem to work no mater where i put it, maybe it's an issue with the way blocTest verifies
-          // verifyZeroInteractions(createAchievement);
-        },
+        verify: (_) async => verify(editAchievement.call(any)),
         expect: [
           AchievementManagementFormState.initial().copyWith(
             achievement: achievementToEdit.copyWith(
@@ -263,7 +287,7 @@ void main() {
   );
   group(
     TestDescription.groupOnFailure,
-    () {
+      () {
       // How to test that the form couldn't be submitted because there were errors in it? seems the state yielded is no different than if the submission was successful
       // At least not from the bloc point of view
       const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
@@ -280,6 +304,7 @@ void main() {
           bloc.add(const AchievementManagementFormEvent.descriptionChanged(description));
           bloc.add(const AchievementManagementFormEvent.experiencePointsChanged(experiencePoints));
           bloc.add(AchievementManagementFormEvent.tagsChanged(tags));
+          bloc.add(AchievementManagementFormEvent.imageChanged(imageFile));
           bloc.add(const AchievementManagementFormEvent.submitted());
         },
         verify: (_) async {
@@ -290,56 +315,68 @@ void main() {
         expect: [
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
-              creator: validUser,
+              creatorId: validUser.id,
             ),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
-              creator: validUser,
+              creatorId: validUser.id,
               name: Name(name),
             ),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
-              creator: validUser,
-              name: Name(name),
-              description: EntityDescription(description),
-            ),
-          ),
-          AchievementManagementFormState.initial().copyWith(
-            achievement: Achievement.empty().copyWith(
-              creator: validUser,
+              creatorId: validUser.id,
               name: Name(name),
               description: EntityDescription(description),
-              experiencePoints: ExperiencePoints(experiencePoints),
             ),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
-              creator: validUser,
+              creatorId: validUser.id,
               name: Name(name),
               description: EntityDescription(description),
               experiencePoints: ExperiencePoints(experiencePoints),
-              tags: TagSet(tags),
             ),
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
-              creator: validUser,
+              creatorId: validUser.id,
               name: Name(name),
               description: EntityDescription(description),
               experiencePoints: ExperiencePoints(experiencePoints),
               tags: TagSet(tags),
+            ),
+          ),
+          AchievementManagementFormState.initial().copyWith(
+            achievement: Achievement.empty().copyWith(
+              creatorId: validUser.id,
+              name: Name(name),
+              description: EntityDescription(description),
+              experiencePoints: ExperiencePoints(experiencePoints),
+              tags: TagSet(tags),
+              imageFile: some(imageFile),
+            ),
+          ),
+          AchievementManagementFormState.initial().copyWith(
+            achievement: Achievement.empty().copyWith(
+              creatorId: validUser.id,
+              name: Name(name),
+              description: EntityDescription(description),
+              experiencePoints: ExperiencePoints(experiencePoints),
+              tags: TagSet(tags),
+              imageFile: some(imageFile),
             ),
             isSubmitting: true,
           ),
           AchievementManagementFormState.initial().copyWith(
             achievement: Achievement.empty().copyWith(
-              creator: validUser,
+              creatorId: validUser.id,
               name: Name(name),
               description: EntityDescription(description),
               experiencePoints: ExperiencePoints(experiencePoints),
               tags: TagSet(tags),
+              imageFile: some(imageFile),
             ),
             isSubmitting: false,
             showErrorMessages: true,

@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,9 +29,9 @@ class ExperienceManagementForm extends StatelessWidget {
         listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
         listener: _experienceManagementListener,
         buildWhen: (previous, current) =>
-            previous.showErrorMessages != current.showErrorMessages ||
-            previous.experience.difficulty != current.experience.difficulty ||
-            previous.experience.coordinates != current.experience.coordinates,
+        previous.showErrorMessages != current.showErrorMessages ||
+          previous.experience.difficulty != current.experience.difficulty ||
+          previous.experience.coordinates != current.experience.coordinates,
         builder: (context, state) => SingleChildScrollView(
           child: Form(
             autovalidate: state.showErrorMessages,
@@ -71,8 +72,8 @@ class ExperienceManagementForm extends StatelessWidget {
                   const RewardCreationCard(),
                   TagAdditionCard(
                     tagChangeFunction: (KtSet<Tag> tags) => context.bloc<ExperienceManagementFormBloc>().add(
-                          ExperienceManagementFormEvent.tagsChanged(tags),
-                        ),
+                      ExperienceManagementFormEvent.tagsChanged(tags),
+                    ),
                   ),
                   const FinishButton(),
                 ],
@@ -83,13 +84,13 @@ class ExperienceManagementForm extends StatelessWidget {
       ),
     );
   }
-
+  
   void _experienceManagementListener(BuildContext context, ExperienceManagementFormState state) => state.failureOrSuccessOption.fold(
-        () => null,
-        (either) => either.fold(
-          (failure) => failure.maybeMap(
-            coreData: (failure) => failure.coreDataFailure.maybeMap(
-              nameAlreadyInUse: (_) => FlushbarHelper.createError(
+      () => null,
+      (either) => either.fold(
+        (failure) => failure.maybeMap(
+        coreData: (failure) => failure.coreDataFailure.maybeMap(
+          nameAlreadyInUse: (_) => FlushbarHelper.createError(
                 duration: const Duration(seconds: 2),
                 message: "The title is already in use",
               ).show(context),
@@ -97,14 +98,25 @@ class ExperienceManagementForm extends StatelessWidget {
                 duration: const Duration(seconds: 2),
                 message: failure.errorString,
               ).show(context),
-              orElse: () => null,
+              orElse: () => FlushbarHelper.createError(
+                duration: const Duration(seconds: 2),
+                message: "Unknown core data error",
+              ).show(context),
             ),
-            orElse: () => null,
+            orElse: () => FlushbarHelper.createError(
+              duration: const Duration(seconds: 2),
+              message: "Unknown error",
+            ).show(context),
           ),
-          (_) => FlushbarHelper.createSuccess(
-            duration: const Duration(seconds: 2),
-            message: "The experience was created",
-          ).show(context),
+          (_) {
+            FlushbarHelper.createSuccess(
+              duration: const Duration(seconds: 2),
+              message: "The experience was created",
+            ).show(context);
+            context.bloc<ExperienceManagementFormBloc>().add(
+                  ExperienceManagementFormEvent.initialized(none()),
+                );
+          },
         ),
-      );
+  );
 }

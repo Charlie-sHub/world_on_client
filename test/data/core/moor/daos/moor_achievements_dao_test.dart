@@ -9,7 +9,6 @@ import 'package:worldon/data/core/moor/converters/domain_tag_to_moor_tag.dart';
 import 'package:worldon/data/core/moor/converters/domain_user_to_moor_user_companion.dart';
 import 'package:worldon/data/core/moor/converters/moor_achievement_to_domain_achievement.dart';
 import 'package:worldon/data/core/moor/daos/moor_achievements_dao/moor_achievement_with_tags.dart';
-import 'package:worldon/data/core/moor/daos/moor_tags_dao/moor_tag_with_moor_user.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 
@@ -144,17 +143,10 @@ void main() {
         );
         await _database.moorAchievementsDao.insertUserAchievement(_userAchievement);
         final _moorTagFromDb = await _database.moorTagsDao.getTagById(_moorTagId);
-        final _creator = await _database.moorUsersDao.getUserById(_userId);
         final _achievementFromDb = await _database.moorAchievementsDao.getAchievementById(_achievementId);
         final _achievementWithRelations = MoorAchievementWithRelations(
           achievement: _achievementFromDb,
-          creator: _creator,
-          tags: [
-            MoorTagWithMoorUser(
-              tag: _moorTagFromDb,
-              creator: _creator,
-            ),
-          ],
+          tags: [_moorTagFromDb],
         );
         _achievementList.add(moorAchievementToDomainAchievement(_achievementWithRelations));
       }

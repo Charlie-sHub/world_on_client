@@ -8,7 +8,7 @@ Tag getValidTag() {
   return Tag(
     id: 1,
     name: Name("Sport"),
-    creator: getValidUser(),
+    creatorId: getValidUser().id,
     creationDate: PastDate(DateTime.now().subtract(const Duration(days: 100))),
     modificationDate: PastDate(DateTime.now()),
   );
