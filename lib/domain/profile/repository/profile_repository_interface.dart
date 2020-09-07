@@ -32,10 +32,6 @@ abstract class ProfileRepositoryInterface {
   /// Sends the id of an [Experience] to the server so this one can be deleted
   Future<Either<Failure, Unit>> deleteExperience(int experienceId);
 
-  // Speaking about the following methods
-  // TODO: Maybe a different set of methods will be needed for when the user checks its own profile, same with Flutter pages and BLoCs
-  // Basically separate them into two features
-
   /// Sends an [User]'s id to the server so it returns a [KtList] of the [User]s it follows
   Stream<Either<Failure, KtList<User>>> watchFollowedUsers(int id);
 

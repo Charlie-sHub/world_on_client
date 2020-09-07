@@ -49,11 +49,11 @@ class MainFeedBody extends StatelessWidget {
               },
             ),
           ),
-          loadFailure: (state) => InkWell(
-            onTap: () async => context.bloc<MainFeedWatcherBloc>().add(
+          loadFailure: (state) => ErrorDisplay(
+            retryFunction: () => context.bloc<MainFeedWatcherBloc>().add(
                   const MainFeedWatcherEvent.watchMainFeedStarted(),
                 ),
-            child: ErrorDisplay(failure: state.failure),
+            failure: state.failure,
           ),
         ),
       ),

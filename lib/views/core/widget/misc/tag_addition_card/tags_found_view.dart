@@ -48,15 +48,15 @@ class TagsFoundView extends StatelessWidget {
             ),
           ),
         ),
-        searchFailure: (state) => InkWell(
-          onTap: () async => context.bloc<SearchTagsByNameWatcherBloc>().add(
+        searchFailure: (state) => ErrorDisplay(
+          retryFunction: () => context.bloc<SearchTagsByNameWatcherBloc>().add(
                 SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(
                   // Don't really like getting the search term that way
                   // but it seems better than having this widget as a child of the SearchByNameFormBloc BlocConsumer
                   context.bloc<SearchByNameFormBloc>().state.searchTerm,
                 ),
               ),
-          child: ErrorDisplay(failure: state.failure),
+          failure: state.failure,
         ),
       ),
     );

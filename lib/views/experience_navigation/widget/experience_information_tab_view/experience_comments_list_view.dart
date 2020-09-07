@@ -51,11 +51,11 @@ class ExperienceCommentsListView extends StatelessWidget {
                 }
               },
             ),
-            loadFailure: (state) => InkWell(
-              onTap: () async => context.bloc<CommentWatcherBloc>().add(
+            loadFailure: (state) => ErrorDisplay(
+              retryFunction: () => context.bloc<CommentWatcherBloc>().add(
                     CommentWatcherEvent.watchExperienceCommentsStarted(experience.id),
                   ),
-              child: ErrorDisplay(failure: state.failure),
+              failure: state.failure,
             ),
           ),
         ),

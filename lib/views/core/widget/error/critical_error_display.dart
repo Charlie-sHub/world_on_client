@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
-// TODO: Make the CriticalErrorDisplay take the function to retry as a parameter
-// That way one will never forget to implement that functionality
 class CriticalErrorDisplay extends StatelessWidget {
   final Failure failure;
 

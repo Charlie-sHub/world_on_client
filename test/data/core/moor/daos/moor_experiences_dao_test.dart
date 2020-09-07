@@ -601,7 +601,7 @@ Future<MoorExperienceWithRelations> _insertExperienceAndRelations(
   final _moorExperienceWithRelations = MoorExperienceWithRelations(
     experience: _moorExperience,
     creator: _moorUser,
-    imageUrls: _experienceImageUrlList.map((experienceImageUrl) => experienceImageUrl.imageUrl.value).toList(),
+    imageIdentifiers: _experienceImageUrlList.map((experienceImageUrl) => experienceImageUrl.imageUrl.value).toList(),
     objectives: [_moorObjective],
     rewards: [_moorReward],
     tags: _tagList,

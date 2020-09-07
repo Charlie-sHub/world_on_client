@@ -51,11 +51,11 @@ class ProfileAchievementsTabView extends StatelessWidget {
               }
             },
           ),
-          loadFailure: (state) => InkWell(
-            onTap: () async => context.bloc<ProfileAchievementsWatcherBloc>().add(
+          loadFailure: (state) => ErrorDisplay(
+            retryFunction: () => context.bloc<ProfileAchievementsWatcherBloc>().add(
                   ProfileAchievementsWatcherEvent.watchAchievementsStarted(user),
                 ),
-            child: ErrorDisplay(failure: state.failure),
+            failure: state.failure,
           ),
         ),
       ),

@@ -46,7 +46,7 @@ class FinishSuccessView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: const <Widget>[
               // TODO: Figure out way to calculate how well the User did the Experience
-              // ANd show the appropriate amount of stars
+              // And show the appropriate amount of stars
               WorldOnStar(),
               WorldOnStar(),
               WorldOnStar(),

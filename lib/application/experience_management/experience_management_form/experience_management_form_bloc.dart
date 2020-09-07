@@ -163,6 +163,8 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
           () => throw UnAuthenticatedError(),
           id,
         );
+        // TODO: Initialize the coordinates
+        // So the camera position of the map is that of the user's current position
         return state.copyWith(
           experience: Experience.empty().copyWith(
             creator: _currentUser,

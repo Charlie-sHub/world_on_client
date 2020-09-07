@@ -220,13 +220,15 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
       _rewardsStream,
       _imageUrlsStream,
       _tagsListStream,
-        (List<int> _experiencesLikedIds,
+      (
+        List<int> _experiencesLikedIds,
         List<TypedResult> _experiencesWithCreator,
         List<TypedResult> _experiencesWithTags,
         List<MoorObjective> _objectiveList,
         List<MoorReward> _rewardList,
         List<ExperienceImageUrl> _imageUrlList,
-        List<MoorTag> _tags,) {
+        List<MoorTag> _tags,
+      ) {
         _experiencesWithCreator.removeWhere(
           (_row) => !_experiencesLikedIds.contains(_row.readTable(moorExperiences).id),
         );
@@ -250,13 +252,18 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
           moorUsers.id.equalsExp(moorExperiences.creatorId),
         ),
       ],
-    )..where(_whereExpression);
+    )
+      ..where(_whereExpression);
     final _experienceIds = await _experiencesWithCreatorJoin
-        .watch()
-        .map(
-          (_rows) => _rows.map(
-            (_row) => _row.readTable(moorExperiences).id,
-          ),
+      .watch()
+      .map(
+        (_rows) =>
+        _rows.map(
+            (_row) =>
+          _row
+            .readTable(moorExperiences)
+            .id,
+        ),
     )
       .first;
     final _experiencesWithTagsJoin = select(experienceTags).join(
@@ -307,16 +314,16 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
     List<TypedResult> _experiencesWithTags,
     List<MoorTag> _tags,) {
     return _experiencesWithCreator.map(
-      (_experienceWithCreatorTypedResult) {
+        (_experienceWithCreatorTypedResult) {
         final _moorExperience = _experienceWithCreatorTypedResult.readTable(moorExperiences);
         final _moorUser = _experienceWithCreatorTypedResult.readTable(moorUsers);
         final _experienceImageUrls = List<ExperienceImageUrl>.from(_imageUrlList);
         _experienceImageUrls.removeWhere((experienceImageUrl) => experienceImageUrl.experienceId != _moorExperience.id);
         final _imageUrls = _experienceImageUrls
-            .map(
-              (experienceImageUrl) => experienceImageUrl.imageUrl,
-            )
-            .toList();
+          .map(
+            (experienceImageUrl) => experienceImageUrl.imageUrl,
+        )
+          .toList();
         final _moorObjectives = List<MoorObjective>.from(_objectiveList);
         _moorObjectives.removeWhere((objective) => objective.experienceId != _moorExperience.id);
         final _moorRewards = List<MoorReward>.from(_rewardList);
@@ -343,7 +350,7 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
         return MoorExperienceWithRelations(
           experience: _moorExperience,
           creator: _moorUser,
-          imageUrls: _imageUrls,
+          imageIdentifiers: _imageUrls,
           objectives: _moorObjectives,
           rewards: _moorRewards,
           tags: _experienceTags,

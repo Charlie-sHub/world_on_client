@@ -24,11 +24,11 @@ class ExperienceFinish extends StatelessWidget {
           initial: (_) => Container(),
           actionInProgress: (_) => WorldOnProgressIndicator(),
           finishSuccess: (_) => FinishSuccessView(experience: experience),
-          finishFailure: (state) => InkWell(
-            onTap: () async => context.bloc<ExperienceFinishActorBloc>().add(
+          finishFailure: (state) => ErrorDisplay(
+            retryFunction: () => context.bloc<ExperienceFinishActorBloc>().add(
                   ExperienceFinishActorEvent.finishedExperience(experience),
                 ),
-            child: ErrorDisplay(failure: state.failure),
+            failure: state.failure,
           ),
         ),
       ),

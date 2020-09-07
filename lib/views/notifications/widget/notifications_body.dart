@@ -67,11 +67,11 @@ class NotificationsBody extends StatelessWidget {
                 }
               },
             ),
-            loadFailure: (state) => InkWell(
-              onTap: () async => context.bloc<NotificationsWatcherBloc>().add(
+            loadFailure: (state) => ErrorDisplay(
+              retryFunction: () => context.bloc<NotificationsWatcherBloc>().add(
                     const NotificationsWatcherEvent.watchNotificationsStarted(),
                   ),
-              child: ErrorDisplay(failure: state.failure),
+              failure: state.failure,
             ),
           ),
         ),

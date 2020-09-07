@@ -1,6 +1,5 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:multi_image_picker/multi_image_picker.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/views/core/misc/common_functions/get_color_by_difficulty.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
@@ -37,24 +36,21 @@ class ExperienceInformationTabView extends StatelessWidget {
             child: ExperienceDescription(experience: experience),
           ),
           // TODO: Implement image gallery
-          if (experience.imageURLs.first.contains("assets/"))
-            Container(
-              width: MediaQuery.of(context).size.width,
-              child: Image(
+          // This is just a way to show the images saved in the local database
+          Container(
+            width: MediaQuery.of(context).size.width,
+            child: experience.imageAssetsOption.fold(
+              () => Image(
                 image: AssetImage(experience.imageURLs.first),
                 fit: BoxFit.cover,
               ),
-            )
-          else
-            Container(
-              width: MediaQuery.of(context).size.width,
-              child: Image(
-                image: FileImage(
-                  File(experience.imageURLs.first),
-                ),
-                fit: BoxFit.cover,
+              (_assetList) => AssetThumb(
+                asset: _assetList.first,
+                width: 500,
+                height: 500,
               ),
             ),
+          ),
           Padding(
             padding: const EdgeInsets.all(5),
             child: Row(

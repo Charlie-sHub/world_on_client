@@ -12,7 +12,7 @@ class PicturesSelector extends StatelessWidget {
   Widget build(BuildContext context) {
     return context.bloc<ExperienceManagementFormBloc>().state.experience.imageAssetsOption.fold(
           () => IconButton(
-            iconSize: 80,
+            iconSize: 100,
             icon: const Icon(
               Icons.photo_camera,
             ),
@@ -62,15 +62,10 @@ class PicturesSelector extends StatelessWidget {
       final imagesPicked = await MultiImagePicker.pickImages(
         maxImages: 15,
         enableCamera: true,
-        selectedAssets: context
-          .bloc<ExperienceManagementFormBloc>()
-          .state
-          .experience
-          .imageAssetsOption
-          .fold(
-            () => [],
-          id,
-        ),
+        selectedAssets: context.bloc<ExperienceManagementFormBloc>().state.experience.imageAssetsOption.fold(
+              () => [],
+              id,
+            ),
         materialOptions: const MaterialOptions(
           actionBarTitle: "World On",
           allViewTitle: "All Photos",

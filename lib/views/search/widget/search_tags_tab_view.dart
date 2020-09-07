@@ -44,11 +44,11 @@ class SearchTagsTabView extends StatelessWidget {
             }
           },
         ),
-        searchFailure: (state) => InkWell(
-          onTap: () async => context.bloc<SearchTagsByNameWatcherBloc>().add(
+        searchFailure: (state) => ErrorDisplay(
+          retryFunction: () => context.bloc<SearchTagsByNameWatcherBloc>().add(
                 SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(searchTerm),
               ),
-          child: ErrorDisplay(failure: state.failure),
+          failure: state.failure,
         ),
       ),
     );

@@ -16,8 +16,7 @@ _$_TagDto _$_$_TagDtoFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_TagDtoToJson(_$_TagDto instance) =>
-  <String, dynamic>{
+Map<String, dynamic> _$_$_TagDtoToJson(_$_TagDto instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'creatorId': instance.creatorId,

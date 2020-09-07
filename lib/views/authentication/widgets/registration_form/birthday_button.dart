@@ -21,7 +21,7 @@ class BirthdayButton extends StatelessWidget {
               RegistrationFormEvent.birthdayChanged(_birthDate),
             );
       },
-      // TODO: Make it so the text changes to the selected date after selection or the failure
+      // TODO: Show the selected date after selection or the failure
       child: const Text("Select your birthday"),
     );
   }

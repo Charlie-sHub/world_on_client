@@ -28,7 +28,6 @@ abstract class Reward implements _$Reward {
   factory Reward.empty() => Reward(
         name: Name(""),
         description: EntityDescription(""),
-        // TODO: Change to const strings
         imageURL: "",
         imageFile: none(),
       );

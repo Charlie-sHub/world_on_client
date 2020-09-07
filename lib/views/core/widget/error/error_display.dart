@@ -6,10 +6,12 @@ import 'not_found_error_display.dart';
 
 class ErrorDisplay extends StatelessWidget {
   final Failure failure;
+  final Function retryFunction;
 
   const ErrorDisplay({
     Key key,
     @required this.failure,
+    @required this.retryFunction,
   }) : super(key: key);
 
   @override
@@ -23,10 +25,10 @@ class ErrorDisplay extends StatelessWidget {
               notFoundError: (_) => NotFoundErrorDisplay(),
               orElse: () => null,
             ),
-            // TODO: Make the ErrorDisplay take the function that it should re-try on tap
-            // And wrap the CriticalErrorDisplay with an InkWell with said function
-            // That way other error displays won't be able to re-try if they shouldn't such as NotFoundErrorDisplay
-            orElse: () => CriticalErrorDisplay(failure: failure),
+            orElse: () => InkWell(
+              onTap: () => retryFunction,
+              child: CriticalErrorDisplay(failure: failure),
+            ),
           ),
         ),
       ),

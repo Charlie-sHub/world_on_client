@@ -1,4 +1,6 @@
+import 'package:dartz/dartz.dart';
 import 'package:kt_dart/kt.dart';
+import 'package:multi_image_picker/multi_image_picker.dart';
 import 'package:worldon/data/core/moor/converters/moor_objective_to_domain_objective.dart';
 import 'package:worldon/data/core/moor/converters/moor_reward_to_domain_reward.dart';
 import 'package:worldon/data/core/moor/converters/moor_tag_to_domain_tag.dart';
@@ -17,10 +19,24 @@ import 'package:worldon/domain/core/validation/objects/reward_set.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 
 Experience moorExperienceToDomainExperience(MoorExperienceWithRelations _moorExperienceWithRelations) => Experience.empty().copyWith(
-      id: _moorExperienceWithRelations.experience.id,
+  id: _moorExperienceWithRelations.experience.id,
       title: Name(_moorExperienceWithRelations.experience.title),
       description: EntityDescription(_moorExperienceWithRelations.experience.description),
-      imageURLs: _moorExperienceWithRelations.imageUrls.toSet(),
+      imageURLs: _moorExperienceWithRelations.imageIdentifiers.toSet(),
+      imageAssetsOption: _moorExperienceWithRelations.imageIdentifiers.first.contains("assets/")
+          ? none()
+          : some(
+              _moorExperienceWithRelations.imageIdentifiers
+                  .map(
+                    (_identifier) => Asset(
+                      _identifier,
+                      _identifier,
+                      500,
+                      500,
+                    ),
+                  )
+                  .toList(),
+            ),
       coordinates: Coordinates(
         latitude: Latitude(_moorExperienceWithRelations.experience.latitude),
         longitude: Longitude(_moorExperienceWithRelations.experience.longitude),
@@ -32,25 +48,25 @@ Experience moorExperienceToDomainExperience(MoorExperienceWithRelations _moorExp
       objectives: ObjectiveSet(
         _moorExperienceWithRelations.objectives
             .map(
-              (_moorObjective) => moorObjectiveToDomainObjective(_moorObjective),
-            )
-            .toSet()
-            .toImmutableSet(),
-      ),
-      rewards: RewardSet(
-        _moorExperienceWithRelations.rewards
-            .map(
-              (_moorReward) => moorRewardToDomainReward(_moorReward),
-            )
-            .toSet()
-            .toImmutableSet(),
-      ),
-      tags: TagSet(
-        _moorExperienceWithRelations.tags
-            .map(
-              (_moorTagWithCreator) => moorTagToDomainTag(_moorTagWithCreator),
-            )
-            .toSet()
-            .toImmutableSet(),
-      ),
-    );
+        (_moorObjective) => moorObjectiveToDomainObjective(_moorObjective),
+    )
+      .toSet()
+      .toImmutableSet(),
+  ),
+  rewards: RewardSet(
+    _moorExperienceWithRelations.rewards
+      .map(
+        (_moorReward) => moorRewardToDomainReward(_moorReward),
+    )
+      .toSet()
+      .toImmutableSet(),
+  ),
+  tags: TagSet(
+    _moorExperienceWithRelations.tags
+      .map(
+        (_moorTagWithCreator) => moorTagToDomainTag(_moorTagWithCreator),
+    )
+      .toSet()
+      .toImmutableSet(),
+  ),
+);

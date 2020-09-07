@@ -19,6 +19,7 @@ class ExperienceDoneCounter extends StatelessWidget {
       children: <Widget>[
         // TODO: Implement the user pictures
         // The avatars of the last 3 users to have done the experience should appear here
+        // The seems like overkill, is it worth it?
         Container(
           width: 80,
           child: Stack(

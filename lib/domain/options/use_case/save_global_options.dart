@@ -14,7 +14,6 @@ class SaveGlobalOptions implements AsyncUseCase<Unit, Params> {
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    // TODO: Don't forget to associate the options to the logged in User
     return _repository.saveGlobalOptions(params.options);
   }
 }

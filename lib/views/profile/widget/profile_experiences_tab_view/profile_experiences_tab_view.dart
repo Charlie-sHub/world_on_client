@@ -54,14 +54,14 @@ class ProfileExperiencesTabView extends StatelessWidget {
                 }
               },
             ),
-            loadFailure: (state) => InkWell(
-              onTap: () async => context.bloc<ProfileExperiencesWatcherBloc>().add(
+            loadFailure: (state) => ErrorDisplay(
+              retryFunction: () => context.bloc<ProfileExperiencesWatcherBloc>().add(
                     // TODO: Figure out how to add the right event
                     // the one that caused the failure, not just watchExperiencesCreatedStarted
                     // same with the other watchers
                     ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(user),
                   ),
-              child: ErrorDisplay(failure: state.failure),
+              failure: state.failure,
             ),
           ),
         ),

@@ -76,7 +76,7 @@ class DevelopmentExperienceManagementRepository implements ExperienceManagementR
             // could save the byte data but then would have to figure out a way to use it when retrieving an experience
             // how to convert those bytes to an io File or an Asset?
             // haven't found a way
-            imageUrl: _imageAsset.name,
+            imageUrl: _imageAsset.identifier,
           );
           await _database.moorExperiencesDao.insertExperienceImage(_experienceImage);
         }

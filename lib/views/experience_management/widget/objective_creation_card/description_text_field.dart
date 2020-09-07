@@ -13,10 +13,6 @@ class DescriptionTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: Find a better way to reset this field after submitting
-    // I don't like having to use a stateful widget only for resetting the description
-    // but couldn't think of anything else, at least nothing elegant
-    // Maybe i could try again with changing the value of the text controller depending on the bloc state
     return TextFormField(
       controller: textController,
       maxLength: EntityDescription.maxLength,
