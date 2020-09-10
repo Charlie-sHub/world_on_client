@@ -100,7 +100,6 @@ abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
 
   @override
   $UserCopyWith<$Res> get sender;
-
   @override
   $UserCopyWith<$Res> get receiver;
 }
@@ -156,12 +155,12 @@ class _$_Message extends _Message {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Message &&
-        (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.sender, sender) || const DeepCollectionEquality().equals(other.sender, sender)) &&
-        (identical(other.receiver, receiver) || const DeepCollectionEquality().equals(other.receiver, receiver)) &&
-        (identical(other.content, content) || const DeepCollectionEquality().equals(other.content, content)) &&
-        (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)));
+        (other is _Message &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.sender, sender) || const DeepCollectionEquality().equals(other.sender, sender)) &&
+            (identical(other.receiver, receiver) || const DeepCollectionEquality().equals(other.receiver, receiver)) &&
+            (identical(other.content, content) || const DeepCollectionEquality().equals(other.content, content)) &&
+            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)));
   }
 
   @override
@@ -172,7 +171,7 @@ class _$_Message extends _Message {
       const DeepCollectionEquality().hash(receiver) ^
       const DeepCollectionEquality().hash(content) ^
       const DeepCollectionEquality().hash(creationDate);
-  
+
   @override
   _$MessageCopyWith<_Message> get copyWith => __$MessageCopyWithImpl<_Message>(this, _$identity);
 }

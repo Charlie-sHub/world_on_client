@@ -106,53 +106,41 @@ class _$AchievementCopyWithImpl<$Res> implements $AchievementCopyWith<$Res> {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as int,
       name: name == freezed ? _value.name : name as Name,
-      description: description == freezed
-        ? _value.description
-        : description as EntityDescription,
+      description: description == freezed ? _value.description : description as EntityDescription,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile:
-      imageFile == freezed ? _value.imageFile : imageFile as Option<File>,
+      imageFile: imageFile == freezed ? _value.imageFile : imageFile as Option<File>,
       type: type == freezed ? _value.type : type as String,
       requisite: requisite == freezed ? _value.requisite : requisite as int,
-      experiencePoints: experiencePoints == freezed
-        ? _value.experiencePoints
-        : experiencePoints as ExperiencePoints,
+      experiencePoints: experiencePoints == freezed ? _value.experiencePoints : experiencePoints as ExperiencePoints,
       creatorId: creatorId == freezed ? _value.creatorId : creatorId as int,
-      creationDate: creationDate == freezed
-        ? _value.creationDate
-        : creationDate as PastDate,
-      modificationDate: modificationDate == freezed
-        ? _value.modificationDate
-        : modificationDate as PastDate,
+      creationDate: creationDate == freezed ? _value.creationDate : creationDate as PastDate,
+      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as PastDate,
       tags: tags == freezed ? _value.tags : tags as TagSet,
     ));
   }
 }
 
-abstract class _$AchievementCopyWith<$Res>
-  implements $AchievementCopyWith<$Res> {
-  factory _$AchievementCopyWith(_Achievement value, $Res Function(_Achievement) then) =
-  __$AchievementCopyWithImpl<$Res>;
-  
+abstract class _$AchievementCopyWith<$Res> implements $AchievementCopyWith<$Res> {
+  factory _$AchievementCopyWith(_Achievement value, $Res Function(_Achievement) then) = __$AchievementCopyWithImpl<$Res>;
+
   @override
-  $Res call({int id,
-    Name name,
-    EntityDescription description,
-    String imageURL,
-    Option<File> imageFile,
-    String type,
-    int requisite,
-    ExperiencePoints experiencePoints,
-    int creatorId,
-    PastDate creationDate,
-    PastDate modificationDate,
-    TagSet tags});
+  $Res call(
+      {int id,
+      Name name,
+      EntityDescription description,
+      String imageURL,
+      Option<File> imageFile,
+      String type,
+      int requisite,
+      ExperiencePoints experiencePoints,
+      int creatorId,
+      PastDate creationDate,
+      PastDate modificationDate,
+      TagSet tags});
 }
 
-class __$AchievementCopyWithImpl<$Res> extends _$AchievementCopyWithImpl<$Res>
-  implements _$AchievementCopyWith<$Res> {
-  __$AchievementCopyWithImpl(_Achievement _value, $Res Function(_Achievement) _then)
-    : super(_value, (v) => _then(v as _Achievement));
+class __$AchievementCopyWithImpl<$Res> extends _$AchievementCopyWithImpl<$Res> implements _$AchievementCopyWith<$Res> {
+  __$AchievementCopyWithImpl(_Achievement _value, $Res Function(_Achievement) _then) : super(_value, (v) => _then(v as _Achievement));
   
   @override
   _Achievement get _value => super._value as _Achievement;
@@ -175,24 +163,15 @@ class __$AchievementCopyWithImpl<$Res> extends _$AchievementCopyWithImpl<$Res>
     return _then(_Achievement(
       id: id == freezed ? _value.id : id as int,
       name: name == freezed ? _value.name : name as Name,
-      description: description == freezed
-        ? _value.description
-        : description as EntityDescription,
+      description: description == freezed ? _value.description : description as EntityDescription,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile:
-      imageFile == freezed ? _value.imageFile : imageFile as Option<File>,
+      imageFile: imageFile == freezed ? _value.imageFile : imageFile as Option<File>,
       type: type == freezed ? _value.type : type as String,
       requisite: requisite == freezed ? _value.requisite : requisite as int,
-      experiencePoints: experiencePoints == freezed
-        ? _value.experiencePoints
-        : experiencePoints as ExperiencePoints,
+      experiencePoints: experiencePoints == freezed ? _value.experiencePoints : experiencePoints as ExperiencePoints,
       creatorId: creatorId == freezed ? _value.creatorId : creatorId as int,
-      creationDate: creationDate == freezed
-        ? _value.creationDate
-        : creationDate as PastDate,
-      modificationDate: modificationDate == freezed
-        ? _value.modificationDate
-        : modificationDate as PastDate,
+      creationDate: creationDate == freezed ? _value.creationDate : creationDate as PastDate,
+      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as PastDate,
       tags: tags == freezed ? _value.tags : tags as TagSet,
     ));
   }
@@ -258,40 +237,20 @@ class _$_Achievement extends _Achievement {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
       (other is _Achievement &&
-        (identical(other.id, id) ||
-          const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.name, name) ||
-          const DeepCollectionEquality().equals(other.name, name)) &&
-        (identical(other.description, description) ||
-          const DeepCollectionEquality()
-            .equals(other.description, description)) &&
-        (identical(other.imageURL, imageURL) ||
-          const DeepCollectionEquality()
-            .equals(other.imageURL, imageURL)) &&
-        (identical(other.imageFile, imageFile) ||
-          const DeepCollectionEquality()
-            .equals(other.imageFile, imageFile)) &&
-        (identical(other.type, type) ||
-          const DeepCollectionEquality().equals(other.type, type)) &&
-        (identical(other.requisite, requisite) ||
-          const DeepCollectionEquality()
-            .equals(other.requisite, requisite)) &&
-        (identical(other.experiencePoints, experiencePoints) ||
-          const DeepCollectionEquality()
-            .equals(other.experiencePoints, experiencePoints)) &&
-        (identical(other.creatorId, creatorId) ||
-          const DeepCollectionEquality()
-            .equals(other.creatorId, creatorId)) &&
-        (identical(other.creationDate, creationDate) ||
-          const DeepCollectionEquality()
-            .equals(other.creationDate, creationDate)) &&
-        (identical(other.modificationDate, modificationDate) ||
-          const DeepCollectionEquality()
-            .equals(other.modificationDate, modificationDate)) &&
-        (identical(other.tags, tags) ||
-          const DeepCollectionEquality().equals(other.tags, tags)));
+        (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+        (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+        (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
+        (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
+        (identical(other.imageFile, imageFile) || const DeepCollectionEquality().equals(other.imageFile, imageFile)) &&
+        (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
+        (identical(other.requisite, requisite) || const DeepCollectionEquality().equals(other.requisite, requisite)) &&
+        (identical(other.experiencePoints, experiencePoints) || const DeepCollectionEquality().equals(other.experiencePoints, experiencePoints)) &&
+        (identical(other.creatorId, creatorId) || const DeepCollectionEquality().equals(other.creatorId, creatorId)) &&
+        (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+        (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)) &&
+        (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)));
   }
-
+  
   @override
   int get hashCode =>
     runtimeType.hashCode ^
@@ -309,8 +268,7 @@ class _$_Achievement extends _Achievement {
     const DeepCollectionEquality().hash(tags);
   
   @override
-  _$AchievementCopyWith<_Achievement> get copyWith =>
-    __$AchievementCopyWithImpl<_Achievement>(this, _$identity);
+  _$AchievementCopyWith<_Achievement> get copyWith => __$AchievementCopyWithImpl<_Achievement>(this, _$identity);
 }
 
 abstract class _Achievement extends Achievement {
@@ -337,7 +295,7 @@ abstract class _Achievement extends Achievement {
   
   @override
   EntityDescription get description;
-  
+
   @override
   String get imageURL;
   

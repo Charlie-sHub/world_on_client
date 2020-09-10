@@ -19,7 +19,7 @@ import 'package:worldon/domain/core/validation/objects/reward_set.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 
 Experience moorExperienceToDomainExperience(MoorExperienceWithRelations _moorExperienceWithRelations) => Experience.empty().copyWith(
-  id: _moorExperienceWithRelations.experience.id,
+      id: _moorExperienceWithRelations.experience.id,
       title: Name(_moorExperienceWithRelations.experience.title),
       description: EntityDescription(_moorExperienceWithRelations.experience.description),
       imageURLs: _moorExperienceWithRelations.imageIdentifiers.toSet(),
@@ -41,13 +41,13 @@ Experience moorExperienceToDomainExperience(MoorExperienceWithRelations _moorExp
         latitude: Latitude(_moorExperienceWithRelations.experience.latitude),
         longitude: Longitude(_moorExperienceWithRelations.experience.longitude),
       ),
-      creator: moorUserToDomainUser(_moorExperienceWithRelations.creator),
-      difficulty: Difficulty(_moorExperienceWithRelations.experience.difficulty),
-      creationDate: PastDate(_moorExperienceWithRelations.experience.creationDate),
-      modificationDate: PastDate(_moorExperienceWithRelations.experience.modificationDate),
-      objectives: ObjectiveSet(
-        _moorExperienceWithRelations.objectives
-            .map(
+  creator: moorUserToDomainUser(_moorExperienceWithRelations.creator),
+  difficulty: Difficulty(_moorExperienceWithRelations.experience.difficulty),
+  creationDate: PastDate(_moorExperienceWithRelations.experience.creationDate),
+  modificationDate: PastDate(_moorExperienceWithRelations.experience.modificationDate),
+  objectives: ObjectiveSet(
+    _moorExperienceWithRelations.objectives
+      .map(
         (_moorObjective) => moorObjectiveToDomainObjective(_moorObjective),
     )
       .toSet()

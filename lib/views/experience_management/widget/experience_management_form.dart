@@ -47,24 +47,24 @@ class ExperienceManagementForm extends StatelessWidget {
                       color: WorldOnColors.primary,
                       fontSize: 25,
                     ),
+                  ),
+                  const SizedBox(height: 10),
+                  const TitleFormField(),
+                  const SizedBox(height: 10),
+                  const DescriptionFormField(),
+                  const SizedBox(height: 10),
+                  PicturesSelector(),
+                  const SizedBox(height: 20),
+                  const Text(
+                    "Set the initial difficulty",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
                     ),
-                    const SizedBox(height: 10),
-                    const TitleFormField(),
-                    const SizedBox(height: 10),
-                    const DescriptionFormField(),
-                    const SizedBox(height: 10),
-                    PicturesSelector(),
-                    const SizedBox(height: 20),
-                    const Text(
-                      "Set the initial difficulty",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                      ),
-                    ),
-                    DifficultySlider(),
-                    const SizedBox(height: 10),
+                  ),
+                  DifficultySlider(),
+                  const SizedBox(height: 10),
                   // TODO: Figure out why the map can't be constant
                   // adding const freezes the map, meaning the marker can't change position
                   Map(),
@@ -72,10 +72,9 @@ class ExperienceManagementForm extends StatelessWidget {
                   const ObjectiveCreationCard(),
                   const RewardCreationCard(),
                   TagAdditionCard(
-                    tagChangeFunction: (KtSet<Tag> tags) =>
-                      context.bloc<ExperienceManagementFormBloc>().add(
-                        ExperienceManagementFormEvent.tagsChanged(tags),
-                      ),
+                    tagChangeFunction: (KtSet<Tag> tags) => context.bloc<ExperienceManagementFormBloc>().add(
+                          ExperienceManagementFormEvent.tagsChanged(tags),
+                        ),
                   ),
                   const FinishButton(),
                 ],
@@ -109,12 +108,13 @@ class ExperienceManagementForm extends StatelessWidget {
                   FlushbarHelper.createError(
                     duration: const Duration(seconds: 2),
                     message: "Unknown core data error",
+                  ).show(context),
+              ),
+            orElse: () =>
+              FlushbarHelper.createError(
+                duration: const Duration(seconds: 2),
+                message: "Unknown error",
               ).show(context),
-            ),
-            orElse: () => FlushbarHelper.createError(
-              duration: const Duration(seconds: 2),
-              message: "Unknown error",
-            ).show(context),
           ),
           (_) {
           FlushbarHelper.createSuccess(

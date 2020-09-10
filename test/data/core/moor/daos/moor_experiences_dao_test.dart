@@ -581,11 +581,11 @@ Future<MoorExperienceWithRelations> _insertExperienceAndRelations(
   }
   final _experienceImageUrlList = [
     ExperienceImageUrlsCompanion.insert(
-      imageUrl: "test/test1.jpg",
+      imageUrl: "assets/test1.jpg",
       experienceId: _insertedExperienceId,
     ),
     ExperienceImageUrlsCompanion.insert(
-      imageUrl: "test/test2.jpg",
+      imageUrl: "assets/test2.jpg",
       experienceId: _insertedExperienceId,
     )
   ];

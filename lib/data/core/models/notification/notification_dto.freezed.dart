@@ -114,7 +114,6 @@ abstract class _$NotificationDtoCopyWith<$Res> implements $NotificationDtoCopyWi
 
   @override
   $UserDtoCopyWith<$Res> get sender;
-
   @override
   $UserDtoCopyWith<$Res> get receiver;
 }
@@ -184,14 +183,14 @@ class _$_NotificationDto extends _NotificationDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _NotificationDto &&
-        (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.sender, sender) || const DeepCollectionEquality().equals(other.sender, sender)) &&
-        (identical(other.receiver, receiver) || const DeepCollectionEquality().equals(other.receiver, receiver)) &&
-        (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-        (identical(other.seen, seen) || const DeepCollectionEquality().equals(other.seen, seen)) &&
-        (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
-        (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)));
+        (other is _NotificationDto &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.sender, sender) || const DeepCollectionEquality().equals(other.sender, sender)) &&
+            (identical(other.receiver, receiver) || const DeepCollectionEquality().equals(other.receiver, receiver)) &&
+            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.seen, seen) || const DeepCollectionEquality().equals(other.seen, seen)) &&
+            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)));
   }
 
   @override
@@ -204,7 +203,7 @@ class _$_NotificationDto extends _NotificationDto {
       const DeepCollectionEquality().hash(seen) ^
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(type);
-  
+
   @override
   _$NotificationDtoCopyWith<_NotificationDto> get copyWith => __$NotificationDtoCopyWithImpl<_NotificationDto>(this, _$identity);
 

@@ -37,6 +37,7 @@ mixin _$System {
 
 abstract class $SystemCopyWith<$Res> {
   factory $SystemCopyWith(System value, $Res Function(System) then) = _$SystemCopyWithImpl<$Res>;
+
   $Res call({int id, String name, String type, String company});
 }
 
@@ -65,6 +66,7 @@ class _$SystemCopyWithImpl<$Res> implements $SystemCopyWith<$Res> {
 
 abstract class _$SystemCopyWith<$Res> implements $SystemCopyWith<$Res> {
   factory _$SystemCopyWith(_System value, $Res Function(_System) then) = __$SystemCopyWithImpl<$Res>;
+
   @override
   $Res call({int id, String name, String type, String company});
 }
@@ -115,11 +117,11 @@ class _$_System extends _System {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _System &&
-        (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-        (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
-        (identical(other.company, company) || const DeepCollectionEquality().equals(other.company, company)));
+        (other is _System &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.company, company) || const DeepCollectionEquality().equals(other.company, company)));
   }
 
   @override
