@@ -141,10 +141,10 @@ abstract class _$AchievementCopyWith<$Res> implements $AchievementCopyWith<$Res>
 
 class __$AchievementCopyWithImpl<$Res> extends _$AchievementCopyWithImpl<$Res> implements _$AchievementCopyWith<$Res> {
   __$AchievementCopyWithImpl(_Achievement _value, $Res Function(_Achievement) _then) : super(_value, (v) => _then(v as _Achievement));
-  
+
   @override
   _Achievement get _value => super._value as _Achievement;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -178,31 +178,32 @@ class __$AchievementCopyWithImpl<$Res> extends _$AchievementCopyWithImpl<$Res> i
 }
 
 class _$_Achievement extends _Achievement {
-  const _$_Achievement({this.id,
-    @required this.name,
-    @required this.description,
-    @required this.imageURL,
-    @required this.imageFile,
-    @required this.type,
-    @required this.requisite,
-    @required this.experiencePoints,
-    @required this.creatorId,
-    @required this.creationDate,
-    @required this.modificationDate,
-    @required this.tags})
-    : assert(name != null),
-      assert(description != null),
-      assert(imageURL != null),
-      assert(imageFile != null),
-      assert(type != null),
-      assert(requisite != null),
-      assert(experiencePoints != null),
-      assert(creatorId != null),
-      assert(creationDate != null),
-      assert(modificationDate != null),
-      assert(tags != null),
-      super._();
-  
+  const _$_Achievement(
+      {this.id,
+      @required this.name,
+      @required this.description,
+      @required this.imageURL,
+      @required this.imageFile,
+      @required this.type,
+      @required this.requisite,
+      @required this.experiencePoints,
+      @required this.creatorId,
+      @required this.creationDate,
+      @required this.modificationDate,
+      @required this.tags})
+      : assert(name != null),
+        assert(description != null),
+        assert(imageURL != null),
+        assert(imageFile != null),
+        assert(type != null),
+        assert(requisite != null),
+        assert(experiencePoints != null),
+        assert(creatorId != null),
+        assert(creationDate != null),
+        assert(modificationDate != null),
+        assert(tags != null),
+        super._();
+
   @override
   final int id;
   @override

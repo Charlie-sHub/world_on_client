@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:multi_image_picker/multi_image_picker.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/views/core/misc/common_functions/get_color_by_difficulty.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
@@ -12,6 +11,7 @@ import 'package:worldon/views/core/widget/misc/follow_unfollow_button_builder/fo
 import 'package:worldon/views/core/widget/misc/user_image.dart';
 import 'package:worldon/views/experience_navigation/widget/experience_information_tab_view/experience_description.dart';
 import 'package:worldon/views/experience_navigation/widget/experience_information_tab_view/experience_header.dart';
+import 'package:worldon/views/experience_navigation/widget/experience_information_tab_view/experience_image_gallery.dart';
 import 'package:worldon/views/experience_navigation/widget/rewards_list_view.dart';
 
 import 'experience_comments_list_view.dart';
@@ -35,22 +35,7 @@ class ExperienceInformationTabView extends StatelessWidget {
             padding: const EdgeInsets.all(5),
             child: ExperienceDescription(experience: experience),
           ),
-          // TODO: Implement image gallery
-          // This is just a way to show the images saved in the local database
-          Container(
-            width: MediaQuery.of(context).size.width,
-            child: experience.imageAssetsOption.fold(
-              () => Image(
-                image: AssetImage(experience.imageURLs.first),
-                fit: BoxFit.cover,
-              ),
-              (_assetList) => AssetThumb(
-                asset: _assetList.first,
-                width: 500,
-                height: 500,
-              ),
-            ),
-          ),
+          ExperienceImageGallery(experience: experience),
           Padding(
             padding: const EdgeInsets.all(5),
             child: Row(

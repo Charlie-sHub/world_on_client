@@ -77,10 +77,10 @@ abstract class _$WatchBlockedUsersStartedCopyWith<$Res> {
 
 class __$WatchBlockedUsersStartedCopyWithImpl<$Res> extends _$BlockedWatcherEventCopyWithImpl<$Res> implements _$WatchBlockedUsersStartedCopyWith<$Res> {
   __$WatchBlockedUsersStartedCopyWithImpl(_WatchBlockedUsersStarted _value, $Res Function(_WatchBlockedUsersStarted) _then) : super(_value, (v) => _then(v as _WatchBlockedUsersStarted));
-  
+
   @override
   _WatchBlockedUsersStarted get _value => super._value as _WatchBlockedUsersStarted;
-  
+
   @override
   $Res call({
     Object user = freezed,
@@ -176,24 +176,24 @@ class _$_WatchBlockedUsersStarted implements _WatchBlockedUsersStarted {
 
 abstract class _WatchBlockedUsersStarted implements BlockedWatcherEvent {
   const factory _WatchBlockedUsersStarted(User user) = _$_WatchBlockedUsersStarted;
-  
+
   User get user;
-  
+
   _$WatchBlockedUsersStartedCopyWith<_WatchBlockedUsersStarted> get copyWith;
 }
 
 abstract class _$ResultsReceivedCopyWith<$Res> {
   factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
-  
+
   $Res call({Either<Failure, KtList<User>> failureOrUsers});
 }
 
 class __$ResultsReceivedCopyWithImpl<$Res> extends _$BlockedWatcherEventCopyWithImpl<$Res> implements _$ResultsReceivedCopyWith<$Res> {
   __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then) : super(_value, (v) => _then(v as _ResultsReceived));
-  
+
   @override
   _ResultsReceived get _value => super._value as _ResultsReceived;
-  
+
   @override
   $Res call({
     Object failureOrUsers = freezed,
@@ -206,26 +206,26 @@ class __$ResultsReceivedCopyWithImpl<$Res> extends _$BlockedWatcherEventCopyWith
 
 class _$_ResultsReceived implements _ResultsReceived {
   const _$_ResultsReceived(this.failureOrUsers) : assert(failureOrUsers != null);
-  
+
   @override
   final Either<Failure, KtList<User>> failureOrUsers;
-  
+
   @override
   String toString() {
     return 'BlockedWatcherEvent.resultsReceived(failureOrUsers: $failureOrUsers)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is _ResultsReceived && (identical(other.failureOrUsers, failureOrUsers) || const DeepCollectionEquality().equals(other.failureOrUsers, failureOrUsers)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrUsers);
-  
+
   @override
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -279,9 +279,9 @@ class _$_ResultsReceived implements _ResultsReceived {
 
 abstract class _ResultsReceived implements BlockedWatcherEvent {
   const factory _ResultsReceived(Either<Failure, KtList<User>> failureOrUsers) = _$_ResultsReceived;
-  
+
   Either<Failure, KtList<User>> get failureOrUsers;
-  
+
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith;
 }
 
@@ -355,9 +355,9 @@ abstract class $BlockedWatcherStateCopyWith<$Res> {
 
 class _$BlockedWatcherStateCopyWithImpl<$Res> implements $BlockedWatcherStateCopyWith<$Res> {
   _$BlockedWatcherStateCopyWithImpl(this._value, this._then);
-  
+
   final BlockedWatcherState _value;
-  
+
   // ignore: unused_field
   final $Res Function(BlockedWatcherState) _then;
 }
@@ -368,7 +368,7 @@ abstract class _$InitialCopyWith<$Res> {
 
 class __$InitialCopyWithImpl<$Res> extends _$BlockedWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
-  
+
   @override
   _Initial get _value => super._value as _Initial;
 }
@@ -462,7 +462,7 @@ abstract class _$LoadInProgressCopyWith<$Res> {
 
 class __$LoadInProgressCopyWithImpl<$Res> extends _$BlockedWatcherStateCopyWithImpl<$Res> implements _$LoadInProgressCopyWith<$Res> {
   __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then) : super(_value, (v) => _then(v as _LoadInProgress));
-  
+
   @override
   _LoadInProgress get _value => super._value as _LoadInProgress;
 }
@@ -552,16 +552,16 @@ abstract class _LoadInProgress implements BlockedWatcherState {
 
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
-  
+
   $Res call({KtList<User> blockedUsers});
 }
 
 class __$LoadSuccessCopyWithImpl<$Res> extends _$BlockedWatcherStateCopyWithImpl<$Res> implements _$LoadSuccessCopyWith<$Res> {
   __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then) : super(_value, (v) => _then(v as _LoadSuccess));
-  
+
   @override
   _LoadSuccess get _value => super._value as _LoadSuccess;
-  
+
   @override
   $Res call({
     Object blockedUsers = freezed,
@@ -666,18 +666,18 @@ abstract class _LoadSuccess implements BlockedWatcherState {
 
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
-  
+
   $Res call({Failure<dynamic> failure});
-  
+
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 class __$LoadFailureCopyWithImpl<$Res> extends _$BlockedWatcherStateCopyWithImpl<$Res> implements _$LoadFailureCopyWith<$Res> {
   __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then) : super(_value, (v) => _then(v as _LoadFailure));
-  
+
   @override
   _LoadFailure get _value => super._value as _LoadFailure;
-  
+
   @override
   $Res call({
     Object failure = freezed,

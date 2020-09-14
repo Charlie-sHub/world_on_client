@@ -61,9 +61,9 @@ abstract class $AchievementManagementWatcherEventCopyWith<$Res> {
 
 class _$AchievementManagementWatcherEventCopyWithImpl<$Res> implements $AchievementManagementWatcherEventCopyWith<$Res> {
   _$AchievementManagementWatcherEventCopyWithImpl(this._value, this._then);
-  
+
   final AchievementManagementWatcherEvent _value;
-  
+
   // ignore: unused_field
   final $Res Function(AchievementManagementWatcherEvent) _then;
 }
@@ -74,7 +74,7 @@ abstract class _$WatchAllAchievementsStartedCopyWith<$Res> {
 
 class __$WatchAllAchievementsStartedCopyWithImpl<$Res> extends _$AchievementManagementWatcherEventCopyWithImpl<$Res> implements _$WatchAllAchievementsStartedCopyWith<$Res> {
   __$WatchAllAchievementsStartedCopyWithImpl(_WatchAllAchievementsStarted _value, $Res Function(_WatchAllAchievementsStarted) _then) : super(_value, (v) => _then(v as _WatchAllAchievementsStarted));
-  
+
   @override
   _WatchAllAchievementsStarted get _value => super._value as _WatchAllAchievementsStarted;
 }
@@ -152,16 +152,16 @@ abstract class _WatchAllAchievementsStarted implements AchievementManagementWatc
 
 abstract class _$ResultsReceivedCopyWith<$Res> {
   factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
-  
+
   $Res call({Either<Failure, KtList<Achievement>> failureOrAchievements});
 }
 
 class __$ResultsReceivedCopyWithImpl<$Res> extends _$AchievementManagementWatcherEventCopyWithImpl<$Res> implements _$ResultsReceivedCopyWith<$Res> {
   __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then) : super(_value, (v) => _then(v as _ResultsReceived));
-  
+
   @override
   _ResultsReceived get _value => super._value as _ResultsReceived;
-  
+
   @override
   $Res call({
     Object failureOrAchievements = freezed,
@@ -174,27 +174,27 @@ class __$ResultsReceivedCopyWithImpl<$Res> extends _$AchievementManagementWatche
 
 class _$_ResultsReceived implements _ResultsReceived {
   const _$_ResultsReceived(this.failureOrAchievements) : assert(failureOrAchievements != null);
-  
+
   @override
   final Either<Failure, KtList<Achievement>> failureOrAchievements;
-  
+
   @override
   String toString() {
     return 'AchievementManagementWatcherEvent.resultsReceived(failureOrAchievements: $failureOrAchievements)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _ResultsReceived && (identical(other.failureOrAchievements, failureOrAchievements) || const DeepCollectionEquality().equals(other.failureOrAchievements, failureOrAchievements)));
+        (other is _ResultsReceived && (identical(other.failureOrAchievements, failureOrAchievements) || const DeepCollectionEquality().equals(other.failureOrAchievements, failureOrAchievements)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrAchievements);
-  
+
   @override
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -248,9 +248,9 @@ class _$_ResultsReceived implements _ResultsReceived {
 
 abstract class _ResultsReceived implements AchievementManagementWatcherEvent {
   const factory _ResultsReceived(Either<Failure, KtList<Achievement>> failureOrAchievements) = _$_ResultsReceived;
-  
+
   Either<Failure, KtList<Achievement>> get failureOrAchievements;
-  
+
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith;
 }
 
@@ -326,9 +326,9 @@ abstract class $AchievementManagementWatcherStateCopyWith<$Res> {
 
 class _$AchievementManagementWatcherStateCopyWithImpl<$Res> implements $AchievementManagementWatcherStateCopyWith<$Res> {
   _$AchievementManagementWatcherStateCopyWithImpl(this._value, this._then);
-  
+
   final AchievementManagementWatcherState _value;
-  
+
   // ignore: unused_field
   final $Res Function(AchievementManagementWatcherState) _then;
 }
@@ -339,7 +339,7 @@ abstract class _$InitialCopyWith<$Res> {
 
 class __$InitialCopyWithImpl<$Res> extends _$AchievementManagementWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
-  
+
   @override
   _Initial get _value => super._value as _Initial;
 }
@@ -433,7 +433,7 @@ abstract class _$LoadInProgressCopyWith<$Res> {
 
 class __$LoadInProgressCopyWithImpl<$Res> extends _$AchievementManagementWatcherStateCopyWithImpl<$Res> implements _$LoadInProgressCopyWith<$Res> {
   __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then) : super(_value, (v) => _then(v as _LoadInProgress));
-  
+
   @override
   _LoadInProgress get _value => super._value as _LoadInProgress;
 }
@@ -523,16 +523,16 @@ abstract class _LoadInProgress implements AchievementManagementWatcherState {
 
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
-  
+
   $Res call({KtList<Achievement> achievements});
 }
 
 class __$LoadSuccessCopyWithImpl<$Res> extends _$AchievementManagementWatcherStateCopyWithImpl<$Res> implements _$LoadSuccessCopyWith<$Res> {
   __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then) : super(_value, (v) => _then(v as _LoadSuccess));
-  
+
   @override
   _LoadSuccess get _value => super._value as _LoadSuccess;
-  
+
   @override
   $Res call({
     Object achievements = freezed,
@@ -637,18 +637,18 @@ abstract class _LoadSuccess implements AchievementManagementWatcherState {
 
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
-  
+
   $Res call({Failure<dynamic> failure});
-  
+
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 class __$LoadFailureCopyWithImpl<$Res> extends _$AchievementManagementWatcherStateCopyWithImpl<$Res> implements _$LoadFailureCopyWith<$Res> {
   __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then) : super(_value, (v) => _then(v as _LoadFailure));
-  
+
   @override
   _LoadFailure get _value => super._value as _LoadFailure;
-  
+
   @override
   $Res call({
     Object failure = freezed,

@@ -123,16 +123,16 @@ class _$AchievementManagementFormEventCopyWithImpl<$Res> implements $Achievement
 
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
-  
+
   $Res call({Option<Achievement> achievementOption});
 }
 
 class __$InitializedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
   __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
-  
+
   @override
   _Initialized get _value => super._value as _Initialized;
-  
+
   @override
   $Res call({
     Object achievementOption = freezed,
@@ -145,27 +145,27 @@ class __$InitializedCopyWithImpl<$Res> extends _$AchievementManagementFormEventC
 
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.achievementOption) : assert(achievementOption != null);
-  
+
   @override
   final Option<Achievement> achievementOption;
-  
+
   @override
   String toString() {
     return 'AchievementManagementFormEvent.initialized(achievementOption: $achievementOption)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Initialized && (identical(other.achievementOption, achievementOption) || const DeepCollectionEquality().equals(other.achievementOption, achievementOption)));
+        (other is _Initialized && (identical(other.achievementOption, achievementOption) || const DeepCollectionEquality().equals(other.achievementOption, achievementOption)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(achievementOption);
-  
+
   @override
   _$InitializedCopyWith<_Initialized> get copyWith => __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -249,24 +249,24 @@ class _$_Initialized implements _Initialized {
 
 abstract class _Initialized implements AchievementManagementFormEvent {
   const factory _Initialized(Option<Achievement> achievementOption) = _$_Initialized;
-  
+
   Option<Achievement> get achievementOption;
-  
+
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
 abstract class _$NameChangedCopyWith<$Res> {
   factory _$NameChangedCopyWith(_NameChanged value, $Res Function(_NameChanged) then) = __$NameChangedCopyWithImpl<$Res>;
-  
+
   $Res call({String name});
 }
 
 class __$NameChangedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res> implements _$NameChangedCopyWith<$Res> {
   __$NameChangedCopyWithImpl(_NameChanged _value, $Res Function(_NameChanged) _then) : super(_value, (v) => _then(v as _NameChanged));
-  
+
   @override
   _NameChanged get _value => super._value as _NameChanged;
-  
+
   @override
   $Res call({
     Object name = freezed,
@@ -389,16 +389,16 @@ abstract class _NameChanged implements AchievementManagementFormEvent {
 
 abstract class _$DescriptionChangedCopyWith<$Res> {
   factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) = __$DescriptionChangedCopyWithImpl<$Res>;
-  
+
   $Res call({String description});
 }
 
 class __$DescriptionChangedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res> implements _$DescriptionChangedCopyWith<$Res> {
   __$DescriptionChangedCopyWithImpl(_DescriptionChanged _value, $Res Function(_DescriptionChanged) _then) : super(_value, (v) => _then(v as _DescriptionChanged));
-  
+
   @override
   _DescriptionChanged get _value => super._value as _DescriptionChanged;
-  
+
   @override
   $Res call({
     Object description = freezed,
@@ -526,10 +526,10 @@ abstract class _$ExperiencePointsChangedCopyWith<$Res> {
 
 class __$ExperiencePointsChangedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res> implements _$ExperiencePointsChangedCopyWith<$Res> {
   __$ExperiencePointsChangedCopyWithImpl(_ExperiencePointsChanged _value, $Res Function(_ExperiencePointsChanged) _then) : super(_value, (v) => _then(v as _ExperiencePointsChanged));
-  
+
   @override
   _ExperiencePointsChanged get _value => super._value as _ExperiencePointsChanged;
-  
+
   @override
   $Res call({
     Object experiencePoints = freezed,
@@ -542,27 +542,27 @@ class __$ExperiencePointsChangedCopyWithImpl<$Res> extends _$AchievementManageme
 
 class _$_ExperiencePointsChanged implements _ExperiencePointsChanged {
   const _$_ExperiencePointsChanged(this.experiencePoints) : assert(experiencePoints != null);
-  
+
   @override
   final int experiencePoints;
-  
+
   @override
   String toString() {
     return 'AchievementManagementFormEvent.experiencePointsChanged(experiencePoints: $experiencePoints)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
       (other is _ExperiencePointsChanged && (identical(other.experiencePoints, experiencePoints) || const DeepCollectionEquality().equals(other.experiencePoints, experiencePoints)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experiencePoints);
-  
+
   @override
   _$ExperiencePointsChangedCopyWith<_ExperiencePointsChanged> get copyWith => __$ExperiencePointsChangedCopyWithImpl<_ExperiencePointsChanged>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -646,24 +646,24 @@ class _$_ExperiencePointsChanged implements _ExperiencePointsChanged {
 
 abstract class _ExperiencePointsChanged implements AchievementManagementFormEvent {
   const factory _ExperiencePointsChanged(int experiencePoints) = _$_ExperiencePointsChanged;
-  
+
   int get experiencePoints;
-  
+
   _$ExperiencePointsChangedCopyWith<_ExperiencePointsChanged> get copyWith;
 }
 
 abstract class _$TagsChangedCopyWith<$Res> {
   factory _$TagsChangedCopyWith(_TagsChanged value, $Res Function(_TagsChanged) then) = __$TagsChangedCopyWithImpl<$Res>;
-  
+
   $Res call({KtSet<Tag> tags});
 }
 
 class __$TagsChangedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res> implements _$TagsChangedCopyWith<$Res> {
   __$TagsChangedCopyWithImpl(_TagsChanged _value, $Res Function(_TagsChanged) _then) : super(_value, (v) => _then(v as _TagsChanged));
-  
+
   @override
   _TagsChanged get _value => super._value as _TagsChanged;
-  
+
   @override
   $Res call({
     Object tags = freezed,
@@ -786,16 +786,16 @@ abstract class _TagsChanged implements AchievementManagementFormEvent {
 
 abstract class _$ImageChangedCopyWith<$Res> {
   factory _$ImageChangedCopyWith(_ImageChanged value, $Res Function(_ImageChanged) then) = __$ImageChangedCopyWithImpl<$Res>;
-  
+
   $Res call({File image});
 }
 
 class __$ImageChangedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res> implements _$ImageChangedCopyWith<$Res> {
   __$ImageChangedCopyWithImpl(_ImageChanged _value, $Res Function(_ImageChanged) _then) : super(_value, (v) => _then(v as _ImageChanged));
-  
+
   @override
   _ImageChanged get _value => super._value as _ImageChanged;
-  
+
   @override
   $Res call({
     Object image = freezed,
@@ -922,7 +922,7 @@ abstract class _$SubmittedCopyWith<$Res> {
 
 class __$SubmittedCopyWithImpl<$Res> extends _$AchievementManagementFormEventCopyWithImpl<$Res> implements _$SubmittedCopyWith<$Res> {
   __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then) : super(_value, (v) => _then(v as _Submitted));
-  
+
   @override
   _Submitted get _value => super._value as _Submitted;
 }
@@ -1049,34 +1049,34 @@ const $AchievementManagementFormState = _$AchievementManagementFormStateTearOff(
 
 mixin _$AchievementManagementFormState {
   Achievement get achievement;
-  
+
   bool get showErrorMessages;
-  
+
   bool get isEditing;
-  
+
   bool get isSubmitting;
-  
+
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
-  
+
   $AchievementManagementFormStateCopyWith<AchievementManagementFormState> get copyWith;
 }
 
 abstract class $AchievementManagementFormStateCopyWith<$Res> {
   factory $AchievementManagementFormStateCopyWith(AchievementManagementFormState value, $Res Function(AchievementManagementFormState) then) = _$AchievementManagementFormStateCopyWithImpl<$Res>;
-  
+
   $Res call({Achievement achievement, bool showErrorMessages, bool isEditing, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
-  
+
   $AchievementCopyWith<$Res> get achievement;
 }
 
 class _$AchievementManagementFormStateCopyWithImpl<$Res> implements $AchievementManagementFormStateCopyWith<$Res> {
   _$AchievementManagementFormStateCopyWithImpl(this._value, this._then);
-  
+
   final AchievementManagementFormState _value;
-  
+
   // ignore: unused_field
   final $Res Function(AchievementManagementFormState) _then;
-  
+
   @override
   $Res call({
     Object achievement = freezed,
@@ -1107,10 +1107,10 @@ class _$AchievementManagementFormStateCopyWithImpl<$Res> implements $Achievement
 
 abstract class _$AchievementManagementFormStateCopyWith<$Res> implements $AchievementManagementFormStateCopyWith<$Res> {
   factory _$AchievementManagementFormStateCopyWith(_AchievementManagementFormState value, $Res Function(_AchievementManagementFormState) then) = __$AchievementManagementFormStateCopyWithImpl<$Res>;
-  
+
   @override
   $Res call({Achievement achievement, bool showErrorMessages, bool isEditing, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
-  
+
   @override
   $AchievementCopyWith<$Res> get achievement;
 }

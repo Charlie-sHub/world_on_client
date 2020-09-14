@@ -215,29 +215,30 @@ class _$_NotificationDto extends _NotificationDto {
 
 abstract class _NotificationDto extends NotificationDto {
   const _NotificationDto._() : super._();
-  
-  const factory _NotificationDto({@required int id,
-    @required UserDto sender,
-    @required UserDto receiver,
-    @required String description,
-    @required bool seen,
-    @required String creationDate,
-    @required NotificationType type}) = _$_NotificationDto;
-  
+
+  const factory _NotificationDto(
+      {@required int id,
+      @required UserDto sender,
+      @required UserDto receiver,
+      @required String description,
+      @required bool seen,
+      @required String creationDate,
+      @required NotificationType type}) = _$_NotificationDto;
+
   factory _NotificationDto.fromJson(Map<String, dynamic> json) = _$_NotificationDto.fromJson;
-  
+
   @override
   int get id;
-  
+
   @override
   UserDto get sender;
-  
+
   @override
   UserDto get receiver;
 
   @override
   String get description;
-  
+
   @override
   bool get seen;
   @override

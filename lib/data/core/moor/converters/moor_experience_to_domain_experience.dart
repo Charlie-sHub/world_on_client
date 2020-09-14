@@ -41,32 +41,32 @@ Experience moorExperienceToDomainExperience(MoorExperienceWithRelations _moorExp
         latitude: Latitude(_moorExperienceWithRelations.experience.latitude),
         longitude: Longitude(_moorExperienceWithRelations.experience.longitude),
       ),
-  creator: moorUserToDomainUser(_moorExperienceWithRelations.creator),
-  difficulty: Difficulty(_moorExperienceWithRelations.experience.difficulty),
-  creationDate: PastDate(_moorExperienceWithRelations.experience.creationDate),
-  modificationDate: PastDate(_moorExperienceWithRelations.experience.modificationDate),
-  objectives: ObjectiveSet(
-    _moorExperienceWithRelations.objectives
-      .map(
-        (_moorObjective) => moorObjectiveToDomainObjective(_moorObjective),
-    )
-      .toSet()
-      .toImmutableSet(),
-  ),
-  rewards: RewardSet(
-    _moorExperienceWithRelations.rewards
-      .map(
-        (_moorReward) => moorRewardToDomainReward(_moorReward),
-    )
-      .toSet()
-      .toImmutableSet(),
-  ),
-  tags: TagSet(
-    _moorExperienceWithRelations.tags
-      .map(
-        (_moorTagWithCreator) => moorTagToDomainTag(_moorTagWithCreator),
-    )
-      .toSet()
-      .toImmutableSet(),
-  ),
-);
+      creator: moorUserToDomainUser(_moorExperienceWithRelations.creator),
+      difficulty: Difficulty(_moorExperienceWithRelations.experience.difficulty),
+      creationDate: PastDate(_moorExperienceWithRelations.experience.creationDate),
+      modificationDate: PastDate(_moorExperienceWithRelations.experience.modificationDate),
+      objectives: ObjectiveSet(
+        _moorExperienceWithRelations.objectives
+            .map(
+              (_moorObjective) => moorObjectiveToDomainObjective(_moorObjective),
+            )
+            .toSet()
+            .toImmutableSet(),
+      ),
+      rewards: RewardSet(
+        _moorExperienceWithRelations.rewards
+            .map(
+              (_moorReward) => moorRewardToDomainReward(_moorReward),
+            )
+            .toSet()
+            .toImmutableSet(),
+      ),
+      tags: TagSet(
+        _moorExperienceWithRelations.tags
+            .map(
+              (_moorTagWithCreator) => moorTagToDomainTag(_moorTagWithCreator),
+            )
+            .toSet()
+            .toImmutableSet(),
+      ),
+    );

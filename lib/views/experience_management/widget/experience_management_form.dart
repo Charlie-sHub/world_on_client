@@ -3,6 +3,7 @@ import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kt_dart/kt.dart';
+import 'package:multi_image_picker/multi_image_picker.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/injection.dart';
@@ -28,10 +29,15 @@ class ExperienceManagementForm extends StatelessWidget {
       child: BlocConsumer<ExperienceManagementFormBloc, ExperienceManagementFormState>(
         listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
         listener: _experienceManagementListener,
-        buildWhen: (previous, current) =>
-            previous.showErrorMessages != current.showErrorMessages ||
-            previous.experience.difficulty != current.experience.difficulty ||
-            previous.experience.coordinates != current.experience.coordinates,
+        buildWhen: (previous, current) {
+          final _previousImages = previous.experience.imageAssetsOption.fold(() => List<Asset>.empty(), id);
+          final _currentImages = current.experience.imageAssetsOption.fold(() => List<Asset>.empty(), id);
+          final _shouldRebuild = previous.showErrorMessages != current.showErrorMessages ||
+              previous.experience.difficulty != current.experience.difficulty ||
+              previous.experience.coordinates != current.experience.coordinates ||
+              _previousImages != _currentImages;
+          return _shouldRebuild;
+        },
         builder: (context, state) => SingleChildScrollView(
           child: Form(
             autovalidate: state.showErrorMessages,

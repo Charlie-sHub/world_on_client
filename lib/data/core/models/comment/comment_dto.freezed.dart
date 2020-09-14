@@ -90,20 +90,20 @@ class _$CommentDtoCopyWithImpl<$Res> implements $CommentDtoCopyWith<$Res> {
 
 abstract class _$CommentDtoCopyWith<$Res> implements $CommentDtoCopyWith<$Res> {
   factory _$CommentDtoCopyWith(_CommentDto value, $Res Function(_CommentDto) then) = __$CommentDtoCopyWithImpl<$Res>;
-  
+
   @override
   $Res call({int id, UserDto poster, int experienceId, String content, String creationDate, String modificationDate});
-  
+
   @override
   $UserDtoCopyWith<$Res> get poster;
 }
 
 class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res> implements _$CommentDtoCopyWith<$Res> {
   __$CommentDtoCopyWithImpl(_CommentDto _value, $Res Function(_CommentDto) _then) : super(_value, (v) => _then(v as _CommentDto));
-  
+
   @override
   _CommentDto get _value => super._value as _CommentDto;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -127,16 +127,16 @@ class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res> imp
 @JsonSerializable()
 class _$_CommentDto extends _CommentDto {
   const _$_CommentDto({@required this.id, @required this.poster, @required this.experienceId, @required this.content, @required this.creationDate, @required this.modificationDate})
-    : assert(id != null),
-      assert(poster != null),
-      assert(experienceId != null),
-      assert(content != null),
-      assert(creationDate != null),
-      assert(modificationDate != null),
-      super._();
-  
+      : assert(id != null),
+        assert(poster != null),
+        assert(experienceId != null),
+        assert(content != null),
+        assert(creationDate != null),
+        assert(modificationDate != null),
+        super._();
+
   factory _$_CommentDto.fromJson(Map<String, dynamic> json) => _$_$_CommentDtoFromJson(json);
-  
+
   @override
   final int id;
   @override

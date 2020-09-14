@@ -435,22 +435,23 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
   }
 
   Future _insertComments(Set<int> _experiencesIds) async {
-    final _comment = getValidComment().copyWith(experienceId: _experiencesIds.first);
-    final _moorCommentIpsum = domainCommentToMoorComment(_comment);
-    final _moorCommentBro = _moorCommentIpsum.copyWith(
-      content: const Value("Chain suck lid huck wheels titanium face plant slash greasy shreddin grind derailleur rigid brain bucket chain ring groomer"),
-    );
-    final _moorCommentHip = _moorCommentIpsum.copyWith(
-      experienceId: Value(_experiencesIds.last),
-      content: const Value("Meggings vegan kickstarter hot chicken celiac tofu godard echo park"),
-    );
-    final _commentList = [
-      _moorCommentIpsum,
-      _moorCommentBro,
-      _moorCommentHip,
-    ];
-    for (final _comment in _commentList) {
-      _database.moorCommentsDao.insertComment(_comment);
+    for (final _experienceId in _experiencesIds) {
+      final _comment = getValidComment().copyWith(experienceId: _experienceId);
+      final _moorCommentIpsum = domainCommentToMoorComment(_comment);
+      final _moorCommentBro = _moorCommentIpsum.copyWith(
+        content: const Value("Chain suck lid huck wheels titanium face plant slash greasy shreddin grind derailleur rigid brain bucket chain ring groomer"),
+      );
+      final _moorCommentHip = _moorCommentIpsum.copyWith(
+        content: const Value("Meggings vegan kickstarter hot chicken celiac tofu godard echo park"),
+      );
+      final _commentList = [
+        _moorCommentIpsum,
+        _moorCommentBro,
+        _moorCommentHip,
+      ];
+      for (final _comment in _commentList) {
+        _database.moorCommentsDao.insertComment(_comment);
+      }
     }
   }
 
@@ -463,7 +464,14 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
       creator: _validUser.copyWith(
         id: _userIds.first,
       ),
-      imageURLs: {"assets/experience_placeholder_image_2.jpeg"},
+      imageURLs: {
+        "assets/experience_placeholder_image_2.jpeg",
+        "assets/experience_placeholder_image_3.jpeg",
+        "assets/experience_placeholder_image_4.jpeg",
+        "assets/experience_placeholder_image_5.jpeg",
+        "assets/experience_placeholder_image_6.jpeg",
+        "assets/experience_placeholder_image_7.jpeg",
+      },
       coordinates: Coordinates(
         latitude: Latitude(40.461036),
         longitude: Longitude(-3.606436),
@@ -475,7 +483,13 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
       creator: _validUser.copyWith(
         id: _userIds.elementAt(1),
       ),
-      imageURLs: {"assets/experience_placeholder_image_3.jpeg"},
+      imageURLs: {
+        "assets/experience_placeholder_image_3.jpeg",
+        "assets/experience_placeholder_image_4.jpeg",
+        "assets/experience_placeholder_image_5.jpeg",
+        "assets/experience_placeholder_image_6.jpeg",
+        "assets/experience_placeholder_image_7.jpeg",
+      },
       coordinates: Coordinates(
         latitude: Latitude(40.409124),
         longitude: Longitude(-3.716106),
@@ -487,7 +501,12 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
       creator: _validUser.copyWith(
         id: _userIds.elementAt(2),
       ),
-      imageURLs: {"assets/experience_placeholder_image_4.jpeg"},
+      imageURLs: {
+        "assets/experience_placeholder_image_4.jpeg",
+        "assets/experience_placeholder_image_5.jpeg",
+        "assets/experience_placeholder_image_6.jpeg",
+        "assets/experience_placeholder_image_7.jpeg",
+      },
       coordinates: Coordinates(
         latitude: Latitude(40.431185),
         longitude: Longitude(-3.725424),
@@ -500,7 +519,11 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
       creator: _validUser.copyWith(
         id: _userIds.elementAt(3),
       ),
-      imageURLs: {"assets/experience_placeholder_image_5.jpeg"},
+      imageURLs: {
+        "assets/experience_placeholder_image_5.jpeg",
+        "assets/experience_placeholder_image_6.jpeg",
+        "assets/experience_placeholder_image_7.jpeg",
+      },
       coordinates: Coordinates(
         latitude: Latitude(40.446616),
         longitude: Longitude(-3.720231),
@@ -512,7 +535,10 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
       creator: _validUser.copyWith(
         id: _userIds.elementAt(2),
       ),
-      imageURLs: {"assets/experience_placeholder_image_6.jpeg"},
+      imageURLs: {
+        "assets/experience_placeholder_image_6.jpeg",
+        "assets/experience_placeholder_image_7.jpeg",
+      },
       coordinates: Coordinates(
         latitude: Latitude(40.451969),
         longitude: Longitude(-3.699474),
@@ -559,20 +585,23 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
         )
         .toSet();
     final _moorRewards = experience.rewards
-        .getOrCrash()
-        .asSet()
-        .map(
-          (_reward) => domainRewardToMoorReward(
-            _experienceId,
-            _reward,
-          ),
-        )
-        .toSet();
-    final _experienceImage = ExperienceImageUrlsCompanion.insert(
-      experienceId: _experienceId,
-      imageUrl: experience.imageURLs.first,
-    );
-    await _database.moorExperiencesDao.insertExperienceImage(_experienceImage);
+      .getOrCrash()
+      .asSet()
+      .map(
+        (_reward) =>
+        domainRewardToMoorReward(
+          _experienceId,
+          _reward,
+        ),
+    )
+      .toSet();
+    for (final _imageUrl in experience.imageURLs) {
+      final _experienceImage = ExperienceImageUrlsCompanion.insert(
+        experienceId: _experienceId,
+        imageUrl: _imageUrl,
+      );
+      await _database.moorExperiencesDao.insertExperienceImage(_experienceImage);
+    }
     for (final _objective in _moorObjectives) {
       await _database.moorObjectivesDao.insertObjective(_objective);
     }

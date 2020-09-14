@@ -20,7 +20,12 @@ class ExperienceCommentsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.4,
+      constraints: BoxConstraints.loose(
+        Size(
+          MediaQuery.of(context).size.width,
+          MediaQuery.of(context).size.height * 0.4,
+        ),
+      ),
       color: WorldOnColors.background,
       child: BlocProvider(
         create: (context) => getIt<CommentWatcherBloc>(),

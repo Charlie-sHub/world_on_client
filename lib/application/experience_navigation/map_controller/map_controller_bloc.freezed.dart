@@ -82,18 +82,18 @@ class _$MapControllerEventCopyWithImpl<$Res> implements $MapControllerEventCopyW
 
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
-  
+
   $Res call({Experience experience});
-  
+
   $ExperienceCopyWith<$Res> get experience;
 }
 
 class __$InitializedCopyWithImpl<$Res> extends _$MapControllerEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
   __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
-  
+
   @override
   _Initialized get _value => super._value as _Initialized;
-  
+
   @override
   $Res call({
     Object experience = freezed,
@@ -209,10 +209,10 @@ abstract class _$CameraPositionChangedCopyWith<$Res> {
 
 class __$CameraPositionChangedCopyWithImpl<$Res> extends _$MapControllerEventCopyWithImpl<$Res> implements _$CameraPositionChangedCopyWith<$Res> {
   __$CameraPositionChangedCopyWithImpl(_CameraPositionChanged _value, $Res Function(_CameraPositionChanged) _then) : super(_value, (v) => _then(v as _CameraPositionChanged));
-  
+
   @override
   _CameraPositionChanged get _value => super._value as _CameraPositionChanged;
-  
+
   @override
   $Res call({
     Object coordinates = freezed,
@@ -237,19 +237,19 @@ class __$CameraPositionChangedCopyWithImpl<$Res> extends _$MapControllerEventCop
 
 class _$_CameraPositionChanged implements _CameraPositionChanged {
   const _$_CameraPositionChanged({@required this.coordinates, @required this.zoom})
-    : assert(coordinates != null),
-      assert(zoom != null);
-  
+      : assert(coordinates != null),
+        assert(zoom != null);
+
   @override
   final Coordinates coordinates;
   @override
   final double zoom;
-  
+
   @override
   String toString() {
     return 'MapControllerEvent.cameraPositionChanged(coordinates: $coordinates, zoom: $zoom)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -323,26 +323,26 @@ class _$_CameraPositionChanged implements _CameraPositionChanged {
 
 abstract class _CameraPositionChanged implements MapControllerEvent {
   const factory _CameraPositionChanged({@required Coordinates coordinates, @required double zoom}) = _$_CameraPositionChanged;
-  
+
   Coordinates get coordinates;
-  
+
   double get zoom;
-  
+
   _$CameraPositionChangedCopyWith<_CameraPositionChanged> get copyWith;
 }
 
 abstract class _$ObjectivesChangedCopyWith<$Res> {
   factory _$ObjectivesChangedCopyWith(_ObjectivesChanged value, $Res Function(_ObjectivesChanged) then) = __$ObjectivesChangedCopyWithImpl<$Res>;
-  
+
   $Res call({KtList<Objective> objectives});
 }
 
 class __$ObjectivesChangedCopyWithImpl<$Res> extends _$MapControllerEventCopyWithImpl<$Res> implements _$ObjectivesChangedCopyWith<$Res> {
   __$ObjectivesChangedCopyWithImpl(_ObjectivesChanged _value, $Res Function(_ObjectivesChanged) _then) : super(_value, (v) => _then(v as _ObjectivesChanged));
-  
+
   @override
   _ObjectivesChanged get _value => super._value as _ObjectivesChanged;
-  
+
   @override
   $Res call({
     Object objectives = freezed,
@@ -434,9 +434,9 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
 
 abstract class _ObjectivesChanged implements MapControllerEvent {
   const factory _ObjectivesChanged(KtList<Objective> objectives) = _$_ObjectivesChanged;
-  
+
   KtList<Objective> get objectives;
-  
+
   _$ObjectivesChangedCopyWith<_ObjectivesChanged> get copyWith;
 }
 
@@ -466,20 +466,20 @@ mixin _$MapControllerState {
 
 abstract class $MapControllerStateCopyWith<$Res> {
   factory $MapControllerStateCopyWith(MapControllerState value, $Res Function(MapControllerState) then) = _$MapControllerStateCopyWithImpl<$Res>;
-  
+
   $Res call({Coordinates coordinates, KtList<Objective> objectives, double zoom});
-  
+
   $CoordinatesCopyWith<$Res> get coordinates;
 }
 
 class _$MapControllerStateCopyWithImpl<$Res> implements $MapControllerStateCopyWith<$Res> {
   _$MapControllerStateCopyWithImpl(this._value, this._then);
-  
+
   final MapControllerState _value;
-  
+
   // ignore: unused_field
   final $Res Function(MapControllerState) _then;
-  
+
   @override
   $Res call({
     Object coordinates = freezed,
@@ -506,20 +506,20 @@ class _$MapControllerStateCopyWithImpl<$Res> implements $MapControllerStateCopyW
 
 abstract class _$MapControllerStateCopyWith<$Res> implements $MapControllerStateCopyWith<$Res> {
   factory _$MapControllerStateCopyWith(_MapControllerState value, $Res Function(_MapControllerState) then) = __$MapControllerStateCopyWithImpl<$Res>;
-  
+
   @override
   $Res call({Coordinates coordinates, KtList<Objective> objectives, double zoom});
-  
+
   @override
   $CoordinatesCopyWith<$Res> get coordinates;
 }
 
 class __$MapControllerStateCopyWithImpl<$Res> extends _$MapControllerStateCopyWithImpl<$Res> implements _$MapControllerStateCopyWith<$Res> {
   __$MapControllerStateCopyWithImpl(_MapControllerState _value, $Res Function(_MapControllerState) _then) : super(_value, (v) => _then(v as _MapControllerState));
-  
+
   @override
   _MapControllerState get _value => super._value as _MapControllerState;
-  
+
   @override
   $Res call({
     Object coordinates = freezed,
@@ -570,13 +570,13 @@ class _$_MapControllerState implements _MapControllerState {
 
 abstract class _MapControllerState implements MapControllerState {
   const factory _MapControllerState({@required Coordinates coordinates, @required KtList<Objective> objectives, @required double zoom}) = _$_MapControllerState;
-  
+
   @override
   Coordinates get coordinates;
-  
+
   @override
   KtList<Objective> get objectives;
-  
+
   @override
   double get zoom;
 

@@ -91,16 +91,16 @@ class _$ObjectiveFormEventCopyWithImpl<$Res> implements $ObjectiveFormEventCopyW
 
 abstract class _$DescriptionChangedCopyWith<$Res> {
   factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) = __$DescriptionChangedCopyWithImpl<$Res>;
-  
+
   $Res call({String description});
 }
 
 class __$DescriptionChangedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWithImpl<$Res> implements _$DescriptionChangedCopyWith<$Res> {
   __$DescriptionChangedCopyWithImpl(_DescriptionChanged _value, $Res Function(_DescriptionChanged) _then) : super(_value, (v) => _then(v as _DescriptionChanged));
-  
+
   @override
   _DescriptionChanged get _value => super._value as _DescriptionChanged;
-  
+
   @override
   $Res call({
     Object description = freezed,
@@ -205,16 +205,16 @@ abstract class _DescriptionChanged implements ObjectiveFormEvent {
 
 abstract class _$CoordinatesChangedCopyWith<$Res> {
   factory _$CoordinatesChangedCopyWith(_CoordinatesChanged value, $Res Function(_CoordinatesChanged) then) = __$CoordinatesChangedCopyWithImpl<$Res>;
-  
+
   $Res call({double latitude, double longitude});
 }
 
 class __$CoordinatesChangedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWithImpl<$Res> implements _$CoordinatesChangedCopyWith<$Res> {
   __$CoordinatesChangedCopyWithImpl(_CoordinatesChanged _value, $Res Function(_CoordinatesChanged) _then) : super(_value, (v) => _then(v as _CoordinatesChanged));
-  
+
   @override
   _CoordinatesChanged get _value => super._value as _CoordinatesChanged;
-  
+
   @override
   $Res call({
     Object latitude = freezed,
@@ -229,19 +229,19 @@ class __$CoordinatesChangedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWi
 
 class _$_CoordinatesChanged implements _CoordinatesChanged {
   const _$_CoordinatesChanged({@required this.latitude, @required this.longitude})
-    : assert(latitude != null),
-      assert(longitude != null);
-  
+      : assert(latitude != null),
+        assert(longitude != null);
+
   @override
   final double latitude;
   @override
   final double longitude;
-  
+
   @override
   String toString() {
     return 'ObjectiveFormEvent.coordinatesChanged(latitude: $latitude, longitude: $longitude)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -321,26 +321,26 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
 
 abstract class _CoordinatesChanged implements ObjectiveFormEvent {
   const factory _CoordinatesChanged({@required double latitude, @required double longitude}) = _$_CoordinatesChanged;
-  
+
   double get latitude;
-  
+
   double get longitude;
-  
+
   _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith;
 }
 
 abstract class _$ImageChangedCopyWith<$Res> {
   factory _$ImageChangedCopyWith(_ImageChanged value, $Res Function(_ImageChanged) then) = __$ImageChangedCopyWithImpl<$Res>;
-  
+
   $Res call({File imageFile});
 }
 
 class __$ImageChangedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWithImpl<$Res> implements _$ImageChangedCopyWith<$Res> {
   __$ImageChangedCopyWithImpl(_ImageChanged _value, $Res Function(_ImageChanged) _then) : super(_value, (v) => _then(v as _ImageChanged));
-  
+
   @override
   _ImageChanged get _value => super._value as _ImageChanged;
-  
+
   @override
   $Res call({
     Object imageFile = freezed,
@@ -449,7 +449,7 @@ abstract class _$SubmittedCopyWith<$Res> {
 
 class __$SubmittedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWithImpl<$Res> implements _$SubmittedCopyWith<$Res> {
   __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then) : super(_value, (v) => _then(v as _Submitted));
-  
+
   @override
   _Submitted get _value => super._value as _Submitted;
 }
@@ -563,20 +563,20 @@ mixin _$ObjectiveFormState {
 
 abstract class $ObjectiveFormStateCopyWith<$Res> {
   factory $ObjectiveFormStateCopyWith(ObjectiveFormState value, $Res Function(ObjectiveFormState) then) = _$ObjectiveFormStateCopyWithImpl<$Res>;
-  
+
   $Res call({Objective objective, bool showErrorMessages, bool isSubmitting});
-  
+
   $ObjectiveCopyWith<$Res> get objective;
 }
 
 class _$ObjectiveFormStateCopyWithImpl<$Res> implements $ObjectiveFormStateCopyWith<$Res> {
   _$ObjectiveFormStateCopyWithImpl(this._value, this._then);
-  
+
   final ObjectiveFormState _value;
-  
+
   // ignore: unused_field
   final $Res Function(ObjectiveFormState) _then;
-  
+
   @override
   $Res call({
     Object objective = freezed,
@@ -603,20 +603,20 @@ class _$ObjectiveFormStateCopyWithImpl<$Res> implements $ObjectiveFormStateCopyW
 
 abstract class _$ObjectiveFormStateCopyWith<$Res> implements $ObjectiveFormStateCopyWith<$Res> {
   factory _$ObjectiveFormStateCopyWith(_ObjectiveFormState value, $Res Function(_ObjectiveFormState) then) = __$ObjectiveFormStateCopyWithImpl<$Res>;
-  
+
   @override
   $Res call({Objective objective, bool showErrorMessages, bool isSubmitting});
-  
+
   @override
   $ObjectiveCopyWith<$Res> get objective;
 }
 
 class __$ObjectiveFormStateCopyWithImpl<$Res> extends _$ObjectiveFormStateCopyWithImpl<$Res> implements _$ObjectiveFormStateCopyWith<$Res> {
   __$ObjectiveFormStateCopyWithImpl(_ObjectiveFormState _value, $Res Function(_ObjectiveFormState) _then) : super(_value, (v) => _then(v as _ObjectiveFormState));
-  
+
   @override
   _ObjectiveFormState get _value => super._value as _ObjectiveFormState;
-  
+
   @override
   $Res call({
     Object objective = freezed,
@@ -668,13 +668,13 @@ class _$_ObjectiveFormState implements _ObjectiveFormState {
 
 abstract class _ObjectiveFormState implements ObjectiveFormState {
   const factory _ObjectiveFormState({@required Objective objective, @required bool showErrorMessages, @required bool isSubmitting}) = _$_ObjectiveFormState;
-  
+
   @override
   Objective get objective;
-  
+
   @override
   bool get showErrorMessages;
-  
+
   @override
   bool get isSubmitting;
 

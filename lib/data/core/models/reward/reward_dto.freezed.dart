@@ -76,10 +76,10 @@ abstract class _$RewardDtoCopyWith<$Res> implements $RewardDtoCopyWith<$Res> {
 
 class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res> implements _$RewardDtoCopyWith<$Res> {
   __$RewardDtoCopyWithImpl(_RewardDto _value, $Res Function(_RewardDto) _then) : super(_value, (v) => _then(v as _RewardDto));
-  
+
   @override
   _RewardDto get _value => super._value as _RewardDto;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -99,14 +99,14 @@ class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res> imple
 @JsonSerializable()
 class _$_RewardDto extends _RewardDto {
   const _$_RewardDto({@required this.id, @required this.name, @required this.description, @required this.imageURL})
-    : assert(id != null),
-      assert(name != null),
-      assert(description != null),
-      assert(imageURL != null),
-      super._();
-  
+      : assert(id != null),
+        assert(name != null),
+        assert(description != null),
+        assert(imageURL != null),
+        super._();
+
   factory _$_RewardDto.fromJson(Map<String, dynamic> json) => _$_$_RewardDtoFromJson(json);
-  
+
   @override
   final int id;
   @override
@@ -150,23 +150,23 @@ class _$_RewardDto extends _RewardDto {
 
 abstract class _RewardDto extends RewardDto {
   const _RewardDto._() : super._();
-  
+
   const factory _RewardDto({@required int id, @required String name, @required String description, @required String imageURL}) = _$_RewardDto;
-  
+
   factory _RewardDto.fromJson(Map<String, dynamic> json) = _$_RewardDto.fromJson;
-  
+
   @override
   int get id;
-  
+
   @override
   String get name;
-  
+
   @override
   String get description;
 
   @override
   String get imageURL;
-  
+
   @override
   _$RewardDtoCopyWith<_RewardDto> get copyWith;
 }

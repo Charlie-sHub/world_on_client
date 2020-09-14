@@ -34,9 +34,6 @@ dependencies:
   equatable: ^1.2.5
   # Functional programming thingies
   dartz: ^0.9.1
-  # Remote API
-  # Probably useless now
-  data_connection_checker: ^0.3.4
   # For connecting to http services
   # Probably useless now
   http: ^0.12.2
@@ -91,7 +88,8 @@ dependencies:
   logger: ^0.9.2
   # For better stream control
   rxdart: ^0.24.1
-  cached_network_image: ^2.2.0+1
+  # For the experience image gallery
+  carousel_slider: ^2.2.1
 
 dev_dependencies:
   flutter_test:
@@ -109,7 +107,7 @@ dev_dependencies:
   # For auto generating the routes
   auto_route_generator: ^0.6.8
   # For ease of setting the app icon
-  flutter_launcher_icons: ^0.7.5
+  flutter_launcher_icons: ^0.8.0
   # For extra icons
   font_awesome_flutter: ^8.8.1
   # Generator for moor
