@@ -17,6 +17,9 @@ class DebugDatabaseButton extends StatelessWidget {
         FontAwesomeIcons.database,
         size: 25,
       ),
+      // TODO: Solve the Hero problem
+      // There are multiple heroes that share the same tag within a subtree.
+      // Doesn't tell me exactly which ones
       onPressed: () => context.navigator.push(
         Routes.moorDbViewer,
         arguments: MoorDbViewerArguments(

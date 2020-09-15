@@ -128,6 +128,22 @@ void main() {
     TestDescription.groupDeletion,
     () {
       test(
+        "Should delete a tag",
+        () async {
+          // Arrange
+          final _userId = await _insertCreator(_database);
+          final _moorTagSport = domainTagToMoorTag(_tag).copyWith(
+            creatorId: Value(_userId),
+          );
+          // Act
+          final _insertedTagId = await _database.moorTagsDao.insertTag(_moorTagSport);
+          final _moorTag = await _database.moorTagsDao.getTagById(_insertedTagId);
+          final _deletedAmount = await _database.moorTagsDao.removeTag(_moorTag);
+          // Assert
+          expect(_deletedAmount, 1);
+        },
+      );
+      test(
         "Should delete all tags",
         () async {
           // Arrange
@@ -144,7 +160,7 @@ void main() {
       );
       test(
         "Should delete a interest of a user",
-        () async {
+          () async {
           // Arrange
           final _userId = await _insertCreator(_database);
           final _moorTagList = _createTagList(_tag, _userId);
@@ -165,7 +181,7 @@ void main() {
       );
       test(
         "Should delete all interests of a user",
-        () async {
+          () async {
           // Arrange
           final _userId = await _insertCreator(_database);
           final _moorTagList = _createTagList(_tag, _userId);
@@ -186,7 +202,7 @@ void main() {
       );
       test(
         "Should delete all interests of all users",
-        () async {
+          () async {
           // Arrange
           final _userId = await _insertCreator(_database);
           final _user = getValidUser();
@@ -219,7 +235,7 @@ void main() {
       );
       test(
         "Should delete all tags of all experiences",
-        () async {
+          () async {
           // Arrange
           final _userId = await _insertCreator(_database);
           final _experience = domainExperienceToMoorExperience(getValidExperience()).copyWith(creatorId: Value(_userId));
@@ -249,7 +265,7 @@ void main() {
       );
       test(
         "Should delete all tag achievement relations",
-        () async {
+          () async {
           // Arrange
           final _userId = await _insertCreator(_database);
           final _moorAchievement = domainAchievementToMoorAchievement(getValidAchievement()).copyWith(creatorId: Value(_userId));

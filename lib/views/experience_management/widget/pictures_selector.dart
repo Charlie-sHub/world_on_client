@@ -11,12 +11,24 @@ class PicturesSelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return context.bloc<ExperienceManagementFormBloc>().state.experience.imageAssetsOption.fold(
-          () => IconButton(
-            iconSize: 100,
-            icon: const Icon(
-              Icons.photo_camera,
-            ),
-            onPressed: () async => _pickImages(context),
+          () => Column(
+            children: [
+              IconButton(
+                iconSize: 100,
+                icon: const Icon(
+                  Icons.photo_camera,
+                ),
+                onPressed: () async => _pickImages(context),
+              ),
+              if (context.bloc<ExperienceManagementFormBloc>().state.showErrorMessages)
+                const Text(
+                  "Please select at least one picture",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.red),
+                )
+              else
+                Container(),
+            ],
           ),
           (imageAssets) => Container(
             height: MediaQuery.of(context).size.height * 0.4,

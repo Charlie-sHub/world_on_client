@@ -16,18 +16,18 @@ class ErrorDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: failure.maybeMap(
-            coreData: (failure) => failure.coreDataFailure.maybeMap(
-              notFoundError: (_) => NotFoundErrorDisplay(),
-              orElse: () => null,
-            ),
-            orElse: () => InkWell(
-              onTap: () => retryFunction,
-              child: CriticalErrorDisplay(failure: failure),
+    return InkWell(
+      onTap: () => retryFunction,
+      child: Center(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(10),
+            child: failure.maybeMap(
+              coreData: (failure) => failure.coreDataFailure.maybeMap(
+                notFoundError: (_) => NotFoundErrorDisplay(),
+                orElse: () => null,
+              ),
+              orElse: () => CriticalErrorDisplay(failure: failure),
             ),
           ),
         ),

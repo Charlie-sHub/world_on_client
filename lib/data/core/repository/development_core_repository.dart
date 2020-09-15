@@ -585,16 +585,15 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
         )
         .toSet();
     final _moorRewards = experience.rewards
-      .getOrCrash()
-      .asSet()
-      .map(
-        (_reward) =>
-        domainRewardToMoorReward(
-          _experienceId,
-          _reward,
-        ),
-    )
-      .toSet();
+        .getOrCrash()
+        .asSet()
+        .map(
+          (_reward) => domainRewardToMoorReward(
+            _experienceId,
+            _reward,
+          ),
+        )
+        .toSet();
     for (final _imageUrl in experience.imageURLs) {
       final _experienceImage = ExperienceImageUrlsCompanion.insert(
         experienceId: _experienceId,

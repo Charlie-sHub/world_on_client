@@ -27,6 +27,10 @@ class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
 
   Future<int> insertTag(Insertable<MoorTag> tag) => into(moorTags).insert(tag);
 
+  Future updateTag(Insertable<MoorTag> tag) => update(moorTags).replace(tag);
+
+  Future<int> removeTag(Insertable<MoorTag> tag) => delete(moorTags).delete(tag);
+
   Future<int> insertExperienceTag(Insertable<ExperienceTag> experienceTag) => into(experienceTags).insert(
         experienceTag,
         mode: InsertMode.replace,

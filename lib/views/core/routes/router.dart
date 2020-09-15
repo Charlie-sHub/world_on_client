@@ -4,8 +4,10 @@ import 'package:moor_db_viewer/moor_db_viewer.dart';
 import 'package:worldon/views/authentication/pages/log_in_page.dart';
 import 'package:worldon/views/authentication/pages/registration_page.dart';
 import 'package:worldon/views/core/pages/main_page.dart';
+import 'package:worldon/views/experience_management/pages/experience_management_page.dart';
 import 'package:worldon/views/profile/pages/profile_editing_page.dart';
 import 'package:worldon/views/splash/pages/splash_page.dart';
+import 'package:worldon/views/tag_management/pages/tag_management_page.dart';
 
 @MaterialAutoRouter(
   generateNavigationHelperExtension: true,
@@ -19,6 +21,8 @@ import 'package:worldon/views/splash/pages/splash_page.dart';
       transitionsBuilder: TransitionsBuilders.slideLeft,
     ),
     MaterialRoute(page: MoorDbViewer),
+    MaterialRoute(page: ExperienceManagementPage),
+    MaterialRoute(page: TagManagementPage),
   ],
 )
 class $Router {}
