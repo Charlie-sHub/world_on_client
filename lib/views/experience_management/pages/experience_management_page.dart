@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
@@ -10,12 +11,12 @@ import 'package:worldon/views/experience_management/widget/experience_management
 
 class ExperienceManagementPage extends StatelessWidget {
   final Option<Experience> experienceOption;
-
+  
   const ExperienceManagementPage({
     Key key,
     @required this.experienceOption,
   }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,50 +45,48 @@ class ExperienceManagementPage extends StatelessWidget {
       ),
     );
   }
-
+  
   // This should have a better name
   bool _buildWhen(ExperienceManagementFormState previous, ExperienceManagementFormState current) {
     final _previousImages = previous.experience.imageAssetsOption.fold(() => List<Asset>.empty(), id);
     final _currentImages = current.experience.imageAssetsOption.fold(() => List<Asset>.empty(), id);
     final _shouldRebuild = previous.showErrorMessages != current.showErrorMessages ||
-        previous.experience.difficulty != current.experience.difficulty ||
-        previous.experience.coordinates != current.experience.coordinates ||
-        _previousImages != _currentImages;
+      previous.experience.difficulty != current.experience.difficulty ||
+      previous.experience.coordinates != current.experience.coordinates ||
+      _previousImages != _currentImages;
     return _shouldRebuild;
   }
-
+  
   void _experienceManagementListener(BuildContext context, ExperienceManagementFormState state) => state.failureOrSuccessOption.fold(
-        () => null,
-        (either) => either.fold(
-          (failure) => failure.maybeMap(
-            coreData: (_coreDataFailure) => _coreDataFailure.coreDataFailure.maybeMap(
-              nameAlreadyInUse: (_) => FlushbarHelper.createError(
-                duration: const Duration(seconds: 2),
-                message: "The title is already in use",
-              ).show(context),
-              serverError: (failure) => FlushbarHelper.createError(
-                duration: const Duration(seconds: 2),
-                message: failure.errorString,
-              ).show(context),
-              orElse: () => FlushbarHelper.createError(
-                duration: const Duration(seconds: 2),
-                message: "Unknown core data error",
-              ).show(context),
-            ),
-            orElse: () => FlushbarHelper.createError(
-              duration: const Duration(seconds: 2),
-              message: "Unknown error",
-            ).show(context),
-          ),
-          (_) {
-            FlushbarHelper.createSuccess(
+      () => null,
+      (either) => either.fold(
+        (failure) => failure.maybeMap(
+        coreData: (_coreDataFailure) => _coreDataFailure.coreDataFailure.maybeMap(
+          nameAlreadyInUse: (_) => FlushbarHelper.createError(
+            duration: const Duration(seconds: 2),
+            message: "The title is already in use",
+          ).show(context),
+          serverError: (failure) => FlushbarHelper.createError(
+            duration: const Duration(seconds: 2),
+            message: failure.errorString,
+          ).show(context),
+          orElse: () => FlushbarHelper.createError(
+            duration: const Duration(seconds: 2),
+            message: "Unknown core data error",
+          ).show(context),
+        ),
+        orElse: () => FlushbarHelper.createError(
+          duration: const Duration(seconds: 2),
+          message: "Unknown error",
+        ).show(context),
+      ),
+        (_) {
+        FlushbarHelper.createSuccess(
               duration: const Duration(seconds: 2),
               message: "The Experience was created",
             ).show(context);
-            context.bloc<ExperienceManagementFormBloc>().add(
-                  ExperienceManagementFormEvent.initialized(none()),
-                );
+            context.navigator.pop();
           },
-        ),
-      );
+    ),
+  );
 }

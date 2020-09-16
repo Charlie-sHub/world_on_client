@@ -5,11 +5,12 @@ import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/views/core/misc/string_constants.dart';
 
 class DescriptionTextField extends StatelessWidget {
+  final TextEditingController textController;
+
   const DescriptionTextField({
     Key key,
-    this.textController,
+    @required this.textController,
   }) : super(key: key);
-  final TextEditingController textController;
 
   @override
   Widget build(BuildContext context) {
@@ -17,17 +18,17 @@ class DescriptionTextField extends StatelessWidget {
       controller: textController,
       maxLength: EntityDescription.maxLength,
       onChanged: (value) => context.bloc<ObjectiveFormBloc>().add(
-            ObjectiveFormEvent.descriptionChanged(value),
-          ),
+        ObjectiveFormEvent.descriptionChanged(value),
+      ),
       validator: (_) => context.bloc<ObjectiveFormBloc>().state.objective.description.value.fold(
-            (failure) => failure.maybeMap(
-              emptyString: (_) => "The description can't be empty",
-              stringExceedsLength: (_) => "The description is too long",
-              stringWithInvalidCharacters: (_) => "The description has invalid characters",
-              orElse: () => StringConst.unknownError,
-            ),
-            (_) => null,
-          ),
+          (failure) => failure.maybeMap(
+          emptyString: (_) => "The description can't be empty",
+          stringExceedsLength: (_) => "The description is too long",
+          stringWithInvalidCharacters: (_) => "The description has invalid characters",
+          orElse: () => StringConst.unknownError,
+        ),
+          (_) => null,
+      ),
       maxLines: 2,
       decoration: const InputDecoration(
         labelText: "Description",

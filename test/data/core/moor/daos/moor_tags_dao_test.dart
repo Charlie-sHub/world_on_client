@@ -160,7 +160,7 @@ void main() {
       );
       test(
         "Should delete a interest of a user",
-          () async {
+        () async {
           // Arrange
           final _userId = await _insertCreator(_database);
           final _moorTagList = _createTagList(_tag, _userId);

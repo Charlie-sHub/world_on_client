@@ -85,10 +85,12 @@ class TagManagementFormBloc extends Bloc<TagManagementFormEvent, TagManagementFo
           tag: Tag.empty().copyWith(
             creatorId: _currentUser.id,
           ),
+          showErrorMessages: false,
         );
       },
       (tag) => state.copyWith(
         tag: tag,
+        showErrorMessages: false,
         isEditing: true,
       ),
     );

@@ -81,9 +81,11 @@ class ObjectiveCreationCard extends HookWidget {
                 child: BlocProvider(
                   create: (context) => getIt<ObjectiveFormBloc>(),
                   child: BlocConsumer<ObjectiveFormBloc, ObjectiveFormState>(
-                    listener: (context, state) {
-                      _objectiveFormListener(state, _textEditingController, context);
-                    },
+                    listener: (context, state) => _objectiveFormListener(
+                      context,
+                      state,
+                      _textEditingController,
+                    ),
                     builder: (context, state) => Form(
                       autovalidate: state.showErrorMessages,
                       child: Column(
@@ -141,7 +143,9 @@ class ObjectiveCreationCard extends HookWidget {
     );
   }
 
-  void _objectiveFormListener(ObjectiveFormState state, TextEditingController _textEditingController, BuildContext context) {
+  void _objectiveFormListener(BuildContext context,
+    ObjectiveFormState state,
+    TextEditingController _textEditingController,) {
     if (state.isSubmitting) {
       _textEditingController.clear();
       context.bloc<ObjectivesCreationBloc>().add(ObjectivesCreationEvent.addedObjective(state.objective));

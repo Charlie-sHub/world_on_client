@@ -131,49 +131,47 @@ class Router extends RouterBase {
 
 extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
   Future<dynamic> pushSplashPage() => push<dynamic>(Routes.splashPage);
-  
+
   Future<dynamic> pushLogInPage() => push<dynamic>(Routes.logInPage);
-  
-  Future<dynamic> pushRegistrationPage() =>
-    push<dynamic>(Routes.registrationPage);
-  
+
+  Future<dynamic> pushRegistrationPage() => push<dynamic>(Routes.registrationPage);
+
   Future<dynamic> pushMainPage() => push<dynamic>(Routes.mainPage);
-  
+
   Future<bool> pushProfileEditingPage({
     Key key,
     @required User user,
   }) =>
-    push<bool>(
-      Routes.profileEditingPage,
-      arguments: ProfileEditingPageArguments(key: key, user: user),
-    );
-  
+      push<bool>(
+        Routes.profileEditingPage,
+        arguments: ProfileEditingPageArguments(key: key, user: user),
+      );
+
   Future<dynamic> pushMoorDbViewer({
     @required GeneratedDatabase db,
   }) =>
-    push<dynamic>(
-      Routes.moorDbViewer,
-      arguments: MoorDbViewerArguments(db: db),
-    );
-  
+      push<dynamic>(
+        Routes.moorDbViewer,
+        arguments: MoorDbViewerArguments(db: db),
+      );
+
   Future<dynamic> pushExperienceManagementPage({
     Key key,
     @required Option<Experience> experienceOption,
   }) =>
-    push<dynamic>(
-      Routes.experienceManagementPage,
-      arguments: ExperienceManagementPageArguments(
-        key: key, experienceOption: experienceOption),
-    );
-  
+      push<dynamic>(
+        Routes.experienceManagementPage,
+        arguments: ExperienceManagementPageArguments(key: key, experienceOption: experienceOption),
+      );
+
   Future<dynamic> pushTagManagementPage({
     Key key,
     @required Option<Tag> tagOption,
   }) =>
-    push<dynamic>(
-      Routes.tagManagementPage,
-      arguments: TagManagementPageArguments(key: key, tagOption: tagOption),
-    );
+      push<dynamic>(
+        Routes.tagManagementPage,
+        arguments: TagManagementPageArguments(key: key, tagOption: tagOption),
+      );
 }
 
 /// ************************************************************************
@@ -191,7 +189,7 @@ class ProfileEditingPageArguments {
 /// MoorDbViewer arguments holder class
 class MoorDbViewerArguments {
   final GeneratedDatabase db;
-  
+
   MoorDbViewerArguments({@required this.db});
 }
 
@@ -199,7 +197,7 @@ class MoorDbViewerArguments {
 class ExperienceManagementPageArguments {
   final Key key;
   final Option<Experience> experienceOption;
-  
+
   ExperienceManagementPageArguments({this.key, @required this.experienceOption});
 }
 
@@ -207,6 +205,6 @@ class ExperienceManagementPageArguments {
 class TagManagementPageArguments {
   final Key key;
   final Option<Tag> tagOption;
-  
+
   TagManagementPageArguments({this.key, @required this.tagOption});
 }

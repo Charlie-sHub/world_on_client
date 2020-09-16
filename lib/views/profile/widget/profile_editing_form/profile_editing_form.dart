@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/profile/profile_editing_form/profile_editing_form_bloc.dart';
+import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/views/core/widget/misc/tag_addition_card/tag_addition_card.dart';
 import 'package:worldon/views/profile/widget/profile_editing_form/birthday_picker.dart';
 import 'package:worldon/views/profile/widget/profile_editing_form/description_text_form_field.dart';
 import 'package:worldon/views/profile/widget/profile_editing_form/editing_submit_button.dart';
@@ -63,7 +65,12 @@ class ProfileEditingForm extends StatelessWidget {
               PasswordTextField(initialValue: user.password.getOrCrash()),
               PasswordConfirmationTextField(initialValue: user.password.getOrCrash()),
               const SizedBox(height: 8),
-              // TODO: Add interests list
+              // TODO: rework it so it loads with the tags already liked
+              TagAdditionCard(
+                tagChangeFunction: (Set<Tag> tags) => context.bloc<ProfileEditingFormBloc>().add(
+                      ProfileEditingFormEvent.interestsChanged(tags),
+                    ),
+              ),
               const EditingSubmitButton(),
             ],
           ),

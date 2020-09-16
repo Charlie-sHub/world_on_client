@@ -6,7 +6,7 @@ import 'not_found_error_display.dart';
 
 class ErrorDisplay extends StatelessWidget {
   final Failure failure;
-  final Function retryFunction;
+  final Function() retryFunction;
 
   const ErrorDisplay({
     Key key,
@@ -17,7 +17,7 @@ class ErrorDisplay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => retryFunction,
+      onTap: retryFunction,
       child: Center(
         child: SingleChildScrollView(
           child: Padding(

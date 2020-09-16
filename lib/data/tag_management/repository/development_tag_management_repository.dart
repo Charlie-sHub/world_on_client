@@ -50,7 +50,7 @@ class DevelopmentTagManagementRepository implements TagManagementRepositoryInter
       );
     }
   }
-  
+
   @override
   Future<Either<Failure, Tag>> getTag(int id) async {
     try {
@@ -68,7 +68,7 @@ class DevelopmentTagManagementRepository implements TagManagementRepositoryInter
       );
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> removeTag(int id) async {
     try {
