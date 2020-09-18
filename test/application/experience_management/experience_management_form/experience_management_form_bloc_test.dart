@@ -9,7 +9,6 @@ import 'package:kt_dart/kt.dart';
 import 'package:mockito/mockito.dart';
 import 'package:multi_image_picker/multi_image_picker.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
-import 'package:worldon/application/experience_management/primitives/primitive_reward.dart';
 import 'package:worldon/core/assets.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
@@ -20,6 +19,7 @@ import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
+import 'package:worldon/domain/core/entities/reward/reward.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/latitude.dart';
@@ -70,14 +70,13 @@ void main() {
       imageURL: "",
     ),
   );
-  final primitiveRewards = KtSet.of(
-    PrimitiveReward(
-      name: title,
-      description: description,
-      imageFile: File(Assets.rewardPlaceholder),
+  final rewardSet = KtSet.of(
+    Reward.empty().copyWith(
+      name: Name(title),
+      description: EntityDescription(description),
+      imageFile: some(File(Assets.rewardPlaceholder)),
     ),
   );
-  final rewardSet = primitiveRewards.map((primitiveReward) => primitiveReward.toDomain()).toSet();
   final tags = KtSet.of(getValidTag());
   final validUser = getValidUser();
   final experienceToEdit = getValidExperience();
@@ -206,11 +205,11 @@ void main() {
         ],
       );
       blocTest(
-        "${TestDescription.shouldEmitUpdated} with the primitiveRewards",
+        "${TestDescription.shouldEmitUpdated} with the rewardSet",
         build: () => getIt<ExperienceManagementFormBloc>(),
         act: (bloc) async {
           bloc.add(ExperienceManagementFormEvent.initialized(none()));
-          bloc.add(ExperienceManagementFormEvent.rewardsChanged(primitiveRewards));
+          bloc.add(ExperienceManagementFormEvent.rewardsChanged(rewardSet));
         },
         expect: [
           ExperienceManagementFormState.initial().copyWith(
@@ -255,7 +254,7 @@ void main() {
           bloc.add(const ExperienceManagementFormEvent.coordinatesChanged(longitude: longitude, latitude: latitude));
           bloc.add(const ExperienceManagementFormEvent.difficultyChanged(difficulty));
           bloc.add(ExperienceManagementFormEvent.objectivesChanged(objectives));
-          bloc.add(ExperienceManagementFormEvent.rewardsChanged(primitiveRewards));
+          bloc.add(ExperienceManagementFormEvent.rewardsChanged(rewardSet));
           bloc.add(ExperienceManagementFormEvent.tagsChanged(tags));
           bloc.add(const ExperienceManagementFormEvent.submitted());
         },
@@ -459,7 +458,7 @@ void main() {
           bloc.add(const ExperienceManagementFormEvent.coordinatesChanged(longitude: longitude, latitude: latitude));
           bloc.add(const ExperienceManagementFormEvent.difficultyChanged(difficulty));
           bloc.add(ExperienceManagementFormEvent.objectivesChanged(objectives));
-          bloc.add(ExperienceManagementFormEvent.rewardsChanged(primitiveRewards));
+          bloc.add(ExperienceManagementFormEvent.rewardsChanged(rewardSet));
           bloc.add(ExperienceManagementFormEvent.tagsChanged(tags));
           bloc.add(const ExperienceManagementFormEvent.submitted());
         },

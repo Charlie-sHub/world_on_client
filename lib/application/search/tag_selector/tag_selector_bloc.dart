@@ -25,19 +25,15 @@ class TagSelectorBloc extends Bloc<TagSelectorEvent, TagSelectorState> {
   }
 
   Stream<TagSelectorState> _onSubtractedTag(_RemovedTag event) async* {
-    final _mutableKtSet = state.tagsSelected.toMutableSet();
-    _mutableKtSet.remove(event.tag);
     yield state.copyWith(
-      tagsSelected: _mutableKtSet.toSet(),
+      tagsSelected: state.tagsSelected.minusElement(event.tag).toSet(),
     );
   }
 
   Stream<TagSelectorState> _onAddedTag(_AddedTag event) async* {
     if (state.tagsSelected.size < TagSet.maxLength) {
-      final _mutableKtSet = state.tagsSelected.toMutableSet();
-      _mutableKtSet.add(event.tag);
       yield state.copyWith(
-        tagsSelected: _mutableKtSet.toSet(),
+        tagsSelected: state.tagsSelected.plusElement(event.tag).toSet(),
       );
     }
   }

@@ -82,20 +82,20 @@ class _$ObjectiveDtoCopyWithImpl<$Res> implements $ObjectiveDtoCopyWith<$Res> {
 
 abstract class _$ObjectiveDtoCopyWith<$Res> implements $ObjectiveDtoCopyWith<$Res> {
   factory _$ObjectiveDtoCopyWith(_ObjectiveDto value, $Res Function(_ObjectiveDto) then) = __$ObjectiveDtoCopyWithImpl<$Res>;
-  
+
   @override
   $Res call({int id, String description, CoordinatesDto coordinates, String imageURL});
-  
+
   @override
   $CoordinatesDtoCopyWith<$Res> get coordinates;
 }
 
 class __$ObjectiveDtoCopyWithImpl<$Res> extends _$ObjectiveDtoCopyWithImpl<$Res> implements _$ObjectiveDtoCopyWith<$Res> {
   __$ObjectiveDtoCopyWithImpl(_ObjectiveDto _value, $Res Function(_ObjectiveDto) _then) : super(_value, (v) => _then(v as _ObjectiveDto));
-  
+
   @override
   _ObjectiveDto get _value => super._value as _ObjectiveDto;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -115,14 +115,14 @@ class __$ObjectiveDtoCopyWithImpl<$Res> extends _$ObjectiveDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ObjectiveDto extends _ObjectiveDto {
   const _$_ObjectiveDto({@required this.id, @required this.description, @required this.coordinates, @required this.imageURL})
-    : assert(id != null),
-      assert(description != null),
-      assert(coordinates != null),
-      assert(imageURL != null),
-      super._();
-  
+      : assert(id != null),
+        assert(description != null),
+        assert(coordinates != null),
+        assert(imageURL != null),
+        super._();
+
   factory _$_ObjectiveDto.fromJson(Map<String, dynamic> json) => _$_$_ObjectiveDtoFromJson(json);
-  
+
   @override
   final int id;
   @override
@@ -166,23 +166,23 @@ class _$_ObjectiveDto extends _ObjectiveDto {
 
 abstract class _ObjectiveDto extends ObjectiveDto {
   const _ObjectiveDto._() : super._();
-  
+
   const factory _ObjectiveDto({@required int id, @required String description, @required CoordinatesDto coordinates, @required String imageURL}) = _$_ObjectiveDto;
-  
+
   factory _ObjectiveDto.fromJson(Map<String, dynamic> json) = _$_ObjectiveDto.fromJson;
-  
+
   @override
   int get id;
-  
+
   @override
   String get description;
-  
+
   @override
   CoordinatesDto get coordinates;
 
   @override
   String get imageURL;
-  
+
   @override
   _$ObjectiveDtoCopyWith<_ObjectiveDto> get copyWith;
 }

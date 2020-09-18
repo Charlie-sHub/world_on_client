@@ -38,40 +38,35 @@ class TagManagementPage extends HookWidget {
           ),
         child: BlocConsumer<TagManagementFormBloc, TagManagementFormState>(
           listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
-          listener: (context, state) =>
-            _tagManagementListener(
-              context,
-              state,
-              _textEditingController,
-            ),
-          builder: (context, state) =>
-            TagManagementForm(
-              textController: _textEditingController,
-            ),
+          listener: (context, state) => _tagManagementListener(
+            context,
+            state,
+            _textEditingController,
+          ),
+          builder: (context, state) => TagManagementForm(
+            textController: _textEditingController,
+          ),
         ),
       ),
     );
   }
-  
-  void _tagManagementListener(BuildContext context,
+
+  void _tagManagementListener(
+    BuildContext context,
     TagManagementFormState state,
-    TextEditingController _textEditingController,) =>
-    state.failureOrSuccessOption.fold(
+    TextEditingController _textEditingController,
+  ) =>
+      state.failureOrSuccessOption.fold(
         () => null,
-        (either) =>
-        either.fold(
-            (failure) =>
-            failure.maybeMap(
-              coreData: (_coreDataFailure) =>
-                _coreDataFailure.coreDataFailure.maybeMap(
-                  nameAlreadyInUse: (_) =>
-                    FlushbarHelper.createError(
-                      duration: const Duration(seconds: 2),
-                      message: "The tag already exists",
-                    ).show(context),
-                  serverError: (failure) =>
-                    FlushbarHelper.createError(
-                      duration: const Duration(seconds: 2),
+        (either) => either.fold(
+          (failure) => failure.maybeMap(
+            coreData: (_coreDataFailure) => _coreDataFailure.coreDataFailure.maybeMap(
+              nameAlreadyInUse: (_) => FlushbarHelper.createError(
+                duration: const Duration(seconds: 2),
+                message: "The tag already exists",
+              ).show(context),
+              serverError: (failure) => FlushbarHelper.createError(
+                duration: const Duration(seconds: 2),
                 message: failure.errorString,
               ).show(context),
               orElse: () => FlushbarHelper.createError(

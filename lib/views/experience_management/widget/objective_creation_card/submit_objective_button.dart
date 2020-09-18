@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_management/objective_form/objective_form_bloc.dart';
 
-class SubmitButton extends StatelessWidget {
-  const SubmitButton({
+class SubmitObjectiveButton extends StatelessWidget {
+  const SubmitObjectiveButton({
     Key key,
   }) : super(key: key);
 

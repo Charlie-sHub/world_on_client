@@ -10,7 +10,7 @@ import 'package:worldon/views/experience_management/widget/finish_button.dart';
 import 'package:worldon/views/experience_management/widget/map.dart';
 import 'package:worldon/views/experience_management/widget/objective_creation_card/objective_creation_card.dart';
 import 'package:worldon/views/experience_management/widget/pictures_selector.dart';
-import 'package:worldon/views/experience_management/widget/reward_creation_card.dart';
+import 'package:worldon/views/experience_management/widget/reward_creation_card/reward_creation_card.dart';
 import 'package:worldon/views/experience_management/widget/title_form_field.dart';
 
 class ExperienceManagementForm extends StatelessWidget {

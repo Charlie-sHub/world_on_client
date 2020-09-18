@@ -35,20 +35,18 @@ class RegistrationPage extends StatelessWidget {
     );
   }
 
-  Future _onFailure(Failure failure, BuildContext context) {
-    return FlushbarHelper.createError(
-      duration: const Duration(seconds: 2),
-      message: failure.maybeMap(
-        coreData: (failure) => failure.coreDataFailure.maybeMap(
-          serverError: (failure) => failure.errorString,
-          emailAlreadyInUse: (_) => "The email is already in use",
-          usernameAlreadyInUse: (_) => "The username is already in use",
+  void _onFailure(Failure failure, BuildContext context) => FlushbarHelper.createError(
+        duration: const Duration(seconds: 2),
+        message: failure.maybeMap(
+          coreData: (failure) => failure.coreDataFailure.maybeMap(
+            serverError: (failure) => failure.errorString,
+            emailAlreadyInUse: (_) => "The email is already in use",
+            usernameAlreadyInUse: (_) => "The username is already in use",
+            orElse: () => StringConst.unknownError,
+          ),
           orElse: () => StringConst.unknownError,
         ),
-        orElse: () => StringConst.unknownError,
-      ),
-    ).show(context);
-  }
+      ).show(context);
 
   void _onSuccess(BuildContext context) {
     context.navigator.replace(Routes.mainPage);

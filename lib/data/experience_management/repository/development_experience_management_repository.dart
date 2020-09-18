@@ -71,11 +71,6 @@ class DevelopmentExperienceManagementRepository implements ExperienceManagementR
         for (final _imageAsset in imageAssetList) {
           final _experienceImage = ExperienceImageUrlsCompanion.insert(
             experienceId: _experienceId,
-            // TODO: Figure out a way to save multiple file images
-            // just saving the name is useless for this
-            // could save the byte data but then would have to figure out a way to use it when retrieving an experience
-            // how to convert those bytes to an io File or an Asset?
-            // haven't found a way
             imageUrl: _imageAsset.identifier,
           );
           await _database.moorExperiencesDao.insertExperienceImage(_experienceImage);

@@ -4,6 +4,7 @@ import 'package:injectable/injectable.dart' as injectable;
 import 'package:kt_dart/collection.dart';
 import 'package:worldon/application/experience_management/objectives_creation/objectives_creation_bloc.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_objective.dart';
+import 'package:worldon/domain/core/validation/objects/objective_set.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../test_descriptions.dart';
@@ -52,7 +53,7 @@ void main() {
     ],
   );
   blocTest(
-    "${TestDescription.shouldEmitUpdated} with the added objectives until it reaches 10 objectives",
+    "${"${TestDescription.shouldEmitUpdated} with the added rewards until it reaches "}${ObjectiveSet.maxLength}",
     build: () => getIt<ObjectivesCreationBloc>(),
     act: (bloc) async {
       bloc.add(ObjectivesCreationEvent.addedObjective(_objective));

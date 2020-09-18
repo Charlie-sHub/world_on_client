@@ -74,17 +74,17 @@ class _$LocationDtoCopyWithImpl<$Res> implements $LocationDtoCopyWith<$Res> {
 
 abstract class _$LocationDtoCopyWith<$Res> implements $LocationDtoCopyWith<$Res> {
   factory _$LocationDtoCopyWith(_LocationDto value, $Res Function(_LocationDto) then) = __$LocationDtoCopyWithImpl<$Res>;
-  
+
   @override
   $Res call({int id, String city, String country, String postalCode, Set<ExperienceDto> experiences});
 }
 
 class __$LocationDtoCopyWithImpl<$Res> extends _$LocationDtoCopyWithImpl<$Res> implements _$LocationDtoCopyWith<$Res> {
   __$LocationDtoCopyWithImpl(_LocationDto _value, $Res Function(_LocationDto) _then) : super(_value, (v) => _then(v as _LocationDto));
-  
+
   @override
   _LocationDto get _value => super._value as _LocationDto;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -106,15 +106,15 @@ class __$LocationDtoCopyWithImpl<$Res> extends _$LocationDtoCopyWithImpl<$Res> i
 @JsonSerializable()
 class _$_LocationDto extends _LocationDto {
   const _$_LocationDto({@required this.id, @required this.city, @required this.country, @required this.postalCode, @required this.experiences})
-    : assert(id != null),
-      assert(city != null),
-      assert(country != null),
-      assert(postalCode != null),
-      assert(experiences != null),
-      super._();
-  
+      : assert(id != null),
+        assert(city != null),
+        assert(country != null),
+        assert(postalCode != null),
+        assert(experiences != null),
+        super._();
+
   factory _$_LocationDto.fromJson(Map<String, dynamic> json) => _$_$_LocationDtoFromJson(json);
-  
+
   @override
   final int id;
   @override
@@ -162,23 +162,23 @@ class _$_LocationDto extends _LocationDto {
 
 abstract class _LocationDto extends LocationDto {
   const _LocationDto._() : super._();
-  
+
   const factory _LocationDto({@required int id, @required String city, @required String country, @required String postalCode, @required Set<ExperienceDto> experiences}) = _$_LocationDto;
-  
+
   factory _LocationDto.fromJson(Map<String, dynamic> json) = _$_LocationDto.fromJson;
-  
+
   @override
   int get id;
-  
+
   @override
   String get city;
-  
+
   @override
   String get country;
 
   @override
   String get postalCode;
-  
+
   @override
   Set<ExperienceDto> get experiences;
   @override

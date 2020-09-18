@@ -65,10 +65,10 @@ abstract class _$OptionsCopyWith<$Res> implements $OptionsCopyWith<$Res> {
 
 class __$OptionsCopyWithImpl<$Res> extends _$OptionsCopyWithImpl<$Res> implements _$OptionsCopyWith<$Res> {
   __$OptionsCopyWithImpl(_Options _value, $Res Function(_Options) _then) : super(_value, (v) => _then(v as _Options));
-  
+
   @override
   _Options get _value => super._value as _Options;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -99,9 +99,9 @@ class _$_Options extends _Options {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Options &&
-        (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.languageCode, languageCode) || const DeepCollectionEquality().equals(other.languageCode, languageCode)));
+        (other is _Options &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.languageCode, languageCode) || const DeepCollectionEquality().equals(other.languageCode, languageCode)));
   }
 
   @override

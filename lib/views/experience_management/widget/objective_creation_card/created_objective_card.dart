@@ -24,6 +24,7 @@ class CreatedObjectiveCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(5),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Expanded(
               child: Image(
@@ -48,18 +49,16 @@ class CreatedObjectiveCard extends StatelessWidget {
                 ),
               ),
             ),
-            Expanded(
-              // TODO: Change to Slidable widgets with flutter_slidable
-              child: IconButton(
-                iconSize: 40,
-                icon: const Icon(
-                  Icons.delete_forever,
-                  color: WorldOnColors.red,
-                ),
-                onPressed: () => context.bloc<ObjectivesCreationBloc>().add(
-                      ObjectivesCreationEvent.removedObjective(objective),
-                    ),
+            IconButton(
+              iconSize: 40,
+              icon: const Icon(
+                Icons.delete_forever,
+                color: WorldOnColors.red,
               ),
+              onPressed: () =>
+                context.bloc<ObjectivesCreationBloc>().add(
+                  ObjectivesCreationEvent.removedObjective(objective),
+                ),
             )
           ],
         ),

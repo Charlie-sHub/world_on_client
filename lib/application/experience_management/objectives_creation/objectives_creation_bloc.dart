@@ -25,19 +25,15 @@ class ObjectivesCreationBloc extends Bloc<ObjectivesCreationEvent, ObjectivesCre
   }
 
   Stream<ObjectivesCreationState> _onRemovedObjective(_RemovedObjective event) async* {
-    final _mutableKtSet = state.objectivesCreated.toMutableSet();
-    _mutableKtSet.remove(event.objective);
     yield state.copyWith(
-      objectivesCreated: _mutableKtSet.toSet(),
+      objectivesCreated: state.objectivesCreated.minusElement(event.objective).toSet(),
     );
   }
 
   Stream<ObjectivesCreationState> _onAddedObjective(_AddedObjective event) async* {
     if (state.objectivesCreated.size < ObjectiveSet.maxLength) {
-      final _mutableKtSet = state.objectivesCreated.toMutableSet();
-      _mutableKtSet.add(event.objective);
       yield state.copyWith(
-        objectivesCreated: _mutableKtSet.toSet(),
+        objectivesCreated: state.objectivesCreated.plusElement(event.objective).toSet(),
       );
     }
   }

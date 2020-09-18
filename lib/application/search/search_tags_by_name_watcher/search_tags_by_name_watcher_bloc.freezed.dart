@@ -59,26 +59,33 @@ abstract class $SearchTagsByNameWatcherEventCopyWith<$Res> {
   factory $SearchTagsByNameWatcherEventCopyWith(SearchTagsByNameWatcherEvent value, $Res Function(SearchTagsByNameWatcherEvent) then) = _$SearchTagsByNameWatcherEventCopyWithImpl<$Res>;
 }
 
-class _$SearchTagsByNameWatcherEventCopyWithImpl<$Res> implements $SearchTagsByNameWatcherEventCopyWith<$Res> {
+class _$SearchTagsByNameWatcherEventCopyWithImpl<$Res>
+  implements $SearchTagsByNameWatcherEventCopyWith<$Res> {
   _$SearchTagsByNameWatcherEventCopyWithImpl(this._value, this._then);
-
+  
   final SearchTagsByNameWatcherEvent _value;
-
+  
   // ignore: unused_field
   final $Res Function(SearchTagsByNameWatcherEvent) _then;
 }
 
 abstract class _$WatchTagsFoundByNameStartedCopyWith<$Res> {
-  factory _$WatchTagsFoundByNameStartedCopyWith(_WatchTagsFoundByNameStarted value, $Res Function(_WatchTagsFoundByNameStarted) then) = __$WatchTagsFoundByNameStartedCopyWithImpl<$Res>;
+  factory _$WatchTagsFoundByNameStartedCopyWith(_WatchTagsFoundByNameStarted value,
+    $Res Function(_WatchTagsFoundByNameStarted) then) =
+  __$WatchTagsFoundByNameStartedCopyWithImpl<$Res>;
   
   $Res call({SearchTerm searchTerm});
 }
 
-class __$WatchTagsFoundByNameStartedCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherEventCopyWithImpl<$Res> implements _$WatchTagsFoundByNameStartedCopyWith<$Res> {
-  __$WatchTagsFoundByNameStartedCopyWithImpl(_WatchTagsFoundByNameStarted _value, $Res Function(_WatchTagsFoundByNameStarted) _then) : super(_value, (v) => _then(v as _WatchTagsFoundByNameStarted));
+class __$WatchTagsFoundByNameStartedCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherEventCopyWithImpl<$Res>
+  implements _$WatchTagsFoundByNameStartedCopyWith<$Res> {
+  __$WatchTagsFoundByNameStartedCopyWithImpl(_WatchTagsFoundByNameStarted _value,
+    $Res Function(_WatchTagsFoundByNameStarted) _then)
+    : super(_value, (v) => _then(v as _WatchTagsFoundByNameStarted));
   
   @override
-  _WatchTagsFoundByNameStarted get _value => super._value as _WatchTagsFoundByNameStarted;
+  _WatchTagsFoundByNameStarted get _value =>
+    super._value as _WatchTagsFoundByNameStarted;
   
   @override
   $Res call({
@@ -91,7 +98,8 @@ class __$WatchTagsFoundByNameStartedCopyWithImpl<$Res> extends _$SearchTagsByNam
 }
 
 class _$_WatchTagsFoundByNameStarted implements _WatchTagsFoundByNameStarted {
-  const _$_WatchTagsFoundByNameStarted(this.searchTerm) : assert(searchTerm != null);
+  const _$_WatchTagsFoundByNameStarted(this.searchTerm)
+    : assert(searchTerm != null);
   
   @override
   final SearchTerm searchTerm;
@@ -103,14 +111,22 @@ class _$_WatchTagsFoundByNameStarted implements _WatchTagsFoundByNameStarted {
   
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _WatchTagsFoundByNameStarted && (identical(other.searchTerm, searchTerm) || const DeepCollectionEquality().equals(other.searchTerm, searchTerm)));
+    return identical(this, other) ||
+      (other is _WatchTagsFoundByNameStarted &&
+        (identical(other.searchTerm, searchTerm) ||
+          const DeepCollectionEquality()
+            .equals(other.searchTerm, searchTerm)));
   }
   
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(searchTerm);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(searchTerm);
   
   @override
-  _$WatchTagsFoundByNameStartedCopyWith<_WatchTagsFoundByNameStarted> get copyWith => __$WatchTagsFoundByNameStartedCopyWithImpl<_WatchTagsFoundByNameStarted>(this, _$identity);
+  _$WatchTagsFoundByNameStartedCopyWith<_WatchTagsFoundByNameStarted>
+  get copyWith =>
+    __$WatchTagsFoundByNameStartedCopyWithImpl<
+      _WatchTagsFoundByNameStarted>(this, _$identity);
   
   @override
   @optionalTypeArgs
@@ -163,22 +179,28 @@ class _$_WatchTagsFoundByNameStarted implements _WatchTagsFoundByNameStarted {
   }
 }
 
-abstract class _WatchTagsFoundByNameStarted implements SearchTagsByNameWatcherEvent {
-  const factory _WatchTagsFoundByNameStarted(SearchTerm searchTerm) = _$_WatchTagsFoundByNameStarted;
+abstract class _WatchTagsFoundByNameStarted
+  implements SearchTagsByNameWatcherEvent {
+  const factory _WatchTagsFoundByNameStarted(SearchTerm searchTerm) =
+  _$_WatchTagsFoundByNameStarted;
   
   SearchTerm get searchTerm;
   
-  _$WatchTagsFoundByNameStartedCopyWith<_WatchTagsFoundByNameStarted> get copyWith;
+  _$WatchTagsFoundByNameStartedCopyWith<_WatchTagsFoundByNameStarted>
+  get copyWith;
 }
 
 abstract class _$ResultsReceivedCopyWith<$Res> {
-  factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
+  factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) =
+  __$ResultsReceivedCopyWithImpl<$Res>;
   
   $Res call({Either<Failure, KtList<Tag>> failureOrTags});
 }
 
-class __$ResultsReceivedCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherEventCopyWithImpl<$Res> implements _$ResultsReceivedCopyWith<$Res> {
-  __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then) : super(_value, (v) => _then(v as _ResultsReceived));
+class __$ResultsReceivedCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherEventCopyWithImpl<$Res>
+  implements _$ResultsReceivedCopyWith<$Res> {
+  __$ResultsReceivedCopyWithImpl(_ResultsReceived _value, $Res Function(_ResultsReceived) _then)
+    : super(_value, (v) => _then(v as _ResultsReceived));
   
   @override
   _ResultsReceived get _value => super._value as _ResultsReceived;
@@ -188,7 +210,9 @@ class __$ResultsReceivedCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherEven
     Object failureOrTags = freezed,
   }) {
     return _then(_ResultsReceived(
-      failureOrTags == freezed ? _value.failureOrTags : failureOrTags as Either<Failure, KtList<Tag>>,
+      failureOrTags == freezed
+        ? _value.failureOrTags
+        : failureOrTags as Either<Failure, KtList<Tag>>,
     ));
   }
 }
@@ -206,14 +230,20 @@ class _$_ResultsReceived implements _ResultsReceived {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ResultsReceived && (identical(other.failureOrTags, failureOrTags) || const DeepCollectionEquality().equals(other.failureOrTags, failureOrTags)));
+    return identical(this, other) ||
+      (other is _ResultsReceived &&
+        (identical(other.failureOrTags, failureOrTags) ||
+          const DeepCollectionEquality()
+            .equals(other.failureOrTags, failureOrTags)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrTags);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrTags);
 
   @override
-  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith => __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
+  _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
+    __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -267,7 +297,8 @@ class _$_ResultsReceived implements _ResultsReceived {
 }
 
 abstract class _ResultsReceived implements SearchTagsByNameWatcherEvent {
-  const factory _ResultsReceived(Either<Failure, KtList<Tag>> failureOrTags) = _$_ResultsReceived;
+  const factory _ResultsReceived(Either<Failure, KtList<Tag>> failureOrTags) =
+  _$_ResultsReceived;
   
   Either<Failure, KtList<Tag>> get failureOrTags;
   
@@ -339,10 +370,13 @@ mixin _$SearchTagsByNameWatcherState {
 }
 
 abstract class $SearchTagsByNameWatcherStateCopyWith<$Res> {
-  factory $SearchTagsByNameWatcherStateCopyWith(SearchTagsByNameWatcherState value, $Res Function(SearchTagsByNameWatcherState) then) = _$SearchTagsByNameWatcherStateCopyWithImpl<$Res>;
+  factory $SearchTagsByNameWatcherStateCopyWith(SearchTagsByNameWatcherState value,
+    $Res Function(SearchTagsByNameWatcherState) then) =
+  _$SearchTagsByNameWatcherStateCopyWithImpl<$Res>;
 }
 
-class _$SearchTagsByNameWatcherStateCopyWithImpl<$Res> implements $SearchTagsByNameWatcherStateCopyWith<$Res> {
+class _$SearchTagsByNameWatcherStateCopyWithImpl<$Res>
+  implements $SearchTagsByNameWatcherStateCopyWith<$Res> {
   _$SearchTagsByNameWatcherStateCopyWithImpl(this._value, this._then);
   
   final SearchTagsByNameWatcherState _value;
@@ -352,11 +386,14 @@ class _$SearchTagsByNameWatcherStateCopyWithImpl<$Res> implements $SearchTagsByN
 }
 
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+  __$InitialCopyWithImpl<$Res>;
 }
 
-class __$InitialCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherStateCopyWithImpl<$Res>
+  implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+    : super(_value, (v) => _then(v as _Initial));
   
   @override
   _Initial get _value => super._value as _Initial;
@@ -446,11 +483,14 @@ abstract class _Initial implements SearchTagsByNameWatcherState {
 }
 
 abstract class _$SearchInProgressCopyWith<$Res> {
-  factory _$SearchInProgressCopyWith(_SearchInProgress value, $Res Function(_SearchInProgress) then) = __$SearchInProgressCopyWithImpl<$Res>;
+  factory _$SearchInProgressCopyWith(_SearchInProgress value, $Res Function(_SearchInProgress) then) =
+  __$SearchInProgressCopyWithImpl<$Res>;
 }
 
-class __$SearchInProgressCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherStateCopyWithImpl<$Res> implements _$SearchInProgressCopyWith<$Res> {
-  __$SearchInProgressCopyWithImpl(_SearchInProgress _value, $Res Function(_SearchInProgress) _then) : super(_value, (v) => _then(v as _SearchInProgress));
+class __$SearchInProgressCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherStateCopyWithImpl<$Res>
+  implements _$SearchInProgressCopyWith<$Res> {
+  __$SearchInProgressCopyWithImpl(_SearchInProgress _value, $Res Function(_SearchInProgress) _then)
+    : super(_value, (v) => _then(v as _SearchInProgress));
   
   @override
   _SearchInProgress get _value => super._value as _SearchInProgress;
@@ -540,13 +580,16 @@ abstract class _SearchInProgress implements SearchTagsByNameWatcherState {
 }
 
 abstract class _$SearchSuccessCopyWith<$Res> {
-  factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) = __$SearchSuccessCopyWithImpl<$Res>;
+  factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) =
+  __$SearchSuccessCopyWithImpl<$Res>;
   
   $Res call({KtList<Tag> tagsFound});
 }
 
-class __$SearchSuccessCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherStateCopyWithImpl<$Res> implements _$SearchSuccessCopyWith<$Res> {
-  __$SearchSuccessCopyWithImpl(_SearchSuccess _value, $Res Function(_SearchSuccess) _then) : super(_value, (v) => _then(v as _SearchSuccess));
+class __$SearchSuccessCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherStateCopyWithImpl<$Res>
+  implements _$SearchSuccessCopyWith<$Res> {
+  __$SearchSuccessCopyWithImpl(_SearchSuccess _value, $Res Function(_SearchSuccess) _then)
+    : super(_value, (v) => _then(v as _SearchSuccess));
   
   @override
   _SearchSuccess get _value => super._value as _SearchSuccess;
@@ -574,14 +617,20 @@ class _$_SearchSuccess implements _SearchSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _SearchSuccess && (identical(other.tagsFound, tagsFound) || const DeepCollectionEquality().equals(other.tagsFound, tagsFound)));
+    return identical(this, other) ||
+      (other is _SearchSuccess &&
+        (identical(other.tagsFound, tagsFound) ||
+          const DeepCollectionEquality()
+            .equals(other.tagsFound, tagsFound)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tagsFound);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(tagsFound);
 
   @override
-  _$SearchSuccessCopyWith<_SearchSuccess> get copyWith => __$SearchSuccessCopyWithImpl<_SearchSuccess>(this, _$identity);
+  _$SearchSuccessCopyWith<_SearchSuccess> get copyWith =>
+    __$SearchSuccessCopyWithImpl<_SearchSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -654,15 +703,18 @@ abstract class _SearchSuccess implements SearchTagsByNameWatcherState {
 }
 
 abstract class _$SearchFailureCopyWith<$Res> {
-  factory _$SearchFailureCopyWith(_SearchFailure value, $Res Function(_SearchFailure) then) = __$SearchFailureCopyWithImpl<$Res>;
+  factory _$SearchFailureCopyWith(_SearchFailure value, $Res Function(_SearchFailure) then) =
+  __$SearchFailureCopyWithImpl<$Res>;
   
   $Res call({Failure<dynamic> failure});
   
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
-class __$SearchFailureCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherStateCopyWithImpl<$Res> implements _$SearchFailureCopyWith<$Res> {
-  __$SearchFailureCopyWithImpl(_SearchFailure _value, $Res Function(_SearchFailure) _then) : super(_value, (v) => _then(v as _SearchFailure));
+class __$SearchFailureCopyWithImpl<$Res> extends _$SearchTagsByNameWatcherStateCopyWithImpl<$Res>
+  implements _$SearchFailureCopyWith<$Res> {
+  __$SearchFailureCopyWithImpl(_SearchFailure _value, $Res Function(_SearchFailure) _then)
+    : super(_value, (v) => _then(v as _SearchFailure));
   
   @override
   _SearchFailure get _value => super._value as _SearchFailure;
@@ -700,14 +752,19 @@ class _$_SearchFailure implements _SearchFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _SearchFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) ||
+      (other is _SearchFailure &&
+        (identical(other.failure, failure) ||
+          const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
-  _$SearchFailureCopyWith<_SearchFailure> get copyWith => __$SearchFailureCopyWithImpl<_SearchFailure>(this, _$identity);
+  _$SearchFailureCopyWith<_SearchFailure> get copyWith =>
+    __$SearchFailureCopyWithImpl<_SearchFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs

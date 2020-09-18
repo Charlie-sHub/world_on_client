@@ -11,9 +11,9 @@ import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widget/cards/error_card.dart';
 import 'package:worldon/views/experience_management/widget/objective_creation_card/created_objective_card.dart';
-import 'package:worldon/views/experience_management/widget/objective_creation_card/description_text_field.dart';
 import 'package:worldon/views/experience_management/widget/objective_creation_card/objective_coordinates_picker.dart';
-import 'package:worldon/views/experience_management/widget/objective_creation_card/submit_button.dart';
+import 'package:worldon/views/experience_management/widget/objective_creation_card/objective_description_text_field.dart';
+import 'package:worldon/views/experience_management/widget/objective_creation_card/submit_objective_button.dart';
 
 class ObjectiveCreationCard extends HookWidget {
   const ObjectiveCreationCard({
@@ -90,17 +90,18 @@ class ObjectiveCreationCard extends HookWidget {
                       autovalidate: state.showErrorMessages,
                       child: Column(
                         children: <Widget>[
-                          DescriptionTextField(textController: _textEditingController),
+                          ObjectiveDescriptionTextField(textController: _textEditingController),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
                               state.objective.imageFile.fold(
-                                () => Column(
-                                  children: <Widget>[
-                                    IconButton(
-                                      iconSize: 80,
-                                      icon: const Icon(
-                                        Icons.photo_camera,
+                                  () =>
+                                  Column(
+                                    children: <Widget>[
+                                      IconButton(
+                                        iconSize: 80,
+                                        icon: const Icon(
+                                          Icons.photo_camera,
                                       ),
                                       onPressed: () async => _pickImage(context),
                                     ),
@@ -129,7 +130,7 @@ class ObjectiveCreationCard extends HookWidget {
                               ObjectiveCoordinatePicker(),
                             ],
                           ),
-                          const SubmitButton(),
+                          const SubmitObjectiveButton(),
                         ],
                       ),
                     ),
@@ -142,7 +143,7 @@ class ObjectiveCreationCard extends HookWidget {
       ),
     );
   }
-
+  
   void _objectiveFormListener(BuildContext context,
     ObjectiveFormState state,
     TextEditingController _textEditingController,) {
@@ -151,7 +152,7 @@ class ObjectiveCreationCard extends HookWidget {
       context.bloc<ObjectivesCreationBloc>().add(ObjectivesCreationEvent.addedObjective(state.objective));
     }
   }
-
+  
   Future _pickImage(BuildContext context) async {
     final _imagePicked = await ImagePicker().getImage(source: ImageSource.gallery);
     if (_imagePicked != null) {

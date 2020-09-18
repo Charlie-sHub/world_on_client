@@ -5,7 +5,6 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:injectable/injectable.dart' as injectable;
 import 'package:worldon/application/experience_management/objective_form/objective_form_bloc.dart';
-import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -16,11 +15,9 @@ import 'package:worldon/injection.dart';
 import '../../../test_descriptions.dart';
 
 void main() {
-  GetLoggedInUser getLoggedInUser;
   setUpAll(
     () {
       configureDependencies(injectable.Environment.test);
-      getLoggedInUser = getIt<GetLoggedInUser>();
     },
   );
   const description = "For testing";

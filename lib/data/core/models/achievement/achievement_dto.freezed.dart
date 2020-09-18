@@ -111,18 +111,18 @@ class _$AchievementDtoCopyWithImpl<$Res> implements $AchievementDtoCopyWith<$Res
 
 abstract class _$AchievementDtoCopyWith<$Res> implements $AchievementDtoCopyWith<$Res> {
   factory _$AchievementDtoCopyWith(_AchievementDto value, $Res Function(_AchievementDto) then) = __$AchievementDtoCopyWithImpl<$Res>;
-  
+
   @override
   $Res call(
-    {int id, String name, String description, String imageURL, String type, int requisite, int experiencePoints, int creatorId, String creationDate, String modificationDate, Set<TagDto> tags});
+      {int id, String name, String description, String imageURL, String type, int requisite, int experiencePoints, int creatorId, String creationDate, String modificationDate, Set<TagDto> tags});
 }
 
 class __$AchievementDtoCopyWithImpl<$Res> extends _$AchievementDtoCopyWithImpl<$Res> implements _$AchievementDtoCopyWith<$Res> {
   __$AchievementDtoCopyWithImpl(_AchievementDto _value, $Res Function(_AchievementDto) _then) : super(_value, (v) => _then(v as _AchievementDto));
-  
+
   @override
   _AchievementDto get _value => super._value as _AchievementDto;
-  
+
   @override
   $Res call({
     Object id = freezed,

@@ -19,7 +19,7 @@ abstract class ExperienceManagementFormEvent with _$ExperienceManagementFormEven
 
   const factory ExperienceManagementFormEvent.objectivesChanged(KtSet<Objective> objectives) = _ObjectivesChanged;
 
-  const factory ExperienceManagementFormEvent.rewardsChanged(KtSet<PrimitiveReward> rewards) = _RewardsChanged;
+  const factory ExperienceManagementFormEvent.rewardsChanged(KtSet<Reward> rewards) = _RewardsChanged;
 
   const factory ExperienceManagementFormEvent.tagsChanged(KtSet<Tag> tags) = _TagsChanged;
 

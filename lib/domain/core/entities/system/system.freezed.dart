@@ -66,17 +66,17 @@ class _$SystemCopyWithImpl<$Res> implements $SystemCopyWith<$Res> {
 
 abstract class _$SystemCopyWith<$Res> implements $SystemCopyWith<$Res> {
   factory _$SystemCopyWith(_System value, $Res Function(_System) then) = __$SystemCopyWithImpl<$Res>;
-  
+
   @override
   $Res call({int id, String name, String type, String company});
 }
 
 class __$SystemCopyWithImpl<$Res> extends _$SystemCopyWithImpl<$Res> implements _$SystemCopyWith<$Res> {
   __$SystemCopyWithImpl(_System _value, $Res Function(_System) _then) : super(_value, (v) => _then(v as _System));
-  
+
   @override
   _System get _value => super._value as _System;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -95,11 +95,11 @@ class __$SystemCopyWithImpl<$Res> extends _$SystemCopyWithImpl<$Res> implements 
 
 class _$_System extends _System {
   const _$_System({this.id, @required this.name, @required this.type, @required this.company})
-    : assert(name != null),
-      assert(type != null),
-      assert(company != null),
-      super._();
-  
+      : assert(name != null),
+        assert(type != null),
+        assert(company != null),
+        super._();
+
   @override
   final int id;
   @override
@@ -138,21 +138,21 @@ class _$_System extends _System {
 
 abstract class _System extends System {
   const _System._() : super._();
-  
+
   const factory _System({int id, @required String name, @required String type, @required String company}) = _$_System;
-  
+
   @override
   int get id;
-  
+
   @override
   String get name;
-  
+
   @override
   String get type;
 
   @override
   String get company;
-  
+
   @override
   _$SystemCopyWith<_System> get copyWith;
 }
