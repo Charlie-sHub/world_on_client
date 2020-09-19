@@ -55,10 +55,9 @@ class CreatedObjectiveCard extends StatelessWidget {
                 Icons.delete_forever,
                 color: WorldOnColors.red,
               ),
-              onPressed: () =>
-                context.bloc<ObjectivesCreationBloc>().add(
-                  ObjectivesCreationEvent.removedObjective(objective),
-                ),
+              onPressed: () => context.bloc<ObjectivesCreationBloc>().add(
+                    ObjectivesCreationEvent.removedObjective(objective),
+                  ),
             )
           ],
         ),

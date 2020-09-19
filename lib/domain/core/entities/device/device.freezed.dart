@@ -117,11 +117,11 @@ class _$_Device extends _Device {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Device &&
-        (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-        (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
-        (identical(other.company, company) || const DeepCollectionEquality().equals(other.company, company)));
+        (other is _Device &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.company, company) || const DeepCollectionEquality().equals(other.company, company)));
   }
 
   @override
@@ -131,7 +131,7 @@ class _$_Device extends _Device {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(company);
-  
+
   @override
   _$DeviceCopyWith<_Device> get copyWith => __$DeviceCopyWithImpl<_Device>(this, _$identity);
 }

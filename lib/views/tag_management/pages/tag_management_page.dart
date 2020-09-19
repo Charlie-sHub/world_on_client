@@ -86,8 +86,8 @@ class TagManagementPage extends HookWidget {
             ).show(context);
             _textEditingController.clear();
             context.bloc<TagManagementFormBloc>().add(
-              TagManagementFormEvent.initialized(none()),
-            );
+                  TagManagementFormEvent.initialized(none()),
+                );
           },
         ),
       );

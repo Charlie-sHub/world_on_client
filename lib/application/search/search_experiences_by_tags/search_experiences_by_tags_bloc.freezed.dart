@@ -56,15 +56,16 @@ mixin _$SearchExperiencesByTagsEvent {
 }
 
 abstract class $SearchExperiencesByTagsEventCopyWith<$Res> {
-  factory $SearchExperiencesByTagsEventCopyWith(SearchExperiencesByTagsEvent value, $Res Function(SearchExperiencesByTagsEvent) then) = _$SearchExperiencesByTagsEventCopyWithImpl<$Res>;
+  factory $SearchExperiencesByTagsEventCopyWith(SearchExperiencesByTagsEvent value,
+    $Res Function(SearchExperiencesByTagsEvent) then) =
+  _$SearchExperiencesByTagsEventCopyWithImpl<$Res>;
 }
 
-class _$SearchExperiencesByTagsEventCopyWithImpl<$Res>
-  implements $SearchExperiencesByTagsEventCopyWith<$Res> {
+class _$SearchExperiencesByTagsEventCopyWithImpl<$Res> implements $SearchExperiencesByTagsEventCopyWith<$Res> {
   _$SearchExperiencesByTagsEventCopyWithImpl(this._value, this._then);
-  
+
   final SearchExperiencesByTagsEvent _value;
-  
+
   // ignore: unused_field
   final $Res Function(SearchExperiencesByTagsEvent) _then;
 }

@@ -20,6 +20,7 @@ class DebugDatabaseButton extends StatelessWidget {
       // TODO: Solve the Hero problem
       // There are multiple heroes that share the same tag within a subtree.
       // Doesn't tell me exactly which ones
+      // On the other hand this view is not really needed anymore, maybe it should simply be taken out
       onPressed: () => context.navigator.push(
         Routes.moorDbViewer,
         arguments: MoorDbViewerArguments(

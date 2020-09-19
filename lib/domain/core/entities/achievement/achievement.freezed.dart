@@ -254,19 +254,19 @@ class _$_Achievement extends _Achievement {
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(id) ^
-    const DeepCollectionEquality().hash(name) ^
-    const DeepCollectionEquality().hash(description) ^
-    const DeepCollectionEquality().hash(imageURL) ^
-    const DeepCollectionEquality().hash(imageFile) ^
-    const DeepCollectionEquality().hash(type) ^
-    const DeepCollectionEquality().hash(requisite) ^
-    const DeepCollectionEquality().hash(experiencePoints) ^
-    const DeepCollectionEquality().hash(creatorId) ^
-    const DeepCollectionEquality().hash(creationDate) ^
-    const DeepCollectionEquality().hash(modificationDate) ^
-    const DeepCollectionEquality().hash(tags);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(description) ^
+      const DeepCollectionEquality().hash(imageURL) ^
+      const DeepCollectionEquality().hash(imageFile) ^
+      const DeepCollectionEquality().hash(type) ^
+      const DeepCollectionEquality().hash(requisite) ^
+      const DeepCollectionEquality().hash(experiencePoints) ^
+      const DeepCollectionEquality().hash(creatorId) ^
+      const DeepCollectionEquality().hash(creationDate) ^
+      const DeepCollectionEquality().hash(modificationDate) ^
+      const DeepCollectionEquality().hash(tags);
 
   @override
   _$AchievementCopyWith<_Achievement> get copyWith => __$AchievementCopyWithImpl<_Achievement>(this, _$identity);

@@ -140,11 +140,11 @@ class _$_ObjectiveDto extends _ObjectiveDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _ObjectiveDto &&
-        (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-        (identical(other.coordinates, coordinates) || const DeepCollectionEquality().equals(other.coordinates, coordinates)) &&
-        (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)));
+        (other is _ObjectiveDto &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.coordinates, coordinates) || const DeepCollectionEquality().equals(other.coordinates, coordinates)) &&
+            (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)));
   }
 
   @override
@@ -154,7 +154,7 @@ class _$_ObjectiveDto extends _ObjectiveDto {
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(coordinates) ^
       const DeepCollectionEquality().hash(imageURL);
-  
+
   @override
   _$ObjectiveDtoCopyWith<_ObjectiveDto> get copyWith => __$ObjectiveDtoCopyWithImpl<_ObjectiveDto>(this, _$identity);
 

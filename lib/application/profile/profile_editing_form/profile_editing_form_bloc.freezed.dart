@@ -1183,7 +1183,6 @@ abstract class _$EmailAddressChangedCopyWith<$Res> {
   factory _$EmailAddressChangedCopyWith(_EmailAddressChanged value,
     $Res Function(_EmailAddressChanged) then) =
   __$EmailAddressChangedCopyWithImpl<$Res>;
-  
   $Res call({String emailAddress});
 }
 
@@ -2203,7 +2202,7 @@ class _$_ProfileEditingFormState implements _ProfileEditingFormState {
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
-  
+
   @override
   _$ProfileEditingFormStateCopyWith<_ProfileEditingFormState> get copyWith =>
     __$ProfileEditingFormStateCopyWithImpl<_ProfileEditingFormState>(

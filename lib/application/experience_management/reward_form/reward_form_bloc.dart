@@ -12,9 +12,7 @@ import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 
 part 'reward_form_bloc.freezed.dart';
-
 part 'reward_form_event.dart';
-
 part 'reward_form_state.dart';
 
 @injectable

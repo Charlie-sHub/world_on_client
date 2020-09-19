@@ -9,9 +9,7 @@ import 'package:worldon/domain/core/entities/reward/reward.dart';
 import 'package:worldon/domain/core/validation/objects/reward_set.dart';
 
 part 'rewards_creation_bloc.freezed.dart';
-
 part 'rewards_creation_event.dart';
-
 part 'rewards_creation_state.dart';
 
 @injectable

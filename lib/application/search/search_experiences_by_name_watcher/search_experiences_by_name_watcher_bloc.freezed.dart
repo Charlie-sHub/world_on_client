@@ -199,7 +199,6 @@ abstract class _$SearchResultsReceivedCopyWith<$Res> {
   factory _$SearchResultsReceivedCopyWith(_SearchResultsReceived value,
     $Res Function(_SearchResultsReceived) then) =
   __$SearchResultsReceivedCopyWithImpl<$Res>;
-  
   $Res call({Either<Failure, KtList<Experience>> failureOrExperiences});
 }
 

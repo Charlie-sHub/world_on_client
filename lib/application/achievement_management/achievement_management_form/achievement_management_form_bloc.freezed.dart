@@ -554,7 +554,6 @@ abstract class _$ExperiencePointsChangedCopyWith<$Res> {
   factory _$ExperiencePointsChangedCopyWith(_ExperiencePointsChanged value,
     $Res Function(_ExperiencePointsChanged) then) =
   __$ExperiencePointsChangedCopyWithImpl<$Res>;
-  
   $Res call({int experiencePoints});
 }
 

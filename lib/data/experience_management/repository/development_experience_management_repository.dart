@@ -40,7 +40,7 @@ class DevelopmentExperienceManagementRepository implements ExperienceManagementR
     }
   }
 
-  Future<int> insertExperience(Experience experience) async {
+  Future insertExperience(Experience experience) async {
     final _moorExperience = domainExperienceToMoorExperience(experience);
     final _experienceId = await _database.moorExperiencesDao.insertExperience(_moorExperience);
     final _moorObjectives = experience.objectives
@@ -90,7 +90,6 @@ class DevelopmentExperienceManagementRepository implements ExperienceManagementR
     for (final _reward in _moorRewards) {
       await _database.moorRewardsDao.insertReward(_reward);
     }
-    return _experienceId;
   }
 
   @override

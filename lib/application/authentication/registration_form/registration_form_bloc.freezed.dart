@@ -1188,7 +1188,6 @@ abstract class _$EmailAddressChangedCopyWith<$Res> {
   factory _$EmailAddressChangedCopyWith(_EmailAddressChanged value,
     $Res Function(_EmailAddressChanged) then) =
   __$EmailAddressChangedCopyWithImpl<$Res>;
-  
   $Res call({String emailAddress});
 }
 

@@ -95,13 +95,12 @@ class ObjectiveCreationCard extends HookWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
                               state.objective.imageFile.fold(
-                                  () =>
-                                  Column(
-                                    children: <Widget>[
-                                      IconButton(
-                                        iconSize: 80,
-                                        icon: const Icon(
-                                          Icons.photo_camera,
+                                () => Column(
+                                  children: <Widget>[
+                                    IconButton(
+                                      iconSize: 80,
+                                      icon: const Icon(
+                                        Icons.photo_camera,
                                       ),
                                       onPressed: () async => _pickImage(context),
                                     ),
@@ -143,7 +142,7 @@ class ObjectiveCreationCard extends HookWidget {
       ),
     );
   }
-  
+
   void _objectiveFormListener(BuildContext context,
     ObjectiveFormState state,
     TextEditingController _textEditingController,) {
@@ -152,7 +151,7 @@ class ObjectiveCreationCard extends HookWidget {
       context.bloc<ObjectivesCreationBloc>().add(ObjectivesCreationEvent.addedObjective(state.objective));
     }
   }
-  
+
   Future _pickImage(BuildContext context) async {
     final _imagePicked = await ImagePicker().getImage(source: ImageSource.gallery);
     if (_imagePicked != null) {

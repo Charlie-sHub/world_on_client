@@ -254,17 +254,17 @@ class _$_CameraPositionChanged implements _CameraPositionChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _CameraPositionChanged &&
-        (identical(other.coordinates, coordinates) || const DeepCollectionEquality().equals(other.coordinates, coordinates)) &&
-        (identical(other.zoom, zoom) || const DeepCollectionEquality().equals(other.zoom, zoom)));
+        (other is _CameraPositionChanged &&
+            (identical(other.coordinates, coordinates) || const DeepCollectionEquality().equals(other.coordinates, coordinates)) &&
+            (identical(other.zoom, zoom) || const DeepCollectionEquality().equals(other.zoom, zoom)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(coordinates) ^ const DeepCollectionEquality().hash(zoom);
-  
+
   @override
   _$CameraPositionChangedCopyWith<_CameraPositionChanged> get copyWith => __$CameraPositionChangedCopyWithImpl<_CameraPositionChanged>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({

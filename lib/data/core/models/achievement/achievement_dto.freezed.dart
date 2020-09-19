@@ -155,32 +155,33 @@ class __$AchievementDtoCopyWithImpl<$Res> extends _$AchievementDtoCopyWithImpl<$
 
 @JsonSerializable()
 class _$_AchievementDto extends _AchievementDto {
-  const _$_AchievementDto({@required this.id,
-    @required this.name,
-    @required this.description,
-    @required this.imageURL,
-    @required this.type,
-    @required this.requisite,
-    @required this.experiencePoints,
-    @required this.creatorId,
-    @required this.creationDate,
-    @required this.modificationDate,
-    @required this.tags})
-    : assert(id != null),
-      assert(name != null),
-      assert(description != null),
-      assert(imageURL != null),
-      assert(type != null),
-      assert(requisite != null),
-      assert(experiencePoints != null),
-      assert(creatorId != null),
-      assert(creationDate != null),
-      assert(modificationDate != null),
-      assert(tags != null),
-      super._();
-  
+  const _$_AchievementDto(
+      {@required this.id,
+      @required this.name,
+      @required this.description,
+      @required this.imageURL,
+      @required this.type,
+      @required this.requisite,
+      @required this.experiencePoints,
+      @required this.creatorId,
+      @required this.creationDate,
+      @required this.modificationDate,
+      @required this.tags})
+      : assert(id != null),
+        assert(name != null),
+        assert(description != null),
+        assert(imageURL != null),
+        assert(type != null),
+        assert(requisite != null),
+        assert(experiencePoints != null),
+        assert(creatorId != null),
+        assert(creationDate != null),
+        assert(modificationDate != null),
+        assert(tags != null),
+        super._();
+
   factory _$_AchievementDto.fromJson(Map<String, dynamic> json) => _$_$_AchievementDtoFromJson(json);
-  
+
   @override
   final int id;
   @override

@@ -245,17 +245,17 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _CoordinatesChanged &&
-        (identical(other.latitude, latitude) || const DeepCollectionEquality().equals(other.latitude, latitude)) &&
-        (identical(other.longitude, longitude) || const DeepCollectionEquality().equals(other.longitude, longitude)));
+        (other is _CoordinatesChanged &&
+            (identical(other.latitude, latitude) || const DeepCollectionEquality().equals(other.latitude, latitude)) &&
+            (identical(other.longitude, longitude) || const DeepCollectionEquality().equals(other.longitude, longitude)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(latitude) ^ const DeepCollectionEquality().hash(longitude);
-  
+
   @override
   _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith => __$CoordinatesChangedCopyWithImpl<_CoordinatesChanged>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({

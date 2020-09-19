@@ -108,17 +108,17 @@ class _$_CoordinatesDto extends _CoordinatesDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _CoordinatesDto &&
-        (identical(other.latitude, latitude) || const DeepCollectionEquality().equals(other.latitude, latitude)) &&
-        (identical(other.longitude, longitude) || const DeepCollectionEquality().equals(other.longitude, longitude)));
+        (other is _CoordinatesDto &&
+            (identical(other.latitude, latitude) || const DeepCollectionEquality().equals(other.latitude, latitude)) &&
+            (identical(other.longitude, longitude) || const DeepCollectionEquality().equals(other.longitude, longitude)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(latitude) ^ const DeepCollectionEquality().hash(longitude);
-  
+
   @override
   _$CoordinatesDtoCopyWith<_CoordinatesDto> get copyWith => __$CoordinatesDtoCopyWithImpl<_CoordinatesDto>(this, _$identity);
-  
+
   @override
   Map<String, dynamic> toJson() {
     return _$_$_CoordinatesDtoToJson(this);

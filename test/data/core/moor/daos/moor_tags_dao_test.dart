@@ -202,7 +202,7 @@ void main() {
       );
       test(
         "Should delete all interests of all users",
-          () async {
+        () async {
           // Arrange
           final _userId = await _insertCreator(_database);
           final _user = getValidUser();

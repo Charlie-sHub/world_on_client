@@ -43,7 +43,7 @@ class ExperienceManagementPage extends StatelessWidget {
             () => null,
             (either) => either.fold(
               (failure) => _onFailure(failure, context),
-              (_) => _onSuccess(context),
+              (_) => context.navigator.pop(),
             ),
           ),
           buildWhen: _buildWhen,
@@ -73,14 +73,6 @@ class ExperienceManagementPage extends StatelessWidget {
           message: "Unknown error",
         ).show(context),
       );
-
-  void _onSuccess(BuildContext context) {
-    FlushbarHelper.createSuccess(
-      duration: const Duration(seconds: 2),
-      message: "The Experience was created",
-    ).show(context);
-    context.navigator.pop();
-  }
 
   // This should have a better name
   bool _buildWhen(ExperienceManagementFormState previous, ExperienceManagementFormState current) {

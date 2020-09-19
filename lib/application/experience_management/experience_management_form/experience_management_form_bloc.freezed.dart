@@ -1320,15 +1320,15 @@ class __$RewardsChangedCopyWithImpl<$Res> extends _$ExperienceManagementFormEven
 
 class _$_RewardsChanged implements _RewardsChanged {
   const _$_RewardsChanged(this.rewards) : assert(rewards != null);
-  
+
   @override
   final KtSet<Reward> rewards;
-  
+
   @override
   String toString() {
     return 'ExperienceManagementFormEvent.rewardsChanged(rewards: $rewards)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -1336,11 +1336,11 @@ class _$_RewardsChanged implements _RewardsChanged {
         (identical(other.rewards, rewards) ||
           const DeepCollectionEquality().equals(other.rewards, rewards)));
   }
-  
+
   @override
   int get hashCode =>
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(rewards);
-  
+
   @override
   _$RewardsChangedCopyWith<_RewardsChanged> get copyWith =>
     __$RewardsChangedCopyWithImpl<_RewardsChanged>(this, _$identity);
@@ -1446,9 +1446,8 @@ class _$_RewardsChanged implements _RewardsChanged {
 
 abstract class _RewardsChanged implements ExperienceManagementFormEvent {
   const factory _RewardsChanged(KtSet<Reward> rewards) = _$_RewardsChanged;
-  
+
   KtSet<Reward> get rewards;
-  
   _$RewardsChangedCopyWith<_RewardsChanged> get copyWith;
 }
 
@@ -1767,15 +1766,11 @@ const $ExperienceManagementFormState = _$ExperienceManagementFormStateTearOff();
 
 mixin _$ExperienceManagementFormState {
   Experience get experience;
-  
   bool get showErrorMessages;
-  
   bool get isEditing;
-  
   bool get isSubmitting;
-  
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
-  
+
   $ExperienceManagementFormStateCopyWith<ExperienceManagementFormState>
   get copyWith;
 }

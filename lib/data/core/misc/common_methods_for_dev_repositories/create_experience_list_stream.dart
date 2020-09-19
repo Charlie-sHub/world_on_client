@@ -8,7 +8,6 @@ import 'package:worldon/data/core/moor/converters/moor_experience_to_domain_expe
 import 'package:worldon/data/core/moor/daos/moor_experiences_dao/moor_experience_with_relations.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 
-// TODO: Debug to figure out why this function is called after creating an experience
 Stream<Either<Failure, KtList<Experience>>> createExperienceListStream(Stream<List<MoorExperienceWithRelations>> stream, Logger logger) => stream.map(
       (_moorExperienceList) {
         if (_moorExperienceList != null && _moorExperienceList.isNotEmpty) {

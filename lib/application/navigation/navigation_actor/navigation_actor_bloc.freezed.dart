@@ -482,7 +482,7 @@ class _$_ExperienceNavigationTapped implements _ExperienceNavigationTapped {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _ExperienceNavigationTapped && (identical(other.experienceOption, experienceOption) || const DeepCollectionEquality().equals(other.experienceOption, experienceOption)));
+        (other is _ExperienceNavigationTapped && (identical(other.experienceOption, experienceOption) || const DeepCollectionEquality().equals(other.experienceOption, experienceOption)));
   }
 
   @override

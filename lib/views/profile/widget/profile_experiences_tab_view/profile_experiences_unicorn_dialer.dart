@@ -4,7 +4,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:unicorndial/unicorndial.dart';
 import 'package:worldon/application/profile/profile_experiences_watcher/profile_experiences_watcher_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
-import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ProfileExperiencesUnicornDialer extends StatelessWidget {
   const ProfileExperiencesUnicornDialer({
@@ -28,7 +27,7 @@ class ProfileExperiencesUnicornDialer extends StatelessWidget {
             onPressed: () => context.bloc<ProfileExperiencesWatcherBloc>().add(
                   ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(user),
                 ),
-            foregroundColor: WorldOnColors.primary,
+            foregroundColor: Colors.blue,
             child: const Icon(Icons.create),
           ),
         ),
@@ -47,10 +46,11 @@ class ProfileExperiencesUnicornDialer extends StatelessWidget {
           currentButton: FloatingActionButton(
             heroTag: "liked",
             mini: true,
-            onPressed: () => context.bloc<ProfileExperiencesWatcherBloc>().add(
-                  ProfileExperiencesWatcherEvent.watchExperiencesLikedStarted(user),
-                ),
-            foregroundColor: WorldOnColors.red,
+            onPressed: () =>
+              context.bloc<ProfileExperiencesWatcherBloc>().add(
+                ProfileExperiencesWatcherEvent.watchExperiencesLikedStarted(user),
+              ),
+            foregroundColor: Colors.red,
             child: const FaIcon(FontAwesomeIcons.solidHeart),
           ),
         ),

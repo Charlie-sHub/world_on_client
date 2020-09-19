@@ -17,27 +17,18 @@ class ObjectiveDescriptionTextField extends StatelessWidget {
     return TextFormField(
       controller: textController,
       maxLength: EntityDescription.maxLength,
-      onChanged: (value) =>
-        context.bloc<ObjectiveFormBloc>().add(
-          ObjectiveFormEvent.descriptionChanged(value),
-        ),
-      validator: (_) =>
-        context
-          .bloc<ObjectiveFormBloc>()
-          .state
-          .objective
-          .description
-          .value
-          .fold(
-            (failure) =>
-            failure.maybeMap(
+      onChanged: (value) => context.bloc<ObjectiveFormBloc>().add(
+            ObjectiveFormEvent.descriptionChanged(value),
+          ),
+      validator: (_) => context.bloc<ObjectiveFormBloc>().state.objective.description.value.fold(
+            (failure) => failure.maybeMap(
               emptyString: (_) => "The description can't be empty",
               stringExceedsLength: (_) => "The description is too long",
               stringWithInvalidCharacters: (_) => "The description has invalid characters",
               orElse: () => StringConst.unknownError,
             ),
             (_) => null,
-        ),
+          ),
       maxLines: 2,
       decoration: const InputDecoration(
         labelText: "Description",
