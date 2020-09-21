@@ -38,13 +38,13 @@ dependencies:
   # Probably useless now
   http: ^0.12.2
   # For unions generation
-  freezed_annotation: ^0.11.0+1
+  freezed_annotation: ^0.12.0
   # For email validation
   email_validator: ^1.0.5
   # For mapping
   google_maps_flutter: ^0.5.32
   # For getting the geolocation of the user
-  geolocator: ^5.3.2+2
+  geolocator: ^6.0.0+4
   # For Kotlin like collections
   kt_dart: ^0.7.0+1
   # For easier bloc testing
@@ -72,9 +72,9 @@ dependencies:
   # To add shadow to icons with less boiler plate
   icon_shadow: ^1.0.1
   # For getting images from the device
-  image_picker: ^0.6.7+7
+  image_picker: ^0.6.7+9
   # For getting multiple images from the device
-  multi_image_picker: ^4.7.12
+  multi_image_picker: ^4.7.14
   # Local database, mostly for back-end simulation
   moor_flutter: ^3.1.0
   moor: ^3.3.1
@@ -97,7 +97,7 @@ dev_dependencies:
   # For mocking dependencies during unit testing
   mockito: ^4.1.1
   # For unions generation
-  freezed: ^0.11.6
+  freezed: ^0.12.1
   # Collection of lint rules
   lint: ^1.2.0
   # For dependency injection code generation

@@ -9,6 +9,7 @@ part of 'primitive_reward.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$PrimitiveRewardTearOff {
   const _$PrimitiveRewardTearOff();
 
@@ -22,9 +23,11 @@ class _$PrimitiveRewardTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $PrimitiveReward = _$PrimitiveRewardTearOff();
 
+/// @nodoc
 mixin _$PrimitiveReward {
   String get name;
   String get description;
@@ -33,12 +36,14 @@ mixin _$PrimitiveReward {
   $PrimitiveRewardCopyWith<PrimitiveReward> get copyWith;
 }
 
+/// @nodoc
 abstract class $PrimitiveRewardCopyWith<$Res> {
   factory $PrimitiveRewardCopyWith(PrimitiveReward value, $Res Function(PrimitiveReward) then) = _$PrimitiveRewardCopyWithImpl<$Res>;
 
   $Res call({String name, String description, File imageFile});
 }
 
+/// @nodoc
 class _$PrimitiveRewardCopyWithImpl<$Res> implements $PrimitiveRewardCopyWith<$Res> {
   _$PrimitiveRewardCopyWithImpl(this._value, this._then);
 
@@ -61,6 +66,7 @@ class _$PrimitiveRewardCopyWithImpl<$Res> implements $PrimitiveRewardCopyWith<$R
   }
 }
 
+/// @nodoc
 abstract class _$PrimitiveRewardCopyWith<$Res> implements $PrimitiveRewardCopyWith<$Res> {
   factory _$PrimitiveRewardCopyWith(_PrimitiveReward value, $Res Function(_PrimitiveReward) then) = __$PrimitiveRewardCopyWithImpl<$Res>;
 
@@ -68,6 +74,7 @@ abstract class _$PrimitiveRewardCopyWith<$Res> implements $PrimitiveRewardCopyWi
   $Res call({String name, String description, File imageFile});
 }
 
+/// @nodoc
 class __$PrimitiveRewardCopyWithImpl<$Res> extends _$PrimitiveRewardCopyWithImpl<$Res> implements _$PrimitiveRewardCopyWith<$Res> {
   __$PrimitiveRewardCopyWithImpl(_PrimitiveReward _value, $Res Function(_PrimitiveReward) _then) : super(_value, (v) => _then(v as _PrimitiveReward));
 
@@ -88,6 +95,7 @@ class __$PrimitiveRewardCopyWithImpl<$Res> extends _$PrimitiveRewardCopyWithImpl
   }
 }
 
+/// @nodoc
 class _$_PrimitiveReward extends _PrimitiveReward {
   const _$_PrimitiveReward({@required this.name, @required this.description, @required this.imageFile})
       : assert(name != null),

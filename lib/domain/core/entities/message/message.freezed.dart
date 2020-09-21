@@ -9,6 +9,7 @@ part of 'message.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$MessageTearOff {
   const _$MessageTearOff();
 
@@ -24,9 +25,11 @@ class _$MessageTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Message = _$MessageTearOff();
 
+/// @nodoc
 mixin _$Message {
   int get id;
   User get sender;
@@ -37,6 +40,7 @@ mixin _$Message {
   $MessageCopyWith<Message> get copyWith;
 }
 
+/// @nodoc
 abstract class $MessageCopyWith<$Res> {
   factory $MessageCopyWith(Message value, $Res Function(Message) then) = _$MessageCopyWithImpl<$Res>;
 
@@ -47,6 +51,7 @@ abstract class $MessageCopyWith<$Res> {
   $UserCopyWith<$Res> get receiver;
 }
 
+/// @nodoc
 class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
   _$MessageCopyWithImpl(this._value, this._then);
 
@@ -92,6 +97,7 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
   factory _$MessageCopyWith(_Message value, $Res Function(_Message) then) = __$MessageCopyWithImpl<$Res>;
 
@@ -105,6 +111,7 @@ abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
   $UserCopyWith<$Res> get receiver;
 }
 
+/// @nodoc
 class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res> implements _$MessageCopyWith<$Res> {
   __$MessageCopyWithImpl(_Message _value, $Res Function(_Message) _then) : super(_value, (v) => _then(v as _Message));
 
@@ -129,6 +136,7 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res> implement
   }
 }
 
+/// @nodoc
 class _$_Message extends _Message {
   const _$_Message({this.id, @required this.sender, @required this.receiver, @required this.content, @required this.creationDate})
       : assert(sender != null),

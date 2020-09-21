@@ -9,6 +9,7 @@ part of 'achievement.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$AchievementTearOff {
   const _$AchievementTearOff();
 
@@ -43,26 +44,39 @@ class _$AchievementTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Achievement = _$AchievementTearOff();
 
+/// @nodoc
 mixin _$Achievement {
   int get id;
+
   Name get name;
-  EntityDescription get description;
+
+  EntityDescription get description; // TODO: Make a value object and validator for image URLs from World On's back-end
+// Maybe Firestore will make that unnecessary
   String get imageURL;
+
   Option<File> get imageFile;
+
   String get type;
-  int get requisite;
+
+  int get requisite; // This will probably be reworked in the future to accommodate different kinds of achievements
   ExperiencePoints get experiencePoints;
+
   int get creatorId;
+
   PastDate get creationDate;
+
   PastDate get modificationDate;
+
   TagSet get tags;
 
   $AchievementCopyWith<Achievement> get copyWith;
 }
 
+/// @nodoc
 abstract class $AchievementCopyWith<$Res> {
   factory $AchievementCopyWith(Achievement value, $Res Function(Achievement) then) = _$AchievementCopyWithImpl<$Res>;
 
@@ -81,6 +95,7 @@ abstract class $AchievementCopyWith<$Res> {
       TagSet tags});
 }
 
+/// @nodoc
 class _$AchievementCopyWithImpl<$Res> implements $AchievementCopyWith<$Res> {
   _$AchievementCopyWithImpl(this._value, this._then);
 
@@ -120,6 +135,7 @@ class _$AchievementCopyWithImpl<$Res> implements $AchievementCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$AchievementCopyWith<$Res> implements $AchievementCopyWith<$Res> {
   factory _$AchievementCopyWith(_Achievement value, $Res Function(_Achievement) then) = __$AchievementCopyWithImpl<$Res>;
 
@@ -139,6 +155,7 @@ abstract class _$AchievementCopyWith<$Res> implements $AchievementCopyWith<$Res>
       TagSet tags});
 }
 
+/// @nodoc
 class __$AchievementCopyWithImpl<$Res> extends _$AchievementCopyWithImpl<$Res> implements _$AchievementCopyWith<$Res> {
   __$AchievementCopyWithImpl(_Achievement _value, $Res Function(_Achievement) _then) : super(_value, (v) => _then(v as _Achievement));
 
@@ -177,6 +194,7 @@ class __$AchievementCopyWithImpl<$Res> extends _$AchievementCopyWithImpl<$Res> i
   }
 }
 
+/// @nodoc
 class _$_Achievement extends _Achievement {
   const _$_Achievement(
       {this.id,
@@ -210,7 +228,8 @@ class _$_Achievement extends _Achievement {
   final Name name;
   @override
   final EntityDescription description;
-  @override
+  @override // TODO: Make a value object and validator for image URLs from World On's back-end
+// Maybe Firestore will make that unnecessary
   final String imageURL;
   @override
   final Option<File> imageFile;
@@ -218,7 +237,7 @@ class _$_Achievement extends _Achievement {
   final String type;
   @override
   final int requisite;
-  @override
+  @override // This will probably be reworked in the future to accommodate different kinds of achievements
   final ExperiencePoints experiencePoints;
   @override
   final int creatorId;
@@ -274,40 +293,46 @@ class _$_Achievement extends _Achievement {
 
 abstract class _Achievement extends Achievement {
   const _Achievement._() : super._();
-  
-  const factory _Achievement({int id,
-    @required Name name,
-    @required EntityDescription description,
-    @required String imageURL,
-    @required Option<File> imageFile,
-    @required String type,
-    @required int requisite,
-    @required ExperiencePoints experiencePoints,
-    @required int creatorId,
-    @required PastDate creationDate,
-    @required PastDate modificationDate,
-    @required TagSet tags}) = _$_Achievement;
-  
+
+  const factory _Achievement(
+      {int id,
+      @required Name name,
+      @required EntityDescription description,
+      @required String imageURL,
+      @required Option<File> imageFile,
+      @required String type,
+      @required int requisite,
+      @required ExperiencePoints experiencePoints,
+      @required int creatorId,
+      @required PastDate creationDate,
+      @required PastDate modificationDate,
+      @required TagSet tags}) = _$_Achievement;
+
   @override
   int get id;
-  
+
   @override
   Name get name;
-  
+
   @override
   EntityDescription get description;
 
-  @override
+  @override // TODO: Make a value object and validator for image URLs from World On's back-end
+// Maybe Firestore will make that unnecessary
   String get imageURL;
-  
+
   @override
   Option<File> get imageFile;
+
   @override
   String get type;
+
   @override
   int get requisite;
-  @override
+
+  @override // This will probably be reworked in the future to accommodate different kinds of achievements
   ExperiencePoints get experiencePoints;
+
   @override
   int get creatorId;
   @override

@@ -9,6 +9,7 @@ part of 'primitive_objective.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$PrimitiveObjectiveTearOff {
   const _$PrimitiveObjectiveTearOff();
 
@@ -23,9 +24,11 @@ class _$PrimitiveObjectiveTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $PrimitiveObjective = _$PrimitiveObjectiveTearOff();
 
+/// @nodoc
 mixin _$PrimitiveObjective {
   String get description;
   double get latitude;
@@ -35,12 +38,14 @@ mixin _$PrimitiveObjective {
   $PrimitiveObjectiveCopyWith<PrimitiveObjective> get copyWith;
 }
 
+/// @nodoc
 abstract class $PrimitiveObjectiveCopyWith<$Res> {
   factory $PrimitiveObjectiveCopyWith(PrimitiveObjective value, $Res Function(PrimitiveObjective) then) = _$PrimitiveObjectiveCopyWithImpl<$Res>;
 
   $Res call({String description, double latitude, double longitude, File imageFile});
 }
 
+/// @nodoc
 class _$PrimitiveObjectiveCopyWithImpl<$Res> implements $PrimitiveObjectiveCopyWith<$Res> {
   _$PrimitiveObjectiveCopyWithImpl(this._value, this._then);
 
@@ -65,6 +70,7 @@ class _$PrimitiveObjectiveCopyWithImpl<$Res> implements $PrimitiveObjectiveCopyW
   }
 }
 
+/// @nodoc
 abstract class _$PrimitiveObjectiveCopyWith<$Res> implements $PrimitiveObjectiveCopyWith<$Res> {
   factory _$PrimitiveObjectiveCopyWith(_PrimitiveObjective value, $Res Function(_PrimitiveObjective) then) = __$PrimitiveObjectiveCopyWithImpl<$Res>;
 
@@ -72,6 +78,7 @@ abstract class _$PrimitiveObjectiveCopyWith<$Res> implements $PrimitiveObjective
   $Res call({String description, double latitude, double longitude, File imageFile});
 }
 
+/// @nodoc
 class __$PrimitiveObjectiveCopyWithImpl<$Res> extends _$PrimitiveObjectiveCopyWithImpl<$Res> implements _$PrimitiveObjectiveCopyWith<$Res> {
   __$PrimitiveObjectiveCopyWithImpl(_PrimitiveObjective _value, $Res Function(_PrimitiveObjective) _then) : super(_value, (v) => _then(v as _PrimitiveObjective));
 
@@ -94,6 +101,7 @@ class __$PrimitiveObjectiveCopyWithImpl<$Res> extends _$PrimitiveObjectiveCopyWi
   }
 }
 
+/// @nodoc
 class _$_PrimitiveObjective extends _PrimitiveObjective {
   const _$_PrimitiveObjective({@required this.description, @required this.latitude, @required this.longitude, @required this.imageFile})
       : assert(description != null),

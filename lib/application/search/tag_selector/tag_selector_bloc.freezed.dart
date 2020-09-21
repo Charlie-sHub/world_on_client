@@ -9,6 +9,7 @@ part of 'tag_selector_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$TagSelectorEventTearOff {
   const _$TagSelectorEventTearOff();
 
@@ -27,9 +28,11 @@ class _$TagSelectorEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $TagSelectorEvent = _$TagSelectorEventTearOff();
 
+/// @nodoc
 mixin _$TagSelectorEvent {
   Tag get tag;
 
@@ -59,6 +62,7 @@ mixin _$TagSelectorEvent {
   $TagSelectorEventCopyWith<TagSelectorEvent> get copyWith;
 }
 
+/// @nodoc
 abstract class $TagSelectorEventCopyWith<$Res> {
   factory $TagSelectorEventCopyWith(TagSelectorEvent value, $Res Function(TagSelectorEvent) then) = _$TagSelectorEventCopyWithImpl<$Res>;
 
@@ -67,6 +71,7 @@ abstract class $TagSelectorEventCopyWith<$Res> {
   $TagCopyWith<$Res> get tag;
 }
 
+/// @nodoc
 class _$TagSelectorEventCopyWithImpl<$Res> implements $TagSelectorEventCopyWith<$Res> {
   _$TagSelectorEventCopyWithImpl(this._value, this._then);
 
@@ -95,22 +100,24 @@ class _$TagSelectorEventCopyWithImpl<$Res> implements $TagSelectorEventCopyWith<
   }
 }
 
+/// @nodoc
 abstract class _$AddedTagCopyWith<$Res> implements $TagSelectorEventCopyWith<$Res> {
   factory _$AddedTagCopyWith(_AddedTag value, $Res Function(_AddedTag) then) = __$AddedTagCopyWithImpl<$Res>;
-  
+
   @override
   $Res call({Tag tag});
-  
+
   @override
   $TagCopyWith<$Res> get tag;
 }
 
+/// @nodoc
 class __$AddedTagCopyWithImpl<$Res> extends _$TagSelectorEventCopyWithImpl<$Res> implements _$AddedTagCopyWith<$Res> {
   __$AddedTagCopyWithImpl(_AddedTag _value, $Res Function(_AddedTag) _then) : super(_value, (v) => _then(v as _AddedTag));
-  
+
   @override
   _AddedTag get _value => super._value as _AddedTag;
-  
+
   @override
   $Res call({
     Object tag = freezed,
@@ -121,6 +128,7 @@ class __$AddedTagCopyWithImpl<$Res> extends _$TagSelectorEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_AddedTag implements _AddedTag {
   const _$_AddedTag(this.tag) : assert(tag != null);
 
@@ -199,26 +207,29 @@ abstract class _AddedTag implements TagSelectorEvent {
 
   @override
   Tag get tag;
+
   @override
   _$AddedTagCopyWith<_AddedTag> get copyWith;
 }
 
+/// @nodoc
 abstract class _$RemovedTagCopyWith<$Res> implements $TagSelectorEventCopyWith<$Res> {
   factory _$RemovedTagCopyWith(_RemovedTag value, $Res Function(_RemovedTag) then) = __$RemovedTagCopyWithImpl<$Res>;
-  
+
   @override
   $Res call({Tag tag});
-  
+
   @override
   $TagCopyWith<$Res> get tag;
 }
 
+/// @nodoc
 class __$RemovedTagCopyWithImpl<$Res> extends _$TagSelectorEventCopyWithImpl<$Res> implements _$RemovedTagCopyWith<$Res> {
   __$RemovedTagCopyWithImpl(_RemovedTag _value, $Res Function(_RemovedTag) _then) : super(_value, (v) => _then(v as _RemovedTag));
-  
+
   @override
   _RemovedTag get _value => super._value as _RemovedTag;
-  
+
   @override
   $Res call({
     Object tag = freezed,
@@ -229,6 +240,7 @@ class __$RemovedTagCopyWithImpl<$Res> extends _$TagSelectorEventCopyWithImpl<$Re
   }
 }
 
+/// @nodoc
 class _$_RemovedTag implements _RemovedTag {
   const _$_RemovedTag(this.tag) : assert(tag != null);
 
@@ -311,6 +323,7 @@ abstract class _RemovedTag implements TagSelectorEvent {
   _$RemovedTagCopyWith<_RemovedTag> get copyWith;
 }
 
+/// @nodoc
 class _$TagSelectorStateTearOff {
   const _$TagSelectorStateTearOff();
 
@@ -322,29 +335,33 @@ class _$TagSelectorStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $TagSelectorState = _$TagSelectorStateTearOff();
 
+/// @nodoc
 mixin _$TagSelectorState {
   KtSet<Tag> get tagsSelected;
 
   $TagSelectorStateCopyWith<TagSelectorState> get copyWith;
 }
 
+/// @nodoc
 abstract class $TagSelectorStateCopyWith<$Res> {
   factory $TagSelectorStateCopyWith(TagSelectorState value, $Res Function(TagSelectorState) then) = _$TagSelectorStateCopyWithImpl<$Res>;
-  
+
   $Res call({KtSet<Tag> tagsSelected});
 }
 
+/// @nodoc
 class _$TagSelectorStateCopyWithImpl<$Res> implements $TagSelectorStateCopyWith<$Res> {
   _$TagSelectorStateCopyWithImpl(this._value, this._then);
-  
+
   final TagSelectorState _value;
-  
+
   // ignore: unused_field
   final $Res Function(TagSelectorState) _then;
-  
+
   @override
   $Res call({
     Object tagsSelected = freezed,
@@ -355,19 +372,21 @@ class _$TagSelectorStateCopyWithImpl<$Res> implements $TagSelectorStateCopyWith<
   }
 }
 
+/// @nodoc
 abstract class _$TagSearchFormStateCopyWith<$Res> implements $TagSelectorStateCopyWith<$Res> {
   factory _$TagSearchFormStateCopyWith(_TagSearchFormState value, $Res Function(_TagSearchFormState) then) = __$TagSearchFormStateCopyWithImpl<$Res>;
-  
+
   @override
   $Res call({KtSet<Tag> tagsSelected});
 }
 
+/// @nodoc
 class __$TagSearchFormStateCopyWithImpl<$Res> extends _$TagSelectorStateCopyWithImpl<$Res> implements _$TagSearchFormStateCopyWith<$Res> {
   __$TagSearchFormStateCopyWithImpl(_TagSearchFormState _value, $Res Function(_TagSearchFormState) _then) : super(_value, (v) => _then(v as _TagSearchFormState));
-  
+
   @override
   _TagSearchFormState get _value => super._value as _TagSearchFormState;
-  
+
   @override
   $Res call({
     Object tagsSelected = freezed,
@@ -378,35 +397,36 @@ class __$TagSearchFormStateCopyWithImpl<$Res> extends _$TagSelectorStateCopyWith
   }
 }
 
+/// @nodoc
 class _$_TagSearchFormState implements _TagSearchFormState {
   const _$_TagSearchFormState({@required this.tagsSelected}) : assert(tagsSelected != null);
-  
+
   @override
   final KtSet<Tag> tagsSelected;
-  
+
   @override
   String toString() {
     return 'TagSelectorState(tagsSelected: $tagsSelected)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is _TagSearchFormState && (identical(other.tagsSelected, tagsSelected) || const DeepCollectionEquality().equals(other.tagsSelected, tagsSelected)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tagsSelected);
-  
+
   @override
   _$TagSearchFormStateCopyWith<_TagSearchFormState> get copyWith => __$TagSearchFormStateCopyWithImpl<_TagSearchFormState>(this, _$identity);
 }
 
 abstract class _TagSearchFormState implements TagSelectorState {
   const factory _TagSearchFormState({@required KtSet<Tag> tagsSelected}) = _$_TagSearchFormState;
-  
+
   @override
   KtSet<Tag> get tagsSelected;
-  
+
   @override
   _$TagSearchFormStateCopyWith<_TagSearchFormState> get copyWith;
 }

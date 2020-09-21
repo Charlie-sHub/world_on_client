@@ -9,6 +9,7 @@ part of 'tag.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$TagTearOff {
   const _$TagTearOff();
 
@@ -24,9 +25,11 @@ class _$TagTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Tag = _$TagTearOff();
 
+/// @nodoc
 mixin _$Tag {
   int get id;
   Name get name;
@@ -37,12 +40,14 @@ mixin _$Tag {
   $TagCopyWith<Tag> get copyWith;
 }
 
+/// @nodoc
 abstract class $TagCopyWith<$Res> {
   factory $TagCopyWith(Tag value, $Res Function(Tag) then) = _$TagCopyWithImpl<$Res>;
 
   $Res call({int id, Name name, int creatorId, PastDate creationDate, PastDate modificationDate});
 }
 
+/// @nodoc
 class _$TagCopyWithImpl<$Res> implements $TagCopyWith<$Res> {
   _$TagCopyWithImpl(this._value, this._then);
 
@@ -68,6 +73,7 @@ class _$TagCopyWithImpl<$Res> implements $TagCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$TagCopyWith<$Res> implements $TagCopyWith<$Res> {
   factory _$TagCopyWith(_Tag value, $Res Function(_Tag) then) = __$TagCopyWithImpl<$Res>;
 
@@ -75,6 +81,7 @@ abstract class _$TagCopyWith<$Res> implements $TagCopyWith<$Res> {
   $Res call({int id, Name name, int creatorId, PastDate creationDate, PastDate modificationDate});
 }
 
+/// @nodoc
 class __$TagCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res> implements _$TagCopyWith<$Res> {
   __$TagCopyWithImpl(_Tag _value, $Res Function(_Tag) _then) : super(_value, (v) => _then(v as _Tag));
 
@@ -99,6 +106,7 @@ class __$TagCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res> implements _$TagC
   }
 }
 
+/// @nodoc
 class _$_Tag extends _Tag {
   const _$_Tag({this.id, @required this.name, @required this.creatorId, @required this.creationDate, @required this.modificationDate})
       : assert(name != null),

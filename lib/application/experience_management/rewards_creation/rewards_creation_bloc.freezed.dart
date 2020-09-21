@@ -9,6 +9,7 @@ part of 'rewards_creation_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$RewardsCreationEventTearOff {
   const _$RewardsCreationEventTearOff();
 
@@ -27,9 +28,11 @@ class _$RewardsCreationEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $RewardsCreationEvent = _$RewardsCreationEventTearOff();
 
+/// @nodoc
 mixin _$RewardsCreationEvent {
   Reward get reward;
 
@@ -38,20 +41,17 @@ mixin _$RewardsCreationEvent {
     @required Result addedReward(Reward reward),
     @required Result removedReward(Reward reward),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addedReward(Reward reward),
     Result removedReward(Reward reward),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addedReward(_AddedReward value),
     @required Result removedReward(_RemovedReward value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addedReward(_AddedReward value),
@@ -62,6 +62,7 @@ mixin _$RewardsCreationEvent {
   $RewardsCreationEventCopyWith<RewardsCreationEvent> get copyWith;
 }
 
+/// @nodoc
 abstract class $RewardsCreationEventCopyWith<$Res> {
   factory $RewardsCreationEventCopyWith(RewardsCreationEvent value, $Res Function(RewardsCreationEvent) then) = _$RewardsCreationEventCopyWithImpl<$Res>;
 
@@ -70,6 +71,7 @@ abstract class $RewardsCreationEventCopyWith<$Res> {
   $RewardCopyWith<$Res> get reward;
 }
 
+/// @nodoc
 class _$RewardsCreationEventCopyWithImpl<$Res> implements $RewardsCreationEventCopyWith<$Res> {
   _$RewardsCreationEventCopyWithImpl(this._value, this._then);
 
@@ -98,6 +100,7 @@ class _$RewardsCreationEventCopyWithImpl<$Res> implements $RewardsCreationEventC
   }
 }
 
+/// @nodoc
 abstract class _$AddedRewardCopyWith<$Res> implements $RewardsCreationEventCopyWith<$Res> {
   factory _$AddedRewardCopyWith(_AddedReward value, $Res Function(_AddedReward) then) = __$AddedRewardCopyWithImpl<$Res>;
 
@@ -108,6 +111,7 @@ abstract class _$AddedRewardCopyWith<$Res> implements $RewardsCreationEventCopyW
   $RewardCopyWith<$Res> get reward;
 }
 
+/// @nodoc
 class __$AddedRewardCopyWithImpl<$Res> extends _$RewardsCreationEventCopyWithImpl<$Res> implements _$AddedRewardCopyWith<$Res> {
   __$AddedRewardCopyWithImpl(_AddedReward _value, $Res Function(_AddedReward) _then) : super(_value, (v) => _then(v as _AddedReward));
 
@@ -124,6 +128,7 @@ class __$AddedRewardCopyWithImpl<$Res> extends _$RewardsCreationEventCopyWithImp
   }
 }
 
+/// @nodoc
 class _$_AddedReward implements _AddedReward {
   const _$_AddedReward(this.reward) : assert(reward != null);
 
@@ -207,6 +212,7 @@ abstract class _AddedReward implements RewardsCreationEvent {
   _$AddedRewardCopyWith<_AddedReward> get copyWith;
 }
 
+/// @nodoc
 abstract class _$RemovedRewardCopyWith<$Res> implements $RewardsCreationEventCopyWith<$Res> {
   factory _$RemovedRewardCopyWith(_RemovedReward value, $Res Function(_RemovedReward) then) = __$RemovedRewardCopyWithImpl<$Res>;
 
@@ -217,6 +223,7 @@ abstract class _$RemovedRewardCopyWith<$Res> implements $RewardsCreationEventCop
   $RewardCopyWith<$Res> get reward;
 }
 
+/// @nodoc
 class __$RemovedRewardCopyWithImpl<$Res> extends _$RewardsCreationEventCopyWithImpl<$Res> implements _$RemovedRewardCopyWith<$Res> {
   __$RemovedRewardCopyWithImpl(_RemovedReward _value, $Res Function(_RemovedReward) _then) : super(_value, (v) => _then(v as _RemovedReward));
 
@@ -233,6 +240,7 @@ class __$RemovedRewardCopyWithImpl<$Res> extends _$RewardsCreationEventCopyWithI
   }
 }
 
+/// @nodoc
 class _$_RemovedReward implements _RemovedReward {
   const _$_RemovedReward(this.reward) : assert(reward != null);
 
@@ -311,11 +319,11 @@ abstract class _RemovedReward implements RewardsCreationEvent {
 
   @override
   Reward get reward;
-
   @override
   _$RemovedRewardCopyWith<_RemovedReward> get copyWith;
 }
 
+/// @nodoc
 class _$RewardsCreationStateTearOff {
   const _$RewardsCreationStateTearOff();
 
@@ -327,21 +335,25 @@ class _$RewardsCreationStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $RewardsCreationState = _$RewardsCreationStateTearOff();
 
+/// @nodoc
 mixin _$RewardsCreationState {
   KtSet<Reward> get rewardsCreated;
 
   $RewardsCreationStateCopyWith<RewardsCreationState> get copyWith;
 }
 
+/// @nodoc
 abstract class $RewardsCreationStateCopyWith<$Res> {
   factory $RewardsCreationStateCopyWith(RewardsCreationState value, $Res Function(RewardsCreationState) then) = _$RewardsCreationStateCopyWithImpl<$Res>;
 
   $Res call({KtSet<Reward> rewardsCreated});
 }
 
+/// @nodoc
 class _$RewardsCreationStateCopyWithImpl<$Res> implements $RewardsCreationStateCopyWith<$Res> {
   _$RewardsCreationStateCopyWithImpl(this._value, this._then);
 
@@ -360,6 +372,7 @@ class _$RewardsCreationStateCopyWithImpl<$Res> implements $RewardsCreationStateC
   }
 }
 
+/// @nodoc
 abstract class _$RewardsCreationStateCopyWith<$Res> implements $RewardsCreationStateCopyWith<$Res> {
   factory _$RewardsCreationStateCopyWith(_RewardsCreationState value, $Res Function(_RewardsCreationState) then) = __$RewardsCreationStateCopyWithImpl<$Res>;
 
@@ -367,6 +380,7 @@ abstract class _$RewardsCreationStateCopyWith<$Res> implements $RewardsCreationS
   $Res call({KtSet<Reward> rewardsCreated});
 }
 
+/// @nodoc
 class __$RewardsCreationStateCopyWithImpl<$Res> extends _$RewardsCreationStateCopyWithImpl<$Res> implements _$RewardsCreationStateCopyWith<$Res> {
   __$RewardsCreationStateCopyWithImpl(_RewardsCreationState _value, $Res Function(_RewardsCreationState) _then) : super(_value, (v) => _then(v as _RewardsCreationState));
 
@@ -383,6 +397,7 @@ class __$RewardsCreationStateCopyWithImpl<$Res> extends _$RewardsCreationStateCo
   }
 }
 
+/// @nodoc
 class _$_RewardsCreationState implements _RewardsCreationState {
   const _$_RewardsCreationState({@required this.rewardsCreated}) : assert(rewardsCreated != null);
 

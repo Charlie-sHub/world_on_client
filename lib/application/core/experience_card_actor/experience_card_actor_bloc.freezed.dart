@@ -9,6 +9,7 @@ part of 'experience_card_actor_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$ExperienceCardActorEventTearOff {
   const _$ExperienceCardActorEventTearOff();
 
@@ -35,9 +36,11 @@ class _$ExperienceCardActorEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ExperienceCardActorEvent = _$ExperienceCardActorEventTearOff();
 
+/// @nodoc
 mixin _$ExperienceCardActorEvent {
   Experience get experience;
 
@@ -72,6 +75,7 @@ mixin _$ExperienceCardActorEvent {
   $ExperienceCardActorEventCopyWith<ExperienceCardActorEvent> get copyWith;
 }
 
+/// @nodoc
 abstract class $ExperienceCardActorEventCopyWith<$Res> {
   factory $ExperienceCardActorEventCopyWith(ExperienceCardActorEvent value,
           $Res Function(ExperienceCardActorEvent) then) =
@@ -81,6 +85,7 @@ abstract class $ExperienceCardActorEventCopyWith<$Res> {
   $ExperienceCopyWith<$Res> get experience;
 }
 
+/// @nodoc
 class _$ExperienceCardActorEventCopyWithImpl<$Res>
     implements $ExperienceCardActorEventCopyWith<$Res> {
   _$ExperienceCardActorEventCopyWithImpl(this._value, this._then);
@@ -110,6 +115,7 @@ class _$ExperienceCardActorEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$InitializedCopyWith<$Res>
     implements $ExperienceCardActorEventCopyWith<$Res> {
   factory _$InitializedCopyWith(
@@ -122,6 +128,7 @@ abstract class _$InitializedCopyWith<$Res>
   $ExperienceCopyWith<$Res> get experience;
 }
 
+/// @nodoc
 class __$InitializedCopyWithImpl<$Res>
     extends _$ExperienceCardActorEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
@@ -142,6 +149,7 @@ class __$InitializedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.experience) : assert(experience != null);
 
@@ -237,6 +245,7 @@ abstract class _Initialized implements ExperienceCardActorEvent {
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
+/// @nodoc
 abstract class _$AddedExperienceToLogCopyWith<$Res>
     implements $ExperienceCardActorEventCopyWith<$Res> {
   factory _$AddedExperienceToLogCopyWith(_AddedExperienceToLog value,
@@ -249,6 +258,7 @@ abstract class _$AddedExperienceToLogCopyWith<$Res>
   $ExperienceCopyWith<$Res> get experience;
 }
 
+/// @nodoc
 class __$AddedExperienceToLogCopyWithImpl<$Res>
     extends _$ExperienceCardActorEventCopyWithImpl<$Res>
     implements _$AddedExperienceToLogCopyWith<$Res> {
@@ -269,6 +279,7 @@ class __$AddedExperienceToLogCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_AddedExperienceToLog implements _AddedExperienceToLog {
   const _$_AddedExperienceToLog(this.experience) : assert(experience != null);
 
@@ -366,6 +377,7 @@ abstract class _AddedExperienceToLog implements ExperienceCardActorEvent {
   _$AddedExperienceToLogCopyWith<_AddedExperienceToLog> get copyWith;
 }
 
+/// @nodoc
 abstract class _$DismissedExperienceFromLogCopyWith<$Res>
     implements $ExperienceCardActorEventCopyWith<$Res> {
   factory _$DismissedExperienceFromLogCopyWith(
@@ -379,6 +391,7 @@ abstract class _$DismissedExperienceFromLogCopyWith<$Res>
   $ExperienceCopyWith<$Res> get experience;
 }
 
+/// @nodoc
 class __$DismissedExperienceFromLogCopyWithImpl<$Res>
     extends _$ExperienceCardActorEventCopyWithImpl<$Res>
     implements _$DismissedExperienceFromLogCopyWith<$Res> {
@@ -400,6 +413,7 @@ class __$DismissedExperienceFromLogCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_DismissedExperienceFromLog implements _DismissedExperienceFromLog {
   const _$_DismissedExperienceFromLog(this.experience)
       : assert(experience != null);
@@ -499,6 +513,7 @@ abstract class _DismissedExperienceFromLog implements ExperienceCardActorEvent {
       get copyWith;
 }
 
+/// @nodoc
 class _$ExperienceCardActorStateTearOff {
   const _$ExperienceCardActorStateTearOff();
 
@@ -547,9 +562,11 @@ class _$ExperienceCardActorStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ExperienceCardActorState = _$ExperienceCardActorStateTearOff();
 
+/// @nodoc
 mixin _$ExperienceCardActorState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -599,12 +616,14 @@ mixin _$ExperienceCardActorState {
   });
 }
 
+/// @nodoc
 abstract class $ExperienceCardActorStateCopyWith<$Res> {
   factory $ExperienceCardActorStateCopyWith(ExperienceCardActorState value,
           $Res Function(ExperienceCardActorState) then) =
       _$ExperienceCardActorStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ExperienceCardActorStateCopyWithImpl<$Res>
     implements $ExperienceCardActorStateCopyWith<$Res> {
   _$ExperienceCardActorStateCopyWithImpl(this._value, this._then);
@@ -614,11 +633,13 @@ class _$ExperienceCardActorStateCopyWithImpl<$Res>
   final $Res Function(ExperienceCardActorState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res>
     extends _$ExperienceCardActorStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
@@ -629,6 +650,7 @@ class __$InitialCopyWithImpl<$Res>
   _Initial get _value => super._value as _Initial;
 }
 
+/// @nodoc
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -736,12 +758,14 @@ abstract class _Initial implements ExperienceCardActorState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
   factory _$ActionInProgressCopyWith(
           _ActionInProgress value, $Res Function(_ActionInProgress) then) =
       __$ActionInProgressCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$ActionInProgressCopyWithImpl<$Res>
     extends _$ExperienceCardActorStateCopyWithImpl<$Res>
     implements _$ActionInProgressCopyWith<$Res> {
@@ -753,6 +777,7 @@ class __$ActionInProgressCopyWithImpl<$Res>
   _ActionInProgress get _value => super._value as _ActionInProgress;
 }
 
+/// @nodoc
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -860,11 +885,13 @@ abstract class _ActionInProgress implements ExperienceCardActorState {
   const factory _ActionInProgress() = _$_ActionInProgress;
 }
 
+/// @nodoc
 abstract class _$InLogCopyWith<$Res> {
   factory _$InLogCopyWith(_InLog value, $Res Function(_InLog) then) =
       __$InLogCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InLogCopyWithImpl<$Res>
     extends _$ExperienceCardActorStateCopyWithImpl<$Res>
     implements _$InLogCopyWith<$Res> {
@@ -875,6 +902,7 @@ class __$InLogCopyWithImpl<$Res>
   _InLog get _value => super._value as _InLog;
 }
 
+/// @nodoc
 class _$_InLog implements _InLog {
   const _$_InLog();
 
@@ -982,11 +1010,13 @@ abstract class _InLog implements ExperienceCardActorState {
   const factory _InLog() = _$_InLog;
 }
 
+/// @nodoc
 abstract class _$NotInLogCopyWith<$Res> {
   factory _$NotInLogCopyWith(_NotInLog value, $Res Function(_NotInLog) then) =
       __$NotInLogCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$NotInLogCopyWithImpl<$Res>
     extends _$ExperienceCardActorStateCopyWithImpl<$Res>
     implements _$NotInLogCopyWith<$Res> {
@@ -997,6 +1027,7 @@ class __$NotInLogCopyWithImpl<$Res>
   _NotInLog get _value => super._value as _NotInLog;
 }
 
+/// @nodoc
 class _$_NotInLog implements _NotInLog {
   const _$_NotInLog();
 
@@ -1104,12 +1135,14 @@ abstract class _NotInLog implements ExperienceCardActorState {
   const factory _NotInLog() = _$_NotInLog;
 }
 
+/// @nodoc
 abstract class _$AdditionSuccessCopyWith<$Res> {
   factory _$AdditionSuccessCopyWith(
           _AdditionSuccess value, $Res Function(_AdditionSuccess) then) =
       __$AdditionSuccessCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$AdditionSuccessCopyWithImpl<$Res>
     extends _$ExperienceCardActorStateCopyWithImpl<$Res>
     implements _$AdditionSuccessCopyWith<$Res> {
@@ -1121,6 +1154,7 @@ class __$AdditionSuccessCopyWithImpl<$Res>
   _AdditionSuccess get _value => super._value as _AdditionSuccess;
 }
 
+/// @nodoc
 class _$_AdditionSuccess implements _AdditionSuccess {
   const _$_AdditionSuccess();
 
@@ -1228,6 +1262,7 @@ abstract class _AdditionSuccess implements ExperienceCardActorState {
   const factory _AdditionSuccess() = _$_AdditionSuccess;
 }
 
+/// @nodoc
 abstract class _$AdditionFailureCopyWith<$Res> {
   factory _$AdditionFailureCopyWith(
           _AdditionFailure value, $Res Function(_AdditionFailure) then) =
@@ -1237,6 +1272,7 @@ abstract class _$AdditionFailureCopyWith<$Res> {
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
+/// @nodoc
 class __$AdditionFailureCopyWithImpl<$Res>
     extends _$ExperienceCardActorStateCopyWithImpl<$Res>
     implements _$AdditionFailureCopyWith<$Res> {
@@ -1267,6 +1303,7 @@ class __$AdditionFailureCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_AdditionFailure implements _AdditionFailure {
   const _$_AdditionFailure(this.failure) : assert(failure != null);
 
@@ -1388,12 +1425,14 @@ abstract class _AdditionFailure implements ExperienceCardActorState {
   _$AdditionFailureCopyWith<_AdditionFailure> get copyWith;
 }
 
+/// @nodoc
 abstract class _$DismissalSuccessCopyWith<$Res> {
   factory _$DismissalSuccessCopyWith(
           _DismissalSuccess value, $Res Function(_DismissalSuccess) then) =
       __$DismissalSuccessCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$DismissalSuccessCopyWithImpl<$Res>
     extends _$ExperienceCardActorStateCopyWithImpl<$Res>
     implements _$DismissalSuccessCopyWith<$Res> {
@@ -1405,6 +1444,7 @@ class __$DismissalSuccessCopyWithImpl<$Res>
   _DismissalSuccess get _value => super._value as _DismissalSuccess;
 }
 
+/// @nodoc
 class _$_DismissalSuccess implements _DismissalSuccess {
   const _$_DismissalSuccess();
 
@@ -1512,6 +1552,7 @@ abstract class _DismissalSuccess implements ExperienceCardActorState {
   const factory _DismissalSuccess() = _$_DismissalSuccess;
 }
 
+/// @nodoc
 abstract class _$DismissalFailureCopyWith<$Res> {
   factory _$DismissalFailureCopyWith(
           _DismissalFailure value, $Res Function(_DismissalFailure) then) =
@@ -1521,6 +1562,7 @@ abstract class _$DismissalFailureCopyWith<$Res> {
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
+/// @nodoc
 class __$DismissalFailureCopyWithImpl<$Res>
     extends _$ExperienceCardActorStateCopyWithImpl<$Res>
     implements _$DismissalFailureCopyWith<$Res> {
@@ -1551,6 +1593,7 @@ class __$DismissalFailureCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_DismissalFailure implements _DismissalFailure {
   const _$_DismissalFailure(this.failure) : assert(failure != null);
 

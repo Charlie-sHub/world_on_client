@@ -9,6 +9,7 @@ part of 'core_application_failure.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$CoreApplicationFailureTearOff {
   const _$CoreApplicationFailureTearOff();
 
@@ -20,9 +21,11 @@ class _$CoreApplicationFailureTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $CoreApplicationFailure = _$CoreApplicationFailureTearOff();
 
+/// @nodoc
 mixin _$CoreApplicationFailure<T> {
   String get errorString;
 
@@ -48,12 +51,14 @@ mixin _$CoreApplicationFailure<T> {
   $CoreApplicationFailureCopyWith<T, CoreApplicationFailure<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $CoreApplicationFailureCopyWith<T, $Res> {
   factory $CoreApplicationFailureCopyWith(CoreApplicationFailure<T> value, $Res Function(CoreApplicationFailure<T>) then) = _$CoreApplicationFailureCopyWithImpl<T, $Res>;
 
   $Res call({String errorString});
 }
 
+/// @nodoc
 class _$CoreApplicationFailureCopyWithImpl<T, $Res> implements $CoreApplicationFailureCopyWith<T, $Res> {
   _$CoreApplicationFailureCopyWithImpl(this._value, this._then);
 
@@ -72,6 +77,7 @@ class _$CoreApplicationFailureCopyWithImpl<T, $Res> implements $CoreApplicationF
   }
 }
 
+/// @nodoc
 abstract class $UnknownApplicationLayerErrorCopyWith<T, $Res> implements $CoreApplicationFailureCopyWith<T, $Res> {
   factory $UnknownApplicationLayerErrorCopyWith(UnknownApplicationLayerError<T> value, $Res Function(UnknownApplicationLayerError<T>) then) = _$UnknownApplicationLayerErrorCopyWithImpl<T, $Res>;
 
@@ -79,6 +85,7 @@ abstract class $UnknownApplicationLayerErrorCopyWith<T, $Res> implements $CoreAp
   $Res call({String errorString});
 }
 
+/// @nodoc
 class _$UnknownApplicationLayerErrorCopyWithImpl<T, $Res> extends _$CoreApplicationFailureCopyWithImpl<T, $Res> implements $UnknownApplicationLayerErrorCopyWith<T, $Res> {
   _$UnknownApplicationLayerErrorCopyWithImpl(UnknownApplicationLayerError<T> _value, $Res Function(UnknownApplicationLayerError<T>) _then)
       : super(_value, (v) => _then(v as UnknownApplicationLayerError<T>));
@@ -96,6 +103,7 @@ class _$UnknownApplicationLayerErrorCopyWithImpl<T, $Res> extends _$CoreApplicat
   }
 }
 
+/// @nodoc
 class _$UnknownApplicationLayerError<T> implements UnknownApplicationLayerError<T> {
   const _$UnknownApplicationLayerError({@required this.errorString}) : assert(errorString != null);
 

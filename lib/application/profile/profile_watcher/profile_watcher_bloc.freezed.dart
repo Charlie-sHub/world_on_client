@@ -9,6 +9,7 @@ part of 'profile_watcher_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$ProfileWatcherEventTearOff {
   const _$ProfileWatcherEventTearOff();
 
@@ -20,9 +21,11 @@ class _$ProfileWatcherEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ProfileWatcherEvent = _$ProfileWatcherEventTearOff();
 
+/// @nodoc
 mixin _$ProfileWatcherEvent {
   Option<User> get userOption;
 
@@ -48,6 +51,7 @@ mixin _$ProfileWatcherEvent {
   $ProfileWatcherEventCopyWith<ProfileWatcherEvent> get copyWith;
 }
 
+/// @nodoc
 abstract class $ProfileWatcherEventCopyWith<$Res> {
   factory $ProfileWatcherEventCopyWith(
           ProfileWatcherEvent value, $Res Function(ProfileWatcherEvent) then) =
@@ -55,6 +59,7 @@ abstract class $ProfileWatcherEventCopyWith<$Res> {
   $Res call({Option<User> userOption});
 }
 
+/// @nodoc
 class _$ProfileWatcherEventCopyWithImpl<$Res>
     implements $ProfileWatcherEventCopyWith<$Res> {
   _$ProfileWatcherEventCopyWithImpl(this._value, this._then);
@@ -75,6 +80,7 @@ class _$ProfileWatcherEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$InitializedForeignOrOwnCopyWith<$Res>
     implements $ProfileWatcherEventCopyWith<$Res> {
   factory _$InitializedForeignOrOwnCopyWith(_InitializedForeignOrOwn value,
@@ -84,6 +90,7 @@ abstract class _$InitializedForeignOrOwnCopyWith<$Res>
   $Res call({Option<User> userOption});
 }
 
+/// @nodoc
 class __$InitializedForeignOrOwnCopyWithImpl<$Res>
     extends _$ProfileWatcherEventCopyWithImpl<$Res>
     implements _$InitializedForeignOrOwnCopyWith<$Res> {
@@ -105,6 +112,7 @@ class __$InitializedForeignOrOwnCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_InitializedForeignOrOwn implements _InitializedForeignOrOwn {
   const _$_InitializedForeignOrOwn(this.userOption)
       : assert(userOption != null);
@@ -190,6 +198,7 @@ abstract class _InitializedForeignOrOwn implements ProfileWatcherEvent {
   _$InitializedForeignOrOwnCopyWith<_InitializedForeignOrOwn> get copyWith;
 }
 
+/// @nodoc
 class _$ProfileWatcherStateTearOff {
   const _$ProfileWatcherStateTearOff();
 
@@ -223,9 +232,11 @@ class _$ProfileWatcherStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ProfileWatcherState = _$ProfileWatcherStateTearOff();
 
+/// @nodoc
 mixin _$ProfileWatcherState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -263,12 +274,14 @@ mixin _$ProfileWatcherState {
   });
 }
 
+/// @nodoc
 abstract class $ProfileWatcherStateCopyWith<$Res> {
   factory $ProfileWatcherStateCopyWith(
           ProfileWatcherState value, $Res Function(ProfileWatcherState) then) =
       _$ProfileWatcherStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ProfileWatcherStateCopyWithImpl<$Res>
     implements $ProfileWatcherStateCopyWith<$Res> {
   _$ProfileWatcherStateCopyWithImpl(this._value, this._then);
@@ -278,11 +291,13 @@ class _$ProfileWatcherStateCopyWithImpl<$Res>
   final $Res Function(ProfileWatcherState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res>
     extends _$ProfileWatcherStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
@@ -293,6 +308,7 @@ class __$InitialCopyWithImpl<$Res>
   _Initial get _value => super._value as _Initial;
 }
 
+/// @nodoc
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -382,12 +398,14 @@ abstract class _Initial implements ProfileWatcherState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$LoadInProgressCopyWith<$Res> {
   factory _$LoadInProgressCopyWith(
           _LoadInProgress value, $Res Function(_LoadInProgress) then) =
       __$LoadInProgressCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$LoadInProgressCopyWithImpl<$Res>
     extends _$ProfileWatcherStateCopyWithImpl<$Res>
     implements _$LoadInProgressCopyWith<$Res> {
@@ -399,6 +417,7 @@ class __$LoadInProgressCopyWithImpl<$Res>
   _LoadInProgress get _value => super._value as _LoadInProgress;
 }
 
+/// @nodoc
 class _$_LoadInProgress implements _LoadInProgress {
   const _$_LoadInProgress();
 
@@ -488,6 +507,7 @@ abstract class _LoadInProgress implements ProfileWatcherState {
   const factory _LoadInProgress() = _$_LoadInProgress;
 }
 
+/// @nodoc
 abstract class _$OwnCopyWith<$Res> {
   factory _$OwnCopyWith(_Own value, $Res Function(_Own) then) =
       __$OwnCopyWithImpl<$Res>;
@@ -496,6 +516,7 @@ abstract class _$OwnCopyWith<$Res> {
   $UserCopyWith<$Res> get user;
 }
 
+/// @nodoc
 class __$OwnCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res>
     implements _$OwnCopyWith<$Res> {
   __$OwnCopyWithImpl(_Own _value, $Res Function(_Own) _then)
@@ -524,6 +545,7 @@ class __$OwnCopyWithImpl<$Res> extends _$ProfileWatcherStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_Own implements _Own {
   const _$_Own(this.user) : assert(user != null);
 
@@ -627,6 +649,7 @@ abstract class _Own implements ProfileWatcherState {
   _$OwnCopyWith<_Own> get copyWith;
 }
 
+/// @nodoc
 abstract class _$ForeignCopyWith<$Res> {
   factory _$ForeignCopyWith(_Foreign value, $Res Function(_Foreign) then) =
       __$ForeignCopyWithImpl<$Res>;
@@ -635,6 +658,7 @@ abstract class _$ForeignCopyWith<$Res> {
   $UserCopyWith<$Res> get user;
 }
 
+/// @nodoc
 class __$ForeignCopyWithImpl<$Res>
     extends _$ProfileWatcherStateCopyWithImpl<$Res>
     implements _$ForeignCopyWith<$Res> {
@@ -664,6 +688,7 @@ class __$ForeignCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_Foreign implements _Foreign {
   const _$_Foreign(this.user) : assert(user != null);
 
@@ -767,12 +792,14 @@ abstract class _Foreign implements ProfileWatcherState {
   _$ForeignCopyWith<_Foreign> get copyWith;
 }
 
+/// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(
           _LoadFailure value, $Res Function(_LoadFailure) then) =
       __$LoadFailureCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$LoadFailureCopyWithImpl<$Res>
     extends _$ProfileWatcherStateCopyWithImpl<$Res>
     implements _$LoadFailureCopyWith<$Res> {
@@ -784,6 +811,7 @@ class __$LoadFailureCopyWithImpl<$Res>
   _LoadFailure get _value => super._value as _LoadFailure;
 }
 
+/// @nodoc
 class _$_LoadFailure implements _LoadFailure {
   const _$_LoadFailure();
 

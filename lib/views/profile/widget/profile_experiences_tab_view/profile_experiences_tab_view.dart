@@ -25,8 +25,7 @@ class ProfileExperiencesTabView extends StatelessWidget {
         ..add(
           ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(user),
         ),
-      child: BlocConsumer<ProfileExperiencesWatcherBloc, ProfileExperiencesWatcherState>(
-        listener: (context, state) {},
+      child: BlocBuilder<ProfileExperiencesWatcherBloc, ProfileExperiencesWatcherState>(
         builder: (context, state) => Scaffold(
           floatingActionButton: ProfileExperiencesUnicornDialer(user: user),
           body: state.map(

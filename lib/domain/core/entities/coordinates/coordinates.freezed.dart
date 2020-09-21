@@ -9,6 +9,7 @@ part of 'coordinates.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$CoordinatesTearOff {
   const _$CoordinatesTearOff();
 
@@ -21,9 +22,11 @@ class _$CoordinatesTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Coordinates = _$CoordinatesTearOff();
 
+/// @nodoc
 mixin _$Coordinates {
   Latitude get latitude;
   Longitude get longitude;
@@ -31,12 +34,14 @@ mixin _$Coordinates {
   $CoordinatesCopyWith<Coordinates> get copyWith;
 }
 
+/// @nodoc
 abstract class $CoordinatesCopyWith<$Res> {
   factory $CoordinatesCopyWith(Coordinates value, $Res Function(Coordinates) then) = _$CoordinatesCopyWithImpl<$Res>;
 
   $Res call({Latitude latitude, Longitude longitude});
 }
 
+/// @nodoc
 class _$CoordinatesCopyWithImpl<$Res> implements $CoordinatesCopyWith<$Res> {
   _$CoordinatesCopyWithImpl(this._value, this._then);
 
@@ -56,6 +61,7 @@ class _$CoordinatesCopyWithImpl<$Res> implements $CoordinatesCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$CoordinatesCopyWith<$Res> implements $CoordinatesCopyWith<$Res> {
   factory _$CoordinatesCopyWith(_Coordinates value, $Res Function(_Coordinates) then) = __$CoordinatesCopyWithImpl<$Res>;
 
@@ -63,6 +69,7 @@ abstract class _$CoordinatesCopyWith<$Res> implements $CoordinatesCopyWith<$Res>
   $Res call({Latitude latitude, Longitude longitude});
 }
 
+/// @nodoc
 class __$CoordinatesCopyWithImpl<$Res> extends _$CoordinatesCopyWithImpl<$Res> implements _$CoordinatesCopyWith<$Res> {
   __$CoordinatesCopyWithImpl(_Coordinates _value, $Res Function(_Coordinates) _then) : super(_value, (v) => _then(v as _Coordinates));
 
@@ -81,6 +88,7 @@ class __$CoordinatesCopyWithImpl<$Res> extends _$CoordinatesCopyWithImpl<$Res> i
   }
 }
 
+/// @nodoc
 class _$_Coordinates extends _Coordinates {
   const _$_Coordinates({@required this.latitude, @required this.longitude})
       : assert(latitude != null),

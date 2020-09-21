@@ -339,21 +339,28 @@ packages:
       name: freezed
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.11.6"
+    version: "0.12.1"
   freezed_annotation:
     dependency: "direct main"
     description:
       name: freezed_annotation
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.11.0+1"
+    version: "0.12.0"
   geolocator:
     dependency: "direct main"
     description:
       name: geolocator
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.3.2+2"
+    version: "6.0.0+4"
+  geolocator_platform_interface:
+    dependency: transitive
+    description:
+      name: geolocator_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.4"
   get_it:
     dependency: "direct main"
     description:
@@ -368,13 +375,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
-  google_api_availability:
-    dependency: transitive
-    description:
-      name: google_api_availability
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.4"
   google_maps_flutter:
     dependency: "direct main"
     description:
@@ -444,7 +444,7 @@ packages:
       name: image_picker
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.7+7"
+    version: "0.6.7+9"
   image_picker_platform_interface:
     dependency: transitive
     description:
@@ -508,13 +508,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
-  location_permissions:
-    dependency: transitive
-    description:
-      name: location_permissions
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.0.0+1"
   logger:
     dependency: "direct main"
     description:
@@ -598,7 +591,7 @@ packages:
       name: multi_image_picker
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.7.13"
+    version: "4.7.14"
   nested:
     dependency: transitive
     description:

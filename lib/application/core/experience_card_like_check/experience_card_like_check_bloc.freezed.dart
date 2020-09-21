@@ -9,6 +9,7 @@ part of 'experience_card_like_check_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$ExperienceCardLikeCheckEventTearOff {
   const _$ExperienceCardLikeCheckEventTearOff();
 
@@ -20,9 +21,11 @@ class _$ExperienceCardLikeCheckEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ExperienceCardLikeCheckEvent = _$ExperienceCardLikeCheckEventTearOff();
 
+/// @nodoc
 mixin _$ExperienceCardLikeCheckEvent {
   Experience get experience;
 
@@ -49,6 +52,7 @@ mixin _$ExperienceCardLikeCheckEvent {
       get copyWith;
 }
 
+/// @nodoc
 abstract class $ExperienceCardLikeCheckEventCopyWith<$Res> {
   factory $ExperienceCardLikeCheckEventCopyWith(
           ExperienceCardLikeCheckEvent value,
@@ -59,6 +63,7 @@ abstract class $ExperienceCardLikeCheckEventCopyWith<$Res> {
   $ExperienceCopyWith<$Res> get experience;
 }
 
+/// @nodoc
 class _$ExperienceCardLikeCheckEventCopyWithImpl<$Res>
     implements $ExperienceCardLikeCheckEventCopyWith<$Res> {
   _$ExperienceCardLikeCheckEventCopyWithImpl(this._value, this._then);
@@ -88,6 +93,7 @@ class _$ExperienceCardLikeCheckEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$InitializedCopyWith<$Res>
     implements $ExperienceCardLikeCheckEventCopyWith<$Res> {
   factory _$InitializedCopyWith(
@@ -100,6 +106,7 @@ abstract class _$InitializedCopyWith<$Res>
   $ExperienceCopyWith<$Res> get experience;
 }
 
+/// @nodoc
 class __$InitializedCopyWithImpl<$Res>
     extends _$ExperienceCardLikeCheckEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
@@ -120,6 +127,7 @@ class __$InitializedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.experience) : assert(experience != null);
 
@@ -202,6 +210,7 @@ abstract class _Initialized implements ExperienceCardLikeCheckEvent {
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
+/// @nodoc
 class _$ExperienceCardLikeCheckStateTearOff {
   const _$ExperienceCardLikeCheckStateTearOff();
 
@@ -221,9 +230,11 @@ class _$ExperienceCardLikeCheckStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ExperienceCardLikeCheckState = _$ExperienceCardLikeCheckStateTearOff();
 
+/// @nodoc
 mixin _$ExperienceCardLikeCheckState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -253,6 +264,7 @@ mixin _$ExperienceCardLikeCheckState {
   });
 }
 
+/// @nodoc
 abstract class $ExperienceCardLikeCheckStateCopyWith<$Res> {
   factory $ExperienceCardLikeCheckStateCopyWith(
           ExperienceCardLikeCheckState value,
@@ -260,6 +272,7 @@ abstract class $ExperienceCardLikeCheckStateCopyWith<$Res> {
       _$ExperienceCardLikeCheckStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ExperienceCardLikeCheckStateCopyWithImpl<$Res>
     implements $ExperienceCardLikeCheckStateCopyWith<$Res> {
   _$ExperienceCardLikeCheckStateCopyWithImpl(this._value, this._then);
@@ -269,11 +282,13 @@ class _$ExperienceCardLikeCheckStateCopyWithImpl<$Res>
   final $Res Function(ExperienceCardLikeCheckState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res>
     extends _$ExperienceCardLikeCheckStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
@@ -284,6 +299,7 @@ class __$InitialCopyWithImpl<$Res>
   _Initial get _value => super._value as _Initial;
 }
 
+/// @nodoc
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -361,11 +377,13 @@ abstract class _Initial implements ExperienceCardLikeCheckState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$LikesCopyWith<$Res> {
   factory _$LikesCopyWith(_Likes value, $Res Function(_Likes) then) =
       __$LikesCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$LikesCopyWithImpl<$Res>
     extends _$ExperienceCardLikeCheckStateCopyWithImpl<$Res>
     implements _$LikesCopyWith<$Res> {
@@ -376,6 +394,7 @@ class __$LikesCopyWithImpl<$Res>
   _Likes get _value => super._value as _Likes;
 }
 
+/// @nodoc
 class _$_Likes implements _Likes {
   const _$_Likes();
 
@@ -453,11 +472,13 @@ abstract class _Likes implements ExperienceCardLikeCheckState {
   const factory _Likes() = _$_Likes;
 }
 
+/// @nodoc
 abstract class _$NeutralCopyWith<$Res> {
   factory _$NeutralCopyWith(_Neutral value, $Res Function(_Neutral) then) =
       __$NeutralCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$NeutralCopyWithImpl<$Res>
     extends _$ExperienceCardLikeCheckStateCopyWithImpl<$Res>
     implements _$NeutralCopyWith<$Res> {
@@ -468,6 +489,7 @@ class __$NeutralCopyWithImpl<$Res>
   _Neutral get _value => super._value as _Neutral;
 }
 
+/// @nodoc
 class _$_Neutral implements _Neutral {
   const _$_Neutral();
 

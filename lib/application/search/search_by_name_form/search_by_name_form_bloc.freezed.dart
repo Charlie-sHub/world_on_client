@@ -9,6 +9,7 @@ part of 'search_by_name_form_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$SearchByNameFormEventTearOff {
   const _$SearchByNameFormEventTearOff();
 
@@ -25,9 +26,11 @@ class _$SearchByNameFormEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $SearchByNameFormEvent = _$SearchByNameFormEventTearOff();
 
+/// @nodoc
 mixin _$SearchByNameFormEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -53,10 +56,12 @@ mixin _$SearchByNameFormEvent {
   });
 }
 
+/// @nodoc
 abstract class $SearchByNameFormEventCopyWith<$Res> {
   factory $SearchByNameFormEventCopyWith(SearchByNameFormEvent value, $Res Function(SearchByNameFormEvent) then) = _$SearchByNameFormEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$SearchByNameFormEventCopyWithImpl<$Res> implements $SearchByNameFormEventCopyWith<$Res> {
   _$SearchByNameFormEventCopyWithImpl(this._value, this._then);
 
@@ -66,12 +71,14 @@ class _$SearchByNameFormEventCopyWithImpl<$Res> implements $SearchByNameFormEven
   final $Res Function(SearchByNameFormEvent) _then;
 }
 
+/// @nodoc
 abstract class _$SearchTermChangedCopyWith<$Res> {
   factory _$SearchTermChangedCopyWith(_SearchTermChanged value, $Res Function(_SearchTermChanged) then) = __$SearchTermChangedCopyWithImpl<$Res>;
 
   $Res call({String searchTermString});
 }
 
+/// @nodoc
 class __$SearchTermChangedCopyWithImpl<$Res> extends _$SearchByNameFormEventCopyWithImpl<$Res> implements _$SearchTermChangedCopyWith<$Res> {
   __$SearchTermChangedCopyWithImpl(_SearchTermChanged _value, $Res Function(_SearchTermChanged) _then) : super(_value, (v) => _then(v as _SearchTermChanged));
 
@@ -88,6 +95,7 @@ class __$SearchTermChangedCopyWithImpl<$Res> extends _$SearchByNameFormEventCopy
   }
 }
 
+/// @nodoc
 class _$_SearchTermChanged implements _SearchTermChanged {
   const _$_SearchTermChanged(this.searchTermString) : assert(searchTermString != null);
 
@@ -170,10 +178,12 @@ abstract class _SearchTermChanged implements SearchByNameFormEvent {
   _$SearchTermChangedCopyWith<_SearchTermChanged> get copyWith;
 }
 
+/// @nodoc
 abstract class _$SubmittedCopyWith<$Res> {
   factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) = __$SubmittedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$SubmittedCopyWithImpl<$Res> extends _$SearchByNameFormEventCopyWithImpl<$Res> implements _$SubmittedCopyWith<$Res> {
   __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then) : super(_value, (v) => _then(v as _Submitted));
 
@@ -181,6 +191,7 @@ class __$SubmittedCopyWithImpl<$Res> extends _$SearchByNameFormEventCopyWithImpl
   _Submitted get _value => super._value as _Submitted;
 }
 
+/// @nodoc
 class _$_Submitted implements _Submitted {
   const _$_Submitted();
 
@@ -252,6 +263,7 @@ abstract class _Submitted implements SearchByNameFormEvent {
   const factory _Submitted() = _$_Submitted;
 }
 
+/// @nodoc
 class _$SearchByNameFormStateTearOff {
   const _$SearchByNameFormStateTearOff();
 
@@ -266,9 +278,11 @@ class _$SearchByNameFormStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $SearchByNameFormState = _$SearchByNameFormStateTearOff();
 
+/// @nodoc
 mixin _$SearchByNameFormState {
   SearchTerm get searchTerm;
   bool get showErrorMessages;
@@ -278,12 +292,14 @@ mixin _$SearchByNameFormState {
   $SearchByNameFormStateCopyWith<SearchByNameFormState> get copyWith;
 }
 
+/// @nodoc
 abstract class $SearchByNameFormStateCopyWith<$Res> {
   factory $SearchByNameFormStateCopyWith(SearchByNameFormState value, $Res Function(SearchByNameFormState) then) = _$SearchByNameFormStateCopyWithImpl<$Res>;
 
   $Res call({SearchTerm searchTerm, bool showErrorMessages, bool isSubmitting, Option<ValueFailure> failureOrSuccessOption});
 }
 
+/// @nodoc
 class _$SearchByNameFormStateCopyWithImpl<$Res> implements $SearchByNameFormStateCopyWith<$Res> {
   _$SearchByNameFormStateCopyWithImpl(this._value, this._then);
 
@@ -308,6 +324,7 @@ class _$SearchByNameFormStateCopyWithImpl<$Res> implements $SearchByNameFormStat
   }
 }
 
+/// @nodoc
 abstract class _$SearchByNameFormStateCopyWith<$Res> implements $SearchByNameFormStateCopyWith<$Res> {
   factory _$SearchByNameFormStateCopyWith(_SearchByNameFormState value, $Res Function(_SearchByNameFormState) then) = __$SearchByNameFormStateCopyWithImpl<$Res>;
 
@@ -315,6 +332,7 @@ abstract class _$SearchByNameFormStateCopyWith<$Res> implements $SearchByNameFor
   $Res call({SearchTerm searchTerm, bool showErrorMessages, bool isSubmitting, Option<ValueFailure> failureOrSuccessOption});
 }
 
+/// @nodoc
 class __$SearchByNameFormStateCopyWithImpl<$Res> extends _$SearchByNameFormStateCopyWithImpl<$Res> implements _$SearchByNameFormStateCopyWith<$Res> {
   __$SearchByNameFormStateCopyWithImpl(_SearchByNameFormState _value, $Res Function(_SearchByNameFormState) _then) : super(_value, (v) => _then(v as _SearchByNameFormState));
 
@@ -337,6 +355,7 @@ class __$SearchByNameFormStateCopyWithImpl<$Res> extends _$SearchByNameFormState
   }
 }
 
+/// @nodoc
 class _$_SearchByNameFormState implements _SearchByNameFormState {
   const _$_SearchByNameFormState({@required this.searchTerm, @required this.showErrorMessages, @required this.isSubmitting, @required this.failureOrSuccessOption})
       : assert(searchTerm != null),
@@ -361,11 +380,11 @@ class _$_SearchByNameFormState implements _SearchByNameFormState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _SearchByNameFormState &&
-        (identical(other.searchTerm, searchTerm) || const DeepCollectionEquality().equals(other.searchTerm, searchTerm)) &&
-        (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
-        (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
-        (identical(other.failureOrSuccessOption, failureOrSuccessOption) || const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
+        (other is _SearchByNameFormState &&
+            (identical(other.searchTerm, searchTerm) || const DeepCollectionEquality().equals(other.searchTerm, searchTerm)) &&
+            (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
+            (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
+            (identical(other.failureOrSuccessOption, failureOrSuccessOption) || const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -382,20 +401,20 @@ class _$_SearchByNameFormState implements _SearchByNameFormState {
 
 abstract class _SearchByNameFormState implements SearchByNameFormState {
   const factory _SearchByNameFormState({@required SearchTerm searchTerm, @required bool showErrorMessages, @required bool isSubmitting, @required Option<ValueFailure> failureOrSuccessOption}) =
-  _$_SearchByNameFormState;
-  
+      _$_SearchByNameFormState;
+
   @override
   SearchTerm get searchTerm;
-  
+
   @override
   bool get showErrorMessages;
-  
+
   @override
   bool get isSubmitting;
 
   @override
   Option<ValueFailure> get failureOrSuccessOption;
-  
+
   @override
   _$SearchByNameFormStateCopyWith<_SearchByNameFormState> get copyWith;
 }

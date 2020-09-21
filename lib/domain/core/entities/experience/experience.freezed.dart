@@ -9,6 +9,7 @@ part of 'experience.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$ExperienceTearOff {
   const _$ExperienceTearOff();
 
@@ -53,10 +54,13 @@ class _$ExperienceTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Experience = _$ExperienceTearOff();
 
+/// @nodoc
 mixin _$Experience {
+// TODO: Add like and dislike counters
   int get id;
   Name get title;
   EntityDescription get description;
@@ -78,6 +82,7 @@ mixin _$Experience {
   $ExperienceCopyWith<Experience> get copyWith;
 }
 
+/// @nodoc
 abstract class $ExperienceCopyWith<$Res> {
   factory $ExperienceCopyWith(Experience value, $Res Function(Experience) then) = _$ExperienceCopyWithImpl<$Res>;
 
@@ -105,6 +110,7 @@ abstract class $ExperienceCopyWith<$Res> {
   $UserCopyWith<$Res> get creator;
 }
 
+/// @nodoc
 class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
   _$ExperienceCopyWithImpl(this._value, this._then);
 
@@ -184,6 +190,7 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
   factory _$ExperienceCopyWith(_Experience value, $Res Function(_Experience) then) = __$ExperienceCopyWithImpl<$Res>;
 
@@ -209,12 +216,15 @@ abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
 
   @override
   $CoordinatesCopyWith<$Res> get coordinates;
+
   @override
   $LocationCopyWith<$Res> get location;
+
   @override
   $UserCopyWith<$Res> get creator;
 }
 
+/// @nodoc
 class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res> implements _$ExperienceCopyWith<$Res> {
   __$ExperienceCopyWithImpl(_Experience _value, $Res Function(_Experience) _then) : super(_value, (v) => _then(v as _Experience));
 
@@ -263,6 +273,7 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res> imp
   }
 }
 
+/// @nodoc
 class _$_Experience extends _Experience {
   const _$_Experience(
       {this.id,
@@ -300,7 +311,7 @@ class _$_Experience extends _Experience {
         assert(doneBy != null),
         super._();
 
-  @override
+  @override // TODO: Add like and dislike counters
   final int id;
   @override
   final Name title;
@@ -409,8 +420,9 @@ abstract class _Experience extends Experience {
       @required Set<User> likedBy,
       @required Set<User> doneBy}) = _$_Experience;
 
-  @override
+  @override // TODO: Add like and dislike counters
   int get id;
+
   @override
   Name get title;
   @override

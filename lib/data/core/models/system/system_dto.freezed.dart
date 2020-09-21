@@ -12,11 +12,15 @@ SystemDto _$SystemDtoFromJson(Map<String, dynamic> json) {
   return _SystemDto.fromJson(json);
 }
 
+/// @nodoc
 class _$SystemDtoTearOff {
   const _$SystemDtoTearOff();
 
 // ignore: unused_element
-  _SystemDto call({@required int id, @required String name, @required String type, @required String company}) {
+  _SystemDto call({@required int id,
+    @required String name,
+    @required String type,
+    @required String company}) {
     return _SystemDto(
       id: id,
       name: name,
@@ -24,27 +28,40 @@ class _$SystemDtoTearOff {
       company: company,
     );
   }
+
+// ignore: unused_element
+  SystemDto fromJson(Map<String, Object> json) {
+    return SystemDto.fromJson(json);
+  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $SystemDto = _$SystemDtoTearOff();
 
+/// @nodoc
 mixin _$SystemDto {
   int get id;
+  
   String get name;
+  
   String get type;
+  
   String get company;
 
   Map<String, dynamic> toJson();
   $SystemDtoCopyWith<SystemDto> get copyWith;
 }
 
+/// @nodoc
 abstract class $SystemDtoCopyWith<$Res> {
-  factory $SystemDtoCopyWith(SystemDto value, $Res Function(SystemDto) then) = _$SystemDtoCopyWithImpl<$Res>;
-
+  factory $SystemDtoCopyWith(SystemDto value, $Res Function(SystemDto) then) =
+  _$SystemDtoCopyWithImpl<$Res>;
+  
   $Res call({int id, String name, String type, String company});
 }
 
+/// @nodoc
 class _$SystemDtoCopyWithImpl<$Res> implements $SystemDtoCopyWith<$Res> {
   _$SystemDtoCopyWithImpl(this._value, this._then);
 
@@ -68,19 +85,24 @@ class _$SystemDtoCopyWithImpl<$Res> implements $SystemDtoCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$SystemDtoCopyWith<$Res> implements $SystemDtoCopyWith<$Res> {
-  factory _$SystemDtoCopyWith(_SystemDto value, $Res Function(_SystemDto) then) = __$SystemDtoCopyWithImpl<$Res>;
-
+  factory _$SystemDtoCopyWith(_SystemDto value, $Res Function(_SystemDto) then) =
+  __$SystemDtoCopyWithImpl<$Res>;
+  
   @override
   $Res call({int id, String name, String type, String company});
 }
 
-class __$SystemDtoCopyWithImpl<$Res> extends _$SystemDtoCopyWithImpl<$Res> implements _$SystemDtoCopyWith<$Res> {
-  __$SystemDtoCopyWithImpl(_SystemDto _value, $Res Function(_SystemDto) _then) : super(_value, (v) => _then(v as _SystemDto));
-
+/// @nodoc
+class __$SystemDtoCopyWithImpl<$Res> extends _$SystemDtoCopyWithImpl<$Res>
+  implements _$SystemDtoCopyWith<$Res> {
+  __$SystemDtoCopyWithImpl(_SystemDto _value, $Res Function(_SystemDto) _then)
+    : super(_value, (v) => _then(v as _SystemDto));
+  
   @override
   _SystemDto get _value => super._value as _SystemDto;
-
+  
   @override
   $Res call({
     Object id = freezed,
@@ -98,16 +120,21 @@ class __$SystemDtoCopyWithImpl<$Res> extends _$SystemDtoCopyWithImpl<$Res> imple
 }
 
 @JsonSerializable()
-class _$_SystemDto extends _SystemDto {
-  const _$_SystemDto({@required this.id, @required this.name, @required this.type, @required this.company})
-      : assert(id != null),
-        assert(name != null),
-        assert(type != null),
-        assert(company != null),
-        super._();
 
-  factory _$_SystemDto.fromJson(Map<String, dynamic> json) => _$_$_SystemDtoFromJson(json);
-
+/// @nodoc class _$_SystemDto extends _SystemDto {
+  const _$_SystemDto({@required this.id,
+    @required this.name,
+    @required this.type,
+    @required this.company})
+    : assert(id != null),
+      assert(name != null),
+      assert(type != null),
+      assert(company != null),
+      super._();
+  
+  factory _$_SystemDto.fromJson(Map<String, dynamic> json) =>
+    _$_$_SystemDtoFromJson(json);
+  
   @override
   final int id;
   @override
@@ -125,11 +152,15 @@ class _$_SystemDto extends _SystemDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SystemDto &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.company, company) || const DeepCollectionEquality().equals(other.company, company)));
+      (other is _SystemDto &&
+        (identical(other.id, id) ||
+          const DeepCollectionEquality().equals(other.id, id)) &&
+        (identical(other.name, name) ||
+          const DeepCollectionEquality().equals(other.name, name)) &&
+        (identical(other.type, type) ||
+          const DeepCollectionEquality().equals(other.type, type)) &&
+        (identical(other.company, company) ||
+          const DeepCollectionEquality().equals(other.company, company)));
   }
 
   @override
@@ -139,9 +170,10 @@ class _$_SystemDto extends _SystemDto {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(company);
-
+  
   @override
-  _$SystemDtoCopyWith<_SystemDto> get copyWith => __$SystemDtoCopyWithImpl<_SystemDto>(this, _$identity);
+  _$SystemDtoCopyWith<_SystemDto> get copyWith =>
+    __$SystemDtoCopyWithImpl<_SystemDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -151,23 +183,27 @@ class _$_SystemDto extends _SystemDto {
 
 abstract class _SystemDto extends SystemDto {
   const _SystemDto._() : super._();
-
-  const factory _SystemDto({@required int id, @required String name, @required String type, @required String company}) = _$_SystemDto;
-
-  factory _SystemDto.fromJson(Map<String, dynamic> json) = _$_SystemDto.fromJson;
-
+  
+  const factory _SystemDto({@required int id,
+    @required String name,
+    @required String type,
+    @required String company}) = _$_SystemDto;
+  
+  factory _SystemDto.fromJson(Map<String, dynamic> json) =
+  _$_SystemDto.fromJson;
+  
   @override
   int get id;
-
+  
   @override
   String get name;
-
+  
   @override
   String get type;
-
+  
   @override
   String get company;
-
+  
   @override
   _$SystemDtoCopyWith<_SystemDto> get copyWith;
 }

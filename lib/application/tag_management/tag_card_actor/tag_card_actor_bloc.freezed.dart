@@ -9,6 +9,7 @@ part of 'tag_card_actor_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$TagCardActorEventTearOff {
   const _$TagCardActorEventTearOff();
 
@@ -34,9 +35,11 @@ class _$TagCardActorEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $TagCardActorEvent = _$TagCardActorEventTearOff();
 
+/// @nodoc
 mixin _$TagCardActorEvent {
   Tag get tag;
 
@@ -70,6 +73,7 @@ mixin _$TagCardActorEvent {
   $TagCardActorEventCopyWith<TagCardActorEvent> get copyWith;
 }
 
+/// @nodoc
 abstract class $TagCardActorEventCopyWith<$Res> {
   factory $TagCardActorEventCopyWith(
           TagCardActorEvent value, $Res Function(TagCardActorEvent) then) =
@@ -79,6 +83,7 @@ abstract class $TagCardActorEventCopyWith<$Res> {
   $TagCopyWith<$Res> get tag;
 }
 
+/// @nodoc
 class _$TagCardActorEventCopyWithImpl<$Res>
     implements $TagCardActorEventCopyWith<$Res> {
   _$TagCardActorEventCopyWithImpl(this._value, this._then);
@@ -107,6 +112,7 @@ class _$TagCardActorEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$InitializedCopyWith<$Res>
     implements $TagCardActorEventCopyWith<$Res> {
   factory _$InitializedCopyWith(
@@ -119,6 +125,7 @@ abstract class _$InitializedCopyWith<$Res>
   $TagCopyWith<$Res> get tag;
 }
 
+/// @nodoc
 class __$InitializedCopyWithImpl<$Res>
     extends _$TagCardActorEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
@@ -139,6 +146,7 @@ class __$InitializedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.tag) : assert(tag != null);
 
@@ -232,6 +240,7 @@ abstract class _Initialized implements TagCardActorEvent {
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
+/// @nodoc
 abstract class _$DismissedFromInterestsCopyWith<$Res>
     implements $TagCardActorEventCopyWith<$Res> {
   factory _$DismissedFromInterestsCopyWith(_DismissedFromInterests value,
@@ -244,6 +253,7 @@ abstract class _$DismissedFromInterestsCopyWith<$Res>
   $TagCopyWith<$Res> get tag;
 }
 
+/// @nodoc
 class __$DismissedFromInterestsCopyWithImpl<$Res>
     extends _$TagCardActorEventCopyWithImpl<$Res>
     implements _$DismissedFromInterestsCopyWith<$Res> {
@@ -264,6 +274,7 @@ class __$DismissedFromInterestsCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_DismissedFromInterests implements _DismissedFromInterests {
   const _$_DismissedFromInterests(this.tag) : assert(tag != null);
 
@@ -358,6 +369,7 @@ abstract class _DismissedFromInterests implements TagCardActorEvent {
   _$DismissedFromInterestsCopyWith<_DismissedFromInterests> get copyWith;
 }
 
+/// @nodoc
 abstract class _$AddedToInterestsCopyWith<$Res>
     implements $TagCardActorEventCopyWith<$Res> {
   factory _$AddedToInterestsCopyWith(
@@ -370,6 +382,7 @@ abstract class _$AddedToInterestsCopyWith<$Res>
   $TagCopyWith<$Res> get tag;
 }
 
+/// @nodoc
 class __$AddedToInterestsCopyWithImpl<$Res>
     extends _$TagCardActorEventCopyWithImpl<$Res>
     implements _$AddedToInterestsCopyWith<$Res> {
@@ -390,6 +403,7 @@ class __$AddedToInterestsCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_AddedToInterests implements _AddedToInterests {
   const _$_AddedToInterests(this.tag) : assert(tag != null);
 
@@ -483,6 +497,7 @@ abstract class _AddedToInterests implements TagCardActorEvent {
   _$AddedToInterestsCopyWith<_AddedToInterests> get copyWith;
 }
 
+/// @nodoc
 class _$TagCardActorStateTearOff {
   const _$TagCardActorStateTearOff();
 
@@ -531,9 +546,11 @@ class _$TagCardActorStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $TagCardActorState = _$TagCardActorStateTearOff();
 
+/// @nodoc
 mixin _$TagCardActorState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -583,12 +600,14 @@ mixin _$TagCardActorState {
   });
 }
 
+/// @nodoc
 abstract class $TagCardActorStateCopyWith<$Res> {
   factory $TagCardActorStateCopyWith(
           TagCardActorState value, $Res Function(TagCardActorState) then) =
       _$TagCardActorStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$TagCardActorStateCopyWithImpl<$Res>
     implements $TagCardActorStateCopyWith<$Res> {
   _$TagCardActorStateCopyWithImpl(this._value, this._then);
@@ -598,11 +617,13 @@ class _$TagCardActorStateCopyWithImpl<$Res>
   final $Res Function(TagCardActorState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res> extends _$TagCardActorStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
@@ -612,6 +633,7 @@ class __$InitialCopyWithImpl<$Res> extends _$TagCardActorStateCopyWithImpl<$Res>
   _Initial get _value => super._value as _Initial;
 }
 
+/// @nodoc
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -719,12 +741,14 @@ abstract class _Initial implements TagCardActorState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$InInterestsCopyWith<$Res> {
   factory _$InInterestsCopyWith(
           _InInterests value, $Res Function(_InInterests) then) =
       __$InInterestsCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InInterestsCopyWithImpl<$Res>
     extends _$TagCardActorStateCopyWithImpl<$Res>
     implements _$InInterestsCopyWith<$Res> {
@@ -736,6 +760,7 @@ class __$InInterestsCopyWithImpl<$Res>
   _InInterests get _value => super._value as _InInterests;
 }
 
+/// @nodoc
 class _$_InInterests implements _InInterests {
   const _$_InInterests();
 
@@ -843,12 +868,14 @@ abstract class _InInterests implements TagCardActorState {
   const factory _InInterests() = _$_InInterests;
 }
 
+/// @nodoc
 abstract class _$NotInInterestsCopyWith<$Res> {
   factory _$NotInInterestsCopyWith(
           _NotInInterests value, $Res Function(_NotInInterests) then) =
       __$NotInInterestsCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$NotInInterestsCopyWithImpl<$Res>
     extends _$TagCardActorStateCopyWithImpl<$Res>
     implements _$NotInInterestsCopyWith<$Res> {
@@ -860,6 +887,7 @@ class __$NotInInterestsCopyWithImpl<$Res>
   _NotInInterests get _value => super._value as _NotInInterests;
 }
 
+/// @nodoc
 class _$_NotInInterests implements _NotInInterests {
   const _$_NotInInterests();
 
@@ -967,12 +995,14 @@ abstract class _NotInInterests implements TagCardActorState {
   const factory _NotInInterests() = _$_NotInInterests;
 }
 
+/// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
   factory _$ActionInProgressCopyWith(
           _ActionInProgress value, $Res Function(_ActionInProgress) then) =
       __$ActionInProgressCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$ActionInProgressCopyWithImpl<$Res>
     extends _$TagCardActorStateCopyWithImpl<$Res>
     implements _$ActionInProgressCopyWith<$Res> {
@@ -984,6 +1014,7 @@ class __$ActionInProgressCopyWithImpl<$Res>
   _ActionInProgress get _value => super._value as _ActionInProgress;
 }
 
+/// @nodoc
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -1091,12 +1122,14 @@ abstract class _ActionInProgress implements TagCardActorState {
   const factory _ActionInProgress() = _$_ActionInProgress;
 }
 
+/// @nodoc
 abstract class _$AdditionSuccessCopyWith<$Res> {
   factory _$AdditionSuccessCopyWith(
           _AdditionSuccess value, $Res Function(_AdditionSuccess) then) =
       __$AdditionSuccessCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$AdditionSuccessCopyWithImpl<$Res>
     extends _$TagCardActorStateCopyWithImpl<$Res>
     implements _$AdditionSuccessCopyWith<$Res> {
@@ -1108,6 +1141,7 @@ class __$AdditionSuccessCopyWithImpl<$Res>
   _AdditionSuccess get _value => super._value as _AdditionSuccess;
 }
 
+/// @nodoc
 class _$_AdditionSuccess implements _AdditionSuccess {
   const _$_AdditionSuccess();
 
@@ -1215,6 +1249,7 @@ abstract class _AdditionSuccess implements TagCardActorState {
   const factory _AdditionSuccess() = _$_AdditionSuccess;
 }
 
+/// @nodoc
 abstract class _$AdditionFailureCopyWith<$Res> {
   factory _$AdditionFailureCopyWith(
           _AdditionFailure value, $Res Function(_AdditionFailure) then) =
@@ -1224,6 +1259,7 @@ abstract class _$AdditionFailureCopyWith<$Res> {
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
+/// @nodoc
 class __$AdditionFailureCopyWithImpl<$Res>
     extends _$TagCardActorStateCopyWithImpl<$Res>
     implements _$AdditionFailureCopyWith<$Res> {
@@ -1254,6 +1290,7 @@ class __$AdditionFailureCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_AdditionFailure implements _AdditionFailure {
   const _$_AdditionFailure(this.failure) : assert(failure != null);
 
@@ -1375,12 +1412,14 @@ abstract class _AdditionFailure implements TagCardActorState {
   _$AdditionFailureCopyWith<_AdditionFailure> get copyWith;
 }
 
+/// @nodoc
 abstract class _$DismissalSuccessCopyWith<$Res> {
   factory _$DismissalSuccessCopyWith(
           _DismissalSuccess value, $Res Function(_DismissalSuccess) then) =
       __$DismissalSuccessCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$DismissalSuccessCopyWithImpl<$Res>
     extends _$TagCardActorStateCopyWithImpl<$Res>
     implements _$DismissalSuccessCopyWith<$Res> {
@@ -1392,6 +1431,7 @@ class __$DismissalSuccessCopyWithImpl<$Res>
   _DismissalSuccess get _value => super._value as _DismissalSuccess;
 }
 
+/// @nodoc
 class _$_DismissalSuccess implements _DismissalSuccess {
   const _$_DismissalSuccess();
 
@@ -1499,6 +1539,7 @@ abstract class _DismissalSuccess implements TagCardActorState {
   const factory _DismissalSuccess() = _$_DismissalSuccess;
 }
 
+/// @nodoc
 abstract class _$DismissalFailureCopyWith<$Res> {
   factory _$DismissalFailureCopyWith(
           _DismissalFailure value, $Res Function(_DismissalFailure) then) =
@@ -1508,6 +1549,7 @@ abstract class _$DismissalFailureCopyWith<$Res> {
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
+/// @nodoc
 class __$DismissalFailureCopyWithImpl<$Res>
     extends _$TagCardActorStateCopyWithImpl<$Res>
     implements _$DismissalFailureCopyWith<$Res> {
@@ -1538,6 +1580,7 @@ class __$DismissalFailureCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_DismissalFailure implements _DismissalFailure {
   const _$_DismissalFailure(this.failure) : assert(failure != null);
 

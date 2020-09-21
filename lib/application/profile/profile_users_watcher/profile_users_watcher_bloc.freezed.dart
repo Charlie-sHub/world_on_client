@@ -9,6 +9,7 @@ part of 'profile_users_watcher_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$ProfileUsersWatcherEventTearOff {
   const _$ProfileUsersWatcherEventTearOff();
 
@@ -34,9 +35,11 @@ class _$ProfileUsersWatcherEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ProfileUsersWatcherEvent = _$ProfileUsersWatcherEventTearOff();
 
+/// @nodoc
 mixin _$ProfileUsersWatcherEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -69,12 +72,14 @@ mixin _$ProfileUsersWatcherEvent {
   });
 }
 
+/// @nodoc
 abstract class $ProfileUsersWatcherEventCopyWith<$Res> {
   factory $ProfileUsersWatcherEventCopyWith(ProfileUsersWatcherEvent value,
           $Res Function(ProfileUsersWatcherEvent) then) =
       _$ProfileUsersWatcherEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ProfileUsersWatcherEventCopyWithImpl<$Res>
     implements $ProfileUsersWatcherEventCopyWith<$Res> {
   _$ProfileUsersWatcherEventCopyWithImpl(this._value, this._then);
@@ -84,6 +89,7 @@ class _$ProfileUsersWatcherEventCopyWithImpl<$Res>
   final $Res Function(ProfileUsersWatcherEvent) _then;
 }
 
+/// @nodoc
 abstract class _$WatchFollowedUsersStartedCopyWith<$Res> {
   factory _$WatchFollowedUsersStartedCopyWith(_WatchFollowedUsersStarted value,
           $Res Function(_WatchFollowedUsersStarted) then) =
@@ -93,6 +99,7 @@ abstract class _$WatchFollowedUsersStartedCopyWith<$Res> {
   $UserCopyWith<$Res> get user;
 }
 
+/// @nodoc
 class __$WatchFollowedUsersStartedCopyWithImpl<$Res>
     extends _$ProfileUsersWatcherEventCopyWithImpl<$Res>
     implements _$WatchFollowedUsersStartedCopyWith<$Res> {
@@ -124,6 +131,7 @@ class __$WatchFollowedUsersStartedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_WatchFollowedUsersStarted implements _WatchFollowedUsersStarted {
   const _$_WatchFollowedUsersStarted(this.user) : assert(user != null);
 
@@ -221,6 +229,7 @@ abstract class _WatchFollowedUsersStarted implements ProfileUsersWatcherEvent {
   _$WatchFollowedUsersStartedCopyWith<_WatchFollowedUsersStarted> get copyWith;
 }
 
+/// @nodoc
 abstract class _$WatchFollowingUsersStartedCopyWith<$Res> {
   factory _$WatchFollowingUsersStartedCopyWith(
           _WatchFollowingUsersStarted value,
@@ -231,6 +240,7 @@ abstract class _$WatchFollowingUsersStartedCopyWith<$Res> {
   $UserCopyWith<$Res> get user;
 }
 
+/// @nodoc
 class __$WatchFollowingUsersStartedCopyWithImpl<$Res>
     extends _$ProfileUsersWatcherEventCopyWithImpl<$Res>
     implements _$WatchFollowingUsersStartedCopyWith<$Res> {
@@ -262,6 +272,7 @@ class __$WatchFollowingUsersStartedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_WatchFollowingUsersStarted implements _WatchFollowingUsersStarted {
   const _$_WatchFollowingUsersStarted(this.user) : assert(user != null);
 
@@ -359,6 +370,7 @@ abstract class _WatchFollowingUsersStarted implements ProfileUsersWatcherEvent {
       get copyWith;
 }
 
+/// @nodoc
 abstract class _$UsersReceivedCopyWith<$Res> {
   factory _$UsersReceivedCopyWith(
           _UsersReceived value, $Res Function(_UsersReceived) then) =
@@ -366,6 +378,7 @@ abstract class _$UsersReceivedCopyWith<$Res> {
   $Res call({Either<Failure, KtList<User>> failureOrUsers});
 }
 
+/// @nodoc
 class __$UsersReceivedCopyWithImpl<$Res>
     extends _$ProfileUsersWatcherEventCopyWithImpl<$Res>
     implements _$UsersReceivedCopyWith<$Res> {
@@ -388,6 +401,7 @@ class __$UsersReceivedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_UsersReceived implements _UsersReceived {
   const _$_UsersReceived(this.failureOrUsers) : assert(failureOrUsers != null);
 
@@ -485,6 +499,7 @@ abstract class _UsersReceived implements ProfileUsersWatcherEvent {
   _$UsersReceivedCopyWith<_UsersReceived> get copyWith;
 }
 
+/// @nodoc
 class _$ProfileUsersWatcherStateTearOff {
   const _$ProfileUsersWatcherStateTearOff();
 
@@ -513,9 +528,11 @@ class _$ProfileUsersWatcherStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ProfileUsersWatcherState = _$ProfileUsersWatcherStateTearOff();
 
+/// @nodoc
 mixin _$ProfileUsersWatcherState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -549,12 +566,14 @@ mixin _$ProfileUsersWatcherState {
   });
 }
 
+/// @nodoc
 abstract class $ProfileUsersWatcherStateCopyWith<$Res> {
   factory $ProfileUsersWatcherStateCopyWith(ProfileUsersWatcherState value,
           $Res Function(ProfileUsersWatcherState) then) =
       _$ProfileUsersWatcherStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ProfileUsersWatcherStateCopyWithImpl<$Res>
     implements $ProfileUsersWatcherStateCopyWith<$Res> {
   _$ProfileUsersWatcherStateCopyWithImpl(this._value, this._then);
@@ -564,11 +583,13 @@ class _$ProfileUsersWatcherStateCopyWithImpl<$Res>
   final $Res Function(ProfileUsersWatcherState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res>
     extends _$ProfileUsersWatcherStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
@@ -579,6 +600,7 @@ class __$InitialCopyWithImpl<$Res>
   _Initial get _value => super._value as _Initial;
 }
 
+/// @nodoc
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -662,12 +684,14 @@ abstract class _Initial implements ProfileUsersWatcherState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$LoadInProgressCopyWith<$Res> {
   factory _$LoadInProgressCopyWith(
           _LoadInProgress value, $Res Function(_LoadInProgress) then) =
       __$LoadInProgressCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$LoadInProgressCopyWithImpl<$Res>
     extends _$ProfileUsersWatcherStateCopyWithImpl<$Res>
     implements _$LoadInProgressCopyWith<$Res> {
@@ -679,6 +703,7 @@ class __$LoadInProgressCopyWithImpl<$Res>
   _LoadInProgress get _value => super._value as _LoadInProgress;
 }
 
+/// @nodoc
 class _$_LoadInProgress implements _LoadInProgress {
   const _$_LoadInProgress();
 
@@ -762,6 +787,7 @@ abstract class _LoadInProgress implements ProfileUsersWatcherState {
   const factory _LoadInProgress() = _$_LoadInProgress;
 }
 
+/// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(
           _LoadSuccess value, $Res Function(_LoadSuccess) then) =
@@ -769,6 +795,7 @@ abstract class _$LoadSuccessCopyWith<$Res> {
   $Res call({KtList<User> users});
 }
 
+/// @nodoc
 class __$LoadSuccessCopyWithImpl<$Res>
     extends _$ProfileUsersWatcherStateCopyWithImpl<$Res>
     implements _$LoadSuccessCopyWith<$Res> {
@@ -789,6 +816,7 @@ class __$LoadSuccessCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(this.users) : assert(users != null);
 
@@ -886,6 +914,7 @@ abstract class _LoadSuccess implements ProfileUsersWatcherState {
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
+/// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(
           _LoadFailure value, $Res Function(_LoadFailure) then) =
@@ -895,6 +924,7 @@ abstract class _$LoadFailureCopyWith<$Res> {
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
+/// @nodoc
 class __$LoadFailureCopyWithImpl<$Res>
     extends _$ProfileUsersWatcherStateCopyWithImpl<$Res>
     implements _$LoadFailureCopyWith<$Res> {
@@ -925,6 +955,7 @@ class __$LoadFailureCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_LoadFailure implements _LoadFailure {
   const _$_LoadFailure(this.failure) : assert(failure != null);
 

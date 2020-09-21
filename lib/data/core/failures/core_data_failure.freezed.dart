@@ -9,6 +9,7 @@ part of 'core_data_failure.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$CoreDataFailureTearOff {
   const _$CoreDataFailureTearOff();
 
@@ -60,9 +61,11 @@ class _$CoreDataFailureTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $CoreDataFailure = _$CoreDataFailureTearOff();
 
+/// @nodoc
 mixin _$CoreDataFailure<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -108,10 +111,12 @@ mixin _$CoreDataFailure<T> {
   });
 }
 
+/// @nodoc
 abstract class $CoreDataFailureCopyWith<T, $Res> {
   factory $CoreDataFailureCopyWith(CoreDataFailure<T> value, $Res Function(CoreDataFailure<T>) then) = _$CoreDataFailureCopyWithImpl<T, $Res>;
 }
 
+/// @nodoc
 class _$CoreDataFailureCopyWithImpl<T, $Res> implements $CoreDataFailureCopyWith<T, $Res> {
   _$CoreDataFailureCopyWithImpl(this._value, this._then);
 
@@ -121,12 +126,14 @@ class _$CoreDataFailureCopyWithImpl<T, $Res> implements $CoreDataFailureCopyWith
   final $Res Function(CoreDataFailure<T>) _then;
 }
 
+/// @nodoc
 abstract class $ServerErrorCopyWith<T, $Res> {
   factory $ServerErrorCopyWith(ServerError<T> value, $Res Function(ServerError<T>) then) = _$ServerErrorCopyWithImpl<T, $Res>;
 
   $Res call({String errorString});
 }
 
+/// @nodoc
 class _$ServerErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res> implements $ServerErrorCopyWith<T, $Res> {
   _$ServerErrorCopyWithImpl(ServerError<T> _value, $Res Function(ServerError<T>) _then) : super(_value, (v) => _then(v as ServerError<T>));
 
@@ -143,6 +150,7 @@ class _$ServerErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T
   }
 }
 
+/// @nodoc
 class _$ServerError<T> implements ServerError<T> {
   const _$ServerError({@required this.errorString}) : assert(errorString != null);
 
@@ -250,13 +258,16 @@ abstract class ServerError<T> implements CoreDataFailure<T> {
   const factory ServerError({@required String errorString}) = _$ServerError<T>;
 
   String get errorString;
+
   $ServerErrorCopyWith<T, ServerError<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $NotFoundErrorCopyWith<T, $Res> {
   factory $NotFoundErrorCopyWith(NotFoundError<T> value, $Res Function(NotFoundError<T>) then) = _$NotFoundErrorCopyWithImpl<T, $Res>;
 }
 
+/// @nodoc
 class _$NotFoundErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res> implements $NotFoundErrorCopyWith<T, $Res> {
   _$NotFoundErrorCopyWithImpl(NotFoundError<T> _value, $Res Function(NotFoundError<T>) _then) : super(_value, (v) => _then(v as NotFoundError<T>));
 
@@ -264,6 +275,7 @@ class _$NotFoundErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl
   NotFoundError<T> get _value => super._value as NotFoundError<T>;
 }
 
+/// @nodoc
 class _$NotFoundError<T> implements NotFoundError<T> {
   const _$NotFoundError();
 
@@ -365,12 +377,14 @@ abstract class NotFoundError<T> implements CoreDataFailure<T> {
   const factory NotFoundError() = _$NotFoundError<T>;
 }
 
+/// @nodoc
 abstract class $CacheErrorCopyWith<T, $Res> {
   factory $CacheErrorCopyWith(CacheError<T> value, $Res Function(CacheError<T>) then) = _$CacheErrorCopyWithImpl<T, $Res>;
 
   $Res call({String errorString});
 }
 
+/// @nodoc
 class _$CacheErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res> implements $CacheErrorCopyWith<T, $Res> {
   _$CacheErrorCopyWithImpl(CacheError<T> _value, $Res Function(CacheError<T>) _then) : super(_value, (v) => _then(v as CacheError<T>));
 
@@ -387,6 +401,7 @@ class _$CacheErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T,
   }
 }
 
+/// @nodoc
 class _$CacheError<T> implements CacheError<T> {
   const _$CacheError({@required this.errorString}) : assert(errorString != null);
 
@@ -497,12 +512,14 @@ abstract class CacheError<T> implements CoreDataFailure<T> {
   $CacheErrorCopyWith<T, CacheError<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $GeoLocationErrorCopyWith<T, $Res> {
   factory $GeoLocationErrorCopyWith(GeoLocationError<T> value, $Res Function(GeoLocationError<T>) then) = _$GeoLocationErrorCopyWithImpl<T, $Res>;
 
   $Res call({String errorString});
 }
 
+/// @nodoc
 class _$GeoLocationErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res> implements $GeoLocationErrorCopyWith<T, $Res> {
   _$GeoLocationErrorCopyWithImpl(GeoLocationError<T> _value, $Res Function(GeoLocationError<T>) _then) : super(_value, (v) => _then(v as GeoLocationError<T>));
 
@@ -519,6 +536,7 @@ class _$GeoLocationErrorCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithI
   }
 }
 
+/// @nodoc
 class _$GeoLocationError<T> implements GeoLocationError<T> {
   const _$GeoLocationError({@required this.errorString}) : assert(errorString != null);
 
@@ -630,12 +648,14 @@ abstract class GeoLocationError<T> implements CoreDataFailure<T> {
   $GeoLocationErrorCopyWith<T, GeoLocationError<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $UsernameAlreadyInUseCopyWith<T, $Res> {
   factory $UsernameAlreadyInUseCopyWith(UsernameAlreadyInUse<T> value, $Res Function(UsernameAlreadyInUse<T>) then) = _$UsernameAlreadyInUseCopyWithImpl<T, $Res>;
 
   $Res call({Name username});
 }
 
+/// @nodoc
 class _$UsernameAlreadyInUseCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res> implements $UsernameAlreadyInUseCopyWith<T, $Res> {
   _$UsernameAlreadyInUseCopyWithImpl(UsernameAlreadyInUse<T> _value, $Res Function(UsernameAlreadyInUse<T>) _then) : super(_value, (v) => _then(v as UsernameAlreadyInUse<T>));
 
@@ -652,6 +672,7 @@ class _$UsernameAlreadyInUseCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyW
   }
 }
 
+/// @nodoc
 class _$UsernameAlreadyInUse<T> implements UsernameAlreadyInUse<T> {
   const _$UsernameAlreadyInUse({@required this.username}) : assert(username != null);
 
@@ -763,12 +784,14 @@ abstract class UsernameAlreadyInUse<T> implements CoreDataFailure<T> {
   $UsernameAlreadyInUseCopyWith<T, UsernameAlreadyInUse<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $EmailAlreadyInUseCopyWith<T, $Res> {
   factory $EmailAlreadyInUseCopyWith(EmailAlreadyInUse<T> value, $Res Function(EmailAlreadyInUse<T>) then) = _$EmailAlreadyInUseCopyWithImpl<T, $Res>;
 
   $Res call({EmailAddress email});
 }
 
+/// @nodoc
 class _$EmailAlreadyInUseCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res> implements $EmailAlreadyInUseCopyWith<T, $Res> {
   _$EmailAlreadyInUseCopyWithImpl(EmailAlreadyInUse<T> _value, $Res Function(EmailAlreadyInUse<T>) _then) : super(_value, (v) => _then(v as EmailAlreadyInUse<T>));
 
@@ -785,6 +808,7 @@ class _$EmailAlreadyInUseCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWith
   }
 }
 
+/// @nodoc
 class _$EmailAlreadyInUse<T> implements EmailAlreadyInUse<T> {
   const _$EmailAlreadyInUse({@required this.email}) : assert(email != null);
 
@@ -896,12 +920,14 @@ abstract class EmailAlreadyInUse<T> implements CoreDataFailure<T> {
   $EmailAlreadyInUseCopyWith<T, EmailAlreadyInUse<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $NameAlreadyInUseCopyWith<T, $Res> {
   factory $NameAlreadyInUseCopyWith(NameAlreadyInUse<T> value, $Res Function(NameAlreadyInUse<T>) then) = _$NameAlreadyInUseCopyWithImpl<T, $Res>;
 
   $Res call({Name name});
 }
 
+/// @nodoc
 class _$NameAlreadyInUseCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithImpl<T, $Res> implements $NameAlreadyInUseCopyWith<T, $Res> {
   _$NameAlreadyInUseCopyWithImpl(NameAlreadyInUse<T> _value, $Res Function(NameAlreadyInUse<T>) _then) : super(_value, (v) => _then(v as NameAlreadyInUse<T>));
 
@@ -918,6 +944,7 @@ class _$NameAlreadyInUseCopyWithImpl<T, $Res> extends _$CoreDataFailureCopyWithI
   }
 }
 
+/// @nodoc
 class _$NameAlreadyInUse<T> implements NameAlreadyInUse<T> {
   const _$NameAlreadyInUse({@required this.name}) : assert(name != null);
 

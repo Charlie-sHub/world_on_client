@@ -14,7 +14,9 @@ Stream<Either<Failure, KtList<Experience>>> createExperienceListStream(Stream<Li
           return right<Failure, KtList<Experience>>(
             _moorExperienceList
                 .map(
-                  (_moorExperienceWithRelations) => moorExperienceToDomainExperience(_moorExperienceWithRelations),
+                  (_moorExperienceWithRelations) {
+                    return moorExperienceToDomainExperience(_moorExperienceWithRelations);
+                  },
                 )
                 .toImmutableList()
                 .sortedBy(

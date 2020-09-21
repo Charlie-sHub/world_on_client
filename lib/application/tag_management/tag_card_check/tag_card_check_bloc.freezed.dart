@@ -9,6 +9,7 @@ part of 'tag_card_check_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$TagCardCheckEventTearOff {
   const _$TagCardCheckEventTearOff();
 
@@ -20,9 +21,11 @@ class _$TagCardCheckEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $TagCardCheckEvent = _$TagCardCheckEventTearOff();
 
+/// @nodoc
 mixin _$TagCardCheckEvent {
   Tag get tag;
 
@@ -48,6 +51,7 @@ mixin _$TagCardCheckEvent {
   $TagCardCheckEventCopyWith<TagCardCheckEvent> get copyWith;
 }
 
+/// @nodoc
 abstract class $TagCardCheckEventCopyWith<$Res> {
   factory $TagCardCheckEventCopyWith(
           TagCardCheckEvent value, $Res Function(TagCardCheckEvent) then) =
@@ -57,6 +61,7 @@ abstract class $TagCardCheckEventCopyWith<$Res> {
   $TagCopyWith<$Res> get tag;
 }
 
+/// @nodoc
 class _$TagCardCheckEventCopyWithImpl<$Res>
     implements $TagCardCheckEventCopyWith<$Res> {
   _$TagCardCheckEventCopyWithImpl(this._value, this._then);
@@ -85,6 +90,7 @@ class _$TagCardCheckEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$InitializedCopyWith<$Res>
     implements $TagCardCheckEventCopyWith<$Res> {
   factory _$InitializedCopyWith(
@@ -97,6 +103,7 @@ abstract class _$InitializedCopyWith<$Res>
   $TagCopyWith<$Res> get tag;
 }
 
+/// @nodoc
 class __$InitializedCopyWithImpl<$Res>
     extends _$TagCardCheckEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
@@ -117,6 +124,7 @@ class __$InitializedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.tag) : assert(tag != null);
 
@@ -198,6 +206,7 @@ abstract class _Initialized implements TagCardCheckEvent {
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
+/// @nodoc
 class _$TagCardCheckStateTearOff {
   const _$TagCardCheckStateTearOff();
 
@@ -217,9 +226,11 @@ class _$TagCardCheckStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $TagCardCheckState = _$TagCardCheckStateTearOff();
 
+/// @nodoc
 mixin _$TagCardCheckState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -249,12 +260,14 @@ mixin _$TagCardCheckState {
   });
 }
 
+/// @nodoc
 abstract class $TagCardCheckStateCopyWith<$Res> {
   factory $TagCardCheckStateCopyWith(
           TagCardCheckState value, $Res Function(TagCardCheckState) then) =
       _$TagCardCheckStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$TagCardCheckStateCopyWithImpl<$Res>
     implements $TagCardCheckStateCopyWith<$Res> {
   _$TagCardCheckStateCopyWithImpl(this._value, this._then);
@@ -264,11 +277,13 @@ class _$TagCardCheckStateCopyWithImpl<$Res>
   final $Res Function(TagCardCheckState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res> extends _$TagCardCheckStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
@@ -278,6 +293,7 @@ class __$InitialCopyWithImpl<$Res> extends _$TagCardCheckStateCopyWithImpl<$Res>
   _Initial get _value => super._value as _Initial;
 }
 
+/// @nodoc
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -355,12 +371,14 @@ abstract class _Initial implements TagCardCheckState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$InInterestsCopyWith<$Res> {
   factory _$InInterestsCopyWith(
           _InInterests value, $Res Function(_InInterests) then) =
       __$InInterestsCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InInterestsCopyWithImpl<$Res>
     extends _$TagCardCheckStateCopyWithImpl<$Res>
     implements _$InInterestsCopyWith<$Res> {
@@ -372,6 +390,7 @@ class __$InInterestsCopyWithImpl<$Res>
   _InInterests get _value => super._value as _InInterests;
 }
 
+/// @nodoc
 class _$_InInterests implements _InInterests {
   const _$_InInterests();
 
@@ -449,12 +468,14 @@ abstract class _InInterests implements TagCardCheckState {
   const factory _InInterests() = _$_InInterests;
 }
 
+/// @nodoc
 abstract class _$NotInInterestsCopyWith<$Res> {
   factory _$NotInInterestsCopyWith(
           _NotInInterests value, $Res Function(_NotInInterests) then) =
       __$NotInInterestsCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$NotInInterestsCopyWithImpl<$Res>
     extends _$TagCardCheckStateCopyWithImpl<$Res>
     implements _$NotInInterestsCopyWith<$Res> {
@@ -466,6 +487,7 @@ class __$NotInInterestsCopyWithImpl<$Res>
   _NotInInterests get _value => super._value as _NotInInterests;
 }
 
+/// @nodoc
 class _$_NotInInterests implements _NotInInterests {
   const _$_NotInInterests();
 

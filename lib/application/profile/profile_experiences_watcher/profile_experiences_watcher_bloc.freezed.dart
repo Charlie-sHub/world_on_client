@@ -9,6 +9,7 @@ part of 'profile_experiences_watcher_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$ProfileExperiencesWatcherEventTearOff {
   const _$ProfileExperiencesWatcherEventTearOff();
 
@@ -42,10 +43,12 @@ class _$ProfileExperiencesWatcherEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ProfileExperiencesWatcherEvent =
     _$ProfileExperiencesWatcherEventTearOff();
 
+/// @nodoc
 mixin _$ProfileExperiencesWatcherEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -88,6 +91,7 @@ mixin _$ProfileExperiencesWatcherEvent {
   });
 }
 
+/// @nodoc
 abstract class $ProfileExperiencesWatcherEventCopyWith<$Res> {
   factory $ProfileExperiencesWatcherEventCopyWith(
           ProfileExperiencesWatcherEvent value,
@@ -95,6 +99,7 @@ abstract class $ProfileExperiencesWatcherEventCopyWith<$Res> {
       _$ProfileExperiencesWatcherEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ProfileExperiencesWatcherEventCopyWithImpl<$Res>
     implements $ProfileExperiencesWatcherEventCopyWith<$Res> {
   _$ProfileExperiencesWatcherEventCopyWithImpl(this._value, this._then);
@@ -104,6 +109,7 @@ class _$ProfileExperiencesWatcherEventCopyWithImpl<$Res>
   final $Res Function(ProfileExperiencesWatcherEvent) _then;
 }
 
+/// @nodoc
 abstract class _$WatchExperiencesDoneStartedCopyWith<$Res> {
   factory _$WatchExperiencesDoneStartedCopyWith(
           _WatchExperiencesDoneStarted value,
@@ -114,6 +120,7 @@ abstract class _$WatchExperiencesDoneStartedCopyWith<$Res> {
   $UserCopyWith<$Res> get user;
 }
 
+/// @nodoc
 class __$WatchExperiencesDoneStartedCopyWithImpl<$Res>
     extends _$ProfileExperiencesWatcherEventCopyWithImpl<$Res>
     implements _$WatchExperiencesDoneStartedCopyWith<$Res> {
@@ -146,6 +153,7 @@ class __$WatchExperiencesDoneStartedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_WatchExperiencesDoneStarted implements _WatchExperiencesDoneStarted {
   const _$_WatchExperiencesDoneStarted(this.user) : assert(user != null);
 
@@ -256,6 +264,7 @@ abstract class _WatchExperiencesDoneStarted
       get copyWith;
 }
 
+/// @nodoc
 abstract class _$WatchExperiencesLikedStartedCopyWith<$Res> {
   factory _$WatchExperiencesLikedStartedCopyWith(
           _WatchExperiencesLikedStarted value,
@@ -266,6 +275,7 @@ abstract class _$WatchExperiencesLikedStartedCopyWith<$Res> {
   $UserCopyWith<$Res> get user;
 }
 
+/// @nodoc
 class __$WatchExperiencesLikedStartedCopyWithImpl<$Res>
     extends _$ProfileExperiencesWatcherEventCopyWithImpl<$Res>
     implements _$WatchExperiencesLikedStartedCopyWith<$Res> {
@@ -298,6 +308,7 @@ class __$WatchExperiencesLikedStartedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_WatchExperiencesLikedStarted implements _WatchExperiencesLikedStarted {
   const _$_WatchExperiencesLikedStarted(this.user) : assert(user != null);
 
@@ -408,6 +419,7 @@ abstract class _WatchExperiencesLikedStarted
       get copyWith;
 }
 
+/// @nodoc
 abstract class _$WatchExperiencesCreatedStartedCopyWith<$Res> {
   factory _$WatchExperiencesCreatedStartedCopyWith(
           _WatchExperiencesCreatedStarted value,
@@ -418,6 +430,7 @@ abstract class _$WatchExperiencesCreatedStartedCopyWith<$Res> {
   $UserCopyWith<$Res> get user;
 }
 
+/// @nodoc
 class __$WatchExperiencesCreatedStartedCopyWithImpl<$Res>
     extends _$ProfileExperiencesWatcherEventCopyWithImpl<$Res>
     implements _$WatchExperiencesCreatedStartedCopyWith<$Res> {
@@ -450,6 +463,7 @@ class __$WatchExperiencesCreatedStartedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_WatchExperiencesCreatedStarted
     implements _WatchExperiencesCreatedStarted {
   const _$_WatchExperiencesCreatedStarted(this.user) : assert(user != null);
@@ -561,6 +575,7 @@ abstract class _WatchExperiencesCreatedStarted
       get copyWith;
 }
 
+/// @nodoc
 abstract class _$ExperiencesReceivedCopyWith<$Res> {
   factory _$ExperiencesReceivedCopyWith(_ExperiencesReceived value,
           $Res Function(_ExperiencesReceived) then) =
@@ -568,6 +583,7 @@ abstract class _$ExperiencesReceivedCopyWith<$Res> {
   $Res call({Either<Failure, KtList<Experience>> failureOrExperiences});
 }
 
+/// @nodoc
 class __$ExperiencesReceivedCopyWithImpl<$Res>
     extends _$ProfileExperiencesWatcherEventCopyWithImpl<$Res>
     implements _$ExperiencesReceivedCopyWith<$Res> {
@@ -590,6 +606,7 @@ class __$ExperiencesReceivedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_ExperiencesReceived implements _ExperiencesReceived {
   const _$_ExperiencesReceived(this.failureOrExperiences)
       : assert(failureOrExperiences != null);
@@ -702,6 +719,7 @@ abstract class _ExperiencesReceived implements ProfileExperiencesWatcherEvent {
   _$ExperiencesReceivedCopyWith<_ExperiencesReceived> get copyWith;
 }
 
+/// @nodoc
 class _$ProfileExperiencesWatcherStateTearOff {
   const _$ProfileExperiencesWatcherStateTearOff();
 
@@ -730,10 +748,12 @@ class _$ProfileExperiencesWatcherStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ProfileExperiencesWatcherState =
     _$ProfileExperiencesWatcherStateTearOff();
 
+/// @nodoc
 mixin _$ProfileExperiencesWatcherState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -767,6 +787,7 @@ mixin _$ProfileExperiencesWatcherState {
   });
 }
 
+/// @nodoc
 abstract class $ProfileExperiencesWatcherStateCopyWith<$Res> {
   factory $ProfileExperiencesWatcherStateCopyWith(
           ProfileExperiencesWatcherState value,
@@ -774,6 +795,7 @@ abstract class $ProfileExperiencesWatcherStateCopyWith<$Res> {
       _$ProfileExperiencesWatcherStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ProfileExperiencesWatcherStateCopyWithImpl<$Res>
     implements $ProfileExperiencesWatcherStateCopyWith<$Res> {
   _$ProfileExperiencesWatcherStateCopyWithImpl(this._value, this._then);
@@ -783,11 +805,13 @@ class _$ProfileExperiencesWatcherStateCopyWithImpl<$Res>
   final $Res Function(ProfileExperiencesWatcherState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res>
     extends _$ProfileExperiencesWatcherStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
@@ -798,6 +822,7 @@ class __$InitialCopyWithImpl<$Res>
   _Initial get _value => super._value as _Initial;
 }
 
+/// @nodoc
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -881,12 +906,14 @@ abstract class _Initial implements ProfileExperiencesWatcherState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$LoadInProgressCopyWith<$Res> {
   factory _$LoadInProgressCopyWith(
           _LoadInProgress value, $Res Function(_LoadInProgress) then) =
       __$LoadInProgressCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$LoadInProgressCopyWithImpl<$Res>
     extends _$ProfileExperiencesWatcherStateCopyWithImpl<$Res>
     implements _$LoadInProgressCopyWith<$Res> {
@@ -898,6 +925,7 @@ class __$LoadInProgressCopyWithImpl<$Res>
   _LoadInProgress get _value => super._value as _LoadInProgress;
 }
 
+/// @nodoc
 class _$_LoadInProgress implements _LoadInProgress {
   const _$_LoadInProgress();
 
@@ -981,6 +1009,7 @@ abstract class _LoadInProgress implements ProfileExperiencesWatcherState {
   const factory _LoadInProgress() = _$_LoadInProgress;
 }
 
+/// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(
           _LoadSuccess value, $Res Function(_LoadSuccess) then) =
@@ -988,6 +1017,7 @@ abstract class _$LoadSuccessCopyWith<$Res> {
   $Res call({KtList<Experience> experiences});
 }
 
+/// @nodoc
 class __$LoadSuccessCopyWithImpl<$Res>
     extends _$ProfileExperiencesWatcherStateCopyWithImpl<$Res>
     implements _$LoadSuccessCopyWith<$Res> {
@@ -1010,6 +1040,7 @@ class __$LoadSuccessCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(this.experiences) : assert(experiences != null);
 
@@ -1108,6 +1139,7 @@ abstract class _LoadSuccess implements ProfileExperiencesWatcherState {
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
+/// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(
           _LoadFailure value, $Res Function(_LoadFailure) then) =
@@ -1117,6 +1149,7 @@ abstract class _$LoadFailureCopyWith<$Res> {
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
+/// @nodoc
 class __$LoadFailureCopyWithImpl<$Res>
     extends _$ProfileExperiencesWatcherStateCopyWithImpl<$Res>
     implements _$LoadFailureCopyWith<$Res> {
@@ -1147,6 +1180,7 @@ class __$LoadFailureCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_LoadFailure implements _LoadFailure {
   const _$_LoadFailure(this.failure) : assert(failure != null);
 

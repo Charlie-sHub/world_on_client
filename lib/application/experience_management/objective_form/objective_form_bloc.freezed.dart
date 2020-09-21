@@ -9,6 +9,7 @@ part of 'objective_form_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$ObjectiveFormEventTearOff {
   const _$ObjectiveFormEventTearOff();
 
@@ -40,9 +41,11 @@ class _$ObjectiveFormEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ObjectiveFormEvent = _$ObjectiveFormEventTearOff();
 
+/// @nodoc
 mixin _$ObjectiveFormEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -76,10 +79,12 @@ mixin _$ObjectiveFormEvent {
   });
 }
 
+/// @nodoc
 abstract class $ObjectiveFormEventCopyWith<$Res> {
   factory $ObjectiveFormEventCopyWith(ObjectiveFormEvent value, $Res Function(ObjectiveFormEvent) then) = _$ObjectiveFormEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ObjectiveFormEventCopyWithImpl<$Res> implements $ObjectiveFormEventCopyWith<$Res> {
   _$ObjectiveFormEventCopyWithImpl(this._value, this._then);
 
@@ -89,12 +94,14 @@ class _$ObjectiveFormEventCopyWithImpl<$Res> implements $ObjectiveFormEventCopyW
   final $Res Function(ObjectiveFormEvent) _then;
 }
 
+/// @nodoc
 abstract class _$DescriptionChangedCopyWith<$Res> {
   factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) = __$DescriptionChangedCopyWithImpl<$Res>;
 
   $Res call({String description});
 }
 
+/// @nodoc
 class __$DescriptionChangedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWithImpl<$Res> implements _$DescriptionChangedCopyWith<$Res> {
   __$DescriptionChangedCopyWithImpl(_DescriptionChanged _value, $Res Function(_DescriptionChanged) _then) : super(_value, (v) => _then(v as _DescriptionChanged));
 
@@ -111,6 +118,7 @@ class __$DescriptionChangedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWi
   }
 }
 
+/// @nodoc
 class _$_DescriptionChanged implements _DescriptionChanged {
   const _$_DescriptionChanged(this.description) : assert(description != null);
 
@@ -203,12 +211,14 @@ abstract class _DescriptionChanged implements ObjectiveFormEvent {
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith;
 }
 
+/// @nodoc
 abstract class _$CoordinatesChangedCopyWith<$Res> {
   factory _$CoordinatesChangedCopyWith(_CoordinatesChanged value, $Res Function(_CoordinatesChanged) then) = __$CoordinatesChangedCopyWithImpl<$Res>;
 
   $Res call({double latitude, double longitude});
 }
 
+/// @nodoc
 class __$CoordinatesChangedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWithImpl<$Res> implements _$CoordinatesChangedCopyWith<$Res> {
   __$CoordinatesChangedCopyWithImpl(_CoordinatesChanged _value, $Res Function(_CoordinatesChanged) _then) : super(_value, (v) => _then(v as _CoordinatesChanged));
 
@@ -227,6 +237,7 @@ class __$CoordinatesChangedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWi
   }
 }
 
+/// @nodoc
 class _$_CoordinatesChanged implements _CoordinatesChanged {
   const _$_CoordinatesChanged({@required this.latitude, @required this.longitude})
       : assert(latitude != null),
@@ -329,12 +340,14 @@ abstract class _CoordinatesChanged implements ObjectiveFormEvent {
   _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith;
 }
 
+/// @nodoc
 abstract class _$ImageChangedCopyWith<$Res> {
   factory _$ImageChangedCopyWith(_ImageChanged value, $Res Function(_ImageChanged) then) = __$ImageChangedCopyWithImpl<$Res>;
 
   $Res call({File imageFile});
 }
 
+/// @nodoc
 class __$ImageChangedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWithImpl<$Res> implements _$ImageChangedCopyWith<$Res> {
   __$ImageChangedCopyWithImpl(_ImageChanged _value, $Res Function(_ImageChanged) _then) : super(_value, (v) => _then(v as _ImageChanged));
 
@@ -351,6 +364,7 @@ class __$ImageChangedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWithImpl
   }
 }
 
+/// @nodoc
 class _$_ImageChanged implements _ImageChanged {
   const _$_ImageChanged(this.imageFile) : assert(imageFile != null);
 
@@ -440,13 +454,16 @@ abstract class _ImageChanged implements ObjectiveFormEvent {
   const factory _ImageChanged(File imageFile) = _$_ImageChanged;
 
   File get imageFile;
+
   _$ImageChangedCopyWith<_ImageChanged> get copyWith;
 }
 
+/// @nodoc
 abstract class _$SubmittedCopyWith<$Res> {
   factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) = __$SubmittedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$SubmittedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWithImpl<$Res> implements _$SubmittedCopyWith<$Res> {
   __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then) : super(_value, (v) => _then(v as _Submitted));
 
@@ -454,6 +471,7 @@ class __$SubmittedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWithImpl<$R
   _Submitted get _value => super._value as _Submitted;
 }
 
+/// @nodoc
 class _$_Submitted implements _Submitted {
   const _$_Submitted();
 
@@ -537,6 +555,7 @@ abstract class _Submitted implements ObjectiveFormEvent {
   const factory _Submitted() = _$_Submitted;
 }
 
+/// @nodoc
 class _$ObjectiveFormStateTearOff {
   const _$ObjectiveFormStateTearOff();
 
@@ -550,9 +569,11 @@ class _$ObjectiveFormStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ObjectiveFormState = _$ObjectiveFormStateTearOff();
 
+/// @nodoc
 mixin _$ObjectiveFormState {
   Objective get objective;
   bool get showErrorMessages;
@@ -561,6 +582,7 @@ mixin _$ObjectiveFormState {
   $ObjectiveFormStateCopyWith<ObjectiveFormState> get copyWith;
 }
 
+/// @nodoc
 abstract class $ObjectiveFormStateCopyWith<$Res> {
   factory $ObjectiveFormStateCopyWith(ObjectiveFormState value, $Res Function(ObjectiveFormState) then) = _$ObjectiveFormStateCopyWithImpl<$Res>;
 
@@ -569,6 +591,7 @@ abstract class $ObjectiveFormStateCopyWith<$Res> {
   $ObjectiveCopyWith<$Res> get objective;
 }
 
+/// @nodoc
 class _$ObjectiveFormStateCopyWithImpl<$Res> implements $ObjectiveFormStateCopyWith<$Res> {
   _$ObjectiveFormStateCopyWithImpl(this._value, this._then);
 
@@ -601,6 +624,7 @@ class _$ObjectiveFormStateCopyWithImpl<$Res> implements $ObjectiveFormStateCopyW
   }
 }
 
+/// @nodoc
 abstract class _$ObjectiveFormStateCopyWith<$Res> implements $ObjectiveFormStateCopyWith<$Res> {
   factory _$ObjectiveFormStateCopyWith(_ObjectiveFormState value, $Res Function(_ObjectiveFormState) then) = __$ObjectiveFormStateCopyWithImpl<$Res>;
 
@@ -611,6 +635,7 @@ abstract class _$ObjectiveFormStateCopyWith<$Res> implements $ObjectiveFormState
   $ObjectiveCopyWith<$Res> get objective;
 }
 
+/// @nodoc
 class __$ObjectiveFormStateCopyWithImpl<$Res> extends _$ObjectiveFormStateCopyWithImpl<$Res> implements _$ObjectiveFormStateCopyWith<$Res> {
   __$ObjectiveFormStateCopyWithImpl(_ObjectiveFormState _value, $Res Function(_ObjectiveFormState) _then) : super(_value, (v) => _then(v as _ObjectiveFormState));
 
@@ -631,19 +656,20 @@ class __$ObjectiveFormStateCopyWithImpl<$Res> extends _$ObjectiveFormStateCopyWi
   }
 }
 
+/// @nodoc
 class _$_ObjectiveFormState implements _ObjectiveFormState {
   const _$_ObjectiveFormState({@required this.objective, @required this.showErrorMessages, @required this.isSubmitting})
-    : assert(objective != null),
-      assert(showErrorMessages != null),
-      assert(isSubmitting != null);
-  
+      : assert(objective != null),
+        assert(showErrorMessages != null),
+        assert(isSubmitting != null);
+
   @override
   final Objective objective;
   @override
   final bool showErrorMessages;
   @override
   final bool isSubmitting;
-  
+
   @override
   String toString() {
     return 'ObjectiveFormState(objective: $objective, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting)';
@@ -652,16 +678,16 @@ class _$_ObjectiveFormState implements _ObjectiveFormState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _ObjectiveFormState &&
-        (identical(other.objective, objective) || const DeepCollectionEquality().equals(other.objective, objective)) &&
-        (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
-        (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)));
+        (other is _ObjectiveFormState &&
+            (identical(other.objective, objective) || const DeepCollectionEquality().equals(other.objective, objective)) &&
+            (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
+            (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)));
   }
-  
+
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective) ^ const DeepCollectionEquality().hash(showErrorMessages) ^ const DeepCollectionEquality().hash(isSubmitting);
-  
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective) ^ const DeepCollectionEquality().hash(showErrorMessages) ^ const DeepCollectionEquality().hash(isSubmitting);
+
   @override
   _$ObjectiveFormStateCopyWith<_ObjectiveFormState> get copyWith => __$ObjectiveFormStateCopyWithImpl<_ObjectiveFormState>(this, _$identity);
 }

@@ -9,18 +9,13 @@ part of 'notification.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$NotificationTearOff {
   const _$NotificationTearOff();
 
 // ignore: unused_element
   _Notification call(
-      {int id,
-      @required User sender,
-      @required User receiver,
-      @required EntityDescription description,
-      @required bool seen,
-      @required PastDate creationDate,
-      @required NotificationType type}) {
+      {int id, @required User sender, @required User receiver, @required EntityDescription description, @required bool seen, @required PastDate creationDate, @required NotificationType type}) {
     return _Notification(
       id: id,
       sender: sender,
@@ -33,38 +28,41 @@ class _$NotificationTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Notification = _$NotificationTearOff();
 
+/// @nodoc
 mixin _$Notification {
   int get id;
-  User get sender;
+
+  User get sender; // TODO: Is the receiver necessary for the domain entity?
+// The receiver will always be the logged in user
+// Relation is needed in the database of course, but not really beyond that
+// Could be left to just the id
   User get receiver;
+
   EntityDescription get description;
+
   bool get seen;
+
   PastDate get creationDate;
+
   NotificationType get type;
 
   $NotificationCopyWith<Notification> get copyWith;
 }
 
+/// @nodoc
 abstract class $NotificationCopyWith<$Res> {
-  factory $NotificationCopyWith(
-          Notification value, $Res Function(Notification) then) =
-      _$NotificationCopyWithImpl<$Res>;
-  $Res call(
-      {int id,
-      User sender,
-      User receiver,
-      EntityDescription description,
-      bool seen,
-      PastDate creationDate,
-      NotificationType type});
+  factory $NotificationCopyWith(Notification value, $Res Function(Notification) then) = _$NotificationCopyWithImpl<$Res>;
+  $Res call({int id, User sender, User receiver, EntityDescription description, bool seen, PastDate creationDate, NotificationType type});
 
   $UserCopyWith<$Res> get sender;
   $UserCopyWith<$Res> get receiver;
 }
 
+/// @nodoc
 class _$NotificationCopyWithImpl<$Res> implements $NotificationCopyWith<$Res> {
   _$NotificationCopyWithImpl(this._value, this._then);
 
@@ -86,13 +84,9 @@ class _$NotificationCopyWithImpl<$Res> implements $NotificationCopyWith<$Res> {
       id: id == freezed ? _value.id : id as int,
       sender: sender == freezed ? _value.sender : sender as User,
       receiver: receiver == freezed ? _value.receiver : receiver as User,
-      description: description == freezed
-          ? _value.description
-          : description as EntityDescription,
+      description: description == freezed ? _value.description : description as EntityDescription,
       seen: seen == freezed ? _value.seen : seen as bool,
-      creationDate: creationDate == freezed
-          ? _value.creationDate
-          : creationDate as PastDate,
+      creationDate: creationDate == freezed ? _value.creationDate : creationDate as PastDate,
       type: type == freezed ? _value.type : type as NotificationType,
     ));
   }
@@ -118,20 +112,11 @@ class _$NotificationCopyWithImpl<$Res> implements $NotificationCopyWith<$Res> {
   }
 }
 
-abstract class _$NotificationCopyWith<$Res>
-    implements $NotificationCopyWith<$Res> {
-  factory _$NotificationCopyWith(
-          _Notification value, $Res Function(_Notification) then) =
-      __$NotificationCopyWithImpl<$Res>;
+/// @nodoc
+abstract class _$NotificationCopyWith<$Res> implements $NotificationCopyWith<$Res> {
+  factory _$NotificationCopyWith(_Notification value, $Res Function(_Notification) then) = __$NotificationCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {int id,
-      User sender,
-      User receiver,
-      EntityDescription description,
-      bool seen,
-      PastDate creationDate,
-      NotificationType type});
+  $Res call({int id, User sender, User receiver, EntityDescription description, bool seen, PastDate creationDate, NotificationType type});
 
   @override
   $UserCopyWith<$Res> get sender;
@@ -139,11 +124,9 @@ abstract class _$NotificationCopyWith<$Res>
   $UserCopyWith<$Res> get receiver;
 }
 
-class __$NotificationCopyWithImpl<$Res> extends _$NotificationCopyWithImpl<$Res>
-    implements _$NotificationCopyWith<$Res> {
-  __$NotificationCopyWithImpl(
-      _Notification _value, $Res Function(_Notification) _then)
-      : super(_value, (v) => _then(v as _Notification));
+/// @nodoc
+class __$NotificationCopyWithImpl<$Res> extends _$NotificationCopyWithImpl<$Res> implements _$NotificationCopyWith<$Res> {
+  __$NotificationCopyWithImpl(_Notification _value, $Res Function(_Notification) _then) : super(_value, (v) => _then(v as _Notification));
 
   @override
   _Notification get _value => super._value as _Notification;
@@ -162,27 +145,17 @@ class __$NotificationCopyWithImpl<$Res> extends _$NotificationCopyWithImpl<$Res>
       id: id == freezed ? _value.id : id as int,
       sender: sender == freezed ? _value.sender : sender as User,
       receiver: receiver == freezed ? _value.receiver : receiver as User,
-      description: description == freezed
-          ? _value.description
-          : description as EntityDescription,
+      description: description == freezed ? _value.description : description as EntityDescription,
       seen: seen == freezed ? _value.seen : seen as bool,
-      creationDate: creationDate == freezed
-          ? _value.creationDate
-          : creationDate as PastDate,
+      creationDate: creationDate == freezed ? _value.creationDate : creationDate as PastDate,
       type: type == freezed ? _value.type : type as NotificationType,
     ));
   }
 }
 
+/// @nodoc
 class _$_Notification extends _Notification {
-  const _$_Notification(
-      {this.id,
-      @required this.sender,
-      @required this.receiver,
-      @required this.description,
-      @required this.seen,
-      @required this.creationDate,
-      @required this.type})
+  const _$_Notification({this.id, @required this.sender, @required this.receiver, @required this.description, @required this.seen, @required this.creationDate, @required this.type})
       : assert(sender != null),
         assert(receiver != null),
         assert(description != null),
@@ -195,7 +168,10 @@ class _$_Notification extends _Notification {
   final int id;
   @override
   final User sender;
-  @override
+  @override // TODO: Is the receiver necessary for the domain entity?
+// The receiver will always be the logged in user
+// Relation is needed in the database of course, but not really beyond that
+// Could be left to just the id
   final User receiver;
   @override
   final EntityDescription description;
@@ -215,23 +191,13 @@ class _$_Notification extends _Notification {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Notification &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.sender, sender) ||
-                const DeepCollectionEquality().equals(other.sender, sender)) &&
-            (identical(other.receiver, receiver) ||
-                const DeepCollectionEquality()
-                    .equals(other.receiver, receiver)) &&
-            (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.seen, seen) ||
-                const DeepCollectionEquality().equals(other.seen, seen)) &&
-            (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.creationDate, creationDate)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.sender, sender) || const DeepCollectionEquality().equals(other.sender, sender)) &&
+            (identical(other.receiver, receiver) || const DeepCollectionEquality().equals(other.receiver, receiver)) &&
+            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.seen, seen) || const DeepCollectionEquality().equals(other.seen, seen)) &&
+            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)));
   }
 
   @override
@@ -246,8 +212,7 @@ class _$_Notification extends _Notification {
       const DeepCollectionEquality().hash(type);
 
   @override
-  _$NotificationCopyWith<_Notification> get copyWith =>
-      __$NotificationCopyWithImpl<_Notification>(this, _$identity);
+  _$NotificationCopyWith<_Notification> get copyWith => __$NotificationCopyWithImpl<_Notification>(this, _$identity);
 }
 
 abstract class _Notification extends Notification {
@@ -263,18 +228,28 @@ abstract class _Notification extends Notification {
 
   @override
   int get id;
+
   @override
   User get sender;
-  @override
+
+  @override // TODO: Is the receiver necessary for the domain entity?
+// The receiver will always be the logged in user
+// Relation is needed in the database of course, but not really beyond that
+// Could be left to just the id
   User get receiver;
+
   @override
   EntityDescription get description;
+
   @override
   bool get seen;
+
   @override
   PastDate get creationDate;
+
   @override
   NotificationType get type;
+
   @override
   _$NotificationCopyWith<_Notification> get copyWith;
 }

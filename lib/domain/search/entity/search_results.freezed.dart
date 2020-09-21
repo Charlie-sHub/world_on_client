@@ -9,6 +9,7 @@ part of 'search_results.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$SearchResultsTearOff {
   const _$SearchResultsTearOff();
 
@@ -27,9 +28,11 @@ class _$SearchResultsTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $SearchResults = _$SearchResultsTearOff();
 
+/// @nodoc
 mixin _$SearchResults {
   Either<Failure, Set<Experience>> get experiencesFound;
   Either<Failure, Set<User>> get usersFoundByName;
@@ -39,6 +42,7 @@ mixin _$SearchResults {
   $SearchResultsCopyWith<SearchResults> get copyWith;
 }
 
+/// @nodoc
 abstract class $SearchResultsCopyWith<$Res> {
   factory $SearchResultsCopyWith(
           SearchResults value, $Res Function(SearchResults) then) =
@@ -50,6 +54,7 @@ abstract class $SearchResultsCopyWith<$Res> {
       Either<Failure, Set<Tag>> tagsFound});
 }
 
+/// @nodoc
 class _$SearchResultsCopyWithImpl<$Res>
     implements $SearchResultsCopyWith<$Res> {
   _$SearchResultsCopyWithImpl(this._value, this._then);
@@ -82,6 +87,7 @@ class _$SearchResultsCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$SearchResultsCopyWith<$Res>
     implements $SearchResultsCopyWith<$Res> {
   factory _$SearchResultsCopyWith(
@@ -95,6 +101,7 @@ abstract class _$SearchResultsCopyWith<$Res>
       Either<Failure, Set<Tag>> tagsFound});
 }
 
+/// @nodoc
 class __$SearchResultsCopyWithImpl<$Res>
     extends _$SearchResultsCopyWithImpl<$Res>
     implements _$SearchResultsCopyWith<$Res> {
@@ -129,6 +136,7 @@ class __$SearchResultsCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_SearchResults extends _SearchResults with DiagnosticableTreeMixin {
   const _$_SearchResults(
       {@required this.experiencesFound,

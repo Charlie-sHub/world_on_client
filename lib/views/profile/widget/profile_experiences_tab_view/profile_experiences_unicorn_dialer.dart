@@ -46,10 +46,9 @@ class ProfileExperiencesUnicornDialer extends StatelessWidget {
           currentButton: FloatingActionButton(
             heroTag: "liked",
             mini: true,
-            onPressed: () =>
-              context.bloc<ProfileExperiencesWatcherBloc>().add(
-                ProfileExperiencesWatcherEvent.watchExperiencesLikedStarted(user),
-              ),
+            onPressed: () => context.bloc<ProfileExperiencesWatcherBloc>().add(
+                  ProfileExperiencesWatcherEvent.watchExperiencesLikedStarted(user),
+                ),
             foregroundColor: Colors.red,
             child: const FaIcon(FontAwesomeIcons.solidHeart),
           ),

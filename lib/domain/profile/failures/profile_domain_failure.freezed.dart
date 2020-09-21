@@ -9,6 +9,7 @@ part of 'profile_domain_failure.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$ProfileDomainFailureTearOff {
   const _$ProfileDomainFailureTearOff();
 
@@ -23,9 +24,11 @@ class _$ProfileDomainFailureTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ProfileDomainFailure = _$ProfileDomainFailureTearOff();
 
+/// @nodoc
 mixin _$ProfileDomainFailure<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -51,10 +54,12 @@ mixin _$ProfileDomainFailure<T> {
   });
 }
 
+/// @nodoc
 abstract class $ProfileDomainFailureCopyWith<T, $Res> {
   factory $ProfileDomainFailureCopyWith(ProfileDomainFailure<T> value, $Res Function(ProfileDomainFailure<T>) then) = _$ProfileDomainFailureCopyWithImpl<T, $Res>;
 }
 
+/// @nodoc
 class _$ProfileDomainFailureCopyWithImpl<T, $Res> implements $ProfileDomainFailureCopyWith<T, $Res> {
   _$ProfileDomainFailureCopyWithImpl(this._value, this._then);
 
@@ -64,10 +69,12 @@ class _$ProfileDomainFailureCopyWithImpl<T, $Res> implements $ProfileDomainFailu
   final $Res Function(ProfileDomainFailure<T>) _then;
 }
 
+/// @nodoc
 abstract class $FollowItselfCopyWith<T, $Res> {
   factory $FollowItselfCopyWith(FollowItself<T> value, $Res Function(FollowItself<T>) then) = _$FollowItselfCopyWithImpl<T, $Res>;
 }
 
+/// @nodoc
 class _$FollowItselfCopyWithImpl<T, $Res> extends _$ProfileDomainFailureCopyWithImpl<T, $Res> implements $FollowItselfCopyWith<T, $Res> {
   _$FollowItselfCopyWithImpl(FollowItself<T> _value, $Res Function(FollowItself<T>) _then) : super(_value, (v) => _then(v as FollowItself<T>));
 
@@ -75,6 +82,7 @@ class _$FollowItselfCopyWithImpl<T, $Res> extends _$ProfileDomainFailureCopyWith
   FollowItself<T> get _value => super._value as FollowItself<T>;
 }
 
+/// @nodoc
 class _$FollowItself<T> implements FollowItself<T> {
   const _$FollowItself();
 
@@ -146,20 +154,26 @@ abstract class FollowItself<T> implements ProfileDomainFailure<T> {
   const factory FollowItself() = _$FollowItself<T>;
 }
 
+/// @nodoc
 abstract class $BlockItselfCopyWith<T, $Res> {
-  factory $BlockItselfCopyWith(BlockItself<T> value, $Res Function(BlockItself<T>) then) = _$BlockItselfCopyWithImpl<T, $Res>;
+  factory $BlockItselfCopyWith(BlockItself<T> value, $Res Function(BlockItself<T>) then) =
+  _$BlockItselfCopyWithImpl<T, $Res>;
 }
 
-class _$BlockItselfCopyWithImpl<T, $Res> extends _$ProfileDomainFailureCopyWithImpl<T, $Res> implements $BlockItselfCopyWith<T, $Res> {
-  _$BlockItselfCopyWithImpl(BlockItself<T> _value, $Res Function(BlockItself<T>) _then) : super(_value, (v) => _then(v as BlockItself<T>));
-
+/// @nodoc
+class _$BlockItselfCopyWithImpl<T, $Res> extends _$ProfileDomainFailureCopyWithImpl<T, $Res>
+  implements $BlockItselfCopyWith<T, $Res> {
+  _$BlockItselfCopyWithImpl(BlockItself<T> _value, $Res Function(BlockItself<T>) _then)
+    : super(_value, (v) => _then(v as BlockItself<T>));
+  
   @override
   BlockItself<T> get _value => super._value as BlockItself<T>;
 }
 
+/// @nodoc
 class _$BlockItself<T> implements BlockItself<T> {
   const _$BlockItself();
-
+  
   @override
   String toString() {
     return 'ProfileDomainFailure<$T>.blockItself()';

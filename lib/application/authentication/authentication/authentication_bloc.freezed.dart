@@ -9,6 +9,7 @@ part of 'authentication_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$AuthenticationEventTearOff {
   const _$AuthenticationEventTearOff();
 
@@ -23,9 +24,11 @@ class _$AuthenticationEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $AuthenticationEvent = _$AuthenticationEventTearOff();
 
+/// @nodoc
 mixin _$AuthenticationEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -53,12 +56,14 @@ mixin _$AuthenticationEvent {
   });
 }
 
+/// @nodoc
 abstract class $AuthenticationEventCopyWith<$Res> {
   factory $AuthenticationEventCopyWith(
           AuthenticationEvent value, $Res Function(AuthenticationEvent) then) =
       _$AuthenticationEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$AuthenticationEventCopyWithImpl<$Res>
     implements $AuthenticationEventCopyWith<$Res> {
   _$AuthenticationEventCopyWithImpl(this._value, this._then);
@@ -68,6 +73,7 @@ class _$AuthenticationEventCopyWithImpl<$Res>
   final $Res Function(AuthenticationEvent) _then;
 }
 
+/// @nodoc
 abstract class _$AuthenticationCheckRequestedCopyWith<$Res> {
   factory _$AuthenticationCheckRequestedCopyWith(
           _AuthenticationCheckRequested value,
@@ -75,6 +81,7 @@ abstract class _$AuthenticationCheckRequestedCopyWith<$Res> {
       __$AuthenticationCheckRequestedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$AuthenticationCheckRequestedCopyWithImpl<$Res>
     extends _$AuthenticationEventCopyWithImpl<$Res>
     implements _$AuthenticationCheckRequestedCopyWith<$Res> {
@@ -88,6 +95,7 @@ class __$AuthenticationCheckRequestedCopyWithImpl<$Res>
       super._value as _AuthenticationCheckRequested;
 }
 
+/// @nodoc
 class _$_AuthenticationCheckRequested implements _AuthenticationCheckRequested {
   const _$_AuthenticationCheckRequested();
 
@@ -162,12 +170,14 @@ abstract class _AuthenticationCheckRequested implements AuthenticationEvent {
       _$_AuthenticationCheckRequested;
 }
 
+/// @nodoc
 abstract class _$LoggedOutCopyWith<$Res> {
   factory _$LoggedOutCopyWith(
           _LoggedOut value, $Res Function(_LoggedOut) then) =
       __$LoggedOutCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$LoggedOutCopyWithImpl<$Res>
     extends _$AuthenticationEventCopyWithImpl<$Res>
     implements _$LoggedOutCopyWith<$Res> {
@@ -178,6 +188,7 @@ class __$LoggedOutCopyWithImpl<$Res>
   _LoggedOut get _value => super._value as _LoggedOut;
 }
 
+/// @nodoc
 class _$_LoggedOut implements _LoggedOut {
   const _$_LoggedOut();
 
@@ -251,6 +262,7 @@ abstract class _LoggedOut implements AuthenticationEvent {
   const factory _LoggedOut() = _$_LoggedOut;
 }
 
+/// @nodoc
 class _$AuthenticationStateTearOff {
   const _$AuthenticationStateTearOff();
 
@@ -270,9 +282,11 @@ class _$AuthenticationStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $AuthenticationState = _$AuthenticationStateTearOff();
 
+/// @nodoc
 mixin _$AuthenticationState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -302,12 +316,14 @@ mixin _$AuthenticationState {
   });
 }
 
+/// @nodoc
 abstract class $AuthenticationStateCopyWith<$Res> {
   factory $AuthenticationStateCopyWith(
           AuthenticationState value, $Res Function(AuthenticationState) then) =
       _$AuthenticationStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$AuthenticationStateCopyWithImpl<$Res>
     implements $AuthenticationStateCopyWith<$Res> {
   _$AuthenticationStateCopyWithImpl(this._value, this._then);
@@ -317,11 +333,13 @@ class _$AuthenticationStateCopyWithImpl<$Res>
   final $Res Function(AuthenticationState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res>
     extends _$AuthenticationStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
@@ -332,6 +350,7 @@ class __$InitialCopyWithImpl<$Res>
   _Initial get _value => super._value as _Initial;
 }
 
+/// @nodoc
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -409,12 +428,14 @@ abstract class _Initial implements AuthenticationState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$AuthenticationSuccessCopyWith<$Res> {
   factory _$AuthenticationSuccessCopyWith(_AuthenticationSuccess value,
           $Res Function(_AuthenticationSuccess) then) =
       __$AuthenticationSuccessCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$AuthenticationSuccessCopyWithImpl<$Res>
     extends _$AuthenticationStateCopyWithImpl<$Res>
     implements _$AuthenticationSuccessCopyWith<$Res> {
@@ -426,6 +447,7 @@ class __$AuthenticationSuccessCopyWithImpl<$Res>
   _AuthenticationSuccess get _value => super._value as _AuthenticationSuccess;
 }
 
+/// @nodoc
 class _$_AuthenticationSuccess implements _AuthenticationSuccess {
   const _$_AuthenticationSuccess();
 
@@ -503,12 +525,14 @@ abstract class _AuthenticationSuccess implements AuthenticationState {
   const factory _AuthenticationSuccess() = _$_AuthenticationSuccess;
 }
 
+/// @nodoc
 abstract class _$AuthenticationFailureCopyWith<$Res> {
   factory _$AuthenticationFailureCopyWith(_AuthenticationFailure value,
           $Res Function(_AuthenticationFailure) then) =
       __$AuthenticationFailureCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$AuthenticationFailureCopyWithImpl<$Res>
     extends _$AuthenticationStateCopyWithImpl<$Res>
     implements _$AuthenticationFailureCopyWith<$Res> {
@@ -520,6 +544,7 @@ class __$AuthenticationFailureCopyWithImpl<$Res>
   _AuthenticationFailure get _value => super._value as _AuthenticationFailure;
 }
 
+/// @nodoc
 class _$_AuthenticationFailure implements _AuthenticationFailure {
   const _$_AuthenticationFailure();
 

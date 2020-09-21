@@ -9,6 +9,7 @@ part of 'comment_actor_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$CommentActorEventTearOff {
   const _$CommentActorEventTearOff();
 
@@ -20,9 +21,11 @@ class _$CommentActorEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $CommentActorEvent = _$CommentActorEventTearOff();
 
+/// @nodoc
 mixin _$CommentActorEvent {
   Comment get comment;
 
@@ -48,6 +51,7 @@ mixin _$CommentActorEvent {
   $CommentActorEventCopyWith<CommentActorEvent> get copyWith;
 }
 
+/// @nodoc
 abstract class $CommentActorEventCopyWith<$Res> {
   factory $CommentActorEventCopyWith(
           CommentActorEvent value, $Res Function(CommentActorEvent) then) =
@@ -57,6 +61,7 @@ abstract class $CommentActorEventCopyWith<$Res> {
   $CommentCopyWith<$Res> get comment;
 }
 
+/// @nodoc
 class _$CommentActorEventCopyWithImpl<$Res>
     implements $CommentActorEventCopyWith<$Res> {
   _$CommentActorEventCopyWithImpl(this._value, this._then);
@@ -85,6 +90,7 @@ class _$CommentActorEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$DeletedCopyWith<$Res>
     implements $CommentActorEventCopyWith<$Res> {
   factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
@@ -96,6 +102,7 @@ abstract class _$DeletedCopyWith<$Res>
   $CommentCopyWith<$Res> get comment;
 }
 
+/// @nodoc
 class __$DeletedCopyWithImpl<$Res> extends _$CommentActorEventCopyWithImpl<$Res>
     implements _$DeletedCopyWith<$Res> {
   __$DeletedCopyWithImpl(_Deleted _value, $Res Function(_Deleted) _then)
@@ -114,6 +121,7 @@ class __$DeletedCopyWithImpl<$Res> extends _$CommentActorEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_Deleted implements _Deleted {
   const _$_Deleted(this.comment) : assert(comment != null);
 
@@ -195,6 +203,7 @@ abstract class _Deleted implements CommentActorEvent {
   _$DeletedCopyWith<_Deleted> get copyWith;
 }
 
+/// @nodoc
 class _$CommentActorStateTearOff {
   const _$CommentActorStateTearOff();
 
@@ -221,9 +230,11 @@ class _$CommentActorStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $CommentActorState = _$CommentActorStateTearOff();
 
+/// @nodoc
 mixin _$CommentActorState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -257,12 +268,14 @@ mixin _$CommentActorState {
   });
 }
 
+/// @nodoc
 abstract class $CommentActorStateCopyWith<$Res> {
   factory $CommentActorStateCopyWith(
           CommentActorState value, $Res Function(CommentActorState) then) =
       _$CommentActorStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$CommentActorStateCopyWithImpl<$Res>
     implements $CommentActorStateCopyWith<$Res> {
   _$CommentActorStateCopyWithImpl(this._value, this._then);
@@ -272,11 +285,13 @@ class _$CommentActorStateCopyWithImpl<$Res>
   final $Res Function(CommentActorState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res> extends _$CommentActorStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
@@ -286,6 +301,7 @@ class __$InitialCopyWithImpl<$Res> extends _$CommentActorStateCopyWithImpl<$Res>
   _Initial get _value => super._value as _Initial;
 }
 
+/// @nodoc
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -369,12 +385,14 @@ abstract class _Initial implements CommentActorState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
   factory _$ActionInProgressCopyWith(
           _ActionInProgress value, $Res Function(_ActionInProgress) then) =
       __$ActionInProgressCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$ActionInProgressCopyWithImpl<$Res>
     extends _$CommentActorStateCopyWithImpl<$Res>
     implements _$ActionInProgressCopyWith<$Res> {
@@ -386,6 +404,7 @@ class __$ActionInProgressCopyWithImpl<$Res>
   _ActionInProgress get _value => super._value as _ActionInProgress;
 }
 
+/// @nodoc
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -469,12 +488,14 @@ abstract class _ActionInProgress implements CommentActorState {
   const factory _ActionInProgress() = _$_ActionInProgress;
 }
 
+/// @nodoc
 abstract class _$DeletionSuccessCopyWith<$Res> {
   factory _$DeletionSuccessCopyWith(
           _DeletionSuccess value, $Res Function(_DeletionSuccess) then) =
       __$DeletionSuccessCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$DeletionSuccessCopyWithImpl<$Res>
     extends _$CommentActorStateCopyWithImpl<$Res>
     implements _$DeletionSuccessCopyWith<$Res> {
@@ -486,6 +507,7 @@ class __$DeletionSuccessCopyWithImpl<$Res>
   _DeletionSuccess get _value => super._value as _DeletionSuccess;
 }
 
+/// @nodoc
 class _$_DeletionSuccess implements _DeletionSuccess {
   const _$_DeletionSuccess();
 
@@ -569,6 +591,7 @@ abstract class _DeletionSuccess implements CommentActorState {
   const factory _DeletionSuccess() = _$_DeletionSuccess;
 }
 
+/// @nodoc
 abstract class _$DeletionFailureCopyWith<$Res> {
   factory _$DeletionFailureCopyWith(
           _DeletionFailure value, $Res Function(_DeletionFailure) then) =
@@ -578,6 +601,7 @@ abstract class _$DeletionFailureCopyWith<$Res> {
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
+/// @nodoc
 class __$DeletionFailureCopyWithImpl<$Res>
     extends _$CommentActorStateCopyWithImpl<$Res>
     implements _$DeletionFailureCopyWith<$Res> {
@@ -608,6 +632,7 @@ class __$DeletionFailureCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_DeletionFailure implements _DeletionFailure {
   const _$_DeletionFailure(this.failure) : assert(failure != null);
 

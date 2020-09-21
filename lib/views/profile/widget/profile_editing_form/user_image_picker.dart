@@ -16,33 +16,33 @@ class UserImagePicker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return user.imageFileOption.fold(
-      () => FlatButton(
-        onPressed: () async => _pickImage(context),
-        child: user.imageURL.contains("assets/")
-            ? Hero(
-                tag: "userImageAsset",
-                child: CircleAvatar(
-                  radius: 60,
-                  backgroundImage: AssetImage(user.imageURL),
-                ),
-              )
-            : Hero(
-                tag: "userImageFile",
-                child: CircleAvatar(
-                  radius: 60,
-                  backgroundImage: FileImage(File(user.imageURL)),
-                ),
-              ),
-      ),
-      (imageFile) => FlatButton(
-        onPressed: () async => _pickImage(context),
-        child: CircleAvatar(
-          radius: 80,
-          backgroundImage: FileImage(imageFile),
-        ),
-      ),
-    );
+    return context.bloc<ProfileEditingFormBloc>().state.user.imageFileOption.fold(
+          () => FlatButton(
+            onPressed: () async => _pickImage(context),
+            child: user.imageURL.contains("assets/")
+                ? Hero(
+                    tag: "userImageAsset",
+                    child: CircleAvatar(
+                      radius: 60,
+                      backgroundImage: AssetImage(user.imageURL),
+                    ),
+                  )
+                : Hero(
+                    tag: "userImageFile",
+                    child: CircleAvatar(
+                      radius: 60,
+                      backgroundImage: FileImage(File(user.imageURL)),
+                    ),
+                  ),
+          ),
+          (imageFile) => FlatButton(
+            onPressed: () async => _pickImage(context),
+            child: CircleAvatar(
+              radius: 80,
+              backgroundImage: FileImage(imageFile),
+            ),
+          ),
+        );
   }
 
   Future _pickImage(BuildContext context) async {

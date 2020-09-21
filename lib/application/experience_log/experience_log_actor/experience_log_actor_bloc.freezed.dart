@@ -9,6 +9,7 @@ part of 'experience_log_actor_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$ExperienceLogActorEventTearOff {
   const _$ExperienceLogActorEventTearOff();
 
@@ -20,9 +21,11 @@ class _$ExperienceLogActorEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ExperienceLogActorEvent = _$ExperienceLogActorEventTearOff();
 
+/// @nodoc
 mixin _$ExperienceLogActorEvent {
   int get experienceId;
 
@@ -48,6 +51,7 @@ mixin _$ExperienceLogActorEvent {
   $ExperienceLogActorEventCopyWith<ExperienceLogActorEvent> get copyWith;
 }
 
+/// @nodoc
 abstract class $ExperienceLogActorEventCopyWith<$Res> {
   factory $ExperienceLogActorEventCopyWith(ExperienceLogActorEvent value,
           $Res Function(ExperienceLogActorEvent) then) =
@@ -55,6 +59,7 @@ abstract class $ExperienceLogActorEventCopyWith<$Res> {
   $Res call({int experienceId});
 }
 
+/// @nodoc
 class _$ExperienceLogActorEventCopyWithImpl<$Res>
     implements $ExperienceLogActorEventCopyWith<$Res> {
   _$ExperienceLogActorEventCopyWithImpl(this._value, this._then);
@@ -74,6 +79,7 @@ class _$ExperienceLogActorEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$ExperienceDismissedCopyWith<$Res>
     implements $ExperienceLogActorEventCopyWith<$Res> {
   factory _$ExperienceDismissedCopyWith(_ExperienceDismissed value,
@@ -83,6 +89,7 @@ abstract class _$ExperienceDismissedCopyWith<$Res>
   $Res call({int experienceId});
 }
 
+/// @nodoc
 class __$ExperienceDismissedCopyWithImpl<$Res>
     extends _$ExperienceLogActorEventCopyWithImpl<$Res>
     implements _$ExperienceDismissedCopyWith<$Res> {
@@ -103,6 +110,7 @@ class __$ExperienceDismissedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_ExperienceDismissed implements _ExperienceDismissed {
   const _$_ExperienceDismissed(this.experienceId)
       : assert(experienceId != null);
@@ -187,6 +195,7 @@ abstract class _ExperienceDismissed implements ExperienceLogActorEvent {
   _$ExperienceDismissedCopyWith<_ExperienceDismissed> get copyWith;
 }
 
+/// @nodoc
 class _$ExperienceLogActorStateTearOff {
   const _$ExperienceLogActorStateTearOff();
 
@@ -213,9 +222,11 @@ class _$ExperienceLogActorStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ExperienceLogActorState = _$ExperienceLogActorStateTearOff();
 
+/// @nodoc
 mixin _$ExperienceLogActorState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -249,12 +260,14 @@ mixin _$ExperienceLogActorState {
   });
 }
 
+/// @nodoc
 abstract class $ExperienceLogActorStateCopyWith<$Res> {
   factory $ExperienceLogActorStateCopyWith(ExperienceLogActorState value,
           $Res Function(ExperienceLogActorState) then) =
       _$ExperienceLogActorStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ExperienceLogActorStateCopyWithImpl<$Res>
     implements $ExperienceLogActorStateCopyWith<$Res> {
   _$ExperienceLogActorStateCopyWithImpl(this._value, this._then);
@@ -264,11 +277,13 @@ class _$ExperienceLogActorStateCopyWithImpl<$Res>
   final $Res Function(ExperienceLogActorState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res>
     extends _$ExperienceLogActorStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
@@ -279,6 +294,7 @@ class __$InitialCopyWithImpl<$Res>
   _Initial get _value => super._value as _Initial;
 }
 
+/// @nodoc
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -362,12 +378,14 @@ abstract class _Initial implements ExperienceLogActorState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
   factory _$ActionInProgressCopyWith(
           _ActionInProgress value, $Res Function(_ActionInProgress) then) =
       __$ActionInProgressCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$ActionInProgressCopyWithImpl<$Res>
     extends _$ExperienceLogActorStateCopyWithImpl<$Res>
     implements _$ActionInProgressCopyWith<$Res> {
@@ -379,6 +397,7 @@ class __$ActionInProgressCopyWithImpl<$Res>
   _ActionInProgress get _value => super._value as _ActionInProgress;
 }
 
+/// @nodoc
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -462,12 +481,14 @@ abstract class _ActionInProgress implements ExperienceLogActorState {
   const factory _ActionInProgress() = _$_ActionInProgress;
 }
 
+/// @nodoc
 abstract class _$DismissalSuccessCopyWith<$Res> {
   factory _$DismissalSuccessCopyWith(
           _DismissalSuccess value, $Res Function(_DismissalSuccess) then) =
       __$DismissalSuccessCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$DismissalSuccessCopyWithImpl<$Res>
     extends _$ExperienceLogActorStateCopyWithImpl<$Res>
     implements _$DismissalSuccessCopyWith<$Res> {
@@ -479,6 +500,7 @@ class __$DismissalSuccessCopyWithImpl<$Res>
   _DismissalSuccess get _value => super._value as _DismissalSuccess;
 }
 
+/// @nodoc
 class _$_DismissalSuccess implements _DismissalSuccess {
   const _$_DismissalSuccess();
 
@@ -562,6 +584,7 @@ abstract class _DismissalSuccess implements ExperienceLogActorState {
   const factory _DismissalSuccess() = _$_DismissalSuccess;
 }
 
+/// @nodoc
 abstract class _$DismissalFailureCopyWith<$Res> {
   factory _$DismissalFailureCopyWith(
           _DismissalFailure value, $Res Function(_DismissalFailure) then) =
@@ -571,6 +594,7 @@ abstract class _$DismissalFailureCopyWith<$Res> {
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
+/// @nodoc
 class __$DismissalFailureCopyWithImpl<$Res>
     extends _$ExperienceLogActorStateCopyWithImpl<$Res>
     implements _$DismissalFailureCopyWith<$Res> {
@@ -601,6 +625,7 @@ class __$DismissalFailureCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_DismissalFailure implements _DismissalFailure {
   const _$_DismissalFailure(this.failure) : assert(failure != null);
 

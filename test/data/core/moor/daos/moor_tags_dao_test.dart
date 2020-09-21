@@ -235,7 +235,7 @@ void main() {
       );
       test(
         "Should delete all tags of all experiences",
-          () async {
+        () async {
           // Arrange
           final _userId = await _insertCreator(_database);
           final _experience = domainExperienceToMoorExperience(getValidExperience()).copyWith(creatorId: Value(_userId));

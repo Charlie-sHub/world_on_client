@@ -9,6 +9,7 @@ part of 'device.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$DeviceTearOff {
   const _$DeviceTearOff();
 
@@ -23,9 +24,11 @@ class _$DeviceTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Device = _$DeviceTearOff();
 
+/// @nodoc
 mixin _$Device {
   int get id;
   String get name;
@@ -35,12 +38,14 @@ mixin _$Device {
   $DeviceCopyWith<Device> get copyWith;
 }
 
+/// @nodoc
 abstract class $DeviceCopyWith<$Res> {
   factory $DeviceCopyWith(Device value, $Res Function(Device) then) = _$DeviceCopyWithImpl<$Res>;
 
   $Res call({int id, String name, String type, String company});
 }
 
+/// @nodoc
 class _$DeviceCopyWithImpl<$Res> implements $DeviceCopyWith<$Res> {
   _$DeviceCopyWithImpl(this._value, this._then);
 
@@ -64,6 +69,7 @@ class _$DeviceCopyWithImpl<$Res> implements $DeviceCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$DeviceCopyWith<$Res> implements $DeviceCopyWith<$Res> {
   factory _$DeviceCopyWith(_Device value, $Res Function(_Device) then) = __$DeviceCopyWithImpl<$Res>;
 
@@ -71,6 +77,7 @@ abstract class _$DeviceCopyWith<$Res> implements $DeviceCopyWith<$Res> {
   $Res call({int id, String name, String type, String company});
 }
 
+/// @nodoc
 class __$DeviceCopyWithImpl<$Res> extends _$DeviceCopyWithImpl<$Res> implements _$DeviceCopyWith<$Res> {
   __$DeviceCopyWithImpl(_Device _value, $Res Function(_Device) _then) : super(_value, (v) => _then(v as _Device));
 
@@ -93,6 +100,7 @@ class __$DeviceCopyWithImpl<$Res> extends _$DeviceCopyWithImpl<$Res> implements 
   }
 }
 
+/// @nodoc
 class _$_Device extends _Device {
   const _$_Device({this.id, @required this.name, @required this.type, @required this.company})
       : assert(name != null),

@@ -33,9 +33,6 @@ class ProfileExperiencesWatcherBloc extends Bloc<ProfileExperiencesWatcherEvent,
     );
   }
 
-  // TODO: Figure out why going from done to liked to done doesn't update the stream
-  // If started watching the done experiences when going back to it after watching
-  // the liked the liked experiences will be shown again
   Stream<ProfileExperiencesWatcherState> _onWatchExperiencesDoneStarted(_WatchExperiencesDoneStarted event) async* {
     yield const ProfileExperiencesWatcherState.loadInProgress();
     await _experienceStreamSubscription?.cancel();
@@ -76,13 +73,9 @@ class ProfileExperiencesWatcherBloc extends Bloc<ProfileExperiencesWatcherEvent,
   }
 
   Stream<ProfileExperiencesWatcherState> _onExperiencesReceived(_ExperiencesReceived event) async* {
-    event.failureOrExperiences.fold(
-        (l) => null,
-        (r) => r.map((experience) => print(experience.id.toString())),
-    );
     yield event.failureOrExperiences.fold(
-        (failure) => ProfileExperiencesWatcherState.loadFailure(failure),
-        (experiences) => ProfileExperiencesWatcherState.loadSuccess(experiences),
+      (failure) => ProfileExperiencesWatcherState.loadFailure(failure),
+      (experiences) => ProfileExperiencesWatcherState.loadSuccess(experiences),
     );
   }
 

@@ -9,6 +9,7 @@ part of 'follow_actor_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$FollowActorEventTearOff {
   const _$FollowActorEventTearOff();
 
@@ -34,9 +35,11 @@ class _$FollowActorEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $FollowActorEvent = _$FollowActorEventTearOff();
 
+/// @nodoc
 mixin _$FollowActorEvent {
   User get user;
 
@@ -70,6 +73,7 @@ mixin _$FollowActorEvent {
   $FollowActorEventCopyWith<FollowActorEvent> get copyWith;
 }
 
+/// @nodoc
 abstract class $FollowActorEventCopyWith<$Res> {
   factory $FollowActorEventCopyWith(
           FollowActorEvent value, $Res Function(FollowActorEvent) then) =
@@ -79,6 +83,7 @@ abstract class $FollowActorEventCopyWith<$Res> {
   $UserCopyWith<$Res> get user;
 }
 
+/// @nodoc
 class _$FollowActorEventCopyWithImpl<$Res>
     implements $FollowActorEventCopyWith<$Res> {
   _$FollowActorEventCopyWithImpl(this._value, this._then);
@@ -107,6 +112,7 @@ class _$FollowActorEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$InitializedCopyWith<$Res>
     implements $FollowActorEventCopyWith<$Res> {
   factory _$InitializedCopyWith(
@@ -119,6 +125,7 @@ abstract class _$InitializedCopyWith<$Res>
   $UserCopyWith<$Res> get user;
 }
 
+/// @nodoc
 class __$InitializedCopyWithImpl<$Res>
     extends _$FollowActorEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
@@ -139,6 +146,7 @@ class __$InitializedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.user) : assert(user != null);
 
@@ -232,6 +240,7 @@ abstract class _Initialized implements FollowActorEvent {
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
+/// @nodoc
 abstract class _$FollowedCopyWith<$Res>
     implements $FollowActorEventCopyWith<$Res> {
   factory _$FollowedCopyWith(_Followed value, $Res Function(_Followed) then) =
@@ -243,6 +252,7 @@ abstract class _$FollowedCopyWith<$Res>
   $UserCopyWith<$Res> get user;
 }
 
+/// @nodoc
 class __$FollowedCopyWithImpl<$Res> extends _$FollowActorEventCopyWithImpl<$Res>
     implements _$FollowedCopyWith<$Res> {
   __$FollowedCopyWithImpl(_Followed _value, $Res Function(_Followed) _then)
@@ -261,6 +271,7 @@ class __$FollowedCopyWithImpl<$Res> extends _$FollowActorEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_Followed implements _Followed {
   const _$_Followed(this.user) : assert(user != null);
 
@@ -354,6 +365,7 @@ abstract class _Followed implements FollowActorEvent {
   _$FollowedCopyWith<_Followed> get copyWith;
 }
 
+/// @nodoc
 abstract class _$UnFollowedCopyWith<$Res>
     implements $FollowActorEventCopyWith<$Res> {
   factory _$UnFollowedCopyWith(
@@ -366,6 +378,7 @@ abstract class _$UnFollowedCopyWith<$Res>
   $UserCopyWith<$Res> get user;
 }
 
+/// @nodoc
 class __$UnFollowedCopyWithImpl<$Res>
     extends _$FollowActorEventCopyWithImpl<$Res>
     implements _$UnFollowedCopyWith<$Res> {
@@ -386,6 +399,7 @@ class __$UnFollowedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_UnFollowed implements _UnFollowed {
   const _$_UnFollowed(this.user) : assert(user != null);
 
@@ -479,6 +493,7 @@ abstract class _UnFollowed implements FollowActorEvent {
   _$UnFollowedCopyWith<_UnFollowed> get copyWith;
 }
 
+/// @nodoc
 class _$FollowActorStateTearOff {
   const _$FollowActorStateTearOff();
 
@@ -527,9 +542,11 @@ class _$FollowActorStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $FollowActorState = _$FollowActorStateTearOff();
 
+/// @nodoc
 mixin _$FollowActorState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -579,12 +596,14 @@ mixin _$FollowActorState {
   });
 }
 
+/// @nodoc
 abstract class $FollowActorStateCopyWith<$Res> {
   factory $FollowActorStateCopyWith(
           FollowActorState value, $Res Function(FollowActorState) then) =
       _$FollowActorStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$FollowActorStateCopyWithImpl<$Res>
     implements $FollowActorStateCopyWith<$Res> {
   _$FollowActorStateCopyWithImpl(this._value, this._then);
@@ -594,11 +613,13 @@ class _$FollowActorStateCopyWithImpl<$Res>
   final $Res Function(FollowActorState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
@@ -608,6 +629,7 @@ class __$InitialCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Res>
   _Initial get _value => super._value as _Initial;
 }
 
+/// @nodoc
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -715,12 +737,14 @@ abstract class _Initial implements FollowActorState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
   factory _$ActionInProgressCopyWith(
           _ActionInProgress value, $Res Function(_ActionInProgress) then) =
       __$ActionInProgressCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$ActionInProgressCopyWithImpl<$Res>
     extends _$FollowActorStateCopyWithImpl<$Res>
     implements _$ActionInProgressCopyWith<$Res> {
@@ -732,6 +756,7 @@ class __$ActionInProgressCopyWithImpl<$Res>
   _ActionInProgress get _value => super._value as _ActionInProgress;
 }
 
+/// @nodoc
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -839,11 +864,13 @@ abstract class _ActionInProgress implements FollowActorState {
   const factory _ActionInProgress() = _$_ActionInProgress;
 }
 
+/// @nodoc
 abstract class _$FollowsCopyWith<$Res> {
   factory _$FollowsCopyWith(_Follows value, $Res Function(_Follows) then) =
       __$FollowsCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$FollowsCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Res>
     implements _$FollowsCopyWith<$Res> {
   __$FollowsCopyWithImpl(_Follows _value, $Res Function(_Follows) _then)
@@ -853,6 +880,7 @@ class __$FollowsCopyWithImpl<$Res> extends _$FollowActorStateCopyWithImpl<$Res>
   _Follows get _value => super._value as _Follows;
 }
 
+/// @nodoc
 class _$_Follows implements _Follows {
   const _$_Follows();
 
@@ -960,12 +988,14 @@ abstract class _Follows implements FollowActorState {
   const factory _Follows() = _$_Follows;
 }
 
+/// @nodoc
 abstract class _$FollowsNotCopyWith<$Res> {
   factory _$FollowsNotCopyWith(
           _FollowsNot value, $Res Function(_FollowsNot) then) =
       __$FollowsNotCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$FollowsNotCopyWithImpl<$Res>
     extends _$FollowActorStateCopyWithImpl<$Res>
     implements _$FollowsNotCopyWith<$Res> {
@@ -977,6 +1007,7 @@ class __$FollowsNotCopyWithImpl<$Res>
   _FollowsNot get _value => super._value as _FollowsNot;
 }
 
+/// @nodoc
 class _$_FollowsNot implements _FollowsNot {
   const _$_FollowsNot();
 
@@ -1084,12 +1115,14 @@ abstract class _FollowsNot implements FollowActorState {
   const factory _FollowsNot() = _$_FollowsNot;
 }
 
+/// @nodoc
 abstract class _$FollowSuccessCopyWith<$Res> {
   factory _$FollowSuccessCopyWith(
           _FollowSuccess value, $Res Function(_FollowSuccess) then) =
       __$FollowSuccessCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$FollowSuccessCopyWithImpl<$Res>
     extends _$FollowActorStateCopyWithImpl<$Res>
     implements _$FollowSuccessCopyWith<$Res> {
@@ -1101,6 +1134,7 @@ class __$FollowSuccessCopyWithImpl<$Res>
   _FollowSuccess get _value => super._value as _FollowSuccess;
 }
 
+/// @nodoc
 class _$_FollowSuccess implements _FollowSuccess {
   const _$_FollowSuccess();
 
@@ -1208,6 +1242,7 @@ abstract class _FollowSuccess implements FollowActorState {
   const factory _FollowSuccess() = _$_FollowSuccess;
 }
 
+/// @nodoc
 abstract class _$FollowFailureCopyWith<$Res> {
   factory _$FollowFailureCopyWith(
           _FollowFailure value, $Res Function(_FollowFailure) then) =
@@ -1217,6 +1252,7 @@ abstract class _$FollowFailureCopyWith<$Res> {
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
+/// @nodoc
 class __$FollowFailureCopyWithImpl<$Res>
     extends _$FollowActorStateCopyWithImpl<$Res>
     implements _$FollowFailureCopyWith<$Res> {
@@ -1247,6 +1283,7 @@ class __$FollowFailureCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_FollowFailure implements _FollowFailure {
   const _$_FollowFailure(this.failure) : assert(failure != null);
 
@@ -1368,12 +1405,14 @@ abstract class _FollowFailure implements FollowActorState {
   _$FollowFailureCopyWith<_FollowFailure> get copyWith;
 }
 
+/// @nodoc
 abstract class _$UnFollowSuccessCopyWith<$Res> {
   factory _$UnFollowSuccessCopyWith(
           _UnFollowSuccess value, $Res Function(_UnFollowSuccess) then) =
       __$UnFollowSuccessCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$UnFollowSuccessCopyWithImpl<$Res>
     extends _$FollowActorStateCopyWithImpl<$Res>
     implements _$UnFollowSuccessCopyWith<$Res> {
@@ -1385,6 +1424,7 @@ class __$UnFollowSuccessCopyWithImpl<$Res>
   _UnFollowSuccess get _value => super._value as _UnFollowSuccess;
 }
 
+/// @nodoc
 class _$_UnFollowSuccess implements _UnFollowSuccess {
   const _$_UnFollowSuccess();
 
@@ -1492,6 +1532,7 @@ abstract class _UnFollowSuccess implements FollowActorState {
   const factory _UnFollowSuccess() = _$_UnFollowSuccess;
 }
 
+/// @nodoc
 abstract class _$UnFollowFailureCopyWith<$Res> {
   factory _$UnFollowFailureCopyWith(
           _UnFollowFailure value, $Res Function(_UnFollowFailure) then) =
@@ -1501,6 +1542,7 @@ abstract class _$UnFollowFailureCopyWith<$Res> {
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
+/// @nodoc
 class __$UnFollowFailureCopyWithImpl<$Res>
     extends _$FollowActorStateCopyWithImpl<$Res>
     implements _$UnFollowFailureCopyWith<$Res> {
@@ -1531,6 +1573,7 @@ class __$UnFollowFailureCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_UnFollowFailure implements _UnFollowFailure {
   const _$_UnFollowFailure(this.failure) : assert(failure != null);
 

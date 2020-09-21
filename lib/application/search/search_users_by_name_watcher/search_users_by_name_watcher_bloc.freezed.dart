@@ -9,6 +9,7 @@ part of 'search_users_by_name_watcher_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$SearchUsersByNameWatcherEventTearOff {
   const _$SearchUsersByNameWatcherEventTearOff();
 
@@ -36,9 +37,11 @@ class _$SearchUsersByNameWatcherEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $SearchUsersByNameWatcherEvent = _$SearchUsersByNameWatcherEventTearOff();
 
+/// @nodoc
 mixin _$SearchUsersByNameWatcherEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -75,6 +78,7 @@ mixin _$SearchUsersByNameWatcherEvent {
   });
 }
 
+/// @nodoc
 abstract class $SearchUsersByNameWatcherEventCopyWith<$Res> {
   factory $SearchUsersByNameWatcherEventCopyWith(
           SearchUsersByNameWatcherEvent value,
@@ -82,6 +86,7 @@ abstract class $SearchUsersByNameWatcherEventCopyWith<$Res> {
       _$SearchUsersByNameWatcherEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$SearchUsersByNameWatcherEventCopyWithImpl<$Res>
     implements $SearchUsersByNameWatcherEventCopyWith<$Res> {
   _$SearchUsersByNameWatcherEventCopyWithImpl(this._value, this._then);
@@ -91,6 +96,7 @@ class _$SearchUsersByNameWatcherEventCopyWithImpl<$Res>
   final $Res Function(SearchUsersByNameWatcherEvent) _then;
 }
 
+/// @nodoc
 abstract class _$WatchUsersFoundByNameStartedCopyWith<$Res> {
   factory _$WatchUsersFoundByNameStartedCopyWith(
           _WatchUsersFoundByNameStarted value,
@@ -99,6 +105,7 @@ abstract class _$WatchUsersFoundByNameStartedCopyWith<$Res> {
   $Res call({SearchTerm name});
 }
 
+/// @nodoc
 class __$WatchUsersFoundByNameStartedCopyWithImpl<$Res>
     extends _$SearchUsersByNameWatcherEventCopyWithImpl<$Res>
     implements _$WatchUsersFoundByNameStartedCopyWith<$Res> {
@@ -121,6 +128,7 @@ class __$WatchUsersFoundByNameStartedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_WatchUsersFoundByNameStarted implements _WatchUsersFoundByNameStarted {
   const _$_WatchUsersFoundByNameStarted(this.name) : assert(name != null);
 
@@ -223,6 +231,7 @@ abstract class _WatchUsersFoundByNameStarted
       get copyWith;
 }
 
+/// @nodoc
 abstract class _$WatchUsersFoundByUsernameStartedCopyWith<$Res> {
   factory _$WatchUsersFoundByUsernameStartedCopyWith(
           _WatchUsersFoundByUsernameStarted value,
@@ -231,6 +240,7 @@ abstract class _$WatchUsersFoundByUsernameStartedCopyWith<$Res> {
   $Res call({SearchTerm username});
 }
 
+/// @nodoc
 class __$WatchUsersFoundByUsernameStartedCopyWithImpl<$Res>
     extends _$SearchUsersByNameWatcherEventCopyWithImpl<$Res>
     implements _$WatchUsersFoundByUsernameStartedCopyWith<$Res> {
@@ -253,6 +263,7 @@ class __$WatchUsersFoundByUsernameStartedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_WatchUsersFoundByUsernameStarted
     implements _WatchUsersFoundByUsernameStarted {
   const _$_WatchUsersFoundByUsernameStarted(this.username)
@@ -358,6 +369,7 @@ abstract class _WatchUsersFoundByUsernameStarted
       get copyWith;
 }
 
+/// @nodoc
 abstract class _$SearchResultsReceivedCopyWith<$Res> {
   factory _$SearchResultsReceivedCopyWith(_SearchResultsReceived value,
           $Res Function(_SearchResultsReceived) then) =
@@ -365,6 +377,7 @@ abstract class _$SearchResultsReceivedCopyWith<$Res> {
   $Res call({Either<Failure, KtList<User>> failureOrUsers});
 }
 
+/// @nodoc
 class __$SearchResultsReceivedCopyWithImpl<$Res>
     extends _$SearchUsersByNameWatcherEventCopyWithImpl<$Res>
     implements _$SearchResultsReceivedCopyWith<$Res> {
@@ -387,6 +400,7 @@ class __$SearchResultsReceivedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_SearchResultsReceived implements _SearchResultsReceived {
   const _$_SearchResultsReceived(this.failureOrUsers)
       : assert(failureOrUsers != null);
@@ -490,6 +504,7 @@ abstract class _SearchResultsReceived implements SearchUsersByNameWatcherEvent {
   _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith;
 }
 
+/// @nodoc
 class _$SearchUsersByNameWatcherStateTearOff {
   const _$SearchUsersByNameWatcherStateTearOff();
 
@@ -518,9 +533,11 @@ class _$SearchUsersByNameWatcherStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $SearchUsersByNameWatcherState = _$SearchUsersByNameWatcherStateTearOff();
 
+/// @nodoc
 mixin _$SearchUsersByNameWatcherState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -554,6 +571,7 @@ mixin _$SearchUsersByNameWatcherState {
   });
 }
 
+/// @nodoc
 abstract class $SearchUsersByNameWatcherStateCopyWith<$Res> {
   factory $SearchUsersByNameWatcherStateCopyWith(
           SearchUsersByNameWatcherState value,
@@ -561,6 +579,7 @@ abstract class $SearchUsersByNameWatcherStateCopyWith<$Res> {
       _$SearchUsersByNameWatcherStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$SearchUsersByNameWatcherStateCopyWithImpl<$Res>
     implements $SearchUsersByNameWatcherStateCopyWith<$Res> {
   _$SearchUsersByNameWatcherStateCopyWithImpl(this._value, this._then);
@@ -570,11 +589,13 @@ class _$SearchUsersByNameWatcherStateCopyWithImpl<$Res>
   final $Res Function(SearchUsersByNameWatcherState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res>
     extends _$SearchUsersByNameWatcherStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
@@ -585,6 +606,7 @@ class __$InitialCopyWithImpl<$Res>
   _Initial get _value => super._value as _Initial;
 }
 
+/// @nodoc
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -668,12 +690,14 @@ abstract class _Initial implements SearchUsersByNameWatcherState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$SearchInPorgressCopyWith<$Res> {
   factory _$SearchInPorgressCopyWith(
           _SearchInPorgress value, $Res Function(_SearchInPorgress) then) =
       __$SearchInPorgressCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$SearchInPorgressCopyWithImpl<$Res>
     extends _$SearchUsersByNameWatcherStateCopyWithImpl<$Res>
     implements _$SearchInPorgressCopyWith<$Res> {
@@ -685,6 +709,7 @@ class __$SearchInPorgressCopyWithImpl<$Res>
   _SearchInPorgress get _value => super._value as _SearchInPorgress;
 }
 
+/// @nodoc
 class _$_SearchInPorgress implements _SearchInPorgress {
   const _$_SearchInPorgress();
 
@@ -768,6 +793,7 @@ abstract class _SearchInPorgress implements SearchUsersByNameWatcherState {
   const factory _SearchInPorgress() = _$_SearchInPorgress;
 }
 
+/// @nodoc
 abstract class _$SearchSuccessCopyWith<$Res> {
   factory _$SearchSuccessCopyWith(
           _SearchSuccess value, $Res Function(_SearchSuccess) then) =
@@ -775,6 +801,7 @@ abstract class _$SearchSuccessCopyWith<$Res> {
   $Res call({KtList<User> usersFound});
 }
 
+/// @nodoc
 class __$SearchSuccessCopyWithImpl<$Res>
     extends _$SearchUsersByNameWatcherStateCopyWithImpl<$Res>
     implements _$SearchSuccessCopyWith<$Res> {
@@ -795,6 +822,7 @@ class __$SearchSuccessCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_SearchSuccess implements _SearchSuccess {
   const _$_SearchSuccess(this.usersFound) : assert(usersFound != null);
 
@@ -893,6 +921,7 @@ abstract class _SearchSuccess implements SearchUsersByNameWatcherState {
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith;
 }
 
+/// @nodoc
 abstract class _$SearchFailureCopyWith<$Res> {
   factory _$SearchFailureCopyWith(
           _SearchFailure value, $Res Function(_SearchFailure) then) =
@@ -902,6 +931,7 @@ abstract class _$SearchFailureCopyWith<$Res> {
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
+/// @nodoc
 class __$SearchFailureCopyWithImpl<$Res>
     extends _$SearchUsersByNameWatcherStateCopyWithImpl<$Res>
     implements _$SearchFailureCopyWith<$Res> {
@@ -932,6 +962,7 @@ class __$SearchFailureCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_SearchFailure implements _SearchFailure {
   const _$_SearchFailure(this.failure) : assert(failure != null);
 

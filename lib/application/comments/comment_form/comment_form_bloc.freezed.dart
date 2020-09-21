@@ -9,6 +9,7 @@ part of 'comment_form_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$CommentFormEventTearOff {
   const _$CommentFormEventTearOff();
 
@@ -34,9 +35,11 @@ class _$CommentFormEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $CommentFormEvent = _$CommentFormEventTearOff();
 
+/// @nodoc
 mixin _$CommentFormEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -67,12 +70,14 @@ mixin _$CommentFormEvent {
   });
 }
 
+/// @nodoc
 abstract class $CommentFormEventCopyWith<$Res> {
   factory $CommentFormEventCopyWith(
           CommentFormEvent value, $Res Function(CommentFormEvent) then) =
       _$CommentFormEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$CommentFormEventCopyWithImpl<$Res>
     implements $CommentFormEventCopyWith<$Res> {
   _$CommentFormEventCopyWithImpl(this._value, this._then);
@@ -82,6 +87,7 @@ class _$CommentFormEventCopyWithImpl<$Res>
   final $Res Function(CommentFormEvent) _then;
 }
 
+/// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(
           _Initialized value, $Res Function(_Initialized) then) =
@@ -89,6 +95,7 @@ abstract class _$InitializedCopyWith<$Res> {
   $Res call({Option<Comment> commentOption, int experienceId});
 }
 
+/// @nodoc
 class __$InitializedCopyWithImpl<$Res>
     extends _$CommentFormEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
@@ -114,6 +121,7 @@ class __$InitializedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_Initialized implements _Initialized {
   const _$_Initialized(
       {@required this.commentOption, @required this.experienceId})
@@ -220,6 +228,7 @@ abstract class _Initialized implements CommentFormEvent {
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
+/// @nodoc
 abstract class _$ContentChangedCopyWith<$Res> {
   factory _$ContentChangedCopyWith(
           _ContentChanged value, $Res Function(_ContentChanged) then) =
@@ -227,6 +236,7 @@ abstract class _$ContentChangedCopyWith<$Res> {
   $Res call({String content});
 }
 
+/// @nodoc
 class __$ContentChangedCopyWithImpl<$Res>
     extends _$CommentFormEventCopyWithImpl<$Res>
     implements _$ContentChangedCopyWith<$Res> {
@@ -247,6 +257,7 @@ class __$ContentChangedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_ContentChanged implements _ContentChanged {
   const _$_ContentChanged(this.content) : assert(content != null);
 
@@ -339,12 +350,14 @@ abstract class _ContentChanged implements CommentFormEvent {
   _$ContentChangedCopyWith<_ContentChanged> get copyWith;
 }
 
+/// @nodoc
 abstract class _$SubmittedCopyWith<$Res> {
   factory _$SubmittedCopyWith(
           _Submitted value, $Res Function(_Submitted) then) =
       __$SubmittedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$SubmittedCopyWithImpl<$Res>
     extends _$CommentFormEventCopyWithImpl<$Res>
     implements _$SubmittedCopyWith<$Res> {
@@ -355,6 +368,7 @@ class __$SubmittedCopyWithImpl<$Res>
   _Submitted get _value => super._value as _Submitted;
 }
 
+/// @nodoc
 class _$_Submitted implements _Submitted {
   const _$_Submitted();
 
@@ -433,6 +447,7 @@ abstract class _Submitted implements CommentFormEvent {
   const factory _Submitted() = _$_Submitted;
 }
 
+/// @nodoc
 class _$CommentFormStateTearOff {
   const _$CommentFormStateTearOff();
 
@@ -453,9 +468,11 @@ class _$CommentFormStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $CommentFormState = _$CommentFormStateTearOff();
 
+/// @nodoc
 mixin _$CommentFormState {
   Comment get comment;
   bool get showErrorMessages;
@@ -466,6 +483,7 @@ mixin _$CommentFormState {
   $CommentFormStateCopyWith<CommentFormState> get copyWith;
 }
 
+/// @nodoc
 abstract class $CommentFormStateCopyWith<$Res> {
   factory $CommentFormStateCopyWith(
           CommentFormState value, $Res Function(CommentFormState) then) =
@@ -480,6 +498,7 @@ abstract class $CommentFormStateCopyWith<$Res> {
   $CommentCopyWith<$Res> get comment;
 }
 
+/// @nodoc
 class _$CommentFormStateCopyWithImpl<$Res>
     implements $CommentFormStateCopyWith<$Res> {
   _$CommentFormStateCopyWithImpl(this._value, this._then);
@@ -521,6 +540,7 @@ class _$CommentFormStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$CommentFormStateCopyWith<$Res>
     implements $CommentFormStateCopyWith<$Res> {
   factory _$CommentFormStateCopyWith(
@@ -538,6 +558,7 @@ abstract class _$CommentFormStateCopyWith<$Res>
   $CommentCopyWith<$Res> get comment;
 }
 
+/// @nodoc
 class __$CommentFormStateCopyWithImpl<$Res>
     extends _$CommentFormStateCopyWithImpl<$Res>
     implements _$CommentFormStateCopyWith<$Res> {
@@ -571,6 +592,7 @@ class __$CommentFormStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_CommentFormState implements _CommentFormState {
   const _$_CommentFormState(
       {@required this.comment,

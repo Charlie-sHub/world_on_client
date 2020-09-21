@@ -9,6 +9,7 @@ part of 'tag_management_form_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$TagManagementFormEventTearOff {
   const _$TagManagementFormEventTearOff();
 
@@ -32,9 +33,11 @@ class _$TagManagementFormEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $TagManagementFormEvent = _$TagManagementFormEventTearOff();
 
+/// @nodoc
 mixin _$TagManagementFormEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -64,12 +67,14 @@ mixin _$TagManagementFormEvent {
   });
 }
 
+/// @nodoc
 abstract class $TagManagementFormEventCopyWith<$Res> {
   factory $TagManagementFormEventCopyWith(TagManagementFormEvent value,
           $Res Function(TagManagementFormEvent) then) =
       _$TagManagementFormEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$TagManagementFormEventCopyWithImpl<$Res>
     implements $TagManagementFormEventCopyWith<$Res> {
   _$TagManagementFormEventCopyWithImpl(this._value, this._then);
@@ -79,6 +84,7 @@ class _$TagManagementFormEventCopyWithImpl<$Res>
   final $Res Function(TagManagementFormEvent) _then;
 }
 
+/// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(
           _Initialized value, $Res Function(_Initialized) then) =
@@ -86,6 +92,7 @@ abstract class _$InitializedCopyWith<$Res> {
   $Res call({Option<Tag> tagOption});
 }
 
+/// @nodoc
 class __$InitializedCopyWithImpl<$Res>
     extends _$TagManagementFormEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
@@ -106,6 +113,7 @@ class __$InitializedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.tagOption) : assert(tagOption != null);
 
@@ -198,6 +206,7 @@ abstract class _Initialized implements TagManagementFormEvent {
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
+/// @nodoc
 abstract class _$NameChangedCopyWith<$Res> {
   factory _$NameChangedCopyWith(
           _NameChanged value, $Res Function(_NameChanged) then) =
@@ -205,6 +214,7 @@ abstract class _$NameChangedCopyWith<$Res> {
   $Res call({String name});
 }
 
+/// @nodoc
 class __$NameChangedCopyWithImpl<$Res>
     extends _$TagManagementFormEventCopyWithImpl<$Res>
     implements _$NameChangedCopyWith<$Res> {
@@ -225,6 +235,7 @@ class __$NameChangedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_NameChanged implements _NameChanged {
   const _$_NameChanged(this.name) : assert(name != null);
 
@@ -316,12 +327,14 @@ abstract class _NameChanged implements TagManagementFormEvent {
   _$NameChangedCopyWith<_NameChanged> get copyWith;
 }
 
+/// @nodoc
 abstract class _$SubmittedCopyWith<$Res> {
   factory _$SubmittedCopyWith(
           _Submitted value, $Res Function(_Submitted) then) =
       __$SubmittedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$SubmittedCopyWithImpl<$Res>
     extends _$TagManagementFormEventCopyWithImpl<$Res>
     implements _$SubmittedCopyWith<$Res> {
@@ -332,6 +345,7 @@ class __$SubmittedCopyWithImpl<$Res>
   _Submitted get _value => super._value as _Submitted;
 }
 
+/// @nodoc
 class _$_Submitted implements _Submitted {
   const _$_Submitted();
 
@@ -409,6 +423,7 @@ abstract class _Submitted implements TagManagementFormEvent {
   const factory _Submitted() = _$_Submitted;
 }
 
+/// @nodoc
 class _$TagManagementFormStateTearOff {
   const _$TagManagementFormStateTearOff();
 
@@ -429,9 +444,11 @@ class _$TagManagementFormStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $TagManagementFormState = _$TagManagementFormStateTearOff();
 
+/// @nodoc
 mixin _$TagManagementFormState {
   Tag get tag;
   bool get showErrorMessages;
@@ -442,6 +459,7 @@ mixin _$TagManagementFormState {
   $TagManagementFormStateCopyWith<TagManagementFormState> get copyWith;
 }
 
+/// @nodoc
 abstract class $TagManagementFormStateCopyWith<$Res> {
   factory $TagManagementFormStateCopyWith(TagManagementFormState value,
           $Res Function(TagManagementFormState) then) =
@@ -456,6 +474,7 @@ abstract class $TagManagementFormStateCopyWith<$Res> {
   $TagCopyWith<$Res> get tag;
 }
 
+/// @nodoc
 class _$TagManagementFormStateCopyWithImpl<$Res>
     implements $TagManagementFormStateCopyWith<$Res> {
   _$TagManagementFormStateCopyWithImpl(this._value, this._then);
@@ -497,6 +516,7 @@ class _$TagManagementFormStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$TagManagementFormStateCopyWith<$Res>
     implements $TagManagementFormStateCopyWith<$Res> {
   factory _$TagManagementFormStateCopyWith(_TagManagementFormState value,
@@ -514,6 +534,7 @@ abstract class _$TagManagementFormStateCopyWith<$Res>
   $TagCopyWith<$Res> get tag;
 }
 
+/// @nodoc
 class __$TagManagementFormStateCopyWithImpl<$Res>
     extends _$TagManagementFormStateCopyWithImpl<$Res>
     implements _$TagManagementFormStateCopyWith<$Res> {
@@ -547,6 +568,7 @@ class __$TagManagementFormStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_TagManagementFormState implements _TagManagementFormState {
   const _$_TagManagementFormState(
       {@required this.tag,

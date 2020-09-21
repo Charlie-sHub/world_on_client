@@ -9,6 +9,7 @@ part of 'reward_form_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$RewardFormEventTearOff {
   const _$RewardFormEventTearOff();
 
@@ -39,9 +40,11 @@ class _$RewardFormEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $RewardFormEvent = _$RewardFormEventTearOff();
 
+/// @nodoc
 mixin _$RewardFormEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -50,7 +53,6 @@ mixin _$RewardFormEvent {
     @required Result imageChanged(File imageFile),
     @required Result submitted(),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result nameChanged(String name),
@@ -59,7 +61,6 @@ mixin _$RewardFormEvent {
     Result submitted(),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result nameChanged(_NameChanged value),
@@ -67,7 +68,6 @@ mixin _$RewardFormEvent {
     @required Result imageChanged(_ImageChanged value),
     @required Result submitted(_Submitted value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result nameChanged(_NameChanged value),
@@ -78,10 +78,12 @@ mixin _$RewardFormEvent {
   });
 }
 
+/// @nodoc
 abstract class $RewardFormEventCopyWith<$Res> {
   factory $RewardFormEventCopyWith(RewardFormEvent value, $Res Function(RewardFormEvent) then) = _$RewardFormEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$RewardFormEventCopyWithImpl<$Res> implements $RewardFormEventCopyWith<$Res> {
   _$RewardFormEventCopyWithImpl(this._value, this._then);
 
@@ -91,12 +93,14 @@ class _$RewardFormEventCopyWithImpl<$Res> implements $RewardFormEventCopyWith<$R
   final $Res Function(RewardFormEvent) _then;
 }
 
+/// @nodoc
 abstract class _$NameChangedCopyWith<$Res> {
   factory _$NameChangedCopyWith(_NameChanged value, $Res Function(_NameChanged) then) = __$NameChangedCopyWithImpl<$Res>;
 
   $Res call({String name});
 }
 
+/// @nodoc
 class __$NameChangedCopyWithImpl<$Res> extends _$RewardFormEventCopyWithImpl<$Res> implements _$NameChangedCopyWith<$Res> {
   __$NameChangedCopyWithImpl(_NameChanged _value, $Res Function(_NameChanged) _then) : super(_value, (v) => _then(v as _NameChanged));
 
@@ -113,6 +117,7 @@ class __$NameChangedCopyWithImpl<$Res> extends _$RewardFormEventCopyWithImpl<$Re
   }
 }
 
+/// @nodoc
 class _$_NameChanged implements _NameChanged {
   const _$_NameChanged(this.name) : assert(name != null);
 
@@ -202,16 +207,17 @@ abstract class _NameChanged implements RewardFormEvent {
   const factory _NameChanged(String name) = _$_NameChanged;
 
   String get name;
-
   _$NameChangedCopyWith<_NameChanged> get copyWith;
 }
 
+/// @nodoc
 abstract class _$DescriptionChangedCopyWith<$Res> {
   factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) = __$DescriptionChangedCopyWithImpl<$Res>;
 
   $Res call({String description});
 }
 
+/// @nodoc
 class __$DescriptionChangedCopyWithImpl<$Res> extends _$RewardFormEventCopyWithImpl<$Res> implements _$DescriptionChangedCopyWith<$Res> {
   __$DescriptionChangedCopyWithImpl(_DescriptionChanged _value, $Res Function(_DescriptionChanged) _then) : super(_value, (v) => _then(v as _DescriptionChanged));
 
@@ -228,6 +234,7 @@ class __$DescriptionChangedCopyWithImpl<$Res> extends _$RewardFormEventCopyWithI
   }
 }
 
+/// @nodoc
 class _$_DescriptionChanged implements _DescriptionChanged {
   const _$_DescriptionChanged(this.description) : assert(description != null);
 
@@ -317,16 +324,17 @@ abstract class _DescriptionChanged implements RewardFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description;
-
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith;
 }
 
+/// @nodoc
 abstract class _$ImageChangedCopyWith<$Res> {
   factory _$ImageChangedCopyWith(_ImageChanged value, $Res Function(_ImageChanged) then) = __$ImageChangedCopyWithImpl<$Res>;
 
   $Res call({File imageFile});
 }
 
+/// @nodoc
 class __$ImageChangedCopyWithImpl<$Res> extends _$RewardFormEventCopyWithImpl<$Res> implements _$ImageChangedCopyWith<$Res> {
   __$ImageChangedCopyWithImpl(_ImageChanged _value, $Res Function(_ImageChanged) _then) : super(_value, (v) => _then(v as _ImageChanged));
 
@@ -343,6 +351,7 @@ class __$ImageChangedCopyWithImpl<$Res> extends _$RewardFormEventCopyWithImpl<$R
   }
 }
 
+/// @nodoc
 class _$_ImageChanged implements _ImageChanged {
   const _$_ImageChanged(this.imageFile) : assert(imageFile != null);
 
@@ -436,10 +445,12 @@ abstract class _ImageChanged implements RewardFormEvent {
   _$ImageChangedCopyWith<_ImageChanged> get copyWith;
 }
 
+/// @nodoc
 abstract class _$SubmittedCopyWith<$Res> {
   factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) = __$SubmittedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$SubmittedCopyWithImpl<$Res> extends _$RewardFormEventCopyWithImpl<$Res> implements _$SubmittedCopyWith<$Res> {
   __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then) : super(_value, (v) => _then(v as _Submitted));
 
@@ -447,6 +458,7 @@ class __$SubmittedCopyWithImpl<$Res> extends _$RewardFormEventCopyWithImpl<$Res>
   _Submitted get _value => super._value as _Submitted;
 }
 
+/// @nodoc
 class _$_Submitted implements _Submitted {
   const _$_Submitted();
 
@@ -530,6 +542,7 @@ abstract class _Submitted implements RewardFormEvent {
   const factory _Submitted() = _$_Submitted;
 }
 
+/// @nodoc
 class _$RewardFormStateTearOff {
   const _$RewardFormStateTearOff();
 
@@ -543,19 +556,20 @@ class _$RewardFormStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $RewardFormState = _$RewardFormStateTearOff();
 
+/// @nodoc
 mixin _$RewardFormState {
   Reward get reward;
-
   bool get showErrorMessages;
-
   bool get isSubmitting;
 
   $RewardFormStateCopyWith<RewardFormState> get copyWith;
 }
 
+/// @nodoc
 abstract class $RewardFormStateCopyWith<$Res> {
   factory $RewardFormStateCopyWith(RewardFormState value, $Res Function(RewardFormState) then) = _$RewardFormStateCopyWithImpl<$Res>;
 
@@ -564,6 +578,7 @@ abstract class $RewardFormStateCopyWith<$Res> {
   $RewardCopyWith<$Res> get reward;
 }
 
+/// @nodoc
 class _$RewardFormStateCopyWithImpl<$Res> implements $RewardFormStateCopyWith<$Res> {
   _$RewardFormStateCopyWithImpl(this._value, this._then);
 
@@ -596,6 +611,7 @@ class _$RewardFormStateCopyWithImpl<$Res> implements $RewardFormStateCopyWith<$R
   }
 }
 
+/// @nodoc
 abstract class _$RewardFormStateCopyWith<$Res> implements $RewardFormStateCopyWith<$Res> {
   factory _$RewardFormStateCopyWith(_RewardFormState value, $Res Function(_RewardFormState) then) = __$RewardFormStateCopyWithImpl<$Res>;
 
@@ -606,6 +622,7 @@ abstract class _$RewardFormStateCopyWith<$Res> implements $RewardFormStateCopyWi
   $RewardCopyWith<$Res> get reward;
 }
 
+/// @nodoc
 class __$RewardFormStateCopyWithImpl<$Res> extends _$RewardFormStateCopyWithImpl<$Res> implements _$RewardFormStateCopyWith<$Res> {
   __$RewardFormStateCopyWithImpl(_RewardFormState _value, $Res Function(_RewardFormState) _then) : super(_value, (v) => _then(v as _RewardFormState));
 
@@ -626,6 +643,7 @@ class __$RewardFormStateCopyWithImpl<$Res> extends _$RewardFormStateCopyWithImpl
   }
 }
 
+/// @nodoc
 class _$_RewardFormState implements _RewardFormState {
   const _$_RewardFormState({@required this.reward, @required this.showErrorMessages, @required this.isSubmitting})
       : assert(reward != null),

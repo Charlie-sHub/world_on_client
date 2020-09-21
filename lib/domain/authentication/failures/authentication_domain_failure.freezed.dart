@@ -9,6 +9,7 @@ part of 'authentication_domain_failure.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$AuthenticationDomainFailureTearOff {
   const _$AuthenticationDomainFailureTearOff();
 
@@ -18,9 +19,11 @@ class _$AuthenticationDomainFailureTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $AuthenticationDomainFailure = _$AuthenticationDomainFailureTearOff();
 
+/// @nodoc
 mixin _$AuthenticationDomainFailure<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -42,10 +45,12 @@ mixin _$AuthenticationDomainFailure<T> {
   });
 }
 
+/// @nodoc
 abstract class $AuthenticationDomainFailureCopyWith<T, $Res> {
   factory $AuthenticationDomainFailureCopyWith(AuthenticationDomainFailure<T> value, $Res Function(AuthenticationDomainFailure<T>) then) = _$AuthenticationDomainFailureCopyWithImpl<T, $Res>;
 }
 
+/// @nodoc
 class _$AuthenticationDomainFailureCopyWithImpl<T, $Res> implements $AuthenticationDomainFailureCopyWith<T, $Res> {
   _$AuthenticationDomainFailureCopyWithImpl(this._value, this._then);
 
@@ -55,10 +60,12 @@ class _$AuthenticationDomainFailureCopyWithImpl<T, $Res> implements $Authenticat
   final $Res Function(AuthenticationDomainFailure<T>) _then;
 }
 
+/// @nodoc
 abstract class $CancelledByUserCopyWith<T, $Res> {
   factory $CancelledByUserCopyWith(CancelledByUser<T> value, $Res Function(CancelledByUser<T>) then) = _$CancelledByUserCopyWithImpl<T, $Res>;
 }
 
+/// @nodoc
 class _$CancelledByUserCopyWithImpl<T, $Res> extends _$AuthenticationDomainFailureCopyWithImpl<T, $Res> implements $CancelledByUserCopyWith<T, $Res> {
   _$CancelledByUserCopyWithImpl(CancelledByUser<T> _value, $Res Function(CancelledByUser<T>) _then) : super(_value, (v) => _then(v as CancelledByUser<T>));
 
@@ -66,6 +73,7 @@ class _$CancelledByUserCopyWithImpl<T, $Res> extends _$AuthenticationDomainFailu
   CancelledByUser<T> get _value => super._value as CancelledByUser<T>;
 }
 
+/// @nodoc
 class _$CancelledByUser<T> with DiagnosticableTreeMixin implements CancelledByUser<T> {
   const _$CancelledByUser();
 

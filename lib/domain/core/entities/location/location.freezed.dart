@@ -9,6 +9,7 @@ part of 'location.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$LocationTearOff {
   const _$LocationTearOff();
 
@@ -24,25 +25,32 @@ class _$LocationTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Location = _$LocationTearOff();
 
+/// @nodoc
 mixin _$Location {
   int get id;
+
   String get city;
-  String get country;
+
+  String get country; // TODO: Maybe make a value object and validator for countries
   String get postalCode;
+
   Set<Experience> get experiences;
 
   $LocationCopyWith<Location> get copyWith;
 }
 
+/// @nodoc
 abstract class $LocationCopyWith<$Res> {
   factory $LocationCopyWith(Location value, $Res Function(Location) then) = _$LocationCopyWithImpl<$Res>;
 
   $Res call({int id, String city, String country, String postalCode, Set<Experience> experiences});
 }
 
+/// @nodoc
 class _$LocationCopyWithImpl<$Res> implements $LocationCopyWith<$Res> {
   _$LocationCopyWithImpl(this._value, this._then);
 
@@ -68,6 +76,7 @@ class _$LocationCopyWithImpl<$Res> implements $LocationCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$LocationCopyWith<$Res> implements $LocationCopyWith<$Res> {
   factory _$LocationCopyWith(_Location value, $Res Function(_Location) then) = __$LocationCopyWithImpl<$Res>;
 
@@ -75,6 +84,7 @@ abstract class _$LocationCopyWith<$Res> implements $LocationCopyWith<$Res> {
   $Res call({int id, String city, String country, String postalCode, Set<Experience> experiences});
 }
 
+/// @nodoc
 class __$LocationCopyWithImpl<$Res> extends _$LocationCopyWithImpl<$Res> implements _$LocationCopyWith<$Res> {
   __$LocationCopyWithImpl(_Location _value, $Res Function(_Location) _then) : super(_value, (v) => _then(v as _Location));
 
@@ -99,6 +109,7 @@ class __$LocationCopyWithImpl<$Res> extends _$LocationCopyWithImpl<$Res> impleme
   }
 }
 
+/// @nodoc
 class _$_Location extends _Location {
   const _$_Location({this.id, @required this.city, @required this.country, @required this.postalCode, @required this.experiences})
       : assert(city != null),
@@ -113,7 +124,7 @@ class _$_Location extends _Location {
   final String city;
   @override
   final String country;
-  @override
+  @override // TODO: Maybe make a value object and validator for countries
   final String postalCode;
   @override
   final Set<Experience> experiences;
@@ -161,7 +172,7 @@ abstract class _Location extends Location {
   @override
   String get country;
 
-  @override
+  @override // TODO: Maybe make a value object and validator for countries
   String get postalCode;
 
   @override

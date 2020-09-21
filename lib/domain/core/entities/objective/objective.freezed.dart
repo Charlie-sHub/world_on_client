@@ -9,6 +9,7 @@ part of 'objective.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$ObjectiveTearOff {
   const _$ObjectiveTearOff();
 
@@ -24,9 +25,11 @@ class _$ObjectiveTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Objective = _$ObjectiveTearOff();
 
+/// @nodoc
 mixin _$Objective {
   int get id;
   EntityDescription get description;
@@ -37,6 +40,7 @@ mixin _$Objective {
   $ObjectiveCopyWith<Objective> get copyWith;
 }
 
+/// @nodoc
 abstract class $ObjectiveCopyWith<$Res> {
   factory $ObjectiveCopyWith(Objective value, $Res Function(Objective) then) = _$ObjectiveCopyWithImpl<$Res>;
 
@@ -45,6 +49,7 @@ abstract class $ObjectiveCopyWith<$Res> {
   $CoordinatesCopyWith<$Res> get coordinates;
 }
 
+/// @nodoc
 class _$ObjectiveCopyWithImpl<$Res> implements $ObjectiveCopyWith<$Res> {
   _$ObjectiveCopyWithImpl(this._value, this._then);
 
@@ -80,6 +85,7 @@ class _$ObjectiveCopyWithImpl<$Res> implements $ObjectiveCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$ObjectiveCopyWith<$Res> implements $ObjectiveCopyWith<$Res> {
   factory _$ObjectiveCopyWith(_Objective value, $Res Function(_Objective) then) = __$ObjectiveCopyWithImpl<$Res>;
 
@@ -90,6 +96,7 @@ abstract class _$ObjectiveCopyWith<$Res> implements $ObjectiveCopyWith<$Res> {
   $CoordinatesCopyWith<$Res> get coordinates;
 }
 
+/// @nodoc
 class __$ObjectiveCopyWithImpl<$Res> extends _$ObjectiveCopyWithImpl<$Res> implements _$ObjectiveCopyWith<$Res> {
   __$ObjectiveCopyWithImpl(_Objective _value, $Res Function(_Objective) _then) : super(_value, (v) => _then(v as _Objective));
 
@@ -114,6 +121,7 @@ class __$ObjectiveCopyWithImpl<$Res> extends _$ObjectiveCopyWithImpl<$Res> imple
   }
 }
 
+/// @nodoc
 class _$_Objective extends _Objective {
   const _$_Objective({this.id, @required this.description, @required this.coordinates, @required this.imageURL, @required this.imageFile})
       : assert(description != null),

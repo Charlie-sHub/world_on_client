@@ -9,6 +9,7 @@ part of 'user.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$UserTearOff {
   const _$UserTearOff();
 
@@ -73,28 +74,49 @@ class _$UserTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $User = _$UserTearOff();
 
+/// @nodoc
 mixin _$User {
   int get id;
+
   Name get name;
+
   Name get username;
+
   Password get password;
+
   EmailAddress get email;
+
   PastDate get birthday;
+
   EntityDescription get description;
+
   String get imageURL;
-  Option<File> get imageFileOption;
+
+  Option<File> get imageFileOption; // TODO: Make levels entities
+// To hold the points between levels
+// Or investigate how leveling systems are usually implemented.
   UserLevel get level;
+
   ExperiencePoints get experiencePoints;
+
   bool get privacy;
+
   bool get adminPowers;
+
   bool get enabled;
+
   PastDate get lastLogin;
+
   PastDate get creationDate;
+
   PastDate get modificationDate;
+
   Options get options;
+
   Set<int> get blockedUsersIds;
   Set<int> get followedUsersIds;
   Set<int> get interestsIds;
@@ -108,6 +130,7 @@ mixin _$User {
   $UserCopyWith<User> get copyWith;
 }
 
+/// @nodoc
 abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) = _$UserCopyWithImpl<$Res>;
 
@@ -143,6 +166,7 @@ abstract class $UserCopyWith<$Res> {
   $OptionsCopyWith<$Res> get options;
 }
 
+/// @nodoc
 class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
   _$UserCopyWithImpl(this._value, this._then);
 
@@ -222,6 +246,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   factory _$UserCopyWith(_User value, $Res Function(_User) then) = __$UserCopyWithImpl<$Res>;
 
@@ -259,6 +284,7 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   $OptionsCopyWith<$Res> get options;
 }
 
+/// @nodoc
 class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res> implements _$UserCopyWith<$Res> {
   __$UserCopyWithImpl(_User _value, $Res Function(_User) _then) : super(_value, (v) => _then(v as _User));
 
@@ -327,6 +353,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res> implements _$Us
   }
 }
 
+/// @nodoc
 class _$_User extends _User {
   const _$_User(
       {this.id,
@@ -402,7 +429,9 @@ class _$_User extends _User {
   final String imageURL;
   @override
   final Option<File> imageFileOption;
-  @override
+  @override // TODO: Make levels entities
+// To hold the points between levels
+// Or investigate how leveling systems are usually implemented.
   final UserLevel level;
   @override
   final ExperiencePoints experiencePoints;
@@ -551,26 +580,39 @@ abstract class _User extends User {
   Name get username;
   @override
   Password get password;
+
   @override
   EmailAddress get email;
+
   @override
   PastDate get birthday;
+
   @override
   EntityDescription get description;
+
   @override
   String get imageURL;
+
   @override
   Option<File> get imageFileOption;
-  @override
+
+  @override // TODO: Make levels entities
+// To hold the points between levels
+// Or investigate how leveling systems are usually implemented.
   UserLevel get level;
+
   @override
   ExperiencePoints get experiencePoints;
+
   @override
   bool get privacy;
+
   @override
   bool get adminPowers;
+
   @override
   bool get enabled;
+
   @override
   PastDate get lastLogin;
   @override

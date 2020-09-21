@@ -9,6 +9,7 @@ part of 'log_in_form_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$LogInFormEventTearOff {
   const _$LogInFormEventTearOff();
 
@@ -37,9 +38,11 @@ class _$LogInFormEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $LogInFormEvent = _$LogInFormEventTearOff();
 
+/// @nodoc
 mixin _$LogInFormEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -73,12 +76,14 @@ mixin _$LogInFormEvent {
   });
 }
 
+/// @nodoc
 abstract class $LogInFormEventCopyWith<$Res> {
   factory $LogInFormEventCopyWith(
           LogInFormEvent value, $Res Function(LogInFormEvent) then) =
       _$LogInFormEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$LogInFormEventCopyWithImpl<$Res>
     implements $LogInFormEventCopyWith<$Res> {
   _$LogInFormEventCopyWithImpl(this._value, this._then);
@@ -88,6 +93,7 @@ class _$LogInFormEventCopyWithImpl<$Res>
   final $Res Function(LogInFormEvent) _then;
 }
 
+/// @nodoc
 abstract class _$UsernameChangedCopyWith<$Res> {
   factory _$UsernameChangedCopyWith(
           _UsernameChanged value, $Res Function(_UsernameChanged) then) =
@@ -95,6 +101,7 @@ abstract class _$UsernameChangedCopyWith<$Res> {
   $Res call({String username});
 }
 
+/// @nodoc
 class __$UsernameChangedCopyWithImpl<$Res>
     extends _$LogInFormEventCopyWithImpl<$Res>
     implements _$UsernameChangedCopyWith<$Res> {
@@ -115,6 +122,7 @@ class __$UsernameChangedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_UsernameChanged implements _UsernameChanged {
   const _$_UsernameChanged(this.username) : assert(username != null);
 
@@ -213,6 +221,7 @@ abstract class _UsernameChanged implements LogInFormEvent {
   _$UsernameChangedCopyWith<_UsernameChanged> get copyWith;
 }
 
+/// @nodoc
 abstract class _$PasswordChangedCopyWith<$Res> {
   factory _$PasswordChangedCopyWith(
           _PasswordChanged value, $Res Function(_PasswordChanged) then) =
@@ -220,6 +229,7 @@ abstract class _$PasswordChangedCopyWith<$Res> {
   $Res call({String password});
 }
 
+/// @nodoc
 class __$PasswordChangedCopyWithImpl<$Res>
     extends _$LogInFormEventCopyWithImpl<$Res>
     implements _$PasswordChangedCopyWith<$Res> {
@@ -240,6 +250,7 @@ class __$PasswordChangedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_PasswordChanged implements _PasswordChanged {
   const _$_PasswordChanged(this.password) : assert(password != null);
 
@@ -338,11 +349,13 @@ abstract class _PasswordChanged implements LogInFormEvent {
   _$PasswordChangedCopyWith<_PasswordChanged> get copyWith;
 }
 
+/// @nodoc
 abstract class _$LoggedInCopyWith<$Res> {
   factory _$LoggedInCopyWith(_LoggedIn value, $Res Function(_LoggedIn) then) =
       __$LoggedInCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$LoggedInCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res>
     implements _$LoggedInCopyWith<$Res> {
   __$LoggedInCopyWithImpl(_LoggedIn _value, $Res Function(_LoggedIn) _then)
@@ -352,6 +365,7 @@ class __$LoggedInCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res>
   _LoggedIn get _value => super._value as _LoggedIn;
 }
 
+/// @nodoc
 class _$_LoggedIn implements _LoggedIn {
   const _$_LoggedIn();
 
@@ -435,12 +449,14 @@ abstract class _LoggedIn implements LogInFormEvent {
   const factory _LoggedIn() = _$_LoggedIn;
 }
 
+/// @nodoc
 abstract class _$LoggedInGoogleCopyWith<$Res> {
   factory _$LoggedInGoogleCopyWith(
           _LoggedInGoogle value, $Res Function(_LoggedInGoogle) then) =
       __$LoggedInGoogleCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$LoggedInGoogleCopyWithImpl<$Res>
     extends _$LogInFormEventCopyWithImpl<$Res>
     implements _$LoggedInGoogleCopyWith<$Res> {
@@ -452,6 +468,7 @@ class __$LoggedInGoogleCopyWithImpl<$Res>
   _LoggedInGoogle get _value => super._value as _LoggedInGoogle;
 }
 
+/// @nodoc
 class _$_LoggedInGoogle implements _LoggedInGoogle {
   const _$_LoggedInGoogle();
 
@@ -535,6 +552,7 @@ abstract class _LoggedInGoogle implements LogInFormEvent {
   const factory _LoggedInGoogle() = _$_LoggedInGoogle;
 }
 
+/// @nodoc
 class _$LogInFormStateTearOff {
   const _$LogInFormStateTearOff();
 
@@ -555,9 +573,11 @@ class _$LogInFormStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $LogInFormState = _$LogInFormStateTearOff();
 
+/// @nodoc
 mixin _$LogInFormState {
   Name get username;
   Password get password;
@@ -568,6 +588,7 @@ mixin _$LogInFormState {
   $LogInFormStateCopyWith<LogInFormState> get copyWith;
 }
 
+/// @nodoc
 abstract class $LogInFormStateCopyWith<$Res> {
   factory $LogInFormStateCopyWith(
           LogInFormState value, $Res Function(LogInFormState) then) =
@@ -580,6 +601,7 @@ abstract class $LogInFormStateCopyWith<$Res> {
       Option<Either<Failure, Unit>> failureOrSuccessOption});
 }
 
+/// @nodoc
 class _$LogInFormStateCopyWithImpl<$Res>
     implements $LogInFormStateCopyWith<$Res> {
   _$LogInFormStateCopyWithImpl(this._value, this._then);
@@ -611,6 +633,7 @@ class _$LogInFormStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$LogInFormStateCopyWith<$Res>
     implements $LogInFormStateCopyWith<$Res> {
   factory _$LogInFormStateCopyWith(
@@ -625,6 +648,7 @@ abstract class _$LogInFormStateCopyWith<$Res>
       Option<Either<Failure, Unit>> failureOrSuccessOption});
 }
 
+/// @nodoc
 class __$LogInFormStateCopyWithImpl<$Res>
     extends _$LogInFormStateCopyWithImpl<$Res>
     implements _$LogInFormStateCopyWith<$Res> {
@@ -658,6 +682,7 @@ class __$LogInFormStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_LogInFormState implements _LogInFormState {
   const _$_LogInFormState(
       {@required this.username,

@@ -9,6 +9,7 @@ part of 'comment.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$CommentTearOff {
   const _$CommentTearOff();
 
@@ -25,9 +26,11 @@ class _$CommentTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Comment = _$CommentTearOff();
 
+/// @nodoc
 mixin _$Comment {
   int get id;
   User get poster;
@@ -39,6 +42,7 @@ mixin _$Comment {
   $CommentCopyWith<Comment> get copyWith;
 }
 
+/// @nodoc
 abstract class $CommentCopyWith<$Res> {
   factory $CommentCopyWith(Comment value, $Res Function(Comment) then) = _$CommentCopyWithImpl<$Res>;
 
@@ -47,6 +51,7 @@ abstract class $CommentCopyWith<$Res> {
   $UserCopyWith<$Res> get poster;
 }
 
+/// @nodoc
 class _$CommentCopyWithImpl<$Res> implements $CommentCopyWith<$Res> {
   _$CommentCopyWithImpl(this._value, this._then);
 
@@ -84,6 +89,7 @@ class _$CommentCopyWithImpl<$Res> implements $CommentCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$CommentCopyWith<$Res> implements $CommentCopyWith<$Res> {
   factory _$CommentCopyWith(_Comment value, $Res Function(_Comment) then) = __$CommentCopyWithImpl<$Res>;
 
@@ -94,6 +100,7 @@ abstract class _$CommentCopyWith<$Res> implements $CommentCopyWith<$Res> {
   $UserCopyWith<$Res> get poster;
 }
 
+/// @nodoc
 class __$CommentCopyWithImpl<$Res> extends _$CommentCopyWithImpl<$Res> implements _$CommentCopyWith<$Res> {
   __$CommentCopyWithImpl(_Comment _value, $Res Function(_Comment) _then) : super(_value, (v) => _then(v as _Comment));
 
@@ -120,6 +127,7 @@ class __$CommentCopyWithImpl<$Res> extends _$CommentCopyWithImpl<$Res> implement
   }
 }
 
+/// @nodoc
 class _$_Comment extends _Comment {
   const _$_Comment({this.id, @required this.poster, @required this.experienceId, @required this.content, @required this.creationDate, @required this.modificationDate})
       : assert(poster != null),
@@ -175,22 +183,22 @@ class _$_Comment extends _Comment {
 
 abstract class _Comment extends Comment {
   const _Comment._() : super._();
-  
+
   const factory _Comment({int id, @required User poster, @required int experienceId, @required CommentContent content, @required PastDate creationDate, @required PastDate modificationDate}) =
-  _$_Comment;
-  
+      _$_Comment;
+
   @override
   int get id;
-  
+
   @override
   User get poster;
-  
+
   @override
   int get experienceId;
 
   @override
   CommentContent get content;
-  
+
   @override
   PastDate get creationDate;
   @override

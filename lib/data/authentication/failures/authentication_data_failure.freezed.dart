@@ -9,6 +9,7 @@ part of 'authentication_data_failure.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$AuthenticationDataFailureTearOff {
   const _$AuthenticationDataFailureTearOff();
 
@@ -18,9 +19,11 @@ class _$AuthenticationDataFailureTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $AuthenticationDataFailure = _$AuthenticationDataFailureTearOff();
 
+/// @nodoc
 mixin _$AuthenticationDataFailure<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -42,10 +45,12 @@ mixin _$AuthenticationDataFailure<T> {
   });
 }
 
+/// @nodoc
 abstract class $AuthenticationDataFailureCopyWith<T, $Res> {
   factory $AuthenticationDataFailureCopyWith(AuthenticationDataFailure<T> value, $Res Function(AuthenticationDataFailure<T>) then) = _$AuthenticationDataFailureCopyWithImpl<T, $Res>;
 }
 
+/// @nodoc
 class _$AuthenticationDataFailureCopyWithImpl<T, $Res> implements $AuthenticationDataFailureCopyWith<T, $Res> {
   _$AuthenticationDataFailureCopyWithImpl(this._value, this._then);
 
@@ -55,10 +60,12 @@ class _$AuthenticationDataFailureCopyWithImpl<T, $Res> implements $Authenticatio
   final $Res Function(AuthenticationDataFailure<T>) _then;
 }
 
+/// @nodoc
 abstract class $InvalidCredentialsCopyWith<T, $Res> {
   factory $InvalidCredentialsCopyWith(InvalidCredentials<T> value, $Res Function(InvalidCredentials<T>) then) = _$InvalidCredentialsCopyWithImpl<T, $Res>;
 }
 
+/// @nodoc
 class _$InvalidCredentialsCopyWithImpl<T, $Res> extends _$AuthenticationDataFailureCopyWithImpl<T, $Res> implements $InvalidCredentialsCopyWith<T, $Res> {
   _$InvalidCredentialsCopyWithImpl(InvalidCredentials<T> _value, $Res Function(InvalidCredentials<T>) _then) : super(_value, (v) => _then(v as InvalidCredentials<T>));
 
@@ -66,6 +73,7 @@ class _$InvalidCredentialsCopyWithImpl<T, $Res> extends _$AuthenticationDataFail
   InvalidCredentials<T> get _value => super._value as InvalidCredentials<T>;
 }
 
+/// @nodoc
 class _$InvalidCredentials<T> implements InvalidCredentials<T> {
   const _$InvalidCredentials();
 

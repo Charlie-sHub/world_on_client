@@ -9,6 +9,7 @@ part of 'experience_navigation_watcher_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$ExperienceNavigationWatcherEventTearOff {
   const _$ExperienceNavigationWatcherEventTearOff();
 
@@ -27,9 +28,11 @@ class _$ExperienceNavigationWatcherEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ExperienceNavigationWatcherEvent = _$ExperienceNavigationWatcherEventTearOff();
 
+/// @nodoc
 mixin _$ExperienceNavigationWatcherEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -56,11 +59,13 @@ mixin _$ExperienceNavigationWatcherEvent {
   });
 }
 
+/// @nodoc
 abstract class $ExperienceNavigationWatcherEventCopyWith<$Res> {
   factory $ExperienceNavigationWatcherEventCopyWith(ExperienceNavigationWatcherEvent value, $Res Function(ExperienceNavigationWatcherEvent) then) =
       _$ExperienceNavigationWatcherEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ExperienceNavigationWatcherEventCopyWithImpl<$Res> implements $ExperienceNavigationWatcherEventCopyWith<$Res> {
   _$ExperienceNavigationWatcherEventCopyWithImpl(this._value, this._then);
 
@@ -70,12 +75,14 @@ class _$ExperienceNavigationWatcherEventCopyWithImpl<$Res> implements $Experienc
   final $Res Function(ExperienceNavigationWatcherEvent) _then;
 }
 
+/// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
 
   $Res call({Option<Experience> experienceOption});
 }
 
+/// @nodoc
 class __$InitializedCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
   __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
 
@@ -92,6 +99,7 @@ class __$InitializedCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherEven
   }
 }
 
+/// @nodoc
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.experienceOption) : assert(experienceOption != null);
 
@@ -174,6 +182,7 @@ abstract class _Initialized implements ExperienceNavigationWatcherEvent {
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
+/// @nodoc
 abstract class _$AllObjectivesAccomplishedCopyWith<$Res> {
   factory _$AllObjectivesAccomplishedCopyWith(_AllObjectivesAccomplished value, $Res Function(_AllObjectivesAccomplished) then) = __$AllObjectivesAccomplishedCopyWithImpl<$Res>;
 
@@ -182,6 +191,7 @@ abstract class _$AllObjectivesAccomplishedCopyWith<$Res> {
   $ExperienceCopyWith<$Res> get experience;
 }
 
+/// @nodoc
 class __$AllObjectivesAccomplishedCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherEventCopyWithImpl<$Res> implements _$AllObjectivesAccomplishedCopyWith<$Res> {
   __$AllObjectivesAccomplishedCopyWithImpl(_AllObjectivesAccomplished _value, $Res Function(_AllObjectivesAccomplished) _then) : super(_value, (v) => _then(v as _AllObjectivesAccomplished));
 
@@ -208,6 +218,7 @@ class __$AllObjectivesAccomplishedCopyWithImpl<$Res> extends _$ExperienceNavigat
   }
 }
 
+/// @nodoc
 class _$_AllObjectivesAccomplished implements _AllObjectivesAccomplished {
   const _$_AllObjectivesAccomplished(this.experience) : assert(experience != null);
 
@@ -289,6 +300,7 @@ abstract class _AllObjectivesAccomplished implements ExperienceNavigationWatcher
   _$AllObjectivesAccomplishedCopyWith<_AllObjectivesAccomplished> get copyWith;
 }
 
+/// @nodoc
 class _$ExperienceNavigationWatcherStateTearOff {
   const _$ExperienceNavigationWatcherStateTearOff();
 
@@ -317,9 +329,11 @@ class _$ExperienceNavigationWatcherStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ExperienceNavigationWatcherState = _$ExperienceNavigationWatcherStateTearOff();
 
+/// @nodoc
 mixin _$ExperienceNavigationWatcherState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -328,7 +342,6 @@ mixin _$ExperienceNavigationWatcherState {
     @required Result navigatingExperience(Experience experience),
     @required Result finishExperience(Experience experience),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
@@ -354,11 +367,13 @@ mixin _$ExperienceNavigationWatcherState {
   });
 }
 
+/// @nodoc
 abstract class $ExperienceNavigationWatcherStateCopyWith<$Res> {
   factory $ExperienceNavigationWatcherStateCopyWith(ExperienceNavigationWatcherState value, $Res Function(ExperienceNavigationWatcherState) then) =
       _$ExperienceNavigationWatcherStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ExperienceNavigationWatcherStateCopyWithImpl<$Res> implements $ExperienceNavigationWatcherStateCopyWith<$Res> {
   _$ExperienceNavigationWatcherStateCopyWithImpl(this._value, this._then);
 
@@ -368,10 +383,12 @@ class _$ExperienceNavigationWatcherStateCopyWithImpl<$Res> implements $Experienc
   final $Res Function(ExperienceNavigationWatcherState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
 
@@ -379,6 +396,7 @@ class __$InitialCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherStateCop
   _Initial get _value => super._value as _Initial;
 }
 
+/// @nodoc
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -462,10 +480,12 @@ abstract class _Initial implements ExperienceNavigationWatcherState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$NoExperienceCopyWith<$Res> {
   factory _$NoExperienceCopyWith(_NoExperience value, $Res Function(_NoExperience) then) = __$NoExperienceCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$NoExperienceCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherStateCopyWithImpl<$Res> implements _$NoExperienceCopyWith<$Res> {
   __$NoExperienceCopyWithImpl(_NoExperience _value, $Res Function(_NoExperience) _then) : super(_value, (v) => _then(v as _NoExperience));
 
@@ -473,6 +493,7 @@ class __$NoExperienceCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherSta
   _NoExperience get _value => super._value as _NoExperience;
 }
 
+/// @nodoc
 class _$_NoExperience implements _NoExperience {
   const _$_NoExperience();
 
@@ -556,6 +577,7 @@ abstract class _NoExperience implements ExperienceNavigationWatcherState {
   const factory _NoExperience() = _$_NoExperience;
 }
 
+/// @nodoc
 abstract class _$NavigatingExperienceCopyWith<$Res> {
   factory _$NavigatingExperienceCopyWith(_NavigatingExperience value, $Res Function(_NavigatingExperience) then) = __$NavigatingExperienceCopyWithImpl<$Res>;
 
@@ -564,6 +586,7 @@ abstract class _$NavigatingExperienceCopyWith<$Res> {
   $ExperienceCopyWith<$Res> get experience;
 }
 
+/// @nodoc
 class __$NavigatingExperienceCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherStateCopyWithImpl<$Res> implements _$NavigatingExperienceCopyWith<$Res> {
   __$NavigatingExperienceCopyWithImpl(_NavigatingExperience _value, $Res Function(_NavigatingExperience) _then) : super(_value, (v) => _then(v as _NavigatingExperience));
 
@@ -590,6 +613,7 @@ class __$NavigatingExperienceCopyWithImpl<$Res> extends _$ExperienceNavigationWa
   }
 }
 
+/// @nodoc
 class _$_NavigatingExperience implements _NavigatingExperience {
   const _$_NavigatingExperience(this.experience) : assert(experience != null);
 
@@ -683,6 +707,7 @@ abstract class _NavigatingExperience implements ExperienceNavigationWatcherState
   _$NavigatingExperienceCopyWith<_NavigatingExperience> get copyWith;
 }
 
+/// @nodoc
 abstract class _$FinishExperienceCopyWith<$Res> {
   factory _$FinishExperienceCopyWith(_FinishExperience value, $Res Function(_FinishExperience) then) = __$FinishExperienceCopyWithImpl<$Res>;
 
@@ -691,6 +716,7 @@ abstract class _$FinishExperienceCopyWith<$Res> {
   $ExperienceCopyWith<$Res> get experience;
 }
 
+/// @nodoc
 class __$FinishExperienceCopyWithImpl<$Res> extends _$ExperienceNavigationWatcherStateCopyWithImpl<$Res> implements _$FinishExperienceCopyWith<$Res> {
   __$FinishExperienceCopyWithImpl(_FinishExperience _value, $Res Function(_FinishExperience) _then) : super(_value, (v) => _then(v as _FinishExperience));
 
@@ -717,6 +743,7 @@ class __$FinishExperienceCopyWithImpl<$Res> extends _$ExperienceNavigationWatche
   }
 }
 
+/// @nodoc
 class _$_FinishExperience implements _FinishExperience {
   const _$_FinishExperience(this.experience) : assert(experience != null);
 

@@ -9,6 +9,7 @@ part of 'reward.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$RewardTearOff {
   const _$RewardTearOff();
 
@@ -24,9 +25,11 @@ class _$RewardTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Reward = _$RewardTearOff();
 
+/// @nodoc
 mixin _$Reward {
   int get id;
   Name get name;
@@ -37,12 +40,14 @@ mixin _$Reward {
   $RewardCopyWith<Reward> get copyWith;
 }
 
+/// @nodoc
 abstract class $RewardCopyWith<$Res> {
   factory $RewardCopyWith(Reward value, $Res Function(Reward) then) = _$RewardCopyWithImpl<$Res>;
 
   $Res call({int id, Name name, EntityDescription description, String imageURL, Option<File> imageFile});
 }
 
+/// @nodoc
 class _$RewardCopyWithImpl<$Res> implements $RewardCopyWith<$Res> {
   _$RewardCopyWithImpl(this._value, this._then);
 
@@ -68,6 +73,7 @@ class _$RewardCopyWithImpl<$Res> implements $RewardCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$RewardCopyWith<$Res> implements $RewardCopyWith<$Res> {
   factory _$RewardCopyWith(_Reward value, $Res Function(_Reward) then) = __$RewardCopyWithImpl<$Res>;
 
@@ -75,6 +81,7 @@ abstract class _$RewardCopyWith<$Res> implements $RewardCopyWith<$Res> {
   $Res call({int id, Name name, EntityDescription description, String imageURL, Option<File> imageFile});
 }
 
+/// @nodoc
 class __$RewardCopyWithImpl<$Res> extends _$RewardCopyWithImpl<$Res> implements _$RewardCopyWith<$Res> {
   __$RewardCopyWithImpl(_Reward _value, $Res Function(_Reward) _then) : super(_value, (v) => _then(v as _Reward));
 
@@ -99,6 +106,7 @@ class __$RewardCopyWithImpl<$Res> extends _$RewardCopyWithImpl<$Res> implements 
   }
 }
 
+/// @nodoc
 class _$_Reward extends _Reward {
   const _$_Reward({this.id, @required this.name, @required this.description, @required this.imageURL, @required this.imageFile})
       : assert(name != null),

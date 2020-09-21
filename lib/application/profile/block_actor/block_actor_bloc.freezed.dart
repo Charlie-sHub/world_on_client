@@ -9,6 +9,7 @@ part of 'block_actor_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$BlockActorEventTearOff {
   const _$BlockActorEventTearOff();
 
@@ -34,9 +35,11 @@ class _$BlockActorEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $BlockActorEvent = _$BlockActorEventTearOff();
 
+/// @nodoc
 mixin _$BlockActorEvent {
   User get user;
 
@@ -70,6 +73,7 @@ mixin _$BlockActorEvent {
   $BlockActorEventCopyWith<BlockActorEvent> get copyWith;
 }
 
+/// @nodoc
 abstract class $BlockActorEventCopyWith<$Res> {
   factory $BlockActorEventCopyWith(
           BlockActorEvent value, $Res Function(BlockActorEvent) then) =
@@ -79,6 +83,7 @@ abstract class $BlockActorEventCopyWith<$Res> {
   $UserCopyWith<$Res> get user;
 }
 
+/// @nodoc
 class _$BlockActorEventCopyWithImpl<$Res>
     implements $BlockActorEventCopyWith<$Res> {
   _$BlockActorEventCopyWithImpl(this._value, this._then);
@@ -107,6 +112,7 @@ class _$BlockActorEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$InitializedCopyWith<$Res>
     implements $BlockActorEventCopyWith<$Res> {
   factory _$InitializedCopyWith(
@@ -119,6 +125,7 @@ abstract class _$InitializedCopyWith<$Res>
   $UserCopyWith<$Res> get user;
 }
 
+/// @nodoc
 class __$InitializedCopyWithImpl<$Res>
     extends _$BlockActorEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
@@ -139,6 +146,7 @@ class __$InitializedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.user) : assert(user != null);
 
@@ -232,6 +240,7 @@ abstract class _Initialized implements BlockActorEvent {
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
+/// @nodoc
 abstract class _$BlockedCopyWith<$Res>
     implements $BlockActorEventCopyWith<$Res> {
   factory _$BlockedCopyWith(_Blocked value, $Res Function(_Blocked) then) =
@@ -243,6 +252,7 @@ abstract class _$BlockedCopyWith<$Res>
   $UserCopyWith<$Res> get user;
 }
 
+/// @nodoc
 class __$BlockedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Res>
     implements _$BlockedCopyWith<$Res> {
   __$BlockedCopyWithImpl(_Blocked _value, $Res Function(_Blocked) _then)
@@ -261,6 +271,7 @@ class __$BlockedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_Blocked implements _Blocked {
   const _$_Blocked(this.user) : assert(user != null);
 
@@ -354,6 +365,7 @@ abstract class _Blocked implements BlockActorEvent {
   _$BlockedCopyWith<_Blocked> get copyWith;
 }
 
+/// @nodoc
 abstract class _$UnBlockedCopyWith<$Res>
     implements $BlockActorEventCopyWith<$Res> {
   factory _$UnBlockedCopyWith(
@@ -366,6 +378,7 @@ abstract class _$UnBlockedCopyWith<$Res>
   $UserCopyWith<$Res> get user;
 }
 
+/// @nodoc
 class __$UnBlockedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Res>
     implements _$UnBlockedCopyWith<$Res> {
   __$UnBlockedCopyWithImpl(_UnBlocked _value, $Res Function(_UnBlocked) _then)
@@ -384,6 +397,7 @@ class __$UnBlockedCopyWithImpl<$Res> extends _$BlockActorEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_UnBlocked implements _UnBlocked {
   const _$_UnBlocked(this.user) : assert(user != null);
 
@@ -477,6 +491,7 @@ abstract class _UnBlocked implements BlockActorEvent {
   _$UnBlockedCopyWith<_UnBlocked> get copyWith;
 }
 
+/// @nodoc
 class _$BlockActorStateTearOff {
   const _$BlockActorStateTearOff();
 
@@ -525,9 +540,11 @@ class _$BlockActorStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $BlockActorState = _$BlockActorStateTearOff();
 
+/// @nodoc
 mixin _$BlockActorState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -577,12 +594,14 @@ mixin _$BlockActorState {
   });
 }
 
+/// @nodoc
 abstract class $BlockActorStateCopyWith<$Res> {
   factory $BlockActorStateCopyWith(
           BlockActorState value, $Res Function(BlockActorState) then) =
       _$BlockActorStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$BlockActorStateCopyWithImpl<$Res>
     implements $BlockActorStateCopyWith<$Res> {
   _$BlockActorStateCopyWithImpl(this._value, this._then);
@@ -592,11 +611,13 @@ class _$BlockActorStateCopyWithImpl<$Res>
   final $Res Function(BlockActorState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
@@ -606,6 +627,7 @@ class __$InitialCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res>
   _Initial get _value => super._value as _Initial;
 }
 
+/// @nodoc
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -713,12 +735,14 @@ abstract class _Initial implements BlockActorState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
   factory _$ActionInProgressCopyWith(
           _ActionInProgress value, $Res Function(_ActionInProgress) then) =
       __$ActionInProgressCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$ActionInProgressCopyWithImpl<$Res>
     extends _$BlockActorStateCopyWithImpl<$Res>
     implements _$ActionInProgressCopyWith<$Res> {
@@ -730,6 +754,7 @@ class __$ActionInProgressCopyWithImpl<$Res>
   _ActionInProgress get _value => super._value as _ActionInProgress;
 }
 
+/// @nodoc
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -837,11 +862,13 @@ abstract class _ActionInProgress implements BlockActorState {
   const factory _ActionInProgress() = _$_ActionInProgress;
 }
 
+/// @nodoc
 abstract class _$BlocksCopyWith<$Res> {
   factory _$BlocksCopyWith(_Blocks value, $Res Function(_Blocks) then) =
       __$BlocksCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$BlocksCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res>
     implements _$BlocksCopyWith<$Res> {
   __$BlocksCopyWithImpl(_Blocks _value, $Res Function(_Blocks) _then)
@@ -851,6 +878,7 @@ class __$BlocksCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res>
   _Blocks get _value => super._value as _Blocks;
 }
 
+/// @nodoc
 class _$_Blocks implements _Blocks {
   const _$_Blocks();
 
@@ -958,12 +986,14 @@ abstract class _Blocks implements BlockActorState {
   const factory _Blocks() = _$_Blocks;
 }
 
+/// @nodoc
 abstract class _$BlocksNotCopyWith<$Res> {
   factory _$BlocksNotCopyWith(
           _BlocksNot value, $Res Function(_BlocksNot) then) =
       __$BlocksNotCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$BlocksNotCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res>
     implements _$BlocksNotCopyWith<$Res> {
   __$BlocksNotCopyWithImpl(_BlocksNot _value, $Res Function(_BlocksNot) _then)
@@ -973,6 +1003,7 @@ class __$BlocksNotCopyWithImpl<$Res> extends _$BlockActorStateCopyWithImpl<$Res>
   _BlocksNot get _value => super._value as _BlocksNot;
 }
 
+/// @nodoc
 class _$_BlocksNot implements _BlocksNot {
   const _$_BlocksNot();
 
@@ -1080,12 +1111,14 @@ abstract class _BlocksNot implements BlockActorState {
   const factory _BlocksNot() = _$_BlocksNot;
 }
 
+/// @nodoc
 abstract class _$BlockSuccessCopyWith<$Res> {
   factory _$BlockSuccessCopyWith(
           _BlockSuccess value, $Res Function(_BlockSuccess) then) =
       __$BlockSuccessCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$BlockSuccessCopyWithImpl<$Res>
     extends _$BlockActorStateCopyWithImpl<$Res>
     implements _$BlockSuccessCopyWith<$Res> {
@@ -1097,6 +1130,7 @@ class __$BlockSuccessCopyWithImpl<$Res>
   _BlockSuccess get _value => super._value as _BlockSuccess;
 }
 
+/// @nodoc
 class _$_BlockSuccess implements _BlockSuccess {
   const _$_BlockSuccess();
 
@@ -1204,6 +1238,7 @@ abstract class _BlockSuccess implements BlockActorState {
   const factory _BlockSuccess() = _$_BlockSuccess;
 }
 
+/// @nodoc
 abstract class _$BlockFailureCopyWith<$Res> {
   factory _$BlockFailureCopyWith(
           _BlockFailure value, $Res Function(_BlockFailure) then) =
@@ -1213,6 +1248,7 @@ abstract class _$BlockFailureCopyWith<$Res> {
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
+/// @nodoc
 class __$BlockFailureCopyWithImpl<$Res>
     extends _$BlockActorStateCopyWithImpl<$Res>
     implements _$BlockFailureCopyWith<$Res> {
@@ -1243,6 +1279,7 @@ class __$BlockFailureCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_BlockFailure implements _BlockFailure {
   const _$_BlockFailure(this.failure) : assert(failure != null);
 
@@ -1364,12 +1401,14 @@ abstract class _BlockFailure implements BlockActorState {
   _$BlockFailureCopyWith<_BlockFailure> get copyWith;
 }
 
+/// @nodoc
 abstract class _$UnBlockSuccessCopyWith<$Res> {
   factory _$UnBlockSuccessCopyWith(
           _UnBlockSuccess value, $Res Function(_UnBlockSuccess) then) =
       __$UnBlockSuccessCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$UnBlockSuccessCopyWithImpl<$Res>
     extends _$BlockActorStateCopyWithImpl<$Res>
     implements _$UnBlockSuccessCopyWith<$Res> {
@@ -1381,6 +1420,7 @@ class __$UnBlockSuccessCopyWithImpl<$Res>
   _UnBlockSuccess get _value => super._value as _UnBlockSuccess;
 }
 
+/// @nodoc
 class _$_UnBlockSuccess implements _UnBlockSuccess {
   const _$_UnBlockSuccess();
 
@@ -1488,6 +1528,7 @@ abstract class _UnBlockSuccess implements BlockActorState {
   const factory _UnBlockSuccess() = _$_UnBlockSuccess;
 }
 
+/// @nodoc
 abstract class _$UnBlockFailureCopyWith<$Res> {
   factory _$UnBlockFailureCopyWith(
           _UnBlockFailure value, $Res Function(_UnBlockFailure) then) =
@@ -1497,6 +1538,7 @@ abstract class _$UnBlockFailureCopyWith<$Res> {
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
+/// @nodoc
 class __$UnBlockFailureCopyWithImpl<$Res>
     extends _$BlockActorStateCopyWithImpl<$Res>
     implements _$UnBlockFailureCopyWith<$Res> {
@@ -1527,6 +1569,7 @@ class __$UnBlockFailureCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_UnBlockFailure implements _UnBlockFailure {
   const _$_UnBlockFailure(this.failure) : assert(failure != null);
 

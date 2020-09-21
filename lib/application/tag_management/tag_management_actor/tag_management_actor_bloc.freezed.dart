@@ -9,6 +9,7 @@ part of 'tag_management_actor_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$TagManagementActorEventTearOff {
   const _$TagManagementActorEventTearOff();
 
@@ -20,9 +21,11 @@ class _$TagManagementActorEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $TagManagementActorEvent = _$TagManagementActorEventTearOff();
 
+/// @nodoc
 mixin _$TagManagementActorEvent {
   Tag get tag;
 
@@ -48,6 +51,7 @@ mixin _$TagManagementActorEvent {
   $TagManagementActorEventCopyWith<TagManagementActorEvent> get copyWith;
 }
 
+/// @nodoc
 abstract class $TagManagementActorEventCopyWith<$Res> {
   factory $TagManagementActorEventCopyWith(TagManagementActorEvent value,
           $Res Function(TagManagementActorEvent) then) =
@@ -57,6 +61,7 @@ abstract class $TagManagementActorEventCopyWith<$Res> {
   $TagCopyWith<$Res> get tag;
 }
 
+/// @nodoc
 class _$TagManagementActorEventCopyWithImpl<$Res>
     implements $TagManagementActorEventCopyWith<$Res> {
   _$TagManagementActorEventCopyWithImpl(this._value, this._then);
@@ -85,6 +90,7 @@ class _$TagManagementActorEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$DeletedCopyWith<$Res>
     implements $TagManagementActorEventCopyWith<$Res> {
   factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
@@ -96,6 +102,7 @@ abstract class _$DeletedCopyWith<$Res>
   $TagCopyWith<$Res> get tag;
 }
 
+/// @nodoc
 class __$DeletedCopyWithImpl<$Res>
     extends _$TagManagementActorEventCopyWithImpl<$Res>
     implements _$DeletedCopyWith<$Res> {
@@ -115,6 +122,7 @@ class __$DeletedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_Deleted implements _Deleted {
   const _$_Deleted(this.tag) : assert(tag != null);
 
@@ -196,6 +204,7 @@ abstract class _Deleted implements TagManagementActorEvent {
   _$DeletedCopyWith<_Deleted> get copyWith;
 }
 
+/// @nodoc
 class _$TagManagementActorStateTearOff {
   const _$TagManagementActorStateTearOff();
 
@@ -222,9 +231,11 @@ class _$TagManagementActorStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $TagManagementActorState = _$TagManagementActorStateTearOff();
 
+/// @nodoc
 mixin _$TagManagementActorState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -258,12 +269,14 @@ mixin _$TagManagementActorState {
   });
 }
 
+/// @nodoc
 abstract class $TagManagementActorStateCopyWith<$Res> {
   factory $TagManagementActorStateCopyWith(TagManagementActorState value,
           $Res Function(TagManagementActorState) then) =
       _$TagManagementActorStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$TagManagementActorStateCopyWithImpl<$Res>
     implements $TagManagementActorStateCopyWith<$Res> {
   _$TagManagementActorStateCopyWithImpl(this._value, this._then);
@@ -273,11 +286,13 @@ class _$TagManagementActorStateCopyWithImpl<$Res>
   final $Res Function(TagManagementActorState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res>
     extends _$TagManagementActorStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
@@ -288,6 +303,7 @@ class __$InitialCopyWithImpl<$Res>
   _Initial get _value => super._value as _Initial;
 }
 
+/// @nodoc
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -371,12 +387,14 @@ abstract class _Initial implements TagManagementActorState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
   factory _$ActionInProgressCopyWith(
           _ActionInProgress value, $Res Function(_ActionInProgress) then) =
       __$ActionInProgressCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$ActionInProgressCopyWithImpl<$Res>
     extends _$TagManagementActorStateCopyWithImpl<$Res>
     implements _$ActionInProgressCopyWith<$Res> {
@@ -388,6 +406,7 @@ class __$ActionInProgressCopyWithImpl<$Res>
   _ActionInProgress get _value => super._value as _ActionInProgress;
 }
 
+/// @nodoc
 class _$_ActionInProgress implements _ActionInProgress {
   const _$_ActionInProgress();
 
@@ -471,6 +490,7 @@ abstract class _ActionInProgress implements TagManagementActorState {
   const factory _ActionInProgress() = _$_ActionInProgress;
 }
 
+/// @nodoc
 abstract class _$DeletionFailureCopyWith<$Res> {
   factory _$DeletionFailureCopyWith(
           _DeletionFailure value, $Res Function(_DeletionFailure) then) =
@@ -480,6 +500,7 @@ abstract class _$DeletionFailureCopyWith<$Res> {
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
+/// @nodoc
 class __$DeletionFailureCopyWithImpl<$Res>
     extends _$TagManagementActorStateCopyWithImpl<$Res>
     implements _$DeletionFailureCopyWith<$Res> {
@@ -510,6 +531,7 @@ class __$DeletionFailureCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_DeletionFailure implements _DeletionFailure {
   const _$_DeletionFailure(this.failure) : assert(failure != null);
 
@@ -607,12 +629,14 @@ abstract class _DeletionFailure implements TagManagementActorState {
   _$DeletionFailureCopyWith<_DeletionFailure> get copyWith;
 }
 
+/// @nodoc
 abstract class _$DeletionSuccessCopyWith<$Res> {
   factory _$DeletionSuccessCopyWith(
           _DeletionSuccess value, $Res Function(_DeletionSuccess) then) =
       __$DeletionSuccessCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$DeletionSuccessCopyWithImpl<$Res>
     extends _$TagManagementActorStateCopyWithImpl<$Res>
     implements _$DeletionSuccessCopyWith<$Res> {
@@ -624,6 +648,7 @@ class __$DeletionSuccessCopyWithImpl<$Res>
   _DeletionSuccess get _value => super._value as _DeletionSuccess;
 }
 
+/// @nodoc
 class _$_DeletionSuccess implements _DeletionSuccess {
   const _$_DeletionSuccess();
 

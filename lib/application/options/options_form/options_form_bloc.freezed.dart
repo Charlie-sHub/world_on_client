@@ -9,6 +9,7 @@ part of 'options_form_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$OptionsFormEventTearOff {
   const _$OptionsFormEventTearOff();
 
@@ -32,9 +33,11 @@ class _$OptionsFormEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $OptionsFormEvent = _$OptionsFormEventTearOff();
 
+/// @nodoc
 mixin _$OptionsFormEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -64,12 +67,14 @@ mixin _$OptionsFormEvent {
   });
 }
 
+/// @nodoc
 abstract class $OptionsFormEventCopyWith<$Res> {
   factory $OptionsFormEventCopyWith(
           OptionsFormEvent value, $Res Function(OptionsFormEvent) then) =
       _$OptionsFormEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$OptionsFormEventCopyWithImpl<$Res>
     implements $OptionsFormEventCopyWith<$Res> {
   _$OptionsFormEventCopyWithImpl(this._value, this._then);
@@ -79,6 +84,7 @@ class _$OptionsFormEventCopyWithImpl<$Res>
   final $Res Function(OptionsFormEvent) _then;
 }
 
+/// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(
           _Initialized value, $Res Function(_Initialized) then) =
@@ -86,6 +92,7 @@ abstract class _$InitializedCopyWith<$Res> {
   $Res call({Option<Options> optionsOption});
 }
 
+/// @nodoc
 class __$InitializedCopyWithImpl<$Res>
     extends _$OptionsFormEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
@@ -108,6 +115,7 @@ class __$InitializedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.optionsOption) : assert(optionsOption != null);
 
@@ -200,6 +208,7 @@ abstract class _Initialized implements OptionsFormEvent {
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
+/// @nodoc
 abstract class _$LanguageCodeChangedCopyWith<$Res> {
   factory _$LanguageCodeChangedCopyWith(_LanguageCodeChanged value,
           $Res Function(_LanguageCodeChanged) then) =
@@ -207,6 +216,7 @@ abstract class _$LanguageCodeChangedCopyWith<$Res> {
   $Res call({String languageCode});
 }
 
+/// @nodoc
 class __$LanguageCodeChangedCopyWithImpl<$Res>
     extends _$OptionsFormEventCopyWithImpl<$Res>
     implements _$LanguageCodeChangedCopyWith<$Res> {
@@ -227,6 +237,7 @@ class __$LanguageCodeChangedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_LanguageCodeChanged implements _LanguageCodeChanged {
   const _$_LanguageCodeChanged(this.languageCode)
       : assert(languageCode != null);
@@ -322,12 +333,14 @@ abstract class _LanguageCodeChanged implements OptionsFormEvent {
   _$LanguageCodeChangedCopyWith<_LanguageCodeChanged> get copyWith;
 }
 
+/// @nodoc
 abstract class _$SubmittedCopyWith<$Res> {
   factory _$SubmittedCopyWith(
           _Submitted value, $Res Function(_Submitted) then) =
       __$SubmittedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$SubmittedCopyWithImpl<$Res>
     extends _$OptionsFormEventCopyWithImpl<$Res>
     implements _$SubmittedCopyWith<$Res> {
@@ -338,6 +351,7 @@ class __$SubmittedCopyWithImpl<$Res>
   _Submitted get _value => super._value as _Submitted;
 }
 
+/// @nodoc
 class _$_Submitted implements _Submitted {
   const _$_Submitted();
 
@@ -415,6 +429,7 @@ abstract class _Submitted implements OptionsFormEvent {
   const factory _Submitted() = _$_Submitted;
 }
 
+/// @nodoc
 class _$OptionsFormStateTearOff {
   const _$OptionsFormStateTearOff();
 
@@ -433,9 +448,11 @@ class _$OptionsFormStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $OptionsFormState = _$OptionsFormStateTearOff();
 
+/// @nodoc
 mixin _$OptionsFormState {
   Options get options;
   bool get showErrorMessages;
@@ -445,6 +462,7 @@ mixin _$OptionsFormState {
   $OptionsFormStateCopyWith<OptionsFormState> get copyWith;
 }
 
+/// @nodoc
 abstract class $OptionsFormStateCopyWith<$Res> {
   factory $OptionsFormStateCopyWith(
           OptionsFormState value, $Res Function(OptionsFormState) then) =
@@ -458,6 +476,7 @@ abstract class $OptionsFormStateCopyWith<$Res> {
   $OptionsCopyWith<$Res> get options;
 }
 
+/// @nodoc
 class _$OptionsFormStateCopyWithImpl<$Res>
     implements $OptionsFormStateCopyWith<$Res> {
   _$OptionsFormStateCopyWithImpl(this._value, this._then);
@@ -497,6 +516,7 @@ class _$OptionsFormStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$OptionsFormStateCopyWith<$Res>
     implements $OptionsFormStateCopyWith<$Res> {
   factory _$OptionsFormStateCopyWith(
@@ -513,6 +533,7 @@ abstract class _$OptionsFormStateCopyWith<$Res>
   $OptionsCopyWith<$Res> get options;
 }
 
+/// @nodoc
 class __$OptionsFormStateCopyWithImpl<$Res>
     extends _$OptionsFormStateCopyWithImpl<$Res>
     implements _$OptionsFormStateCopyWith<$Res> {
@@ -544,6 +565,7 @@ class __$OptionsFormStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_OptionsFormState implements _OptionsFormState {
   const _$_OptionsFormState(
       {@required this.options,

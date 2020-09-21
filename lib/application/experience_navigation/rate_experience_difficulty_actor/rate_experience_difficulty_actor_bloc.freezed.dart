@@ -9,6 +9,7 @@ part of 'rate_experience_difficulty_actor_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$RateExperienceDifficultyActorEventTearOff {
   const _$RateExperienceDifficultyActorEventTearOff();
 
@@ -27,10 +28,12 @@ class _$RateExperienceDifficultyActorEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $RateExperienceDifficultyActorEvent =
     _$RateExperienceDifficultyActorEventTearOff();
 
+/// @nodoc
 mixin _$RateExperienceDifficultyActorEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -56,6 +59,7 @@ mixin _$RateExperienceDifficultyActorEvent {
   });
 }
 
+/// @nodoc
 abstract class $RateExperienceDifficultyActorEventCopyWith<$Res> {
   factory $RateExperienceDifficultyActorEventCopyWith(
           RateExperienceDifficultyActorEvent value,
@@ -63,6 +67,7 @@ abstract class $RateExperienceDifficultyActorEventCopyWith<$Res> {
       _$RateExperienceDifficultyActorEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$RateExperienceDifficultyActorEventCopyWithImpl<$Res>
     implements $RateExperienceDifficultyActorEventCopyWith<$Res> {
   _$RateExperienceDifficultyActorEventCopyWithImpl(this._value, this._then);
@@ -72,6 +77,7 @@ class _$RateExperienceDifficultyActorEventCopyWithImpl<$Res>
   final $Res Function(RateExperienceDifficultyActorEvent) _then;
 }
 
+/// @nodoc
 abstract class _$DifficultyChangedCopyWith<$Res> {
   factory _$DifficultyChangedCopyWith(
           _DifficultyChanged value, $Res Function(_DifficultyChanged) then) =
@@ -79,6 +85,7 @@ abstract class _$DifficultyChangedCopyWith<$Res> {
   $Res call({int difficultyRating});
 }
 
+/// @nodoc
 class __$DifficultyChangedCopyWithImpl<$Res>
     extends _$RateExperienceDifficultyActorEventCopyWithImpl<$Res>
     implements _$DifficultyChangedCopyWith<$Res> {
@@ -101,6 +108,7 @@ class __$DifficultyChangedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_DifficultyChanged implements _DifficultyChanged {
   const _$_DifficultyChanged(this.difficultyRating)
       : assert(difficultyRating != null);
@@ -190,6 +198,7 @@ abstract class _DifficultyChanged
   _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith;
 }
 
+/// @nodoc
 abstract class _$DifficultyRatedCopyWith<$Res> {
   factory _$DifficultyRatedCopyWith(
           _DifficultyRated value, $Res Function(_DifficultyRated) then) =
@@ -199,6 +208,7 @@ abstract class _$DifficultyRatedCopyWith<$Res> {
   $ExperienceCopyWith<$Res> get experience;
 }
 
+/// @nodoc
 class __$DifficultyRatedCopyWithImpl<$Res>
     extends _$RateExperienceDifficultyActorEventCopyWithImpl<$Res>
     implements _$DifficultyRatedCopyWith<$Res> {
@@ -229,6 +239,7 @@ class __$DifficultyRatedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_DifficultyRated implements _DifficultyRated {
   const _$_DifficultyRated(this.experience) : assert(experience != null);
 
@@ -315,6 +326,7 @@ abstract class _DifficultyRated implements RateExperienceDifficultyActorEvent {
   _$DifficultyRatedCopyWith<_DifficultyRated> get copyWith;
 }
 
+/// @nodoc
 class _$RateExperienceDifficultyActorStateTearOff {
   const _$RateExperienceDifficultyActorStateTearOff();
 
@@ -331,10 +343,12 @@ class _$RateExperienceDifficultyActorStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $RateExperienceDifficultyActorState =
     _$RateExperienceDifficultyActorStateTearOff();
 
+/// @nodoc
 mixin _$RateExperienceDifficultyActorState {
   int get difficulty;
   bool get isSubmitting;
@@ -344,6 +358,7 @@ mixin _$RateExperienceDifficultyActorState {
       RateExperienceDifficultyActorState> get copyWith;
 }
 
+/// @nodoc
 abstract class $RateExperienceDifficultyActorStateCopyWith<$Res> {
   factory $RateExperienceDifficultyActorStateCopyWith(
           RateExperienceDifficultyActorState value,
@@ -355,6 +370,7 @@ abstract class $RateExperienceDifficultyActorStateCopyWith<$Res> {
       Option<Either<Failure, Unit>> failureOrSuccessOption});
 }
 
+/// @nodoc
 class _$RateExperienceDifficultyActorStateCopyWithImpl<$Res>
     implements $RateExperienceDifficultyActorStateCopyWith<$Res> {
   _$RateExperienceDifficultyActorStateCopyWithImpl(this._value, this._then);
@@ -380,6 +396,7 @@ class _$RateExperienceDifficultyActorStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$RateExperienceDifficultyActorStateCopyWith<$Res>
     implements $RateExperienceDifficultyActorStateCopyWith<$Res> {
   factory _$RateExperienceDifficultyActorStateCopyWith(
@@ -393,6 +410,7 @@ abstract class _$RateExperienceDifficultyActorStateCopyWith<$Res>
       Option<Either<Failure, Unit>> failureOrSuccessOption});
 }
 
+/// @nodoc
 class __$RateExperienceDifficultyActorStateCopyWithImpl<$Res>
     extends _$RateExperienceDifficultyActorStateCopyWithImpl<$Res>
     implements _$RateExperienceDifficultyActorStateCopyWith<$Res> {
@@ -422,6 +440,7 @@ class __$RateExperienceDifficultyActorStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_RateExperienceDifficultyActorState
     implements _RateExperienceDifficultyActorState {
   const _$_RateExperienceDifficultyActorState(

@@ -9,6 +9,7 @@ part of 'system.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$SystemTearOff {
   const _$SystemTearOff();
 
@@ -23,9 +24,11 @@ class _$SystemTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $System = _$SystemTearOff();
 
+/// @nodoc
 mixin _$System {
   int get id;
   String get name;
@@ -35,12 +38,14 @@ mixin _$System {
   $SystemCopyWith<System> get copyWith;
 }
 
+/// @nodoc
 abstract class $SystemCopyWith<$Res> {
   factory $SystemCopyWith(System value, $Res Function(System) then) = _$SystemCopyWithImpl<$Res>;
 
   $Res call({int id, String name, String type, String company});
 }
 
+/// @nodoc
 class _$SystemCopyWithImpl<$Res> implements $SystemCopyWith<$Res> {
   _$SystemCopyWithImpl(this._value, this._then);
 
@@ -64,6 +69,7 @@ class _$SystemCopyWithImpl<$Res> implements $SystemCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$SystemCopyWith<$Res> implements $SystemCopyWith<$Res> {
   factory _$SystemCopyWith(_System value, $Res Function(_System) then) = __$SystemCopyWithImpl<$Res>;
 
@@ -71,6 +77,7 @@ abstract class _$SystemCopyWith<$Res> implements $SystemCopyWith<$Res> {
   $Res call({int id, String name, String type, String company});
 }
 
+/// @nodoc
 class __$SystemCopyWithImpl<$Res> extends _$SystemCopyWithImpl<$Res> implements _$SystemCopyWith<$Res> {
   __$SystemCopyWithImpl(_System _value, $Res Function(_System) _then) : super(_value, (v) => _then(v as _System));
 
@@ -93,6 +100,7 @@ class __$SystemCopyWithImpl<$Res> extends _$SystemCopyWithImpl<$Res> implements 
   }
 }
 
+/// @nodoc
 class _$_System extends _System {
   const _$_System({this.id, @required this.name, @required this.type, @required this.company})
       : assert(name != null),

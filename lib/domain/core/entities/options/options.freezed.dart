@@ -9,6 +9,7 @@ part of 'options.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$OptionsTearOff {
   const _$OptionsTearOff();
 
@@ -21,9 +22,11 @@ class _$OptionsTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Options = _$OptionsTearOff();
 
+/// @nodoc
 mixin _$Options {
   int get id;
   String get languageCode;
@@ -31,12 +34,14 @@ mixin _$Options {
   $OptionsCopyWith<Options> get copyWith;
 }
 
+/// @nodoc
 abstract class $OptionsCopyWith<$Res> {
   factory $OptionsCopyWith(Options value, $Res Function(Options) then) = _$OptionsCopyWithImpl<$Res>;
 
   $Res call({int id, String languageCode});
 }
 
+/// @nodoc
 class _$OptionsCopyWithImpl<$Res> implements $OptionsCopyWith<$Res> {
   _$OptionsCopyWithImpl(this._value, this._then);
 
@@ -56,6 +61,7 @@ class _$OptionsCopyWithImpl<$Res> implements $OptionsCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$OptionsCopyWith<$Res> implements $OptionsCopyWith<$Res> {
   factory _$OptionsCopyWith(_Options value, $Res Function(_Options) then) = __$OptionsCopyWithImpl<$Res>;
 
@@ -63,6 +69,7 @@ abstract class _$OptionsCopyWith<$Res> implements $OptionsCopyWith<$Res> {
   $Res call({int id, String languageCode});
 }
 
+/// @nodoc
 class __$OptionsCopyWithImpl<$Res> extends _$OptionsCopyWithImpl<$Res> implements _$OptionsCopyWith<$Res> {
   __$OptionsCopyWithImpl(_Options _value, $Res Function(_Options) _then) : super(_value, (v) => _then(v as _Options));
 
@@ -81,6 +88,7 @@ class __$OptionsCopyWithImpl<$Res> extends _$OptionsCopyWithImpl<$Res> implement
   }
 }
 
+/// @nodoc
 class _$_Options extends _Options {
   const _$_Options({this.id, @required this.languageCode})
       : assert(languageCode != null),
