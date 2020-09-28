@@ -39,8 +39,7 @@ class SearchTagsByNameWatcherBloc extends Bloc<SearchTagsByNameWatcherEvent, Sea
   Stream<SearchTagsByNameWatcherState> _onWatchTagsFoundByNameStarted(_WatchTagsFoundByNameStarted event) async* {
     yield const SearchTagsByNameWatcherState.searchInProgress();
     await _tagsStreamSubscription?.cancel();
-    final _searchTagsByName = getIt<WatchSearchTagsByName>();
-    _tagsStreamSubscription = _searchTagsByName(
+    _tagsStreamSubscription = getIt<WatchSearchTagsByName>()(
       Params(name: event.searchTerm),
     ).listen(
       (_failureOrTags) => add(SearchTagsByNameWatcherEvent.resultsReceived(_failureOrTags)),

@@ -39,8 +39,7 @@ class SearchExperiencesByNameWatcherBloc extends Bloc<SearchExperiencesByNameWat
   Stream<SearchExperiencesByNameWatcherState> _onWatchExperiencesFoundByNameStarted(_WatchExperiencesFoundByNameStarted event) async* {
     yield const SearchExperiencesByNameWatcherState.searchInProgress();
     await _experiencesSearchStreamSubscription?.cancel();
-    final _searchExperiencesByName = getIt<WatchSearchExperiencesByName>();
-    _experiencesSearchStreamSubscription = _searchExperiencesByName(
+    _experiencesSearchStreamSubscription = getIt<WatchSearchExperiencesByName>()(
       Params(name: event.searchTerm),
     ).listen(
       (_failureOrExperience) => add(SearchExperiencesByNameWatcherEvent.searchResultsReceived(_failureOrExperience)),

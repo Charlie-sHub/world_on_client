@@ -40,9 +40,10 @@ class AchievementManagementWatcherBloc extends Bloc<AchievementManagementWatcher
   Stream<AchievementManagementWatcherState> _onWatchAllAchievementsStarted(_) async* {
     yield const AchievementManagementWatcherState.loadInProgress();
     await _achievementsStreamSubscription?.cancel();
-    final _getAllAchievements = getIt<WatchAllAchievements>();
-    _achievementsStreamSubscription = _getAllAchievements(getIt<NoParams>()).listen(
-      (_failureOrAchievements) => add(AchievementManagementWatcherEvent.resultsReceived(_failureOrAchievements)),
+    _achievementsStreamSubscription = getIt<WatchAllAchievements>()(getIt<NoParams>()).listen(
+      (_failureOrAchievements) => add(
+        AchievementManagementWatcherEvent.resultsReceived(_failureOrAchievements),
+      ),
     );
   }
 

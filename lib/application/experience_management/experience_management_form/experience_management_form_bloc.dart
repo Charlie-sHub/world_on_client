@@ -61,13 +61,11 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
     );
     if (state.experience.isValid) {
       if (state.isEditing) {
-        final _editExperience = getIt<edit_experience.EditExperience>();
-        _failureOrUnit = await _editExperience(
+        _failureOrUnit = await getIt<edit_experience.EditExperience>()(
           edit_experience.Params(experience: state.experience),
         );
       } else if (state.experience.imageAssetsOption.isSome()) {
-        final _createExperience = getIt<create_experience.CreateExperience>();
-        _failureOrUnit = await _createExperience(
+        _failureOrUnit = await getIt<create_experience.CreateExperience>()(
           create_experience.Params(experience: state.experience),
         );
       }
@@ -157,13 +155,12 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
   Stream<ExperienceManagementFormState> _onInitialized(_Initialized event) async* {
     yield await event.experienceOption.fold(
       () async {
-        final _getLoggedInUser = getIt<GetLoggedInUser>();
-        final _currentUserOption = await _getLoggedInUser(getIt<NoParams>());
+        final _currentUserOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
         final _currentUser = _currentUserOption.fold(
           () => throw UnAuthenticatedError(),
           id,
         );
-        // TODO: Initialize the coordinates
+        // TODO: Initialize the map with the user's coordinates
         // So the camera position of the map is that of the user's current position
         return state.copyWith(
           experience: Experience.empty().copyWith(

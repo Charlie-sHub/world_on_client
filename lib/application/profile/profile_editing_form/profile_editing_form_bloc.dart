@@ -53,8 +53,7 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
       final _userToEdit = state.user.copyWith(
         modificationDate: PastDate(DateTime.now()),
       );
-      final _editUser = getIt<EditUser>();
-      _failureOrUnit = await _editUser(
+      _failureOrUnit = await getIt<EditUser>()(
         Params(userToEdit: _userToEdit),
       );
     }
@@ -68,7 +67,11 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
   Stream<ProfileEditingFormState> _onInterestsChanged(_InterestsChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
-        interestsIds: event.interests.map((_tag) => _tag.id).toSet(),
+        interestsIds: event.interests
+            .map(
+              (_tag) => _tag.id,
+            )
+            .toSet(),
       ),
       failureOrSuccessOption: none(),
     );
@@ -156,14 +159,14 @@ class ProfileEditingFormBloc extends Bloc<ProfileEditingFormEvent, ProfileEditin
   }
 
   Stream<ProfileEditingFormState> _onInitialized(_Initialized event) async* {
-    final user = event.userToEdit;
+    final _user = event.userToEdit;
     yield state.copyWith(
-      user: user,
+      user: _user,
       passwordConfirmator: PasswordConfirmator(
-        password: user.password.getOrCrash(),
-        confirmation: user.password.getOrCrash(),
+        password: _user.password.getOrCrash(),
+        confirmation: _user.password.getOrCrash(),
       ),
-      passwordToCompare: user.password.getOrCrash(),
+      passwordToCompare: _user.password.getOrCrash(),
     );
   }
 }

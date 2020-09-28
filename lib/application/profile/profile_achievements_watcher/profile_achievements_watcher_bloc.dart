@@ -20,7 +20,7 @@ part 'profile_achievements_watcher_state.dart';
 @injectable
 class ProfileAchievementsWatcherBloc extends Bloc<ProfileAchievementsWatcherEvent, ProfileAchievementsWatcherState> {
   ProfileAchievementsWatcherBloc() : super(const ProfileAchievementsWatcherState.initial());
-  StreamSubscription<Either<Failure, KtList<Achievement>>> _userAchieveemntsStreamSubscription;
+  StreamSubscription<Either<Failure, KtList<Achievement>>> _userAchievementsStreamSubscription;
 
   @override
   Stream<ProfileAchievementsWatcherState> mapEventToState(ProfileAchievementsWatcherEvent event) async* {
@@ -39,9 +39,8 @@ class ProfileAchievementsWatcherBloc extends Bloc<ProfileAchievementsWatcherEven
 
   Stream<ProfileAchievementsWatcherState> _onWatchAchievementsStarted(_WatchAchievementsStarted event) async* {
     yield const ProfileAchievementsWatcherState.loadInProgress();
-    await _userAchieveemntsStreamSubscription?.cancel();
-    final _loadAchievements = getIt<WatchUserAchievements>();
-    _userAchieveemntsStreamSubscription = _loadAchievements(
+    await _userAchievementsStreamSubscription?.cancel();
+    _userAchievementsStreamSubscription = getIt<WatchUserAchievements>()(
       Params(userId: event.user.id),
     ).listen(
       (_failureOrAchievements) => add(ProfileAchievementsWatcherEvent.resultsReceived(_failureOrAchievements)),
@@ -50,7 +49,7 @@ class ProfileAchievementsWatcherBloc extends Bloc<ProfileAchievementsWatcherEven
 
   @override
   Future<void> close() async {
-    await _userAchieveemntsStreamSubscription?.cancel();
+    await _userAchievementsStreamSubscription?.cancel();
     return super.close();
   }
 }

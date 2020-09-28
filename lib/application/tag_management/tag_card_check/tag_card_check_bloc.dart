@@ -28,8 +28,7 @@ class TagCardCheckBloc extends Bloc<TagCardCheckEvent, TagCardCheckState> {
   }
 
   Stream<TagCardCheckState> _onInitialized(_Initialized event) async* {
-    final _getLoggedInUser = getIt<GetLoggedInUser>();
-    final _userOption = await _getLoggedInUser(getIt<NoParams>());
+    final _userOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
     final _user = _userOption.fold(
       () => throw UnAuthenticatedError(),
       id,

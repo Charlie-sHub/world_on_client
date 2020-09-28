@@ -33,8 +33,7 @@ class ExperienceCardActorBloc extends Bloc<ExperienceCardActorEvent, ExperienceC
 
   Stream<ExperienceCardActorState> _onAddedExperienceToLog(_AddedExperienceToLog event) async* {
     yield const ExperienceCardActorState.actionInProgress();
-    final _addExperienceToLog = getIt<add_experience_to_log.AddExperienceToLog>();
-    final _failureOrUnit = await _addExperienceToLog(
+    final _failureOrUnit = await getIt<add_experience_to_log.AddExperienceToLog>()(
       add_experience_to_log.Params(experienceId: event.experience.id),
     );
     yield _failureOrUnit.fold(
@@ -45,8 +44,7 @@ class ExperienceCardActorBloc extends Bloc<ExperienceCardActorEvent, ExperienceC
 
   Stream<ExperienceCardActorState> _onDismissedExperienceFromLog(_DismissedExperienceFromLog event) async* {
     yield const ExperienceCardActorState.actionInProgress();
-    final _dismissExperienceFromLog = getIt<dismiss_experience_from_log.DismissExperienceFromLog>();
-    final _failureOrUnit = await _dismissExperienceFromLog(
+    final _failureOrUnit = await getIt<dismiss_experience_from_log.DismissExperienceFromLog>()(
       dismiss_experience_from_log.Params(experienceId: event.experience.id),
     );
     yield _failureOrUnit.fold(
@@ -56,8 +54,7 @@ class ExperienceCardActorBloc extends Bloc<ExperienceCardActorEvent, ExperienceC
   }
 
   Stream<ExperienceCardActorState> _onInitialized(_Initialized event) async* {
-    final _getLoggedInUser = getIt<GetLoggedInUser>();
-    final _loggedInUserOption = await _getLoggedInUser(getIt<NoParams>());
+    final _loggedInUserOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
     final _loggedInUser = _loggedInUserOption.fold(
       () => throw UnAuthenticatedError(),
       id,

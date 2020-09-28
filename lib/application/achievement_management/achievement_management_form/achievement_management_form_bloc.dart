@@ -50,15 +50,13 @@ class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent,
     );
     if (state.achievement.isValid) {
       if (state.isEditing) {
-        final _editAchievement = getIt<edit_achievement.EditAchievement>();
-        _failureOrUnit = await _editAchievement(
+        _failureOrUnit = await getIt<edit_achievement.EditAchievement>()(
           edit_achievement.Params(
             achievement: state.achievement,
           ),
         );
       } else if (state.achievement.imageFile.isSome()) {
-        final _createAchievement = getIt<create_achievement.CreateAchievement>();
-        _failureOrUnit = await _createAchievement(
+        _failureOrUnit = await getIt<create_achievement.CreateAchievement>()(
           create_achievement.Params(
             achievement: state.achievement,
           ),
@@ -120,8 +118,7 @@ class AchievementManagementFormBloc extends Bloc<AchievementManagementFormEvent,
   Stream<AchievementManagementFormState> _onInitialized(_Initialized event) async* {
     yield await event.achievementOption.fold(
       () async {
-        final _getLoggedInUser = getIt<GetLoggedInUser>();
-        final _currentUserOption = await _getLoggedInUser(getIt<NoParams>());
+        final _currentUserOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
         final _currentUser = _currentUserOption.fold(
           () => throw UnAuthenticatedError(),
           id,

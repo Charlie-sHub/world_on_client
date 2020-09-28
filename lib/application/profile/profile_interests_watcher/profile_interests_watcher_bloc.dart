@@ -40,8 +40,7 @@ class ProfileInterestsWatcherBloc extends Bloc<ProfileInterestsWatcherEvent, Pro
   Stream<ProfileInterestsWatcherState> _onWatchInterestsStarted(_WatchInterestsStarted event) async* {
     yield const ProfileInterestsWatcherState.loadInProgress();
     await _userInterestsStreamSubscription?.cancel();
-    final _loadInterests = getIt<WatchUserInterests>();
-    _userInterestsStreamSubscription = _loadInterests(
+    _userInterestsStreamSubscription = getIt<WatchUserInterests>()(
       Params(userId: event.user.id),
     ).listen(
       (_failureOrTags) => add(ProfileInterestsWatcherEvent.resultsReceived(_failureOrTags)),

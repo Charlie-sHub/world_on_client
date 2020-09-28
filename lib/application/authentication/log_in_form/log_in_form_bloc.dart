@@ -32,12 +32,11 @@ class LogInFormBloc extends Bloc<LogInFormEvent, LogInFormState> {
   }
 
   Stream<LogInFormState> _onLoggedInGoogle(_) async* {
-    final _logInGoogle = getIt<LogInGoogle>();
     yield state.copyWith(
       isSubmitting: true,
       failureOrSuccessOption: none(),
     );
-    final _failureOrSuccess = await _logInGoogle(getIt<NoParams>());
+    final _failureOrSuccess = await getIt<LogInGoogle>()(getIt<NoParams>());
     yield state.copyWith(
       isSubmitting: false,
       failureOrSuccessOption: some(_failureOrSuccess),
@@ -47,12 +46,11 @@ class LogInFormBloc extends Bloc<LogInFormEvent, LogInFormState> {
   Stream<LogInFormState> _onLoggedIn(_) async* {
     Either<Failure, Unit> _failureOrSuccess;
     if (state.username.isValid() && state.password.isValid()) {
-      final _logIn = getIt<LogIn>();
       yield state.copyWith(
         isSubmitting: true,
         failureOrSuccessOption: none(),
       );
-      _failureOrSuccess = await _logIn(
+      _failureOrSuccess = await getIt<LogIn>()(
         Params(
           username: state.username,
           password: state.password,

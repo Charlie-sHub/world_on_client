@@ -33,8 +33,7 @@ class TagCardActorBloc extends Bloc<TagCardActorEvent, TagCardActorState> {
 
   Stream<TagCardActorState> _onAddedToInterests(_AddedToInterests event) async* {
     yield const TagCardActorState.actionInProgress();
-    final _addToInterests = getIt<add_tag_to_interests.AddTagToInterests>();
-    final _failureOrUnit = await _addToInterests(
+    final _failureOrUnit = await getIt<add_tag_to_interests.AddTagToInterests>()(
       add_tag_to_interests.Params(tag: event.tag),
     );
     yield _failureOrUnit.fold(
@@ -45,8 +44,7 @@ class TagCardActorBloc extends Bloc<TagCardActorEvent, TagCardActorState> {
 
   Stream<TagCardActorState> _onDismissedFromInterests(_DismissedFromInterests event) async* {
     yield const TagCardActorState.actionInProgress();
-    final _dismissFromInterests = getIt<dismiss_tag_from_interests.DismissTagFromInterests>();
-    final _failureOrUnit = await _dismissFromInterests(
+    final _failureOrUnit = await getIt<dismiss_tag_from_interests.DismissTagFromInterests>()(
       dismiss_tag_from_interests.Params(tag: event.tag),
     );
     yield _failureOrUnit.fold(
@@ -56,8 +54,7 @@ class TagCardActorBloc extends Bloc<TagCardActorEvent, TagCardActorState> {
   }
 
   Stream<TagCardActorState> _onInitialized(_Initialized event) async* {
-    final _getLoggedInUser = getIt<GetLoggedInUser>();
-    final _userOption = await _getLoggedInUser(getIt<NoParams>());
+    final _userOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
     final _user = _userOption.fold(
       () => throw UnAuthenticatedError(),
       id,

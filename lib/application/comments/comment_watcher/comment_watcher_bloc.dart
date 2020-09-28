@@ -37,11 +37,9 @@ class CommentWatcherBloc extends Bloc<CommentWatcherEvent, CommentWatcherState> 
   Stream<CommentWatcherState> _onWatchExperienceCommentsStarted(_WatchExperienceCommentsStarted event) async* {
     yield const CommentWatcherState.loadInProgress();
     await _experienceCommentsStreamSubscription?.cancel();
-    final _getExperienceComments = getIt<WatchExperienceComments>();
-    final _params = Params(
-      experienceId: event.experienceId,
-    );
-    _experienceCommentsStreamSubscription = _getExperienceComments(_params).listen(
+    _experienceCommentsStreamSubscription = getIt<WatchExperienceComments>()(
+      Params(experienceId: event.experienceId),
+    ).listen(
       (_failureOrComments) => add(CommentWatcherEvent.resultsReceived(_failureOrComments)),
     );
   }

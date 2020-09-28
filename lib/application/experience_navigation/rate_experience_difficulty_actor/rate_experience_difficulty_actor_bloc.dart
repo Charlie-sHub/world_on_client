@@ -37,11 +37,9 @@ class RateExperienceDifficultyActorBloc extends Bloc<RateExperienceDifficultyAct
       isSubmitting: true,
       failureOrSuccessOption: none(),
     );
-    final _difficulty = Difficulty(state.difficulty);
-    final _rateDifficulty = getIt<RateDifficulty>();
-    final _failureOrUnit = await _rateDifficulty(
+    final _failureOrUnit = await getIt<RateDifficulty>()(
       Params(
-        difficulty: _difficulty,
+        difficulty: Difficulty(state.difficulty),
         experienceId: event.experience.id,
       ),
     );

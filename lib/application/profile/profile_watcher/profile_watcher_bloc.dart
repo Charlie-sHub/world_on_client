@@ -30,8 +30,7 @@ class ProfileWatcherBloc extends Bloc<ProfileWatcherEvent, ProfileWatcherState> 
     yield const ProfileWatcherState.loadInProgress();
     yield* event.userOption.fold(
       () async* {
-        final _getLoggedInUser = getIt<GetLoggedInUser>();
-        final _loggedInUserOption = await _getLoggedInUser(getIt<NoParams>());
+        final _loggedInUserOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
         yield _loggedInUserOption.fold(
           // Maybe GetLoggedInUser should be reworked so it returns possible failures
           () => const ProfileWatcherState.loadFailure(),
@@ -39,8 +38,7 @@ class ProfileWatcherBloc extends Bloc<ProfileWatcherEvent, ProfileWatcherState> 
         );
       },
       (user) async* {
-        final _isLoggedInUser = getIt<IsLoggedInUser>();
-        final _isOwn = await _isLoggedInUser(
+        final _isOwn = await getIt<IsLoggedInUser>()(
           Params(userToCompareWith: user),
         );
         if (_isOwn) {

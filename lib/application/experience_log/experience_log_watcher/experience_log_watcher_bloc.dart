@@ -38,8 +38,7 @@ class ExperienceLogWatcherBloc extends Bloc<ExperienceLogWatcherEvent, Experienc
   Stream<ExperienceLogWatcherState> _onWatchExperiencesLogStarted(_) async* {
     yield const ExperienceLogWatcherState.loadInProgress();
     _experienceLogStreamSubscription?.cancel();
-    final _loadUserLog = getIt<WatchUserLog>();
-    _experienceLogStreamSubscription = _loadUserLog(getIt<NoParams>()).listen(
+    _experienceLogStreamSubscription = getIt<WatchUserLog>()(getIt<NoParams>()).listen(
       (_failureOrExperiences) => add(ExperienceLogWatcherEvent.resultsReceived(_failureOrExperiences)),
     );
   }

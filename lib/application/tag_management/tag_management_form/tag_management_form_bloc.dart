@@ -41,15 +41,13 @@ class TagManagementFormBloc extends Bloc<TagManagementFormEvent, TagManagementFo
     );
     if (state.tag.isValid) {
       if (state.isEditing) {
-        final _editTag = getIt<edit_tag.EditTag>();
-        _failureOrUnit = await _editTag(
+        _failureOrUnit = await getIt<edit_tag.EditTag>()(
           edit_tag.Params(
             tag: state.tag,
           ),
         );
       } else {
-        final _postTag = getIt<create_tag.CreateTag>();
-        _failureOrUnit = await _postTag(
+        _failureOrUnit = await getIt<create_tag.CreateTag>()(
           create_tag.Params(
             tag: state.tag,
           ),
@@ -75,8 +73,7 @@ class TagManagementFormBloc extends Bloc<TagManagementFormEvent, TagManagementFo
   Stream<TagManagementFormState> _onInitialized(_Initialized event) async* {
     yield await event.tagOption.fold(
       () async {
-        final _getLoggedInUser = getIt<GetLoggedInUser>();
-        final _currentUserOption = await _getLoggedInUser(getIt<NoParams>());
+        final _currentUserOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
         final _currentUser = _currentUserOption.fold(
           () => throw UnAuthenticatedError(),
           id,

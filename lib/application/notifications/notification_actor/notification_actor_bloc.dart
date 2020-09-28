@@ -28,8 +28,7 @@ class NotificationActorBloc extends Bloc<NotificationActorEvent, NotificationAct
   }
 
   Stream<NotificationActorState> _onChecked(_Checked event) async* {
-    final _checkNotification = getIt<check_notification.CheckNotification>();
-    final _failureOrUnit = await _checkNotification(
+    final _failureOrUnit = await getIt<check_notification.CheckNotification>()(
       check_notification.Params(id: event.notification.id),
     );
     yield _failureOrUnit.fold(
@@ -40,8 +39,7 @@ class NotificationActorBloc extends Bloc<NotificationActorEvent, NotificationAct
 
   Stream<NotificationActorState> _onDeleted(_Deleted event) async* {
     yield const NotificationActorState.actionInProgress();
-    final _deleteNotification = getIt<delete_notification.DeleteNotification>();
-    final _failureOrUnit = await _deleteNotification(
+    final _failureOrUnit = await getIt<delete_notification.DeleteNotification>()(
       delete_notification.Params(id: event.notification.id),
     );
     yield _failureOrUnit.fold(

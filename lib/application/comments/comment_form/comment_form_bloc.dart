@@ -40,15 +40,13 @@ class CommentFormBloc extends Bloc<CommentFormEvent, CommentFormState> {
     );
     if (state.comment.isValid) {
       if (state.isEditing) {
-        final _editComment = getIt<edit_comment.EditComment>();
-        _failureOrUnit = await _editComment(
+        _failureOrUnit = await getIt<edit_comment.EditComment>()(
           edit_comment.Params(
             comment: state.comment,
           ),
         );
       } else {
-        final _postComment = getIt<post_comment.PostComment>();
-        _failureOrUnit = await _postComment(
+        _failureOrUnit = await getIt<post_comment.PostComment>()(
           post_comment.Params(
             comment: state.comment,
           ),
@@ -74,8 +72,7 @@ class CommentFormBloc extends Bloc<CommentFormEvent, CommentFormState> {
   Stream<CommentFormState> _onInitialized(_Initialized event) async* {
     yield await event.commentOption.fold(
       () async {
-        final _getLoggedInUser = getIt<GetLoggedInUser>();
-        final _currentUserOption = await _getLoggedInUser(getIt<NoParams>());
+        final _currentUserOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
         final _currentUser = _currentUserOption.fold(
           () => throw UnAuthenticatedError(),
           id,

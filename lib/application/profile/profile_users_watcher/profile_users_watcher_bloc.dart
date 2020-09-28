@@ -35,8 +35,7 @@ class ProfileUsersWatcherBloc extends Bloc<ProfileUsersWatcherEvent, ProfileUser
   Stream<ProfileUsersWatcherState> _onWatchFollowingUsersStarted(_WatchFollowingUsersStarted event) async* {
     yield const ProfileUsersWatcherState.loadInProgress();
     await _userStreamSubscription?.cancel();
-    final _loadFollowingUsers = getIt<load_following_users.WatchFollowingUsers>();
-    _userStreamSubscription = _loadFollowingUsers(
+    _userStreamSubscription = getIt<load_following_users.WatchFollowingUsers>()(
       load_following_users.Params(id: event.user.id),
     ).listen(
       (failureOrUsers) => add(ProfileUsersWatcherEvent.usersReceived(failureOrUsers)),
@@ -46,11 +45,10 @@ class ProfileUsersWatcherBloc extends Bloc<ProfileUsersWatcherEvent, ProfileUser
   Stream<ProfileUsersWatcherState> _onWatchFollowedUsersStarted(_WatchFollowedUsersStarted event) async* {
     yield const ProfileUsersWatcherState.loadInProgress();
     await _userStreamSubscription?.cancel();
-    final _loadFollowedUsers = getIt<load_followed_users.WatchFollowedUsers>();
-    _userStreamSubscription = _loadFollowedUsers(
+    _userStreamSubscription = getIt<load_followed_users.WatchFollowedUsers>()(
       load_followed_users.Params(id: event.user.id),
     ).listen(
-      (failureOrUsers) => add(ProfileUsersWatcherEvent.usersReceived(failureOrUsers)),
+        (failureOrUsers) => add(ProfileUsersWatcherEvent.usersReceived(failureOrUsers)),
     );
   }
 

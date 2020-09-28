@@ -156,16 +156,13 @@ abstract class FollowItself<T> implements ProfileDomainFailure<T> {
 
 /// @nodoc
 abstract class $BlockItselfCopyWith<T, $Res> {
-  factory $BlockItselfCopyWith(BlockItself<T> value, $Res Function(BlockItself<T>) then) =
-  _$BlockItselfCopyWithImpl<T, $Res>;
+  factory $BlockItselfCopyWith(BlockItself<T> value, $Res Function(BlockItself<T>) then) = _$BlockItselfCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class _$BlockItselfCopyWithImpl<T, $Res> extends _$ProfileDomainFailureCopyWithImpl<T, $Res>
-  implements $BlockItselfCopyWith<T, $Res> {
-  _$BlockItselfCopyWithImpl(BlockItself<T> _value, $Res Function(BlockItself<T>) _then)
-    : super(_value, (v) => _then(v as BlockItself<T>));
-  
+class _$BlockItselfCopyWithImpl<T, $Res> extends _$ProfileDomainFailureCopyWithImpl<T, $Res> implements $BlockItselfCopyWith<T, $Res> {
+  _$BlockItselfCopyWithImpl(BlockItself<T> _value, $Res Function(BlockItself<T>) _then) : super(_value, (v) => _then(v as BlockItself<T>));
+
   @override
   BlockItself<T> get _value => super._value as BlockItself<T>;
 }
@@ -173,7 +170,7 @@ class _$BlockItselfCopyWithImpl<T, $Res> extends _$ProfileDomainFailureCopyWithI
 /// @nodoc
 class _$BlockItself<T> implements BlockItself<T> {
   const _$BlockItself();
-  
+
   @override
   String toString() {
     return 'ProfileDomainFailure<$T>.blockItself()';

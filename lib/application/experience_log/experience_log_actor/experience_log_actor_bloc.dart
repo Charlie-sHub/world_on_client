@@ -25,8 +25,7 @@ class ExperienceLogActorBloc extends Bloc<ExperienceLogActorEvent, ExperienceLog
 
   Stream<ExperienceLogActorState> _onExperienceDismissed(_ExperienceDismissed event) async* {
     yield const ExperienceLogActorState.actionInProgress();
-    final _dismissExperienceFromLog = getIt<DismissExperienceFromLog>();
-    final _failureOrUnit = await _dismissExperienceFromLog(
+    final _failureOrUnit = await getIt<DismissExperienceFromLog>()(
       Params(experienceId: event.experienceId),
     );
     yield _failureOrUnit.fold(

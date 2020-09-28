@@ -27,8 +27,7 @@ class TagManagementActorBloc extends Bloc<TagManagementActorEvent, TagManagement
 
   Stream<TagManagementActorState> _onDeleted(_Deleted event) async* {
     yield const TagManagementActorState.actionInProgress();
-    final _deleteTag = getIt<DeleteTag>();
-    final _eitherFailureOrSuccess = await _deleteTag(
+    final _eitherFailureOrSuccess = await getIt<DeleteTag>()(
       Params(tag: event.tag),
     );
     yield _eitherFailureOrSuccess.fold(

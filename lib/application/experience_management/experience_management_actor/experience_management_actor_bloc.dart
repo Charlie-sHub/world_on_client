@@ -26,8 +26,7 @@ class ExperienceManagementActorBloc extends Bloc<ExperienceManagementActorEvent,
 
   Stream<ExperienceManagementActorState> _onDeleted(_Deleted event) async* {
     yield const ExperienceManagementActorState.actionInProgress();
-    final _deleteExperience = getIt<DeleteExperience>();
-    final _failureOrUnit = await _deleteExperience(
+    final _failureOrUnit = await getIt<DeleteExperience>()(
       Params(experience: event.experience),
     );
     yield _failureOrUnit.fold(

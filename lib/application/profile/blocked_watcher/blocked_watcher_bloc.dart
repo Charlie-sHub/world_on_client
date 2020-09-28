@@ -39,8 +39,7 @@ class BlockedWatcherBloc extends Bloc<BlockedWatcherEvent, BlockedWatcherState> 
   Stream<BlockedWatcherState> _onWatchBlockedUsersStarted(_WatchBlockedUsersStarted event) async* {
     yield const BlockedWatcherState.loadInProgress();
     await _blockedUsersStreamSubscription?.cancel();
-    final _loadBlockedUsers = getIt<WatchBlockedUsers>();
-    _blockedUsersStreamSubscription = _loadBlockedUsers(
+    _blockedUsersStreamSubscription = getIt<WatchBlockedUsers>()(
       Params(id: event.user.id),
     ).listen(
       (_failureOrUsers) => add(BlockedWatcherEvent.resultsReceived(_failureOrUsers)),

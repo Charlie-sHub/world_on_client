@@ -36,8 +36,7 @@ class ProfileExperiencesWatcherBloc extends Bloc<ProfileExperiencesWatcherEvent,
   Stream<ProfileExperiencesWatcherState> _onWatchExperiencesDoneStarted(_WatchExperiencesDoneStarted event) async* {
     yield const ProfileExperiencesWatcherState.loadInProgress();
     await _experienceStreamSubscription?.cancel();
-    final _loadExperiencesDone = getIt<load_experiences_done.WatchExperiencesDone>();
-    _experienceStreamSubscription = _loadExperiencesDone(
+    _experienceStreamSubscription = getIt<load_experiences_done.WatchExperiencesDone>()(
       load_experiences_done.Params(userId: event.user.id),
     ).listen(
       (failureOrExperiences) => add(
@@ -49,26 +48,26 @@ class ProfileExperiencesWatcherBloc extends Bloc<ProfileExperiencesWatcherEvent,
   Stream<ProfileExperiencesWatcherState> _onWatchExperiencesLikedStarted(_WatchExperiencesLikedStarted event) async* {
     yield const ProfileExperiencesWatcherState.loadInProgress();
     await _experienceStreamSubscription?.cancel();
-    final _loadExperiencesLiked = getIt<load_experiences_liked.WatchExperiencesLiked>();
-    _experienceStreamSubscription = _loadExperiencesLiked(
+    _experienceStreamSubscription = getIt<load_experiences_liked.WatchExperiencesLiked>()(
       load_experiences_liked.Params(userId: event.user.id),
     ).listen(
-      (failureOrExperiences) => add(
-        ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences),
-      ),
+        (failureOrExperiences) =>
+        add(
+          ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences),
+        ),
     );
   }
 
   Stream<ProfileExperiencesWatcherState> _onWatchExperiencesCreatedStarted(_WatchExperiencesCreatedStarted event) async* {
     yield const ProfileExperiencesWatcherState.loadInProgress();
     await _experienceStreamSubscription?.cancel();
-    final _loadExperiencesCreated = getIt<load_experiences_created.WatchExperiencesCreated>();
-    _experienceStreamSubscription = _loadExperiencesCreated(
+    _experienceStreamSubscription = getIt<load_experiences_created.WatchExperiencesCreated>()(
       load_experiences_created.Params(userId: event.user.id),
     ).listen(
-      (failureOrExperiences) => add(
-        ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences),
-      ),
+        (failureOrExperiences) =>
+        add(
+          ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences),
+        ),
     );
   }
 

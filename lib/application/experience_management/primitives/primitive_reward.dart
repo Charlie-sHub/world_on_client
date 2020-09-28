@@ -8,35 +8,36 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 
 part 'primitive_reward.freezed.dart';
 
+@Deprecated("This class is not necessary for the current way to create rewards")
 @freezed
 abstract class PrimitiveReward implements _$PrimitiveReward {
   const PrimitiveReward._();
-
+  
   const factory PrimitiveReward({
     @required String name,
     @required String description,
     @required File imageFile,
   }) = _PrimitiveReward;
-
+  
   factory PrimitiveReward.empty() => PrimitiveReward(
-        name: "",
-        description: "",
-        imageFile: null,
-      );
-
+    name: "",
+    description: "",
+    imageFile: null,
+  );
+  
   factory PrimitiveReward.fromDomain(Reward reward) => PrimitiveReward(
-        name: reward.name.getOrCrash(),
-        description: reward.description.getOrCrash(),
-        imageFile: reward.imageFile.fold(
-          () => null,
-          id,
-        ),
-      );
-
+    name: reward.name.getOrCrash(),
+    description: reward.description.getOrCrash(),
+    imageFile: reward.imageFile.fold(
+        () => null,
+      id,
+    ),
+  );
+  
   Reward toDomain() => Reward(
-        name: Name(name),
-        description: EntityDescription(description),
-        imageURL: "",
-        imageFile: some(imageFile),
-      );
+    name: Name(name),
+    description: EntityDescription(description),
+    imageURL: "",
+    imageFile: some(imageFile),
+  );
 }

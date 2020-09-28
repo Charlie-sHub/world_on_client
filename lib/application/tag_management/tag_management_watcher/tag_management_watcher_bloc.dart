@@ -39,8 +39,7 @@ class TagManagementWatcherBloc extends Bloc<TagManagementWatcherEvent, TagManage
   Stream<TagManagementWatcherState> _onWatchAllTagsStarted(_) async* {
     yield const TagManagementWatcherState.loadInProgress();
     await _tagsStreamSubscription?.cancel();
-    final _getAllTags = getIt<WatchAllTags>();
-    _tagsStreamSubscription = _getAllTags(getIt<NoParams>()).listen(
+    _tagsStreamSubscription = getIt<WatchAllTags>()(getIt<NoParams>()).listen(
       (_failureOrTags) => add(TagManagementWatcherEvent.resultsReceived(_failureOrTags)),
     );
   }

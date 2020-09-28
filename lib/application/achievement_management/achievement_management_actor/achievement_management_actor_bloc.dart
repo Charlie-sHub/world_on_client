@@ -26,8 +26,7 @@ class AchievementManagementActorBloc extends Bloc<AchievementManagementActorEven
 
   Stream<AchievementManagementActorState> _onDeleted(_Deleted event) async* {
     yield const AchievementManagementActorState.actionInProgress();
-    final _deleteAchievement = getIt<DeleteAchievement>();
-    final _eitherFailureOrSuccess = await _deleteAchievement(
+    final _eitherFailureOrSuccess = await getIt<DeleteAchievement>()(
       Params(achievement: event.achievement),
     );
     yield _eitherFailureOrSuccess.fold(

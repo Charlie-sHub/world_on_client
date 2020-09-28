@@ -27,8 +27,7 @@ class UserActorBloc extends Bloc<UserActorEvent, UserActorState> {
 
   Stream<UserActorState> _onDeleted(_Deleted event) async* {
     yield const UserActorState.actionInProgress();
-    final _deleteUser = getIt<DeleteUser>();
-    final _eitherFailureOrSuccess = await _deleteUser(
+    final _eitherFailureOrSuccess = await getIt<DeleteUser>()(
       Params(userToDelete: event.user),
     );
     yield _eitherFailureOrSuccess.fold(

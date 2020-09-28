@@ -60,10 +60,9 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
     );
     final _canRegister = state.user.isValid && state.passwordConfirmator.isValid() && state.acceptedEULA && state.user.imageFileOption.isSome();
     if (_canRegister) {
-      final _register = getIt<Register>();
       // TODO: Create default Options for the user before registering
       // For now with the languageCode of the phone
-      _failureOrUnit = await _register(
+      _failureOrUnit = await getIt<Register>()(
         Params(
           user: state.user,
         ),
@@ -167,8 +166,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
   }
 
   Stream<RegistrationFormState> _onInitialized(_) async* {
-    final _getLoggedInUser = getIt<GetLoggedInUser>();
-    final _userOption = await _getLoggedInUser(getIt<NoParams>());
+    final _userOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
     yield _userOption.fold(
       () => state,
       (user) => state.copyWith(

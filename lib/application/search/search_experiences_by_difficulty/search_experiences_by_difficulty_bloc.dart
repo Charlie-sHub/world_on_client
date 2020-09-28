@@ -42,8 +42,7 @@ class SearchExperiencesByDifficultyBloc extends Bloc<SearchExperiencesByDifficul
     await _experiencesStreamSubscription?.cancel();
     final _difficulty = Difficulty(event.difficulty);
     if (_difficulty.isValid()) {
-      final _searchExperiencesByDifficulty = getIt<WatchSearchExperiencesByDifficulty>();
-      _experiencesStreamSubscription = _searchExperiencesByDifficulty(
+      _experiencesStreamSubscription = getIt<WatchSearchExperiencesByDifficulty>()(
         Params(difficulty: _difficulty),
       ).listen(
         (_failureOrExperiences) => add(SearchExperiencesByDifficultyEvent.resultsReceived(_failureOrExperiences)),

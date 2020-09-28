@@ -43,8 +43,7 @@ class SearchExperiencesByTagsBloc extends Bloc<SearchExperiencesByTagsEvent, Sea
     await _experiencesStreamSubscription?.cancel();
     final _tagSet = TagSet(KtSet.from(event.tags));
     if (_tagSet.isValid()) {
-      final _searchExperiencesByTags = getIt<WatchSearchExperiencesByTags>();
-      _experiencesStreamSubscription = _searchExperiencesByTags(
+      _experiencesStreamSubscription = getIt<WatchSearchExperiencesByTags>()(
         Params(tags: _tagSet),
       ).listen(
         (_failureOrExperiences) => add(SearchExperiencesByTagsEvent.resultsReceived(_failureOrExperiences)),

@@ -41,8 +41,7 @@ class SearchUsersByNameWatcherBloc extends Bloc<SearchUsersByNameWatcherEvent, S
   Stream<SearchUsersByNameWatcherState> _onWatchUsersFoundByUsernameStarted(_WatchUsersFoundByUsernameStarted event) async* {
     yield const SearchUsersByNameWatcherState.searchInProgress();
     await _usersSearchStreamSubscription?.cancel();
-    final _searchUsersByUsername = getIt<search_users_by_username.WatchSearchUsersByUsername>();
-    _usersSearchStreamSubscription = _searchUsersByUsername(
+    _usersSearchStreamSubscription = getIt<search_users_by_username.WatchSearchUsersByUsername>()(
       search_users_by_username.Params(username: event.username),
     ).listen(
       (failureOrUsers) => add(SearchUsersByNameWatcherEvent.searchResultsReceived(failureOrUsers)),
@@ -52,11 +51,10 @@ class SearchUsersByNameWatcherBloc extends Bloc<SearchUsersByNameWatcherEvent, S
   Stream<SearchUsersByNameWatcherState> _onWatchUsersFoundByNameStarted(_WatchUsersFoundByNameStarted event) async* {
     yield const SearchUsersByNameWatcherState.searchInProgress();
     await _usersSearchStreamSubscription?.cancel();
-    final _searchUsersByName = getIt<search_users_by_name.WatchSearchUsersByName>();
-    _usersSearchStreamSubscription = _searchUsersByName(
+    _usersSearchStreamSubscription = getIt<search_users_by_name.WatchSearchUsersByName>()(
       search_users_by_name.Params(name: event.name),
     ).listen(
-      (failureOrUsers) => add(SearchUsersByNameWatcherEvent.searchResultsReceived(failureOrUsers)),
+        (failureOrUsers) => add(SearchUsersByNameWatcherEvent.searchResultsReceived(failureOrUsers)),
     );
   }
 

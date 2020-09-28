@@ -26,8 +26,7 @@ class CommentActorBloc extends Bloc<CommentActorEvent, CommentActorState> {
 
   Stream<CommentActorState> _onDeleted(_Deleted event) async* {
     yield const CommentActorState.actionInProgress();
-    final _deleteComment = getIt<DeleteComment>();
-    final _failureOrUnit = await _deleteComment(Params(comment: event.comment));
+    final _failureOrUnit = await getIt<DeleteComment>()(Params(comment: event.comment));
     yield _failureOrUnit.fold(
       (failure) => CommentActorState.deletionFailure(failure),
       (_) => const CommentActorState.deletionSuccess(),

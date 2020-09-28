@@ -40,8 +40,7 @@ class NotificationsWatcherBloc extends Bloc<NotificationsWatcherEvent, Notificat
   Stream<NotificationsWatcherState> _onWatchNotificationsStarted(_) async* {
     yield const NotificationsWatcherState.loadInProgress();
     await _notificationsStreamSubscription?.cancel();
-    final _loadNotifications = getIt<WatchNotifications>();
-    _notificationsStreamSubscription = _loadNotifications(getIt<NoParams>()).listen(
+    _notificationsStreamSubscription = getIt<WatchNotifications>()(getIt<NoParams>()).listen(
       (_failureOrNotifications) => add(NotificationsWatcherEvent.resultsReceived(_failureOrNotifications)),
     );
   }

@@ -34,8 +34,7 @@ class ExperienceLikeActorBloc extends Bloc<ExperienceLikeActorEvent, ExperienceL
 
   Stream<ExperienceLikeActorState> _onDisliked(_Disliked event) async* {
     yield const ExperienceLikeActorState.actionInProgress();
-    final _dislikeExperience = getIt<dislike_experience.DislikeExperience>();
-    final _failureOrUnit = await _dislikeExperience(
+    final _failureOrUnit = await getIt<dislike_experience.DislikeExperience>()(
       dislike_experience.Params(experienceId: event.experience.id),
     );
     yield _failureOrUnit.fold(
@@ -46,8 +45,7 @@ class ExperienceLikeActorBloc extends Bloc<ExperienceLikeActorEvent, ExperienceL
 
   Stream<ExperienceLikeActorState> _onLiked(_Liked event) async* {
     yield const ExperienceLikeActorState.actionInProgress();
-    final _likeExperience = getIt<like_experience.LikeExperience>();
-    final _failureOrUnit = await _likeExperience(
+    final _failureOrUnit = await getIt<like_experience.LikeExperience>()(
       like_experience.Params(experienceId: event.experience.id),
     );
     yield _failureOrUnit.fold(
@@ -57,8 +55,7 @@ class ExperienceLikeActorBloc extends Bloc<ExperienceLikeActorEvent, ExperienceL
   }
 
   Stream<ExperienceLikeActorState> _onInitialized(_Initialized event) async* {
-    final _getLoggedInUser = getIt<GetLoggedInUser>();
-    final _userOption = await _getLoggedInUser(getIt<NoParams>());
+    final _userOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
     final _user = _userOption.fold(
       () => throw UnAuthenticatedError(),
       id,

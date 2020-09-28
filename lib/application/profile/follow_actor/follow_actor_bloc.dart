@@ -34,8 +34,7 @@ class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
 
   Stream<FollowActorState> _onUnFollowed(_UnFollowed event) async* {
     yield const FollowActorState.actionInProgress();
-    final _unFollowUser = getIt<un_follow_user.UnFollowUser>();
-    final _failureOrUnit = await _unFollowUser(
+    final _failureOrUnit = await getIt<un_follow_user.UnFollowUser>()(
       un_follow_user.Params(userToUnFollowId: event.user.id),
     );
     yield* _failureOrUnit.fold(
@@ -51,8 +50,7 @@ class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
 
   Stream<FollowActorState> _onFollowed(_Followed event) async* {
     yield const FollowActorState.actionInProgress();
-    final _followUser = getIt<follow_user.FollowUser>();
-    final _failureOrUnit = await _followUser(
+    final _failureOrUnit = await getIt<follow_user.FollowUser>()(
       follow_user.Params(userToFollowId: event.user.id),
     );
     yield* _failureOrUnit.fold(
@@ -67,8 +65,7 @@ class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
   }
 
   Stream<FollowActorState> _onInitialized(_Initialized event) async* {
-    final _getLoggedInUser = getIt<GetLoggedInUser>();
-    final _userOption = await _getLoggedInUser(getIt<NoParams>());
+    final _userOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
     final _user = _userOption.fold(
       () => throw UnAuthenticatedError(),
       id,

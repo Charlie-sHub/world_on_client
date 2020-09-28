@@ -26,9 +26,7 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
   }
 
   Stream<AuthenticationState> _onLoggedOut(_) async* {
-    final _logOut = getIt<LogOut>();
-    final _failureOrUnit = await _logOut(getIt<NoParams>());
-    // On second thought it's kinda silly the log out doesn't simply return void
+    final _failureOrUnit = await getIt<LogOut>()(getIt<NoParams>());
     yield _failureOrUnit.fold(
       (failure) => const AuthenticationState.authenticationSuccess(),
       (unit) => const AuthenticationState.authenticationFailure(),
@@ -36,11 +34,10 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
   }
 
   Stream<AuthenticationState> _onAuthenticationCheckRequested(_) async* {
-    final _getLoggedInUser = getIt<GetLoggedInUser>();
-    final _userOption = await _getLoggedInUser(getIt<NoParams>());
+    final _userOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
     yield _userOption.fold(
-      () => const AuthenticationState.authenticationFailure(),
-      (_) => const AuthenticationState.authenticationSuccess(),
+        () => const AuthenticationState.authenticationFailure(),
+        (_) => const AuthenticationState.authenticationSuccess(),
     );
   }
 }
