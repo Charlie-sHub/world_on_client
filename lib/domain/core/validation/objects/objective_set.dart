@@ -50,7 +50,7 @@ class ObjectiveSet extends ValueObject<KtSet<Objective>> {
   }
 
   int get length {
-    return value.getOrElse(() => KtSet<Objective>.empty()).size;
+    return value.getOrElse(() => const KtSet<Objective>.empty()).size;
   }
 
   bool get isFull {

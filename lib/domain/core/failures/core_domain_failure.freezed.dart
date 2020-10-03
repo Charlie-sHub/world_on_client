@@ -188,26 +188,26 @@ class _$UnknownDomainLayerError<T> implements UnknownDomainLayerError<T> {
 
 abstract class UnknownDomainLayerError<T> implements CoreDomainFailure<T> {
   const factory UnknownDomainLayerError({@required String errorString}) = _$UnknownDomainLayerError<T>;
-  
+
   String get errorString;
-  
+
   $UnknownDomainLayerErrorCopyWith<T, UnknownDomainLayerError<T>> get copyWith;
 }
 
 /// @nodoc
 abstract class $DomainLayerErrorCopyWith<T, $Res> {
   factory $DomainLayerErrorCopyWith(DomainLayerError<T> value, $Res Function(DomainLayerError<T>) then) = _$DomainLayerErrorCopyWithImpl<T, $Res>;
-  
+
   $Res call({String errorString});
 }
 
 /// @nodoc
 class _$DomainLayerErrorCopyWithImpl<T, $Res> extends _$CoreDomainFailureCopyWithImpl<T, $Res> implements $DomainLayerErrorCopyWith<T, $Res> {
   _$DomainLayerErrorCopyWithImpl(DomainLayerError<T> _value, $Res Function(DomainLayerError<T>) _then) : super(_value, (v) => _then(v as DomainLayerError<T>));
-  
+
   @override
   DomainLayerError<T> get _value => super._value as DomainLayerError<T>;
-  
+
   @override
   $Res call({
     Object errorString = freezed,
@@ -221,26 +221,26 @@ class _$DomainLayerErrorCopyWithImpl<T, $Res> extends _$CoreDomainFailureCopyWit
 /// @nodoc
 class _$DomainLayerError<T> implements DomainLayerError<T> {
   const _$DomainLayerError({@required this.errorString}) : assert(errorString != null);
-  
+
   @override
   final String errorString;
-  
+
   @override
   String toString() {
     return 'CoreDomainFailure<$T>.domainLayerError(errorString: $errorString)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is DomainLayerError<T> && (identical(other.errorString, errorString) || const DeepCollectionEquality().equals(other.errorString, errorString)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
-  
+
   @override
   $DomainLayerErrorCopyWith<T, DomainLayerError<T>> get copyWith => _$DomainLayerErrorCopyWithImpl<T, DomainLayerError<T>>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -300,9 +300,9 @@ class _$DomainLayerError<T> implements DomainLayerError<T> {
 
 abstract class DomainLayerError<T> implements CoreDomainFailure<T> {
   const factory DomainLayerError({@required String errorString}) = _$DomainLayerError<T>;
-  
+
   String get errorString;
-  
+
   $DomainLayerErrorCopyWith<T, DomainLayerError<T>> get copyWith;
 }
 
@@ -314,7 +314,7 @@ abstract class $UnAuthorizedErrorCopyWith<T, $Res> {
 /// @nodoc
 class _$UnAuthorizedErrorCopyWithImpl<T, $Res> extends _$CoreDomainFailureCopyWithImpl<T, $Res> implements $UnAuthorizedErrorCopyWith<T, $Res> {
   _$UnAuthorizedErrorCopyWithImpl(UnAuthorizedError<T> _value, $Res Function(UnAuthorizedError<T>) _then) : super(_value, (v) => _then(v as UnAuthorizedError<T>));
-  
+
   @override
   UnAuthorizedError<T> get _value => super._value as UnAuthorizedError<T>;
 }

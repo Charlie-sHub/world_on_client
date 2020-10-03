@@ -44,13 +44,9 @@ const $LocationDto = _$LocationDtoTearOff();
 /// @nodoc
 mixin _$LocationDto {
   int get id;
-  
   String get city;
-  
   String get country;
-  
   String get postalCode;
-  
   Set<ExperienceDto> get experiences;
 
   Map<String, dynamic> toJson();
@@ -203,7 +199,7 @@ class __$LocationDtoCopyWithImpl<$Res> extends _$LocationDtoCopyWithImpl<$Res>
       const DeepCollectionEquality().hash(country) ^
       const DeepCollectionEquality().hash(postalCode) ^
       const DeepCollectionEquality().hash(experiences);
-  
+
   @override
   _$LocationDtoCopyWith<_LocationDto> get copyWith =>
     __$LocationDtoCopyWithImpl<_LocationDto>(this, _$identity);

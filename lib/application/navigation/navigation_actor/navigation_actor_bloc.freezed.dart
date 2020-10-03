@@ -717,7 +717,6 @@ abstract class _ProfileTapped implements NavigationActorEvent {
   const factory _ProfileTapped(Option<User> userOption) = _$_ProfileTapped;
 
   Option<User> get userOption;
-
   _$ProfileTappedCopyWith<_ProfileTapped> get copyWith;
 }
 
@@ -1577,7 +1576,6 @@ abstract class _ProfileView implements NavigationActorState {
   const factory _ProfileView(Option<User> userOption) = _$_ProfileView;
 
   Option<User> get userOption;
-
   _$ProfileViewCopyWith<_ProfileView> get copyWith;
 }
 

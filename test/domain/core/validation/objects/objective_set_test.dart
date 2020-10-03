@@ -7,7 +7,7 @@ import '../../../../test_descriptions.dart';
 
 void main() {
   final validSet = KtSet.of(Objective.empty());
-  final emptySet = KtSet<Objective>.empty();
+  const emptySet = KtSet<Objective>.empty();
   final tooBigSet = _fillSet();
   test(
     TestDescription.valid,

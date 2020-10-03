@@ -38,7 +38,7 @@ abstract class Achievement implements _$Achievement {
   }) = _Achievement;
 
   factory Achievement.empty() => Achievement(
-    name: Name(""),
+        name: Name(""),
         description: EntityDescription(""),
         imageURL: "",
         imageFile: none(),
@@ -48,7 +48,7 @@ abstract class Achievement implements _$Achievement {
         creatorId: 0,
         creationDate: PastDate(DateTime.now()),
         modificationDate: PastDate(DateTime.now()),
-        tags: TagSet(KtSet.empty()),
+        tags: TagSet(const KtSet.empty()),
       );
 
   Option<ValueFailure<dynamic>> get failureOption {

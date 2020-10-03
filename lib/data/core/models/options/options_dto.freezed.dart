@@ -37,11 +37,9 @@ const $OptionsDto = _$OptionsDtoTearOff();
 /// @nodoc
 mixin _$OptionsDto {
   int get id;
-  
   String get languageCode;
-  
+
   Map<String, dynamic> toJson();
-  
   $OptionsDtoCopyWith<OptionsDto> get copyWith;
 }
 
@@ -148,7 +146,7 @@ class __$OptionsDtoCopyWithImpl<$Res> extends _$OptionsDtoCopyWithImpl<$Res>
   @override
   _$OptionsDtoCopyWith<_OptionsDto> get copyWith =>
     __$OptionsDtoCopyWithImpl<_OptionsDto>(this, _$identity);
-
+  
   @override
   Map<String, dynamic> toJson() {
     return _$_$_OptionsDtoToJson(this);

@@ -36,6 +36,7 @@ class ExperienceCommentsListView extends StatelessWidget {
             loadSuccess: (state) => ListView.builder(
               padding: const EdgeInsets.all(5),
               itemCount: state.comments.size,
+              // TODO: shrinkWrap is an expensive operation, might not be a good idea to use this for the comment list
               shrinkWrap: true,
               physics: const ClampingScrollPhysics(),
               itemBuilder: (context, index) {

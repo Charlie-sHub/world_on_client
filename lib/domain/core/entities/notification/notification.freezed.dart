@@ -35,19 +35,14 @@ const $Notification = _$NotificationTearOff();
 /// @nodoc
 mixin _$Notification {
   int get id;
-
   User get sender; // TODO: Is the receiver necessary for the domain entity?
 // The receiver will always be the logged in user
 // Relation is needed in the database of course, but not really beyond that
 // Could be left to just the id
   User get receiver;
-
   EntityDescription get description;
-
   bool get seen;
-
   PastDate get creationDate;
-
   NotificationType get type;
 
   $NotificationCopyWith<Notification> get copyWith;
@@ -56,9 +51,11 @@ mixin _$Notification {
 /// @nodoc
 abstract class $NotificationCopyWith<$Res> {
   factory $NotificationCopyWith(Notification value, $Res Function(Notification) then) = _$NotificationCopyWithImpl<$Res>;
+
   $Res call({int id, User sender, User receiver, EntityDescription description, bool seen, PastDate creationDate, NotificationType type});
 
   $UserCopyWith<$Res> get sender;
+
   $UserCopyWith<$Res> get receiver;
 }
 
@@ -115,6 +112,7 @@ class _$NotificationCopyWithImpl<$Res> implements $NotificationCopyWith<$Res> {
 /// @nodoc
 abstract class _$NotificationCopyWith<$Res> implements $NotificationCopyWith<$Res> {
   factory _$NotificationCopyWith(_Notification value, $Res Function(_Notification) then) = __$NotificationCopyWithImpl<$Res>;
+
   @override
   $Res call({int id, User sender, User receiver, EntityDescription description, bool seen, PastDate creationDate, NotificationType type});
 
@@ -228,28 +226,21 @@ abstract class _Notification extends Notification {
 
   @override
   int get id;
-
   @override
   User get sender;
-
   @override // TODO: Is the receiver necessary for the domain entity?
 // The receiver will always be the logged in user
 // Relation is needed in the database of course, but not really beyond that
 // Could be left to just the id
   User get receiver;
-
   @override
   EntityDescription get description;
-
   @override
   bool get seen;
-
   @override
   PastDate get creationDate;
-
   @override
   NotificationType get type;
-
   @override
   _$NotificationCopyWith<_Notification> get copyWith;
 }

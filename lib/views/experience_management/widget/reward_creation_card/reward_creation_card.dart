@@ -89,7 +89,7 @@ class RewardCreationCard extends HookWidget {
                       _nameTextEditingController,
                     ),
                     builder: (context, state) => Form(
-                      autovalidate: state.showErrorMessages,
+                      autovalidateMode: context.bloc<RewardFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
                       child: Column(
                         children: <Widget>[
                           RewardNameTextField(textController: _nameTextEditingController),

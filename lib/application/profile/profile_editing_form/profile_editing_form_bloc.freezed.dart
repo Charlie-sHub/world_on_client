@@ -1773,7 +1773,6 @@ abstract class _InterestsChanged implements ProfileEditingFormEvent {
   const factory _InterestsChanged(Set<Tag> interests) = _$_InterestsChanged;
 
   Set<Tag> get interests;
-
   _$InterestsChangedCopyWith<_InterestsChanged> get copyWith;
 }
 
@@ -2107,16 +2106,12 @@ abstract class _ProfileEditingFormState implements ProfileEditingFormState {
 
   @override
   User get user;
-
   @override
   PasswordConfirmator get passwordConfirmator;
-
   @override
   String get passwordToCompare;
-
   @override
   bool get showErrorMessages;
-
   @override
   bool get isSubmitting;
   @override

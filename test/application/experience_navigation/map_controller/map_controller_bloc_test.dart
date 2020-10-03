@@ -63,7 +63,7 @@ void main() {
     build: () => getIt<MapControllerBloc>(),
     act: (bloc) async {
       bloc.add(MapControllerEvent.initialized(_experience));
-      bloc.add(MapControllerEvent.objectivesChanged(KtList.empty()));
+      bloc.add(const MapControllerEvent.objectivesChanged(KtList.empty()));
     },
     expect: [
       MapControllerState.initial().copyWith(
@@ -72,7 +72,7 @@ void main() {
       ),
       MapControllerState.initial().copyWith(
         coordinates: _experience.coordinates,
-        objectives: KtList.empty(),
+        objectives: const KtList.empty(),
       ),
     ],
   );

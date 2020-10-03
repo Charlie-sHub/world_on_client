@@ -258,7 +258,6 @@ abstract class ServerError<T> implements CoreDataFailure<T> {
   const factory ServerError({@required String errorString}) = _$ServerError<T>;
 
   String get errorString;
-
   $ServerErrorCopyWith<T, ServerError<T>> get copyWith;
 }
 

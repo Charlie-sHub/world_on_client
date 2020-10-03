@@ -7,7 +7,7 @@ import 'package:worldon/domain/core/validation/validators/validate_not_empty_set
 import '../../../../test_descriptions.dart';
 
 void main() {
-  final invalidSet = KtSet.empty();
+  const invalidSet = KtSet.empty();
   final validSet = KtSet.of(1, 2, 3);
   test(
     "Should return validSet",
@@ -36,7 +36,7 @@ void main() {
           // Act
           final result = _act(invalidSet);
           // Assert
-          expect(result, ValueFailure.emptySet(failedValue: invalidSet));
+          expect(result, const ValueFailure.emptySet(failedValue: invalidSet));
         },
       );
     },

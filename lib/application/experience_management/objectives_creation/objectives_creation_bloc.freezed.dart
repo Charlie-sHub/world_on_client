@@ -207,7 +207,6 @@ abstract class _AddedObjective implements ObjectivesCreationEvent {
 
   @override
   Objective get objective;
-
   @override
   _$AddedObjectiveCopyWith<_AddedObjective> get copyWith;
 }

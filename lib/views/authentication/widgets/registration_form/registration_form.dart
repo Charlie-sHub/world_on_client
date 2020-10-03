@@ -23,7 +23,7 @@ class RegistrationForm extends StatelessWidget {
     // TODO: Check how to initialize this form with a google user or similar
     return SingleChildScrollView(
       child: Form(
-        autovalidate: context.bloc<RegistrationFormBloc>().state.showErrorMessages,
+        autovalidateMode: context.bloc<RegistrationFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
         child: Padding(
           padding: const EdgeInsets.all(25),
           child: Column(

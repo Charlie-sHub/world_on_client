@@ -51,10 +51,9 @@ class ProfileExperiencesWatcherBloc extends Bloc<ProfileExperiencesWatcherEvent,
     _experienceStreamSubscription = getIt<load_experiences_liked.WatchExperiencesLiked>()(
       load_experiences_liked.Params(userId: event.user.id),
     ).listen(
-        (failureOrExperiences) =>
-        add(
-          ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences),
-        ),
+      (failureOrExperiences) => add(
+        ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences),
+      ),
     );
   }
 
@@ -64,10 +63,9 @@ class ProfileExperiencesWatcherBloc extends Bloc<ProfileExperiencesWatcherEvent,
     _experienceStreamSubscription = getIt<load_experiences_created.WatchExperiencesCreated>()(
       load_experiences_created.Params(userId: event.user.id),
     ).listen(
-        (failureOrExperiences) =>
-        add(
-          ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences),
-        ),
+      (failureOrExperiences) => add(
+        ProfileExperiencesWatcherEvent.experiencesReceived(failureOrExperiences),
+      ),
     );
   }
 

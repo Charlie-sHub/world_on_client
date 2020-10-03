@@ -54,7 +54,7 @@ Map<String, dynamic> _$_$_UserDtoToJson(_$_UserDto instance) => <String, dynamic
       'lastLogin': instance.lastLogin,
       'creationDate': instance.creationDate,
       'modificationDate': instance.modificationDate,
-      'options': instance.options,
+      'options': instance.options?.toJson(),
       'blockedUsersIds': instance.blockedUsersIds?.toList(),
       'followedUsersIds': instance.followedUsersIds?.toList(),
       'interestsIds': instance.interestsIds?.toList(),
@@ -62,6 +62,6 @@ Map<String, dynamic> _$_$_UserDtoToJson(_$_UserDto instance) => <String, dynamic
       'experiencesDoneIds': instance.experiencesDoneIds?.toList(),
       'experiencesLikedIds': instance.experiencesLikedIds?.toList(),
       'experiencesToDoIds': instance.experiencesToDoIds?.toList(),
-      'devices': instance.devices?.toList(),
-      'systems': instance.systems?.toList(),
+      'devices': instance.devices?.map((e) => e?.toJson())?.toList(),
+      'systems': instance.systems?.map((e) => e?.toJson())?.toList(),
     };

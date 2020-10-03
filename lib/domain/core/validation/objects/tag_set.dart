@@ -51,7 +51,7 @@ class TagSet extends ValueObject<KtSet<Tag>> {
   }
 
   int get length {
-    return value.getOrElse(() => KtSet<Tag>.empty()).size;
+    return value.getOrElse(() => const KtSet<Tag>.empty()).size;
   }
 
   bool get isFull {

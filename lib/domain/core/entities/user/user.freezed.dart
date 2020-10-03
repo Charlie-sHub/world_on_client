@@ -81,42 +81,25 @@ const $User = _$UserTearOff();
 /// @nodoc
 mixin _$User {
   int get id;
-
   Name get name;
-
   Name get username;
-
   Password get password;
-
   EmailAddress get email;
-
   PastDate get birthday;
-
   EntityDescription get description;
-
   String get imageURL;
-
   Option<File> get imageFileOption; // TODO: Make levels entities
 // To hold the points between levels
 // Or investigate how leveling systems are usually implemented.
   UserLevel get level;
-
   ExperiencePoints get experiencePoints;
-
   bool get privacy;
-
   bool get adminPowers;
-
   bool get enabled;
-
   PastDate get lastLogin;
-
   PastDate get creationDate;
-
   PastDate get modificationDate;
-
   Options get options;
-
   Set<int> get blockedUsersIds;
   Set<int> get followedUsersIds;
   Set<int> get interestsIds;
@@ -580,39 +563,28 @@ abstract class _User extends User {
   Name get username;
   @override
   Password get password;
-
   @override
   EmailAddress get email;
-
   @override
   PastDate get birthday;
-
   @override
   EntityDescription get description;
-
   @override
   String get imageURL;
-
   @override
   Option<File> get imageFileOption;
-
   @override // TODO: Make levels entities
 // To hold the points between levels
 // Or investigate how leveling systems are usually implemented.
   UserLevel get level;
-
   @override
   ExperiencePoints get experiencePoints;
-
   @override
   bool get privacy;
-
   @override
   bool get adminPowers;
-
   @override
   bool get enabled;
-
   @override
   PastDate get lastLogin;
   @override

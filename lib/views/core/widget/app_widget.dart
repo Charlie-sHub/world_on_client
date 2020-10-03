@@ -5,7 +5,7 @@ import 'package:injectable/injectable.dart';
 import 'package:provider/provider.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
-import 'package:worldon/views/core/routes/router.gr.dart';
+import 'package:worldon/views/core/routes/router.gr.dart' as router;
 
 import '../../../injection.dart';
 
@@ -67,8 +67,8 @@ class AppWidget extends StatelessWidget {
             ),
           ),
         ),
-        builder: ExtendedNavigator(
-          router: Router(),
+        builder: ExtendedNavigator.builder<router.Router>(
+          router: router.Router(),
         ),
       ),
     );

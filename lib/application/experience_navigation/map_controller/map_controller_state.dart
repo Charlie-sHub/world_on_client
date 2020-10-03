@@ -10,7 +10,7 @@ abstract class MapControllerState with _$MapControllerState {
 
   factory MapControllerState.initial() => MapControllerState(
         coordinates: Coordinates.empty(),
-        objectives: KtList.empty(),
+        objectives: const KtList.empty(),
         zoom: 5,
       );
 }

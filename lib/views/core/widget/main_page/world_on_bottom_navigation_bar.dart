@@ -27,27 +27,27 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
       items: const [
         BottomNavigationBarItem(
           icon: FaIcon(FontAwesomeIcons.home),
-          title: Text("Feed"),
+          label: "Feed",
           backgroundColor: Colors.blue,
         ),
         BottomNavigationBarItem(
           icon: FaIcon(FontAwesomeIcons.search),
-          title: Text("Search"),
+          label: "Search",
           backgroundColor: Colors.green,
         ),
         BottomNavigationBarItem(
           icon: FaIcon(FontAwesomeIcons.plusCircle),
-          title: Text("Create"),
+          label: "Create",
           backgroundColor: Colors.orange,
         ),
         BottomNavigationBarItem(
           icon: FaIcon(FontAwesomeIcons.solidCompass),
-          title: Text("Explore"),
+          label: "Explore",
           backgroundColor: Colors.red,
         ),
         BottomNavigationBarItem(
           icon: FaIcon(FontAwesomeIcons.userAlt),
-          title: Text("Profile"),
+          label: "Profile",
           backgroundColor: Colors.purple,
         ),
       ],

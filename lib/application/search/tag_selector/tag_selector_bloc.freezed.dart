@@ -207,7 +207,6 @@ abstract class _AddedTag implements TagSelectorEvent {
 
   @override
   Tag get tag;
-
   @override
   _$AddedTagCopyWith<_AddedTag> get copyWith;
 }

@@ -28,7 +28,7 @@ void main() {
   final invalidDifficultyExperience = validExperience.copyWith(difficulty: Difficulty(12));
   final invalidCreationDateExperience = validExperience.copyWith(creationDate: PastDate(DateTime.now().add(const Duration(days: 10))));
   final invalidModificationDateExperience = validExperience.copyWith(modificationDate: PastDate(DateTime.now().add(const Duration(days: 10))));
-  final invalidObjectivesExperience = validExperience.copyWith(objectives: ObjectiveSet(KtSet.empty()));
+  final invalidObjectivesExperience = validExperience.copyWith(objectives: ObjectiveSet(const KtSet.empty()));
   final invalidRewardsExperience = validExperience.copyWith(
     rewards: RewardSet(
       KtSet.of(
@@ -41,7 +41,7 @@ void main() {
       ),
     ),
   );
-  final invalidTagsExperience = validExperience.copyWith(tags: TagSet(KtSet.empty()));
+  final invalidTagsExperience = validExperience.copyWith(tags: TagSet(const KtSet.empty()));
   test(
     TestDescription.valid,
     () async {

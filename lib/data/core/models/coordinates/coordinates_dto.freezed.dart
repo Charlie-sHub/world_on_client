@@ -37,11 +37,9 @@ const $CoordinatesDto = _$CoordinatesDtoTearOff();
 /// @nodoc
 mixin _$CoordinatesDto {
   double get latitude;
-  
   double get longitude;
-  
+
   Map<String, dynamic> toJson();
-  
   $CoordinatesDtoCopyWith<CoordinatesDto> get copyWith;
 }
 
@@ -148,7 +146,7 @@ class __$CoordinatesDtoCopyWithImpl<$Res> extends _$CoordinatesDtoCopyWithImpl<$
   @override
   _$CoordinatesDtoCopyWith<_CoordinatesDto> get copyWith =>
     __$CoordinatesDtoCopyWithImpl<_CoordinatesDto>(this, _$identity);
-
+  
   @override
   Map<String, dynamic> toJson() {
     return _$_$_CoordinatesDtoToJson(this);

@@ -21,5 +21,5 @@ Map<String, dynamic> _$_$_LocationDtoToJson(_$_LocationDto instance) => <String,
       'city': instance.city,
       'country': instance.country,
       'postalCode': instance.postalCode,
-      'experiences': instance.experiences?.toList(),
+      'experiences': instance.experiences?.map((e) => e?.toJson())?.toList(),
     };

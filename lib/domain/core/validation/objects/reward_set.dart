@@ -47,7 +47,7 @@ class RewardSet extends ValueObject<KtSet<Reward>> {
   }
 
   int get length {
-    return value.getOrElse(() => KtSet<Reward>.empty()).size;
+    return value.getOrElse(() => const KtSet<Reward>.empty()).size;
   }
 
   bool get isFull {

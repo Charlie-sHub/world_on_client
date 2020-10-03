@@ -8,6 +8,5 @@ part of 'moor_comments_dao.dart';
 
 mixin _$MoorCommentsDaoMixin on DatabaseAccessor<Database> {
   $MoorCommentsTable get moorComments => attachedDatabase.moorComments;
-
   $MoorUsersTable get moorUsers => attachedDatabase.moorUsers;
 }

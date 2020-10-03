@@ -1335,7 +1335,6 @@ abstract class _LikeFailure implements ExperienceLikeActorState {
   const factory _LikeFailure(Failure<dynamic> failure) = _$_LikeFailure;
 
   Failure<dynamic> get failure;
-
   _$LikeFailureCopyWith<_LikeFailure> get copyWith;
 }
 

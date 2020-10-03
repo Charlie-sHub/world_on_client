@@ -36,8 +36,8 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
   Stream<AuthenticationState> _onAuthenticationCheckRequested(_) async* {
     final _userOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
     yield _userOption.fold(
-        () => const AuthenticationState.authenticationFailure(),
-        (_) => const AuthenticationState.authenticationSuccess(),
+      () => const AuthenticationState.authenticationFailure(),
+      (_) => const AuthenticationState.authenticationSuccess(),
     );
   }
 }

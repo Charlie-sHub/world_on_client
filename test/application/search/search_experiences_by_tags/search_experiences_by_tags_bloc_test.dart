@@ -27,7 +27,7 @@ void main() {
   final tags = {Tag.empty()};
   final experiencesFound = KtList.of(Experience.empty());
   final emptyTagSet = <Tag>{};
-  final valueFailure = ValueFailure.emptySet(failedValue: KtSet<Tag>.empty());
+  const valueFailure = ValueFailure.emptySet(failedValue: KtSet<Tag>.empty());
   const serverFailure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
@@ -82,7 +82,7 @@ void main() {
         verify: (_) async => verifyNoMoreInteractions(searchExperiencesByTags),
         expect: [
           const SearchExperiencesByTagsState.searchInProgress(),
-          SearchExperiencesByTagsState.valueFailure(valueFailure),
+          const SearchExperiencesByTagsState.valueFailure(valueFailure),
         ],
       );
     },

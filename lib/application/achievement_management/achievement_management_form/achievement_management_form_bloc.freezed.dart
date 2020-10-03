@@ -937,7 +937,6 @@ abstract class _ImageChanged implements AchievementManagementFormEvent {
   const factory _ImageChanged(File image) = _$_ImageChanged;
 
   File get image;
-
   _$ImageChangedCopyWith<_ImageChanged> get copyWith;
 }
 
@@ -1234,13 +1233,10 @@ abstract class _AchievementManagementFormState implements AchievementManagementF
 
   @override
   Achievement get achievement;
-
   @override
   bool get showErrorMessages;
-
   @override
   bool get isEditing;
-
   @override
   bool get isSubmitting;
 

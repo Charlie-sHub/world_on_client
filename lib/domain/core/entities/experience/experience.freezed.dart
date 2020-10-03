@@ -216,10 +216,8 @@ abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
 
   @override
   $CoordinatesCopyWith<$Res> get coordinates;
-
   @override
   $LocationCopyWith<$Res> get location;
-
   @override
   $UserCopyWith<$Res> get creator;
 }
@@ -422,7 +420,6 @@ abstract class _Experience extends Experience {
 
   @override // TODO: Add like and dislike counters
   int get id;
-
   @override
   Name get title;
   @override

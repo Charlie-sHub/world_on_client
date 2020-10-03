@@ -44,13 +44,9 @@ const $TagDto = _$TagDtoTearOff();
 /// @nodoc
 mixin _$TagDto {
   int get id;
-  
   String get name;
-  
   int get creatorId;
-  
   String get creationDate;
-  
   String get modificationDate;
 
   Map<String, dynamic> toJson();
@@ -204,7 +200,7 @@ class __$TagDtoCopyWithImpl<$Res> extends _$TagDtoCopyWithImpl<$Res>
       const DeepCollectionEquality().hash(creatorId) ^
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(modificationDate);
-  
+
   @override
   _$TagDtoCopyWith<_TagDto> get copyWith =>
     __$TagDtoCopyWithImpl<_TagDto>(this, _$identity);

@@ -1549,7 +1549,6 @@ abstract class _TagsChanged implements ExperienceManagementFormEvent {
   const factory _TagsChanged(KtSet<Tag> tags) = _$_TagsChanged;
 
   KtSet<Tag> get tags;
-
   _$TagsChangedCopyWith<_TagsChanged> get copyWith;
 }
 
@@ -1710,9 +1709,13 @@ const $ExperienceManagementFormState = _$ExperienceManagementFormStateTearOff();
 /// @nodoc
 mixin _$ExperienceManagementFormState {
   Experience get experience;
+
   bool get showErrorMessages;
+
   bool get isEditing;
+
   bool get isSubmitting;
+
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
 
   $ExperienceManagementFormStateCopyWith<ExperienceManagementFormState> get copyWith;
@@ -1860,13 +1863,10 @@ abstract class _ExperienceManagementFormState implements ExperienceManagementFor
 
   @override
   Experience get experience;
-
   @override
   bool get showErrorMessages;
-
   @override
   bool get isEditing;
-
   @override
   bool get isSubmitting;
 

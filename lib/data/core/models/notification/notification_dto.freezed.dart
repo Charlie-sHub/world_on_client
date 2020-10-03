@@ -48,20 +48,14 @@ const $NotificationDto = _$NotificationDtoTearOff();
 /// @nodoc
 mixin _$NotificationDto {
   int get id;
-  
   UserDto get sender; // Maybe change the Users to only the ids
   UserDto get receiver;
-  
   String get description;
-  
   bool get seen;
-  
   String get creationDate;
-  
   NotificationType get type;
-  
+
   Map<String, dynamic> toJson();
-  
   $NotificationDtoCopyWith<NotificationDto> get copyWith;
 }
 
@@ -269,7 +263,7 @@ class __$NotificationDtoCopyWithImpl<$Res> extends _$NotificationDtoCopyWithImpl
       const DeepCollectionEquality().hash(seen) ^
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(type);
-  
+
   @override
   _$NotificationDtoCopyWith<_NotificationDto> get copyWith =>
     __$NotificationDtoCopyWithImpl<_NotificationDto>(this, _$identity);

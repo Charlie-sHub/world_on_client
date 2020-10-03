@@ -101,9 +101,9 @@ abstract class $ExperienceDtoCopyWith<$Res> {
     UserDto creator,
     int difficulty,
     String creationDate,
-      String modificationDate,
-      Set<ObjectiveDto> objectives,
-      Set<RewardDto> rewards,
+    String modificationDate,
+    Set<ObjectiveDto> objectives,
+    Set<RewardDto> rewards,
     Set<TagDto> tags,
     Set<CommentDto> comments,
     Set<UserDto> likedBy,
@@ -222,13 +222,13 @@ abstract class _$ExperienceDtoCopyWith<$Res>
     LocationDto location,
     UserDto creator,
     int difficulty,
-      String creationDate,
-      String modificationDate,
-      Set<ObjectiveDto> objectives,
-      Set<RewardDto> rewards,
-      Set<TagDto> tags,
-      Set<CommentDto> comments,
-      Set<UserDto> likedBy,
+    String creationDate,
+    String modificationDate,
+    Set<ObjectiveDto> objectives,
+    Set<RewardDto> rewards,
+    Set<TagDto> tags,
+    Set<CommentDto> comments,
+    Set<UserDto> likedBy,
     Set<UserDto> doneBy});
   
   @override
@@ -312,22 +312,22 @@ class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Re
     @required this.location,
     @required this.creator,
     @required this.difficulty,
-      @required this.creationDate,
-      @required this.modificationDate,
-      @required this.objectives,
-      @required this.rewards,
-      @required this.tags,
-      @required this.comments,
-      @required this.likedBy,
-      @required this.doneBy})
-      : assert(id != null),
-        assert(title != null),
-        assert(description != null),
-        assert(imageURLs != null),
-        assert(coordinates != null),
-        assert(location != null),
-        assert(creator != null),
-        assert(difficulty != null),
+    @required this.creationDate,
+    @required this.modificationDate,
+    @required this.objectives,
+    @required this.rewards,
+    @required this.tags,
+    @required this.comments,
+    @required this.likedBy,
+    @required this.doneBy})
+    : assert(id != null),
+      assert(title != null),
+      assert(description != null),
+      assert(imageURLs != null),
+      assert(coordinates != null),
+      assert(location != null),
+      assert(creator != null),
+      assert(difficulty != null),
       assert(creationDate != null),
       assert(modificationDate != null),
       assert(objectives != null),
@@ -448,7 +448,7 @@ class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Re
       const DeepCollectionEquality().hash(comments) ^
       const DeepCollectionEquality().hash(likedBy) ^
       const DeepCollectionEquality().hash(doneBy);
-  
+
   @override
   _$ExperienceDtoCopyWith<_ExperienceDto> get copyWith =>
     __$ExperienceDtoCopyWithImpl<_ExperienceDto>(this, _$identity);

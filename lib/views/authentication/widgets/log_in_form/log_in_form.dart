@@ -17,7 +17,7 @@ class LogInForm extends StatelessWidget {
     // TODO: Forms should only have the relevant children
     // It doesn't make sense for the logo and register buttons to be part of the form for example
     return Form(
-      autovalidate: context.bloc<LogInFormBloc>().state.showErrorMessages,
+      autovalidateMode: context.bloc<LogInFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
       child: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 40,

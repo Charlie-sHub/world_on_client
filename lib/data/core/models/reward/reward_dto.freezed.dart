@@ -42,11 +42,8 @@ const $RewardDto = _$RewardDtoTearOff();
 /// @nodoc
 mixin _$RewardDto {
   int get id;
-  
   String get name;
-  
   String get description;
-  
   String get imageURL;
 
   Map<String, dynamic> toJson();
@@ -57,7 +54,6 @@ mixin _$RewardDto {
 abstract class $RewardDtoCopyWith<$Res> {
   factory $RewardDtoCopyWith(RewardDto value, $Res Function(RewardDto) then) =
   _$RewardDtoCopyWithImpl<$Res>;
-  
   $Res call({int id, String name, String description, String imageURL});
 }
 
@@ -174,7 +170,7 @@ class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res>
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(imageURL);
-  
+
   @override
   _$RewardDtoCopyWith<_RewardDto> get copyWith =>
     __$RewardDtoCopyWithImpl<_RewardDto>(this, _$identity);

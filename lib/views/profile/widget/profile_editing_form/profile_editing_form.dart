@@ -26,7 +26,7 @@ class ProfileEditingForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Form(
-        autovalidate: context.bloc<ProfileEditingFormBloc>().state.showErrorMessages,
+        autovalidateMode: context.bloc<ProfileEditingFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
         child: Padding(
           padding: const EdgeInsets.all(15),
           child: Column(

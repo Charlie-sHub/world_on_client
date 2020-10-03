@@ -18,7 +18,7 @@ class ExperienceManagementForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Form(
-        autovalidate: context.bloc<ExperienceManagementFormBloc>().state.showErrorMessages,
+        autovalidateMode: context.bloc<ExperienceManagementFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
         child: Padding(
           padding: const EdgeInsets.all(10),
           child: Column(

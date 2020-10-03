@@ -42,11 +42,8 @@ const $DeviceDto = _$DeviceDtoTearOff();
 /// @nodoc
 mixin _$DeviceDto {
   int get id;
-  
   String get name;
-  
   String get type;
-  
   String get company;
 
   Map<String, dynamic> toJson();
@@ -57,7 +54,6 @@ mixin _$DeviceDto {
 abstract class $DeviceDtoCopyWith<$Res> {
   factory $DeviceDtoCopyWith(DeviceDto value, $Res Function(DeviceDto) then) =
   _$DeviceDtoCopyWithImpl<$Res>;
-  
   $Res call({int id, String name, String type, String company});
 }
 
@@ -170,7 +166,7 @@ class __$DeviceDtoCopyWithImpl<$Res> extends _$DeviceDtoCopyWithImpl<$Res>
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(company);
-  
+
   @override
   _$DeviceDtoCopyWith<_DeviceDto> get copyWith =>
     __$DeviceDtoCopyWithImpl<_DeviceDto>(this, _$identity);

@@ -214,12 +214,12 @@ class __$AchievementDtoCopyWithImpl<$Res> extends _$AchievementDtoCopyWithImpl<$
     @required this.requisite,
     @required this.experiencePoints,
     @required this.creatorId,
-      @required this.creationDate,
-      @required this.modificationDate,
-      @required this.tags})
-      : assert(id != null),
-        assert(name != null),
-        assert(description != null),
+    @required this.creationDate,
+    @required this.modificationDate,
+    @required this.tags})
+    : assert(id != null),
+      assert(name != null),
+      assert(description != null),
       assert(imageURL != null),
       assert(type != null),
       assert(requisite != null),

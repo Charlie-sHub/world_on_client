@@ -441,7 +441,6 @@ abstract class _ImageChanged implements RewardFormEvent {
   const factory _ImageChanged(File imageFile) = _$_ImageChanged;
 
   File get imageFile;
-
   _$ImageChangedCopyWith<_ImageChanged> get copyWith;
 }
 

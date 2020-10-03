@@ -54,7 +54,7 @@ class SearchUsersByNameWatcherBloc extends Bloc<SearchUsersByNameWatcherEvent, S
     _usersSearchStreamSubscription = getIt<search_users_by_name.WatchSearchUsersByName>()(
       search_users_by_name.Params(name: event.name),
     ).listen(
-        (failureOrUsers) => add(SearchUsersByNameWatcherEvent.searchResultsReceived(failureOrUsers)),
+      (failureOrUsers) => add(SearchUsersByNameWatcherEvent.searchResultsReceived(failureOrUsers)),
     );
   }
 

@@ -293,7 +293,6 @@ class _$_Achievement extends _Achievement {
 
 abstract class _Achievement extends Achievement {
   const _Achievement._() : super._();
-
   const factory _Achievement(
       {int id,
       @required Name name,
@@ -310,29 +309,21 @@ abstract class _Achievement extends Achievement {
 
   @override
   int get id;
-
   @override
   Name get name;
-
   @override
   EntityDescription get description;
-
   @override // TODO: Make a value object and validator for image URLs from World On's back-end
 // Maybe Firestore will make that unnecessary
   String get imageURL;
-
   @override
   Option<File> get imageFile;
-
   @override
   String get type;
-
   @override
   int get requisite;
-
   @override // This will probably be reworked in the future to accommodate different kinds of achievements
   ExperiencePoints get experiencePoints;
-
   @override
   int get creatorId;
   @override

@@ -7,7 +7,7 @@ abstract class ObjectivesTrackerState implements _$ObjectivesTrackerState {
     @required bool isFinished,
   }) = _ObjectivesTrackerState;
 
-  factory ObjectivesTrackerState.initial() => ObjectivesTrackerState(
+  factory ObjectivesTrackerState.initial() => const ObjectivesTrackerState(
         objectivesToDo: KtList.empty(),
         isFinished: false,
       );

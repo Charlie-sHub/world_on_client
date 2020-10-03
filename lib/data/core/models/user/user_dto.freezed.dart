@@ -87,28 +87,17 @@ const $UserDto = _$UserDtoTearOff();
 /// @nodoc
 mixin _$UserDto {
   int get id;
-  
   String get name;
-  
   String get username; // Shouldn't this be encrypted in some way?
   String get password;
-  
   String get email;
-  
   String get birthday;
-  
   String get description;
-  
   String get imageURL;
-  
   int get level;
-  
   int get experiencePoints;
-  
   bool get privacy;
-  
   bool get adminPowers;
-  
   bool get enabled;
   String get lastLogin;
   String get creationDate;
@@ -132,7 +121,7 @@ mixin _$UserDto {
 abstract class $UserDtoCopyWith<$Res> {
   factory $UserDtoCopyWith(UserDto value, $Res Function(UserDto) then) =
   _$UserDtoCopyWithImpl<$Res>;
-  
+
   $Res call({int id,
     String name,
     String username,
@@ -142,16 +131,16 @@ abstract class $UserDtoCopyWith<$Res> {
     String description,
     String imageURL,
     int level,
-      int experiencePoints,
-      bool privacy,
-      bool adminPowers,
-      bool enabled,
-      String lastLogin,
-      String creationDate,
-      String modificationDate,
-      OptionsDto options,
-      Set<int> blockedUsersIds,
-      Set<int> followedUsersIds,
+    int experiencePoints,
+    bool privacy,
+    bool adminPowers,
+    bool enabled,
+    String lastLogin,
+    String creationDate,
+    String modificationDate,
+    OptionsDto options,
+    Set<int> blockedUsersIds,
+    Set<int> followedUsersIds,
       Set<int> interestsIds,
       Set<int> achievementsIds,
       Set<int> experiencesDoneIds,
@@ -277,19 +266,19 @@ abstract class _$UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
     String birthday,
     String description,
     String imageURL,
-      int level,
-      int experiencePoints,
-      bool privacy,
-      bool adminPowers,
-      bool enabled,
-      String lastLogin,
-      String creationDate,
-      String modificationDate,
-      OptionsDto options,
-      Set<int> blockedUsersIds,
-      Set<int> followedUsersIds,
-      Set<int> interestsIds,
-      Set<int> achievementsIds,
+    int level,
+    int experiencePoints,
+    bool privacy,
+    bool adminPowers,
+    bool enabled,
+    String lastLogin,
+    String creationDate,
+    String modificationDate,
+    OptionsDto options,
+    Set<int> blockedUsersIds,
+    Set<int> followedUsersIds,
+    Set<int> interestsIds,
+    Set<int> achievementsIds,
     Set<int> experiencesDoneIds,
     Set<int> experiencesLikedIds,
     Set<int> experiencesToDoIds,
@@ -402,16 +391,16 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
     @required this.birthday,
     @required this.description,
     @required this.imageURL,
-      @required this.level,
-      @required this.experiencePoints,
-      @required this.privacy,
-      @required this.adminPowers,
-      @required this.enabled,
-      @required this.lastLogin,
-      @required this.creationDate,
-      @required this.modificationDate,
-      @required this.options,
-      @required this.blockedUsersIds,
+    @required this.level,
+    @required this.experiencePoints,
+    @required this.privacy,
+    @required this.adminPowers,
+    @required this.enabled,
+    @required this.lastLogin,
+    @required this.creationDate,
+    @required this.modificationDate,
+    @required this.options,
+    @required this.blockedUsersIds,
       @required this.followedUsersIds,
       @required this.interestsIds,
       @required this.achievementsIds,
@@ -428,16 +417,16 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
         assert(birthday != null),
         assert(description != null),
         assert(imageURL != null),
-        assert(level != null),
-        assert(experiencePoints != null),
-        assert(privacy != null),
-        assert(adminPowers != null),
-        assert(enabled != null),
-        assert(lastLogin != null),
-        assert(creationDate != null),
-        assert(modificationDate != null),
-        assert(options != null),
-        assert(blockedUsersIds != null),
+      assert(level != null),
+      assert(experiencePoints != null),
+      assert(privacy != null),
+      assert(adminPowers != null),
+      assert(enabled != null),
+      assert(lastLogin != null),
+      assert(creationDate != null),
+      assert(modificationDate != null),
+      assert(options != null),
+      assert(blockedUsersIds != null),
       assert(followedUsersIds != null),
       assert(interestsIds != null),
       assert(achievementsIds != null),
@@ -581,7 +570,7 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
           (identical(other.experiencesToDoIds, experiencesToDoIds) ||
             const DeepCollectionEquality().equals(other.experiencesToDoIds, experiencesToDoIds)) &&
           (identical(other.devices, devices) || const DeepCollectionEquality().equals(other.devices, devices)) &&
-            (identical(other.systems, systems) || const DeepCollectionEquality().equals(other.systems, systems)));
+          (identical(other.systems, systems) || const DeepCollectionEquality().equals(other.systems, systems)));
   }
 
   @override
@@ -613,7 +602,7 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
       const DeepCollectionEquality().hash(experiencesToDoIds) ^
       const DeepCollectionEquality().hash(devices) ^
       const DeepCollectionEquality().hash(systems);
-  
+
   @override
   _$UserDtoCopyWith<_UserDto> get copyWith =>
     __$UserDtoCopyWithImpl<_UserDto>(this, _$identity);
@@ -660,13 +649,10 @@ abstract class _UserDto extends UserDto {
   int get id;
   @override
   String get name;
-
   @override
   String get username;
-
   @override // Shouldn't this be encrypted in some way?
   String get password;
-
   @override
   String get email;
   @override

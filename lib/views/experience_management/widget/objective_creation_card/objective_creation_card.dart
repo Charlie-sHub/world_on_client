@@ -87,7 +87,7 @@ class ObjectiveCreationCard extends HookWidget {
                       _textEditingController,
                     ),
                     builder: (context, state) => Form(
-                      autovalidate: state.showErrorMessages,
+                      autovalidateMode: context.bloc<ObjectiveFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
                       child: Column(
                         children: <Widget>[
                           ObjectiveDescriptionTextField(textController: _textEditingController),
@@ -143,9 +143,11 @@ class ObjectiveCreationCard extends HookWidget {
     );
   }
 
-  void _objectiveFormListener(BuildContext context,
+  void _objectiveFormListener(
+    BuildContext context,
     ObjectiveFormState state,
-    TextEditingController _textEditingController,) {
+    TextEditingController _textEditingController,
+  ) {
     if (state.isSubmitting) {
       _textEditingController.clear();
       context.bloc<ObjectivesCreationBloc>().add(ObjectivesCreationEvent.addedObjective(state.objective));

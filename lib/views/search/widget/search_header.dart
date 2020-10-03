@@ -11,38 +11,35 @@ class SearchHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Form(
-      autovalidate: context.bloc<SearchByNameFormBloc>().state.showErrorMessages,
-      child: Container(
-        height: 50,
-        child: Row(
-          children: <Widget>[
-            Expanded(
-              child: TextFormField(
-                onChanged: (value) => context.bloc<SearchByNameFormBloc>().add(
-                      SearchByNameFormEvent.searchTermChanged(value.trim()),
-                    ),
-                decoration: const InputDecoration(
-                  labelText: "Search",
-                ),
-                validator: (_) => context.bloc<SearchByNameFormBloc>().state.searchTerm.value.fold(
-                      (failure) => failure.maybeMap(
-                        emptyString: (_) => "The search term can't be empty",
-                        orElse: () => StringConst.unknownError,
-                      ),
-                      (_) => null,
-                    ),
-                onFieldSubmitted: (_) => _submit(context),
+      autovalidateMode: context.bloc<SearchByNameFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: TextFormField(
+              onChanged: (value) => context.bloc<SearchByNameFormBloc>().add(
+                    SearchByNameFormEvent.searchTermChanged(value.trim()),
+                  ),
+              decoration: const InputDecoration(
+                labelText: "Search",
               ),
+              validator: (_) => context.bloc<SearchByNameFormBloc>().state.searchTerm.value.fold(
+                    (failure) => failure.maybeMap(
+                      emptyString: (_) => "The search term can't be empty",
+                      orElse: () => StringConst.unknownError,
+                    ),
+                    (_) => null,
+                  ),
+              onFieldSubmitted: (_) => _submit(context),
             ),
-            IconButton(
-              icon: const Icon(
-                Icons.search,
-                size: 35,
-              ),
-              onPressed: () => _submit(context),
+          ),
+          IconButton(
+            icon: const Icon(
+              Icons.search,
+              size: 35,
             ),
-          ],
-        ),
+            onPressed: () => _submit(context),
+          ),
+        ],
       ),
     );
   }

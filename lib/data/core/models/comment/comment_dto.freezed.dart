@@ -46,13 +46,9 @@ const $CommentDto = _$CommentDtoTearOff();
 /// @nodoc
 mixin _$CommentDto {
   int get id;
-  
   UserDto get poster;
-  
   int get experienceId;
-  
   String get content;
-  
   String get creationDate;
   String get modificationDate;
 
@@ -238,7 +234,7 @@ class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res>
       const DeepCollectionEquality().hash(content) ^
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(modificationDate);
-  
+
   @override
   _$CommentDtoCopyWith<_CommentDto> get copyWith =>
     __$CommentDtoCopyWithImpl<_CommentDto>(this, _$identity);

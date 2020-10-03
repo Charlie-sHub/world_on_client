@@ -1808,7 +1808,6 @@ abstract class _InterestsChanged implements RegistrationFormEvent {
   const factory _InterestsChanged(Set<int> interests) = _$_InterestsChanged;
 
   Set<int> get interests;
-
   _$InterestsChangedCopyWith<_InterestsChanged> get copyWith;
 }
 
@@ -2326,16 +2325,12 @@ abstract class _RegistrationFormState implements RegistrationFormState {
 
   @override
   User get user;
-
   @override
   PasswordConfirmator get passwordConfirmator;
-
   @override
   String get passwordToCompare;
-
   @override
   bool get showErrorMessages;
-
   @override
   bool get isSubmitting;
   @override

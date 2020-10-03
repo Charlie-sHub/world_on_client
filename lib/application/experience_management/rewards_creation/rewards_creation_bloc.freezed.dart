@@ -207,7 +207,6 @@ abstract class _AddedReward implements RewardsCreationEvent {
 
   @override
   Reward get reward;
-
   @override
   _$AddedRewardCopyWith<_AddedReward> get copyWith;
 }
