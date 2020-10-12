@@ -45,7 +45,6 @@ class PicturesSelector extends StatelessWidget {
                       imageAssets.length,
                       (index) {
                         return Card(
-                          shape: const RoundedRectangleBorder(),
                           child: AssetThumb(
                             asset: imageAssets[index],
                             width: 150,

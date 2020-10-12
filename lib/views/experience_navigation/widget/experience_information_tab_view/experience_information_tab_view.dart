@@ -139,6 +139,7 @@ class ExperienceInformationTabView extends StatelessWidget {
               ),
             ),
           ),
+          // TODO: Add comment form
           ExperienceCommentsListView(experience: experience),
         ],
       ),

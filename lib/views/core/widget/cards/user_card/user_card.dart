@@ -15,7 +15,6 @@ class UserCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: const RoundedRectangleBorder(),
       child: Column(
         children: <Widget>[
           Row(

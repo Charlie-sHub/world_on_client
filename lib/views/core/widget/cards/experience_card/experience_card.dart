@@ -30,7 +30,6 @@ class ExperienceCard extends StatelessWidget {
       child: BlocListener<ExperienceCardActorBloc, ExperienceCardActorState>(
         listener: _experienceCardListener,
         child: Card(
-          shape: const RoundedRectangleBorder(),
           child: Padding(
             padding: const EdgeInsets.all(5),
             child: Column(

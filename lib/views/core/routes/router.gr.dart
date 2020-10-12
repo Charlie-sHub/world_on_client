@@ -103,12 +103,14 @@ class Router extends RouterBase {
       );
     },
     ExperienceManagementPage: (data) {
-      final args = data.getArgs<ExperienceManagementPageArguments>(nullOk: false);
+      final args =
+      data.getArgs<ExperienceManagementPageArguments>(nullOk: false);
       return MaterialPageRoute<dynamic>(
-        builder: (context) => ExperienceManagementPage(
-          key: args.key,
-          experienceOption: args.experienceOption,
-        ),
+        builder: (context) =>
+          ExperienceManagementPage(
+            key: args.key,
+            experienceOption: args.experienceOption,
+          ),
         settings: data,
       );
     },
@@ -131,20 +133,21 @@ class Router extends RouterBase {
 
 extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
   Future<dynamic> pushSplashPage() => push<dynamic>(Routes.splashPage);
-
+  
   Future<dynamic> pushLogInPage() => push<dynamic>(Routes.logInPage);
-
-  Future<dynamic> pushRegistrationPage() => push<dynamic>(Routes.registrationPage);
-
+  
+  Future<dynamic> pushRegistrationPage() =>
+    push<dynamic>(Routes.registrationPage);
+  
   Future<dynamic> pushMainPage() => push<dynamic>(Routes.mainPage);
-
+  
   Future<bool> pushProfileEditingPage({
     Key key,
     @required User user,
   }) =>
-      push<bool>(
-        Routes.profileEditingPage,
-        arguments: ProfileEditingPageArguments(key: key, user: user),
+    push<bool>(
+      Routes.profileEditingPage,
+      arguments: ProfileEditingPageArguments(key: key, user: user),
       );
 
   Future<dynamic> pushMoorDbViewer({
@@ -161,7 +164,8 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
   }) =>
       push<dynamic>(
         Routes.experienceManagementPage,
-        arguments: ExperienceManagementPageArguments(key: key, experienceOption: experienceOption),
+        arguments: ExperienceManagementPageArguments(
+          key: key, experienceOption: experienceOption),
       );
 
   Future<dynamic> pushTagManagementPage({
@@ -195,7 +199,7 @@ class MoorDbViewerArguments {
 class ExperienceManagementPageArguments {
   final Key key;
   final Option<Experience> experienceOption;
-
+  
   ExperienceManagementPageArguments({this.key, @required this.experienceOption});
 }
 

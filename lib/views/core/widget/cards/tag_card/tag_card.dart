@@ -24,7 +24,6 @@ class TagCard extends StatelessWidget {
       child: BlocConsumer<TagCardActorBloc, TagCardActorState>(
         listener: _tagCardListener,
         builder: (context, state) => Card(
-          shape: const RoundedRectangleBorder(),
           child: Padding(
             padding: const EdgeInsets.all(5),
             child: Row(

@@ -72,14 +72,15 @@ abstract class $TagSelectorEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TagSelectorEventCopyWithImpl<$Res> implements $TagSelectorEventCopyWith<$Res> {
+class _$TagSelectorEventCopyWithImpl<$Res>
+  implements $TagSelectorEventCopyWith<$Res> {
   _$TagSelectorEventCopyWithImpl(this._value, this._then);
-
+  
   final TagSelectorEvent _value;
-
+  
   // ignore: unused_field
   final $Res Function(TagSelectorEvent) _then;
-
+  
   @override
   $Res call({
     Object tag = freezed,
@@ -101,23 +102,27 @@ class _$TagSelectorEventCopyWithImpl<$Res> implements $TagSelectorEventCopyWith<
 }
 
 /// @nodoc
-abstract class _$AddedTagCopyWith<$Res> implements $TagSelectorEventCopyWith<$Res> {
-  factory _$AddedTagCopyWith(_AddedTag value, $Res Function(_AddedTag) then) = __$AddedTagCopyWithImpl<$Res>;
-
+abstract class _$AddedTagCopyWith<$Res>
+  implements $TagSelectorEventCopyWith<$Res> {
+  factory _$AddedTagCopyWith(_AddedTag value, $Res Function(_AddedTag) then) =
+  __$AddedTagCopyWithImpl<$Res>;
+  
   @override
   $Res call({Tag tag});
-
+  
   @override
   $TagCopyWith<$Res> get tag;
 }
 
 /// @nodoc
-class __$AddedTagCopyWithImpl<$Res> extends _$TagSelectorEventCopyWithImpl<$Res> implements _$AddedTagCopyWith<$Res> {
-  __$AddedTagCopyWithImpl(_AddedTag _value, $Res Function(_AddedTag) _then) : super(_value, (v) => _then(v as _AddedTag));
-
+class __$AddedTagCopyWithImpl<$Res> extends _$TagSelectorEventCopyWithImpl<$Res>
+  implements _$AddedTagCopyWith<$Res> {
+  __$AddedTagCopyWithImpl(_AddedTag _value, $Res Function(_AddedTag) _then)
+    : super(_value, (v) => _then(v as _AddedTag));
+  
   @override
   _AddedTag get _value => super._value as _AddedTag;
-
+  
   @override
   $Res call({
     Object tag = freezed,
@@ -142,14 +147,19 @@ class _$_AddedTag implements _AddedTag {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _AddedTag && (identical(other.tag, tag) || const DeepCollectionEquality().equals(other.tag, tag)));
+    return identical(this, other) ||
+      (other is _AddedTag &&
+        (identical(other.tag, tag) ||
+          const DeepCollectionEquality().equals(other.tag, tag)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
 
   @override
-  _$AddedTagCopyWith<_AddedTag> get copyWith => __$AddedTagCopyWithImpl<_AddedTag>(this, _$identity);
+  _$AddedTagCopyWith<_AddedTag> get copyWith =>
+    __$AddedTagCopyWithImpl<_AddedTag>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -212,23 +222,27 @@ abstract class _AddedTag implements TagSelectorEvent {
 }
 
 /// @nodoc
-abstract class _$RemovedTagCopyWith<$Res> implements $TagSelectorEventCopyWith<$Res> {
-  factory _$RemovedTagCopyWith(_RemovedTag value, $Res Function(_RemovedTag) then) = __$RemovedTagCopyWithImpl<$Res>;
-
+abstract class _$RemovedTagCopyWith<$Res>
+  implements $TagSelectorEventCopyWith<$Res> {
+  factory _$RemovedTagCopyWith(_RemovedTag value, $Res Function(_RemovedTag) then) =
+  __$RemovedTagCopyWithImpl<$Res>;
+  
   @override
   $Res call({Tag tag});
-
+  
   @override
   $TagCopyWith<$Res> get tag;
 }
 
 /// @nodoc
-class __$RemovedTagCopyWithImpl<$Res> extends _$TagSelectorEventCopyWithImpl<$Res> implements _$RemovedTagCopyWith<$Res> {
-  __$RemovedTagCopyWithImpl(_RemovedTag _value, $Res Function(_RemovedTag) _then) : super(_value, (v) => _then(v as _RemovedTag));
-
+class __$RemovedTagCopyWithImpl<$Res> extends _$TagSelectorEventCopyWithImpl<$Res>
+  implements _$RemovedTagCopyWith<$Res> {
+  __$RemovedTagCopyWithImpl(_RemovedTag _value, $Res Function(_RemovedTag) _then)
+    : super(_value, (v) => _then(v as _RemovedTag));
+  
   @override
   _RemovedTag get _value => super._value as _RemovedTag;
-
+  
   @override
   $Res call({
     Object tag = freezed,
@@ -253,14 +267,19 @@ class _$_RemovedTag implements _RemovedTag {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _RemovedTag && (identical(other.tag, tag) || const DeepCollectionEquality().equals(other.tag, tag)));
+    return identical(this, other) ||
+      (other is _RemovedTag &&
+        (identical(other.tag, tag) ||
+          const DeepCollectionEquality().equals(other.tag, tag)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
 
   @override
-  _$RemovedTagCopyWith<_RemovedTag> get copyWith => __$RemovedTagCopyWithImpl<_RemovedTag>(this, _$identity);
+  _$RemovedTagCopyWith<_RemovedTag> get copyWith =>
+    __$RemovedTagCopyWithImpl<_RemovedTag>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -347,85 +366,103 @@ mixin _$TagSelectorState {
 
 /// @nodoc
 abstract class $TagSelectorStateCopyWith<$Res> {
-  factory $TagSelectorStateCopyWith(TagSelectorState value, $Res Function(TagSelectorState) then) = _$TagSelectorStateCopyWithImpl<$Res>;
-
+  factory $TagSelectorStateCopyWith(TagSelectorState value, $Res Function(TagSelectorState) then) =
+  _$TagSelectorStateCopyWithImpl<$Res>;
+  
   $Res call({KtSet<Tag> tagsSelected});
 }
 
 /// @nodoc
-class _$TagSelectorStateCopyWithImpl<$Res> implements $TagSelectorStateCopyWith<$Res> {
+class _$TagSelectorStateCopyWithImpl<$Res>
+  implements $TagSelectorStateCopyWith<$Res> {
   _$TagSelectorStateCopyWithImpl(this._value, this._then);
-
+  
   final TagSelectorState _value;
-
+  
   // ignore: unused_field
   final $Res Function(TagSelectorState) _then;
-
+  
   @override
   $Res call({
     Object tagsSelected = freezed,
   }) {
     return _then(_value.copyWith(
-      tagsSelected: tagsSelected == freezed ? _value.tagsSelected : tagsSelected as KtSet<Tag>,
+      tagsSelected: tagsSelected == freezed
+        ? _value.tagsSelected
+        : tagsSelected as KtSet<Tag>,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$TagSearchFormStateCopyWith<$Res> implements $TagSelectorStateCopyWith<$Res> {
-  factory _$TagSearchFormStateCopyWith(_TagSearchFormState value, $Res Function(_TagSearchFormState) then) = __$TagSearchFormStateCopyWithImpl<$Res>;
-
+abstract class _$TagSearchFormStateCopyWith<$Res>
+  implements $TagSelectorStateCopyWith<$Res> {
+  factory _$TagSearchFormStateCopyWith(_TagSearchFormState value, $Res Function(_TagSearchFormState) then) =
+  __$TagSearchFormStateCopyWithImpl<$Res>;
+  
   @override
   $Res call({KtSet<Tag> tagsSelected});
 }
 
 /// @nodoc
-class __$TagSearchFormStateCopyWithImpl<$Res> extends _$TagSelectorStateCopyWithImpl<$Res> implements _$TagSearchFormStateCopyWith<$Res> {
-  __$TagSearchFormStateCopyWithImpl(_TagSearchFormState _value, $Res Function(_TagSearchFormState) _then) : super(_value, (v) => _then(v as _TagSearchFormState));
-
+class __$TagSearchFormStateCopyWithImpl<$Res> extends _$TagSelectorStateCopyWithImpl<$Res>
+  implements _$TagSearchFormStateCopyWith<$Res> {
+  __$TagSearchFormStateCopyWithImpl(_TagSearchFormState _value, $Res Function(_TagSearchFormState) _then)
+    : super(_value, (v) => _then(v as _TagSearchFormState));
+  
   @override
   _TagSearchFormState get _value => super._value as _TagSearchFormState;
-
+  
   @override
   $Res call({
     Object tagsSelected = freezed,
   }) {
     return _then(_TagSearchFormState(
-      tagsSelected: tagsSelected == freezed ? _value.tagsSelected : tagsSelected as KtSet<Tag>,
+      tagsSelected: tagsSelected == freezed
+        ? _value.tagsSelected
+        : tagsSelected as KtSet<Tag>,
     ));
   }
 }
 
 /// @nodoc
 class _$_TagSearchFormState implements _TagSearchFormState {
-  const _$_TagSearchFormState({@required this.tagsSelected}) : assert(tagsSelected != null);
-
+  const _$_TagSearchFormState({@required this.tagsSelected})
+    : assert(tagsSelected != null);
+  
   @override
   final KtSet<Tag> tagsSelected;
-
+  
   @override
   String toString() {
     return 'TagSelectorState(tagsSelected: $tagsSelected)';
   }
-
+  
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _TagSearchFormState && (identical(other.tagsSelected, tagsSelected) || const DeepCollectionEquality().equals(other.tagsSelected, tagsSelected)));
+    return identical(this, other) ||
+      (other is _TagSearchFormState &&
+        (identical(other.tagsSelected, tagsSelected) ||
+          const DeepCollectionEquality()
+            .equals(other.tagsSelected, tagsSelected)));
   }
-
+  
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tagsSelected);
-
+  int get hashCode =>
+    runtimeType.hashCode ^ const DeepCollectionEquality().hash(tagsSelected);
+  
   @override
-  _$TagSearchFormStateCopyWith<_TagSearchFormState> get copyWith => __$TagSearchFormStateCopyWithImpl<_TagSearchFormState>(this, _$identity);
+  _$TagSearchFormStateCopyWith<_TagSearchFormState> get copyWith =>
+    __$TagSearchFormStateCopyWithImpl<_TagSearchFormState>(this, _$identity);
 }
 
 abstract class _TagSearchFormState implements TagSelectorState {
-  const factory _TagSearchFormState({@required KtSet<Tag> tagsSelected}) = _$_TagSearchFormState;
-
+  const factory _TagSearchFormState({@required KtSet<Tag> tagsSelected}) =
+  _$_TagSearchFormState;
+  
   @override
   KtSet<Tag> get tagsSelected;
-
+  
   @override
   _$TagSearchFormStateCopyWith<_TagSearchFormState> get copyWith;
 }

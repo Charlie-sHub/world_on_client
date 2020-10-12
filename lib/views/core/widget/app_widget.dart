@@ -28,17 +28,13 @@ class AppWidget extends StatelessWidget {
       child: MaterialApp(
         title: "World On",
         debugShowCheckedModeBanner: Provider.of<String>(context) != Environment.prod,
-        // TODO: Improve the theme
-        // Accent and primary being the same color doesn't make much sense
-        // The difference is not really noticed as many widgets have set colors, but that should be changed
-        // Most if not all widget colors should depend of the theme instead of having to set the colors directly
         theme: ThemeData.dark().copyWith(
           sliderTheme: SliderTheme.of(context).copyWith(
             inactiveTrackColor: Colors.white,
             trackShape: const RoundedRectSliderTrackShape(),
             trackHeight: 5,
-            thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 12.0),
-            overlayShape: const RoundSliderOverlayShape(overlayRadius: 28.0),
+            thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 12),
+            overlayShape: const RoundSliderOverlayShape(overlayRadius: 28),
             tickMarkShape: const RoundSliderTickMarkShape(),
             valueIndicatorShape: const PaddleSliderValueIndicatorShape(),
             showValueIndicator: ShowValueIndicator.always,
@@ -52,9 +48,12 @@ class AppWidget extends StatelessWidget {
             backgroundColor: WorldOnColors.white,
             foregroundColor: WorldOnColors.background,
           ),
-          cardColor: WorldOnColors.white,
+          cardTheme: const CardTheme(
+            shape: RoundedRectangleBorder(),
+            color: WorldOnColors.white,
+          ),
           primaryColor: WorldOnColors.primary,
-          accentColor: WorldOnColors.primary,
+          accentColor: WorldOnColors.accent,
           scaffoldBackgroundColor: WorldOnColors.background,
           appBarTheme: AppBarTheme.of(context).copyWith(
             color: WorldOnColors.background,

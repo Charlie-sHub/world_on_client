@@ -22,7 +22,6 @@ class ObjectiveCard extends StatelessWidget {
             ),
         child: Card(
           color: state.objectivesToDo.contains(objective) ? WorldOnColors.white : Colors.green,
-          shape: const RoundedRectangleBorder(),
           child: Row(
             children: <Widget>[
               Expanded(

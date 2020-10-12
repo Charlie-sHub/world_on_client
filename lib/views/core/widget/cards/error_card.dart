@@ -15,7 +15,6 @@ class ErrorCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: const RoundedRectangleBorder(),
       color: WorldOnColors.red,
       child: Padding(
         padding: const EdgeInsets.all(5),

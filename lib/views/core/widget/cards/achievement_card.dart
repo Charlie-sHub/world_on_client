@@ -12,7 +12,6 @@ class AchievementCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: const RoundedRectangleBorder(),
       child: Padding(
         padding: const EdgeInsets.all(5),
         child: Column(

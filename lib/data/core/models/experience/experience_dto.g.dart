@@ -27,17 +27,18 @@ _$_ExperienceDto _$_$_ExperienceDtoFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_ExperienceDtoToJson(_$_ExperienceDto instance) => <String, dynamic>{
-      'id': instance.id,
-      'title': instance.title,
-      'description': instance.description,
-      'imageURLs': instance.imageURLs?.toList(),
-      'coordinates': instance.coordinates?.toJson(),
-      'location': instance.location?.toJson(),
-      'creator': instance.creator?.toJson(),
-      'difficulty': instance.difficulty,
-      'creationDate': instance.creationDate,
-      'modificationDate': instance.modificationDate,
+Map<String, dynamic> _$_$_ExperienceDtoToJson(_$_ExperienceDto instance) =>
+  <String, dynamic>{
+    'id': instance.id,
+    'title': instance.title,
+    'description': instance.description,
+    'imageURLs': instance.imageURLs?.toList(),
+    'coordinates': instance.coordinates?.toJson(),
+    'location': instance.location?.toJson(),
+    'creator': instance.creator?.toJson(),
+    'difficulty': instance.difficulty,
+    'creationDate': instance.creationDate,
+    'modificationDate': instance.modificationDate,
       'objectives': instance.objectives?.map((e) => e?.toJson())?.toList(),
       'rewards': instance.rewards?.map((e) => e?.toJson())?.toList(),
       'tags': instance.tags?.map((e) => e?.toJson())?.toList(),

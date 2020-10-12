@@ -37,17 +37,18 @@ _$_UserDto _$_$_UserDtoFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_UserDtoToJson(_$_UserDto instance) => <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'username': instance.username,
-      'password': instance.password,
-      'email': instance.email,
-      'birthday': instance.birthday,
-      'description': instance.description,
-      'imageURL': instance.imageURL,
-      'level': instance.level,
-      'experiencePoints': instance.experiencePoints,
+Map<String, dynamic> _$_$_UserDtoToJson(_$_UserDto instance) =>
+  <String, dynamic>{
+    'id': instance.id,
+    'name': instance.name,
+    'username': instance.username,
+    'password': instance.password,
+    'email': instance.email,
+    'birthday': instance.birthday,
+    'description': instance.description,
+    'imageURL': instance.imageURL,
+    'level': instance.level,
+    'experiencePoints': instance.experiencePoints,
       'privacy': instance.privacy,
       'adminPowers': instance.adminPowers,
       'enabled': instance.enabled,
