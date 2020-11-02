@@ -701,7 +701,7 @@ class _$_RewardFormState implements _RewardFormState {
   final bool showErrorMessages;
   @override
   final bool isSubmitting;
-
+  
   @override
   String toString() {
     return 'RewardFormState(reward: $reward, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting)';

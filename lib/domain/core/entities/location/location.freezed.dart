@@ -184,7 +184,7 @@ class _$_Location extends _Location {
       const DeepCollectionEquality().hash(country) ^
       const DeepCollectionEquality().hash(postalCode) ^
       const DeepCollectionEquality().hash(experiences);
-  
+
   @override
   _$LocationCopyWith<_Location> get copyWith =>
     __$LocationCopyWithImpl<_Location>(this, _$identity);

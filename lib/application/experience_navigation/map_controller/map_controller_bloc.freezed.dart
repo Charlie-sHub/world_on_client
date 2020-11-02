@@ -223,9 +223,8 @@ abstract class _$CameraPositionChangedCopyWith<$Res> {
   factory _$CameraPositionChangedCopyWith(_CameraPositionChanged value,
     $Res Function(_CameraPositionChanged) then) =
   __$CameraPositionChangedCopyWithImpl<$Res>;
-  
   $Res call({Coordinates coordinates, double zoom});
-  
+
   $CoordinatesCopyWith<$Res> get coordinates;
 }
 
@@ -300,7 +299,7 @@ class _$_CameraPositionChanged implements _CameraPositionChanged {
   _$CameraPositionChangedCopyWith<_CameraPositionChanged> get copyWith =>
     __$CameraPositionChangedCopyWithImpl<_CameraPositionChanged>(
       this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -625,7 +624,7 @@ class _$_MapControllerState implements _MapControllerState {
   final KtList<Objective> objectives;
   @override
   final double zoom;
-
+  
   @override
   String toString() {
     return 'MapControllerState(coordinates: $coordinates, objectives: $objectives, zoom: $zoom)';

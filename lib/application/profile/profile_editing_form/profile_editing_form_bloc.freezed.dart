@@ -1086,7 +1086,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
   get copyWith =>
     __$PasswordConfirmationChangedCopyWithImpl<
       _PasswordConfirmationChanged>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -1207,7 +1207,6 @@ abstract class _$EmailAddressChangedCopyWith<$Res> {
   factory _$EmailAddressChangedCopyWith(_EmailAddressChanged value,
     $Res Function(_EmailAddressChanged) then) =
   __$EmailAddressChangedCopyWithImpl<$Res>;
-  
   $Res call({String emailAddress});
 }
 
@@ -1260,7 +1259,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
   _$EmailAddressChangedCopyWith<_EmailAddressChanged> get copyWith =>
     __$EmailAddressChangedCopyWithImpl<_EmailAddressChanged>(
       this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -2192,13 +2191,13 @@ class _$_ProfileEditingFormState implements _ProfileEditingFormState {
     @required this.showErrorMessages,
     @required this.isSubmitting,
     @required this.failureOrSuccessOption})
-      : assert(user != null),
-        assert(passwordConfirmator != null),
-        assert(passwordToCompare != null),
-        assert(showErrorMessages != null),
-        assert(isSubmitting != null),
-        assert(failureOrSuccessOption != null);
-
+    : assert(user != null),
+      assert(passwordConfirmator != null),
+      assert(passwordToCompare != null),
+      assert(showErrorMessages != null),
+      assert(isSubmitting != null),
+      assert(failureOrSuccessOption != null);
+  
   @override
   final User user;
   @override
@@ -2264,15 +2263,19 @@ abstract class _ProfileEditingFormState implements ProfileEditingFormState {
     @required bool isSubmitting,
     @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
   _$_ProfileEditingFormState;
-
+  
   @override
   User get user;
+  
   @override
   PasswordConfirmator get passwordConfirmator;
+  
   @override
   String get passwordToCompare;
+  
   @override
   bool get showErrorMessages;
+  
   @override
   bool get isSubmitting;
   @override

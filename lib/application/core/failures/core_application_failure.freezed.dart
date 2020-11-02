@@ -144,7 +144,7 @@ class _$UnknownApplicationLayerError<T>
   get copyWith =>
     _$UnknownApplicationLayerErrorCopyWithImpl<T,
       UnknownApplicationLayerError<T>>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({

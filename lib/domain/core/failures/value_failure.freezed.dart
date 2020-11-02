@@ -435,7 +435,7 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
   @override
   $InvalidDateCopyWith<T, InvalidDate<T>> get copyWith =>
     _$InvalidDateCopyWithImpl<T, InvalidDate<T>>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -633,7 +633,7 @@ class _$InvalidEmail<T>
   @override
   $InvalidEmailCopyWith<T, InvalidEmail<T>> get copyWith =>
     _$InvalidEmailCopyWithImpl<T, InvalidEmail<T>>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -831,7 +831,7 @@ class _$InvalidPassword<T>
   @override
   $InvalidPasswordCopyWith<T, InvalidPassword<T>> get copyWith =>
     _$InvalidPasswordCopyWithImpl<T, InvalidPassword<T>>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -1029,7 +1029,7 @@ class _$StringMismatch<T>
   @override
   $StringMismatchCopyWith<T, StringMismatch<T>> get copyWith =>
     _$StringMismatchCopyWithImpl<T, StringMismatch<T>>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -1225,7 +1225,7 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
   @override
   $InvalidNameCopyWith<T, InvalidName<T>> get copyWith =>
     _$InvalidNameCopyWithImpl<T, InvalidName<T>>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -1419,7 +1419,7 @@ class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
   @override
   $EmptyStringCopyWith<T, EmptyString<T>> get copyWith =>
     _$EmptyStringCopyWithImpl<T, EmptyString<T>>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -1615,7 +1615,7 @@ class _$MultiLineString<T>
   @override
   $MultiLineStringCopyWith<T, MultiLineString<T>> get copyWith =>
     _$MultiLineStringCopyWithImpl<T, MultiLineString<T>>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -1753,7 +1753,6 @@ abstract class $StringExceedsLengthCopyWith<T, $Res> {
   factory $StringExceedsLengthCopyWith(StringExceedsLength<T> value,
     $Res Function(StringExceedsLength<T>) then) =
   _$StringExceedsLengthCopyWithImpl<T, $Res>;
-  
   $Res call({String failedValue, int maxLength});
 }
 
@@ -1826,7 +1825,7 @@ class _$StringExceedsLength<T>
   $StringExceedsLengthCopyWith<T, StringExceedsLength<T>> get copyWith =>
     _$StringExceedsLengthCopyWithImpl<T, StringExceedsLength<T>>(
       this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -1966,7 +1965,6 @@ abstract class $IntegerOutOfBoundsCopyWith<T, $Res> {
   factory $IntegerOutOfBoundsCopyWith(IntegerOutOfBounds<T> value,
     $Res Function(IntegerOutOfBounds<T>) then) =
   _$IntegerOutOfBoundsCopyWithImpl<T, $Res>;
-  
   $Res call({int failedValue});
 }
 
@@ -2028,7 +2026,7 @@ class _$IntegerOutOfBounds<T>
   $IntegerOutOfBoundsCopyWith<T, IntegerOutOfBounds<T>> get copyWith =>
     _$IntegerOutOfBoundsCopyWithImpl<T, IntegerOutOfBounds<T>>(
       this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -2232,7 +2230,7 @@ class _$StringWithInvalidCharacters<T>
   get copyWith =>
     _$StringWithInvalidCharactersCopyWithImpl<T,
       StringWithInvalidCharacters<T>>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -2371,7 +2369,6 @@ abstract class $InvalidCoordinatesCopyWith<T, $Res> {
   factory $InvalidCoordinatesCopyWith(InvalidCoordinates<T> value,
     $Res Function(InvalidCoordinates<T>) then) =
   _$InvalidCoordinatesCopyWithImpl<T, $Res>;
-  
   $Res call({double failedValue});
 }
 
@@ -2433,7 +2430,7 @@ class _$InvalidCoordinates<T>
   $InvalidCoordinatesCopyWith<T, InvalidCoordinates<T>> get copyWith =>
     _$InvalidCoordinatesCopyWithImpl<T, InvalidCoordinates<T>>(
       this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -2834,7 +2831,7 @@ class _$SetExceedsLength<T>
   @override
   $SetExceedsLengthCopyWith<T, SetExceedsLength<T>> get copyWith =>
     _$SetExceedsLengthCopyWithImpl<T, SetExceedsLength<T>>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({

@@ -88,7 +88,6 @@ abstract class $UnknownDomainLayerErrorCopyWith<T, $Res> {
   factory $UnknownDomainLayerErrorCopyWith(UnknownDomainLayerError<T> value,
     $Res Function(UnknownDomainLayerError<T>) then) =
   _$UnknownDomainLayerErrorCopyWithImpl<T, $Res>;
-  
   $Res call({String errorString});
 }
 
@@ -145,7 +144,7 @@ class _$UnknownDomainLayerError<T> implements UnknownDomainLayerError<T> {
   get copyWith =>
     _$UnknownDomainLayerErrorCopyWithImpl<T, UnknownDomainLayerError<T>>(
       this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -269,7 +268,7 @@ class _$DomainLayerError<T> implements DomainLayerError<T> {
   @override
   $DomainLayerErrorCopyWith<T, DomainLayerError<T>> get copyWith =>
     _$DomainLayerErrorCopyWithImpl<T, DomainLayerError<T>>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({

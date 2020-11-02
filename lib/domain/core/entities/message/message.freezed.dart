@@ -118,6 +118,7 @@ abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
   
   @override
   $UserCopyWith<$Res> get sender;
+  
   @override
   $UserCopyWith<$Res> get receiver;
 }
@@ -207,7 +208,7 @@ class _$_Message extends _Message {
       const DeepCollectionEquality().hash(receiver) ^
       const DeepCollectionEquality().hash(content) ^
       const DeepCollectionEquality().hash(creationDate);
-  
+
   @override
   _$MessageCopyWith<_Message> get copyWith =>
     __$MessageCopyWithImpl<_Message>(this, _$identity);

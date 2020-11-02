@@ -148,7 +148,7 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
     push<bool>(
       Routes.profileEditingPage,
       arguments: ProfileEditingPageArguments(key: key, user: user),
-      );
+    );
 
   Future<dynamic> pushMoorDbViewer({
     @required GeneratedDatabase db,
