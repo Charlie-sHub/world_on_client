@@ -1,0 +1,15 @@
+import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
+import 'package:worldon/core/error/failure.dart';
+import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
+import 'package:worldon/domain/core/repository/geo_location_repository_interface.dart';
+
+@LazySingleton(as: GeoLocationRepositoryInterface, env: [Environment.prod])
+class ProductionGeoLocationRepository implements GeoLocationRepositoryInterface {
+  @override
+  Future<Either<Failure, Coordinates>> getCurrentLocation() {
+    // TODO: implement getCurrentLocation
+    // Check the dev repository, it should be pretty much exactly the same code
+    throw UnimplementedError();
+  }
+}
