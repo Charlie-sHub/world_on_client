@@ -8,6 +8,7 @@ import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/comments/use_case/watch_experience_comments.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/injection.dart';
 
 part 'comment_watcher_bloc.freezed.dart';

@@ -4,7 +4,7 @@ part of 'comment_form_bloc.dart';
 abstract class CommentFormEvent with _$CommentFormEvent {
   const factory CommentFormEvent.initialized({
     @required Option<Comment> commentOption,
-    @required int experienceId,
+    @required UniqueId experienceId,
   }) = _Initialized;
 
   const factory CommentFormEvent.contentChanged(String content) = _ContentChanged;

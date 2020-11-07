@@ -8,9 +8,10 @@ import 'package:worldon/domain/core/validation/objects/experience_points.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 Achievement moorAchievementToDomainAchievement(MoorAchievementWithRelations _moorAchievementWithRelations) => Achievement(
-      id: _moorAchievementWithRelations.achievement.id,
+      id: UniqueId.fromUniqueString(_moorAchievementWithRelations.achievement.id),
       name: Name(_moorAchievementWithRelations.achievement.name),
       description: EntityDescription(_moorAchievementWithRelations.achievement.description),
       imageURL: _moorAchievementWithRelations.achievement.imageURL,
@@ -18,7 +19,7 @@ Achievement moorAchievementToDomainAchievement(MoorAchievementWithRelations _moo
       type: _moorAchievementWithRelations.achievement.type,
       requisite: _moorAchievementWithRelations.achievement.requisite,
       experiencePoints: ExperiencePoints(_moorAchievementWithRelations.achievement.experiencePoints),
-      creatorId: _moorAchievementWithRelations.achievement.creatorId,
+      creatorId: UniqueId.fromUniqueString(_moorAchievementWithRelations.achievement.creatorId),
       creationDate: PastDate(_moorAchievementWithRelations.achievement.creationDate),
       modificationDate: PastDate(_moorAchievementWithRelations.achievement.modificationDate),
       tags: TagSet(

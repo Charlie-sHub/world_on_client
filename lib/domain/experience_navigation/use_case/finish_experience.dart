@@ -5,6 +5,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_interface.dart';
 
 /// Sends the id of a [Experience] to the server so the [Experience] is added to the logged in [User]'s list of done [Experience]s
@@ -21,7 +22,7 @@ class FinishExperience implements AsyncUseCase<Unit, Params> {
 }
 
 class Params {
-  final int experienceId;
+  final UniqueId experienceId;
 
   Params({@required this.experienceId});
 }

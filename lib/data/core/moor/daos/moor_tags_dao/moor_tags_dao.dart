@@ -46,7 +46,7 @@ class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
         mode: InsertMode.replace,
       );
 
-  Future<int> deleteUserInterests(int userId) => (delete(userInterests)..where((interest) => interest.userId.equals(userId))).go();
+  Future<int> deleteUserInterests(String userId) => (delete(userInterests)..where((interest) => interest.userId.equals(userId))).go();
 
   Future<int> deleteAllTags() => delete(moorTags).go();
 
@@ -58,7 +58,7 @@ class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
 
   Future<int> removeUserInterest(Insertable<UserInterest> userInterest) => delete(userInterests).delete(userInterest);
 
-  Future<MoorTag> getTagById(int id) async {
+  Future<MoorTag> getTagById(String id) async {
     final _contentQuery = select(moorTags)..where((_tags) => _tags.id.equals(id));
     return _contentQuery.getSingle();
   }
@@ -68,7 +68,7 @@ class MoorTagsDao extends DatabaseAccessor<Database> with _$MoorTagsDaoMixin {
     yield* _tagsQuery.watch();
   }
 
-  Stream<List<MoorTag>> watchUserInterests(int userId) async* {
+  Stream<List<MoorTag>> watchUserInterests(String userId) async* {
     final _userInterestsQuery = select(userInterests).join(
       [
         innerJoin(

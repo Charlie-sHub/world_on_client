@@ -3,13 +3,13 @@ import 'package:worldon/data/core/moor/moor_database.dart';
 
 class MoorUserWithRelations {
   final MoorUser user;
-  final Set<int> blockedUsersIds;
-  final Set<int> followedUsersIds;
-  final Set<int> interestsIds;
-  final Set<int> achievementsIds;
-  final Set<int> experiencesDoneIds;
-  final Set<int> experiencesLikedIds;
-  final Set<int> experiencesToDoIds;
+  final Set<String> blockedUsersIds;
+  final Set<String> followedUsersIds;
+  final Set<String> interestsIds;
+  final Set<String> achievementsIds;
+  final Set<String> experiencesDoneIds;
+  final Set<String> experiencesLikedIds;
+  final Set<String> experiencesToDoIds;
 
   MoorUserWithRelations({
     @required this.user,

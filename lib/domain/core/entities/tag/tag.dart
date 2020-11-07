@@ -5,6 +5,7 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 part 'tag.freezed.dart';
 
@@ -18,16 +19,17 @@ abstract class Tag implements _$Tag {
   const Tag._();
 
   const factory Tag({
-    int id,
+    @required UniqueId id,
     @required Name name,
-    @required int creatorId,
+    @required UniqueId creatorId,
     @required PastDate creationDate,
     @required PastDate modificationDate,
   }) = _Tag;
 
   factory Tag.empty() => Tag(
-    name: Name(""),
-        creatorId: 0,
+        id: UniqueId(),
+        name: Name(""),
+        creatorId: UniqueId(),
         creationDate: PastDate(DateTime.now()),
         modificationDate: PastDate(DateTime.now()),
       );

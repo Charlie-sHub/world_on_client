@@ -7,6 +7,7 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 part 'reward.freezed.dart';
 
@@ -18,7 +19,7 @@ abstract class Reward implements _$Reward {
   const Reward._();
 
   const factory Reward({
-    int id,
+    @required UniqueId id,
     @required Name name,
     @required EntityDescription description,
     @required String imageURL,
@@ -26,6 +27,7 @@ abstract class Reward implements _$Reward {
   }) = _Reward;
 
   factory Reward.empty() => Reward(
+    id: UniqueId(),
         name: Name(""),
         description: EntityDescription(""),
         imageURL: "",

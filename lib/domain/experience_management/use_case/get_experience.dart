@@ -4,6 +4,7 @@ import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_management/repository/experience_management_repository_interface.dart';
 
 @LazySingleton(env: [Environment.dev, Environment.prod])
@@ -19,7 +20,7 @@ class GetExperience implements AsyncUseCase<Experience, Params> {
 }
 
 class Params {
-  final int id;
+  final UniqueId id;
 
   Params({@required this.id});
 }

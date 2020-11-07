@@ -17,7 +17,7 @@ class _$OptionsDtoTearOff {
   const _$OptionsDtoTearOff();
 
 // ignore: unused_element
-  _OptionsDto call({@required int id, @required String languageCode}) {
+  _OptionsDto call({@required String id, @required String languageCode}) {
     return _OptionsDto(
       id: id,
       languageCode: languageCode,
@@ -36,7 +36,8 @@ const $OptionsDto = _$OptionsDtoTearOff();
 
 /// @nodoc
 mixin _$OptionsDto {
-  int get id;
+  String get id;
+  
   String get languageCode;
 
   Map<String, dynamic> toJson();
@@ -48,7 +49,7 @@ abstract class $OptionsDtoCopyWith<$Res> {
   factory $OptionsDtoCopyWith(OptionsDto value, $Res Function(OptionsDto) then) =
   _$OptionsDtoCopyWithImpl<$Res>;
   
-  $Res call({int id, String languageCode});
+  $Res call({String id, String languageCode});
 }
 
 /// @nodoc
@@ -65,7 +66,7 @@ class _$OptionsDtoCopyWithImpl<$Res> implements $OptionsDtoCopyWith<$Res> {
     Object languageCode = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as String,
       languageCode: languageCode == freezed
         ? _value.languageCode
         : languageCode as String,
@@ -79,7 +80,7 @@ abstract class _$OptionsDtoCopyWith<$Res> implements $OptionsDtoCopyWith<$Res> {
   __$OptionsDtoCopyWithImpl<$Res>;
   
   @override
-  $Res call({int id, String languageCode});
+  $Res call({String id, String languageCode});
 }
 
 /// @nodoc
@@ -97,7 +98,7 @@ class __$OptionsDtoCopyWithImpl<$Res> extends _$OptionsDtoCopyWithImpl<$Res>
     Object languageCode = freezed,
   }) {
     return _then(_OptionsDto(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as String,
       languageCode: languageCode == freezed
         ? _value.languageCode
         : languageCode as String,
@@ -117,7 +118,7 @@ class __$OptionsDtoCopyWithImpl<$Res> extends _$OptionsDtoCopyWithImpl<$Res>
     _$_$_OptionsDtoFromJson(json);
   
   @override
-  final int id;
+  final String id;
   @override
   final String languageCode;
   
@@ -125,7 +126,7 @@ class __$OptionsDtoCopyWithImpl<$Res> extends _$OptionsDtoCopyWithImpl<$Res>
   String toString() {
     return 'OptionsDto(id: $id, languageCode: $languageCode)';
   }
-
+  
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -156,14 +157,13 @@ class __$OptionsDtoCopyWithImpl<$Res> extends _$OptionsDtoCopyWithImpl<$Res>
 abstract class _OptionsDto extends OptionsDto {
   const _OptionsDto._() : super._();
   
-  const factory _OptionsDto({@required int id, @required String languageCode}) =
-  _$_OptionsDto;
+  const factory _OptionsDto({@required String id, @required String languageCode}) = _$_OptionsDto;
   
   factory _OptionsDto.fromJson(Map<String, dynamic> json) =
   _$_OptionsDto.fromJson;
   
   @override
-  int get id;
+  String get id;
   
   @override
   String get languageCode;

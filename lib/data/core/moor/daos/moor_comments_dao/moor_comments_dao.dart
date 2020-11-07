@@ -19,7 +19,7 @@ class MoorCommentsDao extends DatabaseAccessor<Database> with _$MoorCommentsDaoM
 
   Future<int> insertComment(Insertable<MoorComment> comment) => into(moorComments).insert(comment);
 
-  Future<MoorComment> getCommentById(int id) async {
+  Future<MoorComment> getCommentById(String id) async {
     final _contentQuery = select(moorComments)..where((_comments) => _comments.id.equals(id));
     return _contentQuery.getSingle();
   }
@@ -31,7 +31,7 @@ class MoorCommentsDao extends DatabaseAccessor<Database> with _$MoorCommentsDaoM
 
   Future<int> deleteAllComments() => delete(moorComments).go();
 
-  Stream<List<MoorCommentWithMoorUser>> watchExperienceComments(int experienceId) {
+  Stream<List<MoorCommentWithMoorUser>> watchExperienceComments(String experienceId) {
     final _commentQuery = select(moorComments);
     return _commentQuery.watch().switchMap(
       (comments) {

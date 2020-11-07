@@ -17,9 +17,9 @@ class _$TagDtoTearOff {
   const _$TagDtoTearOff();
 
 // ignore: unused_element
-  _TagDto call({@required int id,
+  _TagDto call({@required String id,
     @required String name,
-    @required int creatorId,
+    @required String creatorId,
     @required String creationDate,
     @required String modificationDate}) {
     return _TagDto(
@@ -43,9 +43,12 @@ const $TagDto = _$TagDtoTearOff();
 
 /// @nodoc
 mixin _$TagDto {
-  int get id;
+  String get id;
+  
   String get name;
-  int get creatorId;
+  
+  String get creatorId;
+  
   String get creationDate;
   String get modificationDate;
 
@@ -58,9 +61,9 @@ abstract class $TagDtoCopyWith<$Res> {
   factory $TagDtoCopyWith(TagDto value, $Res Function(TagDto) then) =
   _$TagDtoCopyWithImpl<$Res>;
   
-  $Res call({int id,
+  $Res call({String id,
     String name,
-    int creatorId,
+    String creatorId,
     String creationDate,
     String modificationDate});
 }
@@ -82,9 +85,9 @@ class _$TagDtoCopyWithImpl<$Res> implements $TagDtoCopyWith<$Res> {
     Object modificationDate = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as String,
       name: name == freezed ? _value.name : name as String,
-      creatorId: creatorId == freezed ? _value.creatorId : creatorId as int,
+      creatorId: creatorId == freezed ? _value.creatorId : creatorId as String,
       creationDate: creationDate == freezed
         ? _value.creationDate
         : creationDate as String,
@@ -101,9 +104,9 @@ abstract class _$TagDtoCopyWith<$Res> implements $TagDtoCopyWith<$Res> {
   __$TagDtoCopyWithImpl<$Res>;
   
   @override
-  $Res call({int id,
+  $Res call({String id,
     String name,
-    int creatorId,
+    String creatorId,
     String creationDate,
     String modificationDate});
 }
@@ -126,9 +129,9 @@ class __$TagDtoCopyWithImpl<$Res> extends _$TagDtoCopyWithImpl<$Res>
     Object modificationDate = freezed,
   }) {
     return _then(_TagDto(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as String,
       name: name == freezed ? _value.name : name as String,
-      creatorId: creatorId == freezed ? _value.creatorId : creatorId as int,
+      creatorId: creatorId == freezed ? _value.creatorId : creatorId as String,
       creationDate: creationDate == freezed
         ? _value.creationDate
         : creationDate as String,
@@ -158,16 +161,16 @@ class __$TagDtoCopyWithImpl<$Res> extends _$TagDtoCopyWithImpl<$Res>
     _$_$_TagDtoFromJson(json);
   
   @override
-  final int id;
+  final String id;
   @override
   final String name;
   @override
-  final int creatorId;
+  final String creatorId;
   @override
   final String creationDate;
   @override
   final String modificationDate;
-
+  
   @override
   String toString() {
     return 'TagDto(id: $id, name: $name, creatorId: $creatorId, creationDate: $creationDate, modificationDate: $modificationDate)';
@@ -214,22 +217,22 @@ class __$TagDtoCopyWithImpl<$Res> extends _$TagDtoCopyWithImpl<$Res>
 abstract class _TagDto extends TagDto {
   const _TagDto._() : super._();
   
-  const factory _TagDto({@required int id,
+  const factory _TagDto({@required String id,
     @required String name,
-    @required int creatorId,
+    @required String creatorId,
     @required String creationDate,
     @required String modificationDate}) = _$_TagDto;
   
   factory _TagDto.fromJson(Map<String, dynamic> json) = _$_TagDto.fromJson;
   
   @override
-  int get id;
+  String get id;
   
   @override
   String get name;
   
   @override
-  int get creatorId;
+  String get creatorId;
   
   @override
   String get creationDate;

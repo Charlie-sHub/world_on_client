@@ -7,6 +7,7 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 part 'objective.freezed.dart';
 
@@ -18,7 +19,7 @@ abstract class Objective implements _$Objective {
   const Objective._();
 
   const factory Objective({
-    int id,
+    @required UniqueId id,
     @required EntityDescription description,
     @required Coordinates coordinates,
     @required String imageURL,
@@ -26,6 +27,7 @@ abstract class Objective implements _$Objective {
   }) = _Objective;
 
   factory Objective.empty() => Objective(
+    id: UniqueId(),
         description: EntityDescription(""),
         coordinates: Coordinates.empty(),
         imageURL: "",

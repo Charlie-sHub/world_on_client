@@ -6,6 +6,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/comments/repository/comment_repository_interface.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 @LazySingleton(env: [Environment.dev, Environment.prod])
 class WatchExperienceComments implements StreamUseCase<KtList<Comment>, Params> {
@@ -20,7 +21,7 @@ class WatchExperienceComments implements StreamUseCase<KtList<Comment>, Params> 
 }
 
 class Params {
-  final int experienceId;
+  final UniqueId experienceId;
 
   Params({@required this.experienceId});
 }

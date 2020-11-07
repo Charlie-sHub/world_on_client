@@ -3,12 +3,13 @@ import 'package:worldon/data/core/moor/daos/moor_comments_dao/moor_comment_with_
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
-Comment moorCommentToDomainComment(MoorCommentWithMoorUser moorCommentWithMoorUser) => Comment(
-      id: moorCommentWithMoorUser.comment.id,
-      poster: moorUserToDomainUser(moorCommentWithMoorUser.poster),
-      experienceId: moorCommentWithMoorUser.comment.experienceId,
-      content: CommentContent(moorCommentWithMoorUser.comment.content),
-      creationDate: PastDate(moorCommentWithMoorUser.comment.creationDate),
-      modificationDate: PastDate(moorCommentWithMoorUser.comment.modificationDate),
+Comment moorCommentToDomainComment(MoorCommentWithMoorUser _moorCommentWithMoorUser) => Comment(
+      id: UniqueId.fromUniqueString(_moorCommentWithMoorUser.comment.id),
+      poster: moorUserToDomainUser(_moorCommentWithMoorUser.poster),
+      experienceId: UniqueId.fromUniqueString(_moorCommentWithMoorUser.comment.experienceId),
+      content: CommentContent(_moorCommentWithMoorUser.comment.content),
+      creationDate: PastDate(_moorCommentWithMoorUser.comment.creationDate),
+      modificationDate: PastDate(_moorCommentWithMoorUser.comment.modificationDate),
     );

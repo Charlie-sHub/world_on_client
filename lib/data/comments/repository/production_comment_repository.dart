@@ -4,6 +4,7 @@ import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/comments/repository/comment_repository_interface.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 @LazySingleton(as: CommentRepositoryInterface, env: [Environment.prod])
 class ProductionCommentRepository implements CommentRepositoryInterface {
@@ -14,13 +15,13 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtList<Comment>>> watchExperienceComments(int experienceId) {
+  Stream<Either<Failure, KtList<Comment>>> watchExperienceComments(UniqueId experienceId) {
     // TODO: implement getExperienceComments
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtSet<Comment>>> watchUserComments(int userId) {
+  Stream<Either<Failure, KtSet<Comment>>> watchUserComments(UniqueId userId) {
     // TODO: implement getUserComments
     throw UnimplementedError();
   }
@@ -32,7 +33,7 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
   }
 
   @override
-  Future<Either<Failure, Unit>> removeComment(int id) {
+  Future<Either<Failure, Unit>> removeComment(UniqueId id) {
     // TODO: implement removeComment
     throw UnimplementedError();
   }

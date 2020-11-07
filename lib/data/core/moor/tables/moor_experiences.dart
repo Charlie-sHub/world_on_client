@@ -3,7 +3,7 @@ import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 
 class MoorExperiences extends Table {
-  IntColumn get id => integer().autoIncrement()();
+  TextColumn get id => text()();
 
   TextColumn get title => text().withLength(min: 1, max: Name.maxLength)();
 
@@ -19,11 +19,11 @@ class MoorExperiences extends Table {
 
   DateTimeColumn get modificationDate => dateTime()();
 
-  IntColumn get creatorId => integer().customConstraint("REFERENCES moor_users(id)")();
+  TextColumn get creatorId => text().customConstraint("REFERENCES moor_users(id)")();
 }
 
 class ExperienceImageUrls extends Table {
-  IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
+  TextColumn get experienceId => text().customConstraint("REFERENCES moor_experiences(id)")();
 
   TextColumn get imageUrl => text()();
 
@@ -35,9 +35,9 @@ class ExperienceImageUrls extends Table {
 }
 
 class ExperienceTags extends Table {
-  IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
+  TextColumn get experienceId => text().customConstraint("REFERENCES moor_experiences(id)")();
 
-  IntColumn get tagId => integer().customConstraint("REFERENCES moor_tags(id)")();
+  TextColumn get tagId => text().customConstraint("REFERENCES moor_tags(id)")();
 
   @override
   Set<Column> get primaryKey => {

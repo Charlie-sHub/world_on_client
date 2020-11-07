@@ -13,6 +13,7 @@ import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/injection.dart';
 
 part 'comment_form_bloc.freezed.dart';

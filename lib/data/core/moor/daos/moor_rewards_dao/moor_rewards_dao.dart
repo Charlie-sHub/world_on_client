@@ -15,7 +15,7 @@ class MoorRewardsDao extends DatabaseAccessor<Database> with _$MoorRewardsDaoMix
 
   Future<int> insertReward(Insertable<MoorReward> reward) => into(moorRewards).insert(reward);
 
-  Future<MoorReward> getRewardById(int id) async {
+  Future<MoorReward> getRewardById(String id) async {
     final _contentQuery = select(moorRewards)..where((_rewards) => _rewards.id.equals(id));
     return _contentQuery.getSingle();
   }

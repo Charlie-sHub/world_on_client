@@ -17,7 +17,7 @@ class _$SystemDtoTearOff {
   const _$SystemDtoTearOff();
 
 // ignore: unused_element
-  _SystemDto call({@required int id,
+  _SystemDto call({@required String id,
     @required String name,
     @required String type,
     @required String company}) {
@@ -41,7 +41,8 @@ const $SystemDto = _$SystemDtoTearOff();
 
 /// @nodoc
 mixin _$SystemDto {
-  int get id;
+  String get id;
+  
   String get name;
   String get type;
   String get company;
@@ -54,7 +55,8 @@ mixin _$SystemDto {
 abstract class $SystemDtoCopyWith<$Res> {
   factory $SystemDtoCopyWith(SystemDto value, $Res Function(SystemDto) then) =
   _$SystemDtoCopyWithImpl<$Res>;
-  $Res call({int id, String name, String type, String company});
+  
+  $Res call({String id, String name, String type, String company});
 }
 
 /// @nodoc
@@ -73,7 +75,7 @@ class _$SystemDtoCopyWithImpl<$Res> implements $SystemDtoCopyWith<$Res> {
     Object company = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as String,
       name: name == freezed ? _value.name : name as String,
       type: type == freezed ? _value.type : type as String,
       company: company == freezed ? _value.company : company as String,
@@ -87,7 +89,7 @@ abstract class _$SystemDtoCopyWith<$Res> implements $SystemDtoCopyWith<$Res> {
   __$SystemDtoCopyWithImpl<$Res>;
   
   @override
-  $Res call({int id, String name, String type, String company});
+  $Res call({String id, String name, String type, String company});
 }
 
 /// @nodoc
@@ -107,7 +109,7 @@ class __$SystemDtoCopyWithImpl<$Res> extends _$SystemDtoCopyWithImpl<$Res>
     Object company = freezed,
   }) {
     return _then(_SystemDto(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as String,
       name: name == freezed ? _value.name : name as String,
       type: type == freezed ? _value.type : type as String,
       company: company == freezed ? _value.company : company as String,
@@ -132,14 +134,14 @@ class __$SystemDtoCopyWithImpl<$Res> extends _$SystemDtoCopyWithImpl<$Res>
     _$_$_SystemDtoFromJson(json);
   
   @override
-  final int id;
+  final String id;
   @override
   final String name;
   @override
   final String type;
   @override
   final String company;
-
+  
   @override
   String toString() {
     return 'SystemDto(id: $id, name: $name, type: $type, company: $company)';
@@ -180,7 +182,7 @@ class __$SystemDtoCopyWithImpl<$Res> extends _$SystemDtoCopyWithImpl<$Res>
 abstract class _SystemDto extends SystemDto {
   const _SystemDto._() : super._();
   
-  const factory _SystemDto({@required int id,
+  const factory _SystemDto({@required String id,
     @required String name,
     @required String type,
     @required String company}) = _$_SystemDto;
@@ -189,7 +191,7 @@ abstract class _SystemDto extends SystemDto {
   _$_SystemDto.fromJson;
   
   @override
-  int get id;
+  String get id;
   
   @override
   String get name;

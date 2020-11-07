@@ -4,9 +4,9 @@ import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 part 'notification_dto.freezed.dart';
-
 part 'notification_dto.g.dart';
 
 @freezed
@@ -14,7 +14,7 @@ abstract class NotificationDto implements _$NotificationDto {
   const NotificationDto._();
 
   const factory NotificationDto({
-    @required int id,
+    @required String id,
     @required UserDto sender, // Maybe change the Users to only the ids
     @required UserDto receiver,
     @required String description,
@@ -24,7 +24,7 @@ abstract class NotificationDto implements _$NotificationDto {
   }) = _NotificationDto;
 
   factory NotificationDto.fromDomain(Notification notification) => NotificationDto(
-        id: notification.id,
+        id: notification.id.getOrCrash(),
         sender: UserDto.fromDomain(notification.sender),
         receiver: UserDto.fromDomain(notification.receiver),
         description: notification.description.getOrCrash(),
@@ -34,7 +34,7 @@ abstract class NotificationDto implements _$NotificationDto {
       );
 
   Notification toDomain() => Notification(
-        id: id,
+        id: UniqueId.fromUniqueString(id),
         sender: sender.toDomain(),
         receiver: receiver.toDomain(),
         description: EntityDescription(description),

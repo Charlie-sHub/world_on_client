@@ -17,9 +17,9 @@ class _$CommentDtoTearOff {
   const _$CommentDtoTearOff();
 
 // ignore: unused_element
-  _CommentDto call({@required int id,
+  _CommentDto call({@required String id,
     @required UserDto poster,
-    @required int experienceId,
+    @required String experienceId,
     @required String content,
     @required String creationDate,
     @required String modificationDate}) {
@@ -45,9 +45,12 @@ const $CommentDto = _$CommentDtoTearOff();
 
 /// @nodoc
 mixin _$CommentDto {
-  int get id;
+  String get id;
+  
   UserDto get poster;
-  int get experienceId;
+  
+  String get experienceId;
+  
   String get content;
   String get creationDate;
   String get modificationDate;
@@ -61,9 +64,9 @@ abstract class $CommentDtoCopyWith<$Res> {
   factory $CommentDtoCopyWith(CommentDto value, $Res Function(CommentDto) then) =
   _$CommentDtoCopyWithImpl<$Res>;
   
-  $Res call({int id,
+  $Res call({String id,
     UserDto poster,
-    int experienceId,
+    String experienceId,
     String content,
     String creationDate,
     String modificationDate});
@@ -89,10 +92,11 @@ class _$CommentDtoCopyWithImpl<$Res> implements $CommentDtoCopyWith<$Res> {
     Object modificationDate = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as String,
       poster: poster == freezed ? _value.poster : poster as UserDto,
-      experienceId:
-      experienceId == freezed ? _value.experienceId : experienceId as int,
+      experienceId: experienceId == freezed
+        ? _value.experienceId
+        : experienceId as String,
       content: content == freezed ? _value.content : content as String,
       creationDate: creationDate == freezed
         ? _value.creationDate
@@ -120,9 +124,9 @@ abstract class _$CommentDtoCopyWith<$Res> implements $CommentDtoCopyWith<$Res> {
   __$CommentDtoCopyWithImpl<$Res>;
   
   @override
-  $Res call({int id,
+  $Res call({String id,
     UserDto poster,
-    int experienceId,
+    String experienceId,
     String content,
     String creationDate,
     String modificationDate});
@@ -150,10 +154,11 @@ class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res>
     Object modificationDate = freezed,
   }) {
     return _then(_CommentDto(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as String,
       poster: poster == freezed ? _value.poster : poster as UserDto,
-      experienceId:
-      experienceId == freezed ? _value.experienceId : experienceId as int,
+      experienceId: experienceId == freezed
+        ? _value.experienceId
+        : experienceId as String,
       content: content == freezed ? _value.content : content as String,
       creationDate: creationDate == freezed
         ? _value.creationDate
@@ -186,18 +191,18 @@ class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res>
     _$_$_CommentDtoFromJson(json);
   
   @override
-  final int id;
+  final String id;
   @override
   final UserDto poster;
   @override
-  final int experienceId;
+  final String experienceId;
   @override
   final String content;
   @override
   final String creationDate;
   @override
   final String modificationDate;
-
+  
   @override
   String toString() {
     return 'CommentDto(id: $id, poster: $poster, experienceId: $experienceId, content: $content, creationDate: $creationDate, modificationDate: $modificationDate)';
@@ -248,9 +253,9 @@ class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res>
 abstract class _CommentDto extends CommentDto {
   const _CommentDto._() : super._();
   
-  const factory _CommentDto({@required int id,
+  const factory _CommentDto({@required String id,
     @required UserDto poster,
-    @required int experienceId,
+    @required String experienceId,
     @required String content,
     @required String creationDate,
     @required String modificationDate}) = _$_CommentDto;
@@ -259,13 +264,13 @@ abstract class _CommentDto extends CommentDto {
   _$_CommentDto.fromJson;
   
   @override
-  int get id;
+  String get id;
   
   @override
   UserDto get poster;
   
   @override
-  int get experienceId;
+  String get experienceId;
   
   @override
   String get content;

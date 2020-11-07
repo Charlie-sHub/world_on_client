@@ -18,6 +18,7 @@ import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart' as world_on_notification;
 import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/notifications/repository/notification_repository_interface.dart';
 import 'package:worldon/injection.dart';
 
@@ -85,9 +86,9 @@ class DevelopmentNotificationRepository implements NotificationRepositoryInterfa
   }
 
   @override
-  Future<Either<Failure, Unit>> deleteNotification(int id) async {
+  Future<Either<Failure, Unit>> deleteNotification(UniqueId id) async {
     try {
-      final _notificationToDelete = await _database.moorNotificationsDao.getNotificationById(id);
+      final _notificationToDelete = await _database.moorNotificationsDao.getNotificationById(id.getOrCrash());
       await _database.moorNotificationsDao.deleteNotification(_notificationToDelete);
       return right(unit);
     } catch (exception) {
@@ -103,7 +104,7 @@ class DevelopmentNotificationRepository implements NotificationRepositoryInterfa
   }
 
   @override
-  Future<Either<Failure, Unit>> checkNotification(int id) {
+  Future<Either<Failure, Unit>> checkNotification(UniqueId id) {
     return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 
@@ -120,17 +121,17 @@ class DevelopmentNotificationRepository implements NotificationRepositoryInterfa
           getValidNotification(),
           world_on_notification.Notification.empty(),
           getValidNotification().copyWith(
-            id: 2,
+            id: UniqueId(),
             description: EntityDescription("${getValidUser().name.getOrCrash()} unfollowed you"),
             type: NotificationType.unfollow,
           ),
           getValidNotification().copyWith(
-            id: 3,
+            id: UniqueId(),
             description: EntityDescription("${getValidUser().name.getOrCrash()} blocked you"),
             type: NotificationType.block,
           ),
           getValidNotification().copyWith(
-            id: 4,
+            id: UniqueId(),
             description: EntityDescription("${getValidUser().name.getOrCrash()} unblocked you"),
             type: NotificationType.unblock,
           ),

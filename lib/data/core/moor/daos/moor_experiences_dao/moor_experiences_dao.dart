@@ -72,7 +72,7 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
     return _moorExperienceList.length;
   }
 
-  Future<MoorExperience> getExperienceById(int id) async {
+  Future<MoorExperience> getExperienceById(String id) async {
     final _experienceQuery = select(moorExperiences)..where((_experiences) => _experiences.id.equals(id));
     return _experienceQuery.getSingle();
   }
@@ -87,7 +87,7 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
     yield* _getExperienceWithRelationsStream(_whereExpression);
   }
 
-  Stream<List<MoorExperienceWithRelations>> watchSearchExperiencesByTags(List<int> tagIds) async* {
+  Stream<List<MoorExperienceWithRelations>> watchSearchExperiencesByTags(List<String> tagIds) async* {
     final _experiencesByTagsQuery = select(experienceTags)
       ..where(
         (experienceTags) => experienceTags.tagId.isIn(tagIds),
@@ -98,12 +98,12 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
     yield* _getExperienceWithRelationsStream(_whereExpression);
   }
 
-  Stream<List<MoorExperienceWithRelations>> watchExperiencesCreated(int userId) async* {
+  Stream<List<MoorExperienceWithRelations>> watchExperiencesCreated(String userId) async* {
     final _whereExpression = moorExperiences.creatorId.equals(userId);
     yield* _getExperienceWithRelationsStream(_whereExpression);
   }
 
-  Stream<List<MoorExperienceWithRelations>> watchFeed(int userId) async* {
+  Stream<List<MoorExperienceWithRelations>> watchFeed(String userId) async* {
     final _followedUsersQuery = select(userFollowRelations)
       ..where(
         (_userFollowRelations) => _userFollowRelations.followingId.equals(userId),
@@ -130,7 +130,7 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
       _imageUrlsStream,
       _tagsListStream,
       (
-        List<int> _followedIds,
+        List<String> _followedIds,
         List<TypedResult> _experiencesWithCreator,
         List<TypedResult> _experiencesWithTags,
         List<MoorObjective> _objectiveList,
@@ -153,7 +153,7 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
     );
   }
 
-  Stream<List<MoorExperienceWithRelations>> watchExperiencesDone(int userId) async* {
+  Stream<List<MoorExperienceWithRelations>> watchExperiencesDone(String userId) async* {
     final _experiencesDoneQuery = select(userDoneExperiences)
       ..where(
         (_userDoneExperiences) => _userDoneExperiences.userId.equals(userId),
@@ -168,7 +168,7 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
     yield* _createExperienceStreamInRelationToUser(_doneExperiencesIdStream);
   }
 
-  Stream<List<MoorExperienceWithRelations>> watchExperiencesLiked(int userId) async* {
+  Stream<List<MoorExperienceWithRelations>> watchExperiencesLiked(String userId) async* {
     final _contentQuery = select(userLikedExperiences)
       ..where(
         (_userLikedExperiences) => _userLikedExperiences.userId.equals(userId),
@@ -183,7 +183,7 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
     yield* _createExperienceStreamInRelationToUser(_likedExperiencesIdStream);
   }
 
-  Stream<List<MoorExperienceWithRelations>> _createExperienceStreamInRelationToUser(Stream<List<int>> _experiencesIdStream) async* {
+  Stream<List<MoorExperienceWithRelations>> _createExperienceStreamInRelationToUser(Stream<List<String>> _experiencesIdStream) async* {
     final _experiencesWithCreatorJoinStream = _createExperienceWithCreatorsJoinStream();
     final _experiencesWithTagsJoinStream = _createExperiencesWithTagsJoinStream();
     final _tagsListStream = select(moorTags).watch();
@@ -199,7 +199,7 @@ class MoorExperiencesDao extends DatabaseAccessor<Database> with _$MoorExperienc
       _imageUrlsStream,
       _tagsListStream,
       (
-        List<int> _experiencesIds,
+        List<String> _experiencesIds,
         List<TypedResult> _experiencesWithCreator,
         List<TypedResult> _experiencesWithTags,
         List<MoorObjective> _objectiveList,

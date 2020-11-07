@@ -3,9 +3,9 @@ import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 
 class MoorRewards extends Table {
-  IntColumn get id => integer().autoIncrement()();
+  TextColumn get id => text()();
 
-  IntColumn get experienceId => integer().customConstraint("REFERENCES moor_experiences(id)")();
+  TextColumn get experienceId => text().customConstraint("REFERENCES moor_experiences(id)")();
 
   TextColumn get name => text().withLength(min: 1, max: Name.maxLength)();
 

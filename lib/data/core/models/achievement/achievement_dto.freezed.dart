@@ -18,17 +18,17 @@ class _$AchievementDtoTearOff {
 
 // ignore: unused_element
   _AchievementDto call(
-      {@required int id,
-      @required String name,
-      @required String description,
-      @required String imageURL,
-      @required String type,
-      @required int requisite,
-      @required int experiencePoints,
-      @required int creatorId,
-      @required String creationDate,
-      @required String modificationDate,
-      @required Set<TagDto> tags}) {
+      {@required String id,
+        @required String name,
+        @required String description,
+        @required String imageURL,
+        @required String type,
+        @required int requisite,
+        @required int experiencePoints,
+        @required String creatorId,
+        @required String creationDate,
+        @required String modificationDate,
+        @required Set<TagDto> tags}) {
     return _AchievementDto(
       id: id,
       name: name,
@@ -56,14 +56,18 @@ const $AchievementDto = _$AchievementDtoTearOff();
 
 /// @nodoc
 mixin _$AchievementDto {
-  int get id;
+  String get id;
+  
   String get name;
   String get description;
   String get imageURL;
   String get type;
   int get requisite;
+  
   int get experiencePoints;
-  int get creatorId;
+  
+  String get creatorId;
+  
   String get creationDate;
   String get modificationDate;
   Set<TagDto> get tags;
@@ -77,14 +81,14 @@ abstract class $AchievementDtoCopyWith<$Res> {
   factory $AchievementDtoCopyWith(AchievementDto value, $Res Function(AchievementDto) then) =
   _$AchievementDtoCopyWithImpl<$Res>;
   
-  $Res call({int id,
+  $Res call({String id,
     String name,
     String description,
     String imageURL,
     String type,
     int requisite,
     int experiencePoints,
-    int creatorId,
+    String creatorId,
     String creationDate,
     String modificationDate,
     Set<TagDto> tags});
@@ -115,7 +119,7 @@ class _$AchievementDtoCopyWithImpl<$Res>
     Object tags = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as String,
       name: name == freezed ? _value.name : name as String,
       description:
       description == freezed ? _value.description : description as String,
@@ -125,7 +129,7 @@ class _$AchievementDtoCopyWithImpl<$Res>
       experiencePoints: experiencePoints == freezed
         ? _value.experiencePoints
         : experiencePoints as int,
-      creatorId: creatorId == freezed ? _value.creatorId : creatorId as int,
+      creatorId: creatorId == freezed ? _value.creatorId : creatorId as String,
       creationDate: creationDate == freezed
         ? _value.creationDate
         : creationDate as String,
@@ -144,14 +148,14 @@ abstract class _$AchievementDtoCopyWith<$Res>
   __$AchievementDtoCopyWithImpl<$Res>;
   
   @override
-  $Res call({int id,
+  $Res call({String id,
     String name,
     String description,
     String imageURL,
     String type,
     int requisite,
     int experiencePoints,
-    int creatorId,
+    String creatorId,
     String creationDate,
     String modificationDate,
     Set<TagDto> tags});
@@ -181,7 +185,7 @@ class __$AchievementDtoCopyWithImpl<$Res> extends _$AchievementDtoCopyWithImpl<$
     Object tags = freezed,
   }) {
     return _then(_AchievementDto(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as String,
       name: name == freezed ? _value.name : name as String,
       description:
       description == freezed ? _value.description : description as String,
@@ -191,7 +195,7 @@ class __$AchievementDtoCopyWithImpl<$Res> extends _$AchievementDtoCopyWithImpl<$
       experiencePoints: experiencePoints == freezed
         ? _value.experiencePoints
         : experiencePoints as int,
-      creatorId: creatorId == freezed ? _value.creatorId : creatorId as int,
+      creatorId: creatorId == freezed ? _value.creatorId : creatorId as String,
       creationDate: creationDate == freezed
         ? _value.creationDate
         : creationDate as String,
@@ -234,7 +238,7 @@ class __$AchievementDtoCopyWithImpl<$Res> extends _$AchievementDtoCopyWithImpl<$
     _$_$_AchievementDtoFromJson(json);
   
   @override
-  final int id;
+  final String id;
   @override
   final String name;
   @override
@@ -248,14 +252,14 @@ class __$AchievementDtoCopyWithImpl<$Res> extends _$AchievementDtoCopyWithImpl<$
   @override
   final int experiencePoints;
   @override
-  final int creatorId;
+  final String creatorId;
   @override
   final String creationDate;
   @override
   final String modificationDate;
   @override
   final Set<TagDto> tags;
-
+  
   @override
   String toString() {
     return 'AchievementDto(id: $id, name: $name, description: $description, imageURL: $imageURL, type: $type, requisite: $requisite, experiencePoints: $experiencePoints, creatorId: $creatorId, creationDate: $creationDate, modificationDate: $modificationDate, tags: $tags)';
@@ -324,14 +328,14 @@ class __$AchievementDtoCopyWithImpl<$Res> extends _$AchievementDtoCopyWithImpl<$
 abstract class _AchievementDto extends AchievementDto {
   const _AchievementDto._() : super._();
   
-  const factory _AchievementDto({@required int id,
+  const factory _AchievementDto({@required String id,
     @required String name,
     @required String description,
     @required String imageURL,
     @required String type,
     @required int requisite,
     @required int experiencePoints,
-    @required int creatorId,
+    @required String creatorId,
     @required String creationDate,
     @required String modificationDate,
     @required Set<TagDto> tags}) = _$_AchievementDto;
@@ -340,7 +344,7 @@ abstract class _AchievementDto extends AchievementDto {
   _$_AchievementDto.fromJson;
   
   @override
-  int get id;
+  String get id;
   
   @override
   String get name;
@@ -355,10 +359,13 @@ abstract class _AchievementDto extends AchievementDto {
   String get type;
   @override
   int get requisite;
+  
   @override
   int get experiencePoints;
+  
   @override
-  int get creatorId;
+  String get creatorId;
+  
   @override
   String get creationDate;
   @override

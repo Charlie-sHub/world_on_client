@@ -5,9 +5,10 @@ import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/latitude.dart';
 import 'package:worldon/domain/core/validation/objects/longitude.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 Objective moorObjectiveToDomainObjective(MoorObjective _moorObjective) => Objective(
-      id: _moorObjective.id,
+      id: UniqueId.fromUniqueString(_moorObjective.id),
       description: EntityDescription(_moorObjective.description),
       coordinates: Coordinates(
         latitude: Latitude(_moorObjective.latitude),

@@ -8,10 +8,11 @@ import 'package:worldon/domain/core/validation/objects/experience_points.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/core/validation/objects/user_level.dart';
 
 User moorUserToDomainUser(MoorUser _moorUser) => User.empty().copyWith(
-      id: _moorUser.id,
+      id: UniqueId.fromUniqueString(_moorUser.id),
       name: Name(_moorUser.name),
       username: Name(_moorUser.username),
       password: Password(_moorUser.password),

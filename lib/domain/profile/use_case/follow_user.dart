@@ -6,6 +6,7 @@ import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/profile/failures/profile_domain_failure.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 
@@ -34,7 +35,7 @@ class FollowUser implements AsyncUseCase<Unit, Params> {
 }
 
 class Params {
-  final int userToFollowId;
+  final UniqueId userToFollowId;
 
   Params({@required this.userToFollowId});
 }

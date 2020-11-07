@@ -5,24 +5,25 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_interface.dart';
 
 @LazySingleton(as: ExperienceNavigationRepositoryInterface, env: [Environment.prod])
 class ProductionExperienceNavigationRepository implements ExperienceNavigationRepositoryInterface {
   @override
-  Future<Either<Failure, Unit>> finishExperience(int experienceId) {
+  Future<Either<Failure, Unit>> finishExperience(UniqueId experienceId) {
     // TODO: implement finishExperience
     throw UnimplementedError();
   }
 
   @override
-  Future<Either<Failure, Unit>> likeExperience(int experienceId) {
+  Future<Either<Failure, Unit>> likeExperience(UniqueId experienceId) {
     // TODO: implement likeExperience
     throw UnimplementedError();
   }
-
+  
   @override
-  Future<Either<Failure, Unit>> dislikeExperience(int experienceId) {
+  Future<Either<Failure, Unit>> dislikeExperience(UniqueId experienceId) {
     // TODO: implement dislikeExperience
     throw UnimplementedError();
   }
@@ -36,14 +37,14 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   @override
   Future<Either<Failure, Unit>> rateDifficulty({
     Difficulty difficulty,
-    int experienceId,
+    UniqueId experienceId,
   }) {
     // TODO: implement rateDifficulty
     throw UnimplementedError();
   }
-
+  
   @override
-  Future<Either<Failure, Unit>> rewardUser(int experienceId) {
+  Future<Either<Failure, Unit>> rewardUser(UniqueId experienceId) {
     // TODO: implement rewardUser
     throw UnimplementedError();
   }

@@ -1,9 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/data/core/models/experience/experience_dto.dart';
 import 'package:worldon/domain/core/entities/location/location.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 part 'location_dto.freezed.dart';
-
 part 'location_dto.g.dart';
 
 @freezed
@@ -11,7 +11,7 @@ abstract class LocationDto implements _$LocationDto {
   const LocationDto._();
 
   const factory LocationDto({
-    @required int id,
+    @required String id,
     @required String city,
     @required String country,
     @required String postalCode,
@@ -19,7 +19,7 @@ abstract class LocationDto implements _$LocationDto {
   }) = _LocationDto;
 
   factory LocationDto.fromDomain(Location location) => LocationDto(
-        id: location.id,
+        id: location.id.getOrCrash(),
         city: location.city,
         country: location.country,
         postalCode: location.postalCode,
@@ -27,7 +27,7 @@ abstract class LocationDto implements _$LocationDto {
       );
 
   Location toDomain() => Location(
-        id: id,
+        id: UniqueId.fromUniqueString(id),
         city: city,
         country: country,
         postalCode: postalCode,

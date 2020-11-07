@@ -33,7 +33,7 @@ class MoorAchievementsDao extends DatabaseAccessor<Database> with _$MoorAchievem
     return _moorAchievementList.length;
   }
 
-  Future<MoorAchievement> getAchievementById(int id) async {
+  Future<MoorAchievement> getAchievementById(String id) async {
     final _contentQuery = select(moorAchievements)..where((_achievements) => _achievements.id.equals(id));
     return _contentQuery.getSingle();
   }
@@ -42,7 +42,7 @@ class MoorAchievementsDao extends DatabaseAccessor<Database> with _$MoorAchievem
 
   Future<int> deleteAllUsersAchievements() => delete(userAchievements).go();
 
-  Stream<List<MoorAchievementWithRelations>> watchUserAchievements(int userId) async* {
+  Stream<List<MoorAchievementWithRelations>> watchUserAchievements(String userId) async* {
     final _userAchievementsQuery = select(userAchievements).join(
       [
         innerJoin(

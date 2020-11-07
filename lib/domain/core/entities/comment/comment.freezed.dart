@@ -14,7 +14,8 @@ class _$CommentTearOff {
   const _$CommentTearOff();
 
 // ignore: unused_element
-  _Comment call({int id, @required User poster, @required int experienceId, @required CommentContent content, @required PastDate creationDate, @required PastDate modificationDate}) {
+  _Comment call(
+      {@required UniqueId id, @required User poster, @required UniqueId experienceId, @required CommentContent content, @required PastDate creationDate, @required PastDate modificationDate}) {
     return _Comment(
       id: id,
       poster: poster,
@@ -32,9 +33,12 @@ const $Comment = _$CommentTearOff();
 
 /// @nodoc
 mixin _$Comment {
-  int get id;
+  UniqueId get id;
+  
   User get poster;
-  int get experienceId;
+  
+  UniqueId get experienceId;
+  
   CommentContent get content;
   PastDate get creationDate;
   PastDate get modificationDate;
@@ -47,9 +51,9 @@ abstract class $CommentCopyWith<$Res> {
   factory $CommentCopyWith(Comment value, $Res Function(Comment) then) =
   _$CommentCopyWithImpl<$Res>;
   
-  $Res call({int id,
+  $Res call({UniqueId id,
     User poster,
-    int experienceId,
+    UniqueId experienceId,
     CommentContent content,
     PastDate creationDate,
     PastDate modificationDate});
@@ -75,10 +79,11 @@ class _$CommentCopyWithImpl<$Res> implements $CommentCopyWith<$Res> {
     Object modificationDate = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       poster: poster == freezed ? _value.poster : poster as User,
-      experienceId:
-      experienceId == freezed ? _value.experienceId : experienceId as int,
+      experienceId: experienceId == freezed
+        ? _value.experienceId
+        : experienceId as UniqueId,
       content: content == freezed ? _value.content : content as CommentContent,
       creationDate: creationDate == freezed
         ? _value.creationDate
@@ -106,9 +111,9 @@ abstract class _$CommentCopyWith<$Res> implements $CommentCopyWith<$Res> {
   __$CommentCopyWithImpl<$Res>;
   
   @override
-  $Res call({int id,
+  $Res call({UniqueId id,
     User poster,
-    int experienceId,
+    UniqueId experienceId,
     CommentContent content,
     PastDate creationDate,
     PastDate modificationDate});
@@ -136,10 +141,11 @@ class __$CommentCopyWithImpl<$Res> extends _$CommentCopyWithImpl<$Res>
     Object modificationDate = freezed,
   }) {
     return _then(_Comment(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       poster: poster == freezed ? _value.poster : poster as User,
-      experienceId:
-      experienceId == freezed ? _value.experienceId : experienceId as int,
+      experienceId: experienceId == freezed
+        ? _value.experienceId
+        : experienceId as UniqueId,
       content: content == freezed ? _value.content : content as CommentContent,
       creationDate: creationDate == freezed
         ? _value.creationDate
@@ -153,13 +159,14 @@ class __$CommentCopyWithImpl<$Res> extends _$CommentCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_Comment extends _Comment {
-  const _$_Comment({this.id,
+  const _$_Comment({@required this.id,
     @required this.poster,
     @required this.experienceId,
     @required this.content,
     @required this.creationDate,
     @required this.modificationDate})
-    : assert(poster != null),
+    : assert(id != null),
+      assert(poster != null),
       assert(experienceId != null),
       assert(content != null),
       assert(creationDate != null),
@@ -167,18 +174,18 @@ class _$_Comment extends _Comment {
       super._();
   
   @override
-  final int id;
+  final UniqueId id;
   @override
   final User poster;
   @override
-  final int experienceId;
+  final UniqueId experienceId;
   @override
   final CommentContent content;
   @override
   final PastDate creationDate;
   @override
   final PastDate modificationDate;
-
+  
   @override
   String toString() {
     return 'Comment(id: $id, poster: $poster, experienceId: $experienceId, content: $content, creationDate: $creationDate, modificationDate: $modificationDate)';
@@ -224,21 +231,21 @@ class _$_Comment extends _Comment {
 abstract class _Comment extends Comment {
   const _Comment._() : super._();
   
-  const factory _Comment({int id,
+  const factory _Comment({@required UniqueId id,
     @required User poster,
-    @required int experienceId,
+    @required UniqueId experienceId,
     @required CommentContent content,
     @required PastDate creationDate,
     @required PastDate modificationDate}) = _$_Comment;
   
   @override
-  int get id;
+  UniqueId get id;
   
   @override
   User get poster;
   
   @override
-  int get experienceId;
+  UniqueId get experienceId;
   
   @override
   CommentContent get content;

@@ -17,6 +17,7 @@ import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/tag_management/repository/tag_repository_interface.dart';
 
 import '../../../injection.dart';
@@ -76,8 +77,8 @@ class DevelopmentTagRepository implements TagCoreRepositoryInterface {
   }
 
   UserInterestsCompanion _createUserInterest(MoorUser _moorUser, Tag tag) => UserInterestsCompanion.insert(
-        userId: _moorUser.id,
-        tagId: tag.id,
+    userId: _moorUser.id,
+        tagId: tag.id.getOrCrash(),
       );
 
   @override
@@ -88,7 +89,7 @@ class DevelopmentTagRepository implements TagCoreRepositoryInterface {
         KtList.of(
           getValidTag(),
           getValidTag().copyWith(
-            id: 2,
+            id: UniqueId(),
             name: Name("Nullam quam"),
           ),
         ),
@@ -100,7 +101,7 @@ class DevelopmentTagRepository implements TagCoreRepositoryInterface {
   }
 
   @override
-  Future<Either<Failure, User>> getCreator(int id) {
+  Future<Either<Failure, User>> getCreator(UniqueId id) {
     if (_random.nextBool()) {
       return getRightFuture(getValidUser());
     } else {
@@ -109,14 +110,14 @@ class DevelopmentTagRepository implements TagCoreRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtList<Tag>>> watchTagsByCreator(int id) {
+  Stream<Either<Failure, KtList<Tag>>> watchTagsByCreator(UniqueId id) {
     Either<Failure, KtList<Tag>> _either;
     if (_random.nextBool()) {
       _either = right(
         KtList.of(
           getValidTag(),
           getValidTag().copyWith(
-            id: 2,
+            id: UniqueId(),
             name: Name("Nullam quam"),
           ),
         ),

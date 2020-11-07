@@ -14,7 +14,7 @@ class _$ObjectiveTearOff {
   const _$ObjectiveTearOff();
 
 // ignore: unused_element
-  _Objective call({int id, @required EntityDescription description, @required Coordinates coordinates, @required String imageURL, @required Option<File> imageFile}) {
+  _Objective call({@required UniqueId id, @required EntityDescription description, @required Coordinates coordinates, @required String imageURL, @required Option<File> imageFile}) {
     return _Objective(
       id: id,
       description: description,
@@ -31,7 +31,8 @@ const $Objective = _$ObjectiveTearOff();
 
 /// @nodoc
 mixin _$Objective {
-  int get id;
+  UniqueId get id;
+  
   EntityDescription get description;
   Coordinates get coordinates;
   String get imageURL;
@@ -45,7 +46,7 @@ abstract class $ObjectiveCopyWith<$Res> {
   factory $ObjectiveCopyWith(Objective value, $Res Function(Objective) then) =
   _$ObjectiveCopyWithImpl<$Res>;
   
-  $Res call({int id,
+  $Res call({UniqueId id,
     EntityDescription description,
     Coordinates coordinates,
     String imageURL,
@@ -71,7 +72,7 @@ class _$ObjectiveCopyWithImpl<$Res> implements $ObjectiveCopyWith<$Res> {
     Object imageFile = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       description: description == freezed
         ? _value.description
         : description as EntityDescription,
@@ -101,7 +102,7 @@ abstract class _$ObjectiveCopyWith<$Res> implements $ObjectiveCopyWith<$Res> {
   __$ObjectiveCopyWithImpl<$Res>;
   
   @override
-  $Res call({int id,
+  $Res call({UniqueId id,
     EntityDescription description,
     Coordinates coordinates,
     String imageURL,
@@ -129,7 +130,7 @@ class __$ObjectiveCopyWithImpl<$Res> extends _$ObjectiveCopyWithImpl<$Res>
     Object imageFile = freezed,
   }) {
     return _then(_Objective(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       description: description == freezed
         ? _value.description
         : description as EntityDescription,
@@ -145,19 +146,20 @@ class __$ObjectiveCopyWithImpl<$Res> extends _$ObjectiveCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_Objective extends _Objective {
-  const _$_Objective({this.id,
+  const _$_Objective({@required this.id,
     @required this.description,
     @required this.coordinates,
     @required this.imageURL,
     @required this.imageFile})
-    : assert(description != null),
+    : assert(id != null),
+      assert(description != null),
       assert(coordinates != null),
       assert(imageURL != null),
       assert(imageFile != null),
       super._();
   
   @override
-  final int id;
+  final UniqueId id;
   @override
   final EntityDescription description;
   @override
@@ -166,7 +168,7 @@ class _$_Objective extends _Objective {
   final String imageURL;
   @override
   final Option<File> imageFile;
-
+  
   @override
   String toString() {
     return 'Objective(id: $id, description: $description, coordinates: $coordinates, imageURL: $imageURL, imageFile: $imageFile)';
@@ -209,14 +211,14 @@ class _$_Objective extends _Objective {
 abstract class _Objective extends Objective {
   const _Objective._() : super._();
   
-  const factory _Objective({int id,
+  const factory _Objective({@required UniqueId id,
     @required EntityDescription description,
     @required Coordinates coordinates,
     @required String imageURL,
     @required Option<File> imageFile}) = _$_Objective;
   
   @override
-  int get id;
+  UniqueId get id;
   
   @override
   EntityDescription get description;

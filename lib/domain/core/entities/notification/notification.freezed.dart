@@ -15,7 +15,13 @@ class _$NotificationTearOff {
 
 // ignore: unused_element
   _Notification call(
-      {int id, @required User sender, @required User receiver, @required EntityDescription description, @required bool seen, @required PastDate creationDate, @required NotificationType type}) {
+      {@required UniqueId id,
+      @required User sender,
+      @required User receiver,
+      @required EntityDescription description,
+      @required bool seen,
+      @required PastDate creationDate,
+      @required NotificationType type}) {
     return _Notification(
       id: id,
       sender: sender,
@@ -34,7 +40,8 @@ const $Notification = _$NotificationTearOff();
 
 /// @nodoc
 mixin _$Notification {
-  int get id;
+  UniqueId get id;
+  
   User get sender; // TODO: Is the receiver necessary for the domain entity?
 // The receiver will always be the logged in user
 // Relation is needed in the database of course, but not really beyond that
@@ -53,7 +60,7 @@ abstract class $NotificationCopyWith<$Res> {
   factory $NotificationCopyWith(Notification value, $Res Function(Notification) then) =
   _$NotificationCopyWithImpl<$Res>;
   
-  $Res call({int id,
+  $Res call({UniqueId id,
     User sender,
     User receiver,
     EntityDescription description,
@@ -85,7 +92,7 @@ class _$NotificationCopyWithImpl<$Res> implements $NotificationCopyWith<$Res> {
     Object type = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       sender: sender == freezed ? _value.sender : sender as User,
       receiver: receiver == freezed ? _value.receiver : receiver as User,
       description: description == freezed
@@ -127,7 +134,7 @@ abstract class _$NotificationCopyWith<$Res>
   __$NotificationCopyWithImpl<$Res>;
   
   @override
-  $Res call({int id,
+  $Res call({UniqueId id,
     User sender,
     User receiver,
     EntityDescription description,
@@ -161,7 +168,7 @@ class __$NotificationCopyWithImpl<$Res> extends _$NotificationCopyWithImpl<$Res>
     Object type = freezed,
   }) {
     return _then(_Notification(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       sender: sender == freezed ? _value.sender : sender as User,
       receiver: receiver == freezed ? _value.receiver : receiver as User,
       description: description == freezed
@@ -178,14 +185,15 @@ class __$NotificationCopyWithImpl<$Res> extends _$NotificationCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_Notification extends _Notification {
-  const _$_Notification({this.id,
+  const _$_Notification({@required this.id,
     @required this.sender,
     @required this.receiver,
     @required this.description,
     @required this.seen,
     @required this.creationDate,
     @required this.type})
-    : assert(sender != null),
+    : assert(id != null),
+      assert(sender != null),
       assert(receiver != null),
       assert(description != null),
       assert(seen != null),
@@ -194,7 +202,7 @@ class _$_Notification extends _Notification {
       super._();
   
   @override
-  final int id;
+  final UniqueId id;
   @override
   final User sender;
   @override // TODO: Is the receiver necessary for the domain entity?
@@ -257,17 +265,17 @@ class _$_Notification extends _Notification {
 
 abstract class _Notification extends Notification {
   const _Notification._() : super._();
-  const factory _Notification(
-      {int id,
-      @required User sender,
-      @required User receiver,
-      @required EntityDescription description,
-      @required bool seen,
-      @required PastDate creationDate,
-      @required NotificationType type}) = _$_Notification;
+  const factory _Notification({@required UniqueId id,
+    @required User sender,
+    @required User receiver,
+    @required EntityDescription description,
+    @required bool seen,
+    @required PastDate creationDate,
+    @required NotificationType type}) = _$_Notification;
 
   @override
-  int get id;
+  UniqueId get id;
+
   @override
   User get sender;
   @override // TODO: Is the receiver necessary for the domain entity?

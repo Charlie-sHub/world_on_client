@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 part 'system.freezed.dart';
 
@@ -11,13 +12,14 @@ abstract class System implements _$System {
   const System._();
 
   const factory System({
-    int id,
+    @required UniqueId id,
     @required String name,
     @required String type,
     @required String company,
   }) = _System;
 
-  factory System.empty() => const System(
+  factory System.empty() => System(
+        id: UniqueId(),
         name: "",
         type: "",
         company: "",

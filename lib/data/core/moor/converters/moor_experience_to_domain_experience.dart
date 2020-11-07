@@ -17,9 +17,10 @@ import 'package:worldon/domain/core/validation/objects/objective_set.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/core/validation/objects/reward_set.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 Experience moorExperienceToDomainExperience(MoorExperienceWithRelations _moorExperienceWithRelations) => Experience.empty().copyWith(
-      id: _moorExperienceWithRelations.experience.id,
+      id: UniqueId.fromUniqueString(_moorExperienceWithRelations.experience.id),
       title: Name(_moorExperienceWithRelations.experience.title),
       description: EntityDescription(_moorExperienceWithRelations.experience.description),
       imageURLs: _moorExperienceWithRelations.imageIdentifiers.toSet(),

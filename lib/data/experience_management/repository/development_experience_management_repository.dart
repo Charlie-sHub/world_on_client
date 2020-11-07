@@ -14,6 +14,7 @@ import 'package:worldon/data/core/moor/converters/domain_objective_to_moor_objec
 import 'package:worldon/data/core/moor/converters/domain_reward_to_moor_reward.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_management/repository/experience_management_repository_interface.dart';
 import 'package:worldon/injection.dart';
 
@@ -42,13 +43,13 @@ class DevelopmentExperienceManagementRepository implements ExperienceManagementR
 
   Future insertExperience(Experience experience) async {
     final _moorExperience = domainExperienceToMoorExperience(experience);
-    final _experienceId = await _database.moorExperiencesDao.insertExperience(_moorExperience);
+    await _database.moorExperiencesDao.insertExperience(_moorExperience);
     final _moorObjectives = experience.objectives
         .getOrCrash()
         .asSet()
         .map(
           (_objective) => domainObjectiveToMoorObjective(
-            _experienceId,
+            experience.id.getOrCrash(),
             _objective,
           ),
         )
@@ -58,8 +59,8 @@ class DevelopmentExperienceManagementRepository implements ExperienceManagementR
         .asSet()
         .map(
           (_reward) => domainRewardToMoorReward(
-            _experienceId,
-            _reward,
+        experience.id.getOrCrash(),
+        _reward,
           ),
         )
         .toSet();
@@ -70,7 +71,7 @@ class DevelopmentExperienceManagementRepository implements ExperienceManagementR
       (imageAssetList) async {
         for (final _imageAsset in imageAssetList) {
           final _experienceImage = ExperienceImageUrlsCompanion.insert(
-            experienceId: _experienceId,
+            experienceId: experience.id.getOrCrash(),
             imageUrl: _imageAsset.identifier,
           );
           await _database.moorExperiencesDao.insertExperienceImage(_experienceImage);
@@ -79,8 +80,8 @@ class DevelopmentExperienceManagementRepository implements ExperienceManagementR
     );
     for (final _tag in experience.tags.getOrCrash().asSet()) {
       final _experienceTag = ExperienceTagsCompanion.insert(
-        experienceId: _experienceId,
-        tagId: _tag.id,
+        experienceId: experience.id.getOrCrash(),
+        tagId: _tag.id.getOrCrash(),
       );
       await _database.moorTagsDao.insertExperienceTag(_experienceTag);
     }
@@ -98,7 +99,7 @@ class DevelopmentExperienceManagementRepository implements ExperienceManagementR
   }
 
   @override
-  Future<Either<Failure, Experience>> getExperience(int id) {
+  Future<Either<Failure, Experience>> getExperience(UniqueId id) {
     if (_random.nextBool()) {
       return getRightFuture(getValidExperience());
     } else {
@@ -107,7 +108,7 @@ class DevelopmentExperienceManagementRepository implements ExperienceManagementR
   }
 
   @override
-  Future<Either<Failure, Unit>> removeExperience(int id) {
+  Future<Either<Failure, Unit>> removeExperience(UniqueId id) {
     return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 }

@@ -4,6 +4,7 @@ import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/tag_management/repository/tag_management_repository_interface.dart';
 
 @LazySingleton(env: [Environment.dev, Environment.prod])
@@ -19,7 +20,7 @@ class GetTag implements AsyncUseCase<Tag, Params> {
 }
 
 class Params {
-  final int id;
+  final UniqueId id;
 
   Params({@required this.id});
 }

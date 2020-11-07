@@ -3,15 +3,16 @@ import 'package:worldon/domain/core/entities/notification/notification_type_enum
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 import 'get_valid_user.dart';
 
 Notification getValidNotification() {
   return Notification(
-    id: 1,
+    id: UniqueId(),
     sender: getValidUser(),
     receiver: getValidUser().copyWith(
-      id: 2,
+      id: UniqueId(),
       name: Name("Carlos"),
       username: Name("carlos"),
     ),

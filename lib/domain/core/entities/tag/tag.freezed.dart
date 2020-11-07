@@ -14,7 +14,7 @@ class _$TagTearOff {
   const _$TagTearOff();
 
 // ignore: unused_element
-  _Tag call({int id, @required Name name, @required int creatorId, @required PastDate creationDate, @required PastDate modificationDate}) {
+  _Tag call({@required UniqueId id, @required Name name, @required UniqueId creatorId, @required PastDate creationDate, @required PastDate modificationDate}) {
     return _Tag(
       id: id,
       name: name,
@@ -31,9 +31,12 @@ const $Tag = _$TagTearOff();
 
 /// @nodoc
 mixin _$Tag {
-  int get id;
+  UniqueId get id;
+  
   Name get name;
-  int get creatorId;
+  
+  UniqueId get creatorId;
+  
   PastDate get creationDate;
   PastDate get modificationDate;
 
@@ -45,9 +48,9 @@ abstract class $TagCopyWith<$Res> {
   factory $TagCopyWith(Tag value, $Res Function(Tag) then) =
   _$TagCopyWithImpl<$Res>;
   
-  $Res call({int id,
+  $Res call({UniqueId id,
     Name name,
-    int creatorId,
+    UniqueId creatorId,
     PastDate creationDate,
     PastDate modificationDate});
 }
@@ -69,9 +72,10 @@ class _$TagCopyWithImpl<$Res> implements $TagCopyWith<$Res> {
     Object modificationDate = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       name: name == freezed ? _value.name : name as Name,
-      creatorId: creatorId == freezed ? _value.creatorId : creatorId as int,
+      creatorId:
+      creatorId == freezed ? _value.creatorId : creatorId as UniqueId,
       creationDate: creationDate == freezed
         ? _value.creationDate
         : creationDate as PastDate,
@@ -88,9 +92,9 @@ abstract class _$TagCopyWith<$Res> implements $TagCopyWith<$Res> {
   __$TagCopyWithImpl<$Res>;
   
   @override
-  $Res call({int id,
+  $Res call({UniqueId id,
     Name name,
-    int creatorId,
+    UniqueId creatorId,
     PastDate creationDate,
     PastDate modificationDate});
 }
@@ -113,9 +117,10 @@ class __$TagCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res>
     Object modificationDate = freezed,
   }) {
     return _then(_Tag(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       name: name == freezed ? _value.name : name as Name,
-      creatorId: creatorId == freezed ? _value.creatorId : creatorId as int,
+      creatorId:
+      creatorId == freezed ? _value.creatorId : creatorId as UniqueId,
       creationDate: creationDate == freezed
         ? _value.creationDate
         : creationDate as PastDate,
@@ -128,28 +133,29 @@ class __$TagCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_Tag extends _Tag {
-  const _$_Tag({this.id,
+  const _$_Tag({@required this.id,
     @required this.name,
     @required this.creatorId,
     @required this.creationDate,
     @required this.modificationDate})
-    : assert(name != null),
+    : assert(id != null),
+      assert(name != null),
       assert(creatorId != null),
       assert(creationDate != null),
       assert(modificationDate != null),
       super._();
   
   @override
-  final int id;
+  final UniqueId id;
   @override
   final Name name;
   @override
-  final int creatorId;
+  final UniqueId creatorId;
   @override
   final PastDate creationDate;
   @override
   final PastDate modificationDate;
-
+  
   @override
   String toString() {
     return 'Tag(id: $id, name: $name, creatorId: $creatorId, creationDate: $creationDate, modificationDate: $modificationDate)';
@@ -191,20 +197,20 @@ class _$_Tag extends _Tag {
 abstract class _Tag extends Tag {
   const _Tag._() : super._();
   
-  const factory _Tag({int id,
+  const factory _Tag({@required UniqueId id,
     @required Name name,
-    @required int creatorId,
+    @required UniqueId creatorId,
     @required PastDate creationDate,
     @required PastDate modificationDate}) = _$_Tag;
   
   @override
-  int get id;
+  UniqueId get id;
   
   @override
   Name get name;
   
   @override
-  int get creatorId;
+  UniqueId get creatorId;
   
   @override
   PastDate get creationDate;

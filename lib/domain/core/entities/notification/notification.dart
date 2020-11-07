@@ -5,6 +5,7 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 part 'notification.freezed.dart';
 
@@ -16,7 +17,7 @@ abstract class Notification implements _$Notification {
   const Notification._();
 
   const factory Notification({
-    int id,
+    @required UniqueId id,
     @required User sender,
     // TODO: Is the receiver necessary for the domain entity?
     // The receiver will always be the logged in user
@@ -30,6 +31,7 @@ abstract class Notification implements _$Notification {
   }) = _Notification;
 
   factory Notification.empty() => Notification(
+    id: UniqueId(),
         sender: User.empty(),
         receiver: User.empty(),
         description: EntityDescription(""),

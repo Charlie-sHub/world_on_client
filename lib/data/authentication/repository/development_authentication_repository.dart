@@ -96,18 +96,19 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
   Future<Either<Failure, Unit>> register(User user) async {
     try {
       final _moorUserCompanion = domainUserToMoorUserCompanion(user);
-      final _userId = await _database.moorUsersDao.insertUser(_moorUserCompanion);
+      await _database.moorUsersDao.insertUser(_moorUserCompanion);
       await _database.moorOptionsDao.insertOptions(
         MoorOptionsCompanion.insert(
-          userId: _userId,
+          userId: user.id.getOrCrash(),
           languageCode: user.options.languageCode,
+          id: null,
         ),
       );
-      await _database.moorTagsDao.deleteUserInterests(_userId);
+      await _database.moorTagsDao.deleteUserInterests(user.id.getOrCrash());
       for (final _tagId in user.interestsIds) {
         final _userInterest = UserInterestsCompanion.insert(
-          tagId: _tagId,
-          userId: _userId,
+          tagId: _tagId.getOrCrash(),
+          userId: user.id.getOrCrash(),
         );
         await _database.moorTagsDao.insertUserInterest(_userInterest);
       }

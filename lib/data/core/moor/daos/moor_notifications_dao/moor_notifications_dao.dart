@@ -19,7 +19,7 @@ class MoorNotificationsDao extends DatabaseAccessor<Database> with _$MoorNotific
 
   Future<int> insertNotification(Insertable<MoorNotification> notification) => into(moorNotifications).insert(notification);
 
-  Future<MoorNotification> getNotificationById(int id) async {
+  Future<MoorNotification> getNotificationById(String id) async {
     final _contentQuery = select(moorNotifications)..where((_notifications) => _notifications.id.equals(id));
     return _contentQuery.getSingle();
   }

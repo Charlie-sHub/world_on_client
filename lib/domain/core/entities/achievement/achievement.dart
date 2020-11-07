@@ -10,6 +10,7 @@ import 'package:worldon/domain/core/validation/objects/experience_points.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 part 'achievement.freezed.dart';
 
@@ -21,7 +22,7 @@ abstract class Achievement implements _$Achievement {
   const Achievement._();
 
   const factory Achievement({
-    int id,
+    @required UniqueId id,
     @required Name name,
     @required EntityDescription description,
     // TODO: Make a value object and validator for image URLs from World On's back-end
@@ -31,13 +32,14 @@ abstract class Achievement implements _$Achievement {
     @required String type,
     @required int requisite, // This will probably be reworked in the future to accommodate different kinds of achievements
     @required ExperiencePoints experiencePoints,
-    @required int creatorId,
+    @required UniqueId creatorId,
     @required PastDate creationDate,
     @required PastDate modificationDate,
     @required TagSet tags,
   }) = _Achievement;
 
   factory Achievement.empty() => Achievement(
+    id: UniqueId(),
         name: Name(""),
         description: EntityDescription(""),
         imageURL: "",
@@ -45,7 +47,7 @@ abstract class Achievement implements _$Achievement {
         type: "",
         requisite: 1,
         experiencePoints: ExperiencePoints(1),
-        creatorId: 0,
+        creatorId: UniqueId(),
         creationDate: PastDate(DateTime.now()),
         modificationDate: PastDate(DateTime.now()),
         tags: TagSet(const KtSet.empty()),

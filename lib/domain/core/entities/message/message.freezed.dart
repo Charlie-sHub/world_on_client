@@ -14,7 +14,7 @@ class _$MessageTearOff {
   const _$MessageTearOff();
 
 // ignore: unused_element
-  _Message call({int id, @required User sender, @required User receiver, @required MessageContent content, @required PastDate creationDate}) {
+  _Message call({@required UniqueId id, @required User sender, @required User receiver, @required MessageContent content, @required PastDate creationDate}) {
     return _Message(
       id: id,
       sender: sender,
@@ -31,7 +31,8 @@ const $Message = _$MessageTearOff();
 
 /// @nodoc
 mixin _$Message {
-  int get id;
+  UniqueId get id;
+  
   User get sender;
   User get receiver;
   MessageContent get content;
@@ -45,7 +46,7 @@ abstract class $MessageCopyWith<$Res> {
   factory $MessageCopyWith(Message value, $Res Function(Message) then) =
   _$MessageCopyWithImpl<$Res>;
   
-  $Res call({int id,
+  $Res call({UniqueId id,
     User sender,
     User receiver,
     MessageContent content,
@@ -73,7 +74,7 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
     Object creationDate = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       sender: sender == freezed ? _value.sender : sender as User,
       receiver: receiver == freezed ? _value.receiver : receiver as User,
       content: content == freezed ? _value.content : content as MessageContent,
@@ -110,7 +111,7 @@ abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
   __$MessageCopyWithImpl<$Res>;
   
   @override
-  $Res call({int id,
+  $Res call({UniqueId id,
     User sender,
     User receiver,
     MessageContent content,
@@ -141,7 +142,7 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
     Object creationDate = freezed,
   }) {
     return _then(_Message(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       sender: sender == freezed ? _value.sender : sender as User,
       receiver: receiver == freezed ? _value.receiver : receiver as User,
       content: content == freezed ? _value.content : content as MessageContent,
@@ -154,19 +155,20 @@ class __$MessageCopyWithImpl<$Res> extends _$MessageCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_Message extends _Message {
-  const _$_Message({this.id,
+  const _$_Message({@required this.id,
     @required this.sender,
     @required this.receiver,
     @required this.content,
     @required this.creationDate})
-    : assert(sender != null),
+    : assert(id != null),
+      assert(sender != null),
       assert(receiver != null),
       assert(content != null),
       assert(creationDate != null),
       super._();
   
   @override
-  final int id;
+  final UniqueId id;
   @override
   final User sender;
   @override
@@ -175,7 +177,7 @@ class _$_Message extends _Message {
   final MessageContent content;
   @override
   final PastDate creationDate;
-
+  
   @override
   String toString() {
     return 'Message(id: $id, sender: $sender, receiver: $receiver, content: $content, creationDate: $creationDate)';
@@ -217,14 +219,14 @@ class _$_Message extends _Message {
 abstract class _Message extends Message {
   const _Message._() : super._();
   
-  const factory _Message({int id,
+  const factory _Message({@required UniqueId id,
     @required User sender,
     @required User receiver,
     @required MessageContent content,
     @required PastDate creationDate}) = _$_Message;
   
   @override
-  int get id;
+  UniqueId get id;
   
   @override
   User get sender;

@@ -5,56 +5,57 @@ import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 /// Repository for the [User]'s profile feature.
 abstract class ProfileRepositoryInterface {
   /// Gets the [User] associated with the given id
-  Future<Either<Failure, User>> getUser(int id);
+  Future<Either<Failure, User>> getUser(UniqueId id);
 
   /// Sends a edited [User] to the server to be saved on the database
   Future<Either<Failure, Unit>> editUser(User user);
 
   /// Sends the id of a [User] the logged in [User] wants to block
-  Future<Either<Failure, Unit>> blockUser(int blockedId);
+  Future<Either<Failure, Unit>> blockUser(UniqueId blockedId);
 
   /// Sends the id of a [User] the logged in [User] wants to un-block
-  Future<Either<Failure, Unit>> unBlockUser(int blockedId);
+  Future<Either<Failure, Unit>> unBlockUser(UniqueId blockedId);
 
   /// Sends the id of a [User] the logged in [User] wants to follow
-  Future<Either<Failure, Unit>> followUser(int userToFollowId);
+  Future<Either<Failure, Unit>> followUser(UniqueId userToFollowId);
 
   /// Sends the id of a [User] the logged in [User] wants to un-follow
-  Future<Either<Failure, Unit>> unFollowUser(int userToUnFollowId);
+  Future<Either<Failure, Unit>> unFollowUser(UniqueId userToUnFollowId);
 
   /// Sends the id of an [Experience] to the server so this one can be removed from the liked [Experience]s list of the logged in [User]
-  Future<Either<Failure, Unit>> removeExperienceLiked(int experienceId);
+  Future<Either<Failure, Unit>> removeExperienceLiked(UniqueId experienceId);
 
   /// Sends the id of an [Experience] to the server so this one can be deleted
-  Future<Either<Failure, Unit>> deleteExperience(int experienceId);
+  Future<Either<Failure, Unit>> deleteExperience(UniqueId experienceId);
 
   /// Sends an [User]'s id to the server so it returns a [KtList] of the [User]s it follows
-  Stream<Either<Failure, KtList<User>>> watchFollowedUsers(int id);
+  Stream<Either<Failure, KtList<User>>> watchFollowedUsers(UniqueId id);
 
   /// Sends an [User]'s id to the server so it returns a [KtList] of the [User]s following it
-  Stream<Either<Failure, KtList<User>>> watchFollowingUsers(int id);
+  Stream<Either<Failure, KtList<User>>> watchFollowingUsers(UniqueId id);
 
   /// Sends an [User]'s id to the server so it returns a [KtList] of the [User]s it has blocked
-  Stream<Either<Failure, KtList<User>>> watchBlockedUsers(int id);
+  Stream<Either<Failure, KtList<User>>> watchBlockedUsers(UniqueId id);
 
   /// Sends an [User]'s id to the server so it returns a [KtList] of the [Experience]s it has done
-  Stream<Either<Failure, KtList<Experience>>> watchExperiencesDone(int id);
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesDone(UniqueId id);
 
   /// Sends an [User]'s id to the server so it returns a [KtList] of the [Experience]s it has liked
-  Stream<Either<Failure, KtList<Experience>>> watchExperiencesLiked(int id);
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesLiked(UniqueId id);
 
   /// Sends an [User]'s id to the server so it returns a [KtList] of the [Experience]s it has created
-  Stream<Either<Failure, KtList<Experience>>> watchExperiencesCreated(int id);
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesCreated(UniqueId id);
 
   /// Returns a [KtList] of [Tag]s of a given [User] interests
-  Stream<Either<Failure, KtList<Tag>>> watchUserInterests(int userId);
+  Stream<Either<Failure, KtList<Tag>>> watchUserInterests(UniqueId userId);
 
   /// Returns a [KtList] of the [Achievement]s accomplished by a [User]
-  Stream<Either<Failure, KtList<Achievement>>> watchUserAchievements(int userId);
+  Stream<Either<Failure, KtList<Achievement>>> watchUserAchievements(UniqueId userId);
 
 // TODO: implement Message user
 }

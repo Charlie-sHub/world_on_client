@@ -14,7 +14,7 @@ class _$OptionsTearOff {
   const _$OptionsTearOff();
 
 // ignore: unused_element
-  _Options call({int id, @required String languageCode}) {
+  _Options call({@required UniqueId id, @required String languageCode}) {
     return _Options(
       id: id,
       languageCode: languageCode,
@@ -28,7 +28,8 @@ const $Options = _$OptionsTearOff();
 
 /// @nodoc
 mixin _$Options {
-  int get id;
+  UniqueId get id;
+
   String get languageCode;
 
   $OptionsCopyWith<Options> get copyWith;
@@ -36,9 +37,10 @@ mixin _$Options {
 
 /// @nodoc
 abstract class $OptionsCopyWith<$Res> {
-  factory $OptionsCopyWith(Options value, $Res Function(Options) then) = _$OptionsCopyWithImpl<$Res>;
-
-  $Res call({int id, String languageCode});
+  factory $OptionsCopyWith(Options value, $Res Function(Options) then) =
+  _$OptionsCopyWithImpl<$Res>;
+  
+  $Res call({UniqueId id, String languageCode});
 }
 
 /// @nodoc
@@ -55,7 +57,7 @@ class _$OptionsCopyWithImpl<$Res> implements $OptionsCopyWith<$Res> {
     Object languageCode = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       languageCode: languageCode == freezed
         ? _value.languageCode
         : languageCode as String,
@@ -67,8 +69,9 @@ class _$OptionsCopyWithImpl<$Res> implements $OptionsCopyWith<$Res> {
 abstract class _$OptionsCopyWith<$Res> implements $OptionsCopyWith<$Res> {
   factory _$OptionsCopyWith(_Options value, $Res Function(_Options) then) =
   __$OptionsCopyWithImpl<$Res>;
+  
   @override
-  $Res call({int id, String languageCode});
+  $Res call({UniqueId id, String languageCode});
 }
 
 /// @nodoc
@@ -86,7 +89,7 @@ class __$OptionsCopyWithImpl<$Res> extends _$OptionsCopyWithImpl<$Res>
     Object languageCode = freezed,
   }) {
     return _then(_Options(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       languageCode: languageCode == freezed
         ? _value.languageCode
         : languageCode as String,
@@ -96,20 +99,21 @@ class __$OptionsCopyWithImpl<$Res> extends _$OptionsCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_Options extends _Options {
-  const _$_Options({this.id, @required this.languageCode})
-      : assert(languageCode != null),
-        super._();
-
+  const _$_Options({@required this.id, @required this.languageCode})
+    : assert(id != null),
+      assert(languageCode != null),
+      super._();
+  
   @override
-  final int id;
+  final UniqueId id;
   @override
   final String languageCode;
-
+  
   @override
   String toString() {
     return 'Options(id: $id, languageCode: $languageCode)';
   }
-
+  
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -134,12 +138,15 @@ class _$_Options extends _Options {
 
 abstract class _Options extends Options {
   const _Options._() : super._();
-  const factory _Options({int id, @required String languageCode}) = _$_Options;
-
+  
+  const factory _Options({@required UniqueId id, @required String languageCode}) = _$_Options;
+  
   @override
-  int get id;
+  UniqueId get id;
+  
   @override
   String get languageCode;
+  
   @override
   _$OptionsCopyWith<_Options> get copyWith;
 }

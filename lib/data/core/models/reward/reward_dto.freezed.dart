@@ -17,7 +17,7 @@ class _$RewardDtoTearOff {
   const _$RewardDtoTearOff();
 
 // ignore: unused_element
-  _RewardDto call({@required int id,
+  _RewardDto call({@required String id,
     @required String name,
     @required String description,
     @required String imageURL}) {
@@ -41,7 +41,8 @@ const $RewardDto = _$RewardDtoTearOff();
 
 /// @nodoc
 mixin _$RewardDto {
-  int get id;
+  String get id;
+  
   String get name;
   String get description;
   String get imageURL;
@@ -54,7 +55,8 @@ mixin _$RewardDto {
 abstract class $RewardDtoCopyWith<$Res> {
   factory $RewardDtoCopyWith(RewardDto value, $Res Function(RewardDto) then) =
   _$RewardDtoCopyWithImpl<$Res>;
-  $Res call({int id, String name, String description, String imageURL});
+  
+  $Res call({String id, String name, String description, String imageURL});
 }
 
 /// @nodoc
@@ -73,7 +75,7 @@ class _$RewardDtoCopyWithImpl<$Res> implements $RewardDtoCopyWith<$Res> {
     Object imageURL = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as String,
       name: name == freezed ? _value.name : name as String,
       description:
       description == freezed ? _value.description : description as String,
@@ -88,7 +90,7 @@ abstract class _$RewardDtoCopyWith<$Res> implements $RewardDtoCopyWith<$Res> {
   __$RewardDtoCopyWithImpl<$Res>;
   
   @override
-  $Res call({int id, String name, String description, String imageURL});
+  $Res call({String id, String name, String description, String imageURL});
 }
 
 /// @nodoc
@@ -108,7 +110,7 @@ class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res>
     Object imageURL = freezed,
   }) {
     return _then(_RewardDto(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as String,
       name: name == freezed ? _value.name : name as String,
       description:
       description == freezed ? _value.description : description as String,
@@ -134,14 +136,14 @@ class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res>
     _$_$_RewardDtoFromJson(json);
   
   @override
-  final int id;
+  final String id;
   @override
   final String name;
   @override
   final String description;
   @override
   final String imageURL;
-
+  
   @override
   String toString() {
     return 'RewardDto(id: $id, name: $name, description: $description, imageURL: $imageURL)';
@@ -184,7 +186,7 @@ class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res>
 abstract class _RewardDto extends RewardDto {
   const _RewardDto._() : super._();
   
-  const factory _RewardDto({@required int id,
+  const factory _RewardDto({@required String id,
     @required String name,
     @required String description,
     @required String imageURL}) = _$_RewardDto;
@@ -193,7 +195,7 @@ abstract class _RewardDto extends RewardDto {
   _$_RewardDto.fromJson;
   
   @override
-  int get id;
+  String get id;
   
   @override
   String get name;

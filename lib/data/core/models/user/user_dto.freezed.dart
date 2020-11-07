@@ -18,32 +18,32 @@ class _$UserDtoTearOff {
 
 // ignore: unused_element
   _UserDto call(
-      {@required int id,
-      @required String name,
-      @required String username,
-      @required String password,
-      @required String email,
-      @required String birthday,
-      @required String description,
-      @required String imageURL,
-      @required int level,
-      @required int experiencePoints,
-      @required bool privacy,
-      @required bool adminPowers,
-      @required bool enabled,
-      @required String lastLogin,
-      @required String creationDate,
-      @required String modificationDate,
-      @required OptionsDto options,
-      @required Set<int> blockedUsersIds,
-      @required Set<int> followedUsersIds,
-      @required Set<int> interestsIds,
-      @required Set<int> achievementsIds,
-      @required Set<int> experiencesDoneIds,
-      @required Set<int> experiencesLikedIds,
-      @required Set<int> experiencesToDoIds,
-      @required Set<DeviceDto> devices,
-      @required Set<SystemDto> systems}) {
+      {@required String id,
+        @required String name,
+        @required String username,
+        @required String password,
+        @required String email,
+        @required String birthday,
+        @required String description,
+        @required String imageURL,
+        @required int level,
+        @required int experiencePoints,
+        @required bool privacy,
+        @required bool adminPowers,
+        @required bool enabled,
+        @required String lastLogin,
+        @required String creationDate,
+        @required String modificationDate,
+        @required OptionsDto options,
+        @required Set<String> blockedUsersIds,
+        @required Set<String> followedUsersIds,
+        @required Set<String> interestsIds,
+        @required Set<String> achievementsIds,
+        @required Set<String> experiencesDoneIds,
+        @required Set<String> experiencesLikedIds,
+        @required Set<String> experiencesToDoIds,
+        @required Set<DeviceDto> devices,
+        @required Set<SystemDto> systems}) {
     return _UserDto(
       id: id,
       name: name,
@@ -86,34 +86,55 @@ const $UserDto = _$UserDtoTearOff();
 
 /// @nodoc
 mixin _$UserDto {
-  int get id;
+  String get id;
+  
   String get name;
   String get username; // Shouldn't this be encrypted in some way?
   String get password;
   String get email;
   String get birthday;
   String get description;
+  
   String get imageURL;
+  
   int get level;
+  
   int get experiencePoints;
+  
   bool get privacy;
+  
   bool get adminPowers;
+  
   bool get enabled;
+  
   String get lastLogin;
+  
   String get creationDate;
+  
   String get modificationDate;
+  
   OptionsDto get options;
-  Set<int> get blockedUsersIds;
-  Set<int> get followedUsersIds;
-  Set<int> get interestsIds;
-  Set<int> get achievementsIds;
-  Set<int> get experiencesDoneIds;
-  Set<int> get experiencesLikedIds;
-  Set<int> get experiencesToDoIds;
+  
+  Set<String> get blockedUsersIds;
+  
+  Set<String> get followedUsersIds;
+  
+  Set<String> get interestsIds;
+  
+  Set<String> get achievementsIds;
+  
+  Set<String> get experiencesDoneIds;
+  
+  Set<String> get experiencesLikedIds;
+  
+  Set<String> get experiencesToDoIds;
+  
   Set<DeviceDto> get devices;
+  
   Set<SystemDto> get systems;
-
+  
   Map<String, dynamic> toJson();
+  
   $UserDtoCopyWith<UserDto> get copyWith;
 }
 
@@ -121,8 +142,8 @@ mixin _$UserDto {
 abstract class $UserDtoCopyWith<$Res> {
   factory $UserDtoCopyWith(UserDto value, $Res Function(UserDto) then) =
   _$UserDtoCopyWithImpl<$Res>;
-
-  $Res call({int id,
+  
+  $Res call({String id,
     String name,
     String username,
     String password,
@@ -139,16 +160,16 @@ abstract class $UserDtoCopyWith<$Res> {
     String creationDate,
     String modificationDate,
     OptionsDto options,
-    Set<int> blockedUsersIds,
-    Set<int> followedUsersIds,
-    Set<int> interestsIds,
-    Set<int> achievementsIds,
-    Set<int> experiencesDoneIds,
-    Set<int> experiencesLikedIds,
-    Set<int> experiencesToDoIds,
+    Set<String> blockedUsersIds,
+    Set<String> followedUsersIds,
+    Set<String> interestsIds,
+    Set<String> achievementsIds,
+    Set<String> experiencesDoneIds,
+    Set<String> experiencesLikedIds,
+    Set<String> experiencesToDoIds,
     Set<DeviceDto> devices,
     Set<SystemDto> systems});
-
+  
   $OptionsDtoCopyWith<$Res> get options;
 }
 
@@ -190,7 +211,7 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
     Object systems = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as String,
       name: name == freezed ? _value.name : name as String,
       username: username == freezed ? _value.username : username as String,
       password: password == freezed ? _value.password : password as String,
@@ -217,25 +238,25 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
       options: options == freezed ? _value.options : options as OptionsDto,
       blockedUsersIds: blockedUsersIds == freezed
         ? _value.blockedUsersIds
-        : blockedUsersIds as Set<int>,
+        : blockedUsersIds as Set<String>,
       followedUsersIds: followedUsersIds == freezed
         ? _value.followedUsersIds
-        : followedUsersIds as Set<int>,
+        : followedUsersIds as Set<String>,
       interestsIds: interestsIds == freezed
         ? _value.interestsIds
-        : interestsIds as Set<int>,
+        : interestsIds as Set<String>,
       achievementsIds: achievementsIds == freezed
         ? _value.achievementsIds
-        : achievementsIds as Set<int>,
+        : achievementsIds as Set<String>,
       experiencesDoneIds: experiencesDoneIds == freezed
         ? _value.experiencesDoneIds
-        : experiencesDoneIds as Set<int>,
+        : experiencesDoneIds as Set<String>,
       experiencesLikedIds: experiencesLikedIds == freezed
         ? _value.experiencesLikedIds
-        : experiencesLikedIds as Set<int>,
+        : experiencesLikedIds as Set<String>,
       experiencesToDoIds: experiencesToDoIds == freezed
         ? _value.experiencesToDoIds
-        : experiencesToDoIds as Set<int>,
+        : experiencesToDoIds as Set<String>,
       devices: devices == freezed ? _value.devices : devices as Set<DeviceDto>,
       systems: systems == freezed ? _value.systems : systems as Set<SystemDto>,
     ));
@@ -258,7 +279,7 @@ abstract class _$UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
   __$UserDtoCopyWithImpl<$Res>;
   
   @override
-  $Res call({int id,
+  $Res call({String id,
     String name,
     String username,
     String password,
@@ -275,13 +296,13 @@ abstract class _$UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
     String creationDate,
     String modificationDate,
     OptionsDto options,
-    Set<int> blockedUsersIds,
-    Set<int> followedUsersIds,
-    Set<int> interestsIds,
-    Set<int> achievementsIds,
-    Set<int> experiencesDoneIds,
-    Set<int> experiencesLikedIds,
-    Set<int> experiencesToDoIds,
+    Set<String> blockedUsersIds,
+    Set<String> followedUsersIds,
+    Set<String> interestsIds,
+    Set<String> achievementsIds,
+    Set<String> experiencesDoneIds,
+    Set<String> experiencesLikedIds,
+    Set<String> experiencesToDoIds,
     Set<DeviceDto> devices,
     Set<SystemDto> systems});
   
@@ -328,7 +349,7 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
     Object systems = freezed,
   }) {
     return _then(_UserDto(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as String,
       name: name == freezed ? _value.name : name as String,
       username: username == freezed ? _value.username : username as String,
       password: password == freezed ? _value.password : password as String,
@@ -355,25 +376,25 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
       options: options == freezed ? _value.options : options as OptionsDto,
       blockedUsersIds: blockedUsersIds == freezed
         ? _value.blockedUsersIds
-        : blockedUsersIds as Set<int>,
+        : blockedUsersIds as Set<String>,
       followedUsersIds: followedUsersIds == freezed
         ? _value.followedUsersIds
-        : followedUsersIds as Set<int>,
+        : followedUsersIds as Set<String>,
       interestsIds: interestsIds == freezed
         ? _value.interestsIds
-        : interestsIds as Set<int>,
+        : interestsIds as Set<String>,
       achievementsIds: achievementsIds == freezed
         ? _value.achievementsIds
-        : achievementsIds as Set<int>,
+        : achievementsIds as Set<String>,
       experiencesDoneIds: experiencesDoneIds == freezed
         ? _value.experiencesDoneIds
-        : experiencesDoneIds as Set<int>,
+        : experiencesDoneIds as Set<String>,
       experiencesLikedIds: experiencesLikedIds == freezed
         ? _value.experiencesLikedIds
-        : experiencesLikedIds as Set<int>,
+        : experiencesLikedIds as Set<String>,
       experiencesToDoIds: experiencesToDoIds == freezed
         ? _value.experiencesToDoIds
-        : experiencesToDoIds as Set<int>,
+        : experiencesToDoIds as Set<String>,
       devices: devices == freezed ? _value.devices : devices as Set<DeviceDto>,
       systems: systems == freezed ? _value.systems : systems as Set<SystemDto>,
     ));
@@ -441,7 +462,7 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
     _$_$_UserDtoFromJson(json);
   
   @override
-  final int id;
+  final String id;
   @override
   final String name;
   @override
@@ -475,24 +496,24 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
   @override
   final OptionsDto options;
   @override
-  final Set<int> blockedUsersIds;
+  final Set<String> blockedUsersIds;
   @override
-  final Set<int> followedUsersIds;
+  final Set<String> followedUsersIds;
   @override
-  final Set<int> interestsIds;
+  final Set<String> interestsIds;
   @override
-  final Set<int> achievementsIds;
+  final Set<String> achievementsIds;
   @override
-  final Set<int> experiencesDoneIds;
+  final Set<String> experiencesDoneIds;
   @override
-  final Set<int> experiencesLikedIds;
+  final Set<String> experiencesLikedIds;
   @override
-  final Set<int> experiencesToDoIds;
+  final Set<String> experiencesToDoIds;
   @override
   final Set<DeviceDto> devices;
   @override
   final Set<SystemDto> systems;
-
+  
   @override
   String toString() {
     return 'UserDto(id: $id, name: $name, username: $username, password: $password, email: $email, birthday: $birthday, description: $description, imageURL: $imageURL, level: $level, experiencePoints: $experiencePoints, privacy: $privacy, adminPowers: $adminPowers, enabled: $enabled, lastLogin: $lastLogin, creationDate: $creationDate, modificationDate: $modificationDate, options: $options, blockedUsersIds: $blockedUsersIds, followedUsersIds: $followedUsersIds, interestsIds: $interestsIds, achievementsIds: $achievementsIds, experiencesDoneIds: $experiencesDoneIds, experiencesLikedIds: $experiencesLikedIds, experiencesToDoIds: $experiencesToDoIds, devices: $devices, systems: $systems)';
@@ -615,38 +636,38 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
 
 abstract class _UserDto extends UserDto {
   const _UserDto._() : super._();
-  const factory _UserDto(
-      {@required int id,
-      @required String name,
-      @required String username,
-      @required String password,
-      @required String email,
-      @required String birthday,
-      @required String description,
-      @required String imageURL,
-      @required int level,
-      @required int experiencePoints,
-      @required bool privacy,
-      @required bool adminPowers,
-      @required bool enabled,
-      @required String lastLogin,
-      @required String creationDate,
-      @required String modificationDate,
-      @required OptionsDto options,
-      @required Set<int> blockedUsersIds,
-      @required Set<int> followedUsersIds,
-      @required Set<int> interestsIds,
-      @required Set<int> achievementsIds,
-      @required Set<int> experiencesDoneIds,
-      @required Set<int> experiencesLikedIds,
-      @required Set<int> experiencesToDoIds,
-      @required Set<DeviceDto> devices,
-      @required Set<SystemDto> systems}) = _$_UserDto;
+  const factory _UserDto({@required String id,
+    @required String name,
+    @required String username,
+    @required String password,
+    @required String email,
+    @required String birthday,
+    @required String description,
+    @required String imageURL,
+    @required int level,
+    @required int experiencePoints,
+    @required bool privacy,
+    @required bool adminPowers,
+    @required bool enabled,
+    @required String lastLogin,
+    @required String creationDate,
+    @required String modificationDate,
+    @required OptionsDto options,
+    @required Set<String> blockedUsersIds,
+    @required Set<String> followedUsersIds,
+    @required Set<String> interestsIds,
+    @required Set<String> achievementsIds,
+    @required Set<String> experiencesDoneIds,
+    @required Set<String> experiencesLikedIds,
+    @required Set<String> experiencesToDoIds,
+    @required Set<DeviceDto> devices,
+    @required Set<SystemDto> systems}) = _$_UserDto;
 
   factory _UserDto.fromJson(Map<String, dynamic> json) = _$_UserDto.fromJson;
 
   @override
-  int get id;
+  String get id;
+
   @override
   String get name;
   @override
@@ -677,22 +698,31 @@ abstract class _UserDto extends UserDto {
   String get creationDate;
   @override
   String get modificationDate;
+
   @override
   OptionsDto get options;
+
   @override
-  Set<int> get blockedUsersIds;
+  Set<String> get blockedUsersIds;
+
   @override
-  Set<int> get followedUsersIds;
+  Set<String> get followedUsersIds;
+
   @override
-  Set<int> get interestsIds;
+  Set<String> get interestsIds;
+
   @override
-  Set<int> get achievementsIds;
+  Set<String> get achievementsIds;
+
   @override
-  Set<int> get experiencesDoneIds;
+  Set<String> get experiencesDoneIds;
+
   @override
-  Set<int> get experiencesLikedIds;
+  Set<String> get experiencesLikedIds;
+
   @override
-  Set<int> get experiencesToDoIds;
+  Set<String> get experiencesToDoIds;
+
   @override
   Set<DeviceDto> get devices;
   @override

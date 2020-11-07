@@ -30,7 +30,7 @@ class DevelopmentSearchRepository implements SearchRepositoryInterface {
 
   @override
   Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByTags(TagSet tags) async* {
-    final _tagIdList = tags.getOrCrash().map((_tag) => _tag.id).asList();
+    final _tagIdList = tags.getOrCrash().map((_tag) => _tag.id.getOrCrash()).asList();
     final _stream = _database.moorExperiencesDao.watchSearchExperiencesByTags(_tagIdList);
     yield* createExperienceListStream(_stream, _logger);
   }

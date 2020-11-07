@@ -15,7 +15,7 @@ class _$UserTearOff {
 
 // ignore: unused_element
   _User call(
-      {int id,
+      {@required UniqueId id,
       @required Name name,
       @required Name username,
       @required Password password,
@@ -33,13 +33,13 @@ class _$UserTearOff {
       @required PastDate creationDate,
       @required PastDate modificationDate,
       @required Options options,
-      @required Set<int> blockedUsersIds,
-      @required Set<int> followedUsersIds,
-      @required Set<int> interestsIds,
-      @required Set<int> achievementsIds,
-      @required Set<int> experiencesDoneIds,
-      @required Set<int> experiencesLikedIds,
-      @required Set<int> experiencesToDoIds,
+      @required Set<UniqueId> blockedUsersIds,
+      @required Set<UniqueId> followedUsersIds,
+      @required Set<UniqueId> interestsIds,
+      @required Set<UniqueId> achievementsIds,
+      @required Set<UniqueId> experiencesDoneIds,
+      @required Set<UniqueId> experiencesLikedIds,
+      @required Set<UniqueId> experiencesToDoIds,
       @required Set<Device> devices,
       @required Set<System> systems}) {
     return _User(
@@ -80,7 +80,8 @@ const $User = _$UserTearOff();
 
 /// @nodoc
 mixin _$User {
-  int get id;
+  UniqueId get id;
+  
   Name get name;
   Name get username;
   Password get password;
@@ -92,59 +93,76 @@ mixin _$User {
 // To hold the points between levels
 // Or investigate how leveling systems are usually implemented.
   UserLevel get level;
+  
   ExperiencePoints get experiencePoints;
+  
   bool get privacy;
+  
   bool get adminPowers;
+  
   bool get enabled;
+  
   PastDate get lastLogin;
+  
   PastDate get creationDate;
+  
   PastDate get modificationDate;
+  
   Options get options;
-  Set<int> get blockedUsersIds;
-  Set<int> get followedUsersIds;
-  Set<int> get interestsIds;
-  Set<int> get achievementsIds;
-  Set<int> get experiencesDoneIds;
-  Set<int> get experiencesLikedIds;
-  Set<int> get experiencesToDoIds;
+  
+  Set<UniqueId> get blockedUsersIds;
+  
+  Set<UniqueId> get followedUsersIds;
+  
+  Set<UniqueId> get interestsIds;
+  
+  Set<UniqueId> get achievementsIds;
+  
+  Set<UniqueId> get experiencesDoneIds;
+  
+  Set<UniqueId> get experiencesLikedIds;
+  
+  Set<UniqueId> get experiencesToDoIds;
+  
   Set<Device> get devices;
+  
   Set<System> get systems;
-
+  
   $UserCopyWith<User> get copyWith;
 }
 
 /// @nodoc
 abstract class $UserCopyWith<$Res> {
-  factory $UserCopyWith(User value, $Res Function(User) then) = _$UserCopyWithImpl<$Res>;
-
-  $Res call(
-      {int id,
-      Name name,
-      Name username,
-      Password password,
-      EmailAddress email,
-      PastDate birthday,
-      EntityDescription description,
-      String imageURL,
-      Option<File> imageFileOption,
-      UserLevel level,
-      ExperiencePoints experiencePoints,
-      bool privacy,
-      bool adminPowers,
-      bool enabled,
-      PastDate lastLogin,
-      PastDate creationDate,
-      PastDate modificationDate,
-      Options options,
-      Set<int> blockedUsersIds,
-      Set<int> followedUsersIds,
-      Set<int> interestsIds,
-      Set<int> achievementsIds,
-      Set<int> experiencesDoneIds,
-      Set<int> experiencesLikedIds,
-      Set<int> experiencesToDoIds,
-      Set<Device> devices,
-      Set<System> systems});
+  factory $UserCopyWith(User value, $Res Function(User) then) =
+  _$UserCopyWithImpl<$Res>;
+  
+  $Res call({UniqueId id,
+    Name name,
+    Name username,
+    Password password,
+    EmailAddress email,
+    PastDate birthday,
+    EntityDescription description,
+    String imageURL,
+    Option<File> imageFileOption,
+    UserLevel level,
+    ExperiencePoints experiencePoints,
+    bool privacy,
+    bool adminPowers,
+    bool enabled,
+    PastDate lastLogin,
+    PastDate creationDate,
+    PastDate modificationDate,
+    Options options,
+    Set<UniqueId> blockedUsersIds,
+    Set<UniqueId> followedUsersIds,
+    Set<UniqueId> interestsIds,
+    Set<UniqueId> achievementsIds,
+    Set<UniqueId> experiencesDoneIds,
+    Set<UniqueId> experiencesLikedIds,
+    Set<UniqueId> experiencesToDoIds,
+    Set<Device> devices,
+    Set<System> systems});
 
   $OptionsCopyWith<$Res> get options;
 }
@@ -188,7 +206,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
     Object systems = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       name: name == freezed ? _value.name : name as Name,
       username: username == freezed ? _value.username : username as Name,
       password: password == freezed ? _value.password : password as Password,
@@ -220,25 +238,25 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
       options: options == freezed ? _value.options : options as Options,
       blockedUsersIds: blockedUsersIds == freezed
         ? _value.blockedUsersIds
-        : blockedUsersIds as Set<int>,
+        : blockedUsersIds as Set<UniqueId>,
       followedUsersIds: followedUsersIds == freezed
         ? _value.followedUsersIds
-        : followedUsersIds as Set<int>,
+        : followedUsersIds as Set<UniqueId>,
       interestsIds: interestsIds == freezed
         ? _value.interestsIds
-        : interestsIds as Set<int>,
+        : interestsIds as Set<UniqueId>,
       achievementsIds: achievementsIds == freezed
         ? _value.achievementsIds
-        : achievementsIds as Set<int>,
+        : achievementsIds as Set<UniqueId>,
       experiencesDoneIds: experiencesDoneIds == freezed
         ? _value.experiencesDoneIds
-        : experiencesDoneIds as Set<int>,
+        : experiencesDoneIds as Set<UniqueId>,
       experiencesLikedIds: experiencesLikedIds == freezed
         ? _value.experiencesLikedIds
-        : experiencesLikedIds as Set<int>,
+        : experiencesLikedIds as Set<UniqueId>,
       experiencesToDoIds: experiencesToDoIds == freezed
         ? _value.experiencesToDoIds
-        : experiencesToDoIds as Set<int>,
+        : experiencesToDoIds as Set<UniqueId>,
       devices: devices == freezed ? _value.devices : devices as Set<Device>,
       systems: systems == freezed ? _value.systems : systems as Set<System>,
     ));
@@ -261,7 +279,7 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   __$UserCopyWithImpl<$Res>;
   
   @override
-  $Res call({int id,
+  $Res call({UniqueId id,
     Name name,
     Name username,
     Password password,
@@ -279,15 +297,15 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
     PastDate creationDate,
     PastDate modificationDate,
     Options options,
-      Set<int> blockedUsersIds,
-      Set<int> followedUsersIds,
-      Set<int> interestsIds,
-      Set<int> achievementsIds,
-      Set<int> experiencesDoneIds,
-      Set<int> experiencesLikedIds,
-      Set<int> experiencesToDoIds,
-      Set<Device> devices,
-      Set<System> systems});
+    Set<UniqueId> blockedUsersIds,
+    Set<UniqueId> followedUsersIds,
+    Set<UniqueId> interestsIds,
+    Set<UniqueId> achievementsIds,
+    Set<UniqueId> experiencesDoneIds,
+    Set<UniqueId> experiencesLikedIds,
+    Set<UniqueId> experiencesToDoIds,
+    Set<Device> devices,
+    Set<System> systems});
 
   @override
   $OptionsCopyWith<$Res> get options;
@@ -333,7 +351,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
     Object systems = freezed,
   }) {
     return _then(_User(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       name: name == freezed ? _value.name : name as Name,
       username: username == freezed ? _value.username : username as Name,
       password: password == freezed ? _value.password : password as Password,
@@ -365,25 +383,25 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
       options: options == freezed ? _value.options : options as Options,
       blockedUsersIds: blockedUsersIds == freezed
         ? _value.blockedUsersIds
-        : blockedUsersIds as Set<int>,
+        : blockedUsersIds as Set<UniqueId>,
       followedUsersIds: followedUsersIds == freezed
         ? _value.followedUsersIds
-        : followedUsersIds as Set<int>,
+        : followedUsersIds as Set<UniqueId>,
       interestsIds: interestsIds == freezed
         ? _value.interestsIds
-        : interestsIds as Set<int>,
+        : interestsIds as Set<UniqueId>,
       achievementsIds: achievementsIds == freezed
         ? _value.achievementsIds
-        : achievementsIds as Set<int>,
+        : achievementsIds as Set<UniqueId>,
       experiencesDoneIds: experiencesDoneIds == freezed
         ? _value.experiencesDoneIds
-        : experiencesDoneIds as Set<int>,
+        : experiencesDoneIds as Set<UniqueId>,
       experiencesLikedIds: experiencesLikedIds == freezed
         ? _value.experiencesLikedIds
-        : experiencesLikedIds as Set<int>,
+        : experiencesLikedIds as Set<UniqueId>,
       experiencesToDoIds: experiencesToDoIds == freezed
         ? _value.experiencesToDoIds
-        : experiencesToDoIds as Set<int>,
+        : experiencesToDoIds as Set<UniqueId>,
       devices: devices == freezed ? _value.devices : devices as Set<Device>,
       systems: systems == freezed ? _value.systems : systems as Set<System>,
     ));
@@ -392,45 +410,45 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_User extends _User {
-  const _$_User(
-      {this.id,
-      @required this.name,
-      @required this.username,
-      @required this.password,
-      @required this.email,
-      @required this.birthday,
-      @required this.description,
-      @required this.imageURL,
-      @required this.imageFileOption,
-      @required this.level,
-      @required this.experiencePoints,
+  const _$_User({@required this.id,
+    @required this.name,
+    @required this.username,
+    @required this.password,
+    @required this.email,
+    @required this.birthday,
+    @required this.description,
+    @required this.imageURL,
+    @required this.imageFileOption,
+    @required this.level,
+    @required this.experiencePoints,
       @required this.privacy,
       @required this.adminPowers,
       @required this.enabled,
       @required this.lastLogin,
       @required this.creationDate,
       @required this.modificationDate,
-      @required this.options,
-      @required this.blockedUsersIds,
-      @required this.followedUsersIds,
-      @required this.interestsIds,
-      @required this.achievementsIds,
-      @required this.experiencesDoneIds,
-      @required this.experiencesLikedIds,
-      @required this.experiencesToDoIds,
-      @required this.devices,
-      @required this.systems})
-      : assert(name != null),
-        assert(username != null),
-        assert(password != null),
-        assert(email != null),
-        assert(birthday != null),
-        assert(description != null),
-        assert(imageURL != null),
-        assert(imageFileOption != null),
-        assert(level != null),
-        assert(experiencePoints != null),
-        assert(privacy != null),
+    @required this.options,
+    @required this.blockedUsersIds,
+    @required this.followedUsersIds,
+    @required this.interestsIds,
+    @required this.achievementsIds,
+    @required this.experiencesDoneIds,
+    @required this.experiencesLikedIds,
+    @required this.experiencesToDoIds,
+    @required this.devices,
+    @required this.systems})
+    : assert(id != null),
+      assert(name != null),
+      assert(username != null),
+      assert(password != null),
+      assert(email != null),
+      assert(birthday != null),
+      assert(description != null),
+      assert(imageURL != null),
+      assert(imageFileOption != null),
+      assert(level != null),
+      assert(experiencePoints != null),
+      assert(privacy != null),
         assert(adminPowers != null),
         assert(enabled != null),
         assert(lastLogin != null),
@@ -439,17 +457,17 @@ class _$_User extends _User {
         assert(options != null),
         assert(blockedUsersIds != null),
         assert(followedUsersIds != null),
-        assert(interestsIds != null),
-        assert(achievementsIds != null),
-        assert(experiencesDoneIds != null),
-        assert(experiencesLikedIds != null),
-        assert(experiencesToDoIds != null),
-        assert(devices != null),
-        assert(systems != null),
-        super._();
+      assert(interestsIds != null),
+      assert(achievementsIds != null),
+      assert(experiencesDoneIds != null),
+      assert(experiencesLikedIds != null),
+      assert(experiencesToDoIds != null),
+      assert(devices != null),
+      assert(systems != null),
+      super._();
 
   @override
-  final int id;
+  final UniqueId id;
   @override
   final Name name;
   @override
@@ -487,19 +505,19 @@ class _$_User extends _User {
   @override
   final Options options;
   @override
-  final Set<int> blockedUsersIds;
+  final Set<UniqueId> blockedUsersIds;
   @override
-  final Set<int> followedUsersIds;
+  final Set<UniqueId> followedUsersIds;
   @override
-  final Set<int> interestsIds;
+  final Set<UniqueId> interestsIds;
   @override
-  final Set<int> achievementsIds;
+  final Set<UniqueId> achievementsIds;
   @override
-  final Set<int> experiencesDoneIds;
+  final Set<UniqueId> experiencesDoneIds;
   @override
-  final Set<int> experiencesLikedIds;
+  final Set<UniqueId> experiencesLikedIds;
   @override
-  final Set<int> experiencesToDoIds;
+  final Set<UniqueId> experiencesToDoIds;
   @override
   final Set<Device> devices;
   @override
@@ -583,7 +601,7 @@ class _$_User extends _User {
             const DeepCollectionEquality().equals(other.experiencesLikedIds, experiencesLikedIds)) &&
           (identical(other.experiencesToDoIds, experiencesToDoIds) || const DeepCollectionEquality().equals(other.experiencesToDoIds, experiencesToDoIds)) &&
           (identical(other.devices, devices) || const DeepCollectionEquality().equals(other.devices, devices)) &&
-            (identical(other.systems, systems) || const DeepCollectionEquality().equals(other.systems, systems)));
+          (identical(other.systems, systems) || const DeepCollectionEquality().equals(other.systems, systems)));
   }
 
   @override
@@ -624,37 +642,37 @@ class _$_User extends _User {
 
 abstract class _User extends User {
   const _User._() : super._();
-  const factory _User(
-      {int id,
-      @required Name name,
-      @required Name username,
-      @required Password password,
-      @required EmailAddress email,
-      @required PastDate birthday,
-      @required EntityDescription description,
-      @required String imageURL,
-      @required Option<File> imageFileOption,
-      @required UserLevel level,
-      @required ExperiencePoints experiencePoints,
-      @required bool privacy,
-      @required bool adminPowers,
-      @required bool enabled,
-      @required PastDate lastLogin,
-      @required PastDate creationDate,
-      @required PastDate modificationDate,
-      @required Options options,
-      @required Set<int> blockedUsersIds,
-      @required Set<int> followedUsersIds,
-      @required Set<int> interestsIds,
-      @required Set<int> achievementsIds,
-      @required Set<int> experiencesDoneIds,
-      @required Set<int> experiencesLikedIds,
-      @required Set<int> experiencesToDoIds,
-      @required Set<Device> devices,
-      @required Set<System> systems}) = _$_User;
+  const factory _User({@required UniqueId id,
+    @required Name name,
+    @required Name username,
+    @required Password password,
+    @required EmailAddress email,
+    @required PastDate birthday,
+    @required EntityDescription description,
+    @required String imageURL,
+    @required Option<File> imageFileOption,
+    @required UserLevel level,
+    @required ExperiencePoints experiencePoints,
+    @required bool privacy,
+    @required bool adminPowers,
+    @required bool enabled,
+    @required PastDate lastLogin,
+    @required PastDate creationDate,
+    @required PastDate modificationDate,
+    @required Options options,
+    @required Set<UniqueId> blockedUsersIds,
+    @required Set<UniqueId> followedUsersIds,
+    @required Set<UniqueId> interestsIds,
+    @required Set<UniqueId> achievementsIds,
+    @required Set<UniqueId> experiencesDoneIds,
+    @required Set<UniqueId> experiencesLikedIds,
+    @required Set<UniqueId> experiencesToDoIds,
+    @required Set<Device> devices,
+    @required Set<System> systems}) = _$_User;
 
   @override
-  int get id;
+  UniqueId get id;
+
   @override
   Name get name;
   @override
@@ -689,22 +707,31 @@ abstract class _User extends User {
   PastDate get creationDate;
   @override
   PastDate get modificationDate;
+
   @override
   Options get options;
+
   @override
-  Set<int> get blockedUsersIds;
+  Set<UniqueId> get blockedUsersIds;
+
   @override
-  Set<int> get followedUsersIds;
+  Set<UniqueId> get followedUsersIds;
+
   @override
-  Set<int> get interestsIds;
+  Set<UniqueId> get interestsIds;
+
   @override
-  Set<int> get achievementsIds;
+  Set<UniqueId> get achievementsIds;
+
   @override
-  Set<int> get experiencesDoneIds;
+  Set<UniqueId> get experiencesDoneIds;
+
   @override
-  Set<int> get experiencesLikedIds;
+  Set<UniqueId> get experiencesLikedIds;
+
   @override
-  Set<int> get experiencesToDoIds;
+  Set<UniqueId> get experiencesToDoIds;
+
   @override
   Set<Device> get devices;
   @override

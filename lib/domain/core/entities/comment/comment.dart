@@ -5,6 +5,7 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 part 'comment.freezed.dart';
 
@@ -16,17 +17,18 @@ abstract class Comment implements _$Comment {
   const Comment._();
 
   const factory Comment({
-    int id,
+    @required UniqueId id,
     @required User poster,
-    @required int experienceId,
+    @required UniqueId experienceId,
     @required CommentContent content,
     @required PastDate creationDate,
     @required PastDate modificationDate,
   }) = _Comment;
 
   factory Comment.empty() => Comment(
-    poster: User.empty(),
-        experienceId: 0,
+        id: UniqueId(),
+        poster: User.empty(),
+        experienceId: UniqueId(),
         content: CommentContent(""),
         creationDate: PastDate(DateTime.now()),
         modificationDate: PastDate(DateTime.now()),

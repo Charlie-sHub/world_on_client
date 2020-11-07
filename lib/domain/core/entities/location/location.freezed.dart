@@ -14,7 +14,7 @@ class _$LocationTearOff {
   const _$LocationTearOff();
 
 // ignore: unused_element
-  _Location call({int id, @required String city, @required String country, @required String postalCode, @required Set<Experience> experiences}) {
+  _Location call({@required UniqueId id, @required String city, @required String country, @required String postalCode, @required Set<Experience> experiences}) {
     return _Location(
       id: id,
       city: city,
@@ -31,7 +31,7 @@ const $Location = _$LocationTearOff();
 
 /// @nodoc
 mixin _$Location {
-  int get id;
+  UniqueId get id;
   
   String get city;
   
@@ -49,7 +49,7 @@ abstract class $LocationCopyWith<$Res> {
   factory $LocationCopyWith(Location value, $Res Function(Location) then) =
   _$LocationCopyWithImpl<$Res>;
   
-  $Res call({int id,
+  $Res call({UniqueId id,
     String city,
     String country,
     String postalCode,
@@ -73,7 +73,7 @@ class _$LocationCopyWithImpl<$Res> implements $LocationCopyWith<$Res> {
     Object experiences = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       city: city == freezed ? _value.city : city as String,
       country: country == freezed ? _value.country : country as String,
       postalCode:
@@ -91,7 +91,7 @@ abstract class _$LocationCopyWith<$Res> implements $LocationCopyWith<$Res> {
   __$LocationCopyWithImpl<$Res>;
   
   @override
-  $Res call({int id,
+  $Res call({UniqueId id,
     String city,
     String country,
     String postalCode,
@@ -116,7 +116,7 @@ class __$LocationCopyWithImpl<$Res> extends _$LocationCopyWithImpl<$Res>
     Object experiences = freezed,
   }) {
     return _then(_Location(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       city: city == freezed ? _value.city : city as String,
       country: country == freezed ? _value.country : country as String,
       postalCode:
@@ -130,19 +130,20 @@ class __$LocationCopyWithImpl<$Res> extends _$LocationCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_Location extends _Location {
-  const _$_Location({this.id,
+  const _$_Location({@required this.id,
     @required this.city,
     @required this.country,
     @required this.postalCode,
     @required this.experiences})
-    : assert(city != null),
+    : assert(id != null),
+      assert(city != null),
       assert(country != null),
       assert(postalCode != null),
       assert(experiences != null),
       super._();
   
   @override
-  final int id;
+  final UniqueId id;
   @override
   final String city;
   @override
@@ -151,7 +152,7 @@ class _$_Location extends _Location {
   final String postalCode;
   @override
   final Set<Experience> experiences;
-
+  
   @override
   String toString() {
     return 'Location(id: $id, city: $city, country: $country, postalCode: $postalCode, experiences: $experiences)';
@@ -193,14 +194,14 @@ class _$_Location extends _Location {
 abstract class _Location extends Location {
   const _Location._() : super._();
   
-  const factory _Location({int id,
+  const factory _Location({@required UniqueId id,
     @required String city,
     @required String country,
     @required String postalCode,
     @required Set<Experience> experiences}) = _$_Location;
   
   @override
-  int get id;
+  UniqueId get id;
   
   @override
   String get city;

@@ -14,7 +14,7 @@ class _$DeviceTearOff {
   const _$DeviceTearOff();
 
 // ignore: unused_element
-  _Device call({int id, @required String name, @required String type, @required String company}) {
+  _Device call({@required UniqueId id, @required String name, @required String type, @required String company}) {
     return _Device(
       id: id,
       name: name,
@@ -30,7 +30,8 @@ const $Device = _$DeviceTearOff();
 
 /// @nodoc
 mixin _$Device {
-  int get id;
+  UniqueId get id;
+  
   String get name;
   String get type;
   String get company;
@@ -42,7 +43,8 @@ mixin _$Device {
 abstract class $DeviceCopyWith<$Res> {
   factory $DeviceCopyWith(Device value, $Res Function(Device) then) =
   _$DeviceCopyWithImpl<$Res>;
-  $Res call({int id, String name, String type, String company});
+  
+  $Res call({UniqueId id, String name, String type, String company});
 }
 
 /// @nodoc
@@ -61,7 +63,7 @@ class _$DeviceCopyWithImpl<$Res> implements $DeviceCopyWith<$Res> {
     Object company = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       name: name == freezed ? _value.name : name as String,
       type: type == freezed ? _value.type : type as String,
       company: company == freezed ? _value.company : company as String,
@@ -73,8 +75,9 @@ class _$DeviceCopyWithImpl<$Res> implements $DeviceCopyWith<$Res> {
 abstract class _$DeviceCopyWith<$Res> implements $DeviceCopyWith<$Res> {
   factory _$DeviceCopyWith(_Device value, $Res Function(_Device) then) =
   __$DeviceCopyWithImpl<$Res>;
+  
   @override
-  $Res call({int id, String name, String type, String company});
+  $Res call({UniqueId id, String name, String type, String company});
 }
 
 /// @nodoc
@@ -94,7 +97,7 @@ class __$DeviceCopyWithImpl<$Res> extends _$DeviceCopyWithImpl<$Res>
     Object company = freezed,
   }) {
     return _then(_Device(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       name: name == freezed ? _value.name : name as String,
       type: type == freezed ? _value.type : type as String,
       company: company == freezed ? _value.company : company as String,
@@ -104,24 +107,25 @@ class __$DeviceCopyWithImpl<$Res> extends _$DeviceCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_Device extends _Device {
-  const _$_Device({this.id,
+  const _$_Device({@required this.id,
     @required this.name,
     @required this.type,
     @required this.company})
-    : assert(name != null),
+    : assert(id != null),
+      assert(name != null),
       assert(type != null),
       assert(company != null),
       super._();
   
   @override
-  final int id;
+  final UniqueId id;
   @override
   final String name;
   @override
   final String type;
   @override
   final String company;
-
+  
   @override
   String toString() {
     return 'Device(id: $id, name: $name, type: $type, company: $company)';
@@ -157,13 +161,13 @@ class _$_Device extends _Device {
 abstract class _Device extends Device {
   const _Device._() : super._();
   
-  const factory _Device({int id,
+  const factory _Device({@required UniqueId id,
     @required String name,
     @required String type,
     @required String company}) = _$_Device;
   
   @override
-  int get id;
+  UniqueId get id;
   
   @override
   String get name;

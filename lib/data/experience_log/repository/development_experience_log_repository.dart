@@ -13,6 +13,7 @@ import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_log/repository/experience_log_repository_interface.dart';
 import 'package:worldon/injection.dart';
 
@@ -24,7 +25,7 @@ class DevelopmentExperienceLogRepository implements ExperienceLogRepositoryInter
   final _logger = Logger();
 
   @override
-  Future<Either<Failure, Unit>> addExperienceToLog(int experienceId) async {
+  Future<Either<Failure, Unit>> addExperienceToLog(UniqueId experienceId) async {
     try {
       final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
       return _moorUserOption.fold(
@@ -32,7 +33,7 @@ class DevelopmentExperienceLogRepository implements ExperienceLogRepositoryInter
         (_moorUserWithRelations) async {
           final _userToDoExperience = UserToDoExperience(
             userId: _moorUserWithRelations.user.id,
-            experienceId: experienceId,
+            experienceId: experienceId.getOrCrash(),
           );
           await _database.moorExperiencesDao.insertExperienceTodo(_userToDoExperience);
           return right(unit);
@@ -52,15 +53,15 @@ class DevelopmentExperienceLogRepository implements ExperienceLogRepositoryInter
   }
 
   @override
-  Future<Either<Failure, Unit>> dismissExperienceFromLog(int experienceId) async {
+  Future<Either<Failure, Unit>> dismissExperienceFromLog(UniqueId experienceId) async {
     try {
       final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
       return _moorUserOption.fold(
-        () => throw UnAuthenticatedError,
-        (_moorUserWithRelations) async {
+          () => throw UnAuthenticatedError,
+          (_moorUserWithRelations) async {
           final _userToDoExperience = UserToDoExperience(
             userId: _moorUserWithRelations.user.id,
-            experienceId: experienceId,
+            experienceId: experienceId.getOrCrash(),
           );
           await _database.moorExperiencesDao.removeExperienceTodo(_userToDoExperience);
           return right(unit);
@@ -87,11 +88,11 @@ class DevelopmentExperienceLogRepository implements ExperienceLogRepositoryInter
         KtList.of(
           getValidExperience(),
           getValidExperience().copyWith(
-            id: 2,
+            id: UniqueId(),
             title: Name("Phasellus"),
           ),
           getValidExperience().copyWith(
-            id: 3,
+            id: UniqueId(),
             title: Name("Itaque"),
           ),
         ),

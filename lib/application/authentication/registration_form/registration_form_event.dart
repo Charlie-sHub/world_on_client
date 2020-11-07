@@ -20,7 +20,7 @@ abstract class RegistrationFormEvent with _$RegistrationFormEvent {
 
   const factory RegistrationFormEvent.descriptionChanged(String description) = _DescriptionChanged;
 
-  const factory RegistrationFormEvent.interestsChanged(Set<int> interests) = _InterestsChanged;
+  const factory RegistrationFormEvent.interestsChanged(Set<UniqueId> interests) = _InterestsChanged;
 
   const factory RegistrationFormEvent.tappedEULA() = _TappedEULA;
 

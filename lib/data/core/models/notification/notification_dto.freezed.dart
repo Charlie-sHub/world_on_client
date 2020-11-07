@@ -17,7 +17,7 @@ class _$NotificationDtoTearOff {
   const _$NotificationDtoTearOff();
 
 // ignore: unused_element
-  _NotificationDto call({@required int id,
+  _NotificationDto call({@required String id,
     @required UserDto sender,
     @required UserDto receiver,
     @required String description,
@@ -47,7 +47,8 @@ const $NotificationDto = _$NotificationDtoTearOff();
 
 /// @nodoc
 mixin _$NotificationDto {
-  int get id;
+  String get id;
+  
   UserDto get sender; // Maybe change the Users to only the ids
   UserDto get receiver;
   String get description;
@@ -64,7 +65,7 @@ abstract class $NotificationDtoCopyWith<$Res> {
   factory $NotificationDtoCopyWith(NotificationDto value, $Res Function(NotificationDto) then) =
   _$NotificationDtoCopyWithImpl<$Res>;
   
-  $Res call({int id,
+  $Res call({String id,
     UserDto sender,
     UserDto receiver,
     String description,
@@ -98,7 +99,7 @@ class _$NotificationDtoCopyWithImpl<$Res>
     Object type = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as String,
       sender: sender == freezed ? _value.sender : sender as UserDto,
       receiver: receiver == freezed ? _value.receiver : receiver as UserDto,
       description:
@@ -139,7 +140,7 @@ abstract class _$NotificationDtoCopyWith<$Res>
   __$NotificationDtoCopyWithImpl<$Res>;
   
   @override
-  $Res call({int id,
+  $Res call({String id,
     UserDto sender,
     UserDto receiver,
     String description,
@@ -174,7 +175,7 @@ class __$NotificationDtoCopyWithImpl<$Res> extends _$NotificationDtoCopyWithImpl
     Object type = freezed,
   }) {
     return _then(_NotificationDto(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as String,
       sender: sender == freezed ? _value.sender : sender as UserDto,
       receiver: receiver == freezed ? _value.receiver : receiver as UserDto,
       description:
@@ -211,7 +212,7 @@ class __$NotificationDtoCopyWithImpl<$Res> extends _$NotificationDtoCopyWithImpl
     _$_$_NotificationDtoFromJson(json);
   
   @override
-  final int id;
+  final String id;
   @override
   final UserDto sender;
   @override // Maybe change the Users to only the ids
@@ -277,7 +278,7 @@ class __$NotificationDtoCopyWithImpl<$Res> extends _$NotificationDtoCopyWithImpl
 abstract class _NotificationDto extends NotificationDto {
   const _NotificationDto._() : super._();
   
-  const factory _NotificationDto({@required int id,
+  const factory _NotificationDto({@required String id,
     @required UserDto sender,
     @required UserDto receiver,
     @required String description,
@@ -289,7 +290,7 @@ abstract class _NotificationDto extends NotificationDto {
   _$_NotificationDto.fromJson;
   
   @override
-  int get id;
+  String get id;
   
   @override
   UserDto get sender;

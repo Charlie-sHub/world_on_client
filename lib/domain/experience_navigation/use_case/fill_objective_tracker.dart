@@ -18,7 +18,7 @@ class FillObjectiveTracker implements UseCase<Map<int, bool>, Params> {
     final Map<int, bool> objectiveTracker = {};
     for (final objective in params.objectiveSet.getOrCrash().iter) {
       if (objective.id != null) {
-        objectiveTracker[objective.id] = false;
+        // objectiveTracker[objective.id] = false;
       } else {
         return left(const Failure.coreDomain(CoreDomainFailure.domainLayerError(errorString: "Null id in the objective tracker")));
       }

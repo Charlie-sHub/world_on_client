@@ -7,6 +7,7 @@ import 'package:worldon/data/core/moor/converters/domain_tag_to_moor_tag.dart';
 import 'package:worldon/data/core/moor/converters/moor_tag_to_domain_tag.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/tag_management/repository/tag_management_repository_interface.dart';
 import 'package:worldon/injection.dart';
 
@@ -52,9 +53,9 @@ class DevelopmentTagManagementRepository implements TagManagementRepositoryInter
   }
 
   @override
-  Future<Either<Failure, Tag>> getTag(int id) async {
+  Future<Either<Failure, Tag>> getTag(UniqueId id) async {
     try {
-      final _moorTag = await _database.moorTagsDao.getTagById(id);
+      final _moorTag = await _database.moorTagsDao.getTagById(id.getOrCrash());
       final _tag = moorTagToDomainTag(_moorTag);
       return right(_tag);
     } catch (exception) {
@@ -70,9 +71,9 @@ class DevelopmentTagManagementRepository implements TagManagementRepositoryInter
   }
 
   @override
-  Future<Either<Failure, Unit>> removeTag(int id) async {
+  Future<Either<Failure, Unit>> removeTag(UniqueId id) async {
     try {
-      final _moorTag = await _database.moorTagsDao.getTagById(id);
+      final _moorTag = await _database.moorTagsDao.getTagById(id.getOrCrash());
       await _database.moorTagsDao.removeTag(_moorTag);
       return right(unit);
     } catch (exception) {

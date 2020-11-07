@@ -4,6 +4,7 @@ import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/tag_management/repository/tag_repository_interface.dart';
 
 @LazySingleton(as: TagCoreRepositoryInterface, env: [Environment.prod])
@@ -15,13 +16,13 @@ class ProductionTagRepository implements TagCoreRepositoryInterface {
   }
 
   @override
-  Future<Either<Failure, User>> getCreator(int id) {
+  Future<Either<Failure, User>> getCreator(UniqueId id) {
     // TODO: implement getCreator
     throw UnimplementedError();
   }
 
   @override
-  Stream<Either<Failure, KtList<Tag>>> watchTagsByCreator(int id) {
+  Stream<Either<Failure, KtList<Tag>>> watchTagsByCreator(UniqueId id) {
     // TODO: implement getTagsByCreator
     throw UnimplementedError();
   }

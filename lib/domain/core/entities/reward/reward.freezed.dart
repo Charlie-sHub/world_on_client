@@ -14,7 +14,7 @@ class _$RewardTearOff {
   const _$RewardTearOff();
 
 // ignore: unused_element
-  _Reward call({int id, @required Name name, @required EntityDescription description, @required String imageURL, @required Option<File> imageFile}) {
+  _Reward call({@required UniqueId id, @required Name name, @required EntityDescription description, @required String imageURL, @required Option<File> imageFile}) {
     return _Reward(
       id: id,
       name: name,
@@ -31,7 +31,8 @@ const $Reward = _$RewardTearOff();
 
 /// @nodoc
 mixin _$Reward {
-  int get id;
+  UniqueId get id;
+  
   Name get name;
   EntityDescription get description;
   String get imageURL;
@@ -45,7 +46,7 @@ abstract class $RewardCopyWith<$Res> {
   factory $RewardCopyWith(Reward value, $Res Function(Reward) then) =
   _$RewardCopyWithImpl<$Res>;
   
-  $Res call({int id,
+  $Res call({UniqueId id,
     Name name,
     EntityDescription description,
     String imageURL,
@@ -69,7 +70,7 @@ class _$RewardCopyWithImpl<$Res> implements $RewardCopyWith<$Res> {
     Object imageFile = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       name: name == freezed ? _value.name : name as Name,
       description: description == freezed
         ? _value.description
@@ -87,7 +88,7 @@ abstract class _$RewardCopyWith<$Res> implements $RewardCopyWith<$Res> {
   __$RewardCopyWithImpl<$Res>;
   
   @override
-  $Res call({int id,
+  $Res call({UniqueId id,
     Name name,
     EntityDescription description,
     String imageURL,
@@ -112,7 +113,7 @@ class __$RewardCopyWithImpl<$Res> extends _$RewardCopyWithImpl<$Res>
     Object imageFile = freezed,
   }) {
     return _then(_Reward(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       name: name == freezed ? _value.name : name as Name,
       description: description == freezed
         ? _value.description
@@ -126,19 +127,20 @@ class __$RewardCopyWithImpl<$Res> extends _$RewardCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_Reward extends _Reward {
-  const _$_Reward({this.id,
+  const _$_Reward({@required this.id,
     @required this.name,
     @required this.description,
     @required this.imageURL,
     @required this.imageFile})
-    : assert(name != null),
+    : assert(id != null),
+      assert(name != null),
       assert(description != null),
       assert(imageURL != null),
       assert(imageFile != null),
       super._();
   
   @override
-  final int id;
+  final UniqueId id;
   @override
   final Name name;
   @override
@@ -147,7 +149,7 @@ class _$_Reward extends _Reward {
   final String imageURL;
   @override
   final Option<File> imageFile;
-
+  
   @override
   String toString() {
     return 'Reward(id: $id, name: $name, description: $description, imageURL: $imageURL, imageFile: $imageFile)';
@@ -189,14 +191,14 @@ class _$_Reward extends _Reward {
 abstract class _Reward extends Reward {
   const _Reward._() : super._();
   
-  const factory _Reward({int id,
+  const factory _Reward({@required UniqueId id,
     @required Name name,
     @required EntityDescription description,
     @required String imageURL,
     @required Option<File> imageFile}) = _$_Reward;
   
   @override
-  int get id;
+  UniqueId get id;
   
   @override
   Name get name;

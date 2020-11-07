@@ -15,6 +15,7 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_interface.dart';
 import 'package:worldon/injection.dart';
 
@@ -25,7 +26,7 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
   final _logger = Logger();
 
   @override
-  Future<Either<Failure, Unit>> finishExperience(int experienceId) async {
+  Future<Either<Failure, Unit>> finishExperience(UniqueId experienceId) async {
     try {
       final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
       return _moorUserOption.fold(
@@ -33,7 +34,7 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
         (_moorUserWithRelations) async {
           final _userDoneExperience = UserDoneExperiencesCompanion.insert(
             userId: _moorUserWithRelations.user.id,
-            experienceId: experienceId,
+            experienceId: experienceId.getOrCrash(),
           );
           await _database.moorExperiencesDao.insertExperienceDone(_userDoneExperience);
           return right(unit);
@@ -52,15 +53,15 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
   }
 
   @override
-  Future<Either<Failure, Unit>> likeExperience(int experienceId) async {
+  Future<Either<Failure, Unit>> likeExperience(UniqueId experienceId) async {
     try {
       final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
       return _moorUserOption.fold(
-        () => throw UnAuthenticatedError,
-        (_moorUserWithRelations) async {
+          () => throw UnAuthenticatedError,
+          (_moorUserWithRelations) async {
           final _userLikedExperience = UserLikedExperiencesCompanion.insert(
             userId: _moorUserWithRelations.user.id,
-            experienceId: experienceId,
+            experienceId: experienceId.getOrCrash(),
           );
           await _database.moorExperiencesDao.insertExperienceLiked(_userLikedExperience);
           return right(unit);
@@ -79,15 +80,15 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
   }
 
   @override
-  Future<Either<Failure, Unit>> dislikeExperience(int experienceId) async {
+  Future<Either<Failure, Unit>> dislikeExperience(UniqueId experienceId) async {
     try {
       final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
       return _moorUserOption.fold(
-        () => throw UnAuthenticatedError,
-        (_moorUserWithRelations) async {
+          () => throw UnAuthenticatedError,
+          (_moorUserWithRelations) async {
           final _userLikedExperience = UserLikedExperiencesCompanion.insert(
             userId: _moorUserWithRelations.user.id,
-            experienceId: experienceId,
+            experienceId: experienceId.getOrCrash(),
           );
           await _database.moorExperiencesDao.removeExperienceLiked(_userLikedExperience);
           return right(unit);
@@ -108,10 +109,10 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
   @override
   Future<Either<Failure, Unit>> rateDifficulty({
     Difficulty difficulty,
-    int experienceId,
+    UniqueId experienceId,
   }) async {
     try {
-      final _moorExperience = await _database.moorExperiencesDao.getExperienceById(experienceId);
+      final _moorExperience = await _database.moorExperiencesDao.getExperienceById(experienceId.getOrCrash());
       final _difficulty = _moorExperience.difficulty + difficulty.getOrCrash() / 2;
       await _database.moorExperiencesDao.updateExperience(
         _moorExperience.copyWith(
@@ -132,13 +133,13 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
   }
 
   @override
-  Future<Either<Failure, Unit>> rewardUser(int experienceId) async {
+  Future<Either<Failure, Unit>> rewardUser(UniqueId experienceId) async {
     try {
       final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
       return _moorUserOption.fold(
-        () => throw UnAuthenticatedError,
-        (_moorUserWithRelations) async {
-          final _moorExperience = await _database.moorExperiencesDao.getExperienceById(experienceId);
+          () => throw UnAuthenticatedError,
+          (_moorUserWithRelations) async {
+          final _moorExperience = await _database.moorExperiencesDao.getExperienceById(experienceId.getOrCrash());
           final _experiencePoints = _moorUserWithRelations.user.experiencePoints + _moorExperience.difficulty * 10;
           await _database.moorUsersDao.updateUser(
             _moorUserWithRelations.user.copyWith(
@@ -166,11 +167,11 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
       final _experienceSet = KtSet.of(
         getValidExperience(),
         getValidExperience().copyWith(
-          id: 2,
+          id: UniqueId(),
           title: Name("Phasellus"),
         ),
         getValidExperience().copyWith(
-          id: 3,
+          id: UniqueId(),
           title: Name("Itaque"),
         ),
       );

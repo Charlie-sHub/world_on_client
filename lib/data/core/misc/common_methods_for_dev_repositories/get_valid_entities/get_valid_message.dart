@@ -3,12 +3,14 @@ import 'package:worldon/domain/core/entities/message/message.dart';
 import 'package:worldon/domain/core/validation/objects/message_content.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 Message getValidMessage() {
   return Message(
+    id: UniqueId(),
     sender: getValidUser(),
     receiver: getValidUser().copyWith(
-      id: 2,
+      id: UniqueId(),
       name: Name("Carlos"),
       username: Name(
         "carlos",

@@ -17,6 +17,7 @@ import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/comments/repository/comment_repository_interface.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/injection.dart';
 
 @LazySingleton(as: CommentRepositoryInterface, env: [Environment.dev])
@@ -26,8 +27,8 @@ class DevelopmentCommentRepository implements CommentRepositoryInterface {
   final _logger = Logger();
 
   @override
-  Stream<Either<Failure, KtList<Comment>>> watchExperienceComments(int experienceId) async* {
-    yield* _database.moorCommentsDao.watchExperienceComments(experienceId).asyncMap(
+  Stream<Either<Failure, KtList<Comment>>> watchExperienceComments(UniqueId experienceId) async* {
+    yield* _database.moorCommentsDao.watchExperienceComments(experienceId.getOrCrash()).asyncMap(
       (_moorCommentList) {
         if (_moorCommentList != null) {
           return right<Failure, KtList<Comment>>(
@@ -87,14 +88,14 @@ class DevelopmentCommentRepository implements CommentRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtSet<Comment>>> watchUserComments(int userId) {
+  Stream<Either<Failure, KtSet<Comment>>> watchUserComments(UniqueId userId) {
     Either<Failure, KtSet<Comment>> _either;
     if (_random.nextBool()) {
       _either = right(
         KtSet.of(
           getValidComment(),
           getValidComment().copyWith(
-            id: 2,
+            id: UniqueId(),
             content: CommentContent("Phasellus elementum mollis ipsum non auctor."),
           ),
         ),
@@ -106,7 +107,7 @@ class DevelopmentCommentRepository implements CommentRepositoryInterface {
   }
 
   @override
-  Future<Either<Failure, Unit>> removeComment(int id) {
+  Future<Either<Failure, Unit>> removeComment(UniqueId id) {
     return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 }

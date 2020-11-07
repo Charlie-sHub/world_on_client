@@ -12,6 +12,7 @@ import 'package:worldon/domain/core/validation/objects/experience_points.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/core/validation/objects/user_level.dart';
 
 part 'user.freezed.dart';
@@ -24,7 +25,7 @@ abstract class User implements _$User {
   const User._();
 
   const factory User({
-    int id,
+    @required UniqueId id,
     @required Name name,
     @required Name username,
     @required Password password,
@@ -45,18 +46,19 @@ abstract class User implements _$User {
     @required PastDate creationDate,
     @required PastDate modificationDate,
     @required Options options,
-    @required Set<int> blockedUsersIds,
-    @required Set<int> followedUsersIds,
-    @required Set<int> interestsIds,
-    @required Set<int> achievementsIds,
-    @required Set<int> experiencesDoneIds,
-    @required Set<int> experiencesLikedIds,
-    @required Set<int> experiencesToDoIds,
+    @required Set<UniqueId> blockedUsersIds,
+    @required Set<UniqueId> followedUsersIds,
+    @required Set<UniqueId> interestsIds,
+    @required Set<UniqueId> achievementsIds,
+    @required Set<UniqueId> experiencesDoneIds,
+    @required Set<UniqueId> experiencesLikedIds,
+    @required Set<UniqueId> experiencesToDoIds,
     @required Set<Device> devices,
     @required Set<System> systems,
   }) = _User;
 
   factory User.empty() => User(
+    id: UniqueId(),
         name: Name(""),
         username: Name(""),
         password: Password(""),
@@ -73,17 +75,17 @@ abstract class User implements _$User {
         lastLogin: PastDate(DateTime.now()),
         creationDate: PastDate(DateTime.now()),
         modificationDate: PastDate(DateTime.now()),
-        options: const Options(
-          id: 1,
+        options: Options(
+          id: UniqueId(),
           languageCode: "",
         ),
-        blockedUsersIds: <int>{},
-        followedUsersIds: <int>{},
-        interestsIds: <int>{},
-        achievementsIds: <int>{},
-        experiencesDoneIds: <int>{},
-        experiencesLikedIds: <int>{},
-        experiencesToDoIds: <int>{},
+        blockedUsersIds: <UniqueId>{},
+        followedUsersIds: <UniqueId>{},
+        interestsIds: <UniqueId>{},
+        achievementsIds: <UniqueId>{},
+        experiencesDoneIds: <UniqueId>{},
+        experiencesLikedIds: <UniqueId>{},
+        experiencesToDoIds: <UniqueId>{},
         devices: <Device>{},
         systems: <System>{},
       );

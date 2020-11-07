@@ -5,6 +5,7 @@ import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 
 @LazySingleton(env: [Environment.dev, Environment.prod])
@@ -20,7 +21,7 @@ class WatchUserInterests implements StreamUseCase<KtList<Tag>, Params> {
 }
 
 class Params {
-  final int userId;
+  final UniqueId userId;
 
   Params({@required this.userId});
 }

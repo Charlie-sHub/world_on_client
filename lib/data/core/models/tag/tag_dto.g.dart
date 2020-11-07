@@ -8,9 +8,9 @@ part of 'tag_dto.dart';
 
 _$_TagDto _$_$_TagDtoFromJson(Map<String, dynamic> json) {
   return _$_TagDto(
-    id: json['id'] as int,
+    id: json['id'] as String,
     name: json['name'] as String,
-    creatorId: json['creatorId'] as int,
+    creatorId: json['creatorId'] as String,
     creationDate: json['creationDate'] as String,
     modificationDate: json['modificationDate'] as String,
   );

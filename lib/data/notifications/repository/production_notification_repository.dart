@@ -3,12 +3,13 @@ import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/notifications/repository/notification_repository_interface.dart';
 
 @LazySingleton(as: NotificationRepositoryInterface, env: [Environment.prod])
 class ProductionNotificationRepository implements NotificationRepositoryInterface {
   @override
-  Future<Either<Failure, Unit>> checkNotification(int id) {
+  Future<Either<Failure, Unit>> checkNotification(UniqueId id) {
     // TODO: implement checkNotification
     throw UnimplementedError();
   }
@@ -30,9 +31,9 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
     // TODO: implement sendNotification
     throw UnimplementedError();
   }
-
+  
   @override
-  Future<Either<Failure, Unit>> deleteNotification(int id) {
+  Future<Either<Failure, Unit>> deleteNotification(UniqueId id) {
     // TODO: implement deleteNotification
     throw UnimplementedError();
   }

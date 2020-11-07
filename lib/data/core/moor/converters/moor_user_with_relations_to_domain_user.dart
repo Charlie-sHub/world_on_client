@@ -8,41 +8,42 @@ import 'package:worldon/domain/core/validation/objects/experience_points.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/core/validation/objects/user_level.dart';
 
-User moorUserWithRelationsToDomainUser(MoorUserWithRelations userWithRelations) {
-  final _blockedUsersIds = userWithRelations.blockedUsersIds ?? <int>{};
-  final _followedUsersIds = userWithRelations.followedUsersIds ?? <int>{};
-  final _interestsIds = userWithRelations.interestsIds ?? <int>{};
-  final _achievementsIds = userWithRelations.achievementsIds ?? <int>{};
-  final _experiencesDoneIds = userWithRelations.experiencesDoneIds ?? <int>{};
-  final _experiencesLikedIds = userWithRelations.experiencesLikedIds ?? <int>{};
-  final _experiencesToDoIds = userWithRelations.experiencesToDoIds ?? <int>{};
+User moorUserWithRelationsToDomainUser(MoorUserWithRelations _userWithRelations) {
+  final _blockedUsersIds = _userWithRelations.blockedUsersIds ?? <String>{};
+  final _followedUsersIds = _userWithRelations.followedUsersIds ?? <String>{};
+  final _interestsIds = _userWithRelations.interestsIds ?? <String>{};
+  final _achievementsIds = _userWithRelations.achievementsIds ?? <String>{};
+  final _experiencesDoneIds = _userWithRelations.experiencesDoneIds ?? <String>{};
+  final _experiencesLikedIds = _userWithRelations.experiencesLikedIds ?? <String>{};
+  final _experiencesToDoIds = _userWithRelations.experiencesToDoIds ?? <String>{};
   return User.empty().copyWith(
-    id: userWithRelations.user.id,
-    name: Name(userWithRelations.user.name),
-    username: Name(userWithRelations.user.username),
-    password: Password(userWithRelations.user.password),
-    email: EmailAddress(userWithRelations.user.email),
-    birthday: PastDate(userWithRelations.user.birthday),
-    description: EntityDescription(userWithRelations.user.description),
-    imageURL: userWithRelations.user.imageURL,
+    id: UniqueId.fromUniqueString(_userWithRelations.user.id),
+    name: Name(_userWithRelations.user.name),
+    username: Name(_userWithRelations.user.username),
+    password: Password(_userWithRelations.user.password),
+    email: EmailAddress(_userWithRelations.user.email),
+    birthday: PastDate(_userWithRelations.user.birthday),
+    description: EntityDescription(_userWithRelations.user.description),
+    imageURL: _userWithRelations.user.imageURL,
     imageFileOption: none(),
-    level: UserLevel(userWithRelations.user.level),
-    experiencePoints: ExperiencePoints(userWithRelations.user.experiencePoints),
-    privacy: userWithRelations.user.privacy,
-    adminPowers: userWithRelations.user.adminPowers,
-    enabled: userWithRelations.user.enabled,
-    lastLogin: PastDate(userWithRelations.user.lastLogin),
-    creationDate: PastDate(userWithRelations.user.creationDate),
-    modificationDate: PastDate(userWithRelations.user.modificationDate),
+    level: UserLevel(_userWithRelations.user.level),
+    experiencePoints: ExperiencePoints(_userWithRelations.user.experiencePoints),
+    privacy: _userWithRelations.user.privacy,
+    adminPowers: _userWithRelations.user.adminPowers,
+    enabled: _userWithRelations.user.enabled,
+    lastLogin: PastDate(_userWithRelations.user.lastLogin),
+    creationDate: PastDate(_userWithRelations.user.creationDate),
+    modificationDate: PastDate(_userWithRelations.user.modificationDate),
     options: Options.empty(),
-    blockedUsersIds: _blockedUsersIds,
-    followedUsersIds: _followedUsersIds,
-    interestsIds: _interestsIds,
-    achievementsIds: _achievementsIds,
-    experiencesDoneIds: _experiencesDoneIds,
-    experiencesLikedIds: _experiencesLikedIds,
-    experiencesToDoIds: _experiencesToDoIds,
+    blockedUsersIds: _blockedUsersIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+    followedUsersIds: _followedUsersIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+    interestsIds: _interestsIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+    achievementsIds: _achievementsIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+    experiencesDoneIds: _experiencesDoneIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+    experiencesLikedIds: _experiencesLikedIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+    experiencesToDoIds: _experiencesToDoIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
   );
 }

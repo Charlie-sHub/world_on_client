@@ -4,6 +4,7 @@ import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/achievement_management/repository/achievement_repository_interface.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 @LazySingleton(env: [Environment.dev, Environment.prod])
 class AwardAchievement implements AsyncUseCase<Unit, Params> {
@@ -24,8 +25,8 @@ class AwardAchievement implements AsyncUseCase<Unit, Params> {
 }
 
 class Params {
-  final int userId;
-  final int achievementId;
+  final UniqueId userId;
+  final UniqueId achievementId;
 
   Params({
     @required this.userId,

@@ -2,6 +2,7 @@ import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 
 MoorAchievementsCompanion domainAchievementToMoorAchievement(Achievement achievement) => MoorAchievementsCompanion.insert(
+      id: achievement.id.getOrCrash(),
       name: achievement.name.getOrCrash(),
       description: achievement.description.getOrCrash(),
       imageURL: achievement.imageURL,
@@ -10,5 +11,5 @@ MoorAchievementsCompanion domainAchievementToMoorAchievement(Achievement achieve
       experiencePoints: achievement.experiencePoints.getOrCrash(),
       creationDate: achievement.creationDate.getOrCrash(),
       modificationDate: achievement.modificationDate.getOrCrash(),
-      creatorId: achievement.creatorId,
+      creatorId: achievement.creatorId.getOrCrash(),
     );

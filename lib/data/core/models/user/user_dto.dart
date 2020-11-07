@@ -10,6 +10,7 @@ import 'package:worldon/domain/core/validation/objects/experience_points.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/core/validation/objects/user_level.dart';
 
 part 'user_dto.freezed.dart';
@@ -20,7 +21,7 @@ abstract class UserDto implements _$UserDto {
   const UserDto._();
 
   const factory UserDto({
-    @required int id,
+    @required String id,
     @required String name,
     @required String username,
     // Shouldn't this be encrypted in some way?
@@ -38,19 +39,19 @@ abstract class UserDto implements _$UserDto {
     @required String creationDate,
     @required String modificationDate,
     @required OptionsDto options,
-    @required Set<int> blockedUsersIds,
-    @required Set<int> followedUsersIds,
-    @required Set<int> interestsIds,
-    @required Set<int> achievementsIds,
-    @required Set<int> experiencesDoneIds,
-    @required Set<int> experiencesLikedIds,
-    @required Set<int> experiencesToDoIds,
+    @required Set<String> blockedUsersIds,
+    @required Set<String> followedUsersIds,
+    @required Set<String> interestsIds,
+    @required Set<String> achievementsIds,
+    @required Set<String> experiencesDoneIds,
+    @required Set<String> experiencesLikedIds,
+    @required Set<String> experiencesToDoIds,
     @required Set<DeviceDto> devices,
     @required Set<SystemDto> systems,
   }) = _UserDto;
 
   factory UserDto.fromDomain(User user) => UserDto(
-        id: user.id,
+        id: user.id.getOrCrash(),
         name: user.name.getOrCrash(),
         username: user.username.getOrCrash(),
         password: user.password.getOrCrash(),
@@ -67,19 +68,19 @@ abstract class UserDto implements _$UserDto {
         creationDate: user.creationDate.getOrCrash().toIso8601String(),
         modificationDate: user.modificationDate.getOrCrash().toIso8601String(),
         options: OptionsDto.fromDomain(user.options),
-        blockedUsersIds: user.blockedUsersIds,
-        followedUsersIds: user.followedUsersIds,
-        interestsIds: user.interestsIds,
-        achievementsIds: user.achievementsIds,
-        experiencesDoneIds: user.experiencesDoneIds,
-        experiencesLikedIds: user.experiencesLikedIds,
-        experiencesToDoIds: user.experiencesToDoIds,
+        blockedUsersIds: user.blockedUsersIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
+        followedUsersIds: user.followedUsersIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
+        interestsIds: user.interestsIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
+        achievementsIds: user.achievementsIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
+        experiencesDoneIds: user.experiencesDoneIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
+        experiencesLikedIds: user.experiencesLikedIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
+        experiencesToDoIds: user.experiencesToDoIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
         devices: user.devices.map((device) => DeviceDto.fromDomain(device)).toSet(),
         systems: user.systems.map((system) => SystemDto.fromDomain(system)).toSet(),
       );
 
   User toDomain() => User(
-        id: id,
+        id: UniqueId.fromUniqueString(id),
         name: Name(name),
         username: Name(username),
         password: Password(password),
@@ -97,13 +98,13 @@ abstract class UserDto implements _$UserDto {
         creationDate: PastDate(DateTime.parse(creationDate)),
         modificationDate: PastDate(DateTime.parse(modificationDate)),
         options: options.toDomain(),
-        blockedUsersIds: blockedUsersIds,
-        followedUsersIds: followedUsersIds,
-        interestsIds: interestsIds,
-        achievementsIds: achievementsIds,
-        experiencesDoneIds: experiencesDoneIds,
-        experiencesLikedIds: experiencesLikedIds,
-        experiencesToDoIds: experiencesToDoIds,
+        blockedUsersIds: blockedUsersIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+        followedUsersIds: followedUsersIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+        interestsIds: interestsIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+        achievementsIds: achievementsIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+        experiencesDoneIds: experiencesDoneIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+        experiencesLikedIds: experiencesLikedIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+        experiencesToDoIds: experiencesToDoIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
         devices: devices.map((deviceDto) => deviceDto.toDomain()).toSet(),
         systems: systems.map((systemDto) => systemDto.toDomain()).toSet(),
       );

@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 /// Repository for the management of [Experience]s.
 abstract class ExperienceManagementRepositoryInterface {
@@ -11,8 +12,8 @@ abstract class ExperienceManagementRepositoryInterface {
   Future<Either<Failure, Unit>> editExperience(Experience experience);
 
   /// Sends an id to the server to it deletes the associated [Experience].
-  Future<Either<Failure, Unit>> removeExperience(int id);
+  Future<Either<Failure, Unit>> removeExperience(UniqueId id);
 
   /// Sends and id to the server so it can return the associated [Experience]
-  Future<Either<Failure, Experience>> getExperience(int id);
+  Future<Either<Failure, Experience>> getExperience(UniqueId id);
 }

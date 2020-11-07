@@ -10,11 +10,12 @@ import 'package:worldon/domain/core/validation/objects/experience_points.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/core/validation/objects/user_level.dart';
 
 User getValidUser() {
   return User(
-    id: 1,
+    id: UniqueId(),
     name: Name("Ricardo"),
     username: Name("ricky"),
     password: Password("abcdef"),
@@ -32,13 +33,13 @@ User getValidUser() {
     creationDate: PastDate(DateTime.now().subtract(const Duration(days: 100))),
     modificationDate: PastDate(DateTime.now()),
     options: getValidOptions(),
-    blockedUsersIds: {2, 3},
-    followedUsersIds: {4, 5},
-    interestsIds: {1},
-    achievementsIds: {3},
-    experiencesDoneIds: {4, 3, 2},
-    experiencesLikedIds: {4, 3, 2},
-    experiencesToDoIds: {5, 1, 0},
+    blockedUsersIds: <UniqueId>{},
+    followedUsersIds: <UniqueId>{},
+    interestsIds: <UniqueId>{},
+    achievementsIds: <UniqueId>{},
+    experiencesDoneIds: <UniqueId>{},
+    experiencesLikedIds: <UniqueId>{},
+    experiencesToDoIds: <UniqueId>{},
     devices: <Device>{},
     systems: <System>{},
   );

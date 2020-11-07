@@ -14,7 +14,7 @@ class _$SystemTearOff {
   const _$SystemTearOff();
 
 // ignore: unused_element
-  _System call({int id, @required String name, @required String type, @required String company}) {
+  _System call({@required UniqueId id, @required String name, @required String type, @required String company}) {
     return _System(
       id: id,
       name: name,
@@ -30,7 +30,8 @@ const $System = _$SystemTearOff();
 
 /// @nodoc
 mixin _$System {
-  int get id;
+  UniqueId get id;
+  
   String get name;
   String get type;
   String get company;
@@ -42,7 +43,8 @@ mixin _$System {
 abstract class $SystemCopyWith<$Res> {
   factory $SystemCopyWith(System value, $Res Function(System) then) =
   _$SystemCopyWithImpl<$Res>;
-  $Res call({int id, String name, String type, String company});
+  
+  $Res call({UniqueId id, String name, String type, String company});
 }
 
 /// @nodoc
@@ -61,7 +63,7 @@ class _$SystemCopyWithImpl<$Res> implements $SystemCopyWith<$Res> {
     Object company = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       name: name == freezed ? _value.name : name as String,
       type: type == freezed ? _value.type : type as String,
       company: company == freezed ? _value.company : company as String,
@@ -73,8 +75,9 @@ class _$SystemCopyWithImpl<$Res> implements $SystemCopyWith<$Res> {
 abstract class _$SystemCopyWith<$Res> implements $SystemCopyWith<$Res> {
   factory _$SystemCopyWith(_System value, $Res Function(_System) then) =
   __$SystemCopyWithImpl<$Res>;
+  
   @override
-  $Res call({int id, String name, String type, String company});
+  $Res call({UniqueId id, String name, String type, String company});
 }
 
 /// @nodoc
@@ -94,7 +97,7 @@ class __$SystemCopyWithImpl<$Res> extends _$SystemCopyWithImpl<$Res>
     Object company = freezed,
   }) {
     return _then(_System(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       name: name == freezed ? _value.name : name as String,
       type: type == freezed ? _value.type : type as String,
       company: company == freezed ? _value.company : company as String,
@@ -104,24 +107,25 @@ class __$SystemCopyWithImpl<$Res> extends _$SystemCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_System extends _System {
-  const _$_System({this.id,
+  const _$_System({@required this.id,
     @required this.name,
     @required this.type,
     @required this.company})
-    : assert(name != null),
+    : assert(id != null),
+      assert(name != null),
       assert(type != null),
       assert(company != null),
       super._();
   
   @override
-  final int id;
+  final UniqueId id;
   @override
   final String name;
   @override
   final String type;
   @override
   final String company;
-
+  
   @override
   String toString() {
     return 'System(id: $id, name: $name, type: $type, company: $company)';
@@ -157,13 +161,13 @@ class _$_System extends _System {
 abstract class _System extends System {
   const _System._() : super._();
   
-  const factory _System({int id,
+  const factory _System({@required UniqueId id,
     @required String name,
     @required String type,
     @required String company}) = _$_System;
   
   @override
-  int get id;
+  UniqueId get id;
   
   @override
   String get name;

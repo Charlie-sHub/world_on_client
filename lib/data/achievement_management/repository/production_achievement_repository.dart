@@ -4,13 +4,14 @@ import 'package:kt_dart/kt.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/achievement_management/repository/achievement_repository_interface.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 @LazySingleton(as: AchievementRepositoryInterface, env: [Environment.prod])
 class ProductionAchievementRepository implements AchievementRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> awardAchievement({
-    int achievementId,
-    int userId,
+    UniqueId achievementId,
+    UniqueId userId,
   }) {
     // TODO: implement awardAchievement
     throw UnimplementedError();
@@ -29,7 +30,7 @@ class ProductionAchievementRepository implements AchievementRepositoryInterface 
   }
 
   @override
-  Future<Either<Failure, Achievement>> getAchievement(int ac) {
+  Future<Either<Failure, Achievement>> getAchievement(UniqueId ac) {
     // TODO: implement getAchievement
     throw UnimplementedError();
   }
@@ -41,7 +42,7 @@ class ProductionAchievementRepository implements AchievementRepositoryInterface 
   }
 
   @override
-  Future<Either<Failure, Unit>> removeAchievement(int ac) {
+  Future<Either<Failure, Unit>> removeAchievement(UniqueId ac) {
     // TODO: implement removeAchievement
     throw UnimplementedError();
   }

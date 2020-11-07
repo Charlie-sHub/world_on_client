@@ -17,7 +17,7 @@ class _$ObjectiveDtoTearOff {
   const _$ObjectiveDtoTearOff();
 
 // ignore: unused_element
-  _ObjectiveDto call({@required int id,
+  _ObjectiveDto call({@required String id,
     @required String description,
     @required CoordinatesDto coordinates,
     @required String imageURL}) {
@@ -41,7 +41,8 @@ const $ObjectiveDto = _$ObjectiveDtoTearOff();
 
 /// @nodoc
 mixin _$ObjectiveDto {
-  int get id;
+  String get id;
+  
   String get description;
   CoordinatesDto get coordinates;
   String get imageURL;
@@ -55,7 +56,7 @@ abstract class $ObjectiveDtoCopyWith<$Res> {
   factory $ObjectiveDtoCopyWith(ObjectiveDto value, $Res Function(ObjectiveDto) then) =
   _$ObjectiveDtoCopyWithImpl<$Res>;
   
-  $Res call({int id,
+  $Res call({String id,
     String description,
     CoordinatesDto coordinates,
     String imageURL});
@@ -79,7 +80,7 @@ class _$ObjectiveDtoCopyWithImpl<$Res> implements $ObjectiveDtoCopyWith<$Res> {
     Object imageURL = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as String,
       description:
       description == freezed ? _value.description : description as String,
       coordinates: coordinates == freezed
@@ -107,7 +108,7 @@ abstract class _$ObjectiveDtoCopyWith<$Res>
   __$ObjectiveDtoCopyWithImpl<$Res>;
   
   @override
-  $Res call({int id,
+  $Res call({String id,
     String description,
     CoordinatesDto coordinates,
     String imageURL});
@@ -133,7 +134,7 @@ class __$ObjectiveDtoCopyWithImpl<$Res> extends _$ObjectiveDtoCopyWithImpl<$Res>
     Object imageURL = freezed,
   }) {
     return _then(_ObjectiveDto(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as String,
       description:
       description == freezed ? _value.description : description as String,
       coordinates: coordinates == freezed
@@ -161,14 +162,14 @@ class __$ObjectiveDtoCopyWithImpl<$Res> extends _$ObjectiveDtoCopyWithImpl<$Res>
     _$_$_ObjectiveDtoFromJson(json);
   
   @override
-  final int id;
+  final String id;
   @override
   final String description;
   @override
   final CoordinatesDto coordinates;
   @override
   final String imageURL;
-
+  
   @override
   String toString() {
     return 'ObjectiveDto(id: $id, description: $description, coordinates: $coordinates, imageURL: $imageURL)';
@@ -212,7 +213,7 @@ class __$ObjectiveDtoCopyWithImpl<$Res> extends _$ObjectiveDtoCopyWithImpl<$Res>
 abstract class _ObjectiveDto extends ObjectiveDto {
   const _ObjectiveDto._() : super._();
   
-  const factory _ObjectiveDto({@required int id,
+  const factory _ObjectiveDto({@required String id,
     @required String description,
     @required CoordinatesDto coordinates,
     @required String imageURL}) = _$_ObjectiveDto;
@@ -221,7 +222,7 @@ abstract class _ObjectiveDto extends ObjectiveDto {
   _$_ObjectiveDto.fromJson;
   
   @override
-  int get id;
+  String get id;
   
   @override
   String get description;

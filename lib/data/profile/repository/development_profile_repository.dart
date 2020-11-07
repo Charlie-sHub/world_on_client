@@ -24,6 +24,7 @@ import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 import 'package:worldon/injection.dart';
 
@@ -52,7 +53,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   MoorUser _moorUserFromDomainUserToUpdate(User user) => MoorUser(
-        id: user.id,
+    id: user.id.getOrCrash(),
         name: user.name.getOrCrash(),
         username: user.username.getOrCrash(),
         password: user.password.getOrCrash(),
@@ -75,9 +76,9 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
       );
 
   @override
-  Future<Either<Failure, User>> getUser(int id) async {
+  Future<Either<Failure, User>> getUser(UniqueId id) async {
     try {
-      final _moorUser = await _database.moorUsersDao.getUserById(id);
+      final _moorUser = await _database.moorUsersDao.getUserById(id.getOrCrash());
       final _user = moorUserToDomainUser(_moorUser);
       return right(_user);
     } catch (exception) {
@@ -93,13 +94,13 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Future<Either<Failure, Unit>> blockUser(int blockedId) async {
+  Future<Either<Failure, Unit>> blockUser(UniqueId blockedId) async {
     try {
       final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
       return _moorUserOption.fold(
-        () => throw UnAuthenticatedError,
-        (_moorUserWithRelations) async {
-          final _userBlockRelation = _createUserBlockRelation(blockedId, _moorUserWithRelations.user.id);
+          () => throw UnAuthenticatedError,
+          (_moorUserWithRelations) async {
+          final _userBlockRelation = _createUserBlockRelation(blockedId.getOrCrash(), _moorUserWithRelations.user.id);
           await _database.moorUsersDao.blockUser(_userBlockRelation);
           return right(unit);
         },
@@ -117,13 +118,13 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Future<Either<Failure, Unit>> unBlockUser(int blockedId) async {
+  Future<Either<Failure, Unit>> unBlockUser(UniqueId blockedId) async {
     try {
       final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
       return _moorUserOption.fold(
-        () => throw UnAuthenticatedError,
-        (_moorUserWithRelations) async {
-          final _userBlockRelation = _createUserBlockRelation(blockedId, _moorUserWithRelations.user.id);
+          () => throw UnAuthenticatedError,
+          (_moorUserWithRelations) async {
+          final _userBlockRelation = _createUserBlockRelation(blockedId.getOrCrash(), _moorUserWithRelations.user.id);
           await _database.moorUsersDao.unBlockUser(_userBlockRelation);
           return right(unit);
         },
@@ -140,7 +141,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
     }
   }
 
-  UserBlockRelationsCompanion _createUserBlockRelation(int blockedId, int loggedInUserId) {
+  UserBlockRelationsCompanion _createUserBlockRelation(String blockedId, String loggedInUserId) {
     return UserBlockRelationsCompanion.insert(
       blockedId: blockedId,
       blockerId: loggedInUserId,
@@ -148,13 +149,13 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Future<Either<Failure, Unit>> followUser(int userToFollowId) async {
+  Future<Either<Failure, Unit>> followUser(UniqueId userToFollowId) async {
     try {
       final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
       return _moorUserOption.fold(
-        () => throw UnAuthenticatedError,
-        (_moorUserWithRelations) async {
-          final _userFollowRelation = _createUserFollowRelation(userToFollowId, _moorUserWithRelations.user.id);
+          () => throw UnAuthenticatedError,
+          (_moorUserWithRelations) async {
+          final _userFollowRelation = _createUserFollowRelation(userToFollowId.getOrCrash(), _moorUserWithRelations.user.id);
           await _database.moorUsersDao.followUser(_userFollowRelation);
           return right(unit);
         },
@@ -172,13 +173,13 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Future<Either<Failure, Unit>> unFollowUser(int userToUnFollowId) async {
+  Future<Either<Failure, Unit>> unFollowUser(UniqueId userToUnFollowId) async {
     try {
       final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
       return _moorUserOption.fold(
-        () => throw UnAuthenticatedError,
-        (_moorUserWithRelations) async {
-          final _userFollowRelation = _createUserFollowRelation(userToUnFollowId, _moorUserWithRelations.user.id);
+          () => throw UnAuthenticatedError,
+          (_moorUserWithRelations) async {
+          final _userFollowRelation = _createUserFollowRelation(userToUnFollowId.getOrCrash(), _moorUserWithRelations.user.id);
           await _database.moorUsersDao.unFollowUser(_userFollowRelation);
           return right(unit);
         },
@@ -195,7 +196,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
     }
   }
 
-  UserFollowRelationsCompanion _createUserFollowRelation(int followedId, int loggedInUserId) {
+  UserFollowRelationsCompanion _createUserFollowRelation(String followedId, String loggedInUserId) {
     return UserFollowRelationsCompanion.insert(
       followedId: followedId,
       followingId: loggedInUserId,
@@ -203,48 +204,48 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> watchExperiencesCreated(int id) async* {
-    final _stream = _database.moorExperiencesDao.watchExperiencesCreated(id);
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesCreated(UniqueId id) async* {
+    final _stream = _database.moorExperiencesDao.watchExperiencesCreated(id.getOrCrash());
     yield* createExperienceListStream(_stream, _logger);
   }
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> watchExperiencesDone(int id) async* {
-    final _stream = _database.moorExperiencesDao.watchExperiencesDone(id);
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesDone(UniqueId id) async* {
+    final _stream = _database.moorExperiencesDao.watchExperiencesDone(id.getOrCrash());
     yield* createExperienceListStream(_stream, _logger);
   }
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> watchExperiencesLiked(int id) async* {
-    final _stream = _database.moorExperiencesDao.watchExperiencesLiked(id);
+  Stream<Either<Failure, KtList<Experience>>> watchExperiencesLiked(UniqueId id) async* {
+    final _stream = _database.moorExperiencesDao.watchExperiencesLiked(id.getOrCrash());
     yield* createExperienceListStream(_stream, _logger);
   }
 
   @override
-  Stream<Either<Failure, KtList<User>>> watchFollowedUsers(int id) async* {
-    final _stream = _database.moorUsersDao.watchFollowedUsers(id);
+  Stream<Either<Failure, KtList<User>>> watchFollowedUsers(UniqueId id) async* {
+    final _stream = _database.moorUsersDao.watchFollowedUsers(id.getOrCrash());
     yield* createUserListStream(_stream, _logger);
   }
 
   @override
-  Stream<Either<Failure, KtList<User>>> watchFollowingUsers(int id) async* {
-    final _stream = _database.moorUsersDao.watchFollowingUsers(id);
+  Stream<Either<Failure, KtList<User>>> watchFollowingUsers(UniqueId id) async* {
+    final _stream = _database.moorUsersDao.watchFollowingUsers(id.getOrCrash());
     yield* createUserListStream(_stream, _logger);
   }
 
   @override
-  Stream<Either<Failure, KtList<Achievement>>> watchUserAchievements(int userId) async* {
-    final _stream = _database.moorAchievementsDao.watchUserAchievements(userId);
+  Stream<Either<Failure, KtList<Achievement>>> watchUserAchievements(UniqueId userId) async* {
+    final _stream = _database.moorAchievementsDao.watchUserAchievements(userId.getOrCrash());
     yield* _stream.map(
-      (_moorAchievementList) {
+        (_moorAchievementList) {
         if (_moorAchievementList != null && _moorAchievementList.isNotEmpty) {
           return right<Failure, KtList<Achievement>>(
             _moorAchievementList
-                .map(
-                  (_moorAchievementWithRelations) => moorAchievementToDomainAchievement(_moorAchievementWithRelations),
-                )
-                .toImmutableList()
-                .sortedBy(
+              .map(
+                (_moorAchievementWithRelations) => moorAchievementToDomainAchievement(_moorAchievementWithRelations),
+            )
+              .toImmutableList()
+              .sortedBy(
                   (_tag) => _tag.creationDate.getOrCrash(),
                 ),
           );
@@ -272,23 +273,23 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtList<Tag>>> watchUserInterests(int userId) async* {
-    final _stream = _database.moorTagsDao.watchUserInterests(userId);
+  Stream<Either<Failure, KtList<Tag>>> watchUserInterests(UniqueId userId) async* {
+    final _stream = _database.moorTagsDao.watchUserInterests(userId.getOrCrash());
     yield* createTagListStream(_stream, _logger);
   }
 
   @override
-  Future<Either<Failure, Unit>> removeExperienceLiked(int experienceId) {
+  Future<Either<Failure, Unit>> removeExperienceLiked(UniqueId experienceId) {
     return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 
   @override
-  Future<Either<Failure, Unit>> deleteExperience(int experienceId) {
+  Future<Either<Failure, Unit>> deleteExperience(UniqueId experienceId) {
     return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 
   @override
-  Stream<Either<Failure, KtList<User>>> watchBlockedUsers(int id) {
+  Stream<Either<Failure, KtList<User>>> watchBlockedUsers(UniqueId id) {
     return _oldBlockedUsersSimulation();
   }
 
@@ -299,12 +300,12 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
         getValidUser(),
         User.empty(),
         getValidUser().copyWith(
-          id: 2,
+          id: UniqueId(),
           name: Name("Carlos"),
           username: Name("carlos"),
         ),
         getValidUser().copyWith(
-          id: 3,
+          id: UniqueId(),
           name: Name("Juan"),
           username: Name("juan"),
         ),

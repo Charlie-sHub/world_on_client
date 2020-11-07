@@ -13,6 +13,7 @@ import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/simul
 import 'package:worldon/domain/achievement_management/repository/achievement_repository_interface.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 @LazySingleton(as: AchievementRepositoryInterface, env: [Environment.dev])
 class DevelopmentAchievementRepository implements AchievementRepositoryInterface {
@@ -20,8 +21,8 @@ class DevelopmentAchievementRepository implements AchievementRepositoryInterface
 
   @override
   Future<Either<Failure, Unit>> awardAchievement({
-    int achievementId,
-    int userId,
+    UniqueId achievementId,
+    UniqueId userId,
   }) {
     return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
@@ -37,7 +38,7 @@ class DevelopmentAchievementRepository implements AchievementRepositoryInterface
   }
 
   @override
-  Future<Either<Failure, Achievement>> getAchievement(int ac) {
+  Future<Either<Failure, Achievement>> getAchievement(UniqueId achievementId) {
     if (_random.nextBool()) {
       return getRightFuture(getValidAchievement());
     } else {
@@ -53,11 +54,11 @@ class DevelopmentAchievementRepository implements AchievementRepositoryInterface
         KtList.of(
           getValidAchievement(),
           getValidAchievement().copyWith(
-            id: 2,
+            id: UniqueId(),
             name: Name("Nullam quam"),
           ),
           getValidAchievement().copyWith(
-            id: 3,
+            id: UniqueId(),
             name: Name("Curabitur"),
           ),
         ),
@@ -69,7 +70,7 @@ class DevelopmentAchievementRepository implements AchievementRepositoryInterface
   }
 
   @override
-  Future<Either<Failure, Unit>> removeAchievement(int ac) {
+  Future<Either<Failure, Unit>> removeAchievement(UniqueId achievementId) {
     return simulateFailureOrUnit(auxBool: _random.nextBool());
   }
 }

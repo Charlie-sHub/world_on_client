@@ -18,17 +18,17 @@ class _$ExperienceDtoTearOff {
 
 // ignore: unused_element
   _ExperienceDto call(
-      {@required int id,
-      @required String title,
-      @required String description,
-      @required Set<String> imageURLs,
-      @required CoordinatesDto coordinates,
-      @required LocationDto location,
-      @required UserDto creator,
-      @required int difficulty,
-      @required String creationDate,
-      @required String modificationDate,
-      @required Set<ObjectiveDto> objectives,
+      {@required String id,
+        @required String title,
+        @required String description,
+        @required Set<String> imageURLs,
+        @required CoordinatesDto coordinates,
+        @required LocationDto location,
+        @required UserDto creator,
+        @required int difficulty,
+        @required String creationDate,
+        @required String modificationDate,
+        @required Set<ObjectiveDto> objectives,
       @required Set<RewardDto> rewards,
       @required Set<TagDto> tags,
       @required Set<CommentDto> comments,
@@ -66,7 +66,8 @@ const $ExperienceDto = _$ExperienceDtoTearOff();
 
 /// @nodoc
 mixin _$ExperienceDto {
-  int get id;
+  String get id;
+  
   String get title;
   String get description;
   Set<String> get imageURLs;
@@ -92,7 +93,7 @@ abstract class $ExperienceDtoCopyWith<$Res> {
   factory $ExperienceDtoCopyWith(ExperienceDto value, $Res Function(ExperienceDto) then) =
   _$ExperienceDtoCopyWithImpl<$Res>;
   
-  $Res call({int id,
+  $Res call({String id,
     String title,
     String description,
     Set<String> imageURLs,
@@ -146,7 +147,7 @@ class _$ExperienceDtoCopyWithImpl<$Res>
     Object doneBy = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as String,
       title: title == freezed ? _value.title : title as String,
       description:
       description == freezed ? _value.description : description as String,
@@ -214,7 +215,7 @@ abstract class _$ExperienceDtoCopyWith<$Res>
   __$ExperienceDtoCopyWithImpl<$Res>;
   
   @override
-  $Res call({int id,
+  $Res call({String id,
     String title,
     String description,
     Set<String> imageURLs,
@@ -270,7 +271,7 @@ class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Re
     Object doneBy = freezed,
   }) {
     return _then(_ExperienceDto(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as String,
       title: title == freezed ? _value.title : title as String,
       description:
       description == freezed ? _value.description : description as String,
@@ -342,7 +343,7 @@ class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Re
     _$_$_ExperienceDtoFromJson(json);
   
   @override
-  final int id;
+  final String id;
   @override
   final String title;
   @override
@@ -462,7 +463,7 @@ class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Re
 abstract class _ExperienceDto extends ExperienceDto {
   const _ExperienceDto._() : super._();
   
-  const factory _ExperienceDto({@required int id,
+  const factory _ExperienceDto({@required String id,
     @required String title,
     @required String description,
     @required Set<String> imageURLs,
@@ -483,7 +484,7 @@ abstract class _ExperienceDto extends ExperienceDto {
   _$_ExperienceDto.fromJson;
   
   @override
-  int get id;
+  String get id;
   
   @override
   String get title;

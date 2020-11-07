@@ -11,7 +11,7 @@ class MoorObjectivesDao extends DatabaseAccessor<Database> with _$MoorObjectives
 
   Future<int> insertObjective(Insertable<MoorObjective> objective) => into(moorObjectives).insert(objective);
 
-  Future<MoorObjective> getObjectiveById(int id) async {
+  Future<MoorObjective> getObjectiveById(String id) async {
     final _contentQuery = select(moorObjectives)..where((_objectives) => _objectives.id.equals(id));
     return _contentQuery.getSingle();
   }

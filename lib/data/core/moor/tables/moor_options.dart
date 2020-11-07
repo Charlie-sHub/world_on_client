@@ -1,9 +1,9 @@
 import 'package:moor_flutter/moor_flutter.dart';
 
 class MoorOptions extends Table {
-  IntColumn get id => integer().autoIncrement()();
+  TextColumn get id => text()();
 
-  IntColumn get userId => integer().customConstraint("REFERENCES moor_users(id)")();
+  TextColumn get userId => text().customConstraint("REFERENCES moor_users(id)")();
 
   TextColumn get languageCode => text()();
 }

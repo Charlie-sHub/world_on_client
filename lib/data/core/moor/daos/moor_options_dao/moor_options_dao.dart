@@ -11,14 +11,14 @@ class MoorOptionsDao extends DatabaseAccessor<Database> with _$MoorOptionsDaoMix
 
   Future<int> insertOptions(Insertable<MoorOption> options) => into(moorOptions).insert(options);
 
-  Future<MoorOption> getOptionsById(int id) async {
+  Future<MoorOption> getOptionsById(String id) async {
     final _contentQuery = select(moorOptions)..where((_options) => _options.id.equals(id));
     return _contentQuery.getSingle();
   }
 
   Future<int> deleteAllOptions() => delete(moorOptions).go();
 
-  Future<MoorOption> getUserOptions(int userId) async {
+  Future<MoorOption> getUserOptions(String userId) async {
     final _userQuery = select(moorOptions)
       ..where((options) => options.userId.equals(userId))
       ..limit(1);

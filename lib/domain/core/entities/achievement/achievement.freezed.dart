@@ -15,7 +15,7 @@ class _$AchievementTearOff {
 
 // ignore: unused_element
   _Achievement call(
-      {int id,
+      {@required UniqueId id,
       @required Name name,
       @required EntityDescription description,
       @required String imageURL,
@@ -23,7 +23,7 @@ class _$AchievementTearOff {
       @required String type,
       @required int requisite,
       @required ExperiencePoints experiencePoints,
-      @required int creatorId,
+      @required UniqueId creatorId,
       @required PastDate creationDate,
       @required PastDate modificationDate,
       @required TagSet tags}) {
@@ -50,27 +50,28 @@ const $Achievement = _$AchievementTearOff();
 
 /// @nodoc
 mixin _$Achievement {
-  int get id;
-
+  UniqueId get id;
+  
   Name get name;
-
-  EntityDescription get description; // TODO: Make a value object and validator for image URLs from World On's back-end
+  
+  EntityDescription
+  get description; // TODO: Make a value object and validator for image URLs from World On's back-end
 // Maybe Firestore will make that unnecessary
   String get imageURL;
-
+  
   Option<File> get imageFile;
-
+  
   String get type;
-
+  
   int get requisite; // This will probably be reworked in the future to accommodate different kinds of achievements
   ExperiencePoints get experiencePoints;
-
-  int get creatorId;
-
+  
+  UniqueId get creatorId;
+  
   PastDate get creationDate;
-
+  
   PastDate get modificationDate;
-
+  
   TagSet get tags;
 
   $AchievementCopyWith<Achievement> get copyWith;
@@ -81,7 +82,7 @@ abstract class $AchievementCopyWith<$Res> {
   factory $AchievementCopyWith(Achievement value, $Res Function(Achievement) then) =
   _$AchievementCopyWithImpl<$Res>;
   
-  $Res call({int id,
+  $Res call({UniqueId id,
     Name name,
     EntityDescription description,
     String imageURL,
@@ -89,7 +90,7 @@ abstract class $AchievementCopyWith<$Res> {
     String type,
     int requisite,
     ExperiencePoints experiencePoints,
-    int creatorId,
+    UniqueId creatorId,
     PastDate creationDate,
     PastDate modificationDate,
     TagSet tags});
@@ -119,7 +120,7 @@ class _$AchievementCopyWithImpl<$Res> implements $AchievementCopyWith<$Res> {
     Object tags = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       name: name == freezed ? _value.name : name as Name,
       description: description == freezed
         ? _value.description
@@ -132,7 +133,8 @@ class _$AchievementCopyWithImpl<$Res> implements $AchievementCopyWith<$Res> {
       experiencePoints: experiencePoints == freezed
         ? _value.experiencePoints
         : experiencePoints as ExperiencePoints,
-      creatorId: creatorId == freezed ? _value.creatorId : creatorId as int,
+      creatorId:
+      creatorId == freezed ? _value.creatorId : creatorId as UniqueId,
       creationDate: creationDate == freezed
         ? _value.creationDate
         : creationDate as PastDate,
@@ -151,7 +153,7 @@ abstract class _$AchievementCopyWith<$Res>
   __$AchievementCopyWithImpl<$Res>;
   
   @override
-  $Res call({int id,
+  $Res call({UniqueId id,
     Name name,
     EntityDescription description,
     String imageURL,
@@ -159,7 +161,7 @@ abstract class _$AchievementCopyWith<$Res>
     String type,
     int requisite,
     ExperiencePoints experiencePoints,
-    int creatorId,
+    UniqueId creatorId,
     PastDate creationDate,
     PastDate modificationDate,
     TagSet tags});
@@ -190,7 +192,7 @@ class __$AchievementCopyWithImpl<$Res> extends _$AchievementCopyWithImpl<$Res>
     Object tags = freezed,
   }) {
     return _then(_Achievement(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       name: name == freezed ? _value.name : name as Name,
       description: description == freezed
         ? _value.description
@@ -203,7 +205,8 @@ class __$AchievementCopyWithImpl<$Res> extends _$AchievementCopyWithImpl<$Res>
       experiencePoints: experiencePoints == freezed
         ? _value.experiencePoints
         : experiencePoints as ExperiencePoints,
-      creatorId: creatorId == freezed ? _value.creatorId : creatorId as int,
+      creatorId:
+      creatorId == freezed ? _value.creatorId : creatorId as UniqueId,
       creationDate: creationDate == freezed
         ? _value.creationDate
         : creationDate as PastDate,
@@ -217,34 +220,34 @@ class __$AchievementCopyWithImpl<$Res> extends _$AchievementCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_Achievement extends _Achievement {
-  const _$_Achievement(
-      {this.id,
-      @required this.name,
-      @required this.description,
-      @required this.imageURL,
-      @required this.imageFile,
-      @required this.type,
-      @required this.requisite,
-      @required this.experiencePoints,
-      @required this.creatorId,
-      @required this.creationDate,
-      @required this.modificationDate,
-      @required this.tags})
-      : assert(name != null),
-        assert(description != null),
-        assert(imageURL != null),
-        assert(imageFile != null),
-        assert(type != null),
-        assert(requisite != null),
-        assert(experiencePoints != null),
-        assert(creatorId != null),
-        assert(creationDate != null),
-        assert(modificationDate != null),
-        assert(tags != null),
-        super._();
+  const _$_Achievement({@required this.id,
+    @required this.name,
+    @required this.description,
+    @required this.imageURL,
+    @required this.imageFile,
+    @required this.type,
+    @required this.requisite,
+    @required this.experiencePoints,
+    @required this.creatorId,
+    @required this.creationDate,
+    @required this.modificationDate,
+    @required this.tags})
+    : assert(id != null),
+      assert(name != null),
+      assert(description != null),
+      assert(imageURL != null),
+      assert(imageFile != null),
+      assert(type != null),
+      assert(requisite != null),
+      assert(experiencePoints != null),
+      assert(creatorId != null),
+      assert(creationDate != null),
+      assert(modificationDate != null),
+      assert(tags != null),
+      super._();
 
   @override
-  final int id;
+  final UniqueId id;
   @override
   final Name name;
   @override
@@ -261,7 +264,7 @@ class _$_Achievement extends _Achievement {
   @override // This will probably be reworked in the future to accommodate different kinds of achievements
   final ExperiencePoints experiencePoints;
   @override
-  final int creatorId;
+  final UniqueId creatorId;
   @override
   final PastDate creationDate;
   @override
@@ -335,22 +338,22 @@ class _$_Achievement extends _Achievement {
 
 abstract class _Achievement extends Achievement {
   const _Achievement._() : super._();
-  const factory _Achievement(
-      {int id,
-      @required Name name,
-      @required EntityDescription description,
-      @required String imageURL,
-      @required Option<File> imageFile,
-      @required String type,
-      @required int requisite,
-      @required ExperiencePoints experiencePoints,
-      @required int creatorId,
-      @required PastDate creationDate,
-      @required PastDate modificationDate,
-      @required TagSet tags}) = _$_Achievement;
+  const factory _Achievement({@required UniqueId id,
+    @required Name name,
+    @required EntityDescription description,
+    @required String imageURL,
+    @required Option<File> imageFile,
+    @required String type,
+    @required int requisite,
+    @required ExperiencePoints experiencePoints,
+    @required UniqueId creatorId,
+    @required PastDate creationDate,
+    @required PastDate modificationDate,
+    @required TagSet tags}) = _$_Achievement;
 
   @override
-  int get id;
+  UniqueId get id;
+
   @override
   Name get name;
   @override
@@ -364,10 +367,13 @@ abstract class _Achievement extends Achievement {
   String get type;
   @override
   int get requisite;
+
   @override // This will probably be reworked in the future to accommodate different kinds of achievements
   ExperiencePoints get experiencePoints;
+
   @override
-  int get creatorId;
+  UniqueId get creatorId;
+
   @override
   PastDate get creationDate;
   @override

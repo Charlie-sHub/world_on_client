@@ -14,6 +14,7 @@ import 'package:worldon/domain/core/validation/objects/objective_set.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/core/validation/objects/reward_set.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 part 'experience.freezed.dart';
 
@@ -26,7 +27,7 @@ abstract class Experience implements _$Experience {
 
   const factory Experience({
     // TODO: Add like and dislike counters
-    int id,
+    @required UniqueId id,
     @required Name title,
     @required EntityDescription description,
     @required Set<String> imageURLs,
@@ -46,6 +47,7 @@ abstract class Experience implements _$Experience {
   }) = _Experience;
 
   factory Experience.empty() => Experience(
+    id: UniqueId(),
         title: Name(""),
         description: EntityDescription(""),
         imageURLs: <String>{},
@@ -57,11 +59,11 @@ abstract class Experience implements _$Experience {
         creationDate: PastDate(DateTime.now()),
         modificationDate: PastDate(DateTime.now()),
         objectives: ObjectiveSet(const KtSet.empty()),
-        rewards: RewardSet(const KtSet.empty()),
-        tags: TagSet(const KtSet.empty()),
-        comments: <Comment>{},
-        likedBy: <User>{},
-        doneBy: <User>{},
+    rewards: RewardSet(const KtSet.empty()),
+    tags: TagSet(const KtSet.empty()),
+    comments: <Comment>{},
+    likedBy: <User>{},
+    doneBy: <User>{},
       );
 
   Option<ValueFailure<dynamic>> get failureOption {

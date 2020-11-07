@@ -15,7 +15,7 @@ class _$ExperienceTearOff {
 
 // ignore: unused_element
   _Experience call(
-      {int id,
+      {@required UniqueId id,
       @required Name title,
       @required EntityDescription description,
       @required Set<String> imageURLs,
@@ -61,7 +61,8 @@ const $Experience = _$ExperienceTearOff();
 /// @nodoc
 mixin _$Experience {
 // TODO: Add like and dislike counters
-  int get id;
+  UniqueId get id;
+  
   Name get title;
   EntityDescription get description;
   Set<String> get imageURLs;
@@ -84,20 +85,20 @@ mixin _$Experience {
 
 /// @nodoc
 abstract class $ExperienceCopyWith<$Res> {
-  factory $ExperienceCopyWith(Experience value, $Res Function(Experience) then) = _$ExperienceCopyWithImpl<$Res>;
-
-  $Res call(
-      {int id,
-      Name title,
-      EntityDescription description,
-      Set<String> imageURLs,
-      Option<List<Asset>> imageAssetsOption,
-      Coordinates coordinates,
-      Location location,
-      User creator,
-      Difficulty difficulty,
-      PastDate creationDate,
-      PastDate modificationDate,
+  factory $ExperienceCopyWith(Experience value, $Res Function(Experience) then) =
+  _$ExperienceCopyWithImpl<$Res>;
+  
+  $Res call({UniqueId id,
+    Name title,
+    EntityDescription description,
+    Set<String> imageURLs,
+    Option<List<Asset>> imageAssetsOption,
+    Coordinates coordinates,
+    Location location,
+    User creator,
+    Difficulty difficulty,
+    PastDate creationDate,
+    PastDate modificationDate,
       ObjectiveSet objectives,
       RewardSet rewards,
       TagSet tags,
@@ -139,7 +140,7 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
     Object doneBy = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       title: title == freezed ? _value.title : title as Name,
       description: description == freezed
         ? _value.description
@@ -211,7 +212,7 @@ abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
   __$ExperienceCopyWithImpl<$Res>;
   
   @override
-  $Res call({int id,
+  $Res call({UniqueId id,
     Name title,
     EntityDescription description,
     Set<String> imageURLs,
@@ -267,7 +268,7 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res>
     Object doneBy = freezed,
   }) {
     return _then(_Experience(
-      id: id == freezed ? _value.id : id as int,
+      id: id == freezed ? _value.id : id as UniqueId,
       title: title == freezed ? _value.title : title as Name,
       description: description == freezed
         ? _value.description
@@ -305,44 +306,44 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_Experience extends _Experience {
-  const _$_Experience(
-      {this.id,
-      @required this.title,
-      @required this.description,
-      @required this.imageURLs,
-      @required this.imageAssetsOption,
-      @required this.coordinates,
-      @required this.location,
-      @required this.creator,
-      @required this.difficulty,
-      @required this.creationDate,
-      @required this.modificationDate,
-      @required this.objectives,
-      @required this.rewards,
-      @required this.tags,
-      @required this.comments,
-      @required this.likedBy,
-      @required this.doneBy})
-      : assert(title != null),
-        assert(description != null),
-        assert(imageURLs != null),
-        assert(imageAssetsOption != null),
-        assert(coordinates != null),
-        assert(location != null),
-        assert(creator != null),
-        assert(difficulty != null),
-        assert(creationDate != null),
-        assert(modificationDate != null),
-        assert(objectives != null),
-        assert(rewards != null),
-        assert(tags != null),
-        assert(comments != null),
-        assert(likedBy != null),
-        assert(doneBy != null),
-        super._();
+  const _$_Experience({@required this.id,
+    @required this.title,
+    @required this.description,
+    @required this.imageURLs,
+    @required this.imageAssetsOption,
+    @required this.coordinates,
+    @required this.location,
+    @required this.creator,
+    @required this.difficulty,
+    @required this.creationDate,
+    @required this.modificationDate,
+    @required this.objectives,
+    @required this.rewards,
+    @required this.tags,
+    @required this.comments,
+    @required this.likedBy,
+    @required this.doneBy})
+    : assert(id != null),
+      assert(title != null),
+      assert(description != null),
+      assert(imageURLs != null),
+      assert(imageAssetsOption != null),
+      assert(coordinates != null),
+      assert(location != null),
+      assert(creator != null),
+      assert(difficulty != null),
+      assert(creationDate != null),
+      assert(modificationDate != null),
+      assert(objectives != null),
+      assert(rewards != null),
+      assert(tags != null),
+      assert(comments != null),
+      assert(likedBy != null),
+      assert(doneBy != null),
+      super._();
 
   @override // TODO: Add like and dislike counters
-  final int id;
+  final UniqueId id;
   @override
   final Name title;
   @override
@@ -462,18 +463,17 @@ class _$_Experience extends _Experience {
 
 abstract class _Experience extends Experience {
   const _Experience._() : super._();
-  const factory _Experience(
-      {int id,
-      @required Name title,
-      @required EntityDescription description,
-      @required Set<String> imageURLs,
-      @required Option<List<Asset>> imageAssetsOption,
-      @required Coordinates coordinates,
-      @required Location location,
-      @required User creator,
-      @required Difficulty difficulty,
-      @required PastDate creationDate,
-      @required PastDate modificationDate,
+  const factory _Experience({@required UniqueId id,
+    @required Name title,
+    @required EntityDescription description,
+    @required Set<String> imageURLs,
+    @required Option<List<Asset>> imageAssetsOption,
+    @required Coordinates coordinates,
+    @required Location location,
+    @required User creator,
+    @required Difficulty difficulty,
+    @required PastDate creationDate,
+    @required PastDate modificationDate,
       @required ObjectiveSet objectives,
       @required RewardSet rewards,
       @required TagSet tags,
@@ -482,7 +482,8 @@ abstract class _Experience extends Experience {
       @required Set<User> doneBy}) = _$_Experience;
 
   @override // TODO: Add like and dislike counters
-  int get id;
+  UniqueId get id;
+
   @override
   Name get title;
   @override
