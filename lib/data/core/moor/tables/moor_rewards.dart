@@ -12,4 +12,7 @@ class MoorRewards extends Table {
   TextColumn get description => text().withLength(min: 1, max: EntityDescription.maxLength)();
 
   TextColumn get imageURL => text()();
+
+  @override
+  Set<Column> get primaryKey => {id};
 }

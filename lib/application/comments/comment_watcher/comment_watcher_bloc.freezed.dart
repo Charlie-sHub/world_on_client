@@ -39,20 +39,17 @@ mixin _$CommentWatcherEvent {
     @required Result watchExperienceCommentsStarted(UniqueId experienceId),
     @required Result resultsReceived(Either<Failure, KtList<Comment>> failureOrComments),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result watchExperienceCommentsStarted(UniqueId experienceId),
     Result resultsReceived(Either<Failure, KtList<Comment>> failureOrComments),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result watchExperienceCommentsStarted(_WatchExperienceCommentsStarted value),
     @required Result resultsReceived(_ResultsReceived value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result watchExperienceCommentsStarted(_WatchExperienceCommentsStarted value),
@@ -333,7 +330,6 @@ mixin _$CommentWatcherState {
     @required Result loadSuccess(KtList<Comment> comments),
     @required Result loadFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
@@ -342,7 +338,6 @@ mixin _$CommentWatcherState {
     Result loadFailure(Failure<dynamic> failure),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
@@ -350,7 +345,6 @@ mixin _$CommentWatcherState {
     @required Result loadSuccess(_LoadSuccess value),
     @required Result loadFailure(_LoadFailure value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
@@ -684,7 +678,6 @@ abstract class _LoadSuccess implements CommentWatcherState {
   const factory _LoadSuccess(KtList<Comment> comments) = _$_LoadSuccess;
 
   KtList<Comment> get comments;
-
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
@@ -814,6 +807,5 @@ abstract class _LoadFailure implements CommentWatcherState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
   Failure<dynamic> get failure;
-
   _$LoadFailureCopyWith<_LoadFailure> get copyWith;
 }

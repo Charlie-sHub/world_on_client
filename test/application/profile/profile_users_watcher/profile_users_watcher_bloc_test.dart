@@ -8,6 +8,7 @@ import 'package:worldon/application/profile/profile_users_watcher/profile_users_
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/profile/use_case/watch_followed_users.dart';
 import 'package:worldon/domain/profile/use_case/watch_following_users.dart';
 import 'package:worldon/injection.dart';
@@ -27,11 +28,11 @@ void main() {
   );
   final usersFollowed = KtList.of(
     getValidUser(),
-    getValidUser().copyWith(id: 2),
+    getValidUser().copyWith(id: UniqueId()),
   );
   final usersFollowing = usersFollowed;
   final user = getValidUser().copyWith(
-    id: 3,
+    id: UniqueId(),
     followedUsersIds: usersFollowed.map((_user) => _user.id).toSet().dart,
   );
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));

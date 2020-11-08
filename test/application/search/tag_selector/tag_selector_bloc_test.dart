@@ -4,6 +4,7 @@ import 'package:injectable/injectable.dart' as injectable;
 import 'package:kt_dart/collection.dart';
 import 'package:worldon/application/search/tag_selector/tag_selector_bloc.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_tag.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../test_descriptions.dart';
@@ -15,16 +16,16 @@ void main() {
     },
   );
   final _tag = getValidTag();
-  final _tag2 = _tag.copyWith(id: 2);
-  final _tag3 = _tag.copyWith(id: 3);
-  final _tag4 = _tag.copyWith(id: 4);
-  final _tag5 = _tag.copyWith(id: 5);
-  final _tag6 = _tag.copyWith(id: 6);
-  final _tag7 = _tag.copyWith(id: 7);
-  final _tag8 = _tag.copyWith(id: 8);
-  final _tag9 = _tag.copyWith(id: 9);
-  final _tag10 = _tag.copyWith(id: 10);
-  final _tag11 = _tag.copyWith(id: 11);
+  final _tag2 = _tag.copyWith(id: UniqueId());
+  final _tag3 = _tag.copyWith(id: UniqueId());
+  final _tag4 = _tag.copyWith(id: UniqueId());
+  final _tag5 = _tag.copyWith(id: UniqueId());
+  final _tag6 = _tag.copyWith(id: UniqueId());
+  final _tag7 = _tag.copyWith(id: UniqueId());
+  final _tag8 = _tag.copyWith(id: UniqueId());
+  final _tag9 = _tag.copyWith(id: UniqueId());
+  final _tag10 = _tag.copyWith(id: UniqueId());
+  final _tag11 = _tag.copyWith(id: UniqueId());
   final _tagSet = KtSet.of(_tag);
   blocTest(
     TestDescription.shouldEmitInitial,

@@ -28,7 +28,7 @@ dependencies:
   # For dependency injection
   injectable: ^1.0.5
   # Bloc for state management
-  flutter_bloc: ^6.0.6
+  flutter_bloc: ^6.1.0
   # Value equality
   # Probably useless now
   equatable: ^1.2.5

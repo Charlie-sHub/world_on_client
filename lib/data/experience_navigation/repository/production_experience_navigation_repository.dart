@@ -21,7 +21,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
     // TODO: implement likeExperience
     throw UnimplementedError();
   }
-  
+
   @override
   Future<Either<Failure, Unit>> dislikeExperience(UniqueId experienceId) {
     // TODO: implement dislikeExperience
@@ -42,7 +42,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
     // TODO: implement rateDifficulty
     throw UnimplementedError();
   }
-  
+
   @override
   Future<Either<Failure, Unit>> rewardUser(UniqueId experienceId) {
     // TODO: implement rewardUser

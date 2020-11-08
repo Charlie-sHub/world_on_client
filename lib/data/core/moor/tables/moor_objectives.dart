@@ -13,4 +13,7 @@ class MoorObjectives extends Table {
   RealColumn get longitude => real()();
 
   TextColumn get imageURL => text()();
+
+  @override
+  Set<Column> get primaryKey => {id};
 }

@@ -8,6 +8,9 @@ class MoorLocations extends Table {
   TextColumn get country => text()();
 
   TextColumn get postalCode => text()();
+
+  @override
+  Set<Column> get primaryKey => {id};
 }
 
 class LocationExperiences extends Table {

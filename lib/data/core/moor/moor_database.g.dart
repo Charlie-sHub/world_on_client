@@ -18,20 +18,19 @@ class MoorAchievement extends DataClass implements Insertable<MoorAchievement> {
   final DateTime creationDate;
   final DateTime modificationDate;
   final String creatorId;
+  MoorAchievement({@required this.id,
+    @required this.name,
+    @required this.description,
+    @required this.imageURL,
+    @required this.type,
+    @required this.requisite,
+    @required this.experiencePoints,
+    @required this.creationDate,
+    @required this.modificationDate,
+    @required this.creatorId});
 
-  MoorAchievement(
-      {@required this.id,
-      @required this.name,
-      @required this.description,
-      @required this.imageURL,
-      @required this.type,
-      @required this.requisite,
-      @required this.experiencePoints,
-      @required this.creationDate,
-      @required this.modificationDate,
-      @required this.creatorId});
-
-  factory MoorAchievement.fromData(Map<String, dynamic> data, GeneratedDatabase db, {String prefix}) {
+  factory MoorAchievement.fromData(Map<String, dynamic> data, GeneratedDatabase db,
+    {String prefix}) {
     final effectivePrefix = prefix ?? '';
     final stringType = db.typeSystem.forDartType<String>();
     final intType = db.typeSystem.forDartType<int>();
@@ -39,14 +38,21 @@ class MoorAchievement extends DataClass implements Insertable<MoorAchievement> {
     return MoorAchievement(
       id: stringType.mapFromDatabaseResponse(data['${effectivePrefix}id']),
       name: stringType.mapFromDatabaseResponse(data['${effectivePrefix}name']),
-      description: stringType.mapFromDatabaseResponse(data['${effectivePrefix}description']),
-      imageURL: stringType.mapFromDatabaseResponse(data['${effectivePrefix}image_u_r_l']),
+      description: stringType
+        .mapFromDatabaseResponse(data['${effectivePrefix}description']),
+      imageURL: stringType
+        .mapFromDatabaseResponse(data['${effectivePrefix}image_u_r_l']),
       type: stringType.mapFromDatabaseResponse(data['${effectivePrefix}type']),
-      requisite: intType.mapFromDatabaseResponse(data['${effectivePrefix}requisite']),
-      experiencePoints: intType.mapFromDatabaseResponse(data['${effectivePrefix}experience_points']),
-      creationDate: dateTimeType.mapFromDatabaseResponse(data['${effectivePrefix}creation_date']),
-      modificationDate: dateTimeType.mapFromDatabaseResponse(data['${effectivePrefix}modification_date']),
-      creatorId: stringType.mapFromDatabaseResponse(data['${effectivePrefix}creator_id']),
+      requisite:
+      intType.mapFromDatabaseResponse(data['${effectivePrefix}requisite']),
+      experiencePoints: intType
+        .mapFromDatabaseResponse(data['${effectivePrefix}experience_points']),
+      creationDate: dateTimeType
+        .mapFromDatabaseResponse(data['${effectivePrefix}creation_date']),
+      modificationDate: dateTimeType
+        .mapFromDatabaseResponse(data['${effectivePrefix}modification_date']),
+      creatorId: stringType
+        .mapFromDatabaseResponse(data['${effectivePrefix}creator_id']),
     );
   }
   @override
@@ -89,28 +95,14 @@ class MoorAchievement extends DataClass implements Insertable<MoorAchievement> {
     return MoorAchievementsCompanion(
       id: id == null && nullToAbsent ? const Value.absent() : Value(id),
       name: name == null && nullToAbsent ? const Value.absent() : Value(name),
-      description: description == null && nullToAbsent
-        ? const Value.absent()
-        : Value(description),
-      imageURL: imageURL == null && nullToAbsent
-        ? const Value.absent()
-        : Value(imageURL),
+      description: description == null && nullToAbsent ? const Value.absent() : Value(description),
+      imageURL: imageURL == null && nullToAbsent ? const Value.absent() : Value(imageURL),
       type: type == null && nullToAbsent ? const Value.absent() : Value(type),
-      requisite: requisite == null && nullToAbsent
-        ? const Value.absent()
-        : Value(requisite),
-      experiencePoints: experiencePoints == null && nullToAbsent
-        ? const Value.absent()
-        : Value(experiencePoints),
-      creationDate: creationDate == null && nullToAbsent
-        ? const Value.absent()
-        : Value(creationDate),
-      modificationDate: modificationDate == null && nullToAbsent
-        ? const Value.absent()
-        : Value(modificationDate),
-      creatorId: creatorId == null && nullToAbsent
-        ? const Value.absent()
-        : Value(creatorId),
+      requisite: requisite == null && nullToAbsent ? const Value.absent() : Value(requisite),
+      experiencePoints: experiencePoints == null && nullToAbsent ? const Value.absent() : Value(experiencePoints),
+      creationDate: creationDate == null && nullToAbsent ? const Value.absent() : Value(creationDate),
+      modificationDate: modificationDate == null && nullToAbsent ? const Value.absent() : Value(modificationDate),
+      creatorId: creatorId == null && nullToAbsent ? const Value.absent() : Value(creatorId),
     );
   }
 
@@ -225,7 +217,6 @@ class MoorAchievementsCompanion extends UpdateCompanion<MoorAchievement> {
   final Value<DateTime> creationDate;
   final Value<DateTime> modificationDate;
   final Value<String> creatorId;
-  
   const MoorAchievementsCompanion({
     this.id = const Value.absent(),
     this.name = const Value.absent(),
@@ -238,7 +229,6 @@ class MoorAchievementsCompanion extends UpdateCompanion<MoorAchievement> {
     this.modificationDate = const Value.absent(),
     this.creatorId = const Value.absent(),
   });
-  
   MoorAchievementsCompanion.insert({
     @required String id,
     @required String name,
@@ -286,7 +276,7 @@ class MoorAchievementsCompanion extends UpdateCompanion<MoorAchievement> {
       if (creatorId != null) 'creator_id': creatorId,
     });
   }
-  
+
   MoorAchievementsCompanion copyWith({Value<String> id,
     Value<String> name,
     Value<String> description,
@@ -494,13 +484,11 @@ class $MoorAchievementsTable extends MoorAchievements
       false,
     );
   }
-  
+
   final VerificationMeta _creatorIdMeta = const VerificationMeta('creatorId');
   GeneratedTextColumn _creatorId;
-  
   @override
   GeneratedTextColumn get creatorId => _creatorId ??= _constructCreatorId();
-  
   GeneratedTextColumn _constructCreatorId() {
     return GeneratedTextColumn('creator_id', $tableName, false,
       $customConstraints: 'REFERENCES moor_users(id)');
@@ -604,7 +592,7 @@ class $MoorAchievementsTable extends MoorAchievements
   }
   
   @override
-  Set<GeneratedColumn> get $primaryKey => <GeneratedColumn>{};
+  Set<GeneratedColumn> get $primaryKey => {id};
   @override
   MoorAchievement map(Map<String, dynamic> data, {String tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
@@ -773,7 +761,6 @@ class MoorCommentsCompanion extends UpdateCompanion<MoorComment> {
   final Value<DateTime> modificationDate;
   final Value<String> posterId;
   final Value<String> experienceId;
-  
   const MoorCommentsCompanion({
     this.id = const Value.absent(),
     this.content = const Value.absent(),
@@ -782,7 +769,7 @@ class MoorCommentsCompanion extends UpdateCompanion<MoorComment> {
     this.posterId = const Value.absent(),
     this.experienceId = const Value.absent(),
   });
-  
+
   MoorCommentsCompanion.insert({
     @required String id,
     @required String content,
@@ -814,7 +801,7 @@ class MoorCommentsCompanion extends UpdateCompanion<MoorComment> {
       if (experienceId != null) 'experience_id': experienceId,
     });
   }
-  
+
   MoorCommentsCompanion copyWith({Value<String> id,
     Value<String> content,
     Value<DateTime> creationDate,
@@ -959,10 +946,8 @@ class $MoorCommentsTable extends MoorComments
   @override
   List<GeneratedColumn> get $columns =>
     [id, content, creationDate, modificationDate, posterId, experienceId];
-  
   @override
   $MoorCommentsTable get asDslTable => this;
-  
   @override
   String get $tableName => _alias ?? 'moor_comments';
   @override
@@ -1018,7 +1003,7 @@ class $MoorCommentsTable extends MoorComments
   }
   
   @override
-  Set<GeneratedColumn> get $primaryKey => <GeneratedColumn>{};
+  Set<GeneratedColumn> get $primaryKey => {id};
   @override
   MoorComment map(Map<String, dynamic> data, {String tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
@@ -1244,7 +1229,6 @@ class MoorExperiencesCompanion extends UpdateCompanion<MoorExperience> {
   final Value<DateTime> creationDate;
   final Value<DateTime> modificationDate;
   final Value<String> creatorId;
-  
   const MoorExperiencesCompanion({
     this.id = const Value.absent(),
     this.title = const Value.absent(),
@@ -1256,7 +1240,7 @@ class MoorExperiencesCompanion extends UpdateCompanion<MoorExperience> {
     this.modificationDate = const Value.absent(),
     this.creatorId = const Value.absent(),
   });
-  
+
   MoorExperiencesCompanion.insert({
     @required String id,
     @required String title,
@@ -1300,7 +1284,7 @@ class MoorExperiencesCompanion extends UpdateCompanion<MoorExperience> {
       if (creatorId != null) 'creator_id': creatorId,
     });
   }
-  
+
   MoorExperiencesCompanion copyWith({Value<String> id,
     Value<String> title,
     Value<String> description,
@@ -1485,13 +1469,11 @@ class $MoorExperiencesTable extends MoorExperiences
       false,
     );
   }
-  
+
   final VerificationMeta _creatorIdMeta = const VerificationMeta('creatorId');
   GeneratedTextColumn _creatorId;
-  
   @override
   GeneratedTextColumn get creatorId => _creatorId ??= _constructCreatorId();
-  
   GeneratedTextColumn _constructCreatorId() {
     return GeneratedTextColumn('creator_id', $tableName, false,
       $customConstraints: 'REFERENCES moor_users(id)');
@@ -1588,7 +1570,7 @@ class $MoorExperiencesTable extends MoorExperiences
   }
   
   @override
-  Set<GeneratedColumn> get $primaryKey => <GeneratedColumn>{};
+  Set<GeneratedColumn> get $primaryKey => {id};
   @override
   MoorExperience map(Map<String, dynamic> data, {String tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
@@ -1712,14 +1694,13 @@ class MoorLocationsCompanion extends UpdateCompanion<MoorLocation> {
   final Value<String> city;
   final Value<String> country;
   final Value<String> postalCode;
-  
   const MoorLocationsCompanion({
     this.id = const Value.absent(),
     this.city = const Value.absent(),
     this.country = const Value.absent(),
     this.postalCode = const Value.absent(),
   });
-  
+
   MoorLocationsCompanion.insert({
     @required String id,
     @required String city,
@@ -1743,7 +1724,7 @@ class MoorLocationsCompanion extends UpdateCompanion<MoorLocation> {
       if (postalCode != null) 'postal_code': postalCode,
     });
   }
-  
+
   MoorLocationsCompanion copyWith({Value<String> id,
     Value<String> city,
     Value<String> country,
@@ -1755,7 +1736,7 @@ class MoorLocationsCompanion extends UpdateCompanion<MoorLocation> {
       postalCode: postalCode ?? this.postalCode,
     );
   }
-  
+
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
@@ -1802,13 +1783,11 @@ class $MoorLocationsTable extends MoorLocations
       false,
     );
   }
-  
+
   final VerificationMeta _cityMeta = const VerificationMeta('city');
   GeneratedTextColumn _city;
-  
   @override
   GeneratedTextColumn get city => _city ??= _constructCity();
-  
   GeneratedTextColumn _constructCity() {
     return GeneratedTextColumn(
       'city',
@@ -1884,7 +1863,7 @@ class $MoorLocationsTable extends MoorLocations
   }
   
   @override
-  Set<GeneratedColumn> get $primaryKey => <GeneratedColumn>{};
+  Set<GeneratedColumn> get $primaryKey => {id};
   @override
   MoorLocation map(Map<String, dynamic> data, {String tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
@@ -2075,7 +2054,6 @@ class MoorNotificationsCompanion extends UpdateCompanion<MoorNotification> {
   final Value<NotificationType> notificationType;
   final Value<String> senderId;
   final Value<String> receiverId;
-  
   const MoorNotificationsCompanion({
     this.id = const Value.absent(),
     this.description = const Value.absent(),
@@ -2085,7 +2063,7 @@ class MoorNotificationsCompanion extends UpdateCompanion<MoorNotification> {
     this.senderId = const Value.absent(),
     this.receiverId = const Value.absent(),
   });
-  
+
   MoorNotificationsCompanion.insert({
     @required String id,
     @required String description,
@@ -2121,7 +2099,7 @@ class MoorNotificationsCompanion extends UpdateCompanion<MoorNotification> {
       if (receiverId != null) 'receiver_id': receiverId,
     });
   }
-  
+
   MoorNotificationsCompanion copyWith({Value<String> id,
     Value<String> description,
     Value<bool> seen,
@@ -2256,24 +2234,20 @@ class $MoorNotificationsTable extends MoorNotifications
       false,
     );
   }
-  
+
   final VerificationMeta _senderIdMeta = const VerificationMeta('senderId');
   GeneratedTextColumn _senderId;
-  
   @override
   GeneratedTextColumn get senderId => _senderId ??= _constructSenderId();
-  
   GeneratedTextColumn _constructSenderId() {
     return GeneratedTextColumn('sender_id', $tableName, false,
       $customConstraints: 'REFERENCES moor_users(id)');
   }
-  
+
   final VerificationMeta _receiverIdMeta = const VerificationMeta('receiverId');
   GeneratedTextColumn _receiverId;
-  
   @override
   GeneratedTextColumn get receiverId => _receiverId ??= _constructReceiverId();
-  
   GeneratedTextColumn _constructReceiverId() {
     return GeneratedTextColumn('receiver_id', $tableName, false,
       $customConstraints: 'REFERENCES moor_users(id)');
@@ -2349,7 +2323,7 @@ class $MoorNotificationsTable extends MoorNotifications
   }
   
   @override
-  Set<GeneratedColumn> get $primaryKey => <GeneratedColumn>{};
+  Set<GeneratedColumn> get $primaryKey => {id};
   @override
   MoorNotification map(Map<String, dynamic> data, {String tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
@@ -2521,7 +2495,6 @@ class MoorObjectivesCompanion extends UpdateCompanion<MoorObjective> {
   final Value<double> latitude;
   final Value<double> longitude;
   final Value<String> imageURL;
-  
   const MoorObjectivesCompanion({
     this.id = const Value.absent(),
     this.experienceId = const Value.absent(),
@@ -2530,7 +2503,7 @@ class MoorObjectivesCompanion extends UpdateCompanion<MoorObjective> {
     this.longitude = const Value.absent(),
     this.imageURL = const Value.absent(),
   });
-  
+
   MoorObjectivesCompanion.insert({
     @required String id,
     @required String experienceId,
@@ -2562,7 +2535,7 @@ class MoorObjectivesCompanion extends UpdateCompanion<MoorObjective> {
       if (imageURL != null) 'image_u_r_l': imageURL,
     });
   }
-  
+
   MoorObjectivesCompanion copyWith({Value<String> id,
     Value<String> experienceId,
     Value<String> description,
@@ -2758,7 +2731,7 @@ class $MoorObjectivesTable extends MoorObjectives
   }
   
   @override
-  Set<GeneratedColumn> get $primaryKey => <GeneratedColumn>{};
+  Set<GeneratedColumn> get $primaryKey => {id};
   @override
   MoorObjective map(Map<String, dynamic> data, {String tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
@@ -2825,7 +2798,6 @@ class MoorOption extends DataClass implements Insertable<MoorOption> {
       languageCode: serializer.fromJson<String>(json['languageCode']),
     );
   }
-  
   @override
   Map<String, dynamic> toJson({ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
@@ -2835,14 +2807,13 @@ class MoorOption extends DataClass implements Insertable<MoorOption> {
       'languageCode': serializer.toJson<String>(languageCode),
     };
   }
-  
+
   MoorOption copyWith({String id, String userId, String languageCode}) =>
     MoorOption(
       id: id ?? this.id,
       userId: userId ?? this.userId,
       languageCode: languageCode ?? this.languageCode,
     );
-  
   @override
   String toString() {
     return (StringBuffer('MoorOption(')
@@ -2866,13 +2837,12 @@ class MoorOptionsCompanion extends UpdateCompanion<MoorOption> {
   final Value<String> id;
   final Value<String> userId;
   final Value<String> languageCode;
-  
   const MoorOptionsCompanion({
     this.id = const Value.absent(),
     this.userId = const Value.absent(),
     this.languageCode = const Value.absent(),
   });
-  
+
   MoorOptionsCompanion.insert({
     @required String id,
     @required String userId,
@@ -2892,7 +2862,7 @@ class MoorOptionsCompanion extends UpdateCompanion<MoorOption> {
       if (languageCode != null) 'language_code': languageCode,
     });
   }
-  
+
   MoorOptionsCompanion copyWith({Value<String> id, Value<String> userId, Value<String> languageCode}) {
     return MoorOptionsCompanion(
       id: id ?? this.id,
@@ -2900,7 +2870,7 @@ class MoorOptionsCompanion extends UpdateCompanion<MoorOption> {
       languageCode: languageCode ?? this.languageCode,
     );
   }
-  
+
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
@@ -3009,7 +2979,7 @@ class $MoorOptionsTable extends MoorOptions
   }
   
   @override
-  Set<GeneratedColumn> get $primaryKey => <GeneratedColumn>{};
+  Set<GeneratedColumn> get $primaryKey => {id};
   @override
   MoorOption map(Map<String, dynamic> data, {String tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
@@ -3155,7 +3125,6 @@ class MoorRewardsCompanion extends UpdateCompanion<MoorReward> {
   final Value<String> name;
   final Value<String> description;
   final Value<String> imageURL;
-  
   const MoorRewardsCompanion({
     this.id = const Value.absent(),
     this.experienceId = const Value.absent(),
@@ -3163,7 +3132,7 @@ class MoorRewardsCompanion extends UpdateCompanion<MoorReward> {
     this.description = const Value.absent(),
     this.imageURL = const Value.absent(),
   });
-  
+
   MoorRewardsCompanion.insert({
     @required String id,
     @required String experienceId,
@@ -3191,7 +3160,7 @@ class MoorRewardsCompanion extends UpdateCompanion<MoorReward> {
       if (imageURL != null) 'image_u_r_l': imageURL,
     });
   }
-  
+
   MoorRewardsCompanion copyWith({Value<String> id,
     Value<String> experienceId,
     Value<String> name,
@@ -3205,7 +3174,7 @@ class MoorRewardsCompanion extends UpdateCompanion<MoorReward> {
       imageURL: imageURL ?? this.imageURL,
     );
   }
-  
+
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
@@ -3361,7 +3330,7 @@ class $MoorRewardsTable extends MoorRewards
   }
   
   @override
-  Set<GeneratedColumn> get $primaryKey => <GeneratedColumn>{};
+  Set<GeneratedColumn> get $primaryKey => {id};
   @override
   MoorReward map(Map<String, dynamic> data, {String tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
@@ -3508,7 +3477,6 @@ class MoorTagsCompanion extends UpdateCompanion<MoorTag> {
   final Value<String> name;
   final Value<DateTime> creationDate;
   final Value<DateTime> modificationDate;
-  
   const MoorTagsCompanion({
     this.id = const Value.absent(),
     this.creatorId = const Value.absent(),
@@ -3516,7 +3484,7 @@ class MoorTagsCompanion extends UpdateCompanion<MoorTag> {
     this.creationDate = const Value.absent(),
     this.modificationDate = const Value.absent(),
   });
-  
+
   MoorTagsCompanion.insert({
     @required String id,
     @required String creatorId,
@@ -3544,7 +3512,7 @@ class MoorTagsCompanion extends UpdateCompanion<MoorTag> {
       if (modificationDate != null) 'modification_date': modificationDate,
     });
   }
-  
+
   MoorTagsCompanion copyWith({Value<String> id,
     Value<String> creatorId,
     Value<String> name,
@@ -3558,7 +3526,7 @@ class MoorTagsCompanion extends UpdateCompanion<MoorTag> {
       modificationDate: modificationDate ?? this.modificationDate,
     );
   }
-  
+
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
@@ -3596,15 +3564,11 @@ class MoorTagsCompanion extends UpdateCompanion<MoorTag> {
 class $MoorTagsTable extends MoorTags with TableInfo<$MoorTagsTable, MoorTag> {
   final GeneratedDatabase _db;
   final String _alias;
-  
   $MoorTagsTable(this._db, [this._alias]);
-  
   final VerificationMeta _idMeta = const VerificationMeta('id');
   GeneratedTextColumn _id;
-  
   @override
   GeneratedTextColumn get id => _id ??= _constructId();
-  
   GeneratedTextColumn _constructId() {
     return GeneratedTextColumn(
       'id',
@@ -3612,37 +3576,35 @@ class $MoorTagsTable extends MoorTags with TableInfo<$MoorTagsTable, MoorTag> {
       false,
     );
   }
-  
+
   final VerificationMeta _creatorIdMeta = const VerificationMeta('creatorId');
   GeneratedTextColumn _creatorId;
-  
   @override
   GeneratedTextColumn get creatorId => _creatorId ??= _constructCreatorId();
-  
   GeneratedTextColumn _constructCreatorId() {
     return GeneratedTextColumn('creator_id', $tableName, false,
       $customConstraints: 'REFERENCES moor_users(id)');
   }
-  
+
   final VerificationMeta _nameMeta = const VerificationMeta('name');
   GeneratedTextColumn _name;
-  
+
   @override
   GeneratedTextColumn get name => _name ??= _constructName();
-  
+
   GeneratedTextColumn _constructName() {
     return GeneratedTextColumn('name', $tableName, false,
       minTextLength: 1, $customConstraints: 'UNIQUE');
   }
-  
+
   final VerificationMeta _creationDateMeta =
   const VerificationMeta('creationDate');
   GeneratedDateTimeColumn _creationDate;
-  
+
   @override
   GeneratedDateTimeColumn get creationDate =>
     _creationDate ??= _constructCreationDate();
-  
+
   GeneratedDateTimeColumn _constructCreationDate() {
     return GeneratedDateTimeColumn(
       'creation_date',
@@ -3650,15 +3612,15 @@ class $MoorTagsTable extends MoorTags with TableInfo<$MoorTagsTable, MoorTag> {
       false,
     );
   }
-  
+
   final VerificationMeta _modificationDateMeta =
   const VerificationMeta('modificationDate');
   GeneratedDateTimeColumn _modificationDate;
-  
+
   @override
   GeneratedDateTimeColumn get modificationDate =>
     _modificationDate ??= _constructModificationDate();
-  
+
   GeneratedDateTimeColumn _constructModificationDate() {
     return GeneratedDateTimeColumn(
       'modification_date',
@@ -3676,7 +3638,7 @@ class $MoorTagsTable extends MoorTags with TableInfo<$MoorTagsTable, MoorTag> {
   String get $tableName => _alias ?? 'moor_tags';
   @override
   final String actualTableName = 'moor_tags';
-  
+
   @override
   VerificationContext validateIntegrity(Insertable<MoorTag> instance,
     {bool isInserting = false}) {
@@ -3717,9 +3679,9 @@ class $MoorTagsTable extends MoorTags with TableInfo<$MoorTagsTable, MoorTag> {
     }
     return context;
   }
-  
+
   @override
-  Set<GeneratedColumn> get $primaryKey => <GeneratedColumn>{};
+  Set<GeneratedColumn> get $primaryKey => {id};
   @override
   MoorTag map(Map<String, dynamic> data, {String tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
@@ -3750,7 +3712,7 @@ class MoorUser extends DataClass implements Insertable<MoorUser> {
   final DateTime creationDate;
   final DateTime modificationDate;
   final bool isLoggedIn;
-  
+
   MoorUser({@required this.id,
     @required this.name,
     @required this.username,
@@ -3768,7 +3730,7 @@ class MoorUser extends DataClass implements Insertable<MoorUser> {
     @required this.creationDate,
     @required this.modificationDate,
     @required this.isLoggedIn});
-  
+
   factory MoorUser.fromData(Map<String, dynamic> data, GeneratedDatabase db,
     {String prefix}) {
     final effectivePrefix = prefix ?? '';
@@ -3916,7 +3878,7 @@ class MoorUser extends DataClass implements Insertable<MoorUser> {
         : Value(isLoggedIn),
     );
   }
-  
+
   factory MoorUser.fromJson(Map<String, dynamic> json,
     {ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
@@ -3975,16 +3937,16 @@ class MoorUser extends DataClass implements Insertable<MoorUser> {
     int level,
     int experiencePoints,
     bool privacy,
-          bool adminPowers,
-          bool enabled,
-          DateTime lastLogin,
-          DateTime creationDate,
-          DateTime modificationDate,
-          bool isLoggedIn}) =>
-      MoorUser(
-        id: id ?? this.id,
-        name: name ?? this.name,
-        username: username ?? this.username,
+    bool adminPowers,
+    bool enabled,
+    DateTime lastLogin,
+    DateTime creationDate,
+    DateTime modificationDate,
+    bool isLoggedIn}) =>
+    MoorUser(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      username: username ?? this.username,
         password: password ?? this.password,
         email: email ?? this.email,
         birthday: birthday ?? this.birthday,
@@ -4009,7 +3971,7 @@ class MoorUser extends DataClass implements Insertable<MoorUser> {
         'isLoggedIn: $isLoggedIn')..write(')'))
       .toString();
   }
-  
+
   @override
   int get hashCode =>
     $mrjf($mrjc(
@@ -4139,11 +4101,11 @@ class MoorUsersCompanion extends UpdateCompanion<MoorUser> {
       experiencePoints = Value(experiencePoints),
       privacy = Value(privacy),
       adminPowers = Value(adminPowers),
-        enabled = Value(enabled),
-        lastLogin = Value(lastLogin),
-        creationDate = Value(creationDate),
-        modificationDate = Value(modificationDate),
-        isLoggedIn = Value(isLoggedIn);
+      enabled = Value(enabled),
+      lastLogin = Value(lastLogin),
+      creationDate = Value(creationDate),
+      modificationDate = Value(modificationDate),
+      isLoggedIn = Value(isLoggedIn);
   static Insertable<MoorUser> custom({
     Expression<String> id,
     Expression<String> name,
@@ -4195,12 +4157,12 @@ class MoorUsersCompanion extends UpdateCompanion<MoorUser> {
     Value<int> level,
     Value<int> experiencePoints,
     Value<bool> privacy,
-      Value<bool> adminPowers,
-      Value<bool> enabled,
-      Value<DateTime> lastLogin,
-      Value<DateTime> creationDate,
-      Value<DateTime> modificationDate,
-      Value<bool> isLoggedIn}) {
+    Value<bool> adminPowers,
+    Value<bool> enabled,
+    Value<DateTime> lastLogin,
+    Value<DateTime> creationDate,
+    Value<DateTime> modificationDate,
+    Value<bool> isLoggedIn}) {
     return MoorUsersCompanion(
       id: id ?? this.id,
       name: name ?? this.name,
@@ -4324,13 +4286,11 @@ class $MoorUsersTable extends MoorUsers
       false,
     );
   }
-  
+
   final VerificationMeta _nameMeta = const VerificationMeta('name');
   GeneratedTextColumn _name;
-  
   @override
   GeneratedTextColumn get name => _name ??= _constructName();
-  
   GeneratedTextColumn _constructName() {
     return GeneratedTextColumn('name', $tableName, false, minTextLength: 1);
   }
@@ -4677,7 +4637,7 @@ class $MoorUsersTable extends MoorUsers
   }
   
   @override
-  Set<GeneratedColumn> get $primaryKey => <GeneratedColumn>{};
+  Set<GeneratedColumn> get $primaryKey => {id};
   @override
   MoorUser map(Map<String, dynamic> data, {String tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
@@ -4740,7 +4700,6 @@ class UserBlockRelation extends DataClass
       blockerId: serializer.fromJson<String>(json['blockerId']),
     );
   }
-  
   @override
   Map<String, dynamic> toJson({ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
@@ -4749,20 +4708,19 @@ class UserBlockRelation extends DataClass
       'blockerId': serializer.toJson<String>(blockerId),
     };
   }
-  
+
   UserBlockRelation copyWith({String blockedId, String blockerId}) =>
     UserBlockRelation(
       blockedId: blockedId ?? this.blockedId,
       blockerId: blockerId ?? this.blockerId,
     );
-  
   @override
   String toString() {
     return (StringBuffer('UserBlockRelation(')
       ..write('blockedId: $blockedId, ')..write('blockerId: $blockerId')..write(')'))
       .toString();
   }
-  
+
   @override
   int get hashCode => $mrjf($mrjc(blockedId.hashCode, blockerId.hashCode));
   @override
@@ -4776,19 +4734,18 @@ class UserBlockRelation extends DataClass
 class UserBlockRelationsCompanion extends UpdateCompanion<UserBlockRelation> {
   final Value<String> blockedId;
   final Value<String> blockerId;
-  
   const UserBlockRelationsCompanion({
     this.blockedId = const Value.absent(),
     this.blockerId = const Value.absent(),
   });
-  
+
   UserBlockRelationsCompanion.insert({
     @required String blockedId,
     @required String blockerId,
   })
     : blockedId = Value(blockedId),
       blockerId = Value(blockerId);
-  
+
   static Insertable<UserBlockRelation> custom({
     Expression<String> blockedId,
     Expression<String> blockerId,
@@ -4798,14 +4755,14 @@ class UserBlockRelationsCompanion extends UpdateCompanion<UserBlockRelation> {
       if (blockerId != null) 'blocker_id': blockerId,
     });
   }
-  
+
   UserBlockRelationsCompanion copyWith({Value<String> blockedId, Value<String> blockerId}) {
     return UserBlockRelationsCompanion(
       blockedId: blockedId ?? this.blockedId,
       blockerId: blockerId ?? this.blockerId,
     );
   }
-  
+
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
@@ -4843,24 +4800,20 @@ class $UserBlockRelationsTable extends UserBlockRelations
     return GeneratedTextColumn('blocked_id', $tableName, false,
       $customConstraints: 'REFERENCES moor_users(id)');
   }
-  
+
   final VerificationMeta _blockerIdMeta = const VerificationMeta('blockerId');
   GeneratedTextColumn _blockerId;
-  
   @override
   GeneratedTextColumn get blockerId => _blockerId ??= _constructBlockerId();
-  
   GeneratedTextColumn _constructBlockerId() {
     return GeneratedTextColumn('blocker_id', $tableName, false,
       $customConstraints: 'REFERENCES moor_users(id)');
   }
-  
+
   @override
   List<GeneratedColumn> get $columns => [blockedId, blockerId];
-  
   @override
   $UserBlockRelationsTable get asDslTable => this;
-  
   @override
   String get $tableName => _alias ?? 'user_block_relations';
   @override
@@ -4950,7 +4903,6 @@ class UserFollowRelation extends DataClass
       followingId: serializer.fromJson<String>(json['followingId']),
     );
   }
-  
   @override
   Map<String, dynamic> toJson({ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
@@ -4959,20 +4911,19 @@ class UserFollowRelation extends DataClass
       'followingId': serializer.toJson<String>(followingId),
     };
   }
-  
+
   UserFollowRelation copyWith({String followedId, String followingId}) =>
     UserFollowRelation(
       followedId: followedId ?? this.followedId,
       followingId: followingId ?? this.followingId,
     );
-  
   @override
   String toString() {
     return (StringBuffer('UserFollowRelation(')
       ..write('followedId: $followedId, ')..write('followingId: $followingId')..write(')'))
       .toString();
   }
-  
+
   @override
   int get hashCode => $mrjf($mrjc(followedId.hashCode, followingId.hashCode));
   @override
@@ -4986,19 +4937,18 @@ class UserFollowRelation extends DataClass
 class UserFollowRelationsCompanion extends UpdateCompanion<UserFollowRelation> {
   final Value<String> followedId;
   final Value<String> followingId;
-  
   const UserFollowRelationsCompanion({
     this.followedId = const Value.absent(),
     this.followingId = const Value.absent(),
   });
-  
+
   UserFollowRelationsCompanion.insert({
     @required String followedId,
     @required String followingId,
   })
     : followedId = Value(followedId),
       followingId = Value(followingId);
-  
+
   static Insertable<UserFollowRelation> custom({
     Expression<String> followedId,
     Expression<String> followingId,
@@ -5008,14 +4958,14 @@ class UserFollowRelationsCompanion extends UpdateCompanion<UserFollowRelation> {
       if (followingId != null) 'following_id': followingId,
     });
   }
-  
+
   UserFollowRelationsCompanion copyWith({Value<String> followedId, Value<String> followingId}) {
     return UserFollowRelationsCompanion(
       followedId: followedId ?? this.followedId,
       followingId: followingId ?? this.followingId,
     );
   }
-  
+
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
@@ -5069,10 +5019,8 @@ class $UserFollowRelationsTable extends UserFollowRelations
   
   @override
   List<GeneratedColumn> get $columns => [followedId, followingId];
-  
   @override
   $UserFollowRelationsTable get asDslTable => this;
-  
   @override
   String get $tableName => _alias ?? 'user_follow_relations';
   @override
@@ -5164,7 +5112,6 @@ class UserAchievement extends DataClass implements Insertable<UserAchievement> {
       achievementId: serializer.fromJson<String>(json['achievementId']),
     );
   }
-  
   @override
   Map<String, dynamic> toJson({ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
@@ -5173,13 +5120,12 @@ class UserAchievement extends DataClass implements Insertable<UserAchievement> {
       'achievementId': serializer.toJson<String>(achievementId),
     };
   }
-  
+
   UserAchievement copyWith({String userId, String achievementId}) =>
     UserAchievement(
       userId: userId ?? this.userId,
       achievementId: achievementId ?? this.achievementId,
     );
-  
   @override
   String toString() {
     return (StringBuffer('UserAchievement(')
@@ -5200,19 +5146,18 @@ class UserAchievement extends DataClass implements Insertable<UserAchievement> {
 class UserAchievementsCompanion extends UpdateCompanion<UserAchievement> {
   final Value<String> userId;
   final Value<String> achievementId;
-  
   const UserAchievementsCompanion({
     this.userId = const Value.absent(),
     this.achievementId = const Value.absent(),
   });
-  
+
   UserAchievementsCompanion.insert({
     @required String userId,
     @required String achievementId,
   })
     : userId = Value(userId),
       achievementId = Value(achievementId);
-  
+
   static Insertable<UserAchievement> custom({
     Expression<String> userId,
     Expression<String> achievementId,
@@ -5222,14 +5167,14 @@ class UserAchievementsCompanion extends UpdateCompanion<UserAchievement> {
       if (achievementId != null) 'achievement_id': achievementId,
     });
   }
-  
+
   UserAchievementsCompanion copyWith({Value<String> userId, Value<String> achievementId}) {
     return UserAchievementsCompanion(
       userId: userId ?? this.userId,
       achievementId: achievementId ?? this.achievementId,
     );
   }
-  
+
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
@@ -5283,10 +5228,8 @@ class $UserAchievementsTable extends UserAchievements
   
   @override
   List<GeneratedColumn> get $columns => [userId, achievementId];
-  
   @override
   $UserAchievementsTable get asDslTable => this;
-  
   @override
   String get $tableName => _alias ?? 'user_achievements';
   @override
@@ -5331,9 +5274,8 @@ class $UserAchievementsTable extends UserAchievements
 class UserInterest extends DataClass implements Insertable<UserInterest> {
   final String userId;
   final String tagId;
-  
   UserInterest({@required this.userId, @required this.tagId});
-  
+
   factory UserInterest.fromData(Map<String, dynamic> data, GeneratedDatabase db,
     {String prefix}) {
     final effectivePrefix = prefix ?? '';
@@ -5365,7 +5307,7 @@ class UserInterest extends DataClass implements Insertable<UserInterest> {
       tagId == null && nullToAbsent ? const Value.absent() : Value(tagId),
     );
   }
-  
+
   factory UserInterest.fromJson(Map<String, dynamic> json,
     {ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
@@ -5374,6 +5316,7 @@ class UserInterest extends DataClass implements Insertable<UserInterest> {
       tagId: serializer.fromJson<String>(json['tagId']),
     );
   }
+
   @override
   Map<String, dynamic> toJson({ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
@@ -5382,13 +5325,13 @@ class UserInterest extends DataClass implements Insertable<UserInterest> {
       'tagId': serializer.toJson<String>(tagId),
     };
   }
-  
+
   UserInterest copyWith({String userId, String tagId}) =>
     UserInterest(
       userId: userId ?? this.userId,
       tagId: tagId ?? this.tagId,
     );
-  
+
   @override
   String toString() {
     return (StringBuffer('UserInterest(')
@@ -5409,19 +5352,17 @@ class UserInterest extends DataClass implements Insertable<UserInterest> {
 class UserInterestsCompanion extends UpdateCompanion<UserInterest> {
   final Value<String> userId;
   final Value<String> tagId;
-  
   const UserInterestsCompanion({
     this.userId = const Value.absent(),
     this.tagId = const Value.absent(),
   });
-  
+
   UserInterestsCompanion.insert({
     @required String userId,
     @required String tagId,
   })
     : userId = Value(userId),
       tagId = Value(tagId);
-  
   static Insertable<UserInterest> custom({
     Expression<String> userId,
     Expression<String> tagId,
@@ -5431,7 +5372,7 @@ class UserInterestsCompanion extends UpdateCompanion<UserInterest> {
       if (tagId != null) 'tag_id': tagId,
     });
   }
-  
+
   UserInterestsCompanion copyWith({Value<String> userId, Value<String> tagId}) {
     return UserInterestsCompanion(
       userId: userId ?? this.userId,
@@ -5476,24 +5417,20 @@ class $UserInterestsTable extends UserInterests
     return GeneratedTextColumn('user_id', $tableName, false,
       $customConstraints: 'REFERENCES moor_users(id)');
   }
-  
+
   final VerificationMeta _tagIdMeta = const VerificationMeta('tagId');
   GeneratedTextColumn _tagId;
-  
   @override
   GeneratedTextColumn get tagId => _tagId ??= _constructTagId();
-  
   GeneratedTextColumn _constructTagId() {
     return GeneratedTextColumn('tag_id', $tableName, false,
       $customConstraints: 'REFERENCES moor_tags(id)');
   }
-  
+
   @override
   List<GeneratedColumn> get $columns => [userId, tagId];
-  
   @override
   $UserInterestsTable get asDslTable => this;
-  
   @override
   String get $tableName => _alias ?? 'user_interests';
   @override
@@ -5582,7 +5519,6 @@ class UserDoneExperience extends DataClass
       experienceId: serializer.fromJson<String>(json['experienceId']),
     );
   }
-  
   @override
   Map<String, dynamic> toJson({ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
@@ -5591,20 +5527,19 @@ class UserDoneExperience extends DataClass
       'experienceId': serializer.toJson<String>(experienceId),
     };
   }
-  
+
   UserDoneExperience copyWith({String userId, String experienceId}) =>
     UserDoneExperience(
       userId: userId ?? this.userId,
       experienceId: experienceId ?? this.experienceId,
     );
-  
   @override
   String toString() {
     return (StringBuffer('UserDoneExperience(')
       ..write('userId: $userId, ')..write('experienceId: $experienceId')..write(')'))
       .toString();
   }
-  
+
   @override
   int get hashCode => $mrjf($mrjc(userId.hashCode, experienceId.hashCode));
   @override
@@ -5618,19 +5553,18 @@ class UserDoneExperience extends DataClass
 class UserDoneExperiencesCompanion extends UpdateCompanion<UserDoneExperience> {
   final Value<String> userId;
   final Value<String> experienceId;
-  
   const UserDoneExperiencesCompanion({
     this.userId = const Value.absent(),
     this.experienceId = const Value.absent(),
   });
-  
+
   UserDoneExperiencesCompanion.insert({
     @required String userId,
     @required String experienceId,
   })
     : userId = Value(userId),
       experienceId = Value(experienceId);
-  
+
   static Insertable<UserDoneExperience> custom({
     Expression<String> userId,
     Expression<String> experienceId,
@@ -5640,14 +5574,14 @@ class UserDoneExperiencesCompanion extends UpdateCompanion<UserDoneExperience> {
       if (experienceId != null) 'experience_id': experienceId,
     });
   }
-  
+
   UserDoneExperiencesCompanion copyWith({Value<String> userId, Value<String> experienceId}) {
     return UserDoneExperiencesCompanion(
       userId: userId ?? this.userId,
       experienceId: experienceId ?? this.experienceId,
     );
   }
-  
+
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
@@ -5701,10 +5635,8 @@ class $UserDoneExperiencesTable extends UserDoneExperiences
   
   @override
   List<GeneratedColumn> get $columns => [userId, experienceId];
-  
   @override
   $UserDoneExperiencesTable get asDslTable => this;
-  
   @override
   String get $tableName => _alias ?? 'user_done_experiences';
   @override
@@ -5795,7 +5727,6 @@ class UserLikedExperience extends DataClass
       experienceId: serializer.fromJson<String>(json['experienceId']),
     );
   }
-  
   @override
   Map<String, dynamic> toJson({ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
@@ -5804,20 +5735,19 @@ class UserLikedExperience extends DataClass
       'experienceId': serializer.toJson<String>(experienceId),
     };
   }
-  
+
   UserLikedExperience copyWith({String userId, String experienceId}) =>
     UserLikedExperience(
       userId: userId ?? this.userId,
       experienceId: experienceId ?? this.experienceId,
     );
-  
   @override
   String toString() {
     return (StringBuffer('UserLikedExperience(')
       ..write('userId: $userId, ')..write('experienceId: $experienceId')..write(')'))
       .toString();
   }
-  
+
   @override
   int get hashCode => $mrjf($mrjc(userId.hashCode, experienceId.hashCode));
   @override
@@ -5914,10 +5844,8 @@ class $UserLikedExperiencesTable extends UserLikedExperiences
   
   @override
   List<GeneratedColumn> get $columns => [userId, experienceId];
-  
   @override
   $UserLikedExperiencesTable get asDslTable => this;
-  
   @override
   String get $tableName => _alias ?? 'user_liked_experiences';
   @override
@@ -6008,7 +5936,6 @@ class UserToDoExperience extends DataClass
       experienceId: serializer.fromJson<String>(json['experienceId']),
     );
   }
-  
   @override
   Map<String, dynamic> toJson({ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
@@ -6017,20 +5944,19 @@ class UserToDoExperience extends DataClass
       'experienceId': serializer.toJson<String>(experienceId),
     };
   }
-  
+
   UserToDoExperience copyWith({String userId, String experienceId}) =>
     UserToDoExperience(
       userId: userId ?? this.userId,
       experienceId: experienceId ?? this.experienceId,
     );
-  
   @override
   String toString() {
     return (StringBuffer('UserToDoExperience(')
       ..write('userId: $userId, ')..write('experienceId: $experienceId')..write(')'))
       .toString();
   }
-  
+
   @override
   int get hashCode => $mrjf($mrjc(userId.hashCode, experienceId.hashCode));
   @override
@@ -6044,19 +5970,18 @@ class UserToDoExperience extends DataClass
 class UserToDoExperiencesCompanion extends UpdateCompanion<UserToDoExperience> {
   final Value<String> userId;
   final Value<String> experienceId;
-  
   const UserToDoExperiencesCompanion({
     this.userId = const Value.absent(),
     this.experienceId = const Value.absent(),
   });
-  
+
   UserToDoExperiencesCompanion.insert({
     @required String userId,
     @required String experienceId,
   })
     : userId = Value(userId),
       experienceId = Value(experienceId);
-  
+
   static Insertable<UserToDoExperience> custom({
     Expression<String> userId,
     Expression<String> experienceId,
@@ -6066,14 +5991,14 @@ class UserToDoExperiencesCompanion extends UpdateCompanion<UserToDoExperience> {
       if (experienceId != null) 'experience_id': experienceId,
     });
   }
-  
+
   UserToDoExperiencesCompanion copyWith({Value<String> userId, Value<String> experienceId}) {
     return UserToDoExperiencesCompanion(
       userId: userId ?? this.userId,
       experienceId: experienceId ?? this.experienceId,
     );
   }
-  
+
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
@@ -6127,10 +6052,8 @@ class $UserToDoExperiencesTable extends UserToDoExperiences
   
   @override
   List<GeneratedColumn> get $columns => [userId, experienceId];
-  
   @override
   $UserToDoExperiencesTable get asDslTable => this;
-  
   @override
   String get $tableName => _alias ?? 'user_to_do_experiences';
   @override
@@ -6222,7 +6145,6 @@ class LocationExperience extends DataClass
       experienceId: serializer.fromJson<String>(json['experienceId']),
     );
   }
-  
   @override
   Map<String, dynamic> toJson({ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
@@ -6237,7 +6159,6 @@ class LocationExperience extends DataClass
       locationId: locationId ?? this.locationId,
       experienceId: experienceId ?? this.experienceId,
     );
-  
   @override
   String toString() {
     return (StringBuffer('LocationExperience(')
@@ -6258,19 +6179,18 @@ class LocationExperience extends DataClass
 class LocationExperiencesCompanion extends UpdateCompanion<LocationExperience> {
   final Value<String> locationId;
   final Value<String> experienceId;
-  
   const LocationExperiencesCompanion({
     this.locationId = const Value.absent(),
     this.experienceId = const Value.absent(),
   });
-  
+
   LocationExperiencesCompanion.insert({
     @required String locationId,
     @required String experienceId,
   })
     : locationId = Value(locationId),
       experienceId = Value(experienceId);
-  
+
   static Insertable<LocationExperience> custom({
     Expression<String> locationId,
     Expression<String> experienceId,
@@ -6280,14 +6200,14 @@ class LocationExperiencesCompanion extends UpdateCompanion<LocationExperience> {
       if (experienceId != null) 'experience_id': experienceId,
     });
   }
-  
+
   LocationExperiencesCompanion copyWith({Value<String> locationId, Value<String> experienceId}) {
     return LocationExperiencesCompanion(
       locationId: locationId ?? this.locationId,
       experienceId: experienceId ?? this.experienceId,
     );
   }
-  
+
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
@@ -6341,10 +6261,8 @@ class $LocationExperiencesTable extends LocationExperiences
   
   @override
   List<GeneratedColumn> get $columns => [locationId, experienceId];
-  
   @override
   $LocationExperiencesTable get asDslTable => this;
-  
   @override
   String get $tableName => _alias ?? 'location_experiences';
   @override
@@ -6438,7 +6356,6 @@ class ExperienceImageUrl extends DataClass
       imageUrl: serializer.fromJson<String>(json['imageUrl']),
     );
   }
-  
   @override
   Map<String, dynamic> toJson({ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
@@ -6453,7 +6370,6 @@ class ExperienceImageUrl extends DataClass
       experienceId: experienceId ?? this.experienceId,
       imageUrl: imageUrl ?? this.imageUrl,
     );
-  
   @override
   String toString() {
     return (StringBuffer('ExperienceImageUrl(')
@@ -6474,19 +6390,18 @@ class ExperienceImageUrl extends DataClass
 class ExperienceImageUrlsCompanion extends UpdateCompanion<ExperienceImageUrl> {
   final Value<String> experienceId;
   final Value<String> imageUrl;
-  
   const ExperienceImageUrlsCompanion({
     this.experienceId = const Value.absent(),
     this.imageUrl = const Value.absent(),
   });
-  
+
   ExperienceImageUrlsCompanion.insert({
     @required String experienceId,
     @required String imageUrl,
   })
     : experienceId = Value(experienceId),
       imageUrl = Value(imageUrl);
-  
+
   static Insertable<ExperienceImageUrl> custom({
     Expression<String> experienceId,
     Expression<String> imageUrl,
@@ -6496,14 +6411,14 @@ class ExperienceImageUrlsCompanion extends UpdateCompanion<ExperienceImageUrl> {
       if (imageUrl != null) 'image_url': imageUrl,
     });
   }
-  
+
   ExperienceImageUrlsCompanion copyWith({Value<String> experienceId, Value<String> imageUrl}) {
     return ExperienceImageUrlsCompanion(
       experienceId: experienceId ?? this.experienceId,
       imageUrl: imageUrl ?? this.imageUrl,
     );
   }
-  
+
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
@@ -6546,10 +6461,8 @@ class $ExperienceImageUrlsTable extends ExperienceImageUrls
   
   final VerificationMeta _imageUrlMeta = const VerificationMeta('imageUrl');
   GeneratedTextColumn _imageUrl;
-  
   @override
   GeneratedTextColumn get imageUrl => _imageUrl ??= _constructImageUrl();
-  
   GeneratedTextColumn _constructImageUrl() {
     return GeneratedTextColumn(
       'image_url',
@@ -6651,6 +6564,7 @@ class ExperienceTag extends DataClass implements Insertable<ExperienceTag> {
       tagId: serializer.fromJson<String>(json['tagId']),
     );
   }
+  
   @override
   Map<String, dynamic> toJson({ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
@@ -6672,7 +6586,7 @@ class ExperienceTag extends DataClass implements Insertable<ExperienceTag> {
       ..write('experienceId: $experienceId, ')..write('tagId: $tagId')..write(')'))
       .toString();
   }
-
+  
   @override
   int get hashCode => $mrjf($mrjc(experienceId.hashCode, tagId.hashCode));
   @override
@@ -6686,19 +6600,18 @@ class ExperienceTag extends DataClass implements Insertable<ExperienceTag> {
 class ExperienceTagsCompanion extends UpdateCompanion<ExperienceTag> {
   final Value<String> experienceId;
   final Value<String> tagId;
-  
   const ExperienceTagsCompanion({
     this.experienceId = const Value.absent(),
     this.tagId = const Value.absent(),
   });
-  
+
   ExperienceTagsCompanion.insert({
     @required String experienceId,
     @required String tagId,
   })
     : experienceId = Value(experienceId),
       tagId = Value(tagId);
-  
+
   static Insertable<ExperienceTag> custom({
     Expression<String> experienceId,
     Expression<String> tagId,
@@ -6708,14 +6621,14 @@ class ExperienceTagsCompanion extends UpdateCompanion<ExperienceTag> {
       if (tagId != null) 'tag_id': tagId,
     });
   }
-  
+
   ExperienceTagsCompanion copyWith({Value<String> experienceId, Value<String> tagId}) {
     return ExperienceTagsCompanion(
       experienceId: experienceId ?? this.experienceId,
       tagId: tagId ?? this.tagId,
     );
   }
-  
+
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
@@ -6758,10 +6671,8 @@ class $ExperienceTagsTable extends ExperienceTags
   
   final VerificationMeta _tagIdMeta = const VerificationMeta('tagId');
   GeneratedTextColumn _tagId;
-  
   @override
   GeneratedTextColumn get tagId => _tagId ??= _constructTagId();
-  
   GeneratedTextColumn _constructTagId() {
     return GeneratedTextColumn('tag_id', $tableName, false,
       $customConstraints: 'REFERENCES moor_tags(id)');
@@ -6769,10 +6680,8 @@ class $ExperienceTagsTable extends ExperienceTags
   
   @override
   List<GeneratedColumn> get $columns => [experienceId, tagId];
-  
   @override
   $ExperienceTagsTable get asDslTable => this;
-  
   @override
   String get $tableName => _alias ?? 'experience_tags';
   @override
@@ -6862,7 +6771,6 @@ class AchievementTag extends DataClass implements Insertable<AchievementTag> {
       tagId: serializer.fromJson<String>(json['tagId']),
     );
   }
-  
   @override
   Map<String, dynamic> toJson({ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
@@ -6877,7 +6785,6 @@ class AchievementTag extends DataClass implements Insertable<AchievementTag> {
       achievementId: achievementId ?? this.achievementId,
       tagId: tagId ?? this.tagId,
     );
-  
   @override
   String toString() {
     return (StringBuffer('AchievementTag(')
@@ -6898,19 +6805,18 @@ class AchievementTag extends DataClass implements Insertable<AchievementTag> {
 class AchievementTagsCompanion extends UpdateCompanion<AchievementTag> {
   final Value<String> achievementId;
   final Value<String> tagId;
-  
   const AchievementTagsCompanion({
     this.achievementId = const Value.absent(),
     this.tagId = const Value.absent(),
   });
-  
+
   AchievementTagsCompanion.insert({
     @required String achievementId,
     @required String tagId,
   })
     : achievementId = Value(achievementId),
       tagId = Value(tagId);
-  
+
   static Insertable<AchievementTag> custom({
     Expression<String> achievementId,
     Expression<String> tagId,
@@ -6920,14 +6826,14 @@ class AchievementTagsCompanion extends UpdateCompanion<AchievementTag> {
       if (tagId != null) 'tag_id': tagId,
     });
   }
-  
+
   AchievementTagsCompanion copyWith({Value<String> achievementId, Value<String> tagId}) {
     return AchievementTagsCompanion(
       achievementId: achievementId ?? this.achievementId,
       tagId: tagId ?? this.tagId,
     );
   }
-  
+
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
@@ -6970,10 +6876,8 @@ class $AchievementTagsTable extends AchievementTags
   
   final VerificationMeta _tagIdMeta = const VerificationMeta('tagId');
   GeneratedTextColumn _tagId;
-  
   @override
   GeneratedTextColumn get tagId => _tagId ??= _constructTagId();
-  
   GeneratedTextColumn _constructTagId() {
     return GeneratedTextColumn('tag_id', $tableName, false,
       $customConstraints: 'REFERENCES moor_tags(id)');
@@ -6981,10 +6885,8 @@ class $AchievementTagsTable extends AchievementTags
   
   @override
   List<GeneratedColumn> get $columns => [achievementId, tagId];
-  
   @override
   $AchievementTagsTable get asDslTable => this;
-  
   @override
   String get $tableName => _alias ?? 'achievement_tags';
   @override

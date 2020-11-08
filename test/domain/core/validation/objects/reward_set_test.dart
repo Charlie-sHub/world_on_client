@@ -35,13 +35,11 @@ void main() {
 }
 
 // Maybe there's a better way to fill the Set
-KtSet<Reward> _fillSet() {
-  return {
-    Reward.empty().copyWith(id: 1),
-    Reward.empty().copyWith(id: 2),
-    Reward.empty().copyWith(id: 3),
-    Reward.empty().copyWith(id: 4),
-    Reward.empty().copyWith(id: 5),
-    Reward.empty().copyWith(id: 6),
-  }.toImmutableSet();
-}
+KtSet<Reward> _fillSet() => {
+      Reward.empty(),
+      Reward.empty(),
+      Reward.empty(),
+      Reward.empty(),
+      Reward.empty(),
+      Reward.empty(),
+    }.toImmutableSet();

@@ -7,6 +7,7 @@ import 'package:worldon/application/profile/profile_watcher/profile_watcher_bloc
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/use_case/is_logged_in_user.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../test_descriptions.dart';
@@ -22,7 +23,7 @@ void main() {
     },
   );
   final ownUser = getValidUser();
-  final foreignUser = getValidUser().copyWith(id: 2);
+  final foreignUser = getValidUser().copyWith(id: UniqueId());
   blocTest(
     TestDescription.shouldEmitInitial,
     build: () => getIt<ProfileWatcherBloc>(),

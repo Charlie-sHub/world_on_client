@@ -5,6 +5,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_management/repository/experience_management_repository_interface.dart';
 import 'package:worldon/domain/experience_management/use_case/get_experience.dart';
 import 'package:worldon/injection.dart';
@@ -21,7 +22,7 @@ void main() {
       useCase = GetExperience(mockExperienceManagementRepository);
     },
   );
-  const id = 1;
+  final id = UniqueId();
   final params = Params(id: id);
   final experience = Experience.empty().copyWith(id: id);
   test(

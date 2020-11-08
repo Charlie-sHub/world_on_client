@@ -77,7 +77,7 @@ class DevelopmentTagRepository implements TagCoreRepositoryInterface {
   }
 
   UserInterestsCompanion _createUserInterest(MoorUser _moorUser, Tag tag) => UserInterestsCompanion.insert(
-    userId: _moorUser.id,
+        userId: _moorUser.id,
         tagId: tag.id.getOrCrash(),
       );
 

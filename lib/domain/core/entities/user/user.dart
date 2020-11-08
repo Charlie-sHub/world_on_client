@@ -58,7 +58,7 @@ abstract class User implements _$User {
   }) = _User;
 
   factory User.empty() => User(
-    id: UniqueId(),
+        id: UniqueId(),
         name: Name(""),
         username: Name(""),
         password: Password(""),

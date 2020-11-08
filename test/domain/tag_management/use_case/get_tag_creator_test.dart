@@ -5,6 +5,7 @@ import 'package:mockito/mockito.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/tag_management/repository/tag_repository_interface.dart';
 import 'package:worldon/domain/tag_management/use_case/get_tag_creator.dart';
 import 'package:worldon/injection.dart';
@@ -21,7 +22,7 @@ void main() {
       useCase = GetTagCreator(mockTagRepository);
     },
   );
-  final params = Params(id: 1);
+  final params = Params(id: UniqueId());
   final user = User.empty();
   test(
     "Should get the User that created a given Tag",

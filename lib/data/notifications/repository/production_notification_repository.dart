@@ -31,7 +31,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
     // TODO: implement sendNotification
     throw UnimplementedError();
   }
-  
+
   @override
   Future<Either<Failure, Unit>> deleteNotification(UniqueId id) {
     // TODO: implement deleteNotification

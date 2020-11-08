@@ -47,7 +47,7 @@ abstract class Experience implements _$Experience {
   }) = _Experience;
 
   factory Experience.empty() => Experience(
-    id: UniqueId(),
+        id: UniqueId(),
         title: Name(""),
         description: EntityDescription(""),
         imageURLs: <String>{},
@@ -59,11 +59,11 @@ abstract class Experience implements _$Experience {
         creationDate: PastDate(DateTime.now()),
         modificationDate: PastDate(DateTime.now()),
         objectives: ObjectiveSet(const KtSet.empty()),
-    rewards: RewardSet(const KtSet.empty()),
-    tags: TagSet(const KtSet.empty()),
-    comments: <Comment>{},
-    likedBy: <User>{},
-    doneBy: <User>{},
+        rewards: RewardSet(const KtSet.empty()),
+        tags: TagSet(const KtSet.empty()),
+        comments: <Comment>{},
+        likedBy: <User>{},
+        doneBy: <User>{},
       );
 
   Option<ValueFailure<dynamic>> get failureOption {

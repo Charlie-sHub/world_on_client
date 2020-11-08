@@ -59,8 +59,8 @@ class DevelopmentExperienceManagementRepository implements ExperienceManagementR
         .asSet()
         .map(
           (_reward) => domainRewardToMoorReward(
-        experience.id.getOrCrash(),
-        _reward,
+            experience.id.getOrCrash(),
+            _reward,
           ),
         )
         .toSet();

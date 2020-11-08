@@ -536,6 +536,7 @@ abstract class _DescriptionChanged implements AchievementManagementFormEvent {
 /// @nodoc
 abstract class _$ExperiencePointsChangedCopyWith<$Res> {
   factory _$ExperiencePointsChangedCopyWith(_ExperiencePointsChanged value, $Res Function(_ExperiencePointsChanged) then) = __$ExperiencePointsChangedCopyWithImpl<$Res>;
+
   $Res call({int experiencePoints});
 }
 
@@ -1232,13 +1233,10 @@ abstract class _AchievementManagementFormState implements AchievementManagementF
 
   @override
   Achievement get achievement;
-
   @override
   bool get showErrorMessages;
-
   @override
   bool get isEditing;
-
   @override
   bool get isSubmitting;
 

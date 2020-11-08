@@ -45,18 +45,16 @@ void main() {
 }
 
 // Maybe there's a better way to fill the Set
-KtSet<Objective> _fillSet() {
-  return {
-    Objective.empty().copyWith(id: 1),
-    Objective.empty().copyWith(id: 2),
-    Objective.empty().copyWith(id: 3),
-    Objective.empty().copyWith(id: 4),
-    Objective.empty().copyWith(id: 5),
-    Objective.empty().copyWith(id: 6),
-    Objective.empty().copyWith(id: 7),
-    Objective.empty().copyWith(id: 8),
-    Objective.empty().copyWith(id: 9),
-    Objective.empty().copyWith(id: 10),
-    Objective.empty().copyWith(id: 11),
-  }.toImmutableSet();
-}
+KtSet<Objective> _fillSet() => {
+      Objective.empty(),
+      Objective.empty(),
+      Objective.empty(),
+      Objective.empty(),
+      Objective.empty(),
+      Objective.empty(),
+      Objective.empty(),
+      Objective.empty(),
+      Objective.empty(),
+      Objective.empty(),
+      Objective.empty(),
+    }.toImmutableSet();

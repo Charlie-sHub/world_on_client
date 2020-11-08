@@ -76,6 +76,7 @@ class _$ProfileAchievementsWatcherEventCopyWithImpl<$Res> implements $ProfileAch
 /// @nodoc
 abstract class _$WatchAchievementsStartedCopyWith<$Res> {
   factory _$WatchAchievementsStartedCopyWith(_WatchAchievementsStarted value, $Res Function(_WatchAchievementsStarted) then) = __$WatchAchievementsStartedCopyWithImpl<$Res>;
+
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;

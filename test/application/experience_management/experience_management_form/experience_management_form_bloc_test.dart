@@ -28,6 +28,7 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/objective_set.dart';
 import 'package:worldon/domain/core/validation/objects/reward_set.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_management/use_case/create_experience.dart';
 import 'package:worldon/domain/experience_management/use_case/edit_experience.dart';
 import 'package:worldon/injection.dart';
@@ -61,6 +62,7 @@ void main() {
   ];
   final objectives = KtSet.of(
     Objective(
+      id: UniqueId(),
       description: EntityDescription(description),
       coordinates: Coordinates(
         latitude: Latitude(latitude),

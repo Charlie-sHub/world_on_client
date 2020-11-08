@@ -7,6 +7,7 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/achievement_management/repository/achievement_repository_interface.dart';
 import 'package:worldon/domain/achievement_management/use_case/get_achievement.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../test_descriptions.dart';
@@ -21,7 +22,7 @@ void main() {
       useCase = GetAchievement(mockAchievementRepository);
     },
   );
-  const id = 1;
+  final id = UniqueId();
   final params = Params(id: id);
   final achievement = Achievement.empty().copyWith(id: id);
   test(

@@ -6,4 +6,7 @@ class MoorOptions extends Table {
   TextColumn get userId => text().customConstraint("REFERENCES moor_users(id)")();
 
   TextColumn get languageCode => text()();
+
+  @override
+  Set<Column> get primaryKey => {id};
 }

@@ -27,7 +27,7 @@ abstract class Reward implements _$Reward {
   }) = _Reward;
 
   factory Reward.empty() => Reward(
-    id: UniqueId(),
+        id: UniqueId(),
         name: Name(""),
         description: EntityDescription(""),
         imageURL: "",

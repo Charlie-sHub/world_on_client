@@ -27,14 +27,14 @@ void main() {
     () async {
       // Arrange
       final _userId = await _insertCreator(_database);
-      final _experience = domainExperienceToMoorExperience(getValidExperience()).copyWith(creatorId: Value(_userId));
+      final _moorExperience = domainExperienceToMoorExperience(getValidExperience()).copyWith(creatorId: Value(_userId));
       // Act
-      final _experienceId = await _database.moorExperiencesDao.insertExperience(_experience);
-      final _moorObjectiveCompanion = domainObjectiveToMoorObjective(_experienceId, _objective);
-      final _objectiveId = await _database.moorObjectivesDao.insertObjective(_moorObjectiveCompanion);
-      final _moorObjective = await _database.moorObjectivesDao.getObjectiveById(_objectiveId);
+      await _database.moorExperiencesDao.insertExperience(_moorExperience);
+      final _moorObjectiveCompanion = domainObjectiveToMoorObjective(_moorExperience.id.value, _objective);
+      await _database.moorObjectivesDao.insertObjective(_moorObjectiveCompanion);
+      final _moorObjective = await _database.moorObjectivesDao.getObjectiveById(_moorObjectiveCompanion.id.value);
       // Assert
-      expect(_moorObjective.toCompanion(true), _moorObjectiveCompanion.copyWith(id: Value(_objectiveId)));
+      expect(_moorObjective.toCompanion(true), _moorObjectiveCompanion);
     },
   );
   test(
@@ -42,10 +42,10 @@ void main() {
     () async {
       // Arrange
       final _userId = await _insertCreator(_database);
-      final _experience = domainExperienceToMoorExperience(getValidExperience()).copyWith(creatorId: Value(_userId));
+      final _moorExperience = domainExperienceToMoorExperience(getValidExperience()).copyWith(creatorId: Value(_userId));
       // Act
-      final _experienceId = await _database.moorExperiencesDao.insertExperience(_experience);
-      final _moorObjectiveCompanion = domainObjectiveToMoorObjective(_experienceId, _objective);
+      await _database.moorExperiencesDao.insertExperience(_moorExperience);
+      final _moorObjectiveCompanion = domainObjectiveToMoorObjective(_moorExperience.id.value, _objective);
       await _database.moorObjectivesDao.insertObjective(_moorObjectiveCompanion);
       final _objectivesDeletedAmount = await _database.moorObjectivesDao.deleteAllObjectives();
       // Assert
@@ -54,11 +54,11 @@ void main() {
   );
 }
 
-Future<int> _insertCreator(Database _database) async {
+Future<String> _insertCreator(Database _database) async {
   final _user = getValidUser();
   final _moorUserRicky = domainUserToMoorUserCompanion(_user).copyWith(
     isLoggedIn: const Value(false),
   );
-  final _userId = await _database.moorUsersDao.insertUser(_moorUserRicky);
-  return _userId;
+  await _database.moorUsersDao.insertUser(_moorUserRicky);
+  return _moorUserRicky.id.value;
 }

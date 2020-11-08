@@ -7,6 +7,7 @@ import 'package:worldon/application/tag_management/tag_card_actor/tag_card_actor
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_tag.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/tag_management/use_case/add_tag_to_interests.dart';
 import 'package:worldon/domain/tag_management/use_case/dismiss_tag_from_interests.dart';
 import 'package:worldon/injection.dart';
@@ -24,7 +25,7 @@ void main() {
     },
   );
   final tagInInterests = getValidTag();
-  final tagNotInInterests = tagInInterests.copyWith(id: 2);
+  final tagNotInInterests = tagInInterests.copyWith(id: UniqueId());
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,

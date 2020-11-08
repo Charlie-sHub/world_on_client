@@ -5,6 +5,7 @@ import 'package:kt_dart/collection.dart';
 import 'package:worldon/application/experience_management/rewards_creation/rewards_creation_bloc.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_reward.dart';
 import 'package:worldon/domain/core/validation/objects/reward_set.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../test_descriptions.dart';
@@ -16,11 +17,11 @@ void main() {
     },
   );
   final _reward = getValidReward();
-  final _reward2 = _reward.copyWith(id: 2);
-  final _reward3 = _reward.copyWith(id: 3);
-  final _reward4 = _reward.copyWith(id: 4);
-  final _reward5 = _reward.copyWith(id: 5);
-  final _reward6 = _reward.copyWith(id: 6);
+  final _reward2 = _reward.copyWith(id: UniqueId());
+  final _reward3 = _reward.copyWith(id: UniqueId());
+  final _reward4 = _reward.copyWith(id: UniqueId());
+  final _reward5 = _reward.copyWith(id: UniqueId());
+  final _reward6 = _reward.copyWith(id: UniqueId());
   final _rewardSet = KtSet.of(_reward);
   blocTest(
     TestDescription.shouldEmitInitial,

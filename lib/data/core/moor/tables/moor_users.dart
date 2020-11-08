@@ -37,6 +37,9 @@ class MoorUsers extends Table {
   DateTimeColumn get modificationDate => dateTime()();
 
   BoolColumn get isLoggedIn => boolean()();
+
+  @override
+  Set<Column> get primaryKey => {id};
 }
 
 class UserBlockRelations extends Table {
@@ -53,7 +56,7 @@ class UserBlockRelations extends Table {
 
 class UserFollowRelations extends Table {
   TextColumn get followedId => text().customConstraint("REFERENCES moor_users(id)")();
-  
+
   TextColumn get followingId => text().customConstraint("REFERENCES moor_users(id)")();
 
   @override
@@ -65,7 +68,7 @@ class UserFollowRelations extends Table {
 
 class UserAchievements extends Table {
   TextColumn get userId => text().customConstraint("REFERENCES moor_users(id)")();
-  
+
   TextColumn get achievementId => text().customConstraint("REFERENCES moor_achievements(id)")();
 
   @override
@@ -77,7 +80,7 @@ class UserAchievements extends Table {
 
 class UserInterests extends Table {
   TextColumn get userId => text().customConstraint("REFERENCES moor_users(id)")();
-  
+
   TextColumn get tagId => text().customConstraint("REFERENCES moor_tags(id)")();
 
   @override
@@ -89,7 +92,7 @@ class UserInterests extends Table {
 
 class UserDoneExperiences extends Table {
   TextColumn get userId => text().customConstraint("REFERENCES moor_users(id)")();
-  
+
   TextColumn get experienceId => text().customConstraint("REFERENCES moor_experiences(id)")();
 
   @override
@@ -101,7 +104,7 @@ class UserDoneExperiences extends Table {
 
 class UserLikedExperiences extends Table {
   TextColumn get userId => text().customConstraint("REFERENCES moor_users(id)")();
-  
+
   TextColumn get experienceId => text().customConstraint("REFERENCES moor_experiences(id)")();
 
   @override
@@ -113,7 +116,7 @@ class UserLikedExperiences extends Table {
 
 class UserToDoExperiences extends Table {
   TextColumn get userId => text().customConstraint("REFERENCES moor_users(id)")();
-  
+
   TextColumn get experienceId => text().customConstraint("REFERENCES moor_experiences(id)")();
 
   @override

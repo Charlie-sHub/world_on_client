@@ -36,9 +36,9 @@ abstract class Tag implements _$Tag {
 
   Option<ValueFailure<dynamic>> get failureOption {
     return name.failureOrUnit.andThen(creationDate.failureOrUnit).andThen(modificationDate.failureOrUnit).fold(
-        (failure) => some(failure),
-        (_) => none(),
-    );
+          (failure) => some(failure),
+          (_) => none(),
+        );
   }
 
   bool get isValid => failureOption.isNone();

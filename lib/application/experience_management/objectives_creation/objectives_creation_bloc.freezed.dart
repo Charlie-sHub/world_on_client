@@ -348,6 +348,7 @@ mixin _$ObjectivesCreationState {
 /// @nodoc
 abstract class $ObjectivesCreationStateCopyWith<$Res> {
   factory $ObjectivesCreationStateCopyWith(ObjectivesCreationState value, $Res Function(ObjectivesCreationState) then) = _$ObjectivesCreationStateCopyWithImpl<$Res>;
+
   $Res call({KtSet<Objective> objectivesCreated});
 }
 

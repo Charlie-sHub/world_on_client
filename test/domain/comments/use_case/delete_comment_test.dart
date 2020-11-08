@@ -11,6 +11,7 @@ import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/failures/error.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../test_descriptions.dart';
@@ -27,9 +28,9 @@ void main() {
       useCase = DeleteComment(mockCommentRepository);
     },
   );
-  final randomUser = _setUpUser(id: 1, adminPowers: false);
-  final creatorUser = _setUpUser(id: 2, adminPowers: false);
-  final admin = _setUpUser(id: 3, adminPowers: true);
+  final randomUser = _setUpUser(id: UniqueId(), adminPowers: false);
+  final creatorUser = _setUpUser(id: UniqueId(), adminPowers: false);
+  final admin = _setUpUser(id: UniqueId(), adminPowers: true);
   final comment = Comment.empty().copyWith(poster: creatorUser);
   final params = Params(comment: comment);
 
@@ -125,7 +126,7 @@ void main() {
   );
 }
 
-User _setUpUser({int id, bool adminPowers}) {
+User _setUpUser({UniqueId id, bool adminPowers}) {
   return User.empty().copyWith(
     id: id,
     adminPowers: adminPowers,

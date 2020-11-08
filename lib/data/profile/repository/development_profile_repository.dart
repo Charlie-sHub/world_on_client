@@ -53,7 +53,7 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   }
 
   MoorUser _moorUserFromDomainUserToUpdate(User user) => MoorUser(
-    id: user.id.getOrCrash(),
+        id: user.id.getOrCrash(),
         name: user.name.getOrCrash(),
         username: user.username.getOrCrash(),
         password: user.password.getOrCrash(),
@@ -98,8 +98,8 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
     try {
       final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
       return _moorUserOption.fold(
-          () => throw UnAuthenticatedError,
-          (_moorUserWithRelations) async {
+        () => throw UnAuthenticatedError,
+        (_moorUserWithRelations) async {
           final _userBlockRelation = _createUserBlockRelation(blockedId.getOrCrash(), _moorUserWithRelations.user.id);
           await _database.moorUsersDao.blockUser(_userBlockRelation);
           return right(unit);
@@ -122,8 +122,8 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
     try {
       final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
       return _moorUserOption.fold(
-          () => throw UnAuthenticatedError,
-          (_moorUserWithRelations) async {
+        () => throw UnAuthenticatedError,
+        (_moorUserWithRelations) async {
           final _userBlockRelation = _createUserBlockRelation(blockedId.getOrCrash(), _moorUserWithRelations.user.id);
           await _database.moorUsersDao.unBlockUser(_userBlockRelation);
           return right(unit);
@@ -153,8 +153,8 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
     try {
       final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
       return _moorUserOption.fold(
-          () => throw UnAuthenticatedError,
-          (_moorUserWithRelations) async {
+        () => throw UnAuthenticatedError,
+        (_moorUserWithRelations) async {
           final _userFollowRelation = _createUserFollowRelation(userToFollowId.getOrCrash(), _moorUserWithRelations.user.id);
           await _database.moorUsersDao.followUser(_userFollowRelation);
           return right(unit);
@@ -177,8 +177,8 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
     try {
       final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
       return _moorUserOption.fold(
-          () => throw UnAuthenticatedError,
-          (_moorUserWithRelations) async {
+        () => throw UnAuthenticatedError,
+        (_moorUserWithRelations) async {
           final _userFollowRelation = _createUserFollowRelation(userToUnFollowId.getOrCrash(), _moorUserWithRelations.user.id);
           await _database.moorUsersDao.unFollowUser(_userFollowRelation);
           return right(unit);
@@ -237,15 +237,15 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   Stream<Either<Failure, KtList<Achievement>>> watchUserAchievements(UniqueId userId) async* {
     final _stream = _database.moorAchievementsDao.watchUserAchievements(userId.getOrCrash());
     yield* _stream.map(
-        (_moorAchievementList) {
+      (_moorAchievementList) {
         if (_moorAchievementList != null && _moorAchievementList.isNotEmpty) {
           return right<Failure, KtList<Achievement>>(
             _moorAchievementList
-              .map(
-                (_moorAchievementWithRelations) => moorAchievementToDomainAchievement(_moorAchievementWithRelations),
-            )
-              .toImmutableList()
-              .sortedBy(
+                .map(
+                  (_moorAchievementWithRelations) => moorAchievementToDomainAchievement(_moorAchievementWithRelations),
+                )
+                .toImmutableList()
+                .sortedBy(
                   (_tag) => _tag.creationDate.getOrCrash(),
                 ),
           );

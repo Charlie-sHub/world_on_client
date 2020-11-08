@@ -211,6 +211,7 @@ abstract class _Initialized implements MapControllerEvent {
 /// @nodoc
 abstract class _$CameraPositionChangedCopyWith<$Res> {
   factory _$CameraPositionChangedCopyWith(_CameraPositionChanged value, $Res Function(_CameraPositionChanged) then) = __$CameraPositionChangedCopyWithImpl<$Res>;
+
   $Res call({Coordinates coordinates, double zoom});
 
   $CoordinatesCopyWith<$Res> get coordinates;

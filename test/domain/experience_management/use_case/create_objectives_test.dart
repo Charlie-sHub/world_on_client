@@ -10,6 +10,7 @@ import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/latitude.dart';
 import 'package:worldon/domain/core/validation/objects/longitude.dart';
 import 'package:worldon/domain/core/validation/objects/objective_set.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_management/use_case/create_objectives.dart';
 import 'package:worldon/injection.dart';
 
@@ -33,6 +34,7 @@ void main() {
     coordinates: _coordinates,
     imageURL: _imageURL,
     imageFile: some(_imageFile),
+    id: UniqueId(),
   );
   final objectives = KtSet.of(
     objective,

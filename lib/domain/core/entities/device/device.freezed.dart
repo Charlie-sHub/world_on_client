@@ -31,7 +31,7 @@ const $Device = _$DeviceTearOff();
 /// @nodoc
 mixin _$Device {
   UniqueId get id;
-  
+
   String get name;
   String get type;
   String get company;
@@ -41,9 +41,8 @@ mixin _$Device {
 
 /// @nodoc
 abstract class $DeviceCopyWith<$Res> {
-  factory $DeviceCopyWith(Device value, $Res Function(Device) then) =
-  _$DeviceCopyWithImpl<$Res>;
-  
+  factory $DeviceCopyWith(Device value, $Res Function(Device) then) = _$DeviceCopyWithImpl<$Res>;
+
   $Res call({UniqueId id, String name, String type, String company});
 }
 
@@ -73,22 +72,19 @@ class _$DeviceCopyWithImpl<$Res> implements $DeviceCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$DeviceCopyWith<$Res> implements $DeviceCopyWith<$Res> {
-  factory _$DeviceCopyWith(_Device value, $Res Function(_Device) then) =
-  __$DeviceCopyWithImpl<$Res>;
-  
+  factory _$DeviceCopyWith(_Device value, $Res Function(_Device) then) = __$DeviceCopyWithImpl<$Res>;
+
   @override
   $Res call({UniqueId id, String name, String type, String company});
 }
 
 /// @nodoc
-class __$DeviceCopyWithImpl<$Res> extends _$DeviceCopyWithImpl<$Res>
-  implements _$DeviceCopyWith<$Res> {
-  __$DeviceCopyWithImpl(_Device _value, $Res Function(_Device) _then)
-    : super(_value, (v) => _then(v as _Device));
-  
+class __$DeviceCopyWithImpl<$Res> extends _$DeviceCopyWithImpl<$Res> implements _$DeviceCopyWith<$Res> {
+  __$DeviceCopyWithImpl(_Device _value, $Res Function(_Device) _then) : super(_value, (v) => _then(v as _Device));
+
   @override
   _Device get _value => super._value as _Device;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -107,16 +103,13 @@ class __$DeviceCopyWithImpl<$Res> extends _$DeviceCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_Device extends _Device {
-  const _$_Device({@required this.id,
-    @required this.name,
-    @required this.type,
-    @required this.company})
-    : assert(id != null),
-      assert(name != null),
-      assert(type != null),
-      assert(company != null),
-      super._();
-  
+  const _$_Device({@required this.id, @required this.name, @required this.type, @required this.company})
+      : assert(id != null),
+        assert(name != null),
+        assert(type != null),
+        assert(company != null),
+        super._();
+
   @override
   final UniqueId id;
   @override
@@ -125,7 +118,7 @@ class _$_Device extends _Device {
   final String type;
   @override
   final String company;
-  
+
   @override
   String toString() {
     return 'Device(id: $id, name: $name, type: $type, company: $company)';
@@ -134,15 +127,11 @@ class _$_Device extends _Device {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Device &&
-        (identical(other.id, id) ||
-          const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.name, name) ||
-          const DeepCollectionEquality().equals(other.name, name)) &&
-        (identical(other.type, type) ||
-          const DeepCollectionEquality().equals(other.type, type)) &&
-        (identical(other.company, company) ||
-          const DeepCollectionEquality().equals(other.company, company)));
+        (other is _Device &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.company, company) || const DeepCollectionEquality().equals(other.company, company)));
   }
 
   @override
@@ -154,30 +143,26 @@ class _$_Device extends _Device {
       const DeepCollectionEquality().hash(company);
 
   @override
-  _$DeviceCopyWith<_Device> get copyWith =>
-    __$DeviceCopyWithImpl<_Device>(this, _$identity);
+  _$DeviceCopyWith<_Device> get copyWith => __$DeviceCopyWithImpl<_Device>(this, _$identity);
 }
 
 abstract class _Device extends Device {
   const _Device._() : super._();
-  
-  const factory _Device({@required UniqueId id,
-    @required String name,
-    @required String type,
-    @required String company}) = _$_Device;
-  
+
+  const factory _Device({@required UniqueId id, @required String name, @required String type, @required String company}) = _$_Device;
+
   @override
   UniqueId get id;
-  
+
   @override
   String get name;
-  
+
   @override
   String get type;
-  
+
   @override
   String get company;
-  
+
   @override
   _$DeviceCopyWith<_Device> get copyWith;
 }

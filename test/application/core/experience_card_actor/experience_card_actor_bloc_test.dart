@@ -9,6 +9,7 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_experience.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_user.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_log/use_case/add_experience_to_log.dart';
 import 'package:worldon/domain/experience_log/use_case/dismiss_experience_from_log.dart';
 import 'package:worldon/injection.dart';
@@ -57,7 +58,7 @@ void main() {
           when(getLoggedInUser.call(any)).thenAnswer((_) async => some(user));
           return getIt<ExperienceCardActorBloc>();
         },
-        act: (bloc) async => bloc.add(ExperienceCardActorEvent.initialized(experience.copyWith(id: 2))),
+        act: (bloc) async => bloc.add(ExperienceCardActorEvent.initialized(experience.copyWith(id: UniqueId()))),
         verify: (_) async {
           verify(getLoggedInUser.call(any));
           verifyNoMoreInteractions(getLoggedInUser);

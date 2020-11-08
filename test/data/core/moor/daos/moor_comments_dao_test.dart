@@ -11,6 +11,7 @@ import 'package:worldon/data/core/moor/converters/moor_comment_to_domain_comment
 import 'package:worldon/data/core/moor/daos/moor_comments_dao/moor_comment_with_moor_user.dart';
 import 'package:worldon/data/core/moor/moor_database.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 void main() {
   Database _database;
@@ -31,12 +32,18 @@ void main() {
       // Arrange
       final _userId = await _insertPoster(_database);
       final _experienceId = await _insertExperience(_database);
-      final _moorComment = domainCommentToMoorComment(_comment.copyWith(experienceId: _experienceId)).copyWith(posterId: Value(_userId));
+      final _moorComment = domainCommentToMoorComment(
+        _comment.copyWith(
+          experienceId: UniqueId.fromUniqueString(_experienceId),
+        ),
+      ).copyWith(
+        posterId: Value(_userId),
+      );
       // Act
-      final _commentId = await _database.moorCommentsDao.insertComment(_moorComment);
-      final _commentFromDb = await _database.moorCommentsDao.getCommentById(_commentId);
+      await _database.moorCommentsDao.insertComment(_moorComment);
+      final _commentFromDb = await _database.moorCommentsDao.getCommentById(_moorComment.id.value);
       // Assert
-      expect(_commentFromDb.toCompanion(true), _moorComment.copyWith(id: Value(_commentId)));
+      expect(_commentFromDb.toCompanion(true), _moorComment);
     },
   );
   test(
@@ -45,7 +52,13 @@ void main() {
       // Arrange
       final _userId = await _insertPoster(_database);
       final _experienceId = await _insertExperience(_database);
-      final _moorCommentCompanion = domainCommentToMoorComment(_comment.copyWith(experienceId: _experienceId)).copyWith(posterId: Value(_userId));
+      final _moorCommentCompanion = domainCommentToMoorComment(
+        _comment.copyWith(
+          experienceId: UniqueId.fromUniqueString(_experienceId),
+        ),
+      ).copyWith(
+        posterId: Value(_userId),
+      );
       final _moorCommentList = [
         _moorCommentCompanion,
         _moorCommentCompanion.copyWith(content: const Value("Test")),
@@ -65,7 +78,13 @@ void main() {
       // Arrange
       final _userId = await _insertPoster(_database);
       final _experienceId = await _insertExperience(_database);
-      final _moorCommentCompanion = domainCommentToMoorComment(_comment.copyWith(experienceId: _experienceId)).copyWith(posterId: Value(_userId));
+      final _moorCommentCompanion = domainCommentToMoorComment(
+        _comment.copyWith(
+          experienceId: UniqueId.fromUniqueString(_experienceId),
+        ),
+      ).copyWith(
+        posterId: Value(_userId),
+      );
       final _moorCommentList = [
         _moorCommentCompanion,
         _moorCommentCompanion.copyWith(content: const Value("Test")),
@@ -93,8 +112,8 @@ void main() {
       final _commentList = <Comment>[];
       // Act
       for (final _moorComment in _moorCommentList) {
-        final _commentId = await _database.moorCommentsDao.insertComment(_moorComment);
-        final _moorCommentFromDb = await _database.moorCommentsDao.getCommentById(_commentId);
+        await _database.moorCommentsDao.insertComment(_moorComment);
+        final _moorCommentFromDb = await _database.moorCommentsDao.getCommentById(_moorComment.id.value);
         final _moorUser = await _database.moorUsersDao.getUserById(_moorComment.posterId.value);
         final _commentWithPoster = MoorCommentWithMoorUser(
           comment: _moorCommentFromDb,
@@ -116,18 +135,18 @@ void main() {
   );
 }
 
-Future<int> _insertExperience(Database _database) async {
+Future<String> _insertExperience(Database _database) async {
   final _experience = getValidExperience();
   final _moorExperience = domainExperienceToMoorExperience(_experience);
-  final _experienceId = await _database.moorExperiencesDao.insertExperience(_moorExperience);
-  return _experienceId;
+  await _database.moorExperiencesDao.insertExperience(_moorExperience);
+  return _moorExperience.id.value;
 }
 
-Future<int> _insertPoster(Database _database) async {
+Future<String> _insertPoster(Database _database) async {
   final _user = getValidUser();
   final _moorUserRicky = domainUserToMoorUserCompanion(_user).copyWith(
     isLoggedIn: const Value(false),
   );
-  final _userId = await _database.moorUsersDao.insertUser(_moorUserRicky);
-  return _userId;
+  await _database.moorUsersDao.insertUser(_moorUserRicky);
+  return _moorUserRicky.id.value;
 }

@@ -5,6 +5,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/validation/objects/objective_set.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_navigation/use_case/fill_objective_tracker.dart';
 
 import '../../../test_descriptions.dart';
@@ -16,8 +17,8 @@ void main() {
       useCase = FillObjectiveTracker();
     },
   );
-  final objective1 = Objective.empty().copyWith(id: 1);
-  final objective2 = Objective.empty().copyWith(id: 2);
+  final objective1 = Objective.empty().copyWith(id: UniqueId());
+  final objective2 = Objective.empty().copyWith(id: UniqueId());
   final objectiveNull = Objective.empty().copyWith(id: null);
   final objectiveSet = ObjectiveSet(KtSet.of(objective1, objective2));
   final badObjectiveSet = ObjectiveSet(KtSet.of(objective1, objectiveNull));

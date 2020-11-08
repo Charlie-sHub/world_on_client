@@ -16,4 +16,7 @@ class MoorNotifications extends Table {
   TextColumn get senderId => text().customConstraint("REFERENCES moor_users(id)")();
 
   TextColumn get receiverId => text().customConstraint("REFERENCES moor_users(id)")();
+
+  @override
+  Set<Column> get primaryKey => {id};
 }

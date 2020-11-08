@@ -76,6 +76,7 @@ class _$BlockedWatcherEventCopyWithImpl<$Res> implements $BlockedWatcherEventCop
 /// @nodoc
 abstract class _$WatchBlockedUsersStartedCopyWith<$Res> {
   factory _$WatchBlockedUsersStartedCopyWith(_WatchBlockedUsersStarted value, $Res Function(_WatchBlockedUsersStarted) then) = __$WatchBlockedUsersStartedCopyWithImpl<$Res>;
+
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;

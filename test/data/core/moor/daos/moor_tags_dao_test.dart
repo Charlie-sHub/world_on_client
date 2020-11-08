@@ -37,10 +37,10 @@ void main() {
         creatorId: Value(_userId),
       );
       // Act
-      final _insertedTagId = await _database.moorTagsDao.insertTag(_moorTagSport);
-      final _moorTag = await _database.moorTagsDao.getTagById(_insertedTagId);
+      await _database.moorTagsDao.insertTag(_moorTagSport);
+      final _moorTag = await _database.moorTagsDao.getTagById(_moorTagSport.id.value);
       // Assert
-      expect(_moorTag.toCompanion(true), _moorTagSport.copyWith(id: Value(_insertedTagId)));
+      expect(_moorTag.toCompanion(true), _moorTagSport);
     },
   );
   test(
@@ -70,10 +70,10 @@ void main() {
             creatorId: Value(_userId),
           );
           // Act
-          final _insertedTagId = await _database.moorTagsDao.insertTag(_moorTagSport);
+          await _database.moorTagsDao.insertTag(_moorTagSport);
           final _userInterest = UserInterestsCompanion.insert(
             userId: _userId,
-            tagId: _insertedTagId,
+            tagId: _moorTagSport.id.value,
           );
           final _userInterestId = await _database.moorTagsDao.insertUserInterest(_userInterest);
           // Assert
@@ -88,13 +88,14 @@ void main() {
           final _moorTagSport = domainTagToMoorTag(_tag).copyWith(
             creatorId: Value(_userId),
           );
-          final _experience = domainExperienceToMoorExperience(getValidExperience()).copyWith(creatorId: Value(_userId));
+          final _moorExperience = domainExperienceToMoorExperience(getValidExperience()).copyWith(creatorId: Value(_userId));
           // Act
-          final _insertedTagId = await _database.moorTagsDao.insertTag(_moorTagSport);
-          final _experienceId = await _database.moorExperiencesDao.insertExperience(_experience);
+          await _database.moorTagsDao.insertTag(_moorTagSport);
+          final _experienceId = _moorExperience.id.value;
+          await _database.moorExperiencesDao.insertExperience(_moorExperience);
           final _experienceTag = ExperienceTagsCompanion.insert(
             experienceId: _experienceId,
-            tagId: _insertedTagId,
+            tagId: _moorTagSport.id.value,
           );
           final _experienceTagId = await _database.moorTagsDao.insertExperienceTag(_experienceTag);
           // Assert
@@ -111,11 +112,12 @@ void main() {
           );
           final _achievement = domainAchievementToMoorAchievement(getValidAchievement()).copyWith(creatorId: Value(_userId));
           // Act
-          final _insertedTagId = await _database.moorTagsDao.insertTag(_moorTagSport);
-          final _achievementId = await _database.moorAchievementsDao.insertAchievement(_achievement);
+          await _database.moorTagsDao.insertTag(_moorTagSport);
+          final _achievementId = _achievement.id.value;
+          await _database.moorAchievementsDao.insertAchievement(_achievement);
           final _achievementTag = AchievementTagsCompanion.insert(
             achievementId: _achievementId,
-            tagId: _insertedTagId,
+            tagId: _moorTagSport.id.value,
           );
           final _experienceTagId = await _database.moorTagsDao.insertAchievementTag(_achievementTag);
           // Assert
@@ -136,8 +138,8 @@ void main() {
             creatorId: Value(_userId),
           );
           // Act
-          final _insertedTagId = await _database.moorTagsDao.insertTag(_moorTagSport);
-          final _moorTag = await _database.moorTagsDao.getTagById(_insertedTagId);
+          await _database.moorTagsDao.insertTag(_moorTagSport);
+          final _moorTag = await _database.moorTagsDao.getTagById(_moorTagSport.id.value);
           final _deletedAmount = await _database.moorTagsDao.removeTag(_moorTag);
           // Assert
           expect(_deletedAmount, 1);
@@ -164,10 +166,11 @@ void main() {
           // Arrange
           final _userId = await _insertCreator(_database);
           final _moorTagList = _createTagList(_tag, _userId);
-          final _tagIds = <int>[];
+          final _tagIds = <String>[];
           // Act
           for (final _moorTag in _moorTagList) {
-            _tagIds.add(await _database.moorTagsDao.insertTag(_moorTag));
+            await _database.moorTagsDao.insertTag(_moorTag);
+            _tagIds.add(_moorTag.id.value);
           }
           final _userInterest = UserInterestsCompanion.insert(
             userId: _userId,
@@ -188,10 +191,10 @@ void main() {
           final _interestIds = [];
           // Act
           for (final _moorTag in _moorTagList) {
-            final _insertedTagId = await _database.moorTagsDao.insertTag(_moorTag);
+            await _database.moorTagsDao.insertTag(_moorTag);
             final _userInterest = UserInterestsCompanion.insert(
               userId: _userId,
-              tagId: _insertedTagId,
+              tagId: _moorTag.id.value,
             );
             _interestIds.add(await _database.moorTagsDao.insertUserInterest(_userInterest));
           }
@@ -211,18 +214,19 @@ void main() {
             email: const Value("wew@lad.lel"),
             isLoggedIn: const Value(false),
           );
-          final _otherUserId = await _database.moorUsersDao.insertUser(_moorUserCharlie);
+          await _database.moorUsersDao.insertUser(_moorUserCharlie);
           final _moorTagList = _createTagList(_tag, _userId);
           final _interestIds = [];
           // Act
           for (final _moorTag in _moorTagList) {
-            final _insertedTagId = await _database.moorTagsDao.insertTag(_moorTag);
+            final _insertedTagId = _moorTag.id.value;
+            await _database.moorTagsDao.insertTag(_moorTag);
             final _userInterest = UserInterestsCompanion.insert(
               userId: _userId,
               tagId: _insertedTagId,
             );
             final _otherUserInterest = UserInterestsCompanion.insert(
-              userId: _otherUserId,
+              userId: _moorUserCharlie.id.value,
               tagId: _insertedTagId,
             );
             _interestIds.add(await _database.moorTagsDao.insertUserInterest(_userInterest));
@@ -243,16 +247,17 @@ void main() {
           final _moorTagList = _createTagList(_tag, _userId);
           final _experienceTagsIds = [];
           // Act
-          final _experienceId = await _database.moorExperiencesDao.insertExperience(_experience);
-          final _otherExperienceId = await _database.moorExperiencesDao.insertExperience(_otherExperience);
+          await _database.moorExperiencesDao.insertExperience(_experience);
+          await _database.moorExperiencesDao.insertExperience(_otherExperience);
           for (final _moorTag in _moorTagList) {
-            final _insertedTagId = await _database.moorTagsDao.insertTag(_moorTag);
+            final _insertedTagId = _moorTag.id.value;
+            await _database.moorTagsDao.insertTag(_moorTag);
             final _experienceTag = ExperienceTagsCompanion.insert(
-              experienceId: _experienceId,
+              experienceId: _experience.id.value,
               tagId: _insertedTagId,
             );
             final _otherExperienceTag = ExperienceTagsCompanion.insert(
-              experienceId: _otherExperienceId,
+              experienceId: _otherExperience.id.value,
               tagId: _insertedTagId,
             );
             _experienceTagsIds.add(await _database.moorTagsDao.insertExperienceTag(_experienceTag));
@@ -265,18 +270,18 @@ void main() {
       );
       test(
         "Should delete all tag achievement relations",
-          () async {
+        () async {
           // Arrange
           final _userId = await _insertCreator(_database);
           final _moorAchievement = domainAchievementToMoorAchievement(getValidAchievement()).copyWith(creatorId: Value(_userId));
           final _moorTag = domainTagToMoorTag(getValidTag()).copyWith(creatorId: Value(_userId));
           // Act
-          final _achievementId = await _database.moorAchievementsDao.insertAchievement(_moorAchievement);
-          final _tagId = await _database.moorTagsDao.insertTag(_moorTag);
+          await _database.moorAchievementsDao.insertAchievement(_moorAchievement);
+          await _database.moorTagsDao.insertTag(_moorTag);
           final _tagAchievementList = [
             AchievementTagsCompanion.insert(
-              tagId: _tagId,
-              achievementId: _achievementId,
+              tagId: _moorTag.id.value,
+              achievementId: _moorAchievement.id.value,
             ),
           ];
           for (final _tagAchievement in _tagAchievementList) {
@@ -302,9 +307,10 @@ void main() {
           final _tagList = _createTagList(_tag, _userId);
           // Act
           for (final _moorTag in _tagList) {
-            final _id = await _database.moorTagsDao.insertTag(_moorTag);
+            final _insertedTagId = _moorTag.id.value;
+            await _database.moorTagsDao.insertTag(_moorTag);
             if (_moorTag.name.value.contains(_searchTerm.toLowerCase()) || _moorTag.name.value.contains(_searchTerm.toUpperCase())) {
-              final _tagInserted = await _database.moorTagsDao.getTagById(_id);
+              final _tagInserted = await _database.moorTagsDao.getTagById(_insertedTagId);
               _searchResults.add(
                 moorTagToDomainTag(_tagInserted),
               );
@@ -333,7 +339,8 @@ void main() {
           final _moorTagAfterInsertList = <Tag>[];
           // Act
           for (final _moorTag in _moorTagList) {
-            final _insertedTagId = await _database.moorTagsDao.insertTag(_moorTag);
+            final _insertedTagId = _moorTag.id.value;
+            await _database.moorTagsDao.insertTag(_moorTag);
             final _userInterest = UserInterestsCompanion.insert(
               userId: _userId,
               tagId: _insertedTagId,
@@ -362,7 +369,7 @@ void main() {
   );
 }
 
-List<MoorTagsCompanion> _createTagList(Tag _tag, int _userId) {
+List<MoorTagsCompanion> _createTagList(Tag _tag, String _userId) {
   final _moorTagSport = domainTagToMoorTag(_tag).copyWith(
     creatorId: Value(_userId),
   );
@@ -391,11 +398,11 @@ List<MoorTagsCompanion> _createTagList(Tag _tag, int _userId) {
   return _moorTagList;
 }
 
-Future<int> _insertCreator(Database _database) async {
+Future<String> _insertCreator(Database _database) async {
   final _user = getValidUser();
   final _moorUserRicky = domainUserToMoorUserCompanion(_user).copyWith(
     isLoggedIn: const Value(false),
   );
-  final _userId = await _database.moorUsersDao.insertUser(_moorUserRicky);
-  return _userId;
+  await _database.moorUsersDao.insertUser(_moorUserRicky);
+  return _moorUserRicky.id.value;
 }

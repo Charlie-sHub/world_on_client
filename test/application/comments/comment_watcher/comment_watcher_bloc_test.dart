@@ -9,6 +9,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/comments/use_case/watch_experience_comments.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../domain/core/methods/create_stream.dart';
@@ -23,7 +24,7 @@ void main() {
     },
   );
   final commentList = KtList.of(Comment.empty());
-  const experienceId = 1;
+  final experienceId = UniqueId();
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   blocTest(
     TestDescription.shouldEmitInitial,
@@ -37,7 +38,7 @@ void main() {
       return getIt<CommentWatcherBloc>();
     },
     act: (bloc) async {
-      bloc.add(const CommentWatcherEvent.watchExperienceCommentsStarted(experienceId));
+      bloc.add(CommentWatcherEvent.watchExperienceCommentsStarted(experienceId));
       bloc.add(CommentWatcherEvent.resultsReceived(right(commentList)));
     },
     verify: (_) async {
@@ -56,7 +57,7 @@ void main() {
       return getIt<CommentWatcherBloc>();
     },
     act: (bloc) async {
-      bloc.add(const CommentWatcherEvent.watchExperienceCommentsStarted(experienceId));
+      bloc.add(CommentWatcherEvent.watchExperienceCommentsStarted(experienceId));
       bloc.add(CommentWatcherEvent.resultsReceived(left(failure)));
     },
     verify: (_) async {

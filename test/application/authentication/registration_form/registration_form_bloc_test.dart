@@ -18,6 +18,7 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
 import 'package:worldon/domain/core/validation/objects/password_confirmator.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../test_descriptions.dart';
@@ -39,7 +40,7 @@ void main() {
   const emailAddress = "test@test.test";
   final birthday = DateTime.now().subtract(const Duration(days: 100000));
   const description = "For testing";
-  final interests = {1, 2};
+  final interests = {UniqueId(), UniqueId()};
   final imageFile = File(Assets.userPlaceholder);
   const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
   final thirdPartyUser = User.empty().copyWith(

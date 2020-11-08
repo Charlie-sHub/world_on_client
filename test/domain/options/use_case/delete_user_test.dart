@@ -8,6 +8,7 @@ import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/failures/error.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/options/repository/remote_options_repository_interface.dart';
 import 'package:worldon/domain/options/use_case/delete_user.dart';
 import 'package:worldon/injection.dart';
@@ -26,9 +27,9 @@ void main() {
       useCase = DeleteUser(mockRemoteOptionsRepository);
     },
   );
-  final admin = User.empty().copyWith(id: 1, adminPowers: true);
-  final userToDelete = User.empty().copyWith(id: 2, adminPowers: false);
-  final userRandom = User.empty().copyWith(id: 3, adminPowers: false);
+  final admin = User.empty().copyWith(id: UniqueId(), adminPowers: true);
+  final userToDelete = User.empty().copyWith(id: UniqueId(), adminPowers: false);
+  final userRandom = User.empty().copyWith(id: UniqueId(), adminPowers: false);
   final params = Params(userToDelete: userToDelete);
   group(
     TestDescription.authorization,

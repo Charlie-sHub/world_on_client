@@ -31,7 +31,7 @@ abstract class Notification implements _$Notification {
   }) = _Notification;
 
   factory Notification.empty() => Notification(
-    id: UniqueId(),
+        id: UniqueId(),
         sender: User.empty(),
         receiver: User.empty(),
         description: EntityDescription(""),

@@ -52,7 +52,8 @@ void main() {
     "Should insert _moorUserRicky",
     () async {
       // Act
-      final _insertedUserId = await _database.moorUsersDao.insertUser(_moorUserRicky);
+      final _insertedUserId = _moorUserRicky.id.value;
+      await _database.moorUsersDao.insertUser(_moorUserRicky);
       final _moorUser = await _database.moorUsersDao.getUserById(_insertedUserId);
       // Assert
       expect(_moorUser.toCompanion(true), _moorUserRicky.copyWith(id: Value(_insertedUserId)));
@@ -76,7 +77,8 @@ void main() {
       // Arrange
       const _newName = "Charlie";
       // Act
-      final _insertedUserId = await _database.moorUsersDao.insertUser(_moorUserRicky);
+      final _insertedUserId = _moorUserRicky.id.value;
+      await _database.moorUsersDao.insertUser(_moorUserRicky);
       final _moorUserToUpdate = await _database.moorUsersDao.getUserById(_insertedUserId);
       await _database.moorUsersDao.updateUser(_moorUserToUpdate.copyWith(name: _newName));
       final _moorUser = await _database.moorUsersDao.getUserById(_insertedUserId);
@@ -97,8 +99,10 @@ void main() {
         "Should insert a block relation",
         () async {
           // Act
-          final _moorUserRickyId = await _database.moorUsersDao.insertUser(_moorUserRicky);
-          final _moorUserCharlieId = await _database.moorUsersDao.insertUser(_moorUserCharlie);
+          final _moorUserRickyId = _moorUserRicky.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserRicky);
+          final _moorUserCharlieId = _moorUserCharlie.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserCharlie);
           final _blockRelation = UserBlockRelationsCompanion.insert(
             blockedId: _moorUserRickyId,
             blockerId: _moorUserCharlieId,
@@ -112,8 +116,10 @@ void main() {
         "Should remove the inserted block relation",
         () async {
           // Act
-          final _moorUserRickyId = await _database.moorUsersDao.insertUser(_moorUserRicky);
-          final _moorUserCharlieId = await _database.moorUsersDao.insertUser(_moorUserCharlie);
+          final _moorUserRickyId = _moorUserRicky.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserRicky);
+          final _moorUserCharlieId = _moorUserCharlie.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserCharlie);
           final _blockRelation = UserBlockRelationsCompanion.insert(
             blockedId: _moorUserRickyId,
             blockerId: _moorUserCharlieId,
@@ -133,8 +139,10 @@ void main() {
         "Should insert a follow relation",
         () async {
           // Act
-          final _moorUserRickyId = await _database.moorUsersDao.insertUser(_moorUserRicky);
-          final _moorUserCharlieId = await _database.moorUsersDao.insertUser(_moorUserCharlie);
+          final _moorUserRickyId = _moorUserRicky.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserRicky);
+          final _moorUserCharlieId = _moorUserCharlie.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserCharlie);
           final _followRelation = UserFollowRelationsCompanion.insert(
             followedId: _moorUserRickyId,
             followingId: _moorUserCharlieId,
@@ -148,8 +156,10 @@ void main() {
         "Should remove the inserted follow relation",
         () async {
           // Act
-          final _moorUserRickyId = await _database.moorUsersDao.insertUser(_moorUserRicky);
-          final _moorUserCharlieId = await _database.moorUsersDao.insertUser(_moorUserCharlie);
+          final _moorUserRickyId = _moorUserRicky.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserRicky);
+          final _moorUserCharlieId = _moorUserCharlie.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserCharlie);
           final _followRelation = UserFollowRelationsCompanion.insert(
             followedId: _moorUserRickyId,
             followingId: _moorUserCharlieId,
@@ -181,8 +191,10 @@ void main() {
         "Should delete all follow relations",
         () async {
           // Act
-          final _moorUserRickyId = await _database.moorUsersDao.insertUser(_moorUserRicky);
-          final _moorUserCharlieId = await _database.moorUsersDao.insertUser(_moorUserCharlie);
+          final _moorUserRickyId = _moorUserRicky.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserRicky);
+          final _moorUserCharlieId = _moorUserCharlie.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserCharlie);
           final _followRelationsList = [
             UserFollowRelationsCompanion.insert(
               followedId: _moorUserCharlieId,
@@ -205,8 +217,10 @@ void main() {
         "Should delete all block relations",
         () async {
           // Act
-          final _moorUserRickyId = await _database.moorUsersDao.insertUser(_moorUserRicky);
-          final _moorUserCharlieId = await _database.moorUsersDao.insertUser(_moorUserCharlie);
+          final _moorUserRickyId = _moorUserRicky.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserRicky);
+          final _moorUserCharlieId = _moorUserCharlie.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserCharlie);
           final _blockRelationsList = [
             UserBlockRelationsCompanion.insert(
               blockedId: _moorUserRickyId,
@@ -234,7 +248,7 @@ void main() {
         "Should return the logged in user",
         () async {
           // Act
-          final _insertedUserId = await _database.moorUsersDao.insertUser(_moorUserRicky.copyWith(isLoggedIn: const Value(true)));
+          await _database.moorUsersDao.insertUser(_moorUserRicky.copyWith(isLoggedIn: const Value(true)));
           final _moorUser = await _database.moorUsersDao.getLoggedInUser();
           // Assert
           expect(
@@ -242,10 +256,7 @@ void main() {
               () => null,
               (_userWithRelations) => _userWithRelations.user.toCompanion(true),
             ),
-            _moorUserRicky.copyWith(
-              id: Value(_insertedUserId),
-              isLoggedIn: const Value(true),
-            ),
+            _moorUserRicky.copyWith(isLoggedIn: const Value(true)),
           );
         },
       );
@@ -255,7 +266,7 @@ void main() {
           final username = _moorUserRicky.username.value;
           final password = _moorUserRicky.password.value;
           // Act
-          final _insertedUserId = await _database.moorUsersDao.insertUser(_moorUserRicky.copyWith(isLoggedIn: const Value(true)));
+          await _database.moorUsersDao.insertUser(_moorUserRicky.copyWith(isLoggedIn: const Value(true)));
           final _moorUser = await _database.moorUsersDao.getUserByUsernameAndPassword(
             username: username,
             password: password,
@@ -263,10 +274,7 @@ void main() {
           // Assert
           expect(
             _moorUser.toCompanion(true),
-            _moorUserRicky.copyWith(
-              id: Value(_insertedUserId),
-              isLoggedIn: const Value(true),
-            ),
+            _moorUserRicky.copyWith(isLoggedIn: const Value(true)),
           );
         },
       );
@@ -282,9 +290,9 @@ void main() {
           final _searchResults = <MoorUser>[];
           // Act
           for (final _moorUser in _moorUserList) {
-            final _id = await _database.moorUsersDao.insertUser(_moorUser);
+            await _database.moorUsersDao.insertUser(_moorUser);
             if (_moorUser.username.value.contains(_searchTerm)) {
-              final _userInserted = await _database.moorUsersDao.getUserById(_id);
+              final _userInserted = await _database.moorUsersDao.getUserById(_moorUser.id.value);
               _searchResults.add(_userInserted);
             }
           } // Assert
@@ -298,9 +306,9 @@ void main() {
           final _searchResults = <MoorUser>[];
           // Act
           for (final _moorUser in _moorUserList) {
-            final _id = await _database.moorUsersDao.insertUser(_moorUser);
+            await _database.moorUsersDao.insertUser(_moorUser);
             if (_moorUser.name.value.contains(_searchTerm.toLowerCase()) || _moorUser.name.value.contains(_searchTerm.toUpperCase())) {
-              final _userInserted = await _database.moorUsersDao.getUserById(_id);
+              final _userInserted = await _database.moorUsersDao.getUserById(_moorUser.id.value);
               _searchResults.add(_userInserted);
             }
           } // Assert
@@ -311,9 +319,12 @@ void main() {
         "Should emit a stream of lists of the users followed by _moorUserCharlie",
         () async {
           // Act
-          final _moorUserRickyId = await _database.moorUsersDao.insertUser(_moorUserRicky);
-          final _moorUserCharlieId = await _database.moorUsersDao.insertUser(_moorUserCharlie);
-          final _moorUserBroId = await _database.moorUsersDao.insertUser(_moorUserBro);
+          final _moorUserRickyId = _moorUserRicky.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserRicky);
+          final _moorUserCharlieId = _moorUserCharlie.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserCharlie);
+          final _moorUserBroId = _moorUserBro.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserBro);
           final _followedUsersList = [
             _moorUserBro.copyWith(id: Value(_moorUserBroId)),
           ];
@@ -331,9 +342,12 @@ void main() {
         "Should emit a stream of lists of the users following _moorUserBroId",
         () async {
           // Act
-          final _moorUserRickyId = await _database.moorUsersDao.insertUser(_moorUserRicky);
-          final _moorUserCharlieId = await _database.moorUsersDao.insertUser(_moorUserCharlie);
-          final _moorUserBroId = await _database.moorUsersDao.insertUser(_moorUserBro);
+          final _moorUserRickyId = _moorUserRicky.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserRicky);
+          final _moorUserCharlieId = _moorUserCharlie.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserCharlie);
+          final _moorUserBroId = _moorUserBro.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserBro);
           final _followingUsersList = [
             _moorUserRicky.copyWith(id: Value(_moorUserRickyId)),
             _moorUserCharlie.copyWith(id: Value(_moorUserCharlieId)),
@@ -353,7 +367,7 @@ void main() {
   );
 }
 
-List<UserFollowRelationsCompanion> _createFollowRelationsList(int someUserId, int otherUserId, int yetAnotherUserId) {
+List<UserFollowRelationsCompanion> _createFollowRelationsList(String someUserId, String otherUserId, String yetAnotherUserId) {
   return [
     UserFollowRelationsCompanion.insert(
       followedId: someUserId,

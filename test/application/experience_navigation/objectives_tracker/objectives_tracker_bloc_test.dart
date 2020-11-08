@@ -5,6 +5,7 @@ import 'package:kt_dart/kt.dart';
 import 'package:worldon/application/experience_navigation/objectives_tracker/objectives_tracker_bloc.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_objective.dart';
 import 'package:worldon/domain/core/validation/objects/objective_set.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/injection.dart';
 
 import '../../../test_descriptions.dart';
@@ -16,7 +17,7 @@ void main() {
     },
   );
   final firstObjective = getValidObjective();
-  final secondObjective = firstObjective.copyWith(id: 2);
+  final secondObjective = firstObjective.copyWith(id: UniqueId());
   final objectiveSet = ObjectiveSet(
     KtSet.of(
       firstObjective,

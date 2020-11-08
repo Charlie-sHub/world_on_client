@@ -11,4 +11,7 @@ class MoorTags extends Table {
   DateTimeColumn get creationDate => dateTime()();
 
   DateTimeColumn get modificationDate => dateTime()();
+
+  @override
+  Set<Column> get primaryKey => {id};
 }

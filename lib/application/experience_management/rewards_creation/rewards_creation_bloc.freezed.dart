@@ -348,6 +348,7 @@ mixin _$RewardsCreationState {
 /// @nodoc
 abstract class $RewardsCreationStateCopyWith<$Res> {
   factory $RewardsCreationStateCopyWith(RewardsCreationState value, $Res Function(RewardsCreationState) then) = _$RewardsCreationStateCopyWithImpl<$Res>;
+
   $Res call({KtSet<Reward> rewardsCreated});
 }
 

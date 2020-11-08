@@ -57,8 +57,8 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
     try {
       final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
       return _moorUserOption.fold(
-          () => throw UnAuthenticatedError,
-          (_moorUserWithRelations) async {
+        () => throw UnAuthenticatedError,
+        (_moorUserWithRelations) async {
           final _userLikedExperience = UserLikedExperiencesCompanion.insert(
             userId: _moorUserWithRelations.user.id,
             experienceId: experienceId.getOrCrash(),
@@ -84,8 +84,8 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
     try {
       final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
       return _moorUserOption.fold(
-          () => throw UnAuthenticatedError,
-          (_moorUserWithRelations) async {
+        () => throw UnAuthenticatedError,
+        (_moorUserWithRelations) async {
           final _userLikedExperience = UserLikedExperiencesCompanion.insert(
             userId: _moorUserWithRelations.user.id,
             experienceId: experienceId.getOrCrash(),
@@ -137,8 +137,8 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
     try {
       final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
       return _moorUserOption.fold(
-          () => throw UnAuthenticatedError,
-          (_moorUserWithRelations) async {
+        () => throw UnAuthenticatedError,
+        (_moorUserWithRelations) async {
           final _moorExperience = await _database.moorExperiencesDao.getExperienceById(experienceId.getOrCrash());
           final _experiencePoints = _moorUserWithRelations.user.experiencePoints + _moorExperience.difficulty * 10;
           await _database.moorUsersDao.updateUser(

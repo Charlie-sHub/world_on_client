@@ -13,4 +13,7 @@ class MoorComments extends Table {
   TextColumn get posterId => text().customConstraint("REFERENCES moor_users(id)")();
 
   TextColumn get experienceId => text().customConstraint("REFERENCES moor_experiences(id)")();
+
+  @override
+  Set<Column> get primaryKey => {id};
 }

@@ -59,10 +59,10 @@ void main() {
           final _userId = await _insertCreator(_database);
           final _moorExperience = domainExperienceToMoorExperience(_experience).copyWith(creatorId: Value(_userId));
           // Act
-          final _experienceId = await _database.moorExperiencesDao.insertExperience(_moorExperience);
-          final _insertedExperience = await _database.moorExperiencesDao.getExperienceById(_experienceId);
+          await _database.moorExperiencesDao.insertExperience(_moorExperience);
+          final _insertedExperience = await _database.moorExperiencesDao.getExperienceById(_moorExperience.id.value);
           // Assert
-          expect(_insertedExperience.toCompanion(true), _moorExperience.copyWith(id: Value(_experienceId)));
+          expect(_insertedExperience.toCompanion(true), _moorExperience);
         },
       );
       test(
@@ -73,7 +73,8 @@ void main() {
           final _userId = await _insertCreator(_database);
           final _moorExperience = domainExperienceToMoorExperience(_experience).copyWith(creatorId: Value(_userId));
           // Act
-          final _experienceId = await _database.moorExperiencesDao.insertExperience(_moorExperience);
+          final _experienceId = _moorExperience.id.value;
+          await _database.moorExperiencesDao.insertExperience(_moorExperience);
           final _experienceToUpdate = await _database.moorExperiencesDao.getExperienceById(_experienceId);
           await _database.moorExperiencesDao.updateExperience(_experienceToUpdate.copyWith(title: _newName));
           final _updatedExperience = await _database.moorExperiencesDao.getExperienceById(_experienceId);
@@ -94,10 +95,10 @@ void main() {
           final _userId = await _insertCreator(_database);
           final _moorExperience = domainExperienceToMoorExperience(_experience).copyWith(creatorId: Value(_userId));
           // Act
-          final _experienceId = await _database.moorExperiencesDao.insertExperience(_moorExperience);
+          await _database.moorExperiencesDao.insertExperience(_moorExperience);
           final _experienceTodo = UserToDoExperiencesCompanion.insert(
             userId: _userId,
-            experienceId: _experienceId,
+            experienceId: _moorExperience.id.value,
           );
           final _insertedToDoId = await _database.moorExperiencesDao.insertExperienceTodo(_experienceTodo);
           // Assert
@@ -111,10 +112,10 @@ void main() {
           final _userId = await _insertCreator(_database);
           final _moorExperience = domainExperienceToMoorExperience(_experience).copyWith(creatorId: Value(_userId));
           // Act
-          final _experienceId = await _database.moorExperiencesDao.insertExperience(_moorExperience);
+          await _database.moorExperiencesDao.insertExperience(_moorExperience);
           final _experienceDone = UserDoneExperiencesCompanion.insert(
             userId: _userId,
-            experienceId: _experienceId,
+            experienceId: _moorExperience.id.value,
           );
           final _insertedDoneId = await _database.moorExperiencesDao.insertExperienceDone(_experienceDone);
           // Assert
@@ -128,10 +129,10 @@ void main() {
           final _userId = await _insertCreator(_database);
           final _moorExperience = domainExperienceToMoorExperience(_experience).copyWith(creatorId: Value(_userId));
           // Act
-          final _experienceId = await _database.moorExperiencesDao.insertExperience(_moorExperience);
+          await _database.moorExperiencesDao.insertExperience(_moorExperience);
           final _experienceLiked = UserLikedExperiencesCompanion.insert(
             userId: _userId,
-            experienceId: _experienceId,
+            experienceId: _moorExperience.id.value,
           );
           final _insertedLikedId = await _database.moorExperiencesDao.insertExperienceLiked(_experienceLiked);
           // Assert
@@ -146,10 +147,10 @@ void main() {
           final _userId = await _insertCreator(_database);
           final _moorExperience = domainExperienceToMoorExperience(_experience).copyWith(creatorId: Value(_userId));
           // Act
-          final _experienceId = await _database.moorExperiencesDao.insertExperience(_moorExperience);
+          await _database.moorExperiencesDao.insertExperience(_moorExperience);
           final _experienceImageURL = ExperienceImageUrlsCompanion.insert(
             imageUrl: _imageUrl,
-            experienceId: _experienceId,
+            experienceId: _moorExperience.id.value,
           );
           final _insertedLikedId = await _database.moorExperiencesDao.insertExperienceImage(_experienceImageURL);
           // Assert
@@ -168,10 +169,10 @@ void main() {
           final _userId = await _insertCreator(_database);
           final _moorExperience = domainExperienceToMoorExperience(_experience).copyWith(creatorId: Value(_userId));
           // Act
-          final _experienceId = await _database.moorExperiencesDao.insertExperience(_moorExperience);
+          await _database.moorExperiencesDao.insertExperience(_moorExperience);
           final _experienceTodo = UserToDoExperiencesCompanion.insert(
             userId: _userId,
-            experienceId: _experienceId,
+            experienceId: _moorExperience.id.value,
           );
           await _database.moorExperiencesDao.insertExperienceTodo(_experienceTodo);
           final _removedAmount = await _database.moorExperiencesDao.removeExperienceTodo(_experienceTodo);
@@ -203,16 +204,16 @@ void main() {
           final _moorExperience = domainExperienceToMoorExperience(_experience).copyWith(creatorId: Value(_userId));
           final _otherMoorExperience = _moorExperience.copyWith(title: const Value("Test"));
           // Act
-          final _experienceId = await _database.moorExperiencesDao.insertExperience(_moorExperience);
-          final _otherExperienceId = await _database.moorExperiencesDao.insertExperience(_otherMoorExperience);
+          await _database.moorExperiencesDao.insertExperience(_moorExperience);
+          await _database.moorExperiencesDao.insertExperience(_otherMoorExperience);
           final _experienceTodoList = [
             UserToDoExperiencesCompanion.insert(
               userId: _userId,
-              experienceId: _experienceId,
+              experienceId: _moorExperience.id.value,
             ),
             UserToDoExperiencesCompanion.insert(
               userId: _userId,
-              experienceId: _otherExperienceId,
+              experienceId: _otherMoorExperience.id.value,
             )
           ];
           for (final _experienceToDo in _experienceTodoList) {
@@ -231,16 +232,16 @@ void main() {
           final _moorExperience = domainExperienceToMoorExperience(_experience).copyWith(creatorId: Value(_userId));
           final _otherMoorExperience = _moorExperience.copyWith(title: const Value("Test"));
           // Act
-          final _experienceId = await _database.moorExperiencesDao.insertExperience(_moorExperience);
-          final _otherExperienceId = await _database.moorExperiencesDao.insertExperience(_otherMoorExperience);
+          await _database.moorExperiencesDao.insertExperience(_moorExperience);
+          await _database.moorExperiencesDao.insertExperience(_otherMoorExperience);
           final _experienceDoneList = [
             UserDoneExperiencesCompanion.insert(
               userId: _userId,
-              experienceId: _experienceId,
+              experienceId: _moorExperience.id.value,
             ),
             UserDoneExperiencesCompanion.insert(
               userId: _userId,
-              experienceId: _otherExperienceId,
+              experienceId: _otherMoorExperience.id.value,
             )
           ];
           for (final _experienceToDo in _experienceDoneList) {
@@ -259,16 +260,16 @@ void main() {
           final _moorExperience = domainExperienceToMoorExperience(_experience).copyWith(creatorId: Value(_userId));
           final _otherMoorExperience = _moorExperience.copyWith(title: const Value("Test"));
           // Act
-          final _experienceId = await _database.moorExperiencesDao.insertExperience(_moorExperience);
-          final _otherExperienceId = await _database.moorExperiencesDao.insertExperience(_otherMoorExperience);
+          await _database.moorExperiencesDao.insertExperience(_moorExperience);
+          await _database.moorExperiencesDao.insertExperience(_otherMoorExperience);
           final _experienceLikedList = [
             UserLikedExperiencesCompanion.insert(
               userId: _userId,
-              experienceId: _experienceId,
+              experienceId: _moorExperience.id.value,
             ),
             UserLikedExperiencesCompanion.insert(
               userId: _userId,
-              experienceId: _otherExperienceId,
+              experienceId: _otherMoorExperience.id.value,
             )
           ];
           for (final _experienceToDo in _experienceLikedList) {
@@ -287,16 +288,16 @@ void main() {
           final _moorExperience = domainExperienceToMoorExperience(_experience).copyWith(creatorId: Value(_userId));
           final _otherMoorExperience = _moorExperience.copyWith(title: const Value("Test"));
           // Act
-          final _experienceId = await _database.moorExperiencesDao.insertExperience(_moorExperience);
-          final _otherExperienceId = await _database.moorExperiencesDao.insertExperience(_otherMoorExperience);
+          await _database.moorExperiencesDao.insertExperience(_moorExperience);
+          await _database.moorExperiencesDao.insertExperience(_otherMoorExperience);
           final _experienceImageUrlList = [
             ExperienceImageUrlsCompanion.insert(
               imageUrl: "test/test1.jpg",
-              experienceId: _experienceId,
+              experienceId: _moorExperience.id.value,
             ),
             ExperienceImageUrlsCompanion.insert(
               imageUrl: "test/test1.jpg",
-              experienceId: _otherExperienceId,
+              experienceId: _otherMoorExperience.id.value,
             )
           ];
           for (final _experienceImageUrl in _experienceImageUrlList) {
@@ -324,8 +325,10 @@ void main() {
             username: const Value("charlie"),
             email: const Value("wew@lad.lel"),
           );
-          final _moorUserRickyId = await _database.moorUsersDao.insertUser(_moorUserRicky);
-          final _moorUserCharlieId = await _database.moorUsersDao.insertUser(_moorUserCharlie);
+          final _moorUserRickyId = _moorUserRicky.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserRicky);
+          final _moorUserCharlieId = _moorUserCharlie.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserCharlie);
           final _followRelation = UserFollowRelationsCompanion.insert(
             followedId: _moorUserRickyId,
             followingId: _moorUserCharlieId,
@@ -359,7 +362,8 @@ void main() {
           // Arrange
           const _searchTerm = "m";
           final _moorUserRicky = domainUserToMoorUserCompanion(_user);
-          final _moorUserRickyId = await _database.moorUsersDao.insertUser(_moorUserRicky);
+          final _moorUserRickyId = _moorUserRicky.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserRicky);
           final _experienceCompanionList = _createExperienceList(_moorUserRickyId, _difficulty);
           final _tagCompanionList = _createTagList(_moorUserRickyId);
           final _tagWithUserList = <MoorTag>[];
@@ -389,7 +393,8 @@ void main() {
         () async {
           // Arrange
           final _moorUserRicky = domainUserToMoorUserCompanion(_user);
-          final _moorUserRickyId = await _database.moorUsersDao.insertUser(_moorUserRicky);
+          final _moorUserRickyId = _moorUserRicky.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserRicky);
           final _experienceCompanionList = _createExperienceList(_moorUserRickyId, _difficulty);
           final _tagCompanionList = _createTagList(_moorUserRickyId);
           final _tagWithUserList = <MoorTag>[];
@@ -419,7 +424,8 @@ void main() {
         () async {
           // Arrange
           final _moorUserRicky = domainUserToMoorUserCompanion(_user);
-          final _moorUserRickyId = await _database.moorUsersDao.insertUser(_moorUserRicky);
+          final _moorUserRickyId = _moorUserRicky.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserRicky);
           final _experienceCompanionList = _createExperienceList(_moorUserRickyId, _difficulty);
           final _tagCompanionList = _createTagList(_moorUserRickyId);
           final _tagWithUserList = <MoorTag>[];
@@ -451,7 +457,8 @@ void main() {
         () async {
           // Arrange
           final _moorUserRicky = domainUserToMoorUserCompanion(_user);
-          final _moorUserRickyId = await _database.moorUsersDao.insertUser(_moorUserRicky);
+          final _moorUserRickyId = _moorUserRicky.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserRicky);
           final _experienceCompanionList = _createExperienceList(_moorUserRickyId, _difficulty);
           final _tagCompanionList = _createTagList(_moorUserRickyId);
           final _tagWithUserList = <MoorTag>[];
@@ -481,7 +488,8 @@ void main() {
         () async {
           // Arrange
           final _moorUserRicky = domainUserToMoorUserCompanion(_user);
-          final _moorUserRickyId = await _database.moorUsersDao.insertUser(_moorUserRicky);
+          final _moorUserRickyId = _moorUserRicky.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserRicky);
           final _experienceCompanionList = _createExperienceList(_moorUserRickyId, _difficulty);
           final _tagCompanionList = _createTagList(_moorUserRickyId);
           final _tagWithUserList = <MoorTag>[];
@@ -501,10 +509,8 @@ void main() {
               userId: _moorUserRickyId,
               experienceId: _experienceWithRelations.experience.id,
             );
-            final _experienceDoneId = await _database.moorExperiencesDao.insertExperienceDone(_experienceDone);
-            if (_experienceDoneId == _experienceDone.experienceId.value) {
-              _experienceList.add(moorExperienceToDomainExperience(_experienceWithRelations));
-            }
+            await _database.moorExperiencesDao.insertExperienceDone(_experienceDone);
+            _experienceList.add(moorExperienceToDomainExperience(_experienceWithRelations));
           }
           final _mainFeedStream = _database.moorExperiencesDao.watchExperiencesDone(_moorUserRickyId);
           // Assert
@@ -516,7 +522,8 @@ void main() {
         () async {
           // Arrange
           final _moorUserRicky = domainUserToMoorUserCompanion(_user);
-          final _moorUserRickyId = await _database.moorUsersDao.insertUser(_moorUserRicky);
+          final _moorUserRickyId = _moorUserRicky.id.value;
+          await _database.moorUsersDao.insertUser(_moorUserRicky);
           final _experienceCompanionList = _createExperienceList(_moorUserRickyId, _difficulty);
           final _tagCompanionList = _createTagList(_moorUserRickyId);
           final _tagWithUserList = <MoorTag>[];
@@ -536,10 +543,8 @@ void main() {
               userId: _moorUserRickyId,
               experienceId: _experienceWithRelations.experience.id,
             );
-            final _experienceLikedId = await _database.moorExperiencesDao.insertExperienceLiked(_experienceLiked);
-            if (_experienceLikedId == _experienceLiked.experienceId.value) {
-              _experienceList.add(moorExperienceToDomainExperience(_experienceWithRelations));
-            }
+            await _database.moorExperiencesDao.insertExperienceLiked(_experienceLiked);
+            _experienceList.add(moorExperienceToDomainExperience(_experienceWithRelations));
           }
           final _mainFeedStream = _database.moorExperiencesDao.watchExperiencesLiked(_moorUserRickyId);
           // Assert
@@ -550,12 +555,12 @@ void main() {
   );
 }
 
-Future<List<int>> _insertTagList(List<MoorTagsCompanion> _tagCompanionList, Database _database, List<MoorTag> _tagList) async {
-  final _tagIds = <int>[];
+Future<List<String>> _insertTagList(List<MoorTagsCompanion> _tagCompanionList, Database _database, List<MoorTag> _tagList) async {
+  final _tagIds = <String>[];
   for (final _tag in _tagCompanionList) {
-    final _tagId = await _database.moorTagsDao.insertTag(_tag);
-    _tagIds.add(_tagId);
-    final _moorTag = await _database.moorTagsDao.getTagById(_tagId);
+    await _database.moorTagsDao.insertTag(_tag);
+    _tagIds.add(_tag.id.value);
+    final _moorTag = await _database.moorTagsDao.getTagById(_tag.id.value);
     _tagList.add(_moorTag);
   }
   return _tagIds;
@@ -564,12 +569,13 @@ Future<List<int>> _insertTagList(List<MoorTagsCompanion> _tagCompanionList, Data
 Future<MoorExperienceWithRelations> _insertExperienceAndRelations(
   Database _database,
   MoorExperiencesCompanion _experienceCompanion,
-  int _moorUserRickyId,
+  String _moorUserRickyId,
   List<MoorTag> _tagList,
   Objective _objective,
   Reward _reward,
 ) async {
-  final _insertedExperienceId = await _database.moorExperiencesDao.insertExperience(_experienceCompanion);
+  final _insertedExperienceId = _experienceCompanion.id.value;
+  await _database.moorExperiencesDao.insertExperience(_experienceCompanion);
   final _moorExperience = await _database.moorExperiencesDao.getExperienceById(_insertedExperienceId);
   final _moorUser = await _database.moorUsersDao.getUserById(_moorUserRickyId);
   for (final _tag in _tagList) {
@@ -594,10 +600,10 @@ Future<MoorExperienceWithRelations> _insertExperienceAndRelations(
   }
   final _objectiveCompanion = domainObjectiveToMoorObjective(_insertedExperienceId, _objective);
   final _rewardCompanion = domainRewardToMoorReward(_insertedExperienceId, _reward);
-  final _objectiveId = await _database.moorObjectivesDao.insertObjective(_objectiveCompanion);
-  final _rewardId = await _database.moorRewardsDao.insertReward(_rewardCompanion);
-  final _moorObjective = await _database.moorObjectivesDao.getObjectiveById(_objectiveId);
-  final _moorReward = await _database.moorRewardsDao.getRewardById(_rewardId);
+  await _database.moorObjectivesDao.insertObjective(_objectiveCompanion);
+  await _database.moorRewardsDao.insertReward(_rewardCompanion);
+  final _moorObjective = await _database.moorObjectivesDao.getObjectiveById(_objectiveCompanion.id.value);
+  final _moorReward = await _database.moorRewardsDao.getRewardById(_rewardCompanion.id.value);
   final _moorExperienceWithRelations = MoorExperienceWithRelations(
     experience: _moorExperience,
     creator: _moorUser,
@@ -617,7 +623,7 @@ List<Experience> _moorExperienceWithRelationsListToExperienceList(List<MoorExper
       .toList();
 }
 
-List<MoorTagsCompanion> _createTagList(int _userId) {
+List<MoorTagsCompanion> _createTagList(String _userId) {
   final _moorTagSport = domainTagToMoorTag(getValidTag()).copyWith(
     creatorId: Value(_userId),
   );
@@ -646,7 +652,7 @@ List<MoorTagsCompanion> _createTagList(int _userId) {
   return _moorTagList;
 }
 
-List<MoorExperiencesCompanion> _createExperienceList(int _userId, int _difficulty) {
+List<MoorExperiencesCompanion> _createExperienceList(String _userId, int _difficulty) {
   final _experienceIpsum = domainExperienceToMoorExperience(getValidExperience()).copyWith(creatorId: Value(_userId));
   final _experienceBro = _experienceIpsum.copyWith(
     title: const Value("Malesuada fames ac ante"),
@@ -671,11 +677,11 @@ List<MoorExperiencesCompanion> _createExperienceList(int _userId, int _difficult
   return _experienceList;
 }
 
-Future<int> _insertCreator(Database _database) async {
+Future<String> _insertCreator(Database _database) async {
   final _user = getValidUser();
   final _moorUserRicky = domainUserToMoorUserCompanion(_user).copyWith(
     isLoggedIn: const Value(false),
   );
-  final _userId = await _database.moorUsersDao.insertUser(_moorUserRicky);
-  return _userId;
+  await _database.moorUsersDao.insertUser(_moorUserRicky);
+  return _moorUserRicky.id.value;
 }

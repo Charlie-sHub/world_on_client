@@ -22,6 +22,9 @@ class MoorAchievements extends Table {
   DateTimeColumn get modificationDate => dateTime()();
 
   TextColumn get creatorId => text().customConstraint("REFERENCES moor_users(id)")();
+
+  @override
+  Set<Column> get primaryKey => {id};
 }
 
 class AchievementTags extends Table {

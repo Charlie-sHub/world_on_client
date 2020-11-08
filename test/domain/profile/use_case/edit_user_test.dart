@@ -10,6 +10,7 @@ import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 import 'package:worldon/domain/profile/use_case/edit_user.dart';
 import 'package:worldon/injection.dart';
@@ -28,9 +29,9 @@ void main() {
       useCase = EditUser(mockProfileRepository);
     },
   );
-  final randomUser = User.empty().copyWith(id: 1, adminPowers: false);
-  final admin = User.empty().copyWith(id: 2, adminPowers: true);
-  final actualUser = User.empty().copyWith(id: 3, adminPowers: false);
+  final randomUser = User.empty().copyWith(id: UniqueId(), adminPowers: false);
+  final admin = User.empty().copyWith(id: UniqueId(), adminPowers: true);
+  final actualUser = User.empty().copyWith(id: UniqueId(), adminPowers: false);
   final emailAddress = EmailAddress("test@test.test");
   final username = Name("TestUser");
   final params = Params(userToEdit: actualUser);

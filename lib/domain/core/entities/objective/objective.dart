@@ -27,7 +27,7 @@ abstract class Objective implements _$Objective {
   }) = _Objective;
 
   factory Objective.empty() => Objective(
-    id: UniqueId(),
+        id: UniqueId(),
         description: EntityDescription(""),
         coordinates: Coordinates.empty(),
         imageURL: "",

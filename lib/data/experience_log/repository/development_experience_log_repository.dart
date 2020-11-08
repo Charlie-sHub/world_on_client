@@ -57,8 +57,8 @@ class DevelopmentExperienceLogRepository implements ExperienceLogRepositoryInter
     try {
       final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
       return _moorUserOption.fold(
-          () => throw UnAuthenticatedError,
-          (_moorUserWithRelations) async {
+        () => throw UnAuthenticatedError,
+        (_moorUserWithRelations) async {
           final _userToDoExperience = UserToDoExperience(
             userId: _moorUserWithRelations.user.id,
             experienceId: experienceId.getOrCrash(),

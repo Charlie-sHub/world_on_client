@@ -26,15 +26,15 @@ void main() {
     () async {
       // Arrange
       final _userId = await _insertCreator(_database);
-      final _experience = domainExperienceToMoorExperience(getValidExperience()).copyWith(creatorId: Value(_userId));
+      final _moorExperience = domainExperienceToMoorExperience(getValidExperience()).copyWith(creatorId: Value(_userId));
       final _reward = getValidReward();
       // Act
-      final _experienceId = await _database.moorExperiencesDao.insertExperience(_experience);
-      final _moorRewardCompanion = domainRewardToMoorReward(_experienceId, _reward);
-      final _rewardId = await _database.moorRewardsDao.insertReward(_moorRewardCompanion);
-      final _moorReward = await _database.moorRewardsDao.getRewardById(_rewardId);
+      await _database.moorExperiencesDao.insertExperience(_moorExperience);
+      final _moorRewardCompanion = domainRewardToMoorReward(_moorExperience.id.value, _reward);
+      await _database.moorRewardsDao.insertReward(_moorRewardCompanion);
+      final _moorReward = await _database.moorRewardsDao.getRewardById(_moorRewardCompanion.id.value);
       // Assert
-      expect(_moorReward.toCompanion(true), _moorRewardCompanion.copyWith(id: Value(_rewardId)));
+      expect(_moorReward.toCompanion(true), _moorRewardCompanion.copyWith(id: Value(_moorRewardCompanion.id.value)));
     },
   );
   test(
@@ -42,11 +42,11 @@ void main() {
     () async {
       // Arrange
       final _userId = await _insertCreator(_database);
-      final _experience = domainExperienceToMoorExperience(getValidExperience()).copyWith(creatorId: Value(_userId));
+      final _moorExperience = domainExperienceToMoorExperience(getValidExperience()).copyWith(creatorId: Value(_userId));
       final _reward = getValidReward();
       // Act
-      final _experienceId = await _database.moorExperiencesDao.insertExperience(_experience);
-      final _moorRewardCompanion = domainRewardToMoorReward(_experienceId, _reward);
+      await _database.moorExperiencesDao.insertExperience(_moorExperience);
+      final _moorRewardCompanion = domainRewardToMoorReward(_moorExperience.id.value, _reward);
       await _database.moorRewardsDao.insertReward(_moorRewardCompanion);
       final _rewardsDeletedAmount = await _database.moorRewardsDao.deleteAllRewards();
       // Assert
@@ -55,11 +55,11 @@ void main() {
   );
 }
 
-Future<int> _insertCreator(Database _database) async {
+Future<String> _insertCreator(Database _database) async {
   final _user = getValidUser();
   final _moorUserRicky = domainUserToMoorUserCompanion(_user).copyWith(
     isLoggedIn: const Value(false),
   );
-  final _userId = await _database.moorUsersDao.insertUser(_moorUserRicky);
-  return _userId;
+  await _database.moorUsersDao.insertUser(_moorUserRicky);
+  return _moorUserRicky.id.value;
 }

@@ -52,10 +52,10 @@ void main() {
           final _userId = await _insertCreator(_database);
           final _moorAchievement = domainAchievementToMoorAchievement(_achievement).copyWith(creatorId: Value(_userId));
           // Act
-          final _achievementId = await _database.moorAchievementsDao.insertAchievement(_moorAchievement);
-          final _achievementFromDb = await _database.moorAchievementsDao.getAchievementById(_achievementId);
+          await _database.moorAchievementsDao.insertAchievement(_moorAchievement);
+          final _achievementFromDb = await _database.moorAchievementsDao.getAchievementById(_moorAchievement.id.value);
           // Assert
-          expect(_achievementFromDb.toCompanion(true), _moorAchievement.copyWith(id: Value(_achievementId)));
+          expect(_achievementFromDb.toCompanion(true), _moorAchievement);
         },
       );
       test(
@@ -65,10 +65,10 @@ void main() {
           final _userId = await _insertCreator(_database);
           final _moorAchievement = domainAchievementToMoorAchievement(_achievement).copyWith(creatorId: Value(_userId));
           // Act
-          final _achievementId = await _database.moorAchievementsDao.insertAchievement(_moorAchievement);
+          await _database.moorAchievementsDao.insertAchievement(_moorAchievement);
           final _userAchievement = UserAchievementsCompanion.insert(
             userId: _userId,
-            achievementId: _achievementId,
+            achievementId: _moorAchievement.id.value,
           );
           final _userAchievementId = await _database.moorAchievementsDao.insertUserAchievement(_userAchievement);
           // Assert
@@ -103,11 +103,11 @@ void main() {
           final _userId = await _insertCreator(_database);
           final _moorAchievement = domainAchievementToMoorAchievement(_achievement).copyWith(creatorId: Value(_userId));
           // Act
-          final _achievementId = await _database.moorAchievementsDao.insertAchievement(_moorAchievement);
+          await _database.moorAchievementsDao.insertAchievement(_moorAchievement);
           final _userAchievementList = [
             UserAchievementsCompanion.insert(
               userId: _userId,
-              achievementId: _achievementId,
+              achievementId: _moorAchievement.id.value,
             ),
           ];
           for (final _userAchievement in _userAchievementList) {
@@ -129,21 +129,21 @@ void main() {
       final _moorTag = domainTagToMoorTag(getValidTag()).copyWith(creatorId: Value(_userId));
       final _achievementList = <Achievement>[];
       // Act
-      final _moorTagId = await _database.moorTagsDao.insertTag(_moorTag);
+      await _database.moorTagsDao.insertTag(_moorTag);
       for (final _moorAchievement in _moorAchievementList) {
-        final _achievementId = await _database.moorAchievementsDao.insertAchievement(_moorAchievement);
+        await _database.moorAchievementsDao.insertAchievement(_moorAchievement);
         final _achievementTagCompanion = AchievementTagsCompanion.insert(
-          tagId: _moorTagId,
-          achievementId: _achievementId,
+          tagId: _moorTag.id.value,
+          achievementId: _moorAchievement.id.value,
         );
         await _database.moorTagsDao.insertAchievementTag(_achievementTagCompanion);
         final _userAchievement = UserAchievementsCompanion.insert(
           userId: _userId,
-          achievementId: _achievementId,
+          achievementId: _moorAchievement.id.value,
         );
         await _database.moorAchievementsDao.insertUserAchievement(_userAchievement);
-        final _moorTagFromDb = await _database.moorTagsDao.getTagById(_moorTagId);
-        final _achievementFromDb = await _database.moorAchievementsDao.getAchievementById(_achievementId);
+        final _moorTagFromDb = await _database.moorTagsDao.getTagById(_moorTag.id.value);
+        final _achievementFromDb = await _database.moorAchievementsDao.getAchievementById(_moorAchievement.id.value);
         final _achievementWithRelations = MoorAchievementWithRelations(
           achievement: _achievementFromDb,
           tags: [_moorTagFromDb],
@@ -164,7 +164,7 @@ void main() {
   );
 }
 
-List<MoorAchievementsCompanion> _createAchievementList(int _userId) {
+List<MoorAchievementsCompanion> _createAchievementList(String _userId) {
   final _achievement = getValidAchievement();
   final _moorAchievementHardest = domainAchievementToMoorAchievement(_achievement).copyWith(
     creatorId: Value(_userId),
@@ -192,11 +192,11 @@ List<MoorAchievementsCompanion> _createAchievementList(int _userId) {
   return _moorAchievementList;
 }
 
-Future<int> _insertCreator(Database _database) async {
+Future<String> _insertCreator(Database _database) async {
   final _user = getValidUser();
   final _moorUserRicky = domainUserToMoorUserCompanion(_user).copyWith(
     isLoggedIn: const Value(false),
   );
-  final _userId = await _database.moorUsersDao.insertUser(_moorUserRicky);
-  return _userId;
+  await _database.moorUsersDao.insertUser(_moorUserRicky);
+  return _user.id.getOrCrash();
 }

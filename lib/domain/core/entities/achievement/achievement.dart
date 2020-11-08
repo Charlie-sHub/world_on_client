@@ -39,7 +39,7 @@ abstract class Achievement implements _$Achievement {
   }) = _Achievement;
 
   factory Achievement.empty() => Achievement(
-    id: UniqueId(),
+        id: UniqueId(),
         name: Name(""),
         description: EntityDescription(""),
         imageURL: "",

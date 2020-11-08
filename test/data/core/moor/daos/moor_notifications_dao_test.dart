@@ -39,17 +39,17 @@ void main() {
     "Should insert a notification",
     () async {
       // Arrange
-      final _receiverId = await _database.moorUsersDao.insertUser(_moorUserRicky);
-      final _senderId = await _database.moorUsersDao.insertUser(_moorUserCharlie);
+      await _database.moorUsersDao.insertUser(_moorUserRicky);
+      await _database.moorUsersDao.insertUser(_moorUserCharlie);
       final _notificationCompanion = domainNotificationToMoorNotification(_notification).copyWith(
-        senderId: Value(_senderId),
-        receiverId: Value(_receiverId),
+        senderId: Value(_moorUserCharlie.id.value),
+        receiverId: Value(_moorUserRicky.id.value),
       );
       // Act
-      final _insertedNotificationId = await _database.moorNotificationsDao.insertNotification(_notificationCompanion);
-      final _moorNotification = await _database.moorNotificationsDao.getNotificationById(_insertedNotificationId);
+      await _database.moorNotificationsDao.insertNotification(_notificationCompanion);
+      final _moorNotification = await _database.moorNotificationsDao.getNotificationById(_notificationCompanion.id.value);
       // Assert
-      expect(_moorNotification.toCompanion(true), _notificationCompanion.copyWith(id: Value(_insertedNotificationId)));
+      expect(_moorNotification.toCompanion(true), _notificationCompanion);
     },
   );
   group(
@@ -59,15 +59,15 @@ void main() {
         "Should delete a notification",
         () async {
           // Arrange
-          final _receiverId = await _database.moorUsersDao.insertUser(_moorUserRicky);
-          final _senderId = await _database.moorUsersDao.insertUser(_moorUserCharlie);
+          await _database.moorUsersDao.insertUser(_moorUserRicky);
+          await _database.moorUsersDao.insertUser(_moorUserCharlie);
           final _notificationCompanion = domainNotificationToMoorNotification(_notification).copyWith(
-            senderId: Value(_senderId),
-            receiverId: Value(_receiverId),
+            senderId: Value(_moorUserCharlie.id.value),
+            receiverId: Value(_moorUserRicky.id.value),
           );
           // Act
-          final _insertedNotificationId = await _database.moorNotificationsDao.insertNotification(_notificationCompanion);
-          final _moorNotification = await _database.moorNotificationsDao.getNotificationById(_insertedNotificationId);
+          await _database.moorNotificationsDao.insertNotification(_notificationCompanion);
+          final _moorNotification = await _database.moorNotificationsDao.getNotificationById(_notificationCompanion.id.value);
           final _deletedAmount = await _database.moorNotificationsDao.deleteNotification(_moorNotification);
           // Assert
           expect(_deletedAmount, 1);
@@ -77,9 +77,9 @@ void main() {
         "Should delete all notifications",
         () async {
           // Arrange
-          final _rickyId = await _database.moorUsersDao.insertUser(_moorUserRicky);
-          final _charlieId = await _database.moorUsersDao.insertUser(_moorUserCharlie);
-          final _notificationsList = _createNotificationList(_notification, _charlieId, _rickyId);
+          await _database.moorUsersDao.insertUser(_moorUserRicky);
+          await _database.moorUsersDao.insertUser(_moorUserCharlie);
+          final _notificationsList = _createNotificationList(_notification, _moorUserCharlie.id.value, _moorUserRicky.id.value);
           // Act
           for (final _moorNotification in _notificationsList) {
             await _database.moorNotificationsDao.insertNotification(_moorNotification);
@@ -95,15 +95,15 @@ void main() {
     "Should emit a stream of all notifications of a user",
     () async {
       // Arrange
-      final _rickyId = await _database.moorUsersDao.insertUser(_moorUserRicky);
-      final _charlieId = await _database.moorUsersDao.insertUser(_moorUserCharlie);
-      final _notificationsList = _createNotificationList(_notification, _charlieId, _rickyId);
+      await _database.moorUsersDao.insertUser(_moorUserRicky);
+      await _database.moorUsersDao.insertUser(_moorUserCharlie);
+      final _notificationsList = _createNotificationList(_notification, _moorUserCharlie.id.value, _moorUserRicky.id.value);
       final _userNotificationsList = [];
       // Act
       for (final _moorNotification in _notificationsList) {
-        final _notificationId = await _database.moorNotificationsDao.insertNotification(_moorNotification);
-        if (_moorNotification.receiverId.value == _charlieId) {
-          _userNotificationsList.add(_moorNotification.copyWith(id: Value(_notificationId)));
+        await _database.moorNotificationsDao.insertNotification(_moorNotification);
+        if (_moorNotification.receiverId.value == _moorUserCharlie.id.value) {
+          _userNotificationsList.add(_moorNotification.copyWith(id: Value(_moorNotification.id.value)));
         }
       }
       final _notificationListStream = _database.moorNotificationsDao.watchNotifications();
@@ -122,7 +122,7 @@ void main() {
   );
 }
 
-List<MoorNotificationsCompanion> _createNotificationList(Notification notification, int someId, int otherId) {
+List<MoorNotificationsCompanion> _createNotificationList(Notification notification, String someId, String otherId) {
   return [
     domainNotificationToMoorNotification(notification).copyWith(
       senderId: Value(someId),
