@@ -17,18 +17,17 @@ class _$AchievementDtoTearOff {
   const _$AchievementDtoTearOff();
 
 // ignore: unused_element
-  _AchievementDto call(
-      {@required String id,
-        @required String name,
-        @required String description,
-        @required String imageURL,
-        @required String type,
-        @required int requisite,
-        @required int experiencePoints,
-        @required String creatorId,
-        @required String creationDate,
-        @required String modificationDate,
-        @required Set<TagDto> tags}) {
+  _AchievementDto call({@required String id,
+    @required String name,
+    @required String description,
+    @required String imageURL,
+    @required String type,
+    @required int requisite,
+    @required int experiencePoints,
+    @required String creatorId,
+    @required String creationDate,
+    @required String modificationDate,
+    @required Set<TagDto> tags}) {
     return _AchievementDto(
       id: id,
       name: name,
@@ -57,17 +56,13 @@ const $AchievementDto = _$AchievementDtoTearOff();
 /// @nodoc
 mixin _$AchievementDto {
   String get id;
-  
   String get name;
   String get description;
   String get imageURL;
   String get type;
   int get requisite;
-  
   int get experiencePoints;
-  
   String get creatorId;
-  
   String get creationDate;
   String get modificationDate;
   Set<TagDto> get tags;
@@ -259,7 +254,7 @@ class __$AchievementDtoCopyWithImpl<$Res> extends _$AchievementDtoCopyWithImpl<$
   final String modificationDate;
   @override
   final Set<TagDto> tags;
-  
+
   @override
   String toString() {
     return 'AchievementDto(id: $id, name: $name, description: $description, imageURL: $imageURL, type: $type, requisite: $requisite, experiencePoints: $experiencePoints, creatorId: $creatorId, creationDate: $creationDate, modificationDate: $modificationDate, tags: $tags)';
@@ -359,13 +354,10 @@ abstract class _AchievementDto extends AchievementDto {
   String get type;
   @override
   int get requisite;
-  
   @override
   int get experiencePoints;
-  
   @override
   String get creatorId;
-  
   @override
   String get creationDate;
   @override

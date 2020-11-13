@@ -51,41 +51,49 @@ abstract class $AuthenticationDomainFailureCopyWith<T, $Res> {
 }
 
 /// @nodoc
-class _$AuthenticationDomainFailureCopyWithImpl<T, $Res> implements $AuthenticationDomainFailureCopyWith<T, $Res> {
+class _$AuthenticationDomainFailureCopyWithImpl<T, $Res>
+  implements $AuthenticationDomainFailureCopyWith<T, $Res> {
   _$AuthenticationDomainFailureCopyWithImpl(this._value, this._then);
-
+  
   final AuthenticationDomainFailure<T> _value;
-
+  
   // ignore: unused_field
   final $Res Function(AuthenticationDomainFailure<T>) _then;
 }
 
 /// @nodoc
 abstract class $CancelledByUserCopyWith<T, $Res> {
-  factory $CancelledByUserCopyWith(CancelledByUser<T> value, $Res Function(CancelledByUser<T>) then) = _$CancelledByUserCopyWithImpl<T, $Res>;
+  factory $CancelledByUserCopyWith(CancelledByUser<T> value, $Res Function(CancelledByUser<T>) then) =
+  _$CancelledByUserCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class _$CancelledByUserCopyWithImpl<T, $Res> extends _$AuthenticationDomainFailureCopyWithImpl<T, $Res> implements $CancelledByUserCopyWith<T, $Res> {
-  _$CancelledByUserCopyWithImpl(CancelledByUser<T> _value, $Res Function(CancelledByUser<T>) _then) : super(_value, (v) => _then(v as CancelledByUser<T>));
-
+class _$CancelledByUserCopyWithImpl<T, $Res> extends _$AuthenticationDomainFailureCopyWithImpl<T, $Res>
+  implements $CancelledByUserCopyWith<T, $Res> {
+  _$CancelledByUserCopyWithImpl(CancelledByUser<T> _value, $Res Function(CancelledByUser<T>) _then)
+    : super(_value, (v) => _then(v as CancelledByUser<T>));
+  
   @override
   CancelledByUser<T> get _value => super._value as CancelledByUser<T>;
 }
 
 /// @nodoc
-class _$CancelledByUser<T> with DiagnosticableTreeMixin implements CancelledByUser<T> {
+class _$CancelledByUser<T>
+  with DiagnosticableTreeMixin
+  implements CancelledByUser<T> {
   const _$CancelledByUser();
-
+  
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AuthenticationDomainFailure<$T>.cancelledByUser()';
   }
-
+  
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'AuthenticationDomainFailure<$T>.cancelledByUser'));
+    properties
+      ..add(DiagnosticsProperty(
+        'type', 'AuthenticationDomainFailure<$T>.cancelledByUser'));
   }
 
   @override

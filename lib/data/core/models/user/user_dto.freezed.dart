@@ -17,33 +17,32 @@ class _$UserDtoTearOff {
   const _$UserDtoTearOff();
 
 // ignore: unused_element
-  _UserDto call(
-      {@required String id,
-        @required String name,
-        @required String username,
-        @required String password,
-        @required String email,
-        @required String birthday,
-        @required String description,
-        @required String imageURL,
-        @required int level,
-        @required int experiencePoints,
-        @required bool privacy,
-        @required bool adminPowers,
-        @required bool enabled,
-        @required String lastLogin,
-        @required String creationDate,
-        @required String modificationDate,
-        @required OptionsDto options,
-        @required Set<String> blockedUsersIds,
-        @required Set<String> followedUsersIds,
-        @required Set<String> interestsIds,
-        @required Set<String> achievementsIds,
-        @required Set<String> experiencesDoneIds,
-        @required Set<String> experiencesLikedIds,
-        @required Set<String> experiencesToDoIds,
-        @required Set<DeviceDto> devices,
-        @required Set<SystemDto> systems}) {
+  _UserDto call({@required String id,
+    @required String name,
+    @required String username,
+    @required String password,
+    @required String email,
+    @required String birthday,
+    @required String description,
+    @required String imageURL,
+    @required int level,
+    @required int experiencePoints,
+    @required bool privacy,
+    @required bool adminPowers,
+    @required bool enabled,
+    @required String lastLogin,
+    @required String creationDate,
+    @required String modificationDate,
+    @required OptionsDto options,
+    @required Set<String> blockedUsersIds,
+    @required Set<String> followedUsersIds,
+    @required Set<String> interestsIds,
+    @required Set<String> achievementsIds,
+    @required Set<String> experiencesDoneIds,
+    @required Set<String> experiencesLikedIds,
+    @required Set<String> experiencesToDoIds,
+    @required Set<DeviceDto> devices,
+    @required Set<SystemDto> systems}) {
     return _UserDto(
       id: id,
       name: name,
@@ -87,54 +86,34 @@ const $UserDto = _$UserDtoTearOff();
 /// @nodoc
 mixin _$UserDto {
   String get id;
-  
   String get name;
   String get username; // Shouldn't this be encrypted in some way?
+// Maybe it shouldn't even be part of the dto, as Firebase handles at login time
   String get password;
   String get email;
   String get birthday;
   String get description;
-  
   String get imageURL;
-  
   int get level;
-  
   int get experiencePoints;
-  
   bool get privacy;
-  
   bool get adminPowers;
-  
   bool get enabled;
-  
   String get lastLogin;
-  
   String get creationDate;
-  
   String get modificationDate;
-  
   OptionsDto get options;
-  
   Set<String> get blockedUsersIds;
-  
   Set<String> get followedUsersIds;
-  
   Set<String> get interestsIds;
-  
   Set<String> get achievementsIds;
-  
   Set<String> get experiencesDoneIds;
-  
   Set<String> get experiencesLikedIds;
-  
   Set<String> get experiencesToDoIds;
-  
   Set<DeviceDto> get devices;
-  
   Set<SystemDto> get systems;
-  
+
   Map<String, dynamic> toJson();
-  
   $UserDtoCopyWith<UserDto> get copyWith;
 }
 
@@ -468,6 +447,7 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
   @override
   final String username;
   @override // Shouldn't this be encrypted in some way?
+// Maybe it shouldn't even be part of the dto, as Firebase handles at login time
   final String password;
   @override
   final String email;
@@ -513,7 +493,7 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
   final Set<DeviceDto> devices;
   @override
   final Set<SystemDto> systems;
-  
+
   @override
   String toString() {
     return 'UserDto(id: $id, name: $name, username: $username, password: $password, email: $email, birthday: $birthday, description: $description, imageURL: $imageURL, level: $level, experiencePoints: $experiencePoints, privacy: $privacy, adminPowers: $adminPowers, enabled: $enabled, lastLogin: $lastLogin, creationDate: $creationDate, modificationDate: $modificationDate, options: $options, blockedUsersIds: $blockedUsersIds, followedUsersIds: $followedUsersIds, interestsIds: $interestsIds, achievementsIds: $achievementsIds, experiencesDoneIds: $experiencesDoneIds, experiencesLikedIds: $experiencesLikedIds, experiencesToDoIds: $experiencesToDoIds, devices: $devices, systems: $systems)';
@@ -636,6 +616,7 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
 
 abstract class _UserDto extends UserDto {
   const _UserDto._() : super._();
+  
   const factory _UserDto({@required String id,
     @required String name,
     @required String username,
@@ -662,17 +643,20 @@ abstract class _UserDto extends UserDto {
     @required Set<String> experiencesToDoIds,
     @required Set<DeviceDto> devices,
     @required Set<SystemDto> systems}) = _$_UserDto;
-
+  
   factory _UserDto.fromJson(Map<String, dynamic> json) = _$_UserDto.fromJson;
-
+  
   @override
   String get id;
-
+  
   @override
   String get name;
+  
   @override
   String get username;
+  
   @override // Shouldn't this be encrypted in some way?
+// Maybe it shouldn't even be part of the dto, as Firebase handles at login time
   String get password;
   @override
   String get email;
@@ -698,31 +682,22 @@ abstract class _UserDto extends UserDto {
   String get creationDate;
   @override
   String get modificationDate;
-
   @override
   OptionsDto get options;
-
   @override
   Set<String> get blockedUsersIds;
-
   @override
   Set<String> get followedUsersIds;
-
   @override
   Set<String> get interestsIds;
-
   @override
   Set<String> get achievementsIds;
-
   @override
   Set<String> get experiencesDoneIds;
-
   @override
   Set<String> get experiencesLikedIds;
-
   @override
   Set<String> get experiencesToDoIds;
-
   @override
   Set<DeviceDto> get devices;
   @override

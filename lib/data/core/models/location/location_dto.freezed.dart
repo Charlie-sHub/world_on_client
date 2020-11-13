@@ -166,12 +166,12 @@ class __$LocationDtoCopyWithImpl<$Res> extends _$LocationDtoCopyWithImpl<$Res>
   final String postalCode;
   @override
   final Set<ExperienceDto> experiences;
-  
+
   @override
   String toString() {
     return 'LocationDto(id: $id, city: $city, country: $country, postalCode: $postalCode, experiences: $experiences)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -230,8 +230,10 @@ abstract class _LocationDto extends LocationDto {
   
   @override
   String get country;
+  
   @override
   String get postalCode;
+  
   @override
   Set<ExperienceDto> get experiences;
   @override

@@ -42,7 +42,6 @@ const $SystemDto = _$SystemDtoTearOff();
 /// @nodoc
 mixin _$SystemDto {
   String get id;
-  
   String get name;
   String get type;
   String get company;
@@ -55,7 +54,6 @@ mixin _$SystemDto {
 abstract class $SystemDtoCopyWith<$Res> {
   factory $SystemDtoCopyWith(SystemDto value, $Res Function(SystemDto) then) =
   _$SystemDtoCopyWithImpl<$Res>;
-  
   $Res call({String id, String name, String type, String company});
 }
 
@@ -141,7 +139,7 @@ class __$SystemDtoCopyWithImpl<$Res> extends _$SystemDtoCopyWithImpl<$Res>
   final String type;
   @override
   final String company;
-  
+
   @override
   String toString() {
     return 'SystemDto(id: $id, name: $name, type: $type, company: $company)';

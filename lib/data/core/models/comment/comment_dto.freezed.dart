@@ -46,11 +46,8 @@ const $CommentDto = _$CommentDtoTearOff();
 /// @nodoc
 mixin _$CommentDto {
   String get id;
-  
   UserDto get poster;
-  
   String get experienceId;
-  
   String get content;
   String get creationDate;
   String get modificationDate;
@@ -202,7 +199,7 @@ class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res>
   final String creationDate;
   @override
   final String modificationDate;
-  
+
   @override
   String toString() {
     return 'CommentDto(id: $id, poster: $poster, experienceId: $experienceId, content: $content, creationDate: $creationDate, modificationDate: $modificationDate)';

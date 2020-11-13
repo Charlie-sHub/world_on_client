@@ -42,7 +42,6 @@ const $RewardDto = _$RewardDtoTearOff();
 /// @nodoc
 mixin _$RewardDto {
   String get id;
-  
   String get name;
   String get description;
   String get imageURL;
@@ -55,7 +54,6 @@ mixin _$RewardDto {
 abstract class $RewardDtoCopyWith<$Res> {
   factory $RewardDtoCopyWith(RewardDto value, $Res Function(RewardDto) then) =
   _$RewardDtoCopyWithImpl<$Res>;
-  
   $Res call({String id, String name, String description, String imageURL});
 }
 
@@ -143,7 +141,7 @@ class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res>
   final String description;
   @override
   final String imageURL;
-  
+
   @override
   String toString() {
     return 'RewardDto(id: $id, name: $name, description: $description, imageURL: $imageURL)';

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart' as dartz;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/data/core/models/device/device_dto.dart';
@@ -19,12 +20,13 @@ part 'user_dto.g.dart';
 @freezed
 abstract class UserDto implements _$UserDto {
   const UserDto._();
-
+  
   const factory UserDto({
     @required String id,
     @required String name,
     @required String username,
     // Shouldn't this be encrypted in some way?
+    // Maybe it shouldn't even be part of the dto, as Firebase handles at login time
     @required String password,
     @required String email,
     @required String birthday,
@@ -49,57 +51,57 @@ abstract class UserDto implements _$UserDto {
     @required Set<DeviceDto> devices,
     @required Set<SystemDto> systems,
   }) = _UserDto;
-
+  
   factory UserDto.fromDomain(User user) => UserDto(
-        id: user.id.getOrCrash(),
-        name: user.name.getOrCrash(),
-        username: user.username.getOrCrash(),
-        password: user.password.getOrCrash(),
-        email: user.email.getOrCrash(),
-        birthday: user.birthday.getOrCrash().toIso8601String(),
-        description: user.description.getOrCrash(),
-        imageURL: user.imageURL,
-        level: user.level.getOrCrash(),
-        experiencePoints: user.experiencePoints.getOrCrash(),
-        privacy: user.privacy,
-        adminPowers: user.adminPowers,
-        enabled: user.enabled,
-        lastLogin: user.lastLogin.getOrCrash().toIso8601String(),
-        creationDate: user.creationDate.getOrCrash().toIso8601String(),
-        modificationDate: user.modificationDate.getOrCrash().toIso8601String(),
-        options: OptionsDto.fromDomain(user.options),
-        blockedUsersIds: user.blockedUsersIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
-        followedUsersIds: user.followedUsersIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
-        interestsIds: user.interestsIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
-        achievementsIds: user.achievementsIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
-        experiencesDoneIds: user.experiencesDoneIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
-        experiencesLikedIds: user.experiencesLikedIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
-        experiencesToDoIds: user.experiencesToDoIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
-        devices: user.devices.map((device) => DeviceDto.fromDomain(device)).toSet(),
-        systems: user.systems.map((system) => SystemDto.fromDomain(system)).toSet(),
-      );
-
+    id: user.id.getOrCrash(),
+    name: user.name.getOrCrash(),
+    username: user.username.getOrCrash(),
+    password: user.password.getOrCrash(),
+    email: user.email.getOrCrash(),
+    birthday: user.birthday.getOrCrash().toIso8601String(),
+    description: user.description.getOrCrash(),
+    imageURL: user.imageURL,
+    level: user.level.getOrCrash(),
+    experiencePoints: user.experiencePoints.getOrCrash(),
+    privacy: user.privacy,
+    adminPowers: user.adminPowers,
+    enabled: user.enabled,
+    lastLogin: user.lastLogin.getOrCrash().toIso8601String(),
+    creationDate: user.creationDate.getOrCrash().toIso8601String(),
+    modificationDate: user.modificationDate.getOrCrash().toIso8601String(),
+    options: OptionsDto.fromDomain(user.options),
+    blockedUsersIds: user.blockedUsersIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
+    followedUsersIds: user.followedUsersIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
+    interestsIds: user.interestsIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
+    achievementsIds: user.achievementsIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
+    experiencesDoneIds: user.experiencesDoneIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
+    experiencesLikedIds: user.experiencesLikedIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
+    experiencesToDoIds: user.experiencesToDoIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
+    devices: user.devices.map((device) => DeviceDto.fromDomain(device)).toSet(),
+    systems: user.systems.map((system) => SystemDto.fromDomain(system)).toSet(),
+  );
+  
   User toDomain() => User(
-        id: UniqueId.fromUniqueString(id),
-        name: Name(name),
-        username: Name(username),
-        password: Password(password),
-        email: EmailAddress(email),
-        birthday: PastDate(DateTime.parse(birthday)),
-        description: EntityDescription(description),
-        imageURL: imageURL,
-        imageFileOption: dartz.none(),
-        level: UserLevel(level),
-        experiencePoints: ExperiencePoints(experiencePoints),
-        privacy: privacy,
-        adminPowers: adminPowers,
-        enabled: enabled,
-        lastLogin: PastDate(DateTime.parse(lastLogin)),
-        creationDate: PastDate(DateTime.parse(creationDate)),
-        modificationDate: PastDate(DateTime.parse(modificationDate)),
-        options: options.toDomain(),
-        blockedUsersIds: blockedUsersIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
-        followedUsersIds: followedUsersIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+    id: UniqueId.fromUniqueString(id),
+    name: Name(name),
+    username: Name(username),
+    password: Password(password),
+    email: EmailAddress(email),
+    birthday: PastDate(DateTime.parse(birthday)),
+    description: EntityDescription(description),
+    imageURL: imageURL,
+    imageFileOption: dartz.none(),
+    level: UserLevel(level),
+    experiencePoints: ExperiencePoints(experiencePoints),
+    privacy: privacy,
+    adminPowers: adminPowers,
+    enabled: enabled,
+    lastLogin: PastDate(DateTime.parse(lastLogin)),
+    creationDate: PastDate(DateTime.parse(creationDate)),
+    modificationDate: PastDate(DateTime.parse(modificationDate)),
+    options: options.toDomain(),
+    blockedUsersIds: blockedUsersIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+    followedUsersIds: followedUsersIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
         interestsIds: interestsIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
         achievementsIds: achievementsIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
         experiencesDoneIds: experiencesDoneIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
@@ -110,4 +112,10 @@ abstract class UserDto implements _$UserDto {
       );
 
   factory UserDto.fromJson(Map<String, dynamic> json) => _$UserDtoFromJson(json);
+
+  factory UserDto.fromFirestore(DocumentSnapshot document) => UserDto.fromJson(
+        document.data(),
+      ).copyWith(
+        id: document.id,
+      );
 }

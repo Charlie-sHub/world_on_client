@@ -42,7 +42,6 @@ const $ObjectiveDto = _$ObjectiveDtoTearOff();
 /// @nodoc
 mixin _$ObjectiveDto {
   String get id;
-  
   String get description;
   CoordinatesDto get coordinates;
   String get imageURL;
@@ -169,7 +168,7 @@ class __$ObjectiveDtoCopyWithImpl<$Res> extends _$ObjectiveDtoCopyWithImpl<$Res>
   final CoordinatesDto coordinates;
   @override
   final String imageURL;
-  
+
   @override
   String toString() {
     return 'ObjectiveDto(id: $id, description: $description, coordinates: $coordinates, imageURL: $imageURL)';

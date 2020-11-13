@@ -44,11 +44,8 @@ const $TagDto = _$TagDtoTearOff();
 /// @nodoc
 mixin _$TagDto {
   String get id;
-  
   String get name;
-  
   String get creatorId;
-  
   String get creationDate;
   String get modificationDate;
 
@@ -170,7 +167,7 @@ class __$TagDtoCopyWithImpl<$Res> extends _$TagDtoCopyWithImpl<$Res>
   final String creationDate;
   @override
   final String modificationDate;
-  
+
   @override
   String toString() {
     return 'TagDto(id: $id, name: $name, creatorId: $creatorId, creationDate: $creationDate, modificationDate: $modificationDate)';

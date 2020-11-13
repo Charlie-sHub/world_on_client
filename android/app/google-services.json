@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "843356285440",
+    "firebase_url": "https://world-on-930f9.firebaseio.com",
+    "project_id": "world-on-930f9",
+    "storage_bucket": "world-on-930f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843356285440:android:d477c4ee36dd97e4bc46e5",
+        "android_client_info": {
+          "package_name": "com.worldon_app.worldon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "843356285440-cn8qpc2a0lg4e059ibjdldvuuofddhlp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.worldon_app.worldon",
+            "certificate_hash": "81a424aa2040f15f0082c9753ab9d08a134160aa"
+          }
+        },
+        {
+          "client_id": "843356285440-rtv6q7ptub9pq3d3alk2k7l3gpu5rucd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaqy5kAKdFvMQp_YnMtdrQjCgVlloj6Mw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "843356285440-rtv6q7ptub9pq3d3alk2k7l3gpu5rucd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

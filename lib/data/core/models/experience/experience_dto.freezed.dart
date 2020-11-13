@@ -8,7 +8,6 @@ part of 'experience_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
-
 ExperienceDto _$ExperienceDtoFromJson(Map<String, dynamic> json) {
   return _ExperienceDto.fromJson(json);
 }
@@ -67,39 +66,23 @@ const $ExperienceDto = _$ExperienceDtoTearOff();
 /// @nodoc
 mixin _$ExperienceDto {
   String get id;
-  
   String get title;
-
   String get description;
-
   Set<String> get imageURLs;
-
   CoordinatesDto get coordinates;
-
   LocationDto get location;
-
   UserDto get creator;
-
   int get difficulty;
-
   String get creationDate;
-
   String get modificationDate;
-
   Set<ObjectiveDto> get objectives;
-
   Set<RewardDto> get rewards;
-
   Set<TagDto> get tags;
-
   Set<CommentDto> get comments;
-
   Set<UserDto> get likedBy;
-
   Set<UserDto> get doneBy;
 
   Map<String, dynamic> toJson();
-
   $ExperienceDtoCopyWith<ExperienceDto> get copyWith;
 }
 
@@ -389,13 +372,13 @@ class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Re
   final Set<UserDto> likedBy;
   @override
   final Set<UserDto> doneBy;
-
-@override
+  
+  @override
   String toString() {
     return 'ExperienceDto(id: $id, title: $title, description: $description, imageURLs: $imageURLs, coordinates: $coordinates, location: $location, creator: $creator, difficulty: $difficulty, creationDate: $creationDate, modificationDate: $modificationDate, objectives: $objectives, rewards: $rewards, tags: $tags, comments: $comments, likedBy: $likedBy, doneBy: $doneBy)';
   }
-
-@override
+  
+  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
       (other is _ExperienceDto &&
@@ -437,42 +420,43 @@ class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Re
           const DeepCollectionEquality().equals(other.tags, tags)) &&
         (identical(other.comments, comments) ||
           const DeepCollectionEquality()
-  .equals(other.comments, comments)) &&
-(identical(other.likedBy, likedBy) ||
-const DeepCollectionEquality()
-  .equals(other.likedBy, likedBy)) &&
-(identical(other.doneBy, doneBy) ||
-const DeepCollectionEquality().equals(other.doneBy, doneBy)));
+            .equals(other.comments, comments)) &&
+        (identical(other.likedBy, likedBy) ||
+          const DeepCollectionEquality()
+            .equals(other.likedBy, likedBy)) &&
+        (identical(other.doneBy, doneBy) ||
+          const DeepCollectionEquality().equals(other.doneBy, doneBy)));
+  }
+  
+  @override
+  int get hashCode =>
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(id) ^
+    const DeepCollectionEquality().hash(title) ^
+    const DeepCollectionEquality().hash(description) ^
+    const DeepCollectionEquality().hash(imageURLs) ^
+    const DeepCollectionEquality().hash(coordinates) ^
+    const DeepCollectionEquality().hash(location) ^
+    const DeepCollectionEquality().hash(creator) ^
+    const DeepCollectionEquality().hash(difficulty) ^
+    const DeepCollectionEquality().hash(creationDate) ^
+    const DeepCollectionEquality().hash(modificationDate) ^
+    const DeepCollectionEquality().hash(objectives) ^
+    const DeepCollectionEquality().hash(rewards) ^
+    const DeepCollectionEquality().hash(tags) ^
+    const DeepCollectionEquality().hash(comments) ^
+    const DeepCollectionEquality().hash(likedBy) ^
+    const DeepCollectionEquality().hash(doneBy);
+  
+  @override
+  _$ExperienceDtoCopyWith<_ExperienceDto> get copyWith =>
+    __$ExperienceDtoCopyWithImpl<_ExperienceDto>(this, _$identity);
+  
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ExperienceDtoToJson(this);
+  }
 }
-
-@override
-int get hashCode =>
-  runtimeType.hashCode ^
-  const DeepCollectionEquality().hash(id) ^
-  const DeepCollectionEquality().hash(title) ^
-  const DeepCollectionEquality().hash(description) ^
-  const DeepCollectionEquality().hash(imageURLs) ^
-  const DeepCollectionEquality().hash(coordinates) ^
-  const DeepCollectionEquality().hash(location) ^
-  const DeepCollectionEquality().hash(creator) ^
-  const DeepCollectionEquality().hash(difficulty) ^
-  const DeepCollectionEquality().hash(creationDate) ^
-  const DeepCollectionEquality().hash(modificationDate) ^
-  const DeepCollectionEquality().hash(objectives) ^
-  const DeepCollectionEquality().hash(rewards) ^
-  const DeepCollectionEquality().hash(tags) ^
-  const DeepCollectionEquality().hash(comments) ^
-  const DeepCollectionEquality().hash(likedBy) ^
-  const DeepCollectionEquality().hash(doneBy);
-
-@override
-_$ExperienceDtoCopyWith<_ExperienceDto> get copyWith =>
-  __$ExperienceDtoCopyWithImpl<_ExperienceDto>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$_$_ExperienceDtoToJson(this);
-}}
 
 abstract class _ExperienceDto extends ExperienceDto {
   const _ExperienceDto._() : super._();
@@ -511,40 +495,28 @@ abstract class _ExperienceDto extends ExperienceDto {
   
   @override
   CoordinatesDto get coordinates;
-
   @override
   LocationDto get location;
-
   @override
   UserDto get creator;
-
   @override
   int get difficulty;
-
   @override
   String get creationDate;
-
   @override
   String get modificationDate;
-
   @override
   Set<ObjectiveDto> get objectives;
-
   @override
   Set<RewardDto> get rewards;
-
   @override
   Set<TagDto> get tags;
-
   @override
   Set<CommentDto> get comments;
-
   @override
   Set<UserDto> get likedBy;
-
   @override
   Set<UserDto> get doneBy;
-
   @override
   _$ExperienceDtoCopyWith<_ExperienceDto> get copyWith;
 }

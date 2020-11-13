@@ -17,6 +17,7 @@ abstract class CoreDataFailure<T> with _$CoreDataFailure<T> {
   // Came from failure, moved here because of user editing in the profile feature, maybe should create a "user_management" feature in the future
   const factory CoreDataFailure.usernameAlreadyInUse({@required Name username}) = UsernameAlreadyInUse<T>;
 
+  // It's not really necessary to use the value objects for the errors
   const factory CoreDataFailure.emailAlreadyInUse({@required EmailAddress email}) = EmailAlreadyInUse<T>;
 
   /// For all creation/modification use cases of entities that require unique names

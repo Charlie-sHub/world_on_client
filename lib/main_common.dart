@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:provider/provider.dart';
@@ -16,6 +17,8 @@ Future<void> mainCommon(String environment) async {
   if (environment == Environment.dev) {
     final _devCoreRepository = DevelopmentCoreRepository();
     await _devCoreRepository.initializeDatabase();
+  } else {
+    await Firebase.initializeApp();
   }
   runApp(
     Provider(

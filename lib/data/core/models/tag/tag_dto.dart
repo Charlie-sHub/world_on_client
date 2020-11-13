@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
@@ -10,7 +11,7 @@ part 'tag_dto.g.dart';
 @freezed
 abstract class TagDto implements _$TagDto {
   const TagDto._();
-
+  
   const factory TagDto({
     @required String id,
     @required String name,
@@ -18,14 +19,14 @@ abstract class TagDto implements _$TagDto {
     @required String creationDate,
     @required String modificationDate,
   }) = _TagDto;
-
+  
   factory TagDto.fromDomain(Tag tag) => TagDto(
-        id: tag.id.getOrCrash(),
-        name: tag.name.getOrCrash(),
-        creatorId: tag.creatorId.getOrCrash(),
-        creationDate: tag.creationDate.getOrCrash().toIso8601String(),
-        modificationDate: tag.modificationDate.getOrCrash().toIso8601String(),
-      );
+    id: tag.id.getOrCrash(),
+    name: tag.name.getOrCrash(),
+    creatorId: tag.creatorId.getOrCrash(),
+    creationDate: tag.creationDate.getOrCrash().toIso8601String(),
+    modificationDate: tag.modificationDate.getOrCrash().toIso8601String(),
+  );
 
   Tag toDomain() => Tag(
         id: UniqueId.fromUniqueString(id),
@@ -36,4 +37,10 @@ abstract class TagDto implements _$TagDto {
       );
 
   factory TagDto.fromJson(Map<String, dynamic> json) => _$TagDtoFromJson(json);
+
+  factory TagDto.fromFirestore(DocumentSnapshot document) => TagDto.fromJson(
+        document.data(),
+      ).copyWith(
+        id: document.id,
+      );
 }

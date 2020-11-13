@@ -37,7 +37,6 @@ const $OptionsDto = _$OptionsDtoTearOff();
 /// @nodoc
 mixin _$OptionsDto {
   String get id;
-  
   String get languageCode;
 
   Map<String, dynamic> toJson();
@@ -126,7 +125,7 @@ class __$OptionsDtoCopyWithImpl<$Res> extends _$OptionsDtoCopyWithImpl<$Res>
   String toString() {
     return 'OptionsDto(id: $id, languageCode: $languageCode)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||

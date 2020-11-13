@@ -7,9 +7,10 @@ import 'package:worldon/views/authentication/widgets/log_in_form/log_in_trouble_
 import 'package:worldon/views/authentication/widgets/log_in_form/register_button.dart';
 import 'package:worldon/views/authentication/widgets/log_in_form/world_on_logo_medium.dart';
 import 'package:worldon/views/authentication/widgets/password_text_field.dart';
-import 'package:worldon/views/authentication/widgets/username_text_field.dart';
 import 'package:worldon/views/authentication/widgets/world_on_title.dart';
 import 'package:worldon/views/core/misc/string_constants.dart';
+
+import '../email_text_field.dart';
 
 class LogInForm extends StatelessWidget {
   @override
@@ -31,17 +32,19 @@ class LogInForm extends StatelessWidget {
               const SizedBox(height: 5),
               const WorldOnTitle(),
               const SizedBox(height: 10),
-              UsernameTextField(
-                eventToAdd: (String value) => context.bloc<LogInFormBloc>().add(
-                      LogInFormEvent.usernameChanged(value),
-                    ),
-                validator: (_) => _usernameValidator(context),
+              EmailTextField(
+                validator: (_) => _emailValidator(context),
+                eventToAdd: (String value) =>
+                  context.bloc<LogInFormBloc>().add(
+                    LogInFormEvent.emailChanged(value),
+                  ),
               ),
               const SizedBox(height: 3),
               PasswordTextField(
-                eventToAdd: (String value) => context.bloc<LogInFormBloc>().add(
-                      LogInFormEvent.passwordChanged(value),
-                    ),
+                eventToAdd: (String value) =>
+                  context.bloc<LogInFormBloc>().add(
+                    LogInFormEvent.passwordChanged(value),
+                  ),
                 validator: (_) => _passwordValidator(context),
               ),
               const SizedBox(height: 7),
@@ -63,26 +66,29 @@ class LogInForm extends StatelessWidget {
     return context.bloc<LogInFormBloc>().state.password.value.fold(
           (failure) => failure.maybeMap(
             emptyString: (_) => "The password can't be empty",
-            multiLineString: (_) => "The password can't be more than one line",
-            stringExceedsLength: (_) => "The password is too long",
-            // Rather superfluous
-            invalidPassword: (_) => "The password is invalid",
-            orElse: () => StringConst.unknownError,
-          ),
-          (_) => null,
-        );
+        multiLineString: (_) => "The password can't be more than one line",
+        stringExceedsLength: (_) => "The password is too long",
+        // Rather superfluous
+        invalidPassword: (_) => "The password is invalid",
+        orElse: () => StringConst.unknownError,
+      ),
+        (_) => null,
+    );
   }
-
-  String _usernameValidator(BuildContext context) {
-    return context.bloc<LogInFormBloc>().state.username.value.fold(
-          (failure) => failure.maybeMap(
-            emptyString: (_) => "The username can't be empty",
-            multiLineString: (_) => "The username can't be more than one line",
-            stringExceedsLength: (_) => "The username is too long",
-            stringWithInvalidCharacters: (_) => "The username has invalid characters",
-            orElse: () => StringConst.unknownError,
-          ),
-          (_) => null,
-        );
+  
+  String _emailValidator(BuildContext context) {
+    return context
+      .bloc<LogInFormBloc>()
+      .state
+      .email
+      .value
+      .fold(
+        (failure) =>
+        failure.maybeMap(
+          invalidEmail: (_) => "The email is not valid",
+          orElse: () => StringConst.unknownError,
+        ),
+        (_) => null,
+    );
   }
 }

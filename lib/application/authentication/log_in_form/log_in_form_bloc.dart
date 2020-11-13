@@ -9,7 +9,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/use_case/log_in.dart';
 import 'package:worldon/domain/authentication/use_case/log_in_google.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
-import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
 import 'package:worldon/injection.dart';
 
@@ -24,7 +24,7 @@ class LogInFormBloc extends Bloc<LogInFormEvent, LogInFormState> {
   @override
   Stream<LogInFormState> mapEventToState(LogInFormEvent event) async* {
     yield* event.map(
-      usernameChanged: _onUsernameChanged,
+      emailChanged: _onEmailChanged,
       passwordChanged: _onPasswordChanged,
       loggedIn: _onLoggedIn,
       loggedInGoogle: _onLoggedInGoogle,
@@ -45,14 +45,14 @@ class LogInFormBloc extends Bloc<LogInFormEvent, LogInFormState> {
 
   Stream<LogInFormState> _onLoggedIn(_) async* {
     Either<Failure, Unit> _failureOrSuccess;
-    if (state.username.isValid() && state.password.isValid()) {
+    if (state.email.isValid() && state.password.isValid()) {
       yield state.copyWith(
         isSubmitting: true,
         failureOrSuccessOption: none(),
       );
       _failureOrSuccess = await getIt<LogIn>()(
         Params(
-          username: state.username,
+          email: state.email,
           password: state.password,
         ),
       );
@@ -75,9 +75,9 @@ class LogInFormBloc extends Bloc<LogInFormEvent, LogInFormState> {
     );
   }
 
-  Stream<LogInFormState> _onUsernameChanged(_UsernameChanged event) async* {
+  Stream<LogInFormState> _onEmailChanged(_EmailChanged event) async* {
     yield state.copyWith(
-      username: Name(event.username),
+      email: EmailAddress(event.email),
       failureOrSuccessOption: none(),
     );
   }

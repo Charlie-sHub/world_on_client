@@ -28,7 +28,7 @@ dependencies:
   # For dependency injection
   injectable: ^1.0.5
   # Bloc for state management
-  flutter_bloc: ^6.1.0
+  flutter_bloc: ^6.1.1
   # Value equality
   # Probably useless now
   equatable: ^1.2.5
@@ -63,7 +63,7 @@ dependencies:
   # To add shadow to icons with less boiler plate
   icon_shadow: ^1.0.1
   # For getting images from the device
-  image_picker: ^0.6.7+12
+  image_picker: ^0.6.7+14
   # For getting multiple images from the device
   multi_image_picker: ^4.7.14
   # Local database, mostly for back-end simulation
@@ -84,11 +84,13 @@ dependencies:
   # Unique IDs for entities
   uuid: ^2.2.2
   # For use with Firebase as backend
-  # firebase_core: ^0.4.4+3
+  firebase_core: ^0.5.2
   # For authentication with Firebase
-  # firebase_auth: ^0.16.0
+  firebase_auth: ^0.18.3
   # For Signing in and registering with Google
-  # google_sign_in: ^4.4.6
+  google_sign_in: ^4.5.6
+  # For storage
+  cloud_firestore: ^0.14.3
 
 dev_dependencies:
   flutter_test:

@@ -61,9 +61,4 @@ abstract class AchievementDto implements _$AchievementDto {
       );
 
   factory AchievementDto.fromJson(Map<String, dynamic> json) => _$AchievementDtoFromJson(json);
-
-// TODO: Implement fromFirestore methods in the DTOs
-//factory AchievementDto.fromFirestore(DocumentSnapshot document) {
-//  return AchievementDto.fromJson(document.data);
-//}
 }

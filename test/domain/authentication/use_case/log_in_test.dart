@@ -7,7 +7,7 @@ import 'package:worldon/data/authentication/failures/authentication_data_failure
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/domain/authentication/repository/authentication_repository_interface.dart';
 import 'package:worldon/domain/authentication/use_case/log_in.dart';
-import 'package:worldon/domain/core/validation/objects/name.dart';
+import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
 import 'package:worldon/injection.dart';
 
@@ -24,7 +24,7 @@ void main() {
     },
   );
   final params = Params(
-    username: Name("Test User"),
+    email: EmailAddress("Test@test.test"),
     password: Password("abcd*1234"),
   );
   test(

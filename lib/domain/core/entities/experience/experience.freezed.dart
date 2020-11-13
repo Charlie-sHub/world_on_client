@@ -62,7 +62,6 @@ const $Experience = _$ExperienceTearOff();
 mixin _$Experience {
 // TODO: Add like and dislike counters
   UniqueId get id;
-
   Name get title;
   EntityDescription get description;
   Set<String> get imageURLs;
@@ -107,9 +106,7 @@ abstract class $ExperienceCopyWith<$Res> {
       Set<User> doneBy});
 
   $CoordinatesCopyWith<$Res> get coordinates;
-
   $LocationCopyWith<$Res> get location;
-
   $UserCopyWith<$Res> get creator;
 }
 
@@ -144,19 +141,34 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as UniqueId,
       title: title == freezed ? _value.title : title as Name,
-      description: description == freezed ? _value.description : description as EntityDescription,
-      imageURLs: imageURLs == freezed ? _value.imageURLs : imageURLs as Set<String>,
-      imageAssetsOption: imageAssetsOption == freezed ? _value.imageAssetsOption : imageAssetsOption as Option<List<Asset>>,
-      coordinates: coordinates == freezed ? _value.coordinates : coordinates as Coordinates,
+      description: description == freezed
+        ? _value.description
+        : description as EntityDescription,
+      imageURLs:
+      imageURLs == freezed ? _value.imageURLs : imageURLs as Set<String>,
+      imageAssetsOption: imageAssetsOption == freezed
+        ? _value.imageAssetsOption
+        : imageAssetsOption as Option<List<Asset>>,
+      coordinates: coordinates == freezed
+        ? _value.coordinates
+        : coordinates as Coordinates,
       location: location == freezed ? _value.location : location as Location,
       creator: creator == freezed ? _value.creator : creator as User,
-      difficulty: difficulty == freezed ? _value.difficulty : difficulty as Difficulty,
-      creationDate: creationDate == freezed ? _value.creationDate : creationDate as PastDate,
-      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as PastDate,
-      objectives: objectives == freezed ? _value.objectives : objectives as ObjectiveSet,
+      difficulty:
+      difficulty == freezed ? _value.difficulty : difficulty as Difficulty,
+      creationDate: creationDate == freezed
+        ? _value.creationDate
+        : creationDate as PastDate,
+      modificationDate: modificationDate == freezed
+        ? _value.modificationDate
+        : modificationDate as PastDate,
+      objectives: objectives == freezed
+        ? _value.objectives
+        : objectives as ObjectiveSet,
       rewards: rewards == freezed ? _value.rewards : rewards as RewardSet,
       tags: tags == freezed ? _value.tags : tags as TagSet,
-      comments: comments == freezed ? _value.comments : comments as Set<Comment>,
+      comments:
+      comments == freezed ? _value.comments : comments as Set<Comment>,
       likedBy: likedBy == freezed ? _value.likedBy : likedBy as Set<User>,
       doneBy: doneBy == freezed ? _value.doneBy : doneBy as Set<User>,
     ));
@@ -195,18 +207,18 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
-  factory _$ExperienceCopyWith(_Experience value, $Res Function(_Experience) then) = __$ExperienceCopyWithImpl<$Res>;
-
+  factory _$ExperienceCopyWith(_Experience value, $Res Function(_Experience) then) =
+  __$ExperienceCopyWithImpl<$Res>;
+  
   @override
-  $Res call(
-      {UniqueId id,
-      Name title,
-      EntityDescription description,
-      Set<String> imageURLs,
-      Option<List<Asset>> imageAssetsOption,
-      Coordinates coordinates,
-      Location location,
-      User creator,
+  $Res call({UniqueId id,
+    Name title,
+    EntityDescription description,
+    Set<String> imageURLs,
+    Option<List<Asset>> imageAssetsOption,
+    Coordinates coordinates,
+    Location location,
+    User creator,
       Difficulty difficulty,
       PastDate creationDate,
       PastDate modificationDate,
@@ -226,12 +238,14 @@ abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res> implements _$ExperienceCopyWith<$Res> {
-  __$ExperienceCopyWithImpl(_Experience _value, $Res Function(_Experience) _then) : super(_value, (v) => _then(v as _Experience));
-
+class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res>
+  implements _$ExperienceCopyWith<$Res> {
+  __$ExperienceCopyWithImpl(_Experience _value, $Res Function(_Experience) _then)
+    : super(_value, (v) => _then(v as _Experience));
+  
   @override
   _Experience get _value => super._value as _Experience;
-
+  
   @override
   $Res call({
     Object id = freezed,
@@ -255,19 +269,34 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res> imp
     return _then(_Experience(
       id: id == freezed ? _value.id : id as UniqueId,
       title: title == freezed ? _value.title : title as Name,
-      description: description == freezed ? _value.description : description as EntityDescription,
-      imageURLs: imageURLs == freezed ? _value.imageURLs : imageURLs as Set<String>,
-      imageAssetsOption: imageAssetsOption == freezed ? _value.imageAssetsOption : imageAssetsOption as Option<List<Asset>>,
-      coordinates: coordinates == freezed ? _value.coordinates : coordinates as Coordinates,
+      description: description == freezed
+        ? _value.description
+        : description as EntityDescription,
+      imageURLs:
+      imageURLs == freezed ? _value.imageURLs : imageURLs as Set<String>,
+      imageAssetsOption: imageAssetsOption == freezed
+        ? _value.imageAssetsOption
+        : imageAssetsOption as Option<List<Asset>>,
+      coordinates: coordinates == freezed
+        ? _value.coordinates
+        : coordinates as Coordinates,
       location: location == freezed ? _value.location : location as Location,
       creator: creator == freezed ? _value.creator : creator as User,
-      difficulty: difficulty == freezed ? _value.difficulty : difficulty as Difficulty,
-      creationDate: creationDate == freezed ? _value.creationDate : creationDate as PastDate,
-      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as PastDate,
-      objectives: objectives == freezed ? _value.objectives : objectives as ObjectiveSet,
+      difficulty:
+      difficulty == freezed ? _value.difficulty : difficulty as Difficulty,
+      creationDate: creationDate == freezed
+        ? _value.creationDate
+        : creationDate as PastDate,
+      modificationDate: modificationDate == freezed
+        ? _value.modificationDate
+        : modificationDate as PastDate,
+      objectives: objectives == freezed
+        ? _value.objectives
+        : objectives as ObjectiveSet,
       rewards: rewards == freezed ? _value.rewards : rewards as RewardSet,
       tags: tags == freezed ? _value.tags : tags as TagSet,
-      comments: comments == freezed ? _value.comments : comments as Set<Comment>,
+      comments:
+      comments == freezed ? _value.comments : comments as Set<Comment>,
       likedBy: likedBy == freezed ? _value.likedBy : likedBy as Set<User>,
       doneBy: doneBy == freezed ? _value.doneBy : doneBy as Set<User>,
     ));
@@ -356,24 +385,54 @@ class _$_Experience extends _Experience {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Experience &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.title, title) || const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-            (identical(other.imageURLs, imageURLs) || const DeepCollectionEquality().equals(other.imageURLs, imageURLs)) &&
-            (identical(other.imageAssetsOption, imageAssetsOption) || const DeepCollectionEquality().equals(other.imageAssetsOption, imageAssetsOption)) &&
-            (identical(other.coordinates, coordinates) || const DeepCollectionEquality().equals(other.coordinates, coordinates)) &&
-            (identical(other.location, location) || const DeepCollectionEquality().equals(other.location, location)) &&
-            (identical(other.creator, creator) || const DeepCollectionEquality().equals(other.creator, creator)) &&
-            (identical(other.difficulty, difficulty) || const DeepCollectionEquality().equals(other.difficulty, difficulty)) &&
-            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
-            (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)) &&
-            (identical(other.objectives, objectives) || const DeepCollectionEquality().equals(other.objectives, objectives)) &&
-            (identical(other.rewards, rewards) || const DeepCollectionEquality().equals(other.rewards, rewards)) &&
-            (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)) &&
-            (identical(other.comments, comments) || const DeepCollectionEquality().equals(other.comments, comments)) &&
-            (identical(other.likedBy, likedBy) || const DeepCollectionEquality().equals(other.likedBy, likedBy)) &&
-            (identical(other.doneBy, doneBy) || const DeepCollectionEquality().equals(other.doneBy, doneBy)));
+      (other is _Experience &&
+        (identical(other.id, id) ||
+          const DeepCollectionEquality().equals(other.id, id)) &&
+        (identical(other.title, title) ||
+          const DeepCollectionEquality().equals(other.title, title)) &&
+        (identical(other.description, description) ||
+          const DeepCollectionEquality()
+            .equals(other.description, description)) &&
+        (identical(other.imageURLs, imageURLs) ||
+          const DeepCollectionEquality()
+            .equals(other.imageURLs, imageURLs)) &&
+        (identical(other.imageAssetsOption, imageAssetsOption) ||
+          const DeepCollectionEquality()
+            .equals(other.imageAssetsOption, imageAssetsOption)) &&
+        (identical(other.coordinates, coordinates) ||
+          const DeepCollectionEquality()
+            .equals(other.coordinates, coordinates)) &&
+        (identical(other.location, location) ||
+          const DeepCollectionEquality()
+            .equals(other.location, location)) &&
+        (identical(other.creator, creator) ||
+          const DeepCollectionEquality()
+            .equals(other.creator, creator)) &&
+        (identical(other.difficulty, difficulty) ||
+          const DeepCollectionEquality()
+            .equals(other.difficulty, difficulty)) &&
+        (identical(other.creationDate, creationDate) ||
+          const DeepCollectionEquality()
+            .equals(other.creationDate, creationDate)) &&
+        (identical(other.modificationDate, modificationDate) ||
+          const DeepCollectionEquality()
+            .equals(other.modificationDate, modificationDate)) &&
+        (identical(other.objectives, objectives) ||
+          const DeepCollectionEquality()
+            .equals(other.objectives, objectives)) &&
+        (identical(other.rewards, rewards) ||
+          const DeepCollectionEquality()
+            .equals(other.rewards, rewards)) &&
+        (identical(other.tags, tags) ||
+          const DeepCollectionEquality().equals(other.tags, tags)) &&
+        (identical(other.comments, comments) ||
+          const DeepCollectionEquality()
+            .equals(other.comments, comments)) &&
+        (identical(other.likedBy, likedBy) ||
+          const DeepCollectionEquality()
+            .equals(other.likedBy, likedBy)) &&
+        (identical(other.doneBy, doneBy) ||
+          const DeepCollectionEquality().equals(other.doneBy, doneBy)));
   }
 
   @override
@@ -398,12 +457,12 @@ class _$_Experience extends _Experience {
       const DeepCollectionEquality().hash(doneBy);
 
   @override
-  _$ExperienceCopyWith<_Experience> get copyWith => __$ExperienceCopyWithImpl<_Experience>(this, _$identity);
+  _$ExperienceCopyWith<_Experience> get copyWith =>
+    __$ExperienceCopyWithImpl<_Experience>(this, _$identity);
 }
 
 abstract class _Experience extends Experience {
   const _Experience._() : super._();
-
   const factory _Experience(
       {@required UniqueId id,
       @required Name title,
@@ -425,7 +484,6 @@ abstract class _Experience extends Experience {
 
   @override // TODO: Add like and dislike counters
   UniqueId get id;
-
   @override
   Name get title;
   @override

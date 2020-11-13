@@ -48,7 +48,6 @@ const $NotificationDto = _$NotificationDtoTearOff();
 /// @nodoc
 mixin _$NotificationDto {
   String get id;
-  
   UserDto get sender; // Maybe change the Users to only the ids
   UserDto get receiver;
   String get description;

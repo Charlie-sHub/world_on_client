@@ -18,6 +18,7 @@ class MoorAchievement extends DataClass implements Insertable<MoorAchievement> {
   final DateTime creationDate;
   final DateTime modificationDate;
   final String creatorId;
+
   MoorAchievement({@required this.id,
     @required this.name,
     @required this.description,
@@ -590,7 +591,7 @@ class $MoorAchievementsTable extends MoorAchievements
     }
     return context;
   }
-  
+
   @override
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
@@ -1001,7 +1002,7 @@ class $MoorCommentsTable extends MoorComments
     }
     return context;
   }
-  
+
   @override
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
@@ -1568,7 +1569,7 @@ class $MoorExperiencesTable extends MoorExperiences
     }
     return context;
   }
-  
+
   @override
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
@@ -1861,7 +1862,7 @@ class $MoorLocationsTable extends MoorLocations
     }
     return context;
   }
-  
+
   @override
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
@@ -2321,7 +2322,7 @@ class $MoorNotificationsTable extends MoorNotifications
     }
     return context;
   }
-  
+
   @override
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
@@ -2729,7 +2730,7 @@ class $MoorObjectivesTable extends MoorObjectives
     }
     return context;
   }
-  
+
   @override
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
@@ -2977,7 +2978,7 @@ class $MoorOptionsTable extends MoorOptions
     }
     return context;
   }
-  
+
   @override
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
@@ -3328,7 +3329,7 @@ class $MoorRewardsTable extends MoorRewards
     }
     return context;
   }
-  
+
   @override
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
@@ -3947,16 +3948,16 @@ class MoorUser extends DataClass implements Insertable<MoorUser> {
       id: id ?? this.id,
       name: name ?? this.name,
       username: username ?? this.username,
-        password: password ?? this.password,
-        email: email ?? this.email,
-        birthday: birthday ?? this.birthday,
-        description: description ?? this.description,
-        imageURL: imageURL ?? this.imageURL,
-        level: level ?? this.level,
-        experiencePoints: experiencePoints ?? this.experiencePoints,
-        privacy: privacy ?? this.privacy,
-        adminPowers: adminPowers ?? this.adminPowers,
-        enabled: enabled ?? this.enabled,
+      password: password ?? this.password,
+      email: email ?? this.email,
+      birthday: birthday ?? this.birthday,
+      description: description ?? this.description,
+      imageURL: imageURL ?? this.imageURL,
+      level: level ?? this.level,
+      experiencePoints: experiencePoints ?? this.experiencePoints,
+      privacy: privacy ?? this.privacy,
+      adminPowers: adminPowers ?? this.adminPowers,
+      enabled: enabled ?? this.enabled,
         lastLogin: lastLogin ?? this.lastLogin,
         creationDate: creationDate ?? this.creationDate,
         modificationDate: modificationDate ?? this.modificationDate,
@@ -4635,7 +4636,7 @@ class $MoorUsersTable extends MoorUsers
     }
     return context;
   }
-  
+
   @override
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
@@ -6153,7 +6154,7 @@ class LocationExperience extends DataClass
       'experienceId': serializer.toJson<String>(experienceId),
     };
   }
-  
+
   LocationExperience copyWith({String locationId, String experienceId}) =>
     LocationExperience(
       locationId: locationId ?? this.locationId,
@@ -6165,7 +6166,7 @@ class LocationExperience extends DataClass
       ..write('locationId: $locationId, ')..write('experienceId: $experienceId')..write(')'))
       .toString();
   }
-  
+
   @override
   int get hashCode => $mrjf($mrjc(locationId.hashCode, experienceId.hashCode));
   @override
@@ -6364,7 +6365,7 @@ class ExperienceImageUrl extends DataClass
       'imageUrl': serializer.toJson<String>(imageUrl),
     };
   }
-  
+
   ExperienceImageUrl copyWith({String experienceId, String imageUrl}) =>
     ExperienceImageUrl(
       experienceId: experienceId ?? this.experienceId,
@@ -6376,7 +6377,7 @@ class ExperienceImageUrl extends DataClass
       ..write('experienceId: $experienceId, ')..write('imageUrl: $imageUrl')..write(')'))
       .toString();
   }
-  
+
   @override
   int get hashCode => $mrjf($mrjc(experienceId.hashCode, imageUrl.hashCode));
   @override
