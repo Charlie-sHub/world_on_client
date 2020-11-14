@@ -34,10 +34,9 @@ class LogInForm extends StatelessWidget {
               const SizedBox(height: 10),
               EmailTextField(
                 validator: (_) => _emailValidator(context),
-                eventToAdd: (String value) =>
-                  context.bloc<LogInFormBloc>().add(
-                    LogInFormEvent.emailChanged(value),
-                  ),
+                eventToAdd: (String value) => context.bloc<LogInFormBloc>().add(
+                      LogInFormEvent.emailChanged(value),
+                    ),
               ),
               const SizedBox(height: 3),
               PasswordTextField(
@@ -63,19 +62,25 @@ class LogInForm extends StatelessWidget {
   }
 
   String _passwordValidator(BuildContext context) {
-    return context.bloc<LogInFormBloc>().state.password.value.fold(
-          (failure) => failure.maybeMap(
-            emptyString: (_) => "The password can't be empty",
-        multiLineString: (_) => "The password can't be more than one line",
-        stringExceedsLength: (_) => "The password is too long",
-        // Rather superfluous
-        invalidPassword: (_) => "The password is invalid",
-        orElse: () => StringConst.unknownError,
-      ),
+    return context
+      .bloc<LogInFormBloc>()
+      .state
+      .password
+      .value
+      .fold(
+        (failure) =>
+        failure.maybeMap(
+          emptyString: (_) => "The password can't be empty",
+          multiLineString: (_) => "The password can't be more than one line",
+          stringExceedsLength: (_) => "The password is too long",
+          // Rather superfluous
+          invalidPassword: (_) => "The password is invalid",
+          orElse: () => StringConst.unknownError,
+        ),
         (_) => null,
     );
   }
-  
+
   String _emailValidator(BuildContext context) {
     return context
       .bloc<LogInFormBloc>()

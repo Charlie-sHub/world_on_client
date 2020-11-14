@@ -122,15 +122,15 @@ class __$EmailChangedCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Re
 /// @nodoc
 class _$_EmailChanged implements _EmailChanged {
   const _$_EmailChanged(this.email) : assert(email != null);
-  
+
   @override
   final String email;
-  
+
   @override
   String toString() {
     return 'LogInFormEvent.emailChanged(email: $email)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -142,7 +142,7 @@ class _$_EmailChanged implements _EmailChanged {
   @override
   int get hashCode =>
     runtimeType.hashCode ^ const DeepCollectionEquality().hash(email);
-  
+
   @override
   _$EmailChangedCopyWith<_EmailChanged> get copyWith =>
     __$EmailChangedCopyWithImpl<_EmailChanged>(this, _$identity);
@@ -212,9 +212,8 @@ class _$_EmailChanged implements _EmailChanged {
 
 abstract class _EmailChanged implements LogInFormEvent {
   const factory _EmailChanged(String email) = _$_EmailChanged;
-  
+
   String get email;
-  
   _$EmailChangedCopyWith<_EmailChanged> get copyWith;
 }
 
@@ -576,7 +575,6 @@ const $LogInFormState = _$LogInFormStateTearOff();
 /// @nodoc
 mixin _$LogInFormState {
   EmailAddress get email;
-  
   Password get password;
   bool get showErrorMessages;
   bool get isSubmitting;
@@ -587,9 +585,9 @@ mixin _$LogInFormState {
 
 /// @nodoc
 abstract class $LogInFormStateCopyWith<$Res> {
-  factory $LogInFormStateCopyWith(
-          LogInFormState value, $Res Function(LogInFormState) then) =
-      _$LogInFormStateCopyWithImpl<$Res>;
+  factory $LogInFormStateCopyWith(LogInFormState value, $Res Function(LogInFormState) then) =
+  _$LogInFormStateCopyWithImpl<$Res>;
+  
   $Res call({EmailAddress email,
     Password password,
     bool showErrorMessages,
@@ -635,6 +633,7 @@ abstract class _$LogInFormStateCopyWith<$Res>
   factory _$LogInFormStateCopyWith(
           _LogInFormState value, $Res Function(_LogInFormState) then) =
       __$LogInFormStateCopyWithImpl<$Res>;
+
   @override
   $Res call({EmailAddress email,
     Password password,
@@ -689,7 +688,7 @@ class _$_LogInFormState implements _LogInFormState {
       assert(showErrorMessages != null),
       assert(isSubmitting != null),
       assert(failureOrSuccessOption != null);
-
+  
   @override
   final EmailAddress email;
   @override
@@ -715,9 +714,9 @@ class _$_LogInFormState implements _LogInFormState {
           (identical(other.password, password) ||
             const DeepCollectionEquality()
               .equals(other.password, password)) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
+          (identical(other.showErrorMessages, showErrorMessages) ||
+            const DeepCollectionEquality()
+              .equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality()
                     .equals(other.isSubmitting, isSubmitting)) &&
@@ -731,9 +730,9 @@ class _$_LogInFormState implements _LogInFormState {
     runtimeType.hashCode ^
     const DeepCollectionEquality().hash(email) ^
     const DeepCollectionEquality().hash(password) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(failureOrSuccessOption);
+    const DeepCollectionEquality().hash(showErrorMessages) ^
+    const DeepCollectionEquality().hash(isSubmitting) ^
+    const DeepCollectionEquality().hash(failureOrSuccessOption);
 
   @override
   _$LogInFormStateCopyWith<_LogInFormState> get copyWith =>
@@ -746,15 +745,17 @@ abstract class _LogInFormState implements LogInFormState {
     @required bool showErrorMessages,
     @required bool isSubmitting,
     @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
-      _$_LogInFormState;
-
+  _$_LogInFormState;
+  
   @override
   EmailAddress get email;
-
+  
   @override
   Password get password;
+  
   @override
   bool get showErrorMessages;
+  
   @override
   bool get isSubmitting;
   @override

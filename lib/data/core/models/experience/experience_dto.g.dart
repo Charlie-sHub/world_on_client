@@ -39,10 +39,10 @@ Map<String, dynamic> _$_$_ExperienceDtoToJson(_$_ExperienceDto instance) =>
     'difficulty': instance.difficulty,
     'creationDate': instance.creationDate,
     'modificationDate': instance.modificationDate,
-      'objectives': instance.objectives?.map((e) => e?.toJson())?.toList(),
-      'rewards': instance.rewards?.map((e) => e?.toJson())?.toList(),
-      'tags': instance.tags?.map((e) => e?.toJson())?.toList(),
-      'comments': instance.comments?.map((e) => e?.toJson())?.toList(),
-      'likedBy': instance.likedBy?.map((e) => e?.toJson())?.toList(),
-      'doneBy': instance.doneBy?.map((e) => e?.toJson())?.toList(),
-    };
+    'objectives': instance.objectives?.map((e) => e?.toJson())?.toList(),
+    'rewards': instance.rewards?.map((e) => e?.toJson())?.toList(),
+    'tags': instance.tags?.map((e) => e?.toJson())?.toList(),
+    'comments': instance.comments?.map((e) => e?.toJson())?.toList(),
+    'likedBy': instance.likedBy?.map((e) => e?.toJson())?.toList(),
+    'doneBy': instance.doneBy?.map((e) => e?.toJson())?.toList(),
+  };

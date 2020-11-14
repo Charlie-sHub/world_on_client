@@ -136,7 +136,7 @@ class _$_Initialized implements _Initialized {
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
     __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -202,9 +202,8 @@ abstract class _$AllObjectivesAccomplishedCopyWith<$Res> {
   factory _$AllObjectivesAccomplishedCopyWith(_AllObjectivesAccomplished value,
     $Res Function(_AllObjectivesAccomplished) then) =
   __$AllObjectivesAccomplishedCopyWithImpl<$Res>;
-  
   $Res call({Experience experience});
-  
+
   $ExperienceCopyWith<$Res> get experience;
 }
 
@@ -270,7 +269,7 @@ class _$_AllObjectivesAccomplished implements _AllObjectivesAccomplished {
   get copyWith =>
     __$AllObjectivesAccomplishedCopyWithImpl<_AllObjectivesAccomplished>(
       this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -623,9 +622,8 @@ abstract class _$NavigatingExperienceCopyWith<$Res> {
   factory _$NavigatingExperienceCopyWith(_NavigatingExperience value,
     $Res Function(_NavigatingExperience) then) =
   __$NavigatingExperienceCopyWithImpl<$Res>;
-  
   $Res call({Experience experience});
-  
+
   $ExperienceCopyWith<$Res> get experience;
 }
 

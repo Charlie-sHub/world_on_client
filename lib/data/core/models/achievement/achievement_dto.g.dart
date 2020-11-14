@@ -34,5 +34,5 @@ Map<String, dynamic> _$_$_AchievementDtoToJson(_$_AchievementDto instance) =>
     'creatorId': instance.creatorId,
     'creationDate': instance.creationDate,
     'modificationDate': instance.modificationDate,
-      'tags': instance.tags?.map((e) => e?.toJson())?.toList(),
-    };
+    'tags': instance.tags?.map((e) => e?.toJson())?.toList(),
+  };

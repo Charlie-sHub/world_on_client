@@ -155,7 +155,7 @@ class _$_Initialized implements _Initialized {
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
     __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -636,7 +636,7 @@ class _$_CommentFormState implements _CommentFormState {
       const DeepCollectionEquality().hash(isEditing) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
-  
+
   @override
   _$CommentFormStateCopyWith<_CommentFormState> get copyWith =>
     __$CommentFormStateCopyWithImpl<_CommentFormState>(this, _$identity);
@@ -649,15 +649,19 @@ abstract class _CommentFormState implements CommentFormState {
     @required bool isSubmitting,
     @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
   _$_CommentFormState;
-
+  
   @override
   Comment get comment;
+  
   @override
   bool get showErrorMessages;
+  
   @override
   bool get isEditing;
+  
   @override
   bool get isSubmitting;
+  
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
   @override

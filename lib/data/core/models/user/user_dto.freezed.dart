@@ -17,7 +17,7 @@ class _$UserDtoTearOff {
   const _$UserDtoTearOff();
 
 // ignore: unused_element
-  _UserDto call({@required String id,
+  _UserDto call({String id,
     @required String name,
     @required String username,
     @required String password,
@@ -383,7 +383,7 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
 @JsonSerializable()
 
 /// @nodoc class _$_UserDto extends _UserDto {
-  const _$_UserDto({@required this.id,
+  const _$_UserDto({this.id,
     @required this.name,
     @required this.username,
     @required this.password,
@@ -409,8 +409,7 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
     @required this.experiencesToDoIds,
     @required this.devices,
     @required this.systems})
-    : assert(id != null),
-      assert(name != null),
+    : assert(name != null),
       assert(username != null),
       assert(password != null),
       assert(email != null),
@@ -617,7 +616,7 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
 abstract class _UserDto extends UserDto {
   const _UserDto._() : super._();
   
-  const factory _UserDto({@required String id,
+  const factory _UserDto({String id,
     @required String name,
     @required String username,
     @required String password,

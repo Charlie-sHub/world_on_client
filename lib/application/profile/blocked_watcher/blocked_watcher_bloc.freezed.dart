@@ -79,9 +79,8 @@ abstract class _$WatchBlockedUsersStartedCopyWith<$Res> {
   factory _$WatchBlockedUsersStartedCopyWith(_WatchBlockedUsersStarted value,
     $Res Function(_WatchBlockedUsersStarted) then) =
   __$WatchBlockedUsersStartedCopyWithImpl<$Res>;
-  
   $Res call({User user});
-  
+
   $UserCopyWith<$Res> get user;
 }
 
@@ -264,7 +263,7 @@ class _$_ResultsReceived implements _ResultsReceived {
   @override
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
     __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({

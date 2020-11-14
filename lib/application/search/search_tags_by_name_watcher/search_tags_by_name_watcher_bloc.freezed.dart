@@ -135,7 +135,7 @@ class _$_WatchTagsFoundByNameStarted implements _WatchTagsFoundByNameStarted {
   get copyWith =>
     __$WatchTagsFoundByNameStartedCopyWithImpl<
       _WatchTagsFoundByNameStarted>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({

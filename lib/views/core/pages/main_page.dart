@@ -20,7 +20,7 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<AuthenticationBloc, AuthenticationState>(
       listener: (context, state) => state.maybeMap(
-        authenticationFailure: (_) => context.navigator.replace(Routes.logInPage),
+        unAuthenticated: (_) => context.navigator.replace(Routes.logInPage),
         orElse: () => null,
       ),
       child: BlocProvider(

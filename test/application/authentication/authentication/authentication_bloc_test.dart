@@ -35,7 +35,7 @@ void main() {
     },
     act: (bloc) async => bloc.add(const AuthenticationEvent.loggedOut()),
     verify: (_) async => verify(logOut.call(any)),
-    expect: [const AuthenticationState.authenticationFailure()],
+    expect: [const AuthenticationState.unAuthenticated()],
   );
   group(
     "Testing the authentication request",
@@ -48,7 +48,7 @@ void main() {
         },
         act: (bloc) async => bloc.add(const AuthenticationEvent.authenticationCheckRequested()),
         verify: (_) async => verify(getLoggedInUser.call(any)),
-        expect: [const AuthenticationState.authenticationSuccess()],
+        expect: [const AuthenticationState.authenticated()],
       );
       blocTest(
         "Should emit unAuthenticated",
@@ -58,7 +58,7 @@ void main() {
         },
         act: (bloc) async => bloc.add(const AuthenticationEvent.authenticationCheckRequested()),
         verify: (_) async => verify(getLoggedInUser.call(any)),
-        expect: [const AuthenticationState.authenticationFailure()],
+        expect: [const AuthenticationState.unAuthenticated()],
       );
     },
   );

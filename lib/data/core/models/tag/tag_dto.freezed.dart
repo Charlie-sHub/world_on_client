@@ -17,7 +17,7 @@ class _$TagDtoTearOff {
   const _$TagDtoTearOff();
 
 // ignore: unused_element
-  _TagDto call({@required String id,
+  _TagDto call({String id,
     @required String name,
     @required String creatorId,
     @required String creationDate,
@@ -142,13 +142,12 @@ class __$TagDtoCopyWithImpl<$Res> extends _$TagDtoCopyWithImpl<$Res>
 @JsonSerializable()
 
 /// @nodoc class _$_TagDto extends _TagDto {
-  const _$_TagDto({@required this.id,
+  const _$_TagDto({this.id,
     @required this.name,
     @required this.creatorId,
     @required this.creationDate,
     @required this.modificationDate})
-    : assert(id != null),
-      assert(name != null),
+    : assert(name != null),
       assert(creatorId != null),
       assert(creationDate != null),
       assert(modificationDate != null),
@@ -214,7 +213,7 @@ class __$TagDtoCopyWithImpl<$Res> extends _$TagDtoCopyWithImpl<$Res>
 abstract class _TagDto extends TagDto {
   const _TagDto._() : super._();
   
-  const factory _TagDto({@required String id,
+  const factory _TagDto({String id,
     @required String name,
     @required String creatorId,
     @required String creationDate,

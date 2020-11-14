@@ -7,6 +7,7 @@ import 'package:logger/logger.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/authentication/failures/authentication_data_failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/data/core/misc/firebase_helpers.dart';
 import 'package:worldon/data/core/misc/firebase_user_mapper.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
 import 'package:worldon/domain/authentication/failures/authentication_domain_failure.dart';
@@ -19,10 +20,12 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
   final _logger = Logger();
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
+  final FirebaseFirestore _firestore;
 
   ProductionAuthenticationRepository(
     this._firebaseAuth,
     this._googleSignIn,
+    this._firestore,
   );
 
   @override
@@ -33,7 +36,7 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
         password: user.password.getOrCrash(),
       );
       final jsonUser = UserDto.fromDomain(user).toJson();
-      await FirebaseFirestore.instance.collection("users").add(jsonUser);
+      await _firestore.userCollection.add(jsonUser);
       // TODO: implement image storage
       // Save the User imageFile by assigning it an unique name with uuid and maybe the username
       // Save the downloadURL to the imageURL field of the user then save the user
@@ -44,6 +47,7 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
       if (_firebaseException.code == "ERROR_EMAIL_ALREADY_IN_USE") {
         return left(Failure.coreData(CoreDataFailure.emailAlreadyInUse(email: EmailAddress(_firebaseException.email))));
       } else {
+        _logger.e(_firebaseException.message);
         return left(Failure.coreData(CoreDataFailure.serverError(errorString: _firebaseException.message)));
       }
     }
@@ -61,6 +65,7 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
       if (_firebaseException.code == "ERROR_WRONG_PASSWORD" || _firebaseException.code == "ERROR_USER_NOT_FOUND") {
         return left(const Failure.authenticationData(AuthenticationDataFailure.invalidCredentials()));
       } else {
+        _logger.e(_firebaseException.message);
         return left(Failure.coreData(CoreDataFailure.serverError(errorString: _firebaseException.message)));
       }
     }
@@ -90,19 +95,13 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
     final _user = await _firebaseAuth.currentUser?.toDomain();
     return optionOf(_user);
   }
-
+  
   @override
-  Future<Either<Failure, Unit>> logOut() async {
-    try {
-      Future.wait([
-        _googleSignIn.signOut(),
-        _firebaseAuth.signOut(),
-      ]);
-      return right(unit);
-    } catch (e) {
-      return left(const Failure.coreData(CoreDataFailure.serverError(errorString: "Unknown server error")));
-    }
-  }
+  Future<void> logOut() =>
+    Future.wait([
+      _googleSignIn.signOut(),
+      _firebaseAuth.signOut(),
+    ]);
 
   @override
   Future<Either<Failure, Unit>> registerGoogle() {

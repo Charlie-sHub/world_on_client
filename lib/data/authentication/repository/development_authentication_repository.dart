@@ -66,7 +66,7 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
   }
 
   @override
-  Future<Either<Failure, Unit>> logOut() async {
+  Future<void> logOut() async {
     try {
       final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
       return _moorUserOption.fold(
@@ -77,18 +77,10 @@ class DevelopmentAuthenticationRepository implements AuthenticationRepositoryInt
               isLoggedIn: false,
             ),
           );
-          return right(unit);
         },
       );
     } catch (exception) {
       _logger.e("Error with moor database: $exception");
-      return left(
-        Failure.coreData(
-          CoreDataFailure.serverError(
-            errorString: "Development repository error $exception",
-          ),
-        ),
-      );
     }
   }
 

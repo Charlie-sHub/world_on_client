@@ -140,7 +140,7 @@ class _$_ExperienceDismissed implements _ExperienceDismissed {
   _$ExperienceDismissedCopyWith<_ExperienceDismissed> get copyWith =>
     __$ExperienceDismissedCopyWithImpl<_ExperienceDismissed>(
       this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({

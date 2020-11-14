@@ -473,7 +473,13 @@ GetIt $initGetIt(
   gh.lazySingleton<WatchUserLog>(() => MockLoadUserLog(), registerFor: {_test});
   gh.lazySingleton<AddExperienceToLog>(() => AddExperienceToLog(get<ExperienceLogRepositoryInterface>()), registerFor: {_dev, _prod});
   gh.lazySingleton<AddTagToInterests>(() => AddTagToInterests(get<TagCoreRepositoryInterface>()), registerFor: {_dev, _prod});
-  gh.lazySingleton<AuthenticationRepositoryInterface>(() => ProductionAuthenticationRepository(get<FirebaseAuth>(), get<GoogleSignIn>()), registerFor: {_prod});
+  gh.lazySingleton<AuthenticationRepositoryInterface>(
+      () => ProductionAuthenticationRepository(
+            get<FirebaseAuth>(),
+            get<GoogleSignIn>(),
+            get<FirebaseFirestore>(),
+          ),
+      registerFor: {_prod});
   gh.lazySingleton<BlockUser>(() => BlockUser(get<ProfileRepositoryInterface>()), registerFor: {_dev, _prod});
   gh.lazySingleton<CheckNotification>(() => CheckNotification(get<NotificationRepositoryInterface>()), registerFor: {_dev, _prod});
   gh.lazySingleton<CreateExperience>(() => CreateExperience(get<ExperienceManagementRepositoryInterface>()), registerFor: {_dev, _prod});

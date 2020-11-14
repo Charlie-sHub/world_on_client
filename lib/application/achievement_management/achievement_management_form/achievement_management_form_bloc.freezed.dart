@@ -186,7 +186,7 @@ class _$_Initialized implements _Initialized {
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
     __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -569,7 +569,6 @@ abstract class _$ExperiencePointsChangedCopyWith<$Res> {
   factory _$ExperiencePointsChangedCopyWith(_ExperiencePointsChanged value,
     $Res Function(_ExperiencePointsChanged) then) =
   __$ExperiencePointsChangedCopyWithImpl<$Res>;
-  
   $Res call({int experiencePoints});
 }
 
@@ -627,7 +626,7 @@ class _$_ExperiencePointsChanged implements _ExperiencePointsChanged {
   _$ExperiencePointsChangedCopyWith<_ExperiencePointsChanged> get copyWith =>
     __$ExperiencePointsChangedCopyWithImpl<_ExperiencePointsChanged>(
       this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -1356,10 +1355,13 @@ abstract class _AchievementManagementFormState
   
   @override
   Achievement get achievement;
+  
   @override
   bool get showErrorMessages;
+  
   @override
   bool get isEditing;
+  
   @override
   bool get isSubmitting;
   

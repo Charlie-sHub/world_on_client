@@ -184,7 +184,7 @@ class _$ServerError<T> implements ServerError<T> {
   @override
   $ServerErrorCopyWith<T, ServerError<T>> get copyWith =>
     _$ServerErrorCopyWithImpl<T, ServerError<T>>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -448,7 +448,7 @@ class _$CacheError<T> implements CacheError<T> {
   @override
   $CacheErrorCopyWith<T, CacheError<T>> get copyWith =>
     _$CacheErrorCopyWithImpl<T, CacheError<T>>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -594,7 +594,7 @@ class _$GeoLocationError<T> implements GeoLocationError<T> {
   @override
   $GeoLocationErrorCopyWith<T, GeoLocationError<T>> get copyWith =>
     _$GeoLocationErrorCopyWithImpl<T, GeoLocationError<T>>(this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -690,7 +690,6 @@ abstract class $UsernameAlreadyInUseCopyWith<T, $Res> {
   factory $UsernameAlreadyInUseCopyWith(UsernameAlreadyInUse<T> value,
     $Res Function(UsernameAlreadyInUse<T>) then) =
   _$UsernameAlreadyInUseCopyWithImpl<T, $Res>;
-  
   $Res call({Name username});
 }
 
@@ -744,7 +743,7 @@ class _$UsernameAlreadyInUse<T> implements UsernameAlreadyInUse<T> {
   $UsernameAlreadyInUseCopyWith<T, UsernameAlreadyInUse<T>> get copyWith =>
     _$UsernameAlreadyInUseCopyWithImpl<T, UsernameAlreadyInUse<T>>(
       this, _$identity);
-
+  
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -840,7 +839,6 @@ abstract class $EmailAlreadyInUseCopyWith<T, $Res> {
   factory $EmailAlreadyInUseCopyWith(EmailAlreadyInUse<T> value,
     $Res Function(EmailAlreadyInUse<T>) then) =
   _$EmailAlreadyInUseCopyWithImpl<T, $Res>;
-  
   $Res call({EmailAddress email});
 }
 

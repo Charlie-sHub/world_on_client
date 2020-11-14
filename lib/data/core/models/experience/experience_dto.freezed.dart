@@ -372,12 +372,12 @@ class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Re
   final Set<UserDto> likedBy;
   @override
   final Set<UserDto> doneBy;
-  
+
   @override
   String toString() {
     return 'ExperienceDto(id: $id, title: $title, description: $description, imageURLs: $imageURLs, coordinates: $coordinates, location: $location, creator: $creator, difficulty: $difficulty, creationDate: $creationDate, modificationDate: $modificationDate, objectives: $objectives, rewards: $rewards, tags: $tags, comments: $comments, likedBy: $likedBy, doneBy: $doneBy)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||

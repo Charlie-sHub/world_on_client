@@ -11,7 +11,7 @@ abstract class LogInFormState with _$LogInFormState {
   }) = _LogInFormState;
 
   factory LogInFormState.initial() => LogInFormState(
-    email: EmailAddress(""),
+        email: EmailAddress(""),
         password: Password(""),
         showErrorMessages: false,
         isSubmitting: false,

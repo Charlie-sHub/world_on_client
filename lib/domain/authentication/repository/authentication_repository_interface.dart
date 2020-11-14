@@ -22,6 +22,6 @@ abstract class AuthenticationRepositoryInterface {
   Future<Option<User>> getLoggedInUser();
 
   /// Logs out of the application
-  Future<Either<Failure, Unit>> logOut();
+  Future<void> logOut();
 // TODO: Add login and registration support with Twitter and Facebook
 }

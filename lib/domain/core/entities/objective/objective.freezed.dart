@@ -201,7 +201,7 @@ class _$_Objective extends _Objective {
       const DeepCollectionEquality().hash(coordinates) ^
       const DeepCollectionEquality().hash(imageURL) ^
       const DeepCollectionEquality().hash(imageFile);
-  
+
   @override
   _$ObjectiveCopyWith<_Objective> get copyWith =>
     __$ObjectiveCopyWithImpl<_Objective>(this, _$identity);

@@ -272,13 +272,13 @@ class _$AuthenticationStateTearOff {
   }
 
 // ignore: unused_element
-  _AuthenticationSuccess authenticationSuccess() {
-    return const _AuthenticationSuccess();
+  _Authenticated authenticated() {
+    return const _Authenticated();
   }
 
 // ignore: unused_element
-  _AuthenticationFailure authenticationFailure() {
-    return const _AuthenticationFailure();
+  _UnAuthenticated unAuthenticated() {
+    return const _UnAuthenticated();
   }
 }
 
@@ -291,27 +291,27 @@ mixin _$AuthenticationState {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result authenticationSuccess(),
-    @required Result authenticationFailure(),
+    @required Result authenticated(),
+    @required Result unAuthenticated(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result authenticationSuccess(),
-    Result authenticationFailure(),
+    Result authenticated(),
+    Result unAuthenticated(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result authenticationSuccess(_AuthenticationSuccess value),
-    @required Result authenticationFailure(_AuthenticationFailure value),
+    @required Result authenticated(_Authenticated value),
+    @required Result unAuthenticated(_UnAuthenticated value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result authenticationSuccess(_AuthenticationSuccess value),
-    Result authenticationFailure(_AuthenticationFailure value),
+    Result authenticated(_Authenticated value),
+    Result unAuthenticated(_UnAuthenticated value),
     @required Result orElse(),
   });
 }
@@ -371,12 +371,12 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result authenticationSuccess(),
-    @required Result authenticationFailure(),
+    @required Result authenticated(),
+    @required Result unAuthenticated(),
   }) {
     assert(initial != null);
-    assert(authenticationSuccess != null);
-    assert(authenticationFailure != null);
+    assert(authenticated != null);
+    assert(unAuthenticated != null);
     return initial();
   }
 
@@ -384,8 +384,8 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result authenticationSuccess(),
-    Result authenticationFailure(),
+    Result authenticated(),
+    Result unAuthenticated(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -399,12 +399,12 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result authenticationSuccess(_AuthenticationSuccess value),
-    @required Result authenticationFailure(_AuthenticationFailure value),
+    @required Result authenticated(_Authenticated value),
+    @required Result unAuthenticated(_UnAuthenticated value),
   }) {
     assert(initial != null);
-    assert(authenticationSuccess != null);
-    assert(authenticationFailure != null);
+    assert(authenticated != null);
+    assert(unAuthenticated != null);
     return initial(this);
   }
 
@@ -412,8 +412,8 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result authenticationSuccess(_AuthenticationSuccess value),
-    Result authenticationFailure(_AuthenticationFailure value),
+    Result authenticated(_Authenticated value),
+    Result unAuthenticated(_UnAuthenticated value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -429,36 +429,32 @@ abstract class _Initial implements AuthenticationState {
 }
 
 /// @nodoc
-abstract class _$AuthenticationSuccessCopyWith<$Res> {
-  factory _$AuthenticationSuccessCopyWith(_AuthenticationSuccess value,
-          $Res Function(_AuthenticationSuccess) then) =
-      __$AuthenticationSuccessCopyWithImpl<$Res>;
+abstract class _$AuthenticatedCopyWith<$Res> {
+  factory _$AuthenticatedCopyWith(_Authenticated value, $Res Function(_Authenticated) then) = __$AuthenticatedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$AuthenticationSuccessCopyWithImpl<$Res>
-    extends _$AuthenticationStateCopyWithImpl<$Res>
-    implements _$AuthenticationSuccessCopyWith<$Res> {
-  __$AuthenticationSuccessCopyWithImpl(_AuthenticationSuccess _value,
-      $Res Function(_AuthenticationSuccess) _then)
-      : super(_value, (v) => _then(v as _AuthenticationSuccess));
-
+class __$AuthenticatedCopyWithImpl<$Res> extends _$AuthenticationStateCopyWithImpl<$Res>
+  implements _$AuthenticatedCopyWith<$Res> {
+  __$AuthenticatedCopyWithImpl(_Authenticated _value, $Res Function(_Authenticated) _then)
+    : super(_value, (v) => _then(v as _Authenticated));
+  
   @override
-  _AuthenticationSuccess get _value => super._value as _AuthenticationSuccess;
+  _Authenticated get _value => super._value as _Authenticated;
 }
 
 /// @nodoc
-class _$_AuthenticationSuccess implements _AuthenticationSuccess {
-  const _$_AuthenticationSuccess();
-
+class _$_Authenticated implements _Authenticated {
+  const _$_Authenticated();
+  
   @override
   String toString() {
-    return 'AuthenticationState.authenticationSuccess()';
+    return 'AuthenticationState.authenticated()';
   }
-
+  
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _AuthenticationSuccess);
+    return identical(this, other) || (other is _Authenticated);
   }
 
   @override
@@ -468,26 +464,26 @@ class _$_AuthenticationSuccess implements _AuthenticationSuccess {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result authenticationSuccess(),
-    @required Result authenticationFailure(),
+    @required Result authenticated(),
+    @required Result unAuthenticated(),
   }) {
     assert(initial != null);
-    assert(authenticationSuccess != null);
-    assert(authenticationFailure != null);
-    return authenticationSuccess();
+    assert(authenticated != null);
+    assert(unAuthenticated != null);
+    return authenticated();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result authenticationSuccess(),
-    Result authenticationFailure(),
+    Result authenticated(),
+    Result unAuthenticated(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (authenticationSuccess != null) {
-      return authenticationSuccess();
+    if (authenticated != null) {
+      return authenticated();
     }
     return orElse();
   }
@@ -496,66 +492,63 @@ class _$_AuthenticationSuccess implements _AuthenticationSuccess {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result authenticationSuccess(_AuthenticationSuccess value),
-    @required Result authenticationFailure(_AuthenticationFailure value),
+    @required Result authenticated(_Authenticated value),
+    @required Result unAuthenticated(_UnAuthenticated value),
   }) {
     assert(initial != null);
-    assert(authenticationSuccess != null);
-    assert(authenticationFailure != null);
-    return authenticationSuccess(this);
+    assert(authenticated != null);
+    assert(unAuthenticated != null);
+    return authenticated(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result authenticationSuccess(_AuthenticationSuccess value),
-    Result authenticationFailure(_AuthenticationFailure value),
+    Result authenticated(_Authenticated value),
+    Result unAuthenticated(_UnAuthenticated value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (authenticationSuccess != null) {
-      return authenticationSuccess(this);
+    if (authenticated != null) {
+      return authenticated(this);
     }
     return orElse();
   }
 }
 
-abstract class _AuthenticationSuccess implements AuthenticationState {
-  const factory _AuthenticationSuccess() = _$_AuthenticationSuccess;
+abstract class _Authenticated implements AuthenticationState {
+  const factory _Authenticated() = _$_Authenticated;
 }
 
 /// @nodoc
-abstract class _$AuthenticationFailureCopyWith<$Res> {
-  factory _$AuthenticationFailureCopyWith(_AuthenticationFailure value,
-          $Res Function(_AuthenticationFailure) then) =
-      __$AuthenticationFailureCopyWithImpl<$Res>;
+abstract class _$UnAuthenticatedCopyWith<$Res> {
+  factory _$UnAuthenticatedCopyWith(_UnAuthenticated value, $Res Function(_UnAuthenticated) then) =
+  __$UnAuthenticatedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$AuthenticationFailureCopyWithImpl<$Res>
-    extends _$AuthenticationStateCopyWithImpl<$Res>
-    implements _$AuthenticationFailureCopyWith<$Res> {
-  __$AuthenticationFailureCopyWithImpl(_AuthenticationFailure _value,
-      $Res Function(_AuthenticationFailure) _then)
-      : super(_value, (v) => _then(v as _AuthenticationFailure));
-
+class __$UnAuthenticatedCopyWithImpl<$Res> extends _$AuthenticationStateCopyWithImpl<$Res>
+  implements _$UnAuthenticatedCopyWith<$Res> {
+  __$UnAuthenticatedCopyWithImpl(_UnAuthenticated _value, $Res Function(_UnAuthenticated) _then)
+    : super(_value, (v) => _then(v as _UnAuthenticated));
+  
   @override
-  _AuthenticationFailure get _value => super._value as _AuthenticationFailure;
+  _UnAuthenticated get _value => super._value as _UnAuthenticated;
 }
 
 /// @nodoc
-class _$_AuthenticationFailure implements _AuthenticationFailure {
-  const _$_AuthenticationFailure();
-
+class _$_UnAuthenticated implements _UnAuthenticated {
+  const _$_UnAuthenticated();
+  
   @override
   String toString() {
-    return 'AuthenticationState.authenticationFailure()';
+    return 'AuthenticationState.unAuthenticated()';
   }
-
+  
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _AuthenticationFailure);
+    return identical(this, other) || (other is _UnAuthenticated);
   }
 
   @override
@@ -565,26 +558,26 @@ class _$_AuthenticationFailure implements _AuthenticationFailure {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
-    @required Result authenticationSuccess(),
-    @required Result authenticationFailure(),
+    @required Result authenticated(),
+    @required Result unAuthenticated(),
   }) {
     assert(initial != null);
-    assert(authenticationSuccess != null);
-    assert(authenticationFailure != null);
-    return authenticationFailure();
+    assert(authenticated != null);
+    assert(unAuthenticated != null);
+    return unAuthenticated();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
-    Result authenticationSuccess(),
-    Result authenticationFailure(),
+    Result authenticated(),
+    Result unAuthenticated(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (authenticationFailure != null) {
-      return authenticationFailure();
+    if (unAuthenticated != null) {
+      return unAuthenticated();
     }
     return orElse();
   }
@@ -593,31 +586,31 @@ class _$_AuthenticationFailure implements _AuthenticationFailure {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
-    @required Result authenticationSuccess(_AuthenticationSuccess value),
-    @required Result authenticationFailure(_AuthenticationFailure value),
+    @required Result authenticated(_Authenticated value),
+    @required Result unAuthenticated(_UnAuthenticated value),
   }) {
     assert(initial != null);
-    assert(authenticationSuccess != null);
-    assert(authenticationFailure != null);
-    return authenticationFailure(this);
+    assert(authenticated != null);
+    assert(unAuthenticated != null);
+    return unAuthenticated(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
-    Result authenticationSuccess(_AuthenticationSuccess value),
-    Result authenticationFailure(_AuthenticationFailure value),
+    Result authenticated(_Authenticated value),
+    Result unAuthenticated(_UnAuthenticated value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (authenticationFailure != null) {
-      return authenticationFailure(this);
+    if (unAuthenticated != null) {
+      return unAuthenticated(this);
     }
     return orElse();
   }
 }
 
-abstract class _AuthenticationFailure implements AuthenticationState {
-  const factory _AuthenticationFailure() = _$_AuthenticationFailure;
+abstract class _UnAuthenticated implements AuthenticationState {
+  const factory _UnAuthenticated() = _$_UnAuthenticated;
 }

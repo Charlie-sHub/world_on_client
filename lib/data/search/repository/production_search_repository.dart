@@ -6,7 +6,7 @@ import 'package:logger/logger.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/data/core/misc/firebase_collections.dart';
+import 'package:worldon/data/core/misc/firebase_helpers.dart';
 import 'package:worldon/data/core/models/tag/tag_dto.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
@@ -34,44 +34,29 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
     // TODO: implement searchExperiencesByTags
     throw UnimplementedError();
   }
-  
+
   @override
   Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByTitle(SearchTerm title) {
     // TODO: implement searchExperiencesByName
     throw UnimplementedError();
   }
-  
+
   @override
   Stream<Either<Failure, KtList<Tag>>> watchSearchTagsByName(SearchTerm name) async* {
-    yield* _firestore
-      .collection(FirebaseCollections.tags)
-      .snapshots()
-      .map(
-        (snapshot) =>
-        snapshot.docs.map(
+    yield* _firestore.tagCollection
+        .snapshots()
+        .map(
+          (snapshot) => snapshot.docs.map(
             (document) => TagDto.fromFirestore(document).toDomain(),
-        ),
-    )
-      .map(
-        (tags) {
-        try {
-          _logger.i("Going fine: $tags");
-        } catch (e) {
-          _logger.i("$e");
-        }
-        final tagList = tags.where((tag) {
-          _logger.i("Going fine too");
-          return tag.name.getOrCrash().contains(name.getOrCrash());
-        }).toImmutableList();
-        _logger.i(tagList
-          .first()
-          .name);
-        return right<Failure, KtList<Tag>>(
-          tagList,
-        );
-      },
-    ).onErrorReturnWith(
-        (error) {
+          ),
+        )
+        .map(
+          (tags) => right<Failure, KtList<Tag>>(
+            tags.where((tag) => tag.name.getOrCrash().contains(name.getOrCrash())).toImmutableList(),
+          ),
+        )
+        .onErrorReturnWith(
+      (error) {
         if (error is FirebaseException) {
           _logger.e("Some FirebaseException: ${error.message}");
           return left(
@@ -90,13 +75,13 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
       },
     );
   }
-  
+
   @override
   Stream<Either<Failure, KtList<User>>> watchSearchUsersByName(SearchTerm name) {
     // TODO: implement searchUsersByName
     throw UnimplementedError();
   }
-  
+
   @override
   Stream<Either<Failure, KtList<User>>> watchSearchUsersByUserName(SearchTerm username) {
     // TODO: implement searchUsersByUserName

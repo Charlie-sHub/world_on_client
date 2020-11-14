@@ -139,12 +139,12 @@ class __$DeviceDtoCopyWithImpl<$Res> extends _$DeviceDtoCopyWithImpl<$Res>
   final String type;
   @override
   final String company;
-  
+
   @override
   String toString() {
     return 'DeviceDto(id: $id, name: $name, type: $type, company: $company)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -196,8 +196,10 @@ abstract class _DeviceDto extends DeviceDto {
   
   @override
   String get type;
+  
   @override
   String get company;
+  
   @override
   _$DeviceDtoCopyWith<_DeviceDto> get copyWith;
 }
