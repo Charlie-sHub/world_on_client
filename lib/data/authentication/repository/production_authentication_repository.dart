@@ -95,13 +95,12 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
     final _user = await _firebaseAuth.currentUser?.toDomain();
     return optionOf(_user);
   }
-  
+
   @override
-  Future<void> logOut() =>
-    Future.wait([
-      _googleSignIn.signOut(),
-      _firebaseAuth.signOut(),
-    ]);
+  Future<void> logOut() => Future.wait([
+        _googleSignIn.signOut(),
+        _firebaseAuth.signOut(),
+      ]);
 
   @override
   Future<Either<Failure, Unit>> registerGoogle() {

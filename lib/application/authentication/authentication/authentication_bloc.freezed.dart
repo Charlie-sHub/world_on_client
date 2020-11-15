@@ -430,15 +430,19 @@ abstract class _Initial implements AuthenticationState {
 
 /// @nodoc
 abstract class _$AuthenticatedCopyWith<$Res> {
-  factory _$AuthenticatedCopyWith(_Authenticated value, $Res Function(_Authenticated) then) = __$AuthenticatedCopyWithImpl<$Res>;
+  factory _$AuthenticatedCopyWith(
+          _Authenticated value, $Res Function(_Authenticated) then) =
+      __$AuthenticatedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$AuthenticatedCopyWithImpl<$Res> extends _$AuthenticationStateCopyWithImpl<$Res>
-  implements _$AuthenticatedCopyWith<$Res> {
-  __$AuthenticatedCopyWithImpl(_Authenticated _value, $Res Function(_Authenticated) _then)
-    : super(_value, (v) => _then(v as _Authenticated));
-  
+class __$AuthenticatedCopyWithImpl<$Res>
+    extends _$AuthenticationStateCopyWithImpl<$Res>
+    implements _$AuthenticatedCopyWith<$Res> {
+  __$AuthenticatedCopyWithImpl(
+      _Authenticated _value, $Res Function(_Authenticated) _then)
+      : super(_value, (v) => _then(v as _Authenticated));
+
   @override
   _Authenticated get _value => super._value as _Authenticated;
 }
@@ -446,12 +450,12 @@ class __$AuthenticatedCopyWithImpl<$Res> extends _$AuthenticationStateCopyWithIm
 /// @nodoc
 class _$_Authenticated implements _Authenticated {
   const _$_Authenticated();
-  
+
   @override
   String toString() {
     return 'AuthenticationState.authenticated()';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is _Authenticated);
@@ -523,16 +527,19 @@ abstract class _Authenticated implements AuthenticationState {
 
 /// @nodoc
 abstract class _$UnAuthenticatedCopyWith<$Res> {
-  factory _$UnAuthenticatedCopyWith(_UnAuthenticated value, $Res Function(_UnAuthenticated) then) =
-  __$UnAuthenticatedCopyWithImpl<$Res>;
+  factory _$UnAuthenticatedCopyWith(
+          _UnAuthenticated value, $Res Function(_UnAuthenticated) then) =
+      __$UnAuthenticatedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$UnAuthenticatedCopyWithImpl<$Res> extends _$AuthenticationStateCopyWithImpl<$Res>
-  implements _$UnAuthenticatedCopyWith<$Res> {
-  __$UnAuthenticatedCopyWithImpl(_UnAuthenticated _value, $Res Function(_UnAuthenticated) _then)
-    : super(_value, (v) => _then(v as _UnAuthenticated));
-  
+class __$UnAuthenticatedCopyWithImpl<$Res>
+    extends _$AuthenticationStateCopyWithImpl<$Res>
+    implements _$UnAuthenticatedCopyWith<$Res> {
+  __$UnAuthenticatedCopyWithImpl(
+      _UnAuthenticated _value, $Res Function(_UnAuthenticated) _then)
+      : super(_value, (v) => _then(v as _UnAuthenticated));
+
   @override
   _UnAuthenticated get _value => super._value as _UnAuthenticated;
 }
@@ -540,12 +547,12 @@ class __$UnAuthenticatedCopyWithImpl<$Res> extends _$AuthenticationStateCopyWith
 /// @nodoc
 class _$_UnAuthenticated implements _UnAuthenticated {
   const _$_UnAuthenticated();
-  
+
   @override
   String toString() {
     return 'AuthenticationState.unAuthenticated()';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is _UnAuthenticated);

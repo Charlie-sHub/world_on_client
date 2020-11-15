@@ -38,7 +38,7 @@ void main() {
     () {
       test(
         TestDescription.serverError,
-          () async {
+        () async {
           // Arrange
           const failure = Failure.coreData(CoreDataFailure.serverError(errorString: TestDescription.errorString));
           when(mockAuthenticationRepository.logOut()).thenAnswer((_) async => left(failure));

@@ -673,7 +673,7 @@ class DevelopmentCoreRepository implements CoreRepositoryInterface {
           getValidObjective(),
           getValidObjective().copyWith(
             id: UniqueId(),
-            description: EntityDescription("Poaching Whistler cruiser white room, carbon chowder dirtbag death cookies steeps."),
+            description: EntityDescription("Poaching Whistler cruiser white room, carbon chowder dirtbag death cookies steeps"),
             coordinates: Coordinates(
               latitude: Latitude(40.428938),
               longitude: Longitude(-3.680765),

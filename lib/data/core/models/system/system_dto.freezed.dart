@@ -17,7 +17,7 @@ class _$SystemDtoTearOff {
   const _$SystemDtoTearOff();
 
 // ignore: unused_element
-  _SystemDto call({@required String id,
+  _SystemDto call({String id,
     @required String name,
     @required String type,
     @required String company}) {
@@ -118,12 +118,11 @@ class __$SystemDtoCopyWithImpl<$Res> extends _$SystemDtoCopyWithImpl<$Res>
 @JsonSerializable()
 
 /// @nodoc class _$_SystemDto extends _SystemDto {
-  const _$_SystemDto({@required this.id,
+  const _$_SystemDto({this.id,
     @required this.name,
     @required this.type,
     @required this.company})
-    : assert(id != null),
-      assert(name != null),
+    : assert(name != null),
       assert(type != null),
       assert(company != null),
       super._();
@@ -180,7 +179,7 @@ class __$SystemDtoCopyWithImpl<$Res> extends _$SystemDtoCopyWithImpl<$Res>
 abstract class _SystemDto extends SystemDto {
   const _SystemDto._() : super._();
   
-  const factory _SystemDto({@required String id,
+  const factory _SystemDto({String id,
     @required String name,
     @required String type,
     @required String company}) = _$_SystemDto;

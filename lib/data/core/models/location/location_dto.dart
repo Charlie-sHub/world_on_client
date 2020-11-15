@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/data/core/models/experience/experience_dto.dart';
 import 'package:worldon/domain/core/entities/location/location.dart';
@@ -9,22 +10,22 @@ part 'location_dto.g.dart';
 @freezed
 abstract class LocationDto implements _$LocationDto {
   const LocationDto._();
-
+  
   const factory LocationDto({
-    @required String id,
+    String id,
     @required String city,
     @required String country,
     @required String postalCode,
     @required Set<ExperienceDto> experiences,
   }) = _LocationDto;
-
+  
   factory LocationDto.fromDomain(Location location) => LocationDto(
-        id: location.id.getOrCrash(),
-        city: location.city,
-        country: location.country,
-        postalCode: location.postalCode,
-        experiences: location.experiences.map((experience) => ExperienceDto.fromDomain(experience)).toSet(),
-      );
+    id: location.id.getOrCrash(),
+    city: location.city,
+    country: location.country,
+    postalCode: location.postalCode,
+    experiences: location.experiences.map((experience) => ExperienceDto.fromDomain(experience)).toSet(),
+  );
 
   Location toDomain() => Location(
         id: UniqueId.fromUniqueString(id),
@@ -35,4 +36,10 @@ abstract class LocationDto implements _$LocationDto {
       );
 
   factory LocationDto.fromJson(Map<String, dynamic> json) => _$LocationDtoFromJson(json);
+
+  factory LocationDto.fromFirestore(DocumentSnapshot document) => LocationDto.fromJson(
+        document.data(),
+      ).copyWith(
+        id: document.id,
+      );
 }

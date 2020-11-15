@@ -17,7 +17,7 @@ class _$RewardDtoTearOff {
   const _$RewardDtoTearOff();
 
 // ignore: unused_element
-  _RewardDto call({@required String id,
+  _RewardDto call({String id,
     @required String name,
     @required String description,
     @required String imageURL}) {
@@ -120,12 +120,11 @@ class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res>
 @JsonSerializable()
 
 /// @nodoc class _$_RewardDto extends _RewardDto {
-  const _$_RewardDto({@required this.id,
+  const _$_RewardDto({this.id,
     @required this.name,
     @required this.description,
     @required this.imageURL})
-    : assert(id != null),
-      assert(name != null),
+    : assert(name != null),
       assert(description != null),
       assert(imageURL != null),
       super._();
@@ -184,7 +183,7 @@ class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res>
 abstract class _RewardDto extends RewardDto {
   const _RewardDto._() : super._();
   
-  const factory _RewardDto({@required String id,
+  const factory _RewardDto({String id,
     @required String name,
     @required String description,
     @required String imageURL}) = _$_RewardDto;

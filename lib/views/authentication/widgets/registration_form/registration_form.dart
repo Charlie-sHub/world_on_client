@@ -52,10 +52,9 @@ class RegistrationForm extends StatelessWidget {
               const BirthdayButton(),
               const SizedBox(height: 8),
               PasswordTextField(
-                eventToAdd: (String value) =>
-                  context.bloc<RegistrationFormBloc>().add(
-                    RegistrationFormEvent.passwordChanged(value),
-                  ),
+                eventToAdd: (String value) => context.bloc<RegistrationFormBloc>().add(
+                      RegistrationFormEvent.passwordChanged(value),
+                    ),
                 validator: (_) => _passwordValidator(context),
               ),
               const SizedBox(height: 8),

@@ -17,7 +17,7 @@ class _$DeviceDtoTearOff {
   const _$DeviceDtoTearOff();
 
 // ignore: unused_element
-  _DeviceDto call({@required String id,
+  _DeviceDto call({String id,
     @required String name,
     @required String type,
     @required String company}) {
@@ -118,12 +118,11 @@ class __$DeviceDtoCopyWithImpl<$Res> extends _$DeviceDtoCopyWithImpl<$Res>
 @JsonSerializable()
 
 /// @nodoc class _$_DeviceDto extends _DeviceDto {
-  const _$_DeviceDto({@required this.id,
+  const _$_DeviceDto({this.id,
     @required this.name,
     @required this.type,
     @required this.company})
-    : assert(id != null),
-      assert(name != null),
+    : assert(name != null),
       assert(type != null),
       assert(company != null),
       super._();
@@ -180,7 +179,7 @@ class __$DeviceDtoCopyWithImpl<$Res> extends _$DeviceDtoCopyWithImpl<$Res>
 abstract class _DeviceDto extends DeviceDto {
   const _DeviceDto._() : super._();
   
-  const factory _DeviceDto({@required String id,
+  const factory _DeviceDto({String id,
     @required String name,
     @required String type,
     @required String company}) = _$_DeviceDto;

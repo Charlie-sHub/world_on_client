@@ -17,7 +17,7 @@ class _$OptionsDtoTearOff {
   const _$OptionsDtoTearOff();
 
 // ignore: unused_element
-  _OptionsDto call({@required String id, @required String languageCode}) {
+  _OptionsDto call({String id, @required String languageCode}) {
     return _OptionsDto(
       id: id,
       languageCode: languageCode,
@@ -108,9 +108,8 @@ class __$OptionsDtoCopyWithImpl<$Res> extends _$OptionsDtoCopyWithImpl<$Res>
 @JsonSerializable()
 
 /// @nodoc class _$_OptionsDto extends _OptionsDto {
-  const _$_OptionsDto({@required this.id, @required this.languageCode})
-    : assert(id != null),
-      assert(languageCode != null),
+  const _$_OptionsDto({this.id, @required this.languageCode})
+    : assert(languageCode != null),
       super._();
   
   factory _$_OptionsDto.fromJson(Map<String, dynamic> json) =>
@@ -156,7 +155,8 @@ class __$OptionsDtoCopyWithImpl<$Res> extends _$OptionsDtoCopyWithImpl<$Res>
 abstract class _OptionsDto extends OptionsDto {
   const _OptionsDto._() : super._();
   
-  const factory _OptionsDto({@required String id, @required String languageCode}) = _$_OptionsDto;
+  const factory _OptionsDto({String id, @required String languageCode}) =
+  _$_OptionsDto;
   
   factory _OptionsDto.fromJson(Map<String, dynamic> json) =
   _$_OptionsDto.fromJson;

@@ -87,13 +87,9 @@ class _$NotificationCopyWithImpl<$Res> implements $NotificationCopyWith<$Res> {
       id: id == freezed ? _value.id : id as UniqueId,
       sender: sender == freezed ? _value.sender : sender as User,
       receiver: receiver == freezed ? _value.receiver : receiver as User,
-      description: description == freezed
-        ? _value.description
-        : description as EntityDescription,
+      description: description == freezed ? _value.description : description as EntityDescription,
       seen: seen == freezed ? _value.seen : seen as bool,
-      creationDate: creationDate == freezed
-        ? _value.creationDate
-        : creationDate as PastDate,
+      creationDate: creationDate == freezed ? _value.creationDate : creationDate as PastDate,
       type: type == freezed ? _value.type : type as NotificationType,
     ));
   }
@@ -120,31 +116,22 @@ class _$NotificationCopyWithImpl<$Res> implements $NotificationCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$NotificationCopyWith<$Res>
-  implements $NotificationCopyWith<$Res> {
-  factory _$NotificationCopyWith(_Notification value, $Res Function(_Notification) then) =
-  __$NotificationCopyWithImpl<$Res>;
-  
+abstract class _$NotificationCopyWith<$Res> implements $NotificationCopyWith<$Res> {
+  factory _$NotificationCopyWith(_Notification value, $Res Function(_Notification) then) = __$NotificationCopyWithImpl<$Res>;
+
   @override
-  $Res call({UniqueId id,
-    User sender,
-    User receiver,
-    EntityDescription description,
-    bool seen,
-    PastDate creationDate,
-    NotificationType type});
+  $Res call({UniqueId id, User sender, User receiver, EntityDescription description, bool seen, PastDate creationDate, NotificationType type});
 
   @override
   $UserCopyWith<$Res> get sender;
+
   @override
   $UserCopyWith<$Res> get receiver;
 }
 
 /// @nodoc
-class __$NotificationCopyWithImpl<$Res> extends _$NotificationCopyWithImpl<$Res>
-  implements _$NotificationCopyWith<$Res> {
-  __$NotificationCopyWithImpl(_Notification _value, $Res Function(_Notification) _then)
-    : super(_value, (v) => _then(v as _Notification));
+class __$NotificationCopyWithImpl<$Res> extends _$NotificationCopyWithImpl<$Res> implements _$NotificationCopyWith<$Res> {
+  __$NotificationCopyWithImpl(_Notification _value, $Res Function(_Notification) _then) : super(_value, (v) => _then(v as _Notification));
   
   @override
   _Notification get _value => super._value as _Notification;
@@ -163,13 +150,9 @@ class __$NotificationCopyWithImpl<$Res> extends _$NotificationCopyWithImpl<$Res>
       id: id == freezed ? _value.id : id as UniqueId,
       sender: sender == freezed ? _value.sender : sender as User,
       receiver: receiver == freezed ? _value.receiver : receiver as User,
-      description: description == freezed
-        ? _value.description
-        : description as EntityDescription,
+      description: description == freezed ? _value.description : description as EntityDescription,
       seen: seen == freezed ? _value.seen : seen as bool,
-      creationDate: creationDate == freezed
-        ? _value.creationDate
-        : creationDate as PastDate,
+      creationDate: creationDate == freezed ? _value.creationDate : creationDate as PastDate,
       type: type == freezed ? _value.type : type as NotificationType,
     ));
   }
@@ -177,13 +160,7 @@ class __$NotificationCopyWithImpl<$Res> extends _$NotificationCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_Notification extends _Notification {
-  const _$_Notification({@required this.id,
-    @required this.sender,
-    @required this.receiver,
-    @required this.description,
-    @required this.seen,
-    @required this.creationDate,
-    @required this.type})
+  const _$_Notification({@required this.id, @required this.sender, @required this.receiver, @required this.description, @required this.seen, @required this.creationDate, @required this.type})
     : assert(id != null),
       assert(sender != null),
       assert(receiver != null),
@@ -220,23 +197,13 @@ class _$_Notification extends _Notification {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
       (other is _Notification &&
-        (identical(other.id, id) ||
-          const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.sender, sender) ||
-          const DeepCollectionEquality().equals(other.sender, sender)) &&
-        (identical(other.receiver, receiver) ||
-          const DeepCollectionEquality()
-            .equals(other.receiver, receiver)) &&
-        (identical(other.description, description) ||
-          const DeepCollectionEquality()
-            .equals(other.description, description)) &&
-        (identical(other.seen, seen) ||
-          const DeepCollectionEquality().equals(other.seen, seen)) &&
-        (identical(other.creationDate, creationDate) ||
-          const DeepCollectionEquality()
-            .equals(other.creationDate, creationDate)) &&
-        (identical(other.type, type) ||
-          const DeepCollectionEquality().equals(other.type, type)));
+        (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+        (identical(other.sender, sender) || const DeepCollectionEquality().equals(other.sender, sender)) &&
+        (identical(other.receiver, receiver) || const DeepCollectionEquality().equals(other.receiver, receiver)) &&
+        (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
+        (identical(other.seen, seen) || const DeepCollectionEquality().equals(other.seen, seen)) &&
+        (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+        (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)));
   }
 
   @override
@@ -249,10 +216,9 @@ class _$_Notification extends _Notification {
       const DeepCollectionEquality().hash(seen) ^
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(type);
-
+  
   @override
-  _$NotificationCopyWith<_Notification> get copyWith =>
-    __$NotificationCopyWithImpl<_Notification>(this, _$identity);
+  _$NotificationCopyWith<_Notification> get copyWith => __$NotificationCopyWithImpl<_Notification>(this, _$identity);
 }
 
 abstract class _Notification extends Notification {

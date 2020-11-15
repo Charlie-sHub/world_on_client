@@ -29,13 +29,13 @@ abstract class TagDto implements _$TagDto {
       );
 
   Tag toDomain() => Tag(
-    id: UniqueId.fromUniqueString(id),
-    name: Name(name),
-    creatorId: UniqueId.fromUniqueString(creatorId),
-    // TODO: Solve the issue with the dates
-    // How to send them and retrieve them?
-    creationDate: PastDate(DateTime.now()),
-    modificationDate: PastDate(DateTime.now()),
+        id: UniqueId.fromUniqueString(id),
+        name: Name(name),
+        creatorId: UniqueId.fromUniqueString(creatorId),
+        // TODO: Solve the issue with the dates
+        // How to send them and retrieve them?
+        creationDate: PastDate(DateTime.now()),
+        modificationDate: PastDate(DateTime.now()),
       );
 
   factory TagDto.fromJson(Map<String, dynamic> json) => _$TagDtoFromJson(json);

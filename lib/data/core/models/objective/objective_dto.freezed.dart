@@ -17,7 +17,7 @@ class _$ObjectiveDtoTearOff {
   const _$ObjectiveDtoTearOff();
 
 // ignore: unused_element
-  _ObjectiveDto call({@required String id,
+  _ObjectiveDto call({String id,
     @required String description,
     @required CoordinatesDto coordinates,
     @required String imageURL}) {
@@ -147,12 +147,11 @@ class __$ObjectiveDtoCopyWithImpl<$Res> extends _$ObjectiveDtoCopyWithImpl<$Res>
 @JsonSerializable()
 
 /// @nodoc class _$_ObjectiveDto extends _ObjectiveDto {
-  const _$_ObjectiveDto({@required this.id,
+  const _$_ObjectiveDto({this.id,
     @required this.description,
     @required this.coordinates,
     @required this.imageURL})
-    : assert(id != null),
-      assert(description != null),
+    : assert(description != null),
       assert(coordinates != null),
       assert(imageURL != null),
       super._();
@@ -212,7 +211,7 @@ class __$ObjectiveDtoCopyWithImpl<$Res> extends _$ObjectiveDtoCopyWithImpl<$Res>
 abstract class _ObjectiveDto extends ObjectiveDto {
   const _ObjectiveDto._() : super._();
   
-  const factory _ObjectiveDto({@required String id,
+  const factory _ObjectiveDto({String id,
     @required String description,
     @required CoordinatesDto coordinates,
     @required String imageURL}) = _$_ObjectiveDto;

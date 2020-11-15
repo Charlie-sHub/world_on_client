@@ -95,20 +95,23 @@ class _$LogInFormEventCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$EmailChangedCopyWith<$Res> {
-  factory _$EmailChangedCopyWith(_EmailChanged value, $Res Function(_EmailChanged) then) = __$EmailChangedCopyWithImpl<$Res>;
-
+  factory _$EmailChangedCopyWith(
+          _EmailChanged value, $Res Function(_EmailChanged) then) =
+      __$EmailChangedCopyWithImpl<$Res>;
   $Res call({String email});
 }
 
 /// @nodoc
-class __$EmailChangedCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res>
-  implements _$EmailChangedCopyWith<$Res> {
-  __$EmailChangedCopyWithImpl(_EmailChanged _value, $Res Function(_EmailChanged) _then)
-    : super(_value, (v) => _then(v as _EmailChanged));
-  
+class __$EmailChangedCopyWithImpl<$Res>
+    extends _$LogInFormEventCopyWithImpl<$Res>
+    implements _$EmailChangedCopyWith<$Res> {
+  __$EmailChangedCopyWithImpl(
+      _EmailChanged _value, $Res Function(_EmailChanged) _then)
+      : super(_value, (v) => _then(v as _EmailChanged));
+
   @override
   _EmailChanged get _value => super._value as _EmailChanged;
-  
+
   @override
   $Res call({
     Object email = freezed,
@@ -134,18 +137,18 @@ class _$_EmailChanged implements _EmailChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _EmailChanged &&
-        (identical(other.email, email) ||
-          const DeepCollectionEquality().equals(other.email, email)));
+        (other is _EmailChanged &&
+            (identical(other.email, email) ||
+                const DeepCollectionEquality().equals(other.email, email)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(email);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(email);
 
   @override
   _$EmailChangedCopyWith<_EmailChanged> get copyWith =>
-    __$EmailChangedCopyWithImpl<_EmailChanged>(this, _$identity);
+      __$EmailChangedCopyWithImpl<_EmailChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -553,11 +556,12 @@ class _$LogInFormStateTearOff {
   const _$LogInFormStateTearOff();
 
 // ignore: unused_element
-  _LogInFormState call({@required EmailAddress email,
-    @required Password password,
-    @required bool showErrorMessages,
-    @required bool isSubmitting,
-    @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
+  _LogInFormState call(
+      {@required EmailAddress email,
+      @required Password password,
+      @required bool showErrorMessages,
+      @required bool isSubmitting,
+      @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _LogInFormState(
       email: email,
       password: password,
@@ -585,14 +589,15 @@ mixin _$LogInFormState {
 
 /// @nodoc
 abstract class $LogInFormStateCopyWith<$Res> {
-  factory $LogInFormStateCopyWith(LogInFormState value, $Res Function(LogInFormState) then) =
-  _$LogInFormStateCopyWithImpl<$Res>;
-  
-  $Res call({EmailAddress email,
-    Password password,
-    bool showErrorMessages,
-    bool isSubmitting,
-    Option<Either<Failure, Unit>> failureOrSuccessOption});
+  factory $LogInFormStateCopyWith(
+          LogInFormState value, $Res Function(LogInFormState) then) =
+      _$LogInFormStateCopyWithImpl<$Res>;
+  $Res call(
+      {EmailAddress email,
+      Password password,
+      bool showErrorMessages,
+      bool isSubmitting,
+      Option<Either<Failure, Unit>> failureOrSuccessOption});
 }
 
 /// @nodoc
@@ -616,13 +621,13 @@ class _$LogInFormStateCopyWithImpl<$Res>
       email: email == freezed ? _value.email : email as EmailAddress,
       password: password == freezed ? _value.password : password as Password,
       showErrorMessages: showErrorMessages == freezed
-        ? _value.showErrorMessages
-        : showErrorMessages as bool,
+          ? _value.showErrorMessages
+          : showErrorMessages as bool,
       isSubmitting:
-      isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
       failureOrSuccessOption: failureOrSuccessOption == freezed
-        ? _value.failureOrSuccessOption
-        : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+          ? _value.failureOrSuccessOption
+          : failureOrSuccessOption as Option<Either<Failure, Unit>>,
     ));
   }
 }
@@ -633,13 +638,13 @@ abstract class _$LogInFormStateCopyWith<$Res>
   factory _$LogInFormStateCopyWith(
           _LogInFormState value, $Res Function(_LogInFormState) then) =
       __$LogInFormStateCopyWithImpl<$Res>;
-
   @override
-  $Res call({EmailAddress email,
-    Password password,
-    bool showErrorMessages,
-    bool isSubmitting,
-    Option<Either<Failure, Unit>> failureOrSuccessOption});
+  $Res call(
+      {EmailAddress email,
+      Password password,
+      bool showErrorMessages,
+      bool isSubmitting,
+      Option<Either<Failure, Unit>> failureOrSuccessOption});
 }
 
 /// @nodoc
@@ -665,30 +670,31 @@ class __$LogInFormStateCopyWithImpl<$Res>
       email: email == freezed ? _value.email : email as EmailAddress,
       password: password == freezed ? _value.password : password as Password,
       showErrorMessages: showErrorMessages == freezed
-        ? _value.showErrorMessages
-        : showErrorMessages as bool,
+          ? _value.showErrorMessages
+          : showErrorMessages as bool,
       isSubmitting:
-      isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
       failureOrSuccessOption: failureOrSuccessOption == freezed
-        ? _value.failureOrSuccessOption
-        : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+          ? _value.failureOrSuccessOption
+          : failureOrSuccessOption as Option<Either<Failure, Unit>>,
     ));
   }
 }
 
 /// @nodoc
 class _$_LogInFormState implements _LogInFormState {
-  const _$_LogInFormState({@required this.email,
-    @required this.password,
-    @required this.showErrorMessages,
-    @required this.isSubmitting,
-    @required this.failureOrSuccessOption})
-    : assert(email != null),
-      assert(password != null),
-      assert(showErrorMessages != null),
-      assert(isSubmitting != null),
-      assert(failureOrSuccessOption != null);
-  
+  const _$_LogInFormState(
+      {@required this.email,
+      @required this.password,
+      @required this.showErrorMessages,
+      @required this.isSubmitting,
+      @required this.failureOrSuccessOption})
+      : assert(email != null),
+        assert(password != null),
+        assert(showErrorMessages != null),
+        assert(isSubmitting != null),
+        assert(failureOrSuccessOption != null);
+
   @override
   final EmailAddress email;
   @override
@@ -709,14 +715,14 @@ class _$_LogInFormState implements _LogInFormState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LogInFormState &&
-          (identical(other.email, email) ||
-            const DeepCollectionEquality().equals(other.email, email)) &&
-          (identical(other.password, password) ||
-            const DeepCollectionEquality()
-              .equals(other.password, password)) &&
-          (identical(other.showErrorMessages, showErrorMessages) ||
-            const DeepCollectionEquality()
-              .equals(other.showErrorMessages, showErrorMessages)) &&
+            (identical(other.email, email) ||
+                const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.password, password) ||
+                const DeepCollectionEquality()
+                    .equals(other.password, password)) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                const DeepCollectionEquality()
+                    .equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality()
                     .equals(other.isSubmitting, isSubmitting)) &&
@@ -727,12 +733,12 @@ class _$_LogInFormState implements _LogInFormState {
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(email) ^
-    const DeepCollectionEquality().hash(password) ^
-    const DeepCollectionEquality().hash(showErrorMessages) ^
-    const DeepCollectionEquality().hash(isSubmitting) ^
-    const DeepCollectionEquality().hash(failureOrSuccessOption);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(email) ^
+      const DeepCollectionEquality().hash(password) ^
+      const DeepCollectionEquality().hash(showErrorMessages) ^
+      const DeepCollectionEquality().hash(isSubmitting) ^
+      const DeepCollectionEquality().hash(failureOrSuccessOption);
 
   @override
   _$LogInFormStateCopyWith<_LogInFormState> get copyWith =>
@@ -740,22 +746,20 @@ class _$_LogInFormState implements _LogInFormState {
 }
 
 abstract class _LogInFormState implements LogInFormState {
-  const factory _LogInFormState({@required EmailAddress email,
-    @required Password password,
-    @required bool showErrorMessages,
-    @required bool isSubmitting,
-    @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
-  _$_LogInFormState;
-  
+  const factory _LogInFormState(
+          {@required EmailAddress email,
+          @required Password password,
+          @required bool showErrorMessages,
+          @required bool isSubmitting,
+          @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
+      _$_LogInFormState;
+
   @override
   EmailAddress get email;
-  
   @override
   Password get password;
-  
   @override
   bool get showErrorMessages;
-  
   @override
   bool get isSubmitting;
   @override

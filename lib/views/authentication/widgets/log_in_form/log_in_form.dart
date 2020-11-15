@@ -40,10 +40,9 @@ class LogInForm extends StatelessWidget {
               ),
               const SizedBox(height: 3),
               PasswordTextField(
-                eventToAdd: (String value) =>
-                  context.bloc<LogInFormBloc>().add(
-                    LogInFormEvent.passwordChanged(value),
-                  ),
+                eventToAdd: (String value) => context.bloc<LogInFormBloc>().add(
+                      LogInFormEvent.passwordChanged(value),
+                    ),
                 validator: (_) => _passwordValidator(context),
               ),
               const SizedBox(height: 7),

@@ -1,7 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart' as dartz;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:kt_dart/kt.dart';
-import 'package:worldon/data/core/models/tag/tag_dto.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/experience_points.dart';
@@ -16,9 +16,9 @@ part 'achievement_dto.g.dart';
 @freezed
 abstract class AchievementDto implements _$AchievementDto {
   const AchievementDto._();
-
+  
   const factory AchievementDto({
-    @required String id,
+    String id,
     @required String name,
     @required String description,
     @required String imageURL,
@@ -28,11 +28,11 @@ abstract class AchievementDto implements _$AchievementDto {
     @required String creatorId,
     @required String creationDate,
     @required String modificationDate,
-    @required Set<TagDto> tags,
+    @required Set<String> tagsIds,
   }) = _AchievementDto;
-
+  
   factory AchievementDto.fromDomain(Achievement achievement) => AchievementDto(
-        id: achievement.id.getOrCrash(),
+    id: achievement.id.getOrCrash(),
         name: achievement.name.getOrCrash(),
         description: achievement.description.getOrCrash(),
         imageURL: achievement.imageURL,
@@ -42,23 +42,30 @@ abstract class AchievementDto implements _$AchievementDto {
         creatorId: achievement.creatorId.getOrCrash(),
         creationDate: achievement.creationDate.getOrCrash().toIso8601String(),
         modificationDate: achievement.modificationDate.getOrCrash().toIso8601String(),
-        tags: achievement.tags.getOrCrash().asSet().map((tag) => TagDto.fromDomain(tag)).toSet(),
+        tagsIds: achievement.tags.getOrCrash().asSet().map((tag) => tag.id.getOrCrash()).toSet(),
       );
-
+  
   Achievement toDomain() => Achievement(
-        id: UniqueId.fromUniqueString(id),
-        name: Name(name),
-        description: EntityDescription(description),
-        imageURL: imageURL,
-        imageFile: dartz.none(),
-        type: type,
-        requisite: requisite,
-        experiencePoints: ExperiencePoints(experiencePoints),
-        creatorId: UniqueId.fromUniqueString(creatorId),
-        creationDate: PastDate(DateTime.parse(creationDate)),
-        modificationDate: PastDate(DateTime.parse(modificationDate)),
-        tags: TagSet(tags.map((tagDto) => tagDto.toDomain()).toImmutableSet()),
-      );
-
+    id: UniqueId.fromUniqueString(id),
+    name: Name(name),
+    description: EntityDescription(description),
+    imageURL: imageURL,
+    imageFile: dartz.none(),
+    type: type,
+    requisite: requisite,
+    experiencePoints: ExperiencePoints(experiencePoints),
+    creatorId: UniqueId.fromUniqueString(creatorId),
+    creationDate: PastDate(DateTime.now()),
+    modificationDate: PastDate(DateTime.now()),
+    tags: TagSet(const KtSet.empty()),
+  );
+  
   factory AchievementDto.fromJson(Map<String, dynamic> json) => _$AchievementDtoFromJson(json);
+  
+  factory AchievementDto.fromFirestore(DocumentSnapshot document) =>
+    AchievementDto.fromJson(
+      document.data(),
+    ).copyWith(
+      id: document.id,
+    );
 }

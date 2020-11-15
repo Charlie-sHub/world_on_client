@@ -17,15 +17,16 @@ class _$CommentDtoTearOff {
   const _$CommentDtoTearOff();
 
 // ignore: unused_element
-  _CommentDto call({@required String id,
-    @required UserDto poster,
-    @required String experienceId,
-    @required String content,
-    @required String creationDate,
-    @required String modificationDate}) {
+  _CommentDto call(
+      {String id,
+      @required String posterId,
+      @required String experienceId,
+      @required String content,
+      @required String creationDate,
+      @required String modificationDate}) {
     return _CommentDto(
       id: id,
-      poster: poster,
+      posterId: posterId,
       experienceId: experienceId,
       content: content,
       creationDate: creationDate,
@@ -46,7 +47,7 @@ const $CommentDto = _$CommentDtoTearOff();
 /// @nodoc
 mixin _$CommentDto {
   String get id;
-  UserDto get poster;
+  String get posterId;
   String get experienceId;
   String get content;
   String get creationDate;
@@ -58,17 +59,16 @@ mixin _$CommentDto {
 
 /// @nodoc
 abstract class $CommentDtoCopyWith<$Res> {
-  factory $CommentDtoCopyWith(CommentDto value, $Res Function(CommentDto) then) =
-  _$CommentDtoCopyWithImpl<$Res>;
-  
-  $Res call({String id,
-    UserDto poster,
-    String experienceId,
-    String content,
-    String creationDate,
-    String modificationDate});
-  
-  $UserDtoCopyWith<$Res> get poster;
+  factory $CommentDtoCopyWith(
+          CommentDto value, $Res Function(CommentDto) then) =
+      _$CommentDtoCopyWithImpl<$Res>;
+  $Res call(
+      {String id,
+      String posterId,
+      String experienceId,
+      String content,
+      String creationDate,
+      String modificationDate});
 }
 
 /// @nodoc
@@ -82,7 +82,7 @@ class _$CommentDtoCopyWithImpl<$Res> implements $CommentDtoCopyWith<$Res> {
   @override
   $Res call({
     Object id = freezed,
-    Object poster = freezed,
+    Object posterId = freezed,
     Object experienceId = freezed,
     Object content = freezed,
     Object creationDate = freezed,
@@ -90,61 +90,50 @@ class _$CommentDtoCopyWithImpl<$Res> implements $CommentDtoCopyWith<$Res> {
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
-      poster: poster == freezed ? _value.poster : poster as UserDto,
+      posterId: posterId == freezed ? _value.posterId : posterId as String,
       experienceId: experienceId == freezed
-        ? _value.experienceId
-        : experienceId as String,
+          ? _value.experienceId
+          : experienceId as String,
       content: content == freezed ? _value.content : content as String,
       creationDate: creationDate == freezed
-        ? _value.creationDate
-        : creationDate as String,
+          ? _value.creationDate
+          : creationDate as String,
       modificationDate: modificationDate == freezed
-        ? _value.modificationDate
-        : modificationDate as String,
+          ? _value.modificationDate
+          : modificationDate as String,
     ));
-  }
-
-  @override
-  $UserDtoCopyWith<$Res> get poster {
-    if (_value.poster == null) {
-      return null;
-    }
-    return $UserDtoCopyWith<$Res>(_value.poster, (value) {
-      return _then(_value.copyWith(poster: value));
-    });
   }
 }
 
 /// @nodoc
 abstract class _$CommentDtoCopyWith<$Res> implements $CommentDtoCopyWith<$Res> {
-  factory _$CommentDtoCopyWith(_CommentDto value, $Res Function(_CommentDto) then) =
-  __$CommentDtoCopyWithImpl<$Res>;
-  
+  factory _$CommentDtoCopyWith(
+          _CommentDto value, $Res Function(_CommentDto) then) =
+      __$CommentDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String id,
-    UserDto poster,
-    String experienceId,
-    String content,
-    String creationDate,
-    String modificationDate});
-  
-  @override
-  $UserDtoCopyWith<$Res> get poster;
+  $Res call(
+      {String id,
+      String posterId,
+      String experienceId,
+      String content,
+      String creationDate,
+      String modificationDate});
 }
 
 /// @nodoc
 class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res>
-  implements _$CommentDtoCopyWith<$Res> {
-  __$CommentDtoCopyWithImpl(_CommentDto _value, $Res Function(_CommentDto) _then)
-    : super(_value, (v) => _then(v as _CommentDto));
-  
+    implements _$CommentDtoCopyWith<$Res> {
+  __$CommentDtoCopyWithImpl(
+      _CommentDto _value, $Res Function(_CommentDto) _then)
+      : super(_value, (v) => _then(v as _CommentDto));
+
   @override
   _CommentDto get _value => super._value as _CommentDto;
-  
+
   @override
   $Res call({
     Object id = freezed,
-    Object poster = freezed,
+    Object posterId = freezed,
     Object experienceId = freezed,
     Object content = freezed,
     Object creationDate = freezed,
@@ -152,45 +141,46 @@ class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res>
   }) {
     return _then(_CommentDto(
       id: id == freezed ? _value.id : id as String,
-      poster: poster == freezed ? _value.poster : poster as UserDto,
+      posterId: posterId == freezed ? _value.posterId : posterId as String,
       experienceId: experienceId == freezed
-        ? _value.experienceId
-        : experienceId as String,
+          ? _value.experienceId
+          : experienceId as String,
       content: content == freezed ? _value.content : content as String,
       creationDate: creationDate == freezed
-        ? _value.creationDate
-        : creationDate as String,
+          ? _value.creationDate
+          : creationDate as String,
       modificationDate: modificationDate == freezed
-        ? _value.modificationDate
-        : modificationDate as String,
+          ? _value.modificationDate
+          : modificationDate as String,
     ));
   }
 }
 
 @JsonSerializable()
 
-/// @nodoc class _$_CommentDto extends _CommentDto {
-  const _$_CommentDto({@required this.id,
-    @required this.poster,
-    @required this.experienceId,
-    @required this.content,
-    @required this.creationDate,
-    @required this.modificationDate})
-    : assert(id != null),
-      assert(poster != null),
-      assert(experienceId != null),
-      assert(content != null),
-      assert(creationDate != null),
-      assert(modificationDate != null),
-      super._();
-  
+/// @nodoc
+class _$_CommentDto extends _CommentDto {
+  const _$_CommentDto(
+      {this.id,
+      @required this.posterId,
+      @required this.experienceId,
+      @required this.content,
+      @required this.creationDate,
+      @required this.modificationDate})
+      : assert(posterId != null),
+        assert(experienceId != null),
+        assert(content != null),
+        assert(creationDate != null),
+        assert(modificationDate != null),
+        super._();
+
   factory _$_CommentDto.fromJson(Map<String, dynamic> json) =>
-    _$_$_CommentDtoFromJson(json);
-  
+      _$_$_CommentDtoFromJson(json);
+
   @override
   final String id;
   @override
-  final UserDto poster;
+  final String posterId;
   @override
   final String experienceId;
   @override
@@ -202,36 +192,37 @@ class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res>
 
   @override
   String toString() {
-    return 'CommentDto(id: $id, poster: $poster, experienceId: $experienceId, content: $content, creationDate: $creationDate, modificationDate: $modificationDate)';
+    return 'CommentDto(id: $id, posterId: $posterId, experienceId: $experienceId, content: $content, creationDate: $creationDate, modificationDate: $modificationDate)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _CommentDto &&
-        (identical(other.id, id) ||
-          const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.poster, poster) ||
-          const DeepCollectionEquality().equals(other.poster, poster)) &&
-        (identical(other.experienceId, experienceId) ||
-          const DeepCollectionEquality()
-            .equals(other.experienceId, experienceId)) &&
-        (identical(other.content, content) ||
-          const DeepCollectionEquality()
-            .equals(other.content, content)) &&
-        (identical(other.creationDate, creationDate) ||
-          const DeepCollectionEquality()
-            .equals(other.creationDate, creationDate)) &&
-        (identical(other.modificationDate, modificationDate) ||
-          const DeepCollectionEquality()
-            .equals(other.modificationDate, modificationDate)));
+        (other is _CommentDto &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.posterId, posterId) ||
+                const DeepCollectionEquality()
+                    .equals(other.posterId, posterId)) &&
+            (identical(other.experienceId, experienceId) ||
+                const DeepCollectionEquality()
+                    .equals(other.experienceId, experienceId)) &&
+            (identical(other.content, content) ||
+                const DeepCollectionEquality()
+                    .equals(other.content, content)) &&
+            (identical(other.creationDate, creationDate) ||
+                const DeepCollectionEquality()
+                    .equals(other.creationDate, creationDate)) &&
+            (identical(other.modificationDate, modificationDate) ||
+                const DeepCollectionEquality()
+                    .equals(other.modificationDate, modificationDate)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(poster) ^
+      const DeepCollectionEquality().hash(posterId) ^
       const DeepCollectionEquality().hash(experienceId) ^
       const DeepCollectionEquality().hash(content) ^
       const DeepCollectionEquality().hash(creationDate) ^
@@ -239,7 +230,7 @@ class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res>
 
   @override
   _$CommentDtoCopyWith<_CommentDto> get copyWith =>
-    __$CommentDtoCopyWithImpl<_CommentDto>(this, _$identity);
+      __$CommentDtoCopyWithImpl<_CommentDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -249,29 +240,25 @@ class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res>
 
 abstract class _CommentDto extends CommentDto {
   const _CommentDto._() : super._();
-  
-  const factory _CommentDto({@required String id,
-    @required UserDto poster,
-    @required String experienceId,
-    @required String content,
-    @required String creationDate,
-    @required String modificationDate}) = _$_CommentDto;
-  
+  const factory _CommentDto(
+      {String id,
+      @required String posterId,
+      @required String experienceId,
+      @required String content,
+      @required String creationDate,
+      @required String modificationDate}) = _$_CommentDto;
+
   factory _CommentDto.fromJson(Map<String, dynamic> json) =
-  _$_CommentDto.fromJson;
-  
+      _$_CommentDto.fromJson;
+
   @override
   String get id;
-  
   @override
-  UserDto get poster;
-  
+  String get posterId;
   @override
   String get experienceId;
-  
   @override
   String get content;
-  
   @override
   String get creationDate;
   @override

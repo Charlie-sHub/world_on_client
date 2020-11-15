@@ -6,6 +6,6 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 
 extension FirebaseUserDomainX on firebase.User {
   Future<User> toDomain() async => UserDto.fromFirestore(
-    await FirebaseFirestore.instance.userCollection.doc(uid).get(),
+        await FirebaseFirestore.instance.userCollection.doc(uid).get(),
       ).toDomain();
 }

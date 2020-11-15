@@ -40,15 +40,13 @@ mixin _$PrimitiveReward {
 
 /// @nodoc
 abstract class $PrimitiveRewardCopyWith<$Res> {
-  factory $PrimitiveRewardCopyWith(PrimitiveReward value, $Res Function(PrimitiveReward) then) =
-  _$PrimitiveRewardCopyWithImpl<$Res>;
-  
+  factory $PrimitiveRewardCopyWith(PrimitiveReward value, $Res Function(PrimitiveReward) then) = _$PrimitiveRewardCopyWithImpl<$Res>;
+
   $Res call({UniqueId id, String name, String description, File imageFile});
 }
 
 /// @nodoc
-class _$PrimitiveRewardCopyWithImpl<$Res>
-  implements $PrimitiveRewardCopyWith<$Res> {
+class _$PrimitiveRewardCopyWithImpl<$Res> implements $PrimitiveRewardCopyWith<$Res> {
   _$PrimitiveRewardCopyWithImpl(this._value, this._then);
   
   final PrimitiveReward _value;
@@ -66,28 +64,23 @@ class _$PrimitiveRewardCopyWithImpl<$Res>
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as UniqueId,
       name: name == freezed ? _value.name : name as String,
-      description:
-      description == freezed ? _value.description : description as String,
+      description: description == freezed ? _value.description : description as String,
       imageFile: imageFile == freezed ? _value.imageFile : imageFile as File,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$PrimitiveRewardCopyWith<$Res>
-  implements $PrimitiveRewardCopyWith<$Res> {
-  factory _$PrimitiveRewardCopyWith(_PrimitiveReward value, $Res Function(_PrimitiveReward) then) =
-  __$PrimitiveRewardCopyWithImpl<$Res>;
+abstract class _$PrimitiveRewardCopyWith<$Res> implements $PrimitiveRewardCopyWith<$Res> {
+  factory _$PrimitiveRewardCopyWith(_PrimitiveReward value, $Res Function(_PrimitiveReward) then) = __$PrimitiveRewardCopyWithImpl<$Res>;
   
   @override
   $Res call({UniqueId id, String name, String description, File imageFile});
 }
 
 /// @nodoc
-class __$PrimitiveRewardCopyWithImpl<$Res> extends _$PrimitiveRewardCopyWithImpl<$Res>
-  implements _$PrimitiveRewardCopyWith<$Res> {
-  __$PrimitiveRewardCopyWithImpl(_PrimitiveReward _value, $Res Function(_PrimitiveReward) _then)
-    : super(_value, (v) => _then(v as _PrimitiveReward));
+class __$PrimitiveRewardCopyWithImpl<$Res> extends _$PrimitiveRewardCopyWithImpl<$Res> implements _$PrimitiveRewardCopyWith<$Res> {
+  __$PrimitiveRewardCopyWithImpl(_PrimitiveReward _value, $Res Function(_PrimitiveReward) _then) : super(_value, (v) => _then(v as _PrimitiveReward));
   
   @override
   _PrimitiveReward get _value => super._value as _PrimitiveReward;
@@ -102,8 +95,7 @@ class __$PrimitiveRewardCopyWithImpl<$Res> extends _$PrimitiveRewardCopyWithImpl
     return _then(_PrimitiveReward(
       id: id == freezed ? _value.id : id as UniqueId,
       name: name == freezed ? _value.name : name as String,
-      description:
-      description == freezed ? _value.description : description as String,
+      description: description == freezed ? _value.description : description as String,
       imageFile: imageFile == freezed ? _value.imageFile : imageFile as File,
     ));
   }
@@ -111,10 +103,7 @@ class __$PrimitiveRewardCopyWithImpl<$Res> extends _$PrimitiveRewardCopyWithImpl
 
 /// @nodoc
 class _$_PrimitiveReward extends _PrimitiveReward {
-  const _$_PrimitiveReward({@required this.id,
-    @required this.name,
-    @required this.description,
-    @required this.imageFile})
+  const _$_PrimitiveReward({@required this.id, @required this.name, @required this.description, @required this.imageFile})
     : assert(id != null),
       assert(name != null),
       assert(description != null),
@@ -139,16 +128,10 @@ class _$_PrimitiveReward extends _PrimitiveReward {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
       (other is _PrimitiveReward &&
-        (identical(other.id, id) ||
-          const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.name, name) ||
-          const DeepCollectionEquality().equals(other.name, name)) &&
-        (identical(other.description, description) ||
-          const DeepCollectionEquality()
-            .equals(other.description, description)) &&
-        (identical(other.imageFile, imageFile) ||
-          const DeepCollectionEquality()
-            .equals(other.imageFile, imageFile)));
+        (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+        (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+        (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
+        (identical(other.imageFile, imageFile) || const DeepCollectionEquality().equals(other.imageFile, imageFile)));
   }
 
   @override
@@ -158,19 +141,15 @@ class _$_PrimitiveReward extends _PrimitiveReward {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(imageFile);
-
+  
   @override
-  _$PrimitiveRewardCopyWith<_PrimitiveReward> get copyWith =>
-    __$PrimitiveRewardCopyWithImpl<_PrimitiveReward>(this, _$identity);
+  _$PrimitiveRewardCopyWith<_PrimitiveReward> get copyWith => __$PrimitiveRewardCopyWithImpl<_PrimitiveReward>(this, _$identity);
 }
 
 abstract class _PrimitiveReward extends PrimitiveReward {
   const _PrimitiveReward._() : super._();
   
-  const factory _PrimitiveReward({@required UniqueId id,
-    @required String name,
-    @required String description,
-    @required File imageFile}) = _$_PrimitiveReward;
+  const factory _PrimitiveReward({@required UniqueId id, @required String name, @required String description, @required File imageFile}) = _$_PrimitiveReward;
   
   @override
   UniqueId get id;
@@ -180,7 +159,7 @@ abstract class _PrimitiveReward extends PrimitiveReward {
   
   @override
   String get description;
-  
+
   @override
   File get imageFile;
   
