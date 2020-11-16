@@ -51,23 +51,20 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
     yield* _firestore.tagCollection
         .snapshots()
         .map(
-        (snapshot) =>
-        snapshot.docs.map(
+          (snapshot) => snapshot.docs.map(
             (document) => TagDto.fromFirestore(document).toDomain(),
-        ),
-    )
-      .map(
-        (tags) =>
-        right<Failure, KtList<Tag>>(
-          tags.where((tag) => tag.name.getOrCrash().contains(name.getOrCrash())).toImmutableList(),
-        ),
-    )
-      .onErrorReturnWith(
-        (error) =>
-        left(
-          onError(error),
-        ),
-    );
+          ),
+        )
+        .map(
+          (tags) => right<Failure, KtList<Tag>>(
+            tags.where((tag) => tag.name.getOrCrash().contains(name.getOrCrash())).toImmutableList(),
+          ),
+        )
+        .onErrorReturnWith(
+          (error) => left(
+            onError(error),
+          ),
+        );
   }
 
   @override

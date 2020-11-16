@@ -1,40 +1,124 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
+import 'package:logger/logger.dart';
+import 'package:rxdart/rxdart.dart' hide Notification;
 import 'package:worldon/core/error/failure.dart';
+import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/data/core/misc/firebase_helpers.dart';
+import 'package:worldon/data/core/models/notification/notification_dto.dart';
+import 'package:worldon/data/core/models/user/user_dto.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/notifications/repository/notification_repository_interface.dart';
 
 @LazySingleton(as: NotificationRepositoryInterface, env: [Environment.prod])
 class ProductionNotificationRepository implements NotificationRepositoryInterface {
+  final _logger = Logger();
+  final FirebaseFirestore _firestore;
+
+  ProductionNotificationRepository(this._firestore);
+
   @override
-  Future<Either<Failure, Unit>> checkNotification(UniqueId id) {
-    // TODO: implement checkNotification
-    throw UnimplementedError();
+  Future<Either<Failure, Unit>> checkNotification(UniqueId id) async {
+    try {
+      await _firestore.notificationCollection
+          .doc(
+        id.getOrCrash(),
+      )
+          .update(
+        {
+          "seen": true,
+        },
+      );
+      return right(unit);
+    } on FirebaseException catch (e) {
+      return onFirebaseException(e);
+    }
   }
 
   @override
-  Future<Either<Failure, Unit>> deleteUserNotifications() {
+  Stream<Either<Failure, KtList<Notification>>> watchNotifications() async* {
+    final _userDocument = await _firestore.userDocument();
+    final _userDto = UserDto.fromFirestore(await _userDocument.get());
+    // TODO: Order by creation date
+    // Gotta solve the dates issue first
+    yield* _firestore.notificationCollection
+      .where(
+      "receiverId",
+      isEqualTo: _userDto.id,
+    )
+      .snapshots()
+      .map(
+        (snapshot) =>
+        snapshot.docs.map(
+            (document) => NotificationDto.fromFirestore(document).toDomain(),
+        ),
+    )
+      .map(
+        (experiences) =>
+        right<Failure, KtList<Notification>>(
+          experiences.toImmutableList(),
+        ),
+    )
+      .onErrorReturnWith(
+        (error) =>
+        left(
+          onError(error),
+        ),
+    );
+  }
+  
+  @override
+  Future<Either<Failure, Unit>> sendNotification(Notification notification) async {
+    try {
+      final _notificationDto = NotificationDto.fromDomain(notification);
+      await _firestore.notificationCollection.add(
+        _notificationDto.toJson(),
+      );
+      return right(unit);
+    } on FirebaseException catch (e) {
+      return onFirebaseException(e);
+    }
+  }
+  
+  @override
+  Future<Either<Failure, Unit>> deleteNotification(UniqueId id) async {
+    try {
+      await _firestore.notificationCollection.doc(id.getOrCrash()).delete();
+      return right(unit);
+    } on FirebaseException catch (e) {
+      return onFirebaseException(e);
+    }
+  }
+  
+  @override
+  Future<Either<Failure, Unit>> deleteUserNotifications() async {
     // TODO: implement deleteUserNotifications
     throw UnimplementedError();
   }
-
-  @override
-  Stream<Either<Failure, KtList<Notification>>> watchNotifications() {
-    // TODO: implement loadNotifications
-    throw UnimplementedError();
+  
+  Either<Failure, Unit> onFirebaseException(FirebaseException e) {
+    _logger.e("FirebaseException: ${e.message}");
+    return left(
+      const Failure.coreData(
+        CoreDataFailure.serverError(errorString: "Unknown server error"),
+      ),
+    );
   }
-
-  @override
-  Future<Either<Failure, Unit>> sendNotification(Notification notification) {
-    // TODO: implement sendNotification
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<Either<Failure, Unit>> deleteNotification(UniqueId id) {
-    // TODO: implement deleteNotification
-    throw UnimplementedError();
+  
+  Failure onError(dynamic error) {
+    if (error is FirebaseException) {
+      _logger.e("FirebaseException: ${error.message}");
+      return Failure.coreData(
+        CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
+      );
+    } else {
+      _logger.e("Unknown server error");
+      return const Failure.coreData(
+        CoreDataFailure.serverError(errorString: "Unknown server error"),
+      );
+    }
   }
 }

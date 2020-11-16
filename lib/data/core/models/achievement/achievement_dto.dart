@@ -16,7 +16,7 @@ part 'achievement_dto.g.dart';
 @freezed
 abstract class AchievementDto implements _$AchievementDto {
   const AchievementDto._();
-  
+
   const factory AchievementDto({
     String id,
     @required String name,
@@ -30,7 +30,7 @@ abstract class AchievementDto implements _$AchievementDto {
     @required String modificationDate,
     @required Set<String> tagsIds,
   }) = _AchievementDto;
-  
+
   factory AchievementDto.fromDomain(Achievement achievement) => AchievementDto(
     id: achievement.id.getOrCrash(),
         name: achievement.name.getOrCrash(),
@@ -44,28 +44,27 @@ abstract class AchievementDto implements _$AchievementDto {
         modificationDate: achievement.modificationDate.getOrCrash().toIso8601String(),
         tagsIds: achievement.tags.getOrCrash().asSet().map((tag) => tag.id.getOrCrash()).toSet(),
       );
-  
+
   Achievement toDomain() => Achievement(
-    id: UniqueId.fromUniqueString(id),
-    name: Name(name),
-    description: EntityDescription(description),
-    imageURL: imageURL,
-    imageFile: dartz.none(),
-    type: type,
-    requisite: requisite,
-    experiencePoints: ExperiencePoints(experiencePoints),
-    creatorId: UniqueId.fromUniqueString(creatorId),
-    creationDate: PastDate(DateTime.now()),
-    modificationDate: PastDate(DateTime.now()),
-    tags: TagSet(const KtSet.empty()),
-  );
-  
+        id: UniqueId.fromUniqueString(id),
+        name: Name(name),
+        description: EntityDescription(description),
+        imageURL: imageURL,
+        imageFile: dartz.none(),
+        type: type,
+        requisite: requisite,
+        experiencePoints: ExperiencePoints(experiencePoints),
+        creatorId: UniqueId.fromUniqueString(creatorId),
+        creationDate: PastDate(DateTime.now()),
+        modificationDate: PastDate(DateTime.now()),
+        tags: TagSet(const KtSet.empty()),
+      );
+
   factory AchievementDto.fromJson(Map<String, dynamic> json) => _$AchievementDtoFromJson(json);
-  
-  factory AchievementDto.fromFirestore(DocumentSnapshot document) =>
-    AchievementDto.fromJson(
-      document.data(),
-    ).copyWith(
-      id: document.id,
-    );
+
+  factory AchievementDto.fromFirestore(DocumentSnapshot document) => AchievementDto.fromJson(
+        document.data(),
+      ).copyWith(
+        id: document.id,
+      );
 }

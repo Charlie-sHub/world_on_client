@@ -35,8 +35,8 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
         email: user.email.getOrCrash(),
         password: user.password.getOrCrash(),
       );
-      final jsonUser = UserDto.fromDomain(user).toJson();
-      await _firestore.userCollection.add(jsonUser);
+      final _jsonUser = UserDto.fromDomain(user).toJson();
+      await _firestore.userCollection.add(_jsonUser);
       // TODO: implement image storage
       // Save the User imageFile by assigning it an unique name with uuid and maybe the username
       // Save the downloadURL to the imageURL field of the user then save the user
@@ -45,10 +45,20 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
       return right(unit);
     } on FirebaseAuthException catch (_firebaseException) {
       if (_firebaseException.code == "ERROR_EMAIL_ALREADY_IN_USE") {
-        return left(Failure.coreData(CoreDataFailure.emailAlreadyInUse(email: EmailAddress(_firebaseException.email))));
+        return left(
+          Failure.coreData(
+            CoreDataFailure.emailAlreadyInUse(
+              email: EmailAddress(_firebaseException.email),
+            ),
+          ),
+        );
       } else {
         _logger.e(_firebaseException.message);
-        return left(Failure.coreData(CoreDataFailure.serverError(errorString: _firebaseException.message)));
+        return left(
+          Failure.coreData(
+            CoreDataFailure.serverError(errorString: _firebaseException.message),
+          ),
+        );
       }
     }
   }
@@ -63,10 +73,18 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
       return right(unit);
     } on FirebaseAuthException catch (_firebaseException) {
       if (_firebaseException.code == "ERROR_WRONG_PASSWORD" || _firebaseException.code == "ERROR_USER_NOT_FOUND") {
-        return left(const Failure.authenticationData(AuthenticationDataFailure.invalidCredentials()));
+        return left(
+          const Failure.authenticationData(
+            AuthenticationDataFailure.invalidCredentials(),
+          ),
+        );
       } else {
         _logger.e(_firebaseException.message);
-        return left(Failure.coreData(CoreDataFailure.serverError(errorString: _firebaseException.message)));
+        return left(
+          Failure.coreData(
+            CoreDataFailure.serverError(errorString: _firebaseException.message),
+          ),
+        );
       }
     }
   }
@@ -76,7 +94,11 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
     try {
       final _googleUser = await _googleSignIn.signIn();
       if (_googleUser == null) {
-        return left(const Failure.authenticationDomain(AuthenticationDomainFailure.cancelledByUser()));
+        return left(
+          const Failure.authenticationDomain(
+            AuthenticationDomainFailure.cancelledByUser(),
+          ),
+        );
       }
       final _googleAuthentication = await _googleUser.authentication;
       final _authenticationCredential = GoogleAuthProvider.credential(
@@ -86,15 +108,18 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
       await _firebaseAuth.signInWithCredential(_authenticationCredential);
       return right(unit);
     } on FirebaseAuthException catch (_) {
-      return left(const Failure.authenticationDomain(AuthenticationDomainFailure.cancelledByUser()));
+      return left(
+        const Failure.authenticationDomain(
+          AuthenticationDomainFailure.cancelledByUser(),
+        ),
+      );
     }
   }
 
   @override
-  Future<Option<entity.User>> getLoggedInUser() async {
-    final _user = await _firebaseAuth.currentUser?.toDomain();
-    return optionOf(_user);
-  }
+  Future<Option<entity.User>> getLoggedInUser() async => optionOf(
+        await _firebaseAuth.currentUser?.toDomain(),
+      );
 
   @override
   Future<void> logOut() => Future.wait([

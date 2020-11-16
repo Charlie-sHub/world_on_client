@@ -42,9 +42,14 @@ mixin _$Reward {
 
 /// @nodoc
 abstract class $RewardCopyWith<$Res> {
-  factory $RewardCopyWith(Reward value, $Res Function(Reward) then) = _$RewardCopyWithImpl<$Res>;
-
-  $Res call({UniqueId id, Name name, EntityDescription description, String imageURL, Option<File> imageFile});
+  factory $RewardCopyWith(Reward value, $Res Function(Reward) then) =
+  _$RewardCopyWithImpl<$Res>;
+  
+  $Res call({UniqueId id,
+    Name name,
+    EntityDescription description,
+    String imageURL,
+    Option<File> imageFile});
 }
 
 /// @nodoc
@@ -66,24 +71,34 @@ class _$RewardCopyWithImpl<$Res> implements $RewardCopyWith<$Res> {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as UniqueId,
       name: name == freezed ? _value.name : name as Name,
-      description: description == freezed ? _value.description : description as EntityDescription,
+      description: description == freezed
+        ? _value.description
+        : description as EntityDescription,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile: imageFile == freezed ? _value.imageFile : imageFile as Option<File>,
+      imageFile:
+      imageFile == freezed ? _value.imageFile : imageFile as Option<File>,
     ));
   }
 }
 
 /// @nodoc
 abstract class _$RewardCopyWith<$Res> implements $RewardCopyWith<$Res> {
-  factory _$RewardCopyWith(_Reward value, $Res Function(_Reward) then) = __$RewardCopyWithImpl<$Res>;
+  factory _$RewardCopyWith(_Reward value, $Res Function(_Reward) then) =
+  __$RewardCopyWithImpl<$Res>;
   
   @override
-  $Res call({UniqueId id, Name name, EntityDescription description, String imageURL, Option<File> imageFile});
+  $Res call({UniqueId id,
+    Name name,
+    EntityDescription description,
+    String imageURL,
+    Option<File> imageFile});
 }
 
 /// @nodoc
-class __$RewardCopyWithImpl<$Res> extends _$RewardCopyWithImpl<$Res> implements _$RewardCopyWith<$Res> {
-  __$RewardCopyWithImpl(_Reward _value, $Res Function(_Reward) _then) : super(_value, (v) => _then(v as _Reward));
+class __$RewardCopyWithImpl<$Res> extends _$RewardCopyWithImpl<$Res>
+  implements _$RewardCopyWith<$Res> {
+  __$RewardCopyWithImpl(_Reward _value, $Res Function(_Reward) _then)
+    : super(_value, (v) => _then(v as _Reward));
   
   @override
   _Reward get _value => super._value as _Reward;
@@ -99,16 +114,23 @@ class __$RewardCopyWithImpl<$Res> extends _$RewardCopyWithImpl<$Res> implements 
     return _then(_Reward(
       id: id == freezed ? _value.id : id as UniqueId,
       name: name == freezed ? _value.name : name as Name,
-      description: description == freezed ? _value.description : description as EntityDescription,
+      description: description == freezed
+        ? _value.description
+        : description as EntityDescription,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
-      imageFile: imageFile == freezed ? _value.imageFile : imageFile as Option<File>,
+      imageFile:
+      imageFile == freezed ? _value.imageFile : imageFile as Option<File>,
     ));
   }
 }
 
 /// @nodoc
 class _$_Reward extends _Reward {
-  const _$_Reward({@required this.id, @required this.name, @required this.description, @required this.imageURL, @required this.imageFile})
+  const _$_Reward({@required this.id,
+    @required this.name,
+    @required this.description,
+    @required this.imageURL,
+    @required this.imageFile})
     : assert(id != null),
       assert(name != null),
       assert(description != null),
@@ -136,11 +158,19 @@ class _$_Reward extends _Reward {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
       (other is _Reward &&
-        (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-        (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-        (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
-        (identical(other.imageFile, imageFile) || const DeepCollectionEquality().equals(other.imageFile, imageFile)));
+        (identical(other.id, id) ||
+          const DeepCollectionEquality().equals(other.id, id)) &&
+        (identical(other.name, name) ||
+          const DeepCollectionEquality().equals(other.name, name)) &&
+        (identical(other.description, description) ||
+          const DeepCollectionEquality()
+            .equals(other.description, description)) &&
+        (identical(other.imageURL, imageURL) ||
+          const DeepCollectionEquality()
+            .equals(other.imageURL, imageURL)) &&
+        (identical(other.imageFile, imageFile) ||
+          const DeepCollectionEquality()
+            .equals(other.imageFile, imageFile)));
   }
 
   @override
@@ -153,13 +183,18 @@ class _$_Reward extends _Reward {
       const DeepCollectionEquality().hash(imageFile);
   
   @override
-  _$RewardCopyWith<_Reward> get copyWith => __$RewardCopyWithImpl<_Reward>(this, _$identity);
+  _$RewardCopyWith<_Reward> get copyWith =>
+    __$RewardCopyWithImpl<_Reward>(this, _$identity);
 }
 
 abstract class _Reward extends Reward {
   const _Reward._() : super._();
   
-  const factory _Reward({@required UniqueId id, @required Name name, @required EntityDescription description, @required String imageURL, @required Option<File> imageFile}) = _$_Reward;
+  const factory _Reward({@required UniqueId id,
+    @required Name name,
+    @required EntityDescription description,
+    @required String imageURL,
+    @required Option<File> imageFile}) = _$_Reward;
   
   @override
   UniqueId get id;
@@ -169,7 +204,7 @@ abstract class _Reward extends Reward {
   
   @override
   EntityDescription get description;
-
+  
   @override
   String get imageURL;
   

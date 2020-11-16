@@ -26,7 +26,7 @@ abstract class UserDto implements _$UserDto {
     @required String name,
     @required String username,
     // Shouldn't this be encrypted in some way?
-    // Maybe it shouldn't even be part of the dto, as Firebase handles at login time
+    // Maybe it shouldn't even be part of the dto at all, as Firebase handles it at login time
     @required String password,
     @required String email,
     @required String birthday,

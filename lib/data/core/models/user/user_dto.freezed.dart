@@ -88,7 +88,7 @@ mixin _$UserDto {
   String get id;
   String get name;
   String get username; // Shouldn't this be encrypted in some way?
-// Maybe it shouldn't even be part of the dto, as Firebase handles at login time
+// Maybe it shouldn't even be part of the dto at all, as Firebase handles it at login time
   String get password;
   String get email;
   String get birthday;
@@ -446,7 +446,7 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
   @override
   final String username;
   @override // Shouldn't this be encrypted in some way?
-// Maybe it shouldn't even be part of the dto, as Firebase handles at login time
+// Maybe it shouldn't even be part of the dto at all, as Firebase handles it at login time
   final String password;
   @override
   final String email;
@@ -655,7 +655,7 @@ abstract class _UserDto extends UserDto {
   String get username;
   
   @override // Shouldn't this be encrypted in some way?
-// Maybe it shouldn't even be part of the dto, as Firebase handles at login time
+// Maybe it shouldn't even be part of the dto at all, as Firebase handles it at login time
   String get password;
   @override
   String get email;

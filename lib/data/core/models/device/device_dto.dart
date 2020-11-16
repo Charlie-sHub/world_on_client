@@ -10,19 +10,19 @@ part 'device_dto.g.dart';
 @freezed
 abstract class DeviceDto implements _$DeviceDto {
   const DeviceDto._();
-  
+
   const factory DeviceDto({
     String id,
     @required String name,
     @required String type,
     @required String company,
   }) = _DeviceDto;
-  
+
   factory DeviceDto.fromDomain(Device device) => DeviceDto(
-    id: device.id.getOrCrash(),
-    name: device.name,
-    type: device.type,
-    company: device.company,
+        id: device.id.getOrCrash(),
+        name: device.name,
+        type: device.type,
+        company: device.company,
       );
 
   Device toDomain() => Device(

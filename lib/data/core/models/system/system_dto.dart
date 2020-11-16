@@ -9,19 +9,19 @@ part 'system_dto.g.dart';
 @freezed
 abstract class SystemDto implements _$SystemDto {
   const SystemDto._();
-  
+
   const factory SystemDto({
     String id,
     @required String name,
     @required String type,
     @required String company,
   }) = _SystemDto;
-  
+
   factory SystemDto.fromDomain(System system) => SystemDto(
-    id: system.id.getOrCrash(),
-    name: system.name,
-    type: system.type,
-    company: system.company,
+        id: system.id.getOrCrash(),
+        name: system.name,
+        type: system.type,
+        company: system.company,
       );
 
   System toDomain() => System(

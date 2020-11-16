@@ -9,12 +9,12 @@ part 'options_dto.g.dart';
 @freezed
 abstract class OptionsDto implements _$OptionsDto {
   const OptionsDto._();
-  
+
   const factory OptionsDto({
     String id,
     @required String languageCode,
   }) = _OptionsDto;
-  
+
   factory OptionsDto.fromDomain(Options options) => OptionsDto(
         id: options.id.getOrCrash(),
         languageCode: options.languageCode,

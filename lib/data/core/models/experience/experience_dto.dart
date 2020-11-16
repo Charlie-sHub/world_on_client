@@ -25,7 +25,7 @@ part 'experience_dto.g.dart';
 @freezed
 abstract class ExperienceDto implements _$ExperienceDto {
   const ExperienceDto._();
-  
+
   const factory ExperienceDto({
     String id,
     @required String title,
@@ -40,16 +40,17 @@ abstract class ExperienceDto implements _$ExperienceDto {
     @required Set<ObjectiveDto> objectives,
     @required Set<RewardDto> rewards,
     @required Set<TagDto> tags,
+    // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
     @required Set<CommentDto> comments,
     @required Set<UserDto> likedBy,
     @required Set<UserDto> doneBy,
   }) = _ExperienceDto;
-  
+
   factory ExperienceDto.fromDomain(Experience experience) => ExperienceDto(
-    id: experience.id.getOrCrash(),
-    title: experience.title.getOrCrash(),
-    description: experience.description.getOrCrash(),
-    imageURLs: experience.imageURLs,
+        id: experience.id.getOrCrash(),
+        title: experience.title.getOrCrash(),
+        description: experience.description.getOrCrash(),
+        imageURLs: experience.imageURLs,
         coordinates: CoordinatesDto.fromDomain(experience.coordinates),
         location: LocationDto.fromDomain(experience.location),
         creator: UserDto.fromDomain(experience.creator),
@@ -59,40 +60,39 @@ abstract class ExperienceDto implements _$ExperienceDto {
         objectives: experience.objectives.getOrCrash().asSet().map((objective) => ObjectiveDto.fromDomain(objective)).toSet(),
         rewards: experience.rewards.getOrCrash().asSet().map((reward) => RewardDto.fromDomain(reward)).toSet(),
         tags: experience.tags.getOrCrash().asSet().map((tag) => TagDto.fromDomain(tag)).toSet(),
-        comments: experience.comments.map((comment) => CommentDto.fromDomain(comment)).toSet(),
+        comments: {},
         likedBy: {},
         doneBy: {},
       );
-  
+
   Experience toDomain() => Experience(
-    id: UniqueId.fromUniqueString(id),
-    title: Name(title),
-    description: EntityDescription(description),
-    imageURLs: imageURLs,
-    imageAssetsOption: dartz.none(),
-    coordinates: coordinates.toDomain(),
-    location: location.toDomain(),
-    creator: creator.toDomain(),
-    difficulty: Difficulty(difficulty),
-    creationDate: PastDate(DateTime.parse(creationDate)),
-    modificationDate: PastDate(DateTime.parse(modificationDate)),
-    objectives: ObjectiveSet(objectives.map((objectiveDto) => objectiveDto.toDomain()).toImmutableSet()),
-    rewards: RewardSet(rewards.map((rewardDto) => rewardDto.toDomain()).toImmutableSet()),
-    tags: TagSet(tags.map((tagDto) => tagDto.toDomain()).toImmutableSet()),
-    comments: comments.map((commentDto) => commentDto.toDomain()).toSet(),
-    // TODO: Figure out a way to save and retrieve the likes and doneBys
-    // Denormalization would go too far
-    // it's ok for the creator and the tags, but for potentially infinite likes and doneBys?
-    likedBy: {},
-    doneBy: {},
-  );
-  
+        id: UniqueId.fromUniqueString(id),
+        title: Name(title),
+        description: EntityDescription(description),
+        imageURLs: imageURLs,
+        imageAssetsOption: dartz.none(),
+        coordinates: coordinates.toDomain(),
+        location: location.toDomain(),
+        creator: creator.toDomain(),
+        difficulty: Difficulty(difficulty),
+        creationDate: PastDate(DateTime.parse(creationDate)),
+        modificationDate: PastDate(DateTime.parse(modificationDate)),
+        objectives: ObjectiveSet(objectives.map((objectiveDto) => objectiveDto.toDomain()).toImmutableSet()),
+        rewards: RewardSet(rewards.map((rewardDto) => rewardDto.toDomain()).toImmutableSet()),
+        tags: TagSet(tags.map((tagDto) => tagDto.toDomain()).toImmutableSet()),
+        comments: {},
+        // TODO: Figure out a way to save and retrieve the likes and doneBys
+        // Denormalization would go too far
+        // it's ok for the creator and the tags, but for potentially infinite likes and doneBys?
+        likedBy: {},
+        doneBy: {},
+      );
+
   factory ExperienceDto.fromJson(Map<String, dynamic> json) => _$ExperienceDtoFromJson(json);
-  
-  factory ExperienceDto.fromFirestore(DocumentSnapshot document) =>
-    ExperienceDto.fromJson(
-      document.data(),
-    ).copyWith(
-      id: document.id,
-    );
+
+  factory ExperienceDto.fromFirestore(DocumentSnapshot document) => ExperienceDto.fromJson(
+        document.data(),
+      ).copyWith(
+        id: document.id,
+      );
 }

@@ -12,20 +12,20 @@ part 'reward_dto.g.dart';
 @freezed
 abstract class RewardDto implements _$RewardDto {
   const RewardDto._();
-  
+
   const factory RewardDto({
     String id,
     @required String name,
     @required String description,
     @required String imageURL,
   }) = _RewardDto;
-  
+
   factory RewardDto.fromDomain(Reward reward) => RewardDto(
-    id: reward.id.getOrCrash(),
-    name: reward.name.getOrCrash(),
-    description: reward.description.getOrCrash(),
-    imageURL: reward.imageURL,
-  );
+        id: reward.id.getOrCrash(),
+        name: reward.name.getOrCrash(),
+        description: reward.description.getOrCrash(),
+        imageURL: reward.imageURL,
+      );
 
   Reward toDomain() => Reward(
         id: UniqueId.fromUniqueString(id),

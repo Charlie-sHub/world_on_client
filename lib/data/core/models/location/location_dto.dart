@@ -10,7 +10,7 @@ part 'location_dto.g.dart';
 @freezed
 abstract class LocationDto implements _$LocationDto {
   const LocationDto._();
-  
+
   const factory LocationDto({
     String id,
     @required String city,
@@ -18,14 +18,14 @@ abstract class LocationDto implements _$LocationDto {
     @required String postalCode,
     @required Set<ExperienceDto> experiences,
   }) = _LocationDto;
-  
+
   factory LocationDto.fromDomain(Location location) => LocationDto(
-    id: location.id.getOrCrash(),
-    city: location.city,
-    country: location.country,
-    postalCode: location.postalCode,
-    experiences: location.experiences.map((experience) => ExperienceDto.fromDomain(experience)).toSet(),
-  );
+        id: location.id.getOrCrash(),
+        city: location.city,
+        country: location.country,
+        postalCode: location.postalCode,
+        experiences: location.experiences.map((experience) => ExperienceDto.fromDomain(experience)).toSet(),
+      );
 
   Location toDomain() => Location(
         id: UniqueId.fromUniqueString(id),

@@ -68,22 +68,36 @@ const $ExperienceDto = _$ExperienceDtoTearOff();
 mixin _$ExperienceDto {
   String get id;
   String get title;
+
   String get description;
+
   Set<String> get imageURLs;
+
   CoordinatesDto get coordinates;
+
   LocationDto get location;
+
   UserDto get creator;
+
   int get difficulty;
+
   String get creationDate;
+
   String get modificationDate;
+
   Set<ObjectiveDto> get objectives;
+
   Set<RewardDto> get rewards;
-  Set<TagDto> get tags;
+
+  Set<TagDto> get tags; // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
   Set<CommentDto> get comments;
+
   Set<UserDto> get likedBy;
+
   Set<UserDto> get doneBy;
 
   Map<String, dynamic> toJson();
+
   $ExperienceDtoCopyWith<ExperienceDto> get copyWith;
 }
 
@@ -367,7 +381,7 @@ class _$_ExperienceDto extends _ExperienceDto {
   final Set<RewardDto> rewards;
   @override
   final Set<TagDto> tags;
-  @override
+  @override // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
   final Set<CommentDto> comments;
   @override
   final Set<UserDto> likedBy;
@@ -506,10 +520,13 @@ abstract class _ExperienceDto extends ExperienceDto {
   Set<ObjectiveDto> get objectives;
   @override
   Set<RewardDto> get rewards;
+
   @override
   Set<TagDto> get tags;
-  @override
+
+  @override // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
   Set<CommentDto> get comments;
+
   @override
   Set<UserDto> get likedBy;
   @override

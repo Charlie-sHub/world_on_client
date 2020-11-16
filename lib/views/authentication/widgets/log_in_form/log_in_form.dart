@@ -61,23 +61,17 @@ class LogInForm extends StatelessWidget {
   }
 
   String _passwordValidator(BuildContext context) {
-    return context
-      .bloc<LogInFormBloc>()
-      .state
-      .password
-      .value
-      .fold(
-        (failure) =>
-        failure.maybeMap(
-          emptyString: (_) => "The password can't be empty",
-          multiLineString: (_) => "The password can't be more than one line",
-          stringExceedsLength: (_) => "The password is too long",
-          // Rather superfluous
-          invalidPassword: (_) => "The password is invalid",
-          orElse: () => StringConst.unknownError,
-        ),
-        (_) => null,
-    );
+    return context.bloc<LogInFormBloc>().state.password.value.fold(
+          (failure) => failure.maybeMap(
+            emptyString: (_) => "The password can't be empty",
+            multiLineString: (_) => "The password can't be more than one line",
+            stringExceedsLength: (_) => "The password is too long",
+            // Rather superfluous
+            invalidPassword: (_) => "The password is invalid",
+            orElse: () => StringConst.unknownError,
+          ),
+          (_) => null,
+        );
   }
 
   String _emailValidator(BuildContext context) {

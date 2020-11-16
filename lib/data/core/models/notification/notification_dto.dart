@@ -13,7 +13,7 @@ part 'notification_dto.g.dart';
 @freezed
 abstract class NotificationDto implements _$NotificationDto {
   const NotificationDto._();
-  
+
   const factory NotificationDto({
     String id,
     @required String senderId, // Maybe change the Users to only the ids
@@ -23,9 +23,9 @@ abstract class NotificationDto implements _$NotificationDto {
     @required String creationDate,
     @required NotificationType type,
   }) = _NotificationDto;
-  
+
   factory NotificationDto.fromDomain(Notification notification) => NotificationDto(
-    id: notification.id.getOrCrash(),
+        id: notification.id.getOrCrash(),
         senderId: notification.sender.id.getOrCrash(),
         receiverId: notification.receiver.id.getOrCrash(),
         description: notification.description.getOrCrash(),
@@ -33,23 +33,22 @@ abstract class NotificationDto implements _$NotificationDto {
         creationDate: notification.creationDate.getOrCrash().toIso8601String(),
         type: notification.type,
       );
-  
+
   Notification toDomain() => Notification(
-    id: UniqueId.fromUniqueString(id),
-    sender: User.empty(),
-    receiver: User.empty(),
-    description: EntityDescription(description),
-    seen: seen,
-    creationDate: PastDate(DateTime.parse(creationDate)),
-    type: type,
-  );
-  
+        id: UniqueId.fromUniqueString(id),
+        sender: User.empty(),
+        receiver: User.empty(),
+        description: EntityDescription(description),
+        seen: seen,
+        creationDate: PastDate(DateTime.parse(creationDate)),
+        type: type,
+      );
+
   factory NotificationDto.fromJson(Map<String, dynamic> json) => _$NotificationDtoFromJson(json);
-  
-  factory NotificationDto.fromFirestore(DocumentSnapshot document) =>
-    NotificationDto.fromJson(
-      document.data(),
-    ).copyWith(
-      id: document.id,
-    );
+
+  factory NotificationDto.fromFirestore(DocumentSnapshot document) => NotificationDto.fromJson(
+        document.data(),
+      ).copyWith(
+        id: document.id,
+      );
 }

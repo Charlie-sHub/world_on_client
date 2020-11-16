@@ -12,7 +12,7 @@ part 'comment_dto.g.dart';
 @freezed
 abstract class CommentDto implements _$CommentDto {
   const CommentDto._();
-  
+
   const factory CommentDto({
     String id,
     @required String posterId,
@@ -21,32 +21,30 @@ abstract class CommentDto implements _$CommentDto {
     @required String creationDate,
     @required String modificationDate,
   }) = _CommentDto;
-  
+
   factory CommentDto.fromDomain(Comment comment) => CommentDto(
-    id: comment.id.getOrCrash(),
+        id: comment.id.getOrCrash(),
         posterId: comment.poster.id.getOrCrash(),
         experienceId: comment.experienceId.getOrCrash(),
         content: comment.content.getOrCrash(),
         creationDate: comment.creationDate.getOrCrash().toIso8601String(),
         modificationDate: comment.modificationDate.getOrCrash().toIso8601String(),
       );
-  
-  Comment toDomain() =>
-    Comment(
-      id: UniqueId.fromUniqueString(id),
-      poster: User.empty(),
-      experienceId: UniqueId.fromUniqueString(experienceId),
-      content: CommentContent(content),
-      creationDate: PastDate(DateTime.now()),
-      modificationDate: PastDate(DateTime.now()),
-    );
-  
+
+  Comment toDomain() => Comment(
+        id: UniqueId.fromUniqueString(id),
+        poster: User.empty(),
+        experienceId: UniqueId.fromUniqueString(experienceId),
+        content: CommentContent(content),
+        creationDate: PastDate(DateTime.now()),
+        modificationDate: PastDate(DateTime.now()),
+      );
+
   factory CommentDto.fromJson(Map<String, dynamic> json) => _$CommentDtoFromJson(json);
-  
-  factory CommentDto.fromFirestore(DocumentSnapshot document) =>
-    CommentDto.fromJson(
-      document.data(),
-    ).copyWith(
-      id: document.id,
-    );
+
+  factory CommentDto.fromFirestore(DocumentSnapshot document) => CommentDto.fromJson(
+        document.data(),
+      ).copyWith(
+        id: document.id,
+      );
 }
