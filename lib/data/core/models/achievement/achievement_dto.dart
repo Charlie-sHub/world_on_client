@@ -18,7 +18,7 @@ abstract class AchievementDto implements _$AchievementDto {
   const AchievementDto._();
 
   const factory AchievementDto({
-    String id,
+    @JsonKey(ignore: true) String id,
     @required String name,
     @required String description,
     @required String imageURL,

@@ -452,7 +452,7 @@ class _$_SearchByNameFormState implements _SearchByNameFormState {
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
-  
+
   @override
   _$SearchByNameFormStateCopyWith<_SearchByNameFormState> get copyWith =>
     __$SearchByNameFormStateCopyWithImpl<_SearchByNameFormState>(

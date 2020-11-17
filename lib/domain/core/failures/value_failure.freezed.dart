@@ -418,7 +418,7 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     super.debugFillProperties(properties);
     properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidDate'))..add(DiagnosticsProperty('failedValue', failedValue));
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -616,7 +616,7 @@ class _$InvalidEmail<T>
     super.debugFillProperties(properties);
     properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidEmail'))..add(DiagnosticsProperty('failedValue', failedValue));
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -814,7 +814,7 @@ class _$InvalidPassword<T>
     super.debugFillProperties(properties);
     properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidPassword'))..add(DiagnosticsProperty('failedValue', failedValue));
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -1012,7 +1012,7 @@ class _$StringMismatch<T>
     super.debugFillProperties(properties);
     properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.stringMismatch'))..add(DiagnosticsProperty('failedValue', failedValue));
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -1208,7 +1208,7 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     super.debugFillProperties(properties);
     properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidName'))..add(DiagnosticsProperty('failedValue', failedValue));
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -1402,7 +1402,7 @@ class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
     super.debugFillProperties(properties);
     properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.emptyString'))..add(DiagnosticsProperty('failedValue', failedValue));
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -1598,7 +1598,7 @@ class _$MultiLineString<T>
     super.debugFillProperties(properties);
     properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.multiLineString'))..add(DiagnosticsProperty('failedValue', failedValue));
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -1753,7 +1753,6 @@ abstract class $StringExceedsLengthCopyWith<T, $Res> {
   factory $StringExceedsLengthCopyWith(StringExceedsLength<T> value,
     $Res Function(StringExceedsLength<T>) then) =
   _$StringExceedsLengthCopyWithImpl<T, $Res>;
-  
   $Res call({String failedValue, int maxLength});
 }
 
@@ -1966,7 +1965,6 @@ abstract class $IntegerOutOfBoundsCopyWith<T, $Res> {
   factory $IntegerOutOfBoundsCopyWith(IntegerOutOfBounds<T> value,
     $Res Function(IntegerOutOfBounds<T>) then) =
   _$IntegerOutOfBoundsCopyWithImpl<T, $Res>;
-  
   $Res call({int failedValue});
 }
 
@@ -2010,7 +2008,7 @@ class _$IntegerOutOfBounds<T>
     super.debugFillProperties(properties);
     properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.integerOutOfBounds'))..add(DiagnosticsProperty('failedValue', failedValue));
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -2213,7 +2211,7 @@ class _$StringWithInvalidCharacters<T>
     properties..add(DiagnosticsProperty(
       'type', 'ValueFailure<$T>.stringWithInvalidCharacters'))..add(DiagnosticsProperty('failedValue', failedValue));
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -2371,7 +2369,6 @@ abstract class $InvalidCoordinatesCopyWith<T, $Res> {
   factory $InvalidCoordinatesCopyWith(InvalidCoordinates<T> value,
     $Res Function(InvalidCoordinates<T>) then) =
   _$InvalidCoordinatesCopyWithImpl<T, $Res>;
-  
   $Res call({double failedValue});
 }
 
@@ -2415,7 +2412,7 @@ class _$InvalidCoordinates<T>
     super.debugFillProperties(properties);
     properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.invalidCoordinate'))..add(DiagnosticsProperty('failedValue', failedValue));
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||

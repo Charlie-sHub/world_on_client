@@ -8,7 +8,6 @@ part of 'tag_dto.dart';
 
 _$_TagDto _$_$_TagDtoFromJson(Map<String, dynamic> json) {
   return _$_TagDto(
-    id: json['id'] as String,
     name: json['name'] as String,
     creatorId: json['creatorId'] as String,
     creationDate: json['creationDate'] as String,
@@ -17,7 +16,6 @@ _$_TagDto _$_$_TagDtoFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$_$_TagDtoToJson(_$_TagDto instance) => <String, dynamic>{
-      'id': instance.id,
       'name': instance.name,
       'creatorId': instance.creatorId,
       'creationDate': instance.creationDate,

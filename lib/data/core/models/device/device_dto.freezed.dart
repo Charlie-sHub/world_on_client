@@ -17,7 +17,7 @@ class _$DeviceDtoTearOff {
   const _$DeviceDtoTearOff();
 
 // ignore: unused_element
-  _DeviceDto call({String id,
+  _DeviceDto call({@JsonKey(ignore: true) String id,
     @required String name,
     @required String type,
     @required String company}) {
@@ -41,12 +41,17 @@ const $DeviceDto = _$DeviceDtoTearOff();
 
 /// @nodoc
 mixin _$DeviceDto {
+  @JsonKey(ignore: true)
   String get id;
+  
   String get name;
+  
   String get type;
+  
   String get company;
-
+  
   Map<String, dynamic> toJson();
+  
   $DeviceDtoCopyWith<DeviceDto> get copyWith;
 }
 
@@ -54,7 +59,11 @@ mixin _$DeviceDto {
 abstract class $DeviceDtoCopyWith<$Res> {
   factory $DeviceDtoCopyWith(DeviceDto value, $Res Function(DeviceDto) then) =
   _$DeviceDtoCopyWithImpl<$Res>;
-  $Res call({String id, String name, String type, String company});
+  
+  $Res call({@JsonKey(ignore: true) String id,
+    String name,
+    String type,
+    String company});
 }
 
 /// @nodoc
@@ -87,7 +96,10 @@ abstract class _$DeviceDtoCopyWith<$Res> implements $DeviceDtoCopyWith<$Res> {
   __$DeviceDtoCopyWithImpl<$Res>;
   
   @override
-  $Res call({String id, String name, String type, String company});
+  $Res call({@JsonKey(ignore: true) String id,
+    String name,
+    String type,
+    String company});
 }
 
 /// @nodoc
@@ -118,7 +130,7 @@ class __$DeviceDtoCopyWithImpl<$Res> extends _$DeviceDtoCopyWithImpl<$Res>
 @JsonSerializable()
 
 /// @nodoc class _$_DeviceDto extends _DeviceDto {
-  const _$_DeviceDto({this.id,
+  const _$_DeviceDto({@JsonKey(ignore: true) this.id,
     @required this.name,
     @required this.type,
     @required this.company})
@@ -131,6 +143,7 @@ class __$DeviceDtoCopyWithImpl<$Res> extends _$DeviceDtoCopyWithImpl<$Res>
     _$_$_DeviceDtoFromJson(json);
   
   @override
+  @JsonKey(ignore: true)
   final String id;
   @override
   final String name;
@@ -179,7 +192,7 @@ class __$DeviceDtoCopyWithImpl<$Res> extends _$DeviceDtoCopyWithImpl<$Res>
 abstract class _DeviceDto extends DeviceDto {
   const _DeviceDto._() : super._();
   
-  const factory _DeviceDto({String id,
+  const factory _DeviceDto({@JsonKey(ignore: true) String id,
     @required String name,
     @required String type,
     @required String company}) = _$_DeviceDto;
@@ -188,6 +201,7 @@ abstract class _DeviceDto extends DeviceDto {
   _$_DeviceDto.fromJson;
   
   @override
+  @JsonKey(ignore: true)
   String get id;
   
   @override
@@ -198,7 +212,6 @@ abstract class _DeviceDto extends DeviceDto {
   
   @override
   String get company;
-  
   @override
   _$DeviceDtoCopyWith<_DeviceDto> get copyWith;
 }

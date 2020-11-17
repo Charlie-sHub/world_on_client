@@ -11,7 +11,7 @@ abstract class OptionsDto implements _$OptionsDto {
   const OptionsDto._();
 
   const factory OptionsDto({
-    String id,
+    @required String id,
     @required String languageCode,
   }) = _OptionsDto;
 

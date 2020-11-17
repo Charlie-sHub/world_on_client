@@ -18,12 +18,7 @@ class _$CommentDtoTearOff {
 
 // ignore: unused_element
   _CommentDto call(
-      {String id,
-      @required String posterId,
-      @required String experienceId,
-      @required String content,
-      @required String creationDate,
-      @required String modificationDate}) {
+      {@JsonKey(ignore: true) String id, @required String posterId, @required String experienceId, @required String content, @required String creationDate, @required String modificationDate}) {
     return _CommentDto(
       id: id,
       posterId: posterId,
@@ -46,14 +41,21 @@ const $CommentDto = _$CommentDtoTearOff();
 
 /// @nodoc
 mixin _$CommentDto {
+  @JsonKey(ignore: true)
   String get id;
+  
   String get posterId;
+  
   String get experienceId;
+  
   String get content;
+  
   String get creationDate;
+  
   String get modificationDate;
-
+  
   Map<String, dynamic> toJson();
+  
   $CommentDtoCopyWith<CommentDto> get copyWith;
 }
 
@@ -62,13 +64,12 @@ abstract class $CommentDtoCopyWith<$Res> {
   factory $CommentDtoCopyWith(
           CommentDto value, $Res Function(CommentDto) then) =
       _$CommentDtoCopyWithImpl<$Res>;
-  $Res call(
-      {String id,
-      String posterId,
-      String experienceId,
-      String content,
-      String creationDate,
-      String modificationDate});
+  $Res call({@JsonKey(ignore: true) String id,
+    String posterId,
+    String experienceId,
+    String content,
+    String creationDate,
+    String modificationDate});
 }
 
 /// @nodoc
@@ -111,13 +112,12 @@ abstract class _$CommentDtoCopyWith<$Res> implements $CommentDtoCopyWith<$Res> {
           _CommentDto value, $Res Function(_CommentDto) then) =
       __$CommentDtoCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String id,
-      String posterId,
-      String experienceId,
-      String content,
-      String creationDate,
-      String modificationDate});
+  $Res call({@JsonKey(ignore: true) String id,
+    String posterId,
+    String experienceId,
+    String content,
+    String creationDate,
+    String modificationDate});
 }
 
 /// @nodoc
@@ -160,13 +160,12 @@ class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_CommentDto extends _CommentDto {
-  const _$_CommentDto(
-      {this.id,
-      @required this.posterId,
-      @required this.experienceId,
-      @required this.content,
-      @required this.creationDate,
-      @required this.modificationDate})
+  const _$_CommentDto({@JsonKey(ignore: true) this.id,
+    @required this.posterId,
+    @required this.experienceId,
+    @required this.content,
+    @required this.creationDate,
+    @required this.modificationDate})
       : assert(posterId != null),
         assert(experienceId != null),
         assert(content != null),
@@ -178,6 +177,7 @@ class _$_CommentDto extends _CommentDto {
       _$_$_CommentDtoFromJson(json);
 
   @override
+  @JsonKey(ignore: true)
   final String id;
   @override
   final String posterId;
@@ -240,18 +240,18 @@ class _$_CommentDto extends _CommentDto {
 
 abstract class _CommentDto extends CommentDto {
   const _CommentDto._() : super._();
-  const factory _CommentDto(
-      {String id,
-      @required String posterId,
-      @required String experienceId,
-      @required String content,
-      @required String creationDate,
-      @required String modificationDate}) = _$_CommentDto;
+  const factory _CommentDto({@JsonKey(ignore: true) String id,
+    @required String posterId,
+    @required String experienceId,
+    @required String content,
+    @required String creationDate,
+    @required String modificationDate}) = _$_CommentDto;
 
   factory _CommentDto.fromJson(Map<String, dynamic> json) =
       _$_CommentDto.fromJson;
 
   @override
+  @JsonKey(ignore: true)
   String get id;
   @override
   String get posterId;

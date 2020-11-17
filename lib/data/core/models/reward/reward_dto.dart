@@ -14,7 +14,7 @@ abstract class RewardDto implements _$RewardDto {
   const RewardDto._();
 
   const factory RewardDto({
-    String id,
+    @required String id,
     @required String name,
     @required String description,
     @required String imageURL,

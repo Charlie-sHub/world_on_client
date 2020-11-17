@@ -18,7 +18,7 @@ class _$AchievementDtoTearOff {
 
 // ignore: unused_element
   _AchievementDto call(
-      {String id,
+      {@JsonKey(ignore: true) String id,
       @required String name,
       @required String description,
       @required String imageURL,
@@ -56,19 +56,31 @@ const $AchievementDto = _$AchievementDtoTearOff();
 
 /// @nodoc
 mixin _$AchievementDto {
+  @JsonKey(ignore: true)
   String get id;
+  
   String get name;
+  
   String get description;
+  
   String get imageURL;
+  
   String get type;
+  
   int get requisite;
+  
   int get experiencePoints;
+  
   String get creatorId;
+  
   String get creationDate;
+  
   String get modificationDate;
+  
   Set<String> get tagsIds;
-
+  
   Map<String, dynamic> toJson();
+  
   $AchievementDtoCopyWith<AchievementDto> get copyWith;
 }
 
@@ -77,18 +89,17 @@ abstract class $AchievementDtoCopyWith<$Res> {
   factory $AchievementDtoCopyWith(
           AchievementDto value, $Res Function(AchievementDto) then) =
       _$AchievementDtoCopyWithImpl<$Res>;
-  $Res call(
-      {String id,
-      String name,
-      String description,
-      String imageURL,
-      String type,
-      int requisite,
-      int experiencePoints,
-      String creatorId,
-      String creationDate,
-      String modificationDate,
-      Set<String> tagsIds});
+  $Res call({@JsonKey(ignore: true) String id,
+    String name,
+    String description,
+    String imageURL,
+    String type,
+    int requisite,
+    int experiencePoints,
+    String creatorId,
+    String creationDate,
+    String modificationDate,
+    Set<String> tagsIds});
 }
 
 /// @nodoc
@@ -144,18 +155,17 @@ abstract class _$AchievementDtoCopyWith<$Res>
           _AchievementDto value, $Res Function(_AchievementDto) then) =
       __$AchievementDtoCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String id,
-      String name,
-      String description,
-      String imageURL,
-      String type,
-      int requisite,
-      int experiencePoints,
-      String creatorId,
-      String creationDate,
-      String modificationDate,
-      Set<String> tagsIds});
+  $Res call({@JsonKey(ignore: true) String id,
+    String name,
+    String description,
+    String imageURL,
+    String type,
+    int requisite,
+    int experiencePoints,
+    String creatorId,
+    String creationDate,
+    String modificationDate,
+    Set<String> tagsIds});
 }
 
 /// @nodoc
@@ -210,18 +220,17 @@ class __$AchievementDtoCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_AchievementDto extends _AchievementDto {
-  const _$_AchievementDto(
-      {this.id,
-      @required this.name,
-      @required this.description,
-      @required this.imageURL,
-      @required this.type,
-      @required this.requisite,
-      @required this.experiencePoints,
-      @required this.creatorId,
-      @required this.creationDate,
-      @required this.modificationDate,
-      @required this.tagsIds})
+  const _$_AchievementDto({@JsonKey(ignore: true) this.id,
+    @required this.name,
+    @required this.description,
+    @required this.imageURL,
+    @required this.type,
+    @required this.requisite,
+    @required this.experiencePoints,
+    @required this.creatorId,
+    @required this.creationDate,
+    @required this.modificationDate,
+    @required this.tagsIds})
       : assert(name != null),
         assert(description != null),
         assert(imageURL != null),
@@ -238,6 +247,7 @@ class _$_AchievementDto extends _AchievementDto {
       _$_$_AchievementDtoFromJson(json);
 
   @override
+  @JsonKey(ignore: true)
   final String id;
   @override
   final String name;
@@ -327,23 +337,23 @@ class _$_AchievementDto extends _AchievementDto {
 
 abstract class _AchievementDto extends AchievementDto {
   const _AchievementDto._() : super._();
-  const factory _AchievementDto(
-      {String id,
-      @required String name,
-      @required String description,
-      @required String imageURL,
-      @required String type,
-      @required int requisite,
-      @required int experiencePoints,
-      @required String creatorId,
-      @required String creationDate,
-      @required String modificationDate,
-      @required Set<String> tagsIds}) = _$_AchievementDto;
+  const factory _AchievementDto({@JsonKey(ignore: true) String id,
+    @required String name,
+    @required String description,
+    @required String imageURL,
+    @required String type,
+    @required int requisite,
+    @required int experiencePoints,
+    @required String creatorId,
+    @required String creationDate,
+    @required String modificationDate,
+    @required Set<String> tagsIds}) = _$_AchievementDto;
 
   factory _AchievementDto.fromJson(Map<String, dynamic> json) =
       _$_AchievementDto.fromJson;
 
   @override
+  @JsonKey(ignore: true)
   String get id;
   @override
   String get name;

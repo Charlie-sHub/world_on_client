@@ -90,9 +90,9 @@ abstract class $AchievementCopyWith<$Res> {
     int requisite,
     ExperiencePoints experiencePoints,
     UniqueId creatorId,
-      PastDate creationDate,
-      PastDate modificationDate,
-      TagSet tags});
+    PastDate creationDate,
+    PastDate modificationDate,
+    TagSet tags});
 }
 
 /// @nodoc

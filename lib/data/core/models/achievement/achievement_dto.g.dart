@@ -8,7 +8,6 @@ part of 'achievement_dto.dart';
 
 _$_AchievementDto _$_$_AchievementDtoFromJson(Map<String, dynamic> json) {
   return _$_AchievementDto(
-    id: json['id'] as String,
     name: json['name'] as String,
     description: json['description'] as String,
     imageURL: json['imageURL'] as String,
@@ -23,7 +22,6 @@ _$_AchievementDto _$_$_AchievementDtoFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$_$_AchievementDtoToJson(_$_AchievementDto instance) => <String, dynamic>{
-      'id': instance.id,
       'name': instance.name,
       'description': instance.description,
       'imageURL': instance.imageURL,

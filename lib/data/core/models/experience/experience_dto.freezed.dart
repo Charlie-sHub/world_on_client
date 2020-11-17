@@ -18,7 +18,7 @@ class _$ExperienceDtoTearOff {
 
 // ignore: unused_element
   _ExperienceDto call(
-      {String id,
+      {@JsonKey(ignore: true) String id,
       @required String title,
       @required String description,
       @required Set<String> imageURLs,
@@ -66,38 +66,41 @@ const $ExperienceDto = _$ExperienceDtoTearOff();
 
 /// @nodoc
 mixin _$ExperienceDto {
+  @JsonKey(ignore: true)
   String get id;
+  
   String get title;
-
+  
   String get description;
-
+  
   Set<String> get imageURLs;
-
+  
   CoordinatesDto get coordinates;
-
+  
   LocationDto get location;
-
+  
   UserDto get creator;
-
+  
   int get difficulty;
-
+  
   String get creationDate;
-
+  
   String get modificationDate;
-
+  
   Set<ObjectiveDto> get objectives;
-
+  
   Set<RewardDto> get rewards;
-
-  Set<TagDto> get tags; // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
+  
+  Set<TagDto>
+  get tags; // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
   Set<CommentDto> get comments;
-
+  
   Set<UserDto> get likedBy;
-
+  
   Set<UserDto> get doneBy;
-
+  
   Map<String, dynamic> toJson();
-
+  
   $ExperienceDtoCopyWith<ExperienceDto> get copyWith;
 }
 
@@ -106,18 +109,17 @@ abstract class $ExperienceDtoCopyWith<$Res> {
   factory $ExperienceDtoCopyWith(
           ExperienceDto value, $Res Function(ExperienceDto) then) =
       _$ExperienceDtoCopyWithImpl<$Res>;
-  $Res call(
-      {String id,
-      String title,
-      String description,
-      Set<String> imageURLs,
-      CoordinatesDto coordinates,
-      LocationDto location,
-      UserDto creator,
-      int difficulty,
-      String creationDate,
-      String modificationDate,
-      Set<ObjectiveDto> objectives,
+  $Res call({@JsonKey(ignore: true) String id,
+    String title,
+    String description,
+    Set<String> imageURLs,
+    CoordinatesDto coordinates,
+    LocationDto location,
+    UserDto creator,
+    int difficulty,
+    String creationDate,
+    String modificationDate,
+    Set<ObjectiveDto> objectives,
       Set<RewardDto> rewards,
       Set<TagDto> tags,
       Set<CommentDto> comments,
@@ -226,18 +228,17 @@ abstract class _$ExperienceDtoCopyWith<$Res>
           _ExperienceDto value, $Res Function(_ExperienceDto) then) =
       __$ExperienceDtoCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String id,
-      String title,
-      String description,
-      Set<String> imageURLs,
-      CoordinatesDto coordinates,
-      LocationDto location,
-      UserDto creator,
-      int difficulty,
-      String creationDate,
-      String modificationDate,
-      Set<ObjectiveDto> objectives,
+  $Res call({@JsonKey(ignore: true) String id,
+    String title,
+    String description,
+    Set<String> imageURLs,
+    CoordinatesDto coordinates,
+    LocationDto location,
+    UserDto creator,
+    int difficulty,
+    String creationDate,
+    String modificationDate,
+    Set<ObjectiveDto> objectives,
       Set<RewardDto> rewards,
       Set<TagDto> tags,
       Set<CommentDto> comments,
@@ -318,18 +319,17 @@ class __$ExperienceDtoCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_ExperienceDto extends _ExperienceDto {
-  const _$_ExperienceDto(
-      {this.id,
-      @required this.title,
-      @required this.description,
-      @required this.imageURLs,
-      @required this.coordinates,
-      @required this.location,
-      @required this.creator,
-      @required this.difficulty,
-      @required this.creationDate,
-      @required this.modificationDate,
-      @required this.objectives,
+  const _$_ExperienceDto({@JsonKey(ignore: true) this.id,
+    @required this.title,
+    @required this.description,
+    @required this.imageURLs,
+    @required this.coordinates,
+    @required this.location,
+    @required this.creator,
+    @required this.difficulty,
+    @required this.creationDate,
+    @required this.modificationDate,
+    @required this.objectives,
       @required this.rewards,
       @required this.tags,
       @required this.comments,
@@ -356,6 +356,7 @@ class _$_ExperienceDto extends _ExperienceDto {
       _$_$_ExperienceDtoFromJson(json);
 
   @override
+  @JsonKey(ignore: true)
   final String id;
   @override
   final String title;
@@ -475,18 +476,17 @@ class _$_ExperienceDto extends _ExperienceDto {
 
 abstract class _ExperienceDto extends ExperienceDto {
   const _ExperienceDto._() : super._();
-  const factory _ExperienceDto(
-      {String id,
-      @required String title,
-      @required String description,
-      @required Set<String> imageURLs,
-      @required CoordinatesDto coordinates,
-      @required LocationDto location,
-      @required UserDto creator,
-      @required int difficulty,
-      @required String creationDate,
-      @required String modificationDate,
-      @required Set<ObjectiveDto> objectives,
+  const factory _ExperienceDto({@JsonKey(ignore: true) String id,
+    @required String title,
+    @required String description,
+    @required Set<String> imageURLs,
+    @required CoordinatesDto coordinates,
+    @required LocationDto location,
+    @required UserDto creator,
+    @required int difficulty,
+    @required String creationDate,
+    @required String modificationDate,
+    @required Set<ObjectiveDto> objectives,
       @required Set<RewardDto> rewards,
       @required Set<TagDto> tags,
       @required Set<CommentDto> comments,
@@ -497,6 +497,7 @@ abstract class _ExperienceDto extends ExperienceDto {
       _$_ExperienceDto.fromJson;
 
   @override
+  @JsonKey(ignore: true)
   String get id;
   @override
   String get title;
@@ -520,13 +521,10 @@ abstract class _ExperienceDto extends ExperienceDto {
   Set<ObjectiveDto> get objectives;
   @override
   Set<RewardDto> get rewards;
-
   @override
   Set<TagDto> get tags;
-
   @override // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
   Set<CommentDto> get comments;
-
   @override
   Set<UserDto> get likedBy;
   @override

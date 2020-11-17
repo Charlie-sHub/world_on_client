@@ -17,7 +17,7 @@ class _$TagDtoTearOff {
   const _$TagDtoTearOff();
 
 // ignore: unused_element
-  _TagDto call({String id,
+  _TagDto call({@JsonKey(ignore: true) String id,
     @required String name,
     @required String creatorId,
     @required String creationDate,
@@ -43,13 +43,19 @@ const $TagDto = _$TagDtoTearOff();
 
 /// @nodoc
 mixin _$TagDto {
+  @JsonKey(ignore: true)
   String get id;
+  
   String get name;
+  
   String get creatorId;
+  
   String get creationDate;
+  
   String get modificationDate;
-
+  
   Map<String, dynamic> toJson();
+  
   $TagDtoCopyWith<TagDto> get copyWith;
 }
 
@@ -58,7 +64,7 @@ abstract class $TagDtoCopyWith<$Res> {
   factory $TagDtoCopyWith(TagDto value, $Res Function(TagDto) then) =
   _$TagDtoCopyWithImpl<$Res>;
   
-  $Res call({String id,
+  $Res call({@JsonKey(ignore: true) String id,
     String name,
     String creatorId,
     String creationDate,
@@ -101,7 +107,7 @@ abstract class _$TagDtoCopyWith<$Res> implements $TagDtoCopyWith<$Res> {
   __$TagDtoCopyWithImpl<$Res>;
   
   @override
-  $Res call({String id,
+  $Res call({@JsonKey(ignore: true) String id,
     String name,
     String creatorId,
     String creationDate,
@@ -142,7 +148,7 @@ class __$TagDtoCopyWithImpl<$Res> extends _$TagDtoCopyWithImpl<$Res>
 @JsonSerializable()
 
 /// @nodoc class _$_TagDto extends _TagDto {
-  const _$_TagDto({this.id,
+  const _$_TagDto({@JsonKey(ignore: true) this.id,
     @required this.name,
     @required this.creatorId,
     @required this.creationDate,
@@ -157,6 +163,7 @@ class __$TagDtoCopyWithImpl<$Res> extends _$TagDtoCopyWithImpl<$Res>
     _$_$_TagDtoFromJson(json);
   
   @override
+  @JsonKey(ignore: true)
   final String id;
   @override
   final String name;
@@ -213,7 +220,7 @@ class __$TagDtoCopyWithImpl<$Res> extends _$TagDtoCopyWithImpl<$Res>
 abstract class _TagDto extends TagDto {
   const _TagDto._() : super._();
   
-  const factory _TagDto({String id,
+  const factory _TagDto({@JsonKey(ignore: true) String id,
     @required String name,
     @required String creatorId,
     @required String creationDate,
@@ -222,6 +229,7 @@ abstract class _TagDto extends TagDto {
   factory _TagDto.fromJson(Map<String, dynamic> json) = _$_TagDto.fromJson;
   
   @override
+  @JsonKey(ignore: true)
   String get id;
   
   @override
@@ -229,7 +237,6 @@ abstract class _TagDto extends TagDto {
   
   @override
   String get creatorId;
-  
   @override
   String get creationDate;
   @override

@@ -22,7 +22,7 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
   Future<Either<Failure, Unit>> createTag(Tag tag) async {
     try {
       final _tagDto = TagDto.fromDomain(tag);
-      await _firestore.tagCollection.add(_tagDto.toJson());
+      await _firestore.tagCollection.doc(tag.id.getOrCrash()).set(_tagDto.toJson());
       return right(unit);
     } on FirebaseException catch (e) {
       return onFirebaseException(e);
@@ -34,18 +34,18 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
     try {
       final _tagDto = TagDto.fromDomain(tag);
       await _firestore.tagCollection
-        .doc(
-        tag.id.getOrCrash(),
-      )
-        .update(
-        _tagDto.toJson(),
-      );
+          .doc(
+            tag.id.getOrCrash(),
+          )
+          .update(
+            _tagDto.toJson(),
+          );
       return right(unit);
     } on FirebaseException catch (e) {
       return onFirebaseException(e);
     }
   }
-  
+
   @override
   Future<Either<Failure, Tag>> getTag(UniqueId id) async {
     try {
@@ -56,7 +56,7 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
       return onFirebaseException(e);
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> removeTag(UniqueId id) async {
     try {
@@ -66,7 +66,7 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
       return onFirebaseException(e);
     }
   }
-  
+
   Either<Failure, T> onFirebaseException<T>(FirebaseException e) {
     _logger.e("FirebaseException: ${e.message}");
     return left(

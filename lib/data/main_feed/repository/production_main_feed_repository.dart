@@ -25,27 +25,38 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
     final _userDto = UserDto.fromFirestore(await _userDocument.get());
     // TODO: Order by creation date
     // Gotta solve the dates issue first
-    yield* _firestore.experienceCollection
-        .where(
-          "creatorId",
-          whereIn: _userDto.followedUsersIds.toList(),
-        )
-        .snapshots()
-        .map(
-          (snapshot) => snapshot.docs.map(
-            (document) => ExperienceDto.fromFirestore(document).toDomain(),
+    if (_userDto.followedUsersIds.isNotEmpty) {
+      yield* _firestore.experienceCollection
+          .where(
+            "creatorId",
+            arrayContainsAny: _userDto.followedUsersIds.toList(),
+          )
+          .snapshots()
+          .map(
+            (snapshot) => snapshot.docs.map(
+              (document) => ExperienceDto.fromFirestore(document).toDomain(),
+            ),
+          )
+          .map(
+            (experiences) => right<Failure, KtList<Experience>>(
+              experiences.toImmutableList(),
+            ),
+          )
+          .onErrorReturnWith(
+            (error) => left(
+              onError(error),
+            ),
+          );
+    } else {
+      // Not sure about creating a stream out of nowhere, but it's the best solution for now
+      yield* Stream.value(
+        left(
+          const Failure.coreData(
+            CoreDataFailure.notFoundError(),
           ),
-        )
-        .map(
-          (experiences) => right<Failure, KtList<Experience>>(
-            experiences.toImmutableList(),
-          ),
-        )
-        .onErrorReturnWith(
-          (error) => left(
-            onError(error),
-          ),
-        );
+        ),
+      );
+    }
   }
 
   Failure onError(dynamic error) {

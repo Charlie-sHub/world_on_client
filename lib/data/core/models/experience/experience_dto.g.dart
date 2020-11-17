@@ -8,7 +8,6 @@ part of 'experience_dto.dart';
 
 _$_ExperienceDto _$_$_ExperienceDtoFromJson(Map<String, dynamic> json) {
   return _$_ExperienceDto(
-    id: json['id'] as String,
     title: json['title'] as String,
     description: json['description'] as String,
     imageURLs: (json['imageURLs'] as List)?.map((e) => e as String)?.toSet(),
@@ -53,7 +52,6 @@ _$_ExperienceDto _$_$_ExperienceDtoFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$_$_ExperienceDtoToJson(_$_ExperienceDto instance) =>
     <String, dynamic>{
-      'id': instance.id,
       'title': instance.title,
       'description': instance.description,
       'imageURLs': instance.imageURLs?.toList(),

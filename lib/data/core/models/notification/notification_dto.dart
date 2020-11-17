@@ -15,7 +15,7 @@ abstract class NotificationDto implements _$NotificationDto {
   const NotificationDto._();
 
   const factory NotificationDto({
-    String id,
+    @JsonKey(ignore: true) String id,
     @required String senderId, // Maybe change the Users to only the ids
     @required String receiverId,
     @required String description,

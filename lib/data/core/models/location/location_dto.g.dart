@@ -8,7 +8,6 @@ part of 'location_dto.dart';
 
 _$_LocationDto _$_$_LocationDtoFromJson(Map<String, dynamic> json) {
   return _$_LocationDto(
-    id: json['id'] as String,
     city: json['city'] as String,
     country: json['country'] as String,
     postalCode: json['postalCode'] as String,
@@ -22,7 +21,6 @@ _$_LocationDto _$_$_LocationDtoFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$_$_LocationDtoToJson(_$_LocationDto instance) =>
     <String, dynamic>{
-      'id': instance.id,
       'city': instance.city,
       'country': instance.country,
       'postalCode': instance.postalCode,

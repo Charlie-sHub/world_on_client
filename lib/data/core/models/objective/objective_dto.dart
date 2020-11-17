@@ -14,7 +14,7 @@ abstract class ObjectiveDto implements _$ObjectiveDto {
   const ObjectiveDto._();
 
   const factory ObjectiveDto({
-    String id,
+    @required String id,
     @required String description,
     @required CoordinatesDto coordinates,
     @required String imageURL,

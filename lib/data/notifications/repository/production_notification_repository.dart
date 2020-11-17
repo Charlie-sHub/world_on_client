@@ -45,36 +45,33 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
     // TODO: Order by creation date
     // Gotta solve the dates issue first
     yield* _firestore.notificationCollection
-      .where(
-      "receiverId",
-      isEqualTo: _userDto.id,
-    )
-      .snapshots()
-      .map(
-        (snapshot) =>
-        snapshot.docs.map(
+        .where(
+          "receiverId",
+          isEqualTo: _userDto.id,
+        )
+        .snapshots()
+        .map(
+          (snapshot) => snapshot.docs.map(
             (document) => NotificationDto.fromFirestore(document).toDomain(),
-        ),
-    )
-      .map(
-        (experiences) =>
-        right<Failure, KtList<Notification>>(
-          experiences.toImmutableList(),
-        ),
-    )
-      .onErrorReturnWith(
-        (error) =>
-        left(
-          onError(error),
-        ),
-    );
+          ),
+        )
+        .map(
+          (experiences) => right<Failure, KtList<Notification>>(
+            experiences.toImmutableList(),
+          ),
+        )
+        .onErrorReturnWith(
+          (error) => left(
+            onError(error),
+          ),
+        );
   }
-  
+
   @override
   Future<Either<Failure, Unit>> sendNotification(Notification notification) async {
     try {
       final _notificationDto = NotificationDto.fromDomain(notification);
-      await _firestore.notificationCollection.add(
+      await _firestore.notificationCollection.doc(notification.id.getOrCrash()).set(
         _notificationDto.toJson(),
       );
       return right(unit);
@@ -82,7 +79,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
       return onFirebaseException(e);
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> deleteNotification(UniqueId id) async {
     try {
@@ -92,13 +89,13 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
       return onFirebaseException(e);
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> deleteUserNotifications() async {
     // TODO: implement deleteUserNotifications
     throw UnimplementedError();
   }
-  
+
   Either<Failure, Unit> onFirebaseException(FirebaseException e) {
     _logger.e("FirebaseException: ${e.message}");
     return left(
@@ -107,7 +104,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
       ),
     );
   }
-  
+
   Failure onError(dynamic error) {
     if (error is FirebaseException) {
       _logger.e("FirebaseException: ${error.message}");

@@ -22,7 +22,7 @@ abstract class UserDto implements _$UserDto {
   const UserDto._();
 
   const factory UserDto({
-    String id,
+    @JsonKey(ignore: true) String id,
     @required String name,
     @required String username,
     // Shouldn't this be encrypted in some way?

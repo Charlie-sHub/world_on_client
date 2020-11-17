@@ -132,9 +132,8 @@ abstract class _$AuthenticationDomainCopyWith<T, $Res> {
   factory _$AuthenticationDomainCopyWith(_AuthenticationDomain<T> value,
     $Res Function(_AuthenticationDomain<T>) then) =
   __$AuthenticationDomainCopyWithImpl<T, $Res>;
-  
   $Res call({AuthenticationDomainFailure<T> authenticationDomainFailure});
-  
+
   $AuthenticationDomainFailureCopyWith<T, $Res> get authenticationDomainFailure;
 }
 
@@ -302,9 +301,8 @@ abstract class _$AuthenticationDataCopyWith<T, $Res> {
   factory _$AuthenticationDataCopyWith(_AuthenticationData<T> value,
     $Res Function(_AuthenticationData<T>) then) =
   __$AuthenticationDataCopyWithImpl<T, $Res>;
-  
   $Res call({AuthenticationDataFailure<T> authenticationDataFailure});
-  
+
   $AuthenticationDataFailureCopyWith<T, $Res> get authenticationDataFailure;
 }
 
@@ -633,9 +631,8 @@ abstract class _$CoreAppllicationCopyWith<T, $Res> {
   factory _$CoreAppllicationCopyWith(_CoreAppllication<T> value,
     $Res Function(_CoreAppllication<T>) then) =
   __$CoreAppllicationCopyWithImpl<T, $Res>;
-  
   $Res call({CoreApplicationFailure<T> coreApplicationFailure});
-  
+
   $CoreApplicationFailureCopyWith<T, $Res> get coreApplicationFailure;
 }
 
@@ -956,9 +953,8 @@ abstract class _CoreData<T> implements Failure<T> {
 abstract class _$ValueCopyWith<T, $Res> {
   factory _$ValueCopyWith(_Value<T> value, $Res Function(_Value<T>) then) =
   __$ValueCopyWithImpl<T, $Res>;
-  
   $Res call({ValueFailure<T> valueFailure});
-  
+
   $ValueFailureCopyWith<T, $Res> get valueFailure;
 }
 

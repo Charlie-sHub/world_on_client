@@ -35,8 +35,9 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
         email: user.email.getOrCrash(),
         password: user.password.getOrCrash(),
       );
+      final _firebaseUser = _firebaseAuth.currentUser;
       final _jsonUser = UserDto.fromDomain(user).toJson();
-      await _firestore.userCollection.add(_jsonUser);
+      await _firestore.userCollection.doc(_firebaseUser.uid).set(_jsonUser);
       // TODO: implement image storage
       // Save the User imageFile by assigning it an unique name with uuid and maybe the username
       // Save the downloadURL to the imageURL field of the user then save the user
@@ -117,9 +118,15 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
   }
 
   @override
-  Future<Option<entity.User>> getLoggedInUser() async => optionOf(
-        await _firebaseAuth.currentUser?.toDomain(),
-      );
+  Future<Option<entity.User>> getLoggedInUser() async {
+    final _firebaseCurrentUser = _firebaseAuth.currentUser;
+    if (_firebaseCurrentUser == null) {
+      return none();
+    } else {
+      final _user = await _firebaseCurrentUser.toDomain();
+      return some(_user);
+    }
+  }
 
   @override
   Future<void> logOut() => Future.wait([

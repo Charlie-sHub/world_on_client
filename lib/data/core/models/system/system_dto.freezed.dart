@@ -17,7 +17,7 @@ class _$SystemDtoTearOff {
   const _$SystemDtoTearOff();
 
 // ignore: unused_element
-  _SystemDto call({String id,
+  _SystemDto call({@JsonKey(ignore: true) String id,
     @required String name,
     @required String type,
     @required String company}) {
@@ -41,12 +41,17 @@ const $SystemDto = _$SystemDtoTearOff();
 
 /// @nodoc
 mixin _$SystemDto {
+  @JsonKey(ignore: true)
   String get id;
+  
   String get name;
+  
   String get type;
+  
   String get company;
-
+  
   Map<String, dynamic> toJson();
+  
   $SystemDtoCopyWith<SystemDto> get copyWith;
 }
 
@@ -54,7 +59,11 @@ mixin _$SystemDto {
 abstract class $SystemDtoCopyWith<$Res> {
   factory $SystemDtoCopyWith(SystemDto value, $Res Function(SystemDto) then) =
   _$SystemDtoCopyWithImpl<$Res>;
-  $Res call({String id, String name, String type, String company});
+  
+  $Res call({@JsonKey(ignore: true) String id,
+    String name,
+    String type,
+    String company});
 }
 
 /// @nodoc
@@ -87,7 +96,10 @@ abstract class _$SystemDtoCopyWith<$Res> implements $SystemDtoCopyWith<$Res> {
   __$SystemDtoCopyWithImpl<$Res>;
   
   @override
-  $Res call({String id, String name, String type, String company});
+  $Res call({@JsonKey(ignore: true) String id,
+    String name,
+    String type,
+    String company});
 }
 
 /// @nodoc
@@ -118,7 +130,7 @@ class __$SystemDtoCopyWithImpl<$Res> extends _$SystemDtoCopyWithImpl<$Res>
 @JsonSerializable()
 
 /// @nodoc class _$_SystemDto extends _SystemDto {
-  const _$_SystemDto({this.id,
+  const _$_SystemDto({@JsonKey(ignore: true) this.id,
     @required this.name,
     @required this.type,
     @required this.company})
@@ -131,6 +143,7 @@ class __$SystemDtoCopyWithImpl<$Res> extends _$SystemDtoCopyWithImpl<$Res>
     _$_$_SystemDtoFromJson(json);
   
   @override
+  @JsonKey(ignore: true)
   final String id;
   @override
   final String name;
@@ -179,7 +192,7 @@ class __$SystemDtoCopyWithImpl<$Res> extends _$SystemDtoCopyWithImpl<$Res>
 abstract class _SystemDto extends SystemDto {
   const _SystemDto._() : super._();
   
-  const factory _SystemDto({String id,
+  const factory _SystemDto({@JsonKey(ignore: true) String id,
     @required String name,
     @required String type,
     @required String company}) = _$_SystemDto;
@@ -188,6 +201,7 @@ abstract class _SystemDto extends SystemDto {
   _$_SystemDto.fromJson;
   
   @override
+  @JsonKey(ignore: true)
   String get id;
   
   @override
@@ -198,7 +212,6 @@ abstract class _SystemDto extends SystemDto {
   
   @override
   String get company;
-  
   @override
   _$SystemDtoCopyWith<_SystemDto> get copyWith;
 }

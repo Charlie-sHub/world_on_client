@@ -341,7 +341,6 @@ abstract class _$ExperienceFormTappedCopyWith<$Res> {
   factory _$ExperienceFormTappedCopyWith(_ExperienceFormTapped value,
     $Res Function(_ExperienceFormTapped) then) =
   __$ExperienceFormTappedCopyWithImpl<$Res>;
-  
   $Res call({Option<Experience> experienceOption});
 }
 
@@ -1387,7 +1386,6 @@ abstract class _$NavigateExperienceViewCopyWith<$Res> {
   factory _$NavigateExperienceViewCopyWith(_NavigateExperienceView value,
     $Res Function(_NavigateExperienceView) then) =
   __$NavigateExperienceViewCopyWithImpl<$Res>;
-  
   $Res call({Option<Experience> experienceOption});
 }
 

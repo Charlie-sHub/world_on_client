@@ -50,7 +50,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       return onError(e);
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> dislikeExperience(UniqueId experienceId) async {
     try {
@@ -65,7 +65,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       return onError(e);
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> rateDifficulty({
     Difficulty difficulty,
@@ -85,7 +85,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       return onError(e);
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> rewardUser(UniqueId experienceId) async {
     try {
@@ -104,13 +104,13 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       return onError(e);
     }
   }
-  
+
   @override
   Future<Either<Failure, KtSet<Experience>>> loadSurroundingExperiences(Coordinates coordinates) {
     // TODO: implement loadSurroundingExperiences
     throw UnimplementedError();
   }
-  
+
   Either<Failure, Unit> onError(FirebaseException e) {
     _logger.e("FirebaseException: ${e.message}");
     return left(

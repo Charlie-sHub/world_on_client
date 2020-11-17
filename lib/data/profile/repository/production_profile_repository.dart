@@ -55,7 +55,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
       return onFirebaseException(e);
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> unBlockUser(UniqueId blockedId) async {
     try {
@@ -70,7 +70,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
       return onFirebaseException(e);
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> unFollowUser(UniqueId userToUnFollowId) async {
     try {
@@ -85,7 +85,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
       return onFirebaseException(e);
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> editUser(User user) async {
     try {
@@ -96,7 +96,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
       return onFirebaseException(e);
     }
   }
-  
+
   @override
   Future<Either<Failure, User>> getUser(UniqueId id) async {
     try {
@@ -107,7 +107,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
       return onFirebaseException(e);
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> removeExperienceLiked(UniqueId experienceId) async {
     try {
@@ -122,71 +122,89 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
       return onFirebaseException(e);
     }
   }
-  
+
   @override
   Stream<Either<Failure, KtList<User>>> watchBlockedUsers(UniqueId id) async* {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
-    yield* _firestore.userCollection
-      .where(
-      FieldPath.documentId,
-      whereIn: _userDto.blockedUsersIds.toList(),
-    )
-      .snapshots()
-      .map(
-        (snapshot) =>
-        snapshot.docs.map(
-            (document) => UserDto.fromFirestore(document).toDomain(),
-        ),
-    )
-      .map(
-        (users) =>
-        right<Failure, KtList<User>>(
-          users.toImmutableList(),
-        ),
-    )
-      .onErrorReturnWith(
-        (error) =>
+    if (_userDto.blockedUsersIds.isNotEmpty) {
+      yield* _firestore.userCollection
+          .where(
+            FieldPath.documentId,
+            arrayContainsAny: _userDto.blockedUsersIds.toList(),
+          )
+          .snapshots()
+          .map(
+            (snapshot) => snapshot.docs.map(
+              (document) => UserDto.fromFirestore(document).toDomain(),
+            ),
+          )
+          .map(
+            (users) => right<Failure, KtList<User>>(
+              users.toImmutableList(),
+            ),
+          )
+          .onErrorReturnWith(
+            (error) => left(
+              onError(error),
+            ),
+          );
+    } else {
+      yield* Stream.value(
         left(
-          onError(error),
+          const Failure.coreData(
+            CoreDataFailure.notFoundError(),
+          ),
         ),
-    );
+      );
+    }
   }
-  
+
   @override
   Stream<Either<Failure, KtList<User>>> watchFollowedUsers(UniqueId id) async* {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
-    yield* _firestore.userCollection
-      .where(
-      FieldPath.documentId,
-      whereIn: _userDto.followedUsersIds.toList(),
-    )
-      .snapshots()
-      .map(
-        (snapshot) =>
-        snapshot.docs.map(
-            (document) => UserDto.fromFirestore(document).toDomain(),
-        ),
-    )
-      .map(
-        (users) =>
-        right<Failure, KtList<User>>(
-          users.toImmutableList(),
-        ),
-    )
-      .onErrorReturnWith(
-        (error) =>
+    if (_userDto.followedUsersIds.isNotEmpty) {
+      yield* _firestore.userCollection
+        .where(
+        FieldPath.documentId,
+        arrayContainsAny: _userDto.followedUsersIds.toList(),
+      )
+        .snapshots()
+        .map(
+          (snapshot) =>
+          snapshot.docs.map(
+              (document) => UserDto.fromFirestore(document).toDomain(),
+          ),
+      )
+        .map(
+          (users) =>
+          right<Failure, KtList<User>>(
+            users.toImmutableList(),
+          ),
+      )
+        .onErrorReturnWith(
+          (error) =>
+          left(
+            onError(error),
+          ),
+      );
+    } else {
+      yield* Stream.value(
         left(
-          onError(error),
+          const Failure.coreData(
+            CoreDataFailure.notFoundError(),
+          ),
         ),
-    );
+      );
+    }
   }
-  
+
   @override
   Stream<Either<Failure, KtList<User>>> watchFollowingUsers(UniqueId id) async* {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
+
     yield* _firestore.userCollection
       .where(
       "followedUsersIds",
@@ -212,7 +230,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         ),
     );
   }
-  
+
   @override
   Stream<Either<Failure, KtList<Experience>>> watchExperiencesCreated(UniqueId id) async* {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
@@ -230,145 +248,193 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         ),
     )
       .map(
-        (experiences) =>
-        right<Failure, KtList<Experience>>(
-          experiences.toImmutableList(),
-        ),
-    )
-      .onErrorReturnWith(
+        (experiences) {
+        if (experiences.isNotEmpty) {
+          return right<Failure, KtList<Experience>>(
+            experiences.toImmutableList(),
+          );
+        } else {
+          return left<Failure, KtList<Experience>>(
+            const Failure.coreData(
+              CoreDataFailure.notFoundError(),
+            ),
+          );
+        }
+      },
+    ).onErrorReturnWith(
         (error) =>
         left(
           onError(error),
         ),
     );
   }
-  
+
   @override
   Stream<Either<Failure, KtList<Experience>>> watchExperiencesDone(UniqueId id) async* {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
-    yield* _firestore.experienceCollection
-      .where(
-      FieldPath.documentId,
-      whereIn: _userDto.experiencesDoneIds.toList(),
-    )
-      .snapshots()
-      .map(
-        (snapshot) =>
-        snapshot.docs.map(
-            (document) => ExperienceDto.fromFirestore(document).toDomain(),
-        ),
-    )
-      .map(
-        (experiences) =>
-        right<Failure, KtList<Experience>>(
-          experiences.toImmutableList(),
-        ),
-    )
-      .onErrorReturnWith(
-        (error) =>
+    if (_userDto.experiencesDoneIds.isNotEmpty) {
+      yield* _firestore.experienceCollection
+        .where(
+        FieldPath.documentId,
+        arrayContainsAny: _userDto.experiencesDoneIds.toList(),
+      )
+        .snapshots()
+        .map(
+          (snapshot) =>
+          snapshot.docs.map(
+              (document) => ExperienceDto.fromFirestore(document).toDomain(),
+          ),
+      )
+        .map(
+          (experiences) =>
+          right<Failure, KtList<Experience>>(
+            experiences.toImmutableList(),
+          ),
+      )
+        .onErrorReturnWith(
+          (error) =>
+          left(
+            onError(error),
+          ),
+      );
+    } else {
+      yield* Stream.value(
         left(
-          onError(error),
+          const Failure.coreData(
+            CoreDataFailure.notFoundError(),
+          ),
         ),
-    );
+      );
+    }
   }
-  
+
   @override
   Stream<Either<Failure, KtList<Experience>>> watchExperiencesLiked(UniqueId id) async* {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
-    yield* _firestore.experienceCollection
-      .where(
-      FieldPath.documentId,
-      whereIn: _userDto.experiencesLikedIds.toList(),
-    )
-      .snapshots()
-      .map(
-        (snapshot) =>
-        snapshot.docs.map(
-            (document) => ExperienceDto.fromFirestore(document).toDomain(),
-        ),
-    )
-      .map(
-        (experiences) =>
-        right<Failure, KtList<Experience>>(
-          experiences.toImmutableList(),
-        ),
-    )
-      .onErrorReturnWith(
-        (error) =>
+    if (_userDto.experiencesLikedIds.isNotEmpty) {
+      yield* _firestore.experienceCollection
+        .where(
+        FieldPath.documentId,
+        arrayContainsAny: _userDto.experiencesLikedIds.toList(),
+      )
+        .snapshots()
+        .map(
+          (snapshot) =>
+          snapshot.docs.map(
+              (document) => ExperienceDto.fromFirestore(document).toDomain(),
+          ),
+      )
+        .map(
+          (experiences) =>
+          right<Failure, KtList<Experience>>(
+            experiences.toImmutableList(),
+          ),
+      )
+        .onErrorReturnWith(
+          (error) =>
+          left(
+            onError(error),
+          ),
+      );
+    } else {
+      yield* Stream.value(
         left(
-          onError(error),
+          const Failure.coreData(
+            CoreDataFailure.notFoundError(),
+          ),
         ),
-    );
+      );
+    }
   }
-  
+
   @override
   Stream<Either<Failure, KtList<Achievement>>> watchUserAchievements(UniqueId id) async* {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
-    yield* _firestore.achievementCollection
-      .where(
-      FieldPath.documentId,
-      whereIn: _userDto.achievementsIds.toList(),
-    )
-      .snapshots()
-      .map(
-        (snapshot) =>
-        snapshot.docs.map(
-            (document) => AchievementDto.fromFirestore(document).toDomain(),
-        ),
-    )
-      .map(
-        (achievements) =>
-        right<Failure, KtList<Achievement>>(
-          achievements.toImmutableList(),
-        ),
-    )
-      .onErrorReturnWith(
-        (error) =>
+    if (_userDto.achievementsIds.isNotEmpty) {
+      yield* _firestore.achievementCollection
+        .where(
+        FieldPath.documentId,
+        arrayContainsAny: _userDto.achievementsIds.toList(),
+      )
+        .snapshots()
+        .map(
+          (snapshot) =>
+          snapshot.docs.map(
+              (document) => AchievementDto.fromFirestore(document).toDomain(),
+          ),
+      )
+        .map(
+          (achievements) =>
+          right<Failure, KtList<Achievement>>(
+            achievements.toImmutableList(),
+          ),
+      )
+        .onErrorReturnWith(
+          (error) =>
+          left(
+            onError(error),
+          ),
+      );
+    } else {
+      yield* Stream.value(
         left(
-          onError(error),
+          const Failure.coreData(
+            CoreDataFailure.notFoundError(),
+          ),
         ),
-    );
+      );
+    }
   }
-  
+
   @override
   Stream<Either<Failure, KtList<Tag>>> watchUserInterests(UniqueId id) async* {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
-    yield* _firestore.tagCollection
-      .where(
-      FieldPath.documentId,
-      whereIn: _userDto.interestsIds.toList(),
-    )
-      .snapshots()
-      .map(
-        (snapshot) =>
-        snapshot.docs.map(
-            (document) => TagDto.fromFirestore(document).toDomain(),
-        ),
-    )
-      .map(
-        (tags) =>
-        right<Failure, KtList<Tag>>(
-          tags.toImmutableList(),
-        ),
-    )
-      .onErrorReturnWith(
-        (error) =>
+    if (_userDto.interestsIds.isNotEmpty) {
+      yield* _firestore.tagCollection
+        .where(
+        FieldPath.documentId,
+        arrayContainsAny: _userDto.interestsIds.toList(),
+      )
+        .snapshots()
+        .map(
+          (snapshot) =>
+          snapshot.docs.map(
+              (document) => TagDto.fromFirestore(document).toDomain(),
+          ),
+      )
+        .map(
+          (tags) =>
+          right<Failure, KtList<Tag>>(
+            tags.toImmutableList(),
+          ),
+      )
+        .onErrorReturnWith(
+          (error) =>
+          left(
+            onError(error),
+          ),
+      );
+    } else {
+      yield* Stream.value(
         left(
-          onError(error),
+          const Failure.coreData(
+            CoreDataFailure.notFoundError(),
+          ),
         ),
-    );
+      );
+    }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> deleteExperience(UniqueId experienceId) {
     // TODO: implement deleteExperience
     throw UnimplementedError();
   }
-  
+
   Either<Failure, T> onFirebaseException<T>(FirebaseException e) {
     _logger.e("FirebaseException: ${e.message}");
     return left(
@@ -377,7 +443,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
       ),
     );
   }
-  
+
   Failure onError(dynamic error) {
     if (error is FirebaseException) {
       _logger.e("FirebaseException: ${error.message}");

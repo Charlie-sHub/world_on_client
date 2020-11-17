@@ -25,6 +25,10 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
 
   ProductionSearchRepository(this._firestore);
 
+  // TODO: Find a better way to filter the results
+  // Quite annoying that Firestore doesn't support filtering by substring
+  // The current way of doing it is completely in-scalable
+  // hopefully it will work for the tests
   @override
   Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByTitle(SearchTerm title) async* {
     yield* _firestore.experienceCollection
@@ -35,36 +39,59 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
           ),
         )
         .map(
-          (experiences) => right<Failure, KtList<Experience>>(
+      (experiences) {
+        if (experiences.isNotEmpty) {
+          return right<Failure, KtList<Experience>>(
             experiences.where((experience) => experience.title.getOrCrash().contains(title.getOrCrash())).toImmutableList(),
-          ),
-        )
-        .onErrorReturnWith(
-          (error) => left(
-            onError(error),
-          ),
-        );
+          );
+        } else {
+          return left<Failure, KtList<Experience>>(
+            const Failure.coreData(
+              CoreDataFailure.notFoundError(),
+            ),
+          );
+        }
+      },
+    ).onErrorReturnWith(
+      (error) => left(
+        onError(error),
+      ),
+    );
   }
 
   @override
   Stream<Either<Failure, KtList<Tag>>> watchSearchTagsByName(SearchTerm name) async* {
     yield* _firestore.tagCollection
+      .where(
+      "name",
+    )
         .snapshots()
-        .map(
-          (snapshot) => snapshot.docs.map(
+      .map(
+        (snapshot) =>
+        snapshot.docs.map(
             (document) => TagDto.fromFirestore(document).toDomain(),
-          ),
-        )
-        .map(
-          (tags) => right<Failure, KtList<Tag>>(
+        ),
+    )
+      .map(
+        (tags) {
+        if (tags.isNotEmpty) {
+          return right<Failure, KtList<Tag>>(
             tags.where((tag) => tag.name.getOrCrash().contains(name.getOrCrash())).toImmutableList(),
-          ),
-        )
-        .onErrorReturnWith(
-          (error) => left(
-            onError(error),
-          ),
-        );
+          );
+        } else {
+          return left<Failure, KtList<Tag>>(
+            const Failure.coreData(
+              CoreDataFailure.notFoundError(),
+            ),
+          );
+        }
+      },
+    ).onErrorReturnWith(
+        (error) =>
+        left(
+          onError(error),
+        ),
+    );
   }
 
   @override
@@ -78,12 +105,20 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
         ),
     )
       .map(
-        (users) =>
-        right<Failure, KtList<User>>(
-          users.where((user) => user.name.getOrCrash().contains(name.getOrCrash())).toImmutableList(),
-        ),
-    )
-      .onErrorReturnWith(
+        (users) {
+        if (users.isNotEmpty) {
+          return right<Failure, KtList<User>>(
+            users.where((user) => user.name.getOrCrash().contains(name.getOrCrash())).toImmutableList(),
+          );
+        } else {
+          return left<Failure, KtList<User>>(
+            const Failure.coreData(
+              CoreDataFailure.notFoundError(),
+            ),
+          );
+        }
+      },
+    ).onErrorReturnWith(
         (error) =>
         left(
           onError(error),
@@ -102,12 +137,20 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
         ),
     )
       .map(
-        (users) =>
-        right<Failure, KtList<User>>(
-          users.where((user) => user.username.getOrCrash().contains(username.getOrCrash())).toImmutableList(),
-        ),
-    )
-      .onErrorReturnWith(
+        (users) {
+        if (users.isNotEmpty) {
+          return right<Failure, KtList<User>>(
+            users.where((user) => user.username.getOrCrash().contains(username.getOrCrash())).toImmutableList(),
+          );
+        } else {
+          return left<Failure, KtList<User>>(
+            const Failure.coreData(
+              CoreDataFailure.notFoundError(),
+            ),
+          );
+        }
+      },
+    ).onErrorReturnWith(
         (error) =>
         left(
           onError(error),

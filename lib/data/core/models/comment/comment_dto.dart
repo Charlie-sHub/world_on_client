@@ -14,7 +14,7 @@ abstract class CommentDto implements _$CommentDto {
   const CommentDto._();
 
   const factory CommentDto({
-    String id,
+    @JsonKey(ignore: true) String id,
     @required String posterId,
     @required String experienceId,
     @required String content,

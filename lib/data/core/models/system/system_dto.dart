@@ -11,7 +11,7 @@ abstract class SystemDto implements _$SystemDto {
   const SystemDto._();
 
   const factory SystemDto({
-    String id,
+    @JsonKey(ignore: true) String id,
     @required String name,
     @required String type,
     @required String company,

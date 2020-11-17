@@ -75,18 +75,12 @@ class LogInForm extends StatelessWidget {
   }
 
   String _emailValidator(BuildContext context) {
-    return context
-      .bloc<LogInFormBloc>()
-      .state
-      .email
-      .value
-      .fold(
-        (failure) =>
-        failure.maybeMap(
-          invalidEmail: (_) => "The email is not valid",
-          orElse: () => StringConst.unknownError,
-        ),
-        (_) => null,
-    );
+    return context.bloc<LogInFormBloc>().state.email.value.fold(
+          (failure) => failure.maybeMap(
+            invalidEmail: (_) => "The email is not valid",
+            orElse: () => StringConst.unknownError,
+          ),
+          (_) => null,
+        );
   }
 }

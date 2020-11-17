@@ -61,7 +61,7 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
   Future<Either<Failure, Unit>> postComment(Comment comment) async {
     try {
       final _commentDto = CommentDto.fromDomain(comment);
-      await _firestore.experienceCollection.doc(_commentDto.experienceId).commentCollection.add(
+      await _firestore.experienceCollection.doc(_commentDto.experienceId).commentCollection.doc(comment.id.getOrCrash()).set(
             _commentDto.toJson(),
           );
       return right(unit);

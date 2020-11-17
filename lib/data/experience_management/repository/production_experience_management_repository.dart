@@ -21,7 +21,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
   Future<Either<Failure, Unit>> createExperience(Experience experience) async {
     try {
       final _experienceDto = ExperienceDto.fromDomain(experience);
-      await _firestore.experienceCollection.add(_experienceDto.toJson());
+      await _firestore.experienceCollection.doc(experience.id.getOrCrash()).set(_experienceDto.toJson());
       return right(unit);
     } on FirebaseException catch (e) {
       return onFirebaseException(e);
@@ -38,7 +38,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
       return onFirebaseException(e);
     }
   }
-  
+
   @override
   Future<Either<Failure, Experience>> getExperience(UniqueId id) async {
     try {
@@ -49,7 +49,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
       return onFirebaseException(e);
     }
   }
-  
+
   @override
   Future<Either<Failure, Unit>> removeExperience(UniqueId id) async {
     try {
@@ -59,7 +59,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
       return onFirebaseException(e);
     }
   }
-  
+
   Either<Failure, T> onFirebaseException<T>(FirebaseException e) {
     _logger.e("FirebaseException: ${e.message}");
     return left(

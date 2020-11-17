@@ -80,14 +80,14 @@ class TagManagementPage extends HookWidget {
             ).show(context),
           ),
           (_) {
-            FlushbarHelper.createSuccess(
-              duration: const Duration(seconds: 2),
-              message: "The Tag was created",
-            ).show(context);
             _textEditingController.clear();
             context.bloc<TagManagementFormBloc>().add(
                   TagManagementFormEvent.initialized(none()),
                 );
+            FlushbarHelper.createSuccess(
+              duration: const Duration(seconds: 2),
+              message: "The Tag was created",
+            ).show(context);
           },
         ),
       );
