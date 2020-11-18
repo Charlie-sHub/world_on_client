@@ -12,7 +12,7 @@ abstract class LocationDto implements _$LocationDto {
   const LocationDto._();
 
   const factory LocationDto({
-    @JsonKey(ignore: true) String id,
+    @required String id,
     @required String city,
     @required String country,
     @required String postalCode,

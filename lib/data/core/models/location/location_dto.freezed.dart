@@ -17,8 +17,7 @@ class _$LocationDtoTearOff {
   const _$LocationDtoTearOff();
 
 // ignore: unused_element
-  _LocationDto call(
-      {@JsonKey(ignore: true) String id, @required String city, @required String country, @required String postalCode, @required Set<ExperienceDto> experiences}) {
+  _LocationDto call({@required String id, @required String city, @required String country, @required String postalCode, @required Set<ExperienceDto> experiences}) {
     return _LocationDto(
       id: id,
       city: city,
@@ -40,28 +39,22 @@ const $LocationDto = _$LocationDtoTearOff();
 
 /// @nodoc
 mixin _$LocationDto {
-  @JsonKey(ignore: true)
   String get id;
-  
   String get city;
-  
   String get country;
-  
   String get postalCode;
-  
   Set<ExperienceDto> get experiences;
-  
+
   Map<String, dynamic> toJson();
-  
   $LocationDtoCopyWith<LocationDto> get copyWith;
 }
 
 /// @nodoc
 abstract class $LocationDtoCopyWith<$Res> {
-  factory $LocationDtoCopyWith(
-          LocationDto value, $Res Function(LocationDto) then) =
-      _$LocationDtoCopyWithImpl<$Res>;
-  $Res call({@JsonKey(ignore: true) String id,
+  factory $LocationDtoCopyWith(LocationDto value, $Res Function(LocationDto) then) =
+  _$LocationDtoCopyWithImpl<$Res>;
+  
+  $Res call({String id,
     String city,
     String country,
     String postalCode,
@@ -103,8 +96,9 @@ abstract class _$LocationDtoCopyWith<$Res>
   factory _$LocationDtoCopyWith(
           _LocationDto value, $Res Function(_LocationDto) then) =
       __$LocationDtoCopyWithImpl<$Res>;
+
   @override
-  $Res call({@JsonKey(ignore: true) String id,
+  $Res call({String id,
     String city,
     String country,
     String postalCode,
@@ -146,22 +140,22 @@ class __$LocationDtoCopyWithImpl<$Res> extends _$LocationDtoCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_LocationDto extends _LocationDto {
-  const _$_LocationDto({@JsonKey(ignore: true) this.id,
+  const _$_LocationDto({@required this.id,
     @required this.city,
     @required this.country,
     @required this.postalCode,
     @required this.experiences})
-      : assert(city != null),
-        assert(country != null),
-        assert(postalCode != null),
-        assert(experiences != null),
-        super._();
-
+    : assert(id != null),
+      assert(city != null),
+      assert(country != null),
+      assert(postalCode != null),
+      assert(experiences != null),
+      super._();
+  
   factory _$_LocationDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_LocationDtoFromJson(json);
-
+    _$_$_LocationDtoFromJson(json);
+  
   @override
-  @JsonKey(ignore: true)
   final String id;
   @override
   final String city;
@@ -217,20 +211,22 @@ class _$_LocationDto extends _LocationDto {
 
 abstract class _LocationDto extends LocationDto {
   const _LocationDto._() : super._();
-  const factory _LocationDto({@JsonKey(ignore: true) String id,
+  
+  const factory _LocationDto({@required String id,
     @required String city,
     @required String country,
     @required String postalCode,
     @required Set<ExperienceDto> experiences}) = _$_LocationDto;
-
+  
   factory _LocationDto.fromJson(Map<String, dynamic> json) =
-      _$_LocationDto.fromJson;
-
+  _$_LocationDto.fromJson;
+  
   @override
-  @JsonKey(ignore: true)
   String get id;
+  
   @override
   String get city;
+  
   @override
   String get country;
   @override

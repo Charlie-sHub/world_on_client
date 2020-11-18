@@ -50,7 +50,7 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
       return onFirebaseException(e);
     }
   }
-  
+
   @override
   Stream<Either<Failure, KtList<Experience>>> watchUserLog() async* {
     final _userDocument = await _firestore.userDocument();
@@ -60,29 +60,26 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
     // Maybe these should be a map of the experience id and the date it was added to the log
     if (_userDto.followedUsersIds.isNotEmpty) {
       yield* _firestore.experienceCollection
-        .where(
-        FieldPath.documentId,
-        arrayContainsAny: _userDto.experiencesToDoIds.toList(),
-      )
-        .snapshots()
-        .map(
-          (snapshot) =>
-          snapshot.docs.map(
+          .where(
+            FieldPath.documentId,
+            arrayContainsAny: _userDto.experiencesToDoIds.toList(),
+          )
+          .snapshots()
+          .map(
+            (snapshot) => snapshot.docs.map(
               (document) => ExperienceDto.fromFirestore(document).toDomain(),
-          ),
-      )
-        .map(
-          (experiences) =>
-          right<Failure, KtList<Experience>>(
-            experiences.toImmutableList(),
-          ),
-      )
-        .onErrorReturnWith(
-          (error) =>
-          left(
-            onError(error),
-          ),
-      );
+            ),
+          )
+          .map(
+            (experiences) => right<Failure, KtList<Experience>>(
+              experiences.toImmutableList(),
+            ),
+          )
+          .onErrorReturnWith(
+            (error) => left(
+              onError(error),
+            ),
+          );
     } else {
       yield* Stream.value(
         left(
@@ -93,7 +90,7 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
       );
     }
   }
-  
+
   Either<Failure, Unit> onFirebaseException(FirebaseException e) {
     _logger.e("FirebaseException: ${e.message}");
     return left(
@@ -102,7 +99,7 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
       ),
     );
   }
-  
+
   Failure onError(dynamic error) {
     if (error is FirebaseException) {
       _logger.e("FirebaseException: ${error.message}");

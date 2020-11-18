@@ -43,15 +43,11 @@ const $SystemDto = _$SystemDtoTearOff();
 mixin _$SystemDto {
   @JsonKey(ignore: true)
   String get id;
-  
   String get name;
-  
   String get type;
-  
   String get company;
-  
+
   Map<String, dynamic> toJson();
-  
   $SystemDtoCopyWith<SystemDto> get copyWith;
 }
 

@@ -43,27 +43,21 @@ const $CommentDto = _$CommentDtoTearOff();
 mixin _$CommentDto {
   @JsonKey(ignore: true)
   String get id;
-  
   String get posterId;
-  
   String get experienceId;
-  
   String get content;
-  
   String get creationDate;
-  
   String get modificationDate;
-  
+
   Map<String, dynamic> toJson();
-  
   $CommentDtoCopyWith<CommentDto> get copyWith;
 }
 
 /// @nodoc
 abstract class $CommentDtoCopyWith<$Res> {
-  factory $CommentDtoCopyWith(
-          CommentDto value, $Res Function(CommentDto) then) =
-      _$CommentDtoCopyWithImpl<$Res>;
+  factory $CommentDtoCopyWith(CommentDto value, $Res Function(CommentDto) then) =
+  _$CommentDtoCopyWithImpl<$Res>;
+  
   $Res call({@JsonKey(ignore: true) String id,
     String posterId,
     String experienceId,
@@ -111,6 +105,7 @@ abstract class _$CommentDtoCopyWith<$Res> implements $CommentDtoCopyWith<$Res> {
   factory _$CommentDtoCopyWith(
           _CommentDto value, $Res Function(_CommentDto) then) =
       __$CommentDtoCopyWithImpl<$Res>;
+
   @override
   $Res call({@JsonKey(ignore: true) String id,
     String posterId,
@@ -166,15 +161,15 @@ class _$_CommentDto extends _CommentDto {
     @required this.content,
     @required this.creationDate,
     @required this.modificationDate})
-      : assert(posterId != null),
-        assert(experienceId != null),
-        assert(content != null),
-        assert(creationDate != null),
-        assert(modificationDate != null),
-        super._();
-
+    : assert(posterId != null),
+      assert(experienceId != null),
+      assert(content != null),
+      assert(creationDate != null),
+      assert(modificationDate != null),
+      super._();
+  
   factory _$_CommentDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_CommentDtoFromJson(json);
+    _$_$_CommentDtoFromJson(json);
 
   @override
   @JsonKey(ignore: true)
@@ -240,21 +235,24 @@ class _$_CommentDto extends _CommentDto {
 
 abstract class _CommentDto extends CommentDto {
   const _CommentDto._() : super._();
+  
   const factory _CommentDto({@JsonKey(ignore: true) String id,
     @required String posterId,
     @required String experienceId,
     @required String content,
     @required String creationDate,
     @required String modificationDate}) = _$_CommentDto;
-
+  
   factory _CommentDto.fromJson(Map<String, dynamic> json) =
-      _$_CommentDto.fromJson;
-
+  _$_CommentDto.fromJson;
+  
   @override
   @JsonKey(ignore: true)
   String get id;
+  
   @override
   String get posterId;
+  
   @override
   String get experienceId;
   @override

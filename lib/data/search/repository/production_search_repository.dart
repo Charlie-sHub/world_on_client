@@ -27,7 +27,7 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
 
   // TODO: Find a better way to filter the results
   // Quite annoying that Firestore doesn't support filtering by substring
-  // The current way of doing it is completely in-scalable
+  // The current way of doing it is completely un-scalable
   // hopefully it will work for the tests
   @override
   Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByTitle(SearchTerm title) async* {
@@ -62,18 +62,17 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
   @override
   Stream<Either<Failure, KtList<Tag>>> watchSearchTagsByName(SearchTerm name) async* {
     yield* _firestore.tagCollection
-      .where(
-      "name",
-    )
+        .where(
+          "name",
+        )
         .snapshots()
-      .map(
-        (snapshot) =>
-        snapshot.docs.map(
+        .map(
+          (snapshot) => snapshot.docs.map(
             (document) => TagDto.fromFirestore(document).toDomain(),
-        ),
-    )
-      .map(
-        (tags) {
+          ),
+        )
+        .map(
+      (tags) {
         if (tags.isNotEmpty) {
           return right<Failure, KtList<Tag>>(
             tags.where((tag) => tag.name.getOrCrash().contains(name.getOrCrash())).toImmutableList(),
@@ -176,8 +175,13 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
       return Failure.coreData(
         CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
       );
+    } else if (error is AssertionError) {
+      _logger.e("Failed assertion error");
+      return const Failure.coreData(
+        CoreDataFailure.serverError(errorString: "Failed assertion error"),
+      );
     } else {
-      _logger.e("Unknown server error");
+      _logger.e("Unknown server error, type: ${error.runtimeType}");
       return const Failure.coreData(
         CoreDataFailure.serverError(errorString: "Unknown server error"),
       );

@@ -13,7 +13,7 @@ abstract class TagDto implements _$TagDto {
   const TagDto._();
 
   const factory TagDto({
-    @JsonKey(ignore: true) String id,
+    @required String id,
     @required String name,
     @required String creatorId,
     @required String creationDate,

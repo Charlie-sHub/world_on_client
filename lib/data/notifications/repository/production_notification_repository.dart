@@ -72,8 +72,8 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
     try {
       final _notificationDto = NotificationDto.fromDomain(notification);
       await _firestore.notificationCollection.doc(notification.id.getOrCrash()).set(
-        _notificationDto.toJson(),
-      );
+            _notificationDto.toJson(),
+          );
       return right(unit);
     } on FirebaseException catch (e) {
       return onFirebaseException(e);

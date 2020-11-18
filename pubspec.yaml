@@ -117,6 +117,12 @@ dev_dependencies:
   moor_ffi: ^0.8.0
   build_runner:
 
+# Overriding the analyzer as the current version gives
+# InconsistentAnalysisException: Requested result might be inconsistent with previously returned results
+# When generating some code
+dependency_overrides:
+  analyzer: '0.40.4'
+
 flutter_icons:
   image_path: "assets/world_on_logo.jpg"
   android: true

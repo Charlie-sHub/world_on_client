@@ -166,29 +166,26 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     final _userDto = UserDto.fromFirestore(_userDocument);
     if (_userDto.followedUsersIds.isNotEmpty) {
       yield* _firestore.userCollection
-        .where(
-        FieldPath.documentId,
-        arrayContainsAny: _userDto.followedUsersIds.toList(),
-      )
-        .snapshots()
-        .map(
-          (snapshot) =>
-          snapshot.docs.map(
+          .where(
+            FieldPath.documentId,
+            arrayContainsAny: _userDto.followedUsersIds.toList(),
+          )
+          .snapshots()
+          .map(
+            (snapshot) => snapshot.docs.map(
               (document) => UserDto.fromFirestore(document).toDomain(),
-          ),
-      )
-        .map(
-          (users) =>
-          right<Failure, KtList<User>>(
-            users.toImmutableList(),
-          ),
-      )
-        .onErrorReturnWith(
-          (error) =>
-          left(
-            onError(error),
-          ),
-      );
+            ),
+          )
+          .map(
+            (users) => right<Failure, KtList<User>>(
+              users.toImmutableList(),
+            ),
+          )
+          .onErrorReturnWith(
+            (error) => left(
+              onError(error),
+            ),
+          );
     } else {
       yield* Stream.value(
         left(
@@ -202,13 +199,10 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
 
   @override
   Stream<Either<Failure, KtList<User>>> watchFollowingUsers(UniqueId id) async* {
-    final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
-    final _userDto = UserDto.fromFirestore(_userDocument);
-
     yield* _firestore.userCollection
       .where(
       "followedUsersIds",
-      arrayContains: _userDto.id,
+      arrayContains: id.getOrCrash(),
     )
       .snapshots()
       .map(
@@ -233,12 +227,10 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
 
   @override
   Stream<Either<Failure, KtList<Experience>>> watchExperiencesCreated(UniqueId id) async* {
-    final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
-    final _userDto = UserDto.fromFirestore(_userDocument);
     yield* _firestore.experienceCollection
       .where(
       "creatorId",
-      isEqualTo: _userDto.id,
+      isEqualTo: id.getOrCrash(),
     )
       .snapshots()
       .map(

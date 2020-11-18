@@ -87,59 +87,34 @@ const $UserDto = _$UserDtoTearOff();
 mixin _$UserDto {
   @JsonKey(ignore: true)
   String get id;
-  
   String get name;
-  
   String get username; // Shouldn't this be encrypted in some way?
 // Maybe it shouldn't even be part of the dto at all, as Firebase handles it at login time
   String get password;
-  
   String get email;
-  
   String get birthday;
-  
   String get description;
-  
   String get imageURL;
-  
   int get level;
-  
   int get experiencePoints;
-  
   bool get privacy;
-  
   bool get adminPowers;
-  
   bool get enabled;
-  
   String get lastLogin;
-  
   String get creationDate;
-  
   String get modificationDate;
-  
   OptionsDto get options;
-  
   Set<String> get blockedUsersIds;
-  
   Set<String> get followedUsersIds;
-  
   Set<String> get interestsIds;
-  
   Set<String> get achievementsIds;
-  
   Set<String> get experiencesDoneIds;
-  
   Set<String> get experiencesLikedIds;
-  
   Set<String> get experiencesToDoIds;
-  
   Set<DeviceDto> get devices;
-  
   Set<SystemDto> get systems;
-  
+
   Map<String, dynamic> toJson();
-  
   $UserDtoCopyWith<UserDto> get copyWith;
 }
 

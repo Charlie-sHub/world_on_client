@@ -50,35 +50,22 @@ const $NotificationDto = _$NotificationDtoTearOff();
 mixin _$NotificationDto {
   @JsonKey(ignore: true)
   String get id;
-  
   String get senderId; // Maybe change the Users to only the ids
   String get receiverId;
-  
   String get description;
-  
   bool get seen;
-  
   String get creationDate;
-  
   NotificationType get type;
-  
+
   Map<String, dynamic> toJson();
-  
   $NotificationDtoCopyWith<NotificationDto> get copyWith;
 }
 
 /// @nodoc
 abstract class $NotificationDtoCopyWith<$Res> {
-  factory $NotificationDtoCopyWith(
-          NotificationDto value, $Res Function(NotificationDto) then) =
-      _$NotificationDtoCopyWithImpl<$Res>;
-  $Res call({@JsonKey(ignore: true) String id,
-    String senderId,
-    String receiverId,
-    String description,
-    bool seen,
-    String creationDate,
-    NotificationType type});
+  factory $NotificationDtoCopyWith(NotificationDto value, $Res Function(NotificationDto) then) = _$NotificationDtoCopyWithImpl<$Res>;
+
+  $Res call({@JsonKey(ignore: true) String id, String senderId, String receiverId, String description, bool seen, String creationDate, NotificationType type});
 }
 
 /// @nodoc
@@ -122,6 +109,7 @@ abstract class _$NotificationDtoCopyWith<$Res>
   factory _$NotificationDtoCopyWith(
           _NotificationDto value, $Res Function(_NotificationDto) then) =
       __$NotificationDtoCopyWithImpl<$Res>;
+
   @override
   $Res call({@JsonKey(ignore: true) String id,
     String senderId,
@@ -180,16 +168,16 @@ class _$_NotificationDto extends _NotificationDto {
     @required this.seen,
     @required this.creationDate,
     @required this.type})
-      : assert(senderId != null),
-        assert(receiverId != null),
-        assert(description != null),
-        assert(seen != null),
-        assert(creationDate != null),
-        assert(type != null),
-        super._();
-
+    : assert(senderId != null),
+      assert(receiverId != null),
+      assert(description != null),
+      assert(seen != null),
+      assert(creationDate != null),
+      assert(type != null),
+      super._();
+  
   factory _$_NotificationDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_NotificationDtoFromJson(json);
+    _$_$_NotificationDtoFromJson(json);
 
   @override
   @JsonKey(ignore: true)
@@ -259,6 +247,7 @@ class _$_NotificationDto extends _NotificationDto {
 
 abstract class _NotificationDto extends NotificationDto {
   const _NotificationDto._() : super._();
+  
   const factory _NotificationDto({@JsonKey(ignore: true) String id,
     @required String senderId,
     @required String receiverId,
@@ -266,15 +255,17 @@ abstract class _NotificationDto extends NotificationDto {
     @required bool seen,
     @required String creationDate,
     @required NotificationType type}) = _$_NotificationDto;
-
+  
   factory _NotificationDto.fromJson(Map<String, dynamic> json) =
-      _$_NotificationDto.fromJson;
-
+  _$_NotificationDto.fromJson;
+  
   @override
   @JsonKey(ignore: true)
   String get id;
+  
   @override
   String get senderId;
+  
   @override // Maybe change the Users to only the ids
   String get receiverId;
   @override

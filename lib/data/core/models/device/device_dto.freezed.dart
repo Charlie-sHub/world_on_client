@@ -43,15 +43,11 @@ const $DeviceDto = _$DeviceDtoTearOff();
 mixin _$DeviceDto {
   @JsonKey(ignore: true)
   String get id;
-  
   String get name;
-  
   String get type;
-  
   String get company;
-  
+
   Map<String, dynamic> toJson();
-  
   $DeviceDtoCopyWith<DeviceDto> get copyWith;
 }
 
