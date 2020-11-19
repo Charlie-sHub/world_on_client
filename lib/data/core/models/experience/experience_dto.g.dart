@@ -19,17 +19,9 @@ _$_ExperienceDto _$_$_ExperienceDtoFromJson(Map<String, dynamic> json) {
     creationDate: json['creationDate'] as String,
     modificationDate: json['modificationDate'] as String,
     objectives: (json['objectives'] as List)?.map((e) => e == null ? null : ObjectiveDto.fromJson(e as Map<String, dynamic>))?.toSet(),
-    rewards: (json['rewards'] as List)
-        ?.map((e) =>
-            e == null ? null : RewardDto.fromJson(e as Map<String, dynamic>))
-        ?.toSet(),
-    tags: (json['tags'] as List)
-        ?.map((e) =>
-            e == null ? null : TagDto.fromJson(e as Map<String, dynamic>))
-        ?.toSet(),
-    comments: (json['comments'] as List)
-        ?.map((e) =>
-            e == null ? null : CommentDto.fromJson(e as Map<String, dynamic>))
+    rewards: (json['rewards'] as List)?.map((e) => e == null ? null : RewardDto.fromJson(e as Map<String, dynamic>))?.toSet(),
+    tags: (json['tags'] as List)?.map((e) => e == null ? null : TagDto.fromJson(e as Map<String, dynamic>))?.toSet(),
+    comments: (json['comments'] as List)?.map((e) => e == null ? null : CommentDto.fromJson(e as Map<String, dynamic>))
         ?.toSet(),
     likedBy: (json['likedBy'] as List)
         ?.map((e) =>
@@ -60,4 +52,4 @@ Map<String, dynamic> _$_$_ExperienceDtoToJson(_$_ExperienceDto instance) =>
     'comments': instance.comments?.map((e) => e?.toJson())?.toList(),
     'likedBy': instance.likedBy?.map((e) => e?.toJson())?.toList(),
     'doneBy': instance.doneBy?.map((e) => e?.toJson())?.toList(),
-    };
+  };

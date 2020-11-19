@@ -62,9 +62,6 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
   @override
   Stream<Either<Failure, KtList<Tag>>> watchSearchTagsByName(SearchTerm name) async* {
     yield* _firestore.tagCollection
-        .where(
-          "name",
-        )
         .snapshots()
         .map(
           (snapshot) => snapshot.docs.map(
@@ -86,10 +83,9 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
         }
       },
     ).onErrorReturnWith(
-        (error) =>
-        left(
-          onError(error),
-        ),
+      (error) => left(
+        onError(error),
+      ),
     );
   }
 

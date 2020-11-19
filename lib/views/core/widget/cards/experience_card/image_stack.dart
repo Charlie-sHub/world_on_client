@@ -1,6 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:multi_image_picker/multi_image_picker.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widget/misc/user_image.dart';
@@ -21,17 +20,7 @@ class ImageStack extends StatelessWidget {
         children: <Widget>[
           Container(
             width: MediaQuery.of(context).size.width,
-            child: experience.imageAssetsOption.fold(
-              () => Image(
-                image: AssetImage(experience.imageURLs.first),
-                fit: BoxFit.cover,
-              ),
-              (_assetList) => AssetThumb(
-                asset: _assetList.first,
-                width: 500,
-                height: 500,
-              ),
-            ),
+            child: Image.network(experience.imageURLs.first),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

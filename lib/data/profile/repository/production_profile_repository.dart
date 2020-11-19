@@ -130,8 +130,8 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     if (_userDto.blockedUsersIds.isNotEmpty) {
       yield* _firestore.userCollection
           .where(
-            FieldPath.documentId,
-            arrayContainsAny: _userDto.blockedUsersIds.toList(),
+            "id",
+            whereIn: _userDto.blockedUsersIds.toList(),
           )
           .snapshots()
           .map(
@@ -167,9 +167,9 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     if (_userDto.followedUsersIds.isNotEmpty) {
       yield* _firestore.userCollection
           .where(
-            FieldPath.documentId,
-            arrayContainsAny: _userDto.followedUsersIds.toList(),
-          )
+        "id",
+        whereIn: _userDto.followedUsersIds.toList(),
+      )
           .snapshots()
           .map(
             (snapshot) => snapshot.docs.map(
@@ -268,8 +268,8 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     if (_userDto.experiencesDoneIds.isNotEmpty) {
       yield* _firestore.experienceCollection
         .where(
-        FieldPath.documentId,
-        arrayContainsAny: _userDto.experiencesDoneIds.toList(),
+        "id",
+        whereIn: _userDto.experiencesDoneIds.toList(),
       )
         .snapshots()
         .map(
@@ -308,8 +308,8 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     if (_userDto.experiencesLikedIds.isNotEmpty) {
       yield* _firestore.experienceCollection
         .where(
-        FieldPath.documentId,
-        arrayContainsAny: _userDto.experiencesLikedIds.toList(),
+        "id",
+        whereIn: _userDto.experiencesLikedIds.toList(),
       )
         .snapshots()
         .map(
@@ -348,8 +348,8 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     if (_userDto.achievementsIds.isNotEmpty) {
       yield* _firestore.achievementCollection
         .where(
-        FieldPath.documentId,
-        arrayContainsAny: _userDto.achievementsIds.toList(),
+        "id",
+        whereIn: _userDto.achievementsIds.toList(),
       )
         .snapshots()
         .map(
@@ -388,8 +388,8 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     if (_userDto.interestsIds.isNotEmpty) {
       yield* _firestore.tagCollection
         .where(
-        FieldPath.documentId,
-        arrayContainsAny: _userDto.interestsIds.toList(),
+        "id",
+        whereIn: _userDto.interestsIds.toList(),
       )
         .snapshots()
         .map(

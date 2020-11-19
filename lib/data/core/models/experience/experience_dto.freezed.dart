@@ -24,6 +24,7 @@ class _$ExperienceDtoTearOff {
       @required Set<String> imageURLs,
       @required CoordinatesDto coordinates,
       @required LocationDto location,
+      @required String creatorId,
       @required UserDto creator,
       @required int difficulty,
       @required String creationDate,
@@ -41,6 +42,7 @@ class _$ExperienceDtoTearOff {
       imageURLs: imageURLs,
       coordinates: coordinates,
       location: location,
+      creatorId: creatorId,
       creator: creator,
       difficulty: difficulty,
       creationDate: creationDate,
@@ -68,66 +70,68 @@ const $ExperienceDto = _$ExperienceDtoTearOff();
 mixin _$ExperienceDto {
   @JsonKey(ignore: true)
   String get id;
-  
   String get title;
-  
   String get description;
-  
   Set<String> get imageURLs;
-  
+
   CoordinatesDto get coordinates;
-  
+
   LocationDto get location;
-  
+
+  String get creatorId;
+
   UserDto get creator;
-  
+
   int get difficulty;
-  
+
   String get creationDate;
-  
+
   String get modificationDate;
-  
+
   Set<ObjectiveDto> get objectives;
-  
+
   Set<RewardDto> get rewards;
-  
+
   Set<TagDto>
   get tags; // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
   Set<CommentDto> get comments;
-  
+
   Set<UserDto> get likedBy;
-  
+
   Set<UserDto> get doneBy;
-  
+
   Map<String, dynamic> toJson();
-  
+
   $ExperienceDtoCopyWith<ExperienceDto> get copyWith;
 }
 
 /// @nodoc
 abstract class $ExperienceDtoCopyWith<$Res> {
-  factory $ExperienceDtoCopyWith(
-          ExperienceDto value, $Res Function(ExperienceDto) then) =
-      _$ExperienceDtoCopyWithImpl<$Res>;
+  factory $ExperienceDtoCopyWith(ExperienceDto value, $Res Function(ExperienceDto) then) =
+  _$ExperienceDtoCopyWithImpl<$Res>;
+  
   $Res call({@JsonKey(ignore: true) String id,
     String title,
     String description,
     Set<String> imageURLs,
     CoordinatesDto coordinates,
     LocationDto location,
+    String creatorId,
     UserDto creator,
     int difficulty,
     String creationDate,
     String modificationDate,
     Set<ObjectiveDto> objectives,
-      Set<RewardDto> rewards,
-      Set<TagDto> tags,
-      Set<CommentDto> comments,
-      Set<UserDto> likedBy,
-      Set<UserDto> doneBy});
-
+    Set<RewardDto> rewards,
+    Set<TagDto> tags,
+    Set<CommentDto> comments,
+    Set<UserDto> likedBy,
+    Set<UserDto> doneBy});
+  
   $CoordinatesDtoCopyWith<$Res> get coordinates;
+  
   $LocationDtoCopyWith<$Res> get location;
+  
   $UserDtoCopyWith<$Res> get creator;
 }
 
@@ -148,6 +152,7 @@ class _$ExperienceDtoCopyWithImpl<$Res>
     Object imageURLs = freezed,
     Object coordinates = freezed,
     Object location = freezed,
+    Object creatorId = freezed,
     Object creator = freezed,
     Object difficulty = freezed,
     Object creationDate = freezed,
@@ -163,23 +168,24 @@ class _$ExperienceDtoCopyWithImpl<$Res>
       id: id == freezed ? _value.id : id as String,
       title: title == freezed ? _value.title : title as String,
       description:
-          description == freezed ? _value.description : description as String,
+      description == freezed ? _value.description : description as String,
       imageURLs:
-          imageURLs == freezed ? _value.imageURLs : imageURLs as Set<String>,
+      imageURLs == freezed ? _value.imageURLs : imageURLs as Set<String>,
       coordinates: coordinates == freezed
-          ? _value.coordinates
-          : coordinates as CoordinatesDto,
+        ? _value.coordinates
+        : coordinates as CoordinatesDto,
       location: location == freezed ? _value.location : location as LocationDto,
+      creatorId: creatorId == freezed ? _value.creatorId : creatorId as String,
       creator: creator == freezed ? _value.creator : creator as UserDto,
       difficulty: difficulty == freezed ? _value.difficulty : difficulty as int,
       creationDate: creationDate == freezed
-          ? _value.creationDate
-          : creationDate as String,
+        ? _value.creationDate
+        : creationDate as String,
       modificationDate: modificationDate == freezed
-          ? _value.modificationDate
-          : modificationDate as String,
+        ? _value.modificationDate
+        : modificationDate as String,
       objectives: objectives == freezed
-          ? _value.objectives
+        ? _value.objectives
           : objectives as Set<ObjectiveDto>,
       rewards: rewards == freezed ? _value.rewards : rewards as Set<RewardDto>,
       tags: tags == freezed ? _value.tags : tags as Set<TagDto>,
@@ -227,6 +233,7 @@ abstract class _$ExperienceDtoCopyWith<$Res>
   factory _$ExperienceDtoCopyWith(
           _ExperienceDto value, $Res Function(_ExperienceDto) then) =
       __$ExperienceDtoCopyWithImpl<$Res>;
+
   @override
   $Res call({@JsonKey(ignore: true) String id,
     String title,
@@ -234,16 +241,17 @@ abstract class _$ExperienceDtoCopyWith<$Res>
     Set<String> imageURLs,
     CoordinatesDto coordinates,
     LocationDto location,
+    String creatorId,
     UserDto creator,
     int difficulty,
     String creationDate,
     String modificationDate,
     Set<ObjectiveDto> objectives,
-      Set<RewardDto> rewards,
-      Set<TagDto> tags,
-      Set<CommentDto> comments,
-      Set<UserDto> likedBy,
-      Set<UserDto> doneBy});
+    Set<RewardDto> rewards,
+    Set<TagDto> tags,
+    Set<CommentDto> comments,
+    Set<UserDto> likedBy,
+    Set<UserDto> doneBy});
 
   @override
   $CoordinatesDtoCopyWith<$Res> get coordinates;
@@ -272,6 +280,7 @@ class __$ExperienceDtoCopyWithImpl<$Res>
     Object imageURLs = freezed,
     Object coordinates = freezed,
     Object location = freezed,
+    Object creatorId = freezed,
     Object creator = freezed,
     Object difficulty = freezed,
     Object creationDate = freezed,
@@ -287,23 +296,24 @@ class __$ExperienceDtoCopyWithImpl<$Res>
       id: id == freezed ? _value.id : id as String,
       title: title == freezed ? _value.title : title as String,
       description:
-          description == freezed ? _value.description : description as String,
+      description == freezed ? _value.description : description as String,
       imageURLs:
-          imageURLs == freezed ? _value.imageURLs : imageURLs as Set<String>,
+      imageURLs == freezed ? _value.imageURLs : imageURLs as Set<String>,
       coordinates: coordinates == freezed
-          ? _value.coordinates
-          : coordinates as CoordinatesDto,
+        ? _value.coordinates
+        : coordinates as CoordinatesDto,
       location: location == freezed ? _value.location : location as LocationDto,
+      creatorId: creatorId == freezed ? _value.creatorId : creatorId as String,
       creator: creator == freezed ? _value.creator : creator as UserDto,
       difficulty: difficulty == freezed ? _value.difficulty : difficulty as int,
       creationDate: creationDate == freezed
-          ? _value.creationDate
-          : creationDate as String,
+        ? _value.creationDate
+        : creationDate as String,
       modificationDate: modificationDate == freezed
-          ? _value.modificationDate
-          : modificationDate as String,
+        ? _value.modificationDate
+        : modificationDate as String,
       objectives: objectives == freezed
-          ? _value.objectives
+        ? _value.objectives
           : objectives as Set<ObjectiveDto>,
       rewards: rewards == freezed ? _value.rewards : rewards as Set<RewardDto>,
       tags: tags == freezed ? _value.tags : tags as Set<TagDto>,
@@ -325,31 +335,33 @@ class _$_ExperienceDto extends _ExperienceDto {
     @required this.imageURLs,
     @required this.coordinates,
     @required this.location,
+    @required this.creatorId,
     @required this.creator,
     @required this.difficulty,
     @required this.creationDate,
     @required this.modificationDate,
     @required this.objectives,
-      @required this.rewards,
-      @required this.tags,
-      @required this.comments,
-      @required this.likedBy,
-      @required this.doneBy})
-      : assert(title != null),
-        assert(description != null),
-        assert(imageURLs != null),
-        assert(coordinates != null),
-        assert(location != null),
-        assert(creator != null),
-        assert(difficulty != null),
-        assert(creationDate != null),
-        assert(modificationDate != null),
-        assert(objectives != null),
-        assert(rewards != null),
-        assert(tags != null),
-        assert(comments != null),
-        assert(likedBy != null),
-        assert(doneBy != null),
+    @required this.rewards,
+    @required this.tags,
+    @required this.comments,
+    @required this.likedBy,
+    @required this.doneBy})
+    : assert(title != null),
+      assert(description != null),
+      assert(imageURLs != null),
+      assert(coordinates != null),
+      assert(location != null),
+      assert(creatorId != null),
+      assert(creator != null),
+      assert(difficulty != null),
+      assert(creationDate != null),
+      assert(modificationDate != null),
+      assert(objectives != null),
+      assert(rewards != null),
+      assert(tags != null),
+      assert(comments != null),
+      assert(likedBy != null),
+      assert(doneBy != null),
         super._();
 
   factory _$_ExperienceDto.fromJson(Map<String, dynamic> json) =>
@@ -368,6 +380,8 @@ class _$_ExperienceDto extends _ExperienceDto {
   final CoordinatesDto coordinates;
   @override
   final LocationDto location;
+  @override
+  final String creatorId;
   @override
   final UserDto creator;
   @override
@@ -391,7 +405,7 @@ class _$_ExperienceDto extends _ExperienceDto {
 
   @override
   String toString() {
-    return 'ExperienceDto(id: $id, title: $title, description: $description, imageURLs: $imageURLs, coordinates: $coordinates, location: $location, creator: $creator, difficulty: $difficulty, creationDate: $creationDate, modificationDate: $modificationDate, objectives: $objectives, rewards: $rewards, tags: $tags, comments: $comments, likedBy: $likedBy, doneBy: $doneBy)';
+    return 'ExperienceDto(id: $id, title: $title, description: $description, imageURLs: $imageURLs, coordinates: $coordinates, location: $location, creatorId: $creatorId, creator: $creator, difficulty: $difficulty, creationDate: $creationDate, modificationDate: $modificationDate, objectives: $objectives, rewards: $rewards, tags: $tags, comments: $comments, likedBy: $likedBy, doneBy: $doneBy)';
   }
 
   @override
@@ -404,19 +418,22 @@ class _$_ExperienceDto extends _ExperienceDto {
                 const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.description, description) ||
                 const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.imageURLs, imageURLs) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageURLs, imageURLs)) &&
-            (identical(other.coordinates, coordinates) ||
-                const DeepCollectionEquality()
-                    .equals(other.coordinates, coordinates)) &&
-            (identical(other.location, location) ||
-                const DeepCollectionEquality()
-                    .equals(other.location, location)) &&
-            (identical(other.creator, creator) ||
-                const DeepCollectionEquality()
-                    .equals(other.creator, creator)) &&
+                  .equals(other.description, description)) &&
+          (identical(other.imageURLs, imageURLs) ||
+            const DeepCollectionEquality()
+              .equals(other.imageURLs, imageURLs)) &&
+          (identical(other.coordinates, coordinates) ||
+            const DeepCollectionEquality()
+              .equals(other.coordinates, coordinates)) &&
+          (identical(other.location, location) ||
+            const DeepCollectionEquality()
+              .equals(other.location, location)) &&
+          (identical(other.creatorId, creatorId) ||
+            const DeepCollectionEquality()
+              .equals(other.creatorId, creatorId)) &&
+          (identical(other.creator, creator) ||
+            const DeepCollectionEquality()
+              .equals(other.creator, creator)) &&
             (identical(other.difficulty, difficulty) ||
                 const DeepCollectionEquality()
                     .equals(other.difficulty, difficulty)) &&
@@ -446,14 +463,15 @@ class _$_ExperienceDto extends _ExperienceDto {
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(imageURLs) ^
-      const DeepCollectionEquality().hash(coordinates) ^
-      const DeepCollectionEquality().hash(location) ^
-      const DeepCollectionEquality().hash(creator) ^
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(id) ^
+    const DeepCollectionEquality().hash(title) ^
+    const DeepCollectionEquality().hash(description) ^
+    const DeepCollectionEquality().hash(imageURLs) ^
+    const DeepCollectionEquality().hash(coordinates) ^
+    const DeepCollectionEquality().hash(location) ^
+    const DeepCollectionEquality().hash(creatorId) ^
+    const DeepCollectionEquality().hash(creator) ^
       const DeepCollectionEquality().hash(difficulty) ^
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(modificationDate) ^
@@ -476,47 +494,62 @@ class _$_ExperienceDto extends _ExperienceDto {
 
 abstract class _ExperienceDto extends ExperienceDto {
   const _ExperienceDto._() : super._();
+  
   const factory _ExperienceDto({@JsonKey(ignore: true) String id,
     @required String title,
     @required String description,
     @required Set<String> imageURLs,
     @required CoordinatesDto coordinates,
     @required LocationDto location,
+    @required String creatorId,
     @required UserDto creator,
     @required int difficulty,
     @required String creationDate,
     @required String modificationDate,
     @required Set<ObjectiveDto> objectives,
-      @required Set<RewardDto> rewards,
-      @required Set<TagDto> tags,
-      @required Set<CommentDto> comments,
-      @required Set<UserDto> likedBy,
-      @required Set<UserDto> doneBy}) = _$_ExperienceDto;
-
+    @required Set<RewardDto> rewards,
+    @required Set<TagDto> tags,
+    @required Set<CommentDto> comments,
+    @required Set<UserDto> likedBy,
+    @required Set<UserDto> doneBy}) = _$_ExperienceDto;
+  
   factory _ExperienceDto.fromJson(Map<String, dynamic> json) =
-      _$_ExperienceDto.fromJson;
-
+  _$_ExperienceDto.fromJson;
+  
   @override
   @JsonKey(ignore: true)
   String get id;
+  
   @override
   String get title;
+  
   @override
   String get description;
+  
   @override
   Set<String> get imageURLs;
+  
   @override
   CoordinatesDto get coordinates;
+  
   @override
   LocationDto get location;
+  
+  @override
+  String get creatorId;
+  
   @override
   UserDto get creator;
+  
   @override
   int get difficulty;
+  
   @override
   String get creationDate;
+  
   @override
   String get modificationDate;
+  
   @override
   Set<ObjectiveDto> get objectives;
   @override

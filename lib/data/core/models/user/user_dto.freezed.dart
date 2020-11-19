@@ -17,7 +17,7 @@ class _$UserDtoTearOff {
   const _$UserDtoTearOff();
 
 // ignore: unused_element
-  _UserDto call({@JsonKey(ignore: true) String id,
+  _UserDto call({@required String id,
     @required String name,
     @required String username,
     @required String password,
@@ -85,7 +85,6 @@ const $UserDto = _$UserDtoTearOff();
 
 /// @nodoc
 mixin _$UserDto {
-  @JsonKey(ignore: true)
   String get id;
   String get name;
   String get username; // Shouldn't this be encrypted in some way?
@@ -123,7 +122,7 @@ abstract class $UserDtoCopyWith<$Res> {
   factory $UserDtoCopyWith(UserDto value, $Res Function(UserDto) then) =
   _$UserDtoCopyWithImpl<$Res>;
   
-  $Res call({@JsonKey(ignore: true) String id,
+  $Res call({String id,
     String name,
     String username,
     String password,
@@ -259,7 +258,7 @@ abstract class _$UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
   __$UserDtoCopyWithImpl<$Res>;
   
   @override
-  $Res call({@JsonKey(ignore: true) String id,
+  $Res call({String id,
     String name,
     String username,
     String password,
@@ -384,7 +383,7 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
 @JsonSerializable()
 
 /// @nodoc class _$_UserDto extends _UserDto {
-  const _$_UserDto({@JsonKey(ignore: true) this.id,
+  const _$_UserDto({@required this.id,
     @required this.name,
     @required this.username,
     @required this.password,
@@ -410,7 +409,8 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
     @required this.experiencesToDoIds,
     @required this.devices,
     @required this.systems})
-    : assert(name != null),
+    : assert(id != null),
+      assert(name != null),
       assert(username != null),
       assert(password != null),
       assert(email != null),
@@ -441,7 +441,6 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
     _$_$_UserDtoFromJson(json);
   
   @override
-  @JsonKey(ignore: true)
   final String id;
   @override
   final String name;
@@ -618,7 +617,7 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
 abstract class _UserDto extends UserDto {
   const _UserDto._() : super._();
   
-  const factory _UserDto({@JsonKey(ignore: true) String id,
+  const factory _UserDto({@required String id,
     @required String name,
     @required String username,
     @required String password,
@@ -648,7 +647,6 @@ abstract class _UserDto extends UserDto {
   factory _UserDto.fromJson(Map<String, dynamic> json) = _$_UserDto.fromJson;
   
   @override
-  @JsonKey(ignore: true)
   String get id;
   
   @override
@@ -656,6 +654,7 @@ abstract class _UserDto extends UserDto {
   
   @override
   String get username;
+  
   @override // Shouldn't this be encrypted in some way?
 // Maybe it shouldn't even be part of the dto at all, as Firebase handles it at login time
   String get password;

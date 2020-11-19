@@ -229,8 +229,10 @@ abstract class _LocationDto extends LocationDto {
   
   @override
   String get country;
+  
   @override
   String get postalCode;
+  
   @override
   Set<ExperienceDto> get experiences;
   @override

@@ -231,11 +231,11 @@ class _$_AchievementDto extends _AchievementDto {
       assert(creationDate != null),
       assert(modificationDate != null),
       assert(tagsIds != null),
-        super._();
-
+      super._();
+  
   factory _$_AchievementDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_AchievementDtoFromJson(json);
-
+    _$_$_AchievementDtoFromJson(json);
+  
   @override
   @JsonKey(ignore: true)
   final String id;
@@ -352,6 +352,7 @@ abstract class _AchievementDto extends AchievementDto {
   
   @override
   String get description;
+  
   @override
   String get imageURL;
   @override

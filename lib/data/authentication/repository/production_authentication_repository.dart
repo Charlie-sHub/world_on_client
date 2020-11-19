@@ -14,6 +14,7 @@ import 'package:worldon/domain/authentication/failures/authentication_domain_fai
 import 'package:worldon/domain/authentication/repository/authentication_repository_interface.dart';
 import 'package:worldon/domain/core/entities/user/user.dart' as entity;
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
+import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 @LazySingleton(as: AuthenticationRepositoryInterface, env: [Environment.prod])
 class ProductionAuthenticationRepository implements AuthenticationRepositoryInterface {
@@ -36,7 +37,13 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
         password: user.password.getOrCrash(),
       );
       final _firebaseUser = _firebaseAuth.currentUser;
-      final _jsonUser = UserDto.fromDomain(user).toJson();
+      final _jsonUser = UserDto.fromDomain(
+        user.copyWith(
+          id: UniqueId.fromUniqueString(
+            _firebaseUser.uid,
+          ),
+        ),
+      ).toJson();
       await _firestore.userCollection.doc(_firebaseUser.uid).set(_jsonUser);
       // TODO: implement image storage
       // Save the User imageFile by assigning it an unique name with uuid and maybe the username
@@ -117,6 +124,8 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
     }
   }
 
+  // TODO: Make it so no internet connections prohibits logging in
+  // Currently the cache can still hold a deleted user, that can give problems if the user logs back in
   @override
   Future<Option<entity.User>> getLoggedInUser() async {
     final _firebaseCurrentUser = _firebaseAuth.currentUser;

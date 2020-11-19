@@ -61,7 +61,7 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
     if (_userDto.followedUsersIds.isNotEmpty) {
       yield* _firestore.experienceCollection
           .where(
-            FieldPath.documentId,
+            "id",
             arrayContainsAny: _userDto.experiencesToDoIds.toList(),
           )
           .snapshots()

@@ -26,6 +26,7 @@ class OwnProfileHeader extends StatelessWidget {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(5),
+                // TODO: Change to use network images
                 child: user.imageURL.contains("assets/")
                     ? Hero(
                         tag: "userImageAsset",

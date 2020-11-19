@@ -170,7 +170,7 @@ class _$_CommentDto extends _CommentDto {
   
   factory _$_CommentDto.fromJson(Map<String, dynamic> json) =>
     _$_$_CommentDtoFromJson(json);
-
+  
   @override
   @JsonKey(ignore: true)
   final String id;
@@ -255,6 +255,7 @@ abstract class _CommentDto extends CommentDto {
   
   @override
   String get experienceId;
+  
   @override
   String get content;
   @override

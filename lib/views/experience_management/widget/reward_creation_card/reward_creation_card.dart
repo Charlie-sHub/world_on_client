@@ -42,7 +42,7 @@ class RewardCreationCard extends HookWidget {
             children: <Widget>[
               const SizedBox(height: 5),
               const Text(
-                "Create the Rewards",
+                "Create the Rewards (optional)",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,

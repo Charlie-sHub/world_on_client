@@ -178,7 +178,7 @@ class _$_NotificationDto extends _NotificationDto {
   
   factory _$_NotificationDto.fromJson(Map<String, dynamic> json) =>
     _$_$_NotificationDtoFromJson(json);
-
+  
   @override
   @JsonKey(ignore: true)
   final String id;
@@ -268,6 +268,7 @@ abstract class _NotificationDto extends NotificationDto {
   
   @override // Maybe change the Users to only the ids
   String get receiverId;
+  
   @override
   String get description;
   @override

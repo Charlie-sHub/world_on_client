@@ -48,7 +48,7 @@ abstract class ExperienceDto implements _$ExperienceDto {
   }) = _ExperienceDto;
 
   factory ExperienceDto.fromDomain(Experience experience) => ExperienceDto(
-    id: experience.id.getOrCrash(),
+        id: experience.id.getOrCrash(),
         title: experience.title.getOrCrash(),
         description: experience.description.getOrCrash(),
         imageURLs: experience.imageURLs,
@@ -67,32 +67,29 @@ abstract class ExperienceDto implements _$ExperienceDto {
         doneBy: {},
       );
 
-  Experience toDomain() {
-    final _userDtoWithId = creator.copyWith(id: creatorId);
-    return Experience(
-      id: UniqueId.fromUniqueString(id),
-      title: Name(title),
-      description: EntityDescription(description),
-      imageURLs: imageURLs,
-      imageAssetsOption: dartz.none(),
-      coordinates: coordinates.toDomain(),
-      location: location.toDomain(),
-      creator: _userDtoWithId.toDomain(),
-      difficulty: Difficulty(difficulty),
-      creationDate: PastDate(DateTime.parse(creationDate)),
-      modificationDate: PastDate(DateTime.parse(modificationDate)),
-      objectives: ObjectiveSet(objectives.map((objectiveDto) => objectiveDto.toDomain()).toImmutableSet()),
-      rewards: RewardSet(rewards.map((rewardDto) => rewardDto.toDomain()).toImmutableSet()),
-      tags: TagSet(tags.map((tagDto) => tagDto.toDomain()).toImmutableSet()),
-      comments: {},
-      // TODO: Figure out a way to save and retrieve the likes and doneBys
-      // Denormalization would go too far
-      // it's ok for the creator and the tags, but for potentially infinite likes and doneBys?
-      // Maybe each like could be a document on its own
-      likedBy: {},
-      doneBy: {},
-    );
-  }
+  Experience toDomain() => Experience(
+        id: UniqueId.fromUniqueString(id),
+        title: Name(title),
+        description: EntityDescription(description),
+        imageURLs: imageURLs,
+        imageAssetsOption: dartz.none(),
+        coordinates: coordinates.toDomain(),
+        location: location.toDomain(),
+        creator: creator.toDomain(),
+        difficulty: Difficulty(difficulty),
+        creationDate: PastDate(DateTime.parse(creationDate)),
+        modificationDate: PastDate(DateTime.parse(modificationDate)),
+        objectives: ObjectiveSet(objectives.map((objectiveDto) => objectiveDto.toDomain()).toImmutableSet()),
+        rewards: RewardSet(rewards.map((rewardDto) => rewardDto.toDomain()).toImmutableSet()),
+        tags: TagSet(tags.map((tagDto) => tagDto.toDomain()).toImmutableSet()),
+        comments: {},
+        // TODO: Figure out a way to save and retrieve the likes and doneBys
+        // Denormalization would go too far
+        // it's ok for the creator and the tags, but for potentially infinite likes and doneBys?
+        // Maybe each like could be a document on its own
+        likedBy: {},
+        doneBy: {},
+      );
 
   factory ExperienceDto.fromJson(Map<String, dynamic> json) => _$ExperienceDtoFromJson(json);
 
