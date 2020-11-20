@@ -18,7 +18,7 @@ class _$ExperienceDtoTearOff {
 
 // ignore: unused_element
   _ExperienceDto call(
-      {@JsonKey(ignore: true) String id,
+      {@required String id,
       @required String title,
       @required String description,
       @required Set<String> imageURLs,
@@ -68,7 +68,6 @@ const $ExperienceDto = _$ExperienceDtoTearOff();
 
 /// @nodoc
 mixin _$ExperienceDto {
-  @JsonKey(ignore: true)
   String get id;
   String get title;
   String get description;
@@ -110,7 +109,7 @@ abstract class $ExperienceDtoCopyWith<$Res> {
   factory $ExperienceDtoCopyWith(ExperienceDto value, $Res Function(ExperienceDto) then) =
   _$ExperienceDtoCopyWithImpl<$Res>;
   
-  $Res call({@JsonKey(ignore: true) String id,
+  $Res call({String id,
     String title,
     String description,
     Set<String> imageURLs,
@@ -186,11 +185,11 @@ class _$ExperienceDtoCopyWithImpl<$Res>
         : modificationDate as String,
       objectives: objectives == freezed
         ? _value.objectives
-          : objectives as Set<ObjectiveDto>,
+        : objectives as Set<ObjectiveDto>,
       rewards: rewards == freezed ? _value.rewards : rewards as Set<RewardDto>,
       tags: tags == freezed ? _value.tags : tags as Set<TagDto>,
       comments:
-          comments == freezed ? _value.comments : comments as Set<CommentDto>,
+      comments == freezed ? _value.comments : comments as Set<CommentDto>,
       likedBy: likedBy == freezed ? _value.likedBy : likedBy as Set<UserDto>,
       doneBy: doneBy == freezed ? _value.doneBy : doneBy as Set<UserDto>,
     ));
@@ -235,7 +234,7 @@ abstract class _$ExperienceDtoCopyWith<$Res>
       __$ExperienceDtoCopyWithImpl<$Res>;
 
   @override
-  $Res call({@JsonKey(ignore: true) String id,
+  $Res call({String id,
     String title,
     String description,
     Set<String> imageURLs,
@@ -314,11 +313,11 @@ class __$ExperienceDtoCopyWithImpl<$Res>
         : modificationDate as String,
       objectives: objectives == freezed
         ? _value.objectives
-          : objectives as Set<ObjectiveDto>,
+        : objectives as Set<ObjectiveDto>,
       rewards: rewards == freezed ? _value.rewards : rewards as Set<RewardDto>,
       tags: tags == freezed ? _value.tags : tags as Set<TagDto>,
       comments:
-          comments == freezed ? _value.comments : comments as Set<CommentDto>,
+      comments == freezed ? _value.comments : comments as Set<CommentDto>,
       likedBy: likedBy == freezed ? _value.likedBy : likedBy as Set<UserDto>,
       doneBy: doneBy == freezed ? _value.doneBy : doneBy as Set<UserDto>,
     ));
@@ -329,7 +328,7 @@ class __$ExperienceDtoCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_ExperienceDto extends _ExperienceDto {
-  const _$_ExperienceDto({@JsonKey(ignore: true) this.id,
+  const _$_ExperienceDto({@required this.id,
     @required this.title,
     @required this.description,
     @required this.imageURLs,
@@ -346,7 +345,8 @@ class _$_ExperienceDto extends _ExperienceDto {
     @required this.comments,
     @required this.likedBy,
     @required this.doneBy})
-    : assert(title != null),
+    : assert(id != null),
+      assert(title != null),
       assert(description != null),
       assert(imageURLs != null),
       assert(coordinates != null),
@@ -362,13 +362,12 @@ class _$_ExperienceDto extends _ExperienceDto {
       assert(comments != null),
       assert(likedBy != null),
       assert(doneBy != null),
-        super._();
-
+      super._();
+  
   factory _$_ExperienceDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_ExperienceDtoFromJson(json);
-
+    _$_$_ExperienceDtoFromJson(json);
+  
   @override
-  @JsonKey(ignore: true)
   final String id;
   @override
   final String title;
@@ -412,13 +411,13 @@ class _$_ExperienceDto extends _ExperienceDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ExperienceDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                  .equals(other.description, description)) &&
+          (identical(other.id, id) ||
+            const DeepCollectionEquality().equals(other.id, id)) &&
+          (identical(other.title, title) ||
+            const DeepCollectionEquality().equals(other.title, title)) &&
+          (identical(other.description, description) ||
+            const DeepCollectionEquality()
+              .equals(other.description, description)) &&
           (identical(other.imageURLs, imageURLs) ||
             const DeepCollectionEquality()
               .equals(other.imageURLs, imageURLs)) &&
@@ -434,9 +433,9 @@ class _$_ExperienceDto extends _ExperienceDto {
           (identical(other.creator, creator) ||
             const DeepCollectionEquality()
               .equals(other.creator, creator)) &&
-            (identical(other.difficulty, difficulty) ||
-                const DeepCollectionEquality()
-                    .equals(other.difficulty, difficulty)) &&
+          (identical(other.difficulty, difficulty) ||
+            const DeepCollectionEquality()
+              .equals(other.difficulty, difficulty)) &&
             (identical(other.creationDate, creationDate) ||
                 const DeepCollectionEquality()
                     .equals(other.creationDate, creationDate)) &&
@@ -472,15 +471,15 @@ class _$_ExperienceDto extends _ExperienceDto {
     const DeepCollectionEquality().hash(location) ^
     const DeepCollectionEquality().hash(creatorId) ^
     const DeepCollectionEquality().hash(creator) ^
-      const DeepCollectionEquality().hash(difficulty) ^
-      const DeepCollectionEquality().hash(creationDate) ^
-      const DeepCollectionEquality().hash(modificationDate) ^
-      const DeepCollectionEquality().hash(objectives) ^
-      const DeepCollectionEquality().hash(rewards) ^
-      const DeepCollectionEquality().hash(tags) ^
-      const DeepCollectionEquality().hash(comments) ^
-      const DeepCollectionEquality().hash(likedBy) ^
-      const DeepCollectionEquality().hash(doneBy);
+    const DeepCollectionEquality().hash(difficulty) ^
+    const DeepCollectionEquality().hash(creationDate) ^
+    const DeepCollectionEquality().hash(modificationDate) ^
+    const DeepCollectionEquality().hash(objectives) ^
+    const DeepCollectionEquality().hash(rewards) ^
+    const DeepCollectionEquality().hash(tags) ^
+    const DeepCollectionEquality().hash(comments) ^
+    const DeepCollectionEquality().hash(likedBy) ^
+    const DeepCollectionEquality().hash(doneBy);
 
   @override
   _$ExperienceDtoCopyWith<_ExperienceDto> get copyWith =>
@@ -495,7 +494,7 @@ class _$_ExperienceDto extends _ExperienceDto {
 abstract class _ExperienceDto extends ExperienceDto {
   const _ExperienceDto._() : super._();
   
-  const factory _ExperienceDto({@JsonKey(ignore: true) String id,
+  const factory _ExperienceDto({@required String id,
     @required String title,
     @required String description,
     @required Set<String> imageURLs,
@@ -517,7 +516,6 @@ abstract class _ExperienceDto extends ExperienceDto {
   _$_ExperienceDto.fromJson;
   
   @override
-  @JsonKey(ignore: true)
   String get id;
   
   @override
@@ -531,25 +529,18 @@ abstract class _ExperienceDto extends ExperienceDto {
   
   @override
   CoordinatesDto get coordinates;
-  
   @override
   LocationDto get location;
-  
   @override
   String get creatorId;
-  
   @override
   UserDto get creator;
-  
   @override
   int get difficulty;
-  
   @override
   String get creationDate;
-  
   @override
   String get modificationDate;
-  
   @override
   Set<ObjectiveDto> get objectives;
   @override

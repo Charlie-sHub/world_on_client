@@ -27,7 +27,7 @@ abstract class ExperienceDto implements _$ExperienceDto {
   const ExperienceDto._();
 
   const factory ExperienceDto({
-    @JsonKey(ignore: true) String id,
+    @required String id,
     @required String title,
     @required String description,
     @required Set<String> imageURLs,

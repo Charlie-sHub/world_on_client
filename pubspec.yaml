@@ -83,14 +83,16 @@ dependencies:
   carousel_slider: ^2.3.1
   # Unique IDs for entities
   uuid: ^2.2.2
+  # For Signing in and registering with Google
+  google_sign_in: ^4.5.6
   # For use with Firebase as backend
   firebase_core: ^0.5.2
   # For authentication with Firebase
   firebase_auth: ^0.18.3
-  # For Signing in and registering with Google
-  google_sign_in: ^4.5.6
-  # For storage
+  # For simple data storage
   cloud_firestore: ^0.14.3
+  # For complex data storage (images)
+  firebase_storage: ^5.0.1
 
 dev_dependencies:
   flutter_test:

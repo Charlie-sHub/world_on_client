@@ -167,9 +167,9 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     if (_userDto.followedUsersIds.isNotEmpty) {
       yield* _firestore.userCollection
           .where(
-        "id",
-        whereIn: _userDto.followedUsersIds.toList(),
-      )
+            "id",
+            whereIn: _userDto.followedUsersIds.toList(),
+          )
           .snapshots()
           .map(
             (snapshot) => snapshot.docs.map(

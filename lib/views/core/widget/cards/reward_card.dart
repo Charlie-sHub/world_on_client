@@ -1,8 +1,5 @@
-import 'dart:io';
-
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:worldon/core/assets.dart';
 import 'package:worldon/domain/core/entities/reward/reward.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
@@ -42,15 +39,7 @@ class RewardCard extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: reward.imageURL == Assets.rewardPlaceholder
-                ? const Image(
-                    image: AssetImage(Assets.rewardPlaceholder),
-                    fit: BoxFit.fill,
-                  )
-                : Image(
-                    image: FileImage(File(reward.imageURL)),
-                    fit: BoxFit.fill,
-                  ),
+            child: Image.network(reward.imageURL),
           ),
         ],
       ),

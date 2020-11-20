@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
@@ -26,21 +24,13 @@ class ForeignProfileHeader extends StatelessWidget {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(5),
-                child: user.imageURL.contains("assets/")
-                    ? Hero(
-                        tag: "userImageAsset",
-                        child: CircleAvatar(
-                          radius: 40,
-                          backgroundImage: AssetImage(user.imageURL),
-                        ),
-                      )
-                    : Hero(
-                        tag: "userImageFile",
-                        child: CircleAvatar(
-                          radius: 40,
-                          backgroundImage: FileImage(File(user.imageURL)),
-                        ),
-                      ),
+                child: Hero(
+                  tag: "userImage",
+                  child: CircleAvatar(
+                    radius: 40,
+                    backgroundImage: NetworkImage(user.imageURL),
+                  ),
+                ),
               ),
               Expanded(
                 child: Padding(

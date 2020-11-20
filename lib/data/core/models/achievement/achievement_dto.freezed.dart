@@ -17,18 +17,17 @@ class _$AchievementDtoTearOff {
   const _$AchievementDtoTearOff();
 
 // ignore: unused_element
-  _AchievementDto call(
-      {@JsonKey(ignore: true) String id,
-      @required String name,
-      @required String description,
-      @required String imageURL,
-      @required String type,
-      @required int requisite,
-      @required int experiencePoints,
-      @required String creatorId,
-      @required String creationDate,
-      @required String modificationDate,
-      @required Set<String> tagsIds}) {
+  _AchievementDto call({@required String id,
+    @required String name,
+    @required String description,
+    @required String imageURL,
+    @required String type,
+    @required int requisite,
+    @required int experiencePoints,
+    @required String creatorId,
+    @required String creationDate,
+    @required String modificationDate,
+    @required Set<String> tagNames}) {
     return _AchievementDto(
       id: id,
       name: name,
@@ -40,7 +39,7 @@ class _$AchievementDtoTearOff {
       creatorId: creatorId,
       creationDate: creationDate,
       modificationDate: modificationDate,
-      tagsIds: tagsIds,
+      tagNames: tagNames,
     );
   }
 
@@ -56,7 +55,6 @@ const $AchievementDto = _$AchievementDtoTearOff();
 
 /// @nodoc
 mixin _$AchievementDto {
-  @JsonKey(ignore: true)
   String get id;
   String get name;
   String get description;
@@ -66,8 +64,10 @@ mixin _$AchievementDto {
   int get experiencePoints;
   String get creatorId;
   String get creationDate;
+
   String get modificationDate;
-  Set<String> get tagsIds;
+
+  Set<String> get tagNames;
 
   Map<String, dynamic> toJson();
   $AchievementDtoCopyWith<AchievementDto> get copyWith;
@@ -78,7 +78,7 @@ abstract class $AchievementDtoCopyWith<$Res> {
   factory $AchievementDtoCopyWith(AchievementDto value, $Res Function(AchievementDto) then) = _$AchievementDtoCopyWithImpl<$Res>;
 
   $Res call(
-      {@JsonKey(ignore: true) String id,
+      {String id,
       String name,
       String description,
       String imageURL,
@@ -88,7 +88,7 @@ abstract class $AchievementDtoCopyWith<$Res> {
       String creatorId,
       String creationDate,
       String modificationDate,
-      Set<String> tagsIds});
+      Set<String> tagNames});
 }
 
 /// @nodoc
@@ -112,7 +112,7 @@ class _$AchievementDtoCopyWithImpl<$Res>
     Object creatorId = freezed,
     Object creationDate = freezed,
     Object modificationDate = freezed,
-    Object tagsIds = freezed,
+    Object tagNames = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
@@ -123,16 +123,16 @@ class _$AchievementDtoCopyWithImpl<$Res>
       type: type == freezed ? _value.type : type as String,
       requisite: requisite == freezed ? _value.requisite : requisite as int,
       experiencePoints: experiencePoints == freezed
-          ? _value.experiencePoints
-          : experiencePoints as int,
+        ? _value.experiencePoints
+        : experiencePoints as int,
       creatorId: creatorId == freezed ? _value.creatorId : creatorId as String,
       creationDate: creationDate == freezed
-          ? _value.creationDate
-          : creationDate as String,
+        ? _value.creationDate
+        : creationDate as String,
       modificationDate: modificationDate == freezed
-          ? _value.modificationDate
-          : modificationDate as String,
-      tagsIds: tagsIds == freezed ? _value.tagsIds : tagsIds as Set<String>,
+        ? _value.modificationDate
+        : modificationDate as String,
+      tagNames: tagNames == freezed ? _value.tagNames : tagNames as Set<String>,
     ));
   }
 }
@@ -145,7 +145,7 @@ abstract class _$AchievementDtoCopyWith<$Res>
       __$AchievementDtoCopyWithImpl<$Res>;
 
   @override
-  $Res call({@JsonKey(ignore: true) String id,
+  $Res call({String id,
     String name,
     String description,
     String imageURL,
@@ -155,7 +155,7 @@ abstract class _$AchievementDtoCopyWith<$Res>
     String creatorId,
     String creationDate,
     String modificationDate,
-    Set<String> tagsIds});
+    Set<String> tagNames});
 }
 
 /// @nodoc
@@ -181,7 +181,7 @@ class __$AchievementDtoCopyWithImpl<$Res>
     Object creatorId = freezed,
     Object creationDate = freezed,
     Object modificationDate = freezed,
-    Object tagsIds = freezed,
+    Object tagNames = freezed,
   }) {
     return _then(_AchievementDto(
       id: id == freezed ? _value.id : id as String,
@@ -192,16 +192,16 @@ class __$AchievementDtoCopyWithImpl<$Res>
       type: type == freezed ? _value.type : type as String,
       requisite: requisite == freezed ? _value.requisite : requisite as int,
       experiencePoints: experiencePoints == freezed
-          ? _value.experiencePoints
-          : experiencePoints as int,
+        ? _value.experiencePoints
+        : experiencePoints as int,
       creatorId: creatorId == freezed ? _value.creatorId : creatorId as String,
       creationDate: creationDate == freezed
-          ? _value.creationDate
-          : creationDate as String,
+        ? _value.creationDate
+        : creationDate as String,
       modificationDate: modificationDate == freezed
-          ? _value.modificationDate
-          : modificationDate as String,
-      tagsIds: tagsIds == freezed ? _value.tagsIds : tagsIds as Set<String>,
+        ? _value.modificationDate
+        : modificationDate as String,
+      tagNames: tagNames == freezed ? _value.tagNames : tagNames as Set<String>,
     ));
   }
 }
@@ -210,7 +210,7 @@ class __$AchievementDtoCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_AchievementDto extends _AchievementDto {
-  const _$_AchievementDto({@JsonKey(ignore: true) this.id,
+  const _$_AchievementDto({@required this.id,
     @required this.name,
     @required this.description,
     @required this.imageURL,
@@ -220,8 +220,9 @@ class _$_AchievementDto extends _AchievementDto {
     @required this.creatorId,
     @required this.creationDate,
     @required this.modificationDate,
-    @required this.tagsIds})
-    : assert(name != null),
+    @required this.tagNames})
+    : assert(id != null),
+      assert(name != null),
       assert(description != null),
       assert(imageURL != null),
       assert(type != null),
@@ -230,14 +231,13 @@ class _$_AchievementDto extends _AchievementDto {
       assert(creatorId != null),
       assert(creationDate != null),
       assert(modificationDate != null),
-      assert(tagsIds != null),
+      assert(tagNames != null),
       super._();
   
   factory _$_AchievementDto.fromJson(Map<String, dynamic> json) =>
     _$_$_AchievementDtoFromJson(json);
   
   @override
-  @JsonKey(ignore: true)
   final String id;
   @override
   final String name;
@@ -258,17 +258,17 @@ class _$_AchievementDto extends _AchievementDto {
   @override
   final String modificationDate;
   @override
-  final Set<String> tagsIds;
-
+  final Set<String> tagNames;
+  
   @override
   String toString() {
-    return 'AchievementDto(id: $id, name: $name, description: $description, imageURL: $imageURL, type: $type, requisite: $requisite, experiencePoints: $experiencePoints, creatorId: $creatorId, creationDate: $creationDate, modificationDate: $modificationDate, tagsIds: $tagsIds)';
+    return 'AchievementDto(id: $id, name: $name, description: $description, imageURL: $imageURL, type: $type, requisite: $requisite, experiencePoints: $experiencePoints, creatorId: $creatorId, creationDate: $creationDate, modificationDate: $modificationDate, tagNames: $tagNames)';
   }
-
+  
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AchievementDto &&
+      (other is _AchievementDto &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.name, name) ||
@@ -286,18 +286,19 @@ class _$_AchievementDto extends _AchievementDto {
                     .equals(other.requisite, requisite)) &&
             (identical(other.experiencePoints, experiencePoints) ||
                 const DeepCollectionEquality()
-                    .equals(other.experiencePoints, experiencePoints)) &&
-            (identical(other.creatorId, creatorId) ||
-                const DeepCollectionEquality()
-                    .equals(other.creatorId, creatorId)) &&
-            (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.creationDate, creationDate)) &&
-            (identical(other.modificationDate, modificationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.modificationDate, modificationDate)) &&
-            (identical(other.tagsIds, tagsIds) ||
-                const DeepCollectionEquality().equals(other.tagsIds, tagsIds)));
+                  .equals(other.experiencePoints, experiencePoints)) &&
+        (identical(other.creatorId, creatorId) ||
+          const DeepCollectionEquality()
+            .equals(other.creatorId, creatorId)) &&
+        (identical(other.creationDate, creationDate) ||
+          const DeepCollectionEquality()
+            .equals(other.creationDate, creationDate)) &&
+        (identical(other.modificationDate, modificationDate) ||
+          const DeepCollectionEquality()
+            .equals(other.modificationDate, modificationDate)) &&
+        (identical(other.tagNames, tagNames) ||
+          const DeepCollectionEquality()
+            .equals(other.tagNames, tagNames)));
   }
 
   @override
@@ -313,7 +314,7 @@ class _$_AchievementDto extends _AchievementDto {
       const DeepCollectionEquality().hash(creatorId) ^
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(modificationDate) ^
-      const DeepCollectionEquality().hash(tagsIds);
+      const DeepCollectionEquality().hash(tagNames);
 
   @override
   _$AchievementDtoCopyWith<_AchievementDto> get copyWith =>
@@ -328,7 +329,7 @@ class _$_AchievementDto extends _AchievementDto {
 abstract class _AchievementDto extends AchievementDto {
   const _AchievementDto._() : super._();
   
-  const factory _AchievementDto({@JsonKey(ignore: true) String id,
+  const factory _AchievementDto({@required String id,
     @required String name,
     @required String description,
     @required String imageURL,
@@ -338,13 +339,12 @@ abstract class _AchievementDto extends AchievementDto {
     @required String creatorId,
     @required String creationDate,
     @required String modificationDate,
-    @required Set<String> tagsIds}) = _$_AchievementDto;
+    @required Set<String> tagNames}) = _$_AchievementDto;
   
   factory _AchievementDto.fromJson(Map<String, dynamic> json) =
   _$_AchievementDto.fromJson;
   
   @override
-  @JsonKey(ignore: true)
   String get id;
   
   @override
@@ -355,6 +355,7 @@ abstract class _AchievementDto extends AchievementDto {
   
   @override
   String get imageURL;
+  
   @override
   String get type;
   @override
@@ -365,10 +366,13 @@ abstract class _AchievementDto extends AchievementDto {
   String get creatorId;
   @override
   String get creationDate;
+  
   @override
   String get modificationDate;
+  
   @override
-  Set<String> get tagsIds;
+  Set<String> get tagNames;
+  
   @override
   _$AchievementDtoCopyWith<_AchievementDto> get copyWith;
 }

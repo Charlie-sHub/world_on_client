@@ -7,6 +7,7 @@ import 'package:logger/logger.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/authentication/failures/authentication_data_failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/data/core/misc/cloud_storage_service.dart';
 import 'package:worldon/data/core/misc/firebase_helpers.dart';
 import 'package:worldon/data/core/misc/firebase_user_mapper.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
@@ -15,6 +16,7 @@ import 'package:worldon/domain/authentication/repository/authentication_reposito
 import 'package:worldon/domain/core/entities/user/user.dart' as entity;
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
+import 'package:worldon/injection.dart';
 
 @LazySingleton(as: AuthenticationRepositoryInterface, env: [Environment.prod])
 class ProductionAuthenticationRepository implements AuthenticationRepositoryInterface {
@@ -37,34 +39,35 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
         password: user.password.getOrCrash(),
       );
       final _firebaseUser = _firebaseAuth.currentUser;
+      final _imageUrl = await getIt<CloudStorageService>().uploadFileImage(
+        imageToUpload: user.imageFileOption.getOrElse(() => null),
+        folder: "users",
+        name: _firebaseUser.uid,
+      );
       final _jsonUser = UserDto.fromDomain(
         user.copyWith(
           id: UniqueId.fromUniqueString(
             _firebaseUser.uid,
           ),
+          imageURL: _imageUrl,
         ),
       ).toJson();
       await _firestore.userCollection.doc(_firebaseUser.uid).set(_jsonUser);
-      // TODO: implement image storage
-      // Save the User imageFile by assigning it an unique name with uuid and maybe the username
-      // Save the downloadURL to the imageURL field of the user then save the user
-      // https://www.filledstacks.com/post/firebase-cloud-storage-in-flutter/
-      // https://stackoverflow.com/questions/60514159/how-to-upload-image-to-firebase-storage-save-image-url-to-firebase-database-to
       return right(unit);
-    } on FirebaseAuthException catch (_firebaseException) {
-      if (_firebaseException.code == "ERROR_EMAIL_ALREADY_IN_USE") {
+    } on FirebaseAuthException catch (exception) {
+      if (exception.code == "ERROR_EMAIL_ALREADY_IN_USE") {
         return left(
           Failure.coreData(
             CoreDataFailure.emailAlreadyInUse(
-              email: EmailAddress(_firebaseException.email),
+              email: EmailAddress(exception.email),
             ),
           ),
         );
       } else {
-        _logger.e(_firebaseException.message);
+        _logger.e(exception.message);
         return left(
           Failure.coreData(
-            CoreDataFailure.serverError(errorString: _firebaseException.message),
+            CoreDataFailure.serverError(errorString: exception.message),
           ),
         );
       }
@@ -79,18 +82,18 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
         password: user.password.getOrCrash(),
       );
       return right(unit);
-    } on FirebaseAuthException catch (_firebaseException) {
-      if (_firebaseException.code == "ERROR_WRONG_PASSWORD" || _firebaseException.code == "ERROR_USER_NOT_FOUND") {
+    } on FirebaseAuthException catch (exception) {
+      if (exception.code == "ERROR_WRONG_PASSWORD" || exception.code == "ERROR_USER_NOT_FOUND") {
         return left(
           const Failure.authenticationData(
             AuthenticationDataFailure.invalidCredentials(),
           ),
         );
       } else {
-        _logger.e(_firebaseException.message);
+        _logger.e(exception.message);
         return left(
           Failure.coreData(
-            CoreDataFailure.serverError(errorString: _firebaseException.message),
+            CoreDataFailure.serverError(errorString: exception.message),
           ),
         );
       }

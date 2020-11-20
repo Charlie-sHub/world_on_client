@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,16 +18,10 @@ class UserImage extends StatelessWidget {
       onPressed: () => context.bloc<NavigationActorBloc>().add(
             NavigationActorEvent.profileTapped(some(user)),
           ),
-      // TODO: Change to NetworkImage
-      child: user.imageURL.contains("assets/")
-          ? CircleAvatar(
-              radius: 22,
-              backgroundImage: AssetImage(user.imageURL),
-            )
-          : CircleAvatar(
-              radius: 22,
-              backgroundImage: FileImage(File(user.imageURL)),
-            ),
+      child: CircleAvatar(
+        radius: 22,
+        backgroundImage: NetworkImage(user.imageURL),
+      ),
     );
   }
 }

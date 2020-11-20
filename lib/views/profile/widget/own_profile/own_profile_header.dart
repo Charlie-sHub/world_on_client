@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
@@ -27,21 +25,13 @@ class OwnProfileHeader extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(5),
                 // TODO: Change to use network images
-                child: user.imageURL.contains("assets/")
-                    ? Hero(
-                        tag: "userImageAsset",
-                        child: CircleAvatar(
-                          radius: 40,
-                          backgroundImage: AssetImage(user.imageURL),
-                        ),
-                      )
-                    : Hero(
-                        tag: "userImageFile",
-                        child: CircleAvatar(
-                          radius: 40,
-                          backgroundImage: FileImage(File(user.imageURL)),
-                        ),
-                      ),
+                child: Hero(
+                  tag: "userImage",
+                  child: CircleAvatar(
+                    radius: 40,
+                    backgroundImage: NetworkImage(user.imageURL),
+                  ),
+                ),
               ),
               Expanded(
                 child: Padding(
