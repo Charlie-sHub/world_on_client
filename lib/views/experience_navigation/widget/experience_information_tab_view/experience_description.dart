@@ -4,12 +4,12 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ExperienceDescription extends StatelessWidget {
+  final Experience experience;
+
   const ExperienceDescription({
     Key key,
     @required this.experience,
   }) : super(key: key);
-
-  final Experience experience;
 
   @override
   Widget build(BuildContext context) {

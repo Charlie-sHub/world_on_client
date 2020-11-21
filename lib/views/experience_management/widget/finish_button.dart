@@ -10,21 +10,41 @@ class FinishButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
-      onPressed: () => context.bloc<ExperienceManagementFormBloc>().add(
-            const ExperienceManagementFormEvent.submitted(),
-          ),
-      color: WorldOnColors.primary,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(0),
-        side: const BorderSide(color: WorldOnColors.primary),
-      ),
-      child: const Text(
-        "Finish",
-        style: TextStyle(
-          color: WorldOnColors.background,
-          fontSize: 20,
-        ),
+    return Padding(
+      padding: const EdgeInsets.all(10),
+      child: BlocBuilder<ExperienceManagementFormBloc, ExperienceManagementFormState>(
+        buildWhen: (previous, current) => previous.isSubmitting != current.isSubmitting,
+        builder: (context, state) {
+          if (state.isSubmitting) {
+            return const Center(
+              child: SizedBox(
+                width: 40,
+                height: 40,
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(WorldOnColors.primary),
+                ),
+              ),
+            );
+          } else {
+            return RaisedButton(
+              onPressed: () => context.bloc<ExperienceManagementFormBloc>().add(
+                    const ExperienceManagementFormEvent.submitted(),
+                  ),
+              color: WorldOnColors.primary,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(0),
+                side: const BorderSide(color: WorldOnColors.primary),
+              ),
+              child: const Text(
+                "Finish",
+                style: TextStyle(
+                  color: WorldOnColors.background,
+                  fontSize: 20,
+                ),
+              ),
+            );
+          }
+        },
       ),
     );
   }

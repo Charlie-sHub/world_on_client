@@ -69,7 +69,7 @@ import 'data/authentication/repository/development_authentication_repository.dar
 import 'data/authentication/repository/production_authentication_repository.dart';
 import 'data/comments/repository/development_comment_repository.dart';
 import 'data/comments/repository/production_comment_repository.dart';
-import 'data/core/misc/cloud_storage_service.dart';
+import 'data/core/misc/cloud_storage/cloud_storage_service.dart';
 import 'data/core/modules/firebase_injectable_module.dart';
 import 'data/core/moor/moor_database.dart';
 import 'data/core/repository/development_core_repository.dart';

@@ -6,6 +6,8 @@ import 'package:logger/logger.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/data/core/misc/cloud_storage/cloud_storage_service.dart';
+import 'package:worldon/data/core/misc/cloud_storage/storage_folder_enum.dart';
 import 'package:worldon/data/core/misc/firebase_helpers.dart';
 import 'package:worldon/data/core/models/achievement/achievement_dto.dart';
 import 'package:worldon/data/core/models/experience/experience_dto.dart';
@@ -17,6 +19,8 @@ import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
+
+import '../../../injection.dart';
 
 @LazySingleton(as: ProfileRepositoryInterface, env: [Environment.prod])
 class ProductionProfileRepository implements ProfileRepositoryInterface {
@@ -89,8 +93,29 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> editUser(User user) async {
     try {
-      final _userDto = UserDto.fromDomain(user);
-      await _firestore.userCollection.doc(user.id.getOrCrash()).update(_userDto.toJson());
+      user.imageFileOption.fold(
+          () async {
+          final _jsonUser = UserDto.fromDomain(user).toJson();
+          await _firestore.userCollection
+            .doc(
+            user.id.getOrCrash(),
+          )
+            .update(_jsonUser);
+        },
+          (_file) async {
+          final _imageUrl = await getIt<CloudStorageService>().uploadFileImage(
+            imageToUpload: _file,
+            folder: StorageFolder.users,
+            name: user.id.getOrCrash(),
+          );
+          final _jsonUser = UserDto.fromDomain(
+            user.copyWith(
+              imageURL: _imageUrl,
+            ),
+          ).toJson();
+          await _firestore.userCollection.doc(user.id.getOrCrash()).update(_jsonUser);
+        },
+      );
       return right(unit);
     } on FirebaseException catch (e) {
       return onFirebaseException(e);

@@ -46,7 +46,7 @@ class ExperienceManagementForm extends StatelessWidget {
               const ObjectiveCreationCard(),
               if (context.bloc<ExperienceManagementFormBloc>().state.showErrorMessages && !context.bloc<ExperienceManagementFormBloc>().state.experience.objectives.isValid())
                 const Text(
-                  "Please create at least one objective",
+                  "You have to create at least one objective",
                   textAlign: TextAlign.center,
                   style: TextStyle(color: Colors.red),
                 )

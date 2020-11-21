@@ -113,10 +113,9 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
         }
       },
     ).onErrorReturnWith(
-        (error) =>
-        left(
-          onError(error),
-        ),
+      (error) => left(
+        onError(error),
+      ),
     );
   }
 

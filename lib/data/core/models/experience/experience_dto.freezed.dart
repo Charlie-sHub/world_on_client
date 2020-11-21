@@ -91,8 +91,7 @@ mixin _$ExperienceDto {
 
   Set<RewardDto> get rewards;
 
-  Set<TagDto>
-  get tags; // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
+  Set<TagDto> get tags; // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
   Set<CommentDto> get comments;
 
   Set<UserDto> get likedBy;
@@ -436,9 +435,9 @@ class _$_ExperienceDto extends _ExperienceDto {
           (identical(other.difficulty, difficulty) ||
             const DeepCollectionEquality()
               .equals(other.difficulty, difficulty)) &&
-            (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.creationDate, creationDate)) &&
+          (identical(other.creationDate, creationDate) ||
+            const DeepCollectionEquality()
+              .equals(other.creationDate, creationDate)) &&
             (identical(other.modificationDate, modificationDate) ||
                 const DeepCollectionEquality()
                     .equals(other.modificationDate, modificationDate)) &&

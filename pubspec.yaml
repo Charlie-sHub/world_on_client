@@ -47,7 +47,7 @@ dependencies:
   # For easier bloc testing
   bloc_test: ^7.1.0
   # For ease of serialization
-  json_annotation: ^3.1.0
+  json_annotation: ^3.1.1
   # For ease of routing
   auto_route: ^0.6.9
   # For ease of showing status bars
@@ -57,7 +57,7 @@ dependencies:
   # For showing the user's experience progression
   percent_indicator: ^2.1.8
   # Takes out some boilerplate
-  flutter_hooks: ^0.14.1
+  flutter_hooks: ^0.15.0
   # For FloatingActionButton menus
   unicorndial: ^1.1.5
   # To add shadow to icons with less boiler plate

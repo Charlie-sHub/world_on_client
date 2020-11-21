@@ -66,12 +66,7 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
           );
       return right(unit);
     } on FirebaseException catch (e) {
-      _logger.e("FirebaseException: ${e.message}");
-      return left(
-        Failure.coreData(
-          CoreDataFailure.serverError(errorString: "FirebaseException: ${e.message}"),
-        ),
-      );
+      return onFirebaseException(e);
     }
   }
 
@@ -79,25 +74,12 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
   Future<Either<Failure, Unit>> editComment(Comment comment) async {
     try {
       final _commentDto = CommentDto.fromDomain(comment);
-      await _firestore.experienceCollection
-          .doc(
-            _commentDto.experienceId,
-          )
-          .commentCollection
-          .doc(
-            comment.id.getOrCrash(),
-          )
-          .update(
+      await _firestore.experienceCollection.doc(_commentDto.experienceId).commentCollection.doc(comment.id.getOrCrash()).update(
             _commentDto.toJson(),
           );
       return right(unit);
     } on FirebaseException catch (e) {
-      _logger.e("FirebaseException: ${e.message}");
-      return left(
-        Failure.coreData(
-          CoreDataFailure.serverError(errorString: "FirebaseException: ${e.message}"),
-        ),
-      );
+      return onFirebaseException(e);
     }
   }
 
@@ -112,5 +94,14 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
   Stream<Either<Failure, KtSet<Comment>>> watchUserComments(UniqueId userId) {
     // TODO: implement getUserComments
     throw UnimplementedError();
+  }
+
+  Either<Failure, Unit> onFirebaseException(FirebaseException e) {
+    _logger.e("FirebaseException: ${e.message}");
+    return left(
+      Failure.coreData(
+        CoreDataFailure.serverError(errorString: "FirebaseException: ${e.message}"),
+      ),
+    );
   }
 }

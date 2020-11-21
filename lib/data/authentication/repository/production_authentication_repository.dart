@@ -7,7 +7,8 @@ import 'package:logger/logger.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/authentication/failures/authentication_data_failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
-import 'package:worldon/data/core/misc/cloud_storage_service.dart';
+import 'package:worldon/data/core/misc/cloud_storage/cloud_storage_service.dart';
+import 'package:worldon/data/core/misc/cloud_storage/storage_folder_enum.dart';
 import 'package:worldon/data/core/misc/firebase_helpers.dart';
 import 'package:worldon/data/core/misc/firebase_user_mapper.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
@@ -41,7 +42,7 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
       final _firebaseUser = _firebaseAuth.currentUser;
       final _imageUrl = await getIt<CloudStorageService>().uploadFileImage(
         imageToUpload: user.imageFileOption.getOrElse(() => null),
-        folder: "users",
+        folder: StorageFolder.users,
         name: _firebaseUser.uid,
       );
       final _jsonUser = UserDto.fromDomain(

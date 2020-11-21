@@ -29,24 +29,35 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
       yield* _firestore.experienceCollection
           .where(
             "creatorId",
-            arrayContainsAny: _userDto.followedUsersIds.toList(),
+            whereIn: _userDto.followedUsersIds.toList(),
           )
           .snapshots()
-          .map(
-            (snapshot) => snapshot.docs.map(
+        .map(
+          (snapshot) =>
+          snapshot.docs.map(
               (document) => ExperienceDto.fromFirestore(document).toDomain(),
-            ),
-          )
-          .map(
-            (experiences) => right<Failure, KtList<Experience>>(
+          ),
+      )
+        .map(
+          (experiences) {
+          if (experiences.isNotEmpty) {
+            return right<Failure, KtList<Experience>>(
               experiences.toImmutableList(),
-            ),
-          )
-          .onErrorReturnWith(
-            (error) => left(
-              onError(error),
-            ),
-          );
+            );
+          } else {
+            return left<Failure, KtList<Experience>>(
+              const Failure.coreData(
+                CoreDataFailure.notFoundError(),
+              ),
+            );
+          }
+        },
+      ).onErrorReturnWith(
+          (error) =>
+          left(
+            onError(error),
+          ),
+      );
     } else {
       // Not sure about creating a stream out of nowhere, but it's the best solution for now
       yield* Stream.value(
@@ -66,7 +77,7 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
         CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
       );
     } else {
-      _logger.e("Unknown server error");
+      _logger.e("Unknown server error: ${error.runtimeType}");
       return const Failure.coreData(
         CoreDataFailure.serverError(errorString: "Unknown server error"),
       );

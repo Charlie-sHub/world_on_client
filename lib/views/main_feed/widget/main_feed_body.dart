@@ -49,9 +49,6 @@ class MainFeedBody extends StatelessWidget {
               },
             ),
           ),
-          // TODO: Find a way to refresh if there's nothing to show
-          // Currently the retry function is not being called on press
-          // typedef issue?
           loadFailure: (state) => ErrorDisplay(
             retryFunction: () => context.bloc<MainFeedWatcherBloc>().add(
                   const MainFeedWatcherEvent.watchMainFeedStarted(),
