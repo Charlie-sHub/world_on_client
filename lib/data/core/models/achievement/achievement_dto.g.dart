@@ -16,8 +16,8 @@ _$_AchievementDto _$_$_AchievementDtoFromJson(Map<String, dynamic> json) {
     requisite: json['requisite'] as int,
     experiencePoints: json['experiencePoints'] as int,
     creatorId: json['creatorId'] as String,
-    creationDate: json['creationDate'] as String,
-    modificationDate: json['modificationDate'] as String,
+    creationDate: const ServerTimestampConverter().fromJson(json['creationDate'] as Timestamp),
+    modificationDate: const ServerTimestampConverter().fromJson(json['modificationDate'] as Timestamp),
     tagNames: (json['tagNames'] as List)?.map((e) => e as String)?.toSet(),
   );
 }
@@ -31,7 +31,7 @@ Map<String, dynamic> _$_$_AchievementDtoToJson(_$_AchievementDto instance) => <S
       'requisite': instance.requisite,
       'experiencePoints': instance.experiencePoints,
       'creatorId': instance.creatorId,
-      'creationDate': instance.creationDate,
-      'modificationDate': instance.modificationDate,
+      'creationDate': const ServerTimestampConverter().toJson(instance.creationDate),
+      'modificationDate': const ServerTimestampConverter().toJson(instance.modificationDate),
       'tagNames': instance.tagNames?.toList(),
     };

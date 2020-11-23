@@ -20,8 +20,8 @@ class _$TagDtoTearOff {
   _TagDto call({@required String id,
     @required String name,
     @required String creatorId,
-    @required String creationDate,
-    @required String modificationDate}) {
+    @required @ServerTimestampConverter() DateTime creationDate,
+    @required @ServerTimestampConverter() DateTime modificationDate}) {
     return _TagDto(
       id: id,
       name: name,
@@ -44,12 +44,19 @@ const $TagDto = _$TagDtoTearOff();
 /// @nodoc
 mixin _$TagDto {
   String get id;
+  
   String get name;
+  
   String get creatorId;
-  String get creationDate;
-  String get modificationDate;
-
+  
+  @ServerTimestampConverter()
+  DateTime get creationDate;
+  
+  @ServerTimestampConverter()
+  DateTime get modificationDate;
+  
   Map<String, dynamic> toJson();
+  
   $TagDtoCopyWith<TagDto> get copyWith;
 }
 
@@ -61,8 +68,8 @@ abstract class $TagDtoCopyWith<$Res> {
   $Res call({String id,
     String name,
     String creatorId,
-    String creationDate,
-    String modificationDate});
+    @ServerTimestampConverter() DateTime creationDate,
+    @ServerTimestampConverter() DateTime modificationDate});
 }
 
 /// @nodoc
@@ -87,10 +94,10 @@ class _$TagDtoCopyWithImpl<$Res> implements $TagDtoCopyWith<$Res> {
       creatorId: creatorId == freezed ? _value.creatorId : creatorId as String,
       creationDate: creationDate == freezed
         ? _value.creationDate
-        : creationDate as String,
+        : creationDate as DateTime,
       modificationDate: modificationDate == freezed
         ? _value.modificationDate
-        : modificationDate as String,
+        : modificationDate as DateTime,
     ));
   }
 }
@@ -104,8 +111,8 @@ abstract class _$TagDtoCopyWith<$Res> implements $TagDtoCopyWith<$Res> {
   $Res call({String id,
     String name,
     String creatorId,
-    String creationDate,
-    String modificationDate});
+    @ServerTimestampConverter() DateTime creationDate,
+    @ServerTimestampConverter() DateTime modificationDate});
 }
 
 /// @nodoc
@@ -131,10 +138,10 @@ class __$TagDtoCopyWithImpl<$Res> extends _$TagDtoCopyWithImpl<$Res>
       creatorId: creatorId == freezed ? _value.creatorId : creatorId as String,
       creationDate: creationDate == freezed
         ? _value.creationDate
-        : creationDate as String,
+        : creationDate as DateTime,
       modificationDate: modificationDate == freezed
         ? _value.modificationDate
-        : modificationDate as String,
+        : modificationDate as DateTime,
     ));
   }
 }
@@ -145,8 +152,8 @@ class __$TagDtoCopyWithImpl<$Res> extends _$TagDtoCopyWithImpl<$Res>
   const _$_TagDto({@required this.id,
     @required this.name,
     @required this.creatorId,
-    @required this.creationDate,
-    @required this.modificationDate})
+    @required @ServerTimestampConverter() this.creationDate,
+    @required @ServerTimestampConverter() this.modificationDate})
     : assert(id != null),
       assert(name != null),
       assert(creatorId != null),
@@ -164,15 +171,17 @@ class __$TagDtoCopyWithImpl<$Res> extends _$TagDtoCopyWithImpl<$Res>
   @override
   final String creatorId;
   @override
-  final String creationDate;
+  @ServerTimestampConverter()
+  final DateTime creationDate;
   @override
-  final String modificationDate;
-
+  @ServerTimestampConverter()
+  final DateTime modificationDate;
+  
   @override
   String toString() {
     return 'TagDto(id: $id, name: $name, creatorId: $creatorId, creationDate: $creationDate, modificationDate: $modificationDate)';
   }
-
+  
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -217,8 +226,9 @@ abstract class _TagDto extends TagDto {
   const factory _TagDto({@required String id,
     @required String name,
     @required String creatorId,
-    @required String creationDate,
-    @required String modificationDate}) = _$_TagDto;
+    @required @ServerTimestampConverter() DateTime creationDate,
+    @required @ServerTimestampConverter() DateTime modificationDate}) =
+  _$_TagDto;
   
   factory _TagDto.fromJson(Map<String, dynamic> json) = _$_TagDto.fromJson;
   
@@ -232,9 +242,13 @@ abstract class _TagDto extends TagDto {
   String get creatorId;
   
   @override
-  String get creationDate;
+  @ServerTimestampConverter()
+  DateTime get creationDate;
+  
   @override
-  String get modificationDate;
+  @ServerTimestampConverter()
+  DateTime get modificationDate;
+  
   @override
   _$TagDtoCopyWith<_TagDto> get copyWith;
 }

@@ -25,6 +25,10 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
     yield* _firestore.experienceCollection
         .doc(experienceId.getOrCrash())
         .commentCollection
+        .orderBy(
+          "creationDate",
+          descending: true,
+        )
         .snapshots()
         .map(
           (snapshot) => snapshot.docs.map(
@@ -32,21 +36,25 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
           ),
         )
         .map(
-          (comments) => right<Failure, KtList<Comment>>(
+      (comments) {
+        if (comments.isNotEmpty) {
+          return right<Failure, KtList<Comment>>(
             comments.toImmutableList(),
-          ),
-        )
-        .onErrorReturnWith(
-      (error) {
-        if (error is FirebaseException) {
-          _logger.e("FirebaseException: ${error.message}");
-          return left(
-            Failure.coreData(
-              CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
-            ),
           );
         } else {
-          _logger.e("Unknown server error");
+          return left<Failure, KtList<Comment>>(
+            const Failure.coreData(
+              CoreDataFailure.notFoundError(),
+            ),
+          );
+        }
+      },
+    ).onErrorReturnWith(
+      (error) {
+        if (error is FirebaseException) {
+          return onFirebaseException(error);
+        } else {
+          _logger.e("Unknown server error: ${error.runtimeType}");
           return left(
             const Failure.coreData(
               CoreDataFailure.serverError(errorString: "Unknown server error"),
@@ -96,7 +104,7 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
     throw UnimplementedError();
   }
 
-  Either<Failure, Unit> onFirebaseException(FirebaseException e) {
+  Either<Failure, T> onFirebaseException<T>(FirebaseException e) {
     _logger.e("FirebaseException: ${e.message}");
     return left(
       Failure.coreData(

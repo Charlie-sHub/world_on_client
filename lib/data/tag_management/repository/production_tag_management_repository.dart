@@ -21,9 +21,26 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
   @override
   Future<Either<Failure, Unit>> createTag(Tag tag) async {
     try {
-      final _tagDto = TagDto.fromDomain(tag);
-      await _firestore.tagCollection.doc(tag.id.getOrCrash()).set(_tagDto.toJson());
-      return right(unit);
+      // Is this the best way to check if the tag already exists?
+      final _aux = await _firestore.tagCollection
+          .where(
+            "name",
+            isEqualTo: tag.name.getOrCrash(),
+          )
+          .get();
+      if (_aux.docs.isEmpty) {
+        final _tagDto = TagDto.fromDomain(tag);
+        await _firestore.tagCollection.doc(tag.id.getOrCrash()).set(_tagDto.toJson());
+        return right(unit);
+      } else {
+        return left(
+          Failure.coreData(
+            CoreDataFailure.nameAlreadyInUse(
+              name: tag.name,
+            ),
+          ),
+        );
+      }
     } on FirebaseException catch (e) {
       return onFirebaseException(e);
     }

@@ -23,23 +23,24 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
   Stream<Either<Failure, KtList<Experience>>> watchFeed() async* {
     final _userDocument = await _firestore.userDocument();
     final _userDto = UserDto.fromFirestore(await _userDocument.get());
-    // TODO: Order by creation date
-    // Gotta solve the dates issue first
     if (_userDto.followedUsersIds.isNotEmpty) {
       yield* _firestore.experienceCollection
           .where(
             "creatorId",
             whereIn: _userDto.followedUsersIds.toList(),
           )
+          .orderBy(
+            "creationDate",
+            descending: true,
+          )
           .snapshots()
-        .map(
-          (snapshot) =>
-          snapshot.docs.map(
+          .map(
+            (snapshot) => snapshot.docs.map(
               (document) => ExperienceDto.fromFirestore(document).toDomain(),
-          ),
-      )
-        .map(
-          (experiences) {
+            ),
+          )
+          .map(
+        (experiences) {
           if (experiences.isNotEmpty) {
             return right<Failure, KtList<Experience>>(
               experiences.toImmutableList(),
@@ -53,10 +54,9 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-          (error) =>
-          left(
-            onError(error),
-          ),
+        (error) => left(
+          onError(error),
+        ),
       );
     } else {
       // Not sure about creating a stream out of nowhere, but it's the best solution for now

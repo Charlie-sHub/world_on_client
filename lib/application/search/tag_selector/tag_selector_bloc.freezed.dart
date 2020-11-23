@@ -37,26 +37,29 @@ mixin _$TagSelectorEvent {
   Tag get tag;
 
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result addedTag(Tag tag),
-    @required Result removedTag(Tag tag),
+  TResult when<TResult extends Object>({
+    @required TResult addedTag(Tag tag),
+    @required TResult removedTag(Tag tag),
   });
+
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result addedTag(Tag tag),
-    Result removedTag(Tag tag),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult addedTag(Tag tag),
+    TResult removedTag(Tag tag),
+    @required TResult orElse(),
   });
+
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result addedTag(_AddedTag value),
-    @required Result removedTag(_RemovedTag value),
+  TResult map<TResult extends Object>({
+    @required TResult addedTag(_AddedTag value),
+    @required TResult removedTag(_RemovedTag value),
   });
+
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result addedTag(_AddedTag value),
-    Result removedTag(_RemovedTag value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult addedTag(_AddedTag value),
+    TResult removedTag(_RemovedTag value),
+    @required TResult orElse(),
   });
 
   $TagSelectorEventCopyWith<TagSelectorEvent> get copyWith;
@@ -163,9 +166,9 @@ class _$_AddedTag implements _AddedTag {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result addedTag(Tag tag),
-    @required Result removedTag(Tag tag),
+  TResult when<TResult extends Object>({
+    @required TResult addedTag(Tag tag),
+    @required TResult removedTag(Tag tag),
   }) {
     assert(addedTag != null);
     assert(removedTag != null);
@@ -174,10 +177,10 @@ class _$_AddedTag implements _AddedTag {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result addedTag(Tag tag),
-    Result removedTag(Tag tag),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult addedTag(Tag tag),
+    TResult removedTag(Tag tag),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (addedTag != null) {
@@ -188,9 +191,9 @@ class _$_AddedTag implements _AddedTag {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result addedTag(_AddedTag value),
-    @required Result removedTag(_RemovedTag value),
+  TResult map<TResult extends Object>({
+    @required TResult addedTag(_AddedTag value),
+    @required TResult removedTag(_RemovedTag value),
   }) {
     assert(addedTag != null);
     assert(removedTag != null);
@@ -199,10 +202,10 @@ class _$_AddedTag implements _AddedTag {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result addedTag(_AddedTag value),
-    Result removedTag(_RemovedTag value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult addedTag(_AddedTag value),
+    TResult removedTag(_RemovedTag value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (addedTag != null) {
@@ -283,9 +286,9 @@ class _$_RemovedTag implements _RemovedTag {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result addedTag(Tag tag),
-    @required Result removedTag(Tag tag),
+  TResult when<TResult extends Object>({
+    @required TResult addedTag(Tag tag),
+    @required TResult removedTag(Tag tag),
   }) {
     assert(addedTag != null);
     assert(removedTag != null);
@@ -294,10 +297,10 @@ class _$_RemovedTag implements _RemovedTag {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result addedTag(Tag tag),
-    Result removedTag(Tag tag),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult addedTag(Tag tag),
+    TResult removedTag(Tag tag),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (removedTag != null) {
@@ -308,9 +311,9 @@ class _$_RemovedTag implements _RemovedTag {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result addedTag(_AddedTag value),
-    @required Result removedTag(_RemovedTag value),
+  TResult map<TResult extends Object>({
+    @required TResult addedTag(_AddedTag value),
+    @required TResult removedTag(_RemovedTag value),
   }) {
     assert(addedTag != null);
     assert(removedTag != null);
@@ -319,10 +322,10 @@ class _$_RemovedTag implements _RemovedTag {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result addedTag(_AddedTag value),
-    Result removedTag(_RemovedTag value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult addedTag(_AddedTag value),
+    TResult removedTag(_RemovedTag value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (removedTag != null) {

@@ -30,22 +30,25 @@ mixin _$TagManagementActorEvent {
   Tag get tag;
 
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result deleted(Tag tag),
+  TResult when<TResult extends Object>({
+    @required TResult deleted(Tag tag),
   });
+
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result deleted(Tag tag),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult deleted(Tag tag),
+    @required TResult orElse(),
   });
+
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result deleted(_Deleted value),
+  TResult map<TResult extends Object>({
+    @required TResult deleted(_Deleted value),
   });
+
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result deleted(_Deleted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult deleted(_Deleted value),
+    @required TResult orElse(),
   });
 
   $TagManagementActorEventCopyWith<TagManagementActorEvent> get copyWith;
@@ -152,8 +155,8 @@ class _$_Deleted implements _Deleted {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result deleted(Tag tag),
+  TResult when<TResult extends Object>({
+    @required TResult deleted(Tag tag),
   }) {
     assert(deleted != null);
     return deleted(tag);
@@ -161,9 +164,9 @@ class _$_Deleted implements _Deleted {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result deleted(Tag tag),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult deleted(Tag tag),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (deleted != null) {
@@ -174,8 +177,8 @@ class _$_Deleted implements _Deleted {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result deleted(_Deleted value),
+  TResult map<TResult extends Object>({
+    @required TResult deleted(_Deleted value),
   }) {
     assert(deleted != null);
     return deleted(this);
@@ -183,9 +186,9 @@ class _$_Deleted implements _Deleted {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result deleted(_Deleted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult deleted(_Deleted value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (deleted != null) {
@@ -238,34 +241,37 @@ const $TagManagementActorState = _$TagManagementActorStateTearOff();
 /// @nodoc
 mixin _$TagManagementActorState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result deletionFailure(Failure<dynamic> failure),
-    @required Result deletionSuccess(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult actionInProgress(),
+    @required TResult deletionFailure(Failure<dynamic> failure),
+    @required TResult deletionSuccess(),
   });
+
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result deletionFailure(Failure<dynamic> failure),
-    Result deletionSuccess(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult actionInProgress(),
+    TResult deletionFailure(Failure<dynamic> failure),
+    TResult deletionSuccess(),
+    @required TResult orElse(),
   });
+
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result deletionFailure(_DeletionFailure value),
-    @required Result deletionSuccess(_DeletionSuccess value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult deletionFailure(_DeletionFailure value),
+    @required TResult deletionSuccess(_DeletionSuccess value),
   });
+
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result deletionFailure(_DeletionFailure value),
-    Result deletionSuccess(_DeletionSuccess value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult deletionFailure(_DeletionFailure value),
+    TResult deletionSuccess(_DeletionSuccess value),
+    @required TResult orElse(),
   });
 }
 
@@ -322,11 +328,11 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result deletionFailure(Failure<dynamic> failure),
-    @required Result deletionSuccess(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult actionInProgress(),
+    @required TResult deletionFailure(Failure<dynamic> failure),
+    @required TResult deletionSuccess(),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -337,12 +343,12 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result deletionFailure(Failure<dynamic> failure),
-    Result deletionSuccess(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult actionInProgress(),
+    TResult deletionFailure(Failure<dynamic> failure),
+    TResult deletionSuccess(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -353,11 +359,11 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result deletionFailure(_DeletionFailure value),
-    @required Result deletionSuccess(_DeletionSuccess value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult deletionFailure(_DeletionFailure value),
+    @required TResult deletionSuccess(_DeletionSuccess value),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -368,12 +374,12 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result deletionFailure(_DeletionFailure value),
-    Result deletionSuccess(_DeletionSuccess value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult deletionFailure(_DeletionFailure value),
+    TResult deletionSuccess(_DeletionSuccess value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -425,11 +431,11 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result deletionFailure(Failure<dynamic> failure),
-    @required Result deletionSuccess(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult actionInProgress(),
+    @required TResult deletionFailure(Failure<dynamic> failure),
+    @required TResult deletionSuccess(),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -440,12 +446,12 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result deletionFailure(Failure<dynamic> failure),
-    Result deletionSuccess(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult actionInProgress(),
+    TResult deletionFailure(Failure<dynamic> failure),
+    TResult deletionSuccess(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (actionInProgress != null) {
@@ -456,11 +462,11 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result deletionFailure(_DeletionFailure value),
-    @required Result deletionSuccess(_DeletionSuccess value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult deletionFailure(_DeletionFailure value),
+    @required TResult deletionSuccess(_DeletionSuccess value),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -471,12 +477,12 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result deletionFailure(_DeletionFailure value),
-    Result deletionSuccess(_DeletionSuccess value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult deletionFailure(_DeletionFailure value),
+    TResult deletionSuccess(_DeletionSuccess value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (actionInProgress != null) {
@@ -561,11 +567,11 @@ class _$_DeletionFailure implements _DeletionFailure {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result deletionFailure(Failure<dynamic> failure),
-    @required Result deletionSuccess(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult actionInProgress(),
+    @required TResult deletionFailure(Failure<dynamic> failure),
+    @required TResult deletionSuccess(),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -576,12 +582,12 @@ class _$_DeletionFailure implements _DeletionFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result deletionFailure(Failure<dynamic> failure),
-    Result deletionSuccess(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult actionInProgress(),
+    TResult deletionFailure(Failure<dynamic> failure),
+    TResult deletionSuccess(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (deletionFailure != null) {
@@ -592,11 +598,11 @@ class _$_DeletionFailure implements _DeletionFailure {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result deletionFailure(_DeletionFailure value),
-    @required Result deletionSuccess(_DeletionSuccess value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult deletionFailure(_DeletionFailure value),
+    @required TResult deletionSuccess(_DeletionSuccess value),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -607,12 +613,12 @@ class _$_DeletionFailure implements _DeletionFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result deletionFailure(_DeletionFailure value),
-    Result deletionSuccess(_DeletionSuccess value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult deletionFailure(_DeletionFailure value),
+    TResult deletionSuccess(_DeletionSuccess value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (deletionFailure != null) {
@@ -667,11 +673,11 @@ class _$_DeletionSuccess implements _DeletionSuccess {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result deletionFailure(Failure<dynamic> failure),
-    @required Result deletionSuccess(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult actionInProgress(),
+    @required TResult deletionFailure(Failure<dynamic> failure),
+    @required TResult deletionSuccess(),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -682,12 +688,12 @@ class _$_DeletionSuccess implements _DeletionSuccess {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result deletionFailure(Failure<dynamic> failure),
-    Result deletionSuccess(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult actionInProgress(),
+    TResult deletionFailure(Failure<dynamic> failure),
+    TResult deletionSuccess(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (deletionSuccess != null) {
@@ -698,11 +704,11 @@ class _$_DeletionSuccess implements _DeletionSuccess {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result deletionFailure(_DeletionFailure value),
-    @required Result deletionSuccess(_DeletionSuccess value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult deletionFailure(_DeletionFailure value),
+    @required TResult deletionSuccess(_DeletionSuccess value),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -713,12 +719,12 @@ class _$_DeletionSuccess implements _DeletionSuccess {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result deletionFailure(_DeletionFailure value),
-    Result deletionSuccess(_DeletionSuccess value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult deletionFailure(_DeletionFailure value),
+    TResult deletionSuccess(_DeletionSuccess value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (deletionSuccess != null) {

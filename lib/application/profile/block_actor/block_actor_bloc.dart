@@ -7,15 +7,20 @@ import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
+import 'package:worldon/domain/core/entities/notification/notification.dart';
+import 'package:worldon/domain/core/entities/notification/notification_type_enum.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/failures/error.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/domain/core/validation/objects/entity_description.dart';
+import 'package:worldon/domain/notifications/use_case/send_notification.dart' as send_notification;
 import 'package:worldon/domain/profile/use_case/block_user.dart' as block_user;
 import 'package:worldon/domain/profile/use_case/un_block_user.dart' as un_block_user;
 import 'package:worldon/injection.dart';
 
 part 'block_actor_bloc.freezed.dart';
-part 'block_actor_event.dart';
+part 'block_actor_event.dart';ck_actor_event.dart';
+
 part 'block_actor_state.dart';
 
 // TODO: Move to core
@@ -42,6 +47,21 @@ class BlockActorBloc extends Bloc<BlockActorEvent, BlockActorState> {
         yield BlockActorState.unBlockFailure(failure);
       },
       (_) async* {
+        final _currentUserOption = await getIt<GetLoggedInUser>()(NoParams());
+        final _currentUser = _currentUserOption.fold(
+          () => throw UnAuthenticatedError,
+          id,
+        );
+        getIt<send_notification.SendNotification>()(
+          send_notification.Params(
+            notification: Notification.empty().copyWith(
+              sender: _currentUser,
+              receiver: event.user,
+              description: EntityDescription("${_currentUser.username.getOrCrash()} unblocked you"),
+              type: NotificationType.unblock,
+            ),
+          ),
+        );
         yield const BlockActorState.unBlockSuccess();
         yield const BlockActorState.blocksNot();
       },
@@ -58,6 +78,21 @@ class BlockActorBloc extends Bloc<BlockActorEvent, BlockActorState> {
         yield BlockActorState.blockFailure(failure);
       },
       (_) async* {
+        final _currentUserOption = await getIt<GetLoggedInUser>()(NoParams());
+        final _currentUser = _currentUserOption.fold(
+            () => throw UnAuthenticatedError,
+          id,
+        );
+        getIt<send_notification.SendNotification>()(
+          send_notification.Params(
+            notification: Notification.empty().copyWith(
+              sender: _currentUser,
+              receiver: event.user,
+              description: EntityDescription("${_currentUser.username.getOrCrash()} blocked you"),
+              type: NotificationType.block,
+            ),
+          ),
+        );
         yield const BlockActorState.blockSuccess();
         yield const BlockActorState.blocks();
       },

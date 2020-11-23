@@ -55,14 +55,15 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
   Stream<Either<Failure, KtList<Experience>>> watchUserLog() async* {
     final _userDocument = await _firestore.userDocument();
     final _userDto = UserDto.fromFirestore(await _userDocument.get());
-    // TODO: Order by addition date
-    // Gotta solve the dates issue first and add an addition date
-    // Maybe these should be a map of the experience id and the date it was added to the log
     if (_userDto.followedUsersIds.isNotEmpty) {
       yield* _firestore.experienceCollection
           .where(
             "id",
-            arrayContainsAny: _userDto.experiencesToDoIds.toList(),
+            whereIn: _userDto.experiencesToDoIds.toList(),
+          ) // TODO: Should order by addition date instead
+          .orderBy(
+            "creationDate",
+            descending: true,
           )
           .snapshots()
           .map(

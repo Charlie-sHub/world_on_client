@@ -40,30 +40,33 @@ const $TagManagementFormEvent = _$TagManagementFormEventTearOff();
 /// @nodoc
 mixin _$TagManagementFormEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Tag> tagOption),
-    @required Result nameChanged(String name),
-    @required Result submitted(),
+  TResult when<TResult extends Object>({
+    @required TResult initialized(Option<Tag> tagOption),
+    @required TResult nameChanged(String name),
+    @required TResult submitted(),
   });
+
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Tag> tagOption),
-    Result nameChanged(String name),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initialized(Option<Tag> tagOption),
+    TResult nameChanged(String name),
+    TResult submitted(),
+    @required TResult orElse(),
   });
+
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
+    @required TResult nameChanged(_NameChanged value),
+    @required TResult submitted(_Submitted value),
   });
+
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
+    TResult nameChanged(_NameChanged value),
+    TResult submitted(_Submitted value),
+    @required TResult orElse(),
   });
 }
 
@@ -144,10 +147,10 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Tag> tagOption),
-    @required Result nameChanged(String name),
-    @required Result submitted(),
+  TResult when<TResult extends Object>({
+    @required TResult initialized(Option<Tag> tagOption),
+    @required TResult nameChanged(String name),
+    @required TResult submitted(),
   }) {
     assert(initialized != null);
     assert(nameChanged != null);
@@ -157,11 +160,11 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Tag> tagOption),
-    Result nameChanged(String name),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initialized(Option<Tag> tagOption),
+    TResult nameChanged(String name),
+    TResult submitted(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initialized != null) {
@@ -172,10 +175,10 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
+    @required TResult nameChanged(_NameChanged value),
+    @required TResult submitted(_Submitted value),
   }) {
     assert(initialized != null);
     assert(nameChanged != null);
@@ -185,11 +188,11 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
+    TResult nameChanged(_NameChanged value),
+    TResult submitted(_Submitted value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initialized != null) {
@@ -265,10 +268,10 @@ class _$_NameChanged implements _NameChanged {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Tag> tagOption),
-    @required Result nameChanged(String name),
-    @required Result submitted(),
+  TResult when<TResult extends Object>({
+    @required TResult initialized(Option<Tag> tagOption),
+    @required TResult nameChanged(String name),
+    @required TResult submitted(),
   }) {
     assert(initialized != null);
     assert(nameChanged != null);
@@ -278,11 +281,11 @@ class _$_NameChanged implements _NameChanged {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Tag> tagOption),
-    Result nameChanged(String name),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initialized(Option<Tag> tagOption),
+    TResult nameChanged(String name),
+    TResult submitted(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (nameChanged != null) {
@@ -293,10 +296,10 @@ class _$_NameChanged implements _NameChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
+    @required TResult nameChanged(_NameChanged value),
+    @required TResult submitted(_Submitted value),
   }) {
     assert(initialized != null);
     assert(nameChanged != null);
@@ -306,11 +309,11 @@ class _$_NameChanged implements _NameChanged {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
+    TResult nameChanged(_NameChanged value),
+    TResult submitted(_Submitted value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (nameChanged != null) {
@@ -364,10 +367,10 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Option<Tag> tagOption),
-    @required Result nameChanged(String name),
-    @required Result submitted(),
+  TResult when<TResult extends Object>({
+    @required TResult initialized(Option<Tag> tagOption),
+    @required TResult nameChanged(String name),
+    @required TResult submitted(),
   }) {
     assert(initialized != null);
     assert(nameChanged != null);
@@ -377,11 +380,11 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Option<Tag> tagOption),
-    Result nameChanged(String name),
-    Result submitted(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initialized(Option<Tag> tagOption),
+    TResult nameChanged(String name),
+    TResult submitted(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (submitted != null) {
@@ -392,10 +395,10 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result nameChanged(_NameChanged value),
-    @required Result submitted(_Submitted value),
+  TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
+    @required TResult nameChanged(_NameChanged value),
+    @required TResult submitted(_Submitted value),
   }) {
     assert(initialized != null);
     assert(nameChanged != null);
@@ -405,11 +408,11 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result nameChanged(_NameChanged value),
-    Result submitted(_Submitted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
+    TResult nameChanged(_NameChanged value),
+    TResult submitted(_Submitted value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (submitted != null) {

@@ -42,12 +42,14 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
   Stream<Either<Failure, KtList<Notification>>> watchNotifications() async* {
     final _userDocument = await _firestore.userDocument();
     final _userDto = UserDto.fromFirestore(await _userDocument.get());
-    // TODO: Order by creation date
-    // Gotta solve the dates issue first
     yield* _firestore.notificationCollection
         .where(
-          "receiverId",
+          "receiver.id",
           isEqualTo: _userDto.id,
+        )
+        .orderBy(
+          "creationDate",
+          descending: true,
         )
         .snapshots()
         .map(
@@ -56,15 +58,24 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
           ),
         )
         .map(
-          (experiences) => right<Failure, KtList<Notification>>(
+      (experiences) {
+        if (experiences.isNotEmpty) {
+          return right<Failure, KtList<Notification>>(
             experiences.toImmutableList(),
-          ),
-        )
-        .onErrorReturnWith(
-          (error) => left(
-            onError(error),
-          ),
-        );
+          );
+        } else {
+          return left<Failure, KtList<Notification>>(
+            const Failure.coreData(
+              CoreDataFailure.notFoundError(),
+            ),
+          );
+        }
+      },
+    ).onErrorReturnWith(
+      (error) => left(
+        onError(error),
+      ),
+    );
   }
 
   @override

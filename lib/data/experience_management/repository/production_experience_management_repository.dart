@@ -31,33 +31,12 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
       final _cloudStorageService = getIt<CloudStorageService>();
       final _rewardSet = <Reward>{};
       final _objectiveSet = <Objective>{};
-      for (final _imageAsset in experience.imageAssetsOption.getOrElse(() => null)) {
-        final _imageName = _imageAsset.name + experience.id.getOrCrash();
-        final _imageURL = await _cloudStorageService.uploadAssetImage(
-          imageToUpload: _imageAsset,
-          folder: StorageFolder.experiences,
-          name: _imageName,
-        );
-        experience.imageURLs.add(_imageURL);
-      }
-      for (final _reward in experience.rewards.getOrCrash().asSet()) {
-        final _imageURL = await _cloudStorageService.uploadFileImage(
-          imageToUpload: _reward.imageFile.getOrElse(() => null),
-          folder: StorageFolder.experiences,
-          name: _reward.id.getOrCrash(),
-        );
-        final _rewardWithImage = _reward.copyWith(imageURL: _imageURL);
-        _rewardSet.add(_rewardWithImage);
-      }
-      for (final _objective in experience.objectives.getOrCrash().asSet()) {
-        final _imageURL = await _cloudStorageService.uploadFileImage(
-          imageToUpload: _objective.imageFile.getOrElse(() => null),
-          folder: StorageFolder.experiences,
-          name: _objective.id.getOrCrash(),
-        );
-        final _objectiveWithImage = _objective.copyWith(imageURL: _imageURL);
-        _objectiveSet.add(_objectiveWithImage);
-      }
+      await uploadImages(
+        experience,
+        _cloudStorageService,
+        _rewardSet,
+        _objectiveSet,
+      );
       final _experienceDto = ExperienceDto.fromDomain(
         experience.copyWith(
           rewards: RewardSet(_rewardSet.toImmutableSet()),
@@ -78,33 +57,12 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
       final _cloudStorageService = getIt<CloudStorageService>();
       final _rewardSet = <Reward>{};
       final _objectiveSet = <Objective>{};
-      for (final _imageAsset in experience.imageAssetsOption.getOrElse(() => null)) {
-        final _imageName = _imageAsset.name + experience.id.getOrCrash();
-        final _imageURL = await _cloudStorageService.uploadAssetImage(
-          imageToUpload: _imageAsset,
-          folder: StorageFolder.experiences,
-          name: _imageName,
-        );
-        experience.imageURLs.add(_imageURL);
-      }
-      for (final _reward in experience.rewards.getOrCrash().asSet()) {
-        final _imageURL = await _cloudStorageService.uploadFileImage(
-          imageToUpload: _reward.imageFile.getOrElse(() => null),
-          folder: StorageFolder.experiences,
-          name: _reward.id.getOrCrash(),
-        );
-        final _rewardWithImage = _reward.copyWith(imageURL: _imageURL);
-        _rewardSet.add(_rewardWithImage);
-      }
-      for (final _objective in experience.objectives.getOrCrash().asSet()) {
-        final _imageURL = await _cloudStorageService.uploadFileImage(
-          imageToUpload: _objective.imageFile.getOrElse(() => null),
-          folder: StorageFolder.experiences,
-          name: _objective.id.getOrCrash(),
-        );
-        final _objectiveWithImage = _objective.copyWith(imageURL: _imageURL);
-        _objectiveSet.add(_objectiveWithImage);
-      }
+      await uploadImages(
+        experience,
+        _cloudStorageService,
+        _rewardSet,
+        _objectiveSet,
+      );
       final _experienceDto = ExperienceDto.fromDomain(
         experience.copyWith(
           rewards: RewardSet(_rewardSet.toImmutableSet()),
@@ -136,6 +94,36 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
       return right(unit);
     } on FirebaseException catch (e) {
       return onFirebaseException(e);
+    }
+  }
+
+  Future uploadImages(Experience experience, CloudStorageService _cloudStorageService, Set<Reward> _rewardSet, Set<Objective> _objectiveSet) async {
+    for (final _imageAsset in experience.imageAssetsOption.getOrElse(() => null)) {
+      final _imageName = _imageAsset.name + experience.id.getOrCrash();
+      final _imageURL = await _cloudStorageService.uploadAssetImage(
+        imageToUpload: _imageAsset,
+        folder: StorageFolder.experiences,
+        name: _imageName,
+      );
+      experience.imageURLs.add(_imageURL);
+    }
+    for (final _reward in experience.rewards.getOrCrash().asSet()) {
+      final _imageURL = await _cloudStorageService.uploadFileImage(
+        imageToUpload: _reward.imageFile.getOrElse(() => null),
+        folder: StorageFolder.experiences,
+        name: _reward.id.getOrCrash(),
+      );
+      final _rewardWithImage = _reward.copyWith(imageURL: _imageURL);
+      _rewardSet.add(_rewardWithImage);
+    }
+    for (final _objective in experience.objectives.getOrCrash().asSet()) {
+      final _imageURL = await _cloudStorageService.uploadFileImage(
+        imageToUpload: _objective.imageFile.getOrElse(() => null),
+        folder: StorageFolder.experiences,
+        name: _objective.id.getOrCrash(),
+      );
+      final _objectiveWithImage = _objective.copyWith(imageURL: _imageURL);
+      _objectiveSet.add(_objectiveWithImage);
     }
   }
 

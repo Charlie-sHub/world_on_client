@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:worldon/data/core/misc/server_timestamp_converter.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
@@ -16,26 +17,24 @@ abstract class TagDto implements _$TagDto {
     @required String id,
     @required String name,
     @required String creatorId,
-    @required String creationDate,
-    @required String modificationDate,
+    @ServerTimestampConverter() @required DateTime creationDate,
+    @ServerTimestampConverter() @required DateTime modificationDate,
   }) = _TagDto;
 
   factory TagDto.fromDomain(Tag tag) => TagDto(
-        id: tag.id.getOrCrash(),
+    id: tag.id.getOrCrash(),
         name: tag.name.getOrCrash(),
         creatorId: tag.creatorId.getOrCrash(),
-        creationDate: tag.creationDate.getOrCrash().toIso8601String(),
-        modificationDate: tag.modificationDate.getOrCrash().toIso8601String(),
+        creationDate: tag.creationDate.getOrCrash(),
+        modificationDate: tag.modificationDate.getOrCrash(),
       );
 
   Tag toDomain() => Tag(
-        id: UniqueId.fromUniqueString(id),
-        name: Name(name),
-        creatorId: UniqueId.fromUniqueString(creatorId),
-        // TODO: Solve the issue with the dates
-        // How to send them and retrieve them?
-        creationDate: PastDate(DateTime.now()),
-        modificationDate: PastDate(DateTime.now()),
+    id: UniqueId.fromUniqueString(id),
+    name: Name(name),
+    creatorId: UniqueId.fromUniqueString(creatorId),
+    creationDate: PastDate(creationDate),
+    modificationDate: PastDate(modificationDate),
       );
 
   factory TagDto.fromJson(Map<String, dynamic> json) => _$TagDtoFromJson(json);

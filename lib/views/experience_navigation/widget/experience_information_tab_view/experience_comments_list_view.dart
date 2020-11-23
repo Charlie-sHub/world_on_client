@@ -28,41 +28,46 @@ class ExperienceCommentsListView extends StatelessWidget {
         ),
       ),
       color: WorldOnColors.background,
-      child: Column(
-        children: [
-          CommentForm(experienceId: experience.id),
-          BlocProvider(
-            create: (context) => getIt<CommentWatcherBloc>()
-              ..add(
-                CommentWatcherEvent.watchExperienceCommentsStarted(experience.id),
-              ),
-            child: BlocBuilder<CommentWatcherBloc, CommentWatcherState>(
+      child: BlocProvider(
+        create: (context) => getIt<CommentWatcherBloc>()
+          ..add(
+            CommentWatcherEvent.watchExperienceCommentsStarted(experience.id),
+          ),
+        child: ListView(
+          children: [
+            CommentForm(experienceId: experience.id),
+            BlocBuilder<CommentWatcherBloc, CommentWatcherState>(
               builder: (context, state) => state.map(
                 initial: (_) => Container(),
                 loadInProgress: (_) => WorldOnProgressIndicator(),
-                loadSuccess: (state) => ListView.builder(
-                  padding: const EdgeInsets.all(5),
-                  itemCount: state.comments.size,
-                  // TODO: shrinkWrap is an expensive operation, might not be a good idea to use this for the comment list
-                  shrinkWrap: true,
-                  physics: const ClampingScrollPhysics(),
-                  itemBuilder: (context, index) {
-                    final _comment = state.comments[index];
-                    if (_comment.isValid) {
-                      return CommentCard(
-                        comment: _comment,
-                        key: Key(_comment.id.toString()),
-                      );
-                    } else {
-                      return ErrorCard(
-                        entityType: "Comment",
-                        valueFailureString: _comment.failureOption.fold(
-                          () => "",
-                          (failure) => failure.toString(),
-                        ),
-                      );
-                    }
-                  },
+                loadSuccess: (state) => RefreshIndicator(
+                  onRefresh: () async => context.bloc<CommentWatcherBloc>().add(
+                        CommentWatcherEvent.watchExperienceCommentsStarted(experience.id),
+                      ),
+                  child: ListView.builder(
+                    padding: const EdgeInsets.all(5),
+                    itemCount: state.comments.size,
+                    // TODO: shrinkWrap is an expensive operation, might not be a good idea to use this for the comment list
+                    shrinkWrap: true,
+                    physics: const ClampingScrollPhysics(),
+                    itemBuilder: (context, index) {
+                      final _comment = state.comments[index];
+                      if (_comment.isValid) {
+                        return CommentCard(
+                          comment: _comment,
+                          key: Key(_comment.id.toString()),
+                        );
+                      } else {
+                        return ErrorCard(
+                          entityType: "Comment",
+                          valueFailureString: _comment.failureOption.fold(
+                            () => "",
+                            (failure) => failure.toString(),
+                          ),
+                        );
+                      }
+                    },
+                  ),
                 ),
                 loadFailure: (state) => ErrorDisplay(
                   retryFunction: () => context.bloc<CommentWatcherBloc>().add(
@@ -72,8 +77,8 @@ class ExperienceCommentsListView extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

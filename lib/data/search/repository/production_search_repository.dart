@@ -122,15 +122,14 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
   @override
   Stream<Either<Failure, KtList<User>>> watchSearchUsersByUserName(SearchTerm username) async* {
     yield* _firestore.userCollection
-      .snapshots()
-      .map(
-        (snapshot) =>
-        snapshot.docs.map(
+        .snapshots()
+        .map(
+          (snapshot) => snapshot.docs.map(
             (document) => UserDto.fromFirestore(document).toDomain(),
-        ),
-    )
-      .map(
-        (users) {
+          ),
+        )
+        .map(
+      (users) {
         if (users.isNotEmpty) {
           return right<Failure, KtList<User>>(
             users.where((user) => user.username.getOrCrash().contains(username.getOrCrash())).toImmutableList(),
@@ -144,10 +143,9 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
         }
       },
     ).onErrorReturnWith(
-        (error) =>
-        left(
-          onError(error),
-        ),
+      (error) => left(
+        onError(error),
+      ),
     );
   }
 

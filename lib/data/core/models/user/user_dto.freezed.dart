@@ -22,7 +22,7 @@ class _$UserDtoTearOff {
     @required String username,
     @required String password,
     @required String email,
-    @required String birthday,
+    @required @ServerTimestampConverter() DateTime birthday,
     @required String description,
     @required String imageURL,
     @required int level,
@@ -30,9 +30,9 @@ class _$UserDtoTearOff {
     @required bool privacy,
     @required bool adminPowers,
     @required bool enabled,
-    @required String lastLogin,
-    @required String creationDate,
-    @required String modificationDate,
+    @required @ServerTimestampConverter() DateTime lastLogin,
+    @required @ServerTimestampConverter() DateTime creationDate,
+    @required @ServerTimestampConverter() DateTime modificationDate,
     @required OptionsDto options,
     @required Set<String> blockedUsersIds,
     @required Set<String> followedUsersIds,
@@ -86,31 +86,59 @@ const $UserDto = _$UserDtoTearOff();
 /// @nodoc
 mixin _$UserDto {
   String get id;
+  
   String get name;
+  
   String get username; // Shouldn't this be encrypted in some way?
 // Maybe it shouldn't even be part of the dto at all, as Firebase handles it at login time
   String get password;
+  
   String get email;
-  String get birthday;
+  
+  @ServerTimestampConverter()
+  DateTime get birthday;
+  
   String get description;
+  
   String get imageURL;
+  
   int get level;
+  
   int get experiencePoints;
+  
   bool get privacy;
+  
   bool get adminPowers;
+  
   bool get enabled;
-  String get lastLogin;
-  String get creationDate;
-  String get modificationDate;
+  
+  @ServerTimestampConverter()
+  DateTime get lastLogin;
+  
+  @ServerTimestampConverter()
+  DateTime get creationDate;
+  
+  @ServerTimestampConverter()
+  DateTime get modificationDate;
+  
   OptionsDto get options;
+  
   Set<String> get blockedUsersIds;
+  
   Set<String> get followedUsersIds;
+  
   Set<String> get interestsIds;
+  
   Set<String> get achievementsIds;
+  
   Set<String> get experiencesDoneIds;
+  
   Set<String> get experiencesLikedIds;
+  
   Set<String> get experiencesToDoIds;
+  
   Set<DeviceDto> get devices;
+  
   Set<SystemDto> get systems;
 
   Map<String, dynamic> toJson();
@@ -127,7 +155,7 @@ abstract class $UserDtoCopyWith<$Res> {
     String username,
     String password,
     String email,
-    String birthday,
+    @ServerTimestampConverter() DateTime birthday,
     String description,
     String imageURL,
     int level,
@@ -135,9 +163,9 @@ abstract class $UserDtoCopyWith<$Res> {
     bool privacy,
     bool adminPowers,
     bool enabled,
-    String lastLogin,
-    String creationDate,
-    String modificationDate,
+    @ServerTimestampConverter() DateTime lastLogin,
+    @ServerTimestampConverter() DateTime creationDate,
+    @ServerTimestampConverter() DateTime modificationDate,
     OptionsDto options,
     Set<String> blockedUsersIds,
     Set<String> followedUsersIds,
@@ -195,7 +223,7 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
       username: username == freezed ? _value.username : username as String,
       password: password == freezed ? _value.password : password as String,
       email: email == freezed ? _value.email : email as String,
-      birthday: birthday == freezed ? _value.birthday : birthday as String,
+      birthday: birthday == freezed ? _value.birthday : birthday as DateTime,
       description:
       description == freezed ? _value.description : description as String,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
@@ -207,13 +235,14 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
       adminPowers:
       adminPowers == freezed ? _value.adminPowers : adminPowers as bool,
       enabled: enabled == freezed ? _value.enabled : enabled as bool,
-      lastLogin: lastLogin == freezed ? _value.lastLogin : lastLogin as String,
+      lastLogin:
+      lastLogin == freezed ? _value.lastLogin : lastLogin as DateTime,
       creationDate: creationDate == freezed
         ? _value.creationDate
-        : creationDate as String,
+        : creationDate as DateTime,
       modificationDate: modificationDate == freezed
         ? _value.modificationDate
-        : modificationDate as String,
+        : modificationDate as DateTime,
       options: options == freezed ? _value.options : options as OptionsDto,
       blockedUsersIds: blockedUsersIds == freezed
         ? _value.blockedUsersIds
@@ -263,7 +292,7 @@ abstract class _$UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
     String username,
     String password,
     String email,
-    String birthday,
+    @ServerTimestampConverter() DateTime birthday,
     String description,
     String imageURL,
     int level,
@@ -271,9 +300,9 @@ abstract class _$UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
     bool privacy,
     bool adminPowers,
     bool enabled,
-    String lastLogin,
-    String creationDate,
-    String modificationDate,
+    @ServerTimestampConverter() DateTime lastLogin,
+    @ServerTimestampConverter() DateTime creationDate,
+    @ServerTimestampConverter() DateTime modificationDate,
     OptionsDto options,
     Set<String> blockedUsersIds,
     Set<String> followedUsersIds,
@@ -333,7 +362,7 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
       username: username == freezed ? _value.username : username as String,
       password: password == freezed ? _value.password : password as String,
       email: email == freezed ? _value.email : email as String,
-      birthday: birthday == freezed ? _value.birthday : birthday as String,
+      birthday: birthday == freezed ? _value.birthday : birthday as DateTime,
       description:
       description == freezed ? _value.description : description as String,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
@@ -345,13 +374,14 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
       adminPowers:
       adminPowers == freezed ? _value.adminPowers : adminPowers as bool,
       enabled: enabled == freezed ? _value.enabled : enabled as bool,
-      lastLogin: lastLogin == freezed ? _value.lastLogin : lastLogin as String,
+      lastLogin:
+      lastLogin == freezed ? _value.lastLogin : lastLogin as DateTime,
       creationDate: creationDate == freezed
         ? _value.creationDate
-        : creationDate as String,
+        : creationDate as DateTime,
       modificationDate: modificationDate == freezed
         ? _value.modificationDate
-        : modificationDate as String,
+        : modificationDate as DateTime,
       options: options == freezed ? _value.options : options as OptionsDto,
       blockedUsersIds: blockedUsersIds == freezed
         ? _value.blockedUsersIds
@@ -388,7 +418,7 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
     @required this.username,
     @required this.password,
     @required this.email,
-    @required this.birthday,
+    @required @ServerTimestampConverter() this.birthday,
     @required this.description,
     @required this.imageURL,
     @required this.level,
@@ -396,9 +426,9 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
     @required this.privacy,
     @required this.adminPowers,
     @required this.enabled,
-    @required this.lastLogin,
-    @required this.creationDate,
-    @required this.modificationDate,
+    @required @ServerTimestampConverter() this.lastLogin,
+    @required @ServerTimestampConverter() this.creationDate,
+    @required @ServerTimestampConverter() this.modificationDate,
     @required this.options,
     @required this.blockedUsersIds,
     @required this.followedUsersIds,
@@ -452,7 +482,8 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
   @override
   final String email;
   @override
-  final String birthday;
+  @ServerTimestampConverter()
+  final DateTime birthday;
   @override
   final String description;
   @override
@@ -468,11 +499,14 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
   @override
   final bool enabled;
   @override
-  final String lastLogin;
+  @ServerTimestampConverter()
+  final DateTime lastLogin;
   @override
-  final String creationDate;
+  @ServerTimestampConverter()
+  final DateTime creationDate;
   @override
-  final String modificationDate;
+  @ServerTimestampConverter()
+  final DateTime modificationDate;
   @override
   final OptionsDto options;
   @override
@@ -622,7 +656,7 @@ abstract class _UserDto extends UserDto {
     @required String username,
     @required String password,
     @required String email,
-    @required String birthday,
+    @required @ServerTimestampConverter() DateTime birthday,
     @required String description,
     @required String imageURL,
     @required int level,
@@ -630,9 +664,9 @@ abstract class _UserDto extends UserDto {
     @required bool privacy,
     @required bool adminPowers,
     @required bool enabled,
-    @required String lastLogin,
-    @required String creationDate,
-    @required String modificationDate,
+    @required @ServerTimestampConverter() DateTime lastLogin,
+    @required @ServerTimestampConverter() DateTime creationDate,
+    @required @ServerTimestampConverter() DateTime modificationDate,
     @required OptionsDto options,
     @required Set<String> blockedUsersIds,
     @required Set<String> followedUsersIds,
@@ -658,10 +692,14 @@ abstract class _UserDto extends UserDto {
   @override // Shouldn't this be encrypted in some way?
 // Maybe it shouldn't even be part of the dto at all, as Firebase handles it at login time
   String get password;
+  
   @override
   String get email;
+  
   @override
-  String get birthday;
+  @ServerTimestampConverter()
+  DateTime get birthday;
+  
   @override
   String get description;
   @override
@@ -674,14 +712,22 @@ abstract class _UserDto extends UserDto {
   bool get privacy;
   @override
   bool get adminPowers;
+  
   @override
   bool get enabled;
+  
   @override
-  String get lastLogin;
+  @ServerTimestampConverter()
+  DateTime get lastLogin;
+  
   @override
-  String get creationDate;
+  @ServerTimestampConverter()
+  DateTime get creationDate;
+  
   @override
-  String get modificationDate;
+  @ServerTimestampConverter()
+  DateTime get modificationDate;
+  
   @override
   OptionsDto get options;
   @override

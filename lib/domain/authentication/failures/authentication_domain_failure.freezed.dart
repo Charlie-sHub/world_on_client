@@ -26,22 +26,25 @@ const $AuthenticationDomainFailure = _$AuthenticationDomainFailureTearOff();
 /// @nodoc
 mixin _$AuthenticationDomainFailure<T> {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result cancelledByUser(),
+  TResult when<TResult extends Object>({
+    @required TResult cancelledByUser(),
   });
+
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result cancelledByUser(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult cancelledByUser(),
+    @required TResult orElse(),
   });
+
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result cancelledByUser(CancelledByUser<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult cancelledByUser(CancelledByUser<T> value),
   });
+
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result cancelledByUser(CancelledByUser<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult cancelledByUser(CancelledByUser<T> value),
+    @required TResult orElse(),
   });
 }
 
@@ -51,49 +54,41 @@ abstract class $AuthenticationDomainFailureCopyWith<T, $Res> {
 }
 
 /// @nodoc
-class _$AuthenticationDomainFailureCopyWithImpl<T, $Res>
-  implements $AuthenticationDomainFailureCopyWith<T, $Res> {
+class _$AuthenticationDomainFailureCopyWithImpl<T, $Res> implements $AuthenticationDomainFailureCopyWith<T, $Res> {
   _$AuthenticationDomainFailureCopyWithImpl(this._value, this._then);
-  
+
   final AuthenticationDomainFailure<T> _value;
-  
+
   // ignore: unused_field
   final $Res Function(AuthenticationDomainFailure<T>) _then;
 }
 
 /// @nodoc
 abstract class $CancelledByUserCopyWith<T, $Res> {
-  factory $CancelledByUserCopyWith(CancelledByUser<T> value, $Res Function(CancelledByUser<T>) then) =
-  _$CancelledByUserCopyWithImpl<T, $Res>;
+  factory $CancelledByUserCopyWith(CancelledByUser<T> value, $Res Function(CancelledByUser<T>) then) = _$CancelledByUserCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class _$CancelledByUserCopyWithImpl<T, $Res> extends _$AuthenticationDomainFailureCopyWithImpl<T, $Res>
-  implements $CancelledByUserCopyWith<T, $Res> {
-  _$CancelledByUserCopyWithImpl(CancelledByUser<T> _value, $Res Function(CancelledByUser<T>) _then)
-    : super(_value, (v) => _then(v as CancelledByUser<T>));
-  
+class _$CancelledByUserCopyWithImpl<T, $Res> extends _$AuthenticationDomainFailureCopyWithImpl<T, $Res> implements $CancelledByUserCopyWith<T, $Res> {
+  _$CancelledByUserCopyWithImpl(CancelledByUser<T> _value, $Res Function(CancelledByUser<T>) _then) : super(_value, (v) => _then(v as CancelledByUser<T>));
+
   @override
   CancelledByUser<T> get _value => super._value as CancelledByUser<T>;
 }
 
 /// @nodoc
-class _$CancelledByUser<T>
-  with DiagnosticableTreeMixin
-  implements CancelledByUser<T> {
+class _$CancelledByUser<T> with DiagnosticableTreeMixin implements CancelledByUser<T> {
   const _$CancelledByUser();
-  
+
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AuthenticationDomainFailure<$T>.cancelledByUser()';
   }
-  
+
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-        'type', 'AuthenticationDomainFailure<$T>.cancelledByUser'));
+    properties..add(DiagnosticsProperty('type', 'AuthenticationDomainFailure<$T>.cancelledByUser'));
   }
 
   @override
@@ -106,8 +101,8 @@ class _$CancelledByUser<T>
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result cancelledByUser(),
+  TResult when<TResult extends Object>({
+    @required TResult cancelledByUser(),
   }) {
     assert(cancelledByUser != null);
     return cancelledByUser();
@@ -115,9 +110,9 @@ class _$CancelledByUser<T>
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result cancelledByUser(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult cancelledByUser(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (cancelledByUser != null) {
@@ -128,8 +123,8 @@ class _$CancelledByUser<T>
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result cancelledByUser(CancelledByUser<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult cancelledByUser(CancelledByUser<T> value),
   }) {
     assert(cancelledByUser != null);
     return cancelledByUser(this);
@@ -137,9 +132,9 @@ class _$CancelledByUser<T>
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result cancelledByUser(CancelledByUser<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult cancelledByUser(CancelledByUser<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (cancelledByUser != null) {

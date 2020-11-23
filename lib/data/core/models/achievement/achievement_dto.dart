@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart' as dartz;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:kt_dart/kt.dart';
+import 'package:worldon/data/core/misc/server_timestamp_converter.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -30,8 +31,8 @@ abstract class AchievementDto implements _$AchievementDto {
     @required int requisite,
     @required int experiencePoints,
     @required String creatorId,
-    @required String creationDate,
-    @required String modificationDate,
+    @ServerTimestampConverter() @required DateTime creationDate,
+    @ServerTimestampConverter() @required DateTime modificationDate,
     @required Set<String> tagNames,
   }) = _AchievementDto;
 
@@ -44,8 +45,8 @@ abstract class AchievementDto implements _$AchievementDto {
         requisite: achievement.requisite,
         experiencePoints: achievement.experiencePoints.getOrCrash(),
         creatorId: achievement.creatorId.getOrCrash(),
-        creationDate: achievement.creationDate.getOrCrash().toIso8601String(),
-        modificationDate: achievement.modificationDate.getOrCrash().toIso8601String(),
+        creationDate: achievement.creationDate.getOrCrash(),
+        modificationDate: achievement.modificationDate.getOrCrash(),
         tagNames: achievement.tags.getOrCrash().asSet().map((tag) => tag.name.getOrCrash()).toSet(),
       );
 
@@ -59,8 +60,8 @@ abstract class AchievementDto implements _$AchievementDto {
         requisite: requisite,
         experiencePoints: ExperiencePoints(experiencePoints),
         creatorId: UniqueId.fromUniqueString(creatorId),
-        creationDate: PastDate(DateTime.now()),
-        modificationDate: PastDate(DateTime.now()),
+        creationDate: PastDate(creationDate),
+        modificationDate: PastDate(modificationDate),
         tags: TagSet(tagNames.map((name) => Tag.empty().copyWith(name: Name(name))).toImmutableSet()),
       );
 

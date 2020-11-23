@@ -119,80 +119,84 @@ const $ValueFailure = _$ValueFailureTearOff();
 /// @nodoc
 mixin _$ValueFailure<T> {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object>({
+    @required TResult nullInput(),
+    @required TResult invalidDate(DateTime failedValue),
+    @required TResult invalidEmail(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult stringMismatch(String failedValue),
+    @required TResult invalidName(String failedValue),
+    @required TResult emptyString(String failedValue),
+    @required TResult multiLineString(String failedValue),
+    @required TResult stringExceedsLength(String failedValue, int maxLength),
+    @required TResult integerOutOfBounds(int failedValue),
+    @required TResult stringWithInvalidCharacters(String failedValue),
+    @required TResult invalidCoordinate(double failedValue),
+    @required TResult emptySet(T failedValue),
+    @required TResult setExceedsLength(T failedValue, int maxLength),
   });
+
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult nullInput(),
+    TResult invalidDate(DateTime failedValue),
+    TResult invalidEmail(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult stringMismatch(String failedValue),
+    TResult invalidName(String failedValue),
+    TResult emptyString(String failedValue),
+    TResult multiLineString(String failedValue),
+    TResult stringExceedsLength(String failedValue, int maxLength),
+    TResult integerOutOfBounds(int failedValue),
+    TResult stringWithInvalidCharacters(String failedValue),
+    TResult invalidCoordinate(double failedValue),
+    TResult emptySet(T failedValue),
+    TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult orElse(),
   });
+
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult nullInput(NullInput<T> value),
+    @required TResult invalidDate(InvalidDate<T> value),
+    @required TResult invalidEmail(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult stringMismatch(StringMismatch<T> value),
+    @required TResult invalidName(InvalidName<T> value),
+    @required TResult emptyString(EmptyString<T> value),
+    @required TResult multiLineString(MultiLineString<T> value),
+    @required TResult stringExceedsLength(StringExceedsLength<T> value),
+    @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    @required TResult invalidCoordinate(InvalidCoordinates<T> value),
+    @required TResult emptySet(EmptySet<T> value),
+    @required TResult setExceedsLength(SetExceedsLength<T> value),
   });
+
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult nullInput(NullInput<T> value),
+    TResult invalidDate(InvalidDate<T> value),
+    TResult invalidEmail(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult stringMismatch(StringMismatch<T> value),
+    TResult invalidName(InvalidName<T> value),
+    TResult emptyString(EmptyString<T> value),
+    TResult multiLineString(MultiLineString<T> value),
+    TResult stringExceedsLength(StringExceedsLength<T> value),
+    TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    TResult invalidCoordinate(InvalidCoordinates<T> value),
+    TResult emptySet(EmptySet<T> value),
+    TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult orElse(),
   });
 }
 
 /// @nodoc
 abstract class $ValueFailureCopyWith<T, $Res> {
-  factory $ValueFailureCopyWith(ValueFailure<T> value, $Res Function(ValueFailure<T>) then) = _$ValueFailureCopyWithImpl<T, $Res>;
+  factory $ValueFailureCopyWith(ValueFailure<T> value, $Res Function(ValueFailure<T>) then) =
+  _$ValueFailureCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
@@ -247,21 +251,21 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object>({
+    @required TResult nullInput(),
+    @required TResult invalidDate(DateTime failedValue),
+    @required TResult invalidEmail(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult stringMismatch(String failedValue),
+    @required TResult invalidName(String failedValue),
+    @required TResult emptyString(String failedValue),
+    @required TResult multiLineString(String failedValue),
+    @required TResult stringExceedsLength(String failedValue, int maxLength),
+    @required TResult integerOutOfBounds(int failedValue),
+    @required TResult stringWithInvalidCharacters(String failedValue),
+    @required TResult invalidCoordinate(double failedValue),
+    @required TResult emptySet(T failedValue),
+    @required TResult setExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -282,22 +286,22 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult nullInput(),
+    TResult invalidDate(DateTime failedValue),
+    TResult invalidEmail(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult stringMismatch(String failedValue),
+    TResult invalidName(String failedValue),
+    TResult emptyString(String failedValue),
+    TResult multiLineString(String failedValue),
+    TResult stringExceedsLength(String failedValue, int maxLength),
+    TResult integerOutOfBounds(int failedValue),
+    TResult stringWithInvalidCharacters(String failedValue),
+    TResult invalidCoordinate(double failedValue),
+    TResult emptySet(T failedValue),
+    TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (nullInput != null) {
@@ -308,21 +312,21 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult nullInput(NullInput<T> value),
+    @required TResult invalidDate(InvalidDate<T> value),
+    @required TResult invalidEmail(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult stringMismatch(StringMismatch<T> value),
+    @required TResult invalidName(InvalidName<T> value),
+    @required TResult emptyString(EmptyString<T> value),
+    @required TResult multiLineString(MultiLineString<T> value),
+    @required TResult stringExceedsLength(StringExceedsLength<T> value),
+    @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    @required TResult invalidCoordinate(InvalidCoordinates<T> value),
+    @required TResult emptySet(EmptySet<T> value),
+    @required TResult setExceedsLength(SetExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -343,22 +347,22 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult nullInput(NullInput<T> value),
+    TResult invalidDate(InvalidDate<T> value),
+    TResult invalidEmail(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult stringMismatch(StringMismatch<T> value),
+    TResult invalidName(InvalidName<T> value),
+    TResult emptyString(EmptyString<T> value),
+    TResult multiLineString(MultiLineString<T> value),
+    TResult stringExceedsLength(StringExceedsLength<T> value),
+    TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    TResult invalidCoordinate(InvalidCoordinates<T> value),
+    TResult emptySet(EmptySet<T> value),
+    TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (nullInput != null) {
@@ -438,21 +442,21 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
   
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object>({
+    @required TResult nullInput(),
+    @required TResult invalidDate(DateTime failedValue),
+    @required TResult invalidEmail(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult stringMismatch(String failedValue),
+    @required TResult invalidName(String failedValue),
+    @required TResult emptyString(String failedValue),
+    @required TResult multiLineString(String failedValue),
+    @required TResult stringExceedsLength(String failedValue, int maxLength),
+    @required TResult integerOutOfBounds(int failedValue),
+    @required TResult stringWithInvalidCharacters(String failedValue),
+    @required TResult invalidCoordinate(double failedValue),
+    @required TResult emptySet(T failedValue),
+    @required TResult setExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -470,25 +474,25 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     assert(setExceedsLength != null);
     return invalidDate(failedValue);
   }
-
+  
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult nullInput(),
+    TResult invalidDate(DateTime failedValue),
+    TResult invalidEmail(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult stringMismatch(String failedValue),
+    TResult invalidName(String failedValue),
+    TResult emptyString(String failedValue),
+    TResult multiLineString(String failedValue),
+    TResult stringExceedsLength(String failedValue, int maxLength),
+    TResult integerOutOfBounds(int failedValue),
+    TResult stringWithInvalidCharacters(String failedValue),
+    TResult invalidCoordinate(double failedValue),
+    TResult emptySet(T failedValue),
+    TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidDate != null) {
@@ -496,24 +500,24 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     }
     return orElse();
   }
-
+  
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult nullInput(NullInput<T> value),
+    @required TResult invalidDate(InvalidDate<T> value),
+    @required TResult invalidEmail(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult stringMismatch(StringMismatch<T> value),
+    @required TResult invalidName(InvalidName<T> value),
+    @required TResult emptyString(EmptyString<T> value),
+    @required TResult multiLineString(MultiLineString<T> value),
+    @required TResult stringExceedsLength(StringExceedsLength<T> value),
+    @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    @required TResult invalidCoordinate(InvalidCoordinates<T> value),
+    @required TResult emptySet(EmptySet<T> value),
+    @required TResult setExceedsLength(SetExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -531,25 +535,25 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     assert(setExceedsLength != null);
     return invalidDate(this);
   }
-
+  
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult nullInput(NullInput<T> value),
+    TResult invalidDate(InvalidDate<T> value),
+    TResult invalidEmail(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult stringMismatch(StringMismatch<T> value),
+    TResult invalidName(InvalidName<T> value),
+    TResult emptyString(EmptyString<T> value),
+    TResult multiLineString(MultiLineString<T> value),
+    TResult stringExceedsLength(StringExceedsLength<T> value),
+    TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    TResult invalidCoordinate(InvalidCoordinates<T> value),
+    TResult emptySet(EmptySet<T> value),
+    TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidDate != null) {
@@ -636,21 +640,21 @@ class _$InvalidEmail<T>
   
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object>({
+    @required TResult nullInput(),
+    @required TResult invalidDate(DateTime failedValue),
+    @required TResult invalidEmail(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult stringMismatch(String failedValue),
+    @required TResult invalidName(String failedValue),
+    @required TResult emptyString(String failedValue),
+    @required TResult multiLineString(String failedValue),
+    @required TResult stringExceedsLength(String failedValue, int maxLength),
+    @required TResult integerOutOfBounds(int failedValue),
+    @required TResult stringWithInvalidCharacters(String failedValue),
+    @required TResult invalidCoordinate(double failedValue),
+    @required TResult emptySet(T failedValue),
+    @required TResult setExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -668,25 +672,25 @@ class _$InvalidEmail<T>
     assert(setExceedsLength != null);
     return invalidEmail(failedValue);
   }
-
+  
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult nullInput(),
+    TResult invalidDate(DateTime failedValue),
+    TResult invalidEmail(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult stringMismatch(String failedValue),
+    TResult invalidName(String failedValue),
+    TResult emptyString(String failedValue),
+    TResult multiLineString(String failedValue),
+    TResult stringExceedsLength(String failedValue, int maxLength),
+    TResult integerOutOfBounds(int failedValue),
+    TResult stringWithInvalidCharacters(String failedValue),
+    TResult invalidCoordinate(double failedValue),
+    TResult emptySet(T failedValue),
+    TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidEmail != null) {
@@ -694,24 +698,24 @@ class _$InvalidEmail<T>
     }
     return orElse();
   }
-
+  
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult nullInput(NullInput<T> value),
+    @required TResult invalidDate(InvalidDate<T> value),
+    @required TResult invalidEmail(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult stringMismatch(StringMismatch<T> value),
+    @required TResult invalidName(InvalidName<T> value),
+    @required TResult emptyString(EmptyString<T> value),
+    @required TResult multiLineString(MultiLineString<T> value),
+    @required TResult stringExceedsLength(StringExceedsLength<T> value),
+    @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    @required TResult invalidCoordinate(InvalidCoordinates<T> value),
+    @required TResult emptySet(EmptySet<T> value),
+    @required TResult setExceedsLength(SetExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -729,25 +733,25 @@ class _$InvalidEmail<T>
     assert(setExceedsLength != null);
     return invalidEmail(this);
   }
-
+  
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult nullInput(NullInput<T> value),
+    TResult invalidDate(InvalidDate<T> value),
+    TResult invalidEmail(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult stringMismatch(StringMismatch<T> value),
+    TResult invalidName(InvalidName<T> value),
+    TResult emptyString(EmptyString<T> value),
+    TResult multiLineString(MultiLineString<T> value),
+    TResult stringExceedsLength(StringExceedsLength<T> value),
+    TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    TResult invalidCoordinate(InvalidCoordinates<T> value),
+    TResult emptySet(EmptySet<T> value),
+    TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidEmail != null) {
@@ -834,21 +838,21 @@ class _$InvalidPassword<T>
   
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object>({
+    @required TResult nullInput(),
+    @required TResult invalidDate(DateTime failedValue),
+    @required TResult invalidEmail(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult stringMismatch(String failedValue),
+    @required TResult invalidName(String failedValue),
+    @required TResult emptyString(String failedValue),
+    @required TResult multiLineString(String failedValue),
+    @required TResult stringExceedsLength(String failedValue, int maxLength),
+    @required TResult integerOutOfBounds(int failedValue),
+    @required TResult stringWithInvalidCharacters(String failedValue),
+    @required TResult invalidCoordinate(double failedValue),
+    @required TResult emptySet(T failedValue),
+    @required TResult setExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -866,25 +870,25 @@ class _$InvalidPassword<T>
     assert(setExceedsLength != null);
     return invalidPassword(failedValue);
   }
-
+  
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult nullInput(),
+    TResult invalidDate(DateTime failedValue),
+    TResult invalidEmail(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult stringMismatch(String failedValue),
+    TResult invalidName(String failedValue),
+    TResult emptyString(String failedValue),
+    TResult multiLineString(String failedValue),
+    TResult stringExceedsLength(String failedValue, int maxLength),
+    TResult integerOutOfBounds(int failedValue),
+    TResult stringWithInvalidCharacters(String failedValue),
+    TResult invalidCoordinate(double failedValue),
+    TResult emptySet(T failedValue),
+    TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidPassword != null) {
@@ -892,24 +896,24 @@ class _$InvalidPassword<T>
     }
     return orElse();
   }
-
+  
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult nullInput(NullInput<T> value),
+    @required TResult invalidDate(InvalidDate<T> value),
+    @required TResult invalidEmail(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult stringMismatch(StringMismatch<T> value),
+    @required TResult invalidName(InvalidName<T> value),
+    @required TResult emptyString(EmptyString<T> value),
+    @required TResult multiLineString(MultiLineString<T> value),
+    @required TResult stringExceedsLength(StringExceedsLength<T> value),
+    @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    @required TResult invalidCoordinate(InvalidCoordinates<T> value),
+    @required TResult emptySet(EmptySet<T> value),
+    @required TResult setExceedsLength(SetExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -927,25 +931,25 @@ class _$InvalidPassword<T>
     assert(setExceedsLength != null);
     return invalidPassword(this);
   }
-
+  
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult nullInput(NullInput<T> value),
+    TResult invalidDate(InvalidDate<T> value),
+    TResult invalidEmail(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult stringMismatch(StringMismatch<T> value),
+    TResult invalidName(InvalidName<T> value),
+    TResult emptyString(EmptyString<T> value),
+    TResult multiLineString(MultiLineString<T> value),
+    TResult stringExceedsLength(StringExceedsLength<T> value),
+    TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    TResult invalidCoordinate(InvalidCoordinates<T> value),
+    TResult emptySet(EmptySet<T> value),
+    TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidPassword != null) {
@@ -1032,21 +1036,21 @@ class _$StringMismatch<T>
   
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object>({
+    @required TResult nullInput(),
+    @required TResult invalidDate(DateTime failedValue),
+    @required TResult invalidEmail(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult stringMismatch(String failedValue),
+    @required TResult invalidName(String failedValue),
+    @required TResult emptyString(String failedValue),
+    @required TResult multiLineString(String failedValue),
+    @required TResult stringExceedsLength(String failedValue, int maxLength),
+    @required TResult integerOutOfBounds(int failedValue),
+    @required TResult stringWithInvalidCharacters(String failedValue),
+    @required TResult invalidCoordinate(double failedValue),
+    @required TResult emptySet(T failedValue),
+    @required TResult setExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1064,25 +1068,25 @@ class _$StringMismatch<T>
     assert(setExceedsLength != null);
     return stringMismatch(failedValue);
   }
-
+  
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult nullInput(),
+    TResult invalidDate(DateTime failedValue),
+    TResult invalidEmail(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult stringMismatch(String failedValue),
+    TResult invalidName(String failedValue),
+    TResult emptyString(String failedValue),
+    TResult multiLineString(String failedValue),
+    TResult stringExceedsLength(String failedValue, int maxLength),
+    TResult integerOutOfBounds(int failedValue),
+    TResult stringWithInvalidCharacters(String failedValue),
+    TResult invalidCoordinate(double failedValue),
+    TResult emptySet(T failedValue),
+    TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (stringMismatch != null) {
@@ -1090,24 +1094,24 @@ class _$StringMismatch<T>
     }
     return orElse();
   }
-
+  
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult nullInput(NullInput<T> value),
+    @required TResult invalidDate(InvalidDate<T> value),
+    @required TResult invalidEmail(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult stringMismatch(StringMismatch<T> value),
+    @required TResult invalidName(InvalidName<T> value),
+    @required TResult emptyString(EmptyString<T> value),
+    @required TResult multiLineString(MultiLineString<T> value),
+    @required TResult stringExceedsLength(StringExceedsLength<T> value),
+    @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    @required TResult invalidCoordinate(InvalidCoordinates<T> value),
+    @required TResult emptySet(EmptySet<T> value),
+    @required TResult setExceedsLength(SetExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1125,25 +1129,25 @@ class _$StringMismatch<T>
     assert(setExceedsLength != null);
     return stringMismatch(this);
   }
-
+  
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult nullInput(NullInput<T> value),
+    TResult invalidDate(InvalidDate<T> value),
+    TResult invalidEmail(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult stringMismatch(StringMismatch<T> value),
+    TResult invalidName(InvalidName<T> value),
+    TResult emptyString(EmptyString<T> value),
+    TResult multiLineString(MultiLineString<T> value),
+    TResult stringExceedsLength(StringExceedsLength<T> value),
+    TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    TResult invalidCoordinate(InvalidCoordinates<T> value),
+    TResult emptySet(EmptySet<T> value),
+    TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (stringMismatch != null) {
@@ -1228,21 +1232,21 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
   
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object>({
+    @required TResult nullInput(),
+    @required TResult invalidDate(DateTime failedValue),
+    @required TResult invalidEmail(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult stringMismatch(String failedValue),
+    @required TResult invalidName(String failedValue),
+    @required TResult emptyString(String failedValue),
+    @required TResult multiLineString(String failedValue),
+    @required TResult stringExceedsLength(String failedValue, int maxLength),
+    @required TResult integerOutOfBounds(int failedValue),
+    @required TResult stringWithInvalidCharacters(String failedValue),
+    @required TResult invalidCoordinate(double failedValue),
+    @required TResult emptySet(T failedValue),
+    @required TResult setExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1260,25 +1264,25 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     assert(setExceedsLength != null);
     return invalidName(failedValue);
   }
-
+  
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult nullInput(),
+    TResult invalidDate(DateTime failedValue),
+    TResult invalidEmail(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult stringMismatch(String failedValue),
+    TResult invalidName(String failedValue),
+    TResult emptyString(String failedValue),
+    TResult multiLineString(String failedValue),
+    TResult stringExceedsLength(String failedValue, int maxLength),
+    TResult integerOutOfBounds(int failedValue),
+    TResult stringWithInvalidCharacters(String failedValue),
+    TResult invalidCoordinate(double failedValue),
+    TResult emptySet(T failedValue),
+    TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidName != null) {
@@ -1286,24 +1290,24 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     }
     return orElse();
   }
-
+  
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult nullInput(NullInput<T> value),
+    @required TResult invalidDate(InvalidDate<T> value),
+    @required TResult invalidEmail(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult stringMismatch(StringMismatch<T> value),
+    @required TResult invalidName(InvalidName<T> value),
+    @required TResult emptyString(EmptyString<T> value),
+    @required TResult multiLineString(MultiLineString<T> value),
+    @required TResult stringExceedsLength(StringExceedsLength<T> value),
+    @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    @required TResult invalidCoordinate(InvalidCoordinates<T> value),
+    @required TResult emptySet(EmptySet<T> value),
+    @required TResult setExceedsLength(SetExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1321,25 +1325,25 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     assert(setExceedsLength != null);
     return invalidName(this);
   }
-
+  
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult nullInput(NullInput<T> value),
+    TResult invalidDate(InvalidDate<T> value),
+    TResult invalidEmail(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult stringMismatch(StringMismatch<T> value),
+    TResult invalidName(InvalidName<T> value),
+    TResult emptyString(EmptyString<T> value),
+    TResult multiLineString(MultiLineString<T> value),
+    TResult stringExceedsLength(StringExceedsLength<T> value),
+    TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    TResult invalidCoordinate(InvalidCoordinates<T> value),
+    TResult emptySet(EmptySet<T> value),
+    TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidName != null) {
@@ -1422,21 +1426,21 @@ class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
   
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object>({
+    @required TResult nullInput(),
+    @required TResult invalidDate(DateTime failedValue),
+    @required TResult invalidEmail(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult stringMismatch(String failedValue),
+    @required TResult invalidName(String failedValue),
+    @required TResult emptyString(String failedValue),
+    @required TResult multiLineString(String failedValue),
+    @required TResult stringExceedsLength(String failedValue, int maxLength),
+    @required TResult integerOutOfBounds(int failedValue),
+    @required TResult stringWithInvalidCharacters(String failedValue),
+    @required TResult invalidCoordinate(double failedValue),
+    @required TResult emptySet(T failedValue),
+    @required TResult setExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1454,25 +1458,25 @@ class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
     assert(setExceedsLength != null);
     return emptyString(failedValue);
   }
-
+  
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult nullInput(),
+    TResult invalidDate(DateTime failedValue),
+    TResult invalidEmail(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult stringMismatch(String failedValue),
+    TResult invalidName(String failedValue),
+    TResult emptyString(String failedValue),
+    TResult multiLineString(String failedValue),
+    TResult stringExceedsLength(String failedValue, int maxLength),
+    TResult integerOutOfBounds(int failedValue),
+    TResult stringWithInvalidCharacters(String failedValue),
+    TResult invalidCoordinate(double failedValue),
+    TResult emptySet(T failedValue),
+    TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (emptyString != null) {
@@ -1480,24 +1484,24 @@ class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
     }
     return orElse();
   }
-
+  
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult nullInput(NullInput<T> value),
+    @required TResult invalidDate(InvalidDate<T> value),
+    @required TResult invalidEmail(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult stringMismatch(StringMismatch<T> value),
+    @required TResult invalidName(InvalidName<T> value),
+    @required TResult emptyString(EmptyString<T> value),
+    @required TResult multiLineString(MultiLineString<T> value),
+    @required TResult stringExceedsLength(StringExceedsLength<T> value),
+    @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    @required TResult invalidCoordinate(InvalidCoordinates<T> value),
+    @required TResult emptySet(EmptySet<T> value),
+    @required TResult setExceedsLength(SetExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1515,25 +1519,25 @@ class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
     assert(setExceedsLength != null);
     return emptyString(this);
   }
-
+  
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult nullInput(NullInput<T> value),
+    TResult invalidDate(InvalidDate<T> value),
+    TResult invalidEmail(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult stringMismatch(StringMismatch<T> value),
+    TResult invalidName(InvalidName<T> value),
+    TResult emptyString(EmptyString<T> value),
+    TResult multiLineString(MultiLineString<T> value),
+    TResult stringExceedsLength(StringExceedsLength<T> value),
+    TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    TResult invalidCoordinate(InvalidCoordinates<T> value),
+    TResult emptySet(EmptySet<T> value),
+    TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (emptyString != null) {
@@ -1618,21 +1622,21 @@ class _$MultiLineString<T>
   
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object>({
+    @required TResult nullInput(),
+    @required TResult invalidDate(DateTime failedValue),
+    @required TResult invalidEmail(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult stringMismatch(String failedValue),
+    @required TResult invalidName(String failedValue),
+    @required TResult emptyString(String failedValue),
+    @required TResult multiLineString(String failedValue),
+    @required TResult stringExceedsLength(String failedValue, int maxLength),
+    @required TResult integerOutOfBounds(int failedValue),
+    @required TResult stringWithInvalidCharacters(String failedValue),
+    @required TResult invalidCoordinate(double failedValue),
+    @required TResult emptySet(T failedValue),
+    @required TResult setExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1650,25 +1654,25 @@ class _$MultiLineString<T>
     assert(setExceedsLength != null);
     return multiLineString(failedValue);
   }
-
+  
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult nullInput(),
+    TResult invalidDate(DateTime failedValue),
+    TResult invalidEmail(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult stringMismatch(String failedValue),
+    TResult invalidName(String failedValue),
+    TResult emptyString(String failedValue),
+    TResult multiLineString(String failedValue),
+    TResult stringExceedsLength(String failedValue, int maxLength),
+    TResult integerOutOfBounds(int failedValue),
+    TResult stringWithInvalidCharacters(String failedValue),
+    TResult invalidCoordinate(double failedValue),
+    TResult emptySet(T failedValue),
+    TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (multiLineString != null) {
@@ -1676,24 +1680,24 @@ class _$MultiLineString<T>
     }
     return orElse();
   }
-
+  
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult nullInput(NullInput<T> value),
+    @required TResult invalidDate(InvalidDate<T> value),
+    @required TResult invalidEmail(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult stringMismatch(StringMismatch<T> value),
+    @required TResult invalidName(InvalidName<T> value),
+    @required TResult emptyString(EmptyString<T> value),
+    @required TResult multiLineString(MultiLineString<T> value),
+    @required TResult stringExceedsLength(StringExceedsLength<T> value),
+    @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    @required TResult invalidCoordinate(InvalidCoordinates<T> value),
+    @required TResult emptySet(EmptySet<T> value),
+    @required TResult setExceedsLength(SetExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1711,25 +1715,25 @@ class _$MultiLineString<T>
     assert(setExceedsLength != null);
     return multiLineString(this);
   }
-
+  
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult nullInput(NullInput<T> value),
+    TResult invalidDate(InvalidDate<T> value),
+    TResult invalidEmail(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult stringMismatch(StringMismatch<T> value),
+    TResult invalidName(InvalidName<T> value),
+    TResult emptyString(EmptyString<T> value),
+    TResult multiLineString(MultiLineString<T> value),
+    TResult stringExceedsLength(StringExceedsLength<T> value),
+    TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    TResult invalidCoordinate(InvalidCoordinates<T> value),
+    TResult emptySet(EmptySet<T> value),
+    TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (multiLineString != null) {
@@ -1828,21 +1832,21 @@ class _$StringExceedsLength<T>
   
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object>({
+    @required TResult nullInput(),
+    @required TResult invalidDate(DateTime failedValue),
+    @required TResult invalidEmail(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult stringMismatch(String failedValue),
+    @required TResult invalidName(String failedValue),
+    @required TResult emptyString(String failedValue),
+    @required TResult multiLineString(String failedValue),
+    @required TResult stringExceedsLength(String failedValue, int maxLength),
+    @required TResult integerOutOfBounds(int failedValue),
+    @required TResult stringWithInvalidCharacters(String failedValue),
+    @required TResult invalidCoordinate(double failedValue),
+    @required TResult emptySet(T failedValue),
+    @required TResult setExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1860,25 +1864,25 @@ class _$StringExceedsLength<T>
     assert(setExceedsLength != null);
     return stringExceedsLength(failedValue, maxLength);
   }
-
+  
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult nullInput(),
+    TResult invalidDate(DateTime failedValue),
+    TResult invalidEmail(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult stringMismatch(String failedValue),
+    TResult invalidName(String failedValue),
+    TResult emptyString(String failedValue),
+    TResult multiLineString(String failedValue),
+    TResult stringExceedsLength(String failedValue, int maxLength),
+    TResult integerOutOfBounds(int failedValue),
+    TResult stringWithInvalidCharacters(String failedValue),
+    TResult invalidCoordinate(double failedValue),
+    TResult emptySet(T failedValue),
+    TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (stringExceedsLength != null) {
@@ -1886,24 +1890,24 @@ class _$StringExceedsLength<T>
     }
     return orElse();
   }
-
+  
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult nullInput(NullInput<T> value),
+    @required TResult invalidDate(InvalidDate<T> value),
+    @required TResult invalidEmail(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult stringMismatch(StringMismatch<T> value),
+    @required TResult invalidName(InvalidName<T> value),
+    @required TResult emptyString(EmptyString<T> value),
+    @required TResult multiLineString(MultiLineString<T> value),
+    @required TResult stringExceedsLength(StringExceedsLength<T> value),
+    @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    @required TResult invalidCoordinate(InvalidCoordinates<T> value),
+    @required TResult emptySet(EmptySet<T> value),
+    @required TResult setExceedsLength(SetExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1921,25 +1925,25 @@ class _$StringExceedsLength<T>
     assert(setExceedsLength != null);
     return stringExceedsLength(this);
   }
-
+  
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult nullInput(NullInput<T> value),
+    TResult invalidDate(InvalidDate<T> value),
+    TResult invalidEmail(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult stringMismatch(StringMismatch<T> value),
+    TResult invalidName(InvalidName<T> value),
+    TResult emptyString(EmptyString<T> value),
+    TResult multiLineString(MultiLineString<T> value),
+    TResult stringExceedsLength(StringExceedsLength<T> value),
+    TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    TResult invalidCoordinate(InvalidCoordinates<T> value),
+    TResult emptySet(EmptySet<T> value),
+    TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (stringExceedsLength != null) {
@@ -2029,21 +2033,21 @@ class _$IntegerOutOfBounds<T>
   
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object>({
+    @required TResult nullInput(),
+    @required TResult invalidDate(DateTime failedValue),
+    @required TResult invalidEmail(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult stringMismatch(String failedValue),
+    @required TResult invalidName(String failedValue),
+    @required TResult emptyString(String failedValue),
+    @required TResult multiLineString(String failedValue),
+    @required TResult stringExceedsLength(String failedValue, int maxLength),
+    @required TResult integerOutOfBounds(int failedValue),
+    @required TResult stringWithInvalidCharacters(String failedValue),
+    @required TResult invalidCoordinate(double failedValue),
+    @required TResult emptySet(T failedValue),
+    @required TResult setExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -2061,25 +2065,25 @@ class _$IntegerOutOfBounds<T>
     assert(setExceedsLength != null);
     return integerOutOfBounds(failedValue);
   }
-
+  
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult nullInput(),
+    TResult invalidDate(DateTime failedValue),
+    TResult invalidEmail(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult stringMismatch(String failedValue),
+    TResult invalidName(String failedValue),
+    TResult emptyString(String failedValue),
+    TResult multiLineString(String failedValue),
+    TResult stringExceedsLength(String failedValue, int maxLength),
+    TResult integerOutOfBounds(int failedValue),
+    TResult stringWithInvalidCharacters(String failedValue),
+    TResult invalidCoordinate(double failedValue),
+    TResult emptySet(T failedValue),
+    TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (integerOutOfBounds != null) {
@@ -2087,24 +2091,24 @@ class _$IntegerOutOfBounds<T>
     }
     return orElse();
   }
-
+  
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult nullInput(NullInput<T> value),
+    @required TResult invalidDate(InvalidDate<T> value),
+    @required TResult invalidEmail(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult stringMismatch(StringMismatch<T> value),
+    @required TResult invalidName(InvalidName<T> value),
+    @required TResult emptyString(EmptyString<T> value),
+    @required TResult multiLineString(MultiLineString<T> value),
+    @required TResult stringExceedsLength(StringExceedsLength<T> value),
+    @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    @required TResult invalidCoordinate(InvalidCoordinates<T> value),
+    @required TResult emptySet(EmptySet<T> value),
+    @required TResult setExceedsLength(SetExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -2122,25 +2126,25 @@ class _$IntegerOutOfBounds<T>
     assert(setExceedsLength != null);
     return integerOutOfBounds(this);
   }
-
+  
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult nullInput(NullInput<T> value),
+    TResult invalidDate(InvalidDate<T> value),
+    TResult invalidEmail(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult stringMismatch(StringMismatch<T> value),
+    TResult invalidName(InvalidName<T> value),
+    TResult emptyString(EmptyString<T> value),
+    TResult multiLineString(MultiLineString<T> value),
+    TResult stringExceedsLength(StringExceedsLength<T> value),
+    TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    TResult invalidCoordinate(InvalidCoordinates<T> value),
+    TResult emptySet(EmptySet<T> value),
+    TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (integerOutOfBounds != null) {
@@ -2233,21 +2237,21 @@ class _$StringWithInvalidCharacters<T>
   
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object>({
+    @required TResult nullInput(),
+    @required TResult invalidDate(DateTime failedValue),
+    @required TResult invalidEmail(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult stringMismatch(String failedValue),
+    @required TResult invalidName(String failedValue),
+    @required TResult emptyString(String failedValue),
+    @required TResult multiLineString(String failedValue),
+    @required TResult stringExceedsLength(String failedValue, int maxLength),
+    @required TResult integerOutOfBounds(int failedValue),
+    @required TResult stringWithInvalidCharacters(String failedValue),
+    @required TResult invalidCoordinate(double failedValue),
+    @required TResult emptySet(T failedValue),
+    @required TResult setExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -2265,25 +2269,25 @@ class _$StringWithInvalidCharacters<T>
     assert(setExceedsLength != null);
     return stringWithInvalidCharacters(failedValue);
   }
-
+  
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult nullInput(),
+    TResult invalidDate(DateTime failedValue),
+    TResult invalidEmail(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult stringMismatch(String failedValue),
+    TResult invalidName(String failedValue),
+    TResult emptyString(String failedValue),
+    TResult multiLineString(String failedValue),
+    TResult stringExceedsLength(String failedValue, int maxLength),
+    TResult integerOutOfBounds(int failedValue),
+    TResult stringWithInvalidCharacters(String failedValue),
+    TResult invalidCoordinate(double failedValue),
+    TResult emptySet(T failedValue),
+    TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (stringWithInvalidCharacters != null) {
@@ -2291,24 +2295,24 @@ class _$StringWithInvalidCharacters<T>
     }
     return orElse();
   }
-
+  
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult nullInput(NullInput<T> value),
+    @required TResult invalidDate(InvalidDate<T> value),
+    @required TResult invalidEmail(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult stringMismatch(StringMismatch<T> value),
+    @required TResult invalidName(InvalidName<T> value),
+    @required TResult emptyString(EmptyString<T> value),
+    @required TResult multiLineString(MultiLineString<T> value),
+    @required TResult stringExceedsLength(StringExceedsLength<T> value),
+    @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    @required TResult invalidCoordinate(InvalidCoordinates<T> value),
+    @required TResult emptySet(EmptySet<T> value),
+    @required TResult setExceedsLength(SetExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -2326,25 +2330,25 @@ class _$StringWithInvalidCharacters<T>
     assert(setExceedsLength != null);
     return stringWithInvalidCharacters(this);
   }
-
+  
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult nullInput(NullInput<T> value),
+    TResult invalidDate(InvalidDate<T> value),
+    TResult invalidEmail(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult stringMismatch(StringMismatch<T> value),
+    TResult invalidName(InvalidName<T> value),
+    TResult emptyString(EmptyString<T> value),
+    TResult multiLineString(MultiLineString<T> value),
+    TResult stringExceedsLength(StringExceedsLength<T> value),
+    TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    TResult invalidCoordinate(InvalidCoordinates<T> value),
+    TResult emptySet(EmptySet<T> value),
+    TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (stringWithInvalidCharacters != null) {
@@ -2433,21 +2437,21 @@ class _$InvalidCoordinates<T>
   
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object>({
+    @required TResult nullInput(),
+    @required TResult invalidDate(DateTime failedValue),
+    @required TResult invalidEmail(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult stringMismatch(String failedValue),
+    @required TResult invalidName(String failedValue),
+    @required TResult emptyString(String failedValue),
+    @required TResult multiLineString(String failedValue),
+    @required TResult stringExceedsLength(String failedValue, int maxLength),
+    @required TResult integerOutOfBounds(int failedValue),
+    @required TResult stringWithInvalidCharacters(String failedValue),
+    @required TResult invalidCoordinate(double failedValue),
+    @required TResult emptySet(T failedValue),
+    @required TResult setExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -2465,25 +2469,25 @@ class _$InvalidCoordinates<T>
     assert(setExceedsLength != null);
     return invalidCoordinate(failedValue);
   }
-
+  
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult nullInput(),
+    TResult invalidDate(DateTime failedValue),
+    TResult invalidEmail(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult stringMismatch(String failedValue),
+    TResult invalidName(String failedValue),
+    TResult emptyString(String failedValue),
+    TResult multiLineString(String failedValue),
+    TResult stringExceedsLength(String failedValue, int maxLength),
+    TResult integerOutOfBounds(int failedValue),
+    TResult stringWithInvalidCharacters(String failedValue),
+    TResult invalidCoordinate(double failedValue),
+    TResult emptySet(T failedValue),
+    TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidCoordinate != null) {
@@ -2491,24 +2495,24 @@ class _$InvalidCoordinates<T>
     }
     return orElse();
   }
-
+  
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult nullInput(NullInput<T> value),
+    @required TResult invalidDate(InvalidDate<T> value),
+    @required TResult invalidEmail(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult stringMismatch(StringMismatch<T> value),
+    @required TResult invalidName(InvalidName<T> value),
+    @required TResult emptyString(EmptyString<T> value),
+    @required TResult multiLineString(MultiLineString<T> value),
+    @required TResult stringExceedsLength(StringExceedsLength<T> value),
+    @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    @required TResult invalidCoordinate(InvalidCoordinates<T> value),
+    @required TResult emptySet(EmptySet<T> value),
+    @required TResult setExceedsLength(SetExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -2526,25 +2530,25 @@ class _$InvalidCoordinates<T>
     assert(setExceedsLength != null);
     return invalidCoordinate(this);
   }
-
+  
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult nullInput(NullInput<T> value),
+    TResult invalidDate(InvalidDate<T> value),
+    TResult invalidEmail(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult stringMismatch(StringMismatch<T> value),
+    TResult invalidName(InvalidName<T> value),
+    TResult emptyString(EmptyString<T> value),
+    TResult multiLineString(MultiLineString<T> value),
+    TResult stringExceedsLength(StringExceedsLength<T> value),
+    TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    TResult invalidCoordinate(InvalidCoordinates<T> value),
+    TResult emptySet(EmptySet<T> value),
+    TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidCoordinate != null) {
@@ -2628,21 +2632,21 @@ class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object>({
+    @required TResult nullInput(),
+    @required TResult invalidDate(DateTime failedValue),
+    @required TResult invalidEmail(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult stringMismatch(String failedValue),
+    @required TResult invalidName(String failedValue),
+    @required TResult emptyString(String failedValue),
+    @required TResult multiLineString(String failedValue),
+    @required TResult stringExceedsLength(String failedValue, int maxLength),
+    @required TResult integerOutOfBounds(int failedValue),
+    @required TResult stringWithInvalidCharacters(String failedValue),
+    @required TResult invalidCoordinate(double failedValue),
+    @required TResult emptySet(T failedValue),
+    @required TResult setExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -2663,22 +2667,22 @@ class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult nullInput(),
+    TResult invalidDate(DateTime failedValue),
+    TResult invalidEmail(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult stringMismatch(String failedValue),
+    TResult invalidName(String failedValue),
+    TResult emptyString(String failedValue),
+    TResult multiLineString(String failedValue),
+    TResult stringExceedsLength(String failedValue, int maxLength),
+    TResult integerOutOfBounds(int failedValue),
+    TResult stringWithInvalidCharacters(String failedValue),
+    TResult invalidCoordinate(double failedValue),
+    TResult emptySet(T failedValue),
+    TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (emptySet != null) {
@@ -2689,21 +2693,21 @@ class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult nullInput(NullInput<T> value),
+    @required TResult invalidDate(InvalidDate<T> value),
+    @required TResult invalidEmail(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult stringMismatch(StringMismatch<T> value),
+    @required TResult invalidName(InvalidName<T> value),
+    @required TResult emptyString(EmptyString<T> value),
+    @required TResult multiLineString(MultiLineString<T> value),
+    @required TResult stringExceedsLength(StringExceedsLength<T> value),
+    @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    @required TResult invalidCoordinate(InvalidCoordinates<T> value),
+    @required TResult emptySet(EmptySet<T> value),
+    @required TResult setExceedsLength(SetExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -2724,22 +2728,22 @@ class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult nullInput(NullInput<T> value),
+    TResult invalidDate(InvalidDate<T> value),
+    TResult invalidEmail(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult stringMismatch(StringMismatch<T> value),
+    TResult invalidName(InvalidName<T> value),
+    TResult emptyString(EmptyString<T> value),
+    TResult multiLineString(MultiLineString<T> value),
+    TResult stringExceedsLength(StringExceedsLength<T> value),
+    TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    TResult invalidCoordinate(InvalidCoordinates<T> value),
+    TResult emptySet(EmptySet<T> value),
+    TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (emptySet != null) {
@@ -2834,21 +2838,21 @@ class _$SetExceedsLength<T>
   
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result nullInput(),
-    @required Result invalidDate(DateTime failedValue),
-    @required Result invalidEmail(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result stringMismatch(String failedValue),
-    @required Result invalidName(String failedValue),
-    @required Result emptyString(String failedValue),
-    @required Result multiLineString(String failedValue),
-    @required Result stringExceedsLength(String failedValue, int maxLength),
-    @required Result integerOutOfBounds(int failedValue),
-    @required Result stringWithInvalidCharacters(String failedValue),
-    @required Result invalidCoordinate(double failedValue),
-    @required Result emptySet(T failedValue),
-    @required Result setExceedsLength(T failedValue, int maxLength),
+  TResult when<TResult extends Object>({
+    @required TResult nullInput(),
+    @required TResult invalidDate(DateTime failedValue),
+    @required TResult invalidEmail(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult stringMismatch(String failedValue),
+    @required TResult invalidName(String failedValue),
+    @required TResult emptyString(String failedValue),
+    @required TResult multiLineString(String failedValue),
+    @required TResult stringExceedsLength(String failedValue, int maxLength),
+    @required TResult integerOutOfBounds(int failedValue),
+    @required TResult stringWithInvalidCharacters(String failedValue),
+    @required TResult invalidCoordinate(double failedValue),
+    @required TResult emptySet(T failedValue),
+    @required TResult setExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -2866,25 +2870,25 @@ class _$SetExceedsLength<T>
     assert(setExceedsLength != null);
     return setExceedsLength(failedValue, maxLength);
   }
-
+  
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result nullInput(),
-    Result invalidDate(DateTime failedValue),
-    Result invalidEmail(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result stringMismatch(String failedValue),
-    Result invalidName(String failedValue),
-    Result emptyString(String failedValue),
-    Result multiLineString(String failedValue),
-    Result stringExceedsLength(String failedValue, int maxLength),
-    Result integerOutOfBounds(int failedValue),
-    Result stringWithInvalidCharacters(String failedValue),
-    Result invalidCoordinate(double failedValue),
-    Result emptySet(T failedValue),
-    Result setExceedsLength(T failedValue, int maxLength),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult nullInput(),
+    TResult invalidDate(DateTime failedValue),
+    TResult invalidEmail(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult stringMismatch(String failedValue),
+    TResult invalidName(String failedValue),
+    TResult emptyString(String failedValue),
+    TResult multiLineString(String failedValue),
+    TResult stringExceedsLength(String failedValue, int maxLength),
+    TResult integerOutOfBounds(int failedValue),
+    TResult stringWithInvalidCharacters(String failedValue),
+    TResult invalidCoordinate(double failedValue),
+    TResult emptySet(T failedValue),
+    TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (setExceedsLength != null) {
@@ -2892,24 +2896,24 @@ class _$SetExceedsLength<T>
     }
     return orElse();
   }
-
+  
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result nullInput(NullInput<T> value),
-    @required Result invalidDate(InvalidDate<T> value),
-    @required Result invalidEmail(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result stringMismatch(StringMismatch<T> value),
-    @required Result invalidName(InvalidName<T> value),
-    @required Result emptyString(EmptyString<T> value),
-    @required Result multiLineString(MultiLineString<T> value),
-    @required Result stringExceedsLength(StringExceedsLength<T> value),
-    @required Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    @required Result invalidCoordinate(InvalidCoordinates<T> value),
-    @required Result emptySet(EmptySet<T> value),
-    @required Result setExceedsLength(SetExceedsLength<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult nullInput(NullInput<T> value),
+    @required TResult invalidDate(InvalidDate<T> value),
+    @required TResult invalidEmail(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult stringMismatch(StringMismatch<T> value),
+    @required TResult invalidName(InvalidName<T> value),
+    @required TResult emptyString(EmptyString<T> value),
+    @required TResult multiLineString(MultiLineString<T> value),
+    @required TResult stringExceedsLength(StringExceedsLength<T> value),
+    @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    @required TResult invalidCoordinate(InvalidCoordinates<T> value),
+    @required TResult emptySet(EmptySet<T> value),
+    @required TResult setExceedsLength(SetExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -2927,25 +2931,25 @@ class _$SetExceedsLength<T>
     assert(setExceedsLength != null);
     return setExceedsLength(this);
   }
-
+  
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result nullInput(NullInput<T> value),
-    Result invalidDate(InvalidDate<T> value),
-    Result invalidEmail(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result stringMismatch(StringMismatch<T> value),
-    Result invalidName(InvalidName<T> value),
-    Result emptyString(EmptyString<T> value),
-    Result multiLineString(MultiLineString<T> value),
-    Result stringExceedsLength(StringExceedsLength<T> value),
-    Result integerOutOfBounds(IntegerOutOfBounds<T> value),
-    Result stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
-    Result invalidCoordinate(InvalidCoordinates<T> value),
-    Result emptySet(EmptySet<T> value),
-    Result setExceedsLength(SetExceedsLength<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult nullInput(NullInput<T> value),
+    TResult invalidDate(InvalidDate<T> value),
+    TResult invalidEmail(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult stringMismatch(StringMismatch<T> value),
+    TResult invalidName(InvalidName<T> value),
+    TResult emptyString(EmptyString<T> value),
+    TResult multiLineString(MultiLineString<T> value),
+    TResult stringExceedsLength(StringExceedsLength<T> value),
+    TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    TResult invalidCoordinate(InvalidCoordinates<T> value),
+    TResult emptySet(EmptySet<T> value),
+    TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (setExceedsLength != null) {

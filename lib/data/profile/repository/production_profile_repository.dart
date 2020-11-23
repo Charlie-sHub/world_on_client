@@ -94,15 +94,15 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   Future<Either<Failure, Unit>> editUser(User user) async {
     try {
       user.imageFileOption.fold(
-          () async {
+        () async {
           final _jsonUser = UserDto.fromDomain(user).toJson();
           await _firestore.userCollection
-            .doc(
-            user.id.getOrCrash(),
-          )
-            .update(_jsonUser);
+              .doc(
+                user.id.getOrCrash(),
+              )
+              .update(_jsonUser);
         },
-          (_file) async {
+        (_file) async {
           final _imageUrl = await getIt<CloudStorageService>().uploadFileImage(
             imageToUpload: _file,
             folder: StorageFolder.users,
@@ -157,6 +157,10 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           .where(
             "id",
             whereIn: _userDto.blockedUsersIds.toList(),
+          ) // TODO: Should order by block date
+          .orderBy(
+            "creationDate",
+            descending: true,
           )
           .snapshots()
           .map(
@@ -165,15 +169,24 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
             ),
           )
           .map(
-            (users) => right<Failure, KtList<User>>(
+        (users) {
+          if (users.isNotEmpty) {
+            return right<Failure, KtList<User>>(
               users.toImmutableList(),
-            ),
-          )
-          .onErrorReturnWith(
-            (error) => left(
-              onError(error),
-            ),
-          );
+            );
+          } else {
+            return left<Failure, KtList<User>>(
+              const Failure.coreData(
+                CoreDataFailure.notFoundError(),
+              ),
+            );
+          }
+        },
+      ).onErrorReturnWith(
+        (error) => left(
+          onError(error),
+        ),
+      );
     } else {
       yield* Stream.value(
         left(
@@ -194,6 +207,10 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           .where(
             "id",
             whereIn: _userDto.followedUsersIds.toList(),
+          ) // TODO: Should order by follow date
+          .orderBy(
+            "creationDate",
+            descending: true,
           )
           .snapshots()
           .map(
@@ -202,15 +219,24 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
             ),
           )
           .map(
-            (users) => right<Failure, KtList<User>>(
+        (users) {
+          if (users.isNotEmpty) {
+            return right<Failure, KtList<User>>(
               users.toImmutableList(),
-            ),
-          )
-          .onErrorReturnWith(
-            (error) => left(
-              onError(error),
-            ),
-          );
+            );
+          } else {
+            return left<Failure, KtList<User>>(
+              const Failure.coreData(
+                CoreDataFailure.notFoundError(),
+              ),
+            );
+          }
+        },
+      ).onErrorReturnWith(
+        (error) => left(
+          onError(error),
+        ),
+      );
     } else {
       yield* Stream.value(
         left(
@@ -225,47 +251,60 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   @override
   Stream<Either<Failure, KtList<User>>> watchFollowingUsers(UniqueId id) async* {
     yield* _firestore.userCollection
-      .where(
-      "followedUsersIds",
-      arrayContains: id.getOrCrash(),
-    )
-      .snapshots()
-      .map(
-        (snapshot) =>
-        snapshot.docs.map(
+        .where(
+          "followedUsersIds",
+          arrayContains: id.getOrCrash(),
+        ) // TODO: Should order by follow date
+        .orderBy(
+          "creationDate",
+          descending: true,
+        )
+        .snapshots()
+        .map(
+          (snapshot) => snapshot.docs.map(
             (document) => UserDto.fromFirestore(document).toDomain(),
-        ),
-    )
-      .map(
-        (users) =>
-        right<Failure, KtList<User>>(
-          users.toImmutableList(),
-        ),
-    )
-      .onErrorReturnWith(
-        (error) =>
-        left(
-          onError(error),
-        ),
+          ),
+        )
+        .map(
+      (users) {
+        if (users.isNotEmpty) {
+          return right<Failure, KtList<User>>(
+            users.toImmutableList(),
+          );
+        } else {
+          return left<Failure, KtList<User>>(
+            const Failure.coreData(
+              CoreDataFailure.notFoundError(),
+            ),
+          );
+        }
+      },
+    ).onErrorReturnWith(
+      (error) => left(
+        onError(error),
+      ),
     );
   }
 
   @override
   Stream<Either<Failure, KtList<Experience>>> watchExperiencesCreated(UniqueId id) async* {
     yield* _firestore.experienceCollection
-      .where(
-      "creatorId",
-      isEqualTo: id.getOrCrash(),
-    )
-      .snapshots()
-      .map(
-        (snapshot) =>
-        snapshot.docs.map(
+        .where(
+          "creatorId",
+          isEqualTo: id.getOrCrash(),
+        )
+        .orderBy(
+          "creationDate",
+          descending: true,
+        )
+        .snapshots()
+        .map(
+          (snapshot) => snapshot.docs.map(
             (document) => ExperienceDto.fromFirestore(document).toDomain(),
-        ),
-    )
-      .map(
-        (experiences) {
+          ),
+        )
+        .map(
+      (experiences) {
         if (experiences.isNotEmpty) {
           return right<Failure, KtList<Experience>>(
             experiences.toImmutableList(),
@@ -279,10 +318,9 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         }
       },
     ).onErrorReturnWith(
-        (error) =>
-        left(
-          onError(error),
-        ),
+      (error) => left(
+        onError(error),
+      ),
     );
   }
 
@@ -292,28 +330,38 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     final _userDto = UserDto.fromFirestore(_userDocument);
     if (_userDto.experiencesDoneIds.isNotEmpty) {
       yield* _firestore.experienceCollection
-        .where(
-        "id",
-        whereIn: _userDto.experiencesDoneIds.toList(),
-      )
-        .snapshots()
-        .map(
-          (snapshot) =>
-          snapshot.docs.map(
+          .where(
+            "id",
+            whereIn: _userDto.experiencesDoneIds.toList(),
+          ) // TODO: Should order by done date
+          .orderBy(
+            "creationDate",
+            descending: true,
+          )
+          .snapshots()
+          .map(
+            (snapshot) => snapshot.docs.map(
               (document) => ExperienceDto.fromFirestore(document).toDomain(),
-          ),
-      )
-        .map(
-          (experiences) =>
-          right<Failure, KtList<Experience>>(
-            experiences.toImmutableList(),
-          ),
-      )
-        .onErrorReturnWith(
-          (error) =>
-          left(
-            onError(error),
-          ),
+            ),
+          )
+          .map(
+        (experiences) {
+          if (experiences.isNotEmpty) {
+            return right<Failure, KtList<Experience>>(
+              experiences.toImmutableList(),
+            );
+          } else {
+            return left<Failure, KtList<Experience>>(
+              const Failure.coreData(
+                CoreDataFailure.notFoundError(),
+              ),
+            );
+          }
+        },
+      ).onErrorReturnWith(
+        (error) => left(
+          onError(error),
+        ),
       );
     } else {
       yield* Stream.value(
@@ -332,28 +380,38 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     final _userDto = UserDto.fromFirestore(_userDocument);
     if (_userDto.experiencesLikedIds.isNotEmpty) {
       yield* _firestore.experienceCollection
-        .where(
-        "id",
-        whereIn: _userDto.experiencesLikedIds.toList(),
-      )
-        .snapshots()
-        .map(
-          (snapshot) =>
-          snapshot.docs.map(
+          .where(
+            "id",
+            whereIn: _userDto.experiencesLikedIds.toList(),
+          ) // TODO: Should order by like date
+          .orderBy(
+            "creationDate",
+            descending: true,
+          )
+          .snapshots()
+          .map(
+            (snapshot) => snapshot.docs.map(
               (document) => ExperienceDto.fromFirestore(document).toDomain(),
-          ),
-      )
-        .map(
-          (experiences) =>
-          right<Failure, KtList<Experience>>(
-            experiences.toImmutableList(),
-          ),
-      )
-        .onErrorReturnWith(
-          (error) =>
-          left(
-            onError(error),
-          ),
+            ),
+          )
+          .map(
+        (experiences) {
+          if (experiences.isNotEmpty) {
+            return right<Failure, KtList<Experience>>(
+              experiences.toImmutableList(),
+            );
+          } else {
+            return left<Failure, KtList<Experience>>(
+              const Failure.coreData(
+                CoreDataFailure.notFoundError(),
+              ),
+            );
+          }
+        },
+      ).onErrorReturnWith(
+        (error) => left(
+          onError(error),
+        ),
       );
     } else {
       yield* Stream.value(
@@ -372,28 +430,38 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     final _userDto = UserDto.fromFirestore(_userDocument);
     if (_userDto.achievementsIds.isNotEmpty) {
       yield* _firestore.achievementCollection
-        .where(
-        "id",
-        whereIn: _userDto.achievementsIds.toList(),
-      )
-        .snapshots()
-        .map(
-          (snapshot) =>
-          snapshot.docs.map(
+          .where(
+            "id",
+            whereIn: _userDto.achievementsIds.toList(),
+          ) // TODO: Should order by awarding date
+          .orderBy(
+            "creationDate",
+            descending: true,
+          )
+          .snapshots()
+          .map(
+            (snapshot) => snapshot.docs.map(
               (document) => AchievementDto.fromFirestore(document).toDomain(),
-          ),
-      )
-        .map(
-          (achievements) =>
-          right<Failure, KtList<Achievement>>(
-            achievements.toImmutableList(),
-          ),
-      )
-        .onErrorReturnWith(
-          (error) =>
-          left(
-            onError(error),
-          ),
+            ),
+          )
+          .map(
+        (achievements) {
+          if (achievements.isNotEmpty) {
+            return right<Failure, KtList<Achievement>>(
+              achievements.toImmutableList(),
+            );
+          } else {
+            return left<Failure, KtList<Achievement>>(
+              const Failure.coreData(
+                CoreDataFailure.notFoundError(),
+              ),
+            );
+          }
+        },
+      ).onErrorReturnWith(
+        (error) => left(
+          onError(error),
+        ),
       );
     } else {
       yield* Stream.value(
@@ -412,28 +480,38 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     final _userDto = UserDto.fromFirestore(_userDocument);
     if (_userDto.interestsIds.isNotEmpty) {
       yield* _firestore.tagCollection
-        .where(
-        "id",
-        whereIn: _userDto.interestsIds.toList(),
-      )
-        .snapshots()
-        .map(
-          (snapshot) =>
-          snapshot.docs.map(
+          .where(
+            "id",
+            whereIn: _userDto.interestsIds.toList(),
+          ) // TODO: Should order by addition date
+          .orderBy(
+            "creationDate",
+            descending: true,
+          )
+          .snapshots()
+          .map(
+            (snapshot) => snapshot.docs.map(
               (document) => TagDto.fromFirestore(document).toDomain(),
-          ),
-      )
-        .map(
-          (tags) =>
-          right<Failure, KtList<Tag>>(
-            tags.toImmutableList(),
-          ),
-      )
-        .onErrorReturnWith(
-          (error) =>
-          left(
-            onError(error),
-          ),
+            ),
+          )
+          .map(
+        (tags) {
+          if (tags.isNotEmpty) {
+            return right<Failure, KtList<Tag>>(
+              tags.toImmutableList(),
+            );
+          } else {
+            return left<Failure, KtList<Tag>>(
+              const Failure.coreData(
+                CoreDataFailure.notFoundError(),
+              ),
+            );
+          }
+        },
+      ).onErrorReturnWith(
+        (error) => left(
+          onError(error),
+        ),
       );
     } else {
       yield* Stream.value(

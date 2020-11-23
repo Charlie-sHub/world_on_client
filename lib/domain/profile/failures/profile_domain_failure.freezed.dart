@@ -31,26 +31,29 @@ const $ProfileDomainFailure = _$ProfileDomainFailureTearOff();
 /// @nodoc
 mixin _$ProfileDomainFailure<T> {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result followItself(),
-    @required Result blockItself(),
+  TResult when<TResult extends Object>({
+    @required TResult followItself(),
+    @required TResult blockItself(),
   });
+
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result followItself(),
-    Result blockItself(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult followItself(),
+    TResult blockItself(),
+    @required TResult orElse(),
   });
+
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result followItself(FollowItself<T> value),
-    @required Result blockItself(BlockItself<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult followItself(FollowItself<T> value),
+    @required TResult blockItself(BlockItself<T> value),
   });
+
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result followItself(FollowItself<T> value),
-    Result blockItself(BlockItself<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult followItself(FollowItself<T> value),
+    TResult blockItself(BlockItself<T> value),
+    @required TResult orElse(),
   });
 }
 
@@ -60,28 +63,24 @@ abstract class $ProfileDomainFailureCopyWith<T, $Res> {
 }
 
 /// @nodoc
-class _$ProfileDomainFailureCopyWithImpl<T, $Res>
-  implements $ProfileDomainFailureCopyWith<T, $Res> {
+class _$ProfileDomainFailureCopyWithImpl<T, $Res> implements $ProfileDomainFailureCopyWith<T, $Res> {
   _$ProfileDomainFailureCopyWithImpl(this._value, this._then);
-  
+
   final ProfileDomainFailure<T> _value;
-  
+
   // ignore: unused_field
   final $Res Function(ProfileDomainFailure<T>) _then;
 }
 
 /// @nodoc
 abstract class $FollowItselfCopyWith<T, $Res> {
-  factory $FollowItselfCopyWith(FollowItself<T> value, $Res Function(FollowItself<T>) then) =
-  _$FollowItselfCopyWithImpl<T, $Res>;
+  factory $FollowItselfCopyWith(FollowItself<T> value, $Res Function(FollowItself<T>) then) = _$FollowItselfCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class _$FollowItselfCopyWithImpl<T, $Res> extends _$ProfileDomainFailureCopyWithImpl<T, $Res>
-  implements $FollowItselfCopyWith<T, $Res> {
-  _$FollowItselfCopyWithImpl(FollowItself<T> _value, $Res Function(FollowItself<T>) _then)
-    : super(_value, (v) => _then(v as FollowItself<T>));
-  
+class _$FollowItselfCopyWithImpl<T, $Res> extends _$ProfileDomainFailureCopyWithImpl<T, $Res> implements $FollowItselfCopyWith<T, $Res> {
+  _$FollowItselfCopyWithImpl(FollowItself<T> _value, $Res Function(FollowItself<T>) _then) : super(_value, (v) => _then(v as FollowItself<T>));
+
   @override
   FollowItself<T> get _value => super._value as FollowItself<T>;
 }
@@ -105,9 +104,9 @@ class _$FollowItself<T> implements FollowItself<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result followItself(),
-    @required Result blockItself(),
+  TResult when<TResult extends Object>({
+    @required TResult followItself(),
+    @required TResult blockItself(),
   }) {
     assert(followItself != null);
     assert(blockItself != null);
@@ -116,10 +115,10 @@ class _$FollowItself<T> implements FollowItself<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result followItself(),
-    Result blockItself(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult followItself(),
+    TResult blockItself(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (followItself != null) {
@@ -130,9 +129,9 @@ class _$FollowItself<T> implements FollowItself<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result followItself(FollowItself<T> value),
-    @required Result blockItself(BlockItself<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult followItself(FollowItself<T> value),
+    @required TResult blockItself(BlockItself<T> value),
   }) {
     assert(followItself != null);
     assert(blockItself != null);
@@ -141,10 +140,10 @@ class _$FollowItself<T> implements FollowItself<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result followItself(FollowItself<T> value),
-    Result blockItself(BlockItself<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult followItself(FollowItself<T> value),
+    TResult blockItself(BlockItself<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (followItself != null) {
@@ -160,16 +159,13 @@ abstract class FollowItself<T> implements ProfileDomainFailure<T> {
 
 /// @nodoc
 abstract class $BlockItselfCopyWith<T, $Res> {
-  factory $BlockItselfCopyWith(BlockItself<T> value, $Res Function(BlockItself<T>) then) =
-  _$BlockItselfCopyWithImpl<T, $Res>;
+  factory $BlockItselfCopyWith(BlockItself<T> value, $Res Function(BlockItself<T>) then) = _$BlockItselfCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class _$BlockItselfCopyWithImpl<T, $Res> extends _$ProfileDomainFailureCopyWithImpl<T, $Res>
-  implements $BlockItselfCopyWith<T, $Res> {
-  _$BlockItselfCopyWithImpl(BlockItself<T> _value, $Res Function(BlockItself<T>) _then)
-    : super(_value, (v) => _then(v as BlockItself<T>));
-  
+class _$BlockItselfCopyWithImpl<T, $Res> extends _$ProfileDomainFailureCopyWithImpl<T, $Res> implements $BlockItselfCopyWith<T, $Res> {
+  _$BlockItselfCopyWithImpl(BlockItself<T> _value, $Res Function(BlockItself<T>) _then) : super(_value, (v) => _then(v as BlockItself<T>));
+
   @override
   BlockItself<T> get _value => super._value as BlockItself<T>;
 }
@@ -193,9 +189,9 @@ class _$BlockItself<T> implements BlockItself<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result followItself(),
-    @required Result blockItself(),
+  TResult when<TResult extends Object>({
+    @required TResult followItself(),
+    @required TResult blockItself(),
   }) {
     assert(followItself != null);
     assert(blockItself != null);
@@ -204,10 +200,10 @@ class _$BlockItself<T> implements BlockItself<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result followItself(),
-    Result blockItself(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult followItself(),
+    TResult blockItself(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (blockItself != null) {
@@ -218,9 +214,9 @@ class _$BlockItself<T> implements BlockItself<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result followItself(FollowItself<T> value),
-    @required Result blockItself(BlockItself<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult followItself(FollowItself<T> value),
+    @required TResult blockItself(BlockItself<T> value),
   }) {
     assert(followItself != null);
     assert(blockItself != null);
@@ -229,10 +225,10 @@ class _$BlockItself<T> implements BlockItself<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result followItself(FollowItself<T> value),
-    Result blockItself(BlockItself<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult followItself(FollowItself<T> value),
+    TResult blockItself(BlockItself<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (blockItself != null) {

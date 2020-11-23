@@ -1,8 +1,10 @@
 import 'package:dartz/dartz.dart';
+import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:worldon/application/comments/comment_form/comment_form_bloc.dart';
+import 'package:worldon/application/comments/comment_watcher/comment_watcher_bloc.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/injection.dart';
@@ -29,7 +31,12 @@ class CommentForm extends HookWidget {
           ),
         ),
       child: BlocConsumer<CommentFormBloc, CommentFormState>(
-        listener: (context, state) => null,
+        listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
+        listener: (context, state) => _commentFormListener(
+          state,
+          context,
+          _textEditingController,
+        ),
         builder: (context, state) => Form(
           autovalidateMode: context.bloc<CommentFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
           child: Column(
@@ -79,4 +86,42 @@ class CommentForm extends HookWidget {
       ),
     );
   }
+
+  void _commentFormListener(CommentFormState state, BuildContext context, TextEditingController _textEditingController) => state.failureOrSuccessOption.fold(
+        () => null,
+        (either) => either.fold(
+          (failure) => failure.maybeMap(
+            coreData: (_coreDataFailure) => _coreDataFailure.coreDataFailure.maybeMap(
+              serverError: (failure) => FlushbarHelper.createError(
+                duration: const Duration(seconds: 2),
+                message: failure.errorString,
+              ).show(context),
+              orElse: () => FlushbarHelper.createError(
+                duration: const Duration(seconds: 2),
+                message: "Unknown core data error",
+              ).show(context),
+            ),
+            orElse: () => FlushbarHelper.createError(
+              duration: const Duration(seconds: 2),
+              message: "Unknown error",
+            ).show(context),
+          ),
+          (_) {
+            _textEditingController.clear();
+            context.bloc<CommentFormBloc>().add(
+                  CommentFormEvent.initialized(
+                    commentOption: none(),
+                    experienceId: experienceId,
+                  ),
+                );
+            FlushbarHelper.createSuccess(
+              duration: const Duration(seconds: 2),
+              message: "The Comment was posted",
+            ).show(context);
+            context.bloc<CommentWatcherBloc>().add(
+                  CommentWatcherEvent.watchExperienceCommentsStarted(experienceId),
+                );
+          },
+        ),
+      );
 }

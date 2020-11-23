@@ -26,22 +26,25 @@ const $AuthenticationDataFailure = _$AuthenticationDataFailureTearOff();
 /// @nodoc
 mixin _$AuthenticationDataFailure<T> {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result invalidCredentials(),
+  TResult when<TResult extends Object>({
+    @required TResult invalidCredentials(),
   });
+
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidCredentials(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult invalidCredentials(),
+    @required TResult orElse(),
   });
+
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidCredentials(InvalidCredentials<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult invalidCredentials(InvalidCredentials<T> value),
   });
+
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidCredentials(InvalidCredentials<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult invalidCredentials(InvalidCredentials<T> value),
+    @required TResult orElse(),
   });
 }
 
@@ -51,29 +54,24 @@ abstract class $AuthenticationDataFailureCopyWith<T, $Res> {
 }
 
 /// @nodoc
-class _$AuthenticationDataFailureCopyWithImpl<T, $Res>
-  implements $AuthenticationDataFailureCopyWith<T, $Res> {
+class _$AuthenticationDataFailureCopyWithImpl<T, $Res> implements $AuthenticationDataFailureCopyWith<T, $Res> {
   _$AuthenticationDataFailureCopyWithImpl(this._value, this._then);
-  
+
   final AuthenticationDataFailure<T> _value;
-  
+
   // ignore: unused_field
   final $Res Function(AuthenticationDataFailure<T>) _then;
 }
 
 /// @nodoc
 abstract class $InvalidCredentialsCopyWith<T, $Res> {
-  factory $InvalidCredentialsCopyWith(InvalidCredentials<T> value,
-    $Res Function(InvalidCredentials<T>) then) =
-  _$InvalidCredentialsCopyWithImpl<T, $Res>;
+  factory $InvalidCredentialsCopyWith(InvalidCredentials<T> value, $Res Function(InvalidCredentials<T>) then) = _$InvalidCredentialsCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class _$InvalidCredentialsCopyWithImpl<T, $Res> extends _$AuthenticationDataFailureCopyWithImpl<T, $Res>
-  implements $InvalidCredentialsCopyWith<T, $Res> {
-  _$InvalidCredentialsCopyWithImpl(InvalidCredentials<T> _value, $Res Function(InvalidCredentials<T>) _then)
-    : super(_value, (v) => _then(v as InvalidCredentials<T>));
-  
+class _$InvalidCredentialsCopyWithImpl<T, $Res> extends _$AuthenticationDataFailureCopyWithImpl<T, $Res> implements $InvalidCredentialsCopyWith<T, $Res> {
+  _$InvalidCredentialsCopyWithImpl(InvalidCredentials<T> _value, $Res Function(InvalidCredentials<T>) _then) : super(_value, (v) => _then(v as InvalidCredentials<T>));
+
   @override
   InvalidCredentials<T> get _value => super._value as InvalidCredentials<T>;
 }
@@ -97,8 +95,8 @@ class _$InvalidCredentials<T> implements InvalidCredentials<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result invalidCredentials(),
+  TResult when<TResult extends Object>({
+    @required TResult invalidCredentials(),
   }) {
     assert(invalidCredentials != null);
     return invalidCredentials();
@@ -106,9 +104,9 @@ class _$InvalidCredentials<T> implements InvalidCredentials<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidCredentials(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult invalidCredentials(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidCredentials != null) {
@@ -119,8 +117,8 @@ class _$InvalidCredentials<T> implements InvalidCredentials<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidCredentials(InvalidCredentials<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult invalidCredentials(InvalidCredentials<T> value),
   }) {
     assert(invalidCredentials != null);
     return invalidCredentials(this);
@@ -128,9 +126,9 @@ class _$InvalidCredentials<T> implements InvalidCredentials<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidCredentials(InvalidCredentials<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult invalidCredentials(InvalidCredentials<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidCredentials != null) {

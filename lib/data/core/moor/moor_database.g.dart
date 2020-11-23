@@ -18,20 +18,19 @@ class MoorAchievement extends DataClass implements Insertable<MoorAchievement> {
   final DateTime creationDate;
   final DateTime modificationDate;
   final String creatorId;
+  MoorAchievement({@required this.id,
+    @required this.name,
+    @required this.description,
+    @required this.imageURL,
+    @required this.type,
+    @required this.requisite,
+    @required this.experiencePoints,
+    @required this.creationDate,
+    @required this.modificationDate,
+    @required this.creatorId});
 
-  MoorAchievement(
-      {@required this.id,
-      @required this.name,
-      @required this.description,
-      @required this.imageURL,
-      @required this.type,
-      @required this.requisite,
-      @required this.experiencePoints,
-      @required this.creationDate,
-      @required this.modificationDate,
-      @required this.creatorId});
-
-  factory MoorAchievement.fromData(Map<String, dynamic> data, GeneratedDatabase db, {String prefix}) {
+  factory MoorAchievement.fromData(Map<String, dynamic> data, GeneratedDatabase db,
+    {String prefix}) {
     final effectivePrefix = prefix ?? '';
     final stringType = db.typeSystem.forDartType<String>();
     final intType = db.typeSystem.forDartType<int>();
@@ -39,14 +38,21 @@ class MoorAchievement extends DataClass implements Insertable<MoorAchievement> {
     return MoorAchievement(
       id: stringType.mapFromDatabaseResponse(data['${effectivePrefix}id']),
       name: stringType.mapFromDatabaseResponse(data['${effectivePrefix}name']),
-      description: stringType.mapFromDatabaseResponse(data['${effectivePrefix}description']),
-      imageURL: stringType.mapFromDatabaseResponse(data['${effectivePrefix}image_u_r_l']),
+      description: stringType
+        .mapFromDatabaseResponse(data['${effectivePrefix}description']),
+      imageURL: stringType
+        .mapFromDatabaseResponse(data['${effectivePrefix}image_u_r_l']),
       type: stringType.mapFromDatabaseResponse(data['${effectivePrefix}type']),
-      requisite: intType.mapFromDatabaseResponse(data['${effectivePrefix}requisite']),
-      experiencePoints: intType.mapFromDatabaseResponse(data['${effectivePrefix}experience_points']),
-      creationDate: dateTimeType.mapFromDatabaseResponse(data['${effectivePrefix}creation_date']),
-      modificationDate: dateTimeType.mapFromDatabaseResponse(data['${effectivePrefix}modification_date']),
-      creatorId: stringType.mapFromDatabaseResponse(data['${effectivePrefix}creator_id']),
+      requisite:
+      intType.mapFromDatabaseResponse(data['${effectivePrefix}requisite']),
+      experiencePoints: intType
+        .mapFromDatabaseResponse(data['${effectivePrefix}experience_points']),
+      creationDate: dateTimeType
+        .mapFromDatabaseResponse(data['${effectivePrefix}creation_date']),
+      modificationDate: dateTimeType
+        .mapFromDatabaseResponse(data['${effectivePrefix}modification_date']),
+      creatorId: stringType
+        .mapFromDatabaseResponse(data['${effectivePrefix}creator_id']),
     );
   }
   @override
@@ -89,28 +95,14 @@ class MoorAchievement extends DataClass implements Insertable<MoorAchievement> {
     return MoorAchievementsCompanion(
       id: id == null && nullToAbsent ? const Value.absent() : Value(id),
       name: name == null && nullToAbsent ? const Value.absent() : Value(name),
-      description: description == null && nullToAbsent
-        ? const Value.absent()
-        : Value(description),
-      imageURL: imageURL == null && nullToAbsent
-        ? const Value.absent()
-        : Value(imageURL),
+      description: description == null && nullToAbsent ? const Value.absent() : Value(description),
+      imageURL: imageURL == null && nullToAbsent ? const Value.absent() : Value(imageURL),
       type: type == null && nullToAbsent ? const Value.absent() : Value(type),
-      requisite: requisite == null && nullToAbsent
-        ? const Value.absent()
-        : Value(requisite),
-      experiencePoints: experiencePoints == null && nullToAbsent
-        ? const Value.absent()
-        : Value(experiencePoints),
-      creationDate: creationDate == null && nullToAbsent
-        ? const Value.absent()
-        : Value(creationDate),
-      modificationDate: modificationDate == null && nullToAbsent
-        ? const Value.absent()
-        : Value(modificationDate),
-      creatorId: creatorId == null && nullToAbsent
-        ? const Value.absent()
-        : Value(creatorId),
+      requisite: requisite == null && nullToAbsent ? const Value.absent() : Value(requisite),
+      experiencePoints: experiencePoints == null && nullToAbsent ? const Value.absent() : Value(experiencePoints),
+      creationDate: creationDate == null && nullToAbsent ? const Value.absent() : Value(creationDate),
+      modificationDate: modificationDate == null && nullToAbsent ? const Value.absent() : Value(modificationDate),
+      creatorId: creatorId == null && nullToAbsent ? const Value.absent() : Value(creatorId),
     );
   }
 

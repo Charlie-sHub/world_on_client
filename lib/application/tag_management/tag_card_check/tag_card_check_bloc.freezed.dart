@@ -30,22 +30,25 @@ mixin _$TagCardCheckEvent {
   Tag get tag;
 
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Tag tag),
+  TResult when<TResult extends Object>({
+    @required TResult initialized(Tag tag),
   });
+
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Tag tag),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initialized(Tag tag),
+    @required TResult orElse(),
   });
+
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
+  TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
   });
+
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
+    @required TResult orElse(),
   });
 
   $TagCardCheckEventCopyWith<TagCardCheckEvent> get copyWith;
@@ -154,8 +157,8 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Tag tag),
+  TResult when<TResult extends Object>({
+    @required TResult initialized(Tag tag),
   }) {
     assert(initialized != null);
     return initialized(tag);
@@ -163,9 +166,9 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Tag tag),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initialized(Tag tag),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initialized != null) {
@@ -176,8 +179,8 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
+  TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
   }) {
     assert(initialized != null);
     return initialized(this);
@@ -185,9 +188,9 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initialized != null) {
@@ -233,30 +236,33 @@ const $TagCardCheckState = _$TagCardCheckStateTearOff();
 /// @nodoc
 mixin _$TagCardCheckState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result inInterests(),
-    @required Result notInInterests(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult inInterests(),
+    @required TResult notInInterests(),
   });
+
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result inInterests(),
-    Result notInInterests(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult inInterests(),
+    TResult notInInterests(),
+    @required TResult orElse(),
   });
+
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result inInterests(_InInterests value),
-    @required Result notInInterests(_NotInInterests value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult inInterests(_InInterests value),
+    @required TResult notInInterests(_NotInInterests value),
   });
+
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result inInterests(_InInterests value),
-    Result notInInterests(_NotInInterests value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult inInterests(_InInterests value),
+    TResult notInInterests(_NotInInterests value),
+    @required TResult orElse(),
   });
 }
 
@@ -312,10 +318,10 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result inInterests(),
-    @required Result notInInterests(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult inInterests(),
+    @required TResult notInInterests(),
   }) {
     assert(initial != null);
     assert(inInterests != null);
@@ -325,11 +331,11 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result inInterests(),
-    Result notInInterests(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult inInterests(),
+    TResult notInInterests(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -340,10 +346,10 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result inInterests(_InInterests value),
-    @required Result notInInterests(_NotInInterests value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult inInterests(_InInterests value),
+    @required TResult notInInterests(_NotInInterests value),
   }) {
     assert(initial != null);
     assert(inInterests != null);
@@ -353,11 +359,11 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result inInterests(_InInterests value),
-    Result notInInterests(_NotInInterests value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult inInterests(_InInterests value),
+    TResult notInInterests(_NotInInterests value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -409,10 +415,10 @@ class _$_InInterests implements _InInterests {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result inInterests(),
-    @required Result notInInterests(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult inInterests(),
+    @required TResult notInInterests(),
   }) {
     assert(initial != null);
     assert(inInterests != null);
@@ -422,11 +428,11 @@ class _$_InInterests implements _InInterests {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result inInterests(),
-    Result notInInterests(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult inInterests(),
+    TResult notInInterests(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (inInterests != null) {
@@ -437,10 +443,10 @@ class _$_InInterests implements _InInterests {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result inInterests(_InInterests value),
-    @required Result notInInterests(_NotInInterests value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult inInterests(_InInterests value),
+    @required TResult notInInterests(_NotInInterests value),
   }) {
     assert(initial != null);
     assert(inInterests != null);
@@ -450,11 +456,11 @@ class _$_InInterests implements _InInterests {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result inInterests(_InInterests value),
-    Result notInInterests(_NotInInterests value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult inInterests(_InInterests value),
+    TResult notInInterests(_NotInInterests value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (inInterests != null) {
@@ -506,10 +512,10 @@ class _$_NotInInterests implements _NotInInterests {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result inInterests(),
-    @required Result notInInterests(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult inInterests(),
+    @required TResult notInInterests(),
   }) {
     assert(initial != null);
     assert(inInterests != null);
@@ -519,11 +525,11 @@ class _$_NotInInterests implements _NotInInterests {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result inInterests(),
-    Result notInInterests(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult inInterests(),
+    TResult notInInterests(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (notInInterests != null) {
@@ -534,10 +540,10 @@ class _$_NotInInterests implements _NotInInterests {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result inInterests(_InInterests value),
-    @required Result notInInterests(_NotInInterests value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult inInterests(_InInterests value),
+    @required TResult notInInterests(_NotInInterests value),
   }) {
     assert(initial != null);
     assert(inInterests != null);
@@ -547,11 +553,11 @@ class _$_NotInInterests implements _NotInInterests {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result inInterests(_InInterests value),
-    Result notInInterests(_NotInInterests value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult inInterests(_InInterests value),
+    TResult notInInterests(_NotInInterests value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (notInInterests != null) {

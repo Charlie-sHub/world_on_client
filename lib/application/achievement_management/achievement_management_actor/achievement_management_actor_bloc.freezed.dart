@@ -23,50 +23,47 @@ class _$AchievementManagementActorEventTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $AchievementManagementActorEvent =
-    _$AchievementManagementActorEventTearOff();
+const $AchievementManagementActorEvent = _$AchievementManagementActorEventTearOff();
 
 /// @nodoc
 mixin _$AchievementManagementActorEvent {
   Achievement get achievement;
 
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result deleted(Achievement achievement),
-  });
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result deleted(Achievement achievement),
-    @required Result orElse(),
-  });
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result deleted(_Deleted value),
-  });
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result deleted(_Deleted value),
-    @required Result orElse(),
+  TResult when<TResult extends Object>({
+    @required TResult deleted(Achievement achievement),
   });
 
-  $AchievementManagementActorEventCopyWith<AchievementManagementActorEvent>
-      get copyWith;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult deleted(Achievement achievement),
+    @required TResult orElse(),
+  });
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult deleted(_Deleted value),
+  });
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult deleted(_Deleted value),
+    @required TResult orElse(),
+  });
+
+  $AchievementManagementActorEventCopyWith<AchievementManagementActorEvent> get copyWith;
 }
 
 /// @nodoc
 abstract class $AchievementManagementActorEventCopyWith<$Res> {
-  factory $AchievementManagementActorEventCopyWith(
-          AchievementManagementActorEvent value,
-          $Res Function(AchievementManagementActorEvent) then) =
-      _$AchievementManagementActorEventCopyWithImpl<$Res>;
+  factory $AchievementManagementActorEventCopyWith(AchievementManagementActorEvent value, $Res Function(AchievementManagementActorEvent) then) = _$AchievementManagementActorEventCopyWithImpl<$Res>;
   $Res call({Achievement achievement});
 
   $AchievementCopyWith<$Res> get achievement;
 }
 
 /// @nodoc
-class _$AchievementManagementActorEventCopyWithImpl<$Res>
-    implements $AchievementManagementActorEventCopyWith<$Res> {
+class _$AchievementManagementActorEventCopyWithImpl<$Res> implements $AchievementManagementActorEventCopyWith<$Res> {
   _$AchievementManagementActorEventCopyWithImpl(this._value, this._then);
 
   final AchievementManagementActorEvent _value;
@@ -78,9 +75,7 @@ class _$AchievementManagementActorEventCopyWithImpl<$Res>
     Object achievement = freezed,
   }) {
     return _then(_value.copyWith(
-      achievement: achievement == freezed
-          ? _value.achievement
-          : achievement as Achievement,
+      achievement: achievement == freezed ? _value.achievement : achievement as Achievement,
     ));
   }
 
@@ -96,10 +91,8 @@ class _$AchievementManagementActorEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DeletedCopyWith<$Res>
-    implements $AchievementManagementActorEventCopyWith<$Res> {
-  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) =
-      __$DeletedCopyWithImpl<$Res>;
+abstract class _$DeletedCopyWith<$Res> implements $AchievementManagementActorEventCopyWith<$Res> {
+  factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) = __$DeletedCopyWithImpl<$Res>;
   @override
   $Res call({Achievement achievement});
 
@@ -108,11 +101,8 @@ abstract class _$DeletedCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DeletedCopyWithImpl<$Res>
-    extends _$AchievementManagementActorEventCopyWithImpl<$Res>
-    implements _$DeletedCopyWith<$Res> {
-  __$DeletedCopyWithImpl(_Deleted _value, $Res Function(_Deleted) _then)
-      : super(_value, (v) => _then(v as _Deleted));
+class __$DeletedCopyWithImpl<$Res> extends _$AchievementManagementActorEventCopyWithImpl<$Res> implements _$DeletedCopyWith<$Res> {
+  __$DeletedCopyWithImpl(_Deleted _value, $Res Function(_Deleted) _then) : super(_value, (v) => _then(v as _Deleted));
 
   @override
   _Deleted get _value => super._value as _Deleted;
@@ -141,25 +131,19 @@ class _$_Deleted implements _Deleted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _Deleted &&
-            (identical(other.achievement, achievement) ||
-                const DeepCollectionEquality()
-                    .equals(other.achievement, achievement)));
+    return identical(this, other) || (other is _Deleted && (identical(other.achievement, achievement) || const DeepCollectionEquality().equals(other.achievement, achievement)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(achievement);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(achievement);
 
   @override
-  _$DeletedCopyWith<_Deleted> get copyWith =>
-      __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
+  _$DeletedCopyWith<_Deleted> get copyWith => __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result deleted(Achievement achievement),
+  TResult when<TResult extends Object>({
+    @required TResult deleted(Achievement achievement),
   }) {
     assert(deleted != null);
     return deleted(achievement);
@@ -167,9 +151,9 @@ class _$_Deleted implements _Deleted {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result deleted(Achievement achievement),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult deleted(Achievement achievement),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (deleted != null) {
@@ -180,8 +164,8 @@ class _$_Deleted implements _Deleted {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result deleted(_Deleted value),
+  TResult map<TResult extends Object>({
+    @required TResult deleted(_Deleted value),
   }) {
     assert(deleted != null);
     return deleted(this);
@@ -189,9 +173,9 @@ class _$_Deleted implements _Deleted {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result deleted(_Deleted value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult deleted(_Deleted value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (deleted != null) {
@@ -239,54 +223,52 @@ class _$AchievementManagementActorStateTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $AchievementManagementActorState =
-    _$AchievementManagementActorStateTearOff();
+const $AchievementManagementActorState = _$AchievementManagementActorStateTearOff();
 
 /// @nodoc
 mixin _$AchievementManagementActorState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result deletionFailure(Failure<dynamic> failure),
-    @required Result deletionSuccess(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult actionInProgress(),
+    @required TResult deletionFailure(Failure<dynamic> failure),
+    @required TResult deletionSuccess(),
   });
+
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result deletionFailure(Failure<dynamic> failure),
-    Result deletionSuccess(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult actionInProgress(),
+    TResult deletionFailure(Failure<dynamic> failure),
+    TResult deletionSuccess(),
+    @required TResult orElse(),
   });
+
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result deletionFailure(_DeletionFailure value),
-    @required Result deletionSuccess(_DeletionSuccess value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult deletionFailure(_DeletionFailure value),
+    @required TResult deletionSuccess(_DeletionSuccess value),
   });
+
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result deletionFailure(_DeletionFailure value),
-    Result deletionSuccess(_DeletionSuccess value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult deletionFailure(_DeletionFailure value),
+    TResult deletionSuccess(_DeletionSuccess value),
+    @required TResult orElse(),
   });
 }
 
 /// @nodoc
 abstract class $AchievementManagementActorStateCopyWith<$Res> {
-  factory $AchievementManagementActorStateCopyWith(
-          AchievementManagementActorState value,
-          $Res Function(AchievementManagementActorState) then) =
-      _$AchievementManagementActorStateCopyWithImpl<$Res>;
+  factory $AchievementManagementActorStateCopyWith(AchievementManagementActorState value, $Res Function(AchievementManagementActorState) then) = _$AchievementManagementActorStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AchievementManagementActorStateCopyWithImpl<$Res>
-    implements $AchievementManagementActorStateCopyWith<$Res> {
+class _$AchievementManagementActorStateCopyWithImpl<$Res> implements $AchievementManagementActorStateCopyWith<$Res> {
   _$AchievementManagementActorStateCopyWithImpl(this._value, this._then);
 
   final AchievementManagementActorState _value;
@@ -296,16 +278,12 @@ class _$AchievementManagementActorStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res>
-    extends _$AchievementManagementActorStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$AchievementManagementActorStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -330,11 +308,11 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result deletionFailure(Failure<dynamic> failure),
-    @required Result deletionSuccess(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult actionInProgress(),
+    @required TResult deletionFailure(Failure<dynamic> failure),
+    @required TResult deletionSuccess(),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -345,12 +323,12 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result deletionFailure(Failure<dynamic> failure),
-    Result deletionSuccess(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult actionInProgress(),
+    TResult deletionFailure(Failure<dynamic> failure),
+    TResult deletionSuccess(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -361,11 +339,11 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result deletionFailure(_DeletionFailure value),
-    @required Result deletionSuccess(_DeletionSuccess value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult deletionFailure(_DeletionFailure value),
+    @required TResult deletionSuccess(_DeletionSuccess value),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -376,12 +354,12 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result deletionFailure(_DeletionFailure value),
-    Result deletionSuccess(_DeletionSuccess value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult deletionFailure(_DeletionFailure value),
+    TResult deletionSuccess(_DeletionSuccess value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -397,18 +375,12 @@ abstract class _Initial implements AchievementManagementActorState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(
-          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
-      __$ActionInProgressCopyWithImpl<$Res>;
+  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) = __$ActionInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res>
-    extends _$AchievementManagementActorStateCopyWithImpl<$Res>
-    implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(
-      _ActionInProgress _value, $Res Function(_ActionInProgress) _then)
-      : super(_value, (v) => _then(v as _ActionInProgress));
+class __$ActionInProgressCopyWithImpl<$Res> extends _$AchievementManagementActorStateCopyWithImpl<$Res> implements _$ActionInProgressCopyWith<$Res> {
+  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then) : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
   _ActionInProgress get _value => super._value as _ActionInProgress;
@@ -433,11 +405,11 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result deletionFailure(Failure<dynamic> failure),
-    @required Result deletionSuccess(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult actionInProgress(),
+    @required TResult deletionFailure(Failure<dynamic> failure),
+    @required TResult deletionSuccess(),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -448,12 +420,12 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result deletionFailure(Failure<dynamic> failure),
-    Result deletionSuccess(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult actionInProgress(),
+    TResult deletionFailure(Failure<dynamic> failure),
+    TResult deletionSuccess(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (actionInProgress != null) {
@@ -464,11 +436,11 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result deletionFailure(_DeletionFailure value),
-    @required Result deletionSuccess(_DeletionSuccess value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult deletionFailure(_DeletionFailure value),
+    @required TResult deletionSuccess(_DeletionSuccess value),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -479,12 +451,12 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result deletionFailure(_DeletionFailure value),
-    Result deletionSuccess(_DeletionSuccess value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult deletionFailure(_DeletionFailure value),
+    TResult deletionSuccess(_DeletionSuccess value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (actionInProgress != null) {
@@ -500,21 +472,15 @@ abstract class _ActionInProgress implements AchievementManagementActorState {
 
 /// @nodoc
 abstract class _$DeletionFailureCopyWith<$Res> {
-  factory _$DeletionFailureCopyWith(
-          _DeletionFailure value, $Res Function(_DeletionFailure) then) =
-      __$DeletionFailureCopyWithImpl<$Res>;
+  factory _$DeletionFailureCopyWith(_DeletionFailure value, $Res Function(_DeletionFailure) then) = __$DeletionFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 /// @nodoc
-class __$DeletionFailureCopyWithImpl<$Res>
-    extends _$AchievementManagementActorStateCopyWithImpl<$Res>
-    implements _$DeletionFailureCopyWith<$Res> {
-  __$DeletionFailureCopyWithImpl(
-      _DeletionFailure _value, $Res Function(_DeletionFailure) _then)
-      : super(_value, (v) => _then(v as _DeletionFailure));
+class __$DeletionFailureCopyWithImpl<$Res> extends _$AchievementManagementActorStateCopyWithImpl<$Res> implements _$DeletionFailureCopyWith<$Res> {
+  __$DeletionFailureCopyWithImpl(_DeletionFailure _value, $Res Function(_DeletionFailure) _then) : super(_value, (v) => _then(v as _DeletionFailure));
 
   @override
   _DeletionFailure get _value => super._value as _DeletionFailure;
@@ -553,27 +519,22 @@ class _$_DeletionFailure implements _DeletionFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _DeletionFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) || (other is _DeletionFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
-  _$DeletionFailureCopyWith<_DeletionFailure> get copyWith =>
-      __$DeletionFailureCopyWithImpl<_DeletionFailure>(this, _$identity);
+  _$DeletionFailureCopyWith<_DeletionFailure> get copyWith => __$DeletionFailureCopyWithImpl<_DeletionFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result deletionFailure(Failure<dynamic> failure),
-    @required Result deletionSuccess(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult actionInProgress(),
+    @required TResult deletionFailure(Failure<dynamic> failure),
+    @required TResult deletionSuccess(),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -584,12 +545,12 @@ class _$_DeletionFailure implements _DeletionFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result deletionFailure(Failure<dynamic> failure),
-    Result deletionSuccess(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult actionInProgress(),
+    TResult deletionFailure(Failure<dynamic> failure),
+    TResult deletionSuccess(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (deletionFailure != null) {
@@ -600,11 +561,11 @@ class _$_DeletionFailure implements _DeletionFailure {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result deletionFailure(_DeletionFailure value),
-    @required Result deletionSuccess(_DeletionSuccess value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult deletionFailure(_DeletionFailure value),
+    @required TResult deletionSuccess(_DeletionSuccess value),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -615,12 +576,12 @@ class _$_DeletionFailure implements _DeletionFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result deletionFailure(_DeletionFailure value),
-    Result deletionSuccess(_DeletionSuccess value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult deletionFailure(_DeletionFailure value),
+    TResult deletionSuccess(_DeletionSuccess value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (deletionFailure != null) {
@@ -639,18 +600,12 @@ abstract class _DeletionFailure implements AchievementManagementActorState {
 
 /// @nodoc
 abstract class _$DeletionSuccessCopyWith<$Res> {
-  factory _$DeletionSuccessCopyWith(
-          _DeletionSuccess value, $Res Function(_DeletionSuccess) then) =
-      __$DeletionSuccessCopyWithImpl<$Res>;
+  factory _$DeletionSuccessCopyWith(_DeletionSuccess value, $Res Function(_DeletionSuccess) then) = __$DeletionSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DeletionSuccessCopyWithImpl<$Res>
-    extends _$AchievementManagementActorStateCopyWithImpl<$Res>
-    implements _$DeletionSuccessCopyWith<$Res> {
-  __$DeletionSuccessCopyWithImpl(
-      _DeletionSuccess _value, $Res Function(_DeletionSuccess) _then)
-      : super(_value, (v) => _then(v as _DeletionSuccess));
+class __$DeletionSuccessCopyWithImpl<$Res> extends _$AchievementManagementActorStateCopyWithImpl<$Res> implements _$DeletionSuccessCopyWith<$Res> {
+  __$DeletionSuccessCopyWithImpl(_DeletionSuccess _value, $Res Function(_DeletionSuccess) _then) : super(_value, (v) => _then(v as _DeletionSuccess));
 
   @override
   _DeletionSuccess get _value => super._value as _DeletionSuccess;
@@ -675,11 +630,11 @@ class _$_DeletionSuccess implements _DeletionSuccess {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result deletionFailure(Failure<dynamic> failure),
-    @required Result deletionSuccess(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult actionInProgress(),
+    @required TResult deletionFailure(Failure<dynamic> failure),
+    @required TResult deletionSuccess(),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -690,12 +645,12 @@ class _$_DeletionSuccess implements _DeletionSuccess {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result deletionFailure(Failure<dynamic> failure),
-    Result deletionSuccess(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult actionInProgress(),
+    TResult deletionFailure(Failure<dynamic> failure),
+    TResult deletionSuccess(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (deletionSuccess != null) {
@@ -706,11 +661,11 @@ class _$_DeletionSuccess implements _DeletionSuccess {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result deletionFailure(_DeletionFailure value),
-    @required Result deletionSuccess(_DeletionSuccess value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult deletionFailure(_DeletionFailure value),
+    @required TResult deletionSuccess(_DeletionSuccess value),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -721,12 +676,12 @@ class _$_DeletionSuccess implements _DeletionSuccess {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result deletionFailure(_DeletionFailure value),
-    Result deletionSuccess(_DeletionSuccess value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult deletionFailure(_DeletionFailure value),
+    TResult deletionSuccess(_DeletionSuccess value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (deletionSuccess != null) {

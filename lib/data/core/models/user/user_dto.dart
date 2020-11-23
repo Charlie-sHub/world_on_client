@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart' as dartz;
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:worldon/data/core/misc/server_timestamp_converter.dart';
 import 'package:worldon/data/core/models/device/device_dto.dart';
 import 'package:worldon/data/core/models/options/options_dto.dart';
 import 'package:worldon/data/core/models/system/system_dto.dart';
@@ -29,7 +30,7 @@ abstract class UserDto implements _$UserDto {
     // Maybe it shouldn't even be part of the dto at all, as Firebase handles it at login time
     @required String password,
     @required String email,
-    @required String birthday,
+    @ServerTimestampConverter() @required DateTime birthday,
     @required String description,
     @required String imageURL,
     @required int level,
@@ -37,9 +38,9 @@ abstract class UserDto implements _$UserDto {
     @required bool privacy,
     @required bool adminPowers,
     @required bool enabled,
-    @required String lastLogin,
-    @required String creationDate,
-    @required String modificationDate,
+    @ServerTimestampConverter() @required DateTime lastLogin,
+    @ServerTimestampConverter() @required DateTime creationDate,
+    @ServerTimestampConverter() @required DateTime modificationDate,
     @required OptionsDto options,
     @required Set<String> blockedUsersIds,
     @required Set<String> followedUsersIds,
@@ -53,12 +54,12 @@ abstract class UserDto implements _$UserDto {
   }) = _UserDto;
 
   factory UserDto.fromDomain(User user) => UserDto(
-        id: user.id.getOrCrash(),
+    id: user.id.getOrCrash(),
         name: user.name.getOrCrash(),
         username: user.username.getOrCrash(),
         password: user.password.getOrCrash(),
         email: user.email.getOrCrash(),
-        birthday: user.birthday.getOrCrash().toIso8601String(),
+        birthday: user.birthday.getOrCrash(),
         description: user.description.getOrCrash(),
         imageURL: user.imageURL,
         level: user.level.getOrCrash(),
@@ -66,9 +67,9 @@ abstract class UserDto implements _$UserDto {
         privacy: user.privacy,
         adminPowers: user.adminPowers,
         enabled: user.enabled,
-        lastLogin: user.lastLogin.getOrCrash().toIso8601String(),
-        creationDate: user.creationDate.getOrCrash().toIso8601String(),
-        modificationDate: user.modificationDate.getOrCrash().toIso8601String(),
+        lastLogin: user.lastLogin.getOrCrash(),
+        creationDate: user.creationDate.getOrCrash(),
+        modificationDate: user.modificationDate.getOrCrash(),
         options: OptionsDto.fromDomain(user.options),
         blockedUsersIds: user.blockedUsersIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
         followedUsersIds: user.followedUsersIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
@@ -82,33 +83,33 @@ abstract class UserDto implements _$UserDto {
       );
 
   User toDomain() => User(
-        id: UniqueId.fromUniqueString(id),
-        name: Name(name),
-        username: Name(username),
-        password: Password(password),
-        email: EmailAddress(email),
-        birthday: PastDate(DateTime.now()),
-        description: EntityDescription(description),
-        imageURL: imageURL,
-        imageFileOption: dartz.none(),
-        level: UserLevel(level),
-        experiencePoints: ExperiencePoints(experiencePoints),
-        privacy: privacy,
-        adminPowers: adminPowers,
-        enabled: enabled,
-        lastLogin: PastDate(DateTime.now()),
-        creationDate: PastDate(DateTime.now()),
-        modificationDate: PastDate(DateTime.now()),
-        options: options.toDomain(),
-        blockedUsersIds: blockedUsersIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
-        followedUsersIds: followedUsersIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
-        interestsIds: interestsIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
-        achievementsIds: achievementsIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
-        experiencesDoneIds: experiencesDoneIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
-        experiencesLikedIds: experiencesLikedIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
-        experiencesToDoIds: experiencesToDoIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
-        devices: devices.map((deviceDto) => deviceDto.toDomain()).toSet(),
-        systems: systems.map((systemDto) => systemDto.toDomain()).toSet(),
+    id: UniqueId.fromUniqueString(id),
+    name: Name(name),
+    username: Name(username),
+    password: Password(password),
+    email: EmailAddress(email),
+    birthday: PastDate(birthday),
+    description: EntityDescription(description),
+    imageURL: imageURL,
+    imageFileOption: dartz.none(),
+    level: UserLevel(level),
+    experiencePoints: ExperiencePoints(experiencePoints),
+    privacy: privacy,
+    adminPowers: adminPowers,
+    enabled: enabled,
+    lastLogin: PastDate(lastLogin),
+    creationDate: PastDate(creationDate),
+    modificationDate: PastDate(modificationDate),
+    options: options.toDomain(),
+    blockedUsersIds: blockedUsersIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+    followedUsersIds: followedUsersIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+    interestsIds: interestsIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+    achievementsIds: achievementsIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+    experiencesDoneIds: experiencesDoneIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+    experiencesLikedIds: experiencesLikedIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+    experiencesToDoIds: experiencesToDoIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+    devices: devices.map((deviceDto) => deviceDto.toDomain()).toSet(),
+    systems: systems.map((systemDto) => systemDto.toDomain()).toSet(),
       );
 
   factory UserDto.fromJson(Map<String, dynamic> json) => _$UserDtoFromJson(json);

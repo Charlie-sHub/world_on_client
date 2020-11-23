@@ -44,30 +44,33 @@ mixin _$TagCardActorEvent {
   Tag get tag;
 
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Tag tag),
-    @required Result dismissedFromInterests(Tag tag),
-    @required Result addedToInterests(Tag tag),
+  TResult when<TResult extends Object>({
+    @required TResult initialized(Tag tag),
+    @required TResult dismissedFromInterests(Tag tag),
+    @required TResult addedToInterests(Tag tag),
   });
+
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Tag tag),
-    Result dismissedFromInterests(Tag tag),
-    Result addedToInterests(Tag tag),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initialized(Tag tag),
+    TResult dismissedFromInterests(Tag tag),
+    TResult addedToInterests(Tag tag),
+    @required TResult orElse(),
   });
+
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result dismissedFromInterests(_DismissedFromInterests value),
-    @required Result addedToInterests(_AddedToInterests value),
+  TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
+    @required TResult dismissedFromInterests(_DismissedFromInterests value),
+    @required TResult addedToInterests(_AddedToInterests value),
   });
+
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result dismissedFromInterests(_DismissedFromInterests value),
-    Result addedToInterests(_AddedToInterests value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
+    TResult dismissedFromInterests(_DismissedFromInterests value),
+    TResult addedToInterests(_AddedToInterests value),
+    @required TResult orElse(),
   });
 
   $TagCardActorEventCopyWith<TagCardActorEvent> get copyWith;
@@ -176,10 +179,10 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Tag tag),
-    @required Result dismissedFromInterests(Tag tag),
-    @required Result addedToInterests(Tag tag),
+  TResult when<TResult extends Object>({
+    @required TResult initialized(Tag tag),
+    @required TResult dismissedFromInterests(Tag tag),
+    @required TResult addedToInterests(Tag tag),
   }) {
     assert(initialized != null);
     assert(dismissedFromInterests != null);
@@ -189,11 +192,11 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Tag tag),
-    Result dismissedFromInterests(Tag tag),
-    Result addedToInterests(Tag tag),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initialized(Tag tag),
+    TResult dismissedFromInterests(Tag tag),
+    TResult addedToInterests(Tag tag),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initialized != null) {
@@ -204,10 +207,10 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result dismissedFromInterests(_DismissedFromInterests value),
-    @required Result addedToInterests(_AddedToInterests value),
+  TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
+    @required TResult dismissedFromInterests(_DismissedFromInterests value),
+    @required TResult addedToInterests(_AddedToInterests value),
   }) {
     assert(initialized != null);
     assert(dismissedFromInterests != null);
@@ -217,11 +220,11 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result dismissedFromInterests(_DismissedFromInterests value),
-    Result addedToInterests(_AddedToInterests value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
+    TResult dismissedFromInterests(_DismissedFromInterests value),
+    TResult addedToInterests(_AddedToInterests value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initialized != null) {
@@ -305,10 +308,10 @@ class _$_DismissedFromInterests implements _DismissedFromInterests {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Tag tag),
-    @required Result dismissedFromInterests(Tag tag),
-    @required Result addedToInterests(Tag tag),
+  TResult when<TResult extends Object>({
+    @required TResult initialized(Tag tag),
+    @required TResult dismissedFromInterests(Tag tag),
+    @required TResult addedToInterests(Tag tag),
   }) {
     assert(initialized != null);
     assert(dismissedFromInterests != null);
@@ -318,11 +321,11 @@ class _$_DismissedFromInterests implements _DismissedFromInterests {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Tag tag),
-    Result dismissedFromInterests(Tag tag),
-    Result addedToInterests(Tag tag),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initialized(Tag tag),
+    TResult dismissedFromInterests(Tag tag),
+    TResult addedToInterests(Tag tag),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (dismissedFromInterests != null) {
@@ -333,10 +336,10 @@ class _$_DismissedFromInterests implements _DismissedFromInterests {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result dismissedFromInterests(_DismissedFromInterests value),
-    @required Result addedToInterests(_AddedToInterests value),
+  TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
+    @required TResult dismissedFromInterests(_DismissedFromInterests value),
+    @required TResult addedToInterests(_AddedToInterests value),
   }) {
     assert(initialized != null);
     assert(dismissedFromInterests != null);
@@ -346,11 +349,11 @@ class _$_DismissedFromInterests implements _DismissedFromInterests {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result dismissedFromInterests(_DismissedFromInterests value),
-    Result addedToInterests(_AddedToInterests value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
+    TResult dismissedFromInterests(_DismissedFromInterests value),
+    TResult addedToInterests(_AddedToInterests value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (dismissedFromInterests != null) {
@@ -433,10 +436,10 @@ class _$_AddedToInterests implements _AddedToInterests {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Tag tag),
-    @required Result dismissedFromInterests(Tag tag),
-    @required Result addedToInterests(Tag tag),
+  TResult when<TResult extends Object>({
+    @required TResult initialized(Tag tag),
+    @required TResult dismissedFromInterests(Tag tag),
+    @required TResult addedToInterests(Tag tag),
   }) {
     assert(initialized != null);
     assert(dismissedFromInterests != null);
@@ -446,11 +449,11 @@ class _$_AddedToInterests implements _AddedToInterests {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Tag tag),
-    Result dismissedFromInterests(Tag tag),
-    Result addedToInterests(Tag tag),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initialized(Tag tag),
+    TResult dismissedFromInterests(Tag tag),
+    TResult addedToInterests(Tag tag),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (addedToInterests != null) {
@@ -461,10 +464,10 @@ class _$_AddedToInterests implements _AddedToInterests {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result dismissedFromInterests(_DismissedFromInterests value),
-    @required Result addedToInterests(_AddedToInterests value),
+  TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
+    @required TResult dismissedFromInterests(_DismissedFromInterests value),
+    @required TResult addedToInterests(_AddedToInterests value),
   }) {
     assert(initialized != null);
     assert(dismissedFromInterests != null);
@@ -474,11 +477,11 @@ class _$_AddedToInterests implements _AddedToInterests {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result dismissedFromInterests(_DismissedFromInterests value),
-    Result addedToInterests(_AddedToInterests value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
+    TResult dismissedFromInterests(_DismissedFromInterests value),
+    TResult addedToInterests(_AddedToInterests value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (addedToInterests != null) {
@@ -553,50 +556,53 @@ const $TagCardActorState = _$TagCardActorStateTearOff();
 /// @nodoc
 mixin _$TagCardActorState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result inInterests(),
-    @required Result notInInterests(),
-    @required Result actionInProgress(),
-    @required Result additionSuccess(),
-    @required Result additionFailure(Failure<dynamic> failure),
-    @required Result dismissalSuccess(),
-    @required Result dismissalFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult inInterests(),
+    @required TResult notInInterests(),
+    @required TResult actionInProgress(),
+    @required TResult additionSuccess(),
+    @required TResult additionFailure(Failure<dynamic> failure),
+    @required TResult dismissalSuccess(),
+    @required TResult dismissalFailure(Failure<dynamic> failure),
   });
+
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result inInterests(),
-    Result notInInterests(),
-    Result actionInProgress(),
-    Result additionSuccess(),
-    Result additionFailure(Failure<dynamic> failure),
-    Result dismissalSuccess(),
-    Result dismissalFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult inInterests(),
+    TResult notInInterests(),
+    TResult actionInProgress(),
+    TResult additionSuccess(),
+    TResult additionFailure(Failure<dynamic> failure),
+    TResult dismissalSuccess(),
+    TResult dismissalFailure(Failure<dynamic> failure),
+    @required TResult orElse(),
   });
+
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result inInterests(_InInterests value),
-    @required Result notInInterests(_NotInInterests value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result additionSuccess(_AdditionSuccess value),
-    @required Result additionFailure(_AdditionFailure value),
-    @required Result dismissalSuccess(_DismissalSuccess value),
-    @required Result dismissalFailure(_DismissalFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult inInterests(_InInterests value),
+    @required TResult notInInterests(_NotInInterests value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult additionSuccess(_AdditionSuccess value),
+    @required TResult additionFailure(_AdditionFailure value),
+    @required TResult dismissalSuccess(_DismissalSuccess value),
+    @required TResult dismissalFailure(_DismissalFailure value),
   });
+
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result inInterests(_InInterests value),
-    Result notInInterests(_NotInInterests value),
-    Result actionInProgress(_ActionInProgress value),
-    Result additionSuccess(_AdditionSuccess value),
-    Result additionFailure(_AdditionFailure value),
-    Result dismissalSuccess(_DismissalSuccess value),
-    Result dismissalFailure(_DismissalFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult inInterests(_InInterests value),
+    TResult notInInterests(_NotInInterests value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult additionSuccess(_AdditionSuccess value),
+    TResult additionFailure(_AdditionFailure value),
+    TResult dismissalSuccess(_DismissalSuccess value),
+    TResult dismissalFailure(_DismissalFailure value),
+    @required TResult orElse(),
   });
 }
 
@@ -652,15 +658,15 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result inInterests(),
-    @required Result notInInterests(),
-    @required Result actionInProgress(),
-    @required Result additionSuccess(),
-    @required Result additionFailure(Failure<dynamic> failure),
-    @required Result dismissalSuccess(),
-    @required Result dismissalFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult inInterests(),
+    @required TResult notInInterests(),
+    @required TResult actionInProgress(),
+    @required TResult additionSuccess(),
+    @required TResult additionFailure(Failure<dynamic> failure),
+    @required TResult dismissalSuccess(),
+    @required TResult dismissalFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
     assert(inInterests != null);
@@ -675,16 +681,16 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result inInterests(),
-    Result notInInterests(),
-    Result actionInProgress(),
-    Result additionSuccess(),
-    Result additionFailure(Failure<dynamic> failure),
-    Result dismissalSuccess(),
-    Result dismissalFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult inInterests(),
+    TResult notInInterests(),
+    TResult actionInProgress(),
+    TResult additionSuccess(),
+    TResult additionFailure(Failure<dynamic> failure),
+    TResult dismissalSuccess(),
+    TResult dismissalFailure(Failure<dynamic> failure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -695,15 +701,15 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result inInterests(_InInterests value),
-    @required Result notInInterests(_NotInInterests value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result additionSuccess(_AdditionSuccess value),
-    @required Result additionFailure(_AdditionFailure value),
-    @required Result dismissalSuccess(_DismissalSuccess value),
-    @required Result dismissalFailure(_DismissalFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult inInterests(_InInterests value),
+    @required TResult notInInterests(_NotInInterests value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult additionSuccess(_AdditionSuccess value),
+    @required TResult additionFailure(_AdditionFailure value),
+    @required TResult dismissalSuccess(_DismissalSuccess value),
+    @required TResult dismissalFailure(_DismissalFailure value),
   }) {
     assert(initial != null);
     assert(inInterests != null);
@@ -718,16 +724,16 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result inInterests(_InInterests value),
-    Result notInInterests(_NotInInterests value),
-    Result actionInProgress(_ActionInProgress value),
-    Result additionSuccess(_AdditionSuccess value),
-    Result additionFailure(_AdditionFailure value),
-    Result dismissalSuccess(_DismissalSuccess value),
-    Result dismissalFailure(_DismissalFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult inInterests(_InInterests value),
+    TResult notInInterests(_NotInInterests value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult additionSuccess(_AdditionSuccess value),
+    TResult additionFailure(_AdditionFailure value),
+    TResult dismissalSuccess(_DismissalSuccess value),
+    TResult dismissalFailure(_DismissalFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -779,15 +785,15 @@ class _$_InInterests implements _InInterests {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result inInterests(),
-    @required Result notInInterests(),
-    @required Result actionInProgress(),
-    @required Result additionSuccess(),
-    @required Result additionFailure(Failure<dynamic> failure),
-    @required Result dismissalSuccess(),
-    @required Result dismissalFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult inInterests(),
+    @required TResult notInInterests(),
+    @required TResult actionInProgress(),
+    @required TResult additionSuccess(),
+    @required TResult additionFailure(Failure<dynamic> failure),
+    @required TResult dismissalSuccess(),
+    @required TResult dismissalFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
     assert(inInterests != null);
@@ -802,16 +808,16 @@ class _$_InInterests implements _InInterests {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result inInterests(),
-    Result notInInterests(),
-    Result actionInProgress(),
-    Result additionSuccess(),
-    Result additionFailure(Failure<dynamic> failure),
-    Result dismissalSuccess(),
-    Result dismissalFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult inInterests(),
+    TResult notInInterests(),
+    TResult actionInProgress(),
+    TResult additionSuccess(),
+    TResult additionFailure(Failure<dynamic> failure),
+    TResult dismissalSuccess(),
+    TResult dismissalFailure(Failure<dynamic> failure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (inInterests != null) {
@@ -822,15 +828,15 @@ class _$_InInterests implements _InInterests {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result inInterests(_InInterests value),
-    @required Result notInInterests(_NotInInterests value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result additionSuccess(_AdditionSuccess value),
-    @required Result additionFailure(_AdditionFailure value),
-    @required Result dismissalSuccess(_DismissalSuccess value),
-    @required Result dismissalFailure(_DismissalFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult inInterests(_InInterests value),
+    @required TResult notInInterests(_NotInInterests value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult additionSuccess(_AdditionSuccess value),
+    @required TResult additionFailure(_AdditionFailure value),
+    @required TResult dismissalSuccess(_DismissalSuccess value),
+    @required TResult dismissalFailure(_DismissalFailure value),
   }) {
     assert(initial != null);
     assert(inInterests != null);
@@ -845,16 +851,16 @@ class _$_InInterests implements _InInterests {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result inInterests(_InInterests value),
-    Result notInInterests(_NotInInterests value),
-    Result actionInProgress(_ActionInProgress value),
-    Result additionSuccess(_AdditionSuccess value),
-    Result additionFailure(_AdditionFailure value),
-    Result dismissalSuccess(_DismissalSuccess value),
-    Result dismissalFailure(_DismissalFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult inInterests(_InInterests value),
+    TResult notInInterests(_NotInInterests value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult additionSuccess(_AdditionSuccess value),
+    TResult additionFailure(_AdditionFailure value),
+    TResult dismissalSuccess(_DismissalSuccess value),
+    TResult dismissalFailure(_DismissalFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (inInterests != null) {
@@ -906,15 +912,15 @@ class _$_NotInInterests implements _NotInInterests {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result inInterests(),
-    @required Result notInInterests(),
-    @required Result actionInProgress(),
-    @required Result additionSuccess(),
-    @required Result additionFailure(Failure<dynamic> failure),
-    @required Result dismissalSuccess(),
-    @required Result dismissalFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult inInterests(),
+    @required TResult notInInterests(),
+    @required TResult actionInProgress(),
+    @required TResult additionSuccess(),
+    @required TResult additionFailure(Failure<dynamic> failure),
+    @required TResult dismissalSuccess(),
+    @required TResult dismissalFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
     assert(inInterests != null);
@@ -929,16 +935,16 @@ class _$_NotInInterests implements _NotInInterests {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result inInterests(),
-    Result notInInterests(),
-    Result actionInProgress(),
-    Result additionSuccess(),
-    Result additionFailure(Failure<dynamic> failure),
-    Result dismissalSuccess(),
-    Result dismissalFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult inInterests(),
+    TResult notInInterests(),
+    TResult actionInProgress(),
+    TResult additionSuccess(),
+    TResult additionFailure(Failure<dynamic> failure),
+    TResult dismissalSuccess(),
+    TResult dismissalFailure(Failure<dynamic> failure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (notInInterests != null) {
@@ -949,15 +955,15 @@ class _$_NotInInterests implements _NotInInterests {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result inInterests(_InInterests value),
-    @required Result notInInterests(_NotInInterests value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result additionSuccess(_AdditionSuccess value),
-    @required Result additionFailure(_AdditionFailure value),
-    @required Result dismissalSuccess(_DismissalSuccess value),
-    @required Result dismissalFailure(_DismissalFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult inInterests(_InInterests value),
+    @required TResult notInInterests(_NotInInterests value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult additionSuccess(_AdditionSuccess value),
+    @required TResult additionFailure(_AdditionFailure value),
+    @required TResult dismissalSuccess(_DismissalSuccess value),
+    @required TResult dismissalFailure(_DismissalFailure value),
   }) {
     assert(initial != null);
     assert(inInterests != null);
@@ -972,16 +978,16 @@ class _$_NotInInterests implements _NotInInterests {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result inInterests(_InInterests value),
-    Result notInInterests(_NotInInterests value),
-    Result actionInProgress(_ActionInProgress value),
-    Result additionSuccess(_AdditionSuccess value),
-    Result additionFailure(_AdditionFailure value),
-    Result dismissalSuccess(_DismissalSuccess value),
-    Result dismissalFailure(_DismissalFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult inInterests(_InInterests value),
+    TResult notInInterests(_NotInInterests value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult additionSuccess(_AdditionSuccess value),
+    TResult additionFailure(_AdditionFailure value),
+    TResult dismissalSuccess(_DismissalSuccess value),
+    TResult dismissalFailure(_DismissalFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (notInInterests != null) {
@@ -1033,15 +1039,15 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result inInterests(),
-    @required Result notInInterests(),
-    @required Result actionInProgress(),
-    @required Result additionSuccess(),
-    @required Result additionFailure(Failure<dynamic> failure),
-    @required Result dismissalSuccess(),
-    @required Result dismissalFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult inInterests(),
+    @required TResult notInInterests(),
+    @required TResult actionInProgress(),
+    @required TResult additionSuccess(),
+    @required TResult additionFailure(Failure<dynamic> failure),
+    @required TResult dismissalSuccess(),
+    @required TResult dismissalFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
     assert(inInterests != null);
@@ -1056,16 +1062,16 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result inInterests(),
-    Result notInInterests(),
-    Result actionInProgress(),
-    Result additionSuccess(),
-    Result additionFailure(Failure<dynamic> failure),
-    Result dismissalSuccess(),
-    Result dismissalFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult inInterests(),
+    TResult notInInterests(),
+    TResult actionInProgress(),
+    TResult additionSuccess(),
+    TResult additionFailure(Failure<dynamic> failure),
+    TResult dismissalSuccess(),
+    TResult dismissalFailure(Failure<dynamic> failure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (actionInProgress != null) {
@@ -1076,15 +1082,15 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result inInterests(_InInterests value),
-    @required Result notInInterests(_NotInInterests value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result additionSuccess(_AdditionSuccess value),
-    @required Result additionFailure(_AdditionFailure value),
-    @required Result dismissalSuccess(_DismissalSuccess value),
-    @required Result dismissalFailure(_DismissalFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult inInterests(_InInterests value),
+    @required TResult notInInterests(_NotInInterests value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult additionSuccess(_AdditionSuccess value),
+    @required TResult additionFailure(_AdditionFailure value),
+    @required TResult dismissalSuccess(_DismissalSuccess value),
+    @required TResult dismissalFailure(_DismissalFailure value),
   }) {
     assert(initial != null);
     assert(inInterests != null);
@@ -1099,16 +1105,16 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result inInterests(_InInterests value),
-    Result notInInterests(_NotInInterests value),
-    Result actionInProgress(_ActionInProgress value),
-    Result additionSuccess(_AdditionSuccess value),
-    Result additionFailure(_AdditionFailure value),
-    Result dismissalSuccess(_DismissalSuccess value),
-    Result dismissalFailure(_DismissalFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult inInterests(_InInterests value),
+    TResult notInInterests(_NotInInterests value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult additionSuccess(_AdditionSuccess value),
+    TResult additionFailure(_AdditionFailure value),
+    TResult dismissalSuccess(_DismissalSuccess value),
+    TResult dismissalFailure(_DismissalFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (actionInProgress != null) {
@@ -1160,15 +1166,15 @@ class _$_AdditionSuccess implements _AdditionSuccess {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result inInterests(),
-    @required Result notInInterests(),
-    @required Result actionInProgress(),
-    @required Result additionSuccess(),
-    @required Result additionFailure(Failure<dynamic> failure),
-    @required Result dismissalSuccess(),
-    @required Result dismissalFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult inInterests(),
+    @required TResult notInInterests(),
+    @required TResult actionInProgress(),
+    @required TResult additionSuccess(),
+    @required TResult additionFailure(Failure<dynamic> failure),
+    @required TResult dismissalSuccess(),
+    @required TResult dismissalFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
     assert(inInterests != null);
@@ -1183,16 +1189,16 @@ class _$_AdditionSuccess implements _AdditionSuccess {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result inInterests(),
-    Result notInInterests(),
-    Result actionInProgress(),
-    Result additionSuccess(),
-    Result additionFailure(Failure<dynamic> failure),
-    Result dismissalSuccess(),
-    Result dismissalFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult inInterests(),
+    TResult notInInterests(),
+    TResult actionInProgress(),
+    TResult additionSuccess(),
+    TResult additionFailure(Failure<dynamic> failure),
+    TResult dismissalSuccess(),
+    TResult dismissalFailure(Failure<dynamic> failure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (additionSuccess != null) {
@@ -1203,15 +1209,15 @@ class _$_AdditionSuccess implements _AdditionSuccess {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result inInterests(_InInterests value),
-    @required Result notInInterests(_NotInInterests value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result additionSuccess(_AdditionSuccess value),
-    @required Result additionFailure(_AdditionFailure value),
-    @required Result dismissalSuccess(_DismissalSuccess value),
-    @required Result dismissalFailure(_DismissalFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult inInterests(_InInterests value),
+    @required TResult notInInterests(_NotInInterests value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult additionSuccess(_AdditionSuccess value),
+    @required TResult additionFailure(_AdditionFailure value),
+    @required TResult dismissalSuccess(_DismissalSuccess value),
+    @required TResult dismissalFailure(_DismissalFailure value),
   }) {
     assert(initial != null);
     assert(inInterests != null);
@@ -1226,16 +1232,16 @@ class _$_AdditionSuccess implements _AdditionSuccess {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result inInterests(_InInterests value),
-    Result notInInterests(_NotInInterests value),
-    Result actionInProgress(_ActionInProgress value),
-    Result additionSuccess(_AdditionSuccess value),
-    Result additionFailure(_AdditionFailure value),
-    Result dismissalSuccess(_DismissalSuccess value),
-    Result dismissalFailure(_DismissalFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult inInterests(_InInterests value),
+    TResult notInInterests(_NotInInterests value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult additionSuccess(_AdditionSuccess value),
+    TResult additionFailure(_AdditionFailure value),
+    TResult dismissalSuccess(_DismissalSuccess value),
+    TResult dismissalFailure(_DismissalFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (additionSuccess != null) {
@@ -1320,15 +1326,15 @@ class _$_AdditionFailure implements _AdditionFailure {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result inInterests(),
-    @required Result notInInterests(),
-    @required Result actionInProgress(),
-    @required Result additionSuccess(),
-    @required Result additionFailure(Failure<dynamic> failure),
-    @required Result dismissalSuccess(),
-    @required Result dismissalFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult inInterests(),
+    @required TResult notInInterests(),
+    @required TResult actionInProgress(),
+    @required TResult additionSuccess(),
+    @required TResult additionFailure(Failure<dynamic> failure),
+    @required TResult dismissalSuccess(),
+    @required TResult dismissalFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
     assert(inInterests != null);
@@ -1343,16 +1349,16 @@ class _$_AdditionFailure implements _AdditionFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result inInterests(),
-    Result notInInterests(),
-    Result actionInProgress(),
-    Result additionSuccess(),
-    Result additionFailure(Failure<dynamic> failure),
-    Result dismissalSuccess(),
-    Result dismissalFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult inInterests(),
+    TResult notInInterests(),
+    TResult actionInProgress(),
+    TResult additionSuccess(),
+    TResult additionFailure(Failure<dynamic> failure),
+    TResult dismissalSuccess(),
+    TResult dismissalFailure(Failure<dynamic> failure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (additionFailure != null) {
@@ -1363,15 +1369,15 @@ class _$_AdditionFailure implements _AdditionFailure {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result inInterests(_InInterests value),
-    @required Result notInInterests(_NotInInterests value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result additionSuccess(_AdditionSuccess value),
-    @required Result additionFailure(_AdditionFailure value),
-    @required Result dismissalSuccess(_DismissalSuccess value),
-    @required Result dismissalFailure(_DismissalFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult inInterests(_InInterests value),
+    @required TResult notInInterests(_NotInInterests value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult additionSuccess(_AdditionSuccess value),
+    @required TResult additionFailure(_AdditionFailure value),
+    @required TResult dismissalSuccess(_DismissalSuccess value),
+    @required TResult dismissalFailure(_DismissalFailure value),
   }) {
     assert(initial != null);
     assert(inInterests != null);
@@ -1386,16 +1392,16 @@ class _$_AdditionFailure implements _AdditionFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result inInterests(_InInterests value),
-    Result notInInterests(_NotInInterests value),
-    Result actionInProgress(_ActionInProgress value),
-    Result additionSuccess(_AdditionSuccess value),
-    Result additionFailure(_AdditionFailure value),
-    Result dismissalSuccess(_DismissalSuccess value),
-    Result dismissalFailure(_DismissalFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult inInterests(_InInterests value),
+    TResult notInInterests(_NotInInterests value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult additionSuccess(_AdditionSuccess value),
+    TResult additionFailure(_AdditionFailure value),
+    TResult dismissalSuccess(_DismissalSuccess value),
+    TResult dismissalFailure(_DismissalFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (additionFailure != null) {
@@ -1450,15 +1456,15 @@ class _$_DismissalSuccess implements _DismissalSuccess {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result inInterests(),
-    @required Result notInInterests(),
-    @required Result actionInProgress(),
-    @required Result additionSuccess(),
-    @required Result additionFailure(Failure<dynamic> failure),
-    @required Result dismissalSuccess(),
-    @required Result dismissalFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult inInterests(),
+    @required TResult notInInterests(),
+    @required TResult actionInProgress(),
+    @required TResult additionSuccess(),
+    @required TResult additionFailure(Failure<dynamic> failure),
+    @required TResult dismissalSuccess(),
+    @required TResult dismissalFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
     assert(inInterests != null);
@@ -1473,16 +1479,16 @@ class _$_DismissalSuccess implements _DismissalSuccess {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result inInterests(),
-    Result notInInterests(),
-    Result actionInProgress(),
-    Result additionSuccess(),
-    Result additionFailure(Failure<dynamic> failure),
-    Result dismissalSuccess(),
-    Result dismissalFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult inInterests(),
+    TResult notInInterests(),
+    TResult actionInProgress(),
+    TResult additionSuccess(),
+    TResult additionFailure(Failure<dynamic> failure),
+    TResult dismissalSuccess(),
+    TResult dismissalFailure(Failure<dynamic> failure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (dismissalSuccess != null) {
@@ -1493,15 +1499,15 @@ class _$_DismissalSuccess implements _DismissalSuccess {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result inInterests(_InInterests value),
-    @required Result notInInterests(_NotInInterests value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result additionSuccess(_AdditionSuccess value),
-    @required Result additionFailure(_AdditionFailure value),
-    @required Result dismissalSuccess(_DismissalSuccess value),
-    @required Result dismissalFailure(_DismissalFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult inInterests(_InInterests value),
+    @required TResult notInInterests(_NotInInterests value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult additionSuccess(_AdditionSuccess value),
+    @required TResult additionFailure(_AdditionFailure value),
+    @required TResult dismissalSuccess(_DismissalSuccess value),
+    @required TResult dismissalFailure(_DismissalFailure value),
   }) {
     assert(initial != null);
     assert(inInterests != null);
@@ -1516,16 +1522,16 @@ class _$_DismissalSuccess implements _DismissalSuccess {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result inInterests(_InInterests value),
-    Result notInInterests(_NotInInterests value),
-    Result actionInProgress(_ActionInProgress value),
-    Result additionSuccess(_AdditionSuccess value),
-    Result additionFailure(_AdditionFailure value),
-    Result dismissalSuccess(_DismissalSuccess value),
-    Result dismissalFailure(_DismissalFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult inInterests(_InInterests value),
+    TResult notInInterests(_NotInInterests value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult additionSuccess(_AdditionSuccess value),
+    TResult additionFailure(_AdditionFailure value),
+    TResult dismissalSuccess(_DismissalSuccess value),
+    TResult dismissalFailure(_DismissalFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (dismissalSuccess != null) {
@@ -1610,15 +1616,15 @@ class _$_DismissalFailure implements _DismissalFailure {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result inInterests(),
-    @required Result notInInterests(),
-    @required Result actionInProgress(),
-    @required Result additionSuccess(),
-    @required Result additionFailure(Failure<dynamic> failure),
-    @required Result dismissalSuccess(),
-    @required Result dismissalFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult inInterests(),
+    @required TResult notInInterests(),
+    @required TResult actionInProgress(),
+    @required TResult additionSuccess(),
+    @required TResult additionFailure(Failure<dynamic> failure),
+    @required TResult dismissalSuccess(),
+    @required TResult dismissalFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
     assert(inInterests != null);
@@ -1633,16 +1639,16 @@ class _$_DismissalFailure implements _DismissalFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result inInterests(),
-    Result notInInterests(),
-    Result actionInProgress(),
-    Result additionSuccess(),
-    Result additionFailure(Failure<dynamic> failure),
-    Result dismissalSuccess(),
-    Result dismissalFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult inInterests(),
+    TResult notInInterests(),
+    TResult actionInProgress(),
+    TResult additionSuccess(),
+    TResult additionFailure(Failure<dynamic> failure),
+    TResult dismissalSuccess(),
+    TResult dismissalFailure(Failure<dynamic> failure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (dismissalFailure != null) {
@@ -1653,15 +1659,15 @@ class _$_DismissalFailure implements _DismissalFailure {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result inInterests(_InInterests value),
-    @required Result notInInterests(_NotInInterests value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result additionSuccess(_AdditionSuccess value),
-    @required Result additionFailure(_AdditionFailure value),
-    @required Result dismissalSuccess(_DismissalSuccess value),
-    @required Result dismissalFailure(_DismissalFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult inInterests(_InInterests value),
+    @required TResult notInInterests(_NotInInterests value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult additionSuccess(_AdditionSuccess value),
+    @required TResult additionFailure(_AdditionFailure value),
+    @required TResult dismissalSuccess(_DismissalSuccess value),
+    @required TResult dismissalFailure(_DismissalFailure value),
   }) {
     assert(initial != null);
     assert(inInterests != null);
@@ -1676,16 +1682,16 @@ class _$_DismissalFailure implements _DismissalFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result inInterests(_InInterests value),
-    Result notInInterests(_NotInInterests value),
-    Result actionInProgress(_ActionInProgress value),
-    Result additionSuccess(_AdditionSuccess value),
-    Result additionFailure(_AdditionFailure value),
-    Result dismissalSuccess(_DismissalSuccess value),
-    Result dismissalFailure(_DismissalFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult inInterests(_InInterests value),
+    TResult notInInterests(_NotInInterests value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult additionSuccess(_AdditionSuccess value),
+    TResult additionFailure(_AdditionFailure value),
+    TResult dismissalSuccess(_DismissalSuccess value),
+    TResult dismissalFailure(_DismissalFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (dismissalFailure != null) {

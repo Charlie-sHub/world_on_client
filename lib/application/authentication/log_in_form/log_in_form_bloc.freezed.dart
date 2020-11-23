@@ -45,47 +45,47 @@ const $LogInFormEvent = _$LogInFormEventTearOff();
 /// @nodoc
 mixin _$LogInFormEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result emailChanged(String email),
-    @required Result passwordChanged(String password),
-    @required Result loggedIn(),
-    @required Result loggedInGoogle(),
+  TResult when<TResult extends Object>({
+    @required TResult emailChanged(String email),
+    @required TResult passwordChanged(String password),
+    @required TResult loggedIn(),
+    @required TResult loggedInGoogle(),
   });
+
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result emailChanged(String email),
-    Result passwordChanged(String password),
-    Result loggedIn(),
-    Result loggedInGoogle(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult emailChanged(String email),
+    TResult passwordChanged(String password),
+    TResult loggedIn(),
+    TResult loggedInGoogle(),
+    @required TResult orElse(),
   });
+
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result emailChanged(_EmailChanged value),
-    @required Result passwordChanged(_PasswordChanged value),
-    @required Result loggedIn(_LoggedIn value),
-    @required Result loggedInGoogle(_LoggedInGoogle value),
+  TResult map<TResult extends Object>({
+    @required TResult emailChanged(_EmailChanged value),
+    @required TResult passwordChanged(_PasswordChanged value),
+    @required TResult loggedIn(_LoggedIn value),
+    @required TResult loggedInGoogle(_LoggedInGoogle value),
   });
+
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result emailChanged(_EmailChanged value),
-    Result passwordChanged(_PasswordChanged value),
-    Result loggedIn(_LoggedIn value),
-    Result loggedInGoogle(_LoggedInGoogle value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult emailChanged(_EmailChanged value),
+    TResult passwordChanged(_PasswordChanged value),
+    TResult loggedIn(_LoggedIn value),
+    TResult loggedInGoogle(_LoggedInGoogle value),
+    @required TResult orElse(),
   });
 }
 
 /// @nodoc
 abstract class $LogInFormEventCopyWith<$Res> {
-  factory $LogInFormEventCopyWith(
-          LogInFormEvent value, $Res Function(LogInFormEvent) then) =
-      _$LogInFormEventCopyWithImpl<$Res>;
+  factory $LogInFormEventCopyWith(LogInFormEvent value, $Res Function(LogInFormEvent) then) = _$LogInFormEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LogInFormEventCopyWithImpl<$Res>
-    implements $LogInFormEventCopyWith<$Res> {
+class _$LogInFormEventCopyWithImpl<$Res> implements $LogInFormEventCopyWith<$Res> {
   _$LogInFormEventCopyWithImpl(this._value, this._then);
 
   final LogInFormEvent _value;
@@ -95,19 +95,13 @@ class _$LogInFormEventCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$EmailChangedCopyWith<$Res> {
-  factory _$EmailChangedCopyWith(
-          _EmailChanged value, $Res Function(_EmailChanged) then) =
-      __$EmailChangedCopyWithImpl<$Res>;
+  factory _$EmailChangedCopyWith(_EmailChanged value, $Res Function(_EmailChanged) then) = __$EmailChangedCopyWithImpl<$Res>;
   $Res call({String email});
 }
 
 /// @nodoc
-class __$EmailChangedCopyWithImpl<$Res>
-    extends _$LogInFormEventCopyWithImpl<$Res>
-    implements _$EmailChangedCopyWith<$Res> {
-  __$EmailChangedCopyWithImpl(
-      _EmailChanged _value, $Res Function(_EmailChanged) _then)
-      : super(_value, (v) => _then(v as _EmailChanged));
+class __$EmailChangedCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res> implements _$EmailChangedCopyWith<$Res> {
+  __$EmailChangedCopyWithImpl(_EmailChanged _value, $Res Function(_EmailChanged) _then) : super(_value, (v) => _then(v as _EmailChanged));
 
   @override
   _EmailChanged get _value => super._value as _EmailChanged;
@@ -136,27 +130,22 @@ class _$_EmailChanged implements _EmailChanged {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _EmailChanged &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)));
+    return identical(this, other) || (other is _EmailChanged && (identical(other.email, email) || const DeepCollectionEquality().equals(other.email, email)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(email);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(email);
 
   @override
-  _$EmailChangedCopyWith<_EmailChanged> get copyWith =>
-      __$EmailChangedCopyWithImpl<_EmailChanged>(this, _$identity);
+  _$EmailChangedCopyWith<_EmailChanged> get copyWith => __$EmailChangedCopyWithImpl<_EmailChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result emailChanged(String email),
-    @required Result passwordChanged(String password),
-    @required Result loggedIn(),
-    @required Result loggedInGoogle(),
+  TResult when<TResult extends Object>({
+    @required TResult emailChanged(String email),
+    @required TResult passwordChanged(String password),
+    @required TResult loggedIn(),
+    @required TResult loggedInGoogle(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -167,12 +156,12 @@ class _$_EmailChanged implements _EmailChanged {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result emailChanged(String email),
-    Result passwordChanged(String password),
-    Result loggedIn(),
-    Result loggedInGoogle(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult emailChanged(String email),
+    TResult passwordChanged(String password),
+    TResult loggedIn(),
+    TResult loggedInGoogle(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (emailChanged != null) {
@@ -183,11 +172,11 @@ class _$_EmailChanged implements _EmailChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result emailChanged(_EmailChanged value),
-    @required Result passwordChanged(_PasswordChanged value),
-    @required Result loggedIn(_LoggedIn value),
-    @required Result loggedInGoogle(_LoggedInGoogle value),
+  TResult map<TResult extends Object>({
+    @required TResult emailChanged(_EmailChanged value),
+    @required TResult passwordChanged(_PasswordChanged value),
+    @required TResult loggedIn(_LoggedIn value),
+    @required TResult loggedInGoogle(_LoggedInGoogle value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -198,12 +187,12 @@ class _$_EmailChanged implements _EmailChanged {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result emailChanged(_EmailChanged value),
-    Result passwordChanged(_PasswordChanged value),
-    Result loggedIn(_LoggedIn value),
-    Result loggedInGoogle(_LoggedInGoogle value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult emailChanged(_EmailChanged value),
+    TResult passwordChanged(_PasswordChanged value),
+    TResult loggedIn(_LoggedIn value),
+    TResult loggedInGoogle(_LoggedInGoogle value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (emailChanged != null) {
@@ -222,19 +211,13 @@ abstract class _EmailChanged implements LogInFormEvent {
 
 /// @nodoc
 abstract class _$PasswordChangedCopyWith<$Res> {
-  factory _$PasswordChangedCopyWith(
-          _PasswordChanged value, $Res Function(_PasswordChanged) then) =
-      __$PasswordChangedCopyWithImpl<$Res>;
+  factory _$PasswordChangedCopyWith(_PasswordChanged value, $Res Function(_PasswordChanged) then) = __$PasswordChangedCopyWithImpl<$Res>;
   $Res call({String password});
 }
 
 /// @nodoc
-class __$PasswordChangedCopyWithImpl<$Res>
-    extends _$LogInFormEventCopyWithImpl<$Res>
-    implements _$PasswordChangedCopyWith<$Res> {
-  __$PasswordChangedCopyWithImpl(
-      _PasswordChanged _value, $Res Function(_PasswordChanged) _then)
-      : super(_value, (v) => _then(v as _PasswordChanged));
+class __$PasswordChangedCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res> implements _$PasswordChangedCopyWith<$Res> {
+  __$PasswordChangedCopyWithImpl(_PasswordChanged _value, $Res Function(_PasswordChanged) _then) : super(_value, (v) => _then(v as _PasswordChanged));
 
   @override
   _PasswordChanged get _value => super._value as _PasswordChanged;
@@ -263,28 +246,22 @@ class _$_PasswordChanged implements _PasswordChanged {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _PasswordChanged &&
-            (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)));
+    return identical(this, other) || (other is _PasswordChanged && (identical(other.password, password) || const DeepCollectionEquality().equals(other.password, password)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(password);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(password);
 
   @override
-  _$PasswordChangedCopyWith<_PasswordChanged> get copyWith =>
-      __$PasswordChangedCopyWithImpl<_PasswordChanged>(this, _$identity);
+  _$PasswordChangedCopyWith<_PasswordChanged> get copyWith => __$PasswordChangedCopyWithImpl<_PasswordChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result emailChanged(String email),
-    @required Result passwordChanged(String password),
-    @required Result loggedIn(),
-    @required Result loggedInGoogle(),
+  TResult when<TResult extends Object>({
+    @required TResult emailChanged(String email),
+    @required TResult passwordChanged(String password),
+    @required TResult loggedIn(),
+    @required TResult loggedInGoogle(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -295,12 +272,12 @@ class _$_PasswordChanged implements _PasswordChanged {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result emailChanged(String email),
-    Result passwordChanged(String password),
-    Result loggedIn(),
-    Result loggedInGoogle(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult emailChanged(String email),
+    TResult passwordChanged(String password),
+    TResult loggedIn(),
+    TResult loggedInGoogle(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (passwordChanged != null) {
@@ -311,11 +288,11 @@ class _$_PasswordChanged implements _PasswordChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result emailChanged(_EmailChanged value),
-    @required Result passwordChanged(_PasswordChanged value),
-    @required Result loggedIn(_LoggedIn value),
-    @required Result loggedInGoogle(_LoggedInGoogle value),
+  TResult map<TResult extends Object>({
+    @required TResult emailChanged(_EmailChanged value),
+    @required TResult passwordChanged(_PasswordChanged value),
+    @required TResult loggedIn(_LoggedIn value),
+    @required TResult loggedInGoogle(_LoggedInGoogle value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -326,12 +303,12 @@ class _$_PasswordChanged implements _PasswordChanged {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result emailChanged(_EmailChanged value),
-    Result passwordChanged(_PasswordChanged value),
-    Result loggedIn(_LoggedIn value),
-    Result loggedInGoogle(_LoggedInGoogle value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult emailChanged(_EmailChanged value),
+    TResult passwordChanged(_PasswordChanged value),
+    TResult loggedIn(_LoggedIn value),
+    TResult loggedInGoogle(_LoggedInGoogle value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (passwordChanged != null) {
@@ -350,15 +327,12 @@ abstract class _PasswordChanged implements LogInFormEvent {
 
 /// @nodoc
 abstract class _$LoggedInCopyWith<$Res> {
-  factory _$LoggedInCopyWith(_LoggedIn value, $Res Function(_LoggedIn) then) =
-      __$LoggedInCopyWithImpl<$Res>;
+  factory _$LoggedInCopyWith(_LoggedIn value, $Res Function(_LoggedIn) then) = __$LoggedInCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoggedInCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res>
-    implements _$LoggedInCopyWith<$Res> {
-  __$LoggedInCopyWithImpl(_LoggedIn _value, $Res Function(_LoggedIn) _then)
-      : super(_value, (v) => _then(v as _LoggedIn));
+class __$LoggedInCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res> implements _$LoggedInCopyWith<$Res> {
+  __$LoggedInCopyWithImpl(_LoggedIn _value, $Res Function(_LoggedIn) _then) : super(_value, (v) => _then(v as _LoggedIn));
 
   @override
   _LoggedIn get _value => super._value as _LoggedIn;
@@ -383,11 +357,11 @@ class _$_LoggedIn implements _LoggedIn {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result emailChanged(String email),
-    @required Result passwordChanged(String password),
-    @required Result loggedIn(),
-    @required Result loggedInGoogle(),
+  TResult when<TResult extends Object>({
+    @required TResult emailChanged(String email),
+    @required TResult passwordChanged(String password),
+    @required TResult loggedIn(),
+    @required TResult loggedInGoogle(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -398,12 +372,12 @@ class _$_LoggedIn implements _LoggedIn {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result emailChanged(String email),
-    Result passwordChanged(String password),
-    Result loggedIn(),
-    Result loggedInGoogle(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult emailChanged(String email),
+    TResult passwordChanged(String password),
+    TResult loggedIn(),
+    TResult loggedInGoogle(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loggedIn != null) {
@@ -414,11 +388,11 @@ class _$_LoggedIn implements _LoggedIn {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result emailChanged(_EmailChanged value),
-    @required Result passwordChanged(_PasswordChanged value),
-    @required Result loggedIn(_LoggedIn value),
-    @required Result loggedInGoogle(_LoggedInGoogle value),
+  TResult map<TResult extends Object>({
+    @required TResult emailChanged(_EmailChanged value),
+    @required TResult passwordChanged(_PasswordChanged value),
+    @required TResult loggedIn(_LoggedIn value),
+    @required TResult loggedInGoogle(_LoggedInGoogle value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -429,12 +403,12 @@ class _$_LoggedIn implements _LoggedIn {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result emailChanged(_EmailChanged value),
-    Result passwordChanged(_PasswordChanged value),
-    Result loggedIn(_LoggedIn value),
-    Result loggedInGoogle(_LoggedInGoogle value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult emailChanged(_EmailChanged value),
+    TResult passwordChanged(_PasswordChanged value),
+    TResult loggedIn(_LoggedIn value),
+    TResult loggedInGoogle(_LoggedInGoogle value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loggedIn != null) {
@@ -450,18 +424,12 @@ abstract class _LoggedIn implements LogInFormEvent {
 
 /// @nodoc
 abstract class _$LoggedInGoogleCopyWith<$Res> {
-  factory _$LoggedInGoogleCopyWith(
-          _LoggedInGoogle value, $Res Function(_LoggedInGoogle) then) =
-      __$LoggedInGoogleCopyWithImpl<$Res>;
+  factory _$LoggedInGoogleCopyWith(_LoggedInGoogle value, $Res Function(_LoggedInGoogle) then) = __$LoggedInGoogleCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoggedInGoogleCopyWithImpl<$Res>
-    extends _$LogInFormEventCopyWithImpl<$Res>
-    implements _$LoggedInGoogleCopyWith<$Res> {
-  __$LoggedInGoogleCopyWithImpl(
-      _LoggedInGoogle _value, $Res Function(_LoggedInGoogle) _then)
-      : super(_value, (v) => _then(v as _LoggedInGoogle));
+class __$LoggedInGoogleCopyWithImpl<$Res> extends _$LogInFormEventCopyWithImpl<$Res> implements _$LoggedInGoogleCopyWith<$Res> {
+  __$LoggedInGoogleCopyWithImpl(_LoggedInGoogle _value, $Res Function(_LoggedInGoogle) _then) : super(_value, (v) => _then(v as _LoggedInGoogle));
 
   @override
   _LoggedInGoogle get _value => super._value as _LoggedInGoogle;
@@ -486,11 +454,11 @@ class _$_LoggedInGoogle implements _LoggedInGoogle {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result emailChanged(String email),
-    @required Result passwordChanged(String password),
-    @required Result loggedIn(),
-    @required Result loggedInGoogle(),
+  TResult when<TResult extends Object>({
+    @required TResult emailChanged(String email),
+    @required TResult passwordChanged(String password),
+    @required TResult loggedIn(),
+    @required TResult loggedInGoogle(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -501,12 +469,12 @@ class _$_LoggedInGoogle implements _LoggedInGoogle {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result emailChanged(String email),
-    Result passwordChanged(String password),
-    Result loggedIn(),
-    Result loggedInGoogle(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult emailChanged(String email),
+    TResult passwordChanged(String password),
+    TResult loggedIn(),
+    TResult loggedInGoogle(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loggedInGoogle != null) {
@@ -517,11 +485,11 @@ class _$_LoggedInGoogle implements _LoggedInGoogle {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result emailChanged(_EmailChanged value),
-    @required Result passwordChanged(_PasswordChanged value),
-    @required Result loggedIn(_LoggedIn value),
-    @required Result loggedInGoogle(_LoggedInGoogle value),
+  TResult map<TResult extends Object>({
+    @required TResult emailChanged(_EmailChanged value),
+    @required TResult passwordChanged(_PasswordChanged value),
+    @required TResult loggedIn(_LoggedIn value),
+    @required TResult loggedInGoogle(_LoggedInGoogle value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
@@ -532,12 +500,12 @@ class _$_LoggedInGoogle implements _LoggedInGoogle {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result emailChanged(_EmailChanged value),
-    Result passwordChanged(_PasswordChanged value),
-    Result loggedIn(_LoggedIn value),
-    Result loggedInGoogle(_LoggedInGoogle value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult emailChanged(_EmailChanged value),
+    TResult passwordChanged(_PasswordChanged value),
+    TResult loggedIn(_LoggedIn value),
+    TResult loggedInGoogle(_LoggedInGoogle value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loggedInGoogle != null) {
@@ -557,11 +525,7 @@ class _$LogInFormStateTearOff {
 
 // ignore: unused_element
   _LogInFormState call(
-      {@required EmailAddress email,
-      @required Password password,
-      @required bool showErrorMessages,
-      @required bool isSubmitting,
-      @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
+      {@required EmailAddress email, @required Password password, @required bool showErrorMessages, @required bool isSubmitting, @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _LogInFormState(
       email: email,
       password: password,
@@ -589,20 +553,12 @@ mixin _$LogInFormState {
 
 /// @nodoc
 abstract class $LogInFormStateCopyWith<$Res> {
-  factory $LogInFormStateCopyWith(
-          LogInFormState value, $Res Function(LogInFormState) then) =
-      _$LogInFormStateCopyWithImpl<$Res>;
-  $Res call(
-      {EmailAddress email,
-      Password password,
-      bool showErrorMessages,
-      bool isSubmitting,
-      Option<Either<Failure, Unit>> failureOrSuccessOption});
+  factory $LogInFormStateCopyWith(LogInFormState value, $Res Function(LogInFormState) then) = _$LogInFormStateCopyWithImpl<$Res>;
+  $Res call({EmailAddress email, Password password, bool showErrorMessages, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
 }
 
 /// @nodoc
-class _$LogInFormStateCopyWithImpl<$Res>
-    implements $LogInFormStateCopyWith<$Res> {
+class _$LogInFormStateCopyWithImpl<$Res> implements $LogInFormStateCopyWith<$Res> {
   _$LogInFormStateCopyWithImpl(this._value, this._then);
 
   final LogInFormState _value;
@@ -620,40 +576,23 @@ class _$LogInFormStateCopyWithImpl<$Res>
     return _then(_value.copyWith(
       email: email == freezed ? _value.email : email as EmailAddress,
       password: password == freezed ? _value.password : password as Password,
-      showErrorMessages: showErrorMessages == freezed
-          ? _value.showErrorMessages
-          : showErrorMessages as bool,
-      isSubmitting:
-          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
-      failureOrSuccessOption: failureOrSuccessOption == freezed
-          ? _value.failureOrSuccessOption
-          : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+      showErrorMessages: showErrorMessages == freezed ? _value.showErrorMessages : showErrorMessages as bool,
+      isSubmitting: isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      failureOrSuccessOption: failureOrSuccessOption == freezed ? _value.failureOrSuccessOption : failureOrSuccessOption as Option<Either<Failure, Unit>>,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$LogInFormStateCopyWith<$Res>
-    implements $LogInFormStateCopyWith<$Res> {
-  factory _$LogInFormStateCopyWith(
-          _LogInFormState value, $Res Function(_LogInFormState) then) =
-      __$LogInFormStateCopyWithImpl<$Res>;
+abstract class _$LogInFormStateCopyWith<$Res> implements $LogInFormStateCopyWith<$Res> {
+  factory _$LogInFormStateCopyWith(_LogInFormState value, $Res Function(_LogInFormState) then) = __$LogInFormStateCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {EmailAddress email,
-      Password password,
-      bool showErrorMessages,
-      bool isSubmitting,
-      Option<Either<Failure, Unit>> failureOrSuccessOption});
+  $Res call({EmailAddress email, Password password, bool showErrorMessages, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
 }
 
 /// @nodoc
-class __$LogInFormStateCopyWithImpl<$Res>
-    extends _$LogInFormStateCopyWithImpl<$Res>
-    implements _$LogInFormStateCopyWith<$Res> {
-  __$LogInFormStateCopyWithImpl(
-      _LogInFormState _value, $Res Function(_LogInFormState) _then)
-      : super(_value, (v) => _then(v as _LogInFormState));
+class __$LogInFormStateCopyWithImpl<$Res> extends _$LogInFormStateCopyWithImpl<$Res> implements _$LogInFormStateCopyWith<$Res> {
+  __$LogInFormStateCopyWithImpl(_LogInFormState _value, $Res Function(_LogInFormState) _then) : super(_value, (v) => _then(v as _LogInFormState));
 
   @override
   _LogInFormState get _value => super._value as _LogInFormState;
@@ -669,26 +608,16 @@ class __$LogInFormStateCopyWithImpl<$Res>
     return _then(_LogInFormState(
       email: email == freezed ? _value.email : email as EmailAddress,
       password: password == freezed ? _value.password : password as Password,
-      showErrorMessages: showErrorMessages == freezed
-          ? _value.showErrorMessages
-          : showErrorMessages as bool,
-      isSubmitting:
-          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
-      failureOrSuccessOption: failureOrSuccessOption == freezed
-          ? _value.failureOrSuccessOption
-          : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+      showErrorMessages: showErrorMessages == freezed ? _value.showErrorMessages : showErrorMessages as bool,
+      isSubmitting: isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      failureOrSuccessOption: failureOrSuccessOption == freezed ? _value.failureOrSuccessOption : failureOrSuccessOption as Option<Either<Failure, Unit>>,
     ));
   }
 }
 
 /// @nodoc
 class _$_LogInFormState implements _LogInFormState {
-  const _$_LogInFormState(
-      {@required this.email,
-      @required this.password,
-      @required this.showErrorMessages,
-      @required this.isSubmitting,
-      @required this.failureOrSuccessOption})
+  const _$_LogInFormState({@required this.email, @required this.password, @required this.showErrorMessages, @required this.isSubmitting, @required this.failureOrSuccessOption})
       : assert(email != null),
         assert(password != null),
         assert(showErrorMessages != null),
@@ -715,20 +644,11 @@ class _$_LogInFormState implements _LogInFormState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LogInFormState &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)) &&
-            (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)) &&
-            (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.failureOrSuccessOption, failureOrSuccessOption)));
+            (identical(other.email, email) || const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.password, password) || const DeepCollectionEquality().equals(other.password, password)) &&
+            (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
+            (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
+            (identical(other.failureOrSuccessOption, failureOrSuccessOption) || const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
@@ -741,18 +661,16 @@ class _$_LogInFormState implements _LogInFormState {
       const DeepCollectionEquality().hash(failureOrSuccessOption);
 
   @override
-  _$LogInFormStateCopyWith<_LogInFormState> get copyWith =>
-      __$LogInFormStateCopyWithImpl<_LogInFormState>(this, _$identity);
+  _$LogInFormStateCopyWith<_LogInFormState> get copyWith => __$LogInFormStateCopyWithImpl<_LogInFormState>(this, _$identity);
 }
 
 abstract class _LogInFormState implements LogInFormState {
   const factory _LogInFormState(
-          {@required EmailAddress email,
-          @required Password password,
-          @required bool showErrorMessages,
-          @required bool isSubmitting,
-          @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
-      _$_LogInFormState;
+      {@required EmailAddress email,
+      @required Password password,
+      @required bool showErrorMessages,
+      @required bool isSubmitting,
+      @required Option<Either<Failure, Unit>> failureOrSuccessOption}) = _$_LogInFormState;
 
   @override
   EmailAddress get email;

@@ -30,42 +30,40 @@ mixin _$ExperienceCardLikeCheckEvent {
   Experience get experience;
 
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Experience experience),
-  });
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Experience experience),
-    @required Result orElse(),
-  });
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-  });
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    @required Result orElse(),
+  TResult when<TResult extends Object>({
+    @required TResult initialized(Experience experience),
   });
 
-  $ExperienceCardLikeCheckEventCopyWith<ExperienceCardLikeCheckEvent>
-      get copyWith;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult initialized(Experience experience),
+    @required TResult orElse(),
+  });
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
+  });
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
+    @required TResult orElse(),
+  });
+
+  $ExperienceCardLikeCheckEventCopyWith<ExperienceCardLikeCheckEvent> get copyWith;
 }
 
 /// @nodoc
 abstract class $ExperienceCardLikeCheckEventCopyWith<$Res> {
-  factory $ExperienceCardLikeCheckEventCopyWith(
-          ExperienceCardLikeCheckEvent value,
-          $Res Function(ExperienceCardLikeCheckEvent) then) =
-      _$ExperienceCardLikeCheckEventCopyWithImpl<$Res>;
+  factory $ExperienceCardLikeCheckEventCopyWith(ExperienceCardLikeCheckEvent value, $Res Function(ExperienceCardLikeCheckEvent) then) = _$ExperienceCardLikeCheckEventCopyWithImpl<$Res>;
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
 }
 
 /// @nodoc
-class _$ExperienceCardLikeCheckEventCopyWithImpl<$Res>
-    implements $ExperienceCardLikeCheckEventCopyWith<$Res> {
+class _$ExperienceCardLikeCheckEventCopyWithImpl<$Res> implements $ExperienceCardLikeCheckEventCopyWith<$Res> {
   _$ExperienceCardLikeCheckEventCopyWithImpl(this._value, this._then);
 
   final ExperienceCardLikeCheckEvent _value;
@@ -77,8 +75,7 @@ class _$ExperienceCardLikeCheckEventCopyWithImpl<$Res>
     Object experience = freezed,
   }) {
     return _then(_value.copyWith(
-      experience:
-          experience == freezed ? _value.experience : experience as Experience,
+      experience: experience == freezed ? _value.experience : experience as Experience,
     ));
   }
 
@@ -94,11 +91,8 @@ class _$ExperienceCardLikeCheckEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$InitializedCopyWith<$Res>
-    implements $ExperienceCardLikeCheckEventCopyWith<$Res> {
-  factory _$InitializedCopyWith(
-          _Initialized value, $Res Function(_Initialized) then) =
-      __$InitializedCopyWithImpl<$Res>;
+abstract class _$InitializedCopyWith<$Res> implements $ExperienceCardLikeCheckEventCopyWith<$Res> {
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
   @override
   $Res call({Experience experience});
 
@@ -107,12 +101,8 @@ abstract class _$InitializedCopyWith<$Res>
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res>
-    extends _$ExperienceCardLikeCheckEventCopyWithImpl<$Res>
-    implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(
-      _Initialized _value, $Res Function(_Initialized) _then)
-      : super(_value, (v) => _then(v as _Initialized));
+class __$InitializedCopyWithImpl<$Res> extends _$ExperienceCardLikeCheckEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
 
   @override
   _Initialized get _value => super._value as _Initialized;
@@ -141,25 +131,19 @@ class _$_Initialized implements _Initialized {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _Initialized &&
-            (identical(other.experience, experience) ||
-                const DeepCollectionEquality()
-                    .equals(other.experience, experience)));
+    return identical(this, other) || (other is _Initialized && (identical(other.experience, experience) || const DeepCollectionEquality().equals(other.experience, experience)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
   @override
-  _$InitializedCopyWith<_Initialized> get copyWith =>
-      __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+  _$InitializedCopyWith<_Initialized> get copyWith => __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Experience experience),
+  TResult when<TResult extends Object>({
+    @required TResult initialized(Experience experience),
   }) {
     assert(initialized != null);
     return initialized(experience);
@@ -167,9 +151,9 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Experience experience),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initialized(Experience experience),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initialized != null) {
@@ -180,8 +164,8 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
+  TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
   }) {
     assert(initialized != null);
     return initialized(this);
@@ -189,9 +173,9 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initialized != null) {
@@ -237,44 +221,43 @@ const $ExperienceCardLikeCheckState = _$ExperienceCardLikeCheckStateTearOff();
 /// @nodoc
 mixin _$ExperienceCardLikeCheckState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result likes(),
-    @required Result neutral(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult likes(),
+    @required TResult neutral(),
   });
+
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result likes(),
-    Result neutral(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult likes(),
+    TResult neutral(),
+    @required TResult orElse(),
   });
+
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result likes(_Likes value),
-    @required Result neutral(_Neutral value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult likes(_Likes value),
+    @required TResult neutral(_Neutral value),
   });
+
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result likes(_Likes value),
-    Result neutral(_Neutral value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult likes(_Likes value),
+    TResult neutral(_Neutral value),
+    @required TResult orElse(),
   });
 }
 
 /// @nodoc
 abstract class $ExperienceCardLikeCheckStateCopyWith<$Res> {
-  factory $ExperienceCardLikeCheckStateCopyWith(
-          ExperienceCardLikeCheckState value,
-          $Res Function(ExperienceCardLikeCheckState) then) =
-      _$ExperienceCardLikeCheckStateCopyWithImpl<$Res>;
+  factory $ExperienceCardLikeCheckStateCopyWith(ExperienceCardLikeCheckState value, $Res Function(ExperienceCardLikeCheckState) then) = _$ExperienceCardLikeCheckStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ExperienceCardLikeCheckStateCopyWithImpl<$Res>
-    implements $ExperienceCardLikeCheckStateCopyWith<$Res> {
+class _$ExperienceCardLikeCheckStateCopyWithImpl<$Res> implements $ExperienceCardLikeCheckStateCopyWith<$Res> {
   _$ExperienceCardLikeCheckStateCopyWithImpl(this._value, this._then);
 
   final ExperienceCardLikeCheckState _value;
@@ -284,16 +267,12 @@ class _$ExperienceCardLikeCheckStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res>
-    extends _$ExperienceCardLikeCheckStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$ExperienceCardLikeCheckStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -318,10 +297,10 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result likes(),
-    @required Result neutral(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult likes(),
+    @required TResult neutral(),
   }) {
     assert(initial != null);
     assert(likes != null);
@@ -331,11 +310,11 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result likes(),
-    Result neutral(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult likes(),
+    TResult neutral(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -346,10 +325,10 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result likes(_Likes value),
-    @required Result neutral(_Neutral value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult likes(_Likes value),
+    @required TResult neutral(_Neutral value),
   }) {
     assert(initial != null);
     assert(likes != null);
@@ -359,11 +338,11 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result likes(_Likes value),
-    Result neutral(_Neutral value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult likes(_Likes value),
+    TResult neutral(_Neutral value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -379,16 +358,12 @@ abstract class _Initial implements ExperienceCardLikeCheckState {
 
 /// @nodoc
 abstract class _$LikesCopyWith<$Res> {
-  factory _$LikesCopyWith(_Likes value, $Res Function(_Likes) then) =
-      __$LikesCopyWithImpl<$Res>;
+  factory _$LikesCopyWith(_Likes value, $Res Function(_Likes) then) = __$LikesCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LikesCopyWithImpl<$Res>
-    extends _$ExperienceCardLikeCheckStateCopyWithImpl<$Res>
-    implements _$LikesCopyWith<$Res> {
-  __$LikesCopyWithImpl(_Likes _value, $Res Function(_Likes) _then)
-      : super(_value, (v) => _then(v as _Likes));
+class __$LikesCopyWithImpl<$Res> extends _$ExperienceCardLikeCheckStateCopyWithImpl<$Res> implements _$LikesCopyWith<$Res> {
+  __$LikesCopyWithImpl(_Likes _value, $Res Function(_Likes) _then) : super(_value, (v) => _then(v as _Likes));
 
   @override
   _Likes get _value => super._value as _Likes;
@@ -413,10 +388,10 @@ class _$_Likes implements _Likes {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result likes(),
-    @required Result neutral(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult likes(),
+    @required TResult neutral(),
   }) {
     assert(initial != null);
     assert(likes != null);
@@ -426,11 +401,11 @@ class _$_Likes implements _Likes {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result likes(),
-    Result neutral(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult likes(),
+    TResult neutral(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (likes != null) {
@@ -441,10 +416,10 @@ class _$_Likes implements _Likes {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result likes(_Likes value),
-    @required Result neutral(_Neutral value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult likes(_Likes value),
+    @required TResult neutral(_Neutral value),
   }) {
     assert(initial != null);
     assert(likes != null);
@@ -454,11 +429,11 @@ class _$_Likes implements _Likes {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result likes(_Likes value),
-    Result neutral(_Neutral value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult likes(_Likes value),
+    TResult neutral(_Neutral value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (likes != null) {
@@ -474,16 +449,12 @@ abstract class _Likes implements ExperienceCardLikeCheckState {
 
 /// @nodoc
 abstract class _$NeutralCopyWith<$Res> {
-  factory _$NeutralCopyWith(_Neutral value, $Res Function(_Neutral) then) =
-      __$NeutralCopyWithImpl<$Res>;
+  factory _$NeutralCopyWith(_Neutral value, $Res Function(_Neutral) then) = __$NeutralCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$NeutralCopyWithImpl<$Res>
-    extends _$ExperienceCardLikeCheckStateCopyWithImpl<$Res>
-    implements _$NeutralCopyWith<$Res> {
-  __$NeutralCopyWithImpl(_Neutral _value, $Res Function(_Neutral) _then)
-      : super(_value, (v) => _then(v as _Neutral));
+class __$NeutralCopyWithImpl<$Res> extends _$ExperienceCardLikeCheckStateCopyWithImpl<$Res> implements _$NeutralCopyWith<$Res> {
+  __$NeutralCopyWithImpl(_Neutral _value, $Res Function(_Neutral) _then) : super(_value, (v) => _then(v as _Neutral));
 
   @override
   _Neutral get _value => super._value as _Neutral;
@@ -508,10 +479,10 @@ class _$_Neutral implements _Neutral {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result likes(),
-    @required Result neutral(),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult likes(),
+    @required TResult neutral(),
   }) {
     assert(initial != null);
     assert(likes != null);
@@ -521,11 +492,11 @@ class _$_Neutral implements _Neutral {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result likes(),
-    Result neutral(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult likes(),
+    TResult neutral(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (neutral != null) {
@@ -536,10 +507,10 @@ class _$_Neutral implements _Neutral {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result likes(_Likes value),
-    @required Result neutral(_Neutral value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult likes(_Likes value),
+    @required TResult neutral(_Neutral value),
   }) {
     assert(initial != null);
     assert(likes != null);
@@ -549,11 +520,11 @@ class _$_Neutral implements _Neutral {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result likes(_Likes value),
-    Result neutral(_Neutral value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult likes(_Likes value),
+    TResult neutral(_Neutral value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (neutral != null) {

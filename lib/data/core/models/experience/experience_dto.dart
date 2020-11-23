@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart' as dartz;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:kt_dart/kt.dart';
+import 'package:worldon/data/core/misc/server_timestamp_converter.dart';
 import 'package:worldon/data/core/models/comment/comment_dto.dart';
 import 'package:worldon/data/core/models/coordinates/coordinates_dto.dart';
 import 'package:worldon/data/core/models/location/location_dto.dart';
@@ -36,8 +37,8 @@ abstract class ExperienceDto implements _$ExperienceDto {
     @required String creatorId,
     @required UserDto creator,
     @required int difficulty,
-    @required String creationDate,
-    @required String modificationDate,
+    @ServerTimestampConverter() @required DateTime creationDate,
+    @ServerTimestampConverter() @required DateTime modificationDate,
     @required Set<ObjectiveDto> objectives,
     @required Set<RewardDto> rewards,
     @required Set<TagDto> tags,
@@ -57,8 +58,8 @@ abstract class ExperienceDto implements _$ExperienceDto {
         creatorId: experience.creator.id.getOrCrash(),
         creator: UserDto.fromDomain(experience.creator),
         difficulty: experience.difficulty.getOrCrash(),
-        creationDate: experience.creationDate.getOrCrash().toIso8601String(),
-        modificationDate: experience.modificationDate.getOrCrash().toIso8601String(),
+        creationDate: experience.creationDate.getOrCrash(),
+        modificationDate: experience.modificationDate.getOrCrash(),
         objectives: experience.objectives.getOrCrash().asSet().map((objective) => ObjectiveDto.fromDomain(objective)).toSet(),
         rewards: experience.rewards.getOrCrash().asSet().map((reward) => RewardDto.fromDomain(reward)).toSet(),
         tags: experience.tags.getOrCrash().asSet().map((tag) => TagDto.fromDomain(tag)).toSet(),
@@ -77,8 +78,8 @@ abstract class ExperienceDto implements _$ExperienceDto {
         location: location.toDomain(),
         creator: creator.toDomain(),
         difficulty: Difficulty(difficulty),
-        creationDate: PastDate(DateTime.parse(creationDate)),
-        modificationDate: PastDate(DateTime.parse(modificationDate)),
+        creationDate: PastDate(creationDate),
+        modificationDate: PastDate(modificationDate),
         objectives: ObjectiveSet(objectives.map((objectiveDto) => objectiveDto.toDomain()).toImmutableSet()),
         rewards: RewardSet(rewards.map((rewardDto) => rewardDto.toDomain()).toImmutableSet()),
         tags: TagSet(tags.map((tagDto) => tagDto.toDomain()).toImmutableSet()),

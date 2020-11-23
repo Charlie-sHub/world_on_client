@@ -28,8 +28,7 @@ class _$ExperienceCardActorEventTearOff {
   }
 
 // ignore: unused_element
-  _DismissedExperienceFromLog dismissedExperienceFromLog(
-      Experience experience) {
+  _DismissedExperienceFromLog dismissedExperienceFromLog(Experience experience) {
     return _DismissedExperienceFromLog(
       experience,
     );
@@ -45,31 +44,33 @@ mixin _$ExperienceCardActorEvent {
   Experience get experience;
 
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Experience experience),
-    @required Result addedExperienceToLog(Experience experience),
-    @required Result dismissedExperienceFromLog(Experience experience),
+  TResult when<TResult extends Object>({
+    @required TResult initialized(Experience experience),
+    @required TResult addedExperienceToLog(Experience experience),
+    @required TResult dismissedExperienceFromLog(Experience experience),
   });
+
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Experience experience),
-    Result addedExperienceToLog(Experience experience),
-    Result dismissedExperienceFromLog(Experience experience),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initialized(Experience experience),
+    TResult addedExperienceToLog(Experience experience),
+    TResult dismissedExperienceFromLog(Experience experience),
+    @required TResult orElse(),
   });
+
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result addedExperienceToLog(_AddedExperienceToLog value),
-    @required
-        Result dismissedExperienceFromLog(_DismissedExperienceFromLog value),
+  TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
+    @required TResult addedExperienceToLog(_AddedExperienceToLog value),
+    @required TResult dismissedExperienceFromLog(_DismissedExperienceFromLog value),
   });
+
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result addedExperienceToLog(_AddedExperienceToLog value),
-    Result dismissedExperienceFromLog(_DismissedExperienceFromLog value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
+    TResult addedExperienceToLog(_AddedExperienceToLog value),
+    TResult dismissedExperienceFromLog(_DismissedExperienceFromLog value),
+    @required TResult orElse(),
   });
 
   $ExperienceCardActorEventCopyWith<ExperienceCardActorEvent> get copyWith;
@@ -77,17 +78,14 @@ mixin _$ExperienceCardActorEvent {
 
 /// @nodoc
 abstract class $ExperienceCardActorEventCopyWith<$Res> {
-  factory $ExperienceCardActorEventCopyWith(ExperienceCardActorEvent value,
-          $Res Function(ExperienceCardActorEvent) then) =
-      _$ExperienceCardActorEventCopyWithImpl<$Res>;
+  factory $ExperienceCardActorEventCopyWith(ExperienceCardActorEvent value, $Res Function(ExperienceCardActorEvent) then) = _$ExperienceCardActorEventCopyWithImpl<$Res>;
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
 }
 
 /// @nodoc
-class _$ExperienceCardActorEventCopyWithImpl<$Res>
-    implements $ExperienceCardActorEventCopyWith<$Res> {
+class _$ExperienceCardActorEventCopyWithImpl<$Res> implements $ExperienceCardActorEventCopyWith<$Res> {
   _$ExperienceCardActorEventCopyWithImpl(this._value, this._then);
 
   final ExperienceCardActorEvent _value;
@@ -99,8 +97,7 @@ class _$ExperienceCardActorEventCopyWithImpl<$Res>
     Object experience = freezed,
   }) {
     return _then(_value.copyWith(
-      experience:
-          experience == freezed ? _value.experience : experience as Experience,
+      experience: experience == freezed ? _value.experience : experience as Experience,
     ));
   }
 
@@ -116,11 +113,8 @@ class _$ExperienceCardActorEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$InitializedCopyWith<$Res>
-    implements $ExperienceCardActorEventCopyWith<$Res> {
-  factory _$InitializedCopyWith(
-          _Initialized value, $Res Function(_Initialized) then) =
-      __$InitializedCopyWithImpl<$Res>;
+abstract class _$InitializedCopyWith<$Res> implements $ExperienceCardActorEventCopyWith<$Res> {
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
   @override
   $Res call({Experience experience});
 
@@ -129,12 +123,8 @@ abstract class _$InitializedCopyWith<$Res>
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res>
-    extends _$ExperienceCardActorEventCopyWithImpl<$Res>
-    implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(
-      _Initialized _value, $Res Function(_Initialized) _then)
-      : super(_value, (v) => _then(v as _Initialized));
+class __$InitializedCopyWithImpl<$Res> extends _$ExperienceCardActorEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
 
   @override
   _Initialized get _value => super._value as _Initialized;
@@ -163,27 +153,21 @@ class _$_Initialized implements _Initialized {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _Initialized &&
-            (identical(other.experience, experience) ||
-                const DeepCollectionEquality()
-                    .equals(other.experience, experience)));
+    return identical(this, other) || (other is _Initialized && (identical(other.experience, experience) || const DeepCollectionEquality().equals(other.experience, experience)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
   @override
-  _$InitializedCopyWith<_Initialized> get copyWith =>
-      __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+  _$InitializedCopyWith<_Initialized> get copyWith => __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Experience experience),
-    @required Result addedExperienceToLog(Experience experience),
-    @required Result dismissedExperienceFromLog(Experience experience),
+  TResult when<TResult extends Object>({
+    @required TResult initialized(Experience experience),
+    @required TResult addedExperienceToLog(Experience experience),
+    @required TResult dismissedExperienceFromLog(Experience experience),
   }) {
     assert(initialized != null);
     assert(addedExperienceToLog != null);
@@ -193,11 +177,11 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Experience experience),
-    Result addedExperienceToLog(Experience experience),
-    Result dismissedExperienceFromLog(Experience experience),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initialized(Experience experience),
+    TResult addedExperienceToLog(Experience experience),
+    TResult dismissedExperienceFromLog(Experience experience),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initialized != null) {
@@ -208,11 +192,10 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result addedExperienceToLog(_AddedExperienceToLog value),
-    @required
-        Result dismissedExperienceFromLog(_DismissedExperienceFromLog value),
+  TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
+    @required TResult addedExperienceToLog(_AddedExperienceToLog value),
+    @required TResult dismissedExperienceFromLog(_DismissedExperienceFromLog value),
   }) {
     assert(initialized != null);
     assert(addedExperienceToLog != null);
@@ -222,11 +205,11 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result addedExperienceToLog(_AddedExperienceToLog value),
-    Result dismissedExperienceFromLog(_DismissedExperienceFromLog value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
+    TResult addedExperienceToLog(_AddedExperienceToLog value),
+    TResult dismissedExperienceFromLog(_DismissedExperienceFromLog value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initialized != null) {
@@ -246,11 +229,8 @@ abstract class _Initialized implements ExperienceCardActorEvent {
 }
 
 /// @nodoc
-abstract class _$AddedExperienceToLogCopyWith<$Res>
-    implements $ExperienceCardActorEventCopyWith<$Res> {
-  factory _$AddedExperienceToLogCopyWith(_AddedExperienceToLog value,
-          $Res Function(_AddedExperienceToLog) then) =
-      __$AddedExperienceToLogCopyWithImpl<$Res>;
+abstract class _$AddedExperienceToLogCopyWith<$Res> implements $ExperienceCardActorEventCopyWith<$Res> {
+  factory _$AddedExperienceToLogCopyWith(_AddedExperienceToLog value, $Res Function(_AddedExperienceToLog) then) = __$AddedExperienceToLogCopyWithImpl<$Res>;
   @override
   $Res call({Experience experience});
 
@@ -259,12 +239,8 @@ abstract class _$AddedExperienceToLogCopyWith<$Res>
 }
 
 /// @nodoc
-class __$AddedExperienceToLogCopyWithImpl<$Res>
-    extends _$ExperienceCardActorEventCopyWithImpl<$Res>
-    implements _$AddedExperienceToLogCopyWith<$Res> {
-  __$AddedExperienceToLogCopyWithImpl(
-      _AddedExperienceToLog _value, $Res Function(_AddedExperienceToLog) _then)
-      : super(_value, (v) => _then(v as _AddedExperienceToLog));
+class __$AddedExperienceToLogCopyWithImpl<$Res> extends _$ExperienceCardActorEventCopyWithImpl<$Res> implements _$AddedExperienceToLogCopyWith<$Res> {
+  __$AddedExperienceToLogCopyWithImpl(_AddedExperienceToLog _value, $Res Function(_AddedExperienceToLog) _then) : super(_value, (v) => _then(v as _AddedExperienceToLog));
 
   @override
   _AddedExperienceToLog get _value => super._value as _AddedExperienceToLog;
@@ -293,28 +269,21 @@ class _$_AddedExperienceToLog implements _AddedExperienceToLog {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _AddedExperienceToLog &&
-            (identical(other.experience, experience) ||
-                const DeepCollectionEquality()
-                    .equals(other.experience, experience)));
+    return identical(this, other) || (other is _AddedExperienceToLog && (identical(other.experience, experience) || const DeepCollectionEquality().equals(other.experience, experience)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
   @override
-  _$AddedExperienceToLogCopyWith<_AddedExperienceToLog> get copyWith =>
-      __$AddedExperienceToLogCopyWithImpl<_AddedExperienceToLog>(
-          this, _$identity);
+  _$AddedExperienceToLogCopyWith<_AddedExperienceToLog> get copyWith => __$AddedExperienceToLogCopyWithImpl<_AddedExperienceToLog>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Experience experience),
-    @required Result addedExperienceToLog(Experience experience),
-    @required Result dismissedExperienceFromLog(Experience experience),
+  TResult when<TResult extends Object>({
+    @required TResult initialized(Experience experience),
+    @required TResult addedExperienceToLog(Experience experience),
+    @required TResult dismissedExperienceFromLog(Experience experience),
   }) {
     assert(initialized != null);
     assert(addedExperienceToLog != null);
@@ -324,11 +293,11 @@ class _$_AddedExperienceToLog implements _AddedExperienceToLog {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Experience experience),
-    Result addedExperienceToLog(Experience experience),
-    Result dismissedExperienceFromLog(Experience experience),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initialized(Experience experience),
+    TResult addedExperienceToLog(Experience experience),
+    TResult dismissedExperienceFromLog(Experience experience),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (addedExperienceToLog != null) {
@@ -339,11 +308,10 @@ class _$_AddedExperienceToLog implements _AddedExperienceToLog {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result addedExperienceToLog(_AddedExperienceToLog value),
-    @required
-        Result dismissedExperienceFromLog(_DismissedExperienceFromLog value),
+  TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
+    @required TResult addedExperienceToLog(_AddedExperienceToLog value),
+    @required TResult dismissedExperienceFromLog(_DismissedExperienceFromLog value),
   }) {
     assert(initialized != null);
     assert(addedExperienceToLog != null);
@@ -353,11 +321,11 @@ class _$_AddedExperienceToLog implements _AddedExperienceToLog {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result addedExperienceToLog(_AddedExperienceToLog value),
-    Result dismissedExperienceFromLog(_DismissedExperienceFromLog value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
+    TResult addedExperienceToLog(_AddedExperienceToLog value),
+    TResult dismissedExperienceFromLog(_DismissedExperienceFromLog value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (addedExperienceToLog != null) {
@@ -368,8 +336,7 @@ class _$_AddedExperienceToLog implements _AddedExperienceToLog {
 }
 
 abstract class _AddedExperienceToLog implements ExperienceCardActorEvent {
-  const factory _AddedExperienceToLog(Experience experience) =
-      _$_AddedExperienceToLog;
+  const factory _AddedExperienceToLog(Experience experience) = _$_AddedExperienceToLog;
 
   @override
   Experience get experience;
@@ -378,12 +345,8 @@ abstract class _AddedExperienceToLog implements ExperienceCardActorEvent {
 }
 
 /// @nodoc
-abstract class _$DismissedExperienceFromLogCopyWith<$Res>
-    implements $ExperienceCardActorEventCopyWith<$Res> {
-  factory _$DismissedExperienceFromLogCopyWith(
-          _DismissedExperienceFromLog value,
-          $Res Function(_DismissedExperienceFromLog) then) =
-      __$DismissedExperienceFromLogCopyWithImpl<$Res>;
+abstract class _$DismissedExperienceFromLogCopyWith<$Res> implements $ExperienceCardActorEventCopyWith<$Res> {
+  factory _$DismissedExperienceFromLogCopyWith(_DismissedExperienceFromLog value, $Res Function(_DismissedExperienceFromLog) then) = __$DismissedExperienceFromLogCopyWithImpl<$Res>;
   @override
   $Res call({Experience experience});
 
@@ -392,16 +355,11 @@ abstract class _$DismissedExperienceFromLogCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DismissedExperienceFromLogCopyWithImpl<$Res>
-    extends _$ExperienceCardActorEventCopyWithImpl<$Res>
-    implements _$DismissedExperienceFromLogCopyWith<$Res> {
-  __$DismissedExperienceFromLogCopyWithImpl(_DismissedExperienceFromLog _value,
-      $Res Function(_DismissedExperienceFromLog) _then)
-      : super(_value, (v) => _then(v as _DismissedExperienceFromLog));
+class __$DismissedExperienceFromLogCopyWithImpl<$Res> extends _$ExperienceCardActorEventCopyWithImpl<$Res> implements _$DismissedExperienceFromLogCopyWith<$Res> {
+  __$DismissedExperienceFromLogCopyWithImpl(_DismissedExperienceFromLog _value, $Res Function(_DismissedExperienceFromLog) _then) : super(_value, (v) => _then(v as _DismissedExperienceFromLog));
 
   @override
-  _DismissedExperienceFromLog get _value =>
-      super._value as _DismissedExperienceFromLog;
+  _DismissedExperienceFromLog get _value => super._value as _DismissedExperienceFromLog;
 
   @override
   $Res call({
@@ -415,8 +373,7 @@ class __$DismissedExperienceFromLogCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_DismissedExperienceFromLog implements _DismissedExperienceFromLog {
-  const _$_DismissedExperienceFromLog(this.experience)
-      : assert(experience != null);
+  const _$_DismissedExperienceFromLog(this.experience) : assert(experience != null);
 
   @override
   final Experience experience;
@@ -428,28 +385,21 @@ class _$_DismissedExperienceFromLog implements _DismissedExperienceFromLog {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _DismissedExperienceFromLog &&
-            (identical(other.experience, experience) ||
-                const DeepCollectionEquality()
-                    .equals(other.experience, experience)));
+    return identical(this, other) || (other is _DismissedExperienceFromLog && (identical(other.experience, experience) || const DeepCollectionEquality().equals(other.experience, experience)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
   @override
-  _$DismissedExperienceFromLogCopyWith<_DismissedExperienceFromLog>
-      get copyWith => __$DismissedExperienceFromLogCopyWithImpl<
-          _DismissedExperienceFromLog>(this, _$identity);
+  _$DismissedExperienceFromLogCopyWith<_DismissedExperienceFromLog> get copyWith => __$DismissedExperienceFromLogCopyWithImpl<_DismissedExperienceFromLog>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initialized(Experience experience),
-    @required Result addedExperienceToLog(Experience experience),
-    @required Result dismissedExperienceFromLog(Experience experience),
+  TResult when<TResult extends Object>({
+    @required TResult initialized(Experience experience),
+    @required TResult addedExperienceToLog(Experience experience),
+    @required TResult dismissedExperienceFromLog(Experience experience),
   }) {
     assert(initialized != null);
     assert(addedExperienceToLog != null);
@@ -459,11 +409,11 @@ class _$_DismissedExperienceFromLog implements _DismissedExperienceFromLog {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initialized(Experience experience),
-    Result addedExperienceToLog(Experience experience),
-    Result dismissedExperienceFromLog(Experience experience),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initialized(Experience experience),
+    TResult addedExperienceToLog(Experience experience),
+    TResult dismissedExperienceFromLog(Experience experience),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (dismissedExperienceFromLog != null) {
@@ -474,11 +424,10 @@ class _$_DismissedExperienceFromLog implements _DismissedExperienceFromLog {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initialized(_Initialized value),
-    @required Result addedExperienceToLog(_AddedExperienceToLog value),
-    @required
-        Result dismissedExperienceFromLog(_DismissedExperienceFromLog value),
+  TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
+    @required TResult addedExperienceToLog(_AddedExperienceToLog value),
+    @required TResult dismissedExperienceFromLog(_DismissedExperienceFromLog value),
   }) {
     assert(initialized != null);
     assert(addedExperienceToLog != null);
@@ -488,11 +437,11 @@ class _$_DismissedExperienceFromLog implements _DismissedExperienceFromLog {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initialized(_Initialized value),
-    Result addedExperienceToLog(_AddedExperienceToLog value),
-    Result dismissedExperienceFromLog(_DismissedExperienceFromLog value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
+    TResult addedExperienceToLog(_AddedExperienceToLog value),
+    TResult dismissedExperienceFromLog(_DismissedExperienceFromLog value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (dismissedExperienceFromLog != null) {
@@ -503,14 +452,12 @@ class _$_DismissedExperienceFromLog implements _DismissedExperienceFromLog {
 }
 
 abstract class _DismissedExperienceFromLog implements ExperienceCardActorEvent {
-  const factory _DismissedExperienceFromLog(Experience experience) =
-      _$_DismissedExperienceFromLog;
+  const factory _DismissedExperienceFromLog(Experience experience) = _$_DismissedExperienceFromLog;
 
   @override
   Experience get experience;
   @override
-  _$DismissedExperienceFromLogCopyWith<_DismissedExperienceFromLog>
-      get copyWith;
+  _$DismissedExperienceFromLogCopyWith<_DismissedExperienceFromLog> get copyWith;
 }
 
 /// @nodoc
@@ -569,63 +516,63 @@ const $ExperienceCardActorState = _$ExperienceCardActorStateTearOff();
 /// @nodoc
 mixin _$ExperienceCardActorState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result inLog(),
-    @required Result notInLog(),
-    @required Result additionSuccess(),
-    @required Result additionFailure(Failure<dynamic> failure),
-    @required Result dismissalSuccess(),
-    @required Result dismissalFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult actionInProgress(),
+    @required TResult inLog(),
+    @required TResult notInLog(),
+    @required TResult additionSuccess(),
+    @required TResult additionFailure(Failure<dynamic> failure),
+    @required TResult dismissalSuccess(),
+    @required TResult dismissalFailure(Failure<dynamic> failure),
   });
+
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result inLog(),
-    Result notInLog(),
-    Result additionSuccess(),
-    Result additionFailure(Failure<dynamic> failure),
-    Result dismissalSuccess(),
-    Result dismissalFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult actionInProgress(),
+    TResult inLog(),
+    TResult notInLog(),
+    TResult additionSuccess(),
+    TResult additionFailure(Failure<dynamic> failure),
+    TResult dismissalSuccess(),
+    TResult dismissalFailure(Failure<dynamic> failure),
+    @required TResult orElse(),
   });
+
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result inLog(_InLog value),
-    @required Result notInLog(_NotInLog value),
-    @required Result additionSuccess(_AdditionSuccess value),
-    @required Result additionFailure(_AdditionFailure value),
-    @required Result dismissalSuccess(_DismissalSuccess value),
-    @required Result dismissalFailure(_DismissalFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult inLog(_InLog value),
+    @required TResult notInLog(_NotInLog value),
+    @required TResult additionSuccess(_AdditionSuccess value),
+    @required TResult additionFailure(_AdditionFailure value),
+    @required TResult dismissalSuccess(_DismissalSuccess value),
+    @required TResult dismissalFailure(_DismissalFailure value),
   });
+
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result inLog(_InLog value),
-    Result notInLog(_NotInLog value),
-    Result additionSuccess(_AdditionSuccess value),
-    Result additionFailure(_AdditionFailure value),
-    Result dismissalSuccess(_DismissalSuccess value),
-    Result dismissalFailure(_DismissalFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult inLog(_InLog value),
+    TResult notInLog(_NotInLog value),
+    TResult additionSuccess(_AdditionSuccess value),
+    TResult additionFailure(_AdditionFailure value),
+    TResult dismissalSuccess(_DismissalSuccess value),
+    TResult dismissalFailure(_DismissalFailure value),
+    @required TResult orElse(),
   });
 }
 
 /// @nodoc
 abstract class $ExperienceCardActorStateCopyWith<$Res> {
-  factory $ExperienceCardActorStateCopyWith(ExperienceCardActorState value,
-          $Res Function(ExperienceCardActorState) then) =
-      _$ExperienceCardActorStateCopyWithImpl<$Res>;
+  factory $ExperienceCardActorStateCopyWith(ExperienceCardActorState value, $Res Function(ExperienceCardActorState) then) = _$ExperienceCardActorStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ExperienceCardActorStateCopyWithImpl<$Res>
-    implements $ExperienceCardActorStateCopyWith<$Res> {
+class _$ExperienceCardActorStateCopyWithImpl<$Res> implements $ExperienceCardActorStateCopyWith<$Res> {
   _$ExperienceCardActorStateCopyWithImpl(this._value, this._then);
 
   final ExperienceCardActorState _value;
@@ -635,16 +582,12 @@ class _$ExperienceCardActorStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res>
-    extends _$ExperienceCardActorStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -669,15 +612,15 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result inLog(),
-    @required Result notInLog(),
-    @required Result additionSuccess(),
-    @required Result additionFailure(Failure<dynamic> failure),
-    @required Result dismissalSuccess(),
-    @required Result dismissalFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult actionInProgress(),
+    @required TResult inLog(),
+    @required TResult notInLog(),
+    @required TResult additionSuccess(),
+    @required TResult additionFailure(Failure<dynamic> failure),
+    @required TResult dismissalSuccess(),
+    @required TResult dismissalFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -692,16 +635,16 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result inLog(),
-    Result notInLog(),
-    Result additionSuccess(),
-    Result additionFailure(Failure<dynamic> failure),
-    Result dismissalSuccess(),
-    Result dismissalFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult actionInProgress(),
+    TResult inLog(),
+    TResult notInLog(),
+    TResult additionSuccess(),
+    TResult additionFailure(Failure<dynamic> failure),
+    TResult dismissalSuccess(),
+    TResult dismissalFailure(Failure<dynamic> failure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -712,15 +655,15 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result inLog(_InLog value),
-    @required Result notInLog(_NotInLog value),
-    @required Result additionSuccess(_AdditionSuccess value),
-    @required Result additionFailure(_AdditionFailure value),
-    @required Result dismissalSuccess(_DismissalSuccess value),
-    @required Result dismissalFailure(_DismissalFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult inLog(_InLog value),
+    @required TResult notInLog(_NotInLog value),
+    @required TResult additionSuccess(_AdditionSuccess value),
+    @required TResult additionFailure(_AdditionFailure value),
+    @required TResult dismissalSuccess(_DismissalSuccess value),
+    @required TResult dismissalFailure(_DismissalFailure value),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -735,16 +678,16 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result inLog(_InLog value),
-    Result notInLog(_NotInLog value),
-    Result additionSuccess(_AdditionSuccess value),
-    Result additionFailure(_AdditionFailure value),
-    Result dismissalSuccess(_DismissalSuccess value),
-    Result dismissalFailure(_DismissalFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult inLog(_InLog value),
+    TResult notInLog(_NotInLog value),
+    TResult additionSuccess(_AdditionSuccess value),
+    TResult additionFailure(_AdditionFailure value),
+    TResult dismissalSuccess(_DismissalSuccess value),
+    TResult dismissalFailure(_DismissalFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -760,18 +703,12 @@ abstract class _Initial implements ExperienceCardActorState {
 
 /// @nodoc
 abstract class _$ActionInProgressCopyWith<$Res> {
-  factory _$ActionInProgressCopyWith(
-          _ActionInProgress value, $Res Function(_ActionInProgress) then) =
-      __$ActionInProgressCopyWithImpl<$Res>;
+  factory _$ActionInProgressCopyWith(_ActionInProgress value, $Res Function(_ActionInProgress) then) = __$ActionInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res>
-    extends _$ExperienceCardActorStateCopyWithImpl<$Res>
-    implements _$ActionInProgressCopyWith<$Res> {
-  __$ActionInProgressCopyWithImpl(
-      _ActionInProgress _value, $Res Function(_ActionInProgress) _then)
-      : super(_value, (v) => _then(v as _ActionInProgress));
+class __$ActionInProgressCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res> implements _$ActionInProgressCopyWith<$Res> {
+  __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then) : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
   _ActionInProgress get _value => super._value as _ActionInProgress;
@@ -796,15 +733,15 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result inLog(),
-    @required Result notInLog(),
-    @required Result additionSuccess(),
-    @required Result additionFailure(Failure<dynamic> failure),
-    @required Result dismissalSuccess(),
-    @required Result dismissalFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult actionInProgress(),
+    @required TResult inLog(),
+    @required TResult notInLog(),
+    @required TResult additionSuccess(),
+    @required TResult additionFailure(Failure<dynamic> failure),
+    @required TResult dismissalSuccess(),
+    @required TResult dismissalFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -819,16 +756,16 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result inLog(),
-    Result notInLog(),
-    Result additionSuccess(),
-    Result additionFailure(Failure<dynamic> failure),
-    Result dismissalSuccess(),
-    Result dismissalFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult actionInProgress(),
+    TResult inLog(),
+    TResult notInLog(),
+    TResult additionSuccess(),
+    TResult additionFailure(Failure<dynamic> failure),
+    TResult dismissalSuccess(),
+    TResult dismissalFailure(Failure<dynamic> failure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (actionInProgress != null) {
@@ -839,15 +776,15 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result inLog(_InLog value),
-    @required Result notInLog(_NotInLog value),
-    @required Result additionSuccess(_AdditionSuccess value),
-    @required Result additionFailure(_AdditionFailure value),
-    @required Result dismissalSuccess(_DismissalSuccess value),
-    @required Result dismissalFailure(_DismissalFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult inLog(_InLog value),
+    @required TResult notInLog(_NotInLog value),
+    @required TResult additionSuccess(_AdditionSuccess value),
+    @required TResult additionFailure(_AdditionFailure value),
+    @required TResult dismissalSuccess(_DismissalSuccess value),
+    @required TResult dismissalFailure(_DismissalFailure value),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -862,16 +799,16 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result inLog(_InLog value),
-    Result notInLog(_NotInLog value),
-    Result additionSuccess(_AdditionSuccess value),
-    Result additionFailure(_AdditionFailure value),
-    Result dismissalSuccess(_DismissalSuccess value),
-    Result dismissalFailure(_DismissalFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult inLog(_InLog value),
+    TResult notInLog(_NotInLog value),
+    TResult additionSuccess(_AdditionSuccess value),
+    TResult additionFailure(_AdditionFailure value),
+    TResult dismissalSuccess(_DismissalSuccess value),
+    TResult dismissalFailure(_DismissalFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (actionInProgress != null) {
@@ -887,16 +824,12 @@ abstract class _ActionInProgress implements ExperienceCardActorState {
 
 /// @nodoc
 abstract class _$InLogCopyWith<$Res> {
-  factory _$InLogCopyWith(_InLog value, $Res Function(_InLog) then) =
-      __$InLogCopyWithImpl<$Res>;
+  factory _$InLogCopyWith(_InLog value, $Res Function(_InLog) then) = __$InLogCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InLogCopyWithImpl<$Res>
-    extends _$ExperienceCardActorStateCopyWithImpl<$Res>
-    implements _$InLogCopyWith<$Res> {
-  __$InLogCopyWithImpl(_InLog _value, $Res Function(_InLog) _then)
-      : super(_value, (v) => _then(v as _InLog));
+class __$InLogCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res> implements _$InLogCopyWith<$Res> {
+  __$InLogCopyWithImpl(_InLog _value, $Res Function(_InLog) _then) : super(_value, (v) => _then(v as _InLog));
 
   @override
   _InLog get _value => super._value as _InLog;
@@ -921,15 +854,15 @@ class _$_InLog implements _InLog {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result inLog(),
-    @required Result notInLog(),
-    @required Result additionSuccess(),
-    @required Result additionFailure(Failure<dynamic> failure),
-    @required Result dismissalSuccess(),
-    @required Result dismissalFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult actionInProgress(),
+    @required TResult inLog(),
+    @required TResult notInLog(),
+    @required TResult additionSuccess(),
+    @required TResult additionFailure(Failure<dynamic> failure),
+    @required TResult dismissalSuccess(),
+    @required TResult dismissalFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -944,16 +877,16 @@ class _$_InLog implements _InLog {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result inLog(),
-    Result notInLog(),
-    Result additionSuccess(),
-    Result additionFailure(Failure<dynamic> failure),
-    Result dismissalSuccess(),
-    Result dismissalFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult actionInProgress(),
+    TResult inLog(),
+    TResult notInLog(),
+    TResult additionSuccess(),
+    TResult additionFailure(Failure<dynamic> failure),
+    TResult dismissalSuccess(),
+    TResult dismissalFailure(Failure<dynamic> failure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (inLog != null) {
@@ -964,15 +897,15 @@ class _$_InLog implements _InLog {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result inLog(_InLog value),
-    @required Result notInLog(_NotInLog value),
-    @required Result additionSuccess(_AdditionSuccess value),
-    @required Result additionFailure(_AdditionFailure value),
-    @required Result dismissalSuccess(_DismissalSuccess value),
-    @required Result dismissalFailure(_DismissalFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult inLog(_InLog value),
+    @required TResult notInLog(_NotInLog value),
+    @required TResult additionSuccess(_AdditionSuccess value),
+    @required TResult additionFailure(_AdditionFailure value),
+    @required TResult dismissalSuccess(_DismissalSuccess value),
+    @required TResult dismissalFailure(_DismissalFailure value),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -987,16 +920,16 @@ class _$_InLog implements _InLog {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result inLog(_InLog value),
-    Result notInLog(_NotInLog value),
-    Result additionSuccess(_AdditionSuccess value),
-    Result additionFailure(_AdditionFailure value),
-    Result dismissalSuccess(_DismissalSuccess value),
-    Result dismissalFailure(_DismissalFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult inLog(_InLog value),
+    TResult notInLog(_NotInLog value),
+    TResult additionSuccess(_AdditionSuccess value),
+    TResult additionFailure(_AdditionFailure value),
+    TResult dismissalSuccess(_DismissalSuccess value),
+    TResult dismissalFailure(_DismissalFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (inLog != null) {
@@ -1012,16 +945,12 @@ abstract class _InLog implements ExperienceCardActorState {
 
 /// @nodoc
 abstract class _$NotInLogCopyWith<$Res> {
-  factory _$NotInLogCopyWith(_NotInLog value, $Res Function(_NotInLog) then) =
-      __$NotInLogCopyWithImpl<$Res>;
+  factory _$NotInLogCopyWith(_NotInLog value, $Res Function(_NotInLog) then) = __$NotInLogCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$NotInLogCopyWithImpl<$Res>
-    extends _$ExperienceCardActorStateCopyWithImpl<$Res>
-    implements _$NotInLogCopyWith<$Res> {
-  __$NotInLogCopyWithImpl(_NotInLog _value, $Res Function(_NotInLog) _then)
-      : super(_value, (v) => _then(v as _NotInLog));
+class __$NotInLogCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res> implements _$NotInLogCopyWith<$Res> {
+  __$NotInLogCopyWithImpl(_NotInLog _value, $Res Function(_NotInLog) _then) : super(_value, (v) => _then(v as _NotInLog));
 
   @override
   _NotInLog get _value => super._value as _NotInLog;
@@ -1046,15 +975,15 @@ class _$_NotInLog implements _NotInLog {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result inLog(),
-    @required Result notInLog(),
-    @required Result additionSuccess(),
-    @required Result additionFailure(Failure<dynamic> failure),
-    @required Result dismissalSuccess(),
-    @required Result dismissalFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult actionInProgress(),
+    @required TResult inLog(),
+    @required TResult notInLog(),
+    @required TResult additionSuccess(),
+    @required TResult additionFailure(Failure<dynamic> failure),
+    @required TResult dismissalSuccess(),
+    @required TResult dismissalFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -1069,16 +998,16 @@ class _$_NotInLog implements _NotInLog {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result inLog(),
-    Result notInLog(),
-    Result additionSuccess(),
-    Result additionFailure(Failure<dynamic> failure),
-    Result dismissalSuccess(),
-    Result dismissalFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult actionInProgress(),
+    TResult inLog(),
+    TResult notInLog(),
+    TResult additionSuccess(),
+    TResult additionFailure(Failure<dynamic> failure),
+    TResult dismissalSuccess(),
+    TResult dismissalFailure(Failure<dynamic> failure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (notInLog != null) {
@@ -1089,15 +1018,15 @@ class _$_NotInLog implements _NotInLog {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result inLog(_InLog value),
-    @required Result notInLog(_NotInLog value),
-    @required Result additionSuccess(_AdditionSuccess value),
-    @required Result additionFailure(_AdditionFailure value),
-    @required Result dismissalSuccess(_DismissalSuccess value),
-    @required Result dismissalFailure(_DismissalFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult inLog(_InLog value),
+    @required TResult notInLog(_NotInLog value),
+    @required TResult additionSuccess(_AdditionSuccess value),
+    @required TResult additionFailure(_AdditionFailure value),
+    @required TResult dismissalSuccess(_DismissalSuccess value),
+    @required TResult dismissalFailure(_DismissalFailure value),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -1112,16 +1041,16 @@ class _$_NotInLog implements _NotInLog {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result inLog(_InLog value),
-    Result notInLog(_NotInLog value),
-    Result additionSuccess(_AdditionSuccess value),
-    Result additionFailure(_AdditionFailure value),
-    Result dismissalSuccess(_DismissalSuccess value),
-    Result dismissalFailure(_DismissalFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult inLog(_InLog value),
+    TResult notInLog(_NotInLog value),
+    TResult additionSuccess(_AdditionSuccess value),
+    TResult additionFailure(_AdditionFailure value),
+    TResult dismissalSuccess(_DismissalSuccess value),
+    TResult dismissalFailure(_DismissalFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (notInLog != null) {
@@ -1137,18 +1066,12 @@ abstract class _NotInLog implements ExperienceCardActorState {
 
 /// @nodoc
 abstract class _$AdditionSuccessCopyWith<$Res> {
-  factory _$AdditionSuccessCopyWith(
-          _AdditionSuccess value, $Res Function(_AdditionSuccess) then) =
-      __$AdditionSuccessCopyWithImpl<$Res>;
+  factory _$AdditionSuccessCopyWith(_AdditionSuccess value, $Res Function(_AdditionSuccess) then) = __$AdditionSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$AdditionSuccessCopyWithImpl<$Res>
-    extends _$ExperienceCardActorStateCopyWithImpl<$Res>
-    implements _$AdditionSuccessCopyWith<$Res> {
-  __$AdditionSuccessCopyWithImpl(
-      _AdditionSuccess _value, $Res Function(_AdditionSuccess) _then)
-      : super(_value, (v) => _then(v as _AdditionSuccess));
+class __$AdditionSuccessCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res> implements _$AdditionSuccessCopyWith<$Res> {
+  __$AdditionSuccessCopyWithImpl(_AdditionSuccess _value, $Res Function(_AdditionSuccess) _then) : super(_value, (v) => _then(v as _AdditionSuccess));
 
   @override
   _AdditionSuccess get _value => super._value as _AdditionSuccess;
@@ -1173,15 +1096,15 @@ class _$_AdditionSuccess implements _AdditionSuccess {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result inLog(),
-    @required Result notInLog(),
-    @required Result additionSuccess(),
-    @required Result additionFailure(Failure<dynamic> failure),
-    @required Result dismissalSuccess(),
-    @required Result dismissalFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult actionInProgress(),
+    @required TResult inLog(),
+    @required TResult notInLog(),
+    @required TResult additionSuccess(),
+    @required TResult additionFailure(Failure<dynamic> failure),
+    @required TResult dismissalSuccess(),
+    @required TResult dismissalFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -1196,16 +1119,16 @@ class _$_AdditionSuccess implements _AdditionSuccess {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result inLog(),
-    Result notInLog(),
-    Result additionSuccess(),
-    Result additionFailure(Failure<dynamic> failure),
-    Result dismissalSuccess(),
-    Result dismissalFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult actionInProgress(),
+    TResult inLog(),
+    TResult notInLog(),
+    TResult additionSuccess(),
+    TResult additionFailure(Failure<dynamic> failure),
+    TResult dismissalSuccess(),
+    TResult dismissalFailure(Failure<dynamic> failure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (additionSuccess != null) {
@@ -1216,15 +1139,15 @@ class _$_AdditionSuccess implements _AdditionSuccess {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result inLog(_InLog value),
-    @required Result notInLog(_NotInLog value),
-    @required Result additionSuccess(_AdditionSuccess value),
-    @required Result additionFailure(_AdditionFailure value),
-    @required Result dismissalSuccess(_DismissalSuccess value),
-    @required Result dismissalFailure(_DismissalFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult inLog(_InLog value),
+    @required TResult notInLog(_NotInLog value),
+    @required TResult additionSuccess(_AdditionSuccess value),
+    @required TResult additionFailure(_AdditionFailure value),
+    @required TResult dismissalSuccess(_DismissalSuccess value),
+    @required TResult dismissalFailure(_DismissalFailure value),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -1239,16 +1162,16 @@ class _$_AdditionSuccess implements _AdditionSuccess {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result inLog(_InLog value),
-    Result notInLog(_NotInLog value),
-    Result additionSuccess(_AdditionSuccess value),
-    Result additionFailure(_AdditionFailure value),
-    Result dismissalSuccess(_DismissalSuccess value),
-    Result dismissalFailure(_DismissalFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult inLog(_InLog value),
+    TResult notInLog(_NotInLog value),
+    TResult additionSuccess(_AdditionSuccess value),
+    TResult additionFailure(_AdditionFailure value),
+    TResult dismissalSuccess(_DismissalSuccess value),
+    TResult dismissalFailure(_DismissalFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (additionSuccess != null) {
@@ -1264,21 +1187,15 @@ abstract class _AdditionSuccess implements ExperienceCardActorState {
 
 /// @nodoc
 abstract class _$AdditionFailureCopyWith<$Res> {
-  factory _$AdditionFailureCopyWith(
-          _AdditionFailure value, $Res Function(_AdditionFailure) then) =
-      __$AdditionFailureCopyWithImpl<$Res>;
+  factory _$AdditionFailureCopyWith(_AdditionFailure value, $Res Function(_AdditionFailure) then) = __$AdditionFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 /// @nodoc
-class __$AdditionFailureCopyWithImpl<$Res>
-    extends _$ExperienceCardActorStateCopyWithImpl<$Res>
-    implements _$AdditionFailureCopyWith<$Res> {
-  __$AdditionFailureCopyWithImpl(
-      _AdditionFailure _value, $Res Function(_AdditionFailure) _then)
-      : super(_value, (v) => _then(v as _AdditionFailure));
+class __$AdditionFailureCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res> implements _$AdditionFailureCopyWith<$Res> {
+  __$AdditionFailureCopyWithImpl(_AdditionFailure _value, $Res Function(_AdditionFailure) _then) : super(_value, (v) => _then(v as _AdditionFailure));
 
   @override
   _AdditionFailure get _value => super._value as _AdditionFailure;
@@ -1317,31 +1234,26 @@ class _$_AdditionFailure implements _AdditionFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _AdditionFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) || (other is _AdditionFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
-  _$AdditionFailureCopyWith<_AdditionFailure> get copyWith =>
-      __$AdditionFailureCopyWithImpl<_AdditionFailure>(this, _$identity);
+  _$AdditionFailureCopyWith<_AdditionFailure> get copyWith => __$AdditionFailureCopyWithImpl<_AdditionFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result inLog(),
-    @required Result notInLog(),
-    @required Result additionSuccess(),
-    @required Result additionFailure(Failure<dynamic> failure),
-    @required Result dismissalSuccess(),
-    @required Result dismissalFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult actionInProgress(),
+    @required TResult inLog(),
+    @required TResult notInLog(),
+    @required TResult additionSuccess(),
+    @required TResult additionFailure(Failure<dynamic> failure),
+    @required TResult dismissalSuccess(),
+    @required TResult dismissalFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -1356,16 +1268,16 @@ class _$_AdditionFailure implements _AdditionFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result inLog(),
-    Result notInLog(),
-    Result additionSuccess(),
-    Result additionFailure(Failure<dynamic> failure),
-    Result dismissalSuccess(),
-    Result dismissalFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult actionInProgress(),
+    TResult inLog(),
+    TResult notInLog(),
+    TResult additionSuccess(),
+    TResult additionFailure(Failure<dynamic> failure),
+    TResult dismissalSuccess(),
+    TResult dismissalFailure(Failure<dynamic> failure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (additionFailure != null) {
@@ -1376,15 +1288,15 @@ class _$_AdditionFailure implements _AdditionFailure {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result inLog(_InLog value),
-    @required Result notInLog(_NotInLog value),
-    @required Result additionSuccess(_AdditionSuccess value),
-    @required Result additionFailure(_AdditionFailure value),
-    @required Result dismissalSuccess(_DismissalSuccess value),
-    @required Result dismissalFailure(_DismissalFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult inLog(_InLog value),
+    @required TResult notInLog(_NotInLog value),
+    @required TResult additionSuccess(_AdditionSuccess value),
+    @required TResult additionFailure(_AdditionFailure value),
+    @required TResult dismissalSuccess(_DismissalSuccess value),
+    @required TResult dismissalFailure(_DismissalFailure value),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -1399,16 +1311,16 @@ class _$_AdditionFailure implements _AdditionFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result inLog(_InLog value),
-    Result notInLog(_NotInLog value),
-    Result additionSuccess(_AdditionSuccess value),
-    Result additionFailure(_AdditionFailure value),
-    Result dismissalSuccess(_DismissalSuccess value),
-    Result dismissalFailure(_DismissalFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult inLog(_InLog value),
+    TResult notInLog(_NotInLog value),
+    TResult additionSuccess(_AdditionSuccess value),
+    TResult additionFailure(_AdditionFailure value),
+    TResult dismissalSuccess(_DismissalSuccess value),
+    TResult dismissalFailure(_DismissalFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (additionFailure != null) {
@@ -1427,18 +1339,12 @@ abstract class _AdditionFailure implements ExperienceCardActorState {
 
 /// @nodoc
 abstract class _$DismissalSuccessCopyWith<$Res> {
-  factory _$DismissalSuccessCopyWith(
-          _DismissalSuccess value, $Res Function(_DismissalSuccess) then) =
-      __$DismissalSuccessCopyWithImpl<$Res>;
+  factory _$DismissalSuccessCopyWith(_DismissalSuccess value, $Res Function(_DismissalSuccess) then) = __$DismissalSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DismissalSuccessCopyWithImpl<$Res>
-    extends _$ExperienceCardActorStateCopyWithImpl<$Res>
-    implements _$DismissalSuccessCopyWith<$Res> {
-  __$DismissalSuccessCopyWithImpl(
-      _DismissalSuccess _value, $Res Function(_DismissalSuccess) _then)
-      : super(_value, (v) => _then(v as _DismissalSuccess));
+class __$DismissalSuccessCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res> implements _$DismissalSuccessCopyWith<$Res> {
+  __$DismissalSuccessCopyWithImpl(_DismissalSuccess _value, $Res Function(_DismissalSuccess) _then) : super(_value, (v) => _then(v as _DismissalSuccess));
 
   @override
   _DismissalSuccess get _value => super._value as _DismissalSuccess;
@@ -1463,15 +1369,15 @@ class _$_DismissalSuccess implements _DismissalSuccess {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result inLog(),
-    @required Result notInLog(),
-    @required Result additionSuccess(),
-    @required Result additionFailure(Failure<dynamic> failure),
-    @required Result dismissalSuccess(),
-    @required Result dismissalFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult actionInProgress(),
+    @required TResult inLog(),
+    @required TResult notInLog(),
+    @required TResult additionSuccess(),
+    @required TResult additionFailure(Failure<dynamic> failure),
+    @required TResult dismissalSuccess(),
+    @required TResult dismissalFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -1486,16 +1392,16 @@ class _$_DismissalSuccess implements _DismissalSuccess {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result inLog(),
-    Result notInLog(),
-    Result additionSuccess(),
-    Result additionFailure(Failure<dynamic> failure),
-    Result dismissalSuccess(),
-    Result dismissalFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult actionInProgress(),
+    TResult inLog(),
+    TResult notInLog(),
+    TResult additionSuccess(),
+    TResult additionFailure(Failure<dynamic> failure),
+    TResult dismissalSuccess(),
+    TResult dismissalFailure(Failure<dynamic> failure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (dismissalSuccess != null) {
@@ -1506,15 +1412,15 @@ class _$_DismissalSuccess implements _DismissalSuccess {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result inLog(_InLog value),
-    @required Result notInLog(_NotInLog value),
-    @required Result additionSuccess(_AdditionSuccess value),
-    @required Result additionFailure(_AdditionFailure value),
-    @required Result dismissalSuccess(_DismissalSuccess value),
-    @required Result dismissalFailure(_DismissalFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult inLog(_InLog value),
+    @required TResult notInLog(_NotInLog value),
+    @required TResult additionSuccess(_AdditionSuccess value),
+    @required TResult additionFailure(_AdditionFailure value),
+    @required TResult dismissalSuccess(_DismissalSuccess value),
+    @required TResult dismissalFailure(_DismissalFailure value),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -1529,16 +1435,16 @@ class _$_DismissalSuccess implements _DismissalSuccess {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result inLog(_InLog value),
-    Result notInLog(_NotInLog value),
-    Result additionSuccess(_AdditionSuccess value),
-    Result additionFailure(_AdditionFailure value),
-    Result dismissalSuccess(_DismissalSuccess value),
-    Result dismissalFailure(_DismissalFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult inLog(_InLog value),
+    TResult notInLog(_NotInLog value),
+    TResult additionSuccess(_AdditionSuccess value),
+    TResult additionFailure(_AdditionFailure value),
+    TResult dismissalSuccess(_DismissalSuccess value),
+    TResult dismissalFailure(_DismissalFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (dismissalSuccess != null) {
@@ -1554,21 +1460,15 @@ abstract class _DismissalSuccess implements ExperienceCardActorState {
 
 /// @nodoc
 abstract class _$DismissalFailureCopyWith<$Res> {
-  factory _$DismissalFailureCopyWith(
-          _DismissalFailure value, $Res Function(_DismissalFailure) then) =
-      __$DismissalFailureCopyWithImpl<$Res>;
+  factory _$DismissalFailureCopyWith(_DismissalFailure value, $Res Function(_DismissalFailure) then) = __$DismissalFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 /// @nodoc
-class __$DismissalFailureCopyWithImpl<$Res>
-    extends _$ExperienceCardActorStateCopyWithImpl<$Res>
-    implements _$DismissalFailureCopyWith<$Res> {
-  __$DismissalFailureCopyWithImpl(
-      _DismissalFailure _value, $Res Function(_DismissalFailure) _then)
-      : super(_value, (v) => _then(v as _DismissalFailure));
+class __$DismissalFailureCopyWithImpl<$Res> extends _$ExperienceCardActorStateCopyWithImpl<$Res> implements _$DismissalFailureCopyWith<$Res> {
+  __$DismissalFailureCopyWithImpl(_DismissalFailure _value, $Res Function(_DismissalFailure) _then) : super(_value, (v) => _then(v as _DismissalFailure));
 
   @override
   _DismissalFailure get _value => super._value as _DismissalFailure;
@@ -1607,31 +1507,26 @@ class _$_DismissalFailure implements _DismissalFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _DismissalFailure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) || (other is _DismissalFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
-  _$DismissalFailureCopyWith<_DismissalFailure> get copyWith =>
-      __$DismissalFailureCopyWithImpl<_DismissalFailure>(this, _$identity);
+  _$DismissalFailureCopyWith<_DismissalFailure> get copyWith => __$DismissalFailureCopyWithImpl<_DismissalFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result actionInProgress(),
-    @required Result inLog(),
-    @required Result notInLog(),
-    @required Result additionSuccess(),
-    @required Result additionFailure(Failure<dynamic> failure),
-    @required Result dismissalSuccess(),
-    @required Result dismissalFailure(Failure<dynamic> failure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult actionInProgress(),
+    @required TResult inLog(),
+    @required TResult notInLog(),
+    @required TResult additionSuccess(),
+    @required TResult additionFailure(Failure<dynamic> failure),
+    @required TResult dismissalSuccess(),
+    @required TResult dismissalFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -1646,16 +1541,16 @@ class _$_DismissalFailure implements _DismissalFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result actionInProgress(),
-    Result inLog(),
-    Result notInLog(),
-    Result additionSuccess(),
-    Result additionFailure(Failure<dynamic> failure),
-    Result dismissalSuccess(),
-    Result dismissalFailure(Failure<dynamic> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult actionInProgress(),
+    TResult inLog(),
+    TResult notInLog(),
+    TResult additionSuccess(),
+    TResult additionFailure(Failure<dynamic> failure),
+    TResult dismissalSuccess(),
+    TResult dismissalFailure(Failure<dynamic> failure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (dismissalFailure != null) {
@@ -1666,15 +1561,15 @@ class _$_DismissalFailure implements _DismissalFailure {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result actionInProgress(_ActionInProgress value),
-    @required Result inLog(_InLog value),
-    @required Result notInLog(_NotInLog value),
-    @required Result additionSuccess(_AdditionSuccess value),
-    @required Result additionFailure(_AdditionFailure value),
-    @required Result dismissalSuccess(_DismissalSuccess value),
-    @required Result dismissalFailure(_DismissalFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult actionInProgress(_ActionInProgress value),
+    @required TResult inLog(_InLog value),
+    @required TResult notInLog(_NotInLog value),
+    @required TResult additionSuccess(_AdditionSuccess value),
+    @required TResult additionFailure(_AdditionFailure value),
+    @required TResult dismissalSuccess(_DismissalSuccess value),
+    @required TResult dismissalFailure(_DismissalFailure value),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
@@ -1689,16 +1584,16 @@ class _$_DismissalFailure implements _DismissalFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result actionInProgress(_ActionInProgress value),
-    Result inLog(_InLog value),
-    Result notInLog(_NotInLog value),
-    Result additionSuccess(_AdditionSuccess value),
-    Result additionFailure(_AdditionFailure value),
-    Result dismissalSuccess(_DismissalSuccess value),
-    Result dismissalFailure(_DismissalFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult actionInProgress(_ActionInProgress value),
+    TResult inLog(_InLog value),
+    TResult notInLog(_NotInLog value),
+    TResult additionSuccess(_AdditionSuccess value),
+    TResult additionFailure(_AdditionFailure value),
+    TResult dismissalSuccess(_DismissalSuccess value),
+    TResult dismissalFailure(_DismissalFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (dismissalFailure != null) {
@@ -1709,8 +1604,7 @@ class _$_DismissalFailure implements _DismissalFailure {
 }
 
 abstract class _DismissalFailure implements ExperienceCardActorState {
-  const factory _DismissalFailure(Failure<dynamic> failure) =
-      _$_DismissalFailure;
+  const factory _DismissalFailure(Failure<dynamic> failure) = _$_DismissalFailure;
 
   Failure<dynamic> get failure;
   _$DismissalFailureCopyWith<_DismissalFailure> get copyWith;

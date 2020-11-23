@@ -45,16 +45,10 @@ mixin _$Comment {
 
 /// @nodoc
 abstract class $CommentCopyWith<$Res> {
-  factory $CommentCopyWith(Comment value, $Res Function(Comment) then) =
-  _$CommentCopyWithImpl<$Res>;
-  
-  $Res call({UniqueId id,
-    User poster,
-    UniqueId experienceId,
-    CommentContent content,
-    PastDate creationDate,
-    PastDate modificationDate});
-  
+  factory $CommentCopyWith(Comment value, $Res Function(Comment) then) = _$CommentCopyWithImpl<$Res>;
+
+  $Res call({UniqueId id, User poster, UniqueId experienceId, CommentContent content, PastDate creationDate, PastDate modificationDate});
+
   $UserCopyWith<$Res> get poster;
 }
 
@@ -78,16 +72,10 @@ class _$CommentCopyWithImpl<$Res> implements $CommentCopyWith<$Res> {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as UniqueId,
       poster: poster == freezed ? _value.poster : poster as User,
-      experienceId: experienceId == freezed
-        ? _value.experienceId
-        : experienceId as UniqueId,
+      experienceId: experienceId == freezed ? _value.experienceId : experienceId as UniqueId,
       content: content == freezed ? _value.content : content as CommentContent,
-      creationDate: creationDate == freezed
-        ? _value.creationDate
-        : creationDate as PastDate,
-      modificationDate: modificationDate == freezed
-        ? _value.modificationDate
-        : modificationDate as PastDate,
+      creationDate: creationDate == freezed ? _value.creationDate : creationDate as PastDate,
+      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as PastDate,
     ));
   }
 
@@ -104,30 +92,22 @@ class _$CommentCopyWithImpl<$Res> implements $CommentCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$CommentCopyWith<$Res> implements $CommentCopyWith<$Res> {
-  factory _$CommentCopyWith(_Comment value, $Res Function(_Comment) then) =
-  __$CommentCopyWithImpl<$Res>;
-  
+  factory _$CommentCopyWith(_Comment value, $Res Function(_Comment) then) = __$CommentCopyWithImpl<$Res>;
+
   @override
-  $Res call({UniqueId id,
-    User poster,
-    UniqueId experienceId,
-    CommentContent content,
-    PastDate creationDate,
-    PastDate modificationDate});
-  
+  $Res call({UniqueId id, User poster, UniqueId experienceId, CommentContent content, PastDate creationDate, PastDate modificationDate});
+
   @override
   $UserCopyWith<$Res> get poster;
 }
 
 /// @nodoc
-class __$CommentCopyWithImpl<$Res> extends _$CommentCopyWithImpl<$Res>
-  implements _$CommentCopyWith<$Res> {
-  __$CommentCopyWithImpl(_Comment _value, $Res Function(_Comment) _then)
-    : super(_value, (v) => _then(v as _Comment));
-  
+class __$CommentCopyWithImpl<$Res> extends _$CommentCopyWithImpl<$Res> implements _$CommentCopyWith<$Res> {
+  __$CommentCopyWithImpl(_Comment _value, $Res Function(_Comment) _then) : super(_value, (v) => _then(v as _Comment));
+
   @override
   _Comment get _value => super._value as _Comment;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -140,36 +120,25 @@ class __$CommentCopyWithImpl<$Res> extends _$CommentCopyWithImpl<$Res>
     return _then(_Comment(
       id: id == freezed ? _value.id : id as UniqueId,
       poster: poster == freezed ? _value.poster : poster as User,
-      experienceId: experienceId == freezed
-        ? _value.experienceId
-        : experienceId as UniqueId,
+      experienceId: experienceId == freezed ? _value.experienceId : experienceId as UniqueId,
       content: content == freezed ? _value.content : content as CommentContent,
-      creationDate: creationDate == freezed
-        ? _value.creationDate
-        : creationDate as PastDate,
-      modificationDate: modificationDate == freezed
-        ? _value.modificationDate
-        : modificationDate as PastDate,
+      creationDate: creationDate == freezed ? _value.creationDate : creationDate as PastDate,
+      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as PastDate,
     ));
   }
 }
 
 /// @nodoc
 class _$_Comment extends _Comment {
-  const _$_Comment({@required this.id,
-    @required this.poster,
-    @required this.experienceId,
-    @required this.content,
-    @required this.creationDate,
-    @required this.modificationDate})
-    : assert(id != null),
-      assert(poster != null),
-      assert(experienceId != null),
-      assert(content != null),
-      assert(creationDate != null),
-      assert(modificationDate != null),
-      super._();
-  
+  const _$_Comment({@required this.id, @required this.poster, @required this.experienceId, @required this.content, @required this.creationDate, @required this.modificationDate})
+      : assert(id != null),
+        assert(poster != null),
+        assert(experienceId != null),
+        assert(content != null),
+        assert(creationDate != null),
+        assert(modificationDate != null),
+        super._();
+
   @override
   final UniqueId id;
   @override
@@ -191,23 +160,13 @@ class _$_Comment extends _Comment {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Comment &&
-        (identical(other.id, id) ||
-          const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.poster, poster) ||
-          const DeepCollectionEquality().equals(other.poster, poster)) &&
-        (identical(other.experienceId, experienceId) ||
-          const DeepCollectionEquality()
-            .equals(other.experienceId, experienceId)) &&
-        (identical(other.content, content) ||
-          const DeepCollectionEquality()
-            .equals(other.content, content)) &&
-        (identical(other.creationDate, creationDate) ||
-          const DeepCollectionEquality()
-            .equals(other.creationDate, creationDate)) &&
-        (identical(other.modificationDate, modificationDate) ||
-          const DeepCollectionEquality()
-            .equals(other.modificationDate, modificationDate)));
+        (other is _Comment &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.poster, poster) || const DeepCollectionEquality().equals(other.poster, poster)) &&
+            (identical(other.experienceId, experienceId) || const DeepCollectionEquality().equals(other.experienceId, experienceId)) &&
+            (identical(other.content, content) || const DeepCollectionEquality().equals(other.content, content)) &&
+            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+            (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)));
   }
 
   @override
@@ -221,8 +180,7 @@ class _$_Comment extends _Comment {
       const DeepCollectionEquality().hash(modificationDate);
 
   @override
-  _$CommentCopyWith<_Comment> get copyWith =>
-    __$CommentCopyWithImpl<_Comment>(this, _$identity);
+  _$CommentCopyWith<_Comment> get copyWith => __$CommentCopyWithImpl<_Comment>(this, _$identity);
 }
 
 abstract class _Comment extends Comment {

@@ -36,29 +36,29 @@ const $SearchExperiencesByTagsEvent = _$SearchExperiencesByTagsEventTearOff();
 /// @nodoc
 mixin _$SearchExperiencesByTagsEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result submitted(Set<Tag> tags),
-    @required
-        Result resultsReceived(
-            Either<Failure, KtList<Experience>> failureOrExperiences),
+  TResult when<TResult extends Object>({
+    @required TResult submitted(Set<Tag> tags),
+    @required TResult resultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
   });
+
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result submitted(Set<Tag> tags),
-    Result resultsReceived(
-        Either<Failure, KtList<Experience>> failureOrExperiences),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult submitted(Set<Tag> tags),
+    TResult resultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
+    @required TResult orElse(),
   });
+
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result submitted(_Submitted value),
-    @required Result resultsReceived(_ResultsReceived value),
+  TResult map<TResult extends Object>({
+    @required TResult submitted(_Submitted value),
+    @required TResult resultsReceived(_ResultsReceived value),
   });
+
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result submitted(_Submitted value),
-    Result resultsReceived(_ResultsReceived value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult submitted(_Submitted value),
+    TResult resultsReceived(_ResultsReceived value),
+    @required TResult orElse(),
   });
 }
 
@@ -138,11 +138,9 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result submitted(Set<Tag> tags),
-    @required
-        Result resultsReceived(
-            Either<Failure, KtList<Experience>> failureOrExperiences),
+  TResult when<TResult extends Object>({
+    @required TResult submitted(Set<Tag> tags),
+    @required TResult resultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
   }) {
     assert(submitted != null);
     assert(resultsReceived != null);
@@ -151,11 +149,10 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result submitted(Set<Tag> tags),
-    Result resultsReceived(
-        Either<Failure, KtList<Experience>> failureOrExperiences),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult submitted(Set<Tag> tags),
+    TResult resultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (submitted != null) {
@@ -166,9 +163,9 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result submitted(_Submitted value),
-    @required Result resultsReceived(_ResultsReceived value),
+  TResult map<TResult extends Object>({
+    @required TResult submitted(_Submitted value),
+    @required TResult resultsReceived(_ResultsReceived value),
   }) {
     assert(submitted != null);
     assert(resultsReceived != null);
@@ -177,10 +174,10 @@ class _$_Submitted implements _Submitted {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result submitted(_Submitted value),
-    Result resultsReceived(_ResultsReceived value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult submitted(_Submitted value),
+    TResult resultsReceived(_ResultsReceived value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (submitted != null) {
@@ -261,11 +258,9 @@ class _$_ResultsReceived implements _ResultsReceived {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result submitted(Set<Tag> tags),
-    @required
-        Result resultsReceived(
-            Either<Failure, KtList<Experience>> failureOrExperiences),
+  TResult when<TResult extends Object>({
+    @required TResult submitted(Set<Tag> tags),
+    @required TResult resultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
   }) {
     assert(submitted != null);
     assert(resultsReceived != null);
@@ -274,11 +269,10 @@ class _$_ResultsReceived implements _ResultsReceived {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result submitted(Set<Tag> tags),
-    Result resultsReceived(
-        Either<Failure, KtList<Experience>> failureOrExperiences),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult submitted(Set<Tag> tags),
+    TResult resultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (resultsReceived != null) {
@@ -289,9 +283,9 @@ class _$_ResultsReceived implements _ResultsReceived {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result submitted(_Submitted value),
-    @required Result resultsReceived(_ResultsReceived value),
+  TResult map<TResult extends Object>({
+    @required TResult submitted(_Submitted value),
+    @required TResult resultsReceived(_ResultsReceived value),
   }) {
     assert(submitted != null);
     assert(resultsReceived != null);
@@ -300,10 +294,10 @@ class _$_ResultsReceived implements _ResultsReceived {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result submitted(_Submitted value),
-    Result resultsReceived(_ResultsReceived value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult submitted(_Submitted value),
+    TResult resultsReceived(_ResultsReceived value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (resultsReceived != null) {
@@ -365,38 +359,41 @@ const $SearchExperiencesByTagsState = _$SearchExperiencesByTagsStateTearOff();
 /// @nodoc
 mixin _$SearchExperiencesByTagsState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result searchInProgress(),
-    @required Result searchSuccess(KtList<Experience> experiencesFound),
-    @required Result searchFailure(Failure<dynamic> failure),
-    @required Result valueFailure(ValueFailure<KtSet<Tag>> failure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult searchInProgress(),
+    @required TResult searchSuccess(KtList<Experience> experiencesFound),
+    @required TResult searchFailure(Failure<dynamic> failure),
+    @required TResult valueFailure(ValueFailure<KtSet<Tag>> failure),
   });
+
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result searchInProgress(),
-    Result searchSuccess(KtList<Experience> experiencesFound),
-    Result searchFailure(Failure<dynamic> failure),
-    Result valueFailure(ValueFailure<KtSet<Tag>> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult searchInProgress(),
+    TResult searchSuccess(KtList<Experience> experiencesFound),
+    TResult searchFailure(Failure<dynamic> failure),
+    TResult valueFailure(ValueFailure<KtSet<Tag>> failure),
+    @required TResult orElse(),
   });
+
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result searchInProgress(_SearchInProgress value),
-    @required Result searchSuccess(_SearchSuccess value),
-    @required Result searchFailure(_SearchFailure value),
-    @required Result valueFailure(_ValueFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult searchInProgress(_SearchInProgress value),
+    @required TResult searchSuccess(_SearchSuccess value),
+    @required TResult searchFailure(_SearchFailure value),
+    @required TResult valueFailure(_ValueFailure value),
   });
+
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result searchInProgress(_SearchInProgress value),
-    Result searchSuccess(_SearchSuccess value),
-    Result searchFailure(_SearchFailure value),
-    Result valueFailure(_ValueFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult searchInProgress(_SearchInProgress value),
+    TResult searchSuccess(_SearchSuccess value),
+    TResult searchFailure(_SearchFailure value),
+    TResult valueFailure(_ValueFailure value),
+    @required TResult orElse(),
   });
 }
 
@@ -454,12 +451,12 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result searchInProgress(),
-    @required Result searchSuccess(KtList<Experience> experiencesFound),
-    @required Result searchFailure(Failure<dynamic> failure),
-    @required Result valueFailure(ValueFailure<KtSet<Tag>> failure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult searchInProgress(),
+    @required TResult searchSuccess(KtList<Experience> experiencesFound),
+    @required TResult searchFailure(Failure<dynamic> failure),
+    @required TResult valueFailure(ValueFailure<KtSet<Tag>> failure),
   }) {
     assert(initial != null);
     assert(searchInProgress != null);
@@ -471,13 +468,13 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result searchInProgress(),
-    Result searchSuccess(KtList<Experience> experiencesFound),
-    Result searchFailure(Failure<dynamic> failure),
-    Result valueFailure(ValueFailure<KtSet<Tag>> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult searchInProgress(),
+    TResult searchSuccess(KtList<Experience> experiencesFound),
+    TResult searchFailure(Failure<dynamic> failure),
+    TResult valueFailure(ValueFailure<KtSet<Tag>> failure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -488,12 +485,12 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result searchInProgress(_SearchInProgress value),
-    @required Result searchSuccess(_SearchSuccess value),
-    @required Result searchFailure(_SearchFailure value),
-    @required Result valueFailure(_ValueFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult searchInProgress(_SearchInProgress value),
+    @required TResult searchSuccess(_SearchSuccess value),
+    @required TResult searchFailure(_SearchFailure value),
+    @required TResult valueFailure(_ValueFailure value),
   }) {
     assert(initial != null);
     assert(searchInProgress != null);
@@ -505,13 +502,13 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result searchInProgress(_SearchInProgress value),
-    Result searchSuccess(_SearchSuccess value),
-    Result searchFailure(_SearchFailure value),
-    Result valueFailure(_ValueFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult searchInProgress(_SearchInProgress value),
+    TResult searchSuccess(_SearchSuccess value),
+    TResult searchFailure(_SearchFailure value),
+    TResult valueFailure(_ValueFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initial != null) {
@@ -563,12 +560,12 @@ class _$_SearchInProgress implements _SearchInProgress {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result searchInProgress(),
-    @required Result searchSuccess(KtList<Experience> experiencesFound),
-    @required Result searchFailure(Failure<dynamic> failure),
-    @required Result valueFailure(ValueFailure<KtSet<Tag>> failure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult searchInProgress(),
+    @required TResult searchSuccess(KtList<Experience> experiencesFound),
+    @required TResult searchFailure(Failure<dynamic> failure),
+    @required TResult valueFailure(ValueFailure<KtSet<Tag>> failure),
   }) {
     assert(initial != null);
     assert(searchInProgress != null);
@@ -580,13 +577,13 @@ class _$_SearchInProgress implements _SearchInProgress {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result searchInProgress(),
-    Result searchSuccess(KtList<Experience> experiencesFound),
-    Result searchFailure(Failure<dynamic> failure),
-    Result valueFailure(ValueFailure<KtSet<Tag>> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult searchInProgress(),
+    TResult searchSuccess(KtList<Experience> experiencesFound),
+    TResult searchFailure(Failure<dynamic> failure),
+    TResult valueFailure(ValueFailure<KtSet<Tag>> failure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (searchInProgress != null) {
@@ -597,12 +594,12 @@ class _$_SearchInProgress implements _SearchInProgress {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result searchInProgress(_SearchInProgress value),
-    @required Result searchSuccess(_SearchSuccess value),
-    @required Result searchFailure(_SearchFailure value),
-    @required Result valueFailure(_ValueFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult searchInProgress(_SearchInProgress value),
+    @required TResult searchSuccess(_SearchSuccess value),
+    @required TResult searchFailure(_SearchFailure value),
+    @required TResult valueFailure(_ValueFailure value),
   }) {
     assert(initial != null);
     assert(searchInProgress != null);
@@ -614,13 +611,13 @@ class _$_SearchInProgress implements _SearchInProgress {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result searchInProgress(_SearchInProgress value),
-    Result searchSuccess(_SearchSuccess value),
-    Result searchFailure(_SearchFailure value),
-    Result valueFailure(_ValueFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult searchInProgress(_SearchInProgress value),
+    TResult searchSuccess(_SearchSuccess value),
+    TResult searchFailure(_SearchFailure value),
+    TResult valueFailure(_ValueFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (searchInProgress != null) {
@@ -698,12 +695,12 @@ class _$_SearchSuccess implements _SearchSuccess {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result searchInProgress(),
-    @required Result searchSuccess(KtList<Experience> experiencesFound),
-    @required Result searchFailure(Failure<dynamic> failure),
-    @required Result valueFailure(ValueFailure<KtSet<Tag>> failure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult searchInProgress(),
+    @required TResult searchSuccess(KtList<Experience> experiencesFound),
+    @required TResult searchFailure(Failure<dynamic> failure),
+    @required TResult valueFailure(ValueFailure<KtSet<Tag>> failure),
   }) {
     assert(initial != null);
     assert(searchInProgress != null);
@@ -715,13 +712,13 @@ class _$_SearchSuccess implements _SearchSuccess {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result searchInProgress(),
-    Result searchSuccess(KtList<Experience> experiencesFound),
-    Result searchFailure(Failure<dynamic> failure),
-    Result valueFailure(ValueFailure<KtSet<Tag>> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult searchInProgress(),
+    TResult searchSuccess(KtList<Experience> experiencesFound),
+    TResult searchFailure(Failure<dynamic> failure),
+    TResult valueFailure(ValueFailure<KtSet<Tag>> failure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (searchSuccess != null) {
@@ -732,12 +729,12 @@ class _$_SearchSuccess implements _SearchSuccess {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result searchInProgress(_SearchInProgress value),
-    @required Result searchSuccess(_SearchSuccess value),
-    @required Result searchFailure(_SearchFailure value),
-    @required Result valueFailure(_ValueFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult searchInProgress(_SearchInProgress value),
+    @required TResult searchSuccess(_SearchSuccess value),
+    @required TResult searchFailure(_SearchFailure value),
+    @required TResult valueFailure(_ValueFailure value),
   }) {
     assert(initial != null);
     assert(searchInProgress != null);
@@ -749,13 +746,13 @@ class _$_SearchSuccess implements _SearchSuccess {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result searchInProgress(_SearchInProgress value),
-    Result searchSuccess(_SearchSuccess value),
-    Result searchFailure(_SearchFailure value),
-    Result valueFailure(_ValueFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult searchInProgress(_SearchInProgress value),
+    TResult searchSuccess(_SearchSuccess value),
+    TResult searchFailure(_SearchFailure value),
+    TResult valueFailure(_ValueFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (searchSuccess != null) {
@@ -844,12 +841,12 @@ class _$_SearchFailure implements _SearchFailure {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result searchInProgress(),
-    @required Result searchSuccess(KtList<Experience> experiencesFound),
-    @required Result searchFailure(Failure<dynamic> failure),
-    @required Result valueFailure(ValueFailure<KtSet<Tag>> failure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult searchInProgress(),
+    @required TResult searchSuccess(KtList<Experience> experiencesFound),
+    @required TResult searchFailure(Failure<dynamic> failure),
+    @required TResult valueFailure(ValueFailure<KtSet<Tag>> failure),
   }) {
     assert(initial != null);
     assert(searchInProgress != null);
@@ -861,13 +858,13 @@ class _$_SearchFailure implements _SearchFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result searchInProgress(),
-    Result searchSuccess(KtList<Experience> experiencesFound),
-    Result searchFailure(Failure<dynamic> failure),
-    Result valueFailure(ValueFailure<KtSet<Tag>> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult searchInProgress(),
+    TResult searchSuccess(KtList<Experience> experiencesFound),
+    TResult searchFailure(Failure<dynamic> failure),
+    TResult valueFailure(ValueFailure<KtSet<Tag>> failure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (searchFailure != null) {
@@ -878,12 +875,12 @@ class _$_SearchFailure implements _SearchFailure {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result searchInProgress(_SearchInProgress value),
-    @required Result searchSuccess(_SearchSuccess value),
-    @required Result searchFailure(_SearchFailure value),
-    @required Result valueFailure(_ValueFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult searchInProgress(_SearchInProgress value),
+    @required TResult searchSuccess(_SearchSuccess value),
+    @required TResult searchFailure(_SearchFailure value),
+    @required TResult valueFailure(_ValueFailure value),
   }) {
     assert(initial != null);
     assert(searchInProgress != null);
@@ -895,13 +892,13 @@ class _$_SearchFailure implements _SearchFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result searchInProgress(_SearchInProgress value),
-    Result searchSuccess(_SearchSuccess value),
-    Result searchFailure(_SearchFailure value),
-    Result valueFailure(_ValueFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult searchInProgress(_SearchInProgress value),
+    TResult searchSuccess(_SearchSuccess value),
+    TResult searchFailure(_SearchFailure value),
+    TResult valueFailure(_ValueFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (searchFailure != null) {
@@ -989,12 +986,12 @@ class _$_ValueFailure implements _ValueFailure {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result searchInProgress(),
-    @required Result searchSuccess(KtList<Experience> experiencesFound),
-    @required Result searchFailure(Failure<dynamic> failure),
-    @required Result valueFailure(ValueFailure<KtSet<Tag>> failure),
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required TResult searchInProgress(),
+    @required TResult searchSuccess(KtList<Experience> experiencesFound),
+    @required TResult searchFailure(Failure<dynamic> failure),
+    @required TResult valueFailure(ValueFailure<KtSet<Tag>> failure),
   }) {
     assert(initial != null);
     assert(searchInProgress != null);
@@ -1006,13 +1003,13 @@ class _$_ValueFailure implements _ValueFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result searchInProgress(),
-    Result searchSuccess(KtList<Experience> experiencesFound),
-    Result searchFailure(Failure<dynamic> failure),
-    Result valueFailure(ValueFailure<KtSet<Tag>> failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult searchInProgress(),
+    TResult searchSuccess(KtList<Experience> experiencesFound),
+    TResult searchFailure(Failure<dynamic> failure),
+    TResult valueFailure(ValueFailure<KtSet<Tag>> failure),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (valueFailure != null) {
@@ -1023,12 +1020,12 @@ class _$_ValueFailure implements _ValueFailure {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result searchInProgress(_SearchInProgress value),
-    @required Result searchSuccess(_SearchSuccess value),
-    @required Result searchFailure(_SearchFailure value),
-    @required Result valueFailure(_ValueFailure value),
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required TResult searchInProgress(_SearchInProgress value),
+    @required TResult searchSuccess(_SearchSuccess value),
+    @required TResult searchFailure(_SearchFailure value),
+    @required TResult valueFailure(_ValueFailure value),
   }) {
     assert(initial != null);
     assert(searchInProgress != null);
@@ -1040,13 +1037,13 @@ class _$_ValueFailure implements _ValueFailure {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result searchInProgress(_SearchInProgress value),
-    Result searchSuccess(_SearchSuccess value),
-    Result searchFailure(_SearchFailure value),
-    Result valueFailure(_ValueFailure value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult searchInProgress(_SearchInProgress value),
+    TResult searchSuccess(_SearchSuccess value),
+    TResult searchFailure(_SearchFailure value),
+    TResult valueFailure(_ValueFailure value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (valueFailure != null) {
