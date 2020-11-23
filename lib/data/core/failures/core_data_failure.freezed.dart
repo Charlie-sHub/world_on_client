@@ -77,7 +77,6 @@ mixin _$CoreDataFailure<T> {
     @required TResult emailAlreadyInUse(EmailAddress email),
     @required TResult nameAlreadyInUse(Name name),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult serverError(String errorString),
@@ -89,7 +88,6 @@ mixin _$CoreDataFailure<T> {
     TResult nameAlreadyInUse(Name name),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult serverError(ServerError<T> value),
@@ -100,7 +98,6 @@ mixin _$CoreDataFailure<T> {
     @required TResult emailAlreadyInUse(EmailAlreadyInUse<T> value),
     @required TResult nameAlreadyInUse(NameAlreadyInUse<T> value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult serverError(ServerError<T> value),
@@ -653,6 +650,7 @@ abstract class GeoLocationError<T> implements CoreDataFailure<T> {
 /// @nodoc
 abstract class $UsernameAlreadyInUseCopyWith<T, $Res> {
   factory $UsernameAlreadyInUseCopyWith(UsernameAlreadyInUse<T> value, $Res Function(UsernameAlreadyInUse<T>) then) = _$UsernameAlreadyInUseCopyWithImpl<T, $Res>;
+
   $Res call({Name username});
 }
 
@@ -788,6 +786,7 @@ abstract class UsernameAlreadyInUse<T> implements CoreDataFailure<T> {
 /// @nodoc
 abstract class $EmailAlreadyInUseCopyWith<T, $Res> {
   factory $EmailAlreadyInUseCopyWith(EmailAlreadyInUse<T> value, $Res Function(EmailAlreadyInUse<T>) then) = _$EmailAlreadyInUseCopyWithImpl<T, $Res>;
+
   $Res call({EmailAddress email});
 }
 

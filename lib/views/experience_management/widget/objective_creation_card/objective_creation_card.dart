@@ -79,7 +79,10 @@ class ObjectiveCreationCard extends HookWidget {
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: BlocProvider(
-                  create: (context) => getIt<ObjectiveFormBloc>(),
+                  create: (context) => getIt<ObjectiveFormBloc>()
+                    ..add(
+                      const ObjectiveFormEvent.initialized(),
+                    ),
                   child: BlocConsumer<ObjectiveFormBloc, ObjectiveFormState>(
                     listener: (context, state) => _objectiveFormListener(
                       context,
@@ -150,7 +153,9 @@ class ObjectiveCreationCard extends HookWidget {
   ) {
     if (state.isSubmitting) {
       _textEditingController.clear();
-      context.bloc<ObjectivesCreationBloc>().add(ObjectivesCreationEvent.addedObjective(state.objective));
+      context.bloc<ObjectivesCreationBloc>().add(
+            ObjectivesCreationEvent.addedObjective(state.objective),
+          );
     }
   }
 

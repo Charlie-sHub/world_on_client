@@ -9,12 +9,16 @@ import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
+import 'package:worldon/domain/core/use_case/get_current_location.dart';
+import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/latitude.dart';
 import 'package:worldon/domain/core/validation/objects/longitude.dart';
+import 'package:worldon/injection.dart';
 
 part 'objective_form_bloc.freezed.dart';
-part 'objective_form_event.dart';
+part 'objective_form_event.dart';e_form_event.dart';
+
 part 'objective_form_state.dart';
 
 @injectable
@@ -24,10 +28,23 @@ class ObjectiveFormBloc extends Bloc<ObjectiveFormEvent, ObjectiveFormState> {
   @override
   Stream<ObjectiveFormState> mapEventToState(ObjectiveFormEvent event) async* {
     yield* event.map(
+      initialized: _onInitialized,
       descriptionChanged: _onDescriptionChanged,
       coordinatesChanged: _onCoordinatesChanged,
       imageChanged: _onImageChanged,
       submitted: _onSubmitted,
+    );
+  }
+
+  Stream<ObjectiveFormState> _onInitialized(_) async* {
+    final _currentPosition = await getIt<GetCurrentLocation>()(NoParams());
+    yield state.copyWith(
+      objective: state.objective.copyWith(
+        coordinates: _currentPosition.fold(
+          (_) => Coordinates.empty(),
+          id,
+        ),
+      ),
     );
   }
 
@@ -37,6 +54,7 @@ class ObjectiveFormBloc extends Bloc<ObjectiveFormEvent, ObjectiveFormState> {
         isSubmitting: true,
       );
       yield ObjectiveFormState.initial();
+      add(const ObjectiveFormEvent.initialized());
     } else {
       yield state.copyWith(
         showErrorMessages: true,

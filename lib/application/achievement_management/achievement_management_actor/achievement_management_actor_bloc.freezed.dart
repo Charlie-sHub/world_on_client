@@ -57,6 +57,7 @@ mixin _$AchievementManagementActorEvent {
 /// @nodoc
 abstract class $AchievementManagementActorEventCopyWith<$Res> {
   factory $AchievementManagementActorEventCopyWith(AchievementManagementActorEvent value, $Res Function(AchievementManagementActorEvent) then) = _$AchievementManagementActorEventCopyWithImpl<$Res>;
+
   $Res call({Achievement achievement});
 
   $AchievementCopyWith<$Res> get achievement;
@@ -67,6 +68,7 @@ class _$AchievementManagementActorEventCopyWithImpl<$Res> implements $Achievemen
   _$AchievementManagementActorEventCopyWithImpl(this._value, this._then);
 
   final AchievementManagementActorEvent _value;
+
   // ignore: unused_field
   final $Res Function(AchievementManagementActorEvent) _then;
 
@@ -93,6 +95,7 @@ class _$AchievementManagementActorEventCopyWithImpl<$Res> implements $Achievemen
 /// @nodoc
 abstract class _$DeletedCopyWith<$Res> implements $AchievementManagementActorEventCopyWith<$Res> {
   factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) = __$DeletedCopyWithImpl<$Res>;
+
   @override
   $Res call({Achievement achievement});
 
@@ -234,7 +237,6 @@ mixin _$AchievementManagementActorState {
     @required TResult deletionFailure(Failure<dynamic> failure),
     @required TResult deletionSuccess(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -243,7 +245,6 @@ mixin _$AchievementManagementActorState {
     TResult deletionSuccess(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -251,7 +252,6 @@ mixin _$AchievementManagementActorState {
     @required TResult deletionFailure(_DeletionFailure value),
     @required TResult deletionSuccess(_DeletionSuccess value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
@@ -272,6 +272,7 @@ class _$AchievementManagementActorStateCopyWithImpl<$Res> implements $Achievemen
   _$AchievementManagementActorStateCopyWithImpl(this._value, this._then);
 
   final AchievementManagementActorState _value;
+
   // ignore: unused_field
   final $Res Function(AchievementManagementActorState) _then;
 }
@@ -473,6 +474,7 @@ abstract class _ActionInProgress implements AchievementManagementActorState {
 /// @nodoc
 abstract class _$DeletionFailureCopyWith<$Res> {
   factory _$DeletionFailureCopyWith(_DeletionFailure value, $Res Function(_DeletionFailure) then) = __$DeletionFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

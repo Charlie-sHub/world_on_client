@@ -17,6 +17,11 @@ class _$AuthenticationDataFailureTearOff {
   InvalidCredentials<T> invalidCredentials<T>() {
     return InvalidCredentials<T>();
   }
+
+// ignore: unused_element
+  UnregisteredUser<T> unregisteredUser<T>() {
+    return UnregisteredUser<T>();
+  }
 }
 
 /// @nodoc
@@ -28,22 +33,26 @@ mixin _$AuthenticationDataFailure<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult invalidCredentials(),
+    @required TResult unregisteredUser(),
   });
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult invalidCredentials(),
+    TResult unregisteredUser(),
     @required TResult orElse(),
   });
 
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult invalidCredentials(InvalidCredentials<T> value),
+    @required TResult unregisteredUser(UnregisteredUser<T> value),
   });
 
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult invalidCredentials(InvalidCredentials<T> value),
+    TResult unregisteredUser(UnregisteredUser<T> value),
     @required TResult orElse(),
   });
 }
@@ -97,8 +106,10 @@ class _$InvalidCredentials<T> implements InvalidCredentials<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult invalidCredentials(),
+    @required TResult unregisteredUser(),
   }) {
     assert(invalidCredentials != null);
+    assert(unregisteredUser != null);
     return invalidCredentials();
   }
 
@@ -106,6 +117,7 @@ class _$InvalidCredentials<T> implements InvalidCredentials<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult invalidCredentials(),
+    TResult unregisteredUser(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -119,8 +131,10 @@ class _$InvalidCredentials<T> implements InvalidCredentials<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult invalidCredentials(InvalidCredentials<T> value),
+    @required TResult unregisteredUser(UnregisteredUser<T> value),
   }) {
     assert(invalidCredentials != null);
+    assert(unregisteredUser != null);
     return invalidCredentials(this);
   }
 
@@ -128,6 +142,7 @@ class _$InvalidCredentials<T> implements InvalidCredentials<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult invalidCredentials(InvalidCredentials<T> value),
+    TResult unregisteredUser(UnregisteredUser<T> value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -140,4 +155,89 @@ class _$InvalidCredentials<T> implements InvalidCredentials<T> {
 
 abstract class InvalidCredentials<T> implements AuthenticationDataFailure<T> {
   const factory InvalidCredentials() = _$InvalidCredentials<T>;
+}
+
+/// @nodoc
+abstract class $UnregisteredUserCopyWith<T, $Res> {
+  factory $UnregisteredUserCopyWith(UnregisteredUser<T> value, $Res Function(UnregisteredUser<T>) then) = _$UnregisteredUserCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class _$UnregisteredUserCopyWithImpl<T, $Res> extends _$AuthenticationDataFailureCopyWithImpl<T, $Res> implements $UnregisteredUserCopyWith<T, $Res> {
+  _$UnregisteredUserCopyWithImpl(UnregisteredUser<T> _value, $Res Function(UnregisteredUser<T>) _then) : super(_value, (v) => _then(v as UnregisteredUser<T>));
+
+  @override
+  UnregisteredUser<T> get _value => super._value as UnregisteredUser<T>;
+}
+
+/// @nodoc
+class _$UnregisteredUser<T> implements UnregisteredUser<T> {
+  const _$UnregisteredUser();
+
+  @override
+  String toString() {
+    return 'AuthenticationDataFailure<$T>.unregisteredUser()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is UnregisteredUser<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult invalidCredentials(),
+    @required TResult unregisteredUser(),
+  }) {
+    assert(invalidCredentials != null);
+    assert(unregisteredUser != null);
+    return unregisteredUser();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult invalidCredentials(),
+    TResult unregisteredUser(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (unregisteredUser != null) {
+      return unregisteredUser();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult invalidCredentials(InvalidCredentials<T> value),
+    @required TResult unregisteredUser(UnregisteredUser<T> value),
+  }) {
+    assert(invalidCredentials != null);
+    assert(unregisteredUser != null);
+    return unregisteredUser(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult invalidCredentials(InvalidCredentials<T> value),
+    TResult unregisteredUser(UnregisteredUser<T> value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (unregisteredUser != null) {
+      return unregisteredUser(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UnregisteredUser<T> implements AuthenticationDataFailure<T> {
+  const factory UnregisteredUser() = _$UnregisteredUser<T>;
 }

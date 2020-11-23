@@ -40,20 +40,17 @@ mixin _$SearchExperiencesByTagsEvent {
     @required TResult submitted(Set<Tag> tags),
     @required TResult resultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult submitted(Set<Tag> tags),
     TResult resultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult submitted(_Submitted value),
     @required TResult resultsReceived(_ResultsReceived value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult submitted(_Submitted value),
@@ -366,7 +363,6 @@ mixin _$SearchExperiencesByTagsState {
     @required TResult searchFailure(Failure<dynamic> failure),
     @required TResult valueFailure(ValueFailure<KtSet<Tag>> failure),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -376,7 +372,6 @@ mixin _$SearchExperiencesByTagsState {
     TResult valueFailure(ValueFailure<KtSet<Tag>> failure),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -385,7 +380,6 @@ mixin _$SearchExperiencesByTagsState {
     @required TResult searchFailure(_SearchFailure value),
     @required TResult valueFailure(_ValueFailure value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),

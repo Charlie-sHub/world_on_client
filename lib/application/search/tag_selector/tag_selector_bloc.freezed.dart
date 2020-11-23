@@ -41,20 +41,17 @@ mixin _$TagSelectorEvent {
     @required TResult addedTag(Tag tag),
     @required TResult removedTag(Tag tag),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult addedTag(Tag tag),
     TResult removedTag(Tag tag),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult addedTag(_AddedTag value),
     @required TResult removedTag(_RemovedTag value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult addedTag(_AddedTag value),

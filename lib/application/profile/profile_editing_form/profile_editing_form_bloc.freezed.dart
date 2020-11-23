@@ -109,7 +109,6 @@ mixin _$ProfileEditingFormEvent {
     @required TResult interestsChanged(Set<Tag> interests),
     @required TResult submitted(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initialized(User userToEdit),
@@ -125,7 +124,6 @@ mixin _$ProfileEditingFormEvent {
     TResult submitted(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initialized(_Initialized value),
@@ -140,7 +138,6 @@ mixin _$ProfileEditingFormEvent {
     @required TResult interestsChanged(_InterestsChanged value),
     @required TResult submitted(_Submitted value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initialized(_Initialized value),
@@ -168,6 +165,7 @@ class _$ProfileEditingFormEventCopyWithImpl<$Res> implements $ProfileEditingForm
   _$ProfileEditingFormEventCopyWithImpl(this._value, this._then);
 
   final ProfileEditingFormEvent _value;
+
   // ignore: unused_field
   final $Res Function(ProfileEditingFormEvent) _then;
 }
@@ -175,6 +173,7 @@ class _$ProfileEditingFormEventCopyWithImpl<$Res> implements $ProfileEditingForm
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+
   $Res call({User userToEdit});
 
   $UserCopyWith<$Res> get userToEdit;
@@ -345,6 +344,7 @@ abstract class _Initialized implements ProfileEditingFormEvent {
 /// @nodoc
 abstract class _$NameChangedCopyWith<$Res> {
   factory _$NameChangedCopyWith(_NameChanged value, $Res Function(_NameChanged) then) = __$NameChangedCopyWithImpl<$Res>;
+
   $Res call({String name});
 }
 
@@ -503,6 +503,7 @@ abstract class _NameChanged implements ProfileEditingFormEvent {
 /// @nodoc
 abstract class _$ImageChangedCopyWith<$Res> {
   factory _$ImageChangedCopyWith(_ImageChanged value, $Res Function(_ImageChanged) then) = __$ImageChangedCopyWithImpl<$Res>;
+
   $Res call({File imageFile});
 }
 
@@ -661,6 +662,7 @@ abstract class _ImageChanged implements ProfileEditingFormEvent {
 /// @nodoc
 abstract class _$UsernameChangedCopyWith<$Res> {
   factory _$UsernameChangedCopyWith(_UsernameChanged value, $Res Function(_UsernameChanged) then) = __$UsernameChangedCopyWithImpl<$Res>;
+
   $Res call({String username});
 }
 
@@ -819,6 +821,7 @@ abstract class _UsernameChanged implements ProfileEditingFormEvent {
 /// @nodoc
 abstract class _$PasswordChangedCopyWith<$Res> {
   factory _$PasswordChangedCopyWith(_PasswordChanged value, $Res Function(_PasswordChanged) then) = __$PasswordChangedCopyWithImpl<$Res>;
+
   $Res call({String password});
 }
 
@@ -977,6 +980,7 @@ abstract class _PasswordChanged implements ProfileEditingFormEvent {
 /// @nodoc
 abstract class _$PasswordConfirmationChangedCopyWith<$Res> {
   factory _$PasswordConfirmationChangedCopyWith(_PasswordConfirmationChanged value, $Res Function(_PasswordConfirmationChanged) then) = __$PasswordConfirmationChangedCopyWithImpl<$Res>;
+
   $Res call({String passwordConfirmation});
 }
 
@@ -1131,12 +1135,14 @@ abstract class _PasswordConfirmationChanged implements ProfileEditingFormEvent {
   const factory _PasswordConfirmationChanged(String passwordConfirmation) = _$_PasswordConfirmationChanged;
 
   String get passwordConfirmation;
+
   _$PasswordConfirmationChangedCopyWith<_PasswordConfirmationChanged> get copyWith;
 }
 
 /// @nodoc
 abstract class _$EmailAddressChangedCopyWith<$Res> {
   factory _$EmailAddressChangedCopyWith(_EmailAddressChanged value, $Res Function(_EmailAddressChanged) then) = __$EmailAddressChangedCopyWithImpl<$Res>;
+
   $Res call({String emailAddress});
 }
 
@@ -1289,12 +1295,14 @@ abstract class _EmailAddressChanged implements ProfileEditingFormEvent {
   const factory _EmailAddressChanged(String emailAddress) = _$_EmailAddressChanged;
 
   String get emailAddress;
+
   _$EmailAddressChangedCopyWith<_EmailAddressChanged> get copyWith;
 }
 
 /// @nodoc
 abstract class _$BirthdayChangedCopyWith<$Res> {
   factory _$BirthdayChangedCopyWith(_BirthdayChanged value, $Res Function(_BirthdayChanged) then) = __$BirthdayChangedCopyWithImpl<$Res>;
+
   $Res call({DateTime birthday});
 }
 
@@ -1453,6 +1461,7 @@ abstract class _BirthdayChanged implements ProfileEditingFormEvent {
 /// @nodoc
 abstract class _$DescriptionChangedCopyWith<$Res> {
   factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) = __$DescriptionChangedCopyWithImpl<$Res>;
+
   $Res call({String description});
 }
 
@@ -1611,6 +1620,7 @@ abstract class _DescriptionChanged implements ProfileEditingFormEvent {
 /// @nodoc
 abstract class _$InterestsChangedCopyWith<$Res> {
   factory _$InterestsChangedCopyWith(_InterestsChanged value, $Res Function(_InterestsChanged) then) = __$InterestsChangedCopyWithImpl<$Res>;
+
   $Res call({Set<Tag> interests});
 }
 
@@ -1947,6 +1957,7 @@ mixin _$ProfileEditingFormState {
 /// @nodoc
 abstract class $ProfileEditingFormStateCopyWith<$Res> {
   factory $ProfileEditingFormStateCopyWith(ProfileEditingFormState value, $Res Function(ProfileEditingFormState) then) = _$ProfileEditingFormStateCopyWithImpl<$Res>;
+
   $Res call({User user, PasswordConfirmator passwordConfirmator, String passwordToCompare, bool showErrorMessages, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
 
   $UserCopyWith<$Res> get user;
@@ -1957,6 +1968,7 @@ class _$ProfileEditingFormStateCopyWithImpl<$Res> implements $ProfileEditingForm
   _$ProfileEditingFormStateCopyWithImpl(this._value, this._then);
 
   final ProfileEditingFormState _value;
+
   // ignore: unused_field
   final $Res Function(ProfileEditingFormState) _then;
 
@@ -1993,6 +2005,7 @@ class _$ProfileEditingFormStateCopyWithImpl<$Res> implements $ProfileEditingForm
 /// @nodoc
 abstract class _$ProfileEditingFormStateCopyWith<$Res> implements $ProfileEditingFormStateCopyWith<$Res> {
   factory _$ProfileEditingFormStateCopyWith(_ProfileEditingFormState value, $Res Function(_ProfileEditingFormState) then) = __$ProfileEditingFormStateCopyWithImpl<$Res>;
+
   @override
   $Res call({User user, PasswordConfirmator passwordConfirmator, String passwordToCompare, bool showErrorMessages, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
 

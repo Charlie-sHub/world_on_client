@@ -41,6 +41,7 @@ class LogInPage extends StatelessWidget {
         ),
         authenticationData: (failure) => failure.authenticationDataFailure.map(
           invalidCredentials: (_) => "Invalid Credentials",
+          unregisteredUser: (_) => "Please register first",
         ),
         coreData: (failure) => failure.coreDataFailure.maybeMap(
           serverError: (failure) => failure.errorString,

@@ -49,7 +49,6 @@ mixin _$SearchUsersByNameWatcherEvent {
     @required TResult watchUsersFoundByUsernameStarted(SearchTerm username),
     @required TResult searchResultsReceived(Either<Failure, KtList<User>> failureOrUsers),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult watchUsersFoundByNameStarted(SearchTerm name),
@@ -57,14 +56,12 @@ mixin _$SearchUsersByNameWatcherEvent {
     TResult searchResultsReceived(Either<Failure, KtList<User>> failureOrUsers),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult watchUsersFoundByNameStarted(_WatchUsersFoundByNameStarted value),
     @required TResult watchUsersFoundByUsernameStarted(_WatchUsersFoundByUsernameStarted value),
     @required TResult searchResultsReceived(_SearchResultsReceived value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult watchUsersFoundByNameStarted(_WatchUsersFoundByNameStarted value),
@@ -521,7 +518,6 @@ mixin _$SearchUsersByNameWatcherState {
     @required TResult searchSuccess(KtList<User> usersFound),
     @required TResult searchFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -530,7 +526,6 @@ mixin _$SearchUsersByNameWatcherState {
     TResult searchFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -538,7 +533,6 @@ mixin _$SearchUsersByNameWatcherState {
     @required TResult searchSuccess(_SearchSuccess value),
     @required TResult searchFailure(_SearchFailure value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),

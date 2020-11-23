@@ -49,7 +49,6 @@ mixin _$BlockActorEvent {
     @required TResult blocked(User user),
     @required TResult unBlocked(User user),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initialized(User user),
@@ -57,14 +56,12 @@ mixin _$BlockActorEvent {
     TResult unBlocked(User user),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initialized(_Initialized value),
     @required TResult blocked(_Blocked value),
     @required TResult unBlocked(_UnBlocked value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initialized(_Initialized value),
@@ -79,6 +76,7 @@ mixin _$BlockActorEvent {
 /// @nodoc
 abstract class $BlockActorEventCopyWith<$Res> {
   factory $BlockActorEventCopyWith(BlockActorEvent value, $Res Function(BlockActorEvent) then) = _$BlockActorEventCopyWithImpl<$Res>;
+
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -89,6 +87,7 @@ class _$BlockActorEventCopyWithImpl<$Res> implements $BlockActorEventCopyWith<$R
   _$BlockActorEventCopyWithImpl(this._value, this._then);
 
   final BlockActorEvent _value;
+
   // ignore: unused_field
   final $Res Function(BlockActorEvent) _then;
 
@@ -115,6 +114,7 @@ class _$BlockActorEventCopyWithImpl<$Res> implements $BlockActorEventCopyWith<$R
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> implements $BlockActorEventCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+
   @override
   $Res call({User user});
 
@@ -231,6 +231,7 @@ abstract class _Initialized implements BlockActorEvent {
 /// @nodoc
 abstract class _$BlockedCopyWith<$Res> implements $BlockActorEventCopyWith<$Res> {
   factory _$BlockedCopyWith(_Blocked value, $Res Function(_Blocked) then) = __$BlockedCopyWithImpl<$Res>;
+
   @override
   $Res call({User user});
 
@@ -347,6 +348,7 @@ abstract class _Blocked implements BlockActorEvent {
 /// @nodoc
 abstract class _$UnBlockedCopyWith<$Res> implements $BlockActorEventCopyWith<$Res> {
   factory _$UnBlockedCopyWith(_UnBlocked value, $Res Function(_UnBlocked) then) = __$UnBlockedCopyWithImpl<$Res>;
+
   @override
   $Res call({User user});
 
@@ -526,7 +528,6 @@ mixin _$BlockActorState {
     @required TResult unBlockSuccess(),
     @required TResult unBlockFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -539,7 +540,6 @@ mixin _$BlockActorState {
     TResult unBlockFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -551,7 +551,6 @@ mixin _$BlockActorState {
     @required TResult unBlockSuccess(_UnBlockSuccess value),
     @required TResult unBlockFailure(_UnBlockFailure value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
@@ -576,6 +575,7 @@ class _$BlockActorStateCopyWithImpl<$Res> implements $BlockActorStateCopyWith<$R
   _$BlockActorStateCopyWithImpl(this._value, this._then);
 
   final BlockActorState _value;
+
   // ignore: unused_field
   final $Res Function(BlockActorState) _then;
 }
@@ -1188,6 +1188,7 @@ abstract class _BlockSuccess implements BlockActorState {
 /// @nodoc
 abstract class _$BlockFailureCopyWith<$Res> {
   factory _$BlockFailureCopyWith(_BlockFailure value, $Res Function(_BlockFailure) then) = __$BlockFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
@@ -1461,6 +1462,7 @@ abstract class _UnBlockSuccess implements BlockActorState {
 /// @nodoc
 abstract class _$UnBlockFailureCopyWith<$Res> {
   factory _$UnBlockFailureCopyWith(_UnBlockFailure value, $Res Function(_UnBlockFailure) then) = __$UnBlockFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

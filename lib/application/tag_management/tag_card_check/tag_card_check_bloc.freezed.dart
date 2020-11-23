@@ -33,18 +33,15 @@ mixin _$TagCardCheckEvent {
   TResult when<TResult extends Object>({
     @required TResult initialized(Tag tag),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initialized(Tag tag),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initialized(_Initialized value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initialized(_Initialized value),
@@ -241,7 +238,6 @@ mixin _$TagCardCheckState {
     @required TResult inInterests(),
     @required TResult notInInterests(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -249,14 +245,12 @@ mixin _$TagCardCheckState {
     TResult notInInterests(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
     @required TResult inInterests(_InInterests value),
     @required TResult notInInterests(_NotInInterests value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),

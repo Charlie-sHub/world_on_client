@@ -41,20 +41,17 @@ mixin _$RewardsCreationEvent {
     @required TResult addedReward(Reward reward),
     @required TResult removedReward(Reward reward),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult addedReward(Reward reward),
     TResult removedReward(Reward reward),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult addedReward(_AddedReward value),
     @required TResult removedReward(_RemovedReward value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult addedReward(_AddedReward value),
@@ -351,6 +348,7 @@ mixin _$RewardsCreationState {
 /// @nodoc
 abstract class $RewardsCreationStateCopyWith<$Res> {
   factory $RewardsCreationStateCopyWith(RewardsCreationState value, $Res Function(RewardsCreationState) then) = _$RewardsCreationStateCopyWithImpl<$Res>;
+
   $Res call({KtSet<Reward> rewardsCreated});
 }
 

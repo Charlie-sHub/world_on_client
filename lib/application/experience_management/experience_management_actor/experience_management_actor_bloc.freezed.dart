@@ -57,6 +57,7 @@ mixin _$ExperienceManagementActorEvent {
 /// @nodoc
 abstract class $ExperienceManagementActorEventCopyWith<$Res> {
   factory $ExperienceManagementActorEventCopyWith(ExperienceManagementActorEvent value, $Res Function(ExperienceManagementActorEvent) then) = _$ExperienceManagementActorEventCopyWithImpl<$Res>;
+
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
@@ -67,6 +68,7 @@ class _$ExperienceManagementActorEventCopyWithImpl<$Res> implements $ExperienceM
   _$ExperienceManagementActorEventCopyWithImpl(this._value, this._then);
 
   final ExperienceManagementActorEvent _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceManagementActorEvent) _then;
 
@@ -93,6 +95,7 @@ class _$ExperienceManagementActorEventCopyWithImpl<$Res> implements $ExperienceM
 /// @nodoc
 abstract class _$DeletedCopyWith<$Res> implements $ExperienceManagementActorEventCopyWith<$Res> {
   factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) = __$DeletedCopyWithImpl<$Res>;
+
   @override
   $Res call({Experience experience});
 
@@ -234,7 +237,6 @@ mixin _$ExperienceManagementActorState {
     @required TResult deletionSuccess(),
     @required TResult deletionFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -243,7 +245,6 @@ mixin _$ExperienceManagementActorState {
     TResult deletionFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -251,7 +252,6 @@ mixin _$ExperienceManagementActorState {
     @required TResult deletionSuccess(_DeletionSuccess value),
     @required TResult deletionFailure(_DeletionFailure value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
@@ -272,6 +272,7 @@ class _$ExperienceManagementActorStateCopyWithImpl<$Res> implements $ExperienceM
   _$ExperienceManagementActorStateCopyWithImpl(this._value, this._then);
 
   final ExperienceManagementActorState _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceManagementActorState) _then;
 }
@@ -570,6 +571,7 @@ abstract class _DeletionSuccess implements ExperienceManagementActorState {
 /// @nodoc
 abstract class _$DeletionFailureCopyWith<$Res> {
   factory _$DeletionFailureCopyWith(_DeletionFailure value, $Res Function(_DeletionFailure) then) = __$DeletionFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

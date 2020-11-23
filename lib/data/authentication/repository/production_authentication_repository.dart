@@ -112,13 +112,27 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
           ),
         );
       }
-      final _googleAuthentication = await _googleUser.authentication;
-      final _authenticationCredential = GoogleAuthProvider.credential(
-        idToken: _googleAuthentication.idToken,
-        accessToken: _googleAuthentication.accessToken,
-      );
-      await _firebaseAuth.signInWithCredential(_authenticationCredential);
-      return right(unit);
+      final _userByEmailQuery = await _firestore.userCollection
+          .where(
+            "email",
+            isEqualTo: _googleUser.email,
+          )
+          .get();
+      if (_userByEmailQuery.docs.isNotEmpty) {
+        final _googleAuthentication = await _googleUser.authentication;
+        final _authenticationCredential = GoogleAuthProvider.credential(
+          idToken: _googleAuthentication.idToken,
+          accessToken: _googleAuthentication.accessToken,
+        );
+        await _firebaseAuth.signInWithCredential(_authenticationCredential);
+        return right(unit);
+      } else {
+        return left(
+          const Failure.authenticationData(
+            AuthenticationDataFailure.unregisteredUser(),
+          ),
+        );
+      }
     } on FirebaseAuthException catch (_) {
       return left(
         const Failure.authenticationDomain(

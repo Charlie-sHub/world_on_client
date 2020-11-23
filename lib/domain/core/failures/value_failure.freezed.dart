@@ -135,7 +135,6 @@ mixin _$ValueFailure<T> {
     @required TResult emptySet(T failedValue),
     @required TResult setExceedsLength(T failedValue, int maxLength),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult nullInput(),
@@ -154,7 +153,6 @@ mixin _$ValueFailure<T> {
     TResult setExceedsLength(T failedValue, int maxLength),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult nullInput(NullInput<T> value),
@@ -172,7 +170,6 @@ mixin _$ValueFailure<T> {
     @required TResult emptySet(EmptySet<T> value),
     @required TResult setExceedsLength(SetExceedsLength<T> value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult nullInput(NullInput<T> value),
@@ -195,8 +192,7 @@ mixin _$ValueFailure<T> {
 
 /// @nodoc
 abstract class $ValueFailureCopyWith<T, $Res> {
-  factory $ValueFailureCopyWith(ValueFailure<T> value, $Res Function(ValueFailure<T>) then) =
-  _$ValueFailureCopyWithImpl<T, $Res>;
+  factory $ValueFailureCopyWith(ValueFailure<T> value, $Res Function(ValueFailure<T>) then) = _$ValueFailureCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
@@ -474,7 +470,7 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     assert(setExceedsLength != null);
     return invalidDate(failedValue);
   }
-  
+
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
@@ -500,7 +496,7 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
@@ -535,7 +531,7 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     assert(setExceedsLength != null);
     return invalidDate(this);
   }
-  
+
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
@@ -672,7 +668,7 @@ class _$InvalidEmail<T>
     assert(setExceedsLength != null);
     return invalidEmail(failedValue);
   }
-  
+
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
@@ -698,7 +694,7 @@ class _$InvalidEmail<T>
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
@@ -733,7 +729,7 @@ class _$InvalidEmail<T>
     assert(setExceedsLength != null);
     return invalidEmail(this);
   }
-  
+
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
@@ -870,7 +866,7 @@ class _$InvalidPassword<T>
     assert(setExceedsLength != null);
     return invalidPassword(failedValue);
   }
-  
+
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
@@ -896,7 +892,7 @@ class _$InvalidPassword<T>
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
@@ -931,7 +927,7 @@ class _$InvalidPassword<T>
     assert(setExceedsLength != null);
     return invalidPassword(this);
   }
-  
+
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
@@ -1068,7 +1064,7 @@ class _$StringMismatch<T>
     assert(setExceedsLength != null);
     return stringMismatch(failedValue);
   }
-  
+
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
@@ -1094,7 +1090,7 @@ class _$StringMismatch<T>
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
@@ -1129,7 +1125,7 @@ class _$StringMismatch<T>
     assert(setExceedsLength != null);
     return stringMismatch(this);
   }
-  
+
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
@@ -1264,7 +1260,7 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     assert(setExceedsLength != null);
     return invalidName(failedValue);
   }
-  
+
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
@@ -1290,7 +1286,7 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
@@ -1325,7 +1321,7 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     assert(setExceedsLength != null);
     return invalidName(this);
   }
-  
+
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
@@ -1458,7 +1454,7 @@ class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
     assert(setExceedsLength != null);
     return emptyString(failedValue);
   }
-  
+
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
@@ -1484,7 +1480,7 @@ class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
@@ -1519,7 +1515,7 @@ class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
     assert(setExceedsLength != null);
     return emptyString(this);
   }
-  
+
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
@@ -1654,7 +1650,7 @@ class _$MultiLineString<T>
     assert(setExceedsLength != null);
     return multiLineString(failedValue);
   }
-  
+
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
@@ -1680,7 +1676,7 @@ class _$MultiLineString<T>
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
@@ -1715,7 +1711,7 @@ class _$MultiLineString<T>
     assert(setExceedsLength != null);
     return multiLineString(this);
   }
-  
+
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
@@ -1864,7 +1860,7 @@ class _$StringExceedsLength<T>
     assert(setExceedsLength != null);
     return stringExceedsLength(failedValue, maxLength);
   }
-  
+
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
@@ -1890,7 +1886,7 @@ class _$StringExceedsLength<T>
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
@@ -1925,7 +1921,7 @@ class _$StringExceedsLength<T>
     assert(setExceedsLength != null);
     return stringExceedsLength(this);
   }
-  
+
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
@@ -2065,7 +2061,7 @@ class _$IntegerOutOfBounds<T>
     assert(setExceedsLength != null);
     return integerOutOfBounds(failedValue);
   }
-  
+
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
@@ -2091,7 +2087,7 @@ class _$IntegerOutOfBounds<T>
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
@@ -2126,7 +2122,7 @@ class _$IntegerOutOfBounds<T>
     assert(setExceedsLength != null);
     return integerOutOfBounds(this);
   }
-  
+
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({

@@ -45,7 +45,6 @@ mixin _$CoreDomainFailure<T> {
     @required TResult domainLayerError(String errorString),
     @required TResult unAuthorizedError(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult unknownDomainLayerError(String errorString),
@@ -53,14 +52,12 @@ mixin _$CoreDomainFailure<T> {
     TResult unAuthorizedError(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult unknownDomainLayerError(UnknownDomainLayerError<T> value),
     @required TResult domainLayerError(DomainLayerError<T> value),
     @required TResult unAuthorizedError(UnAuthorizedError<T> value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult unknownDomainLayerError(UnknownDomainLayerError<T> value),
@@ -88,6 +85,7 @@ class _$CoreDomainFailureCopyWithImpl<T, $Res> implements $CoreDomainFailureCopy
 /// @nodoc
 abstract class $UnknownDomainLayerErrorCopyWith<T, $Res> {
   factory $UnknownDomainLayerErrorCopyWith(UnknownDomainLayerError<T> value, $Res Function(UnknownDomainLayerError<T>) then) = _$UnknownDomainLayerErrorCopyWithImpl<T, $Res>;
+
   $Res call({String errorString});
 }
 

@@ -46,13 +46,11 @@ mixin _$ExperienceNavigationWatcherEvent {
     TResult allObjectivesAccomplished(Experience experience),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initialized(_Initialized value),
     @required TResult allObjectivesAccomplished(_AllObjectivesAccomplished value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initialized(_Initialized value),
@@ -187,6 +185,7 @@ abstract class _Initialized implements ExperienceNavigationWatcherEvent {
 /// @nodoc
 abstract class _$AllObjectivesAccomplishedCopyWith<$Res> {
   factory _$AllObjectivesAccomplishedCopyWith(_AllObjectivesAccomplished value, $Res Function(_AllObjectivesAccomplished) then) = __$AllObjectivesAccomplishedCopyWithImpl<$Res>;
+
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
@@ -343,7 +342,6 @@ mixin _$ExperienceNavigationWatcherState {
     @required TResult navigatingExperience(Experience experience),
     @required TResult finishExperience(Experience experience),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -352,7 +350,6 @@ mixin _$ExperienceNavigationWatcherState {
     TResult finishExperience(Experience experience),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -360,7 +357,6 @@ mixin _$ExperienceNavigationWatcherState {
     @required TResult navigatingExperience(_NavigatingExperience value),
     @required TResult finishExperience(_FinishExperience value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
@@ -584,6 +580,7 @@ abstract class _NoExperience implements ExperienceNavigationWatcherState {
 /// @nodoc
 abstract class _$NavigatingExperienceCopyWith<$Res> {
   factory _$NavigatingExperienceCopyWith(_NavigatingExperience value, $Res Function(_NavigatingExperience) then) = __$NavigatingExperienceCopyWithImpl<$Res>;
+
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;

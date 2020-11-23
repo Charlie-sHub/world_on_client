@@ -50,22 +50,15 @@ const $NotificationDto = _$NotificationDtoTearOff();
 mixin _$NotificationDto {
   @JsonKey(ignore: true)
   String get id;
-
   UserDto get sender;
-
   UserDto get receiver;
-
   String get description;
-
   bool get seen;
-
   @ServerTimestampConverter()
   DateTime get creationDate;
-
   NotificationType get type;
 
   Map<String, dynamic> toJson();
-
   $NotificationDtoCopyWith<NotificationDto> get copyWith;
 }
 
@@ -85,6 +78,7 @@ class _$NotificationDtoCopyWithImpl<$Res> implements $NotificationDtoCopyWith<$R
   _$NotificationDtoCopyWithImpl(this._value, this._then);
 
   final NotificationDto _value;
+
   // ignore: unused_field
   final $Res Function(NotificationDto) _then;
 
@@ -139,7 +133,6 @@ abstract class _$NotificationDtoCopyWith<$Res> implements $NotificationDtoCopyWi
 
   @override
   $UserDtoCopyWith<$Res> get sender;
-
   @override
   $UserDtoCopyWith<$Res> get receiver;
 }
@@ -276,17 +269,13 @@ abstract class _NotificationDto extends NotificationDto {
 
   @override
   String get description;
-
   @override
   bool get seen;
-
   @override
   @ServerTimestampConverter()
   DateTime get creationDate;
-
   @override
   NotificationType get type;
-
   @override
   _$NotificationDtoCopyWith<_NotificationDto> get copyWith;
 }

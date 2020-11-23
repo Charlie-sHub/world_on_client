@@ -14,6 +14,11 @@ class _$ObjectiveFormEventTearOff {
   const _$ObjectiveFormEventTearOff();
 
 // ignore: unused_element
+  _Initialized initialized() {
+    return const _Initialized();
+  }
+
+// ignore: unused_element
   _DescriptionChanged descriptionChanged(String description) {
     return _DescriptionChanged(
       description,
@@ -49,6 +54,7 @@ const $ObjectiveFormEvent = _$ObjectiveFormEventTearOff();
 mixin _$ObjectiveFormEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult initialized(),
     @required TResult descriptionChanged(String description),
     @required TResult coordinatesChanged(double latitude, double longitude),
     @required TResult imageChanged(File imageFile),
@@ -57,6 +63,7 @@ mixin _$ObjectiveFormEvent {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult initialized(),
     TResult descriptionChanged(String description),
     TResult coordinatesChanged(double latitude, double longitude),
     TResult imageChanged(File imageFile),
@@ -66,6 +73,7 @@ mixin _$ObjectiveFormEvent {
 
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
     @required TResult descriptionChanged(_DescriptionChanged value),
     @required TResult coordinatesChanged(_CoordinatesChanged value),
     @required TResult imageChanged(_ImageChanged value),
@@ -74,6 +82,7 @@ mixin _$ObjectiveFormEvent {
 
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
     TResult descriptionChanged(_DescriptionChanged value),
     TResult coordinatesChanged(_CoordinatesChanged value),
     TResult imageChanged(_ImageChanged value),
@@ -95,6 +104,109 @@ class _$ObjectiveFormEventCopyWithImpl<$Res> implements $ObjectiveFormEventCopyW
 
   // ignore: unused_field
   final $Res Function(ObjectiveFormEvent) _then;
+}
+
+/// @nodoc
+abstract class _$InitializedCopyWith<$Res> {
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$InitializedCopyWithImpl<$Res> extends _$ObjectiveFormEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
+
+  @override
+  _Initialized get _value => super._value as _Initialized;
+}
+
+/// @nodoc
+class _$_Initialized implements _Initialized {
+  const _$_Initialized();
+
+  @override
+  String toString() {
+    return 'ObjectiveFormEvent.initialized()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _Initialized);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult initialized(),
+    @required TResult descriptionChanged(String description),
+    @required TResult coordinatesChanged(double latitude, double longitude),
+    @required TResult imageChanged(File imageFile),
+    @required TResult submitted(),
+  }) {
+    assert(initialized != null);
+    assert(descriptionChanged != null);
+    assert(coordinatesChanged != null);
+    assert(imageChanged != null);
+    assert(submitted != null);
+    return initialized();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult initialized(),
+    TResult descriptionChanged(String description),
+    TResult coordinatesChanged(double latitude, double longitude),
+    TResult imageChanged(File imageFile),
+    TResult submitted(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (initialized != null) {
+      return initialized();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
+    @required TResult descriptionChanged(_DescriptionChanged value),
+    @required TResult coordinatesChanged(_CoordinatesChanged value),
+    @required TResult imageChanged(_ImageChanged value),
+    @required TResult submitted(_Submitted value),
+  }) {
+    assert(initialized != null);
+    assert(descriptionChanged != null);
+    assert(coordinatesChanged != null);
+    assert(imageChanged != null);
+    assert(submitted != null);
+    return initialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
+    TResult descriptionChanged(_DescriptionChanged value),
+    TResult coordinatesChanged(_CoordinatesChanged value),
+    TResult imageChanged(_ImageChanged value),
+    TResult submitted(_Submitted value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (initialized != null) {
+      return initialized(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Initialized implements ObjectiveFormEvent {
+  const factory _Initialized() = _$_Initialized;
 }
 
 /// @nodoc
@@ -147,11 +259,13 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult initialized(),
     @required TResult descriptionChanged(String description),
     @required TResult coordinatesChanged(double latitude, double longitude),
     @required TResult imageChanged(File imageFile),
     @required TResult submitted(),
   }) {
+    assert(initialized != null);
     assert(descriptionChanged != null);
     assert(coordinatesChanged != null);
     assert(imageChanged != null);
@@ -162,6 +276,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult initialized(),
     TResult descriptionChanged(String description),
     TResult coordinatesChanged(double latitude, double longitude),
     TResult imageChanged(File imageFile),
@@ -178,11 +293,13 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
     @required TResult descriptionChanged(_DescriptionChanged value),
     @required TResult coordinatesChanged(_CoordinatesChanged value),
     @required TResult imageChanged(_ImageChanged value),
     @required TResult submitted(_Submitted value),
   }) {
+    assert(initialized != null);
     assert(descriptionChanged != null);
     assert(coordinatesChanged != null);
     assert(imageChanged != null);
@@ -193,6 +310,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
     TResult descriptionChanged(_DescriptionChanged value),
     TResult coordinatesChanged(_CoordinatesChanged value),
     TResult imageChanged(_ImageChanged value),
@@ -211,6 +329,7 @@ abstract class _DescriptionChanged implements ObjectiveFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description;
+
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith;
 }
 
@@ -273,11 +392,13 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult initialized(),
     @required TResult descriptionChanged(String description),
     @required TResult coordinatesChanged(double latitude, double longitude),
     @required TResult imageChanged(File imageFile),
     @required TResult submitted(),
   }) {
+    assert(initialized != null);
     assert(descriptionChanged != null);
     assert(coordinatesChanged != null);
     assert(imageChanged != null);
@@ -288,6 +409,7 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult initialized(),
     TResult descriptionChanged(String description),
     TResult coordinatesChanged(double latitude, double longitude),
     TResult imageChanged(File imageFile),
@@ -304,11 +426,13 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
     @required TResult descriptionChanged(_DescriptionChanged value),
     @required TResult coordinatesChanged(_CoordinatesChanged value),
     @required TResult imageChanged(_ImageChanged value),
     @required TResult submitted(_Submitted value),
   }) {
+    assert(initialized != null);
     assert(descriptionChanged != null);
     assert(coordinatesChanged != null);
     assert(imageChanged != null);
@@ -319,6 +443,7 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
     TResult descriptionChanged(_DescriptionChanged value),
     TResult coordinatesChanged(_CoordinatesChanged value),
     TResult imageChanged(_ImageChanged value),
@@ -393,11 +518,13 @@ class _$_ImageChanged implements _ImageChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult initialized(),
     @required TResult descriptionChanged(String description),
     @required TResult coordinatesChanged(double latitude, double longitude),
     @required TResult imageChanged(File imageFile),
     @required TResult submitted(),
   }) {
+    assert(initialized != null);
     assert(descriptionChanged != null);
     assert(coordinatesChanged != null);
     assert(imageChanged != null);
@@ -408,6 +535,7 @@ class _$_ImageChanged implements _ImageChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult initialized(),
     TResult descriptionChanged(String description),
     TResult coordinatesChanged(double latitude, double longitude),
     TResult imageChanged(File imageFile),
@@ -424,11 +552,13 @@ class _$_ImageChanged implements _ImageChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
     @required TResult descriptionChanged(_DescriptionChanged value),
     @required TResult coordinatesChanged(_CoordinatesChanged value),
     @required TResult imageChanged(_ImageChanged value),
     @required TResult submitted(_Submitted value),
   }) {
+    assert(initialized != null);
     assert(descriptionChanged != null);
     assert(coordinatesChanged != null);
     assert(imageChanged != null);
@@ -439,6 +569,7 @@ class _$_ImageChanged implements _ImageChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
     TResult descriptionChanged(_DescriptionChanged value),
     TResult coordinatesChanged(_CoordinatesChanged value),
     TResult imageChanged(_ImageChanged value),
@@ -457,6 +588,7 @@ abstract class _ImageChanged implements ObjectiveFormEvent {
   const factory _ImageChanged(File imageFile) = _$_ImageChanged;
 
   File get imageFile;
+
   _$ImageChangedCopyWith<_ImageChanged> get copyWith;
 }
 
@@ -493,11 +625,13 @@ class _$_Submitted implements _Submitted {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult initialized(),
     @required TResult descriptionChanged(String description),
     @required TResult coordinatesChanged(double latitude, double longitude),
     @required TResult imageChanged(File imageFile),
     @required TResult submitted(),
   }) {
+    assert(initialized != null);
     assert(descriptionChanged != null);
     assert(coordinatesChanged != null);
     assert(imageChanged != null);
@@ -508,6 +642,7 @@ class _$_Submitted implements _Submitted {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult initialized(),
     TResult descriptionChanged(String description),
     TResult coordinatesChanged(double latitude, double longitude),
     TResult imageChanged(File imageFile),
@@ -524,11 +659,13 @@ class _$_Submitted implements _Submitted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
     @required TResult descriptionChanged(_DescriptionChanged value),
     @required TResult coordinatesChanged(_CoordinatesChanged value),
     @required TResult imageChanged(_ImageChanged value),
     @required TResult submitted(_Submitted value),
   }) {
+    assert(initialized != null);
     assert(descriptionChanged != null);
     assert(coordinatesChanged != null);
     assert(imageChanged != null);
@@ -539,6 +676,7 @@ class _$_Submitted implements _Submitted {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
     TResult descriptionChanged(_DescriptionChanged value),
     TResult coordinatesChanged(_CoordinatesChanged value),
     TResult imageChanged(_ImageChanged value),
@@ -578,7 +716,9 @@ const $ObjectiveFormState = _$ObjectiveFormStateTearOff();
 /// @nodoc
 mixin _$ObjectiveFormState {
   Objective get objective;
+
   bool get showErrorMessages;
+
   bool get isSubmitting;
 
   $ObjectiveFormStateCopyWith<ObjectiveFormState> get copyWith;

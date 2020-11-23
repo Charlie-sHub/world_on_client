@@ -69,13 +69,9 @@ const $ExperienceDto = _$ExperienceDtoTearOff();
 /// @nodoc
 mixin _$ExperienceDto {
   String get id;
-
   String get title;
-
   String get description;
-
   Set<String> get imageURLs;
-
   CoordinatesDto get coordinates;
 
   LocationDto get location;
@@ -132,9 +128,7 @@ abstract class $ExperienceDtoCopyWith<$Res> {
       Set<UserDto> doneBy});
 
   $CoordinatesDtoCopyWith<$Res> get coordinates;
-
   $LocationDtoCopyWith<$Res> get location;
-
   $UserDtoCopyWith<$Res> get creator;
 }
 
@@ -143,6 +137,7 @@ class _$ExperienceDtoCopyWithImpl<$Res> implements $ExperienceDtoCopyWith<$Res> 
   _$ExperienceDtoCopyWithImpl(this._value, this._then);
 
   final ExperienceDto _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceDto) _then;
 
@@ -439,7 +434,6 @@ class _$_ExperienceDto extends _ExperienceDto {
 
 abstract class _ExperienceDto extends ExperienceDto {
   const _ExperienceDto._() : super._();
-
   const factory _ExperienceDto(
       {@required String id,
       @required String title,
@@ -481,18 +475,14 @@ abstract class _ExperienceDto extends ExperienceDto {
   String get creatorId;
   @override
   UserDto get creator;
-
   @override
   int get difficulty;
-
   @override
   @ServerTimestampConverter()
   DateTime get creationDate;
-
   @override
   @ServerTimestampConverter()
   DateTime get modificationDate;
-
   @override
   Set<ObjectiveDto> get objectives;
   @override

@@ -15,6 +15,7 @@ import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/entities/reward/reward.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/failures/error.dart';
+import 'package:worldon/domain/core/use_case/get_current_location.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -160,11 +161,15 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
           () => throw UnAuthenticatedError(),
           id,
         );
-        // TODO: Initialize the map with the user's coordinates
-        // So the camera position of the map is that of the user's current position
+        final _currentLocationOrFailure = await getIt<GetCurrentLocation>()(NoParams());
+        final _coordinates = _currentLocationOrFailure.fold(
+          (_) => Coordinates.empty(),
+          id,
+        );
         return state.copyWith(
           experience: Experience.empty().copyWith(
             creator: _currentUser,
+            coordinates: _coordinates,
           ),
         );
       },

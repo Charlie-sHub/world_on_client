@@ -40,7 +40,7 @@ abstract class CommentDto implements _$CommentDto {
     content: CommentContent(content),
     creationDate: PastDate(creationDate),
     modificationDate: PastDate(modificationDate),
-      );
+  );
 
   factory CommentDto.fromJson(Map<String, dynamic> json) => _$CommentDtoFromJson(json);
 

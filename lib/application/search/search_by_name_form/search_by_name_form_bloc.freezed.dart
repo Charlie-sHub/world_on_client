@@ -37,20 +37,17 @@ mixin _$SearchByNameFormEvent {
     @required TResult searchTermChanged(String searchTermString),
     @required TResult submitted(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult searchTermChanged(String searchTermString),
     TResult submitted(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult searchTermChanged(_SearchTermChanged value),
     @required TResult submitted(_Submitted value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult searchTermChanged(_SearchTermChanged value),
@@ -417,7 +414,6 @@ abstract class _SearchByNameFormState implements SearchByNameFormState {
 
   @override
   Option<ValueFailure> get failureOrSuccessOption;
-
   @override
   _$SearchByNameFormStateCopyWith<_SearchByNameFormState> get copyWith;
 }

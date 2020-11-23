@@ -64,6 +64,7 @@ class _$OptionsCopyWithImpl<$Res> implements $OptionsCopyWith<$Res> {
 /// @nodoc
 abstract class _$OptionsCopyWith<$Res> implements $OptionsCopyWith<$Res> {
   factory _$OptionsCopyWith(_Options value, $Res Function(_Options) then) = __$OptionsCopyWithImpl<$Res>;
+
   @override
   $Res call({UniqueId id, String languageCode});
 }

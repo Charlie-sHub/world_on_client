@@ -57,31 +57,20 @@ const $AchievementDto = _$AchievementDtoTearOff();
 /// @nodoc
 mixin _$AchievementDto {
   String get id;
-
   String get name;
-
   String get description;
-
   String get imageURL;
-
   String get type;
-
   int get requisite;
-
   int get experiencePoints;
-
   String get creatorId;
-
   @ServerTimestampConverter()
   DateTime get creationDate;
-
   @ServerTimestampConverter()
   DateTime get modificationDate;
-
   Set<String> get tagNames;
 
   Map<String, dynamic> toJson();
-
   $AchievementDtoCopyWith<AchievementDto> get copyWith;
 }
 
@@ -108,6 +97,7 @@ class _$AchievementDtoCopyWithImpl<$Res> implements $AchievementDtoCopyWith<$Res
   _$AchievementDtoCopyWithImpl(this._value, this._then);
 
   final AchievementDto _value;
+
   // ignore: unused_field
   final $Res Function(AchievementDto) _then;
 
@@ -301,7 +291,6 @@ class _$_AchievementDto extends _AchievementDto {
 
 abstract class _AchievementDto extends AchievementDto {
   const _AchievementDto._() : super._();
-
   const factory _AchievementDto(
       {@required String id,
       @required String name,
@@ -335,18 +324,14 @@ abstract class _AchievementDto extends AchievementDto {
   int get requisite;
   @override
   int get experiencePoints;
-
   @override
   String get creatorId;
-
   @override
   @ServerTimestampConverter()
   DateTime get creationDate;
-
   @override
   @ServerTimestampConverter()
   DateTime get modificationDate;
-
   @override
   Set<String> get tagNames;
   @override

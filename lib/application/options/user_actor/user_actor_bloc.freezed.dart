@@ -33,18 +33,15 @@ mixin _$UserActorEvent {
   TResult when<TResult extends Object>({
     @required TResult deleted(User user),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult deleted(User user),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult deleted(_Deleted value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult deleted(_Deleted value),
@@ -246,7 +243,6 @@ mixin _$UserActorState {
     @required TResult deletionFailure(Failure<dynamic> failure),
     @required TResult deletionSuccess(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -255,7 +251,6 @@ mixin _$UserActorState {
     TResult deletionSuccess(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -263,7 +258,6 @@ mixin _$UserActorState {
     @required TResult deletionFailure(_DeletionFailure value),
     @required TResult deletionSuccess(_DeletionSuccess value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),

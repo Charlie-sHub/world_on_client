@@ -22,7 +22,7 @@ abstract class TagDto implements _$TagDto {
   }) = _TagDto;
 
   factory TagDto.fromDomain(Tag tag) => TagDto(
-    id: tag.id.getOrCrash(),
+        id: tag.id.getOrCrash(),
         name: tag.name.getOrCrash(),
         creatorId: tag.creatorId.getOrCrash(),
         creationDate: tag.creationDate.getOrCrash(),
@@ -35,7 +35,7 @@ abstract class TagDto implements _$TagDto {
     creatorId: UniqueId.fromUniqueString(creatorId),
     creationDate: PastDate(creationDate),
     modificationDate: PastDate(modificationDate),
-      );
+  );
 
   factory TagDto.fromJson(Map<String, dynamic> json) => _$TagDtoFromJson(json);
 

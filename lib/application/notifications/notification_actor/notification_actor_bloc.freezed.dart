@@ -41,20 +41,17 @@ mixin _$NotificationActorEvent {
     @required TResult deleted(Notification notification),
     @required TResult checked(Notification notification),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult deleted(Notification notification),
     TResult checked(Notification notification),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult deleted(_Deleted value),
     @required TResult checked(_Checked value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult deleted(_Deleted value),
@@ -68,6 +65,7 @@ mixin _$NotificationActorEvent {
 /// @nodoc
 abstract class $NotificationActorEventCopyWith<$Res> {
   factory $NotificationActorEventCopyWith(NotificationActorEvent value, $Res Function(NotificationActorEvent) then) = _$NotificationActorEventCopyWithImpl<$Res>;
+
   $Res call({Notification notification});
 
   $NotificationCopyWith<$Res> get notification;
@@ -78,6 +76,7 @@ class _$NotificationActorEventCopyWithImpl<$Res> implements $NotificationActorEv
   _$NotificationActorEventCopyWithImpl(this._value, this._then);
 
   final NotificationActorEvent _value;
+
   // ignore: unused_field
   final $Res Function(NotificationActorEvent) _then;
 
@@ -104,6 +103,7 @@ class _$NotificationActorEventCopyWithImpl<$Res> implements $NotificationActorEv
 /// @nodoc
 abstract class _$DeletedCopyWith<$Res> implements $NotificationActorEventCopyWith<$Res> {
   factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) = __$DeletedCopyWithImpl<$Res>;
+
   @override
   $Res call({Notification notification});
 
@@ -214,6 +214,7 @@ abstract class _Deleted implements NotificationActorEvent {
 /// @nodoc
 abstract class _$CheckedCopyWith<$Res> implements $NotificationActorEventCopyWith<$Res> {
   factory _$CheckedCopyWith(_Checked value, $Res Function(_Checked) then) = __$CheckedCopyWithImpl<$Res>;
+
   @override
   $Res call({Notification notification});
 
@@ -367,7 +368,6 @@ mixin _$NotificationActorState {
     @required TResult deletionFailure(Failure<dynamic> failure),
     @required TResult checkSuccess(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -377,7 +377,6 @@ mixin _$NotificationActorState {
     TResult checkSuccess(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -386,7 +385,6 @@ mixin _$NotificationActorState {
     @required TResult deletionFailure(_DeletionFailure value),
     @required TResult checkSuccess(_CheckSuccess value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
@@ -408,6 +406,7 @@ class _$NotificationActorStateCopyWithImpl<$Res> implements $NotificationActorSt
   _$NotificationActorStateCopyWithImpl(this._value, this._then);
 
   final NotificationActorState _value;
+
   // ignore: unused_field
   final $Res Function(NotificationActorState) _then;
 }
@@ -724,6 +723,7 @@ abstract class _DeletionSuccess implements NotificationActorState {
 /// @nodoc
 abstract class _$DeletionFailureCopyWith<$Res> {
   factory _$DeletionFailureCopyWith(_DeletionFailure value, $Res Function(_DeletionFailure) then) = __$DeletionFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

@@ -79,7 +79,6 @@ mixin _$Failure<T> {
     @required TResult value(ValueFailure<T> valueFailure),
     @required TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
@@ -91,7 +90,6 @@ mixin _$Failure<T> {
     TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult authenticationDomain(_AuthenticationDomain<T> value),
@@ -102,7 +100,6 @@ mixin _$Failure<T> {
     @required TResult value(_Value<T> value),
     @required TResult profileDomain(_ProfileDomain<T> value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult authenticationDomain(_AuthenticationDomain<T> value),
@@ -133,6 +130,7 @@ class _$FailureCopyWithImpl<T, $Res> implements $FailureCopyWith<T, $Res> {
 /// @nodoc
 abstract class _$AuthenticationDomainCopyWith<T, $Res> {
   factory _$AuthenticationDomainCopyWith(_AuthenticationDomain<T> value, $Res Function(_AuthenticationDomain<T>) then) = __$AuthenticationDomainCopyWithImpl<T, $Res>;
+
   $Res call({AuthenticationDomainFailure<T> authenticationDomainFailure});
 
   $AuthenticationDomainFailureCopyWith<T, $Res> get authenticationDomainFailure;
@@ -282,6 +280,7 @@ abstract class _AuthenticationDomain<T> implements Failure<T> {
 /// @nodoc
 abstract class _$AuthenticationDataCopyWith<T, $Res> {
   factory _$AuthenticationDataCopyWith(_AuthenticationData<T> value, $Res Function(_AuthenticationData<T>) then) = __$AuthenticationDataCopyWithImpl<T, $Res>;
+
   $Res call({AuthenticationDataFailure<T> authenticationDataFailure});
 
   $AuthenticationDataFailureCopyWith<T, $Res> get authenticationDataFailure;
@@ -580,6 +579,7 @@ abstract class _CoreDomain<T> implements Failure<T> {
 /// @nodoc
 abstract class _$CoreAppllicationCopyWith<T, $Res> {
   factory _$CoreAppllicationCopyWith(_CoreAppllication<T> value, $Res Function(_CoreAppllication<T>) then) = __$CoreAppllicationCopyWithImpl<T, $Res>;
+
   $Res call({CoreApplicationFailure<T> coreApplicationFailure});
 
   $CoreApplicationFailureCopyWith<T, $Res> get coreApplicationFailure;
@@ -876,6 +876,7 @@ abstract class _CoreData<T> implements Failure<T> {
 /// @nodoc
 abstract class _$ValueCopyWith<T, $Res> {
   factory _$ValueCopyWith(_Value<T> value, $Res Function(_Value<T>) then) = __$ValueCopyWithImpl<T, $Res>;
+
   $Res call({ValueFailure<T> valueFailure});
 
   $ValueFailureCopyWith<T, $Res> get valueFailure;

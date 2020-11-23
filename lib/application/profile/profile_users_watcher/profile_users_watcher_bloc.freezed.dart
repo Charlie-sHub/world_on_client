@@ -47,7 +47,6 @@ mixin _$ProfileUsersWatcherEvent {
     @required TResult watchFollowingUsersStarted(User user),
     @required TResult usersReceived(Either<Failure, KtList<User>> failureOrUsers),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult watchFollowedUsersStarted(User user),
@@ -55,14 +54,12 @@ mixin _$ProfileUsersWatcherEvent {
     TResult usersReceived(Either<Failure, KtList<User>> failureOrUsers),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult watchFollowedUsersStarted(_WatchFollowedUsersStarted value),
     @required TResult watchFollowingUsersStarted(_WatchFollowingUsersStarted value),
     @required TResult usersReceived(_UsersReceived value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult watchFollowedUsersStarted(_WatchFollowedUsersStarted value),
@@ -82,6 +79,7 @@ class _$ProfileUsersWatcherEventCopyWithImpl<$Res> implements $ProfileUsersWatch
   _$ProfileUsersWatcherEventCopyWithImpl(this._value, this._then);
 
   final ProfileUsersWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(ProfileUsersWatcherEvent) _then;
 }
@@ -89,6 +87,7 @@ class _$ProfileUsersWatcherEventCopyWithImpl<$Res> implements $ProfileUsersWatch
 /// @nodoc
 abstract class _$WatchFollowedUsersStartedCopyWith<$Res> {
   factory _$WatchFollowedUsersStartedCopyWith(_WatchFollowedUsersStarted value, $Res Function(_WatchFollowedUsersStarted) then) = __$WatchFollowedUsersStartedCopyWithImpl<$Res>;
+
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -205,12 +204,14 @@ abstract class _WatchFollowedUsersStarted implements ProfileUsersWatcherEvent {
   const factory _WatchFollowedUsersStarted(User user) = _$_WatchFollowedUsersStarted;
 
   User get user;
+
   _$WatchFollowedUsersStartedCopyWith<_WatchFollowedUsersStarted> get copyWith;
 }
 
 /// @nodoc
 abstract class _$WatchFollowingUsersStartedCopyWith<$Res> {
   factory _$WatchFollowingUsersStartedCopyWith(_WatchFollowingUsersStarted value, $Res Function(_WatchFollowingUsersStarted) then) = __$WatchFollowingUsersStartedCopyWithImpl<$Res>;
+
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -327,12 +328,14 @@ abstract class _WatchFollowingUsersStarted implements ProfileUsersWatcherEvent {
   const factory _WatchFollowingUsersStarted(User user) = _$_WatchFollowingUsersStarted;
 
   User get user;
+
   _$WatchFollowingUsersStartedCopyWith<_WatchFollowingUsersStarted> get copyWith;
 }
 
 /// @nodoc
 abstract class _$UsersReceivedCopyWith<$Res> {
   factory _$UsersReceivedCopyWith(_UsersReceived value, $Res Function(_UsersReceived) then) = __$UsersReceivedCopyWithImpl<$Res>;
+
   $Res call({Either<Failure, KtList<User>> failureOrUsers});
 }
 
@@ -437,6 +440,7 @@ abstract class _UsersReceived implements ProfileUsersWatcherEvent {
   const factory _UsersReceived(Either<Failure, KtList<User>> failureOrUsers) = _$_UsersReceived;
 
   Either<Failure, KtList<User>> get failureOrUsers;
+
   _$UsersReceivedCopyWith<_UsersReceived> get copyWith;
 }
 
@@ -482,7 +486,6 @@ mixin _$ProfileUsersWatcherState {
     @required TResult loadSuccess(KtList<User> users),
     @required TResult loadFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -491,7 +494,6 @@ mixin _$ProfileUsersWatcherState {
     TResult loadFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -499,7 +501,6 @@ mixin _$ProfileUsersWatcherState {
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_LoadFailure value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
@@ -520,6 +521,7 @@ class _$ProfileUsersWatcherStateCopyWithImpl<$Res> implements $ProfileUsersWatch
   _$ProfileUsersWatcherStateCopyWithImpl(this._value, this._then);
 
   final ProfileUsersWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(ProfileUsersWatcherState) _then;
 }
@@ -721,6 +723,7 @@ abstract class _LoadInProgress implements ProfileUsersWatcherState {
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<User> users});
 }
 
@@ -837,6 +840,7 @@ abstract class _LoadSuccess implements ProfileUsersWatcherState {
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

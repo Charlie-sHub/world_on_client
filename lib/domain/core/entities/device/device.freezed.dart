@@ -41,6 +41,7 @@ mixin _$Device {
 /// @nodoc
 abstract class $DeviceCopyWith<$Res> {
   factory $DeviceCopyWith(Device value, $Res Function(Device) then) = _$DeviceCopyWithImpl<$Res>;
+
   $Res call({UniqueId id, String name, String type, String company});
 }
 
@@ -71,6 +72,7 @@ class _$DeviceCopyWithImpl<$Res> implements $DeviceCopyWith<$Res> {
 /// @nodoc
 abstract class _$DeviceCopyWith<$Res> implements $DeviceCopyWith<$Res> {
   factory _$DeviceCopyWith(_Device value, $Res Function(_Device) then) = __$DeviceCopyWithImpl<$Res>;
+
   @override
   $Res call({UniqueId id, String name, String type, String company});
 }

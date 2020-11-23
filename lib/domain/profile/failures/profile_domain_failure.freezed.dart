@@ -35,20 +35,17 @@ mixin _$ProfileDomainFailure<T> {
     @required TResult followItself(),
     @required TResult blockItself(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult followItself(),
     TResult blockItself(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult followItself(FollowItself<T> value),
     @required TResult blockItself(BlockItself<T> value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult followItself(FollowItself<T> value),

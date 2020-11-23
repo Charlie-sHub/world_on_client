@@ -39,20 +39,17 @@ mixin _$BlockedWatcherEvent {
     @required TResult watchBlockedUsersStarted(User user),
     @required TResult resultsReceived(Either<Failure, KtList<User>> failureOrUsers),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult watchBlockedUsersStarted(User user),
     TResult resultsReceived(Either<Failure, KtList<User>> failureOrUsers),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult watchBlockedUsersStarted(_WatchBlockedUsersStarted value),
     @required TResult resultsReceived(_ResultsReceived value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult watchBlockedUsersStarted(_WatchBlockedUsersStarted value),
@@ -71,6 +68,7 @@ class _$BlockedWatcherEventCopyWithImpl<$Res> implements $BlockedWatcherEventCop
   _$BlockedWatcherEventCopyWithImpl(this._value, this._then);
 
   final BlockedWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(BlockedWatcherEvent) _then;
 }
@@ -78,6 +76,7 @@ class _$BlockedWatcherEventCopyWithImpl<$Res> implements $BlockedWatcherEventCop
 /// @nodoc
 abstract class _$WatchBlockedUsersStartedCopyWith<$Res> {
   factory _$WatchBlockedUsersStartedCopyWith(_WatchBlockedUsersStarted value, $Res Function(_WatchBlockedUsersStarted) then) = __$WatchBlockedUsersStartedCopyWithImpl<$Res>;
+
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -188,12 +187,14 @@ abstract class _WatchBlockedUsersStarted implements BlockedWatcherEvent {
   const factory _WatchBlockedUsersStarted(User user) = _$_WatchBlockedUsersStarted;
 
   User get user;
+
   _$WatchBlockedUsersStartedCopyWith<_WatchBlockedUsersStarted> get copyWith;
 }
 
 /// @nodoc
 abstract class _$ResultsReceivedCopyWith<$Res> {
   factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
+
   $Res call({Either<Failure, KtList<User>> failureOrUsers});
 }
 
@@ -292,6 +293,7 @@ abstract class _ResultsReceived implements BlockedWatcherEvent {
   const factory _ResultsReceived(Either<Failure, KtList<User>> failureOrUsers) = _$_ResultsReceived;
 
   Either<Failure, KtList<User>> get failureOrUsers;
+
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith;
 }
 
@@ -337,7 +339,6 @@ mixin _$BlockedWatcherState {
     @required TResult loadSuccess(KtList<User> blockedUsers),
     @required TResult loadFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -346,7 +347,6 @@ mixin _$BlockedWatcherState {
     TResult loadFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -354,7 +354,6 @@ mixin _$BlockedWatcherState {
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_LoadFailure value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
@@ -375,6 +374,7 @@ class _$BlockedWatcherStateCopyWithImpl<$Res> implements $BlockedWatcherStateCop
   _$BlockedWatcherStateCopyWithImpl(this._value, this._then);
 
   final BlockedWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(BlockedWatcherState) _then;
 }
@@ -576,6 +576,7 @@ abstract class _LoadInProgress implements BlockedWatcherState {
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<User> blockedUsers});
 }
 
@@ -692,6 +693,7 @@ abstract class _LoadSuccess implements BlockedWatcherState {
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

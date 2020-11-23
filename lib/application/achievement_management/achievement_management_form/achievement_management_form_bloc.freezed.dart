@@ -77,7 +77,6 @@ mixin _$AchievementManagementFormEvent {
     @required TResult imageChanged(File image),
     @required TResult submitted(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initialized(Option<Achievement> achievementOption),
@@ -89,7 +88,6 @@ mixin _$AchievementManagementFormEvent {
     TResult submitted(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initialized(_Initialized value),
@@ -100,7 +98,6 @@ mixin _$AchievementManagementFormEvent {
     @required TResult imageChanged(_ImageChanged value),
     @required TResult submitted(_Submitted value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initialized(_Initialized value),
@@ -124,6 +121,7 @@ class _$AchievementManagementFormEventCopyWithImpl<$Res> implements $Achievement
   _$AchievementManagementFormEventCopyWithImpl(this._value, this._then);
 
   final AchievementManagementFormEvent _value;
+
   // ignore: unused_field
   final $Res Function(AchievementManagementFormEvent) _then;
 }
@@ -131,6 +129,7 @@ class _$AchievementManagementFormEventCopyWithImpl<$Res> implements $Achievement
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+
   $Res call({Option<Achievement> achievementOption});
 }
 
@@ -260,12 +259,14 @@ abstract class _Initialized implements AchievementManagementFormEvent {
   const factory _Initialized(Option<Achievement> achievementOption) = _$_Initialized;
 
   Option<Achievement> get achievementOption;
+
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
 /// @nodoc
 abstract class _$NameChangedCopyWith<$Res> {
   factory _$NameChangedCopyWith(_NameChanged value, $Res Function(_NameChanged) then) = __$NameChangedCopyWithImpl<$Res>;
+
   $Res call({String name});
 }
 
@@ -400,6 +401,7 @@ abstract class _NameChanged implements AchievementManagementFormEvent {
 /// @nodoc
 abstract class _$DescriptionChangedCopyWith<$Res> {
   factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) = __$DescriptionChangedCopyWithImpl<$Res>;
+
   $Res call({String description});
 }
 
@@ -534,6 +536,7 @@ abstract class _DescriptionChanged implements AchievementManagementFormEvent {
 /// @nodoc
 abstract class _$ExperiencePointsChangedCopyWith<$Res> {
   factory _$ExperiencePointsChangedCopyWith(_ExperiencePointsChanged value, $Res Function(_ExperiencePointsChanged) then) = __$ExperiencePointsChangedCopyWithImpl<$Res>;
+
   $Res call({int experiencePoints});
 }
 
@@ -663,12 +666,14 @@ abstract class _ExperiencePointsChanged implements AchievementManagementFormEven
   const factory _ExperiencePointsChanged(int experiencePoints) = _$_ExperiencePointsChanged;
 
   int get experiencePoints;
+
   _$ExperiencePointsChangedCopyWith<_ExperiencePointsChanged> get copyWith;
 }
 
 /// @nodoc
 abstract class _$TagsChangedCopyWith<$Res> {
   factory _$TagsChangedCopyWith(_TagsChanged value, $Res Function(_TagsChanged) then) = __$TagsChangedCopyWithImpl<$Res>;
+
   $Res call({KtSet<Tag> tags});
 }
 
@@ -803,6 +808,7 @@ abstract class _TagsChanged implements AchievementManagementFormEvent {
 /// @nodoc
 abstract class _$ImageChangedCopyWith<$Res> {
   factory _$ImageChangedCopyWith(_ImageChanged value, $Res Function(_ImageChanged) then) = __$ImageChangedCopyWithImpl<$Res>;
+
   $Res call({File image});
 }
 
@@ -1073,9 +1079,13 @@ const $AchievementManagementFormState = _$AchievementManagementFormStateTearOff(
 /// @nodoc
 mixin _$AchievementManagementFormState {
   Achievement get achievement;
+
   bool get showErrorMessages;
+
   bool get isEditing;
+
   bool get isSubmitting;
+
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
 
   $AchievementManagementFormStateCopyWith<AchievementManagementFormState> get copyWith;
@@ -1084,6 +1094,7 @@ mixin _$AchievementManagementFormState {
 /// @nodoc
 abstract class $AchievementManagementFormStateCopyWith<$Res> {
   factory $AchievementManagementFormStateCopyWith(AchievementManagementFormState value, $Res Function(AchievementManagementFormState) then) = _$AchievementManagementFormStateCopyWithImpl<$Res>;
+
   $Res call({Achievement achievement, bool showErrorMessages, bool isEditing, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
 
   $AchievementCopyWith<$Res> get achievement;
@@ -1094,6 +1105,7 @@ class _$AchievementManagementFormStateCopyWithImpl<$Res> implements $Achievement
   _$AchievementManagementFormStateCopyWithImpl(this._value, this._then);
 
   final AchievementManagementFormState _value;
+
   // ignore: unused_field
   final $Res Function(AchievementManagementFormState) _then;
 
@@ -1128,6 +1140,7 @@ class _$AchievementManagementFormStateCopyWithImpl<$Res> implements $Achievement
 /// @nodoc
 abstract class _$AchievementManagementFormStateCopyWith<$Res> implements $AchievementManagementFormStateCopyWith<$Res> {
   factory _$AchievementManagementFormStateCopyWith(_AchievementManagementFormState value, $Res Function(_AchievementManagementFormState) then) = __$AchievementManagementFormStateCopyWithImpl<$Res>;
+
   @override
   $Res call({Achievement achievement, bool showErrorMessages, bool isEditing, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
 
@@ -1226,8 +1239,10 @@ abstract class _AchievementManagementFormState implements AchievementManagementF
   bool get isEditing;
   @override
   bool get isSubmitting;
+
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
+
   @override
   _$AchievementManagementFormStateCopyWith<_AchievementManagementFormState> get copyWith;
 }

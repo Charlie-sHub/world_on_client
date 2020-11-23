@@ -18,6 +18,7 @@ class PasswordTextField extends StatelessWidget {
       maxLength: Password.maxLength,
       decoration: const InputDecoration(
         labelText: "Password",
+        counterText: "",
         prefixIcon: Icon(Icons.lock),
       ),
       autocorrect: false,

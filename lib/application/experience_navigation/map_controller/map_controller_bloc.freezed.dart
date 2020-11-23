@@ -48,7 +48,6 @@ mixin _$MapControllerEvent {
     @required TResult cameraPositionChanged(Coordinates coordinates, double zoom),
     @required TResult objectivesChanged(KtList<Objective> objectives),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initialized(Experience experience),
@@ -56,14 +55,12 @@ mixin _$MapControllerEvent {
     TResult objectivesChanged(KtList<Objective> objectives),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initialized(_Initialized value),
     @required TResult cameraPositionChanged(_CameraPositionChanged value),
     @required TResult objectivesChanged(_ObjectivesChanged value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initialized(_Initialized value),
@@ -214,6 +211,7 @@ abstract class _Initialized implements MapControllerEvent {
 /// @nodoc
 abstract class _$CameraPositionChangedCopyWith<$Res> {
   factory _$CameraPositionChangedCopyWith(_CameraPositionChanged value, $Res Function(_CameraPositionChanged) then) = __$CameraPositionChangedCopyWithImpl<$Res>;
+
   $Res call({Coordinates coordinates, double zoom});
 
   $CoordinatesCopyWith<$Res> get coordinates;

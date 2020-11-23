@@ -37,20 +37,17 @@ mixin _$TagManagementWatcherEvent {
     @required TResult watchAllTagsStarted(),
     @required TResult resultsReceived(Either<Failure, KtList<Tag>> failureOrTags),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult watchAllTagsStarted(),
     TResult resultsReceived(Either<Failure, KtList<Tag>> failureOrTags),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult watchAllTagsStarted(_WatchAllTagsStarted value),
     @required TResult resultsReceived(_ResultsReceived value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult watchAllTagsStarted(_WatchAllTagsStarted value),
@@ -328,7 +325,6 @@ mixin _$TagManagementWatcherState {
     @required TResult loadSuccess(KtList<Tag> tags),
     @required TResult loadFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -337,7 +333,6 @@ mixin _$TagManagementWatcherState {
     TResult loadFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -345,7 +340,6 @@ mixin _$TagManagementWatcherState {
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_LoadFailure value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),

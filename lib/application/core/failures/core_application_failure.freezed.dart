@@ -33,18 +33,15 @@ mixin _$CoreApplicationFailure<T> {
   TResult when<TResult extends Object>({
     @required TResult unknownApplicationLayerError(String errorString),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult unknownApplicationLayerError(String errorString),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult unknownApplicationLayerError(UnknownApplicationLayerError<T> value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult unknownApplicationLayerError(UnknownApplicationLayerError<T> value),

@@ -40,20 +40,17 @@ mixin _$SearchTagsByNameWatcherEvent {
     @required TResult watchTagsFoundByNameStarted(SearchTerm searchTerm),
     @required TResult resultsReceived(Either<Failure, KtList<Tag>> failureOrTags),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult watchTagsFoundByNameStarted(SearchTerm searchTerm),
     TResult resultsReceived(Either<Failure, KtList<Tag>> failureOrTags),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult watchTagsFoundByNameStarted(_WatchTagsFoundByNameStarted value),
     @required TResult resultsReceived(_ResultsReceived value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult watchTagsFoundByNameStarted(_WatchTagsFoundByNameStarted value),
@@ -365,7 +362,6 @@ mixin _$SearchTagsByNameWatcherState {
     @required TResult searchSuccess(KtList<Tag> tagsFound),
     @required TResult searchFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -374,7 +370,6 @@ mixin _$SearchTagsByNameWatcherState {
     TResult searchFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -382,7 +377,6 @@ mixin _$SearchTagsByNameWatcherState {
     @required TResult searchSuccess(_SearchSuccess value),
     @required TResult searchFailure(_SearchFailure value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),

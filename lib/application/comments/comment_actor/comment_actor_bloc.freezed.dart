@@ -33,18 +33,15 @@ mixin _$CommentActorEvent {
   TResult when<TResult extends Object>({
     @required TResult deleted(Comment comment),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult deleted(Comment comment),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult deleted(_Deleted value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult deleted(_Deleted value),
@@ -57,6 +54,7 @@ mixin _$CommentActorEvent {
 /// @nodoc
 abstract class $CommentActorEventCopyWith<$Res> {
   factory $CommentActorEventCopyWith(CommentActorEvent value, $Res Function(CommentActorEvent) then) = _$CommentActorEventCopyWithImpl<$Res>;
+
   $Res call({Comment comment});
 
   $CommentCopyWith<$Res> get comment;
@@ -67,6 +65,7 @@ class _$CommentActorEventCopyWithImpl<$Res> implements $CommentActorEventCopyWit
   _$CommentActorEventCopyWithImpl(this._value, this._then);
 
   final CommentActorEvent _value;
+
   // ignore: unused_field
   final $Res Function(CommentActorEvent) _then;
 
@@ -93,6 +92,7 @@ class _$CommentActorEventCopyWithImpl<$Res> implements $CommentActorEventCopyWit
 /// @nodoc
 abstract class _$DeletedCopyWith<$Res> implements $CommentActorEventCopyWith<$Res> {
   factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) = __$DeletedCopyWithImpl<$Res>;
+
   @override
   $Res call({Comment comment});
 
@@ -234,7 +234,6 @@ mixin _$CommentActorState {
     @required TResult deletionSuccess(),
     @required TResult deletionFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -243,7 +242,6 @@ mixin _$CommentActorState {
     TResult deletionFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -251,7 +249,6 @@ mixin _$CommentActorState {
     @required TResult deletionSuccess(_DeletionSuccess value),
     @required TResult deletionFailure(_DeletionFailure value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
@@ -272,6 +269,7 @@ class _$CommentActorStateCopyWithImpl<$Res> implements $CommentActorStateCopyWit
   _$CommentActorStateCopyWithImpl(this._value, this._then);
 
   final CommentActorState _value;
+
   // ignore: unused_field
   final $Res Function(CommentActorState) _then;
 }
@@ -570,6 +568,7 @@ abstract class _DeletionSuccess implements CommentActorState {
 /// @nodoc
 abstract class _$DeletionFailureCopyWith<$Res> {
   factory _$DeletionFailureCopyWith(_DeletionFailure value, $Res Function(_DeletionFailure) then) = __$DeletionFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

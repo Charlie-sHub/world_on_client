@@ -49,7 +49,6 @@ mixin _$TagCardActorEvent {
     @required TResult dismissedFromInterests(Tag tag),
     @required TResult addedToInterests(Tag tag),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initialized(Tag tag),
@@ -57,14 +56,12 @@ mixin _$TagCardActorEvent {
     TResult addedToInterests(Tag tag),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initialized(_Initialized value),
     @required TResult dismissedFromInterests(_DismissedFromInterests value),
     @required TResult addedToInterests(_AddedToInterests value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initialized(_Initialized value),
@@ -566,7 +563,6 @@ mixin _$TagCardActorState {
     @required TResult dismissalSuccess(),
     @required TResult dismissalFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -579,7 +575,6 @@ mixin _$TagCardActorState {
     TResult dismissalFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -591,7 +586,6 @@ mixin _$TagCardActorState {
     @required TResult dismissalSuccess(_DismissalSuccess value),
     @required TResult dismissalFailure(_DismissalFailure value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),

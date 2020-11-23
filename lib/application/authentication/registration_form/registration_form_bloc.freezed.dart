@@ -113,7 +113,6 @@ mixin _$RegistrationFormEvent {
     @required TResult tappedEULA(),
     @required TResult submitted(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initialized(),
@@ -130,7 +129,6 @@ mixin _$RegistrationFormEvent {
     TResult submitted(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initialized(_Initialized value),
@@ -146,7 +144,6 @@ mixin _$RegistrationFormEvent {
     @required TResult tappedEULA(_TappedEULA value),
     @required TResult submitted(_Submitted value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initialized(_Initialized value),
@@ -175,6 +172,7 @@ class _$RegistrationFormEventCopyWithImpl<$Res> implements $RegistrationFormEven
   _$RegistrationFormEventCopyWithImpl(this._value, this._then);
 
   final RegistrationFormEvent _value;
+
   // ignore: unused_field
   final $Res Function(RegistrationFormEvent) _then;
 }
@@ -327,6 +325,7 @@ abstract class _Initialized implements RegistrationFormEvent {
 /// @nodoc
 abstract class _$ImageChangedCopyWith<$Res> {
   factory _$ImageChangedCopyWith(_ImageChanged value, $Res Function(_ImageChanged) then) = __$ImageChangedCopyWithImpl<$Res>;
+
   $Res call({File imageFile});
 }
 
@@ -491,6 +490,7 @@ abstract class _ImageChanged implements RegistrationFormEvent {
 /// @nodoc
 abstract class _$NameChangedCopyWith<$Res> {
   factory _$NameChangedCopyWith(_NameChanged value, $Res Function(_NameChanged) then) = __$NameChangedCopyWithImpl<$Res>;
+
   $Res call({String name});
 }
 
@@ -655,6 +655,7 @@ abstract class _NameChanged implements RegistrationFormEvent {
 /// @nodoc
 abstract class _$UsernameChangedCopyWith<$Res> {
   factory _$UsernameChangedCopyWith(_UsernameChanged value, $Res Function(_UsernameChanged) then) = __$UsernameChangedCopyWithImpl<$Res>;
+
   $Res call({String username});
 }
 
@@ -819,6 +820,7 @@ abstract class _UsernameChanged implements RegistrationFormEvent {
 /// @nodoc
 abstract class _$PasswordChangedCopyWith<$Res> {
   factory _$PasswordChangedCopyWith(_PasswordChanged value, $Res Function(_PasswordChanged) then) = __$PasswordChangedCopyWithImpl<$Res>;
+
   $Res call({String password});
 }
 
@@ -983,6 +985,7 @@ abstract class _PasswordChanged implements RegistrationFormEvent {
 /// @nodoc
 abstract class _$PasswordConfirmationChangedCopyWith<$Res> {
   factory _$PasswordConfirmationChangedCopyWith(_PasswordConfirmationChanged value, $Res Function(_PasswordConfirmationChanged) then) = __$PasswordConfirmationChangedCopyWithImpl<$Res>;
+
   $Res call({String passwordConfirmation});
 }
 
@@ -1143,12 +1146,14 @@ abstract class _PasswordConfirmationChanged implements RegistrationFormEvent {
   const factory _PasswordConfirmationChanged(String passwordConfirmation) = _$_PasswordConfirmationChanged;
 
   String get passwordConfirmation;
+
   _$PasswordConfirmationChangedCopyWith<_PasswordConfirmationChanged> get copyWith;
 }
 
 /// @nodoc
 abstract class _$EmailAddressChangedCopyWith<$Res> {
   factory _$EmailAddressChangedCopyWith(_EmailAddressChanged value, $Res Function(_EmailAddressChanged) then) = __$EmailAddressChangedCopyWithImpl<$Res>;
+
   $Res call({String emailAddress});
 }
 
@@ -1307,12 +1312,14 @@ abstract class _EmailAddressChanged implements RegistrationFormEvent {
   const factory _EmailAddressChanged(String emailAddress) = _$_EmailAddressChanged;
 
   String get emailAddress;
+
   _$EmailAddressChangedCopyWith<_EmailAddressChanged> get copyWith;
 }
 
 /// @nodoc
 abstract class _$BirthdayChangedCopyWith<$Res> {
   factory _$BirthdayChangedCopyWith(_BirthdayChanged value, $Res Function(_BirthdayChanged) then) = __$BirthdayChangedCopyWithImpl<$Res>;
+
   $Res call({DateTime birthday});
 }
 
@@ -1477,6 +1484,7 @@ abstract class _BirthdayChanged implements RegistrationFormEvent {
 /// @nodoc
 abstract class _$DescriptionChangedCopyWith<$Res> {
   factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) = __$DescriptionChangedCopyWithImpl<$Res>;
+
   $Res call({String description});
 }
 
@@ -1641,6 +1649,7 @@ abstract class _DescriptionChanged implements RegistrationFormEvent {
 /// @nodoc
 abstract class _$InterestsChangedCopyWith<$Res> {
   factory _$InterestsChangedCopyWith(_InterestsChanged value, $Res Function(_InterestsChanged) then) = __$InterestsChangedCopyWithImpl<$Res>;
+
   $Res call({Set<UniqueId> interests});
 }
 
@@ -1799,6 +1808,7 @@ abstract class _InterestsChanged implements RegistrationFormEvent {
   const factory _InterestsChanged(Set<UniqueId> interests) = _$_InterestsChanged;
 
   Set<UniqueId> get interests;
+
   _$InterestsChangedCopyWith<_InterestsChanged> get copyWith;
 }
 
@@ -2137,6 +2147,7 @@ mixin _$RegistrationFormState {
 /// @nodoc
 abstract class $RegistrationFormStateCopyWith<$Res> {
   factory $RegistrationFormStateCopyWith(RegistrationFormState value, $Res Function(RegistrationFormState) then) = _$RegistrationFormStateCopyWithImpl<$Res>;
+
   $Res call(
       {User user,
       PasswordConfirmator passwordConfirmator,
@@ -2154,6 +2165,7 @@ class _$RegistrationFormStateCopyWithImpl<$Res> implements $RegistrationFormStat
   _$RegistrationFormStateCopyWithImpl(this._value, this._then);
 
   final RegistrationFormState _value;
+
   // ignore: unused_field
   final $Res Function(RegistrationFormState) _then;
 
@@ -2192,6 +2204,7 @@ class _$RegistrationFormStateCopyWithImpl<$Res> implements $RegistrationFormStat
 /// @nodoc
 abstract class _$RegistrationFormStateCopyWith<$Res> implements $RegistrationFormStateCopyWith<$Res> {
   factory _$RegistrationFormStateCopyWith(_RegistrationFormState value, $Res Function(_RegistrationFormState) then) = __$RegistrationFormStateCopyWithImpl<$Res>;
+
   @override
   $Res call(
       {User user,

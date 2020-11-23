@@ -29,18 +29,15 @@ mixin _$AuthenticationDomainFailure<T> {
   TResult when<TResult extends Object>({
     @required TResult cancelledByUser(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult cancelledByUser(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult cancelledByUser(CancelledByUser<T> value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult cancelledByUser(CancelledByUser<T> value),

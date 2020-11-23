@@ -33,7 +33,6 @@ mixin _$ExperienceCardLikeCheckEvent {
   TResult when<TResult extends Object>({
     @required TResult initialized(Experience experience),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initialized(Experience experience),
@@ -57,6 +56,7 @@ mixin _$ExperienceCardLikeCheckEvent {
 /// @nodoc
 abstract class $ExperienceCardLikeCheckEventCopyWith<$Res> {
   factory $ExperienceCardLikeCheckEventCopyWith(ExperienceCardLikeCheckEvent value, $Res Function(ExperienceCardLikeCheckEvent) then) = _$ExperienceCardLikeCheckEventCopyWithImpl<$Res>;
+
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
@@ -67,6 +67,7 @@ class _$ExperienceCardLikeCheckEventCopyWithImpl<$Res> implements $ExperienceCar
   _$ExperienceCardLikeCheckEventCopyWithImpl(this._value, this._then);
 
   final ExperienceCardLikeCheckEvent _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceCardLikeCheckEvent) _then;
 
@@ -93,6 +94,7 @@ class _$ExperienceCardLikeCheckEventCopyWithImpl<$Res> implements $ExperienceCar
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> implements $ExperienceCardLikeCheckEventCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+
   @override
   $Res call({Experience experience});
 
@@ -226,7 +228,6 @@ mixin _$ExperienceCardLikeCheckState {
     @required TResult likes(),
     @required TResult neutral(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -234,14 +235,12 @@ mixin _$ExperienceCardLikeCheckState {
     TResult neutral(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
     @required TResult likes(_Likes value),
     @required TResult neutral(_Neutral value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
@@ -261,6 +260,7 @@ class _$ExperienceCardLikeCheckStateCopyWithImpl<$Res> implements $ExperienceCar
   _$ExperienceCardLikeCheckStateCopyWithImpl(this._value, this._then);
 
   final ExperienceCardLikeCheckState _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceCardLikeCheckState) _then;
 }

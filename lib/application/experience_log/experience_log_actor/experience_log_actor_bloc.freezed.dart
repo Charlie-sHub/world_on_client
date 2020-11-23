@@ -33,18 +33,15 @@ mixin _$ExperienceLogActorEvent {
   TResult when<TResult extends Object>({
     @required TResult experienceDismissed(UniqueId experienceId),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult experienceDismissed(UniqueId experienceId),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult experienceDismissed(_ExperienceDismissed value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult experienceDismissed(_ExperienceDismissed value),
@@ -57,6 +54,7 @@ mixin _$ExperienceLogActorEvent {
 /// @nodoc
 abstract class $ExperienceLogActorEventCopyWith<$Res> {
   factory $ExperienceLogActorEventCopyWith(ExperienceLogActorEvent value, $Res Function(ExperienceLogActorEvent) then) = _$ExperienceLogActorEventCopyWithImpl<$Res>;
+
   $Res call({UniqueId experienceId});
 }
 
@@ -65,6 +63,7 @@ class _$ExperienceLogActorEventCopyWithImpl<$Res> implements $ExperienceLogActor
   _$ExperienceLogActorEventCopyWithImpl(this._value, this._then);
 
   final ExperienceLogActorEvent _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceLogActorEvent) _then;
 
@@ -81,6 +80,7 @@ class _$ExperienceLogActorEventCopyWithImpl<$Res> implements $ExperienceLogActor
 /// @nodoc
 abstract class _$ExperienceDismissedCopyWith<$Res> implements $ExperienceLogActorEventCopyWith<$Res> {
   factory _$ExperienceDismissedCopyWith(_ExperienceDismissed value, $Res Function(_ExperienceDismissed) then) = __$ExperienceDismissedCopyWithImpl<$Res>;
+
   @override
   $Res call({UniqueId experienceId});
 }
@@ -175,6 +175,7 @@ abstract class _ExperienceDismissed implements ExperienceLogActorEvent {
 
   @override
   UniqueId get experienceId;
+
   @override
   _$ExperienceDismissedCopyWith<_ExperienceDismissed> get copyWith;
 }
@@ -219,7 +220,6 @@ mixin _$ExperienceLogActorState {
     @required TResult dismissalSuccess(),
     @required TResult dismissalFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -228,7 +228,6 @@ mixin _$ExperienceLogActorState {
     TResult dismissalFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -236,7 +235,6 @@ mixin _$ExperienceLogActorState {
     @required TResult dismissalSuccess(_DismissalSuccess value),
     @required TResult dismissalFailure(_DismissalFailure value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
@@ -257,6 +255,7 @@ class _$ExperienceLogActorStateCopyWithImpl<$Res> implements $ExperienceLogActor
   _$ExperienceLogActorStateCopyWithImpl(this._value, this._then);
 
   final ExperienceLogActorState _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceLogActorState) _then;
 }
@@ -555,6 +554,7 @@ abstract class _DismissalSuccess implements ExperienceLogActorState {
 /// @nodoc
 abstract class _$DismissalFailureCopyWith<$Res> {
   factory _$DismissalFailureCopyWith(_DismissalFailure value, $Res Function(_DismissalFailure) then) = __$DismissalFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
@@ -677,5 +677,6 @@ abstract class _DismissalFailure implements ExperienceLogActorState {
   const factory _DismissalFailure(Failure<dynamic> failure) = _$_DismissalFailure;
 
   Failure<dynamic> get failure;
+
   _$DismissalFailureCopyWith<_DismissalFailure> get copyWith;
 }

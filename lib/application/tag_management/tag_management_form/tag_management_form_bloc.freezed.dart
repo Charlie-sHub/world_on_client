@@ -45,7 +45,6 @@ mixin _$TagManagementFormEvent {
     @required TResult nameChanged(String name),
     @required TResult submitted(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initialized(Option<Tag> tagOption),
@@ -53,14 +52,12 @@ mixin _$TagManagementFormEvent {
     TResult submitted(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initialized(_Initialized value),
     @required TResult nameChanged(_NameChanged value),
     @required TResult submitted(_Submitted value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initialized(_Initialized value),

@@ -44,19 +44,14 @@ const $TagDto = _$TagDtoTearOff();
 /// @nodoc
 mixin _$TagDto {
   String get id;
-  
   String get name;
-  
   String get creatorId;
-  
   @ServerTimestampConverter()
   DateTime get creationDate;
-  
   @ServerTimestampConverter()
   DateTime get modificationDate;
-  
+
   Map<String, dynamic> toJson();
-  
   $TagDtoCopyWith<TagDto> get copyWith;
 }
 
@@ -176,12 +171,12 @@ class __$TagDtoCopyWithImpl<$Res> extends _$TagDtoCopyWithImpl<$Res>
   @override
   @ServerTimestampConverter()
   final DateTime modificationDate;
-  
+
   @override
   String toString() {
     return 'TagDto(id: $id, name: $name, creatorId: $creatorId, creationDate: $creationDate, modificationDate: $modificationDate)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
@@ -244,11 +239,9 @@ abstract class _TagDto extends TagDto {
   @override
   @ServerTimestampConverter()
   DateTime get creationDate;
-  
   @override
   @ServerTimestampConverter()
   DateTime get modificationDate;
-  
   @override
   _$TagDtoCopyWith<_TagDto> get copyWith;
 }

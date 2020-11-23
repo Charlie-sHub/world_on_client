@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
+import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class Map extends StatelessWidget {
@@ -39,29 +40,35 @@ class Map extends StatelessWidget {
           ),
           Container(
             height: MediaQuery.of(context).size.height * 0.5,
-            child: GoogleMap(
-              mapType: MapType.satellite,
-              markers: {
-                Marker(
-                  markerId: MarkerId("new_experience"),
-                  position: _position,
-                ),
-              },
-              onLongPress: (argument) => context.bloc<ExperienceManagementFormBloc>().add(
-                    ExperienceManagementFormEvent.coordinatesChanged(
-                      latitude: argument.latitude,
-                      longitude: argument.longitude,
+            // Not happy about this at all, there has to be a better way to build the map once coordinates have been gotten
+            // Works for now though and that's what matters.
+            child: context.bloc<ExperienceManagementFormBloc>().state.experience.coordinates != Coordinates.empty()
+                ? GoogleMap(
+                    mapType: MapType.satellite,
+                    markers: {
+                      Marker(
+                        markerId: MarkerId("new_experience"),
+                        position: _position,
+                      ),
+                    },
+                    onLongPress: (argument) => context.bloc<ExperienceManagementFormBloc>().add(
+                          ExperienceManagementFormEvent.coordinatesChanged(
+                            latitude: argument.latitude,
+                            longitude: argument.longitude,
+                          ),
+                        ),
+                    gestureRecognizers: {
+                      Factory<OneSequenceGestureRecognizer>(
+                        () => EagerGestureRecognizer(),
+                      ),
+                    },
+                    myLocationEnabled: true,
+                    initialCameraPosition: CameraPosition(
+                      zoom: 15,
+                      target: _position,
                     ),
-                  ),
-              gestureRecognizers: {
-                Factory<OneSequenceGestureRecognizer>(
-                  () => EagerGestureRecognizer(),
-                ),
-              },
-              initialCameraPosition: CameraPosition(
-                target: _position,
-              ),
-            ),
+                  )
+                : Container(),
           ),
         ],
       ),

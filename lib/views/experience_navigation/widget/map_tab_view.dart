@@ -19,18 +19,21 @@ class MapTabView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<MapControllerBloc, MapControllerState>(
-      builder: (context, state) => GoogleMap(
-        mapType: MapType.satellite,
-        markers: state.objectives.asList().map(_mapObjectiveToMarker).toSet(),
-        onCameraMove: (position) => _onCameraMoved(context, position),
-        initialCameraPosition: CameraPosition(
-          target: LatLng(
-            state.coordinates.latitude.getOrCrash(),
-            state.coordinates.longitude.getOrCrash(),
-          ),
-          zoom: state.zoom,
-        ),
-      ),
+      builder: (context, state) => state.coordinates != Coordinates.empty()
+          ? GoogleMap(
+              mapType: MapType.satellite,
+              myLocationEnabled: true,
+              markers: state.objectives.asList().map(_mapObjectiveToMarker).toSet(),
+              onCameraMove: (position) => _onCameraMoved(context, position),
+              initialCameraPosition: CameraPosition(
+                target: LatLng(
+                  state.coordinates.latitude.getOrCrash(),
+                  state.coordinates.longitude.getOrCrash(),
+                ),
+                zoom: state.zoom,
+              ),
+            )
+          : Container(),
     );
   }
 

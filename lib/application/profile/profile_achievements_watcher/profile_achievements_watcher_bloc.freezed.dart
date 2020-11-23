@@ -39,20 +39,17 @@ mixin _$ProfileAchievementsWatcherEvent {
     @required TResult watchAchievementsStarted(User user),
     @required TResult resultsReceived(Either<Failure, KtList<Achievement>> failureOrAchievements),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult watchAchievementsStarted(User user),
     TResult resultsReceived(Either<Failure, KtList<Achievement>> failureOrAchievements),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult watchAchievementsStarted(_WatchAchievementsStarted value),
     @required TResult resultsReceived(_ResultsReceived value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult watchAchievementsStarted(_WatchAchievementsStarted value),
@@ -71,6 +68,7 @@ class _$ProfileAchievementsWatcherEventCopyWithImpl<$Res> implements $ProfileAch
   _$ProfileAchievementsWatcherEventCopyWithImpl(this._value, this._then);
 
   final ProfileAchievementsWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(ProfileAchievementsWatcherEvent) _then;
 }
@@ -78,6 +76,7 @@ class _$ProfileAchievementsWatcherEventCopyWithImpl<$Res> implements $ProfileAch
 /// @nodoc
 abstract class _$WatchAchievementsStartedCopyWith<$Res> {
   factory _$WatchAchievementsStartedCopyWith(_WatchAchievementsStarted value, $Res Function(_WatchAchievementsStarted) then) = __$WatchAchievementsStartedCopyWithImpl<$Res>;
+
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -188,12 +187,14 @@ abstract class _WatchAchievementsStarted implements ProfileAchievementsWatcherEv
   const factory _WatchAchievementsStarted(User user) = _$_WatchAchievementsStarted;
 
   User get user;
+
   _$WatchAchievementsStartedCopyWith<_WatchAchievementsStarted> get copyWith;
 }
 
 /// @nodoc
 abstract class _$ResultsReceivedCopyWith<$Res> {
   factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
+
   $Res call({Either<Failure, KtList<Achievement>> failureOrAchievements});
 }
 
@@ -293,6 +294,7 @@ abstract class _ResultsReceived implements ProfileAchievementsWatcherEvent {
   const factory _ResultsReceived(Either<Failure, KtList<Achievement>> failureOrAchievements) = _$_ResultsReceived;
 
   Either<Failure, KtList<Achievement>> get failureOrAchievements;
+
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith;
 }
 
@@ -338,7 +340,6 @@ mixin _$ProfileAchievementsWatcherState {
     @required TResult loadSuccess(KtList<Achievement> achievements),
     @required TResult loadFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -347,7 +348,6 @@ mixin _$ProfileAchievementsWatcherState {
     TResult loadFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -355,7 +355,6 @@ mixin _$ProfileAchievementsWatcherState {
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_LoadFailure value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
@@ -376,6 +375,7 @@ class _$ProfileAchievementsWatcherStateCopyWithImpl<$Res> implements $ProfileAch
   _$ProfileAchievementsWatcherStateCopyWithImpl(this._value, this._then);
 
   final ProfileAchievementsWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(ProfileAchievementsWatcherState) _then;
 }
@@ -577,6 +577,7 @@ abstract class _LoadInProgress implements ProfileAchievementsWatcherState {
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<Achievement> achievements});
 }
 
@@ -693,6 +694,7 @@ abstract class _LoadSuccess implements ProfileAchievementsWatcherState {
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

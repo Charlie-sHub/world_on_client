@@ -49,7 +49,6 @@ mixin _$ExperienceLikeActorEvent {
     @required TResult liked(Experience experience),
     @required TResult disliked(Experience experience),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initialized(Experience experience),
@@ -57,14 +56,12 @@ mixin _$ExperienceLikeActorEvent {
     TResult disliked(Experience experience),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initialized(_Initialized value),
     @required TResult liked(_Liked value),
     @required TResult disliked(_Disliked value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initialized(_Initialized value),
@@ -79,6 +76,7 @@ mixin _$ExperienceLikeActorEvent {
 /// @nodoc
 abstract class $ExperienceLikeActorEventCopyWith<$Res> {
   factory $ExperienceLikeActorEventCopyWith(ExperienceLikeActorEvent value, $Res Function(ExperienceLikeActorEvent) then) = _$ExperienceLikeActorEventCopyWithImpl<$Res>;
+
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
@@ -89,6 +87,7 @@ class _$ExperienceLikeActorEventCopyWithImpl<$Res> implements $ExperienceLikeAct
   _$ExperienceLikeActorEventCopyWithImpl(this._value, this._then);
 
   final ExperienceLikeActorEvent _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceLikeActorEvent) _then;
 
@@ -115,6 +114,7 @@ class _$ExperienceLikeActorEventCopyWithImpl<$Res> implements $ExperienceLikeAct
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> implements $ExperienceLikeActorEventCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+
   @override
   $Res call({Experience experience});
 
@@ -231,6 +231,7 @@ abstract class _Initialized implements ExperienceLikeActorEvent {
 /// @nodoc
 abstract class _$LikedCopyWith<$Res> implements $ExperienceLikeActorEventCopyWith<$Res> {
   factory _$LikedCopyWith(_Liked value, $Res Function(_Liked) then) = __$LikedCopyWithImpl<$Res>;
+
   @override
   $Res call({Experience experience});
 
@@ -347,6 +348,7 @@ abstract class _Liked implements ExperienceLikeActorEvent {
 /// @nodoc
 abstract class _$DislikedCopyWith<$Res> implements $ExperienceLikeActorEventCopyWith<$Res> {
   factory _$DislikedCopyWith(_Disliked value, $Res Function(_Disliked) then) = __$DislikedCopyWithImpl<$Res>;
+
   @override
   $Res call({Experience experience});
 
@@ -526,7 +528,6 @@ mixin _$ExperienceLikeActorState {
     @required TResult dislikeSuccess(),
     @required TResult dislikeFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -539,7 +540,6 @@ mixin _$ExperienceLikeActorState {
     TResult dislikeFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -551,7 +551,6 @@ mixin _$ExperienceLikeActorState {
     @required TResult dislikeSuccess(_DislikeSuccess value),
     @required TResult dislikeFailure(_DislikeFailure value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
@@ -576,6 +575,7 @@ class _$ExperienceLikeActorStateCopyWithImpl<$Res> implements $ExperienceLikeAct
   _$ExperienceLikeActorStateCopyWithImpl(this._value, this._then);
 
   final ExperienceLikeActorState _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceLikeActorState) _then;
 }
@@ -1188,6 +1188,7 @@ abstract class _LikeSuccess implements ExperienceLikeActorState {
 /// @nodoc
 abstract class _$LikeFailureCopyWith<$Res> {
   factory _$LikeFailureCopyWith(_LikeFailure value, $Res Function(_LikeFailure) then) = __$LikeFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
@@ -1461,6 +1462,7 @@ abstract class _DislikeSuccess implements ExperienceLikeActorState {
 /// @nodoc
 abstract class _$DislikeFailureCopyWith<$Res> {
   factory _$DislikeFailureCopyWith(_DislikeFailure value, $Res Function(_DislikeFailure) then) = __$DislikeFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

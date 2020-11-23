@@ -45,7 +45,6 @@ mixin _$OptionsFormEvent {
     @required TResult languageCodeChanged(String languageCode),
     @required TResult submitted(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initialized(Option<Options> optionsOption),
@@ -53,14 +52,12 @@ mixin _$OptionsFormEvent {
     TResult submitted(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initialized(_Initialized value),
     @required TResult languageCodeChanged(_LanguageCodeChanged value),
     @required TResult submitted(_Submitted value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initialized(_Initialized value),
@@ -80,6 +77,7 @@ class _$OptionsFormEventCopyWithImpl<$Res> implements $OptionsFormEventCopyWith<
   _$OptionsFormEventCopyWithImpl(this._value, this._then);
 
   final OptionsFormEvent _value;
+
   // ignore: unused_field
   final $Res Function(OptionsFormEvent) _then;
 }
@@ -87,6 +85,7 @@ class _$OptionsFormEventCopyWithImpl<$Res> implements $OptionsFormEventCopyWith<
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+
   $Res call({Option<Options> optionsOption});
 }
 
@@ -197,6 +196,7 @@ abstract class _Initialized implements OptionsFormEvent {
 /// @nodoc
 abstract class _$LanguageCodeChangedCopyWith<$Res> {
   factory _$LanguageCodeChangedCopyWith(_LanguageCodeChanged value, $Res Function(_LanguageCodeChanged) then) = __$LanguageCodeChangedCopyWithImpl<$Res>;
+
   $Res call({String languageCode});
 }
 
@@ -301,6 +301,7 @@ abstract class _LanguageCodeChanged implements OptionsFormEvent {
   const factory _LanguageCodeChanged(String languageCode) = _$_LanguageCodeChanged;
 
   String get languageCode;
+
   _$LanguageCodeChangedCopyWith<_LanguageCodeChanged> get copyWith;
 }
 
@@ -427,6 +428,7 @@ mixin _$OptionsFormState {
 /// @nodoc
 abstract class $OptionsFormStateCopyWith<$Res> {
   factory $OptionsFormStateCopyWith(OptionsFormState value, $Res Function(OptionsFormState) then) = _$OptionsFormStateCopyWithImpl<$Res>;
+
   $Res call({Options options, bool showErrorMessages, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
 
   $OptionsCopyWith<$Res> get options;
@@ -437,6 +439,7 @@ class _$OptionsFormStateCopyWithImpl<$Res> implements $OptionsFormStateCopyWith<
   _$OptionsFormStateCopyWithImpl(this._value, this._then);
 
   final OptionsFormState _value;
+
   // ignore: unused_field
   final $Res Function(OptionsFormState) _then;
 
@@ -469,6 +472,7 @@ class _$OptionsFormStateCopyWithImpl<$Res> implements $OptionsFormStateCopyWith<
 /// @nodoc
 abstract class _$OptionsFormStateCopyWith<$Res> implements $OptionsFormStateCopyWith<$Res> {
   factory _$OptionsFormStateCopyWith(_OptionsFormState value, $Res Function(_OptionsFormState) then) = __$OptionsFormStateCopyWithImpl<$Res>;
+
   @override
   $Res call({Options options, bool showErrorMessages, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
 
@@ -549,10 +553,13 @@ abstract class _OptionsFormState implements OptionsFormState {
 
   @override
   Options get options;
+
   @override
   bool get showErrorMessages;
+
   @override
   bool get isSubmitting;
+
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
   @override

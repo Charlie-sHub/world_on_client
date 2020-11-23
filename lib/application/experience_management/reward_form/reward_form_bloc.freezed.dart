@@ -53,7 +53,6 @@ mixin _$RewardFormEvent {
     @required TResult imageChanged(File imageFile),
     @required TResult submitted(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult nameChanged(String name),
@@ -62,7 +61,6 @@ mixin _$RewardFormEvent {
     TResult submitted(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult nameChanged(_NameChanged value),
@@ -70,7 +68,6 @@ mixin _$RewardFormEvent {
     @required TResult imageChanged(_ImageChanged value),
     @required TResult submitted(_Submitted value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult nameChanged(_NameChanged value),

@@ -47,21 +47,15 @@ const $CommentDto = _$CommentDtoTearOff();
 /// @nodoc
 mixin _$CommentDto {
   String get id;
-
   UserDto get poster;
-
   String get experienceId;
-
   String get content;
-
   @ServerTimestampConverter()
   DateTime get creationDate;
-
   @ServerTimestampConverter()
   DateTime get modificationDate;
 
   Map<String, dynamic> toJson();
-
   $CommentDtoCopyWith<CommentDto> get copyWith;
 }
 
@@ -250,11 +244,9 @@ abstract class _CommentDto extends CommentDto {
   @override
   @ServerTimestampConverter()
   DateTime get creationDate;
-
   @override
   @ServerTimestampConverter()
   DateTime get modificationDate;
-
   @override
   _$CommentDtoCopyWith<_CommentDto> get copyWith;
 }

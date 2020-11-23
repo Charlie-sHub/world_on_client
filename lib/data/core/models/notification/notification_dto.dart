@@ -8,7 +8,7 @@ import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
-part 'notification_dto.freezed.dart';zed.dart';
+part 'notification_dto.freezed.dart';ed.dart';
 
 part 'notification_dto.g.dart';
 
@@ -44,7 +44,7 @@ abstract class NotificationDto implements _$NotificationDto {
     seen: seen,
     creationDate: PastDate(creationDate),
     type: type,
-      );
+  );
 
   factory NotificationDto.fromJson(Map<String, dynamic> json) => _$NotificationDtoFromJson(json);
 

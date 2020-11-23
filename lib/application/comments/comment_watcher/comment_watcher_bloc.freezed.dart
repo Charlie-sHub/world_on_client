@@ -39,20 +39,17 @@ mixin _$CommentWatcherEvent {
     @required TResult watchExperienceCommentsStarted(UniqueId experienceId),
     @required TResult resultsReceived(Either<Failure, KtList<Comment>> failureOrComments),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult watchExperienceCommentsStarted(UniqueId experienceId),
     TResult resultsReceived(Either<Failure, KtList<Comment>> failureOrComments),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult watchExperienceCommentsStarted(_WatchExperienceCommentsStarted value),
     @required TResult resultsReceived(_ResultsReceived value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult watchExperienceCommentsStarted(_WatchExperienceCommentsStarted value),
@@ -71,6 +68,7 @@ class _$CommentWatcherEventCopyWithImpl<$Res> implements $CommentWatcherEventCop
   _$CommentWatcherEventCopyWithImpl(this._value, this._then);
 
   final CommentWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(CommentWatcherEvent) _then;
 }
@@ -78,6 +76,7 @@ class _$CommentWatcherEventCopyWithImpl<$Res> implements $CommentWatcherEventCop
 /// @nodoc
 abstract class _$WatchExperienceCommentsStartedCopyWith<$Res> {
   factory _$WatchExperienceCommentsStartedCopyWith(_WatchExperienceCommentsStarted value, $Res Function(_WatchExperienceCommentsStarted) then) = __$WatchExperienceCommentsStartedCopyWithImpl<$Res>;
+
   $Res call({UniqueId experienceId});
 }
 
@@ -178,12 +177,14 @@ abstract class _WatchExperienceCommentsStarted implements CommentWatcherEvent {
   const factory _WatchExperienceCommentsStarted(UniqueId experienceId) = _$_WatchExperienceCommentsStarted;
 
   UniqueId get experienceId;
+
   _$WatchExperienceCommentsStartedCopyWith<_WatchExperienceCommentsStarted> get copyWith;
 }
 
 /// @nodoc
 abstract class _$ResultsReceivedCopyWith<$Res> {
   factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
+
   $Res call({Either<Failure, KtList<Comment>> failureOrComments});
 }
 
@@ -283,6 +284,7 @@ abstract class _ResultsReceived implements CommentWatcherEvent {
   const factory _ResultsReceived(Either<Failure, KtList<Comment>> failureOrComments) = _$_ResultsReceived;
 
   Either<Failure, KtList<Comment>> get failureOrComments;
+
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith;
 }
 
@@ -328,7 +330,6 @@ mixin _$CommentWatcherState {
     @required TResult loadSuccess(KtList<Comment> comments),
     @required TResult loadFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -337,7 +338,6 @@ mixin _$CommentWatcherState {
     TResult loadFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -345,7 +345,6 @@ mixin _$CommentWatcherState {
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_LoadFailure value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
@@ -366,6 +365,7 @@ class _$CommentWatcherStateCopyWithImpl<$Res> implements $CommentWatcherStateCop
   _$CommentWatcherStateCopyWithImpl(this._value, this._then);
 
   final CommentWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(CommentWatcherState) _then;
 }
@@ -567,6 +567,7 @@ abstract class _LoadInProgress implements CommentWatcherState {
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<Comment> comments});
 }
 
@@ -683,6 +684,7 @@ abstract class _LoadSuccess implements CommentWatcherState {
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

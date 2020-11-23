@@ -37,20 +37,17 @@ mixin _$MainFeedWatcherEvent {
     @required TResult watchMainFeedStarted(),
     @required TResult resultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult watchMainFeedStarted(),
     TResult resultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult watchMainFeedStarted(_WatchMainFeedStarted value),
     @required TResult resultsReceived(_ResultsReceived value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult watchMainFeedStarted(_WatchMainFeedStarted value),
@@ -69,6 +66,7 @@ class _$MainFeedWatcherEventCopyWithImpl<$Res> implements $MainFeedWatcherEventC
   _$MainFeedWatcherEventCopyWithImpl(this._value, this._then);
 
   final MainFeedWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(MainFeedWatcherEvent) _then;
 }
@@ -161,6 +159,7 @@ abstract class _WatchMainFeedStarted implements MainFeedWatcherEvent {
 /// @nodoc
 abstract class _$ResultsReceivedCopyWith<$Res> {
   factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
+
   $Res call({Either<Failure, KtList<Experience>> failureOrExperiences});
 }
 
@@ -260,6 +259,7 @@ abstract class _ResultsReceived implements MainFeedWatcherEvent {
   const factory _ResultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences) = _$_ResultsReceived;
 
   Either<Failure, KtList<Experience>> get failureOrExperiences;
+
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith;
 }
 
@@ -305,7 +305,6 @@ mixin _$MainFeedWatcherState {
     @required TResult loadSuccess(KtList<Experience> experiences),
     @required TResult loadFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -314,7 +313,6 @@ mixin _$MainFeedWatcherState {
     TResult loadFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -322,7 +320,6 @@ mixin _$MainFeedWatcherState {
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_LoadFailure value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
@@ -343,6 +340,7 @@ class _$MainFeedWatcherStateCopyWithImpl<$Res> implements $MainFeedWatcherStateC
   _$MainFeedWatcherStateCopyWithImpl(this._value, this._then);
 
   final MainFeedWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(MainFeedWatcherState) _then;
 }
@@ -544,6 +542,7 @@ abstract class _LoadInProgress implements MainFeedWatcherState {
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<Experience> experiences});
 }
 
@@ -660,6 +659,7 @@ abstract class _LoadSuccess implements MainFeedWatcherState {
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

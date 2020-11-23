@@ -35,20 +35,17 @@ mixin _$AuthenticationEvent {
     @required TResult authenticationCheckRequested(),
     @required TResult loggedOut(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult authenticationCheckRequested(),
     TResult loggedOut(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult authenticationCheckRequested(_AuthenticationCheckRequested value),
     @required TResult loggedOut(_LoggedOut value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult authenticationCheckRequested(_AuthenticationCheckRequested value),
@@ -67,6 +64,7 @@ class _$AuthenticationEventCopyWithImpl<$Res> implements $AuthenticationEventCop
   _$AuthenticationEventCopyWithImpl(this._value, this._then);
 
   final AuthenticationEvent _value;
+
   // ignore: unused_field
   final $Res Function(AuthenticationEvent) _then;
 }
@@ -274,7 +272,6 @@ mixin _$AuthenticationState {
     @required TResult authenticated(),
     @required TResult unAuthenticated(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -282,14 +279,12 @@ mixin _$AuthenticationState {
     TResult unAuthenticated(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
     @required TResult authenticated(_Authenticated value),
     @required TResult unAuthenticated(_UnAuthenticated value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
@@ -309,6 +304,7 @@ class _$AuthenticationStateCopyWithImpl<$Res> implements $AuthenticationStateCop
   _$AuthenticationStateCopyWithImpl(this._value, this._then);
 
   final AuthenticationState _value;
+
   // ignore: unused_field
   final $Res Function(AuthenticationState) _then;
 }

@@ -86,59 +86,35 @@ const $UserDto = _$UserDtoTearOff();
 /// @nodoc
 mixin _$UserDto {
   String get id;
-  
   String get name;
-  
   String get username; // Shouldn't this be encrypted in some way?
 // Maybe it shouldn't even be part of the dto at all, as Firebase handles it at login time
   String get password;
-  
   String get email;
-  
   @ServerTimestampConverter()
   DateTime get birthday;
-  
   String get description;
-  
   String get imageURL;
-  
   int get level;
-  
   int get experiencePoints;
-  
   bool get privacy;
-  
   bool get adminPowers;
-  
   bool get enabled;
-  
   @ServerTimestampConverter()
   DateTime get lastLogin;
-  
   @ServerTimestampConverter()
   DateTime get creationDate;
-  
   @ServerTimestampConverter()
   DateTime get modificationDate;
-  
   OptionsDto get options;
-  
   Set<String> get blockedUsersIds;
-  
   Set<String> get followedUsersIds;
-  
   Set<String> get interestsIds;
-  
   Set<String> get achievementsIds;
-  
   Set<String> get experiencesDoneIds;
-  
   Set<String> get experiencesLikedIds;
-  
   Set<String> get experiencesToDoIds;
-  
   Set<DeviceDto> get devices;
-  
   Set<SystemDto> get systems;
 
   Map<String, dynamic> toJson();
@@ -692,14 +668,11 @@ abstract class _UserDto extends UserDto {
   @override // Shouldn't this be encrypted in some way?
 // Maybe it shouldn't even be part of the dto at all, as Firebase handles it at login time
   String get password;
-  
   @override
   String get email;
-  
   @override
   @ServerTimestampConverter()
   DateTime get birthday;
-  
   @override
   String get description;
   @override
@@ -712,22 +685,17 @@ abstract class _UserDto extends UserDto {
   bool get privacy;
   @override
   bool get adminPowers;
-  
   @override
   bool get enabled;
-  
   @override
   @ServerTimestampConverter()
   DateTime get lastLogin;
-  
   @override
   @ServerTimestampConverter()
   DateTime get creationDate;
-  
   @override
   @ServerTimestampConverter()
   DateTime get modificationDate;
-  
   @override
   OptionsDto get options;
   @override

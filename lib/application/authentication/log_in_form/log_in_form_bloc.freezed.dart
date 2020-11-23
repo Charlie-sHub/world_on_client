@@ -51,7 +51,6 @@ mixin _$LogInFormEvent {
     @required TResult loggedIn(),
     @required TResult loggedInGoogle(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult emailChanged(String email),
@@ -60,7 +59,6 @@ mixin _$LogInFormEvent {
     TResult loggedInGoogle(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult emailChanged(_EmailChanged value),
@@ -68,7 +66,6 @@ mixin _$LogInFormEvent {
     @required TResult loggedIn(_LoggedIn value),
     @required TResult loggedInGoogle(_LoggedInGoogle value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult emailChanged(_EmailChanged value),
@@ -89,6 +86,7 @@ class _$LogInFormEventCopyWithImpl<$Res> implements $LogInFormEventCopyWith<$Res
   _$LogInFormEventCopyWithImpl(this._value, this._then);
 
   final LogInFormEvent _value;
+
   // ignore: unused_field
   final $Res Function(LogInFormEvent) _then;
 }
@@ -96,6 +94,7 @@ class _$LogInFormEventCopyWithImpl<$Res> implements $LogInFormEventCopyWith<$Res
 /// @nodoc
 abstract class _$EmailChangedCopyWith<$Res> {
   factory _$EmailChangedCopyWith(_EmailChanged value, $Res Function(_EmailChanged) then) = __$EmailChangedCopyWithImpl<$Res>;
+
   $Res call({String email});
 }
 
@@ -212,6 +211,7 @@ abstract class _EmailChanged implements LogInFormEvent {
 /// @nodoc
 abstract class _$PasswordChangedCopyWith<$Res> {
   factory _$PasswordChangedCopyWith(_PasswordChanged value, $Res Function(_PasswordChanged) then) = __$PasswordChangedCopyWithImpl<$Res>;
+
   $Res call({String password});
 }
 
@@ -554,6 +554,7 @@ mixin _$LogInFormState {
 /// @nodoc
 abstract class $LogInFormStateCopyWith<$Res> {
   factory $LogInFormStateCopyWith(LogInFormState value, $Res Function(LogInFormState) then) = _$LogInFormStateCopyWithImpl<$Res>;
+
   $Res call({EmailAddress email, Password password, bool showErrorMessages, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
 }
 
@@ -562,6 +563,7 @@ class _$LogInFormStateCopyWithImpl<$Res> implements $LogInFormStateCopyWith<$Res
   _$LogInFormStateCopyWithImpl(this._value, this._then);
 
   final LogInFormState _value;
+
   // ignore: unused_field
   final $Res Function(LogInFormState) _then;
 
@@ -586,6 +588,7 @@ class _$LogInFormStateCopyWithImpl<$Res> implements $LogInFormStateCopyWith<$Res
 /// @nodoc
 abstract class _$LogInFormStateCopyWith<$Res> implements $LogInFormStateCopyWith<$Res> {
   factory _$LogInFormStateCopyWith(_LogInFormState value, $Res Function(_LogInFormState) then) = __$LogInFormStateCopyWithImpl<$Res>;
+
   @override
   $Res call({EmailAddress email, Password password, bool showErrorMessages, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
 }

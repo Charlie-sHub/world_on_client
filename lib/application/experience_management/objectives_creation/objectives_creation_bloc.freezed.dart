@@ -41,20 +41,17 @@ mixin _$ObjectivesCreationEvent {
     @required TResult addedObjective(Objective objective),
     @required TResult removedObjective(Objective objective),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult addedObjective(Objective objective),
     TResult removedObjective(Objective objective),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult addedObjective(_AddedObjective value),
     @required TResult removedObjective(_RemovedObjective value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult addedObjective(_AddedObjective value),
@@ -351,6 +348,7 @@ mixin _$ObjectivesCreationState {
 /// @nodoc
 abstract class $ObjectivesCreationStateCopyWith<$Res> {
   factory $ObjectivesCreationStateCopyWith(ObjectivesCreationState value, $Res Function(ObjectivesCreationState) then) = _$ObjectivesCreationStateCopyWithImpl<$Res>;
+
   $Res call({KtSet<Objective> objectivesCreated});
 }
 

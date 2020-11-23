@@ -158,6 +158,7 @@ class _$ExperienceManagementFormEventCopyWithImpl<$Res> implements $ExperienceMa
   _$ExperienceManagementFormEventCopyWithImpl(this._value, this._then);
 
   final ExperienceManagementFormEvent _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceManagementFormEvent) _then;
 }
@@ -165,6 +166,7 @@ class _$ExperienceManagementFormEventCopyWithImpl<$Res> implements $ExperienceMa
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+
   $Res call({Option<Experience> experienceOption});
 }
 
@@ -312,12 +314,14 @@ abstract class _Initialized implements ExperienceManagementFormEvent {
   const factory _Initialized(Option<Experience> experienceOption) = _$_Initialized;
 
   Option<Experience> get experienceOption;
+
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
 /// @nodoc
 abstract class _$TitleChangedCopyWith<$Res> {
   factory _$TitleChangedCopyWith(_TitleChanged value, $Res Function(_TitleChanged) then) = __$TitleChangedCopyWithImpl<$Res>;
+
   $Res call({String title});
 }
 
@@ -464,12 +468,14 @@ abstract class _TitleChanged implements ExperienceManagementFormEvent {
   const factory _TitleChanged(String title) = _$_TitleChanged;
 
   String get title;
+
   _$TitleChangedCopyWith<_TitleChanged> get copyWith;
 }
 
 /// @nodoc
 abstract class _$DescriptionChangedCopyWith<$Res> {
   factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) = __$DescriptionChangedCopyWithImpl<$Res>;
+
   $Res call({String description});
 }
 
@@ -616,12 +622,14 @@ abstract class _DescriptionChanged implements ExperienceManagementFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description;
+
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith;
 }
 
 /// @nodoc
 abstract class _$ImagesChangedCopyWith<$Res> {
   factory _$ImagesChangedCopyWith(_ImagesChanged value, $Res Function(_ImagesChanged) then) = __$ImagesChangedCopyWithImpl<$Res>;
+
   $Res call({List<Asset> imageAssets});
 }
 
@@ -768,12 +776,14 @@ abstract class _ImagesChanged implements ExperienceManagementFormEvent {
   const factory _ImagesChanged(List<Asset> imageAssets) = _$_ImagesChanged;
 
   List<Asset> get imageAssets;
+
   _$ImagesChangedCopyWith<_ImagesChanged> get copyWith;
 }
 
 /// @nodoc
 abstract class _$CoordinatesChangedCopyWith<$Res> {
   factory _$CoordinatesChangedCopyWith(_CoordinatesChanged value, $Res Function(_CoordinatesChanged) then) = __$CoordinatesChangedCopyWithImpl<$Res>;
+
   $Res call({double latitude, double longitude});
 }
 
@@ -929,13 +939,16 @@ abstract class _CoordinatesChanged implements ExperienceManagementFormEvent {
   const factory _CoordinatesChanged({@required double latitude, @required double longitude}) = _$_CoordinatesChanged;
 
   double get latitude;
+
   double get longitude;
+
   _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith;
 }
 
 /// @nodoc
 abstract class _$DifficultyChangedCopyWith<$Res> {
   factory _$DifficultyChangedCopyWith(_DifficultyChanged value, $Res Function(_DifficultyChanged) then) = __$DifficultyChangedCopyWithImpl<$Res>;
+
   $Res call({int difficulty});
 }
 
@@ -1082,12 +1095,14 @@ abstract class _DifficultyChanged implements ExperienceManagementFormEvent {
   const factory _DifficultyChanged(int difficulty) = _$_DifficultyChanged;
 
   int get difficulty;
+
   _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith;
 }
 
 /// @nodoc
 abstract class _$ObjectivesChangedCopyWith<$Res> {
   factory _$ObjectivesChangedCopyWith(_ObjectivesChanged value, $Res Function(_ObjectivesChanged) then) = __$ObjectivesChangedCopyWithImpl<$Res>;
+
   $Res call({KtSet<Objective> objectives});
 }
 
@@ -1234,12 +1249,14 @@ abstract class _ObjectivesChanged implements ExperienceManagementFormEvent {
   const factory _ObjectivesChanged(KtSet<Objective> objectives) = _$_ObjectivesChanged;
 
   KtSet<Objective> get objectives;
+
   _$ObjectivesChangedCopyWith<_ObjectivesChanged> get copyWith;
 }
 
 /// @nodoc
 abstract class _$RewardsChangedCopyWith<$Res> {
   factory _$RewardsChangedCopyWith(_RewardsChanged value, $Res Function(_RewardsChanged) then) = __$RewardsChangedCopyWithImpl<$Res>;
+
   $Res call({KtSet<Reward> rewards});
 }
 
@@ -1386,12 +1403,14 @@ abstract class _RewardsChanged implements ExperienceManagementFormEvent {
   const factory _RewardsChanged(KtSet<Reward> rewards) = _$_RewardsChanged;
 
   KtSet<Reward> get rewards;
+
   _$RewardsChangedCopyWith<_RewardsChanged> get copyWith;
 }
 
 /// @nodoc
 abstract class _$TagsChangedCopyWith<$Res> {
   factory _$TagsChangedCopyWith(_TagsChanged value, $Res Function(_TagsChanged) then) = __$TagsChangedCopyWithImpl<$Res>;
+
   $Res call({KtSet<Tag> tags});
 }
 
@@ -1538,6 +1557,7 @@ abstract class _TagsChanged implements ExperienceManagementFormEvent {
   const factory _TagsChanged(KtSet<Tag> tags) = _$_TagsChanged;
 
   KtSet<Tag> get tags;
+
   _$TagsChangedCopyWith<_TagsChanged> get copyWith;
 }
 
@@ -1698,9 +1718,13 @@ const $ExperienceManagementFormState = _$ExperienceManagementFormStateTearOff();
 /// @nodoc
 mixin _$ExperienceManagementFormState {
   Experience get experience;
+
   bool get showErrorMessages;
+
   bool get isEditing;
+
   bool get isSubmitting;
+
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
 
   $ExperienceManagementFormStateCopyWith<ExperienceManagementFormState> get copyWith;
@@ -1709,6 +1733,7 @@ mixin _$ExperienceManagementFormState {
 /// @nodoc
 abstract class $ExperienceManagementFormStateCopyWith<$Res> {
   factory $ExperienceManagementFormStateCopyWith(ExperienceManagementFormState value, $Res Function(ExperienceManagementFormState) then) = _$ExperienceManagementFormStateCopyWithImpl<$Res>;
+
   $Res call({Experience experience, bool showErrorMessages, bool isEditing, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
 
   $ExperienceCopyWith<$Res> get experience;
@@ -1719,6 +1744,7 @@ class _$ExperienceManagementFormStateCopyWithImpl<$Res> implements $ExperienceMa
   _$ExperienceManagementFormStateCopyWithImpl(this._value, this._then);
 
   final ExperienceManagementFormState _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceManagementFormState) _then;
 
@@ -1753,6 +1779,7 @@ class _$ExperienceManagementFormStateCopyWithImpl<$Res> implements $ExperienceMa
 /// @nodoc
 abstract class _$ExperienceManagementFormStateCopyWith<$Res> implements $ExperienceManagementFormStateCopyWith<$Res> {
   factory _$ExperienceManagementFormStateCopyWith(_ExperienceManagementFormState value, $Res Function(_ExperienceManagementFormState) then) = __$ExperienceManagementFormStateCopyWithImpl<$Res>;
+
   @override
   $Res call({Experience experience, bool showErrorMessages, bool isEditing, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
 
@@ -1845,14 +1872,19 @@ abstract class _ExperienceManagementFormState implements ExperienceManagementFor
 
   @override
   Experience get experience;
+
   @override
   bool get showErrorMessages;
+
   @override
   bool get isEditing;
+
   @override
   bool get isSubmitting;
+
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
+
   @override
   _$ExperienceManagementFormStateCopyWith<_ExperienceManagementFormState> get copyWith;
 }

@@ -33,18 +33,15 @@ mixin _$ExperienceFinishActorEvent {
   TResult when<TResult extends Object>({
     @required TResult finishedExperience(Experience experience),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult finishedExperience(Experience experience),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult finishedExperience(_FinishedExperience value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult finishedExperience(_FinishedExperience value),
@@ -57,6 +54,7 @@ mixin _$ExperienceFinishActorEvent {
 /// @nodoc
 abstract class $ExperienceFinishActorEventCopyWith<$Res> {
   factory $ExperienceFinishActorEventCopyWith(ExperienceFinishActorEvent value, $Res Function(ExperienceFinishActorEvent) then) = _$ExperienceFinishActorEventCopyWithImpl<$Res>;
+
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
@@ -67,6 +65,7 @@ class _$ExperienceFinishActorEventCopyWithImpl<$Res> implements $ExperienceFinis
   _$ExperienceFinishActorEventCopyWithImpl(this._value, this._then);
 
   final ExperienceFinishActorEvent _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceFinishActorEvent) _then;
 
@@ -93,6 +92,7 @@ class _$ExperienceFinishActorEventCopyWithImpl<$Res> implements $ExperienceFinis
 /// @nodoc
 abstract class _$FinishedExperienceCopyWith<$Res> implements $ExperienceFinishActorEventCopyWith<$Res> {
   factory _$FinishedExperienceCopyWith(_FinishedExperience value, $Res Function(_FinishedExperience) then) = __$FinishedExperienceCopyWithImpl<$Res>;
+
   @override
   $Res call({Experience experience});
 
@@ -190,6 +190,7 @@ abstract class _FinishedExperience implements ExperienceFinishActorEvent {
 
   @override
   Experience get experience;
+
   @override
   _$FinishedExperienceCopyWith<_FinishedExperience> get copyWith;
 }
@@ -234,7 +235,6 @@ mixin _$ExperienceFinishActorState {
     @required TResult finishSuccess(),
     @required TResult finishFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -243,7 +243,6 @@ mixin _$ExperienceFinishActorState {
     TResult finishFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -251,7 +250,6 @@ mixin _$ExperienceFinishActorState {
     @required TResult finishSuccess(_FinishSuccess value),
     @required TResult finishFailure(_FinishFailure value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
@@ -272,6 +270,7 @@ class _$ExperienceFinishActorStateCopyWithImpl<$Res> implements $ExperienceFinis
   _$ExperienceFinishActorStateCopyWithImpl(this._value, this._then);
 
   final ExperienceFinishActorState _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceFinishActorState) _then;
 }
@@ -570,6 +569,7 @@ abstract class _FinishSuccess implements ExperienceFinishActorState {
 /// @nodoc
 abstract class _$FinishFailureCopyWith<$Res> {
   factory _$FinishFailureCopyWith(_FinishFailure value, $Res Function(_FinishFailure) then) = __$FinishFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

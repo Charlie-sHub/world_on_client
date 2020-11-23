@@ -54,7 +54,7 @@ abstract class UserDto implements _$UserDto {
   }) = _UserDto;
 
   factory UserDto.fromDomain(User user) => UserDto(
-    id: user.id.getOrCrash(),
+        id: user.id.getOrCrash(),
         name: user.name.getOrCrash(),
         username: user.username.getOrCrash(),
         password: user.password.getOrCrash(),
@@ -110,7 +110,7 @@ abstract class UserDto implements _$UserDto {
     experiencesToDoIds: experiencesToDoIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
     devices: devices.map((deviceDto) => deviceDto.toDomain()).toSet(),
     systems: systems.map((systemDto) => systemDto.toDomain()).toSet(),
-      );
+  );
 
   factory UserDto.fromJson(Map<String, dynamic> json) => _$UserDtoFromJson(json);
 

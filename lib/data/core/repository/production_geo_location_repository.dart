@@ -16,8 +16,9 @@ class ProductionGeoLocationRepository implements GeoLocationRepositoryInterface 
   @override
   Future<Either<Failure, Coordinates>> getCurrentLocation() async {
     try {
-      // TODO: Update the geolocator dependency and make the necessary changes to this code
-      final _position = await getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+      final _position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high,
+      );
       final _coordinates = Coordinates(
         latitude: Latitude(_position.latitude),
         longitude: Longitude(_position.longitude),
