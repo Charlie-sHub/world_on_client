@@ -40,9 +40,16 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
         )
         .map(
       (experiences) {
-        if (experiences.isNotEmpty) {
+        final _resultList = experiences
+            .where(
+              (experience) => experience.title.getOrCrash().contains(
+                    title.getOrCrash(),
+                  ),
+            )
+            .toImmutableList();
+        if (_resultList.isNotEmpty()) {
           return right<Failure, KtList<Experience>>(
-            experiences.where((experience) => experience.title.getOrCrash().contains(title.getOrCrash())).toImmutableList(),
+            _resultList,
           );
         } else {
           return left<Failure, KtList<Experience>>(
@@ -70,9 +77,16 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
         )
         .map(
       (tags) {
-        if (tags.isNotEmpty) {
+        final _resultList = tags
+            .where(
+              (tag) => tag.name.getOrCrash().contains(
+                    name.getOrCrash(),
+                  ),
+            )
+            .toImmutableList();
+        if (_resultList.isNotEmpty()) {
           return right<Failure, KtList<Tag>>(
-            tags.where((tag) => tag.name.getOrCrash().contains(name.getOrCrash())).toImmutableList(),
+            _resultList,
           );
         } else {
           return left<Failure, KtList<Tag>>(
@@ -100,9 +114,16 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
         )
         .map(
       (users) {
-        if (users.isNotEmpty) {
+        final _resultList = users
+            .where(
+              (user) => user.name.getOrCrash().contains(
+                    name.getOrCrash(),
+                  ),
+            )
+            .toImmutableList();
+        if (_resultList.isNotEmpty()) {
           return right<Failure, KtList<User>>(
-            users.where((user) => user.name.getOrCrash().contains(name.getOrCrash())).toImmutableList(),
+            _resultList,
           );
         } else {
           return left<Failure, KtList<User>>(
@@ -130,9 +151,16 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
         )
         .map(
       (users) {
-        if (users.isNotEmpty) {
+        final _resultList = users
+            .where(
+              (user) => user.username.getOrCrash().contains(
+                    username.getOrCrash(),
+                  ),
+            )
+            .toImmutableList();
+        if (_resultList.isNotEmpty()) {
           return right<Failure, KtList<User>>(
-            users.where((user) => user.username.getOrCrash().contains(username.getOrCrash())).toImmutableList(),
+            _resultList,
           );
         } else {
           return left<Failure, KtList<User>>(

@@ -45,6 +45,7 @@ class ObjectiveFormBloc extends Bloc<ObjectiveFormEvent, ObjectiveFormState> {
           id,
         ),
       ),
+      loadedCoordinates: true,
     );
   }
 

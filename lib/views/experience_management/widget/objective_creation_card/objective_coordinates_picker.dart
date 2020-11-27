@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:worldon/application/experience_management/objective_form/objective_form_bloc.dart';
-import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
+import 'package:worldon/views/core/widget/misc/world_on_progress_indicator.dart';
 
 class ObjectiveCoordinatePicker extends StatelessWidget {
   const ObjectiveCoordinatePicker({
@@ -19,9 +19,9 @@ class ObjectiveCoordinatePicker extends StatelessWidget {
     );
     return Container(
       height: MediaQuery.of(context).size.height * 0.4,
-      child: context.bloc<ObjectiveFormBloc>().state.objective.coordinates != Coordinates.empty()
+      child: context.bloc<ObjectiveFormBloc>().state.loadedCoordinates
           ? GoogleMap(
-              mapType: MapType.satellite,
+              mapType: MapType.hybrid,
               markers: {
                 Marker(
                   markerId: MarkerId("new_objective"),
@@ -42,10 +42,11 @@ class ObjectiveCoordinatePicker extends StatelessWidget {
               myLocationEnabled: true,
               initialCameraPosition: CameraPosition(
                 zoom: 15,
+                tilt: 45,
                 target: _position,
               ),
             )
-          : Container(),
+          : WorldOnProgressIndicator(),
     );
   }
 }

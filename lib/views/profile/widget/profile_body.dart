@@ -15,22 +15,41 @@ import '../../../injection.dart';
 // Like a button in te appbar that will always take the user to its own profile
 class ProfileBody extends StatelessWidget {
   final Option<User> userOption;
+  final bool currentUserProfile;
 
-  const ProfileBody({Key key, @required this.userOption}) : super(key: key);
+  const ProfileBody({
+    Key key,
+    @required this.userOption,
+    @required this.currentUserProfile,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => getIt<ProfileWatcherBloc>()
         ..add(
-          ProfileWatcherEvent.initializedForeignOrOwn(none()),
+          ProfileWatcherEvent.initializedForeignOrOwn(
+            none(),
+          ),
         ),
       child: BlocListener<NavigationActorBloc, NavigationActorState>(
+        listenWhen: (previous, current) => current.maybeMap(
+          profileView: (state) => true,
+          orElse: () => false,
+        ),
         listener: (context, navigationState) => navigationState.maybeMap(
-          profileView: (profileViewState) => profileViewState.userOption.fold(
-            () => null,
+          profileView: (state) => state.userOption.fold(
+            () => state.currentUserProfile
+                ? context.bloc<ProfileWatcherBloc>().add(
+                      ProfileWatcherEvent.initializedForeignOrOwn(
+                        none(),
+                      ),
+                    )
+                : null,
             (user) => context.bloc<ProfileWatcherBloc>().add(
-                  ProfileWatcherEvent.initializedForeignOrOwn(some(user)),
+                  ProfileWatcherEvent.initializedForeignOrOwn(
+                    some(user),
+                  ),
                 ),
           ),
           orElse: () => null,
@@ -38,7 +57,7 @@ class ProfileBody extends StatelessWidget {
         child: BlocBuilder<ProfileWatcherBloc, ProfileWatcherState>(
           builder: (context, state) => state.map(
             initial: (_) => Container(),
-            loadInProgress: (_) => WorldOnProgressIndicator(),
+            loadInProgress: (_) => const WorldOnProgressIndicator(),
             own: (state) => OwnProfile(user: state.user),
             foreign: (state) => ForeignProfile(user: state.user),
             loadFailure: (state) => InkWell(

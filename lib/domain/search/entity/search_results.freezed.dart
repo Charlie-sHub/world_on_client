@@ -35,8 +35,11 @@ const $SearchResults = _$SearchResultsTearOff();
 /// @nodoc
 mixin _$SearchResults {
   Either<Failure, Set<Experience>> get experiencesFound;
+
   Either<Failure, Set<User>> get usersFoundByName;
+
   Either<Failure, Set<User>> get usersFoundByUserName;
+
   Either<Failure, Set<Tag>> get tagsFound;
 
   $SearchResultsCopyWith<SearchResults> get copyWith;
@@ -44,25 +47,20 @@ mixin _$SearchResults {
 
 /// @nodoc
 abstract class $SearchResultsCopyWith<$Res> {
-  factory $SearchResultsCopyWith(
-          SearchResults value, $Res Function(SearchResults) then) =
-      _$SearchResultsCopyWithImpl<$Res>;
-  $Res call(
-      {Either<Failure, Set<Experience>> experiencesFound,
-      Either<Failure, Set<User>> usersFoundByName,
-      Either<Failure, Set<User>> usersFoundByUserName,
-      Either<Failure, Set<Tag>> tagsFound});
+  factory $SearchResultsCopyWith(SearchResults value, $Res Function(SearchResults) then) = _$SearchResultsCopyWithImpl<$Res>;
+
+  $Res call({Either<Failure, Set<Experience>> experiencesFound, Either<Failure, Set<User>> usersFoundByName, Either<Failure, Set<User>> usersFoundByUserName, Either<Failure, Set<Tag>> tagsFound});
 }
 
 /// @nodoc
-class _$SearchResultsCopyWithImpl<$Res>
-    implements $SearchResultsCopyWith<$Res> {
+class _$SearchResultsCopyWithImpl<$Res> implements $SearchResultsCopyWith<$Res> {
   _$SearchResultsCopyWithImpl(this._value, this._then);
-
+  
   final SearchResults _value;
+  
   // ignore: unused_field
   final $Res Function(SearchResults) _then;
-
+  
   @override
   $Res call({
     Object experiencesFound = freezed,
@@ -71,47 +69,29 @@ class _$SearchResultsCopyWithImpl<$Res>
     Object tagsFound = freezed,
   }) {
     return _then(_value.copyWith(
-      experiencesFound: experiencesFound == freezed
-          ? _value.experiencesFound
-          : experiencesFound as Either<Failure, Set<Experience>>,
-      usersFoundByName: usersFoundByName == freezed
-          ? _value.usersFoundByName
-          : usersFoundByName as Either<Failure, Set<User>>,
-      usersFoundByUserName: usersFoundByUserName == freezed
-          ? _value.usersFoundByUserName
-          : usersFoundByUserName as Either<Failure, Set<User>>,
-      tagsFound: tagsFound == freezed
-          ? _value.tagsFound
-          : tagsFound as Either<Failure, Set<Tag>>,
+      experiencesFound: experiencesFound == freezed ? _value.experiencesFound : experiencesFound as Either<Failure, Set<Experience>>,
+      usersFoundByName: usersFoundByName == freezed ? _value.usersFoundByName : usersFoundByName as Either<Failure, Set<User>>,
+      usersFoundByUserName: usersFoundByUserName == freezed ? _value.usersFoundByUserName : usersFoundByUserName as Either<Failure, Set<User>>,
+      tagsFound: tagsFound == freezed ? _value.tagsFound : tagsFound as Either<Failure, Set<Tag>>,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$SearchResultsCopyWith<$Res>
-    implements $SearchResultsCopyWith<$Res> {
-  factory _$SearchResultsCopyWith(
-          _SearchResults value, $Res Function(_SearchResults) then) =
-      __$SearchResultsCopyWithImpl<$Res>;
+abstract class _$SearchResultsCopyWith<$Res> implements $SearchResultsCopyWith<$Res> {
+  factory _$SearchResultsCopyWith(_SearchResults value, $Res Function(_SearchResults) then) = __$SearchResultsCopyWithImpl<$Res>;
+  
   @override
-  $Res call(
-      {Either<Failure, Set<Experience>> experiencesFound,
-      Either<Failure, Set<User>> usersFoundByName,
-      Either<Failure, Set<User>> usersFoundByUserName,
-      Either<Failure, Set<Tag>> tagsFound});
+  $Res call({Either<Failure, Set<Experience>> experiencesFound, Either<Failure, Set<User>> usersFoundByName, Either<Failure, Set<User>> usersFoundByUserName, Either<Failure, Set<Tag>> tagsFound});
 }
 
 /// @nodoc
-class __$SearchResultsCopyWithImpl<$Res>
-    extends _$SearchResultsCopyWithImpl<$Res>
-    implements _$SearchResultsCopyWith<$Res> {
-  __$SearchResultsCopyWithImpl(
-      _SearchResults _value, $Res Function(_SearchResults) _then)
-      : super(_value, (v) => _then(v as _SearchResults));
-
+class __$SearchResultsCopyWithImpl<$Res> extends _$SearchResultsCopyWithImpl<$Res> implements _$SearchResultsCopyWith<$Res> {
+  __$SearchResultsCopyWithImpl(_SearchResults _value, $Res Function(_SearchResults) _then) : super(_value, (v) => _then(v as _SearchResults));
+  
   @override
   _SearchResults get _value => super._value as _SearchResults;
-
+  
   @override
   $Res call({
     Object experiencesFound = freezed,
@@ -120,34 +100,22 @@ class __$SearchResultsCopyWithImpl<$Res>
     Object tagsFound = freezed,
   }) {
     return _then(_SearchResults(
-      experiencesFound: experiencesFound == freezed
-          ? _value.experiencesFound
-          : experiencesFound as Either<Failure, Set<Experience>>,
-      usersFoundByName: usersFoundByName == freezed
-          ? _value.usersFoundByName
-          : usersFoundByName as Either<Failure, Set<User>>,
-      usersFoundByUserName: usersFoundByUserName == freezed
-          ? _value.usersFoundByUserName
-          : usersFoundByUserName as Either<Failure, Set<User>>,
-      tagsFound: tagsFound == freezed
-          ? _value.tagsFound
-          : tagsFound as Either<Failure, Set<Tag>>,
+      experiencesFound: experiencesFound == freezed ? _value.experiencesFound : experiencesFound as Either<Failure, Set<Experience>>,
+      usersFoundByName: usersFoundByName == freezed ? _value.usersFoundByName : usersFoundByName as Either<Failure, Set<User>>,
+      usersFoundByUserName: usersFoundByUserName == freezed ? _value.usersFoundByUserName : usersFoundByUserName as Either<Failure, Set<User>>,
+      tagsFound: tagsFound == freezed ? _value.tagsFound : tagsFound as Either<Failure, Set<Tag>>,
     ));
   }
 }
 
 /// @nodoc
 class _$_SearchResults extends _SearchResults with DiagnosticableTreeMixin {
-  const _$_SearchResults(
-      {@required this.experiencesFound,
-      @required this.usersFoundByName,
-      @required this.usersFoundByUserName,
-      @required this.tagsFound})
-      : assert(experiencesFound != null),
-        assert(usersFoundByName != null),
-        assert(usersFoundByUserName != null),
-        assert(tagsFound != null),
-        super._();
+  const _$_SearchResults({@required this.experiencesFound, @required this.usersFoundByName, @required this.usersFoundByUserName, @required this.tagsFound})
+    : assert(experiencesFound != null),
+      assert(usersFoundByName != null),
+      assert(usersFoundByUserName != null),
+      assert(tagsFound != null),
+      super._();
 
   @override
   final Either<Failure, Set<Experience>> experiencesFound;
@@ -177,19 +145,11 @@ class _$_SearchResults extends _SearchResults with DiagnosticableTreeMixin {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SearchResults &&
-            (identical(other.experiencesFound, experiencesFound) ||
-                const DeepCollectionEquality()
-                    .equals(other.experiencesFound, experiencesFound)) &&
-            (identical(other.usersFoundByName, usersFoundByName) ||
-                const DeepCollectionEquality()
-                    .equals(other.usersFoundByName, usersFoundByName)) &&
-            (identical(other.usersFoundByUserName, usersFoundByUserName) ||
-                const DeepCollectionEquality().equals(
-                    other.usersFoundByUserName, usersFoundByUserName)) &&
-            (identical(other.tagsFound, tagsFound) ||
-                const DeepCollectionEquality()
-                    .equals(other.tagsFound, tagsFound)));
+      (other is _SearchResults &&
+        (identical(other.experiencesFound, experiencesFound) || const DeepCollectionEquality().equals(other.experiencesFound, experiencesFound)) &&
+        (identical(other.usersFoundByName, usersFoundByName) || const DeepCollectionEquality().equals(other.usersFoundByName, usersFoundByName)) &&
+        (identical(other.usersFoundByUserName, usersFoundByUserName) || const DeepCollectionEquality().equals(other.usersFoundByUserName, usersFoundByUserName)) &&
+        (identical(other.tagsFound, tagsFound) || const DeepCollectionEquality().equals(other.tagsFound, tagsFound)));
   }
 
   @override
@@ -199,14 +159,14 @@ class _$_SearchResults extends _SearchResults with DiagnosticableTreeMixin {
       const DeepCollectionEquality().hash(usersFoundByName) ^
       const DeepCollectionEquality().hash(usersFoundByUserName) ^
       const DeepCollectionEquality().hash(tagsFound);
-
+  
   @override
-  _$SearchResultsCopyWith<_SearchResults> get copyWith =>
-      __$SearchResultsCopyWithImpl<_SearchResults>(this, _$identity);
+  _$SearchResultsCopyWith<_SearchResults> get copyWith => __$SearchResultsCopyWithImpl<_SearchResults>(this, _$identity);
 }
 
 abstract class _SearchResults extends SearchResults {
   const _SearchResults._() : super._();
+
   const factory _SearchResults(
       {@required Either<Failure, Set<Experience>> experiencesFound,
       @required Either<Failure, Set<User>> usersFoundByName,
@@ -215,12 +175,16 @@ abstract class _SearchResults extends SearchResults {
 
   @override
   Either<Failure, Set<Experience>> get experiencesFound;
+
   @override
   Either<Failure, Set<User>> get usersFoundByName;
+
   @override
   Either<Failure, Set<User>> get usersFoundByUserName;
+
   @override
   Either<Failure, Set<Tag>> get tagsFound;
+
   @override
   _$SearchResultsCopyWith<_SearchResults> get copyWith;
 }

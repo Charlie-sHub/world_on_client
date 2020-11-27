@@ -60,7 +60,6 @@ mixin _$ObjectiveFormEvent {
     @required TResult imageChanged(File imageFile),
     @required TResult submitted(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initialized(),
@@ -70,7 +69,6 @@ mixin _$ObjectiveFormEvent {
     TResult submitted(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initialized(_Initialized value),
@@ -79,7 +77,6 @@ mixin _$ObjectiveFormEvent {
     @required TResult imageChanged(_ImageChanged value),
     @required TResult submitted(_Submitted value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initialized(_Initialized value),
@@ -329,7 +326,6 @@ abstract class _DescriptionChanged implements ObjectiveFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description;
-
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith;
 }
 
@@ -588,7 +584,6 @@ abstract class _ImageChanged implements ObjectiveFormEvent {
   const factory _ImageChanged(File imageFile) = _$_ImageChanged;
 
   File get imageFile;
-
   _$ImageChangedCopyWith<_ImageChanged> get copyWith;
 }
 
@@ -700,11 +695,12 @@ class _$ObjectiveFormStateTearOff {
   const _$ObjectiveFormStateTearOff();
 
 // ignore: unused_element
-  _ObjectiveFormState call({@required Objective objective, @required bool showErrorMessages, @required bool isSubmitting}) {
+  _ObjectiveFormState call({@required Objective objective, @required bool showErrorMessages, @required bool isSubmitting, @required bool loadedCoordinates}) {
     return _ObjectiveFormState(
       objective: objective,
       showErrorMessages: showErrorMessages,
       isSubmitting: isSubmitting,
+      loadedCoordinates: loadedCoordinates,
     );
   }
 }
@@ -716,10 +712,11 @@ const $ObjectiveFormState = _$ObjectiveFormStateTearOff();
 /// @nodoc
 mixin _$ObjectiveFormState {
   Objective get objective;
-
   bool get showErrorMessages;
 
   bool get isSubmitting;
+
+  bool get loadedCoordinates;
 
   $ObjectiveFormStateCopyWith<ObjectiveFormState> get copyWith;
 }
@@ -728,7 +725,7 @@ mixin _$ObjectiveFormState {
 abstract class $ObjectiveFormStateCopyWith<$Res> {
   factory $ObjectiveFormStateCopyWith(ObjectiveFormState value, $Res Function(ObjectiveFormState) then) = _$ObjectiveFormStateCopyWithImpl<$Res>;
 
-  $Res call({Objective objective, bool showErrorMessages, bool isSubmitting});
+  $Res call({Objective objective, bool showErrorMessages, bool isSubmitting, bool loadedCoordinates});
 
   $ObjectiveCopyWith<$Res> get objective;
 }
@@ -747,11 +744,13 @@ class _$ObjectiveFormStateCopyWithImpl<$Res> implements $ObjectiveFormStateCopyW
     Object objective = freezed,
     Object showErrorMessages = freezed,
     Object isSubmitting = freezed,
+    Object loadedCoordinates = freezed,
   }) {
     return _then(_value.copyWith(
       objective: objective == freezed ? _value.objective : objective as Objective,
       showErrorMessages: showErrorMessages == freezed ? _value.showErrorMessages : showErrorMessages as bool,
       isSubmitting: isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      loadedCoordinates: loadedCoordinates == freezed ? _value.loadedCoordinates : loadedCoordinates as bool,
     ));
   }
 
@@ -771,7 +770,7 @@ abstract class _$ObjectiveFormStateCopyWith<$Res> implements $ObjectiveFormState
   factory _$ObjectiveFormStateCopyWith(_ObjectiveFormState value, $Res Function(_ObjectiveFormState) then) = __$ObjectiveFormStateCopyWithImpl<$Res>;
 
   @override
-  $Res call({Objective objective, bool showErrorMessages, bool isSubmitting});
+  $Res call({Objective objective, bool showErrorMessages, bool isSubmitting, bool loadedCoordinates});
 
   @override
   $ObjectiveCopyWith<$Res> get objective;
@@ -789,21 +788,24 @@ class __$ObjectiveFormStateCopyWithImpl<$Res> extends _$ObjectiveFormStateCopyWi
     Object objective = freezed,
     Object showErrorMessages = freezed,
     Object isSubmitting = freezed,
+    Object loadedCoordinates = freezed,
   }) {
     return _then(_ObjectiveFormState(
       objective: objective == freezed ? _value.objective : objective as Objective,
       showErrorMessages: showErrorMessages == freezed ? _value.showErrorMessages : showErrorMessages as bool,
       isSubmitting: isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      loadedCoordinates: loadedCoordinates == freezed ? _value.loadedCoordinates : loadedCoordinates as bool,
     ));
   }
 }
 
 /// @nodoc
 class _$_ObjectiveFormState implements _ObjectiveFormState {
-  const _$_ObjectiveFormState({@required this.objective, @required this.showErrorMessages, @required this.isSubmitting})
+  const _$_ObjectiveFormState({@required this.objective, @required this.showErrorMessages, @required this.isSubmitting, @required this.loadedCoordinates})
       : assert(objective != null),
         assert(showErrorMessages != null),
-        assert(isSubmitting != null);
+        assert(isSubmitting != null),
+        assert(loadedCoordinates != null);
 
   @override
   final Objective objective;
@@ -811,10 +813,12 @@ class _$_ObjectiveFormState implements _ObjectiveFormState {
   final bool showErrorMessages;
   @override
   final bool isSubmitting;
+  @override
+  final bool loadedCoordinates;
 
   @override
   String toString() {
-    return 'ObjectiveFormState(objective: $objective, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting)';
+    return 'ObjectiveFormState(objective: $objective, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, loadedCoordinates: $loadedCoordinates)';
   }
 
   @override
@@ -823,19 +827,24 @@ class _$_ObjectiveFormState implements _ObjectiveFormState {
         (other is _ObjectiveFormState &&
             (identical(other.objective, objective) || const DeepCollectionEquality().equals(other.objective, objective)) &&
             (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)));
+            (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
+            (identical(other.loadedCoordinates, loadedCoordinates) || const DeepCollectionEquality().equals(other.loadedCoordinates, loadedCoordinates)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective) ^ const DeepCollectionEquality().hash(showErrorMessages) ^ const DeepCollectionEquality().hash(isSubmitting);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(objective) ^
+      const DeepCollectionEquality().hash(showErrorMessages) ^
+      const DeepCollectionEquality().hash(isSubmitting) ^
+      const DeepCollectionEquality().hash(loadedCoordinates);
 
   @override
   _$ObjectiveFormStateCopyWith<_ObjectiveFormState> get copyWith => __$ObjectiveFormStateCopyWithImpl<_ObjectiveFormState>(this, _$identity);
 }
 
 abstract class _ObjectiveFormState implements ObjectiveFormState {
-  const factory _ObjectiveFormState({@required Objective objective, @required bool showErrorMessages, @required bool isSubmitting}) = _$_ObjectiveFormState;
+  const factory _ObjectiveFormState({@required Objective objective, @required bool showErrorMessages, @required bool isSubmitting, @required bool loadedCoordinates}) = _$_ObjectiveFormState;
 
   @override
   Objective get objective;
@@ -845,6 +854,9 @@ abstract class _ObjectiveFormState implements ObjectiveFormState {
 
   @override
   bool get isSubmitting;
+
+  @override
+  bool get loadedCoordinates;
 
   @override
   _$ObjectiveFormStateCopyWith<_ObjectiveFormState> get copyWith;

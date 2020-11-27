@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
-import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
+import 'package:worldon/views/core/widget/misc/world_on_progress_indicator.dart';
 
 class Map extends StatelessWidget {
   const Map({
@@ -42,9 +42,9 @@ class Map extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.5,
             // Not happy about this at all, there has to be a better way to build the map once coordinates have been gotten
             // Works for now though and that's what matters.
-            child: context.bloc<ExperienceManagementFormBloc>().state.experience.coordinates != Coordinates.empty()
+            child: context.bloc<ExperienceManagementFormBloc>().state.loadedCoordinates
                 ? GoogleMap(
-                    mapType: MapType.satellite,
+                    mapType: MapType.hybrid,
                     markers: {
                       Marker(
                         markerId: MarkerId("new_experience"),
@@ -65,10 +65,11 @@ class Map extends StatelessWidget {
                     myLocationEnabled: true,
                     initialCameraPosition: CameraPosition(
                       zoom: 15,
+                      tilt: 45,
                       target: _position,
                     ),
                   )
-                : Container(),
+                : const WorldOnProgressIndicator(),
           ),
         ],
       ),

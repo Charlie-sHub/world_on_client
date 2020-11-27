@@ -30,12 +30,12 @@ abstract class TagDto implements _$TagDto {
       );
 
   Tag toDomain() => Tag(
-    id: UniqueId.fromUniqueString(id),
-    name: Name(name),
-    creatorId: UniqueId.fromUniqueString(creatorId),
-    creationDate: PastDate(creationDate),
-    modificationDate: PastDate(modificationDate),
-  );
+        id: UniqueId.fromUniqueString(id),
+        name: Name(name),
+        creatorId: UniqueId.fromUniqueString(creatorId),
+        creationDate: PastDate(creationDate),
+        modificationDate: PastDate(modificationDate),
+      );
 
   factory TagDto.fromJson(Map<String, dynamic> json) => _$TagDtoFromJson(json);
 

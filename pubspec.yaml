@@ -38,10 +38,8 @@ dependencies:
   freezed_annotation: ^0.12.0
   # For email validation
   email_validator: ^1.0.6
-  # For mapping
-  google_maps_flutter: ^1.0.6
   # For getting the geolocation of the user
-  geolocator: ^6.1.7
+  geolocator: ^6.1.8+1
   # For Kotlin like collections
   kt_dart: ^0.8.0
   # For easier bloc testing
@@ -86,13 +84,22 @@ dependencies:
   # For Signing in and registering with Google
   google_sign_in: ^4.5.6
   # For use with Firebase as backend
-  firebase_core: ^0.5.2
+  firebase_core: ^0.5.2+1
   # For authentication with Firebase
-  firebase_auth: ^0.18.3
+  firebase_auth: ^0.18.3+1
   # For simple data storage
-  cloud_firestore: ^0.14.3
+  cloud_firestore: ^0.14.3+1
   # For complex data storage (images)
-  firebase_storage: ^5.0.1
+  firebase_storage: ^5.1.0
+  # For drawing routes in the map
+  google_map_polyline:
+  # For mapping
+  google_maps_flutter:
+  # For localization
+  intl: 0.16.1
+
+flutter_localizations:
+  sdk: flutter
 
 dev_dependencies:
   flutter_test:
@@ -130,43 +137,13 @@ flutter_icons:
   android: true
   ios: true
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
-
-# The following section is specific to Flutter.
 flutter:
 
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
 
   assets:
     - assets/
-    # - .env
 
-  # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.dev/assets-and-images/#resolution-aware.
-
-  # For details regarding adding assets from package dependencies, see
-  # https://flutter.dev/assets-and-images/#from-packages
-
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
-  # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/custom-fonts/#from-packages
+flutter_intl:
+  main_locale: en_US
+  enabled: true

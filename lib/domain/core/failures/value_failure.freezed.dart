@@ -2265,7 +2265,7 @@ class _$StringWithInvalidCharacters<T>
     assert(setExceedsLength != null);
     return stringWithInvalidCharacters(failedValue);
   }
-  
+
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
@@ -2291,7 +2291,7 @@ class _$StringWithInvalidCharacters<T>
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
@@ -2326,7 +2326,7 @@ class _$StringWithInvalidCharacters<T>
     assert(setExceedsLength != null);
     return stringWithInvalidCharacters(this);
   }
-  
+
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
@@ -2465,7 +2465,7 @@ class _$InvalidCoordinates<T>
     assert(setExceedsLength != null);
     return invalidCoordinate(failedValue);
   }
-  
+
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
@@ -2491,7 +2491,7 @@ class _$InvalidCoordinates<T>
     }
     return orElse();
   }
-  
+
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
@@ -2526,7 +2526,7 @@ class _$InvalidCoordinates<T>
     assert(setExceedsLength != null);
     return invalidCoordinate(this);
   }
-  
+
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({

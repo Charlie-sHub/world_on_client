@@ -22,7 +22,7 @@ class ExperienceFinish extends StatelessWidget {
       child: BlocBuilder<ExperienceFinishActorBloc, ExperienceFinishActorState>(
         builder: (context, state) => state.map(
           initial: (_) => Container(),
-          actionInProgress: (_) => WorldOnProgressIndicator(),
+          actionInProgress: (_) => const WorldOnProgressIndicator(),
           finishSuccess: (_) => FinishSuccessView(experience: experience),
           finishFailure: (state) => ErrorDisplay(
             retryFunction: () => context.bloc<ExperienceFinishActorBloc>().add(

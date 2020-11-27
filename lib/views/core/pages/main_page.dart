@@ -56,6 +56,10 @@ class MainPage extends StatelessWidget {
                           profileView: (state) => state.userOption,
                           orElse: () => none(),
                         ),
+                    currentUserProfile: context.bloc<NavigationActorBloc>().state.maybeMap(
+                          profileView: (state) => state.currentUserProfile,
+                          orElse: () => null,
+                        ),
                   ),
                   const Center(
                     child: Text("Error"),

@@ -171,11 +171,13 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
             creator: _currentUser,
             coordinates: _coordinates,
           ),
+          loadedCoordinates: true,
         );
       },
       (experience) => state.copyWith(
         experience: experience,
         isEditing: true,
+        loadedCoordinates: true,
       ),
     );
   }

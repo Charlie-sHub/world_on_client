@@ -23,7 +23,7 @@ class SearchUsersTabView extends StatelessWidget {
     return BlocBuilder<SearchUsersByNameWatcherBloc, SearchUsersByNameWatcherState>(
       builder: (context, state) => state.map(
         initial: (_) => SearchSomething(),
-        searchInProgress: (_) => WorldOnProgressIndicator(),
+        searchInProgress: (_) => const WorldOnProgressIndicator(),
         searchSuccess: (state) => Scaffold(
           floatingActionButton: SearchUsersUnicornDialer(
             searchTerm: context.bloc<SearchByNameFormBloc>().state.searchTerm,

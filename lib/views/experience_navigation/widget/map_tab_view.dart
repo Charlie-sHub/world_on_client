@@ -7,6 +7,7 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/validation/objects/latitude.dart';
 import 'package:worldon/domain/core/validation/objects/longitude.dart';
+import 'package:worldon/views/core/widget/misc/world_on_progress_indicator.dart';
 
 class MapTabView extends StatelessWidget {
   final Experience experience;
@@ -19,21 +20,26 @@ class MapTabView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<MapControllerBloc, MapControllerState>(
-      builder: (context, state) => state.coordinates != Coordinates.empty()
+      builder: (context, state) => state.loadedCoordinates
           ? GoogleMap(
-              mapType: MapType.satellite,
+              mapType: MapType.hybrid,
               myLocationEnabled: true,
+              mapToolbarEnabled: false,
               markers: state.objectives.asList().map(_mapObjectiveToMarker).toSet(),
-              onCameraMove: (position) => _onCameraMoved(context, position),
+              onCameraMove: (position) => _onCameraMoved(
+                context,
+                position,
+              ),
               initialCameraPosition: CameraPosition(
                 target: LatLng(
                   state.coordinates.latitude.getOrCrash(),
                   state.coordinates.longitude.getOrCrash(),
                 ),
                 zoom: state.zoom,
+                tilt: 45,
               ),
             )
-          : Container(),
+          : const WorldOnProgressIndicator(),
     );
   }
 

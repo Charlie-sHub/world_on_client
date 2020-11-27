@@ -16,10 +16,13 @@ class UserImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlatButton(
       onPressed: () => context.bloc<NavigationActorBloc>().add(
-            NavigationActorEvent.profileTapped(some(user)),
+            NavigationActorEvent.profileTapped(
+              userOption: some(user),
+              currentUserProfile: false,
+            ),
           ),
       child: CircleAvatar(
-        radius: 22,
+        radius: 30,
         backgroundImage: NetworkImage(user.imageURL),
       ),
     );

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
 import 'package:worldon/core/assets.dart';
-import 'package:worldon/views/core/widget/main_page/messages_widget.dart';
+import 'package:worldon/views/core/widget/main_page/current_user_profile_button.dart';
 import 'package:worldon/views/core/widget/main_page/notifications_widget.dart';
 
 class WorldOnAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -42,7 +42,7 @@ class WorldOnAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: const <Widget>[
         // if (Provider.of<String>(context) != Environment.prod) const DebugDatabaseButton(),
         NotificationsButton(),
-        MessagesButton(),
+        CurrentUserProfileButton(),
       ],
     );
   }

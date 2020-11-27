@@ -7,6 +7,7 @@ abstract class ExperienceManagementFormState with _$ExperienceManagementFormStat
     @required bool showErrorMessages,
     @required bool isEditing,
     @required bool isSubmitting,
+    @required bool loadedCoordinates,
     @required Option<Either<Failure, Unit>> failureOrSuccessOption,
   }) = _ExperienceManagementFormState;
 
@@ -15,6 +16,7 @@ abstract class ExperienceManagementFormState with _$ExperienceManagementFormStat
         showErrorMessages: false,
         isEditing: false,
         isSubmitting: false,
+        loadedCoordinates: false,
         failureOrSuccessOption: none(),
       );
 }

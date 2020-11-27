@@ -460,11 +460,12 @@ class _$MapControllerStateTearOff {
   const _$MapControllerStateTearOff();
 
 // ignore: unused_element
-  _MapControllerState call({@required Coordinates coordinates, @required KtList<Objective> objectives, @required double zoom}) {
+  _MapControllerState call({@required Coordinates coordinates, @required KtList<Objective> objectives, @required double zoom, @required bool loadedCoordinates}) {
     return _MapControllerState(
       coordinates: coordinates,
       objectives: objectives,
       zoom: zoom,
+      loadedCoordinates: loadedCoordinates,
     );
   }
 }
@@ -477,7 +478,10 @@ const $MapControllerState = _$MapControllerStateTearOff();
 mixin _$MapControllerState {
   Coordinates get coordinates;
   KtList<Objective> get objectives;
+
   double get zoom;
+
+  bool get loadedCoordinates;
 
   $MapControllerStateCopyWith<MapControllerState> get copyWith;
 }
@@ -486,7 +490,7 @@ mixin _$MapControllerState {
 abstract class $MapControllerStateCopyWith<$Res> {
   factory $MapControllerStateCopyWith(MapControllerState value, $Res Function(MapControllerState) then) = _$MapControllerStateCopyWithImpl<$Res>;
 
-  $Res call({Coordinates coordinates, KtList<Objective> objectives, double zoom});
+  $Res call({Coordinates coordinates, KtList<Objective> objectives, double zoom, bool loadedCoordinates});
 
   $CoordinatesCopyWith<$Res> get coordinates;
 }
@@ -505,11 +509,13 @@ class _$MapControllerStateCopyWithImpl<$Res> implements $MapControllerStateCopyW
     Object coordinates = freezed,
     Object objectives = freezed,
     Object zoom = freezed,
+    Object loadedCoordinates = freezed,
   }) {
     return _then(_value.copyWith(
       coordinates: coordinates == freezed ? _value.coordinates : coordinates as Coordinates,
       objectives: objectives == freezed ? _value.objectives : objectives as KtList<Objective>,
       zoom: zoom == freezed ? _value.zoom : zoom as double,
+      loadedCoordinates: loadedCoordinates == freezed ? _value.loadedCoordinates : loadedCoordinates as bool,
     ));
   }
 
@@ -529,7 +535,7 @@ abstract class _$MapControllerStateCopyWith<$Res> implements $MapControllerState
   factory _$MapControllerStateCopyWith(_MapControllerState value, $Res Function(_MapControllerState) then) = __$MapControllerStateCopyWithImpl<$Res>;
 
   @override
-  $Res call({Coordinates coordinates, KtList<Objective> objectives, double zoom});
+  $Res call({Coordinates coordinates, KtList<Objective> objectives, double zoom, bool loadedCoordinates});
 
   @override
   $CoordinatesCopyWith<$Res> get coordinates;
@@ -547,21 +553,24 @@ class __$MapControllerStateCopyWithImpl<$Res> extends _$MapControllerStateCopyWi
     Object coordinates = freezed,
     Object objectives = freezed,
     Object zoom = freezed,
+    Object loadedCoordinates = freezed,
   }) {
     return _then(_MapControllerState(
       coordinates: coordinates == freezed ? _value.coordinates : coordinates as Coordinates,
       objectives: objectives == freezed ? _value.objectives : objectives as KtList<Objective>,
       zoom: zoom == freezed ? _value.zoom : zoom as double,
+      loadedCoordinates: loadedCoordinates == freezed ? _value.loadedCoordinates : loadedCoordinates as bool,
     ));
   }
 }
 
 /// @nodoc
 class _$_MapControllerState implements _MapControllerState {
-  const _$_MapControllerState({@required this.coordinates, @required this.objectives, @required this.zoom})
+  const _$_MapControllerState({@required this.coordinates, @required this.objectives, @required this.zoom, @required this.loadedCoordinates})
       : assert(coordinates != null),
         assert(objectives != null),
-        assert(zoom != null);
+        assert(zoom != null),
+        assert(loadedCoordinates != null);
 
   @override
   final Coordinates coordinates;
@@ -569,10 +578,12 @@ class _$_MapControllerState implements _MapControllerState {
   final KtList<Objective> objectives;
   @override
   final double zoom;
+  @override
+  final bool loadedCoordinates;
 
   @override
   String toString() {
-    return 'MapControllerState(coordinates: $coordinates, objectives: $objectives, zoom: $zoom)';
+    return 'MapControllerState(coordinates: $coordinates, objectives: $objectives, zoom: $zoom, loadedCoordinates: $loadedCoordinates)';
   }
 
   @override
@@ -581,18 +592,24 @@ class _$_MapControllerState implements _MapControllerState {
         (other is _MapControllerState &&
             (identical(other.coordinates, coordinates) || const DeepCollectionEquality().equals(other.coordinates, coordinates)) &&
             (identical(other.objectives, objectives) || const DeepCollectionEquality().equals(other.objectives, objectives)) &&
-            (identical(other.zoom, zoom) || const DeepCollectionEquality().equals(other.zoom, zoom)));
+            (identical(other.zoom, zoom) || const DeepCollectionEquality().equals(other.zoom, zoom)) &&
+            (identical(other.loadedCoordinates, loadedCoordinates) || const DeepCollectionEquality().equals(other.loadedCoordinates, loadedCoordinates)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(coordinates) ^ const DeepCollectionEquality().hash(objectives) ^ const DeepCollectionEquality().hash(zoom);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(coordinates) ^
+      const DeepCollectionEquality().hash(objectives) ^
+      const DeepCollectionEquality().hash(zoom) ^
+      const DeepCollectionEquality().hash(loadedCoordinates);
 
   @override
   _$MapControllerStateCopyWith<_MapControllerState> get copyWith => __$MapControllerStateCopyWithImpl<_MapControllerState>(this, _$identity);
 }
 
 abstract class _MapControllerState implements MapControllerState {
-  const factory _MapControllerState({@required Coordinates coordinates, @required KtList<Objective> objectives, @required double zoom}) = _$_MapControllerState;
+  const factory _MapControllerState({@required Coordinates coordinates, @required KtList<Objective> objectives, @required double zoom, @required bool loadedCoordinates}) = _$_MapControllerState;
 
   @override
   Coordinates get coordinates;
@@ -602,6 +619,9 @@ abstract class _MapControllerState implements MapControllerState {
 
   @override
   double get zoom;
+
+  @override
+  bool get loadedCoordinates;
 
   @override
   _$MapControllerStateCopyWith<_MapControllerState> get copyWith;

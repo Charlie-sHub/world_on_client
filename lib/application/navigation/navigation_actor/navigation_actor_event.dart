@@ -10,7 +10,10 @@ abstract class NavigationActorEvent with _$NavigationActorEvent {
 
   const factory NavigationActorEvent.experienceNavigationTapped(Option<Experience> experienceOption) = _ExperienceNavigationTapped;
 
-  const factory NavigationActorEvent.profileTapped(Option<User> userOption) = _ProfileTapped;
+  const factory NavigationActorEvent.profileTapped({
+    @required Option<User> userOption,
+    @required bool currentUserProfile,
+  }) = _ProfileTapped;
 
   const factory NavigationActorEvent.notificationsTapped() = _NotificationsTapped;
 }

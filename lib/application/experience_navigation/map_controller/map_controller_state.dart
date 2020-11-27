@@ -6,11 +6,13 @@ abstract class MapControllerState with _$MapControllerState {
     @required Coordinates coordinates,
     @required KtList<Objective> objectives,
     @required double zoom,
+    @required bool loadedCoordinates,
   }) = _MapControllerState;
 
   factory MapControllerState.initial() => MapControllerState(
         coordinates: Coordinates.empty(),
         objectives: const KtList.empty(),
-        zoom: 5,
+        loadedCoordinates: false,
+        zoom: 15,
       );
 }

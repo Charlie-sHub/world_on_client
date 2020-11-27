@@ -49,6 +49,9 @@ class NavigationActorBloc extends Bloc<NavigationActorEvent, NavigationActorStat
   }
 
   Stream<NavigationActorState> _onProfileTapped(_ProfileTapped event) async* {
-    yield NavigationActorState.profileView(event.userOption);
+    yield NavigationActorState.profileView(
+      userOption: event.userOption,
+      currentUserProfile: event.currentUserProfile,
+    );
   }
 }

@@ -28,7 +28,7 @@ class ProfileAchievementsTabView extends StatelessWidget {
         listener: (context, state) {},
         builder: (context, state) => state.map(
           initial: (_) => Container(),
-          loadInProgress: (_) => WorldOnProgressIndicator(),
+          loadInProgress: (_) => const WorldOnProgressIndicator(),
           loadSuccess: (state) => ListView.builder(
             physics: const BouncingScrollPhysics(),
             padding: const EdgeInsets.all(10),

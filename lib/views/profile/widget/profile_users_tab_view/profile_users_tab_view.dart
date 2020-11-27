@@ -30,7 +30,7 @@ class ProfileUsersTabView extends StatelessWidget {
           floatingActionButton: ProfileUsersUnicornDialer(user: user),
           body: state.map(
             initial: (_) => Container(),
-            loadInProgress: (_) => WorldOnProgressIndicator(),
+            loadInProgress: (_) => const WorldOnProgressIndicator(),
             loadSuccess: (state) => ListView.builder(
               physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.all(10),

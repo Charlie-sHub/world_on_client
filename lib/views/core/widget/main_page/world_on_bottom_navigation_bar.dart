@@ -57,22 +57,41 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
   void onTap(int index, BuildContext context) {
     switch (index) {
       case _mainFeedIndex:
-        context.bloc<NavigationActorBloc>().add(const NavigationActorEvent.mainFeedTapped());
+        context.bloc<NavigationActorBloc>().add(
+              const NavigationActorEvent.mainFeedTapped(),
+            );
         break;
       case _searchIndex:
-        context.bloc<NavigationActorBloc>().add(const NavigationActorEvent.searchTapped());
+        context.bloc<NavigationActorBloc>().add(
+              const NavigationActorEvent.searchTapped(),
+            );
         break;
       case _experienceFormIndex:
-        context.bloc<NavigationActorBloc>().add(NavigationActorEvent.experienceFormTapped(none()));
+        context.bloc<NavigationActorBloc>().add(
+              NavigationActorEvent.experienceFormTapped(
+                none(),
+              ),
+            );
         break;
       case _navigationIndex:
-        context.bloc<NavigationActorBloc>().add(NavigationActorEvent.experienceNavigationTapped(none()));
+        context.bloc<NavigationActorBloc>().add(
+              NavigationActorEvent.experienceNavigationTapped(
+                none(),
+              ),
+            );
         break;
       case _profileIndex:
-        context.bloc<NavigationActorBloc>().add(NavigationActorEvent.profileTapped(none()));
+        context.bloc<NavigationActorBloc>().add(
+              NavigationActorEvent.profileTapped(
+                currentUserProfile: false,
+                userOption: none(),
+              ),
+            );
         break;
       default:
-        context.bloc<NavigationActorBloc>().add(const NavigationActorEvent.mainFeedTapped());
+        context.bloc<NavigationActorBloc>().add(
+          const NavigationActorEvent.mainFeedTapped(),
+        );
         break;
     }
   }

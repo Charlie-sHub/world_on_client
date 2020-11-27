@@ -35,20 +35,17 @@ mixin _$AuthenticationDataFailure<T> {
     @required TResult invalidCredentials(),
     @required TResult unregisteredUser(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult invalidCredentials(),
     TResult unregisteredUser(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult invalidCredentials(InvalidCredentials<T> value),
     @required TResult unregisteredUser(UnregisteredUser<T> value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult invalidCredentials(InvalidCredentials<T> value),

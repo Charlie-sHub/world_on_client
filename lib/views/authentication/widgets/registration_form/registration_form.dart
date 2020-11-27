@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kt_dart/kt.dart';
 import 'package:worldon/application/authentication/registration_form/registration_form_bloc.dart';
-import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/views/authentication/widgets/password_text_field.dart';
 import 'package:worldon/views/authentication/widgets/registration_form/birthday_button.dart';
 import 'package:worldon/views/authentication/widgets/registration_form/description_text_field.dart';
@@ -14,7 +12,6 @@ import 'package:worldon/views/authentication/widgets/registration_form/user_imag
 import 'package:worldon/views/authentication/widgets/registration_form/username_text_field.dart';
 import 'package:worldon/views/authentication/widgets/world_on_title.dart';
 import 'package:worldon/views/core/misc/string_constants.dart';
-import 'package:worldon/views/core/widget/misc/tag_addition_card/tag_addition_card.dart';
 
 import '../email_text_field.dart';
 
@@ -59,14 +56,6 @@ class RegistrationForm extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               const PasswordConfirmationTextField(),
-              const SizedBox(height: 8),
-              TagAdditionCard(
-                tagChangeFunction: (KtSet<Tag> tags) => context.bloc<RegistrationFormBloc>().add(
-                      RegistrationFormEvent.interestsChanged(
-                        tags.asSet().map((_tag) => _tag.id).toSet(),
-                      ),
-                    ),
-              ),
               const SizedBox(height: 8),
               EULACheckBox(),
               const SizedBox(height: 8),

@@ -43,7 +43,7 @@ class NotificationsBody extends StatelessWidget {
         child: BlocBuilder<NotificationsWatcherBloc, NotificationsWatcherState>(
           builder: (context, state) => state.map(
             initial: (_) => Container(),
-            loadInProgress: (_) => WorldOnProgressIndicator(),
+            loadInProgress: (_) => const WorldOnProgressIndicator(),
             loadSuccess: (state) => ListView.builder(
               physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.all(10),

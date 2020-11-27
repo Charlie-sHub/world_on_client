@@ -11,7 +11,7 @@
         android:label="worldon">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyC56nMuqNZ9eRl9tfHDmLAyUVqQ36EIokM" />
+            android:value="AIzaSyChg2AmomeyIKUqDsHGTMm9C-ExXbvaysc" />
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"

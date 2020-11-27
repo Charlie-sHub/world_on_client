@@ -6,11 +6,13 @@ abstract class ObjectiveFormState implements _$ObjectiveFormState {
     @required Objective objective,
     @required bool showErrorMessages,
     @required bool isSubmitting,
+    @required bool loadedCoordinates,
   }) = _ObjectiveFormState;
 
   factory ObjectiveFormState.initial() => ObjectiveFormState(
         objective: Objective.empty(),
         showErrorMessages: false,
         isSubmitting: false,
+        loadedCoordinates: false,
       );
 }
