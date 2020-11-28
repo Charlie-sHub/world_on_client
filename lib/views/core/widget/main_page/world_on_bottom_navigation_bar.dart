@@ -38,9 +38,7 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: const FaIcon(FontAwesomeIcons.plusCircle),
-          label: S
-            .of(context)
-            .bottomNavigationBarCreate,
+          label: S.of(context).bottomNavigationBarCreate,
           backgroundColor: Colors.orange,
         ),
         BottomNavigationBarItem(

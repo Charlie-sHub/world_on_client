@@ -478,9 +478,7 @@ const $MapControllerState = _$MapControllerStateTearOff();
 mixin _$MapControllerState {
   Coordinates get coordinates;
   KtList<Objective> get objectives;
-
   double get zoom;
-
   bool get loadedCoordinates;
 
   $MapControllerStateCopyWith<MapControllerState> get copyWith;

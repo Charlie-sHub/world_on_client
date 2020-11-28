@@ -41,7 +41,6 @@
   "password": "Password",
   "unknownError": "Unknown Error",
   "unauthorizedError": "You're not authorized to do that",
-  "errorMainPageBody": "Error",
   "addToLog": "Add to Log",
   "difficulty": "Difficulty",
   "dismissFromLog": "Dismiss from Log",

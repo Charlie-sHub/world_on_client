@@ -87,6 +87,7 @@ class _$SearchUsersByNameWatcherEventCopyWithImpl<$Res> implements $SearchUsersB
 /// @nodoc
 abstract class _$WatchUsersFoundByNameStartedCopyWith<$Res> {
   factory _$WatchUsersFoundByNameStartedCopyWith(_WatchUsersFoundByNameStarted value, $Res Function(_WatchUsersFoundByNameStarted) then) = __$WatchUsersFoundByNameStartedCopyWithImpl<$Res>;
+
   $Res call({SearchTerm name});
 }
 
@@ -200,6 +201,7 @@ abstract class _WatchUsersFoundByNameStarted implements SearchUsersByNameWatcher
 abstract class _$WatchUsersFoundByUsernameStartedCopyWith<$Res> {
   factory _$WatchUsersFoundByUsernameStartedCopyWith(_WatchUsersFoundByUsernameStarted value, $Res Function(_WatchUsersFoundByUsernameStarted) then) =
       __$WatchUsersFoundByUsernameStartedCopyWithImpl<$Res>;
+
   $Res call({SearchTerm username});
 }
 
@@ -312,6 +314,7 @@ abstract class _WatchUsersFoundByUsernameStarted implements SearchUsersByNameWat
 /// @nodoc
 abstract class _$SearchResultsReceivedCopyWith<$Res> {
   factory _$SearchResultsReceivedCopyWith(_SearchResultsReceived value, $Res Function(_SearchResultsReceived) then) = __$SearchResultsReceivedCopyWithImpl<$Res>;
+
   $Res call({Either<Failure, KtList<User>> failureOrUsers});
 }
 
@@ -417,6 +420,7 @@ abstract class _SearchResultsReceived implements SearchUsersByNameWatcherEvent {
   const factory _SearchResultsReceived(Either<Failure, KtList<User>> failureOrUsers) = _$_SearchResultsReceived;
 
   Either<Failure, KtList<User>> get failureOrUsers;
+
   _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith;
 }
 
@@ -699,6 +703,7 @@ abstract class _SearchInPorgress implements SearchUsersByNameWatcherState {
 /// @nodoc
 abstract class _$SearchSuccessCopyWith<$Res> {
   factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) = __$SearchSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<User> usersFound});
 }
 
@@ -815,6 +820,7 @@ abstract class _SearchSuccess implements SearchUsersByNameWatcherState {
 /// @nodoc
 abstract class _$SearchFailureCopyWith<$Res> {
   factory _$SearchFailureCopyWith(_SearchFailure value, $Res Function(_SearchFailure) then) = __$SearchFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

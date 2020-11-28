@@ -445,16 +445,6 @@ class S {
     );
   }
 
-  /// `Error`
-  String get errorMainPageBody {
-    return Intl.message(
-      'Error',
-      name: 'errorMainPageBody',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Add to Log`
   String get addToLog {
     return Intl.message(

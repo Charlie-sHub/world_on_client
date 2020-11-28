@@ -25,7 +25,7 @@ class SimpleTagErrorDisplay extends StatelessWidget {
         padding: const EdgeInsets.all(3),
         child: Text(
           tag.failureOption.fold(
-              () => S.of(context).noError,
+            () => S.of(context).noError,
             (failure) => failure.toString(),
           ),
           style: const TextStyle(

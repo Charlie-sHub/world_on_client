@@ -77,18 +77,11 @@ class TagCard extends StatelessWidget {
         dismissalFailure: (state) => FlushbarHelper.createError(
           duration: const Duration(seconds: 2),
           message: state.failure.maybeMap(
-            coreData: (failure) =>
-              failure.coreDataFailure.maybeMap(
-                serverError: (failure) => failure.errorString,
-                orElse: () =>
-                S
-                  .of(context)
-                  .unknownError,
-              ),
-            orElse: () =>
-            S
-              .of(context)
-              .unknownError,
+            coreData: (failure) => failure.coreDataFailure.maybeMap(
+              serverError: (failure) => failure.errorString,
+              orElse: () => S.of(context).unknownError,
+            ),
+            orElse: () => S.of(context).unknownError,
           ),
         ).show(context),
         orElse: () => null,

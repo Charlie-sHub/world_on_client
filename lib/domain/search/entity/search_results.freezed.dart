@@ -35,11 +35,8 @@ const $SearchResults = _$SearchResultsTearOff();
 /// @nodoc
 mixin _$SearchResults {
   Either<Failure, Set<Experience>> get experiencesFound;
-
   Either<Failure, Set<User>> get usersFoundByName;
-
   Either<Failure, Set<User>> get usersFoundByUserName;
-
   Either<Failure, Set<Tag>> get tagsFound;
 
   $SearchResultsCopyWith<SearchResults> get copyWith;
@@ -166,7 +163,6 @@ class _$_SearchResults extends _SearchResults with DiagnosticableTreeMixin {
 
 abstract class _SearchResults extends SearchResults {
   const _SearchResults._() : super._();
-
   const factory _SearchResults(
       {@required Either<Failure, Set<Experience>> experiencesFound,
       @required Either<Failure, Set<User>> usersFoundByName,
@@ -175,16 +171,12 @@ abstract class _SearchResults extends SearchResults {
 
   @override
   Either<Failure, Set<Experience>> get experiencesFound;
-
   @override
   Either<Failure, Set<User>> get usersFoundByName;
-
   @override
   Either<Failure, Set<User>> get usersFoundByUserName;
-
   @override
   Either<Failure, Set<Tag>> get tagsFound;
-
   @override
   _$SearchResultsCopyWith<_SearchResults> get copyWith;
 }

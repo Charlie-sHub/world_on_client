@@ -2326,16 +2326,12 @@ abstract class _RegistrationFormState implements RegistrationFormState {
 
   @override
   User get user;
-
   @override
   PasswordConfirmator get passwordConfirmator;
-
   @override
   String get passwordToCompare;
-
   @override
   bool get showErrorMessages;
-
   @override
   bool get isSubmitting;
   @override

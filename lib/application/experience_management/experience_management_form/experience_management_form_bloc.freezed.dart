@@ -1882,16 +1882,12 @@ abstract class _ExperienceManagementFormState implements ExperienceManagementFor
 
   @override
   Experience get experience;
-
   @override
   bool get showErrorMessages;
-
   @override
   bool get isEditing;
-
   @override
   bool get isSubmitting;
-
   @override
   bool get loadedCoordinates;
 

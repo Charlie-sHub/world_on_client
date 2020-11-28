@@ -53,7 +53,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "emailAlreadyInUse": MessageLookupByLibrary.simpleMessage("The email is already in use"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
         "errorCardTitle": MessageLookupByLibrary.simpleMessage("Invalid"),
-        "errorMainPageBody": MessageLookupByLibrary.simpleMessage("Error"),
         "eulaCheckBoxTitle": MessageLookupByLibrary.simpleMessage("Do you agree with our terms and services?"),
         "experience": MessageLookupByLibrary.simpleMessage("Experience"),
         "experienceCreationTitle": MessageLookupByLibrary.simpleMessage("Create a new Experience!"),

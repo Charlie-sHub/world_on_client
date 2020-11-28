@@ -713,9 +713,7 @@ const $ObjectiveFormState = _$ObjectiveFormStateTearOff();
 mixin _$ObjectiveFormState {
   Objective get objective;
   bool get showErrorMessages;
-
   bool get isSubmitting;
-
   bool get loadedCoordinates;
 
   $ObjectiveFormStateCopyWith<ObjectiveFormState> get copyWith;

@@ -64,9 +64,7 @@ class TagManagementPage extends HookWidget {
             coreData: (_coreDataFailure) => _coreDataFailure.coreDataFailure.maybeMap(
               nameAlreadyInUse: (_) => FlushbarHelper.createError(
                 duration: const Duration(seconds: 2),
-                message: S
-                  .of(context)
-                  .tagCreationNameAlreadyInUse,
+                message: S.of(context).tagCreationNameAlreadyInUse,
               ).show(context),
               serverError: (failure) => FlushbarHelper.createError(
                 duration: const Duration(seconds: 2),
