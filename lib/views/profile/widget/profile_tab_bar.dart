@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ProfileTabBar extends StatelessWidget implements PreferredSizeWidget {
@@ -12,25 +13,25 @@ class ProfileTabBar extends StatelessWidget implements PreferredSizeWidget {
       color: WorldOnColors.white,
       // Don't like the idea of having this hardcoded, but i can't find any other way to thing out the tabBar
       height: 52,
-      child: const TabBar(
+      child: TabBar(
         labelColor: WorldOnColors.background,
-        labelPadding: EdgeInsets.all(2),
+        labelPadding: const EdgeInsets.all(2),
         indicatorColor: WorldOnColors.primary,
         tabs: [
           Tab(
-            iconMargin: EdgeInsets.all(2),
-            icon: Icon(Icons.explore),
-            text: "Experiences",
+            iconMargin: const EdgeInsets.all(2),
+            icon: const Icon(Icons.explore),
+            text: S.of(context).experiences,
           ),
           Tab(
-            iconMargin: EdgeInsets.all(2),
-            icon: Icon(Icons.account_circle),
-            text: "Relations",
+            iconMargin: const EdgeInsets.all(2),
+            icon: const Icon(Icons.account_circle),
+            text: S.of(context).profileRelationTab,
           ),
           Tab(
-            iconMargin: EdgeInsets.all(2),
-            icon: Icon(Icons.stars),
-            text: "Achievements",
+            iconMargin: const EdgeInsets.all(2),
+            icon: const Icon(Icons.stars),
+            text: S.of(context).profileAchievementsTab,
           ),
         ],
       ),

@@ -7,6 +7,7 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/validation/objects/latitude.dart';
 import 'package:worldon/domain/core/validation/objects/longitude.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/widget/misc/world_on_progress_indicator.dart';
 
 class MapTabView extends StatelessWidget {
@@ -25,7 +26,15 @@ class MapTabView extends StatelessWidget {
               mapType: MapType.hybrid,
               myLocationEnabled: true,
               mapToolbarEnabled: false,
-              markers: state.objectives.asList().map(_mapObjectiveToMarker).toSet(),
+              markers: state.objectives
+                  .asList()
+                  .map(
+                    (_objective) => _mapObjectiveToMarker(
+                      _objective,
+                      context,
+                    ),
+                  )
+                  .toSet(),
               onCameraMove: (position) => _onCameraMoved(
                 context,
                 position,
@@ -43,7 +52,7 @@ class MapTabView extends StatelessWidget {
     );
   }
 
-  Marker _mapObjectiveToMarker(Objective _objective) {
+  Marker _mapObjectiveToMarker(Objective _objective, BuildContext context) {
     return Marker(
       markerId: MarkerId(_objective.id.toString()),
       position: LatLng(
@@ -55,7 +64,7 @@ class MapTabView extends StatelessWidget {
         // Tried that before but leads to some odd behaviour
         // Gotta look into it more carefully later
         title: _objective.description.getOrCrash(),
-        snippet: "Tap to complete",
+        snippet: S.of(context).mapMarkerSnippet,
       ),
     );
   }

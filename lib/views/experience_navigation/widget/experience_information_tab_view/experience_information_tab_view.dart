@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/common_functions/get_color_by_difficulty.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widget/cards/simple_tag_display.dart';
@@ -44,9 +45,9 @@ class ExperienceInformationTabView extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    const Text(
-                      "Difficulty:",
-                      style: TextStyle(
+                    Text(
+                      "${S.of(context).difficulty}: ",
+                      style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: WorldOnColors.background,
@@ -64,6 +65,7 @@ class ExperienceInformationTabView extends StatelessWidget {
                   ],
                 ),
                 Text(
+                  // TODO: Figure out a better way to show the date
                   "${experience.creationDate.getOrCrash().day.toString()}/${experience.creationDate.getOrCrash().month.toString()}/${experience.creationDate.getOrCrash().year.toString()}",
                   style: const TextStyle(
                     fontSize: 20,
@@ -86,12 +88,12 @@ class ExperienceInformationTabView extends StatelessWidget {
               ],
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.all(5),
+          Padding(
+            padding: const EdgeInsets.all(5),
             child: Text(
-              "Rewards",
+              S.of(context).experienceInformationRewards,
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: WorldOnColors.background,
@@ -131,7 +133,7 @@ class ExperienceInformationTabView extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(5),
             child: Text(
-              "${experience.comments.length} comments",
+              "${experience.comments.length} ${S.of(context).experienceInformationCommentsNumber}",
               style: const TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.bold,

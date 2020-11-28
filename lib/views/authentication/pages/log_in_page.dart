@@ -5,9 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
 import 'package:worldon/application/authentication/log_in_form/log_in_form_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/authentication/widgets/log_in_form/log_in_form.dart';
-import 'package:worldon/views/core/misc/string_constants.dart';
 import 'package:worldon/views/core/routes/router.gr.dart';
 
 class LogInPage extends StatelessWidget {
@@ -37,17 +37,17 @@ class LogInPage extends StatelessWidget {
       duration: const Duration(seconds: 2),
       message: failure.maybeMap(
         authenticationDomain: (failure) => failure.authenticationDomainFailure.map(
-          cancelledByUser: (_) => "Cancelled",
+          cancelledByUser: (_) => S.of(context).cancelledByUser,
         ),
         authenticationData: (failure) => failure.authenticationDataFailure.map(
-          invalidCredentials: (_) => "Invalid Credentials",
-          unregisteredUser: (_) => "Please register first",
+          invalidCredentials: (_) => S.of(context).invalidCredentials,
+          unregisteredUser: (_) => S.of(context).unregisteredUser,
         ),
         coreData: (failure) => failure.coreDataFailure.maybeMap(
           serverError: (failure) => failure.errorString,
-          orElse: () => StringConst.unknownError,
+          orElse: () => S.of(context).unknownError,
         ),
-        orElse: () => StringConst.unknownError,
+        orElse: () => S.of(context).unknownError,
       ),
     ).show(context);
   }

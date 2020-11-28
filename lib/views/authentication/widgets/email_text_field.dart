@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/authentication/validator_typedef.dart';
 
 class EmailTextField extends StatelessWidget {
@@ -17,9 +18,9 @@ class EmailTextField extends StatelessWidget {
       onChanged: (value) => eventToAdd(value.trim()),
       validator: (_) => validator(_),
       autocorrect: false,
-      decoration: const InputDecoration(
-        labelText: "Email Address",
-        prefixIcon: Icon(Icons.email),
+      decoration: InputDecoration(
+        labelText: S.of(context).emailAddress,
+        prefixIcon: const Icon(Icons.email),
       ),
     );
   }

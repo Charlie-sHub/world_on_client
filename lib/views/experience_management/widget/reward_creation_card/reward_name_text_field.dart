@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_management/reward_form/reward_form_bloc.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
-import 'package:worldon/views/core/misc/string_constants.dart';
+import 'package:worldon/generated/l10n.dart';
 
 class RewardNameTextField extends StatelessWidget {
   final TextEditingController textController;
@@ -22,16 +22,17 @@ class RewardNameTextField extends StatelessWidget {
           ),
       validator: (_) => context.bloc<RewardFormBloc>().state.reward.name.value.fold(
             (failure) => failure.maybeMap(
-              emptyString: (_) => "The name can't be empty",
-              stringExceedsLength: (_) => "The name is too long",
-              stringWithInvalidCharacters: (_) => "The name has invalid characters",
-              orElse: () => StringConst.unknownError,
+              emptyString: (_) => S.of(context).nameEmptyString,
+              multiLineString: (_) => S.of(context).nameMultiLineString,
+              stringExceedsLength: (_) => S.of(context).nameStringExceedsLength,
+              stringWithInvalidCharacters: (_) => S.of(context).nameStringWithInvalidCharacters,
+              orElse: () => S.of(context).unknownError,
             ),
             (_) => null,
           ),
-      decoration: const InputDecoration(
-        labelText: "Name",
-        prefixIcon: Icon(Icons.priority_high),
+      decoration: InputDecoration(
+        labelText: S.of(context).name,
+        prefixIcon: const Icon(Icons.priority_high),
       ),
     );
   }

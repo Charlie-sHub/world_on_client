@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:unicorndial/unicorndial.dart';
 import 'package:worldon/application/search/search_users_by_name_watcher/search_users_by_name_watcher_bloc.dart';
 import 'package:worldon/domain/core/validation/objects/search_term.dart';
+import 'package:worldon/generated/l10n.dart';
 
 class SearchUsersUnicornDialer extends StatelessWidget {
   const SearchUsersUnicornDialer({
@@ -21,7 +22,7 @@ class SearchUsersUnicornDialer extends StatelessWidget {
       childButtons: [
         UnicornButton(
           hasLabel: true,
-          labelText: "Username",
+          labelText: S.of(context).username,
           currentButton: FloatingActionButton(
             heroTag: "username",
             mini: true,
@@ -33,7 +34,7 @@ class SearchUsersUnicornDialer extends StatelessWidget {
         ),
         UnicornButton(
           hasLabel: true,
-          labelText: "Name",
+          labelText: S.of(context).name,
           currentButton: FloatingActionButton(
             heroTag: "name",
             mini: true,

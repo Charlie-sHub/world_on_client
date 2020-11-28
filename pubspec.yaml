@@ -97,9 +97,8 @@ dependencies:
   google_maps_flutter:
   # For localization
   intl: 0.16.1
-
-flutter_localizations:
-  sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:

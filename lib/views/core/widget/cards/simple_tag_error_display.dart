@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class SimpleTagErrorDisplay extends StatelessWidget {
@@ -24,7 +25,7 @@ class SimpleTagErrorDisplay extends StatelessWidget {
         padding: const EdgeInsets.all(3),
         child: Text(
           tag.failureOption.fold(
-            () => "",
+              () => S.of(context).noError,
             (failure) => failure.toString(),
           ),
           style: const TextStyle(

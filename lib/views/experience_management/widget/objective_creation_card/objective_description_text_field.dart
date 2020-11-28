@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_management/objective_form/objective_form_bloc.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
-import 'package:worldon/views/core/misc/string_constants.dart';
+import 'package:worldon/generated/l10n.dart';
 
 class ObjectiveDescriptionTextField extends StatelessWidget {
   final TextEditingController textController;
@@ -22,17 +22,17 @@ class ObjectiveDescriptionTextField extends StatelessWidget {
           ),
       validator: (_) => context.bloc<ObjectiveFormBloc>().state.objective.description.value.fold(
             (failure) => failure.maybeMap(
-              emptyString: (_) => "The description can't be empty",
-              stringExceedsLength: (_) => "The description is too long",
-              stringWithInvalidCharacters: (_) => "The description has invalid characters",
-              orElse: () => StringConst.unknownError,
+              emptyString: (_) => S.of(context).descriptionEmptyString,
+              stringExceedsLength: (_) => S.of(context).descriptionStringExceedsLength,
+              stringWithInvalidCharacters: (_) => S.of(context).descriptionStringWithInvalidCharacters,
+              orElse: () => S.of(context).unknownError,
             ),
             (_) => null,
           ),
       maxLines: 2,
-      decoration: const InputDecoration(
-        labelText: "Description",
-        prefixIcon: Icon(Icons.description),
+      decoration: InputDecoration(
+        labelText: S.of(context).description,
+        prefixIcon: const Icon(Icons.description),
       ),
     );
   }

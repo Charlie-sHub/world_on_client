@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:worldon/application/tag_management/tag_management_form/tag_management_form_bloc.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/tag_management/widgets/tag_management_form.dart';
 
@@ -22,10 +23,10 @@ class TagManagementPage extends HookWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text(
-          "Create a new Tag!",
+        title: Text(
+          S.of(context).tagCreationTitle,
           textAlign: TextAlign.center,
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 25,
           ),
@@ -63,7 +64,9 @@ class TagManagementPage extends HookWidget {
             coreData: (_coreDataFailure) => _coreDataFailure.coreDataFailure.maybeMap(
               nameAlreadyInUse: (_) => FlushbarHelper.createError(
                 duration: const Duration(seconds: 2),
-                message: "The tag already exists",
+                message: S
+                  .of(context)
+                  .tagCreationNameAlreadyInUse,
               ).show(context),
               serverError: (failure) => FlushbarHelper.createError(
                 duration: const Duration(seconds: 2),
@@ -71,12 +74,16 @@ class TagManagementPage extends HookWidget {
               ).show(context),
               orElse: () => FlushbarHelper.createError(
                 duration: const Duration(seconds: 2),
-                message: "Unknown core data error",
+                message: S
+                  .of(context)
+                  .unknownCoreDataError,
               ).show(context),
             ),
             orElse: () => FlushbarHelper.createError(
               duration: const Duration(seconds: 2),
-              message: "Unknown error",
+              message: S
+                .of(context)
+                .unknownError,
             ).show(context),
           ),
           (_) {
@@ -86,7 +93,9 @@ class TagManagementPage extends HookWidget {
                 );
             FlushbarHelper.createSuccess(
               duration: const Duration(seconds: 2),
-              message: "The Tag was created",
+              message: S
+                .of(context)
+                .tagCreationSuccessMessage,
             ).show(context);
           },
         ),

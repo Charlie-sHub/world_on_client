@@ -7,8 +7,8 @@ import 'package:worldon/application/comments/comment_form/comment_form_bloc.dart
 import 'package:worldon/application/comments/comment_watcher/comment_watcher_bloc.dart';
 import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
-import 'package:worldon/views/core/misc/string_constants.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class CommentForm extends HookWidget {
@@ -54,10 +54,10 @@ class CommentForm extends HookWidget {
                       ),
                   validator: (_) => context.bloc<CommentFormBloc>().state.comment.content.value.fold(
                         (failure) => failure.maybeMap(
-                          emptyString: (_) => "The comment can't be empty",
-                          stringExceedsLength: (_) => "The comment is too long",
-                          stringWithInvalidCharacters: (_) => "The comment has invalid characters",
-                          orElse: () => StringConst.unknownError,
+                          emptyString: (_) => S.of(context).commentEmptyString,
+                          stringExceedsLength: (_) => S.of(context).commentStringExceedsLength,
+                          stringWithInvalidCharacters: (_) => S.of(context).commentStringWithInvalidCharacters,
+                          orElse: () => S.of(context).unknownError,
                         ),
                         (_) => null,
                       ),
@@ -75,7 +75,7 @@ class CommentForm extends HookWidget {
                       },
                       color: WorldOnColors.primary,
                     ),
-                    labelText: "Comment",
+                    labelText: S.of(context).comment,
                     prefixIcon: const Icon(Icons.comment),
                   ),
                 ),
@@ -98,12 +98,12 @@ class CommentForm extends HookWidget {
               ).show(context),
               orElse: () => FlushbarHelper.createError(
                 duration: const Duration(seconds: 2),
-                message: "Unknown core data error",
+                message: S.of(context).unknownCoreDataError,
               ).show(context),
             ),
             orElse: () => FlushbarHelper.createError(
               duration: const Duration(seconds: 2),
-              message: "Unknown error",
+              message: S.of(context).unknownError,
             ).show(context),
           ),
           (_) {
@@ -116,7 +116,7 @@ class CommentForm extends HookWidget {
                 );
             FlushbarHelper.createSuccess(
               duration: const Duration(seconds: 2),
-              message: "The Comment was posted",
+              message: S.of(context).commentPostSuccess,
             ).show(context);
             context.bloc<CommentWatcherBloc>().add(
                   CommentWatcherEvent.watchExperienceCommentsStarted(experienceId),

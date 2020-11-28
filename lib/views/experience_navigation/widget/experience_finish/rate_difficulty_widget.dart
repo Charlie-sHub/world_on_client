@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_navigation/rate_experience_difficulty_actor/rate_experience_difficulty_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/common_functions/get_color_by_difficulty.dart';
-import 'package:worldon/views/core/misc/string_constants.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class RateDifficultyWidget extends StatelessWidget {
@@ -28,9 +28,9 @@ class RateDifficultyWidget extends StatelessWidget {
         child: BlocBuilder<RateExperienceDifficultyActorBloc, RateExperienceDifficultyActorState>(
           builder: (context, state) => Column(
             children: <Widget>[
-              const Text(
-                "How difficult was the experience?",
-                style: TextStyle(color: WorldOnColors.background),
+              Text(
+                S.of(context).difficultyQuestion,
+                style: const TextStyle(color: WorldOnColors.background),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -54,9 +54,9 @@ class RateDifficultyWidget extends StatelessWidget {
                       onPressed: () => context.bloc<RateExperienceDifficultyActorBloc>().add(
                             RateExperienceDifficultyActorEvent.difficultyRated(experience),
                           ),
-                      child: const Text(
-                        "Submit rating",
-                        style: TextStyle(
+                      child: Text(
+                        S.of(context).submitDifficultyRating,
+                        style: const TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                           color: WorldOnColors.white,
@@ -77,7 +77,7 @@ class RateDifficultyWidget extends StatelessWidget {
     if (state.isSubmitting) {
       FlushbarHelper.createLoading(
         duration: const Duration(seconds: 2),
-        message: "Action in progress",
+        message: S.of(context).actionInProgress,
         linearProgressIndicator: const LinearProgressIndicator(),
       ).show(context);
     }
@@ -88,14 +88,14 @@ class RateDifficultyWidget extends StatelessWidget {
           duration: const Duration(seconds: 2),
           message: failure.maybeMap(
             value: (failure) => failure.valueFailure.maybeMap(
-              integerOutOfBounds: (failure) => "Invalid difficulty value: ${failure.failedValue}",
-              orElse: () => StringConst.unknownError,
+              integerOutOfBounds: (failure) => "${S.of(context).difficultyOutOfBounds}: ${failure.failedValue}",
+              orElse: () => S.of(context).unknownError,
             ),
             coreData: (failure) => failure.coreDataFailure.maybeMap(
               serverError: (failure) => failure.errorString,
-              orElse: () => StringConst.unknownError,
+              orElse: () => S.of(context).unknownError,
             ),
-            orElse: () => StringConst.unknownError,
+            orElse: () => S.of(context).unknownError,
           ),
         ).show(context),
         (_) => null,

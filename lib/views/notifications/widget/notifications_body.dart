@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/notifications/notification_actor/notification_actor_bloc.dart';
 import 'package:worldon/application/notifications/notifications_watcher/notifications_watcher_bloc.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/widget/cards/error_card.dart';
 import 'package:worldon/views/core/widget/error/error_display.dart';
@@ -31,7 +32,7 @@ class NotificationsBody extends StatelessWidget {
           // Maybe the action in progress and success are not necessary to map
           actionInProgress: (_) => FlushbarHelper.createLoading(
             duration: const Duration(seconds: 2),
-            message: "Action in progress",
+            message: S.of(context).actionInProgress,
             linearProgressIndicator: const LinearProgressIndicator(),
           ).show(context),
           deletionFailure: (state) => FlushbarHelper.createError(
@@ -58,9 +59,9 @@ class NotificationsBody extends StatelessWidget {
                   );
                 } else {
                   return ErrorCard(
-                    entityType: "Notification",
+                    entityType: S.of(context).notification,
                     valueFailureString: _notification.failureOption.fold(
-                      () => "",
+                      () => S.of(context).noError,
                       (failure) => failure.toString(),
                     ),
                   );

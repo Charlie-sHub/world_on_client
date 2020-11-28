@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/profile/follow_actor/follow_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/widget/misc/follow_unfollow_button_builder/follow_button.dart';
 import 'package:worldon/views/core/widget/misc/follow_unfollow_button_builder/unfollow_button.dart';
 
@@ -54,13 +55,13 @@ class FollowUnfollowButtonBuilder extends StatelessWidget {
           message: state.failure.maybeMap(
             coreData: (failure) => failure.coreDataFailure.maybeMap(
               serverError: (failure) => failure.errorString,
-              orElse: () => "Unknown Error",
+              orElse: () => S.of(context).unknownError,
             ),
             profileDomain: (failure) => failure.profileDomainFailure.maybeMap(
               followItself: (_) => "You can't follow yourself",
-              orElse: () => "Unknown Error",
+              orElse: () => S.of(context).unknownError,
             ),
-            orElse: () => "Unknown Error",
+            orElse: () => S.of(context).unknownError,
           ),
         ).show(context),
         unFollowFailure: (state) => FlushbarHelper.createError(
@@ -68,9 +69,9 @@ class FollowUnfollowButtonBuilder extends StatelessWidget {
           message: state.failure.maybeMap(
             coreData: (failure) => failure.coreDataFailure.maybeMap(
               serverError: (failure) => failure.errorString,
-              orElse: () => "Unknown Error",
+              orElse: () => S.of(context).unknownError,
             ),
-            orElse: () => "Unknown Error",
+            orElse: () => S.of(context).unknownError,
           ),
         ).show(context),
         orElse: () => null,

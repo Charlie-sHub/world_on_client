@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:unicorndial/unicorndial.dart';
 import 'package:worldon/application/profile/profile_users_watcher/profile_users_watcher_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ProfileUsersUnicornDialer extends StatelessWidget {
@@ -22,7 +23,7 @@ class ProfileUsersUnicornDialer extends StatelessWidget {
       childButtons: [
         UnicornButton(
           hasLabel: true,
-          labelText: "Followed",
+          labelText: S.of(context).followedUsersDialer,
           currentButton: FloatingActionButton(
             heroTag: "followed",
             mini: true,
@@ -35,7 +36,7 @@ class ProfileUsersUnicornDialer extends StatelessWidget {
         ),
         UnicornButton(
           hasLabel: true,
-          labelText: "Following",
+          labelText: S.of(context).followingUsersDialer,
           currentButton: FloatingActionButton(
             heroTag: "following",
             mini: true,

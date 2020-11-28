@@ -6,7 +6,10 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 class RewardCard extends StatelessWidget {
   final Reward reward;
 
-  const RewardCard({Key key, @required this.reward}) : super(key: key);
+  const RewardCard({
+    Key key,
+    @required this.reward,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

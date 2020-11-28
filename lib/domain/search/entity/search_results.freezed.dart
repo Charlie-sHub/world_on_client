@@ -55,12 +55,12 @@ abstract class $SearchResultsCopyWith<$Res> {
 /// @nodoc
 class _$SearchResultsCopyWithImpl<$Res> implements $SearchResultsCopyWith<$Res> {
   _$SearchResultsCopyWithImpl(this._value, this._then);
-  
+
   final SearchResults _value;
-  
+
   // ignore: unused_field
   final $Res Function(SearchResults) _then;
-  
+
   @override
   $Res call({
     Object experiencesFound = freezed,
@@ -80,7 +80,7 @@ class _$SearchResultsCopyWithImpl<$Res> implements $SearchResultsCopyWith<$Res> 
 /// @nodoc
 abstract class _$SearchResultsCopyWith<$Res> implements $SearchResultsCopyWith<$Res> {
   factory _$SearchResultsCopyWith(_SearchResults value, $Res Function(_SearchResults) then) = __$SearchResultsCopyWithImpl<$Res>;
-  
+
   @override
   $Res call({Either<Failure, Set<Experience>> experiencesFound, Either<Failure, Set<User>> usersFoundByName, Either<Failure, Set<User>> usersFoundByUserName, Either<Failure, Set<Tag>> tagsFound});
 }
@@ -88,10 +88,10 @@ abstract class _$SearchResultsCopyWith<$Res> implements $SearchResultsCopyWith<$
 /// @nodoc
 class __$SearchResultsCopyWithImpl<$Res> extends _$SearchResultsCopyWithImpl<$Res> implements _$SearchResultsCopyWith<$Res> {
   __$SearchResultsCopyWithImpl(_SearchResults _value, $Res Function(_SearchResults) _then) : super(_value, (v) => _then(v as _SearchResults));
-  
+
   @override
   _SearchResults get _value => super._value as _SearchResults;
-  
+
   @override
   $Res call({
     Object experiencesFound = freezed,
@@ -111,11 +111,11 @@ class __$SearchResultsCopyWithImpl<$Res> extends _$SearchResultsCopyWithImpl<$Re
 /// @nodoc
 class _$_SearchResults extends _SearchResults with DiagnosticableTreeMixin {
   const _$_SearchResults({@required this.experiencesFound, @required this.usersFoundByName, @required this.usersFoundByUserName, @required this.tagsFound})
-    : assert(experiencesFound != null),
-      assert(usersFoundByName != null),
-      assert(usersFoundByUserName != null),
-      assert(tagsFound != null),
-      super._();
+      : assert(experiencesFound != null),
+        assert(usersFoundByName != null),
+        assert(usersFoundByUserName != null),
+        assert(tagsFound != null),
+        super._();
 
   @override
   final Either<Failure, Set<Experience>> experiencesFound;
@@ -145,11 +145,11 @@ class _$_SearchResults extends _SearchResults with DiagnosticableTreeMixin {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _SearchResults &&
-        (identical(other.experiencesFound, experiencesFound) || const DeepCollectionEquality().equals(other.experiencesFound, experiencesFound)) &&
-        (identical(other.usersFoundByName, usersFoundByName) || const DeepCollectionEquality().equals(other.usersFoundByName, usersFoundByName)) &&
-        (identical(other.usersFoundByUserName, usersFoundByUserName) || const DeepCollectionEquality().equals(other.usersFoundByUserName, usersFoundByUserName)) &&
-        (identical(other.tagsFound, tagsFound) || const DeepCollectionEquality().equals(other.tagsFound, tagsFound)));
+        (other is _SearchResults &&
+            (identical(other.experiencesFound, experiencesFound) || const DeepCollectionEquality().equals(other.experiencesFound, experiencesFound)) &&
+            (identical(other.usersFoundByName, usersFoundByName) || const DeepCollectionEquality().equals(other.usersFoundByName, usersFoundByName)) &&
+            (identical(other.usersFoundByUserName, usersFoundByUserName) || const DeepCollectionEquality().equals(other.usersFoundByUserName, usersFoundByUserName)) &&
+            (identical(other.tagsFound, tagsFound) || const DeepCollectionEquality().equals(other.tagsFound, tagsFound)));
   }
 
   @override
@@ -159,7 +159,7 @@ class _$_SearchResults extends _SearchResults with DiagnosticableTreeMixin {
       const DeepCollectionEquality().hash(usersFoundByName) ^
       const DeepCollectionEquality().hash(usersFoundByUserName) ^
       const DeepCollectionEquality().hash(tagsFound);
-  
+
   @override
   _$SearchResultsCopyWith<_SearchResults> get copyWith => __$SearchResultsCopyWithImpl<_SearchResults>(this, _$identity);
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/comments/comment_watcher/comment_watcher_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widget/cards/error_card.dart';
@@ -39,7 +40,7 @@ class ExperienceCommentsListView extends StatelessWidget {
             BlocBuilder<CommentWatcherBloc, CommentWatcherState>(
               builder: (context, state) => state.map(
                 initial: (_) => Container(),
-                loadInProgress: (_) => WorldOnProgressIndicator(),
+                loadInProgress: (_) => const WorldOnProgressIndicator(),
                 loadSuccess: (state) => RefreshIndicator(
                   onRefresh: () async => context.bloc<CommentWatcherBloc>().add(
                         CommentWatcherEvent.watchExperienceCommentsStarted(experience.id),
@@ -59,9 +60,9 @@ class ExperienceCommentsListView extends StatelessWidget {
                         );
                       } else {
                         return ErrorCard(
-                          entityType: "Comment",
+                          entityType: S.of(context).comment,
                           valueFailureString: _comment.failureOption.fold(
-                            () => "",
+                            () => S.of(context).noError,
                             (failure) => failure.toString(),
                           ),
                         );

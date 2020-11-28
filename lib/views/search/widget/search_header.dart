@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/search/search_by_name_form/search_by_name_form_bloc.dart';
-import 'package:worldon/views/core/misc/string_constants.dart';
+import 'package:worldon/generated/l10n.dart';
 
 class SearchHeader extends StatelessWidget {
   const SearchHeader({
@@ -19,13 +19,13 @@ class SearchHeader extends StatelessWidget {
               onChanged: (value) => context.bloc<SearchByNameFormBloc>().add(
                     SearchByNameFormEvent.searchTermChanged(value.trim()),
                   ),
-              decoration: const InputDecoration(
-                labelText: "Search",
+              decoration: InputDecoration(
+                labelText: S.of(context).search,
               ),
               validator: (_) => context.bloc<SearchByNameFormBloc>().state.searchTerm.value.fold(
                     (failure) => failure.maybeMap(
-                      emptyString: (_) => "The search term can't be empty",
-                      orElse: () => StringConst.unknownError,
+                      emptyString: (_) => S.of(context).searchTermEmptyString,
+                      orElse: () => S.of(context).unknownError,
                     ),
                     (_) => null,
                   ),

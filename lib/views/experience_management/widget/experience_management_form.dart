@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/widget/misc/tag_addition_card/tag_addition_card.dart';
 import 'package:worldon/views/experience_management/widget/description_form_field.dart';
 import 'package:worldon/views/experience_management/widget/difficulty_slider.dart';
@@ -29,10 +30,10 @@ class ExperienceManagementForm extends StatelessWidget {
               const SizedBox(height: 10),
               PicturesSelector(),
               const SizedBox(height: 20),
-              const Text(
-                "Set the initial difficulty",
+              Text(
+                S.of(context).setExperienceDifficulty,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 15,
                 ),
@@ -45,10 +46,10 @@ class ExperienceManagementForm extends StatelessWidget {
               const SizedBox(height: 10),
               const ObjectiveCreationCard(),
               if (context.bloc<ExperienceManagementFormBloc>().state.showErrorMessages && !context.bloc<ExperienceManagementFormBloc>().state.experience.objectives.isValid())
-                const Text(
-                  "You have to create at least one objective",
+                Text(
+                  S.of(context).noObjectivesErrorMessage,
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.red),
+                  style: const TextStyle(color: Colors.red),
                 )
               else
                 Container(),

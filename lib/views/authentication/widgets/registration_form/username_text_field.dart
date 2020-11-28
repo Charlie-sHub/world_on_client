@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/registration_form/registration_form_bloc.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
-import 'package:worldon/views/core/misc/string_constants.dart';
+import 'package:worldon/generated/l10n.dart';
 
 class UsernameTextField extends StatelessWidget {
   const UsernameTextField({
@@ -13,9 +13,9 @@ class UsernameTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       maxLength: Name.maxLength,
-      decoration: const InputDecoration(
-        labelText: "Username",
-        prefixIcon: Icon(Icons.account_box),
+      decoration: InputDecoration(
+        labelText: S.of(context).username,
+        prefixIcon: const Icon(Icons.account_box),
       ),
       autocorrect: false,
       onChanged: (value) => context.bloc<RegistrationFormBloc>().add(
@@ -23,11 +23,11 @@ class UsernameTextField extends StatelessWidget {
           ),
       validator: (_) => context.bloc<RegistrationFormBloc>().state.user.username.value.fold(
             (failure) => failure.maybeMap(
-              emptyString: (_) => "The username can't be empty",
-              multiLineString: (_) => "The username can't be more than one line",
-              stringExceedsLength: (_) => "The username is too long",
-              stringWithInvalidCharacters: (_) => "The username has invalid characters",
-              orElse: () => StringConst.unknownError,
+              emptyString: (_) => S.of(context).usernameEmptyString,
+              multiLineString: (_) => S.of(context).usernameMultiLineString,
+              stringExceedsLength: (_) => S.of(context).usernameStringExceedsLength,
+              stringWithInvalidCharacters: (_) => S.of(context).usernameStringWithInvalidCharacters,
+              orElse: () => S.of(context).unknownError,
             ),
             (_) => null,
           ),

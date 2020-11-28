@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_management/objective_form/objective_form_bloc.dart';
+import 'package:worldon/generated/l10n.dart';
 
 class SubmitObjectiveButton extends StatelessWidget {
   const SubmitObjectiveButton({
@@ -15,10 +16,10 @@ class SubmitObjectiveButton extends StatelessWidget {
           ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const <Widget>[
-          Icon(Icons.check),
-          SizedBox(width: 5),
-          Text("Submit"),
+        children: <Widget>[
+          const Icon(Icons.check),
+          const SizedBox(width: 5),
+          Text(S.of(context).submitButton),
         ],
       ),
     );

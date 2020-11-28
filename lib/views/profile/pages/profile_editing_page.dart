@@ -6,8 +6,8 @@ import 'package:worldon/application/authentication/authentication/authentication
 import 'package:worldon/application/profile/profile_editing_form/profile_editing_form_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
-import 'package:worldon/views/core/misc/string_constants.dart';
 import 'package:worldon/views/core/widget/error/critical_error_display.dart';
 import 'package:worldon/views/profile/widget/profile_editing_form/profile_editing_form.dart';
 
@@ -24,9 +24,9 @@ class ProfileEditingPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text(
-          "Editing Account",
-          style: TextStyle(
+        title: Text(
+          S.of(context).editingProfileTitle,
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 25,
           ),
@@ -75,15 +75,15 @@ class ProfileEditingPage extends StatelessWidget {
       message: failure.maybeMap(
         coreData: (failure) => failure.coreDataFailure.maybeMap(
           serverError: (failure) => failure.errorString,
-          emailAlreadyInUse: (_) => "The email is already in use",
-          usernameAlreadyInUse: (_) => "The username is already in use",
-          orElse: () => StringConst.unknownError,
+          emailAlreadyInUse: (_) => S.of(context).emailAlreadyInUse,
+          usernameAlreadyInUse: (_) => S.of(context).usernameAlreadyInUse,
+          orElse: () => S.of(context).unknownError,
         ),
         coreDomain: (failure) => failure.coreDomainFailure.maybeMap(
-          unAuthorizedError: (_) => StringConst.unauthorizedError,
-          orElse: () => StringConst.unknownError,
+          unAuthorizedError: (_) => S.of(context).unauthorizedError,
+          orElse: () => S.of(context).unknownError,
         ),
-        orElse: () => StringConst.unknownError,
+        orElse: () => S.of(context).unknownError,
       ),
     ).show(context);
   }

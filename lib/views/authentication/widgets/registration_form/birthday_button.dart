@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/registration_form/registration_form_bloc.dart';
+import 'package:worldon/generated/l10n.dart';
 
 class BirthdayButton extends StatelessWidget {
   const BirthdayButton({
@@ -22,7 +23,7 @@ class BirthdayButton extends StatelessWidget {
             );
       },
       // TODO: Show the selected date after selection or the failure
-      child: const Text("Select your birthday"),
+      child: Text(S.of(context).selectBirthday),
     );
   }
 }

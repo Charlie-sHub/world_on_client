@@ -7,6 +7,7 @@ import 'package:multi_image_picker/multi_image_picker.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/experience_management/widget/experience_management_form.dart';
 
@@ -23,10 +24,10 @@ class ExperienceManagementPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text(
-          "Create a new Experience!",
+        title: Text(
+          S.of(context).experienceCreationTitle,
           textAlign: TextAlign.center,
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 25,
           ),
@@ -57,7 +58,7 @@ class ExperienceManagementPage extends StatelessWidget {
         coreData: (_coreDataFailure) => _coreDataFailure.coreDataFailure.maybeMap(
           nameAlreadyInUse: (_) => FlushbarHelper.createError(
             duration: const Duration(seconds: 2),
-            message: "The title is already in use",
+            message: S.of(context).experienceTitleAlreadyInUse,
           ).show(context),
           serverError: (failure) => FlushbarHelper.createError(
             duration: const Duration(seconds: 2),
@@ -65,12 +66,12 @@ class ExperienceManagementPage extends StatelessWidget {
           ).show(context),
           orElse: () => FlushbarHelper.createError(
             duration: const Duration(seconds: 2),
-            message: "Unknown core data error",
+            message: S.of(context).unknownCoreDataError,
           ).show(context),
         ),
         orElse: () => FlushbarHelper.createError(
           duration: const Duration(seconds: 2),
-          message: "Unknown error",
+          message: S.of(context).unknownError,
         ).show(context),
       );
 

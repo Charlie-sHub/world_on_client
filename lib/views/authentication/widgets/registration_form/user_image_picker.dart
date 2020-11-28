@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:worldon/application/authentication/registration_form/registration_form_bloc.dart';
+import 'package:worldon/generated/l10n.dart';
 
 class UserImagePicker extends StatelessWidget {
   @override
@@ -20,10 +21,10 @@ class UserImagePicker extends StatelessWidget {
                   onPressed: () async => _pickImage(context),
                 ),
                 if (context.bloc<RegistrationFormBloc>().state.showErrorMessages)
-                  const Text(
-                    "Please select a picture",
+                  Text(
+                    S.of(context).pictureSelectionMessage,
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.red),
+                    style: const TextStyle(color: Colors.red),
                   )
                 else
                   Container(),

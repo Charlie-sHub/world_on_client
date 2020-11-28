@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/routes/router.gr.dart';
 import 'package:worldon/views/core/widget/main_page/world_on_app_bar.dart';
@@ -61,8 +62,8 @@ class MainPage extends StatelessWidget {
                           orElse: () => null,
                         ),
                   ),
-                  const Center(
-                    child: Text("Error"),
+                  Center(
+                    child: Text(S.of(context).error),
                   ),
                   const NotificationsBody(),
                 ],

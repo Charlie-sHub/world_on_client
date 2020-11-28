@@ -1,5 +1,6 @@
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ReportButton extends StatelessWidget {
@@ -17,7 +18,7 @@ class ReportButton extends StatelessWidget {
       ),
       onPressed: () => FlushbarHelper.createInformation(
         duration: const Duration(seconds: 2),
-        message: "This is just a placeholder",
+        message: S.of(context).placeholder,
       ).show(context),
     );
   }

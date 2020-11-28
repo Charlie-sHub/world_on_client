@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/profile/profile_editing_form/profile_editing_form_bloc.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
-import 'package:worldon/views/core/misc/string_constants.dart';
+import 'package:worldon/generated/l10n.dart';
 
 class NameTextFormField extends StatelessWidget {
   final String initialValue;
@@ -22,18 +22,18 @@ class NameTextFormField extends StatelessWidget {
           ),
       validator: (_) => context.bloc<ProfileEditingFormBloc>().state.user.name.value.fold(
             (failure) => failure.maybeMap(
-              emptyString: (_) => "The name can't be empty",
-              multiLineString: (_) => "The name can't be more than one line",
-              stringExceedsLength: (_) => "The name is too long",
-              stringWithInvalidCharacters: (_) => "The name has invalid characters",
-              orElse: () => StringConst.unknownError,
+              emptyString: (_) => S.of(context).nameEmptyString,
+              multiLineString: (_) => S.of(context).nameMultiLineString,
+              stringExceedsLength: (_) => S.of(context).nameStringExceedsLength,
+              stringWithInvalidCharacters: (_) => S.of(context).nameStringWithInvalidCharacters,
+              orElse: () => S.of(context).unknownError,
             ),
             (_) => null,
           ),
       autocorrect: false,
-      decoration: const InputDecoration(
-        labelText: "Name",
-        prefixIcon: Icon(Icons.assignment_ind),
+      decoration: InputDecoration(
+        labelText: S.of(context).name,
+        prefixIcon: const Icon(Icons.assignment_ind),
       ),
     );
   }

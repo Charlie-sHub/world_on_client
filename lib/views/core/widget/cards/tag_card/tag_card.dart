@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/tag_management/tag_card_actor/tag_card_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widget/cards/tag_card/dislike_tag_button.dart';
@@ -68,19 +69,26 @@ class TagCard extends StatelessWidget {
           message: state.failure.maybeMap(
             coreData: (failure) => failure.coreDataFailure.maybeMap(
               serverError: (failure) => failure.errorString,
-              orElse: () => "Unknown Error",
+              orElse: () => S.of(context).unknownError,
             ),
-            orElse: () => "Unknown Error",
+            orElse: () => S.of(context).unknownError,
           ),
         ).show(context),
         dismissalFailure: (state) => FlushbarHelper.createError(
           duration: const Duration(seconds: 2),
           message: state.failure.maybeMap(
-            coreData: (failure) => failure.coreDataFailure.maybeMap(
-              serverError: (failure) => failure.errorString,
-              orElse: () => "Unknown Error",
-            ),
-            orElse: () => "Unknown Error",
+            coreData: (failure) =>
+              failure.coreDataFailure.maybeMap(
+                serverError: (failure) => failure.errorString,
+                orElse: () =>
+                S
+                  .of(context)
+                  .unknownError,
+              ),
+            orElse: () =>
+            S
+              .of(context)
+              .unknownError,
           ),
         ).show(context),
         orElse: () => null,

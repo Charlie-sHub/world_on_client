@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:worldon/generated/l10n.dart';
 
 class LogInTroubleButton extends StatelessWidget {
   const LogInTroubleButton({
@@ -10,7 +11,7 @@ class LogInTroubleButton extends StatelessWidget {
     return FlatButton(
       // TODO: Add functionality for recovering account
       onPressed: () => null,
-      child: const Text("Having trouble logging in? tap here"),
+      child: Text(S.of(context).logInTrouble),
     );
   }
 }

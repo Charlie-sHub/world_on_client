@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/log_in_form/log_in_form_bloc.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/authentication/widgets/log_in_form/log_in_button.dart';
 import 'package:worldon/views/authentication/widgets/log_in_form/log_in_google_button.dart';
 import 'package:worldon/views/authentication/widgets/log_in_form/log_in_trouble_button.dart';
@@ -8,7 +9,6 @@ import 'package:worldon/views/authentication/widgets/log_in_form/register_button
 import 'package:worldon/views/authentication/widgets/log_in_form/world_on_logo_medium.dart';
 import 'package:worldon/views/authentication/widgets/password_text_field.dart';
 import 'package:worldon/views/authentication/widgets/world_on_title.dart';
-import 'package:worldon/views/core/misc/string_constants.dart';
 
 import '../email_text_field.dart';
 
@@ -63,12 +63,12 @@ class LogInForm extends StatelessWidget {
   String _passwordValidator(BuildContext context) {
     return context.bloc<LogInFormBloc>().state.password.value.fold(
           (failure) => failure.maybeMap(
-            emptyString: (_) => "The password can't be empty",
-            multiLineString: (_) => "The password can't be more than one line",
-            stringExceedsLength: (_) => "The password is too long",
+            emptyString: (_) => S.of(context).passwordEmptyString,
+            multiLineString: (_) => S.of(context).passwordMultiLineString,
+            stringExceedsLength: (_) => S.of(context).passwordStringExceedsLength,
             // Rather superfluous
-            invalidPassword: (_) => "The password is invalid",
-            orElse: () => StringConst.unknownError,
+            invalidPassword: (_) => S.of(context).invalidPassword,
+            orElse: () => S.of(context).unknownError,
           ),
           (_) => null,
         );
@@ -77,8 +77,8 @@ class LogInForm extends StatelessWidget {
   String _emailValidator(BuildContext context) {
     return context.bloc<LogInFormBloc>().state.email.value.fold(
           (failure) => failure.maybeMap(
-            invalidEmail: (_) => "The email is not valid",
-            orElse: () => StringConst.unknownError,
+            invalidEmail: (_) => S.of(context).invalidEmail,
+            orElse: () => S.of(context).unknownError,
           ),
           (_) => null,
         );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/profile/profile_editing_form/profile_editing_form_bloc.dart';
+import 'package:worldon/generated/l10n.dart';
 
 class BirthdayPicker extends StatelessWidget {
   const BirthdayPicker({
@@ -22,7 +23,7 @@ class BirthdayPicker extends StatelessWidget {
             );
       },
       // TODO: Make it so the text changes to the selected date after selection or the failure
-      child: const Text("Select your birthday"),
+      child: Text(S.of(context).selectBirthday),
     );
   }
 }

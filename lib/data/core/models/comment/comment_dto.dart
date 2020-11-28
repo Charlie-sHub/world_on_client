@@ -25,7 +25,7 @@ abstract class CommentDto implements _$CommentDto {
   }) = _CommentDto;
 
   factory CommentDto.fromDomain(Comment comment) => CommentDto(
-    id: comment.id.getOrCrash(),
+        id: comment.id.getOrCrash(),
         poster: UserDto.fromDomain(comment.poster),
         experienceId: comment.experienceId.getOrCrash(),
         content: comment.content.getOrCrash(),
@@ -33,15 +33,14 @@ abstract class CommentDto implements _$CommentDto {
         modificationDate: comment.modificationDate.getOrCrash(),
       );
 
-  Comment toDomain() =>
-    Comment(
-      id: UniqueId.fromUniqueString(id),
-      poster: poster.toDomain(),
-      experienceId: UniqueId.fromUniqueString(experienceId),
-      content: CommentContent(content),
-      creationDate: PastDate(creationDate),
-      modificationDate: PastDate(modificationDate),
-    );
+  Comment toDomain() => Comment(
+        id: UniqueId.fromUniqueString(id),
+        poster: poster.toDomain(),
+        experienceId: UniqueId.fromUniqueString(experienceId),
+        content: CommentContent(content),
+        creationDate: PastDate(creationDate),
+        modificationDate: PastDate(modificationDate),
+      );
 
   factory CommentDto.fromJson(Map<String, dynamic> json) => _$CommentDtoFromJson(json);
 

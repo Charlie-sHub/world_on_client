@@ -61,81 +61,67 @@ mixin _$RateExperienceDifficultyActorEvent {
 
 /// @nodoc
 abstract class $RateExperienceDifficultyActorEventCopyWith<$Res> {
-  factory $RateExperienceDifficultyActorEventCopyWith(RateExperienceDifficultyActorEvent value,
-    $Res Function(RateExperienceDifficultyActorEvent) then) =
-  _$RateExperienceDifficultyActorEventCopyWithImpl<$Res>;
+  factory $RateExperienceDifficultyActorEventCopyWith(RateExperienceDifficultyActorEvent value, $Res Function(RateExperienceDifficultyActorEvent) then) =
+      _$RateExperienceDifficultyActorEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$RateExperienceDifficultyActorEventCopyWithImpl<$Res>
-  implements $RateExperienceDifficultyActorEventCopyWith<$Res> {
+class _$RateExperienceDifficultyActorEventCopyWithImpl<$Res> implements $RateExperienceDifficultyActorEventCopyWith<$Res> {
   _$RateExperienceDifficultyActorEventCopyWithImpl(this._value, this._then);
-  
+
   final RateExperienceDifficultyActorEvent _value;
-  
+
   // ignore: unused_field
   final $Res Function(RateExperienceDifficultyActorEvent) _then;
 }
 
 /// @nodoc
 abstract class _$DifficultyChangedCopyWith<$Res> {
-  factory _$DifficultyChangedCopyWith(_DifficultyChanged value, $Res Function(_DifficultyChanged) then) =
-  __$DifficultyChangedCopyWithImpl<$Res>;
-  
+  factory _$DifficultyChangedCopyWith(_DifficultyChanged value, $Res Function(_DifficultyChanged) then) = __$DifficultyChangedCopyWithImpl<$Res>;
+
   $Res call({int difficultyRating});
 }
 
 /// @nodoc
-class __$DifficultyChangedCopyWithImpl<$Res> extends _$RateExperienceDifficultyActorEventCopyWithImpl<$Res>
-  implements _$DifficultyChangedCopyWith<$Res> {
-  __$DifficultyChangedCopyWithImpl(_DifficultyChanged _value, $Res Function(_DifficultyChanged) _then)
-    : super(_value, (v) => _then(v as _DifficultyChanged));
-  
+class __$DifficultyChangedCopyWithImpl<$Res> extends _$RateExperienceDifficultyActorEventCopyWithImpl<$Res> implements _$DifficultyChangedCopyWith<$Res> {
+  __$DifficultyChangedCopyWithImpl(_DifficultyChanged _value, $Res Function(_DifficultyChanged) _then) : super(_value, (v) => _then(v as _DifficultyChanged));
+
   @override
   _DifficultyChanged get _value => super._value as _DifficultyChanged;
-  
+
   @override
   $Res call({
     Object difficultyRating = freezed,
   }) {
     return _then(_DifficultyChanged(
-      difficultyRating == freezed
-        ? _value.difficultyRating
-        : difficultyRating as int,
+      difficultyRating == freezed ? _value.difficultyRating : difficultyRating as int,
     ));
   }
 }
 
 /// @nodoc
 class _$_DifficultyChanged implements _DifficultyChanged {
-  const _$_DifficultyChanged(this.difficultyRating)
-    : assert(difficultyRating != null);
-  
+  const _$_DifficultyChanged(this.difficultyRating) : assert(difficultyRating != null);
+
   @override
   final int difficultyRating;
-  
+
   @override
   String toString() {
     return 'RateExperienceDifficultyActorEvent.difficultyChanged(difficultyRating: $difficultyRating)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _DifficultyChanged &&
-        (identical(other.difficultyRating, difficultyRating) ||
-          const DeepCollectionEquality()
-            .equals(other.difficultyRating, difficultyRating)));
+        (other is _DifficultyChanged && (identical(other.difficultyRating, difficultyRating) || const DeepCollectionEquality().equals(other.difficultyRating, difficultyRating)));
   }
-  
+
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(difficultyRating);
-  
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(difficultyRating);
+
   @override
-  _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith =>
-    __$DifficultyChangedCopyWithImpl<_DifficultyChanged>(this, _$identity);
+  _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith => __$DifficultyChangedCopyWithImpl<_DifficultyChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -188,34 +174,30 @@ class _$_DifficultyChanged implements _DifficultyChanged {
   }
 }
 
-abstract class _DifficultyChanged
-  implements RateExperienceDifficultyActorEvent {
+abstract class _DifficultyChanged implements RateExperienceDifficultyActorEvent {
   const factory _DifficultyChanged(int difficultyRating) = _$_DifficultyChanged;
-  
+
   int get difficultyRating;
-  
+
   _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith;
 }
 
 /// @nodoc
 abstract class _$DifficultyRatedCopyWith<$Res> {
-  factory _$DifficultyRatedCopyWith(_DifficultyRated value, $Res Function(_DifficultyRated) then) =
-  __$DifficultyRatedCopyWithImpl<$Res>;
-  
+  factory _$DifficultyRatedCopyWith(_DifficultyRated value, $Res Function(_DifficultyRated) then) = __$DifficultyRatedCopyWithImpl<$Res>;
+
   $Res call({Experience experience});
-  
+
   $ExperienceCopyWith<$Res> get experience;
 }
 
 /// @nodoc
-class __$DifficultyRatedCopyWithImpl<$Res> extends _$RateExperienceDifficultyActorEventCopyWithImpl<$Res>
-  implements _$DifficultyRatedCopyWith<$Res> {
-  __$DifficultyRatedCopyWithImpl(_DifficultyRated _value, $Res Function(_DifficultyRated) _then)
-    : super(_value, (v) => _then(v as _DifficultyRated));
-  
+class __$DifficultyRatedCopyWithImpl<$Res> extends _$RateExperienceDifficultyActorEventCopyWithImpl<$Res> implements _$DifficultyRatedCopyWith<$Res> {
+  __$DifficultyRatedCopyWithImpl(_DifficultyRated _value, $Res Function(_DifficultyRated) _then) : super(_value, (v) => _then(v as _DifficultyRated));
+
   @override
   _DifficultyRated get _value => super._value as _DifficultyRated;
-  
+
   @override
   $Res call({
     Object experience = freezed,
@@ -250,20 +232,14 @@ class _$_DifficultyRated implements _DifficultyRated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-      (other is _DifficultyRated &&
-        (identical(other.experience, experience) ||
-          const DeepCollectionEquality()
-            .equals(other.experience, experience)));
+    return identical(this, other) || (other is _DifficultyRated && (identical(other.experience, experience) || const DeepCollectionEquality().equals(other.experience, experience)));
   }
 
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
   @override
-  _$DifficultyRatedCopyWith<_DifficultyRated> get copyWith =>
-    __$DifficultyRatedCopyWithImpl<_DifficultyRated>(this, _$identity);
+  _$DifficultyRatedCopyWith<_DifficultyRated> get copyWith => __$DifficultyRatedCopyWithImpl<_DifficultyRated>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -328,9 +304,7 @@ class _$RateExperienceDifficultyActorStateTearOff {
   const _$RateExperienceDifficultyActorStateTearOff();
 
 // ignore: unused_element
-  _RateExperienceDifficultyActorState call({@required int difficulty,
-    @required bool isSubmitting,
-    @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
+  _RateExperienceDifficultyActorState call({@required int difficulty, @required bool isSubmitting, @required Option<Either<Failure, Unit>> failureOrSuccessOption}) {
     return _RateExperienceDifficultyActorState(
       difficulty: difficulty,
       isSubmitting: isSubmitting,
@@ -341,42 +315,36 @@ class _$RateExperienceDifficultyActorStateTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $RateExperienceDifficultyActorState =
-_$RateExperienceDifficultyActorStateTearOff();
+const $RateExperienceDifficultyActorState = _$RateExperienceDifficultyActorStateTearOff();
 
 /// @nodoc
 mixin _$RateExperienceDifficultyActorState {
   int get difficulty;
-  
+
   bool get isSubmitting;
-  
+
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
-  
-  $RateExperienceDifficultyActorStateCopyWith<
-    RateExperienceDifficultyActorState> get copyWith;
+
+  $RateExperienceDifficultyActorStateCopyWith<RateExperienceDifficultyActorState> get copyWith;
 }
 
 /// @nodoc
 abstract class $RateExperienceDifficultyActorStateCopyWith<$Res> {
-  factory $RateExperienceDifficultyActorStateCopyWith(RateExperienceDifficultyActorState value,
-    $Res Function(RateExperienceDifficultyActorState) then) =
-  _$RateExperienceDifficultyActorStateCopyWithImpl<$Res>;
-  
-  $Res call({int difficulty,
-    bool isSubmitting,
-    Option<Either<Failure, Unit>> failureOrSuccessOption});
+  factory $RateExperienceDifficultyActorStateCopyWith(RateExperienceDifficultyActorState value, $Res Function(RateExperienceDifficultyActorState) then) =
+      _$RateExperienceDifficultyActorStateCopyWithImpl<$Res>;
+
+  $Res call({int difficulty, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
 }
 
 /// @nodoc
-class _$RateExperienceDifficultyActorStateCopyWithImpl<$Res>
-  implements $RateExperienceDifficultyActorStateCopyWith<$Res> {
+class _$RateExperienceDifficultyActorStateCopyWithImpl<$Res> implements $RateExperienceDifficultyActorStateCopyWith<$Res> {
   _$RateExperienceDifficultyActorStateCopyWithImpl(this._value, this._then);
-  
+
   final RateExperienceDifficultyActorState _value;
-  
+
   // ignore: unused_field
   final $Res Function(RateExperienceDifficultyActorState) _then;
-  
+
   @override
   $Res call({
     Object difficulty = freezed,
@@ -385,39 +353,29 @@ class _$RateExperienceDifficultyActorStateCopyWithImpl<$Res>
   }) {
     return _then(_value.copyWith(
       difficulty: difficulty == freezed ? _value.difficulty : difficulty as int,
-      isSubmitting:
-      isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
-      failureOrSuccessOption: failureOrSuccessOption == freezed
-        ? _value.failureOrSuccessOption
-        : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+      isSubmitting: isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      failureOrSuccessOption: failureOrSuccessOption == freezed ? _value.failureOrSuccessOption : failureOrSuccessOption as Option<Either<Failure, Unit>>,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$RateExperienceDifficultyActorStateCopyWith<$Res>
-  implements $RateExperienceDifficultyActorStateCopyWith<$Res> {
-  factory _$RateExperienceDifficultyActorStateCopyWith(_RateExperienceDifficultyActorState value,
-    $Res Function(_RateExperienceDifficultyActorState) then) =
-  __$RateExperienceDifficultyActorStateCopyWithImpl<$Res>;
-  
+abstract class _$RateExperienceDifficultyActorStateCopyWith<$Res> implements $RateExperienceDifficultyActorStateCopyWith<$Res> {
+  factory _$RateExperienceDifficultyActorStateCopyWith(_RateExperienceDifficultyActorState value, $Res Function(_RateExperienceDifficultyActorState) then) =
+      __$RateExperienceDifficultyActorStateCopyWithImpl<$Res>;
+
   @override
-  $Res call({int difficulty,
-    bool isSubmitting,
-    Option<Either<Failure, Unit>> failureOrSuccessOption});
+  $Res call({int difficulty, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
 }
 
 /// @nodoc
-class __$RateExperienceDifficultyActorStateCopyWithImpl<$Res> extends _$RateExperienceDifficultyActorStateCopyWithImpl<$Res>
-  implements _$RateExperienceDifficultyActorStateCopyWith<$Res> {
-  __$RateExperienceDifficultyActorStateCopyWithImpl(_RateExperienceDifficultyActorState _value,
-    $Res Function(_RateExperienceDifficultyActorState) _then)
-    : super(_value, (v) => _then(v as _RateExperienceDifficultyActorState));
-  
+class __$RateExperienceDifficultyActorStateCopyWithImpl<$Res> extends _$RateExperienceDifficultyActorStateCopyWithImpl<$Res> implements _$RateExperienceDifficultyActorStateCopyWith<$Res> {
+  __$RateExperienceDifficultyActorStateCopyWithImpl(_RateExperienceDifficultyActorState _value, $Res Function(_RateExperienceDifficultyActorState) _then)
+      : super(_value, (v) => _then(v as _RateExperienceDifficultyActorState));
+
   @override
-  _RateExperienceDifficultyActorState get _value =>
-    super._value as _RateExperienceDifficultyActorState;
-  
+  _RateExperienceDifficultyActorState get _value => super._value as _RateExperienceDifficultyActorState;
+
   @override
   $Res call({
     Object difficulty = freezed,
@@ -426,25 +384,19 @@ class __$RateExperienceDifficultyActorStateCopyWithImpl<$Res> extends _$RateExpe
   }) {
     return _then(_RateExperienceDifficultyActorState(
       difficulty: difficulty == freezed ? _value.difficulty : difficulty as int,
-      isSubmitting:
-      isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
-      failureOrSuccessOption: failureOrSuccessOption == freezed
-        ? _value.failureOrSuccessOption
-        : failureOrSuccessOption as Option<Either<Failure, Unit>>,
+      isSubmitting: isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      failureOrSuccessOption: failureOrSuccessOption == freezed ? _value.failureOrSuccessOption : failureOrSuccessOption as Option<Either<Failure, Unit>>,
     ));
   }
 }
 
 /// @nodoc
-class _$_RateExperienceDifficultyActorState
-  implements _RateExperienceDifficultyActorState {
-  const _$_RateExperienceDifficultyActorState({@required this.difficulty,
-    @required this.isSubmitting,
-    @required this.failureOrSuccessOption})
-    : assert(difficulty != null),
-      assert(isSubmitting != null),
-      assert(failureOrSuccessOption != null);
-  
+class _$_RateExperienceDifficultyActorState implements _RateExperienceDifficultyActorState {
+  const _$_RateExperienceDifficultyActorState({@required this.difficulty, @required this.isSubmitting, @required this.failureOrSuccessOption})
+      : assert(difficulty != null),
+        assert(isSubmitting != null),
+        assert(failureOrSuccessOption != null);
+
   @override
   final int difficulty;
   @override
@@ -460,50 +412,34 @@ class _$_RateExperienceDifficultyActorState
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _RateExperienceDifficultyActorState &&
-        (identical(other.difficulty, difficulty) ||
-          const DeepCollectionEquality()
-            .equals(other.difficulty, difficulty)) &&
-        (identical(other.isSubmitting, isSubmitting) ||
-          const DeepCollectionEquality()
-            .equals(other.isSubmitting, isSubmitting)) &&
-        (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
-          const DeepCollectionEquality().equals(
-            other.failureOrSuccessOption, failureOrSuccessOption)));
+        (other is _RateExperienceDifficultyActorState &&
+            (identical(other.difficulty, difficulty) || const DeepCollectionEquality().equals(other.difficulty, difficulty)) &&
+            (identical(other.isSubmitting, isSubmitting) || const DeepCollectionEquality().equals(other.isSubmitting, isSubmitting)) &&
+            (identical(other.failureOrSuccessOption, failureOrSuccessOption) || const DeepCollectionEquality().equals(other.failureOrSuccessOption, failureOrSuccessOption)));
   }
 
   @override
   int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(difficulty) ^
-    const DeepCollectionEquality().hash(isSubmitting) ^
-    const DeepCollectionEquality().hash(failureOrSuccessOption);
-  
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(difficulty) ^ const DeepCollectionEquality().hash(isSubmitting) ^ const DeepCollectionEquality().hash(failureOrSuccessOption);
+
   @override
-  _$RateExperienceDifficultyActorStateCopyWith<
-    _RateExperienceDifficultyActorState>
-  get copyWith =>
-    __$RateExperienceDifficultyActorStateCopyWithImpl<
-      _RateExperienceDifficultyActorState>(this, _$identity);
+  _$RateExperienceDifficultyActorStateCopyWith<_RateExperienceDifficultyActorState> get copyWith =>
+      __$RateExperienceDifficultyActorStateCopyWithImpl<_RateExperienceDifficultyActorState>(this, _$identity);
 }
 
-abstract class _RateExperienceDifficultyActorState
-  implements RateExperienceDifficultyActorState {
-  const factory _RateExperienceDifficultyActorState({@required int difficulty,
-    @required bool isSubmitting,
-    @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
-  _$_RateExperienceDifficultyActorState;
-  
+abstract class _RateExperienceDifficultyActorState implements RateExperienceDifficultyActorState {
+  const factory _RateExperienceDifficultyActorState({@required int difficulty, @required bool isSubmitting, @required Option<Either<Failure, Unit>> failureOrSuccessOption}) =
+      _$_RateExperienceDifficultyActorState;
+
   @override
   int get difficulty;
-  
+
   @override
   bool get isSubmitting;
-  
+
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
-  
+
   @override
-  _$RateExperienceDifficultyActorStateCopyWith<
-    _RateExperienceDifficultyActorState> get copyWith;
+  _$RateExperienceDifficultyActorStateCopyWith<_RateExperienceDifficultyActorState> get copyWith;
 }

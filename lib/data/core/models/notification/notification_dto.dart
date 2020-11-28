@@ -27,7 +27,7 @@ abstract class NotificationDto implements _$NotificationDto {
   }) = _NotificationDto;
 
   factory NotificationDto.fromDomain(Notification notification) => NotificationDto(
-    id: notification.id.getOrCrash(),
+        id: notification.id.getOrCrash(),
         sender: UserDto.fromDomain(notification.sender),
         receiver: UserDto.fromDomain(notification.receiver),
         description: notification.description.getOrCrash(),
@@ -36,16 +36,15 @@ abstract class NotificationDto implements _$NotificationDto {
         type: notification.type,
       );
 
-  Notification toDomain() =>
-    Notification(
-      id: UniqueId.fromUniqueString(id),
-      sender: sender.toDomain(),
-      receiver: receiver.toDomain(),
-      description: EntityDescription(description),
-      seen: seen,
-      creationDate: PastDate(creationDate),
-      type: type,
-    );
+  Notification toDomain() => Notification(
+        id: UniqueId.fromUniqueString(id),
+        sender: sender.toDomain(),
+        receiver: receiver.toDomain(),
+        description: EntityDescription(description),
+        seen: seen,
+        creationDate: PastDate(creationDate),
+        type: type,
+      );
 
   factory NotificationDto.fromJson(Map<String, dynamic> json) => _$NotificationDtoFromJson(json);
 

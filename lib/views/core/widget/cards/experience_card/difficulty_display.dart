@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/common_functions/get_color_by_difficulty.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
@@ -17,9 +18,9 @@ class DifficultyDisplay extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        const Text(
-          "Difficulty: ",
-          style: TextStyle(color: WorldOnColors.background),
+        Text(
+          "${S.of(context).difficulty}: ",
+          style: const TextStyle(color: WorldOnColors.background),
         ),
         const SizedBox(width: 5),
         Text(

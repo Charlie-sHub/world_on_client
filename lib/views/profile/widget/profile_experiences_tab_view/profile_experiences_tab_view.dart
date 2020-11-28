@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/profile/profile_experiences_watcher/profile_experiences_watcher_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/widget/cards/error_card.dart';
 import 'package:worldon/views/core/widget/cards/experience_card/experience_card.dart';
 import 'package:worldon/views/core/widget/error/error_display.dart';
@@ -44,9 +45,9 @@ class ProfileExperiencesTabView extends StatelessWidget {
                   );
                 } else {
                   return ErrorCard(
-                    entityType: "Experience",
+                    entityType: S.of(context).experience,
                     valueFailureString: _experience.failureOption.fold(
-                      () => "",
+                      () => S.of(context).noError,
                       (failure) => failure.toString(),
                     ),
                   );

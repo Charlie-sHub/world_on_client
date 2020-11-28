@@ -14,6 +14,8 @@ class NotificationsButton extends StatelessWidget {
         Icons.notifications_none,
         size: 30,
       ),
+      // TODO: Add bloc that checks for notifications
+      // ANd change the icon accordingly to show the user if it has new notifications
       onPressed: () => context.bloc<NavigationActorBloc>().add(
             const NavigationActorEvent.notificationsTapped(),
           ),

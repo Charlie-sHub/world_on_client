@@ -11,8 +11,6 @@ import 'package:worldon/views/profile/widget/profile_critical_failure.dart';
 
 import '../../../injection.dart';
 
-// TODO: Implement some way to always go to the own profile
-// Like a button in te appbar that will always take the user to its own profile
 class ProfileBody extends StatelessWidget {
   final Option<User> userOption;
   final bool currentUserProfile;

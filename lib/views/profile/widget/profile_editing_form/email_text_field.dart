@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/profile/profile_editing_form/profile_editing_form_bloc.dart';
-import 'package:worldon/views/core/misc/string_constants.dart';
+import 'package:worldon/generated/l10n.dart';
 
 class EmailTextField extends StatelessWidget {
   final String initialValue;
@@ -20,15 +20,15 @@ class EmailTextField extends StatelessWidget {
       initialValue: initialValue,
       validator: (_) => context.bloc<ProfileEditingFormBloc>().state.user.email.value.fold(
             (failure) => failure.maybeMap(
-              invalidEmail: (_) => "Invalid email",
-              orElse: () => StringConst.unknownError,
+              invalidEmail: (_) => S.of(context).invalidEmail,
+              orElse: () => S.of(context).unknownError,
             ),
             (_) => null,
           ),
       autocorrect: false,
-      decoration: const InputDecoration(
-        labelText: "Email Address",
-        prefixIcon: Icon(Icons.email),
+      decoration: InputDecoration(
+        labelText: S.of(context).emailAddress,
+        prefixIcon: const Icon(Icons.email),
       ),
     );
   }

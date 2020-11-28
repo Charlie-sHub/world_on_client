@@ -7,6 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
 import 'package:worldon/application/experience_management/objective_form/objective_form_bloc.dart';
 import 'package:worldon/application/experience_management/objectives_creation/objectives_creation_bloc.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widget/cards/error_card.dart';
@@ -40,10 +41,10 @@ class ObjectiveCreationCard extends HookWidget {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               const SizedBox(height: 5),
-              const Text(
-                "Create the Objectives",
+              Text(
+                S.of(context).objectiveCreationCardTitle,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 15,
                 ),
@@ -66,9 +67,9 @@ class ObjectiveCreationCard extends HookWidget {
                       );
                     } else {
                       return ErrorCard(
-                        entityType: "Objective",
+                        entityType: S.of(context).objective,
                         valueFailureString: _objective.failureOption.fold(
-                          () => "No error",
+                          () => S.of(context).noError,
                           (failure) => failure.toString(),
                         ),
                       );
@@ -108,10 +109,10 @@ class ObjectiveCreationCard extends HookWidget {
                                       onPressed: () async => _pickImage(context),
                                     ),
                                     if (context.bloc<ObjectiveFormBloc>().state.showErrorMessages && context.bloc<ObjectiveFormBloc>().state.objective.imageFile.isNone())
-                                      const Text(
-                                        "Please select a picture",
+                                      Text(
+                                        S.of(context).pictureSelectionMessage,
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(color: Colors.red),
+                                        style: const TextStyle(color: Colors.red),
                                       )
                                     else
                                       Container(),

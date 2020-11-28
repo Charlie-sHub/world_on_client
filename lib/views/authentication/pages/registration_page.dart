@@ -5,9 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
 import 'package:worldon/application/authentication/registration_form/registration_form_bloc.dart';
 import 'package:worldon/core/error/failure.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/authentication/widgets/registration_form/registration_form.dart';
-import 'package:worldon/views/core/misc/string_constants.dart';
 import 'package:worldon/views/core/routes/router.gr.dart';
 
 class RegistrationPage extends StatelessWidget {
@@ -40,11 +40,11 @@ class RegistrationPage extends StatelessWidget {
         message: failure.maybeMap(
           coreData: (failure) => failure.coreDataFailure.maybeMap(
             serverError: (failure) => failure.errorString,
-            emailAlreadyInUse: (_) => "The email is already in use",
-            usernameAlreadyInUse: (_) => "The username is already in use",
-            orElse: () => StringConst.unknownError,
+            emailAlreadyInUse: (_) => S.of(context).emailAlreadyInUse,
+            usernameAlreadyInUse: (_) => S.of(context).usernameAlreadyInUse,
+            orElse: () => S.of(context).unknownError,
           ),
-          orElse: () => StringConst.unknownError,
+          orElse: () => S.of(context).unknownError,
         ),
       ).show(context);
 

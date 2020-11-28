@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class NoExperienceView extends StatelessWidget {
@@ -13,19 +14,19 @@ class NoExperienceView extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
+          children: <Widget>[
             Text(
-              "No Experience chosen",
-              style: TextStyle(
+              S.of(context).experienceNavigationNoneChosenTitle,
+              style: const TextStyle(
                 color: WorldOnColors.red,
                 fontWeight: FontWeight.bold,
                 fontSize: 25,
               ),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Text(
-              "Please select an Experience to start the adventure of your life!",
-              style: TextStyle(
+              S.of(context).experienceNavigationNoneChosenDescription,
+              style: const TextStyle(
                 color: WorldOnColors.white,
                 fontWeight: FontWeight.bold,
                 fontSize: 20,

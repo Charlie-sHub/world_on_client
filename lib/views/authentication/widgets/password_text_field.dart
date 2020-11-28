@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/authentication/validator_typedef.dart';
 
 class PasswordTextField extends StatelessWidget {
@@ -16,10 +17,10 @@ class PasswordTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       maxLength: Password.maxLength,
-      decoration: const InputDecoration(
-        labelText: "Password",
+      decoration: InputDecoration(
+        labelText: S.of(context).password,
         counterText: "",
-        prefixIcon: Icon(Icons.lock),
+        prefixIcon: const Icon(Icons.lock),
       ),
       autocorrect: false,
       obscureText: true,

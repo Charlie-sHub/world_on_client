@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:worldon/core/error/failure.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class CriticalErrorDisplay extends StatelessWidget {
@@ -21,18 +22,18 @@ class CriticalErrorDisplay extends StatelessWidget {
           size: 70,
         ),
         const SizedBox(height: 10),
-        const Text(
-          "There's been a critical failure",
-          style: TextStyle(
+        Text(
+          S.of(context).criticalErrorDisplayTitle,
+          style: const TextStyle(
             fontSize: 25,
             fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 10),
-        const Text(
-          "Details:",
-          style: TextStyle(fontSize: 20),
+        Text(
+          "${S.of(context).details}: ",
+          style: const TextStyle(fontSize: 20),
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 5),
@@ -42,9 +43,9 @@ class CriticalErrorDisplay extends StatelessWidget {
           textAlign: TextAlign.justify,
         ),
         const SizedBox(height: 50),
-        const Text(
-          "Tap to try again",
-          style: TextStyle(fontSize: 16),
+        Text(
+          S.of(context).criticalErrorDisplayRetry,
+          style: const TextStyle(fontSize: 16),
           textAlign: TextAlign.center,
         ),
       ],

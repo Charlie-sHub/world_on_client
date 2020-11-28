@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/search/search_by_name_form/search_by_name_form_bloc.dart';
 import 'package:worldon/application/search/search_tags_by_name_watcher/search_tags_by_name_watcher_bloc.dart';
 import 'package:worldon/application/search/tag_selector/tag_selector_bloc.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widget/misc/tag_addition_card/tag_search_header.dart';
 import 'package:worldon/views/core/widget/misc/tag_addition_card/tag_selection.dart';
@@ -38,42 +39,42 @@ class TagAdditionCard extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(5),
             child: Column(
-              children: const <Widget>[
+              children: <Widget>[
                 Text(
-                  "Select Tags",
+                  S.of(context).searchTags,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 15,
                   ),
                 ),
-                SizedBox(height: 5),
-                Padding(
+                const SizedBox(height: 5),
+                const Padding(
                   padding: EdgeInsets.all(5),
                   child: TagSearchHeader(),
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Text(
-                  "Tags Found",
+                  S.of(context).tagAdditionFound,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 12,
                   ),
                 ),
-                SizedBox(height: 5),
-                TagsFoundView(),
-                SizedBox(height: 10),
+                const SizedBox(height: 5),
+                const TagsFoundView(),
+                const SizedBox(height: 10),
                 Text(
-                  "Tags Selected",
+                  S.of(context).tagAdditionSelected,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 12,
                   ),
                 ),
-                SizedBox(height: 5),
-                TagSelection(),
+                const SizedBox(height: 5),
+                const TagSelection(),
               ],
             ),
           ),

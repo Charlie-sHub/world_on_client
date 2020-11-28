@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logger/logger.dart';
 import 'package:multi_image_picker/multi_image_picker.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
+import 'package:worldon/generated/l10n.dart';
 
 class PicturesSelector extends StatelessWidget {
   final _logger = Logger();
@@ -21,10 +22,10 @@ class PicturesSelector extends StatelessWidget {
                 onPressed: () async => _pickImages(context),
               ),
               if (context.bloc<ExperienceManagementFormBloc>().state.showErrorMessages)
-                const Text(
-                  "Please select at least one picture",
+                Text(
+                  S.of(context).experiencePictureSelection,
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.red),
+                  style: const TextStyle(color: Colors.red),
                 )
               else
                 Container(),
@@ -77,9 +78,9 @@ class PicturesSelector extends StatelessWidget {
               () => [],
               id,
             ),
-        materialOptions: const MaterialOptions(
+        materialOptions: MaterialOptions(
           actionBarTitle: "World On",
-          allViewTitle: "All Photos",
+          allViewTitle: S.of(context).multiImagePickerAllViewTitle,
           useDetailsView: false,
         ),
       );

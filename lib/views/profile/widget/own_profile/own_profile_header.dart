@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/routes/router.gr.dart';
 import 'package:worldon/views/core/widget/misc/user_experience_info.dart';
@@ -65,7 +66,7 @@ class OwnProfileHeader extends StatelessWidget {
                     Routes.profileEditingPage,
                     arguments: ProfileEditingPageArguments(user: user),
                   ),
-                  child: const Text("Edit"),
+                  child: Text(S.of(context).profileEditingButton),
                 ),
               )
             ],

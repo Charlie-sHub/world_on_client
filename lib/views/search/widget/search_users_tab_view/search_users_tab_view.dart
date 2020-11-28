@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/search/search_by_name_form/search_by_name_form_bloc.dart';
 import 'package:worldon/application/search/search_users_by_name_watcher/search_users_by_name_watcher_bloc.dart';
 import 'package:worldon/domain/core/validation/objects/search_term.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/widget/cards/error_card.dart';
 import 'package:worldon/views/core/widget/cards/user_card/user_card.dart';
 import 'package:worldon/views/core/widget/error/error_display.dart';
@@ -41,9 +42,9 @@ class SearchUsersTabView extends StatelessWidget {
                 );
               } else {
                 return ErrorCard(
-                  entityType: "User",
+                  entityType: S.of(context).user,
                   valueFailureString: _user.failureOption.fold(
-                    () => "",
+                    () => S.of(context).noError,
                     (failure) => failure.toString(),
                   ),
                 );

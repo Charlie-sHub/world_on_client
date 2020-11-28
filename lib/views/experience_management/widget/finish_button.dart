@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class FinishButton extends StatelessWidget {
@@ -35,9 +36,9 @@ class FinishButton extends StatelessWidget {
                 borderRadius: BorderRadius.circular(0),
                 side: const BorderSide(color: WorldOnColors.primary),
               ),
-              child: const Text(
-                "Finish",
-                style: TextStyle(
+              child: Text(
+                S.of(context).experienceFinishButton,
+                style: const TextStyle(
                   color: WorldOnColors.background,
                   fontSize: 20,
                 ),

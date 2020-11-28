@@ -7,6 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
 import 'package:worldon/application/experience_management/reward_form/reward_form_bloc.dart';
 import 'package:worldon/application/experience_management/rewards_creation/rewards_creation_bloc.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widget/cards/error_card.dart';
@@ -41,10 +42,10 @@ class RewardCreationCard extends HookWidget {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               const SizedBox(height: 5),
-              const Text(
-                "Create the Rewards (optional)",
+              Text(
+                S.of(context).rewardCreationCardTitle,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 15,
                 ),
@@ -67,9 +68,9 @@ class RewardCreationCard extends HookWidget {
                       );
                     } else {
                       return ErrorCard(
-                        entityType: "Reward",
+                        entityType: S.of(context).reward,
                         valueFailureString: _reward.failureOption.fold(
-                          () => "No error",
+                          () => S.of(context).noError,
                           (failure) => failure.toString(),
                         ),
                       );
@@ -108,10 +109,10 @@ class RewardCreationCard extends HookWidget {
                                       onPressed: () async => _pickImage(context),
                                     ),
                                     if (context.bloc<RewardFormBloc>().state.showErrorMessages && context.bloc<RewardFormBloc>().state.reward.imageFile.isNone())
-                                      const Text(
-                                        "Please select a picture",
+                                      Text(
+                                        S.of(context).pictureSelectionMessage,
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(color: Colors.red),
+                                        style: const TextStyle(color: Colors.red),
                                       )
                                     else
                                       Container(),

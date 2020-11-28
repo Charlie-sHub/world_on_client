@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ErrorCard extends StatelessWidget {
@@ -21,7 +22,7 @@ class ErrorCard extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Text(
-              "Invalid $entityType",
+              "${S.of(context).invalid} $entityType",
               textAlign: TextAlign.center,
               style: const TextStyle(
                 fontSize: 15,
@@ -29,10 +30,10 @@ class ErrorCard extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 5),
-            const Text(
-              "Details:",
+            Text(
+              "${S.of(context).details}: ",
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 12,
                 color: WorldOnColors.white,
               ),

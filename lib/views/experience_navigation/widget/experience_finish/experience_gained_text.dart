@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ExperiencedGainedText extends StatelessWidget {
@@ -17,7 +18,7 @@ class ExperiencedGainedText extends StatelessWidget {
       child: Center(
         child: AutoSizeText.rich(
           TextSpan(
-            text: "You've gained: ",
+            text: "${S.of(context).experiencePointsGainedPre}: ",
             children: <TextSpan>[
               TextSpan(
                 text: "${experience.difficulty.getOrCrash() * 1000}",
@@ -32,7 +33,7 @@ class ExperiencedGainedText extends StatelessWidget {
                   ],
                 ),
               ),
-              const TextSpan(text: " experience points!"),
+              TextSpan(text: " ${S.of(context).experiencePointsGainedPost}"),
             ],
           ),
           style: const TextStyle(

@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/experience_navigation/widget/experience_finish/experience_gained_text.dart';
 import 'package:worldon/views/experience_navigation/widget/experience_finish/finish_button.dart';
@@ -34,10 +35,10 @@ class FinishSuccessView extends StatelessWidget {
           ),
           // TODO: Check that all the AutoSizeText have bounds
           // https://pub.dev/packages/auto_size_text#troubleshooting
-          const Text(
-            "Experience Finished!",
+          Text(
+            S.of(context).experienceFinishSuccessTitle,
             textAlign: TextAlign.center,
-            style: TextStyle(
+            style: const TextStyle(
               color: WorldOnColors.background,
               fontSize: 20,
             ),
@@ -52,12 +53,12 @@ class FinishSuccessView extends StatelessWidget {
               WorldOnStar(),
             ],
           ),
-          const Padding(
-            padding: EdgeInsets.all(5),
+          Padding(
+            padding: const EdgeInsets.all(5),
             child: Text(
-              "Rewards:",
+              "${S.of(context).rewardsGained}: ",
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: WorldOnColors.background,
@@ -69,9 +70,9 @@ class FinishSuccessView extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              const Text(
-                "Did you like it?",
-                style: TextStyle(color: WorldOnColors.background),
+              Text(
+                S.of(context).likeQuestion,
+                style: const TextStyle(color: WorldOnColors.background),
               ),
               Row(
                 children: <Widget>[

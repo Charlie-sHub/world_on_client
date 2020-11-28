@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/profile/block_actor/block_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/widget/misc/block_unblock_button_builder/block_button.dart';
 import 'package:worldon/views/core/widget/misc/block_unblock_button_builder/unblock_button.dart';
 
@@ -54,13 +55,13 @@ class BlockUnblockButtonBuilder extends StatelessWidget {
           message: state.failure.maybeMap(
             coreData: (failure) => failure.coreDataFailure.maybeMap(
               serverError: (failure) => failure.errorString,
-              orElse: () => "Unknown Error",
+              orElse: () => S.of(context).unknownError,
             ),
             profileDomain: (failure) => failure.profileDomainFailure.maybeMap(
               blockItself: (_) => "You can't block yourself",
-              orElse: () => "Unknown Error",
+              orElse: () => S.of(context).unknownError,
             ),
-            orElse: () => "Unknown Error",
+            orElse: () => S.of(context).unknownError,
           ),
         ).show(context),
         unBlockFailure: (state) => FlushbarHelper.createError(
@@ -68,9 +69,9 @@ class BlockUnblockButtonBuilder extends StatelessWidget {
           message: state.failure.maybeMap(
             coreData: (failure) => failure.coreDataFailure.maybeMap(
               serverError: (failure) => failure.errorString,
-              orElse: () => "Unknown Error",
+              orElse: () => S.of(context).unknownError,
             ),
-            orElse: () => "Unknown Error",
+            orElse: () => S.of(context).unknownError,
           ),
         ).show(context),
         orElse: () => null,
