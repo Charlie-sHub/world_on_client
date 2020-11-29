@@ -11,7 +11,10 @@ class LogInTroubleButton extends StatelessWidget {
     return FlatButton(
       // TODO: Add functionality for recovering account
       onPressed: () => null,
-      child: Text(S.of(context).logInTrouble),
+      child: Text(
+        S.of(context).logInTrouble,
+        textAlign: TextAlign.center,
+      ),
     );
   }
 }

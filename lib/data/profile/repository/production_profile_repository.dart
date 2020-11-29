@@ -11,6 +11,7 @@ import 'package:worldon/data/core/misc/cloud_storage/storage_folder_enum.dart';
 import 'package:worldon/data/core/misc/firebase_helpers.dart';
 import 'package:worldon/data/core/models/achievement/achievement_dto.dart';
 import 'package:worldon/data/core/models/experience/experience_dto.dart';
+import 'package:worldon/data/core/models/notification/notification_dto.dart';
 import 'package:worldon/data/core/models/tag/tag_dto.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
@@ -93,12 +94,71 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> editUser(User user) async {
     try {
+      // TODO: Move this to the backend
+      // Having the client propagate the update is not a very scalable solution
+      // It also highlights the problem of the current simplistic denormalization
+      // If we are to use Firestore or some of the NoSQL db in the future then we need to come up with a better data model
+      final _userId = user.id.getOrCrash();
+      final _experiencesToUpdateQuerySnapshot = await _firestore.experienceCollection
+          .where(
+            "creator.id",
+            isEqualTo: _userId,
+          )
+          .get();
+      final _experiencesToUpdateDocuments = _experiencesToUpdateQuerySnapshot.docs.map(
+        (_queryDocumentSnapshot) async => _queryDocumentSnapshot.reference.get(),
+      );
+      for (final _experienceDoc in _experiencesToUpdateDocuments) {
+        final _oldExperience = ExperienceDto.fromFirestore(await _experienceDoc).toDomain();
+        final _updatedExperience = _oldExperience.copyWith(creator: user);
+        final _updatedExperienceDto = ExperienceDto.fromDomain(_updatedExperience);
+        await _firestore.experienceCollection.doc(_updatedExperienceDto.id).update(
+              _updatedExperienceDto.toJson(),
+            );
+      }
+      final _notificationsToUpdateQuerySnapshotBySender = await _firestore.notificationCollection
+          .where(
+            "sender.id",
+            isEqualTo: _userId,
+          )
+          .get();
+      final _notificationsToUpdateDocumentsBySender = _notificationsToUpdateQuerySnapshotBySender.docs.map(
+        (_queryDocumentSnapshot) async => _queryDocumentSnapshot.reference.get(),
+      );
+      for (final _notificationDoc in _notificationsToUpdateDocumentsBySender) {
+        final _oldNotification = NotificationDto.fromFirestore(await _notificationDoc).toDomain();
+        final _updatedNotification = _oldNotification.copyWith(sender: user);
+        final _updatedNotificationDto = NotificationDto.fromDomain(_updatedNotification);
+        await _firestore.notificationCollection.doc(_updatedNotificationDto.id).update(
+              _updatedNotificationDto.toJson(),
+            );
+      }
+      final _notificationsToUpdateQuerySnapshotByReceiver = await _firestore.notificationCollection
+          .where(
+            "receiver.id",
+            isEqualTo: _userId,
+          )
+          .get();
+      final _notificationsToUpdateDocumentsByReceiver = _notificationsToUpdateQuerySnapshotByReceiver.docs.map(
+        (_queryDocumentSnapshot) async => _queryDocumentSnapshot.reference.get(),
+      );
+      for (final _notificationDoc in _notificationsToUpdateDocumentsByReceiver) {
+        final _oldNotification = NotificationDto.fromFirestore(await _notificationDoc).toDomain();
+        final _updatedNotification = _oldNotification.copyWith(receiver: user);
+        final _updatedNotificationDto = NotificationDto.fromDomain(_updatedNotification);
+        await _firestore.notificationCollection.doc(_updatedNotificationDto.id).update(
+              _updatedNotificationDto.toJson(),
+            );
+      }
+      // TODO: Update Comments
+      // Leaving that for now
+      // Having the client look through each Experience for each comment is a bit too much
       user.imageFileOption.fold(
         () async {
           final _jsonUser = UserDto.fromDomain(user).toJson();
           await _firestore.userCollection
               .doc(
-                user.id.getOrCrash(),
+                _userId,
               )
               .update(_jsonUser);
         },
@@ -106,14 +166,14 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           final _imageUrl = await getIt<CloudStorageService>().uploadFileImage(
             imageToUpload: _file,
             folder: StorageFolder.users,
-            name: user.id.getOrCrash(),
+            name: _userId,
           );
           final _jsonUser = UserDto.fromDomain(
             user.copyWith(
               imageURL: _imageUrl,
             ),
           ).toJson();
-          await _firestore.userCollection.doc(user.id.getOrCrash()).update(_jsonUser);
+          await _firestore.userCollection.doc(_userId).update(_jsonUser);
         },
       );
       return right(unit);
@@ -533,8 +593,8 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   Either<Failure, T> onFirebaseException<T>(FirebaseException e) {
     _logger.e("FirebaseException: ${e.message}");
     return left(
-      const Failure.coreData(
-        CoreDataFailure.serverError(errorString: "Unknown server error"),
+      Failure.coreData(
+        CoreDataFailure.serverError(errorString: "FirebaseException: ${e.message}"),
       ),
     );
   }

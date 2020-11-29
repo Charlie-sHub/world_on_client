@@ -43,9 +43,7 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: const FaIcon(FontAwesomeIcons.solidCompass),
-          label: S
-            .of(context)
-            .bottomNavigationBarExplore,
+          label: S.of(context).bottomNavigationBarExplore,
           backgroundColor: Colors.red,
         ),
         BottomNavigationBarItem(

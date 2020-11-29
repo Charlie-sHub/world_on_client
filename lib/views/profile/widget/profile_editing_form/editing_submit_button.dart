@@ -11,21 +11,41 @@ class EditingSubmitButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
-      onPressed: () => context.bloc<ProfileEditingFormBloc>().add(
-            const ProfileEditingFormEvent.submitted(),
-          ),
-      color: WorldOnColors.primary,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(0),
-        side: const BorderSide(color: WorldOnColors.primary),
-      ),
-      child: Text(
-        S.of(context).submitButton,
-        style: const TextStyle(
-          color: WorldOnColors.background,
-          fontSize: 20,
-        ),
+    return Padding(
+      padding: const EdgeInsets.all(10),
+      child: BlocBuilder<ProfileEditingFormBloc, ProfileEditingFormState>(
+        buildWhen: (previous, current) => previous.isSubmitting != current.isSubmitting,
+        builder: (context, state) {
+          if (state.isSubmitting) {
+            return const Center(
+              child: SizedBox(
+                width: 40,
+                height: 40,
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(WorldOnColors.primary),
+                ),
+              ),
+            );
+          } else {
+            return RaisedButton(
+              onPressed: () => context.bloc<ProfileEditingFormBloc>().add(
+                    const ProfileEditingFormEvent.submitted(),
+                  ),
+              color: WorldOnColors.primary,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(0),
+                side: const BorderSide(color: WorldOnColors.primary),
+              ),
+              child: Text(
+                S.of(context).submitButton,
+                style: const TextStyle(
+                  color: WorldOnColors.background,
+                  fontSize: 20,
+                ),
+              ),
+            );
+          }
+        },
       ),
     );
   }

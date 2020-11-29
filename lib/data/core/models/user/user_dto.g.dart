@@ -67,4 +67,4 @@ Map<String, dynamic> _$_$_UserDtoToJson(_$_UserDto instance) =>
     'experiencesToDoIds': instance.experiencesToDoIds?.toList(),
     'devices': instance.devices?.map((e) => e?.toJson())?.toList(),
     'systems': instance.systems?.map((e) => e?.toJson())?.toList(),
-    };
+  };

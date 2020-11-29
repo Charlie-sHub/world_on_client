@@ -72,9 +72,7 @@ class TagManagementPage extends HookWidget {
               ).show(context),
               orElse: () => FlushbarHelper.createError(
                 duration: const Duration(seconds: 2),
-                message: S
-                  .of(context)
-                  .unknownCoreDataError,
+                message: S.of(context).unknownCoreDataError,
               ).show(context),
             ),
             orElse: () => FlushbarHelper.createError(

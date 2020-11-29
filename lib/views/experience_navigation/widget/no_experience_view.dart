@@ -17,6 +17,7 @@ class NoExperienceView extends StatelessWidget {
           children: <Widget>[
             Text(
               S.of(context).experienceNavigationNoneChosenTitle,
+              textAlign: TextAlign.center,
               style: const TextStyle(
                 color: WorldOnColors.red,
                 fontWeight: FontWeight.bold,

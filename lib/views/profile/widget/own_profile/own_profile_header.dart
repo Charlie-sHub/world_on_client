@@ -1,6 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:worldon/application/profile/profile_watcher/profile_watcher_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
@@ -62,10 +65,18 @@ class OwnProfileHeader extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(5),
                 child: RaisedButton(
-                  onPressed: () => context.navigator.push(
-                    Routes.profileEditingPage,
-                    arguments: ProfileEditingPageArguments(user: user),
-                  ),
+                  onPressed: () => context.navigator
+                      .push(
+                        Routes.profileEditingPage,
+                        arguments: ProfileEditingPageArguments(user: user),
+                      )
+                      .then(
+                        (_) => context.bloc<ProfileWatcherBloc>().add(
+                              ProfileWatcherEvent.initializedForeignOrOwn(
+                                none(),
+                              ),
+                            ),
+                      ),
                   child: Text(S.of(context).profileEditingButton),
                 ),
               )
