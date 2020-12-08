@@ -77,9 +77,7 @@ class TagManagementPage extends HookWidget {
             ),
             orElse: () => FlushbarHelper.createError(
               duration: const Duration(seconds: 2),
-              message: S
-                .of(context)
-                .unknownError,
+              message: S.of(context).unknownError,
             ).show(context),
           ),
           (_) {

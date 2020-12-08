@@ -279,15 +279,15 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
     PastDate creationDate,
     PastDate modificationDate,
     Options options,
-      Set<UniqueId> blockedUsersIds,
-      Set<UniqueId> followedUsersIds,
-      Set<UniqueId> interestsIds,
-      Set<UniqueId> achievementsIds,
-      Set<UniqueId> experiencesDoneIds,
-      Set<UniqueId> experiencesLikedIds,
-      Set<UniqueId> experiencesToDoIds,
-      Set<Device> devices,
-      Set<System> systems});
+    Set<UniqueId> blockedUsersIds,
+    Set<UniqueId> followedUsersIds,
+    Set<UniqueId> interestsIds,
+    Set<UniqueId> achievementsIds,
+    Set<UniqueId> experiencesDoneIds,
+    Set<UniqueId> experiencesLikedIds,
+    Set<UniqueId> experiencesToDoIds,
+    Set<Device> devices,
+    Set<System> systems});
 
   @override
   $OptionsCopyWith<$Res> get options;

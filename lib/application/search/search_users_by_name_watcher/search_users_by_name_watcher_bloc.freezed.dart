@@ -75,36 +75,30 @@ abstract class $SearchUsersByNameWatcherEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SearchUsersByNameWatcherEventCopyWithImpl<$Res>
-  implements $SearchUsersByNameWatcherEventCopyWith<$Res> {
+class _$SearchUsersByNameWatcherEventCopyWithImpl<$Res> implements $SearchUsersByNameWatcherEventCopyWith<$Res> {
   _$SearchUsersByNameWatcherEventCopyWithImpl(this._value, this._then);
-  
+
   final SearchUsersByNameWatcherEvent _value;
-  
+
   // ignore: unused_field
   final $Res Function(SearchUsersByNameWatcherEvent) _then;
 }
 
 /// @nodoc
 abstract class _$WatchUsersFoundByNameStartedCopyWith<$Res> {
-  factory _$WatchUsersFoundByNameStartedCopyWith(_WatchUsersFoundByNameStarted value,
-    $Res Function(_WatchUsersFoundByNameStarted) then) =
-  __$WatchUsersFoundByNameStartedCopyWithImpl<$Res>;
-  
+  factory _$WatchUsersFoundByNameStartedCopyWith(_WatchUsersFoundByNameStarted value, $Res Function(_WatchUsersFoundByNameStarted) then) = __$WatchUsersFoundByNameStartedCopyWithImpl<$Res>;
+
   $Res call({SearchTerm name});
 }
 
 /// @nodoc
-class __$WatchUsersFoundByNameStartedCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherEventCopyWithImpl<$Res>
-  implements _$WatchUsersFoundByNameStartedCopyWith<$Res> {
-  __$WatchUsersFoundByNameStartedCopyWithImpl(_WatchUsersFoundByNameStarted _value,
-    $Res Function(_WatchUsersFoundByNameStarted) _then)
-    : super(_value, (v) => _then(v as _WatchUsersFoundByNameStarted));
-  
+class __$WatchUsersFoundByNameStartedCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherEventCopyWithImpl<$Res> implements _$WatchUsersFoundByNameStartedCopyWith<$Res> {
+  __$WatchUsersFoundByNameStartedCopyWithImpl(_WatchUsersFoundByNameStarted _value, $Res Function(_WatchUsersFoundByNameStarted) _then)
+      : super(_value, (v) => _then(v as _WatchUsersFoundByNameStarted));
+
   @override
-  _WatchUsersFoundByNameStarted get _value =>
-    super._value as _WatchUsersFoundByNameStarted;
-  
+  _WatchUsersFoundByNameStarted get _value => super._value as _WatchUsersFoundByNameStarted;
+
   @override
   $Res call({
     Object name = freezed,
@@ -129,21 +123,14 @@ class _$_WatchUsersFoundByNameStarted implements _WatchUsersFoundByNameStarted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-      (other is _WatchUsersFoundByNameStarted &&
-        (identical(other.name, name) ||
-          const DeepCollectionEquality().equals(other.name, name)));
+    return identical(this, other) || (other is _WatchUsersFoundByNameStarted && (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)));
   }
 
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
 
   @override
-  _$WatchUsersFoundByNameStartedCopyWith<_WatchUsersFoundByNameStarted>
-  get copyWith =>
-    __$WatchUsersFoundByNameStartedCopyWithImpl<
-      _WatchUsersFoundByNameStarted>(this, _$identity);
+  _$WatchUsersFoundByNameStartedCopyWith<_WatchUsersFoundByNameStarted> get copyWith => __$WatchUsersFoundByNameStartedCopyWithImpl<_WatchUsersFoundByNameStarted>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -202,37 +189,30 @@ class _$_WatchUsersFoundByNameStarted implements _WatchUsersFoundByNameStarted {
   }
 }
 
-abstract class _WatchUsersFoundByNameStarted
-  implements SearchUsersByNameWatcherEvent {
-  const factory _WatchUsersFoundByNameStarted(SearchTerm name) =
-  _$_WatchUsersFoundByNameStarted;
-  
+abstract class _WatchUsersFoundByNameStarted implements SearchUsersByNameWatcherEvent {
+  const factory _WatchUsersFoundByNameStarted(SearchTerm name) = _$_WatchUsersFoundByNameStarted;
+
   SearchTerm get name;
-  
-  _$WatchUsersFoundByNameStartedCopyWith<_WatchUsersFoundByNameStarted>
-  get copyWith;
+
+  _$WatchUsersFoundByNameStartedCopyWith<_WatchUsersFoundByNameStarted> get copyWith;
 }
 
 /// @nodoc
 abstract class _$WatchUsersFoundByUsernameStartedCopyWith<$Res> {
-  factory _$WatchUsersFoundByUsernameStartedCopyWith(_WatchUsersFoundByUsernameStarted value,
-    $Res Function(_WatchUsersFoundByUsernameStarted) then) =
-  __$WatchUsersFoundByUsernameStartedCopyWithImpl<$Res>;
-  
+  factory _$WatchUsersFoundByUsernameStartedCopyWith(_WatchUsersFoundByUsernameStarted value, $Res Function(_WatchUsersFoundByUsernameStarted) then) =
+      __$WatchUsersFoundByUsernameStartedCopyWithImpl<$Res>;
+
   $Res call({SearchTerm username});
 }
 
 /// @nodoc
-class __$WatchUsersFoundByUsernameStartedCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherEventCopyWithImpl<$Res>
-  implements _$WatchUsersFoundByUsernameStartedCopyWith<$Res> {
-  __$WatchUsersFoundByUsernameStartedCopyWithImpl(_WatchUsersFoundByUsernameStarted _value,
-    $Res Function(_WatchUsersFoundByUsernameStarted) _then)
-    : super(_value, (v) => _then(v as _WatchUsersFoundByUsernameStarted));
-  
+class __$WatchUsersFoundByUsernameStartedCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherEventCopyWithImpl<$Res> implements _$WatchUsersFoundByUsernameStartedCopyWith<$Res> {
+  __$WatchUsersFoundByUsernameStartedCopyWithImpl(_WatchUsersFoundByUsernameStarted _value, $Res Function(_WatchUsersFoundByUsernameStarted) _then)
+      : super(_value, (v) => _then(v as _WatchUsersFoundByUsernameStarted));
+
   @override
-  _WatchUsersFoundByUsernameStarted get _value =>
-    super._value as _WatchUsersFoundByUsernameStarted;
-  
+  _WatchUsersFoundByUsernameStarted get _value => super._value as _WatchUsersFoundByUsernameStarted;
+
   @override
   $Res call({
     Object username = freezed,
@@ -244,37 +224,27 @@ class __$WatchUsersFoundByUsernameStartedCopyWithImpl<$Res> extends _$SearchUser
 }
 
 /// @nodoc
-class _$_WatchUsersFoundByUsernameStarted
-  implements _WatchUsersFoundByUsernameStarted {
-  const _$_WatchUsersFoundByUsernameStarted(this.username)
-    : assert(username != null);
-  
+class _$_WatchUsersFoundByUsernameStarted implements _WatchUsersFoundByUsernameStarted {
+  const _$_WatchUsersFoundByUsernameStarted(this.username) : assert(username != null);
+
   @override
   final SearchTerm username;
-  
+
   @override
   String toString() {
     return 'SearchUsersByNameWatcherEvent.watchUsersFoundByUsernameStarted(username: $username)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-      (other is _WatchUsersFoundByUsernameStarted &&
-        (identical(other.username, username) ||
-          const DeepCollectionEquality()
-            .equals(other.username, username)));
+    return identical(this, other) || (other is _WatchUsersFoundByUsernameStarted && (identical(other.username, username) || const DeepCollectionEquality().equals(other.username, username)));
   }
-  
+
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
-  
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
+
   @override
-  _$WatchUsersFoundByUsernameStartedCopyWith<_WatchUsersFoundByUsernameStarted>
-  get copyWith =>
-    __$WatchUsersFoundByUsernameStartedCopyWithImpl<
-      _WatchUsersFoundByUsernameStarted>(this, _$identity);
+  _$WatchUsersFoundByUsernameStartedCopyWith<_WatchUsersFoundByUsernameStarted> get copyWith => __$WatchUsersFoundByUsernameStartedCopyWithImpl<_WatchUsersFoundByUsernameStarted>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -333,79 +303,60 @@ class _$_WatchUsersFoundByUsernameStarted
   }
 }
 
-abstract class _WatchUsersFoundByUsernameStarted
-  implements SearchUsersByNameWatcherEvent {
-  const factory _WatchUsersFoundByUsernameStarted(SearchTerm username) =
-  _$_WatchUsersFoundByUsernameStarted;
-  
+abstract class _WatchUsersFoundByUsernameStarted implements SearchUsersByNameWatcherEvent {
+  const factory _WatchUsersFoundByUsernameStarted(SearchTerm username) = _$_WatchUsersFoundByUsernameStarted;
+
   SearchTerm get username;
-  
-  _$WatchUsersFoundByUsernameStartedCopyWith<_WatchUsersFoundByUsernameStarted>
-  get copyWith;
+
+  _$WatchUsersFoundByUsernameStartedCopyWith<_WatchUsersFoundByUsernameStarted> get copyWith;
 }
 
 /// @nodoc
 abstract class _$SearchResultsReceivedCopyWith<$Res> {
-  factory _$SearchResultsReceivedCopyWith(_SearchResultsReceived value,
-    $Res Function(_SearchResultsReceived) then) =
-  __$SearchResultsReceivedCopyWithImpl<$Res>;
-  
+  factory _$SearchResultsReceivedCopyWith(_SearchResultsReceived value, $Res Function(_SearchResultsReceived) then) = __$SearchResultsReceivedCopyWithImpl<$Res>;
   $Res call({Either<Failure, KtList<User>> failureOrUsers});
 }
 
 /// @nodoc
-class __$SearchResultsReceivedCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherEventCopyWithImpl<$Res>
-  implements _$SearchResultsReceivedCopyWith<$Res> {
-  __$SearchResultsReceivedCopyWithImpl(_SearchResultsReceived _value,
-    $Res Function(_SearchResultsReceived) _then)
-    : super(_value, (v) => _then(v as _SearchResultsReceived));
-  
+class __$SearchResultsReceivedCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherEventCopyWithImpl<$Res> implements _$SearchResultsReceivedCopyWith<$Res> {
+  __$SearchResultsReceivedCopyWithImpl(_SearchResultsReceived _value, $Res Function(_SearchResultsReceived) _then) : super(_value, (v) => _then(v as _SearchResultsReceived));
+
   @override
   _SearchResultsReceived get _value => super._value as _SearchResultsReceived;
-  
+
   @override
   $Res call({
     Object failureOrUsers = freezed,
   }) {
     return _then(_SearchResultsReceived(
-      failureOrUsers == freezed
-        ? _value.failureOrUsers
-        : failureOrUsers as Either<Failure, KtList<User>>,
+      failureOrUsers == freezed ? _value.failureOrUsers : failureOrUsers as Either<Failure, KtList<User>>,
     ));
   }
 }
 
 /// @nodoc
 class _$_SearchResultsReceived implements _SearchResultsReceived {
-  const _$_SearchResultsReceived(this.failureOrUsers)
-    : assert(failureOrUsers != null);
-  
+  const _$_SearchResultsReceived(this.failureOrUsers) : assert(failureOrUsers != null);
+
   @override
   final Either<Failure, KtList<User>> failureOrUsers;
-  
+
   @override
   String toString() {
     return 'SearchUsersByNameWatcherEvent.searchResultsReceived(failureOrUsers: $failureOrUsers)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _SearchResultsReceived &&
-        (identical(other.failureOrUsers, failureOrUsers) ||
-          const DeepCollectionEquality()
-            .equals(other.failureOrUsers, failureOrUsers)));
+        (other is _SearchResultsReceived && (identical(other.failureOrUsers, failureOrUsers) || const DeepCollectionEquality().equals(other.failureOrUsers, failureOrUsers)));
   }
-  
+
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(failureOrUsers);
-  
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrUsers);
+
   @override
-  _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith =>
-    __$SearchResultsReceivedCopyWithImpl<_SearchResultsReceived>(
-      this, _$identity);
+  _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith => __$SearchResultsReceivedCopyWithImpl<_SearchResultsReceived>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -466,9 +417,9 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
 
 abstract class _SearchResultsReceived implements SearchUsersByNameWatcherEvent {
   const factory _SearchResultsReceived(Either<Failure, KtList<User>> failureOrUsers) = _$_SearchResultsReceived;
-  
+
   Either<Failure, KtList<User>> get failureOrUsers;
-  
+
   _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith;
 }
 
@@ -541,34 +492,28 @@ mixin _$SearchUsersByNameWatcherState {
 
 /// @nodoc
 abstract class $SearchUsersByNameWatcherStateCopyWith<$Res> {
-  factory $SearchUsersByNameWatcherStateCopyWith(SearchUsersByNameWatcherState value,
-    $Res Function(SearchUsersByNameWatcherState) then) =
-  _$SearchUsersByNameWatcherStateCopyWithImpl<$Res>;
+  factory $SearchUsersByNameWatcherStateCopyWith(SearchUsersByNameWatcherState value, $Res Function(SearchUsersByNameWatcherState) then) = _$SearchUsersByNameWatcherStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SearchUsersByNameWatcherStateCopyWithImpl<$Res>
-  implements $SearchUsersByNameWatcherStateCopyWith<$Res> {
+class _$SearchUsersByNameWatcherStateCopyWithImpl<$Res> implements $SearchUsersByNameWatcherStateCopyWith<$Res> {
   _$SearchUsersByNameWatcherStateCopyWithImpl(this._value, this._then);
-  
+
   final SearchUsersByNameWatcherState _value;
-  
+
   // ignore: unused_field
   final $Res Function(SearchUsersByNameWatcherState) _then;
 }
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-  __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherStateCopyWithImpl<$Res>
-  implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-    : super(_value, (v) => _then(v as _Initial));
-  
+class __$InitialCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+
   @override
   _Initial get _value => super._value as _Initial;
 }
@@ -659,16 +604,13 @@ abstract class _Initial implements SearchUsersByNameWatcherState {
 
 /// @nodoc
 abstract class _$SearchInPorgressCopyWith<$Res> {
-  factory _$SearchInPorgressCopyWith(_SearchInPorgress value, $Res Function(_SearchInPorgress) then) =
-  __$SearchInPorgressCopyWithImpl<$Res>;
+  factory _$SearchInPorgressCopyWith(_SearchInPorgress value, $Res Function(_SearchInPorgress) then) = __$SearchInPorgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SearchInPorgressCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherStateCopyWithImpl<$Res>
-  implements _$SearchInPorgressCopyWith<$Res> {
-  __$SearchInPorgressCopyWithImpl(_SearchInPorgress _value, $Res Function(_SearchInPorgress) _then)
-    : super(_value, (v) => _then(v as _SearchInPorgress));
-  
+class __$SearchInPorgressCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherStateCopyWithImpl<$Res> implements _$SearchInPorgressCopyWith<$Res> {
+  __$SearchInPorgressCopyWithImpl(_SearchInPorgress _value, $Res Function(_SearchInPorgress) _then) : super(_value, (v) => _then(v as _SearchInPorgress));
+
   @override
   _SearchInPorgress get _value => super._value as _SearchInPorgress;
 }
@@ -759,21 +701,18 @@ abstract class _SearchInPorgress implements SearchUsersByNameWatcherState {
 
 /// @nodoc
 abstract class _$SearchSuccessCopyWith<$Res> {
-  factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) =
-  __$SearchSuccessCopyWithImpl<$Res>;
-  
+  factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) = __$SearchSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<User> usersFound});
 }
 
 /// @nodoc
-class __$SearchSuccessCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherStateCopyWithImpl<$Res>
-  implements _$SearchSuccessCopyWith<$Res> {
-  __$SearchSuccessCopyWithImpl(_SearchSuccess _value, $Res Function(_SearchSuccess) _then)
-    : super(_value, (v) => _then(v as _SearchSuccess));
-  
+class __$SearchSuccessCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherStateCopyWithImpl<$Res> implements _$SearchSuccessCopyWith<$Res> {
+  __$SearchSuccessCopyWithImpl(_SearchSuccess _value, $Res Function(_SearchSuccess) _then) : super(_value, (v) => _then(v as _SearchSuccess));
+
   @override
   _SearchSuccess get _value => super._value as _SearchSuccess;
-  
+
   @override
   $Res call({
     Object usersFound = freezed,
@@ -798,20 +737,14 @@ class _$_SearchSuccess implements _SearchSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-      (other is _SearchSuccess &&
-        (identical(other.usersFound, usersFound) ||
-          const DeepCollectionEquality()
-            .equals(other.usersFound, usersFound)));
+    return identical(this, other) || (other is _SearchSuccess && (identical(other.usersFound, usersFound) || const DeepCollectionEquality().equals(other.usersFound, usersFound)));
   }
 
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(usersFound);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(usersFound);
 
   @override
-  _$SearchSuccessCopyWith<_SearchSuccess> get copyWith =>
-    __$SearchSuccessCopyWithImpl<_SearchSuccess>(this, _$identity);
+  _$SearchSuccessCopyWith<_SearchSuccess> get copyWith => __$SearchSuccessCopyWithImpl<_SearchSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -885,23 +818,20 @@ abstract class _SearchSuccess implements SearchUsersByNameWatcherState {
 
 /// @nodoc
 abstract class _$SearchFailureCopyWith<$Res> {
-  factory _$SearchFailureCopyWith(_SearchFailure value, $Res Function(_SearchFailure) then) =
-  __$SearchFailureCopyWithImpl<$Res>;
-  
+  factory _$SearchFailureCopyWith(_SearchFailure value, $Res Function(_SearchFailure) then) = __$SearchFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
-  
+
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 /// @nodoc
-class __$SearchFailureCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherStateCopyWithImpl<$Res>
-  implements _$SearchFailureCopyWith<$Res> {
-  __$SearchFailureCopyWithImpl(_SearchFailure _value, $Res Function(_SearchFailure) _then)
-    : super(_value, (v) => _then(v as _SearchFailure));
-  
+class __$SearchFailureCopyWithImpl<$Res> extends _$SearchUsersByNameWatcherStateCopyWithImpl<$Res> implements _$SearchFailureCopyWith<$Res> {
+  __$SearchFailureCopyWithImpl(_SearchFailure _value, $Res Function(_SearchFailure) _then) : super(_value, (v) => _then(v as _SearchFailure));
+
   @override
   _SearchFailure get _value => super._value as _SearchFailure;
-  
+
   @override
   $Res call({
     Object failure = freezed,
@@ -936,19 +866,14 @@ class _$_SearchFailure implements _SearchFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-      (other is _SearchFailure &&
-        (identical(other.failure, failure) ||
-          const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) || (other is _SearchFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode =>
-    runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
-  _$SearchFailureCopyWith<_SearchFailure> get copyWith =>
-    __$SearchFailureCopyWithImpl<_SearchFailure>(this, _$identity);
+  _$SearchFailureCopyWith<_SearchFailure> get copyWith => __$SearchFailureCopyWithImpl<_SearchFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs

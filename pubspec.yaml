@@ -39,7 +39,7 @@ dependencies:
   # For email validation
   email_validator: ^1.0.6
   # For getting the geolocation of the user
-  geolocator: ^6.1.8+1
+  geolocator: ^6.1.13
   # For Kotlin like collections
   kt_dart: ^0.8.0
   # For easier bloc testing
@@ -70,13 +70,13 @@ dependencies:
   # For viewing the database
   moor_db_viewer: ^2.0.3
   # For providing objects down the widget tree
-  provider: ^4.3.2+2
+  provider: ^4.3.2+3
   # For environment control
   flutter_dotenv: ^2.1.0
   # For ease of logging
   logger: ^0.9.4
   # For better stream control
-  rxdart: ^0.24.1
+  rxdart: ^0.25.0
   # For the experience image gallery
   carousel_slider: ^2.3.1
   # Unique IDs for entities
@@ -84,13 +84,13 @@ dependencies:
   # For Signing in and registering with Google
   google_sign_in: ^4.5.6
   # For use with Firebase as backend
-  firebase_core: ^0.5.2+1
+  firebase_core: ^0.5.3
   # For authentication with Firebase
-  firebase_auth: ^0.18.3+1
+  firebase_auth: ^0.18.4+1
   # For simple data storage
-  cloud_firestore: ^0.14.3+1
+  cloud_firestore: ^0.14.4
   # For complex data storage (images)
-  firebase_storage: ^5.1.0
+  firebase_storage: ^5.2.0
   # For drawing routes in the map
   google_map_polyline:
   # For mapping
@@ -112,13 +112,13 @@ dev_dependencies:
   # For dependency injection code generation
   injectable_generator: ^1.0.6
   # For Serializing entities to JSON
-  json_serializable: ^3.5.0
+  json_serializable: ^3.5.1
   # For auto generating the routes
   auto_route_generator: ^0.6.10
   # For ease of setting the app icon
   flutter_launcher_icons: ^0.8.1
   # For extra icons
-  font_awesome_flutter: ^8.10.0
+  font_awesome_flutter: ^8.10.1
   # Generator for moor
   moor_generator: ^3.4.0
   # For testing with moor
