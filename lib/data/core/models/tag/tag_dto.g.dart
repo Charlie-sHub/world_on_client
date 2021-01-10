@@ -11,18 +11,19 @@ _$_TagDto _$_$_TagDtoFromJson(Map<String, dynamic> json) {
     id: json['id'] as String,
     name: json['name'] as String,
     creatorId: json['creatorId'] as String,
-    creationDate: const ServerTimestampConverter().fromJson(json['creationDate'] as Timestamp),
-    modificationDate: const ServerTimestampConverter().fromJson(json['modificationDate'] as Timestamp),
+    creationDate: const ServerTimestampConverter()
+        .fromJson(json['creationDate'] as Timestamp),
+    modificationDate: const ServerTimestampConverter()
+        .fromJson(json['modificationDate'] as Timestamp),
   );
 }
 
-Map<String, dynamic> _$_$_TagDtoToJson(_$_TagDto instance) =>
-  <String, dynamic>{
-    'id': instance.id,
-    'name': instance.name,
-    'creatorId': instance.creatorId,
-    'creationDate':
-    const ServerTimestampConverter().toJson(instance.creationDate),
-    'modificationDate':
-    const ServerTimestampConverter().toJson(instance.modificationDate),
-  };
+Map<String, dynamic> _$_$_TagDtoToJson(_$_TagDto instance) => <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'creatorId': instance.creatorId,
+      'creationDate':
+          const ServerTimestampConverter().toJson(instance.creationDate),
+      'modificationDate':
+          const ServerTimestampConverter().toJson(instance.modificationDate),
+    };

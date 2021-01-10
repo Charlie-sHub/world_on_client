@@ -17,8 +17,7 @@ import 'package:worldon/domain/core/validation/objects/longitude.dart';
 import 'package:worldon/injection.dart';
 
 part 'objective_form_bloc.freezed.dart';
-part 'objective_form_event.dart';e_form_event.dart';
-
+part 'objective_form_event.dart';
 part 'objective_form_state.dart';
 
 @injectable

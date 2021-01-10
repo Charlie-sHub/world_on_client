@@ -8,21 +8,28 @@ part of 'notification_dto.dart';
 
 _$_NotificationDto _$_$_NotificationDtoFromJson(Map<String, dynamic> json) {
   return _$_NotificationDto(
-    sender: json['sender'] == null ? null : UserDto.fromJson(json['sender'] as Map<String, dynamic>),
-    receiver: json['receiver'] == null ? null : UserDto.fromJson(json['receiver'] as Map<String, dynamic>),
+    sender: json['sender'] == null
+        ? null
+        : UserDto.fromJson(json['sender'] as Map<String, dynamic>),
+    receiver: json['receiver'] == null
+        ? null
+        : UserDto.fromJson(json['receiver'] as Map<String, dynamic>),
     description: json['description'] as String,
     seen: json['seen'] as bool,
-    creationDate: const ServerTimestampConverter().fromJson(json['creationDate'] as Timestamp),
+    creationDate: const ServerTimestampConverter()
+        .fromJson(json['creationDate'] as Timestamp),
     type: _$enumDecodeNullable(_$NotificationTypeEnumMap, json['type']),
   );
 }
 
-Map<String, dynamic> _$_$_NotificationDtoToJson(_$_NotificationDto instance) => <String, dynamic>{
+Map<String, dynamic> _$_$_NotificationDtoToJson(_$_NotificationDto instance) =>
+    <String, dynamic>{
       'sender': instance.sender?.toJson(),
       'receiver': instance.receiver?.toJson(),
       'description': instance.description,
       'seen': instance.seen,
-      'creationDate': const ServerTimestampConverter().toJson(instance.creationDate),
+      'creationDate':
+          const ServerTimestampConverter().toJson(instance.creationDate),
       'type': _$NotificationTypeEnumMap[instance.type],
     };
 
@@ -36,7 +43,9 @@ T _$enumDecode<T>(
         '${enumValues.values.join(', ')}');
   }
 
-  final value = enumValues.entries.singleWhere((e) => e.value == source, orElse: () => null)?.key;
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
 
   if (value == null && unknownValue == null) {
     throw ArgumentError('`$source` is not one of the supported values: '

@@ -13,7 +13,8 @@ _$_CoordinatesDto _$_$_CoordinatesDtoFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_CoordinatesDtoToJson(_$_CoordinatesDto instance) => <String, dynamic>{
+Map<String, dynamic> _$_$_CoordinatesDtoToJson(_$_CoordinatesDto instance) =>
+    <String, dynamic>{
       'latitude': instance.latitude,
       'longitude': instance.longitude,
     };

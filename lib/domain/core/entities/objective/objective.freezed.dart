@@ -14,7 +14,12 @@ class _$ObjectiveTearOff {
   const _$ObjectiveTearOff();
 
 // ignore: unused_element
-  _Objective call({@required UniqueId id, @required EntityDescription description, @required Coordinates coordinates, @required String imageURL, @required Option<File> imageFile}) {
+  _Objective call(
+      {@required UniqueId id,
+      @required EntityDescription description,
+      @required Coordinates coordinates,
+      @required String imageURL,
+      @required Option<File> imageFile}) {
     return _Objective(
       id: id,
       description: description,
@@ -43,14 +48,14 @@ mixin _$Objective {
 /// @nodoc
 abstract class $ObjectiveCopyWith<$Res> {
   factory $ObjectiveCopyWith(Objective value, $Res Function(Objective) then) =
-  _$ObjectiveCopyWithImpl<$Res>;
-  
-  $Res call({UniqueId id,
-    EntityDescription description,
-    Coordinates coordinates,
-    String imageURL,
-    Option<File> imageFile});
-  
+      _$ObjectiveCopyWithImpl<$Res>;
+  $Res call(
+      {UniqueId id,
+      EntityDescription description,
+      Coordinates coordinates,
+      String imageURL,
+      Option<File> imageFile});
+
   $CoordinatesCopyWith<$Res> get coordinates;
 }
 
@@ -73,14 +78,14 @@ class _$ObjectiveCopyWithImpl<$Res> implements $ObjectiveCopyWith<$Res> {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as UniqueId,
       description: description == freezed
-        ? _value.description
-        : description as EntityDescription,
+          ? _value.description
+          : description as EntityDescription,
       coordinates: coordinates == freezed
-        ? _value.coordinates
-        : coordinates as Coordinates,
+          ? _value.coordinates
+          : coordinates as Coordinates,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
       imageFile:
-      imageFile == freezed ? _value.imageFile : imageFile as Option<File>,
+          imageFile == freezed ? _value.imageFile : imageFile as Option<File>,
     ));
   }
 
@@ -97,29 +102,30 @@ class _$ObjectiveCopyWithImpl<$Res> implements $ObjectiveCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$ObjectiveCopyWith<$Res> implements $ObjectiveCopyWith<$Res> {
-  factory _$ObjectiveCopyWith(_Objective value, $Res Function(_Objective) then) =
-  __$ObjectiveCopyWithImpl<$Res>;
-  
+  factory _$ObjectiveCopyWith(
+          _Objective value, $Res Function(_Objective) then) =
+      __$ObjectiveCopyWithImpl<$Res>;
   @override
-  $Res call({UniqueId id,
-    EntityDescription description,
-    Coordinates coordinates,
-    String imageURL,
-    Option<File> imageFile});
-  
+  $Res call(
+      {UniqueId id,
+      EntityDescription description,
+      Coordinates coordinates,
+      String imageURL,
+      Option<File> imageFile});
+
   @override
   $CoordinatesCopyWith<$Res> get coordinates;
 }
 
 /// @nodoc
 class __$ObjectiveCopyWithImpl<$Res> extends _$ObjectiveCopyWithImpl<$Res>
-  implements _$ObjectiveCopyWith<$Res> {
+    implements _$ObjectiveCopyWith<$Res> {
   __$ObjectiveCopyWithImpl(_Objective _value, $Res Function(_Objective) _then)
-    : super(_value, (v) => _then(v as _Objective));
-  
+      : super(_value, (v) => _then(v as _Objective));
+
   @override
   _Objective get _value => super._value as _Objective;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -131,32 +137,33 @@ class __$ObjectiveCopyWithImpl<$Res> extends _$ObjectiveCopyWithImpl<$Res>
     return _then(_Objective(
       id: id == freezed ? _value.id : id as UniqueId,
       description: description == freezed
-        ? _value.description
-        : description as EntityDescription,
+          ? _value.description
+          : description as EntityDescription,
       coordinates: coordinates == freezed
-        ? _value.coordinates
-        : coordinates as Coordinates,
+          ? _value.coordinates
+          : coordinates as Coordinates,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
       imageFile:
-      imageFile == freezed ? _value.imageFile : imageFile as Option<File>,
+          imageFile == freezed ? _value.imageFile : imageFile as Option<File>,
     ));
   }
 }
 
 /// @nodoc
 class _$_Objective extends _Objective {
-  const _$_Objective({@required this.id,
-    @required this.description,
-    @required this.coordinates,
-    @required this.imageURL,
-    @required this.imageFile})
-    : assert(id != null),
-      assert(description != null),
-      assert(coordinates != null),
-      assert(imageURL != null),
-      assert(imageFile != null),
-      super._();
-  
+  const _$_Objective(
+      {@required this.id,
+      @required this.description,
+      @required this.coordinates,
+      @required this.imageURL,
+      @required this.imageFile})
+      : assert(id != null),
+        assert(description != null),
+        assert(coordinates != null),
+        assert(imageURL != null),
+        assert(imageFile != null),
+        super._();
+
   @override
   final UniqueId id;
   @override
@@ -176,21 +183,21 @@ class _$_Objective extends _Objective {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _Objective &&
-        (identical(other.id, id) ||
-          const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.description, description) ||
-          const DeepCollectionEquality()
-            .equals(other.description, description)) &&
-        (identical(other.coordinates, coordinates) ||
-          const DeepCollectionEquality()
-            .equals(other.coordinates, coordinates)) &&
-        (identical(other.imageURL, imageURL) ||
-          const DeepCollectionEquality()
-            .equals(other.imageURL, imageURL)) &&
-        (identical(other.imageFile, imageFile) ||
-          const DeepCollectionEquality()
-            .equals(other.imageFile, imageFile)));
+        (other is _Objective &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
+            (identical(other.coordinates, coordinates) ||
+                const DeepCollectionEquality()
+                    .equals(other.coordinates, coordinates)) &&
+            (identical(other.imageURL, imageURL) ||
+                const DeepCollectionEquality()
+                    .equals(other.imageURL, imageURL)) &&
+            (identical(other.imageFile, imageFile) ||
+                const DeepCollectionEquality()
+                    .equals(other.imageFile, imageFile)));
   }
 
   @override
@@ -201,33 +208,29 @@ class _$_Objective extends _Objective {
       const DeepCollectionEquality().hash(coordinates) ^
       const DeepCollectionEquality().hash(imageURL) ^
       const DeepCollectionEquality().hash(imageFile);
-  
+
   @override
   _$ObjectiveCopyWith<_Objective> get copyWith =>
-    __$ObjectiveCopyWithImpl<_Objective>(this, _$identity);
+      __$ObjectiveCopyWithImpl<_Objective>(this, _$identity);
 }
 
 abstract class _Objective extends Objective {
   const _Objective._() : super._();
-  
-  const factory _Objective({@required UniqueId id,
-    @required EntityDescription description,
-    @required Coordinates coordinates,
-    @required String imageURL,
-    @required Option<File> imageFile}) = _$_Objective;
-  
+  const factory _Objective(
+      {@required UniqueId id,
+      @required EntityDescription description,
+      @required Coordinates coordinates,
+      @required String imageURL,
+      @required Option<File> imageFile}) = _$_Objective;
+
   @override
   UniqueId get id;
-  
   @override
   EntityDescription get description;
-  
   @override
   Coordinates get coordinates;
-  
   @override
   String get imageURL;
-  
   @override
   Option<File> get imageFile;
   @override

@@ -59,13 +59,13 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
     switch (index) {
       case _mainFeedIndex:
         context.bloc<NavigationActorBloc>().add(
-          const NavigationActorEvent.mainFeedTapped(),
-        );
+              const NavigationActorEvent.mainFeedTapped(),
+            );
         break;
       case _searchIndex:
         context.bloc<NavigationActorBloc>().add(
-          const NavigationActorEvent.searchTapped(),
-        );
+              const NavigationActorEvent.searchTapped(),
+            );
         break;
       case _experienceFormIndex:
         context.bloc<NavigationActorBloc>().add(
@@ -91,8 +91,8 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
         break;
       default:
         context.bloc<NavigationActorBloc>().add(
-          const NavigationActorEvent.mainFeedTapped(),
-        );
+              const NavigationActorEvent.mainFeedTapped(),
+            );
         break;
     }
   }

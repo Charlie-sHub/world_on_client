@@ -21,7 +21,8 @@ class _$MapControllerEventTearOff {
   }
 
 // ignore: unused_element
-  _CameraPositionChanged cameraPositionChanged({@required Coordinates coordinates, @required double zoom}) {
+  _CameraPositionChanged cameraPositionChanged(
+      {@required Coordinates coordinates, @required double zoom}) {
     return _CameraPositionChanged(
       coordinates: coordinates,
       zoom: zoom,
@@ -45,7 +46,8 @@ mixin _$MapControllerEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult initialized(Experience experience),
-    @required TResult cameraPositionChanged(Coordinates coordinates, double zoom),
+    @required
+        TResult cameraPositionChanged(Coordinates coordinates, double zoom),
     @required TResult objectivesChanged(KtList<Objective> objectives),
   });
   @optionalTypeArgs
@@ -72,31 +74,38 @@ mixin _$MapControllerEvent {
 
 /// @nodoc
 abstract class $MapControllerEventCopyWith<$Res> {
-  factory $MapControllerEventCopyWith(MapControllerEvent value, $Res Function(MapControllerEvent) then) = _$MapControllerEventCopyWithImpl<$Res>;
+  factory $MapControllerEventCopyWith(
+          MapControllerEvent value, $Res Function(MapControllerEvent) then) =
+      _$MapControllerEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$MapControllerEventCopyWithImpl<$Res> implements $MapControllerEventCopyWith<$Res> {
+class _$MapControllerEventCopyWithImpl<$Res>
+    implements $MapControllerEventCopyWith<$Res> {
   _$MapControllerEventCopyWithImpl(this._value, this._then);
 
   final MapControllerEvent _value;
-
   // ignore: unused_field
   final $Res Function(MapControllerEvent) _then;
 }
 
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
-
+  factory _$InitializedCopyWith(
+          _Initialized value, $Res Function(_Initialized) then) =
+      __$InitializedCopyWithImpl<$Res>;
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$MapControllerEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
+class __$InitializedCopyWithImpl<$Res>
+    extends _$MapControllerEventCopyWithImpl<$Res>
+    implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(
+      _Initialized _value, $Res Function(_Initialized) _then)
+      : super(_value, (v) => _then(v as _Initialized));
 
   @override
   _Initialized get _value => super._value as _Initialized;
@@ -135,20 +144,27 @@ class _$_Initialized implements _Initialized {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initialized && (identical(other.experience, experience) || const DeepCollectionEquality().equals(other.experience, experience)));
+    return identical(this, other) ||
+        (other is _Initialized &&
+            (identical(other.experience, experience) ||
+                const DeepCollectionEquality()
+                    .equals(other.experience, experience)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
   @override
-  _$InitializedCopyWith<_Initialized> get copyWith => __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult initialized(Experience experience),
-    @required TResult cameraPositionChanged(Coordinates coordinates, double zoom),
+    @required
+        TResult cameraPositionChanged(Coordinates coordinates, double zoom),
     @required TResult objectivesChanged(KtList<Objective> objectives),
   }) {
     assert(initialized != null);
@@ -210,16 +226,21 @@ abstract class _Initialized implements MapControllerEvent {
 
 /// @nodoc
 abstract class _$CameraPositionChangedCopyWith<$Res> {
-  factory _$CameraPositionChangedCopyWith(_CameraPositionChanged value, $Res Function(_CameraPositionChanged) then) = __$CameraPositionChangedCopyWithImpl<$Res>;
-
+  factory _$CameraPositionChangedCopyWith(_CameraPositionChanged value,
+          $Res Function(_CameraPositionChanged) then) =
+      __$CameraPositionChangedCopyWithImpl<$Res>;
   $Res call({Coordinates coordinates, double zoom});
 
   $CoordinatesCopyWith<$Res> get coordinates;
 }
 
 /// @nodoc
-class __$CameraPositionChangedCopyWithImpl<$Res> extends _$MapControllerEventCopyWithImpl<$Res> implements _$CameraPositionChangedCopyWith<$Res> {
-  __$CameraPositionChangedCopyWithImpl(_CameraPositionChanged _value, $Res Function(_CameraPositionChanged) _then) : super(_value, (v) => _then(v as _CameraPositionChanged));
+class __$CameraPositionChangedCopyWithImpl<$Res>
+    extends _$MapControllerEventCopyWithImpl<$Res>
+    implements _$CameraPositionChangedCopyWith<$Res> {
+  __$CameraPositionChangedCopyWithImpl(_CameraPositionChanged _value,
+      $Res Function(_CameraPositionChanged) _then)
+      : super(_value, (v) => _then(v as _CameraPositionChanged));
 
   @override
   _CameraPositionChanged get _value => super._value as _CameraPositionChanged;
@@ -230,7 +251,9 @@ class __$CameraPositionChangedCopyWithImpl<$Res> extends _$MapControllerEventCop
     Object zoom = freezed,
   }) {
     return _then(_CameraPositionChanged(
-      coordinates: coordinates == freezed ? _value.coordinates : coordinates as Coordinates,
+      coordinates: coordinates == freezed
+          ? _value.coordinates
+          : coordinates as Coordinates,
       zoom: zoom == freezed ? _value.zoom : zoom as double,
     ));
   }
@@ -248,7 +271,8 @@ class __$CameraPositionChangedCopyWithImpl<$Res> extends _$MapControllerEventCop
 
 /// @nodoc
 class _$_CameraPositionChanged implements _CameraPositionChanged {
-  const _$_CameraPositionChanged({@required this.coordinates, @required this.zoom})
+  const _$_CameraPositionChanged(
+      {@required this.coordinates, @required this.zoom})
       : assert(coordinates != null),
         assert(zoom != null);
 
@@ -266,21 +290,30 @@ class _$_CameraPositionChanged implements _CameraPositionChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CameraPositionChanged &&
-            (identical(other.coordinates, coordinates) || const DeepCollectionEquality().equals(other.coordinates, coordinates)) &&
-            (identical(other.zoom, zoom) || const DeepCollectionEquality().equals(other.zoom, zoom)));
+            (identical(other.coordinates, coordinates) ||
+                const DeepCollectionEquality()
+                    .equals(other.coordinates, coordinates)) &&
+            (identical(other.zoom, zoom) ||
+                const DeepCollectionEquality().equals(other.zoom, zoom)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(coordinates) ^ const DeepCollectionEquality().hash(zoom);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(coordinates) ^
+      const DeepCollectionEquality().hash(zoom);
 
   @override
-  _$CameraPositionChangedCopyWith<_CameraPositionChanged> get copyWith => __$CameraPositionChangedCopyWithImpl<_CameraPositionChanged>(this, _$identity);
+  _$CameraPositionChangedCopyWith<_CameraPositionChanged> get copyWith =>
+      __$CameraPositionChangedCopyWithImpl<_CameraPositionChanged>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult initialized(Experience experience),
-    @required TResult cameraPositionChanged(Coordinates coordinates, double zoom),
+    @required
+        TResult cameraPositionChanged(Coordinates coordinates, double zoom),
     @required TResult objectivesChanged(KtList<Objective> objectives),
   }) {
     assert(initialized != null);
@@ -334,25 +367,30 @@ class _$_CameraPositionChanged implements _CameraPositionChanged {
 }
 
 abstract class _CameraPositionChanged implements MapControllerEvent {
-  const factory _CameraPositionChanged({@required Coordinates coordinates, @required double zoom}) = _$_CameraPositionChanged;
+  const factory _CameraPositionChanged(
+      {@required Coordinates coordinates,
+      @required double zoom}) = _$_CameraPositionChanged;
 
   Coordinates get coordinates;
-
   double get zoom;
-
   _$CameraPositionChangedCopyWith<_CameraPositionChanged> get copyWith;
 }
 
 /// @nodoc
 abstract class _$ObjectivesChangedCopyWith<$Res> {
-  factory _$ObjectivesChangedCopyWith(_ObjectivesChanged value, $Res Function(_ObjectivesChanged) then) = __$ObjectivesChangedCopyWithImpl<$Res>;
-
+  factory _$ObjectivesChangedCopyWith(
+          _ObjectivesChanged value, $Res Function(_ObjectivesChanged) then) =
+      __$ObjectivesChangedCopyWithImpl<$Res>;
   $Res call({KtList<Objective> objectives});
 }
 
 /// @nodoc
-class __$ObjectivesChangedCopyWithImpl<$Res> extends _$MapControllerEventCopyWithImpl<$Res> implements _$ObjectivesChangedCopyWith<$Res> {
-  __$ObjectivesChangedCopyWithImpl(_ObjectivesChanged _value, $Res Function(_ObjectivesChanged) _then) : super(_value, (v) => _then(v as _ObjectivesChanged));
+class __$ObjectivesChangedCopyWithImpl<$Res>
+    extends _$MapControllerEventCopyWithImpl<$Res>
+    implements _$ObjectivesChangedCopyWith<$Res> {
+  __$ObjectivesChangedCopyWithImpl(
+      _ObjectivesChanged _value, $Res Function(_ObjectivesChanged) _then)
+      : super(_value, (v) => _then(v as _ObjectivesChanged));
 
   @override
   _ObjectivesChanged get _value => super._value as _ObjectivesChanged;
@@ -362,7 +400,9 @@ class __$ObjectivesChangedCopyWithImpl<$Res> extends _$MapControllerEventCopyWit
     Object objectives = freezed,
   }) {
     return _then(_ObjectivesChanged(
-      objectives == freezed ? _value.objectives : objectives as KtList<Objective>,
+      objectives == freezed
+          ? _value.objectives
+          : objectives as KtList<Objective>,
     ));
   }
 }
@@ -381,20 +421,27 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ObjectivesChanged && (identical(other.objectives, objectives) || const DeepCollectionEquality().equals(other.objectives, objectives)));
+    return identical(this, other) ||
+        (other is _ObjectivesChanged &&
+            (identical(other.objectives, objectives) ||
+                const DeepCollectionEquality()
+                    .equals(other.objectives, objectives)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectives);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectives);
 
   @override
-  _$ObjectivesChangedCopyWith<_ObjectivesChanged> get copyWith => __$ObjectivesChangedCopyWithImpl<_ObjectivesChanged>(this, _$identity);
+  _$ObjectivesChangedCopyWith<_ObjectivesChanged> get copyWith =>
+      __$ObjectivesChangedCopyWithImpl<_ObjectivesChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult initialized(Experience experience),
-    @required TResult cameraPositionChanged(Coordinates coordinates, double zoom),
+    @required
+        TResult cameraPositionChanged(Coordinates coordinates, double zoom),
     @required TResult objectivesChanged(KtList<Objective> objectives),
   }) {
     assert(initialized != null);
@@ -448,10 +495,10 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
 }
 
 abstract class _ObjectivesChanged implements MapControllerEvent {
-  const factory _ObjectivesChanged(KtList<Objective> objectives) = _$_ObjectivesChanged;
+  const factory _ObjectivesChanged(KtList<Objective> objectives) =
+      _$_ObjectivesChanged;
 
   KtList<Objective> get objectives;
-
   _$ObjectivesChangedCopyWith<_ObjectivesChanged> get copyWith;
 }
 
@@ -460,7 +507,11 @@ class _$MapControllerStateTearOff {
   const _$MapControllerStateTearOff();
 
 // ignore: unused_element
-  _MapControllerState call({@required Coordinates coordinates, @required KtList<Objective> objectives, @required double zoom, @required bool loadedCoordinates}) {
+  _MapControllerState call(
+      {@required Coordinates coordinates,
+      @required KtList<Objective> objectives,
+      @required double zoom,
+      @required bool loadedCoordinates}) {
     return _MapControllerState(
       coordinates: coordinates,
       objectives: objectives,
@@ -486,19 +537,24 @@ mixin _$MapControllerState {
 
 /// @nodoc
 abstract class $MapControllerStateCopyWith<$Res> {
-  factory $MapControllerStateCopyWith(MapControllerState value, $Res Function(MapControllerState) then) = _$MapControllerStateCopyWithImpl<$Res>;
-
-  $Res call({Coordinates coordinates, KtList<Objective> objectives, double zoom, bool loadedCoordinates});
+  factory $MapControllerStateCopyWith(
+          MapControllerState value, $Res Function(MapControllerState) then) =
+      _$MapControllerStateCopyWithImpl<$Res>;
+  $Res call(
+      {Coordinates coordinates,
+      KtList<Objective> objectives,
+      double zoom,
+      bool loadedCoordinates});
 
   $CoordinatesCopyWith<$Res> get coordinates;
 }
 
 /// @nodoc
-class _$MapControllerStateCopyWithImpl<$Res> implements $MapControllerStateCopyWith<$Res> {
+class _$MapControllerStateCopyWithImpl<$Res>
+    implements $MapControllerStateCopyWith<$Res> {
   _$MapControllerStateCopyWithImpl(this._value, this._then);
 
   final MapControllerState _value;
-
   // ignore: unused_field
   final $Res Function(MapControllerState) _then;
 
@@ -510,10 +566,16 @@ class _$MapControllerStateCopyWithImpl<$Res> implements $MapControllerStateCopyW
     Object loadedCoordinates = freezed,
   }) {
     return _then(_value.copyWith(
-      coordinates: coordinates == freezed ? _value.coordinates : coordinates as Coordinates,
-      objectives: objectives == freezed ? _value.objectives : objectives as KtList<Objective>,
+      coordinates: coordinates == freezed
+          ? _value.coordinates
+          : coordinates as Coordinates,
+      objectives: objectives == freezed
+          ? _value.objectives
+          : objectives as KtList<Objective>,
       zoom: zoom == freezed ? _value.zoom : zoom as double,
-      loadedCoordinates: loadedCoordinates == freezed ? _value.loadedCoordinates : loadedCoordinates as bool,
+      loadedCoordinates: loadedCoordinates == freezed
+          ? _value.loadedCoordinates
+          : loadedCoordinates as bool,
     ));
   }
 
@@ -529,19 +591,29 @@ class _$MapControllerStateCopyWithImpl<$Res> implements $MapControllerStateCopyW
 }
 
 /// @nodoc
-abstract class _$MapControllerStateCopyWith<$Res> implements $MapControllerStateCopyWith<$Res> {
-  factory _$MapControllerStateCopyWith(_MapControllerState value, $Res Function(_MapControllerState) then) = __$MapControllerStateCopyWithImpl<$Res>;
-
+abstract class _$MapControllerStateCopyWith<$Res>
+    implements $MapControllerStateCopyWith<$Res> {
+  factory _$MapControllerStateCopyWith(
+          _MapControllerState value, $Res Function(_MapControllerState) then) =
+      __$MapControllerStateCopyWithImpl<$Res>;
   @override
-  $Res call({Coordinates coordinates, KtList<Objective> objectives, double zoom, bool loadedCoordinates});
+  $Res call(
+      {Coordinates coordinates,
+      KtList<Objective> objectives,
+      double zoom,
+      bool loadedCoordinates});
 
   @override
   $CoordinatesCopyWith<$Res> get coordinates;
 }
 
 /// @nodoc
-class __$MapControllerStateCopyWithImpl<$Res> extends _$MapControllerStateCopyWithImpl<$Res> implements _$MapControllerStateCopyWith<$Res> {
-  __$MapControllerStateCopyWithImpl(_MapControllerState _value, $Res Function(_MapControllerState) _then) : super(_value, (v) => _then(v as _MapControllerState));
+class __$MapControllerStateCopyWithImpl<$Res>
+    extends _$MapControllerStateCopyWithImpl<$Res>
+    implements _$MapControllerStateCopyWith<$Res> {
+  __$MapControllerStateCopyWithImpl(
+      _MapControllerState _value, $Res Function(_MapControllerState) _then)
+      : super(_value, (v) => _then(v as _MapControllerState));
 
   @override
   _MapControllerState get _value => super._value as _MapControllerState;
@@ -554,17 +626,27 @@ class __$MapControllerStateCopyWithImpl<$Res> extends _$MapControllerStateCopyWi
     Object loadedCoordinates = freezed,
   }) {
     return _then(_MapControllerState(
-      coordinates: coordinates == freezed ? _value.coordinates : coordinates as Coordinates,
-      objectives: objectives == freezed ? _value.objectives : objectives as KtList<Objective>,
+      coordinates: coordinates == freezed
+          ? _value.coordinates
+          : coordinates as Coordinates,
+      objectives: objectives == freezed
+          ? _value.objectives
+          : objectives as KtList<Objective>,
       zoom: zoom == freezed ? _value.zoom : zoom as double,
-      loadedCoordinates: loadedCoordinates == freezed ? _value.loadedCoordinates : loadedCoordinates as bool,
+      loadedCoordinates: loadedCoordinates == freezed
+          ? _value.loadedCoordinates
+          : loadedCoordinates as bool,
     ));
   }
 }
 
 /// @nodoc
 class _$_MapControllerState implements _MapControllerState {
-  const _$_MapControllerState({@required this.coordinates, @required this.objectives, @required this.zoom, @required this.loadedCoordinates})
+  const _$_MapControllerState(
+      {@required this.coordinates,
+      @required this.objectives,
+      @required this.zoom,
+      @required this.loadedCoordinates})
       : assert(coordinates != null),
         assert(objectives != null),
         assert(zoom != null),
@@ -588,10 +670,17 @@ class _$_MapControllerState implements _MapControllerState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _MapControllerState &&
-            (identical(other.coordinates, coordinates) || const DeepCollectionEquality().equals(other.coordinates, coordinates)) &&
-            (identical(other.objectives, objectives) || const DeepCollectionEquality().equals(other.objectives, objectives)) &&
-            (identical(other.zoom, zoom) || const DeepCollectionEquality().equals(other.zoom, zoom)) &&
-            (identical(other.loadedCoordinates, loadedCoordinates) || const DeepCollectionEquality().equals(other.loadedCoordinates, loadedCoordinates)));
+            (identical(other.coordinates, coordinates) ||
+                const DeepCollectionEquality()
+                    .equals(other.coordinates, coordinates)) &&
+            (identical(other.objectives, objectives) ||
+                const DeepCollectionEquality()
+                    .equals(other.objectives, objectives)) &&
+            (identical(other.zoom, zoom) ||
+                const DeepCollectionEquality().equals(other.zoom, zoom)) &&
+            (identical(other.loadedCoordinates, loadedCoordinates) ||
+                const DeepCollectionEquality()
+                    .equals(other.loadedCoordinates, loadedCoordinates)));
   }
 
   @override
@@ -603,24 +692,25 @@ class _$_MapControllerState implements _MapControllerState {
       const DeepCollectionEquality().hash(loadedCoordinates);
 
   @override
-  _$MapControllerStateCopyWith<_MapControllerState> get copyWith => __$MapControllerStateCopyWithImpl<_MapControllerState>(this, _$identity);
+  _$MapControllerStateCopyWith<_MapControllerState> get copyWith =>
+      __$MapControllerStateCopyWithImpl<_MapControllerState>(this, _$identity);
 }
 
 abstract class _MapControllerState implements MapControllerState {
-  const factory _MapControllerState({@required Coordinates coordinates, @required KtList<Objective> objectives, @required double zoom, @required bool loadedCoordinates}) = _$_MapControllerState;
+  const factory _MapControllerState(
+      {@required Coordinates coordinates,
+      @required KtList<Objective> objectives,
+      @required double zoom,
+      @required bool loadedCoordinates}) = _$_MapControllerState;
 
   @override
   Coordinates get coordinates;
-
   @override
   KtList<Objective> get objectives;
-
   @override
   double get zoom;
-
   @override
   bool get loadedCoordinates;
-
   @override
   _$MapControllerStateCopyWith<_MapControllerState> get copyWith;
 }

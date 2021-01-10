@@ -24,9 +24,9 @@ dependencies:
   flutter:
     sdk: flutter
   # Service locator
-  get_it: ^5.0.1
+  get_it: ^5.0.4
   # For dependency injection
-  injectable: ^1.0.5
+  injectable: ^1.0.7
   # Bloc for state management
   flutter_bloc: ^6.1.1
   # Value equality
@@ -53,7 +53,7 @@ dependencies:
   # For dynamically resizing text
   auto_size_text: ^2.1.0
   # For showing the user's experience progression
-  percent_indicator: ^2.1.8
+  percent_indicator: ^2.1.9
   # Takes out some boilerplate
   flutter_hooks: ^0.15.0
   # For FloatingActionButton menus
@@ -61,7 +61,7 @@ dependencies:
   # To add shadow to icons with less boiler plate
   icon_shadow: ^1.0.1
   # For getting images from the device
-  image_picker: ^0.6.7+14
+  image_picker: ^0.6.7+21
   # For getting multiple images from the device
   multi_image_picker: ^4.7.14
   # Local database, mostly for back-end simulation
@@ -82,7 +82,7 @@ dependencies:
   # Unique IDs for entities
   uuid: ^2.2.2
   # For Signing in and registering with Google
-  google_sign_in: ^4.5.6
+  google_sign_in: ^4.5.9
   # For use with Firebase as backend
   firebase_core: ^0.5.3
   # For authentication with Firebase
@@ -106,11 +106,11 @@ dev_dependencies:
   # For mocking dependencies during unit testing
   mockito: ^4.1.2
   # For unions generation
-  freezed: ^0.12.3
+  freezed: ^0.12.6
   # Collection of lint rules
   lint: ^1.3.0
   # For dependency injection code generation
-  injectable_generator: ^1.0.6
+  injectable_generator: ^1.0.7
   # For Serializing entities to JSON
   json_serializable: ^3.5.1
   # For auto generating the routes
@@ -118,7 +118,7 @@ dev_dependencies:
   # For ease of setting the app icon
   flutter_launcher_icons: ^0.8.1
   # For extra icons
-  font_awesome_flutter: ^8.10.1
+  font_awesome_flutter: ^8.11.0
   # Generator for moor
   moor_generator: ^3.4.0
   # For testing with moor

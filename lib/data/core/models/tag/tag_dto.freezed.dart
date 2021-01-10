@@ -17,11 +17,12 @@ class _$TagDtoTearOff {
   const _$TagDtoTearOff();
 
 // ignore: unused_element
-  _TagDto call({@required String id,
-    @required String name,
-    @required String creatorId,
-    @required @ServerTimestampConverter() DateTime creationDate,
-    @required @ServerTimestampConverter() DateTime modificationDate}) {
+  _TagDto call(
+      {@required String id,
+      @required String name,
+      @required String creatorId,
+      @required @ServerTimestampConverter() DateTime creationDate,
+      @required @ServerTimestampConverter() DateTime modificationDate}) {
     return _TagDto(
       id: id,
       name: name,
@@ -58,13 +59,13 @@ mixin _$TagDto {
 /// @nodoc
 abstract class $TagDtoCopyWith<$Res> {
   factory $TagDtoCopyWith(TagDto value, $Res Function(TagDto) then) =
-  _$TagDtoCopyWithImpl<$Res>;
-  
-  $Res call({String id,
-    String name,
-    String creatorId,
-    @ServerTimestampConverter() DateTime creationDate,
-    @ServerTimestampConverter() DateTime modificationDate});
+      _$TagDtoCopyWithImpl<$Res>;
+  $Res call(
+      {String id,
+      String name,
+      String creatorId,
+      @ServerTimestampConverter() DateTime creationDate,
+      @ServerTimestampConverter() DateTime modificationDate});
 }
 
 /// @nodoc
@@ -88,11 +89,11 @@ class _$TagDtoCopyWithImpl<$Res> implements $TagDtoCopyWith<$Res> {
       name: name == freezed ? _value.name : name as String,
       creatorId: creatorId == freezed ? _value.creatorId : creatorId as String,
       creationDate: creationDate == freezed
-        ? _value.creationDate
-        : creationDate as DateTime,
+          ? _value.creationDate
+          : creationDate as DateTime,
       modificationDate: modificationDate == freezed
-        ? _value.modificationDate
-        : modificationDate as DateTime,
+          ? _value.modificationDate
+          : modificationDate as DateTime,
     ));
   }
 }
@@ -100,25 +101,25 @@ class _$TagDtoCopyWithImpl<$Res> implements $TagDtoCopyWith<$Res> {
 /// @nodoc
 abstract class _$TagDtoCopyWith<$Res> implements $TagDtoCopyWith<$Res> {
   factory _$TagDtoCopyWith(_TagDto value, $Res Function(_TagDto) then) =
-  __$TagDtoCopyWithImpl<$Res>;
-  
+      __$TagDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String id,
-    String name,
-    String creatorId,
-    @ServerTimestampConverter() DateTime creationDate,
-    @ServerTimestampConverter() DateTime modificationDate});
+  $Res call(
+      {String id,
+      String name,
+      String creatorId,
+      @ServerTimestampConverter() DateTime creationDate,
+      @ServerTimestampConverter() DateTime modificationDate});
 }
 
 /// @nodoc
 class __$TagDtoCopyWithImpl<$Res> extends _$TagDtoCopyWithImpl<$Res>
-  implements _$TagDtoCopyWith<$Res> {
+    implements _$TagDtoCopyWith<$Res> {
   __$TagDtoCopyWithImpl(_TagDto _value, $Res Function(_TagDto) _then)
-    : super(_value, (v) => _then(v as _TagDto));
-  
+      : super(_value, (v) => _then(v as _TagDto));
+
   @override
   _TagDto get _value => super._value as _TagDto;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -132,33 +133,35 @@ class __$TagDtoCopyWithImpl<$Res> extends _$TagDtoCopyWithImpl<$Res>
       name: name == freezed ? _value.name : name as String,
       creatorId: creatorId == freezed ? _value.creatorId : creatorId as String,
       creationDate: creationDate == freezed
-        ? _value.creationDate
-        : creationDate as DateTime,
+          ? _value.creationDate
+          : creationDate as DateTime,
       modificationDate: modificationDate == freezed
-        ? _value.modificationDate
-        : modificationDate as DateTime,
+          ? _value.modificationDate
+          : modificationDate as DateTime,
     ));
   }
 }
 
 @JsonSerializable()
 
-/// @nodoc class _$_TagDto extends _TagDto {
-  const _$_TagDto({@required this.id,
-    @required this.name,
-    @required this.creatorId,
-    @required @ServerTimestampConverter() this.creationDate,
-    @required @ServerTimestampConverter() this.modificationDate})
-    : assert(id != null),
-      assert(name != null),
-      assert(creatorId != null),
-      assert(creationDate != null),
-      assert(modificationDate != null),
-      super._();
-  
+/// @nodoc
+class _$_TagDto extends _TagDto {
+  const _$_TagDto(
+      {@required this.id,
+      @required this.name,
+      @required this.creatorId,
+      @required @ServerTimestampConverter() this.creationDate,
+      @required @ServerTimestampConverter() this.modificationDate})
+      : assert(id != null),
+        assert(name != null),
+        assert(creatorId != null),
+        assert(creationDate != null),
+        assert(modificationDate != null),
+        super._();
+
   factory _$_TagDto.fromJson(Map<String, dynamic> json) =>
-    _$_$_TagDtoFromJson(json);
-  
+      _$_$_TagDtoFromJson(json);
+
   @override
   final String id;
   @override
@@ -180,20 +183,20 @@ class __$TagDtoCopyWithImpl<$Res> extends _$TagDtoCopyWithImpl<$Res>
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _TagDto &&
-        (identical(other.id, id) ||
-          const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.name, name) ||
-          const DeepCollectionEquality().equals(other.name, name)) &&
-        (identical(other.creatorId, creatorId) ||
-          const DeepCollectionEquality()
-            .equals(other.creatorId, creatorId)) &&
-        (identical(other.creationDate, creationDate) ||
-          const DeepCollectionEquality()
-            .equals(other.creationDate, creationDate)) &&
-        (identical(other.modificationDate, modificationDate) ||
-          const DeepCollectionEquality()
-            .equals(other.modificationDate, modificationDate)));
+        (other is _TagDto &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.creatorId, creatorId) ||
+                const DeepCollectionEquality()
+                    .equals(other.creatorId, creatorId)) &&
+            (identical(other.creationDate, creationDate) ||
+                const DeepCollectionEquality()
+                    .equals(other.creationDate, creationDate)) &&
+            (identical(other.modificationDate, modificationDate) ||
+                const DeepCollectionEquality()
+                    .equals(other.modificationDate, modificationDate)));
   }
 
   @override
@@ -207,7 +210,7 @@ class __$TagDtoCopyWithImpl<$Res> extends _$TagDtoCopyWithImpl<$Res>
 
   @override
   _$TagDtoCopyWith<_TagDto> get copyWith =>
-    __$TagDtoCopyWithImpl<_TagDto>(this, _$identity);
+      __$TagDtoCopyWithImpl<_TagDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -217,25 +220,22 @@ class __$TagDtoCopyWithImpl<$Res> extends _$TagDtoCopyWithImpl<$Res>
 
 abstract class _TagDto extends TagDto {
   const _TagDto._() : super._();
-  
-  const factory _TagDto({@required String id,
-    @required String name,
-    @required String creatorId,
-    @required @ServerTimestampConverter() DateTime creationDate,
-    @required @ServerTimestampConverter() DateTime modificationDate}) =
-  _$_TagDto;
-  
+  const factory _TagDto(
+          {@required String id,
+          @required String name,
+          @required String creatorId,
+          @required @ServerTimestampConverter() DateTime creationDate,
+          @required @ServerTimestampConverter() DateTime modificationDate}) =
+      _$_TagDto;
+
   factory _TagDto.fromJson(Map<String, dynamic> json) = _$_TagDto.fromJson;
-  
+
   @override
   String get id;
-  
   @override
   String get name;
-  
   @override
   String get creatorId;
-  
   @override
   @ServerTimestampConverter()
   DateTime get creationDate;

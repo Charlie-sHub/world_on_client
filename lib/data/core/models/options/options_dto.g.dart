@@ -13,7 +13,8 @@ _$_OptionsDto _$_$_OptionsDtoFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_OptionsDtoToJson(_$_OptionsDto instance) => <String, dynamic>{
+Map<String, dynamic> _$_$_OptionsDtoToJson(_$_OptionsDto instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'languageCode': instance.languageCode,
     };

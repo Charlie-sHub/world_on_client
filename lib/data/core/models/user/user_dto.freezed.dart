@@ -17,32 +17,33 @@ class _$UserDtoTearOff {
   const _$UserDtoTearOff();
 
 // ignore: unused_element
-  _UserDto call({@required String id,
-    @required String name,
-    @required String username,
-    @required String password,
-    @required String email,
-    @required @ServerTimestampConverter() DateTime birthday,
-    @required String description,
-    @required String imageURL,
-    @required int level,
-    @required int experiencePoints,
-    @required bool privacy,
-    @required bool adminPowers,
-    @required bool enabled,
-    @required @ServerTimestampConverter() DateTime lastLogin,
-    @required @ServerTimestampConverter() DateTime creationDate,
-    @required @ServerTimestampConverter() DateTime modificationDate,
-    @required OptionsDto options,
-    @required Set<String> blockedUsersIds,
-    @required Set<String> followedUsersIds,
-    @required Set<String> interestsIds,
-    @required Set<String> achievementsIds,
-    @required Set<String> experiencesDoneIds,
-    @required Set<String> experiencesLikedIds,
-    @required Set<String> experiencesToDoIds,
-    @required Set<DeviceDto> devices,
-    @required Set<SystemDto> systems}) {
+  _UserDto call(
+      {@required String id,
+      @required String name,
+      @required String username,
+      @required String password,
+      @required String email,
+      @required @ServerTimestampConverter() DateTime birthday,
+      @required String description,
+      @required String imageURL,
+      @required int level,
+      @required int experiencePoints,
+      @required bool privacy,
+      @required bool adminPowers,
+      @required bool enabled,
+      @required @ServerTimestampConverter() DateTime lastLogin,
+      @required @ServerTimestampConverter() DateTime creationDate,
+      @required @ServerTimestampConverter() DateTime modificationDate,
+      @required OptionsDto options,
+      @required Set<String> blockedUsersIds,
+      @required Set<String> followedUsersIds,
+      @required Set<String> interestsIds,
+      @required Set<String> achievementsIds,
+      @required Set<String> experiencesDoneIds,
+      @required Set<String> experiencesLikedIds,
+      @required Set<String> experiencesToDoIds,
+      @required Set<DeviceDto> devices,
+      @required Set<SystemDto> systems}) {
     return _UserDto(
       id: id,
       name: name,
@@ -124,35 +125,35 @@ mixin _$UserDto {
 /// @nodoc
 abstract class $UserDtoCopyWith<$Res> {
   factory $UserDtoCopyWith(UserDto value, $Res Function(UserDto) then) =
-  _$UserDtoCopyWithImpl<$Res>;
-  
-  $Res call({String id,
-    String name,
-    String username,
-    String password,
-    String email,
-    @ServerTimestampConverter() DateTime birthday,
-    String description,
-    String imageURL,
-    int level,
-    int experiencePoints,
-    bool privacy,
-    bool adminPowers,
-    bool enabled,
-    @ServerTimestampConverter() DateTime lastLogin,
-    @ServerTimestampConverter() DateTime creationDate,
-    @ServerTimestampConverter() DateTime modificationDate,
-    OptionsDto options,
-    Set<String> blockedUsersIds,
-    Set<String> followedUsersIds,
-    Set<String> interestsIds,
-    Set<String> achievementsIds,
-    Set<String> experiencesDoneIds,
-    Set<String> experiencesLikedIds,
-    Set<String> experiencesToDoIds,
-    Set<DeviceDto> devices,
-    Set<SystemDto> systems});
-  
+      _$UserDtoCopyWithImpl<$Res>;
+  $Res call(
+      {String id,
+      String name,
+      String username,
+      String password,
+      String email,
+      @ServerTimestampConverter() DateTime birthday,
+      String description,
+      String imageURL,
+      int level,
+      int experiencePoints,
+      bool privacy,
+      bool adminPowers,
+      bool enabled,
+      @ServerTimestampConverter() DateTime lastLogin,
+      @ServerTimestampConverter() DateTime creationDate,
+      @ServerTimestampConverter() DateTime modificationDate,
+      OptionsDto options,
+      Set<String> blockedUsersIds,
+      Set<String> followedUsersIds,
+      Set<String> interestsIds,
+      Set<String> achievementsIds,
+      Set<String> experiencesDoneIds,
+      Set<String> experiencesLikedIds,
+      Set<String> experiencesToDoIds,
+      Set<DeviceDto> devices,
+      Set<SystemDto> systems});
+
   $OptionsDtoCopyWith<$Res> get options;
 }
 
@@ -201,46 +202,46 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
       email: email == freezed ? _value.email : email as String,
       birthday: birthday == freezed ? _value.birthday : birthday as DateTime,
       description:
-      description == freezed ? _value.description : description as String,
+          description == freezed ? _value.description : description as String,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
       level: level == freezed ? _value.level : level as int,
       experiencePoints: experiencePoints == freezed
-        ? _value.experiencePoints
-        : experiencePoints as int,
+          ? _value.experiencePoints
+          : experiencePoints as int,
       privacy: privacy == freezed ? _value.privacy : privacy as bool,
       adminPowers:
-      adminPowers == freezed ? _value.adminPowers : adminPowers as bool,
+          adminPowers == freezed ? _value.adminPowers : adminPowers as bool,
       enabled: enabled == freezed ? _value.enabled : enabled as bool,
       lastLogin:
-      lastLogin == freezed ? _value.lastLogin : lastLogin as DateTime,
+          lastLogin == freezed ? _value.lastLogin : lastLogin as DateTime,
       creationDate: creationDate == freezed
-        ? _value.creationDate
-        : creationDate as DateTime,
+          ? _value.creationDate
+          : creationDate as DateTime,
       modificationDate: modificationDate == freezed
-        ? _value.modificationDate
-        : modificationDate as DateTime,
+          ? _value.modificationDate
+          : modificationDate as DateTime,
       options: options == freezed ? _value.options : options as OptionsDto,
       blockedUsersIds: blockedUsersIds == freezed
-        ? _value.blockedUsersIds
-        : blockedUsersIds as Set<String>,
+          ? _value.blockedUsersIds
+          : blockedUsersIds as Set<String>,
       followedUsersIds: followedUsersIds == freezed
-        ? _value.followedUsersIds
-        : followedUsersIds as Set<String>,
+          ? _value.followedUsersIds
+          : followedUsersIds as Set<String>,
       interestsIds: interestsIds == freezed
-        ? _value.interestsIds
-        : interestsIds as Set<String>,
+          ? _value.interestsIds
+          : interestsIds as Set<String>,
       achievementsIds: achievementsIds == freezed
-        ? _value.achievementsIds
-        : achievementsIds as Set<String>,
+          ? _value.achievementsIds
+          : achievementsIds as Set<String>,
       experiencesDoneIds: experiencesDoneIds == freezed
-        ? _value.experiencesDoneIds
-        : experiencesDoneIds as Set<String>,
+          ? _value.experiencesDoneIds
+          : experiencesDoneIds as Set<String>,
       experiencesLikedIds: experiencesLikedIds == freezed
-        ? _value.experiencesLikedIds
-        : experiencesLikedIds as Set<String>,
+          ? _value.experiencesLikedIds
+          : experiencesLikedIds as Set<String>,
       experiencesToDoIds: experiencesToDoIds == freezed
-        ? _value.experiencesToDoIds
-        : experiencesToDoIds as Set<String>,
+          ? _value.experiencesToDoIds
+          : experiencesToDoIds as Set<String>,
       devices: devices == freezed ? _value.devices : devices as Set<DeviceDto>,
       systems: systems == freezed ? _value.systems : systems as Set<SystemDto>,
     ));
@@ -260,49 +261,49 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
 /// @nodoc
 abstract class _$UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
   factory _$UserDtoCopyWith(_UserDto value, $Res Function(_UserDto) then) =
-  __$UserDtoCopyWithImpl<$Res>;
-  
+      __$UserDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String id,
-    String name,
-    String username,
-    String password,
-    String email,
-    @ServerTimestampConverter() DateTime birthday,
-    String description,
-    String imageURL,
-    int level,
-    int experiencePoints,
-    bool privacy,
-    bool adminPowers,
-    bool enabled,
-    @ServerTimestampConverter() DateTime lastLogin,
-    @ServerTimestampConverter() DateTime creationDate,
-    @ServerTimestampConverter() DateTime modificationDate,
-    OptionsDto options,
-    Set<String> blockedUsersIds,
-    Set<String> followedUsersIds,
-    Set<String> interestsIds,
-    Set<String> achievementsIds,
-    Set<String> experiencesDoneIds,
-    Set<String> experiencesLikedIds,
-    Set<String> experiencesToDoIds,
-    Set<DeviceDto> devices,
-    Set<SystemDto> systems});
-  
+  $Res call(
+      {String id,
+      String name,
+      String username,
+      String password,
+      String email,
+      @ServerTimestampConverter() DateTime birthday,
+      String description,
+      String imageURL,
+      int level,
+      int experiencePoints,
+      bool privacy,
+      bool adminPowers,
+      bool enabled,
+      @ServerTimestampConverter() DateTime lastLogin,
+      @ServerTimestampConverter() DateTime creationDate,
+      @ServerTimestampConverter() DateTime modificationDate,
+      OptionsDto options,
+      Set<String> blockedUsersIds,
+      Set<String> followedUsersIds,
+      Set<String> interestsIds,
+      Set<String> achievementsIds,
+      Set<String> experiencesDoneIds,
+      Set<String> experiencesLikedIds,
+      Set<String> experiencesToDoIds,
+      Set<DeviceDto> devices,
+      Set<SystemDto> systems});
+
   @override
   $OptionsDtoCopyWith<$Res> get options;
 }
 
 /// @nodoc
 class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
-  implements _$UserDtoCopyWith<$Res> {
+    implements _$UserDtoCopyWith<$Res> {
   __$UserDtoCopyWithImpl(_UserDto _value, $Res Function(_UserDto) _then)
-    : super(_value, (v) => _then(v as _UserDto));
-  
+      : super(_value, (v) => _then(v as _UserDto));
+
   @override
   _UserDto get _value => super._value as _UserDto;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -340,46 +341,46 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
       email: email == freezed ? _value.email : email as String,
       birthday: birthday == freezed ? _value.birthday : birthday as DateTime,
       description:
-      description == freezed ? _value.description : description as String,
+          description == freezed ? _value.description : description as String,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
       level: level == freezed ? _value.level : level as int,
       experiencePoints: experiencePoints == freezed
-        ? _value.experiencePoints
-        : experiencePoints as int,
+          ? _value.experiencePoints
+          : experiencePoints as int,
       privacy: privacy == freezed ? _value.privacy : privacy as bool,
       adminPowers:
-      adminPowers == freezed ? _value.adminPowers : adminPowers as bool,
+          adminPowers == freezed ? _value.adminPowers : adminPowers as bool,
       enabled: enabled == freezed ? _value.enabled : enabled as bool,
       lastLogin:
-      lastLogin == freezed ? _value.lastLogin : lastLogin as DateTime,
+          lastLogin == freezed ? _value.lastLogin : lastLogin as DateTime,
       creationDate: creationDate == freezed
-        ? _value.creationDate
-        : creationDate as DateTime,
+          ? _value.creationDate
+          : creationDate as DateTime,
       modificationDate: modificationDate == freezed
-        ? _value.modificationDate
-        : modificationDate as DateTime,
+          ? _value.modificationDate
+          : modificationDate as DateTime,
       options: options == freezed ? _value.options : options as OptionsDto,
       blockedUsersIds: blockedUsersIds == freezed
-        ? _value.blockedUsersIds
-        : blockedUsersIds as Set<String>,
+          ? _value.blockedUsersIds
+          : blockedUsersIds as Set<String>,
       followedUsersIds: followedUsersIds == freezed
-        ? _value.followedUsersIds
-        : followedUsersIds as Set<String>,
+          ? _value.followedUsersIds
+          : followedUsersIds as Set<String>,
       interestsIds: interestsIds == freezed
-        ? _value.interestsIds
-        : interestsIds as Set<String>,
+          ? _value.interestsIds
+          : interestsIds as Set<String>,
       achievementsIds: achievementsIds == freezed
-        ? _value.achievementsIds
-        : achievementsIds as Set<String>,
+          ? _value.achievementsIds
+          : achievementsIds as Set<String>,
       experiencesDoneIds: experiencesDoneIds == freezed
-        ? _value.experiencesDoneIds
-        : experiencesDoneIds as Set<String>,
+          ? _value.experiencesDoneIds
+          : experiencesDoneIds as Set<String>,
       experiencesLikedIds: experiencesLikedIds == freezed
-        ? _value.experiencesLikedIds
-        : experiencesLikedIds as Set<String>,
+          ? _value.experiencesLikedIds
+          : experiencesLikedIds as Set<String>,
       experiencesToDoIds: experiencesToDoIds == freezed
-        ? _value.experiencesToDoIds
-        : experiencesToDoIds as Set<String>,
+          ? _value.experiencesToDoIds
+          : experiencesToDoIds as Set<String>,
       devices: devices == freezed ? _value.devices : devices as Set<DeviceDto>,
       systems: systems == freezed ? _value.systems : systems as Set<SystemDto>,
     ));
@@ -388,64 +389,66 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
 
 @JsonSerializable()
 
-/// @nodoc class _$_UserDto extends _UserDto {
-  const _$_UserDto({@required this.id,
-    @required this.name,
-    @required this.username,
-    @required this.password,
-    @required this.email,
-    @required @ServerTimestampConverter() this.birthday,
-    @required this.description,
-    @required this.imageURL,
-    @required this.level,
-    @required this.experiencePoints,
-    @required this.privacy,
-    @required this.adminPowers,
-    @required this.enabled,
-    @required @ServerTimestampConverter() this.lastLogin,
-    @required @ServerTimestampConverter() this.creationDate,
-    @required @ServerTimestampConverter() this.modificationDate,
-    @required this.options,
-    @required this.blockedUsersIds,
-    @required this.followedUsersIds,
-    @required this.interestsIds,
-    @required this.achievementsIds,
-    @required this.experiencesDoneIds,
-    @required this.experiencesLikedIds,
-    @required this.experiencesToDoIds,
-    @required this.devices,
-    @required this.systems})
-    : assert(id != null),
-      assert(name != null),
-      assert(username != null),
-      assert(password != null),
-      assert(email != null),
-      assert(birthday != null),
-      assert(description != null),
-      assert(imageURL != null),
-      assert(level != null),
-      assert(experiencePoints != null),
-      assert(privacy != null),
-      assert(adminPowers != null),
-      assert(enabled != null),
-      assert(lastLogin != null),
-      assert(creationDate != null),
-      assert(modificationDate != null),
-      assert(options != null),
-      assert(blockedUsersIds != null),
-      assert(followedUsersIds != null),
-      assert(interestsIds != null),
-      assert(achievementsIds != null),
-      assert(experiencesDoneIds != null),
-      assert(experiencesLikedIds != null),
-      assert(experiencesToDoIds != null),
-      assert(devices != null),
-      assert(systems != null),
-      super._();
-  
+/// @nodoc
+class _$_UserDto extends _UserDto {
+  const _$_UserDto(
+      {@required this.id,
+      @required this.name,
+      @required this.username,
+      @required this.password,
+      @required this.email,
+      @required @ServerTimestampConverter() this.birthday,
+      @required this.description,
+      @required this.imageURL,
+      @required this.level,
+      @required this.experiencePoints,
+      @required this.privacy,
+      @required this.adminPowers,
+      @required this.enabled,
+      @required @ServerTimestampConverter() this.lastLogin,
+      @required @ServerTimestampConverter() this.creationDate,
+      @required @ServerTimestampConverter() this.modificationDate,
+      @required this.options,
+      @required this.blockedUsersIds,
+      @required this.followedUsersIds,
+      @required this.interestsIds,
+      @required this.achievementsIds,
+      @required this.experiencesDoneIds,
+      @required this.experiencesLikedIds,
+      @required this.experiencesToDoIds,
+      @required this.devices,
+      @required this.systems})
+      : assert(id != null),
+        assert(name != null),
+        assert(username != null),
+        assert(password != null),
+        assert(email != null),
+        assert(birthday != null),
+        assert(description != null),
+        assert(imageURL != null),
+        assert(level != null),
+        assert(experiencePoints != null),
+        assert(privacy != null),
+        assert(adminPowers != null),
+        assert(enabled != null),
+        assert(lastLogin != null),
+        assert(creationDate != null),
+        assert(modificationDate != null),
+        assert(options != null),
+        assert(blockedUsersIds != null),
+        assert(followedUsersIds != null),
+        assert(interestsIds != null),
+        assert(achievementsIds != null),
+        assert(experiencesDoneIds != null),
+        assert(experiencesLikedIds != null),
+        assert(experiencesToDoIds != null),
+        assert(devices != null),
+        assert(systems != null),
+        super._();
+
   factory _$_UserDto.fromJson(Map<String, dynamic> json) =>
-    _$_$_UserDtoFromJson(json);
-  
+      _$_$_UserDtoFromJson(json);
+
   @override
   final String id;
   @override
@@ -512,76 +515,76 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _UserDto &&
-        (identical(other.id, id) ||
-          const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.name, name) ||
-          const DeepCollectionEquality().equals(other.name, name)) &&
-        (identical(other.username, username) ||
-          const DeepCollectionEquality()
-            .equals(other.username, username)) &&
-        (identical(other.password, password) ||
-          const DeepCollectionEquality()
-            .equals(other.password, password)) &&
-        (identical(other.email, email) ||
-          const DeepCollectionEquality().equals(other.email, email)) &&
-        (identical(other.birthday, birthday) ||
-          const DeepCollectionEquality()
-            .equals(other.birthday, birthday)) &&
-        (identical(other.description, description) ||
-          const DeepCollectionEquality()
-            .equals(other.description, description)) &&
-        (identical(other.imageURL, imageURL) ||
-          const DeepCollectionEquality()
-            .equals(other.imageURL, imageURL)) &&
-        (identical(other.level, level) ||
-          const DeepCollectionEquality().equals(other.level, level)) &&
-        (identical(other.experiencePoints, experiencePoints) ||
-          const DeepCollectionEquality()
-            .equals(other.experiencePoints, experiencePoints)) &&
-        (identical(other.privacy, privacy) ||
-          const DeepCollectionEquality()
-            .equals(other.privacy, privacy)) &&
-        (identical(other.adminPowers, adminPowers) ||
-          const DeepCollectionEquality()
-            .equals(other.adminPowers, adminPowers)) &&
-        (identical(other.enabled, enabled) ||
-          const DeepCollectionEquality()
-            .equals(other.enabled, enabled)) &&
-        (identical(other.lastLogin, lastLogin) ||
-          const DeepCollectionEquality()
-            .equals(other.lastLogin, lastLogin)) &&
-        (identical(other.creationDate, creationDate) ||
-          const DeepCollectionEquality()
-            .equals(other.creationDate, creationDate)) &&
-        (identical(other.modificationDate, modificationDate) ||
-          const DeepCollectionEquality()
-            .equals(other.modificationDate, modificationDate)) &&
-        (identical(other.options, options) ||
-          const DeepCollectionEquality()
-            .equals(other.options, options)) &&
-        (identical(other.blockedUsersIds, blockedUsersIds) ||
-          const DeepCollectionEquality()
-            .equals(other.blockedUsersIds, blockedUsersIds)) &&
-        (identical(other.followedUsersIds, followedUsersIds) ||
-          const DeepCollectionEquality()
-            .equals(other.followedUsersIds, followedUsersIds)) &&
-        (identical(other.interestsIds, interestsIds) ||
-          const DeepCollectionEquality()
-            .equals(other.interestsIds, interestsIds)) &&
-        (identical(other.achievementsIds, achievementsIds) ||
-          const DeepCollectionEquality()
-            .equals(other.achievementsIds, achievementsIds)) &&
-        (identical(other.experiencesDoneIds, experiencesDoneIds) ||
-          const DeepCollectionEquality()
-            .equals(other.experiencesDoneIds, experiencesDoneIds)) &&
-        (identical(other.experiencesLikedIds, experiencesLikedIds) ||
-          const DeepCollectionEquality()
-            .equals(other.experiencesLikedIds, experiencesLikedIds)) &&
-        (identical(other.experiencesToDoIds, experiencesToDoIds) ||
-          const DeepCollectionEquality().equals(other.experiencesToDoIds, experiencesToDoIds)) &&
-        (identical(other.devices, devices) || const DeepCollectionEquality().equals(other.devices, devices)) &&
-        (identical(other.systems, systems) || const DeepCollectionEquality().equals(other.systems, systems)));
+        (other is _UserDto &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.username, username) ||
+                const DeepCollectionEquality()
+                    .equals(other.username, username)) &&
+            (identical(other.password, password) ||
+                const DeepCollectionEquality()
+                    .equals(other.password, password)) &&
+            (identical(other.email, email) ||
+                const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.birthday, birthday) ||
+                const DeepCollectionEquality()
+                    .equals(other.birthday, birthday)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
+            (identical(other.imageURL, imageURL) ||
+                const DeepCollectionEquality()
+                    .equals(other.imageURL, imageURL)) &&
+            (identical(other.level, level) ||
+                const DeepCollectionEquality().equals(other.level, level)) &&
+            (identical(other.experiencePoints, experiencePoints) ||
+                const DeepCollectionEquality()
+                    .equals(other.experiencePoints, experiencePoints)) &&
+            (identical(other.privacy, privacy) ||
+                const DeepCollectionEquality()
+                    .equals(other.privacy, privacy)) &&
+            (identical(other.adminPowers, adminPowers) ||
+                const DeepCollectionEquality()
+                    .equals(other.adminPowers, adminPowers)) &&
+            (identical(other.enabled, enabled) ||
+                const DeepCollectionEquality()
+                    .equals(other.enabled, enabled)) &&
+            (identical(other.lastLogin, lastLogin) ||
+                const DeepCollectionEquality()
+                    .equals(other.lastLogin, lastLogin)) &&
+            (identical(other.creationDate, creationDate) ||
+                const DeepCollectionEquality()
+                    .equals(other.creationDate, creationDate)) &&
+            (identical(other.modificationDate, modificationDate) ||
+                const DeepCollectionEquality()
+                    .equals(other.modificationDate, modificationDate)) &&
+            (identical(other.options, options) ||
+                const DeepCollectionEquality()
+                    .equals(other.options, options)) &&
+            (identical(other.blockedUsersIds, blockedUsersIds) ||
+                const DeepCollectionEquality()
+                    .equals(other.blockedUsersIds, blockedUsersIds)) &&
+            (identical(other.followedUsersIds, followedUsersIds) ||
+                const DeepCollectionEquality()
+                    .equals(other.followedUsersIds, followedUsersIds)) &&
+            (identical(other.interestsIds, interestsIds) ||
+                const DeepCollectionEquality()
+                    .equals(other.interestsIds, interestsIds)) &&
+            (identical(other.achievementsIds, achievementsIds) ||
+                const DeepCollectionEquality()
+                    .equals(other.achievementsIds, achievementsIds)) &&
+            (identical(other.experiencesDoneIds, experiencesDoneIds) ||
+                const DeepCollectionEquality()
+                    .equals(other.experiencesDoneIds, experiencesDoneIds)) &&
+            (identical(other.experiencesLikedIds, experiencesLikedIds) ||
+                const DeepCollectionEquality()
+                    .equals(other.experiencesLikedIds, experiencesLikedIds)) &&
+            (identical(other.experiencesToDoIds, experiencesToDoIds) ||
+                const DeepCollectionEquality().equals(other.experiencesToDoIds, experiencesToDoIds)) &&
+            (identical(other.devices, devices) || const DeepCollectionEquality().equals(other.devices, devices)) &&
+            (identical(other.systems, systems) || const DeepCollectionEquality().equals(other.systems, systems)));
   }
 
   @override
@@ -616,7 +619,7 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
 
   @override
   _$UserDtoCopyWith<_UserDto> get copyWith =>
-    __$UserDtoCopyWithImpl<_UserDto>(this, _$identity);
+      __$UserDtoCopyWithImpl<_UserDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -626,45 +629,42 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
 
 abstract class _UserDto extends UserDto {
   const _UserDto._() : super._();
-  
-  const factory _UserDto({@required String id,
-    @required String name,
-    @required String username,
-    @required String password,
-    @required String email,
-    @required @ServerTimestampConverter() DateTime birthday,
-    @required String description,
-    @required String imageURL,
-    @required int level,
-    @required int experiencePoints,
-    @required bool privacy,
-    @required bool adminPowers,
-    @required bool enabled,
-    @required @ServerTimestampConverter() DateTime lastLogin,
-    @required @ServerTimestampConverter() DateTime creationDate,
-    @required @ServerTimestampConverter() DateTime modificationDate,
-    @required OptionsDto options,
-    @required Set<String> blockedUsersIds,
-    @required Set<String> followedUsersIds,
-    @required Set<String> interestsIds,
-    @required Set<String> achievementsIds,
-    @required Set<String> experiencesDoneIds,
-    @required Set<String> experiencesLikedIds,
-    @required Set<String> experiencesToDoIds,
-    @required Set<DeviceDto> devices,
-    @required Set<SystemDto> systems}) = _$_UserDto;
-  
+  const factory _UserDto(
+      {@required String id,
+      @required String name,
+      @required String username,
+      @required String password,
+      @required String email,
+      @required @ServerTimestampConverter() DateTime birthday,
+      @required String description,
+      @required String imageURL,
+      @required int level,
+      @required int experiencePoints,
+      @required bool privacy,
+      @required bool adminPowers,
+      @required bool enabled,
+      @required @ServerTimestampConverter() DateTime lastLogin,
+      @required @ServerTimestampConverter() DateTime creationDate,
+      @required @ServerTimestampConverter() DateTime modificationDate,
+      @required OptionsDto options,
+      @required Set<String> blockedUsersIds,
+      @required Set<String> followedUsersIds,
+      @required Set<String> interestsIds,
+      @required Set<String> achievementsIds,
+      @required Set<String> experiencesDoneIds,
+      @required Set<String> experiencesLikedIds,
+      @required Set<String> experiencesToDoIds,
+      @required Set<DeviceDto> devices,
+      @required Set<SystemDto> systems}) = _$_UserDto;
+
   factory _UserDto.fromJson(Map<String, dynamic> json) = _$_UserDto.fromJson;
-  
+
   @override
   String get id;
-  
   @override
   String get name;
-  
   @override
   String get username;
-  
   @override // Shouldn't this be encrypted in some way?
 // Maybe it shouldn't even be part of the dto at all, as Firebase handles it at login time
   String get password;

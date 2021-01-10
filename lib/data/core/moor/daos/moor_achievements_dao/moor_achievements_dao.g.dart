@@ -7,13 +7,11 @@ part of 'moor_achievements_dao.dart';
 // **************************************************************************
 
 mixin _$MoorAchievementsDaoMixin on DatabaseAccessor<Database> {
-  $MoorAchievementsTable get moorAchievements => attachedDatabase.moorAchievements;
-
+  $MoorAchievementsTable get moorAchievements =>
+      attachedDatabase.moorAchievements;
   $MoorTagsTable get moorTags => attachedDatabase.moorTags;
-
   $MoorUsersTable get moorUsers => attachedDatabase.moorUsers;
-
-  $UserAchievementsTable get userAchievements => attachedDatabase.userAchievements;
-
+  $UserAchievementsTable get userAchievements =>
+      attachedDatabase.userAchievements;
   $AchievementTagsTable get achievementTags => attachedDatabase.achievementTags;
 }

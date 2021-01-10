@@ -87,9 +87,7 @@ class TagManagementPage extends HookWidget {
                 );
             FlushbarHelper.createSuccess(
               duration: const Duration(seconds: 2),
-              message: S
-                .of(context)
-                .tagCreationSuccessMessage,
+              message: S.of(context).tagCreationSuccessMessage,
             ).show(context);
           },
         ),

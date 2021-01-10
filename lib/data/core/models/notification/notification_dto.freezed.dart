@@ -64,21 +64,28 @@ mixin _$NotificationDto {
 
 /// @nodoc
 abstract class $NotificationDtoCopyWith<$Res> {
-  factory $NotificationDtoCopyWith(NotificationDto value, $Res Function(NotificationDto) then) = _$NotificationDtoCopyWithImpl<$Res>;
-
-  $Res call({@JsonKey(ignore: true) String id, UserDto sender, UserDto receiver, String description, bool seen, @ServerTimestampConverter() DateTime creationDate, NotificationType type});
+  factory $NotificationDtoCopyWith(
+          NotificationDto value, $Res Function(NotificationDto) then) =
+      _$NotificationDtoCopyWithImpl<$Res>;
+  $Res call(
+      {@JsonKey(ignore: true) String id,
+      UserDto sender,
+      UserDto receiver,
+      String description,
+      bool seen,
+      @ServerTimestampConverter() DateTime creationDate,
+      NotificationType type});
 
   $UserDtoCopyWith<$Res> get sender;
-
   $UserDtoCopyWith<$Res> get receiver;
 }
 
 /// @nodoc
-class _$NotificationDtoCopyWithImpl<$Res> implements $NotificationDtoCopyWith<$Res> {
+class _$NotificationDtoCopyWithImpl<$Res>
+    implements $NotificationDtoCopyWith<$Res> {
   _$NotificationDtoCopyWithImpl(this._value, this._then);
 
   final NotificationDto _value;
-
   // ignore: unused_field
   final $Res Function(NotificationDto) _then;
 
@@ -96,9 +103,12 @@ class _$NotificationDtoCopyWithImpl<$Res> implements $NotificationDtoCopyWith<$R
       id: id == freezed ? _value.id : id as String,
       sender: sender == freezed ? _value.sender : sender as UserDto,
       receiver: receiver == freezed ? _value.receiver : receiver as UserDto,
-      description: description == freezed ? _value.description : description as String,
+      description:
+          description == freezed ? _value.description : description as String,
       seen: seen == freezed ? _value.seen : seen as bool,
-      creationDate: creationDate == freezed ? _value.creationDate : creationDate as DateTime,
+      creationDate: creationDate == freezed
+          ? _value.creationDate
+          : creationDate as DateTime,
       type: type == freezed ? _value.type : type as NotificationType,
     ));
   }
@@ -125,11 +135,20 @@ class _$NotificationDtoCopyWithImpl<$Res> implements $NotificationDtoCopyWith<$R
 }
 
 /// @nodoc
-abstract class _$NotificationDtoCopyWith<$Res> implements $NotificationDtoCopyWith<$Res> {
-  factory _$NotificationDtoCopyWith(_NotificationDto value, $Res Function(_NotificationDto) then) = __$NotificationDtoCopyWithImpl<$Res>;
-
+abstract class _$NotificationDtoCopyWith<$Res>
+    implements $NotificationDtoCopyWith<$Res> {
+  factory _$NotificationDtoCopyWith(
+          _NotificationDto value, $Res Function(_NotificationDto) then) =
+      __$NotificationDtoCopyWithImpl<$Res>;
   @override
-  $Res call({@JsonKey(ignore: true) String id, UserDto sender, UserDto receiver, String description, bool seen, @ServerTimestampConverter() DateTime creationDate, NotificationType type});
+  $Res call(
+      {@JsonKey(ignore: true) String id,
+      UserDto sender,
+      UserDto receiver,
+      String description,
+      bool seen,
+      @ServerTimestampConverter() DateTime creationDate,
+      NotificationType type});
 
   @override
   $UserDtoCopyWith<$Res> get sender;
@@ -138,8 +157,12 @@ abstract class _$NotificationDtoCopyWith<$Res> implements $NotificationDtoCopyWi
 }
 
 /// @nodoc
-class __$NotificationDtoCopyWithImpl<$Res> extends _$NotificationDtoCopyWithImpl<$Res> implements _$NotificationDtoCopyWith<$Res> {
-  __$NotificationDtoCopyWithImpl(_NotificationDto _value, $Res Function(_NotificationDto) _then) : super(_value, (v) => _then(v as _NotificationDto));
+class __$NotificationDtoCopyWithImpl<$Res>
+    extends _$NotificationDtoCopyWithImpl<$Res>
+    implements _$NotificationDtoCopyWith<$Res> {
+  __$NotificationDtoCopyWithImpl(
+      _NotificationDto _value, $Res Function(_NotificationDto) _then)
+      : super(_value, (v) => _then(v as _NotificationDto));
 
   @override
   _NotificationDto get _value => super._value as _NotificationDto;
@@ -158,9 +181,12 @@ class __$NotificationDtoCopyWithImpl<$Res> extends _$NotificationDtoCopyWithImpl
       id: id == freezed ? _value.id : id as String,
       sender: sender == freezed ? _value.sender : sender as UserDto,
       receiver: receiver == freezed ? _value.receiver : receiver as UserDto,
-      description: description == freezed ? _value.description : description as String,
+      description:
+          description == freezed ? _value.description : description as String,
       seen: seen == freezed ? _value.seen : seen as bool,
-      creationDate: creationDate == freezed ? _value.creationDate : creationDate as DateTime,
+      creationDate: creationDate == freezed
+          ? _value.creationDate
+          : creationDate as DateTime,
       type: type == freezed ? _value.type : type as NotificationType,
     ));
   }
@@ -186,7 +212,8 @@ class _$_NotificationDto extends _NotificationDto {
         assert(type != null),
         super._();
 
-  factory _$_NotificationDto.fromJson(Map<String, dynamic> json) => _$_$_NotificationDtoFromJson(json);
+  factory _$_NotificationDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_NotificationDtoFromJson(json);
 
   @override
   @JsonKey(ignore: true)
@@ -214,13 +241,23 @@ class _$_NotificationDto extends _NotificationDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _NotificationDto &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.sender, sender) || const DeepCollectionEquality().equals(other.sender, sender)) &&
-            (identical(other.receiver, receiver) || const DeepCollectionEquality().equals(other.receiver, receiver)) &&
-            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-            (identical(other.seen, seen) || const DeepCollectionEquality().equals(other.seen, seen)) &&
-            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
-            (identical(other.type, type) || const DeepCollectionEquality().equals(other.type, type)));
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.sender, sender) ||
+                const DeepCollectionEquality().equals(other.sender, sender)) &&
+            (identical(other.receiver, receiver) ||
+                const DeepCollectionEquality()
+                    .equals(other.receiver, receiver)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
+            (identical(other.seen, seen) ||
+                const DeepCollectionEquality().equals(other.seen, seen)) &&
+            (identical(other.creationDate, creationDate) ||
+                const DeepCollectionEquality()
+                    .equals(other.creationDate, creationDate)) &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)));
   }
 
   @override
@@ -235,7 +272,8 @@ class _$_NotificationDto extends _NotificationDto {
       const DeepCollectionEquality().hash(type);
 
   @override
-  _$NotificationDtoCopyWith<_NotificationDto> get copyWith => __$NotificationDtoCopyWithImpl<_NotificationDto>(this, _$identity);
+  _$NotificationDtoCopyWith<_NotificationDto> get copyWith =>
+      __$NotificationDtoCopyWithImpl<_NotificationDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -245,7 +283,6 @@ class _$_NotificationDto extends _NotificationDto {
 
 abstract class _NotificationDto extends NotificationDto {
   const _NotificationDto._() : super._();
-
   const factory _NotificationDto(
       {@JsonKey(ignore: true) String id,
       @required UserDto sender,
@@ -255,18 +292,16 @@ abstract class _NotificationDto extends NotificationDto {
       @required @ServerTimestampConverter() DateTime creationDate,
       @required NotificationType type}) = _$_NotificationDto;
 
-  factory _NotificationDto.fromJson(Map<String, dynamic> json) = _$_NotificationDto.fromJson;
+  factory _NotificationDto.fromJson(Map<String, dynamic> json) =
+      _$_NotificationDto.fromJson;
 
   @override
   @JsonKey(ignore: true)
   String get id;
-
   @override
   UserDto get sender;
-
   @override
   UserDto get receiver;
-
   @override
   String get description;
   @override

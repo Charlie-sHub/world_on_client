@@ -14,7 +14,12 @@ class _$PrimitiveObjectiveTearOff {
   const _$PrimitiveObjectiveTearOff();
 
 // ignore: unused_element
-  _PrimitiveObjective call({@required UniqueId id, @required String description, @required double latitude, @required double longitude, @required File imageFile}) {
+  _PrimitiveObjective call(
+      {@required UniqueId id,
+      @required String description,
+      @required double latitude,
+      @required double longitude,
+      @required File imageFile}) {
     return _PrimitiveObjective(
       id: id,
       description: description,
@@ -42,17 +47,23 @@ mixin _$PrimitiveObjective {
 
 /// @nodoc
 abstract class $PrimitiveObjectiveCopyWith<$Res> {
-  factory $PrimitiveObjectiveCopyWith(PrimitiveObjective value, $Res Function(PrimitiveObjective) then) = _$PrimitiveObjectiveCopyWithImpl<$Res>;
-
-  $Res call({UniqueId id, String description, double latitude, double longitude, File imageFile});
+  factory $PrimitiveObjectiveCopyWith(
+          PrimitiveObjective value, $Res Function(PrimitiveObjective) then) =
+      _$PrimitiveObjectiveCopyWithImpl<$Res>;
+  $Res call(
+      {UniqueId id,
+      String description,
+      double latitude,
+      double longitude,
+      File imageFile});
 }
 
 /// @nodoc
-class _$PrimitiveObjectiveCopyWithImpl<$Res> implements $PrimitiveObjectiveCopyWith<$Res> {
+class _$PrimitiveObjectiveCopyWithImpl<$Res>
+    implements $PrimitiveObjectiveCopyWith<$Res> {
   _$PrimitiveObjectiveCopyWithImpl(this._value, this._then);
 
   final PrimitiveObjective _value;
-
   // ignore: unused_field
   final $Res Function(PrimitiveObjective) _then;
 
@@ -66,7 +77,8 @@ class _$PrimitiveObjectiveCopyWithImpl<$Res> implements $PrimitiveObjectiveCopyW
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as UniqueId,
-      description: description == freezed ? _value.description : description as String,
+      description:
+          description == freezed ? _value.description : description as String,
       latitude: latitude == freezed ? _value.latitude : latitude as double,
       longitude: longitude == freezed ? _value.longitude : longitude as double,
       imageFile: imageFile == freezed ? _value.imageFile : imageFile as File,
@@ -75,16 +87,27 @@ class _$PrimitiveObjectiveCopyWithImpl<$Res> implements $PrimitiveObjectiveCopyW
 }
 
 /// @nodoc
-abstract class _$PrimitiveObjectiveCopyWith<$Res> implements $PrimitiveObjectiveCopyWith<$Res> {
-  factory _$PrimitiveObjectiveCopyWith(_PrimitiveObjective value, $Res Function(_PrimitiveObjective) then) = __$PrimitiveObjectiveCopyWithImpl<$Res>;
-
+abstract class _$PrimitiveObjectiveCopyWith<$Res>
+    implements $PrimitiveObjectiveCopyWith<$Res> {
+  factory _$PrimitiveObjectiveCopyWith(
+          _PrimitiveObjective value, $Res Function(_PrimitiveObjective) then) =
+      __$PrimitiveObjectiveCopyWithImpl<$Res>;
   @override
-  $Res call({UniqueId id, String description, double latitude, double longitude, File imageFile});
+  $Res call(
+      {UniqueId id,
+      String description,
+      double latitude,
+      double longitude,
+      File imageFile});
 }
 
 /// @nodoc
-class __$PrimitiveObjectiveCopyWithImpl<$Res> extends _$PrimitiveObjectiveCopyWithImpl<$Res> implements _$PrimitiveObjectiveCopyWith<$Res> {
-  __$PrimitiveObjectiveCopyWithImpl(_PrimitiveObjective _value, $Res Function(_PrimitiveObjective) _then) : super(_value, (v) => _then(v as _PrimitiveObjective));
+class __$PrimitiveObjectiveCopyWithImpl<$Res>
+    extends _$PrimitiveObjectiveCopyWithImpl<$Res>
+    implements _$PrimitiveObjectiveCopyWith<$Res> {
+  __$PrimitiveObjectiveCopyWithImpl(
+      _PrimitiveObjective _value, $Res Function(_PrimitiveObjective) _then)
+      : super(_value, (v) => _then(v as _PrimitiveObjective));
 
   @override
   _PrimitiveObjective get _value => super._value as _PrimitiveObjective;
@@ -99,7 +122,8 @@ class __$PrimitiveObjectiveCopyWithImpl<$Res> extends _$PrimitiveObjectiveCopyWi
   }) {
     return _then(_PrimitiveObjective(
       id: id == freezed ? _value.id : id as UniqueId,
-      description: description == freezed ? _value.description : description as String,
+      description:
+          description == freezed ? _value.description : description as String,
       latitude: latitude == freezed ? _value.latitude : latitude as double,
       longitude: longitude == freezed ? _value.longitude : longitude as double,
       imageFile: imageFile == freezed ? _value.imageFile : imageFile as File,
@@ -109,7 +133,12 @@ class __$PrimitiveObjectiveCopyWithImpl<$Res> extends _$PrimitiveObjectiveCopyWi
 
 /// @nodoc
 class _$_PrimitiveObjective extends _PrimitiveObjective {
-  const _$_PrimitiveObjective({@required this.id, @required this.description, @required this.latitude, @required this.longitude, @required this.imageFile})
+  const _$_PrimitiveObjective(
+      {@required this.id,
+      @required this.description,
+      @required this.latitude,
+      @required this.longitude,
+      @required this.imageFile})
       : assert(id != null),
         assert(description != null),
         assert(latitude != null),
@@ -137,11 +166,20 @@ class _$_PrimitiveObjective extends _PrimitiveObjective {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _PrimitiveObjective &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-            (identical(other.latitude, latitude) || const DeepCollectionEquality().equals(other.latitude, latitude)) &&
-            (identical(other.longitude, longitude) || const DeepCollectionEquality().equals(other.longitude, longitude)) &&
-            (identical(other.imageFile, imageFile) || const DeepCollectionEquality().equals(other.imageFile, imageFile)));
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
+            (identical(other.latitude, latitude) ||
+                const DeepCollectionEquality()
+                    .equals(other.latitude, latitude)) &&
+            (identical(other.longitude, longitude) ||
+                const DeepCollectionEquality()
+                    .equals(other.longitude, longitude)) &&
+            (identical(other.imageFile, imageFile) ||
+                const DeepCollectionEquality()
+                    .equals(other.imageFile, imageFile)));
   }
 
   @override
@@ -154,26 +192,27 @@ class _$_PrimitiveObjective extends _PrimitiveObjective {
       const DeepCollectionEquality().hash(imageFile);
 
   @override
-  _$PrimitiveObjectiveCopyWith<_PrimitiveObjective> get copyWith => __$PrimitiveObjectiveCopyWithImpl<_PrimitiveObjective>(this, _$identity);
+  _$PrimitiveObjectiveCopyWith<_PrimitiveObjective> get copyWith =>
+      __$PrimitiveObjectiveCopyWithImpl<_PrimitiveObjective>(this, _$identity);
 }
 
 abstract class _PrimitiveObjective extends PrimitiveObjective {
   const _PrimitiveObjective._() : super._();
-
-  const factory _PrimitiveObjective({@required UniqueId id, @required String description, @required double latitude, @required double longitude, @required File imageFile}) = _$_PrimitiveObjective;
+  const factory _PrimitiveObjective(
+      {@required UniqueId id,
+      @required String description,
+      @required double latitude,
+      @required double longitude,
+      @required File imageFile}) = _$_PrimitiveObjective;
 
   @override
   UniqueId get id;
-
   @override
   String get description;
-
   @override
   double get latitude;
-
   @override
   double get longitude;
-
   @override
   File get imageFile;
   @override

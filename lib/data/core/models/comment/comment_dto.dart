@@ -7,8 +7,7 @@ import 'package:worldon/domain/core/validation/objects/comment_content.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
-part 'comment_dto.freezed.dart';d.dart';
-
+part 'comment_dto.freezed.dart';
 part 'comment_dto.g.dart';
 
 @freezed

@@ -17,10 +17,11 @@ class _$RewardDtoTearOff {
   const _$RewardDtoTearOff();
 
 // ignore: unused_element
-  _RewardDto call({@required String id,
-    @required String name,
-    @required String description,
-    @required String imageURL}) {
+  _RewardDto call(
+      {@required String id,
+      @required String name,
+      @required String description,
+      @required String imageURL}) {
     return _RewardDto(
       id: id,
       name: name,
@@ -53,7 +54,7 @@ mixin _$RewardDto {
 /// @nodoc
 abstract class $RewardDtoCopyWith<$Res> {
   factory $RewardDtoCopyWith(RewardDto value, $Res Function(RewardDto) then) =
-  _$RewardDtoCopyWithImpl<$Res>;
+      _$RewardDtoCopyWithImpl<$Res>;
   $Res call({String id, String name, String description, String imageURL});
 }
 
@@ -76,7 +77,7 @@ class _$RewardDtoCopyWithImpl<$Res> implements $RewardDtoCopyWith<$Res> {
       id: id == freezed ? _value.id : id as String,
       name: name == freezed ? _value.name : name as String,
       description:
-      description == freezed ? _value.description : description as String,
+          description == freezed ? _value.description : description as String,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
     ));
   }
@@ -84,22 +85,22 @@ class _$RewardDtoCopyWithImpl<$Res> implements $RewardDtoCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$RewardDtoCopyWith<$Res> implements $RewardDtoCopyWith<$Res> {
-  factory _$RewardDtoCopyWith(_RewardDto value, $Res Function(_RewardDto) then) =
-  __$RewardDtoCopyWithImpl<$Res>;
-  
+  factory _$RewardDtoCopyWith(
+          _RewardDto value, $Res Function(_RewardDto) then) =
+      __$RewardDtoCopyWithImpl<$Res>;
   @override
   $Res call({String id, String name, String description, String imageURL});
 }
 
 /// @nodoc
 class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res>
-  implements _$RewardDtoCopyWith<$Res> {
+    implements _$RewardDtoCopyWith<$Res> {
   __$RewardDtoCopyWithImpl(_RewardDto _value, $Res Function(_RewardDto) _then)
-    : super(_value, (v) => _then(v as _RewardDto));
-  
+      : super(_value, (v) => _then(v as _RewardDto));
+
   @override
   _RewardDto get _value => super._value as _RewardDto;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -111,7 +112,7 @@ class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res>
       id: id == freezed ? _value.id : id as String,
       name: name == freezed ? _value.name : name as String,
       description:
-      description == freezed ? _value.description : description as String,
+          description == freezed ? _value.description : description as String,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
     ));
   }
@@ -119,20 +120,22 @@ class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res>
 
 @JsonSerializable()
 
-/// @nodoc class _$_RewardDto extends _RewardDto {
-  const _$_RewardDto({@required this.id,
-    @required this.name,
-    @required this.description,
-    @required this.imageURL})
-    : assert(id != null),
-      assert(name != null),
-      assert(description != null),
-      assert(imageURL != null),
-      super._();
-  
+/// @nodoc
+class _$_RewardDto extends _RewardDto {
+  const _$_RewardDto(
+      {@required this.id,
+      @required this.name,
+      @required this.description,
+      @required this.imageURL})
+      : assert(id != null),
+        assert(name != null),
+        assert(description != null),
+        assert(imageURL != null),
+        super._();
+
   factory _$_RewardDto.fromJson(Map<String, dynamic> json) =>
-    _$_$_RewardDtoFromJson(json);
-  
+      _$_$_RewardDtoFromJson(json);
+
   @override
   final String id;
   @override
@@ -150,17 +153,17 @@ class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res>
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is _RewardDto &&
-        (identical(other.id, id) ||
-          const DeepCollectionEquality().equals(other.id, id)) &&
-        (identical(other.name, name) ||
-          const DeepCollectionEquality().equals(other.name, name)) &&
-        (identical(other.description, description) ||
-          const DeepCollectionEquality()
-            .equals(other.description, description)) &&
-        (identical(other.imageURL, imageURL) ||
-          const DeepCollectionEquality()
-            .equals(other.imageURL, imageURL)));
+        (other is _RewardDto &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
+            (identical(other.imageURL, imageURL) ||
+                const DeepCollectionEquality()
+                    .equals(other.imageURL, imageURL)));
   }
 
   @override
@@ -173,7 +176,7 @@ class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res>
 
   @override
   _$RewardDtoCopyWith<_RewardDto> get copyWith =>
-    __$RewardDtoCopyWithImpl<_RewardDto>(this, _$identity);
+      __$RewardDtoCopyWithImpl<_RewardDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -183,27 +186,23 @@ class __$RewardDtoCopyWithImpl<$Res> extends _$RewardDtoCopyWithImpl<$Res>
 
 abstract class _RewardDto extends RewardDto {
   const _RewardDto._() : super._();
-  
-  const factory _RewardDto({@required String id,
-    @required String name,
-    @required String description,
-    @required String imageURL}) = _$_RewardDto;
-  
+  const factory _RewardDto(
+      {@required String id,
+      @required String name,
+      @required String description,
+      @required String imageURL}) = _$_RewardDto;
+
   factory _RewardDto.fromJson(Map<String, dynamic> json) =
-  _$_RewardDto.fromJson;
-  
+      _$_RewardDto.fromJson;
+
   @override
   String get id;
-  
   @override
   String get name;
-  
   @override
   String get description;
-  
   @override
   String get imageURL;
-  
   @override
   _$RewardDtoCopyWith<_RewardDto> get copyWith;
 }

@@ -19,8 +19,7 @@ import 'package:worldon/domain/profile/use_case/un_follow_user.dart' as un_follo
 import 'package:worldon/injection.dart';
 
 part 'follow_actor_bloc.freezed.dart';
-part 'follow_actor_event.dart';ow_actor_event.dart';
-
+part 'follow_actor_event.dart';
 part 'follow_actor_state.dart';
 
 // TODO: Move to core
@@ -80,7 +79,7 @@ class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
       (_) async* {
         final _currentUserOption = await getIt<GetLoggedInUser>()(NoParams());
         final _currentUser = _currentUserOption.fold(
-            () => throw UnAuthenticatedError,
+          () => throw UnAuthenticatedError,
           id,
         );
         getIt<send_notification.SendNotification>()(

@@ -35,7 +35,8 @@ class _$ProfileExperiencesWatcherEventTearOff {
   }
 
 // ignore: unused_element
-  _ExperiencesReceived experiencesReceived(Either<Failure, KtList<Experience>> failureOrExperiences) {
+  _ExperiencesReceived experiencesReceived(
+      Either<Failure, KtList<Experience>> failureOrExperiences) {
     return _ExperiencesReceived(
       failureOrExperiences,
     );
@@ -44,7 +45,8 @@ class _$ProfileExperiencesWatcherEventTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $ProfileExperiencesWatcherEvent = _$ProfileExperiencesWatcherEventTearOff();
+const $ProfileExperiencesWatcherEvent =
+    _$ProfileExperiencesWatcherEventTearOff();
 
 /// @nodoc
 mixin _$ProfileExperiencesWatcherEvent {
@@ -53,28 +55,37 @@ mixin _$ProfileExperiencesWatcherEvent {
     @required TResult watchExperiencesDoneStarted(User user),
     @required TResult watchExperiencesLikedStarted(User user),
     @required TResult watchExperiencesCreatedStarted(User user),
-    @required TResult experiencesReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
+    @required
+        TResult experiencesReceived(
+            Either<Failure, KtList<Experience>> failureOrExperiences),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult watchExperiencesDoneStarted(User user),
     TResult watchExperiencesLikedStarted(User user),
     TResult watchExperiencesCreatedStarted(User user),
-    TResult experiencesReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
+    TResult experiencesReceived(
+        Either<Failure, KtList<Experience>> failureOrExperiences),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult watchExperiencesDoneStarted(_WatchExperiencesDoneStarted value),
-    @required TResult watchExperiencesLikedStarted(_WatchExperiencesLikedStarted value),
-    @required TResult watchExperiencesCreatedStarted(_WatchExperiencesCreatedStarted value),
+    @required
+        TResult watchExperiencesDoneStarted(_WatchExperiencesDoneStarted value),
+    @required
+        TResult watchExperiencesLikedStarted(
+            _WatchExperiencesLikedStarted value),
+    @required
+        TResult watchExperiencesCreatedStarted(
+            _WatchExperiencesCreatedStarted value),
     @required TResult experiencesReceived(_ExperiencesReceived value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult watchExperiencesDoneStarted(_WatchExperiencesDoneStarted value),
     TResult watchExperiencesLikedStarted(_WatchExperiencesLikedStarted value),
-    TResult watchExperiencesCreatedStarted(_WatchExperiencesCreatedStarted value),
+    TResult watchExperiencesCreatedStarted(
+        _WatchExperiencesCreatedStarted value),
     TResult experiencesReceived(_ExperiencesReceived value),
     @required TResult orElse(),
   });
@@ -82,34 +93,45 @@ mixin _$ProfileExperiencesWatcherEvent {
 
 /// @nodoc
 abstract class $ProfileExperiencesWatcherEventCopyWith<$Res> {
-  factory $ProfileExperiencesWatcherEventCopyWith(ProfileExperiencesWatcherEvent value, $Res Function(ProfileExperiencesWatcherEvent) then) = _$ProfileExperiencesWatcherEventCopyWithImpl<$Res>;
+  factory $ProfileExperiencesWatcherEventCopyWith(
+          ProfileExperiencesWatcherEvent value,
+          $Res Function(ProfileExperiencesWatcherEvent) then) =
+      _$ProfileExperiencesWatcherEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ProfileExperiencesWatcherEventCopyWithImpl<$Res> implements $ProfileExperiencesWatcherEventCopyWith<$Res> {
+class _$ProfileExperiencesWatcherEventCopyWithImpl<$Res>
+    implements $ProfileExperiencesWatcherEventCopyWith<$Res> {
   _$ProfileExperiencesWatcherEventCopyWithImpl(this._value, this._then);
 
   final ProfileExperiencesWatcherEvent _value;
-
   // ignore: unused_field
   final $Res Function(ProfileExperiencesWatcherEvent) _then;
 }
 
 /// @nodoc
 abstract class _$WatchExperiencesDoneStartedCopyWith<$Res> {
-  factory _$WatchExperiencesDoneStartedCopyWith(_WatchExperiencesDoneStarted value, $Res Function(_WatchExperiencesDoneStarted) then) = __$WatchExperiencesDoneStartedCopyWithImpl<$Res>;
-
+  factory _$WatchExperiencesDoneStartedCopyWith(
+          _WatchExperiencesDoneStarted value,
+          $Res Function(_WatchExperiencesDoneStarted) then) =
+      __$WatchExperiencesDoneStartedCopyWithImpl<$Res>;
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class __$WatchExperiencesDoneStartedCopyWithImpl<$Res> extends _$ProfileExperiencesWatcherEventCopyWithImpl<$Res> implements _$WatchExperiencesDoneStartedCopyWith<$Res> {
-  __$WatchExperiencesDoneStartedCopyWithImpl(_WatchExperiencesDoneStarted _value, $Res Function(_WatchExperiencesDoneStarted) _then) : super(_value, (v) => _then(v as _WatchExperiencesDoneStarted));
+class __$WatchExperiencesDoneStartedCopyWithImpl<$Res>
+    extends _$ProfileExperiencesWatcherEventCopyWithImpl<$Res>
+    implements _$WatchExperiencesDoneStartedCopyWith<$Res> {
+  __$WatchExperiencesDoneStartedCopyWithImpl(
+      _WatchExperiencesDoneStarted _value,
+      $Res Function(_WatchExperiencesDoneStarted) _then)
+      : super(_value, (v) => _then(v as _WatchExperiencesDoneStarted));
 
   @override
-  _WatchExperiencesDoneStarted get _value => super._value as _WatchExperiencesDoneStarted;
+  _WatchExperiencesDoneStarted get _value =>
+      super._value as _WatchExperiencesDoneStarted;
 
   @override
   $Res call({
@@ -145,14 +167,20 @@ class _$_WatchExperiencesDoneStarted implements _WatchExperiencesDoneStarted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _WatchExperiencesDoneStarted && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
+    return identical(this, other) ||
+        (other is _WatchExperiencesDoneStarted &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @override
-  _$WatchExperiencesDoneStartedCopyWith<_WatchExperiencesDoneStarted> get copyWith => __$WatchExperiencesDoneStartedCopyWithImpl<_WatchExperiencesDoneStarted>(this, _$identity);
+  _$WatchExperiencesDoneStartedCopyWith<_WatchExperiencesDoneStarted>
+      get copyWith => __$WatchExperiencesDoneStartedCopyWithImpl<
+          _WatchExperiencesDoneStarted>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -160,7 +188,9 @@ class _$_WatchExperiencesDoneStarted implements _WatchExperiencesDoneStarted {
     @required TResult watchExperiencesDoneStarted(User user),
     @required TResult watchExperiencesLikedStarted(User user),
     @required TResult watchExperiencesCreatedStarted(User user),
-    @required TResult experiencesReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
+    @required
+        TResult experiencesReceived(
+            Either<Failure, KtList<Experience>> failureOrExperiences),
   }) {
     assert(watchExperiencesDoneStarted != null);
     assert(watchExperiencesLikedStarted != null);
@@ -175,7 +205,8 @@ class _$_WatchExperiencesDoneStarted implements _WatchExperiencesDoneStarted {
     TResult watchExperiencesDoneStarted(User user),
     TResult watchExperiencesLikedStarted(User user),
     TResult watchExperiencesCreatedStarted(User user),
-    TResult experiencesReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
+    TResult experiencesReceived(
+        Either<Failure, KtList<Experience>> failureOrExperiences),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -188,9 +219,14 @@ class _$_WatchExperiencesDoneStarted implements _WatchExperiencesDoneStarted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult watchExperiencesDoneStarted(_WatchExperiencesDoneStarted value),
-    @required TResult watchExperiencesLikedStarted(_WatchExperiencesLikedStarted value),
-    @required TResult watchExperiencesCreatedStarted(_WatchExperiencesCreatedStarted value),
+    @required
+        TResult watchExperiencesDoneStarted(_WatchExperiencesDoneStarted value),
+    @required
+        TResult watchExperiencesLikedStarted(
+            _WatchExperiencesLikedStarted value),
+    @required
+        TResult watchExperiencesCreatedStarted(
+            _WatchExperiencesCreatedStarted value),
     @required TResult experiencesReceived(_ExperiencesReceived value),
   }) {
     assert(watchExperiencesDoneStarted != null);
@@ -205,7 +241,8 @@ class _$_WatchExperiencesDoneStarted implements _WatchExperiencesDoneStarted {
   TResult maybeMap<TResult extends Object>({
     TResult watchExperiencesDoneStarted(_WatchExperiencesDoneStarted value),
     TResult watchExperiencesLikedStarted(_WatchExperiencesLikedStarted value),
-    TResult watchExperiencesCreatedStarted(_WatchExperiencesCreatedStarted value),
+    TResult watchExperiencesCreatedStarted(
+        _WatchExperiencesCreatedStarted value),
     TResult experiencesReceived(_ExperiencesReceived value),
     @required TResult orElse(),
   }) {
@@ -217,30 +254,39 @@ class _$_WatchExperiencesDoneStarted implements _WatchExperiencesDoneStarted {
   }
 }
 
-abstract class _WatchExperiencesDoneStarted implements ProfileExperiencesWatcherEvent {
-  const factory _WatchExperiencesDoneStarted(User user) = _$_WatchExperiencesDoneStarted;
+abstract class _WatchExperiencesDoneStarted
+    implements ProfileExperiencesWatcherEvent {
+  const factory _WatchExperiencesDoneStarted(User user) =
+      _$_WatchExperiencesDoneStarted;
 
   User get user;
-
-  _$WatchExperiencesDoneStartedCopyWith<_WatchExperiencesDoneStarted> get copyWith;
+  _$WatchExperiencesDoneStartedCopyWith<_WatchExperiencesDoneStarted>
+      get copyWith;
 }
 
 /// @nodoc
 abstract class _$WatchExperiencesLikedStartedCopyWith<$Res> {
-  factory _$WatchExperiencesLikedStartedCopyWith(_WatchExperiencesLikedStarted value, $Res Function(_WatchExperiencesLikedStarted) then) = __$WatchExperiencesLikedStartedCopyWithImpl<$Res>;
-
+  factory _$WatchExperiencesLikedStartedCopyWith(
+          _WatchExperiencesLikedStarted value,
+          $Res Function(_WatchExperiencesLikedStarted) then) =
+      __$WatchExperiencesLikedStartedCopyWithImpl<$Res>;
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class __$WatchExperiencesLikedStartedCopyWithImpl<$Res> extends _$ProfileExperiencesWatcherEventCopyWithImpl<$Res> implements _$WatchExperiencesLikedStartedCopyWith<$Res> {
-  __$WatchExperiencesLikedStartedCopyWithImpl(_WatchExperiencesLikedStarted _value, $Res Function(_WatchExperiencesLikedStarted) _then)
+class __$WatchExperiencesLikedStartedCopyWithImpl<$Res>
+    extends _$ProfileExperiencesWatcherEventCopyWithImpl<$Res>
+    implements _$WatchExperiencesLikedStartedCopyWith<$Res> {
+  __$WatchExperiencesLikedStartedCopyWithImpl(
+      _WatchExperiencesLikedStarted _value,
+      $Res Function(_WatchExperiencesLikedStarted) _then)
       : super(_value, (v) => _then(v as _WatchExperiencesLikedStarted));
 
   @override
-  _WatchExperiencesLikedStarted get _value => super._value as _WatchExperiencesLikedStarted;
+  _WatchExperiencesLikedStarted get _value =>
+      super._value as _WatchExperiencesLikedStarted;
 
   @override
   $Res call({
@@ -276,14 +322,20 @@ class _$_WatchExperiencesLikedStarted implements _WatchExperiencesLikedStarted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _WatchExperiencesLikedStarted && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
+    return identical(this, other) ||
+        (other is _WatchExperiencesLikedStarted &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @override
-  _$WatchExperiencesLikedStartedCopyWith<_WatchExperiencesLikedStarted> get copyWith => __$WatchExperiencesLikedStartedCopyWithImpl<_WatchExperiencesLikedStarted>(this, _$identity);
+  _$WatchExperiencesLikedStartedCopyWith<_WatchExperiencesLikedStarted>
+      get copyWith => __$WatchExperiencesLikedStartedCopyWithImpl<
+          _WatchExperiencesLikedStarted>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -291,7 +343,9 @@ class _$_WatchExperiencesLikedStarted implements _WatchExperiencesLikedStarted {
     @required TResult watchExperiencesDoneStarted(User user),
     @required TResult watchExperiencesLikedStarted(User user),
     @required TResult watchExperiencesCreatedStarted(User user),
-    @required TResult experiencesReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
+    @required
+        TResult experiencesReceived(
+            Either<Failure, KtList<Experience>> failureOrExperiences),
   }) {
     assert(watchExperiencesDoneStarted != null);
     assert(watchExperiencesLikedStarted != null);
@@ -306,7 +360,8 @@ class _$_WatchExperiencesLikedStarted implements _WatchExperiencesLikedStarted {
     TResult watchExperiencesDoneStarted(User user),
     TResult watchExperiencesLikedStarted(User user),
     TResult watchExperiencesCreatedStarted(User user),
-    TResult experiencesReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
+    TResult experiencesReceived(
+        Either<Failure, KtList<Experience>> failureOrExperiences),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -319,9 +374,14 @@ class _$_WatchExperiencesLikedStarted implements _WatchExperiencesLikedStarted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult watchExperiencesDoneStarted(_WatchExperiencesDoneStarted value),
-    @required TResult watchExperiencesLikedStarted(_WatchExperiencesLikedStarted value),
-    @required TResult watchExperiencesCreatedStarted(_WatchExperiencesCreatedStarted value),
+    @required
+        TResult watchExperiencesDoneStarted(_WatchExperiencesDoneStarted value),
+    @required
+        TResult watchExperiencesLikedStarted(
+            _WatchExperiencesLikedStarted value),
+    @required
+        TResult watchExperiencesCreatedStarted(
+            _WatchExperiencesCreatedStarted value),
     @required TResult experiencesReceived(_ExperiencesReceived value),
   }) {
     assert(watchExperiencesDoneStarted != null);
@@ -336,7 +396,8 @@ class _$_WatchExperiencesLikedStarted implements _WatchExperiencesLikedStarted {
   TResult maybeMap<TResult extends Object>({
     TResult watchExperiencesDoneStarted(_WatchExperiencesDoneStarted value),
     TResult watchExperiencesLikedStarted(_WatchExperiencesLikedStarted value),
-    TResult watchExperiencesCreatedStarted(_WatchExperiencesCreatedStarted value),
+    TResult watchExperiencesCreatedStarted(
+        _WatchExperiencesCreatedStarted value),
     TResult experiencesReceived(_ExperiencesReceived value),
     @required TResult orElse(),
   }) {
@@ -348,30 +409,39 @@ class _$_WatchExperiencesLikedStarted implements _WatchExperiencesLikedStarted {
   }
 }
 
-abstract class _WatchExperiencesLikedStarted implements ProfileExperiencesWatcherEvent {
-  const factory _WatchExperiencesLikedStarted(User user) = _$_WatchExperiencesLikedStarted;
+abstract class _WatchExperiencesLikedStarted
+    implements ProfileExperiencesWatcherEvent {
+  const factory _WatchExperiencesLikedStarted(User user) =
+      _$_WatchExperiencesLikedStarted;
 
   User get user;
-
-  _$WatchExperiencesLikedStartedCopyWith<_WatchExperiencesLikedStarted> get copyWith;
+  _$WatchExperiencesLikedStartedCopyWith<_WatchExperiencesLikedStarted>
+      get copyWith;
 }
 
 /// @nodoc
 abstract class _$WatchExperiencesCreatedStartedCopyWith<$Res> {
-  factory _$WatchExperiencesCreatedStartedCopyWith(_WatchExperiencesCreatedStarted value, $Res Function(_WatchExperiencesCreatedStarted) then) = __$WatchExperiencesCreatedStartedCopyWithImpl<$Res>;
-
+  factory _$WatchExperiencesCreatedStartedCopyWith(
+          _WatchExperiencesCreatedStarted value,
+          $Res Function(_WatchExperiencesCreatedStarted) then) =
+      __$WatchExperiencesCreatedStartedCopyWithImpl<$Res>;
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
-class __$WatchExperiencesCreatedStartedCopyWithImpl<$Res> extends _$ProfileExperiencesWatcherEventCopyWithImpl<$Res> implements _$WatchExperiencesCreatedStartedCopyWith<$Res> {
-  __$WatchExperiencesCreatedStartedCopyWithImpl(_WatchExperiencesCreatedStarted _value, $Res Function(_WatchExperiencesCreatedStarted) _then)
+class __$WatchExperiencesCreatedStartedCopyWithImpl<$Res>
+    extends _$ProfileExperiencesWatcherEventCopyWithImpl<$Res>
+    implements _$WatchExperiencesCreatedStartedCopyWith<$Res> {
+  __$WatchExperiencesCreatedStartedCopyWithImpl(
+      _WatchExperiencesCreatedStarted _value,
+      $Res Function(_WatchExperiencesCreatedStarted) _then)
       : super(_value, (v) => _then(v as _WatchExperiencesCreatedStarted));
 
   @override
-  _WatchExperiencesCreatedStarted get _value => super._value as _WatchExperiencesCreatedStarted;
+  _WatchExperiencesCreatedStarted get _value =>
+      super._value as _WatchExperiencesCreatedStarted;
 
   @override
   $Res call({
@@ -394,7 +464,8 @@ class __$WatchExperiencesCreatedStartedCopyWithImpl<$Res> extends _$ProfileExper
 }
 
 /// @nodoc
-class _$_WatchExperiencesCreatedStarted implements _WatchExperiencesCreatedStarted {
+class _$_WatchExperiencesCreatedStarted
+    implements _WatchExperiencesCreatedStarted {
   const _$_WatchExperiencesCreatedStarted(this.user) : assert(user != null);
 
   @override
@@ -407,14 +478,20 @@ class _$_WatchExperiencesCreatedStarted implements _WatchExperiencesCreatedStart
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _WatchExperiencesCreatedStarted && (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
+    return identical(this, other) ||
+        (other is _WatchExperiencesCreatedStarted &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @override
-  _$WatchExperiencesCreatedStartedCopyWith<_WatchExperiencesCreatedStarted> get copyWith => __$WatchExperiencesCreatedStartedCopyWithImpl<_WatchExperiencesCreatedStarted>(this, _$identity);
+  _$WatchExperiencesCreatedStartedCopyWith<_WatchExperiencesCreatedStarted>
+      get copyWith => __$WatchExperiencesCreatedStartedCopyWithImpl<
+          _WatchExperiencesCreatedStarted>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -422,7 +499,9 @@ class _$_WatchExperiencesCreatedStarted implements _WatchExperiencesCreatedStart
     @required TResult watchExperiencesDoneStarted(User user),
     @required TResult watchExperiencesLikedStarted(User user),
     @required TResult watchExperiencesCreatedStarted(User user),
-    @required TResult experiencesReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
+    @required
+        TResult experiencesReceived(
+            Either<Failure, KtList<Experience>> failureOrExperiences),
   }) {
     assert(watchExperiencesDoneStarted != null);
     assert(watchExperiencesLikedStarted != null);
@@ -437,7 +516,8 @@ class _$_WatchExperiencesCreatedStarted implements _WatchExperiencesCreatedStart
     TResult watchExperiencesDoneStarted(User user),
     TResult watchExperiencesLikedStarted(User user),
     TResult watchExperiencesCreatedStarted(User user),
-    TResult experiencesReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
+    TResult experiencesReceived(
+        Either<Failure, KtList<Experience>> failureOrExperiences),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -450,9 +530,14 @@ class _$_WatchExperiencesCreatedStarted implements _WatchExperiencesCreatedStart
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult watchExperiencesDoneStarted(_WatchExperiencesDoneStarted value),
-    @required TResult watchExperiencesLikedStarted(_WatchExperiencesLikedStarted value),
-    @required TResult watchExperiencesCreatedStarted(_WatchExperiencesCreatedStarted value),
+    @required
+        TResult watchExperiencesDoneStarted(_WatchExperiencesDoneStarted value),
+    @required
+        TResult watchExperiencesLikedStarted(
+            _WatchExperiencesLikedStarted value),
+    @required
+        TResult watchExperiencesCreatedStarted(
+            _WatchExperiencesCreatedStarted value),
     @required TResult experiencesReceived(_ExperiencesReceived value),
   }) {
     assert(watchExperiencesDoneStarted != null);
@@ -467,7 +552,8 @@ class _$_WatchExperiencesCreatedStarted implements _WatchExperiencesCreatedStart
   TResult maybeMap<TResult extends Object>({
     TResult watchExperiencesDoneStarted(_WatchExperiencesDoneStarted value),
     TResult watchExperiencesLikedStarted(_WatchExperiencesLikedStarted value),
-    TResult watchExperiencesCreatedStarted(_WatchExperiencesCreatedStarted value),
+    TResult watchExperiencesCreatedStarted(
+        _WatchExperiencesCreatedStarted value),
     TResult experiencesReceived(_ExperiencesReceived value),
     @required TResult orElse(),
   }) {
@@ -479,24 +565,31 @@ class _$_WatchExperiencesCreatedStarted implements _WatchExperiencesCreatedStart
   }
 }
 
-abstract class _WatchExperiencesCreatedStarted implements ProfileExperiencesWatcherEvent {
-  const factory _WatchExperiencesCreatedStarted(User user) = _$_WatchExperiencesCreatedStarted;
+abstract class _WatchExperiencesCreatedStarted
+    implements ProfileExperiencesWatcherEvent {
+  const factory _WatchExperiencesCreatedStarted(User user) =
+      _$_WatchExperiencesCreatedStarted;
 
   User get user;
-
-  _$WatchExperiencesCreatedStartedCopyWith<_WatchExperiencesCreatedStarted> get copyWith;
+  _$WatchExperiencesCreatedStartedCopyWith<_WatchExperiencesCreatedStarted>
+      get copyWith;
 }
 
 /// @nodoc
 abstract class _$ExperiencesReceivedCopyWith<$Res> {
-  factory _$ExperiencesReceivedCopyWith(_ExperiencesReceived value, $Res Function(_ExperiencesReceived) then) = __$ExperiencesReceivedCopyWithImpl<$Res>;
-
+  factory _$ExperiencesReceivedCopyWith(_ExperiencesReceived value,
+          $Res Function(_ExperiencesReceived) then) =
+      __$ExperiencesReceivedCopyWithImpl<$Res>;
   $Res call({Either<Failure, KtList<Experience>> failureOrExperiences});
 }
 
 /// @nodoc
-class __$ExperiencesReceivedCopyWithImpl<$Res> extends _$ProfileExperiencesWatcherEventCopyWithImpl<$Res> implements _$ExperiencesReceivedCopyWith<$Res> {
-  __$ExperiencesReceivedCopyWithImpl(_ExperiencesReceived _value, $Res Function(_ExperiencesReceived) _then) : super(_value, (v) => _then(v as _ExperiencesReceived));
+class __$ExperiencesReceivedCopyWithImpl<$Res>
+    extends _$ProfileExperiencesWatcherEventCopyWithImpl<$Res>
+    implements _$ExperiencesReceivedCopyWith<$Res> {
+  __$ExperiencesReceivedCopyWithImpl(
+      _ExperiencesReceived _value, $Res Function(_ExperiencesReceived) _then)
+      : super(_value, (v) => _then(v as _ExperiencesReceived));
 
   @override
   _ExperiencesReceived get _value => super._value as _ExperiencesReceived;
@@ -506,14 +599,17 @@ class __$ExperiencesReceivedCopyWithImpl<$Res> extends _$ProfileExperiencesWatch
     Object failureOrExperiences = freezed,
   }) {
     return _then(_ExperiencesReceived(
-      failureOrExperiences == freezed ? _value.failureOrExperiences : failureOrExperiences as Either<Failure, KtList<Experience>>,
+      failureOrExperiences == freezed
+          ? _value.failureOrExperiences
+          : failureOrExperiences as Either<Failure, KtList<Experience>>,
     ));
   }
 }
 
 /// @nodoc
 class _$_ExperiencesReceived implements _ExperiencesReceived {
-  const _$_ExperiencesReceived(this.failureOrExperiences) : assert(failureOrExperiences != null);
+  const _$_ExperiencesReceived(this.failureOrExperiences)
+      : assert(failureOrExperiences != null);
 
   @override
   final Either<Failure, KtList<Experience>> failureOrExperiences;
@@ -526,14 +622,21 @@ class _$_ExperiencesReceived implements _ExperiencesReceived {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ExperiencesReceived && (identical(other.failureOrExperiences, failureOrExperiences) || const DeepCollectionEquality().equals(other.failureOrExperiences, failureOrExperiences)));
+        (other is _ExperiencesReceived &&
+            (identical(other.failureOrExperiences, failureOrExperiences) ||
+                const DeepCollectionEquality()
+                    .equals(other.failureOrExperiences, failureOrExperiences)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrExperiences);
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(failureOrExperiences);
 
   @override
-  _$ExperiencesReceivedCopyWith<_ExperiencesReceived> get copyWith => __$ExperiencesReceivedCopyWithImpl<_ExperiencesReceived>(this, _$identity);
+  _$ExperiencesReceivedCopyWith<_ExperiencesReceived> get copyWith =>
+      __$ExperiencesReceivedCopyWithImpl<_ExperiencesReceived>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -541,7 +644,9 @@ class _$_ExperiencesReceived implements _ExperiencesReceived {
     @required TResult watchExperiencesDoneStarted(User user),
     @required TResult watchExperiencesLikedStarted(User user),
     @required TResult watchExperiencesCreatedStarted(User user),
-    @required TResult experiencesReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
+    @required
+        TResult experiencesReceived(
+            Either<Failure, KtList<Experience>> failureOrExperiences),
   }) {
     assert(watchExperiencesDoneStarted != null);
     assert(watchExperiencesLikedStarted != null);
@@ -556,7 +661,8 @@ class _$_ExperiencesReceived implements _ExperiencesReceived {
     TResult watchExperiencesDoneStarted(User user),
     TResult watchExperiencesLikedStarted(User user),
     TResult watchExperiencesCreatedStarted(User user),
-    TResult experiencesReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
+    TResult experiencesReceived(
+        Either<Failure, KtList<Experience>> failureOrExperiences),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -569,9 +675,14 @@ class _$_ExperiencesReceived implements _ExperiencesReceived {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult watchExperiencesDoneStarted(_WatchExperiencesDoneStarted value),
-    @required TResult watchExperiencesLikedStarted(_WatchExperiencesLikedStarted value),
-    @required TResult watchExperiencesCreatedStarted(_WatchExperiencesCreatedStarted value),
+    @required
+        TResult watchExperiencesDoneStarted(_WatchExperiencesDoneStarted value),
+    @required
+        TResult watchExperiencesLikedStarted(
+            _WatchExperiencesLikedStarted value),
+    @required
+        TResult watchExperiencesCreatedStarted(
+            _WatchExperiencesCreatedStarted value),
     @required TResult experiencesReceived(_ExperiencesReceived value),
   }) {
     assert(watchExperiencesDoneStarted != null);
@@ -586,7 +697,8 @@ class _$_ExperiencesReceived implements _ExperiencesReceived {
   TResult maybeMap<TResult extends Object>({
     TResult watchExperiencesDoneStarted(_WatchExperiencesDoneStarted value),
     TResult watchExperiencesLikedStarted(_WatchExperiencesLikedStarted value),
-    TResult watchExperiencesCreatedStarted(_WatchExperiencesCreatedStarted value),
+    TResult watchExperiencesCreatedStarted(
+        _WatchExperiencesCreatedStarted value),
     TResult experiencesReceived(_ExperiencesReceived value),
     @required TResult orElse(),
   }) {
@@ -599,10 +711,11 @@ class _$_ExperiencesReceived implements _ExperiencesReceived {
 }
 
 abstract class _ExperiencesReceived implements ProfileExperiencesWatcherEvent {
-  const factory _ExperiencesReceived(Either<Failure, KtList<Experience>> failureOrExperiences) = _$_ExperiencesReceived;
+  const factory _ExperiencesReceived(
+          Either<Failure, KtList<Experience>> failureOrExperiences) =
+      _$_ExperiencesReceived;
 
   Either<Failure, KtList<Experience>> get failureOrExperiences;
-
   _$ExperiencesReceivedCopyWith<_ExperiencesReceived> get copyWith;
 }
 
@@ -637,7 +750,8 @@ class _$ProfileExperiencesWatcherStateTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $ProfileExperiencesWatcherState = _$ProfileExperiencesWatcherStateTearOff();
+const $ProfileExperiencesWatcherState =
+    _$ProfileExperiencesWatcherStateTearOff();
 
 /// @nodoc
 mixin _$ProfileExperiencesWatcherState {
@@ -675,27 +789,34 @@ mixin _$ProfileExperiencesWatcherState {
 
 /// @nodoc
 abstract class $ProfileExperiencesWatcherStateCopyWith<$Res> {
-  factory $ProfileExperiencesWatcherStateCopyWith(ProfileExperiencesWatcherState value, $Res Function(ProfileExperiencesWatcherState) then) = _$ProfileExperiencesWatcherStateCopyWithImpl<$Res>;
+  factory $ProfileExperiencesWatcherStateCopyWith(
+          ProfileExperiencesWatcherState value,
+          $Res Function(ProfileExperiencesWatcherState) then) =
+      _$ProfileExperiencesWatcherStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ProfileExperiencesWatcherStateCopyWithImpl<$Res> implements $ProfileExperiencesWatcherStateCopyWith<$Res> {
+class _$ProfileExperiencesWatcherStateCopyWithImpl<$Res>
+    implements $ProfileExperiencesWatcherStateCopyWith<$Res> {
   _$ProfileExperiencesWatcherStateCopyWithImpl(this._value, this._then);
 
   final ProfileExperiencesWatcherState _value;
-
   // ignore: unused_field
   final $Res Function(ProfileExperiencesWatcherState) _then;
 }
 
 /// @nodoc
 abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) = __$InitialCopyWithImpl<$Res>;
+  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
+      __$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$ProfileExperiencesWatcherStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
+class __$InitialCopyWithImpl<$Res>
+    extends _$ProfileExperiencesWatcherStateCopyWithImpl<$Res>
+    implements _$InitialCopyWith<$Res> {
+  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
+      : super(_value, (v) => _then(v as _Initial));
 
   @override
   _Initial get _value => super._value as _Initial;
@@ -787,12 +908,18 @@ abstract class _Initial implements ProfileExperiencesWatcherState {
 
 /// @nodoc
 abstract class _$LoadInProgressCopyWith<$Res> {
-  factory _$LoadInProgressCopyWith(_LoadInProgress value, $Res Function(_LoadInProgress) then) = __$LoadInProgressCopyWithImpl<$Res>;
+  factory _$LoadInProgressCopyWith(
+          _LoadInProgress value, $Res Function(_LoadInProgress) then) =
+      __$LoadInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadInProgressCopyWithImpl<$Res> extends _$ProfileExperiencesWatcherStateCopyWithImpl<$Res> implements _$LoadInProgressCopyWith<$Res> {
-  __$LoadInProgressCopyWithImpl(_LoadInProgress _value, $Res Function(_LoadInProgress) _then) : super(_value, (v) => _then(v as _LoadInProgress));
+class __$LoadInProgressCopyWithImpl<$Res>
+    extends _$ProfileExperiencesWatcherStateCopyWithImpl<$Res>
+    implements _$LoadInProgressCopyWith<$Res> {
+  __$LoadInProgressCopyWithImpl(
+      _LoadInProgress _value, $Res Function(_LoadInProgress) _then)
+      : super(_value, (v) => _then(v as _LoadInProgress));
 
   @override
   _LoadInProgress get _value => super._value as _LoadInProgress;
@@ -884,14 +1011,19 @@ abstract class _LoadInProgress implements ProfileExperiencesWatcherState {
 
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
-
+  factory _$LoadSuccessCopyWith(
+          _LoadSuccess value, $Res Function(_LoadSuccess) then) =
+      __$LoadSuccessCopyWithImpl<$Res>;
   $Res call({KtList<Experience> experiences});
 }
 
 /// @nodoc
-class __$LoadSuccessCopyWithImpl<$Res> extends _$ProfileExperiencesWatcherStateCopyWithImpl<$Res> implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(_LoadSuccess _value, $Res Function(_LoadSuccess) _then) : super(_value, (v) => _then(v as _LoadSuccess));
+class __$LoadSuccessCopyWithImpl<$Res>
+    extends _$ProfileExperiencesWatcherStateCopyWithImpl<$Res>
+    implements _$LoadSuccessCopyWith<$Res> {
+  __$LoadSuccessCopyWithImpl(
+      _LoadSuccess _value, $Res Function(_LoadSuccess) _then)
+      : super(_value, (v) => _then(v as _LoadSuccess));
 
   @override
   _LoadSuccess get _value => super._value as _LoadSuccess;
@@ -901,7 +1033,9 @@ class __$LoadSuccessCopyWithImpl<$Res> extends _$ProfileExperiencesWatcherStateC
     Object experiences = freezed,
   }) {
     return _then(_LoadSuccess(
-      experiences == freezed ? _value.experiences : experiences as KtList<Experience>,
+      experiences == freezed
+          ? _value.experiences
+          : experiences as KtList<Experience>,
     ));
   }
 }
@@ -920,14 +1054,20 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadSuccess && (identical(other.experiences, experiences) || const DeepCollectionEquality().equals(other.experiences, experiences)));
+    return identical(this, other) ||
+        (other is _LoadSuccess &&
+            (identical(other.experiences, experiences) ||
+                const DeepCollectionEquality()
+                    .equals(other.experiences, experiences)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experiences);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experiences);
 
   @override
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith => __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
+  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+      __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1001,16 +1141,21 @@ abstract class _LoadSuccess implements ProfileExperiencesWatcherState {
 
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
-
+  factory _$LoadFailureCopyWith(
+          _LoadFailure value, $Res Function(_LoadFailure) then) =
+      __$LoadFailureCopyWithImpl<$Res>;
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
 }
 
 /// @nodoc
-class __$LoadFailureCopyWithImpl<$Res> extends _$ProfileExperiencesWatcherStateCopyWithImpl<$Res> implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(_LoadFailure _value, $Res Function(_LoadFailure) _then) : super(_value, (v) => _then(v as _LoadFailure));
+class __$LoadFailureCopyWithImpl<$Res>
+    extends _$ProfileExperiencesWatcherStateCopyWithImpl<$Res>
+    implements _$LoadFailureCopyWith<$Res> {
+  __$LoadFailureCopyWithImpl(
+      _LoadFailure _value, $Res Function(_LoadFailure) _then)
+      : super(_value, (v) => _then(v as _LoadFailure));
 
   @override
   _LoadFailure get _value => super._value as _LoadFailure;
@@ -1049,14 +1194,19 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadFailure && (identical(other.failure, failure) || const DeepCollectionEquality().equals(other.failure, failure)));
+    return identical(this, other) ||
+        (other is _LoadFailure &&
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @override
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith => __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
+  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+      __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs

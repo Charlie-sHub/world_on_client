@@ -19,8 +19,7 @@ import 'package:worldon/domain/profile/use_case/un_block_user.dart' as un_block_
 import 'package:worldon/injection.dart';
 
 part 'block_actor_bloc.freezed.dart';
-part 'block_actor_event.dart';ck_actor_event.dart';
-
+part 'block_actor_event.dart';
 part 'block_actor_state.dart';
 
 // TODO: Move to core
@@ -80,7 +79,7 @@ class BlockActorBloc extends Bloc<BlockActorEvent, BlockActorState> {
       (_) async* {
         final _currentUserOption = await getIt<GetLoggedInUser>()(NoParams());
         final _currentUser = _currentUserOption.fold(
-            () => throw UnAuthenticatedError,
+          () => throw UnAuthenticatedError,
           id,
         );
         getIt<send_notification.SendNotification>()(

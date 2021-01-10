@@ -61,9 +61,16 @@ mixin _$CommentDto {
 
 /// @nodoc
 abstract class $CommentDtoCopyWith<$Res> {
-  factory $CommentDtoCopyWith(CommentDto value, $Res Function(CommentDto) then) = _$CommentDtoCopyWithImpl<$Res>;
-
-  $Res call({String id, UserDto poster, String experienceId, String content, @ServerTimestampConverter() DateTime creationDate, @ServerTimestampConverter() DateTime modificationDate});
+  factory $CommentDtoCopyWith(
+          CommentDto value, $Res Function(CommentDto) then) =
+      _$CommentDtoCopyWithImpl<$Res>;
+  $Res call(
+      {String id,
+      UserDto poster,
+      String experienceId,
+      String content,
+      @ServerTimestampConverter() DateTime creationDate,
+      @ServerTimestampConverter() DateTime modificationDate});
 
   $UserDtoCopyWith<$Res> get poster;
 }
@@ -88,10 +95,16 @@ class _$CommentDtoCopyWithImpl<$Res> implements $CommentDtoCopyWith<$Res> {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
       poster: poster == freezed ? _value.poster : poster as UserDto,
-      experienceId: experienceId == freezed ? _value.experienceId : experienceId as String,
+      experienceId: experienceId == freezed
+          ? _value.experienceId
+          : experienceId as String,
       content: content == freezed ? _value.content : content as String,
-      creationDate: creationDate == freezed ? _value.creationDate : creationDate as DateTime,
-      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as DateTime,
+      creationDate: creationDate == freezed
+          ? _value.creationDate
+          : creationDate as DateTime,
+      modificationDate: modificationDate == freezed
+          ? _value.modificationDate
+          : modificationDate as DateTime,
     ));
   }
 
@@ -108,18 +121,28 @@ class _$CommentDtoCopyWithImpl<$Res> implements $CommentDtoCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$CommentDtoCopyWith<$Res> implements $CommentDtoCopyWith<$Res> {
-  factory _$CommentDtoCopyWith(_CommentDto value, $Res Function(_CommentDto) then) = __$CommentDtoCopyWithImpl<$Res>;
-
+  factory _$CommentDtoCopyWith(
+          _CommentDto value, $Res Function(_CommentDto) then) =
+      __$CommentDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String id, UserDto poster, String experienceId, String content, @ServerTimestampConverter() DateTime creationDate, @ServerTimestampConverter() DateTime modificationDate});
+  $Res call(
+      {String id,
+      UserDto poster,
+      String experienceId,
+      String content,
+      @ServerTimestampConverter() DateTime creationDate,
+      @ServerTimestampConverter() DateTime modificationDate});
 
   @override
   $UserDtoCopyWith<$Res> get poster;
 }
 
 /// @nodoc
-class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res> implements _$CommentDtoCopyWith<$Res> {
-  __$CommentDtoCopyWithImpl(_CommentDto _value, $Res Function(_CommentDto) _then) : super(_value, (v) => _then(v as _CommentDto));
+class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res>
+    implements _$CommentDtoCopyWith<$Res> {
+  __$CommentDtoCopyWithImpl(
+      _CommentDto _value, $Res Function(_CommentDto) _then)
+      : super(_value, (v) => _then(v as _CommentDto));
 
   @override
   _CommentDto get _value => super._value as _CommentDto;
@@ -136,10 +159,16 @@ class __$CommentDtoCopyWithImpl<$Res> extends _$CommentDtoCopyWithImpl<$Res> imp
     return _then(_CommentDto(
       id: id == freezed ? _value.id : id as String,
       poster: poster == freezed ? _value.poster : poster as UserDto,
-      experienceId: experienceId == freezed ? _value.experienceId : experienceId as String,
+      experienceId: experienceId == freezed
+          ? _value.experienceId
+          : experienceId as String,
       content: content == freezed ? _value.content : content as String,
-      creationDate: creationDate == freezed ? _value.creationDate : creationDate as DateTime,
-      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as DateTime,
+      creationDate: creationDate == freezed
+          ? _value.creationDate
+          : creationDate as DateTime,
+      modificationDate: modificationDate == freezed
+          ? _value.modificationDate
+          : modificationDate as DateTime,
     ));
   }
 }
@@ -163,7 +192,8 @@ class _$_CommentDto extends _CommentDto {
         assert(modificationDate != null),
         super._();
 
-  factory _$_CommentDto.fromJson(Map<String, dynamic> json) => _$_$_CommentDtoFromJson(json);
+  factory _$_CommentDto.fromJson(Map<String, dynamic> json) =>
+      _$_$_CommentDtoFromJson(json);
 
   @override
   final String id;
@@ -189,12 +219,22 @@ class _$_CommentDto extends _CommentDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CommentDto &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.poster, poster) || const DeepCollectionEquality().equals(other.poster, poster)) &&
-            (identical(other.experienceId, experienceId) || const DeepCollectionEquality().equals(other.experienceId, experienceId)) &&
-            (identical(other.content, content) || const DeepCollectionEquality().equals(other.content, content)) &&
-            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
-            (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)));
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.poster, poster) ||
+                const DeepCollectionEquality().equals(other.poster, poster)) &&
+            (identical(other.experienceId, experienceId) ||
+                const DeepCollectionEquality()
+                    .equals(other.experienceId, experienceId)) &&
+            (identical(other.content, content) ||
+                const DeepCollectionEquality()
+                    .equals(other.content, content)) &&
+            (identical(other.creationDate, creationDate) ||
+                const DeepCollectionEquality()
+                    .equals(other.creationDate, creationDate)) &&
+            (identical(other.modificationDate, modificationDate) ||
+                const DeepCollectionEquality()
+                    .equals(other.modificationDate, modificationDate)));
   }
 
   @override
@@ -208,7 +248,8 @@ class _$_CommentDto extends _CommentDto {
       const DeepCollectionEquality().hash(modificationDate);
 
   @override
-  _$CommentDtoCopyWith<_CommentDto> get copyWith => __$CommentDtoCopyWithImpl<_CommentDto>(this, _$identity);
+  _$CommentDtoCopyWith<_CommentDto> get copyWith =>
+      __$CommentDtoCopyWithImpl<_CommentDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -218,29 +259,26 @@ class _$_CommentDto extends _CommentDto {
 
 abstract class _CommentDto extends CommentDto {
   const _CommentDto._() : super._();
-
   const factory _CommentDto(
-      {@required String id,
-      @required UserDto poster,
-      @required String experienceId,
-      @required String content,
-      @required @ServerTimestampConverter() DateTime creationDate,
-      @required @ServerTimestampConverter() DateTime modificationDate}) = _$_CommentDto;
+          {@required String id,
+          @required UserDto poster,
+          @required String experienceId,
+          @required String content,
+          @required @ServerTimestampConverter() DateTime creationDate,
+          @required @ServerTimestampConverter() DateTime modificationDate}) =
+      _$_CommentDto;
 
-  factory _CommentDto.fromJson(Map<String, dynamic> json) = _$_CommentDto.fromJson;
+  factory _CommentDto.fromJson(Map<String, dynamic> json) =
+      _$_CommentDto.fromJson;
 
   @override
   String get id;
-
   @override
   UserDto get poster;
-
   @override
   String get experienceId;
-
   @override
   String get content;
-
   @override
   @ServerTimestampConverter()
   DateTime get creationDate;

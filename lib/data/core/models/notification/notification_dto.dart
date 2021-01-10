@@ -8,8 +8,7 @@ import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
-part 'notification_dto.freezed.dart';ed.dart';
-
+part 'notification_dto.freezed.dart';
 part 'notification_dto.g.dart';
 
 @freezed

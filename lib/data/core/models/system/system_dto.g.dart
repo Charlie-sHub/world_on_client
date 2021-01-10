@@ -14,7 +14,8 @@ _$_SystemDto _$_$_SystemDtoFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_SystemDtoToJson(_$_SystemDto instance) => <String, dynamic>{
+Map<String, dynamic> _$_$_SystemDtoToJson(_$_SystemDto instance) =>
+    <String, dynamic>{
       'name': instance.name,
       'type': instance.type,
       'company': instance.company,
