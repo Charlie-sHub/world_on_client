@@ -159,6 +159,7 @@ class _$_Initialized implements _Initialized {
       const DeepCollectionEquality().hash(commentOption) ^
       const DeepCollectionEquality().hash(experienceId);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
       __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
@@ -229,6 +230,7 @@ abstract class _Initialized implements CommentFormEvent {
 
   Option<Comment> get commentOption;
   UniqueId get experienceId;
+  @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
@@ -285,6 +287,7 @@ class _$_ContentChanged implements _ContentChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(content);
 
+  @JsonKey(ignore: true)
   @override
   _$ContentChangedCopyWith<_ContentChanged> get copyWith =>
       __$ContentChangedCopyWithImpl<_ContentChanged>(this, _$identity);
@@ -352,6 +355,7 @@ abstract class _ContentChanged implements CommentFormEvent {
   const factory _ContentChanged(String content) = _$_ContentChanged;
 
   String get content;
+  @JsonKey(ignore: true)
   _$ContentChangedCopyWith<_ContentChanged> get copyWith;
 }
 
@@ -486,6 +490,7 @@ mixin _$CommentFormState {
   bool get isSubmitting;
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
 
+  @JsonKey(ignore: true)
   $CommentFormStateCopyWith<CommentFormState> get copyWith;
 }
 
@@ -658,6 +663,7 @@ class _$_CommentFormState implements _CommentFormState {
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
 
+  @JsonKey(ignore: true)
   @override
   _$CommentFormStateCopyWith<_CommentFormState> get copyWith =>
       __$CommentFormStateCopyWithImpl<_CommentFormState>(this, _$identity);
@@ -683,5 +689,6 @@ abstract class _CommentFormState implements CommentFormState {
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
   @override
+  @JsonKey(ignore: true)
   _$CommentFormStateCopyWith<_CommentFormState> get copyWith;
 }

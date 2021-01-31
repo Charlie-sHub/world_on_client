@@ -70,6 +70,7 @@ mixin _$ExperienceLikeActorEvent {
     @required TResult orElse(),
   });
 
+  @JsonKey(ignore: true)
   $ExperienceLikeActorEventCopyWith<ExperienceLikeActorEvent> get copyWith;
 }
 
@@ -172,6 +173,7 @@ class _$_Initialized implements _Initialized {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
       __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
@@ -239,6 +241,7 @@ abstract class _Initialized implements ExperienceLikeActorEvent {
   @override
   Experience get experience;
   @override
+  @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
@@ -299,6 +302,7 @@ class _$_Liked implements _Liked {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
+  @JsonKey(ignore: true)
   @override
   _$LikedCopyWith<_Liked> get copyWith =>
       __$LikedCopyWithImpl<_Liked>(this, _$identity);
@@ -366,6 +370,7 @@ abstract class _Liked implements ExperienceLikeActorEvent {
   @override
   Experience get experience;
   @override
+  @JsonKey(ignore: true)
   _$LikedCopyWith<_Liked> get copyWith;
 }
 
@@ -426,6 +431,7 @@ class _$_Disliked implements _Disliked {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
+  @JsonKey(ignore: true)
   @override
   _$DislikedCopyWith<_Disliked> get copyWith =>
       __$DislikedCopyWithImpl<_Disliked>(this, _$identity);
@@ -493,6 +499,7 @@ abstract class _Disliked implements ExperienceLikeActorEvent {
   @override
   Experience get experience;
   @override
+  @JsonKey(ignore: true)
   _$DislikedCopyWith<_Disliked> get copyWith;
 }
 
@@ -1310,6 +1317,7 @@ class _$_LikeFailure implements _LikeFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$LikeFailureCopyWith<_LikeFailure> get copyWith =>
       __$LikeFailureCopyWithImpl<_LikeFailure>(this, _$identity);
@@ -1405,6 +1413,7 @@ abstract class _LikeFailure implements ExperienceLikeActorState {
   const factory _LikeFailure(Failure<dynamic> failure) = _$_LikeFailure;
 
   Failure<dynamic> get failure;
+  @JsonKey(ignore: true)
   _$LikeFailureCopyWith<_LikeFailure> get copyWith;
 }
 
@@ -1600,6 +1609,7 @@ class _$_DislikeFailure implements _DislikeFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$DislikeFailureCopyWith<_DislikeFailure> get copyWith =>
       __$DislikeFailureCopyWithImpl<_DislikeFailure>(this, _$identity);
@@ -1695,5 +1705,6 @@ abstract class _DislikeFailure implements ExperienceLikeActorState {
   const factory _DislikeFailure(Failure<dynamic> failure) = _$_DislikeFailure;
 
   Failure<dynamic> get failure;
+  @JsonKey(ignore: true)
   _$DislikeFailureCopyWith<_DislikeFailure> get copyWith;
 }

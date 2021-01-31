@@ -414,6 +414,7 @@ class _$_ExperienceFormTapped implements _ExperienceFormTapped {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(experienceOption);
 
+  @JsonKey(ignore: true)
   @override
   _$ExperienceFormTappedCopyWith<_ExperienceFormTapped> get copyWith =>
       __$ExperienceFormTappedCopyWithImpl<_ExperienceFormTapped>(
@@ -502,6 +503,7 @@ abstract class _ExperienceFormTapped implements NavigationActorEvent {
       _$_ExperienceFormTapped;
 
   Option<Experience> get experienceOption;
+  @JsonKey(ignore: true)
   _$ExperienceFormTappedCopyWith<_ExperienceFormTapped> get copyWith;
 }
 
@@ -565,6 +567,7 @@ class _$_ExperienceNavigationTapped implements _ExperienceNavigationTapped {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(experienceOption);
 
+  @JsonKey(ignore: true)
   @override
   _$ExperienceNavigationTappedCopyWith<_ExperienceNavigationTapped>
       get copyWith => __$ExperienceNavigationTappedCopyWithImpl<
@@ -653,6 +656,7 @@ abstract class _ExperienceNavigationTapped implements NavigationActorEvent {
       Option<Experience> experienceOption) = _$_ExperienceNavigationTapped;
 
   Option<Experience> get experienceOption;
+  @JsonKey(ignore: true)
   _$ExperienceNavigationTappedCopyWith<_ExperienceNavigationTapped>
       get copyWith;
 }
@@ -727,6 +731,7 @@ class _$_ProfileTapped implements _ProfileTapped {
       const DeepCollectionEquality().hash(userOption) ^
       const DeepCollectionEquality().hash(currentUserProfile);
 
+  @JsonKey(ignore: true)
   @override
   _$ProfileTappedCopyWith<_ProfileTapped> get copyWith =>
       __$ProfileTappedCopyWithImpl<_ProfileTapped>(this, _$identity);
@@ -816,6 +821,7 @@ abstract class _ProfileTapped implements NavigationActorEvent {
 
   Option<User> get userOption;
   bool get currentUserProfile;
+  @JsonKey(ignore: true)
   _$ProfileTappedCopyWith<_ProfileTapped> get copyWith;
 }
 
@@ -1358,6 +1364,7 @@ class _$_ExperienceFormView implements _ExperienceFormView {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(experienceOption);
 
+  @JsonKey(ignore: true)
   @override
   _$ExperienceFormViewCopyWith<_ExperienceFormView> get copyWith =>
       __$ExperienceFormViewCopyWithImpl<_ExperienceFormView>(this, _$identity);
@@ -1450,6 +1457,7 @@ abstract class _ExperienceFormView implements NavigationActorState {
       _$_ExperienceFormView;
 
   Option<Experience> get experienceOption;
+  @JsonKey(ignore: true)
   _$ExperienceFormViewCopyWith<_ExperienceFormView> get copyWith;
 }
 
@@ -1511,6 +1519,7 @@ class _$_NavigateExperienceView implements _NavigateExperienceView {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(experienceOption);
 
+  @JsonKey(ignore: true)
   @override
   _$NavigateExperienceViewCopyWith<_NavigateExperienceView> get copyWith =>
       __$NavigateExperienceViewCopyWithImpl<_NavigateExperienceView>(
@@ -1604,6 +1613,7 @@ abstract class _NavigateExperienceView implements NavigationActorState {
       _$_NavigateExperienceView;
 
   Option<Experience> get experienceOption;
+  @JsonKey(ignore: true)
   _$NavigateExperienceViewCopyWith<_NavigateExperienceView> get copyWith;
 }
 
@@ -1674,6 +1684,7 @@ class _$_ProfileView implements _ProfileView {
       const DeepCollectionEquality().hash(userOption) ^
       const DeepCollectionEquality().hash(currentUserProfile);
 
+  @JsonKey(ignore: true)
   @override
   _$ProfileViewCopyWith<_ProfileView> get copyWith =>
       __$ProfileViewCopyWithImpl<_ProfileView>(this, _$identity);
@@ -1767,6 +1778,7 @@ abstract class _ProfileView implements NavigationActorState {
 
   Option<User> get userOption;
   bool get currentUserProfile;
+  @JsonKey(ignore: true)
   _$ProfileViewCopyWith<_ProfileView> get copyWith;
 }
 

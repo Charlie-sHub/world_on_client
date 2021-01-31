@@ -58,6 +58,14 @@ class TagSet extends ValueObject<KtSet<Tag>> {
     return length == maxLength;
   }
 
+  bool get isEmpty {
+    return value.getOrElse(() => const KtSet<Tag>.empty()).isEmpty();
+  }
+
+  bool get isNotEmpty {
+    return value.getOrElse(() => const KtSet<Tag>.empty()).isNotEmpty();
+  }
+
   @override
   List<Object> get props => [value];
 }

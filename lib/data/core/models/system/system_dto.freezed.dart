@@ -49,6 +49,7 @@ mixin _$SystemDto {
   String get company;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $SystemDtoCopyWith<SystemDto> get copyWith;
 }
 
@@ -179,6 +180,7 @@ class _$_SystemDto extends _SystemDto {
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(company);
 
+  @JsonKey(ignore: true)
   @override
   _$SystemDtoCopyWith<_SystemDto> get copyWith =>
       __$SystemDtoCopyWithImpl<_SystemDto>(this, _$identity);
@@ -210,5 +212,6 @@ abstract class _SystemDto extends SystemDto {
   @override
   String get company;
   @override
+  @JsonKey(ignore: true)
   _$SystemDtoCopyWith<_SystemDto> get copyWith;
 }

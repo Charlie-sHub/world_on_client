@@ -16,7 +16,7 @@ class ExperienceImageGallery extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       child: CarouselBuilder(
-        function: (_, index) => Image(
+        function: (_, index, realIdx) => Image(
           image: NetworkImage(experience.imageURLs.elementAt(index)),
           fit: BoxFit.fill,
         ),

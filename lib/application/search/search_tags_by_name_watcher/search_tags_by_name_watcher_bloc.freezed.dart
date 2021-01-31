@@ -137,6 +137,7 @@ class _$_WatchTagsFoundByNameStarted implements _WatchTagsFoundByNameStarted {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(searchTerm);
 
+  @JsonKey(ignore: true)
   @override
   _$WatchTagsFoundByNameStartedCopyWith<_WatchTagsFoundByNameStarted>
       get copyWith => __$WatchTagsFoundByNameStartedCopyWithImpl<
@@ -201,6 +202,7 @@ abstract class _WatchTagsFoundByNameStarted
       _$_WatchTagsFoundByNameStarted;
 
   SearchTerm get searchTerm;
+  @JsonKey(ignore: true)
   _$WatchTagsFoundByNameStartedCopyWith<_WatchTagsFoundByNameStarted>
       get copyWith;
 }
@@ -261,6 +263,7 @@ class _$_ResultsReceived implements _ResultsReceived {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrTags);
 
+  @JsonKey(ignore: true)
   @override
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
       __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
@@ -323,6 +326,7 @@ abstract class _ResultsReceived implements SearchTagsByNameWatcherEvent {
       _$_ResultsReceived;
 
   Either<Failure, KtList<Tag>> get failureOrTags;
+  @JsonKey(ignore: true)
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith;
 }
 
@@ -669,6 +673,7 @@ class _$_SearchSuccess implements _SearchSuccess {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(tagsFound);
 
+  @JsonKey(ignore: true)
   @override
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith =>
       __$SearchSuccessCopyWithImpl<_SearchSuccess>(this, _$identity);
@@ -740,6 +745,7 @@ abstract class _SearchSuccess implements SearchTagsByNameWatcherState {
   const factory _SearchSuccess(KtList<Tag> tagsFound) = _$_SearchSuccess;
 
   KtList<Tag> get tagsFound;
+  @JsonKey(ignore: true)
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith;
 }
 
@@ -808,6 +814,7 @@ class _$_SearchFailure implements _SearchFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$SearchFailureCopyWith<_SearchFailure> get copyWith =>
       __$SearchFailureCopyWithImpl<_SearchFailure>(this, _$identity);
@@ -879,5 +886,6 @@ abstract class _SearchFailure implements SearchTagsByNameWatcherState {
   const factory _SearchFailure(Failure<dynamic> failure) = _$_SearchFailure;
 
   Failure<dynamic> get failure;
+  @JsonKey(ignore: true)
   _$SearchFailureCopyWith<_SearchFailure> get copyWith;
 }

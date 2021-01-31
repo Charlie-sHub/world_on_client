@@ -59,6 +59,7 @@ mixin _$TagSelectorEvent {
     @required TResult orElse(),
   });
 
+  @JsonKey(ignore: true)
   $TagSelectorEventCopyWith<TagSelectorEvent> get copyWith;
 }
 
@@ -156,6 +157,7 @@ class _$_AddedTag implements _AddedTag {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
 
+  @JsonKey(ignore: true)
   @override
   _$AddedTagCopyWith<_AddedTag> get copyWith =>
       __$AddedTagCopyWithImpl<_AddedTag>(this, _$identity);
@@ -217,6 +219,7 @@ abstract class _AddedTag implements TagSelectorEvent {
   @override
   Tag get tag;
   @override
+  @JsonKey(ignore: true)
   _$AddedTagCopyWith<_AddedTag> get copyWith;
 }
 
@@ -278,6 +281,7 @@ class _$_RemovedTag implements _RemovedTag {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
 
+  @JsonKey(ignore: true)
   @override
   _$RemovedTagCopyWith<_RemovedTag> get copyWith =>
       __$RemovedTagCopyWithImpl<_RemovedTag>(this, _$identity);
@@ -339,6 +343,7 @@ abstract class _RemovedTag implements TagSelectorEvent {
   @override
   Tag get tag;
   @override
+  @JsonKey(ignore: true)
   _$RemovedTagCopyWith<_RemovedTag> get copyWith;
 }
 
@@ -362,6 +367,7 @@ const $TagSelectorState = _$TagSelectorStateTearOff();
 mixin _$TagSelectorState {
   KtSet<Tag> get tagsSelected;
 
+  @JsonKey(ignore: true)
   $TagSelectorStateCopyWith<TagSelectorState> get copyWith;
 }
 
@@ -453,6 +459,7 @@ class _$_TagSearchFormState implements _TagSearchFormState {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(tagsSelected);
 
+  @JsonKey(ignore: true)
   @override
   _$TagSearchFormStateCopyWith<_TagSearchFormState> get copyWith =>
       __$TagSearchFormStateCopyWithImpl<_TagSearchFormState>(this, _$identity);
@@ -465,5 +472,6 @@ abstract class _TagSearchFormState implements TagSelectorState {
   @override
   KtSet<Tag> get tagsSelected;
   @override
+  @JsonKey(ignore: true)
   _$TagSearchFormStateCopyWith<_TagSearchFormState> get copyWith;
 }

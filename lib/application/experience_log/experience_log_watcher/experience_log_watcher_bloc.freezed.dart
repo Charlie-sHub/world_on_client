@@ -234,6 +234,7 @@ class _$_ResultsReceived implements _ResultsReceived {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(failureOrExperiences);
 
+  @JsonKey(ignore: true)
   @override
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
       __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
@@ -299,6 +300,7 @@ abstract class _ResultsReceived implements ExperienceLogWatcherEvent {
       _$_ResultsReceived;
 
   Either<Failure, KtList<Experience>> get failureOrExperiences;
+  @JsonKey(ignore: true)
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith;
 }
 
@@ -646,6 +648,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceSet);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
@@ -717,6 +720,7 @@ abstract class _LoadSuccess implements ExperienceLogWatcherState {
   const factory _LoadSuccess(KtList<Experience> experienceSet) = _$_LoadSuccess;
 
   KtList<Experience> get experienceSet;
+  @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
@@ -785,6 +789,7 @@ class _$_LoadFailure implements _LoadFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
@@ -856,5 +861,6 @@ abstract class _LoadFailure implements ExperienceLogWatcherState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
   Failure<dynamic> get failure;
+  @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith;
 }

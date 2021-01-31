@@ -53,6 +53,7 @@ mixin _$TagDto {
   DateTime get modificationDate;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $TagDtoCopyWith<TagDto> get copyWith;
 }
 
@@ -208,6 +209,7 @@ class _$_TagDto extends _TagDto {
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(modificationDate);
 
+  @JsonKey(ignore: true)
   @override
   _$TagDtoCopyWith<_TagDto> get copyWith =>
       __$TagDtoCopyWithImpl<_TagDto>(this, _$identity);
@@ -243,5 +245,6 @@ abstract class _TagDto extends TagDto {
   @ServerTimestampConverter()
   DateTime get modificationDate;
   @override
+  @JsonKey(ignore: true)
   _$TagDtoCopyWith<_TagDto> get copyWith;
 }

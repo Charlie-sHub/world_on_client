@@ -177,6 +177,7 @@ class _$_WatchExperiencesDoneStarted implements _WatchExperiencesDoneStarted {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   _$WatchExperiencesDoneStartedCopyWith<_WatchExperiencesDoneStarted>
       get copyWith => __$WatchExperiencesDoneStartedCopyWithImpl<
@@ -260,6 +261,7 @@ abstract class _WatchExperiencesDoneStarted
       _$_WatchExperiencesDoneStarted;
 
   User get user;
+  @JsonKey(ignore: true)
   _$WatchExperiencesDoneStartedCopyWith<_WatchExperiencesDoneStarted>
       get copyWith;
 }
@@ -332,6 +334,7 @@ class _$_WatchExperiencesLikedStarted implements _WatchExperiencesLikedStarted {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   _$WatchExperiencesLikedStartedCopyWith<_WatchExperiencesLikedStarted>
       get copyWith => __$WatchExperiencesLikedStartedCopyWithImpl<
@@ -415,6 +418,7 @@ abstract class _WatchExperiencesLikedStarted
       _$_WatchExperiencesLikedStarted;
 
   User get user;
+  @JsonKey(ignore: true)
   _$WatchExperiencesLikedStartedCopyWith<_WatchExperiencesLikedStarted>
       get copyWith;
 }
@@ -488,6 +492,7 @@ class _$_WatchExperiencesCreatedStarted
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   _$WatchExperiencesCreatedStartedCopyWith<_WatchExperiencesCreatedStarted>
       get copyWith => __$WatchExperiencesCreatedStartedCopyWithImpl<
@@ -571,6 +576,7 @@ abstract class _WatchExperiencesCreatedStarted
       _$_WatchExperiencesCreatedStarted;
 
   User get user;
+  @JsonKey(ignore: true)
   _$WatchExperiencesCreatedStartedCopyWith<_WatchExperiencesCreatedStarted>
       get copyWith;
 }
@@ -633,6 +639,7 @@ class _$_ExperiencesReceived implements _ExperiencesReceived {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(failureOrExperiences);
 
+  @JsonKey(ignore: true)
   @override
   _$ExperiencesReceivedCopyWith<_ExperiencesReceived> get copyWith =>
       __$ExperiencesReceivedCopyWithImpl<_ExperiencesReceived>(
@@ -716,6 +723,7 @@ abstract class _ExperiencesReceived implements ProfileExperiencesWatcherEvent {
       _$_ExperiencesReceived;
 
   Either<Failure, KtList<Experience>> get failureOrExperiences;
+  @JsonKey(ignore: true)
   _$ExperiencesReceivedCopyWith<_ExperiencesReceived> get copyWith;
 }
 
@@ -1065,6 +1073,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(experiences);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
@@ -1136,6 +1145,7 @@ abstract class _LoadSuccess implements ProfileExperiencesWatcherState {
   const factory _LoadSuccess(KtList<Experience> experiences) = _$_LoadSuccess;
 
   KtList<Experience> get experiences;
+  @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
@@ -1204,6 +1214,7 @@ class _$_LoadFailure implements _LoadFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
@@ -1275,5 +1286,6 @@ abstract class _LoadFailure implements ProfileExperiencesWatcherState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
   Failure<dynamic> get failure;
+  @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith;
 }

@@ -14,21 +14,17 @@ class WorldOnAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: IconButton(
-        icon: const FaIcon(FontAwesomeIcons.signOutAlt),
-        onPressed: () => context.bloc<AuthenticationBloc>().add(const AuthenticationEvent.loggedOut()),
-      ),
       centerTitle: true,
+      leading: const Image(
+        height: 38,
+        width: 38,
+        image: AssetImage(Assets.worldOnLogo),
+      ),
       title: Padding(
         padding: const EdgeInsets.all(5),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: const <Widget>[
-            Image(
-              height: 38,
-              width: 38,
-              image: AssetImage(Assets.worldOnLogo),
-            ),
             Text(
               "WORLD ON",
               style: TextStyle(

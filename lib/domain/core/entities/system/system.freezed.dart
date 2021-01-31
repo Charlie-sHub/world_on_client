@@ -39,6 +39,7 @@ mixin _$System {
   String get type;
   String get company;
 
+  @JsonKey(ignore: true)
   $SystemCopyWith<System> get copyWith;
 }
 
@@ -155,6 +156,7 @@ class _$_System extends _System {
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(company);
 
+  @JsonKey(ignore: true)
   @override
   _$SystemCopyWith<_System> get copyWith =>
       __$SystemCopyWithImpl<_System>(this, _$identity);
@@ -177,5 +179,6 @@ abstract class _System extends System {
   @override
   String get company;
   @override
+  @JsonKey(ignore: true)
   _$SystemCopyWith<_System> get copyWith;
 }

@@ -240,6 +240,7 @@ class _$_Initialized implements _Initialized {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(userToEdit);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
       __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
@@ -354,6 +355,7 @@ abstract class _Initialized implements ProfileEditingFormEvent {
   const factory _Initialized(User userToEdit) = _$_Initialized;
 
   User get userToEdit;
+  @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
@@ -410,6 +412,7 @@ class _$_NameChanged implements _NameChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
 
+  @JsonKey(ignore: true)
   @override
   _$NameChangedCopyWith<_NameChanged> get copyWith =>
       __$NameChangedCopyWithImpl<_NameChanged>(this, _$identity);
@@ -524,6 +527,7 @@ abstract class _NameChanged implements ProfileEditingFormEvent {
   const factory _NameChanged(String name) = _$_NameChanged;
 
   String get name;
+  @JsonKey(ignore: true)
   _$NameChangedCopyWith<_NameChanged> get copyWith;
 }
 
@@ -581,6 +585,7 @@ class _$_ImageChanged implements _ImageChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageFile);
 
+  @JsonKey(ignore: true)
   @override
   _$ImageChangedCopyWith<_ImageChanged> get copyWith =>
       __$ImageChangedCopyWithImpl<_ImageChanged>(this, _$identity);
@@ -695,6 +700,7 @@ abstract class _ImageChanged implements ProfileEditingFormEvent {
   const factory _ImageChanged(File imageFile) = _$_ImageChanged;
 
   File get imageFile;
+  @JsonKey(ignore: true)
   _$ImageChangedCopyWith<_ImageChanged> get copyWith;
 }
 
@@ -752,6 +758,7 @@ class _$_UsernameChanged implements _UsernameChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
 
+  @JsonKey(ignore: true)
   @override
   _$UsernameChangedCopyWith<_UsernameChanged> get copyWith =>
       __$UsernameChangedCopyWithImpl<_UsernameChanged>(this, _$identity);
@@ -866,6 +873,7 @@ abstract class _UsernameChanged implements ProfileEditingFormEvent {
   const factory _UsernameChanged(String username) = _$_UsernameChanged;
 
   String get username;
+  @JsonKey(ignore: true)
   _$UsernameChangedCopyWith<_UsernameChanged> get copyWith;
 }
 
@@ -923,6 +931,7 @@ class _$_PasswordChanged implements _PasswordChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(password);
 
+  @JsonKey(ignore: true)
   @override
   _$PasswordChangedCopyWith<_PasswordChanged> get copyWith =>
       __$PasswordChangedCopyWithImpl<_PasswordChanged>(this, _$identity);
@@ -1037,6 +1046,7 @@ abstract class _PasswordChanged implements ProfileEditingFormEvent {
   const factory _PasswordChanged(String password) = _$_PasswordChanged;
 
   String get password;
+  @JsonKey(ignore: true)
   _$PasswordChangedCopyWith<_PasswordChanged> get copyWith;
 }
 
@@ -1101,6 +1111,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(passwordConfirmation);
 
+  @JsonKey(ignore: true)
   @override
   _$PasswordConfirmationChangedCopyWith<_PasswordConfirmationChanged>
       get copyWith => __$PasswordConfirmationChangedCopyWithImpl<
@@ -1217,6 +1228,7 @@ abstract class _PasswordConfirmationChanged implements ProfileEditingFormEvent {
       _$_PasswordConfirmationChanged;
 
   String get passwordConfirmation;
+  @JsonKey(ignore: true)
   _$PasswordConfirmationChangedCopyWith<_PasswordConfirmationChanged>
       get copyWith;
 }
@@ -1276,6 +1288,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(emailAddress);
 
+  @JsonKey(ignore: true)
   @override
   _$EmailAddressChangedCopyWith<_EmailAddressChanged> get copyWith =>
       __$EmailAddressChangedCopyWithImpl<_EmailAddressChanged>(
@@ -1392,6 +1405,7 @@ abstract class _EmailAddressChanged implements ProfileEditingFormEvent {
       _$_EmailAddressChanged;
 
   String get emailAddress;
+  @JsonKey(ignore: true)
   _$EmailAddressChangedCopyWith<_EmailAddressChanged> get copyWith;
 }
 
@@ -1449,6 +1463,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(birthday);
 
+  @JsonKey(ignore: true)
   @override
   _$BirthdayChangedCopyWith<_BirthdayChanged> get copyWith =>
       __$BirthdayChangedCopyWithImpl<_BirthdayChanged>(this, _$identity);
@@ -1563,6 +1578,7 @@ abstract class _BirthdayChanged implements ProfileEditingFormEvent {
   const factory _BirthdayChanged(DateTime birthday) = _$_BirthdayChanged;
 
   DateTime get birthday;
+  @JsonKey(ignore: true)
   _$BirthdayChangedCopyWith<_BirthdayChanged> get copyWith;
 }
 
@@ -1620,6 +1636,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
 
+  @JsonKey(ignore: true)
   @override
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
       __$DescriptionChangedCopyWithImpl<_DescriptionChanged>(this, _$identity);
@@ -1734,6 +1751,7 @@ abstract class _DescriptionChanged implements ProfileEditingFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description;
+  @JsonKey(ignore: true)
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith;
 }
 
@@ -1791,6 +1809,7 @@ class _$_InterestsChanged implements _InterestsChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(interests);
 
+  @JsonKey(ignore: true)
   @override
   _$InterestsChangedCopyWith<_InterestsChanged> get copyWith =>
       __$InterestsChangedCopyWithImpl<_InterestsChanged>(this, _$identity);
@@ -1905,6 +1924,7 @@ abstract class _InterestsChanged implements ProfileEditingFormEvent {
   const factory _InterestsChanged(Set<Tag> interests) = _$_InterestsChanged;
 
   Set<Tag> get interests;
+  @JsonKey(ignore: true)
   _$InterestsChangedCopyWith<_InterestsChanged> get copyWith;
 }
 
@@ -2089,6 +2109,7 @@ mixin _$ProfileEditingFormState {
   bool get isSubmitting;
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
 
+  @JsonKey(ignore: true)
   $ProfileEditingFormStateCopyWith<ProfileEditingFormState> get copyWith;
 }
 
@@ -2283,6 +2304,7 @@ class _$_ProfileEditingFormState implements _ProfileEditingFormState {
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
 
+  @JsonKey(ignore: true)
   @override
   _$ProfileEditingFormStateCopyWith<_ProfileEditingFormState> get copyWith =>
       __$ProfileEditingFormStateCopyWithImpl<_ProfileEditingFormState>(
@@ -2312,5 +2334,6 @@ abstract class _ProfileEditingFormState implements ProfileEditingFormState {
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
   @override
+  @JsonKey(ignore: true)
   _$ProfileEditingFormStateCopyWith<_ProfileEditingFormState> get copyWith;
 }

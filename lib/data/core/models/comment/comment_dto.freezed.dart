@@ -56,6 +56,7 @@ mixin _$CommentDto {
   DateTime get modificationDate;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $CommentDtoCopyWith<CommentDto> get copyWith;
 }
 
@@ -247,6 +248,7 @@ class _$_CommentDto extends _CommentDto {
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(modificationDate);
 
+  @JsonKey(ignore: true)
   @override
   _$CommentDtoCopyWith<_CommentDto> get copyWith =>
       __$CommentDtoCopyWithImpl<_CommentDto>(this, _$identity);
@@ -286,5 +288,6 @@ abstract class _CommentDto extends CommentDto {
   @ServerTimestampConverter()
   DateTime get modificationDate;
   @override
+  @JsonKey(ignore: true)
   _$CommentDtoCopyWith<_CommentDto> get copyWith;
 }

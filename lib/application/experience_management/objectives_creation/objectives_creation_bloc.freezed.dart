@@ -59,6 +59,7 @@ mixin _$ObjectivesCreationEvent {
     @required TResult orElse(),
   });
 
+  @JsonKey(ignore: true)
   $ObjectivesCreationEventCopyWith<ObjectivesCreationEvent> get copyWith;
 }
 
@@ -161,6 +162,7 @@ class _$_AddedObjective implements _AddedObjective {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective);
 
+  @JsonKey(ignore: true)
   @override
   _$AddedObjectiveCopyWith<_AddedObjective> get copyWith =>
       __$AddedObjectiveCopyWithImpl<_AddedObjective>(this, _$identity);
@@ -222,6 +224,7 @@ abstract class _AddedObjective implements ObjectivesCreationEvent {
   @override
   Objective get objective;
   @override
+  @JsonKey(ignore: true)
   _$AddedObjectiveCopyWith<_AddedObjective> get copyWith;
 }
 
@@ -284,6 +287,7 @@ class _$_RemovedObjective implements _RemovedObjective {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective);
 
+  @JsonKey(ignore: true)
   @override
   _$RemovedObjectiveCopyWith<_RemovedObjective> get copyWith =>
       __$RemovedObjectiveCopyWithImpl<_RemovedObjective>(this, _$identity);
@@ -345,6 +349,7 @@ abstract class _RemovedObjective implements ObjectivesCreationEvent {
   @override
   Objective get objective;
   @override
+  @JsonKey(ignore: true)
   _$RemovedObjectiveCopyWith<_RemovedObjective> get copyWith;
 }
 
@@ -369,6 +374,7 @@ const $ObjectivesCreationState = _$ObjectivesCreationStateTearOff();
 mixin _$ObjectivesCreationState {
   KtSet<Objective> get objectivesCreated;
 
+  @JsonKey(ignore: true)
   $ObjectivesCreationStateCopyWith<ObjectivesCreationState> get copyWith;
 }
 
@@ -462,6 +468,7 @@ class _$_ObjectivesCreationState implements _ObjectivesCreationState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(objectivesCreated);
 
+  @JsonKey(ignore: true)
   @override
   _$ObjectivesCreationStateCopyWith<_ObjectivesCreationState> get copyWith =>
       __$ObjectivesCreationStateCopyWithImpl<_ObjectivesCreationState>(
@@ -476,5 +483,6 @@ abstract class _ObjectivesCreationState implements ObjectivesCreationState {
   @override
   KtSet<Objective> get objectivesCreated;
   @override
+  @JsonKey(ignore: true)
   _$ObjectivesCreationStateCopyWith<_ObjectivesCreationState> get copyWith;
 }

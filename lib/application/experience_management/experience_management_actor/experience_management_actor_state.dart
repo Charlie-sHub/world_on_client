@@ -4,6 +4,10 @@ part of 'experience_management_actor_bloc.dart';
 abstract class ExperienceManagementActorState with _$ExperienceManagementActorState {
   const factory ExperienceManagementActorState.initial() = _Initial;
 
+  const factory ExperienceManagementActorState.isCreator() = _IsCreator;
+
+  const factory ExperienceManagementActorState.isNotCreator() = _IsNotCreator;
+
   const factory ExperienceManagementActorState.actionInProgress() = _ActionInProgress;
 
   const factory ExperienceManagementActorState.deletionSuccess() = _DeletionSuccess;

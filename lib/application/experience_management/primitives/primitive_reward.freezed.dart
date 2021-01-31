@@ -39,6 +39,7 @@ mixin _$PrimitiveReward {
   String get description;
   File get imageFile;
 
+  @JsonKey(ignore: true)
   $PrimitiveRewardCopyWith<PrimitiveReward> get copyWith;
 }
 
@@ -165,6 +166,7 @@ class _$_PrimitiveReward extends _PrimitiveReward {
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(imageFile);
 
+  @JsonKey(ignore: true)
   @override
   _$PrimitiveRewardCopyWith<_PrimitiveReward> get copyWith =>
       __$PrimitiveRewardCopyWithImpl<_PrimitiveReward>(this, _$identity);
@@ -187,5 +189,6 @@ abstract class _PrimitiveReward extends PrimitiveReward {
   @override
   File get imageFile;
   @override
+  @JsonKey(ignore: true)
   _$PrimitiveRewardCopyWith<_PrimitiveReward> get copyWith;
 }

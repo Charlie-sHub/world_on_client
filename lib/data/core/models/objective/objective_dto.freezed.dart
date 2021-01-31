@@ -48,6 +48,7 @@ mixin _$ObjectiveDto {
   String get imageURL;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $ObjectiveDtoCopyWith<ObjectiveDto> get copyWith;
 }
 
@@ -205,6 +206,7 @@ class _$_ObjectiveDto extends _ObjectiveDto {
       const DeepCollectionEquality().hash(coordinates) ^
       const DeepCollectionEquality().hash(imageURL);
 
+  @JsonKey(ignore: true)
   @override
   _$ObjectiveDtoCopyWith<_ObjectiveDto> get copyWith =>
       __$ObjectiveDtoCopyWithImpl<_ObjectiveDto>(this, _$identity);
@@ -235,5 +237,6 @@ abstract class _ObjectiveDto extends ObjectiveDto {
   @override
   String get imageURL;
   @override
+  @JsonKey(ignore: true)
   _$ObjectiveDtoCopyWith<_ObjectiveDto> get copyWith;
 }

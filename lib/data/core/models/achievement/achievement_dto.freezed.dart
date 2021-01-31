@@ -71,6 +71,7 @@ mixin _$AchievementDto {
   Set<String> get tagNames;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $AchievementDtoCopyWith<AchievementDto> get copyWith;
 }
 
@@ -321,6 +322,7 @@ class _$_AchievementDto extends _AchievementDto {
       const DeepCollectionEquality().hash(modificationDate) ^
       const DeepCollectionEquality().hash(tagNames);
 
+  @JsonKey(ignore: true)
   @override
   _$AchievementDtoCopyWith<_AchievementDto> get copyWith =>
       __$AchievementDtoCopyWithImpl<_AchievementDto>(this, _$identity);
@@ -374,5 +376,6 @@ abstract class _AchievementDto extends AchievementDto {
   @override
   Set<String> get tagNames;
   @override
+  @JsonKey(ignore: true)
   _$AchievementDtoCopyWith<_AchievementDto> get copyWith;
 }

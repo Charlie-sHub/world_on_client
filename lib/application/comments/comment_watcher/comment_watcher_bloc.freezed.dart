@@ -141,6 +141,7 @@ class _$_WatchExperienceCommentsStarted
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceId);
 
+  @JsonKey(ignore: true)
   @override
   _$WatchExperienceCommentsStartedCopyWith<_WatchExperienceCommentsStarted>
       get copyWith => __$WatchExperienceCommentsStartedCopyWithImpl<
@@ -207,6 +208,7 @@ abstract class _WatchExperienceCommentsStarted implements CommentWatcherEvent {
       _$_WatchExperienceCommentsStarted;
 
   UniqueId get experienceId;
+  @JsonKey(ignore: true)
   _$WatchExperienceCommentsStartedCopyWith<_WatchExperienceCommentsStarted>
       get copyWith;
 }
@@ -269,6 +271,7 @@ class _$_ResultsReceived implements _ResultsReceived {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(failureOrComments);
 
+  @JsonKey(ignore: true)
   @override
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
       __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
@@ -334,6 +337,7 @@ abstract class _ResultsReceived implements CommentWatcherEvent {
       Either<Failure, KtList<Comment>> failureOrComments) = _$_ResultsReceived;
 
   Either<Failure, KtList<Comment>> get failureOrComments;
+  @JsonKey(ignore: true)
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith;
 }
 
@@ -679,6 +683,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(comments);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
@@ -750,6 +755,7 @@ abstract class _LoadSuccess implements CommentWatcherState {
   const factory _LoadSuccess(KtList<Comment> comments) = _$_LoadSuccess;
 
   KtList<Comment> get comments;
+  @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
@@ -818,6 +824,7 @@ class _$_LoadFailure implements _LoadFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
@@ -889,5 +896,6 @@ abstract class _LoadFailure implements CommentWatcherState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
   Failure<dynamic> get failure;
+  @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith;
 }

@@ -39,6 +39,7 @@ mixin _$Device {
   String get type;
   String get company;
 
+  @JsonKey(ignore: true)
   $DeviceCopyWith<Device> get copyWith;
 }
 
@@ -155,6 +156,7 @@ class _$_Device extends _Device {
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(company);
 
+  @JsonKey(ignore: true)
   @override
   _$DeviceCopyWith<_Device> get copyWith =>
       __$DeviceCopyWithImpl<_Device>(this, _$identity);
@@ -177,5 +179,6 @@ abstract class _Device extends Device {
   @override
   String get company;
   @override
+  @JsonKey(ignore: true)
   _$DeviceCopyWith<_Device> get copyWith;
 }

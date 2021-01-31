@@ -79,6 +79,7 @@ mixin _$Experience {
   Set<User> get likedBy;
   Set<User> get doneBy;
 
+  @JsonKey(ignore: true)
   $ExperienceCopyWith<Experience> get copyWith;
 }
 
@@ -459,6 +460,7 @@ class _$_Experience extends _Experience {
       const DeepCollectionEquality().hash(likedBy) ^
       const DeepCollectionEquality().hash(doneBy);
 
+  @JsonKey(ignore: true)
   @override
   _$ExperienceCopyWith<_Experience> get copyWith =>
       __$ExperienceCopyWithImpl<_Experience>(this, _$identity);
@@ -520,5 +522,6 @@ abstract class _Experience extends Experience {
   @override
   Set<User> get doneBy;
   @override
+  @JsonKey(ignore: true)
   _$ExperienceCopyWith<_Experience> get copyWith;
 }

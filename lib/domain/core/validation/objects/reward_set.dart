@@ -54,6 +54,14 @@ class RewardSet extends ValueObject<KtSet<Reward>> {
     return length == maxLength;
   }
 
+  bool get isEmpty {
+    return value.getOrElse(() => const KtSet<Reward>.empty()).isEmpty();
+  }
+
+  bool get isNotEmpty {
+    return value.getOrElse(() => const KtSet<Reward>.empty()).isNotEmpty();
+  }
+
   @override
   List<Object> get props => [value];
 }

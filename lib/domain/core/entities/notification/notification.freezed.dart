@@ -51,6 +51,7 @@ mixin _$Notification {
   PastDate get creationDate;
   NotificationType get type;
 
+  @JsonKey(ignore: true)
   $NotificationCopyWith<Notification> get copyWith;
 }
 
@@ -260,6 +261,7 @@ class _$_Notification extends _Notification {
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(type);
 
+  @JsonKey(ignore: true)
   @override
   _$NotificationCopyWith<_Notification> get copyWith =>
       __$NotificationCopyWithImpl<_Notification>(this, _$identity);
@@ -294,5 +296,6 @@ abstract class _Notification extends Notification {
   @override
   NotificationType get type;
   @override
+  @JsonKey(ignore: true)
   _$NotificationCopyWith<_Notification> get copyWith;
 }

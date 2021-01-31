@@ -144,6 +144,7 @@ class _$_WatchExperiencesFoundByNameStarted
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(searchTerm);
 
+  @JsonKey(ignore: true)
   @override
   _$WatchExperiencesFoundByNameStartedCopyWith<
           _WatchExperiencesFoundByNameStarted>
@@ -213,6 +214,7 @@ abstract class _WatchExperiencesFoundByNameStarted
       _$_WatchExperiencesFoundByNameStarted;
 
   SearchTerm get searchTerm;
+  @JsonKey(ignore: true)
   _$WatchExperiencesFoundByNameStartedCopyWith<
       _WatchExperiencesFoundByNameStarted> get copyWith;
 }
@@ -275,6 +277,7 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(failureOrExperiences);
 
+  @JsonKey(ignore: true)
   @override
   _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith =>
       __$SearchResultsReceivedCopyWithImpl<_SearchResultsReceived>(
@@ -344,6 +347,7 @@ abstract class _SearchResultsReceived
       _$_SearchResultsReceived;
 
   Either<Failure, KtList<Experience>> get failureOrExperiences;
+  @JsonKey(ignore: true)
   _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith;
 }
 
@@ -696,6 +700,7 @@ class _$_SearchSuccess implements _SearchSuccess {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(experiencesFound);
 
+  @JsonKey(ignore: true)
   @override
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith =>
       __$SearchSuccessCopyWithImpl<_SearchSuccess>(this, _$identity);
@@ -768,6 +773,7 @@ abstract class _SearchSuccess implements SearchExperiencesByNameWatcherState {
       _$_SearchSuccess;
 
   KtList<Experience> get experiencesFound;
+  @JsonKey(ignore: true)
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith;
 }
 
@@ -836,6 +842,7 @@ class _$_SearchFailure implements _SearchFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$SearchFailureCopyWith<_SearchFailure> get copyWith =>
       __$SearchFailureCopyWithImpl<_SearchFailure>(this, _$identity);
@@ -907,5 +914,6 @@ abstract class _SearchFailure implements SearchExperiencesByNameWatcherState {
   const factory _SearchFailure(Failure<dynamic> failure) = _$_SearchFailure;
 
   Failure<dynamic> get failure;
+  @JsonKey(ignore: true)
   _$SearchFailureCopyWith<_SearchFailure> get copyWith;
 }

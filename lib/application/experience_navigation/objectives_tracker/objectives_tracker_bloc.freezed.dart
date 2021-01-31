@@ -131,6 +131,7 @@ class _$_Initialized implements _Initialized {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectiveSet);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
       __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
@@ -190,6 +191,7 @@ abstract class _Initialized implements ObjectivesTrackerEvent {
   const factory _Initialized(ObjectiveSet objectiveSet) = _$_Initialized;
 
   ObjectiveSet get objectiveSet;
+  @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
@@ -259,6 +261,7 @@ class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective);
 
+  @JsonKey(ignore: true)
   @override
   _$ObjectiveAccomplishedCopyWith<_ObjectiveAccomplished> get copyWith =>
       __$ObjectiveAccomplishedCopyWithImpl<_ObjectiveAccomplished>(
@@ -320,6 +323,7 @@ abstract class _ObjectiveAccomplished implements ObjectivesTrackerEvent {
       _$_ObjectiveAccomplished;
 
   Objective get objective;
+  @JsonKey(ignore: true)
   _$ObjectiveAccomplishedCopyWith<_ObjectiveAccomplished> get copyWith;
 }
 
@@ -346,6 +350,7 @@ mixin _$ObjectivesTrackerState {
   KtList<Objective> get objectivesToDo;
   bool get isFinished;
 
+  @JsonKey(ignore: true)
   $ObjectivesTrackerStateCopyWith<ObjectivesTrackerState> get copyWith;
 }
 
@@ -452,6 +457,7 @@ class _$_ObjectivesTrackerState implements _ObjectivesTrackerState {
       const DeepCollectionEquality().hash(objectivesToDo) ^
       const DeepCollectionEquality().hash(isFinished);
 
+  @JsonKey(ignore: true)
   @override
   _$ObjectivesTrackerStateCopyWith<_ObjectivesTrackerState> get copyWith =>
       __$ObjectivesTrackerStateCopyWithImpl<_ObjectivesTrackerState>(
@@ -468,5 +474,6 @@ abstract class _ObjectivesTrackerState implements ObjectivesTrackerState {
   @override
   bool get isFinished;
   @override
+  @JsonKey(ignore: true)
   _$ObjectivesTrackerStateCopyWith<_ObjectivesTrackerState> get copyWith;
 }

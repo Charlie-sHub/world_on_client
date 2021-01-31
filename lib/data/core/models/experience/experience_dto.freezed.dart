@@ -90,6 +90,7 @@ mixin _$ExperienceDto {
   Set<UserDto> get doneBy;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $ExperienceDtoCopyWith<ExperienceDto> get copyWith;
 }
 
@@ -472,6 +473,7 @@ class _$_ExperienceDto extends _ExperienceDto {
       const DeepCollectionEquality().hash(likedBy) ^
       const DeepCollectionEquality().hash(doneBy);
 
+  @JsonKey(ignore: true)
   @override
   _$ExperienceDtoCopyWith<_ExperienceDto> get copyWith =>
       __$ExperienceDtoCopyWithImpl<_ExperienceDto>(this, _$identity);
@@ -543,5 +545,6 @@ abstract class _ExperienceDto extends ExperienceDto {
   @override
   Set<UserDto> get doneBy;
   @override
+  @JsonKey(ignore: true)
   _$ExperienceDtoCopyWith<_ExperienceDto> get copyWith;
 }

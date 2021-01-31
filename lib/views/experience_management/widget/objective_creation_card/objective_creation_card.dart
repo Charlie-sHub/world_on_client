@@ -130,7 +130,10 @@ class ObjectiveCreationCard extends HookWidget {
                                 ),
                               ),
                               // This widget isn't constant for the same reason the map for the experience can't be constant either
-                              ObjectiveCoordinatePicker(),
+                              Padding(
+                                padding: const EdgeInsets.all(5),
+                                child: ObjectiveCoordinatePicker(),
+                              ),
                             ],
                           ),
                           const SubmitObjectiveButton(),

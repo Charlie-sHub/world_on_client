@@ -148,6 +148,7 @@ class _$_NameChanged implements _NameChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
 
+  @JsonKey(ignore: true)
   @override
   _$NameChangedCopyWith<_NameChanged> get copyWith =>
       __$NameChangedCopyWithImpl<_NameChanged>(this, _$identity);
@@ -219,6 +220,7 @@ abstract class _NameChanged implements RewardFormEvent {
   const factory _NameChanged(String name) = _$_NameChanged;
 
   String get name;
+  @JsonKey(ignore: true)
   _$NameChangedCopyWith<_NameChanged> get copyWith;
 }
 
@@ -276,6 +278,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
 
+  @JsonKey(ignore: true)
   @override
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
       __$DescriptionChangedCopyWithImpl<_DescriptionChanged>(this, _$identity);
@@ -347,6 +350,7 @@ abstract class _DescriptionChanged implements RewardFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description;
+  @JsonKey(ignore: true)
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith;
 }
 
@@ -404,6 +408,7 @@ class _$_ImageChanged implements _ImageChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageFile);
 
+  @JsonKey(ignore: true)
   @override
   _$ImageChangedCopyWith<_ImageChanged> get copyWith =>
       __$ImageChangedCopyWithImpl<_ImageChanged>(this, _$identity);
@@ -475,6 +480,7 @@ abstract class _ImageChanged implements RewardFormEvent {
   const factory _ImageChanged(File imageFile) = _$_ImageChanged;
 
   File get imageFile;
+  @JsonKey(ignore: true)
   _$ImageChangedCopyWith<_ImageChanged> get copyWith;
 }
 
@@ -606,6 +612,7 @@ mixin _$RewardFormState {
   bool get showErrorMessages;
   bool get isSubmitting;
 
+  @JsonKey(ignore: true)
   $RewardFormStateCopyWith<RewardFormState> get copyWith;
 }
 
@@ -739,6 +746,7 @@ class _$_RewardFormState implements _RewardFormState {
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting);
 
+  @JsonKey(ignore: true)
   @override
   _$RewardFormStateCopyWith<_RewardFormState> get copyWith =>
       __$RewardFormStateCopyWithImpl<_RewardFormState>(this, _$identity);
@@ -757,5 +765,6 @@ abstract class _RewardFormState implements RewardFormState {
   @override
   bool get isSubmitting;
   @override
+  @JsonKey(ignore: true)
   _$RewardFormStateCopyWith<_RewardFormState> get copyWith;
 }

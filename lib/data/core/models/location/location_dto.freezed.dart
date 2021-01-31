@@ -51,6 +51,7 @@ mixin _$LocationDto {
   Set<ExperienceDto> get experiences;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $LocationDtoCopyWith<LocationDto> get copyWith;
 }
 
@@ -206,6 +207,7 @@ class _$_LocationDto extends _LocationDto {
       const DeepCollectionEquality().hash(postalCode) ^
       const DeepCollectionEquality().hash(experiences);
 
+  @JsonKey(ignore: true)
   @override
   _$LocationDtoCopyWith<_LocationDto> get copyWith =>
       __$LocationDtoCopyWithImpl<_LocationDto>(this, _$identity);
@@ -239,5 +241,6 @@ abstract class _LocationDto extends LocationDto {
   @override
   Set<ExperienceDto> get experiences;
   @override
+  @JsonKey(ignore: true)
   _$LocationDtoCopyWith<_LocationDto> get copyWith;
 }

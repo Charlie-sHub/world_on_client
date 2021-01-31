@@ -131,6 +131,7 @@ class _$_SearchTermChanged implements _SearchTermChanged {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(searchTermString);
 
+  @JsonKey(ignore: true)
   @override
   _$SearchTermChangedCopyWith<_SearchTermChanged> get copyWith =>
       __$SearchTermChangedCopyWithImpl<_SearchTermChanged>(this, _$identity);
@@ -191,6 +192,7 @@ abstract class _SearchTermChanged implements SearchByNameFormEvent {
       _$_SearchTermChanged;
 
   String get searchTermString;
+  @JsonKey(ignore: true)
   _$SearchTermChangedCopyWith<_SearchTermChanged> get copyWith;
 }
 
@@ -314,6 +316,7 @@ mixin _$SearchByNameFormState {
   bool get isSubmitting;
   Option<ValueFailure> get failureOrSuccessOption;
 
+  @JsonKey(ignore: true)
   $SearchByNameFormStateCopyWith<SearchByNameFormState> get copyWith;
 }
 
@@ -459,6 +462,7 @@ class _$_SearchByNameFormState implements _SearchByNameFormState {
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
 
+  @JsonKey(ignore: true)
   @override
   _$SearchByNameFormStateCopyWith<_SearchByNameFormState> get copyWith =>
       __$SearchByNameFormStateCopyWithImpl<_SearchByNameFormState>(
@@ -482,5 +486,6 @@ abstract class _SearchByNameFormState implements SearchByNameFormState {
   @override
   Option<ValueFailure> get failureOrSuccessOption;
   @override
+  @JsonKey(ignore: true)
   _$SearchByNameFormStateCopyWith<_SearchByNameFormState> get copyWith;
 }

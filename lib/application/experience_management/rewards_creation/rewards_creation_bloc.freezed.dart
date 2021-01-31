@@ -59,6 +59,7 @@ mixin _$RewardsCreationEvent {
     @required TResult orElse(),
   });
 
+  @JsonKey(ignore: true)
   $RewardsCreationEventCopyWith<RewardsCreationEvent> get copyWith;
 }
 
@@ -159,6 +160,7 @@ class _$_AddedReward implements _AddedReward {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(reward);
 
+  @JsonKey(ignore: true)
   @override
   _$AddedRewardCopyWith<_AddedReward> get copyWith =>
       __$AddedRewardCopyWithImpl<_AddedReward>(this, _$identity);
@@ -220,6 +222,7 @@ abstract class _AddedReward implements RewardsCreationEvent {
   @override
   Reward get reward;
   @override
+  @JsonKey(ignore: true)
   _$AddedRewardCopyWith<_AddedReward> get copyWith;
 }
 
@@ -281,6 +284,7 @@ class _$_RemovedReward implements _RemovedReward {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(reward);
 
+  @JsonKey(ignore: true)
   @override
   _$RemovedRewardCopyWith<_RemovedReward> get copyWith =>
       __$RemovedRewardCopyWithImpl<_RemovedReward>(this, _$identity);
@@ -342,6 +346,7 @@ abstract class _RemovedReward implements RewardsCreationEvent {
   @override
   Reward get reward;
   @override
+  @JsonKey(ignore: true)
   _$RemovedRewardCopyWith<_RemovedReward> get copyWith;
 }
 
@@ -365,6 +370,7 @@ const $RewardsCreationState = _$RewardsCreationStateTearOff();
 mixin _$RewardsCreationState {
   KtSet<Reward> get rewardsCreated;
 
+  @JsonKey(ignore: true)
   $RewardsCreationStateCopyWith<RewardsCreationState> get copyWith;
 }
 
@@ -457,6 +463,7 @@ class _$_RewardsCreationState implements _RewardsCreationState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(rewardsCreated);
 
+  @JsonKey(ignore: true)
   @override
   _$RewardsCreationStateCopyWith<_RewardsCreationState> get copyWith =>
       __$RewardsCreationStateCopyWithImpl<_RewardsCreationState>(
@@ -470,5 +477,6 @@ abstract class _RewardsCreationState implements RewardsCreationState {
   @override
   KtSet<Reward> get rewardsCreated;
   @override
+  @JsonKey(ignore: true)
   _$RewardsCreationStateCopyWith<_RewardsCreationState> get copyWith;
 }

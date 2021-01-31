@@ -40,6 +40,7 @@ mixin _$OptionsDto {
   String get languageCode;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $OptionsDtoCopyWith<OptionsDto> get copyWith;
 }
 
@@ -145,6 +146,7 @@ class _$_OptionsDto extends _OptionsDto {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(languageCode);
 
+  @JsonKey(ignore: true)
   @override
   _$OptionsDtoCopyWith<_OptionsDto> get copyWith =>
       __$OptionsDtoCopyWithImpl<_OptionsDto>(this, _$identity);
@@ -168,5 +170,6 @@ abstract class _OptionsDto extends OptionsDto {
   @override
   String get languageCode;
   @override
+  @JsonKey(ignore: true)
   _$OptionsDtoCopyWith<_OptionsDto> get copyWith;
 }

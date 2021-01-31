@@ -48,6 +48,7 @@ mixin _$ExperienceCardLikeCheckEvent {
     @required TResult orElse(),
   });
 
+  @JsonKey(ignore: true)
   $ExperienceCardLikeCheckEventCopyWith<ExperienceCardLikeCheckEvent>
       get copyWith;
 }
@@ -152,6 +153,7 @@ class _$_Initialized implements _Initialized {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
       __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
@@ -207,6 +209,7 @@ abstract class _Initialized implements ExperienceCardLikeCheckEvent {
   @override
   Experience get experience;
   @override
+  @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 

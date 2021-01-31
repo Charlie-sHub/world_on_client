@@ -70,6 +70,7 @@ mixin _$BlockActorEvent {
     @required TResult orElse(),
   });
 
+  @JsonKey(ignore: true)
   $BlockActorEventCopyWith<BlockActorEvent> get copyWith;
 }
 
@@ -170,6 +171,7 @@ class _$_Initialized implements _Initialized {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
       __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
@@ -237,6 +239,7 @@ abstract class _Initialized implements BlockActorEvent {
   @override
   User get user;
   @override
+  @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
@@ -295,6 +298,7 @@ class _$_Blocked implements _Blocked {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   _$BlockedCopyWith<_Blocked> get copyWith =>
       __$BlockedCopyWithImpl<_Blocked>(this, _$identity);
@@ -362,6 +366,7 @@ abstract class _Blocked implements BlockActorEvent {
   @override
   User get user;
   @override
+  @JsonKey(ignore: true)
   _$BlockedCopyWith<_Blocked> get copyWith;
 }
 
@@ -421,6 +426,7 @@ class _$_UnBlocked implements _UnBlocked {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   _$UnBlockedCopyWith<_UnBlocked> get copyWith =>
       __$UnBlockedCopyWithImpl<_UnBlocked>(this, _$identity);
@@ -488,6 +494,7 @@ abstract class _UnBlocked implements BlockActorEvent {
   @override
   User get user;
   @override
+  @JsonKey(ignore: true)
   _$UnBlockedCopyWith<_UnBlocked> get copyWith;
 }
 
@@ -1303,6 +1310,7 @@ class _$_BlockFailure implements _BlockFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$BlockFailureCopyWith<_BlockFailure> get copyWith =>
       __$BlockFailureCopyWithImpl<_BlockFailure>(this, _$identity);
@@ -1398,6 +1406,7 @@ abstract class _BlockFailure implements BlockActorState {
   const factory _BlockFailure(Failure<dynamic> failure) = _$_BlockFailure;
 
   Failure<dynamic> get failure;
+  @JsonKey(ignore: true)
   _$BlockFailureCopyWith<_BlockFailure> get copyWith;
 }
 
@@ -1593,6 +1602,7 @@ class _$_UnBlockFailure implements _UnBlockFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$UnBlockFailureCopyWith<_UnBlockFailure> get copyWith =>
       __$UnBlockFailureCopyWithImpl<_UnBlockFailure>(this, _$identity);
@@ -1688,5 +1698,6 @@ abstract class _UnBlockFailure implements BlockActorState {
   const factory _UnBlockFailure(Failure<dynamic> failure) = _$_UnBlockFailure;
 
   Failure<dynamic> get failure;
+  @JsonKey(ignore: true)
   _$UnBlockFailureCopyWith<_UnBlockFailure> get copyWith;
 }

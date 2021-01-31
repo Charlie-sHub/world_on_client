@@ -132,6 +132,7 @@ class _$_Submitted implements _Submitted {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(tags);
 
+  @JsonKey(ignore: true)
   @override
   _$SubmittedCopyWith<_Submitted> get copyWith =>
       __$SubmittedCopyWithImpl<_Submitted>(this, _$identity);
@@ -194,6 +195,7 @@ abstract class _Submitted implements SearchExperiencesByTagsEvent {
   const factory _Submitted(Set<Tag> tags) = _$_Submitted;
 
   Set<Tag> get tags;
+  @JsonKey(ignore: true)
   _$SubmittedCopyWith<_Submitted> get copyWith;
 }
 
@@ -255,6 +257,7 @@ class _$_ResultsReceived implements _ResultsReceived {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(failureOrExperiences);
 
+  @JsonKey(ignore: true)
   @override
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
       __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
@@ -319,6 +322,7 @@ abstract class _ResultsReceived implements SearchExperiencesByTagsEvent {
       _$_ResultsReceived;
 
   Either<Failure, KtList<Experience>> get failureOrExperiences;
+  @JsonKey(ignore: true)
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith;
 }
 
@@ -692,6 +696,7 @@ class _$_SearchSuccess implements _SearchSuccess {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(experiencesFound);
 
+  @JsonKey(ignore: true)
   @override
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith =>
       __$SearchSuccessCopyWithImpl<_SearchSuccess>(this, _$identity);
@@ -770,6 +775,7 @@ abstract class _SearchSuccess implements SearchExperiencesByTagsState {
       _$_SearchSuccess;
 
   KtList<Experience> get experiencesFound;
+  @JsonKey(ignore: true)
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith;
 }
 
@@ -838,6 +844,7 @@ class _$_SearchFailure implements _SearchFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$SearchFailureCopyWith<_SearchFailure> get copyWith =>
       __$SearchFailureCopyWithImpl<_SearchFailure>(this, _$identity);
@@ -915,6 +922,7 @@ abstract class _SearchFailure implements SearchExperiencesByTagsState {
   const factory _SearchFailure(Failure<dynamic> failure) = _$_SearchFailure;
 
   Failure<dynamic> get failure;
+  @JsonKey(ignore: true)
   _$SearchFailureCopyWith<_SearchFailure> get copyWith;
 }
 
@@ -983,6 +991,7 @@ class _$_ValueFailure implements _ValueFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$ValueFailureCopyWith<_ValueFailure> get copyWith =>
       __$ValueFailureCopyWithImpl<_ValueFailure>(this, _$identity);
@@ -1061,5 +1070,6 @@ abstract class _ValueFailure implements SearchExperiencesByTagsState {
       _$_ValueFailure;
 
   ValueFailure<KtSet<Tag>> get failure;
+  @JsonKey(ignore: true)
   _$ValueFailureCopyWith<_ValueFailure> get copyWith;
 }

@@ -269,6 +269,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
 
+  @JsonKey(ignore: true)
   @override
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
       __$DescriptionChangedCopyWithImpl<_DescriptionChanged>(this, _$identity);
@@ -346,6 +347,7 @@ abstract class _DescriptionChanged implements ObjectiveFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description;
+  @JsonKey(ignore: true)
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith;
 }
 
@@ -415,6 +417,7 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
       const DeepCollectionEquality().hash(latitude) ^
       const DeepCollectionEquality().hash(longitude);
 
+  @JsonKey(ignore: true)
   @override
   _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith =>
       __$CoordinatesChangedCopyWithImpl<_CoordinatesChanged>(this, _$identity);
@@ -495,6 +498,7 @@ abstract class _CoordinatesChanged implements ObjectiveFormEvent {
 
   double get latitude;
   double get longitude;
+  @JsonKey(ignore: true)
   _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith;
 }
 
@@ -552,6 +556,7 @@ class _$_ImageChanged implements _ImageChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageFile);
 
+  @JsonKey(ignore: true)
   @override
   _$ImageChangedCopyWith<_ImageChanged> get copyWith =>
       __$ImageChangedCopyWithImpl<_ImageChanged>(this, _$identity);
@@ -629,6 +634,7 @@ abstract class _ImageChanged implements ObjectiveFormEvent {
   const factory _ImageChanged(File imageFile) = _$_ImageChanged;
 
   File get imageFile;
+  @JsonKey(ignore: true)
   _$ImageChangedCopyWith<_ImageChanged> get copyWith;
 }
 
@@ -770,6 +776,7 @@ mixin _$ObjectiveFormState {
   bool get isSubmitting;
   bool get loadedCoordinates;
 
+  @JsonKey(ignore: true)
   $ObjectiveFormStateCopyWith<ObjectiveFormState> get copyWith;
 }
 
@@ -930,6 +937,7 @@ class _$_ObjectiveFormState implements _ObjectiveFormState {
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(loadedCoordinates);
 
+  @JsonKey(ignore: true)
   @override
   _$ObjectiveFormStateCopyWith<_ObjectiveFormState> get copyWith =>
       __$ObjectiveFormStateCopyWithImpl<_ObjectiveFormState>(this, _$identity);
@@ -951,5 +959,6 @@ abstract class _ObjectiveFormState implements ObjectiveFormState {
   @override
   bool get loadedCoordinates;
   @override
+  @JsonKey(ignore: true)
   _$ObjectiveFormStateCopyWith<_ObjectiveFormState> get copyWith;
 }

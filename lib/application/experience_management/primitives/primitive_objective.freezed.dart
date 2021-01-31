@@ -42,6 +42,7 @@ mixin _$PrimitiveObjective {
   double get longitude;
   File get imageFile;
 
+  @JsonKey(ignore: true)
   $PrimitiveObjectiveCopyWith<PrimitiveObjective> get copyWith;
 }
 
@@ -191,6 +192,7 @@ class _$_PrimitiveObjective extends _PrimitiveObjective {
       const DeepCollectionEquality().hash(longitude) ^
       const DeepCollectionEquality().hash(imageFile);
 
+  @JsonKey(ignore: true)
   @override
   _$PrimitiveObjectiveCopyWith<_PrimitiveObjective> get copyWith =>
       __$PrimitiveObjectiveCopyWithImpl<_PrimitiveObjective>(this, _$identity);
@@ -216,5 +218,6 @@ abstract class _PrimitiveObjective extends PrimitiveObjective {
   @override
   File get imageFile;
   @override
+  @JsonKey(ignore: true)
   _$PrimitiveObjectiveCopyWith<_PrimitiveObjective> get copyWith;
 }

@@ -59,6 +59,7 @@ mixin _$NotificationActorEvent {
     @required TResult orElse(),
   });
 
+  @JsonKey(ignore: true)
   $NotificationActorEventCopyWith<NotificationActorEvent> get copyWith;
 }
 
@@ -162,6 +163,7 @@ class _$_Deleted implements _Deleted {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(notification);
 
+  @JsonKey(ignore: true)
   @override
   _$DeletedCopyWith<_Deleted> get copyWith =>
       __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
@@ -223,6 +225,7 @@ abstract class _Deleted implements NotificationActorEvent {
   @override
   Notification get notification;
   @override
+  @JsonKey(ignore: true)
   _$DeletedCopyWith<_Deleted> get copyWith;
 }
 
@@ -285,6 +288,7 @@ class _$_Checked implements _Checked {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(notification);
 
+  @JsonKey(ignore: true)
   @override
   _$CheckedCopyWith<_Checked> get copyWith =>
       __$CheckedCopyWithImpl<_Checked>(this, _$identity);
@@ -346,6 +350,7 @@ abstract class _Checked implements NotificationActorEvent {
   @override
   Notification get notification;
   @override
+  @JsonKey(ignore: true)
   _$CheckedCopyWith<_Checked> get copyWith;
 }
 
@@ -830,6 +835,7 @@ class _$_DeletionFailure implements _DeletionFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$DeletionFailureCopyWith<_DeletionFailure> get copyWith =>
       __$DeletionFailureCopyWithImpl<_DeletionFailure>(this, _$identity);
@@ -907,6 +913,7 @@ abstract class _DeletionFailure implements NotificationActorState {
   const factory _DeletionFailure(Failure<dynamic> failure) = _$_DeletionFailure;
 
   Failure<dynamic> get failure;
+  @JsonKey(ignore: true)
   _$DeletionFailureCopyWith<_DeletionFailure> get copyWith;
 }
 

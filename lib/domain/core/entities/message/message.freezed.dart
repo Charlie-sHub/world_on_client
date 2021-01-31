@@ -42,6 +42,7 @@ mixin _$Message {
   MessageContent get content;
   PastDate get creationDate;
 
+  @JsonKey(ignore: true)
   $MessageCopyWith<Message> get copyWith;
 }
 
@@ -214,6 +215,7 @@ class _$_Message extends _Message {
       const DeepCollectionEquality().hash(content) ^
       const DeepCollectionEquality().hash(creationDate);
 
+  @JsonKey(ignore: true)
   @override
   _$MessageCopyWith<_Message> get copyWith =>
       __$MessageCopyWithImpl<_Message>(this, _$identity);
@@ -239,5 +241,6 @@ abstract class _Message extends Message {
   @override
   PastDate get creationDate;
   @override
+  @JsonKey(ignore: true)
   _$MessageCopyWith<_Message> get copyWith;
 }

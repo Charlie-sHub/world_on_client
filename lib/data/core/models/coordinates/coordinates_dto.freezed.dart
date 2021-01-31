@@ -41,6 +41,7 @@ mixin _$CoordinatesDto {
   double get longitude;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $CoordinatesDtoCopyWith<CoordinatesDto> get copyWith;
 }
 
@@ -146,6 +147,7 @@ class _$_CoordinatesDto extends _CoordinatesDto {
       const DeepCollectionEquality().hash(latitude) ^
       const DeepCollectionEquality().hash(longitude);
 
+  @JsonKey(ignore: true)
   @override
   _$CoordinatesDtoCopyWith<_CoordinatesDto> get copyWith =>
       __$CoordinatesDtoCopyWithImpl<_CoordinatesDto>(this, _$identity);
@@ -170,5 +172,6 @@ abstract class _CoordinatesDto extends CoordinatesDto {
   @override
   double get longitude;
   @override
+  @JsonKey(ignore: true)
   _$CoordinatesDtoCopyWith<_CoordinatesDto> get copyWith;
 }

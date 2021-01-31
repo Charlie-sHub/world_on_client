@@ -32,6 +32,7 @@ mixin _$Coordinates {
   Latitude get latitude;
   Longitude get longitude;
 
+  @JsonKey(ignore: true)
   $CoordinatesCopyWith<Coordinates> get copyWith;
 }
 
@@ -132,6 +133,7 @@ class _$_Coordinates extends _Coordinates {
       const DeepCollectionEquality().hash(latitude) ^
       const DeepCollectionEquality().hash(longitude);
 
+  @JsonKey(ignore: true)
   @override
   _$CoordinatesCopyWith<_Coordinates> get copyWith =>
       __$CoordinatesCopyWithImpl<_Coordinates>(this, _$identity);
@@ -148,5 +150,6 @@ abstract class _Coordinates extends Coordinates {
   @override
   Longitude get longitude;
   @override
+  @JsonKey(ignore: true)
   _$CoordinatesCopyWith<_Coordinates> get copyWith;
 }

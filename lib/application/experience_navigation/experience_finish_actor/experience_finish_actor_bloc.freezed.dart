@@ -48,6 +48,7 @@ mixin _$ExperienceFinishActorEvent {
     @required TResult orElse(),
   });
 
+  @JsonKey(ignore: true)
   $ExperienceFinishActorEventCopyWith<ExperienceFinishActorEvent> get copyWith;
 }
 
@@ -150,6 +151,7 @@ class _$_FinishedExperience implements _FinishedExperience {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
+  @JsonKey(ignore: true)
   @override
   _$FinishedExperienceCopyWith<_FinishedExperience> get copyWith =>
       __$FinishedExperienceCopyWithImpl<_FinishedExperience>(this, _$identity);
@@ -206,6 +208,7 @@ abstract class _FinishedExperience implements ExperienceFinishActorEvent {
   @override
   Experience get experience;
   @override
+  @JsonKey(ignore: true)
   _$FinishedExperienceCopyWith<_FinishedExperience> get copyWith;
 }
 
@@ -663,6 +666,7 @@ class _$_FinishFailure implements _FinishFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$FinishFailureCopyWith<_FinishFailure> get copyWith =>
       __$FinishFailureCopyWithImpl<_FinishFailure>(this, _$identity);
@@ -734,5 +738,6 @@ abstract class _FinishFailure implements ExperienceFinishActorState {
   const factory _FinishFailure(Failure<dynamic> failure) = _$_FinishFailure;
 
   Failure<dynamic> get failure;
+  @JsonKey(ignore: true)
   _$FinishFailureCopyWith<_FinishFailure> get copyWith;
 }

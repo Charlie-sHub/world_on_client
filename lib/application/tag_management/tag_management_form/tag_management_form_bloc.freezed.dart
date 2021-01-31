@@ -138,6 +138,7 @@ class _$_Initialized implements _Initialized {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(tagOption);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
       __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
@@ -203,6 +204,7 @@ abstract class _Initialized implements TagManagementFormEvent {
   const factory _Initialized(Option<Tag> tagOption) = _$_Initialized;
 
   Option<Tag> get tagOption;
+  @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
@@ -259,6 +261,7 @@ class _$_NameChanged implements _NameChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
 
+  @JsonKey(ignore: true)
   @override
   _$NameChangedCopyWith<_NameChanged> get copyWith =>
       __$NameChangedCopyWithImpl<_NameChanged>(this, _$identity);
@@ -324,6 +327,7 @@ abstract class _NameChanged implements TagManagementFormEvent {
   const factory _NameChanged(String name) = _$_NameChanged;
 
   String get name;
+  @JsonKey(ignore: true)
   _$NameChangedCopyWith<_NameChanged> get copyWith;
 }
 
@@ -456,6 +460,7 @@ mixin _$TagManagementFormState {
   bool get isSubmitting;
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
 
+  @JsonKey(ignore: true)
   $TagManagementFormStateCopyWith<TagManagementFormState> get copyWith;
 }
 
@@ -627,6 +632,7 @@ class _$_TagManagementFormState implements _TagManagementFormState {
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
 
+  @JsonKey(ignore: true)
   @override
   _$TagManagementFormStateCopyWith<_TagManagementFormState> get copyWith =>
       __$TagManagementFormStateCopyWithImpl<_TagManagementFormState>(
@@ -653,5 +659,6 @@ abstract class _TagManagementFormState implements TagManagementFormState {
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
   @override
+  @JsonKey(ignore: true)
   _$TagManagementFormStateCopyWith<_TagManagementFormState> get copyWith;
 }

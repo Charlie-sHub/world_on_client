@@ -72,6 +72,7 @@ mixin _$ExperienceCardActorEvent {
     @required TResult orElse(),
   });
 
+  @JsonKey(ignore: true)
   $ExperienceCardActorEventCopyWith<ExperienceCardActorEvent> get copyWith;
 }
 
@@ -174,6 +175,7 @@ class _$_Initialized implements _Initialized {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
       __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
@@ -242,6 +244,7 @@ abstract class _Initialized implements ExperienceCardActorEvent {
   @override
   Experience get experience;
   @override
+  @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
@@ -304,6 +307,7 @@ class _$_AddedExperienceToLog implements _AddedExperienceToLog {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
+  @JsonKey(ignore: true)
   @override
   _$AddedExperienceToLogCopyWith<_AddedExperienceToLog> get copyWith =>
       __$AddedExperienceToLogCopyWithImpl<_AddedExperienceToLog>(
@@ -374,6 +378,7 @@ abstract class _AddedExperienceToLog implements ExperienceCardActorEvent {
   @override
   Experience get experience;
   @override
+  @JsonKey(ignore: true)
   _$AddedExperienceToLogCopyWith<_AddedExperienceToLog> get copyWith;
 }
 
@@ -439,6 +444,7 @@ class _$_DismissedExperienceFromLog implements _DismissedExperienceFromLog {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
+  @JsonKey(ignore: true)
   @override
   _$DismissedExperienceFromLogCopyWith<_DismissedExperienceFromLog>
       get copyWith => __$DismissedExperienceFromLogCopyWithImpl<
@@ -509,6 +515,7 @@ abstract class _DismissedExperienceFromLog implements ExperienceCardActorEvent {
   @override
   Experience get experience;
   @override
+  @JsonKey(ignore: true)
   _$DismissedExperienceFromLogCopyWith<_DismissedExperienceFromLog>
       get copyWith;
 }
@@ -1327,6 +1334,7 @@ class _$_AdditionFailure implements _AdditionFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$AdditionFailureCopyWith<_AdditionFailure> get copyWith =>
       __$AdditionFailureCopyWithImpl<_AdditionFailure>(this, _$identity);
@@ -1422,6 +1430,7 @@ abstract class _AdditionFailure implements ExperienceCardActorState {
   const factory _AdditionFailure(Failure<dynamic> failure) = _$_AdditionFailure;
 
   Failure<dynamic> get failure;
+  @JsonKey(ignore: true)
   _$AdditionFailureCopyWith<_AdditionFailure> get copyWith;
 }
 
@@ -1617,6 +1626,7 @@ class _$_DismissalFailure implements _DismissalFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$DismissalFailureCopyWith<_DismissalFailure> get copyWith =>
       __$DismissalFailureCopyWithImpl<_DismissalFailure>(this, _$identity);
@@ -1713,5 +1723,6 @@ abstract class _DismissalFailure implements ExperienceCardActorState {
       _$_DismissalFailure;
 
   Failure<dynamic> get failure;
+  @JsonKey(ignore: true)
   _$DismissalFailureCopyWith<_DismissalFailure> get copyWith;
 }

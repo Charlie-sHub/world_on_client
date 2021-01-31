@@ -222,6 +222,7 @@ class _$_Initialized implements _Initialized {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(experienceOption);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
       __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
@@ -330,6 +331,7 @@ abstract class _Initialized implements ExperienceManagementFormEvent {
       _$_Initialized;
 
   Option<Experience> get experienceOption;
+  @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
@@ -386,6 +388,7 @@ class _$_TitleChanged implements _TitleChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(title);
 
+  @JsonKey(ignore: true)
   @override
   _$TitleChangedCopyWith<_TitleChanged> get copyWith =>
       __$TitleChangedCopyWithImpl<_TitleChanged>(this, _$identity);
@@ -493,6 +496,7 @@ abstract class _TitleChanged implements ExperienceManagementFormEvent {
   const factory _TitleChanged(String title) = _$_TitleChanged;
 
   String get title;
+  @JsonKey(ignore: true)
   _$TitleChangedCopyWith<_TitleChanged> get copyWith;
 }
 
@@ -550,6 +554,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
 
+  @JsonKey(ignore: true)
   @override
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith =>
       __$DescriptionChangedCopyWithImpl<_DescriptionChanged>(this, _$identity);
@@ -657,6 +662,7 @@ abstract class _DescriptionChanged implements ExperienceManagementFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description;
+  @JsonKey(ignore: true)
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith;
 }
 
@@ -714,6 +720,7 @@ class _$_ImagesChanged implements _ImagesChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageAssets);
 
+  @JsonKey(ignore: true)
   @override
   _$ImagesChangedCopyWith<_ImagesChanged> get copyWith =>
       __$ImagesChangedCopyWithImpl<_ImagesChanged>(this, _$identity);
@@ -821,6 +828,7 @@ abstract class _ImagesChanged implements ExperienceManagementFormEvent {
   const factory _ImagesChanged(List<Asset> imageAssets) = _$_ImagesChanged;
 
   List<Asset> get imageAssets;
+  @JsonKey(ignore: true)
   _$ImagesChangedCopyWith<_ImagesChanged> get copyWith;
 }
 
@@ -890,6 +898,7 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
       const DeepCollectionEquality().hash(latitude) ^
       const DeepCollectionEquality().hash(longitude);
 
+  @JsonKey(ignore: true)
   @override
   _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith =>
       __$CoordinatesChangedCopyWithImpl<_CoordinatesChanged>(this, _$identity);
@@ -1000,6 +1009,7 @@ abstract class _CoordinatesChanged implements ExperienceManagementFormEvent {
 
   double get latitude;
   double get longitude;
+  @JsonKey(ignore: true)
   _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith;
 }
 
@@ -1057,6 +1067,7 @@ class _$_DifficultyChanged implements _DifficultyChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(difficulty);
 
+  @JsonKey(ignore: true)
   @override
   _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith =>
       __$DifficultyChangedCopyWithImpl<_DifficultyChanged>(this, _$identity);
@@ -1164,6 +1175,7 @@ abstract class _DifficultyChanged implements ExperienceManagementFormEvent {
   const factory _DifficultyChanged(int difficulty) = _$_DifficultyChanged;
 
   int get difficulty;
+  @JsonKey(ignore: true)
   _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith;
 }
 
@@ -1223,6 +1235,7 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectives);
 
+  @JsonKey(ignore: true)
   @override
   _$ObjectivesChangedCopyWith<_ObjectivesChanged> get copyWith =>
       __$ObjectivesChangedCopyWithImpl<_ObjectivesChanged>(this, _$identity);
@@ -1331,6 +1344,7 @@ abstract class _ObjectivesChanged implements ExperienceManagementFormEvent {
       _$_ObjectivesChanged;
 
   KtSet<Objective> get objectives;
+  @JsonKey(ignore: true)
   _$ObjectivesChangedCopyWith<_ObjectivesChanged> get copyWith;
 }
 
@@ -1387,6 +1401,7 @@ class _$_RewardsChanged implements _RewardsChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(rewards);
 
+  @JsonKey(ignore: true)
   @override
   _$RewardsChangedCopyWith<_RewardsChanged> get copyWith =>
       __$RewardsChangedCopyWithImpl<_RewardsChanged>(this, _$identity);
@@ -1494,6 +1509,7 @@ abstract class _RewardsChanged implements ExperienceManagementFormEvent {
   const factory _RewardsChanged(KtSet<Reward> rewards) = _$_RewardsChanged;
 
   KtSet<Reward> get rewards;
+  @JsonKey(ignore: true)
   _$RewardsChangedCopyWith<_RewardsChanged> get copyWith;
 }
 
@@ -1550,6 +1566,7 @@ class _$_TagsChanged implements _TagsChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(tags);
 
+  @JsonKey(ignore: true)
   @override
   _$TagsChangedCopyWith<_TagsChanged> get copyWith =>
       __$TagsChangedCopyWithImpl<_TagsChanged>(this, _$identity);
@@ -1657,6 +1674,7 @@ abstract class _TagsChanged implements ExperienceManagementFormEvent {
   const factory _TagsChanged(KtSet<Tag> tags) = _$_TagsChanged;
 
   KtSet<Tag> get tags;
+  @JsonKey(ignore: true)
   _$TagsChangedCopyWith<_TagsChanged> get copyWith;
 }
 
@@ -1834,6 +1852,7 @@ mixin _$ExperienceManagementFormState {
   bool get loadedCoordinates;
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
 
+  @JsonKey(ignore: true)
   $ExperienceManagementFormStateCopyWith<ExperienceManagementFormState>
       get copyWith;
 }
@@ -2032,6 +2051,7 @@ class _$_ExperienceManagementFormState
       const DeepCollectionEquality().hash(loadedCoordinates) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
 
+  @JsonKey(ignore: true)
   @override
   _$ExperienceManagementFormStateCopyWith<_ExperienceManagementFormState>
       get copyWith => __$ExperienceManagementFormStateCopyWithImpl<
@@ -2062,6 +2082,7 @@ abstract class _ExperienceManagementFormState
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
   @override
+  @JsonKey(ignore: true)
   _$ExperienceManagementFormStateCopyWith<_ExperienceManagementFormState>
       get copyWith;
 }

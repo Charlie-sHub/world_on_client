@@ -42,6 +42,7 @@ mixin _$Objective {
   String get imageURL;
   Option<File> get imageFile;
 
+  @JsonKey(ignore: true)
   $ObjectiveCopyWith<Objective> get copyWith;
 }
 
@@ -209,6 +210,7 @@ class _$_Objective extends _Objective {
       const DeepCollectionEquality().hash(imageURL) ^
       const DeepCollectionEquality().hash(imageFile);
 
+  @JsonKey(ignore: true)
   @override
   _$ObjectiveCopyWith<_Objective> get copyWith =>
       __$ObjectiveCopyWithImpl<_Objective>(this, _$identity);
@@ -234,5 +236,6 @@ abstract class _Objective extends Objective {
   @override
   Option<File> get imageFile;
   @override
+  @JsonKey(ignore: true)
   _$ObjectiveCopyWith<_Objective> get copyWith;
 }

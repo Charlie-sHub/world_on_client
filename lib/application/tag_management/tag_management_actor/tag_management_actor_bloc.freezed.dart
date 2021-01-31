@@ -48,6 +48,7 @@ mixin _$TagManagementActorEvent {
     @required TResult orElse(),
   });
 
+  @JsonKey(ignore: true)
   $TagManagementActorEventCopyWith<TagManagementActorEvent> get copyWith;
 }
 
@@ -146,6 +147,7 @@ class _$_Deleted implements _Deleted {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
 
+  @JsonKey(ignore: true)
   @override
   _$DeletedCopyWith<_Deleted> get copyWith =>
       __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
@@ -201,6 +203,7 @@ abstract class _Deleted implements TagManagementActorEvent {
   @override
   Tag get tag;
   @override
+  @JsonKey(ignore: true)
   _$DeletedCopyWith<_Deleted> get copyWith;
 }
 
@@ -555,6 +558,7 @@ class _$_DeletionFailure implements _DeletionFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$DeletionFailureCopyWith<_DeletionFailure> get copyWith =>
       __$DeletionFailureCopyWithImpl<_DeletionFailure>(this, _$identity);
@@ -626,6 +630,7 @@ abstract class _DeletionFailure implements TagManagementActorState {
   const factory _DeletionFailure(Failure<dynamic> failure) = _$_DeletionFailure;
 
   Failure<dynamic> get failure;
+  @JsonKey(ignore: true)
   _$DeletionFailureCopyWith<_DeletionFailure> get copyWith;
 }
 

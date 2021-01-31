@@ -143,6 +143,7 @@ class _$_WatchBlockedUsersStarted implements _WatchBlockedUsersStarted {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   _$WatchBlockedUsersStartedCopyWith<_WatchBlockedUsersStarted> get copyWith =>
       __$WatchBlockedUsersStartedCopyWithImpl<_WatchBlockedUsersStarted>(
@@ -205,6 +206,7 @@ abstract class _WatchBlockedUsersStarted implements BlockedWatcherEvent {
       _$_WatchBlockedUsersStarted;
 
   User get user;
+  @JsonKey(ignore: true)
   _$WatchBlockedUsersStartedCopyWith<_WatchBlockedUsersStarted> get copyWith;
 }
 
@@ -266,6 +268,7 @@ class _$_ResultsReceived implements _ResultsReceived {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(failureOrUsers);
 
+  @JsonKey(ignore: true)
   @override
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
       __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
@@ -327,6 +330,7 @@ abstract class _ResultsReceived implements BlockedWatcherEvent {
       _$_ResultsReceived;
 
   Either<Failure, KtList<User>> get failureOrUsers;
+  @JsonKey(ignore: true)
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith;
 }
 
@@ -674,6 +678,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(blockedUsers);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
@@ -745,6 +750,7 @@ abstract class _LoadSuccess implements BlockedWatcherState {
   const factory _LoadSuccess(KtList<User> blockedUsers) = _$_LoadSuccess;
 
   KtList<User> get blockedUsers;
+  @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
@@ -813,6 +819,7 @@ class _$_LoadFailure implements _LoadFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
@@ -884,5 +891,6 @@ abstract class _LoadFailure implements BlockedWatcherState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
   Failure<dynamic> get failure;
+  @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith;
 }

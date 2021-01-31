@@ -70,6 +70,7 @@ mixin _$FollowActorEvent {
     @required TResult orElse(),
   });
 
+  @JsonKey(ignore: true)
   $FollowActorEventCopyWith<FollowActorEvent> get copyWith;
 }
 
@@ -170,6 +171,7 @@ class _$_Initialized implements _Initialized {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
       __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
@@ -237,6 +239,7 @@ abstract class _Initialized implements FollowActorEvent {
   @override
   User get user;
   @override
+  @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
@@ -295,6 +298,7 @@ class _$_Followed implements _Followed {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   _$FollowedCopyWith<_Followed> get copyWith =>
       __$FollowedCopyWithImpl<_Followed>(this, _$identity);
@@ -362,6 +366,7 @@ abstract class _Followed implements FollowActorEvent {
   @override
   User get user;
   @override
+  @JsonKey(ignore: true)
   _$FollowedCopyWith<_Followed> get copyWith;
 }
 
@@ -423,6 +428,7 @@ class _$_UnFollowed implements _UnFollowed {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   _$UnFollowedCopyWith<_UnFollowed> get copyWith =>
       __$UnFollowedCopyWithImpl<_UnFollowed>(this, _$identity);
@@ -490,6 +496,7 @@ abstract class _UnFollowed implements FollowActorEvent {
   @override
   User get user;
   @override
+  @JsonKey(ignore: true)
   _$UnFollowedCopyWith<_UnFollowed> get copyWith;
 }
 
@@ -1307,6 +1314,7 @@ class _$_FollowFailure implements _FollowFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$FollowFailureCopyWith<_FollowFailure> get copyWith =>
       __$FollowFailureCopyWithImpl<_FollowFailure>(this, _$identity);
@@ -1402,6 +1410,7 @@ abstract class _FollowFailure implements FollowActorState {
   const factory _FollowFailure(Failure<dynamic> failure) = _$_FollowFailure;
 
   Failure<dynamic> get failure;
+  @JsonKey(ignore: true)
   _$FollowFailureCopyWith<_FollowFailure> get copyWith;
 }
 
@@ -1597,6 +1606,7 @@ class _$_UnFollowFailure implements _UnFollowFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$UnFollowFailureCopyWith<_UnFollowFailure> get copyWith =>
       __$UnFollowFailureCopyWithImpl<_UnFollowFailure>(this, _$identity);
@@ -1692,5 +1702,6 @@ abstract class _UnFollowFailure implements FollowActorState {
   const factory _UnFollowFailure(Failure<dynamic> failure) = _$_UnFollowFailure;
 
   Failure<dynamic> get failure;
+  @JsonKey(ignore: true)
   _$UnFollowFailureCopyWith<_UnFollowFailure> get copyWith;
 }

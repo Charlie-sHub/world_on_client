@@ -142,6 +142,7 @@ class _$UnknownDomainLayerError<T> implements UnknownDomainLayerError<T> {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
 
+  @JsonKey(ignore: true)
   @override
   $UnknownDomainLayerErrorCopyWith<T, UnknownDomainLayerError<T>>
       get copyWith =>
@@ -210,6 +211,7 @@ abstract class UnknownDomainLayerError<T> implements CoreDomainFailure<T> {
       _$UnknownDomainLayerError<T>;
 
   String get errorString;
+  @JsonKey(ignore: true)
   $UnknownDomainLayerErrorCopyWith<T, UnknownDomainLayerError<T>> get copyWith;
 }
 
@@ -269,6 +271,7 @@ class _$DomainLayerError<T> implements DomainLayerError<T> {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
 
+  @JsonKey(ignore: true)
   @override
   $DomainLayerErrorCopyWith<T, DomainLayerError<T>> get copyWith =>
       _$DomainLayerErrorCopyWithImpl<T, DomainLayerError<T>>(this, _$identity);
@@ -335,6 +338,7 @@ abstract class DomainLayerError<T> implements CoreDomainFailure<T> {
       _$DomainLayerError<T>;
 
   String get errorString;
+  @JsonKey(ignore: true)
   $DomainLayerErrorCopyWith<T, DomainLayerError<T>> get copyWith;
 }
 

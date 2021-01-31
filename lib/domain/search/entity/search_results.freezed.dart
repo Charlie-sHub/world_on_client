@@ -39,6 +39,7 @@ mixin _$SearchResults {
   Either<Failure, Set<User>> get usersFoundByUserName;
   Either<Failure, Set<Tag>> get tagsFound;
 
+  @JsonKey(ignore: true)
   $SearchResultsCopyWith<SearchResults> get copyWith;
 }
 
@@ -200,6 +201,7 @@ class _$_SearchResults extends _SearchResults with DiagnosticableTreeMixin {
       const DeepCollectionEquality().hash(usersFoundByUserName) ^
       const DeepCollectionEquality().hash(tagsFound);
 
+  @JsonKey(ignore: true)
   @override
   _$SearchResultsCopyWith<_SearchResults> get copyWith =>
       __$SearchResultsCopyWithImpl<_SearchResults>(this, _$identity);
@@ -222,5 +224,6 @@ abstract class _SearchResults extends SearchResults {
   @override
   Either<Failure, Set<Tag>> get tagsFound;
   @override
+  @JsonKey(ignore: true)
   _$SearchResultsCopyWith<_SearchResults> get copyWith;
 }

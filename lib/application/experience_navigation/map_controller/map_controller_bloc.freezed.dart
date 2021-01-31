@@ -155,6 +155,7 @@ class _$_Initialized implements _Initialized {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
       __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
@@ -221,6 +222,7 @@ abstract class _Initialized implements MapControllerEvent {
   const factory _Initialized(Experience experience) = _$_Initialized;
 
   Experience get experience;
+  @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
@@ -303,6 +305,7 @@ class _$_CameraPositionChanged implements _CameraPositionChanged {
       const DeepCollectionEquality().hash(coordinates) ^
       const DeepCollectionEquality().hash(zoom);
 
+  @JsonKey(ignore: true)
   @override
   _$CameraPositionChangedCopyWith<_CameraPositionChanged> get copyWith =>
       __$CameraPositionChangedCopyWithImpl<_CameraPositionChanged>(
@@ -373,6 +376,7 @@ abstract class _CameraPositionChanged implements MapControllerEvent {
 
   Coordinates get coordinates;
   double get zoom;
+  @JsonKey(ignore: true)
   _$CameraPositionChangedCopyWith<_CameraPositionChanged> get copyWith;
 }
 
@@ -432,6 +436,7 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectives);
 
+  @JsonKey(ignore: true)
   @override
   _$ObjectivesChangedCopyWith<_ObjectivesChanged> get copyWith =>
       __$ObjectivesChangedCopyWithImpl<_ObjectivesChanged>(this, _$identity);
@@ -499,6 +504,7 @@ abstract class _ObjectivesChanged implements MapControllerEvent {
       _$_ObjectivesChanged;
 
   KtList<Objective> get objectives;
+  @JsonKey(ignore: true)
   _$ObjectivesChangedCopyWith<_ObjectivesChanged> get copyWith;
 }
 
@@ -532,6 +538,7 @@ mixin _$MapControllerState {
   double get zoom;
   bool get loadedCoordinates;
 
+  @JsonKey(ignore: true)
   $MapControllerStateCopyWith<MapControllerState> get copyWith;
 }
 
@@ -691,6 +698,7 @@ class _$_MapControllerState implements _MapControllerState {
       const DeepCollectionEquality().hash(zoom) ^
       const DeepCollectionEquality().hash(loadedCoordinates);
 
+  @JsonKey(ignore: true)
   @override
   _$MapControllerStateCopyWith<_MapControllerState> get copyWith =>
       __$MapControllerStateCopyWithImpl<_MapControllerState>(this, _$identity);
@@ -712,5 +720,6 @@ abstract class _MapControllerState implements MapControllerState {
   @override
   bool get loadedCoordinates;
   @override
+  @JsonKey(ignore: true)
   _$MapControllerStateCopyWith<_MapControllerState> get copyWith;
 }

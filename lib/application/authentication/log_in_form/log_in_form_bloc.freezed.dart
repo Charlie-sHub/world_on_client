@@ -146,6 +146,7 @@ class _$_EmailChanged implements _EmailChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(email);
 
+  @JsonKey(ignore: true)
   @override
   _$EmailChangedCopyWith<_EmailChanged> get copyWith =>
       __$EmailChangedCopyWithImpl<_EmailChanged>(this, _$identity);
@@ -217,6 +218,7 @@ abstract class _EmailChanged implements LogInFormEvent {
   const factory _EmailChanged(String email) = _$_EmailChanged;
 
   String get email;
+  @JsonKey(ignore: true)
   _$EmailChangedCopyWith<_EmailChanged> get copyWith;
 }
 
@@ -274,6 +276,7 @@ class _$_PasswordChanged implements _PasswordChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(password);
 
+  @JsonKey(ignore: true)
   @override
   _$PasswordChangedCopyWith<_PasswordChanged> get copyWith =>
       __$PasswordChangedCopyWithImpl<_PasswordChanged>(this, _$identity);
@@ -345,6 +348,7 @@ abstract class _PasswordChanged implements LogInFormEvent {
   const factory _PasswordChanged(String password) = _$_PasswordChanged;
 
   String get password;
+  @JsonKey(ignore: true)
   _$PasswordChangedCopyWith<_PasswordChanged> get copyWith;
 }
 
@@ -584,6 +588,7 @@ mixin _$LogInFormState {
   bool get isSubmitting;
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
 
+  @JsonKey(ignore: true)
   $LogInFormStateCopyWith<LogInFormState> get copyWith;
 }
 
@@ -740,6 +745,7 @@ class _$_LogInFormState implements _LogInFormState {
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
 
+  @JsonKey(ignore: true)
   @override
   _$LogInFormStateCopyWith<_LogInFormState> get copyWith =>
       __$LogInFormStateCopyWithImpl<_LogInFormState>(this, _$identity);
@@ -765,5 +771,6 @@ abstract class _LogInFormState implements LogInFormState {
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
   @override
+  @JsonKey(ignore: true)
   _$LogInFormStateCopyWith<_LogInFormState> get copyWith;
 }

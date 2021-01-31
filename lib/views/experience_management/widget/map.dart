@@ -39,38 +39,41 @@ class Map extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            height: MediaQuery.of(context).size.height * 0.5,
-            // Not happy about this at all, there has to be a better way to build the map once coordinates have been gotten
-            // Works for now though and that's what matters.
-            child: context.bloc<ExperienceManagementFormBloc>().state.loadedCoordinates
-                ? GoogleMap(
-                    mapType: MapType.hybrid,
-                    markers: {
-                      Marker(
-                        markerId: MarkerId("new_experience"),
-                        position: _position,
-                      ),
-                    },
-                    onLongPress: (argument) => context.bloc<ExperienceManagementFormBloc>().add(
-                          ExperienceManagementFormEvent.coordinatesChanged(
-                            latitude: argument.latitude,
-                            longitude: argument.longitude,
-                          ),
+          Padding(
+            padding: const EdgeInsets.all(15),
+            child: Container(
+              height: MediaQuery.of(context).size.height * 0.4,
+              // Not happy about this at all, there has to be a better way to build the map once coordinates have been gotten
+              // Works for now though and that's what matters.
+              child: context.bloc<ExperienceManagementFormBloc>().state.loadedCoordinates
+                  ? GoogleMap(
+                      mapType: MapType.hybrid,
+                      markers: {
+                        Marker(
+                          markerId: MarkerId("new_experience"),
+                          position: _position,
                         ),
-                    gestureRecognizers: {
-                      Factory<OneSequenceGestureRecognizer>(
-                        () => EagerGestureRecognizer(),
+                      },
+                      onLongPress: (argument) => context.bloc<ExperienceManagementFormBloc>().add(
+                            ExperienceManagementFormEvent.coordinatesChanged(
+                              latitude: argument.latitude,
+                              longitude: argument.longitude,
+                            ),
+                          ),
+                      gestureRecognizers: {
+                        Factory<OneSequenceGestureRecognizer>(
+                          () => EagerGestureRecognizer(),
+                        ),
+                      },
+                      myLocationEnabled: true,
+                      initialCameraPosition: CameraPosition(
+                        zoom: 15,
+                        tilt: 45,
+                        target: _position,
                       ),
-                    },
-                    myLocationEnabled: true,
-                    initialCameraPosition: CameraPosition(
-                      zoom: 15,
-                      tilt: 45,
-                      target: _position,
-                    ),
-                  )
-                : const WorldOnProgressIndicator(),
+                    )
+                  : const WorldOnProgressIndicator(),
+            ),
           ),
         ],
       ),

@@ -57,6 +57,14 @@ class ObjectiveSet extends ValueObject<KtSet<Objective>> {
     return length == maxLength;
   }
 
+  bool get isEmpty {
+    return value.getOrElse(() => const KtSet<Objective>.empty()).isEmpty();
+  }
+
+  bool get isNotEmpty {
+    return value.getOrElse(() => const KtSet<Objective>.empty()).isNotEmpty();
+  }
+
   @override
   List<Object> get props => [value];
 }

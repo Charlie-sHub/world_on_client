@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:logger/logger.dart';
@@ -18,6 +19,7 @@ import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
+import 'package:worldon/domain/core/failures/core_domain_failure.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/profile/repository/profile_repository_interface.dart';
 
@@ -585,9 +587,25 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Future<Either<Failure, Unit>> deleteExperience(UniqueId experienceId) {
-    // TODO: implement deleteExperience
-    throw UnimplementedError();
+  Future<Either<Failure, Unit>> deleteExperience(UniqueId experienceId) async {
+    try {
+      await _firestore.experienceCollection.doc(experienceId.getOrCrash()).delete();
+      return right(unit);
+    } on PlatformException catch (e) {
+      if (e.message.contains('PERMISSION_DENIED')) {
+        return left(
+          const Failure.coreDomain(
+            CoreDomainFailure.unAuthorizedError(),
+          ),
+        );
+      } else {
+        return left(
+          Failure.coreData(
+            CoreDataFailure.serverError(errorString: e.message),
+          ),
+        );
+      }
+    }
   }
 
   Either<Failure, T> onFirebaseException<T>(FirebaseException e) {

@@ -49,6 +49,7 @@ mixin _$DeviceDto {
   String get company;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $DeviceDtoCopyWith<DeviceDto> get copyWith;
 }
 
@@ -179,6 +180,7 @@ class _$_DeviceDto extends _DeviceDto {
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(company);
 
+  @JsonKey(ignore: true)
   @override
   _$DeviceDtoCopyWith<_DeviceDto> get copyWith =>
       __$DeviceDtoCopyWithImpl<_DeviceDto>(this, _$identity);
@@ -210,5 +212,6 @@ abstract class _DeviceDto extends DeviceDto {
   @override
   String get company;
   @override
+  @JsonKey(ignore: true)
   _$DeviceDtoCopyWith<_DeviceDto> get copyWith;
 }

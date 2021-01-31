@@ -31,6 +31,7 @@ mixin _$Options {
   UniqueId get id;
   String get languageCode;
 
+  @JsonKey(ignore: true)
   $OptionsCopyWith<Options> get copyWith;
 }
 
@@ -128,6 +129,7 @@ class _$_Options extends _Options {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(languageCode);
 
+  @JsonKey(ignore: true)
   @override
   _$OptionsCopyWith<_Options> get copyWith =>
       __$OptionsCopyWithImpl<_Options>(this, _$identity);
@@ -143,5 +145,6 @@ abstract class _Options extends Options {
   @override
   String get languageCode;
   @override
+  @JsonKey(ignore: true)
   _$OptionsCopyWith<_Options> get copyWith;
 }

@@ -70,6 +70,7 @@ mixin _$TagCardActorEvent {
     @required TResult orElse(),
   });
 
+  @JsonKey(ignore: true)
   $TagCardActorEventCopyWith<TagCardActorEvent> get copyWith;
 }
 
@@ -170,6 +171,7 @@ class _$_Initialized implements _Initialized {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
       __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
@@ -237,6 +239,7 @@ abstract class _Initialized implements TagCardActorEvent {
   @override
   Tag get tag;
   @override
+  @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
@@ -298,6 +301,7 @@ class _$_DismissedFromInterests implements _DismissedFromInterests {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
 
+  @JsonKey(ignore: true)
   @override
   _$DismissedFromInterestsCopyWith<_DismissedFromInterests> get copyWith =>
       __$DismissedFromInterestsCopyWithImpl<_DismissedFromInterests>(
@@ -366,6 +370,7 @@ abstract class _DismissedFromInterests implements TagCardActorEvent {
   @override
   Tag get tag;
   @override
+  @JsonKey(ignore: true)
   _$DismissedFromInterestsCopyWith<_DismissedFromInterests> get copyWith;
 }
 
@@ -427,6 +432,7 @@ class _$_AddedToInterests implements _AddedToInterests {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
 
+  @JsonKey(ignore: true)
   @override
   _$AddedToInterestsCopyWith<_AddedToInterests> get copyWith =>
       __$AddedToInterestsCopyWithImpl<_AddedToInterests>(this, _$identity);
@@ -494,6 +500,7 @@ abstract class _AddedToInterests implements TagCardActorEvent {
   @override
   Tag get tag;
   @override
+  @JsonKey(ignore: true)
   _$AddedToInterestsCopyWith<_AddedToInterests> get copyWith;
 }
 
@@ -1314,6 +1321,7 @@ class _$_AdditionFailure implements _AdditionFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$AdditionFailureCopyWith<_AdditionFailure> get copyWith =>
       __$AdditionFailureCopyWithImpl<_AdditionFailure>(this, _$identity);
@@ -1409,6 +1417,7 @@ abstract class _AdditionFailure implements TagCardActorState {
   const factory _AdditionFailure(Failure<dynamic> failure) = _$_AdditionFailure;
 
   Failure<dynamic> get failure;
+  @JsonKey(ignore: true)
   _$AdditionFailureCopyWith<_AdditionFailure> get copyWith;
 }
 
@@ -1604,6 +1613,7 @@ class _$_DismissalFailure implements _DismissalFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$DismissalFailureCopyWith<_DismissalFailure> get copyWith =>
       __$DismissalFailureCopyWithImpl<_DismissalFailure>(this, _$identity);
@@ -1700,5 +1710,6 @@ abstract class _DismissalFailure implements TagCardActorState {
       _$_DismissalFailure;
 
   Failure<dynamic> get failure;
+  @JsonKey(ignore: true)
   _$DismissalFailureCopyWith<_DismissalFailure> get copyWith;
 }

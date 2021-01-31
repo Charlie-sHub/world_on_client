@@ -42,6 +42,7 @@ mixin _$Reward {
   String get imageURL;
   Option<File> get imageFile;
 
+  @JsonKey(ignore: true)
   $RewardCopyWith<Reward> get copyWith;
 }
 
@@ -188,6 +189,7 @@ class _$_Reward extends _Reward {
       const DeepCollectionEquality().hash(imageURL) ^
       const DeepCollectionEquality().hash(imageFile);
 
+  @JsonKey(ignore: true)
   @override
   _$RewardCopyWith<_Reward> get copyWith =>
       __$RewardCopyWithImpl<_Reward>(this, _$identity);
@@ -213,5 +215,6 @@ abstract class _Reward extends Reward {
   @override
   Option<File> get imageFile;
   @override
+  @JsonKey(ignore: true)
   _$RewardCopyWith<_Reward> get copyWith;
 }

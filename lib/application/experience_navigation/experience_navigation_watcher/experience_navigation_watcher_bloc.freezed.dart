@@ -136,6 +136,7 @@ class _$_Initialized implements _Initialized {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(experienceOption);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
       __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
@@ -197,6 +198,7 @@ abstract class _Initialized implements ExperienceNavigationWatcherEvent {
       _$_Initialized;
 
   Option<Experience> get experienceOption;
+  @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
@@ -268,6 +270,7 @@ class _$_AllObjectivesAccomplished implements _AllObjectivesAccomplished {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
+  @JsonKey(ignore: true)
   @override
   _$AllObjectivesAccomplishedCopyWith<_AllObjectivesAccomplished>
       get copyWith =>
@@ -332,6 +335,7 @@ abstract class _AllObjectivesAccomplished
       _$_AllObjectivesAccomplished;
 
   Experience get experience;
+  @JsonKey(ignore: true)
   _$AllObjectivesAccomplishedCopyWith<_AllObjectivesAccomplished> get copyWith;
 }
 
@@ -691,6 +695,7 @@ class _$_NavigatingExperience implements _NavigatingExperience {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
+  @JsonKey(ignore: true)
   @override
   _$NavigatingExperienceCopyWith<_NavigatingExperience> get copyWith =>
       __$NavigatingExperienceCopyWithImpl<_NavigatingExperience>(
@@ -765,6 +770,7 @@ abstract class _NavigatingExperience
       _$_NavigatingExperience;
 
   Experience get experience;
+  @JsonKey(ignore: true)
   _$NavigatingExperienceCopyWith<_NavigatingExperience> get copyWith;
 }
 
@@ -834,6 +840,7 @@ class _$_FinishExperience implements _FinishExperience {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
+  @JsonKey(ignore: true)
   @override
   _$FinishExperienceCopyWith<_FinishExperience> get copyWith =>
       __$FinishExperienceCopyWithImpl<_FinishExperience>(this, _$identity);
@@ -905,5 +912,6 @@ abstract class _FinishExperience implements ExperienceNavigationWatcherState {
   const factory _FinishExperience(Experience experience) = _$_FinishExperience;
 
   Experience get experience;
+  @JsonKey(ignore: true)
   _$FinishExperienceCopyWith<_FinishExperience> get copyWith;
 }

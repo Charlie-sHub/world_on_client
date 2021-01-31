@@ -42,6 +42,7 @@ mixin _$Tag {
   PastDate get creationDate;
   PastDate get modificationDate;
 
+  @JsonKey(ignore: true)
   $TagCopyWith<Tag> get copyWith;
 }
 
@@ -192,6 +193,7 @@ class _$_Tag extends _Tag {
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(modificationDate);
 
+  @JsonKey(ignore: true)
   @override
   _$TagCopyWith<_Tag> get copyWith =>
       __$TagCopyWithImpl<_Tag>(this, _$identity);
@@ -217,5 +219,6 @@ abstract class _Tag extends Tag {
   @override
   PastDate get modificationDate;
   @override
+  @JsonKey(ignore: true)
   _$TagCopyWith<_Tag> get copyWith;
 }

@@ -155,6 +155,7 @@ class _$_WatchFollowedUsersStarted implements _WatchFollowedUsersStarted {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   _$WatchFollowedUsersStartedCopyWith<_WatchFollowedUsersStarted>
       get copyWith =>
@@ -226,6 +227,7 @@ abstract class _WatchFollowedUsersStarted implements ProfileUsersWatcherEvent {
       _$_WatchFollowedUsersStarted;
 
   User get user;
+  @JsonKey(ignore: true)
   _$WatchFollowedUsersStartedCopyWith<_WatchFollowedUsersStarted> get copyWith;
 }
 
@@ -296,6 +298,7 @@ class _$_WatchFollowingUsersStarted implements _WatchFollowingUsersStarted {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   _$WatchFollowingUsersStartedCopyWith<_WatchFollowingUsersStarted>
       get copyWith => __$WatchFollowingUsersStartedCopyWithImpl<
@@ -366,6 +369,7 @@ abstract class _WatchFollowingUsersStarted implements ProfileUsersWatcherEvent {
       _$_WatchFollowingUsersStarted;
 
   User get user;
+  @JsonKey(ignore: true)
   _$WatchFollowingUsersStartedCopyWith<_WatchFollowingUsersStarted>
       get copyWith;
 }
@@ -427,6 +431,7 @@ class _$_UsersReceived implements _UsersReceived {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(failureOrUsers);
 
+  @JsonKey(ignore: true)
   @override
   _$UsersReceivedCopyWith<_UsersReceived> get copyWith =>
       __$UsersReceivedCopyWithImpl<_UsersReceived>(this, _$identity);
@@ -496,6 +501,7 @@ abstract class _UsersReceived implements ProfileUsersWatcherEvent {
       _$_UsersReceived;
 
   Either<Failure, KtList<User>> get failureOrUsers;
+  @JsonKey(ignore: true)
   _$UsersReceivedCopyWith<_UsersReceived> get copyWith;
 }
 
@@ -840,6 +846,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(users);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
@@ -911,6 +918,7 @@ abstract class _LoadSuccess implements ProfileUsersWatcherState {
   const factory _LoadSuccess(KtList<User> users) = _$_LoadSuccess;
 
   KtList<User> get users;
+  @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
 
@@ -979,6 +987,7 @@ class _$_LoadFailure implements _LoadFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
@@ -1050,5 +1059,6 @@ abstract class _LoadFailure implements ProfileUsersWatcherState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
   Failure<dynamic> get failure;
+  @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith;
 }

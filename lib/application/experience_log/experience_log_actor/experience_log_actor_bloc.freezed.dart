@@ -48,6 +48,7 @@ mixin _$ExperienceLogActorEvent {
     @required TResult orElse(),
   });
 
+  @JsonKey(ignore: true)
   $ExperienceLogActorEventCopyWith<ExperienceLogActorEvent> get copyWith;
 }
 
@@ -137,6 +138,7 @@ class _$_ExperienceDismissed implements _ExperienceDismissed {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceId);
 
+  @JsonKey(ignore: true)
   @override
   _$ExperienceDismissedCopyWith<_ExperienceDismissed> get copyWith =>
       __$ExperienceDismissedCopyWithImpl<_ExperienceDismissed>(
@@ -194,6 +196,7 @@ abstract class _ExperienceDismissed implements ExperienceLogActorEvent {
   @override
   UniqueId get experienceId;
   @override
+  @JsonKey(ignore: true)
   _$ExperienceDismissedCopyWith<_ExperienceDismissed> get copyWith;
 }
 
@@ -651,6 +654,7 @@ class _$_DismissalFailure implements _DismissalFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$DismissalFailureCopyWith<_DismissalFailure> get copyWith =>
       __$DismissalFailureCopyWithImpl<_DismissalFailure>(this, _$identity);
@@ -723,5 +727,6 @@ abstract class _DismissalFailure implements ExperienceLogActorState {
       _$_DismissalFailure;
 
   Failure<dynamic> get failure;
+  @JsonKey(ignore: true)
   _$DismissalFailureCopyWith<_DismissalFailure> get copyWith;
 }

@@ -43,6 +43,7 @@ mixin _$Location {
   String get postalCode;
   Set<Experience> get experiences;
 
+  @JsonKey(ignore: true)
   $LocationCopyWith<Location> get copyWith;
 }
 
@@ -189,6 +190,7 @@ class _$_Location extends _Location {
       const DeepCollectionEquality().hash(postalCode) ^
       const DeepCollectionEquality().hash(experiences);
 
+  @JsonKey(ignore: true)
   @override
   _$LocationCopyWith<_Location> get copyWith =>
       __$LocationCopyWithImpl<_Location>(this, _$identity);
@@ -214,5 +216,6 @@ abstract class _Location extends Location {
   @override
   Set<Experience> get experiences;
   @override
+  @JsonKey(ignore: true)
   _$LocationCopyWith<_Location> get copyWith;
 }

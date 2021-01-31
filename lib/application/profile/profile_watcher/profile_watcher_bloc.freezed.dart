@@ -48,6 +48,7 @@ mixin _$ProfileWatcherEvent {
     @required TResult orElse(),
   });
 
+  @JsonKey(ignore: true)
   $ProfileWatcherEventCopyWith<ProfileWatcherEvent> get copyWith;
 }
 
@@ -138,6 +139,7 @@ class _$_InitializedForeignOrOwn implements _InitializedForeignOrOwn {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(userOption);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializedForeignOrOwnCopyWith<_InitializedForeignOrOwn> get copyWith =>
       __$InitializedForeignOrOwnCopyWithImpl<_InitializedForeignOrOwn>(
@@ -195,6 +197,7 @@ abstract class _InitializedForeignOrOwn implements ProfileWatcherEvent {
   @override
   Option<User> get userOption;
   @override
+  @JsonKey(ignore: true)
   _$InitializedForeignOrOwnCopyWith<_InitializedForeignOrOwn> get copyWith;
 }
 
@@ -569,6 +572,7 @@ class _$_Own implements _Own {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   _$OwnCopyWith<_Own> get copyWith =>
       __$OwnCopyWithImpl<_Own>(this, _$identity);
@@ -646,6 +650,7 @@ abstract class _Own implements ProfileWatcherState {
   const factory _Own(User user) = _$_Own;
 
   User get user;
+  @JsonKey(ignore: true)
   _$OwnCopyWith<_Own> get copyWith;
 }
 
@@ -712,6 +717,7 @@ class _$_Foreign implements _Foreign {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   _$ForeignCopyWith<_Foreign> get copyWith =>
       __$ForeignCopyWithImpl<_Foreign>(this, _$identity);
@@ -789,6 +795,7 @@ abstract class _Foreign implements ProfileWatcherState {
   const factory _Foreign(User user) = _$_Foreign;
 
   User get user;
+  @JsonKey(ignore: true)
   _$ForeignCopyWith<_Foreign> get copyWith;
 }
 

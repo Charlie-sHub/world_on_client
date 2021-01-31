@@ -140,6 +140,7 @@ class _$_Initialized implements _Initialized {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(optionsOption);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
       __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
@@ -205,6 +206,7 @@ abstract class _Initialized implements OptionsFormEvent {
   const factory _Initialized(Option<Options> optionsOption) = _$_Initialized;
 
   Option<Options> get optionsOption;
+  @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 
@@ -263,6 +265,7 @@ class _$_LanguageCodeChanged implements _LanguageCodeChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(languageCode);
 
+  @JsonKey(ignore: true)
   @override
   _$LanguageCodeChangedCopyWith<_LanguageCodeChanged> get copyWith =>
       __$LanguageCodeChangedCopyWithImpl<_LanguageCodeChanged>(
@@ -330,6 +333,7 @@ abstract class _LanguageCodeChanged implements OptionsFormEvent {
       _$_LanguageCodeChanged;
 
   String get languageCode;
+  @JsonKey(ignore: true)
   _$LanguageCodeChangedCopyWith<_LanguageCodeChanged> get copyWith;
 }
 
@@ -459,6 +463,7 @@ mixin _$OptionsFormState {
   bool get isSubmitting;
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
 
+  @JsonKey(ignore: true)
   $OptionsFormStateCopyWith<OptionsFormState> get copyWith;
 }
 
@@ -617,6 +622,7 @@ class _$_OptionsFormState implements _OptionsFormState {
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
 
+  @JsonKey(ignore: true)
   @override
   _$OptionsFormStateCopyWith<_OptionsFormState> get copyWith =>
       __$OptionsFormStateCopyWithImpl<_OptionsFormState>(this, _$identity);
@@ -639,5 +645,6 @@ abstract class _OptionsFormState implements OptionsFormState {
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
   @override
+  @JsonKey(ignore: true)
   _$OptionsFormStateCopyWith<_OptionsFormState> get copyWith;
 }

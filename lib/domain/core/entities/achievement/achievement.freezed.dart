@@ -65,6 +65,7 @@ mixin _$Achievement {
   PastDate get modificationDate;
   TagSet get tags;
 
+  @JsonKey(ignore: true)
   $AchievementCopyWith<Achievement> get copyWith;
 }
 
@@ -326,6 +327,7 @@ class _$_Achievement extends _Achievement {
       const DeepCollectionEquality().hash(modificationDate) ^
       const DeepCollectionEquality().hash(tags);
 
+  @JsonKey(ignore: true)
   @override
   _$AchievementCopyWith<_Achievement> get copyWith =>
       __$AchievementCopyWithImpl<_Achievement>(this, _$identity);
@@ -373,5 +375,6 @@ abstract class _Achievement extends Achievement {
   @override
   TagSet get tags;
   @override
+  @JsonKey(ignore: true)
   _$AchievementCopyWith<_Achievement> get copyWith;
 }

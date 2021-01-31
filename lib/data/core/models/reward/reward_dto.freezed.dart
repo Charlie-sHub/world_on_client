@@ -48,6 +48,7 @@ mixin _$RewardDto {
   String get imageURL;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $RewardDtoCopyWith<RewardDto> get copyWith;
 }
 
@@ -174,6 +175,7 @@ class _$_RewardDto extends _RewardDto {
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(imageURL);
 
+  @JsonKey(ignore: true)
   @override
   _$RewardDtoCopyWith<_RewardDto> get copyWith =>
       __$RewardDtoCopyWithImpl<_RewardDto>(this, _$identity);
@@ -204,5 +206,6 @@ abstract class _RewardDto extends RewardDto {
   @override
   String get imageURL;
   @override
+  @JsonKey(ignore: true)
   _$RewardDtoCopyWith<_RewardDto> get copyWith;
 }

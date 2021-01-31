@@ -51,6 +51,7 @@ mixin _$CoreApplicationFailure<T> {
     @required TResult orElse(),
   });
 
+  @JsonKey(ignore: true)
   $CoreApplicationFailureCopyWith<T, CoreApplicationFailure<T>> get copyWith;
 }
 
@@ -144,6 +145,7 @@ class _$UnknownApplicationLayerError<T>
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
 
+  @JsonKey(ignore: true)
   @override
   $UnknownApplicationLayerErrorCopyWith<T, UnknownApplicationLayerError<T>>
       get copyWith => _$UnknownApplicationLayerErrorCopyWithImpl<T,
@@ -204,6 +206,7 @@ abstract class UnknownApplicationLayerError<T>
   @override
   String get errorString;
   @override
+  @JsonKey(ignore: true)
   $UnknownApplicationLayerErrorCopyWith<T, UnknownApplicationLayerError<T>>
       get copyWith;
 }

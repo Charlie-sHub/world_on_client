@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class CarouselBuilder extends StatelessWidget {
-  final Widget Function(BuildContext, int) function;
+  final Widget Function(BuildContext, int, int) function;
   final int itemCount;
 
   const CarouselBuilder({

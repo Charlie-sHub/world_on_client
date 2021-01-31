@@ -216,6 +216,7 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(authenticationDomainFailure);
 
+  @JsonKey(ignore: true)
   @override
   _$AuthenticationDomainCopyWith<T, _AuthenticationDomain<T>> get copyWith =>
       __$AuthenticationDomainCopyWithImpl<T, _AuthenticationDomain<T>>(
@@ -317,6 +318,7 @@ abstract class _AuthenticationDomain<T> implements Failure<T> {
       _$_AuthenticationDomain<T>;
 
   AuthenticationDomainFailure<T> get authenticationDomainFailure;
+  @JsonKey(ignore: true)
   _$AuthenticationDomainCopyWith<T, _AuthenticationDomain<T>> get copyWith;
 }
 
@@ -393,6 +395,7 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(authenticationDataFailure);
 
+  @JsonKey(ignore: true)
   @override
   _$AuthenticationDataCopyWith<T, _AuthenticationData<T>> get copyWith =>
       __$AuthenticationDataCopyWithImpl<T, _AuthenticationData<T>>(
@@ -494,6 +497,7 @@ abstract class _AuthenticationData<T> implements Failure<T> {
       _$_AuthenticationData<T>;
 
   AuthenticationDataFailure<T> get authenticationDataFailure;
+  @JsonKey(ignore: true)
   _$AuthenticationDataCopyWith<T, _AuthenticationData<T>> get copyWith;
 }
 
@@ -567,6 +571,7 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(coreDomainFailure);
 
+  @JsonKey(ignore: true)
   @override
   _$CoreDomainCopyWith<T, _CoreDomain<T>> get copyWith =>
       __$CoreDomainCopyWithImpl<T, _CoreDomain<T>>(this, _$identity);
@@ -666,6 +671,7 @@ abstract class _CoreDomain<T> implements Failure<T> {
       _$_CoreDomain<T>;
 
   CoreDomainFailure<T> get coreDomainFailure;
+  @JsonKey(ignore: true)
   _$CoreDomainCopyWith<T, _CoreDomain<T>> get copyWith;
 }
 
@@ -740,6 +746,7 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(coreApplicationFailure);
 
+  @JsonKey(ignore: true)
   @override
   _$CoreAppllicationCopyWith<T, _CoreAppllication<T>> get copyWith =>
       __$CoreAppllicationCopyWithImpl<T, _CoreAppllication<T>>(
@@ -841,6 +848,7 @@ abstract class _CoreAppllication<T> implements Failure<T> {
       _$_CoreAppllication<T>;
 
   CoreApplicationFailure<T> get coreApplicationFailure;
+  @JsonKey(ignore: true)
   _$CoreAppllicationCopyWith<T, _CoreAppllication<T>> get copyWith;
 }
 
@@ -912,6 +920,7 @@ class _$_CoreData<T> implements _CoreData<T> {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(coreDataFailure);
 
+  @JsonKey(ignore: true)
   @override
   _$CoreDataCopyWith<T, _CoreData<T>> get copyWith =>
       __$CoreDataCopyWithImpl<T, _CoreData<T>>(this, _$identity);
@@ -1010,6 +1019,7 @@ abstract class _CoreData<T> implements Failure<T> {
   const factory _CoreData(CoreDataFailure<T> coreDataFailure) = _$_CoreData<T>;
 
   CoreDataFailure<T> get coreDataFailure;
+  @JsonKey(ignore: true)
   _$CoreDataCopyWith<T, _CoreData<T>> get copyWith;
 }
 
@@ -1078,6 +1088,7 @@ class _$_Value<T> implements _Value<T> {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(valueFailure);
 
+  @JsonKey(ignore: true)
   @override
   _$ValueCopyWith<T, _Value<T>> get copyWith =>
       __$ValueCopyWithImpl<T, _Value<T>>(this, _$identity);
@@ -1176,6 +1187,7 @@ abstract class _Value<T> implements Failure<T> {
   const factory _Value(ValueFailure<T> valueFailure) = _$_Value<T>;
 
   ValueFailure<T> get valueFailure;
+  @JsonKey(ignore: true)
   _$ValueCopyWith<T, _Value<T>> get copyWith;
 }
 
@@ -1250,6 +1262,7 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(profileDomainFailure);
 
+  @JsonKey(ignore: true)
   @override
   _$ProfileDomainCopyWith<T, _ProfileDomain<T>> get copyWith =>
       __$ProfileDomainCopyWithImpl<T, _ProfileDomain<T>>(this, _$identity);
@@ -1349,5 +1362,6 @@ abstract class _ProfileDomain<T> implements Failure<T> {
       _$_ProfileDomain<T>;
 
   ProfileDomainFailure<T> get profileDomainFailure;
+  @JsonKey(ignore: true)
   _$ProfileDomainCopyWith<T, _ProfileDomain<T>> get copyWith;
 }

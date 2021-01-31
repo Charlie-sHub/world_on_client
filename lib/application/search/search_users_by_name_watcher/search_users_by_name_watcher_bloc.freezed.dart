@@ -152,6 +152,7 @@ class _$_WatchUsersFoundByNameStarted implements _WatchUsersFoundByNameStarted {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
 
+  @JsonKey(ignore: true)
   @override
   _$WatchUsersFoundByNameStartedCopyWith<_WatchUsersFoundByNameStarted>
       get copyWith => __$WatchUsersFoundByNameStartedCopyWithImpl<
@@ -227,6 +228,7 @@ abstract class _WatchUsersFoundByNameStarted
       _$_WatchUsersFoundByNameStarted;
 
   SearchTerm get name;
+  @JsonKey(ignore: true)
   _$WatchUsersFoundByNameStartedCopyWith<_WatchUsersFoundByNameStarted>
       get copyWith;
 }
@@ -290,6 +292,7 @@ class _$_WatchUsersFoundByUsernameStarted
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
 
+  @JsonKey(ignore: true)
   @override
   _$WatchUsersFoundByUsernameStartedCopyWith<_WatchUsersFoundByUsernameStarted>
       get copyWith => __$WatchUsersFoundByUsernameStartedCopyWithImpl<
@@ -365,6 +368,7 @@ abstract class _WatchUsersFoundByUsernameStarted
       _$_WatchUsersFoundByUsernameStarted;
 
   SearchTerm get username;
+  @JsonKey(ignore: true)
   _$WatchUsersFoundByUsernameStartedCopyWith<_WatchUsersFoundByUsernameStarted>
       get copyWith;
 }
@@ -427,6 +431,7 @@ class _$_SearchResultsReceived implements _SearchResultsReceived {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(failureOrUsers);
 
+  @JsonKey(ignore: true)
   @override
   _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith =>
       __$SearchResultsReceivedCopyWithImpl<_SearchResultsReceived>(
@@ -501,6 +506,7 @@ abstract class _SearchResultsReceived implements SearchUsersByNameWatcherEvent {
       Either<Failure, KtList<User>> failureOrUsers) = _$_SearchResultsReceived;
 
   Either<Failure, KtList<User>> get failureOrUsers;
+  @JsonKey(ignore: true)
   _$SearchResultsReceivedCopyWith<_SearchResultsReceived> get copyWith;
 }
 
@@ -847,6 +853,7 @@ class _$_SearchSuccess implements _SearchSuccess {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(usersFound);
 
+  @JsonKey(ignore: true)
   @override
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith =>
       __$SearchSuccessCopyWithImpl<_SearchSuccess>(this, _$identity);
@@ -918,6 +925,7 @@ abstract class _SearchSuccess implements SearchUsersByNameWatcherState {
   const factory _SearchSuccess(KtList<User> usersFound) = _$_SearchSuccess;
 
   KtList<User> get usersFound;
+  @JsonKey(ignore: true)
   _$SearchSuccessCopyWith<_SearchSuccess> get copyWith;
 }
 
@@ -986,6 +994,7 @@ class _$_SearchFailure implements _SearchFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$SearchFailureCopyWith<_SearchFailure> get copyWith =>
       __$SearchFailureCopyWithImpl<_SearchFailure>(this, _$identity);
@@ -1057,5 +1066,6 @@ abstract class _SearchFailure implements SearchUsersByNameWatcherState {
   const factory _SearchFailure(Failure<dynamic> failure) = _$_SearchFailure;
 
   Failure<dynamic> get failure;
+  @JsonKey(ignore: true)
   _$SearchFailureCopyWith<_SearchFailure> get copyWith;
 }

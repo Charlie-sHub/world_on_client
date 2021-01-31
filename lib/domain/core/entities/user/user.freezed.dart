@@ -110,6 +110,7 @@ mixin _$User {
   Set<Device> get devices;
   Set<System> get systems;
 
+  @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith;
 }
 
@@ -618,6 +619,7 @@ class _$_User extends _User {
       const DeepCollectionEquality().hash(devices) ^
       const DeepCollectionEquality().hash(systems);
 
+  @JsonKey(ignore: true)
   @override
   _$UserCopyWith<_User> get copyWith =>
       __$UserCopyWithImpl<_User>(this, _$identity);
@@ -711,5 +713,6 @@ abstract class _User extends User {
   @override
   Set<System> get systems;
   @override
+  @JsonKey(ignore: true)
   _$UserCopyWith<_User> get copyWith;
 }

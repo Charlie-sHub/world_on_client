@@ -135,6 +135,7 @@ class _$_DifficultyChanged implements _DifficultyChanged {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(difficultyRating);
 
+  @JsonKey(ignore: true)
   @override
   _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith =>
       __$DifficultyChangedCopyWithImpl<_DifficultyChanged>(this, _$identity);
@@ -195,6 +196,7 @@ abstract class _DifficultyChanged
   const factory _DifficultyChanged(int difficultyRating) = _$_DifficultyChanged;
 
   int get difficultyRating;
+  @JsonKey(ignore: true)
   _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith;
 }
 
@@ -264,6 +266,7 @@ class _$_DifficultyRated implements _DifficultyRated {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(experience);
 
+  @JsonKey(ignore: true)
   @override
   _$DifficultyRatedCopyWith<_DifficultyRated> get copyWith =>
       __$DifficultyRatedCopyWithImpl<_DifficultyRated>(this, _$identity);
@@ -323,6 +326,7 @@ abstract class _DifficultyRated implements RateExperienceDifficultyActorEvent {
   const factory _DifficultyRated(Experience experience) = _$_DifficultyRated;
 
   Experience get experience;
+  @JsonKey(ignore: true)
   _$DifficultyRatedCopyWith<_DifficultyRated> get copyWith;
 }
 
@@ -354,6 +358,7 @@ mixin _$RateExperienceDifficultyActorState {
   bool get isSubmitting;
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
 
+  @JsonKey(ignore: true)
   $RateExperienceDifficultyActorStateCopyWith<
       RateExperienceDifficultyActorState> get copyWith;
 }
@@ -485,6 +490,7 @@ class _$_RateExperienceDifficultyActorState
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
 
+  @JsonKey(ignore: true)
   @override
   _$RateExperienceDifficultyActorStateCopyWith<
           _RateExperienceDifficultyActorState>
@@ -507,6 +513,7 @@ abstract class _RateExperienceDifficultyActorState
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
   @override
+  @JsonKey(ignore: true)
   _$RateExperienceDifficultyActorStateCopyWith<
       _RateExperienceDifficultyActorState> get copyWith;
 }

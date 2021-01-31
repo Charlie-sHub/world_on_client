@@ -48,6 +48,7 @@ mixin _$TagCardCheckEvent {
     @required TResult orElse(),
   });
 
+  @JsonKey(ignore: true)
   $TagCardCheckEventCopyWith<TagCardCheckEvent> get copyWith;
 }
 
@@ -148,6 +149,7 @@ class _$_Initialized implements _Initialized {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(tag);
 
+  @JsonKey(ignore: true)
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
       __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
@@ -203,6 +205,7 @@ abstract class _Initialized implements TagCardCheckEvent {
   @override
   Tag get tag;
   @override
+  @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
 

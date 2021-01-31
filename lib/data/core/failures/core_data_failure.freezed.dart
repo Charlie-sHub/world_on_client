@@ -184,6 +184,7 @@ class _$ServerError<T> implements ServerError<T> {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
 
+  @JsonKey(ignore: true)
   @override
   $ServerErrorCopyWith<T, ServerError<T>> get copyWith =>
       _$ServerErrorCopyWithImpl<T, ServerError<T>>(this, _$identity);
@@ -273,6 +274,7 @@ abstract class ServerError<T> implements CoreDataFailure<T> {
   const factory ServerError({@required String errorString}) = _$ServerError<T>;
 
   String get errorString;
+  @JsonKey(ignore: true)
   $ServerErrorCopyWith<T, ServerError<T>> get copyWith;
 }
 
@@ -453,6 +455,7 @@ class _$CacheError<T> implements CacheError<T> {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
 
+  @JsonKey(ignore: true)
   @override
   $CacheErrorCopyWith<T, CacheError<T>> get copyWith =>
       _$CacheErrorCopyWithImpl<T, CacheError<T>>(this, _$identity);
@@ -542,6 +545,7 @@ abstract class CacheError<T> implements CoreDataFailure<T> {
   const factory CacheError({@required String errorString}) = _$CacheError<T>;
 
   String get errorString;
+  @JsonKey(ignore: true)
   $CacheErrorCopyWith<T, CacheError<T>> get copyWith;
 }
 
@@ -601,6 +605,7 @@ class _$GeoLocationError<T> implements GeoLocationError<T> {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorString);
 
+  @JsonKey(ignore: true)
   @override
   $GeoLocationErrorCopyWith<T, GeoLocationError<T>> get copyWith =>
       _$GeoLocationErrorCopyWithImpl<T, GeoLocationError<T>>(this, _$identity);
@@ -691,6 +696,7 @@ abstract class GeoLocationError<T> implements CoreDataFailure<T> {
       _$GeoLocationError<T>;
 
   String get errorString;
+  @JsonKey(ignore: true)
   $GeoLocationErrorCopyWith<T, GeoLocationError<T>> get copyWith;
 }
 
@@ -749,6 +755,7 @@ class _$UsernameAlreadyInUse<T> implements UsernameAlreadyInUse<T> {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
 
+  @JsonKey(ignore: true)
   @override
   $UsernameAlreadyInUseCopyWith<T, UsernameAlreadyInUse<T>> get copyWith =>
       _$UsernameAlreadyInUseCopyWithImpl<T, UsernameAlreadyInUse<T>>(
@@ -840,6 +847,7 @@ abstract class UsernameAlreadyInUse<T> implements CoreDataFailure<T> {
       _$UsernameAlreadyInUse<T>;
 
   Name get username;
+  @JsonKey(ignore: true)
   $UsernameAlreadyInUseCopyWith<T, UsernameAlreadyInUse<T>> get copyWith;
 }
 
@@ -896,6 +904,7 @@ class _$EmailAlreadyInUse<T> implements EmailAlreadyInUse<T> {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(email);
 
+  @JsonKey(ignore: true)
   @override
   $EmailAlreadyInUseCopyWith<T, EmailAlreadyInUse<T>> get copyWith =>
       _$EmailAlreadyInUseCopyWithImpl<T, EmailAlreadyInUse<T>>(
@@ -987,6 +996,7 @@ abstract class EmailAlreadyInUse<T> implements CoreDataFailure<T> {
       _$EmailAlreadyInUse<T>;
 
   EmailAddress get email;
+  @JsonKey(ignore: true)
   $EmailAlreadyInUseCopyWith<T, EmailAlreadyInUse<T>> get copyWith;
 }
 
@@ -1043,6 +1053,7 @@ class _$NameAlreadyInUse<T> implements NameAlreadyInUse<T> {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(name);
 
+  @JsonKey(ignore: true)
   @override
   $NameAlreadyInUseCopyWith<T, NameAlreadyInUse<T>> get copyWith =>
       _$NameAlreadyInUseCopyWithImpl<T, NameAlreadyInUse<T>>(this, _$identity);
@@ -1132,5 +1143,6 @@ abstract class NameAlreadyInUse<T> implements CoreDataFailure<T> {
   const factory NameAlreadyInUse({@required Name name}) = _$NameAlreadyInUse<T>;
 
   Name get name;
+  @JsonKey(ignore: true)
   $NameAlreadyInUseCopyWith<T, NameAlreadyInUse<T>> get copyWith;
 }

@@ -48,6 +48,7 @@ mixin _$CommentActorEvent {
     @required TResult orElse(),
   });
 
+  @JsonKey(ignore: true)
   $CommentActorEventCopyWith<CommentActorEvent> get copyWith;
 }
 
@@ -145,6 +146,7 @@ class _$_Deleted implements _Deleted {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(comment);
 
+  @JsonKey(ignore: true)
   @override
   _$DeletedCopyWith<_Deleted> get copyWith =>
       __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
@@ -200,6 +202,7 @@ abstract class _Deleted implements CommentActorEvent {
   @override
   Comment get comment;
   @override
+  @JsonKey(ignore: true)
   _$DeletedCopyWith<_Deleted> get copyWith;
 }
 
@@ -656,6 +659,7 @@ class _$_DeletionFailure implements _DeletionFailure {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$DeletionFailureCopyWith<_DeletionFailure> get copyWith =>
       __$DeletionFailureCopyWithImpl<_DeletionFailure>(this, _$identity);
@@ -727,5 +731,6 @@ abstract class _DeletionFailure implements CommentActorState {
   const factory _DeletionFailure(Failure<dynamic> failure) = _$_DeletionFailure;
 
   Failure<dynamic> get failure;
+  @JsonKey(ignore: true)
   _$DeletionFailureCopyWith<_DeletionFailure> get copyWith;
 }

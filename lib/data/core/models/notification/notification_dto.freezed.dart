@@ -59,6 +59,7 @@ mixin _$NotificationDto {
   NotificationType get type;
 
   Map<String, dynamic> toJson();
+  @JsonKey(ignore: true)
   $NotificationDtoCopyWith<NotificationDto> get copyWith;
 }
 
@@ -271,6 +272,7 @@ class _$_NotificationDto extends _NotificationDto {
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(type);
 
+  @JsonKey(ignore: true)
   @override
   _$NotificationDtoCopyWith<_NotificationDto> get copyWith =>
       __$NotificationDtoCopyWithImpl<_NotificationDto>(this, _$identity);
@@ -312,5 +314,6 @@ abstract class _NotificationDto extends NotificationDto {
   @override
   NotificationType get type;
   @override
+  @JsonKey(ignore: true)
   _$NotificationDtoCopyWith<_NotificationDto> get copyWith;
 }

@@ -45,6 +45,7 @@ mixin _$Comment {
   PastDate get creationDate;
   PastDate get modificationDate;
 
+  @JsonKey(ignore: true)
   $CommentCopyWith<Comment> get copyWith;
 }
 
@@ -226,6 +227,7 @@ class _$_Comment extends _Comment {
       const DeepCollectionEquality().hash(creationDate) ^
       const DeepCollectionEquality().hash(modificationDate);
 
+  @JsonKey(ignore: true)
   @override
   _$CommentCopyWith<_Comment> get copyWith =>
       __$CommentCopyWithImpl<_Comment>(this, _$identity);
@@ -254,5 +256,6 @@ abstract class _Comment extends Comment {
   @override
   PastDate get modificationDate;
   @override
+  @JsonKey(ignore: true)
   _$CommentCopyWith<_Comment> get copyWith;
 }
