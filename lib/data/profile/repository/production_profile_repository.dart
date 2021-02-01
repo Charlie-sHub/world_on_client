@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:logger/logger.dart';
@@ -586,39 +585,38 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     }
   }
 
+  // TODO: Move this to experience management
+  // The code needs some restructuring
   @override
   Future<Either<Failure, Unit>> deleteExperience(UniqueId experienceId) async {
     try {
       await _firestore.experienceCollection.doc(experienceId.getOrCrash()).delete();
       return right(unit);
-    } on PlatformException catch (e) {
-      if (e.message.contains('PERMISSION_DENIED')) {
-        return left(
-          const Failure.coreDomain(
-            CoreDomainFailure.unAuthorizedError(),
-          ),
-        );
-      } else {
-        return left(
-          Failure.coreData(
-            CoreDataFailure.serverError(errorString: e.message),
-          ),
-        );
-      }
+    } on FirebaseException catch (exception) {
+      return onFirebaseException(exception);
     }
   }
 
-  Either<Failure, T> onFirebaseException<T>(FirebaseException e) {
-    _logger.e("FirebaseException: ${e.message}");
-    return left(
-      Failure.coreData(
-        CoreDataFailure.serverError(errorString: "FirebaseException: ${e.message}"),
-      ),
-    );
+  Either<Failure, T> onFirebaseException<T>(FirebaseException exception) {
+    _logger.e("FirebaseException: ${exception.message} Code: ${exception.code}");
+    if (exception.code == "permission-denied") {
+      return left(
+        const Failure.coreDomain(
+          CoreDomainFailure.unAuthorizedError(),
+        ),
+      );
+    } else {
+      return left(
+        Failure.coreData(
+          CoreDataFailure.serverError(errorString: exception.message),
+        ),
+      );
+    }
   }
 
   Failure onError(dynamic error) {
     if (error is FirebaseException) {
+      // TODO: Refactor and "unify" with onFirebaseException method
       _logger.e("FirebaseException: ${error.message}");
       return Failure.coreData(
         CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),

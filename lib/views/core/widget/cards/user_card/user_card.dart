@@ -10,7 +10,10 @@ import 'package:worldon/views/core/widget/misc/user_image.dart';
 class UserCard extends StatelessWidget {
   final User user;
 
-  const UserCard({Key key, @required this.user}) : super(key: key);
+  const UserCard({
+    Key key,
+    @required this.user,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

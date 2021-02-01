@@ -24,25 +24,23 @@ class FollowUnfollowButtonBuilder extends StatelessWidget {
         ..add(
           FollowActorEvent.initialized(user),
         ),
-      child: BlocListener<FollowActorBloc, FollowActorState>(
+      child: BlocConsumer<FollowActorBloc, FollowActorState>(
         listener: _userFollowListener,
-        child: BlocBuilder<FollowActorBloc, FollowActorState>(
-          builder: (context, state) => AnimatedSwitcher(
-            duration: const Duration(milliseconds: 250),
-            transitionBuilder: (child, animation) => FadeTransition(
-              opacity: animation,
-              child: child,
-            ),
-            child: state.map(
-              initial: (_) => Container(),
-              actionInProgress: (_) => const CircularProgressIndicator(),
-              follows: (_) => UnFollowButton(user: user),
-              followsNot: (_) => FollowButton(user: user),
-              followSuccess: (_) => UnFollowButton(user: user),
-              followFailure: (_) => FollowButton(user: user),
-              unFollowSuccess: (_) => FollowButton(user: user),
-              unFollowFailure: (_) => UnFollowButton(user: user),
-            ),
+        builder: (context, state) => AnimatedSwitcher(
+          duration: const Duration(milliseconds: 250),
+          transitionBuilder: (child, animation) => FadeTransition(
+            opacity: animation,
+            child: child,
+          ),
+          child: state.map(
+            initial: (_) => Container(),
+            actionInProgress: (_) => const CircularProgressIndicator(),
+            follows: (_) => UnFollowButton(user: user),
+            followsNot: (_) => FollowButton(user: user),
+            followSuccess: (_) => UnFollowButton(user: user),
+            followFailure: (_) => FollowButton(user: user),
+            unFollowSuccess: (_) => FollowButton(user: user),
+            unFollowFailure: (_) => UnFollowButton(user: user),
           ),
         ),
       ),
@@ -58,7 +56,7 @@ class FollowUnfollowButtonBuilder extends StatelessWidget {
               orElse: () => S.of(context).unknownError,
             ),
             profileDomain: (failure) => failure.profileDomainFailure.maybeMap(
-              followItself: (_) => "You can't follow yourself",
+              followItself: (_) => S.of(context).followItself,
               orElse: () => S.of(context).unknownError,
             ),
             orElse: () => S.of(context).unknownError,

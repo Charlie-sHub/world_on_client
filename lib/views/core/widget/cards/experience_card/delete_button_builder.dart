@@ -19,17 +19,22 @@ class DeleteButtonBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt<ExperienceManagementActorBloc>(),
-      child: BlocConsumer<ExperienceManagementActorBloc, ExperienceManagementActorState>(
-        listener: _experienceDeletionListener,
-        builder: (context, state) => state.maybeMap(
-          initial: (_) => DeleteButton(experience: experience),
-          actionInProgress: (_) => const CircularProgressIndicator(),
-          isCreator: (_) => DeleteButton(experience: experience),
-          isNotCreator: (_) => Container(),
-          deletionFailure: (_) => DeleteButton(experience: experience),
-          orElse: () => null,
+      create: (context) => getIt<ExperienceManagementActorBloc>()
+        ..add(
+          ExperienceManagementActorEvent.checkCreator(experience),
         ),
+      child: BlocConsumer<ExperienceManagementActorBloc, ExperienceManagementActorState>(
+        listenWhen: (previous, current) => current.maybeMap(
+          deletionFailure: (_) => true,
+          orElse: () => false,
+        ),
+        listener: _experienceDeletionListener,
+        builder: (context, state) => context.bloc<ExperienceManagementActorBloc>().state.maybeMap(
+              actionInProgress: (_) => const CircularProgressIndicator(),
+              isCreator: (_) => DeleteButton(experience: experience),
+              deletionFailure: (_) => DeleteButton(experience: experience),
+              orElse: () => Container(),
+            ),
       ),
     );
   }
@@ -49,6 +54,6 @@ class DeleteButtonBuilder extends StatelessWidget {
             orElse: () => S.of(context).unknownError,
           ),
         ).show(context),
-        orElse: () => null,
+        orElse: () => FlushbarHelper.createInformation(message: "wew"),
       );
 }

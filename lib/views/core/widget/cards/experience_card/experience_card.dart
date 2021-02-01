@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/core/experience_card_actor/experience_card_actor_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
-import 'package:worldon/domain/core/use_case/is_logged_in_user.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
@@ -13,21 +12,20 @@ import 'package:worldon/views/core/widget/cards/experience_card/difficulty_displ
 import 'package:worldon/views/core/widget/cards/experience_card/image_stack.dart';
 import 'package:worldon/views/core/widget/cards/experience_card/log_button.dart';
 import 'package:worldon/views/core/widget/cards/experience_card/participate_button.dart';
-import 'package:worldon/views/core/widget/cards/experience_card/report_button.dart';
+import 'package:worldon/views/core/widget/cards/experience_card/share_button.dart';
 import 'package:worldon/views/core/widget/cards/simple_tag_display.dart';
 import 'package:worldon/views/core/widget/misc/experience_done_counter.dart';
 import 'package:worldon/views/core/widget/misc/experience_likes_counter.dart';
 
 class ExperienceCard extends StatelessWidget {
   final Experience experience;
-  
+
   const ExperienceCard({Key key, @required this.experience}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>
-      getIt<ExperienceCardActorBloc>()
+      create: (context) => getIt<ExperienceCardActorBloc>()
         ..add(
           ExperienceCardActorEvent.initialized(experience),
         ),
@@ -78,7 +76,7 @@ class ExperienceCard extends StatelessWidget {
                           child: ParticipateButton(experience: experience),
                         ),
                         LogButton(experience: experience),
-                        const ReportButton(),
+                        ShareButton(experience: experience),
                         DeleteButtonBuilder(experience: experience),
                       ],
                     ),
@@ -88,8 +86,8 @@ class ExperienceCard extends StatelessWidget {
                       spacing: 5,
                       children: <Widget>[
                         ...experience.tags.getOrCrash().asSet().map(
-                            (tag) => SimpleTagDisplay(tag: tag),
-                        ),
+                              (tag) => SimpleTagDisplay(tag: tag),
+                            ),
                       ],
                     ),
                   ],
@@ -101,47 +99,28 @@ class ExperienceCard extends StatelessWidget {
       ),
     );
   }
-  
+
   // TODO: Customize snackbars
   // And ensure they show above the navigation bar
-  void _experienceCardListener(BuildContext context, ExperienceCardActorState state) =>
-    state.maybeMap(
-      additionFailure: (state) =>
-        FlushbarHelper.createError(
+  void _experienceCardListener(BuildContext context, ExperienceCardActorState state) => state.maybeMap(
+        additionFailure: (state) => FlushbarHelper.createError(
           duration: const Duration(seconds: 2),
           message: state.failure.maybeMap(
-            coreData: (failure) =>
-              failure.coreDataFailure.maybeMap(
-                serverError: (failure) => failure.errorString,
-                orElse: () =>
-                S
-                  .of(context)
-                  .unknownError,
-              ),
-            orElse: () =>
-            S
-              .of(context)
-              .unknownError,
-          ),
+              coreData: (failure) => failure.coreDataFailure.maybeMap(
+                    serverError: (failure) => failure.errorString,
+                    orElse: () => S.of(context).unknownError,
+                  ),
+              orElse: () => S.of(context).unknownError),
         ).show(context),
-      dismissalFailure: (state) =>
-        FlushbarHelper.createError(
+        dismissalFailure: (state) => FlushbarHelper.createError(
           duration: const Duration(seconds: 2),
           message: state.failure.maybeMap(
-            coreData: (failure) =>
-              failure.coreDataFailure.maybeMap(
-                serverError: (failure) => failure.errorString,
-                orElse: () =>
-                S
-                  .of(context)
-                  .unknownError,
-              ),
-            orElse: () =>
-            S
-              .of(context)
-              .unknownError,
-          ),
+              coreData: (failure) => failure.coreDataFailure.maybeMap(
+                    serverError: (failure) => failure.errorString,
+                    orElse: () => S.of(context).unknownError,
+                  ),
+              orElse: () => S.of(context).unknownError),
         ).show(context),
-      orElse: () => null,
-    );
+        orElse: () => null,
+      );
 }

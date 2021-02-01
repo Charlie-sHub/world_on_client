@@ -41,27 +41,24 @@ mixin _$ExperienceManagementActorEvent {
     @required TResult checkCreator(Experience experience),
     @required TResult deleted(Experience experience),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult checkCreator(Experience experience),
     TResult deleted(Experience experience),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult checkCreator(_CheckCreator value),
     @required TResult deleted(_Deleted value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult checkCreator(_CheckCreator value),
     TResult deleted(_Deleted value),
     @required TResult orElse(),
   });
-
+  
   @JsonKey(ignore: true)
   $ExperienceManagementActorEventCopyWith<ExperienceManagementActorEvent> get copyWith;
 }
@@ -212,7 +209,6 @@ abstract class _CheckCreator implements ExperienceManagementActorEvent {
 
   @override
   Experience get experience;
-
   @override
   @JsonKey(ignore: true)
   _$CheckCreatorCopyWith<_CheckCreator> get copyWith;
@@ -326,7 +322,6 @@ abstract class _Deleted implements ExperienceManagementActorEvent {
 
   @override
   Experience get experience;
-
   @override
   @JsonKey(ignore: true)
   _$DeletedCopyWith<_Deleted> get copyWith;
@@ -384,7 +379,6 @@ mixin _$ExperienceManagementActorState {
     @required TResult deletionSuccess(),
     @required TResult deletionFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -395,7 +389,6 @@ mixin _$ExperienceManagementActorState {
     TResult deletionFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -405,7 +398,6 @@ mixin _$ExperienceManagementActorState {
     @required TResult deletionSuccess(_DeletionSuccess value),
     @required TResult deletionFailure(_DeletionFailure value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
@@ -1117,7 +1109,6 @@ abstract class _DeletionFailure implements ExperienceManagementActorState {
   const factory _DeletionFailure(Failure<dynamic> failure) = _$_DeletionFailure;
 
   Failure<dynamic> get failure;
-
   @JsonKey(ignore: true)
   _$DeletionFailureCopyWith<_DeletionFailure> get copyWith;
 }

@@ -54,5 +54,17 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
     <string>This app needs access to location when open.</string>
 	<false/>
+	<key>LSApplicationQueriesSchemes</key>
+    	<array>
+    	<string>instagram-stories</string>
+    	<string>facebook-stories</string>
+    	<string>facebook</string>
+    	<string>instagram</string>
+    	<string>twitter</string>
+    	<string>whatsapp</string>
+        <string>tg</string>
+    	</array>
+    <key>FacebookAppID</key>
+    <string>xxxxxxxxxxxxxxx</string>
 </dict>
 </plist>
