@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -1350,6 +1351,16 @@ class S {
     return Intl.message(
       'The Tag has invalid characters',
       name: 'tagCreationNameStringWithInvalidCharacters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `with WORLD ON now in the Play Store`
+  String get shareMessage {
+    return Intl.message(
+      'with WORLD ON now in the Play Store',
+      name: 'shareMessage',
       desc: '',
       args: [],
     );

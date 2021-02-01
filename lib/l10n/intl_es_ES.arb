@@ -41,9 +41,9 @@
   "password": "Contraseña",
   "unknownError": "Error desconocido",
   "unauthorizedError": "No está autorizado para hacer eso",
-  "addToLog": "Agregar a hacer despues",
+  "addToLog": "Hacer despues",
   "difficulty": "Dificultad",
-  "dismissFromLog": "Descartar de hacer despues",
+  "dismissFromLog": "Descartar",
   "participate": "Participar",
   "reportMessage": "Esto es solo un marcador de posición",
   "errorCardTitle": "No válido",
@@ -131,5 +131,6 @@
   "tagCreationNameEmptyString": "La etiqueta no puede estar vacía",
   "tagCreationNameMultiLineString": "La etiqueta no puede tener más de una línea",
   "tagCreationNameStringExceedsLength": "La etiqueta es demasiado larga",
-  "tagCreationNameStringWithInvalidCharacters": "La etiqueta tiene caracteres no válidos"
+  "tagCreationNameStringWithInvalidCharacters": "La etiqueta tiene caracteres no válidos",
+  "shareMessage": "con WORLD ON ahora en la Play Store"
 }
