@@ -4,7 +4,6 @@ import 'package:kt_dart/kt.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/generated/l10n.dart';
-import 'package:worldon/views/core/widget/misc/tag_addition_card/tag_addition_card.dart';
 import 'package:worldon/views/experience_management/widget/description_form_field.dart';
 import 'package:worldon/views/experience_management/widget/difficulty_slider.dart';
 import 'package:worldon/views/experience_management/widget/finish_button.dart';
@@ -12,6 +11,7 @@ import 'package:worldon/views/experience_management/widget/map.dart';
 import 'package:worldon/views/experience_management/widget/objective_creation_card/objective_creation_card.dart';
 import 'package:worldon/views/experience_management/widget/pictures_selector.dart';
 import 'package:worldon/views/experience_management/widget/reward_creation_card/reward_creation_card.dart';
+import 'package:worldon/views/experience_management/widget/tag_addition_creation_card.dart';
 import 'package:worldon/views/experience_management/widget/title_form_field.dart';
 
 class ExperienceManagementForm extends StatelessWidget {
@@ -54,7 +54,8 @@ class ExperienceManagementForm extends StatelessWidget {
               else
                 Container(),
               const RewardCreationCard(),
-              TagAdditionCard(
+              //Change back to TagAdditionCard if necessary
+              TagAdditionCreationCard(
                 tagChangeFunction: (KtSet<Tag> tags) => context.bloc<ExperienceManagementFormBloc>().add(
                       ExperienceManagementFormEvent.tagsChanged(tags),
                     ),

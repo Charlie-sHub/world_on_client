@@ -123,7 +123,7 @@
   "searchTermEmptyString": "The search term can't be empty",
   "noSearchesMessage": "Search for something!",
   "searchUsers": "Users",
-  "search": "search",
+  "search": "Search",
   "searchTags": "Tags",
   "tagCreationTitle": "Create a new Tag!",
   "tagCreationNameAlreadyInUse": "The tag already exists",
@@ -132,5 +132,6 @@
   "tagCreationNameMultiLineString": "The Tag can't be more than one line",
   "tagCreationNameStringExceedsLength": "The Tag is too long",
   "tagCreationNameStringWithInvalidCharacters": "The Tag has invalid characters",
-  "shareMessage": "with WORLD ON now in the Play Store"
+  "shareMessage": "with WORLD ON now in the Play Store",
+  "create": "Create"
 }

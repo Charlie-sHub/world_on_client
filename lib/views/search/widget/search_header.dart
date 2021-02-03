@@ -13,6 +13,7 @@ class SearchHeader extends StatelessWidget {
     return Form(
       autovalidateMode: context.bloc<SearchByNameFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Expanded(
             child: TextFormField(
@@ -20,15 +21,16 @@ class SearchHeader extends StatelessWidget {
                     SearchByNameFormEvent.searchTermChanged(value.trim()),
                   ),
               decoration: InputDecoration(
+                prefixIcon: const Icon(Icons.search),
                 labelText: S.of(context).search,
               ),
               validator: (_) => context.bloc<SearchByNameFormBloc>().state.searchTerm.value.fold(
-                    (failure) => failure.maybeMap(
-                      emptyString: (_) => S.of(context).searchTermEmptyString,
-                      orElse: () => S.of(context).unknownError,
-                    ),
-                    (_) => null,
-                  ),
+                  (failure) => failure.maybeMap(
+                  emptyString: (_) => S.of(context).searchTermEmptyString,
+                  orElse: () => S.of(context).unknownError,
+                ),
+                  (_) => null,
+              ),
               onFieldSubmitted: (_) => _submit(context),
             ),
           ),

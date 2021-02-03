@@ -53,7 +53,7 @@ dependencies:
   # For dynamically resizing text
   auto_size_text: ^2.1.0
   # For showing the user's experience progression
-  percent_indicator: ^2.1.9
+  percent_indicator: ^2.1.9+1
   # Takes out some boilerplate
   flutter_hooks: ^0.15.0
   # For FloatingActionButton menus

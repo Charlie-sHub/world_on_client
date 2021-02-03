@@ -16,11 +16,10 @@ class TagManagementForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Form(
       autovalidateMode: context.bloc<TagManagementFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
-      child: Column(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Padding(
-            padding: const EdgeInsets.all(10),
+          Expanded(
             child: TagNameField(
               textController: textController,
             ),

@@ -1266,10 +1266,10 @@ class S {
     );
   }
 
-  /// `search`
+  /// `Search`
   String get search {
     return Intl.message(
-      'search',
+      'Search',
       name: 'search',
       desc: '',
       args: [],
@@ -1361,6 +1361,16 @@ class S {
     return Intl.message(
       'with WORLD ON now in the Play Store',
       name: 'shareMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create`
+  String get create {
+    return Intl.message(
+      'Create',
+      name: 'create',
       desc: '',
       args: [],
     );

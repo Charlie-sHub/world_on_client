@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/tag_management/tag_management_form/tag_management_form_bloc.dart';
-import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/generated/l10n.dart';
 
 class TagNameField extends StatelessWidget {
@@ -16,7 +15,6 @@ class TagNameField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: textController,
-      maxLength: Name.maxLength,
       onChanged: (value) => context.bloc<TagManagementFormBloc>().add(
             TagManagementFormEvent.nameChanged(value.trim()),
           ),
@@ -31,8 +29,7 @@ class TagNameField extends StatelessWidget {
             (_) => null,
           ),
       decoration: InputDecoration(
-        labelText: S.of(context).tag,
-        // TODO: Find a way to center the icon
+        labelText: S.of(context).create,
         prefixIcon: const Icon(Icons.bookmark),
       ),
     );
