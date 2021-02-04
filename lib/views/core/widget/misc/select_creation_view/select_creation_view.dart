@@ -38,6 +38,8 @@ class SelectCreationView extends StatelessWidget {
             ),
           ),
         ),
+        // Button to go to the tag creation page, now that the tag creation is part of the experience creation it is rather superfluous
+        /*
         FlatButton(
           onPressed: () => context.navigator.push(
             Routes.tagManagementPage,
@@ -64,7 +66,7 @@ class SelectCreationView extends StatelessWidget {
               ],
             ),
           ),
-        ),
+        ),*/
       ],
     );
   }

@@ -46,7 +46,7 @@ class ShareButton extends StatelessWidget {
     file.writeAsBytesSync(response.bodyBytes);
     // TODO: Add link to playstore
     SocialShare.shareOptions(
-      "${experience.title.getOrCrash()} ${S.of(context).shareMessage} INSERT LINK TO PLAYSTORE",
+      "${experience.title.getOrCrash()} ${S.of(context).shareMessage} https://play.google.com/store/apps/details?id=com.worldon_app.worldon",
       imagePath: file.path,
     );
     file.delete();
