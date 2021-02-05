@@ -133,12 +133,13 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
   }
 
   @override
-  Future<Either<Failure, Unit>> rewardUser(UniqueId experienceId) async {
+  Future<Either<Failure, Unit>> rewardUser(int experiencePoints) async {
     try {
       final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
       return _moorUserOption.fold(
         () => throw UnAuthenticatedError,
         (_moorUserWithRelations) async {
+          /*
           final _moorExperience = await _database.moorExperiencesDao.getExperienceById(experienceId.getOrCrash());
           final _experiencePoints = _moorUserWithRelations.user.experiencePoints + _moorExperience.difficulty * 10;
           await _database.moorUsersDao.updateUser(
@@ -146,6 +147,7 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
               experiencePoints: _experiencePoints,
             ),
           );
+           */
           return right(unit);
         },
       );

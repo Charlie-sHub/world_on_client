@@ -30,8 +30,8 @@ class _$ExperienceTearOff {
       @required RewardSet rewards,
       @required TagSet tags,
       @required Set<Comment> comments,
-      @required Set<User> likedBy,
-      @required Set<User> doneBy}) {
+      @required Set<UniqueId> likedBy,
+      @required Set<UniqueId> doneBy}) {
     return _Experience(
       id: id,
       title: title,
@@ -60,24 +60,36 @@ const $Experience = _$ExperienceTearOff();
 
 /// @nodoc
 mixin _$Experience {
-// TODO: Add like and dislike counters
+// TODO: Add dislike counters
   UniqueId get id;
   Name get title;
   EntityDescription get description;
   Set<String> get imageURLs;
   Option<List<Asset>> get imageAssetsOption;
+
   Coordinates get coordinates;
+
   Location get location;
+
   User get creator;
+
   Difficulty get difficulty;
+
   PastDate get creationDate;
+
   PastDate get modificationDate;
+
   ObjectiveSet get objectives;
+
   RewardSet get rewards;
+
   TagSet get tags;
+
   Set<Comment> get comments;
-  Set<User> get likedBy;
-  Set<User> get doneBy;
+
+  Set<UniqueId> get likedBy;
+
+  Set<UniqueId> get doneBy;
 
   @JsonKey(ignore: true)
   $ExperienceCopyWith<Experience> get copyWith;
@@ -104,8 +116,8 @@ abstract class $ExperienceCopyWith<$Res> {
       RewardSet rewards,
       TagSet tags,
       Set<Comment> comments,
-      Set<User> likedBy,
-      Set<User> doneBy});
+      Set<UniqueId> likedBy,
+      Set<UniqueId> doneBy});
 
   $CoordinatesCopyWith<$Res> get coordinates;
   $LocationCopyWith<$Res> get location;
@@ -161,18 +173,13 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
       creationDate: creationDate == freezed
           ? _value.creationDate
           : creationDate as PastDate,
-      modificationDate: modificationDate == freezed
-          ? _value.modificationDate
-          : modificationDate as PastDate,
-      objectives: objectives == freezed
-          ? _value.objectives
-          : objectives as ObjectiveSet,
+      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as PastDate,
+      objectives: objectives == freezed ? _value.objectives : objectives as ObjectiveSet,
       rewards: rewards == freezed ? _value.rewards : rewards as RewardSet,
       tags: tags == freezed ? _value.tags : tags as TagSet,
-      comments:
-          comments == freezed ? _value.comments : comments as Set<Comment>,
-      likedBy: likedBy == freezed ? _value.likedBy : likedBy as Set<User>,
-      doneBy: doneBy == freezed ? _value.doneBy : doneBy as Set<User>,
+      comments: comments == freezed ? _value.comments : comments as Set<Comment>,
+      likedBy: likedBy == freezed ? _value.likedBy : likedBy as Set<UniqueId>,
+      doneBy: doneBy == freezed ? _value.doneBy : doneBy as Set<UniqueId>,
     ));
   }
 
@@ -229,8 +236,8 @@ abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
       RewardSet rewards,
       TagSet tags,
       Set<Comment> comments,
-      Set<User> likedBy,
-      Set<User> doneBy});
+      Set<UniqueId> likedBy,
+      Set<UniqueId> doneBy});
 
   @override
   $CoordinatesCopyWith<$Res> get coordinates;
@@ -291,18 +298,13 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res>
       creationDate: creationDate == freezed
           ? _value.creationDate
           : creationDate as PastDate,
-      modificationDate: modificationDate == freezed
-          ? _value.modificationDate
-          : modificationDate as PastDate,
-      objectives: objectives == freezed
-          ? _value.objectives
-          : objectives as ObjectiveSet,
+      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as PastDate,
+      objectives: objectives == freezed ? _value.objectives : objectives as ObjectiveSet,
       rewards: rewards == freezed ? _value.rewards : rewards as RewardSet,
       tags: tags == freezed ? _value.tags : tags as TagSet,
-      comments:
-          comments == freezed ? _value.comments : comments as Set<Comment>,
-      likedBy: likedBy == freezed ? _value.likedBy : likedBy as Set<User>,
-      doneBy: doneBy == freezed ? _value.doneBy : doneBy as Set<User>,
+      comments: comments == freezed ? _value.comments : comments as Set<Comment>,
+      likedBy: likedBy == freezed ? _value.likedBy : likedBy as Set<UniqueId>,
+      doneBy: doneBy == freezed ? _value.doneBy : doneBy as Set<UniqueId>,
     ));
   }
 }
@@ -346,7 +348,7 @@ class _$_Experience extends _Experience {
         assert(doneBy != null),
         super._();
 
-  @override // TODO: Add like and dislike counters
+  @override // TODO: Add dislike counters
   final UniqueId id;
   @override
   final Name title;
@@ -377,9 +379,9 @@ class _$_Experience extends _Experience {
   @override
   final Set<Comment> comments;
   @override
-  final Set<User> likedBy;
+  final Set<UniqueId> likedBy;
   @override
-  final Set<User> doneBy;
+  final Set<UniqueId> doneBy;
 
   @override
   String toString() {
@@ -484,11 +486,12 @@ abstract class _Experience extends Experience {
       @required RewardSet rewards,
       @required TagSet tags,
       @required Set<Comment> comments,
-      @required Set<User> likedBy,
-      @required Set<User> doneBy}) = _$_Experience;
+      @required Set<UniqueId> likedBy,
+      @required Set<UniqueId> doneBy}) = _$_Experience;
 
-  @override // TODO: Add like and dislike counters
+  @override // TODO: Add dislike counters
   UniqueId get id;
+
   @override
   Name get title;
   @override
@@ -515,12 +518,16 @@ abstract class _Experience extends Experience {
   RewardSet get rewards;
   @override
   TagSet get tags;
+
   @override
   Set<Comment> get comments;
+
   @override
-  Set<User> get likedBy;
+  Set<UniqueId> get likedBy;
+
   @override
-  Set<User> get doneBy;
+  Set<UniqueId> get doneBy;
+
   @override
   @JsonKey(ignore: true)
   _$ExperienceCopyWith<_Experience> get copyWith;

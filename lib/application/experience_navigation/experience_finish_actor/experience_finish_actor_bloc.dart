@@ -30,7 +30,9 @@ class ExperienceFinishActorBloc extends Bloc<ExperienceFinishActorEvent, Experie
       finish_experience.Params(experienceId: event.experience.id),
     );
     final _rewardFailureOrUnit = await getIt<reward_user.RewardUser>()(
-      reward_user.Params(experienceId: event.experience.id),
+      reward_user.Params(
+        experience: event.experience,
+      ),
     );
     yield _finishFailureOrUnit.fold(
       (failure) => ExperienceFinishActorState.finishFailure(failure),

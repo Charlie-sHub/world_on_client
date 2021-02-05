@@ -97,7 +97,8 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     try {
       final _userId = user.id.getOrCrash();
       // Should request the user doc instead of using the client's user?
-      // just as a way to ensure that the update took place.
+      // Just as a way to ensure that the update took place.
+      // Using await _firestore.userDocument();
       final _updatedUser = await user.imageFileOption.fold(
         () async {
           final _jsonUser = UserDto.fromDomain(user).toJson();

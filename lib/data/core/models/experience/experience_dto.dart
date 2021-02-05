@@ -44,8 +44,8 @@ abstract class ExperienceDto implements _$ExperienceDto {
     @required Set<TagDto> tags,
     // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
     @required Set<CommentDto> comments,
-    @required Set<UserDto> likedBy,
-    @required Set<UserDto> doneBy,
+    @required Set<String> likedBy,
+    @required Set<String> doneBy,
   }) = _ExperienceDto;
 
   factory ExperienceDto.fromDomain(Experience experience) => ExperienceDto(
@@ -64,8 +64,8 @@ abstract class ExperienceDto implements _$ExperienceDto {
         rewards: experience.rewards.getOrCrash().asSet().map((reward) => RewardDto.fromDomain(reward)).toSet(),
         tags: experience.tags.getOrCrash().asSet().map((tag) => TagDto.fromDomain(tag)).toSet(),
         comments: {},
-        likedBy: {},
-        doneBy: {},
+        likedBy: experience.likedBy.map((_uniqueId) => _uniqueId.getOrCrash()).toSet(),
+        doneBy: experience.doneBy.map((_uniqueId) => _uniqueId.getOrCrash()).toSet(),
       );
 
   Experience toDomain() => Experience(
@@ -84,12 +84,8 @@ abstract class ExperienceDto implements _$ExperienceDto {
         rewards: RewardSet(rewards.map((rewardDto) => rewardDto.toDomain()).toImmutableSet()),
         tags: TagSet(tags.map((tagDto) => tagDto.toDomain()).toImmutableSet()),
         comments: {},
-        // TODO: Figure out a way to save and retrieve the likes and doneBys
-        // Denormalization would go too far
-        // it's ok for the creator and the tags, but for potentially infinite likes and doneBys?
-        // Maybe each like could be a document on its own
-        likedBy: {},
-        doneBy: {},
+        likedBy: likedBy.map((_id) => UniqueId.fromUniqueString(_id)).toSet(),
+        doneBy: doneBy.map((_id) => UniqueId.fromUniqueString(_id)).toSet(),
       );
 
   factory ExperienceDto.fromJson(Map<String, dynamic> json) => _$ExperienceDtoFromJson(json);

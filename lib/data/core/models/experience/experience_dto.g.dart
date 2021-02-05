@@ -32,25 +32,11 @@ _$_ExperienceDto _$_$_ExperienceDtoFromJson(Map<String, dynamic> json) {
             e == null ? null : ObjectiveDto.fromJson(e as Map<String, dynamic>))
         ?.toSet(),
     rewards: (json['rewards'] as List)
-        ?.map((e) =>
-            e == null ? null : RewardDto.fromJson(e as Map<String, dynamic>))
-        ?.toSet(),
-    tags: (json['tags'] as List)
-        ?.map((e) =>
-            e == null ? null : TagDto.fromJson(e as Map<String, dynamic>))
-        ?.toSet(),
-    comments: (json['comments'] as List)
-        ?.map((e) =>
-            e == null ? null : CommentDto.fromJson(e as Map<String, dynamic>))
-        ?.toSet(),
-    likedBy: (json['likedBy'] as List)
-        ?.map((e) =>
-            e == null ? null : UserDto.fromJson(e as Map<String, dynamic>))
-        ?.toSet(),
-    doneBy: (json['doneBy'] as List)
-        ?.map((e) =>
-            e == null ? null : UserDto.fromJson(e as Map<String, dynamic>))
-        ?.toSet(),
+        ?.map((e) => e == null ? null : RewardDto.fromJson(e as Map<String, dynamic>))?.toSet(),
+    tags: (json['tags'] as List)?.map((e) => e == null ? null : TagDto.fromJson(e as Map<String, dynamic>))?.toSet(),
+    comments: (json['comments'] as List)?.map((e) => e == null ? null : CommentDto.fromJson(e as Map<String, dynamic>))?.toSet(),
+    likedBy: (json['likedBy'] as List)?.map((e) => e as String)?.toSet(),
+    doneBy: (json['doneBy'] as List)?.map((e) => e as String)?.toSet(),
   );
 }
 
@@ -65,14 +51,12 @@ Map<String, dynamic> _$_$_ExperienceDtoToJson(_$_ExperienceDto instance) =>
       'creatorId': instance.creatorId,
       'creator': instance.creator?.toJson(),
       'difficulty': instance.difficulty,
-      'creationDate':
-          const ServerTimestampConverter().toJson(instance.creationDate),
-      'modificationDate':
-          const ServerTimestampConverter().toJson(instance.modificationDate),
+      'creationDate': const ServerTimestampConverter().toJson(instance.creationDate),
+      'modificationDate': const ServerTimestampConverter().toJson(instance.modificationDate),
       'objectives': instance.objectives?.map((e) => e?.toJson())?.toList(),
       'rewards': instance.rewards?.map((e) => e?.toJson())?.toList(),
       'tags': instance.tags?.map((e) => e?.toJson())?.toList(),
       'comments': instance.comments?.map((e) => e?.toJson())?.toList(),
-      'likedBy': instance.likedBy?.map((e) => e?.toJson())?.toList(),
-      'doneBy': instance.doneBy?.map((e) => e?.toJson())?.toList(),
+      'likedBy': instance.likedBy?.toList(),
+      'doneBy': instance.doneBy?.toList(),
     };

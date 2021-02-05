@@ -13,7 +13,10 @@ import 'package:worldon/views/experience_navigation/widget/rewards_list_view.dar
 class FinishSuccessView extends StatelessWidget {
   final Experience experience;
 
-  const FinishSuccessView({Key key, @required this.experience}) : super(key: key);
+  const FinishSuccessView({
+    Key key,
+    @required this.experience,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -53,19 +56,24 @@ class FinishSuccessView extends StatelessWidget {
               WorldOnStar(),
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(5),
-            child: Text(
-              "${S.of(context).rewardsGained}: ",
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: WorldOnColors.background,
-              ),
+          if (experience.rewards.isNotEmpty)
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(5),
+                  child: Text(
+                    "${S.of(context).rewardsGained}: ",
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: WorldOnColors.background,
+                    ),
+                  ),
+                ),
+                RewardsListView(experience: experience),
+              ],
             ),
-          ),
-          RewardsListView(experience: experience),
           ExperiencedGainedText(experience: experience),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -6,11 +6,11 @@ import 'package:logger/logger.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/firebase_helpers.dart';
-import 'package:worldon/data/core/models/experience/experience_dto.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
+import 'package:worldon/domain/core/validation/objects/user_level.dart';
 import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_interface.dart';
 
 @LazySingleton(as: ExperienceNavigationRepositoryInterface, env: [Environment.prod])
@@ -30,6 +30,12 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
           "experiencesDoneIds": FieldValue.arrayUnion([experienceId.getOrCrash()]),
         },
       );
+      final _experienceDocument = await _firestore.experienceDocument(experienceId.getOrCrash());
+      _experienceDocument.update(
+        {
+          "doneBy": FieldValue.arrayUnion([_userDocument.id]),
+        },
+      );
       return right(unit);
     } on FirebaseException catch (e) {
       return onError(e);
@@ -43,6 +49,12 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       await _userDocument.update(
         {
           "experiencesLikedIds": FieldValue.arrayUnion([experienceId.getOrCrash()]),
+        },
+      );
+      final _experienceDocument = await _firestore.experienceDocument(experienceId.getOrCrash());
+      _experienceDocument.update(
+        {
+          "likedBy": FieldValue.arrayUnion([_userDocument.id]),
         },
       );
       return right(unit);
@@ -60,6 +72,12 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
           "experiencesLikedIds": FieldValue.arrayRemove([experienceId.getOrCrash()]),
         },
       );
+      final _experienceDocument = await _firestore.experienceDocument(experienceId.getOrCrash());
+      _experienceDocument.update(
+        {
+          "likedBy": FieldValue.arrayRemove([_userDocument.id]),
+        },
+      );
       return right(unit);
     } on FirebaseException catch (e) {
       return onError(e);
@@ -74,12 +92,15 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
     // TODO: Properly implement this
     // The difficulty should be the average of all user's rating, not just the rating of the last user
     // But how to implement that? perhaps with a backend function
+    // Right now it doesn't change anything, better to simply leave the creator's original difficulty
     try {
+      /*
       await _firestore.experienceCollection.doc(experienceId.getOrCrash()).update(
         {
           "difficulty": difficulty.getOrCrash(),
         },
       );
+       */
       return right(unit);
     } on FirebaseException catch (e) {
       return onError(e);
@@ -87,16 +108,17 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   }
 
   @override
-  Future<Either<Failure, Unit>> rewardUser(UniqueId experienceId) async {
+  Future<Either<Failure, Unit>> rewardUser(int experiencePoints) async {
     try {
-      // TODO: Implement this in a way it doesn't need to get the experience again
-      // Could be by sending the experience object from domain or by using a backend function and just sending the id
-      final _experienceDocument = await _firestore.experienceCollection.doc(experienceId.getOrCrash()).get();
-      final _experienceDto = ExperienceDto.fromFirestore(_experienceDocument);
       final _userDocument = await _firestore.userDocument();
+      // I don't like doing this at all
+      // Having to get the user just to use the experience points
+      final _currentUser = await _firestore.currentUser();
+      final _userLevel = Levels.levelAt(experiencePoints + _currentUser.experiencePoints.getOrCrash());
       await _userDocument.update(
         {
-          "experiencePoints": FieldValue.increment(_experienceDto.difficulty * 10),
+          "experiencePoints": FieldValue.increment(experiencePoints),
+          "level": _userLevel,
         },
       );
       return right(unit);

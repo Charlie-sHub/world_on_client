@@ -33,8 +33,8 @@ class _$ExperienceDtoTearOff {
       @required Set<RewardDto> rewards,
       @required Set<TagDto> tags,
       @required Set<CommentDto> comments,
-      @required Set<UserDto> likedBy,
-      @required Set<UserDto> doneBy}) {
+      @required Set<String> likedBy,
+      @required Set<String> doneBy}) {
     return _ExperienceDto(
       id: id,
       title: title,
@@ -76,20 +76,28 @@ mixin _$ExperienceDto {
   LocationDto get location;
   String get creatorId;
   UserDto get creator;
+
   int get difficulty;
+
   @ServerTimestampConverter()
   DateTime get creationDate;
+
   @ServerTimestampConverter()
   DateTime get modificationDate;
+
   Set<ObjectiveDto> get objectives;
+
   Set<RewardDto> get rewards;
-  Set<TagDto>
-      get tags; // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
+
+  Set<TagDto> get tags; // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
   Set<CommentDto> get comments;
-  Set<UserDto> get likedBy;
-  Set<UserDto> get doneBy;
+
+  Set<String> get likedBy;
+
+  Set<String> get doneBy;
 
   Map<String, dynamic> toJson();
+
   @JsonKey(ignore: true)
   $ExperienceDtoCopyWith<ExperienceDto> get copyWith;
 }
@@ -115,8 +123,8 @@ abstract class $ExperienceDtoCopyWith<$Res> {
       Set<RewardDto> rewards,
       Set<TagDto> tags,
       Set<CommentDto> comments,
-      Set<UserDto> likedBy,
-      Set<UserDto> doneBy});
+      Set<String> likedBy,
+      Set<String> doneBy});
 
   $CoordinatesDtoCopyWith<$Res> get coordinates;
   $LocationDtoCopyWith<$Res> get location;
@@ -169,18 +177,13 @@ class _$ExperienceDtoCopyWithImpl<$Res>
       creationDate: creationDate == freezed
           ? _value.creationDate
           : creationDate as DateTime,
-      modificationDate: modificationDate == freezed
-          ? _value.modificationDate
-          : modificationDate as DateTime,
-      objectives: objectives == freezed
-          ? _value.objectives
-          : objectives as Set<ObjectiveDto>,
+      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as DateTime,
+      objectives: objectives == freezed ? _value.objectives : objectives as Set<ObjectiveDto>,
       rewards: rewards == freezed ? _value.rewards : rewards as Set<RewardDto>,
       tags: tags == freezed ? _value.tags : tags as Set<TagDto>,
-      comments:
-          comments == freezed ? _value.comments : comments as Set<CommentDto>,
-      likedBy: likedBy == freezed ? _value.likedBy : likedBy as Set<UserDto>,
-      doneBy: doneBy == freezed ? _value.doneBy : doneBy as Set<UserDto>,
+      comments: comments == freezed ? _value.comments : comments as Set<CommentDto>,
+      likedBy: likedBy == freezed ? _value.likedBy : likedBy as Set<String>,
+      doneBy: doneBy == freezed ? _value.doneBy : doneBy as Set<String>,
     ));
   }
 
@@ -238,8 +241,8 @@ abstract class _$ExperienceDtoCopyWith<$Res>
       Set<RewardDto> rewards,
       Set<TagDto> tags,
       Set<CommentDto> comments,
-      Set<UserDto> likedBy,
-      Set<UserDto> doneBy});
+      Set<String> likedBy,
+      Set<String> doneBy});
 
   @override
   $CoordinatesDtoCopyWith<$Res> get coordinates;
@@ -297,18 +300,13 @@ class __$ExperienceDtoCopyWithImpl<$Res>
       creationDate: creationDate == freezed
           ? _value.creationDate
           : creationDate as DateTime,
-      modificationDate: modificationDate == freezed
-          ? _value.modificationDate
-          : modificationDate as DateTime,
-      objectives: objectives == freezed
-          ? _value.objectives
-          : objectives as Set<ObjectiveDto>,
+      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as DateTime,
+      objectives: objectives == freezed ? _value.objectives : objectives as Set<ObjectiveDto>,
       rewards: rewards == freezed ? _value.rewards : rewards as Set<RewardDto>,
       tags: tags == freezed ? _value.tags : tags as Set<TagDto>,
-      comments:
-          comments == freezed ? _value.comments : comments as Set<CommentDto>,
-      likedBy: likedBy == freezed ? _value.likedBy : likedBy as Set<UserDto>,
-      doneBy: doneBy == freezed ? _value.doneBy : doneBy as Set<UserDto>,
+      comments: comments == freezed ? _value.comments : comments as Set<CommentDto>,
+      likedBy: likedBy == freezed ? _value.likedBy : likedBy as Set<String>,
+      doneBy: doneBy == freezed ? _value.doneBy : doneBy as Set<String>,
     ));
   }
 }
@@ -390,9 +388,9 @@ class _$_ExperienceDto extends _ExperienceDto {
   @override // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
   final Set<CommentDto> comments;
   @override
-  final Set<UserDto> likedBy;
+  final Set<String> likedBy;
   @override
-  final Set<UserDto> doneBy;
+  final Set<String> doneBy;
 
   @override
   String toString() {
@@ -502,8 +500,8 @@ abstract class _ExperienceDto extends ExperienceDto {
       @required Set<RewardDto> rewards,
       @required Set<TagDto> tags,
       @required Set<CommentDto> comments,
-      @required Set<UserDto> likedBy,
-      @required Set<UserDto> doneBy}) = _$_ExperienceDto;
+      @required Set<String> likedBy,
+      @required Set<String> doneBy}) = _$_ExperienceDto;
 
   factory _ExperienceDto.fromJson(Map<String, dynamic> json) =
       _$_ExperienceDto.fromJson;
@@ -538,12 +536,16 @@ abstract class _ExperienceDto extends ExperienceDto {
   Set<RewardDto> get rewards;
   @override
   Set<TagDto> get tags;
+
   @override // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
   Set<CommentDto> get comments;
+
   @override
-  Set<UserDto> get likedBy;
+  Set<String> get likedBy;
+
   @override
-  Set<UserDto> get doneBy;
+  Set<String> get doneBy;
+
   @override
   @JsonKey(ignore: true)
   _$ExperienceDtoCopyWith<_ExperienceDto> get copyWith;

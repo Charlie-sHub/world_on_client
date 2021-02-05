@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:worldon/core/assets.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ExperienceDoneCounter extends StatelessWidget {
@@ -20,27 +20,9 @@ class ExperienceDoneCounter extends StatelessWidget {
         // TODO: Implement the user pictures
         // The avatars of the last 3 users to have done the experience should appear here
         // The seems like overkill, is it worth it?
-        Container(
-          width: 80,
-          child: Stack(
-            children: const <Widget>[
-              CircleAvatar(
-                backgroundImage: AssetImage(Assets.userPlaceholder),
-              ),
-              Positioned(
-                left: 20,
-                child: CircleAvatar(
-                  backgroundImage: AssetImage("assets/placeholder_user_bro.jpg"),
-                ),
-              ),
-              Positioned(
-                left: 40,
-                child: CircleAvatar(
-                  backgroundImage: AssetImage("assets/placeholder_user_charlie.jpg"),
-                ),
-              )
-            ],
-          ),
+        Text(
+          S.of(context).doneBy,
+          style: const TextStyle(color: WorldOnColors.background),
         ),
         const SizedBox(width: 5),
         Text(

@@ -26,7 +26,7 @@ abstract class Experience implements _$Experience {
   const Experience._();
 
   const factory Experience({
-    // TODO: Add like and dislike counters
+    // TODO: Add dislike counters
     @required UniqueId id,
     @required Name title,
     @required EntityDescription description,
@@ -42,8 +42,8 @@ abstract class Experience implements _$Experience {
     @required RewardSet rewards,
     @required TagSet tags,
     @required Set<Comment> comments,
-    @required Set<User> likedBy,
-    @required Set<User> doneBy,
+    @required Set<UniqueId> likedBy,
+    @required Set<UniqueId> doneBy,
   }) = _Experience;
 
   factory Experience.empty() => Experience(
@@ -62,8 +62,8 @@ abstract class Experience implements _$Experience {
         rewards: RewardSet(const KtSet.empty()),
         tags: TagSet(const KtSet.empty()),
         comments: <Comment>{},
-        likedBy: <User>{},
-        doneBy: <User>{},
+        likedBy: <UniqueId>{},
+        doneBy: <UniqueId>{},
       );
 
   Option<ValueFailure<dynamic>> get failureOption {

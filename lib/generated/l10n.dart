@@ -1375,6 +1375,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Done by: `
+  String get doneBy {
+    return Intl.message(
+      'Done by: ',
+      name: 'doneBy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Level: `
+  String get level {
+    return Intl.message(
+      'Level: ',
+      name: 'level',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

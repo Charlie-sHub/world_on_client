@@ -28,7 +28,6 @@ class OwnProfileHeader extends StatelessWidget {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(5),
-                // TODO: Change to use network images
                 child: Hero(
                   tag: "userImage",
                   child: CircleAvatar(
@@ -92,7 +91,10 @@ class OwnProfileHeader extends StatelessWidget {
               ),
             ),
           ),
-          UserExperienceInfo(user: user),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5),
+            child: UserExperienceInfo(user: user),
+          ),
         ],
       ),
     );

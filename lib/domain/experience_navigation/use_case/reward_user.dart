@@ -2,8 +2,8 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:worldon/core/error/failure.dart';
+import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
-import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_interface.dart';
 
 @LazySingleton(env: [Environment.dev, Environment.prod])
@@ -14,12 +14,14 @@ class RewardUser implements AsyncUseCase<Unit, Params> {
 
   @override
   Future<Either<Failure, Unit>> call(Params params) async {
-    return _repository.rewardUser(params.experienceId);
+    // Maybe that 10 should be defined somewhere else, in case it needs to be reused
+    final _experiencePoints = params.experience.difficulty.getOrCrash() * 10;
+    return _repository.rewardUser(_experiencePoints);
   }
 }
 
 class Params {
-  final UniqueId experienceId;
+  final Experience experience;
 
-  Params({@required this.experienceId});
+  Params({@required this.experience});
 }

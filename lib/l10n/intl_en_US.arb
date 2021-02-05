@@ -133,5 +133,7 @@
   "tagCreationNameStringExceedsLength": "The Tag is too long",
   "tagCreationNameStringWithInvalidCharacters": "The Tag has invalid characters",
   "shareMessage": "with WORLD ON now in the Play Store",
-  "create": "Create"
+  "create": "Create",
+  "doneBy": "Done by: ",
+  "level": "Level: "
 }

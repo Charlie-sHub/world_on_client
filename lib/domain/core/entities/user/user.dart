@@ -116,4 +116,13 @@ abstract class User implements _$User {
   }
 
   bool get isValid => failureOption.isNone();
+
+  double get percentageToNextLevel {
+    final _nextLevelRequirements = Levels.experiencePointsRequired(level.getOrCrash() + 1);
+    final _currentLevelRequirements = Levels.experiencePointsRequired(level.getOrCrash());
+    final _totalToNextLevel = _nextLevelRequirements - _currentLevelRequirements;
+    final _hadToNextLevel = experiencePoints.getOrCrash() - _currentLevelRequirements;
+    final _result = _totalToNextLevel / _hadToNextLevel;
+    return _result;
+  }
 }

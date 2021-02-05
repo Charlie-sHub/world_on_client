@@ -136,7 +136,7 @@ Chillax gapers Whistler skid."""),
         content: CommentContent("Typewriter plaid fam squid yuccie cloud bread street art."),
       ),
     },
-    likedBy: {getValidUser()},
-    doneBy: {getValidUser()},
+    likedBy: {UniqueId()},
+    doneBy: {UniqueId()},
   );
 }

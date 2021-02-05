@@ -133,5 +133,7 @@
   "tagCreationNameStringExceedsLength": "La etiqueta es demasiado larga",
   "tagCreationNameStringWithInvalidCharacters": "La etiqueta tiene caracteres no válidos",
   "shareMessage": "con WORLD ON ahora en la Play Store",
-  "create": "Crear"
+  "create": "Crear",
+  "doneBy": "Finalizada por: ",
+  "level": "Nivel: "
 }
