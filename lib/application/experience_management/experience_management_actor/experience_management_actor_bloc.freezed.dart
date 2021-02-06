@@ -58,7 +58,7 @@ mixin _$ExperienceManagementActorEvent {
     TResult deleted(_Deleted value),
     @required TResult orElse(),
   });
-  
+
   @JsonKey(ignore: true)
   $ExperienceManagementActorEventCopyWith<ExperienceManagementActorEvent> get copyWith;
 }

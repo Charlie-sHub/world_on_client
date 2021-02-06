@@ -8,6 +8,7 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/firebase_helpers.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/domain/core/entities/item/item_code.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/core/validation/objects/user_level.dart';
@@ -113,18 +114,37 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       final _userDocument = await _firestore.userDocument();
       // I don't like doing this at all
       // Having to get the user just to use the experience points
+      // Neither do i like this being in the data layer
       final _currentUser = await _firestore.currentUser();
-      final _userLevel = Levels.levelAt(experiencePoints + _currentUser.experiencePoints.getOrCrash());
-      await _userDocument.update(
-        {
-          "experiencePoints": FieldValue.increment(experiencePoints),
-          "level": _userLevel,
+      if (_currentUser.items.any(
+        (item) {
+          if (item.code == ItemCode.expBoost) {
+            return true;
+          } else {
+            return false;
+          }
         },
-      );
+      )) {
+        final _pointsPlusBonus = experiencePoints * 2;
+        final _userLevel = Levels.levelAt(_pointsPlusBonus + _currentUser.experiencePoints.getOrCrash());
+        await _updateLevelExperiencePoints(_userDocument, _pointsPlusBonus, _userLevel);
+      } else {
+        final _userLevel = Levels.levelAt(experiencePoints + _currentUser.experiencePoints.getOrCrash());
+        await _updateLevelExperiencePoints(_userDocument, experiencePoints, _userLevel);
+      }
       return right(unit);
     } on FirebaseException catch (e) {
       return onError(e);
     }
+  }
+
+  Future _updateLevelExperiencePoints(DocumentReference _userDocument, int experiencePoints, int _userLevel) async {
+    await _userDocument.update(
+      {
+        "experiencePoints": FieldValue.increment(experiencePoints),
+        "level": _userLevel,
+      },
+    );
   }
 
   @override

@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart' as dartz;
 import 'package:worldon/core/assets.dart';
 import 'package:worldon/data/core/misc/common_methods_for_dev_repositories/get_valid_entities/get_valid_options.dart';
 import 'package:worldon/domain/core/entities/device/device.dart';
+import 'package:worldon/domain/core/entities/item/item.dart';
 import 'package:worldon/domain/core/entities/system/system.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
@@ -42,5 +43,7 @@ User getValidUser() {
     experiencesToDoIds: <UniqueId>{},
     devices: <Device>{},
     systems: <System>{},
+    coins: 0,
+    items: <Item>{},
   );
 }

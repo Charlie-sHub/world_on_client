@@ -123,7 +123,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
         CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
       );
     } else {
-      _logger.e("Unknown server error");
+      _logger.e("Unknown server error:  ${error.runtimeType}");
       return const Failure.coreData(
         CoreDataFailure.serverError(errorString: "Unknown server error"),
       );

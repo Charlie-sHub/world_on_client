@@ -3,6 +3,7 @@ import 'package:dartz/dartz.dart' as dartz;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/data/core/misc/server_timestamp_converter.dart';
 import 'package:worldon/data/core/models/device/device_dto.dart';
+import 'package:worldon/data/core/models/item/item_dto.dart';
 import 'package:worldon/data/core/models/options/options_dto.dart';
 import 'package:worldon/data/core/models/system/system_dto.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
@@ -51,6 +52,8 @@ abstract class UserDto implements _$UserDto {
     @required Set<String> experiencesToDoIds,
     @required Set<DeviceDto> devices,
     @required Set<SystemDto> systems,
+    @required Set<ItemDto> items,
+    @required int coins,
   }) = _UserDto;
 
   factory UserDto.fromDomain(User user) => UserDto(
@@ -80,37 +83,41 @@ abstract class UserDto implements _$UserDto {
         experiencesToDoIds: user.experiencesToDoIds.map((uniqueId) => uniqueId.getOrCrash()).toSet(),
         devices: user.devices.map((device) => DeviceDto.fromDomain(device)).toSet(),
         systems: user.systems.map((system) => SystemDto.fromDomain(system)).toSet(),
+        items: user.items.map((item) => ItemDto.fromDomain(item)).toSet(),
+        coins: user.coins,
       );
 
   User toDomain() => User(
-    id: UniqueId.fromUniqueString(id),
-    name: Name(name),
-    username: Name(username),
-    password: Password(password),
-    email: EmailAddress(email),
-    birthday: PastDate(birthday),
-    description: EntityDescription(description),
-    imageURL: imageURL,
-    imageFileOption: dartz.none(),
-    level: UserLevel(level),
-    experiencePoints: ExperiencePoints(experiencePoints),
-    privacy: privacy,
-    adminPowers: adminPowers,
-    enabled: enabled,
-    lastLogin: PastDate(lastLogin),
-    creationDate: PastDate(creationDate),
-    modificationDate: PastDate(modificationDate),
-    options: options.toDomain(),
-    blockedUsersIds: blockedUsersIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
-    followedUsersIds: followedUsersIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
-    interestsIds: interestsIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
-    achievementsIds: achievementsIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
-    experiencesDoneIds: experiencesDoneIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
-    experiencesLikedIds: experiencesLikedIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
-    experiencesToDoIds: experiencesToDoIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
-    devices: devices.map((deviceDto) => deviceDto.toDomain()).toSet(),
-    systems: systems.map((systemDto) => systemDto.toDomain()).toSet(),
-  );
+        id: UniqueId.fromUniqueString(id),
+        name: Name(name),
+        username: Name(username),
+        password: Password(password),
+        email: EmailAddress(email),
+        birthday: PastDate(birthday),
+        description: EntityDescription(description),
+        imageURL: imageURL,
+        imageFileOption: dartz.none(),
+        level: UserLevel(level),
+        experiencePoints: ExperiencePoints(experiencePoints),
+        privacy: privacy,
+        adminPowers: adminPowers,
+        enabled: enabled,
+        lastLogin: PastDate(lastLogin),
+        creationDate: PastDate(creationDate),
+        modificationDate: PastDate(modificationDate),
+        options: options.toDomain(),
+        blockedUsersIds: blockedUsersIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+        followedUsersIds: followedUsersIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+        interestsIds: interestsIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+        achievementsIds: achievementsIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+        experiencesDoneIds: experiencesDoneIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+        experiencesLikedIds: experiencesLikedIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+        experiencesToDoIds: experiencesToDoIds.map((idString) => UniqueId.fromUniqueString(idString)).toSet(),
+        devices: devices.map((deviceDto) => deviceDto.toDomain()).toSet(),
+        systems: systems.map((systemDto) => systemDto.toDomain()).toSet(),
+        items: items.map((itemDto) => itemDto.toDomain()).toSet(),
+        coins: coins,
+      );
 
   factory UserDto.fromJson(Map<String, dynamic> json) => _$UserDtoFromJson(json);
 

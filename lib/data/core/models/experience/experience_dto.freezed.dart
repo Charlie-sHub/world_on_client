@@ -73,8 +73,11 @@ mixin _$ExperienceDto {
   String get description;
   Set<String> get imageURLs;
   CoordinatesDto get coordinates;
+
   LocationDto get location;
+
   String get creatorId;
+
   UserDto get creator;
 
   int get difficulty;
@@ -163,20 +166,14 @@ class _$ExperienceDtoCopyWithImpl<$Res>
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
       title: title == freezed ? _value.title : title as String,
-      description:
-          description == freezed ? _value.description : description as String,
-      imageURLs:
-          imageURLs == freezed ? _value.imageURLs : imageURLs as Set<String>,
-      coordinates: coordinates == freezed
-          ? _value.coordinates
-          : coordinates as CoordinatesDto,
+      description: description == freezed ? _value.description : description as String,
+      imageURLs: imageURLs == freezed ? _value.imageURLs : imageURLs as Set<String>,
+      coordinates: coordinates == freezed ? _value.coordinates : coordinates as CoordinatesDto,
       location: location == freezed ? _value.location : location as LocationDto,
       creatorId: creatorId == freezed ? _value.creatorId : creatorId as String,
       creator: creator == freezed ? _value.creator : creator as UserDto,
       difficulty: difficulty == freezed ? _value.difficulty : difficulty as int,
-      creationDate: creationDate == freezed
-          ? _value.creationDate
-          : creationDate as DateTime,
+      creationDate: creationDate == freezed ? _value.creationDate : creationDate as DateTime,
       modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as DateTime,
       objectives: objectives == freezed ? _value.objectives : objectives as Set<ObjectiveDto>,
       rewards: rewards == freezed ? _value.rewards : rewards as Set<RewardDto>,
@@ -286,20 +283,14 @@ class __$ExperienceDtoCopyWithImpl<$Res>
     return _then(_ExperienceDto(
       id: id == freezed ? _value.id : id as String,
       title: title == freezed ? _value.title : title as String,
-      description:
-          description == freezed ? _value.description : description as String,
-      imageURLs:
-          imageURLs == freezed ? _value.imageURLs : imageURLs as Set<String>,
-      coordinates: coordinates == freezed
-          ? _value.coordinates
-          : coordinates as CoordinatesDto,
+      description: description == freezed ? _value.description : description as String,
+      imageURLs: imageURLs == freezed ? _value.imageURLs : imageURLs as Set<String>,
+      coordinates: coordinates == freezed ? _value.coordinates : coordinates as CoordinatesDto,
       location: location == freezed ? _value.location : location as LocationDto,
       creatorId: creatorId == freezed ? _value.creatorId : creatorId as String,
       creator: creator == freezed ? _value.creator : creator as UserDto,
       difficulty: difficulty == freezed ? _value.difficulty : difficulty as int,
-      creationDate: creationDate == freezed
-          ? _value.creationDate
-          : creationDate as DateTime,
+      creationDate: creationDate == freezed ? _value.creationDate : creationDate as DateTime,
       modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as DateTime,
       objectives: objectives == freezed ? _value.objectives : objectives as Set<ObjectiveDto>,
       rewards: rewards == freezed ? _value.rewards : rewards as Set<RewardDto>,
@@ -536,16 +527,12 @@ abstract class _ExperienceDto extends ExperienceDto {
   Set<RewardDto> get rewards;
   @override
   Set<TagDto> get tags;
-
   @override // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
   Set<CommentDto> get comments;
-
   @override
   Set<String> get likedBy;
-
   @override
   Set<String> get doneBy;
-
   @override
   @JsonKey(ignore: true)
   _$ExperienceDtoCopyWith<_ExperienceDto> get copyWith;

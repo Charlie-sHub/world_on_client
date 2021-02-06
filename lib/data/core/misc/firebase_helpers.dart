@@ -28,6 +28,8 @@ extension FirestoreX on FirebaseFirestore {
 
   CollectionReference get experienceCollection => collection("experiences");
 
+  CollectionReference get itemCollection => collection("items");
+
   CollectionReference get achievementCollection => collection("achievements");
 
   CollectionReference get notificationCollection => collection("notifications");

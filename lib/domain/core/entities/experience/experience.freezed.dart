@@ -66,29 +66,17 @@ mixin _$Experience {
   EntityDescription get description;
   Set<String> get imageURLs;
   Option<List<Asset>> get imageAssetsOption;
-
   Coordinates get coordinates;
-
   Location get location;
-
   User get creator;
-
   Difficulty get difficulty;
-
   PastDate get creationDate;
-
   PastDate get modificationDate;
-
   ObjectiveSet get objectives;
-
   RewardSet get rewards;
-
   TagSet get tags;
-
   Set<Comment> get comments;
-
   Set<UniqueId> get likedBy;
-
   Set<UniqueId> get doneBy;
 
   @JsonKey(ignore: true)
@@ -155,24 +143,14 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as UniqueId,
       title: title == freezed ? _value.title : title as Name,
-      description: description == freezed
-          ? _value.description
-          : description as EntityDescription,
-      imageURLs:
-          imageURLs == freezed ? _value.imageURLs : imageURLs as Set<String>,
-      imageAssetsOption: imageAssetsOption == freezed
-          ? _value.imageAssetsOption
-          : imageAssetsOption as Option<List<Asset>>,
-      coordinates: coordinates == freezed
-          ? _value.coordinates
-          : coordinates as Coordinates,
+      description: description == freezed ? _value.description : description as EntityDescription,
+      imageURLs: imageURLs == freezed ? _value.imageURLs : imageURLs as Set<String>,
+      imageAssetsOption: imageAssetsOption == freezed ? _value.imageAssetsOption : imageAssetsOption as Option<List<Asset>>,
+      coordinates: coordinates == freezed ? _value.coordinates : coordinates as Coordinates,
       location: location == freezed ? _value.location : location as Location,
       creator: creator == freezed ? _value.creator : creator as User,
-      difficulty:
-          difficulty == freezed ? _value.difficulty : difficulty as Difficulty,
-      creationDate: creationDate == freezed
-          ? _value.creationDate
-          : creationDate as PastDate,
+      difficulty: difficulty == freezed ? _value.difficulty : difficulty as Difficulty,
+      creationDate: creationDate == freezed ? _value.creationDate : creationDate as PastDate,
       modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as PastDate,
       objectives: objectives == freezed ? _value.objectives : objectives as ObjectiveSet,
       rewards: rewards == freezed ? _value.rewards : rewards as RewardSet,
@@ -280,24 +258,14 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res>
     return _then(_Experience(
       id: id == freezed ? _value.id : id as UniqueId,
       title: title == freezed ? _value.title : title as Name,
-      description: description == freezed
-          ? _value.description
-          : description as EntityDescription,
-      imageURLs:
-          imageURLs == freezed ? _value.imageURLs : imageURLs as Set<String>,
-      imageAssetsOption: imageAssetsOption == freezed
-          ? _value.imageAssetsOption
-          : imageAssetsOption as Option<List<Asset>>,
-      coordinates: coordinates == freezed
-          ? _value.coordinates
-          : coordinates as Coordinates,
+      description: description == freezed ? _value.description : description as EntityDescription,
+      imageURLs: imageURLs == freezed ? _value.imageURLs : imageURLs as Set<String>,
+      imageAssetsOption: imageAssetsOption == freezed ? _value.imageAssetsOption : imageAssetsOption as Option<List<Asset>>,
+      coordinates: coordinates == freezed ? _value.coordinates : coordinates as Coordinates,
       location: location == freezed ? _value.location : location as Location,
       creator: creator == freezed ? _value.creator : creator as User,
-      difficulty:
-          difficulty == freezed ? _value.difficulty : difficulty as Difficulty,
-      creationDate: creationDate == freezed
-          ? _value.creationDate
-          : creationDate as PastDate,
+      difficulty: difficulty == freezed ? _value.difficulty : difficulty as Difficulty,
+      creationDate: creationDate == freezed ? _value.creationDate : creationDate as PastDate,
       modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as PastDate,
       objectives: objectives == freezed ? _value.objectives : objectives as ObjectiveSet,
       rewards: rewards == freezed ? _value.rewards : rewards as RewardSet,
@@ -491,7 +459,6 @@ abstract class _Experience extends Experience {
 
   @override // TODO: Add dislike counters
   UniqueId get id;
-
   @override
   Name get title;
   @override
@@ -518,16 +485,12 @@ abstract class _Experience extends Experience {
   RewardSet get rewards;
   @override
   TagSet get tags;
-
   @override
   Set<Comment> get comments;
-
   @override
   Set<UniqueId> get likedBy;
-
   @override
   Set<UniqueId> get doneBy;
-
   @override
   @JsonKey(ignore: true)
   _$ExperienceCopyWith<_Experience> get copyWith;

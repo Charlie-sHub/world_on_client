@@ -41,7 +41,9 @@ class _$UserTearOff {
       @required Set<UniqueId> experiencesLikedIds,
       @required Set<UniqueId> experiencesToDoIds,
       @required Set<Device> devices,
-      @required Set<System> systems}) {
+      @required Set<System> systems,
+      @required Set<Item> items,
+      @required int coins}) {
     return _User(
       id: id,
       name: name,
@@ -70,6 +72,8 @@ class _$UserTearOff {
       experiencesToDoIds: experiencesToDoIds,
       devices: devices,
       systems: systems,
+      items: items,
+      coins: coins,
     );
   }
 }
@@ -81,34 +85,62 @@ const $User = _$UserTearOff();
 /// @nodoc
 mixin _$User {
   UniqueId get id;
+
   Name get name;
+
   Name get username;
+
   Password get password;
+
   EmailAddress get email;
+
   PastDate get birthday;
+
   EntityDescription get description;
+
   String get imageURL;
-  Option<File> get imageFileOption; // TODO: Make levels entities
-// To hold the points between levels
-// Or investigate how leveling systems are usually implemented.
+
+  Option<File> get imageFileOption;
+
   UserLevel get level;
+
   ExperiencePoints get experiencePoints;
+
   bool get privacy;
+
   bool get adminPowers;
+
   bool get enabled;
+
   PastDate get lastLogin;
+
   PastDate get creationDate;
+
   PastDate get modificationDate;
+
   Options get options;
+
   Set<UniqueId> get blockedUsersIds;
+
   Set<UniqueId> get followedUsersIds;
+
   Set<UniqueId> get interestsIds;
+
   Set<UniqueId> get achievementsIds;
+
   Set<UniqueId> get experiencesDoneIds;
+
   Set<UniqueId> get experiencesLikedIds;
+
   Set<UniqueId> get experiencesToDoIds;
+
   Set<Device> get devices;
+
   Set<System> get systems;
+
+  Set<Item> get items;
+
+  int get coins;
 
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith;
@@ -145,7 +177,9 @@ abstract class $UserCopyWith<$Res> {
       Set<UniqueId> experiencesLikedIds,
       Set<UniqueId> experiencesToDoIds,
       Set<Device> devices,
-      Set<System> systems});
+      Set<System> systems,
+      Set<Item> items,
+      int coins});
 
   $OptionsCopyWith<$Res> get options;
 }
@@ -187,6 +221,8 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
     Object experiencesToDoIds = freezed,
     Object devices = freezed,
     Object systems = freezed,
+    Object items = freezed,
+    Object coins = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as UniqueId,
@@ -220,28 +256,17 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
           : modificationDate as PastDate,
       options: options == freezed ? _value.options : options as Options,
       blockedUsersIds: blockedUsersIds == freezed
-          ? _value.blockedUsersIds
-          : blockedUsersIds as Set<UniqueId>,
-      followedUsersIds: followedUsersIds == freezed
-          ? _value.followedUsersIds
-          : followedUsersIds as Set<UniqueId>,
-      interestsIds: interestsIds == freezed
-          ? _value.interestsIds
-          : interestsIds as Set<UniqueId>,
-      achievementsIds: achievementsIds == freezed
-          ? _value.achievementsIds
-          : achievementsIds as Set<UniqueId>,
-      experiencesDoneIds: experiencesDoneIds == freezed
-          ? _value.experiencesDoneIds
-          : experiencesDoneIds as Set<UniqueId>,
-      experiencesLikedIds: experiencesLikedIds == freezed
-          ? _value.experiencesLikedIds
-          : experiencesLikedIds as Set<UniqueId>,
-      experiencesToDoIds: experiencesToDoIds == freezed
-          ? _value.experiencesToDoIds
-          : experiencesToDoIds as Set<UniqueId>,
+          ? _value.blockedUsersIds : blockedUsersIds as Set<UniqueId>,
+      followedUsersIds: followedUsersIds == freezed ? _value.followedUsersIds : followedUsersIds as Set<UniqueId>,
+      interestsIds: interestsIds == freezed ? _value.interestsIds : interestsIds as Set<UniqueId>,
+      achievementsIds: achievementsIds == freezed ? _value.achievementsIds : achievementsIds as Set<UniqueId>,
+      experiencesDoneIds: experiencesDoneIds == freezed ? _value.experiencesDoneIds : experiencesDoneIds as Set<UniqueId>,
+      experiencesLikedIds: experiencesLikedIds == freezed ? _value.experiencesLikedIds : experiencesLikedIds as Set<UniqueId>,
+      experiencesToDoIds: experiencesToDoIds == freezed ? _value.experiencesToDoIds : experiencesToDoIds as Set<UniqueId>,
       devices: devices == freezed ? _value.devices : devices as Set<Device>,
       systems: systems == freezed ? _value.systems : systems as Set<System>,
+      items: items == freezed ? _value.items : items as Set<Item>,
+      coins: coins == freezed ? _value.coins : coins as int,
     ));
   }
 
@@ -288,7 +313,9 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       Set<UniqueId> experiencesLikedIds,
       Set<UniqueId> experiencesToDoIds,
       Set<Device> devices,
-      Set<System> systems});
+      Set<System> systems,
+      Set<Item> items,
+      int coins});
 
   @override
   $OptionsCopyWith<$Res> get options;
@@ -332,6 +359,8 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
     Object experiencesToDoIds = freezed,
     Object devices = freezed,
     Object systems = freezed,
+    Object items = freezed,
+    Object coins = freezed,
   }) {
     return _then(_User(
       id: id == freezed ? _value.id : id as UniqueId,
@@ -365,28 +394,17 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
           : modificationDate as PastDate,
       options: options == freezed ? _value.options : options as Options,
       blockedUsersIds: blockedUsersIds == freezed
-          ? _value.blockedUsersIds
-          : blockedUsersIds as Set<UniqueId>,
-      followedUsersIds: followedUsersIds == freezed
-          ? _value.followedUsersIds
-          : followedUsersIds as Set<UniqueId>,
-      interestsIds: interestsIds == freezed
-          ? _value.interestsIds
-          : interestsIds as Set<UniqueId>,
-      achievementsIds: achievementsIds == freezed
-          ? _value.achievementsIds
-          : achievementsIds as Set<UniqueId>,
-      experiencesDoneIds: experiencesDoneIds == freezed
-          ? _value.experiencesDoneIds
-          : experiencesDoneIds as Set<UniqueId>,
-      experiencesLikedIds: experiencesLikedIds == freezed
-          ? _value.experiencesLikedIds
-          : experiencesLikedIds as Set<UniqueId>,
-      experiencesToDoIds: experiencesToDoIds == freezed
-          ? _value.experiencesToDoIds
-          : experiencesToDoIds as Set<UniqueId>,
+          ? _value.blockedUsersIds : blockedUsersIds as Set<UniqueId>,
+      followedUsersIds: followedUsersIds == freezed ? _value.followedUsersIds : followedUsersIds as Set<UniqueId>,
+      interestsIds: interestsIds == freezed ? _value.interestsIds : interestsIds as Set<UniqueId>,
+      achievementsIds: achievementsIds == freezed ? _value.achievementsIds : achievementsIds as Set<UniqueId>,
+      experiencesDoneIds: experiencesDoneIds == freezed ? _value.experiencesDoneIds : experiencesDoneIds as Set<UniqueId>,
+      experiencesLikedIds: experiencesLikedIds == freezed ? _value.experiencesLikedIds : experiencesLikedIds as Set<UniqueId>,
+      experiencesToDoIds: experiencesToDoIds == freezed ? _value.experiencesToDoIds : experiencesToDoIds as Set<UniqueId>,
       devices: devices == freezed ? _value.devices : devices as Set<Device>,
       systems: systems == freezed ? _value.systems : systems as Set<System>,
+      items: items == freezed ? _value.items : items as Set<Item>,
+      coins: coins == freezed ? _value.coins : coins as int,
     ));
   }
 }
@@ -420,7 +438,9 @@ class _$_User extends _User {
       @required this.experiencesLikedIds,
       @required this.experiencesToDoIds,
       @required this.devices,
-      @required this.systems})
+      @required this.systems,
+      @required this.items,
+      @required this.coins})
       : assert(id != null),
         assert(name != null),
         assert(username != null),
@@ -448,6 +468,8 @@ class _$_User extends _User {
         assert(experiencesToDoIds != null),
         assert(devices != null),
         assert(systems != null),
+        assert(items != null),
+        assert(coins != null),
         super._();
 
   @override
@@ -468,9 +490,7 @@ class _$_User extends _User {
   final String imageURL;
   @override
   final Option<File> imageFileOption;
-  @override // TODO: Make levels entities
-// To hold the points between levels
-// Or investigate how leveling systems are usually implemented.
+  @override
   final UserLevel level;
   @override
   final ExperiencePoints experiencePoints;
@@ -506,10 +526,14 @@ class _$_User extends _User {
   final Set<Device> devices;
   @override
   final Set<System> systems;
+  @override
+  final Set<Item> items;
+  @override
+  final int coins;
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, username: $username, password: $password, email: $email, birthday: $birthday, description: $description, imageURL: $imageURL, imageFileOption: $imageFileOption, level: $level, experiencePoints: $experiencePoints, privacy: $privacy, adminPowers: $adminPowers, enabled: $enabled, lastLogin: $lastLogin, creationDate: $creationDate, modificationDate: $modificationDate, options: $options, blockedUsersIds: $blockedUsersIds, followedUsersIds: $followedUsersIds, interestsIds: $interestsIds, achievementsIds: $achievementsIds, experiencesDoneIds: $experiencesDoneIds, experiencesLikedIds: $experiencesLikedIds, experiencesToDoIds: $experiencesToDoIds, devices: $devices, systems: $systems)';
+    return 'User(id: $id, name: $name, username: $username, password: $password, email: $email, birthday: $birthday, description: $description, imageURL: $imageURL, imageFileOption: $imageFileOption, level: $level, experiencePoints: $experiencePoints, privacy: $privacy, adminPowers: $adminPowers, enabled: $enabled, lastLogin: $lastLogin, creationDate: $creationDate, modificationDate: $modificationDate, options: $options, blockedUsersIds: $blockedUsersIds, followedUsersIds: $followedUsersIds, interestsIds: $interestsIds, achievementsIds: $achievementsIds, experiencesDoneIds: $experiencesDoneIds, experiencesLikedIds: $experiencesLikedIds, experiencesToDoIds: $experiencesToDoIds, devices: $devices, systems: $systems, items: $items, coins: $coins)';
   }
 
   @override
@@ -564,28 +588,18 @@ class _$_User extends _User {
                 const DeepCollectionEquality()
                     .equals(other.modificationDate, modificationDate)) &&
             (identical(other.options, options) ||
-                const DeepCollectionEquality()
-                    .equals(other.options, options)) &&
-            (identical(other.blockedUsersIds, blockedUsersIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.blockedUsersIds, blockedUsersIds)) &&
-            (identical(other.followedUsersIds, followedUsersIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.followedUsersIds, followedUsersIds)) &&
-            (identical(other.interestsIds, interestsIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.interestsIds, interestsIds)) &&
-            (identical(other.achievementsIds, achievementsIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.achievementsIds, achievementsIds)) &&
-            (identical(other.experiencesDoneIds, experiencesDoneIds) ||
-                const DeepCollectionEquality()
-                    .equals(other.experiencesDoneIds, experiencesDoneIds)) &&
-            (identical(other.experiencesLikedIds, experiencesLikedIds) ||
-                const DeepCollectionEquality().equals(other.experiencesLikedIds, experiencesLikedIds)) &&
+                const DeepCollectionEquality().equals(other.options, options)) &&
+            (identical(other.blockedUsersIds, blockedUsersIds) || const DeepCollectionEquality().equals(other.blockedUsersIds, blockedUsersIds)) &&
+            (identical(other.followedUsersIds, followedUsersIds) || const DeepCollectionEquality().equals(other.followedUsersIds, followedUsersIds)) &&
+            (identical(other.interestsIds, interestsIds) || const DeepCollectionEquality().equals(other.interestsIds, interestsIds)) &&
+            (identical(other.achievementsIds, achievementsIds) || const DeepCollectionEquality().equals(other.achievementsIds, achievementsIds)) &&
+            (identical(other.experiencesDoneIds, experiencesDoneIds) || const DeepCollectionEquality().equals(other.experiencesDoneIds, experiencesDoneIds)) &&
+            (identical(other.experiencesLikedIds, experiencesLikedIds) || const DeepCollectionEquality().equals(other.experiencesLikedIds, experiencesLikedIds)) &&
             (identical(other.experiencesToDoIds, experiencesToDoIds) || const DeepCollectionEquality().equals(other.experiencesToDoIds, experiencesToDoIds)) &&
             (identical(other.devices, devices) || const DeepCollectionEquality().equals(other.devices, devices)) &&
-            (identical(other.systems, systems) || const DeepCollectionEquality().equals(other.systems, systems)));
+            (identical(other.systems, systems) || const DeepCollectionEquality().equals(other.systems, systems)) &&
+            (identical(other.items, items) || const DeepCollectionEquality().equals(other.items, items)) &&
+            (identical(other.coins, coins) || const DeepCollectionEquality().equals(other.coins, coins)));
   }
 
   @override
@@ -617,7 +631,9 @@ class _$_User extends _User {
       const DeepCollectionEquality().hash(experiencesLikedIds) ^
       const DeepCollectionEquality().hash(experiencesToDoIds) ^
       const DeepCollectionEquality().hash(devices) ^
-      const DeepCollectionEquality().hash(systems);
+      const DeepCollectionEquality().hash(systems) ^
+      const DeepCollectionEquality().hash(items) ^
+      const DeepCollectionEquality().hash(coins);
 
   @JsonKey(ignore: true)
   @override
@@ -654,7 +670,9 @@ abstract class _User extends User {
       @required Set<UniqueId> experiencesLikedIds,
       @required Set<UniqueId> experiencesToDoIds,
       @required Set<Device> devices,
-      @required Set<System> systems}) = _$_User;
+      @required Set<System> systems,
+      @required Set<Item> items,
+      @required int coins}) = _$_User;
 
   @override
   UniqueId get id;
@@ -664,28 +682,37 @@ abstract class _User extends User {
   Name get username;
   @override
   Password get password;
+
   @override
   EmailAddress get email;
+
   @override
   PastDate get birthday;
+
   @override
   EntityDescription get description;
+
   @override
   String get imageURL;
+
   @override
   Option<File> get imageFileOption;
-  @override // TODO: Make levels entities
-// To hold the points between levels
-// Or investigate how leveling systems are usually implemented.
+
+  @override
   UserLevel get level;
+
   @override
   ExperiencePoints get experiencePoints;
+
   @override
   bool get privacy;
+
   @override
   bool get adminPowers;
+
   @override
   bool get enabled;
+
   @override
   PastDate get lastLogin;
   @override
@@ -702,16 +729,28 @@ abstract class _User extends User {
   Set<UniqueId> get interestsIds;
   @override
   Set<UniqueId> get achievementsIds;
+
   @override
   Set<UniqueId> get experiencesDoneIds;
+
   @override
   Set<UniqueId> get experiencesLikedIds;
+
   @override
   Set<UniqueId> get experiencesToDoIds;
+
   @override
   Set<Device> get devices;
+
   @override
   Set<System> get systems;
+
+  @override
+  Set<Item> get items;
+
+  @override
+  int get coins;
+
   @override
   @JsonKey(ignore: true)
   _$UserCopyWith<_User> get copyWith;

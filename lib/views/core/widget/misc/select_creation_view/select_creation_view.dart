@@ -11,6 +11,7 @@ class SelectCreationView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        Expanded(child: Container()),
         FlatButton(
           onPressed: () => context.navigator.push(
             Routes.experienceManagementPage,
@@ -38,6 +39,7 @@ class SelectCreationView extends StatelessWidget {
             ),
           ),
         ),
+        Expanded(child: Container()),
         // Button to go to the tag creation page, now that the tag creation is part of the experience creation it is rather superfluous
         /*
         FlatButton(

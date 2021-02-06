@@ -61,6 +61,24 @@ class OwnProfileHeader extends StatelessWidget {
                   ),
                 ),
               ),
+              Expanded(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    const Icon(
+                      Icons.attach_money,
+                      color: WorldOnColors.red,
+                    ),
+                    AutoSizeText(
+                      user.coins.toString(),
+                      style: const TextStyle(
+                        fontSize: 18,
+                        color: WorldOnColors.red,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               Padding(
                 padding: const EdgeInsets.all(5),
                 child: RaisedButton(

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/domain/core/entities/device/device.dart';
+import 'package:worldon/domain/core/entities/item/item.dart';
 import 'package:worldon/domain/core/entities/options/options.dart';
 import 'package:worldon/domain/core/entities/system/system.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
@@ -34,9 +35,6 @@ abstract class User implements _$User {
     @required EntityDescription description,
     @required String imageURL,
     @required Option<File> imageFileOption,
-    // TODO: Make levels entities
-    // To hold the points between levels
-    // Or investigate how leveling systems are usually implemented.
     @required UserLevel level,
     @required ExperiencePoints experiencePoints,
     @required bool privacy,
@@ -55,6 +53,8 @@ abstract class User implements _$User {
     @required Set<UniqueId> experiencesToDoIds,
     @required Set<Device> devices,
     @required Set<System> systems,
+    @required Set<Item> items,
+    @required int coins,
   }) = _User;
 
   factory User.empty() => User(
@@ -88,9 +88,12 @@ abstract class User implements _$User {
         experiencesToDoIds: <UniqueId>{},
         devices: <Device>{},
         systems: <System>{},
+        items: <Item>{},
+        coins: 0,
       );
 
   Option<ValueFailure<dynamic>> get failureOption {
+    // Why is the id not checked?
     return name.failureOrUnit
         .andThen(username.failureOrUnit)
         .andThen(password.failureOrUnit)
@@ -122,7 +125,7 @@ abstract class User implements _$User {
     final _currentLevelRequirements = Levels.experiencePointsRequired(level.getOrCrash());
     final _totalToNextLevel = _nextLevelRequirements - _currentLevelRequirements;
     final _hadToNextLevel = experiencePoints.getOrCrash() - _currentLevelRequirements;
-    final _result = _totalToNextLevel / _hadToNextLevel;
+    final _result = _hadToNextLevel / _totalToNextLevel;
     return _result;
   }
 }

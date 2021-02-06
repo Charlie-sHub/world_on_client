@@ -33,26 +33,16 @@ _$_UserDto _$_$_UserDtoFromJson(Map<String, dynamic> json) {
         : OptionsDto.fromJson(json['options'] as Map<String, dynamic>),
     blockedUsersIds:
         (json['blockedUsersIds'] as List)?.map((e) => e as String)?.toSet(),
-    followedUsersIds:
-        (json['followedUsersIds'] as List)?.map((e) => e as String)?.toSet(),
-    interestsIds:
-        (json['interestsIds'] as List)?.map((e) => e as String)?.toSet(),
-    achievementsIds:
-        (json['achievementsIds'] as List)?.map((e) => e as String)?.toSet(),
-    experiencesDoneIds:
-        (json['experiencesDoneIds'] as List)?.map((e) => e as String)?.toSet(),
-    experiencesLikedIds:
-        (json['experiencesLikedIds'] as List)?.map((e) => e as String)?.toSet(),
-    experiencesToDoIds:
-        (json['experiencesToDoIds'] as List)?.map((e) => e as String)?.toSet(),
-    devices: (json['devices'] as List)
-        ?.map((e) =>
-            e == null ? null : DeviceDto.fromJson(e as Map<String, dynamic>))
-        ?.toSet(),
-    systems: (json['systems'] as List)
-        ?.map((e) =>
-            e == null ? null : SystemDto.fromJson(e as Map<String, dynamic>))
-        ?.toSet(),
+    followedUsersIds: (json['followedUsersIds'] as List)?.map((e) => e as String)?.toSet(),
+    interestsIds: (json['interestsIds'] as List)?.map((e) => e as String)?.toSet(),
+    achievementsIds: (json['achievementsIds'] as List)?.map((e) => e as String)?.toSet(),
+    experiencesDoneIds: (json['experiencesDoneIds'] as List)?.map((e) => e as String)?.toSet(),
+    experiencesLikedIds: (json['experiencesLikedIds'] as List)?.map((e) => e as String)?.toSet(),
+    experiencesToDoIds: (json['experiencesToDoIds'] as List)?.map((e) => e as String)?.toSet(),
+    devices: (json['devices'] as List)?.map((e) => e == null ? null : DeviceDto.fromJson(e as Map<String, dynamic>))?.toSet(),
+    systems: (json['systems'] as List)?.map((e) => e == null ? null : SystemDto.fromJson(e as Map<String, dynamic>))?.toSet(),
+    items: (json['items'] as List)?.map((e) => e == null ? null : ItemDto.fromJson(e as Map<String, dynamic>))?.toSet(),
+    coins: json['coins'] as int,
   );
 }
 
@@ -86,4 +76,6 @@ Map<String, dynamic> _$_$_UserDtoToJson(_$_UserDto instance) =>
       'experiencesToDoIds': instance.experiencesToDoIds?.toList(),
       'devices': instance.devices?.map((e) => e?.toJson())?.toList(),
       'systems': instance.systems?.map((e) => e?.toJson())?.toList(),
+      'items': instance.items?.map((e) => e?.toJson())?.toList(),
+      'coins': instance.coins,
     };
