@@ -19,7 +19,7 @@ abstract class SearchRepositoryInterface {
   /// Sends a given [SearchTerm] to the server and it returns the [Tag]s with said [SearchTerm] in their names
   Stream<Either<Failure, KtList<Tag>>> watchSearchTagsByName(SearchTerm name);
 
-// TODO: make it so only Experiences within a certain distance are returned
+  // TODO: make it so only Experiences within a certain distance are returned
   // It'd be useless to give Users Experiences from far away places even if they're as difficult as they want them
   // Same with basically all other experience searches
   // That's for the back-end though

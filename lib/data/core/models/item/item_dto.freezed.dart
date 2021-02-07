@@ -8,7 +8,6 @@ part of 'item_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
-
 ItemDto _$ItemDtoFromJson(Map<String, dynamic> json) {
   return _Item.fromJson(json);
 }
@@ -47,19 +46,13 @@ const $ItemDto = _$ItemDtoTearOff();
 /// @nodoc
 mixin _$ItemDto {
   String get id;
-  
   String get name;
-  
   String get description;
-  
   ItemCode get code;
-  
   int get value;
-  
   String get imageURL;
-  
+
   Map<String, dynamic> toJson();
-  
   @JsonKey(ignore: true)
   $ItemDtoCopyWith<ItemDto> get copyWith;
 }
@@ -80,12 +73,11 @@ abstract class $ItemDtoCopyWith<$Res> {
 /// @nodoc
 class _$ItemDtoCopyWithImpl<$Res> implements $ItemDtoCopyWith<$Res> {
   _$ItemDtoCopyWithImpl(this._value, this._then);
-  
+
   final ItemDto _value;
-  
   // ignore: unused_field
   final $Res Function(ItemDto) _then;
-  
+
   @override
   $Res call({
     Object id = freezed,
@@ -291,13 +283,10 @@ abstract class _Item extends ItemDto {
   
   @override
   ItemCode get code;
-  
   @override
   int get value;
-  
   @override
   String get imageURL;
-  
   @override
   @JsonKey(ignore: true)
   _$ItemCopyWith<_Item> get copyWith;

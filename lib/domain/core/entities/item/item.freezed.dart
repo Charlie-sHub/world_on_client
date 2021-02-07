@@ -33,15 +33,11 @@ const $Item = _$ItemTearOff();
 /// @nodoc
 mixin _$Item {
   UniqueId get id;
-
   Name get name;
-
   EntityDescription get description;
-
   ItemCode get code; // The value in coins it's an int
 // it should be a double in case we go for direct sales
   int get value;
-
   String get imageURL;
 
   @JsonKey(ignore: true)
@@ -60,7 +56,6 @@ class _$ItemCopyWithImpl<$Res> implements $ItemCopyWith<$Res> {
   _$ItemCopyWithImpl(this._value, this._then);
 
   final Item _value;
-
   // ignore: unused_field
   final $Res Function(Item) _then;
 
@@ -196,10 +191,8 @@ abstract class _Item extends Item {
   @override // The value in coins it's an int
 // it should be a double in case we go for direct sales
   int get value;
-
   @override
   String get imageURL;
-
   @override
   @JsonKey(ignore: true)
   _$ItemCopyWith<_Item> get copyWith;

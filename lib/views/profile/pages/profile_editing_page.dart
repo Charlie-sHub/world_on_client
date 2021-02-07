@@ -8,8 +8,8 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
-import 'package:worldon/views/core/widget/error/critical_error_display.dart';
-import 'package:worldon/views/profile/widget/profile_editing_form/profile_editing_form.dart';
+import 'package:worldon/views/core/widgets/error/critical_error_display.dart';
+import 'package:worldon/views/profile/widgets/profile_editing_form/profile_editing_form.dart';
 
 class ProfileEditingPage extends StatelessWidget {
   final User user;

@@ -111,33 +111,20 @@ mixin _$UserDto {
   DateTime get creationDate;
   @ServerTimestampConverter()
   DateTime get modificationDate;
-
   OptionsDto get options;
-
   Set<String> get blockedUsersIds;
-
   Set<String> get followedUsersIds;
-
   Set<String> get interestsIds;
-
   Set<String> get achievementsIds;
-
   Set<String> get experiencesDoneIds;
-
   Set<String> get experiencesLikedIds;
-
   Set<String> get experiencesToDoIds;
-
   Set<DeviceDto> get devices;
-
   Set<SystemDto> get systems;
-
   Set<ItemDto> get items;
-
   int get coins;
 
   Map<String, dynamic> toJson();
-
   @JsonKey(ignore: true)
   $UserDtoCopyWith<UserDto> get copyWith;
 }
@@ -225,28 +212,18 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
       password: password == freezed ? _value.password : password as String,
       email: email == freezed ? _value.email : email as String,
       birthday: birthday == freezed ? _value.birthday : birthday as DateTime,
-      description:
-          description == freezed ? _value.description : description as String,
+      description: description == freezed ? _value.description : description as String,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
       level: level == freezed ? _value.level : level as int,
-      experiencePoints: experiencePoints == freezed
-          ? _value.experiencePoints
-          : experiencePoints as int,
+      experiencePoints: experiencePoints == freezed ? _value.experiencePoints : experiencePoints as int,
       privacy: privacy == freezed ? _value.privacy : privacy as bool,
-      adminPowers:
-          adminPowers == freezed ? _value.adminPowers : adminPowers as bool,
+      adminPowers: adminPowers == freezed ? _value.adminPowers : adminPowers as bool,
       enabled: enabled == freezed ? _value.enabled : enabled as bool,
-      lastLogin:
-          lastLogin == freezed ? _value.lastLogin : lastLogin as DateTime,
-      creationDate: creationDate == freezed
-          ? _value.creationDate
-          : creationDate as DateTime,
-      modificationDate: modificationDate == freezed
-          ? _value.modificationDate
-          : modificationDate as DateTime,
+      lastLogin: lastLogin == freezed ? _value.lastLogin : lastLogin as DateTime,
+      creationDate: creationDate == freezed ? _value.creationDate : creationDate as DateTime,
+      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as DateTime,
       options: options == freezed ? _value.options : options as OptionsDto,
-      blockedUsersIds: blockedUsersIds == freezed
-          ? _value.blockedUsersIds : blockedUsersIds as Set<String>,
+      blockedUsersIds: blockedUsersIds == freezed ? _value.blockedUsersIds : blockedUsersIds as Set<String>,
       followedUsersIds: followedUsersIds == freezed ? _value.followedUsersIds : followedUsersIds as Set<String>,
       interestsIds: interestsIds == freezed ? _value.interestsIds : interestsIds as Set<String>,
       achievementsIds: achievementsIds == freezed ? _value.achievementsIds : achievementsIds as Set<String>,
@@ -357,28 +334,18 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
       password: password == freezed ? _value.password : password as String,
       email: email == freezed ? _value.email : email as String,
       birthday: birthday == freezed ? _value.birthday : birthday as DateTime,
-      description:
-          description == freezed ? _value.description : description as String,
+      description: description == freezed ? _value.description : description as String,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
       level: level == freezed ? _value.level : level as int,
-      experiencePoints: experiencePoints == freezed
-          ? _value.experiencePoints
-          : experiencePoints as int,
+      experiencePoints: experiencePoints == freezed ? _value.experiencePoints : experiencePoints as int,
       privacy: privacy == freezed ? _value.privacy : privacy as bool,
-      adminPowers:
-          adminPowers == freezed ? _value.adminPowers : adminPowers as bool,
+      adminPowers: adminPowers == freezed ? _value.adminPowers : adminPowers as bool,
       enabled: enabled == freezed ? _value.enabled : enabled as bool,
-      lastLogin:
-          lastLogin == freezed ? _value.lastLogin : lastLogin as DateTime,
-      creationDate: creationDate == freezed
-          ? _value.creationDate
-          : creationDate as DateTime,
-      modificationDate: modificationDate == freezed
-          ? _value.modificationDate
-          : modificationDate as DateTime,
+      lastLogin: lastLogin == freezed ? _value.lastLogin : lastLogin as DateTime,
+      creationDate: creationDate == freezed ? _value.creationDate : creationDate as DateTime,
+      modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as DateTime,
       options: options == freezed ? _value.options : options as OptionsDto,
-      blockedUsersIds: blockedUsersIds == freezed
-          ? _value.blockedUsersIds : blockedUsersIds as Set<String>,
+      blockedUsersIds: blockedUsersIds == freezed ? _value.blockedUsersIds : blockedUsersIds as Set<String>,
       followedUsersIds: followedUsersIds == freezed ? _value.followedUsersIds : followedUsersIds as Set<String>,
       interestsIds: interestsIds == freezed ? _value.interestsIds : interestsIds as Set<String>,
       achievementsIds: achievementsIds == freezed ? _value.achievementsIds : achievementsIds as Set<String>,
@@ -556,27 +523,13 @@ class _$_UserDto extends _UserDto {
             (identical(other.experiencePoints, experiencePoints) ||
                 const DeepCollectionEquality()
                     .equals(other.experiencePoints, experiencePoints)) &&
-            (identical(other.privacy, privacy) ||
-                const DeepCollectionEquality()
-                    .equals(other.privacy, privacy)) &&
-            (identical(other.adminPowers, adminPowers) ||
-                const DeepCollectionEquality()
-                    .equals(other.adminPowers, adminPowers)) &&
-            (identical(other.enabled, enabled) ||
-                const DeepCollectionEquality()
-                    .equals(other.enabled, enabled)) &&
-            (identical(other.lastLogin, lastLogin) ||
-                const DeepCollectionEquality()
-                    .equals(other.lastLogin, lastLogin)) &&
-            (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.creationDate, creationDate)) &&
-            (identical(other.modificationDate, modificationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.modificationDate, modificationDate)) &&
-            (identical(other.options, options) ||
-                const DeepCollectionEquality()
-                    .equals(other.options, options)) &&
+            (identical(other.privacy, privacy) || const DeepCollectionEquality().equals(other.privacy, privacy)) &&
+            (identical(other.adminPowers, adminPowers) || const DeepCollectionEquality().equals(other.adminPowers, adminPowers)) &&
+            (identical(other.enabled, enabled) || const DeepCollectionEquality().equals(other.enabled, enabled)) &&
+            (identical(other.lastLogin, lastLogin) || const DeepCollectionEquality().equals(other.lastLogin, lastLogin)) &&
+            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+            (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)) &&
+            (identical(other.options, options) || const DeepCollectionEquality().equals(other.options, options)) &&
             (identical(other.blockedUsersIds, blockedUsersIds) || const DeepCollectionEquality().equals(other.blockedUsersIds, blockedUsersIds)) &&
             (identical(other.followedUsersIds, followedUsersIds) || const DeepCollectionEquality().equals(other.followedUsersIds, followedUsersIds)) &&
             (identical(other.interestsIds, interestsIds) || const DeepCollectionEquality().equals(other.interestsIds, interestsIds)) &&
@@ -714,28 +667,20 @@ abstract class _UserDto extends UserDto {
   Set<String> get interestsIds;
   @override
   Set<String> get achievementsIds;
-
   @override
   Set<String> get experiencesDoneIds;
-
   @override
   Set<String> get experiencesLikedIds;
-
   @override
   Set<String> get experiencesToDoIds;
-
   @override
   Set<DeviceDto> get devices;
-
   @override
   Set<SystemDto> get systems;
-
   @override
   Set<ItemDto> get items;
-
   @override
   int get coins;
-
   @override
   @JsonKey(ignore: true)
   _$UserDtoCopyWith<_UserDto> get copyWith;

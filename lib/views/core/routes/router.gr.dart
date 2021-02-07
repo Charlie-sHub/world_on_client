@@ -20,6 +20,7 @@ import '../../authentication/pages/registration_page.dart';
 import '../../experience_management/pages/experience_management_page.dart';
 import '../../profile/pages/profile_editing_page.dart';
 import '../../splash/pages/splash_page.dart';
+import '../../store/pages/store_page.dart';
 import '../../tag_management/pages/tag_management_page.dart';
 import '../pages/main_page.dart';
 
@@ -32,6 +33,7 @@ class Routes {
   static const String moorDbViewer = '/moor-db-viewer';
   static const String experienceManagementPage = '/experience-management-page';
   static const String tagManagementPage = '/tag-management-page';
+  static const String storePage = '/store-page';
   static const all = <String>{
     splashPage,
     logInPage,
@@ -41,6 +43,7 @@ class Routes {
     moorDbViewer,
     experienceManagementPage,
     tagManagementPage,
+    storePage,
   };
 }
 
@@ -56,6 +59,7 @@ class Router extends RouterBase {
     RouteDef(Routes.moorDbViewer, page: MoorDbViewer),
     RouteDef(Routes.experienceManagementPage, page: ExperienceManagementPage),
     RouteDef(Routes.tagManagementPage, page: TagManagementPage),
+    RouteDef(Routes.storePage, page: StorePage),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -124,6 +128,12 @@ class Router extends RouterBase {
         settings: data,
       );
     },
+    StorePage: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => StorePage(),
+        settings: data,
+      );
+    },
   };
 }
 
@@ -176,6 +186,8 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
         Routes.tagManagementPage,
         arguments: TagManagementPageArguments(key: key, tagOption: tagOption),
       );
+
+  Future<dynamic> pushStorePage() => push<dynamic>(Routes.storePage);
 }
 
 /// ************************************************************************

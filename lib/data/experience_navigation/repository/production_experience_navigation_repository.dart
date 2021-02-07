@@ -111,10 +111,14 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   @override
   Future<Either<Failure, Unit>> rewardUser(int experiencePoints) async {
     try {
-      final _userDocument = await _firestore.userDocument();
       // I don't like doing this at all
       // Having to get the user just to use the experience points
       // Neither do i like this being in the data layer
+      final _userDocument = await _firestore.userDocument();
+      // TODO: Change the way items are handled
+      // Items should just be a string of ids on the user document
+      // Those ids would be retrieved when needed
+      // Instead of having the entire objects inside the users.
       final _currentUser = await _firestore.currentUser();
       if (_currentUser.items.any(
         (item) {

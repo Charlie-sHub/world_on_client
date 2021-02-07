@@ -9,7 +9,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
-import 'package:worldon/views/experience_management/widget/experience_management_form.dart';
+import 'package:worldon/views/experience_management/widgets/experience_management_form.dart';
 
 class ExperienceManagementPage extends StatelessWidget {
   final Option<Experience> experienceOption;

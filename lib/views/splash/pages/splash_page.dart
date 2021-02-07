@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
 import 'package:worldon/views/core/routes/router.gr.dart';
-import 'package:worldon/views/splash/widget/splash_progress_indicator.dart';
-import 'package:worldon/views/splash/widget/world_on_logo_big.dart';
+import 'package:worldon/views/splash/widgets/splash_progress_indicator.dart';
+import 'package:worldon/views/splash/widgets/world_on_logo_big.dart';
 
 class SplashPage extends StatelessWidget {
   @override

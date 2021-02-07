@@ -13,8 +13,7 @@ _$_UserDto _$_$_UserDtoFromJson(Map<String, dynamic> json) {
     username: json['username'] as String,
     password: json['password'] as String,
     email: json['email'] as String,
-    birthday: const ServerTimestampConverter()
-        .fromJson(json['birthday'] as Timestamp),
+    birthday: const ServerTimestampConverter().fromJson(json['birthday'] as Timestamp),
     description: json['description'] as String,
     imageURL: json['imageURL'] as String,
     level: json['level'] as int,
@@ -22,17 +21,11 @@ _$_UserDto _$_$_UserDtoFromJson(Map<String, dynamic> json) {
     privacy: json['privacy'] as bool,
     adminPowers: json['adminPowers'] as bool,
     enabled: json['enabled'] as bool,
-    lastLogin: const ServerTimestampConverter()
-        .fromJson(json['lastLogin'] as Timestamp),
-    creationDate: const ServerTimestampConverter()
-        .fromJson(json['creationDate'] as Timestamp),
-    modificationDate: const ServerTimestampConverter()
-        .fromJson(json['modificationDate'] as Timestamp),
-    options: json['options'] == null
-        ? null
-        : OptionsDto.fromJson(json['options'] as Map<String, dynamic>),
-    blockedUsersIds:
-        (json['blockedUsersIds'] as List)?.map((e) => e as String)?.toSet(),
+    lastLogin: const ServerTimestampConverter().fromJson(json['lastLogin'] as Timestamp),
+    creationDate: const ServerTimestampConverter().fromJson(json['creationDate'] as Timestamp),
+    modificationDate: const ServerTimestampConverter().fromJson(json['modificationDate'] as Timestamp),
+    options: json['options'] == null ? null : OptionsDto.fromJson(json['options'] as Map<String, dynamic>),
+    blockedUsersIds: (json['blockedUsersIds'] as List)?.map((e) => e as String)?.toSet(),
     followedUsersIds: (json['followedUsersIds'] as List)?.map((e) => e as String)?.toSet(),
     interestsIds: (json['interestsIds'] as List)?.map((e) => e as String)?.toSet(),
     achievementsIds: (json['achievementsIds'] as List)?.map((e) => e as String)?.toSet(),

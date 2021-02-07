@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:provider/provider.dart';
 import 'package:worldon/injection.dart';
-import 'package:worldon/views/core/widget/app_widget.dart';
+import 'package:worldon/views/core/widgets/app_widget.dart';
 
 import 'data/core/repository/development_core_repository.dart';
 

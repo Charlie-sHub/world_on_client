@@ -7,13 +7,13 @@ import 'package:worldon/application/navigation/navigation_actor/navigation_actor
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/routes/router.gr.dart';
-import 'package:worldon/views/core/widget/main_page/world_on_app_bar.dart';
-import 'package:worldon/views/core/widget/main_page/world_on_bottom_navigation_bar.dart';
-import 'package:worldon/views/core/widget/misc/select_creation_view/select_creation_view.dart';
-import 'package:worldon/views/experience_navigation/widget/experience_navigation_body.dart';
-import 'package:worldon/views/main_feed/widget/main_feed_body.dart';
-import 'package:worldon/views/notifications/widget/notifications_body.dart';
-import 'package:worldon/views/profile/widget/profile_body.dart';
+import 'package:worldon/views/core/widgets/main_page/world_on_app_bar.dart';
+import 'package:worldon/views/core/widgets/main_page/world_on_bottom_navigation_bar.dart';
+import 'package:worldon/views/core/widgets/misc/select_creation_view/select_creation_view.dart';
+import 'package:worldon/views/experience_navigation/widgets/experience_navigation_body.dart';
+import 'package:worldon/views/main_feed/widgets/main_feed_body.dart';
+import 'package:worldon/views/notifications/widgets/notifications_body.dart';
+import 'package:worldon/views/profile/widgets/profile_body.dart';
 import 'package:worldon/views/search/widget/search_body.dart';
 
 class MainPage extends StatelessWidget {

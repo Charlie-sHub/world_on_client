@@ -130,6 +130,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectBirthday": MessageLookupByLibrary.simpleMessage("Select your birthday"),
         "setExperienceDifficulty": MessageLookupByLibrary.simpleMessage("Set the initial difficulty"),
         "shareMessage": MessageLookupByLibrary.simpleMessage("with WORLD ON now in the Play Store"),
+        "store": MessageLookupByLibrary.simpleMessage("STORE"),
         "submitButton": MessageLookupByLibrary.simpleMessage("Submit"),
         "submitDifficultyRating": MessageLookupByLibrary.simpleMessage("Submit rating"),
         "submitRegister": MessageLookupByLibrary.simpleMessage("START NOW"),
