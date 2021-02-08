@@ -165,7 +165,7 @@ class _$_Item extends _Item {
       const DeepCollectionEquality().hash(code) ^
       const DeepCollectionEquality().hash(value) ^
       const DeepCollectionEquality().hash(imageURL);
-
+  
   @JsonKey(ignore: true)
   @override
   _$ItemCopyWith<_Item> get copyWith => __$ItemCopyWithImpl<_Item>(this, _$identity);

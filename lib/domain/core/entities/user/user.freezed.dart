@@ -203,9 +203,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
       password: password == freezed ? _value.password : password as Password,
       email: email == freezed ? _value.email : email as EmailAddress,
       birthday: birthday == freezed ? _value.birthday : birthday as PastDate,
-      description: description == freezed
-          ? _value.description
-          : description as EntityDescription,
+      description: description == freezed ? _value.description : description as EntityDescription,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
       imageFileOption: imageFileOption == freezed ? _value.imageFileOption : imageFileOption as Option<File>,
       level: level == freezed ? _value.level : level as UserLevel,
@@ -330,9 +328,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
       password: password == freezed ? _value.password : password as Password,
       email: email == freezed ? _value.email : email as EmailAddress,
       birthday: birthday == freezed ? _value.birthday : birthday as PastDate,
-      description: description == freezed
-          ? _value.description
-          : description as EntityDescription,
+      description: description == freezed ? _value.description : description as EntityDescription,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
       imageFileOption: imageFileOption == freezed ? _value.imageFileOption : imageFileOption as Option<File>,
       level: level == freezed ? _value.level : level as UserLevel,
@@ -506,18 +502,11 @@ class _$_User extends _User {
                 const DeepCollectionEquality()
                     .equals(other.birthday, birthday)) &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageURL, imageURL)) &&
-            (identical(other.imageFileOption, imageFileOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageFileOption, imageFileOption)) &&
-            (identical(other.level, level) ||
-                const DeepCollectionEquality().equals(other.level, level)) &&
-            (identical(other.experiencePoints, experiencePoints) ||
-                const DeepCollectionEquality().equals(other.experiencePoints, experiencePoints)) &&
+                const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
+            (identical(other.imageFileOption, imageFileOption) || const DeepCollectionEquality().equals(other.imageFileOption, imageFileOption)) &&
+            (identical(other.level, level) || const DeepCollectionEquality().equals(other.level, level)) &&
+            (identical(other.experiencePoints, experiencePoints) || const DeepCollectionEquality().equals(other.experiencePoints, experiencePoints)) &&
             (identical(other.privacy, privacy) || const DeepCollectionEquality().equals(other.privacy, privacy)) &&
             (identical(other.adminPowers, adminPowers) || const DeepCollectionEquality().equals(other.adminPowers, adminPowers)) &&
             (identical(other.enabled, enabled) || const DeepCollectionEquality().equals(other.enabled, enabled)) &&

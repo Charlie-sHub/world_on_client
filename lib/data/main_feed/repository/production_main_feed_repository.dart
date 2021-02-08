@@ -54,9 +54,7 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-        (error) => left(
-          onError(error),
-        ),
+        (error) => left(onError(error)),
       );
     } else {
       // Not sure about creating a stream out of nowhere, but it's the best solution for now

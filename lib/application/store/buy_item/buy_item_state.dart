@@ -1,6 +1,12 @@
 part of 'buy_item_bloc.dart';
 
-@immutable
-abstract class BuyItemState {}
+@freezed
+abstract class BuyItemState with _$BuyItemState {
+  const factory BuyItemState.initial() = _Initial;
 
-class BuyItemInitial extends BuyItemState {}
+  const factory BuyItemState.actionInProgress() = _ActionInProgress;
+
+  const factory BuyItemState.purchaseSuccess() = _PurchaseSuccess;
+
+  const factory BuyItemState.purchaseFailure(Failure<dynamic> failure) = _PurchaseFailure;
+}

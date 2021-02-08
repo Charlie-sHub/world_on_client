@@ -52,6 +52,13 @@ class _$FailureTearOff {
   }
 
 // ignore: unused_element
+  _StoreData<T> storeData<T>(StoreDataFailure<T> storeDataFailure) {
+    return _StoreData<T>(
+      storeDataFailure,
+    );
+  }
+
+// ignore: unused_element
   _Value<T> value<T>(ValueFailure<T> valueFailure) {
     return _Value<T>(
       valueFailure,
@@ -59,8 +66,7 @@ class _$FailureTearOff {
   }
 
 // ignore: unused_element
-  _ProfileDomain<T> profileDomain<T>(
-      ProfileDomainFailure<T> profileDomainFailure) {
+  _ProfileDomain<T> profileDomain<T>(ProfileDomainFailure<T> profileDomainFailure) {
     return _ProfileDomain<T>(
       profileDomainFailure,
     );
@@ -75,30 +81,23 @@ const $Failure = _$FailureTearOff();
 mixin _$Failure<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required
-        TResult authenticationDomain(
-            AuthenticationDomainFailure<T> authenticationDomainFailure),
-    @required
-        TResult authenticationData(
-            AuthenticationDataFailure<T> authenticationDataFailure),
+    @required TResult authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    @required TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     @required TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
-    @required
-        TResult coreApplication(
-            CoreApplicationFailure<T> coreApplicationFailure),
+    @required TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
     @required TResult coreData(CoreDataFailure<T> coreDataFailure),
+    @required TResult storeData(StoreDataFailure<T> storeDataFailure),
     @required TResult value(ValueFailure<T> valueFailure),
-    @required
-        TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
+    @required TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult authenticationDomain(
-        AuthenticationDomainFailure<T> authenticationDomainFailure),
-    TResult authenticationData(
-        AuthenticationDataFailure<T> authenticationDataFailure),
+    TResult authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
     TResult coreData(CoreDataFailure<T> coreDataFailure),
+    TResult storeData(StoreDataFailure<T> storeDataFailure),
     TResult value(ValueFailure<T> valueFailure),
     TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
     @required TResult orElse(),
@@ -110,6 +109,7 @@ mixin _$Failure<T> {
     @required TResult coreDomain(_CoreDomain<T> value),
     @required TResult coreApplication(_CoreAppllication<T> value),
     @required TResult coreData(_CoreData<T> value),
+    @required TResult storeData(_StoreData<T> value),
     @required TResult value(_Value<T> value),
     @required TResult profileDomain(_ProfileDomain<T> value),
   });
@@ -120,6 +120,7 @@ mixin _$Failure<T> {
     TResult coreDomain(_CoreDomain<T> value),
     TResult coreApplication(_CoreAppllication<T> value),
     TResult coreData(_CoreData<T> value),
+    TResult storeData(_StoreData<T> value),
     TResult value(_Value<T> value),
     TResult profileDomain(_ProfileDomain<T> value),
     @required TResult orElse(),
@@ -225,26 +226,21 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required
-        TResult authenticationDomain(
-            AuthenticationDomainFailure<T> authenticationDomainFailure),
-    @required
-        TResult authenticationData(
-            AuthenticationDataFailure<T> authenticationDataFailure),
+    @required TResult authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    @required TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     @required TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
-    @required
-        TResult coreApplication(
-            CoreApplicationFailure<T> coreApplicationFailure),
+    @required TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
     @required TResult coreData(CoreDataFailure<T> coreDataFailure),
+    @required TResult storeData(StoreDataFailure<T> storeDataFailure),
     @required TResult value(ValueFailure<T> valueFailure),
-    @required
-        TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
+    @required TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
     assert(coreDomain != null);
     assert(coreApplication != null);
     assert(coreData != null);
+    assert(storeData != null);
     assert(value != null);
     assert(profileDomain != null);
     return authenticationDomain(authenticationDomainFailure);
@@ -253,13 +249,12 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult authenticationDomain(
-        AuthenticationDomainFailure<T> authenticationDomainFailure),
-    TResult authenticationData(
-        AuthenticationDataFailure<T> authenticationDataFailure),
+    TResult authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
     TResult coreData(CoreDataFailure<T> coreDataFailure),
+    TResult storeData(StoreDataFailure<T> storeDataFailure),
     TResult value(ValueFailure<T> valueFailure),
     TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
     @required TResult orElse(),
@@ -279,6 +274,7 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
     @required TResult coreDomain(_CoreDomain<T> value),
     @required TResult coreApplication(_CoreAppllication<T> value),
     @required TResult coreData(_CoreData<T> value),
+    @required TResult storeData(_StoreData<T> value),
     @required TResult value(_Value<T> value),
     @required TResult profileDomain(_ProfileDomain<T> value),
   }) {
@@ -287,6 +283,7 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
     assert(coreDomain != null);
     assert(coreApplication != null);
     assert(coreData != null);
+    assert(storeData != null);
     assert(value != null);
     assert(profileDomain != null);
     return authenticationDomain(this);
@@ -300,6 +297,7 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
     TResult coreDomain(_CoreDomain<T> value),
     TResult coreApplication(_CoreAppllication<T> value),
     TResult coreData(_CoreData<T> value),
+    TResult storeData(_StoreData<T> value),
     TResult value(_Value<T> value),
     TResult profileDomain(_ProfileDomain<T> value),
     @required TResult orElse(),
@@ -404,26 +402,21 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required
-        TResult authenticationDomain(
-            AuthenticationDomainFailure<T> authenticationDomainFailure),
-    @required
-        TResult authenticationData(
-            AuthenticationDataFailure<T> authenticationDataFailure),
+    @required TResult authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    @required TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     @required TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
-    @required
-        TResult coreApplication(
-            CoreApplicationFailure<T> coreApplicationFailure),
+    @required TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
     @required TResult coreData(CoreDataFailure<T> coreDataFailure),
+    @required TResult storeData(StoreDataFailure<T> storeDataFailure),
     @required TResult value(ValueFailure<T> valueFailure),
-    @required
-        TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
+    @required TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
     assert(coreDomain != null);
     assert(coreApplication != null);
     assert(coreData != null);
+    assert(storeData != null);
     assert(value != null);
     assert(profileDomain != null);
     return authenticationData(authenticationDataFailure);
@@ -432,13 +425,12 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult authenticationDomain(
-        AuthenticationDomainFailure<T> authenticationDomainFailure),
-    TResult authenticationData(
-        AuthenticationDataFailure<T> authenticationDataFailure),
+    TResult authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
     TResult coreData(CoreDataFailure<T> coreDataFailure),
+    TResult storeData(StoreDataFailure<T> storeDataFailure),
     TResult value(ValueFailure<T> valueFailure),
     TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
     @required TResult orElse(),
@@ -458,6 +450,7 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
     @required TResult coreDomain(_CoreDomain<T> value),
     @required TResult coreApplication(_CoreAppllication<T> value),
     @required TResult coreData(_CoreData<T> value),
+    @required TResult storeData(_StoreData<T> value),
     @required TResult value(_Value<T> value),
     @required TResult profileDomain(_ProfileDomain<T> value),
   }) {
@@ -466,6 +459,7 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
     assert(coreDomain != null);
     assert(coreApplication != null);
     assert(coreData != null);
+    assert(storeData != null);
     assert(value != null);
     assert(profileDomain != null);
     return authenticationData(this);
@@ -479,6 +473,7 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
     TResult coreDomain(_CoreDomain<T> value),
     TResult coreApplication(_CoreAppllication<T> value),
     TResult coreData(_CoreData<T> value),
+    TResult storeData(_StoreData<T> value),
     TResult value(_Value<T> value),
     TResult profileDomain(_ProfileDomain<T> value),
     @required TResult orElse(),
@@ -579,26 +574,21 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required
-        TResult authenticationDomain(
-            AuthenticationDomainFailure<T> authenticationDomainFailure),
-    @required
-        TResult authenticationData(
-            AuthenticationDataFailure<T> authenticationDataFailure),
+    @required TResult authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    @required TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     @required TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
-    @required
-        TResult coreApplication(
-            CoreApplicationFailure<T> coreApplicationFailure),
+    @required TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
     @required TResult coreData(CoreDataFailure<T> coreDataFailure),
+    @required TResult storeData(StoreDataFailure<T> storeDataFailure),
     @required TResult value(ValueFailure<T> valueFailure),
-    @required
-        TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
+    @required TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
     assert(coreDomain != null);
     assert(coreApplication != null);
     assert(coreData != null);
+    assert(storeData != null);
     assert(value != null);
     assert(profileDomain != null);
     return coreDomain(coreDomainFailure);
@@ -607,13 +597,12 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult authenticationDomain(
-        AuthenticationDomainFailure<T> authenticationDomainFailure),
-    TResult authenticationData(
-        AuthenticationDataFailure<T> authenticationDataFailure),
+    TResult authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
     TResult coreData(CoreDataFailure<T> coreDataFailure),
+    TResult storeData(StoreDataFailure<T> storeDataFailure),
     TResult value(ValueFailure<T> valueFailure),
     TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
     @required TResult orElse(),
@@ -633,6 +622,7 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
     @required TResult coreDomain(_CoreDomain<T> value),
     @required TResult coreApplication(_CoreAppllication<T> value),
     @required TResult coreData(_CoreData<T> value),
+    @required TResult storeData(_StoreData<T> value),
     @required TResult value(_Value<T> value),
     @required TResult profileDomain(_ProfileDomain<T> value),
   }) {
@@ -641,6 +631,7 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
     assert(coreDomain != null);
     assert(coreApplication != null);
     assert(coreData != null);
+    assert(storeData != null);
     assert(value != null);
     assert(profileDomain != null);
     return coreDomain(this);
@@ -654,6 +645,7 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
     TResult coreDomain(_CoreDomain<T> value),
     TResult coreApplication(_CoreAppllication<T> value),
     TResult coreData(_CoreData<T> value),
+    TResult storeData(_StoreData<T> value),
     TResult value(_Value<T> value),
     TResult profileDomain(_ProfileDomain<T> value),
     @required TResult orElse(),
@@ -755,26 +747,21 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required
-        TResult authenticationDomain(
-            AuthenticationDomainFailure<T> authenticationDomainFailure),
-    @required
-        TResult authenticationData(
-            AuthenticationDataFailure<T> authenticationDataFailure),
+    @required TResult authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    @required TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     @required TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
-    @required
-        TResult coreApplication(
-            CoreApplicationFailure<T> coreApplicationFailure),
+    @required TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
     @required TResult coreData(CoreDataFailure<T> coreDataFailure),
+    @required TResult storeData(StoreDataFailure<T> storeDataFailure),
     @required TResult value(ValueFailure<T> valueFailure),
-    @required
-        TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
+    @required TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
     assert(coreDomain != null);
     assert(coreApplication != null);
     assert(coreData != null);
+    assert(storeData != null);
     assert(value != null);
     assert(profileDomain != null);
     return coreApplication(coreApplicationFailure);
@@ -783,13 +770,12 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult authenticationDomain(
-        AuthenticationDomainFailure<T> authenticationDomainFailure),
-    TResult authenticationData(
-        AuthenticationDataFailure<T> authenticationDataFailure),
+    TResult authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
     TResult coreData(CoreDataFailure<T> coreDataFailure),
+    TResult storeData(StoreDataFailure<T> storeDataFailure),
     TResult value(ValueFailure<T> valueFailure),
     TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
     @required TResult orElse(),
@@ -809,6 +795,7 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
     @required TResult coreDomain(_CoreDomain<T> value),
     @required TResult coreApplication(_CoreAppllication<T> value),
     @required TResult coreData(_CoreData<T> value),
+    @required TResult storeData(_StoreData<T> value),
     @required TResult value(_Value<T> value),
     @required TResult profileDomain(_ProfileDomain<T> value),
   }) {
@@ -817,6 +804,7 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
     assert(coreDomain != null);
     assert(coreApplication != null);
     assert(coreData != null);
+    assert(storeData != null);
     assert(value != null);
     assert(profileDomain != null);
     return coreApplication(this);
@@ -830,6 +818,7 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
     TResult coreDomain(_CoreDomain<T> value),
     TResult coreApplication(_CoreAppllication<T> value),
     TResult coreData(_CoreData<T> value),
+    TResult storeData(_StoreData<T> value),
     TResult value(_Value<T> value),
     TResult profileDomain(_ProfileDomain<T> value),
     @required TResult orElse(),
@@ -928,26 +917,21 @@ class _$_CoreData<T> implements _CoreData<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required
-        TResult authenticationDomain(
-            AuthenticationDomainFailure<T> authenticationDomainFailure),
-    @required
-        TResult authenticationData(
-            AuthenticationDataFailure<T> authenticationDataFailure),
+    @required TResult authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    @required TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     @required TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
-    @required
-        TResult coreApplication(
-            CoreApplicationFailure<T> coreApplicationFailure),
+    @required TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
     @required TResult coreData(CoreDataFailure<T> coreDataFailure),
+    @required TResult storeData(StoreDataFailure<T> storeDataFailure),
     @required TResult value(ValueFailure<T> valueFailure),
-    @required
-        TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
+    @required TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
     assert(coreDomain != null);
     assert(coreApplication != null);
     assert(coreData != null);
+    assert(storeData != null);
     assert(value != null);
     assert(profileDomain != null);
     return coreData(coreDataFailure);
@@ -956,13 +940,12 @@ class _$_CoreData<T> implements _CoreData<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult authenticationDomain(
-        AuthenticationDomainFailure<T> authenticationDomainFailure),
-    TResult authenticationData(
-        AuthenticationDataFailure<T> authenticationDataFailure),
+    TResult authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
     TResult coreData(CoreDataFailure<T> coreDataFailure),
+    TResult storeData(StoreDataFailure<T> storeDataFailure),
     TResult value(ValueFailure<T> valueFailure),
     TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
     @required TResult orElse(),
@@ -982,6 +965,7 @@ class _$_CoreData<T> implements _CoreData<T> {
     @required TResult coreDomain(_CoreDomain<T> value),
     @required TResult coreApplication(_CoreAppllication<T> value),
     @required TResult coreData(_CoreData<T> value),
+    @required TResult storeData(_StoreData<T> value),
     @required TResult value(_Value<T> value),
     @required TResult profileDomain(_ProfileDomain<T> value),
   }) {
@@ -990,6 +974,7 @@ class _$_CoreData<T> implements _CoreData<T> {
     assert(coreDomain != null);
     assert(coreApplication != null);
     assert(coreData != null);
+    assert(storeData != null);
     assert(value != null);
     assert(profileDomain != null);
     return coreData(this);
@@ -1003,6 +988,7 @@ class _$_CoreData<T> implements _CoreData<T> {
     TResult coreDomain(_CoreDomain<T> value),
     TResult coreApplication(_CoreAppllication<T> value),
     TResult coreData(_CoreData<T> value),
+    TResult storeData(_StoreData<T> value),
     TResult value(_Value<T> value),
     TResult profileDomain(_ProfileDomain<T> value),
     @required TResult orElse(),
@@ -1019,14 +1005,172 @@ abstract class _CoreData<T> implements Failure<T> {
   const factory _CoreData(CoreDataFailure<T> coreDataFailure) = _$_CoreData<T>;
 
   CoreDataFailure<T> get coreDataFailure;
+
   @JsonKey(ignore: true)
   _$CoreDataCopyWith<T, _CoreData<T>> get copyWith;
 }
 
 /// @nodoc
+abstract class _$StoreDataCopyWith<T, $Res> {
+  factory _$StoreDataCopyWith(_StoreData<T> value, $Res Function(_StoreData<T>) then) = __$StoreDataCopyWithImpl<T, $Res>;
+
+  $Res call({StoreDataFailure<T> storeDataFailure});
+
+  $StoreDataFailureCopyWith<T, $Res> get storeDataFailure;
+}
+
+/// @nodoc
+class __$StoreDataCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res> implements _$StoreDataCopyWith<T, $Res> {
+  __$StoreDataCopyWithImpl(_StoreData<T> _value, $Res Function(_StoreData<T>) _then) : super(_value, (v) => _then(v as _StoreData<T>));
+
+  @override
+  _StoreData<T> get _value => super._value as _StoreData<T>;
+
+  @override
+  $Res call({
+    Object storeDataFailure = freezed,
+  }) {
+    return _then(_StoreData<T>(
+      storeDataFailure == freezed ? _value.storeDataFailure : storeDataFailure as StoreDataFailure<T>,
+    ));
+  }
+
+  @override
+  $StoreDataFailureCopyWith<T, $Res> get storeDataFailure {
+    if (_value.storeDataFailure == null) {
+      return null;
+    }
+    return $StoreDataFailureCopyWith<T, $Res>(_value.storeDataFailure, (value) {
+      return _then(_value.copyWith(storeDataFailure: value));
+    });
+  }
+}
+
+/// @nodoc
+class _$_StoreData<T> implements _StoreData<T> {
+  const _$_StoreData(this.storeDataFailure) : assert(storeDataFailure != null);
+
+  @override
+  final StoreDataFailure<T> storeDataFailure;
+
+  @override
+  String toString() {
+    return 'Failure<$T>.storeData(storeDataFailure: $storeDataFailure)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _StoreData<T> && (identical(other.storeDataFailure, storeDataFailure) || const DeepCollectionEquality().equals(other.storeDataFailure, storeDataFailure)));
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(storeDataFailure);
+
+  @JsonKey(ignore: true)
+  @override
+  _$StoreDataCopyWith<T, _StoreData<T>> get copyWith => __$StoreDataCopyWithImpl<T, _StoreData<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    @required TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
+    @required TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
+    @required TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    @required TResult coreData(CoreDataFailure<T> coreDataFailure),
+    @required TResult storeData(StoreDataFailure<T> storeDataFailure),
+    @required TResult value(ValueFailure<T> valueFailure),
+    @required TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
+  }) {
+    assert(authenticationDomain != null);
+    assert(authenticationData != null);
+    assert(coreDomain != null);
+    assert(coreApplication != null);
+    assert(coreData != null);
+    assert(storeData != null);
+    assert(value != null);
+    assert(profileDomain != null);
+    return storeData(storeDataFailure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
+    TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
+    TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    TResult coreData(CoreDataFailure<T> coreDataFailure),
+    TResult storeData(StoreDataFailure<T> storeDataFailure),
+    TResult value(ValueFailure<T> valueFailure),
+    TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (storeData != null) {
+      return storeData(storeDataFailure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult authenticationDomain(_AuthenticationDomain<T> value),
+    @required TResult authenticationData(_AuthenticationData<T> value),
+    @required TResult coreDomain(_CoreDomain<T> value),
+    @required TResult coreApplication(_CoreAppllication<T> value),
+    @required TResult coreData(_CoreData<T> value),
+    @required TResult storeData(_StoreData<T> value),
+    @required TResult value(_Value<T> value),
+    @required TResult profileDomain(_ProfileDomain<T> value),
+  }) {
+    assert(authenticationDomain != null);
+    assert(authenticationData != null);
+    assert(coreDomain != null);
+    assert(coreApplication != null);
+    assert(coreData != null);
+    assert(storeData != null);
+    assert(value != null);
+    assert(profileDomain != null);
+    return storeData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult authenticationDomain(_AuthenticationDomain<T> value),
+    TResult authenticationData(_AuthenticationData<T> value),
+    TResult coreDomain(_CoreDomain<T> value),
+    TResult coreApplication(_CoreAppllication<T> value),
+    TResult coreData(_CoreData<T> value),
+    TResult storeData(_StoreData<T> value),
+    TResult value(_Value<T> value),
+    TResult profileDomain(_ProfileDomain<T> value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (storeData != null) {
+      return storeData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _StoreData<T> implements Failure<T> {
+  const factory _StoreData(StoreDataFailure<T> storeDataFailure) = _$_StoreData<T>;
+
+  StoreDataFailure<T> get storeDataFailure;
+
+  @JsonKey(ignore: true)
+  _$StoreDataCopyWith<T, _StoreData<T>> get copyWith;
+}
+
+/// @nodoc
 abstract class _$ValueCopyWith<T, $Res> {
-  factory _$ValueCopyWith(_Value<T> value, $Res Function(_Value<T>) then) =
-      __$ValueCopyWithImpl<T, $Res>;
+  factory _$ValueCopyWith(_Value<T> value, $Res Function(_Value<T>) then) = __$ValueCopyWithImpl<T, $Res>;
+
   $Res call({ValueFailure<T> valueFailure});
 
   $ValueFailureCopyWith<T, $Res> get valueFailure;
@@ -1096,26 +1240,21 @@ class _$_Value<T> implements _Value<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required
-        TResult authenticationDomain(
-            AuthenticationDomainFailure<T> authenticationDomainFailure),
-    @required
-        TResult authenticationData(
-            AuthenticationDataFailure<T> authenticationDataFailure),
+    @required TResult authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    @required TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     @required TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
-    @required
-        TResult coreApplication(
-            CoreApplicationFailure<T> coreApplicationFailure),
+    @required TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
     @required TResult coreData(CoreDataFailure<T> coreDataFailure),
+    @required TResult storeData(StoreDataFailure<T> storeDataFailure),
     @required TResult value(ValueFailure<T> valueFailure),
-    @required
-        TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
+    @required TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
     assert(coreDomain != null);
     assert(coreApplication != null);
     assert(coreData != null);
+    assert(storeData != null);
     assert(value != null);
     assert(profileDomain != null);
     return value(valueFailure);
@@ -1124,13 +1263,12 @@ class _$_Value<T> implements _Value<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult authenticationDomain(
-        AuthenticationDomainFailure<T> authenticationDomainFailure),
-    TResult authenticationData(
-        AuthenticationDataFailure<T> authenticationDataFailure),
+    TResult authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
     TResult coreData(CoreDataFailure<T> coreDataFailure),
+    TResult storeData(StoreDataFailure<T> storeDataFailure),
     TResult value(ValueFailure<T> valueFailure),
     TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
     @required TResult orElse(),
@@ -1150,6 +1288,7 @@ class _$_Value<T> implements _Value<T> {
     @required TResult coreDomain(_CoreDomain<T> value),
     @required TResult coreApplication(_CoreAppllication<T> value),
     @required TResult coreData(_CoreData<T> value),
+    @required TResult storeData(_StoreData<T> value),
     @required TResult value(_Value<T> value),
     @required TResult profileDomain(_ProfileDomain<T> value),
   }) {
@@ -1158,6 +1297,7 @@ class _$_Value<T> implements _Value<T> {
     assert(coreDomain != null);
     assert(coreApplication != null);
     assert(coreData != null);
+    assert(storeData != null);
     assert(value != null);
     assert(profileDomain != null);
     return value(this);
@@ -1171,6 +1311,7 @@ class _$_Value<T> implements _Value<T> {
     TResult coreDomain(_CoreDomain<T> value),
     TResult coreApplication(_CoreAppllication<T> value),
     TResult coreData(_CoreData<T> value),
+    TResult storeData(_StoreData<T> value),
     TResult value(_Value<T> value),
     TResult profileDomain(_ProfileDomain<T> value),
     @required TResult orElse(),
@@ -1270,26 +1411,21 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required
-        TResult authenticationDomain(
-            AuthenticationDomainFailure<T> authenticationDomainFailure),
-    @required
-        TResult authenticationData(
-            AuthenticationDataFailure<T> authenticationDataFailure),
+    @required TResult authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    @required TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     @required TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
-    @required
-        TResult coreApplication(
-            CoreApplicationFailure<T> coreApplicationFailure),
+    @required TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
     @required TResult coreData(CoreDataFailure<T> coreDataFailure),
+    @required TResult storeData(StoreDataFailure<T> storeDataFailure),
     @required TResult value(ValueFailure<T> valueFailure),
-    @required
-        TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
+    @required TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
   }) {
     assert(authenticationDomain != null);
     assert(authenticationData != null);
     assert(coreDomain != null);
     assert(coreApplication != null);
     assert(coreData != null);
+    assert(storeData != null);
     assert(value != null);
     assert(profileDomain != null);
     return profileDomain(profileDomainFailure);
@@ -1298,13 +1434,12 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult authenticationDomain(
-        AuthenticationDomainFailure<T> authenticationDomainFailure),
-    TResult authenticationData(
-        AuthenticationDataFailure<T> authenticationDataFailure),
+    TResult authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
     TResult coreData(CoreDataFailure<T> coreDataFailure),
+    TResult storeData(StoreDataFailure<T> storeDataFailure),
     TResult value(ValueFailure<T> valueFailure),
     TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
     @required TResult orElse(),
@@ -1324,6 +1459,7 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
     @required TResult coreDomain(_CoreDomain<T> value),
     @required TResult coreApplication(_CoreAppllication<T> value),
     @required TResult coreData(_CoreData<T> value),
+    @required TResult storeData(_StoreData<T> value),
     @required TResult value(_Value<T> value),
     @required TResult profileDomain(_ProfileDomain<T> value),
   }) {
@@ -1332,6 +1468,7 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
     assert(coreDomain != null);
     assert(coreApplication != null);
     assert(coreData != null);
+    assert(storeData != null);
     assert(value != null);
     assert(profileDomain != null);
     return profileDomain(this);
@@ -1345,6 +1482,7 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
     TResult coreDomain(_CoreDomain<T> value),
     TResult coreApplication(_CoreAppllication<T> value),
     TResult coreData(_CoreData<T> value),
+    TResult storeData(_StoreData<T> value),
     TResult value(_Value<T> value),
     TResult profileDomain(_ProfileDomain<T> value),
     @required TResult orElse(),

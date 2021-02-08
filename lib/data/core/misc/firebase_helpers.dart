@@ -22,6 +22,9 @@ extension FirestoreX on FirebaseFirestore {
     return _user;
   }
 
+// Not a fan of all these hardcoded strings
+  Future<DocumentSnapshot> getCoinProductIds() => collection("coins").doc("coins").get();
+
   CollectionReference get userCollection => collection("users");
 
   CollectionReference get tagCollection => collection("tags");

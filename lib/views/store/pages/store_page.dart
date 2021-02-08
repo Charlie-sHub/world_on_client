@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:worldon/generated/l10n.dart';
 
 class StorePage extends StatelessWidget {
-  // TODO: Get user like the profile does
   @override
   Widget build(BuildContext context) {
     return Scaffold(

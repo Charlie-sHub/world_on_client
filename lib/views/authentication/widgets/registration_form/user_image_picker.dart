@@ -42,7 +42,10 @@ class UserImagePicker extends StatelessWidget {
   }
 
   Future _pickImage(BuildContext context) async {
-    final imagePicked = await ImagePicker().getImage(source: ImageSource.gallery);
+    final imagePicked = await ImagePicker().getImage(
+      source: ImageSource.gallery,
+      imageQuality: 20,
+    );
     final imageFile = File(imagePicked.path);
     context.bloc<RegistrationFormBloc>().add(RegistrationFormEvent.imageChanged(imageFile));
   }

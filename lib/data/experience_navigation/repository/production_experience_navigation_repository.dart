@@ -38,8 +38,8 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
         },
       );
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onError(e);
+    } on FirebaseException catch (exception) {
+      return onError(exception);
     }
   }
 
@@ -59,8 +59,8 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
         },
       );
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onError(e);
+    } on FirebaseException catch (exception) {
+      return onError(exception);
     }
   }
 
@@ -80,8 +80,8 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
         },
       );
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onError(e);
+    } on FirebaseException catch (exception) {
+      return onError(exception);
     }
   }
 
@@ -103,8 +103,8 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       );
        */
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onError(e);
+    } on FirebaseException catch (exception) {
+      return onError(exception);
     }
   }
 
@@ -137,8 +137,8 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
         await _updateLevelExperiencePoints(_userDocument, experiencePoints, _userLevel);
       }
       return right(unit);
-    } on FirebaseException catch (e) {
-      return onError(e);
+    } on FirebaseException catch (exception) {
+      return onError(exception);
     }
   }
 
@@ -157,8 +157,8 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
     throw UnimplementedError();
   }
 
-  Either<Failure, Unit> onError(FirebaseException e) {
-    _logger.e("FirebaseException: ${e.message}");
+  Either<Failure, Unit> onError(FirebaseException exception) {
+    _logger.e("FirebaseException: ${exception.message}");
     return left(
       const Failure.coreData(
         CoreDataFailure.serverError(errorString: "Unknown server error"),

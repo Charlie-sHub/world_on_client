@@ -146,119 +146,81 @@ class __$ItemCopyWithImpl<$Res> extends _$ItemDtoCopyWithImpl<$Res>
 @JsonSerializable()
 
 /// @nodoc class _$_Item extends _Item {
-const _$_Item({@required this.id,
-@required this.name,
-@required this.description,
-@required this.code,
-@required this.value,
-@required this.imageURL})
-:
-assert
-(
-id != null
-)
-,
-assert
-(
-name != null
-)
-,
-assert
-(
-description != null
-)
-,
-assert
-(
-code != null
-)
-,
-assert
-(
-value != null
-)
-,
-assert
-(
-imageURL != null
-)
-,
-super
-.
-
-_();
-
-factory
-_$_Item.fromJson(
-
-Map<String, dynamic> json
-)
-=>
-
-_$_$_ItemFromJson(json);
-
-@override
-final String id;
-@override
-final String name;
-@override
-final String description;
-@override
-final ItemCode code;
-@override
-final int value;
-@override
-final String imageURL;
-
-@override
-String toString() {
-  return 'ItemDto(id: $id, name: $name, description: $description, code: $code, value: $value, imageURL: $imageURL)';
+  const _$_Item({@required this.id,
+    @required this.name,
+    @required this.description,
+    @required this.code,
+    @required this.value,
+    @required this.imageURL})
+    : assert(id != null),
+      assert(name != null),
+      assert(description != null),
+      assert(code != null),
+      assert(value != null),
+      assert(imageURL != null),
+      super._();
+  
+  factory _$_Item.fromJson(Map<String, dynamic> json) =>
+    _$_$_ItemFromJson(json);
+  
+  @override
+  final String id;
+  @override
+  final String name;
+  @override
+  final String description;
+  @override
+  final ItemCode code;
+  @override
+  final int value;
+  @override
+  final String imageURL;
+  
+  @override
+  String toString() {
+    return 'ItemDto(id: $id, name: $name, description: $description, code: $code, value: $value, imageURL: $imageURL)';
+  }
+  
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+      (other is _Item &&
+        (identical(other.id, id) ||
+          const DeepCollectionEquality().equals(other.id, id)) &&
+        (identical(other.name, name) ||
+          const DeepCollectionEquality().equals(other.name, name)) &&
+        (identical(other.description, description) ||
+          const DeepCollectionEquality()
+            .equals(other.description, description)) &&
+        (identical(other.code, code) ||
+          const DeepCollectionEquality().equals(other.code, code)) &&
+        (identical(other.value, value) ||
+          const DeepCollectionEquality().equals(other.value, value)) &&
+        (identical(other.imageURL, imageURL) ||
+          const DeepCollectionEquality()
+            .equals(other.imageURL, imageURL)));
+  }
+  
+  @override
+  int get hashCode =>
+    runtimeType.hashCode ^
+    const DeepCollectionEquality().hash(id) ^
+    const DeepCollectionEquality().hash(name) ^
+    const DeepCollectionEquality().hash(description) ^
+    const DeepCollectionEquality().hash(code) ^
+    const DeepCollectionEquality().hash(value) ^
+    const DeepCollectionEquality().hash(imageURL);
+  
+  @JsonKey(ignore: true)
+  @override
+  _$ItemCopyWith<_Item> get copyWith =>
+    __$ItemCopyWithImpl<_Item>(this, _$identity);
+  
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ItemToJson(this);
+  }
 }
-
-@override
-bool operator
-==
-(
-
-dynamic other
-) {
-return identical(this, other) ||
-(other is _Item &&
-(identical(other.id, id) ||
-const DeepCollectionEquality().equals(other.id, id)) &&
-(identical(other.name, name) ||
-const DeepCollectionEquality().equals(other.name, name)) &&
-(identical(other.description, description) ||
-const DeepCollectionEquality()
-  .equals(other.description, description)) &&
-(identical(other.code, code) ||
-const DeepCollectionEquality().equals(other.code, code)) &&
-(identical(other.value, value) ||
-const DeepCollectionEquality().equals(other.value, value)) &&
-(identical(other.imageURL, imageURL) ||
-const DeepCollectionEquality()
-  .equals(other.imageURL, imageURL)));
-}
-
-@override
-int get hashCode =>
-  runtimeType.hashCode ^
-  const DeepCollectionEquality().hash(id) ^
-  const DeepCollectionEquality().hash(name) ^
-  const DeepCollectionEquality().hash(description) ^
-  const DeepCollectionEquality().hash(code) ^
-  const DeepCollectionEquality().hash(value) ^
-  const DeepCollectionEquality().hash(imageURL);
-
-@JsonKey(ignore: true)
-@override
-_$ItemCopyWith<_Item> get copyWith =>
-  __$ItemCopyWithImpl<_Item>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$_$_ItemToJson(this);
-}}
 
 abstract class _Item extends ItemDto {
   const _Item._() : super._();

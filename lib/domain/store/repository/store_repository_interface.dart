@@ -15,5 +15,5 @@ abstract class StoreRepositoryInterface {
   Future<Either<Failure, Unit>> buyItem(Item item);
 
   /// Processes the purchase of a given amount of coins
-  Future<Either<Failure, Unit>> buyCoins(int amount);
+  Future<Either<Failure, Unit>> buyCoin();
 }

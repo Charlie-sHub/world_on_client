@@ -512,17 +512,10 @@ class _$_UserDto extends _UserDto {
             (identical(other.birthday, birthday) ||
                 const DeepCollectionEquality()
                     .equals(other.birthday, birthday)) &&
-            (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.imageURL, imageURL) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageURL, imageURL)) &&
-            (identical(other.level, level) ||
-                const DeepCollectionEquality().equals(other.level, level)) &&
-            (identical(other.experiencePoints, experiencePoints) ||
-                const DeepCollectionEquality()
-                    .equals(other.experiencePoints, experiencePoints)) &&
+            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
+            (identical(other.level, level) || const DeepCollectionEquality().equals(other.level, level)) &&
+            (identical(other.experiencePoints, experiencePoints) || const DeepCollectionEquality().equals(other.experiencePoints, experiencePoints)) &&
             (identical(other.privacy, privacy) || const DeepCollectionEquality().equals(other.privacy, privacy)) &&
             (identical(other.adminPowers, adminPowers) || const DeepCollectionEquality().equals(other.adminPowers, adminPowers)) &&
             (identical(other.enabled, enabled) || const DeepCollectionEquality().equals(other.enabled, enabled)) &&

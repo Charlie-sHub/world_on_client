@@ -135,7 +135,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           )
           .get();
       final _experiencesToUpdateDocuments = _experiencesToUpdateQuerySnapshot.docs.map(
-          (_queryDocumentSnapshot) async => _queryDocumentSnapshot.reference.get(),
+        (_queryDocumentSnapshot) async => _queryDocumentSnapshot.reference.get(),
       );
       for (final _experienceDoc in _experiencesToUpdateDocuments) {
         final _oldExperience = ExperienceDto.fromFirestore(await _experienceDoc).toDomain();
@@ -250,7 +250,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         },
       ).onErrorReturnWith(
         (error) => left(
-          onError(error),
+          _onError(error),
         ),
       );
     } else {
@@ -300,7 +300,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         },
       ).onErrorReturnWith(
         (error) => left(
-          onError(error),
+          _onError(error),
         ),
       );
     } else {
@@ -346,9 +346,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         }
       },
     ).onErrorReturnWith(
-      (error) => left(
-        onError(error),
-      ),
+        (error) => left(_onError(error)),
     );
   }
 
@@ -385,7 +383,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
       },
     ).onErrorReturnWith(
       (error) => left(
-        onError(error),
+        _onError(error),
       ),
     );
   }
@@ -426,7 +424,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         },
       ).onErrorReturnWith(
         (error) => left(
-          onError(error),
+          _onError(error),
         ),
       );
     } else {
@@ -476,7 +474,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         },
       ).onErrorReturnWith(
         (error) => left(
-          onError(error),
+          _onError(error),
         ),
       );
     } else {
@@ -526,7 +524,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         },
       ).onErrorReturnWith(
         (error) => left(
-          onError(error),
+          _onError(error),
         ),
       );
     } else {
@@ -576,7 +574,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         },
       ).onErrorReturnWith(
         (error) => left(
-          onError(error),
+          _onError(error),
         ),
       );
     } else {
@@ -619,7 +617,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     }
   }
 
-  Failure onError(dynamic error) {
+  Failure _onError(dynamic error) {
     if (error is FirebaseException) {
       // TODO: Refactor and "unify" with onFirebaseException method
       _logger.e("FirebaseException: ${error.message}");

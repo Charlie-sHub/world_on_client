@@ -8,7 +8,7 @@ import 'package:worldon/domain/store/repository/store_repository_interface.dart'
 @LazySingleton(as: StoreRepositoryInterface, env: [Environment.dev])
 class DevelopmentStoreRepository implements StoreRepositoryInterface {
   @override
-  Future<Either<Failure, Unit>> buyCoins(int amount) {
+  Future<Either<Failure, Unit>> buyCoin() {
     // TODO: implement buyCoins
     throw UnimplementedError();
   }
