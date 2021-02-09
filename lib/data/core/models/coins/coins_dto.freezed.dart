@@ -36,9 +36,8 @@ const $CoinsDto = _$CoinsDtoTearOff();
 /// @nodoc
 mixin _$CoinsDto {
   String get tenCoinsProductId;
-  
+
   Map<String, dynamic> toJson();
-  
   @JsonKey(ignore: true)
   $CoinsDtoCopyWith<CoinsDto> get copyWith;
 }
@@ -47,7 +46,6 @@ mixin _$CoinsDto {
 abstract class $CoinsDtoCopyWith<$Res> {
   factory $CoinsDtoCopyWith(CoinsDto value, $Res Function(CoinsDto) then) =
   _$CoinsDtoCopyWithImpl<$Res>;
-  
   $Res call({String tenCoinsProductId});
 }
 
@@ -75,7 +73,6 @@ class _$CoinsDtoCopyWithImpl<$Res> implements $CoinsDtoCopyWith<$Res> {
 abstract class _$CoinsDtoCopyWith<$Res> implements $CoinsDtoCopyWith<$Res> {
   factory _$CoinsDtoCopyWith(_CoinsDto value, $Res Function(_CoinsDto) then) =
   __$CoinsDtoCopyWithImpl<$Res>;
-  
   @override
   $Res call({String tenCoinsProductId});
 }
@@ -146,14 +143,12 @@ class __$CoinsDtoCopyWithImpl<$Res> extends _$CoinsDtoCopyWithImpl<$Res>
 
 abstract class _CoinsDto extends CoinsDto {
   const _CoinsDto._() : super._();
-  
   const factory _CoinsDto({@required String tenCoinsProductId}) = _$_CoinsDto;
-  
+
   factory _CoinsDto.fromJson(Map<String, dynamic> json) = _$_CoinsDto.fromJson;
-  
+
   @override
   String get tenCoinsProductId;
-  
   @override
   @JsonKey(ignore: true)
   _$CoinsDtoCopyWith<_CoinsDto> get copyWith;

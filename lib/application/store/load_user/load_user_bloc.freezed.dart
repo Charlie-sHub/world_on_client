@@ -29,18 +29,15 @@ mixin _$LoadUserEvent {
   TResult when<TResult extends Object>({
     @required TResult loadedUser(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult loadedUser(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult loadedUser(_LoadedUser value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult loadedUser(_LoadedUser value),
@@ -184,7 +181,6 @@ mixin _$LoadUserState {
     @required TResult loadSuccess(User user),
     @required TResult loadFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -193,7 +189,6 @@ mixin _$LoadUserState {
     TResult loadFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -201,7 +196,6 @@ mixin _$LoadUserState {
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_LoadFailure value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
@@ -548,7 +542,6 @@ abstract class _LoadSuccess implements LoadUserState {
   const factory _LoadSuccess(User user) = _$_LoadSuccess;
 
   User get user;
-
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
@@ -680,7 +673,6 @@ abstract class _LoadFailure implements LoadUserState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
   Failure<dynamic> get failure;
-
   @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith;
 }

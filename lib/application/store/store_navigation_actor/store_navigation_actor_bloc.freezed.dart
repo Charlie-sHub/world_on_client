@@ -35,20 +35,17 @@ mixin _$StoreNavigationActorEvent {
     @required TResult storeTapped(),
     @required TResult myItemsTapped(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult storeTapped(),
     TResult myItemsTapped(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult storeTapped(_StoreTapped value),
     @required TResult myItemsTapped(_MyItemsTapped value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult storeTapped(_StoreTapped value),
@@ -268,20 +265,17 @@ mixin _$StoreNavigationActorState {
     @required TResult storeView(),
     @required TResult myItemsView(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult storeView(),
     TResult myItemsView(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult storeView(_StoreView value),
     @required TResult myItemsView(_MyItemsView value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult storeView(_StoreView value),

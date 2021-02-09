@@ -505,7 +505,6 @@ abstract class _$FinishSuccessCopyWith<$Res> {
   factory _$FinishSuccessCopyWith(
           _FinishSuccess value, $Res Function(_FinishSuccess) then) =
       __$FinishSuccessCopyWithImpl<$Res>;
-
   $Res call({int amountXP});
 }
 
@@ -619,7 +618,6 @@ abstract class _FinishSuccess implements ExperienceFinishActorState {
   const factory _FinishSuccess(int amountXP) = _$_FinishSuccess;
 
   int get amountXP;
-
   @JsonKey(ignore: true)
   _$FinishSuccessCopyWith<_FinishSuccess> get copyWith;
 }

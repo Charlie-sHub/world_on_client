@@ -58,13 +58,14 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
   @override
   Future<Either<Failure, Unit>> buyItem(Item item) async {
     try {
+      final _boughtItem = item.copyWith(boughtDate: DateTime.now());
       final _user = await _firestore.currentUser();
-      if (_user.coins >= item.value) {
+      if (_user.coins >= _boughtItem.value) {
         final _jsonUser = UserDto.fromDomain(
           _user.copyWith(
-            coins: _user.coins - item.value,
+            coins: _user.coins - _boughtItem.value,
             // Doing this is pretty dumb, transforming to KtSet to then Set again
-            items: _user.items.toImmutableSet().plusElement(item).asSet(),
+            items: _user.items.toImmutableSet().plusElement(_boughtItem).asSet(),
           ),
         ).toJson();
         await _firestore.userCollection.doc(_user.id.getOrCrash()).update(_jsonUser);

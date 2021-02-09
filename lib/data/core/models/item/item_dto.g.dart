@@ -13,17 +13,22 @@ _$_Item _$_$_ItemFromJson(Map<String, dynamic> json) {
     description: json['description'] as String,
     code: _$enumDecodeNullable(_$ItemCodeEnumMap, json['code']),
     value: json['value'] as int,
+    timeLimitInDays: json['timeLimitInDays'] as int,
     imageURL: json['imageURL'] as String,
+    boughtDate: const ServerTimestampConverter().fromJson(json['boughtDate'] as Timestamp),
   );
 }
 
-Map<String, dynamic> _$_$_ItemToJson(_$_Item instance) => <String, dynamic>{
+Map<String, dynamic> _$_$_ItemToJson(_$_Item instance) =>
+  <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'description': instance.description,
       'code': _$ItemCodeEnumMap[instance.code],
       'value': instance.value,
+      'timeLimitInDays': instance.timeLimitInDays,
       'imageURL': instance.imageURL,
+      'boughtDate': const ServerTimestampConverter().toJson(instance.boughtDate),
     };
 
 T _$enumDecode<T>(

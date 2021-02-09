@@ -497,10 +497,8 @@ class _$_UserDto extends _UserDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _UserDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.username, username) || const DeepCollectionEquality().equals(other.username, username)) &&
             (identical(other.password, password) || const DeepCollectionEquality().equals(other.password, password)) &&
             (identical(other.email, email) || const DeepCollectionEquality().equals(other.email, email)) &&

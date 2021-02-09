@@ -18,19 +18,21 @@ abstract class Item implements _$Item {
     @required Name name,
     @required EntityDescription description,
     @required ItemCode code,
-    // The value in coins it's an int
-    // it should be a double in case we go for direct sales
     @required int value,
     @required String imageURL,
+    @required int timeLimitInDays,
+    @required DateTime boughtDate,
   }) = _Item;
 
   factory Item.empty() => Item(
-        id: UniqueId(),
+    id: UniqueId(),
         name: Name(""),
         description: EntityDescription(""),
         code: ItemCode.none,
         value: 0,
         imageURL: "",
+        timeLimitInDays: 0,
+        boughtDate: DateTime.now(),
       );
 
   Option<ValueFailure<dynamic>> get failureOption => name.failureOrUnit.andThen(description.failureOrUnit).fold(

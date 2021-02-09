@@ -145,5 +145,6 @@
   "owned": "Owned",
   "alreadyOwned": "You already own this item",
   "notEnoughCoins": "You don't have enough coins",
-  "youHave": "You have:"
+  "youHave": "You have:",
+  "lasts": " days of duration"
 }

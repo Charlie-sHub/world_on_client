@@ -14,7 +14,15 @@ class _$ItemTearOff {
   const _$ItemTearOff();
 
 // ignore: unused_element
-  _Item call({@required UniqueId id, @required Name name, @required EntityDescription description, @required ItemCode code, @required int value, @required String imageURL}) {
+  _Item call(
+      {@required UniqueId id,
+      @required Name name,
+      @required EntityDescription description,
+      @required ItemCode code,
+      @required int value,
+      @required String imageURL,
+      @required int timeLimitInDays,
+      @required DateTime boughtDate}) {
     return _Item(
       id: id,
       name: name,
@@ -22,6 +30,8 @@ class _$ItemTearOff {
       code: code,
       value: value,
       imageURL: imageURL,
+      timeLimitInDays: timeLimitInDays,
+      boughtDate: boughtDate,
     );
   }
 }
@@ -33,12 +43,20 @@ const $Item = _$ItemTearOff();
 /// @nodoc
 mixin _$Item {
   UniqueId get id;
+
   Name get name;
+
   EntityDescription get description;
-  ItemCode get code; // The value in coins it's an int
-// it should be a double in case we go for direct sales
+
+  ItemCode get code;
+
   int get value;
+
   String get imageURL;
+
+  int get timeLimitInDays;
+
+  DateTime get boughtDate;
 
   @JsonKey(ignore: true)
   $ItemCopyWith<Item> get copyWith;
@@ -48,7 +66,7 @@ mixin _$Item {
 abstract class $ItemCopyWith<$Res> {
   factory $ItemCopyWith(Item value, $Res Function(Item) then) = _$ItemCopyWithImpl<$Res>;
 
-  $Res call({UniqueId id, Name name, EntityDescription description, ItemCode code, int value, String imageURL});
+  $Res call({UniqueId id, Name name, EntityDescription description, ItemCode code, int value, String imageURL, int timeLimitInDays, DateTime boughtDate});
 }
 
 /// @nodoc
@@ -67,6 +85,8 @@ class _$ItemCopyWithImpl<$Res> implements $ItemCopyWith<$Res> {
     Object code = freezed,
     Object value = freezed,
     Object imageURL = freezed,
+    Object timeLimitInDays = freezed,
+    Object boughtDate = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as UniqueId,
@@ -75,6 +95,8 @@ class _$ItemCopyWithImpl<$Res> implements $ItemCopyWith<$Res> {
       code: code == freezed ? _value.code : code as ItemCode,
       value: value == freezed ? _value.value : value as int,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
+      timeLimitInDays: timeLimitInDays == freezed ? _value.timeLimitInDays : timeLimitInDays as int,
+      boughtDate: boughtDate == freezed ? _value.boughtDate : boughtDate as DateTime,
     ));
   }
 }
@@ -84,7 +106,7 @@ abstract class _$ItemCopyWith<$Res> implements $ItemCopyWith<$Res> {
   factory _$ItemCopyWith(_Item value, $Res Function(_Item) then) = __$ItemCopyWithImpl<$Res>;
 
   @override
-  $Res call({UniqueId id, Name name, EntityDescription description, ItemCode code, int value, String imageURL});
+  $Res call({UniqueId id, Name name, EntityDescription description, ItemCode code, int value, String imageURL, int timeLimitInDays, DateTime boughtDate});
 }
 
 /// @nodoc
@@ -102,6 +124,8 @@ class __$ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res> implements _$It
     Object code = freezed,
     Object value = freezed,
     Object imageURL = freezed,
+    Object timeLimitInDays = freezed,
+    Object boughtDate = freezed,
   }) {
     return _then(_Item(
       id: id == freezed ? _value.id : id as UniqueId,
@@ -110,19 +134,31 @@ class __$ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res> implements _$It
       code: code == freezed ? _value.code : code as ItemCode,
       value: value == freezed ? _value.value : value as int,
       imageURL: imageURL == freezed ? _value.imageURL : imageURL as String,
+      timeLimitInDays: timeLimitInDays == freezed ? _value.timeLimitInDays : timeLimitInDays as int,
+      boughtDate: boughtDate == freezed ? _value.boughtDate : boughtDate as DateTime,
     ));
   }
 }
 
 /// @nodoc
 class _$_Item extends _Item {
-  const _$_Item({@required this.id, @required this.name, @required this.description, @required this.code, @required this.value, @required this.imageURL})
+  const _$_Item(
+      {@required this.id,
+      @required this.name,
+      @required this.description,
+      @required this.code,
+      @required this.value,
+      @required this.imageURL,
+      @required this.timeLimitInDays,
+      @required this.boughtDate})
       : assert(id != null),
         assert(name != null),
         assert(description != null),
         assert(code != null),
         assert(value != null),
         assert(imageURL != null),
+        assert(timeLimitInDays != null),
+        assert(boughtDate != null),
         super._();
 
   @override
@@ -133,15 +169,18 @@ class _$_Item extends _Item {
   final EntityDescription description;
   @override
   final ItemCode code;
-  @override // The value in coins it's an int
-// it should be a double in case we go for direct sales
+  @override
   final int value;
   @override
   final String imageURL;
+  @override
+  final int timeLimitInDays;
+  @override
+  final DateTime boughtDate;
 
   @override
   String toString() {
-    return 'Item(id: $id, name: $name, description: $description, code: $code, value: $value, imageURL: $imageURL)';
+    return 'Item(id: $id, name: $name, description: $description, code: $code, value: $value, imageURL: $imageURL, timeLimitInDays: $timeLimitInDays, boughtDate: $boughtDate)';
   }
 
   @override
@@ -153,7 +192,9 @@ class _$_Item extends _Item {
             (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
             (identical(other.code, code) || const DeepCollectionEquality().equals(other.code, code)) &&
             (identical(other.value, value) || const DeepCollectionEquality().equals(other.value, value)) &&
-            (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)));
+            (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
+            (identical(other.timeLimitInDays, timeLimitInDays) || const DeepCollectionEquality().equals(other.timeLimitInDays, timeLimitInDays)) &&
+            (identical(other.boughtDate, boughtDate) || const DeepCollectionEquality().equals(other.boughtDate, boughtDate)));
   }
 
   @override
@@ -164,7 +205,9 @@ class _$_Item extends _Item {
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(code) ^
       const DeepCollectionEquality().hash(value) ^
-      const DeepCollectionEquality().hash(imageURL);
+      const DeepCollectionEquality().hash(imageURL) ^
+      const DeepCollectionEquality().hash(timeLimitInDays) ^
+      const DeepCollectionEquality().hash(boughtDate);
 
   @JsonKey(ignore: true)
   @override
@@ -174,7 +217,15 @@ class _$_Item extends _Item {
 abstract class _Item extends Item {
   const _Item._() : super._();
 
-  const factory _Item({@required UniqueId id, @required Name name, @required EntityDescription description, @required ItemCode code, @required int value, @required String imageURL}) = _$_Item;
+  const factory _Item(
+      {@required UniqueId id,
+      @required Name name,
+      @required EntityDescription description,
+      @required ItemCode code,
+      @required int value,
+      @required String imageURL,
+      @required int timeLimitInDays,
+      @required DateTime boughtDate}) = _$_Item;
 
   @override
   UniqueId get id;
@@ -188,11 +239,18 @@ abstract class _Item extends Item {
   @override
   ItemCode get code;
 
-  @override // The value in coins it's an int
-// it should be a double in case we go for direct sales
+  @override
   int get value;
+
   @override
   String get imageURL;
+
+  @override
+  int get timeLimitInDays;
+
+  @override
+  DateTime get boughtDate;
+
   @override
   @JsonKey(ignore: true)
   _$ItemCopyWith<_Item> get copyWith;

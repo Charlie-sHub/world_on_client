@@ -87,6 +87,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "invalidEmail": MessageLookupByLibrary.simpleMessage("The email is not valid"),
         "invalidPassword": MessageLookupByLibrary.simpleMessage("The password is invalid"),
         "item": MessageLookupByLibrary.simpleMessage("Item"),
+        "lasts": MessageLookupByLibrary.simpleMessage(" days of duration"),
         "level": MessageLookupByLibrary.simpleMessage("Level: "),
         "likeQuestion": MessageLookupByLibrary.simpleMessage("Did you like it?"),
         "logIn": MessageLookupByLibrary.simpleMessage("LOG IN"),

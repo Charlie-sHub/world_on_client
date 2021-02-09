@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:worldon/data/core/misc/server_timestamp_converter.dart';
 import 'package:worldon/domain/core/entities/item/item.dart';
 import 'package:worldon/domain/core/entities/item/item_code.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
@@ -7,7 +8,6 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 
 part 'item_dto.freezed.dart';
-
 part 'item_dto.g.dart';
 
 @freezed
@@ -20,7 +20,9 @@ abstract class ItemDto implements _$ItemDto {
     @required String description,
     @required ItemCode code,
     @required int value,
+    @required int timeLimitInDays,
     @required String imageURL,
+    @ServerTimestampConverter() @required DateTime boughtDate,
   }) = _Item;
 
   factory ItemDto.fromDomain(Item item) => ItemDto(
@@ -30,6 +32,8 @@ abstract class ItemDto implements _$ItemDto {
         code: item.code,
         value: item.value,
         imageURL: item.imageURL,
+        timeLimitInDays: item.timeLimitInDays,
+        boughtDate: item.boughtDate,
       );
 
   Item toDomain() => Item(
@@ -39,6 +43,8 @@ abstract class ItemDto implements _$ItemDto {
         code: code,
         value: value,
         imageURL: imageURL,
+        timeLimitInDays: timeLimitInDays,
+        boughtDate: boughtDate,
       );
 
   factory ItemDto.fromJson(Map<String, dynamic> json) => _$ItemDtoFromJson(json);

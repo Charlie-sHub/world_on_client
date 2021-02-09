@@ -145,5 +145,6 @@
   "owned": "Poseido",
   "alreadyOwned": "Tu ya posees este objeto",
   "notEnoughCoins": "No posees suficientes monedas",
-  "youHave": "Tu tienes:"
+  "youHave": "Tu tienes:",
+  "lasts": " dias de duracion"
 }

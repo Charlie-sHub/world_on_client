@@ -486,12 +486,9 @@ class _$_User extends _User {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _User &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.username, username) ||
-                const DeepCollectionEquality().equals(other.username, username)) &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.username, username) || const DeepCollectionEquality().equals(other.username, username)) &&
             (identical(other.password, password) || const DeepCollectionEquality().equals(other.password, password)) &&
             (identical(other.email, email) || const DeepCollectionEquality().equals(other.email, email)) &&
             (identical(other.birthday, birthday) || const DeepCollectionEquality().equals(other.birthday, birthday)) &&

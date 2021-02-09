@@ -208,7 +208,6 @@ abstract class _Initialized implements BuyItemEvent {
 
   @override
   Item get item;
-
   @override
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith;

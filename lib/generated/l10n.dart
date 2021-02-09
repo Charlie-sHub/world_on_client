@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -1490,6 +1491,16 @@ class S {
     return Intl.message(
       'You have:',
       name: 'youHave',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` days of duration`
+  String get lasts {
+    return Intl.message(
+      ' days of duration',
+      name: 'lasts',
       desc: '',
       args: [],
     );

@@ -33,18 +33,15 @@ mixin _$BuyCoinsEvent {
   TResult when<TResult extends Object>({
     @required TResult boughtCoins(int amount),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult boughtCoins(int amount),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult boughtCoins(_BoughtCoins value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult boughtCoins(_BoughtCoins value),
@@ -180,7 +177,6 @@ abstract class _BoughtCoins implements BuyCoinsEvent {
 
   @override
   int get amount;
-
   @override
   @JsonKey(ignore: true)
   _$BoughtCoinsCopyWith<_BoughtCoins> get copyWith;
@@ -226,7 +222,6 @@ mixin _$BuyCoinsState {
     @required TResult purchaseSuccess(),
     @required TResult purchaseFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -685,7 +680,6 @@ abstract class _PurchaseFailure implements BuyCoinsState {
   const factory _PurchaseFailure(Failure<dynamic> failure) = _$_PurchaseFailure;
 
   Failure<dynamic> get failure;
-
   @JsonKey(ignore: true)
   _$PurchaseFailureCopyWith<_PurchaseFailure> get copyWith;
 }

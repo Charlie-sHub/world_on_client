@@ -6,10 +6,11 @@ import 'package:logger/logger.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/firebase_helpers.dart';
+import 'package:worldon/data/core/models/user/user_dto.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
-import 'package:worldon/domain/core/entities/item/item_code.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
+import 'package:worldon/domain/core/validation/objects/experience_points.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/core/validation/objects/user_level.dart';
 import 'package:worldon/domain/experience_navigation/repository/experience_navigation_repository_interface.dart';
@@ -111,9 +112,6 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   @override
   Future<Either<Failure, int>> rewardUser(int experiencePoints) async {
     try {
-      // I don't like doing this at all
-      // Having to get the user just to use the experience points
-      // Neither do i like this being in the data layer
       final _userDocument = await _firestore.userDocument();
       // TODO: Change the way items are handled
       // Items should just be a string of ids on the user document
@@ -121,22 +119,45 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       // Instead of having the entire objects inside the users.
       final _currentUser = await _firestore.currentUser();
       int _experiencePointsAwarded;
-      if (_currentUser.items.any(
-        (item) {
-          if (item.code == ItemCode.expBoost) {
-            return true;
-          } else {
-            return false;
-          }
-        },
-      )) {
-        _experiencePointsAwarded = experiencePoints * 2;
-        final _userLevel = Levels.levelAt(_experiencePointsAwarded + _currentUser.experiencePoints.getOrCrash());
-        await _updateLevelExperiencePoints(_userDocument, _experiencePointsAwarded, _userLevel);
+      // I don't like that string hard coded
+      // But it will work for now
+      final _itemList = _currentUser.items.where((item) => item.id.getOrCrash() == "81539390-6807-11eb-a79a-01068a2daab7");
+      final _item = _itemList.isNotEmpty ? _itemList.first : null;
+      if (_item != null) {
+        if (DateTime.now().isAfter(_item.boughtDate.add(Duration(days: _item.timeLimitInDays)))) {
+          _experiencePointsAwarded = experiencePoints;
+          final _userLevel = Levels.levelAt(
+            _experiencePointsAwarded + _currentUser.experiencePoints.getOrCrash(),
+          );
+          final _updatedUser = _currentUser.copyWith(
+            experiencePoints: ExperiencePoints(_currentUser.experiencePoints.getOrCrash() + _experiencePointsAwarded),
+            level: UserLevel(_userLevel),
+            coins: _currentUser.coins + 1,
+            items: _currentUser.items.toImmutableSet().minusElement(_item).asSet(),
+          );
+          final _jsonUser = UserDto.fromDomain(_updatedUser).toJson();
+          await _firestore.userCollection.doc(_currentUser.id.getOrCrash()).update(_jsonUser);
+        } else {
+          _experiencePointsAwarded = experiencePoints * 2;
+          final _userLevel = Levels.levelAt(
+            _experiencePointsAwarded + _currentUser.experiencePoints.getOrCrash(),
+          );
+          await _updateLevelExperiencePoints(
+            _userDocument,
+            _experiencePointsAwarded,
+            _userLevel,
+          );
+        }
       } else {
         _experiencePointsAwarded = experiencePoints;
-        final _userLevel = Levels.levelAt(_experiencePointsAwarded + _currentUser.experiencePoints.getOrCrash());
-        await _updateLevelExperiencePoints(_userDocument, _experiencePointsAwarded, _userLevel);
+        final _userLevel = Levels.levelAt(
+          _experiencePointsAwarded + _currentUser.experiencePoints.getOrCrash(),
+        );
+        await _updateLevelExperiencePoints(
+          _userDocument,
+          _experiencePointsAwarded,
+          _userLevel,
+        );
       }
       return right(_experiencePointsAwarded);
     } on FirebaseException catch (exception) {
