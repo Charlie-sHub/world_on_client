@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
-part of 'buy_coin_bloc.dart';
+part of 'buy_coins_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -10,107 +10,144 @@ part of 'buy_coin_bloc.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-class _$BuyCoinEventTearOff {
-  const _$BuyCoinEventTearOff();
+class _$BuyCoinsEventTearOff {
+  const _$BuyCoinsEventTearOff();
 
 // ignore: unused_element
-  _BoughtCoin boughtCoin() {
-    return const _BoughtCoin();
+  _BoughtCoins boughtCoins(int amount) {
+    return _BoughtCoins(
+      amount,
+    );
   }
 }
 
 /// @nodoc
 // ignore: unused_element
-const $BuyCoinEvent = _$BuyCoinEventTearOff();
+const $BuyCoinsEvent = _$BuyCoinsEventTearOff();
 
 /// @nodoc
-mixin _$BuyCoinEvent {
+mixin _$BuyCoinsEvent {
+  int get amount;
+
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult boughtCoin(),
+    @required TResult boughtCoins(int amount),
   });
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult boughtCoin(),
+    TResult boughtCoins(int amount),
     @required TResult orElse(),
   });
 
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult boughtCoin(_BoughtCoin value),
+    @required TResult boughtCoins(_BoughtCoins value),
   });
 
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult boughtCoin(_BoughtCoin value),
+    TResult boughtCoins(_BoughtCoins value),
     @required TResult orElse(),
   });
+
+  @JsonKey(ignore: true)
+  $BuyCoinsEventCopyWith<BuyCoinsEvent> get copyWith;
 }
 
 /// @nodoc
-abstract class $BuyCoinEventCopyWith<$Res> {
-  factory $BuyCoinEventCopyWith(BuyCoinEvent value, $Res Function(BuyCoinEvent) then) = _$BuyCoinEventCopyWithImpl<$Res>;
+abstract class $BuyCoinsEventCopyWith<$Res> {
+  factory $BuyCoinsEventCopyWith(BuyCoinsEvent value, $Res Function(BuyCoinsEvent) then) = _$BuyCoinsEventCopyWithImpl<$Res>;
+
+  $Res call({int amount});
 }
 
 /// @nodoc
-class _$BuyCoinEventCopyWithImpl<$Res> implements $BuyCoinEventCopyWith<$Res> {
-  _$BuyCoinEventCopyWithImpl(this._value, this._then);
+class _$BuyCoinsEventCopyWithImpl<$Res> implements $BuyCoinsEventCopyWith<$Res> {
+  _$BuyCoinsEventCopyWithImpl(this._value, this._then);
 
-  final BuyCoinEvent _value;
+  final BuyCoinsEvent _value;
 
   // ignore: unused_field
-  final $Res Function(BuyCoinEvent) _then;
-}
-
-/// @nodoc
-abstract class _$BoughtCoinCopyWith<$Res> {
-  factory _$BoughtCoinCopyWith(_BoughtCoin value, $Res Function(_BoughtCoin) then) = __$BoughtCoinCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$BoughtCoinCopyWithImpl<$Res> extends _$BuyCoinEventCopyWithImpl<$Res> implements _$BoughtCoinCopyWith<$Res> {
-  __$BoughtCoinCopyWithImpl(_BoughtCoin _value, $Res Function(_BoughtCoin) _then) : super(_value, (v) => _then(v as _BoughtCoin));
+  final $Res Function(BuyCoinsEvent) _then;
 
   @override
-  _BoughtCoin get _value => super._value as _BoughtCoin;
+  $Res call({
+    Object amount = freezed,
+  }) {
+    return _then(_value.copyWith(
+      amount: amount == freezed ? _value.amount : amount as int,
+    ));
+  }
 }
 
 /// @nodoc
-class _$_BoughtCoin implements _BoughtCoin {
-  const _$_BoughtCoin();
+abstract class _$BoughtCoinsCopyWith<$Res> implements $BuyCoinsEventCopyWith<$Res> {
+  factory _$BoughtCoinsCopyWith(_BoughtCoins value, $Res Function(_BoughtCoins) then) = __$BoughtCoinsCopyWithImpl<$Res>;
+
+  @override
+  $Res call({int amount});
+}
+
+/// @nodoc
+class __$BoughtCoinsCopyWithImpl<$Res> extends _$BuyCoinsEventCopyWithImpl<$Res> implements _$BoughtCoinsCopyWith<$Res> {
+  __$BoughtCoinsCopyWithImpl(_BoughtCoins _value, $Res Function(_BoughtCoins) _then) : super(_value, (v) => _then(v as _BoughtCoins));
+
+  @override
+  _BoughtCoins get _value => super._value as _BoughtCoins;
+
+  @override
+  $Res call({
+    Object amount = freezed,
+  }) {
+    return _then(_BoughtCoins(
+      amount == freezed ? _value.amount : amount as int,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_BoughtCoins implements _BoughtCoins {
+  const _$_BoughtCoins(this.amount) : assert(amount != null);
+
+  @override
+  final int amount;
 
   @override
   String toString() {
-    return 'BuyCoinEvent.boughtCoin()';
+    return 'BuyCoinsEvent.boughtCoins(amount: $amount)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _BoughtCoin);
+    return identical(this, other) || (other is _BoughtCoins && (identical(other.amount, amount) || const DeepCollectionEquality().equals(other.amount, amount)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(amount);
+
+  @JsonKey(ignore: true)
+  @override
+  _$BoughtCoinsCopyWith<_BoughtCoins> get copyWith => __$BoughtCoinsCopyWithImpl<_BoughtCoins>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult boughtCoin(),
+    @required TResult boughtCoins(int amount),
   }) {
-    assert(boughtCoin != null);
-    return boughtCoin();
+    assert(boughtCoins != null);
+    return boughtCoins(amount);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult boughtCoin(),
+    TResult boughtCoins(int amount),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (boughtCoin != null) {
-      return boughtCoin();
+    if (boughtCoins != null) {
+      return boughtCoins(amount);
     }
     return orElse();
   }
@@ -118,33 +155,40 @@ class _$_BoughtCoin implements _BoughtCoin {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult boughtCoin(_BoughtCoin value),
+    @required TResult boughtCoins(_BoughtCoins value),
   }) {
-    assert(boughtCoin != null);
-    return boughtCoin(this);
+    assert(boughtCoins != null);
+    return boughtCoins(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult boughtCoin(_BoughtCoin value),
+    TResult boughtCoins(_BoughtCoins value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (boughtCoin != null) {
-      return boughtCoin(this);
+    if (boughtCoins != null) {
+      return boughtCoins(this);
     }
     return orElse();
   }
 }
 
-abstract class _BoughtCoin implements BuyCoinEvent {
-  const factory _BoughtCoin() = _$_BoughtCoin;
+abstract class _BoughtCoins implements BuyCoinsEvent {
+  const factory _BoughtCoins(int amount) = _$_BoughtCoins;
+
+  @override
+  int get amount;
+
+  @override
+  @JsonKey(ignore: true)
+  _$BoughtCoinsCopyWith<_BoughtCoins> get copyWith;
 }
 
 /// @nodoc
-class _$BuyCoinStateTearOff {
-  const _$BuyCoinStateTearOff();
+class _$BuyCoinsStateTearOff {
+  const _$BuyCoinsStateTearOff();
 
 // ignore: unused_element
   _Initial initial() {
@@ -171,10 +215,10 @@ class _$BuyCoinStateTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $BuyCoinState = _$BuyCoinStateTearOff();
+const $BuyCoinsState = _$BuyCoinsStateTearOff();
 
 /// @nodoc
-mixin _$BuyCoinState {
+mixin _$BuyCoinsState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult initial(),
@@ -191,7 +235,6 @@ mixin _$BuyCoinState {
     TResult purchaseFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -199,7 +242,6 @@ mixin _$BuyCoinState {
     @required TResult purchaseSuccess(_PurchaseSuccess value),
     @required TResult purchaseFailure(_PurchaseFailure value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
@@ -211,18 +253,18 @@ mixin _$BuyCoinState {
 }
 
 /// @nodoc
-abstract class $BuyCoinStateCopyWith<$Res> {
-  factory $BuyCoinStateCopyWith(BuyCoinState value, $Res Function(BuyCoinState) then) = _$BuyCoinStateCopyWithImpl<$Res>;
+abstract class $BuyCoinsStateCopyWith<$Res> {
+  factory $BuyCoinsStateCopyWith(BuyCoinsState value, $Res Function(BuyCoinsState) then) = _$BuyCoinsStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$BuyCoinStateCopyWithImpl<$Res> implements $BuyCoinStateCopyWith<$Res> {
-  _$BuyCoinStateCopyWithImpl(this._value, this._then);
+class _$BuyCoinsStateCopyWithImpl<$Res> implements $BuyCoinsStateCopyWith<$Res> {
+  _$BuyCoinsStateCopyWithImpl(this._value, this._then);
 
-  final BuyCoinState _value;
+  final BuyCoinsState _value;
 
   // ignore: unused_field
-  final $Res Function(BuyCoinState) _then;
+  final $Res Function(BuyCoinsState) _then;
 }
 
 /// @nodoc
@@ -231,7 +273,7 @@ abstract class _$InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$BuyCoinStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
+class __$InitialCopyWithImpl<$Res> extends _$BuyCoinsStateCopyWithImpl<$Res> implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then) : super(_value, (v) => _then(v as _Initial));
 
   @override
@@ -244,7 +286,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'BuyCoinState.initial()';
+    return 'BuyCoinsState.initial()';
   }
 
   @override
@@ -318,7 +360,7 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements BuyCoinState {
+abstract class _Initial implements BuyCoinsState {
   const factory _Initial() = _$_Initial;
 }
 
@@ -328,7 +370,7 @@ abstract class _$ActionInProgressCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$ActionInProgressCopyWithImpl<$Res> extends _$BuyCoinStateCopyWithImpl<$Res> implements _$ActionInProgressCopyWith<$Res> {
+class __$ActionInProgressCopyWithImpl<$Res> extends _$BuyCoinsStateCopyWithImpl<$Res> implements _$ActionInProgressCopyWith<$Res> {
   __$ActionInProgressCopyWithImpl(_ActionInProgress _value, $Res Function(_ActionInProgress) _then) : super(_value, (v) => _then(v as _ActionInProgress));
 
   @override
@@ -341,7 +383,7 @@ class _$_ActionInProgress implements _ActionInProgress {
 
   @override
   String toString() {
-    return 'BuyCoinState.actionInProgress()';
+    return 'BuyCoinsState.actionInProgress()';
   }
 
   @override
@@ -415,7 +457,7 @@ class _$_ActionInProgress implements _ActionInProgress {
   }
 }
 
-abstract class _ActionInProgress implements BuyCoinState {
+abstract class _ActionInProgress implements BuyCoinsState {
   const factory _ActionInProgress() = _$_ActionInProgress;
 }
 
@@ -425,7 +467,7 @@ abstract class _$PurchaseSuccessCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$PurchaseSuccessCopyWithImpl<$Res> extends _$BuyCoinStateCopyWithImpl<$Res> implements _$PurchaseSuccessCopyWith<$Res> {
+class __$PurchaseSuccessCopyWithImpl<$Res> extends _$BuyCoinsStateCopyWithImpl<$Res> implements _$PurchaseSuccessCopyWith<$Res> {
   __$PurchaseSuccessCopyWithImpl(_PurchaseSuccess _value, $Res Function(_PurchaseSuccess) _then) : super(_value, (v) => _then(v as _PurchaseSuccess));
 
   @override
@@ -438,7 +480,7 @@ class _$_PurchaseSuccess implements _PurchaseSuccess {
 
   @override
   String toString() {
-    return 'BuyCoinState.purchaseSuccess()';
+    return 'BuyCoinsState.purchaseSuccess()';
   }
 
   @override
@@ -512,7 +554,7 @@ class _$_PurchaseSuccess implements _PurchaseSuccess {
   }
 }
 
-abstract class _PurchaseSuccess implements BuyCoinState {
+abstract class _PurchaseSuccess implements BuyCoinsState {
   const factory _PurchaseSuccess() = _$_PurchaseSuccess;
 }
 
@@ -526,7 +568,7 @@ abstract class _$PurchaseFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$PurchaseFailureCopyWithImpl<$Res> extends _$BuyCoinStateCopyWithImpl<$Res> implements _$PurchaseFailureCopyWith<$Res> {
+class __$PurchaseFailureCopyWithImpl<$Res> extends _$BuyCoinsStateCopyWithImpl<$Res> implements _$PurchaseFailureCopyWith<$Res> {
   __$PurchaseFailureCopyWithImpl(_PurchaseFailure _value, $Res Function(_PurchaseFailure) _then) : super(_value, (v) => _then(v as _PurchaseFailure));
 
   @override
@@ -561,7 +603,7 @@ class _$_PurchaseFailure implements _PurchaseFailure {
 
   @override
   String toString() {
-    return 'BuyCoinState.purchaseFailure(failure: $failure)';
+    return 'BuyCoinsState.purchaseFailure(failure: $failure)';
   }
 
   @override
@@ -639,7 +681,7 @@ class _$_PurchaseFailure implements _PurchaseFailure {
   }
 }
 
-abstract class _PurchaseFailure implements BuyCoinState {
+abstract class _PurchaseFailure implements BuyCoinsState {
   const factory _PurchaseFailure(Failure<dynamic> failure) = _$_PurchaseFailure;
 
   Failure<dynamic> get failure;

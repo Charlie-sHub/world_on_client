@@ -8,7 +8,6 @@ part of 'coins_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
-
 CoinsDto _$CoinsDtoFromJson(Map<String, dynamic> json) {
   return _CoinsDto.fromJson(json);
 }
@@ -18,9 +17,9 @@ class _$CoinsDtoTearOff {
   const _$CoinsDtoTearOff();
 
 // ignore: unused_element
-  _CoinsDto call({@required String oneCoinProductId}) {
+  _CoinsDto call({@required String tenCoinsProductId}) {
     return _CoinsDto(
-      oneCoinProductId: oneCoinProductId,
+      tenCoinsProductId: tenCoinsProductId,
     );
   }
 
@@ -36,7 +35,7 @@ const $CoinsDto = _$CoinsDtoTearOff();
 
 /// @nodoc
 mixin _$CoinsDto {
-  String get oneCoinProductId;
+  String get tenCoinsProductId;
   
   Map<String, dynamic> toJson();
   
@@ -49,26 +48,25 @@ abstract class $CoinsDtoCopyWith<$Res> {
   factory $CoinsDtoCopyWith(CoinsDto value, $Res Function(CoinsDto) then) =
   _$CoinsDtoCopyWithImpl<$Res>;
   
-  $Res call({String oneCoinProductId});
+  $Res call({String tenCoinsProductId});
 }
 
 /// @nodoc
 class _$CoinsDtoCopyWithImpl<$Res> implements $CoinsDtoCopyWith<$Res> {
   _$CoinsDtoCopyWithImpl(this._value, this._then);
-  
+
   final CoinsDto _value;
-  
   // ignore: unused_field
   final $Res Function(CoinsDto) _then;
-  
+
   @override
   $Res call({
-    Object oneCoinProductId = freezed,
+    Object tenCoinsProductId = freezed,
   }) {
     return _then(_value.copyWith(
-      oneCoinProductId: oneCoinProductId == freezed
-        ? _value.oneCoinProductId
-        : oneCoinProductId as String,
+      tenCoinsProductId: tenCoinsProductId == freezed
+        ? _value.tenCoinsProductId
+        : tenCoinsProductId as String,
     ));
   }
 }
@@ -79,7 +77,7 @@ abstract class _$CoinsDtoCopyWith<$Res> implements $CoinsDtoCopyWith<$Res> {
   __$CoinsDtoCopyWithImpl<$Res>;
   
   @override
-  $Res call({String oneCoinProductId});
+  $Res call({String tenCoinsProductId});
 }
 
 /// @nodoc
@@ -93,12 +91,12 @@ class __$CoinsDtoCopyWithImpl<$Res> extends _$CoinsDtoCopyWithImpl<$Res>
   
   @override
   $Res call({
-    Object oneCoinProductId = freezed,
+    Object tenCoinsProductId = freezed,
   }) {
     return _then(_CoinsDto(
-      oneCoinProductId: oneCoinProductId == freezed
-        ? _value.oneCoinProductId
-        : oneCoinProductId as String,
+      tenCoinsProductId: tenCoinsProductId == freezed
+        ? _value.tenCoinsProductId
+        : tenCoinsProductId as String,
     ));
   }
 }
@@ -106,34 +104,34 @@ class __$CoinsDtoCopyWithImpl<$Res> extends _$CoinsDtoCopyWithImpl<$Res>
 @JsonSerializable()
 
 /// @nodoc class _$_CoinsDto extends _CoinsDto {
-  const _$_CoinsDto({@required this.oneCoinProductId})
-    : assert(oneCoinProductId != null),
+  const _$_CoinsDto({@required this.tenCoinsProductId})
+    : assert(tenCoinsProductId != null),
       super._();
   
   factory _$_CoinsDto.fromJson(Map<String, dynamic> json) =>
     _$_$_CoinsDtoFromJson(json);
   
   @override
-  final String oneCoinProductId;
+  final String tenCoinsProductId;
   
   @override
   String toString() {
-    return 'CoinsDto(oneCoinProductId: $oneCoinProductId)';
+    return 'CoinsDto(tenCoinsProductId: $tenCoinsProductId)';
   }
   
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
       (other is _CoinsDto &&
-        (identical(other.oneCoinProductId, oneCoinProductId) ||
+        (identical(other.tenCoinsProductId, tenCoinsProductId) ||
           const DeepCollectionEquality()
-            .equals(other.oneCoinProductId, oneCoinProductId)));
+            .equals(other.tenCoinsProductId, tenCoinsProductId)));
   }
   
   @override
   int get hashCode =>
     runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(oneCoinProductId);
+    const DeepCollectionEquality().hash(tenCoinsProductId);
   
   @JsonKey(ignore: true)
   @override
@@ -149,12 +147,12 @@ class __$CoinsDtoCopyWithImpl<$Res> extends _$CoinsDtoCopyWithImpl<$Res>
 abstract class _CoinsDto extends CoinsDto {
   const _CoinsDto._() : super._();
   
-  const factory _CoinsDto({@required String oneCoinProductId}) = _$_CoinsDto;
+  const factory _CoinsDto({@required String tenCoinsProductId}) = _$_CoinsDto;
   
   factory _CoinsDto.fromJson(Map<String, dynamic> json) = _$_CoinsDto.fromJson;
   
   @override
-  String get oneCoinProductId;
+  String get tenCoinsProductId;
   
   @override
   @JsonKey(ignore: true)

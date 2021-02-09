@@ -85,7 +85,7 @@
   "experienceTitleStringWithInvalidCharacters": "The title has invalid characters",
   "experienceTitleLabelText": "Title",
   "experiencePointsGainedPre": "You've gained",
-  "experiencePointsGainedPost": "experience points!",
+  "experiencePointsGainedPost": "experience points! and 1 World On Coin",
   "experienceFinishButton": "Finish",
   "experienceFinishSuccessTitle": "Experience Finished!",
   "rewardsGained": "Rewards",
@@ -136,5 +136,14 @@
   "create": "Create",
   "doneBy": "Done by: ",
   "level": "Level: ",
-  "store": "STORE"
+  "storePageTitle": "STORE",
+  "storeNavigationBarStore": "Store",
+  "storeNavigationBarMyItems": "My items",
+  "buyItem": "Buy",
+  "buy10Coins": "Buy 10 coins",
+  "item": "Item",
+  "owned": "Owned",
+  "alreadyOwned": "You already own this item",
+  "notEnoughCoins": "You don't have enough coins",
+  "youHave": "You have:"
 }

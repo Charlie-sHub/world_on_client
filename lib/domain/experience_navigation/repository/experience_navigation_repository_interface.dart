@@ -20,7 +20,7 @@ abstract class ExperienceNavigationRepositoryInterface {
   });
 
   /// Sends and amount of experience point so the server rewards the logged in [User]
-  Future<Either<Failure, Unit>> rewardUser(int experiencePoints);
+  Future<Either<Failure, int>> rewardUser(int experiencePoints);
 
   /// Sends the ID of an [Experience] so the server adds the [Experience] to the logged in [User]'s liked list
   Future<Either<Failure, Unit>> likeExperience(UniqueId experienceId);

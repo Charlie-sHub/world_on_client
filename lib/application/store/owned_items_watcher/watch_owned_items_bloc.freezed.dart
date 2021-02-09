@@ -37,20 +37,17 @@ mixin _$WatchOwnedItemsEvent {
     @required TResult watchOwnedItemsStarted(),
     @required TResult resultsReceived(Either<Failure, KtList<Item>> failureOrItems),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult watchOwnedItemsStarted(),
     TResult resultsReceived(Either<Failure, KtList<Item>> failureOrItems),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult watchOwnedItemsStarted(_WatchOwnedItemsStarted value),
     @required TResult resultsReceived(_ResultsReceived value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult watchOwnedItemsStarted(_WatchOwnedItemsStarted value),
@@ -309,7 +306,6 @@ mixin _$WatchOwnedItemsState {
     @required TResult loadSuccess(KtList<Item> items),
     @required TResult loadFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -318,7 +314,6 @@ mixin _$WatchOwnedItemsState {
     TResult loadFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -326,7 +321,6 @@ mixin _$WatchOwnedItemsState {
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_LoadFailure value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
@@ -661,7 +655,6 @@ abstract class _LoadSuccess implements WatchOwnedItemsState {
   const factory _LoadSuccess(KtList<Item> items) = _$_LoadSuccess;
 
   KtList<Item> get items;
-
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
@@ -793,7 +786,6 @@ abstract class _LoadFailure implements WatchOwnedItemsState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
   Failure<dynamic> get failure;
-
   @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith;
 }

@@ -491,18 +491,11 @@ class _$_User extends _User {
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)) &&
-            (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)) &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)) &&
-            (identical(other.birthday, birthday) ||
-                const DeepCollectionEquality()
-                    .equals(other.birthday, birthday)) &&
-            (identical(other.description, description) ||
-                const DeepCollectionEquality().equals(other.description, description)) &&
+                const DeepCollectionEquality().equals(other.username, username)) &&
+            (identical(other.password, password) || const DeepCollectionEquality().equals(other.password, password)) &&
+            (identical(other.email, email) || const DeepCollectionEquality().equals(other.email, email)) &&
+            (identical(other.birthday, birthday) || const DeepCollectionEquality().equals(other.birthday, birthday)) &&
+            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
             (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)) &&
             (identical(other.imageFileOption, imageFileOption) || const DeepCollectionEquality().equals(other.imageFileOption, imageFileOption)) &&
             (identical(other.level, level) || const DeepCollectionEquality().equals(other.level, level)) &&

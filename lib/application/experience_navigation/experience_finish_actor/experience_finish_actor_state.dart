@@ -6,7 +6,7 @@ abstract class ExperienceFinishActorState with _$ExperienceFinishActorState {
 
   const factory ExperienceFinishActorState.actionInProgress() = _ActionInProgress;
 
-  const factory ExperienceFinishActorState.finishSuccess() = _FinishSuccess;
+  const factory ExperienceFinishActorState.finishSuccess(int amountXP) = _FinishSuccess;
 
   const factory ExperienceFinishActorState.finishFailure(Failure<dynamic> failure) = _FinishFailure;
 }

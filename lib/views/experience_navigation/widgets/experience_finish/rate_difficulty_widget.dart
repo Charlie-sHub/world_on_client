@@ -26,26 +26,29 @@ class RateDifficultyWidget extends StatelessWidget {
       child: BlocListener<RateExperienceDifficultyActorBloc, RateExperienceDifficultyActorState>(
         listener: _submittingRatingListener,
         child: BlocBuilder<RateExperienceDifficultyActorBloc, RateExperienceDifficultyActorState>(
-          builder: (context, state) => Column(
-            children: <Widget>[
-              Text(
-                S.of(context).difficultyQuestion,
-                style: const TextStyle(color: WorldOnColors.background),
+          builder: (context, state) => Card(
+            shape: const RoundedRectangleBorder(
+              side: BorderSide(
+                color: WorldOnColors.primary,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(5),
+              child: Column(
                 children: <Widget>[
-                  Expanded(
-                    child: Slider(
-                      min: 1,
-                      max: 10,
-                      label: state.difficulty.toString(),
-                      activeColor: getColorByDifficulty(state.difficulty),
-                      onChanged: (value) => context.bloc<RateExperienceDifficultyActorBloc>().add(
-                            RateExperienceDifficultyActorEvent.difficultyChanged(value.round()),
-                          ),
-                      value: state.difficulty.ceilToDouble(),
-                    ),
+                  Text(
+                    S.of(context).difficultyQuestion,
+                    style: const TextStyle(color: WorldOnColors.background),
+                  ),
+                  Slider(
+                    min: 1,
+                    max: 10,
+                    label: state.difficulty.toString(),
+                    activeColor: getColorByDifficulty(state.difficulty),
+                    onChanged: (value) => context.bloc<RateExperienceDifficultyActorBloc>().add(
+                          RateExperienceDifficultyActorEvent.difficultyChanged(value.round()),
+                        ),
+                    value: state.difficulty.ceilToDouble(),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 5),
@@ -57,16 +60,16 @@ class RateDifficultyWidget extends StatelessWidget {
                       child: Text(
                         S.of(context).submitDifficultyRating,
                         style: const TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: WorldOnColors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: WorldOnColors.white,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ],
           ),
         ),
       ),

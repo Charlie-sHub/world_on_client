@@ -31,7 +31,7 @@ dependencies:
   flutter_bloc: ^6.1.1
   # Value equality
   # Probably useless now
-  equatable: ^1.2.5
+  equatable: ^1.2.6
   # Functional programming thingies
   dartz: ^0.9.2
   # For unions generation
@@ -63,7 +63,7 @@ dependencies:
   # For getting images from the device
   image_picker: ^0.6.7+22
   # For getting multiple images from the device
-  multi_image_picker: ^4.7.14
+  multi_image_picker: ^4.7.15
   # Local database, mostly for back-end simulation
   moor_flutter: ^3.1.0
   moor: ^3.4.0

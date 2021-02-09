@@ -109,7 +109,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   }
 
   @override
-  Future<Either<Failure, Unit>> rewardUser(int experiencePoints) async {
+  Future<Either<Failure, int>> rewardUser(int experiencePoints) async {
     try {
       // I don't like doing this at all
       // Having to get the user just to use the experience points
@@ -120,6 +120,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       // Those ids would be retrieved when needed
       // Instead of having the entire objects inside the users.
       final _currentUser = await _firestore.currentUser();
+      int _experiencePointsAwarded;
       if (_currentUser.items.any(
         (item) {
           if (item.code == ItemCode.expBoost) {
@@ -129,14 +130,15 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
           }
         },
       )) {
-        final _pointsPlusBonus = experiencePoints * 2;
-        final _userLevel = Levels.levelAt(_pointsPlusBonus + _currentUser.experiencePoints.getOrCrash());
-        await _updateLevelExperiencePoints(_userDocument, _pointsPlusBonus, _userLevel);
+        _experiencePointsAwarded = experiencePoints * 2;
+        final _userLevel = Levels.levelAt(_experiencePointsAwarded + _currentUser.experiencePoints.getOrCrash());
+        await _updateLevelExperiencePoints(_userDocument, _experiencePointsAwarded, _userLevel);
       } else {
-        final _userLevel = Levels.levelAt(experiencePoints + _currentUser.experiencePoints.getOrCrash());
-        await _updateLevelExperiencePoints(_userDocument, experiencePoints, _userLevel);
+        _experiencePointsAwarded = experiencePoints;
+        final _userLevel = Levels.levelAt(_experiencePointsAwarded + _currentUser.experiencePoints.getOrCrash());
+        await _updateLevelExperiencePoints(_userDocument, _experiencePointsAwarded, _userLevel);
       }
-      return right(unit);
+      return right(_experiencePointsAwarded);
     } on FirebaseException catch (exception) {
       return onError(exception);
     }
@@ -147,6 +149,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       {
         "experiencePoints": FieldValue.increment(experiencePoints),
         "level": _userLevel,
+        "coins": FieldValue.increment(1),
       },
     );
   }
@@ -157,7 +160,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
     throw UnimplementedError();
   }
 
-  Either<Failure, Unit> onError(FirebaseException exception) {
+  Either<Failure, T> onError<T>(FirebaseException exception) {
     _logger.e("FirebaseException: ${exception.message}");
     return left(
       const Failure.coreData(

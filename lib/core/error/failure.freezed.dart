@@ -1005,7 +1005,6 @@ abstract class _CoreData<T> implements Failure<T> {
   const factory _CoreData(CoreDataFailure<T> coreDataFailure) = _$_CoreData<T>;
 
   CoreDataFailure<T> get coreDataFailure;
-
   @JsonKey(ignore: true)
   _$CoreDataCopyWith<T, _CoreData<T>> get copyWith;
 }

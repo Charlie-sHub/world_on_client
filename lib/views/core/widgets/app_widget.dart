@@ -44,6 +44,8 @@ class AppWidget extends StatelessWidget {
           bottomNavigationBarTheme: BottomNavigationBarTheme.of(context).copyWith(
             selectedItemColor: Colors.white,
             unselectedItemColor: Colors.white,
+            type: BottomNavigationBarType.shifting,
+            showUnselectedLabels: false,
           ),
           floatingActionButtonTheme: const FloatingActionButtonThemeData(
             elevation: 10,

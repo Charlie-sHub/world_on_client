@@ -133,7 +133,7 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
   }
 
   @override
-  Future<Either<Failure, Unit>> rewardUser(int experiencePoints) async {
+  Future<Either<Failure, int>> rewardUser(int experiencePoints) async {
     try {
       final _moorUserOption = await _database.moorUsersDao.getLoggedInUser();
       return _moorUserOption.fold(
@@ -148,7 +148,7 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
             ),
           );
            */
-          return right(unit);
+          return right(100);
         },
       );
     } catch (exception) {

@@ -35,20 +35,17 @@ mixin _$StoreDataFailure<T> {
     @required TResult notEnoughCoins(),
     @required TResult cancelled(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult notEnoughCoins(),
     TResult cancelled(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult notEnoughCoins(NotEnoughCoins<T> value),
     @required TResult cancelled(Cancelled<T> value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult notEnoughCoins(NotEnoughCoins<T> value),

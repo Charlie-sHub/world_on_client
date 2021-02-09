@@ -11,7 +11,7 @@ class StorePageButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       icon: const Icon(
-        Icons.account_balance_wallet,
+        Icons.account_balance_wallet_outlined,
         size: 30,
       ),
       onPressed: () => context.navigator.push(

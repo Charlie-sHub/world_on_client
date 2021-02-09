@@ -227,8 +227,10 @@ class _$ExperienceFinishActorStateTearOff {
   }
 
 // ignore: unused_element
-  _FinishSuccess finishSuccess() {
-    return const _FinishSuccess();
+  _FinishSuccess finishSuccess(int amountXP) {
+    return _FinishSuccess(
+      amountXP,
+    );
   }
 
 // ignore: unused_element
@@ -249,14 +251,14 @@ mixin _$ExperienceFinishActorState {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult actionInProgress(),
-    @required TResult finishSuccess(),
+    @required TResult finishSuccess(int amountXP),
     @required TResult finishFailure(Failure<dynamic> failure),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult actionInProgress(),
-    TResult finishSuccess(),
+    TResult finishSuccess(int amountXP),
     TResult finishFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   });
@@ -333,7 +335,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult actionInProgress(),
-    @required TResult finishSuccess(),
+    @required TResult finishSuccess(int amountXP),
     @required TResult finishFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -348,7 +350,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult actionInProgress(),
-    TResult finishSuccess(),
+    TResult finishSuccess(int amountXP),
     TResult finishFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   }) {
@@ -436,7 +438,7 @@ class _$_ActionInProgress implements _ActionInProgress {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult actionInProgress(),
-    @required TResult finishSuccess(),
+    @required TResult finishSuccess(int amountXP),
     @required TResult finishFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -451,7 +453,7 @@ class _$_ActionInProgress implements _ActionInProgress {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult actionInProgress(),
-    TResult finishSuccess(),
+    TResult finishSuccess(int amountXP),
     TResult finishFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   }) {
@@ -503,50 +505,66 @@ abstract class _$FinishSuccessCopyWith<$Res> {
   factory _$FinishSuccessCopyWith(
           _FinishSuccess value, $Res Function(_FinishSuccess) then) =
       __$FinishSuccessCopyWithImpl<$Res>;
+
+  $Res call({int amountXP});
 }
 
 /// @nodoc
 class __$FinishSuccessCopyWithImpl<$Res>
     extends _$ExperienceFinishActorStateCopyWithImpl<$Res>
     implements _$FinishSuccessCopyWith<$Res> {
-  __$FinishSuccessCopyWithImpl(
-      _FinishSuccess _value, $Res Function(_FinishSuccess) _then)
-      : super(_value, (v) => _then(v as _FinishSuccess));
+  __$FinishSuccessCopyWithImpl(_FinishSuccess _value, $Res Function(_FinishSuccess) _then) : super(_value, (v) => _then(v as _FinishSuccess));
 
   @override
   _FinishSuccess get _value => super._value as _FinishSuccess;
+
+  @override
+  $Res call({
+    Object amountXP = freezed,
+  }) {
+    return _then(_FinishSuccess(
+      amountXP == freezed ? _value.amountXP : amountXP as int,
+    ));
+  }
 }
 
 /// @nodoc
 class _$_FinishSuccess implements _FinishSuccess {
-  const _$_FinishSuccess();
+  const _$_FinishSuccess(this.amountXP) : assert(amountXP != null);
+
+  @override
+  final int amountXP;
 
   @override
   String toString() {
-    return 'ExperienceFinishActorState.finishSuccess()';
+    return 'ExperienceFinishActorState.finishSuccess(amountXP: $amountXP)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _FinishSuccess);
+    return identical(this, other) || (other is _FinishSuccess && (identical(other.amountXP, amountXP) || const DeepCollectionEquality().equals(other.amountXP, amountXP)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(amountXP);
+
+  @JsonKey(ignore: true)
+  @override
+  _$FinishSuccessCopyWith<_FinishSuccess> get copyWith => __$FinishSuccessCopyWithImpl<_FinishSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult actionInProgress(),
-    @required TResult finishSuccess(),
+    @required TResult finishSuccess(int amountXP),
     @required TResult finishFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
     assert(actionInProgress != null);
     assert(finishSuccess != null);
     assert(finishFailure != null);
-    return finishSuccess();
+    return finishSuccess(amountXP);
   }
 
   @override
@@ -554,13 +572,13 @@ class _$_FinishSuccess implements _FinishSuccess {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult actionInProgress(),
-    TResult finishSuccess(),
+    TResult finishSuccess(int amountXP),
     TResult finishFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (finishSuccess != null) {
-      return finishSuccess();
+      return finishSuccess(amountXP);
     }
     return orElse();
   }
@@ -598,7 +616,12 @@ class _$_FinishSuccess implements _FinishSuccess {
 }
 
 abstract class _FinishSuccess implements ExperienceFinishActorState {
-  const factory _FinishSuccess() = _$_FinishSuccess;
+  const factory _FinishSuccess(int amountXP) = _$_FinishSuccess;
+
+  int get amountXP;
+
+  @JsonKey(ignore: true)
+  _$FinishSuccessCopyWith<_FinishSuccess> get copyWith;
 }
 
 /// @nodoc
@@ -676,7 +699,7 @@ class _$_FinishFailure implements _FinishFailure {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult actionInProgress(),
-    @required TResult finishSuccess(),
+    @required TResult finishSuccess(int amountXP),
     @required TResult finishFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -691,7 +714,7 @@ class _$_FinishFailure implements _FinishFailure {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult actionInProgress(),
-    TResult finishSuccess(),
+    TResult finishSuccess(int amountXP),
     TResult finishFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   }) {

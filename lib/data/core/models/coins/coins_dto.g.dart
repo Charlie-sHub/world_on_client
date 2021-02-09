@@ -8,10 +8,10 @@ part of 'coins_dto.dart';
 
 _$_CoinsDto _$_$_CoinsDtoFromJson(Map<String, dynamic> json) {
   return _$_CoinsDto(
-    oneCoinProductId: json['oneCoinProductId'] as String,
+    tenCoinsProductId: json['tenCoinsProductId'] as String,
   );
 }
 
 Map<String, dynamic> _$_$_CoinsDtoToJson(_$_CoinsDto instance) => <String, dynamic>{
-      'oneCoinProductId': instance.oneCoinProductId,
+      'tenCoinsProductId': instance.tenCoinsProductId,
     };

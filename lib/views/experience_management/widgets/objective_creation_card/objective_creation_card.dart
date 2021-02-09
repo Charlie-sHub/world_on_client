@@ -164,7 +164,10 @@ class ObjectiveCreationCard extends HookWidget {
   }
 
   Future _pickImage(BuildContext context) async {
-    final _imagePicked = await ImagePicker().getImage(source: ImageSource.gallery);
+    final _imagePicked = await ImagePicker().getImage(
+      source: ImageSource.gallery,
+      imageQuality: 50,
+    );
     if (_imagePicked != null) {
       final _imageFile = File(_imagePicked.path);
       context.bloc<ObjectiveFormBloc>().add(ObjectiveFormEvent.imageChanged(_imageFile));

@@ -85,7 +85,7 @@
   "experienceTitleStringWithInvalidCharacters": "El título tiene caracteres no válidos",
   "experienceTitleLabelText": "Título",
   "experiencePointsGainedPre": "¡Has ganado",
-  "experiencePointsGainedPost": "puntos de experiencia!",
+  "experiencePointsGainedPost": "puntos de experiencia! y 1 Worl On Coin",
   "experienceFinishButton": "Finalizar",
   "experienceFinishSuccessTitle": "¡Experiencia terminada!",
   "rewardsGained": "Recompensas",
@@ -136,5 +136,14 @@
   "create": "Crear",
   "doneBy": "Finalizada por: ",
   "level": "Nivel: ",
-  "store": "TIENDA"
+  "storePageTitle": "TIENDA",
+  "storeNavigationBarStore": "Tienda",
+  "storeNavigationBarMyItems": "Mis objetos",
+  "buyItem": "Comprar",
+  "buy10Coins": "Compra 10 monedas",
+  "item": "Objeto",
+  "owned": "Poseido",
+  "alreadyOwned": "Tu ya posees este objeto",
+  "notEnoughCoins": "No posees suficientes monedas",
+  "youHave": "Tu tienes:"
 }

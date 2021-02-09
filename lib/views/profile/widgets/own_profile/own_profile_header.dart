@@ -61,6 +61,9 @@ class OwnProfileHeader extends StatelessWidget {
                   ),
                 ),
               ),
+              // Showing coins would be annoying to update
+              // So they will be hidden for now
+              /*
               Expanded(
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,6 +82,7 @@ class OwnProfileHeader extends StatelessWidget {
                   ],
                 ),
               ),
+               */
               Padding(
                 padding: const EdgeInsets.all(5),
                 child: RaisedButton(

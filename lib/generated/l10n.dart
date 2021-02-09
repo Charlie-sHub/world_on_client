@@ -1,7 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -886,10 +885,10 @@ class S {
     );
   }
 
-  /// `experience points!`
+  /// `experience points! and 1 World On Coin`
   String get experiencePointsGainedPost {
     return Intl.message(
-      'experience points!',
+      'experience points! and 1 World On Coin',
       name: 'experiencePointsGainedPost',
       desc: '',
       args: [],
@@ -1397,10 +1396,100 @@ class S {
   }
 
   /// `STORE`
-  String get store {
+  String get storePageTitle {
     return Intl.message(
       'STORE',
-      name: 'store',
+      name: 'storePageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Store`
+  String get storeNavigationBarStore {
+    return Intl.message(
+      'Store',
+      name: 'storeNavigationBarStore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My items`
+  String get storeNavigationBarMyItems {
+    return Intl.message(
+      'My items',
+      name: 'storeNavigationBarMyItems',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Buy`
+  String get buyItem {
+    return Intl.message(
+      'Buy',
+      name: 'buyItem',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Buy 10 coins`
+  String get buy10Coins {
+    return Intl.message(
+      'Buy 10 coins',
+      name: 'buy10Coins',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Item`
+  String get item {
+    return Intl.message(
+      'Item',
+      name: 'item',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Owned`
+  String get owned {
+    return Intl.message(
+      'Owned',
+      name: 'owned',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You already own this item`
+  String get alreadyOwned {
+    return Intl.message(
+      'You already own this item',
+      name: 'alreadyOwned',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You don't have enough coins`
+  String get notEnoughCoins {
+    return Intl.message(
+      'You don\'t have enough coins',
+      name: 'notEnoughCoins',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have:`
+  String get youHave {
+    return Intl.message(
+      'You have:',
+      name: 'youHave',
       desc: '',
       args: [],
     );

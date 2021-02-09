@@ -175,12 +175,12 @@ class __$ItemCopyWithImpl<$Res> extends _$ItemDtoCopyWithImpl<$Res>
   final int value;
   @override
   final String imageURL;
-  
+
   @override
   String toString() {
     return 'ItemDto(id: $id, name: $name, description: $description, code: $code, value: $value, imageURL: $imageURL)';
   }
-  
+
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||

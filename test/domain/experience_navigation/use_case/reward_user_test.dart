@@ -24,11 +24,12 @@ void main() {
   final params = Params(
     experience: Experience.empty(),
   );
+  const _experiencePointsAwarded = 100;
   test(
     TestDescription.returnNothing,
     () async {
       // Arrange
-      when(mockExperienceNavigationRepository.rewardUser(any)).thenAnswer((_) async => right(unit));
+      when(mockExperienceNavigationRepository.rewardUser(any)).thenAnswer((_) async => right(_experiencePointsAwarded));
       // Act
       final result = await useCase(params);
       // Assert

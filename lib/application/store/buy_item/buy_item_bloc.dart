@@ -1,11 +1,15 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
+import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/item/item.dart';
+import 'package:worldon/domain/core/failures/error.dart';
+import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/store/use_case/buy_item.dart';
 import 'package:worldon/injection.dart';
 
@@ -23,7 +27,22 @@ class BuyItemBloc extends Bloc<BuyItemEvent, BuyItemState> {
   Stream<BuyItemState> mapEventToState(BuyItemEvent event) async* {
     yield* event.map(
       boughtItem: _onItemBought,
+      initialized: _onInitialized,
     );
+  }
+
+  Stream<BuyItemState> _onInitialized(_Initialized event) async* {
+    yield const BuyItemState.actionInProgress();
+    final _userOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
+    final _user = _userOption.fold(
+      () => throw UnAuthenticatedError(),
+      id,
+    );
+    if (_user.items.contains(event.item)) {
+      yield const BuyItemState.owns();
+    } else {
+      yield const BuyItemState.doesNotOwn();
+    }
   }
 
   Stream<BuyItemState> _onItemBought(_BoughtItem event) async* {

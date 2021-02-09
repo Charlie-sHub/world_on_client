@@ -28,6 +28,7 @@ class FinishSuccessView extends StatelessWidget {
             child: Center(
               child: AutoSizeText(
                 experience.title.getOrCrash(),
+                textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   color: WorldOnColors.background,
@@ -49,8 +50,6 @@ class FinishSuccessView extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: const <Widget>[
-              // TODO: Figure out way to calculate how well the User did the Experience
-              // And show the appropriate amount of stars
               WorldOnStar(),
               WorldOnStar(),
               WorldOnStar(),
@@ -75,25 +74,20 @@ class FinishSuccessView extends StatelessWidget {
               ],
             ),
           ExperiencedGainedText(experience: experience),
+          RateDifficultyWidget(experience: experience),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
                 S.of(context).likeQuestion,
-                style: const TextStyle(color: WorldOnColors.background),
+                style: const TextStyle(
+                  color: WorldOnColors.background,
+                  fontSize: 20,
+                ),
               ),
-              Row(
-                children: <Widget>[
-                  LikeDislikeButtonBuilder(experience: experience),
-                  Text(
-                    experience.likedBy.length.toString(),
-                    style: const TextStyle(color: WorldOnColors.background),
-                  ),
-                ],
-              ),
+              LikeDislikeButtonBuilder(experience: experience),
             ],
           ),
-          RateDifficultyWidget(experience: experience),
           const Padding(
             padding: EdgeInsets.all(5),
             child: FinishButton(),

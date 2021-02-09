@@ -2,19 +2,20 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
-import 'package:worldon/data/core/misc/firebase_helpers.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
-import 'package:rxdart/rxdart.dart';
 import 'package:logger/logger.dart';
+import 'package:rxdart/rxdart.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
+import 'package:worldon/data/core/misc/firebase_helpers.dart';
 import 'package:worldon/data/core/models/coins/coins_dto.dart';
 import 'package:worldon/data/core/models/item/item_dto.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
 import 'package:worldon/data/store/failure/store_data_failure.dart';
 import 'package:worldon/domain/core/entities/item/item.dart';
+import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/store/repository/store_repository_interface.dart';
 
 // TODO: Make IOS friendly version of this repository
@@ -28,24 +29,26 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
   ProductionStoreRepository(this._firestore);
 
   @override
-  Future<Either<Failure, Unit>> buyCoin() async {
+  Future<Either<Failure, Unit>> buyCoins(int amount) async {
     try {
       final _coins = CoinsDto.fromFirestore(
         await _firestore.getCoinProductIds(),
       );
-      final _productDetailsResponse = await _inAppPurchaseInstance.queryProductDetails(
-        {_coins.oneCoinProductId},
-      );
-      final _purchaseParam = PurchaseParam(
-        productDetails: _productDetailsResponse.productDetails.first,
-      );
-      await _inAppPurchaseInstance.buyConsumable(purchaseParam: _purchaseParam);
-      final _userDocument = await _firestore.userDocument();
-      await _userDocument.update(
-        {
-          "coins": FieldValue.increment(1),
-        },
-      );
+      if (amount == 10) {
+        final _productDetailsResponse = await _inAppPurchaseInstance.queryProductDetails(
+          {_coins.tenCoinsProductId},
+        );
+        final _purchaseParam = PurchaseParam(
+          productDetails: _productDetailsResponse.productDetails.first,
+        );
+        await _inAppPurchaseInstance.buyConsumable(purchaseParam: _purchaseParam);
+        final _userDocument = await _firestore.userDocument();
+        await _userDocument.update(
+          {
+            "coins": FieldValue.increment(1),
+          },
+        );
+      }
       return right(unit);
     } catch (error) {
       return left(_onError(error));
@@ -80,11 +83,7 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
 
   @override
   Stream<Either<Failure, KtList<Item>>> streamOwnedItems() async* {
-    // TODO: Should this be a stream?
-    // The list of items will be pretty static considering it's obtained from an attribute of the user
-    // Maybe if a way could be found of listening to the user's document changes
-    // So each time its list of items changes the stream would update
-    // a stream subscription of _userDocument.snapshots() could work for that
+    // Not sure this makes sense as a stream
     final _userDocument = await _firestore.userDocument();
     final _userDto = UserDto.fromFirestore(await _userDocument.get());
     if (_userDto.items.isNotEmpty) {
@@ -155,6 +154,16 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
     ).onErrorReturnWith(
       (error) => left(_onError(error)),
     );
+  }
+
+  @override
+  Future<Either<Failure, User>> loadCurrentUser() async {
+    try {
+      final _user = await _firestore.currentUser();
+      return right(_user);
+    } catch (error) {
+      return left(_onError(error));
+    }
   }
 
   Failure _onError(dynamic error) {
