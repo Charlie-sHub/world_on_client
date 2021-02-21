@@ -50,24 +50,16 @@ const $ItemDto = _$ItemDtoTearOff();
 /// @nodoc
 mixin _$ItemDto {
   String get id;
-  
   String get name;
-  
   String get description;
-  
   ItemCode get code;
-  
   int get value;
-  
   int get timeLimitInDays;
-  
   String get imageURL;
-  
   @ServerTimestampConverter()
   DateTime get boughtDate;
-  
+
   Map<String, dynamic> toJson();
-  
   @JsonKey(ignore: true)
   $ItemDtoCopyWith<ItemDto> get copyWith;
 }
@@ -217,8 +209,8 @@ class __$ItemCopyWithImpl<$Res> extends _$ItemDtoCopyWithImpl<$Res>
   @override
   @ServerTimestampConverter()
   final DateTime boughtDate;
-  
-  @override
+
+@override
   String toString() {
     return 'ItemDto(id: $id, name: $name, description: $description, code: $code, value: $value, timeLimitInDays: $timeLimitInDays, imageURL: $imageURL, boughtDate: $boughtDate)';
   }
@@ -297,20 +289,15 @@ abstract class _Item extends ItemDto {
   
   @override
   ItemCode get code;
-  
   @override
   int get value;
-  
   @override
   int get timeLimitInDays;
-  
   @override
   String get imageURL;
-  
   @override
   @ServerTimestampConverter()
   DateTime get boughtDate;
-  
   @override
   @JsonKey(ignore: true)
   _$ItemCopyWith<_Item> get copyWith;

@@ -9,8 +9,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
-import 'package:moor_db_viewer/moor_db_viewer.dart';
-import 'package:moor_flutter/moor_flutter.dart';
 
 import '../../../domain/core/entities/experience/experience.dart';
 import '../../../domain/core/entities/tag/tag.dart';
@@ -30,7 +28,6 @@ class Routes {
   static const String registrationPage = '/registration-page';
   static const String mainPage = '/main-page';
   static const String profileEditingPage = '/profile-editing-page';
-  static const String moorDbViewer = '/moor-db-viewer';
   static const String experienceManagementPage = '/experience-management-page';
   static const String tagManagementPage = '/tag-management-page';
   static const String storePage = '/store-page';
@@ -40,7 +37,6 @@ class Routes {
     registrationPage,
     mainPage,
     profileEditingPage,
-    moorDbViewer,
     experienceManagementPage,
     tagManagementPage,
     storePage,
@@ -56,7 +52,6 @@ class Router extends RouterBase {
     RouteDef(Routes.registrationPage, page: RegistrationPage),
     RouteDef(Routes.mainPage, page: MainPage),
     RouteDef(Routes.profileEditingPage, page: ProfileEditingPage),
-    RouteDef(Routes.moorDbViewer, page: MoorDbViewer),
     RouteDef(Routes.experienceManagementPage, page: ExperienceManagementPage),
     RouteDef(Routes.tagManagementPage, page: TagManagementPage),
     RouteDef(Routes.storePage, page: StorePage),
@@ -98,13 +93,6 @@ class Router extends RouterBase {
         ),
         settings: data,
         transitionsBuilder: TransitionsBuilders.slideLeft,
-      );
-    },
-    MoorDbViewer: (data) {
-      final args = data.getArgs<MoorDbViewerArguments>(nullOk: false);
-      return MaterialPageRoute<dynamic>(
-        builder: (context) => MoorDbViewer(args.db),
-        settings: data,
       );
     },
     ExperienceManagementPage: (data) {
@@ -160,14 +148,6 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
         arguments: ProfileEditingPageArguments(key: key, user: user),
       );
 
-  Future<dynamic> pushMoorDbViewer({
-    @required GeneratedDatabase db,
-  }) =>
-      push<dynamic>(
-        Routes.moorDbViewer,
-        arguments: MoorDbViewerArguments(db: db),
-      );
-
   Future<dynamic> pushExperienceManagementPage({
     Key key,
     @required Option<Experience> experienceOption,
@@ -199,12 +179,6 @@ class ProfileEditingPageArguments {
   final Key key;
   final User user;
   ProfileEditingPageArguments({this.key, @required this.user});
-}
-
-/// MoorDbViewer arguments holder class
-class MoorDbViewerArguments {
-  final GeneratedDatabase db;
-  MoorDbViewerArguments({@required this.db});
 }
 
 /// ExperienceManagementPage arguments holder class

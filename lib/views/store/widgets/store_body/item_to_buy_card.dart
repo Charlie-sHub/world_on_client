@@ -63,6 +63,7 @@ class ItemToBuyCard extends StatelessWidget {
                 ),
               ),
               Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Row(
                     children: [

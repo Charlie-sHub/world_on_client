@@ -1,21 +1,9 @@
 name: worldon
 description: Front end of the World On project.
 
-# The following line prevents the package from being accidentally published to
-# pub.dev using `pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-# The following defines the version and build number for your application.
-# A version number is three numbers separated by dots, like 1.2.43
-# followed by an optional build number separated by a +.
-# Both the version and the builder number may be overridden in flutter
-# build by specifying --build-name and --build-number, respectively.
-# In Android, build-name is used as versionName while build-number used as versionCode.
-# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
-# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
-# Read more about iOS versioning at
-# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.0+2
+version: 1.0.0+4
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -28,7 +16,7 @@ dependencies:
   # For dependency injection
   injectable: ^1.0.7
   # Bloc for state management
-  flutter_bloc: ^6.1.1
+  flutter_bloc: ^6.1.2
   # Value equality
   # Probably useless now
   equatable: ^1.2.6
@@ -64,11 +52,6 @@ dependencies:
   image_picker: ^0.6.7+22
   # For getting multiple images from the device
   multi_image_picker: ^4.7.15
-  # Local database, mostly for back-end simulation
-  moor_flutter: ^3.1.0
-  moor: ^3.4.0
-  # For viewing the database
-  moor_db_viewer: ^2.0.3
   # For providing objects down the widget tree
   provider: ^4.3.3
   # For environment control
@@ -86,9 +69,9 @@ dependencies:
   # For use with Firebase as backend
   firebase_core: ^0.7.0
   # For authentication with Firebase
-  firebase_auth: ^0.20.0+1
+  firebase_auth: ^0.20.1
   # For simple data storage
-  cloud_firestore: ^0.16.0
+  cloud_firestore: ^0.16.0+1
   # For complex data storage (images)
   firebase_storage: ^7.0.0
   # For drawing routes in the map
@@ -125,10 +108,6 @@ dev_dependencies:
   flutter_launcher_icons: ^0.8.1
   # For extra icons
   font_awesome_flutter: ^8.11.0
-  # Generator for moor
-  moor_generator: ^3.4.1
-  # For testing with moor
-  moor_ffi: ^0.8.0
   build_runner:
 
 flutter_icons:
@@ -137,9 +116,7 @@ flutter_icons:
   ios: true
 
 flutter:
-
   uses-material-design: true
-
   assets:
     - assets/
 

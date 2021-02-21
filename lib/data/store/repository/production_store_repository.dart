@@ -15,7 +15,6 @@ import 'package:worldon/data/core/models/item/item_dto.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
 import 'package:worldon/data/store/failure/store_data_failure.dart';
 import 'package:worldon/domain/core/entities/item/item.dart';
-import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/store/repository/store_repository_interface.dart';
 
 // TODO: Make IOS friendly version of this repository
@@ -155,16 +154,6 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
     ).onErrorReturnWith(
       (error) => left(_onError(error)),
     );
-  }
-
-  @override
-  Future<Either<Failure, User>> loadCurrentUser() async {
-    try {
-      final _user = await _firestore.currentUser();
-      return right(_user);
-    } catch (error) {
-      return left(_onError(error));
-    }
   }
 
   Failure _onError(dynamic error) {

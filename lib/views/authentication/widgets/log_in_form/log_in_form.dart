@@ -4,7 +4,6 @@ import 'package:worldon/application/authentication/log_in_form/log_in_form_bloc.
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/authentication/widgets/log_in_form/log_in_button.dart';
 import 'package:worldon/views/authentication/widgets/log_in_form/log_in_google_button.dart';
-import 'package:worldon/views/authentication/widgets/log_in_form/log_in_trouble_button.dart';
 import 'package:worldon/views/authentication/widgets/log_in_form/register_button.dart';
 import 'package:worldon/views/authentication/widgets/log_in_form/world_on_logo_medium.dart';
 import 'package:worldon/views/authentication/widgets/password_text_field.dart';
@@ -49,8 +48,8 @@ class LogInForm extends StatelessWidget {
               const LogInButton(),
               const SizedBox(height: 5),
               const LogInGoogleButton(),
-              const SizedBox(height: 5),
-              const LogInTroubleButton(),
+              // const SizedBox(height: 5),
+              // const LogInTroubleButton(),
               const SizedBox(height: 5),
               const RegisterButton(),
             ],

@@ -43,19 +43,12 @@ const $Item = _$ItemTearOff();
 /// @nodoc
 mixin _$Item {
   UniqueId get id;
-
   Name get name;
-
   EntityDescription get description;
-
   ItemCode get code;
-
   int get value;
-
   String get imageURL;
-
   int get timeLimitInDays;
-
   DateTime get boughtDate;
 
   @JsonKey(ignore: true)
@@ -216,7 +209,6 @@ class _$_Item extends _Item {
 
 abstract class _Item extends Item {
   const _Item._() : super._();
-
   const factory _Item(
       {@required UniqueId id,
       @required Name name,
@@ -229,28 +221,20 @@ abstract class _Item extends Item {
 
   @override
   UniqueId get id;
-
   @override
   Name get name;
-
   @override
   EntityDescription get description;
-
   @override
   ItemCode get code;
-
   @override
   int get value;
-
   @override
   String get imageURL;
-
   @override
   int get timeLimitInDays;
-
   @override
   DateTime get boughtDate;
-
   @override
   @JsonKey(ignore: true)
   _$ItemCopyWith<_Item> get copyWith;
