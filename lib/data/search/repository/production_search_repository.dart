@@ -42,8 +42,8 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
       (experiences) {
         final _resultList = experiences
             .where(
-              (experience) => experience.title.getOrCrash().contains(
-                    title.getOrCrash(),
+              (experience) => experience.title.getOrCrash().toLowerCase().contains(
+                    title.getOrCrash().toLowerCase(),
                   ),
             )
             .toImmutableList();
@@ -77,8 +77,8 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
       (tags) {
         final _resultList = tags
             .where(
-              (tag) => tag.name.getOrCrash().contains(
-                    name.getOrCrash(),
+              (tag) => tag.name.getOrCrash().toLowerCase().contains(
+                    name.getOrCrash().toLowerCase(),
                   ),
             )
             .toImmutableList();
@@ -112,8 +112,8 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
       (users) {
         final _resultList = users
             .where(
-              (user) => user.name.getOrCrash().contains(
-                    name.getOrCrash(),
+              (user) => user.name.getOrCrash().toLowerCase().contains(
+                    name.getOrCrash().toLowerCase(),
                   ),
             )
             .toImmutableList();
@@ -147,8 +147,8 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
       (users) {
         final _resultList = users
             .where(
-              (user) => user.username.getOrCrash().contains(
-                    username.getOrCrash(),
+              (user) => user.username.getOrCrash().toLowerCase().contains(
+                    username.getOrCrash().toLowerCase(),
                   ),
             )
             .toImmutableList();
@@ -165,19 +165,62 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
         }
       },
     ).onErrorReturnWith(
-        (error) => left(onError(error)),
+      (error) => left(onError(error)),
     );
+  }
+
+  @override
+  Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByTags(TagSet tags) async* {
+    if (tags.getOrCrash().isNotEmpty()) {
+      // This is pretty dumb
+      final _auxTagList = tags.getOrCrash().toList().asList();
+      yield* _firestore.experienceCollection
+          .where(
+            "tags.id",
+            // Maybe i should use a whereIn
+            arrayContainsAny: _auxTagList,
+          )
+          .orderBy(
+            "creationDate",
+            descending: true,
+          )
+          .snapshots()
+          .map(
+            (snapshot) => snapshot.docs.map(
+              (document) => ExperienceDto.fromFirestore(document).toDomain(),
+            ),
+          )
+          .map(
+        (experiences) {
+          if (experiences.isNotEmpty) {
+            return right<Failure, KtList<Experience>>(
+              experiences.toImmutableList(),
+            );
+          } else {
+            return left<Failure, KtList<Experience>>(
+              const Failure.coreData(
+                CoreDataFailure.notFoundError(),
+              ),
+            );
+          }
+        },
+      ).onErrorReturnWith(
+        (error) => left(onError(error)),
+      );
+    } else {
+      yield* Stream.value(
+        left(
+          const Failure.coreData(
+            CoreDataFailure.notFoundError(),
+          ),
+        ),
+      );
+    }
   }
 
   @override
   Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByDifficulty(Difficulty difficulty) {
     // TODO: implement searchExperiencesByDifficulty
-    throw UnimplementedError();
-  }
-
-  @override
-  Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByTags(TagSet tags) {
-    // TODO: implement searchExperiencesByTags
     throw UnimplementedError();
   }
 

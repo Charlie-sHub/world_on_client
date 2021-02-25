@@ -35,7 +35,7 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
   }
 
   @override
-  Future<Either<Failure, int>> rewardUser(int experiencePoints) async {
+  Future<Either<Failure, Map>> rewardUser(int experiencePoints) async {
     throw UnimplementedError();
   }
 

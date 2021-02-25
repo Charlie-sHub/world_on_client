@@ -25,4 +25,16 @@ void main() {
       expect(level.isValid(), false);
     },
   );
+  test(
+    "Should give the level it started with",
+    () async {
+      // Arrange
+      const _level = 99;
+      // Act
+      final _xpRequired = Levels.experiencePointsRequired(_level);
+      final _levelAt = Levels.levelAt(_xpRequired);
+      // Assert
+      expect(_levelAt, _level);
+    },
+  );
 }

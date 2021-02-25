@@ -1,0 +1,58 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:worldon/application/experience_log/experience_log_watcher/experience_log_watcher_bloc.dart';
+import 'package:worldon/generated/l10n.dart';
+import 'package:worldon/views/core/widgets/cards/error_card.dart';
+import 'package:worldon/views/core/widgets/cards/experience_card/experience_card.dart';
+import 'package:worldon/views/core/widgets/error/error_display.dart';
+import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
+
+import '../../../../injection.dart';
+
+class ProfileLogTabView extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => getIt<ExperienceLogWatcherBloc>()
+        ..add(
+          const ExperienceLogWatcherEvent.watchExperiencesLogStarted(),
+        ),
+      child: BlocBuilder<ExperienceLogWatcherBloc, ExperienceLogWatcherState>(
+        builder: (context, state) => Scaffold(
+          body: state.map(
+            initial: (_) => Container(),
+            loadInProgress: (_) => const WorldOnProgressIndicator(),
+            loadSuccess: (state) => ListView.builder(
+              physics: const BouncingScrollPhysics(),
+              padding: const EdgeInsets.all(10),
+              itemCount: state.experiences.size,
+              itemBuilder: (context, index) {
+                final _experience = state.experiences[index];
+                if (_experience.isValid) {
+                  return ExperienceCard(
+                    experience: _experience,
+                    key: Key(_experience.id.toString()),
+                  );
+                } else {
+                  return ErrorCard(
+                    entityType: S.of(context).experience,
+                    valueFailureString: _experience.failureOption.fold(
+                      () => S.of(context).noError,
+                      (failure) => failure.toString(),
+                    ),
+                  );
+                }
+              },
+            ),
+            loadFailure: (state) => ErrorDisplay(
+              retryFunction: () => context.bloc<ExperienceLogWatcherBloc>().add(
+                    const ExperienceLogWatcherEvent.watchExperiencesLogStarted(),
+                  ),
+              failure: state.failure,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

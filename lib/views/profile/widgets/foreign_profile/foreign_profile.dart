@@ -3,8 +3,9 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/profile/widgets/foreign_profile/foreign_profile_header.dart';
 import 'package:worldon/views/profile/widgets/profile_achievements_tab_view.dart';
 import 'package:worldon/views/profile/widgets/profile_experiences_tab_view/profile_experiences_tab_view.dart';
-import 'package:worldon/views/profile/widgets/profile_tab_bar.dart';
 import 'package:worldon/views/profile/widgets/profile_users_tab_view/profile_users_tab_view.dart';
+
+import 'foreign_profile_tab_bar.dart';
 
 class ForeignProfile extends StatelessWidget {
   final User user;
@@ -23,7 +24,7 @@ class ForeignProfile extends StatelessWidget {
           // So the Header and TabBar hide when scrolling down the lists
           // Same for the OwnProfile
           ForeignProfileHeader(user: user),
-          const ProfileTabBar(),
+          const ForeignProfileTabBar(),
           Expanded(
             child: TabBarView(
               children: [

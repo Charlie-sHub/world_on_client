@@ -36,9 +36,12 @@ class ExperienceFinishActorBloc extends Bloc<ExperienceFinishActorEvent, Experie
     );
     yield _finishFailureOrUnit.fold(
       (failure) => ExperienceFinishActorState.finishFailure(failure),
-        (_) => _rewardFailureOrAmountOfXP.fold(
+      (_) => _rewardFailureOrAmountOfXP.fold(
         (failure) => ExperienceFinishActorState.finishFailure(failure),
-        (amountXP) => ExperienceFinishActorState.finishSuccess(amountXP),
+        (map) => ExperienceFinishActorState.finishSuccess(
+          map["experiencePoints"] as int,
+          leveledUp: map["leveledUp"] as bool,
+        ),
       ),
     );
   }

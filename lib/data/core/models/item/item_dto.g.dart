@@ -19,7 +19,8 @@ _$_Item _$_$_ItemFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_ItemToJson(_$_Item instance) => <String, dynamic>{
+Map<String, dynamic> _$_$_ItemToJson(_$_Item instance) =>
+  <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'description': instance.description,

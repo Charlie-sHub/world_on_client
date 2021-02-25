@@ -120,6 +120,7 @@
   "experiences": "Experiences",
   "profileRelationTab": "Relations",
   "profileAchievementsTab": "Achievements",
+  "profileLogTab": "To Do",
   "searchTermEmptyString": "The search term can't be empty",
   "noSearchesMessage": "Search for something!",
   "searchUsers": "Users",
@@ -146,5 +147,6 @@
   "alreadyOwned": "You already own this item",
   "notEnoughCoins": "You don't have enough coins",
   "youHave": "You have:",
-  "lasts": " days of duration"
+  "lasts": " days of duration",
+  "levelUp": "You have leveled up!"
 }

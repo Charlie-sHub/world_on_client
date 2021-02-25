@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/widgets/cards/user_card/name_username_display.dart';
 import 'package:worldon/views/core/widgets/cards/user_card/user_bio.dart';
-import 'package:worldon/views/core/widgets/misc/block_unblock_button_builder/block_unblock_button_builder.dart';
 import 'package:worldon/views/core/widgets/misc/follow_unfollow_button_builder/follow_unfollow_button_builder.dart';
 import 'package:worldon/views/core/widgets/misc/user_experience_info.dart';
 import 'package:worldon/views/core/widgets/misc/user_image.dart';
@@ -29,7 +28,7 @@ class UserCard extends StatelessWidget {
               ),
               NameUsernameDisplay(user: user),
               FollowUnfollowButtonBuilder(user: user),
-              BlockUnblockButtonBuilder(user: user),
+              // BlockUnblockButtonBuilder(user: user),
             ],
           ),
           Padding(

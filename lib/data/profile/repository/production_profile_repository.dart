@@ -3,6 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:logger/logger.dart';
+import 'package:quiver/iterables.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
@@ -219,10 +220,12 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
     if (_userDto.blockedUsersIds.isNotEmpty) {
+      // TODO: Try to make it work without limit
+      final _auxListOfIdLists = partition(_userDto.blockedUsersIds, 10);
       yield* _firestore.userCollection
           .where(
             "id",
-            whereIn: _userDto.blockedUsersIds.toList(),
+            whereIn: _auxListOfIdLists.first,
           ) // TODO: Should order by block date
           .orderBy(
             "creationDate",
@@ -230,12 +233,12 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           )
           .snapshots()
           .map(
-            (snapshot) => snapshot.docs.map(
-              (document) => UserDto.fromFirestore(document).toDomain(),
-            ),
-          )
-          .map(
-        (users) {
+          (snapshot) => snapshot.docs.map(
+            (document) => UserDto.fromFirestore(document).toDomain(),
+        ),
+      )
+        .map(
+          (users) {
           if (users.isNotEmpty) {
             return right<Failure, KtList<User>>(
               users.toImmutableList(),
@@ -249,7 +252,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-        (error) => left(
+          (error) => left(
           _onError(error),
         ),
       );
@@ -269,10 +272,12 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
     if (_userDto.followedUsersIds.isNotEmpty) {
+      // TODO: Try to make it work without limit
+      final _auxListOfIdLists = partition(_userDto.followedUsersIds, 10);
       yield* _firestore.userCollection
           .where(
             "id",
-            whereIn: _userDto.followedUsersIds.toList(),
+            whereIn: _auxListOfIdLists.first,
           ) // TODO: Should order by follow date
           .orderBy(
             "creationDate",
@@ -280,12 +285,12 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           )
           .snapshots()
           .map(
-            (snapshot) => snapshot.docs.map(
-              (document) => UserDto.fromFirestore(document).toDomain(),
-            ),
-          )
-          .map(
-        (users) {
+          (snapshot) => snapshot.docs.map(
+            (document) => UserDto.fromFirestore(document).toDomain(),
+        ),
+      )
+        .map(
+          (users) {
           if (users.isNotEmpty) {
             return right<Failure, KtList<User>>(
               users.toImmutableList(),
@@ -299,7 +304,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-        (error) => left(
+          (error) => left(
           _onError(error),
         ),
       );
@@ -393,10 +398,12 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
     if (_userDto.experiencesDoneIds.isNotEmpty) {
+      // TODO: Try to make it work without limit
+      final _auxListOfIdLists = partition(_userDto.experiencesDoneIds, 10);
       yield* _firestore.experienceCollection
           .where(
             "id",
-            whereIn: _userDto.experiencesDoneIds.toList(),
+            whereIn: _auxListOfIdLists.first,
           ) // TODO: Should order by done date
           .orderBy(
             "creationDate",
@@ -404,12 +411,12 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           )
           .snapshots()
           .map(
-            (snapshot) => snapshot.docs.map(
-              (document) => ExperienceDto.fromFirestore(document).toDomain(),
-            ),
-          )
-          .map(
-        (experiences) {
+          (snapshot) => snapshot.docs.map(
+            (document) => ExperienceDto.fromFirestore(document).toDomain(),
+        ),
+      )
+        .map(
+          (experiences) {
           if (experiences.isNotEmpty) {
             return right<Failure, KtList<Experience>>(
               experiences.toImmutableList(),
@@ -423,7 +430,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-        (error) => left(
+          (error) => left(
           _onError(error),
         ),
       );
@@ -443,10 +450,12 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
     if (_userDto.experiencesLikedIds.isNotEmpty) {
+      // TODO: Try to make it work without limit
+      final _auxListOfIdLists = partition(_userDto.experiencesLikedIds, 10);
       yield* _firestore.experienceCollection
           .where(
             "id",
-            whereIn: _userDto.experiencesLikedIds.toList(),
+            whereIn: _auxListOfIdLists.first,
           ) // TODO: Should order by like date
           .orderBy(
             "creationDate",
@@ -454,12 +463,12 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           )
           .snapshots()
           .map(
-            (snapshot) => snapshot.docs.map(
-              (document) => ExperienceDto.fromFirestore(document).toDomain(),
-            ),
-          )
-          .map(
-        (experiences) {
+          (snapshot) => snapshot.docs.map(
+            (document) => ExperienceDto.fromFirestore(document).toDomain(),
+        ),
+      )
+        .map(
+          (experiences) {
           if (experiences.isNotEmpty) {
             return right<Failure, KtList<Experience>>(
               experiences.toImmutableList(),
@@ -473,7 +482,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-        (error) => left(
+          (error) => left(
           _onError(error),
         ),
       );
@@ -493,10 +502,12 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
     if (_userDto.achievementsIds.isNotEmpty) {
+      // TODO: Try to make it work without limit
+      final _auxListOfIdLists = partition(_userDto.achievementsIds, 10);
       yield* _firestore.achievementCollection
           .where(
             "id",
-            whereIn: _userDto.achievementsIds.toList(),
+            whereIn: _auxListOfIdLists.first,
           ) // TODO: Should order by awarding date
           .orderBy(
             "creationDate",
@@ -504,12 +515,12 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           )
           .snapshots()
           .map(
-            (snapshot) => snapshot.docs.map(
-              (document) => AchievementDto.fromFirestore(document).toDomain(),
-            ),
-          )
-          .map(
-        (achievements) {
+          (snapshot) => snapshot.docs.map(
+            (document) => AchievementDto.fromFirestore(document).toDomain(),
+        ),
+      )
+        .map(
+          (achievements) {
           if (achievements.isNotEmpty) {
             return right<Failure, KtList<Achievement>>(
               achievements.toImmutableList(),
@@ -523,7 +534,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-        (error) => left(
+          (error) => left(
           _onError(error),
         ),
       );
@@ -543,10 +554,12 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
     if (_userDto.interestsIds.isNotEmpty) {
+      // TODO: Try to make it work without limit
+      final _auxListOfIdLists = partition(_userDto.achievementsIds, 10);
       yield* _firestore.tagCollection
           .where(
             "id",
-            whereIn: _userDto.interestsIds.toList(),
+            whereIn: _auxListOfIdLists.first,
           ) // TODO: Should order by addition date
           .orderBy(
             "creationDate",
@@ -554,12 +567,12 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           )
           .snapshots()
           .map(
-            (snapshot) => snapshot.docs.map(
-              (document) => TagDto.fromFirestore(document).toDomain(),
-            ),
-          )
-          .map(
-        (tags) {
+          (snapshot) => snapshot.docs.map(
+            (document) => TagDto.fromFirestore(document).toDomain(),
+        ),
+      )
+        .map(
+          (tags) {
           if (tags.isNotEmpty) {
             return right<Failure, KtList<Tag>>(
               tags.toImmutableList(),
@@ -573,7 +586,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-        (error) => left(
+          (error) => left(
           _onError(error),
         ),
       );

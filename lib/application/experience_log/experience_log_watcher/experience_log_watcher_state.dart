@@ -6,7 +6,7 @@ abstract class ExperienceLogWatcherState with _$ExperienceLogWatcherState {
 
   const factory ExperienceLogWatcherState.loadInProgress() = _LoadInProgress;
 
-  const factory ExperienceLogWatcherState.loadSuccess(KtList<Experience> experienceSet) = _LoadSuccess;
+  const factory ExperienceLogWatcherState.loadSuccess(KtList<Experience> experiences) = _LoadSuccess;
 
   const factory ExperienceLogWatcherState.loadFailure(Failure<dynamic> failure) = _LoadFailure;
 }

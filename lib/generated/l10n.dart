@@ -1236,6 +1236,16 @@ class S {
     );
   }
 
+  /// `To Do`
+  String get profileLogTab {
+    return Intl.message(
+      'To Do',
+      name: 'profileLogTab',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `The search term can't be empty`
   String get searchTermEmptyString {
     return Intl.message(
@@ -1501,6 +1511,16 @@ class S {
     return Intl.message(
       ' days of duration',
       name: 'lasts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have leveled up!`
+  String get levelUp {
+    return Intl.message(
+      'You have leveled up!',
+      name: 'levelUp',
       desc: '',
       args: [],
     );

@@ -68,7 +68,7 @@ abstract class User implements _$User {
         imageURL: "",
         imageFileOption: none(),
         level: UserLevel(0),
-        experiencePoints: ExperiencePoints(0),
+        experiencePoints: ExperiencePoints(100),
         privacy: false,
         adminPowers: false,
         enabled: true,
@@ -122,10 +122,12 @@ abstract class User implements _$User {
 
   double get percentageToNextLevel {
     final _nextLevelRequirements = Levels.experiencePointsRequired(level.getOrCrash() + 1);
-    final _currentLevelRequirements = Levels.experiencePointsRequired(level.getOrCrash());
-    final _totalToNextLevel = _nextLevelRequirements - _currentLevelRequirements;
-    final _hadToNextLevel = experiencePoints.getOrCrash() - _currentLevelRequirements;
-    final _result = _hadToNextLevel / _totalToNextLevel;
+    int _totalToCurrentLevelRequirements = 0;
+    for (int i = level.getOrCrash(); i > 0; i--) {
+      _totalToCurrentLevelRequirements += Levels.experiencePointsRequired(i);
+    }
+    final _hadToNextLevel = experiencePoints.getOrCrash() - _totalToCurrentLevelRequirements;
+    final _result = _hadToNextLevel / _nextLevelRequirements;
     return _result;
   }
 }

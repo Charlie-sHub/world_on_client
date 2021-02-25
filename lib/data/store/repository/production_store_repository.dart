@@ -6,6 +6,7 @@ import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
 import 'package:logger/logger.dart';
+import 'package:quiver/iterables.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
@@ -87,10 +88,15 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
     final _userDocument = await _firestore.userDocument();
     final _userDto = UserDto.fromFirestore(await _userDocument.get());
     if (_userDto.items.isNotEmpty) {
+      // TODO: Try to make it work without limit
+      final _auxListOfIdLists = partition(
+        _userDto.items.map((item) => item.id).toList(),
+        10,
+      );
       yield* _firestore.itemCollection
           .where(
             "id",
-            whereIn: _userDto.items.map((item) => item.id).toList(),
+            whereIn: _auxListOfIdLists.first,
           )
           .snapshots()
           .map(
@@ -98,8 +104,8 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
               (document) => ItemDto.fromFirestore(document).toDomain(),
             ),
           )
-          .map(
-        (items) {
+        .map(
+          (items) {
           if (items.isNotEmpty) {
             return right<Failure, KtList<Item>>(
               items.toImmutableList(),
@@ -113,7 +119,7 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-        (error) => left(_onError(error)),
+          (error) => left(_onError(error)),
       );
     } else {
       yield* Stream.value(

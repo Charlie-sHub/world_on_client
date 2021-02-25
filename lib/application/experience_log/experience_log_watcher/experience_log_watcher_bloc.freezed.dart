@@ -319,9 +319,9 @@ class _$ExperienceLogWatcherStateTearOff {
   }
 
 // ignore: unused_element
-  _LoadSuccess loadSuccess(KtList<Experience> experienceSet) {
+  _LoadSuccess loadSuccess(KtList<Experience> experiences) {
     return _LoadSuccess(
-      experienceSet,
+      experiences,
     );
   }
 
@@ -343,14 +343,14 @@ mixin _$ExperienceLogWatcherState {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<Experience> experienceSet),
+    @required TResult loadSuccess(KtList<Experience> experiences),
     @required TResult loadFailure(Failure<dynamic> failure),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult loadInProgress(),
-    TResult loadSuccess(KtList<Experience> experienceSet),
+    TResult loadSuccess(KtList<Experience> experiences),
     TResult loadFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   });
@@ -427,7 +427,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<Experience> experienceSet),
+    @required TResult loadSuccess(KtList<Experience> experiences),
     @required TResult loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -442,7 +442,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult loadInProgress(),
-    TResult loadSuccess(KtList<Experience> experienceSet),
+    TResult loadSuccess(KtList<Experience> experiences),
     TResult loadFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   }) {
@@ -530,7 +530,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<Experience> experienceSet),
+    @required TResult loadSuccess(KtList<Experience> experiences),
     @required TResult loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -545,7 +545,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult loadInProgress(),
-    TResult loadSuccess(KtList<Experience> experienceSet),
+    TResult loadSuccess(KtList<Experience> experiences),
     TResult loadFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   }) {
@@ -597,7 +597,8 @@ abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(
           _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-  $Res call({KtList<Experience> experienceSet});
+
+  $Res call({KtList<Experience> experiences});
 }
 
 /// @nodoc
@@ -613,40 +614,33 @@ class __$LoadSuccessCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object experienceSet = freezed,
+    Object experiences = freezed,
   }) {
     return _then(_LoadSuccess(
-      experienceSet == freezed
-          ? _value.experienceSet
-          : experienceSet as KtList<Experience>,
+      experiences == freezed ? _value.experiences : experiences as KtList<Experience>,
     ));
   }
 }
 
 /// @nodoc
 class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess(this.experienceSet) : assert(experienceSet != null);
+  const _$_LoadSuccess(this.experiences) : assert(experiences != null);
 
   @override
-  final KtList<Experience> experienceSet;
+  final KtList<Experience> experiences;
 
   @override
   String toString() {
-    return 'ExperienceLogWatcherState.loadSuccess(experienceSet: $experienceSet)';
+    return 'ExperienceLogWatcherState.loadSuccess(experiences: $experiences)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _LoadSuccess &&
-            (identical(other.experienceSet, experienceSet) ||
-                const DeepCollectionEquality()
-                    .equals(other.experienceSet, experienceSet)));
+    return identical(this, other) || (other is _LoadSuccess && (identical(other.experiences, experiences) || const DeepCollectionEquality().equals(other.experiences, experiences)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceSet);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experiences);
 
   @JsonKey(ignore: true)
   @override
@@ -658,14 +652,14 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<Experience> experienceSet),
+    @required TResult loadSuccess(KtList<Experience> experiences),
     @required TResult loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
     assert(loadInProgress != null);
     assert(loadSuccess != null);
     assert(loadFailure != null);
-    return loadSuccess(experienceSet);
+    return loadSuccess(experiences);
   }
 
   @override
@@ -673,13 +667,13 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult loadInProgress(),
-    TResult loadSuccess(KtList<Experience> experienceSet),
+    TResult loadSuccess(KtList<Experience> experiences),
     TResult loadFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loadSuccess != null) {
-      return loadSuccess(experienceSet);
+      return loadSuccess(experiences);
     }
     return orElse();
   }
@@ -717,9 +711,10 @@ class _$_LoadSuccess implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements ExperienceLogWatcherState {
-  const factory _LoadSuccess(KtList<Experience> experienceSet) = _$_LoadSuccess;
+  const factory _LoadSuccess(KtList<Experience> experiences) = _$_LoadSuccess;
 
-  KtList<Experience> get experienceSet;
+  KtList<Experience> get experiences;
+
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
@@ -799,7 +794,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult when<TResult extends Object>({
     @required TResult initial(),
     @required TResult loadInProgress(),
-    @required TResult loadSuccess(KtList<Experience> experienceSet),
+    @required TResult loadSuccess(KtList<Experience> experiences),
     @required TResult loadFailure(Failure<dynamic> failure),
   }) {
     assert(initial != null);
@@ -814,7 +809,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult loadInProgress(),
-    TResult loadSuccess(KtList<Experience> experienceSet),
+    TResult loadSuccess(KtList<Experience> experiences),
     TResult loadFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   }) {

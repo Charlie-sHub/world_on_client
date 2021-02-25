@@ -29,7 +29,7 @@ void main() {
     TestDescription.returnNothing,
     () async {
       // Arrange
-      when(mockExperienceNavigationRepository.rewardUser(any)).thenAnswer((_) async => right(_experiencePointsAwarded));
+      // when(mockExperienceNavigationRepository.rewardUser(any)).thenAnswer((_) async => right(_experiencePointsAwarded));
       // Act
       final result = await useCase(params);
       // Assert

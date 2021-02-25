@@ -3,6 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:logger/logger.dart';
+import 'package:quiver/iterables.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
@@ -24,10 +25,11 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
     final _userDocument = await _firestore.userDocument();
     final _userDto = UserDto.fromFirestore(await _userDocument.get());
     if (_userDto.followedUsersIds.isNotEmpty) {
+      final _auxListOfIdLists = partition(_userDto.followedUsersIds, 10);
       yield* _firestore.experienceCollection
           .where(
             "creatorId",
-            whereIn: _userDto.followedUsersIds.toList(),
+            whereIn: _auxListOfIdLists.first,
           )
           .orderBy(
             "creationDate",
@@ -35,12 +37,12 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
           )
           .snapshots()
           .map(
-            (snapshot) => snapshot.docs.map(
-              (document) => ExperienceDto.fromFirestore(document).toDomain(),
-            ),
-          )
-          .map(
-        (experiences) {
+          (snapshot) => snapshot.docs.map(
+            (document) => ExperienceDto.fromFirestore(document).toDomain(),
+        ),
+      )
+        .map(
+          (experiences) {
           if (experiences.isNotEmpty) {
             return right<Failure, KtList<Experience>>(
               experiences.toImmutableList(),
@@ -56,6 +58,55 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
       ).onErrorReturnWith(
         (error) => left(onError(error)),
       );
+      // TODO: Try to make it work without limit
+      // Maybe RxDart has a way to combine N number of streams
+      /*
+        final List<Stream<QuerySnapshot>> _combinedStreamList = [];
+        for (final _idList in _auxListOfIdLists) {
+          _combinedStreamList.add(
+            _firestore.experienceCollection
+                .where(
+                  "creatorId",
+                  whereIn: _idList,
+                )
+                .orderBy(
+                  "creationDate",
+                  descending: true,
+                )
+                .snapshots(),
+            // How to catch errors?
+          );
+        } //get a list of the streams, which will have 10 each.
+
+        final _mergedQuerySnapshot = CombineLatestStream.list(_combinedStreamList);
+        //now we combine all the streams....but it'll be a list of QuerySnapshots.
+
+        //and you'll want to look closely at the map, as it iterates, consolidates and returns as a single stream of List<AttendeeData>
+        final List<QuerySnapshot> _snapshotList = [];
+        _mergedQuerySnapshot.map((snapshots) => _snapshotList.addAll(snapshots));
+        final _listOfEither = _snapshotList
+            .map(
+          (snapshot) => snapshot.docs.map(
+            (document) => ExperienceDto.fromFirestore(document).toDomain(),
+          ),
+        )
+            .map(
+          (experiences) {
+            if (experiences.isNotEmpty) {
+              return right<Failure, KtList<Experience>>(
+                experiences.toImmutableList(),
+              );
+            } else {
+              return left<Failure, KtList<Experience>>(
+                const Failure.coreData(
+                  CoreDataFailure.notFoundError(),
+                ),
+              );
+            }
+          },
+        );
+        yield* Stream.fromIterable(_listOfEither);
+        */
     } else {
       // Not sure about creating a stream out of nowhere, but it's the best solution for now
       yield* Stream.value(

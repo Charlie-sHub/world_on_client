@@ -35,7 +35,7 @@ void main() {
     "Should emit finishSuccess and rewardSuccess",
     build: () {
       when(finishExperience.call(any)).thenAnswer((_) async => right(unit));
-      when(rewardUser.call(any)).thenAnswer((_) async => right(_experiencePointsToAward));
+      // when(rewardUser.call(any)).thenAnswer((_) async => right(_experiencePointsToAward));
       return getIt<ExperienceFinishActorBloc>();
     },
     act: (bloc) async => bloc.add(ExperienceFinishActorEvent.finishedExperience(experience)),
@@ -52,8 +52,7 @@ void main() {
     "Should emit finishFailure and rewardSuccess",
     build: () {
       when(finishExperience.call(any)).thenAnswer((_) async => left(failure));
-      when(rewardUser.call(any)).thenAnswer((_) async => right(_experiencePointsToAward));
-
+      // when(rewardUser.call(any)).thenAnswer((_) async => right(_experiencePointsToAward));
       return getIt<ExperienceFinishActorBloc>();
     },
     act: (bloc) async => bloc.add(ExperienceFinishActorEvent.finishedExperience(experience)),

@@ -85,7 +85,7 @@
   "experienceTitleStringWithInvalidCharacters": "El título tiene caracteres no válidos",
   "experienceTitleLabelText": "Título",
   "experiencePointsGainedPre": "¡Has ganado",
-  "experiencePointsGainedPost": "puntos de experiencia! y 1 Worl On Coin",
+  "experiencePointsGainedPost": "puntos de experiencia! y 1 World On Coin",
   "experienceFinishButton": "Finalizar",
   "experienceFinishSuccessTitle": "¡Experiencia terminada!",
   "rewardsGained": "Recompensas",
@@ -120,6 +120,7 @@
   "experiences": "Experiencias",
   "profileRelationTab": "Relaciones",
   "profileAchievementsTab": "Logros",
+  "profileLogTab": "Para hacer",
   "searchTermEmptyString": "El término de búsqueda no puede estar vacío",
   "noSearchesMessage": "¡Busca algo!",
   "searchUsers": "Usuarios",
@@ -146,5 +147,6 @@
   "alreadyOwned": "Tu ya posees este objeto",
   "notEnoughCoins": "No posees suficientes monedas",
   "youHave": "Tu tienes:",
-  "lasts": " dias de duracion"
+  "lasts": " dias de duracion",
+  "levelUp": "Haz subido de nivel!"
 }

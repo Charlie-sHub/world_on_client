@@ -27,14 +27,15 @@ class UserLevel extends ValueObject<int> {
 
 // TODO: Should this be getters of UserLevel?
 class Levels {
-  static const multiplier = 100;
+  // TODO: Make a geometric leveling system
+  static const _multiplier = 100;
 
   /// Gives the experience points required to get to the given level
-  static int experiencePointsRequired(int level) => level * multiplier;
+  static int experiencePointsRequired(int level) => level * _multiplier;
 
   /// Gives the maximum level by the given experience points
   static int levelAt(int experiencePoints) {
-    final _level = experiencePoints / multiplier;
+    final _level = experiencePoints / _multiplier;
     return _level.toInt();
   }
 }

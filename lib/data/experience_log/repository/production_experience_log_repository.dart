@@ -3,6 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:logger/logger.dart';
+import 'package:quiver/iterables.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
@@ -55,11 +56,13 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
   Stream<Either<Failure, KtList<Experience>>> watchUserLog() async* {
     final _userDocument = await _firestore.userDocument();
     final _userDto = UserDto.fromFirestore(await _userDocument.get());
-    if (_userDto.followedUsersIds.isNotEmpty) {
+    if (_userDto.experiencesToDoIds.isNotEmpty) {
+      // TODO: Try to make it work without limit
+      final _auxListOfIdLists = partition(_userDto.experiencesToDoIds, 10);
       yield* _firestore.experienceCollection
           .where(
             "id",
-            whereIn: _userDto.experiencesToDoIds.toList(),
+            whereIn: _auxListOfIdLists.first,
           ) // TODO: Should order by addition date instead
           .orderBy(
             "creationDate",

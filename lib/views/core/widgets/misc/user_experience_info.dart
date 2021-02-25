@@ -28,8 +28,6 @@ class UserExperienceInfo extends StatelessWidget {
         Expanded(
           child: LinearPercentIndicator(
             lineHeight: 10,
-            // TODO: Exception: Percent value must be a double between 0.0 and 1.0
-            // Maybe use another percent indicator
             percent: user.percentageToNextLevel,
             backgroundColor: WorldOnColors.background,
             progressColor: WorldOnColors.primary,
