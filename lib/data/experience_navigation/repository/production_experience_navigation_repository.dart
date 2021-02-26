@@ -3,8 +3,8 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:logger/logger.dart';
-import 'package:rxdart/rxdart.dart';
 import 'package:quiver/iterables.dart';
+import 'package:rxdart/rxdart.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/firebase_helpers.dart';
@@ -203,7 +203,9 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   Stream<Either<Failure, KtList<Experience>>> watchRecommendedExperiences() async* {
     final _currentUser = await _firestore.currentUser();
     final _interests = partition(
-      _currentUser.interestsIds,
+      _currentUser.interestsIds.map(
+        (uniqueId) => uniqueId.getOrCrash(),
+      ),
       10,
     );
     if (_currentUser.interestsIds.isNotEmpty) {

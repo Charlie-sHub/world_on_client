@@ -6,9 +6,9 @@ import 'package:worldon/application/navigation/navigation_actor/navigation_actor
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/views/experience_navigation/widgets/experience_finish/experience_finish.dart';
 import 'package:worldon/views/experience_navigation/widgets/experience_navigation.dart';
-import 'package:worldon/views/experience_navigation/widgets/no_experience_view.dart';
 
 import '../../../injection.dart';
+import 'no_experience_selected/no_experience_view.dart';
 
 class ExperienceNavigationBody extends StatelessWidget {
   final Option<Experience> experienceOption;

@@ -128,6 +128,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "profileEditingButton": MessageLookupByLibrary.simpleMessage("Edit"),
         "profileLogTab": MessageLookupByLibrary.simpleMessage("To Do"),
         "profileRelationTab": MessageLookupByLibrary.simpleMessage("Relations"),
+        "recommendations": MessageLookupByLibrary.simpleMessage("Recommendations:"),
+        "recommendationsBasedOn": MessageLookupByLibrary.simpleMessage("You will receive recommendations based on them"),
         "register": MessageLookupByLibrary.simpleMessage("REGISTER"),
         "registerDescriptionLabelText": MessageLookupByLibrary.simpleMessage("Tell us about you!"),
         "reportMessage": MessageLookupByLibrary.simpleMessage("This is just a placeholder"),

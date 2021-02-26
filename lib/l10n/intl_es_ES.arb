@@ -150,5 +150,7 @@
   "lasts": " dias de duracion",
   "levelUp": "Haz subido de nivel!",
   "camera": "Camara",
-  "gallery": "Galeria"
+  "gallery": "Galeria",
+  "recommendations": "Recomendaciones:",
+  "recommendationsBasedOn": "Recibiras recomendaciones basados en estos"
 }

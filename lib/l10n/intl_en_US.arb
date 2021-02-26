@@ -150,5 +150,7 @@
   "lasts": " days of duration",
   "levelUp": "You have leveled up!",
   "camera": "Camera",
-  "gallery": "Gallery"
+  "gallery": "Gallery",
+  "recommendations": "Recommendations:",
+  "recommendationsBasedOn": "You will receive recommendations based on them"
 }

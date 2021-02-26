@@ -60,6 +60,7 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
       );
       // TODO: Try to make it work without limit
       // Maybe RxDart has a way to combine N number of streams
+      // Or i could use combine streams of 6 or perhaps more streams, that should be enough
       /*
         final List<Stream<QuerySnapshot>> _combinedStreamList = [];
         for (final _idList in _auxListOfIdLists) {

@@ -1545,6 +1545,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Recommendations:`
+  String get recommendations {
+    return Intl.message(
+      'Recommendations:',
+      name: 'recommendations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You will receive recommendations based on them`
+  String get recommendationsBasedOn {
+    return Intl.message(
+      'You will receive recommendations based on them',
+      name: 'recommendationsBasedOn',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
