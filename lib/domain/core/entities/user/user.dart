@@ -123,7 +123,7 @@ abstract class User implements _$User {
   double get percentageToNextLevel {
     final _nextLevelRequirements = Levels.experiencePointsRequired(level.getOrCrash() + 1);
     int _totalToCurrentLevelRequirements = 0;
-    for (int i = level.getOrCrash(); i > 0; i--) {
+    for (int i = 0; i <= level.getOrCrash(); i++) {
       _totalToCurrentLevelRequirements += Levels.experiencePointsRequired(i);
     }
     final _hadToNextLevel = experiencePoints.getOrCrash() - _totalToCurrentLevelRequirements;

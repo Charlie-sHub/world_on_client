@@ -551,7 +551,7 @@ class _$_FinishSuccess implements _FinishSuccess {
             (identical(other.amountXP, amountXP) || const DeepCollectionEquality().equals(other.amountXP, amountXP)) &&
             (identical(other.leveledUp, leveledUp) || const DeepCollectionEquality().equals(other.leveledUp, leveledUp)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(amountXP) ^ const DeepCollectionEquality().hash(leveledUp);
 

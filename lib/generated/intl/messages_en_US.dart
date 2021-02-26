@@ -52,7 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "difficulty": MessageLookupByLibrary.simpleMessage("Difficulty"),
         "difficultyOutOfBounds": MessageLookupByLibrary.simpleMessage("Invalid difficulty value"),
         "difficultyQuestion": MessageLookupByLibrary.simpleMessage("How difficult was the experience?"),
-        "dismissFromLog": MessageLookupByLibrary.simpleMessage("Dismiss from Log"),
+        "dismissFromLog": MessageLookupByLibrary.simpleMessage("Dismiss"),
         "doneBy": MessageLookupByLibrary.simpleMessage("Done by: "),
         "editingProfileTitle": MessageLookupByLibrary.simpleMessage("Editing Profile"),
         "emailAddress": MessageLookupByLibrary.simpleMessage("Email Address"),

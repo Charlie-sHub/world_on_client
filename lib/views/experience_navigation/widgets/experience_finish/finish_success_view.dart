@@ -22,18 +22,17 @@ class FinishSuccessView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: WorldOnColors.white,
-      child: Column(
+      child: ListView(
         children: <Widget>[
-          Expanded(
-            child: Center(
-              child: AutoSizeText(
-                experience.title.getOrCrash(),
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: WorldOnColors.background,
-                  fontSize: 25,
-                ),
+          const SizedBox(height: 5),
+          Center(
+            child: AutoSizeText(
+              experience.title.getOrCrash(),
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                color: WorldOnColors.background,
+                fontSize: 25,
               ),
             ),
           ),

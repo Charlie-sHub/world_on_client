@@ -12,6 +12,7 @@ import 'package:worldon/data/core/models/experience/experience_dto.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
 import 'package:worldon/domain/core/validation/objects/experience_points.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
@@ -123,8 +124,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       // Those ids would be retrieved when needed
       // Instead of having the entire objects inside the users.
       final _currentUser = await _firestore.currentUser();
-      int _userLevel = _currentUser.level.getOrCrash();
-      final _experiencePointsToNextLevel = Levels.experiencePointsRequired(_userLevel + 1);
+      final _preUserLevel = _currentUser.level.getOrCrash();
       bool _leveledUp = false;
       int _experiencePointsAwarded;
       // I don't like that string hard coded
@@ -134,14 +134,15 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       if (_item != null) {
         if (DateTime.now().isAfter(_item.boughtDate.add(Duration(days: _item.timeLimitInDays)))) {
           _experiencePointsAwarded = experiencePoints;
-          final _userXp = _experiencePointsAwarded + _currentUser.experiencePoints.getOrCrash() - Levels.experiencePointsRequired(_userLevel);
-          if (_userXp >= _experiencePointsToNextLevel) {
-            _userLevel++;
-            _leveledUp = true;
-          }
+          final _userXp = _getUserXp(
+            _experiencePointsAwarded,
+            _currentUser,
+          );
+          final _postUserLevel = Levels.levelAt(_userXp);
+          _leveledUp = _postUserLevel > _preUserLevel;
           final _updatedUser = _currentUser.copyWith(
-            experiencePoints: ExperiencePoints(_currentUser.experiencePoints.getOrCrash() + _experiencePointsAwarded),
-            level: UserLevel(_userLevel),
+            experiencePoints: ExperiencePoints(_userXp),
+            level: UserLevel(_postUserLevel),
             coins: _currentUser.coins + 1,
             items: _currentUser.items.toImmutableSet().minusElement(_item).asSet(),
           );
@@ -149,28 +150,30 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
           await _firestore.userCollection.doc(_currentUser.id.getOrCrash()).update(_jsonUser);
         } else {
           _experiencePointsAwarded = experiencePoints * 2;
-          final _userXp = _experiencePointsAwarded + _currentUser.experiencePoints.getOrCrash() - Levels.experiencePointsRequired(_userLevel);
-          if (_userXp >= _experiencePointsToNextLevel) {
-            _userLevel++;
-            _leveledUp = true;
-          }
+          final _userXp = _getUserXp(
+            _experiencePointsAwarded,
+            _currentUser,
+          );
+          final _postUserLevel = Levels.levelAt(_userXp);
+          _leveledUp = _postUserLevel > _preUserLevel;
           await _updateLevelExperiencePoints(
             _userDocument,
             _experiencePointsAwarded,
-            _userLevel,
+            _postUserLevel,
           );
         }
       } else {
         _experiencePointsAwarded = experiencePoints;
-        final _userXp = _experiencePointsAwarded + _currentUser.experiencePoints.getOrCrash() - Levels.experiencePointsRequired(_userLevel);
-        if (_userXp >= _experiencePointsToNextLevel) {
-          _userLevel++;
-          _leveledUp = true;
-        }
+        final _userXp = _getUserXp(
+          _experiencePointsAwarded,
+          _currentUser,
+        );
+        final _postUserLevel = Levels.levelAt(_userXp);
+        _leveledUp = _postUserLevel > _preUserLevel;
         await _updateLevelExperiencePoints(
           _userDocument,
           _experiencePointsAwarded,
-          _userLevel,
+          _postUserLevel,
         );
       }
       final _resultMap = {
@@ -182,6 +185,8 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       return _onError(exception);
     }
   }
+
+  int _getUserXp(int _experiencePointsAwarded, User _currentUser) => _experiencePointsAwarded + _currentUser.experiencePoints.getOrCrash();
 
   Future _updateLevelExperiencePoints(DocumentReference _userDocument, int experiencePoints, int _userLevel) async {
     await _userDocument.update(

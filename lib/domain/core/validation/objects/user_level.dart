@@ -35,7 +35,12 @@ class Levels {
 
   /// Gives the maximum level by the given experience points
   static int levelAt(int experiencePoints) {
-    final _level = experiencePoints / _multiplier;
-    return _level.toInt();
+    int _level = 0;
+    int _experiencePointsComparison = 0;
+    for (int i = 1; _experiencePointsComparison <= experiencePoints; i++) {
+      _level++;
+      _experiencePointsComparison += experiencePointsRequired(i);
+    }
+    return _level - 1;
   }
 }

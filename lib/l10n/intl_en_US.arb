@@ -43,7 +43,7 @@
   "unauthorizedError": "You're not authorized to do that",
   "addToLog": "Add to Log",
   "difficulty": "Difficulty",
-  "dismissFromLog": "Dismiss from Log",
+  "dismissFromLog": "Dismiss",
   "participate": "Participate",
   "reportMessage": "This is just a placeholder",
   "errorCardTitle": "Invalid",
