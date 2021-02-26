@@ -202,29 +202,43 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   @override
   Stream<Either<Failure, KtList<Experience>>> watchRecommendedExperiences() async* {
     final _currentUser = await _firestore.currentUser();
-    final _interests = partition(
-      _currentUser.interestsIds.map(
-        (uniqueId) => uniqueId.getOrCrash(),
-      ),
-      10,
-    );
-    if (_currentUser.interestsIds.isNotEmpty) {
-      yield* _firestore.experienceCollection
-          .where(
-            "tagsIds",
-            arrayContainsAny: _interests.first,
-          )
-          .orderBy(
-            "creationDate",
-            descending: true,
-          )
-          .snapshots()
+    final _interestIds = _currentUser.interestsIds
+        .map(
+          (uniqueId) => uniqueId.getOrCrash(),
+        )
+        .toList();
+    if (_interestIds.isNotEmpty) {
+      final _auxListOfIdLists = partition(
+        _interestIds,
+        10,
+      );
+      final _combinedStreamList = _auxListOfIdLists
           .map(
-            (snapshot) => snapshot.docs.map(
-              (document) => ExperienceDto.fromFirestore(document).toDomain(),
-            ),
+            (_idList) => _firestore.experienceCollection
+                .where(
+                  "tagsIds",
+                  arrayContainsAny: _idList,
+                )
+                .orderBy(
+                  "creationDate",
+                  descending: true,
+                )
+                .snapshots(),
           )
-          .map(
+          .toList();
+      yield* CombineLatestStream(
+        _combinedStreamList,
+        (List<QuerySnapshot> values) {
+          final _experienceList = <Experience>[];
+          for (final _snapshot in values) {
+            for (final document in _snapshot.docs) {
+              final _experience = ExperienceDto.fromFirestore(document).toDomain();
+              _experienceList.add(_experience);
+            }
+          }
+          return _experienceList;
+        },
+      ).map(
         (experiences) {
           if (experiences.isNotEmpty) {
             return right<Failure, KtList<Experience>>(

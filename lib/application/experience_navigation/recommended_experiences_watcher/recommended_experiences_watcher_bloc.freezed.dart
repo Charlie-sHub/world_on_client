@@ -37,20 +37,17 @@ mixin _$RecommendedExperiencesWatcherEvent {
     @required TResult watchRecommendedExperiencesStarted(),
     @required TResult resultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult watchRecommendedExperiencesStarted(),
     TResult resultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult watchRecommendedExperiencesStarted(_WatchRecommendedExperiencesStarted value),
     @required TResult resultsReceived(_ResultsReceived value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult watchRecommendedExperiencesStarted(_WatchRecommendedExperiencesStarted value),
@@ -203,7 +200,7 @@ class _$_ResultsReceived implements _ResultsReceived {
     return identical(this, other) ||
         (other is _ResultsReceived && (identical(other.failureOrExperiences, failureOrExperiences) || const DeepCollectionEquality().equals(other.failureOrExperiences, failureOrExperiences)));
   }
-
+  
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrExperiences);
 
@@ -313,7 +310,6 @@ mixin _$RecommendedExperiencesWatcherState {
     @required TResult loadSuccess(KtList<Experience> experiences),
     @required TResult loadFailure(Failure<dynamic> failure),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -322,7 +318,6 @@ mixin _$RecommendedExperiencesWatcherState {
     TResult loadFailure(Failure<dynamic> failure),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -330,7 +325,6 @@ mixin _$RecommendedExperiencesWatcherState {
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_LoadFailure value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
@@ -666,7 +660,6 @@ abstract class _LoadSuccess implements RecommendedExperiencesWatcherState {
   const factory _LoadSuccess(KtList<Experience> experiences) = _$_LoadSuccess;
 
   KtList<Experience> get experiences;
-
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }
@@ -798,7 +791,6 @@ abstract class _LoadFailure implements RecommendedExperiencesWatcherState {
   const factory _LoadFailure(Failure<dynamic> failure) = _$_LoadFailure;
 
   Failure<dynamic> get failure;
-
   @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith;
 }

@@ -88,24 +88,38 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
     final _userDocument = await _firestore.userDocument();
     final _userDto = UserDto.fromFirestore(await _userDocument.get());
     if (_userDto.items.isNotEmpty) {
-      // TODO: Try to make it work without limit
       final _auxListOfIdLists = partition(
-        _userDto.items.map((item) => item.id).toList(),
+        _userDto.followedUsersIds,
         10,
       );
-      yield* _firestore.itemCollection
-          .where(
-            "id",
-            whereIn: _auxListOfIdLists.first,
-          )
-          .snapshots()
+      final _combinedStreamList = _auxListOfIdLists
           .map(
-            (snapshot) => snapshot.docs.map(
-              (document) => ItemDto.fromFirestore(document).toDomain(),
-            ),
+            (_idList) => _firestore.itemCollection
+                .where(
+                  "id",
+                  whereIn: _idList,
+                )
+                .orderBy(
+                  "creationDate",
+                  descending: true,
+                )
+                .snapshots(),
           )
-        .map(
-          (items) {
+          .toList();
+      yield* CombineLatestStream(
+        _combinedStreamList,
+        (List<QuerySnapshot> values) {
+          final _itemList = <Item>[];
+          for (final _snapshot in values) {
+            for (final document in _snapshot.docs) {
+              final _item = ItemDto.fromFirestore(document).toDomain();
+              _itemList.add(_item);
+            }
+          }
+          return _itemList;
+        },
+      ).map(
+        (items) {
           if (items.isNotEmpty) {
             return right<Failure, KtList<Item>>(
               items.toImmutableList(),

@@ -25,24 +25,43 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
     final _userDocument = await _firestore.userDocument();
     final _userDto = UserDto.fromFirestore(await _userDocument.get());
     if (_userDto.followedUsersIds.isNotEmpty) {
-      final _auxListOfIdLists = partition(_userDto.followedUsersIds, 10);
-      yield* _firestore.experienceCollection
-          .where(
-            "creatorId",
-            whereIn: _auxListOfIdLists.first,
-          )
-          .orderBy(
-            "creationDate",
-            descending: true,
-          )
-          .snapshots()
+      final _auxListOfIdLists = partition(
+        _userDto.followedUsersIds,
+        10,
+      );
+      final _combinedStreamList = _auxListOfIdLists
           .map(
-          (snapshot) => snapshot.docs.map(
-            (document) => ExperienceDto.fromFirestore(document).toDomain(),
-        ),
-      )
-        .map(
-          (experiences) {
+            (_idList) => _firestore.experienceCollection
+                .where(
+                  "creatorId",
+                  whereIn: _idList,
+                )
+                .orderBy(
+                  "creationDate",
+                  descending: true,
+                )
+                .snapshots(),
+          )
+          .toList();
+      // TODO: Rework these streams so they are updated properly
+      // Right now everything works except that the streams can't be properly updated by firestore
+      // Probably due to all the streams having to be updated for CombineLatestStream to combine them
+      // There has to be a proper solution to this,
+      // This can't be the only app that needs to filter by more than 10 items (fucking absurd limitation imo)
+      yield* CombineLatestStream(
+        _combinedStreamList,
+        (List<QuerySnapshot> values) {
+          final _experienceList = <Experience>[];
+          for (final _snapshot in values) {
+            for (final document in _snapshot.docs) {
+              final _experience = ExperienceDto.fromFirestore(document).toDomain();
+              _experienceList.add(_experience);
+            }
+          }
+          return _experienceList;
+        },
+      ).map(
+        (experiences) {
           if (experiences.isNotEmpty) {
             return right<Failure, KtList<Experience>>(
               experiences.toImmutableList(),
@@ -58,56 +77,6 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
       ).onErrorReturnWith(
         (error) => left(onError(error)),
       );
-      // TODO: Try to make it work without limit
-      // Maybe RxDart has a way to combine N number of streams
-      // Or i could use combine streams of 6 or perhaps more streams, that should be enough
-      /*
-        final List<Stream<QuerySnapshot>> _combinedStreamList = [];
-        for (final _idList in _auxListOfIdLists) {
-          _combinedStreamList.add(
-            _firestore.experienceCollection
-                .where(
-                  "creatorId",
-                  whereIn: _idList,
-                )
-                .orderBy(
-                  "creationDate",
-                  descending: true,
-                )
-                .snapshots(),
-            // How to catch errors?
-          );
-        } //get a list of the streams, which will have 10 each.
-
-        final _mergedQuerySnapshot = CombineLatestStream.list(_combinedStreamList);
-        //now we combine all the streams....but it'll be a list of QuerySnapshots.
-
-        //and you'll want to look closely at the map, as it iterates, consolidates and returns as a single stream of List<AttendeeData>
-        final List<QuerySnapshot> _snapshotList = [];
-        _mergedQuerySnapshot.map((snapshots) => _snapshotList.addAll(snapshots));
-        final _listOfEither = _snapshotList
-            .map(
-          (snapshot) => snapshot.docs.map(
-            (document) => ExperienceDto.fromFirestore(document).toDomain(),
-          ),
-        )
-            .map(
-          (experiences) {
-            if (experiences.isNotEmpty) {
-              return right<Failure, KtList<Experience>>(
-                experiences.toImmutableList(),
-              );
-            } else {
-              return left<Failure, KtList<Experience>>(
-                const Failure.coreData(
-                  CoreDataFailure.notFoundError(),
-                ),
-              );
-            }
-          },
-        );
-        yield* Stream.fromIterable(_listOfEither);
-        */
     } else {
       // Not sure about creating a stream out of nowhere, but it's the best solution for now
       yield* Stream.value(

@@ -57,33 +57,53 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
     final _userDocument = await _firestore.userDocument();
     final _userDto = UserDto.fromFirestore(await _userDocument.get());
     if (_userDto.experiencesToDoIds.isNotEmpty) {
-      // TODO: Try to make it work without limit
-      final _auxListOfIdLists = partition(_userDto.experiencesToDoIds, 10);
-      yield* _firestore.experienceCollection
-          .where(
-            "id",
-            whereIn: _auxListOfIdLists.first,
-          ) // TODO: Should order by addition date instead
-          .orderBy(
-            "creationDate",
-            descending: true,
-          )
-          .snapshots()
+      final _auxListOfIdLists = partition(
+        _userDto.experiencesToDoIds,
+        10,
+      );
+      final _combinedStreamList = _auxListOfIdLists
           .map(
-            (snapshot) => snapshot.docs.map(
-              (document) => ExperienceDto.fromFirestore(document).toDomain(),
-            ),
+            (_idList) => _firestore.experienceCollection
+                .where(
+                  "id",
+                  whereIn: _idList,
+                )
+                .orderBy(
+                  "creationDate",
+                  descending: true,
+                )
+                .snapshots(),
           )
-          .map(
-            (experiences) => right<Failure, KtList<Experience>>(
+          .toList();
+      yield* CombineLatestStream(
+        _combinedStreamList,
+        (List<QuerySnapshot> values) {
+          final _experienceList = <Experience>[];
+          for (final _snapshot in values) {
+            for (final document in _snapshot.docs) {
+              final _experience = ExperienceDto.fromFirestore(document).toDomain();
+              _experienceList.add(_experience);
+            }
+          }
+          return _experienceList;
+        },
+      ).map(
+        (experiences) {
+          if (experiences.isNotEmpty) {
+            return right<Failure, KtList<Experience>>(
               experiences.toImmutableList(),
-            ),
-          )
-          .onErrorReturnWith(
-            (error) => left(
-              onError(error),
-            ),
-          );
+            );
+          } else {
+            return left<Failure, KtList<Experience>>(
+              const Failure.coreData(
+                CoreDataFailure.notFoundError(),
+              ),
+            );
+          }
+        },
+      ).onErrorReturnWith(
+        (error) => left(onError(error)),
+      );
     } else {
       yield* Stream.value(
         left(

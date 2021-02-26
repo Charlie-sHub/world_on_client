@@ -220,42 +220,12 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
     if (_userDto.blockedUsersIds.isNotEmpty) {
-      // TODO: Try to make it work without limit
-      final _auxListOfIdLists = partition(_userDto.blockedUsersIds, 10);
-      yield* _firestore.userCollection
-          .where(
-            "id",
-            whereIn: _auxListOfIdLists.first,
-          ) // TODO: Should order by block date
-          .orderBy(
-            "creationDate",
-            descending: true,
-          )
-          .snapshots()
-          .map(
-          (snapshot) => snapshot.docs.map(
-            (document) => UserDto.fromFirestore(document).toDomain(),
-        ),
-      )
-        .map(
-          (users) {
-          if (users.isNotEmpty) {
-            return right<Failure, KtList<User>>(
-              users.toImmutableList(),
-            );
-          } else {
-            return left<Failure, KtList<User>>(
-              const Failure.coreData(
-                CoreDataFailure.notFoundError(),
-              ),
-            );
-          }
-        },
-      ).onErrorReturnWith(
-          (error) => left(
-          _onError(error),
-        ),
+      final _auxListOfIdLists = partition(
+        _userDto.blockedUsersIds,
+        10,
       );
+      final _combinedStreamList = _getCombinedStreamList(_auxListOfIdLists);
+      yield* _mergeStreamOfUserDocuments(_combinedStreamList);
     } else {
       yield* Stream.value(
         left(
@@ -272,42 +242,12 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
     if (_userDto.followedUsersIds.isNotEmpty) {
-      // TODO: Try to make it work without limit
-      final _auxListOfIdLists = partition(_userDto.followedUsersIds, 10);
-      yield* _firestore.userCollection
-          .where(
-            "id",
-            whereIn: _auxListOfIdLists.first,
-          ) // TODO: Should order by follow date
-          .orderBy(
-            "creationDate",
-            descending: true,
-          )
-          .snapshots()
-          .map(
-          (snapshot) => snapshot.docs.map(
-            (document) => UserDto.fromFirestore(document).toDomain(),
-        ),
-      )
-        .map(
-          (users) {
-          if (users.isNotEmpty) {
-            return right<Failure, KtList<User>>(
-              users.toImmutableList(),
-            );
-          } else {
-            return left<Failure, KtList<User>>(
-              const Failure.coreData(
-                CoreDataFailure.notFoundError(),
-              ),
-            );
-          }
-        },
-      ).onErrorReturnWith(
-          (error) => left(
-          _onError(error),
-        ),
+      final _auxListOfIdLists = partition(
+        _userDto.followedUsersIds,
+        10,
       );
+      final _combinedStreamList = _getCombinedStreamList(_auxListOfIdLists);
+      yield* _mergeStreamOfUserDocuments(_combinedStreamList);
     } else {
       yield* Stream.value(
         left(
@@ -317,6 +257,56 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         ),
       );
     }
+  }
+
+  List<Stream<QuerySnapshot>> _getCombinedStreamList(Iterable<List<String>> _auxListOfIdLists) {
+    final _combinedStreamList = _auxListOfIdLists
+        .map(
+          (_idList) => _firestore.userCollection
+              .where(
+                "id",
+                whereIn: _idList,
+              )
+              .orderBy(
+                "creationDate",
+                descending: true,
+              )
+              .snapshots(),
+        )
+        .toList();
+    return _combinedStreamList;
+  }
+
+  Stream<Either<Failure, KtList<User>>> _mergeStreamOfUserDocuments(List<Stream<QuerySnapshot>> _combinedStreamList) {
+    return CombineLatestStream(
+      _combinedStreamList,
+      (List<QuerySnapshot> values) {
+        final _userList = <User>[];
+        for (final _snapshot in values) {
+          for (final document in _snapshot.docs) {
+            final _user = UserDto.fromFirestore(document).toDomain();
+            _userList.add(_user);
+          }
+        }
+        return _userList;
+      },
+    ).map(
+      (users) {
+        if (users.isNotEmpty) {
+          return right<Failure, KtList<User>>(
+            users.toImmutableList(),
+          );
+        } else {
+          return left<Failure, KtList<User>>(
+            const Failure.coreData(
+              CoreDataFailure.notFoundError(),
+            ),
+          );
+        }
+      },
+    ).onErrorReturnWith(
+      (error) => left(_onError(error)),
+    );
   }
 
   @override
@@ -398,25 +388,38 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
     if (_userDto.experiencesDoneIds.isNotEmpty) {
-      // TODO: Try to make it work without limit
-      final _auxListOfIdLists = partition(_userDto.experiencesDoneIds, 10);
-      yield* _firestore.experienceCollection
-          .where(
-            "id",
-            whereIn: _auxListOfIdLists.first,
-          ) // TODO: Should order by done date
-          .orderBy(
-            "creationDate",
-            descending: true,
-          )
-          .snapshots()
+      final _auxListOfIdLists = partition(
+        _userDto.experiencesDoneIds,
+        10,
+      );
+      final _combinedStreamList = _auxListOfIdLists
           .map(
-          (snapshot) => snapshot.docs.map(
-            (document) => ExperienceDto.fromFirestore(document).toDomain(),
-        ),
-      )
-        .map(
-          (experiences) {
+            (_idList) => _firestore.experienceCollection
+                .where(
+                  "id",
+                  whereIn: _idList,
+                )
+                .orderBy(
+                  "creationDate",
+                  descending: true,
+                )
+                .snapshots(),
+          )
+          .toList();
+      yield* CombineLatestStream(
+        _combinedStreamList,
+        (List<QuerySnapshot> values) {
+          final _experienceList = <Experience>[];
+          for (final _snapshot in values) {
+            for (final document in _snapshot.docs) {
+              final _experience = ExperienceDto.fromFirestore(document).toDomain();
+              _experienceList.add(_experience);
+            }
+          }
+          return _experienceList;
+        },
+      ).map(
+        (experiences) {
           if (experiences.isNotEmpty) {
             return right<Failure, KtList<Experience>>(
               experiences.toImmutableList(),
@@ -430,9 +433,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-          (error) => left(
-          _onError(error),
-        ),
+          (error) => left(_onError(error)),
       );
     } else {
       yield* Stream.value(
@@ -450,25 +451,38 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
     if (_userDto.experiencesLikedIds.isNotEmpty) {
-      // TODO: Try to make it work without limit
-      final _auxListOfIdLists = partition(_userDto.experiencesLikedIds, 10);
-      yield* _firestore.experienceCollection
-          .where(
-            "id",
-            whereIn: _auxListOfIdLists.first,
-          ) // TODO: Should order by like date
-          .orderBy(
-            "creationDate",
-            descending: true,
-          )
-          .snapshots()
+      final _auxListOfIdLists = partition(
+        _userDto.experiencesLikedIds,
+        10,
+      );
+      final _combinedStreamList = _auxListOfIdLists
           .map(
-          (snapshot) => snapshot.docs.map(
-            (document) => ExperienceDto.fromFirestore(document).toDomain(),
-        ),
-      )
-        .map(
-          (experiences) {
+            (_idList) => _firestore.experienceCollection
+                .where(
+                  "id",
+                  whereIn: _idList,
+                )
+                .orderBy(
+                  "creationDate",
+                  descending: true,
+                )
+                .snapshots(),
+          )
+          .toList();
+      yield* CombineLatestStream(
+        _combinedStreamList,
+        (List<QuerySnapshot> values) {
+          final _experienceList = <Experience>[];
+          for (final _snapshot in values) {
+            for (final document in _snapshot.docs) {
+              final _experience = ExperienceDto.fromFirestore(document).toDomain();
+              _experienceList.add(_experience);
+            }
+          }
+          return _experienceList;
+        },
+      ).map(
+        (experiences) {
           if (experiences.isNotEmpty) {
             return right<Failure, KtList<Experience>>(
               experiences.toImmutableList(),
@@ -482,9 +496,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-          (error) => left(
-          _onError(error),
-        ),
+          (error) => left(_onError(error)),
       );
     } else {
       yield* Stream.value(
@@ -502,25 +514,38 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
     if (_userDto.achievementsIds.isNotEmpty) {
-      // TODO: Try to make it work without limit
-      final _auxListOfIdLists = partition(_userDto.achievementsIds, 10);
-      yield* _firestore.achievementCollection
-          .where(
-            "id",
-            whereIn: _auxListOfIdLists.first,
-          ) // TODO: Should order by awarding date
-          .orderBy(
-            "creationDate",
-            descending: true,
-          )
-          .snapshots()
+      final _auxListOfIdLists = partition(
+        _userDto.achievementsIds,
+        10,
+      );
+      final _combinedStreamList = _auxListOfIdLists
           .map(
-          (snapshot) => snapshot.docs.map(
-            (document) => AchievementDto.fromFirestore(document).toDomain(),
-        ),
-      )
-        .map(
-          (achievements) {
+            (_idList) => _firestore.achievementCollection
+                .where(
+                  "id",
+                  whereIn: _idList,
+                )
+                .orderBy(
+                  "creationDate",
+                  descending: true,
+                )
+                .snapshots(),
+          )
+          .toList();
+      yield* CombineLatestStream(
+        _combinedStreamList,
+        (List<QuerySnapshot> values) {
+          final _achievementList = <Achievement>[];
+          for (final _snapshot in values) {
+            for (final document in _snapshot.docs) {
+              final _achievement = AchievementDto.fromFirestore(document).toDomain();
+              _achievementList.add(_achievement);
+            }
+          }
+          return _achievementList;
+        },
+      ).map(
+        (achievements) {
           if (achievements.isNotEmpty) {
             return right<Failure, KtList<Achievement>>(
               achievements.toImmutableList(),
@@ -534,9 +559,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-          (error) => left(
-          _onError(error),
-        ),
+          (error) => left(_onError(error)),
       );
     } else {
       yield* Stream.value(
@@ -554,25 +577,38 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
     if (_userDto.interestsIds.isNotEmpty) {
-      // TODO: Try to make it work without limit
-      final _auxListOfIdLists = partition(_userDto.achievementsIds, 10);
-      yield* _firestore.tagCollection
-          .where(
-            "id",
-            whereIn: _auxListOfIdLists.first,
-          ) // TODO: Should order by addition date
-          .orderBy(
-            "creationDate",
-            descending: true,
-          )
-          .snapshots()
+      final _auxListOfIdLists = partition(
+        _userDto.interestsIds,
+        10,
+      );
+      final _combinedStreamList = _auxListOfIdLists
           .map(
-          (snapshot) => snapshot.docs.map(
-            (document) => TagDto.fromFirestore(document).toDomain(),
-        ),
-      )
-        .map(
-          (tags) {
+            (_idList) => _firestore.tagCollection
+                .where(
+                  "id",
+                  whereIn: _idList,
+                )
+                .orderBy(
+                  "creationDate",
+                  descending: true,
+                )
+                .snapshots(),
+          )
+          .toList();
+      yield* CombineLatestStream(
+        _combinedStreamList,
+        (List<QuerySnapshot> values) {
+          final _tagList = <Tag>[];
+          for (final _snapshot in values) {
+            for (final document in _snapshot.docs) {
+              final _tag = TagDto.fromFirestore(document).toDomain();
+              _tagList.add(_tag);
+            }
+          }
+          return _tagList;
+        },
+      ).map(
+        (tags) {
           if (tags.isNotEmpty) {
             return right<Failure, KtList<Tag>>(
               tags.toImmutableList(),
@@ -586,9 +622,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-          (error) => left(
-          _onError(error),
-        ),
+          (error) => left(_onError(error)),
       );
     } else {
       yield* Stream.value(
