@@ -106,7 +106,7 @@ class ObjectiveCreationCard extends HookWidget {
                                       icon: const Icon(
                                         Icons.photo_camera,
                                       ),
-                                      onPressed: () async => _pickImage(context),
+                                      onPressed: () async => _openDialog(context),
                                     ),
                                     if (context.bloc<ObjectiveFormBloc>().state.showErrorMessages && context.bloc<ObjectiveFormBloc>().state.objective.imageFile.isNone())
                                       Text(
@@ -121,7 +121,7 @@ class ObjectiveCreationCard extends HookWidget {
                                 (imageFile) => Padding(
                                   padding: const EdgeInsets.all(10),
                                   child: FlatButton(
-                                    onPressed: () async => _pickImage(context),
+                                    onPressed: () async => _openDialog(context),
                                     child: Image(
                                       fit: BoxFit.fitWidth,
                                       image: FileImage(imageFile),
@@ -163,14 +163,59 @@ class ObjectiveCreationCard extends HookWidget {
     }
   }
 
-  Future _pickImage(BuildContext context) async {
+  Future _openDialog(BuildContext context) async {
+    await showDialog<bool>(
+      context: context,
+      useSafeArea: true,
+      barrierDismissible: true,
+      child: AlertDialog(
+        backgroundColor: WorldOnColors.background,
+        actions: [
+          RaisedButton(
+            onPressed: () async {
+              await _pickImage(
+                ImageSource.camera,
+                context,
+              );
+              Navigator.of(context).pop();
+            },
+            child: Text(
+              S.of(context).camera,
+              style: const TextStyle(
+                fontSize: 18,
+              ),
+            ),
+          ),
+          RaisedButton(
+            onPressed: () async {
+              await _pickImage(
+                ImageSource.gallery,
+                context,
+              );
+              Navigator.of(context).pop();
+            },
+            child: Text(
+              S.of(context).gallery,
+              style: const TextStyle(
+                fontSize: 18,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Future _pickImage(ImageSource source, BuildContext context) async {
     final _imagePicked = await ImagePicker().getImage(
-      source: ImageSource.gallery,
+      source: source,
       imageQuality: 50,
     );
     if (_imagePicked != null) {
       final _imageFile = File(_imagePicked.path);
-      context.bloc<ObjectiveFormBloc>().add(ObjectiveFormEvent.imageChanged(_imageFile));
+      context.bloc<ObjectiveFormBloc>().add(
+            ObjectiveFormEvent.imageChanged(_imageFile),
+          );
     }
   }
 }

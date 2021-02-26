@@ -172,12 +172,10 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
   @override
   Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByTags(TagSet tags) async* {
     if (tags.getOrCrash().isNotEmpty()) {
-      // This is pretty dumb
       final _auxTagList = tags.getOrCrash().toList().asList();
       yield* _firestore.experienceCollection
           .where(
-            "tags.id",
-            // Maybe i should use a whereIn
+            "tagsIds",
             arrayContainsAny: _auxTagList,
           )
           .orderBy(

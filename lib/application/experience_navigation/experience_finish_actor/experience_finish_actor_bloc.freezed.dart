@@ -506,7 +506,6 @@ abstract class _$FinishSuccessCopyWith<$Res> {
   factory _$FinishSuccessCopyWith(
           _FinishSuccess value, $Res Function(_FinishSuccess) then) =
       __$FinishSuccessCopyWithImpl<$Res>;
-
   $Res call({int amountXP, bool leveledUp});
 }
 
@@ -552,7 +551,7 @@ class _$_FinishSuccess implements _FinishSuccess {
             (identical(other.amountXP, amountXP) || const DeepCollectionEquality().equals(other.amountXP, amountXP)) &&
             (identical(other.leveledUp, leveledUp) || const DeepCollectionEquality().equals(other.leveledUp, leveledUp)));
   }
-
+  
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(amountXP) ^ const DeepCollectionEquality().hash(leveledUp);
 

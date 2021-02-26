@@ -3,9 +3,12 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:logger/logger.dart';
+import 'package:rxdart/rxdart.dart';
+import 'package:quiver/iterables.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/firebase_helpers.dart';
+import 'package:worldon/data/core/models/experience/experience_dto.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
@@ -40,7 +43,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       );
       return right(unit);
     } on FirebaseException catch (exception) {
-      return onError(exception);
+      return _onError(exception);
     }
   }
 
@@ -61,7 +64,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       );
       return right(unit);
     } on FirebaseException catch (exception) {
-      return onError(exception);
+      return _onError(exception);
     }
   }
 
@@ -82,7 +85,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       );
       return right(unit);
     } on FirebaseException catch (exception) {
-      return onError(exception);
+      return _onError(exception);
     }
   }
 
@@ -105,7 +108,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
        */
       return right(unit);
     } on FirebaseException catch (exception) {
-      return onError(exception);
+      return _onError(exception);
     }
   }
 
@@ -176,7 +179,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       };
       return right(_resultMap);
     } on FirebaseException catch (exception) {
-      return onError(exception);
+      return _onError(exception);
     }
   }
 
@@ -196,7 +199,83 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
     throw UnimplementedError();
   }
 
-  Either<Failure, T> onError<T>(FirebaseException exception) {
+  @override
+  Stream<Either<Failure, KtList<Experience>>> watchRecommendedExperiences() async* {
+    final _currentUser = await _firestore.currentUser();
+    final _interests = partition(
+      _currentUser.interestsIds,
+      10,
+    );
+    if (_currentUser.interestsIds.isNotEmpty) {
+      yield* _firestore.experienceCollection
+          .where(
+            "tagsIds",
+            arrayContainsAny: _interests.first,
+          )
+          .orderBy(
+            "creationDate",
+            descending: true,
+          )
+          .snapshots()
+          .map(
+            (snapshot) => snapshot.docs.map(
+              (document) => ExperienceDto.fromFirestore(document).toDomain(),
+            ),
+          )
+          .map(
+        (experiences) {
+          if (experiences.isNotEmpty) {
+            return right<Failure, KtList<Experience>>(
+              experiences.toImmutableList(),
+            );
+          } else {
+            return left<Failure, KtList<Experience>>(
+              const Failure.coreData(
+                CoreDataFailure.notFoundError(),
+              ),
+            );
+          }
+        },
+      ).onErrorReturnWith(
+        (error) => _onStreamError(error),
+      );
+    } else {
+      yield* Stream.value(
+        left(
+          const Failure.coreData(
+            CoreDataFailure.notFoundError(),
+          ),
+        ),
+      );
+    }
+  }
+
+  Either<Failure, KtList<Experience>> _onStreamError(dynamic error) {
+    if (error is FirebaseException) {
+      _logger.e("FirebaseException: ${error.message}");
+      return left(
+        Failure.coreData(
+          CoreDataFailure.serverError(errorString: "Firebase error: ${error.message}"),
+        ),
+      );
+    } else if (error is AssertionError) {
+      _logger.e("Failed assertion error");
+      return left(
+        const Failure.coreData(
+          CoreDataFailure.serverError(errorString: "Failed assertion error"),
+        ),
+      );
+    } else {
+      _logger.e("Unknown server error, type: ${error.runtimeType}");
+      return left(
+        const Failure.coreData(
+          CoreDataFailure.serverError(errorString: "Unknown server error"),
+        ),
+      );
+    }
+  }
+
+  Either<Failure, T> _onError<T>(FirebaseException exception) {
     _logger.e("FirebaseException: ${exception.message}");
     return left(
       const Failure.coreData(

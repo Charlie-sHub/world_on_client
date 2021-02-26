@@ -33,6 +33,7 @@ class LogInPage extends StatelessWidget {
   }
 
   Future _onFailure(Failure failure, BuildContext context) {
+    bool unregistered = false;
     return FlushbarHelper.createError(
       duration: const Duration(seconds: 2),
       message: failure.maybeMap(
@@ -41,7 +42,10 @@ class LogInPage extends StatelessWidget {
         ),
         authenticationData: (failure) => failure.authenticationDataFailure.map(
           invalidCredentials: (_) => S.of(context).invalidCredentials,
-          unregisteredUser: (_) => S.of(context).unregisteredUser,
+          unregisteredUser: (_) {
+            unregistered = true;
+            return S.of(context).unregisteredUser;
+          },
         ),
         coreData: (failure) => failure.coreDataFailure.maybeMap(
           serverError: (failure) => failure.errorString,
@@ -49,7 +53,13 @@ class LogInPage extends StatelessWidget {
         ),
         orElse: () => S.of(context).unknownError,
       ),
-    ).show(context);
+    ).show(context).then(
+      (value) {
+        if (unregistered) {
+          context.navigator.push(Routes.registrationPage);
+        }
+      },
+    );
   }
 
   void _onSuccess(BuildContext context) {

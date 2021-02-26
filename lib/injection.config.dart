@@ -521,16 +521,10 @@ GetIt $initGetIt(
   gh.lazySingleton<ExperienceManagementRepositoryInterface>(() => ProductionExperienceManagementRepository(get<FirebaseFirestore>()), registerFor: {_prod});
   gh.lazySingleton<ExperienceNavigationRepositoryInterface>(() => ProductionExperienceNavigationRepository(get<FirebaseFirestore>()), registerFor: {_prod});
   gh.lazySingleton<FollowUser>(() => FollowUser(get<ProfileRepositoryInterface>()), registerFor: {_dev, _prod});
-  gh.lazySingleton<GetPublicKey>(() => GetPublicKey(get<PublicKeyRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<GetTag>(
-      () => GetTag(get<TagManagementRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<GetTagCreator>(
-      () => GetTagCreator(get<TagCoreRepositoryInterface>()),
-      registerFor: {_dev, _prod});
-  gh.lazySingleton<LoadUser>(() => LoadUser(get<ProfileRepositoryInterface>()),
-      registerFor: {_dev, _prod});
+  gh.lazySingleton<GetPublicKey>(() => GetPublicKey(get<PublicKeyRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<GetTag>(() => GetTag(get<TagManagementRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<GetTagCreator>(() => GetTagCreator(get<TagCoreRepositoryInterface>()), registerFor: {_dev, _prod});
+  gh.lazySingleton<LoadUser>(() => LoadUser(get<ProfileRepositoryInterface>()), registerFor: {_dev, _prod});
   return get;
 }
 

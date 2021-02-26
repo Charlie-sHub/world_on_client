@@ -21,7 +21,8 @@ abstract class RegistrationFormState with _$RegistrationFormState {
         passwordToCompare: "",
         showErrorMessages: false,
         isSubmitting: false,
-        acceptedEULA: false,
+        // TODO: change this back to false when the actual terms and conditions have ben created
+        acceptedEULA: true,
         failureOrSuccessOption: none(),
       );
 }

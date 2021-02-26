@@ -597,7 +597,6 @@ abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(
           _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-
   $Res call({KtList<Experience> experiences});
 }
 
@@ -714,7 +713,6 @@ abstract class _LoadSuccess implements ExperienceLogWatcherState {
   const factory _LoadSuccess(KtList<Experience> experiences) = _$_LoadSuccess;
 
   KtList<Experience> get experiences;
-
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }

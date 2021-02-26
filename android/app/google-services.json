@@ -23,6 +23,30 @@
           }
         },
         {
+          "client_id": "843356285440-fjthsqpmjtmnsse1pcqgop4afauk1pbt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.worldon_app.worldon",
+            "certificate_hash": "efb69b0f8c6e78b189efe6cbe1b1899aaddb241c"
+          }
+        },
+        {
+          "client_id": "843356285440-k6nol7rpbfhhbfcdtqsjv0839k625cqe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.worldon_app.worldon",
+            "certificate_hash": "f4665f8b8232fc3669af493519383d2a78d468d1"
+          }
+        },
+        {
+          "client_id": "843356285440-u6n9p5jsvmftv9imimdeftvgmkjeea1s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.worldon_app.worldon",
+            "certificate_hash": "0dc27526363c33ae493d70984a60df58904cd1ee"
+          }
+        },
+        {
           "client_id": "843356285440-rtv6q7ptub9pq3d3alk2k7l3gpu5rucd.apps.googleusercontent.com",
           "client_type": 3
         }

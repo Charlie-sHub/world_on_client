@@ -148,5 +148,7 @@
   "notEnoughCoins": "You don't have enough coins",
   "youHave": "You have:",
   "lasts": " days of duration",
-  "levelUp": "You have leveled up!"
+  "levelUp": "You have leveled up!",
+  "camera": "Camera",
+  "gallery": "Gallery"
 }

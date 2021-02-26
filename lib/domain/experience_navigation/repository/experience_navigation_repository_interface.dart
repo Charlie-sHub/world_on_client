@@ -34,4 +34,7 @@ abstract class ExperienceNavigationRepositoryInterface {
 
   /// Sends a pair of latitude and longitude values and returns a [KtSet] of [Experience]s located within a certain radius
   Future<Either<Failure, KtSet<Experience>>> loadSurroundingExperiences(Coordinates coordinates);
+
+  /// Returns a List of recommended experiences based on the [User]'s interests
+  Stream<Either<Failure, KtList<Experience>>> watchRecommendedExperiences();
 }

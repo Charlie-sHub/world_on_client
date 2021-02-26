@@ -209,7 +209,7 @@ class __$ItemCopyWithImpl<$Res> extends _$ItemDtoCopyWithImpl<$Res>
   @override
   @ServerTimestampConverter()
   final DateTime boughtDate;
-  
+
   @override
   String toString() {
     return 'ItemDto(id: $id, name: $name, description: $description, code: $code, value: $value, timeLimitInDays: $timeLimitInDays, imageURL: $imageURL, boughtDate: $boughtDate)';

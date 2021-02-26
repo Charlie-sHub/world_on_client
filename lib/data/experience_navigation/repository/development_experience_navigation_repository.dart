@@ -43,4 +43,9 @@ class DevelopmentExperienceNavigationRepository implements ExperienceNavigationR
   Future<Either<Failure, KtSet<Experience>>> loadSurroundingExperiences(Coordinates coordinates) {
     throw UnimplementedError();
   }
+
+  @override
+  Stream<Either<Failure, KtList<Experience>>> watchRecommendedExperiences() {
+    throw UnimplementedError();
+  }
 }

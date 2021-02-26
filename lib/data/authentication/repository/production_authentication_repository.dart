@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 import 'package:logger/logger.dart';
@@ -137,6 +138,13 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
       return left(
         const Failure.authenticationDomain(
           AuthenticationDomainFailure.cancelledByUser(),
+        ),
+      );
+    } on PlatformException catch (exception) {
+      _logger.e(exception.message);
+      return left(
+        Failure.coreData(
+          CoreDataFailure.serverError(errorString: exception.message),
         ),
       );
     }

@@ -3,9 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/registration_form/registration_form_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/authentication/widgets/password_text_field.dart';
-import 'package:worldon/views/authentication/widgets/registration_form/birthday_button.dart';
 import 'package:worldon/views/authentication/widgets/registration_form/description_text_field.dart';
-import 'package:worldon/views/authentication/widgets/registration_form/eula_check_box.dart';
 import 'package:worldon/views/authentication/widgets/registration_form/name_text_field.dart';
 import 'package:worldon/views/authentication/widgets/registration_form/password_confirmation_text_field.dart';
 import 'package:worldon/views/authentication/widgets/registration_form/submit_register_button.dart';
@@ -46,7 +44,7 @@ class RegistrationForm extends StatelessWidget {
               const SizedBox(height: 8),
               const DescriptionTextField(),
               const SizedBox(height: 8),
-              const BirthdayButton(),
+              // const BirthdayButton(),
               const SizedBox(height: 8),
               PasswordTextField(
                 eventToAdd: (String value) => context.bloc<RegistrationFormBloc>().add(
@@ -57,7 +55,8 @@ class RegistrationForm extends StatelessWidget {
               const SizedBox(height: 8),
               const PasswordConfirmationTextField(),
               const SizedBox(height: 8),
-              EULACheckBox(),
+              // TODO: Show again when terms and conditions have been created
+              // EULACheckBox(),
               const SizedBox(height: 8),
               const SubmitRegisterButton(),
             ],

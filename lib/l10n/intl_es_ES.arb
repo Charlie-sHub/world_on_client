@@ -148,5 +148,7 @@
   "notEnoughCoins": "No posees suficientes monedas",
   "youHave": "Tu tienes:",
   "lasts": " dias de duracion",
-  "levelUp": "Haz subido de nivel!"
+  "levelUp": "Haz subido de nivel!",
+  "camera": "Camara",
+  "gallery": "Galeria"
 }

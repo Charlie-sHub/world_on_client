@@ -31,6 +31,9 @@ class AppWidget extends StatelessWidget {
         title: "World On",
         debugShowCheckedModeBanner: Provider.of<String>(context) != Environment.prod,
         theme: ThemeData.dark().copyWith(
+          buttonBarTheme: const ButtonBarThemeData(
+            alignment: MainAxisAlignment.spaceAround,
+          ),
           sliderTheme: SliderTheme.of(context).copyWith(
             inactiveTrackColor: Colors.white,
             trackShape: const RoundedRectSliderTrackShape(),

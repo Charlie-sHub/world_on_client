@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:worldon/application/authentication/registration_form/registration_form_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
+import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class UserImagePicker extends StatelessWidget {
   @override
@@ -18,7 +19,7 @@ class UserImagePicker extends StatelessWidget {
                   icon: const Icon(
                     Icons.photo_camera,
                   ),
-                  onPressed: () async => _pickImage(context),
+                  onPressed: () async => _openDialog(context),
                 ),
                 if (context.bloc<RegistrationFormBloc>().state.showErrorMessages)
                   Text(
@@ -31,7 +32,7 @@ class UserImagePicker extends StatelessWidget {
               ],
             ),
             (imageFile) => FlatButton(
-              onPressed: () async => _pickImage(context),
+              onPressed: () async => _openDialog(context),
               child: CircleAvatar(
                 radius: 80,
                 backgroundImage: FileImage(imageFile),
@@ -41,12 +42,59 @@ class UserImagePicker extends StatelessWidget {
     );
   }
 
-  Future _pickImage(BuildContext context) async {
-    final imagePicked = await ImagePicker().getImage(
-      source: ImageSource.gallery,
-      imageQuality: 20,
+  Future _openDialog(BuildContext context) async {
+    await showDialog<bool>(
+      context: context,
+      useSafeArea: true,
+      barrierDismissible: true,
+      child: AlertDialog(
+        backgroundColor: WorldOnColors.background,
+        actions: [
+          RaisedButton(
+            onPressed: () async {
+              await _pickImage(
+                ImageSource.camera,
+                context,
+              );
+              Navigator.of(context).pop();
+            },
+            child: Text(
+              S.of(context).camera,
+              style: const TextStyle(
+                fontSize: 18,
+              ),
+            ),
+          ),
+          RaisedButton(
+            onPressed: () async {
+              await _pickImage(
+                ImageSource.gallery,
+                context,
+              );
+              Navigator.of(context).pop();
+            },
+            child: Text(
+              S.of(context).gallery,
+              style: const TextStyle(
+                fontSize: 18,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
-    final imageFile = File(imagePicked.path);
-    context.bloc<RegistrationFormBloc>().add(RegistrationFormEvent.imageChanged(imageFile));
+  }
+
+  Future _pickImage(ImageSource source, BuildContext context) async {
+    final _imagePicked = await ImagePicker().getImage(
+      source: source,
+      imageQuality: 50,
+    );
+    if (_imagePicked != null) {
+      final _imageFile = File(_imagePicked.path);
+      context.bloc<RegistrationFormBloc>().add(
+            RegistrationFormEvent.imageChanged(_imageFile),
+          );
+    }
   }
 }
