@@ -14,9 +14,7 @@ import 'package:worldon/domain/store/use_case/buy_item.dart';
 import 'package:worldon/injection.dart';
 
 part 'buy_item_bloc.freezed.dart';
-
 part 'buy_item_event.dart';
-
 part 'buy_item_state.dart';
 
 @injectable
@@ -33,12 +31,19 @@ class BuyItemBloc extends Bloc<BuyItemEvent, BuyItemState> {
 
   Stream<BuyItemState> _onInitialized(_Initialized event) async* {
     yield const BuyItemState.actionInProgress();
-    final _userOption = await getIt<GetLoggedInUser>()(getIt<NoParams>());
+    final _userOption = await getIt<GetLoggedInUser>()(
+      getIt<NoParams>(),
+    );
     final _user = _userOption.fold(
       () => throw UnAuthenticatedError(),
       id,
     );
-    if (_user.items.contains(event.item)) {
+    final _itemIds = _user.items
+        .map(
+          (_item) => _item.id,
+        )
+        .toList();
+    if (_itemIds.contains(event.item.id)) {
       yield const BuyItemState.owns();
     } else {
       yield const BuyItemState.doesNotOwn();
