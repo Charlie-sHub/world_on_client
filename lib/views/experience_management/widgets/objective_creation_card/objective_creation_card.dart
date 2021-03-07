@@ -168,7 +168,7 @@ class ObjectiveCreationCard extends HookWidget {
       context: context,
       useSafeArea: true,
       barrierDismissible: true,
-      child: AlertDialog(
+      builder: (context) => AlertDialog(
         backgroundColor: WorldOnColors.background,
         actions: [
           RaisedButton(

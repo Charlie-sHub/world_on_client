@@ -32,25 +32,25 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
   // hopefully it will work for the tests
   @override
   Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByTitle(SearchTerm title) async* {
-    yield* _firestore.experienceCollection
-        .snapshots()
-        .map(
-          (snapshot) => snapshot.docs.map(
-            (document) => ExperienceDto.fromFirestore(document).toDomain(),
-          ),
-        )
-        .map(
+    yield* _firestore.experienceCollection.snapshots().map(
+      (snapshot) {
+        final _resultList = snapshot.docs.where(
+          (element) {
+            final String _title = element.get("title").toString();
+            return _title.toLowerCase().contains(
+                  title.getOrCrash().toLowerCase(),
+                );
+          },
+        );
+        return _resultList.map(
+          (document) => ExperienceDto.fromFirestore(document).toDomain(),
+        );
+      },
+    ).map(
       (experiences) {
-        final _resultList = experiences
-            .where(
-              (experience) => experience.title.getOrCrash().toLowerCase().contains(
-                    title.getOrCrash().toLowerCase(),
-                  ),
-            )
-            .toImmutableList();
-        if (_resultList.isNotEmpty()) {
+        if (experiences.isNotEmpty) {
           return right<Failure, KtList<Experience>>(
-            _resultList,
+            experiences.toImmutableList(),
           );
         } else {
           return left<Failure, KtList<Experience>>(
@@ -67,25 +67,25 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
 
   @override
   Stream<Either<Failure, KtList<Tag>>> watchSearchTagsByName(SearchTerm name) async* {
-    yield* _firestore.tagCollection
-        .snapshots()
-        .map(
-          (snapshot) => snapshot.docs.map(
-            (document) => TagDto.fromFirestore(document).toDomain(),
-          ),
-        )
-        .map(
+    yield* _firestore.tagCollection.snapshots().map(
+      (snapshot) {
+        final _resultList = snapshot.docs.where(
+          (element) {
+            final String _name = element.get("name").toString();
+            return _name.toLowerCase().contains(
+                  name.getOrCrash().toLowerCase(),
+                );
+          },
+        );
+        return _resultList.map(
+          (document) => TagDto.fromFirestore(document).toDomain(),
+        );
+      },
+    ).map(
       (tags) {
-        final _resultList = tags
-            .where(
-              (tag) => tag.name.getOrCrash().toLowerCase().contains(
-                    name.getOrCrash().toLowerCase(),
-                  ),
-            )
-            .toImmutableList();
-        if (_resultList.isNotEmpty()) {
+        if (tags.isNotEmpty) {
           return right<Failure, KtList<Tag>>(
-            _resultList,
+            tags.toImmutableList(),
           );
         } else {
           return left<Failure, KtList<Tag>>(
@@ -102,25 +102,25 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
 
   @override
   Stream<Either<Failure, KtList<User>>> watchSearchUsersByName(SearchTerm name) async* {
-    yield* _firestore.userCollection
-        .snapshots()
-        .map(
-          (snapshot) => snapshot.docs.map(
-            (document) => UserDto.fromFirestore(document).toDomain(),
-          ),
-        )
-        .map(
+    yield* _firestore.userCollection.snapshots().map(
+      (snapshot) {
+        final _resultList = snapshot.docs.where(
+          (element) {
+            final String _name = element.get("name").toString();
+            return _name.toLowerCase().contains(
+                  name.getOrCrash().toLowerCase(),
+                );
+          },
+        );
+        return _resultList.map(
+          (document) => UserDto.fromFirestore(document).toDomain(),
+        );
+      },
+    ).map(
       (users) {
-        final _resultList = users
-            .where(
-              (user) => user.name.getOrCrash().toLowerCase().contains(
-                    name.getOrCrash().toLowerCase(),
-                  ),
-            )
-            .toImmutableList();
-        if (_resultList.isNotEmpty()) {
+        if (users.isNotEmpty) {
           return right<Failure, KtList<User>>(
-            _resultList,
+            users.toImmutableList(),
           );
         } else {
           return left<Failure, KtList<User>>(
@@ -137,25 +137,25 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
 
   @override
   Stream<Either<Failure, KtList<User>>> watchSearchUsersByUserName(SearchTerm username) async* {
-    yield* _firestore.userCollection
-        .snapshots()
-        .map(
-          (snapshot) => snapshot.docs.map(
-            (document) => UserDto.fromFirestore(document).toDomain(),
-          ),
-        )
-        .map(
+    yield* _firestore.userCollection.snapshots().map(
+      (snapshot) {
+        final _resultList = snapshot.docs.where(
+          (element) {
+            final String _username = element.get("username").toString();
+            return _username.toLowerCase().contains(
+                  username.getOrCrash().toLowerCase(),
+                );
+          },
+        );
+        return _resultList.map(
+          (document) => UserDto.fromFirestore(document).toDomain(),
+        );
+      },
+    ).map(
       (users) {
-        final _resultList = users
-            .where(
-              (user) => user.username.getOrCrash().toLowerCase().contains(
-                    username.getOrCrash().toLowerCase(),
-                  ),
-            )
-            .toImmutableList();
-        if (_resultList.isNotEmpty()) {
+        if (users.isNotEmpty) {
           return right<Failure, KtList<User>>(
-            _resultList,
+            users.toImmutableList(),
           );
         } else {
           return left<Failure, KtList<User>>(
@@ -233,9 +233,35 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
   }
 
   @override
-  Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByDifficulty(Difficulty difficulty) {
-    // TODO: implement searchExperiencesByDifficulty
-    throw UnimplementedError();
+  Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByDifficulty(Difficulty difficulty) async* {
+    yield* _firestore.experienceCollection
+        .where(
+          "difficulty",
+          isEqualTo: difficulty.getOrCrash(),
+        )
+        .snapshots()
+        .map(
+          (snapshot) => snapshot.docs.map(
+            (document) => ExperienceDto.fromFirestore(document).toDomain(),
+          ),
+        )
+        .map(
+      (experiences) {
+        if (experiences.isNotEmpty) {
+          return right<Failure, KtList<Experience>>(
+            experiences.toImmutableList(),
+          );
+        } else {
+          return left<Failure, KtList<Experience>>(
+            const Failure.coreData(
+              CoreDataFailure.notFoundError(),
+            ),
+          );
+        }
+      },
+    ).onErrorReturnWith(
+      (error) => left(onError(error)),
+    );
   }
 
   Failure onError(dynamic error) {

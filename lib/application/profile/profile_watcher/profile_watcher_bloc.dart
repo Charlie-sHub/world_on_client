@@ -6,8 +6,9 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
-import 'package:worldon/domain/core/use_case/is_logged_in_user.dart';
+import 'package:worldon/domain/core/use_case/is_logged_in_user.dart' as is_logged_in_user;
 import 'package:worldon/domain/core/use_case/use_case.dart';
+import 'package:worldon/domain/profile/use_case/load_user.dart' as load_user;
 import 'package:worldon/injection.dart';
 
 part 'profile_watcher_bloc.freezed.dart';
@@ -37,13 +38,27 @@ class ProfileWatcherBloc extends Bloc<ProfileWatcherEvent, ProfileWatcherState> 
         );
       },
       (user) async* {
-        final _isOwn = await getIt<IsLoggedInUser>()(
-          Params(userToCompareWith: user),
+        final _isOwn = await getIt<is_logged_in_user.IsLoggedInUser>()(
+          is_logged_in_user.Params(userToCompareWith: user),
         );
+        // The users are "loaded again" to always get an up to date user
+        // As the given user can be from an old document
         if (_isOwn) {
-          yield ProfileWatcherState.own(user);
+          final _own = await getIt<load_user.LoadUser>()(
+            load_user.Params(id: user.id),
+          );
+          yield _own.fold(
+            (_) => const ProfileWatcherState.loadFailure(),
+            (_foreignUser) => ProfileWatcherState.own(_foreignUser),
+          );
         } else {
-          yield ProfileWatcherState.foreign(user);
+          final _foreignUser = await getIt<load_user.LoadUser>()(
+            load_user.Params(id: user.id),
+          );
+          yield _foreignUser.fold(
+            (_) => const ProfileWatcherState.loadFailure(),
+            (_foreignUser) => ProfileWatcherState.foreign(_foreignUser),
+          );
         }
       },
     );

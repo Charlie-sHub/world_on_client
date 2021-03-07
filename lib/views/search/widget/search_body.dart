@@ -61,7 +61,7 @@ class SearchBody extends StatelessWidget {
   void _searchFormListener(BuildContext context, SearchByNameFormState state) {
     if (state.searchTerm.value.isRight()) {
       context.bloc<SearchUsersByNameWatcherBloc>().add(
-            SearchUsersByNameWatcherEvent.watchUsersFoundByUsernameStarted(
+            SearchUsersByNameWatcherEvent.watchUsersFoundByNameStarted(
               state.searchTerm,
             ),
           );

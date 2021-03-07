@@ -10,7 +10,10 @@ import 'foreign_profile_tab_bar.dart';
 class ForeignProfile extends StatelessWidget {
   final User user;
 
-  const ForeignProfile({Key key, @required this.user}) : super(key: key);
+  const ForeignProfile({
+    Key key,
+    @required this.user,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

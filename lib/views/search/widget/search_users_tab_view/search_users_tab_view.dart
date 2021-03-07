@@ -54,7 +54,9 @@ class SearchUsersTabView extends StatelessWidget {
         ),
         searchFailure: (state) => ErrorDisplay(
           retryFunction: () => context.bloc<SearchUsersByNameWatcherBloc>().add(
-                SearchUsersByNameWatcherEvent.watchUsersFoundByNameStarted(searchTerm),
+                SearchUsersByNameWatcherEvent.watchUsersFoundByNameStarted(
+                  context.bloc<SearchByNameFormBloc>().state.searchTerm,
+                ),
               ),
           failure: state.failure,
         ),

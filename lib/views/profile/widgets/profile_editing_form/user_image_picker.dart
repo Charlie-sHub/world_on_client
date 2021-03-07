@@ -44,7 +44,7 @@ class UserImagePicker extends StatelessWidget {
       context: context,
       useSafeArea: true,
       barrierDismissible: true,
-      child: AlertDialog(
+      builder: (context) => AlertDialog(
         backgroundColor: WorldOnColors.background,
         actions: [
           RaisedButton(
