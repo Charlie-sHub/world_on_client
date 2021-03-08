@@ -18,7 +18,7 @@
   "descriptionEmptyString": "The description can't be empty",
   "descriptionStringExceedsLength": "The description is too long",
   "descriptionStringWithInvalidCharacters": "The description has invalid characters",
-  "registerDescriptionLabelText": "Tell us about you!",
+  "registerDescriptionLabelText": "Tell us about you! (optional)",
   "eulaCheckBoxTitle": "Do you agree with our terms and services?",
   "unCheckedEulaMessage": "Please check the EULA",
   "nameEmptyString": "The name can't be empty",
@@ -152,5 +152,6 @@
   "camera": "Camera",
   "gallery": "Gallery",
   "recommendations": "Recommendations:",
-  "recommendationsBasedOn": "You will receive recommendations based on them"
+  "recommendationsBasedOn": "You will receive recommendations based on them",
+  "registrationTagCard": "Select tags you'd be interested in, it's optional but it'll help us recommend experiences to you"
 }

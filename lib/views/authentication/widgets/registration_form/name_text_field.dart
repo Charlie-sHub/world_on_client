@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/registration_form/registration_form_bloc.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/generated/l10n.dart';
+import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class NameTextField extends StatelessWidget {
   const NameTextField({
@@ -34,7 +35,10 @@ class NameTextField extends StatelessWidget {
       autocorrect: false,
       decoration: InputDecoration(
         labelText: S.of(context).name,
-        prefixIcon: const Icon(Icons.assignment_ind),
+        prefixIcon: const Icon(
+          Icons.assignment_ind,
+          color: WorldOnColors.primary,
+        ),
       ),
     );
   }

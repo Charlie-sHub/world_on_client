@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/registration_form/registration_form_bloc.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
 import 'package:worldon/generated/l10n.dart';
+import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class PasswordConfirmationTextField extends StatelessWidget {
   const PasswordConfirmationTextField({
@@ -28,7 +29,10 @@ class PasswordConfirmationTextField extends StatelessWidget {
       obscureText: true,
       decoration: InputDecoration(
         labelText: S.of(context).passwordConfirmationLabelText,
-        prefixIcon: const Icon(Icons.lock_outline),
+        prefixIcon: const Icon(
+          Icons.lock_outline,
+          color: WorldOnColors.primary,
+        ),
       ),
     );
   }

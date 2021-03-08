@@ -31,6 +31,7 @@ class RewardCreationCard extends HookWidget {
         listener: (context, state) => context.bloc<ExperienceManagementFormBloc>().add(
               ExperienceManagementFormEvent.rewardsChanged(state.rewardsCreated),
             ),
+        // TODO: Create buildWhen method
         builder: (context, state) => Card(
           color: WorldOnColors.background,
           shape: const RoundedRectangleBorder(
@@ -106,7 +107,12 @@ class RewardCreationCard extends HookWidget {
                                       icon: const Icon(
                                         Icons.photo_camera,
                                       ),
-                                      onPressed: () async => _openDialog(context),
+                                      onPressed: () async {
+                                        final _imageFile = await _openDialog(context);
+                                        context.bloc<RewardFormBloc>().add(
+                                              RewardFormEvent.imageChanged(_imageFile),
+                                            );
+                                      },
                                     ),
                                     if (context.bloc<RewardFormBloc>().state.showErrorMessages && context.bloc<RewardFormBloc>().state.reward.imageFile.isNone())
                                       Text(
@@ -121,7 +127,12 @@ class RewardCreationCard extends HookWidget {
                                 (imageFile) => Padding(
                                   padding: const EdgeInsets.all(10),
                                   child: FlatButton(
-                                    onPressed: () async => _openDialog(context),
+                                    onPressed: () async {
+                                      final _imageFile = await _openDialog(context);
+                                      context.bloc<RewardFormBloc>().add(
+                                            RewardFormEvent.imageChanged(_imageFile),
+                                          );
+                                    },
                                     child: Image(
                                       fit: BoxFit.fitWidth,
                                       image: FileImage(imageFile),
@@ -158,8 +169,8 @@ class RewardCreationCard extends HookWidget {
     }
   }
 
-  Future _openDialog(BuildContext context) async {
-    await showDialog<bool>(
+  Future<File> _openDialog(BuildContext context) async {
+    return showDialog<File>(
       context: context,
       useSafeArea: true,
       barrierDismissible: true,
@@ -168,11 +179,11 @@ class RewardCreationCard extends HookWidget {
         actions: [
           RaisedButton(
             onPressed: () async {
-              await _pickImage(
+              final _imageFile = await _pickImage(
                 ImageSource.camera,
                 context,
               );
-              Navigator.of(context).pop();
+              Navigator.of(context).pop(_imageFile);
             },
             child: Text(
               S.of(context).camera,
@@ -183,11 +194,11 @@ class RewardCreationCard extends HookWidget {
           ),
           RaisedButton(
             onPressed: () async {
-              await _pickImage(
+              final _imageFile = await _pickImage(
                 ImageSource.gallery,
                 context,
               );
-              Navigator.of(context).pop();
+              Navigator.of(context).pop(_imageFile);
             },
             child: Text(
               S.of(context).gallery,
@@ -207,10 +218,9 @@ class RewardCreationCard extends HookWidget {
       imageQuality: 50,
     );
     if (_imagePicked != null) {
-      final _imageFile = File(_imagePicked.path);
-      context.bloc<RewardFormBloc>().add(
-            RewardFormEvent.imageChanged(_imageFile),
-          );
+      return File(_imagePicked.path);
+    } else {
+      return null;
     }
   }
 }

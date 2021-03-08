@@ -76,7 +76,7 @@ class _$RegistrationFormEventTearOff {
   }
 
 // ignore: unused_element
-  _InterestsChanged interestsChanged(Set<UniqueId> interests) {
+  _InterestsChanged interestsChanged(KtSet<Tag> interests) {
     return _InterestsChanged(
       interests,
     );
@@ -110,7 +110,7 @@ mixin _$RegistrationFormEvent {
     @required TResult emailAddressChanged(String emailAddress),
     @required TResult birthdayChanged(DateTime birthday),
     @required TResult descriptionChanged(String description),
-    @required TResult interestsChanged(Set<UniqueId> interests),
+    @required TResult interestsChanged(KtSet<Tag> interests),
     @required TResult tappedEULA(),
     @required TResult submitted(),
   });
@@ -125,7 +125,7 @@ mixin _$RegistrationFormEvent {
     TResult emailAddressChanged(String emailAddress),
     TResult birthdayChanged(DateTime birthday),
     TResult descriptionChanged(String description),
-    TResult interestsChanged(Set<UniqueId> interests),
+    TResult interestsChanged(KtSet<Tag> interests),
     TResult tappedEULA(),
     TResult submitted(),
     @required TResult orElse(),
@@ -229,7 +229,7 @@ class _$_Initialized implements _Initialized {
     @required TResult emailAddressChanged(String emailAddress),
     @required TResult birthdayChanged(DateTime birthday),
     @required TResult descriptionChanged(String description),
-    @required TResult interestsChanged(Set<UniqueId> interests),
+    @required TResult interestsChanged(KtSet<Tag> interests),
     @required TResult tappedEULA(),
     @required TResult submitted(),
   }) {
@@ -260,7 +260,7 @@ class _$_Initialized implements _Initialized {
     TResult emailAddressChanged(String emailAddress),
     TResult birthdayChanged(DateTime birthday),
     TResult descriptionChanged(String description),
-    TResult interestsChanged(Set<UniqueId> interests),
+    TResult interestsChanged(KtSet<Tag> interests),
     TResult tappedEULA(),
     TResult submitted(),
     @required TResult orElse(),
@@ -404,7 +404,7 @@ class _$_ImageChanged implements _ImageChanged {
     @required TResult emailAddressChanged(String emailAddress),
     @required TResult birthdayChanged(DateTime birthday),
     @required TResult descriptionChanged(String description),
-    @required TResult interestsChanged(Set<UniqueId> interests),
+    @required TResult interestsChanged(KtSet<Tag> interests),
     @required TResult tappedEULA(),
     @required TResult submitted(),
   }) {
@@ -435,7 +435,7 @@ class _$_ImageChanged implements _ImageChanged {
     TResult emailAddressChanged(String emailAddress),
     TResult birthdayChanged(DateTime birthday),
     TResult descriptionChanged(String description),
-    TResult interestsChanged(Set<UniqueId> interests),
+    TResult interestsChanged(KtSet<Tag> interests),
     TResult tappedEULA(),
     TResult submitted(),
     @required TResult orElse(),
@@ -582,7 +582,7 @@ class _$_NameChanged implements _NameChanged {
     @required TResult emailAddressChanged(String emailAddress),
     @required TResult birthdayChanged(DateTime birthday),
     @required TResult descriptionChanged(String description),
-    @required TResult interestsChanged(Set<UniqueId> interests),
+    @required TResult interestsChanged(KtSet<Tag> interests),
     @required TResult tappedEULA(),
     @required TResult submitted(),
   }) {
@@ -613,7 +613,7 @@ class _$_NameChanged implements _NameChanged {
     TResult emailAddressChanged(String emailAddress),
     TResult birthdayChanged(DateTime birthday),
     TResult descriptionChanged(String description),
-    TResult interestsChanged(Set<UniqueId> interests),
+    TResult interestsChanged(KtSet<Tag> interests),
     TResult tappedEULA(),
     TResult submitted(),
     @required TResult orElse(),
@@ -761,7 +761,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     @required TResult emailAddressChanged(String emailAddress),
     @required TResult birthdayChanged(DateTime birthday),
     @required TResult descriptionChanged(String description),
-    @required TResult interestsChanged(Set<UniqueId> interests),
+    @required TResult interestsChanged(KtSet<Tag> interests),
     @required TResult tappedEULA(),
     @required TResult submitted(),
   }) {
@@ -792,7 +792,7 @@ class _$_UsernameChanged implements _UsernameChanged {
     TResult emailAddressChanged(String emailAddress),
     TResult birthdayChanged(DateTime birthday),
     TResult descriptionChanged(String description),
-    TResult interestsChanged(Set<UniqueId> interests),
+    TResult interestsChanged(KtSet<Tag> interests),
     TResult tappedEULA(),
     TResult submitted(),
     @required TResult orElse(),
@@ -940,7 +940,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     @required TResult emailAddressChanged(String emailAddress),
     @required TResult birthdayChanged(DateTime birthday),
     @required TResult descriptionChanged(String description),
-    @required TResult interestsChanged(Set<UniqueId> interests),
+    @required TResult interestsChanged(KtSet<Tag> interests),
     @required TResult tappedEULA(),
     @required TResult submitted(),
   }) {
@@ -971,7 +971,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult emailAddressChanged(String emailAddress),
     TResult birthdayChanged(DateTime birthday),
     TResult descriptionChanged(String description),
-    TResult interestsChanged(Set<UniqueId> interests),
+    TResult interestsChanged(KtSet<Tag> interests),
     TResult tappedEULA(),
     TResult submitted(),
     @required TResult orElse(),
@@ -1127,7 +1127,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
     @required TResult emailAddressChanged(String emailAddress),
     @required TResult birthdayChanged(DateTime birthday),
     @required TResult descriptionChanged(String description),
-    @required TResult interestsChanged(Set<UniqueId> interests),
+    @required TResult interestsChanged(KtSet<Tag> interests),
     @required TResult tappedEULA(),
     @required TResult submitted(),
   }) {
@@ -1158,7 +1158,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
     TResult emailAddressChanged(String emailAddress),
     TResult birthdayChanged(DateTime birthday),
     TResult descriptionChanged(String description),
-    TResult interestsChanged(Set<UniqueId> interests),
+    TResult interestsChanged(KtSet<Tag> interests),
     TResult tappedEULA(),
     TResult submitted(),
     @required TResult orElse(),
@@ -1310,7 +1310,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     @required TResult emailAddressChanged(String emailAddress),
     @required TResult birthdayChanged(DateTime birthday),
     @required TResult descriptionChanged(String description),
-    @required TResult interestsChanged(Set<UniqueId> interests),
+    @required TResult interestsChanged(KtSet<Tag> interests),
     @required TResult tappedEULA(),
     @required TResult submitted(),
   }) {
@@ -1341,7 +1341,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     TResult emailAddressChanged(String emailAddress),
     TResult birthdayChanged(DateTime birthday),
     TResult descriptionChanged(String description),
-    TResult interestsChanged(Set<UniqueId> interests),
+    TResult interestsChanged(KtSet<Tag> interests),
     TResult tappedEULA(),
     TResult submitted(),
     @required TResult orElse(),
@@ -1490,7 +1490,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     @required TResult emailAddressChanged(String emailAddress),
     @required TResult birthdayChanged(DateTime birthday),
     @required TResult descriptionChanged(String description),
-    @required TResult interestsChanged(Set<UniqueId> interests),
+    @required TResult interestsChanged(KtSet<Tag> interests),
     @required TResult tappedEULA(),
     @required TResult submitted(),
   }) {
@@ -1521,7 +1521,7 @@ class _$_BirthdayChanged implements _BirthdayChanged {
     TResult emailAddressChanged(String emailAddress),
     TResult birthdayChanged(DateTime birthday),
     TResult descriptionChanged(String description),
-    TResult interestsChanged(Set<UniqueId> interests),
+    TResult interestsChanged(KtSet<Tag> interests),
     TResult tappedEULA(),
     TResult submitted(),
     @required TResult orElse(),
@@ -1669,7 +1669,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     @required TResult emailAddressChanged(String emailAddress),
     @required TResult birthdayChanged(DateTime birthday),
     @required TResult descriptionChanged(String description),
-    @required TResult interestsChanged(Set<UniqueId> interests),
+    @required TResult interestsChanged(KtSet<Tag> interests),
     @required TResult tappedEULA(),
     @required TResult submitted(),
   }) {
@@ -1700,7 +1700,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     TResult emailAddressChanged(String emailAddress),
     TResult birthdayChanged(DateTime birthday),
     TResult descriptionChanged(String description),
-    TResult interestsChanged(Set<UniqueId> interests),
+    TResult interestsChanged(KtSet<Tag> interests),
     TResult tappedEULA(),
     TResult submitted(),
     @required TResult orElse(),
@@ -1782,7 +1782,8 @@ abstract class _$InterestsChangedCopyWith<$Res> {
   factory _$InterestsChangedCopyWith(
           _InterestsChanged value, $Res Function(_InterestsChanged) then) =
       __$InterestsChangedCopyWithImpl<$Res>;
-  $Res call({Set<UniqueId> interests});
+
+  $Res call({KtSet<Tag> interests});
 }
 
 /// @nodoc
@@ -1801,7 +1802,7 @@ class __$InterestsChangedCopyWithImpl<$Res>
     Object interests = freezed,
   }) {
     return _then(_InterestsChanged(
-      interests == freezed ? _value.interests : interests as Set<UniqueId>,
+      interests == freezed ? _value.interests : interests as KtSet<Tag>,
     ));
   }
 }
@@ -1811,7 +1812,7 @@ class _$_InterestsChanged implements _InterestsChanged {
   const _$_InterestsChanged(this.interests) : assert(interests != null);
 
   @override
-  final Set<UniqueId> interests;
+  final KtSet<Tag> interests;
 
   @override
   String toString() {
@@ -1820,9 +1821,7 @@ class _$_InterestsChanged implements _InterestsChanged {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _InterestsChanged &&
-            (identical(other.interests, interests) ||
+    return identical(this, other) || (other is _InterestsChanged && (identical(other.interests, interests) ||
                 const DeepCollectionEquality()
                     .equals(other.interests, interests)));
   }
@@ -1848,7 +1847,7 @@ class _$_InterestsChanged implements _InterestsChanged {
     @required TResult emailAddressChanged(String emailAddress),
     @required TResult birthdayChanged(DateTime birthday),
     @required TResult descriptionChanged(String description),
-    @required TResult interestsChanged(Set<UniqueId> interests),
+    @required TResult interestsChanged(KtSet<Tag> interests),
     @required TResult tappedEULA(),
     @required TResult submitted(),
   }) {
@@ -1879,7 +1878,7 @@ class _$_InterestsChanged implements _InterestsChanged {
     TResult emailAddressChanged(String emailAddress),
     TResult birthdayChanged(DateTime birthday),
     TResult descriptionChanged(String description),
-    TResult interestsChanged(Set<UniqueId> interests),
+    TResult interestsChanged(KtSet<Tag> interests),
     TResult tappedEULA(),
     TResult submitted(),
     @required TResult orElse(),
@@ -1949,10 +1948,10 @@ class _$_InterestsChanged implements _InterestsChanged {
 }
 
 abstract class _InterestsChanged implements RegistrationFormEvent {
-  const factory _InterestsChanged(Set<UniqueId> interests) =
-      _$_InterestsChanged;
+  const factory _InterestsChanged(KtSet<Tag> interests) = _$_InterestsChanged;
 
-  Set<UniqueId> get interests;
+  KtSet<Tag> get interests;
+
   @JsonKey(ignore: true)
   _$InterestsChangedCopyWith<_InterestsChanged> get copyWith;
 }
@@ -2005,7 +2004,7 @@ class _$_TappedEULA implements _TappedEULA {
     @required TResult emailAddressChanged(String emailAddress),
     @required TResult birthdayChanged(DateTime birthday),
     @required TResult descriptionChanged(String description),
-    @required TResult interestsChanged(Set<UniqueId> interests),
+    @required TResult interestsChanged(KtSet<Tag> interests),
     @required TResult tappedEULA(),
     @required TResult submitted(),
   }) {
@@ -2036,7 +2035,7 @@ class _$_TappedEULA implements _TappedEULA {
     TResult emailAddressChanged(String emailAddress),
     TResult birthdayChanged(DateTime birthday),
     TResult descriptionChanged(String description),
-    TResult interestsChanged(Set<UniqueId> interests),
+    TResult interestsChanged(KtSet<Tag> interests),
     TResult tappedEULA(),
     TResult submitted(),
     @required TResult orElse(),
@@ -2156,7 +2155,7 @@ class _$_Submitted implements _Submitted {
     @required TResult emailAddressChanged(String emailAddress),
     @required TResult birthdayChanged(DateTime birthday),
     @required TResult descriptionChanged(String description),
-    @required TResult interestsChanged(Set<UniqueId> interests),
+    @required TResult interestsChanged(KtSet<Tag> interests),
     @required TResult tappedEULA(),
     @required TResult submitted(),
   }) {
@@ -2187,7 +2186,7 @@ class _$_Submitted implements _Submitted {
     TResult emailAddressChanged(String emailAddress),
     TResult birthdayChanged(DateTime birthday),
     TResult descriptionChanged(String description),
-    TResult interestsChanged(Set<UniqueId> interests),
+    TResult interestsChanged(KtSet<Tag> interests),
     TResult tappedEULA(),
     TResult submitted(),
     @required TResult orElse(),

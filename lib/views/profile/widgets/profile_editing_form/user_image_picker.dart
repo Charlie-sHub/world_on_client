@@ -20,7 +20,12 @@ class UserImagePicker extends StatelessWidget {
   Widget build(BuildContext context) {
     return context.bloc<ProfileEditingFormBloc>().state.user.imageFileOption.fold(
           () => FlatButton(
-        onPressed: () async => _openDialog(context),
+            onPressed: () async {
+              final _imageFile = await _openDialog(context);
+              context.bloc<ProfileEditingFormBloc>().add(
+                    ProfileEditingFormEvent.imageChanged(_imageFile),
+                  );
+            },
             child: Hero(
               tag: "userImage",
               child: CircleAvatar(
@@ -30,7 +35,12 @@ class UserImagePicker extends StatelessWidget {
             ),
           ),
           (imageFile) => FlatButton(
-            onPressed: () async => _openDialog(context),
+            onPressed: () async {
+              final _imageFile = await _openDialog(context);
+              context.bloc<ProfileEditingFormBloc>().add(
+                    ProfileEditingFormEvent.imageChanged(_imageFile),
+                  );
+            },
             child: CircleAvatar(
               radius: 80,
               backgroundImage: FileImage(imageFile),
@@ -39,8 +49,8 @@ class UserImagePicker extends StatelessWidget {
         );
   }
 
-  Future _openDialog(BuildContext context) async {
-    await showDialog<bool>(
+  Future<File> _openDialog(BuildContext context) async {
+    return showDialog<File>(
       context: context,
       useSafeArea: true,
       barrierDismissible: true,
@@ -49,11 +59,11 @@ class UserImagePicker extends StatelessWidget {
         actions: [
           RaisedButton(
             onPressed: () async {
-              await _pickImage(
+              final _imageFile = await _pickImage(
                 ImageSource.camera,
                 context,
               );
-              Navigator.of(context).pop();
+              Navigator.of(context).pop(_imageFile);
             },
             child: Text(
               S.of(context).camera,
@@ -64,11 +74,11 @@ class UserImagePicker extends StatelessWidget {
           ),
           RaisedButton(
             onPressed: () async {
-              await _pickImage(
+              final _imageFile = await _pickImage(
                 ImageSource.gallery,
                 context,
               );
-              Navigator.of(context).pop();
+              Navigator.of(context).pop(_imageFile);
             },
             child: Text(
               S.of(context).gallery,
@@ -88,10 +98,9 @@ class UserImagePicker extends StatelessWidget {
       imageQuality: 50,
     );
     if (_imagePicked != null) {
-      final _imageFile = File(_imagePicked.path);
-      context.bloc<ProfileEditingFormBloc>().add(
-            ProfileEditingFormEvent.imageChanged(_imageFile),
-          );
+      return File(_imagePicked.path);
+    } else {
+      return null;
     }
   }
 }

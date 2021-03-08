@@ -1,6 +1,9 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kt_dart/collection.dart';
 import 'package:worldon/application/authentication/registration_form/registration_form_bloc.dart';
+import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/authentication/widgets/password_text_field.dart';
 import 'package:worldon/views/authentication/widgets/registration_form/description_text_field.dart';
@@ -10,6 +13,7 @@ import 'package:worldon/views/authentication/widgets/registration_form/submit_re
 import 'package:worldon/views/authentication/widgets/registration_form/user_image_picker.dart';
 import 'package:worldon/views/authentication/widgets/registration_form/username_text_field.dart';
 import 'package:worldon/views/authentication/widgets/world_on_title.dart';
+import 'package:worldon/views/experience_management/widgets/tag_addition_creation_card.dart';
 
 import '../email_text_field.dart';
 
@@ -38,14 +42,11 @@ class RegistrationForm extends StatelessWidget {
               EmailTextField(
                 validator: (_) => _emailValidator(context),
                 eventToAdd: (String value) => context.bloc<RegistrationFormBloc>().add(
-                      RegistrationFormEvent.emailAddressChanged(value),
-                    ),
+                  RegistrationFormEvent.emailAddressChanged(value),
+                ),
               ),
               const SizedBox(height: 8),
-              const DescriptionTextField(),
-              const SizedBox(height: 8),
               // const BirthdayButton(),
-              const SizedBox(height: 8),
               PasswordTextField(
                 eventToAdd: (String value) => context.bloc<RegistrationFormBloc>().add(
                       RegistrationFormEvent.passwordChanged(value),
@@ -55,8 +56,23 @@ class RegistrationForm extends StatelessWidget {
               const SizedBox(height: 8),
               const PasswordConfirmationTextField(),
               const SizedBox(height: 8),
+              const Divider(color: Colors.grey),
+              const SizedBox(height: 8),
+              const DescriptionTextField(),
+              const SizedBox(height: 8),
               // TODO: Show again when terms and conditions have been created
               // EULACheckBox(),
+              // const SizedBox(height: 8),
+              AutoSizeText(
+                S.of(context).registrationTagCard,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 2),
+              TagAdditionCreationCard(
+                tagChangeFunction: (KtSet<Tag> tags) => context.bloc<RegistrationFormBloc>().add(
+                      RegistrationFormEvent.interestsChanged(tags),
+                    ),
+              ),
               const SizedBox(height: 8),
               const SubmitRegisterButton(),
             ],
@@ -65,28 +81,28 @@ class RegistrationForm extends StatelessWidget {
       ),
     );
   }
-
+  
   String _passwordValidator(BuildContext context) {
     return context.bloc<RegistrationFormBloc>().state.user.password.value.fold(
-          (failure) => failure.maybeMap(
-            emptyString: (_) => S.of(context).passwordEmptyString,
-            multiLineString: (_) => S.of(context).passwordMultiLineString,
-            stringExceedsLength: (_) => S.of(context).passwordStringExceedsLength,
-            // Rather superfluous
-            invalidPassword: (_) => S.of(context).invalidPassword,
-            orElse: () => S.of(context).unknownError,
-          ),
-          (_) => null,
-        );
+        (failure) => failure.maybeMap(
+        emptyString: (_) => S.of(context).passwordEmptyString,
+        multiLineString: (_) => S.of(context).passwordMultiLineString,
+        stringExceedsLength: (_) => S.of(context).passwordStringExceedsLength,
+        // Rather superfluous
+        invalidPassword: (_) => S.of(context).invalidPassword,
+        orElse: () => S.of(context).unknownError,
+      ),
+        (_) => null,
+    );
   }
-
+  
   String _emailValidator(BuildContext context) {
     return context.bloc<RegistrationFormBloc>().state.user.email.value.fold(
-          (failure) => failure.maybeMap(
-            invalidEmail: (_) => S.of(context).invalidEmail,
-            orElse: () => S.of(context).unknownError,
-          ),
-          (_) => null,
-        );
+        (failure) => failure.maybeMap(
+        invalidEmail: (_) => S.of(context).invalidEmail,
+        orElse: () => S.of(context).unknownError,
+      ),
+        (_) => null,
+    );
   }
 }

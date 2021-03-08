@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/authentication/validator_typedef.dart';
+import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class EmailTextField extends StatelessWidget {
   final Function eventToAdd;
@@ -20,7 +21,10 @@ class EmailTextField extends StatelessWidget {
       autocorrect: false,
       decoration: InputDecoration(
         labelText: S.of(context).emailAddress,
-        prefixIcon: const Icon(Icons.email),
+        prefixIcon: const Icon(
+          Icons.email,
+          color: WorldOnColors.primary,
+        ),
       ),
     );
   }

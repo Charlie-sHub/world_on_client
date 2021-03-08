@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -215,10 +216,10 @@ class S {
     );
   }
 
-  /// `Tell us about you!`
+  /// `Tell us about you! (optional)`
   String get registerDescriptionLabelText {
     return Intl.message(
-      'Tell us about you!',
+      'Tell us about you! (optional)',
       name: 'registerDescriptionLabelText',
       desc: '',
       args: [],
@@ -1560,6 +1561,16 @@ class S {
     return Intl.message(
       'You will receive recommendations based on them',
       name: 'recommendationsBasedOn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select tags you'd be interested in, it's optional but it'll help us recommend experiences to you`
+  String get registrationTagCard {
+    return Intl.message(
+      'Select tags you\'d be interested in, it\'s optional but it\'ll help us recommend experiences to you',
+      name: 'registrationTagCard',
       desc: '',
       args: [],
     );

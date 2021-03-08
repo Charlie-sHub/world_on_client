@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_management/objective_form/objective_form_bloc.dart';
 import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/generated/l10n.dart';
+import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ObjectiveDescriptionTextField extends StatelessWidget {
   final TextEditingController textController;
@@ -32,7 +33,10 @@ class ObjectiveDescriptionTextField extends StatelessWidget {
       maxLines: 2,
       decoration: InputDecoration(
         labelText: S.of(context).description,
-        prefixIcon: const Icon(Icons.description),
+        prefixIcon: const Icon(
+          Icons.description,
+          color: WorldOnColors.primary,
+        ),
       ),
     );
   }

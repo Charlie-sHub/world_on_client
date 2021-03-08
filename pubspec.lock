@@ -218,13 +218,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.1"
-  cookie_jar:
-    dependency: transitive
-    description:
-      name: cookie_jar
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.1"
   coverage:
     dependency: transitive
     description:
@@ -259,7 +252,7 @@ packages:
       name: dio
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.2.2"
+    version: "3.0.10"
   email_validator:
     dependency: "direct main"
     description:
@@ -489,14 +482,21 @@ packages:
       name: google_map_polyline
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.3+1"
+    version: "0.2.0+1"
   google_maps_flutter:
     dependency: "direct main"
     description:
       name: google_maps_flutter
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.5.21+17"
+    version: "0.5.33"
+  google_maps_flutter_platform_interface:
+    dependency: transitive
+    description:
+      name: google_maps_flutter_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.0"
   google_sign_in:
     dependency: "direct main"
     description:
@@ -713,7 +713,7 @@ packages:
       name: node_io
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.1"
+    version: "1.2.0"
   node_preamble:
     dependency: transitive
     description:

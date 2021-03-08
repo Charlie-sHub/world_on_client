@@ -5,10 +5,12 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:kt_dart/collection.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/authentication/use_case/register.dart';
+import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/use_case/use_case.dart';
 import 'package:worldon/domain/core/validation/objects/email_address.dart';
@@ -17,7 +19,6 @@ import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/domain/core/validation/objects/password.dart';
 import 'package:worldon/domain/core/validation/objects/password_confirmator.dart';
 import 'package:worldon/domain/core/validation/objects/past_date.dart';
-import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/injection.dart';
 
 part 'registration_form_bloc.freezed.dart';
@@ -79,7 +80,7 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
   Stream<RegistrationFormState> _onInterestsChanged(_InterestsChanged event) async* {
     yield state.copyWith(
       user: state.user.copyWith(
-        interestsIds: event.interests,
+        interestsIds: event.interests.map((_tag) => _tag.id).asList().toSet(),
       ),
       failureOrSuccessOption: none(),
     );

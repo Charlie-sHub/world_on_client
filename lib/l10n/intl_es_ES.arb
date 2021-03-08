@@ -18,7 +18,7 @@
   "descriptionEmptyString": "La descripción no puede estar vacía",
   "descriptionStringExceedsLength": "La descripción es demasiado larga",
   "descriptionStringWithInvalidCharacters": "La descripción tiene caracteres no válidos",
-  "registerDescriptionLabelText": "¡Cuéntanos sobre ti!",
+  "registerDescriptionLabelText": "¡Cuéntanos sobre ti! (opcional)",
   "eulaCheckBoxTitle": "¿Está de acuerdo con nuestros términos y servicios?",
   "unCheckedEulaMessage": "Compruebe el EULA",
   "nameEmptyString": "El nombre no puede estar vacío",
@@ -152,5 +152,6 @@
   "camera": "Camara",
   "gallery": "Galeria",
   "recommendations": "Recomendaciones:",
-  "recommendationsBasedOn": "Recibiras recomendaciones basados en estos"
+  "recommendationsBasedOn": "Recibiras recomendaciones basados en estos",
+  "registrationTagCard": "Seleccione las etiquetas que te interesen; es opcional, pero nos ayudará a recomendarte experiencias"
 }
