@@ -1,8 +1,10 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/search/search_by_name_form/search_by_name_form_bloc.dart';
 import 'package:worldon/application/search/search_tags_by_name_watcher/search_tags_by_name_watcher_bloc.dart';
 import 'package:worldon/application/search/tag_selector/tag_selector_bloc.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/widgets/cards/simple_tag_display.dart';
 import 'package:worldon/views/core/widgets/cards/simple_tag_error_display.dart';
 import 'package:worldon/views/core/widgets/error/error_display.dart';
@@ -13,7 +15,7 @@ class TagsFoundView extends StatelessWidget {
   const TagsFoundView({
     Key key,
   }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SearchTagsByNameWatcherBloc, SearchTagsByNameWatcherState>(
@@ -31,12 +33,12 @@ class TagsFoundView extends StatelessWidget {
               runSpacing: 5,
               children: <Widget>[
                 ...state.tagsFound.asList().map(
-                  (tag) {
+                    (tag) {
                     if (tag.isValid) {
                       return InkWell(
                         onTap: () => context.bloc<TagSelectorBloc>().add(
-                              TagSelectorEvent.addedTag(tag),
-                            ),
+                          TagSelectorEvent.addedTag(tag),
+                        ),
                         child: SimpleTagDisplay(tag: tag),
                       );
                     } else {
@@ -57,6 +59,7 @@ class TagsFoundView extends StatelessWidget {
                 ),
               ),
           failure: state.failure,
+          specificMessage: some(S.of(context).notFoundErrorSearch),
         ),
       ),
     );

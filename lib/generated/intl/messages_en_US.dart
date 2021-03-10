@@ -41,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "commentPostSuccess": MessageLookupByLibrary.simpleMessage("The Comment was posted"),
         "commentStringExceedsLength": MessageLookupByLibrary.simpleMessage("The comment is too long"),
         "commentStringWithInvalidCharacters": MessageLookupByLibrary.simpleMessage("The comment has invalid characters"),
+        "continueToMainPage": MessageLookupByLibrary.simpleMessage("CONTINUE"),
         "create": MessageLookupByLibrary.simpleMessage("Create"),
         "criticalErrorDisplayRetry": MessageLookupByLibrary.simpleMessage("Tap to try again"),
         "criticalErrorDisplayTitle": MessageLookupByLibrary.simpleMessage("There\'s been a critical failure"),
@@ -108,7 +109,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "noObjectivesErrorMessage": MessageLookupByLibrary.simpleMessage("You have to create at least one objective"),
         "noSearchesMessage": MessageLookupByLibrary.simpleMessage("Search for something!"),
         "notEnoughCoins": MessageLookupByLibrary.simpleMessage("You don\'t have enough coins"),
-        "notFoundError": MessageLookupByLibrary.simpleMessage("There\'s nothing to show"),
+        "notFoundError": MessageLookupByLibrary.simpleMessage("There\'s nothing to show\nTap to reload"),
+        "notFoundErrorAchievements": MessageLookupByLibrary.simpleMessage("You have no Achievements"),
+        "notFoundErrorBoughtItems": MessageLookupByLibrary.simpleMessage("You have no purchased items"),
+        "notFoundErrorComments": MessageLookupByLibrary.simpleMessage("This experience has no comments"),
+        "notFoundErrorExperiencesCreated": MessageLookupByLibrary.simpleMessage("You have not created any experience, try to create one"),
+        "notFoundErrorExperiencesDone": MessageLookupByLibrary.simpleMessage("You have not finished any experience, choose an experience that catches your attention and carry it out"),
+        "notFoundErrorExperiencesLiked": MessageLookupByLibrary.simpleMessage("You have not liked any experience"),
+        "notFoundErrorExperiencesToDo": MessageLookupByLibrary.simpleMessage("You have no experiences to do"),
+        "notFoundErrorFollowed": MessageLookupByLibrary.simpleMessage("Nobody follows you"),
+        "notFoundErrorFollowing": MessageLookupByLibrary.simpleMessage("You don\'t follow anyone"),
+        "notFoundErrorMainFeed": MessageLookupByLibrary.simpleMessage("You probably still do not follow anyone, look for users you know and follow them or look at the recommendations"),
+        "notFoundErrorRecommendations": MessageLookupByLibrary.simpleMessage("Unfortunately we have nothing to recommend you, look for more tags and like them"),
+        "notFoundErrorSearch": MessageLookupByLibrary.simpleMessage("Your search has yielded no results"),
         "notification": MessageLookupByLibrary.simpleMessage("Notification"),
         "objective": MessageLookupByLibrary.simpleMessage("Objective"),
         "objectiveCreationCardTitle": MessageLookupByLibrary.simpleMessage("Create the Objectives"),
@@ -175,6 +188,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "usernameMultiLineString": MessageLookupByLibrary.simpleMessage("The username can\'t be more than one line"),
         "usernameStringExceedsLength": MessageLookupByLibrary.simpleMessage("The username is too long"),
         "usernameStringWithInvalidCharacters": MessageLookupByLibrary.simpleMessage("The username has invalid characters"),
+        "welcomeMessage": MessageLookupByLibrary.simpleMessage(
+            "Hello.\n\nWelcome to World On, here you can create and share experiences, real life activities that you want to share or do the ones you like the most created by others. Create, share, participate and have fun.\n\nLive and play the adventure of your life!"),
+        "welcomeTitle": MessageLookupByLibrary.simpleMessage("WELCOME"),
         "youHave": MessageLookupByLibrary.simpleMessage("You have:")
       };
 }

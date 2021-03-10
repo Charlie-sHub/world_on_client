@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_log/experience_log_watcher/experience_log_watcher_bloc.dart';
@@ -37,8 +38,8 @@ class ProfileLogTabView extends StatelessWidget {
                   return ErrorCard(
                     entityType: S.of(context).experience,
                     valueFailureString: _experience.failureOption.fold(
-                      () => S.of(context).noError,
-                      (failure) => failure.toString(),
+                        () => S.of(context).noError,
+                        (failure) => failure.toString(),
                     ),
                   );
                 }
@@ -49,6 +50,7 @@ class ProfileLogTabView extends StatelessWidget {
                     const ExperienceLogWatcherEvent.watchExperiencesLogStarted(),
                   ),
               failure: state.failure,
+              specificMessage: some(S.of(context).notFoundErrorExperiencesToDo),
             ),
           ),
         ),

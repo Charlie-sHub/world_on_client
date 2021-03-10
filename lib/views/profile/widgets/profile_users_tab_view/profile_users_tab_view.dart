@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/profile/profile_users_watcher/profile_users_watcher_bloc.dart';
@@ -16,9 +17,9 @@ class ProfileUsersTabView extends StatelessWidget {
     Key key,
     @required this.user,
   }) : super(key: key);
-
+  
   final User user;
-
+  
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -47,8 +48,8 @@ class ProfileUsersTabView extends StatelessWidget {
                   return ErrorCard(
                     entityType: S.of(context).user,
                     valueFailureString: _user.failureOption.fold(
-                      () => S.of(context).noError,
-                      (failure) => failure.toString(),
+                        () => S.of(context).noError,
+                        (failure) => failure.toString(),
                     ),
                   );
                 }
@@ -59,6 +60,10 @@ class ProfileUsersTabView extends StatelessWidget {
                     ProfileUsersWatcherEvent.watchFollowedUsersStarted(user),
                   ),
               failure: state.failure,
+              specificMessage: none(),
+              // TODO: Find way to distinguish what feed was being watched to show the proper not found message
+              // "notFoundErrorFollowing"
+              // "notFoundErrorFollowed"
             ),
           ),
         ),

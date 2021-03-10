@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/profile/profile_experiences_watcher/profile_experiences_watcher_bloc.dart';
@@ -16,9 +17,9 @@ class ProfileExperiencesTabView extends StatelessWidget {
     Key key,
     @required this.user,
   }) : super(key: key);
-
+  
   final User user;
-
+  
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -47,8 +48,8 @@ class ProfileExperiencesTabView extends StatelessWidget {
                   return ErrorCard(
                     entityType: S.of(context).experience,
                     valueFailureString: _experience.failureOption.fold(
-                      () => S.of(context).noError,
-                      (failure) => failure.toString(),
+                        () => S.of(context).noError,
+                        (failure) => failure.toString(),
                     ),
                   );
                 }
@@ -62,6 +63,11 @@ class ProfileExperiencesTabView extends StatelessWidget {
                     ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(user),
                   ),
               failure: state.failure,
+              specificMessage: none(),
+              // TODO: Find way to distinguish what feed was being watched to show the proper not found message
+              // "notFoundErrorExperiencesCreated"
+              // "notFoundErrorExperiencesLiked"
+              // "notFoundErrorExperiencesDone"
             ),
           ),
         ),

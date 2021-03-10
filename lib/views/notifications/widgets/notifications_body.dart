@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,7 +13,7 @@ import 'package:worldon/views/notifications/widgets/notification_card.dart';
 
 class NotificationsBody extends StatelessWidget {
   const NotificationsBody({Key key}) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -61,8 +62,8 @@ class NotificationsBody extends StatelessWidget {
                   return ErrorCard(
                     entityType: S.of(context).notification,
                     valueFailureString: _notification.failureOption.fold(
-                      () => S.of(context).noError,
-                      (failure) => failure.toString(),
+                        () => S.of(context).noError,
+                        (failure) => failure.toString(),
                     ),
                   );
                 }
@@ -73,6 +74,7 @@ class NotificationsBody extends StatelessWidget {
                     const NotificationsWatcherEvent.watchNotificationsStarted(),
                   ),
               failure: state.failure,
+              specificMessage: none(),
             ),
           ),
         ),

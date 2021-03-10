@@ -52,7 +52,7 @@ class RegistrationPage extends StatelessWidget {
       ).show(context);
 
   void _onSuccess(BuildContext context) {
-    context.navigator.replace(Routes.mainPage);
+    context.navigator.replace(Routes.welcomePage);
     context.bloc<AuthenticationBloc>().add(const AuthenticationEvent.authenticationCheckRequested());
   }
 }

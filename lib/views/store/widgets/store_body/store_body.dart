@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -68,6 +69,7 @@ class StoreBody extends StatelessWidget {
                           const WatchPurchasableItemsEvent.watchPurchasableItemsStarted(),
                         ),
                     failure: state.failure,
+                    specificMessage: none(),
                   ),
                 ),
               ),

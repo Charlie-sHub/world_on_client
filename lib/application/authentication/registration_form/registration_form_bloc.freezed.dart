@@ -1782,7 +1782,6 @@ abstract class _$InterestsChangedCopyWith<$Res> {
   factory _$InterestsChangedCopyWith(
           _InterestsChanged value, $Res Function(_InterestsChanged) then) =
       __$InterestsChangedCopyWithImpl<$Res>;
-
   $Res call({KtSet<Tag> interests});
 }
 
@@ -1821,9 +1820,7 @@ class _$_InterestsChanged implements _InterestsChanged {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _InterestsChanged && (identical(other.interests, interests) ||
-                const DeepCollectionEquality()
-                    .equals(other.interests, interests)));
+    return identical(this, other) || (other is _InterestsChanged && (identical(other.interests, interests) || const DeepCollectionEquality().equals(other.interests, interests)));
   }
 
   @override
@@ -1951,7 +1948,6 @@ abstract class _InterestsChanged implements RegistrationFormEvent {
   const factory _InterestsChanged(KtSet<Tag> interests) = _$_InterestsChanged;
 
   KtSet<Tag> get interests;
-
   @JsonKey(ignore: true)
   _$InterestsChangedCopyWith<_InterestsChanged> get copyWith;
 }

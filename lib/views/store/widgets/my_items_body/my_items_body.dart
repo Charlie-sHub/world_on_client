@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kt_dart/collection.dart';
@@ -19,8 +20,8 @@ class MyItemsBody extends StatelessWidget {
           final _itemList = state.user.items.toImmutableList();
           return RefreshIndicator(
             onRefresh: () async => context.bloc<LoadUserBloc>().add(
-                  const LoadUserEvent.loadedUser(),
-                ),
+              const LoadUserEvent.loadedUser(),
+            ),
             child: ListView.builder(
               physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.all(5),
@@ -36,8 +37,8 @@ class MyItemsBody extends StatelessWidget {
                   return ErrorCard(
                     entityType: S.of(context).item,
                     valueFailureString: _item.failureOption.fold(
-                      () => S.of(context).noError,
-                      (failure) => failure.toString(),
+                        () => S.of(context).noError,
+                        (failure) => failure.toString(),
                     ),
                   );
                 }
@@ -50,6 +51,7 @@ class MyItemsBody extends StatelessWidget {
                 const LoadUserEvent.loadedUser(),
               ),
           failure: state.failure,
+          specificMessage: some(S.of(context).notFoundErrorBoughtItems),
         ),
       ),
     );

@@ -21,11 +21,13 @@ import '../../splash/pages/splash_page.dart';
 import '../../store/pages/store_page.dart';
 import '../../tag_management/pages/tag_management_page.dart';
 import '../pages/main_page.dart';
+import '../pages/welcome_page.dart';
 
 class Routes {
   static const String splashPage = '/';
   static const String logInPage = '/log-in-page';
   static const String registrationPage = '/registration-page';
+  static const String welcomePage = '/welcome-page';
   static const String mainPage = '/main-page';
   static const String profileEditingPage = '/profile-editing-page';
   static const String experienceManagementPage = '/experience-management-page';
@@ -35,6 +37,7 @@ class Routes {
     splashPage,
     logInPage,
     registrationPage,
+    welcomePage,
     mainPage,
     profileEditingPage,
     experienceManagementPage,
@@ -50,6 +53,7 @@ class Router extends RouterBase {
     RouteDef(Routes.splashPage, page: SplashPage),
     RouteDef(Routes.logInPage, page: LogInPage),
     RouteDef(Routes.registrationPage, page: RegistrationPage),
+    RouteDef(Routes.welcomePage, page: WelcomePage),
     RouteDef(Routes.mainPage, page: MainPage),
     RouteDef(Routes.profileEditingPage, page: ProfileEditingPage),
     RouteDef(Routes.experienceManagementPage, page: ExperienceManagementPage),
@@ -74,6 +78,12 @@ class Router extends RouterBase {
     RegistrationPage: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => RegistrationPage(),
+        settings: data,
+      );
+    },
+    WelcomePage: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => WelcomePage(),
         settings: data,
       );
     },
@@ -134,8 +144,9 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
 
   Future<dynamic> pushLogInPage() => push<dynamic>(Routes.logInPage);
 
-  Future<dynamic> pushRegistrationPage() =>
-      push<dynamic>(Routes.registrationPage);
+  Future<dynamic> pushRegistrationPage() => push<dynamic>(Routes.registrationPage);
+
+  Future<dynamic> pushWelcomePage() => push<dynamic>(Routes.welcomePage);
 
   Future<dynamic> pushMainPage() => push<dynamic>(Routes.mainPage);
 

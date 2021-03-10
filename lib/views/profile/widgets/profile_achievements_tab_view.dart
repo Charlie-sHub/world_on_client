@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/profile/profile_achievements_watcher/profile_achievements_watcher_bloc.dart';
@@ -15,9 +16,9 @@ class ProfileAchievementsTabView extends StatelessWidget {
     Key key,
     @required this.user,
   }) : super(key: key);
-
+  
   final User user;
-
+  
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -45,8 +46,8 @@ class ProfileAchievementsTabView extends StatelessWidget {
                 return ErrorCard(
                   entityType: S.of(context).achievement,
                   valueFailureString: _achievement.failureOption.fold(
-                    () => S.of(context).noError,
-                    (failure) => failure.toString(),
+                      () => S.of(context).noError,
+                      (failure) => failure.toString(),
                   ),
                 );
               }
@@ -57,6 +58,7 @@ class ProfileAchievementsTabView extends StatelessWidget {
                   ProfileAchievementsWatcherEvent.watchAchievementsStarted(user),
                 ),
             failure: state.failure,
+            specificMessage: some(S.of(context).notFoundErrorAchievements),
           ),
         ),
       ),

@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/main_feed/main_feed_watcher/main_feed_watcher_bloc.dart';
@@ -11,7 +12,7 @@ import '../../../injection.dart';
 
 class MainFeedBody extends StatelessWidget {
   const MainFeedBody({Key key}) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -25,8 +26,8 @@ class MainFeedBody extends StatelessWidget {
           loadInProgress: (_) => const WorldOnProgressIndicator(),
           loadSuccess: (state) => RefreshIndicator(
             onRefresh: () async => context.bloc<MainFeedWatcherBloc>().add(
-                  const MainFeedWatcherEvent.watchMainFeedStarted(),
-                ),
+              const MainFeedWatcherEvent.watchMainFeedStarted(),
+            ),
             child: ListView.builder(
               physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.all(10),
@@ -42,8 +43,8 @@ class MainFeedBody extends StatelessWidget {
                   return ErrorCard(
                     entityType: S.of(context).experience,
                     valueFailureString: _experience.failureOption.fold(
-                      () => S.of(context).noError,
-                      (failure) => failure.toString(),
+                        () => S.of(context).noError,
+                        (failure) => failure.toString(),
                     ),
                   );
                 }
@@ -55,6 +56,7 @@ class MainFeedBody extends StatelessWidget {
                   const MainFeedWatcherEvent.watchMainFeedStarted(),
                 ),
             failure: state.failure,
+            specificMessage: some(S.of(context).notFoundErrorMainFeed),
           ),
         ),
       ),

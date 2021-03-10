@@ -536,16 +536,6 @@ class S {
     );
   }
 
-  /// `There's nothing to show`
-  String get notFoundError {
-    return Intl.message(
-      'There\'s nothing to show',
-      name: 'notFoundError',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Feed`
   String get bottomNavigationBarFeed {
     return Intl.message(
@@ -1571,6 +1561,166 @@ class S {
     return Intl.message(
       'Select tags you\'d be interested in, it\'s optional but it\'ll help us recommend experiences to you',
       name: 'registrationTagCard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There's nothing to show\nTap to reload`
+  String get notFoundError {
+    return Intl.message(
+      'There\'s nothing to show\nTap to reload',
+      name: 'notFoundError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You probably still do not follow anyone, look for users you know and follow them or look at the recommendations`
+  String get notFoundErrorMainFeed {
+    return Intl.message(
+      'You probably still do not follow anyone, look for users you know and follow them or look at the recommendations',
+      name: 'notFoundErrorMainFeed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your search has yielded no results`
+  String get notFoundErrorSearch {
+    return Intl.message(
+      'Your search has yielded no results',
+      name: 'notFoundErrorSearch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unfortunately we have nothing to recommend you, look for more tags and like them`
+  String get notFoundErrorRecommendations {
+    return Intl.message(
+      'Unfortunately we have nothing to recommend you, look for more tags and like them',
+      name: 'notFoundErrorRecommendations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have not created any experience, try to create one`
+  String get notFoundErrorExperiencesCreated {
+    return Intl.message(
+      'You have not created any experience, try to create one',
+      name: 'notFoundErrorExperiencesCreated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have not liked any experience`
+  String get notFoundErrorExperiencesLiked {
+    return Intl.message(
+      'You have not liked any experience',
+      name: 'notFoundErrorExperiencesLiked',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have not finished any experience, choose an experience that catches your attention and carry it out`
+  String get notFoundErrorExperiencesDone {
+    return Intl.message(
+      'You have not finished any experience, choose an experience that catches your attention and carry it out',
+      name: 'notFoundErrorExperiencesDone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have no experiences to do`
+  String get notFoundErrorExperiencesToDo {
+    return Intl.message(
+      'You have no experiences to do',
+      name: 'notFoundErrorExperiencesToDo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You don't follow anyone`
+  String get notFoundErrorFollowing {
+    return Intl.message(
+      'You don\'t follow anyone',
+      name: 'notFoundErrorFollowing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Nobody follows you`
+  String get notFoundErrorFollowed {
+    return Intl.message(
+      'Nobody follows you',
+      name: 'notFoundErrorFollowed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have no Achievements`
+  String get notFoundErrorAchievements {
+    return Intl.message(
+      'You have no Achievements',
+      name: 'notFoundErrorAchievements',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have no purchased items`
+  String get notFoundErrorBoughtItems {
+    return Intl.message(
+      'You have no purchased items',
+      name: 'notFoundErrorBoughtItems',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This experience has no comments`
+  String get notFoundErrorComments {
+    return Intl.message(
+      'This experience has no comments',
+      name: 'notFoundErrorComments',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `WELCOME`
+  String get welcomeTitle {
+    return Intl.message(
+      'WELCOME',
+      name: 'welcomeTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `CONTINUE`
+  String get continueToMainPage {
+    return Intl.message(
+      'CONTINUE',
+      name: 'continueToMainPage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hello.\n\nWelcome to World On, here you can create and share experiences, real life activities that you want to share or do the ones you like the most created by others. Create, share, participate and have fun.\n\nLive and play the adventure of your life!`
+  String get welcomeMessage {
+    return Intl.message(
+      'Hello.\n\nWelcome to World On, here you can create and share experiences, real life activities that you want to share or do the ones you like the most created by others. Create, share, participate and have fun.\n\nLive and play the adventure of your life!',
+      name: 'welcomeMessage',
       desc: '',
       args: [],
     );

@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_navigation/recommended_experiences_watcher/recommended_experiences_watcher_bloc.dart';
@@ -11,7 +12,7 @@ import '../../../../injection.dart';
 
 class RecommendedExperiencesBody extends StatelessWidget {
   const RecommendedExperiencesBody({Key key}) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -25,8 +26,8 @@ class RecommendedExperiencesBody extends StatelessWidget {
           loadInProgress: (_) => const WorldOnProgressIndicator(),
           loadSuccess: (state) => RefreshIndicator(
             onRefresh: () async => context.bloc<RecommendedExperiencesWatcherBloc>().add(
-                  const RecommendedExperiencesWatcherEvent.watchRecommendedExperiencesStarted(),
-                ),
+              const RecommendedExperiencesWatcherEvent.watchRecommendedExperiencesStarted(),
+            ),
             child: ListView.builder(
               physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.all(5),
@@ -42,8 +43,8 @@ class RecommendedExperiencesBody extends StatelessWidget {
                   return ErrorCard(
                     entityType: S.of(context).experience,
                     valueFailureString: _experience.failureOption.fold(
-                      () => S.of(context).noError,
-                      (failure) => failure.toString(),
+                        () => S.of(context).noError,
+                        (failure) => failure.toString(),
                     ),
                   );
                 }
@@ -55,6 +56,7 @@ class RecommendedExperiencesBody extends StatelessWidget {
                   const RecommendedExperiencesWatcherEvent.watchRecommendedExperiencesStarted(),
                 ),
             failure: state.failure,
+            specificMessage: some(S.of(context).notFoundErrorRecommendations),
           ),
         ),
       ),

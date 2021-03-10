@@ -1,6 +1,12 @@
+import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' show get;
+import 'package:path/path.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:social_share/social_share.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
+import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class ShareButton extends StatelessWidget {
@@ -10,7 +16,7 @@ class ShareButton extends StatelessWidget {
     Key key,
     @required this.experience,
   }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return IconButton(
@@ -25,9 +31,8 @@ class ShareButton extends StatelessWidget {
       ),
     );
   }
-
+  
   Future<void> _share(BuildContext context, Experience experience) async {
-    /*
     // I don't really like having to download the image only to be able to share it
     // I'd like to rethink this
     final _response = await get(experience.imageURLs.first);
@@ -45,6 +50,5 @@ class ShareButton extends StatelessWidget {
       imagePath: file.path,
     );
     file.delete();
-    */
   }
 }

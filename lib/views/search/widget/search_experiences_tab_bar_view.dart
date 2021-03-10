@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/search/search_experiences_by_name_watcher/search_experiences_by_name_watcher_bloc.dart';
@@ -11,12 +12,12 @@ import 'package:worldon/views/search/widget/search_something.dart';
 
 class SearchExperiencesTabView extends StatelessWidget {
   final SearchTerm searchTerm;
-
+  
   const SearchExperiencesTabView({
     Key key,
     @required this.searchTerm,
   }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SearchExperiencesByNameWatcherBloc, SearchExperiencesByNameWatcherState>(
@@ -38,8 +39,8 @@ class SearchExperiencesTabView extends StatelessWidget {
               return ErrorCard(
                 entityType: S.of(context).experience,
                 valueFailureString: _experience.failureOption.fold(
-                  () => S.of(context).noError,
-                  (failure) => failure.toString(),
+                    () => S.of(context).noError,
+                    (failure) => failure.toString(),
                 ),
               );
             }
@@ -50,6 +51,7 @@ class SearchExperiencesTabView extends StatelessWidget {
                 SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(searchTerm),
               ),
           failure: state.failure,
+          specificMessage: some(S.of(context).notFoundErrorSearch),
         ),
       ),
     );

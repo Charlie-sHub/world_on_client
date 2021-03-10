@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/search/search_tags_by_name_watcher/search_tags_by_name_watcher_bloc.dart';
@@ -11,12 +12,12 @@ import 'package:worldon/views/search/widget/search_something.dart';
 
 class SearchTagsTabView extends StatelessWidget {
   final SearchTerm searchTerm;
-
+  
   const SearchTagsTabView({
     Key key,
     @required this.searchTerm,
   }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SearchTagsByNameWatcherBloc, SearchTagsByNameWatcherState>(
@@ -38,8 +39,8 @@ class SearchTagsTabView extends StatelessWidget {
               return ErrorCard(
                 entityType: S.of(context).tag,
                 valueFailureString: _tag.failureOption.fold(
-                  () => S.of(context).noError,
-                  (failure) => failure.toString(),
+                    () => S.of(context).noError,
+                    (failure) => failure.toString(),
                 ),
               );
             }
@@ -50,6 +51,7 @@ class SearchTagsTabView extends StatelessWidget {
                 SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(searchTerm),
               ),
           failure: state.failure,
+          specificMessage: some(S.of(context).notFoundErrorSearch),
         ),
       ),
     );

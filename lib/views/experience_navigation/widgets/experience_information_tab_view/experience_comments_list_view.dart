@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/comments/comment_watcher/comment_watcher_bloc.dart';
@@ -16,9 +17,9 @@ class ExperienceCommentsListView extends StatelessWidget {
     Key key,
     @required this.experience,
   }) : super(key: key);
-
+  
   final Experience experience;
-
+  
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,8 +44,8 @@ class ExperienceCommentsListView extends StatelessWidget {
                 loadInProgress: (_) => const WorldOnProgressIndicator(),
                 loadSuccess: (state) => RefreshIndicator(
                   onRefresh: () async => context.bloc<CommentWatcherBloc>().add(
-                        CommentWatcherEvent.watchExperienceCommentsStarted(experience.id),
-                      ),
+                    CommentWatcherEvent.watchExperienceCommentsStarted(experience.id),
+                  ),
                   child: ListView.builder(
                     padding: const EdgeInsets.all(5),
                     itemCount: state.comments.size,
@@ -62,8 +63,8 @@ class ExperienceCommentsListView extends StatelessWidget {
                         return ErrorCard(
                           entityType: S.of(context).comment,
                           valueFailureString: _comment.failureOption.fold(
-                            () => S.of(context).noError,
-                            (failure) => failure.toString(),
+                              () => S.of(context).noError,
+                              (failure) => failure.toString(),
                           ),
                         );
                       }
@@ -75,6 +76,7 @@ class ExperienceCommentsListView extends StatelessWidget {
                         CommentWatcherEvent.watchExperienceCommentsStarted(experience.id),
                       ),
                   failure: state.failure,
+                  specificMessage: some(S.of(context).notFoundErrorComments),
                 ),
               ),
             ),
