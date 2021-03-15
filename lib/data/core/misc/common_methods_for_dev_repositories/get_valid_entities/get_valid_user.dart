@@ -45,5 +45,6 @@ User getValidUser() {
     systems: <System>{},
     coins: 0,
     items: <Item>{},
+    followersAmount: 0,
   );
 }

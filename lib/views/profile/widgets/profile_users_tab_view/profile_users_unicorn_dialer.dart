@@ -23,7 +23,7 @@ class ProfileUsersUnicornDialer extends StatelessWidget {
       childButtons: [
         UnicornButton(
           hasLabel: true,
-          labelText: S.of(context).followedUsersDialer,
+          labelText: S.of(context).followers,
           currentButton: FloatingActionButton(
             heroTag: "followed",
             mini: true,
@@ -36,7 +36,7 @@ class ProfileUsersUnicornDialer extends StatelessWidget {
         ),
         UnicornButton(
           hasLabel: true,
-          labelText: S.of(context).followingUsersDialer,
+          labelText: S.of(context).following,
           currentButton: FloatingActionButton(
             heroTag: "following",
             mini: true,

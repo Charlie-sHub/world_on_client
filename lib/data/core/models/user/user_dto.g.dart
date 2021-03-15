@@ -36,11 +36,11 @@ _$_UserDto _$_$_UserDtoFromJson(Map<String, dynamic> json) {
     systems: (json['systems'] as List)?.map((e) => e == null ? null : SystemDto.fromJson(e as Map<String, dynamic>))?.toSet(),
     items: (json['items'] as List)?.map((e) => e == null ? null : ItemDto.fromJson(e as Map<String, dynamic>))?.toSet(),
     coins: json['coins'] as int,
+    followersAmount: json['followersAmount'] as int,
   );
 }
 
-Map<String, dynamic> _$_$_UserDtoToJson(_$_UserDto instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$_$_UserDtoToJson(_$_UserDto instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'username': instance.username,
@@ -55,10 +55,8 @@ Map<String, dynamic> _$_$_UserDtoToJson(_$_UserDto instance) =>
       'adminPowers': instance.adminPowers,
       'enabled': instance.enabled,
       'lastLogin': const ServerTimestampConverter().toJson(instance.lastLogin),
-      'creationDate':
-          const ServerTimestampConverter().toJson(instance.creationDate),
-      'modificationDate':
-          const ServerTimestampConverter().toJson(instance.modificationDate),
+      'creationDate': const ServerTimestampConverter().toJson(instance.creationDate),
+      'modificationDate': const ServerTimestampConverter().toJson(instance.modificationDate),
       'options': instance.options?.toJson(),
       'blockedUsersIds': instance.blockedUsersIds?.toList(),
       'followedUsersIds': instance.followedUsersIds?.toList(),
@@ -71,4 +69,5 @@ Map<String, dynamic> _$_$_UserDtoToJson(_$_UserDto instance) =>
       'systems': instance.systems?.map((e) => e?.toJson())?.toList(),
       'items': instance.items?.map((e) => e?.toJson())?.toList(),
       'coins': instance.coins,
+      'followersAmount': instance.followersAmount,
     };

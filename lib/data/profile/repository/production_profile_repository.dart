@@ -49,21 +49,6 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
-  Future<Either<Failure, Unit>> followUser(UniqueId userToFollowId) async {
-    try {
-      final _userDocument = await _firestore.userDocument();
-      await _userDocument.update(
-        {
-          "followedUsersIds": FieldValue.arrayUnion([userToFollowId.getOrCrash()]),
-        },
-      );
-      return right(unit);
-    } on FirebaseException catch (e) {
-      return onFirebaseException(e);
-    }
-  }
-
-  @override
   Future<Either<Failure, Unit>> unBlockUser(UniqueId blockedId) async {
     try {
       final _userDocument = await _firestore.userDocument();
@@ -79,12 +64,29 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   }
 
   @override
+  Future<Either<Failure, Unit>> followUser(UniqueId userToFollowId) async {
+    try {
+      final _userDocument = await _firestore.userDocument();
+      await _userDocument.update(
+        {
+          "followedUsersIds": FieldValue.arrayUnion([userToFollowId.getOrCrash()]),
+          "followersAmount": FieldValue.increment(1),
+        },
+      );
+      return right(unit);
+    } on FirebaseException catch (e) {
+      return onFirebaseException(e);
+    }
+  }
+
+  @override
   Future<Either<Failure, Unit>> unFollowUser(UniqueId userToUnFollowId) async {
     try {
       final _userDocument = await _firestore.userDocument();
       await _userDocument.update(
         {
           "followedUsersIds": FieldValue.arrayRemove([userToUnFollowId.getOrCrash()]),
+          "followersAmount": FieldValue.increment(-1),
         },
       );
       return right(unit);
@@ -341,8 +343,30 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
         }
       },
     ).onErrorReturnWith(
-        (error) => left(_onError(error)),
+      (error) => left(_onError(error)),
     );
+  }
+
+  // TODO: Move to a cloud function
+  // This shouldn't be client side code
+  // Why doesn't firestore have a simple count method?
+  // Alternatively i could get rid of this function and instead give the users another attribute
+  // A list of the users that follow said user
+  // And do like the experience with the doneBy and likedBy
+  @override
+  Future<Either<Failure, int>> getAmountOfFollowers(UniqueId id) async {
+    try {
+      final _followersSnapshot = await _firestore.userCollection
+          .where(
+            "followedUsersIds",
+            arrayContains: id.getOrCrash(),
+          )
+          .get();
+      final _followedAmount = _followersSnapshot.docs.length;
+      return right(_followedAmount);
+    } on FirebaseException catch (exception) {
+      return onFirebaseException(exception);
+    }
   }
 
   @override

@@ -90,4 +90,9 @@ class DevelopmentProfileRepository implements ProfileRepositoryInterface {
   Stream<Either<Failure, KtList<User>>> watchBlockedUsers(UniqueId id) {
     throw UnimplementedError();
   }
+
+  @override
+  Future<Either<Failure, int>> getAmountOfFollowers(UniqueId id) {
+    throw UnimplementedError();
+  }
 }

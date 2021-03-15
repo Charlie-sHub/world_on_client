@@ -28,8 +28,7 @@ _$_ExperienceDto _$_$_ExperienceDtoFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_ExperienceDtoToJson(_$_ExperienceDto instance) =>
-  <String, dynamic>{
+Map<String, dynamic> _$_$_ExperienceDtoToJson(_$_ExperienceDto instance) => <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
       'description': instance.description,

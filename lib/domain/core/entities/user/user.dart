@@ -55,6 +55,7 @@ abstract class User implements _$User {
     @required Set<System> systems,
     @required Set<Item> items,
     @required int coins,
+    @required int followersAmount,
   }) = _User;
 
   factory User.empty() => User(
@@ -90,6 +91,7 @@ abstract class User implements _$User {
         systems: <System>{},
         items: <Item>{},
         coins: 0,
+        followersAmount: 0,
       );
 
   Option<ValueFailure<dynamic>> get failureOption {

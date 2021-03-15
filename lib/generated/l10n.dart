@@ -1166,21 +1166,21 @@ class S {
     );
   }
 
-  /// `Followed`
-  String get followedUsersDialer {
+  /// `followers`
+  String get followers {
     return Intl.message(
-      'Followed',
-      name: 'followedUsersDialer',
+      'followers',
+      name: 'followers',
       desc: '',
       args: [],
     );
   }
 
   /// `Following`
-  String get followingUsersDialer {
+  String get following {
     return Intl.message(
       'Following',
-      name: 'followingUsersDialer',
+      name: 'following',
       desc: '',
       args: [],
     );

@@ -43,7 +43,8 @@ class _$UserTearOff {
       @required Set<Device> devices,
       @required Set<System> systems,
       @required Set<Item> items,
-      @required int coins}) {
+      @required int coins,
+      @required int followersAmount}) {
     return _User(
       id: id,
       name: name,
@@ -74,6 +75,7 @@ class _$UserTearOff {
       systems: systems,
       items: items,
       coins: coins,
+      followersAmount: followersAmount,
     );
   }
 }
@@ -112,7 +114,10 @@ mixin _$User {
   Set<Device> get devices;
   Set<System> get systems;
   Set<Item> get items;
+
   int get coins;
+
+  int get followersAmount;
 
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith;
@@ -151,7 +156,8 @@ abstract class $UserCopyWith<$Res> {
       Set<Device> devices,
       Set<System> systems,
       Set<Item> items,
-      int coins});
+      int coins,
+      int followersAmount});
 
   $OptionsCopyWith<$Res> get options;
 }
@@ -195,6 +201,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
     Object systems = freezed,
     Object items = freezed,
     Object coins = freezed,
+    Object followersAmount = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as UniqueId,
@@ -226,6 +233,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
       systems: systems == freezed ? _value.systems : systems as Set<System>,
       items: items == freezed ? _value.items : items as Set<Item>,
       coins: coins == freezed ? _value.coins : coins as int,
+      followersAmount: followersAmount == freezed ? _value.followersAmount : followersAmount as int,
     ));
   }
 
@@ -274,7 +282,8 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       Set<Device> devices,
       Set<System> systems,
       Set<Item> items,
-      int coins});
+      int coins,
+      int followersAmount});
 
   @override
   $OptionsCopyWith<$Res> get options;
@@ -320,6 +329,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
     Object systems = freezed,
     Object items = freezed,
     Object coins = freezed,
+    Object followersAmount = freezed,
   }) {
     return _then(_User(
       id: id == freezed ? _value.id : id as UniqueId,
@@ -351,6 +361,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
       systems: systems == freezed ? _value.systems : systems as Set<System>,
       items: items == freezed ? _value.items : items as Set<Item>,
       coins: coins == freezed ? _value.coins : coins as int,
+      followersAmount: followersAmount == freezed ? _value.followersAmount : followersAmount as int,
     ));
   }
 }
@@ -386,7 +397,8 @@ class _$_User extends _User {
       @required this.devices,
       @required this.systems,
       @required this.items,
-      @required this.coins})
+      @required this.coins,
+      @required this.followersAmount})
       : assert(id != null),
         assert(name != null),
         assert(username != null),
@@ -416,6 +428,7 @@ class _$_User extends _User {
         assert(systems != null),
         assert(items != null),
         assert(coins != null),
+        assert(followersAmount != null),
         super._();
 
   @override
@@ -476,10 +489,12 @@ class _$_User extends _User {
   final Set<Item> items;
   @override
   final int coins;
+  @override
+  final int followersAmount;
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, username: $username, password: $password, email: $email, birthday: $birthday, description: $description, imageURL: $imageURL, imageFileOption: $imageFileOption, level: $level, experiencePoints: $experiencePoints, privacy: $privacy, adminPowers: $adminPowers, enabled: $enabled, lastLogin: $lastLogin, creationDate: $creationDate, modificationDate: $modificationDate, options: $options, blockedUsersIds: $blockedUsersIds, followedUsersIds: $followedUsersIds, interestsIds: $interestsIds, achievementsIds: $achievementsIds, experiencesDoneIds: $experiencesDoneIds, experiencesLikedIds: $experiencesLikedIds, experiencesToDoIds: $experiencesToDoIds, devices: $devices, systems: $systems, items: $items, coins: $coins)';
+    return 'User(id: $id, name: $name, username: $username, password: $password, email: $email, birthday: $birthday, description: $description, imageURL: $imageURL, imageFileOption: $imageFileOption, level: $level, experiencePoints: $experiencePoints, privacy: $privacy, adminPowers: $adminPowers, enabled: $enabled, lastLogin: $lastLogin, creationDate: $creationDate, modificationDate: $modificationDate, options: $options, blockedUsersIds: $blockedUsersIds, followedUsersIds: $followedUsersIds, interestsIds: $interestsIds, achievementsIds: $achievementsIds, experiencesDoneIds: $experiencesDoneIds, experiencesLikedIds: $experiencesLikedIds, experiencesToDoIds: $experiencesToDoIds, devices: $devices, systems: $systems, items: $items, coins: $coins, followersAmount: $followersAmount)';
   }
 
   @override
@@ -514,7 +529,8 @@ class _$_User extends _User {
             (identical(other.devices, devices) || const DeepCollectionEquality().equals(other.devices, devices)) &&
             (identical(other.systems, systems) || const DeepCollectionEquality().equals(other.systems, systems)) &&
             (identical(other.items, items) || const DeepCollectionEquality().equals(other.items, items)) &&
-            (identical(other.coins, coins) || const DeepCollectionEquality().equals(other.coins, coins)));
+            (identical(other.coins, coins) || const DeepCollectionEquality().equals(other.coins, coins)) &&
+            (identical(other.followersAmount, followersAmount) || const DeepCollectionEquality().equals(other.followersAmount, followersAmount)));
   }
 
   @override
@@ -548,7 +564,8 @@ class _$_User extends _User {
       const DeepCollectionEquality().hash(devices) ^
       const DeepCollectionEquality().hash(systems) ^
       const DeepCollectionEquality().hash(items) ^
-      const DeepCollectionEquality().hash(coins);
+      const DeepCollectionEquality().hash(coins) ^
+      const DeepCollectionEquality().hash(followersAmount);
 
   @JsonKey(ignore: true)
   @override
@@ -587,7 +604,8 @@ abstract class _User extends User {
       @required Set<Device> devices,
       @required Set<System> systems,
       @required Set<Item> items,
-      @required int coins}) = _$_User;
+      @required int coins,
+      @required int followersAmount}) = _$_User;
 
   @override
   UniqueId get id;
@@ -637,16 +655,25 @@ abstract class _User extends User {
   Set<UniqueId> get experiencesDoneIds;
   @override
   Set<UniqueId> get experiencesLikedIds;
+
   @override
   Set<UniqueId> get experiencesToDoIds;
+
   @override
   Set<Device> get devices;
+
   @override
   Set<System> get systems;
+
   @override
   Set<Item> get items;
+
   @override
   int get coins;
+
+  @override
+  int get followersAmount;
+
   @override
   @JsonKey(ignore: true)
   _$UserCopyWith<_User> get copyWith;

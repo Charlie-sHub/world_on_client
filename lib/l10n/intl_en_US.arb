@@ -113,8 +113,8 @@
   "submitButton": "Submit",
   "user": "User",
   "invalid": "Invalid",
-  "followedUsersDialer": "Followed",
-  "followingUsersDialer": "Following",
+  "followers": "Followers",
+  "following": "Following",
   "achievement": "Achievement",
   "experiences": "Experiences",
   "profileRelationTab": "Relations",
@@ -168,5 +168,6 @@
   "notFoundErrorComments": "This experience has no comments",
   "welcomeTitle": "WELCOME",
   "continueToMainPage": "CONTINUE",
+  "followers": "followers",
   "welcomeMessage": "Hello.\n\nWelcome to World On, here you can create and share experiences, real life activities that you want to share or do the ones you like the most created by others. Create, share, participate and have fun.\n\nLive and play the adventure of your life!"
 }

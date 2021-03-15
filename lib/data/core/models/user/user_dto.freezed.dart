@@ -45,7 +45,8 @@ class _$UserDtoTearOff {
       @required Set<DeviceDto> devices,
       @required Set<SystemDto> systems,
       @required Set<ItemDto> items,
-      @required int coins}) {
+      @required int coins,
+      @required int followersAmount}) {
     return _UserDto(
       id: id,
       name: name,
@@ -75,6 +76,7 @@ class _$UserDtoTearOff {
       systems: systems,
       items: items,
       coins: coins,
+      followersAmount: followersAmount,
     );
   }
 
@@ -122,7 +124,10 @@ mixin _$UserDto {
   Set<DeviceDto> get devices;
   Set<SystemDto> get systems;
   Set<ItemDto> get items;
+
   int get coins;
+
+  int get followersAmount;
 
   Map<String, dynamic> toJson();
   @JsonKey(ignore: true)
@@ -161,7 +166,8 @@ abstract class $UserDtoCopyWith<$Res> {
       Set<DeviceDto> devices,
       Set<SystemDto> systems,
       Set<ItemDto> items,
-      int coins});
+      int coins,
+      int followersAmount});
 
   $OptionsDtoCopyWith<$Res> get options;
 }
@@ -204,6 +210,7 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
     Object systems = freezed,
     Object items = freezed,
     Object coins = freezed,
+    Object followersAmount = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
@@ -234,6 +241,7 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
       systems: systems == freezed ? _value.systems : systems as Set<SystemDto>,
       items: items == freezed ? _value.items : items as Set<ItemDto>,
       coins: coins == freezed ? _value.coins : coins as int,
+      followersAmount: followersAmount == freezed ? _value.followersAmount : followersAmount as int,
     ));
   }
 
@@ -281,7 +289,8 @@ abstract class _$UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
       Set<DeviceDto> devices,
       Set<SystemDto> systems,
       Set<ItemDto> items,
-      int coins});
+      int coins,
+      int followersAmount});
 
   @override
   $OptionsDtoCopyWith<$Res> get options;
@@ -326,6 +335,7 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
     Object systems = freezed,
     Object items = freezed,
     Object coins = freezed,
+    Object followersAmount = freezed,
   }) {
     return _then(_UserDto(
       id: id == freezed ? _value.id : id as String,
@@ -356,6 +366,7 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
       systems: systems == freezed ? _value.systems : systems as Set<SystemDto>,
       items: items == freezed ? _value.items : items as Set<ItemDto>,
       coins: coins == freezed ? _value.coins : coins as int,
+      followersAmount: followersAmount == freezed ? _value.followersAmount : followersAmount as int,
     ));
   }
 }
@@ -392,7 +403,8 @@ class _$_UserDto extends _UserDto {
       @required this.devices,
       @required this.systems,
       @required this.items,
-      @required this.coins})
+      @required this.coins,
+      @required this.followersAmount})
       : assert(id != null),
         assert(name != null),
         assert(username != null),
@@ -421,6 +433,7 @@ class _$_UserDto extends _UserDto {
         assert(systems != null),
         assert(items != null),
         assert(coins != null),
+        assert(followersAmount != null),
         super._();
 
   factory _$_UserDto.fromJson(Map<String, dynamic> json) =>
@@ -487,10 +500,12 @@ class _$_UserDto extends _UserDto {
   final Set<ItemDto> items;
   @override
   final int coins;
+  @override
+  final int followersAmount;
 
   @override
   String toString() {
-    return 'UserDto(id: $id, name: $name, username: $username, password: $password, email: $email, birthday: $birthday, description: $description, imageURL: $imageURL, level: $level, experiencePoints: $experiencePoints, privacy: $privacy, adminPowers: $adminPowers, enabled: $enabled, lastLogin: $lastLogin, creationDate: $creationDate, modificationDate: $modificationDate, options: $options, blockedUsersIds: $blockedUsersIds, followedUsersIds: $followedUsersIds, interestsIds: $interestsIds, achievementsIds: $achievementsIds, experiencesDoneIds: $experiencesDoneIds, experiencesLikedIds: $experiencesLikedIds, experiencesToDoIds: $experiencesToDoIds, devices: $devices, systems: $systems, items: $items, coins: $coins)';
+    return 'UserDto(id: $id, name: $name, username: $username, password: $password, email: $email, birthday: $birthday, description: $description, imageURL: $imageURL, level: $level, experiencePoints: $experiencePoints, privacy: $privacy, adminPowers: $adminPowers, enabled: $enabled, lastLogin: $lastLogin, creationDate: $creationDate, modificationDate: $modificationDate, options: $options, blockedUsersIds: $blockedUsersIds, followedUsersIds: $followedUsersIds, interestsIds: $interestsIds, achievementsIds: $achievementsIds, experiencesDoneIds: $experiencesDoneIds, experiencesLikedIds: $experiencesLikedIds, experiencesToDoIds: $experiencesToDoIds, devices: $devices, systems: $systems, items: $items, coins: $coins, followersAmount: $followersAmount)';
   }
 
   @override
@@ -524,7 +539,8 @@ class _$_UserDto extends _UserDto {
             (identical(other.devices, devices) || const DeepCollectionEquality().equals(other.devices, devices)) &&
             (identical(other.systems, systems) || const DeepCollectionEquality().equals(other.systems, systems)) &&
             (identical(other.items, items) || const DeepCollectionEquality().equals(other.items, items)) &&
-            (identical(other.coins, coins) || const DeepCollectionEquality().equals(other.coins, coins)));
+            (identical(other.coins, coins) || const DeepCollectionEquality().equals(other.coins, coins)) &&
+            (identical(other.followersAmount, followersAmount) || const DeepCollectionEquality().equals(other.followersAmount, followersAmount)));
   }
 
   @override
@@ -557,7 +573,8 @@ class _$_UserDto extends _UserDto {
       const DeepCollectionEquality().hash(devices) ^
       const DeepCollectionEquality().hash(systems) ^
       const DeepCollectionEquality().hash(items) ^
-      const DeepCollectionEquality().hash(coins);
+      const DeepCollectionEquality().hash(coins) ^
+      const DeepCollectionEquality().hash(followersAmount);
 
   @JsonKey(ignore: true)
   @override
@@ -600,7 +617,8 @@ abstract class _UserDto extends UserDto {
       @required Set<DeviceDto> devices,
       @required Set<SystemDto> systems,
       @required Set<ItemDto> items,
-      @required int coins}) = _$_UserDto;
+      @required int coins,
+      @required int followersAmount}) = _$_UserDto;
 
   factory _UserDto.fromJson(Map<String, dynamic> json) = _$_UserDto.fromJson;
 
@@ -655,16 +673,25 @@ abstract class _UserDto extends UserDto {
   Set<String> get experiencesDoneIds;
   @override
   Set<String> get experiencesLikedIds;
+
   @override
   Set<String> get experiencesToDoIds;
+
   @override
   Set<DeviceDto> get devices;
+
   @override
   Set<SystemDto> get systems;
+
   @override
   Set<ItemDto> get items;
+
   @override
   int get coins;
+
+  @override
+  int get followersAmount;
+
   @override
   @JsonKey(ignore: true)
   _$UserDtoCopyWith<_UserDto> get copyWith;

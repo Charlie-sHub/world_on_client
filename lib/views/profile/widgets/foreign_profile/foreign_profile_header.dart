@@ -4,6 +4,7 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widgets/misc/block_unblock_button_builder/block_unblock_button_builder.dart';
 import 'package:worldon/views/core/widgets/misc/follow_unfollow_button_builder/follow_unfollow_button_builder.dart';
+import 'package:worldon/views/core/widgets/misc/followers_following_counters.dart';
 import 'package:worldon/views/core/widgets/misc/user_experience_info.dart';
 
 class ForeignProfileHeader extends StatelessWidget {
@@ -70,6 +71,10 @@ class ForeignProfileHeader extends StatelessWidget {
                 color: WorldOnColors.background,
               ),
             ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(5),
+            child: FollowersFollowingCounters(user: user),
           ),
           UserExperienceInfo(user: user),
         ],

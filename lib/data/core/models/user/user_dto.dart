@@ -54,6 +54,7 @@ abstract class UserDto implements _$UserDto {
     @required Set<SystemDto> systems,
     @required Set<ItemDto> items,
     @required int coins,
+    @required int followersAmount,
   }) = _UserDto;
 
   factory UserDto.fromDomain(User user) => UserDto(
@@ -85,6 +86,7 @@ abstract class UserDto implements _$UserDto {
         systems: user.systems.map((system) => SystemDto.fromDomain(system)).toSet(),
         items: user.items.map((item) => ItemDto.fromDomain(item)).toSet(),
         coins: user.coins,
+        followersAmount: user.followersAmount,
       );
 
   User toDomain() => User(
@@ -117,6 +119,7 @@ abstract class UserDto implements _$UserDto {
         systems: systems.map((systemDto) => systemDto.toDomain()).toSet(),
         items: items.map((itemDto) => itemDto.toDomain()).toSet(),
         coins: coins,
+        followersAmount: followersAmount,
       );
 
   factory UserDto.fromJson(Map<String, dynamic> json) => _$UserDtoFromJson(json);

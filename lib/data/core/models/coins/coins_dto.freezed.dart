@@ -101,48 +101,67 @@ class __$CoinsDtoCopyWithImpl<$Res> extends _$CoinsDtoCopyWithImpl<$Res>
 @JsonSerializable()
 
 /// @nodoc class _$_CoinsDto extends _CoinsDto {
-  const _$_CoinsDto({@required this.tenCoinsProductId})
-    : assert(tenCoinsProductId != null),
-      super._();
-  
-  factory _$_CoinsDto.fromJson(Map<String, dynamic> json) =>
-    _$_$_CoinsDtoFromJson(json);
-  
-  @override
-  final String tenCoinsProductId;
-  
-  @override
-  String toString() {
-    return 'CoinsDto(tenCoinsProductId: $tenCoinsProductId)';
-  }
-  
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-      (other is _CoinsDto &&
-        (identical(other.tenCoinsProductId, tenCoinsProductId) ||
-          const DeepCollectionEquality()
-            .equals(other.tenCoinsProductId, tenCoinsProductId)));
-  }
-  
-  @override
-  int get hashCode =>
-    runtimeType.hashCode ^
-    const DeepCollectionEquality().hash(tenCoinsProductId);
-  
-  @JsonKey(ignore: true)
-  @override
-  _$CoinsDtoCopyWith<_CoinsDto> get copyWith =>
-    __$CoinsDtoCopyWithImpl<_CoinsDto>(this, _$identity);
-  
-  @override
-  Map<String, dynamic> toJson() {
-    return _$_$_CoinsDtoToJson(this);
-  }
+const _$_CoinsDto({@required this.tenCoinsProductId})
+:
+assert
+(
+tenCoinsProductId != null
+)
+,
+super
+.
+
+_();
+
+factory
+_$_CoinsDto.fromJson(
+
+Map<String, dynamic> json
+)
+=>
+
+_$_$_CoinsDtoFromJson(json);
+
+@override
+final String tenCoinsProductId;
+
+@override
+String toString() {
+  return 'CoinsDto(tenCoinsProductId: $tenCoinsProductId)';
 }
+
+@override
+bool operator
+==
+(
+
+dynamic other
+) {
+return identical(this, other) ||
+(other is _CoinsDto &&
+(identical(other.tenCoinsProductId, tenCoinsProductId) ||
+const DeepCollectionEquality()
+  .equals(other.tenCoinsProductId, tenCoinsProductId)));
+}
+
+@override
+int get hashCode =>
+  runtimeType.hashCode ^
+  const DeepCollectionEquality().hash(tenCoinsProductId);
+
+@JsonKey(ignore: true)
+@override
+_$CoinsDtoCopyWith<_CoinsDto> get copyWith =>
+  __$CoinsDtoCopyWithImpl<_CoinsDto>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$_$_CoinsDtoToJson(this);
+}}
 
 abstract class _CoinsDto extends CoinsDto {
   const _CoinsDto._() : super._();
+  
   const factory _CoinsDto({@required String tenCoinsProductId}) = _$_CoinsDto;
 
   factory _CoinsDto.fromJson(Map<String, dynamic> json) = _$_CoinsDto.fromJson;

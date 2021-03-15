@@ -87,6 +87,7 @@ class FollowActorBloc extends Bloc<FollowActorEvent, FollowActorState> {
             notification: Notification.empty().copyWith(
               sender: _currentUser,
               receiver: event.user,
+              // TODO: Maybe that description should be handled by the client so it's always transalted
               description: EntityDescription("${_currentUser.username.getOrCrash()} is following you"),
               type: NotificationType.follow,
             ),

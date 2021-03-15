@@ -8,6 +8,7 @@ import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/routes/router.gr.dart';
+import 'package:worldon/views/core/widgets/misc/followers_following_counters.dart';
 import 'package:worldon/views/core/widgets/misc/user_experience_info.dart';
 
 class OwnProfileHeader extends StatelessWidget {
@@ -112,6 +113,10 @@ class OwnProfileHeader extends StatelessWidget {
                 color: WorldOnColors.background,
               ),
             ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(5),
+            child: FollowersFollowingCounters(user: user),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5),
