@@ -47,7 +47,7 @@ class SearchTagsTabView extends StatelessWidget {
           },
         ),
         searchFailure: (state) => ErrorDisplay(
-          retryFunction: () => context.bloc<SearchTagsByNameWatcherBloc>().add(
+          retryFunction: () => context.read<SearchTagsByNameWatcherBloc>().add(
                 SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(searchTerm),
               ),
           failure: state.failure,

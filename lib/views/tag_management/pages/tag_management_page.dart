@@ -82,7 +82,7 @@ class TagManagementPage extends HookWidget {
           ),
           (_) {
             _textEditingController.clear();
-            context.bloc<TagManagementFormBloc>().add(
+            context.read<TagManagementFormBloc>().add(
                   TagManagementFormEvent.initialized(none()),
                 );
             FlushbarHelper.createSuccess(

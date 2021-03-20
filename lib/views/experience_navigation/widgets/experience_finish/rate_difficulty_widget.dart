@@ -45,29 +45,26 @@ class RateDifficultyWidget extends StatelessWidget {
                     max: 10,
                     label: state.difficulty.toString(),
                     activeColor: getColorByDifficulty(state.difficulty),
-                    onChanged: (value) => context.bloc<RateExperienceDifficultyActorBloc>().add(
+                    onChanged: (value) => context.read<RateExperienceDifficultyActorBloc>().add(
                           RateExperienceDifficultyActorEvent.difficultyChanged(value.round()),
                         ),
                     value: state.difficulty.ceilToDouble(),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 5),
-                    child: RaisedButton(
-                      color: WorldOnColors.background,
-                      onPressed: () => context.bloc<RateExperienceDifficultyActorBloc>().add(
-                            RateExperienceDifficultyActorEvent.difficultyRated(experience),
-                          ),
-                      child: Text(
-                        S.of(context).submitDifficultyRating,
-                        style: const TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                            color: WorldOnColors.white,
-                          ),
+                  RaisedButton(
+                    color: WorldOnColors.background,
+                    onPressed: () => context.read<RateExperienceDifficultyActorBloc>().add(
+                          RateExperienceDifficultyActorEvent.difficultyRated(experience),
                         ),
+                    child: Text(
+                      S.of(context).submitDifficultyRating,
+                      style: const TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: WorldOnColors.white,
                       ),
                     ),
-                  ],
+                  ),
+                ],
                 ),
               ),
           ),

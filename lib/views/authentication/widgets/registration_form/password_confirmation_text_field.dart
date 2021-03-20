@@ -14,10 +14,10 @@ class PasswordConfirmationTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       maxLength: Password.maxLength,
-      onChanged: (value) => context.bloc<RegistrationFormBloc>().add(
+      onChanged: (value) => context.read<RegistrationFormBloc>().add(
             RegistrationFormEvent.passwordConfirmationChanged(value.trim()),
           ),
-      validator: (_) => context.bloc<RegistrationFormBloc>().state.passwordConfirmator.value.fold(
+      validator: (_) => context.read<RegistrationFormBloc>().state.passwordConfirmator.value.fold(
             (failure) => failure.maybeMap(
               stringMismatch: (_) => S.of(context).passwordStringMismatch,
               emptyString: (_) => S.of(context).passwordConfirmationEmptyString,

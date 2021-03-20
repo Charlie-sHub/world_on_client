@@ -16,8 +16,8 @@ class SearchUsersUnicornDialer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return UnicornDialer(
+      parentHeroTag: "SearchUsersUnicornDialer",
       hasBackground: false,
-      orientation: UnicornOrientation.VERTICAL,
       parentButton: const Icon(Icons.format_list_bulleted),
       childButtons: [
         UnicornButton(
@@ -26,7 +26,7 @@ class SearchUsersUnicornDialer extends StatelessWidget {
           currentButton: FloatingActionButton(
             heroTag: "username",
             mini: true,
-            onPressed: () => context.bloc<SearchUsersByNameWatcherBloc>().add(
+            onPressed: () => context.read<SearchUsersByNameWatcherBloc>().add(
                   SearchUsersByNameWatcherEvent.watchUsersFoundByUsernameStarted(searchTerm),
                 ),
             child: const Icon(Icons.account_box),
@@ -38,7 +38,7 @@ class SearchUsersUnicornDialer extends StatelessWidget {
           currentButton: FloatingActionButton(
             heroTag: "name",
             mini: true,
-            onPressed: () => context.bloc<SearchUsersByNameWatcherBloc>().add(
+            onPressed: () => context.read<SearchUsersByNameWatcherBloc>().add(
                   SearchUsersByNameWatcherEvent.watchUsersFoundByNameStarted(searchTerm),
                 ),
             child: const Icon(Icons.assignment_ind),

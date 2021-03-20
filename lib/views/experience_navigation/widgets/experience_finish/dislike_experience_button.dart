@@ -19,7 +19,7 @@ class DislikeExperienceButton extends StatelessWidget {
         FontAwesomeIcons.heart,
         color: Colors.grey,
       ),
-      onPressed: () => context.bloc<ExperienceLikeActorBloc>().add(
+      onPressed: () => context.read<ExperienceLikeActorBloc>().add(
             ExperienceLikeActorEvent.disliked(experience),
           ),
     );

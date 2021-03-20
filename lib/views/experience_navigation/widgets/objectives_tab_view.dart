@@ -21,13 +21,13 @@ class ObjectivesTabView extends StatelessWidget {
     return BlocListener<ObjectivesTrackerBloc, ObjectivesTrackerState>(
       listener: (context, state) {
         if (state.isFinished) {
-          context.bloc<ExperienceNavigationWatcherBloc>().add(
+          context.read<ExperienceNavigationWatcherBloc>().add(
                 // Is it really necessary to send back the experience?
                 // The ExperienceNavigationBody could use the experienceOption for the finish view
                 ExperienceNavigationWatcherEvent.allObjectivesAccomplished(experience),
               );
         } else {
-          context.bloc<MapControllerBloc>().add(
+          context.read<MapControllerBloc>().add(
                 MapControllerEvent.objectivesChanged(state.objectivesToDo),
               );
         }

@@ -25,9 +25,9 @@ class RecommendedExperiencesBody extends StatelessWidget {
           initial: (_) => Container(),
           loadInProgress: (_) => const WorldOnProgressIndicator(),
           loadSuccess: (state) => RefreshIndicator(
-            onRefresh: () async => context.bloc<RecommendedExperiencesWatcherBloc>().add(
-              const RecommendedExperiencesWatcherEvent.watchRecommendedExperiencesStarted(),
-            ),
+            onRefresh: () async => context.read<RecommendedExperiencesWatcherBloc>().add(
+                  const RecommendedExperiencesWatcherEvent.watchRecommendedExperiencesStarted(),
+                ),
             child: ListView.builder(
               physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.all(5),
@@ -52,7 +52,7 @@ class RecommendedExperiencesBody extends StatelessWidget {
             ),
           ),
           loadFailure: (state) => ErrorDisplay(
-            retryFunction: () => context.bloc<RecommendedExperiencesWatcherBloc>().add(
+            retryFunction: () => context.read<RecommendedExperiencesWatcherBloc>().add(
                   const RecommendedExperiencesWatcherEvent.watchRecommendedExperiencesStarted(),
                 ),
             failure: state.failure,

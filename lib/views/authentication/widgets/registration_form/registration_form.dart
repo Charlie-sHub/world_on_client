@@ -23,7 +23,7 @@ class RegistrationForm extends StatelessWidget {
     // TODO: Check how to initialize this form with a google user or similar
     return SingleChildScrollView(
       child: Form(
-        autovalidateMode: context.bloc<RegistrationFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+        autovalidateMode: context.read<RegistrationFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
         child: Padding(
           padding: const EdgeInsets.all(25),
           child: Column(
@@ -41,14 +41,14 @@ class RegistrationForm extends StatelessWidget {
               const SizedBox(height: 8),
               EmailTextField(
                 validator: (_) => _emailValidator(context),
-                eventToAdd: (String value) => context.bloc<RegistrationFormBloc>().add(
-                  RegistrationFormEvent.emailAddressChanged(value),
-                ),
+                eventToAdd: (String value) => context.read<RegistrationFormBloc>().add(
+                      RegistrationFormEvent.emailAddressChanged(value),
+                    ),
               ),
               const SizedBox(height: 8),
               // const BirthdayButton(),
               PasswordTextField(
-                eventToAdd: (String value) => context.bloc<RegistrationFormBloc>().add(
+                eventToAdd: (String value) => context.read<RegistrationFormBloc>().add(
                       RegistrationFormEvent.passwordChanged(value),
                     ),
                 validator: (_) => _passwordValidator(context),
@@ -69,7 +69,7 @@ class RegistrationForm extends StatelessWidget {
               ),
               const SizedBox(height: 2),
               TagAdditionCreationCard(
-                tagChangeFunction: (KtSet<Tag> tags) => context.bloc<RegistrationFormBloc>().add(
+                tagChangeFunction: (KtSet<Tag> tags) => context.read<RegistrationFormBloc>().add(
                       RegistrationFormEvent.interestsChanged(tags),
                     ),
               ),
@@ -83,26 +83,26 @@ class RegistrationForm extends StatelessWidget {
   }
   
   String _passwordValidator(BuildContext context) {
-    return context.bloc<RegistrationFormBloc>().state.user.password.value.fold(
-        (failure) => failure.maybeMap(
-        emptyString: (_) => S.of(context).passwordEmptyString,
-        multiLineString: (_) => S.of(context).passwordMultiLineString,
-        stringExceedsLength: (_) => S.of(context).passwordStringExceedsLength,
-        // Rather superfluous
-        invalidPassword: (_) => S.of(context).invalidPassword,
-        orElse: () => S.of(context).unknownError,
-      ),
-        (_) => null,
-    );
+    return context.read<RegistrationFormBloc>().state.user.password.value.fold(
+          (failure) => failure.maybeMap(
+            emptyString: (_) => S.of(context).passwordEmptyString,
+            multiLineString: (_) => S.of(context).passwordMultiLineString,
+            stringExceedsLength: (_) => S.of(context).passwordStringExceedsLength,
+            // Rather superfluous
+            invalidPassword: (_) => S.of(context).invalidPassword,
+            orElse: () => S.of(context).unknownError,
+          ),
+          (_) => null,
+        );
   }
   
   String _emailValidator(BuildContext context) {
-    return context.bloc<RegistrationFormBloc>().state.user.email.value.fold(
-        (failure) => failure.maybeMap(
-        invalidEmail: (_) => S.of(context).invalidEmail,
-        orElse: () => S.of(context).unknownError,
-      ),
-        (_) => null,
-    );
+    return context.read<RegistrationFormBloc>().state.user.email.value.fold(
+          (failure) => failure.maybeMap(
+            invalidEmail: (_) => S.of(context).invalidEmail,
+            orElse: () => S.of(context).unknownError,
+          ),
+          (_) => null,
+        );
   }
 }

@@ -16,37 +16,35 @@ class ExperiencedGainedText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Center(
-          child: AutoSizeText.rich(
-            TextSpan(
-              text: "${S.of(context).experiencePointsGainedPre}: ",
-              children: <TextSpan>[
-                TextSpan(
-                  text: "${context.bloc<ExperienceFinishActorBloc>().state.maybeMap(
-                        finishSuccess: (value) => value.amountXP,
-                        orElse: () => 0,
-                      )}",
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: WorldOnColors.primary,
-                    shadows: [
-                      Shadow(
-                        offset: Offset(1, 1),
-                        blurRadius: 3,
-                      )
-                    ],
-                  ),
+    return Padding(
+      padding: const EdgeInsets.all(10),
+      child: Center(
+        child: AutoSizeText.rich(
+          TextSpan(
+            text: "${S.of(context).experiencePointsGainedPre}: ",
+            children: <TextSpan>[
+              TextSpan(
+                text: "${context.read<ExperienceFinishActorBloc>().state.maybeMap(
+                      finishSuccess: (value) => value.amountXP,
+                      orElse: () => 0,
+                    )}",
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: WorldOnColors.primary,
+                  shadows: [
+                    Shadow(
+                      offset: Offset(1, 1),
+                      blurRadius: 3,
+                    )
+                  ],
                 ),
-                TextSpan(text: " ${S.of(context).experiencePointsGainedPost}"),
-              ],
-            ),
-            style: const TextStyle(
-              color: WorldOnColors.background,
-              fontSize: 18,
-            ),
+              ),
+              TextSpan(text: " ${S.of(context).experiencePointsGainedPost}"),
+            ],
+          ),
+          style: const TextStyle(
+            color: WorldOnColors.background,
+            fontSize: 18,
           ),
         ),
       ),

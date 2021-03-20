@@ -114,9 +114,7 @@ mixin _$User {
   Set<Device> get devices;
   Set<System> get systems;
   Set<Item> get items;
-
   int get coins;
-
   int get followersAmount;
 
   @JsonKey(ignore: true)
@@ -655,25 +653,18 @@ abstract class _User extends User {
   Set<UniqueId> get experiencesDoneIds;
   @override
   Set<UniqueId> get experiencesLikedIds;
-
   @override
   Set<UniqueId> get experiencesToDoIds;
-
   @override
   Set<Device> get devices;
-
   @override
   Set<System> get systems;
-
   @override
   Set<Item> get items;
-
   @override
   int get coins;
-
   @override
   int get followersAmount;
-
   @override
   @JsonKey(ignore: true)
   _$UserCopyWith<_User> get copyWith;

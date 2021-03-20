@@ -15,10 +15,10 @@ class TagNameField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: textController,
-      onChanged: (value) => context.bloc<TagManagementFormBloc>().add(
+      onChanged: (value) => context.read<TagManagementFormBloc>().add(
             TagManagementFormEvent.nameChanged(value.trim()),
           ),
-      validator: (_) => context.bloc<TagManagementFormBloc>().state.tag.name.value.fold(
+      validator: (_) => context.read<TagManagementFormBloc>().state.tag.name.value.fold(
             (failure) => failure.maybeMap(
               emptyString: (_) => S.of(context).tagCreationNameEmptyString,
               multiLineString: (_) => S.of(context).tagCreationNameMultiLineString,

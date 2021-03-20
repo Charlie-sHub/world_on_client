@@ -22,10 +22,10 @@ class UsernameTextField extends StatelessWidget {
         ),
       ),
       autocorrect: false,
-      onChanged: (value) => context.bloc<RegistrationFormBloc>().add(
+      onChanged: (value) => context.read<RegistrationFormBloc>().add(
             RegistrationFormEvent.usernameChanged(value.trim()),
           ),
-      validator: (_) => context.bloc<RegistrationFormBloc>().state.user.username.value.fold(
+      validator: (_) => context.read<RegistrationFormBloc>().state.user.username.value.fold(
             (failure) => failure.maybeMap(
               emptyString: (_) => S.of(context).usernameEmptyString,
               multiLineString: (_) => S.of(context).usernameMultiLineString,

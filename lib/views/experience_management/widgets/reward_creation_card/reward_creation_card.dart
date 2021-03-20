@@ -28,7 +28,7 @@ class RewardCreationCard extends HookWidget {
     return BlocProvider(
       create: (context) => getIt<RewardsCreationBloc>(),
       child: BlocConsumer<RewardsCreationBloc, RewardsCreationState>(
-        listener: (context, state) => context.bloc<ExperienceManagementFormBloc>().add(
+        listener: (context, state) => context.read<ExperienceManagementFormBloc>().add(
               ExperienceManagementFormEvent.rewardsChanged(state.rewardsCreated),
             ),
         // TODO: Create buildWhen method
@@ -91,7 +91,7 @@ class RewardCreationCard extends HookWidget {
                       _nameTextEditingController,
                     ),
                     builder: (context, state) => Form(
-                      autovalidateMode: context.bloc<RewardFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+                      autovalidateMode: context.read<RewardFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
                       child: Column(
                         children: <Widget>[
                           RewardNameTextField(textController: _nameTextEditingController),
@@ -109,12 +109,14 @@ class RewardCreationCard extends HookWidget {
                                       ),
                                       onPressed: () async {
                                         final _imageFile = await _openDialog(context);
-                                        context.bloc<RewardFormBloc>().add(
-                                              RewardFormEvent.imageChanged(_imageFile),
-                                            );
+                                        if (_imageFile != null) {
+                                          context.read<RewardFormBloc>().add(
+                                                RewardFormEvent.imageChanged(_imageFile),
+                                              );
+                                        }
                                       },
                                     ),
-                                    if (context.bloc<RewardFormBloc>().state.showErrorMessages && context.bloc<RewardFormBloc>().state.reward.imageFile.isNone())
+                                      if (context.read<RewardFormBloc>().state.showErrorMessages && context.read<RewardFormBloc>().state.reward.imageFile.isNone())
                                       Text(
                                         S.of(context).pictureSelectionMessage,
                                         textAlign: TextAlign.center,
@@ -129,9 +131,11 @@ class RewardCreationCard extends HookWidget {
                                   child: FlatButton(
                                     onPressed: () async {
                                       final _imageFile = await _openDialog(context);
-                                      context.bloc<RewardFormBloc>().add(
-                                            RewardFormEvent.imageChanged(_imageFile),
-                                          );
+                                      if (_imageFile != null) {
+                                        context.read<RewardFormBloc>().add(
+                                              RewardFormEvent.imageChanged(_imageFile),
+                                            );
+                                      }
                                     },
                                     child: Image(
                                       fit: BoxFit.fitWidth,
@@ -165,7 +169,7 @@ class RewardCreationCard extends HookWidget {
     if (state.isSubmitting) {
       descriptionTextEditingController.clear();
       nameTextEditingController.clear();
-      context.bloc<RewardsCreationBloc>().add(RewardsCreationEvent.addedReward(state.reward));
+      context.read<RewardsCreationBloc>().add(RewardsCreationEvent.addedReward(state.reward));
     }
   }
 

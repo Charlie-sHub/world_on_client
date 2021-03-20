@@ -15,7 +15,7 @@ class TagManagementForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Form(
-      autovalidateMode: context.bloc<TagManagementFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+      autovalidateMode: context.read<TagManagementFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

@@ -12,7 +12,7 @@ class SubmitRegisterButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
-      onPressed: () => context.bloc<RegistrationFormBloc>().add(
+      onPressed: () => context.read<RegistrationFormBloc>().add(
             const RegistrationFormEvent.submitted(),
           ),
       color: WorldOnColors.primary,

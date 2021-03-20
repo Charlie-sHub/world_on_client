@@ -12,7 +12,7 @@ class LogInGoogleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlatButton(
-      onPressed: () => context.bloc<LogInFormBloc>().add(
+      onPressed: () => context.read<LogInFormBloc>().add(
             const LogInFormEvent.loggedInGoogle(),
           ),
       child: Row(

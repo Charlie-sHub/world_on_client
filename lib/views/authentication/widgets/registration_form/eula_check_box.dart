@@ -9,15 +9,15 @@ class EULACheckBox extends StatelessWidget {
     return CheckboxListTile(
       title: Text(S.of(context).eulaCheckBoxTitle),
       // TODO: Create and show the aforementioned terms and services
-      value: context.bloc<RegistrationFormBloc>().state.acceptedEULA,
-      subtitle: !context.bloc<RegistrationFormBloc>().state.acceptedEULA && context.bloc<RegistrationFormBloc>().state.showErrorMessages
+      value: context.read<RegistrationFormBloc>().state.acceptedEULA,
+      subtitle: !context.read<RegistrationFormBloc>().state.acceptedEULA && context.read<RegistrationFormBloc>().state.showErrorMessages
           ? Text(
               S.of(context).unCheckedEulaMessage,
               textAlign: TextAlign.center,
               style: const TextStyle(color: Colors.red),
             )
           : null,
-      onChanged: (_) => context.bloc<RegistrationFormBloc>().add(
+      onChanged: (_) => context.read<RegistrationFormBloc>().add(
             const RegistrationFormEvent.tappedEULA(),
           ),
     );

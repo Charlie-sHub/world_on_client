@@ -68,7 +68,7 @@ class CreatedRewardCard extends StatelessWidget {
                 Icons.delete_forever,
                 color: WorldOnColors.red,
               ),
-              onPressed: () => context.bloc<RewardsCreationBloc>().add(
+              onPressed: () => context.read<RewardsCreationBloc>().add(
                     RewardsCreationEvent.removedReward(reward),
                   ),
             )

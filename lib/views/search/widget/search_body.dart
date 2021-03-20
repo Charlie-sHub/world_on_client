@@ -60,17 +60,17 @@ class SearchBody extends StatelessWidget {
 
   void _searchFormListener(BuildContext context, SearchByNameFormState state) {
     if (state.searchTerm.value.isRight()) {
-      context.bloc<SearchUsersByNameWatcherBloc>().add(
+      context.read<SearchUsersByNameWatcherBloc>().add(
             SearchUsersByNameWatcherEvent.watchUsersFoundByNameStarted(
               state.searchTerm,
             ),
           );
-      context.bloc<SearchExperiencesByNameWatcherBloc>().add(
+      context.read<SearchExperiencesByNameWatcherBloc>().add(
             SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(
               state.searchTerm,
             ),
           );
-      context.bloc<SearchTagsByNameWatcherBloc>().add(
+      context.read<SearchTagsByNameWatcherBloc>().add(
             SearchTagsByNameWatcherEvent.watchTagsFoundByNameStarted(
               state.searchTerm,
             ),

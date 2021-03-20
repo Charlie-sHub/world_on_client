@@ -27,7 +27,7 @@ class ObjectiveCreationCard extends HookWidget {
     return BlocProvider(
       create: (context) => getIt<ObjectivesCreationBloc>(),
       child: BlocConsumer<ObjectivesCreationBloc, ObjectivesCreationState>(
-        listener: (context, state) => context.bloc<ExperienceManagementFormBloc>().add(
+        listener: (context, state) => context.read<ExperienceManagementFormBloc>().add(
               ExperienceManagementFormEvent.objectivesChanged(state.objectivesCreated),
             ),
         // TODO: Create buildWhen method
@@ -92,7 +92,7 @@ class ObjectiveCreationCard extends HookWidget {
                       _textEditingController,
                     ),
                     builder: (context, state) => Form(
-                      autovalidateMode: context.bloc<ObjectiveFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+                      autovalidateMode: context.read<ObjectiveFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
                       child: Column(
                         children: <Widget>[
                           ObjectiveDescriptionTextField(textController: _textEditingController),
@@ -109,12 +109,14 @@ class ObjectiveCreationCard extends HookWidget {
                                       ),
                                       onPressed: () async {
                                         final _imageFile = await _openDialog(context);
-                                        context.bloc<ObjectiveFormBloc>().add(
-                                              ObjectiveFormEvent.imageChanged(_imageFile),
-                                            );
+                                        if (_imageFile != null) {
+                                          context.read<ObjectiveFormBloc>().add(
+                                                ObjectiveFormEvent.imageChanged(_imageFile),
+                                              );
+                                        }
                                       },
                                     ),
-                                    if (context.bloc<ObjectiveFormBloc>().state.showErrorMessages && context.bloc<ObjectiveFormBloc>().state.objective.imageFile.isNone())
+                                      if (context.read<ObjectiveFormBloc>().state.showErrorMessages && context.read<ObjectiveFormBloc>().state.objective.imageFile.isNone())
                                       Text(
                                         S.of(context).pictureSelectionMessage,
                                         textAlign: TextAlign.center,
@@ -129,9 +131,11 @@ class ObjectiveCreationCard extends HookWidget {
                                   child: FlatButton(
                                     onPressed: () async {
                                       final _imageFile = await _openDialog(context);
-                                      context.bloc<ObjectiveFormBloc>().add(
-                                            ObjectiveFormEvent.imageChanged(_imageFile),
-                                          );
+                                      if (_imageFile != null) {
+                                        context.read<ObjectiveFormBloc>().add(
+                                              ObjectiveFormEvent.imageChanged(_imageFile),
+                                            );
+                                      }
                                     },
                                     child: Image(
                                       fit: BoxFit.fitWidth,
@@ -168,7 +172,7 @@ class ObjectiveCreationCard extends HookWidget {
   ) {
     if (state.isSubmitting) {
       _textEditingController.clear();
-      context.bloc<ObjectivesCreationBloc>().add(
+      context.read<ObjectivesCreationBloc>().add(
             ObjectivesCreationEvent.addedObjective(state.objective),
           );
     }

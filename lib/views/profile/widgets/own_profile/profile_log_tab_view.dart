@@ -46,7 +46,7 @@ class ProfileLogTabView extends StatelessWidget {
               },
             ),
             loadFailure: (state) => ErrorDisplay(
-              retryFunction: () => context.bloc<ExperienceLogWatcherBloc>().add(
+              retryFunction: () => context.read<ExperienceLogWatcherBloc>().add(
                     const ExperienceLogWatcherEvent.watchExperiencesLogStarted(),
                   ),
               failure: state.failure,

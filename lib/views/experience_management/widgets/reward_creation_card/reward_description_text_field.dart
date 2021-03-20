@@ -17,10 +17,10 @@ class RewardDescriptionTextField extends StatelessWidget {
     return TextFormField(
       controller: textController,
       maxLength: EntityDescription.maxLength,
-      onChanged: (value) => context.bloc<RewardFormBloc>().add(
+      onChanged: (value) => context.read<RewardFormBloc>().add(
             RewardFormEvent.descriptionChanged(value),
           ),
-      validator: (_) => context.bloc<RewardFormBloc>().state.reward.description.value.fold(
+      validator: (_) => context.read<RewardFormBloc>().state.reward.description.value.fold(
             (failure) => failure.maybeMap(
               emptyString: (_) => S.of(context).descriptionEmptyString,
               stringExceedsLength: (_) => S.of(context).descriptionStringExceedsLength,

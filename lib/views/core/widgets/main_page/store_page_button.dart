@@ -10,9 +10,10 @@ class StorePageButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
+      padding: const EdgeInsets.all(0),
       icon: const Icon(
         Icons.account_balance_wallet_outlined,
-        size: 30,
+        size: 35,
       ),
       onPressed: () => context.navigator.push(
         Routes.storePage,

@@ -9,7 +9,7 @@ class BuyTenCoinsButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return RaisedButton(
       color: WorldOnColors.primary,
-      onPressed: () => context.bloc<BuyCoinsBloc>().add(
+      onPressed: () => context.read<BuyCoinsBloc>().add(
             const BuyCoinsEvent.boughtCoins(10),
           ),
       child: Text(

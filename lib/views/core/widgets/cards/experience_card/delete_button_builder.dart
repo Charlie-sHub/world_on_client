@@ -29,7 +29,7 @@ class DeleteButtonBuilder extends StatelessWidget {
           orElse: () => false,
         ),
         listener: _experienceDeletionListener,
-        builder: (context, state) => context.bloc<ExperienceManagementActorBloc>().state.maybeMap(
+        builder: (context, state) => context.read<ExperienceManagementActorBloc>().state.maybeMap(
               actionInProgress: (_) => const CircularProgressIndicator(),
               isCreator: (_) => DeleteButton(experience: experience),
               deletionFailure: (_) => DeleteButton(experience: experience),

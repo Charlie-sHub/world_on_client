@@ -28,7 +28,7 @@ class TagAdditionCard extends StatelessWidget {
         BlocProvider(create: (context) => getIt<TagSelectorBloc>()),
       ],
       child: BlocListener<TagSelectorBloc, TagSelectorState>(
-        listener: (context, state) => tagChangeFunction(context.bloc<TagSelectorBloc>().state.tagsSelected),
+        listener: (context, state) => tagChangeFunction(context.read<TagSelectorBloc>().state.tagsSelected),
         child: Card(
           color: WorldOnColors.background,
           shape: const RoundedRectangleBorder(

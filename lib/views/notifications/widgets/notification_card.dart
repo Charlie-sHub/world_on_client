@@ -49,7 +49,7 @@ class NotificationCard extends StatelessWidget {
                 size: 30,
               ),
               color: WorldOnColors.red,
-              onPressed: () => context.bloc<NotificationActorBloc>().add(NotificationActorEvent.deleted(notification)),
+              onPressed: () => context.read<NotificationActorBloc>().add(NotificationActorEvent.deleted(notification)),
             ),
           ),
         ],

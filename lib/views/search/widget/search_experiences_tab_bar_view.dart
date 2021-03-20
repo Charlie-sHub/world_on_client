@@ -47,7 +47,7 @@ class SearchExperiencesTabView extends StatelessWidget {
           },
         ),
         searchFailure: (state) => ErrorDisplay(
-          retryFunction: () => context.bloc<SearchExperiencesByNameWatcherBloc>().add(
+          retryFunction: () => context.read<SearchExperiencesByNameWatcherBloc>().add(
                 SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(searchTerm),
               ),
           failure: state.failure,

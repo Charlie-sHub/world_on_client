@@ -14,10 +14,10 @@ class TitleFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       maxLength: Name.maxLength,
-      onChanged: (value) => context.bloc<ExperienceManagementFormBloc>().add(
+      onChanged: (value) => context.read<ExperienceManagementFormBloc>().add(
             ExperienceManagementFormEvent.titleChanged(value),
           ),
-      validator: (_) => context.bloc<ExperienceManagementFormBloc>().state.experience.title.value.fold(
+      validator: (_) => context.read<ExperienceManagementFormBloc>().state.experience.title.value.fold(
             (failure) => failure.maybeMap(
               emptyString: (_) => S.of(context).experienceTitleEmptyString,
               multiLineString: (_) => S.of(context).experienceTitleMultiLineString,

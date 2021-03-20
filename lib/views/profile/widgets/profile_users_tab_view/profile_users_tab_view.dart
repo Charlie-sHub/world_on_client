@@ -56,7 +56,7 @@ class ProfileUsersTabView extends StatelessWidget {
               },
             ),
             loadFailure: (state) => ErrorDisplay(
-              retryFunction: () => context.bloc<ProfileUsersWatcherBloc>().add(
+              retryFunction: () => context.read<ProfileUsersWatcherBloc>().add(
                     ProfileUsersWatcherEvent.watchFollowedUsersStarted(user),
                   ),
               failure: state.failure,

@@ -18,13 +18,15 @@ class UserImagePicker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return context.bloc<ProfileEditingFormBloc>().state.user.imageFileOption.fold(
+    return context.read<ProfileEditingFormBloc>().state.user.imageFileOption.fold(
           () => FlatButton(
             onPressed: () async {
               final _imageFile = await _openDialog(context);
-              context.bloc<ProfileEditingFormBloc>().add(
-                    ProfileEditingFormEvent.imageChanged(_imageFile),
-                  );
+              if (_imageFile != null) {
+                context.read<ProfileEditingFormBloc>().add(
+                      ProfileEditingFormEvent.imageChanged(_imageFile),
+                    );
+              }
             },
             child: Hero(
               tag: "userImage",
@@ -37,9 +39,11 @@ class UserImagePicker extends StatelessWidget {
           (imageFile) => FlatButton(
             onPressed: () async {
               final _imageFile = await _openDialog(context);
-              context.bloc<ProfileEditingFormBloc>().add(
-                    ProfileEditingFormEvent.imageChanged(_imageFile),
-                  );
+              if (_imageFile != null) {
+                context.read<ProfileEditingFormBloc>().add(
+                      ProfileEditingFormEvent.imageChanged(_imageFile),
+                    );
+              }
             },
             child: CircleAvatar(
               radius: 80,

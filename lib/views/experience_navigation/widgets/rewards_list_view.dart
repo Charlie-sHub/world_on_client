@@ -15,31 +15,34 @@ class RewardsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height * 0.25,
-      color: WorldOnColors.background,
-      child: ListView.builder(
-        padding: const EdgeInsets.all(10),
-        itemCount: experience.rewards.getOrCrash().size,
-        shrinkWrap: true,
-        physics: const ClampingScrollPhysics(),
-        itemBuilder: (context, index) {
-          final _reward = experience.rewards.getOrCrash().asSet().elementAt(index);
-          if (_reward.isValid) {
-            return RewardCard(
-              reward: _reward,
-              key: Key(_reward.id.toString()),
-            );
-          } else {
-            return ErrorCard(
-              entityType: S.of(context).reward,
-              valueFailureString: _reward.failureOption.fold(
-                () => S.of(context).noError,
-                (failure) => failure.toString(),
-              ),
-            );
-          }
-        },
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 5),
+      child: Container(
+        height: MediaQuery.of(context).size.height * 0.25,
+        color: WorldOnColors.background,
+        child: ListView.builder(
+          padding: const EdgeInsets.all(10),
+          itemCount: experience.rewards.getOrCrash().size,
+          shrinkWrap: true,
+          physics: const ClampingScrollPhysics(),
+          itemBuilder: (context, index) {
+            final _reward = experience.rewards.getOrCrash().asSet().elementAt(index);
+            if (_reward.isValid) {
+              return RewardCard(
+                reward: _reward,
+                key: Key(_reward.id.toString()),
+              );
+            } else {
+              return ErrorCard(
+                entityType: S.of(context).reward,
+                valueFailureString: _reward.failureOption.fold(
+                  () => S.of(context).noError,
+                  (failure) => failure.toString(),
+                ),
+              );
+            }
+          },
+        ),
       ),
     );
   }

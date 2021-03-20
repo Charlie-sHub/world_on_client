@@ -16,7 +16,7 @@ class DeleteButton extends StatelessWidget {
     return IconButton(
       icon: const Icon(Icons.delete_forever),
       color: Colors.red,
-      onPressed: () => context.bloc<ExperienceManagementActorBloc>().add(
+      onPressed: () => context.read<ExperienceManagementActorBloc>().add(
             ExperienceManagementActorEvent.deleted(experience),
           ),
     );

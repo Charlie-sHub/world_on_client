@@ -69,7 +69,7 @@ class MapTabView extends StatelessWidget {
     );
   }
 
-  void _onCameraMoved(BuildContext context, CameraPosition position) => context.bloc<MapControllerBloc>().add(
+  void _onCameraMoved(BuildContext context, CameraPosition position) => context.read<MapControllerBloc>().add(
         MapControllerEvent.cameraPositionChanged(
           coordinates: Coordinates(
             latitude: Latitude(position.target.latitude),

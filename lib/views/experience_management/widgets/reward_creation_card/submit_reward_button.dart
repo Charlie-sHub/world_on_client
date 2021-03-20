@@ -11,7 +11,7 @@ class SubmitRewardButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
-      onPressed: () => context.bloc<RewardFormBloc>().add(
+      onPressed: () => context.read<RewardFormBloc>().add(
             const RewardFormEvent.submitted(),
           ),
       child: Row(

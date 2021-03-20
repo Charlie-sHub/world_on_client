@@ -11,7 +11,7 @@ class SubmitObjectiveButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
-      onPressed: () => context.bloc<ObjectiveFormBloc>().add(
+      onPressed: () => context.read<ObjectiveFormBloc>().add(
             const ObjectiveFormEvent.submitted(),
           ),
       child: Row(

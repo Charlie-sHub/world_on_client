@@ -53,7 +53,7 @@ class NotificationsBody extends StatelessWidget {
               itemBuilder: (context, index) {
                 final _notification = state.notifications[index];
                 if (_notification.isValid) {
-                  context.bloc<NotificationActorBloc>().add(NotificationActorEvent.checked(_notification));
+                  context.read<NotificationActorBloc>().add(NotificationActorEvent.checked(_notification));
                   return NotificationCard(
                     notification: _notification,
                     key: Key(_notification.id.toString()),
@@ -70,7 +70,7 @@ class NotificationsBody extends StatelessWidget {
               },
             ),
             loadFailure: (state) => ErrorDisplay(
-              retryFunction: () => context.bloc<NotificationsWatcherBloc>().add(
+              retryFunction: () => context.read<NotificationsWatcherBloc>().add(
                     const NotificationsWatcherEvent.watchNotificationsStarted(),
                   ),
               failure: state.failure,

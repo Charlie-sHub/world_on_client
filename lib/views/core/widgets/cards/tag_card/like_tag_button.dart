@@ -20,7 +20,7 @@ class LikeTagButton extends StatelessWidget {
         FontAwesomeIcons.solidHeart,
         color: WorldOnColors.red,
       ),
-      onPressed: () => context.bloc<TagCardActorBloc>().add(
+      onPressed: () => context.read<TagCardActorBloc>().add(
             TagCardActorEvent.addedToInterests(tag),
           ),
     );

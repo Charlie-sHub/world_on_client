@@ -14,12 +14,12 @@ class ObjectiveCoordinatePicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _position = LatLng(
-      context.bloc<ObjectiveFormBloc>().state.objective.coordinates.latitude.getOrCrash(),
-      context.bloc<ObjectiveFormBloc>().state.objective.coordinates.longitude.getOrCrash(),
+      context.read<ObjectiveFormBloc>().state.objective.coordinates.latitude.getOrCrash(),
+      context.read<ObjectiveFormBloc>().state.objective.coordinates.longitude.getOrCrash(),
     );
-    return Container(
+    return SizedBox(
       height: MediaQuery.of(context).size.height * 0.4,
-      child: context.bloc<ObjectiveFormBloc>().state.loadedCoordinates
+      child: context.read<ObjectiveFormBloc>().state.loadedCoordinates
           ? GoogleMap(
               mapType: MapType.hybrid,
               markers: {
@@ -28,7 +28,7 @@ class ObjectiveCoordinatePicker extends StatelessWidget {
                   position: _position,
                 ),
               },
-              onLongPress: (argument) => context.bloc<ObjectiveFormBloc>().add(
+              onLongPress: (argument) => context.read<ObjectiveFormBloc>().add(
                     ObjectiveFormEvent.coordinatesChanged(
                       latitude: argument.latitude,
                       longitude: argument.longitude,

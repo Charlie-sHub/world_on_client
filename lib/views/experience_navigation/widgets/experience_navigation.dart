@@ -40,8 +40,8 @@ class ExperienceNavigation extends StatelessWidget {
         listener: (context, state) {
           state.maybeMap(
             navigatingExperience: (value) {
-              context.bloc<MapControllerBloc>().add(MapControllerEvent.initialized(value.experience));
-              context.bloc<ObjectivesTrackerBloc>().add(ObjectivesTrackerEvent.initialized(value.experience.objectives));
+              context.read<MapControllerBloc>().add(MapControllerEvent.initialized(value.experience));
+              context.read<ObjectivesTrackerBloc>().add(ObjectivesTrackerEvent.initialized(value.experience.objectives));
             },
             orElse: () => null,
           );

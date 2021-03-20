@@ -3,6 +3,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:worldon/application/core/user_profile_button_watcher_bloc.dart';
 import 'package:worldon/application/profile/profile_watcher/profile_watcher_bloc.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/generated/l10n.dart';
@@ -29,12 +30,27 @@ class OwnProfileHeader extends StatelessWidget {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(5),
-                child: Hero(
-                  tag: "userImage",
-                  child: CircleAvatar(
-                    radius: 40,
-                    backgroundImage: NetworkImage(user.imageURL),
-                  ),
+                child: Stack(
+                  alignment: Alignment.topLeft,
+                  children: [
+                    Hero(
+                      tag: "userImage",
+                      child: CircleAvatar(
+                        radius: 40,
+                        backgroundImage: NetworkImage(user.imageURL),
+                      ),
+                    ),
+                    if (user.adminPowers)
+                      ClipOval(
+                        child: Container(
+                          color: Colors.white,
+                          child: const Icon(
+                            Icons.check_circle_rounded,
+                            color: WorldOnColors.accent,
+                          ),
+                        ),
+                      ),
+                  ],
                 ),
               ),
               Expanded(
@@ -89,16 +105,21 @@ class OwnProfileHeader extends StatelessWidget {
                 child: RaisedButton(
                   onPressed: () => context.navigator
                       .push(
-                        Routes.profileEditingPage,
-                        arguments: ProfileEditingPageArguments(user: user),
-                      )
+                    Routes.profileEditingPage,
+                    arguments: ProfileEditingPageArguments(user: user),
+                  )
                       .then(
-                        (_) => context.bloc<ProfileWatcherBloc>().add(
-                              ProfileWatcherEvent.initializedForeignOrOwn(
-                                none(),
-                              ),
+                    (_) {
+                      context.read<ProfileWatcherBloc>().add(
+                            ProfileWatcherEvent.initializedForeignOrOwn(
+                              none(),
                             ),
-                      ),
+                          );
+                      context.read<UserProfileButtonWatcherBloc>().add(
+                            const UserProfileButtonWatcherEvent.initialized(),
+                          );
+                    },
+                  ),
                   child: Text(S.of(context).profileEditingButton),
                 ),
               )

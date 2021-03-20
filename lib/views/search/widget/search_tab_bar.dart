@@ -9,7 +9,7 @@ class SearchTabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       // Don't like the idea of having this hardcoded, but i can't find any other way to thing out the tabBar
       height: 52,
       child: TabBar(

@@ -10,7 +10,7 @@ class ExperienceNavigationTabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 52,
       child: TabBar(
         labelColor: WorldOnColors.white,

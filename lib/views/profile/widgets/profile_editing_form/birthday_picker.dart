@@ -18,7 +18,7 @@ class BirthdayPicker extends StatelessWidget {
           firstDate: DateTime(1900),
           lastDate: DateTime.now(),
         );
-        context.bloc<ProfileEditingFormBloc>().add(
+        context.read<ProfileEditingFormBloc>().add(
               ProfileEditingFormEvent.birthdayChanged(_birthDate),
             );
       },

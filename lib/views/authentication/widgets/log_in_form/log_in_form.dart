@@ -17,7 +17,7 @@ class LogInForm extends StatelessWidget {
     // TODO: Forms should only have the relevant children
     // It doesn't make sense for the logo and register buttons to be part of the form for example
     return Form(
-      autovalidateMode: context.bloc<LogInFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+      autovalidateMode: context.read<LogInFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
       child: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 40,
@@ -33,13 +33,13 @@ class LogInForm extends StatelessWidget {
               const SizedBox(height: 10),
               EmailTextField(
                 validator: (_) => _emailValidator(context),
-                eventToAdd: (String value) => context.bloc<LogInFormBloc>().add(
+                eventToAdd: (String value) => context.read<LogInFormBloc>().add(
                       LogInFormEvent.emailChanged(value),
                     ),
               ),
               const SizedBox(height: 3),
               PasswordTextField(
-                eventToAdd: (String value) => context.bloc<LogInFormBloc>().add(
+                eventToAdd: (String value) => context.read<LogInFormBloc>().add(
                       LogInFormEvent.passwordChanged(value),
                     ),
                 validator: (_) => _passwordValidator(context),
@@ -60,7 +60,7 @@ class LogInForm extends StatelessWidget {
   }
 
   String _passwordValidator(BuildContext context) {
-    return context.bloc<LogInFormBloc>().state.password.value.fold(
+    return context.read<LogInFormBloc>().state.password.value.fold(
           (failure) => failure.maybeMap(
             emptyString: (_) => S.of(context).passwordEmptyString,
             multiLineString: (_) => S.of(context).passwordMultiLineString,
@@ -74,7 +74,7 @@ class LogInForm extends StatelessWidget {
   }
 
   String _emailValidator(BuildContext context) {
-    return context.bloc<LogInFormBloc>().state.email.value.fold(
+    return context.read<LogInFormBloc>().state.email.value.fold(
           (failure) => failure.maybeMap(
             invalidEmail: (_) => S.of(context).invalidEmail,
             orElse: () => S.of(context).unknownError,

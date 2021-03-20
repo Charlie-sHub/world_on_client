@@ -28,7 +28,7 @@ class FinishButton extends StatelessWidget {
             );
           } else {
             return RaisedButton(
-              onPressed: () => context.bloc<ExperienceManagementFormBloc>().add(
+              onPressed: () => context.read<ExperienceManagementFormBloc>().add(
                     const ExperienceManagementFormEvent.submitted(),
                   ),
               color: WorldOnColors.primary,

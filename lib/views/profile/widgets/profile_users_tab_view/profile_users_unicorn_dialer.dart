@@ -17,6 +17,7 @@ class ProfileUsersUnicornDialer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return UnicornDialer(
+      parentHeroTag: "ProfileUsersUnicornDialer",
       hasBackground: false,
       orientation: UnicornOrientation.VERTICAL,
       parentButton: const Icon(Icons.format_list_bulleted),
@@ -25,9 +26,9 @@ class ProfileUsersUnicornDialer extends StatelessWidget {
           hasLabel: true,
           labelText: S.of(context).followers,
           currentButton: FloatingActionButton(
-            heroTag: "followed",
+            heroTag: "followers",
             mini: true,
-            onPressed: () => context.bloc<ProfileUsersWatcherBloc>().add(
+            onPressed: () => context.read<ProfileUsersWatcherBloc>().add(
                   ProfileUsersWatcherEvent.watchFollowedUsersStarted(user),
                 ),
             foregroundColor: WorldOnColors.accent,
@@ -40,7 +41,7 @@ class ProfileUsersUnicornDialer extends StatelessWidget {
           currentButton: FloatingActionButton(
             heroTag: "following",
             mini: true,
-            onPressed: () => context.bloc<ProfileUsersWatcherBloc>().add(
+            onPressed: () => context.read<ProfileUsersWatcherBloc>().add(
                   ProfileUsersWatcherEvent.watchFollowingUsersStarted(user),
                 ),
             foregroundColor: WorldOnColors.red,

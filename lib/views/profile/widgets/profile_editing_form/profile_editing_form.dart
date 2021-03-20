@@ -26,7 +26,7 @@ class ProfileEditingForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Form(
-        autovalidateMode: context.bloc<ProfileEditingFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+        autovalidateMode: context.read<ProfileEditingFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
         child: Padding(
           padding: const EdgeInsets.all(15),
           child: Column(
@@ -67,7 +67,7 @@ class ProfileEditingForm extends StatelessWidget {
               const SizedBox(height: 8),
               // TODO: rework it so it loads with the tags already liked
               TagAdditionCard(
-                tagChangeFunction: (Set<Tag> tags) => context.bloc<ProfileEditingFormBloc>().add(
+                tagChangeFunction: (Set<Tag> tags) => context.read<ProfileEditingFormBloc>().add(
                       ProfileEditingFormEvent.interestsChanged(tags),
                     ),
               ),

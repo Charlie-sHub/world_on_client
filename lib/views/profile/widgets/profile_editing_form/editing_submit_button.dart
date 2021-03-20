@@ -28,7 +28,7 @@ class EditingSubmitButton extends StatelessWidget {
             );
           } else {
             return RaisedButton(
-              onPressed: () => context.bloc<ProfileEditingFormBloc>().add(
+              onPressed: () => context.read<ProfileEditingFormBloc>().add(
                     const ProfileEditingFormEvent.submitted(),
                   ),
               color: WorldOnColors.primary,

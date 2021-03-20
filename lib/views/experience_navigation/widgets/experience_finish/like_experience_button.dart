@@ -20,7 +20,7 @@ class LikeExperienceButton extends StatelessWidget {
         FontAwesomeIcons.solidHeart,
         color: WorldOnColors.red,
       ),
-      onPressed: () => context.bloc<ExperienceLikeActorBloc>().add(
+      onPressed: () => context.read<ExperienceLikeActorBloc>().add(
             ExperienceLikeActorEvent.liked(experience),
           ),
     );

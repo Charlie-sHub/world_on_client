@@ -18,10 +18,10 @@ class ObjectiveDescriptionTextField extends StatelessWidget {
     return TextFormField(
       controller: textController,
       maxLength: EntityDescription.maxLength,
-      onChanged: (value) => context.bloc<ObjectiveFormBloc>().add(
+      onChanged: (value) => context.read<ObjectiveFormBloc>().add(
             ObjectiveFormEvent.descriptionChanged(value),
           ),
-      validator: (_) => context.bloc<ObjectiveFormBloc>().state.objective.description.value.fold(
+      validator: (_) => context.read<ObjectiveFormBloc>().state.objective.description.value.fold(
             (failure) => failure.maybeMap(
               emptyString: (_) => S.of(context).descriptionEmptyString,
               stringExceedsLength: (_) => S.of(context).descriptionStringExceedsLength,

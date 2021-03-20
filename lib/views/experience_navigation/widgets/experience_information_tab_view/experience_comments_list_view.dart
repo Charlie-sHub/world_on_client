@@ -43,9 +43,9 @@ class ExperienceCommentsListView extends StatelessWidget {
                 initial: (_) => Container(),
                 loadInProgress: (_) => const WorldOnProgressIndicator(),
                 loadSuccess: (state) => RefreshIndicator(
-                  onRefresh: () async => context.bloc<CommentWatcherBloc>().add(
-                    CommentWatcherEvent.watchExperienceCommentsStarted(experience.id),
-                  ),
+                  onRefresh: () async => context.read<CommentWatcherBloc>().add(
+                        CommentWatcherEvent.watchExperienceCommentsStarted(experience.id),
+                      ),
                   child: ListView.builder(
                     padding: const EdgeInsets.all(5),
                     itemCount: state.comments.size,
@@ -72,7 +72,7 @@ class ExperienceCommentsListView extends StatelessWidget {
                   ),
                 ),
                 loadFailure: (state) => ErrorDisplay(
-                  retryFunction: () => context.bloc<CommentWatcherBloc>().add(
+                  retryFunction: () => context.read<CommentWatcherBloc>().add(
                         CommentWatcherEvent.watchExperienceCommentsStarted(experience.id),
                       ),
                   failure: state.failure,

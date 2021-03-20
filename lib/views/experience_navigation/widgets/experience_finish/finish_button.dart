@@ -14,7 +14,7 @@ class FinishButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return RaisedButton(
       color: WorldOnColors.primary,
-      onPressed: () => context.bloc<ExperienceNavigationWatcherBloc>().add(
+      onPressed: () => context.read<ExperienceNavigationWatcherBloc>().add(
             ExperienceNavigationWatcherEvent.initialized(none()),
           ),
       child: Padding(

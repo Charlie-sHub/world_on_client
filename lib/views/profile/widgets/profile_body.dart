@@ -38,13 +38,13 @@ class ProfileBody extends StatelessWidget {
         listener: (context, navigationState) => navigationState.maybeMap(
           profileView: (state) => state.userOption.fold(
             () => state.currentUserProfile
-                ? context.bloc<ProfileWatcherBloc>().add(
+                ? context.read<ProfileWatcherBloc>().add(
                       ProfileWatcherEvent.initializedForeignOrOwn(
                         none(),
                       ),
                     )
                 : null,
-            (user) => context.bloc<ProfileWatcherBloc>().add(
+              (user) => context.read<ProfileWatcherBloc>().add(
                   ProfileWatcherEvent.initializedForeignOrOwn(
                     some(user),
                   ),
@@ -59,7 +59,7 @@ class ProfileBody extends StatelessWidget {
             own: (state) => OwnProfile(user: state.user),
             foreign: (state) => ForeignProfile(user: state.user),
             loadFailure: (state) => InkWell(
-              onTap: () async => context.bloc<ProfileWatcherBloc>().add(
+              onTap: () async => context.read<ProfileWatcherBloc>().add(
                     ProfileWatcherEvent.initializedForeignOrOwn(userOption),
                   ),
               child: const ProfileCriticalFailure(),

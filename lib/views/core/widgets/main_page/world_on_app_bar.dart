@@ -34,10 +34,10 @@ class WorldOnAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       actions: const <Widget>[
-        // if (Provider.of<String>(context) != Environment.prod) const DebugDatabaseButton(),
         StorePageButton(),
         NotificationsButton(),
         CurrentUserProfileButton(),
+        SizedBox(width: 5),
       ],
     );
   }

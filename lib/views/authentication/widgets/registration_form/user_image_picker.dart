@@ -11,7 +11,7 @@ class UserImagePicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: context.bloc<RegistrationFormBloc>().state.user.imageFileOption.fold(
+      child: context.read<RegistrationFormBloc>().state.user.imageFileOption.fold(
             () => Column(
               children: <Widget>[
                 IconButton(
@@ -21,12 +21,14 @@ class UserImagePicker extends StatelessWidget {
                   ),
                   onPressed: () async {
                     final _imageFile = await _openDialog(context);
-                    context.bloc<RegistrationFormBloc>().add(
-                          RegistrationFormEvent.imageChanged(_imageFile),
-                        );
+                    if (_imageFile != null) {
+                      context.read<RegistrationFormBloc>().add(
+                            RegistrationFormEvent.imageChanged(_imageFile),
+                          );
+                    }
                   },
                 ),
-                if (context.bloc<RegistrationFormBloc>().state.showErrorMessages)
+              if (context.read<RegistrationFormBloc>().state.showErrorMessages)
                   Text(
                     S.of(context).pictureSelectionMessage,
                     textAlign: TextAlign.center,
@@ -39,9 +41,11 @@ class UserImagePicker extends StatelessWidget {
             (imageFile) => FlatButton(
               onPressed: () async {
                 final _imageFile = await _openDialog(context);
-                context.bloc<RegistrationFormBloc>().add(
-                      RegistrationFormEvent.imageChanged(_imageFile),
-                    );
+                if (_imageFile != null) {
+                  context.read<RegistrationFormBloc>().add(
+                        RegistrationFormEvent.imageChanged(_imageFile),
+                      );
+                }
               },
               child: CircleAvatar(
                 radius: 80,

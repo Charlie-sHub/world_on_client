@@ -124,9 +124,7 @@ mixin _$UserDto {
   Set<DeviceDto> get devices;
   Set<SystemDto> get systems;
   Set<ItemDto> get items;
-
   int get coins;
-
   int get followersAmount;
 
   Map<String, dynamic> toJson();
@@ -673,25 +671,18 @@ abstract class _UserDto extends UserDto {
   Set<String> get experiencesDoneIds;
   @override
   Set<String> get experiencesLikedIds;
-
   @override
   Set<String> get experiencesToDoIds;
-
   @override
   Set<DeviceDto> get devices;
-
   @override
   Set<SystemDto> get systems;
-
   @override
   Set<ItemDto> get items;
-
   @override
   int get coins;
-
   @override
   int get followersAmount;
-
   @override
   @JsonKey(ignore: true)
   _$UserDtoCopyWith<_UserDto> get copyWith;

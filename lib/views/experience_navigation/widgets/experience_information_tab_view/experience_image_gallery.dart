@@ -13,7 +13,7 @@ class ExperienceImageGallery extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width,
       child: CarouselBuilder(
         function: (_, index, realIdx) => Image(

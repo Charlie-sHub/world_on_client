@@ -19,7 +19,7 @@ class ExperienceManagementForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Form(
-        autovalidateMode: context.bloc<ExperienceManagementFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+        autovalidateMode: context.read<ExperienceManagementFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
         child: Padding(
           padding: const EdgeInsets.all(10),
           child: Column(
@@ -45,7 +45,7 @@ class ExperienceManagementForm extends StatelessWidget {
               Map(),
               const SizedBox(height: 10),
               const ObjectiveCreationCard(),
-              if (context.bloc<ExperienceManagementFormBloc>().state.showErrorMessages && !context.bloc<ExperienceManagementFormBloc>().state.experience.objectives.isValid())
+              if (context.read<ExperienceManagementFormBloc>().state.showErrorMessages && !context.read<ExperienceManagementFormBloc>().state.experience.objectives.isValid())
                 Text(
                   S.of(context).noObjectivesErrorMessage,
                   textAlign: TextAlign.center,
@@ -56,7 +56,7 @@ class ExperienceManagementForm extends StatelessWidget {
               const RewardCreationCard(),
               //Change back to TagAdditionCard if necessary
               TagAdditionCreationCard(
-                tagChangeFunction: (KtSet<Tag> tags) => context.bloc<ExperienceManagementFormBloc>().add(
+                tagChangeFunction: (KtSet<Tag> tags) => context.read<ExperienceManagementFormBloc>().add(
                       ExperienceManagementFormEvent.tagsChanged(tags),
                     ),
               ),

@@ -17,7 +17,7 @@ class DismissFromLogButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return RaisedButton(
       color: WorldOnColors.red,
-      onPressed: () => context.bloc<ExperienceCardActorBloc>().add(
+      onPressed: () => context.read<ExperienceCardActorBloc>().add(
             ExperienceCardActorEvent.dismissedExperienceFromLog(experience),
           ),
       child: Text(

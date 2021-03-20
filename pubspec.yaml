@@ -3,7 +3,7 @@ description: Front end of the World On project.
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 1.0.1+0
+version: 1.0.0+12
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -74,8 +74,6 @@ dependencies:
   cloud_firestore: ^0.16.0+1
   # For complex data storage (images)
   firebase_storage: ^7.0.0
-  # For drawing routes in the map
-  google_map_polyline:
   # For mapping
   google_maps_flutter:
   # For localization

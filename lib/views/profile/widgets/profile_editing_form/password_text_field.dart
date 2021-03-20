@@ -16,11 +16,11 @@ class PasswordTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       maxLength: Password.maxLength,
-      onChanged: (value) => context.bloc<ProfileEditingFormBloc>().add(
+      onChanged: (value) => context.read<ProfileEditingFormBloc>().add(
             ProfileEditingFormEvent.passwordChanged(value.trim()),
           ),
       initialValue: initialValue,
-      validator: (_) => context.bloc<ProfileEditingFormBloc>().state.user.password.value.fold(
+      validator: (_) => context.read<ProfileEditingFormBloc>().state.user.password.value.fold(
             (failure) => failure.maybeMap(
               emptyString: (_) => S.of(context).passwordEmptyString,
               multiLineString: (_) => S.of(context).passwordMultiLineString,

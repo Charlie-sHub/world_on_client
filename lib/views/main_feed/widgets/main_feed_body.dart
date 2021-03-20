@@ -25,9 +25,9 @@ class MainFeedBody extends StatelessWidget {
           initial: (_) => Container(),
           loadInProgress: (_) => const WorldOnProgressIndicator(),
           loadSuccess: (state) => RefreshIndicator(
-            onRefresh: () async => context.bloc<MainFeedWatcherBloc>().add(
-              const MainFeedWatcherEvent.watchMainFeedStarted(),
-            ),
+            onRefresh: () async => context.read<MainFeedWatcherBloc>().add(
+                  const MainFeedWatcherEvent.watchMainFeedStarted(),
+                ),
             child: ListView.builder(
               physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.all(10),
@@ -52,7 +52,7 @@ class MainFeedBody extends StatelessWidget {
             ),
           ),
           loadFailure: (state) => ErrorDisplay(
-            retryFunction: () => context.bloc<MainFeedWatcherBloc>().add(
+            retryFunction: () => context.read<MainFeedWatcherBloc>().add(
                   const MainFeedWatcherEvent.watchMainFeedStarted(),
                 ),
             failure: state.failure,

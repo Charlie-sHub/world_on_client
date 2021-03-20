@@ -19,7 +19,7 @@ class DislikeTagButton extends StatelessWidget {
         FontAwesomeIcons.heart,
         color: Colors.grey,
       ),
-      onPressed: () => context.bloc<TagCardActorBloc>().add(
+      onPressed: () => context.read<TagCardActorBloc>().add(
             TagCardActorEvent.dismissedFromInterests(tag),
           ),
     );

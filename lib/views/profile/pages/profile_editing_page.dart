@@ -90,7 +90,7 @@ class ProfileEditingPage extends StatelessWidget {
 
   void _onSuccess(BuildContext context) {
     context.navigator.pop();
-    context.bloc<AuthenticationBloc>().add(
+    context.read<AuthenticationBloc>().add(
           const AuthenticationEvent.authenticationCheckRequested(),
         );
   }

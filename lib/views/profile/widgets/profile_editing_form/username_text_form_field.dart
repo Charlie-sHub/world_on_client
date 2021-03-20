@@ -17,10 +17,10 @@ class UsernameTextFormField extends StatelessWidget {
     return TextFormField(
       maxLength: Name.maxLength,
       initialValue: initialValue,
-      onChanged: (value) => context.bloc<ProfileEditingFormBloc>().add(
+      onChanged: (value) => context.read<ProfileEditingFormBloc>().add(
             ProfileEditingFormEvent.usernameChanged(value.trim()),
           ),
-      validator: (_) => context.bloc<ProfileEditingFormBloc>().state.user.username.value.fold(
+      validator: (_) => context.read<ProfileEditingFormBloc>().state.user.username.value.fold(
             (failure) => failure.maybeMap(
               emptyString: (_) => S.of(context).usernameEmptyString,
               multiLineString: (_) => S.of(context).usernameMultiLineString,

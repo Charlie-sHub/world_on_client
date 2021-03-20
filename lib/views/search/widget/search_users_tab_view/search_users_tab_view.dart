@@ -28,7 +28,7 @@ class SearchUsersTabView extends StatelessWidget {
         searchInProgress: (_) => const WorldOnProgressIndicator(),
         searchSuccess: (state) => Scaffold(
           floatingActionButton: SearchUsersUnicornDialer(
-            searchTerm: context.bloc<SearchByNameFormBloc>().state.searchTerm,
+            searchTerm: context.read<SearchByNameFormBloc>().state.searchTerm,
           ),
           body: ListView.builder(
             physics: const BouncingScrollPhysics(),
@@ -54,9 +54,9 @@ class SearchUsersTabView extends StatelessWidget {
           ),
         ),
         searchFailure: (state) => ErrorDisplay(
-          retryFunction: () => context.bloc<SearchUsersByNameWatcherBloc>().add(
+          retryFunction: () => context.read<SearchUsersByNameWatcherBloc>().add(
                 SearchUsersByNameWatcherEvent.watchUsersFoundByNameStarted(
-                  context.bloc<SearchByNameFormBloc>().state.searchTerm,
+                  context.read<SearchByNameFormBloc>().state.searchTerm,
                 ),
               ),
           failure: state.failure,

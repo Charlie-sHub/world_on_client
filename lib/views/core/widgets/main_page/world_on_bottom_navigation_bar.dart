@@ -16,7 +16,7 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       onTap: (index) => _onTap(index, context),
-      currentIndex: context.bloc<NavigationActorBloc>().state.map(
+      currentIndex: context.read<NavigationActorBloc>().state.map(
             mainFeedView: (context) => _mainFeedIndex,
             searchView: (context) => _searchIndex,
             experienceFormView: (context) => _experienceFormIndex,
@@ -58,31 +58,31 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
   void _onTap(int index, BuildContext context) {
     switch (index) {
       case _mainFeedIndex:
-        context.bloc<NavigationActorBloc>().add(
+        context.read<NavigationActorBloc>().add(
               const NavigationActorEvent.mainFeedTapped(),
             );
         break;
       case _searchIndex:
-        context.bloc<NavigationActorBloc>().add(
+        context.read<NavigationActorBloc>().add(
               const NavigationActorEvent.searchTapped(),
             );
         break;
       case _experienceFormIndex:
-        context.bloc<NavigationActorBloc>().add(
+        context.read<NavigationActorBloc>().add(
               NavigationActorEvent.experienceFormTapped(
                 none(),
               ),
             );
         break;
       case _navigationIndex:
-        context.bloc<NavigationActorBloc>().add(
+        context.read<NavigationActorBloc>().add(
               NavigationActorEvent.experienceNavigationTapped(
                 none(),
               ),
             );
         break;
       case _profileIndex:
-        context.bloc<NavigationActorBloc>().add(
+        context.read<NavigationActorBloc>().add(
               NavigationActorEvent.profileTapped(
                 currentUserProfile: false,
                 userOption: none(),
@@ -90,7 +90,7 @@ class WorldOnBottomNavigationBar extends StatelessWidget {
             );
         break;
       default:
-        context.bloc<NavigationActorBloc>().add(
+        context.read<NavigationActorBloc>().add(
               const NavigationActorEvent.mainFeedTapped(),
             );
         break;

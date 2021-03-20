@@ -12,7 +12,7 @@ class LogInButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
-      onPressed: () => context.bloc<LogInFormBloc>().add(
+      onPressed: () => context.read<LogInFormBloc>().add(
             const LogInFormEvent.loggedIn(),
           ),
       color: WorldOnColors.background,

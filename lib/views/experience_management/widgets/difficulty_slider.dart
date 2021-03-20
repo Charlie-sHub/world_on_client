@@ -9,12 +9,12 @@ class DifficultySlider extends StatelessWidget {
     return Slider(
       min: 1,
       max: 10,
-      label: context.bloc<ExperienceManagementFormBloc>().state.experience.difficulty.getOrCrash().toString(),
-      activeColor: getColorByDifficulty(context.bloc<ExperienceManagementFormBloc>().state.experience.difficulty.getOrCrash()),
-      onChanged: (value) => context.bloc<ExperienceManagementFormBloc>().add(
+      label: context.read<ExperienceManagementFormBloc>().state.experience.difficulty.getOrCrash().toString(),
+      activeColor: getColorByDifficulty(context.read<ExperienceManagementFormBloc>().state.experience.difficulty.getOrCrash()),
+      onChanged: (value) => context.read<ExperienceManagementFormBloc>().add(
             ExperienceManagementFormEvent.difficultyChanged(value.round()),
           ),
-      value: context.bloc<ExperienceManagementFormBloc>().state.experience.difficulty.getOrCrash().ceilToDouble(),
+      value: context.read<ExperienceManagementFormBloc>().state.experience.difficulty.getOrCrash().ceilToDouble(),
     );
   }
 }

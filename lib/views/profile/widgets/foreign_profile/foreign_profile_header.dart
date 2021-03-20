@@ -25,12 +25,24 @@ class ForeignProfileHeader extends StatelessWidget {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(5),
-                child: Hero(
-                  tag: "userImage",
-                  child: CircleAvatar(
-                    radius: 40,
-                    backgroundImage: NetworkImage(user.imageURL),
-                  ),
+                child: Stack(
+                  alignment: Alignment.topLeft,
+                  children: [
+                    CircleAvatar(
+                      radius: 40,
+                      backgroundImage: NetworkImage(user.imageURL),
+                    ),
+                    if (user.adminPowers)
+                      ClipOval(
+                        child: Container(
+                          color: Colors.white,
+                          child: const Icon(
+                            Icons.check_circle_rounded,
+                            color: WorldOnColors.accent,
+                          ),
+                        ),
+                      ),
+                  ],
                 ),
               ),
               Expanded(

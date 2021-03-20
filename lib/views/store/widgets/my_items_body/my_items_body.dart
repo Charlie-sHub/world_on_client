@@ -19,9 +19,9 @@ class MyItemsBody extends StatelessWidget {
         loadSuccess: (state) {
           final _itemList = state.user.items.toImmutableList();
           return RefreshIndicator(
-            onRefresh: () async => context.bloc<LoadUserBloc>().add(
-              const LoadUserEvent.loadedUser(),
-            ),
+            onRefresh: () async => context.read<LoadUserBloc>().add(
+                  const LoadUserEvent.loadedUser(),
+                ),
             child: ListView.builder(
               physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.all(5),
@@ -47,7 +47,7 @@ class MyItemsBody extends StatelessWidget {
           );
         },
         loadFailure: (state) => ErrorDisplay(
-          retryFunction: () => context.bloc<LoadUserBloc>().add(
+          retryFunction: () => context.read<LoadUserBloc>().add(
                 const LoadUserEvent.loadedUser(),
               ),
           failure: state.failure,

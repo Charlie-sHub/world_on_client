@@ -11,26 +11,26 @@ class SearchHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Form(
-      autovalidateMode: context.bloc<SearchByNameFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+      autovalidateMode: context.read<SearchByNameFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Expanded(
             child: TextFormField(
-              onChanged: (value) => context.bloc<SearchByNameFormBloc>().add(
+              onChanged: (value) => context.read<SearchByNameFormBloc>().add(
                     SearchByNameFormEvent.searchTermChanged(value.trim()),
                   ),
               decoration: InputDecoration(
                 prefixIcon: const Icon(Icons.search),
                 labelText: S.of(context).search,
               ),
-              validator: (_) => context.bloc<SearchByNameFormBloc>().state.searchTerm.value.fold(
-                  (failure) => failure.maybeMap(
-                  emptyString: (_) => S.of(context).searchTermEmptyString,
-                  orElse: () => S.of(context).unknownError,
-                ),
-                  (_) => null,
-              ),
+              validator: (_) => context.read<SearchByNameFormBloc>().state.searchTerm.value.fold(
+                    (failure) => failure.maybeMap(
+                      emptyString: (_) => S.of(context).searchTermEmptyString,
+                      orElse: () => S.of(context).unknownError,
+                    ),
+                    (_) => null,
+                  ),
               onFieldSubmitted: (_) => _submit(context),
             ),
           ),
@@ -46,7 +46,7 @@ class SearchHeader extends StatelessWidget {
     );
   }
 
-  void _submit(BuildContext context) => context.bloc<SearchByNameFormBloc>().add(
+  void _submit(BuildContext context) => context.read<SearchByNameFormBloc>().add(
         const SearchByNameFormEvent.submitted(),
       );
 }

@@ -38,7 +38,7 @@ class CommentForm extends HookWidget {
           _textEditingController,
         ),
         builder: (context, state) => Form(
-          autovalidateMode: context.bloc<CommentFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+          autovalidateMode: context.read<CommentFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -49,10 +49,10 @@ class CommentForm extends HookWidget {
                   maxLines: 5,
                   controller: _textEditingController,
                   maxLength: CommentContent.maxLength,
-                  onChanged: (value) => context.bloc<CommentFormBloc>().add(
+                  onChanged: (value) => context.read<CommentFormBloc>().add(
                         CommentFormEvent.contentChanged(value.trim()),
                       ),
-                  validator: (_) => context.bloc<CommentFormBloc>().state.comment.content.value.fold(
+                  validator: (_) => context.read<CommentFormBloc>().state.comment.content.value.fold(
                         (failure) => failure.maybeMap(
                           emptyString: (_) => S.of(context).commentEmptyString,
                           stringExceedsLength: (_) => S.of(context).commentStringExceedsLength,
@@ -68,7 +68,7 @@ class CommentForm extends HookWidget {
                         size: 35,
                       ),
                       onPressed: () {
-                        context.bloc<CommentFormBloc>().add(
+                        context.read<CommentFormBloc>().add(
                               const CommentFormEvent.submitted(),
                             );
                         _textEditingController.clear();
@@ -108,7 +108,7 @@ class CommentForm extends HookWidget {
           ),
           (_) {
             _textEditingController.clear();
-            context.bloc<CommentFormBloc>().add(
+            context.read<CommentFormBloc>().add(
                   CommentFormEvent.initialized(
                     commentOption: none(),
                     experienceId: experienceId,
@@ -118,7 +118,7 @@ class CommentForm extends HookWidget {
               duration: const Duration(seconds: 2),
               message: S.of(context).commentPostSuccess,
             ).show(context);
-            context.bloc<CommentWatcherBloc>().add(
+            context.read<CommentWatcherBloc>().add(
                   CommentWatcherEvent.watchExperienceCommentsStarted(experienceId),
                 );
           },

@@ -38,7 +38,7 @@ class StoreBody extends StatelessWidget {
                   initial: (_) => Container(),
                   loadInProgress: (_) => const WorldOnProgressIndicator(),
                   loadSuccess: (state) => RefreshIndicator(
-                    onRefresh: () async => context.bloc<WatchPurchasableItemsBloc>().add(
+                    onRefresh: () async => context.read<WatchPurchasableItemsBloc>().add(
                           const WatchPurchasableItemsEvent.watchPurchasableItemsStarted(),
                         ),
                     child: ListView.builder(
@@ -65,7 +65,7 @@ class StoreBody extends StatelessWidget {
                     ),
                   ),
                   loadFailure: (state) => ErrorDisplay(
-                    retryFunction: () => context.bloc<WatchPurchasableItemsBloc>().add(
+                    retryFunction: () => context.read<WatchPurchasableItemsBloc>().add(
                           const WatchPurchasableItemsEvent.watchPurchasableItemsStarted(),
                         ),
                     failure: state.failure,
@@ -138,7 +138,7 @@ class StoreBody extends StatelessWidget {
   }
 
   void _buyCoinsListener(BuildContext context, BuyCoinsState state) => state.maybeMap(
-        purchaseSuccess: (_) => context.bloc<LoadUserBloc>().add(
+    purchaseSuccess: (_) => context.read<LoadUserBloc>().add(
               const LoadUserEvent.loadedUser(),
             ),
         purchaseFailure: (state) => FlushbarHelper.createError(

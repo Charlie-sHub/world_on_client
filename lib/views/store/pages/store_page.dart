@@ -38,7 +38,7 @@ class StorePage extends StatelessWidget {
               centerTitle: true,
             ),
             body: IndexedStack(
-              index: context.bloc<StoreNavigationActorBloc>().state.map(
+              index: context.read<StoreNavigationActorBloc>().state.map(
                     storeView: (_) => 0,
                     myItemsView: (_) => 1,
                   ),

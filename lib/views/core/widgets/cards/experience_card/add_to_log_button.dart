@@ -17,7 +17,7 @@ class AddToLogButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return RaisedButton(
       color: WorldOnColors.background,
-      onPressed: () => context.bloc<ExperienceCardActorBloc>().add(
+      onPressed: () => context.read<ExperienceCardActorBloc>().add(
             ExperienceCardActorEvent.addedExperienceToLog(experience),
           ),
       child: Text(

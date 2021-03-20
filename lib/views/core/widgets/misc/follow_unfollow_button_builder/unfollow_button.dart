@@ -20,7 +20,7 @@ class UnFollowButton extends StatelessWidget {
         FontAwesomeIcons.userMinus,
         color: WorldOnColors.red,
       ),
-      onPressed: () => context.bloc<FollowActorBloc>().add(
+      onPressed: () => context.read<FollowActorBloc>().add(
             FollowActorEvent.unFollowed(user),
           ),
     );

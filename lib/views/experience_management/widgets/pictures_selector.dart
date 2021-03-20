@@ -11,7 +11,7 @@ class PicturesSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return context.bloc<ExperienceManagementFormBloc>().state.experience.imageAssetsOption.fold(
+    return context.read<ExperienceManagementFormBloc>().state.experience.imageAssetsOption.fold(
           () => Column(
             children: [
               IconButton(
@@ -21,7 +21,7 @@ class PicturesSelector extends StatelessWidget {
                 ),
                 onPressed: () async => _pickImages(context),
               ),
-              if (context.bloc<ExperienceManagementFormBloc>().state.showErrorMessages)
+              if (context.read<ExperienceManagementFormBloc>().state.showErrorMessages)
                 Text(
                   S.of(context).experiencePictureSelection,
                   textAlign: TextAlign.center,
@@ -31,7 +31,7 @@ class PicturesSelector extends StatelessWidget {
                 Container(),
             ],
           ),
-          (imageAssets) => Container(
+        (imageAssets) => SizedBox(
             height: MediaQuery.of(context).size.height * 0.4,
             child: Column(
               children: <Widget>[
@@ -74,7 +74,7 @@ class PicturesSelector extends StatelessWidget {
       final imagesPicked = await MultiImagePicker.pickImages(
         maxImages: 15,
         enableCamera: true,
-        selectedAssets: context.bloc<ExperienceManagementFormBloc>().state.experience.imageAssetsOption.fold(
+        selectedAssets: context.read<ExperienceManagementFormBloc>().state.experience.imageAssetsOption.fold(
               () => [],
               id,
             ),
@@ -84,7 +84,7 @@ class PicturesSelector extends StatelessWidget {
           useDetailsView: false,
         ),
       );
-      context.bloc<ExperienceManagementFormBloc>().add(ExperienceManagementFormEvent.imagesChanged(imagesPicked));
+      context.read<ExperienceManagementFormBloc>().add(ExperienceManagementFormEvent.imagesChanged(imagesPicked));
     } on Exception catch (e) {
       // This try-catch only exists to control for when the user cancels the selection
       _logger.e(e.toString());

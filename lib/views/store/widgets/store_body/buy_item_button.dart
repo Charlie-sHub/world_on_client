@@ -17,7 +17,7 @@ class BuyItemButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return RaisedButton(
       color: WorldOnColors.accent,
-      onPressed: () => context.bloc<BuyItemBloc>().add(
+      onPressed: () => context.read<BuyItemBloc>().add(
             BuyItemEvent.boughtItem(item),
           ),
       child: Text(

@@ -12,7 +12,7 @@ class StoreBottomNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       onTap: (index) => _onTap(index, context),
-      currentIndex: context.bloc<StoreNavigationActorBloc>().state.map(
+      currentIndex: context.read<StoreNavigationActorBloc>().state.map(
             storeView: (context) => _storeIndex,
             myItemsView: (context) => _myItemsIndex,
           ),
@@ -34,17 +34,17 @@ class StoreBottomNavigationBar extends StatelessWidget {
   void _onTap(int index, BuildContext context) {
     switch (index) {
       case _storeIndex:
-        context.bloc<StoreNavigationActorBloc>().add(
+        context.read<StoreNavigationActorBloc>().add(
               const StoreNavigationActorEvent.storeTapped(),
             );
         break;
       case _myItemsIndex:
-        context.bloc<StoreNavigationActorBloc>().add(
+        context.read<StoreNavigationActorBloc>().add(
               const StoreNavigationActorEvent.myItemsTapped(),
             );
         break;
       default:
-        context.bloc<StoreNavigationActorBloc>().add(
+        context.read<StoreNavigationActorBloc>().add(
               const StoreNavigationActorEvent.storeTapped(),
             );
         break;

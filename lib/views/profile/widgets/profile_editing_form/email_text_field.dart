@@ -14,11 +14,11 @@ class EmailTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onChanged: (value) => context.bloc<ProfileEditingFormBloc>().add(
+      onChanged: (value) => context.read<ProfileEditingFormBloc>().add(
             ProfileEditingFormEvent.emailAddressChanged(value.trim()),
           ),
       initialValue: initialValue,
-      validator: (_) => context.bloc<ProfileEditingFormBloc>().state.user.email.value.fold(
+      validator: (_) => context.read<ProfileEditingFormBloc>().state.user.email.value.fold(
             (failure) => failure.maybeMap(
               invalidEmail: (_) => S.of(context).invalidEmail,
               orElse: () => S.of(context).unknownError,

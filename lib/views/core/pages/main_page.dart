@@ -3,6 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
+import 'package:worldon/application/core/user_profile_button_watcher_bloc.dart';
 import 'package:worldon/application/navigation/navigation_actor/navigation_actor_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
@@ -24,8 +25,18 @@ class MainPage extends StatelessWidget {
         unAuthenticated: (_) => context.navigator.replace(Routes.logInPage),
         orElse: () => null,
       ),
-      child: BlocProvider(
-        create: (context) => getIt<NavigationActorBloc>(),
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => getIt<NavigationActorBloc>(),
+          ),
+          BlocProvider(
+            create: (context) => getIt<UserProfileButtonWatcherBloc>()
+              ..add(
+                const UserProfileButtonWatcherEvent.initialized(),
+              ),
+          ),
+        ],
         child: BlocBuilder<NavigationActorBloc, NavigationActorState>(
           builder: (context, state) => SafeArea(
             child: Scaffold(
@@ -33,7 +44,7 @@ class MainPage extends StatelessWidget {
               body: IndexedStack(
                 // Feels rather duct tape-ish to return the index this way
                 // but changing the state would mess with the rest of the navigation, such as when "participating" in a experience
-                index: context.bloc<NavigationActorBloc>().state.map(
+                index: context.read<NavigationActorBloc>().state.map(
                       mainFeedView: (_) => 0,
                       searchView: (_) => 1,
                       experienceFormView: (_) => 2,
@@ -47,17 +58,17 @@ class MainPage extends StatelessWidget {
                   const SearchBody(),
                   SelectCreationView(),
                   ExperienceNavigationBody(
-                    experienceOption: context.bloc<NavigationActorBloc>().state.maybeMap(
+                    experienceOption: context.read<NavigationActorBloc>().state.maybeMap(
                           navigateExperienceView: (state) => state.experienceOption,
                           orElse: () => none(),
                         ),
                   ),
                   ProfileBody(
-                    userOption: context.bloc<NavigationActorBloc>().state.maybeMap(
+                    userOption: context.read<NavigationActorBloc>().state.maybeMap(
                           profileView: (state) => state.userOption,
                           orElse: () => none(),
                         ),
-                    currentUserProfile: context.bloc<NavigationActorBloc>().state.maybeMap(
+                    currentUserProfile: context.read<NavigationActorBloc>().state.maybeMap(
                           profileView: (state) => state.currentUserProfile,
                           orElse: () => null,
                         ),

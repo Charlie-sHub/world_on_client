@@ -19,7 +19,7 @@ class UnBlockButton extends StatelessWidget {
         FontAwesomeIcons.user,
         color: Colors.green,
       ),
-      onPressed: () => context.bloc<BlockActorBloc>().add(
+      onPressed: () => context.read<BlockActorBloc>().add(
             BlockActorEvent.unBlocked(user),
           ),
     );

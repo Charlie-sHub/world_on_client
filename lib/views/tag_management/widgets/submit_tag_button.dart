@@ -14,7 +14,7 @@ class SubmitTagButton extends StatelessWidget {
         Icons.add,
         size: 35,
       ),
-      onPressed: () => context.bloc<TagManagementFormBloc>().add(
+      onPressed: () => context.read<TagManagementFormBloc>().add(
             const TagManagementFormEvent.submitted(),
           ),
     );

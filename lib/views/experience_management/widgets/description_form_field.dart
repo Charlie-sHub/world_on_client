@@ -14,10 +14,10 @@ class DescriptionFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       maxLength: EntityDescription.maxLength,
-      onChanged: (value) => context.bloc<ExperienceManagementFormBloc>().add(
+      onChanged: (value) => context.read<ExperienceManagementFormBloc>().add(
             ExperienceManagementFormEvent.descriptionChanged(value),
           ),
-      validator: (_) => context.bloc<ExperienceManagementFormBloc>().state.experience.description.value.fold(
+      validator: (_) => context.read<ExperienceManagementFormBloc>().state.experience.description.value.fold(
             (failure) => failure.maybeMap(
               emptyString: (_) => S.of(context).descriptionEmptyString,
               stringExceedsLength: (_) => S.of(context).descriptionStringExceedsLength,

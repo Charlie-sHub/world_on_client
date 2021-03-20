@@ -20,7 +20,7 @@ class BlockButton extends StatelessWidget {
         FontAwesomeIcons.userSlash,
         color: WorldOnColors.red,
       ),
-      onPressed: () => context.bloc<BlockActorBloc>().add(
+      onPressed: () => context.read<BlockActorBloc>().add(
             BlockActorEvent.blocked(user),
           ),
     );

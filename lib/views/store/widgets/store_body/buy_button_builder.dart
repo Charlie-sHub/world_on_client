@@ -39,7 +39,7 @@ class BuyButtonBuilder extends StatelessWidget {
   }
 
   void _buyItemListener(BuildContext context, BuyItemState state) => state.maybeMap(
-        purchaseSuccess: (_) => context.bloc<LoadUserBloc>().add(
+        purchaseSuccess: (_) => context.read<LoadUserBloc>().add(
               const LoadUserEvent.loadedUser(),
             ),
         purchaseFailure: (state) => FlushbarHelper.createError(

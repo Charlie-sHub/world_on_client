@@ -18,7 +18,7 @@ class ParticipateButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return RaisedButton(
       color: WorldOnColors.primary,
-      onPressed: () => context.bloc<NavigationActorBloc>().add(
+      onPressed: () => context.read<NavigationActorBloc>().add(
             NavigationActorEvent.experienceNavigationTapped(some(experience)),
           ),
       child: Text(

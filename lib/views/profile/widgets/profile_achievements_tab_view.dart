@@ -54,7 +54,7 @@ class ProfileAchievementsTabView extends StatelessWidget {
             },
           ),
           loadFailure: (state) => ErrorDisplay(
-            retryFunction: () => context.bloc<ProfileAchievementsWatcherBloc>().add(
+            retryFunction: () => context.read<ProfileAchievementsWatcherBloc>().add(
                   ProfileAchievementsWatcherEvent.watchAchievementsStarted(user),
                 ),
             failure: state.failure,

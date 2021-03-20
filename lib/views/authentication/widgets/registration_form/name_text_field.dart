@@ -15,10 +15,10 @@ class NameTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       maxLength: Name.maxLength,
-      onChanged: (value) => context.bloc<RegistrationFormBloc>().add(
+      onChanged: (value) => context.read<RegistrationFormBloc>().add(
             RegistrationFormEvent.nameChanged(value.trim()),
           ),
-      validator: (_) => context.bloc<RegistrationFormBloc>().state.user.name.value.fold(
+      validator: (_) => context.read<RegistrationFormBloc>().state.user.name.value.fold(
             (failure) => failure.maybeMap(
               emptyString: (_) => S.of(context).nameEmptyString,
               multiLineString: (_) => S.of(context).nameMultiLineString,
@@ -28,7 +28,7 @@ class NameTextField extends StatelessWidget {
             ),
             (_) => null,
           ),
-      initialValue: context.bloc<RegistrationFormBloc>().state.user.name.value.fold(
+      initialValue: context.read<RegistrationFormBloc>().state.user.name.value.fold(
             (_) => "",
             id,
           ),

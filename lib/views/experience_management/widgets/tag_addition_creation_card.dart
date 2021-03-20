@@ -36,7 +36,7 @@ class TagAdditionCreationCard extends HookWidget {
         BlocProvider(create: (context) => getIt<TagManagementFormBloc>()),
       ],
       child: BlocListener<TagSelectorBloc, TagSelectorState>(
-        listener: (context, state) => tagChangeFunction(context.bloc<TagSelectorBloc>().state.tagsSelected),
+        listener: (context, state) => tagChangeFunction(context.read<TagSelectorBloc>().state.tagsSelected),
         child: Card(
           color: WorldOnColors.background,
           shape: const RoundedRectangleBorder(
@@ -133,11 +133,11 @@ class TagAdditionCreationCard extends HookWidget {
             ).show(context),
           ),
           (_) {
-            context.bloc<TagSelectorBloc>().add(
+            context.read<TagSelectorBloc>().add(
                   TagSelectorEvent.addedTag(state.tag),
                 );
             _textEditingController.clear();
-            context.bloc<TagManagementFormBloc>().add(
+            context.read<TagManagementFormBloc>().add(
                   TagManagementFormEvent.initialized(none()),
                 );
             FlushbarHelper.createSuccess(

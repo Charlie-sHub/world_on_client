@@ -18,7 +18,7 @@ class BirthdayButton extends StatelessWidget {
           firstDate: DateTime(1900),
           lastDate: DateTime.now(),
         );
-        context.bloc<RegistrationFormBloc>().add(
+        context.read<RegistrationFormBloc>().add(
               RegistrationFormEvent.birthdayChanged(_birthDate),
             );
       },

@@ -20,7 +20,7 @@ class FollowButton extends StatelessWidget {
         FontAwesomeIcons.userPlus,
         color: WorldOnColors.accent,
       ),
-      onPressed: () => context.bloc<FollowActorBloc>().add(
+      onPressed: () => context.read<FollowActorBloc>().add(
             FollowActorEvent.followed(user),
           ),
     );

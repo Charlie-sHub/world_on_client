@@ -17,10 +17,10 @@ class RewardNameTextField extends StatelessWidget {
     return TextFormField(
       controller: textController,
       maxLength: Name.maxLength,
-      onChanged: (value) => context.bloc<RewardFormBloc>().add(
+      onChanged: (value) => context.read<RewardFormBloc>().add(
             RewardFormEvent.nameChanged(value),
           ),
-      validator: (_) => context.bloc<RewardFormBloc>().state.reward.name.value.fold(
+      validator: (_) => context.read<RewardFormBloc>().state.reward.name.value.fold(
             (failure) => failure.maybeMap(
               emptyString: (_) => S.of(context).nameEmptyString,
               multiLineString: (_) => S.of(context).nameMultiLineString,
