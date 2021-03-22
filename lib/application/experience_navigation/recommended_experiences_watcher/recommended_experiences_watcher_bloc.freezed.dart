@@ -37,6 +37,7 @@ mixin _$RecommendedExperiencesWatcherEvent {
     @required TResult watchRecommendedExperiencesStarted(),
     @required TResult resultsReceived(Either<Failure, KtList<Experience>> failureOrExperiences),
   });
+
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult watchRecommendedExperiencesStarted(),

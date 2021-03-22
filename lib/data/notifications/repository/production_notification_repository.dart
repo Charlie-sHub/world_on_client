@@ -8,6 +8,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/firebase_helpers.dart';
 import 'package:worldon/data/core/models/notification/notification_dto.dart';
+import 'package:worldon/data/core/models/notification/notification_fields.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
 import 'package:worldon/domain/core/entities/notification/notification.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
@@ -29,7 +30,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
       )
           .update(
         {
-          "seen": true,
+          NotificationFields.seen: true,
         },
       );
       return right(unit);
@@ -44,17 +45,24 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
     final _userDto = UserDto.fromFirestore(await _userDocument.get());
     yield* _firestore.notificationCollection
         .where(
-          "receiver.id",
+      "${NotificationFields.receiver}.id",
           isEqualTo: _userDto.id,
         )
         .orderBy(
-          "creationDate",
+      NotificationFields.creationDate,
           descending: true,
         )
         .snapshots()
         .map(
           (snapshot) => snapshot.docs.map(
-            (document) => NotificationDto.fromFirestore(document).toDomain(),
+            (document) {
+              document.reference.update(
+                {
+                  NotificationFields.seen: true,
+                },
+              );
+              return NotificationDto.fromFirestore(document).toDomain();
+            },
           ),
         )
         .map(
@@ -76,6 +84,33 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
         onError(error),
       ),
     );
+  }
+
+  @override
+  Stream<Either<Failure, bool>> watchIfNewNotifications() async* {
+    final _userDocument = await _firestore.userDocument();
+    final _userDto = UserDto.fromFirestore(await _userDocument.get());
+    yield* _firestore.notificationCollection
+        .where(
+          NotificationFields.receiver,
+          isEqualTo: _userDto.id,
+        )
+        .where(
+          NotificationFields.seen,
+          isEqualTo: true,
+        )
+        .snapshots()
+        .map(
+          (snapshot) => snapshot.docs.isNotEmpty,
+        )
+        .map(
+          (_newExperiencesBool) => right<Failure, bool>(_newExperiencesBool),
+        )
+        .onErrorReturnWith(
+          (error) => left(
+            onError(error),
+          ),
+        );
   }
 
   @override

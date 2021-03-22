@@ -1,16 +1,19 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:geoflutterfire/geoflutterfire.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:logger/logger.dart';
-import 'package:quiver/iterables.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/firebase_helpers.dart';
 import 'package:worldon/data/core/models/experience/experience_dto.dart';
+import 'package:worldon/data/core/models/experience/experience_fields.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
-import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
+import 'package:worldon/data/core/models/user/user_fields.dart';
+import 'package:worldon/domain/core/entities/coordinates/coordinates.dart' as world_on_coordinates;
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/difficulty.dart';
@@ -22,7 +25,7 @@ import 'package:worldon/domain/experience_navigation/repository/experience_navig
 @LazySingleton(as: ExperienceNavigationRepositoryInterface, env: [Environment.prod])
 class ProductionExperienceNavigationRepository implements ExperienceNavigationRepositoryInterface {
   final _logger = Logger();
-
+  final _geo = Geoflutterfire();
   final FirebaseFirestore _firestore;
 
   ProductionExperienceNavigationRepository(this._firestore);
@@ -33,13 +36,13 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       final _userDocument = await _firestore.userDocument();
       await _userDocument.update(
         {
-          "experiencesDoneIds": FieldValue.arrayUnion([experienceId.getOrCrash()]),
+          UserFields.experiencesDoneIds: FieldValue.arrayUnion([experienceId.getOrCrash()]),
         },
       );
       final _experienceDocument = await _firestore.experienceDocument(experienceId.getOrCrash());
       _experienceDocument.update(
         {
-          "doneBy": FieldValue.arrayUnion([_userDocument.id]),
+          ExperienceFields.doneBy: FieldValue.arrayUnion([_userDocument.id]),
         },
       );
       return right(unit);
@@ -54,13 +57,13 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       final _userDocument = await _firestore.userDocument();
       await _userDocument.update(
         {
-          "experiencesLikedIds": FieldValue.arrayUnion([experienceId.getOrCrash()]),
+          UserFields.experiencesLikedIds: FieldValue.arrayUnion([experienceId.getOrCrash()]),
         },
       );
       final _experienceDocument = await _firestore.experienceDocument(experienceId.getOrCrash());
       _experienceDocument.update(
         {
-          "likedBy": FieldValue.arrayUnion([_userDocument.id]),
+          ExperienceFields.likedBy: FieldValue.arrayUnion([_userDocument.id]),
         },
       );
       return right(unit);
@@ -75,13 +78,13 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       final _userDocument = await _firestore.userDocument();
       await _userDocument.update(
         {
-          "experiencesLikedIds": FieldValue.arrayRemove([experienceId.getOrCrash()]),
+          UserFields.experiencesLikedIds: FieldValue.arrayRemove([experienceId.getOrCrash()]),
         },
       );
       final _experienceDocument = await _firestore.experienceDocument(experienceId.getOrCrash());
       _experienceDocument.update(
         {
-          "likedBy": FieldValue.arrayRemove([_userDocument.id]),
+          ExperienceFields.likedBy: FieldValue.arrayRemove([_userDocument.id]),
         },
       );
       return right(unit);
@@ -191,15 +194,15 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   Future _updateLevelExperiencePoints(DocumentReference _userDocument, int experiencePoints, int _userLevel) async {
     await _userDocument.update(
       {
-        "experiencePoints": FieldValue.increment(experiencePoints),
-        "level": _userLevel,
-        "coins": FieldValue.increment(1),
+        UserFields.experiencePoints: FieldValue.increment(experiencePoints),
+        UserFields.level: _userLevel,
+        UserFields.coins: FieldValue.increment(1),
       },
     );
   }
-
+  
   @override
-  Future<Either<Failure, KtSet<Experience>>> loadSurroundingExperiences(Coordinates coordinates) {
+  Future<Either<Failure, KtSet<Experience>>> loadSurroundingExperiences(world_on_coordinates.Coordinates coordinates) {
     // TODO: implement loadSurroundingExperiences
     throw UnimplementedError();
   }
@@ -207,47 +210,57 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
   @override
   Stream<Either<Failure, KtList<Experience>>> watchRecommendedExperiences() async* {
     final _currentUser = await _firestore.currentUser();
+    // High accuracy is not really needed
+    // but for some reason low accuracy takes too long too obtain
+    final _position = await Geolocator.getCurrentPosition(
+      desiredAccuracy: LocationAccuracy.high,
+    );
+    final _flutterFireGeoposition = _geo.point(
+      latitude: _position.latitude,
+      longitude: _position.longitude,
+    );
     final _interestIds = _currentUser.interestsIds
         .map(
-          (uniqueId) => uniqueId.getOrCrash(),
+          (_uniqueId) => _uniqueId.getOrCrash(),
         )
         .toList();
     if (_interestIds.isNotEmpty) {
-      final _auxListOfIdLists = partition(
-        _interestIds,
-        10,
-      );
-      final _combinedStreamList = _auxListOfIdLists
-          .map(
-            (_idList) => _firestore.experienceCollection
-                .where(
-                  "tagsIds",
-                  arrayContainsAny: _idList,
-                )
-                .orderBy(
-                  "creationDate",
-                  descending: true,
-                )
-                .snapshots(),
+      yield* _geo
+          .collection(
+            collectionRef: _firestore.experienceCollection,
           )
-          .toList();
-      yield* CombineLatestStream(
-        _combinedStreamList,
-        (List<QuerySnapshot> values) {
-          final _experienceList = <Experience>[];
-          for (final _snapshot in values) {
-            for (final document in _snapshot.docs) {
-              final _experience = ExperienceDto.fromFirestore(document).toDomain();
-              _experienceList.add(_experience);
-            }
-          }
-          return _experienceList;
-        },
-      ).map(
+          .within(
+            center: _flutterFireGeoposition,
+            radius: 50,
+            field: ExperienceFields.position,
+          )
+          .map(
+            (_documentList) => _documentList
+                .map(
+                  (_document) => ExperienceDto.fromFirestore(_document).toDomain(),
+                )
+                .toList(),
+          )
+          .map(
         (experiences) {
           if (experiences.isNotEmpty) {
+            // Don't like filtering here, but couldn't make the query work
+            // In any case, it's better to filter by location first and then by tags
+            // the first filter should take out most of the experiences that don't fit
             return right<Failure, KtList<Experience>>(
-              experiences.toImmutableList(),
+              experiences.where(
+                (_experience) {
+                  final _experienceTagIds = _experience.tags
+                      .getOrCrash()
+                      .map(
+                        (_tag) => _tag.id.getOrCrash(),
+                      )
+                      .asList();
+                  return _interestIds.any(
+                    (_id) => _experienceTagIds.contains(_id),
+                  );
+                },
+              ).toImmutableList(),
             );
           } else {
             return left<Failure, KtList<Experience>>(

@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:geoflutterfire/geoflutterfire.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:logger/logger.dart';
@@ -9,6 +10,7 @@ import 'package:worldon/data/core/misc/cloud_storage/cloud_storage_service.dart'
 import 'package:worldon/data/core/misc/cloud_storage/storage_folder_enum.dart';
 import 'package:worldon/data/core/misc/firebase_helpers.dart';
 import 'package:worldon/data/core/models/experience/experience_dto.dart';
+import 'package:worldon/data/core/models/experience/experience_fields.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/entities/reward/reward.dart';
@@ -21,6 +23,7 @@ import 'package:worldon/injection.dart';
 @LazySingleton(as: ExperienceManagementRepositoryInterface, env: [Environment.prod])
 class ProductionExperienceManagementRepository implements ExperienceManagementRepositoryInterface {
   final _logger = Logger();
+  final _geo = Geoflutterfire();
   final FirebaseFirestore _firestore;
 
   ProductionExperienceManagementRepository(this._firestore);
@@ -43,7 +46,27 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
           objectives: ObjectiveSet(_objectiveSet.toImmutableSet()),
         ),
       );
-      await _firestore.experienceCollection.doc(experience.id.getOrCrash()).set(_experienceDto.toJson());
+      await _firestore.experienceCollection
+          .doc(
+            experience.id.getOrCrash(),
+          )
+          .set(
+            _experienceDto.toJson(),
+          );
+      // I don't like doing this but seems like the best solution for now
+      final _flutterFireGeoposition = _geo.point(
+        latitude: _experienceDto.coordinates.latitude,
+        longitude: _experienceDto.coordinates.longitude,
+      );
+      await _firestore.experienceCollection
+          .doc(
+        experience.id.getOrCrash(),
+      )
+          .set(
+        {
+          ExperienceFields.position: _flutterFireGeoposition.data,
+        },
+      );
       return right(unit);
     } on FirebaseException catch (e) {
       return onFirebaseException(e);
@@ -69,7 +92,13 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
           objectives: ObjectiveSet(_objectiveSet.toImmutableSet()),
         ),
       );
-      await _firestore.experienceCollection.doc(experience.id.getOrCrash()).update(_experienceDto.toJson());
+      await _firestore.experienceCollection
+          .doc(
+            experience.id.getOrCrash(),
+          )
+          .update(
+            _experienceDto.toJson(),
+          );
       return right(unit);
     } on FirebaseException catch (e) {
       return onFirebaseException(e);
@@ -97,7 +126,12 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
     }
   }
 
-  Future uploadImages(Experience experience, CloudStorageService _cloudStorageService, Set<Reward> _rewardSet, Set<Objective> _objectiveSet) async {
+  Future uploadImages(
+    Experience experience,
+    CloudStorageService _cloudStorageService,
+    Set<Reward> _rewardSet,
+    Set<Objective> _objectiveSet,
+  ) async {
     for (final _imageAsset in experience.imageAssetsOption.getOrElse(() => null)) {
       final _imageName = _imageAsset.name + experience.id.getOrCrash();
       final _imageURL = await _cloudStorageService.uploadAssetImage(

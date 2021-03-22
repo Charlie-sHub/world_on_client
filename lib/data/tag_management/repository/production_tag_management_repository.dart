@@ -6,6 +6,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/firebase_helpers.dart';
 import 'package:worldon/data/core/models/tag/tag_dto.dart';
+import 'package:worldon/data/core/models/tag/tag_fields.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/tag_management/repository/tag_management_repository_interface.dart';
@@ -24,7 +25,7 @@ class ProductionTagManagementRepository implements TagManagementRepositoryInterf
       // Is this the best way to check if the tag already exists?
       final _aux = await _firestore.tagCollection
           .where(
-            "name",
+        TagFields.name,
             isEqualTo: tag.name.getOrCrash(),
           )
           .get();

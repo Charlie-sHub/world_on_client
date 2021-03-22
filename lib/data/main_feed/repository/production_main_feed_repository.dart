@@ -9,6 +9,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/firebase_helpers.dart';
 import 'package:worldon/data/core/models/experience/experience_dto.dart';
+import 'package:worldon/data/core/models/experience/experience_fields.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/main_feed/repository/main_feed_repository_interface.dart';
@@ -25,19 +26,19 @@ class ProductionMainFeedRepository implements MainFeedRepositoryInterface {
     final _userDocument = await _firestore.userDocument();
     final _userDto = UserDto.fromFirestore(await _userDocument.get());
     if (_userDto.followedUsersIds.isNotEmpty) {
-      final _auxListOfIdLists = partition(
+      final _iterableOfIdLists = partition(
         _userDto.followedUsersIds,
         10,
       );
-      final _combinedStreamList = _auxListOfIdLists
+      final _combinedStreamList = _iterableOfIdLists
           .map(
             (_idList) => _firestore.experienceCollection
                 .where(
-                  "creatorId",
+                  ExperienceFields.creatorId,
                   whereIn: _idList,
                 )
                 .orderBy(
-                  "creationDate",
+                  ExperienceFields.creationDate,
                   descending: true,
                 )
                 .snapshots(),

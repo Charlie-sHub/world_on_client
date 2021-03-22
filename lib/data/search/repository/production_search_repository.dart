@@ -9,8 +9,11 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/firebase_helpers.dart';
 import 'package:worldon/data/core/models/experience/experience_dto.dart';
+import 'package:worldon/data/core/models/experience/experience_fields.dart';
 import 'package:worldon/data/core/models/tag/tag_dto.dart';
+import 'package:worldon/data/core/models/tag/tag_fields.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
+import 'package:worldon/data/core/models/user/user_fields.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
@@ -35,8 +38,8 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
     yield* _firestore.experienceCollection.snapshots().map(
       (snapshot) {
         final _resultList = snapshot.docs.where(
-          (element) {
-            final String _title = element.get("title").toString();
+          (_querySnapshot) {
+            final String _title = _querySnapshot.get(ExperienceFields.title).toString();
             return _title.toLowerCase().contains(
                   title.getOrCrash().toLowerCase(),
                 );
@@ -71,7 +74,7 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
       (snapshot) {
         final _resultList = snapshot.docs.where(
           (element) {
-            final String _name = element.get("name").toString();
+            final String _name = element.get(TagFields.name).toString();
             return _name.toLowerCase().contains(
                   name.getOrCrash().toLowerCase(),
                 );
@@ -106,7 +109,7 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
       (snapshot) {
         final _resultList = snapshot.docs.where(
           (element) {
-            final String _name = element.get("name").toString();
+            final String _name = element.get(UserFields.name).toString();
             return _name.toLowerCase().contains(
                   name.getOrCrash().toLowerCase(),
                 );
@@ -141,7 +144,7 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
       (snapshot) {
         final _resultList = snapshot.docs.where(
           (element) {
-            final String _username = element.get("username").toString();
+            final String _username = element.get(UserFields.username).toString();
             return _username.toLowerCase().contains(
                   username.getOrCrash().toLowerCase(),
                 );
@@ -174,19 +177,19 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
   Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByTags(TagSet tags) async* {
     if (tags.getOrCrash().isNotEmpty()) {
       final _auxTagList = tags.getOrCrash().toList().asList();
-      final _auxListOfIdLists = partition(
+      final _iterableOfIdLists = partition(
         _auxTagList,
         10,
       );
-      final _combinedStreamList = _auxListOfIdLists
+      final _combinedStreamList = _iterableOfIdLists
           .map(
             (_idList) => _firestore.experienceCollection
                 .where(
-                  "tagsIds",
+                  ExperienceFields.tagsIds,
                   arrayContainsAny: _idList,
                 )
                 .orderBy(
-                  "creationDate",
+                  ExperienceFields.creationDate,
                   descending: true,
                 )
                 .snapshots(),
@@ -236,7 +239,7 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
   Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByDifficulty(Difficulty difficulty) async* {
     yield* _firestore.experienceCollection
         .where(
-          "difficulty",
+      ExperienceFields.difficulty,
           isEqualTo: difficulty.getOrCrash(),
         )
         .snapshots()

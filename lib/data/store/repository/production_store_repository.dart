@@ -13,7 +13,9 @@ import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/firebase_helpers.dart';
 import 'package:worldon/data/core/models/coins/coins_dto.dart';
 import 'package:worldon/data/core/models/item/item_dto.dart';
+import 'package:worldon/data/core/models/item/item_fields.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
+import 'package:worldon/data/core/models/user/user_fields.dart';
 import 'package:worldon/data/store/failure/store_data_failure.dart';
 import 'package:worldon/domain/core/entities/item/item.dart';
 import 'package:worldon/domain/store/repository/store_repository_interface.dart';
@@ -45,7 +47,7 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
         final _userDocument = await _firestore.userDocument();
         await _userDocument.update(
           {
-            "coins": FieldValue.increment(1),
+            UserFields.coins: FieldValue.increment(1),
           },
         );
       }
@@ -88,20 +90,16 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
     final _userDocument = await _firestore.userDocument();
     final _userDto = UserDto.fromFirestore(await _userDocument.get());
     if (_userDto.items.isNotEmpty) {
-      final _auxListOfIdLists = partition(
+      final _iterableOfIdLists = partition(
         _userDto.followedUsersIds,
         10,
       );
-      final _combinedStreamList = _auxListOfIdLists
+      final _combinedStreamList = _iterableOfIdLists
           .map(
             (_idList) => _firestore.itemCollection
                 .where(
-                  "id",
+                  ItemFields.id,
                   whereIn: _idList,
-                )
-                .orderBy(
-                  "creationDate",
-                  descending: true,
                 )
                 .snapshots(),
           )

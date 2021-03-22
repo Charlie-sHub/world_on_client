@@ -34,4 +34,9 @@ class DevelopmentNotificationRepository implements NotificationRepositoryInterfa
   Future<Either<Failure, Unit>> deleteUserNotifications() {
     throw UnimplementedError();
   }
+
+  @override
+  Stream<Either<Failure, bool>> watchIfNewNotifications() {
+    throw UnimplementedError();
+  }
 }

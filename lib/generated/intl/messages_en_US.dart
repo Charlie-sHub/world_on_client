@@ -30,7 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "bottomNavigationBarCreate": MessageLookupByLibrary.simpleMessage("Create"),
         "bottomNavigationBarExplore": MessageLookupByLibrary.simpleMessage("Explore"),
         "bottomNavigationBarFeed": MessageLookupByLibrary.simpleMessage("Feed"),
-        "bottomNavigationBarProfile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "bottomNavigationBarProfile": MessageLookupByLibrary.simpleMessage("People"),
         "bottomNavigationBarSearch": MessageLookupByLibrary.simpleMessage("Search"),
         "buy10Coins": MessageLookupByLibrary.simpleMessage("Buy 10 coins"),
         "buyItem": MessageLookupByLibrary.simpleMessage("Buy"),

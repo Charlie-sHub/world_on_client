@@ -576,10 +576,10 @@ class S {
     );
   }
 
-  /// `Profile`
+  /// `People`
   String get bottomNavigationBarProfile {
     return Intl.message(
-      'Profile',
+      'People',
       name: 'bottomNavigationBarProfile',
       desc: '',
       args: [],

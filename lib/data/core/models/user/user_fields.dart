@@ -1,0 +1,31 @@
+abstract class UserFields {
+  static const id = "id";
+  static const name = "name";
+  static const username = "username";
+  static const password = "password";
+  static const email = "email";
+  static const birthday = "birthday";
+  static const description = "description";
+  static const imageURL = "imageURL";
+  static const level = "level";
+  static const experiencePoints = "experiencePoints";
+  static const privacy = "privacy";
+  static const adminPowers = "adminPowers";
+  static const enabled = "enabled";
+  static const lastLogin = "lastLogin";
+  static const creationDate = "creationDate";
+  static const modificationDate = "modificationDate";
+  static const options = "options";
+  static const blockedUsersIds = "blockedUsersIds";
+  static const followedUsersIds = "followedUsersIds";
+  static const interestsIds = "interestsIds";
+  static const achievementsIds = "achievementsIds";
+  static const experiencesDoneIds = "experiencesDoneIds";
+  static const experiencesLikedIds = "experiencesLikedIds";
+  static const experiencesToDoIds = "experiencesToDoIds";
+  static const devices = "devices";
+  static const systems = "systems";
+  static const items = "items";
+  static const coins = "coins";
+  static const followersAmount = "followersAmount";
+}

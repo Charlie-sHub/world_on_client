@@ -13,6 +13,7 @@ import 'package:worldon/data/core/misc/cloud_storage/storage_folder_enum.dart';
 import 'package:worldon/data/core/misc/firebase_helpers.dart';
 import 'package:worldon/data/core/misc/firebase_user_mapper.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
+import 'package:worldon/data/core/models/user/user_fields.dart';
 import 'package:worldon/domain/authentication/failures/authentication_domain_failure.dart';
 import 'package:worldon/domain/authentication/repository/authentication_repository_interface.dart';
 import 'package:worldon/domain/core/entities/user/user.dart' as entity;
@@ -115,7 +116,7 @@ class ProductionAuthenticationRepository implements AuthenticationRepositoryInte
       }
       final _userByEmailQuery = await _firestore.userCollection
           .where(
-            "email",
+        UserFields.email,
             isEqualTo: _googleUser.email,
           )
           .get();

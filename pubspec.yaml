@@ -88,6 +88,8 @@ dependencies:
   in_app_purchase: ^0.3.5+1
   # For splitting lists
   quiver: ^2.1.5
+  # For geoqueries
+  geoflutterfire: ^2.2.2
 
 dev_dependencies:
   flutter_test:

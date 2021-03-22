@@ -6,6 +6,7 @@ import 'package:logger/logger.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/firebase_helpers.dart';
+import 'package:worldon/data/core/models/user/user_fields.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
@@ -25,7 +26,7 @@ class ProductionTagRepository implements TagCoreRepositoryInterface {
       final _userDocument = await _firestore.userDocument();
       await _userDocument.update(
         {
-          "interestsIds": FieldValue.arrayUnion([tag.id.getOrCrash()]),
+          UserFields.interestsIds: FieldValue.arrayUnion([tag.id.getOrCrash()]),
         },
       );
       return right(unit);
@@ -40,7 +41,7 @@ class ProductionTagRepository implements TagCoreRepositoryInterface {
       final _userDocument = await _firestore.userDocument();
       await _userDocument.update(
         {
-          "interestsIds": FieldValue.arrayRemove([tag.id.getOrCrash()]),
+          UserFields.interestsIds: FieldValue.arrayRemove([tag.id.getOrCrash()]),
         },
       );
       return right(unit);

@@ -11,10 +11,15 @@ import 'package:worldon/data/core/misc/cloud_storage/cloud_storage_service.dart'
 import 'package:worldon/data/core/misc/cloud_storage/storage_folder_enum.dart';
 import 'package:worldon/data/core/misc/firebase_helpers.dart';
 import 'package:worldon/data/core/models/achievement/achievement_dto.dart';
+import 'package:worldon/data/core/models/achievement/achievement_fields.dart';
 import 'package:worldon/data/core/models/experience/experience_dto.dart';
+import 'package:worldon/data/core/models/experience/experience_fields.dart';
 import 'package:worldon/data/core/models/notification/notification_dto.dart';
+import 'package:worldon/data/core/models/notification/notification_fields.dart';
 import 'package:worldon/data/core/models/tag/tag_dto.dart';
+import 'package:worldon/data/core/models/tag/tag_fields.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
+import 'package:worldon/data/core/models/user/user_fields.dart';
 import 'package:worldon/domain/core/entities/achievement/achievement.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
@@ -39,7 +44,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
       final _userDocument = await _firestore.userDocument();
       await _userDocument.update(
         {
-          "blockedUsersIds": FieldValue.arrayUnion([blockedId.getOrCrash()]),
+          UserFields.blockedUsersIds: FieldValue.arrayUnion([blockedId.getOrCrash()]),
         },
       );
       return right(unit);
@@ -54,7 +59,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
       final _userDocument = await _firestore.userDocument();
       await _userDocument.update(
         {
-          "blockedUsersIds": FieldValue.arrayRemove([blockedId.getOrCrash()]),
+          UserFields.blockedUsersIds: FieldValue.arrayRemove([blockedId.getOrCrash()]),
         },
       );
       return right(unit);
@@ -69,8 +74,8 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
       final _userDocument = await _firestore.userDocument();
       await _userDocument.update(
         {
-          "followedUsersIds": FieldValue.arrayUnion([userToFollowId.getOrCrash()]),
-          "followersAmount": FieldValue.increment(1),
+          UserFields.followedUsersIds: FieldValue.arrayUnion([userToFollowId.getOrCrash()]),
+          UserFields.followersAmount: FieldValue.increment(1),
         },
       );
       return right(unit);
@@ -85,8 +90,8 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
       final _userDocument = await _firestore.userDocument();
       await _userDocument.update(
         {
-          "followedUsersIds": FieldValue.arrayRemove([userToUnFollowId.getOrCrash()]),
-          "followersAmount": FieldValue.increment(-1),
+          UserFields.followedUsersIds: FieldValue.arrayRemove([userToUnFollowId.getOrCrash()]),
+          UserFields.followersAmount: FieldValue.increment(-1),
         },
       );
       return right(unit);
@@ -133,7 +138,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
       // If we are to use Firestore or some of the NoSQL db in the future then we need to come up with a better data model
       final _experiencesToUpdateQuerySnapshot = await _firestore.experienceCollection
           .where(
-            "creatorId",
+        ExperienceFields.creatorId,
             isEqualTo: _userId,
           )
           .get();
@@ -150,7 +155,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
       }
       final _notificationsToUpdateQuerySnapshotBySender = await _firestore.notificationCollection
           .where(
-            "sender.id",
+        "${NotificationFields.sender}.id",
             isEqualTo: _userId,
           )
           .get();
@@ -167,7 +172,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
       }
       final _notificationsToUpdateQuerySnapshotByReceiver = await _firestore.notificationCollection
           .where(
-            "receiver.id",
+        "${NotificationFields.receiver}.id",
             isEqualTo: _userId,
           )
           .get();
@@ -208,7 +213,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
       final _userDocument = await _firestore.userDocument();
       await _userDocument.update(
         {
-          "experiencesLikedIds": FieldValue.arrayRemove([experienceId.getOrCrash()]),
+          UserFields.experiencesLikedIds: FieldValue.arrayRemove([experienceId.getOrCrash()]),
         },
       );
       return right(unit);
@@ -222,11 +227,11 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
     if (_userDto.blockedUsersIds.isNotEmpty) {
-      final _auxListOfIdLists = partition(
+      final _iterableOfIdLists = partition(
         _userDto.blockedUsersIds,
         10,
       );
-      final _combinedStreamList = _getCombinedStreamList(_auxListOfIdLists);
+      final _combinedStreamList = _getCombinedStreamList(_iterableOfIdLists);
       yield* _mergeStreamOfUserDocuments(_combinedStreamList);
     } else {
       yield* Stream.value(
@@ -244,11 +249,11 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
     if (_userDto.followedUsersIds.isNotEmpty) {
-      final _auxListOfIdLists = partition(
+      final _iterableOfIdLists = partition(
         _userDto.followedUsersIds,
         10,
       );
-      final _combinedStreamList = _getCombinedStreamList(_auxListOfIdLists);
+      final _combinedStreamList = _getCombinedStreamList(_iterableOfIdLists);
       yield* _mergeStreamOfUserDocuments(_combinedStreamList);
     } else {
       yield* Stream.value(
@@ -261,16 +266,16 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     }
   }
 
-  List<Stream<QuerySnapshot>> _getCombinedStreamList(Iterable<List<String>> _auxListOfIdLists) {
-    final _combinedStreamList = _auxListOfIdLists
+  List<Stream<QuerySnapshot>> _getCombinedStreamList(Iterable<List<String>> _iterableOfIdLists) {
+    final _combinedStreamList = _iterableOfIdLists
         .map(
           (_idList) => _firestore.userCollection
               .where(
-                "id",
+                UserFields.id,
                 whereIn: _idList,
               )
               .orderBy(
-                "creationDate",
+                UserFields.creationDate,
                 descending: true,
               )
               .snapshots(),
@@ -315,11 +320,11 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   Stream<Either<Failure, KtList<User>>> watchFollowingUsers(UniqueId id) async* {
     yield* _firestore.userCollection
         .where(
-          "followedUsersIds",
+      UserFields.followedUsersIds,
           arrayContains: id.getOrCrash(),
         ) // TODO: Should order by follow date
         .orderBy(
-          "creationDate",
+      UserFields.creationDate,
           descending: true,
         )
         .snapshots()
@@ -358,7 +363,7 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     try {
       final _followersSnapshot = await _firestore.userCollection
           .where(
-            "followedUsersIds",
+        UserFields.followedUsersIds,
             arrayContains: id.getOrCrash(),
           )
           .get();
@@ -373,11 +378,11 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
   Stream<Either<Failure, KtList<Experience>>> watchExperiencesCreated(UniqueId id) async* {
     yield* _firestore.experienceCollection
         .where(
-          "creatorId",
+      ExperienceFields.creatorId,
           isEqualTo: id.getOrCrash(),
         )
         .orderBy(
-          "creationDate",
+      ExperienceFields.creationDate,
           descending: true,
         )
         .snapshots()
@@ -412,19 +417,19 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
     if (_userDto.experiencesDoneIds.isNotEmpty) {
-      final _auxListOfIdLists = partition(
+      final _iterableOfIdLists = partition(
         _userDto.experiencesDoneIds,
         10,
       );
-      final _combinedStreamList = _auxListOfIdLists
+      final _combinedStreamList = _iterableOfIdLists
           .map(
             (_idList) => _firestore.experienceCollection
                 .where(
-                  "id",
+                  ExperienceFields.id,
                   whereIn: _idList,
                 )
                 .orderBy(
-                  "creationDate",
+                  ExperienceFields.creationDate,
                   descending: true,
                 )
                 .snapshots(),
@@ -475,19 +480,19 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
     if (_userDto.experiencesLikedIds.isNotEmpty) {
-      final _auxListOfIdLists = partition(
+      final _iterableOfIdLists = partition(
         _userDto.experiencesLikedIds,
         10,
       );
-      final _combinedStreamList = _auxListOfIdLists
+      final _combinedStreamList = _iterableOfIdLists
           .map(
             (_idList) => _firestore.experienceCollection
                 .where(
-                  "id",
+                  ExperienceFields.id,
                   whereIn: _idList,
                 )
                 .orderBy(
-                  "creationDate",
+                  ExperienceFields.creationDate,
                   descending: true,
                 )
                 .snapshots(),
@@ -538,19 +543,19 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
     if (_userDto.achievementsIds.isNotEmpty) {
-      final _auxListOfIdLists = partition(
+      final _iterableOfIdLists = partition(
         _userDto.achievementsIds,
         10,
       );
-      final _combinedStreamList = _auxListOfIdLists
+      final _combinedStreamList = _iterableOfIdLists
           .map(
             (_idList) => _firestore.achievementCollection
                 .where(
-                  "id",
+                  AchievementFields.id,
                   whereIn: _idList,
                 )
                 .orderBy(
-                  "creationDate",
+                  AchievementFields.creationDate,
                   descending: true,
                 )
                 .snapshots(),
@@ -601,19 +606,19 @@ class ProductionProfileRepository implements ProfileRepositoryInterface {
     final _userDocument = await _firestore.userCollection.doc(id.getOrCrash()).get();
     final _userDto = UserDto.fromFirestore(_userDocument);
     if (_userDto.interestsIds.isNotEmpty) {
-      final _auxListOfIdLists = partition(
+      final _iterableOfIdLists = partition(
         _userDto.interestsIds,
         10,
       );
-      final _combinedStreamList = _auxListOfIdLists
+      final _combinedStreamList = _iterableOfIdLists
           .map(
             (_idList) => _firestore.tagCollection
                 .where(
-                  "id",
+                  TagFields.id,
                   whereIn: _idList,
                 )
                 .orderBy(
-                  "creationDate",
+                  TagFields.creationDate,
                   descending: true,
                 )
                 .snapshots(),

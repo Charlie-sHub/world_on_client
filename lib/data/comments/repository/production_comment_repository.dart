@@ -8,6 +8,7 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/firebase_helpers.dart';
 import 'package:worldon/data/core/models/comment/comment_dto.dart';
+import 'package:worldon/data/core/models/experience/experience_fields.dart';
 import 'package:worldon/domain/comments/repository/comment_repository_interface.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
@@ -26,7 +27,7 @@ class ProductionCommentRepository implements CommentRepositoryInterface {
         .doc(experienceId.getOrCrash())
         .commentCollection
         .orderBy(
-          "creationDate",
+      ExperienceFields.creationDate,
           descending: true,
         )
         .snapshots()

@@ -21,4 +21,7 @@ abstract class NotificationRepositoryInterface {
 
   ///	Sends a [Notification]'s id  to the server to be deleted
   Future<Either<Failure, Unit>> deleteNotification(UniqueId id);
+
+  ///	Sends a [Notification]'s id  to the server to be deleted
+  Stream<Either<Failure, bool>> watchIfNewNotifications();
 }

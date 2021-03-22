@@ -9,7 +9,9 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/core/misc/firebase_helpers.dart';
 import 'package:worldon/data/core/models/experience/experience_dto.dart';
+import 'package:worldon/data/core/models/experience/experience_fields.dart';
 import 'package:worldon/data/core/models/user/user_dto.dart';
+import 'package:worldon/data/core/models/user/user_fields.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_log/repository/experience_log_repository_interface.dart';
@@ -28,7 +30,7 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
       final _userDocument = await _firestore.userDocument();
       await _userDocument.update(
         {
-          "experiencesToDoIds": FieldValue.arrayUnion([experienceId.getOrCrash()]),
+          UserFields.experiencesToDoIds: FieldValue.arrayUnion([experienceId.getOrCrash()]),
         },
       );
       return right(unit);
@@ -43,7 +45,7 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
       final _userDocument = await _firestore.userDocument();
       await _userDocument.update(
         {
-          "experiencesToDoIds": FieldValue.arrayRemove([experienceId.getOrCrash()]),
+          UserFields.experiencesToDoIds: FieldValue.arrayRemove([experienceId.getOrCrash()]),
         },
       );
       return right(unit);
@@ -57,19 +59,19 @@ class ProductionExperienceLogRepository implements ExperienceLogRepositoryInterf
     final _userDocument = await _firestore.userDocument();
     final _userDto = UserDto.fromFirestore(await _userDocument.get());
     if (_userDto.experiencesToDoIds.isNotEmpty) {
-      final _auxListOfIdLists = partition(
+      final _iterableOfIdLists = partition(
         _userDto.experiencesToDoIds,
         10,
       );
-      final _combinedStreamList = _auxListOfIdLists
+      final _combinedStreamList = _iterableOfIdLists
           .map(
             (_idList) => _firestore.experienceCollection
                 .where(
-                  "id",
+                  ExperienceFields.id,
                   whereIn: _idList,
                 )
                 .orderBy(
-                  "creationDate",
+                  ExperienceFields.creationDate,
                   descending: true,
                 )
                 .snapshots(),
