@@ -197,7 +197,7 @@ class _$_ResultsReceived implements _ResultsReceived {
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is _ResultsReceived && (identical(other.failureOrItems, failureOrItems) || const DeepCollectionEquality().equals(other.failureOrItems, failureOrItems)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureOrItems);
 

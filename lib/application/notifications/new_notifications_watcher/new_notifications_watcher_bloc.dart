@@ -32,14 +32,20 @@ class NewNotificationsWatcherBloc extends Bloc<NewNotificationsWatcherEvent, New
   Stream<NewNotificationsWatcherState> _onResultsReceived(_ResultsReceived event) async* {
     yield event.failureOrBool.fold(
       (failure) => const NewNotificationsWatcherState.failure(),
-      (_newNotifications) => _newNotifications ? const NewNotificationsWatcherState.newNotifications() : const NewNotificationsWatcherState.noNewNotifications(),
+      (_newNotifications) {
+        if (_newNotifications) {
+          return const NewNotificationsWatcherState.newNotifications();
+        } else {
+          return const NewNotificationsWatcherState.noNewNotifications();
+        }
+      },
     );
   }
 
   Stream<NewNotificationsWatcherState> onWatchNewNotificationsStarted(_) async* {
     await _newNotificationsStreamSubscription?.cancel();
     _newNotificationsStreamSubscription = getIt<WatchIfNewNotifications>()(getIt<NoParams>()).listen(
-      (_failureOrBool) => NewNotificationsWatcherEvent.resultsReceived(_failureOrBool),
+        (_failureOrBool) => add(NewNotificationsWatcherEvent.resultsReceived(_failureOrBool)),
     );
   }
 

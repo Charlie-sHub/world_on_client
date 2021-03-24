@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 import 'package:worldon/application/notifications/notification_actor/notification_actor_bloc.dart';
 import 'package:worldon/application/notifications/notifications_watcher/notifications_watcher_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
@@ -13,7 +14,7 @@ import 'package:worldon/views/notifications/widgets/notification_card.dart';
 
 class NotificationsBody extends StatelessWidget {
   const NotificationsBody({Key key}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -25,17 +26,12 @@ class NotificationsBody extends StatelessWidget {
             ),
         ),
         BlocProvider(
+          // TODO: Check all notifications when the notifications body opens
           create: (context) => getIt<NotificationActorBloc>(),
         ),
       ],
       child: BlocListener<NotificationActorBloc, NotificationActorState>(
         listener: (context, state) => state.maybeMap(
-          // Maybe the action in progress and success are not necessary to map
-          actionInProgress: (_) => FlushbarHelper.createLoading(
-            duration: const Duration(seconds: 2),
-            message: S.of(context).actionInProgress,
-            linearProgressIndicator: const LinearProgressIndicator(),
-          ).show(context),
           deletionFailure: (state) => FlushbarHelper.createError(
             duration: const Duration(seconds: 2),
             message: state.failure.toString(),
@@ -53,17 +49,29 @@ class NotificationsBody extends StatelessWidget {
               itemBuilder: (context, index) {
                 final _notification = state.notifications[index];
                 if (_notification.isValid) {
-                  context.read<NotificationActorBloc>().add(NotificationActorEvent.checked(_notification));
-                  return NotificationCard(
-                    notification: _notification,
-                    key: Key(_notification.id.toString()),
+                  // Throws Looking up a deactivated widget's ancestor is unsafe. otherwise when deleting
+                  // Figured it must be using the context directly in a deleted widget
+                  final _auxContext = context.read<NotificationActorBloc>();
+                  return VisibilityDetector(
+                    key: Key(_notification.id.getOrCrash()),
+                    onVisibilityChanged: (info) {
+                      if (info.visibleFraction > 0.75) {
+                        _auxContext.add(
+                          NotificationActorEvent.checked(_notification),
+                        );
+                      }
+                    },
+                    child: NotificationCard(
+                      notification: _notification,
+                      key: Key(_notification.id.toString()),
+                    ),
                   );
                 } else {
                   return ErrorCard(
                     entityType: S.of(context).notification,
                     valueFailureString: _notification.failureOption.fold(
-                        () => S.of(context).noError,
-                        (failure) => failure.toString(),
+                      () => S.of(context).noError,
+                      (failure) => failure.toString(),
                     ),
                   );
                 }

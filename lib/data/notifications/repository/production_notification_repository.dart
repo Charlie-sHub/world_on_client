@@ -45,7 +45,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
     final _userDto = UserDto.fromFirestore(await _userDocument.get());
     yield* _firestore.notificationCollection
         .where(
-      "${NotificationFields.receiver}.id",
+          "${NotificationFields.receiver}.id",
           isEqualTo: _userDto.id,
         )
         .orderBy(
@@ -55,14 +55,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
         .snapshots()
         .map(
           (snapshot) => snapshot.docs.map(
-            (document) {
-              document.reference.update(
-                {
-                  NotificationFields.seen: true,
-                },
-              );
-              return NotificationDto.fromFirestore(document).toDomain();
-            },
+              (document) => NotificationDto.fromFirestore(document).toDomain(),
           ),
         )
         .map(
@@ -92,19 +85,19 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
     final _userDto = UserDto.fromFirestore(await _userDocument.get());
     yield* _firestore.notificationCollection
         .where(
-          NotificationFields.receiver,
+      "${NotificationFields.receiver}.id",
           isEqualTo: _userDto.id,
         )
         .where(
-          NotificationFields.seen,
-          isEqualTo: true,
+      NotificationFields.seen,
+          isEqualTo: false,
         )
         .snapshots()
         .map(
           (snapshot) => snapshot.docs.isNotEmpty,
         )
         .map(
-          (_newExperiencesBool) => right<Failure, bool>(_newExperiencesBool),
+        (_newNotificationsBool) => right<Failure, bool>(_newNotificationsBool),
         )
         .onErrorReturnWith(
           (error) => left(
@@ -145,8 +138,8 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
   Either<Failure, Unit> onFirebaseException(FirebaseException e) {
     _logger.e("FirebaseException: ${e.message}");
     return left(
-      const Failure.coreData(
-        CoreDataFailure.serverError(errorString: "Unknown server error"),
+      Failure.coreData(
+        CoreDataFailure.serverError(errorString: "FirebaseException: ${e.message}"),
       ),
     );
   }

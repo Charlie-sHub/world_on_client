@@ -37,20 +37,17 @@ mixin _$NewNotificationsWatcherEvent {
     @required TResult watchNewNotificationsStarted(),
     @required TResult resultsReceived(Either<Failure, bool> failureOrBool),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult watchNewNotificationsStarted(),
     TResult resultsReceived(Either<Failure, bool> failureOrBool),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult watchNewNotificationsStarted(_WatchNewNotificationsStarted value),
     @required TResult resultsReceived(_ResultsReceived value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult watchNewNotificationsStarted(_WatchNewNotificationsStarted value),
@@ -306,7 +303,6 @@ mixin _$NewNotificationsWatcherState {
     @required TResult noNewNotifications(),
     @required TResult failure(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -315,7 +311,6 @@ mixin _$NewNotificationsWatcherState {
     TResult failure(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -323,7 +318,6 @@ mixin _$NewNotificationsWatcherState {
     @required TResult noNewNotifications(_NoNewNotifications value),
     @required TResult failure(_Failure value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),

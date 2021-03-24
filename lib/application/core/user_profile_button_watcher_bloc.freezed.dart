@@ -29,18 +29,15 @@ mixin _$UserProfileButtonWatcherEvent {
   TResult when<TResult extends Object>({
     @required TResult initialized(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initialized(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initialized(_Initialized value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initialized(_Initialized value),
@@ -182,7 +179,6 @@ mixin _$UserProfileButtonWatcherState {
     @required TResult loadSuccess(String imageUrl),
     @required TResult loadFailure(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
@@ -191,7 +187,6 @@ mixin _$UserProfileButtonWatcherState {
     TResult loadFailure(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initial(_Initial value),
@@ -199,7 +194,6 @@ mixin _$UserProfileButtonWatcherState {
     @required TResult loadSuccess(_LoadSuccess value),
     @required TResult loadFailure(_Failure value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initial(_Initial value),
@@ -534,7 +528,6 @@ abstract class _LoadSuccess implements UserProfileButtonWatcherState {
   const factory _LoadSuccess(String imageUrl) = _$_LoadSuccess;
 
   String get imageUrl;
-
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith;
 }

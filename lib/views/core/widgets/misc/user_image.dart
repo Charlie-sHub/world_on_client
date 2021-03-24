@@ -27,9 +27,17 @@ class UserImage extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(5),
-            child: CircleAvatar(
-              radius: 30,
-              backgroundImage: NetworkImage(user.imageURL),
+            child: ClipOval(
+              child: Container(
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(2),
+                  child: CircleAvatar(
+                    radius: 30,
+                    backgroundImage: NetworkImage(user.imageURL),
+                  ),
+                ),
+              ),
             ),
           ),
           if (user.adminPowers)

@@ -77,7 +77,7 @@ dependencies:
   # For mapping
   google_maps_flutter:
   # For localization
-  intl: 0.16.1
+  intl: ^0.16.1
   flutter_localizations:
     sdk: flutter
   # For sharing things from the app to other apps
@@ -88,8 +88,10 @@ dependencies:
   in_app_purchase: ^0.3.5+1
   # For splitting lists
   quiver: ^2.1.5
-  # For geoqueries
+  # For geolocation based queries
   geoflutterfire: ^2.2.2
+  # For checking the visibility of widgets
+  visibility_detector: ^0.1.5
 
 dev_dependencies:
   flutter_test:
