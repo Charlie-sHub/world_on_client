@@ -101,14 +101,12 @@ class _$BuyItemEventCopyWithImpl<$Res> implements $BuyItemEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$InitializedCopyWith<$Res>
-  implements $BuyItemEventCopyWith<$Res> {
-  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) =
-  __$InitializedCopyWithImpl<$Res>;
-  
+abstract class _$InitializedCopyWith<$Res> implements $BuyItemEventCopyWith<$Res> {
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+
   @override
   $Res call({Item item});
-  
+
   @override
   $ItemCopyWith<$Res> get item;
 }

@@ -96,8 +96,7 @@ class Router extends RouterBase {
     ProfileEditingPage: (data) {
       final args = data.getArgs<ProfileEditingPageArguments>(nullOk: false);
       return PageRouteBuilder<bool>(
-        pageBuilder: (context, animation, secondaryAnimation) =>
-            ProfileEditingPage(
+        pageBuilder: (context, animation, secondaryAnimation) => ProfileEditingPage(
           key: args.key,
           user: args.user,
         ),
@@ -106,8 +105,7 @@ class Router extends RouterBase {
       );
     },
     ExperienceManagementPage: (data) {
-      final args =
-          data.getArgs<ExperienceManagementPageArguments>(nullOk: false);
+      final args = data.getArgs<ExperienceManagementPageArguments>(nullOk: false);
       return MaterialPageRoute<dynamic>(
         builder: (context) => ExperienceManagementPage(
           key: args.key,
@@ -165,8 +163,7 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
   }) =>
       push<dynamic>(
         Routes.experienceManagementPage,
-        arguments: ExperienceManagementPageArguments(
-            key: key, experienceOption: experienceOption),
+        arguments: ExperienceManagementPageArguments(key: key, experienceOption: experienceOption),
       );
 
   Future<dynamic> pushTagManagementPage({
@@ -196,8 +193,8 @@ class ProfileEditingPageArguments {
 class ExperienceManagementPageArguments {
   final Key key;
   final Option<Experience> experienceOption;
-  ExperienceManagementPageArguments(
-      {this.key, @required this.experienceOption});
+
+  ExperienceManagementPageArguments({this.key, @required this.experienceOption});
 }
 
 /// TagManagementPage arguments holder class

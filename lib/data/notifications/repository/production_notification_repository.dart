@@ -49,7 +49,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
           isEqualTo: _userDto.id,
         )
         .orderBy(
-      NotificationFields.creationDate,
+          NotificationFields.creationDate,
           descending: true,
         )
         .snapshots()

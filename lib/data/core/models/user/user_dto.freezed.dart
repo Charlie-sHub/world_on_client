@@ -134,8 +134,7 @@ mixin _$UserDto {
 
 /// @nodoc
 abstract class $UserDtoCopyWith<$Res> {
-  factory $UserDtoCopyWith(UserDto value, $Res Function(UserDto) then) =
-      _$UserDtoCopyWithImpl<$Res>;
+  factory $UserDtoCopyWith(UserDto value, $Res Function(UserDto) then) = _$UserDtoCopyWithImpl<$Res>;
   $Res call(
       {String id,
       String name,
@@ -256,8 +255,7 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
-  factory _$UserDtoCopyWith(_UserDto value, $Res Function(_UserDto) then) =
-      __$UserDtoCopyWithImpl<$Res>;
+  factory _$UserDtoCopyWith(_UserDto value, $Res Function(_UserDto) then) = __$UserDtoCopyWithImpl<$Res>;
   @override
   $Res call(
       {String id,
@@ -295,10 +293,8 @@ abstract class _$UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
-    implements _$UserDtoCopyWith<$Res> {
-  __$UserDtoCopyWithImpl(_UserDto _value, $Res Function(_UserDto) _then)
-      : super(_value, (v) => _then(v as _UserDto));
+class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res> implements _$UserDtoCopyWith<$Res> {
+  __$UserDtoCopyWithImpl(_UserDto _value, $Res Function(_UserDto) _then) : super(_value, (v) => _then(v as _UserDto));
 
   @override
   _UserDto get _value => super._value as _UserDto;
@@ -434,8 +430,7 @@ class _$_UserDto extends _UserDto {
         assert(followersAmount != null),
         super._();
 
-  factory _$_UserDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_UserDtoFromJson(json);
+  factory _$_UserDto.fromJson(Map<String, dynamic> json) => _$_$_UserDtoFromJson(json);
 
   @override
   final String id;
@@ -576,8 +571,7 @@ class _$_UserDto extends _UserDto {
 
   @JsonKey(ignore: true)
   @override
-  _$UserDtoCopyWith<_UserDto> get copyWith =>
-      __$UserDtoCopyWithImpl<_UserDto>(this, _$identity);
+  _$UserDtoCopyWith<_UserDto> get copyWith => __$UserDtoCopyWithImpl<_UserDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {

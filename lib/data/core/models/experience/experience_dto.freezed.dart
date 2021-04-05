@@ -107,9 +107,7 @@ mixin _$ExperienceDto {
 
 /// @nodoc
 abstract class $ExperienceDtoCopyWith<$Res> {
-  factory $ExperienceDtoCopyWith(
-          ExperienceDto value, $Res Function(ExperienceDto) then) =
-      _$ExperienceDtoCopyWithImpl<$Res>;
+  factory $ExperienceDtoCopyWith(ExperienceDto value, $Res Function(ExperienceDto) then) = _$ExperienceDtoCopyWithImpl<$Res>;
   $Res call(
       {String id,
       String title,
@@ -135,11 +133,11 @@ abstract class $ExperienceDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ExperienceDtoCopyWithImpl<$Res>
-    implements $ExperienceDtoCopyWith<$Res> {
+class _$ExperienceDtoCopyWithImpl<$Res> implements $ExperienceDtoCopyWith<$Res> {
   _$ExperienceDtoCopyWithImpl(this._value, this._then);
 
   final ExperienceDto _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceDto) _then;
 
@@ -216,11 +214,9 @@ class _$ExperienceDtoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$ExperienceDtoCopyWith<$Res>
-    implements $ExperienceDtoCopyWith<$Res> {
-  factory _$ExperienceDtoCopyWith(
-          _ExperienceDto value, $Res Function(_ExperienceDto) then) =
-      __$ExperienceDtoCopyWithImpl<$Res>;
+abstract class _$ExperienceDtoCopyWith<$Res> implements $ExperienceDtoCopyWith<$Res> {
+  factory _$ExperienceDtoCopyWith(_ExperienceDto value, $Res Function(_ExperienceDto) then) = __$ExperienceDtoCopyWithImpl<$Res>;
+
   @override
   $Res call(
       {String id,
@@ -250,12 +246,8 @@ abstract class _$ExperienceDtoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ExperienceDtoCopyWithImpl<$Res>
-    extends _$ExperienceDtoCopyWithImpl<$Res>
-    implements _$ExperienceDtoCopyWith<$Res> {
-  __$ExperienceDtoCopyWithImpl(
-      _ExperienceDto _value, $Res Function(_ExperienceDto) _then)
-      : super(_value, (v) => _then(v as _ExperienceDto));
+class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Res> implements _$ExperienceDtoCopyWith<$Res> {
+  __$ExperienceDtoCopyWithImpl(_ExperienceDto _value, $Res Function(_ExperienceDto) _then) : super(_value, (v) => _then(v as _ExperienceDto));
 
   @override
   _ExperienceDto get _value => super._value as _ExperienceDto;
@@ -343,8 +335,7 @@ class _$_ExperienceDto extends _ExperienceDto {
         assert(doneBy != null),
         super._();
 
-  factory _$_ExperienceDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_ExperienceDtoFromJson(json);
+  factory _$_ExperienceDto.fromJson(Map<String, dynamic> json) => _$_$_ExperienceDtoFromJson(json);
 
   @override
   final String id;
@@ -392,53 +383,23 @@ class _$_ExperienceDto extends _ExperienceDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ExperienceDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.imageURLs, imageURLs) ||
-                const DeepCollectionEquality()
-                    .equals(other.imageURLs, imageURLs)) &&
-            (identical(other.coordinates, coordinates) ||
-                const DeepCollectionEquality()
-                    .equals(other.coordinates, coordinates)) &&
-            (identical(other.location, location) ||
-                const DeepCollectionEquality()
-                    .equals(other.location, location)) &&
-            (identical(other.creatorId, creatorId) ||
-                const DeepCollectionEquality()
-                    .equals(other.creatorId, creatorId)) &&
-            (identical(other.creator, creator) ||
-                const DeepCollectionEquality()
-                    .equals(other.creator, creator)) &&
-            (identical(other.difficulty, difficulty) ||
-                const DeepCollectionEquality()
-                    .equals(other.difficulty, difficulty)) &&
-            (identical(other.creationDate, creationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.creationDate, creationDate)) &&
-            (identical(other.modificationDate, modificationDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.modificationDate, modificationDate)) &&
-            (identical(other.objectives, objectives) ||
-                const DeepCollectionEquality()
-                    .equals(other.objectives, objectives)) &&
-            (identical(other.rewards, rewards) ||
-                const DeepCollectionEquality()
-                    .equals(other.rewards, rewards)) &&
-            (identical(other.tags, tags) ||
-                const DeepCollectionEquality().equals(other.tags, tags)) &&
-            (identical(other.comments, comments) ||
-                const DeepCollectionEquality()
-                    .equals(other.comments, comments)) &&
-            (identical(other.likedBy, likedBy) ||
-                const DeepCollectionEquality()
-                    .equals(other.likedBy, likedBy)) &&
-            (identical(other.doneBy, doneBy) ||
-                const DeepCollectionEquality().equals(other.doneBy, doneBy)));
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.title, title) || const DeepCollectionEquality().equals(other.title, title)) &&
+            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
+            (identical(other.imageURLs, imageURLs) || const DeepCollectionEquality().equals(other.imageURLs, imageURLs)) &&
+            (identical(other.coordinates, coordinates) || const DeepCollectionEquality().equals(other.coordinates, coordinates)) &&
+            (identical(other.location, location) || const DeepCollectionEquality().equals(other.location, location)) &&
+            (identical(other.creatorId, creatorId) || const DeepCollectionEquality().equals(other.creatorId, creatorId)) &&
+            (identical(other.creator, creator) || const DeepCollectionEquality().equals(other.creator, creator)) &&
+            (identical(other.difficulty, difficulty) || const DeepCollectionEquality().equals(other.difficulty, difficulty)) &&
+            (identical(other.creationDate, creationDate) || const DeepCollectionEquality().equals(other.creationDate, creationDate)) &&
+            (identical(other.modificationDate, modificationDate) || const DeepCollectionEquality().equals(other.modificationDate, modificationDate)) &&
+            (identical(other.objectives, objectives) || const DeepCollectionEquality().equals(other.objectives, objectives)) &&
+            (identical(other.rewards, rewards) || const DeepCollectionEquality().equals(other.rewards, rewards)) &&
+            (identical(other.tags, tags) || const DeepCollectionEquality().equals(other.tags, tags)) &&
+            (identical(other.comments, comments) || const DeepCollectionEquality().equals(other.comments, comments)) &&
+            (identical(other.likedBy, likedBy) || const DeepCollectionEquality().equals(other.likedBy, likedBy)) &&
+            (identical(other.doneBy, doneBy) || const DeepCollectionEquality().equals(other.doneBy, doneBy)));
   }
 
   @override
@@ -464,8 +425,7 @@ class _$_ExperienceDto extends _ExperienceDto {
 
   @JsonKey(ignore: true)
   @override
-  _$ExperienceDtoCopyWith<_ExperienceDto> get copyWith =>
-      __$ExperienceDtoCopyWithImpl<_ExperienceDto>(this, _$identity);
+  _$ExperienceDtoCopyWith<_ExperienceDto> get copyWith => __$ExperienceDtoCopyWithImpl<_ExperienceDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -494,8 +454,7 @@ abstract class _ExperienceDto extends ExperienceDto {
       @required Set<String> likedBy,
       @required Set<String> doneBy}) = _$_ExperienceDto;
 
-  factory _ExperienceDto.fromJson(Map<String, dynamic> json) =
-      _$_ExperienceDto.fromJson;
+  factory _ExperienceDto.fromJson(Map<String, dynamic> json) = _$_ExperienceDto.fromJson;
 
   @override
   String get id;

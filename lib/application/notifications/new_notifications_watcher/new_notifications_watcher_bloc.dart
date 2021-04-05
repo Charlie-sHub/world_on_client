@@ -11,9 +11,7 @@ import 'package:worldon/domain/notifications/use_case/watch_if_new_notifications
 import 'package:worldon/injection.dart';
 
 part 'new_notifications_watcher_bloc.freezed.dart';
-
 part 'new_notifications_watcher_event.dart';
-
 part 'new_notifications_watcher_state.dart';
 
 @injectable
@@ -45,7 +43,7 @@ class NewNotificationsWatcherBloc extends Bloc<NewNotificationsWatcherEvent, New
   Stream<NewNotificationsWatcherState> onWatchNewNotificationsStarted(_) async* {
     await _newNotificationsStreamSubscription?.cancel();
     _newNotificationsStreamSubscription = getIt<WatchIfNewNotifications>()(getIt<NoParams>()).listen(
-        (_failureOrBool) => add(NewNotificationsWatcherEvent.resultsReceived(_failureOrBool)),
+      (_failureOrBool) => add(NewNotificationsWatcherEvent.resultsReceived(_failureOrBool)),
     );
   }
 
