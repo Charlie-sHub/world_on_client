@@ -106,9 +106,15 @@ class _$ValueFailureTearOff {
   }
 
 // ignore: unused_element
-  SetExceedsLength<T> setExceedsLength<T>(
-      {@required T failedValue, @required int maxLength}) {
-    return SetExceedsLength<T>(
+  EmptyList<T> emptyList<T>({@required T failedValue}) {
+    return EmptyList<T>(
+      failedValue: failedValue,
+    );
+  }
+
+// ignore: unused_element
+  CollectionExceedsLength<T> collectionExceedsLength<T>({@required T failedValue, @required int maxLength}) {
+    return CollectionExceedsLength<T>(
       failedValue: failedValue,
       maxLength: maxLength,
     );
@@ -136,7 +142,8 @@ mixin _$ValueFailure<T> {
     @required TResult stringWithInvalidCharacters(String failedValue),
     @required TResult invalidCoordinate(double failedValue),
     @required TResult emptySet(T failedValue),
-    @required TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult emptyList(T failedValue),
+    @required TResult collectionExceedsLength(T failedValue, int maxLength),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
@@ -153,7 +160,8 @@ mixin _$ValueFailure<T> {
     TResult stringWithInvalidCharacters(String failedValue),
     TResult invalidCoordinate(double failedValue),
     TResult emptySet(T failedValue),
-    TResult setExceedsLength(T failedValue, int maxLength),
+    TResult emptyList(T failedValue),
+    TResult collectionExceedsLength(T failedValue, int maxLength),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -168,12 +176,11 @@ mixin _$ValueFailure<T> {
     @required TResult multiLineString(MultiLineString<T> value),
     @required TResult stringExceedsLength(StringExceedsLength<T> value),
     @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required
-        TResult stringWithInvalidCharacters(
-            StringWithInvalidCharacters<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required TResult invalidCoordinate(InvalidCoordinates<T> value),
     @required TResult emptySet(EmptySet<T> value),
-    @required TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult emptyList(EmptyList<T> value),
+    @required TResult collectionExceedsLength(CollectionExceedsLength<T> value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
@@ -190,7 +197,8 @@ mixin _$ValueFailure<T> {
     TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     TResult invalidCoordinate(InvalidCoordinates<T> value),
     TResult emptySet(EmptySet<T> value),
-    TResult setExceedsLength(SetExceedsLength<T> value),
+    TResult emptyList(EmptyList<T> value),
+    TResult collectionExceedsLength(CollectionExceedsLength<T> value),
     @required TResult orElse(),
   });
 }
@@ -270,7 +278,8 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     @required TResult stringWithInvalidCharacters(String failedValue),
     @required TResult invalidCoordinate(double failedValue),
     @required TResult emptySet(T failedValue),
-    @required TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult emptyList(T failedValue),
+    @required TResult collectionExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -285,7 +294,8 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return nullInput();
   }
 
@@ -305,7 +315,8 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     TResult stringWithInvalidCharacters(String failedValue),
     TResult invalidCoordinate(double failedValue),
     TResult emptySet(T failedValue),
-    TResult setExceedsLength(T failedValue, int maxLength),
+    TResult emptyList(T failedValue),
+    TResult collectionExceedsLength(T failedValue, int maxLength),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -328,12 +339,11 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     @required TResult multiLineString(MultiLineString<T> value),
     @required TResult stringExceedsLength(StringExceedsLength<T> value),
     @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required
-        TResult stringWithInvalidCharacters(
-            StringWithInvalidCharacters<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required TResult invalidCoordinate(InvalidCoordinates<T> value),
     @required TResult emptySet(EmptySet<T> value),
-    @required TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult emptyList(EmptyList<T> value),
+    @required TResult collectionExceedsLength(CollectionExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -348,7 +358,8 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return nullInput(this);
   }
 
@@ -368,7 +379,8 @@ class _$NullInput<T> with DiagnosticableTreeMixin implements NullInput<T> {
     TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     TResult invalidCoordinate(InvalidCoordinates<T> value),
     TResult emptySet(EmptySet<T> value),
-    TResult setExceedsLength(SetExceedsLength<T> value),
+    TResult emptyList(EmptyList<T> value),
+    TResult collectionExceedsLength(CollectionExceedsLength<T> value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -468,7 +480,8 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     @required TResult stringWithInvalidCharacters(String failedValue),
     @required TResult invalidCoordinate(double failedValue),
     @required TResult emptySet(T failedValue),
-    @required TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult emptyList(T failedValue),
+    @required TResult collectionExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -483,7 +496,8 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return invalidDate(failedValue);
   }
 
@@ -503,7 +517,8 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     TResult stringWithInvalidCharacters(String failedValue),
     TResult invalidCoordinate(double failedValue),
     TResult emptySet(T failedValue),
-    TResult setExceedsLength(T failedValue, int maxLength),
+    TResult emptyList(T failedValue),
+    TResult collectionExceedsLength(T failedValue, int maxLength),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -526,12 +541,11 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     @required TResult multiLineString(MultiLineString<T> value),
     @required TResult stringExceedsLength(StringExceedsLength<T> value),
     @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required
-        TResult stringWithInvalidCharacters(
-            StringWithInvalidCharacters<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required TResult invalidCoordinate(InvalidCoordinates<T> value),
     @required TResult emptySet(EmptySet<T> value),
-    @required TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult emptyList(EmptyList<T> value),
+    @required TResult collectionExceedsLength(CollectionExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -546,7 +560,8 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return invalidDate(this);
   }
 
@@ -566,7 +581,8 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
     TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     TResult invalidCoordinate(InvalidCoordinates<T> value),
     TResult emptySet(EmptySet<T> value),
-    TResult setExceedsLength(SetExceedsLength<T> value),
+    TResult emptyList(EmptyList<T> value),
+    TResult collectionExceedsLength(CollectionExceedsLength<T> value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -673,7 +689,8 @@ class _$InvalidEmail<T>
     @required TResult stringWithInvalidCharacters(String failedValue),
     @required TResult invalidCoordinate(double failedValue),
     @required TResult emptySet(T failedValue),
-    @required TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult emptyList(T failedValue),
+    @required TResult collectionExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -688,7 +705,8 @@ class _$InvalidEmail<T>
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return invalidEmail(failedValue);
   }
 
@@ -708,7 +726,8 @@ class _$InvalidEmail<T>
     TResult stringWithInvalidCharacters(String failedValue),
     TResult invalidCoordinate(double failedValue),
     TResult emptySet(T failedValue),
-    TResult setExceedsLength(T failedValue, int maxLength),
+    TResult emptyList(T failedValue),
+    TResult collectionExceedsLength(T failedValue, int maxLength),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -731,12 +750,11 @@ class _$InvalidEmail<T>
     @required TResult multiLineString(MultiLineString<T> value),
     @required TResult stringExceedsLength(StringExceedsLength<T> value),
     @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required
-        TResult stringWithInvalidCharacters(
-            StringWithInvalidCharacters<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required TResult invalidCoordinate(InvalidCoordinates<T> value),
     @required TResult emptySet(EmptySet<T> value),
-    @required TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult emptyList(EmptyList<T> value),
+    @required TResult collectionExceedsLength(CollectionExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -751,7 +769,8 @@ class _$InvalidEmail<T>
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return invalidEmail(this);
   }
 
@@ -771,7 +790,8 @@ class _$InvalidEmail<T>
     TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     TResult invalidCoordinate(InvalidCoordinates<T> value),
     TResult emptySet(EmptySet<T> value),
-    TResult setExceedsLength(SetExceedsLength<T> value),
+    TResult emptyList(EmptyList<T> value),
+    TResult collectionExceedsLength(CollectionExceedsLength<T> value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -878,7 +898,8 @@ class _$InvalidPassword<T>
     @required TResult stringWithInvalidCharacters(String failedValue),
     @required TResult invalidCoordinate(double failedValue),
     @required TResult emptySet(T failedValue),
-    @required TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult emptyList(T failedValue),
+    @required TResult collectionExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -893,7 +914,8 @@ class _$InvalidPassword<T>
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return invalidPassword(failedValue);
   }
 
@@ -913,7 +935,8 @@ class _$InvalidPassword<T>
     TResult stringWithInvalidCharacters(String failedValue),
     TResult invalidCoordinate(double failedValue),
     TResult emptySet(T failedValue),
-    TResult setExceedsLength(T failedValue, int maxLength),
+    TResult emptyList(T failedValue),
+    TResult collectionExceedsLength(T failedValue, int maxLength),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -936,12 +959,11 @@ class _$InvalidPassword<T>
     @required TResult multiLineString(MultiLineString<T> value),
     @required TResult stringExceedsLength(StringExceedsLength<T> value),
     @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required
-        TResult stringWithInvalidCharacters(
-            StringWithInvalidCharacters<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required TResult invalidCoordinate(InvalidCoordinates<T> value),
     @required TResult emptySet(EmptySet<T> value),
-    @required TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult emptyList(EmptyList<T> value),
+    @required TResult collectionExceedsLength(CollectionExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -956,7 +978,8 @@ class _$InvalidPassword<T>
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return invalidPassword(this);
   }
 
@@ -976,7 +999,8 @@ class _$InvalidPassword<T>
     TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     TResult invalidCoordinate(InvalidCoordinates<T> value),
     TResult emptySet(EmptySet<T> value),
-    TResult setExceedsLength(SetExceedsLength<T> value),
+    TResult emptyList(EmptyList<T> value),
+    TResult collectionExceedsLength(CollectionExceedsLength<T> value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1083,7 +1107,8 @@ class _$StringMismatch<T>
     @required TResult stringWithInvalidCharacters(String failedValue),
     @required TResult invalidCoordinate(double failedValue),
     @required TResult emptySet(T failedValue),
-    @required TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult emptyList(T failedValue),
+    @required TResult collectionExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1098,7 +1123,8 @@ class _$StringMismatch<T>
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return stringMismatch(failedValue);
   }
 
@@ -1118,7 +1144,8 @@ class _$StringMismatch<T>
     TResult stringWithInvalidCharacters(String failedValue),
     TResult invalidCoordinate(double failedValue),
     TResult emptySet(T failedValue),
-    TResult setExceedsLength(T failedValue, int maxLength),
+    TResult emptyList(T failedValue),
+    TResult collectionExceedsLength(T failedValue, int maxLength),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1141,12 +1168,11 @@ class _$StringMismatch<T>
     @required TResult multiLineString(MultiLineString<T> value),
     @required TResult stringExceedsLength(StringExceedsLength<T> value),
     @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required
-        TResult stringWithInvalidCharacters(
-            StringWithInvalidCharacters<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required TResult invalidCoordinate(InvalidCoordinates<T> value),
     @required TResult emptySet(EmptySet<T> value),
-    @required TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult emptyList(EmptyList<T> value),
+    @required TResult collectionExceedsLength(CollectionExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1161,7 +1187,8 @@ class _$StringMismatch<T>
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return stringMismatch(this);
   }
 
@@ -1181,7 +1208,8 @@ class _$StringMismatch<T>
     TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     TResult invalidCoordinate(InvalidCoordinates<T> value),
     TResult emptySet(EmptySet<T> value),
-    TResult setExceedsLength(SetExceedsLength<T> value),
+    TResult emptyList(EmptyList<T> value),
+    TResult collectionExceedsLength(CollectionExceedsLength<T> value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1286,7 +1314,8 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     @required TResult stringWithInvalidCharacters(String failedValue),
     @required TResult invalidCoordinate(double failedValue),
     @required TResult emptySet(T failedValue),
-    @required TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult emptyList(T failedValue),
+    @required TResult collectionExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1301,7 +1330,8 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return invalidName(failedValue);
   }
 
@@ -1321,7 +1351,8 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     TResult stringWithInvalidCharacters(String failedValue),
     TResult invalidCoordinate(double failedValue),
     TResult emptySet(T failedValue),
-    TResult setExceedsLength(T failedValue, int maxLength),
+    TResult emptyList(T failedValue),
+    TResult collectionExceedsLength(T failedValue, int maxLength),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1344,12 +1375,11 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     @required TResult multiLineString(MultiLineString<T> value),
     @required TResult stringExceedsLength(StringExceedsLength<T> value),
     @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required
-        TResult stringWithInvalidCharacters(
-            StringWithInvalidCharacters<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required TResult invalidCoordinate(InvalidCoordinates<T> value),
     @required TResult emptySet(EmptySet<T> value),
-    @required TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult emptyList(EmptyList<T> value),
+    @required TResult collectionExceedsLength(CollectionExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1364,7 +1394,8 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return invalidName(this);
   }
 
@@ -1384,7 +1415,8 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
     TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     TResult invalidCoordinate(InvalidCoordinates<T> value),
     TResult emptySet(EmptySet<T> value),
-    TResult setExceedsLength(SetExceedsLength<T> value),
+    TResult emptyList(EmptyList<T> value),
+    TResult collectionExceedsLength(CollectionExceedsLength<T> value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1488,7 +1520,8 @@ class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
     @required TResult stringWithInvalidCharacters(String failedValue),
     @required TResult invalidCoordinate(double failedValue),
     @required TResult emptySet(T failedValue),
-    @required TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult emptyList(T failedValue),
+    @required TResult collectionExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1503,7 +1536,8 @@ class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return emptyString(failedValue);
   }
 
@@ -1523,7 +1557,8 @@ class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
     TResult stringWithInvalidCharacters(String failedValue),
     TResult invalidCoordinate(double failedValue),
     TResult emptySet(T failedValue),
-    TResult setExceedsLength(T failedValue, int maxLength),
+    TResult emptyList(T failedValue),
+    TResult collectionExceedsLength(T failedValue, int maxLength),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1546,12 +1581,11 @@ class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
     @required TResult multiLineString(MultiLineString<T> value),
     @required TResult stringExceedsLength(StringExceedsLength<T> value),
     @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required
-        TResult stringWithInvalidCharacters(
-            StringWithInvalidCharacters<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required TResult invalidCoordinate(InvalidCoordinates<T> value),
     @required TResult emptySet(EmptySet<T> value),
-    @required TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult emptyList(EmptyList<T> value),
+    @required TResult collectionExceedsLength(CollectionExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1566,7 +1600,8 @@ class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return emptyString(this);
   }
 
@@ -1586,7 +1621,8 @@ class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
     TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     TResult invalidCoordinate(InvalidCoordinates<T> value),
     TResult emptySet(EmptySet<T> value),
-    TResult setExceedsLength(SetExceedsLength<T> value),
+    TResult emptyList(EmptyList<T> value),
+    TResult collectionExceedsLength(CollectionExceedsLength<T> value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1692,7 +1728,8 @@ class _$MultiLineString<T>
     @required TResult stringWithInvalidCharacters(String failedValue),
     @required TResult invalidCoordinate(double failedValue),
     @required TResult emptySet(T failedValue),
-    @required TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult emptyList(T failedValue),
+    @required TResult collectionExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1707,7 +1744,8 @@ class _$MultiLineString<T>
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return multiLineString(failedValue);
   }
 
@@ -1727,7 +1765,8 @@ class _$MultiLineString<T>
     TResult stringWithInvalidCharacters(String failedValue),
     TResult invalidCoordinate(double failedValue),
     TResult emptySet(T failedValue),
-    TResult setExceedsLength(T failedValue, int maxLength),
+    TResult emptyList(T failedValue),
+    TResult collectionExceedsLength(T failedValue, int maxLength),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1750,12 +1789,11 @@ class _$MultiLineString<T>
     @required TResult multiLineString(MultiLineString<T> value),
     @required TResult stringExceedsLength(StringExceedsLength<T> value),
     @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required
-        TResult stringWithInvalidCharacters(
-            StringWithInvalidCharacters<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required TResult invalidCoordinate(InvalidCoordinates<T> value),
     @required TResult emptySet(EmptySet<T> value),
-    @required TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult emptyList(EmptyList<T> value),
+    @required TResult collectionExceedsLength(CollectionExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1770,7 +1808,8 @@ class _$MultiLineString<T>
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return multiLineString(this);
   }
 
@@ -1790,7 +1829,8 @@ class _$MultiLineString<T>
     TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     TResult invalidCoordinate(InvalidCoordinates<T> value),
     TResult emptySet(EmptySet<T> value),
-    TResult setExceedsLength(SetExceedsLength<T> value),
+    TResult emptyList(EmptyList<T> value),
+    TResult collectionExceedsLength(CollectionExceedsLength<T> value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1910,7 +1950,8 @@ class _$StringExceedsLength<T>
     @required TResult stringWithInvalidCharacters(String failedValue),
     @required TResult invalidCoordinate(double failedValue),
     @required TResult emptySet(T failedValue),
-    @required TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult emptyList(T failedValue),
+    @required TResult collectionExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1925,7 +1966,8 @@ class _$StringExceedsLength<T>
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return stringExceedsLength(failedValue, maxLength);
   }
 
@@ -1945,7 +1987,8 @@ class _$StringExceedsLength<T>
     TResult stringWithInvalidCharacters(String failedValue),
     TResult invalidCoordinate(double failedValue),
     TResult emptySet(T failedValue),
-    TResult setExceedsLength(T failedValue, int maxLength),
+    TResult emptyList(T failedValue),
+    TResult collectionExceedsLength(T failedValue, int maxLength),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1968,12 +2011,11 @@ class _$StringExceedsLength<T>
     @required TResult multiLineString(MultiLineString<T> value),
     @required TResult stringExceedsLength(StringExceedsLength<T> value),
     @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required
-        TResult stringWithInvalidCharacters(
-            StringWithInvalidCharacters<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required TResult invalidCoordinate(InvalidCoordinates<T> value),
     @required TResult emptySet(EmptySet<T> value),
-    @required TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult emptyList(EmptyList<T> value),
+    @required TResult collectionExceedsLength(CollectionExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -1988,7 +2030,8 @@ class _$StringExceedsLength<T>
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return stringExceedsLength(this);
   }
 
@@ -2008,7 +2051,8 @@ class _$StringExceedsLength<T>
     TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     TResult invalidCoordinate(InvalidCoordinates<T> value),
     TResult emptySet(EmptySet<T> value),
-    TResult setExceedsLength(SetExceedsLength<T> value),
+    TResult emptyList(EmptyList<T> value),
+    TResult collectionExceedsLength(CollectionExceedsLength<T> value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -2118,7 +2162,8 @@ class _$IntegerOutOfBounds<T>
     @required TResult stringWithInvalidCharacters(String failedValue),
     @required TResult invalidCoordinate(double failedValue),
     @required TResult emptySet(T failedValue),
-    @required TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult emptyList(T failedValue),
+    @required TResult collectionExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -2133,7 +2178,8 @@ class _$IntegerOutOfBounds<T>
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return integerOutOfBounds(failedValue);
   }
 
@@ -2153,7 +2199,8 @@ class _$IntegerOutOfBounds<T>
     TResult stringWithInvalidCharacters(String failedValue),
     TResult invalidCoordinate(double failedValue),
     TResult emptySet(T failedValue),
-    TResult setExceedsLength(T failedValue, int maxLength),
+    TResult emptyList(T failedValue),
+    TResult collectionExceedsLength(T failedValue, int maxLength),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -2176,12 +2223,11 @@ class _$IntegerOutOfBounds<T>
     @required TResult multiLineString(MultiLineString<T> value),
     @required TResult stringExceedsLength(StringExceedsLength<T> value),
     @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required
-        TResult stringWithInvalidCharacters(
-            StringWithInvalidCharacters<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required TResult invalidCoordinate(InvalidCoordinates<T> value),
     @required TResult emptySet(EmptySet<T> value),
-    @required TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult emptyList(EmptyList<T> value),
+    @required TResult collectionExceedsLength(CollectionExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -2196,7 +2242,8 @@ class _$IntegerOutOfBounds<T>
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return integerOutOfBounds(this);
   }
 
@@ -2216,7 +2263,8 @@ class _$IntegerOutOfBounds<T>
     TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     TResult invalidCoordinate(InvalidCoordinates<T> value),
     TResult emptySet(EmptySet<T> value),
-    TResult setExceedsLength(SetExceedsLength<T> value),
+    TResult emptyList(EmptyList<T> value),
+    TResult collectionExceedsLength(CollectionExceedsLength<T> value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -2328,7 +2376,8 @@ class _$StringWithInvalidCharacters<T>
     @required TResult stringWithInvalidCharacters(String failedValue),
     @required TResult invalidCoordinate(double failedValue),
     @required TResult emptySet(T failedValue),
-    @required TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult emptyList(T failedValue),
+    @required TResult collectionExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -2343,7 +2392,8 @@ class _$StringWithInvalidCharacters<T>
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return stringWithInvalidCharacters(failedValue);
   }
 
@@ -2363,7 +2413,8 @@ class _$StringWithInvalidCharacters<T>
     TResult stringWithInvalidCharacters(String failedValue),
     TResult invalidCoordinate(double failedValue),
     TResult emptySet(T failedValue),
-    TResult setExceedsLength(T failedValue, int maxLength),
+    TResult emptyList(T failedValue),
+    TResult collectionExceedsLength(T failedValue, int maxLength),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -2386,12 +2437,11 @@ class _$StringWithInvalidCharacters<T>
     @required TResult multiLineString(MultiLineString<T> value),
     @required TResult stringExceedsLength(StringExceedsLength<T> value),
     @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required
-        TResult stringWithInvalidCharacters(
-            StringWithInvalidCharacters<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required TResult invalidCoordinate(InvalidCoordinates<T> value),
     @required TResult emptySet(EmptySet<T> value),
-    @required TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult emptyList(EmptyList<T> value),
+    @required TResult collectionExceedsLength(CollectionExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -2406,7 +2456,8 @@ class _$StringWithInvalidCharacters<T>
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return stringWithInvalidCharacters(this);
   }
 
@@ -2426,7 +2477,8 @@ class _$StringWithInvalidCharacters<T>
     TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     TResult invalidCoordinate(InvalidCoordinates<T> value),
     TResult emptySet(EmptySet<T> value),
-    TResult setExceedsLength(SetExceedsLength<T> value),
+    TResult emptyList(EmptyList<T> value),
+    TResult collectionExceedsLength(CollectionExceedsLength<T> value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -2535,7 +2587,8 @@ class _$InvalidCoordinates<T>
     @required TResult stringWithInvalidCharacters(String failedValue),
     @required TResult invalidCoordinate(double failedValue),
     @required TResult emptySet(T failedValue),
-    @required TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult emptyList(T failedValue),
+    @required TResult collectionExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -2550,7 +2603,8 @@ class _$InvalidCoordinates<T>
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return invalidCoordinate(failedValue);
   }
 
@@ -2570,7 +2624,8 @@ class _$InvalidCoordinates<T>
     TResult stringWithInvalidCharacters(String failedValue),
     TResult invalidCoordinate(double failedValue),
     TResult emptySet(T failedValue),
-    TResult setExceedsLength(T failedValue, int maxLength),
+    TResult emptyList(T failedValue),
+    TResult collectionExceedsLength(T failedValue, int maxLength),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -2593,12 +2648,11 @@ class _$InvalidCoordinates<T>
     @required TResult multiLineString(MultiLineString<T> value),
     @required TResult stringExceedsLength(StringExceedsLength<T> value),
     @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required
-        TResult stringWithInvalidCharacters(
-            StringWithInvalidCharacters<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required TResult invalidCoordinate(InvalidCoordinates<T> value),
     @required TResult emptySet(EmptySet<T> value),
-    @required TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult emptyList(EmptyList<T> value),
+    @required TResult collectionExceedsLength(CollectionExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -2613,7 +2667,8 @@ class _$InvalidCoordinates<T>
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return invalidCoordinate(this);
   }
 
@@ -2633,7 +2688,8 @@ class _$InvalidCoordinates<T>
     TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     TResult invalidCoordinate(InvalidCoordinates<T> value),
     TResult emptySet(EmptySet<T> value),
-    TResult setExceedsLength(SetExceedsLength<T> value),
+    TResult emptyList(EmptyList<T> value),
+    TResult collectionExceedsLength(CollectionExceedsLength<T> value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -2736,7 +2792,8 @@ class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
     @required TResult stringWithInvalidCharacters(String failedValue),
     @required TResult invalidCoordinate(double failedValue),
     @required TResult emptySet(T failedValue),
-    @required TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult emptyList(T failedValue),
+    @required TResult collectionExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -2751,7 +2808,8 @@ class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return emptySet(failedValue);
   }
 
@@ -2771,7 +2829,8 @@ class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
     TResult stringWithInvalidCharacters(String failedValue),
     TResult invalidCoordinate(double failedValue),
     TResult emptySet(T failedValue),
-    TResult setExceedsLength(T failedValue, int maxLength),
+    TResult emptyList(T failedValue),
+    TResult collectionExceedsLength(T failedValue, int maxLength),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -2794,12 +2853,11 @@ class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
     @required TResult multiLineString(MultiLineString<T> value),
     @required TResult stringExceedsLength(StringExceedsLength<T> value),
     @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required
-        TResult stringWithInvalidCharacters(
-            StringWithInvalidCharacters<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required TResult invalidCoordinate(InvalidCoordinates<T> value),
     @required TResult emptySet(EmptySet<T> value),
-    @required TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult emptyList(EmptyList<T> value),
+    @required TResult collectionExceedsLength(CollectionExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -2814,7 +2872,8 @@ class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
     return emptySet(this);
   }
 
@@ -2834,7 +2893,8 @@ class _$EmptySet<T> with DiagnosticableTreeMixin implements EmptySet<T> {
     TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     TResult invalidCoordinate(InvalidCoordinates<T> value),
     TResult emptySet(EmptySet<T> value),
-    TResult setExceedsLength(SetExceedsLength<T> value),
+    TResult emptyList(EmptyList<T> value),
+    TResult collectionExceedsLength(CollectionExceedsLength<T> value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -2849,92 +2909,64 @@ abstract class EmptySet<T> implements ValueFailure<T> {
   const factory EmptySet({@required T failedValue}) = _$EmptySet<T>;
 
   T get failedValue;
+
   @JsonKey(ignore: true)
   $EmptySetCopyWith<T, EmptySet<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $SetExceedsLengthCopyWith<T, $Res> {
-  factory $SetExceedsLengthCopyWith(
-          SetExceedsLength<T> value, $Res Function(SetExceedsLength<T>) then) =
-      _$SetExceedsLengthCopyWithImpl<T, $Res>;
-  $Res call({T failedValue, int maxLength});
+abstract class $EmptyListCopyWith<T, $Res> {
+  factory $EmptyListCopyWith(EmptyList<T> value, $Res Function(EmptyList<T>) then) = _$EmptyListCopyWithImpl<T, $Res>;
+
+  $Res call({T failedValue});
 }
 
 /// @nodoc
-class _$SetExceedsLengthCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
-    implements $SetExceedsLengthCopyWith<T, $Res> {
-  _$SetExceedsLengthCopyWithImpl(
-      SetExceedsLength<T> _value, $Res Function(SetExceedsLength<T>) _then)
-      : super(_value, (v) => _then(v as SetExceedsLength<T>));
+class _$EmptyListCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res> implements $EmptyListCopyWith<T, $Res> {
+  _$EmptyListCopyWithImpl(EmptyList<T> _value, $Res Function(EmptyList<T>) _then) : super(_value, (v) => _then(v as EmptyList<T>));
 
   @override
-  SetExceedsLength<T> get _value => super._value as SetExceedsLength<T>;
+  EmptyList<T> get _value => super._value as EmptyList<T>;
 
   @override
   $Res call({
     Object failedValue = freezed,
-    Object maxLength = freezed,
   }) {
-    return _then(SetExceedsLength<T>(
-      failedValue:
-          failedValue == freezed ? _value.failedValue : failedValue as T,
-      maxLength: maxLength == freezed ? _value.maxLength : maxLength as int,
+    return _then(EmptyList<T>(
+      failedValue: failedValue == freezed ? _value.failedValue : failedValue as T,
     ));
   }
 }
 
 /// @nodoc
-class _$SetExceedsLength<T>
-    with DiagnosticableTreeMixin
-    implements SetExceedsLength<T> {
-  const _$SetExceedsLength(
-      {@required this.failedValue, @required this.maxLength})
-      : assert(failedValue != null),
-        assert(maxLength != null);
+class _$EmptyList<T> with DiagnosticableTreeMixin implements EmptyList<T> {
+  const _$EmptyList({@required this.failedValue}) : assert(failedValue != null);
 
   @override
   final T failedValue;
-  @override
-  final int maxLength;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ValueFailure<$T>.setExceedsLength(failedValue: $failedValue, maxLength: $maxLength)';
+    return 'ValueFailure<$T>.emptyList(failedValue: $failedValue)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ValueFailure<$T>.setExceedsLength'))
-      ..add(DiagnosticsProperty('failedValue', failedValue))
-      ..add(DiagnosticsProperty('maxLength', maxLength));
+    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.emptyList'))..add(DiagnosticsProperty('failedValue', failedValue));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is SetExceedsLength<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)) &&
-            (identical(other.maxLength, maxLength) ||
-                const DeepCollectionEquality()
-                    .equals(other.maxLength, maxLength)));
+    return identical(this, other) || (other is EmptyList<T> && (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(failedValue) ^
-      const DeepCollectionEquality().hash(maxLength);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
   @JsonKey(ignore: true)
   @override
-  $SetExceedsLengthCopyWith<T, SetExceedsLength<T>> get copyWith =>
-      _$SetExceedsLengthCopyWithImpl<T, SetExceedsLength<T>>(this, _$identity);
+  $EmptyListCopyWith<T, EmptyList<T>> get copyWith => _$EmptyListCopyWithImpl<T, EmptyList<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2952,7 +2984,8 @@ class _$SetExceedsLength<T>
     @required TResult stringWithInvalidCharacters(String failedValue),
     @required TResult invalidCoordinate(double failedValue),
     @required TResult emptySet(T failedValue),
-    @required TResult setExceedsLength(T failedValue, int maxLength),
+    @required TResult emptyList(T failedValue),
+    @required TResult collectionExceedsLength(T failedValue, int maxLength),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -2967,8 +3000,9 @@ class _$SetExceedsLength<T>
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
-    return setExceedsLength(failedValue, maxLength);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
+    return emptyList(failedValue);
   }
 
   @override
@@ -2987,12 +3021,13 @@ class _$SetExceedsLength<T>
     TResult stringWithInvalidCharacters(String failedValue),
     TResult invalidCoordinate(double failedValue),
     TResult emptySet(T failedValue),
-    TResult setExceedsLength(T failedValue, int maxLength),
+    TResult emptyList(T failedValue),
+    TResult collectionExceedsLength(T failedValue, int maxLength),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (setExceedsLength != null) {
-      return setExceedsLength(failedValue, maxLength);
+    if (emptyList != null) {
+      return emptyList(failedValue);
     }
     return orElse();
   }
@@ -3010,12 +3045,11 @@ class _$SetExceedsLength<T>
     @required TResult multiLineString(MultiLineString<T> value),
     @required TResult stringExceedsLength(StringExceedsLength<T> value),
     @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
-    @required
-        TResult stringWithInvalidCharacters(
-            StringWithInvalidCharacters<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     @required TResult invalidCoordinate(InvalidCoordinates<T> value),
     @required TResult emptySet(EmptySet<T> value),
-    @required TResult setExceedsLength(SetExceedsLength<T> value),
+    @required TResult emptyList(EmptyList<T> value),
+    @required TResult collectionExceedsLength(CollectionExceedsLength<T> value),
   }) {
     assert(nullInput != null);
     assert(invalidDate != null);
@@ -3030,8 +3064,9 @@ class _$SetExceedsLength<T>
     assert(stringWithInvalidCharacters != null);
     assert(invalidCoordinate != null);
     assert(emptySet != null);
-    assert(setExceedsLength != null);
-    return setExceedsLength(this);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
+    return emptyList(this);
   }
 
   @override
@@ -3050,24 +3085,229 @@ class _$SetExceedsLength<T>
     TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
     TResult invalidCoordinate(InvalidCoordinates<T> value),
     TResult emptySet(EmptySet<T> value),
-    TResult setExceedsLength(SetExceedsLength<T> value),
+    TResult emptyList(EmptyList<T> value),
+    TResult collectionExceedsLength(CollectionExceedsLength<T> value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (setExceedsLength != null) {
-      return setExceedsLength(this);
+    if (emptyList != null) {
+      return emptyList(this);
     }
     return orElse();
   }
 }
 
-abstract class SetExceedsLength<T> implements ValueFailure<T> {
-  const factory SetExceedsLength(
-      {@required T failedValue,
-      @required int maxLength}) = _$SetExceedsLength<T>;
+abstract class EmptyList<T> implements ValueFailure<T> {
+  const factory EmptyList({@required T failedValue}) = _$EmptyList<T>;
 
   T get failedValue;
-  int get maxLength;
+
   @JsonKey(ignore: true)
-  $SetExceedsLengthCopyWith<T, SetExceedsLength<T>> get copyWith;
+  $EmptyListCopyWith<T, EmptyList<T>> get copyWith;
+}
+
+/// @nodoc
+abstract class $CollectionExceedsLengthCopyWith<T, $Res> {
+  factory $CollectionExceedsLengthCopyWith(CollectionExceedsLength<T> value, $Res Function(CollectionExceedsLength<T>) then) = _$CollectionExceedsLengthCopyWithImpl<T, $Res>;
+
+  $Res call({T failedValue, int maxLength});
+}
+
+/// @nodoc
+class _$CollectionExceedsLengthCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res> implements $CollectionExceedsLengthCopyWith<T, $Res> {
+  _$CollectionExceedsLengthCopyWithImpl(CollectionExceedsLength<T> _value, $Res Function(CollectionExceedsLength<T>) _then) : super(_value, (v) => _then(v as CollectionExceedsLength<T>));
+
+  @override
+  CollectionExceedsLength<T> get _value => super._value as CollectionExceedsLength<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+    Object maxLength = freezed,
+  }) {
+    return _then(CollectionExceedsLength<T>(
+      failedValue: failedValue == freezed ? _value.failedValue : failedValue as T,
+      maxLength: maxLength == freezed ? _value.maxLength : maxLength as int,
+    ));
+  }
+}
+
+/// @nodoc
+class _$CollectionExceedsLength<T> with DiagnosticableTreeMixin implements CollectionExceedsLength<T> {
+  const _$CollectionExceedsLength({@required this.failedValue, @required this.maxLength})
+      : assert(failedValue != null),
+        assert(maxLength != null);
+
+  @override
+  final T failedValue;
+  @override
+  final int maxLength;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValueFailure<$T>.collectionExceedsLength(failedValue: $failedValue, maxLength: $maxLength)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'ValueFailure<$T>.collectionExceedsLength'))..add(DiagnosticsProperty('failedValue', failedValue))..add(DiagnosticsProperty('maxLength', maxLength));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+      (other is CollectionExceedsLength<T> &&
+            (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)) &&
+            (identical(other.maxLength, maxLength) || const DeepCollectionEquality().equals(other.maxLength, maxLength)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(failedValue) ^
+      const DeepCollectionEquality().hash(maxLength);
+  
+  @JsonKey(ignore: true)
+  @override
+  $CollectionExceedsLengthCopyWith<T, CollectionExceedsLength<T>> get copyWith => _$CollectionExceedsLengthCopyWithImpl<T, CollectionExceedsLength<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult nullInput(),
+    @required TResult invalidDate(DateTime failedValue),
+    @required TResult invalidEmail(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult stringMismatch(String failedValue),
+    @required TResult invalidName(String failedValue),
+    @required TResult emptyString(String failedValue),
+    @required TResult multiLineString(String failedValue),
+    @required TResult stringExceedsLength(String failedValue, int maxLength),
+    @required TResult integerOutOfBounds(int failedValue),
+    @required TResult stringWithInvalidCharacters(String failedValue),
+    @required TResult invalidCoordinate(double failedValue),
+    @required TResult emptySet(T failedValue),
+    @required TResult emptyList(T failedValue),
+    @required TResult collectionExceedsLength(T failedValue, int maxLength),
+  }) {
+    assert(nullInput != null);
+    assert(invalidDate != null);
+    assert(invalidEmail != null);
+    assert(invalidPassword != null);
+    assert(stringMismatch != null);
+    assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
+    assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
+    assert(stringWithInvalidCharacters != null);
+    assert(invalidCoordinate != null);
+    assert(emptySet != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
+    return collectionExceedsLength(failedValue, maxLength);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult nullInput(),
+    TResult invalidDate(DateTime failedValue),
+    TResult invalidEmail(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult stringMismatch(String failedValue),
+    TResult invalidName(String failedValue),
+    TResult emptyString(String failedValue),
+    TResult multiLineString(String failedValue),
+    TResult stringExceedsLength(String failedValue, int maxLength),
+    TResult integerOutOfBounds(int failedValue),
+    TResult stringWithInvalidCharacters(String failedValue),
+    TResult invalidCoordinate(double failedValue),
+    TResult emptySet(T failedValue),
+    TResult emptyList(T failedValue),
+    TResult collectionExceedsLength(T failedValue, int maxLength),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (collectionExceedsLength != null) {
+      return collectionExceedsLength(failedValue, maxLength);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult nullInput(NullInput<T> value),
+    @required TResult invalidDate(InvalidDate<T> value),
+    @required TResult invalidEmail(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult stringMismatch(StringMismatch<T> value),
+    @required TResult invalidName(InvalidName<T> value),
+    @required TResult emptyString(EmptyString<T> value),
+    @required TResult multiLineString(MultiLineString<T> value),
+    @required TResult stringExceedsLength(StringExceedsLength<T> value),
+    @required TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    @required TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    @required TResult invalidCoordinate(InvalidCoordinates<T> value),
+    @required TResult emptySet(EmptySet<T> value),
+    @required TResult emptyList(EmptyList<T> value),
+    @required TResult collectionExceedsLength(CollectionExceedsLength<T> value),
+  }) {
+    assert(nullInput != null);
+    assert(invalidDate != null);
+    assert(invalidEmail != null);
+    assert(invalidPassword != null);
+    assert(stringMismatch != null);
+    assert(invalidName != null);
+    assert(emptyString != null);
+    assert(multiLineString != null);
+    assert(stringExceedsLength != null);
+    assert(integerOutOfBounds != null);
+    assert(stringWithInvalidCharacters != null);
+    assert(invalidCoordinate != null);
+    assert(emptySet != null);
+    assert(emptyList != null);
+    assert(collectionExceedsLength != null);
+    return collectionExceedsLength(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult nullInput(NullInput<T> value),
+    TResult invalidDate(InvalidDate<T> value),
+    TResult invalidEmail(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult stringMismatch(StringMismatch<T> value),
+    TResult invalidName(InvalidName<T> value),
+    TResult emptyString(EmptyString<T> value),
+    TResult multiLineString(MultiLineString<T> value),
+    TResult stringExceedsLength(StringExceedsLength<T> value),
+    TResult integerOutOfBounds(IntegerOutOfBounds<T> value),
+    TResult stringWithInvalidCharacters(StringWithInvalidCharacters<T> value),
+    TResult invalidCoordinate(InvalidCoordinates<T> value),
+    TResult emptySet(EmptySet<T> value),
+    TResult emptyList(EmptyList<T> value),
+    TResult collectionExceedsLength(CollectionExceedsLength<T> value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (collectionExceedsLength != null) {
+      return collectionExceedsLength(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CollectionExceedsLength<T> implements ValueFailure<T> {
+  const factory CollectionExceedsLength({@required T failedValue, @required int maxLength}) = _$CollectionExceedsLength<T>;
+
+  T get failedValue;
+
+  int get maxLength;
+
+  @JsonKey(ignore: true)
+  $CollectionExceedsLengthCopyWith<T, CollectionExceedsLength<T>> get copyWith;
 }

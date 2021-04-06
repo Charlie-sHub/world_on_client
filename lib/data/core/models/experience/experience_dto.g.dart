@@ -19,7 +19,7 @@ _$_ExperienceDto _$_$_ExperienceDtoFromJson(Map<String, dynamic> json) {
     difficulty: json['difficulty'] as int,
     creationDate: const ServerTimestampConverter().fromJson(json['creationDate'] as Timestamp),
     modificationDate: const ServerTimestampConverter().fromJson(json['modificationDate'] as Timestamp),
-    objectives: (json['objectives'] as List)?.map((e) => e == null ? null : ObjectiveDto.fromJson(e as Map<String, dynamic>))?.toSet(),
+    objectives: (json['objectives'] as List)?.map((e) => e == null ? null : ObjectiveDto.fromJson(e as Map<String, dynamic>))?.toList(),
     rewards: (json['rewards'] as List)?.map((e) => e == null ? null : RewardDto.fromJson(e as Map<String, dynamic>))?.toSet(),
     tags: (json['tags'] as List)?.map((e) => e == null ? null : TagDto.fromJson(e as Map<String, dynamic>))?.toSet(),
     comments: (json['comments'] as List)?.map((e) => e == null ? null : CommentDto.fromJson(e as Map<String, dynamic>))?.toSet(),

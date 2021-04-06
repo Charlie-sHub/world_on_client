@@ -26,7 +26,7 @@ class _$ExperienceTearOff {
       @required Difficulty difficulty,
       @required PastDate creationDate,
       @required PastDate modificationDate,
-      @required ObjectiveSet objectives,
+      @required ObjectiveList objectives,
       @required RewardSet rewards,
       @required TagSet tags,
       @required Set<Comment> comments,
@@ -71,8 +71,11 @@ mixin _$Experience {
   User get creator;
   Difficulty get difficulty;
   PastDate get creationDate;
+
   PastDate get modificationDate;
-  ObjectiveSet get objectives;
+
+  ObjectiveList get objectives;
+
   RewardSet get rewards;
   TagSet get tags;
   Set<Comment> get comments;
@@ -86,6 +89,7 @@ mixin _$Experience {
 /// @nodoc
 abstract class $ExperienceCopyWith<$Res> {
   factory $ExperienceCopyWith(Experience value, $Res Function(Experience) then) = _$ExperienceCopyWithImpl<$Res>;
+
   $Res call(
       {UniqueId id,
       Name title,
@@ -98,7 +102,7 @@ abstract class $ExperienceCopyWith<$Res> {
       Difficulty difficulty,
       PastDate creationDate,
       PastDate modificationDate,
-      ObjectiveSet objectives,
+      ObjectiveList objectives,
       RewardSet rewards,
       TagSet tags,
       Set<Comment> comments,
@@ -150,7 +154,7 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
       difficulty: difficulty == freezed ? _value.difficulty : difficulty as Difficulty,
       creationDate: creationDate == freezed ? _value.creationDate : creationDate as PastDate,
       modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as PastDate,
-      objectives: objectives == freezed ? _value.objectives : objectives as ObjectiveSet,
+      objectives: objectives == freezed ? _value.objectives : objectives as ObjectiveList,
       rewards: rewards == freezed ? _value.rewards : rewards as RewardSet,
       tags: tags == freezed ? _value.tags : tags as TagSet,
       comments: comments == freezed ? _value.comments : comments as Set<Comment>,
@@ -193,6 +197,7 @@ class _$ExperienceCopyWithImpl<$Res> implements $ExperienceCopyWith<$Res> {
 /// @nodoc
 abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
   factory _$ExperienceCopyWith(_Experience value, $Res Function(_Experience) then) = __$ExperienceCopyWithImpl<$Res>;
+
   @override
   $Res call(
       {UniqueId id,
@@ -206,7 +211,7 @@ abstract class _$ExperienceCopyWith<$Res> implements $ExperienceCopyWith<$Res> {
       Difficulty difficulty,
       PastDate creationDate,
       PastDate modificationDate,
-      ObjectiveSet objectives,
+      ObjectiveList objectives,
       RewardSet rewards,
       TagSet tags,
       Set<Comment> comments,
@@ -260,7 +265,7 @@ class __$ExperienceCopyWithImpl<$Res> extends _$ExperienceCopyWithImpl<$Res> imp
       difficulty: difficulty == freezed ? _value.difficulty : difficulty as Difficulty,
       creationDate: creationDate == freezed ? _value.creationDate : creationDate as PastDate,
       modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as PastDate,
-      objectives: objectives == freezed ? _value.objectives : objectives as ObjectiveSet,
+      objectives: objectives == freezed ? _value.objectives : objectives as ObjectiveList,
       rewards: rewards == freezed ? _value.rewards : rewards as RewardSet,
       tags: tags == freezed ? _value.tags : tags as TagSet,
       comments: comments == freezed ? _value.comments : comments as Set<Comment>,
@@ -332,7 +337,7 @@ class _$_Experience extends _Experience {
   @override
   final PastDate modificationDate;
   @override
-  final ObjectiveSet objectives;
+  final ObjectiveList objectives;
   @override
   final RewardSet rewards;
   @override
@@ -412,7 +417,7 @@ abstract class _Experience extends Experience {
       @required Difficulty difficulty,
       @required PastDate creationDate,
       @required PastDate modificationDate,
-      @required ObjectiveSet objectives,
+      @required ObjectiveList objectives,
       @required RewardSet rewards,
       @required TagSet tags,
       @required Set<Comment> comments,
@@ -439,10 +444,13 @@ abstract class _Experience extends Experience {
   Difficulty get difficulty;
   @override
   PastDate get creationDate;
+
   @override
   PastDate get modificationDate;
+
   @override
-  ObjectiveSet get objectives;
+  ObjectiveList get objectives;
+
   @override
   RewardSet get rewards;
   @override

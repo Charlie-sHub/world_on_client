@@ -55,7 +55,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
         .snapshots()
         .map(
           (snapshot) => snapshot.docs.map(
-              (document) => NotificationDto.fromFirestore(document).toDomain(),
+            (document) => NotificationDto.fromFirestore(document).toDomain(),
           ),
         )
         .map(

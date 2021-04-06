@@ -10,6 +10,8 @@ abstract class ExperienceManagementFormEvent with _$ExperienceManagementFormEven
 
   const factory ExperienceManagementFormEvent.imagesChanged(List<Asset> imageAssets) = _ImagesChanged;
 
+  const factory ExperienceManagementFormEvent.imageDeleted(String imageURL) = _ImageDeleted;
+
   const factory ExperienceManagementFormEvent.coordinatesChanged({
     @required double latitude,
     @required double longitude,
@@ -17,7 +19,7 @@ abstract class ExperienceManagementFormEvent with _$ExperienceManagementFormEven
 
   const factory ExperienceManagementFormEvent.difficultyChanged(int difficulty) = _DifficultyChanged;
 
-  const factory ExperienceManagementFormEvent.objectivesChanged(KtSet<Objective> objectives) = _ObjectivesChanged;
+  const factory ExperienceManagementFormEvent.objectivesChanged(KtList<Objective> objectives) = _ObjectivesChanged;
 
   const factory ExperienceManagementFormEvent.rewardsChanged(KtSet<Reward> rewards) = _RewardsChanged;
 

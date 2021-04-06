@@ -18,8 +18,8 @@ void main() {
   );
   final firstObjective = getValidObjective();
   final secondObjective = firstObjective.copyWith(id: UniqueId());
-  final objectiveSet = ObjectiveSet(
-    KtSet.of(
+  final objectiveSet = ObjectiveList(
+    KtList.of(
       firstObjective,
       secondObjective,
     ),

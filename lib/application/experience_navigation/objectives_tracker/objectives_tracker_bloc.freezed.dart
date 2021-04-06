@@ -14,7 +14,7 @@ class _$ObjectivesTrackerEventTearOff {
   const _$ObjectivesTrackerEventTearOff();
 
 // ignore: unused_element
-  _Initialized initialized(ObjectiveSet objectiveSet) {
+  _Initialized initialized(ObjectiveList objectiveSet) {
     return _Initialized(
       objectiveSet,
     );
@@ -36,12 +36,12 @@ const $ObjectivesTrackerEvent = _$ObjectivesTrackerEventTearOff();
 mixin _$ObjectivesTrackerEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult initialized(ObjectiveSet objectiveSet),
+    @required TResult initialized(ObjectiveList objectiveSet),
     @required TResult objectiveAccomplished(Objective objective),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult initialized(ObjectiveSet objectiveSet),
+    TResult initialized(ObjectiveList objectiveSet),
     TResult objectiveAccomplished(Objective objective),
     @required TResult orElse(),
   });
@@ -80,7 +80,8 @@ abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(
           _Initialized value, $Res Function(_Initialized) then) =
       __$InitializedCopyWithImpl<$Res>;
-  $Res call({ObjectiveSet objectiveSet});
+
+  $Res call({ObjectiveList objectiveSet});
 }
 
 /// @nodoc
@@ -99,9 +100,7 @@ class __$InitializedCopyWithImpl<$Res>
     Object objectiveSet = freezed,
   }) {
     return _then(_Initialized(
-      objectiveSet == freezed
-          ? _value.objectiveSet
-          : objectiveSet as ObjectiveSet,
+      objectiveSet == freezed ? _value.objectiveSet : objectiveSet as ObjectiveList,
     ));
   }
 }
@@ -111,7 +110,7 @@ class _$_Initialized implements _Initialized {
   const _$_Initialized(this.objectiveSet) : assert(objectiveSet != null);
 
   @override
-  final ObjectiveSet objectiveSet;
+  final ObjectiveList objectiveSet;
 
   @override
   String toString() {
@@ -120,9 +119,7 @@ class _$_Initialized implements _Initialized {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _Initialized &&
-            (identical(other.objectiveSet, objectiveSet) ||
+    return identical(this, other) || (other is _Initialized && (identical(other.objectiveSet, objectiveSet) ||
                 const DeepCollectionEquality()
                     .equals(other.objectiveSet, objectiveSet)));
   }
@@ -139,7 +136,7 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult initialized(ObjectiveSet objectiveSet),
+    @required TResult initialized(ObjectiveList objectiveSet),
     @required TResult objectiveAccomplished(Objective objective),
   }) {
     assert(initialized != null);
@@ -150,7 +147,7 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult initialized(ObjectiveSet objectiveSet),
+    TResult initialized(ObjectiveList objectiveSet),
     TResult objectiveAccomplished(Objective objective),
     @required TResult orElse(),
   }) {
@@ -188,9 +185,10 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements ObjectivesTrackerEvent {
-  const factory _Initialized(ObjectiveSet objectiveSet) = _$_Initialized;
+  const factory _Initialized(ObjectiveList objectiveSet) = _$_Initialized;
 
-  ObjectiveSet get objectiveSet;
+  ObjectiveList get objectiveSet;
+
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
@@ -270,7 +268,7 @@ class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult initialized(ObjectiveSet objectiveSet),
+    @required TResult initialized(ObjectiveList objectiveSet),
     @required TResult objectiveAccomplished(Objective objective),
   }) {
     assert(initialized != null);
@@ -281,7 +279,7 @@ class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult initialized(ObjectiveSet objectiveSet),
+    TResult initialized(ObjectiveList objectiveSet),
     TResult objectiveAccomplished(Objective objective),
     @required TResult orElse(),
   }) {

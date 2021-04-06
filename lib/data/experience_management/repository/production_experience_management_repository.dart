@@ -33,17 +33,17 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
     try {
       final _cloudStorageService = getIt<CloudStorageService>();
       final _rewardSet = <Reward>{};
-      final _objectiveSet = <Objective>{};
+      final _objectiveList = <Objective>{};
       await uploadImages(
         experience,
         _cloudStorageService,
         _rewardSet,
-        _objectiveSet,
+        _objectiveList,
       );
       final _experienceDto = ExperienceDto.fromDomain(
         experience.copyWith(
           rewards: RewardSet(_rewardSet.toImmutableSet()),
-          objectives: ObjectiveSet(_objectiveSet.toImmutableSet()),
+          objectives: ObjectiveList(_objectiveList.toImmutableList()),
         ),
       );
       await _firestore.experienceCollection
@@ -73,23 +73,32 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
     }
   }
 
-  // TODO Figure out how to deal with images when updating an experience
   @override
   Future<Either<Failure, Unit>> editExperience(Experience experience) async {
     try {
+      // How to deal with images?
+      // An experience being edited will have just the links to the images
+      // How to be able to change some images and other's not?
+      // If editing an experience the page will show a grid of network images as well as the normal images selector
+      // Each cell of the grid will have a button to delete the image (remove the link string from the list)
+
+      // How to edit Rewards and Objectives?
+      // For now simply deleting them and creating new ones
+      // Make them then reorderable
+      // When an objective changes position the even of objectives changed is added with the new list
       final _cloudStorageService = getIt<CloudStorageService>();
       final _rewardSet = <Reward>{};
-      final _objectiveSet = <Objective>{};
+      final _objectiveList = <Objective>{};
       await uploadImages(
         experience,
         _cloudStorageService,
         _rewardSet,
-        _objectiveSet,
+        _objectiveList,
       );
       final _experienceDto = ExperienceDto.fromDomain(
         experience.copyWith(
           rewards: RewardSet(_rewardSet.toImmutableSet()),
-          objectives: ObjectiveSet(_objectiveSet.toImmutableSet()),
+          objectives: ObjectiveList(_objectiveList.toImmutableList()),
         ),
       );
       await _firestore.experienceCollection
@@ -130,7 +139,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
     Experience experience,
     CloudStorageService _cloudStorageService,
     Set<Reward> _rewardSet,
-    Set<Objective> _objectiveSet,
+    Set<Objective> _objectiveList,
   ) async {
     for (final _imageAsset in experience.imageAssetsOption.getOrElse(() => null)) {
       final _imageName = _imageAsset.name + experience.id.getOrCrash();
@@ -150,14 +159,14 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
       final _rewardWithImage = _reward.copyWith(imageURL: _imageURL);
       _rewardSet.add(_rewardWithImage);
     }
-    for (final _objective in experience.objectives.getOrCrash().asSet()) {
+    for (final _objective in experience.objectives.getOrCrash().dart) {
       final _imageURL = await _cloudStorageService.uploadFileImage(
         imageToUpload: _objective.imageFile.getOrElse(() => null),
         folder: StorageFolder.experiences,
         name: _objective.id.getOrCrash(),
       );
       final _objectiveWithImage = _objective.copyWith(imageURL: _imageURL);
-      _objectiveSet.add(_objectiveWithImage);
+      _objectiveList.add(_objectiveWithImage);
     }
   }
 

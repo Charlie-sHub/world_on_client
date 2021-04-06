@@ -55,6 +55,7 @@ mixin _$ExperienceFinishActorEvent {
 /// @nodoc
 abstract class $ExperienceFinishActorEventCopyWith<$Res> {
   factory $ExperienceFinishActorEventCopyWith(ExperienceFinishActorEvent value, $Res Function(ExperienceFinishActorEvent) then) = _$ExperienceFinishActorEventCopyWithImpl<$Res>;
+
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
@@ -191,6 +192,7 @@ abstract class _FinishedExperience implements ExperienceFinishActorEvent {
 
   @override
   Experience get experience;
+
   @override
   @JsonKey(ignore: true)
   _$FinishedExperienceCopyWith<_FinishedExperience> get copyWith;
@@ -476,6 +478,7 @@ abstract class _ActionInProgress implements ExperienceFinishActorState {
 /// @nodoc
 abstract class _$FinishSuccessCopyWith<$Res> {
   factory _$FinishSuccessCopyWith(_FinishSuccess value, $Res Function(_FinishSuccess) then) = __$FinishSuccessCopyWithImpl<$Res>;
+
   $Res call({int amountXP, bool leveledUp});
 }
 
@@ -519,7 +522,7 @@ class _$_FinishSuccess implements _FinishSuccess {
             (identical(other.amountXP, amountXP) || const DeepCollectionEquality().equals(other.amountXP, amountXP)) &&
             (identical(other.leveledUp, leveledUp) || const DeepCollectionEquality().equals(other.leveledUp, leveledUp)));
   }
-
+  
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(amountXP) ^ const DeepCollectionEquality().hash(leveledUp);
 
@@ -604,6 +607,7 @@ abstract class _FinishSuccess implements ExperienceFinishActorState {
 /// @nodoc
 abstract class _$FinishFailureCopyWith<$Res> {
   factory _$FinishFailureCopyWith(_FinishFailure value, $Res Function(_FinishFailure) then) = __$FinishFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

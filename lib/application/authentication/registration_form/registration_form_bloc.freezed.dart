@@ -325,6 +325,7 @@ abstract class _Initialized implements RegistrationFormEvent {
 /// @nodoc
 abstract class _$ImageChangedCopyWith<$Res> {
   factory _$ImageChangedCopyWith(_ImageChanged value, $Res Function(_ImageChanged) then) = __$ImageChangedCopyWithImpl<$Res>;
+
   $Res call({File imageFile});
 }
 
@@ -491,6 +492,7 @@ abstract class _ImageChanged implements RegistrationFormEvent {
 /// @nodoc
 abstract class _$NameChangedCopyWith<$Res> {
   factory _$NameChangedCopyWith(_NameChanged value, $Res Function(_NameChanged) then) = __$NameChangedCopyWithImpl<$Res>;
+
   $Res call({String name});
 }
 
@@ -657,6 +659,7 @@ abstract class _NameChanged implements RegistrationFormEvent {
 /// @nodoc
 abstract class _$UsernameChangedCopyWith<$Res> {
   factory _$UsernameChangedCopyWith(_UsernameChanged value, $Res Function(_UsernameChanged) then) = __$UsernameChangedCopyWithImpl<$Res>;
+
   $Res call({String username});
 }
 
@@ -823,6 +826,7 @@ abstract class _UsernameChanged implements RegistrationFormEvent {
 /// @nodoc
 abstract class _$PasswordChangedCopyWith<$Res> {
   factory _$PasswordChangedCopyWith(_PasswordChanged value, $Res Function(_PasswordChanged) then) = __$PasswordChangedCopyWithImpl<$Res>;
+
   $Res call({String password});
 }
 
@@ -989,6 +993,7 @@ abstract class _PasswordChanged implements RegistrationFormEvent {
 /// @nodoc
 abstract class _$PasswordConfirmationChangedCopyWith<$Res> {
   factory _$PasswordConfirmationChangedCopyWith(_PasswordConfirmationChanged value, $Res Function(_PasswordConfirmationChanged) then) = __$PasswordConfirmationChangedCopyWithImpl<$Res>;
+
   $Res call({String passwordConfirmation});
 }
 
@@ -1027,7 +1032,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
         (other is _PasswordConfirmationChanged &&
             (identical(other.passwordConfirmation, passwordConfirmation) || const DeepCollectionEquality().equals(other.passwordConfirmation, passwordConfirmation)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(passwordConfirmation);
 
@@ -1158,6 +1163,7 @@ abstract class _PasswordConfirmationChanged implements RegistrationFormEvent {
 /// @nodoc
 abstract class _$EmailAddressChangedCopyWith<$Res> {
   factory _$EmailAddressChangedCopyWith(_EmailAddressChanged value, $Res Function(_EmailAddressChanged) then) = __$EmailAddressChangedCopyWithImpl<$Res>;
+
   $Res call({String emailAddress});
 }
 
@@ -1194,7 +1200,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is _EmailAddressChanged && (identical(other.emailAddress, emailAddress) || const DeepCollectionEquality().equals(other.emailAddress, emailAddress)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(emailAddress);
 
@@ -1317,6 +1323,7 @@ abstract class _EmailAddressChanged implements RegistrationFormEvent {
   const factory _EmailAddressChanged(String emailAddress) = _$_EmailAddressChanged;
 
   String get emailAddress;
+
   @JsonKey(ignore: true)
   _$EmailAddressChangedCopyWith<_EmailAddressChanged> get copyWith;
 }
@@ -1324,6 +1331,7 @@ abstract class _EmailAddressChanged implements RegistrationFormEvent {
 /// @nodoc
 abstract class _$BirthdayChangedCopyWith<$Res> {
   factory _$BirthdayChangedCopyWith(_BirthdayChanged value, $Res Function(_BirthdayChanged) then) = __$BirthdayChangedCopyWithImpl<$Res>;
+
   $Res call({DateTime birthday});
 }
 
@@ -1490,6 +1498,7 @@ abstract class _BirthdayChanged implements RegistrationFormEvent {
 /// @nodoc
 abstract class _$DescriptionChangedCopyWith<$Res> {
   factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) = __$DescriptionChangedCopyWithImpl<$Res>;
+
   $Res call({String description});
 }
 
@@ -1656,6 +1665,7 @@ abstract class _DescriptionChanged implements RegistrationFormEvent {
 /// @nodoc
 abstract class _$InterestsChangedCopyWith<$Res> {
   factory _$InterestsChangedCopyWith(_InterestsChanged value, $Res Function(_InterestsChanged) then) = __$InterestsChangedCopyWithImpl<$Res>;
+
   $Res call({KtSet<Tag> interests});
 }
 
@@ -2155,6 +2165,7 @@ mixin _$RegistrationFormState {
 /// @nodoc
 abstract class $RegistrationFormStateCopyWith<$Res> {
   factory $RegistrationFormStateCopyWith(RegistrationFormState value, $Res Function(RegistrationFormState) then) = _$RegistrationFormStateCopyWithImpl<$Res>;
+
   $Res call(
       {User user,
       PasswordConfirmator passwordConfirmator,

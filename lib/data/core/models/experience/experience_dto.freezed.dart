@@ -29,7 +29,7 @@ class _$ExperienceDtoTearOff {
       @required int difficulty,
       @required @ServerTimestampConverter() DateTime creationDate,
       @required @ServerTimestampConverter() DateTime modificationDate,
-      @required Set<ObjectiveDto> objectives,
+      @required List<ObjectiveDto> objectives,
       @required Set<RewardDto> rewards,
       @required Set<TagDto> tags,
       @required Set<CommentDto> comments,
@@ -88,7 +88,7 @@ mixin _$ExperienceDto {
   @ServerTimestampConverter()
   DateTime get modificationDate;
 
-  Set<ObjectiveDto> get objectives;
+  List<ObjectiveDto> get objectives;
 
   Set<RewardDto> get rewards;
 
@@ -108,6 +108,7 @@ mixin _$ExperienceDto {
 /// @nodoc
 abstract class $ExperienceDtoCopyWith<$Res> {
   factory $ExperienceDtoCopyWith(ExperienceDto value, $Res Function(ExperienceDto) then) = _$ExperienceDtoCopyWithImpl<$Res>;
+
   $Res call(
       {String id,
       String title,
@@ -120,7 +121,7 @@ abstract class $ExperienceDtoCopyWith<$Res> {
       int difficulty,
       @ServerTimestampConverter() DateTime creationDate,
       @ServerTimestampConverter() DateTime modificationDate,
-      Set<ObjectiveDto> objectives,
+      List<ObjectiveDto> objectives,
       Set<RewardDto> rewards,
       Set<TagDto> tags,
       Set<CommentDto> comments,
@@ -173,7 +174,7 @@ class _$ExperienceDtoCopyWithImpl<$Res> implements $ExperienceDtoCopyWith<$Res> 
       difficulty: difficulty == freezed ? _value.difficulty : difficulty as int,
       creationDate: creationDate == freezed ? _value.creationDate : creationDate as DateTime,
       modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as DateTime,
-      objectives: objectives == freezed ? _value.objectives : objectives as Set<ObjectiveDto>,
+      objectives: objectives == freezed ? _value.objectives : objectives as List<ObjectiveDto>,
       rewards: rewards == freezed ? _value.rewards : rewards as Set<RewardDto>,
       tags: tags == freezed ? _value.tags : tags as Set<TagDto>,
       comments: comments == freezed ? _value.comments : comments as Set<CommentDto>,
@@ -230,7 +231,7 @@ abstract class _$ExperienceDtoCopyWith<$Res> implements $ExperienceDtoCopyWith<$
       int difficulty,
       @ServerTimestampConverter() DateTime creationDate,
       @ServerTimestampConverter() DateTime modificationDate,
-      Set<ObjectiveDto> objectives,
+      List<ObjectiveDto> objectives,
       Set<RewardDto> rewards,
       Set<TagDto> tags,
       Set<CommentDto> comments,
@@ -284,7 +285,7 @@ class __$ExperienceDtoCopyWithImpl<$Res> extends _$ExperienceDtoCopyWithImpl<$Re
       difficulty: difficulty == freezed ? _value.difficulty : difficulty as int,
       creationDate: creationDate == freezed ? _value.creationDate : creationDate as DateTime,
       modificationDate: modificationDate == freezed ? _value.modificationDate : modificationDate as DateTime,
-      objectives: objectives == freezed ? _value.objectives : objectives as Set<ObjectiveDto>,
+      objectives: objectives == freezed ? _value.objectives : objectives as List<ObjectiveDto>,
       rewards: rewards == freezed ? _value.rewards : rewards as Set<RewardDto>,
       tags: tags == freezed ? _value.tags : tags as Set<TagDto>,
       comments: comments == freezed ? _value.comments : comments as Set<CommentDto>,
@@ -362,7 +363,7 @@ class _$_ExperienceDto extends _ExperienceDto {
   @ServerTimestampConverter()
   final DateTime modificationDate;
   @override
-  final Set<ObjectiveDto> objectives;
+  final List<ObjectiveDto> objectives;
   @override
   final Set<RewardDto> rewards;
   @override
@@ -447,7 +448,7 @@ abstract class _ExperienceDto extends ExperienceDto {
       @required int difficulty,
       @required @ServerTimestampConverter() DateTime creationDate,
       @required @ServerTimestampConverter() DateTime modificationDate,
-      @required Set<ObjectiveDto> objectives,
+      @required List<ObjectiveDto> objectives,
       @required Set<RewardDto> rewards,
       @required Set<TagDto> tags,
       @required Set<CommentDto> comments,
@@ -458,12 +459,16 @@ abstract class _ExperienceDto extends ExperienceDto {
 
   @override
   String get id;
+
   @override
   String get title;
+
   @override
   String get description;
+
   @override
   Set<String> get imageURLs;
+
   @override
   CoordinatesDto get coordinates;
   @override
@@ -477,11 +482,14 @@ abstract class _ExperienceDto extends ExperienceDto {
   @override
   @ServerTimestampConverter()
   DateTime get creationDate;
+
   @override
   @ServerTimestampConverter()
   DateTime get modificationDate;
+
   @override
-  Set<ObjectiveDto> get objectives;
+  List<ObjectiveDto> get objectives;
+
   @override
   Set<RewardDto> get rewards;
   @override

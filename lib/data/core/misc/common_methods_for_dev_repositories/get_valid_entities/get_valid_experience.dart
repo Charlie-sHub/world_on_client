@@ -42,8 +42,8 @@ Experience getValidExperience() {
     difficulty: Difficulty(2),
     creationDate: PastDate(DateTime.now().subtract(const Duration(days: 100))),
     modificationDate: PastDate(DateTime.now()),
-    objectives: ObjectiveSet(
-      KtSet.of(
+    objectives: ObjectiveList(
+      KtList.of(
         getValidObjective(),
         getValidObjective().copyWith(
           id: UniqueId(),

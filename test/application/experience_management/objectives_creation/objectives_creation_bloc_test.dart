@@ -29,7 +29,7 @@ void main() {
   final _objective9 = _objective.copyWith(id: UniqueId());
   final _objective10 = _objective.copyWith(id: UniqueId());
   final _objective11 = _objective.copyWith(id: UniqueId());
-  final _objectiveSet = KtSet.of(_objective);
+  final _objectiveList = KtList.of(_objective);
   blocTest(
     TestDescription.shouldEmitInitial,
     build: () => getIt<ObjectivesCreationBloc>(),
@@ -39,7 +39,7 @@ void main() {
     "${TestDescription.shouldEmitUpdated} with the added objective",
     build: () => getIt<ObjectivesCreationBloc>(),
     act: (bloc) async => bloc.add(ObjectivesCreationEvent.addedObjective(_objective)),
-    expect: [ObjectivesCreationState.initial().copyWith(objectivesCreated: _objectiveSet)],
+    expect: [ObjectivesCreationState.initial().copyWith(objectivesCreated: _objectiveList)],
   );
   blocTest(
     "${TestDescription.shouldEmitUpdated} with the added and then removed objective",
@@ -49,12 +49,12 @@ void main() {
       bloc.add(ObjectivesCreationEvent.removedObjective(_objective));
     },
     expect: [
-      ObjectivesCreationState.initial().copyWith(objectivesCreated: _objectiveSet),
+      ObjectivesCreationState.initial().copyWith(objectivesCreated: _objectiveList),
       ObjectivesCreationState.initial(),
     ],
   );
   blocTest(
-    "${"${TestDescription.shouldEmitUpdated} with the added rewards until it reaches "}${ObjectiveSet.maxLength}",
+    "${"${TestDescription.shouldEmitUpdated} with the added rewards until it reaches "}${ObjectiveList.maxLength}",
     build: () => getIt<ObjectivesCreationBloc>(),
     act: (bloc) async {
       bloc.add(ObjectivesCreationEvent.addedObjective(_objective));
@@ -70,22 +70,22 @@ void main() {
       bloc.add(ObjectivesCreationEvent.addedObjective(_objective11));
     },
     expect: [
-      ObjectivesCreationState.initial().copyWith(objectivesCreated: _objectiveSet),
+      ObjectivesCreationState.initial().copyWith(objectivesCreated: _objectiveList),
       ObjectivesCreationState.initial().copyWith(
-        objectivesCreated: KtSet.of(
+        objectivesCreated: KtList.of(
           _objective,
           _objective2,
         ),
       ),
       ObjectivesCreationState.initial().copyWith(
-        objectivesCreated: KtSet.of(
+        objectivesCreated: KtList.of(
           _objective,
           _objective2,
           _objective3,
         ),
       ),
       ObjectivesCreationState.initial().copyWith(
-        objectivesCreated: KtSet.of(
+        objectivesCreated: KtList.of(
           _objective,
           _objective2,
           _objective3,
@@ -93,7 +93,7 @@ void main() {
         ),
       ),
       ObjectivesCreationState.initial().copyWith(
-        objectivesCreated: KtSet.of(
+        objectivesCreated: KtList.of(
           _objective,
           _objective2,
           _objective3,
@@ -102,7 +102,7 @@ void main() {
         ),
       ),
       ObjectivesCreationState.initial().copyWith(
-        objectivesCreated: KtSet.of(
+        objectivesCreated: KtList.of(
           _objective,
           _objective2,
           _objective3,
@@ -112,7 +112,7 @@ void main() {
         ),
       ),
       ObjectivesCreationState.initial().copyWith(
-        objectivesCreated: KtSet.of(
+        objectivesCreated: KtList.of(
           _objective,
           _objective2,
           _objective3,
@@ -123,7 +123,7 @@ void main() {
         ),
       ),
       ObjectivesCreationState.initial().copyWith(
-        objectivesCreated: KtSet.of(
+        objectivesCreated: KtList.of(
           _objective,
           _objective2,
           _objective3,
@@ -135,7 +135,7 @@ void main() {
         ),
       ),
       ObjectivesCreationState.initial().copyWith(
-        objectivesCreated: KtSet.of(
+        objectivesCreated: KtList.of(
           _objective,
           _objective2,
           _objective3,
@@ -148,7 +148,7 @@ void main() {
         ),
       ),
       ObjectivesCreationState.initial().copyWith(
-        objectivesCreated: KtSet.of(
+        objectivesCreated: KtList.of(
           _objective,
           _objective2,
           _objective3,

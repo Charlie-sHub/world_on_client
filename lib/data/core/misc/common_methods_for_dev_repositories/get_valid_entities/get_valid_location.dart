@@ -34,7 +34,7 @@ But the main theme of the works of Joyce is the collapse, and some would say the
           id: UniqueId(),
         ),
         coordinates: getValidCoordinates(),
-        objectives: ObjectiveSet(KtSet.of(getValidObjective())),
+        objectives: ObjectiveList(KtList.of(getValidObjective())),
         rewards: RewardSet(KtSet.of(getValidReward())),
         tags: TagSet(KtSet.of(getValidTag())),
       ),

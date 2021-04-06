@@ -3,21 +3,21 @@ import 'package:kt_dart/kt.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/failures/value_failure.dart';
 import 'package:worldon/domain/core/validation/objects/value_object.dart';
-import 'package:worldon/domain/core/validation/validators/validate_max_set_length.dart';
-import 'package:worldon/domain/core/validation/validators/validate_not_empty_set.dart';
+import 'package:worldon/domain/core/validation/validators/validate_max_list_length.dart';
+import 'package:worldon/domain/core/validation/validators/validate_not_empty_list.dart';
 
-class ObjectiveSet extends ValueObject<KtSet<Objective>> {
+class ObjectiveList extends ValueObject<KtList<Objective>> {
   @override
-  final Either<ValueFailure<KtSet<Objective>>, KtSet<Objective>> value;
+  final Either<ValueFailure<KtList<Objective>>, KtList<Objective>> value;
 
   // Just a value that made sense at the time
-  static const maxLength = 10;
+  static const maxLength = 20;
 
-  factory ObjectiveSet(KtSet<Objective> input) {
+  factory ObjectiveList(KtList<Objective> input) {
     assert(input != null);
-    return ObjectiveSet._(
-      validateNotEmptySet(input).flatMap(
-        (input) => validateMaxSetLength(
+    return ObjectiveList._(
+      validateNotEmptyList(input).flatMap(
+        (input) => validateMaxListLength(
           input: input,
           maxLength: maxLength,
         ),
@@ -25,7 +25,7 @@ class ObjectiveSet extends ValueObject<KtSet<Objective>> {
     );
   }
 
-  const ObjectiveSet._(this.value);
+  const ObjectiveList._(this.value);
 
   @override
   Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
@@ -50,7 +50,7 @@ class ObjectiveSet extends ValueObject<KtSet<Objective>> {
   }
 
   int get length {
-    return value.getOrElse(() => const KtSet<Objective>.empty()).size;
+    return value.getOrElse(() => const KtList<Objective>.empty()).size;
   }
 
   bool get isFull {
@@ -58,11 +58,11 @@ class ObjectiveSet extends ValueObject<KtSet<Objective>> {
   }
 
   bool get isEmpty {
-    return value.getOrElse(() => const KtSet<Objective>.empty()).isEmpty();
+    return value.getOrElse(() => const KtList<Objective>.empty()).isEmpty();
   }
 
   bool get isNotEmpty {
-    return value.getOrElse(() => const KtSet<Objective>.empty()).isNotEmpty();
+    return value.getOrElse(() => const KtList<Objective>.empty()).isNotEmpty();
   }
 
   @override

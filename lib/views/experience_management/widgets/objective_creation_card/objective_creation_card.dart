@@ -60,7 +60,7 @@ class ObjectiveCreationCard extends HookWidget {
                   shrinkWrap: true,
                   physics: const ClampingScrollPhysics(),
                   itemBuilder: (context, index) {
-                    final _objective = state.objectivesCreated.asSet().elementAt(index);
+                    final _objective = state.objectivesCreated.get(index);
                     if (_objective.isValid) {
                       return CreatedObjectiveCard(
                         objective: _objective,
@@ -116,7 +116,7 @@ class ObjectiveCreationCard extends HookWidget {
                                         }
                                       },
                                     ),
-                                      if (context.read<ObjectiveFormBloc>().state.showErrorMessages && context.read<ObjectiveFormBloc>().state.objective.imageFile.isNone())
+                                    if (context.read<ObjectiveFormBloc>().state.showErrorMessages && context.read<ObjectiveFormBloc>().state.objective.imageFile.isNone())
                                       Text(
                                         S.of(context).pictureSelectionMessage,
                                         textAlign: TextAlign.center,

@@ -26,7 +26,7 @@ void main() {
         TestDescription.invalid,
         () async {
           // Arrange
-          final valueFailure = ValueFailure.setExceedsLength(
+          final valueFailure = ValueFailure.collectionExceedsLength(
             failedValue: invalidSet,
             maxLength: maxLength,
           );

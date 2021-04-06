@@ -60,7 +60,7 @@ void main() {
       100,
     ),
   ];
-  final objectives = KtSet.of(
+  final objectives = KtList.of(
     Objective(
       id: UniqueId(),
       description: EntityDescription(description),
@@ -201,7 +201,7 @@ void main() {
         expect: [
           ExperienceManagementFormState.initial().copyWith(
             experience: Experience.empty().copyWith(
-              objectives: ObjectiveSet(objectives),
+              objectives: ObjectiveList(objectives),
             ),
           ),
         ],
@@ -327,7 +327,7 @@ void main() {
                 longitude: Longitude(longitude),
               ),
               difficulty: Difficulty(difficulty),
-              objectives: ObjectiveSet(objectives),
+              objectives: ObjectiveList(objectives),
             ),
           ),
           ExperienceManagementFormState.initial().copyWith(
@@ -341,7 +341,7 @@ void main() {
                 longitude: Longitude(longitude),
               ),
               difficulty: Difficulty(difficulty),
-              objectives: ObjectiveSet(objectives),
+              objectives: ObjectiveList(objectives),
               rewards: RewardSet(rewardSet),
             ),
           ),
@@ -356,7 +356,7 @@ void main() {
                 longitude: Longitude(longitude),
               ),
               difficulty: Difficulty(difficulty),
-              objectives: ObjectiveSet(objectives),
+              objectives: ObjectiveList(objectives),
               rewards: RewardSet(rewardSet),
               tags: TagSet(tags),
             ),
@@ -372,7 +372,7 @@ void main() {
                 longitude: Longitude(longitude),
               ),
               difficulty: Difficulty(difficulty),
-              objectives: ObjectiveSet(objectives),
+              objectives: ObjectiveList(objectives),
               rewards: RewardSet(rewardSet),
               tags: TagSet(tags),
             ),
@@ -389,7 +389,7 @@ void main() {
                 longitude: Longitude(longitude),
               ),
               difficulty: Difficulty(difficulty),
-              objectives: ObjectiveSet(objectives),
+              objectives: ObjectiveList(objectives),
               rewards: RewardSet(rewardSet),
               tags: TagSet(tags),
             ),
@@ -531,7 +531,7 @@ void main() {
                 longitude: Longitude(longitude),
               ),
               difficulty: Difficulty(difficulty),
-              objectives: ObjectiveSet(objectives),
+              objectives: ObjectiveList(objectives),
             ),
           ),
           ExperienceManagementFormState.initial().copyWith(
@@ -545,7 +545,7 @@ void main() {
                 longitude: Longitude(longitude),
               ),
               difficulty: Difficulty(difficulty),
-              objectives: ObjectiveSet(objectives),
+              objectives: ObjectiveList(objectives),
               rewards: RewardSet(rewardSet),
             ),
           ),
@@ -560,7 +560,7 @@ void main() {
                 longitude: Longitude(longitude),
               ),
               difficulty: Difficulty(difficulty),
-              objectives: ObjectiveSet(objectives),
+              objectives: ObjectiveList(objectives),
               rewards: RewardSet(rewardSet),
               tags: TagSet(tags),
             ),
@@ -576,7 +576,7 @@ void main() {
                 longitude: Longitude(longitude),
               ),
               difficulty: Difficulty(difficulty),
-              objectives: ObjectiveSet(objectives),
+              objectives: ObjectiveList(objectives),
               rewards: RewardSet(rewardSet),
               tags: TagSet(tags),
             ),
@@ -593,7 +593,7 @@ void main() {
                 longitude: Longitude(longitude),
               ),
               difficulty: Difficulty(difficulty),
-              objectives: ObjectiveSet(objectives),
+              objectives: ObjectiveList(objectives),
               rewards: RewardSet(rewardSet),
               tags: TagSet(tags),
             ),

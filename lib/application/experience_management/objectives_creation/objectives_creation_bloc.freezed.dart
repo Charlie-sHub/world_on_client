@@ -26,6 +26,14 @@ class _$ObjectivesCreationEventTearOff {
       objective,
     );
   }
+
+// ignore: unused_element
+  _ChangedPosition changedPosition(Objective objective, int index) {
+    return _ChangedPosition(
+      objective,
+      index,
+    );
+  }
 }
 
 /// @nodoc
@@ -40,22 +48,26 @@ mixin _$ObjectivesCreationEvent {
   TResult when<TResult extends Object>({
     @required TResult addedObjective(Objective objective),
     @required TResult removedObjective(Objective objective),
+    @required TResult changedPosition(Objective objective, int index),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult addedObjective(Objective objective),
     TResult removedObjective(Objective objective),
+    TResult changedPosition(Objective objective, int index),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult addedObjective(_AddedObjective value),
     @required TResult removedObjective(_RemovedObjective value),
+    @required TResult changedPosition(_ChangedPosition value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult addedObjective(_AddedObjective value),
     TResult removedObjective(_RemovedObjective value),
+    TResult changedPosition(_ChangedPosition value),
     @required TResult orElse(),
   });
 
@@ -172,9 +184,11 @@ class _$_AddedObjective implements _AddedObjective {
   TResult when<TResult extends Object>({
     @required TResult addedObjective(Objective objective),
     @required TResult removedObjective(Objective objective),
+    @required TResult changedPosition(Objective objective, int index),
   }) {
     assert(addedObjective != null);
     assert(removedObjective != null);
+    assert(changedPosition != null);
     return addedObjective(objective);
   }
 
@@ -183,6 +197,7 @@ class _$_AddedObjective implements _AddedObjective {
   TResult maybeWhen<TResult extends Object>({
     TResult addedObjective(Objective objective),
     TResult removedObjective(Objective objective),
+    TResult changedPosition(Objective objective, int index),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -197,9 +212,11 @@ class _$_AddedObjective implements _AddedObjective {
   TResult map<TResult extends Object>({
     @required TResult addedObjective(_AddedObjective value),
     @required TResult removedObjective(_RemovedObjective value),
+    @required TResult changedPosition(_ChangedPosition value),
   }) {
     assert(addedObjective != null);
     assert(removedObjective != null);
+    assert(changedPosition != null);
     return addedObjective(this);
   }
 
@@ -208,6 +225,7 @@ class _$_AddedObjective implements _AddedObjective {
   TResult maybeMap<TResult extends Object>({
     TResult addedObjective(_AddedObjective value),
     TResult removedObjective(_RemovedObjective value),
+    TResult changedPosition(_ChangedPosition value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -297,9 +315,11 @@ class _$_RemovedObjective implements _RemovedObjective {
   TResult when<TResult extends Object>({
     @required TResult addedObjective(Objective objective),
     @required TResult removedObjective(Objective objective),
+    @required TResult changedPosition(Objective objective, int index),
   }) {
     assert(addedObjective != null);
     assert(removedObjective != null);
+    assert(changedPosition != null);
     return removedObjective(objective);
   }
 
@@ -308,6 +328,7 @@ class _$_RemovedObjective implements _RemovedObjective {
   TResult maybeWhen<TResult extends Object>({
     TResult addedObjective(Objective objective),
     TResult removedObjective(Objective objective),
+    TResult changedPosition(Objective objective, int index),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -322,9 +343,11 @@ class _$_RemovedObjective implements _RemovedObjective {
   TResult map<TResult extends Object>({
     @required TResult addedObjective(_AddedObjective value),
     @required TResult removedObjective(_RemovedObjective value),
+    @required TResult changedPosition(_ChangedPosition value),
   }) {
     assert(addedObjective != null);
     assert(removedObjective != null);
+    assert(changedPosition != null);
     return removedObjective(this);
   }
 
@@ -333,6 +356,7 @@ class _$_RemovedObjective implements _RemovedObjective {
   TResult maybeMap<TResult extends Object>({
     TResult addedObjective(_AddedObjective value),
     TResult removedObjective(_RemovedObjective value),
+    TResult changedPosition(_ChangedPosition value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -348,9 +372,141 @@ abstract class _RemovedObjective implements ObjectivesCreationEvent {
 
   @override
   Objective get objective;
+
   @override
   @JsonKey(ignore: true)
   _$RemovedObjectiveCopyWith<_RemovedObjective> get copyWith;
+}
+
+/// @nodoc
+abstract class _$ChangedPositionCopyWith<$Res> implements $ObjectivesCreationEventCopyWith<$Res> {
+  factory _$ChangedPositionCopyWith(_ChangedPosition value, $Res Function(_ChangedPosition) then) = __$ChangedPositionCopyWithImpl<$Res>;
+
+  @override
+  $Res call({Objective objective, int index});
+
+  @override
+  $ObjectiveCopyWith<$Res> get objective;
+}
+
+/// @nodoc
+class __$ChangedPositionCopyWithImpl<$Res> extends _$ObjectivesCreationEventCopyWithImpl<$Res> implements _$ChangedPositionCopyWith<$Res> {
+  __$ChangedPositionCopyWithImpl(_ChangedPosition _value, $Res Function(_ChangedPosition) _then) : super(_value, (v) => _then(v as _ChangedPosition));
+
+  @override
+  _ChangedPosition get _value => super._value as _ChangedPosition;
+
+  @override
+  $Res call({
+    Object objective = freezed,
+    Object index = freezed,
+  }) {
+    return _then(_ChangedPosition(
+      objective == freezed ? _value.objective : objective as Objective,
+      index == freezed ? _value.index : index as int,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_ChangedPosition implements _ChangedPosition {
+  const _$_ChangedPosition(this.objective, this.index)
+      : assert(objective != null),
+        assert(index != null);
+
+  @override
+  final Objective objective;
+  @override
+  final int index;
+
+  @override
+  String toString() {
+    return 'ObjectivesCreationEvent.changedPosition(objective: $objective, index: $index)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ChangedPosition &&
+            (identical(other.objective, objective) || const DeepCollectionEquality().equals(other.objective, objective)) &&
+            (identical(other.index, index) || const DeepCollectionEquality().equals(other.index, index)));
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective) ^ const DeepCollectionEquality().hash(index);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ChangedPositionCopyWith<_ChangedPosition> get copyWith => __$ChangedPositionCopyWithImpl<_ChangedPosition>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult addedObjective(Objective objective),
+    @required TResult removedObjective(Objective objective),
+    @required TResult changedPosition(Objective objective, int index),
+  }) {
+    assert(addedObjective != null);
+    assert(removedObjective != null);
+    assert(changedPosition != null);
+    return changedPosition(objective, index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult addedObjective(Objective objective),
+    TResult removedObjective(Objective objective),
+    TResult changedPosition(Objective objective, int index),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (changedPosition != null) {
+      return changedPosition(objective, index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult addedObjective(_AddedObjective value),
+    @required TResult removedObjective(_RemovedObjective value),
+    @required TResult changedPosition(_ChangedPosition value),
+  }) {
+    assert(addedObjective != null);
+    assert(removedObjective != null);
+    assert(changedPosition != null);
+    return changedPosition(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult addedObjective(_AddedObjective value),
+    TResult removedObjective(_RemovedObjective value),
+    TResult changedPosition(_ChangedPosition value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (changedPosition != null) {
+      return changedPosition(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangedPosition implements ObjectivesCreationEvent {
+  const factory _ChangedPosition(Objective objective, int index) = _$_ChangedPosition;
+
+  @override
+  Objective get objective;
+
+  int get index;
+
+  @override
+  @JsonKey(ignore: true)
+  _$ChangedPositionCopyWith<_ChangedPosition> get copyWith;
 }
 
 /// @nodoc
@@ -358,8 +514,7 @@ class _$ObjectivesCreationStateTearOff {
   const _$ObjectivesCreationStateTearOff();
 
 // ignore: unused_element
-  _ObjectivesCreationState call(
-      {@required KtSet<Objective> objectivesCreated}) {
+  _ObjectivesCreationState call({@required KtList<Objective> objectivesCreated}) {
     return _ObjectivesCreationState(
       objectivesCreated: objectivesCreated,
     );
@@ -372,7 +527,7 @@ const $ObjectivesCreationState = _$ObjectivesCreationStateTearOff();
 
 /// @nodoc
 mixin _$ObjectivesCreationState {
-  KtSet<Objective> get objectivesCreated;
+  KtList<Objective> get objectivesCreated;
 
   @JsonKey(ignore: true)
   $ObjectivesCreationStateCopyWith<ObjectivesCreationState> get copyWith;
@@ -383,7 +538,8 @@ abstract class $ObjectivesCreationStateCopyWith<$Res> {
   factory $ObjectivesCreationStateCopyWith(ObjectivesCreationState value,
           $Res Function(ObjectivesCreationState) then) =
       _$ObjectivesCreationStateCopyWithImpl<$Res>;
-  $Res call({KtSet<Objective> objectivesCreated});
+
+  $Res call({KtList<Objective> objectivesCreated});
 }
 
 /// @nodoc
@@ -400,9 +556,7 @@ class _$ObjectivesCreationStateCopyWithImpl<$Res>
     Object objectivesCreated = freezed,
   }) {
     return _then(_value.copyWith(
-      objectivesCreated: objectivesCreated == freezed
-          ? _value.objectivesCreated
-          : objectivesCreated as KtSet<Objective>,
+      objectivesCreated: objectivesCreated == freezed ? _value.objectivesCreated : objectivesCreated as KtList<Objective>,
     ));
   }
 }
@@ -413,8 +567,9 @@ abstract class _$ObjectivesCreationStateCopyWith<$Res>
   factory _$ObjectivesCreationStateCopyWith(_ObjectivesCreationState value,
           $Res Function(_ObjectivesCreationState) then) =
       __$ObjectivesCreationStateCopyWithImpl<$Res>;
+
   @override
-  $Res call({KtSet<Objective> objectivesCreated});
+  $Res call({KtList<Objective> objectivesCreated});
 }
 
 /// @nodoc
@@ -434,20 +589,17 @@ class __$ObjectivesCreationStateCopyWithImpl<$Res>
     Object objectivesCreated = freezed,
   }) {
     return _then(_ObjectivesCreationState(
-      objectivesCreated: objectivesCreated == freezed
-          ? _value.objectivesCreated
-          : objectivesCreated as KtSet<Objective>,
+      objectivesCreated: objectivesCreated == freezed ? _value.objectivesCreated : objectivesCreated as KtList<Objective>,
     ));
   }
 }
 
 /// @nodoc
 class _$_ObjectivesCreationState implements _ObjectivesCreationState {
-  const _$_ObjectivesCreationState({@required this.objectivesCreated})
-      : assert(objectivesCreated != null);
+  const _$_ObjectivesCreationState({@required this.objectivesCreated}) : assert(objectivesCreated != null);
 
   @override
-  final KtSet<Objective> objectivesCreated;
+  final KtList<Objective> objectivesCreated;
 
   @override
   String toString() {
@@ -457,8 +609,7 @@ class _$_ObjectivesCreationState implements _ObjectivesCreationState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ObjectivesCreationState &&
-            (identical(other.objectivesCreated, objectivesCreated) ||
+        (other is _ObjectivesCreationState && (identical(other.objectivesCreated, objectivesCreated) ||
                 const DeepCollectionEquality()
                     .equals(other.objectivesCreated, objectivesCreated)));
   }
@@ -476,12 +627,11 @@ class _$_ObjectivesCreationState implements _ObjectivesCreationState {
 }
 
 abstract class _ObjectivesCreationState implements ObjectivesCreationState {
-  const factory _ObjectivesCreationState(
-          {@required KtSet<Objective> objectivesCreated}) =
-      _$_ObjectivesCreationState;
+  const factory _ObjectivesCreationState({@required KtList<Objective> objectivesCreated}) = _$_ObjectivesCreationState;
 
   @override
-  KtSet<Objective> get objectivesCreated;
+  KtList<Objective> get objectivesCreated;
+
   @override
   @JsonKey(ignore: true)
   _$ObjectivesCreationStateCopyWith<_ObjectivesCreationState> get copyWith;

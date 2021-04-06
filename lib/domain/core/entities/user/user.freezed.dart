@@ -124,6 +124,7 @@ mixin _$User {
 /// @nodoc
 abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) = _$UserCopyWithImpl<$Res>;
+
   $Res call(
       {UniqueId id,
       Name name,
@@ -248,6 +249,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
 /// @nodoc
 abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   factory _$UserCopyWith(_User value, $Res Function(_User) then) = __$UserCopyWithImpl<$Res>;
+
   @override
   $Res call(
       {UniqueId id,

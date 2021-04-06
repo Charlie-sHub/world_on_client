@@ -37,7 +37,7 @@ class ObjectivesTabView extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         itemCount: experience.objectives.getOrCrash().size,
         itemBuilder: (context, index) {
-          final _objective = experience.objectives.getOrCrash().asSet().elementAt(index);
+          final _objective = experience.objectives.getOrCrash().get(index);
           if (_objective.isValid) {
             return ObjectiveCard(
               objective: _objective,

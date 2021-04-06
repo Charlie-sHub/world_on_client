@@ -34,8 +34,10 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
 
   const factory ValueFailure.emptySet({@required T failedValue}) = EmptySet<T>;
 
-  const factory ValueFailure.setExceedsLength({
+  const factory ValueFailure.emptyList({@required T failedValue}) = EmptyList<T>;
+
+  const factory ValueFailure.collectionExceedsLength({
     @required T failedValue,
     @required int maxLength,
-  }) = SetExceedsLength<T>;
+  }) = CollectionExceedsLength<T>;
 }

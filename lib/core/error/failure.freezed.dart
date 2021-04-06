@@ -141,6 +141,7 @@ class _$FailureCopyWithImpl<T, $Res> implements $FailureCopyWith<T, $Res> {
 /// @nodoc
 abstract class _$AuthenticationDomainCopyWith<T, $Res> {
   factory _$AuthenticationDomainCopyWith(_AuthenticationDomain<T> value, $Res Function(_AuthenticationDomain<T>) then) = __$AuthenticationDomainCopyWithImpl<T, $Res>;
+
   $Res call({AuthenticationDomainFailure<T> authenticationDomainFailure});
 
   $AuthenticationDomainFailureCopyWith<T, $Res> get authenticationDomainFailure;
@@ -161,7 +162,7 @@ class __$AuthenticationDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl
       authenticationDomainFailure == freezed ? _value.authenticationDomainFailure : authenticationDomainFailure as AuthenticationDomainFailure<T>,
     ));
   }
-  
+
   @override
   $AuthenticationDomainFailureCopyWith<T, $Res> get authenticationDomainFailure {
     if (_value.authenticationDomainFailure == null) {
@@ -191,7 +192,7 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
         (other is _AuthenticationDomain<T> &&
             (identical(other.authenticationDomainFailure, authenticationDomainFailure) || const DeepCollectionEquality().equals(other.authenticationDomainFailure, authenticationDomainFailure)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(authenticationDomainFailure);
 
@@ -290,6 +291,7 @@ abstract class _AuthenticationDomain<T> implements Failure<T> {
   const factory _AuthenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure) = _$_AuthenticationDomain<T>;
 
   AuthenticationDomainFailure<T> get authenticationDomainFailure;
+
   @JsonKey(ignore: true)
   _$AuthenticationDomainCopyWith<T, _AuthenticationDomain<T>> get copyWith;
 }
@@ -297,6 +299,7 @@ abstract class _AuthenticationDomain<T> implements Failure<T> {
 /// @nodoc
 abstract class _$AuthenticationDataCopyWith<T, $Res> {
   factory _$AuthenticationDataCopyWith(_AuthenticationData<T> value, $Res Function(_AuthenticationData<T>) then) = __$AuthenticationDataCopyWithImpl<T, $Res>;
+
   $Res call({AuthenticationDataFailure<T> authenticationDataFailure});
 
   $AuthenticationDataFailureCopyWith<T, $Res> get authenticationDataFailure;
@@ -347,7 +350,7 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
         (other is _AuthenticationData<T> &&
             (identical(other.authenticationDataFailure, authenticationDataFailure) || const DeepCollectionEquality().equals(other.authenticationDataFailure, authenticationDataFailure)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(authenticationDataFailure);
 
@@ -446,6 +449,7 @@ abstract class _AuthenticationData<T> implements Failure<T> {
   const factory _AuthenticationData(AuthenticationDataFailure<T> authenticationDataFailure) = _$_AuthenticationData<T>;
 
   AuthenticationDataFailure<T> get authenticationDataFailure;
+
   @JsonKey(ignore: true)
   _$AuthenticationDataCopyWith<T, _AuthenticationData<T>> get copyWith;
 }
@@ -453,6 +457,7 @@ abstract class _AuthenticationData<T> implements Failure<T> {
 /// @nodoc
 abstract class _$CoreDomainCopyWith<T, $Res> {
   factory _$CoreDomainCopyWith(_CoreDomain<T> value, $Res Function(_CoreDomain<T>) then) = __$CoreDomainCopyWithImpl<T, $Res>;
+
   $Res call({CoreDomainFailure<T> coreDomainFailure});
 
   $CoreDomainFailureCopyWith<T, $Res> get coreDomainFailure;
@@ -502,7 +507,7 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
     return identical(this, other) ||
         (other is _CoreDomain<T> && (identical(other.coreDomainFailure, coreDomainFailure) || const DeepCollectionEquality().equals(other.coreDomainFailure, coreDomainFailure)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(coreDomainFailure);
 
@@ -601,6 +606,7 @@ abstract class _CoreDomain<T> implements Failure<T> {
   const factory _CoreDomain(CoreDomainFailure<T> coreDomainFailure) = _$_CoreDomain<T>;
 
   CoreDomainFailure<T> get coreDomainFailure;
+
   @JsonKey(ignore: true)
   _$CoreDomainCopyWith<T, _CoreDomain<T>> get copyWith;
 }
@@ -608,6 +614,7 @@ abstract class _CoreDomain<T> implements Failure<T> {
 /// @nodoc
 abstract class _$CoreAppllicationCopyWith<T, $Res> {
   factory _$CoreAppllicationCopyWith(_CoreAppllication<T> value, $Res Function(_CoreAppllication<T>) then) = __$CoreAppllicationCopyWithImpl<T, $Res>;
+
   $Res call({CoreApplicationFailure<T> coreApplicationFailure});
 
   $CoreApplicationFailureCopyWith<T, $Res> get coreApplicationFailure;
@@ -658,7 +665,7 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
         (other is _CoreAppllication<T> &&
             (identical(other.coreApplicationFailure, coreApplicationFailure) || const DeepCollectionEquality().equals(other.coreApplicationFailure, coreApplicationFailure)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(coreApplicationFailure);
 
@@ -757,6 +764,7 @@ abstract class _CoreAppllication<T> implements Failure<T> {
   const factory _CoreAppllication(CoreApplicationFailure<T> coreApplicationFailure) = _$_CoreAppllication<T>;
 
   CoreApplicationFailure<T> get coreApplicationFailure;
+
   @JsonKey(ignore: true)
   _$CoreAppllicationCopyWith<T, _CoreAppllication<T>> get copyWith;
 }
@@ -764,6 +772,7 @@ abstract class _CoreAppllication<T> implements Failure<T> {
 /// @nodoc
 abstract class _$CoreDataCopyWith<T, $Res> {
   factory _$CoreDataCopyWith(_CoreData<T> value, $Res Function(_CoreData<T>) then) = __$CoreDataCopyWithImpl<T, $Res>;
+
   $Res call({CoreDataFailure<T> coreDataFailure});
 
   $CoreDataFailureCopyWith<T, $Res> get coreDataFailure;
@@ -1230,6 +1239,7 @@ abstract class _Value<T> implements Failure<T> {
 /// @nodoc
 abstract class _$ProfileDomainCopyWith<T, $Res> {
   factory _$ProfileDomainCopyWith(_ProfileDomain<T> value, $Res Function(_ProfileDomain<T>) then) = __$ProfileDomainCopyWithImpl<T, $Res>;
+
   $Res call({ProfileDomainFailure<T> profileDomainFailure});
 
   $ProfileDomainFailureCopyWith<T, $Res> get profileDomainFailure;
@@ -1279,7 +1289,7 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
     return identical(this, other) ||
         (other is _ProfileDomain<T> && (identical(other.profileDomainFailure, profileDomainFailure) || const DeepCollectionEquality().equals(other.profileDomainFailure, profileDomainFailure)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(profileDomainFailure);
 
@@ -1378,6 +1388,7 @@ abstract class _ProfileDomain<T> implements Failure<T> {
   const factory _ProfileDomain(ProfileDomainFailure<T> profileDomainFailure) = _$_ProfileDomain<T>;
 
   ProfileDomainFailure<T> get profileDomainFailure;
+
   @JsonKey(ignore: true)
   _$ProfileDomainCopyWith<T, _ProfileDomain<T>> get copyWith;
 }
