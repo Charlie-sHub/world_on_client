@@ -13,24 +13,10 @@ class WorldOnAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: true,
-      leading: const Image(
-        height: 38,
-        width: 38,
-        image: AssetImage(Assets.worldOnLogo),
-      ),
-      title: Padding(
-        padding: const EdgeInsets.all(5),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const <Widget>[
-            Text(
-              "WORLD ON",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-              ),
-            ),
-          ],
+      leading: const Padding(
+        padding: EdgeInsets.all(5),
+        child: Image(
+          image: AssetImage(Assets.worldOnLogo),
         ),
       ),
       actions: const <Widget>[

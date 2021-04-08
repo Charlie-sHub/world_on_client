@@ -8,13 +8,12 @@ import 'package:worldon/application/search/search_tags_by_name_watcher/search_ta
 import 'package:worldon/application/search/tag_selector/tag_selector_bloc.dart';
 import 'package:worldon/application/tag_management/tag_management_form/tag_management_form_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
+import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widgets/misc/tag_addition_card/tag_search_header.dart';
 import 'package:worldon/views/core/widgets/misc/tag_addition_card/tag_selection.dart';
 import 'package:worldon/views/core/widgets/misc/tag_addition_card/tags_found_view.dart';
 import 'package:worldon/views/tag_management/widgets/tag_management_form.dart';
-
-import '../../../injection.dart';
 
 class TagAdditionCreationCard extends HookWidget {
   final Function tagChangeFunction;

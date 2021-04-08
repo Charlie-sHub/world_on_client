@@ -42,13 +42,6 @@ class _$ExperienceManagementFormEventTearOff {
   }
 
 // ignore: unused_element
-  _ImageDeleted imageDeleted(String imageURL) {
-    return _ImageDeleted(
-      imageURL,
-    );
-  }
-
-// ignore: unused_element
   _CoordinatesChanged coordinatesChanged({@required double latitude, @required double longitude}) {
     return _CoordinatesChanged(
       latitude: latitude,
@@ -102,7 +95,6 @@ mixin _$ExperienceManagementFormEvent {
     @required TResult titleChanged(String title),
     @required TResult descriptionChanged(String description),
     @required TResult imagesChanged(List<Asset> imageAssets),
-    @required TResult imageDeleted(String imageURL),
     @required TResult coordinatesChanged(double latitude, double longitude),
     @required TResult difficultyChanged(int difficulty),
     @required TResult objectivesChanged(KtList<Objective> objectives),
@@ -116,7 +108,6 @@ mixin _$ExperienceManagementFormEvent {
     TResult titleChanged(String title),
     TResult descriptionChanged(String description),
     TResult imagesChanged(List<Asset> imageAssets),
-    TResult imageDeleted(String imageURL),
     TResult coordinatesChanged(double latitude, double longitude),
     TResult difficultyChanged(int difficulty),
     TResult objectivesChanged(KtList<Objective> objectives),
@@ -131,7 +122,6 @@ mixin _$ExperienceManagementFormEvent {
     @required TResult titleChanged(_TitleChanged value),
     @required TResult descriptionChanged(_DescriptionChanged value),
     @required TResult imagesChanged(_ImagesChanged value),
-    @required TResult imageDeleted(_ImageDeleted value),
     @required TResult coordinatesChanged(_CoordinatesChanged value),
     @required TResult difficultyChanged(_DifficultyChanged value),
     @required TResult objectivesChanged(_ObjectivesChanged value),
@@ -145,7 +135,6 @@ mixin _$ExperienceManagementFormEvent {
     TResult titleChanged(_TitleChanged value),
     TResult descriptionChanged(_DescriptionChanged value),
     TResult imagesChanged(_ImagesChanged value),
-    TResult imageDeleted(_ImageDeleted value),
     TResult coordinatesChanged(_CoordinatesChanged value),
     TResult difficultyChanged(_DifficultyChanged value),
     TResult objectivesChanged(_ObjectivesChanged value),
@@ -244,7 +233,6 @@ class _$_Initialized implements _Initialized {
     @required TResult titleChanged(String title),
     @required TResult descriptionChanged(String description),
     @required TResult imagesChanged(List<Asset> imageAssets),
-    @required TResult imageDeleted(String imageURL),
     @required TResult coordinatesChanged(double latitude, double longitude),
     @required TResult difficultyChanged(int difficulty),
     @required TResult objectivesChanged(KtList<Objective> objectives),
@@ -256,7 +244,6 @@ class _$_Initialized implements _Initialized {
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(imagesChanged != null);
-    assert(imageDeleted != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -273,7 +260,6 @@ class _$_Initialized implements _Initialized {
     TResult titleChanged(String title),
     TResult descriptionChanged(String description),
     TResult imagesChanged(List<Asset> imageAssets),
-    TResult imageDeleted(String imageURL),
     TResult coordinatesChanged(double latitude, double longitude),
     TResult difficultyChanged(int difficulty),
     TResult objectivesChanged(KtList<Objective> objectives),
@@ -296,7 +282,6 @@ class _$_Initialized implements _Initialized {
     @required TResult titleChanged(_TitleChanged value),
     @required TResult descriptionChanged(_DescriptionChanged value),
     @required TResult imagesChanged(_ImagesChanged value),
-    @required TResult imageDeleted(_ImageDeleted value),
     @required TResult coordinatesChanged(_CoordinatesChanged value),
     @required TResult difficultyChanged(_DifficultyChanged value),
     @required TResult objectivesChanged(_ObjectivesChanged value),
@@ -308,7 +293,6 @@ class _$_Initialized implements _Initialized {
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(imagesChanged != null);
-    assert(imageDeleted != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -325,7 +309,6 @@ class _$_Initialized implements _Initialized {
     TResult titleChanged(_TitleChanged value),
     TResult descriptionChanged(_DescriptionChanged value),
     TResult imagesChanged(_ImagesChanged value),
-    TResult imageDeleted(_ImageDeleted value),
     TResult coordinatesChanged(_CoordinatesChanged value),
     TResult difficultyChanged(_DifficultyChanged value),
     TResult objectivesChanged(_ObjectivesChanged value),
@@ -416,7 +399,6 @@ class _$_TitleChanged implements _TitleChanged {
     @required TResult titleChanged(String title),
     @required TResult descriptionChanged(String description),
     @required TResult imagesChanged(List<Asset> imageAssets),
-    @required TResult imageDeleted(String imageURL),
     @required TResult coordinatesChanged(double latitude, double longitude),
     @required TResult difficultyChanged(int difficulty),
     @required TResult objectivesChanged(KtList<Objective> objectives),
@@ -428,7 +410,6 @@ class _$_TitleChanged implements _TitleChanged {
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(imagesChanged != null);
-    assert(imageDeleted != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -445,7 +426,6 @@ class _$_TitleChanged implements _TitleChanged {
     TResult titleChanged(String title),
     TResult descriptionChanged(String description),
     TResult imagesChanged(List<Asset> imageAssets),
-    TResult imageDeleted(String imageURL),
     TResult coordinatesChanged(double latitude, double longitude),
     TResult difficultyChanged(int difficulty),
     TResult objectivesChanged(KtList<Objective> objectives),
@@ -468,7 +448,6 @@ class _$_TitleChanged implements _TitleChanged {
     @required TResult titleChanged(_TitleChanged value),
     @required TResult descriptionChanged(_DescriptionChanged value),
     @required TResult imagesChanged(_ImagesChanged value),
-    @required TResult imageDeleted(_ImageDeleted value),
     @required TResult coordinatesChanged(_CoordinatesChanged value),
     @required TResult difficultyChanged(_DifficultyChanged value),
     @required TResult objectivesChanged(_ObjectivesChanged value),
@@ -480,7 +459,6 @@ class _$_TitleChanged implements _TitleChanged {
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(imagesChanged != null);
-    assert(imageDeleted != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -497,7 +475,6 @@ class _$_TitleChanged implements _TitleChanged {
     TResult titleChanged(_TitleChanged value),
     TResult descriptionChanged(_DescriptionChanged value),
     TResult imagesChanged(_ImagesChanged value),
-    TResult imageDeleted(_ImageDeleted value),
     TResult coordinatesChanged(_CoordinatesChanged value),
     TResult difficultyChanged(_DifficultyChanged value),
     TResult objectivesChanged(_ObjectivesChanged value),
@@ -588,7 +565,6 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     @required TResult titleChanged(String title),
     @required TResult descriptionChanged(String description),
     @required TResult imagesChanged(List<Asset> imageAssets),
-    @required TResult imageDeleted(String imageURL),
     @required TResult coordinatesChanged(double latitude, double longitude),
     @required TResult difficultyChanged(int difficulty),
     @required TResult objectivesChanged(KtList<Objective> objectives),
@@ -600,7 +576,6 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(imagesChanged != null);
-    assert(imageDeleted != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -617,7 +592,6 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     TResult titleChanged(String title),
     TResult descriptionChanged(String description),
     TResult imagesChanged(List<Asset> imageAssets),
-    TResult imageDeleted(String imageURL),
     TResult coordinatesChanged(double latitude, double longitude),
     TResult difficultyChanged(int difficulty),
     TResult objectivesChanged(KtList<Objective> objectives),
@@ -640,7 +614,6 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     @required TResult titleChanged(_TitleChanged value),
     @required TResult descriptionChanged(_DescriptionChanged value),
     @required TResult imagesChanged(_ImagesChanged value),
-    @required TResult imageDeleted(_ImageDeleted value),
     @required TResult coordinatesChanged(_CoordinatesChanged value),
     @required TResult difficultyChanged(_DifficultyChanged value),
     @required TResult objectivesChanged(_ObjectivesChanged value),
@@ -652,7 +625,6 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(imagesChanged != null);
-    assert(imageDeleted != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -669,7 +641,6 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     TResult titleChanged(_TitleChanged value),
     TResult descriptionChanged(_DescriptionChanged value),
     TResult imagesChanged(_ImagesChanged value),
-    TResult imageDeleted(_ImageDeleted value),
     TResult coordinatesChanged(_CoordinatesChanged value),
     TResult difficultyChanged(_DifficultyChanged value),
     TResult objectivesChanged(_ObjectivesChanged value),
@@ -760,7 +731,6 @@ class _$_ImagesChanged implements _ImagesChanged {
     @required TResult titleChanged(String title),
     @required TResult descriptionChanged(String description),
     @required TResult imagesChanged(List<Asset> imageAssets),
-    @required TResult imageDeleted(String imageURL),
     @required TResult coordinatesChanged(double latitude, double longitude),
     @required TResult difficultyChanged(int difficulty),
     @required TResult objectivesChanged(KtList<Objective> objectives),
@@ -772,7 +742,6 @@ class _$_ImagesChanged implements _ImagesChanged {
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(imagesChanged != null);
-    assert(imageDeleted != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -789,7 +758,6 @@ class _$_ImagesChanged implements _ImagesChanged {
     TResult titleChanged(String title),
     TResult descriptionChanged(String description),
     TResult imagesChanged(List<Asset> imageAssets),
-    TResult imageDeleted(String imageURL),
     TResult coordinatesChanged(double latitude, double longitude),
     TResult difficultyChanged(int difficulty),
     TResult objectivesChanged(KtList<Objective> objectives),
@@ -812,7 +780,6 @@ class _$_ImagesChanged implements _ImagesChanged {
     @required TResult titleChanged(_TitleChanged value),
     @required TResult descriptionChanged(_DescriptionChanged value),
     @required TResult imagesChanged(_ImagesChanged value),
-    @required TResult imageDeleted(_ImageDeleted value),
     @required TResult coordinatesChanged(_CoordinatesChanged value),
     @required TResult difficultyChanged(_DifficultyChanged value),
     @required TResult objectivesChanged(_ObjectivesChanged value),
@@ -824,7 +791,6 @@ class _$_ImagesChanged implements _ImagesChanged {
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(imagesChanged != null);
-    assert(imageDeleted != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -841,7 +807,6 @@ class _$_ImagesChanged implements _ImagesChanged {
     TResult titleChanged(_TitleChanged value),
     TResult descriptionChanged(_DescriptionChanged value),
     TResult imagesChanged(_ImagesChanged value),
-    TResult imageDeleted(_ImageDeleted value),
     TResult coordinatesChanged(_CoordinatesChanged value),
     TResult difficultyChanged(_DifficultyChanged value),
     TResult objectivesChanged(_ObjectivesChanged value),
@@ -862,171 +827,8 @@ abstract class _ImagesChanged implements ExperienceManagementFormEvent {
   const factory _ImagesChanged(List<Asset> imageAssets) = _$_ImagesChanged;
 
   List<Asset> get imageAssets;
-
   @JsonKey(ignore: true)
   _$ImagesChangedCopyWith<_ImagesChanged> get copyWith;
-}
-
-/// @nodoc
-abstract class _$ImageDeletedCopyWith<$Res> {
-  factory _$ImageDeletedCopyWith(_ImageDeleted value, $Res Function(_ImageDeleted) then) = __$ImageDeletedCopyWithImpl<$Res>;
-
-  $Res call({String imageURL});
-}
-
-/// @nodoc
-class __$ImageDeletedCopyWithImpl<$Res> extends _$ExperienceManagementFormEventCopyWithImpl<$Res> implements _$ImageDeletedCopyWith<$Res> {
-  __$ImageDeletedCopyWithImpl(_ImageDeleted _value, $Res Function(_ImageDeleted) _then) : super(_value, (v) => _then(v as _ImageDeleted));
-
-  @override
-  _ImageDeleted get _value => super._value as _ImageDeleted;
-
-  @override
-  $Res call({
-    Object imageURL = freezed,
-  }) {
-    return _then(_ImageDeleted(
-      imageURL == freezed ? _value.imageURL : imageURL as String,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_ImageDeleted implements _ImageDeleted {
-  const _$_ImageDeleted(this.imageURL) : assert(imageURL != null);
-
-  @override
-  final String imageURL;
-
-  @override
-  String toString() {
-    return 'ExperienceManagementFormEvent.imageDeleted(imageURL: $imageURL)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ImageDeleted && (identical(other.imageURL, imageURL) || const DeepCollectionEquality().equals(other.imageURL, imageURL)));
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(imageURL);
-
-  @JsonKey(ignore: true)
-  @override
-  _$ImageDeletedCopyWith<_ImageDeleted> get copyWith => __$ImageDeletedCopyWithImpl<_ImageDeleted>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initialized(Option<Experience> experienceOption),
-    @required TResult titleChanged(String title),
-    @required TResult descriptionChanged(String description),
-    @required TResult imagesChanged(List<Asset> imageAssets),
-    @required TResult imageDeleted(String imageURL),
-    @required TResult coordinatesChanged(double latitude, double longitude),
-    @required TResult difficultyChanged(int difficulty),
-    @required TResult objectivesChanged(KtList<Objective> objectives),
-    @required TResult rewardsChanged(KtSet<Reward> rewards),
-    @required TResult tagsChanged(KtSet<Tag> tags),
-    @required TResult submitted(),
-  }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(imagesChanged != null);
-    assert(imageDeleted != null);
-    assert(coordinatesChanged != null);
-    assert(difficultyChanged != null);
-    assert(objectivesChanged != null);
-    assert(rewardsChanged != null);
-    assert(tagsChanged != null);
-    assert(submitted != null);
-    return imageDeleted(imageURL);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initialized(Option<Experience> experienceOption),
-    TResult titleChanged(String title),
-    TResult descriptionChanged(String description),
-    TResult imagesChanged(List<Asset> imageAssets),
-    TResult imageDeleted(String imageURL),
-    TResult coordinatesChanged(double latitude, double longitude),
-    TResult difficultyChanged(int difficulty),
-    TResult objectivesChanged(KtList<Objective> objectives),
-    TResult rewardsChanged(KtSet<Reward> rewards),
-    TResult tagsChanged(KtSet<Tag> tags),
-    TResult submitted(),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (imageDeleted != null) {
-      return imageDeleted(imageURL);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initialized(_Initialized value),
-    @required TResult titleChanged(_TitleChanged value),
-    @required TResult descriptionChanged(_DescriptionChanged value),
-    @required TResult imagesChanged(_ImagesChanged value),
-    @required TResult imageDeleted(_ImageDeleted value),
-    @required TResult coordinatesChanged(_CoordinatesChanged value),
-    @required TResult difficultyChanged(_DifficultyChanged value),
-    @required TResult objectivesChanged(_ObjectivesChanged value),
-    @required TResult rewardsChanged(_RewardsChanged value),
-    @required TResult tagsChanged(_TagsChanged value),
-    @required TResult submitted(_Submitted value),
-  }) {
-    assert(initialized != null);
-    assert(titleChanged != null);
-    assert(descriptionChanged != null);
-    assert(imagesChanged != null);
-    assert(imageDeleted != null);
-    assert(coordinatesChanged != null);
-    assert(difficultyChanged != null);
-    assert(objectivesChanged != null);
-    assert(rewardsChanged != null);
-    assert(tagsChanged != null);
-    assert(submitted != null);
-    return imageDeleted(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initialized(_Initialized value),
-    TResult titleChanged(_TitleChanged value),
-    TResult descriptionChanged(_DescriptionChanged value),
-    TResult imagesChanged(_ImagesChanged value),
-    TResult imageDeleted(_ImageDeleted value),
-    TResult coordinatesChanged(_CoordinatesChanged value),
-    TResult difficultyChanged(_DifficultyChanged value),
-    TResult objectivesChanged(_ObjectivesChanged value),
-    TResult rewardsChanged(_RewardsChanged value),
-    TResult tagsChanged(_TagsChanged value),
-    TResult submitted(_Submitted value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (imageDeleted != null) {
-      return imageDeleted(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ImageDeleted implements ExperienceManagementFormEvent {
-  const factory _ImageDeleted(String imageURL) = _$_ImageDeleted;
-
-  String get imageURL;
-
-  @JsonKey(ignore: true)
-  _$ImageDeletedCopyWith<_ImageDeleted> get copyWith;
 }
 
 /// @nodoc
@@ -1106,7 +908,6 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
     @required TResult titleChanged(String title),
     @required TResult descriptionChanged(String description),
     @required TResult imagesChanged(List<Asset> imageAssets),
-    @required TResult imageDeleted(String imageURL),
     @required TResult coordinatesChanged(double latitude, double longitude),
     @required TResult difficultyChanged(int difficulty),
     @required TResult objectivesChanged(KtList<Objective> objectives),
@@ -1118,7 +919,6 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(imagesChanged != null);
-    assert(imageDeleted != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -1135,7 +935,6 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
     TResult titleChanged(String title),
     TResult descriptionChanged(String description),
     TResult imagesChanged(List<Asset> imageAssets),
-    TResult imageDeleted(String imageURL),
     TResult coordinatesChanged(double latitude, double longitude),
     TResult difficultyChanged(int difficulty),
     TResult objectivesChanged(KtList<Objective> objectives),
@@ -1158,7 +957,6 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
     @required TResult titleChanged(_TitleChanged value),
     @required TResult descriptionChanged(_DescriptionChanged value),
     @required TResult imagesChanged(_ImagesChanged value),
-    @required TResult imageDeleted(_ImageDeleted value),
     @required TResult coordinatesChanged(_CoordinatesChanged value),
     @required TResult difficultyChanged(_DifficultyChanged value),
     @required TResult objectivesChanged(_ObjectivesChanged value),
@@ -1170,7 +968,6 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(imagesChanged != null);
-    assert(imageDeleted != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -1187,7 +984,6 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
     TResult titleChanged(_TitleChanged value),
     TResult descriptionChanged(_DescriptionChanged value),
     TResult imagesChanged(_ImagesChanged value),
-    TResult imageDeleted(_ImageDeleted value),
     TResult coordinatesChanged(_CoordinatesChanged value),
     TResult difficultyChanged(_DifficultyChanged value),
     TResult objectivesChanged(_ObjectivesChanged value),
@@ -1281,7 +1077,6 @@ class _$_DifficultyChanged implements _DifficultyChanged {
     @required TResult titleChanged(String title),
     @required TResult descriptionChanged(String description),
     @required TResult imagesChanged(List<Asset> imageAssets),
-    @required TResult imageDeleted(String imageURL),
     @required TResult coordinatesChanged(double latitude, double longitude),
     @required TResult difficultyChanged(int difficulty),
     @required TResult objectivesChanged(KtList<Objective> objectives),
@@ -1293,7 +1088,6 @@ class _$_DifficultyChanged implements _DifficultyChanged {
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(imagesChanged != null);
-    assert(imageDeleted != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -1310,7 +1104,6 @@ class _$_DifficultyChanged implements _DifficultyChanged {
     TResult titleChanged(String title),
     TResult descriptionChanged(String description),
     TResult imagesChanged(List<Asset> imageAssets),
-    TResult imageDeleted(String imageURL),
     TResult coordinatesChanged(double latitude, double longitude),
     TResult difficultyChanged(int difficulty),
     TResult objectivesChanged(KtList<Objective> objectives),
@@ -1333,7 +1126,6 @@ class _$_DifficultyChanged implements _DifficultyChanged {
     @required TResult titleChanged(_TitleChanged value),
     @required TResult descriptionChanged(_DescriptionChanged value),
     @required TResult imagesChanged(_ImagesChanged value),
-    @required TResult imageDeleted(_ImageDeleted value),
     @required TResult coordinatesChanged(_CoordinatesChanged value),
     @required TResult difficultyChanged(_DifficultyChanged value),
     @required TResult objectivesChanged(_ObjectivesChanged value),
@@ -1345,7 +1137,6 @@ class _$_DifficultyChanged implements _DifficultyChanged {
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(imagesChanged != null);
-    assert(imageDeleted != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -1362,7 +1153,6 @@ class _$_DifficultyChanged implements _DifficultyChanged {
     TResult titleChanged(_TitleChanged value),
     TResult descriptionChanged(_DescriptionChanged value),
     TResult imagesChanged(_ImagesChanged value),
-    TResult imageDeleted(_ImageDeleted value),
     TResult coordinatesChanged(_CoordinatesChanged value),
     TResult difficultyChanged(_DifficultyChanged value),
     TResult objectivesChanged(_ObjectivesChanged value),
@@ -1392,7 +1182,6 @@ abstract class _$ObjectivesChangedCopyWith<$Res> {
   factory _$ObjectivesChangedCopyWith(
           _ObjectivesChanged value, $Res Function(_ObjectivesChanged) then) =
       __$ObjectivesChangedCopyWithImpl<$Res>;
-
   $Res call({KtList<Objective> objectives});
 }
 
@@ -1431,9 +1220,7 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ObjectivesChanged && (identical(other.objectives, objectives) ||
-                const DeepCollectionEquality()
-                    .equals(other.objectives, objectives)));
+    return identical(this, other) || (other is _ObjectivesChanged && (identical(other.objectives, objectives) || const DeepCollectionEquality().equals(other.objectives, objectives)));
   }
 
   @override
@@ -1452,7 +1239,6 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
     @required TResult titleChanged(String title),
     @required TResult descriptionChanged(String description),
     @required TResult imagesChanged(List<Asset> imageAssets),
-    @required TResult imageDeleted(String imageURL),
     @required TResult coordinatesChanged(double latitude, double longitude),
     @required TResult difficultyChanged(int difficulty),
     @required TResult objectivesChanged(KtList<Objective> objectives),
@@ -1464,7 +1250,6 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(imagesChanged != null);
-    assert(imageDeleted != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -1481,7 +1266,6 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
     TResult titleChanged(String title),
     TResult descriptionChanged(String description),
     TResult imagesChanged(List<Asset> imageAssets),
-    TResult imageDeleted(String imageURL),
     TResult coordinatesChanged(double latitude, double longitude),
     TResult difficultyChanged(int difficulty),
     TResult objectivesChanged(KtList<Objective> objectives),
@@ -1504,7 +1288,6 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
     @required TResult titleChanged(_TitleChanged value),
     @required TResult descriptionChanged(_DescriptionChanged value),
     @required TResult imagesChanged(_ImagesChanged value),
-    @required TResult imageDeleted(_ImageDeleted value),
     @required TResult coordinatesChanged(_CoordinatesChanged value),
     @required TResult difficultyChanged(_DifficultyChanged value),
     @required TResult objectivesChanged(_ObjectivesChanged value),
@@ -1516,7 +1299,6 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(imagesChanged != null);
-    assert(imageDeleted != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -1533,7 +1315,6 @@ class _$_ObjectivesChanged implements _ObjectivesChanged {
     TResult titleChanged(_TitleChanged value),
     TResult descriptionChanged(_DescriptionChanged value),
     TResult imagesChanged(_ImagesChanged value),
-    TResult imageDeleted(_ImageDeleted value),
     TResult coordinatesChanged(_CoordinatesChanged value),
     TResult difficultyChanged(_DifficultyChanged value),
     TResult objectivesChanged(_ObjectivesChanged value),
@@ -1624,7 +1405,6 @@ class _$_RewardsChanged implements _RewardsChanged {
     @required TResult titleChanged(String title),
     @required TResult descriptionChanged(String description),
     @required TResult imagesChanged(List<Asset> imageAssets),
-    @required TResult imageDeleted(String imageURL),
     @required TResult coordinatesChanged(double latitude, double longitude),
     @required TResult difficultyChanged(int difficulty),
     @required TResult objectivesChanged(KtList<Objective> objectives),
@@ -1636,7 +1416,6 @@ class _$_RewardsChanged implements _RewardsChanged {
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(imagesChanged != null);
-    assert(imageDeleted != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -1653,7 +1432,6 @@ class _$_RewardsChanged implements _RewardsChanged {
     TResult titleChanged(String title),
     TResult descriptionChanged(String description),
     TResult imagesChanged(List<Asset> imageAssets),
-    TResult imageDeleted(String imageURL),
     TResult coordinatesChanged(double latitude, double longitude),
     TResult difficultyChanged(int difficulty),
     TResult objectivesChanged(KtList<Objective> objectives),
@@ -1676,7 +1454,6 @@ class _$_RewardsChanged implements _RewardsChanged {
     @required TResult titleChanged(_TitleChanged value),
     @required TResult descriptionChanged(_DescriptionChanged value),
     @required TResult imagesChanged(_ImagesChanged value),
-    @required TResult imageDeleted(_ImageDeleted value),
     @required TResult coordinatesChanged(_CoordinatesChanged value),
     @required TResult difficultyChanged(_DifficultyChanged value),
     @required TResult objectivesChanged(_ObjectivesChanged value),
@@ -1688,7 +1465,6 @@ class _$_RewardsChanged implements _RewardsChanged {
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(imagesChanged != null);
-    assert(imageDeleted != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -1705,7 +1481,6 @@ class _$_RewardsChanged implements _RewardsChanged {
     TResult titleChanged(_TitleChanged value),
     TResult descriptionChanged(_DescriptionChanged value),
     TResult imagesChanged(_ImagesChanged value),
-    TResult imageDeleted(_ImageDeleted value),
     TResult coordinatesChanged(_CoordinatesChanged value),
     TResult difficultyChanged(_DifficultyChanged value),
     TResult objectivesChanged(_ObjectivesChanged value),
@@ -1795,7 +1570,6 @@ class _$_TagsChanged implements _TagsChanged {
     @required TResult titleChanged(String title),
     @required TResult descriptionChanged(String description),
     @required TResult imagesChanged(List<Asset> imageAssets),
-    @required TResult imageDeleted(String imageURL),
     @required TResult coordinatesChanged(double latitude, double longitude),
     @required TResult difficultyChanged(int difficulty),
     @required TResult objectivesChanged(KtList<Objective> objectives),
@@ -1807,7 +1581,6 @@ class _$_TagsChanged implements _TagsChanged {
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(imagesChanged != null);
-    assert(imageDeleted != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -1824,7 +1597,6 @@ class _$_TagsChanged implements _TagsChanged {
     TResult titleChanged(String title),
     TResult descriptionChanged(String description),
     TResult imagesChanged(List<Asset> imageAssets),
-    TResult imageDeleted(String imageURL),
     TResult coordinatesChanged(double latitude, double longitude),
     TResult difficultyChanged(int difficulty),
     TResult objectivesChanged(KtList<Objective> objectives),
@@ -1847,7 +1619,6 @@ class _$_TagsChanged implements _TagsChanged {
     @required TResult titleChanged(_TitleChanged value),
     @required TResult descriptionChanged(_DescriptionChanged value),
     @required TResult imagesChanged(_ImagesChanged value),
-    @required TResult imageDeleted(_ImageDeleted value),
     @required TResult coordinatesChanged(_CoordinatesChanged value),
     @required TResult difficultyChanged(_DifficultyChanged value),
     @required TResult objectivesChanged(_ObjectivesChanged value),
@@ -1859,7 +1630,6 @@ class _$_TagsChanged implements _TagsChanged {
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(imagesChanged != null);
-    assert(imageDeleted != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -1876,7 +1646,6 @@ class _$_TagsChanged implements _TagsChanged {
     TResult titleChanged(_TitleChanged value),
     TResult descriptionChanged(_DescriptionChanged value),
     TResult imagesChanged(_ImagesChanged value),
-    TResult imageDeleted(_ImageDeleted value),
     TResult coordinatesChanged(_CoordinatesChanged value),
     TResult difficultyChanged(_DifficultyChanged value),
     TResult objectivesChanged(_ObjectivesChanged value),
@@ -1943,7 +1712,6 @@ class _$_Submitted implements _Submitted {
     @required TResult titleChanged(String title),
     @required TResult descriptionChanged(String description),
     @required TResult imagesChanged(List<Asset> imageAssets),
-    @required TResult imageDeleted(String imageURL),
     @required TResult coordinatesChanged(double latitude, double longitude),
     @required TResult difficultyChanged(int difficulty),
     @required TResult objectivesChanged(KtList<Objective> objectives),
@@ -1955,7 +1723,6 @@ class _$_Submitted implements _Submitted {
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(imagesChanged != null);
-    assert(imageDeleted != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -1972,7 +1739,6 @@ class _$_Submitted implements _Submitted {
     TResult titleChanged(String title),
     TResult descriptionChanged(String description),
     TResult imagesChanged(List<Asset> imageAssets),
-    TResult imageDeleted(String imageURL),
     TResult coordinatesChanged(double latitude, double longitude),
     TResult difficultyChanged(int difficulty),
     TResult objectivesChanged(KtList<Objective> objectives),
@@ -1995,7 +1761,6 @@ class _$_Submitted implements _Submitted {
     @required TResult titleChanged(_TitleChanged value),
     @required TResult descriptionChanged(_DescriptionChanged value),
     @required TResult imagesChanged(_ImagesChanged value),
-    @required TResult imageDeleted(_ImageDeleted value),
     @required TResult coordinatesChanged(_CoordinatesChanged value),
     @required TResult difficultyChanged(_DifficultyChanged value),
     @required TResult objectivesChanged(_ObjectivesChanged value),
@@ -2007,7 +1772,6 @@ class _$_Submitted implements _Submitted {
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(imagesChanged != null);
-    assert(imageDeleted != null);
     assert(coordinatesChanged != null);
     assert(difficultyChanged != null);
     assert(objectivesChanged != null);
@@ -2024,7 +1788,6 @@ class _$_Submitted implements _Submitted {
     TResult titleChanged(_TitleChanged value),
     TResult descriptionChanged(_DescriptionChanged value),
     TResult imagesChanged(_ImagesChanged value),
-    TResult imageDeleted(_ImageDeleted value),
     TResult coordinatesChanged(_CoordinatesChanged value),
     TResult difficultyChanged(_DifficultyChanged value),
     TResult objectivesChanged(_ObjectivesChanged value),

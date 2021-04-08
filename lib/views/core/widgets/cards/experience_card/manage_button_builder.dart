@@ -6,10 +6,10 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 
-import 'delete_button.dart';
+import 'manage_menu_button.dart';
 
-class DeleteButtonBuilder extends StatelessWidget {
-  const DeleteButtonBuilder({
+class ManageButtonBuilder extends StatelessWidget {
+  const ManageButtonBuilder({
     Key key,
     @required this.experience,
   }) : super(key: key);
@@ -30,9 +30,9 @@ class DeleteButtonBuilder extends StatelessWidget {
         ),
         listener: _experienceDeletionListener,
         builder: (context, state) => context.read<ExperienceManagementActorBloc>().state.maybeMap(
-              actionInProgress: (_) => const CircularProgressIndicator(),
-              isCreator: (_) => DeleteButton(experience: experience),
-              deletionFailure: (_) => DeleteButton(experience: experience),
+          actionInProgress: (_) => const CircularProgressIndicator(),
+              isCreator: (_) => ManageMenuButton(experience: experience),
+              deletionFailure: (_) => ManageMenuButton(experience: experience),
               orElse: () => Container(),
             ),
       ),

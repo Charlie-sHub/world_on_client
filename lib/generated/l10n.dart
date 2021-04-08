@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -1126,10 +1127,10 @@ class S {
   }
 
   /// `Edit`
-  String get profileEditingButton {
+  String get editButton {
     return Intl.message(
       'Edit',
-      name: 'profileEditingButton',
+      name: 'editButton',
       desc: '',
       args: [],
     );
@@ -1720,6 +1721,46 @@ class S {
     return Intl.message(
       'Hello.\n\nWelcome to World On, here you can create and share experiences, real life activities that you want to share or do the ones you like the most created by others. Create, share, participate and have fun.\n\nLive and play the adventure of your life!',
       name: 'welcomeMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message(
+      'Delete',
+      name: 'delete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Title`
+  String get title {
+    return Intl.message(
+      'Title',
+      name: 'title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Editing Experience`
+  String get experienceEditingTitle {
+    return Intl.message(
+      'Editing Experience',
+      name: 'experienceEditingTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add pictures`
+  String get addPictures {
+    return Intl.message(
+      'Add pictures',
+      name: 'addPictures',
       desc: '',
       args: [],
     );

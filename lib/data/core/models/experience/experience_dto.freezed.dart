@@ -482,14 +482,11 @@ abstract class _ExperienceDto extends ExperienceDto {
   @override
   @ServerTimestampConverter()
   DateTime get creationDate;
-
   @override
   @ServerTimestampConverter()
   DateTime get modificationDate;
-
   @override
   List<ObjectiveDto> get objectives;
-
   @override
   Set<RewardDto> get rewards;
   @override

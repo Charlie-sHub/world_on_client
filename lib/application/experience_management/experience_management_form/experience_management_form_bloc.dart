@@ -38,13 +38,13 @@ part 'experience_management_form_state.dart';
 class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, ExperienceManagementFormState> {
   ExperienceManagementFormBloc() : super(ExperienceManagementFormState.initial());
 
+  // TODO: Change this to a purely experience creation bloc
   @override
   Stream<ExperienceManagementFormState> mapEventToState(ExperienceManagementFormEvent event) async* {
     yield* event.map(
       initialized: _onInitialized,
       titleChanged: _onTitleChanged,
       descriptionChanged: _onDescriptionChanged,
-      imageDeleted: _onImageDeleted,
       imagesChanged: _onImagesChanged,
       coordinatesChanged: _onCoordinatesChanged,
       difficultyChanged: _onDifficultyChanged,
@@ -123,13 +123,6 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
           longitude: Longitude(event.longitude),
         ),
       ),
-      failureOrSuccessOption: none(),
-    );
-  }
-
-  Stream<ExperienceManagementFormState> _onImageDeleted(_ImageDeleted event) async* {
-    state.experience.imageURLs.remove(event.imageURL);
-    yield state.copyWith(
       failureOrSuccessOption: none(),
     );
   }

@@ -372,7 +372,6 @@ abstract class _RemovedObjective implements ObjectivesCreationEvent {
 
   @override
   Objective get objective;
-
   @override
   @JsonKey(ignore: true)
   _$RemovedObjectiveCopyWith<_RemovedObjective> get copyWith;
@@ -538,7 +537,6 @@ abstract class $ObjectivesCreationStateCopyWith<$Res> {
   factory $ObjectivesCreationStateCopyWith(ObjectivesCreationState value,
           $Res Function(ObjectivesCreationState) then) =
       _$ObjectivesCreationStateCopyWithImpl<$Res>;
-
   $Res call({KtList<Objective> objectivesCreated});
 }
 
@@ -567,7 +565,6 @@ abstract class _$ObjectivesCreationStateCopyWith<$Res>
   factory _$ObjectivesCreationStateCopyWith(_ObjectivesCreationState value,
           $Res Function(_ObjectivesCreationState) then) =
       __$ObjectivesCreationStateCopyWithImpl<$Res>;
-
   @override
   $Res call({KtList<Objective> objectivesCreated});
 }
@@ -609,9 +606,7 @@ class _$_ObjectivesCreationState implements _ObjectivesCreationState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ObjectivesCreationState && (identical(other.objectivesCreated, objectivesCreated) ||
-                const DeepCollectionEquality()
-                    .equals(other.objectivesCreated, objectivesCreated)));
+        (other is _ObjectivesCreationState && (identical(other.objectivesCreated, objectivesCreated) || const DeepCollectionEquality().equals(other.objectivesCreated, objectivesCreated)));
   }
 
   @override

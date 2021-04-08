@@ -85,7 +85,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
     final _userDto = UserDto.fromFirestore(await _userDocument.get());
     yield* _firestore.notificationCollection
         .where(
-      "${NotificationFields.receiver}.id",
+          "${NotificationFields.receiver}.id",
           isEqualTo: _userDto.id,
         )
         .where(

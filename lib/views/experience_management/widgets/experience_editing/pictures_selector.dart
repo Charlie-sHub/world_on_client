@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logger/logger.dart';
 import 'package:multi_image_picker/multi_image_picker.dart';
-import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
+import 'package:worldon/application/experience_management/experience_editing_form/experience_editing_form_bloc.dart';
 import 'package:worldon/generated/l10n.dart';
 
 class PicturesSelector extends StatelessWidget {
@@ -11,7 +11,7 @@ class PicturesSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return context.read<ExperienceManagementFormBloc>().state.experience.imageAssetsOption.fold(
+    return context.read<ExperienceEditingFormBloc>().state.experience.imageAssetsOption.fold(
           () => Column(
             children: [
               IconButton(
@@ -21,7 +21,7 @@ class PicturesSelector extends StatelessWidget {
                 ),
                 onPressed: () async => _pickImages(context),
               ),
-              if (context.read<ExperienceManagementFormBloc>().state.showErrorMessages)
+              if (context.read<ExperienceEditingFormBloc>().state.showErrorMessages)
                 Text(
                   S.of(context).experiencePictureSelection,
                   textAlign: TextAlign.center,
@@ -31,7 +31,7 @@ class PicturesSelector extends StatelessWidget {
                 Container(),
             ],
           ),
-        (imageAssets) => SizedBox(
+          (imageAssets) => SizedBox(
             height: MediaQuery.of(context).size.height * 0.4,
             child: Column(
               children: <Widget>[
@@ -44,15 +44,13 @@ class PicturesSelector extends StatelessWidget {
                     crossAxisCount: 3,
                     children: List.generate(
                       imageAssets.length,
-                      (index) {
-                        return Card(
-                          child: AssetThumb(
-                            asset: imageAssets[index],
-                            width: 150,
-                            height: 150,
-                          ),
-                        );
-                      },
+                      (index) => Card(
+                        child: AssetThumb(
+                          asset: imageAssets[index],
+                          width: 150,
+                          height: 150,
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -74,7 +72,7 @@ class PicturesSelector extends StatelessWidget {
       final imagesPicked = await MultiImagePicker.pickImages(
         maxImages: 15,
         enableCamera: true,
-        selectedAssets: context.read<ExperienceManagementFormBloc>().state.experience.imageAssetsOption.fold(
+        selectedAssets: context.read<ExperienceEditingFormBloc>().state.experience.imageAssetsOption.fold(
               () => [],
               id,
             ),
@@ -84,7 +82,7 @@ class PicturesSelector extends StatelessWidget {
           useDetailsView: false,
         ),
       );
-      context.read<ExperienceManagementFormBloc>().add(ExperienceManagementFormEvent.imagesChanged(imagesPicked));
+      context.read<ExperienceEditingFormBloc>().add(ExperienceEditingFormEvent.imagesChanged(imagesPicked));
     } on Exception catch (e) {
       // This try-catch only exists to control for when the user cancels the selection
       _logger.e(e.toString());

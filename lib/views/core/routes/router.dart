@@ -4,6 +4,7 @@ import 'package:worldon/views/authentication/pages/log_in_page.dart';
 import 'package:worldon/views/authentication/pages/registration_page.dart';
 import 'package:worldon/views/core/pages/main_page.dart';
 import 'package:worldon/views/core/pages/welcome_page.dart';
+import 'package:worldon/views/experience_management/pages/experience_editing_page.dart';
 import 'package:worldon/views/experience_management/pages/experience_management_page.dart';
 import 'package:worldon/views/profile/pages/profile_editing_page.dart';
 import 'package:worldon/views/splash/pages/splash_page.dart';
@@ -26,6 +27,7 @@ import 'package:worldon/views/tag_management/pages/tag_management_page.dart';
       transitionsBuilder: TransitionsBuilders.slideLeft,
     ),
     MaterialRoute(page: ExperienceManagementPage),
+    MaterialRoute(page: ExperienceEditingPage),
     MaterialRoute(page: TagManagementPage),
     MaterialRoute(page: StorePage),
   ],

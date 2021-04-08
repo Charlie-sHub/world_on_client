@@ -71,11 +71,8 @@ mixin _$Experience {
   User get creator;
   Difficulty get difficulty;
   PastDate get creationDate;
-
   PastDate get modificationDate;
-
   ObjectiveList get objectives;
-
   RewardSet get rewards;
   TagSet get tags;
   Set<Comment> get comments;
@@ -444,13 +441,10 @@ abstract class _Experience extends Experience {
   Difficulty get difficulty;
   @override
   PastDate get creationDate;
-
   @override
   PastDate get modificationDate;
-
   @override
   ObjectiveList get objectives;
-
   @override
   RewardSet get rewards;
   @override

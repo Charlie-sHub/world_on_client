@@ -9,15 +9,16 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
-import 'package:worldon/views/experience_management/widgets/experience_management_form.dart';
+import 'package:worldon/views/experience_management/widgets/experience_creation/experience_management_form.dart';
 
+// TODO: Change the experience management form and view to purely creation
 class ExperienceManagementPage extends StatelessWidget {
-  final Option<Experience> experienceOption;
-
   const ExperienceManagementPage({
     Key key,
     @required this.experienceOption,
   }) : super(key: key);
+
+  final Option<Experience> experienceOption;
 
   @override
   Widget build(BuildContext context) {
@@ -75,14 +76,20 @@ class ExperienceManagementPage extends StatelessWidget {
         ).show(context),
       );
 
-  // This should have a better name
   bool _buildWhen(ExperienceManagementFormState previous, ExperienceManagementFormState current) {
-    final _previousImages = previous.experience.imageAssetsOption.fold(() => List<Asset>.empty(), id);
-    final _currentImages = current.experience.imageAssetsOption.fold(() => List<Asset>.empty(), id);
+    final _previousImages = previous.experience.imageAssetsOption.fold(
+      () => List<Asset>.empty(),
+      id,
+    );
+    final _currentImages = current.experience.imageAssetsOption.fold(
+      () => List<Asset>.empty(),
+      id,
+    );
     final _shouldRebuild = previous.showErrorMessages != current.showErrorMessages ||
         previous.experience.difficulty != current.experience.difficulty ||
         previous.experience.coordinates != current.experience.coordinates ||
-        _previousImages != _currentImages;
+        _previousImages != _currentImages ||
+        current.isEditing;
     return _shouldRebuild;
   }
 }

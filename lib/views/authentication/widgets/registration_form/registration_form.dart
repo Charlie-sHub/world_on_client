@@ -13,7 +13,7 @@ import 'package:worldon/views/authentication/widgets/registration_form/submit_re
 import 'package:worldon/views/authentication/widgets/registration_form/user_image_picker.dart';
 import 'package:worldon/views/authentication/widgets/registration_form/username_text_field.dart';
 import 'package:worldon/views/authentication/widgets/world_on_title.dart';
-import 'package:worldon/views/experience_management/widgets/tag_addition_creation_card.dart';
+import 'package:worldon/views/experience_management/widgets/experience_creation/tag_addition_creation_card.dart';
 
 import '../email_text_field.dart';
 
@@ -81,7 +81,7 @@ class RegistrationForm extends StatelessWidget {
       ),
     );
   }
-  
+
   String _passwordValidator(BuildContext context) {
     return context.read<RegistrationFormBloc>().state.user.password.value.fold(
           (failure) => failure.maybeMap(
@@ -95,7 +95,7 @@ class RegistrationForm extends StatelessWidget {
           (_) => null,
         );
   }
-  
+
   String _emailValidator(BuildContext context) {
     return context.read<RegistrationFormBloc>().state.user.email.value.fold(
           (failure) => failure.maybeMap(

@@ -162,7 +162,7 @@ class __$AuthenticationDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl
       authenticationDomainFailure == freezed ? _value.authenticationDomainFailure : authenticationDomainFailure as AuthenticationDomainFailure<T>,
     ));
   }
-
+  
   @override
   $AuthenticationDomainFailureCopyWith<T, $Res> get authenticationDomainFailure {
     if (_value.authenticationDomainFailure == null) {
@@ -192,7 +192,7 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
         (other is _AuthenticationDomain<T> &&
             (identical(other.authenticationDomainFailure, authenticationDomainFailure) || const DeepCollectionEquality().equals(other.authenticationDomainFailure, authenticationDomainFailure)));
   }
-
+  
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(authenticationDomainFailure);
 
@@ -350,7 +350,7 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
         (other is _AuthenticationData<T> &&
             (identical(other.authenticationDataFailure, authenticationDataFailure) || const DeepCollectionEquality().equals(other.authenticationDataFailure, authenticationDataFailure)));
   }
-
+  
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(authenticationDataFailure);
 
@@ -507,7 +507,7 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
     return identical(this, other) ||
         (other is _CoreDomain<T> && (identical(other.coreDomainFailure, coreDomainFailure) || const DeepCollectionEquality().equals(other.coreDomainFailure, coreDomainFailure)));
   }
-
+  
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(coreDomainFailure);
 
@@ -665,7 +665,7 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
         (other is _CoreAppllication<T> &&
             (identical(other.coreApplicationFailure, coreApplicationFailure) || const DeepCollectionEquality().equals(other.coreApplicationFailure, coreApplicationFailure)));
   }
-
+  
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(coreApplicationFailure);
 
@@ -1289,7 +1289,7 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
     return identical(this, other) ||
         (other is _ProfileDomain<T> && (identical(other.profileDomainFailure, profileDomainFailure) || const DeepCollectionEquality().equals(other.profileDomainFailure, profileDomainFailure)));
   }
-
+  
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(profileDomainFailure);
 

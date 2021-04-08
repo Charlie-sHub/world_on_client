@@ -7,10 +7,10 @@ import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
-import 'package:worldon/views/core/widgets/cards/experience_card/delete_button_builder.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/difficulty_display.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/image_stack.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/log_button.dart';
+import 'package:worldon/views/core/widgets/cards/experience_card/manage_button_builder.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/participate_button.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/share_button.dart';
 import 'package:worldon/views/core/widgets/cards/simple_tag_display.dart';
@@ -77,7 +77,7 @@ class ExperienceCard extends StatelessWidget {
                         ),
                         LogButton(experience: experience),
                         ShareButton(experience: experience),
-                        DeleteButtonBuilder(experience: experience),
+                        ManageButtonBuilder(experience: experience),
                       ],
                     ),
                     const SizedBox(height: 5),

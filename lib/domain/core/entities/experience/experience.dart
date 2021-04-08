@@ -66,6 +66,26 @@ abstract class Experience implements _$Experience {
         doneBy: <UniqueId>{},
       );
 
+  Experience clone() => Experience(
+        id: this.id,
+        title: title,
+        description: description,
+        imageURLs: imageURLs,
+        imageAssetsOption: imageAssetsOption,
+        coordinates: coordinates,
+        location: location,
+        creator: creator,
+        difficulty: difficulty,
+        creationDate: creationDate,
+        modificationDate: modificationDate,
+        objectives: objectives,
+        rewards: rewards,
+        tags: tags,
+        comments: comments,
+        likedBy: likedBy,
+        doneBy: doneBy,
+      );
+
   Option<ValueFailure<dynamic>> get failureOption {
     return title.failureOrUnit
         .andThen(description.failureOrUnit)

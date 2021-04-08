@@ -80,7 +80,6 @@ abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(
           _Initialized value, $Res Function(_Initialized) then) =
       __$InitializedCopyWithImpl<$Res>;
-
   $Res call({ObjectiveList objectiveSet});
 }
 
@@ -119,9 +118,7 @@ class _$_Initialized implements _Initialized {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initialized && (identical(other.objectiveSet, objectiveSet) ||
-                const DeepCollectionEquality()
-                    .equals(other.objectiveSet, objectiveSet)));
+    return identical(this, other) || (other is _Initialized && (identical(other.objectiveSet, objectiveSet) || const DeepCollectionEquality().equals(other.objectiveSet, objectiveSet)));
   }
 
   @override
@@ -188,7 +185,6 @@ abstract class _Initialized implements ObjectivesTrackerEvent {
   const factory _Initialized(ObjectiveList objectiveSet) = _$_Initialized;
 
   ObjectiveList get objectiveSet;
-
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith;
 }

@@ -66,6 +66,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
         {
           ExperienceFields.position: _flutterFireGeoposition.data,
         },
+        SetOptions(merge: true),
       );
       return right(unit);
     } on FirebaseException catch (e) {

@@ -2909,7 +2909,6 @@ abstract class EmptySet<T> implements ValueFailure<T> {
   const factory EmptySet({@required T failedValue}) = _$EmptySet<T>;
 
   T get failedValue;
-
   @JsonKey(ignore: true)
   $EmptySetCopyWith<T, EmptySet<T>> get copyWith;
 }
@@ -3101,7 +3100,6 @@ abstract class EmptyList<T> implements ValueFailure<T> {
   const factory EmptyList({@required T failedValue}) = _$EmptyList<T>;
 
   T get failedValue;
-
   @JsonKey(ignore: true)
   $EmptyListCopyWith<T, EmptyList<T>> get copyWith;
 }
@@ -3157,7 +3155,7 @@ class _$CollectionExceedsLength<T> with DiagnosticableTreeMixin implements Colle
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-      (other is CollectionExceedsLength<T> &&
+        (other is CollectionExceedsLength<T> &&
             (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)) &&
             (identical(other.maxLength, maxLength) || const DeepCollectionEquality().equals(other.maxLength, maxLength)));
   }
@@ -3167,7 +3165,7 @@ class _$CollectionExceedsLength<T> with DiagnosticableTreeMixin implements Colle
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(failedValue) ^
       const DeepCollectionEquality().hash(maxLength);
-  
+
   @JsonKey(ignore: true)
   @override
   $CollectionExceedsLengthCopyWith<T, CollectionExceedsLength<T>> get copyWith => _$CollectionExceedsLengthCopyWithImpl<T, CollectionExceedsLength<T>>(this, _$identity);

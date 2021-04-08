@@ -120,7 +120,7 @@ class OwnProfileHeader extends StatelessWidget {
                           );
                     },
                   ),
-                  child: Text(S.of(context).profileEditingButton),
+                  child: Text(S.of(context).editButton),
                 ),
               )
             ],
