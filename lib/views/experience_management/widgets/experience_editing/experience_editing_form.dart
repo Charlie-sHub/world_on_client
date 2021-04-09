@@ -1,20 +1,21 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kt_dart/kt.dart';
-import 'package:worldon/application/experience_management/experience_editing_form/experience_editing_form_bloc.dart';
+import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/generated/l10n.dart';
-import 'package:worldon/views/experience_management/widgets/experience_editing/finish_button.dart';
-import 'package:worldon/views/experience_management/widgets/experience_editing/map.dart';
-import 'package:worldon/views/experience_management/widgets/experience_editing/objective_creation_card/objective_creation_card.dart';
-import 'package:worldon/views/experience_management/widgets/experience_editing/pictures_selector.dart';
-import 'package:worldon/views/experience_management/widgets/experience_editing/reward_creation_card/reward_creation_card.dart';
-import 'package:worldon/views/experience_management/widgets/experience_editing/tag_addition_creation_card.dart';
-import 'package:worldon/views/experience_management/widgets/experience_editing/title_form_field.dart';
+import 'package:worldon/views/experience_management/widgets/map.dart';
+import 'package:worldon/views/experience_management/widgets/objective_creation_card/objective_creation_card.dart';
+import 'package:worldon/views/experience_management/widgets/reward_creation_card/reward_creation_card.dart';
 
-import 'description_form_field.dart';
-import 'difficulty_slider.dart';
+import '../description_form_field.dart';
+import '../difficulty_slider.dart';
+import '../finish_button.dart';
+import '../pictures_selector.dart';
+import '../tag_addition_creation_card.dart';
+import '../title_form_field.dart';
 import 'original_pictures_grid_view.dart';
 
 class ExperienceEditingForm extends StatelessWidget {
@@ -24,7 +25,7 @@ class ExperienceEditingForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _managementFormState = context.read<ExperienceEditingFormBloc>().state;
+    final _managementFormState = context.read<ExperienceManagementFormBloc>().state;
     return SingleChildScrollView(
       child: Form(
         autovalidateMode: _managementFormState.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
@@ -63,7 +64,7 @@ class ExperienceEditingForm extends StatelessWidget {
               Map(),
               const SizedBox(height: 10),
               ObjectiveCreationCard(
-                objectiveList: experience.objectives,
+                objectiveListOption: some(experience.objectives),
               ),
               if (_managementFormState.showErrorMessages && !_managementFormState.experience.objectives.isValid())
                 Text(
@@ -73,13 +74,15 @@ class ExperienceEditingForm extends StatelessWidget {
                 )
               else
                 Container(),
-              const RewardCreationCard(),
+              RewardCreationCard(
+                rewardSetOption: some(experience.rewards),
+              ),
               //Change back to TagAdditionCard if necessary
               TagAdditionCreationCard(
-                tagChangeFunction: (KtSet<Tag> tags) => context.read<ExperienceEditingFormBloc>().add(
-                      ExperienceEditingFormEvent.tagsChanged(tags),
+                tagChangeFunction: (KtSet<Tag> tags) => context.read<ExperienceManagementFormBloc>().add(
+                      ExperienceManagementFormEvent.tagsChanged(tags),
                     ),
-                tagSet: experience.tags,
+                tagSetOption: some(experience.tags),
               ),
               const FinishButton(),
             ],

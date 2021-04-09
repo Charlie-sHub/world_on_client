@@ -14,9 +14,9 @@ class _$TagSelectorEventTearOff {
   const _$TagSelectorEventTearOff();
 
 // ignore: unused_element
-  _Initialized initialized(TagSet tagSet) {
+  _Initialized initialized(Option<TagSet> tagSetOption) {
     return _Initialized(
-      tagSet,
+      tagSetOption,
     );
   }
 
@@ -43,13 +43,13 @@ const $TagSelectorEvent = _$TagSelectorEventTearOff();
 mixin _$TagSelectorEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult initialized(TagSet tagSet),
+    @required TResult initialized(Option<TagSet> tagSetOption),
     @required TResult addedTag(Tag tag),
     @required TResult removedTag(Tag tag),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult initialized(TagSet tagSet),
+    TResult initialized(Option<TagSet> tagSetOption),
     TResult addedTag(Tag tag),
     TResult removedTag(Tag tag),
     @required TResult orElse(),
@@ -90,7 +90,7 @@ class _$TagSelectorEventCopyWithImpl<$Res> implements $TagSelectorEventCopyWith<
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
 
-  $Res call({TagSet tagSet});
+  $Res call({Option<TagSet> tagSetOption});
 }
 
 /// @nodoc
@@ -102,33 +102,33 @@ class __$InitializedCopyWithImpl<$Res> extends _$TagSelectorEventCopyWithImpl<$R
 
   @override
   $Res call({
-    Object tagSet = freezed,
+    Object tagSetOption = freezed,
   }) {
     return _then(_Initialized(
-      tagSet == freezed ? _value.tagSet : tagSet as TagSet,
+      tagSetOption == freezed ? _value.tagSetOption : tagSetOption as Option<TagSet>,
     ));
   }
 }
 
 /// @nodoc
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.tagSet) : assert(tagSet != null);
+  const _$_Initialized(this.tagSetOption) : assert(tagSetOption != null);
 
   @override
-  final TagSet tagSet;
+  final Option<TagSet> tagSetOption;
 
   @override
   String toString() {
-    return 'TagSelectorEvent.initialized(tagSet: $tagSet)';
+    return 'TagSelectorEvent.initialized(tagSetOption: $tagSetOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initialized && (identical(other.tagSet, tagSet) || const DeepCollectionEquality().equals(other.tagSet, tagSet)));
+    return identical(this, other) || (other is _Initialized && (identical(other.tagSetOption, tagSetOption) || const DeepCollectionEquality().equals(other.tagSetOption, tagSetOption)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tagSet);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tagSetOption);
 
   @JsonKey(ignore: true)
   @override
@@ -137,27 +137,27 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult initialized(TagSet tagSet),
+    @required TResult initialized(Option<TagSet> tagSetOption),
     @required TResult addedTag(Tag tag),
     @required TResult removedTag(Tag tag),
   }) {
     assert(initialized != null);
     assert(addedTag != null);
     assert(removedTag != null);
-    return initialized(tagSet);
+    return initialized(tagSetOption);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult initialized(TagSet tagSet),
+    TResult initialized(Option<TagSet> tagSetOption),
     TResult addedTag(Tag tag),
     TResult removedTag(Tag tag),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (initialized != null) {
-      return initialized(tagSet);
+      return initialized(tagSetOption);
     }
     return orElse();
   }
@@ -192,9 +192,9 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements TagSelectorEvent {
-  const factory _Initialized(TagSet tagSet) = _$_Initialized;
+  const factory _Initialized(Option<TagSet> tagSetOption) = _$_Initialized;
 
-  TagSet get tagSet;
+  Option<TagSet> get tagSetOption;
 
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith;
@@ -270,7 +270,7 @@ class _$_AddedTag implements _AddedTag {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult initialized(TagSet tagSet),
+    @required TResult initialized(Option<TagSet> tagSetOption),
     @required TResult addedTag(Tag tag),
     @required TResult removedTag(Tag tag),
   }) {
@@ -283,7 +283,7 @@ class _$_AddedTag implements _AddedTag {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult initialized(TagSet tagSet),
+    TResult initialized(Option<TagSet> tagSetOption),
     TResult addedTag(Tag tag),
     TResult removedTag(Tag tag),
     @required TResult orElse(),
@@ -404,7 +404,7 @@ class _$_RemovedTag implements _RemovedTag {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult initialized(TagSet tagSet),
+    @required TResult initialized(Option<TagSet> tagSetOption),
     @required TResult addedTag(Tag tag),
     @required TResult removedTag(Tag tag),
   }) {
@@ -417,7 +417,7 @@ class _$_RemovedTag implements _RemovedTag {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult initialized(TagSet tagSet),
+    TResult initialized(Option<TagSet> tagSetOption),
     TResult addedTag(Tag tag),
     TResult removedTag(Tag tag),
     @required TResult orElse(),

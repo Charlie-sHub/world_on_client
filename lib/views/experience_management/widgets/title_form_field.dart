@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:worldon/application/experience_management/experience_editing_form/experience_editing_form_bloc.dart';
+import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
@@ -17,10 +17,10 @@ class TitleFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       maxLength: Name.maxLength,
-      onChanged: (value) => context.read<ExperienceEditingFormBloc>().add(
-            ExperienceEditingFormEvent.titleChanged(value),
+      onChanged: (value) => context.read<ExperienceManagementFormBloc>().add(
+            ExperienceManagementFormEvent.titleChanged(value),
           ),
-      validator: (_) => context.read<ExperienceEditingFormBloc>().state.experience.title.value.fold(
+      validator: (_) => context.read<ExperienceManagementFormBloc>().state.experience.title.value.fold(
             (failure) => failure.maybeMap(
               emptyString: (_) => S.of(context).experienceTitleEmptyString,
               multiLineString: (_) => S.of(context).experienceTitleMultiLineString,

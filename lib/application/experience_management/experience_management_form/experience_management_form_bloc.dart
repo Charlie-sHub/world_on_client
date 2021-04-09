@@ -48,6 +48,7 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
       initialized: _onInitialized,
       titleChanged: _onTitleChanged,
       descriptionChanged: _onDescriptionChanged,
+      imageDeleted: _onImageDeleted,
       imagesChanged: _onImagesChanged,
       coordinatesChanged: _onCoordinatesChanged,
       difficultyChanged: _onDifficultyChanged,
@@ -65,32 +66,34 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
       failureOrSuccessOption: none(),
     );
     if (state.experience.isValid) {
-      if (state.isEditing) {
-        _failureOrUnit = await getIt<edit_experience.EditExperience>()(
-          edit_experience.Params(experience: state.experience),
-        );
-      } else if (state.experience.imageAssetsOption.isSome()) {
-        final _filesCount = state.experience.imageAssetsOption.fold(
-          () => 0,
-          (_imageList) => _imageList.length,
-        );
-        if (_filesCount <= _imageNumberLimit) {
-          _failureOrUnit = await getIt<create_experience.CreateExperience>()(
-            create_experience.Params(experience: state.experience),
+      final _filesCount = state.experience.imageAssetsOption.fold(
+        () => 0,
+        (_imageList) => _imageList.length,
+      );
+      if (state.experience.imageURLs.length + _filesCount <= _imageNumberLimit) {
+        if (state.isEditing) {
+          _failureOrUnit = await getIt<edit_experience.EditExperience>()(
+            edit_experience.Params(experience: state.experience),
           );
         } else {
-          yield state.copyWith(
-            isSubmitting: false,
-            showErrorMessages: true,
-            failureOrSuccessOption: optionOf(
-              left(
-                const Failure.experienceManagementApplication(
-                  ExperienceManagementApplicationFailure.surpassedImageLimit(limit: _imageNumberLimit),
-                ),
+          if (state.experience.imageAssetsOption.isSome()) {
+            _failureOrUnit = await getIt<create_experience.CreateExperience>()(
+              create_experience.Params(experience: state.experience),
+            );
+          }
+        }
+      } else {
+        yield state.copyWith(
+          isSubmitting: false,
+          showErrorMessages: true,
+          failureOrSuccessOption: optionOf(
+            left(
+              const Failure.experienceManagementApplication(
+                ExperienceManagementApplicationFailure.surpassedImageLimit(limit: _imageNumberLimit),
               ),
             ),
-          );
-        }
+          ),
+        );
       }
     }
     yield state.copyWith(
@@ -144,6 +147,13 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
           longitude: Longitude(event.longitude),
         ),
       ),
+      failureOrSuccessOption: none(),
+    );
+  }
+
+  Stream<ExperienceManagementFormState> _onImageDeleted(_ImageDeleted event) async* {
+    state.experience.imageURLs.remove(event.imageURL);
+    yield state.copyWith(
       failureOrSuccessOption: none(),
     );
   }

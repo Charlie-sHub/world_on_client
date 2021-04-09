@@ -8,6 +8,8 @@ abstract class ExperienceManagementFormEvent with _$ExperienceManagementFormEven
 
   const factory ExperienceManagementFormEvent.descriptionChanged(String description) = _DescriptionChanged;
 
+  const factory ExperienceManagementFormEvent.imageDeleted(String imageURL) = _ImageDeleted;
+
   const factory ExperienceManagementFormEvent.imagesChanged(List<Asset> imageAssets) = _ImagesChanged;
 
   const factory ExperienceManagementFormEvent.coordinatesChanged({

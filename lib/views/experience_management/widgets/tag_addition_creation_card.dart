@@ -18,11 +18,11 @@ import 'package:worldon/views/tag_management/widgets/tag_management_form.dart';
 
 class TagAdditionCreationCard extends HookWidget {
   final Function tagChangeFunction;
-  final TagSet tagSet;
+  final Option<TagSet> tagSetOption;
 
   const TagAdditionCreationCard({
     Key key,
-    @required this.tagSet,
+    @required this.tagSetOption,
     @required this.tagChangeFunction,
   }) : super(key: key);
 
@@ -34,7 +34,7 @@ class TagAdditionCreationCard extends HookWidget {
         //This is a bit of a frankenstein monster of a widget, should probably be reviewed, there must be a better way to do this
         BlocProvider(create: (context) => getIt<SearchByNameFormBloc>()),
         BlocProvider(create: (context) => getIt<SearchTagsByNameWatcherBloc>()),
-        BlocProvider(create: (context) => getIt<TagSelectorBloc>()..add(TagSelectorEvent.initialized(tagSet))),
+        BlocProvider(create: (context) => getIt<TagSelectorBloc>()..add(TagSelectorEvent.initialized(tagSetOption))),
         BlocProvider(create: (context) => getIt<TagManagementFormBloc>()),
       ],
       child: BlocListener<TagSelectorBloc, TagSelectorState>(

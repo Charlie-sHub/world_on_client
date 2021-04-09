@@ -15,9 +15,10 @@ class Map extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _editingFormState = context.read<ExperienceManagementFormBloc>().state;
     final _position = LatLng(
-      context.read<ExperienceManagementFormBloc>().state.experience.coordinates.latitude.getOrCrash(),
-      context.read<ExperienceManagementFormBloc>().state.experience.coordinates.longitude.getOrCrash(),
+      _editingFormState.experience.coordinates.latitude.getOrCrash(),
+      _editingFormState.experience.coordinates.longitude.getOrCrash(),
     );
     return Card(
       color: WorldOnColors.background,
@@ -45,9 +46,9 @@ class Map extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.4,
               // Not happy about this at all, there has to be a better way to build the map once coordinates have been gotten
               // Works for now though and that's what matters.
-              child: context.read<ExperienceManagementFormBloc>().state.loadedCoordinates
+              child: _editingFormState.loadedCoordinates
                   ? GoogleMap(
-                      mapType: MapType.hybrid,
+                mapType: MapType.hybrid,
                       markers: {
                         Marker(
                           markerId: MarkerId("new_experience"),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:worldon/application/experience_management/experience_editing_form/experience_editing_form_bloc.dart';
+import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
@@ -46,8 +46,8 @@ class OriginalPicturesGridView extends StatelessWidget {
                         size: 35,
                       ),
                       onPressed: () {
-                        return context.read<ExperienceEditingFormBloc>().add(
-                              ExperienceEditingFormEvent.imageDeleted(_imageURL),
+                        return context.read<ExperienceManagementFormBloc>().add(
+                              ExperienceManagementFormEvent.imageDeleted(_imageURL),
                             );
                       },
                     ),

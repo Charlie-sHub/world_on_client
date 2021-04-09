@@ -97,7 +97,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
           (snapshot) => snapshot.docs.isNotEmpty,
         )
         .map(
-        (_newNotificationsBool) => right<Failure, bool>(_newNotificationsBool),
+          (_newNotificationsBool) => right<Failure, bool>(_newNotificationsBool),
         )
         .onErrorReturnWith(
           (error) => left(

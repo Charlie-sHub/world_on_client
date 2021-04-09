@@ -15,7 +15,6 @@ import '../../../domain/core/entities/tag/tag.dart';
 import '../../../domain/core/entities/user/user.dart';
 import '../../authentication/pages/log_in_page.dart';
 import '../../authentication/pages/registration_page.dart';
-import '../../experience_management/pages/experience_editing_page.dart';
 import '../../experience_management/pages/experience_management_page.dart';
 import '../../profile/pages/profile_editing_page.dart';
 import '../../splash/pages/splash_page.dart';
@@ -32,7 +31,6 @@ class Routes {
   static const String mainPage = '/main-page';
   static const String profileEditingPage = '/profile-editing-page';
   static const String experienceManagementPage = '/experience-management-page';
-  static const String experienceEditingPage = '/experience-editing-page';
   static const String tagManagementPage = '/tag-management-page';
   static const String storePage = '/store-page';
   static const all = <String>{
@@ -43,7 +41,6 @@ class Routes {
     mainPage,
     profileEditingPage,
     experienceManagementPage,
-    experienceEditingPage,
     tagManagementPage,
     storePage,
   };
@@ -60,7 +57,6 @@ class Router extends RouterBase {
     RouteDef(Routes.mainPage, page: MainPage),
     RouteDef(Routes.profileEditingPage, page: ProfileEditingPage),
     RouteDef(Routes.experienceManagementPage, page: ExperienceManagementPage),
-    RouteDef(Routes.experienceEditingPage, page: ExperienceEditingPage),
     RouteDef(Routes.tagManagementPage, page: TagManagementPage),
     RouteDef(Routes.storePage, page: StorePage),
   ];
@@ -118,16 +114,6 @@ class Router extends RouterBase {
         settings: data,
       );
     },
-    ExperienceEditingPage: (data) {
-      final args = data.getArgs<ExperienceEditingPageArguments>(nullOk: false);
-      return MaterialPageRoute<dynamic>(
-        builder: (context) => ExperienceEditingPage(
-          key: args.key,
-          experience: args.experience,
-        ),
-        settings: data,
-      );
-    },
     TagManagementPage: (data) {
       final args = data.getArgs<TagManagementPageArguments>(nullOk: false);
       return MaterialPageRoute<dynamic>(
@@ -180,15 +166,6 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
         arguments: ExperienceManagementPageArguments(key: key, experienceOption: experienceOption),
       );
 
-  Future<dynamic> pushExperienceEditingPage({
-    Key key,
-    @required Experience experience,
-  }) =>
-      push<dynamic>(
-        Routes.experienceEditingPage,
-        arguments: ExperienceEditingPageArguments(key: key, experience: experience),
-      );
-
   Future<dynamic> pushTagManagementPage({
     Key key,
     @required Option<Tag> tagOption,
@@ -218,13 +195,6 @@ class ExperienceManagementPageArguments {
   final Option<Experience> experienceOption;
 
   ExperienceManagementPageArguments({this.key, @required this.experienceOption});
-}
-
-/// ExperienceEditingPage arguments holder class
-class ExperienceEditingPageArguments {
-  final Key key;
-  final Experience experience;
-  ExperienceEditingPageArguments({this.key, @required this.experience});
 }
 
 /// TagManagementPage arguments holder class

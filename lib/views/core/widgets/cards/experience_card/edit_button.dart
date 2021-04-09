@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
@@ -23,9 +24,9 @@ class EditButton extends StatelessWidget {
         Navigator.of(context).pop();
         await context.navigator
             .push(
-              Routes.experienceEditingPage,
-              arguments: ExperienceEditingPageArguments(
-                experience: experience,
+              Routes.experienceManagementPage,
+              arguments: ExperienceManagementPageArguments(
+                experienceOption: some(experience),
               ),
             )
             .then(reloadFunction);

@@ -9,7 +9,8 @@ import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
-import 'package:worldon/views/experience_management/widgets/experience_creation/experience_management_form.dart';
+import 'package:worldon/views/experience_management/widgets/experience_creation/experience_creation_form.dart';
+import 'package:worldon/views/experience_management/widgets/experience_editing/experience_editing_form.dart';
 
 // TODO: Change the experience management form and view to purely creation
 class ExperienceManagementPage extends StatelessWidget {
@@ -26,7 +27,10 @@ class ExperienceManagementPage extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          S.of(context).experienceCreationTitle,
+          experienceOption.fold(
+            () => S.of(context).experienceCreationTitle,
+            (a) => S.of(context).experienceEditingTitle,
+          ),
           textAlign: TextAlign.center,
           style: const TextStyle(
             fontWeight: FontWeight.bold,
@@ -49,7 +53,12 @@ class ExperienceManagementPage extends StatelessWidget {
             ),
           ),
           buildWhen: _buildWhen,
-          builder: (context, state) => ExperienceManagementForm(),
+          builder: (context, state) => experienceOption.fold(
+            () => ExperienceCreationForm(),
+            (_experience) => ExperienceEditingForm(
+              experience: _experience,
+            ),
+          ),
         ),
       ),
     );

@@ -1,34 +1,43 @@
 import 'dart:io';
 
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
-import 'package:worldon/application/experience_management/objective_form/objective_form_bloc.dart';
-import 'package:worldon/application/experience_management/objectives_creation/objectives_creation_bloc.dart';
+import 'package:worldon/application/experience_management/reward_form/reward_form_bloc.dart';
+import 'package:worldon/application/experience_management/rewards_creation/rewards_creation_bloc.dart';
+import 'package:worldon/domain/core/validation/objects/reward_set.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 import 'package:worldon/views/core/widgets/cards/error_card.dart';
-import 'package:worldon/views/experience_management/widgets/experience_creation/objective_creation_card/created_objective_card.dart';
-import 'package:worldon/views/experience_management/widgets/experience_creation/objective_creation_card/objective_coordinates_picker.dart';
-import 'package:worldon/views/experience_management/widgets/experience_creation/objective_creation_card/objective_description_text_field.dart';
-import 'package:worldon/views/experience_management/widgets/experience_creation/objective_creation_card/submit_objective_button.dart';
+import 'package:worldon/views/experience_management/widgets/reward_creation_card/created_reward_card.dart';
+import 'package:worldon/views/experience_management/widgets/reward_creation_card/reward_description_text_field.dart';
+import 'package:worldon/views/experience_management/widgets/reward_creation_card/reward_name_text_field.dart';
+import 'package:worldon/views/experience_management/widgets/reward_creation_card/submit_reward_button.dart';
 
-class ObjectiveCreationCard extends HookWidget {
-  const ObjectiveCreationCard({
+class RewardCreationCard extends HookWidget {
+  const RewardCreationCard({
     Key key,
+    @required this.rewardSetOption,
   }) : super(key: key);
+
+  final Option<RewardSet> rewardSetOption;
 
   @override
   Widget build(BuildContext context) {
-    final _textEditingController = useTextEditingController();
+    final _descriptionTextEditingController = useTextEditingController();
+    final _nameTextEditingController = useTextEditingController();
     return BlocProvider(
-      create: (context) => getIt<ObjectivesCreationBloc>(),
-      child: BlocConsumer<ObjectivesCreationBloc, ObjectivesCreationState>(
+      create: (context) => getIt<RewardsCreationBloc>()
+        ..add(
+          RewardsCreationEvent.initialized(rewardSetOption),
+        ),
+      child: BlocConsumer<RewardsCreationBloc, RewardsCreationState>(
         listener: (context, state) => context.read<ExperienceManagementFormBloc>().add(
-              ExperienceManagementFormEvent.objectivesChanged(state.objectivesCreated),
+              ExperienceManagementFormEvent.rewardsChanged(state.rewardsCreated),
             ),
         // TODO: Create buildWhen method
         builder: (context, state) => Card(
@@ -43,7 +52,7 @@ class ObjectiveCreationCard extends HookWidget {
             children: <Widget>[
               const SizedBox(height: 5),
               Text(
-                S.of(context).objectiveCreationCardTitle,
+                S.of(context).editRewards,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
@@ -54,23 +63,22 @@ class ObjectiveCreationCard extends HookWidget {
                 constraints: BoxConstraints(
                   maxHeight: MediaQuery.of(context).size.height * 0.5,
                 ),
-                // TODO: Make this a ReorderableListView
                 child: ListView.builder(
                   padding: const EdgeInsets.all(10),
-                  itemCount: state.objectivesCreated.size,
+                  itemCount: state.rewardsCreated.size,
                   shrinkWrap: true,
                   physics: const ClampingScrollPhysics(),
                   itemBuilder: (context, index) {
-                    final _objective = state.objectivesCreated.get(index);
-                    if (_objective.isValid) {
-                      return CreatedObjectiveCard(
-                        objective: _objective,
-                        key: Key(_objective.id.toString()),
+                    final _reward = state.rewardsCreated.asSet().elementAt(index);
+                    if (_reward.isValid) {
+                      return CreatedRewardCard(
+                        reward: _reward,
+                        key: Key(_reward.id.toString()),
                       );
                     } else {
                       return ErrorCard(
-                        entityType: S.of(context).objective,
-                        valueFailureString: _objective.failureOption.fold(
+                        entityType: S.of(context).reward,
+                        valueFailureString: _reward.failureOption.fold(
                           () => S.of(context).noError,
                           (failure) => failure.toString(),
                         ),
@@ -82,25 +90,24 @@ class ObjectiveCreationCard extends HookWidget {
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: BlocProvider(
-                  create: (context) => getIt<ObjectiveFormBloc>()
-                    ..add(
-                      const ObjectiveFormEvent.initialized(),
-                    ),
-                  child: BlocConsumer<ObjectiveFormBloc, ObjectiveFormState>(
-                    listener: (context, state) => _objectiveFormListener(
+                  create: (context) => getIt<RewardFormBloc>(),
+                  child: BlocConsumer<RewardFormBloc, RewardFormState>(
+                    listener: (context, state) => _rewardFormListener(
                       context,
                       state,
-                      _textEditingController,
+                      _descriptionTextEditingController,
+                      _nameTextEditingController,
                     ),
                     builder: (context, state) => Form(
-                      autovalidateMode: context.read<ObjectiveFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
+                      autovalidateMode: context.read<RewardFormBloc>().state.showErrorMessages ? AutovalidateMode.always : AutovalidateMode.disabled,
                       child: Column(
                         children: <Widget>[
-                          ObjectiveDescriptionTextField(textController: _textEditingController),
+                          RewardNameTextField(textController: _nameTextEditingController),
+                          RewardDescriptionTextField(textController: _descriptionTextEditingController),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              state.objective.imageFile.fold(
+                              state.reward.imageFile.fold(
                                 () => Column(
                                   children: <Widget>[
                                     IconButton(
@@ -111,13 +118,13 @@ class ObjectiveCreationCard extends HookWidget {
                                       onPressed: () async {
                                         final _imageFile = await _openDialog(context);
                                         if (_imageFile != null) {
-                                          context.read<ObjectiveFormBloc>().add(
-                                                ObjectiveFormEvent.imageChanged(_imageFile),
+                                          context.read<RewardFormBloc>().add(
+                                                RewardFormEvent.imageChanged(_imageFile),
                                               );
                                         }
                                       },
                                     ),
-                                    if (context.read<ObjectiveFormBloc>().state.showErrorMessages && context.read<ObjectiveFormBloc>().state.objective.imageFile.isNone())
+                                    if (context.read<RewardFormBloc>().state.showErrorMessages && context.read<RewardFormBloc>().state.reward.imageFile.isNone())
                                       Text(
                                         S.of(context).pictureSelectionMessage,
                                         textAlign: TextAlign.center,
@@ -133,8 +140,8 @@ class ObjectiveCreationCard extends HookWidget {
                                     onPressed: () async {
                                       final _imageFile = await _openDialog(context);
                                       if (_imageFile != null) {
-                                        context.read<ObjectiveFormBloc>().add(
-                                              ObjectiveFormEvent.imageChanged(_imageFile),
+                                        context.read<RewardFormBloc>().add(
+                                              RewardFormEvent.imageChanged(_imageFile),
                                             );
                                       }
                                     },
@@ -145,14 +152,9 @@ class ObjectiveCreationCard extends HookWidget {
                                   ),
                                 ),
                               ),
-                              // This widget isn't constant for the same reason the map for the experience can't be constant either
-                              Padding(
-                                padding: const EdgeInsets.all(5),
-                                child: ObjectiveCoordinatePicker(),
-                              ),
                             ],
                           ),
-                          const SubmitObjectiveButton(),
+                          const SubmitRewardButton(),
                         ],
                       ),
                     ),
@@ -166,16 +168,16 @@ class ObjectiveCreationCard extends HookWidget {
     );
   }
 
-  void _objectiveFormListener(
+  void _rewardFormListener(
     BuildContext context,
-    ObjectiveFormState state,
-    TextEditingController _textEditingController,
+    RewardFormState state,
+    TextEditingController descriptionTextEditingController,
+    TextEditingController nameTextEditingController,
   ) {
     if (state.isSubmitting) {
-      _textEditingController.clear();
-      context.read<ObjectivesCreationBloc>().add(
-            ObjectivesCreationEvent.addedObjective(state.objective),
-          );
+      descriptionTextEditingController.clear();
+      nameTextEditingController.clear();
+      context.read<RewardsCreationBloc>().add(RewardsCreationEvent.addedReward(state.reward));
     }
   }
 

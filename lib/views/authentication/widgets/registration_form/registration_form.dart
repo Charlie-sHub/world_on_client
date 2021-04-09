@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kt_dart/collection.dart';
@@ -13,7 +14,7 @@ import 'package:worldon/views/authentication/widgets/registration_form/submit_re
 import 'package:worldon/views/authentication/widgets/registration_form/user_image_picker.dart';
 import 'package:worldon/views/authentication/widgets/registration_form/username_text_field.dart';
 import 'package:worldon/views/authentication/widgets/world_on_title.dart';
-import 'package:worldon/views/experience_management/widgets/experience_creation/tag_addition_creation_card.dart';
+import 'package:worldon/views/experience_management/widgets/tag_addition_creation_card.dart';
 
 import '../email_text_field.dart';
 
@@ -72,6 +73,7 @@ class RegistrationForm extends StatelessWidget {
                 tagChangeFunction: (KtSet<Tag> tags) => context.read<RegistrationFormBloc>().add(
                       RegistrationFormEvent.interestsChanged(tags),
                     ),
+                tagSetOption: none(),
               ),
               const SizedBox(height: 8),
               const SubmitRegisterButton(),

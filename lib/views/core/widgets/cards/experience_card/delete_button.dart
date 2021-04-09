@@ -18,10 +18,11 @@ class DeleteButton extends StatelessWidget {
     return FlatButton(
       padding: const EdgeInsets.all(2),
       onPressed: () {
-        Navigator.of(context).pop();
+        // TODO: Figure out why the bloc doesn't work
         context.read<ExperienceManagementActorBloc>().add(
               ExperienceManagementActorEvent.deleted(experience),
             );
+        Navigator.of(context).pop();
       },
       child: Row(
         children: [

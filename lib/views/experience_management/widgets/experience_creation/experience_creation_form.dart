@@ -1,21 +1,22 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
 import 'package:worldon/domain/core/entities/tag/tag.dart';
 import 'package:worldon/generated/l10n.dart';
-import 'package:worldon/views/experience_management/widgets/experience_creation/finish_button.dart';
-import 'package:worldon/views/experience_management/widgets/experience_creation/map.dart';
-import 'package:worldon/views/experience_management/widgets/experience_creation/objective_creation_card/objective_creation_card.dart';
-import 'package:worldon/views/experience_management/widgets/experience_creation/pictures_selector.dart';
-import 'package:worldon/views/experience_management/widgets/experience_creation/reward_creation_card/reward_creation_card.dart';
-import 'package:worldon/views/experience_management/widgets/experience_creation/tag_addition_creation_card.dart';
-import 'package:worldon/views/experience_management/widgets/experience_creation/title_form_field.dart';
+import 'package:worldon/views/experience_management/widgets/map.dart';
+import 'package:worldon/views/experience_management/widgets/objective_creation_card/objective_creation_card.dart';
+import 'package:worldon/views/experience_management/widgets/reward_creation_card/reward_creation_card.dart';
 
-import 'description_form_field.dart';
-import 'difficulty_slider.dart';
+import '../description_form_field.dart';
+import '../difficulty_slider.dart';
+import '../finish_button.dart';
+import '../pictures_selector.dart';
+import '../tag_addition_creation_card.dart';
+import '../title_form_field.dart';
 
-class ExperienceManagementForm extends StatelessWidget {
+class ExperienceCreationForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _managementFormState = context.read<ExperienceManagementFormBloc>().state;
@@ -26,9 +27,13 @@ class ExperienceManagementForm extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           child: Column(
             children: [
-              const TitleFormField(),
+              const TitleFormField(
+                title: "",
+              ),
               const SizedBox(height: 10),
-              const DescriptionFormField(),
+              const DescriptionFormField(
+                description: "",
+              ),
               const SizedBox(height: 10),
               PicturesSelector(),
               const SizedBox(height: 20),
@@ -46,7 +51,9 @@ class ExperienceManagementForm extends StatelessWidget {
               // adding const freezes the map, meaning the marker can't change position
               Map(),
               const SizedBox(height: 10),
-              const ObjectiveCreationCard(),
+              ObjectiveCreationCard(
+                objectiveListOption: none(),
+              ),
               if (_managementFormState.showErrorMessages && !_managementFormState.experience.objectives.isValid())
                 Text(
                   S.of(context).noObjectivesErrorMessage,
@@ -55,12 +62,15 @@ class ExperienceManagementForm extends StatelessWidget {
                 )
               else
                 Container(),
-              const RewardCreationCard(),
+              RewardCreationCard(
+                rewardSetOption: none(),
+              ),
               //Change back to TagAdditionCard if necessary
               TagAdditionCreationCard(
                 tagChangeFunction: (KtSet<Tag> tags) => context.read<ExperienceManagementFormBloc>().add(
                       ExperienceManagementFormEvent.tagsChanged(tags),
                     ),
+                tagSetOption: none(),
               ),
               const FinishButton(),
             ],

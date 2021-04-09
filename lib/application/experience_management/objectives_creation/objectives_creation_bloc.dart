@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
@@ -27,8 +28,11 @@ class ObjectivesCreationBloc extends Bloc<ObjectivesCreationEvent, ObjectivesCre
   }
 
   Stream<ObjectivesCreationState> _onInitialized(_Initialized event) async* {
-    yield state.copyWith(
-      objectivesCreated: event.objectiveList.getOrCrash(),
+    yield event.objectiveListOption.fold(
+      () => state,
+      (objectiveList) => state.copyWith(
+        objectivesCreated: objectiveList.getOrCrash(),
+      ),
     );
   }
 

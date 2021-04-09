@@ -39,18 +39,16 @@ mixin _$ExperienceManagementApplicationFailure<T> {
     TResult surpassedImageLimit(int limit),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult surpassedImageLimit(SurpassedImageLimit<T> value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult surpassedImageLimit(SurpassedImageLimit<T> value),
     @required TResult orElse(),
   });
-
+  
   @JsonKey(ignore: true)
   $ExperienceManagementApplicationFailureCopyWith<T, ExperienceManagementApplicationFailure<T>> get copyWith;
 }

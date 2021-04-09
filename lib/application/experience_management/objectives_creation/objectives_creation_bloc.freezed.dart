@@ -14,9 +14,9 @@ class _$ObjectivesCreationEventTearOff {
   const _$ObjectivesCreationEventTearOff();
 
 // ignore: unused_element
-  _Initialized initialized(ObjectiveList objectiveList) {
+  _Initialized initialized(Option<ObjectiveList> objectiveListOption) {
     return _Initialized(
-      objectiveList,
+      objectiveListOption,
     );
   }
 
@@ -51,14 +51,14 @@ const $ObjectivesCreationEvent = _$ObjectivesCreationEventTearOff();
 mixin _$ObjectivesCreationEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult initialized(ObjectiveList objectiveList),
+    @required TResult initialized(Option<ObjectiveList> objectiveListOption),
     @required TResult addedObjective(Objective objective),
     @required TResult removedObjective(Objective objective),
     @required TResult changedPosition(Objective objective, int index),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult initialized(ObjectiveList objectiveList),
+    TResult initialized(Option<ObjectiveList> objectiveListOption),
     TResult addedObjective(Objective objective),
     TResult removedObjective(Objective objective),
     TResult changedPosition(Objective objective, int index),
@@ -102,7 +102,7 @@ class _$ObjectivesCreationEventCopyWithImpl<$Res> implements $ObjectivesCreation
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
 
-  $Res call({ObjectiveList objectiveList});
+  $Res call({Option<ObjectiveList> objectiveListOption});
 }
 
 /// @nodoc
@@ -114,33 +114,34 @@ class __$InitializedCopyWithImpl<$Res> extends _$ObjectivesCreationEventCopyWith
 
   @override
   $Res call({
-    Object objectiveList = freezed,
+    Object objectiveListOption = freezed,
   }) {
     return _then(_Initialized(
-      objectiveList == freezed ? _value.objectiveList : objectiveList as ObjectiveList,
+      objectiveListOption == freezed ? _value.objectiveListOption : objectiveListOption as Option<ObjectiveList>,
     ));
   }
 }
 
 /// @nodoc
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.objectiveList) : assert(objectiveList != null);
+  const _$_Initialized(this.objectiveListOption) : assert(objectiveListOption != null);
 
   @override
-  final ObjectiveList objectiveList;
+  final Option<ObjectiveList> objectiveListOption;
 
   @override
   String toString() {
-    return 'ObjectivesCreationEvent.initialized(objectiveList: $objectiveList)';
+    return 'ObjectivesCreationEvent.initialized(objectiveListOption: $objectiveListOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initialized && (identical(other.objectiveList, objectiveList) || const DeepCollectionEquality().equals(other.objectiveList, objectiveList)));
+    return identical(this, other) ||
+        (other is _Initialized && (identical(other.objectiveListOption, objectiveListOption) || const DeepCollectionEquality().equals(other.objectiveListOption, objectiveListOption)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectiveList);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectiveListOption);
 
   @JsonKey(ignore: true)
   @override
@@ -149,7 +150,7 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult initialized(ObjectiveList objectiveList),
+    @required TResult initialized(Option<ObjectiveList> objectiveListOption),
     @required TResult addedObjective(Objective objective),
     @required TResult removedObjective(Objective objective),
     @required TResult changedPosition(Objective objective, int index),
@@ -158,13 +159,13 @@ class _$_Initialized implements _Initialized {
     assert(addedObjective != null);
     assert(removedObjective != null);
     assert(changedPosition != null);
-    return initialized(objectiveList);
+    return initialized(objectiveListOption);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult initialized(ObjectiveList objectiveList),
+    TResult initialized(Option<ObjectiveList> objectiveListOption),
     TResult addedObjective(Objective objective),
     TResult removedObjective(Objective objective),
     TResult changedPosition(Objective objective, int index),
@@ -172,7 +173,7 @@ class _$_Initialized implements _Initialized {
   }) {
     assert(orElse != null);
     if (initialized != null) {
-      return initialized(objectiveList);
+      return initialized(objectiveListOption);
     }
     return orElse();
   }
@@ -210,9 +211,9 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements ObjectivesCreationEvent {
-  const factory _Initialized(ObjectiveList objectiveList) = _$_Initialized;
+  const factory _Initialized(Option<ObjectiveList> objectiveListOption) = _$_Initialized;
 
-  ObjectiveList get objectiveList;
+  Option<ObjectiveList> get objectiveListOption;
 
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith;
@@ -291,7 +292,7 @@ class _$_AddedObjective implements _AddedObjective {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult initialized(ObjectiveList objectiveList),
+    @required TResult initialized(Option<ObjectiveList> objectiveListOption),
     @required TResult addedObjective(Objective objective),
     @required TResult removedObjective(Objective objective),
     @required TResult changedPosition(Objective objective, int index),
@@ -306,7 +307,7 @@ class _$_AddedObjective implements _AddedObjective {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult initialized(ObjectiveList objectiveList),
+    TResult initialized(Option<ObjectiveList> objectiveListOption),
     TResult addedObjective(Objective objective),
     TResult removedObjective(Objective objective),
     TResult changedPosition(Objective objective, int index),
@@ -432,7 +433,7 @@ class _$_RemovedObjective implements _RemovedObjective {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult initialized(ObjectiveList objectiveList),
+    @required TResult initialized(Option<ObjectiveList> objectiveListOption),
     @required TResult addedObjective(Objective objective),
     @required TResult removedObjective(Objective objective),
     @required TResult changedPosition(Objective objective, int index),
@@ -447,7 +448,7 @@ class _$_RemovedObjective implements _RemovedObjective {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult initialized(ObjectiveList objectiveList),
+    TResult initialized(Option<ObjectiveList> objectiveListOption),
     TResult addedObjective(Objective objective),
     TResult removedObjective(Objective objective),
     TResult changedPosition(Objective objective, int index),
@@ -572,7 +573,7 @@ class _$_ChangedPosition implements _ChangedPosition {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult initialized(ObjectiveList objectiveList),
+    @required TResult initialized(Option<ObjectiveList> objectiveListOption),
     @required TResult addedObjective(Objective objective),
     @required TResult removedObjective(Objective objective),
     @required TResult changedPosition(Objective objective, int index),
@@ -587,7 +588,7 @@ class _$_ChangedPosition implements _ChangedPosition {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult initialized(ObjectiveList objectiveList),
+    TResult initialized(Option<ObjectiveList> objectiveListOption),
     TResult addedObjective(Objective objective),
     TResult removedObjective(Objective objective),
     TResult changedPosition(Objective objective, int index),

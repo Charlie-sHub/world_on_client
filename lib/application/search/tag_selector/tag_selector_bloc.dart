@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
@@ -26,9 +27,11 @@ class TagSelectorBloc extends Bloc<TagSelectorEvent, TagSelectorState> {
   }
 
   Stream<TagSelectorState> _onInitialized(_Initialized event) async* {
-    yield state.copyWith(
-      tagsSelected: event.tagSet.getOrCrash(),
-    );
+    yield event.tagSetOption.fold(
+        () => state,
+        (_tagSet) => state.copyWith(
+              tagsSelected: _tagSet.getOrCrash(),
+            ));
   }
 
   Stream<TagSelectorState> _onSubtractedTag(_RemovedTag event) async* {
