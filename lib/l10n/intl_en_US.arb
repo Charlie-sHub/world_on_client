@@ -173,5 +173,9 @@
   "delete": "Delete",
   "title": "Title",
   "experienceEditingTitle": "Editing Experience",
-  "addPictures": "Add pictures"
+  "addPictures": "Add pictures",
+  "editObjectives": "Edit the Objectives",
+  "editDifficulty": "Change the Difficulty",
+  "editRewards": "Edit the Rewards",
+  "surpassedImageLimit": "The max amount of images is: "
 }

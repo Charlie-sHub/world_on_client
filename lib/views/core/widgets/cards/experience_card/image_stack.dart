@@ -12,48 +12,17 @@ class ImageStack extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Had a container of 250px height
     return Stack(
-      children: <Widget>[
-        // Had a container of the width
+      children: [
         Center(
-          child: Image.network(experience.imageURLs.first),
+          child: experience.imageURLs.isNotEmpty ? Image.network(experience.imageURLs.first) : Container(),
         ),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Row(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5),
-                  child: UserImage(user: experience.creator),
-                ),
-              ],
-            ),
-            /*
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: const <Widget>[
-                  Icon(
-                    Icons.place,
-                    size: 30,
-                  ),
-                  // TODO: Implement bloc that checks the distance from the experience
-                  AutoSizeText(
-                    "500m",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: WorldOnColors.white,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-             */
-          ],
+        Align(
+          alignment: Alignment.topLeft,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: UserImage(user: experience.creator),
+          ),
         ),
       ],
     );

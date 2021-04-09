@@ -12,12 +12,12 @@ import 'package:worldon/views/search/widget/search_something.dart';
 
 class SearchExperiencesTabView extends StatelessWidget {
   final SearchTerm searchTerm;
-  
+
   const SearchExperiencesTabView({
     Key key,
     @required this.searchTerm,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SearchExperiencesByNameWatcherBloc, SearchExperiencesByNameWatcherState>(
@@ -34,13 +34,16 @@ class SearchExperiencesTabView extends StatelessWidget {
               return ExperienceCard(
                 experience: _experience,
                 key: Key(_experience.id.toString()),
+                reloadFunction: (_) => context.read<SearchExperiencesByNameWatcherBloc>().add(
+                      SearchExperiencesByNameWatcherEvent.watchExperiencesFoundByNameStarted(searchTerm),
+                    ),
               );
             } else {
               return ErrorCard(
                 entityType: S.of(context).experience,
                 valueFailureString: _experience.failureOption.fold(
-                    () => S.of(context).noError,
-                    (failure) => failure.toString(),
+                  () => S.of(context).noError,
+                  (failure) => failure.toString(),
                 ),
               );
             }

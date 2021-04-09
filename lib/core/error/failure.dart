@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:worldon/application/core/failures/core_application_failure.dart';
+import 'package:worldon/application/experience_management/failures/experience_management_application_failure.dart';
 import 'package:worldon/data/authentication/failures/authentication_data_failure.dart';
 import 'package:worldon/data/core/failures/core_data_failure.dart';
 import 'package:worldon/data/store/failure/store_data_failure.dart';
@@ -19,6 +20,8 @@ abstract class Failure<T> with _$Failure<T> {
   const factory Failure.coreDomain(CoreDomainFailure<T> coreDomainFailure) = _CoreDomain<T>;
 
   const factory Failure.coreApplication(CoreApplicationFailure<T> coreApplicationFailure) = _CoreAppllication<T>;
+
+  const factory Failure.experienceManagementApplication(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure) = _ExperienceManagementApplicationFailure<T>;
 
   const factory Failure.coreData(CoreDataFailure<T> coreDataFailure) = _CoreData<T>;
 

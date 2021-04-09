@@ -17,9 +17,9 @@ class ProfileExperiencesTabView extends StatelessWidget {
     Key key,
     @required this.user,
   }) : super(key: key);
-  
+
   final User user;
-  
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -43,13 +43,16 @@ class ProfileExperiencesTabView extends StatelessWidget {
                   return ExperienceCard(
                     experience: _experience,
                     key: Key(_experience.id.toString()),
+                    reloadFunction: (_) => context.read<ProfileExperiencesWatcherBloc>().add(
+                          ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(user),
+                        ),
                   );
                 } else {
                   return ErrorCard(
                     entityType: S.of(context).experience,
                     valueFailureString: _experience.failureOption.fold(
-                        () => S.of(context).noError,
-                        (failure) => failure.toString(),
+                      () => S.of(context).noError,
+                      (failure) => failure.toString(),
                     ),
                   );
                 }

@@ -168,9 +168,13 @@
   "notFoundErrorComments": "Esta experiencia no tiene comentarios",
   "welcomeTitle": "BIENVENIDO",
   "continueToMainPage": "CONTINUAR",
-  "welcomeMessage": "Hola.\n\nBienvenido a World On, aquí podrás crear y compartir experiencias actividades de la vida real que quieras compartir o realizar las que más te gusten creadas por otros. Crea, comparte, participa y diviertete.\n\nVive y juega la aventura de tu vida!",
+  "welcomeMessage": "Hola.\n\nBienvenido a World On, aquí podrás crear y compartir experiencias actividades de la vida real que quieras compartir o realizar las que más te gusten creadas por otros.\n\nCrea, comparte, participa y diviertete.\n\nVive y juega la aventura de tu vida!",
   "delete": "Borrar",
   "title": "Titulo",
   "experienceEditingTitle": "Editando experiencia",
-  "addPictures": "Añade fotos"
+  "addPictures": "Añade fotos",
+  "editObjectives": "Edita los objetivos",
+  "editDifficulty": "Cambia la dificultad",
+  "editRewards": "Edita las recompensas",
+  "surpassedImageLimit": "El numero maximo de imagenes es de: "
 }

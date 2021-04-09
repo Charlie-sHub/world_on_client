@@ -70,6 +70,12 @@ class ExperienceManagementPage extends StatelessWidget {
             message: S.of(context).unknownCoreDataError,
           ).show(context),
         ),
+        experienceManagementApplication: (_experienceManagementApplication) => _experienceManagementApplication.experienceManagementApplicationFailure.map(
+          surpassedImageLimit: (_failure) => FlushbarHelper.createError(
+            duration: const Duration(seconds: 2),
+            message: S.of(context).surpassedImageLimit + _failure.limit.toString(),
+          ).show(context),
+        ),
         orElse: () => FlushbarHelper.createError(
           duration: const Duration(seconds: 2),
           message: S.of(context).unknownError,

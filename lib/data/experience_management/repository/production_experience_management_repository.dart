@@ -54,7 +54,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
             _experienceDto.toJson(),
           );
       // I don't like doing this but seems like the best solution for now
-      final _flutterFireGeoposition = _geo.point(
+      final _flutterFireGeoPosition = _geo.point(
         latitude: _experienceDto.coordinates.latitude,
         longitude: _experienceDto.coordinates.longitude,
       );
@@ -64,7 +64,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
       )
           .set(
         {
-          ExperienceFields.position: _flutterFireGeoposition.data,
+          ExperienceFields.position: _flutterFireGeoPosition.data,
         },
         SetOptions(merge: true),
       );
@@ -77,13 +77,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
   @override
   Future<Either<Failure, Unit>> editExperience(Experience experience) async {
     try {
-      // How to deal with images?
-      // An experience being edited will have just the links to the images
-      // How to be able to change some images and other's not?
-      // If editing an experience the page will show a grid of network images as well as the normal images selector
-      // Each cell of the grid will have a button to delete the image (remove the link string from the list)
-
-      // How to edit Rewards and Objectives?
+      // TODO: How to edit Rewards and Objectives?
       // For now simply deleting them and creating new ones
       // Make them then reorderable
       // When an objective changes position the even of objectives changed is added with the new list

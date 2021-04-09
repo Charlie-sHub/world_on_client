@@ -11,9 +11,11 @@ class ManageMenuButton extends StatelessWidget {
   const ManageMenuButton({
     Key key,
     @required this.experience,
+    @required this.reloadFunction,
   }) : super(key: key);
 
   final Experience experience;
+  final Function(Object param) reloadFunction;
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +28,7 @@ class ManageMenuButton extends StatelessWidget {
             PopupMenuItem(
               child: EditButton(
                 experience: experience,
+                reloadFunction: reloadFunction,
               ),
             ),
             PopupMenuItem(

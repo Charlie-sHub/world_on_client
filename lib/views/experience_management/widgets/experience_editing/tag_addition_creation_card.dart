@@ -7,6 +7,7 @@ import 'package:worldon/application/search/search_by_name_form/search_by_name_fo
 import 'package:worldon/application/search/search_tags_by_name_watcher/search_tags_by_name_watcher_bloc.dart';
 import 'package:worldon/application/search/tag_selector/tag_selector_bloc.dart';
 import 'package:worldon/application/tag_management/tag_management_form/tag_management_form_bloc.dart';
+import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
@@ -17,9 +18,11 @@ import 'package:worldon/views/tag_management/widgets/tag_management_form.dart';
 
 class TagAdditionCreationCard extends HookWidget {
   final Function tagChangeFunction;
+  final TagSet tagSet;
 
   const TagAdditionCreationCard({
     Key key,
+    @required this.tagSet,
     @required this.tagChangeFunction,
   }) : super(key: key);
 
@@ -31,7 +34,7 @@ class TagAdditionCreationCard extends HookWidget {
         //This is a bit of a frankenstein monster of a widget, should probably be reviewed, there must be a better way to do this
         BlocProvider(create: (context) => getIt<SearchByNameFormBloc>()),
         BlocProvider(create: (context) => getIt<SearchTagsByNameWatcherBloc>()),
-        BlocProvider(create: (context) => getIt<TagSelectorBloc>()),
+        BlocProvider(create: (context) => getIt<TagSelectorBloc>()..add(TagSelectorEvent.initialized(tagSet))),
         BlocProvider(create: (context) => getIt<TagManagementFormBloc>()),
       ],
       child: BlocListener<TagSelectorBloc, TagSelectorState>(

@@ -1765,6 +1765,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Edit the Objectives`
+  String get editObjectives {
+    return Intl.message(
+      'Edit the Objectives',
+      name: 'editObjectives',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change the Difficulty`
+  String get editDifficulty {
+    return Intl.message(
+      'Change the Difficulty',
+      name: 'editDifficulty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit the Rewards`
+  String get editRewards {
+    return Intl.message(
+      'Edit the Rewards',
+      name: 'editRewards',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The max amount of images is: `
+  String get surpassedImageLimit {
+    return Intl.message(
+      'The max amount of images is: ',
+      name: 'surpassedImageLimit',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

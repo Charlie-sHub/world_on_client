@@ -89,7 +89,7 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
           isEqualTo: _userDto.id,
         )
         .where(
-      NotificationFields.seen,
+          NotificationFields.seen,
           isEqualTo: false,
         )
         .snapshots()

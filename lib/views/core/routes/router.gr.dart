@@ -168,37 +168,35 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
   }) =>
       push<bool>(
         Routes.profileEditingPage,
-      arguments: ProfileEditingPageArguments(key: key, user: user),
-    );
-  
+        arguments: ProfileEditingPageArguments(key: key, user: user),
+      );
+
   Future<dynamic> pushExperienceManagementPage({
     Key key,
     @required Option<Experience> experienceOption,
   }) =>
-    push<dynamic>(
-      Routes.experienceManagementPage,
-      arguments: ExperienceManagementPageArguments(
-        key: key, experienceOption: experienceOption),
-    );
-  
+      push<dynamic>(
+        Routes.experienceManagementPage,
+        arguments: ExperienceManagementPageArguments(key: key, experienceOption: experienceOption),
+      );
+
   Future<dynamic> pushExperienceEditingPage({
     Key key,
     @required Experience experience,
   }) =>
-    push<dynamic>(
-      Routes.experienceEditingPage,
-      arguments:
-      ExperienceEditingPageArguments(key: key, experience: experience),
-    );
-  
+      push<dynamic>(
+        Routes.experienceEditingPage,
+        arguments: ExperienceEditingPageArguments(key: key, experience: experience),
+      );
+
   Future<dynamic> pushTagManagementPage({
     Key key,
     @required Option<Tag> tagOption,
   }) =>
-    push<dynamic>(
-      Routes.tagManagementPage,
-      arguments: TagManagementPageArguments(key: key, tagOption: tagOption),
-    );
+      push<dynamic>(
+        Routes.tagManagementPage,
+        arguments: TagManagementPageArguments(key: key, tagOption: tagOption),
+      );
 
   Future<dynamic> pushStorePage() => push<dynamic>(Routes.storePage);
 }
@@ -226,7 +224,6 @@ class ExperienceManagementPageArguments {
 class ExperienceEditingPageArguments {
   final Key key;
   final Experience experience;
-
   ExperienceEditingPageArguments({this.key, @required this.experience});
 }
 
@@ -234,6 +231,5 @@ class ExperienceEditingPageArguments {
 class TagManagementPageArguments {
   final Key key;
   final Option<Tag> tagOption;
-
   TagManagementPageArguments({this.key, @required this.tagOption});
 }

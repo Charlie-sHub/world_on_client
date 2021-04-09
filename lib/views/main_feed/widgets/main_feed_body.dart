@@ -12,7 +12,7 @@ import '../../../injection.dart';
 
 class MainFeedBody extends StatelessWidget {
   const MainFeedBody({Key key}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -38,13 +38,16 @@ class MainFeedBody extends StatelessWidget {
                   return ExperienceCard(
                     experience: _experience,
                     key: Key(_experience.id.toString()),
+                    reloadFunction: (_) => context.read<MainFeedWatcherBloc>().add(
+                          const MainFeedWatcherEvent.watchMainFeedStarted(),
+                        ),
                   );
                 } else {
                   return ErrorCard(
                     entityType: S.of(context).experience,
                     valueFailureString: _experience.failureOption.fold(
-                        () => S.of(context).noError,
-                        (failure) => failure.toString(),
+                      () => S.of(context).noError,
+                      (failure) => failure.toString(),
                     ),
                   );
                 }

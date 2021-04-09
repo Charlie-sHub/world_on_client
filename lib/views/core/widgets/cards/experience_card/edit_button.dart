@@ -9,20 +9,27 @@ class EditButton extends StatelessWidget {
   const EditButton({
     Key key,
     @required this.experience,
+    @required this.reloadFunction,
   }) : super(key: key);
 
   final Experience experience;
+  final Function(Object param) reloadFunction;
 
   @override
   Widget build(BuildContext context) {
     return FlatButton(
       padding: const EdgeInsets.all(2),
-      onPressed: () => context.navigator.push(
-        Routes.experienceEditingPage,
-        arguments: ExperienceEditingPageArguments(
-          experience: experience,
-        ),
-      ),
+      onPressed: () async {
+        Navigator.of(context).pop();
+        await context.navigator
+            .push(
+              Routes.experienceEditingPage,
+              arguments: ExperienceEditingPageArguments(
+                experience: experience,
+              ),
+            )
+            .then(reloadFunction);
+      },
       child: Row(
         children: [
           const Icon(

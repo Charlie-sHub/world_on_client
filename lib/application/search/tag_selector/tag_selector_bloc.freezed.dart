@@ -14,6 +14,13 @@ class _$TagSelectorEventTearOff {
   const _$TagSelectorEventTearOff();
 
 // ignore: unused_element
+  _Initialized initialized(TagSet tagSet) {
+    return _Initialized(
+      tagSet,
+    );
+  }
+
+// ignore: unused_element
   _AddedTag addedTag(Tag tag) {
     return _AddedTag(
       tag,
@@ -34,33 +41,32 @@ const $TagSelectorEvent = _$TagSelectorEventTearOff();
 
 /// @nodoc
 mixin _$TagSelectorEvent {
-  Tag get tag;
-
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult initialized(TagSet tagSet),
     @required TResult addedTag(Tag tag),
     @required TResult removedTag(Tag tag),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult initialized(TagSet tagSet),
     TResult addedTag(Tag tag),
     TResult removedTag(Tag tag),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
     @required TResult addedTag(_AddedTag value),
     @required TResult removedTag(_RemovedTag value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
     TResult addedTag(_AddedTag value),
     TResult removedTag(_RemovedTag value),
     @required TResult orElse(),
   });
-
-  @JsonKey(ignore: true)
-  $TagSelectorEventCopyWith<TagSelectorEvent> get copyWith;
 }
 
 /// @nodoc
@@ -68,49 +74,138 @@ abstract class $TagSelectorEventCopyWith<$Res> {
   factory $TagSelectorEventCopyWith(
           TagSelectorEvent value, $Res Function(TagSelectorEvent) then) =
       _$TagSelectorEventCopyWithImpl<$Res>;
-  $Res call({Tag tag});
-
-  $TagCopyWith<$Res> get tag;
 }
 
 /// @nodoc
-class _$TagSelectorEventCopyWithImpl<$Res>
-    implements $TagSelectorEventCopyWith<$Res> {
+class _$TagSelectorEventCopyWithImpl<$Res> implements $TagSelectorEventCopyWith<$Res> {
   _$TagSelectorEventCopyWithImpl(this._value, this._then);
 
   final TagSelectorEvent _value;
+
   // ignore: unused_field
   final $Res Function(TagSelectorEvent) _then;
+}
+
+/// @nodoc
+abstract class _$InitializedCopyWith<$Res> {
+  factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+
+  $Res call({TagSet tagSet});
+}
+
+/// @nodoc
+class __$InitializedCopyWithImpl<$Res> extends _$TagSelectorEventCopyWithImpl<$Res> implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(_Initialized _value, $Res Function(_Initialized) _then) : super(_value, (v) => _then(v as _Initialized));
+
+  @override
+  _Initialized get _value => super._value as _Initialized;
 
   @override
   $Res call({
-    Object tag = freezed,
+    Object tagSet = freezed,
   }) {
-    return _then(_value.copyWith(
-      tag: tag == freezed ? _value.tag : tag as Tag,
+    return _then(_Initialized(
+      tagSet == freezed ? _value.tagSet : tagSet as TagSet,
     ));
-  }
-
-  @override
-  $TagCopyWith<$Res> get tag {
-    if (_value.tag == null) {
-      return null;
-    }
-    return $TagCopyWith<$Res>(_value.tag, (value) {
-      return _then(_value.copyWith(tag: value));
-    });
   }
 }
 
 /// @nodoc
-abstract class _$AddedTagCopyWith<$Res>
-    implements $TagSelectorEventCopyWith<$Res> {
-  factory _$AddedTagCopyWith(_AddedTag value, $Res Function(_AddedTag) then) =
-      __$AddedTagCopyWithImpl<$Res>;
-  @override
-  $Res call({Tag tag});
+class _$_Initialized implements _Initialized {
+  const _$_Initialized(this.tagSet) : assert(tagSet != null);
 
   @override
+  final TagSet tagSet;
+
+  @override
+  String toString() {
+    return 'TagSelectorEvent.initialized(tagSet: $tagSet)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _Initialized && (identical(other.tagSet, tagSet) || const DeepCollectionEquality().equals(other.tagSet, tagSet)));
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tagSet);
+
+  @JsonKey(ignore: true)
+  @override
+  _$InitializedCopyWith<_Initialized> get copyWith => __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult initialized(TagSet tagSet),
+    @required TResult addedTag(Tag tag),
+    @required TResult removedTag(Tag tag),
+  }) {
+    assert(initialized != null);
+    assert(addedTag != null);
+    assert(removedTag != null);
+    return initialized(tagSet);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult initialized(TagSet tagSet),
+    TResult addedTag(Tag tag),
+    TResult removedTag(Tag tag),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (initialized != null) {
+      return initialized(tagSet);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
+    @required TResult addedTag(_AddedTag value),
+    @required TResult removedTag(_RemovedTag value),
+  }) {
+    assert(initialized != null);
+    assert(addedTag != null);
+    assert(removedTag != null);
+    return initialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
+    TResult addedTag(_AddedTag value),
+    TResult removedTag(_RemovedTag value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (initialized != null) {
+      return initialized(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Initialized implements TagSelectorEvent {
+  const factory _Initialized(TagSet tagSet) = _$_Initialized;
+
+  TagSet get tagSet;
+
+  @JsonKey(ignore: true)
+  _$InitializedCopyWith<_Initialized> get copyWith;
+}
+
+/// @nodoc
+abstract class _$AddedTagCopyWith<$Res> {
+  factory _$AddedTagCopyWith(_AddedTag value, $Res Function(_AddedTag) then) = __$AddedTagCopyWithImpl<$Res>;
+
+  $Res call({Tag tag});
+
   $TagCopyWith<$Res> get tag;
 }
 
@@ -130,6 +225,16 @@ class __$AddedTagCopyWithImpl<$Res> extends _$TagSelectorEventCopyWithImpl<$Res>
     return _then(_AddedTag(
       tag == freezed ? _value.tag : tag as Tag,
     ));
+  }
+
+  @override
+  $TagCopyWith<$Res> get tag {
+    if (_value.tag == null) {
+      return null;
+    }
+    return $TagCopyWith<$Res>(_value.tag, (value) {
+      return _then(_value.copyWith(tag: value));
+    });
   }
 }
 
@@ -165,9 +270,11 @@ class _$_AddedTag implements _AddedTag {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult initialized(TagSet tagSet),
     @required TResult addedTag(Tag tag),
     @required TResult removedTag(Tag tag),
   }) {
+    assert(initialized != null);
     assert(addedTag != null);
     assert(removedTag != null);
     return addedTag(tag);
@@ -176,6 +283,7 @@ class _$_AddedTag implements _AddedTag {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult initialized(TagSet tagSet),
     TResult addedTag(Tag tag),
     TResult removedTag(Tag tag),
     @required TResult orElse(),
@@ -190,9 +298,11 @@ class _$_AddedTag implements _AddedTag {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
     @required TResult addedTag(_AddedTag value),
     @required TResult removedTag(_RemovedTag value),
   }) {
+    assert(initialized != null);
     assert(addedTag != null);
     assert(removedTag != null);
     return addedTag(this);
@@ -201,6 +311,7 @@ class _$_AddedTag implements _AddedTag {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
     TResult addedTag(_AddedTag value),
     TResult removedTag(_RemovedTag value),
     @required TResult orElse(),
@@ -216,23 +327,17 @@ class _$_AddedTag implements _AddedTag {
 abstract class _AddedTag implements TagSelectorEvent {
   const factory _AddedTag(Tag tag) = _$_AddedTag;
 
-  @override
   Tag get tag;
-  @override
   @JsonKey(ignore: true)
   _$AddedTagCopyWith<_AddedTag> get copyWith;
 }
 
 /// @nodoc
-abstract class _$RemovedTagCopyWith<$Res>
-    implements $TagSelectorEventCopyWith<$Res> {
-  factory _$RemovedTagCopyWith(
-          _RemovedTag value, $Res Function(_RemovedTag) then) =
-      __$RemovedTagCopyWithImpl<$Res>;
-  @override
+abstract class _$RemovedTagCopyWith<$Res> {
+  factory _$RemovedTagCopyWith(_RemovedTag value, $Res Function(_RemovedTag) then) = __$RemovedTagCopyWithImpl<$Res>;
+
   $Res call({Tag tag});
 
-  @override
   $TagCopyWith<$Res> get tag;
 }
 
@@ -254,6 +359,16 @@ class __$RemovedTagCopyWithImpl<$Res>
     return _then(_RemovedTag(
       tag == freezed ? _value.tag : tag as Tag,
     ));
+  }
+
+  @override
+  $TagCopyWith<$Res> get tag {
+    if (_value.tag == null) {
+      return null;
+    }
+    return $TagCopyWith<$Res>(_value.tag, (value) {
+      return _then(_value.copyWith(tag: value));
+    });
   }
 }
 
@@ -289,9 +404,11 @@ class _$_RemovedTag implements _RemovedTag {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult initialized(TagSet tagSet),
     @required TResult addedTag(Tag tag),
     @required TResult removedTag(Tag tag),
   }) {
+    assert(initialized != null);
     assert(addedTag != null);
     assert(removedTag != null);
     return removedTag(tag);
@@ -300,6 +417,7 @@ class _$_RemovedTag implements _RemovedTag {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult initialized(TagSet tagSet),
     TResult addedTag(Tag tag),
     TResult removedTag(Tag tag),
     @required TResult orElse(),
@@ -314,9 +432,11 @@ class _$_RemovedTag implements _RemovedTag {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
     @required TResult addedTag(_AddedTag value),
     @required TResult removedTag(_RemovedTag value),
   }) {
+    assert(initialized != null);
     assert(addedTag != null);
     assert(removedTag != null);
     return removedTag(this);
@@ -325,6 +445,7 @@ class _$_RemovedTag implements _RemovedTag {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
     TResult addedTag(_AddedTag value),
     TResult removedTag(_RemovedTag value),
     @required TResult orElse(),
@@ -340,9 +461,7 @@ class _$_RemovedTag implements _RemovedTag {
 abstract class _RemovedTag implements TagSelectorEvent {
   const factory _RemovedTag(Tag tag) = _$_RemovedTag;
 
-  @override
   Tag get tag;
-  @override
   @JsonKey(ignore: true)
   _$RemovedTagCopyWith<_RemovedTag> get copyWith;
 }

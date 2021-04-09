@@ -22,6 +22,13 @@ class ObjectivesCreationBloc extends Bloc<ObjectivesCreationEvent, ObjectivesCre
       addedObjective: _onAddedObjective,
       removedObjective: _onRemovedObjective,
       changedPosition: onChangedPosition,
+      initialized: _onInitialized,
+    );
+  }
+
+  Stream<ObjectivesCreationState> _onInitialized(_Initialized event) async* {
+    yield state.copyWith(
+      objectivesCreated: event.objectiveList.getOrCrash(),
     );
   }
 

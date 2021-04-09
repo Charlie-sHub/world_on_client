@@ -7,6 +7,7 @@ import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:meta/meta.dart';
 import 'package:multi_image_picker/multi_image_picker.dart';
+import 'package:worldon/application/experience_management/failures/experience_management_application_failure.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
@@ -38,6 +39,8 @@ part 'experience_management_form_state.dart';
 class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, ExperienceManagementFormState> {
   ExperienceManagementFormBloc() : super(ExperienceManagementFormState.initial());
 
+  static const _imageNumberLimit = 15;
+
   // TODO: Change this to a purely experience creation bloc
   @override
   Stream<ExperienceManagementFormState> mapEventToState(ExperienceManagementFormEvent event) async* {
@@ -67,9 +70,27 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
           edit_experience.Params(experience: state.experience),
         );
       } else if (state.experience.imageAssetsOption.isSome()) {
-        _failureOrUnit = await getIt<create_experience.CreateExperience>()(
-          create_experience.Params(experience: state.experience),
+        final _filesCount = state.experience.imageAssetsOption.fold(
+          () => 0,
+          (_imageList) => _imageList.length,
         );
+        if (_filesCount <= _imageNumberLimit) {
+          _failureOrUnit = await getIt<create_experience.CreateExperience>()(
+            create_experience.Params(experience: state.experience),
+          );
+        } else {
+          yield state.copyWith(
+            isSubmitting: false,
+            showErrorMessages: true,
+            failureOrSuccessOption: optionOf(
+              left(
+                const Failure.experienceManagementApplication(
+                  ExperienceManagementApplicationFailure.surpassedImageLimit(limit: _imageNumberLimit),
+                ),
+              ),
+            ),
+          );
+        }
       }
     }
     yield state.copyWith(

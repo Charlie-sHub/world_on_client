@@ -15,7 +15,7 @@ class OriginalPicturesGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(8),
       shrinkWrap: true,
       physics: const ClampingScrollPhysics(),
       crossAxisCount: 3,
@@ -23,25 +23,38 @@ class OriginalPicturesGridView extends StatelessWidget {
         experience.imageURLs.length,
         (index) {
           final _imageURL = experience.imageURLs.elementAt(index);
-          return Stack(
-            children: [
-              Image(
-                image: NetworkImage(
-                  _imageURL,
+          return Card(
+            elevation: 5,
+            color: WorldOnColors.background,
+            child: Stack(
+              children: [
+                Center(
+                  child: Image(
+                    image: NetworkImage(
+                      _imageURL,
+                    ),
+                  ),
                 ),
-              ),
-              IconButton(
-                icon: const Icon(
-                  Icons.delete_forever_rounded,
-                  color: WorldOnColors.red,
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: SizedBox(
+                    height: 35,
+                    child: IconButton(
+                      icon: const Icon(
+                        Icons.delete_forever_rounded,
+                        color: WorldOnColors.red,
+                        size: 35,
+                      ),
+                      onPressed: () {
+                        return context.read<ExperienceEditingFormBloc>().add(
+                              ExperienceEditingFormEvent.imageDeleted(_imageURL),
+                            );
+                      },
+                    ),
+                  ),
                 ),
-                onPressed: () {
-                  return context.read<ExperienceEditingFormBloc>().add(
-                        ExperienceEditingFormEvent.imageDeleted(_imageURL),
-                      );
-                },
-              ),
-            ],
+              ],
+            ),
           );
         },
       ),

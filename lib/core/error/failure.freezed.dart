@@ -42,6 +42,13 @@ class _$FailureTearOff {
   }
 
 // ignore: unused_element
+  _ExperienceManagementApplicationFailure<T> experienceManagementApplication<T>(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure) {
+    return _ExperienceManagementApplicationFailure<T>(
+      experienceManagementApplicationFailure,
+    );
+  }
+
+// ignore: unused_element
   _CoreData<T> coreData<T>(CoreDataFailure<T> coreDataFailure) {
     return _CoreData<T>(
       coreDataFailure,
@@ -82,6 +89,7 @@ mixin _$Failure<T> {
     @required TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     @required TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     @required TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    @required TResult experienceManagementApplication(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure),
     @required TResult coreData(CoreDataFailure<T> coreDataFailure),
     @required TResult storeData(StoreDataFailure<T> storeDataFailure),
     @required TResult value(ValueFailure<T> valueFailure),
@@ -93,6 +101,7 @@ mixin _$Failure<T> {
     TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    TResult experienceManagementApplication(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure),
     TResult coreData(CoreDataFailure<T> coreDataFailure),
     TResult storeData(StoreDataFailure<T> storeDataFailure),
     TResult value(ValueFailure<T> valueFailure),
@@ -105,6 +114,7 @@ mixin _$Failure<T> {
     @required TResult authenticationData(_AuthenticationData<T> value),
     @required TResult coreDomain(_CoreDomain<T> value),
     @required TResult coreApplication(_CoreAppllication<T> value),
+    @required TResult experienceManagementApplication(_ExperienceManagementApplicationFailure<T> value),
     @required TResult coreData(_CoreData<T> value),
     @required TResult storeData(_StoreData<T> value),
     @required TResult value(_Value<T> value),
@@ -116,6 +126,7 @@ mixin _$Failure<T> {
     TResult authenticationData(_AuthenticationData<T> value),
     TResult coreDomain(_CoreDomain<T> value),
     TResult coreApplication(_CoreAppllication<T> value),
+    TResult experienceManagementApplication(_ExperienceManagementApplicationFailure<T> value),
     TResult coreData(_CoreData<T> value),
     TResult storeData(_StoreData<T> value),
     TResult value(_Value<T> value),
@@ -162,7 +173,7 @@ class __$AuthenticationDomainCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl
       authenticationDomainFailure == freezed ? _value.authenticationDomainFailure : authenticationDomainFailure as AuthenticationDomainFailure<T>,
     ));
   }
-  
+
   @override
   $AuthenticationDomainFailureCopyWith<T, $Res> get authenticationDomainFailure {
     if (_value.authenticationDomainFailure == null) {
@@ -192,7 +203,7 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
         (other is _AuthenticationDomain<T> &&
             (identical(other.authenticationDomainFailure, authenticationDomainFailure) || const DeepCollectionEquality().equals(other.authenticationDomainFailure, authenticationDomainFailure)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(authenticationDomainFailure);
 
@@ -207,6 +218,7 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
     @required TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     @required TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     @required TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    @required TResult experienceManagementApplication(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure),
     @required TResult coreData(CoreDataFailure<T> coreDataFailure),
     @required TResult storeData(StoreDataFailure<T> storeDataFailure),
     @required TResult value(ValueFailure<T> valueFailure),
@@ -216,6 +228,7 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
     assert(authenticationData != null);
     assert(coreDomain != null);
     assert(coreApplication != null);
+    assert(experienceManagementApplication != null);
     assert(coreData != null);
     assert(storeData != null);
     assert(value != null);
@@ -230,6 +243,7 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
     TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    TResult experienceManagementApplication(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure),
     TResult coreData(CoreDataFailure<T> coreDataFailure),
     TResult storeData(StoreDataFailure<T> storeDataFailure),
     TResult value(ValueFailure<T> valueFailure),
@@ -250,6 +264,7 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
     @required TResult authenticationData(_AuthenticationData<T> value),
     @required TResult coreDomain(_CoreDomain<T> value),
     @required TResult coreApplication(_CoreAppllication<T> value),
+    @required TResult experienceManagementApplication(_ExperienceManagementApplicationFailure<T> value),
     @required TResult coreData(_CoreData<T> value),
     @required TResult storeData(_StoreData<T> value),
     @required TResult value(_Value<T> value),
@@ -259,6 +274,7 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
     assert(authenticationData != null);
     assert(coreDomain != null);
     assert(coreApplication != null);
+    assert(experienceManagementApplication != null);
     assert(coreData != null);
     assert(storeData != null);
     assert(value != null);
@@ -273,6 +289,7 @@ class _$_AuthenticationDomain<T> implements _AuthenticationDomain<T> {
     TResult authenticationData(_AuthenticationData<T> value),
     TResult coreDomain(_CoreDomain<T> value),
     TResult coreApplication(_CoreAppllication<T> value),
+    TResult experienceManagementApplication(_ExperienceManagementApplicationFailure<T> value),
     TResult coreData(_CoreData<T> value),
     TResult storeData(_StoreData<T> value),
     TResult value(_Value<T> value),
@@ -350,7 +367,7 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
         (other is _AuthenticationData<T> &&
             (identical(other.authenticationDataFailure, authenticationDataFailure) || const DeepCollectionEquality().equals(other.authenticationDataFailure, authenticationDataFailure)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(authenticationDataFailure);
 
@@ -365,6 +382,7 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
     @required TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     @required TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     @required TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    @required TResult experienceManagementApplication(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure),
     @required TResult coreData(CoreDataFailure<T> coreDataFailure),
     @required TResult storeData(StoreDataFailure<T> storeDataFailure),
     @required TResult value(ValueFailure<T> valueFailure),
@@ -374,6 +392,7 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
     assert(authenticationData != null);
     assert(coreDomain != null);
     assert(coreApplication != null);
+    assert(experienceManagementApplication != null);
     assert(coreData != null);
     assert(storeData != null);
     assert(value != null);
@@ -388,6 +407,7 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
     TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    TResult experienceManagementApplication(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure),
     TResult coreData(CoreDataFailure<T> coreDataFailure),
     TResult storeData(StoreDataFailure<T> storeDataFailure),
     TResult value(ValueFailure<T> valueFailure),
@@ -408,6 +428,7 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
     @required TResult authenticationData(_AuthenticationData<T> value),
     @required TResult coreDomain(_CoreDomain<T> value),
     @required TResult coreApplication(_CoreAppllication<T> value),
+    @required TResult experienceManagementApplication(_ExperienceManagementApplicationFailure<T> value),
     @required TResult coreData(_CoreData<T> value),
     @required TResult storeData(_StoreData<T> value),
     @required TResult value(_Value<T> value),
@@ -417,6 +438,7 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
     assert(authenticationData != null);
     assert(coreDomain != null);
     assert(coreApplication != null);
+    assert(experienceManagementApplication != null);
     assert(coreData != null);
     assert(storeData != null);
     assert(value != null);
@@ -431,6 +453,7 @@ class _$_AuthenticationData<T> implements _AuthenticationData<T> {
     TResult authenticationData(_AuthenticationData<T> value),
     TResult coreDomain(_CoreDomain<T> value),
     TResult coreApplication(_CoreAppllication<T> value),
+    TResult experienceManagementApplication(_ExperienceManagementApplicationFailure<T> value),
     TResult coreData(_CoreData<T> value),
     TResult storeData(_StoreData<T> value),
     TResult value(_Value<T> value),
@@ -507,7 +530,7 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
     return identical(this, other) ||
         (other is _CoreDomain<T> && (identical(other.coreDomainFailure, coreDomainFailure) || const DeepCollectionEquality().equals(other.coreDomainFailure, coreDomainFailure)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(coreDomainFailure);
 
@@ -522,6 +545,7 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
     @required TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     @required TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     @required TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    @required TResult experienceManagementApplication(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure),
     @required TResult coreData(CoreDataFailure<T> coreDataFailure),
     @required TResult storeData(StoreDataFailure<T> storeDataFailure),
     @required TResult value(ValueFailure<T> valueFailure),
@@ -531,6 +555,7 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
     assert(authenticationData != null);
     assert(coreDomain != null);
     assert(coreApplication != null);
+    assert(experienceManagementApplication != null);
     assert(coreData != null);
     assert(storeData != null);
     assert(value != null);
@@ -545,6 +570,7 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
     TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    TResult experienceManagementApplication(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure),
     TResult coreData(CoreDataFailure<T> coreDataFailure),
     TResult storeData(StoreDataFailure<T> storeDataFailure),
     TResult value(ValueFailure<T> valueFailure),
@@ -565,6 +591,7 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
     @required TResult authenticationData(_AuthenticationData<T> value),
     @required TResult coreDomain(_CoreDomain<T> value),
     @required TResult coreApplication(_CoreAppllication<T> value),
+    @required TResult experienceManagementApplication(_ExperienceManagementApplicationFailure<T> value),
     @required TResult coreData(_CoreData<T> value),
     @required TResult storeData(_StoreData<T> value),
     @required TResult value(_Value<T> value),
@@ -574,6 +601,7 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
     assert(authenticationData != null);
     assert(coreDomain != null);
     assert(coreApplication != null);
+    assert(experienceManagementApplication != null);
     assert(coreData != null);
     assert(storeData != null);
     assert(value != null);
@@ -588,6 +616,7 @@ class _$_CoreDomain<T> implements _CoreDomain<T> {
     TResult authenticationData(_AuthenticationData<T> value),
     TResult coreDomain(_CoreDomain<T> value),
     TResult coreApplication(_CoreAppllication<T> value),
+    TResult experienceManagementApplication(_ExperienceManagementApplicationFailure<T> value),
     TResult coreData(_CoreData<T> value),
     TResult storeData(_StoreData<T> value),
     TResult value(_Value<T> value),
@@ -665,7 +694,7 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
         (other is _CoreAppllication<T> &&
             (identical(other.coreApplicationFailure, coreApplicationFailure) || const DeepCollectionEquality().equals(other.coreApplicationFailure, coreApplicationFailure)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(coreApplicationFailure);
 
@@ -680,6 +709,7 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
     @required TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     @required TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     @required TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    @required TResult experienceManagementApplication(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure),
     @required TResult coreData(CoreDataFailure<T> coreDataFailure),
     @required TResult storeData(StoreDataFailure<T> storeDataFailure),
     @required TResult value(ValueFailure<T> valueFailure),
@@ -689,6 +719,7 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
     assert(authenticationData != null);
     assert(coreDomain != null);
     assert(coreApplication != null);
+    assert(experienceManagementApplication != null);
     assert(coreData != null);
     assert(storeData != null);
     assert(value != null);
@@ -703,6 +734,7 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
     TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    TResult experienceManagementApplication(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure),
     TResult coreData(CoreDataFailure<T> coreDataFailure),
     TResult storeData(StoreDataFailure<T> storeDataFailure),
     TResult value(ValueFailure<T> valueFailure),
@@ -723,6 +755,7 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
     @required TResult authenticationData(_AuthenticationData<T> value),
     @required TResult coreDomain(_CoreDomain<T> value),
     @required TResult coreApplication(_CoreAppllication<T> value),
+    @required TResult experienceManagementApplication(_ExperienceManagementApplicationFailure<T> value),
     @required TResult coreData(_CoreData<T> value),
     @required TResult storeData(_StoreData<T> value),
     @required TResult value(_Value<T> value),
@@ -732,6 +765,7 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
     assert(authenticationData != null);
     assert(coreDomain != null);
     assert(coreApplication != null);
+    assert(experienceManagementApplication != null);
     assert(coreData != null);
     assert(storeData != null);
     assert(value != null);
@@ -746,6 +780,7 @@ class _$_CoreAppllication<T> implements _CoreAppllication<T> {
     TResult authenticationData(_AuthenticationData<T> value),
     TResult coreDomain(_CoreDomain<T> value),
     TResult coreApplication(_CoreAppllication<T> value),
+    TResult experienceManagementApplication(_ExperienceManagementApplicationFailure<T> value),
     TResult coreData(_CoreData<T> value),
     TResult storeData(_StoreData<T> value),
     TResult value(_Value<T> value),
@@ -767,6 +802,174 @@ abstract class _CoreAppllication<T> implements Failure<T> {
 
   @JsonKey(ignore: true)
   _$CoreAppllicationCopyWith<T, _CoreAppllication<T>> get copyWith;
+}
+
+/// @nodoc
+abstract class _$ExperienceManagementApplicationFailureCopyWith<T, $Res> {
+  factory _$ExperienceManagementApplicationFailureCopyWith(_ExperienceManagementApplicationFailure<T> value, $Res Function(_ExperienceManagementApplicationFailure<T>) then) =
+      __$ExperienceManagementApplicationFailureCopyWithImpl<T, $Res>;
+
+  $Res call({ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure});
+
+  $ExperienceManagementApplicationFailureCopyWith<T, $Res> get experienceManagementApplicationFailure;
+}
+
+/// @nodoc
+class __$ExperienceManagementApplicationFailureCopyWithImpl<T, $Res> extends _$FailureCopyWithImpl<T, $Res> implements _$ExperienceManagementApplicationFailureCopyWith<T, $Res> {
+  __$ExperienceManagementApplicationFailureCopyWithImpl(_ExperienceManagementApplicationFailure<T> _value, $Res Function(_ExperienceManagementApplicationFailure<T>) _then)
+      : super(_value, (v) => _then(v as _ExperienceManagementApplicationFailure<T>));
+
+  @override
+  _ExperienceManagementApplicationFailure<T> get _value => super._value as _ExperienceManagementApplicationFailure<T>;
+
+  @override
+  $Res call({
+    Object experienceManagementApplicationFailure = freezed,
+  }) {
+    return _then(_ExperienceManagementApplicationFailure<T>(
+      experienceManagementApplicationFailure == freezed ? _value.experienceManagementApplicationFailure : experienceManagementApplicationFailure as ExperienceManagementApplicationFailure<T>,
+    ));
+  }
+
+  @override
+  $ExperienceManagementApplicationFailureCopyWith<T, $Res> get experienceManagementApplicationFailure {
+    if (_value.experienceManagementApplicationFailure == null) {
+      return null;
+    }
+    return $ExperienceManagementApplicationFailureCopyWith<T, $Res>(_value.experienceManagementApplicationFailure, (value) {
+      return _then(_value.copyWith(experienceManagementApplicationFailure: value));
+    });
+  }
+}
+
+/// @nodoc
+class _$_ExperienceManagementApplicationFailure<T> implements _ExperienceManagementApplicationFailure<T> {
+  const _$_ExperienceManagementApplicationFailure(this.experienceManagementApplicationFailure) : assert(experienceManagementApplicationFailure != null);
+
+  @override
+  final ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure;
+
+  @override
+  String toString() {
+    return 'Failure<$T>.experienceManagementApplication(experienceManagementApplicationFailure: $experienceManagementApplicationFailure)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ExperienceManagementApplicationFailure<T> &&
+            (identical(other.experienceManagementApplicationFailure, experienceManagementApplicationFailure) ||
+                const DeepCollectionEquality().equals(other.experienceManagementApplicationFailure, experienceManagementApplicationFailure)));
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceManagementApplicationFailure);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ExperienceManagementApplicationFailureCopyWith<T, _ExperienceManagementApplicationFailure<T>> get copyWith =>
+      __$ExperienceManagementApplicationFailureCopyWithImpl<T, _ExperienceManagementApplicationFailure<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    @required TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
+    @required TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
+    @required TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    @required TResult experienceManagementApplication(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure),
+    @required TResult coreData(CoreDataFailure<T> coreDataFailure),
+    @required TResult storeData(StoreDataFailure<T> storeDataFailure),
+    @required TResult value(ValueFailure<T> valueFailure),
+    @required TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
+  }) {
+    assert(authenticationDomain != null);
+    assert(authenticationData != null);
+    assert(coreDomain != null);
+    assert(coreApplication != null);
+    assert(experienceManagementApplication != null);
+    assert(coreData != null);
+    assert(storeData != null);
+    assert(value != null);
+    assert(profileDomain != null);
+    return experienceManagementApplication(experienceManagementApplicationFailure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult authenticationDomain(AuthenticationDomainFailure<T> authenticationDomainFailure),
+    TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
+    TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
+    TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    TResult experienceManagementApplication(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure),
+    TResult coreData(CoreDataFailure<T> coreDataFailure),
+    TResult storeData(StoreDataFailure<T> storeDataFailure),
+    TResult value(ValueFailure<T> valueFailure),
+    TResult profileDomain(ProfileDomainFailure<T> profileDomainFailure),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (experienceManagementApplication != null) {
+      return experienceManagementApplication(experienceManagementApplicationFailure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult authenticationDomain(_AuthenticationDomain<T> value),
+    @required TResult authenticationData(_AuthenticationData<T> value),
+    @required TResult coreDomain(_CoreDomain<T> value),
+    @required TResult coreApplication(_CoreAppllication<T> value),
+    @required TResult experienceManagementApplication(_ExperienceManagementApplicationFailure<T> value),
+    @required TResult coreData(_CoreData<T> value),
+    @required TResult storeData(_StoreData<T> value),
+    @required TResult value(_Value<T> value),
+    @required TResult profileDomain(_ProfileDomain<T> value),
+  }) {
+    assert(authenticationDomain != null);
+    assert(authenticationData != null);
+    assert(coreDomain != null);
+    assert(coreApplication != null);
+    assert(experienceManagementApplication != null);
+    assert(coreData != null);
+    assert(storeData != null);
+    assert(value != null);
+    assert(profileDomain != null);
+    return experienceManagementApplication(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult authenticationDomain(_AuthenticationDomain<T> value),
+    TResult authenticationData(_AuthenticationData<T> value),
+    TResult coreDomain(_CoreDomain<T> value),
+    TResult coreApplication(_CoreAppllication<T> value),
+    TResult experienceManagementApplication(_ExperienceManagementApplicationFailure<T> value),
+    TResult coreData(_CoreData<T> value),
+    TResult storeData(_StoreData<T> value),
+    TResult value(_Value<T> value),
+    TResult profileDomain(_ProfileDomain<T> value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (experienceManagementApplication != null) {
+      return experienceManagementApplication(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ExperienceManagementApplicationFailure<T> implements Failure<T> {
+  const factory _ExperienceManagementApplicationFailure(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure) = _$_ExperienceManagementApplicationFailure<T>;
+
+  ExperienceManagementApplicationFailure<T> get experienceManagementApplicationFailure;
+
+  @JsonKey(ignore: true)
+  _$ExperienceManagementApplicationFailureCopyWith<T, _ExperienceManagementApplicationFailure<T>> get copyWith;
 }
 
 /// @nodoc
@@ -836,6 +1039,7 @@ class _$_CoreData<T> implements _CoreData<T> {
     @required TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     @required TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     @required TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    @required TResult experienceManagementApplication(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure),
     @required TResult coreData(CoreDataFailure<T> coreDataFailure),
     @required TResult storeData(StoreDataFailure<T> storeDataFailure),
     @required TResult value(ValueFailure<T> valueFailure),
@@ -845,6 +1049,7 @@ class _$_CoreData<T> implements _CoreData<T> {
     assert(authenticationData != null);
     assert(coreDomain != null);
     assert(coreApplication != null);
+    assert(experienceManagementApplication != null);
     assert(coreData != null);
     assert(storeData != null);
     assert(value != null);
@@ -859,6 +1064,7 @@ class _$_CoreData<T> implements _CoreData<T> {
     TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    TResult experienceManagementApplication(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure),
     TResult coreData(CoreDataFailure<T> coreDataFailure),
     TResult storeData(StoreDataFailure<T> storeDataFailure),
     TResult value(ValueFailure<T> valueFailure),
@@ -879,6 +1085,7 @@ class _$_CoreData<T> implements _CoreData<T> {
     @required TResult authenticationData(_AuthenticationData<T> value),
     @required TResult coreDomain(_CoreDomain<T> value),
     @required TResult coreApplication(_CoreAppllication<T> value),
+    @required TResult experienceManagementApplication(_ExperienceManagementApplicationFailure<T> value),
     @required TResult coreData(_CoreData<T> value),
     @required TResult storeData(_StoreData<T> value),
     @required TResult value(_Value<T> value),
@@ -888,6 +1095,7 @@ class _$_CoreData<T> implements _CoreData<T> {
     assert(authenticationData != null);
     assert(coreDomain != null);
     assert(coreApplication != null);
+    assert(experienceManagementApplication != null);
     assert(coreData != null);
     assert(storeData != null);
     assert(value != null);
@@ -902,6 +1110,7 @@ class _$_CoreData<T> implements _CoreData<T> {
     TResult authenticationData(_AuthenticationData<T> value),
     TResult coreDomain(_CoreDomain<T> value),
     TResult coreApplication(_CoreAppllication<T> value),
+    TResult experienceManagementApplication(_ExperienceManagementApplicationFailure<T> value),
     TResult coreData(_CoreData<T> value),
     TResult storeData(_StoreData<T> value),
     TResult value(_Value<T> value),
@@ -992,6 +1201,7 @@ class _$_StoreData<T> implements _StoreData<T> {
     @required TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     @required TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     @required TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    @required TResult experienceManagementApplication(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure),
     @required TResult coreData(CoreDataFailure<T> coreDataFailure),
     @required TResult storeData(StoreDataFailure<T> storeDataFailure),
     @required TResult value(ValueFailure<T> valueFailure),
@@ -1001,6 +1211,7 @@ class _$_StoreData<T> implements _StoreData<T> {
     assert(authenticationData != null);
     assert(coreDomain != null);
     assert(coreApplication != null);
+    assert(experienceManagementApplication != null);
     assert(coreData != null);
     assert(storeData != null);
     assert(value != null);
@@ -1015,6 +1226,7 @@ class _$_StoreData<T> implements _StoreData<T> {
     TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    TResult experienceManagementApplication(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure),
     TResult coreData(CoreDataFailure<T> coreDataFailure),
     TResult storeData(StoreDataFailure<T> storeDataFailure),
     TResult value(ValueFailure<T> valueFailure),
@@ -1035,6 +1247,7 @@ class _$_StoreData<T> implements _StoreData<T> {
     @required TResult authenticationData(_AuthenticationData<T> value),
     @required TResult coreDomain(_CoreDomain<T> value),
     @required TResult coreApplication(_CoreAppllication<T> value),
+    @required TResult experienceManagementApplication(_ExperienceManagementApplicationFailure<T> value),
     @required TResult coreData(_CoreData<T> value),
     @required TResult storeData(_StoreData<T> value),
     @required TResult value(_Value<T> value),
@@ -1044,6 +1257,7 @@ class _$_StoreData<T> implements _StoreData<T> {
     assert(authenticationData != null);
     assert(coreDomain != null);
     assert(coreApplication != null);
+    assert(experienceManagementApplication != null);
     assert(coreData != null);
     assert(storeData != null);
     assert(value != null);
@@ -1058,6 +1272,7 @@ class _$_StoreData<T> implements _StoreData<T> {
     TResult authenticationData(_AuthenticationData<T> value),
     TResult coreDomain(_CoreDomain<T> value),
     TResult coreApplication(_CoreAppllication<T> value),
+    TResult experienceManagementApplication(_ExperienceManagementApplicationFailure<T> value),
     TResult coreData(_CoreData<T> value),
     TResult storeData(_StoreData<T> value),
     TResult value(_Value<T> value),
@@ -1148,6 +1363,7 @@ class _$_Value<T> implements _Value<T> {
     @required TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     @required TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     @required TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    @required TResult experienceManagementApplication(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure),
     @required TResult coreData(CoreDataFailure<T> coreDataFailure),
     @required TResult storeData(StoreDataFailure<T> storeDataFailure),
     @required TResult value(ValueFailure<T> valueFailure),
@@ -1157,6 +1373,7 @@ class _$_Value<T> implements _Value<T> {
     assert(authenticationData != null);
     assert(coreDomain != null);
     assert(coreApplication != null);
+    assert(experienceManagementApplication != null);
     assert(coreData != null);
     assert(storeData != null);
     assert(value != null);
@@ -1171,6 +1388,7 @@ class _$_Value<T> implements _Value<T> {
     TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    TResult experienceManagementApplication(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure),
     TResult coreData(CoreDataFailure<T> coreDataFailure),
     TResult storeData(StoreDataFailure<T> storeDataFailure),
     TResult value(ValueFailure<T> valueFailure),
@@ -1191,6 +1409,7 @@ class _$_Value<T> implements _Value<T> {
     @required TResult authenticationData(_AuthenticationData<T> value),
     @required TResult coreDomain(_CoreDomain<T> value),
     @required TResult coreApplication(_CoreAppllication<T> value),
+    @required TResult experienceManagementApplication(_ExperienceManagementApplicationFailure<T> value),
     @required TResult coreData(_CoreData<T> value),
     @required TResult storeData(_StoreData<T> value),
     @required TResult value(_Value<T> value),
@@ -1200,6 +1419,7 @@ class _$_Value<T> implements _Value<T> {
     assert(authenticationData != null);
     assert(coreDomain != null);
     assert(coreApplication != null);
+    assert(experienceManagementApplication != null);
     assert(coreData != null);
     assert(storeData != null);
     assert(value != null);
@@ -1214,6 +1434,7 @@ class _$_Value<T> implements _Value<T> {
     TResult authenticationData(_AuthenticationData<T> value),
     TResult coreDomain(_CoreDomain<T> value),
     TResult coreApplication(_CoreAppllication<T> value),
+    TResult experienceManagementApplication(_ExperienceManagementApplicationFailure<T> value),
     TResult coreData(_CoreData<T> value),
     TResult storeData(_StoreData<T> value),
     TResult value(_Value<T> value),
@@ -1289,7 +1510,7 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
     return identical(this, other) ||
         (other is _ProfileDomain<T> && (identical(other.profileDomainFailure, profileDomainFailure) || const DeepCollectionEquality().equals(other.profileDomainFailure, profileDomainFailure)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(profileDomainFailure);
 
@@ -1304,6 +1525,7 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
     @required TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     @required TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     @required TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    @required TResult experienceManagementApplication(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure),
     @required TResult coreData(CoreDataFailure<T> coreDataFailure),
     @required TResult storeData(StoreDataFailure<T> storeDataFailure),
     @required TResult value(ValueFailure<T> valueFailure),
@@ -1313,6 +1535,7 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
     assert(authenticationData != null);
     assert(coreDomain != null);
     assert(coreApplication != null);
+    assert(experienceManagementApplication != null);
     assert(coreData != null);
     assert(storeData != null);
     assert(value != null);
@@ -1327,6 +1550,7 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
     TResult authenticationData(AuthenticationDataFailure<T> authenticationDataFailure),
     TResult coreDomain(CoreDomainFailure<T> coreDomainFailure),
     TResult coreApplication(CoreApplicationFailure<T> coreApplicationFailure),
+    TResult experienceManagementApplication(ExperienceManagementApplicationFailure<T> experienceManagementApplicationFailure),
     TResult coreData(CoreDataFailure<T> coreDataFailure),
     TResult storeData(StoreDataFailure<T> storeDataFailure),
     TResult value(ValueFailure<T> valueFailure),
@@ -1347,6 +1571,7 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
     @required TResult authenticationData(_AuthenticationData<T> value),
     @required TResult coreDomain(_CoreDomain<T> value),
     @required TResult coreApplication(_CoreAppllication<T> value),
+    @required TResult experienceManagementApplication(_ExperienceManagementApplicationFailure<T> value),
     @required TResult coreData(_CoreData<T> value),
     @required TResult storeData(_StoreData<T> value),
     @required TResult value(_Value<T> value),
@@ -1356,6 +1581,7 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
     assert(authenticationData != null);
     assert(coreDomain != null);
     assert(coreApplication != null);
+    assert(experienceManagementApplication != null);
     assert(coreData != null);
     assert(storeData != null);
     assert(value != null);
@@ -1370,6 +1596,7 @@ class _$_ProfileDomain<T> implements _ProfileDomain<T> {
     TResult authenticationData(_AuthenticationData<T> value),
     TResult coreDomain(_CoreDomain<T> value),
     TResult coreApplication(_CoreAppllication<T> value),
+    TResult experienceManagementApplication(_ExperienceManagementApplicationFailure<T> value),
     TResult coreData(_CoreData<T> value),
     TResult storeData(_StoreData<T> value),
     TResult value(_Value<T> value),

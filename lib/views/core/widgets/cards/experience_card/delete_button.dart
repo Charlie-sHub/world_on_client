@@ -17,9 +17,12 @@ class DeleteButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlatButton(
       padding: const EdgeInsets.all(2),
-      onPressed: () => context.read<ExperienceManagementActorBloc>().add(
-            ExperienceManagementActorEvent.deleted(experience),
-          ),
+      onPressed: () {
+        Navigator.of(context).pop();
+        context.read<ExperienceManagementActorBloc>().add(
+              ExperienceManagementActorEvent.deleted(experience),
+            );
+      },
       child: Row(
         children: [
           const Icon(

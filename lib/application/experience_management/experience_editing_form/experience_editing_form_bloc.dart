@@ -7,6 +7,7 @@ import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:meta/meta.dart';
 import 'package:multi_image_picker/multi_image_picker.dart';
+import 'package:worldon/application/experience_management/failures/experience_management_application_failure.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/core/entities/coordinates/coordinates.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
@@ -26,14 +27,14 @@ import 'package:worldon/domain/experience_management/use_case/edit_experience.da
 import '../../../injection.dart';
 
 part 'experience_editing_form_bloc.freezed.dart';
-
 part 'experience_editing_form_event.dart';
-
 part 'experience_editing_form_state.dart';
 
 @injectable
 class ExperienceEditingFormBloc extends Bloc<ExperienceEditingFormEvent, ExperienceEditingFormState> {
   ExperienceEditingFormBloc() : super(ExperienceEditingFormState.initial());
+
+  static const _imageNumberLimit = 15;
 
   @override
   Stream<ExperienceEditingFormState> mapEventToState(ExperienceEditingFormEvent event) async* {
@@ -59,9 +60,29 @@ class ExperienceEditingFormBloc extends Bloc<ExperienceEditingFormEvent, Experie
       failureOrSuccessOption: none(),
     );
     if (state.experience.isValid) {
-      _failureOrUnit = await getIt<edit_experience.EditExperience>()(
-        edit_experience.Params(experience: state.experience),
-      );
+      if (state.experience.imageURLs.isNotEmpty || state.experience.imageAssetsOption.isSome()) {
+        final _filesCount = state.experience.imageAssetsOption.fold(
+          () => 0,
+          (_imageList) => _imageList.length,
+        );
+        if (state.experience.imageURLs.length + _filesCount <= _imageNumberLimit) {
+          _failureOrUnit = await getIt<edit_experience.EditExperience>()(
+            edit_experience.Params(experience: state.experience),
+          );
+        } else {
+          yield state.copyWith(
+            isSubmitting: false,
+            showErrorMessages: true,
+            failureOrSuccessOption: optionOf(
+              left(
+                const Failure.experienceManagementApplication(
+                  ExperienceManagementApplicationFailure.surpassedImageLimit(limit: _imageNumberLimit),
+                ),
+              ),
+            ),
+          );
+        }
+      }
     }
     yield state.copyWith(
       isSubmitting: false,
@@ -154,7 +175,7 @@ class ExperienceEditingFormBloc extends Bloc<ExperienceEditingFormEvent, Experie
 
   Stream<ExperienceEditingFormState> _onInitialized(_Initialized event) async* {
     yield state.copyWith(
-      experience: event.experience.clone(),
+      experience: event.experience,
       loadedCoordinates: true,
     );
   }

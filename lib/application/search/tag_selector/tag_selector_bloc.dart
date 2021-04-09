@@ -21,6 +21,13 @@ class TagSelectorBloc extends Bloc<TagSelectorEvent, TagSelectorState> {
     yield* event.map(
       addedTag: _onAddedTag,
       removedTag: _onSubtractedTag,
+      initialized: _onInitialized,
+    );
+  }
+
+  Stream<TagSelectorState> _onInitialized(_Initialized event) async* {
+    yield state.copyWith(
+      tagsSelected: event.tagSet.getOrCrash(),
     );
   }
 

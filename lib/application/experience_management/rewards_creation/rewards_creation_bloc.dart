@@ -21,6 +21,13 @@ class RewardsCreationBloc extends Bloc<RewardsCreationEvent, RewardsCreationStat
     yield* event.map(
       addedReward: _onAddedReward,
       removedReward: _onRemovedReward,
+      initialized: _onInitialized,
+    );
+  }
+
+  Stream<RewardsCreationState> _onInitialized(_Initialized event) async* {
+    yield state.copyWith(
+      rewardsCreated: event.rewardSet.getOrCrash(),
     );
   }
 

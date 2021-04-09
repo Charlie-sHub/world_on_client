@@ -110,7 +110,6 @@ mixin _$ExperienceEditingFormEvent {
     @required TResult tagsChanged(KtSet<Tag> tags),
     @required TResult submitted(),
   });
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initialized(Experience experience),
@@ -126,7 +125,6 @@ mixin _$ExperienceEditingFormEvent {
     TResult submitted(),
     @required TResult orElse(),
   });
-
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initialized(_Initialized value),
@@ -141,7 +139,6 @@ mixin _$ExperienceEditingFormEvent {
     @required TResult tagsChanged(_TagsChanged value),
     @required TResult submitted(_Submitted value),
   });
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initialized(_Initialized value),
@@ -343,7 +340,6 @@ abstract class _Initialized implements ExperienceEditingFormEvent {
   const factory _Initialized(Experience experience) = _$_Initialized;
 
   Experience get experience;
-
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
@@ -505,7 +501,6 @@ abstract class _TitleChanged implements ExperienceEditingFormEvent {
   const factory _TitleChanged(String title) = _$_TitleChanged;
 
   String get title;
-
   @JsonKey(ignore: true)
   _$TitleChangedCopyWith<_TitleChanged> get copyWith;
 }
@@ -667,7 +662,6 @@ abstract class _DescriptionChanged implements ExperienceEditingFormEvent {
   const factory _DescriptionChanged(String description) = _$_DescriptionChanged;
 
   String get description;
-
   @JsonKey(ignore: true)
   _$DescriptionChangedCopyWith<_DescriptionChanged> get copyWith;
 }
@@ -829,7 +823,6 @@ abstract class _ImagesChanged implements ExperienceEditingFormEvent {
   const factory _ImagesChanged(List<Asset> imageAssets) = _$_ImagesChanged;
 
   List<Asset> get imageAssets;
-
   @JsonKey(ignore: true)
   _$ImagesChangedCopyWith<_ImagesChanged> get copyWith;
 }
@@ -991,7 +984,6 @@ abstract class _ImageDeleted implements ExperienceEditingFormEvent {
   const factory _ImageDeleted(String imageURL) = _$_ImageDeleted;
 
   String get imageURL;
-
   @JsonKey(ignore: true)
   _$ImageDeletedCopyWith<_ImageDeleted> get copyWith;
 }
@@ -1045,7 +1037,7 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
             (identical(other.latitude, latitude) || const DeepCollectionEquality().equals(other.latitude, latitude)) &&
             (identical(other.longitude, longitude) || const DeepCollectionEquality().equals(other.longitude, longitude)));
   }
-
+  
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(latitude) ^ const DeepCollectionEquality().hash(longitude);
 
@@ -1326,7 +1318,6 @@ abstract class _DifficultyChanged implements ExperienceEditingFormEvent {
   const factory _DifficultyChanged(int difficulty) = _$_DifficultyChanged;
 
   int get difficulty;
-
   @JsonKey(ignore: true)
   _$DifficultyChangedCopyWith<_DifficultyChanged> get copyWith;
 }
@@ -1650,7 +1641,6 @@ abstract class _RewardsChanged implements ExperienceEditingFormEvent {
   const factory _RewardsChanged(KtSet<Reward> rewards) = _$_RewardsChanged;
 
   KtSet<Reward> get rewards;
-
   @JsonKey(ignore: true)
   _$RewardsChangedCopyWith<_RewardsChanged> get copyWith;
 }
@@ -1812,7 +1802,6 @@ abstract class _TagsChanged implements ExperienceEditingFormEvent {
   const factory _TagsChanged(KtSet<Tag> tags) = _$_TagsChanged;
 
   KtSet<Tag> get tags;
-
   @JsonKey(ignore: true)
   _$TagsChangedCopyWith<_TagsChanged> get copyWith;
 }
@@ -1984,13 +1973,9 @@ const $ExperienceEditingFormState = _$ExperienceEditingFormStateTearOff();
 /// @nodoc
 mixin _$ExperienceEditingFormState {
   Experience get experience;
-
   bool get showErrorMessages;
-
   bool get isSubmitting;
-
   bool get loadedCoordinates;
-
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
 
   @JsonKey(ignore: true)
@@ -2140,16 +2125,13 @@ abstract class _ExperienceEditingFormState implements ExperienceEditingFormState
 
   @override
   Experience get experience;
-
   @override
   bool get showErrorMessages;
-
   @override
   bool get isSubmitting;
-
   @override
   bool get loadedCoordinates;
-
+  
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
 

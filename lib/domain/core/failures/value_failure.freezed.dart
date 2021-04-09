@@ -3165,7 +3165,7 @@ class _$CollectionExceedsLength<T> with DiagnosticableTreeMixin implements Colle
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(failedValue) ^
       const DeepCollectionEquality().hash(maxLength);
-
+  
   @JsonKey(ignore: true)
   @override
   $CollectionExceedsLengthCopyWith<T, CollectionExceedsLength<T>> get copyWith => _$CollectionExceedsLengthCopyWithImpl<T, CollectionExceedsLength<T>>(this, _$identity);

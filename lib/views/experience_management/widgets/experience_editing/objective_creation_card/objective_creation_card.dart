@@ -7,6 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:worldon/application/experience_management/experience_editing_form/experience_editing_form_bloc.dart';
 import 'package:worldon/application/experience_management/objective_form/objective_form_bloc.dart';
 import 'package:worldon/application/experience_management/objectives_creation/objectives_creation_bloc.dart';
+import 'package:worldon/domain/core/validation/objects/objective_set.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/injection.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
@@ -19,13 +20,19 @@ import 'package:worldon/views/experience_management/widgets/experience_creation/
 class ObjectiveCreationCard extends HookWidget {
   const ObjectiveCreationCard({
     Key key,
+    @required this.objectiveList,
   }) : super(key: key);
+
+  final ObjectiveList objectiveList;
 
   @override
   Widget build(BuildContext context) {
     final _textEditingController = useTextEditingController();
     return BlocProvider(
-      create: (context) => getIt<ObjectivesCreationBloc>(),
+      create: (context) => getIt<ObjectivesCreationBloc>()
+        ..add(
+          ObjectivesCreationEvent.initialized(objectiveList),
+        ),
       child: BlocConsumer<ObjectivesCreationBloc, ObjectivesCreationState>(
         listener: (context, state) => context.read<ExperienceEditingFormBloc>().add(
               ExperienceEditingFormEvent.objectivesChanged(state.objectivesCreated),
@@ -43,7 +50,7 @@ class ObjectiveCreationCard extends HookWidget {
             children: <Widget>[
               const SizedBox(height: 5),
               Text(
-                S.of(context).objectiveCreationCardTitle,
+                S.of(context).editObjectives,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
@@ -54,6 +61,7 @@ class ObjectiveCreationCard extends HookWidget {
                 constraints: BoxConstraints(
                   maxHeight: MediaQuery.of(context).size.height * 0.5,
                 ),
+                // TODO: Make this a ReorderableListView
                 child: ListView.builder(
                   padding: const EdgeInsets.all(10),
                   itemCount: state.objectivesCreated.size,

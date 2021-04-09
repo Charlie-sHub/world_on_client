@@ -44,7 +44,7 @@ class RewardCreationCard extends HookWidget {
             children: <Widget>[
               const SizedBox(height: 5),
               Text(
-                S.of(context).rewardCreationCardTitle,
+                S.of(context).editRewards,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,

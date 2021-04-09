@@ -54,6 +54,7 @@ class ObjectiveCreationCard extends HookWidget {
                 constraints: BoxConstraints(
                   maxHeight: MediaQuery.of(context).size.height * 0.5,
                 ),
+                // TODO: Make this a ReorderableListView
                 child: ListView.builder(
                   padding: const EdgeInsets.all(10),
                   itemCount: state.objectivesCreated.size,

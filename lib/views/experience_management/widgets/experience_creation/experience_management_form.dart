@@ -59,8 +59,8 @@ class ExperienceManagementForm extends StatelessWidget {
               //Change back to TagAdditionCard if necessary
               TagAdditionCreationCard(
                 tagChangeFunction: (KtSet<Tag> tags) => context.read<ExperienceManagementFormBloc>().add(
-                  ExperienceManagementFormEvent.tagsChanged(tags),
-                ),
+                      ExperienceManagementFormEvent.tagsChanged(tags),
+                    ),
               ),
               const FinishButton(),
             ],

@@ -51,7 +51,7 @@ class ExperienceEditingForm extends StatelessWidget {
               PicturesSelector(),
               const SizedBox(height: 20),
               Text(
-                S.of(context).setExperienceDifficulty,
+                S.of(context).editDifficulty,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
@@ -62,7 +62,9 @@ class ExperienceEditingForm extends StatelessWidget {
               const SizedBox(height: 10),
               Map(),
               const SizedBox(height: 10),
-              const ObjectiveCreationCard(),
+              ObjectiveCreationCard(
+                objectiveList: experience.objectives,
+              ),
               if (_managementFormState.showErrorMessages && !_managementFormState.experience.objectives.isValid())
                 Text(
                   S.of(context).noObjectivesErrorMessage,
@@ -77,6 +79,7 @@ class ExperienceEditingForm extends StatelessWidget {
                 tagChangeFunction: (KtSet<Tag> tags) => context.read<ExperienceEditingFormBloc>().add(
                       ExperienceEditingFormEvent.tagsChanged(tags),
                     ),
+                tagSet: experience.tags,
               ),
               const FinishButton(),
             ],
