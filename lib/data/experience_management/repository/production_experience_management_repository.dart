@@ -77,10 +77,6 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
   @override
   Future<Either<Failure, Unit>> editExperience(Experience experience) async {
     try {
-      // TODO: How to edit Rewards and Objectives?
-      // For now simply deleting them and creating new ones
-      // Make them then reorderable
-      // When an objective changes position the even of objectives changed is added with the new list
       final _cloudStorageService = getIt<CloudStorageService>();
       final _rewardSet = <Reward>{};
       final _objectiveList = <Objective>{};
@@ -90,6 +86,8 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
         _rewardSet,
         _objectiveList,
       );
+      _rewardSet.addAll(experience.rewards.getOrCrash().dart);
+      _objectiveList.addAll(experience.objectives.getOrCrash().dart);
       final _experienceDto = ExperienceDto.fromDomain(
         experience.copyWith(
           rewards: RewardSet(_rewardSet.toImmutableSet()),
@@ -145,23 +143,33 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
       );
       experience.imageURLs.add(_imageURL);
     }
-    for (final _reward in experience.rewards.getOrCrash().asSet()) {
-      final _imageURL = await _cloudStorageService.uploadFileImage(
-        imageToUpload: _reward.imageFile.getOrElse(() => null),
-        folder: StorageFolder.experiences,
-        name: _reward.id.getOrCrash(),
+    for (final _reward in experience.rewards.getOrCrash().dart) {
+      _reward.imageFile.fold(
+        () => null,
+        (_imageFile) async {
+          final _imageURL = await _cloudStorageService.uploadFileImage(
+            imageToUpload: _imageFile,
+            folder: StorageFolder.experiences,
+            name: _reward.id.getOrCrash(),
+          );
+          final _rewardWithImage = _reward.copyWith(imageURL: _imageURL);
+          _rewardSet.add(_rewardWithImage);
+        },
       );
-      final _rewardWithImage = _reward.copyWith(imageURL: _imageURL);
-      _rewardSet.add(_rewardWithImage);
     }
     for (final _objective in experience.objectives.getOrCrash().dart) {
-      final _imageURL = await _cloudStorageService.uploadFileImage(
-        imageToUpload: _objective.imageFile.getOrElse(() => null),
-        folder: StorageFolder.experiences,
-        name: _objective.id.getOrCrash(),
+      _objective.imageFile.fold(
+        () => null,
+        (_imageFile) async {
+          final _imageURL = await _cloudStorageService.uploadFileImage(
+            imageToUpload: _imageFile,
+            folder: StorageFolder.experiences,
+            name: _objective.id.getOrCrash(),
+          );
+          final _objectiveWithImage = _objective.copyWith(imageURL: _imageURL);
+          _objectiveList.add(_objectiveWithImage);
+        },
       );
-      final _objectiveWithImage = _objective.copyWith(imageURL: _imageURL);
-      _objectiveList.add(_objectiveWithImage);
     }
   }
 

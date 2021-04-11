@@ -48,7 +48,7 @@ class Map extends StatelessWidget {
               // Works for now though and that's what matters.
               child: _editingFormState.loadedCoordinates
                   ? GoogleMap(
-                mapType: MapType.hybrid,
+                      mapType: MapType.hybrid,
                       markers: {
                         Marker(
                           markerId: MarkerId("new_experience"),

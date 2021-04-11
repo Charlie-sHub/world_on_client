@@ -1032,7 +1032,7 @@ class _$_PasswordConfirmationChanged implements _PasswordConfirmationChanged {
         (other is _PasswordConfirmationChanged &&
             (identical(other.passwordConfirmation, passwordConfirmation) || const DeepCollectionEquality().equals(other.passwordConfirmation, passwordConfirmation)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(passwordConfirmation);
 

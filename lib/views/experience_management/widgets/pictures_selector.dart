@@ -11,60 +11,61 @@ class PicturesSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return context.read<ExperienceManagementFormBloc>().state.experience.imageAssetsOption.fold(
-          () => Column(
-            children: [
-              IconButton(
-                iconSize: 100,
-                icon: const Icon(
-                  Icons.photo_camera,
-                ),
-                onPressed: () async => _pickImages(context),
-              ),
-              if (context.read<ExperienceManagementFormBloc>().state.showErrorMessages)
-                Text(
-                  S.of(context).experiencePictureSelection,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(color: Colors.red),
-                )
-              else
-                Container(),
-            ],
+    final _state = context.read<ExperienceManagementFormBloc>().state;
+    return _state.experience.imageAssetsOption.fold(
+      () => Column(
+        children: [
+          IconButton(
+            iconSize: 100,
+            icon: const Icon(
+              Icons.photo_camera,
+            ),
+            onPressed: () async => _pickImages(context),
           ),
-          (imageAssets) => SizedBox(
-            height: MediaQuery.of(context).size.height * 0.4,
-            child: Column(
-              children: <Widget>[
-                Expanded(
-                  flex: 2,
-                  child: GridView.count(
-                    padding: const EdgeInsets.all(10),
-                    shrinkWrap: true,
-                    physics: const ClampingScrollPhysics(),
-                    crossAxisCount: 3,
-                    children: List.generate(
-                      imageAssets.length,
-                      (index) => Card(
-                        child: AssetThumb(
-                          asset: imageAssets[index],
-                          width: 150,
-                          height: 150,
-                        ),
-                      ),
+          if (_state.showErrorMessages && _state.experience.imageURLs.isEmpty)
+            Text(
+              S.of(context).experiencePictureSelection,
+              textAlign: TextAlign.center,
+              style: const TextStyle(color: Colors.red),
+            )
+          else
+            Container(),
+        ],
+      ),
+      (imageAssets) => SizedBox(
+        height: MediaQuery.of(context).size.height * 0.4,
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              flex: 2,
+              child: GridView.count(
+                padding: const EdgeInsets.all(10),
+                shrinkWrap: true,
+                physics: const ClampingScrollPhysics(),
+                crossAxisCount: 3,
+                children: List.generate(
+                  imageAssets.length,
+                  (index) => Card(
+                    child: AssetThumb(
+                      asset: imageAssets[index],
+                      width: 150,
+                      height: 150,
                     ),
                   ),
                 ),
-                IconButton(
-                  iconSize: 40,
-                  icon: const Icon(
-                    Icons.photo_camera,
-                  ),
-                  onPressed: () async => _pickImages(context),
-                ),
-              ],
+              ),
             ),
-          ),
-        );
+            IconButton(
+              iconSize: 40,
+              icon: const Icon(
+                Icons.photo_camera,
+              ),
+              onPressed: () async => _pickImages(context),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   Future _pickImages(BuildContext context) async {

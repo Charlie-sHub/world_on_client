@@ -67,7 +67,7 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
           _user.copyWith(
             coins: _user.coins - _boughtItem.value,
             // Doing this is pretty dumb, transforming to KtSet to then Set again
-            items: _user.items.toImmutableSet().plusElement(_boughtItem).asSet(),
+            items: _user.items.toImmutableSet().plusElement(_boughtItem).dart,
           ),
         ).toJson();
         await _firestore.userCollection.doc(_user.id.getOrCrash()).update(_jsonUser);
@@ -131,7 +131,7 @@ class ProductionStoreRepository implements StoreRepositoryInterface {
           }
         },
       ).onErrorReturnWith(
-          (error) => left(_onError(error)),
+        (error) => left(_onError(error)),
       );
     } else {
       yield* Stream.value(

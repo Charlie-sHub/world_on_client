@@ -47,7 +47,7 @@ abstract class AchievementDto implements _$AchievementDto {
         creatorId: achievement.creatorId.getOrCrash(),
         creationDate: achievement.creationDate.getOrCrash(),
         modificationDate: achievement.modificationDate.getOrCrash(),
-        tagNames: achievement.tags.getOrCrash().asSet().map((tag) => tag.name.getOrCrash()).toSet(),
+        tagNames: achievement.tags.getOrCrash().dart.map((tag) => tag.name.getOrCrash()).toSet(),
       );
 
   Achievement toDomain() => Achievement(

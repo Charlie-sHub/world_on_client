@@ -3,7 +3,12 @@ description: Front end of the World On project.
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 1.0.0+12
+# Basic base ten increases
+# Last number increases by 1 until 9
+# Then it goes back to 0 and it's neighbour to the left increases by 1
+# The number after the + always increases by 1
+# Usually both numbers should increase by 1 at the same time
+version: 1.1.4+14
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

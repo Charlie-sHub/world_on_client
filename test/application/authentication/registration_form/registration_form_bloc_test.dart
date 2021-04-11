@@ -303,7 +303,7 @@ void main() {
           RegistrationFormState.initial(),
           RegistrationFormState.initial().copyWith(
             user: User.empty().copyWith(
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
             ),
           ),
         ],
@@ -424,7 +424,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -440,7 +440,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
               imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
@@ -457,7 +457,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
               imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
@@ -475,7 +475,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
               imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
@@ -494,7 +494,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
               imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
@@ -585,7 +585,7 @@ void main() {
               username: Name(username),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -598,7 +598,7 @@ void main() {
               username: Name(username),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -613,7 +613,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -628,7 +628,7 @@ void main() {
               username: Name(username),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -721,7 +721,7 @@ void main() {
               username: Name(username),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -735,7 +735,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -749,7 +749,7 @@ void main() {
               username: Name(username),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -836,7 +836,7 @@ void main() {
               username: Name(username),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -849,7 +849,7 @@ void main() {
               username: Name(username),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -864,7 +864,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -879,7 +879,7 @@ void main() {
               username: Name(username),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -1002,7 +1002,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -1018,7 +1018,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
               imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
@@ -1035,7 +1035,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
               imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
@@ -1053,7 +1053,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
               imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
@@ -1072,7 +1072,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
               imageFileOption: some(imageFile),
             ),
             passwordConfirmator: PasswordConfirmator(
@@ -1163,7 +1163,7 @@ void main() {
               username: Name(username),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -1176,7 +1176,7 @@ void main() {
               username: Name(username),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -1192,7 +1192,7 @@ void main() {
               email: EmailAddress(emailAddress),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -1207,7 +1207,7 @@ void main() {
               username: Name(username),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,
@@ -1223,7 +1223,7 @@ void main() {
               username: Name(username),
               birthday: PastDate(birthday),
               description: EntityDescription(description),
-              interestsIds: interests.map((_tag) => _tag.id).toSet().asSet(),
+              interestsIds: interests.map((_tag) => _tag.id).toSet().dart,
             ),
             passwordConfirmator: PasswordConfirmator(
               password: password,

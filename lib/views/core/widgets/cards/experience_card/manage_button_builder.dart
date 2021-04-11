@@ -16,7 +16,7 @@ class ManageButtonBuilder extends StatelessWidget {
   }) : super(key: key);
 
   final Experience experience;
-  final Function(Object param) reloadFunction;
+  final Function(Object parameter) reloadFunction;
 
   @override
   Widget build(BuildContext context) {
@@ -31,18 +31,18 @@ class ManageButtonBuilder extends StatelessWidget {
           orElse: () => false,
         ),
         listener: _experienceDeletionListener,
-        builder: (context, state) => context.read<ExperienceManagementActorBloc>().state.maybeMap(
-              actionInProgress: (_) => const CircularProgressIndicator(),
-              isCreator: (_) => ManageMenuButton(
-                experience: experience,
-                reloadFunction: reloadFunction,
-              ),
-              deletionFailure: (_) => ManageMenuButton(
-                experience: experience,
-                reloadFunction: reloadFunction,
-              ),
-              orElse: () => Container(),
-            ),
+        builder: (context, state) => state.maybeMap(
+          actionInProgress: (_) => const CircularProgressIndicator(),
+          isCreator: (_) => ManageMenuButton(
+            experience: experience,
+            reloadFunction: reloadFunction,
+          ),
+          deletionFailure: (_) => ManageMenuButton(
+            experience: experience,
+            reloadFunction: reloadFunction,
+          ),
+          orElse: () => Container(),
+        ),
       ),
     );
   }

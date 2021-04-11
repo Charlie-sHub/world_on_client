@@ -2131,7 +2131,7 @@ abstract class _ExperienceEditingFormState implements ExperienceEditingFormState
   bool get isSubmitting;
   @override
   bool get loadedCoordinates;
-  
+
   @override
   Option<Either<Failure, Unit>> get failureOrSuccessOption;
 

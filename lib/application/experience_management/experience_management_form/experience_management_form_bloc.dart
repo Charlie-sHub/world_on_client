@@ -41,7 +41,6 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
 
   static const _imageNumberLimit = 15;
 
-  // TODO: Change this to a purely experience creation bloc
   @override
   Stream<ExperienceManagementFormState> mapEventToState(ExperienceManagementFormEvent event) async* {
     yield* event.map(
@@ -71,12 +70,12 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
         (_imageList) => _imageList.length,
       );
       if (state.experience.imageURLs.length + _filesCount <= _imageNumberLimit) {
-        if (state.isEditing) {
+        if (state.isEditing && state.experience.imageURLs.length + _filesCount >= 1) {
           _failureOrUnit = await getIt<edit_experience.EditExperience>()(
             edit_experience.Params(experience: state.experience),
           );
         } else {
-          if (state.experience.imageAssetsOption.isSome()) {
+          if (_filesCount >= 1) {
             _failureOrUnit = await getIt<create_experience.CreateExperience>()(
               create_experience.Params(experience: state.experience),
             );
@@ -152,8 +151,12 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
   }
 
   Stream<ExperienceManagementFormState> _onImageDeleted(_ImageDeleted event) async* {
-    state.experience.imageURLs.remove(event.imageURL);
+    final _newURLList = Set<String>.from(state.experience.imageURLs);
+    _newURLList.remove(event.imageURL);
     yield state.copyWith(
+      experience: state.experience.copyWith(
+        imageURLs: _newURLList,
+      ),
       failureOrSuccessOption: none(),
     );
   }

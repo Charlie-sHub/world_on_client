@@ -147,7 +147,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
             experiencePoints: ExperiencePoints(_userXp),
             level: UserLevel(_postUserLevel),
             coins: _currentUser.coins + 1,
-            items: _currentUser.items.toImmutableSet().minusElement(_item).asSet(),
+            items: _currentUser.items.toImmutableSet().minusElement(_item).dart,
           );
           final _jsonUser = UserDto.fromDomain(_updatedUser).toJson();
           await _firestore.userCollection.doc(_currentUser.id.getOrCrash()).update(_jsonUser);
@@ -200,7 +200,7 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
       },
     );
   }
-  
+
   @override
   Future<Either<Failure, KtSet<Experience>>> loadSurroundingExperiences(world_on_coordinates.Coordinates coordinates) {
     // TODO: implement loadSurroundingExperiences
