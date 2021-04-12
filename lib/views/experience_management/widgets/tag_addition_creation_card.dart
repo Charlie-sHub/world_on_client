@@ -40,12 +40,13 @@ class TagAdditionCreationCard extends HookWidget {
       child: BlocListener<TagSelectorBloc, TagSelectorState>(
         listener: (context, state) => tagChangeFunction(context.read<TagSelectorBloc>().state.tagsSelected),
         child: Card(
-          color: WorldOnColors.background,
-          shape: const RoundedRectangleBorder(
-            side: BorderSide(
+          shape: RoundedRectangleBorder(
+            side: const BorderSide(
               color: WorldOnColors.primary,
             ),
+            borderRadius: BorderRadius.circular(3),
           ),
+          color: WorldOnColors.background,
           child: Padding(
             padding: const EdgeInsets.all(5),
             child: Column(

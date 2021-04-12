@@ -113,7 +113,7 @@
   "submitButton": "Enviar",
   "user": "Usuario",
   "invalid": "No válido",
-  "followers": "Seguidores",
+  "followersCaps": "Seguidores",
   "following": "Siguiendo",
   "achievement": "Logro",
   "experiences": "Experiencias",
@@ -176,5 +176,6 @@
   "editObjectives": "Edita los objetivos",
   "editDifficulty": "Cambia la dificultad",
   "editRewards": "Edita las recompensas",
-  "surpassedImageLimit": "El numero maximo de imagenes es de: "
+  "surpassedImageLimit": "El numero maximo de imagenes es de: ",
+  "emptyFields": "Faltan campos por rellenar"
 }

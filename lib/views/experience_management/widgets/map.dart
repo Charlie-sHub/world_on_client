@@ -22,10 +22,11 @@ class Map extends StatelessWidget {
     );
     return Card(
       color: WorldOnColors.background,
-      shape: const RoundedRectangleBorder(
-        side: BorderSide(
+      shape: RoundedRectangleBorder(
+        side: const BorderSide(
           color: WorldOnColors.primary,
         ),
+        borderRadius: BorderRadius.circular(3),
       ),
       child: Column(
         children: [

@@ -42,17 +42,18 @@ class RewardCreationCard extends HookWidget {
         // TODO: Create buildWhen method
         builder: (context, state) => Card(
           color: WorldOnColors.background,
-          shape: const RoundedRectangleBorder(
-            side: BorderSide(
+          shape: RoundedRectangleBorder(
+            side: const BorderSide(
               color: WorldOnColors.primary,
             ),
+            borderRadius: BorderRadius.circular(3),
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               const SizedBox(height: 5),
               Text(
-                S.of(context).editRewards,
+                context.read<ExperienceManagementFormBloc>().state.isEditing ? S.of(context).editRewards : S.of(context).rewardCreationCardTitle,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,

@@ -174,6 +174,7 @@ class _$ExperienceManagementFormEventCopyWithImpl<$Res> implements $ExperienceMa
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+
   $Res call({Option<Experience> experienceOption});
 }
 
@@ -211,7 +212,7 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other is _Initialized && (identical(other.experienceOption, experienceOption) || const DeepCollectionEquality().equals(other.experienceOption, experienceOption)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(experienceOption);
 
@@ -328,6 +329,7 @@ abstract class _Initialized implements ExperienceManagementFormEvent {
   const factory _Initialized(Option<Experience> experienceOption) = _$_Initialized;
 
   Option<Experience> get experienceOption;
+
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith;
 }
@@ -335,6 +337,7 @@ abstract class _Initialized implements ExperienceManagementFormEvent {
 /// @nodoc
 abstract class _$TitleChangedCopyWith<$Res> {
   factory _$TitleChangedCopyWith(_TitleChanged value, $Res Function(_TitleChanged) then) = __$TitleChangedCopyWithImpl<$Res>;
+
   $Res call({String title});
 }
 
@@ -495,6 +498,7 @@ abstract class _TitleChanged implements ExperienceManagementFormEvent {
 /// @nodoc
 abstract class _$DescriptionChangedCopyWith<$Res> {
   factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) = __$DescriptionChangedCopyWithImpl<$Res>;
+
   $Res call({String description});
 }
 
@@ -1023,7 +1027,7 @@ class _$_CoordinatesChanged implements _CoordinatesChanged {
             (identical(other.latitude, latitude) || const DeepCollectionEquality().equals(other.latitude, latitude)) &&
             (identical(other.longitude, longitude) || const DeepCollectionEquality().equals(other.longitude, longitude)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(latitude) ^ const DeepCollectionEquality().hash(longitude);
 
@@ -1140,7 +1144,9 @@ abstract class _CoordinatesChanged implements ExperienceManagementFormEvent {
   const factory _CoordinatesChanged({@required double latitude, @required double longitude}) = _$_CoordinatesChanged;
 
   double get latitude;
+
   double get longitude;
+
   @JsonKey(ignore: true)
   _$CoordinatesChangedCopyWith<_CoordinatesChanged> get copyWith;
 }
@@ -1148,6 +1154,7 @@ abstract class _CoordinatesChanged implements ExperienceManagementFormEvent {
 /// @nodoc
 abstract class _$DifficultyChangedCopyWith<$Res> {
   factory _$DifficultyChangedCopyWith(_DifficultyChanged value, $Res Function(_DifficultyChanged) then) = __$DifficultyChangedCopyWithImpl<$Res>;
+
   $Res call({int difficulty});
 }
 
@@ -1308,6 +1315,7 @@ abstract class _DifficultyChanged implements ExperienceManagementFormEvent {
 /// @nodoc
 abstract class _$ObjectivesChangedCopyWith<$Res> {
   factory _$ObjectivesChangedCopyWith(_ObjectivesChanged value, $Res Function(_ObjectivesChanged) then) = __$ObjectivesChangedCopyWithImpl<$Res>;
+
   $Res call({KtList<Objective> objectives});
 }
 
@@ -1469,6 +1477,7 @@ abstract class _ObjectivesChanged implements ExperienceManagementFormEvent {
 /// @nodoc
 abstract class _$RewardsChangedCopyWith<$Res> {
   factory _$RewardsChangedCopyWith(_RewardsChanged value, $Res Function(_RewardsChanged) then) = __$RewardsChangedCopyWithImpl<$Res>;
+
   $Res call({KtSet<Reward> rewards});
 }
 
@@ -1629,6 +1638,7 @@ abstract class _RewardsChanged implements ExperienceManagementFormEvent {
 /// @nodoc
 abstract class _$TagsChangedCopyWith<$Res> {
   factory _$TagsChangedCopyWith(_TagsChanged value, $Res Function(_TagsChanged) then) = __$TagsChangedCopyWithImpl<$Res>;
+
   $Res call({KtSet<Tag> tags});
 }
 
@@ -2102,7 +2112,7 @@ class _$_ExperienceManagementFormState implements _ExperienceManagementFormState
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(loadedCoordinates) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
-  
+
   @JsonKey(ignore: true)
   @override
   _$ExperienceManagementFormStateCopyWith<_ExperienceManagementFormState> get copyWith => __$ExperienceManagementFormStateCopyWithImpl<_ExperienceManagementFormState>(this, _$identity);

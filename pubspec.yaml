@@ -8,7 +8,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # Then it goes back to 0 and it's neighbour to the left increases by 1
 # The number after the + always increases by 1
 # Usually both numbers should increase by 1 at the same time
-version: 1.1.4+14
+version: 1.1.5+15
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -97,6 +97,8 @@ dependencies:
   geoflutterfire: ^2.2.2
   # For checking the visibility of widgets
   visibility_detector: ^0.1.5
+  # For displaying a loading widget on the images
+  cached_network_image: ^2.5.0
 
 dev_dependencies:
   flutter_test:

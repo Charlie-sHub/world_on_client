@@ -7,6 +7,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
 import 'package:meta/meta.dart';
+import 'package:worldon/application/core/failures/core_application_failure.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/domain/authentication/use_case/get_logged_in_user.dart';
 import 'package:worldon/domain/authentication/use_case/register.dart';
@@ -67,6 +68,18 @@ class RegistrationFormBloc extends Bloc<RegistrationFormEvent, RegistrationFormS
       _failureOrUnit = await getIt<Register>()(
         Params(
           user: state.user,
+        ),
+      );
+    } else {
+      yield state.copyWith(
+        isSubmitting: false,
+        showErrorMessages: true,
+        failureOrSuccessOption: some(
+          left(
+            const Failure.coreApplication(
+              CoreApplicationFailure.emptyFields(),
+            ),
+          ),
         ),
       );
     }

@@ -41,6 +41,9 @@ class ExperienceCard extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(5),
           child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(3),
+            ),
             child: Padding(
               padding: const EdgeInsets.all(5),
               child: Column(
@@ -98,8 +101,8 @@ class ExperienceCard extends StatelessWidget {
                         spacing: 5,
                         children: <Widget>[
                           ...experience.tags.getOrCrash().asSet().map(
-                                (tag) => SimpleTagDisplay(tag: tag),
-                              ),
+                              (tag) => SimpleTagDisplay(tag: tag),
+                          ),
                         ],
                       ),
                     ],

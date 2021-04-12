@@ -21,6 +21,14 @@ class ObjectivesTrackerBloc extends Bloc<ObjectivesTrackerEvent, ObjectivesTrack
     yield* event.map(
       initialized: _onInitialized,
       objectiveAccomplished: _onObjectiveAccomplished,
+      objectiveUnaccomplished: _onObjectiveUnaccomplished,
+    );
+  }
+
+  Stream<ObjectivesTrackerState> _onObjectiveUnaccomplished(_ObjectiveUnaccomplished event) async* {
+    final _objectivesLeft = state.objectivesToDo.plusElement(event.objective);
+    yield state.copyWith(
+      objectivesToDo: _objectivesLeft,
     );
   }
 

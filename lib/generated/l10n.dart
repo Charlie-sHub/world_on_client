@@ -1165,6 +1165,16 @@ class S {
     );
   }
 
+  /// `Followers`
+  String get followersCaps {
+    return Intl.message(
+      'Followers',
+      name: 'followersCaps',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `followers`
   String get followers {
     return Intl.message(
@@ -1800,6 +1810,16 @@ class S {
     return Intl.message(
       'The max amount of images is: ',
       name: 'surpassedImageLimit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There are empty fields`
+  String get emptyFields {
+    return Intl.message(
+      'There are empty fields',
+      name: 'emptyFields',
       desc: '',
       args: [],
     );

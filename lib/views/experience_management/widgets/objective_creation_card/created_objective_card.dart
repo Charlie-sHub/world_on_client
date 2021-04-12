@@ -27,7 +27,8 @@ class CreatedObjectiveCard extends StatelessWidget {
                   () => NetworkImage(objective.imageURL),
                   (_imageFile) => FileImage(_imageFile),
                 ),
-                fit: BoxFit.fill,
+                height: 150,
+                width: 150,
               ),
             ),
             Expanded(

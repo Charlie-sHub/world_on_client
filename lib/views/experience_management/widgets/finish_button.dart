@@ -33,14 +33,20 @@ class FinishButton extends StatelessWidget {
                   ),
               color: WorldOnColors.primary,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(0),
+                borderRadius: BorderRadius.circular(3),
                 side: const BorderSide(color: WorldOnColors.primary),
               ),
-              child: Text(
-                S.of(context).experienceFinishButton,
-                style: const TextStyle(
-                  color: WorldOnColors.background,
-                  fontSize: 20,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 25,
+                  vertical: 5,
+                ),
+                child: Text(
+                  S.of(context).experienceFinishButton,
+                  style: const TextStyle(
+                    color: WorldOnColors.background,
+                    fontSize: 30,
+                  ),
                 ),
               ),
             );

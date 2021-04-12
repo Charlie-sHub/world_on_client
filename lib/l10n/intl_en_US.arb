@@ -113,7 +113,8 @@
   "submitButton": "Submit",
   "user": "User",
   "invalid": "Invalid",
-  "followers": "Followers",
+  "followersCaps": "Followers",
+  "followers": "followers",
   "following": "Following",
   "achievement": "Achievement",
   "experiences": "Experiences",
@@ -168,7 +169,6 @@
   "notFoundErrorComments": "This experience has no comments",
   "welcomeTitle": "WELCOME",
   "continueToMainPage": "CONTINUE",
-  "followers": "followers",
   "welcomeMessage": "Hello.\n\nWelcome to World On, here you can create and share experiences, real life activities that you want to share or do the ones you like the most created by others. Create, share, participate and have fun.\n\nLive and play the adventure of your life!",
   "delete": "Delete",
   "title": "Title",
@@ -177,5 +177,6 @@
   "editObjectives": "Edit the Objectives",
   "editDifficulty": "Change the Difficulty",
   "editRewards": "Edit the Rewards",
-  "surpassedImageLimit": "The max amount of images is: "
+  "surpassedImageLimit": "The max amount of images is: ",
+  "emptyFields": "There are empty fields"
 }

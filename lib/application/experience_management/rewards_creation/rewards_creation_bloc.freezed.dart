@@ -475,6 +475,7 @@ mixin _$RewardsCreationState {
 /// @nodoc
 abstract class $RewardsCreationStateCopyWith<$Res> {
   factory $RewardsCreationStateCopyWith(RewardsCreationState value, $Res Function(RewardsCreationState) then) = _$RewardsCreationStateCopyWithImpl<$Res>;
+
   $Res call({KtSet<Reward> rewardsCreated});
 }
 
@@ -539,7 +540,7 @@ class _$_RewardsCreationState implements _RewardsCreationState {
     return identical(this, other) ||
         (other is _RewardsCreationState && (identical(other.rewardsCreated, rewardsCreated) || const DeepCollectionEquality().equals(other.rewardsCreated, rewardsCreated)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(rewardsCreated);
 
@@ -553,6 +554,7 @@ abstract class _RewardsCreationState implements RewardsCreationState {
 
   @override
   KtSet<Reward> get rewardsCreated;
+
   @override
   @JsonKey(ignore: true)
   _$RewardsCreationStateCopyWith<_RewardsCreationState> get copyWith;

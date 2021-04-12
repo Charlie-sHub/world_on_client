@@ -26,6 +26,13 @@ class _$ObjectivesTrackerEventTearOff {
       objective,
     );
   }
+
+// ignore: unused_element
+  _ObjectiveUnaccomplished objectiveUnaccomplished(Objective objective) {
+    return _ObjectiveUnaccomplished(
+      objective,
+    );
+  }
 }
 
 /// @nodoc
@@ -38,22 +45,26 @@ mixin _$ObjectivesTrackerEvent {
   TResult when<TResult extends Object>({
     @required TResult initialized(ObjectiveList objectiveSet),
     @required TResult objectiveAccomplished(Objective objective),
+    @required TResult objectiveUnaccomplished(Objective objective),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initialized(ObjectiveList objectiveSet),
     TResult objectiveAccomplished(Objective objective),
+    TResult objectiveUnaccomplished(Objective objective),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult initialized(_Initialized value),
     @required TResult objectiveAccomplished(_ObjectiveAccomplished value),
+    @required TResult objectiveUnaccomplished(_ObjectiveUnaccomplished value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initialized(_Initialized value),
     TResult objectiveAccomplished(_ObjectiveAccomplished value),
+    TResult objectiveUnaccomplished(_ObjectiveUnaccomplished value),
     @required TResult orElse(),
   });
 }
@@ -76,6 +87,7 @@ class _$ObjectivesTrackerEventCopyWithImpl<$Res> implements $ObjectivesTrackerEv
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+
   $Res call({ObjectiveList objectiveSet});
 }
 
@@ -125,9 +137,11 @@ class _$_Initialized implements _Initialized {
   TResult when<TResult extends Object>({
     @required TResult initialized(ObjectiveList objectiveSet),
     @required TResult objectiveAccomplished(Objective objective),
+    @required TResult objectiveUnaccomplished(Objective objective),
   }) {
     assert(initialized != null);
     assert(objectiveAccomplished != null);
+    assert(objectiveUnaccomplished != null);
     return initialized(objectiveSet);
   }
 
@@ -136,6 +150,7 @@ class _$_Initialized implements _Initialized {
   TResult maybeWhen<TResult extends Object>({
     TResult initialized(ObjectiveList objectiveSet),
     TResult objectiveAccomplished(Objective objective),
+    TResult objectiveUnaccomplished(Objective objective),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -150,9 +165,11 @@ class _$_Initialized implements _Initialized {
   TResult map<TResult extends Object>({
     @required TResult initialized(_Initialized value),
     @required TResult objectiveAccomplished(_ObjectiveAccomplished value),
+    @required TResult objectiveUnaccomplished(_ObjectiveUnaccomplished value),
   }) {
     assert(initialized != null);
     assert(objectiveAccomplished != null);
+    assert(objectiveUnaccomplished != null);
     return initialized(this);
   }
 
@@ -161,6 +178,7 @@ class _$_Initialized implements _Initialized {
   TResult maybeMap<TResult extends Object>({
     TResult initialized(_Initialized value),
     TResult objectiveAccomplished(_ObjectiveAccomplished value),
+    TResult objectiveUnaccomplished(_ObjectiveUnaccomplished value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -182,6 +200,7 @@ abstract class _Initialized implements ObjectivesTrackerEvent {
 /// @nodoc
 abstract class _$ObjectiveAccomplishedCopyWith<$Res> {
   factory _$ObjectiveAccomplishedCopyWith(_ObjectiveAccomplished value, $Res Function(_ObjectiveAccomplished) then) = __$ObjectiveAccomplishedCopyWithImpl<$Res>;
+
   $Res call({Objective objective});
 
   $ObjectiveCopyWith<$Res> get objective;
@@ -243,9 +262,11 @@ class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
   TResult when<TResult extends Object>({
     @required TResult initialized(ObjectiveList objectiveSet),
     @required TResult objectiveAccomplished(Objective objective),
+    @required TResult objectiveUnaccomplished(Objective objective),
   }) {
     assert(initialized != null);
     assert(objectiveAccomplished != null);
+    assert(objectiveUnaccomplished != null);
     return objectiveAccomplished(objective);
   }
 
@@ -254,6 +275,7 @@ class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
   TResult maybeWhen<TResult extends Object>({
     TResult initialized(ObjectiveList objectiveSet),
     TResult objectiveAccomplished(Objective objective),
+    TResult objectiveUnaccomplished(Objective objective),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -268,9 +290,11 @@ class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
   TResult map<TResult extends Object>({
     @required TResult initialized(_Initialized value),
     @required TResult objectiveAccomplished(_ObjectiveAccomplished value),
+    @required TResult objectiveUnaccomplished(_ObjectiveUnaccomplished value),
   }) {
     assert(initialized != null);
     assert(objectiveAccomplished != null);
+    assert(objectiveUnaccomplished != null);
     return objectiveAccomplished(this);
   }
 
@@ -279,6 +303,7 @@ class _$_ObjectiveAccomplished implements _ObjectiveAccomplished {
   TResult maybeMap<TResult extends Object>({
     TResult initialized(_Initialized value),
     TResult objectiveAccomplished(_ObjectiveAccomplished value),
+    TResult objectiveUnaccomplished(_ObjectiveUnaccomplished value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -293,8 +318,135 @@ abstract class _ObjectiveAccomplished implements ObjectivesTrackerEvent {
   const factory _ObjectiveAccomplished(Objective objective) = _$_ObjectiveAccomplished;
 
   Objective get objective;
+
   @JsonKey(ignore: true)
   _$ObjectiveAccomplishedCopyWith<_ObjectiveAccomplished> get copyWith;
+}
+
+/// @nodoc
+abstract class _$ObjectiveUnaccomplishedCopyWith<$Res> {
+  factory _$ObjectiveUnaccomplishedCopyWith(_ObjectiveUnaccomplished value, $Res Function(_ObjectiveUnaccomplished) then) = __$ObjectiveUnaccomplishedCopyWithImpl<$Res>;
+
+  $Res call({Objective objective});
+
+  $ObjectiveCopyWith<$Res> get objective;
+}
+
+/// @nodoc
+class __$ObjectiveUnaccomplishedCopyWithImpl<$Res> extends _$ObjectivesTrackerEventCopyWithImpl<$Res> implements _$ObjectiveUnaccomplishedCopyWith<$Res> {
+  __$ObjectiveUnaccomplishedCopyWithImpl(_ObjectiveUnaccomplished _value, $Res Function(_ObjectiveUnaccomplished) _then) : super(_value, (v) => _then(v as _ObjectiveUnaccomplished));
+
+  @override
+  _ObjectiveUnaccomplished get _value => super._value as _ObjectiveUnaccomplished;
+
+  @override
+  $Res call({
+    Object objective = freezed,
+  }) {
+    return _then(_ObjectiveUnaccomplished(
+      objective == freezed ? _value.objective : objective as Objective,
+    ));
+  }
+
+  @override
+  $ObjectiveCopyWith<$Res> get objective {
+    if (_value.objective == null) {
+      return null;
+    }
+    return $ObjectiveCopyWith<$Res>(_value.objective, (value) {
+      return _then(_value.copyWith(objective: value));
+    });
+  }
+}
+
+/// @nodoc
+class _$_ObjectiveUnaccomplished implements _ObjectiveUnaccomplished {
+  const _$_ObjectiveUnaccomplished(this.objective) : assert(objective != null);
+
+  @override
+  final Objective objective;
+
+  @override
+  String toString() {
+    return 'ObjectivesTrackerEvent.objectiveUnaccomplished(objective: $objective)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _ObjectiveUnaccomplished && (identical(other.objective, objective) || const DeepCollectionEquality().equals(other.objective, objective)));
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ObjectiveUnaccomplishedCopyWith<_ObjectiveUnaccomplished> get copyWith => __$ObjectiveUnaccomplishedCopyWithImpl<_ObjectiveUnaccomplished>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult initialized(ObjectiveList objectiveSet),
+    @required TResult objectiveAccomplished(Objective objective),
+    @required TResult objectiveUnaccomplished(Objective objective),
+  }) {
+    assert(initialized != null);
+    assert(objectiveAccomplished != null);
+    assert(objectiveUnaccomplished != null);
+    return objectiveUnaccomplished(objective);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult initialized(ObjectiveList objectiveSet),
+    TResult objectiveAccomplished(Objective objective),
+    TResult objectiveUnaccomplished(Objective objective),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (objectiveUnaccomplished != null) {
+      return objectiveUnaccomplished(objective);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult initialized(_Initialized value),
+    @required TResult objectiveAccomplished(_ObjectiveAccomplished value),
+    @required TResult objectiveUnaccomplished(_ObjectiveUnaccomplished value),
+  }) {
+    assert(initialized != null);
+    assert(objectiveAccomplished != null);
+    assert(objectiveUnaccomplished != null);
+    return objectiveUnaccomplished(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult initialized(_Initialized value),
+    TResult objectiveAccomplished(_ObjectiveAccomplished value),
+    TResult objectiveUnaccomplished(_ObjectiveUnaccomplished value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (objectiveUnaccomplished != null) {
+      return objectiveUnaccomplished(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ObjectiveUnaccomplished implements ObjectivesTrackerEvent {
+  const factory _ObjectiveUnaccomplished(Objective objective) = _$_ObjectiveUnaccomplished;
+
+  Objective get objective;
+
+  @JsonKey(ignore: true)
+  _$ObjectiveUnaccomplishedCopyWith<_ObjectiveUnaccomplished> get copyWith;
 }
 
 /// @nodoc
@@ -326,6 +478,7 @@ mixin _$ObjectivesTrackerState {
 /// @nodoc
 abstract class $ObjectivesTrackerStateCopyWith<$Res> {
   factory $ObjectivesTrackerStateCopyWith(ObjectivesTrackerState value, $Res Function(ObjectivesTrackerState) then) = _$ObjectivesTrackerStateCopyWithImpl<$Res>;
+
   $Res call({KtList<Objective> objectivesToDo, bool isFinished});
 }
 
@@ -400,7 +553,7 @@ class _$_ObjectivesTrackerState implements _ObjectivesTrackerState {
             (identical(other.objectivesToDo, objectivesToDo) || const DeepCollectionEquality().equals(other.objectivesToDo, objectivesToDo)) &&
             (identical(other.isFinished, isFinished) || const DeepCollectionEquality().equals(other.isFinished, isFinished)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectivesToDo) ^ const DeepCollectionEquality().hash(isFinished);
 
@@ -414,8 +567,10 @@ abstract class _ObjectivesTrackerState implements ObjectivesTrackerState {
 
   @override
   KtList<Objective> get objectivesToDo;
+
   @override
   bool get isFinished;
+
   @override
   @JsonKey(ignore: true)
   _$ObjectivesTrackerStateCopyWith<_ObjectivesTrackerState> get copyWith;

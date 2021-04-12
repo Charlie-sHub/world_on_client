@@ -27,15 +27,19 @@ class TagCard extends StatelessWidget {
         builder: (context, state) => Padding(
           padding: const EdgeInsets.all(5),
           child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(3),
+            ),
             child: Padding(
-              padding: const EdgeInsets.all(5),
+              padding: const EdgeInsets.all(2),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
+                  const SizedBox(width: 1),
                   AutoSizeText(
                     tag.name.getOrCrash(),
                     style: const TextStyle(
-                      fontSize: 20,
+                      fontSize: 17,
                       fontWeight: FontWeight.bold,
                       color: WorldOnColors.background,
                     ),

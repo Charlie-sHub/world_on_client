@@ -33,7 +33,7 @@ class ExperienceInformationTabView extends StatelessWidget {
         children: [
           ExperienceHeader(experience: experience),
           Padding(
-            padding: const EdgeInsets.all(5),
+            padding: const EdgeInsets.all(15),
             child: ExperienceDescription(experience: experience),
           ),
           ExperienceImageGallery(experience: experience),

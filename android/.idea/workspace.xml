@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e38aa070-de20-4db5-a83d-a2d6ccfed1a0" name="Default Changelist" comment="" />
+    <list default="true" id="7439c9b7-6fb4-42ff-bd92-892cf118a36d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldon_android.iml" beforeDir="false" afterPath="$PROJECT_DIR$/worldon_android.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/application/experience_management/rewards_creation/rewards_creation_bloc.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/application/experience_management/rewards_creation/rewards_creation_bloc.freezed.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/application/experience_navigation/objectives_tracker/objectives_tracker_bloc.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/application/experience_navigation/objectives_tracker/objectives_tracker_bloc.freezed.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/application/search/tag_selector/tag_selector_bloc.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/application/search/tag_selector/tag_selector_bloc.freezed.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/domain/core/failures/value_failure.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/domain/core/failures/value_failure.freezed.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/generated/intl/messages_en_US.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/generated/intl/messages_en_US.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/generated/l10n.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/generated/l10n.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../pubspec.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,13 +26,35 @@
       <ProjectState />
     </projectState>
   </component>
-  <component name="ProjectId" id="1qneryKjwbBYqJrsVDAkZhY4QUr" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+  </component>
+  <component name="ProjectId" id="1r2hmixIbF7RpRuoKErvb6H9bBT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="abbreviatePackageNames" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <created>1617719983645</created>
+      <changelist id="7439c9b7-6fb4-42ff-bd92-892cf118a36d" name="Default Changelist" comment="" />
+      <created>1618180252604</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1617719983645</updated>
+      <updated>1618180252604</updated>
     </task>
     <servers />
   </component>

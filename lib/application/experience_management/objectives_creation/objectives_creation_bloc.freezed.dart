@@ -137,7 +137,7 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other is _Initialized && (identical(other.objectiveListOption, objectiveListOption) || const DeepCollectionEquality().equals(other.objectiveListOption, objectiveListOption)));
   }
-
+  
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectiveListOption);
 
@@ -649,6 +649,7 @@ mixin _$ObjectivesCreationState {
 /// @nodoc
 abstract class $ObjectivesCreationStateCopyWith<$Res> {
   factory $ObjectivesCreationStateCopyWith(ObjectivesCreationState value, $Res Function(ObjectivesCreationState) then) = _$ObjectivesCreationStateCopyWithImpl<$Res>;
+
   $Res call({KtList<Objective> objectivesCreated});
 }
 
@@ -713,7 +714,7 @@ class _$_ObjectivesCreationState implements _ObjectivesCreationState {
     return identical(this, other) ||
         (other is _ObjectivesCreationState && (identical(other.objectivesCreated, objectivesCreated) || const DeepCollectionEquality().equals(other.objectivesCreated, objectivesCreated)));
   }
-
+  
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectivesCreated);
 

@@ -70,7 +70,7 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
 
   @override
   Stream<Either<Failure, KtList<Tag>>> watchSearchTagsByName(SearchTerm name) async* {
-    yield* _firestore.tagCollection.snapshots().map(
+    yield* _firestore.tagCollection.orderBy("name").snapshots().map(
       (snapshot) {
         final _resultList = snapshot.docs.where(
           (element) {

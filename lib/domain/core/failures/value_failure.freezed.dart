@@ -388,6 +388,7 @@ abstract class NullInput<T> implements ValueFailure<T> {
 /// @nodoc
 abstract class $InvalidDateCopyWith<T, $Res> {
   factory $InvalidDateCopyWith(InvalidDate<T> value, $Res Function(InvalidDate<T>) then) = _$InvalidDateCopyWithImpl<T, $Res>;
+
   $Res call({DateTime failedValue});
 }
 
@@ -430,7 +431,7 @@ class _$InvalidDate<T> with DiagnosticableTreeMixin implements InvalidDate<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is InvalidDate<T> && (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
@@ -571,6 +572,7 @@ abstract class InvalidDate<T> implements ValueFailure<T> {
   const factory InvalidDate({@required DateTime failedValue}) = _$InvalidDate<T>;
 
   DateTime get failedValue;
+
   @JsonKey(ignore: true)
   $InvalidDateCopyWith<T, InvalidDate<T>> get copyWith;
 }
@@ -578,6 +580,7 @@ abstract class InvalidDate<T> implements ValueFailure<T> {
 /// @nodoc
 abstract class $InvalidEmailCopyWith<T, $Res> {
   factory $InvalidEmailCopyWith(InvalidEmail<T> value, $Res Function(InvalidEmail<T>) then) = _$InvalidEmailCopyWithImpl<T, $Res>;
+
   $Res call({String failedValue});
 }
 
@@ -620,7 +623,7 @@ class _$InvalidEmail<T> with DiagnosticableTreeMixin implements InvalidEmail<T> 
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is InvalidEmail<T> && (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
@@ -761,6 +764,7 @@ abstract class InvalidEmail<T> implements ValueFailure<T> {
   const factory InvalidEmail({@required String failedValue}) = _$InvalidEmail<T>;
 
   String get failedValue;
+
   @JsonKey(ignore: true)
   $InvalidEmailCopyWith<T, InvalidEmail<T>> get copyWith;
 }
@@ -768,6 +772,7 @@ abstract class InvalidEmail<T> implements ValueFailure<T> {
 /// @nodoc
 abstract class $InvalidPasswordCopyWith<T, $Res> {
   factory $InvalidPasswordCopyWith(InvalidPassword<T> value, $Res Function(InvalidPassword<T>) then) = _$InvalidPasswordCopyWithImpl<T, $Res>;
+
   $Res call({String failedValue});
 }
 
@@ -810,7 +815,7 @@ class _$InvalidPassword<T> with DiagnosticableTreeMixin implements InvalidPasswo
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is InvalidPassword<T> && (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
@@ -951,6 +956,7 @@ abstract class InvalidPassword<T> implements ValueFailure<T> {
   const factory InvalidPassword({@required String failedValue}) = _$InvalidPassword<T>;
 
   String get failedValue;
+
   @JsonKey(ignore: true)
   $InvalidPasswordCopyWith<T, InvalidPassword<T>> get copyWith;
 }
@@ -958,6 +964,7 @@ abstract class InvalidPassword<T> implements ValueFailure<T> {
 /// @nodoc
 abstract class $StringMismatchCopyWith<T, $Res> {
   factory $StringMismatchCopyWith(StringMismatch<T> value, $Res Function(StringMismatch<T>) then) = _$StringMismatchCopyWithImpl<T, $Res>;
+
   $Res call({String failedValue});
 }
 
@@ -1000,7 +1007,7 @@ class _$StringMismatch<T> with DiagnosticableTreeMixin implements StringMismatch
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is StringMismatch<T> && (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
@@ -1141,6 +1148,7 @@ abstract class StringMismatch<T> implements ValueFailure<T> {
   const factory StringMismatch({@required String failedValue}) = _$StringMismatch<T>;
 
   String get failedValue;
+
   @JsonKey(ignore: true)
   $StringMismatchCopyWith<T, StringMismatch<T>> get copyWith;
 }
@@ -1148,6 +1156,7 @@ abstract class StringMismatch<T> implements ValueFailure<T> {
 /// @nodoc
 abstract class $InvalidNameCopyWith<T, $Res> {
   factory $InvalidNameCopyWith(InvalidName<T> value, $Res Function(InvalidName<T>) then) = _$InvalidNameCopyWithImpl<T, $Res>;
+
   $Res call({String failedValue});
 }
 
@@ -1190,7 +1199,7 @@ class _$InvalidName<T> with DiagnosticableTreeMixin implements InvalidName<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is InvalidName<T> && (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
@@ -1338,6 +1347,7 @@ abstract class InvalidName<T> implements ValueFailure<T> {
 /// @nodoc
 abstract class $EmptyStringCopyWith<T, $Res> {
   factory $EmptyStringCopyWith(EmptyString<T> value, $Res Function(EmptyString<T>) then) = _$EmptyStringCopyWithImpl<T, $Res>;
+
   $Res call({String failedValue});
 }
 
@@ -1380,7 +1390,7 @@ class _$EmptyString<T> with DiagnosticableTreeMixin implements EmptyString<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is EmptyString<T> && (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
@@ -1528,6 +1538,7 @@ abstract class EmptyString<T> implements ValueFailure<T> {
 /// @nodoc
 abstract class $MultiLineStringCopyWith<T, $Res> {
   factory $MultiLineStringCopyWith(MultiLineString<T> value, $Res Function(MultiLineString<T>) then) = _$MultiLineStringCopyWithImpl<T, $Res>;
+
   $Res call({String failedValue});
 }
 
@@ -1570,7 +1581,7 @@ class _$MultiLineString<T> with DiagnosticableTreeMixin implements MultiLineStri
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is MultiLineString<T> && (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
@@ -1711,6 +1722,7 @@ abstract class MultiLineString<T> implements ValueFailure<T> {
   const factory MultiLineString({@required String failedValue}) = _$MultiLineString<T>;
 
   String get failedValue;
+
   @JsonKey(ignore: true)
   $MultiLineStringCopyWith<T, MultiLineString<T>> get copyWith;
 }
@@ -1718,6 +1730,7 @@ abstract class MultiLineString<T> implements ValueFailure<T> {
 /// @nodoc
 abstract class $StringExceedsLengthCopyWith<T, $Res> {
   factory $StringExceedsLengthCopyWith(StringExceedsLength<T> value, $Res Function(StringExceedsLength<T>) then) = _$StringExceedsLengthCopyWithImpl<T, $Res>;
+
   $Res call({String failedValue, int maxLength});
 }
 
@@ -1769,7 +1782,7 @@ class _$StringExceedsLength<T> with DiagnosticableTreeMixin implements StringExc
             (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)) &&
             (identical(other.maxLength, maxLength) || const DeepCollectionEquality().equals(other.maxLength, maxLength)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue) ^ const DeepCollectionEquality().hash(maxLength);
 
@@ -1910,7 +1923,9 @@ abstract class StringExceedsLength<T> implements ValueFailure<T> {
   const factory StringExceedsLength({@required String failedValue, @required int maxLength}) = _$StringExceedsLength<T>;
 
   String get failedValue;
+
   int get maxLength;
+
   @JsonKey(ignore: true)
   $StringExceedsLengthCopyWith<T, StringExceedsLength<T>> get copyWith;
 }
@@ -1918,6 +1933,7 @@ abstract class StringExceedsLength<T> implements ValueFailure<T> {
 /// @nodoc
 abstract class $IntegerOutOfBoundsCopyWith<T, $Res> {
   factory $IntegerOutOfBoundsCopyWith(IntegerOutOfBounds<T> value, $Res Function(IntegerOutOfBounds<T>) then) = _$IntegerOutOfBoundsCopyWithImpl<T, $Res>;
+
   $Res call({int failedValue});
 }
 
@@ -1960,7 +1976,7 @@ class _$IntegerOutOfBounds<T> with DiagnosticableTreeMixin implements IntegerOut
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is IntegerOutOfBounds<T> && (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
@@ -2101,6 +2117,7 @@ abstract class IntegerOutOfBounds<T> implements ValueFailure<T> {
   const factory IntegerOutOfBounds({@required int failedValue}) = _$IntegerOutOfBounds<T>;
 
   int get failedValue;
+
   @JsonKey(ignore: true)
   $IntegerOutOfBoundsCopyWith<T, IntegerOutOfBounds<T>> get copyWith;
 }
@@ -2108,6 +2125,7 @@ abstract class IntegerOutOfBounds<T> implements ValueFailure<T> {
 /// @nodoc
 abstract class $StringWithInvalidCharactersCopyWith<T, $Res> {
   factory $StringWithInvalidCharactersCopyWith(StringWithInvalidCharacters<T> value, $Res Function(StringWithInvalidCharacters<T>) then) = _$StringWithInvalidCharactersCopyWithImpl<T, $Res>;
+
   $Res call({String failedValue});
 }
 
@@ -2151,7 +2169,7 @@ class _$StringWithInvalidCharacters<T> with DiagnosticableTreeMixin implements S
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is StringWithInvalidCharacters<T> && (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
@@ -2300,6 +2318,7 @@ abstract class StringWithInvalidCharacters<T> implements ValueFailure<T> {
 /// @nodoc
 abstract class $InvalidCoordinatesCopyWith<T, $Res> {
   factory $InvalidCoordinatesCopyWith(InvalidCoordinates<T> value, $Res Function(InvalidCoordinates<T>) then) = _$InvalidCoordinatesCopyWithImpl<T, $Res>;
+
   $Res call({double failedValue});
 }
 
@@ -2342,7 +2361,7 @@ class _$InvalidCoordinates<T> with DiagnosticableTreeMixin implements InvalidCoo
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is InvalidCoordinates<T> && (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
@@ -2483,6 +2502,7 @@ abstract class InvalidCoordinates<T> implements ValueFailure<T> {
   const factory InvalidCoordinates({@required double failedValue}) = _$InvalidCoordinates<T>;
 
   double get failedValue;
+
   @JsonKey(ignore: true)
   $InvalidCoordinatesCopyWith<T, InvalidCoordinates<T>> get copyWith;
 }
@@ -2490,6 +2510,7 @@ abstract class InvalidCoordinates<T> implements ValueFailure<T> {
 /// @nodoc
 abstract class $EmptySetCopyWith<T, $Res> {
   factory $EmptySetCopyWith(EmptySet<T> value, $Res Function(EmptySet<T>) then) = _$EmptySetCopyWithImpl<T, $Res>;
+
   $Res call({T failedValue});
 }
 
@@ -2923,7 +2944,7 @@ class _$CollectionExceedsLength<T> with DiagnosticableTreeMixin implements Colle
             (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)) &&
             (identical(other.maxLength, maxLength) || const DeepCollectionEquality().equals(other.maxLength, maxLength)));
   }
-
+  
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue) ^ const DeepCollectionEquality().hash(maxLength);
 

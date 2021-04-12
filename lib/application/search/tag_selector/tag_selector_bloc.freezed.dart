@@ -474,6 +474,7 @@ mixin _$TagSelectorState {
 /// @nodoc
 abstract class $TagSelectorStateCopyWith<$Res> {
   factory $TagSelectorStateCopyWith(TagSelectorState value, $Res Function(TagSelectorState) then) = _$TagSelectorStateCopyWithImpl<$Res>;
+
   $Res call({KtSet<Tag> tagsSelected});
 }
 
@@ -537,7 +538,7 @@ class _$_TagSearchFormState implements _TagSearchFormState {
   bool operator ==(dynamic other) {
     return identical(this, other) || (other is _TagSearchFormState && (identical(other.tagsSelected, tagsSelected) || const DeepCollectionEquality().equals(other.tagsSelected, tagsSelected)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(tagsSelected);
 
@@ -551,6 +552,7 @@ abstract class _TagSearchFormState implements TagSelectorState {
 
   @override
   KtSet<Tag> get tagsSelected;
+
   @override
   @JsonKey(ignore: true)
   _$TagSearchFormStateCopyWith<_TagSearchFormState> get copyWith;

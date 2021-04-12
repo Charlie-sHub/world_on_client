@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/user/user.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
@@ -30,7 +31,7 @@ class ForeignProfileHeader extends StatelessWidget {
                   children: [
                     CircleAvatar(
                       radius: 40,
-                      backgroundImage: NetworkImage(user.imageURL),
+                      backgroundImage: CachedNetworkImageProvider(user.imageURL),
                     ),
                     if (user.adminPowers)
                       ClipOval(

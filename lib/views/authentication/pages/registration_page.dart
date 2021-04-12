@@ -41,10 +41,14 @@ class RegistrationPage extends StatelessWidget {
   void _onFailure(Failure failure, BuildContext context) => FlushbarHelper.createError(
         duration: const Duration(seconds: 2),
         message: failure.maybeMap(
-          coreData: (failure) => failure.coreDataFailure.maybeMap(
+          coreData: (_coreDataFailure) => _coreDataFailure.coreDataFailure.maybeMap(
             serverError: (failure) => failure.errorString,
             emailAlreadyInUse: (_) => S.of(context).emailAlreadyInUse,
             usernameAlreadyInUse: (_) => S.of(context).usernameAlreadyInUse,
+            orElse: () => S.of(context).unknownError,
+          ),
+          coreApplication: (_coreApplicationFailure) => _coreApplicationFailure.coreApplicationFailure.maybeMap(
+            emptyFields: (_) => S.of(context).emptyFields,
             orElse: () => S.of(context).unknownError,
           ),
           orElse: () => S.of(context).unknownError,
