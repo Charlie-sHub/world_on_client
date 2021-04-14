@@ -17,9 +17,9 @@ class ProfileUsersTabView extends StatelessWidget {
     Key key,
     @required this.user,
   }) : super(key: key);
-  
+
   final User user;
-  
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -28,44 +28,49 @@ class ProfileUsersTabView extends StatelessWidget {
           ProfileUsersWatcherEvent.watchFollowedUsersStarted(user),
         ),
       child: BlocBuilder<ProfileUsersWatcherBloc, ProfileUsersWatcherState>(
-        builder: (context, state) => Scaffold(
-          floatingActionButton: ProfileUsersUnicornDialer(user: user),
-          body: state.map(
-            initial: (_) => Container(),
-            loadInProgress: (_) => const WorldOnProgressIndicator(),
-            loadSuccess: (state) => ListView.builder(
-              physics: const BouncingScrollPhysics(),
-              padding: const EdgeInsets.all(10),
-              itemCount: state.users.size,
-              itemBuilder: (context, index) {
-                final _user = state.users[index];
-                if (_user.isValid) {
-                  return UserCard(
-                    user: _user,
-                    key: Key(_user.id.toString()),
-                  );
-                } else {
-                  return ErrorCard(
-                    entityType: S.of(context).user,
-                    valueFailureString: _user.failureOption.fold(
+        builder: (context, state) => Stack(
+          children: [
+            state.map(
+              initial: (_) => Container(),
+              loadInProgress: (_) => const WorldOnProgressIndicator(),
+              loadSuccess: (state) => ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                padding: const EdgeInsets.all(10),
+                itemCount: state.users.size,
+                itemBuilder: (context, index) {
+                  final _user = state.users[index];
+                  if (_user.isValid) {
+                    return UserCard(
+                      user: _user,
+                      key: Key(_user.id.toString()),
+                    );
+                  } else {
+                    return ErrorCard(
+                      entityType: S.of(context).user,
+                      valueFailureString: _user.failureOption.fold(
                         () => S.of(context).noError,
                         (failure) => failure.toString(),
+                      ),
+                    );
+                  }
+                },
+              ),
+              loadFailure: (state) => ErrorDisplay(
+                retryFunction: () => context.read<ProfileUsersWatcherBloc>().add(
+                      ProfileUsersWatcherEvent.watchFollowedUsersStarted(user),
                     ),
-                  );
-                }
-              },
+                failure: state.failure,
+                specificMessage: none(),
+                // TODO: Find way to distinguish what feed was being watched to show the proper not found message
+                // "notFoundErrorFollowing"
+                // "notFoundErrorFollowed"
+              ),
             ),
-            loadFailure: (state) => ErrorDisplay(
-              retryFunction: () => context.read<ProfileUsersWatcherBloc>().add(
-                    ProfileUsersWatcherEvent.watchFollowedUsersStarted(user),
-                  ),
-              failure: state.failure,
-              specificMessage: none(),
-              // TODO: Find way to distinguish what feed was being watched to show the proper not found message
-              // "notFoundErrorFollowing"
-              // "notFoundErrorFollowed"
-            ),
-          ),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: ProfileUsersUnicornDialer(user: user),
+            )
+          ],
         ),
       ),
     );

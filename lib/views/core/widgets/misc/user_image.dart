@@ -11,18 +11,18 @@ class UserImage extends StatelessWidget {
     Key key,
     @required this.user,
   }) : super(key: key);
-  
+
   final User user;
-  
+
   @override
   Widget build(BuildContext context) {
     return FlatButton(
       onPressed: () => context.read<NavigationActorBloc>().add(
-        NavigationActorEvent.profileTapped(
-          userOption: some(user),
-          currentUserProfile: false,
-        ),
-      ),
+            NavigationActorEvent.profileTapped(
+              userOption: some(user),
+              currentUserProfile: false,
+            ),
+          ),
       child: Stack(
         alignment: Alignment.topLeft,
         children: [

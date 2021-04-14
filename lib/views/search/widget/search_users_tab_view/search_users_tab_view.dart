@@ -14,12 +14,12 @@ import 'package:worldon/views/search/widget/search_users_tab_view/search_users_u
 
 class SearchUsersTabView extends StatelessWidget {
   final SearchTerm searchTerm;
-  
+
   const SearchUsersTabView({
     Key key,
     @required this.searchTerm,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SearchUsersByNameWatcherBloc, SearchUsersByNameWatcherState>(
@@ -27,6 +27,7 @@ class SearchUsersTabView extends StatelessWidget {
         initial: (_) => SearchSomething(),
         searchInProgress: (_) => const WorldOnProgressIndicator(),
         searchSuccess: (state) => Scaffold(
+          floatingActionButtonLocation: FloatingActionButtonLocation.miniEndDocked,
           floatingActionButton: SearchUsersUnicornDialer(
             searchTerm: context.read<SearchByNameFormBloc>().state.searchTerm,
           ),
@@ -45,8 +46,8 @@ class SearchUsersTabView extends StatelessWidget {
                 return ErrorCard(
                   entityType: S.of(context).user,
                   valueFailureString: _user.failureOption.fold(
-                      () => S.of(context).noError,
-                      (failure) => failure.toString(),
+                    () => S.of(context).noError,
+                    (failure) => failure.toString(),
                   ),
                 );
               }

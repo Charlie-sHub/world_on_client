@@ -99,10 +99,11 @@ class ExperienceCard extends StatelessWidget {
                       Wrap(
                         alignment: WrapAlignment.center,
                         spacing: 5,
+                        runSpacing: 2,
                         children: <Widget>[
                           ...experience.tags.getOrCrash().asSet().map(
-                              (tag) => SimpleTagDisplay(tag: tag),
-                          ),
+                                (tag) => SimpleTagDisplay(tag: tag),
+                              ),
                         ],
                       ),
                     ],

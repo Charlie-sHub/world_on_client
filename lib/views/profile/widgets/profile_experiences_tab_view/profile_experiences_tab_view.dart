@@ -28,51 +28,56 @@ class ProfileExperiencesTabView extends StatelessWidget {
           ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(user),
         ),
       child: BlocBuilder<ProfileExperiencesWatcherBloc, ProfileExperiencesWatcherState>(
-        builder: (context, state) => Scaffold(
-          floatingActionButton: ProfileExperiencesUnicornDialer(user: user),
-          body: state.map(
-            initial: (_) => Container(),
-            loadInProgress: (_) => const WorldOnProgressIndicator(),
-            loadSuccess: (state) => ListView.builder(
-              physics: const BouncingScrollPhysics(),
-              padding: const EdgeInsets.all(10),
-              itemCount: state.experiences.size,
-              itemBuilder: (context, index) {
-                final _experience = state.experiences[index];
-                if (_experience.isValid) {
-                  return ExperienceCard(
-                    experience: _experience,
-                    key: Key(_experience.id.toString()),
-                    reloadFunction: (_) => context.read<ProfileExperiencesWatcherBloc>().add(
-                          ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(user),
-                        ),
-                  );
-                } else {
-                  return ErrorCard(
-                    entityType: S.of(context).experience,
-                    valueFailureString: _experience.failureOption.fold(
-                      () => S.of(context).noError,
-                      (failure) => failure.toString(),
+        builder: (context, state) => Stack(
+          children: [
+            state.map(
+              initial: (_) => Container(),
+              loadInProgress: (_) => const WorldOnProgressIndicator(),
+              loadSuccess: (state) => ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                padding: const EdgeInsets.all(10),
+                itemCount: state.experiences.size,
+                itemBuilder: (context, index) {
+                  final _experience = state.experiences[index];
+                  if (_experience.isValid) {
+                    return ExperienceCard(
+                      experience: _experience,
+                      key: Key(_experience.id.toString()),
+                      reloadFunction: (_) => context.read<ProfileExperiencesWatcherBloc>().add(
+                            ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(user),
+                          ),
+                    );
+                  } else {
+                    return ErrorCard(
+                      entityType: S.of(context).experience,
+                      valueFailureString: _experience.failureOption.fold(
+                        () => S.of(context).noError,
+                        (failure) => failure.toString(),
+                      ),
+                    );
+                  }
+                },
+              ),
+              loadFailure: (state) => ErrorDisplay(
+                retryFunction: () => context.read<ProfileExperiencesWatcherBloc>().add(
+                      // TODO: Figure out how to add the right event
+                      // the one that caused the failure, not just watchExperiencesCreatedStarted
+                      // same with the other watchers
+                      ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(user),
                     ),
-                  );
-                }
-              },
+                failure: state.failure,
+                specificMessage: none(),
+                // TODO: Find way to distinguish what feed was being watched to show the proper not found message
+                // "notFoundErrorExperiencesCreated"
+                // "notFoundErrorExperiencesLiked"
+                // "notFoundErrorExperiencesDone"
+              ),
             ),
-            loadFailure: (state) => ErrorDisplay(
-              retryFunction: () => context.read<ProfileExperiencesWatcherBloc>().add(
-                    // TODO: Figure out how to add the right event
-                    // the one that caused the failure, not just watchExperiencesCreatedStarted
-                    // same with the other watchers
-                    ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(user),
-                  ),
-              failure: state.failure,
-              specificMessage: none(),
-              // TODO: Find way to distinguish what feed was being watched to show the proper not found message
-              // "notFoundErrorExperiencesCreated"
-              // "notFoundErrorExperiencesLiked"
-              // "notFoundErrorExperiencesDone"
+            Align(
+              alignment: Alignment.bottomRight,
+              child: ProfileExperiencesUnicornDialer(user: user),
             ),
-          ),
+          ],
         ),
       ),
     );

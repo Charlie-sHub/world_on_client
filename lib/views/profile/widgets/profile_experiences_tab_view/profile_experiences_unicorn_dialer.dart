@@ -15,45 +15,48 @@ class ProfileExperiencesUnicornDialer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return UnicornDialer(
-      parentHeroTag: "ProfileExperiencesUnicornDialer",
-      hasBackground: false,
-      parentButton: const Icon(Icons.format_list_bulleted),
-      childButtons: [
-        UnicornButton(
-          currentButton: FloatingActionButton(
-            heroTag: "created",
-            mini: true,
-            onPressed: () => context.read<ProfileExperiencesWatcherBloc>().add(
-                  ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(user),
-                ),
-            foregroundColor: Colors.blue,
-            child: const Icon(Icons.create),
+    return Padding(
+      padding: const EdgeInsets.all(5),
+      child: UnicornDialer(
+        parentHeroTag: "ProfileExperiencesUnicornDialer",
+        hasBackground: false,
+        parentButton: const Icon(Icons.format_list_bulleted),
+        childButtons: [
+          UnicornButton(
+            currentButton: FloatingActionButton(
+              heroTag: "created",
+              mini: true,
+              onPressed: () => context.read<ProfileExperiencesWatcherBloc>().add(
+                    ProfileExperiencesWatcherEvent.watchExperiencesCreatedStarted(user),
+                  ),
+              foregroundColor: Colors.blue,
+              child: const Icon(Icons.create),
+            ),
           ),
-        ),
-        UnicornButton(
-          currentButton: FloatingActionButton(
-            heroTag: "done",
-            mini: true,
-            onPressed: () => context.read<ProfileExperiencesWatcherBloc>().add(
-                  ProfileExperiencesWatcherEvent.watchExperiencesDoneStarted(user),
-                ),
-            foregroundColor: Colors.green,
-            child: const Icon(Icons.done),
+          UnicornButton(
+            currentButton: FloatingActionButton(
+              heroTag: "done",
+              mini: true,
+              onPressed: () => context.read<ProfileExperiencesWatcherBloc>().add(
+                    ProfileExperiencesWatcherEvent.watchExperiencesDoneStarted(user),
+                  ),
+              foregroundColor: Colors.green,
+              child: const Icon(Icons.done),
+            ),
           ),
-        ),
-        UnicornButton(
-          currentButton: FloatingActionButton(
-            heroTag: "liked",
-            mini: true,
-            onPressed: () => context.read<ProfileExperiencesWatcherBloc>().add(
-                  ProfileExperiencesWatcherEvent.watchExperiencesLikedStarted(user),
-                ),
-            foregroundColor: Colors.red,
-            child: const FaIcon(FontAwesomeIcons.solidHeart),
+          UnicornButton(
+            currentButton: FloatingActionButton(
+              heroTag: "liked",
+              mini: true,
+              onPressed: () => context.read<ProfileExperiencesWatcherBloc>().add(
+                    ProfileExperiencesWatcherEvent.watchExperiencesLikedStarted(user),
+                  ),
+              foregroundColor: Colors.red,
+              child: const FaIcon(FontAwesomeIcons.solidHeart),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

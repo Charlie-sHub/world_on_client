@@ -16,39 +16,41 @@ class ProfileUsersUnicornDialer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return UnicornDialer(
-      parentHeroTag: "ProfileUsersUnicornDialer",
-      hasBackground: false,
-      orientation: UnicornOrientation.VERTICAL,
-      parentButton: const Icon(Icons.format_list_bulleted),
-      childButtons: [
-        UnicornButton(
-          hasLabel: true,
-          labelText: S.of(context).followers,
-          currentButton: FloatingActionButton(
-            heroTag: "followers",
-            mini: true,
-            onPressed: () => context.read<ProfileUsersWatcherBloc>().add(
-                  ProfileUsersWatcherEvent.watchFollowedUsersStarted(user),
-                ),
-            foregroundColor: WorldOnColors.accent,
-            child: const Icon(Icons.arrow_back),
+    return Padding(
+      padding: const EdgeInsets.all(5),
+      child: UnicornDialer(
+        parentHeroTag: "ProfileUsersUnicornDialer",
+        hasBackground: false,
+        parentButton: const Icon(Icons.format_list_bulleted),
+        childButtons: [
+          UnicornButton(
+            hasLabel: true,
+            labelText: S.of(context).followers,
+            currentButton: FloatingActionButton(
+              heroTag: "followers",
+              mini: true,
+              onPressed: () => context.read<ProfileUsersWatcherBloc>().add(
+                    ProfileUsersWatcherEvent.watchFollowedUsersStarted(user),
+                  ),
+              foregroundColor: WorldOnColors.accent,
+              child: const Icon(Icons.arrow_back),
+            ),
           ),
-        ),
-        UnicornButton(
-          hasLabel: true,
-          labelText: S.of(context).following,
-          currentButton: FloatingActionButton(
-            heroTag: "following",
-            mini: true,
-            onPressed: () => context.read<ProfileUsersWatcherBloc>().add(
-                  ProfileUsersWatcherEvent.watchFollowingUsersStarted(user),
-                ),
-            foregroundColor: WorldOnColors.red,
-            child: const Icon(Icons.arrow_forward),
+          UnicornButton(
+            hasLabel: true,
+            labelText: S.of(context).following,
+            currentButton: FloatingActionButton(
+              heroTag: "following",
+              mini: true,
+              onPressed: () => context.read<ProfileUsersWatcherBloc>().add(
+                    ProfileUsersWatcherEvent.watchFollowingUsersStarted(user),
+                  ),
+              foregroundColor: WorldOnColors.red,
+              child: const Icon(Icons.arrow_forward),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

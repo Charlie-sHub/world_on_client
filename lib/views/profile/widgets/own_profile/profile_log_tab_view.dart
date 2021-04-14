@@ -19,42 +19,40 @@ class ProfileLogTabView extends StatelessWidget {
           const ExperienceLogWatcherEvent.watchExperiencesLogStarted(),
         ),
       child: BlocBuilder<ExperienceLogWatcherBloc, ExperienceLogWatcherState>(
-        builder: (context, state) => Scaffold(
-          body: state.map(
-            initial: (_) => Container(),
-            loadInProgress: (_) => const WorldOnProgressIndicator(),
-            loadSuccess: (state) => ListView.builder(
-              physics: const BouncingScrollPhysics(),
-              padding: const EdgeInsets.all(10),
-              itemCount: state.experiences.size,
-              itemBuilder: (context, index) {
-                final _experience = state.experiences[index];
-                if (_experience.isValid) {
-                  return ExperienceCard(
-                    experience: _experience,
-                    key: Key(_experience.id.toString()),
-                    reloadFunction: (_) => context.read<ExperienceLogWatcherBloc>().add(
-                          const ExperienceLogWatcherEvent.watchExperiencesLogStarted(),
-                        ),
-                  );
-                } else {
-                  return ErrorCard(
-                    entityType: S.of(context).experience,
-                    valueFailureString: _experience.failureOption.fold(
-                      () => S.of(context).noError,
-                      (failure) => failure.toString(),
-                    ),
-                  );
-                }
-              },
-            ),
-            loadFailure: (state) => ErrorDisplay(
-              retryFunction: () => context.read<ExperienceLogWatcherBloc>().add(
-                    const ExperienceLogWatcherEvent.watchExperiencesLogStarted(),
+        builder: (context, state) => state.map(
+          initial: (_) => Container(),
+          loadInProgress: (_) => const WorldOnProgressIndicator(),
+          loadSuccess: (state) => ListView.builder(
+            physics: const BouncingScrollPhysics(),
+            padding: const EdgeInsets.all(10),
+            itemCount: state.experiences.size,
+            itemBuilder: (context, index) {
+              final _experience = state.experiences[index];
+              if (_experience.isValid) {
+                return ExperienceCard(
+                  experience: _experience,
+                  key: Key(_experience.id.toString()),
+                  reloadFunction: (_) => context.read<ExperienceLogWatcherBloc>().add(
+                        const ExperienceLogWatcherEvent.watchExperiencesLogStarted(),
+                      ),
+                );
+              } else {
+                return ErrorCard(
+                  entityType: S.of(context).experience,
+                  valueFailureString: _experience.failureOption.fold(
+                    () => S.of(context).noError,
+                    (failure) => failure.toString(),
                   ),
-              failure: state.failure,
-              specificMessage: some(S.of(context).notFoundErrorExperiencesToDo),
-            ),
+                );
+              }
+            },
+          ),
+          loadFailure: (state) => ErrorDisplay(
+            retryFunction: () => context.read<ExperienceLogWatcherBloc>().add(
+                  const ExperienceLogWatcherEvent.watchExperiencesLogStarted(),
+                ),
+            failure: state.failure,
+            specificMessage: some(S.of(context).notFoundErrorExperiencesToDo),
           ),
         ),
       ),

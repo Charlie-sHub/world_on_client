@@ -8,16 +8,25 @@ import 'package:worldon/views/core/widgets/misc/follow_unfollow_button_builder/f
 import 'package:worldon/views/core/widgets/misc/followers_following_counters.dart';
 import 'package:worldon/views/core/widgets/misc/user_experience_info.dart';
 
-class ForeignProfileHeader extends StatelessWidget {
+class ForeignProfileHeader extends SliverPersistentHeaderDelegate {
   const ForeignProfileHeader({
-    Key key,
     @required this.user,
-  }) : super(key: key);
+    @required this.maxExtent,
+    @required this.minExtent,
+  });
 
   final User user;
+  @override
+  final double maxExtent;
+  @override
+  final double minExtent;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(
+    BuildContext context,
+    double shrinkOffset,
+    bool overlapsContent,
+  ) {
     return Container(
       color: WorldOnColors.white,
       child: Column(
@@ -75,13 +84,15 @@ class ForeignProfileHeader extends StatelessWidget {
               BlockUnblockButtonBuilder(user: user),
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(5),
-            child: AutoSizeText(
-              user.description.getOrCrash(),
-              textAlign: TextAlign.justify,
-              style: const TextStyle(
-                color: WorldOnColors.background,
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(5),
+              child: AutoSizeText(
+                user.description.getOrCrash(),
+                textAlign: TextAlign.justify,
+                style: const TextStyle(
+                  color: WorldOnColors.background,
+                ),
               ),
             ),
           ),
@@ -94,4 +105,7 @@ class ForeignProfileHeader extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) => true;
 }

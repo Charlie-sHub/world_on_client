@@ -2,13 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:worldon/generated/l10n.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
 
-class ForeignProfileTabBar extends StatelessWidget implements PreferredSizeWidget {
+class ForeignProfileTabBar extends SliverPersistentHeaderDelegate {
   const ForeignProfileTabBar({
-    Key key,
-  }) : super(key: key);
+    @required this.maxExtent,
+    @required this.minExtent,
+  });
 
   @override
-  Widget build(BuildContext context) {
+  final double maxExtent;
+  @override
+  final double minExtent;
+
+  @override
+  Widget build(
+    BuildContext context,
+    double shrinkOffset,
+    bool overlapsContent,
+  ) {
     return Container(
       color: WorldOnColors.white,
       // Don't like the idea of having this hardcoded, but i can't find any other way to thing out the tabBar
@@ -28,16 +38,18 @@ class ForeignProfileTabBar extends StatelessWidget implements PreferredSizeWidge
             icon: const Icon(Icons.account_circle),
             text: S.of(context).profileRelationTab,
           ),
+          /*
           Tab(
             iconMargin: const EdgeInsets.all(2),
             icon: const Icon(Icons.stars),
             text: S.of(context).profileAchievementsTab,
           ),
+          */
         ],
       ),
     );
   }
-
+  
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) => true;
 }

@@ -9,9 +9,9 @@ class ImageStack extends StatelessWidget {
     Key key,
     @required this.experience,
   }) : super(key: key);
-  
+
   final Experience experience;
-  
+
   @override
   Widget build(BuildContext context) {
     return Stack(
