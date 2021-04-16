@@ -1,8 +1,7 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/views/core/widgets/misc/user_image.dart';
-import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
+import 'package:worldon/views/core/widgets/misc/world_on_cached_image.dart';
 
 class ImageStack extends StatelessWidget {
   const ImageStack({
@@ -17,12 +16,8 @@ class ImageStack extends StatelessWidget {
     return Stack(
       children: [
         Center(
-          child: CachedNetworkImage(
-            imageUrl: experience.imageURLs.first,
-            progressIndicatorBuilder: (context, url, progress) => const Padding(
-              padding: EdgeInsets.all(15),
-              child: WorldOnProgressIndicator(),
-            ),
+          child: WorldOnCachedImage(
+            imageURL: experience.imageURLs.first,
           ),
         ),
         Align(

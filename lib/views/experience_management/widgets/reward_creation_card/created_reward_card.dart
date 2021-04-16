@@ -19,38 +19,34 @@ class CreatedRewardCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(5),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Expanded(
-              child: Image(
-                image: reward.imageFile.fold(
-                  () => NetworkImage(reward.imageURL),
-                  (_imageFile) => FileImage(_imageFile),
-                ),
-                fit: BoxFit.fill,
+            Image(
+              image: reward.imageFile.fold(
+                () => NetworkImage(reward.imageURL),
+                (_imageFile) => FileImage(_imageFile),
               ),
+              height: 100,
+              width: 100,
             ),
+            const SizedBox(width: 5),
             Expanded(
               child: Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(5),
-                    child: AutoSizeText(
-                      reward.name.getOrCrash(),
-                      style: const TextStyle(
-                        fontSize: 15,
-                        color: WorldOnColors.primary,
-                      ),
+                  AutoSizeText(
+                    reward.name.getOrCrash(),
+                    style: const TextStyle(
+                      fontSize: 18,
+                      color: WorldOnColors.primary,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(5),
-                    child: AutoSizeText(
-                      reward.description.getOrCrash(),
-                      style: const TextStyle(
-                        fontSize: 12,
-                        color: WorldOnColors.background,
-                      ),
+                  const SizedBox(height: 5),
+                  AutoSizeText(
+                    reward.description.getOrCrash(),
+                    style: const TextStyle(
+                      fontSize: 15,
+                      color: WorldOnColors.background,
                     ),
                   ),
                 ],

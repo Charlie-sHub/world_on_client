@@ -12,6 +12,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/../../../../../../../../src/flutter/.pub-cache/hosted/pub.dartlang.org/another_flushbar-1.10.11/android" />
             <option value="$PROJECT_DIR$/../../../../../../../../src/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.16.0+1/android" />
             <option value="$PROJECT_DIR$/../../../../../../../../src/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore_web-0.3.0+2/android" />
             <option value="$PROJECT_DIR$/../../../../../../../../src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.20.1/android" />

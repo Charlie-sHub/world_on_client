@@ -55,8 +55,10 @@ class AppWidget extends StatelessWidget {
             backgroundColor: WorldOnColors.white,
             foregroundColor: WorldOnColors.background,
           ),
-          cardTheme: const CardTheme(
-            shape: RoundedRectangleBorder(),
+          cardTheme: CardTheme(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(3),
+            ),
             color: WorldOnColors.white,
           ),
           primaryColor: WorldOnColors.primary,

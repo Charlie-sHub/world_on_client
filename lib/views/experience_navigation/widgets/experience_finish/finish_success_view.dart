@@ -7,7 +7,6 @@ import 'package:worldon/views/experience_navigation/widgets/experience_finish/ex
 import 'package:worldon/views/experience_navigation/widgets/experience_finish/finish_button.dart';
 import 'package:worldon/views/experience_navigation/widgets/experience_finish/like_dislike_button_builder.dart';
 import 'package:worldon/views/experience_navigation/widgets/experience_finish/rate_difficulty_widget.dart';
-import 'package:worldon/views/experience_navigation/widgets/experience_finish/world_on_star.dart';
 import 'package:worldon/views/experience_navigation/widgets/rewards_list_view.dart';
 
 class FinishSuccessView extends StatelessWidget {
@@ -46,6 +45,7 @@ class FinishSuccessView extends StatelessWidget {
               fontSize: 20,
             ),
           ),
+          /*
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: const <Widget>[
@@ -54,6 +54,8 @@ class FinishSuccessView extends StatelessWidget {
               WorldOnStar(),
             ],
           ),
+           */
+          const SizedBox(height: 10),
           if (experience.rewards.isNotEmpty)
             Column(
               children: [

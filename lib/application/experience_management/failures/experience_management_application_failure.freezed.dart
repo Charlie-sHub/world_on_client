@@ -48,7 +48,7 @@ mixin _$ExperienceManagementApplicationFailure<T> {
     TResult surpassedImageLimit(SurpassedImageLimit<T> value),
     @required TResult orElse(),
   });
-
+  
   @JsonKey(ignore: true)
   $ExperienceManagementApplicationFailureCopyWith<T, ExperienceManagementApplicationFailure<T>> get copyWith;
 }

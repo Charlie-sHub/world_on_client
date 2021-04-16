@@ -69,6 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "errorCardTitle": MessageLookupByLibrary.simpleMessage("Invalid"),
         "eulaCheckBoxTitle": MessageLookupByLibrary.simpleMessage("Do you agree with our terms and services?"),
         "experience": MessageLookupByLibrary.simpleMessage("Experience"),
+        "experienceButtonExplanation": MessageLookupByLibrary.simpleMessage("Create real life activities that you want to share with the world"),
         "experienceCreationTitle": MessageLookupByLibrary.simpleMessage("Create a new Experience!"),
         "experienceEditingTitle": MessageLookupByLibrary.simpleMessage("Editing Experience"),
         "experienceFinishButton": MessageLookupByLibrary.simpleMessage("Finish"),

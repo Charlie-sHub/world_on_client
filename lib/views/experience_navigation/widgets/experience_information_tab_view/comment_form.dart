@@ -1,5 +1,5 @@
+import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -13,12 +13,12 @@ import 'package:worldon/views/core/misc/world_on_colors.dart';
 
 class CommentForm extends HookWidget {
   final UniqueId experienceId;
-
+  
   const CommentForm({
     Key key,
     @required this.experienceId,
   }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     final _textEditingController = useTextEditingController();
@@ -50,17 +50,17 @@ class CommentForm extends HookWidget {
                   controller: _textEditingController,
                   maxLength: CommentContent.maxLength,
                   onChanged: (value) => context.read<CommentFormBloc>().add(
-                        CommentFormEvent.contentChanged(value.trim()),
-                      ),
+                    CommentFormEvent.contentChanged(value.trim()),
+                  ),
                   validator: (_) => context.read<CommentFormBloc>().state.comment.content.value.fold(
-                        (failure) => failure.maybeMap(
-                          emptyString: (_) => S.of(context).commentEmptyString,
-                          stringExceedsLength: (_) => S.of(context).commentStringExceedsLength,
-                          stringWithInvalidCharacters: (_) => S.of(context).commentStringWithInvalidCharacters,
-                          orElse: () => S.of(context).unknownError,
-                        ),
-                        (_) => null,
-                      ),
+                      (failure) => failure.maybeMap(
+                      emptyString: (_) => S.of(context).commentEmptyString,
+                      stringExceedsLength: (_) => S.of(context).commentStringExceedsLength,
+                      stringWithInvalidCharacters: (_) => S.of(context).commentStringWithInvalidCharacters,
+                      orElse: () => S.of(context).unknownError,
+                    ),
+                      (_) => null,
+                  ),
                   decoration: InputDecoration(
                     suffixIcon: IconButton(
                       icon: const Icon(
@@ -69,8 +69,8 @@ class CommentForm extends HookWidget {
                       ),
                       onPressed: () {
                         context.read<CommentFormBloc>().add(
-                              const CommentFormEvent.submitted(),
-                            );
+                          const CommentFormEvent.submitted(),
+                        );
                         _textEditingController.clear();
                       },
                       color: WorldOnColors.primary,
@@ -86,25 +86,18 @@ class CommentForm extends HookWidget {
       ),
     );
   }
-
+  
   void _commentFormListener(CommentFormState state, BuildContext context, TextEditingController _textEditingController) => state.failureOrSuccessOption.fold(
-        () => null,
-        (either) => either.fold(
-          (failure) => failure.maybeMap(
-            coreData: (_coreDataFailure) => _coreDataFailure.coreDataFailure.maybeMap(
-              serverError: (failure) => FlushbarHelper.createError(
-                duration: const Duration(seconds: 2),
-                message: failure.errorString,
-              ).show(context),
-              orElse: () => FlushbarHelper.createError(
-                duration: const Duration(seconds: 2),
-                message: S.of(context).unknownCoreDataError,
-              ).show(context),
+      () => null,
+      (either) => either.fold(
+          (failure) => FlushbarHelper.createError(
+            message: failure.maybeMap(
+              coreData: (_coreDataFailure) => _coreDataFailure.coreDataFailure.maybeMap(
+                serverError: (failure) => failure.errorString,
+                orElse: () => S.of(context).unknownCoreDataError,
+              ),
+              orElse: () => S.of(context).unknownError,
             ),
-            orElse: () => FlushbarHelper.createError(
-              duration: const Duration(seconds: 2),
-              message: S.of(context).unknownError,
-            ).show(context),
           ),
           (_) {
             _textEditingController.clear();
@@ -116,12 +109,12 @@ class CommentForm extends HookWidget {
                 );
             FlushbarHelper.createSuccess(
               duration: const Duration(seconds: 2),
-              message: S.of(context).commentPostSuccess,
-            ).show(context);
-            context.read<CommentWatcherBloc>().add(
-                  CommentWatcherEvent.watchExperienceCommentsStarted(experienceId),
-                );
-          },
-        ),
-      );
+          message: S.of(context).commentPostSuccess,
+        ).show(context);
+        context.read<CommentWatcherBloc>().add(
+          CommentWatcherEvent.watchExperienceCommentsStarted(experienceId),
+        );
+      },
+    ),
+  );
 }

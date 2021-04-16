@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_management/experience_management_form/experience_management_form_bloc.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
+import 'package:worldon/views/core/widgets/misc/world_on_cached_image.dart';
 
 class OriginalPicturesGridView extends StatelessWidget {
   const OriginalPicturesGridView({
@@ -34,10 +35,8 @@ class OriginalPicturesGridView extends StatelessWidget {
                   child: Stack(
                     children: [
                       Center(
-                        child: Image(
-                          image: NetworkImage(
-                            _imageURL,
-                          ),
+                        child: WorldOnCachedImage(
+                          imageURL: _imageURL,
                         ),
                       ),
                       Align(

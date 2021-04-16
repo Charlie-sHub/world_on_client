@@ -1,5 +1,5 @@
+import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_navigation/experience_finish_actor/experience_finish_actor_bloc.dart';
@@ -12,9 +12,9 @@ import 'package:worldon/views/experience_navigation/widgets/experience_finish/fi
 
 class ExperienceFinish extends StatelessWidget {
   final Experience experience;
-
+  
   const ExperienceFinish({Key key, @required this.experience}) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -40,8 +40,8 @@ class ExperienceFinish extends StatelessWidget {
           finishSuccess: (_) => FinishSuccessView(experience: experience),
           finishFailure: (state) => ErrorDisplay(
             retryFunction: () => context.read<ExperienceFinishActorBloc>().add(
-                  ExperienceFinishActorEvent.finishedExperience(experience),
-                ),
+              ExperienceFinishActorEvent.finishedExperience(experience),
+            ),
             failure: state.failure,
             specificMessage: none(),
           ),

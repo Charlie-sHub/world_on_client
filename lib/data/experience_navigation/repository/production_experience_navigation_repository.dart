@@ -243,25 +243,34 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
           )
           .map(
         (experiences) {
+          // Don't like filtering here, but couldn't make the query work
+          // In any case, it's better to filter by location first and then by tags
+          // the first filter should take out most of the experiences that don't fit
           if (experiences.isNotEmpty) {
-            // Don't like filtering here, but couldn't make the query work
-            // In any case, it's better to filter by location first and then by tags
-            // the first filter should take out most of the experiences that don't fit
-            return right<Failure, KtList<Experience>>(
-              experiences.where(
-                (_experience) {
-                  final _experienceTagIds = _experience.tags
-                      .getOrCrash()
-                      .map(
-                        (_tag) => _tag.id.getOrCrash(),
-                      )
-                      .asList();
-                  return _interestIds.any(
-                    (_id) => _experienceTagIds.contains(_id),
-                  );
-                },
-              ).toImmutableList(),
+            final _filteredExperienceList = experiences.where(
+              (_experience) {
+                final _experienceTagIds = _experience.tags
+                    .getOrCrash()
+                    .map(
+                      (_tag) => _tag.id.getOrCrash(),
+                    )
+                    .asList();
+                return _interestIds.any(
+                  (_id) => _experienceTagIds.contains(_id),
+                );
+              },
             );
+            if (_filteredExperienceList.isNotEmpty) {
+              return right<Failure, KtList<Experience>>(
+                _filteredExperienceList.toImmutableList(),
+              );
+            } else {
+              return left<Failure, KtList<Experience>>(
+                const Failure.coreData(
+                  CoreDataFailure.notFoundError(),
+                ),
+              );
+            }
           } else {
             return left<Failure, KtList<Experience>>(
               const Failure.coreData(

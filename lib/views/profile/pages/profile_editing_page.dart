@@ -1,5 +1,5 @@
+import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
@@ -13,12 +13,12 @@ import 'package:worldon/views/profile/widgets/profile_editing_form/profile_editi
 
 class ProfileEditingPage extends StatelessWidget {
   final User user;
-
+  
   const ProfileEditingPage({
     Key key,
     @required this.user,
   }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,13 +39,13 @@ class ProfileEditingPage extends StatelessWidget {
             ProfileEditingFormEvent.initialized(user),
           ),
         child: user.failureOption.fold(
-          () => BlocConsumer<ProfileEditingFormBloc, ProfileEditingFormState>(
+            () => BlocConsumer<ProfileEditingFormBloc, ProfileEditingFormState>(
             listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
             listener: (context, state) => state.failureOrSuccessOption.fold(
-              () => null,
-              (either) => either.fold(
-                (failure) => _onFailure(failure, context),
-                (_) => _onSuccess(context),
+                () => null,
+                (either) => either.fold(
+                  (failure) => _onFailure(failure, context),
+                  (_) => _onSuccess(context),
               ),
             ),
             // TODO: Find a way to make the form initialize with the state's user
@@ -58,7 +58,7 @@ class ProfileEditingPage extends StatelessWidget {
             // It shouldn't be a problem for now, but still.
             builder: (context, state) => ProfileEditingForm(user: user),
           ),
-          (valueFailure) => InkWell(
+            (valueFailure) => InkWell(
             onTap: () async => context.navigator.pop(),
             child: CriticalErrorDisplay(
               failure: Failure.value(valueFailure),
@@ -68,7 +68,7 @@ class ProfileEditingPage extends StatelessWidget {
       ),
     );
   }
-
+  
   Future _onFailure(Failure failure, BuildContext context) {
     return FlushbarHelper.createError(
       duration: const Duration(seconds: 2),
@@ -87,11 +87,11 @@ class ProfileEditingPage extends StatelessWidget {
       ),
     ).show(context);
   }
-
+  
   void _onSuccess(BuildContext context) {
     context.navigator.pop();
     context.read<AuthenticationBloc>().add(
-          const AuthenticationEvent.authenticationCheckRequested(),
-        );
+      const AuthenticationEvent.authenticationCheckRequested(),
+    );
   }
 }

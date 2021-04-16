@@ -1,4 +1,4 @@
-import 'package:flushbar/flushbar_helper.dart';
+import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/core/error/failure.dart';
 import 'package:worldon/generated/l10n.dart';

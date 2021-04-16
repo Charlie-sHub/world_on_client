@@ -1,5 +1,5 @@
+import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/tag_management/tag_card_actor/tag_card_actor_bloc.dart';
@@ -12,9 +12,9 @@ import 'package:worldon/views/core/widgets/cards/tag_card/like_tag_button.dart';
 
 class TagCard extends StatelessWidget {
   final Tag tag;
-
+  
   const TagCard({Key key, this.tag}) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -27,9 +27,6 @@ class TagCard extends StatelessWidget {
         builder: (context, state) => Padding(
           padding: const EdgeInsets.all(5),
           child: Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(3),
-            ),
             child: Padding(
               padding: const EdgeInsets.all(2),
               child: Row(
@@ -69,28 +66,28 @@ class TagCard extends StatelessWidget {
       ),
     );
   }
-
+  
   void _tagCardListener(BuildContext context, TagCardActorState state) => state.maybeMap(
-        additionFailure: (state) => FlushbarHelper.createError(
-          duration: const Duration(seconds: 2),
-          message: state.failure.maybeMap(
-            coreData: (failure) => failure.coreDataFailure.maybeMap(
-              serverError: (failure) => failure.errorString,
-              orElse: () => S.of(context).unknownError,
-            ),
-            orElse: () => S.of(context).unknownError,
-          ),
-        ).show(context),
-        dismissalFailure: (state) => FlushbarHelper.createError(
-          duration: const Duration(seconds: 2),
-          message: state.failure.maybeMap(
-            coreData: (failure) => failure.coreDataFailure.maybeMap(
-              serverError: (failure) => failure.errorString,
-              orElse: () => S.of(context).unknownError,
-            ),
-            orElse: () => S.of(context).unknownError,
-          ),
-        ).show(context),
-        orElse: () => null,
-      );
+    additionFailure: (state) => FlushbarHelper.createError(
+      duration: const Duration(seconds: 2),
+      message: state.failure.maybeMap(
+        coreData: (failure) => failure.coreDataFailure.maybeMap(
+          serverError: (failure) => failure.errorString,
+          orElse: () => S.of(context).unknownError,
+        ),
+        orElse: () => S.of(context).unknownError,
+      ),
+    ).show(context),
+    dismissalFailure: (state) => FlushbarHelper.createError(
+      duration: const Duration(seconds: 2),
+      message: state.failure.maybeMap(
+        coreData: (failure) => failure.coreDataFailure.maybeMap(
+          serverError: (failure) => failure.errorString,
+          orElse: () => S.of(context).unknownError,
+        ),
+        orElse: () => S.of(context).unknownError,
+      ),
+    ).show(context),
+    orElse: () => null,
+  );
 }

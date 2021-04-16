@@ -10,36 +10,59 @@ class SelectCreationView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Expanded(child: Container()),
-        FlatButton(
-          onPressed: () => context.navigator.push(
-            Routes.experienceManagementPage,
-            arguments: ExperienceManagementPageArguments(
-              experienceOption: none(),
-            ),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 10,
           ),
-          child: Padding(
-            padding: const EdgeInsets.all(15),
-            child: Row(
-              children: [
-                const FaIcon(
-                  FontAwesomeIcons.compass,
-                  color: WorldOnColors.primary,
-                  size: 40,
-                ),
-                const SizedBox(width: 20),
-                Text(
-                  S.of(context).experience,
-                  style: const TextStyle(
-                    fontSize: 40,
+          child: OutlinedButton(
+            style: OutlinedButton.styleFrom(
+              backgroundColor: WorldOnColors.white,
+              primary: WorldOnColors.background,
+              elevation: 5,
+            ),
+            onPressed: () => context.navigator.push(
+              Routes.experienceManagementPage,
+              arguments: ExperienceManagementPageArguments(
+                experienceOption: none(),
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(15),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Row(
+                    children: [
+                      const FaIcon(
+                        FontAwesomeIcons.compass,
+                        color: WorldOnColors.primary,
+                        size: 50,
+                      ),
+                      const SizedBox(width: 20),
+                      Text(
+                        S.of(context).experience,
+                        style: const TextStyle(
+                          fontSize: 40,
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-              ],
+                  const SizedBox(height: 15),
+                  Text(
+                    S.of(context).experienceButtonExplanation,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
-        Expanded(child: Container()),
         // Button to go to the tag creation page, now that the tag creation is part of the experience creation it is rather superfluous
         /*
         FlatButton(

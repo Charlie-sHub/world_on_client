@@ -1824,6 +1824,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Create real life activities that you want to share with the world`
+  String get experienceButtonExplanation {
+    return Intl.message(
+      'Create real life activities that you want to share with the world',
+      name: 'experienceButtonExplanation',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -42,7 +42,7 @@ dependencies:
   # For ease of routing
   auto_route: ^0.6.9
   # For ease of showing status bars
-  flushbar: ^1.10.4
+  another_flushbar: ^1.10.8
   # For dynamically resizing text
   auto_size_text: ^2.1.0
   # For showing the user's experience progression
@@ -51,8 +51,6 @@ dependencies:
   flutter_hooks: ^0.15.0
   # For FloatingActionButton menus
   unicorndial: ^1.1.5
-  # To add shadow to icons with less boiler plate
-  icon_shadow: ^1.0.1
   # For getting images from the device
   image_picker: ^0.6.7+22
   # For getting multiple images from the device
@@ -60,7 +58,7 @@ dependencies:
   # For providing objects down the widget tree
   provider: ^4.3.3
   # For environment control
-  flutter_dotenv: ^3.1.0
+  # flutter_dotenv: ^3.1.0
   # For ease of logging
   logger: ^0.9.4
   # For better stream control
@@ -99,6 +97,8 @@ dependencies:
   visibility_detector: ^0.1.5
   # For displaying a loading widget on the images
   cached_network_image: ^2.5.0
+  # For reordering lists
+  implicitly_animated_reorderable_list: ^0.4.0-dev+2
 
 dev_dependencies:
   flutter_test:

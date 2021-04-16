@@ -22,7 +22,7 @@ class ObjectivesCreationBloc extends Bloc<ObjectivesCreationEvent, ObjectivesCre
     yield* event.map(
       addedObjective: _onAddedObjective,
       removedObjective: _onRemovedObjective,
-      changedPosition: onChangedPosition,
+      reorderedList: _onReorderedList,
       initialized: _onInitialized,
     );
   }
@@ -36,11 +36,9 @@ class ObjectivesCreationBloc extends Bloc<ObjectivesCreationEvent, ObjectivesCre
     );
   }
 
-  Stream<ObjectivesCreationState> onChangedPosition(_ChangedPosition event) async* {
-    final _reorderedList = state.objectivesCreated.minusElement(event.objective).dart;
-    _reorderedList.insert(event.index, event.objective);
+  Stream<ObjectivesCreationState> _onReorderedList(_ReorderedList event) async* {
     yield state.copyWith(
-      objectivesCreated: _reorderedList.toImmutableList(),
+      objectivesCreated: event.reorderedList.toImmutableList(),
     );
   }
 

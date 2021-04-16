@@ -1,4 +1,4 @@
-import 'package:flushbar/flushbar_helper.dart';
+import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_navigation/rate_experience_difficulty_actor/rate_experience_difficulty_actor_bloc.dart';
@@ -65,8 +65,8 @@ class RateDifficultyWidget extends StatelessWidget {
                     ),
                   ),
                 ],
-                ),
               ),
+            ),
           ),
         ),
       ),

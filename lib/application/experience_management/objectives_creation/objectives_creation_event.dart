@@ -8,5 +8,5 @@ abstract class ObjectivesCreationEvent with _$ObjectivesCreationEvent {
 
   const factory ObjectivesCreationEvent.removedObjective(Objective objective) = _RemovedObjective;
 
-  const factory ObjectivesCreationEvent.changedPosition(Objective objective, int index) = _ChangedPosition;
+  const factory ObjectivesCreationEvent.reorderedList(List<Objective> reorderedList) = _ReorderedList;
 }

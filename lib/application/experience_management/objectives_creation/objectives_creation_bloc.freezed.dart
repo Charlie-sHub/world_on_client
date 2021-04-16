@@ -35,10 +35,9 @@ class _$ObjectivesCreationEventTearOff {
   }
 
 // ignore: unused_element
-  _ChangedPosition changedPosition(Objective objective, int index) {
-    return _ChangedPosition(
-      objective,
-      index,
+  _ReorderedList reorderedList(List<Objective> reorderedList) {
+    return _ReorderedList(
+      reorderedList,
     );
   }
 }
@@ -54,14 +53,14 @@ mixin _$ObjectivesCreationEvent {
     @required TResult initialized(Option<ObjectiveList> objectiveListOption),
     @required TResult addedObjective(Objective objective),
     @required TResult removedObjective(Objective objective),
-    @required TResult changedPosition(Objective objective, int index),
+    @required TResult reorderedList(List<Objective> reorderedList),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initialized(Option<ObjectiveList> objectiveListOption),
     TResult addedObjective(Objective objective),
     TResult removedObjective(Objective objective),
-    TResult changedPosition(Objective objective, int index),
+    TResult reorderedList(List<Objective> reorderedList),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -69,14 +68,14 @@ mixin _$ObjectivesCreationEvent {
     @required TResult initialized(_Initialized value),
     @required TResult addedObjective(_AddedObjective value),
     @required TResult removedObjective(_RemovedObjective value),
-    @required TResult changedPosition(_ChangedPosition value),
+    @required TResult reorderedList(_ReorderedList value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult initialized(_Initialized value),
     TResult addedObjective(_AddedObjective value),
     TResult removedObjective(_RemovedObjective value),
-    TResult changedPosition(_ChangedPosition value),
+    TResult reorderedList(_ReorderedList value),
     @required TResult orElse(),
   });
 }
@@ -137,7 +136,7 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other is _Initialized && (identical(other.objectiveListOption, objectiveListOption) || const DeepCollectionEquality().equals(other.objectiveListOption, objectiveListOption)));
   }
-
+  
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectiveListOption);
 
@@ -151,12 +150,12 @@ class _$_Initialized implements _Initialized {
     @required TResult initialized(Option<ObjectiveList> objectiveListOption),
     @required TResult addedObjective(Objective objective),
     @required TResult removedObjective(Objective objective),
-    @required TResult changedPosition(Objective objective, int index),
+    @required TResult reorderedList(List<Objective> reorderedList),
   }) {
     assert(initialized != null);
     assert(addedObjective != null);
     assert(removedObjective != null);
-    assert(changedPosition != null);
+    assert(reorderedList != null);
     return initialized(objectiveListOption);
   }
 
@@ -166,7 +165,7 @@ class _$_Initialized implements _Initialized {
     TResult initialized(Option<ObjectiveList> objectiveListOption),
     TResult addedObjective(Objective objective),
     TResult removedObjective(Objective objective),
-    TResult changedPosition(Objective objective, int index),
+    TResult reorderedList(List<Objective> reorderedList),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -182,12 +181,12 @@ class _$_Initialized implements _Initialized {
     @required TResult initialized(_Initialized value),
     @required TResult addedObjective(_AddedObjective value),
     @required TResult removedObjective(_RemovedObjective value),
-    @required TResult changedPosition(_ChangedPosition value),
+    @required TResult reorderedList(_ReorderedList value),
   }) {
     assert(initialized != null);
     assert(addedObjective != null);
     assert(removedObjective != null);
-    assert(changedPosition != null);
+    assert(reorderedList != null);
     return initialized(this);
   }
 
@@ -197,7 +196,7 @@ class _$_Initialized implements _Initialized {
     TResult initialized(_Initialized value),
     TResult addedObjective(_AddedObjective value),
     TResult removedObjective(_RemovedObjective value),
-    TResult changedPosition(_ChangedPosition value),
+    TResult reorderedList(_ReorderedList value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -283,12 +282,12 @@ class _$_AddedObjective implements _AddedObjective {
     @required TResult initialized(Option<ObjectiveList> objectiveListOption),
     @required TResult addedObjective(Objective objective),
     @required TResult removedObjective(Objective objective),
-    @required TResult changedPosition(Objective objective, int index),
+    @required TResult reorderedList(List<Objective> reorderedList),
   }) {
     assert(initialized != null);
     assert(addedObjective != null);
     assert(removedObjective != null);
-    assert(changedPosition != null);
+    assert(reorderedList != null);
     return addedObjective(objective);
   }
 
@@ -298,7 +297,7 @@ class _$_AddedObjective implements _AddedObjective {
     TResult initialized(Option<ObjectiveList> objectiveListOption),
     TResult addedObjective(Objective objective),
     TResult removedObjective(Objective objective),
-    TResult changedPosition(Objective objective, int index),
+    TResult reorderedList(List<Objective> reorderedList),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -314,12 +313,12 @@ class _$_AddedObjective implements _AddedObjective {
     @required TResult initialized(_Initialized value),
     @required TResult addedObjective(_AddedObjective value),
     @required TResult removedObjective(_RemovedObjective value),
-    @required TResult changedPosition(_ChangedPosition value),
+    @required TResult reorderedList(_ReorderedList value),
   }) {
     assert(initialized != null);
     assert(addedObjective != null);
     assert(removedObjective != null);
-    assert(changedPosition != null);
+    assert(reorderedList != null);
     return addedObjective(this);
   }
 
@@ -329,7 +328,7 @@ class _$_AddedObjective implements _AddedObjective {
     TResult initialized(_Initialized value),
     TResult addedObjective(_AddedObjective value),
     TResult removedObjective(_RemovedObjective value),
-    TResult changedPosition(_ChangedPosition value),
+    TResult reorderedList(_ReorderedList value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -414,12 +413,12 @@ class _$_RemovedObjective implements _RemovedObjective {
     @required TResult initialized(Option<ObjectiveList> objectiveListOption),
     @required TResult addedObjective(Objective objective),
     @required TResult removedObjective(Objective objective),
-    @required TResult changedPosition(Objective objective, int index),
+    @required TResult reorderedList(List<Objective> reorderedList),
   }) {
     assert(initialized != null);
     assert(addedObjective != null);
     assert(removedObjective != null);
-    assert(changedPosition != null);
+    assert(reorderedList != null);
     return removedObjective(objective);
   }
 
@@ -429,7 +428,7 @@ class _$_RemovedObjective implements _RemovedObjective {
     TResult initialized(Option<ObjectiveList> objectiveListOption),
     TResult addedObjective(Objective objective),
     TResult removedObjective(Objective objective),
-    TResult changedPosition(Objective objective, int index),
+    TResult reorderedList(List<Objective> reorderedList),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -445,12 +444,12 @@ class _$_RemovedObjective implements _RemovedObjective {
     @required TResult initialized(_Initialized value),
     @required TResult addedObjective(_AddedObjective value),
     @required TResult removedObjective(_RemovedObjective value),
-    @required TResult changedPosition(_ChangedPosition value),
+    @required TResult reorderedList(_ReorderedList value),
   }) {
     assert(initialized != null);
     assert(addedObjective != null);
     assert(removedObjective != null);
-    assert(changedPosition != null);
+    assert(reorderedList != null);
     return removedObjective(this);
   }
 
@@ -460,7 +459,7 @@ class _$_RemovedObjective implements _RemovedObjective {
     TResult initialized(_Initialized value),
     TResult addedObjective(_AddedObjective value),
     TResult removedObjective(_RemovedObjective value),
-    TResult changedPosition(_ChangedPosition value),
+    TResult reorderedList(_ReorderedList value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -480,73 +479,52 @@ abstract class _RemovedObjective implements ObjectivesCreationEvent {
 }
 
 /// @nodoc
-abstract class _$ChangedPositionCopyWith<$Res> {
-  factory _$ChangedPositionCopyWith(_ChangedPosition value, $Res Function(_ChangedPosition) then) = __$ChangedPositionCopyWithImpl<$Res>;
+abstract class _$ReorderedListCopyWith<$Res> {
+  factory _$ReorderedListCopyWith(_ReorderedList value, $Res Function(_ReorderedList) then) = __$ReorderedListCopyWithImpl<$Res>;
 
-  $Res call({Objective objective, int index});
-
-  $ObjectiveCopyWith<$Res> get objective;
+  $Res call({List<Objective> reorderedList});
 }
 
 /// @nodoc
-class __$ChangedPositionCopyWithImpl<$Res> extends _$ObjectivesCreationEventCopyWithImpl<$Res> implements _$ChangedPositionCopyWith<$Res> {
-  __$ChangedPositionCopyWithImpl(_ChangedPosition _value, $Res Function(_ChangedPosition) _then) : super(_value, (v) => _then(v as _ChangedPosition));
+class __$ReorderedListCopyWithImpl<$Res> extends _$ObjectivesCreationEventCopyWithImpl<$Res> implements _$ReorderedListCopyWith<$Res> {
+  __$ReorderedListCopyWithImpl(_ReorderedList _value, $Res Function(_ReorderedList) _then) : super(_value, (v) => _then(v as _ReorderedList));
 
   @override
-  _ChangedPosition get _value => super._value as _ChangedPosition;
+  _ReorderedList get _value => super._value as _ReorderedList;
 
   @override
   $Res call({
-    Object objective = freezed,
-    Object index = freezed,
+    Object reorderedList = freezed,
   }) {
-    return _then(_ChangedPosition(
-      objective == freezed ? _value.objective : objective as Objective,
-      index == freezed ? _value.index : index as int,
+    return _then(_ReorderedList(
+      reorderedList == freezed ? _value.reorderedList : reorderedList as List<Objective>,
     ));
-  }
-
-  @override
-  $ObjectiveCopyWith<$Res> get objective {
-    if (_value.objective == null) {
-      return null;
-    }
-    return $ObjectiveCopyWith<$Res>(_value.objective, (value) {
-      return _then(_value.copyWith(objective: value));
-    });
   }
 }
 
 /// @nodoc
-class _$_ChangedPosition implements _ChangedPosition {
-  const _$_ChangedPosition(this.objective, this.index)
-      : assert(objective != null),
-        assert(index != null);
+class _$_ReorderedList implements _ReorderedList {
+  const _$_ReorderedList(this.reorderedList) : assert(reorderedList != null);
 
   @override
-  final Objective objective;
-  @override
-  final int index;
+  final List<Objective> reorderedList;
 
   @override
   String toString() {
-    return 'ObjectivesCreationEvent.changedPosition(objective: $objective, index: $index)';
+    return 'ObjectivesCreationEvent.reorderedList(reorderedList: $reorderedList)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _ChangedPosition &&
-            (identical(other.objective, objective) || const DeepCollectionEquality().equals(other.objective, objective)) &&
-            (identical(other.index, index) || const DeepCollectionEquality().equals(other.index, index)));
+    return identical(this, other) || (other is _ReorderedList && (identical(other.reorderedList, reorderedList) || const DeepCollectionEquality().equals(other.reorderedList, reorderedList)));
   }
-
+  
   @override
-  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objective) ^ const DeepCollectionEquality().hash(index);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(reorderedList);
 
   @JsonKey(ignore: true)
   @override
-  _$ChangedPositionCopyWith<_ChangedPosition> get copyWith => __$ChangedPositionCopyWithImpl<_ChangedPosition>(this, _$identity);
+  _$ReorderedListCopyWith<_ReorderedList> get copyWith => __$ReorderedListCopyWithImpl<_ReorderedList>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -554,13 +532,13 @@ class _$_ChangedPosition implements _ChangedPosition {
     @required TResult initialized(Option<ObjectiveList> objectiveListOption),
     @required TResult addedObjective(Objective objective),
     @required TResult removedObjective(Objective objective),
-    @required TResult changedPosition(Objective objective, int index),
+    @required TResult reorderedList(List<Objective> reorderedList),
   }) {
     assert(initialized != null);
     assert(addedObjective != null);
     assert(removedObjective != null);
-    assert(changedPosition != null);
-    return changedPosition(objective, index);
+    assert(reorderedList != null);
+    return reorderedList(this.reorderedList);
   }
 
   @override
@@ -569,12 +547,12 @@ class _$_ChangedPosition implements _ChangedPosition {
     TResult initialized(Option<ObjectiveList> objectiveListOption),
     TResult addedObjective(Objective objective),
     TResult removedObjective(Objective objective),
-    TResult changedPosition(Objective objective, int index),
+    TResult reorderedList(List<Objective> reorderedList),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (changedPosition != null) {
-      return changedPosition(objective, index);
+    if (reorderedList != null) {
+      return reorderedList(this.reorderedList);
     }
     return orElse();
   }
@@ -585,13 +563,13 @@ class _$_ChangedPosition implements _ChangedPosition {
     @required TResult initialized(_Initialized value),
     @required TResult addedObjective(_AddedObjective value),
     @required TResult removedObjective(_RemovedObjective value),
-    @required TResult changedPosition(_ChangedPosition value),
+    @required TResult reorderedList(_ReorderedList value),
   }) {
     assert(initialized != null);
     assert(addedObjective != null);
     assert(removedObjective != null);
-    assert(changedPosition != null);
-    return changedPosition(this);
+    assert(reorderedList != null);
+    return reorderedList(this);
   }
 
   @override
@@ -600,26 +578,24 @@ class _$_ChangedPosition implements _ChangedPosition {
     TResult initialized(_Initialized value),
     TResult addedObjective(_AddedObjective value),
     TResult removedObjective(_RemovedObjective value),
-    TResult changedPosition(_ChangedPosition value),
+    TResult reorderedList(_ReorderedList value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (changedPosition != null) {
-      return changedPosition(this);
+    if (reorderedList != null) {
+      return reorderedList(this);
     }
     return orElse();
   }
 }
 
-abstract class _ChangedPosition implements ObjectivesCreationEvent {
-  const factory _ChangedPosition(Objective objective, int index) = _$_ChangedPosition;
+abstract class _ReorderedList implements ObjectivesCreationEvent {
+  const factory _ReorderedList(List<Objective> reorderedList) = _$_ReorderedList;
 
-  Objective get objective;
-
-  int get index;
+  List<Objective> get reorderedList;
 
   @JsonKey(ignore: true)
-  _$ChangedPositionCopyWith<_ChangedPosition> get copyWith;
+  _$ReorderedListCopyWith<_ReorderedList> get copyWith;
 }
 
 /// @nodoc
@@ -714,7 +690,7 @@ class _$_ObjectivesCreationState implements _ObjectivesCreationState {
     return identical(this, other) ||
         (other is _ObjectivesCreationState && (identical(other.objectivesCreated, objectivesCreated) || const DeepCollectionEquality().equals(other.objectivesCreated, objectivesCreated)));
   }
-
+  
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(objectivesCreated);
 

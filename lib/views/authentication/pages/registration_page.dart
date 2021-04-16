@@ -1,5 +1,5 @@
+import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/authentication/authentication/authentication_bloc.dart';
@@ -19,42 +19,42 @@ class RegistrationPage extends StatelessWidget {
         child: BlocConsumer<RegistrationFormBloc, RegistrationFormState>(
           listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
           listener: (context, state) => state.failureOrSuccessOption.fold(
-            () => null,
-            (either) => either.fold(
-              (failure) => _onFailure(failure, context),
-              (_) => _onSuccess(context),
+              () => null,
+              (either) => either.fold(
+                (failure) => _onFailure(failure, context),
+                (_) => _onSuccess(context),
             ),
           ),
           buildWhen: (previous, current) =>
-              previous.showErrorMessages != current.showErrorMessages ||
-              previous.acceptedEULA != current.acceptedEULA ||
-              current.user.imageFileOption.fold(
+          previous.showErrorMessages != current.showErrorMessages ||
+            previous.acceptedEULA != current.acceptedEULA ||
+            current.user.imageFileOption.fold(
                 () => false,
                 (_) => true,
-              ),
+            ),
           builder: (context, state) => RegistrationForm(),
         ),
       ),
     );
   }
-
+  
   void _onFailure(Failure failure, BuildContext context) => FlushbarHelper.createError(
-        duration: const Duration(seconds: 2),
-        message: failure.maybeMap(
-          coreData: (_coreDataFailure) => _coreDataFailure.coreDataFailure.maybeMap(
-            serverError: (failure) => failure.errorString,
-            emailAlreadyInUse: (_) => S.of(context).emailAlreadyInUse,
-            usernameAlreadyInUse: (_) => S.of(context).usernameAlreadyInUse,
-            orElse: () => S.of(context).unknownError,
-          ),
-          coreApplication: (_coreApplicationFailure) => _coreApplicationFailure.coreApplicationFailure.maybeMap(
-            emptyFields: (_) => S.of(context).emptyFields,
-            orElse: () => S.of(context).unknownError,
-          ),
-          orElse: () => S.of(context).unknownError,
-        ),
-      ).show(context);
-
+    duration: const Duration(seconds: 2),
+    message: failure.maybeMap(
+      coreData: (_coreDataFailure) => _coreDataFailure.coreDataFailure.maybeMap(
+        serverError: (failure) => failure.errorString,
+        emailAlreadyInUse: (_) => S.of(context).emailAlreadyInUse,
+        usernameAlreadyInUse: (_) => S.of(context).usernameAlreadyInUse,
+        orElse: () => S.of(context).unknownError,
+      ),
+      coreApplication: (_coreApplicationFailure) => _coreApplicationFailure.coreApplicationFailure.maybeMap(
+        emptyFields: (_) => S.of(context).emptyFields,
+        orElse: () => S.of(context).unknownError,
+      ),
+      orElse: () => S.of(context).unknownError,
+    ),
+  ).show(context);
+  
   void _onSuccess(BuildContext context) {
     context.navigator.replace(Routes.welcomePage);
     context.read<AuthenticationBloc>().add(const AuthenticationEvent.authenticationCheckRequested());

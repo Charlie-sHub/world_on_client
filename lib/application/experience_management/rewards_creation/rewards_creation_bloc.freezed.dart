@@ -540,7 +540,7 @@ class _$_RewardsCreationState implements _RewardsCreationState {
     return identical(this, other) ||
         (other is _RewardsCreationState && (identical(other.rewardsCreated, rewardsCreated) || const DeepCollectionEquality().equals(other.rewardsCreated, rewardsCreated)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(rewardsCreated);
 

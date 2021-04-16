@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:worldon/application/experience_navigation/objectives_tracker/objectives_tracker_bloc.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/views/core/misc/world_on_colors.dart';
+import 'package:worldon/views/core/widgets/misc/world_on_cached_image.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
 
 class ObjectiveCard extends StatelessWidget {
@@ -15,9 +16,6 @@ class ObjectiveCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(3),
-      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
@@ -32,12 +30,8 @@ class ObjectiveCard extends StatelessWidget {
                     onTap: () => Navigator.of(context).pop(),
                     child: Padding(
                       padding: const EdgeInsets.all(5),
-                      child: CachedNetworkImage(
-                        imageUrl: objective.imageURL,
-                        progressIndicatorBuilder: (context, url, progress) => const Padding(
-                          padding: EdgeInsets.all(15),
-                          child: WorldOnProgressIndicator(),
-                        ),
+                      child: WorldOnCachedImage(
+                        imageURL: objective.imageURL,
                       ),
                     ),
                   ),

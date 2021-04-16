@@ -52,7 +52,7 @@ class OwnProfileTabBar extends SliverPersistentHeaderDelegate {
       ),
     );
   }
-  
+
   @override
   bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) => true;
 }

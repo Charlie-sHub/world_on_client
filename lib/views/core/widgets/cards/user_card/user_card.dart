@@ -20,9 +20,6 @@ class UserCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(5),
       child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(3),
-        ),
         child: Column(
           children: <Widget>[
             Row(

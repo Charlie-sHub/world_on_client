@@ -1,5 +1,5 @@
+import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:worldon/domain/core/entities/comment/comment.dart';
 import 'package:worldon/generated/l10n.dart';
@@ -12,9 +12,9 @@ class CommentCard extends StatelessWidget {
     Key key,
     @required this.comment,
   }) : super(key: key);
-
+  
   final Comment comment;
-
+  
   @override
   Widget build(BuildContext context) {
     return Card(

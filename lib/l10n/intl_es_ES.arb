@@ -177,5 +177,6 @@
   "editDifficulty": "Cambia la dificultad",
   "editRewards": "Edita las recompensas",
   "surpassedImageLimit": "El numero maximo de imagenes es de: ",
-  "emptyFields": "Faltan campos por rellenar"
+  "emptyFields": "Faltan campos por rellenar",
+  "experienceButtonExplanation": "Crea actividades de la vida real que quieras compartir con el mundo"
 }
