@@ -50,7 +50,7 @@ dependencies:
   # Takes out some boilerplate
   flutter_hooks: ^0.15.0
   # For FloatingActionButton menus
-  unicorndial: ^1.1.5
+  flutter_speed_dial: ^1.2.5
   # For getting images from the device
   image_picker: ^0.6.7+22
   # For getting multiple images from the device

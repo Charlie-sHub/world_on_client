@@ -14,7 +14,7 @@ import 'package:worldon/views/notifications/widgets/notification_card.dart';
 
 class NotificationsBody extends StatelessWidget {
   const NotificationsBody({Key key}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -70,8 +70,8 @@ class NotificationsBody extends StatelessWidget {
                   return ErrorCard(
                     entityType: S.of(context).notification,
                     valueFailureString: _notification.failureOption.fold(
-                        () => S.of(context).noError,
-                        (failure) => failure.toString(),
+                      () => S.of(context).noError,
+                      (failure) => failure.toString(),
                     ),
                   );
                 }
@@ -79,8 +79,8 @@ class NotificationsBody extends StatelessWidget {
             ),
             loadFailure: (state) => ErrorDisplay(
               retryFunction: () => context.read<NotificationsWatcherBloc>().add(
-                const NotificationsWatcherEvent.watchNotificationsStarted(),
-              ),
+                    const NotificationsWatcherEvent.watchNotificationsStarted(),
+                  ),
               failure: state.failure,
               specificMessage: none(),
             ),

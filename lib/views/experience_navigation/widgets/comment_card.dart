@@ -12,9 +12,9 @@ class CommentCard extends StatelessWidget {
     Key key,
     @required this.comment,
   }) : super(key: key);
-  
+
   final Comment comment;
-  
+
   @override
   Widget build(BuildContext context) {
     return Card(

@@ -178,5 +178,8 @@
   "editRewards": "Edita las recompensas",
   "surpassedImageLimit": "El numero maximo de imagenes es de: ",
   "emptyFields": "Faltan campos por rellenar",
-  "experienceButtonExplanation": "Crea actividades de la vida real que quieras compartir con el mundo"
+  "experienceButtonExplanation": "Crea actividades de la vida real que quieras compartir con el mundo",
+  "created": "Creadas",
+  "done": "Hechas",
+  "liked": "Gustadas"
 }

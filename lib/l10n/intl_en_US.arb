@@ -179,5 +179,8 @@
   "editRewards": "Edit the Rewards",
   "surpassedImageLimit": "The max amount of images is: ",
   "emptyFields": "There are empty fields",
-  "experienceButtonExplanation": "Create real life activities that you want to share with the world"
+  "experienceButtonExplanation": "Create real life activities that you want to share with the world",
+  "created": "Created",
+  "done": "Done",
+  "liked": "Liked"
 }

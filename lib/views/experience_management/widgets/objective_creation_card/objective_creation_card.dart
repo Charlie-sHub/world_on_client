@@ -47,10 +47,10 @@ class ObjectiveCreationCard extends HookWidget {
               color: WorldOnColors.primary,
             ),
             borderRadius: BorderRadius.circular(3),
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
               const SizedBox(height: 5),
               Text(
                 context.read<ExperienceManagementFormBloc>().state.isEditing ? S.of(context).editObjectives : S.of(context).objectiveCreationCardTitle,
@@ -101,15 +101,15 @@ class ObjectiveCreationCard extends HookWidget {
                   }
                 },
               ),
-                Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: BlocProvider(
-                    create: (context) => getIt<ObjectiveFormBloc>()
-                      ..add(
-                        const ObjectiveFormEvent.initialized(),
-                      ),
-                    child: BlocConsumer<ObjectiveFormBloc, ObjectiveFormState>(
-                      listener: (context, state) => _objectiveFormListener(
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: BlocProvider(
+                  create: (context) => getIt<ObjectiveFormBloc>()
+                    ..add(
+                      const ObjectiveFormEvent.initialized(),
+                    ),
+                  child: BlocConsumer<ObjectiveFormBloc, ObjectiveFormState>(
+                    listener: (context, state) => _objectiveFormListener(
                       context,
                       state,
                       _textEditingController,
@@ -118,11 +118,11 @@ class ObjectiveCreationCard extends HookWidget {
                       textEditingController: _textEditingController,
                     ),
                   ),
-                  ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
+        ),
       ),
     );
   }

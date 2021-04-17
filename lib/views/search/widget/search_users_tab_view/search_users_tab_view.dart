@@ -10,7 +10,7 @@ import 'package:worldon/views/core/widgets/cards/user_card/user_card.dart';
 import 'package:worldon/views/core/widgets/error/error_display.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
 import 'package:worldon/views/search/widget/search_something.dart';
-import 'package:worldon/views/search/widget/search_users_tab_view/search_users_unicorn_dialer.dart';
+import 'package:worldon/views/search/widget/search_users_tab_view/search_users_dialer.dart';
 
 class SearchUsersTabView extends StatelessWidget {
   final SearchTerm searchTerm;
@@ -28,7 +28,7 @@ class SearchUsersTabView extends StatelessWidget {
         searchInProgress: (_) => const WorldOnProgressIndicator(),
         searchSuccess: (state) => Scaffold(
           floatingActionButtonLocation: FloatingActionButtonLocation.miniEndDocked,
-          floatingActionButton: SearchUsersUnicornDialer(
+          floatingActionButton: SearchUsersDialer(
             searchTerm: context.read<SearchByNameFormBloc>().state.searchTerm,
           ),
           body: ListView.builder(

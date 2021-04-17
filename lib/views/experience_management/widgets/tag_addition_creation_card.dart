@@ -19,13 +19,13 @@ import 'package:worldon/views/tag_management/widgets/tag_management_form.dart';
 class TagAdditionCreationCard extends HookWidget {
   final Function tagChangeFunction;
   final Option<TagSet> tagSetOption;
-  
+
   const TagAdditionCreationCard({
     Key key,
     @required this.tagSetOption,
     @required this.tagChangeFunction,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     final _textEditingController = useTextEditingController();
@@ -106,46 +106,48 @@ class TagAdditionCreationCard extends HookWidget {
       ),
     );
   }
-  
-  void _tagCreationListener(BuildContext context,
+
+  void _tagCreationListener(
+    BuildContext context,
     TagManagementFormState state,
-    TextEditingController _textEditingController,) =>
-    state.failureOrSuccessOption.fold(
+    TextEditingController _textEditingController,
+  ) =>
+      state.failureOrSuccessOption.fold(
         () => null,
         (either) => either.fold(
           (failure) => failure.maybeMap(
-          coreData: (_coreDataFailure) => _coreDataFailure.coreDataFailure.maybeMap(
-            nameAlreadyInUse: (_) => FlushbarHelper.createError(
-              duration: const Duration(seconds: 2),
-              message: S.of(context).tagCreationNameAlreadyInUse,
-            ).show(context),
-            serverError: (failure) => FlushbarHelper.createError(
-              duration: const Duration(seconds: 2),
-              message: failure.errorString,
-            ).show(context),
+            coreData: (_coreDataFailure) => _coreDataFailure.coreDataFailure.maybeMap(
+              nameAlreadyInUse: (_) => FlushbarHelper.createError(
+                duration: const Duration(seconds: 2),
+                message: S.of(context).tagCreationNameAlreadyInUse,
+              ).show(context),
+              serverError: (failure) => FlushbarHelper.createError(
+                duration: const Duration(seconds: 2),
+                message: failure.errorString,
+              ).show(context),
+              orElse: () => FlushbarHelper.createError(
+                duration: const Duration(seconds: 2),
+                message: S.of(context).unknownCoreDataError,
+              ).show(context),
+            ),
             orElse: () => FlushbarHelper.createError(
               duration: const Duration(seconds: 2),
-              message: S.of(context).unknownCoreDataError,
+              message: S.of(context).unknownError,
             ).show(context),
           ),
-          orElse: () => FlushbarHelper.createError(
-            duration: const Duration(seconds: 2),
-            message: S.of(context).unknownError,
-          ).show(context),
-        ),
           (_) {
-          context.read<TagSelectorBloc>().add(
-            TagSelectorEvent.addedTag(state.tag),
-          );
-          _textEditingController.clear();
-          context.read<TagManagementFormBloc>().add(
-            TagManagementFormEvent.initialized(none()),
-          );
-          FlushbarHelper.createSuccess(
-            duration: const Duration(seconds: 2),
-            message: S.of(context).tagCreationSuccessMessage,
-          ).show(context);
-        },
-      ),
-    );
+            context.read<TagSelectorBloc>().add(
+                  TagSelectorEvent.addedTag(state.tag),
+                );
+            _textEditingController.clear();
+            context.read<TagManagementFormBloc>().add(
+                  TagManagementFormEvent.initialized(none()),
+                );
+            FlushbarHelper.createSuccess(
+              duration: const Duration(seconds: 2),
+              message: S.of(context).tagCreationSuccessMessage,
+            ).show(context);
+          },
+        ),
+      );
 }

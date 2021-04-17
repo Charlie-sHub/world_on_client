@@ -8,7 +8,7 @@ import 'package:worldon/views/core/widgets/cards/error_card.dart';
 import 'package:worldon/views/core/widgets/cards/experience_card/experience_card.dart';
 import 'package:worldon/views/core/widgets/error/error_display.dart';
 import 'package:worldon/views/core/widgets/misc/world_on_progress_indicator.dart';
-import 'package:worldon/views/profile/widgets/profile_experiences_tab_view/profile_experiences_unicorn_dialer.dart';
+import 'package:worldon/views/profile/widgets/profile_experiences_tab_view/profile_experiences_dialer.dart';
 
 import '../../../../injection.dart';
 
@@ -75,7 +75,7 @@ class ProfileExperiencesTabView extends StatelessWidget {
             ),
             Align(
               alignment: Alignment.bottomRight,
-              child: ProfileExperiencesUnicornDialer(user: user),
+              child: ProfileExperiencesDialer(user: user),
             ),
           ],
         ),

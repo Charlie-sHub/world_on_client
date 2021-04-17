@@ -39,8 +39,8 @@ class StoreBody extends StatelessWidget {
                   loadInProgress: (_) => const WorldOnProgressIndicator(),
                   loadSuccess: (state) => RefreshIndicator(
                     onRefresh: () async => context.read<WatchPurchasableItemsBloc>().add(
-                      const WatchPurchasableItemsEvent.watchPurchasableItemsStarted(),
-                    ),
+                          const WatchPurchasableItemsEvent.watchPurchasableItemsStarted(),
+                        ),
                     child: ListView.builder(
                       physics: const BouncingScrollPhysics(),
                       padding: const EdgeInsets.all(5),
@@ -56,8 +56,8 @@ class StoreBody extends StatelessWidget {
                           return ErrorCard(
                             entityType: S.of(context).item,
                             valueFailureString: _item.failureOption.fold(
-                                () => S.of(context).noError,
-                                (failure) => failure.toString(),
+                              () => S.of(context).noError,
+                              (failure) => failure.toString(),
                             ),
                           );
                         }
@@ -66,8 +66,8 @@ class StoreBody extends StatelessWidget {
                   ),
                   loadFailure: (state) => ErrorDisplay(
                     retryFunction: () => context.read<WatchPurchasableItemsBloc>().add(
-                      const WatchPurchasableItemsEvent.watchPurchasableItemsStarted(),
-                    ),
+                          const WatchPurchasableItemsEvent.watchPurchasableItemsStarted(),
+                        ),
                     failure: state.failure,
                     specificMessage: none(),
                   ),
@@ -136,27 +136,27 @@ class StoreBody extends StatelessWidget {
       ],
     );
   }
-  
+
   void _buyCoinsListener(BuildContext context, BuyCoinsState state) => state.maybeMap(
-    purchaseSuccess: (_) => context.read<LoadUserBloc>().add(
+        purchaseSuccess: (_) => context.read<LoadUserBloc>().add(
               const LoadUserEvent.loadedUser(),
             ),
-    purchaseFailure: (state) => FlushbarHelper.createError(
-      duration: const Duration(seconds: 2),
-      message: state.failure.maybeMap(
-        coreData: (failure) => failure.coreDataFailure.maybeMap(
-          serverError: (failure) => failure.errorString,
-          orElse: () => S.of(context).unknownError,
-        ),
-        storeData: (failure) => failure.storeDataFailure.maybeMap(
-          cancelled: (_) => S.of(context).cancelledByUser,
-          orElse: () => S.of(context).unknownError,
-        ),
-        orElse: () => S.of(context).unknownError,
-      ),
-    ).show(context),
-    orElse: () => null,
-  );
+        purchaseFailure: (state) => FlushbarHelper.createError(
+          duration: const Duration(seconds: 2),
+          message: state.failure.maybeMap(
+            coreData: (failure) => failure.coreDataFailure.maybeMap(
+              serverError: (failure) => failure.errorString,
+              orElse: () => S.of(context).unknownError,
+            ),
+            storeData: (failure) => failure.storeDataFailure.maybeMap(
+              cancelled: (_) => S.of(context).cancelledByUser,
+              orElse: () => S.of(context).unknownError,
+            ),
+            orElse: () => S.of(context).unknownError,
+          ),
+        ).show(context),
+        orElse: () => null,
+      );
 }
 // TODO: reload LoadUser when buying things
 // User that bloc to get the user's coins and items

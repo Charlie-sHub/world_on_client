@@ -22,13 +22,13 @@ import 'package:worldon/views/core/widgets/misc/experience_likes_counter.dart';
 class ExperienceCard extends StatelessWidget {
   final Experience experience;
   final Function(Object param) reloadFunction;
-  
+
   const ExperienceCard({
     Key key,
     @required this.experience,
     @required this.reloadFunction,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -99,8 +99,8 @@ class ExperienceCard extends StatelessWidget {
                         runSpacing: 2,
                         children: <Widget>[
                           ...experience.tags.getOrCrash().asSet().map(
-                              (tag) => SimpleTagDisplay(tag: tag),
-                          ),
+                                (tag) => SimpleTagDisplay(tag: tag),
+                              ),
                         ],
                       ),
                     ],
@@ -113,28 +113,28 @@ class ExperienceCard extends StatelessWidget {
       ),
     );
   }
-  
+
   // TODO: Customize snackbars
   // And ensure they show above the navigation bar
   void _experienceCardListener(BuildContext context, ExperienceCardActorState state) => state.maybeMap(
-    additionFailure: (state) => FlushbarHelper.createError(
-      duration: const Duration(seconds: 2),
-      message: state.failure.maybeMap(
-        coreData: (failure) => failure.coreDataFailure.maybeMap(
-          serverError: (failure) => failure.errorString,
-          orElse: () => S.of(context).unknownError,
-        ),
-        orElse: () => S.of(context).unknownError),
-    ).show(context),
-    dismissalFailure: (state) => FlushbarHelper.createError(
-      duration: const Duration(seconds: 2),
-      message: state.failure.maybeMap(
-        coreData: (failure) => failure.coreDataFailure.maybeMap(
-          serverError: (failure) => failure.errorString,
-          orElse: () => S.of(context).unknownError,
-        ),
-        orElse: () => S.of(context).unknownError),
-    ).show(context),
-    orElse: () => null,
-  );
+        additionFailure: (state) => FlushbarHelper.createError(
+          duration: const Duration(seconds: 2),
+          message: state.failure.maybeMap(
+              coreData: (failure) => failure.coreDataFailure.maybeMap(
+                    serverError: (failure) => failure.errorString,
+                    orElse: () => S.of(context).unknownError,
+                  ),
+              orElse: () => S.of(context).unknownError),
+        ).show(context),
+        dismissalFailure: (state) => FlushbarHelper.createError(
+          duration: const Duration(seconds: 2),
+          message: state.failure.maybeMap(
+              coreData: (failure) => failure.coreDataFailure.maybeMap(
+                    serverError: (failure) => failure.errorString,
+                    orElse: () => S.of(context).unknownError,
+                  ),
+              orElse: () => S.of(context).unknownError),
+        ).show(context),
+        orElse: () => null,
+      );
 }

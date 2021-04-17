@@ -35,7 +35,7 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
   // hopefully it will work for the tests
   @override
   Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByTitle(SearchTerm title) async* {
-    yield* _firestore.experienceCollection.snapshots().map(
+    yield* _firestore.experienceCollection.orderBy("title").snapshots().map(
       (snapshot) {
         final _resultList = snapshot.docs.where(
           (_querySnapshot) {
@@ -105,7 +105,7 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
 
   @override
   Stream<Either<Failure, KtList<User>>> watchSearchUsersByName(SearchTerm name) async* {
-    yield* _firestore.userCollection.snapshots().map(
+    yield* _firestore.userCollection.orderBy("name").snapshots().map(
       (snapshot) {
         final _resultList = snapshot.docs.where(
           (element) {
@@ -140,7 +140,7 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
 
   @override
   Stream<Either<Failure, KtList<User>>> watchSearchUsersByUserName(SearchTerm username) async* {
-    yield* _firestore.userCollection.snapshots().map(
+    yield* _firestore.userCollection.orderBy("username").snapshots().map(
       (snapshot) {
         final _resultList = snapshot.docs.where(
           (element) {
@@ -239,9 +239,10 @@ class ProductionSearchRepository implements SearchRepositoryInterface {
   Stream<Either<Failure, KtList<Experience>>> watchSearchExperiencesByDifficulty(Difficulty difficulty) async* {
     yield* _firestore.experienceCollection
         .where(
-      ExperienceFields.difficulty,
+          ExperienceFields.difficulty,
           isEqualTo: difficulty.getOrCrash(),
         )
+        .orderBy("difficulty")
         .snapshots()
         .map(
           (snapshot) => snapshot.docs.map(

@@ -19,10 +19,10 @@ class LogInPage extends StatelessWidget {
         child: BlocConsumer<LogInFormBloc, LogInFormState>(
           listenWhen: (previous, current) => previous.failureOrSuccessOption != current.failureOrSuccessOption,
           listener: (context, state) => state.failureOrSuccessOption.fold(
-              () => null,
-              (either) => either.fold(
-                (failure) => _onFailure(failure, context),
-                (_) => _onSuccess(context),
+            () => null,
+            (either) => either.fold(
+              (failure) => _onFailure(failure, context),
+              (_) => _onSuccess(context),
             ),
           ),
           buildWhen: (previous, current) => previous.showErrorMessages != current.showErrorMessages,
@@ -31,7 +31,7 @@ class LogInPage extends StatelessWidget {
       ),
     );
   }
-  
+
   Future _onFailure(Failure failure, BuildContext context) {
     bool unregistered = false;
     return FlushbarHelper.createError(
@@ -61,7 +61,7 @@ class LogInPage extends StatelessWidget {
       },
     );
   }
-  
+
   void _onSuccess(BuildContext context) {
     context.navigator.replace(Routes.mainPage);
     context.read<AuthenticationBloc>().add(const AuthenticationEvent.authenticationCheckRequested());

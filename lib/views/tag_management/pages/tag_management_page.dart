@@ -11,12 +11,12 @@ import 'package:worldon/views/tag_management/widgets/tag_management_form.dart';
 
 class TagManagementPage extends HookWidget {
   final Option<Tag> tagOption;
-  
+
   const TagManagementPage({
     Key key,
     @required this.tagOption,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     final _textEditingController = useTextEditingController();
@@ -51,11 +51,13 @@ class TagManagementPage extends HookWidget {
       ),
     );
   }
-  
-  void _tagManagementListener(BuildContext context,
+
+  void _tagManagementListener(
+    BuildContext context,
     TagManagementFormState state,
-    TextEditingController _textEditingController,) =>
-    state.failureOrSuccessOption.fold(
+    TextEditingController _textEditingController,
+  ) =>
+      state.failureOrSuccessOption.fold(
         () => null,
         (either) => either.fold(
           (failure) => FlushbarHelper.createError(
@@ -78,6 +80,6 @@ class TagManagementPage extends HookWidget {
               message: S.of(context).tagCreationSuccessMessage,
             ).show(context);
           },
-      ),
-    );
+        ),
+      );
 }
