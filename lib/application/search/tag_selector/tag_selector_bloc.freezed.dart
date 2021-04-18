@@ -47,7 +47,6 @@ mixin _$TagSelectorEvent {
     required TResult Function(Tag tag) removedTag,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<TagSet> tagSetOption)? initialized,
@@ -56,7 +55,6 @@ mixin _$TagSelectorEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
@@ -64,7 +62,6 @@ mixin _$TagSelectorEvent {
     required TResult Function(_RemovedTag value) removedTag,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,

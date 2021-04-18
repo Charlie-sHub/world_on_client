@@ -48,14 +48,12 @@ mixin _$RateExperienceDifficultyActorEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_DifficultyChanged value) difficultyChanged,
     required TResult Function(_DifficultyRated value) difficultyRated,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_DifficultyChanged value)? difficultyChanged,
@@ -76,6 +74,7 @@ class _$RateExperienceDifficultyActorEventCopyWithImpl<$Res> implements $RateExp
   _$RateExperienceDifficultyActorEventCopyWithImpl(this._value, this._then);
 
   final RateExperienceDifficultyActorEvent _value;
+
   // ignore: unused_field
   final $Res Function(RateExperienceDifficultyActorEvent) _then;
 }
@@ -83,6 +82,7 @@ class _$RateExperienceDifficultyActorEventCopyWithImpl<$Res> implements $RateExp
 /// @nodoc
 abstract class _$DifficultyChangedCopyWith<$Res> {
   factory _$DifficultyChangedCopyWith(_DifficultyChanged value, $Res Function(_DifficultyChanged) then) = __$DifficultyChangedCopyWithImpl<$Res>;
+
   $Res call({int difficultyRating});
 }
 
@@ -188,6 +188,7 @@ abstract class _DifficultyChanged implements RateExperienceDifficultyActorEvent 
 /// @nodoc
 abstract class _$DifficultyRatedCopyWith<$Res> {
   factory _$DifficultyRatedCopyWith(_DifficultyRated value, $Res Function(_DifficultyRated) then) = __$DifficultyRatedCopyWithImpl<$Res>;
+
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
@@ -330,6 +331,7 @@ mixin _$RateExperienceDifficultyActorState {
 abstract class $RateExperienceDifficultyActorStateCopyWith<$Res> {
   factory $RateExperienceDifficultyActorStateCopyWith(RateExperienceDifficultyActorState value, $Res Function(RateExperienceDifficultyActorState) then) =
       _$RateExperienceDifficultyActorStateCopyWithImpl<$Res>;
+
   $Res call({int difficulty, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
 }
 
@@ -338,6 +340,7 @@ class _$RateExperienceDifficultyActorStateCopyWithImpl<$Res> implements $RateExp
   _$RateExperienceDifficultyActorStateCopyWithImpl(this._value, this._then);
 
   final RateExperienceDifficultyActorState _value;
+
   // ignore: unused_field
   final $Res Function(RateExperienceDifficultyActorState) _then;
 
@@ -368,6 +371,7 @@ class _$RateExperienceDifficultyActorStateCopyWithImpl<$Res> implements $RateExp
 abstract class _$RateExperienceDifficultyActorStateCopyWith<$Res> implements $RateExperienceDifficultyActorStateCopyWith<$Res> {
   factory _$RateExperienceDifficultyActorStateCopyWith(_RateExperienceDifficultyActorState value, $Res Function(_RateExperienceDifficultyActorState) then) =
       __$RateExperienceDifficultyActorStateCopyWithImpl<$Res>;
+
   @override
   $Res call({int difficulty, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
 }

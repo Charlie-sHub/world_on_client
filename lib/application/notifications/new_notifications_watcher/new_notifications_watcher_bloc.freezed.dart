@@ -38,7 +38,6 @@ mixin _$NewNotificationsWatcherEvent {
     required TResult Function(Either<Failure, bool> failureOrBool) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchNewNotificationsStarted,
@@ -46,14 +45,12 @@ mixin _$NewNotificationsWatcherEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchNewNotificationsStarted value) watchNewNotificationsStarted,
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchNewNotificationsStarted value)? watchNewNotificationsStarted,
@@ -297,7 +294,6 @@ mixin _$NewNotificationsWatcherState {
     required TResult Function() failure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -307,7 +303,6 @@ mixin _$NewNotificationsWatcherState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -316,7 +311,6 @@ mixin _$NewNotificationsWatcherState {
     required TResult Function(_Failure value) failure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,

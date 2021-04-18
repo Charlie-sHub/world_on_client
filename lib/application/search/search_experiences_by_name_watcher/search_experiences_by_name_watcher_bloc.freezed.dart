@@ -40,7 +40,6 @@ mixin _$SearchExperiencesByNameWatcherEvent {
     required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) searchResultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(SearchTerm searchTerm)? watchExperiencesFoundByNameStarted,
@@ -48,14 +47,12 @@ mixin _$SearchExperiencesByNameWatcherEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchExperiencesFoundByNameStarted value) watchExperiencesFoundByNameStarted,
     required TResult Function(_SearchResultsReceived value) searchResultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchExperiencesFoundByNameStarted value)? watchExperiencesFoundByNameStarted,
@@ -76,6 +73,7 @@ class _$SearchExperiencesByNameWatcherEventCopyWithImpl<$Res> implements $Search
   _$SearchExperiencesByNameWatcherEventCopyWithImpl(this._value, this._then);
 
   final SearchExperiencesByNameWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(SearchExperiencesByNameWatcherEvent) _then;
 }
@@ -84,6 +82,7 @@ class _$SearchExperiencesByNameWatcherEventCopyWithImpl<$Res> implements $Search
 abstract class _$WatchExperiencesFoundByNameStartedCopyWith<$Res> {
   factory _$WatchExperiencesFoundByNameStartedCopyWith(_WatchExperiencesFoundByNameStarted value, $Res Function(_WatchExperiencesFoundByNameStarted) then) =
       __$WatchExperiencesFoundByNameStartedCopyWithImpl<$Res>;
+
   $Res call({SearchTerm searchTerm});
 }
 
@@ -190,6 +189,7 @@ abstract class _WatchExperiencesFoundByNameStarted implements SearchExperiencesB
 /// @nodoc
 abstract class _$SearchResultsReceivedCopyWith<$Res> {
   factory _$SearchResultsReceivedCopyWith(_SearchResultsReceived value, $Res Function(_SearchResultsReceived) then) = __$SearchResultsReceivedCopyWithImpl<$Res>;
+
   $Res call({Either<Failure, KtList<Experience>> failureOrExperiences});
 }
 
@@ -330,7 +330,6 @@ mixin _$SearchExperiencesByNameWatcherState {
     required TResult Function(Failure<dynamic> failure) searchFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -340,7 +339,6 @@ mixin _$SearchExperiencesByNameWatcherState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -349,7 +347,6 @@ mixin _$SearchExperiencesByNameWatcherState {
     required TResult Function(_SearchFailure value) searchFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -372,6 +369,7 @@ class _$SearchExperiencesByNameWatcherStateCopyWithImpl<$Res> implements $Search
   _$SearchExperiencesByNameWatcherStateCopyWithImpl(this._value, this._then);
 
   final SearchExperiencesByNameWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(SearchExperiencesByNameWatcherState) _then;
 }
@@ -553,6 +551,7 @@ abstract class _SearchInProgress implements SearchExperiencesByNameWatcherState 
 /// @nodoc
 abstract class _$SearchSuccessCopyWith<$Res> {
   factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) = __$SearchSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<Experience> experiencesFound});
 }
 
@@ -666,6 +665,7 @@ abstract class _SearchSuccess implements SearchExperiencesByNameWatcherState {
 /// @nodoc
 abstract class _$SearchFailureCopyWith<$Res> {
   factory _$SearchFailureCopyWith(_SearchFailure value, $Res Function(_SearchFailure) then) = __$SearchFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

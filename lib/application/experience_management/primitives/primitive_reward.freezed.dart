@@ -32,11 +32,8 @@ const $PrimitiveReward = _$PrimitiveRewardTearOff();
 /// @nodoc
 mixin _$PrimitiveReward {
   UniqueId get id => throw _privateConstructorUsedError;
-
   String get name => throw _privateConstructorUsedError;
-
   String get description => throw _privateConstructorUsedError;
-
   File? get imageFile => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -55,6 +52,7 @@ class _$PrimitiveRewardCopyWithImpl<$Res> implements $PrimitiveRewardCopyWith<$R
   _$PrimitiveRewardCopyWithImpl(this._value, this._then);
 
   final PrimitiveReward _value;
+
   // ignore: unused_field
   final $Res Function(PrimitiveReward) _then;
 

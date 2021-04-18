@@ -41,13 +41,9 @@ const $LocationDto = _$LocationDtoTearOff();
 /// @nodoc
 mixin _$LocationDto {
   String get id => throw _privateConstructorUsedError;
-
   String get city => throw _privateConstructorUsedError;
-
   String get country => throw _privateConstructorUsedError;
-
   String get postalCode => throw _privateConstructorUsedError;
-
   Set<ExperienceDto> get experiences => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -59,6 +55,7 @@ mixin _$LocationDto {
 /// @nodoc
 abstract class $LocationDtoCopyWith<$Res> {
   factory $LocationDtoCopyWith(LocationDto value, $Res Function(LocationDto) then) = _$LocationDtoCopyWithImpl<$Res>;
+
   $Res call({String id, String city, String country, String postalCode, Set<ExperienceDto> experiences});
 }
 
@@ -106,6 +103,7 @@ class _$LocationDtoCopyWithImpl<$Res> implements $LocationDtoCopyWith<$Res> {
 /// @nodoc
 abstract class _$LocationDtoCopyWith<$Res> implements $LocationDtoCopyWith<$Res> {
   factory _$LocationDtoCopyWith(_LocationDto value, $Res Function(_LocationDto) then) = __$LocationDtoCopyWithImpl<$Res>;
+
   @override
   $Res call({String id, String city, String country, String postalCode, Set<ExperienceDto> experiences});
 }

@@ -33,7 +33,7 @@ class TagsFoundView extends StatelessWidget {
               runSpacing: 5,
               children: <Widget>[
                 ...state.tagsFound.asList().map(
-                    (tag) {
+                  (tag) {
                     if (tag.isValid) {
                       return InkWell(
                         onTap: () => context.read<TagSelectorBloc>().add(

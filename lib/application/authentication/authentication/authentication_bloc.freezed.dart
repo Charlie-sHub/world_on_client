@@ -36,7 +36,6 @@ mixin _$AuthenticationEvent {
     required TResult Function() loggedOut,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authenticationCheckRequested,
@@ -44,14 +43,12 @@ mixin _$AuthenticationEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_AuthenticationCheckRequested value) authenticationCheckRequested,
     required TResult Function(_LoggedOut value) loggedOut,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AuthenticationCheckRequested value)? authenticationCheckRequested,
@@ -71,6 +68,7 @@ class _$AuthenticationEventCopyWithImpl<$Res> implements $AuthenticationEventCop
   _$AuthenticationEventCopyWithImpl(this._value, this._then);
 
   final AuthenticationEvent _value;
+
   // ignore: unused_field
   final $Res Function(AuthenticationEvent) _then;
 }
@@ -263,7 +261,6 @@ mixin _$AuthenticationState {
     required TResult Function() unAuthenticated,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -272,7 +269,6 @@ mixin _$AuthenticationState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -280,7 +276,6 @@ mixin _$AuthenticationState {
     required TResult Function(_UnAuthenticated value) unAuthenticated,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -301,6 +296,7 @@ class _$AuthenticationStateCopyWithImpl<$Res> implements $AuthenticationStateCop
   _$AuthenticationStateCopyWithImpl(this._value, this._then);
 
   final AuthenticationState _value;
+
   // ignore: unused_field
   final $Res Function(AuthenticationState) _then;
 }

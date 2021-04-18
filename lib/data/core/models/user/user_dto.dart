@@ -125,7 +125,7 @@ class UserDto with _$UserDto {
   factory UserDto.fromJson(Map<String, dynamic> json) => _$UserDtoFromJson(json);
 
   factory UserDto.fromFirestore(DocumentSnapshot document) => UserDto.fromJson(
-    document.data()!,
+        document.data()!,
       ).copyWith(
         id: document.id,
       );

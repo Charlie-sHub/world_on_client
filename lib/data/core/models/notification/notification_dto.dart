@@ -16,7 +16,7 @@ class NotificationDto with _$NotificationDto {
   const NotificationDto._();
 
   const factory NotificationDto({
-    required String id,
+    @JsonKey(ignore: true) String? id,
     required UserDto sender,
     required UserDto receiver,
     required String description,
@@ -36,7 +36,7 @@ class NotificationDto with _$NotificationDto {
       );
 
   Notification toDomain() => Notification(
-        id: UniqueId.fromUniqueString(id),
+        id: UniqueId.fromUniqueString(id!),
         sender: sender.toDomain(),
         receiver: receiver.toDomain(),
         description: EntityDescription(description),

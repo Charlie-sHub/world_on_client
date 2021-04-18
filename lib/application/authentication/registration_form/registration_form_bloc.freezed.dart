@@ -104,7 +104,6 @@ mixin _$RegistrationFormEvent {
     required TResult Function() submitted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
@@ -122,7 +121,6 @@ mixin _$RegistrationFormEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
@@ -139,7 +137,6 @@ mixin _$RegistrationFormEvent {
     required TResult Function(_Submitted value) submitted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
@@ -2106,10 +2103,8 @@ abstract class _RegistrationFormState implements RegistrationFormState {
 
   @override
   String get passwordToCompare => throw _privateConstructorUsedError;
-
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
-
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
 

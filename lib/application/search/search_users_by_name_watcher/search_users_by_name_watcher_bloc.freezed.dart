@@ -47,7 +47,6 @@ mixin _$SearchUsersByNameWatcherEvent {
     required TResult Function(Either<Failure, KtList<User>> failureOrUsers) searchResultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(SearchTerm name)? watchUsersFoundByNameStarted,
@@ -56,7 +55,6 @@ mixin _$SearchUsersByNameWatcherEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchUsersFoundByNameStarted value) watchUsersFoundByNameStarted,
@@ -64,7 +62,6 @@ mixin _$SearchUsersByNameWatcherEvent {
     required TResult Function(_SearchResultsReceived value) searchResultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchUsersFoundByNameStarted value)? watchUsersFoundByNameStarted,
@@ -85,6 +82,7 @@ class _$SearchUsersByNameWatcherEventCopyWithImpl<$Res> implements $SearchUsersB
   _$SearchUsersByNameWatcherEventCopyWithImpl(this._value, this._then);
 
   final SearchUsersByNameWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(SearchUsersByNameWatcherEvent) _then;
 }
@@ -92,6 +90,7 @@ class _$SearchUsersByNameWatcherEventCopyWithImpl<$Res> implements $SearchUsersB
 /// @nodoc
 abstract class _$WatchUsersFoundByNameStartedCopyWith<$Res> {
   factory _$WatchUsersFoundByNameStartedCopyWith(_WatchUsersFoundByNameStarted value, $Res Function(_WatchUsersFoundByNameStarted) then) = __$WatchUsersFoundByNameStartedCopyWithImpl<$Res>;
+
   $Res call({SearchTerm name});
 }
 
@@ -202,6 +201,7 @@ abstract class _WatchUsersFoundByNameStarted implements SearchUsersByNameWatcher
 abstract class _$WatchUsersFoundByUsernameStartedCopyWith<$Res> {
   factory _$WatchUsersFoundByUsernameStartedCopyWith(_WatchUsersFoundByUsernameStarted value, $Res Function(_WatchUsersFoundByUsernameStarted) then) =
       __$WatchUsersFoundByUsernameStartedCopyWithImpl<$Res>;
+
   $Res call({SearchTerm username});
 }
 
@@ -311,6 +311,7 @@ abstract class _WatchUsersFoundByUsernameStarted implements SearchUsersByNameWat
 /// @nodoc
 abstract class _$SearchResultsReceivedCopyWith<$Res> {
   factory _$SearchResultsReceivedCopyWith(_SearchResultsReceived value, $Res Function(_SearchResultsReceived) then) = __$SearchResultsReceivedCopyWithImpl<$Res>;
+
   $Res call({Either<Failure, KtList<User>> failureOrUsers});
 }
 
@@ -455,7 +456,6 @@ mixin _$SearchUsersByNameWatcherState {
     required TResult Function(Failure<dynamic> failure) searchFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -465,7 +465,6 @@ mixin _$SearchUsersByNameWatcherState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -474,7 +473,6 @@ mixin _$SearchUsersByNameWatcherState {
     required TResult Function(_SearchFailure value) searchFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -496,6 +494,7 @@ class _$SearchUsersByNameWatcherStateCopyWithImpl<$Res> implements $SearchUsersB
   _$SearchUsersByNameWatcherStateCopyWithImpl(this._value, this._then);
 
   final SearchUsersByNameWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(SearchUsersByNameWatcherState) _then;
 }
@@ -677,6 +676,7 @@ abstract class _SearchInPorgress implements SearchUsersByNameWatcherState {
 /// @nodoc
 abstract class _$SearchSuccessCopyWith<$Res> {
   factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) = __$SearchSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<User> usersFound});
 }
 
@@ -789,6 +789,7 @@ abstract class _SearchSuccess implements SearchUsersByNameWatcherState {
 /// @nodoc
 abstract class _$SearchFailureCopyWith<$Res> {
   factory _$SearchFailureCopyWith(_SearchFailure value, $Res Function(_SearchFailure) then) = __$SearchFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

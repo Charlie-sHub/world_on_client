@@ -38,7 +38,6 @@ mixin _$ExperienceLogWatcherEvent {
     required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchExperiencesLogStarted,
@@ -46,14 +45,12 @@ mixin _$ExperienceLogWatcherEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchExperiencesLogStarted value) watchExperiencesLogStarted,
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchExperiencesLogStarted value)? watchExperiencesLogStarted,
@@ -301,7 +298,6 @@ mixin _$ExperienceLogWatcherState {
     required TResult Function(Failure<dynamic> failure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -311,7 +307,6 @@ mixin _$ExperienceLogWatcherState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -320,7 +315,6 @@ mixin _$ExperienceLogWatcherState {
     required TResult Function(_LoadFailure value) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,

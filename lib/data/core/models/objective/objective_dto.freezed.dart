@@ -40,11 +40,8 @@ const $ObjectiveDto = _$ObjectiveDtoTearOff();
 /// @nodoc
 mixin _$ObjectiveDto {
   String get id => throw _privateConstructorUsedError;
-
   String get description => throw _privateConstructorUsedError;
-
   CoordinatesDto get coordinates => throw _privateConstructorUsedError;
-
   String get imageURL => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -56,6 +53,7 @@ mixin _$ObjectiveDto {
 /// @nodoc
 abstract class $ObjectiveDtoCopyWith<$Res> {
   factory $ObjectiveDtoCopyWith(ObjectiveDto value, $Res Function(ObjectiveDto) then) = _$ObjectiveDtoCopyWithImpl<$Res>;
+
   $Res call({String id, String description, CoordinatesDto coordinates, String imageURL});
 
   $CoordinatesDtoCopyWith<$Res> get coordinates;
@@ -107,6 +105,7 @@ class _$ObjectiveDtoCopyWithImpl<$Res> implements $ObjectiveDtoCopyWith<$Res> {
 /// @nodoc
 abstract class _$ObjectiveDtoCopyWith<$Res> implements $ObjectiveDtoCopyWith<$Res> {
   factory _$ObjectiveDtoCopyWith(_ObjectiveDto value, $Res Function(_ObjectiveDto) then) = __$ObjectiveDtoCopyWithImpl<$Res>;
+
   @override
   $Res call({String id, String description, CoordinatesDto coordinates, String imageURL});
 

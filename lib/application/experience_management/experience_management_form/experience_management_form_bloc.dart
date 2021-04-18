@@ -24,7 +24,7 @@ import 'package:worldon/domain/core/validation/objects/entity_description.dart';
 import 'package:worldon/domain/core/validation/objects/latitude.dart';
 import 'package:worldon/domain/core/validation/objects/longitude.dart';
 import 'package:worldon/domain/core/validation/objects/name.dart';
-import 'package:worldon/domain/core/validation/objects/objective_set.dart';
+import 'package:worldon/domain/core/validation/objects/objective_list.dart';
 import 'package:worldon/domain/core/validation/objects/reward_set.dart';
 import 'package:worldon/domain/core/validation/objects/tag_set.dart';
 import 'package:worldon/domain/experience_management/use_case/create_experience.dart' as create_experience;
@@ -60,7 +60,7 @@ class ExperienceManagementFormBloc extends Bloc<ExperienceManagementFormEvent, E
   }
 
   Stream<ExperienceManagementFormState> _onSubmitted(_) async* {
-    late Either<Failure, Unit> _failureOrUnit;
+    late Either<Failure, Unit>? _failureOrUnit;
     yield state.copyWith(
       isSubmitting: true,
       failureOrSuccessOption: none(),

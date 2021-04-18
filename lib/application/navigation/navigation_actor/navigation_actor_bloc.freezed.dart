@@ -63,7 +63,6 @@ mixin _$NavigationActorEvent {
     required TResult Function() notificationsTapped,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedTapped,
@@ -75,7 +74,6 @@ mixin _$NavigationActorEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_MainFeedTapped value) mainFeedTapped,
@@ -86,7 +84,6 @@ mixin _$NavigationActorEvent {
     required TResult Function(_NotificationsTapped value) notificationsTapped,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_MainFeedTapped value)? mainFeedTapped,
@@ -110,6 +107,7 @@ class _$NavigationActorEventCopyWithImpl<$Res> implements $NavigationActorEventC
   _$NavigationActorEventCopyWithImpl(this._value, this._then);
 
   final NavigationActorEvent _value;
+
   // ignore: unused_field
   final $Res Function(NavigationActorEvent) _then;
 }
@@ -307,6 +305,7 @@ abstract class _SearchTapped implements NavigationActorEvent {
 /// @nodoc
 abstract class _$ExperienceFormTappedCopyWith<$Res> {
   factory _$ExperienceFormTappedCopyWith(_ExperienceFormTapped value, $Res Function(_ExperienceFormTapped) then) = __$ExperienceFormTappedCopyWithImpl<$Res>;
+
   $Res call({Option<Experience> experienceOption});
 }
 
@@ -428,6 +427,7 @@ abstract class _ExperienceFormTapped implements NavigationActorEvent {
 /// @nodoc
 abstract class _$ExperienceNavigationTappedCopyWith<$Res> {
   factory _$ExperienceNavigationTappedCopyWith(_ExperienceNavigationTapped value, $Res Function(_ExperienceNavigationTapped) then) = __$ExperienceNavigationTappedCopyWithImpl<$Res>;
+
   $Res call({Option<Experience> experienceOption});
 }
 
@@ -549,6 +549,7 @@ abstract class _ExperienceNavigationTapped implements NavigationActorEvent {
 /// @nodoc
 abstract class _$ProfileTappedCopyWith<$Res> {
   factory _$ProfileTappedCopyWith(_ProfileTapped value, $Res Function(_ProfileTapped) then) = __$ProfileTappedCopyWithImpl<$Res>;
+
   $Res call({Option<User> userOption, bool currentUserProfile});
 }
 
@@ -829,7 +830,6 @@ mixin _$NavigationActorState {
     required TResult Function() notificationsView,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? mainFeedView,
@@ -842,7 +842,6 @@ mixin _$NavigationActorState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_MainFeedView value) mainFeedView,
@@ -854,7 +853,6 @@ mixin _$NavigationActorState {
     required TResult Function(_NotificationsView value) notificationsView,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_MainFeedView value)? mainFeedView,
@@ -879,6 +877,7 @@ class _$NavigationActorStateCopyWithImpl<$Res> implements $NavigationActorStateC
   _$NavigationActorStateCopyWithImpl(this._value, this._then);
 
   final NavigationActorState _value;
+
   // ignore: unused_field
   final $Res Function(NavigationActorState) _then;
 }
@@ -1084,6 +1083,7 @@ abstract class _SearchView implements NavigationActorState {
 /// @nodoc
 abstract class _$ExperienceFormViewCopyWith<$Res> {
   factory _$ExperienceFormViewCopyWith(_ExperienceFormView value, $Res Function(_ExperienceFormView) then) = __$ExperienceFormViewCopyWithImpl<$Res>;
+
   $Res call({Option<Experience> experienceOption});
 }
 
@@ -1209,6 +1209,7 @@ abstract class _ExperienceFormView implements NavigationActorState {
 /// @nodoc
 abstract class _$NavigateExperienceViewCopyWith<$Res> {
   factory _$NavigateExperienceViewCopyWith(_NavigateExperienceView value, $Res Function(_NavigateExperienceView) then) = __$NavigateExperienceViewCopyWithImpl<$Res>;
+
   $Res call({Option<Experience> experienceOption});
 }
 
@@ -1334,6 +1335,7 @@ abstract class _NavigateExperienceView implements NavigationActorState {
 /// @nodoc
 abstract class _$ProfileViewCopyWith<$Res> {
   factory _$ProfileViewCopyWith(_ProfileView value, $Res Function(_ProfileView) then) = __$ProfileViewCopyWithImpl<$Res>;
+
   $Res call({Option<User> userOption, bool currentUserProfile});
 }
 

@@ -51,24 +51,16 @@ const $ItemDto = _$ItemDtoTearOff();
 /// @nodoc
 mixin _$ItemDto {
   String get id => throw _privateConstructorUsedError;
-  
   String get name => throw _privateConstructorUsedError;
-  
   String get description => throw _privateConstructorUsedError;
-  
   ItemCode get code => throw _privateConstructorUsedError;
-  
   int get value => throw _privateConstructorUsedError;
-  
   int get timeLimitInDays => throw _privateConstructorUsedError;
-  
   String get imageURL => throw _privateConstructorUsedError;
-  
   @ServerTimestampConverter()
   DateTime get boughtDate => throw _privateConstructorUsedError;
-  
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  
   @JsonKey(ignore: true)
   $ItemDtoCopyWith<ItemDto> get copyWith => throw _privateConstructorUsedError;
 }
@@ -327,23 +319,17 @@ abstract class _Item extends ItemDto {
   
   @override
   String get description => throw _privateConstructorUsedError;
-  
   @override
   ItemCode get code => throw _privateConstructorUsedError;
-  
   @override
   int get value => throw _privateConstructorUsedError;
-  
   @override
   int get timeLimitInDays => throw _privateConstructorUsedError;
-  
   @override
   String get imageURL => throw _privateConstructorUsedError;
-  
   @override
   @ServerTimestampConverter()
   DateTime get boughtDate => throw _privateConstructorUsedError;
-  
   @override
   @JsonKey(ignore: true)
   _$ItemCopyWith<_Item> get copyWith => throw _privateConstructorUsedError;

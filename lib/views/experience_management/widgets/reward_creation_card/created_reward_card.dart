@@ -22,6 +22,16 @@ class CreatedRewardCard extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
+            IconButton(
+              iconSize: 40,
+              icon: const Icon(
+                Icons.delete_forever,
+                color: WorldOnColors.red,
+              ),
+              onPressed: () => context.read<RewardsCreationBloc>().add(
+                    RewardsCreationEvent.removedReward(reward),
+                  ),
+            ),
             Image(
               image: reward.imageFile.fold(
                 () => CachedNetworkImageProvider(reward.imageURL),
@@ -53,16 +63,6 @@ class CreatedRewardCard extends StatelessWidget {
                 ],
               ),
             ),
-            IconButton(
-              iconSize: 40,
-              icon: const Icon(
-                Icons.delete_forever,
-                color: WorldOnColors.red,
-              ),
-              onPressed: () => context.read<RewardsCreationBloc>().add(
-                    RewardsCreationEvent.removedReward(reward),
-                  ),
-            )
           ],
         ),
       ),

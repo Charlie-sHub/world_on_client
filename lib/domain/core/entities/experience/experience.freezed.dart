@@ -91,9 +91,7 @@ mixin _$Experience {
   TagSet get tags => throw _privateConstructorUsedError;
 
   Set<Comment> get comments => throw _privateConstructorUsedError;
-
   Set<UniqueId> get likedBy => throw _privateConstructorUsedError;
-
   Set<UniqueId> get doneBy => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -512,15 +510,12 @@ abstract class _Experience extends Experience {
       required Set<Comment> comments,
       required Set<UniqueId> likedBy,
       required Set<UniqueId> doneBy}) = _$_Experience;
-
   const _Experience._() : super._();
 
   @override // TODO: Add dislike counters
   UniqueId get id => throw _privateConstructorUsedError;
-
   @override
   Name get title => throw _privateConstructorUsedError;
-
   @override
   EntityDescription get description => throw _privateConstructorUsedError;
 
@@ -532,34 +527,24 @@ abstract class _Experience extends Experience {
 
   @override
   Coordinates get coordinates => throw _privateConstructorUsedError;
-
   @override
   Location get location => throw _privateConstructorUsedError;
-
   @override
   User get creator => throw _privateConstructorUsedError;
-
   @override
   Difficulty get difficulty => throw _privateConstructorUsedError;
-
   @override
   PastDate get creationDate => throw _privateConstructorUsedError;
-
   @override
   PastDate get modificationDate => throw _privateConstructorUsedError;
-
   @override
   ObjectiveList get objectives => throw _privateConstructorUsedError;
-
   @override
   RewardSet get rewards => throw _privateConstructorUsedError;
-
   @override
   TagSet get tags => throw _privateConstructorUsedError;
-
   @override
   Set<Comment> get comments => throw _privateConstructorUsedError;
-
   @override
   Set<UniqueId> get likedBy => throw _privateConstructorUsedError;
 

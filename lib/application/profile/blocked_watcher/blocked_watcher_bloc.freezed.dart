@@ -40,7 +40,6 @@ mixin _$BlockedWatcherEvent {
     required TResult Function(Either<Failure, KtList<User>> failureOrUsers) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? watchBlockedUsersStarted,
@@ -48,14 +47,12 @@ mixin _$BlockedWatcherEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchBlockedUsersStarted value) watchBlockedUsersStarted,
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchBlockedUsersStarted value)? watchBlockedUsersStarted,
@@ -75,6 +72,7 @@ class _$BlockedWatcherEventCopyWithImpl<$Res> implements $BlockedWatcherEventCop
   _$BlockedWatcherEventCopyWithImpl(this._value, this._then);
 
   final BlockedWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(BlockedWatcherEvent) _then;
 }
@@ -82,6 +80,7 @@ class _$BlockedWatcherEventCopyWithImpl<$Res> implements $BlockedWatcherEventCop
 /// @nodoc
 abstract class _$WatchBlockedUsersStartedCopyWith<$Res> {
   factory _$WatchBlockedUsersStartedCopyWith(_WatchBlockedUsersStarted value, $Res Function(_WatchBlockedUsersStarted) then) = __$WatchBlockedUsersStartedCopyWithImpl<$Res>;
+
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -195,6 +194,7 @@ abstract class _WatchBlockedUsersStarted implements BlockedWatcherEvent {
 /// @nodoc
 abstract class _$ResultsReceivedCopyWith<$Res> {
   factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
+
   $Res call({Either<Failure, KtList<User>> failureOrUsers});
 }
 
@@ -334,7 +334,6 @@ mixin _$BlockedWatcherState {
     required TResult Function(Failure<dynamic> failure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -344,7 +343,6 @@ mixin _$BlockedWatcherState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -353,7 +351,6 @@ mixin _$BlockedWatcherState {
     required TResult Function(_LoadFailure value) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -375,6 +372,7 @@ class _$BlockedWatcherStateCopyWithImpl<$Res> implements $BlockedWatcherStateCop
   _$BlockedWatcherStateCopyWithImpl(this._value, this._then);
 
   final BlockedWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(BlockedWatcherState) _then;
 }
@@ -556,6 +554,7 @@ abstract class _LoadInProgress implements BlockedWatcherState {
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<User> blockedUsers});
 }
 
@@ -668,6 +667,7 @@ abstract class _LoadSuccess implements BlockedWatcherState {
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

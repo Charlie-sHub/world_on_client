@@ -40,7 +40,6 @@ mixin _$ProfileInterestsWatcherEvent {
     required TResult Function(Either<Failure, KtList<Tag>> failureOrTags) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? watchInterestsStarted,
@@ -48,14 +47,12 @@ mixin _$ProfileInterestsWatcherEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchInterestsStarted value) watchInterestsStarted,
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchInterestsStarted value)? watchInterestsStarted,
@@ -75,6 +72,7 @@ class _$ProfileInterestsWatcherEventCopyWithImpl<$Res> implements $ProfileIntere
   _$ProfileInterestsWatcherEventCopyWithImpl(this._value, this._then);
 
   final ProfileInterestsWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(ProfileInterestsWatcherEvent) _then;
 }
@@ -82,6 +80,7 @@ class _$ProfileInterestsWatcherEventCopyWithImpl<$Res> implements $ProfileIntere
 /// @nodoc
 abstract class _$WatchInterestsStartedCopyWith<$Res> {
   factory _$WatchInterestsStartedCopyWith(_WatchInterestsStarted value, $Res Function(_WatchInterestsStarted) then) = __$WatchInterestsStartedCopyWithImpl<$Res>;
+
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -195,6 +194,7 @@ abstract class _WatchInterestsStarted implements ProfileInterestsWatcherEvent {
 /// @nodoc
 abstract class _$ResultsReceivedCopyWith<$Res> {
   factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
+
   $Res call({Either<Failure, KtList<Tag>> failureOrTags});
 }
 
@@ -334,7 +334,6 @@ mixin _$ProfileInterestsWatcherState {
     required TResult Function(Failure<dynamic> failure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -344,7 +343,6 @@ mixin _$ProfileInterestsWatcherState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -353,7 +351,6 @@ mixin _$ProfileInterestsWatcherState {
     required TResult Function(_LoadFailure value) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -375,6 +372,7 @@ class _$ProfileInterestsWatcherStateCopyWithImpl<$Res> implements $ProfileIntere
   _$ProfileInterestsWatcherStateCopyWithImpl(this._value, this._then);
 
   final ProfileInterestsWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(ProfileInterestsWatcherState) _then;
 }
@@ -556,6 +554,7 @@ abstract class _LoadInProgress implements ProfileInterestsWatcherState {
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<Tag> interests});
 }
 
@@ -668,6 +667,7 @@ abstract class _LoadSuccess implements ProfileInterestsWatcherState {
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

@@ -36,7 +36,6 @@ mixin _$StoreDataFailure<T> {
     required TResult Function() cancelled,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? notEnoughCoins,
@@ -44,14 +43,12 @@ mixin _$StoreDataFailure<T> {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NotEnoughCoins<T> value) notEnoughCoins,
     required TResult Function(Cancelled<T> value) cancelled,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NotEnoughCoins<T> value)? notEnoughCoins,

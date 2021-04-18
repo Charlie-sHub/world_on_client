@@ -40,7 +40,6 @@ mixin _$SearchTagsByNameWatcherEvent {
     required TResult Function(Either<Failure, KtList<Tag>> failureOrTags) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(SearchTerm searchTerm)? watchTagsFoundByNameStarted,
@@ -48,14 +47,12 @@ mixin _$SearchTagsByNameWatcherEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchTagsFoundByNameStarted value) watchTagsFoundByNameStarted,
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchTagsFoundByNameStarted value)? watchTagsFoundByNameStarted,
@@ -75,6 +72,7 @@ class _$SearchTagsByNameWatcherEventCopyWithImpl<$Res> implements $SearchTagsByN
   _$SearchTagsByNameWatcherEventCopyWithImpl(this._value, this._then);
 
   final SearchTagsByNameWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(SearchTagsByNameWatcherEvent) _then;
 }
@@ -82,6 +80,7 @@ class _$SearchTagsByNameWatcherEventCopyWithImpl<$Res> implements $SearchTagsByN
 /// @nodoc
 abstract class _$WatchTagsFoundByNameStartedCopyWith<$Res> {
   factory _$WatchTagsFoundByNameStartedCopyWith(_WatchTagsFoundByNameStarted value, $Res Function(_WatchTagsFoundByNameStarted) then) = __$WatchTagsFoundByNameStartedCopyWithImpl<$Res>;
+
   $Res call({SearchTerm searchTerm});
 }
 
@@ -186,6 +185,7 @@ abstract class _WatchTagsFoundByNameStarted implements SearchTagsByNameWatcherEv
 /// @nodoc
 abstract class _$ResultsReceivedCopyWith<$Res> {
   factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
+
   $Res call({Either<Failure, KtList<Tag>> failureOrTags});
 }
 
@@ -325,7 +325,6 @@ mixin _$SearchTagsByNameWatcherState {
     required TResult Function(Failure<dynamic> failure) searchFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -335,7 +334,6 @@ mixin _$SearchTagsByNameWatcherState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -344,7 +342,6 @@ mixin _$SearchTagsByNameWatcherState {
     required TResult Function(_SearchFailure value) searchFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -366,6 +363,7 @@ class _$SearchTagsByNameWatcherStateCopyWithImpl<$Res> implements $SearchTagsByN
   _$SearchTagsByNameWatcherStateCopyWithImpl(this._value, this._then);
 
   final SearchTagsByNameWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(SearchTagsByNameWatcherState) _then;
 }
@@ -547,6 +545,7 @@ abstract class _SearchInProgress implements SearchTagsByNameWatcherState {
 /// @nodoc
 abstract class _$SearchSuccessCopyWith<$Res> {
   factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) = __$SearchSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<Tag> tagsFound});
 }
 
@@ -659,6 +658,7 @@ abstract class _SearchSuccess implements SearchTagsByNameWatcherState {
 /// @nodoc
 abstract class _$SearchFailureCopyWith<$Res> {
   factory _$SearchFailureCopyWith(_SearchFailure value, $Res Function(_SearchFailure) then) = __$SearchFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

@@ -73,6 +73,14 @@ class ObjectiveCreationForm extends StatelessWidget {
                   ),
                 ),
               ),
+              Text(
+                S.of(context).objectiveLocalization,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),
+              ),
               // This widget isn't constant for the same reason the map for the experience can't be constant either
               Padding(
                 padding: const EdgeInsets.all(5),

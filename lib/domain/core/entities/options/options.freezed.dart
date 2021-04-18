@@ -30,7 +30,6 @@ const $Options = _$OptionsTearOff();
 /// @nodoc
 mixin _$Options {
   UniqueId get id => throw _privateConstructorUsedError;
-
   String get languageCode => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -40,6 +39,7 @@ mixin _$Options {
 /// @nodoc
 abstract class $OptionsCopyWith<$Res> {
   factory $OptionsCopyWith(Options value, $Res Function(Options) then) = _$OptionsCopyWithImpl<$Res>;
+
   $Res call({UniqueId id, String languageCode});
 }
 
@@ -72,6 +72,7 @@ class _$OptionsCopyWithImpl<$Res> implements $OptionsCopyWith<$Res> {
 /// @nodoc
 abstract class _$OptionsCopyWith<$Res> implements $OptionsCopyWith<$Res> {
   factory _$OptionsCopyWith(_Options value, $Res Function(_Options) then) = __$OptionsCopyWithImpl<$Res>;
+
   @override
   $Res call({UniqueId id, String languageCode});
 }

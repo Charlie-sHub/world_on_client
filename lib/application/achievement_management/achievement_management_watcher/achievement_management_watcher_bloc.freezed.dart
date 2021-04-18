@@ -38,7 +38,6 @@ mixin _$AchievementManagementWatcherEvent {
     required TResult Function(Either<Failure, KtList<Achievement>> failureOrAchievements) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchAllAchievementsStarted,
@@ -46,14 +45,12 @@ mixin _$AchievementManagementWatcherEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchAllAchievementsStarted value) watchAllAchievementsStarted,
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchAllAchievementsStarted value)? watchAllAchievementsStarted,
@@ -74,6 +71,7 @@ class _$AchievementManagementWatcherEventCopyWithImpl<$Res> implements $Achievem
   _$AchievementManagementWatcherEventCopyWithImpl(this._value, this._then);
 
   final AchievementManagementWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(AchievementManagementWatcherEvent) _then;
 }
@@ -160,6 +158,7 @@ abstract class _WatchAllAchievementsStarted implements AchievementManagementWatc
 /// @nodoc
 abstract class _$ResultsReceivedCopyWith<$Res> {
   factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
+
   $Res call({Either<Failure, KtList<Achievement>> failureOrAchievements});
 }
 
@@ -300,7 +299,6 @@ mixin _$AchievementManagementWatcherState {
     required TResult Function(Failure<dynamic> failure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -310,7 +308,6 @@ mixin _$AchievementManagementWatcherState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -319,7 +316,6 @@ mixin _$AchievementManagementWatcherState {
     required TResult Function(_LoadFailure value) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -342,6 +338,7 @@ class _$AchievementManagementWatcherStateCopyWithImpl<$Res> implements $Achievem
   _$AchievementManagementWatcherStateCopyWithImpl(this._value, this._then);
 
   final AchievementManagementWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(AchievementManagementWatcherState) _then;
 }
@@ -523,6 +520,7 @@ abstract class _LoadInProgress implements AchievementManagementWatcherState {
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<Achievement> achievements});
 }
 
@@ -635,6 +633,7 @@ abstract class _LoadSuccess implements AchievementManagementWatcherState {
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

@@ -49,7 +49,6 @@ mixin _$ExperienceCardActorEvent {
     required TResult Function(Experience experience) dismissedExperienceFromLog,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Experience experience)? initialized,
@@ -58,7 +57,6 @@ mixin _$ExperienceCardActorEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
@@ -66,7 +64,6 @@ mixin _$ExperienceCardActorEvent {
     required TResult Function(_DismissedExperienceFromLog value) dismissedExperienceFromLog,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
@@ -83,6 +80,7 @@ mixin _$ExperienceCardActorEvent {
 /// @nodoc
 abstract class $ExperienceCardActorEventCopyWith<$Res> {
   factory $ExperienceCardActorEventCopyWith(ExperienceCardActorEvent value, $Res Function(ExperienceCardActorEvent) then) = _$ExperienceCardActorEventCopyWithImpl<$Res>;
+
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
@@ -93,6 +91,7 @@ class _$ExperienceCardActorEventCopyWithImpl<$Res> implements $ExperienceCardAct
   _$ExperienceCardActorEventCopyWithImpl(this._value, this._then);
 
   final ExperienceCardActorEvent _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceCardActorEvent) _then;
 
@@ -119,6 +118,7 @@ class _$ExperienceCardActorEventCopyWithImpl<$Res> implements $ExperienceCardAct
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> implements $ExperienceCardActorEventCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+
   @override
   $Res call({Experience experience});
 
@@ -233,6 +233,7 @@ abstract class _Initialized implements ExperienceCardActorEvent {
 /// @nodoc
 abstract class _$AddedExperienceToLogCopyWith<$Res> implements $ExperienceCardActorEventCopyWith<$Res> {
   factory _$AddedExperienceToLogCopyWith(_AddedExperienceToLog value, $Res Function(_AddedExperienceToLog) then) = __$AddedExperienceToLogCopyWithImpl<$Res>;
+
   @override
   $Res call({Experience experience});
 
@@ -347,6 +348,7 @@ abstract class _AddedExperienceToLog implements ExperienceCardActorEvent {
 /// @nodoc
 abstract class _$DismissedExperienceFromLogCopyWith<$Res> implements $ExperienceCardActorEventCopyWith<$Res> {
   factory _$DismissedExperienceFromLogCopyWith(_DismissedExperienceFromLog value, $Res Function(_DismissedExperienceFromLog) then) = __$DismissedExperienceFromLogCopyWithImpl<$Res>;
+
   @override
   $Res call({Experience experience});
 
@@ -516,7 +518,6 @@ mixin _$ExperienceCardActorState {
     required TResult Function(Failure<dynamic> failure) dismissalFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -530,7 +531,6 @@ mixin _$ExperienceCardActorState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -543,7 +543,6 @@ mixin _$ExperienceCardActorState {
     required TResult Function(_DismissalFailure value) dismissalFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -569,6 +568,7 @@ class _$ExperienceCardActorStateCopyWithImpl<$Res> implements $ExperienceCardAct
   _$ExperienceCardActorStateCopyWithImpl(this._value, this._then);
 
   final ExperienceCardActorState _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceCardActorState) _then;
 }
@@ -1091,6 +1091,7 @@ abstract class _AdditionSuccess implements ExperienceCardActorState {
 /// @nodoc
 abstract class _$AdditionFailureCopyWith<$Res> {
   factory _$AdditionFailureCopyWith(_AdditionFailure value, $Res Function(_AdditionFailure) then) = __$AdditionFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
@@ -1331,6 +1332,7 @@ abstract class _DismissalSuccess implements ExperienceCardActorState {
 /// @nodoc
 abstract class _$DismissalFailureCopyWith<$Res> {
   factory _$DismissalFailureCopyWith(_DismissalFailure value, $Res Function(_DismissalFailure) then) = __$DismissalFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

@@ -40,11 +40,8 @@ const $RewardDto = _$RewardDtoTearOff();
 /// @nodoc
 mixin _$RewardDto {
   String get id => throw _privateConstructorUsedError;
-
   String get name => throw _privateConstructorUsedError;
-
   String get description => throw _privateConstructorUsedError;
-
   String get imageURL => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -56,6 +53,7 @@ mixin _$RewardDto {
 /// @nodoc
 abstract class $RewardDtoCopyWith<$Res> {
   factory $RewardDtoCopyWith(RewardDto value, $Res Function(RewardDto) then) = _$RewardDtoCopyWithImpl<$Res>;
+
   $Res call({String id, String name, String description, String imageURL});
 }
 
@@ -98,6 +96,7 @@ class _$RewardDtoCopyWithImpl<$Res> implements $RewardDtoCopyWith<$Res> {
 /// @nodoc
 abstract class _$RewardDtoCopyWith<$Res> implements $RewardDtoCopyWith<$Res> {
   factory _$RewardDtoCopyWith(_RewardDto value, $Res Function(_RewardDto) then) = __$RewardDtoCopyWithImpl<$Res>;
+
   @override
   $Res call({String id, String name, String description, String imageURL});
 }

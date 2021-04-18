@@ -35,20 +35,17 @@ mixin _$ExperienceFinishActorEvent {
     required TResult Function(Experience experience) finishedExperience,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Experience experience)? finishedExperience,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_FinishedExperience value) finishedExperience,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FinishedExperience value)? finishedExperience,
@@ -244,7 +241,6 @@ mixin _$ExperienceFinishActorState {
     required TResult Function(Failure<dynamic> failure) finishFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -254,7 +250,6 @@ mixin _$ExperienceFinishActorState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -263,7 +258,6 @@ mixin _$ExperienceFinishActorState {
     required TResult Function(_FinishFailure value) finishFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,

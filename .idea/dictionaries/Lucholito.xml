@@ -6,6 +6,7 @@
       <w>confirmator</w>
       <w>daos</w>
       <w>dartz</w>
+      <w>deleteable</w>
       <w>denormalization</w>
       <w>dotenv</w>
       <w>firestore</w>
@@ -17,6 +18,7 @@
       <w>intl</w>
       <w>koji</w>
       <w>microdosing</w>
+      <w>orderable</w>
       <w>reorderable</w>
       <w>reso</w>
       <w>rxdart</w>

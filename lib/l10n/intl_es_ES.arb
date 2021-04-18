@@ -181,5 +181,6 @@
   "experienceButtonExplanation": "Crea actividades de la vida real que quieras compartir con el mundo",
   "created": "Creadas",
   "done": "Hechas",
-  "liked": "Gustadas"
+  "liked": "Gustadas",
+  "objectiveLocalization": "Localizacion del objetivo"
 }

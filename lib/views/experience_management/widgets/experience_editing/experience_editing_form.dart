@@ -81,14 +81,6 @@ class ExperienceEditingForm extends StatelessWidget {
                 ObjectiveCreationCard(
                   objectiveListOption: some(experience.objectives),
                 ),
-                if (state.showErrorMessages && !state.experience.objectives.isValid())
-                  Text(
-                    S.of(context).noObjectivesErrorMessage,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(color: Colors.red),
-                  )
-                else
-                  Container(),
                 RewardCreationCard(
                   rewardSetOption: some(experience.rewards),
                 ),

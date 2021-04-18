@@ -38,11 +38,9 @@ const $OptionsDto = _$OptionsDtoTearOff();
 /// @nodoc
 mixin _$OptionsDto {
   String get id => throw _privateConstructorUsedError;
-
   String get languageCode => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $OptionsDtoCopyWith<OptionsDto> get copyWith => throw _privateConstructorUsedError;
 }
@@ -50,6 +48,7 @@ mixin _$OptionsDto {
 /// @nodoc
 abstract class $OptionsDtoCopyWith<$Res> {
   factory $OptionsDtoCopyWith(OptionsDto value, $Res Function(OptionsDto) then) = _$OptionsDtoCopyWithImpl<$Res>;
+
   $Res call({String id, String languageCode});
 }
 
@@ -82,6 +81,7 @@ class _$OptionsDtoCopyWithImpl<$Res> implements $OptionsDtoCopyWith<$Res> {
 /// @nodoc
 abstract class _$OptionsDtoCopyWith<$Res> implements $OptionsDtoCopyWith<$Res> {
   factory _$OptionsDtoCopyWith(_OptionsDto value, $Res Function(_OptionsDto) then) = __$OptionsDtoCopyWithImpl<$Res>;
+
   @override
   $Res call({String id, String languageCode});
 }

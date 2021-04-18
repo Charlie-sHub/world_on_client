@@ -35,20 +35,17 @@ mixin _$UserActorEvent {
     required TResult Function(User user) deleted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? deleted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Deleted value) deleted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Deleted value)? deleted,
@@ -161,7 +158,7 @@ class _$_Deleted implements _Deleted {
   @override
   _$DeletedCopyWith<_Deleted> get copyWith =>
       __$DeletedCopyWithImpl<_Deleted>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -250,7 +247,6 @@ mixin _$UserActorState {
     required TResult Function() deletionSuccess,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -260,7 +256,6 @@ mixin _$UserActorState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -269,7 +264,6 @@ mixin _$UserActorState {
     required TResult Function(_DeletionSuccess value) deletionSuccess,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -550,7 +544,7 @@ class _$_DeletionFailure implements _DeletionFailure {
   @override
   _$DeletionFailureCopyWith<_DeletionFailure> get copyWith =>
       __$DeletionFailureCopyWithImpl<_DeletionFailure>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({

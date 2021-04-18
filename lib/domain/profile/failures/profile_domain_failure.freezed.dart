@@ -36,7 +36,6 @@ mixin _$ProfileDomainFailure<T> {
     required TResult Function() blockItself,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? followItself,
@@ -44,14 +43,12 @@ mixin _$ProfileDomainFailure<T> {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FollowItself<T> value) followItself,
     required TResult Function(BlockItself<T> value) blockItself,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FollowItself<T> value)? followItself,
@@ -71,6 +68,7 @@ class _$ProfileDomainFailureCopyWithImpl<T, $Res> implements $ProfileDomainFailu
   _$ProfileDomainFailureCopyWithImpl(this._value, this._then);
 
   final ProfileDomainFailure<T> _value;
+
   // ignore: unused_field
   final $Res Function(ProfileDomainFailure<T>) _then;
 }

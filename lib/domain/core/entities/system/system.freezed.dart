@@ -32,11 +32,8 @@ const $System = _$SystemTearOff();
 /// @nodoc
 mixin _$System {
   UniqueId get id => throw _privateConstructorUsedError;
-
   String get name => throw _privateConstructorUsedError;
-
   String get type => throw _privateConstructorUsedError;
-
   String get company => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -193,7 +190,6 @@ abstract class _System extends System {
 
   @override
   String get company => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
   _$SystemCopyWith<_System> get copyWith => throw _privateConstructorUsedError;

@@ -49,7 +49,6 @@ mixin _$FollowActorEvent {
     required TResult Function(User user) unFollowed,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? initialized,
@@ -58,7 +57,6 @@ mixin _$FollowActorEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
@@ -66,7 +64,6 @@ mixin _$FollowActorEvent {
     required TResult Function(_UnFollowed value) unFollowed,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
@@ -83,6 +80,7 @@ mixin _$FollowActorEvent {
 /// @nodoc
 abstract class $FollowActorEventCopyWith<$Res> {
   factory $FollowActorEventCopyWith(FollowActorEvent value, $Res Function(FollowActorEvent) then) = _$FollowActorEventCopyWithImpl<$Res>;
+
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -93,6 +91,7 @@ class _$FollowActorEventCopyWithImpl<$Res> implements $FollowActorEventCopyWith<
   _$FollowActorEventCopyWithImpl(this._value, this._then);
 
   final FollowActorEvent _value;
+
   // ignore: unused_field
   final $Res Function(FollowActorEvent) _then;
 
@@ -119,6 +118,7 @@ class _$FollowActorEventCopyWithImpl<$Res> implements $FollowActorEventCopyWith<
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> implements $FollowActorEventCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+
   @override
   $Res call({User user});
 
@@ -233,6 +233,7 @@ abstract class _Initialized implements FollowActorEvent {
 /// @nodoc
 abstract class _$FollowedCopyWith<$Res> implements $FollowActorEventCopyWith<$Res> {
   factory _$FollowedCopyWith(_Followed value, $Res Function(_Followed) then) = __$FollowedCopyWithImpl<$Res>;
+
   @override
   $Res call({User user});
 
@@ -347,6 +348,7 @@ abstract class _Followed implements FollowActorEvent {
 /// @nodoc
 abstract class _$UnFollowedCopyWith<$Res> implements $FollowActorEventCopyWith<$Res> {
   factory _$UnFollowedCopyWith(_UnFollowed value, $Res Function(_UnFollowed) then) = __$UnFollowedCopyWithImpl<$Res>;
+
   @override
   $Res call({User user});
 
@@ -516,7 +518,6 @@ mixin _$FollowActorState {
     required TResult Function(Failure<dynamic> failure) unFollowFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -530,7 +531,6 @@ mixin _$FollowActorState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -543,7 +543,6 @@ mixin _$FollowActorState {
     required TResult Function(_UnFollowFailure value) unFollowFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -569,6 +568,7 @@ class _$FollowActorStateCopyWithImpl<$Res> implements $FollowActorStateCopyWith<
   _$FollowActorStateCopyWithImpl(this._value, this._then);
 
   final FollowActorState _value;
+
   // ignore: unused_field
   final $Res Function(FollowActorState) _then;
 }
@@ -1091,6 +1091,7 @@ abstract class _FollowSuccess implements FollowActorState {
 /// @nodoc
 abstract class _$FollowFailureCopyWith<$Res> {
   factory _$FollowFailureCopyWith(_FollowFailure value, $Res Function(_FollowFailure) then) = __$FollowFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
@@ -1331,6 +1332,7 @@ abstract class _UnFollowSuccess implements FollowActorState {
 /// @nodoc
 abstract class _$UnFollowFailureCopyWith<$Res> {
   factory _$UnFollowFailureCopyWith(_UnFollowFailure value, $Res Function(_UnFollowFailure) then) = __$UnFollowFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

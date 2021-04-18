@@ -102,7 +102,6 @@ mixin _$ExperienceEditingFormEvent {
     required TResult Function() submitted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Experience experience)? initialized,
@@ -119,7 +118,6 @@ mixin _$ExperienceEditingFormEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
@@ -135,7 +133,6 @@ mixin _$ExperienceEditingFormEvent {
     required TResult Function(_Submitted value) submitted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
@@ -1914,10 +1911,8 @@ abstract class _ExperienceEditingFormState implements ExperienceEditingFormState
 
   @override
   Experience get experience => throw _privateConstructorUsedError;
-
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
-
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
 

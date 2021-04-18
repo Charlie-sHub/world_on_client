@@ -38,7 +38,6 @@ mixin _$TagManagementWatcherEvent {
     required TResult Function(Either<Failure, KtList<Tag>> failureOrTags) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchAllTagsStarted,
@@ -46,14 +45,12 @@ mixin _$TagManagementWatcherEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchAllTagsStarted value) watchAllTagsStarted,
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchAllTagsStarted value)? watchAllTagsStarted,
@@ -226,7 +223,7 @@ class _$_ResultsReceived implements _ResultsReceived {
   @override
   _$ResultsReceivedCopyWith<_ResultsReceived> get copyWith =>
       __$ResultsReceivedCopyWithImpl<_ResultsReceived>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -319,7 +316,6 @@ mixin _$TagManagementWatcherState {
     required TResult Function(Failure<dynamic> failure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -329,7 +325,6 @@ mixin _$TagManagementWatcherState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -338,7 +333,6 @@ mixin _$TagManagementWatcherState {
     required TResult Function(_LoadFailure value) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -611,7 +605,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -743,7 +737,7 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({

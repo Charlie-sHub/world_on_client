@@ -54,7 +54,6 @@ mixin _$ProfileExperiencesWatcherEvent {
     required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) experiencesReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? watchExperiencesDoneStarted,
@@ -64,7 +63,6 @@ mixin _$ProfileExperiencesWatcherEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchExperiencesDoneStarted value) watchExperiencesDoneStarted,
@@ -73,7 +71,6 @@ mixin _$ProfileExperiencesWatcherEvent {
     required TResult Function(_ExperiencesReceived value) experiencesReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchExperiencesDoneStarted value)? watchExperiencesDoneStarted,
@@ -95,6 +92,7 @@ class _$ProfileExperiencesWatcherEventCopyWithImpl<$Res> implements $ProfileExpe
   _$ProfileExperiencesWatcherEventCopyWithImpl(this._value, this._then);
 
   final ProfileExperiencesWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(ProfileExperiencesWatcherEvent) _then;
 }
@@ -102,6 +100,7 @@ class _$ProfileExperiencesWatcherEventCopyWithImpl<$Res> implements $ProfileExpe
 /// @nodoc
 abstract class _$WatchExperiencesDoneStartedCopyWith<$Res> {
   factory _$WatchExperiencesDoneStartedCopyWith(_WatchExperiencesDoneStarted value, $Res Function(_WatchExperiencesDoneStarted) then) = __$WatchExperiencesDoneStartedCopyWithImpl<$Res>;
+
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -223,6 +222,7 @@ abstract class _WatchExperiencesDoneStarted implements ProfileExperiencesWatcher
 /// @nodoc
 abstract class _$WatchExperiencesLikedStartedCopyWith<$Res> {
   factory _$WatchExperiencesLikedStartedCopyWith(_WatchExperiencesLikedStarted value, $Res Function(_WatchExperiencesLikedStarted) then) = __$WatchExperiencesLikedStartedCopyWithImpl<$Res>;
+
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -345,6 +345,7 @@ abstract class _WatchExperiencesLikedStarted implements ProfileExperiencesWatche
 /// @nodoc
 abstract class _$WatchExperiencesCreatedStartedCopyWith<$Res> {
   factory _$WatchExperiencesCreatedStartedCopyWith(_WatchExperiencesCreatedStarted value, $Res Function(_WatchExperiencesCreatedStarted) then) = __$WatchExperiencesCreatedStartedCopyWithImpl<$Res>;
+
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -467,6 +468,7 @@ abstract class _WatchExperiencesCreatedStarted implements ProfileExperiencesWatc
 /// @nodoc
 abstract class _$ExperiencesReceivedCopyWith<$Res> {
   factory _$ExperiencesReceivedCopyWith(_ExperiencesReceived value, $Res Function(_ExperiencesReceived) then) = __$ExperiencesReceivedCopyWithImpl<$Res>;
+
   $Res call({Either<Failure, KtList<Experience>> failureOrExperiences});
 }
 
@@ -615,7 +617,6 @@ mixin _$ProfileExperiencesWatcherState {
     required TResult Function(Failure<dynamic> failure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -625,7 +626,6 @@ mixin _$ProfileExperiencesWatcherState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -634,7 +634,6 @@ mixin _$ProfileExperiencesWatcherState {
     required TResult Function(_LoadFailure value) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -656,6 +655,7 @@ class _$ProfileExperiencesWatcherStateCopyWithImpl<$Res> implements $ProfileExpe
   _$ProfileExperiencesWatcherStateCopyWithImpl(this._value, this._then);
 
   final ProfileExperiencesWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(ProfileExperiencesWatcherState) _then;
 }
@@ -837,6 +837,7 @@ abstract class _LoadInProgress implements ProfileExperiencesWatcherState {
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<Experience> experiences});
 }
 
@@ -949,6 +950,7 @@ abstract class _LoadSuccess implements ProfileExperiencesWatcherState {
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

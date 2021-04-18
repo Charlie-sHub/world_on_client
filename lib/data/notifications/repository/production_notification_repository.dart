@@ -59,10 +59,10 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
           ),
         )
         .map(
-      (experiences) {
-        if (experiences.isNotEmpty) {
+      (_notifications) {
+        if (_notifications.isNotEmpty) {
           return right<Failure, KtList<Notification>>(
-            experiences.toImmutableList(),
+            _notifications.toImmutableList(),
           );
         } else {
           return left<Failure, KtList<Notification>>(
@@ -110,7 +110,11 @@ class ProductionNotificationRepository implements NotificationRepositoryInterfac
   Future<Either<Failure, Unit>> sendNotification(Notification notification) async {
     try {
       final _notificationDto = NotificationDto.fromDomain(notification);
-      await _firestore.notificationCollection.doc(notification.id.getOrCrash()).set(
+      await _firestore.notificationCollection
+          .doc(
+            notification.id.getOrCrash(),
+          )
+          .set(
             _notificationDto.toJson(),
           );
       return right(unit);

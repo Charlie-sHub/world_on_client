@@ -11,7 +11,7 @@ class ObjectiveList extends ValueObject<KtList<Objective>> {
   final Either<ValueFailure<KtList<Objective>>, KtList<Objective>> value;
 
   // Just a value that made sense at the time
-  static const maxLength = 20;
+  static const maxLength = 10;
 
   factory ObjectiveList(KtList<Objective> input) => ObjectiveList._(
         validateNotEmptyList(input).flatMap(

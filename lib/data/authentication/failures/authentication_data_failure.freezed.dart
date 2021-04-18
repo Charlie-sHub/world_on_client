@@ -36,7 +36,6 @@ mixin _$AuthenticationDataFailure<T> {
     required TResult Function() unregisteredUser,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? invalidCredentials,
@@ -44,14 +43,12 @@ mixin _$AuthenticationDataFailure<T> {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(InvalidCredentials<T> value) invalidCredentials,
     required TResult Function(UnregisteredUser<T> value) unregisteredUser,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidCredentials<T> value)? invalidCredentials,
@@ -71,6 +68,7 @@ class _$AuthenticationDataFailureCopyWithImpl<T, $Res> implements $Authenticatio
   _$AuthenticationDataFailureCopyWithImpl(this._value, this._then);
 
   final AuthenticationDataFailure<T> _value;
+
   // ignore: unused_field
   final $Res Function(AuthenticationDataFailure<T>) _then;
 }

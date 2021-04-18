@@ -58,7 +58,7 @@ class TagManagementPage extends HookWidget {
     TextEditingController _textEditingController,
   ) =>
       state.failureOrSuccessOption.fold(
-          () {},
+        () {},
         (either) => either.fold(
           (failure) => FlushbarHelper.createError(
             message: failure.maybeMap(

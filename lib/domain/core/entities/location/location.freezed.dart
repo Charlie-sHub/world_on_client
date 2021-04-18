@@ -48,6 +48,7 @@ mixin _$Location {
 /// @nodoc
 abstract class $LocationCopyWith<$Res> {
   factory $LocationCopyWith(Location value, $Res Function(Location) then) = _$LocationCopyWithImpl<$Res>;
+
   $Res call({UniqueId id, String city, String country, String postalCode, Set<Experience> experiences});
 }
 
@@ -95,6 +96,7 @@ class _$LocationCopyWithImpl<$Res> implements $LocationCopyWith<$Res> {
 /// @nodoc
 abstract class _$LocationCopyWith<$Res> implements $LocationCopyWith<$Res> {
   factory _$LocationCopyWith(_Location value, $Res Function(_Location) then) = __$LocationCopyWithImpl<$Res>;
+
   @override
   $Res call({UniqueId id, String city, String country, String postalCode, Set<Experience> experiences});
 }

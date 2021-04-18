@@ -38,7 +38,6 @@ mixin _$WatchPurchasableItemsEvent {
     required TResult Function(Either<Failure, KtList<Item>> failureOrItems) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchPurchasableItemsStarted,
@@ -46,14 +45,12 @@ mixin _$WatchPurchasableItemsEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchPurchasableItemsStarted value) watchPurchasableItemsStarted,
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchPurchasableItemsStarted value)? watchPurchasableItemsStarted,
@@ -301,7 +298,6 @@ mixin _$WatchPurchasableItemsState {
     required TResult Function(Failure<dynamic> failure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -311,7 +307,6 @@ mixin _$WatchPurchasableItemsState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -320,7 +315,6 @@ mixin _$WatchPurchasableItemsState {
     required TResult Function(_LoadFailure value) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,

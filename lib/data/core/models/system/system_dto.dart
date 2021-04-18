@@ -34,7 +34,7 @@ class SystemDto with _$SystemDto {
   factory SystemDto.fromJson(Map<String, dynamic> json) => _$SystemDtoFromJson(json);
 
   factory SystemDto.fromFirestore(DocumentSnapshot document) => SystemDto.fromJson(
-    document.data()!,
+        document.data()!,
       ).copyWith(
         id: document.id,
       );

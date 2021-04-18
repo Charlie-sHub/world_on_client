@@ -15,19 +15,17 @@ class NotificationCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: Border(
-        bottom: BorderSide(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(3),
+        side: BorderSide(
           color: _getColorByNotificationType(notification.type),
-          width: 6,
+          width: 3,
         ),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(5),
-            child: UserImage(user: notification.sender),
-          ),
+          UserImage(user: notification.sender),
           Expanded(
             child: Center(
               child: AutoSizeText(

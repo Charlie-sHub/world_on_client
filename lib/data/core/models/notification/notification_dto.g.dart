@@ -8,7 +8,6 @@ part of 'notification_dto.dart';
 
 _$_NotificationDto _$_$_NotificationDtoFromJson(Map<String, dynamic> json) {
   return _$_NotificationDto(
-    id: json['id'] as String,
     sender: UserDto.fromJson(json['sender'] as Map<String, dynamic>),
     receiver: UserDto.fromJson(json['receiver'] as Map<String, dynamic>),
     description: json['description'] as String,
@@ -19,7 +18,6 @@ _$_NotificationDto _$_$_NotificationDtoFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$_$_NotificationDtoToJson(_$_NotificationDto instance) => <String, dynamic>{
-      'id': instance.id,
       'sender': instance.sender.toJson(),
       'receiver': instance.receiver.toJson(),
       'description': instance.description,

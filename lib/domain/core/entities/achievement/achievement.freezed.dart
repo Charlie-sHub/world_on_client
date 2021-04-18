@@ -81,6 +81,7 @@ mixin _$Achievement {
 /// @nodoc
 abstract class $AchievementCopyWith<$Res> {
   factory $AchievementCopyWith(Achievement value, $Res Function(Achievement) then) = _$AchievementCopyWithImpl<$Res>;
+
   $Res call(
       {UniqueId id,
       Name name,
@@ -175,6 +176,7 @@ class _$AchievementCopyWithImpl<$Res> implements $AchievementCopyWith<$Res> {
 /// @nodoc
 abstract class _$AchievementCopyWith<$Res> implements $AchievementCopyWith<$Res> {
   factory _$AchievementCopyWith(_Achievement value, $Res Function(_Achievement) then) = __$AchievementCopyWithImpl<$Res>;
+
   @override
   $Res call(
       {UniqueId id,
@@ -367,40 +369,29 @@ abstract class _Achievement extends Achievement {
       required PastDate creationDate,
       required PastDate modificationDate,
       required TagSet tags}) = _$_Achievement;
-
   const _Achievement._() : super._();
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
-
   @override
   Name get name => throw _privateConstructorUsedError;
-
   @override
   EntityDescription get description => throw _privateConstructorUsedError;
-
   @override // TODO: Make a value object and validator for image URLs from World On's back-end
 // Maybe Firestore will make that unnecessary
   String get imageURL => throw _privateConstructorUsedError;
-
   @override
   Option<File> get imageFile => throw _privateConstructorUsedError;
-
   @override
   String get type => throw _privateConstructorUsedError;
-
   @override
   int get requisite => throw _privateConstructorUsedError;
-
   @override // This will probably be reworked in the future to accommodate different kinds of achievements
   ExperiencePoints get experiencePoints => throw _privateConstructorUsedError;
-
   @override
   UniqueId get creatorId => throw _privateConstructorUsedError;
-
   @override
   PastDate get creationDate => throw _privateConstructorUsedError;
-
   @override
   PastDate get modificationDate => throw _privateConstructorUsedError;
 

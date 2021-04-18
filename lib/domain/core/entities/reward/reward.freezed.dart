@@ -33,13 +33,9 @@ const $Reward = _$RewardTearOff();
 /// @nodoc
 mixin _$Reward {
   UniqueId get id => throw _privateConstructorUsedError;
-
   Name get name => throw _privateConstructorUsedError;
-
   EntityDescription get description => throw _privateConstructorUsedError;
-
   String get imageURL => throw _privateConstructorUsedError;
-
   Option<File> get imageFile => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -49,6 +45,7 @@ mixin _$Reward {
 /// @nodoc
 abstract class $RewardCopyWith<$Res> {
   factory $RewardCopyWith(Reward value, $Res Function(Reward) then) = _$RewardCopyWithImpl<$Res>;
+
   $Res call({UniqueId id, Name name, EntityDescription description, String imageURL, Option<File> imageFile});
 }
 
@@ -96,6 +93,7 @@ class _$RewardCopyWithImpl<$Res> implements $RewardCopyWith<$Res> {
 /// @nodoc
 abstract class _$RewardCopyWith<$Res> implements $RewardCopyWith<$Res> {
   factory _$RewardCopyWith(_Reward value, $Res Function(_Reward) then) = __$RewardCopyWithImpl<$Res>;
+
   @override
   $Res call({UniqueId id, Name name, EntityDescription description, String imageURL, Option<File> imageFile});
 }
@@ -201,10 +199,8 @@ abstract class _Reward extends Reward {
 
   @override
   String get imageURL => throw _privateConstructorUsedError;
-
   @override
   Option<File> get imageFile => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
   _$RewardCopyWith<_Reward> get copyWith => throw _privateConstructorUsedError;

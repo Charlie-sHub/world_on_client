@@ -46,7 +46,6 @@ mixin _$CommentFormEvent {
     required TResult Function() submitted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Comment> commentOption, UniqueId experienceId)? initialized,
@@ -55,7 +54,6 @@ mixin _$CommentFormEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
@@ -63,7 +61,6 @@ mixin _$CommentFormEvent {
     required TResult Function(_Submitted value) submitted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
@@ -84,6 +81,7 @@ class _$CommentFormEventCopyWithImpl<$Res> implements $CommentFormEventCopyWith<
   _$CommentFormEventCopyWithImpl(this._value, this._then);
 
   final CommentFormEvent _value;
+
   // ignore: unused_field
   final $Res Function(CommentFormEvent) _then;
 }
@@ -91,6 +89,7 @@ class _$CommentFormEventCopyWithImpl<$Res> implements $CommentFormEventCopyWith<
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+
   $Res call({Option<Comment> commentOption, UniqueId experienceId});
 }
 
@@ -211,6 +210,7 @@ abstract class _Initialized implements CommentFormEvent {
 /// @nodoc
 abstract class _$ContentChangedCopyWith<$Res> {
   factory _$ContentChangedCopyWith(_ContentChanged value, $Res Function(_ContentChanged) then) = __$ContentChangedCopyWithImpl<$Res>;
+
   $Res call({String content});
 }
 
@@ -437,6 +437,7 @@ mixin _$CommentFormState {
 /// @nodoc
 abstract class $CommentFormStateCopyWith<$Res> {
   factory $CommentFormStateCopyWith(CommentFormState value, $Res Function(CommentFormState) then) = _$CommentFormStateCopyWithImpl<$Res>;
+
   $Res call({Comment comment, bool showErrorMessages, bool isEditing, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
 
   $CommentCopyWith<$Res> get comment;
@@ -447,6 +448,7 @@ class _$CommentFormStateCopyWithImpl<$Res> implements $CommentFormStateCopyWith<
   _$CommentFormStateCopyWithImpl(this._value, this._then);
 
   final CommentFormState _value;
+
   // ignore: unused_field
   final $Res Function(CommentFormState) _then;
 
@@ -493,6 +495,7 @@ class _$CommentFormStateCopyWithImpl<$Res> implements $CommentFormStateCopyWith<
 /// @nodoc
 abstract class _$CommentFormStateCopyWith<$Res> implements $CommentFormStateCopyWith<$Res> {
   factory _$CommentFormStateCopyWith(_CommentFormState value, $Res Function(_CommentFormState) then) = __$CommentFormStateCopyWithImpl<$Res>;
+
   @override
   $Res call({Comment comment, bool showErrorMessages, bool isEditing, bool isSubmitting, Option<Either<Failure, Unit>> failureOrSuccessOption});
 
@@ -595,10 +598,8 @@ abstract class _CommentFormState implements CommentFormState {
 
   @override
   Comment get comment => throw _privateConstructorUsedError;
-
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
-
   @override
   bool get isEditing => throw _privateConstructorUsedError;
 

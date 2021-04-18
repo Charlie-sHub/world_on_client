@@ -48,21 +48,15 @@ const $CommentDto = _$CommentDtoTearOff();
 /// @nodoc
 mixin _$CommentDto {
   String get id => throw _privateConstructorUsedError;
-
   UserDto get poster => throw _privateConstructorUsedError;
-
   String get experienceId => throw _privateConstructorUsedError;
-
   String get content => throw _privateConstructorUsedError;
-
   @ServerTimestampConverter()
   DateTime get creationDate => throw _privateConstructorUsedError;
-
   @ServerTimestampConverter()
   DateTime get modificationDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $CommentDtoCopyWith<CommentDto> get copyWith => throw _privateConstructorUsedError;
 }
@@ -70,6 +64,7 @@ mixin _$CommentDto {
 /// @nodoc
 abstract class $CommentDtoCopyWith<$Res> {
   factory $CommentDtoCopyWith(CommentDto value, $Res Function(CommentDto) then) = _$CommentDtoCopyWithImpl<$Res>;
+
   $Res call({String id, UserDto poster, String experienceId, String content, @ServerTimestampConverter() DateTime creationDate, @ServerTimestampConverter() DateTime modificationDate});
 
   $UserDtoCopyWith<$Res> get poster;
@@ -131,6 +126,7 @@ class _$CommentDtoCopyWithImpl<$Res> implements $CommentDtoCopyWith<$Res> {
 /// @nodoc
 abstract class _$CommentDtoCopyWith<$Res> implements $CommentDtoCopyWith<$Res> {
   factory _$CommentDtoCopyWith(_CommentDto value, $Res Function(_CommentDto) then) = __$CommentDtoCopyWithImpl<$Res>;
+
   @override
   $Res call({String id, UserDto poster, String experienceId, String content, @ServerTimestampConverter() DateTime creationDate, @ServerTimestampConverter() DateTime modificationDate});
 

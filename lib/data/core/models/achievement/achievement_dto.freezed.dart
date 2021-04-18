@@ -58,31 +58,20 @@ const $AchievementDto = _$AchievementDtoTearOff();
 /// @nodoc
 mixin _$AchievementDto {
   String get id => throw _privateConstructorUsedError;
-
   String get name => throw _privateConstructorUsedError;
-
   String get description => throw _privateConstructorUsedError;
-
   String get imageURL => throw _privateConstructorUsedError;
-
   String get type => throw _privateConstructorUsedError;
-
   int get requisite => throw _privateConstructorUsedError;
-
   int get experiencePoints => throw _privateConstructorUsedError;
-
   String get creatorId => throw _privateConstructorUsedError;
-
   @ServerTimestampConverter()
   DateTime get creationDate => throw _privateConstructorUsedError;
-
   @ServerTimestampConverter()
   DateTime get modificationDate => throw _privateConstructorUsedError;
-
   Set<String> get tagNames => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $AchievementDtoCopyWith<AchievementDto> get copyWith => throw _privateConstructorUsedError;
 }
@@ -90,6 +79,7 @@ mixin _$AchievementDto {
 /// @nodoc
 abstract class $AchievementDtoCopyWith<$Res> {
   factory $AchievementDtoCopyWith(AchievementDto value, $Res Function(AchievementDto) then) = _$AchievementDtoCopyWithImpl<$Res>;
+
   $Res call(
       {String id,
       String name,
@@ -109,6 +99,7 @@ class _$AchievementDtoCopyWithImpl<$Res> implements $AchievementDtoCopyWith<$Res
   _$AchievementDtoCopyWithImpl(this._value, this._then);
 
   final AchievementDto _value;
+
   // ignore: unused_field
   final $Res Function(AchievementDto) _then;
 
@@ -178,6 +169,7 @@ class _$AchievementDtoCopyWithImpl<$Res> implements $AchievementDtoCopyWith<$Res
 /// @nodoc
 abstract class _$AchievementDtoCopyWith<$Res> implements $AchievementDtoCopyWith<$Res> {
   factory _$AchievementDtoCopyWith(_AchievementDto value, $Res Function(_AchievementDto) then) = __$AchievementDtoCopyWithImpl<$Res>;
+
   @override
   $Res call(
       {String id,
@@ -387,20 +379,15 @@ abstract class _AchievementDto extends AchievementDto {
 
   @override
   String get type => throw _privateConstructorUsedError;
-
   @override
   int get requisite => throw _privateConstructorUsedError;
-
   @override
   int get experiencePoints => throw _privateConstructorUsedError;
-
   @override
   String get creatorId => throw _privateConstructorUsedError;
-
   @override
   @ServerTimestampConverter()
   DateTime get creationDate => throw _privateConstructorUsedError;
-
   @override
   @ServerTimestampConverter()
   DateTime get modificationDate => throw _privateConstructorUsedError;

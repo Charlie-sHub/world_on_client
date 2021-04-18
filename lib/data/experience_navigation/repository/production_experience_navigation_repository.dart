@@ -255,9 +255,11 @@ class ProductionExperienceNavigationRepository implements ExperienceNavigationRe
                       (_tag) => _tag.id.getOrCrash(),
                     )
                     .asList();
-                return _interestIds.any(
+                final _containsId = _interestIds.any(
                   (_id) => _experienceTagIds.contains(_id),
                 );
+                final _isCreator = _experience.creator.id == _currentUser.id;
+                return _containsId && !_isCreator;
               },
             );
             if (_filteredExperienceList.isNotEmpty) {

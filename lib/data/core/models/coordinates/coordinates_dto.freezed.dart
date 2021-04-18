@@ -38,11 +38,9 @@ const $CoordinatesDto = _$CoordinatesDtoTearOff();
 /// @nodoc
 mixin _$CoordinatesDto {
   double get latitude => throw _privateConstructorUsedError;
-
   double get longitude => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $CoordinatesDtoCopyWith<CoordinatesDto> get copyWith => throw _privateConstructorUsedError;
 }
@@ -50,6 +48,7 @@ mixin _$CoordinatesDto {
 /// @nodoc
 abstract class $CoordinatesDtoCopyWith<$Res> {
   factory $CoordinatesDtoCopyWith(CoordinatesDto value, $Res Function(CoordinatesDto) then) = _$CoordinatesDtoCopyWithImpl<$Res>;
+
   $Res call({double latitude, double longitude});
 }
 
@@ -58,6 +57,7 @@ class _$CoordinatesDtoCopyWithImpl<$Res> implements $CoordinatesDtoCopyWith<$Res
   _$CoordinatesDtoCopyWithImpl(this._value, this._then);
 
   final CoordinatesDto _value;
+
   // ignore: unused_field
   final $Res Function(CoordinatesDto) _then;
 
@@ -82,6 +82,7 @@ class _$CoordinatesDtoCopyWithImpl<$Res> implements $CoordinatesDtoCopyWith<$Res
 /// @nodoc
 abstract class _$CoordinatesDtoCopyWith<$Res> implements $CoordinatesDtoCopyWith<$Res> {
   factory _$CoordinatesDtoCopyWith(_CoordinatesDto value, $Res Function(_CoordinatesDto) then) = __$CoordinatesDtoCopyWithImpl<$Res>;
+
   @override
   $Res call({double latitude, double longitude});
 }

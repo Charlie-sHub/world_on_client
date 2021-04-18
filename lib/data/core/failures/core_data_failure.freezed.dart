@@ -73,7 +73,6 @@ mixin _$CoreDataFailure<T> {
     required TResult Function(Name name) nameAlreadyInUse,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String errorString)? serverError,
@@ -86,7 +85,6 @@ mixin _$CoreDataFailure<T> {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ServerError<T> value) serverError,
@@ -98,7 +96,6 @@ mixin _$CoreDataFailure<T> {
     required TResult Function(NameAlreadyInUse<T> value) nameAlreadyInUse,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerError<T> value)? serverError,
@@ -123,6 +120,7 @@ class _$CoreDataFailureCopyWithImpl<T, $Res> implements $CoreDataFailureCopyWith
   _$CoreDataFailureCopyWithImpl(this._value, this._then);
 
   final CoreDataFailure<T> _value;
+
   // ignore: unused_field
   final $Res Function(CoreDataFailure<T>) _then;
 }
@@ -130,6 +128,7 @@ class _$CoreDataFailureCopyWithImpl<T, $Res> implements $CoreDataFailureCopyWith
 /// @nodoc
 abstract class $ServerErrorCopyWith<T, $Res> {
   factory $ServerErrorCopyWith(ServerError<T> value, $Res Function(ServerError<T>) then) = _$ServerErrorCopyWithImpl<T, $Res>;
+
   $Res call({String errorString});
 }
 
@@ -353,6 +352,7 @@ abstract class NotFoundError<T> implements CoreDataFailure<T> {
 /// @nodoc
 abstract class $CacheErrorCopyWith<T, $Res> {
   factory $CacheErrorCopyWith(CacheError<T> value, $Res Function(CacheError<T>) then) = _$CacheErrorCopyWithImpl<T, $Res>;
+
   $Res call({String errorString});
 }
 
@@ -477,6 +477,7 @@ abstract class CacheError<T> implements CoreDataFailure<T> {
 /// @nodoc
 abstract class $GeoLocationErrorCopyWith<T, $Res> {
   factory $GeoLocationErrorCopyWith(GeoLocationError<T> value, $Res Function(GeoLocationError<T>) then) = _$GeoLocationErrorCopyWithImpl<T, $Res>;
+
   $Res call({String errorString});
 }
 
@@ -601,6 +602,7 @@ abstract class GeoLocationError<T> implements CoreDataFailure<T> {
 /// @nodoc
 abstract class $UsernameAlreadyInUseCopyWith<T, $Res> {
   factory $UsernameAlreadyInUseCopyWith(UsernameAlreadyInUse<T> value, $Res Function(UsernameAlreadyInUse<T>) then) = _$UsernameAlreadyInUseCopyWithImpl<T, $Res>;
+
   $Res call({Name username});
 }
 
@@ -725,6 +727,7 @@ abstract class UsernameAlreadyInUse<T> implements CoreDataFailure<T> {
 /// @nodoc
 abstract class $EmailAlreadyInUseCopyWith<T, $Res> {
   factory $EmailAlreadyInUseCopyWith(EmailAlreadyInUse<T> value, $Res Function(EmailAlreadyInUse<T>) then) = _$EmailAlreadyInUseCopyWithImpl<T, $Res>;
+
   $Res call({EmailAddress email});
 }
 
@@ -849,6 +852,7 @@ abstract class EmailAlreadyInUse<T> implements CoreDataFailure<T> {
 /// @nodoc
 abstract class $NameAlreadyInUseCopyWith<T, $Res> {
   factory $NameAlreadyInUseCopyWith(NameAlreadyInUse<T> value, $Res Function(NameAlreadyInUse<T>) then) = _$NameAlreadyInUseCopyWithImpl<T, $Res>;
+
   $Res call({Name name});
 }
 

@@ -70,13 +70,9 @@ const $ExperienceDto = _$ExperienceDtoTearOff();
 /// @nodoc
 mixin _$ExperienceDto {
   String get id => throw _privateConstructorUsedError;
-
   String get title => throw _privateConstructorUsedError;
-
   String get description => throw _privateConstructorUsedError;
-
   Set<String> get imageURLs => throw _privateConstructorUsedError;
-
   CoordinatesDto get coordinates => throw _privateConstructorUsedError;
 
   LocationDto get location => throw _privateConstructorUsedError;
@@ -553,39 +549,28 @@ abstract class _ExperienceDto extends ExperienceDto {
 
   @override
   CoordinatesDto get coordinates => throw _privateConstructorUsedError;
-
   @override
   LocationDto get location => throw _privateConstructorUsedError;
-
   @override
   String get creatorId => throw _privateConstructorUsedError;
-
   @override
   UserDto get creator => throw _privateConstructorUsedError;
-
   @override
   int get difficulty => throw _privateConstructorUsedError;
-
   @override
   @ServerTimestampConverter()
   DateTime get creationDate => throw _privateConstructorUsedError;
-
   @override
   @ServerTimestampConverter()
   DateTime get modificationDate => throw _privateConstructorUsedError;
-
   @override
   List<ObjectiveDto> get objectives => throw _privateConstructorUsedError;
-
   @override
   Set<RewardDto> get rewards => throw _privateConstructorUsedError;
-
   @override
   Set<TagDto> get tags => throw _privateConstructorUsedError;
-
   @override // Probably shouldn't be part of the DTO, as in Firestore it's a sub document of the experience document
   Set<CommentDto> get comments => throw _privateConstructorUsedError;
-
   @override
   Set<String> get likedBy => throw _privateConstructorUsedError;
 

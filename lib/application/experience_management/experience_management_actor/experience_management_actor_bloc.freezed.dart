@@ -42,7 +42,6 @@ mixin _$ExperienceManagementActorEvent {
     required TResult Function(Experience experience) deleted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Experience experience)? checkCreator,
@@ -50,14 +49,12 @@ mixin _$ExperienceManagementActorEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CheckCreator value) checkCreator,
     required TResult Function(_Deleted value) deleted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CheckCreator value)? checkCreator,
@@ -376,7 +373,6 @@ mixin _$ExperienceManagementActorState {
     required TResult Function(Failure<dynamic> failure) deletionFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -388,7 +384,6 @@ mixin _$ExperienceManagementActorState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -399,7 +394,6 @@ mixin _$ExperienceManagementActorState {
     required TResult Function(_DeletionFailure value) deletionFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,

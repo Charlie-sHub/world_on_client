@@ -40,11 +40,8 @@ const $SystemDto = _$SystemDtoTearOff();
 /// @nodoc
 mixin _$SystemDto {
   String get id => throw _privateConstructorUsedError;
-
   String get name => throw _privateConstructorUsedError;
-
   String get type => throw _privateConstructorUsedError;
-
   String get company => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -57,7 +54,6 @@ mixin _$SystemDto {
 abstract class $SystemDtoCopyWith<$Res> {
   factory $SystemDtoCopyWith(SystemDto value, $Res Function(SystemDto) then) =
       _$SystemDtoCopyWithImpl<$Res>;
-
   $Res call({String id, String name, String type, String company});
 }
 
@@ -102,7 +98,6 @@ abstract class _$SystemDtoCopyWith<$Res> implements $SystemDtoCopyWith<$Res> {
   factory _$SystemDtoCopyWith(
           _SystemDto value, $Res Function(_SystemDto) then) =
       __$SystemDtoCopyWithImpl<$Res>;
-
   @override
   $Res call({String id, String name, String type, String company});
 }
@@ -150,8 +145,7 @@ class __$SystemDtoCopyWithImpl<$Res> extends _$SystemDtoCopyWithImpl<$Res>
 class _$_SystemDto extends _SystemDto {
   const _$_SystemDto({required this.id, required this.name, required this.type, required this.company}) : super._();
 
-  factory _$_SystemDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_SystemDtoFromJson(json);
+  factory _$_SystemDto.fromJson(Map<String, dynamic> json) => _$_$_SystemDtoFromJson(json);
 
   @override
   final String id;

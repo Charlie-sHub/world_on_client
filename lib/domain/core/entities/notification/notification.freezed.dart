@@ -64,9 +64,11 @@ mixin _$Notification {
 /// @nodoc
 abstract class $NotificationCopyWith<$Res> {
   factory $NotificationCopyWith(Notification value, $Res Function(Notification) then) = _$NotificationCopyWithImpl<$Res>;
+
   $Res call({UniqueId id, User sender, User receiver, EntityDescription description, bool seen, PastDate creationDate, NotificationType type});
 
   $UserCopyWith<$Res> get sender;
+
   $UserCopyWith<$Res> get receiver;
 }
 
@@ -138,6 +140,7 @@ class _$NotificationCopyWithImpl<$Res> implements $NotificationCopyWith<$Res> {
 /// @nodoc
 abstract class _$NotificationCopyWith<$Res> implements $NotificationCopyWith<$Res> {
   factory _$NotificationCopyWith(_Notification value, $Res Function(_Notification) then) = __$NotificationCopyWithImpl<$Res>;
+
   @override
   $Res call({UniqueId id, User sender, User receiver, EntityDescription description, bool seen, PastDate creationDate, NotificationType type});
 
@@ -262,27 +265,21 @@ abstract class _Notification extends Notification {
       required bool seen,
       required PastDate creationDate,
       required NotificationType type}) = _$_Notification;
-
   const _Notification._() : super._();
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
-
   @override
   User get sender => throw _privateConstructorUsedError;
-
   @override // TODO: Is the receiver necessary for the domain entity?
 // The receiver will always be the logged in user
 // Relation is needed in the database of course, but not really beyond that
 // Could be left to just the id
   User get receiver => throw _privateConstructorUsedError;
-
   @override
   EntityDescription get description => throw _privateConstructorUsedError;
-
   @override
   bool get seen => throw _privateConstructorUsedError;
-
   @override
   PastDate get creationDate => throw _privateConstructorUsedError;
 

@@ -31,20 +31,17 @@ mixin _$AuthenticationDomainFailure<T> {
     required TResult Function() cancelledByUser,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cancelledByUser,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CancelledByUser<T> value) cancelledByUser,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CancelledByUser<T> value)? cancelledByUser,
@@ -63,6 +60,7 @@ class _$AuthenticationDomainFailureCopyWithImpl<T, $Res> implements $Authenticat
   _$AuthenticationDomainFailureCopyWithImpl(this._value, this._then);
 
   final AuthenticationDomainFailure<T> _value;
+
   // ignore: unused_field
   final $Res Function(AuthenticationDomainFailure<T>) _then;
 }

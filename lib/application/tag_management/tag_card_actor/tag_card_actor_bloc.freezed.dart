@@ -49,7 +49,6 @@ mixin _$TagCardActorEvent {
     required TResult Function(Tag tag) addedToInterests,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Tag tag)? initialized,
@@ -58,7 +57,6 @@ mixin _$TagCardActorEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
@@ -66,7 +64,6 @@ mixin _$TagCardActorEvent {
     required TResult Function(_AddedToInterests value) addedToInterests,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
@@ -184,7 +181,7 @@ class _$_Initialized implements _Initialized {
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
       __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -311,7 +308,7 @@ class _$_DismissedFromInterests implements _DismissedFromInterests {
   _$DismissedFromInterestsCopyWith<_DismissedFromInterests> get copyWith =>
       __$DismissedFromInterestsCopyWithImpl<_DismissedFromInterests>(
           this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -437,7 +434,7 @@ class _$_AddedToInterests implements _AddedToInterests {
   @override
   _$AddedToInterestsCopyWith<_AddedToInterests> get copyWith =>
       __$AddedToInterestsCopyWithImpl<_AddedToInterests>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -556,7 +553,6 @@ mixin _$TagCardActorState {
     required TResult Function(Failure<dynamic> failure) dismissalFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -570,7 +566,6 @@ mixin _$TagCardActorState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -583,7 +578,6 @@ mixin _$TagCardActorState {
     required TResult Function(_DismissalFailure value) dismissalFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -1227,7 +1221,7 @@ class _$_AdditionFailure implements _AdditionFailure {
   @override
   _$AdditionFailureCopyWith<_AdditionFailure> get copyWith =>
       __$AdditionFailureCopyWithImpl<_AdditionFailure>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -1484,7 +1478,7 @@ class _$_DismissalFailure implements _DismissalFailure {
   @override
   _$DismissalFailureCopyWith<_DismissalFailure> get copyWith =>
       __$DismissalFailureCopyWithImpl<_DismissalFailure>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({

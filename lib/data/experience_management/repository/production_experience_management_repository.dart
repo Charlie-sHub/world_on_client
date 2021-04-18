@@ -14,7 +14,7 @@ import 'package:worldon/data/core/models/experience/experience_fields.dart';
 import 'package:worldon/domain/core/entities/experience/experience.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
 import 'package:worldon/domain/core/entities/reward/reward.dart';
-import 'package:worldon/domain/core/validation/objects/objective_set.dart';
+import 'package:worldon/domain/core/validation/objects/objective_list.dart';
 import 'package:worldon/domain/core/validation/objects/reward_set.dart';
 import 'package:worldon/domain/core/validation/objects/unique_id.dart';
 import 'package:worldon/domain/experience_management/repository/experience_management_repository_interface.dart';
@@ -33,7 +33,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
     try {
       final _cloudStorageService = getIt<CloudStorageService>();
       final _rewardSet = <Reward>{};
-      final _objectiveList = <Objective>{};
+      final _objectiveList = <Objective>[];
       await uploadImages(
         experience,
         _cloudStorageService,
@@ -79,13 +79,14 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
     try {
       final _cloudStorageService = getIt<CloudStorageService>();
       final _rewardSet = <Reward>{};
-      final _objectiveList = <Objective>{};
+      final _objectiveList = <Objective>[];
       await uploadImages(
         experience,
         _cloudStorageService,
         _rewardSet,
         _objectiveList,
       );
+      // Adding the original rewards and objectives
       _rewardSet.addAll(experience.rewards.getOrCrash().dart);
       _objectiveList.addAll(experience.objectives.getOrCrash().dart);
       final _experienceDto = ExperienceDto.fromDomain(
@@ -132,7 +133,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
     Experience experience,
     CloudStorageService _cloudStorageService,
     Set<Reward> _rewardSet,
-    Set<Objective> _objectiveList,
+    List<Objective> _objectiveList,
   ) async {
     final _imageAssets = experience.imageAssetsOption.getOrElse(() => []);
     for (final _imageAsset in _imageAssets) {
@@ -145,7 +146,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
       experience.imageURLs.add(_imageURL);
     }
     for (final _reward in experience.rewards.getOrCrash().dart) {
-      _reward.imageFile.fold(
+      await _reward.imageFile.fold(
         () {},
         (_imageFile) async {
           final _imageURL = await _cloudStorageService.uploadFileImage(
@@ -159,7 +160,7 @@ class ProductionExperienceManagementRepository implements ExperienceManagementRe
       );
     }
     for (final _objective in experience.objectives.getOrCrash().dart) {
-      _objective.imageFile.fold(
+      await _objective.imageFile.fold(
         () {},
         (_imageFile) async {
           final _imageURL = await _cloudStorageService.uploadFileImage(

@@ -47,7 +47,6 @@ mixin _$ProfileUsersWatcherEvent {
     required TResult Function(Either<Failure, KtList<User>> failureOrUsers) usersReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? watchFollowedUsersStarted,
@@ -56,7 +55,6 @@ mixin _$ProfileUsersWatcherEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchFollowedUsersStarted value) watchFollowedUsersStarted,
@@ -64,7 +62,6 @@ mixin _$ProfileUsersWatcherEvent {
     required TResult Function(_UsersReceived value) usersReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchFollowedUsersStarted value)? watchFollowedUsersStarted,
@@ -85,6 +82,7 @@ class _$ProfileUsersWatcherEventCopyWithImpl<$Res> implements $ProfileUsersWatch
   _$ProfileUsersWatcherEventCopyWithImpl(this._value, this._then);
 
   final ProfileUsersWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(ProfileUsersWatcherEvent) _then;
 }
@@ -92,6 +90,7 @@ class _$ProfileUsersWatcherEventCopyWithImpl<$Res> implements $ProfileUsersWatch
 /// @nodoc
 abstract class _$WatchFollowedUsersStartedCopyWith<$Res> {
   factory _$WatchFollowedUsersStartedCopyWith(_WatchFollowedUsersStarted value, $Res Function(_WatchFollowedUsersStarted) then) = __$WatchFollowedUsersStartedCopyWithImpl<$Res>;
+
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -209,6 +208,7 @@ abstract class _WatchFollowedUsersStarted implements ProfileUsersWatcherEvent {
 /// @nodoc
 abstract class _$WatchFollowingUsersStartedCopyWith<$Res> {
   factory _$WatchFollowingUsersStartedCopyWith(_WatchFollowingUsersStarted value, $Res Function(_WatchFollowingUsersStarted) then) = __$WatchFollowingUsersStartedCopyWithImpl<$Res>;
+
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -326,6 +326,7 @@ abstract class _WatchFollowingUsersStarted implements ProfileUsersWatcherEvent {
 /// @nodoc
 abstract class _$UsersReceivedCopyWith<$Res> {
   factory _$UsersReceivedCopyWith(_UsersReceived value, $Res Function(_UsersReceived) then) = __$UsersReceivedCopyWithImpl<$Res>;
+
   $Res call({Either<Failure, KtList<User>> failureOrUsers});
 }
 
@@ -469,7 +470,6 @@ mixin _$ProfileUsersWatcherState {
     required TResult Function(Failure<dynamic> failure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -479,7 +479,6 @@ mixin _$ProfileUsersWatcherState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -488,7 +487,6 @@ mixin _$ProfileUsersWatcherState {
     required TResult Function(_LoadFailure value) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -510,6 +508,7 @@ class _$ProfileUsersWatcherStateCopyWithImpl<$Res> implements $ProfileUsersWatch
   _$ProfileUsersWatcherStateCopyWithImpl(this._value, this._then);
 
   final ProfileUsersWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(ProfileUsersWatcherState) _then;
 }
@@ -691,6 +690,7 @@ abstract class _LoadInProgress implements ProfileUsersWatcherState {
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<User> users});
 }
 
@@ -803,6 +803,7 @@ abstract class _LoadSuccess implements ProfileUsersWatcherState {
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

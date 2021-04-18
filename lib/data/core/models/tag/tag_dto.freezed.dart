@@ -46,19 +46,14 @@ const $TagDto = _$TagDtoTearOff();
 /// @nodoc
 mixin _$TagDto {
   String get id => throw _privateConstructorUsedError;
-
   String get name => throw _privateConstructorUsedError;
-
   String get creatorId => throw _privateConstructorUsedError;
-
   @ServerTimestampConverter()
   DateTime get creationDate => throw _privateConstructorUsedError;
-
   @ServerTimestampConverter()
   DateTime get modificationDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $TagDtoCopyWith<TagDto> get copyWith => throw _privateConstructorUsedError;
 }
@@ -178,8 +173,7 @@ class _$_TagDto extends _TagDto {
   const _$_TagDto({required this.id, required this.name, required this.creatorId, @ServerTimestampConverter() required this.creationDate, @ServerTimestampConverter() required this.modificationDate})
       : super._();
 
-  factory _$_TagDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_TagDtoFromJson(json);
+  factory _$_TagDto.fromJson(Map<String, dynamic> json) => _$_$_TagDtoFromJson(json);
 
   @override
   final String id;
@@ -245,28 +239,22 @@ abstract class _TagDto extends TagDto {
       required String creatorId,
       @ServerTimestampConverter() required DateTime creationDate,
       @ServerTimestampConverter() required DateTime modificationDate}) = _$_TagDto;
-
   const _TagDto._() : super._();
 
   factory _TagDto.fromJson(Map<String, dynamic> json) = _$_TagDto.fromJson;
-  
+
   @override
   String get id => throw _privateConstructorUsedError;
-
   @override
   String get name => throw _privateConstructorUsedError;
-
   @override
   String get creatorId => throw _privateConstructorUsedError;
-
   @override
   @ServerTimestampConverter()
   DateTime get creationDate => throw _privateConstructorUsedError;
-
   @override
   @ServerTimestampConverter()
   DateTime get modificationDate => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
   _$TagDtoCopyWith<_TagDto> get copyWith => throw _privateConstructorUsedError;

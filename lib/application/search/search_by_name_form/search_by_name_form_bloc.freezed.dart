@@ -38,7 +38,6 @@ mixin _$SearchByNameFormEvent {
     required TResult Function() submitted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String searchTermString)? searchTermChanged,
@@ -46,14 +45,12 @@ mixin _$SearchByNameFormEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SearchTermChanged value) searchTermChanged,
     required TResult Function(_Submitted value) submitted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SearchTermChanged value)? searchTermChanged,
@@ -73,6 +70,7 @@ class _$SearchByNameFormEventCopyWithImpl<$Res> implements $SearchByNameFormEven
   _$SearchByNameFormEventCopyWithImpl(this._value, this._then);
 
   final SearchByNameFormEvent _value;
+
   // ignore: unused_field
   final $Res Function(SearchByNameFormEvent) _then;
 }
@@ -80,6 +78,7 @@ class _$SearchByNameFormEventCopyWithImpl<$Res> implements $SearchByNameFormEven
 /// @nodoc
 abstract class _$SearchTermChangedCopyWith<$Res> {
   factory _$SearchTermChangedCopyWith(_SearchTermChanged value, $Res Function(_SearchTermChanged) then) = __$SearchTermChangedCopyWithImpl<$Res>;
+
   $Res call({String searchTermString});
 }
 
@@ -295,6 +294,7 @@ mixin _$SearchByNameFormState {
 /// @nodoc
 abstract class $SearchByNameFormStateCopyWith<$Res> {
   factory $SearchByNameFormStateCopyWith(SearchByNameFormState value, $Res Function(SearchByNameFormState) then) = _$SearchByNameFormStateCopyWithImpl<$Res>;
+
   $Res call({SearchTerm searchTerm, bool showErrorMessages, bool isSubmitting, Option<ValueFailure> failureOrSuccessOption});
 }
 
@@ -303,6 +303,7 @@ class _$SearchByNameFormStateCopyWithImpl<$Res> implements $SearchByNameFormStat
   _$SearchByNameFormStateCopyWithImpl(this._value, this._then);
 
   final SearchByNameFormState _value;
+
   // ignore: unused_field
   final $Res Function(SearchByNameFormState) _then;
 
@@ -337,6 +338,7 @@ class _$SearchByNameFormStateCopyWithImpl<$Res> implements $SearchByNameFormStat
 /// @nodoc
 abstract class _$SearchByNameFormStateCopyWith<$Res> implements $SearchByNameFormStateCopyWith<$Res> {
   factory _$SearchByNameFormStateCopyWith(_SearchByNameFormState value, $Res Function(_SearchByNameFormState) then) = __$SearchByNameFormStateCopyWithImpl<$Res>;
+
   @override
   $Res call({SearchTerm searchTerm, bool showErrorMessages, bool isSubmitting, Option<ValueFailure> failureOrSuccessOption});
 }
@@ -411,7 +413,7 @@ class _$_SearchByNameFormState implements _SearchByNameFormState {
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(failureOrSuccessOption);
-
+  
   @JsonKey(ignore: true)
   @override
   _$SearchByNameFormStateCopyWith<_SearchByNameFormState> get copyWith => __$SearchByNameFormStateCopyWithImpl<_SearchByNameFormState>(this, _$identity);

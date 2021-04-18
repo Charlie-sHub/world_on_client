@@ -131,7 +131,6 @@ mixin _$ValueFailure<T> {
     required TResult Function(T failedValue, int maxLength) collectionExceedsLength,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? nullInput,
@@ -152,7 +151,6 @@ mixin _$ValueFailure<T> {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NullInput<T> value) nullInput,
@@ -172,7 +170,6 @@ mixin _$ValueFailure<T> {
     required TResult Function(CollectionExceedsLength<T> value) collectionExceedsLength,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NullInput<T> value)? nullInput,
@@ -239,7 +236,7 @@ class _$NullInput<T> implements NullInput<T> {
 
   @override
   int get hashCode => runtimeType.hashCode;
-  
+
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -1493,7 +1490,7 @@ class _$StringExceedsLength<T> implements StringExceedsLength<T> {
             (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)) &&
             (identical(other.maxLength, maxLength) || const DeepCollectionEquality().equals(other.maxLength, maxLength)));
   }
-
+  
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue) ^ const DeepCollectionEquality().hash(maxLength);
 
@@ -2448,7 +2445,7 @@ class _$CollectionExceedsLength<T> implements CollectionExceedsLength<T> {
             (identical(other.failedValue, failedValue) || const DeepCollectionEquality().equals(other.failedValue, failedValue)) &&
             (identical(other.maxLength, maxLength) || const DeepCollectionEquality().equals(other.maxLength, maxLength)));
   }
-  
+
   @override
   int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue) ^ const DeepCollectionEquality().hash(maxLength);
 

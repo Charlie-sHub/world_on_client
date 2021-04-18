@@ -48,14 +48,12 @@ mixin _$ExperienceNavigationWatcherEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_AllObjectivesAccomplished value) allObjectivesAccomplished,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
@@ -76,6 +74,7 @@ class _$ExperienceNavigationWatcherEventCopyWithImpl<$Res> implements $Experienc
   _$ExperienceNavigationWatcherEventCopyWithImpl(this._value, this._then);
 
   final ExperienceNavigationWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceNavigationWatcherEvent) _then;
 }
@@ -83,6 +82,7 @@ class _$ExperienceNavigationWatcherEventCopyWithImpl<$Res> implements $Experienc
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+
   $Res call({Option<Experience> experienceOption});
 }
 
@@ -188,6 +188,7 @@ abstract class _Initialized implements ExperienceNavigationWatcherEvent {
 /// @nodoc
 abstract class _$AllObjectivesAccomplishedCopyWith<$Res> {
   factory _$AllObjectivesAccomplishedCopyWith(_AllObjectivesAccomplished value, $Res Function(_AllObjectivesAccomplished) then) = __$AllObjectivesAccomplishedCopyWithImpl<$Res>;
+
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
@@ -336,7 +337,6 @@ mixin _$ExperienceNavigationWatcherState {
     required TResult Function(Experience experience) finishExperience,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -346,7 +346,6 @@ mixin _$ExperienceNavigationWatcherState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -355,7 +354,6 @@ mixin _$ExperienceNavigationWatcherState {
     required TResult Function(_FinishExperience value) finishExperience,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -378,6 +376,7 @@ class _$ExperienceNavigationWatcherStateCopyWithImpl<$Res> implements $Experienc
   _$ExperienceNavigationWatcherStateCopyWithImpl(this._value, this._then);
 
   final ExperienceNavigationWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(ExperienceNavigationWatcherState) _then;
 }
@@ -559,6 +558,7 @@ abstract class _NoExperience implements ExperienceNavigationWatcherState {
 /// @nodoc
 abstract class _$NavigatingExperienceCopyWith<$Res> {
   factory _$NavigatingExperienceCopyWith(_NavigatingExperience value, $Res Function(_NavigatingExperience) then) = __$NavigatingExperienceCopyWithImpl<$Res>;
+
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
@@ -680,6 +680,7 @@ abstract class _NavigatingExperience implements ExperienceNavigationWatcherState
 /// @nodoc
 abstract class _$FinishExperienceCopyWith<$Res> {
   factory _$FinishExperienceCopyWith(_FinishExperience value, $Res Function(_FinishExperience) then) = __$FinishExperienceCopyWithImpl<$Res>;
+
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;

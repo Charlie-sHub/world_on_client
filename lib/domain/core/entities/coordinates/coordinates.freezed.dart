@@ -30,7 +30,6 @@ const $Coordinates = _$CoordinatesTearOff();
 /// @nodoc
 mixin _$Coordinates {
   Latitude get latitude => throw _privateConstructorUsedError;
-
   Longitude get longitude => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -40,6 +39,7 @@ mixin _$Coordinates {
 /// @nodoc
 abstract class $CoordinatesCopyWith<$Res> {
   factory $CoordinatesCopyWith(Coordinates value, $Res Function(Coordinates) then) = _$CoordinatesCopyWithImpl<$Res>;
+
   $Res call({Latitude latitude, Longitude longitude});
 }
 
@@ -72,6 +72,7 @@ class _$CoordinatesCopyWithImpl<$Res> implements $CoordinatesCopyWith<$Res> {
 /// @nodoc
 abstract class _$CoordinatesCopyWith<$Res> implements $CoordinatesCopyWith<$Res> {
   factory _$CoordinatesCopyWith(_Coordinates value, $Res Function(_Coordinates) then) = __$CoordinatesCopyWithImpl<$Res>;
+
   @override
   $Res call({Latitude latitude, Longitude longitude});
 }

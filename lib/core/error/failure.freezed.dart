@@ -89,7 +89,6 @@ mixin _$Failure<T> {
     required TResult Function(ProfileDomainFailure<T> profileDomainFailure) profileDomain,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AuthenticationDomainFailure<T> authenticationDomainFailure)? authenticationDomain,
@@ -104,7 +103,6 @@ mixin _$Failure<T> {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_AuthenticationDomain<T> value) authenticationDomain,
@@ -118,7 +116,6 @@ mixin _$Failure<T> {
     required TResult Function(_ProfileDomain<T> value) profileDomain,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AuthenticationDomain<T> value)? authenticationDomain,

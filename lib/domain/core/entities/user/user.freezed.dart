@@ -88,63 +88,34 @@ const $User = _$UserTearOff();
 /// @nodoc
 mixin _$User {
   UniqueId get id => throw _privateConstructorUsedError;
-
   Name get name => throw _privateConstructorUsedError;
-
   Name get username => throw _privateConstructorUsedError;
-
   Password get password => throw _privateConstructorUsedError;
-
   EmailAddress get email => throw _privateConstructorUsedError;
-
   PastDate get birthday => throw _privateConstructorUsedError;
-
   EntityDescription get description => throw _privateConstructorUsedError;
-
   String get imageURL => throw _privateConstructorUsedError;
-
   Option<File?> get imageFileOption => throw _privateConstructorUsedError;
-
   UserLevel get level => throw _privateConstructorUsedError;
-
   ExperiencePoints get experiencePoints => throw _privateConstructorUsedError;
-
   bool get privacy => throw _privateConstructorUsedError;
-
   bool get adminPowers => throw _privateConstructorUsedError;
-
   bool get enabled => throw _privateConstructorUsedError;
-
   PastDate get lastLogin => throw _privateConstructorUsedError;
-
   PastDate get creationDate => throw _privateConstructorUsedError;
-
   PastDate get modificationDate => throw _privateConstructorUsedError;
-
   Options get options => throw _privateConstructorUsedError;
-
   Set<UniqueId> get blockedUsersIds => throw _privateConstructorUsedError;
-
   Set<UniqueId> get followedUsersIds => throw _privateConstructorUsedError;
-
   Set<UniqueId> get interestsIds => throw _privateConstructorUsedError;
-
   Set<UniqueId> get achievementsIds => throw _privateConstructorUsedError;
-
   Set<UniqueId> get experiencesDoneIds => throw _privateConstructorUsedError;
-
   Set<UniqueId> get experiencesLikedIds => throw _privateConstructorUsedError;
-
   Set<UniqueId> get experiencesToDoIds => throw _privateConstructorUsedError;
-
   Set<Device> get devices => throw _privateConstructorUsedError;
-
   Set<System> get systems => throw _privateConstructorUsedError;
-
   Set<Item> get items => throw _privateConstructorUsedError;
-
   int get coins => throw _privateConstructorUsedError;
-
   int get followersAmount => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -739,7 +710,7 @@ class _$_User extends _User {
       const DeepCollectionEquality().hash(items) ^
       const DeepCollectionEquality().hash(coins) ^
       const DeepCollectionEquality().hash(followersAmount);
-  
+
   @JsonKey(ignore: true)
   @override
   _$UserCopyWith<_User> get copyWith => __$UserCopyWithImpl<_User>(this, _$identity);
@@ -777,99 +748,68 @@ abstract class _User extends User {
       required Set<Item> items,
       required int coins,
       required int followersAmount}) = _$_User;
-
   const _User._() : super._();
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
-
   @override
   Name get name => throw _privateConstructorUsedError;
-
   @override
   Name get username => throw _privateConstructorUsedError;
-
   @override
   Password get password => throw _privateConstructorUsedError;
-
   @override
   EmailAddress get email => throw _privateConstructorUsedError;
-
   @override
   PastDate get birthday => throw _privateConstructorUsedError;
-
   @override
   EntityDescription get description => throw _privateConstructorUsedError;
-
   @override
   String get imageURL => throw _privateConstructorUsedError;
-
   @override
   Option<File?> get imageFileOption => throw _privateConstructorUsedError;
-
   @override
   UserLevel get level => throw _privateConstructorUsedError;
-
   @override
   ExperiencePoints get experiencePoints => throw _privateConstructorUsedError;
-
   @override
   bool get privacy => throw _privateConstructorUsedError;
-
   @override
   bool get adminPowers => throw _privateConstructorUsedError;
-
   @override
   bool get enabled => throw _privateConstructorUsedError;
-
   @override
   PastDate get lastLogin => throw _privateConstructorUsedError;
-
   @override
   PastDate get creationDate => throw _privateConstructorUsedError;
-
   @override
   PastDate get modificationDate => throw _privateConstructorUsedError;
-
   @override
   Options get options => throw _privateConstructorUsedError;
-
   @override
   Set<UniqueId> get blockedUsersIds => throw _privateConstructorUsedError;
-
   @override
   Set<UniqueId> get followedUsersIds => throw _privateConstructorUsedError;
-
   @override
   Set<UniqueId> get interestsIds => throw _privateConstructorUsedError;
-
   @override
   Set<UniqueId> get achievementsIds => throw _privateConstructorUsedError;
-
   @override
   Set<UniqueId> get experiencesDoneIds => throw _privateConstructorUsedError;
-
   @override
   Set<UniqueId> get experiencesLikedIds => throw _privateConstructorUsedError;
-
   @override
   Set<UniqueId> get experiencesToDoIds => throw _privateConstructorUsedError;
-
   @override
   Set<Device> get devices => throw _privateConstructorUsedError;
-
   @override
   Set<System> get systems => throw _privateConstructorUsedError;
-
   @override
   Set<Item> get items => throw _privateConstructorUsedError;
-
   @override
   int get coins => throw _privateConstructorUsedError;
-
   @override
   int get followersAmount => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
   _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;

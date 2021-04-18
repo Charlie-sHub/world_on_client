@@ -49,7 +49,6 @@ mixin _$BlockActorEvent {
     required TResult Function(User user) unBlocked,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? initialized,
@@ -58,7 +57,6 @@ mixin _$BlockActorEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
@@ -66,7 +64,6 @@ mixin _$BlockActorEvent {
     required TResult Function(_UnBlocked value) unBlocked,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
@@ -83,6 +80,7 @@ mixin _$BlockActorEvent {
 /// @nodoc
 abstract class $BlockActorEventCopyWith<$Res> {
   factory $BlockActorEventCopyWith(BlockActorEvent value, $Res Function(BlockActorEvent) then) = _$BlockActorEventCopyWithImpl<$Res>;
+
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -93,6 +91,7 @@ class _$BlockActorEventCopyWithImpl<$Res> implements $BlockActorEventCopyWith<$R
   _$BlockActorEventCopyWithImpl(this._value, this._then);
 
   final BlockActorEvent _value;
+
   // ignore: unused_field
   final $Res Function(BlockActorEvent) _then;
 
@@ -119,6 +118,7 @@ class _$BlockActorEventCopyWithImpl<$Res> implements $BlockActorEventCopyWith<$R
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> implements $BlockActorEventCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+
   @override
   $Res call({User user});
 
@@ -233,6 +233,7 @@ abstract class _Initialized implements BlockActorEvent {
 /// @nodoc
 abstract class _$BlockedCopyWith<$Res> implements $BlockActorEventCopyWith<$Res> {
   factory _$BlockedCopyWith(_Blocked value, $Res Function(_Blocked) then) = __$BlockedCopyWithImpl<$Res>;
+
   @override
   $Res call({User user});
 
@@ -347,6 +348,7 @@ abstract class _Blocked implements BlockActorEvent {
 /// @nodoc
 abstract class _$UnBlockedCopyWith<$Res> implements $BlockActorEventCopyWith<$Res> {
   factory _$UnBlockedCopyWith(_UnBlocked value, $Res Function(_UnBlocked) then) = __$UnBlockedCopyWithImpl<$Res>;
+
   @override
   $Res call({User user});
 
@@ -516,7 +518,6 @@ mixin _$BlockActorState {
     required TResult Function(Failure<dynamic> failure) unBlockFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -530,7 +531,6 @@ mixin _$BlockActorState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -543,7 +543,6 @@ mixin _$BlockActorState {
     required TResult Function(_UnBlockFailure value) unBlockFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -569,6 +568,7 @@ class _$BlockActorStateCopyWithImpl<$Res> implements $BlockActorStateCopyWith<$R
   _$BlockActorStateCopyWithImpl(this._value, this._then);
 
   final BlockActorState _value;
+
   // ignore: unused_field
   final $Res Function(BlockActorState) _then;
 }
@@ -1091,6 +1091,7 @@ abstract class _BlockSuccess implements BlockActorState {
 /// @nodoc
 abstract class _$BlockFailureCopyWith<$Res> {
   factory _$BlockFailureCopyWith(_BlockFailure value, $Res Function(_BlockFailure) then) = __$BlockFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
@@ -1331,6 +1332,7 @@ abstract class _UnBlockSuccess implements BlockActorState {
 /// @nodoc
 abstract class _$UnBlockFailureCopyWith<$Res> {
   factory _$UnBlockFailureCopyWith(_UnBlockFailure value, $Res Function(_UnBlockFailure) then) = __$UnBlockFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

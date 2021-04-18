@@ -40,7 +40,6 @@ mixin _$SearchExperiencesByDifficultyEvent {
     required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int difficulty)? submitted,
@@ -48,14 +47,12 @@ mixin _$SearchExperiencesByDifficultyEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Submitted value) submitted,
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Submitted value)? submitted,
@@ -76,6 +73,7 @@ class _$SearchExperiencesByDifficultyEventCopyWithImpl<$Res> implements $SearchE
   _$SearchExperiencesByDifficultyEventCopyWithImpl(this._value, this._then);
 
   final SearchExperiencesByDifficultyEvent _value;
+
   // ignore: unused_field
   final $Res Function(SearchExperiencesByDifficultyEvent) _then;
 }
@@ -83,6 +81,7 @@ class _$SearchExperiencesByDifficultyEventCopyWithImpl<$Res> implements $SearchE
 /// @nodoc
 abstract class _$SubmittedCopyWith<$Res> {
   factory _$SubmittedCopyWith(_Submitted value, $Res Function(_Submitted) then) = __$SubmittedCopyWithImpl<$Res>;
+
   $Res call({int difficulty});
 }
 
@@ -187,6 +186,7 @@ abstract class _Submitted implements SearchExperiencesByDifficultyEvent {
 /// @nodoc
 abstract class _$ResultsReceivedCopyWith<$Res> {
   factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
+
   $Res call({Either<Failure, KtList<Experience>> failureOrExperiences});
 }
 
@@ -334,7 +334,6 @@ mixin _$SearchExperiencesByDifficultyState {
     required TResult Function(ValueFailure<int> failure) valueFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -345,7 +344,6 @@ mixin _$SearchExperiencesByDifficultyState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -355,7 +353,6 @@ mixin _$SearchExperiencesByDifficultyState {
     required TResult Function(_ValueFailure value) valueFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -379,6 +376,7 @@ class _$SearchExperiencesByDifficultyStateCopyWithImpl<$Res> implements $SearchE
   _$SearchExperiencesByDifficultyStateCopyWithImpl(this._value, this._then);
 
   final SearchExperiencesByDifficultyState _value;
+
   // ignore: unused_field
   final $Res Function(SearchExperiencesByDifficultyState) _then;
 }
@@ -568,6 +566,7 @@ abstract class _SearchInProgress implements SearchExperiencesByDifficultyState {
 /// @nodoc
 abstract class _$SearchSuccessCopyWith<$Res> {
   factory _$SearchSuccessCopyWith(_SearchSuccess value, $Res Function(_SearchSuccess) then) = __$SearchSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<Experience> experiencesFound});
 }
 
@@ -685,6 +684,7 @@ abstract class _SearchSuccess implements SearchExperiencesByDifficultyState {
 /// @nodoc
 abstract class _$SearchFailureCopyWith<$Res> {
   factory _$SearchFailureCopyWith(_SearchFailure value, $Res Function(_SearchFailure) then) = __$SearchFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;
@@ -810,6 +810,7 @@ abstract class _SearchFailure implements SearchExperiencesByDifficultyState {
 /// @nodoc
 abstract class _$ValueFailureCopyWith<$Res> {
   factory _$ValueFailureCopyWith(_ValueFailure value, $Res Function(_ValueFailure) then) = __$ValueFailureCopyWithImpl<$Res>;
+
   $Res call({ValueFailure<int> failure});
 
   $ValueFailureCopyWith<int, $Res> get failure;

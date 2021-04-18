@@ -113,7 +113,7 @@ class TagAdditionCreationCard extends HookWidget {
     TextEditingController _textEditingController,
   ) =>
       state.failureOrSuccessOption.fold(
-          () {},
+        () {},
         (either) => either.fold(
           (failure) => failure.maybeMap(
             coreData: (_coreDataFailure) => _coreDataFailure.coreDataFailure.maybeMap(

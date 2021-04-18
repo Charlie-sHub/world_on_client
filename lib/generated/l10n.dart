@@ -1876,6 +1876,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Objective's localization`
+  String get objectiveLocalization {
+    return Intl.message(
+      'Objective\'s localization',
+      name: 'objectiveLocalization',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -32,11 +32,8 @@ const $Device = _$DeviceTearOff();
 /// @nodoc
 mixin _$Device {
   UniqueId get id => throw _privateConstructorUsedError;
-
   String get name => throw _privateConstructorUsedError;
-
   String get type => throw _privateConstructorUsedError;
-
   String get company => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -46,6 +43,7 @@ mixin _$Device {
 /// @nodoc
 abstract class $DeviceCopyWith<$Res> {
   factory $DeviceCopyWith(Device value, $Res Function(Device) then) = _$DeviceCopyWithImpl<$Res>;
+
   $Res call({UniqueId id, String name, String type, String company});
 }
 
@@ -88,6 +86,7 @@ class _$DeviceCopyWithImpl<$Res> implements $DeviceCopyWith<$Res> {
 /// @nodoc
 abstract class _$DeviceCopyWith<$Res> implements $DeviceCopyWith<$Res> {
   factory _$DeviceCopyWith(_Device value, $Res Function(_Device) then) = __$DeviceCopyWithImpl<$Res>;
+
   @override
   $Res call({UniqueId id, String name, String type, String company});
 }
@@ -184,7 +183,6 @@ abstract class _Device extends Device {
 
   @override
   String get company => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
   _$DeviceCopyWith<_Device> get copyWith => throw _privateConstructorUsedError;

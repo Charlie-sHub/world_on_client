@@ -37,9 +37,8 @@ const $CoinsDto = _$CoinsDtoTearOff();
 /// @nodoc
 mixin _$CoinsDto {
   String get tenCoinsProductId => throw _privateConstructorUsedError;
-  
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  
   @JsonKey(ignore: true)
   $CoinsDtoCopyWith<CoinsDto> get copyWith =>
     throw _privateConstructorUsedError;
@@ -146,14 +145,12 @@ class __$CoinsDtoCopyWithImpl<$Res> extends _$CoinsDtoCopyWithImpl<$Res>
 
 abstract class _CoinsDto extends CoinsDto {
   const factory _CoinsDto({required String tenCoinsProductId}) = _$_CoinsDto;
-  
   const _CoinsDto._() : super._();
-  
+
   factory _CoinsDto.fromJson(Map<String, dynamic> json) = _$_CoinsDto.fromJson;
-  
+
   @override
   String get tenCoinsProductId => throw _privateConstructorUsedError;
-  
   @override
   @JsonKey(ignore: true)
   _$CoinsDtoCopyWith<_CoinsDto> get copyWith =>

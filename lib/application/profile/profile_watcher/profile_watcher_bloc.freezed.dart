@@ -35,20 +35,17 @@ mixin _$ProfileWatcherEvent {
     required TResult Function(Option<User> userOption) initializedForeignOrOwn,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<User> userOption)? initializedForeignOrOwn,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_InitializedForeignOrOwn value) initializedForeignOrOwn,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitializedForeignOrOwn value)? initializedForeignOrOwn,
@@ -63,6 +60,7 @@ mixin _$ProfileWatcherEvent {
 /// @nodoc
 abstract class $ProfileWatcherEventCopyWith<$Res> {
   factory $ProfileWatcherEventCopyWith(ProfileWatcherEvent value, $Res Function(ProfileWatcherEvent) then) = _$ProfileWatcherEventCopyWithImpl<$Res>;
+
   $Res call({Option<User> userOption});
 }
 
@@ -71,6 +69,7 @@ class _$ProfileWatcherEventCopyWithImpl<$Res> implements $ProfileWatcherEventCop
   _$ProfileWatcherEventCopyWithImpl(this._value, this._then);
 
   final ProfileWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(ProfileWatcherEvent) _then;
 
@@ -90,6 +89,7 @@ class _$ProfileWatcherEventCopyWithImpl<$Res> implements $ProfileWatcherEventCop
 /// @nodoc
 abstract class _$InitializedForeignOrOwnCopyWith<$Res> implements $ProfileWatcherEventCopyWith<$Res> {
   factory _$InitializedForeignOrOwnCopyWith(_InitializedForeignOrOwn value, $Res Function(_InitializedForeignOrOwn) then) = __$InitializedForeignOrOwnCopyWithImpl<$Res>;
+
   @override
   $Res call({Option<User> userOption});
 }
@@ -233,7 +233,6 @@ mixin _$ProfileWatcherState {
     required TResult Function() loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -244,7 +243,6 @@ mixin _$ProfileWatcherState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -254,7 +252,6 @@ mixin _$ProfileWatcherState {
     required TResult Function(_LoadFailure value) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -277,6 +274,7 @@ class _$ProfileWatcherStateCopyWithImpl<$Res> implements $ProfileWatcherStateCop
   _$ProfileWatcherStateCopyWithImpl(this._value, this._then);
 
   final ProfileWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(ProfileWatcherState) _then;
 }
@@ -466,6 +464,7 @@ abstract class _LoadInProgress implements ProfileWatcherState {
 /// @nodoc
 abstract class _$OwnCopyWith<$Res> {
   factory _$OwnCopyWith(_Own value, $Res Function(_Own) then) = __$OwnCopyWithImpl<$Res>;
+
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;
@@ -583,7 +582,6 @@ abstract class _Own implements ProfileWatcherState {
   const factory _Own(User user) = _$_Own;
 
   User get user => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   _$OwnCopyWith<_Own> get copyWith => throw _privateConstructorUsedError;
 }
@@ -591,6 +589,7 @@ abstract class _Own implements ProfileWatcherState {
 /// @nodoc
 abstract class _$ForeignCopyWith<$Res> {
   factory _$ForeignCopyWith(_Foreign value, $Res Function(_Foreign) then) = __$ForeignCopyWithImpl<$Res>;
+
   $Res call({User user});
 
   $UserCopyWith<$Res> get user;

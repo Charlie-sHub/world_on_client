@@ -44,19 +44,12 @@ const $Item = _$ItemTearOff();
 /// @nodoc
 mixin _$Item {
   UniqueId get id => throw _privateConstructorUsedError;
-
   Name get name => throw _privateConstructorUsedError;
-
   EntityDescription get description => throw _privateConstructorUsedError;
-
   ItemCode get code => throw _privateConstructorUsedError;
-
   int get value => throw _privateConstructorUsedError;
-
   String get imageURL => throw _privateConstructorUsedError;
-
   int get timeLimitInDays => throw _privateConstructorUsedError;
-
   DateTime get boughtDate => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -258,33 +251,24 @@ abstract class _Item extends Item {
       required String imageURL,
       required int timeLimitInDays,
       required DateTime boughtDate}) = _$_Item;
-
   const _Item._() : super._();
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
-
   @override
   Name get name => throw _privateConstructorUsedError;
-
   @override
   EntityDescription get description => throw _privateConstructorUsedError;
-
   @override
   ItemCode get code => throw _privateConstructorUsedError;
-
   @override
   int get value => throw _privateConstructorUsedError;
-
   @override
   String get imageURL => throw _privateConstructorUsedError;
-
   @override
   int get timeLimitInDays => throw _privateConstructorUsedError;
-
   @override
   DateTime get boughtDate => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
   _$ItemCopyWith<_Item> get copyWith => throw _privateConstructorUsedError;

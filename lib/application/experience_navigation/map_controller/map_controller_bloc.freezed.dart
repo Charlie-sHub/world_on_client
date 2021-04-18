@@ -48,7 +48,6 @@ mixin _$MapControllerEvent {
     required TResult Function(KtList<Objective> objectives) objectivesChanged,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Experience experience)? initialized,
@@ -57,7 +56,6 @@ mixin _$MapControllerEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
@@ -65,7 +63,6 @@ mixin _$MapControllerEvent {
     required TResult Function(_ObjectivesChanged value) objectivesChanged,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
@@ -86,6 +83,7 @@ class _$MapControllerEventCopyWithImpl<$Res> implements $MapControllerEventCopyW
   _$MapControllerEventCopyWithImpl(this._value, this._then);
 
   final MapControllerEvent _value;
+
   // ignore: unused_field
   final $Res Function(MapControllerEvent) _then;
 }
@@ -93,6 +91,7 @@ class _$MapControllerEventCopyWithImpl<$Res> implements $MapControllerEventCopyW
 /// @nodoc
 abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(_Initialized value, $Res Function(_Initialized) then) = __$InitializedCopyWithImpl<$Res>;
+
   $Res call({Experience experience});
 
   $ExperienceCopyWith<$Res> get experience;
@@ -210,6 +209,7 @@ abstract class _Initialized implements MapControllerEvent {
 /// @nodoc
 abstract class _$CameraPositionChangedCopyWith<$Res> {
   factory _$CameraPositionChangedCopyWith(_CameraPositionChanged value, $Res Function(_CameraPositionChanged) then) = __$CameraPositionChangedCopyWithImpl<$Res>;
+
   $Res call({Coordinates coordinates, double zoom});
 
   $CoordinatesCopyWith<$Res> get coordinates;
@@ -339,6 +339,7 @@ abstract class _CameraPositionChanged implements MapControllerEvent {
 /// @nodoc
 abstract class _$ObjectivesChangedCopyWith<$Res> {
   factory _$ObjectivesChangedCopyWith(_ObjectivesChanged value, $Res Function(_ObjectivesChanged) then) = __$ObjectivesChangedCopyWithImpl<$Res>;
+
   $Res call({KtList<Objective> objectives});
 }
 
@@ -464,11 +465,8 @@ const $MapControllerState = _$MapControllerStateTearOff();
 /// @nodoc
 mixin _$MapControllerState {
   Coordinates get coordinates => throw _privateConstructorUsedError;
-
   KtList<Objective> get objectives => throw _privateConstructorUsedError;
-
   double get zoom => throw _privateConstructorUsedError;
-
   bool get loadedCoordinates => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -478,6 +476,7 @@ mixin _$MapControllerState {
 /// @nodoc
 abstract class $MapControllerStateCopyWith<$Res> {
   factory $MapControllerStateCopyWith(MapControllerState value, $Res Function(MapControllerState) then) = _$MapControllerStateCopyWithImpl<$Res>;
+
   $Res call({Coordinates coordinates, KtList<Objective> objectives, double zoom, bool loadedCoordinates});
 
   $CoordinatesCopyWith<$Res> get coordinates;
@@ -488,6 +487,7 @@ class _$MapControllerStateCopyWithImpl<$Res> implements $MapControllerStateCopyW
   _$MapControllerStateCopyWithImpl(this._value, this._then);
 
   final MapControllerState _value;
+
   // ignore: unused_field
   final $Res Function(MapControllerState) _then;
 
@@ -529,6 +529,7 @@ class _$MapControllerStateCopyWithImpl<$Res> implements $MapControllerStateCopyW
 /// @nodoc
 abstract class _$MapControllerStateCopyWith<$Res> implements $MapControllerStateCopyWith<$Res> {
   factory _$MapControllerStateCopyWith(_MapControllerState value, $Res Function(_MapControllerState) then) = __$MapControllerStateCopyWithImpl<$Res>;
+
   @override
   $Res call({Coordinates coordinates, KtList<Objective> objectives, double zoom, bool loadedCoordinates});
 

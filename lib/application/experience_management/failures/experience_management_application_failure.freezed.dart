@@ -35,20 +35,17 @@ mixin _$ExperienceManagementApplicationFailure<T> {
     required TResult Function(int limit) surpassedImageLimit,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int limit)? surpassedImageLimit,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(SurpassedImageLimit<T> value) surpassedImageLimit,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(SurpassedImageLimit<T> value)? surpassedImageLimit,

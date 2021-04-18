@@ -47,7 +47,6 @@ mixin _$ObjectivesTrackerEvent {
     required TResult Function(Objective objective) objectiveUnaccomplished,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ObjectiveList objectiveSet)? initialized,
@@ -56,7 +55,6 @@ mixin _$ObjectivesTrackerEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
@@ -64,7 +62,6 @@ mixin _$ObjectivesTrackerEvent {
     required TResult Function(_ObjectiveUnaccomplished value) objectiveUnaccomplished,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
@@ -453,7 +450,6 @@ const $ObjectivesTrackerState = _$ObjectivesTrackerStateTearOff();
 /// @nodoc
 mixin _$ObjectivesTrackerState {
   KtList<Objective> get objectivesToDo => throw _privateConstructorUsedError;
-
   bool get isFinished => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)

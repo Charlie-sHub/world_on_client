@@ -34,15 +34,10 @@ const $Comment = _$CommentTearOff();
 /// @nodoc
 mixin _$Comment {
   UniqueId get id => throw _privateConstructorUsedError;
-
   User get poster => throw _privateConstructorUsedError;
-
   UniqueId get experienceId => throw _privateConstructorUsedError;
-
   CommentContent get content => throw _privateConstructorUsedError;
-
   PastDate get creationDate => throw _privateConstructorUsedError;
-
   PastDate get modificationDate => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -52,6 +47,7 @@ mixin _$Comment {
 /// @nodoc
 abstract class $CommentCopyWith<$Res> {
   factory $CommentCopyWith(Comment value, $Res Function(Comment) then) = _$CommentCopyWithImpl<$Res>;
+
   $Res call({UniqueId id, User poster, UniqueId experienceId, CommentContent content, PastDate creationDate, PastDate modificationDate});
 
   $UserCopyWith<$Res> get poster;
@@ -113,6 +109,7 @@ class _$CommentCopyWithImpl<$Res> implements $CommentCopyWith<$Res> {
 /// @nodoc
 abstract class _$CommentCopyWith<$Res> implements $CommentCopyWith<$Res> {
   factory _$CommentCopyWith(_Comment value, $Res Function(_Comment) then) = __$CommentCopyWithImpl<$Res>;
+
   @override
   $Res call({UniqueId id, User poster, UniqueId experienceId, CommentContent content, PastDate creationDate, PastDate modificationDate});
 
@@ -217,21 +214,16 @@ class _$_Comment extends _Comment {
 abstract class _Comment extends Comment {
   const factory _Comment(
       {required UniqueId id, required User poster, required UniqueId experienceId, required CommentContent content, required PastDate creationDate, required PastDate modificationDate}) = _$_Comment;
-
   const _Comment._() : super._();
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
-
   @override
   User get poster => throw _privateConstructorUsedError;
-
   @override
   UniqueId get experienceId => throw _privateConstructorUsedError;
-
   @override
   CommentContent get content => throw _privateConstructorUsedError;
-
   @override
   PastDate get creationDate => throw _privateConstructorUsedError;
 

@@ -42,7 +42,7 @@ class WatchPurchasableItemsBloc extends Bloc<WatchPurchasableItemsEvent, WatchPu
     yield const WatchPurchasableItemsState.loadInProgress();
     await _purchasableItemsStreamSubscription?.cancel();
     _purchasableItemsStreamSubscription = getIt<WatchPurchasableItems>()(getIt<NoParams>()).listen(
-        (_failureOrItems) => add(WatchPurchasableItemsEvent.resultsReceived(_failureOrItems)),
+      (_failureOrItems) => add(WatchPurchasableItemsEvent.resultsReceived(_failureOrItems)),
     );
   }
 

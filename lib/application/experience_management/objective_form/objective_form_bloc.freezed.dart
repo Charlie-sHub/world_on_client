@@ -58,7 +58,6 @@ mixin _$ObjectiveFormEvent {
     required TResult Function() submitted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
@@ -69,7 +68,6 @@ mixin _$ObjectiveFormEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
@@ -79,7 +77,6 @@ mixin _$ObjectiveFormEvent {
     required TResult Function(_Submitted value) submitted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
@@ -102,6 +99,7 @@ class _$ObjectiveFormEventCopyWithImpl<$Res> implements $ObjectiveFormEventCopyW
   _$ObjectiveFormEventCopyWithImpl(this._value, this._then);
 
   final ObjectiveFormEvent _value;
+
   // ignore: unused_field
   final $Res Function(ObjectiveFormEvent) _then;
 }
@@ -200,6 +198,7 @@ abstract class _Initialized implements ObjectiveFormEvent {
 /// @nodoc
 abstract class _$DescriptionChangedCopyWith<$Res> {
   factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) = __$DescriptionChangedCopyWithImpl<$Res>;
+
   $Res call({String description});
 }
 
@@ -316,6 +315,7 @@ abstract class _DescriptionChanged implements ObjectiveFormEvent {
 /// @nodoc
 abstract class _$CoordinatesChangedCopyWith<$Res> {
   factory _$CoordinatesChangedCopyWith(_CoordinatesChanged value, $Res Function(_CoordinatesChanged) then) = __$CoordinatesChangedCopyWithImpl<$Res>;
+
   $Res call({double latitude, double longitude});
 }
 
@@ -444,6 +444,7 @@ abstract class _CoordinatesChanged implements ObjectiveFormEvent {
 /// @nodoc
 abstract class _$ImageChangedCopyWith<$Res> {
   factory _$ImageChangedCopyWith(_ImageChanged value, $Res Function(_ImageChanged) then) = __$ImageChangedCopyWithImpl<$Res>;
+
   $Res call({File imageFile});
 }
 
@@ -668,11 +669,8 @@ const $ObjectiveFormState = _$ObjectiveFormStateTearOff();
 /// @nodoc
 mixin _$ObjectiveFormState {
   Objective get objective => throw _privateConstructorUsedError;
-
   bool get showErrorMessages => throw _privateConstructorUsedError;
-
   bool get isSubmitting => throw _privateConstructorUsedError;
-
   bool get loadedCoordinates => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -682,6 +680,7 @@ mixin _$ObjectiveFormState {
 /// @nodoc
 abstract class $ObjectiveFormStateCopyWith<$Res> {
   factory $ObjectiveFormStateCopyWith(ObjectiveFormState value, $Res Function(ObjectiveFormState) then) = _$ObjectiveFormStateCopyWithImpl<$Res>;
+
   $Res call({Objective objective, bool showErrorMessages, bool isSubmitting, bool loadedCoordinates});
 
   $ObjectiveCopyWith<$Res> get objective;
@@ -692,6 +691,7 @@ class _$ObjectiveFormStateCopyWithImpl<$Res> implements $ObjectiveFormStateCopyW
   _$ObjectiveFormStateCopyWithImpl(this._value, this._then);
 
   final ObjectiveFormState _value;
+
   // ignore: unused_field
   final $Res Function(ObjectiveFormState) _then;
 
@@ -733,6 +733,7 @@ class _$ObjectiveFormStateCopyWithImpl<$Res> implements $ObjectiveFormStateCopyW
 /// @nodoc
 abstract class _$ObjectiveFormStateCopyWith<$Res> implements $ObjectiveFormStateCopyWith<$Res> {
   factory _$ObjectiveFormStateCopyWith(_ObjectiveFormState value, $Res Function(_ObjectiveFormState) then) = __$ObjectiveFormStateCopyWithImpl<$Res>;
+
   @override
   $Res call({Objective objective, bool showErrorMessages, bool isSubmitting, bool loadedCoordinates});
 

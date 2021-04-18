@@ -18,7 +18,7 @@ class UserImagePicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return context.read<ProfileEditingFormBloc>().state.user.imageFileOption.fold(
-        () => TextButton(
+          () => TextButton(
             onPressed: () async {
               final _imageFile = await _openDialog(context);
               if (_imageFile != null) {

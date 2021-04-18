@@ -38,7 +38,6 @@ mixin _$CoreApplicationFailure<T> {
     required TResult Function() emptyFields,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String errorString)? unknownApplicationLayerError,
@@ -46,14 +45,12 @@ mixin _$CoreApplicationFailure<T> {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UnknownApplicationLayerError<T> value) unknownApplicationLayerError,
     required TResult Function(EmptyFields<T> value) emptyFields,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UnknownApplicationLayerError<T> value)? unknownApplicationLayerError,
@@ -73,6 +70,7 @@ class _$CoreApplicationFailureCopyWithImpl<T, $Res> implements $CoreApplicationF
   _$CoreApplicationFailureCopyWithImpl(this._value, this._then);
 
   final CoreApplicationFailure<T> _value;
+
   // ignore: unused_field
   final $Res Function(CoreApplicationFailure<T>) _then;
 }

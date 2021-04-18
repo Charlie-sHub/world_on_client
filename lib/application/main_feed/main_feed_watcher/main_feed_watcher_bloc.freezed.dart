@@ -38,7 +38,6 @@ mixin _$MainFeedWatcherEvent {
     required TResult Function(Either<Failure, KtList<Experience>> failureOrExperiences) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchMainFeedStarted,
@@ -46,14 +45,12 @@ mixin _$MainFeedWatcherEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchMainFeedStarted value) watchMainFeedStarted,
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchMainFeedStarted value)? watchMainFeedStarted,
@@ -73,6 +70,7 @@ class _$MainFeedWatcherEventCopyWithImpl<$Res> implements $MainFeedWatcherEventC
   _$MainFeedWatcherEventCopyWithImpl(this._value, this._then);
 
   final MainFeedWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(MainFeedWatcherEvent) _then;
 }
@@ -159,6 +157,7 @@ abstract class _WatchMainFeedStarted implements MainFeedWatcherEvent {
 /// @nodoc
 abstract class _$ResultsReceivedCopyWith<$Res> {
   factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
+
   $Res call({Either<Failure, KtList<Experience>> failureOrExperiences});
 }
 
@@ -299,7 +298,6 @@ mixin _$MainFeedWatcherState {
     required TResult Function(Failure<dynamic> failure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -309,7 +307,6 @@ mixin _$MainFeedWatcherState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -318,7 +315,6 @@ mixin _$MainFeedWatcherState {
     required TResult Function(_LoadFailure value) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -340,6 +336,7 @@ class _$MainFeedWatcherStateCopyWithImpl<$Res> implements $MainFeedWatcherStateC
   _$MainFeedWatcherStateCopyWithImpl(this._value, this._then);
 
   final MainFeedWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(MainFeedWatcherState) _then;
 }
@@ -521,6 +518,7 @@ abstract class _LoadInProgress implements MainFeedWatcherState {
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<Experience> experiences});
 }
 
@@ -633,6 +631,7 @@ abstract class _LoadSuccess implements MainFeedWatcherState {
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

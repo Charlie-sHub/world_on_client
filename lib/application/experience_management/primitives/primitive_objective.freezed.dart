@@ -33,13 +33,9 @@ const $PrimitiveObjective = _$PrimitiveObjectiveTearOff();
 /// @nodoc
 mixin _$PrimitiveObjective {
   UniqueId get id => throw _privateConstructorUsedError;
-
   String get description => throw _privateConstructorUsedError;
-
   double get latitude => throw _privateConstructorUsedError;
-
   double get longitude => throw _privateConstructorUsedError;
-
   File? get imageFile => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -58,6 +54,7 @@ class _$PrimitiveObjectiveCopyWithImpl<$Res> implements $PrimitiveObjectiveCopyW
   _$PrimitiveObjectiveCopyWithImpl(this._value, this._then);
 
   final PrimitiveObjective _value;
+
   // ignore: unused_field
   final $Res Function(PrimitiveObjective) _then;
 

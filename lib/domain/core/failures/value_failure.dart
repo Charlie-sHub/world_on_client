@@ -24,7 +24,7 @@ class ValueFailure<T> with _$ValueFailure<T> {
     required String failedValue,
     required int maxLength,
   }) = StringExceedsLength<T>;
-  
+
   const factory ValueFailure.integerOutOfBounds({required int failedValue}) = IntegerOutOfBounds<T>;
 
   const factory ValueFailure.stringWithInvalidCharacters({required String failedValue}) = StringWithInvalidCharacters<T>;

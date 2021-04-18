@@ -6,7 +6,7 @@ import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:meta/meta.dart';
 import 'package:worldon/domain/core/entities/objective/objective.dart';
-import 'package:worldon/domain/core/validation/objects/objective_set.dart';
+import 'package:worldon/domain/core/validation/objects/objective_list.dart';
 
 part 'objectives_tracker_bloc.freezed.dart';
 part 'objectives_tracker_event.dart';

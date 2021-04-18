@@ -47,7 +47,6 @@ mixin _$RewardsCreationEvent {
     required TResult Function(Reward reward) removedReward,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<RewardSet> rewardSetOption)? initialized,
@@ -56,7 +55,6 @@ mixin _$RewardsCreationEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
@@ -64,7 +62,6 @@ mixin _$RewardsCreationEvent {
     required TResult Function(_RemovedReward value) removedReward,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,

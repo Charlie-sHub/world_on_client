@@ -45,7 +45,6 @@ mixin _$TagManagementFormEvent {
     required TResult Function() submitted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Tag> tagOption)? initialized,
@@ -54,7 +53,6 @@ mixin _$TagManagementFormEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
@@ -62,7 +60,6 @@ mixin _$TagManagementFormEvent {
     required TResult Function(_Submitted value) submitted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
@@ -151,7 +148,7 @@ class _$_Initialized implements _Initialized {
   @override
   _$InitializedCopyWith<_Initialized> get copyWith =>
       __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -270,7 +267,7 @@ class _$_NameChanged implements _NameChanged {
   @override
   _$NameChangedCopyWith<_NameChanged> get copyWith =>
       __$NameChangedCopyWithImpl<_NameChanged>(this, _$identity);
-  
+
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -644,13 +641,11 @@ abstract class _TagManagementFormState implements TagManagementFormState {
 
   @override
   Tag get tag => throw _privateConstructorUsedError;
-
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
-
   @override
   bool get isEditing => throw _privateConstructorUsedError;
-
+  
   @override
   bool get isSubmitting => throw _privateConstructorUsedError;
 

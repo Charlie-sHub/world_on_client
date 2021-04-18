@@ -33,13 +33,9 @@ const $Tag = _$TagTearOff();
 /// @nodoc
 mixin _$Tag {
   UniqueId get id => throw _privateConstructorUsedError;
-
   Name get name => throw _privateConstructorUsedError;
-
   UniqueId get creatorId => throw _privateConstructorUsedError;
-
   PastDate get creationDate => throw _privateConstructorUsedError;
-
   PastDate get modificationDate => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -224,10 +220,8 @@ abstract class _Tag extends Tag {
 
   @override
   PastDate get creationDate => throw _privateConstructorUsedError;
-
   @override
   PastDate get modificationDate => throw _privateConstructorUsedError;
-
   @override
   @JsonKey(ignore: true)
   _$TagCopyWith<_Tag> get copyWith => throw _privateConstructorUsedError;

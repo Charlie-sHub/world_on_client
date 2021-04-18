@@ -40,11 +40,8 @@ const $DeviceDto = _$DeviceDtoTearOff();
 /// @nodoc
 mixin _$DeviceDto {
   String get id => throw _privateConstructorUsedError;
-
   String get name => throw _privateConstructorUsedError;
-
   String get type => throw _privateConstructorUsedError;
-
   String get company => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;

@@ -35,20 +35,17 @@ mixin _$CommentActorEvent {
     required TResult Function(Comment comment) deleted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Comment comment)? deleted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Deleted value) deleted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Deleted value)? deleted,
@@ -63,6 +60,7 @@ mixin _$CommentActorEvent {
 /// @nodoc
 abstract class $CommentActorEventCopyWith<$Res> {
   factory $CommentActorEventCopyWith(CommentActorEvent value, $Res Function(CommentActorEvent) then) = _$CommentActorEventCopyWithImpl<$Res>;
+
   $Res call({Comment comment});
 
   $CommentCopyWith<$Res> get comment;
@@ -73,6 +71,7 @@ class _$CommentActorEventCopyWithImpl<$Res> implements $CommentActorEventCopyWit
   _$CommentActorEventCopyWithImpl(this._value, this._then);
 
   final CommentActorEvent _value;
+
   // ignore: unused_field
   final $Res Function(CommentActorEvent) _then;
 
@@ -99,6 +98,7 @@ class _$CommentActorEventCopyWithImpl<$Res> implements $CommentActorEventCopyWit
 /// @nodoc
 abstract class _$DeletedCopyWith<$Res> implements $CommentActorEventCopyWith<$Res> {
   factory _$DeletedCopyWith(_Deleted value, $Res Function(_Deleted) then) = __$DeletedCopyWithImpl<$Res>;
+
   @override
   $Res call({Comment comment});
 
@@ -238,7 +238,6 @@ mixin _$CommentActorState {
     required TResult Function(Failure<dynamic> failure) deletionFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -248,7 +247,6 @@ mixin _$CommentActorState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -257,7 +255,6 @@ mixin _$CommentActorState {
     required TResult Function(_DeletionFailure value) deletionFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -279,6 +276,7 @@ class _$CommentActorStateCopyWithImpl<$Res> implements $CommentActorStateCopyWit
   _$CommentActorStateCopyWithImpl(this._value, this._then);
 
   final CommentActorState _value;
+
   // ignore: unused_field
   final $Res Function(CommentActorState) _then;
 }
@@ -547,6 +545,7 @@ abstract class _DeletionSuccess implements CommentActorState {
 /// @nodoc
 abstract class _$DeletionFailureCopyWith<$Res> {
   factory _$DeletionFailureCopyWith(_DeletionFailure value, $Res Function(_DeletionFailure) then) = __$DeletionFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

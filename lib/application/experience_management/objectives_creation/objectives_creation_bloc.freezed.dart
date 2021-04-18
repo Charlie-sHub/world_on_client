@@ -54,7 +54,6 @@ mixin _$ObjectivesCreationEvent {
     required TResult Function(List<Objective> reorderedList) reorderedList,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<ObjectiveList> objectiveListOption)? initialized,
@@ -64,7 +63,6 @@ mixin _$ObjectivesCreationEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
@@ -73,7 +71,6 @@ mixin _$ObjectivesCreationEvent {
     required TResult Function(_ReorderedList value) reorderedList,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,

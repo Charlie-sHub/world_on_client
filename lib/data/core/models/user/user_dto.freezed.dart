@@ -115,48 +115,29 @@ mixin _$UserDto {
   int get experiencePoints => throw _privateConstructorUsedError;
 
   bool get privacy => throw _privateConstructorUsedError;
-
   bool get adminPowers => throw _privateConstructorUsedError;
-
   bool get enabled => throw _privateConstructorUsedError;
-
   @ServerTimestampConverter()
   DateTime get lastLogin => throw _privateConstructorUsedError;
-
   @ServerTimestampConverter()
   DateTime get creationDate => throw _privateConstructorUsedError;
-
   @ServerTimestampConverter()
   DateTime get modificationDate => throw _privateConstructorUsedError;
-
   OptionsDto get options => throw _privateConstructorUsedError;
-
   Set<String> get blockedUsersIds => throw _privateConstructorUsedError;
-
   Set<String> get followedUsersIds => throw _privateConstructorUsedError;
-
   Set<String> get interestsIds => throw _privateConstructorUsedError;
-
   Set<String> get achievementsIds => throw _privateConstructorUsedError;
-
   Set<String> get experiencesDoneIds => throw _privateConstructorUsedError;
-
   Set<String> get experiencesLikedIds => throw _privateConstructorUsedError;
-
   Set<String> get experiencesToDoIds => throw _privateConstructorUsedError;
-
   Set<DeviceDto> get devices => throw _privateConstructorUsedError;
-
   Set<SystemDto> get systems => throw _privateConstructorUsedError;
-
   Set<ItemDto> get items => throw _privateConstructorUsedError;
-
   int get coins => throw _privateConstructorUsedError;
-
   int get followersAmount => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $UserDtoCopyWith<UserDto> get copyWith => throw _privateConstructorUsedError;
 }
@@ -741,7 +722,7 @@ class _$_UserDto extends _UserDto {
       const DeepCollectionEquality().hash(items) ^
       const DeepCollectionEquality().hash(coins) ^
       const DeepCollectionEquality().hash(followersAmount);
-  
+
   @JsonKey(ignore: true)
   @override
   _$UserDtoCopyWith<_UserDto> get copyWith => __$UserDtoCopyWithImpl<_UserDto>(this, _$identity);
@@ -783,97 +764,69 @@ abstract class _UserDto extends UserDto {
       required Set<ItemDto> items,
       required int coins,
       required int followersAmount}) = _$_UserDto;
-
   const _UserDto._() : super._();
 
   factory _UserDto.fromJson(Map<String, dynamic> json) = _$_UserDto.fromJson;
 
   @override
   String get id => throw _privateConstructorUsedError;
-
   @override
   String get name => throw _privateConstructorUsedError;
-
   @override
   String get username => throw _privateConstructorUsedError;
-
   @override // Shouldn't this be encrypted in some way?
 // Maybe it shouldn't even be part of the dto at all, as Firebase handles it at login time
   String get password => throw _privateConstructorUsedError;
-
   @override
   String get email => throw _privateConstructorUsedError;
-
   @override
   @ServerTimestampConverter()
   DateTime get birthday => throw _privateConstructorUsedError;
-
   @override
   String get description => throw _privateConstructorUsedError;
-
   @override
   String get imageURL => throw _privateConstructorUsedError;
-
   @override
   int get level => throw _privateConstructorUsedError;
-
   @override
   int get experiencePoints => throw _privateConstructorUsedError;
-
   @override
   bool get privacy => throw _privateConstructorUsedError;
-
   @override
   bool get adminPowers => throw _privateConstructorUsedError;
-
   @override
   bool get enabled => throw _privateConstructorUsedError;
-
   @override
   @ServerTimestampConverter()
   DateTime get lastLogin => throw _privateConstructorUsedError;
-
   @override
   @ServerTimestampConverter()
   DateTime get creationDate => throw _privateConstructorUsedError;
-
   @override
   @ServerTimestampConverter()
   DateTime get modificationDate => throw _privateConstructorUsedError;
-
   @override
   OptionsDto get options => throw _privateConstructorUsedError;
-
   @override
   Set<String> get blockedUsersIds => throw _privateConstructorUsedError;
-
   @override
   Set<String> get followedUsersIds => throw _privateConstructorUsedError;
-
   @override
   Set<String> get interestsIds => throw _privateConstructorUsedError;
-
   @override
   Set<String> get achievementsIds => throw _privateConstructorUsedError;
-
   @override
   Set<String> get experiencesDoneIds => throw _privateConstructorUsedError;
-
   @override
   Set<String> get experiencesLikedIds => throw _privateConstructorUsedError;
-
   @override
   Set<String> get experiencesToDoIds => throw _privateConstructorUsedError;
-
   @override
   Set<DeviceDto> get devices => throw _privateConstructorUsedError;
-
   @override
   Set<SystemDto> get systems => throw _privateConstructorUsedError;
-
   @override
   Set<ItemDto> get items => throw _privateConstructorUsedError;
-
   @override
   int get coins => throw _privateConstructorUsedError;
 

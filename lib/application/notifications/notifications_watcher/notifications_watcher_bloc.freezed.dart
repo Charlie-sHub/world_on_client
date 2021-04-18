@@ -38,7 +38,6 @@ mixin _$NotificationsWatcherEvent {
     required TResult Function(Either<Failure, KtList<Notification>> failureOrNotifications) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchNotificationsStarted,
@@ -46,14 +45,12 @@ mixin _$NotificationsWatcherEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchNotificationsStarted value) watchNotificationsStarted,
     required TResult Function(_ResultsReceived value) resultsReceived,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchNotificationsStarted value)? watchNotificationsStarted,
@@ -73,6 +70,7 @@ class _$NotificationsWatcherEventCopyWithImpl<$Res> implements $NotificationsWat
   _$NotificationsWatcherEventCopyWithImpl(this._value, this._then);
 
   final NotificationsWatcherEvent _value;
+
   // ignore: unused_field
   final $Res Function(NotificationsWatcherEvent) _then;
 }
@@ -159,6 +157,7 @@ abstract class _WatchNotificationsStarted implements NotificationsWatcherEvent {
 /// @nodoc
 abstract class _$ResultsReceivedCopyWith<$Res> {
   factory _$ResultsReceivedCopyWith(_ResultsReceived value, $Res Function(_ResultsReceived) then) = __$ResultsReceivedCopyWithImpl<$Res>;
+
   $Res call({Either<Failure, KtList<Notification>> failureOrNotifications});
 }
 
@@ -299,7 +298,6 @@ mixin _$NotificationsWatcherState {
     required TResult Function(Failure<dynamic> failure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -309,7 +307,6 @@ mixin _$NotificationsWatcherState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -318,7 +315,6 @@ mixin _$NotificationsWatcherState {
     required TResult Function(_LoadFailure value) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -340,6 +336,7 @@ class _$NotificationsWatcherStateCopyWithImpl<$Res> implements $NotificationsWat
   _$NotificationsWatcherStateCopyWithImpl(this._value, this._then);
 
   final NotificationsWatcherState _value;
+
   // ignore: unused_field
   final $Res Function(NotificationsWatcherState) _then;
 }
@@ -521,6 +518,7 @@ abstract class _LoadInProgress implements NotificationsWatcherState {
 /// @nodoc
 abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(_LoadSuccess value, $Res Function(_LoadSuccess) then) = __$LoadSuccessCopyWithImpl<$Res>;
+
   $Res call({KtList<Notification> notifications});
 }
 
@@ -633,6 +631,7 @@ abstract class _LoadSuccess implements NotificationsWatcherState {
 /// @nodoc
 abstract class _$LoadFailureCopyWith<$Res> {
   factory _$LoadFailureCopyWith(_LoadFailure value, $Res Function(_LoadFailure) then) = __$LoadFailureCopyWithImpl<$Res>;
+
   $Res call({Failure<dynamic> failure});
 
   $FailureCopyWith<dynamic, $Res> get failure;

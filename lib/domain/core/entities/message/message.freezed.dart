@@ -33,13 +33,9 @@ const $Message = _$MessageTearOff();
 /// @nodoc
 mixin _$Message {
   UniqueId get id => throw _privateConstructorUsedError;
-
   User get sender => throw _privateConstructorUsedError;
-
   User get receiver => throw _privateConstructorUsedError;
-
   MessageContent get content => throw _privateConstructorUsedError;
-
   PastDate get creationDate => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -49,9 +45,11 @@ mixin _$Message {
 /// @nodoc
 abstract class $MessageCopyWith<$Res> {
   factory $MessageCopyWith(Message value, $Res Function(Message) then) = _$MessageCopyWithImpl<$Res>;
+
   $Res call({UniqueId id, User sender, User receiver, MessageContent content, PastDate creationDate});
 
   $UserCopyWith<$Res> get sender;
+
   $UserCopyWith<$Res> get receiver;
 }
 
@@ -113,6 +111,7 @@ class _$MessageCopyWithImpl<$Res> implements $MessageCopyWith<$Res> {
 /// @nodoc
 abstract class _$MessageCopyWith<$Res> implements $MessageCopyWith<$Res> {
   factory _$MessageCopyWith(_Message value, $Res Function(_Message) then) = __$MessageCopyWithImpl<$Res>;
+
   @override
   $Res call({UniqueId id, User sender, User receiver, MessageContent content, PastDate creationDate});
 

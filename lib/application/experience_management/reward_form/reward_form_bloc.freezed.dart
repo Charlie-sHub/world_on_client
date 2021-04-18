@@ -52,7 +52,6 @@ mixin _$RewardFormEvent {
     required TResult Function() submitted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name)? nameChanged,
@@ -62,7 +61,6 @@ mixin _$RewardFormEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_NameChanged value) nameChanged,
@@ -71,7 +69,6 @@ mixin _$RewardFormEvent {
     required TResult Function(_Submitted value) submitted,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_NameChanged value)? nameChanged,
@@ -93,6 +90,7 @@ class _$RewardFormEventCopyWithImpl<$Res> implements $RewardFormEventCopyWith<$R
   _$RewardFormEventCopyWithImpl(this._value, this._then);
 
   final RewardFormEvent _value;
+
   // ignore: unused_field
   final $Res Function(RewardFormEvent) _then;
 }
@@ -100,6 +98,7 @@ class _$RewardFormEventCopyWithImpl<$Res> implements $RewardFormEventCopyWith<$R
 /// @nodoc
 abstract class _$NameChangedCopyWith<$Res> {
   factory _$NameChangedCopyWith(_NameChanged value, $Res Function(_NameChanged) then) = __$NameChangedCopyWithImpl<$Res>;
+
   $Res call({String name});
 }
 
@@ -212,6 +211,7 @@ abstract class _NameChanged implements RewardFormEvent {
 /// @nodoc
 abstract class _$DescriptionChangedCopyWith<$Res> {
   factory _$DescriptionChangedCopyWith(_DescriptionChanged value, $Res Function(_DescriptionChanged) then) = __$DescriptionChangedCopyWithImpl<$Res>;
+
   $Res call({String description});
 }
 
@@ -324,6 +324,7 @@ abstract class _DescriptionChanged implements RewardFormEvent {
 /// @nodoc
 abstract class _$ImageChangedCopyWith<$Res> {
   factory _$ImageChangedCopyWith(_ImageChanged value, $Res Function(_ImageChanged) then) = __$ImageChangedCopyWithImpl<$Res>;
+
   $Res call({File imageFile});
 }
 
@@ -539,9 +540,7 @@ const $RewardFormState = _$RewardFormStateTearOff();
 /// @nodoc
 mixin _$RewardFormState {
   Reward get reward => throw _privateConstructorUsedError;
-
   bool get showErrorMessages => throw _privateConstructorUsedError;
-
   bool get isSubmitting => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -551,6 +550,7 @@ mixin _$RewardFormState {
 /// @nodoc
 abstract class $RewardFormStateCopyWith<$Res> {
   factory $RewardFormStateCopyWith(RewardFormState value, $Res Function(RewardFormState) then) = _$RewardFormStateCopyWithImpl<$Res>;
+
   $Res call({Reward reward, bool showErrorMessages, bool isSubmitting});
 
   $RewardCopyWith<$Res> get reward;
@@ -561,6 +561,7 @@ class _$RewardFormStateCopyWithImpl<$Res> implements $RewardFormStateCopyWith<$R
   _$RewardFormStateCopyWithImpl(this._value, this._then);
 
   final RewardFormState _value;
+
   // ignore: unused_field
   final $Res Function(RewardFormState) _then;
 
@@ -597,6 +598,7 @@ class _$RewardFormStateCopyWithImpl<$Res> implements $RewardFormStateCopyWith<$R
 /// @nodoc
 abstract class _$RewardFormStateCopyWith<$Res> implements $RewardFormStateCopyWith<$Res> {
   factory _$RewardFormStateCopyWith(_RewardFormState value, $Res Function(_RewardFormState) then) = __$RewardFormStateCopyWithImpl<$Res>;
+
   @override
   $Res call({Reward reward, bool showErrorMessages, bool isSubmitting});
 

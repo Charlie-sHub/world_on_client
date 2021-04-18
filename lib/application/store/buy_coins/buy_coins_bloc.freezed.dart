@@ -35,20 +35,17 @@ mixin _$BuyCoinsEvent {
     required TResult Function(int amount) boughtCoins,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int amount)? boughtCoins,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_BoughtCoins value) boughtCoins,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_BoughtCoins value)? boughtCoins,
@@ -229,7 +226,6 @@ mixin _$BuyCoinsState {
     required TResult Function(Failure<dynamic> failure) purchaseFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -239,7 +235,6 @@ mixin _$BuyCoinsState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -248,7 +243,6 @@ mixin _$BuyCoinsState {
     required TResult Function(_PurchaseFailure value) purchaseFailure,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,

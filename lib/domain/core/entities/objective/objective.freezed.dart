@@ -33,13 +33,9 @@ const $Objective = _$ObjectiveTearOff();
 /// @nodoc
 mixin _$Objective {
   UniqueId get id => throw _privateConstructorUsedError;
-
   EntityDescription get description => throw _privateConstructorUsedError;
-
   Coordinates get coordinates => throw _privateConstructorUsedError;
-
   String get imageURL => throw _privateConstructorUsedError;
-
   Option<File> get imageFile => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -49,6 +45,7 @@ mixin _$Objective {
 /// @nodoc
 abstract class $ObjectiveCopyWith<$Res> {
   factory $ObjectiveCopyWith(Objective value, $Res Function(Objective) then) = _$ObjectiveCopyWithImpl<$Res>;
+
   $Res call({UniqueId id, EntityDescription description, Coordinates coordinates, String imageURL, Option<File> imageFile});
 
   $CoordinatesCopyWith<$Res> get coordinates;
@@ -105,6 +102,7 @@ class _$ObjectiveCopyWithImpl<$Res> implements $ObjectiveCopyWith<$Res> {
 /// @nodoc
 abstract class _$ObjectiveCopyWith<$Res> implements $ObjectiveCopyWith<$Res> {
   factory _$ObjectiveCopyWith(_Objective value, $Res Function(_Objective) then) = __$ObjectiveCopyWithImpl<$Res>;
+
   @override
   $Res call({UniqueId id, EntityDescription description, Coordinates coordinates, String imageURL, Option<File> imageFile});
 

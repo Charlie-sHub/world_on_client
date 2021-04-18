@@ -36,7 +36,6 @@ mixin _$StoreNavigationActorEvent {
     required TResult Function() myItemsTapped,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? storeTapped,
@@ -44,14 +43,12 @@ mixin _$StoreNavigationActorEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_StoreTapped value) storeTapped,
     required TResult Function(_MyItemsTapped value) myItemsTapped,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_StoreTapped value)? storeTapped,
@@ -258,7 +255,6 @@ mixin _$StoreNavigationActorState {
     required TResult Function() myItemsView,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? storeView,
@@ -266,14 +262,12 @@ mixin _$StoreNavigationActorState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_StoreView value) storeView,
     required TResult Function(_MyItemsView value) myItemsView,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_StoreView value)? storeView,
